@@ -1,0 +1,10 @@
+{
+  "label": "Metadata",
+  "position": 5,
+  "link": {
+    "type": "doc",
+    "id": "intro"
+  },
+  "collapsible": true,
+  "collapsed": true
+}

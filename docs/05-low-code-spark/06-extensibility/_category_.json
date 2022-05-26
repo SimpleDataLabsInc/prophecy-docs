@@ -1,0 +1,10 @@
+{
+  "label": "Extensibility",
+  "position": 9,
+  "link": {
+    "type": "doc",
+    "id": "intro"
+  },
+  "collapsible": true,
+  "collapsed": true
+}

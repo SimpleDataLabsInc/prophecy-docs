@@ -1,0 +1,10 @@
+{
+  "label": "Architecture",
+  "position": 8,
+  "link": {
+    "type": "doc",
+    "id": "intro"
+  },
+  "collapsible": true,
+  "collapsed": true
+}

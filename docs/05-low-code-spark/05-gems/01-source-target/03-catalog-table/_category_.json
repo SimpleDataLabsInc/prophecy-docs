@@ -1,0 +1,10 @@
+{
+  "label": "Catalog Table",
+  "position": 3,
+  "link": {
+    "type": "doc",
+    "id": "intro"
+  },
+  "collapsible": true,
+  "collapsed": true
+}
