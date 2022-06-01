@@ -3,8 +3,49 @@ sidebar_position: 3
 title: Order By
 ---
 
-:::caution 🚧 Work in Progress 🚧
+Sorts dataframe on one or more columns in ascending or descending order.
 
-TODO
 
-:::
+### Parameters
+| Parameter     | Meaning                                    | Required |
+|:--------------|:-------------------------------------------|:---------|
+| Dataframe     | Input dataframe which needs to be sorted   | True     |
+| Order columns | Columns to sort dataframe by               | True     |
+| Sort          | Order of sorting - ascending or descending | True     |
+
+### Example
+
+![](./img/order_by_eg_1.png)
+
+### Spark Code
+
+````mdx-code-block 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+
+<TabItem value="py" label="Python">
+
+```py
+def Sort(spark: SparkSession, in0: DataFrame) -> DataFrame:
+    return in0.orderBy(col("name").asc(), col("updated_at").desc())
+```
+
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+object Sort {
+  def apply(spark: SparkSession, in: DataFrame): DataFrame =
+    in.orderBy(col("updated_at").desc, col("name").asc)  
+}
+``` 
+
+</TabItem>
+</Tabs>
+
+
+````
+ 
+

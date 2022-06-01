@@ -3,15 +3,15 @@ sidebar_position: 2
 title: Filter
 ---
 
-Generates a dataframe containing rows satisfying the filter condition.
+Filters dataframe based on provided filter condition(s)
 
 ### Parameters
-| Parameter        | Meaning                                                                                              | Required |
-|:-----------------|:-----------------------------------------------------------------------------------------------------|:---------|
-| Dataframe        | Input dataframe on which the filter condition will be applied. It is provided through the input port | True     |
-| Filter Condition | BooleanType column or boolean expression. Supports sql, python and scala expressions.                | True     |
+| Parameter        | Meaning                                                                                             | Required |
+|:-----------------|:----------------------------------------------------------------------------------------------------|:---------|
+| Dataframe        | Input dataframe on which the filter condition will be applied.                                      | True     |
+| Filter Condition | BooleanType column or boolean expression. Supports sql, python and scala expressions.               | True     |
 
-### Examples
+### Example
 ![](./img/filter_eg_1.png)
 
 ### Spark Code
@@ -36,13 +36,21 @@ def Filter_Orders(spark: SparkSession, in0: DataFrame) -> DataFrame:
 ```
 
 </TabItem>
-<TabItem value="java" label="Scala">
+<TabItem value="scala" label="Scala">
 
 ```scala
-class HelloWorld {
-  public static void main(String args[]) {
-    System.out.println("Hello, World");
-  }
+object Filter_Orders {
+
+  def apply(spark: SparkSession, in: DataFrame): DataFrame =
+    in.filter(
+      (
+        col("order_category") === lit("Marketing"))
+        .and(
+          (col("order_status") === lit("Finished"))
+            .or(col("order_status") === lit("Approved"))
+        )
+        .and(!col("is_discounted"))
+    )
 }
 ```
 
