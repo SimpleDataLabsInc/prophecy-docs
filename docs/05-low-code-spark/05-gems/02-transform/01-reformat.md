@@ -19,13 +19,13 @@ If no columns are selected, then all columns are passed through to the output
 :::info 
 To quickly select all the columns, click on the ADD ALL on the left side bar.
 
-![](./img/reformat_addall.png)
+![Adding all columns](./img/reformat_addall.png)
 :::
 
 
 ### Example
 
-![](./img/reformat_eg_1.png)
+![Example usage of Reformat](./img/reformat_eg_1.png)
 
 ### Spark Code
 Reformat converts to a SQL `Select` or in relational terms into a projection, unlike `SchemaTransform` gem which uses underlying `withColumn` construct

@@ -24,7 +24,7 @@ Reformat is a SQL select and is preferable when making many changes.
 
 ### Example
 
-![](./img/schemaTransform_eg_1.png)
+![Example usage of SchemaTransform](./img/schemaTransform_eg_1.png)
 
 ### Spark Code
 

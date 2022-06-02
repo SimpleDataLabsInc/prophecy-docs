@@ -21,7 +21,7 @@ Removes rows with duplicate values of specified columns.
 
 ### Example
 
-![](./img/deduplicate_eg_1.png)
+![Example usage of Deduplicate](./img/deduplicate_eg_1.png)
 
 ### Spark Code
 

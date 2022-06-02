@@ -12,7 +12,7 @@ Filters dataframe based on provided filter condition
 | Filter Condition | BooleanType column or boolean expression. Supports sql, python and scala expressions.               | True     |
 
 ### Example
-![](./img/filter_eg_1.png)
+![Example usage of Filter](./img/filter_eg_1.png)
 
 ### Spark Code
 

@@ -12,7 +12,7 @@ Limits the number of rows in the output
 | Limit     | Number of rows required in output (Allowed range: [0, 2<sup>31</sup> -1]) | True     |
 
 ### Example
-![](./img/limit_eg_1.png)
+![Example usage of Limit](./img/limit_eg_1.png)
 
 ### Spark Code
 

@@ -4,7 +4,6 @@ title: Aggregate
 ---
 :::caution 🚧 Work in Progress 🚧
 
-WIP
 Need to add pivot doc
 :::
 Allows you to apply aggregation methods and group the data by one or more columns.
@@ -17,17 +16,21 @@ Allows you to apply aggregation methods and group the data by one or more column
 | Target column | Output column name                                                                                                                         | True (when Aggregate tab is selected) , False (when Group By tab is selected)                                                                                                   |
 | Expression    | Aggregate function expression (when Aggregate tab is selected), Column names the data should be grouped by (when Group By tab is selected) | True (when Aggregate tab is selected) , True (when Group By tab is selected and Target Value is present), False (when Group By tab is selected and Target Value is not present) |
 
-:::info
-Pivot documentation coming soon!
+:::caution
+Add Pivot doc
 :::
 :::info
-Only the column names present in Target column are passed to the output dataframe. To select all the columns, click on Propagate all input columns checkbox under Aggregate tab
+Only the column names present in Target column are passed through to the output dataframe.  
+To select all columns, check `Propagate all input columns` under Aggregate tab
 :::
 
-### Example
+### Examples
+#### Example 1 - Aggregation
 
-![](./img/agg_eg1.png)
-![](./img/agg_eg_2.png)
+![Example usage of Aggregate](./img/agg_eg1.png)
+![Example usage of Aggregate_img2](./img/agg_eg_2.png)
+
+#### Example 2 - Pivoting
 
 ### Spark Code
 
