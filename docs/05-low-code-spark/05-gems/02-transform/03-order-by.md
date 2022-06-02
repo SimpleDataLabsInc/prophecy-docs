@@ -15,7 +15,7 @@ Sorts dataframe on one or more columns in ascending or descending order.
 
 ### Example
 
-![](./img/order_by_eg_1.png)
+![](./img/orderby_eg_0.png)
 
 ### Spark Code
 

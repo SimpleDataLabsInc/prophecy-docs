@@ -3,7 +3,7 @@ sidebar_position: 1
 title: Reformat
 ---
 
-Edit one or more column names or values, by using expressions and functions. It's useful when we need to extract only the required columns or make changes column-wise.
+Edits one or more column names or values, by using expressions and functions. It's useful when we need to extract only the required columns or make changes column-wise.
 
 
 ### Parameters
@@ -14,7 +14,8 @@ Edit one or more column names or values, by using expressions and functions. It'
 | Expression       | Expression to compute target column           | False (Required if target column is present) |
 
 :::info 
-To quickly select all the columns, click on the ADD ALL on the left side bar. 
+To quickly select all the columns, click on the ADD ALL on the left side bar.
+![](./img/reformat_addall.png)
 :::
 :::info
 If no columns are selected, then all columns are passed through to the output
