@@ -3,10 +3,10 @@ sidebar_position: 2
 title: Filter
 ---
 
-Filters dataframe based on provided filter condition(s)
+Filters dataframe based on provided filter condition
 
 ### Parameters
-| Parameter        | Meaning                                                                                             | Required |
+| Parameter        | Description                                                                                             | Required |
 |:-----------------|:----------------------------------------------------------------------------------------------------|:---------|
 | Dataframe        | Input dataframe on which the filter condition will be applied.                                      | True     |
 | Filter Condition | BooleanType column or boolean expression. Supports sql, python and scala expressions.               | True     |

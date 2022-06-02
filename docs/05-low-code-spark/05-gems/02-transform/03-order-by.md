@@ -7,7 +7,7 @@ Sorts dataframe on one or more columns in ascending or descending order.
 
 
 ### Parameters
-| Parameter     | Meaning                                    | Required |
+| Parameter     | Description                                    | Required |
 |:--------------|:-------------------------------------------|:---------|
 | Dataframe     | Input dataframe which needs to be sorted   | True     |
 | Order columns | Columns to sort dataframe by               | True     |

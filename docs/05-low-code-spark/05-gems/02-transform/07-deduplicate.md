@@ -2,13 +2,21 @@
 sidebar_position: 7
 title: Deduplicate
 ---
+:::caution 🚧 Work in Progress 🚧
+
+WIP 
+Need to add more examples of each (any, first, last, unique only)
+
+:::
+Removes rows with duplicate values of specified columns. 
 
 ### Parameters
-| Parameter        | Meaning                                       | Required                                     |
-|:-----------------|:----------------------------------------------|:---------------------------------------------|
-| Dataframe        | Input dataframe  | True                                         |
-| Row to keep    | Any, First, Last and Unique Only option (Any is selected by default)                            | True                                        |
-| Deduplicate columns       | Column name for which duplicate rows have to be deleted           | True |
+| Parameter           | Description                                                                                                                                                                                                                                                                                     | Required |
+|:--------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------|
+| Dataframe           | Input dataframe                                                                                                                                                                                                                                                                                 | True     |
+| Row to keep         | - `Any`: Keeps any one row among duplicates. Uses underlying `dropDuplicates` construct<br/>- `First`: Keeps first occurrence of the duplicate row <br/>- `Last`: Keeps last occurrence of the duplicate row <br/>- `Unique Only`: Keeps rows that don't have duplicates <br/> Default is `Any` | True     |
+| Deduplicate columns | Columns to consider while removing duplicate rows                                                                                                                                                                                                                                               | True     |
+
 
 
 ### Example

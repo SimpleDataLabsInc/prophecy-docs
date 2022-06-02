@@ -2,16 +2,20 @@
 sidebar_position: 4
 title: Aggregate
 ---
+:::caution 🚧 Work in Progress 🚧
 
+WIP
+Need to add pivot doc
+:::
 Allows you to apply aggregation methods and group the data by one or more columns.
 
 
 ### Parameters
-| Parameter        | Meaning                                       | Required                                     |
-|:-----------------|:----------------------------------------------|:---------------------------------------------|
-| Dataframe        | Input dataframe  | True                                         |
-| Target column    | Output column name                            | True (when Aggregate tab is selected) , False (when Group By tab is selected)|
-| Expression       | Aggregate function expression (when Aggregate tab is selected), Column names the data should be grouped by (when Group By tab is selected) | True (when Aggregate tab is selected) , True (when Group By tab is selected and Target Value is present), False (when Group By tab is selected and Target Value is not present) |
+| Parameter     | Description                                                                                                                                | Required                                                                                                                                                                        |
+|:--------------|:-------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Dataframe     | Input dataframe                                                                                                                            | True                                                                                                                                                                            |
+| Target column | Output column name                                                                                                                         | True (when Aggregate tab is selected) , False (when Group By tab is selected)                                                                                                   |
+| Expression    | Aggregate function expression (when Aggregate tab is selected), Column names the data should be grouped by (when Group By tab is selected) | True (when Aggregate tab is selected) , True (when Group By tab is selected and Target Value is present), False (when Group By tab is selected and Target Value is not present) |
 
 :::info
 Pivot documentation coming soon!

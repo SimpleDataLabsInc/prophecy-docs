@@ -7,19 +7,21 @@ Edits one or more column names or values, by using expressions and functions. It
 
 
 ### Parameters
-| Parameter        | Meaning                                       | Required                                     |
-|:-----------------|:----------------------------------------------|:---------------------------------------------|
-| Dataframe        | Input dataframe on which changes are required | True                                         |
-| Target column    | Output column name                            | False                                        |
-| Expression       | Expression to compute target column           | False (Required if target column is present) |
+| Parameter     | Description                                   | Required                             |
+|:--------------|:----------------------------------------------|:-------------------------------------|
+| Dataframe     | Input dataframe on which changes are required | True                                 |
+| Target column | Output column name                            | False                                |
+| Expression    | Expression to compute target column           | Required if target column is present |
 
-:::info 
-To quickly select all the columns, click on the ADD ALL on the left side bar.
-![](./img/reformat_addall.png)
-:::
 :::info
 If no columns are selected, then all columns are passed through to the output
 :::
+:::info 
+To quickly select all the columns, click on the ADD ALL on the left side bar.
+
+![](./img/reformat_addall.png)
+:::
+
 
 ### Example
 

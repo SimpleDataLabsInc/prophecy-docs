@@ -2,23 +2,24 @@
 sidebar_position: 5
 title: Schema Transform
 ---
-SchemaTransform is used to add, edit, rename or drop columns from the incoming dataframe. Unlike Reformat which is a set operation (where all the transforms are applied in parallel), here the transforms are applied in order.
+SchemaTransform is used to add, edit, rename or drop columns from the incoming dataframe.  
 
 :::info
+Unlike Reformat which is a set operation where all the transforms are applied in parallel, transformations applied here are in order.
 Reformat is a SQL select and is preferable when making many changes.
 :::
 
 
 ### Parameters
-| Parameter        | Meaning                                       | Required                                     |
-|:-----------------|:----------------------------------------------|:---------------------------------------------|
-| Dataframe        | Input dataframe                                                | True                                         |
-| Operation    | Add/Replace, Drop and Rename                                       | False                                        |
-| New Column       | Output column name (when Add/Replace operation is selected)           | False (required if Add/Replace operation is selected) |
-| Expression        | Expression to generate new column (when Add/Replace operation is selected) | False (required if Add/Replace operation is selected)                                         |
-| Old Column Name | Column to be renamed (when Rename operation is selected)                            | False (required if Rename operation is selected)                                        |
-| New Column Name      | Output column name (when Rename operation is selected)   | False (required if Rename operation is selected) |
-| Column to drop       | Column to be dropped (when Drop operation is selected)           | False (required if Drop operation is selected) |
+| Parameter       | Description                                                                | Required                                      |
+|:----------------|:---------------------------------------------------------------------------|:----------------------------------------------|
+| Dataframe       | Input dataframe                                                            | True                                          |
+| Operation       | `Add/Replace Column`, `Rename Column` and `Drop Column`                    | Required if a transformation is added         |
+| New Column      | Output column name (when Add/Replace operation is selected)                | Required if `Add/Replace Column`  is selected |
+| Expression      | Expression to generate new column (when Add/Replace operation is selected) | Required if `Add/Replace Column` is selected  |
+| Old Column Name | Column to be renamed (when Rename operation is selected)                   | Required if `Rename Column` is selected       |
+| New Column Name | Output column name (when Rename operation is selected)                     | Required if `Rename Column` is selected       |
+| Column to drop  | Column to be dropped (when Drop operation is selected)                     | Required if `Drop Column` is selected         |
 
 
 ### Example
@@ -36,7 +37,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="py" label="Python">
 
 ```py
-def milestone_keys(spark: SparkSession, in0: DataFrame) -> DataFrame:
+def transform(spark: SparkSession, in0: DataFrame) -> DataFrame:
     return in0\
         .withColumn("business_date", to_date(lit("2022-05-05"), "yyyy-MM-dd"))\
         .withColumnRenamed("bonus_rate", "bonus")\
@@ -48,14 +49,12 @@ def milestone_keys(spark: SparkSession, in0: DataFrame) -> DataFrame:
 <TabItem value="scala" label="Scala">
 
 ```scala
-object import_ts {
+object transform {
   def apply(spark: SparkSession, in: DataFrame): DataFrame =
-    in.withColumn("business_date",     to_date(lit("2022-05-05"), "yyyy-MM-dd"))
+    in.withColumn("business_date", to_date(lit("2022-05-05"), "yyyy-MM-dd"))
       .withColumnRenamed("bonus_rate", "bonus")
       .drop("slug")
 }
-
-
 ```
 
 </TabItem>
