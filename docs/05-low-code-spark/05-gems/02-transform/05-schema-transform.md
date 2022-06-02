@@ -2,9 +2,4 @@
 sidebar_position: 5
 title: Schema Transform
 ---
-
-:::caution 🚧 Work in Progress 🚧
-
-TODO
-
-:::
+Limits the number of rows in the output.
