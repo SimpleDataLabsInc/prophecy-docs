@@ -31,7 +31,9 @@ To select all columns, check `Propagate all input columns` under Aggregate tab
 ![Example usage of Aggregate_img2](./img/agg_eg_2.png)
 
 #### Example 2 - Pivoting
-
+:::caution
+Add Pivot example
+:::
 ### Spark Code
 
 ````mdx-code-block
