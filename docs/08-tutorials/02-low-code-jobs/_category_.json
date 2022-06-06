@@ -1,0 +1,10 @@
+{
+  "label": "Low-code Jobs",
+  "position": 2,
+  "link": {
+    "type": "doc",
+    "id": "intro"
+  },
+  "collapsible": true,
+  "collapsed": true
+}
