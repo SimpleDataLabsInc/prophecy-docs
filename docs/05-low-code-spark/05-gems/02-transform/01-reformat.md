@@ -3,26 +3,32 @@ sidebar_position: 1
 title: Reformat
 ---
 
-Edit one or more column names or values, by using expressions and functions. It's useful when we need to extract only the required columns or make changes column-wise.
+Edits one or more column names or values, by using expressions and functions. It's useful when we need to extract only the required columns or make changes column-wise.
 
 
 ### Parameters
-| Parameter        | Meaning                                       | Required                                     |
-|:-----------------|:----------------------------------------------|:---------------------------------------------|
-| Dataframe        | Input dataframe on which changes are required | True                                         |
-| Target column    | Output column name                            | False                                        |
-| Expression       | Expression to compute target column           | False (Required if target column is present) |
+| Parameter     | Description                                   | Required                             |
+|:--------------|:----------------------------------------------|:-------------------------------------|
+| Dataframe     | Input dataframe on which changes are required | True                                 |
+| Target column | Output column name                            | False                                |
+| Expression    | Expression to compute target column           | Required if target column is present |
 
-:::info 
-To quickly select all the columns, click on the ADD ALL on the left side bar. 
-:::
 :::info
 If no columns are selected, then all columns are passed through to the output
 :::
 
+[//]: # (To be put in a more common place since it's applicable to most gems)
+[//]: # (:::info )
+
+[//]: # (To quickly select all the columns, click on the ADD ALL on the left side bar.)
+
+![Adding all columns](./img/reformat_addall.png)
+:::
+
+
 ### Example
 
-![](./img/reformat_eg_1.png)
+![Example usage of Reformat](./img/reformat_eg_1.png)
 
 ### Spark Code
 Reformat converts to a SQL `Select` or in relational terms into a projection, unlike `SchemaTransform` gem which uses underlying `withColumn` construct
