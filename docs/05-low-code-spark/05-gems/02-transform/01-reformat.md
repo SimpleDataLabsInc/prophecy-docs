@@ -16,8 +16,11 @@ Edits one or more column names or values, by using expressions and functions. It
 :::info
 If no columns are selected, then all columns are passed through to the output
 :::
-:::info 
-To quickly select all the columns, click on the ADD ALL on the left side bar.
+
+[//]: # (To be put in a more common place since it's applicable to most gems)
+[//]: # (:::info )
+
+[//]: # (To quickly select all the columns, click on the ADD ALL on the left side bar.)
 
 ![Adding all columns](./img/reformat_addall.png)
 :::
