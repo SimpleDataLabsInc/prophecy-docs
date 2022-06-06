@@ -22,8 +22,8 @@ If no columns are selected, then all columns are passed through to the output
 
 [//]: # (To quickly select all the columns, click on the ADD ALL on the left side bar.)
 
-![Adding all columns](./img/reformat_addall.png)
-:::
+[//]: # (![Adding all columns]&#40;./img/reformat_addall.png&#41;)
+[//]: # (:::)
 
 
 ### Example
