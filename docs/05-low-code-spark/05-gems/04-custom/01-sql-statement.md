@@ -3,8 +3,68 @@ sidebar_position: 1
 title: SQL Statement
 ---
 
-:::caution 🚧 Work in Progress 🚧
+Create multiple dataframes based on provided SQL queries to run on input dataframe(s).
 
-TODO
+### Parameters
+| Parameter    | Meaning                       | Required |
+|:-------------|:------------------------------|:---------|
+| Dataframe(s) | Input dataframe(s)            | True     |
+| SQL Queries  | SQL Query for each output tab | True     |
 
-:::
+
+
+### Example
+![](./img/sqlstatement_eg_1.png)
+
+### Spark Code
+
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+
+<TabItem value="py" label="Python">
+
+```py
+def SQLStatement(spark: SparkSession, orders: DataFrame, customers: DataFrame) -> (DataFrame, DataFrame):
+    orders.createOrReplaceTempView("orders")
+    customers.createOrReplaceTempView("customers")
+    df1 = spark.sql("select * from orders inner join customers on orders.customer_id = customers.customer_id")
+    df2 = spark.sql("select distinct customer_id from orders")
+
+    return df1, df2
+
+```
+
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+object SQLStatement {
+
+  def apply(
+      spark: SparkSession,
+      orders: DataFrame,
+      customers: DataFrame
+  ): (DataFrame, DataFrame) = {
+    orders.createOrReplaceTempView("orders")
+    customers.createOrReplaceTempView("customers")
+    (
+      spark.sql(
+        """select * from orders inner join customers on orders.customer_id = customers.customer_id"""
+      ),
+      spark.sql(
+        """select distinct customer_id from orders"""
+      )
+    )
+  }
+
+}
+
+```
+
+</TabItem>
+</Tabs>
+
+````
