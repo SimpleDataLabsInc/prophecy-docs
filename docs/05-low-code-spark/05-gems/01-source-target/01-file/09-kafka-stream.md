@@ -1,13 +1,14 @@
 ---
 title: Kafka Stream
+sidebar_position: 9
 ---
 
-Reads data from Kafka Stream and writes data to Kafka.
+Reads data from Kafka Stream in batch mode and writes data to Kafka.
 
 ## Source
 Reads data from kafka stream in batch mode.
 Data is read only incrementally from the last offset stored in the metadata table. If metadata table
-is not present, then data with earliest offset would be read.
+is not present, then data with `earliest` offset would be read.
 
 ### Source Parameters
 | Parameter         | Description                                                               | Required |
@@ -193,7 +194,8 @@ This table would help us in below:
 3. In case we want to relay older messages again from a particular offset, we can simply update the metadata table.
 
 :::note
-For production workflows the phase for update offset script gem should be greater then the target gem.
+For production workflows the phase for update offset script gem should be greater than the phase of
+target gem (like in our example, phase for target gem is 0 and updateOffsets gem is 1).
 This is to ensure that offsets are only updated in the table post data is successfully written.
 :::
 
