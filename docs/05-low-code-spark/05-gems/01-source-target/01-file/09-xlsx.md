@@ -1,5 +1,5 @@
 ---
-title: XLSX (Excel) format
+title: XLSX (Excel)
 ---
 
 If you've ever done anything with numbers in your line of work odds are you've worked with Excel at one point or another. Prophecy supports the format as both a data source and data target, so if you're migrating from a legacy system or you need to produce an Excel-compatible file for a report, we've got you covered.
@@ -36,8 +36,8 @@ The following is a list of options that are available while using XLSX as a **_S
 | Ignore After Header           | Number of rows to ignore after header                                                                                                                                                                                          | False    | `0`               |
 | Ignore Leading Whitespace     |                                                                                                                                                                                                                                | False    | `False`           |
 | Ignore Trailing Whitespace    |                                                                                                                                                                                                                                | False    | `False`           |
-| Infer Schema                  | Infer the schema of the input. <br /><br />**Note:** This setting is provided directly by the `spark-excel` library and is different than the `Infer Schema` button in the Prophecy UI. Both should provided the same results. | False    | `False`           |
-| Keep Undefined Rows           | If true, keep undefined Excel rows                                                                                                                                                                                             | False    | `False`           |
+| Infer Schema                  | Infer the schema of the input. <br /><br />**Note:** This setting is provided directly by the `spark-excel` library and is different than the `Infer Schema` button in the Prophecy UI. Both should provide the same results. | False    | `False`           |
+| Keep Undefined Rows           | If true, keeps undefined Excel rows                                                                                                                                                                                             | False    | `False`           |
 | Locale                        | A language tag in the IETF BCP 47 format                                                                                                                                                                                       | False    | `"US"`            |
 | NaN Value                     | Value to use in the case of NaN                                                                                                                                                                                                | False    | `"NaN"`           |
 | Negative Infinity             | Value to use in the case of negative infinity                                                                                                                                                                                  | False    | `"Inf"`           |
