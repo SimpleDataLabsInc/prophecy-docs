@@ -2,40 +2,35 @@
 sidebar_position: 4
 title: Aggregate
 ---
-:::caution 🚧 Work in Progress 🚧
-
-Need to add pivot doc
-:::
-Allows you to apply aggregation methods and group the data by one or more columns.
+Allows you to group the data and apply aggregation methods and pivot operation.
 
 
 ### Parameters
-| Parameter     | Description                                                                                                                                | Required                                                                                                                                                                        |
-|:--------------|:-------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Dataframe     | Input dataframe                                                                                                                            | True                                                                                                                                                                            |
-| Target column | Output column name                                                                                                                         | True (when Aggregate tab is selected) , False (when Group By tab is selected)                                                                                                   |
-| Expression    | Aggregate function expression (when Aggregate tab is selected), Column names the data should be grouped by (when Group By tab is selected) | True (when Aggregate tab is selected) , True (when Group By tab is selected and Target Value is present), False (when Group By tab is selected and Target Value is not present) |
+| Parameter                     | Description                                                                                 | Required                                           |
+|:------------------------------|:--------------------------------------------------------------------------------------------|:---------------------------------------------------|
+| Dataframe                     | Input dataframe                                                                             | True                                               |
+| Target column (Aggregate Tab) | Output column name of aggregated column                                                     | True                                               |
+| Expression (Aggregate Tab)    | Aggregate function expression<br/> Eg: sum("amount"), count(*), avg("amount")               | True                                               |
+| Target column (Group By Tab)  | Output column name of grouped column                                                        | Required if `Pivot Column` is present              |
+| Expression (Group By Tab)     | Column expression to group on <br/> Eg: col("id"), month(col("order_date"))                 | Required if a `Target Column`(Group By) is present |
+| Pivot column                  | Column name to pivot                                                                        | False                                              |
+| Unique values                 | List of values in `Pivot Column` that will be translated to columns in the output DataFrame | False                                              |
 
-:::caution
-Add Pivot doc
-:::
 :::info
-Only the column names present in Target column are passed through to the output dataframe.  
-To select all columns, check `Propagate all input columns` under Aggregate tab
+Providing `Unique values` while performing pivot operation improves the performance of the operation since Spark does not have to first compute the list of distinct values of `Pivot Column` internally.
 :::
+
+[//]: # (:::info)
+
+[//]: # (Only the column names present in Target column are passed through to the output dataframe.  )
+
+[//]: # (To select all columns, check `Propagate all input columns` under Aggregate tab)
+
+[//]: # (:::)
 
 ### Examples
-#### Example 1 - Aggregation
-
-![Example usage of Aggregate](./img/agg_eg1.png)
-![Example usage of Aggregate_img2](./img/agg_eg_2.png)
-
-#### Example 2 - Pivoting
-:::caution
-Add Pivot example
-:::
-### Spark Code
-
+#### Example 1 - Aggregation without Grouping
+![Example usage of Aggregate - Aggregation without Grouping](./img/agg_eg_1.png)
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -45,30 +40,92 @@ import TabItem from '@theme/TabItem';
 <TabItem value="py" label="Python">
 
 ```py
-def sum_trans(spark: SparkSession, in0: DataFrame) -> DataFrame:
-    df1 = in0.groupBy(col("acc_id"), col("business_date"))
-    return df1.agg(sum(col("signed_tran_amt")).alias("signed_tran_amount"))
- 
-
+def total_orders(spark: SparkSession, in0: DataFrame) -> DataFrame:
+    return in0.agg(count(lit(1)).alias("number_of_orders"))
 ```
 
 </TabItem>
 <TabItem value="scala" label="Scala">
 
 ```scala
-object sum_trans {
+object total_orders {
   def apply(spark: SparkSession, in: DataFrame): DataFrame =
-    in.groupBy(col("acc_id"), col("business_date"))
-      .agg(sum(col("signed_tran_amount")).as("signed_tran_amount"))
+    in.agg(count(lit(1)).as("number_of_orders"))
 }
-
-
 ```
 
 </TabItem>
 </Tabs>
 
 ````
+
+#### Example 2 - Aggregation with Grouping
+![Example usage of Aggregate - Aggregation with Grouping](./img/agg_eg_2.png)
+````mdx-code-block
+<Tabs>
+
+<TabItem value="py" label="Python">
+
+```py
+def orders_by_date(spark: SparkSession, in0: DataFrame) -> DataFrame:
+    df1 = in0.groupBy(concat(month(col("order_date")), lit("/"), year(col("order_date")))
+                      .alias("order_month(MM/YYYY)"))
+    return df1.agg(count(lit(1)).alias("number_of_orders"))
+```
+
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+object orders_by_date {
+  def apply(spark: SparkSession, in: DataFrame): DataFrame =
+    in.groupBy(
+        concat(month(col("order_date")), lit("/"), year(col("order_date")))
+          .as("order_month(MM/YYYY)")
+      )
+      .agg(count(lit(1)).as("number_of_orders"))
+}
+```
+</TabItem>
+</Tabs>
+
+````
+
+#### Example 3 - Pivot
+![Example usage of Aggregate - Pivoting](./img/agg_eg_3.png)
+````mdx-code-block
+<Tabs>
+
+<TabItem value="py" label="Python">
+
+```py
+def orders_by_date_N_status(spark: SparkSession, in0: DataFrame) -> DataFrame:
+    df1 = in0.groupBy(concat(month(col("order_date")), lit("/"), year(col("order_date"))).alias("order_month(MM/YYYY)"))
+    df2 = df1.pivot("order_status", ["Approved", "Finished", "Pending", "Started"])
+    return df2.agg(count(lit(1)).alias("number_of_orders"))
+```
+
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+object orders_by_date_N_status {
+  def apply(spark: SparkSession, in: DataFrame): DataFrame =
+    in.groupBy(
+        concat(month(col("order_date")), lit("/"), year(col("order_date")))
+          .as("order_month(MM/YYYY)")
+      )
+      .pivot(col("order_status"),
+             List("Approved", "Finished", "Pending", "Started")
+      )
+      .agg(count(lit(1)).as("number_of_orders"))
+}
+```
+</TabItem>
+</Tabs>
+
+````
+
  
 
 
