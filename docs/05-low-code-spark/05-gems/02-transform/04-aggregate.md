@@ -6,15 +6,15 @@ Allows you to group the data and apply aggregation methods and pivot operation.
 
 
 ### Parameters
-| Parameter                     | Description                                                                                 | Required                                         |
-|:------------------------------|:--------------------------------------------------------------------------------------------|:-------------------------------------------------|
-| Dataframe                     | Input dataframe                                                                             | True                                             |
-| Target column (Aggregate Tab) | Output column name of aggregated column                                                     | True                                             |
-| Expression (Aggregate Tab)    | Aggregate function expression<br/> Eg: sum("amount"), count(*), avg("amount")               | True                                             |
-| Target column (Group By Tab)  | Output column name of grouped column                                                        | Required if `Pivot Column` is present            |
-| Expression (Group By Tab)     | Column expression to group on <br/> Eg: col("id"), month(col("order_date"))                 | Required if `Target Column`(Group By) is present |
-| Pivot column                  | Column name to pivot                                                                        | False                                            |
-| Unique values                 | List of values in `Pivot Column` that will be translated to columns in the output DataFrame | False                                            |
+| Parameter                     | Description                                                                                 | Required                                           |
+|:------------------------------|:--------------------------------------------------------------------------------------------|:---------------------------------------------------|
+| Dataframe                     | Input dataframe                                                                             | True                                               |
+| Target column (Aggregate Tab) | Output column name of aggregated column                                                     | True                                               |
+| Expression (Aggregate Tab)    | Aggregate function expression<br/> Eg: sum("amount"), count(*), avg("amount")               | True                                               |
+| Target column (Group By Tab)  | Output column name of grouped column                                                        | Required if `Pivot Column` is present              |
+| Expression (Group By Tab)     | Column expression to group on <br/> Eg: col("id"), month(col("order_date"))                 | Required if a `Target Column`(Group By) is present |
+| Pivot column                  | Column name to pivot                                                                        | False                                              |
+| Unique values                 | List of values in `Pivot Column` that will be translated to columns in the output DataFrame | False                                              |
 
 :::info
 Providing `Unique values` while performing pivot operation improves the performance of the operation since Spark does not have to first compute the list of distinct values of `Pivot Column` internally.

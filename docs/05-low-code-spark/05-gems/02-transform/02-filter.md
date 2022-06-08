@@ -6,10 +6,10 @@ title: Filter
 Filters dataframe based on provided filter condition
 
 ### Parameters
-| Parameter        | Description                                                                                             | Required |
-|:-----------------|:----------------------------------------------------------------------------------------------------|:---------|
-| Dataframe        | Input dataframe on which the filter condition will be applied.                                      | True     |
-| Filter Condition | BooleanType column or boolean expression. Supports sql, python and scala expressions.               | True     |
+| Parameter        | Description                                                                           | Required |
+|:-----------------|:--------------------------------------------------------------------------------------|:---------|
+| Dataframe        | Input dataframe on which the filter condition will be applied.                        | True     |
+| Filter Condition | BooleanType column or boolean expression. Supports sql, python and scala expressions. | True     |
 
 ### Example
 ![Example usage of Filter](./img/filter_eg_1.png)
