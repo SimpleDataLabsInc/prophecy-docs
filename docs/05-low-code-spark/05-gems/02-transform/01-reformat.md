@@ -7,11 +7,11 @@ Edits one or more column names or values, by using expressions and functions. It
 
 
 ### Parameters
-| Parameter     | Description                                   | Required                             |
-|:--------------|:----------------------------------------------|:-------------------------------------|
-| Dataframe     | Input dataframe on which changes are required | True                                 |
-| Target column | Output column name                            | False                                |
-| Expression    | Expression to compute target column           | Required if target column is present |
+| Parameter     | Description                                   | Required                                 |
+|:--------------|:----------------------------------------------|:-----------------------------------------|
+| Dataframe     | Input dataframe on which changes are required | True                                     |
+| Target column | Output column name                            | False                                    |
+| Expression    | Expression to compute target column           | Required if a `Target column` is present |
 
 :::info
 If no columns are selected, then all columns are passed through to the output
