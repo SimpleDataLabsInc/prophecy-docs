@@ -1,36 +1,43 @@
 ---
-title: Multi Fabric Deployments
+title: Reliable CI/CD with Prophecy
 ---
 
-Often, organizations have multiple different execution environments for the various stages of development. A common
-example is a setup with three stages: **Development**, **QA**, **Production**. Each environment has usually its own
-independent data, metastore, clusters, and even permissions.
+**Continuous Integration (CI)** and **Continuous Delivery (CD)** is one of the cornerstones of modern and reliable
+software engineering practise. To iterate quickly on the software, engineers push code as often as possible to their
+main GIT branch (branch shared by all the teammates). The **CI** process automatically tests the pushed code, by running
+unit & integration tests, to avoid any future challenges. After the team has decided that their new code is ready to be
+deployed to production, the **CD** process automatically deploys all the changes after they've been tested to the
+production environment.
 
-Historically, reliable promotion to production has been a challenge, many organizations have faced. With the
-introduction of **modern software engineering practises**, many engineers, have been able to resolve it. However, data
-engineers & practitioners in particular are often stuck in the old days. Thus, missing out on what's became a standard
-in their sister industries.
+For a CI/CD process to work efficiently, the engineers often work and test their code in multiple difference
+environments. A common example is a setup with three stages: **Development**, **QA**, **Production**.
+
+Those practises have been applied to software engineering for many years now and enabled a lot of organizations to
+deploy reliably their code even many times a day! However, even today, the vast majority of data practitioners are
+still struggling with operationalizing their code.
+
+This has been mostly caused by difficult to work with formats (like notebooks or proprietary ETL binaries) that we're
+not used to version and store in GIT, and lack of access to well modeled synthetic data for lower environments.
+Additionally, data users are often not used to working with technologies like GIT, which have a very steep learning
+curve.
 
 ![Data Pipeline](img/multi-fabric-deployments/dev-qa-prod.png)
 
-Since, with Prophecy any data pipeline or job created is stored directly on GIT, we enable any data practitioners
-to leverage the best deployment practises.
+Here comes Prophecy! Since Prophecy functions almost like any other IDE, all your code for data pipelines and jobs is
+directly accessible to you and stored in GIT. This enables any data practitioners to leverage the best DevOps practises
+easily.
 
 ## Single-fabric Development
 
 ![Minimum project setup](img/multi-fabric-deployments/min-project-setup.png)
 
-At minimum, you will find yourself building your **pipelines** and **jobs** as per usual. Your team might want to build
-multiple different **pipelines** that perform different processing logic, and they orchestrate those pipelines - set
-their dependencies, add various gluing scripts (e.g. notifications, simple data movement components), and set the time
-when they should be executed using **jobs**.
-
-In the simplest scenario, you work with a single execution environment only (e.g a single Databricks workspace). In
-those cases, usually everyone on your team has access to that Databricks workspace. Everyone does both development and
-productionization of your pipelines in the same place.
+Let's consider first, the simplest scenario, where you have only a single execution environment (e.g a single Databricks
+workspace). In those cases, usually everyone on your team has access to that environment. Everyone does both development
+and productionization of your pipelines in the same place.
 
 In Prophecy, at minimum, you will find yourself having:
 
+- **multiple projects** - your GIT repositories which store all the Spark, Airflow, and metadata code
 - **multiple data pipelines** - various ETL / ELT tasks written in Spark
 - **multiple jobs** - orchestration of your data pipelines written in Databricks Jobs or Airflow
 - **a single team** - all your teammates in the same place, with the same accesses
@@ -58,7 +65,7 @@ uses large optimal clusters, and has significantly restricted access. In some ca
 should have access to your production environment.
 
 If you'd like to involve more stages, to even further increase the reliability of your development process, you can add
-a **QA environment**. That environment should have data, hardware, and software that closely simulate the Production
+a **QA environment**. That environment should have data, hardware, and software that closely simulates the Production
 environment (e.g. data slices directly taken from production), and should serve as a holding area. Using QA, your
 engineers make sure that the jobs are going to run smoothly in the production environment, without actually potentially
 breaking production, if some code is wrong.
