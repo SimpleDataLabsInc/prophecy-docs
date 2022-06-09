@@ -2,53 +2,51 @@
 title: Reliable CI/CD with Prophecy
 ---
 
-**Continuous Integration (CI)** and **Continuous Delivery (CD)** is one of the cornerstones of modern and reliable
-software engineering practise. To iterate quickly on the software, engineers push code as often as possible to their
+**Continuous Integration (CI)** and **Continuous Delivery (CD)** are some of the cornerstones of modern and reliable
+software engineering practices. To iterate quickly on the software, engineers push code as often as possible to their
 main GIT branch (branch shared by all the teammates). The **CI** process automatically tests the pushed code, by running
 unit & integration tests, to avoid any future challenges. After the team has decided that their new code is ready to be
-deployed to production, the **CD** process automatically deploys all the changes after they've been tested to the
-production environment.
+deployed to production, the **CD** process automatically deploys all the changes after they've been tested in the production environment.
 
-For a CI/CD process to work efficiently, the engineers often work and test their code in multiple difference
-environments. A common example is a setup with three stages: **Development**, **QA**, **Production**.
+For a CI/CD process to work efficiently, the engineers often work and test their code in multiple different environments. 
+A common example is a setup with three stages: **Development**, **QA**, **Production**.
 
-Those practises have been applied to software engineering for many years now and enabled a lot of organizations to
-deploy reliably their code even many times a day! However, even today, the vast majority of data practitioners are
+Those practices have been applied to software engineering for many years now and enabled a lot of organizations to
+deploy reliably their code even **many times a day**! However, even today, the vast majority of data practitioners are
 still struggling with operationalizing their code.
 
-This has been mostly caused by difficult to work with formats (like notebooks or proprietary ETL binaries) that we're
-not used to version and store in GIT, and lack of access to well modeled synthetic data for lower environments.
+This has been mostly caused by** difficult to work with formats** (like notebooks or proprietary ETL binaries) that we're
+not used to versioning and storing in GIT, and lack of access to **well modeled synthetic data** for lower environments.
 Additionally, data users are often not used to working with technologies like GIT, which have a very steep learning
 curve.
 
 ![Data Pipeline](img/reliable-ci-cd/dev-qa-prod.png)
 
-Here comes Prophecy! Since Prophecy functions almost like any other IDE, all your code for data pipelines and jobs is
-directly accessible to you and stored in GIT. This enables any data practitioners to leverage the best DevOps practises
-easily.
+Here comes Prophecy! Since Prophecy works very similar to a **code-based IDE** with an additional **low-code productivity
+layer**, all your code for data pipelines and jobs is directly accessible to you and stored in GIT. This enables any data
+practitioners to leverage the **best DevOps practices easily**.
 
 ## Single-fabric Development
 
 ![Minimum project setup](img/reliable-ci-cd/min-project-setup.png)
 
-Let's consider first, the simplest scenario, where you have only a single execution environment (e.g a single Databricks
-workspace). In those cases, usually everyone on your team has access to that environment. Everyone does both development
-and productionization of your pipelines in the same place.
+First of all, let's consider, the **simplest scenario**, where you have only a single execution environment (e.g a single Databricks
+workspace). In those cases, usually, everyone on your team has access to that environment. Everyone does both the development and productionization of your pipelines in the same place.
 
 In Prophecy, at minimum, you will find yourself having:
 
 - **multiple projects** - your GIT repositories which store all the Spark, Airflow, and metadata code
 - **multiple data pipelines** - various ETL / ELT tasks written in Spark
-- **multiple jobs** - orchestration of your data pipelines written in Databricks Jobs or Airflow
-- **a single team** - all your teammates in the same place, with the same accesses
+- **multiple jobs** - the orchestration of your data pipelines written in Databricks Jobs or Airflow
+- **a single team** - all your teammates in the same place, with the same access
 - **a single fabric** - the connection to your Databricks workspace
 
 This is great for simple setups and very small teams, but can quickly lead to many problems. In such a setup, it's very
-easy for you and your teammates to make mistakes and accidentally affect production pipelines. There's also no data
-separation, so any PII information becomes visible to everyone!
+easy for you and your teammates to make mistakes and **accidentally affect production** pipelines. There's also **lack of data
+separation**, so any PII information becomes visible to everyone!
 
 A better approach is to have physical environments, connected to different stages of development. A common example is a
-setup with three stages: **Development**, **QA**, **Production**. Each environment has usually its own independent data,
+setup with three stages: **Development**, **QA**, **Production**. Each environment has usually its independent data,
 metastore, clusters, and even permissions.
 
 ## Multi-fabric Deployment with Prophecy
@@ -57,7 +55,7 @@ Let's consider a better alternative to a single environment development.
 
 ### Why so many environments?
 
-Simplest alternative involves adding just one more execution environment called **production**. Now you can separate
+The simplest alternative involves adding just one more execution environment called **production**. Now you can separate
 your **development use-cases**, where you can use near-real data (e.g. without PII information), smaller data samples
 (for faster development), smaller cluster sizes (to reduce cost), from the **production use-cases**, where you push your
 code only after you're confident it's going to work well. Only the production environment has access to your real data,
@@ -76,14 +74,13 @@ breaking production, if some code is wrong.
 
 For our example, however, let's focus on a setup with two environments: **Development** & **Production**. Our
 **Development environment** is accessible to our whole organization (developers, analysts, support) and is connected to
-our development databricks workspace, which contains only dummy customer's data. Whereas, our **Production environment**
-is only accessible to our production support team and is connected to our production databricks workspace, which has
-real customer's data.
+our development Databricks workspace, which contains only dummy customer data. Whereas, our **Production environment**
+is only accessible to our production support team and is connected to our production Databricks workspace, which has real customer data.
 
 #### Entities setup
 
 1. Create two **teams**:
-    - **developers** - superset of all the teams, which contains your developers and members of the _prod_support_ team
+    - **developers** - a superset of all the teams, which contains your developers and members of the _prod_support_ team
     - **prod_support** - team composed of members who have privileged production access permissions
 
 2. Create two **fabrics**:
@@ -109,20 +106,19 @@ Phew, that was a lot of work! But the biggest chunk is behind us 💪.
 
 ![Run Progress](img/reliable-ci-cd/run-progress.png)
 
-Now that we have set up our fabrics and teams, built some pipelines, it's time to test the whole data flow on our
-development environment.
+Now that we have set up our fabrics and teams, built some pipelines, it's time to test the whole data flow on our development environment.
 
 Testing your pipelines and jobs is very simple. Simple click on the play button and watch your code run!
 
 :::info Coming Soon
 Note, that currently, we're spinning up a new cluster for each of the tasks, therefore your job might take a few minutes
-to complete. However, soon, you will be able to have a granular control over which pipeline runs on which cluster.
+to complete. However, soon, you will be able to have granular control over which pipeline runs on which cluster.
 :::
 
 #### Deployment to Production
 
 Once we're confident that our job works correctly, and we have tested it well, we can start deploying it to our
-**production** environment. In our setup only a production support engineer can do that. Therefore, login as them,
+**production** environment. In our setup, only a production support engineer can do that. Therefore, login as them,
 duplicate your job on the production fabric, set appropriate pipeline configurations and enable it.
 
 That's it! Now you can commit any remaining changes and release your pipeline. Prophecy automatically takes care of the
