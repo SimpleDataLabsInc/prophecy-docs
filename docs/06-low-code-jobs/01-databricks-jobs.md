@@ -17,4 +17,4 @@ support this, prophecy integrates with Airflow and provides a low-code interface
 ## Guides
 
 1. [How to trigger a job from another job?](/tutorials/low-code-jobs/multi-jobs-trigger)
-2. [How to work with multiple execution environments?](/tutorials/low-code-jobs/multi-fabric-deployments)
+2. [How to design a reliable CI/CD process?](/tutorials/low-code-jobs/reliable-ci-cd)
