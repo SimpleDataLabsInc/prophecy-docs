@@ -21,7 +21,7 @@ not used to version and store in GIT, and lack of access to well modeled synthet
 Additionally, data users are often not used to working with technologies like GIT, which have a very steep learning
 curve.
 
-![Data Pipeline](img/multi-fabric-deployments/dev-qa-prod.png)
+![Data Pipeline](img/reliable-ci-cd/dev-qa-prod.png)
 
 Here comes Prophecy! Since Prophecy functions almost like any other IDE, all your code for data pipelines and jobs is
 directly accessible to you and stored in GIT. This enables any data practitioners to leverage the best DevOps practises
@@ -29,7 +29,7 @@ easily.
 
 ## Single-fabric Development
 
-![Minimum project setup](img/multi-fabric-deployments/min-project-setup.png)
+![Minimum project setup](img/reliable-ci-cd/min-project-setup.png)
 
 Let's consider first, the simplest scenario, where you have only a single execution environment (e.g a single Databricks
 workspace). In those cases, usually everyone on your team has access to that environment. Everyone does both development
@@ -72,7 +72,7 @@ breaking production, if some code is wrong.
 
 ### Development and Production
 
-![Prophecy Setup](img/multi-fabric-deployments/prophecy-setup.png)
+![Prophecy Setup](img/reliable-ci-cd/prophecy-setup.png)
 
 For our example, however, let's focus on a setup with two environments: **Development** & **Production**. Our
 **Development environment** is accessible to our whole organization (developers, analysts, support) and is connected to
@@ -107,7 +107,7 @@ real customer's data.
 
 Phew, that was a lot of work! But the biggest chunk is behind us 💪.
 
-![Run Progress](img/multi-fabric-deployments/run-progress.png)
+![Run Progress](img/reliable-ci-cd/run-progress.png)
 
 Now that we have set up our fabrics and teams, built some pipelines, it's time to test the whole data flow on our
 development environment.
