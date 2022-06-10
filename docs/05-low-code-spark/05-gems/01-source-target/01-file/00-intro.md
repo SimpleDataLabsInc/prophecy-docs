@@ -2,11 +2,7 @@
 title: File
 ---
 
-:::caution 🚧 Work in Progress 🚧
-
-TODO
-
-:::
+Constitutes various file based data sources that can be read and written as using the `Source` and `Target` gems
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
