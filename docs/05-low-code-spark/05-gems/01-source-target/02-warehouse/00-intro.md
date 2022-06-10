@@ -2,11 +2,7 @@
 title: Warehouse
 ---
 
-:::caution 🚧 Work in Progress 🚧
-
-TODO
-
-:::
+Constitutes the warehouses where data can be read from and written to
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
