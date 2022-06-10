@@ -33,7 +33,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs>
 
-<TabItem value="py" label="Python">
+<TabItem value="py" label="DBFS">
 
 ```py
 def copy_file(spark: SparkSession):
@@ -43,6 +43,17 @@ def copy_file(spark: SparkSession):
         "dbfs:/Prophecy/example/target/person.json",
         recurse = False
     )
+```
+
+</TabItem>
+<TabItem value="py2" label="Local">
+
+```py
+def copy_file(spark: SparkSession):
+    import os
+    import shutil
+    shutil.copy2("/dbfs/Prophecy/example/source/person.json",
+                 "/dbfs/Prophecy/example/target/person.json")
 ```
 
 </TabItem>
@@ -57,7 +68,7 @@ def copy_file(spark: SparkSession):
 ````mdx-code-block
 <Tabs>
 
-<TabItem value="py" label="Python">
+<TabItem value="py" label="DBFS">
 
 ```py
 def copy_file(spark: SparkSession):
@@ -66,6 +77,21 @@ def copy_file(spark: SparkSession):
         "dbfs:/Prophecy/example/source/",
         "dbfs:/Prophecy/example/target/",
         recurse = True
+    )
+```
+
+</TabItem>
+<TabItem value="py2" label="Local">
+
+```py
+def copy_file(spark: SparkSession):
+    import os
+    import shutil
+    shutil.copytree(
+        "/dbfs/Prophecy/example/source/",
+        "/dbfs/Prophecy/example/target/",
+        copy_function = shutil.copy2,
+        dirs_exist_ok = True
     )
 ```
 
@@ -81,15 +107,30 @@ def copy_file(spark: SparkSession):
 ````mdx-code-block
 <Tabs>
 
-<TabItem value="py" label="Python">
+<TabItem value="py" label="DBFS">
 
-```py
+```python
 def copy_file(spark: SparkSession):
     from pyspark.dbutils import DBUtils
     DBUtils(spark).fs.cp(
         "dbfs:/Prophecy/example/source/",
         "dbfs:/Prophecy/example/target/source",
         recurse = True
+    )
+```
+
+</TabItem>
+<TabItem value="py2" label="Local">
+
+```python
+def copy_file(spark: SparkSession):
+    import os
+    import shutil
+    shutil.copytree(
+        "/dbfs/Prophecy/example/source/",
+        "/dbfs/Prophecy/example/target/source",
+        copy_function = shutil.copy2,
+        dirs_exist_ok = True
     )
 ```
 
