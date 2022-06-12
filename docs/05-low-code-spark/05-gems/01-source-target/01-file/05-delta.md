@@ -257,7 +257,21 @@ When possible, provide predicates on the partition columns for a partitioned Del
 :::
 
 ### Example
-TODO
+Let's assume our initial customers table is as below:
+
+![Initial customer table](./img/delta/delta_customers_initial_eg1.png)
+
+And we have the below updates coming into customers table
+
+![Initial customer table](./img/delta/delta_customers_updates_eg1.png)
+
+Our output and configurations for SCD1 merge will look like below:
+
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://user-images.githubusercontent.com/103921419/173252757-0a1165f0-68e2-41ca-b6eb-58da51cb76d1.mp4" title="SCD3" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+
 
 ### Spark Code
 
@@ -271,19 +285,19 @@ TODO
 def writeDeltaMerge(spark: SparkSession, in0: DataFrame):
     from delta.tables import DeltaTable, DeltaMergeBuilder
 
-    if DeltaTable.isDeltaTable(spark, "dbfs:/FileStore/data_engg/delta_demo/silver/orders"):
+    if DeltaTable.isDeltaTable(spark, "dbfs:/FileStore/data_engg/delta_demo/silver/customers_scd1"):
         DeltaTable\
-            .forPath(spark, "dbfs:/FileStore/data_engg/delta_demo/silver/orders")\
+            .forPath(spark, "dbfs:/FileStore/data_engg/delta_demo/silver/customers_scd1")\
             .alias("target")\
-            .merge(in0.alias("source"), (col("source.order_id") == col("target.order_id")))\
-            .whenMatchedUpdateAll(condition = (col("order_dt") >= date_sub(current_date(), 7)))\
+            .merge(in0.alias("source"), (col("source.customer_id") == col("target.customer_id")))\
+            .whenMatchedUpdateAll()\
             .whenNotMatchedInsertAll()\
             .execute()
     else:
         in0.write\
             .format("delta")\
             .mode("overwrite")\
-            .save("dbfs:/FileStore/data_engg/delta_demo/silver/orders")
+            .save("dbfs:/FileStore/data_engg/delta_demo/silver/customers_scd1")
 
 ```
 
@@ -295,12 +309,12 @@ object writeDeltaMerge {
 
   def apply(spark: SparkSession, in: DataFrame): Unit = {
     import _root_.io.delta.tables._
-    if (DeltaTable.isDeltaTable(spark, "dbfs:/FileStore/data_engg/delta_demo/silver/orders")) {
+    if (DeltaTable.isDeltaTable(spark, "dbfs:/FileStore/data_engg/delta_demo/silver/customers_scd1")) {
         DeltaTable
-            .forPath(spark, "dbfs:/FileStore/data_engg/delta_demo/silver/orders")
+            .forPath(spark, "dbfs:/FileStore/data_engg/delta_demo/silver/customers_scd1")
             .as("target")
-            .merge(in0.as("source"), (col("source.order_id") === col("target.order_id")))
-            .whenMatched(col("order_dt") >= date_sub(current_date(), 7))
+            .merge(in0.as("source"), (col("source.customer_id") === col("target.customer_id")))
+            .whenMatched()
             .updateAll()
             .whenNotMatched()
             .insertAll()
@@ -310,7 +324,7 @@ object writeDeltaMerge {
         in0.write
             .format("delta")
             .mode("overwrite")
-            .save("dbfs:/FileStore/data_engg/delta_demo/silver/orders")
+            .save("dbfs:/FileStore/data_engg/delta_demo/silver/customers_scd1")
     }
   }
 
@@ -337,7 +351,14 @@ object writeDeltaMerge {
 | Flag values        | Option to choose the min/max flag to be true/false or 0/1                             | True     |
 
 ### Example
-TODO
+
+Using the same customer tables as in our merge example above, output and configurations  for SCD2 merge will look like below:
+
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://user-images.githubusercontent.com/103921419/173252742-00930084-b3b3-4b8a-b5bb-59f39b74792b.mp4" title="SCD3" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+
 
 ### Spark Code
 
@@ -504,6 +525,17 @@ object writeDeltaSCD2 {
 
 ````
 
+## SCD3 implementation using delta
+
+Using the same customer tables as in our merge example above, output and configurations for SCD3 merge will look like below.
+
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://user-images.githubusercontent.com/103921419/173252728-8924f0fb-6e81-44b7-9c39-17ba1d8f4d4c.mp4" title="SCD3" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+
+
+----
 :::info
-To checkout more examples on how and when to use merge (SCD1), SCD2, SCD3 write modes using delta with Prophecy [click here](https://www.prophecy.io/blogs/prophecy-with-delta).
+To checkout our blogpost on making data lakehouse easier using Delta with Prophecy [click here](https://www.prophecy.io/blogs/prophecy-with-delta).
 :::

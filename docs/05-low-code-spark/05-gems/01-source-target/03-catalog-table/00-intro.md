@@ -2,9 +2,7 @@
 title: Catalog Table
 ---
 
-:::caution 🚧 Work in Progress 🚧
-
-TODO
+Constitutes various catalog based providers that can be read and written from as using the `Source` and `Target` gems
 
 :::
 
