@@ -261,15 +261,16 @@ Let's assume our initial customers table is as below:
 
 ![Initial customer table](./img/delta/delta_customers_initial_eg1.png)
 
-And we have the below updates coming in as customer table
+And we have the below updates coming into customers table
+
 ![Initial customer table](./img/delta/delta_customers_updates_eg1.png)
 
 Our output and configurations for SCD1 merge will look like below:
 
-
-https://user-images.githubusercontent.com/103921419/173252757-0a1165f0-68e2-41ca-b6eb-58da51cb76d1.mp4
-
-
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://user-images.githubusercontent.com/103921419/173252757-0a1165f0-68e2-41ca-b6eb-58da51cb76d1.mp4" title="SCD3" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
 
 
 ### Spark Code
@@ -351,12 +352,12 @@ object writeDeltaMerge {
 
 ### Example
 
-Using the same customer tables as mentioned above, output and configurations  for SCD2 merge will look like below:
+Using the same customer tables as in our merge example above, output and configurations  for SCD2 merge will look like below:
 
-
-
-https://user-images.githubusercontent.com/103921419/173252742-00930084-b3b3-4b8a-b5bb-59f39b74792b.mp4
-
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://user-images.githubusercontent.com/103921419/173252742-00930084-b3b3-4b8a-b5bb-59f39b74792b.mp4" title="SCD3" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
 
 
 ### Spark Code
@@ -526,10 +527,15 @@ object writeDeltaSCD2 {
 
 ## SCD3 implementation using delta
 
-Using the same customer tables as mentioned above, output and configurations for SCD3 merge will look like below.
+Using the same customer tables as in our merge example above, output and configurations for SCD3 merge will look like below.
 
-https://user-images.githubusercontent.com/103921419/173252728-8924f0fb-6e81-44b7-9c39-17ba1d8f4d4c.mp4
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://user-images.githubusercontent.com/103921419/173252728-8924f0fb-6e81-44b7-9c39-17ba1d8f4d4c.mp4" title="SCD3" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
 
+
+----
 :::info
-To checkout our blogpost on using delta with Prophecy to build data lakehouse [click here](https://www.prophecy.io/blogs/prophecy-with-delta).
+To checkout our blogpost on making data lakehouse easier using Delta with Prophecy [click here](https://www.prophecy.io/blogs/prophecy-with-delta).
 :::
