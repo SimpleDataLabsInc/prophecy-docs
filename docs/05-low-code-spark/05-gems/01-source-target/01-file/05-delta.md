@@ -257,7 +257,14 @@ When possible, provide predicates on the partition columns for a partitioned Del
 :::
 
 ### Example
-TODO
+Let's assume our initial customers table is as below:
+
+![Initial customer table](./img/delta/delta_customers_initial_eg1.png)
+
+And we have the below updates coming in as customer table
+![Initial customer table](./img/delta/delta_customers_updates_eg1.png)
+
+Our output and configurations for SCD1 merge will look like below
 
 ### Spark Code
 
@@ -271,19 +278,19 @@ TODO
 def writeDeltaMerge(spark: SparkSession, in0: DataFrame):
     from delta.tables import DeltaTable, DeltaMergeBuilder
 
-    if DeltaTable.isDeltaTable(spark, "dbfs:/FileStore/data_engg/delta_demo/silver/orders"):
+    if DeltaTable.isDeltaTable(spark, "dbfs:/FileStore/data_engg/delta_demo/silver/customers_scd1"):
         DeltaTable\
-            .forPath(spark, "dbfs:/FileStore/data_engg/delta_demo/silver/orders")\
+            .forPath(spark, "dbfs:/FileStore/data_engg/delta_demo/silver/customers_scd1")\
             .alias("target")\
-            .merge(in0.alias("source"), (col("source.order_id") == col("target.order_id")))\
-            .whenMatchedUpdateAll(condition = (col("order_dt") >= date_sub(current_date(), 7)))\
+            .merge(in0.alias("source"), (col("source.customer_id") == col("target.customer_id")))\
+            .whenMatchedUpdateAll()\
             .whenNotMatchedInsertAll()\
             .execute()
     else:
         in0.write\
             .format("delta")\
             .mode("overwrite")\
-            .save("dbfs:/FileStore/data_engg/delta_demo/silver/orders")
+            .save("dbfs:/FileStore/data_engg/delta_demo/silver/customers_scd1")
 
 ```
 
@@ -295,12 +302,12 @@ object writeDeltaMerge {
 
   def apply(spark: SparkSession, in: DataFrame): Unit = {
     import _root_.io.delta.tables._
-    if (DeltaTable.isDeltaTable(spark, "dbfs:/FileStore/data_engg/delta_demo/silver/orders")) {
+    if (DeltaTable.isDeltaTable(spark, "dbfs:/FileStore/data_engg/delta_demo/silver/customers_scd1")) {
         DeltaTable
-            .forPath(spark, "dbfs:/FileStore/data_engg/delta_demo/silver/orders")
+            .forPath(spark, "dbfs:/FileStore/data_engg/delta_demo/silver/customers_scd1")
             .as("target")
-            .merge(in0.as("source"), (col("source.order_id") === col("target.order_id")))
-            .whenMatched(col("order_dt") >= date_sub(current_date(), 7))
+            .merge(in0.as("source"), (col("source.customer_id") === col("target.customer_id")))
+            .whenMatched()
             .updateAll()
             .whenNotMatched()
             .insertAll()
@@ -310,7 +317,7 @@ object writeDeltaMerge {
         in0.write
             .format("delta")
             .mode("overwrite")
-            .save("dbfs:/FileStore/data_engg/delta_demo/silver/orders")
+            .save("dbfs:/FileStore/data_engg/delta_demo/silver/customers_scd1")
     }
   }
 
@@ -337,7 +344,8 @@ object writeDeltaMerge {
 | Flag values        | Option to choose the min/max flag to be true/false or 0/1                             | True     |
 
 ### Example
-TODO
+
+Using the same customer tables as mentioned above, output and configurations  for SCD2 merge will look like below
 
 ### Spark Code
 
@@ -504,6 +512,10 @@ object writeDeltaSCD2 {
 
 ````
 
+## SCD3 implementation using delta
+
+Using the same customer tables as mentioned above, output and configurations for SCD3 merge will look like below.
+
 :::info
-To checkout more examples on how and when to use merge (SCD1), SCD2, SCD3 write modes using delta with Prophecy [click here](https://www.prophecy.io/blogs/prophecy-with-delta).
+To checkout our blogpost on using delta with Prophecy to build data lakehouse [click here](https://www.prophecy.io/blogs/prophecy-with-delta).
 :::
