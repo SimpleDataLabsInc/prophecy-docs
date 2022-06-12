@@ -264,7 +264,13 @@ Let's assume our initial customers table is as below:
 And we have the below updates coming in as customer table
 ![Initial customer table](./img/delta/delta_customers_updates_eg1.png)
 
-Our output and configurations for SCD1 merge will look like below
+Our output and configurations for SCD1 merge will look like below:
+
+
+https://user-images.githubusercontent.com/103921419/173252757-0a1165f0-68e2-41ca-b6eb-58da51cb76d1.mp4
+
+
+
 
 ### Spark Code
 
@@ -345,7 +351,13 @@ object writeDeltaMerge {
 
 ### Example
 
-Using the same customer tables as mentioned above, output and configurations  for SCD2 merge will look like below
+Using the same customer tables as mentioned above, output and configurations  for SCD2 merge will look like below:
+
+
+
+https://user-images.githubusercontent.com/103921419/173252742-00930084-b3b3-4b8a-b5bb-59f39b74792b.mp4
+
+
 
 ### Spark Code
 
@@ -515,6 +527,8 @@ object writeDeltaSCD2 {
 ## SCD3 implementation using delta
 
 Using the same customer tables as mentioned above, output and configurations for SCD3 merge will look like below.
+
+https://user-images.githubusercontent.com/103921419/173252728-8924f0fb-6e81-44b7-9c39-17ba1d8f4d4c.mp4
 
 :::info
 To checkout our blogpost on using delta with Prophecy to build data lakehouse [click here](https://www.prophecy.io/blogs/prophecy-with-delta).
