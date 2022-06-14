@@ -1,7 +1,12 @@
 ---
-title: "Projects & Git"
-date: 2022-02-13T17:28:12-08:00
-weight: 3
+title: Projects & Git
+id: project
+description: Keeping your Pipelines, Datasets and Jobs under (source) control
+sidebar_position: 5
+tags:
+   - concepts
+   - project
+   - git
 ---
 
 Project is the primary unit of development and deployment to production in Prophecy.

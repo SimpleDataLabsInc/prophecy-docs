@@ -2,8 +2,7 @@
   "label": "Core Concepts",
   "position": 4,
   "link": {
-    "type": "doc",
-    "id": "intro"
+    "type": "generated-index"
   },
   "collapsible": true,
   "collapsed": true

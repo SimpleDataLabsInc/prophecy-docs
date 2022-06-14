@@ -1,7 +1,11 @@
 ---
 title: "Pipelines"
-date: 2022-02-13T17:28:23-08:00
-weight: 4
+id: pipeline
+description: The recipes of the Prophecy world
+sidebar_position: 1
+tags:
+   - concepts
+   - pipelines
 ---
 
 A `Pipeline` (formerly known as a *Workflow*) is a type of entity within Prophecy that is used to represent the flow of data. They are similar to directions you might use on a road trip: You have a ***Start*** and ***Finish*** ([Datasets](02-dataset.md)) and the ***steps*** to take along the way ([Instructions](03-instructions.md)). 

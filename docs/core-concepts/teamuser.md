@@ -1,9 +1,12 @@
 ---
-title: "Teams & Users"
-date: 2022-02-13T17:21:45-08:00
-weight: 1
-description: >
-  Teams & Users in Prophecy enable you to collaborate
+title: Teams & Users
+id: teamuser
+description: Stop. Collaborate and listen
+sidebar_position: 7
+tags:
+   - concepts
+   - teams
+   - users
 ---
 
 ## Teams & Users

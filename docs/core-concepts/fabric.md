@@ -1,7 +1,14 @@
 ---
-title: "Fabric"
-date: 2022-02-13T17:28:42-08:00
-weight: 2
+title: Fabrics
+id: fabric
+description: Location, Location, Location
+sidebar_position: 4
+tags:
+   - concepts
+   - fabric
+   - source
+   - target
+   - datasets
 ---
 
 Fabric is a logical execution environment. Teams organize their data engineering into multiple environments such as *development*, 
