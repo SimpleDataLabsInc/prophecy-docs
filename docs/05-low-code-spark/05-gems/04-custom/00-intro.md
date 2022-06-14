@@ -2,11 +2,7 @@
 title: Custom
 ---
 
-:::caution 🚧 Work in Progress 🚧
-
-TODO
-
-:::
+Set of gems that do not fall into the stereotypical buckets of gems
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
