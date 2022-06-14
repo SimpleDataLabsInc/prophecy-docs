@@ -4,7 +4,7 @@ title: Core Concepts
 
 :::caution 🚧 Work in Progress 🚧
 
-TODO
+Prophecy is a rapidly evolving product. Screenshots or documentation may not exactly match user experience, especially with newer features.
 
 :::
 
