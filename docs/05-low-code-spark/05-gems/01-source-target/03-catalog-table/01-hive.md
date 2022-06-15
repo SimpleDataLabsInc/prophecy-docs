@@ -163,8 +163,8 @@ def Target(spark: SparkSession, in0: DataFrame):
 ```scala
 object Target {
 
-  def apply(spark: SparkSession): DataFrame = {
-    in0.write
+  def apply(spark: SparkSession, in: DataFrame): DataFrame = {
+    in.write
         .format("hive")
         .option("fileFormat", "parquet")
         .mode("overwrite")
