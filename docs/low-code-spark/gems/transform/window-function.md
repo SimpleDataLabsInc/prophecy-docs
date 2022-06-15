@@ -6,9 +6,10 @@ title: Window Function
 Allows you to define a **WindowSpec** and apply Window functions on a dataframe
 
 ### Parameters
+
 | Parameter         | Description                                                                                 | Required                                                                                              |
-|:------------------|:--------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------|
-| Dataframe         | Input dataframe                                                                             | True                                                                                                  |                                                                                                                                                                                                                                                                                                                                                                            | True     |
+| :---------------- | :------------------------------------------------------------------------------------------ | :---------------------------------------------------------------------------------------------------- | --- | ---- |
+| Dataframe         | Input dataframe                                                                             | True                                                                                                  |     | True |
 | Target column     | Output Column name                                                                          | True                                                                                                  |
 | Source expression | Window function expression to perform over the created Window                               | True                                                                                                  |
 | Order columns     | Columns to order by in Window. Must be a numeric type column if a `Range Frame` is selected | Required when `Source expression` has a Ranking/Analytical function OR when `Range Frame` is selected |
@@ -17,7 +18,7 @@ Allows you to define a **WindowSpec** and apply Window functions on a dataframe
 | Range frame       | Range based frame boundary to apply on Window                                               | False                                                                                                 |
 
 :::info
-When `Order Columns` are not defined, an unbounded window frame **(rowFrame, unboundedPreceding, unboundedFollowing)** is used by default. 
+When `Order Columns` are not defined, an unbounded window frame **(rowFrame, unboundedPreceding, unboundedFollowing)** is used by default.
 :::
 :::info
 When `Order Columns` are defined, a growing window frame **(rangeFrame, unboundedPreceding, currentRow)** is used by default.
@@ -26,14 +27,17 @@ When `Order Columns` are defined, a growing window frame **(rangeFrame, unbounde
 ### Examples
 
 ---
+
 #### Ranking Functions with Window
+
 Examples of ranking functions are: `row_number(), rank(), dense_rank() and ntile()`
 :::info
-Only the default window frame **(rowFrame, unboundedPreceding, currentRow)** can be used with 
-Ranking functions 
+Only the default window frame **(rowFrame, unboundedPreceding, currentRow)** can be used with
+Ranking functions
 :::
 
 ![Example usage of Window - Ranking](./img/window_eg_ranking.png)
+
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -46,7 +50,7 @@ import TabItem from '@theme/TabItem';
 def rank_cust_orders(spark: SparkSession, in0: DataFrame) -> DataFrame:
     return in0\
         .withColumn(
-            "order_number", 
+            "order_number",
             row_number().over(
                 Window.partitionBy(col("customer_id")).orderBy(col("order_date").asc())
             )
@@ -90,7 +94,9 @@ object rank_cust_orders {
 ````
 
 ---
+
 #### Analytical Functions with Window
+
 Examples of analytical functions are: `lead(), lag(), cume_dist() etc`
 :::info
 Window frame for `lead()` and `lag()` can not be specified.
@@ -99,6 +105,7 @@ Window frame for `lead()` and `lag()` can not be specified.
 Only the default window frame **(rangeFrame, unboundedPreceding, currentRow)** can be used with `cume_dist()`
 :::
 ![Example usage of Window - Analytical](./img/window_eg_analytical.png)
+
 ````mdx-code-block
 
 <Tabs>
@@ -115,7 +122,7 @@ def analyse_orders(spark: SparkSession, in0: DataFrame) -> DataFrame:
           )
         )\
         .withColumn(
-            "next_order_date", 
+            "next_order_date",
             lead(col("order_date")).over(
                 Window.partitionBy(col("customer_id")).orderBy(col("order_id").asc())
             )
@@ -152,8 +159,10 @@ object analyse_orders {
 ````
 
 #### Aggregate Functions with Window
+
 Examples of analytical functions are: `min(), max(), avg() etc`
 ![Example usage of Window - Aggregate](./img/window_eg_agg.png)
+
 ````mdx-code-block
 
 <Tabs>

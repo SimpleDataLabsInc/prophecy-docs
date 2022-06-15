@@ -4,26 +4,28 @@ id: delta
 description: Delta
 sidebar_position: 5
 tags:
-   - gems
-   - file
-   - delta
+  - gems
+  - file
+  - delta
 ---
 
 Reads data from delta files present at a path and writes delta files to a path based on configuration.
 
 ## Source
+
 Reads data from delta files present at a path.
 
-
 ### Source Parameters
+
 | Parameter      | Description                                | Required |
-|:---------------|:-------------------------------------------|:---------|
+| :------------- | :----------------------------------------- | :------- |
 | Location       | File path where delta files are present    | True     |
 | Read Timestamp | Time travel to a specific timestamp        | False    |
 | Read Version   | Time travel to a specific version of table | False    |
 
 :::note
 For time travel on delta tables:
+
 1. Only one among timestamp and version can be chosen at a time for time travel.
 2. Timestamp should be between the first commit timestamp and the latest commit timestamp in the table.
 3. Version needs to be an integer. Its value has to be between min and max version of table.
@@ -36,6 +38,7 @@ To read more about delta time travel and its use cases [click here](https://data
 :::
 
 ### Source Example
+
 ![Example usage of Delta](./img/delta/delta_source_eg.gif)
 
 ### Spark Code
@@ -142,16 +145,16 @@ object readDelta {
 
 ````
 
-
-
-
 ---
+
 ## Target
+
 Writes data in delta format in parquet files based on the configuration.
 
 ### Target Parameters
+
 | Parameter                     | Description                                                                                                                                                                | Required |
-|:------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------|
+| :---------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------- |
 | Location                      | File path where delta files needs to be written                                                                                                                            | True     |
 | Write mode                    | Write mode for dataframe                                                                                                                                                   | True     |
 | Optimise write                | If true, it optimizes spark partition sizes based on the actual data                                                                                                       | False    |
@@ -165,7 +168,7 @@ Writes data in delta format in parquet files based on the configuration.
 Below are different type of write modes which prophecy provided delta format supports.
 
 | Write Mode | Description                                                                                                                                                                                   |
-|:-----------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| :--------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | overwrite  | If data already exists, existing data is expected to be overwritten by the contents of the DataFrame.                                                                                         |
 | append     | If data already exists, contents of the DataFrame are expected to be appended to existing data.                                                                                               |
 | ignore     | If data already exists, the save operation is expected not to save the contents of the DataFrame and not to change the existing data. This is similar to a CREATE TABLE IF NOT EXISTS in SQL. |
@@ -176,8 +179,8 @@ Below are different type of write modes which prophecy provided delta format sup
 Among these write modes overwrite, append, ignore and error works the same way as in case of parquet file writes.
 Merge and SCD2 merge would be explained with examples in the following sections.
 
-
 ### Target Example
+
 ![Example usage of Filter](./img/delta/delta_target_eg.gif)
 
 ### Spark Code
@@ -239,7 +242,7 @@ This operation is also commonly known as upserting (update/insert) or SCD1 merge
 ### Parameters
 
 | Parameter                       | Description                                                                                                                                   | Required |
-|:--------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------|:---------|
+| :------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------- | :------- |
 | Source alias                    | Alias to use for source dataframe                                                                                                             | True     |
 | Target alias                    | Alias to use for existing delta table                                                                                                         | True     |
 | Merge Condition                 | Condition to merge data from source dataframe to target table, which would be used to perform update, delete, or insert actions as specified. | True     |
@@ -253,16 +256,18 @@ This operation is also commonly known as upserting (update/insert) or SCD1 merge
 | When Not Matched Expressions    | Optional expressions for setting the values of columns that need to be updated.                                                               | False    |
 
 :::note
-1. At least one action out of update, delete or insert needs to be set. 
+
+1. At least one action out of update, delete or insert needs to be set.
 2. Delete removes the data from the latest version of the Delta table but does not remove it from the physical storage until the old versions are explicitly vacuumed. See [vaccum](https://docs.delta.io/latest/delta-utility.html#-delta-vacuum) for details.
 3. A merge operation can fail if multiple rows of the source dataset match and the merge attempts to update the same rows of the target Delta table. Deduplicate gem can be placed before target if duplicate rows at source are expected.
-:::
+   :::
 
 :::tip
 When possible, provide predicates on the partition columns for a partitioned Delta table as such predicates can significantly speed up the operations.
 :::
 
 ### Example
+
 Let's assume our initial customers table is as below:
 
 ![Initial customer table](./img/delta/delta_customers_initial_eg1.png)
@@ -277,7 +282,6 @@ Our output and configurations for SCD1 merge will look like below:
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://user-images.githubusercontent.com/103921419/173252757-0a1165f0-68e2-41ca-b6eb-58da51cb76d1.mp4" title="SCD3" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
-
 
 ### Spark Code
 
@@ -346,8 +350,9 @@ object writeDeltaMerge {
 ## SCD2 merge write mode with Delta
 
 ### Parameters
+
 | Parameter          | Description                                                                           | Required |
-|:-------------------|:--------------------------------------------------------------------------------------|:---------|
+| :----------------- | :------------------------------------------------------------------------------------ | :------- |
 | Key columns        | List of key columns which would remain constant                                       | True     |
 | Historic columns   | List of columns which would change over time for which history needs to be maintained | True     |
 | From time column   | Time from which a particular row became valid                                         | True     |
@@ -358,13 +363,12 @@ object writeDeltaMerge {
 
 ### Example
 
-Using the same customer tables as in our merge example above, output and configurations  for SCD2 merge will look like below:
+Using the same customer tables as in our merge example above, output and configurations for SCD2 merge will look like below:
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://user-images.githubusercontent.com/103921419/173252742-00930084-b3b3-4b8a-b5bb-59f39b74792b.mp4" title="SCD3" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
-
 
 ### Spark Code
 
@@ -540,8 +544,8 @@ Using the same customer tables as in our merge example above, output and configu
 <iframe src="https://user-images.githubusercontent.com/103921419/173252728-8924f0fb-6e81-44b7-9c39-17ba1d8f4d4c.mp4" title="SCD3" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
+---
 
-----
 :::info
 To checkout our blogpost on making data lakehouse easier using Delta with Prophecy [click here](https://www.prophecy.io/blogs/prophecy-with-delta).
 :::

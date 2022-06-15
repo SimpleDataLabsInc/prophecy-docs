@@ -95,24 +95,26 @@ real customer data.
 #### Entities setup
 
 1. Create two **teams**:
-    - **developers** - a superset of all the teams, which contains your developers and members of the _prod_support_
-      team
-    - **prod_support** - team composed of members who have privileged production access permissions
+
+   - **developers** - a superset of all the teams, which contains your developers and members of the _prod_support_
+     team
+   - **prod_support** - team composed of members who have privileged production access permissions
 
 2. Create two **fabrics**:
-    - **development** - owned by the _developers_ team
-    - **production** - owned by the _prod_support_ team
 
-5. Set up your **projects** - create your projects, as you would before. Projects should be owned by the _developers_
+   - **development** - owned by the _developers_ team
+   - **production** - owned by the _prod_support_ team
+
+3. Set up your **projects** - create your projects, as you would before. Projects should be owned by the _developers_
    team.
 
-6. Set up your **jobs** - for every single set of pipelines you'd like to schedule, create two jobs:
-    - **job_development** - jobs built by the _developers_ for integration and testing purposes
-    - **job_production** - jobs built by the _prod_support_ team, based on the development jobs - they will run in the
-      production environment
+4. Set up your **jobs** - for every single set of pipelines you'd like to schedule, create two jobs:
+   - **job_development** - jobs built by the _developers_ for integration and testing purposes
+   - **job_production** - jobs built by the _prod_support_ team, based on the development jobs - they will run in the
+     production environment
 
 <div style={{position: 'relative', 'padding-bottom': '56.25%', height: 0}}>
-   <iframe src="https://www.loom.com/embed/b9669f374f504e469b2f88374bcf35d3" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen 
+   <iframe src="https://www.loom.com/embed/b9669f374f504e469b2f88374bcf35d3" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
       style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}></iframe>
 </div>
 
@@ -146,7 +148,7 @@ If you're new to this process, check out, our [GIT](/metadata/git)
 and [jobs deployment](/low-code-jobs/databricks-jobs#deployment) documentation.
 
 <div style={{position: 'relative', 'padding-bottom': '56.25%', height: 0}}>
-   <iframe src="https://www.loom.com/embed/28153636876f409184e6ba2dcbc8f273" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen 
+   <iframe src="https://www.loom.com/embed/28153636876f409184e6ba2dcbc8f273" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
       style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}></iframe>
 </div>
 

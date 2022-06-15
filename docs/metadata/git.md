@@ -1,11 +1,11 @@
 ---
 title: Git
 id: git
-description: Source control 
+description: Source control
 sidebar_position: 1
 tags:
-   - metadata
-   - git
+  - metadata
+  - git
 ---
 
 :::caution 🚧 Work in Progress 🚧

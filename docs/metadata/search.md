@@ -4,8 +4,8 @@ id: search
 description: Search across entities within Prophecy
 sidebar_position: 2
 tags:
-   - metadata
-   - search
+  - metadata
+  - search
 ---
 
 :::caution 🚧 Work in Progress 🚧

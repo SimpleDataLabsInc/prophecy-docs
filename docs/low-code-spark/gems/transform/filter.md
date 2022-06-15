@@ -6,12 +6,14 @@ title: Filter
 Filters dataframe based on provided filter condition
 
 ### Parameters
+
 | Parameter        | Description                                                                           | Required |
-|:-----------------|:--------------------------------------------------------------------------------------|:---------|
+| :--------------- | :------------------------------------------------------------------------------------ | :------- |
 | Dataframe        | Input dataframe on which the filter condition will be applied.                        | True     |
 | Filter Condition | BooleanType column or boolean expression. Supports sql, python and scala expressions. | True     |
 
 ### Example
+
 ![Example usage of Filter](./img/filter_eg_1.png)
 
 ### Spark Code
@@ -28,7 +30,7 @@ import TabItem from '@theme/TabItem';
 def Filter_Orders(spark: SparkSession, in0: DataFrame) -> DataFrame:
     return in0.filter(
         (
-          ((col("order_category") == lit("Marketing")) 
+          ((col("order_category") == lit("Marketing"))
           & ((col("order_status") == lit("Finished")) | (col("order_status") == lit("Approved"))))
           & ~ col("is_discounted")
         )

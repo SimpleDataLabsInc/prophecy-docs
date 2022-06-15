@@ -1,12 +1,12 @@
 ---
 title: Teradata
 id: teradata
-description: Teradata 
+description: Teradata
 sidebar_position: 3
 tags:
-   - gems
-   - warehouse
-   - teradata
+  - gems
+  - warehouse
+  - teradata
 ---
 
 :::caution Enterprise Only
@@ -14,7 +14,6 @@ tags:
 Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about the Enterprise offering.
 
 :::
-
 
 :::caution 🚧 Work in Progress 🚧
 

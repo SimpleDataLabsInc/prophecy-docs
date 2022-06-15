@@ -96,7 +96,7 @@ Each file within this directory will be a separate valid XLSX file with a segmen
 
 1. Add a `Repartition` gem in `Coalesce` mode with the `Partition Count` set to `1`. <br />![Coalesce using Repartition](img/xlsx_tgt_5.5.png)<br />
 2. Connect it between your second-to-last transformation and the target gem<br />![Attach coalesce before desired target](img/xlsx_tgt_6.png)<br />
-   
+
 After running, your output will still be a directory, but this time it will only contain a single output file.
 
 ![Single output after coalesce](img/xlsx_tgt_7.png)

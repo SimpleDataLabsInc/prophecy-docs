@@ -5,10 +5,10 @@ title: Order By
 
 Sorts dataframe on one or more columns in ascending or descending order.
 
-
 ### Parameters
+
 | Parameter     | Description                                | Required |
-|:--------------|:-------------------------------------------|:---------|
+| :------------ | :----------------------------------------- | :------- |
 | Dataframe     | Input dataframe which needs to be sorted   | True     |
 | Order columns | Columns to sort dataframe by               | True     |
 | Sort          | Order of sorting - ascending or descending | True     |
@@ -19,7 +19,7 @@ Sorts dataframe on one or more columns in ascending or descending order.
 
 ### Spark Code
 
-````mdx-code-block 
+````mdx-code-block
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -38,14 +38,12 @@ def Sort(spark: SparkSession, in0: DataFrame) -> DataFrame:
 ```scala
 object Sort {
   def apply(spark: SparkSession, in: DataFrame): DataFrame =
-    in.orderBy(col("updated_at").desc, col("name").asc)  
+    in.orderBy(col("updated_at").desc, col("name").asc)
 }
-``` 
+```
 
 </TabItem>
 </Tabs>
 
 
 ````
- 
-

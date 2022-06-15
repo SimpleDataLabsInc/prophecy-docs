@@ -4,9 +4,9 @@ id: avro
 description: Avro
 sidebar_position: 3
 tags:
-   - gems
-   - file
-   - avro
+  - gems
+  - file
+  - avro
 ---
 
 :::caution 🚧 Work in Progress 🚧

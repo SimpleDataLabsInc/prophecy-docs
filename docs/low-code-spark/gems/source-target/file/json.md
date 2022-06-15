@@ -4,9 +4,9 @@ id: json
 description: JSON
 sidebar_position: 6
 tags:
-   - gems
-   - file
-   - json
+  - gems
+  - file
+  - json
 ---
 
 :::caution 🚧 Work in Progress 🚧

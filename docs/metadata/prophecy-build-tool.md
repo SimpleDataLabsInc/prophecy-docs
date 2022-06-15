@@ -5,9 +5,10 @@ id: prophecy-build-tool
 description: Prophecy Build tool
 sidebar_position: 4
 tags:
-   - metadata
-   - build
+  - metadata
+  - build
 ---
+
 :::caution 🚧 Work in Progress 🚧
 
 TODO

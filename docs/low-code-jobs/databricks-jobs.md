@@ -8,11 +8,11 @@ support this, prophecy integrates with Airflow and provides a low-code interface
 
 ## Development
 
-## Configuration 
+## Configuration
 
 ## Deployment
 
-## Monitoring 
+## Monitoring
 
 ## Guides
 

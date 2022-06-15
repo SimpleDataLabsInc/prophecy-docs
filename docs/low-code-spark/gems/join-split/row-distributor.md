@@ -9,12 +9,14 @@ This is useful for cases where rows from the input dataframe needs to be distrib
 into multiple dataframes in different ways for the downstream application/pipeline.
 
 ### Parameters
+
 | Parameter         | Description                                                                                              | Required |
-|:------------------|:---------------------------------------------------------------------------------------------------------|:---------|
+| :---------------- | :------------------------------------------------------------------------------------------------------- | :------- |
 | Dataframe         | Input dataframe for which rows needs to be distributed into multiple dataframes                          | True     |
 | Filter Conditions | BooleanType column or boolean expression for each output tab. Supports sql, python and scala expressions | True     |
 
 ### Example
+
 ![](./img/rowdistributor_eg_1.png)
 
 :::info
