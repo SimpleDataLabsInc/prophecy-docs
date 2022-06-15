@@ -32,18 +32,10 @@ const Slider = ({ slides }) => {
     <StyledSlider>
     <i class="fa fa-chevron-left" onClick={prevSlide} style={{'position': 'absolute','top': '50%','left': '0px','font-size': '2rem'}}></i>
     <i class="fa fa-chevron-right" onClick={nextSlide} style={{'position': 'absolute','top': '50%','right': '0px','font-size': '2rem'}}></i>
-
-      {slides.map((slide, index) => {
-        return (
-          <div key={index}>
-            {index === current && (
-            <div style={{ padding: '30px'}}>
-              <SlideImage source={slide.image}></SlideImage>
-              {slide.description}</div>
-            )}
-          </div>
-        );
-      })}
+    <div style={{ padding: '30px'}}>
+      <SlideImage source={slides[current].image}></SlideImage>
+      {slides[current].description}
+    </div>
     </StyledSlider>
   );
 };
