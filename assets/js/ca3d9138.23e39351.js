@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[6715],{9347:function(e){e.exports=JSON.parse('{"label":"avro","permalink":"/tags/avro","allTagsPath":"/tags","count":1,"items":[{"id":"low-code-spark/gems/source-target/file/avro","title":"Avro","description":"Avro","permalink":"/low-code-spark/gems/source-target/file/avro"}]}')}}]);

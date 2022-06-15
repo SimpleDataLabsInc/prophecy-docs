@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[1609],{1208:function(e){e.exports=JSON.parse('{"label":"xlsx","permalink":"/tags/xlsx","allTagsPath":"/tags","count":1,"items":[{"id":"low-code-spark/gems/source-target/file/xlsx","title":"XLSX (Excel)","description":"XLSX (Excel)","permalink":"/low-code-spark/gems/source-target/file/xlsx"}]}')}}]);

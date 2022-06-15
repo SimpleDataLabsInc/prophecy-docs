@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[3017],{3658:function(e){e.exports=JSON.parse('{"label":"pipelines","permalink":"/tags/pipelines","allTagsPath":"/tags","count":1,"items":[{"id":"core-concepts/pipeline","title":"Pipelines","description":"The recipes of the Prophecy world","permalink":"/core-concepts/pipeline"}]}')}}]);

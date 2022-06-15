@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[7559],{6194:function(a){a.exports=JSON.parse('{"label":"kafka","permalink":"/tags/kafka","allTagsPath":"/tags","count":1,"items":[{"id":"low-code-spark/gems/source-target/file/kafka","title":"Kafka","description":"Kafka","permalink":"/low-code-spark/gems/source-target/file/kafka"}]}')}}]);

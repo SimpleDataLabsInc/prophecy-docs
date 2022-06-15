@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[5029],{3649:function(e){e.exports=JSON.parse('{"title":"Core Concepts","slug":"/category/core-concepts","permalink":"/category/core-concepts","navigation":{"previous":{"title":"Getting Started","permalink":"/getting-started"},"next":{"title":"Pipelines","permalink":"/core-concepts/pipeline"}}}')}}]);
