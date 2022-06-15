@@ -149,9 +149,9 @@ Below are different type of write modes which prophecy provided hive catalog sup
 :::note
 Among these write modes overwrite, append, ignore and error works the same way as in case of parquet file writes.
 
-To read more about using merge write mode [**click here**](../01-file/05-delta.md#merge-write-mode-with-delta)
+To read more about using merge write mode [**click here**](../file/delta.md#merge-write-mode-with-delta)
 
-To read more about using scd2 merge write mode [**click here**](../01-file/05-delta.md#scd2-merge-write-mode-with-delta)
+To read more about using scd2 merge write mode [**click here**](../file/delta.md#scd2-merge-write-mode-with-delta)
 :::
 
 ### Target Example

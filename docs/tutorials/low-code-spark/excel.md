@@ -5,7 +5,7 @@ title: Working with XLSX (Excel) files
 If you've worked with numbers in your day-to-day operations, odds are you've run into a need to use Excel at one point or another. This tutorial is going to cover the two most basic scenarios: Reading and Writing.
 
 :::info
-For a full list of options supported by Prophecy when interacting with Excel files [see here](/05-low-code-spark/05-gems/01-source-target/01-file/09-xlsx.md)
+For a full list of options supported by Prophecy when interacting with Excel files [see here](/low-code-spark/gems/source-target/file/xlsx.md)
 :::
 
 ## Reading XLSX files

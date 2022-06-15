@@ -1,10 +1,6 @@
 {
   "label": "Low-code Spark",
   "position": 2,
-  "link": {
-    "type": "doc",
-    "id": "intro"
-  },
   "collapsible": true,
   "collapsed": true
 }
