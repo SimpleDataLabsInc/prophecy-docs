@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 const StyledSlider = ({children}) => (
 <div style={{
@@ -9,7 +10,7 @@ const StyledSlider = ({children}) => (
 )
 
 const SlideImage = ({source,children}) => (
-<img src={source} style={{
+<img src={useBaseUrl(source)} style={{
   'object-fit': 'cover'
   }}/>
 )
