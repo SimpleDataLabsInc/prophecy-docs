@@ -21,3 +21,8 @@ repos:
     rev: v0.31.1
     hooks:
       - id: markdownlint
+
+  - repo: https://github.com/SimpleDataLabsInc/pre-commit-hooks
+    rev: 8f16cff
+    hooks:
+      - id: check-docusaurus-frontmatter
