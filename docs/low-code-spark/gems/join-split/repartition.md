@@ -1,6 +1,11 @@
 ---
-sidebar_position: 2
 title: Repartition
+id: Repartition
+description: Repartition
+sidebar_position: 2
+tags:
+  - gems
+  - join-split
 ---
 
 This will repartition/coalesce the input dataframe based on config.
@@ -11,15 +16,16 @@ Below different types of configurations which can be given:
 
 Repartitions the data evenly across various partitions based on the key. Reshuffles the dataset.
 
-### Parameters
+### Parameters {#hash-repartitoning}
+
 | Parameter                         | Description                                   | Required |
-|:----------------------------------|:----------------------------------------------|:---------|
+| :-------------------------------- | :-------------------------------------------- | :------- |
 | Dataframe                         | Input dataframe                               | True     |
 | Overwrite default partitions flag | Flag to overwrite default partitions          | False    |
 | Number of partitions              | Integer value specifying number of partitions | False    |
 | Repartition expression(s)         | List of expressions to repartition by         | True     |
 
-### Generated Code
+### Generated Code {#hash-repartitoning}
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -55,13 +61,14 @@ object hashRepartition {
 
 Repartitions without data distribution defined. Reshuffles the dataset.
 
-### Parameters
+### Parameters {#random-repartitioning}
+
 | Parameter            | Description                                   | Required |
-|:---------------------|:----------------------------------------------|:---------|
+| :------------------- | :-------------------------------------------- | :------- |
 | Dataframe            | Input dataframe                               | True     |
 | Number of partitions | Integer value specifying number of partitions | True     |
 
-### Generated Code
+### Generated Code {#random-repartitioning}
 
 ````mdx-code-block
 <Tabs>
@@ -94,15 +101,16 @@ object randomRepartition {
 
 Repartitions the data with tuples having keys within the same range on the same worker. Reshuffles the dataset.
 
-### Parameters
+### Parameters {#range-repartitoning}
+
 | Parameter                              | Description                                                            | Required |
-|:---------------------------------------|:-----------------------------------------------------------------------|:---------|
+| :------------------------------------- | :--------------------------------------------------------------------- | :------- |
 | Dataframe                              | Input dataframe                                                        | True     |
 | Overwrite default partitions flag      | Flag to overwrite default partitions                                   | False    |
 | Number of partitions                   | Integer value specifying number of partitions                          | False    |
 | Repartition expression(s) with sorting | List of expressions to repartition by with corresponding sorting order | True     |
 
-### Generated Code
+### Generated Code {#range-repartitoning}
 
 ````mdx-code-block
 <Tabs>
@@ -135,13 +143,14 @@ object RepartitionByRange {
 
 Reduces the number of partitions without shuffling the dataset.
 
-### Parameters
+### Parameters {#coalesce}
+
 | Parameter            | Description                                   | Required |
-|:---------------------|:----------------------------------------------|:---------|
+| :------------------- | :-------------------------------------------- | :------- |
 | Dataframe            | Input dataframe                               | True     |
 | Number of partitions | Integer value specifying number of partitions | True     |
 
-### Generated Code
+### Generated Code {#coalesce}
 
 ````mdx-code-block
 <Tabs>
@@ -171,6 +180,7 @@ object Coalesce {
 ````
 
 ## Example
+
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://user-images.githubusercontent.com/103921419/174014498-277e1037-8634-4752-a4f1-e0e1aae66659.mp4" title="Repartition" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
