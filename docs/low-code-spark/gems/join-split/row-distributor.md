@@ -23,7 +23,7 @@ into multiple dataframes in different ways for the downstream application/pipeli
 Number of outputs can be changed as per need by clicking the `+` button.
 :::
 
-### Spark Code
+### Generated Code
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
