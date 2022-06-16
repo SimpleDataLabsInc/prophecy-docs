@@ -19,7 +19,7 @@ Repartitions the data evenly across various partitions based on the key. Reshuff
 | Number of partitions              | Integer value specifying number of partitions | False    |
 | Repartition expression(s)         | List of expressions to repartition by         | True     |
 
-### Spark Code
+### Generated Code
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -61,7 +61,7 @@ Repartitions without data distribution defined. Reshuffles the dataset.
 | Dataframe            | Input dataframe                               | True     |
 | Number of partitions | Integer value specifying number of partitions | True     |
 
-### Spark Code
+### Generated Code
 
 ````mdx-code-block
 <Tabs>
@@ -102,7 +102,7 @@ Repartitions the data with tuples having keys within the same range on the same 
 | Number of partitions                   | Integer value specifying number of partitions                          | False    |
 | Repartition expression(s) with sorting | List of expressions to repartition by with corresponding sorting order | True     |
 
-### Spark Code
+### Generated Code
 
 ````mdx-code-block
 <Tabs>
@@ -141,7 +141,7 @@ Reduces the number of partitions without shuffling the dataset.
 | Dataframe            | Input dataframe                               | True     |
 | Number of partitions | Integer value specifying number of partitions | True     |
 
-### Spark Code
+### Generated Code
 
 ````mdx-code-block
 <Tabs>

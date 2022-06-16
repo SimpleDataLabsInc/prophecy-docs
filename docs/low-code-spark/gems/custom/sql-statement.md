@@ -20,7 +20,7 @@ Create multiple dataframes based on provided SQL queries to run on input datafra
 Number of inputs and outputs can be changed as per need by clicking the `+` button.
 :::
 
-### Spark Code
+### Generated Code
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
