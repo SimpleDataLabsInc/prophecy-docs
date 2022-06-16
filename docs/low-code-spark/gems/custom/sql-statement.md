@@ -6,16 +6,15 @@ title: SQL Statement
 Create multiple dataframes based on provided SQL queries to run on input dataframe(s).
 
 ### Parameters
+
 | Parameter    | Meaning                       | Required |
-|:-------------|:------------------------------|:---------|
+| :----------- | :---------------------------- | :------- |
 | Dataframe(s) | Input dataframe(s)            | True     |
 | SQL Queries  | SQL Query for each output tab | True     |
 
-
-
 ### Example
-![](./img/sqlstatement_eg_1.png)
 
+![SQL example 1](./img/sqlstatement_eg_1.png)
 
 :::info
 Number of inputs and outputs can be changed as per need by clicking the `+` button.

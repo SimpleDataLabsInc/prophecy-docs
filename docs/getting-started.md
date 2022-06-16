@@ -5,9 +5,9 @@ sidebar_position: 3
 
 Prophecy has a few different deployment models that are currently supported
 
-* **Prophecy Databricks** - Databricks is supported via Databricks Partner Connect for Prophecy SaaS or via Cloud
+- **Prophecy Databricks** - Databricks is supported via Databricks Partner Connect for Prophecy SaaS or via Cloud
   Marketplaces for Prophecy install in customer VPC
-* **Prophecy Enterprise Trial** - Prophecy Enterprise trial is valid for 14 days and uses Prophecy Databricks
+- **Prophecy Enterprise Trial** - Prophecy Enterprise trial is valid for 14 days and uses Prophecy Databricks
   account. You can try the features, but you will not be able to use your private data.
 
 ## Prophecy Databricks

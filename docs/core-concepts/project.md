@@ -4,18 +4,18 @@ id: project
 description: Keeping your Pipelines, Datasets and Jobs under (source) control
 sidebar_position: 5
 tags:
-   - concepts
-   - project
-   - git
+  - concepts
+  - project
+  - git
 ---
 
 Project is the primary unit of development and deployment to production in Prophecy.
 
 A **project** contains
 
-* **Data pipelines** that read, transform and write data using Spark
-* **Datasets** point to the data that is read and written to by the _Data Pipelines_
-* **Jobs** run _Data Pipelines_ based on a **schedule**
+- **Data pipelines** that read, transform and write data using Spark
+- **Datasets** point to the data that is read and written to by the _Data Pipelines_
+- **Jobs** run _Data Pipelines_ based on a **schedule**
 
 ## Project is Code on Git
 
@@ -27,7 +27,7 @@ or a folder in a repository.
 
 ## Development & Deployment
 
-Prophecy provides a standard and recommended mechanism for using Git based development 
+Prophecy provides a standard and recommended mechanism for using Git based development
 (though other mechanisms are possible - including fork based development in our Enterprise product)
 
 ![Project deply](img/project_deploy.png)
@@ -43,10 +43,9 @@ to ensure that there is a secure copy of the code that you have direct access to
 
 ### 2. Create, edit & commit the pipeline
 
-When you **create a new pipeline**, you have to choose the **branch** where it will be created - an existing one or a new one. 
+When you **create a new pipeline**, you have to choose the **branch** where it will be created - an existing one or a new one.
 
-
-Then you will **develop** this pipeline - you will make **changes** & **commit** them in this branch multiple times. 
+Then you will **develop** this pipeline - you will make **changes** & **commit** them in this branch multiple times.
 The commit dialog opens when you click the bottom bar - orange color indicates uncommitted changes.
 
 ![Commit](img/commit.png)
@@ -55,6 +54,4 @@ Now you've made all the changes back and are ready to push them back to the main
 
 ### 3. Merge your changes
 
-When you create a new workflow, a default branch is created for you. 
-
-
+When you create a new workflow, a default branch is created for you.

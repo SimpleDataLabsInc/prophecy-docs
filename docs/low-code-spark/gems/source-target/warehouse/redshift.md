@@ -1,12 +1,12 @@
 ---
 title: Redshift
 id: redshift
-description: Redshift 
+description: Redshift
 sidebar_position: 2
 tags:
-   - gems
-   - warehouse
-   - redshift
+  - gems
+  - warehouse
+  - redshift
 ---
 
 :::caution 🚧 Work in Progress 🚧

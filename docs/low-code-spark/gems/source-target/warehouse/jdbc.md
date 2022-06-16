@@ -4,9 +4,9 @@ id: jdbc
 description: JDBC
 sidebar_position: 4
 tags:
-   - gems
-   - warehouse
-   - jdbc
+  - gems
+  - warehouse
+  - jdbc
 ---
 
 Reads data from other databases using JDBC tables and writes data into other databases using jdbc .
@@ -44,8 +44,7 @@ To read more about how to add dependencies for specific jdbc jar [**click here**
 <iframe src="https://user-images.githubusercontent.com/103921419/173814656-1c857949-cd5a-4032-922b-5a621d77fd75.mp4" title="JDBC source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-
-### Spark Code
+### Generated Code {#source-code}
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -96,7 +95,6 @@ object Source {
 
 ````
 
-
 ## Target
 
 ### Target Parameters
@@ -121,7 +119,7 @@ object Source {
 Below are different type of write modes which prophecy provided hive catalog supports.
 
 | Write Mode | Description                                                                                                                                                                                   |
-|:-----------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| :--------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | overwrite  | If data already exists, existing data is expected to be overwritten by the contents of the DataFrame.                                                                                         |
 | append     | If data already exists, contents of the DataFrame are expected to be appended to existing data.                                                                                               |
 | ignore     | If data already exists, the save operation is expected not to save the contents of the DataFrame and not to change the existing data. This is similar to a CREATE TABLE IF NOT EXISTS in SQL. |
@@ -137,8 +135,7 @@ Below are different type of write modes which prophecy provided hive catalog sup
 <iframe src="https://user-images.githubusercontent.com/103921419/173814665-f932bbae-cc4a-4b4b-90e8-09749b714a76.mp4" title="JDBC target" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-
-### Spark Code
+### Generated Code {#target-code}
 
 ````mdx-code-block
 
@@ -184,4 +181,3 @@ object Target {
 </Tabs>
 
 ````
-

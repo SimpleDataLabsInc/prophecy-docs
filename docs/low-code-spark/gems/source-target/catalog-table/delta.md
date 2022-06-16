@@ -4,9 +4,9 @@ id: delta
 description: Delta
 sidebar_position: 2
 tags:
-   - gems
-   - catalog
-   - delta
+  - gems
+  - catalog
+  - delta
 ---
 
 Reads data from delta tables saved in data catalog and writes data into delta table in data catalog.
@@ -18,8 +18,9 @@ Please choose the provider as delta on properties page.
 ## Source
 
 ### Source Parameters
+
 | Parameter        | Description                                | Required |
-|:-----------------|:-------------------------------------------|:---------|
+| :--------------- | :----------------------------------------- | :------- |
 | Database name    | Name of the database                       | True     |
 | Table name       | Name of the table                          | True     |
 | Provider         | Provider needs to be selected as delta     | True     |
@@ -29,6 +30,7 @@ Please choose the provider as delta on properties page.
 
 :::note
 For time travel on delta tables:
+
 1. Only one among timestamp and version can be chosen at a time for time travel.
 2. Timestamp should be between the first commit timestamp and the latest commit timestamp in the table.
 3. Version needs to be an integer. Its value has to be between min and max version of table.
@@ -42,15 +44,12 @@ To read more about delta time travel and its use cases [click here](https://data
 
 ### Source Example
 
-
-
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://user-images.githubusercontent.com/103921419/173573367-057f47b0-c56c-4ffd-9ceb-27bc34444b41.mp4" title="Catalog delta source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-
-### Spark Code
+### Generated Code {#source-code}
 
 #### Without filter predicate
 
@@ -121,8 +120,9 @@ object Source {
 ## Target
 
 ### Target Parameters
+
 | Parameter                     | Description                                                                                                                                                                | Required |
-|:------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------|
+| :---------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------- |
 | Database name                 | Name of the database                                                                                                                                                       | True     |
 | Table name                    | Name of the table                                                                                                                                                          | True     |
 | Custom file path              | Use custom file path to store underlying files                                                                                                                             | False    |
@@ -138,7 +138,7 @@ object Source {
 Below are different type of write modes which prophecy provided hive catalog supports.
 
 | Write Mode | Description                                                                                                                                                                                   |
-|:-----------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| :--------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | overwrite  | If data already exists, existing data is expected to be overwritten by the contents of the DataFrame.                                                                                         |
 | append     | If data already exists, contents of the DataFrame are expected to be appended to existing data.                                                                                               |
 | ignore     | If data already exists, the save operation is expected not to save the contents of the DataFrame and not to change the existing data. This is similar to a CREATE TABLE IF NOT EXISTS in SQL. |
@@ -155,13 +155,13 @@ To read more about using scd2 merge write mode [**click here**](../file/delta.md
 :::
 
 ### Target Example
+
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://user-images.githubusercontent.com/103921419/173573390-2295b399-f6af-49f1-b398-dfd66072d1b3.mp4" title="Catalog delta target" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-
-### Spark Code
+### Generated Code {#target-code}
 
 ````mdx-code-block
 
@@ -198,9 +198,3 @@ object Target {
 </Tabs>
 
 ````
-
-
-
-
-
-

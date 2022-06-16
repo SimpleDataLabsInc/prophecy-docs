@@ -2,25 +2,25 @@
 sidebar_position: 5
 title: Schema Transform
 ---
-SchemaTransform is used to add, edit, rename or drop columns from the incoming dataframe.  
+
+SchemaTransform is used to add, edit, rename or drop columns from the incoming dataframe.
 
 :::info
 Unlike Reformat which is a set operation where all the transforms are applied in parallel, transformations applied here are in order.
 Reformat is a SQL select and is preferable when making many changes.
 :::
 
-
 ### Parameters
-| Parameter       | Description                                                                | Required                                      |
-|:----------------|:---------------------------------------------------------------------------|:----------------------------------------------|
-| Dataframe       | Input dataframe                                                            | True                                          |
-| Operation       | `Add/Replace Column`, `Rename Column` and `Drop Column`                    | Required if a transformation is added         |
-| New Column      | Output column name (when Add/Replace operation is selected)                | Required if `Add/Replace Column`  is selected |
-| Expression      | Expression to generate new column (when Add/Replace operation is selected) | Required if `Add/Replace Column` is selected  |
-| Old Column Name | Column to be renamed (when Rename operation is selected)                   | Required if `Rename Column` is selected       |
-| New Column Name | Output column name (when Rename operation is selected)                     | Required if `Rename Column` is selected       |
-| Column to drop  | Column to be dropped (when Drop operation is selected)                     | Required if `Drop Column` is selected         |
 
+| Parameter       | Description                                                                | Required                                     |
+| :-------------- | :------------------------------------------------------------------------- | :------------------------------------------- |
+| Dataframe       | Input dataframe                                                            | True                                         |
+| Operation       | `Add/Replace Column`, `Rename Column` and `Drop Column`                    | Required if a transformation is added        |
+| New Column      | Output column name (when Add/Replace operation is selected)                | Required if `Add/Replace Column` is selected |
+| Expression      | Expression to generate new column (when Add/Replace operation is selected) | Required if `Add/Replace Column` is selected |
+| Old Column Name | Column to be renamed (when Rename operation is selected)                   | Required if `Rename Column` is selected      |
+| New Column Name | Output column name (when Rename operation is selected)                     | Required if `Rename Column` is selected      |
+| Column to drop  | Column to be dropped (when Drop operation is selected)                     | Required if `Drop Column` is selected        |
 
 ### Example
 
@@ -61,5 +61,3 @@ object transform {
 </Tabs>
 
 ````
- 
-

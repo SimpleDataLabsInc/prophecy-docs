@@ -2,7 +2,7 @@
 title: Standard Gems
 ---
 
-Gem is a unit of functionality ranging from reading, transforming, writing and various other ad-hoc operations on data 
+Gem is a unit of functionality ranging from reading, transforming, writing and various other ad-hoc operations on data
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

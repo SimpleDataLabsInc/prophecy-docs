@@ -8,6 +8,7 @@ This will repartition/coalesce the input dataframe based on config.
 Below different types of configurations which can be given:
 
 ## Hash Repartitoning
+
 Repartitions the data evenly across various partitions based on the key. Reshuffles the dataset.
 
 ### Parameters
@@ -51,6 +52,7 @@ object hashRepartition {
 ````
 
 ## Random Repartitioning
+
 Repartitions without data distribution defined. Reshuffles the dataset.
 
 ### Parameters
@@ -89,6 +91,7 @@ object randomRepartition {
 ````
 
 ## Range Repartitoning
+
 Repartitions the data with tuples having keys within the same range on the same worker. Reshuffles the dataset.
 
 ### Parameters
@@ -129,6 +132,7 @@ object RepartitionByRange {
 ````
 
 ## Coalesce
+
 Reduces the number of partitions without shuffling the dataset.
 
 ### Parameters
