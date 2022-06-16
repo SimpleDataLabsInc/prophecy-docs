@@ -1,9 +1,8 @@
 ---
 sidebar_position: 1
-title: Prophecy
+title: Prophecy - Low Code Data Engineering
+sidebar_label: Prophecy
 ---
-
-# Prophecy - Low Code Data Engineering
 
 Prophecy is designed to enable all users to be productive with data engineering. It also replaces legacy ETL products. Following are the primary pillars of Prophecy
 

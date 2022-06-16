@@ -17,7 +17,7 @@ into multiple dataframes in different ways for the downstream application/pipeli
 
 ### Example
 
-![](./img/rowdistributor_eg_1.png)
+![Row distributor 1](./img/rowdistributor_eg_1.png)
 
 :::info
 Number of outputs can be changed as per need by clicking the `+` button.

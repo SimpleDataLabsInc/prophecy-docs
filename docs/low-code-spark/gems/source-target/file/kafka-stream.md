@@ -37,7 +37,7 @@ is not present, then data with `earliest` offset would be read.
 
 ![Example usage of Filter](./img/kafka_source_eg_1.png)
 
-### Spark Code
+### Generated Code {#source-code}
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -138,7 +138,7 @@ Publishes the dataframe to kafka topic(s) as json messages.
 
 ![Example usage of Filter](./img/kafka_target_eg_1.png)
 
-### Spark Code
+### Generated Code {#target-code}
 
 ````mdx-code-block
 
@@ -181,9 +181,9 @@ Coming Soon
 
 ````
 
-# Example Pipelines
+## Example Pipelines
 
-## Source Pipeline Example
+### Source Pipeline Example
 
 In this example we would be reading json messages from kafka stream, parse them, remove any null messages
 and then finally save it into a delta table.
@@ -213,7 +213,7 @@ target gem (like in our example, phase for target gem is 0 and updateOffsets gem
 This is to ensure that offsets are only updated in the table post data is successfully written.
 :::
 
-### Spark Code used for script component
+#### Spark Code used for script component
 
 ````mdx-code-block
 

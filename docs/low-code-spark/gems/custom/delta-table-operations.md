@@ -43,7 +43,7 @@ default threshold is 7 days.
 
 To know more about vaccum [click here](https://docs.databricks.com/spark/latest/spark-sql/language-manual/delta-vacuum.html).
 
-### Parameters
+### Parameters {#vacuum-parameters}
 
 | Parameter       | Description         | Required |
 | :-------------- | :------------------ | :------- |
@@ -56,7 +56,7 @@ data by column. If colocation is not specified, bin-packing optimization is perf
 
 To know more about optimize [click here](https://docs.databricks.com/spark/latest/spark-sql/language-manual/delta-optimize.html).
 
-### Parameters
+### Parameters {#optimize-parameters}
 
 | Parameter    | Description                                                                                                                        | Required |
 | :----------- | :--------------------------------------------------------------------------------------------------------------------------------- | :------- |
@@ -68,7 +68,7 @@ To know more about optimize [click here](https://docs.databricks.com/spark/lates
 Restores a Delta table to an earlier state. Restoring to an earlier version number or a
 timestamp is supported.
 
-### Parameters
+### Parameters {#restore-parameters}
 
 | Parameter   | Description                                | Required |
 | :---------- | :----------------------------------------- | :------- |
@@ -81,7 +81,7 @@ Delete removes the data from the latest version of the Delta table as per the co
 specified below. Please note that delete does not remove it from the physical storage
 until the older versions are explicitly vacuumed.
 
-### Parameters
+### Parameters {#delete-parameters}
 
 | Parameter    | Description                                           | Required |
 | :----------- | :---------------------------------------------------- | :------- |

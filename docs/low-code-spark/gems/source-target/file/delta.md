@@ -41,7 +41,7 @@ To read more about delta time travel and its use cases [click here](https://data
 
 ![Example usage of Delta](./img/delta/delta_source_eg.gif)
 
-### Spark Code
+### Generated Code {#source-code}
 
 #### Without time travel
 
@@ -183,7 +183,7 @@ Merge and SCD2 merge would be explained with examples in the following sections.
 
 ![Example usage of Filter](./img/delta/delta_target_eg.gif)
 
-### Spark Code
+### Generated Code {#target-code}
 
 ````mdx-code-block
 
@@ -232,14 +232,16 @@ object writeDelta {
 
 ````
 
-## Merge write mode with Delta
+## Delta MERGE
+
+### Upsert data with Delta
 
 You can upsert data from a source DataFrame into a target Delta table by using the
 MERGE operation. Delta Lake supports inserts, updates and deletes in MERGE.
 
 This operation is also commonly known as upserting (update/insert) or SCD1 merge.
 
-### Parameters
+#### Parameters {#upsert-parameters}
 
 | Parameter                       | Description                                                                                                                                   | Required |
 | :------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------- | :------- |
@@ -266,7 +268,7 @@ This operation is also commonly known as upserting (update/insert) or SCD1 merge
 When possible, provide predicates on the partition columns for a partitioned Delta table as such predicates can significantly speed up the operations.
 :::
 
-### Example
+#### Example {#upsert-example}
 
 Let's assume our initial customers table is as below:
 
@@ -283,7 +285,7 @@ Our output and configurations for SCD1 merge will look like below:
 <iframe src="https://user-images.githubusercontent.com/103921419/173252757-0a1165f0-68e2-41ca-b6eb-58da51cb76d1.mp4" title="SCD3" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-### Spark Code
+#### Generated Code {#upsert-code}
 
 ````mdx-code-block
 
@@ -347,9 +349,9 @@ object writeDeltaMerge {
 
 ````
 
-## SCD2 merge write mode with Delta
+### SCD2
 
-### Parameters
+#### Parameters {#scd2-parameters}
 
 | Parameter          | Description                                                                           | Required |
 | :----------------- | :------------------------------------------------------------------------------------ | :------- |
@@ -361,7 +363,7 @@ object writeDeltaMerge {
 | Max/latest flag    | Column placeholder to store the flag as true for the last entry of a particular key   | True     |
 | Flag values        | Option to choose the min/max flag to be true/false or 0/1                             | True     |
 
-### Example
+#### Example {#scd2-example}
 
 Using the same customer tables as in our merge example above, output and configurations for SCD2 merge will look like below:
 
@@ -370,7 +372,7 @@ Using the same customer tables as in our merge example above, output and configu
 <iframe src="https://user-images.githubusercontent.com/103921419/173252742-00930084-b3b3-4b8a-b5bb-59f39b74792b.mp4" title="SCD3" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-### Spark Code
+#### Generated Code {#scd2-code}
 
 ````mdx-code-block
 
@@ -382,9 +384,7 @@ Using the same customer tables as in our merge example above, output and configu
 def writeDeltaSCD2(spark: SparkSession, in0: DataFrame):
     from delta.tables import DeltaTable, DeltaMergeBuilder
 
-    if DeltaTable.isDeltaTable(
-        spark, "dbfs:/FileStore/data_engg/delta_demo/silver/customers_scd2"
-    ):
+    if DeltaTable.isDeltaTable(spark, "dbfs:/FileStore/data_engg/delta_demo/silver/customers_scd2"):
         existingTable = DeltaTable.forPath(
             spark, "dbfs:/FileStore/data_engg/delta_demo/silver/customers_scd2"
         )
@@ -535,7 +535,7 @@ object writeDeltaSCD2 {
 
 ````
 
-## SCD3 implementation using delta
+### SCD3
 
 Using the same customer tables as in our merge example above, output and configurations for SCD3 merge will look like below.
 

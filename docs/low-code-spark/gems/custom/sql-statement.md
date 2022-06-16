@@ -14,7 +14,7 @@ Create multiple dataframes based on provided SQL queries to run on input datafra
 
 ### Example
 
-![](./img/sqlstatement_eg_1.png)
+![SQL example 1](./img/sqlstatement_eg_1.png)
 
 :::info
 Number of inputs and outputs can be changed as per need by clicking the `+` button.

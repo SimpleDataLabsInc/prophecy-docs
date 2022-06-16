@@ -49,7 +49,7 @@ To read more about delta time travel and its use cases [click here](https://data
 <iframe src="https://user-images.githubusercontent.com/103921419/173573367-057f47b0-c56c-4ffd-9ceb-27bc34444b41.mp4" title="Catalog delta source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-### Spark Code
+### Generated Code {#source-code}
 
 #### Without filter predicate
 
@@ -161,7 +161,7 @@ To read more about using scd2 merge write mode [**click here**](../file/delta.md
 <iframe src="https://user-images.githubusercontent.com/103921419/173573390-2295b399-f6af-49f1-b398-dfd66072d1b3.mp4" title="Catalog delta target" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-### Spark Code
+### Generated Code {#target-code}
 
 ````mdx-code-block
 
