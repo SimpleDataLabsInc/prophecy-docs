@@ -4,12 +4,12 @@ id: csv
 description: CSV
 sidebar_position: 1
 tags:
-   - gems
-   - file
-   - csv
+  - gems
+  - file
+  - csv
 ---
 
-Allows you to read or write a delimited file (often called Comma Separated File, CSV) 
+Allows you to read or write a delimited file (often called Comma Separated File, CSV)
 
 ### Source Parameters
 
@@ -18,11 +18,10 @@ CSV **_Source_** supports all the available [spark read options for CSV](https:/
 The below list contains the additional parameters to read a CSV file:
 
 | Parameter    |     | Description                                                                                                 | Required |
-|--------------|:----|-------------------------------------------------------------------------------------------------------------|----------|
+| ------------ | :-- | ----------------------------------------------------------------------------------------------------------- | -------- |
 | Dataset Name |     | Name of the Dataset ([read more about Datasets](./../../../../core-concepts/dataset/))                      | True     |
 | Location     |     | Location of the file(s) to be loaded <br/> Eg: dbfs:/data/test.csv                                          | True     |
 | Schema       |     | Schema to applied on the loaded data. Can be defined/edited as json or inferred using `Infer Schema` button | True     |
-
 
 ### Target Parameters
 
@@ -31,7 +30,7 @@ CSV **_Target_** supports all the available [spark write options for CSV](https:
 The below list contains the additional parameters to write a CSV file:
 
 | Parameter    |     | Description                                                                            | Required |
-|--------------|:----|----------------------------------------------------------------------------------------|----------|
+| ------------ | :-- | -------------------------------------------------------------------------------------- | -------- |
 | Dataset Name |     | Name of the Dataset ([read more about Datasets](./../../../../core-concepts/dataset/)) | True     |
 | Location     |     | Location of the file(s) to be loaded <br/> Eg: dbfs:/data/output.csv                   | True     |
 
@@ -70,8 +69,7 @@ export const ImageData = [
 <App ImageData={ImageData}></App>
 ```
 
-
-````mdx-code-block 
+````mdx-code-block
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -84,9 +82,9 @@ def load_csv(spark: SparkSession) -> DataFrame:
     return spark.read\
         .schema(
           StructType([
-            StructField("order_id", IntegerType(), True), 
-            StructField("customer_id", IntegerType(), True), 
-            StructField("order_status", StringType(), True), 
+            StructField("order_id", IntegerType(), True),
+            StructField("customer_id", IntegerType(), True),
+            StructField("order_status", StringType(), True),
             StructField("order_category", StringType(), True),
             StructField("order_date", DateType(), True),
             StructField("amount", DoubleType(), True)
@@ -126,7 +124,7 @@ object load_csv {
       .load("dbfs:/Prophecy/anshuman@simpledatalabs.com/OrdersDatasetInput.csv")
 
 }
-``` 
+```
 
 </TabItem>
 </Tabs>
@@ -135,6 +133,7 @@ object load_csv {
 ````
 
 ---
+
 ### Writing a CSV file
 
 ```mdx-code-block
@@ -165,8 +164,7 @@ export const ImageData2 = [
 <App ImageData={ImageData2}></App>
 ```
 
-
-````mdx-code-block 
+````mdx-code-block
 
 <Tabs>
 
@@ -196,7 +194,7 @@ object write_as_csv {
       .mode("error")
       .save("dbfs:/Prophecy/anshuman@simpledatalabs.com/output.csv")
 }
-``` 
+```
 
 </TabItem>
 </Tabs>

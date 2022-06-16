@@ -4,9 +4,9 @@ id: interactive-execution
 description: Interactive Execution
 sidebar_position: 2
 tags:
-   - spark
-   - interactive
-   - development
+  - spark
+  - interactive
+  - development
 ---
 
 :::caution 🚧 Work in Progress 🚧

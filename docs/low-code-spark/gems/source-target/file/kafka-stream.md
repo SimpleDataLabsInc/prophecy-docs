@@ -1,24 +1,28 @@
 ---
 title: Kafka
 id: kafka
-description: Kafka
+description: Reading and writing data from Apache Kafka in batch mode
 sidebar_position: 9
 tags:
-   - gems
-   - file
-   - kafka
+  - gems
+  - file
+  - kafka
 ---
 
-Reads data from Kafka Stream in batch mode and writes data to Kafka.
+[Apache Kafka](https://kafka.apache.org/) is an open-source distributed event streaming platform. Supporting a number of streaming paradigms it's used by thousands of companies and organizations in scenarios including Data Ingestion, Analytics and more.
+
+This source currently connects with Kafka Brokers in Batch mode.
 
 ## Source
+
 Reads data from kafka stream in batch mode.
 Data is read only incrementally from the last offset stored in the metadata table. If metadata table
 is not present, then data with `earliest` offset would be read.
 
 ### Source Parameters
+
 | Parameter         | Description                                                               | Required |
-|:------------------|:--------------------------------------------------------------------------|:---------|
+| :---------------- | :------------------------------------------------------------------------ | :------- |
 | Broker List       | Comma separated list of kafka brokers                                     | True     |
 | Group Id          | Kafka consumer group id                                                   | True     |
 | Session Timeout   | Session timeout for kafka. (Default value set to 6000s)                   | False    |
@@ -29,11 +33,11 @@ is not present, then data with `earliest` offset would be read.
 | Kafka Topic       | Comma separated list of kafka topics                                      | True     |
 | Metadata Table    | Table name which would be used to store offsets for each topic, partition | True     |
 
-
 ### Source Example
+
 ![Example usage of Filter](./img/kafka_source_eg_1.png)
 
-### Spark Code
+### Generated Code {#source-code}
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -114,24 +118,27 @@ Coming Soon
 ````
 
 ---
+
 ## Target
+
 Publishes the dataframe to kafka topic(s) as json messages.
 
 ### Target Parameters
-| Parameter         | Description                                                               | Required |
-|:------------------|:--------------------------------------------------------------------------|:---------|
-| Broker List       | Comma separated list of kafka brokers                                     | True     |
-| Security Protocol | Security protocol for kafka (Default value set to SASL_SSL)               | True     |
-| SASL Mechanism    | Default SASL Mechanism for SASL_SSL (Default value set to SCRAM-SHA-256)  | True     |
-| Credential Type   | Credential Type provider (Databricks Secrets or Username/Password)        | True     |
-| Credential Scope  | Scope to use for databricks secrets                                       | True     |
-| Kafka Topic       | Comma separated list of kafka topics                                      | True     |
 
+| Parameter         | Description                                                              | Required |
+| :---------------- | :----------------------------------------------------------------------- | :------- |
+| Broker List       | Comma separated list of kafka brokers                                    | True     |
+| Security Protocol | Security protocol for kafka (Default value set to SASL_SSL)              | True     |
+| SASL Mechanism    | Default SASL Mechanism for SASL_SSL (Default value set to SCRAM-SHA-256) | True     |
+| Credential Type   | Credential Type provider (Databricks Secrets or Username/Password)       | True     |
+| Credential Scope  | Scope to use for databricks secrets                                      | True     |
+| Kafka Topic       | Comma separated list of kafka topics                                     | True     |
 
 ### Target Example
+
 ![Example usage of Filter](./img/kafka_target_eg_1.png)
 
-### Spark Code
+### Generated Code {#target-code}
 
 ````mdx-code-block
 
@@ -174,9 +181,9 @@ Coming Soon
 
 ````
 
-# Example Pipelines
+## Example Pipelines
 
-## Source Pipeline Example
+### Source Pipeline Example
 
 In this example we would be reading json messages from kafka stream, parse them, remove any null messages
 and then finally save it into a delta table.
@@ -187,14 +194,15 @@ Also once the data is successfully written into our target, we would be updating
 
 The `metadata.kafka_offsets` table would save the max offset read for each topic, partition combination.
 
-| topic            | partition | max_offset |
-|:-----------------|:----------|:-----------|
-| my_first_topic   | 0         | 10         |
-| my_first_topic   | 1         | 5          |
-| my_second_topic  | 0         | 10         |
-| my_second_topic  | 1         | 5          |
+| topic           | partition | max_offset |
+| :-------------- | :-------- | :--------- |
+| my_first_topic  | 0         | 10         |
+| my_first_topic  | 1         | 5          |
+| my_second_topic | 0         | 10         |
+| my_second_topic | 1         | 5          |
 
 This table would help us in below:
+
 1. Build the pipeline interactively without committing any offset
 2. For batch production workflows this would help us to keep track on what offsets to read from in the subsequent run
 3. In case we want to relay older messages again from a particular offset, we can simply update the metadata table.
@@ -205,7 +213,7 @@ target gem (like in our example, phase for target gem is 0 and updateOffsets gem
 This is to ensure that offsets are only updated in the table post data is successfully written.
 :::
 
-### Spark Code used for script component
+#### Spark Code used for script component
 
 ````mdx-code-block
 
@@ -253,5 +261,3 @@ Coming Soon
 </Tabs>
 
 ````
-
-

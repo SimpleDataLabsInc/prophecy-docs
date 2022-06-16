@@ -6,8 +6,9 @@ title: File Operation
 Helps perform file operations like `copy` and `move` on different file systems
 
 ### Parameters
+
 | Parameter        | Description                                                                                                 | Required |
-|:-----------------|:------------------------------------------------------------------------------------------------------------|:---------|
+| :--------------- | :---------------------------------------------------------------------------------------------------------- | :------- |
 | File System      | `Local` - for operations on driver node file system <br/> `DBFS` - for operations on Databricks file system | True     |
 | Operation        | Operation to perform, `Copy` or `Move`                                                                      | True     |
 | Recurse          | Boolean for performing `Operation` recursively. Default is `False`                                          | False    |
@@ -16,13 +17,14 @@ Helps perform file operations like `copy` and `move` on different file systems
 
 :::info
 You can perform operations on DBFS files using `Local` file system too by providing path under `/dbfs`!<br/>
-This is because Databricks uses a FUSE mount to provide local access to the files stored in the cloud. 
+This is because Databricks uses a FUSE mount to provide local access to the files stored in the cloud.
 A FUSE mount is a secure, virtual filesystem.
 :::
 
 ### Examples
 
 ---
+
 #### Copy Single File
 
 ![Example usage of File Operation - 1](./img/fileops_eg_1.png)
@@ -60,7 +62,9 @@ def copy_file(spark: SparkSession):
 </Tabs>
 
 ````
+
 ---
+
 #### Copy All Files From A Directory
 
 ![Example usage of File Operation - 2](./img/fileops_eg_2.png)
@@ -99,7 +103,9 @@ def copy_file(spark: SparkSession):
 </Tabs>
 
 ````
+
 ---
+
 #### Copy Entire Directory
 
 ![Example usage of File Operation - 3](./img/fileops_eg_3.png)
@@ -138,4 +144,5 @@ def copy_file(spark: SparkSession):
 </Tabs>
 
 ````
+
 ---

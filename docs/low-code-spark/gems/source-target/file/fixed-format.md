@@ -4,9 +4,9 @@ id: fixed-format
 description: Fixed Format
 sidebar_position: 8
 tags:
-   - gems
-   - file
-   - fixed-format
+  - gems
+  - file
+  - fixed-format
 ---
 
 :::caution Enterprise Only
@@ -14,7 +14,6 @@ tags:
 Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about the Enterprise offering.
 
 :::
-
 
 :::caution 🚧 Work in Progress 🚧
 

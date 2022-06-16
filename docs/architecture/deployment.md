@@ -3,19 +3,19 @@ title: "Deployment"
 date: 2022-03-21T14:45:41-07:00
 weight: 1
 description: >
-    Prophecy deployment is flexible and supports multiple mechanisms
+  Prophecy deployment is flexible and supports multiple mechanisms
 ---
 
 Prophecy deployment is simple and flexible. Prophecy is written as a set of microservices that run on Kubernetes and is
 built to be multi-tenant. There are three primary options
 
-* Private SaaS
-* Public SaaS
-* On-premise
+- Private SaaS
+- Public SaaS
+- On-premise
 
 ## Cloud Deployment
 
-Prophecy in the cloud connects to your existing Spark and Scheduler/Orchestrator. Prophecy does not store any data, 
+Prophecy in the cloud connects to your existing Spark and Scheduler/Orchestrator. Prophecy does not store any data,
 however it does store metadata about your pipelines, datasets and schedules.
 
 <img src={require('./img/arch_general.png').default} alt="Example banner" width="75%" />
@@ -44,8 +44,6 @@ a managed service prefer this option. You can also use this by directly going to
 
 ## On-Premise Deployment
 
-On rare occasions Prophecy will deploy on-premise for the large customers who are moving to the cloud. Often the order 
-is that the organizations will move pipelines from on-premise legacy ETL tools to Spark, then move it to Spark on the 
+On rare occasions Prophecy will deploy on-premise for the large customers who are moving to the cloud. Often the order
+is that the organizations will move pipelines from on-premise legacy ETL tools to Spark, then move it to Spark on the
 cloud. For more information on this reach out to our team by using [request a demo](https://www.prophecy.io/request-a-demo).
-
-

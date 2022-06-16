@@ -15,4 +15,4 @@ schedulers:
    pre- / post-processing.
 
 Alternatively, since Prophecy provides you native Spark code no GIT, you can easily integrate with any other scheduler.
-Read more about it [here](http://localhost:3000/low-code-jobs/alternative-schedulers). 
+Read more about it [here](http://localhost:3000/low-code-jobs/alternative-schedulers).
