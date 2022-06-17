@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[5922],{7322:function(o){o.exports=JSON.parse('{"label":"airflow","permalink":"/tags/airflow","allTagsPath":"/tags","count":1,"items":[{"id":"low-code-jobs/airflow","title":"Airflow","description":"How Prophecy integrates with Airflow","permalink":"/low-code-jobs/airflow"}]}')}}]);

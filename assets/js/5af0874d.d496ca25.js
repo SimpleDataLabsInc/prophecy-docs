@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[9889],{7883:function(s){s.exports=JSON.parse('{"label":"CICD","permalink":"/tags/cicd","allTagsPath":"/tags","count":1,"items":[{"id":"low-code-spark/tests","title":"Unit Testing","description":"Low-code Spark Unit testing","permalink":"/low-code-spark/tests"}]}')}}]);
