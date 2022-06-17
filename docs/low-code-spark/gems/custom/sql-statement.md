@@ -1,6 +1,12 @@
 ---
 sidebar_position: 1
 title: SQL Statement
+id: sql-statement
+description: Create DataFrames based on custom SQL queries
+tags:
+  - gems
+  - sql
+  - custom
 ---
 
 Create multiple dataframes based on provided SQL queries to run on input dataframe(s).

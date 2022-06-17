@@ -1,6 +1,12 @@
 ---
 sidebar_position: 2
 title: Filter
+id: filter
+description: Filter your data based on a custom filter condition
+tags:
+  - gems
+  - filter
+  - where
 ---
 
 Filters dataframe based on provided filter condition

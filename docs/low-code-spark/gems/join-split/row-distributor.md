@@ -1,6 +1,13 @@
 ---
 sidebar_position: 3
 title: Row Distributor
+id: row-distributor
+description: Create multiple DataFrames based on filter conditions
+tags:
+  - gems
+  - split
+  - filter
+  - row distributor
 ---
 
 Create multiple dataframes based on provided filter conditions from an input dataframe.

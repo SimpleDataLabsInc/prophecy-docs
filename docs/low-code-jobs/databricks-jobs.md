@@ -1,6 +1,11 @@
 ---
 sidebar_position: 1
 title: Databricks Jobs
+description: Databricks jobs
+id: databricks-jobs
+tags:
+  - jobs
+  - deployment
 ---
 
 Once you have developed a spark workflow using prophecy, you will want to schedule it to run at some frequency. To

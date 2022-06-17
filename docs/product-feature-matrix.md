@@ -1,6 +1,9 @@
 ---
 sidebar_position: 2
 title: Product Feature Matrix
+id: feature-matrix
+description: Compare and contrast the offerings at Prophecy
+tags:
 ---
 
 Prophecy has an Enterprise Trial using the Prophecy Databricks environment for a 14-day trial

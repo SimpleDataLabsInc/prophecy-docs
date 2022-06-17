@@ -1,5 +1,8 @@
 ---
 title: Tutorials
+id: tutorials
+description: Tutorials and approaches to solving certain common Data Engineering problems within Prophecy
+tags:
 ---
 
 :::caution 🚧 Work in Progress 🚧

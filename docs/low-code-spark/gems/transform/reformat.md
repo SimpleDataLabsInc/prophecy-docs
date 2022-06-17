@@ -1,6 +1,13 @@
 ---
 sidebar_position: 1
 title: Reformat
+id: reformat
+description: Select one or more columns or values using expressions and functions.
+tags:
+  - gems
+  - select
+  - reformat
+  - transform
 ---
 
 Edits one or more column names or values, by using expressions and functions. It's useful when we need to extract only the required columns or make changes column-wise.

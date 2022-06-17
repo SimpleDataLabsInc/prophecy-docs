@@ -1,5 +1,14 @@
 ---
 title: Multi Jobs Trigger
+id: multi-jobs-trigger
+description: Complex pipeline interactions and timing
+sidebar_position: 1
+tags:
+  - scheduling
+  - jobs
+  - trigger
+  - pipelines
+  - tutorial
 ---
 
 To better structure your projects, sometimes you would like to create multiple different jobs that trigger only a

@@ -1,6 +1,14 @@
 ---
 sidebar_position: 4
 title: Aggregate
+id: aggregate
+description: Group data and apply aggregation methods or pivot operations
+tags:
+  - gems
+  - aggregate
+  - group by
+  - sum
+  - count
 ---
 
 Allows you to group the data and apply aggregation methods and pivot operation.

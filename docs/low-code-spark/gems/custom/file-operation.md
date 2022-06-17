@@ -1,6 +1,11 @@
 ---
 sidebar_position: 3
 title: File Operation
+id: file-operations
+description: Perform file operations on different file systems
+tags:
+  - file
+  - dbfs
 ---
 
 Helps perform file operations like `copy` and `move` on different file systems

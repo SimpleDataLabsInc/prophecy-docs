@@ -1,6 +1,14 @@
 ---
 sidebar_position: 3
 title: Order By
+id: order-by
+description: Sort your data based on one or more Columns
+tags:
+  - gems
+  - order by
+  - sort
+  - ascending
+  - descending
 ---
 
 Sorts dataframe on one or more columns in ascending or descending order.

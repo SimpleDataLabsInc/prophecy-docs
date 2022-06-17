@@ -1,5 +1,8 @@
 ---
 title: Custom
+id: custom
+description: Collection of gems that do not fit into the other available categories
+tags:
 ---
 
 Set of gems that do not fall into the stereotypical buckets of gems

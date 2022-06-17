@@ -1,5 +1,8 @@
 ---
 title: Extensibility
+description: Extensibility
+id: extensibility
+tags:
 ---
 
 :::caution 🚧 Work in Progress 🚧

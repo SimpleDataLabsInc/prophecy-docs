@@ -1,6 +1,16 @@
 ---
 title: Reliable CI/CD with Prophecy
 image: img/reliable-ci-cd/dev-qa-prod.png
+id: reliable-ci-cd
+description: Explore Continuous Integration and Continuous Delivery within Prophecy
+sidebar_position: 2
+tags:
+  - cicd
+  - deployment
+  - devops
+  - qa
+  - testing
+  - tutorial
 ---
 
 **Continuous Integration (CI)** and **Continuous Delivery (CD)** are some of the cornerstones of modern and reliable
