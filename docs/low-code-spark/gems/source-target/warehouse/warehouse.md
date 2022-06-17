@@ -2,7 +2,7 @@
 title: Warehouse
 id: warehouse
 description: A collection of gems specializing in connecting to warehouse-style data sources
-tags:
+tags: []
 ---
 
 Constitutes the warehouses where data can be read from and written to.

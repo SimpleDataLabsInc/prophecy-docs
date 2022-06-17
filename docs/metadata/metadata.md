@@ -2,7 +2,7 @@
 title: Metadata
 id: metadata
 description: Metadata
-tags:
+tags: []
 ---
 
 :::caution 🚧 Work in Progress 🚧

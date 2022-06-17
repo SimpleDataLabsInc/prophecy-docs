@@ -5,7 +5,7 @@ weight: 2
 id: authentication
 description: >
   Prophecy support for identity providers for authentication and authorization
-tags:
+tags: []
 ---
 
 Prophecy can connect with Identity providers to ensure that you can login into Prophecy with an external identity
