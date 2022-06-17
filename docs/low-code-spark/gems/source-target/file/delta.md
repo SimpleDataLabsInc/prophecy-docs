@@ -39,7 +39,7 @@ To read more about delta time travel and its use cases [click here](https://data
 
 ### Source Example
 
-![Example usage of Delta](./img/delta/delta_source_eg.gif)
+![Delta source example](./img/delta/delta_source_eg.gif)
 
 ### Generated Code {#source-code}
 
@@ -181,7 +181,7 @@ Merge and SCD2 merge would be explained with examples in the following sections.
 
 ### Target Example
 
-![Example usage of Filter](./img/delta/delta_target_eg.gif)
+![Delta Target Example](./img/delta/delta_target_eg.gif)
 
 ### Generated Code {#target-code}
 
@@ -276,7 +276,7 @@ Let's assume our initial customers table is as below:
 
 And we have the below updates coming into customers table
 
-![Initial customer table](./img/delta/delta_customers_updates_eg1.png)
+![Customer table updates](./img/delta/delta_customers_updates_eg1.png)
 
 Our output and configurations for SCD1 merge will look like below:
 
