@@ -9,8 +9,147 @@ tags:
   - avro
 ---
 
-:::caution 🚧 Work in Progress 🚧
+Avro format is a row-based storage format for Hadoop, which is widely used as a serialization platform.
+Avro format stores the schema in JSON format, making it easy to read and interpret by any program.
+The data itself is stored in a binary format making it compact and efficient in Avro files.
 
-TODO
+This gem allows you to read from or write to an avro file.
 
+## Source
+
+Reads data from avro files present at a path
+
+### Source Parameters
+
+| Parameter             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Required | Default |
+| :-------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------- | :------ |
+| Location              | File path where avro files are present                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | True     | None    |
+| Recursive File Lookup | This is used to recursively load files and it disables partition inferring. Its default value is false. If data source explicitly specifies the partitionSpec when recursiveFileLookup is true, exception will be thrown.                                                                                                                                                                                                                                                                                                               | False    | False   |
+| Path Global Filter    | An optional glob pattern to only include files with paths matching the pattern. The syntax follows org.apache.hadoop.fs.GlobFilter. It does not change the behavior of partition discovery.                                                                                                                                                                                                                                                                                                                                             | False    | None    |
+| Modified Before       | An optional timestamp to only include files with modification times occurring before the specified Time. The provided timestamp must be in the following form: YYYY-MM-DDTHH:mm:ss (e.g. 2020-06-01T13:00:00)                                                                                                                                                                                                                                                                                                                           | False    | None    |
+| Modified After        | An optional timestamp to only include files with modification times occurring after the specified Time. The provided timestamp must be in the following form: YYYY-MM-DDTHH:mm:ss (e.g. 2020-06-01T13:00:00)                                                                                                                                                                                                                                                                                                                            | False    | None    |
+| Avro Schema           | Optional schema provided by a user in JSON format. When reading Avro, this option can be set to an evolved schema, which is compatible but different with the actual Avro schema. The deserialization schema will be consistent with the evolved schema. For example, if we set an evolved schema containing one additional column with a default value, the reading result in Spark will contain the new column too.                                                                                                                   | False    | None    |
+| ignoreExtension       | The option controls ignoring of files without .avro extensions in read. <br/>If the option is enabled, all files (with and without .avro extension) are loaded.<br/> The option has been deprecated, and it will be removed in the future releases. Please use the general data source option](https://spark.apache.org/docs/latest/sql-data-sources-generic-options.html#path-global-filter) [pathGlobFilter](https://spark.apache.org/docs/latest/sql-data-sources-generic-options.html#path-global-filter) for filtering file names. | False    | True    |
+
+### Example {#source}
+
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://user-images.githubusercontent.com/103921419/173252728-8924f0fb-6e81-44b7-9c39-17ba1d8f4d4c.mp4" title="Avro Source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+
+![Avro schema used](./img/avro/avro_schema_eg1.png)
+
+### Generated Code {#source-code}
+
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+
+<TabItem value="py" label="Python">
+
+```py
+def read_avro(spark: SparkSession) -> DataFrame:
+    return spark.read\
+        .format("avro")\
+        .option("ignoreExtension", True)\
+        .option(
+          "avroSchema",
+          "{\"type\":\"record\",\"name\":\"Person\",\"fields\":[{\"name\":\"firstname\",\"type\":\"string\"},{\"name\":\"middlename\",\"type\":\"string\"},{\"name\":\"lastname\",\"type\":\"string\"},{\"name\":\"dob_year\",\"type\":\"int\"},{\"name\":\"dob_month\",\"type\":\"int\"},{\"name\":\"gender\",\"type\":\"string\"},{\"name\":\"salary\",\"type\":\"int\"}]}"
+        )\
+        .load("dbfs:/FileStore/Users/abhinav/avro/test.avro")
+
+```
+
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+object read_avro {
+
+  def apply(spark: SparkSession): DataFrame =
+    spark.read
+        .format("avro")
+        .option("ignoreExtension", True)
+        .option(
+          "avroSchema",
+          "{\"type\":\"record\",\"name\":\"Person\",\"fields\":[{\"name\":\"firstname\",\"type\":\"string\"},{\"name\":\"middlename\",\"type\":\"string\"},{\"name\":\"lastname\",\"type\":\"string\"},{\"name\":\"dob_year\",\"type\":\"int\"},{\"name\":\"dob_month\",\"type\":\"int\"},{\"name\":\"gender\",\"type\":\"string\"},{\"name\":\"salary\",\"type\":\"int\"}]}"
+        )
+        .load("dbfs:/FileStore/Users/abhinav/avro/test.avro")
+
+}
+```
+
+</TabItem>
+</Tabs>
+
+
+````
+
+---
+
+## Target
+
+### Target Parameters
+
+Write data as avro files at the specified path.
+
+| Parameter         | Description                                                                                                                                                                                                                                                                                              | Required | Default        |
+| :---------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------- | :------------- |
+| Location          | File path where avro files are present                                                                                                                                                                                                                                                                   | True     | None           |
+| Avro Schema       | Optional schema provided by a user in JSON format. When writing Avro, this option can be set if the expected output Avro schema doesn't match the schema converted by Spark. For example, the expected schema of one column is of "enum" type, instead of "string" type in the default converted schema. | False    | None           |
+| Record Name       | Top level record name in write result, which is required in Avro spec.                                                                                                                                                                                                                                   | False    | topLevelRecord |
+| Record Namespace  | Record namespace in write result.                                                                                                                                                                                                                                                                        | False    | ""             |
+| Compression       | The compression option allows to specify a compression codec used in write.<br/> Currently supported codecs are uncompressed, snappy, deflate, bzip2, xz and zstandard.<br/>If the option is not set, the configuration spark.sql.avro.compression.codec config is taken into account.                   | False    | snappy         |
+| Write Mode        | Write mode for dataframe                                                                                                                                                                                                                                                                                 | True     | error          |
+| Partition Columns | List of columns to partition the avro files by                                                                                                                                                                                                                                                           | False    | None           |
+
+### Example {#target}
+
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://user-images.githubusercontent.com/103921419/173252728-8924f0fb-6e81-44b7-9c39-17ba1d8f4d4c.mp4" title="Avro Target" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+
+### Generated Code {#target-code}
+
+````mdx-code-block
+
+<Tabs>
+
+<TabItem value="py" label="Python">
+
+```py
+def write_avro(spark: SparkSession, in0: DataFrame):
+    in0.write\
+        .format("avro")\
+        .mode("overwrite")\
+        .partitionBy("dob_year","dob_month")\
+        .save("dbfs:/data/test_output.avro")
+```
+
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+object write_avro {
+  def apply(spark: SparkSession, in: DataFrame): Unit =
+    in.write
+        .format("avro")
+        .mode("overwrite")
+        .partitionBy("dob_year","dob_month")
+        .save("dbfs:/data/test_output.avro")
+}
+```
+
+</TabItem>
+</Tabs>
+
+
+````
+
+:::info
+To know more about tweaking avro related properties in spark config [**click here**](https://spark.apache.org/docs/latest/sql-data-sources-avro.html).
 :::
