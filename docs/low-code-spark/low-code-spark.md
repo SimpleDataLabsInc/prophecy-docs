@@ -2,7 +2,7 @@
 title: Low-code Spark
 id: low-card-spark
 description: Low-code Spark
-tags:
+tags: []
 ---
 
 :::caution 🚧 Work in Progress 🚧

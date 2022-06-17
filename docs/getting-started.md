@@ -3,7 +3,7 @@ title: Getting Started
 sidebar_position: 3
 id: getting-started
 description: Getting started with Prophecy
-tags:
+tags: []
 ---
 
 Prophecy has a few different deployment models that are currently supported
