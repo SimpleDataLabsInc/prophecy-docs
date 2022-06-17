@@ -1,7 +1,7 @@
 ---
 title: "Authentication"
 date: 2022-03-21T14:45:52-07:00
-weight: 2
+sidebar_position: 2
 id: authentication
 description: >
   Prophecy support for identity providers for authentication and authorization
@@ -17,5 +17,6 @@ We currently support
 
 - Active Directory (AD)
 - SAML based authentications (such as Okta)
+- LDAP
 
 If you require some other authentication mechanism, please reach out to our team.
