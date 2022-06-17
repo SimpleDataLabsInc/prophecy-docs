@@ -1,5 +1,14 @@
 ---
 title: Working with XLSX (Excel) files
+id: working-with-excel
+description: Explore the basics of working with XLSX (Excel) files with Prophecy
+sidebar_position: 1
+tags:
+  - gems
+  - devops
+  - file
+  - tutorial
+  - xlsx
 ---
 
 If you've worked with numbers in your day-to-day operations, odds are you've run into a need to use Excel at one point or another. This tutorial is going to cover the two most basic scenarios: Reading and Writing.

@@ -1,6 +1,12 @@
 ---
 sidebar_position: 9
 title: Window Function
+id: window-function
+description: Aggregate and transform Windowed data
+tags:
+  - gems
+  - window
+  - aggregate
 ---
 
 Allows you to define a **WindowSpec** and apply Window functions on a dataframe

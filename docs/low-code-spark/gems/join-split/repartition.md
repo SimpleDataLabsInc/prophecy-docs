@@ -6,6 +6,8 @@ sidebar_position: 2
 tags:
   - gems
   - join-split
+  - partition
+  - repartition
 ---
 
 This will repartition/coalesce the input dataframe based on config.

@@ -1,6 +1,11 @@
 ---
 sidebar_position: 6
 title: Limit
+id: limit
+description: Limit the number of rows
+tags:
+  - gems
+  - limit
 ---
 
 Limits the number of rows in the output

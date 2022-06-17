@@ -2,8 +2,12 @@
 title: "Deployment"
 date: 2022-03-21T14:45:41-07:00
 weight: 1
+id: deployment
 description: >
   Prophecy deployment is flexible and supports multiple mechanisms
+tags:
+  - deployment
+  - jobs
 ---
 
 Prophecy deployment is simple and flexible. Prophecy is written as a set of microservices that run on Kubernetes and is

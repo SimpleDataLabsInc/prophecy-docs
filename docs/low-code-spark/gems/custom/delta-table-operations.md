@@ -1,6 +1,12 @@
 ---
 sidebar_position: 4
 title: Delta Table Operations
+id: delta-ops
+description: Gem that encompasses some of the import side operations of Delta
+tags:
+  - file
+  - delta
+  - devops
 ---
 
 Helps perform the following operations on delta tables.

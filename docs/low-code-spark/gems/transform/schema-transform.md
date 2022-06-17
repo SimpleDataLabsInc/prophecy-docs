@@ -1,6 +1,13 @@
 ---
 sidebar_position: 5
 title: Schema Transform
+id: schema-transform
+description: Add, Edit, Rename or Drop Columns
+tags:
+  - gems
+  - withColumn
+  - transform
+  - schema
 ---
 
 SchemaTransform is used to add, edit, rename or drop columns from the incoming dataframe.

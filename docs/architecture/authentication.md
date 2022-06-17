@@ -2,8 +2,10 @@
 title: "Authentication"
 date: 2022-03-21T14:45:52-07:00
 weight: 2
+id: authentication
 description: >
   Prophecy support for identity providers for authentication and authorization
+tags:
 ---
 
 Prophecy can connect with Identity providers to ensure that you can login into Prophecy with an external identity

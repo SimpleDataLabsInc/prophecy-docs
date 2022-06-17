@@ -1,6 +1,14 @@
 ---
 sidebar_position: 8
 title: Set Operation
+id: set-operation
+description: Union, Intersect and Difference
+tags:
+  - gems
+  - set
+  - union
+  - intersect
+  - difference
 ---
 
 Allows you to perform addition or subtraction of rows from dataframes with identical schemas and different data.

@@ -1,5 +1,8 @@
 ---
 title: Architecture
+id: architecture
+description: Describing the architecture of Prophecy and how it can integrate into your use cases
+tags:
 ---
 
 Prophecy deployment is simple and flexible. Prophecy is written as a set of Microservices that run on Kubernetes and is

@@ -1,6 +1,12 @@
 ---
 sidebar_position: 1
 title: Dependencies
+id: dependencies
+description: Dependency management
+tags:
+  - dependencies
+  - maven
+  - extensibility
 ---
 
 Dependencies allow you to make use of third-party or custom code in your data pipelines and jobs. Dependencies can be
