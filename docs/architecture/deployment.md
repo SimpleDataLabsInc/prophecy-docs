@@ -5,11 +5,9 @@ sidebar_position: 1
 id: deployment
 description: Prophecy deployment is flexible and supports multiple mechanisms
 tags:
-
-- deployment
-- jobs
-- databricks
-
+  - deployment
+  - jobs
+  - databricks
 ---
 
 Prophecy deployment is simple and flexible. Prophecy is written as a set of microservices that run on Kubernetes and is

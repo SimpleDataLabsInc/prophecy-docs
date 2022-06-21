@@ -127,4 +127,3 @@ Now to pull main branch from upstream repository or from origin of current repos
 
 1. Any changes made in forked repository would not effect the `upstream repository` and would only reflect in the `forked repository`.
 2. Please follow the normal git flow for raising pull requests to the `original repository` (upstream repository) from the `forked repository`.
-   :::
