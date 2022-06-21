@@ -111,7 +111,6 @@ pop-up would come for details of `forked repository`.
 
 ![Fork repo setup](./img/fork_repo_eg1.png)
 
-
 Let's create a fork of our original repository and pull `main` branch from original repository to our newly created forked repository.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
@@ -122,7 +121,7 @@ Let's create a fork of our original repository and pull `main` branch from origi
 Now to pull main branch from upstream repository or from origin of current repository is as simple as clicking on below
 `Pull Upstream` or `Pull Origin` options
 
-![Fork repo options](./img/fork_repo_eg2.png)
+![Fork repo extra options](./img/fork_repo_eg2.png)
 
 :::note
 
