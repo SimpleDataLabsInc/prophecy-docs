@@ -39,7 +39,7 @@ In the below example we would create below unit tests:
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/103921419/174399603-07080a2f-a52b-4feb-a029-733f947fad6c.mp4" title="Output rows equality" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+<iframe src="https://user-images.githubusercontent.com/103921419/174785192-7d99a6e1-d8bf-445f-bf51-981526e3a1e6.mp4" title="Output rows equality" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
 ## Output predicates
@@ -56,7 +56,7 @@ In the below example we would create below unit tests:
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/103921419/174399603-07080a2f-a52b-4feb-a029-733f947fad6c.mp4" title="Output predicates" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+<iframe src="https://user-images.githubusercontent.com/103921419/174785268-5266a044-087f-40cb-a846-f7b548275986.mp4" title="Output predicates" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
 ## Generating sample data for test cases automatically
@@ -90,3 +90,18 @@ Let's have a look at the generated code for our unit test above.
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://user-images.githubusercontent.com/103921419/174399603-07080a2f-a52b-4feb-a029-733f947fad6c.mp4" title="Generate code" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
+
+
+
+
+https://user-images.githubusercontent.com/103921419/174785504-6ee9b766-958a-4dd8-8fc8-9835a3fb4294.mp4
+
+
+https://user-images.githubusercontent.com/103921419/174785461-8d717efb-87a7-44d2-82a0-d0db6e833b29.mp4
+
+
+
+https://user-images.githubusercontent.com/103921419/174785480-294ca5de-9fd2-4e17-94a7-078a3619dddc.mp4
+
+
+
