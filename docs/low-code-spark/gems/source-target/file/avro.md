@@ -38,6 +38,8 @@ Reads data from avro files present at a path
 <iframe src="https://user-images.githubusercontent.com/103921419/174399585-40067429-953e-4157-a5db-d80e25713d24.mp4" title="Avro Source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
+#### Schema used in example above
+
 ![Avro schema used](./img/avro/avro_schema_eg1.png)
 
 ### Generated Code {#source-code}

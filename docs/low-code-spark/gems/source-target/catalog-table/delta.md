@@ -1,7 +1,7 @@
 ---
-title: Delta
+title: Delta Table
 id: delta
-description: Delta
+description: Delta Table
 sidebar_position: 2
 tags:
   - gems
