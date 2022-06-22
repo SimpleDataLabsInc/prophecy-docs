@@ -14,8 +14,8 @@ Allows you to define a **WindowSpec** and apply Window functions on a dataframe
 ### Parameters
 
 | Parameter         | Description                                                                                 | Required                                                                                              |
-| :---------------- | :------------------------------------------------------------------------------------------ | :---------------------------------------------------------------------------------------------------- | --- | ---- |
-| Dataframe         | Input dataframe                                                                             | True                                                                                                  |     | True |
+|:------------------|:--------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------|
+| Dataframe         | Input dataframe                                                                             | True                                                                                                  |
 | Target column     | Output Column name                                                                          | True                                                                                                  |
 | Source expression | Window function expression to perform over the created Window                               | True                                                                                                  |
 | Order columns     | Columns to order by in Window. Must be a numeric type column if a `Range Frame` is selected | Required when `Source expression` has a Ranking/Analytical function OR when `Range Frame` is selected |
