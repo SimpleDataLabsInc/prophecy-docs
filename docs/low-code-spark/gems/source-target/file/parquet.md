@@ -17,7 +17,7 @@ This gem allows you to read from or write to parquet file.
 
 ## Source
 
-Reads data from parquet files present at a path
+Reads data from parquet files present at a path.
 
 ### Source Parameters
 
