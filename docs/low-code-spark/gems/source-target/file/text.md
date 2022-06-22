@@ -13,7 +13,7 @@ This gem allows you to read from or write to text file.
 
 ## Source
 
-Reads data from text files present at a path. Returns a single column dataframe based on the config.
+Reads data from text files present at a path.
 
 ### Source Parameters
 
@@ -87,8 +87,8 @@ Write data as text files at the specified path.
 | Line Separator    | Defines the line separator that should be used for writing.                                                                                             | False    | \n      |
 
 :::info
-Text data source supports only a single column. `AnalysisException` would be thrown if dataframe with more than 1 column
-is given as input to `target` gem using text file format.
+Text data source supports only a single column apart from the partition columns. `AnalysisException` would be thrown if dataframe has more than 1 column
+apart from parition columns as input dataframe to `target` gem.
 :::
 
 ### Example {#target}
