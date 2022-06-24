@@ -101,6 +101,15 @@ const config = {
         darkTheme: darkCodeTheme,
         additionalLanguages: ["java", "scala"],
       },
+      algolia: {
+        appId: 'ZWUS3CKBSL',
+        apiKey: '9adffd2a4c9b4485b540ddd192d384f4',
+        indexName: 'prophecy',
+        contextualSearch: true,
+        // externalUrlRegex: 'external\\.com|domain\\.com',
+        searchParameters: {},
+        searchPagePath: 'search'
+      }
     }),
 };
 
