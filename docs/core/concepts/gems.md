@@ -30,7 +30,7 @@ The Gem list will depend on two factors: Your project language (Python/Scala) an
 
 | Gem category      | Definition                                                                                                                                                   |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Source/Target** | Gems related to [Sources/Targets](../../low-code-spark/gems/source-target/source-target.md) and [Lookups](../../low-code-spark/gems/source-target/lookup.md) |
+| **Source/Target** | Gems related to [Sources/Targets](../../low-code-spark/gems/source-target/source-target.md) and [Lookups](/docs/low-code-spark/gems/source-target/lookup.md) |
 | **Transform**     | Gems related to the [transformation](../../low-code-spark/gems/transform/transform.md) of your data                                                          |
 | **Custom**        | [Custom](../../low-code-spark/gems/custom/custom.md) gems and other gems that don't fit into the other categories                                            |
 | **Join/Split**    | Gems related to [splitting or joining](../../low-code-spark/gems/join-split/join-split.md) datasets together.                                                |
