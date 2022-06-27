@@ -52,7 +52,7 @@ To define new dependency, specify the following:
 For further customization of your dependency you can additionally define **Advanced** properties:
 
 1. **Repository** - by default your dependency is fetched from **Maven Central** repository. If you'd like to use an
-   external repository (e.g. your organizations' repository) yoy can specify the link to it here. Please note, that
+   external repository (e.g. your organizations' repository) you can specify the link to it here. Please note, that
    the repository has to be publicly accessible.
 2. **Exclusions** - optional list of of `groupId:artifactId` pairs, of dependencies you'd like to exclude. Learn more
    about dependency
@@ -60,7 +60,7 @@ For further customization of your dependency you can additionally define **Advan
    .
 
 After you defined the Dependency press **Save**. Prophecy is going to validate the dependency and add it to the project,
-making it enabled by default in all of your pipelines.
+making it enabled in the current workflow, and adding it as dependency (but disabled) among all other workflows in the project.
 
 When adding dependencies, Prophecy validates that the dependency coordinates is valid, and it's able to access them. If
 that fails, you should see an invalid coordinates error.
@@ -97,20 +97,69 @@ the functionality of the other pipelines, it's usually better to disable a depen
 Whenever you connect the pipeline to a cluster, dependencies are automatically installed on your cluster. If the
 cluster doesn't have the dependency installed yet, Prophecy installs it and restarts the cluster automatically.
 
-## Jobs Support
+## Build Tool Customization
 
-:::info Coming Soon
-With Prophecy 2.0, the dependencies are going to be automatically added to the pom.xml. Saving you the additional manual
-steps.
+Project level templates can be defined on the **advanced** tab on the project main screen to generate the build files for all pipelines present inside a project.
+By default, this is enabled by default for new projects.
+The **template** can be customised at the project level as per need.
+
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://user-images.githubusercontent.com/103921419/175944764-1289eac2-4f24-4fe1-8893-7e98e298ddd5.mp4" title="Enable templating" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+
+---
+
+:::info
+For projects created before **Prophecy 2.0 release on 24th June 2022**, project templating would be disabled by default. We highly recommend you to enable it
+as shown in the process below:
+
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://user-images.githubusercontent.com/103921419/175944722-32fc6e26-75d7-4c91-be7d-e8cc9afb34be.mp4" title="Old project Enable templating" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+
+As soon as it is enabled and any workflow is opened on the browser, the existing **pom.xml/build.py** files
+would get updated automatically with the new template defined at the project level. Also, it would automatically include the dependencies defined
+in the **manage dependencies options tab** from the UI in **pom.xml/build.py** files. Please **commit the changes and re-release the project** for
+changes to take effect in the job.
+
+For any help required in enabling the project template for older projects, please reach out to prophecy support team.
 :::
 
-![Dependencies List](img/dependencies-pom-add.gif)
+## Jobs Support
 
-Currently, the dependencies added to your pipelines are not propagated to the scheduled jobs. To ensure that the
-dependency is visible to your pipeline when it's scheduled, it has to be **manually** added to the **pom.xml** file.
+For projects in which templating is enabled, dependencies are added automatically to **pom.xml/build.py** files as soon as they
+are added on the **dependency management** screen in options.
+
+### Scala
+
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://user-images.githubusercontent.com/103921419/175944754-84002ed5-2c7c-4ed5-94bd-dd9c7e077e36.mp4" title="Auto addition to pom file for scala" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+
+### Python
+
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://user-images.githubusercontent.com/103921419/175944746-5300acd1-90b2-4356-8190-128dbe06d0b3.mp4" title="Auto addition to build file for python" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+
+---
+
+:::info
+For older projects in which templating is disabled, the dependencies added to the pipelines are not propagated to the scheduled jobs automatically.
+**(We highly recommend to enable the templating for all projects, rather than editing the pom.xml files manually)**
+
+Though, if you want to keep the templating disabled at project level and still want to add dependencies for scala projects such that it is visible to your pipeline when it's scheduled,
+it has to be **manually** added to the **pom.xml** file.
+Below is an example on how it can be achieved:
 
 The dependency should be added anywhere between the `<dependencies></dependencies>` tags. For instance to
 add `io.github.etspaceman:scalacheck-faker_2.12:7.0.0` dependency, add it to the **pom.xml** like so:
+
+![Dependencies List](img/dependencies-pom-add.gif)
 
 ```xml
 ...
@@ -126,9 +175,4 @@ add `io.github.etspaceman:scalacheck-faker_2.12:7.0.0` dependency, add it to the
 ...
 ```
 
-## Build Tool Customization
-
-:::info Coming Soon
-With Prophecy 2.0, you will be able to customize your build system freely, by defining project-level templates. To learn
-more about it [contact us](mailto:support@prophecy.io).
 :::
