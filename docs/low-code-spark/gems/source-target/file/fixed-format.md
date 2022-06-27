@@ -15,7 +15,7 @@ Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about 
 
 :::
 
-Read data from from fixed format files with expected schema, or write data to fixed format files with expected schema.
+Read data from fixed format files with expected schema, or write data to fixed format files with expected schema.
 
 ## Source
 

@@ -16,8 +16,3 @@ Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about 
 
 :::
 
-:::caution 🚧 Work in Progress 🚧
-
-TODO
-
-:::

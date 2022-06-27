@@ -9,8 +9,8 @@ tags:
   - redshift
 ---
 
-:::caution 🚧 Work in Progress 🚧
+:::caution Enterprise Only
 
-TODO
+Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about the Enterprise offering.
 
 :::
