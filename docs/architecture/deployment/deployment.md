@@ -13,7 +13,6 @@ tags:
 Prophecy deployment is simple and flexible. Prophecy is written as a set of microservices that run on Kubernetes and is
 built to be multi-tenant. There are three primary options
 
-
 ## Cloud Deployment
 
 Prophecy in the cloud connects to your existing Spark and Scheduler/Orchestrator. Prophecy does not store any data, however, it does store metadata about your pipelines, datasets and schedules.
@@ -72,7 +71,7 @@ or any other Spark through [Apache Livy](https://livy.apache.org/) (e.g. MapR, C
 ![Prophecy <> Databricks Connectivity](./img/connectivity-databricks.png)
 
 Prophecy connects to Databricks using [Rest API](https://docs.databricks.com/dev-tools/api/latest/index.html). Each
-[fabric](../../concepts/fabric) defined in Prophecy refers to a
+[fabric](../../core/concepts/fabric.md) defined in Prophecy refers to a
 single [Databricks workspace](https://docs.databricks.com/workspace/index.html) and each user is required to
 provide a [personal access token](https://docs.databricks.com/dev-tools/api/latest/authentication.html) to authenticate
 to it.

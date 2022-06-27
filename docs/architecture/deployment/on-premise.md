@@ -16,7 +16,7 @@ like maintenance of the service, health checks, updates, version rollback etc.
 
 ## Requirements
 
-To install Prophecy on-premise the following infrastructure requirements must be satisfied: 
+To install Prophecy on-premise the following infrastructure requirements must be satisfied:
 
 1. Cluster
 2. Storage
