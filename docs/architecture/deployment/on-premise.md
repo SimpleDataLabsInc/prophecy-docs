@@ -1,8 +1,14 @@
 ---
 title: "On premise"
 id: on-premise
-description: Schema, meet Data.
+description: On-premise deployments. Bring Your Own Hardware
 sidebar_position: 2
+tags:
+  - deployment
+  - on-prem
+  - cdp
+  - hdp
+  - mapr
 ---
 
 Prophecy can be deployed on-premise for customers who require maximum security or want to run on their own on-premise

@@ -1,8 +1,12 @@
 ---
 title: "SAML Using Okta"
 id: saml_okta
-description: Schema, meet Data.
+description: SAML authentication using OKTA
 sidebar_position: 2
+tags:
+  - authentication
+  - saml
+  - okta
 ---
 
 This document describes how to configure SAML using Okta as the identity provider for Prophecy.

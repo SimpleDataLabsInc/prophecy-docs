@@ -1,8 +1,12 @@
 ---
 title: "Azure Active Directory"
 id: azure_ad
-description: Schema, meet Data.
+description: Authentication using Azure Active Directory
 sidebar_position: 2
+tags:
+  - authentication
+  - active-directory
+  - azure
 ---
 
 This document describes how to configure Azure Active Directory as the identity provider for Prophecy.

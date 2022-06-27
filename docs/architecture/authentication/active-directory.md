@@ -1,8 +1,12 @@
 ---
 title: "Active-Directory"
 id: active_directory
-description: Schema, meet Data.
+description: Authentication using Active Directory
 sidebar_position: 2
+tags:
+  - authentication
+  - ad
+  - active-directory
 ---
 
 This document describes how to configure LDAP(Active Directory) as an identity provider for Prophecy.
