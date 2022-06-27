@@ -34,16 +34,16 @@ These are the set of informations which we are supposed to provide for LDAP conf
 **Username Prompt**: The attribute to display in the provided password prompt.
 
 ### User Search
-**Base Distinguished Name**: BaseDN to start the search from. It will translate to the query "(&(objectClass=person)(uid=<username>))".
+**Base Distinguished Name**: BaseDN to start the search from.
 **Filters**: Optional filter to apply when searching the directory.
-**Username**: Username attribute used for comparing user entries. This will be translated and combined with the other filters like "(<attr>=<username>)".
+**Username**: Username attribute used for comparing user entries.
 **ID Attribute**: String representation of the user.
 **Email Attribute**: Attribute to map to Email.
 **Name Attribute**: Maps to display name of users.
 
 
 ### Group Search
-**Base Distinguished Name **: BaseDN to start the search from. It will translate to the query "(&(objectClass=person)(uid=<username>))".
+**Base Distinguished Name**: BaseDN to start the search from.
 **Filter**: Optional filter to apply when searching the directory.
 **Name Attribute**: Maps to display name of users.
 
