@@ -19,15 +19,14 @@ Read data from from fixed format files with expected schema, or write data to fi
 
 ## Source
 
-Reads data from fixed format files 
+Reads data from fixed format files
 
 ### Source Parameters
 
-| Parameter      | Description                                | Required |
-| :------------- | :----------------------------------------- | :------- |
-| Location       | File path where fixed format files are present    | True     |
-| Fixed Format Schema | Schema string for the fixed format file, supports either ebcdic or ascii formats        | True    |
-
+| Parameter           | Description                                                                      | Required |
+| :------------------ | :------------------------------------------------------------------------------- | :------- |
+| Location            | File path where fixed format files are present                                   | True     |
+| Fixed Format Schema | Schema string for the fixed format file, supports either ebcdic or ascii formats | True     |
 
 ### Source Example
 
@@ -77,18 +76,20 @@ object ReadEbcdic {
 </Tabs>
 
 ````
+
 ---
+
 ## Target
 
 Writes data in fixed file format according to the specified schema string.
 
 ### Target Parameters
 
-| Parameter                     | Description                                                                                                                                                                | Required |
-| :---------------------------- | :-------------------------------------------------| :-------  |
-| Location                      | File path where fixed format files will be written  | True      |
-| Write mode                    | Write mode for dataframe                          | False     |                                                                                                                         | True     |
-| Fixed Format Schema           | Schema string for the fixed format file, supports either ebcdic or ascii formats            | True      |
+| Parameter           | Description                                                                      | Required |
+| :------------------ | :------------------------------------------------------------------------------- | :------- | --- | ---- |
+| Location            | File path where fixed format files will be written                               | True     |
+| Write mode          | Write mode for dataframe                                                         | False    |     | True |
+| Fixed Format Schema | Schema string for the fixed format file, supports either ebcdic or ascii formats | True     |
 
 ### Write modes
 
@@ -100,7 +101,6 @@ Below are different type of write modes which prophecy provided delta format sup
 | append     | If data already exists, contents of the DataFrame are expected to be appended to existing data.                                                                                               |
 | ignore     | If data already exists, the save operation is expected not to save the contents of the DataFrame and not to change the existing data. This is similar to a CREATE TABLE IF NOT EXISTS in SQL. |
 | error      | If data already exists, an exception is expected to be thrown.                                                                                                                                |
-
 
 ### Target Example
 

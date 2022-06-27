@@ -14,7 +14,7 @@ Allows you to define a **WindowSpec** and apply Window functions on a dataframe
 ### Parameters
 
 | Parameter         | Description                                                                                 | Required                                                                                              |
-|:------------------|:--------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------|
+| :---------------- | :------------------------------------------------------------------------------------------ | :---------------------------------------------------------------------------------------------------- |
 | Dataframe         | Input dataframe                                                                             | True                                                                                                  |
 | Target column     | Output Column name                                                                          | True                                                                                                  |
 | Source expression | Window function expression to perform over the created Window                               | True                                                                                                  |
