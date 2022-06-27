@@ -43,7 +43,7 @@ When editing a `Pipeline`, you'll be using the editor shown below.
 ![Editing a pipeline](img/pipeline/edit_pipeline.png)
 
 1. _Pipeline Config_ : Buttons that bring up views related to the configuration of your `Pipeline`:
-   1. [Config](../low-code-spark/configuration.md)
+   1. [Config](../../low-code-spark/configuration.md)
    2. [Scheduling](../low-code-jobs/)
    3. Unit Tests
    4. UDFs/UDAFs
