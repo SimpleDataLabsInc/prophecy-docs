@@ -9,7 +9,6 @@ tags:
   - json
 ---
 
-
 Allows you to read or write a delimited file (often called Comma Separated File, CSV)
 
 ### Source Parameters
@@ -21,9 +20,8 @@ The below list contains the additional parameters to read a JSON file:
 | Parameter    |     | Description                                                                                                 | Required |
 | ------------ | :-- | ----------------------------------------------------------------------------------------------------------- | -------- |
 | Dataset Name |     | Name of the Dataset ([read more about Datasets](./../../../../core-concepts/dataset/))                      | True     |
-| Location     |     | Location of the file(s) to be loaded <br/> Eg: dbfs:/data/test.json                                          | True     |
+| Location     |     | Location of the file(s) to be loaded <br/> Eg: dbfs:/data/test.json                                         | True     |
 | Schema       |     | Schema to applied on the loaded data. Can be defined/edited as json or inferred using `Infer Schema` button | True     |
-
 
 ### Source Example
 
@@ -61,9 +59,6 @@ spark.read
 
 ````
 
-
-
-
 ### Target Parameters
 
 JSON **_Target_** supports all the available [spark write options for JSON](https://spark.apache.org/docs/latest/sql-data-sources-json.html).
@@ -73,7 +68,7 @@ The below list contains the additional parameters to write a JSON file:
 | Parameter    |     | Description                                                                            | Required |
 | ------------ | :-- | -------------------------------------------------------------------------------------- | -------- |
 | Dataset Name |     | Name of the Dataset ([read more about Datasets](./../../../../core-concepts/dataset/)) | True     |
-| Location     |     | Location of the file(s) to be loaded <br/> Eg: dbfs:/data/output.json                   | True     |
+| Location     |     | Location of the file(s) to be loaded <br/> Eg: dbfs:/data/output.json                  | True     |
 
 ### Generated Code {#target-code}
 
