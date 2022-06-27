@@ -13,7 +13,6 @@ tags:
 Prophecy deployment is simple and flexible. Prophecy is written as a set of microservices that run on Kubernetes and is
 built to be multi-tenant. There are three primary options
 
-
 ## Cloud Deployment
 
 Prophecy in the cloud connects to your existing Spark and Scheduler/Orchestrator. Prophecy does not store any data, however, it does store metadata about your pipelines, datasets and schedules.

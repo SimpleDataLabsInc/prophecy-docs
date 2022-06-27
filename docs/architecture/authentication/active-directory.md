@@ -1,8 +1,12 @@
 ---
 title: "Active-Directory"
 id: active_directory
-description: Schema, meet Data.
+description: Authentication using Active Directory
 sidebar_position: 2
+tags:
+  - authentication
+  - ad
+  - active-directory
 ---
 
 This document describes how to configure LDAP(Active Directory) as an identity provider for Prophecy.
@@ -57,10 +61,4 @@ to search for users and groups.
 **Name Attribute**: Maps to display name of users.
 
 ### User Matchers
-
-Add the list contains field pairs that are used to match a user to a group. It adds an additional requirement to the
-filter that an attribute in the group must match the user's attribute value.
-
-
-
- 
+Add the list contains field pairs that are used to match a user to a group. It adds an additional requirement to the filter that an attribute in the group must match the user's attribute value.
