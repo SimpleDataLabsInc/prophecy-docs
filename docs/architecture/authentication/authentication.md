@@ -16,9 +16,7 @@ are respected.
 We currently support
 
 - [Azure Active Directory](./azure-ad.md)
-
 - [Okta (SAML)](./saml-okta.md)
-
 - [Active Directory(LDAP)](./active-directory.md)
 
 If you require some other authentication mechanism, please reach out to our team.

@@ -4,11 +4,13 @@ id: on-premise
 description: On-premise deployments. Bring Your Own Hardware
 sidebar_position: 2
 tags:
-  - deployment
-  - on-prem
-  - cdp
-  - hdp
-  - mapr
+
+- deployment
+- on-prem
+- cdp
+- hdp
+- mapr
+
 ---
 
 Prophecy can be deployed on-premise for customers who require maximum security or want to run on their own on-premise
@@ -38,7 +40,7 @@ Minimum service requirements:
 | Data Plane    | Services serving as a bridge between Spark and Prophecy UI     | 6 Cores  | 10GB  | 10GB            |
 | Platform    | Backup(Twice-a-day, configurable) , Monitoring, logging services (optional) | 4 Cores | 8GB  | 200GB           |
 
-*Platform Services can also run on File based storage 
+*Platform Services can also run on File based storage
 
 ### Storage
 
@@ -61,15 +63,17 @@ Prophecy requires:
 
 Prophecy requires:
 
-- **Ingress** 
-   - Prophecy supports a Prophecy-managed or customer-managed nginx ingress controller. Either k8s nginx or official nginx controllers are supported of any version (the latest stable recommended).
+- **Ingress**
+    - Prophecy supports a Prophecy-managed or customer-managed nginx ingress controller. Either k8s nginx or official
+      nginx controllers are supported of any version (the latest stable recommended).
     - Non-nginx controller configuration is possible, however, not recommended.
-   - Prophecy supports Istio based ingress gateways as well. 
+    - Prophecy supports Istio based ingress gateways as well.
 
 - **Certificates** - Wildcard certificates for path-based routing. Certificates are to be managed by the `cert-manager`,
   which can be Prophecy or customer-managed. Certificates are automatically generated for every ingress resource
   created.
-- **External-DNS** - To successfully resolve the service host names. Prophecy supports a Prophecy-managed or customer-managed external-dns or equivalent of it.
+- **External-DNS** - To successfully resolve the service host names. Prophecy supports a Prophecy-managed or
+  customer-managed external-dns or equivalent of it.
 
 ### Authentication
 
@@ -100,18 +104,21 @@ For interactive and jobs deployment to Airflow, Prophecy requires a customer-man
 ## Scaling
 
 The requirements outlined [above](#cluster) can support up-to 25 concurrent developers (folks actively developing
-pipelines at the same time). To enable more concurrent users, Prophecy supports vertical and horizontal scalling and
-the following estimates are available:
+pipelines at the same time). To enable more concurrent users, Prophecy supports vertical and horizontal scaling.
 
-It is taken care of by the **Autoscaler** component in our platform. The initial pod size specification that we provided
-is for a single pod only, that can be used by around 25 users, depending on the usage. Therefore, e.g., if the number of users increases by 10 times, the Prophecy deployment will automatically scale appropriately and require a proportionately more amount of resources (pod replicas).
+Scaling is taken care of by the **Autoscaler** component in our platform. Therefore, e.g., if the number of
+users increases by 10 times, the Prophecy deployment will automatically scale appropriately and require a
+proportionately more amount of resources (pod replicas).
 
+Following are estimated recommended cluster sizes for different user numbers:
 
-| Number of users           | 25        | 50       | 150       |
-|---------------------------|-----------|----------|-----------|
-| CPUs                      | 44 vCPUs  | 80 vCPUs | 230 vCPUs |
-| Memory                    | 86 GB     | 160 GB   | 460 GB  |
-| Disk space (with backups) | 360 GB    | 720 GB     | 1440 TB      |
+| Number of users           | 25        | 50        | 150        |
+|---------------------------|-----------|-----------|------------|
+| CPUs                      | 44 vCPUs  | 80 vCPUs  | 230 vCPUs  |
+| Memory                    | 86 GB     | 160 GB    | 460 GB     |
+| Disk space (with backups) | 360 GB    | 720 GB    | 1440 TB    |
 
+:::info
 Please, note that the recommended resource may vary based on the intensity of the usage of each developer. The numbers
-presented above are based on the average recorded usage of the Prophecy customers. 
+presented above are based on the average recorded usage of the Prophecy customers.
+:::
