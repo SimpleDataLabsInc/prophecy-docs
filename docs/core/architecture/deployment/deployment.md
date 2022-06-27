@@ -13,9 +13,6 @@ tags:
 Prophecy deployment is simple and flexible. Prophecy is written as a set of microservices that run on Kubernetes and is
 built to be multi-tenant. There are three primary options
 
-- [Public SaaS](./deployment.md#public-saas)
-- [Private SaaS (Customer VPC)](./deployment.md#private-saas-customer-vpc)
-- [On-Premise Deployment](./deployment.md#on-premise-deployment)
 
 ## Cloud Deployment
 
@@ -60,19 +57,19 @@ using [request a demo](https://www.prophecy.io/request-a-demo).
 
 Prophecy connects to the following external services:
 
-- [Spark](deployment.md#spark) - for interactive code execution
+- [Spark](./deployment#spark) - for interactive code execution
 - Schedulers - for code orchestration
 - [Git](./deployment#git) - for code storage
 - Identity Providers - for easier user authentication and authorization
 
 ### Spark
 
-To allow for interactive code execution Prophecy can connect to either [Databricks](./deployment#databricks)
+To allow for interactive code execution Prophecy can connect to either [Databricks](docs/core/architecture/deployment#databricks)
 or any other Spark through [Apache Livy](https://livy.apache.org/) (e.g. MapR, CDP, HDP, Spark on Kubernetes).
 
 #### Databricks
 
-![Prophecy <> Databricks Connectivity](img/connectivity-databricks.png)
+![Prophecy <> Databricks Connectivity](./img/connectivity-databricks.png)
 
 Prophecy connects to Databricks using [Rest API](https://docs.databricks.com/dev-tools/api/latest/index.html). Each
 [fabric](../concepts/fabric) defined in Prophecy refers to a

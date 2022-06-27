@@ -106,22 +106,22 @@ real customer data.
 
 1. Create two **teams**:
 
-   - **developers** - a superset of all the teams, which contains your developers and members of the _prod_support_
-     team
-   - **prod_support** - team composed of members who have privileged production access permissions
+    - **developers** - a superset of all the teams, which contains your developers and members of the _prod_support_
+      team
+    - **prod_support** - team composed of members who have privileged production access permissions
 
 2. Create two **fabrics**:
 
-   - **development** - owned by the _developers_ team
-   - **production** - owned by the _prod_support_ team
+    - **development** - owned by the _developers_ team
+    - **production** - owned by the _prod_support_ team
 
 3. Set up your **projects** - create your projects, as you would before. Projects should be owned by the _developers_
    team.
 
 4. Set up your **jobs** - for every single set of pipelines you'd like to schedule, create two jobs:
-   - **job_development** - jobs built by the _developers_ for integration and testing purposes
-   - **job_production** - jobs built by the _prod_support_ team, based on the development jobs - they will run in the
-     production environment
+    - **job_development** - jobs built by the _developers_ for integration and testing purposes
+    - **job_production** - jobs built by the _prod_support_ team, based on the development jobs - they will run in the
+      production environment
 
 <div style={{position: 'relative', 'padding-bottom': '56.25%', height: 0}}>
    <iframe src="https://www.loom.com/embed/b9669f374f504e469b2f88374bcf35d3" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
@@ -164,6 +164,24 @@ and [jobs deployment](/low-code-jobs/databricks-jobs#deployment) documentation.
 
 ## Multi-fabric Deployment with GitHub
 
-:::info Coming Soon
+So far, we looked at how Prophecy makes it really easy to deploy our jobs to multiple environments, directly using the
+CI / CD system built into it. However, it is often the case that you want to deploy your pipelines from your GIT
+instead. This enables you to have a more secure production environment, where it doesn't have to connect to directly
+Prophecy itself.
 
-:::
+As we know, Prophecy publishes all the entities (pipelines, jobs, metadata, etc) directly on your GIT. That means you
+can very easily deploy that code to whatever Databricks environment you'd like - very easily. 
+
+### Setup GitHub actions
+
+### 
+
+
+
+
+
+
+
+
+
+
