@@ -121,7 +121,7 @@ as shown in the process below:
 
 As soon as it is enabled and any workflow is opened on the browser, the existing **pom.xml/build.py** files
 would get updated automatically with the new template defined at the project level. Also, it would automatically include the dependencies defined
-in the **manage dependencies options tab** from the UI in **pom.xml/build.py** files. Please commit the changes and re-release the project for
+in the **manage dependencies options tab** from the UI in **pom.xml/build.py** files. Please **commit the changes and re-release the project** for
 changes to take effect in the job.
 
 For any help required in enabling the project template for older projects, please reach out to prophecy support team.
@@ -146,8 +146,10 @@ are added on the **dependency management** screen in options.
 <iframe src="https://user-images.githubusercontent.com/103921419/175944746-5300acd1-90b2-4356-8190-128dbe06d0b3.mp4" title="Auto addition to build file for python" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
+---
+
 :::info
-For older projects in which templating is disabled, the dependencies added to your pipelines are not propagated to the scheduled jobs automatically.
+For older projects in which templating is disabled, the dependencies added to the pipelines are not propagated to the scheduled jobs automatically.
 **(We highly recommend to enable the templating for all projects, rather than editing the pom.xml files manually)**
 
 Though, if you want to keep the templating disabled at project level and still want to add dependencies for scala projects such that it is visible to your pipeline when it's scheduled,
