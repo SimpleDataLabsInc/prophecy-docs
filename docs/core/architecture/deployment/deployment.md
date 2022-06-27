@@ -50,21 +50,21 @@ The install is very simple, takes about 20 minutes, and billing starts after 30 
 
 On rare occasions Prophecy will deploy on-premise for the large customers who are moving to the cloud. Often the order
 is that the organizations will move pipelines from on-premise legacy ETL tools to Spark, then move it to Spark on the
-cloud. For more information on this reach out to our team by
+cloud. For more information read the [on-premise installation documentation](on-premise) or reach out to our team by
 using [request a demo](https://www.prophecy.io/request-a-demo).
 
 ## Connectivity
 
 Prophecy connects to the following external services:
 
-- [Spark](./deployment#spark) - for interactive code execution
+- [Spark](#spark) - for interactive code execution
 - Schedulers - for code orchestration
-- [Git](./deployment#git) - for code storage
+- [Git](#git) - for code storage
 - Identity Providers - for easier user authentication and authorization
 
 ### Spark
 
-To allow for interactive code execution Prophecy can connect to either [Databricks](docs/core/architecture/deployment#databricks)
+To allow for interactive code execution Prophecy can connect to either [Databricks](#databricks)
 or any other Spark through [Apache Livy](https://livy.apache.org/) (e.g. MapR, CDP, HDP, Spark on Kubernetes).
 
 #### Databricks
@@ -72,7 +72,7 @@ or any other Spark through [Apache Livy](https://livy.apache.org/) (e.g. MapR, C
 ![Prophecy <> Databricks Connectivity](./img/connectivity-databricks.png)
 
 Prophecy connects to Databricks using [Rest API](https://docs.databricks.com/dev-tools/api/latest/index.html). Each
-[fabric](../concepts/fabric) defined in Prophecy refers to a
+[fabric](../../concepts/fabric) defined in Prophecy refers to a
 single [Databricks workspace](https://docs.databricks.com/workspace/index.html) and each user is required to
 provide a [personal access token](https://docs.databricks.com/dev-tools/api/latest/authentication.html) to authenticate
 to it.
