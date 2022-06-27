@@ -8,7 +8,7 @@ tags:
   - pipelines
 ---
 
-A `Pipeline` (formerly known as a _Workflow_) is a type of entity within Prophecy that is used to represent the flow of data. They are similar to directions you might use on a road trip: You have a **_Start_** and **_Finish_** ([Datasets](./dataset.md)) and the **_steps_** to take along the way ([Instructions](./instructions.md)).
+A `Pipeline` (formerly known as a _Workflow_) is a type of entity within Prophecy that is used to represent the flow of data. They are similar to a map you might use on a road trip: You have a **_Start_** and **_Finish_** ([Datasets](./dataset.md)) and the **_stops_** to make along the way ([Gems](./gems.md)).
 
 ## Pipeline list
 
