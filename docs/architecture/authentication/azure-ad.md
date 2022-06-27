@@ -36,7 +36,7 @@ This document describes how to configure Azure Active Directory as the identity 
 - You have already noted down the "value" of the secret you create earlier.
 
 
-## Configure Prophecy to connect with your Okta setup
+## Configure Prophecy to connect with Azure Active Directory
 - Login to Prophecy IDE using admin user
 - Go to settings and Admin tab and choose "Authentication Provider" as Azure Active Directory and fill up the information you noted down earlier. Save it.
 - Logout and you will be able to see "Login with Azure Active Directory" option. Now users your Azure AD users will be able to login to Prophecy IDE using "Login with Azure Active Directory" option
