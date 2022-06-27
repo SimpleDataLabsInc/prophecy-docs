@@ -16,7 +16,7 @@ This document describes how to configure Azure Active Directory as the identity 
 
 ### API Permission
 - Go to "API permissions" on the left hand side and add these set of API permissions 
-<img width="799" alt="Screenshot 2022-06-13 at 9 57 16 PM" src="https://user-images.githubusercontent.com/59466885/173400731-acb084df-31a7-4858-b6ba-f395e888e60e.png">
+<img width="799" alt="Screenshot 2022-06-13 at 9 57 16 PM" src="https://user-images.githubusercontent.com/59466885/173400731-acb084df-31a7-4858-b6ba-f395e888e60e.png" />
 
 ### Certificates & Secrets
 - Go to "Certificates & Secrets" add a new secret and note down the "value" of this secret. 
