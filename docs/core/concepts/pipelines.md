@@ -52,7 +52,7 @@ When editing a `Pipeline`, you'll be using the editor shown below.
    7. Visual Language
 2. _View switch_ : Switch between the Visual development and the Generated Code. **Note:** The generated Code will only update if there are no errors detected in the Visual view.
 3. _Fabric Switch_ : Select the [Fabric](./fabric.md) to use during development, start a new or connect to an existing cluster
-4. _Gem drawer_ : Click to select a category, then click on the Gem you wish to insert into the editor. See [here](./instructions.md) for more information on the Gems
+4. _Gem drawer_ : Click to select a category, then click on the Gem you wish to insert into the editor. See [here](./gems.md) for more information on the Gems
 5. _Workspace_ : Everything in the middle of the view is the _Workspace_. This is where you'll create and manipulate the gems that make up this `Pipeline`.
 6. _GIT Status_ : In Prophecy almost everything is stored in GIT, and this is where you can interact with the version control for your Pipeline. See [Projects & Git](./project.md) for more information
 7. _Run_ : If you just want to run your `Pipeline` from start to finish, click this button
