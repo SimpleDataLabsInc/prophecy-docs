@@ -8,9 +8,3 @@ tags:
   - development
   - git
 ---
-
-:::caution 🚧 Work in Progress 🚧
-
-TODO
-
-:::
