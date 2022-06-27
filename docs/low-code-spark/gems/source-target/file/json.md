@@ -19,7 +19,7 @@ The below list contains the additional parameters to read a JSON file:
 
 | Parameter    |     | Description                                                                                                 | Required |
 | ------------ | :-- | ----------------------------------------------------------------------------------------------------------- | -------- |
-| Dataset Name |     | Name of the Dataset ([read more about Datasets](./../../../../core-concepts/dataset/))                      | True     |
+| Dataset Name |     | Name of the Dataset ([read more about Datasets](/core/concepts/dataset.md))                                 | True     |
 | Location     |     | Location of the file(s) to be loaded <br/> Eg: dbfs:/data/test.json                                         | True     |
 | Schema       |     | Schema to applied on the loaded data. Can be defined/edited as json or inferred using `Infer Schema` button | True     |
 
@@ -65,10 +65,10 @@ JSON **_Target_** supports all the available [spark write options for JSON](http
 
 The below list contains the additional parameters to write a JSON file:
 
-| Parameter    |     | Description                                                                            | Required |
-| ------------ | :-- | -------------------------------------------------------------------------------------- | -------- |
-| Dataset Name |     | Name of the Dataset ([read more about Datasets](./../../../../core-concepts/dataset/)) | True     |
-| Location     |     | Location of the file(s) to be loaded <br/> Eg: dbfs:/data/output.json                  | True     |
+| Parameter    |     | Description                                                                 | Required |
+| ------------ | :-- | --------------------------------------------------------------------------- | -------- |
+| Dataset Name |     | Name of the Dataset ([read more about Datasets](/core/concepts/dataset.md)) | True     |
+| Location     |     | Location of the file(s) to be loaded <br/> Eg: dbfs:/data/output.json       | True     |
 
 ### Generated Code {#target-code}
 

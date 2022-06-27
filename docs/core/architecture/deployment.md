@@ -13,9 +13,9 @@ tags:
 Prophecy deployment is simple and flexible. Prophecy is written as a set of microservices that run on Kubernetes and is
 built to be multi-tenant. There are three primary options
 
-- [Public SaaS](/architecture/deployment#public-saas)
-- [Private SaaS](/architecture/deployment#private-saas-customer-vpc)
-- [On-premise](/architecture/deployment#on-premise-deployment)
+- [Public SaaS](./deployment.md#public-saas)
+- [Private SaaS (Customer VPC)](./deployment.md#private-saas-customer-vpc)
+- [On-Premise Deployment](./deployment.md#on-premise-deployment)
 
 ## Cloud Deployment
 
@@ -60,14 +60,14 @@ using [request a demo](https://www.prophecy.io/request-a-demo).
 
 Prophecy connects to the following external services:
 
-- [Spark](/architecture/deployment#spark) - for interactive code execution
+- [Spark](deployment.md#spark) - for interactive code execution
 - Schedulers - for code orchestration
-- [Git](http://localhost:3000/architecture/deployment#git) - for code storage
+- [Git](./deployment#git) - for code storage
 - Identity Providers - for easier user authentication and authorization
 
 ### Spark
 
-To allow for interactive code execution Prophecy can connect to either [Databricks](/architecture/deployment#databricks)
+To allow for interactive code execution Prophecy can connect to either [Databricks](./deployment#databricks)
 or any other Spark through [Apache Livy](https://livy.apache.org/) (e.g. MapR, CDP, HDP, Spark on Kubernetes).
 
 #### Databricks
@@ -75,7 +75,7 @@ or any other Spark through [Apache Livy](https://livy.apache.org/) (e.g. MapR, C
 ![Prophecy <> Databricks Connectivity](img/connectivity-databricks.png)
 
 Prophecy connects to Databricks using [Rest API](https://docs.databricks.com/dev-tools/api/latest/index.html). Each
-[fabric](/core-concepts/fabric) defined in Prophecy refers to a
+[fabric](../concepts/fabric) defined in Prophecy refers to a
 single [Databricks workspace](https://docs.databricks.com/workspace/index.html) and each user is required to
 provide a [personal access token](https://docs.databricks.com/dev-tools/api/latest/authentication.html) to authenticate
 to it.

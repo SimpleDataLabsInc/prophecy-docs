@@ -11,7 +11,7 @@ tags:
 
 Allows you to define configurations to control various aspects of your pipeline. Prophecy IDE allows you to define three kinds of configurations:
 
-1. **Pipeline Configuration**: name-value pair per [fabric](./../core-concepts/fabric/) which can then be accessed in pipeline as `${name}`. <br/> Eg: `for Fabric = dev, SOURCE_PATH: dbfs:/dev/file.csv`, <br/> `for Fabric = prod, SOURCE_PATH: dbfs:/prod/file.csv`
+1. **Pipeline Configuration**: name-value pair per [fabric](/core/concepts/fabric.md) which can then be accessed in pipeline as `${name}`. <br/> Eg: `for Fabric = dev, SOURCE_PATH: dbfs:/dev/file.csv`, <br/> `for Fabric = prod, SOURCE_PATH: dbfs:/prod/file.csv`
    :::note
    Each name-value pair has to be first defined in the `Common` tab. This can then be overridden in the individual fabric tabs.
    ![Configurations - Common](./img/configs_common.png)
@@ -47,7 +47,7 @@ Allows you to define configurations to control various aspects of your pipeline.
 #### Dynamic Data Load Using Workflow Configurations
 
 In this example, we'll see how we can configure different source file paths for different execution environments.
-We have two [fabrics](./../core-concepts/fabric/) available for our pipeline viz. `DEV` and `PROD`
+We have two [fabrics](/core/concepts/fabric/) available for our pipeline viz. `DEV` and `PROD`
 
 ```mdx-code-block
 import App from '@site/src/components/slider';
