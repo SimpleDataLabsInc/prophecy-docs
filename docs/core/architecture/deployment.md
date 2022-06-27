@@ -60,14 +60,14 @@ using [request a demo](https://www.prophecy.io/request-a-demo).
 
 Prophecy connects to the following external services:
 
-- [Spark](/architecture/deployment#spark) - for interactive code execution
+- [Spark](deployment.md#spark) - for interactive code execution
 - Schedulers - for code orchestration
-- [Git](http://localhost:3000/architecture/deployment#git) - for code storage
+- [Git](./deployment#git) - for code storage
 - Identity Providers - for easier user authentication and authorization
 
 ### Spark
 
-To allow for interactive code execution Prophecy can connect to either [Databricks](/architecture/deployment#databricks)
+To allow for interactive code execution Prophecy can connect to either [Databricks](./deployment#databricks)
 or any other Spark through [Apache Livy](https://livy.apache.org/) (e.g. MapR, CDP, HDP, Spark on Kubernetes).
 
 #### Databricks
