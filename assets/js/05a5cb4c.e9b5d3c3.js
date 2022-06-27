@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[6526],{3294:function(c){c.exports=JSON.parse('{"label":"fabric","permalink":"/tags/fabric","allTagsPath":"/tags","count":1,"items":[{"id":"core-concepts/fabric","title":"Fabrics","description":"Location, Location, Location","permalink":"/core-concepts/fabric"}]}')}}]);

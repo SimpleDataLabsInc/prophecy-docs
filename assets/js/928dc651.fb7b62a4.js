@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[5970],{2723:function(e){e.exports=JSON.parse('{"label":"teams","permalink":"/tags/teams","allTagsPath":"/tags","count":1,"items":[{"id":"core/concepts/teamuser","title":"Teams & Users","description":"Stop. Collaborate and listen","permalink":"/core/concepts/teamuser"}]}')}}]);

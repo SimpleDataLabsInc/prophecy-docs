@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[6928],{134:function(e){e.exports=JSON.parse('{"title":"Core","slug":"/category/core","permalink":"/category/core","navigation":{"previous":{"title":"Getting Started","permalink":"/getting-started"},"next":{"title":"Concepts","permalink":"/category/concepts"}}}')}}]);
