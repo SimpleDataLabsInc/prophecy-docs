@@ -39,7 +39,7 @@ This document describes how to configure SAML using Okta as the identity provide
 
 ### Certificate
 - Go to Sign On tab and find out "SAML Signing Certificates" section. Download the certificate by clicking on marked place in below image
-<img width="569" alt="Screenshot 2022-06-11 at 5 39 06 PM" src="https://user-images.githubusercontent.com/59466885/173188121-6324269d-c883-44b5-8462-32fb9014dc61.png">
+<img width="569" alt="Screenshot 2022-06-11 at 5 39 06 PM" src="https://user-images.githubusercontent.com/59466885/173188121-6324269d-c883-44b5-8462-32fb9014dc61.png" />
 
 ### Entity & SSO Issuer
 - Go to General tab-> SAML Settings section -> Edit
