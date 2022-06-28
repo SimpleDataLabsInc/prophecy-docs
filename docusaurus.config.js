@@ -111,6 +111,20 @@ const config = {
         searchPagePath: "search",
       },
     }),
+
+  plugins: [
+      [
+        '@docusaurus/plugin-client-redirects',
+        {
+          redirects: [
+              {
+                to: '/getting-started',
+                from: '/developer/videos/'
+            }
+          ]
+        }
+      ]
+    ]
 };
 
 module.exports = config;
