@@ -58,7 +58,7 @@ export const ImageData = [
   },
   {
     "image":"/img/csv/load/5.png",
-    "description":<h3 style={{padding:'10px'}}>Step 5: Customize the properties and update schema as per your needs</h3>,
+    "description":<h3 style={{padding:'10px'}}>Step 5 - Customize the properties and update schema as per your needs</h3>,
   },
   {
     "image":"/img/csv/load/6.png",
@@ -157,7 +157,7 @@ export const ImageData2 = [
   },
   {
     "image":"/img/csv/write/5.png",
-    "description":<h3 style={{padding:'10px'}}>Step 5: Customize the properties as per your needs</h3>,
+    "description":<h3 style={{padding:'10px'}}>Step 5 - Customize the properties as per your needs</h3>,
   }
 ];
 
