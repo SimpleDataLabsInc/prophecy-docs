@@ -61,4 +61,5 @@ to search for users and groups.
 **Name Attribute**: Maps to display name of users.
 
 ### User Matchers
+
 Add the list contains field pairs that are used to match a user to a group. It adds an additional requirement to the filter that an attribute in the group must match the user's attribute value.
