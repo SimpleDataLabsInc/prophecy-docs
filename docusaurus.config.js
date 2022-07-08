@@ -113,18 +113,18 @@ const config = {
     }),
 
   plugins: [
-      [
-        '@docusaurus/plugin-client-redirects',
-        {
-          redirects: [
-              {
-                to: '/getting-started',
-                from: '/developer/videos/'
-            }
-          ]
-        }
-      ]
-    ]
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        redirects: [
+          {
+            to: "/getting-started",
+            from: "/developer/videos/",
+          },
+        ],
+      },
+    ],
+  ],
 };
 
 module.exports = config;
