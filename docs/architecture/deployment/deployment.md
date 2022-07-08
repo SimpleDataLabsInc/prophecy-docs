@@ -113,6 +113,9 @@ Supported Git providers:
 - **Azure DevOps** - authenticates using per-user personal access
   tokens. [How to generate PAT?](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=Windows)
 
+Security-conscious enterprises that use GITs within private networks behind firewalls have to additionally 
+whitelist the Prophecy Control Plane IP address (`3.133.35.237`).
+
 :::info Coming Soon
 The users are going to be able to connect to common Git providers, by leveraging their respective OAuth functionalities.
 E.g. [GitHub OAuth](https://docs.github.com/en/developers/apps/building-oauth-apps/authorizing-oauth-apps) or Azure AD.
