@@ -113,7 +113,7 @@ Supported Git providers:
 - **Azure DevOps** - authenticates using per-user personal access
   tokens. [How to generate PAT?](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=Windows)
 
-Security-conscious enterprises that use GITs within private networks behind firewalls have to additionally 
+Security-conscious enterprises that use GITs within private networks behind firewalls have to additionally
 whitelist the Prophecy Control Plane IP address (`3.133.35.237`).
 
 :::info Coming Soon
