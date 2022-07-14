@@ -151,8 +151,8 @@ Gems table page
  */
 
 .gems-table table {
-  display:table;
-  width:100%;
+  display: table;
+  width: 100%;
 }
 
 .gems-table table th:nth-of-type(1) {

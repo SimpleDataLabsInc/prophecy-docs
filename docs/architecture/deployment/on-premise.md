@@ -4,13 +4,11 @@ id: on-premise
 description: On-premise deployments. Bring Your Own Hardware
 sidebar_position: 2
 tags:
-
-- deployment
-- on-prem
-- cdp
-- hdp
-- mapr
-
+  - deployment
+  - on-prem
+  - cdp
+  - hdp
+  - mapr
 ---
 
 Prophecy can be deployed on-premise for customers who require maximum security or want to run on their own on-premise
@@ -34,13 +32,13 @@ To install Prophecy on-premise the following infrastructure requirements must be
 
 Minimum service requirements:
 
-| Namespace     | Description                                                    | # Cores  | # RAM | # Block Storage |
-|---------------|----------------------------------------------------------------|----------|-------|-----------------|
-| Control Plane | Main services (front-end, code editor, metadata, lineage, etc) | 34 Cores | 68GB  | 150GB           |
-| Data Plane    | Services serving as a bridge between Spark and Prophecy UI     | 6 Cores  | 10GB  | 10GB            |
-| Platform    | Backup(Twice-a-day, configurable) , Monitoring, logging services (optional) | 4 Cores | 8GB  | 200GB           |
+| Namespace     | Description                                                                 | # Cores  | # RAM | # Block Storage |
+| ------------- | --------------------------------------------------------------------------- | -------- | ----- | --------------- |
+| Control Plane | Main services (front-end, code editor, metadata, lineage, etc)              | 34 Cores | 68GB  | 150GB           |
+| Data Plane    | Services serving as a bridge between Spark and Prophecy UI                  | 6 Cores  | 10GB  | 10GB            |
+| Platform      | Backup(Twice-a-day, configurable) , Monitoring, logging services (optional) | 4 Cores  | 8GB   | 200GB           |
 
-*Platform Services can also run on File based storage
+\*Platform Services can also run on File based storage
 
 ### Storage
 
@@ -64,10 +62,11 @@ Prophecy requires:
 Prophecy requires:
 
 - **Ingress**
-    - Prophecy supports a Prophecy-managed or customer-managed nginx ingress controller. Either k8s nginx or official
-      nginx controllers are supported of any version (the latest stable recommended).
-    - Non-nginx controller configuration is possible, however, not recommended.
-    - Prophecy supports Istio based ingress gateways as well.
+
+  - Prophecy supports a Prophecy-managed or customer-managed nginx ingress controller. Either k8s nginx or official
+    nginx controllers are supported of any version (the latest stable recommended).
+  - Non-nginx controller configuration is possible, however, not recommended.
+  - Prophecy supports Istio based ingress gateways as well.
 
 - **Certificates** - Wildcard certificates for path-based routing. Certificates are to be managed by the `cert-manager`,
   which can be Prophecy or customer-managed. Certificates are automatically generated for every ingress resource
@@ -112,11 +111,11 @@ proportionately more amount of resources (pod replicas).
 
 Following are estimated recommended cluster sizes for different user numbers:
 
-| Number of users           | 25        | 50        | 150        |
-|---------------------------|-----------|-----------|------------|
-| CPUs                      | 44 vCPUs  | 80 vCPUs  | 230 vCPUs  |
-| Memory                    | 86 GB     | 160 GB    | 460 GB     |
-| Disk space (with backups) | 360 GB    | 720 GB    | 1440 TB    |
+| Number of users           | 25       | 50       | 150       |
+| ------------------------- | -------- | -------- | --------- |
+| CPUs                      | 44 vCPUs | 80 vCPUs | 230 vCPUs |
+| Memory                    | 86 GB    | 160 GB   | 460 GB    |
+| Disk space (with backups) | 360 GB   | 720 GB   | 1440 TB   |
 
 :::info
 Please, note that the recommended resource may vary based on the intensity of the usage of each developer. The numbers
