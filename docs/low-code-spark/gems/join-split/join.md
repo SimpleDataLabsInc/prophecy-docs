@@ -26,17 +26,17 @@ Performs various types of joins with one more dataframes
 | Where Clause ( Conditions tab )   | Filter applied after the Join operation                                     | False                                  |
 | Target column ( Expressions )     | Output column name                                                          | False                                  |
 | Expression   ( Expressions )      | Expression to compute target column                                         | Required if a Target column is present |
-| Type ( Hints )                    | The type of Hint ( Broadcast, Merge, Shuffle Hash, Shuffle Replicate NL     | False                                  |
+| Type ( Hints )                    | The type of Hint ( Broadcast, Merge, Shuffle Hash, Shuffle Replicate NL )   | False                                  |
 
 ### Add a new input
 1. Click on the plus icon to add a new input.
 2. Then add your condition expression for the newly added input.
-   ![Example usage of Aggregate - Aggregation with Grouping](./img/add_new_input.png)
+   ![Example usage of Join - Add new input to join gem](./img/add_new_input.png)
 
 ### Examples
 
-#### Example 1 - Join with three datasets
-![Example usage of Aggregate - Aggregation with Grouping](./img/join_without_hints.png)
+#### Example 1 - Join with three dataframe inputs
+![Example usage of Join - Join three dataframe inputs](./img/join_without_hints.png)
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -77,8 +77,9 @@ object total_orders {
 ````
 
 #### Example 2 - Join with Hints
+Join hints allow users to suggest the join strategy that Spark should use. For a quick overview, see Spark's Join Hints (documentation)[https://spark.apache.org/docs/3.0.0/sql-ref-syntax-qry-select-hints.html#join-hints].
 
-![Example usage of Aggregate - Aggregation with Grouping](./img/join_with_hints.png)
+![Example usage of Join - Join with hints](./img/join_with_hints.png)
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -121,7 +122,7 @@ object total_orders {
 ````
 
 ### Types of Join
-Suppose there are 2 tables TableA and TableB with only 2 columns (Ref, Data) and following data:
+Suppose there are 2 tables TableA and TableB with only 2 columns (Ref, Data) and following contents:
 ### Table A
 | Ref | Data     |    
 |:----|:---------|
