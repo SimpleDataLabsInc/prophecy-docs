@@ -4,8 +4,8 @@
   <ShortName>Prophecy</ShortName>
   <Description>Search Prophecy</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://beta.docs.prophecy.io/img/favicon.png</Image>
-  <Url type="text/html" method="get" template="https://beta.docs.prophecy.io/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://beta.docs.prophecy.io/opensearch.xml" />
-  <moz:SearchForm>https://beta.docs.prophecy.io/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://docs.prophecy.io/img/favicon.png</Image>
+  <Url type="text/html" method="get" template="https://docs.prophecy.io/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://docs.prophecy.io/opensearch.xml" />
+  <moz:SearchForm>https://docs.prophecy.io/</moz:SearchForm>
 </OpenSearchDescription>
