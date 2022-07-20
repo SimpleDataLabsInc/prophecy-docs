@@ -15,7 +15,7 @@ Allows you to read or write files (csv, text and binary) on a remote location
 
 | Parameter       | Description                                                                                                                                                      | Required                                                        |
 | :-------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------- |
-| Dataset Name    | Name of the Dataset ([read more about Datasets](/docs/core/concepts/dataset.md))                                                                                 | True                                                            |
+| Dataset Name    | Name of the Dataset                                                                               | True                                                            |
 | Credential Type | Credential Type: `Databricks Secrets` or `Username & Password`                                                                                                   | True                                                            |
 | Credentials     | Databricks credential name , else username and password for the remote account                                                                                   | Required if `Databricks Secrets` is opted as `Credential Type`  |
 | Username        | Login name for the remote user                                                                                                                                   | Required if `Username & Password` is opted as `Credential Type` |
@@ -29,7 +29,7 @@ Allows you to read or write files (csv, text and binary) on a remote location
 
 | Parameter       | Description                                                                                                                                                      | Required                                                        |
 | :-------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------- |
-| Dataset Name    | Name of the Dataset ([read more about Datasets](/docs/core/concepts/dataset.md))                                                                                 | True                                                            |
+| Dataset Name    | Name of the Dataset                                                                              | True                                                            |
 | Credential Type | Credential Type: `Databricks Secrets` or `Username & Password`                                                                                                   | True                                                            |
 | Credentials     | Databricks credential name , else username and password for the remote account                                                                                   | Required if `Databricks Secrets` is opted as `Credential Type`  |
 | Username        | Login name for the remote user                                                                                                                                   | Required if `Username & Password` is opted as `Credential Type` |
