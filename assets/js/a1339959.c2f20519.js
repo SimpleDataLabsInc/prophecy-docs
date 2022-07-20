@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[4073],{8942:function(s){s.exports=JSON.parse('{"label":"instructions","permalink":"/tags/instructions","allTagsPath":"/tags","count":1,"items":[{"id":"core/concepts/gems","title":"Gems","description":"CONCAT(\\"Your\\", \\"Data\\")","permalink":"/core/concepts/gems"}]}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[1981],{6309:function(e){e.exports=JSON.parse('{"label":"job","permalink":"/tags/job","allTagsPath":"/tags","count":1,"items":[{"id":"core/concepts/job","title":"Jobs","description":"When and where to run your Pipelines","permalink":"/core/concepts/job"}]}')}}]);

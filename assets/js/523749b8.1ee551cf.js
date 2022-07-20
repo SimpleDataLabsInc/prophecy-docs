@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[9508],{4307:function(a){a.exports=JSON.parse('{"label":"search","permalink":"/tags/search","allTagsPath":"/tags","count":1,"items":[{"id":"metadata/search","title":"Search","description":"Search across entities within Prophecy","permalink":"/metadata/search"}]}')}}]);
