@@ -3,6 +3,7 @@ title: Low-code Jobs
 id: low-code-jobs
 description: Low-code Jobs
 tags: []
+draft: true
 ---
 
 Once you have developed a spark data pipeline using prophecy, you will want to schedule it to run at some frequency. To

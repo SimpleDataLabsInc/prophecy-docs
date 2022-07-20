@@ -8,7 +8,7 @@ tags:
   - pipelines
 ---
 
-A `Pipeline` (formerly known as a _Workflow_) is a type of entity within Prophecy that is used to represent the flow of data. They are similar to a map you might use on a road trip: You have a **_Start_** and **_Finish_** ([Datasets](./dataset.md)) and the **_stops_** to make along the way ([Gems](./gems.md)).
+A `Pipeline` (formerly known as a _Workflow_) is a type of entity within Prophecy that is used to represent the flow of data. They are similar to a map you might use on a road trip: You have a **_Start_** and **_Finish_** (Datasets) and the **_stops_** to make along the way ([Gems](./gems.md)).
 
 ## Pipeline list
 
@@ -43,8 +43,8 @@ When editing a `Pipeline`, you'll be using the editor shown below.
 ![Editing a pipeline](img/pipeline/edit_pipeline.png)
 
 1. _Pipeline Config_ : Buttons that bring up views related to the configuration of your `Pipeline`:
-   1. [Config](../../low-code-spark/configuration.md)
-   2. [Scheduling](../../low-code-jobs/)
+   1. [Config](../low-code-spark/configuration.md)
+   2. Scheduling
    3. Unit Tests
    4. UDFs/UDAFs
    5. Dependencies

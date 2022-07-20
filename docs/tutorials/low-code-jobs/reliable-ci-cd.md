@@ -155,7 +155,7 @@ release process, by building your pipelines, running unit tests, and finally dep
 alongside the job definition directly to Databricks (or AirFlow).
 
 If you're new to this process, check out, our [GIT](/metadata/git)
-and [jobs deployment](/low-code-jobs/databricks-jobs#deployment) documentation.
+and jobs deployment documentation.
 
 <div style={{position: 'relative', 'padding-bottom': '56.25%', height: 0}}>
    <iframe src="https://www.loom.com/embed/28153636876f409184e6ba2dcbc8f273" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen

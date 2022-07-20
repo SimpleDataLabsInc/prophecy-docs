@@ -71,7 +71,7 @@ or any other Spark through [Apache Livy](https://livy.apache.org/) (e.g. MapR, C
 ![Prophecy <> Databricks Connectivity](./img/connectivity-databricks.png)
 
 Prophecy connects to Databricks using [Rest API](https://docs.databricks.com/dev-tools/api/latest/index.html). Each
-[fabric](/core/concepts/fabric) defined in Prophecy refers to a
+[fabric](/concepts/fabric) defined in Prophecy refers to a
 single [Databricks workspace](https://docs.databricks.com/workspace/index.html) and each user is required to
 provide a [personal access token](https://docs.databricks.com/dev-tools/api/latest/authentication.html) to authenticate
 to it.
