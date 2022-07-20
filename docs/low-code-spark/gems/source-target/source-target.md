@@ -23,6 +23,7 @@ A collection of gems related to working with various file-based formats.
 | [Fixed Format](./file/fixed-format) | Read data from fixed format files with expected schema, or write data to fixed format files with expected schema. |
 | [Kafka](./file/kafka)               | This source currently connects with Kafka Brokers in Batch mode.                                                  |
 | [XLSX (Excel)](./file/xlsx)         | Allows you to read or write Excel-compatible files.                                                               |
+| [FTP](./file/ftp)                   | Allows you to read or write files (csv, text and binary) on a remote location                                     |
 
 ## Warehouse
 
