@@ -1,7 +1,7 @@
 ---
 title: Gems
 id: gems
-description: CONCAT("Your", "Data")
+description: Transforming your data
 sidebar_position: 3
 tags:
   - concepts
@@ -28,8 +28,8 @@ In the pipeline editor you'll find the _Gem Drawer_. This organizes the Gems int
 The Gem list will depend on two factors: Your project language (Python/Scala) and if you are using SaaS Prophecy or have it deployed in your own architecture.
 :::
 
-| Gem category      | Definition                                                                                                        |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------- |
+| Gem category      | Definition                                                                                                     |
+| ----------------- | -------------------------------------------------------------------------------------------------------------- |
 | **Source/Target** | Gems related to [Sources/Targets](../low-code-spark/gems/source-target/source-target.md) and Lookups           |
 | **Transform**     | Gems related to the [transformation](../low-code-spark/gems/transform/transform.md) of your data               |
 | **Custom**        | [Custom](../low-code-spark/gems/custom/custom.md) gems and other gems that don't fit into the other categories |
@@ -66,7 +66,7 @@ Gem instances can be configured by hovering over their icons in the Pipeline Edi
 |  2  | Inputs/Outputs    | Inputs and outputs for this Gem instance. See [here](#inputsoutputs) for more information                                              |
 |  3  | Gem Configuration | Configuration for this instance. Each Gem Type will have a different UI. See the documentation for each Gem type for more information. |
 |  4  | Diagnostics       | If there's a problem with the configuration for this Gem instance, clicking here will show a list of configuration errors.             |
-|  5  | Unit Tests        | Each Gem instance can have its own set of Unit tests. See [here](../low-code-spark/tests.md) for more details                       |
+|  5  | Unit Tests        | Each Gem instance can have its own set of Unit tests. See [here](../low-code-spark/tests.md) for more details                          |
 
 ## Input/Output ports {#inputsoutputs}
 
@@ -78,12 +78,12 @@ Inputs define the incoming connections accepted by the Gem. Most Gem types only 
 
 ![Input UI](img/gems/inputs.png)
 
-|     | UI element name | Description                                                                                                                                                                                                                                                                     |
-| :-: | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|  1  | Search          | Filter fields across all inputs                                                                                                                                                                                                                                                 |
-|  2  | Add Input       | If the Gem Type supports it, you can click this button to add more input ports to this instance                                                                                                                                                                                 |
+|     | UI element name | Description                                                                                                                                                                                                                                                                  |
+| :-: | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|  1  | Search          | Filter fields across all inputs                                                                                                                                                                                                                                              |
+|  2  | Add Input       | If the Gem Type supports it, you can click this button to add more input ports to this instance                                                                                                                                                                              |
 |  3  | Input name      | If the Gem Type supports it, you can click the pencil icon to rename this port. Some Gem Types will use this name as part of its configuration. For example, a port named `input0` can be used in [Join](../low-code-spark/gems/join-split/join.md) for the join conditions. |
-|  4  | Port schema     | The fields and schema types of the port. Will only appear when an upstream Gem instance is connected                                                                                                                                                                            |
+|  4  | Port schema     | The fields and schema types of the port. Will only appear when an upstream Gem instance is connected                                                                                                                                                                         |
 
 ### Outputs
 

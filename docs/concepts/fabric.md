@@ -1,7 +1,7 @@
 ---
 title: Fabrics
 id: fabric
-description: Location, Location, Location
+description: Logical execution environments
 sidebar_position: 4
 tags:
   - concepts
