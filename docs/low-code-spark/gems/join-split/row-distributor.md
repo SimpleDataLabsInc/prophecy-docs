@@ -2,7 +2,7 @@
 sidebar_position: 3
 title: Row Distributor
 id: row-distributor
-description: Create multiple DataFrames based on filter conditions
+description: Create multiple Dataframes based on filter conditions
 tags:
   - gems
   - split
@@ -10,24 +10,23 @@ tags:
   - row distributor
 ---
 
-Create multiple dataframes based on provided filter conditions from an input dataframe.
+Create multiple Dataframes based on provided filter conditions from an input Dataframe.
 
-This is useful for cases where rows from the input dataframe needs to be distributed
-into multiple dataframes in different ways for the downstream application/pipeline.
+This is useful for cases where rows from the input Dataframe needs to be distributed into multiple Dataframes in different ways for the downstream application/pipeline.
 
 ### Parameters
 
-| Parameter         | Description                                                                                              | Required |
-| :---------------- | :------------------------------------------------------------------------------------------------------- | :------- |
-| Dataframe         | Input dataframe for which rows needs to be distributed into multiple dataframes                          | True     |
-| Filter Conditions | BooleanType column or boolean expression for each output tab. Supports sql, python and scala expressions | True     |
+| Parameter         | Description                                                                                               | Required |
+| ----------------- | --------------------------------------------------------------------------------------------------------- | -------- |
+| Dataframe         | Input Dataframe for which rows needs to be distributed into multiple Dataframes                           | True     |
+| Filter Conditions | Boolean Type column or boolean expression for each output tab. Supports SQL, Python and Scala expressions | True     |
 
 ### Example
 
 ![Row distributor 1](./img/rowdistributor_eg_1.png)
 
 :::info
-Number of outputs can be changed as per need by clicking the `+` button.
+Number of outputs can be changed as needed by clicking the `+` button.
 :::
 
 ### Generated Code
