@@ -10,7 +10,7 @@ tags:
 
 Provides a `SparkSession` and allows you to run custom code
 
-### Parameters
+## Parameters
 
 | Parameter           | Meaning                    | Required |
 | :------------------ | :------------------------- | :------- |
@@ -24,11 +24,11 @@ To remove input/output dataframe(s), simply click <svg width="24" height="24" vi
 ![Script - Remove inputs](./img/script_remove_inputs.png)
 :::
 
-### Examples
+## Examples
 
 ---
 
-#### Script Gem with Input and Output: Un-pivoting a Dataframe
+### Script Gem with Input and Output: Un-pivoting a Dataframe
 
 We'll perform the `unpivot` operation using our custom code
 
@@ -36,7 +36,7 @@ We'll perform the `unpivot` operation using our custom code
 
 ---
 
-#### Script Gem with only Output: Generating a Dataframe
+### Script Gem with only Output: Generating a Dataframe
 
 We'll use the provided `SparkSession` to create and return a dataframe
 
