@@ -10,9 +10,9 @@ tags:
 
 ## How to connect to external GIT
 
-To connect to an external git, the process is as easy as configuring your:
+To connect to an external Git, the process is as easy as configuring your:
 
-1. GIT Repo URL: e.g. `https://github.com/user/git_demo.git`
+1. Git Repo URL: e.g. `https://github.com/user/git_demo.git`
 2. Path: path to project inside the repo. e.g. `/first_project`
 3. Email and username
 4. Access token
