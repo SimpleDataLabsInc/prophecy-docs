@@ -9,32 +9,23 @@ tags:
   - csv
 ---
 
-Allows you to read or write a delimited file (often called Comma Separated File, CSV)
+Allows you to read or write delimited files such as CSV (Comma-separated Values) or TSV (Tab-separated Values)
+
+## Source
 
 ### Source Parameters
 
-CSV **_Source_** supports all the available [spark read options for CSV](https://spark.apache.org/docs/latest/sql-data-sources-csv.html).
+CSV **_Source_** supports all the available [Spark read options for CSV](https://spark.apache.org/docs/latest/sql-data-sources-csv.html).
 
 The below list contains the additional parameters to read a CSV file:
 
 | Parameter    |     | Description                                                                                                 | Required |
-| ------------ | :-- | ----------------------------------------------------------------------------------------------------------- | -------- |
-| Dataset Name |     | Name of the Dataset                             | True     |
-| Location     |     | Location of the file(s) to be loaded <br/> Eg: dbfs:/data/test.csv                                          | True     |
+| ------------ | --- | ----------------------------------------------------------------------------------------------------------- | -------- |
+| Dataset Name |     | Name of the Dataset                                                                                         | True     |
+| Location     |     | Location of the file(s) to be loaded <br/> Eg: `dbfs:/data/test.csv`                                        | True     |
 | Schema       |     | Schema to applied on the loaded data. Can be defined/edited as json or inferred using `Infer Schema` button | True     |
 
-### Target Parameters
-
-CSV **_Target_** supports all the available [spark write options for CSV](https://spark.apache.org/docs/latest/sql-data-sources-csv.html).
-
-The below list contains the additional parameters to write a CSV file:
-
-| Parameter    |     | Description                                                                      | Required |
-| ------------ | :-- | -------------------------------------------------------------------------------- | -------- |
-| Dataset Name |     | Name of the Dataset  | True     |
-| Location     |     | Location of the file(s) to be loaded <br/> Eg: dbfs:/data/output.csv             | True     |
-
-### Loading a CSV file
+### Example {#source-example}
 
 ```mdx-code-block
 import App from '@site/src/components/slider';
@@ -68,6 +59,8 @@ export const ImageData = [
 
 <App ImageData={ImageData}></App>
 ```
+
+### Generated Code {#source-code}
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -134,7 +127,20 @@ object load_csv {
 
 ---
 
-### Writing a CSV file
+## Target
+
+### Target Parameters
+
+CSV **_Target_** supports all the available [Spark write options for CSV](https://spark.apache.org/docs/latest/sql-data-sources-csv.html).
+
+The below list contains the additional parameters to write a CSV file:
+
+| Parameter    |     | Description                                                            | Required |
+| ------------ | --- | ---------------------------------------------------------------------- | -------- |
+| Dataset Name |     | Name of the Dataset                                                    | True     |
+| Location     |     | Location of the file(s) to be loaded <br/> Eg: `dbfs:/data/output.csv` | True     |
+
+### Example {#target-example}
 
 ```mdx-code-block
 
@@ -163,6 +169,8 @@ export const ImageData2 = [
 
 <App ImageData={ImageData2}></App>
 ```
+
+### Generated Code {#target-code}
 
 ````mdx-code-block
 
