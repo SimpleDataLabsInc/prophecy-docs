@@ -9,7 +9,7 @@ tags:
   - devops
 ---
 
-Helps perform the following operations on delta tables.
+Helps perform the following operations on Delta tables.
 
 1. Register table in catalog
 2. Vaccum table
@@ -38,16 +38,13 @@ At lease one value from table name or file path needs to be provided.
 
 ## Register table in catalog
 
-This will register the data at mentioned file path as a table in catalog.
+This will register the data at mentioned file path as a table in the whichever Metadata catalog is available in your execution environment.
 
 ## Vaccum table
 
-Recursively vacuum directories associated with the Delta table. VACUUM removes all files from the
-table directory that are not managed by Delta, as well as data files that are no longer in the
-latest state of the transaction log for the table and are older than a retention threshold. The
-default threshold is 7 days.
+Recursively vacuum directories associated with the Delta table. VACUUM removes all files from the table directory that are not managed by Delta, as well as data files that are no longer in the latest state of the transaction log for the table and are older than a retention threshold. The default threshold is 7 days.
 
-To know more about vaccum [click here](https://docs.databricks.com/spark/latest/spark-sql/language-manual/delta-vacuum.html).
+To learn more about vaccum [click here](https://docs.databricks.com/spark/latest/spark-sql/language-manual/delta-vacuum.html).
 
 ### Parameters {#vacuum-parameters}
 
@@ -57,10 +54,9 @@ To know more about vaccum [click here](https://docs.databricks.com/spark/latest/
 
 ## Optimize table
 
-Optimizes the layout of Delta Lake data. Optionally optimize a subset of data or colocate
-data by column. If colocation is not specified, bin-packing optimization is performed by default.
+Optimizes the layout of Delta Table data. Optionally optimize a subset of data or colocate data by column. If colocation is not specified, bin-packing optimization is performed by default.
 
-To know more about optimize [click here](https://docs.databricks.com/spark/latest/spark-sql/language-manual/delta-optimize.html).
+To learn more about optimize [click here](https://docs.databricks.com/spark/latest/spark-sql/language-manual/delta-optimize.html).
 
 ### Parameters {#optimize-parameters}
 
@@ -71,8 +67,7 @@ To know more about optimize [click here](https://docs.databricks.com/spark/lates
 
 ## Restore table
 
-Restores a Delta table to an earlier state. Restoring to an earlier version number or a
-timestamp is supported.
+Restores a Delta table to an earlier state. Restoring to an earlier version number or a timestamp is supported.
 
 ### Parameters {#restore-parameters}
 
@@ -83,9 +78,7 @@ timestamp is supported.
 
 ## Delete from table
 
-Delete removes the data from the latest version of the Delta table as per the condition
-specified below. Please note that delete does not remove it from the physical storage
-until the older versions are explicitly vacuumed.
+Delete removes the data from the latest version of the Delta table that matches the specified condition. Please note that delete does not remove it from the physical storage until the older versions are explicitly [vacuumed](#vaccum-table).
 
 ### Parameters {#delete-parameters}
 
@@ -99,7 +92,6 @@ This will drop the table from catalog and remove the files.
 
 ## FSCK Repair table
 
-Removes the file entries from the transaction log of a Delta table that can no longer be found in
-the underlying file system. This can happen when these files have been manually deleted.
+Removes the file entries from the transaction log of a Delta table that can no longer be found in the underlying file system. This can happen when these files have been manually deleted.
 
-To know more about fsck repair [click here](https://docs.databricks.com/spark/latest/spark-sql/language-manual/delta-fsck.html).
+To learn more about fsck repair [click here](https://docs.databricks.com/spark/latest/spark-sql/language-manual/delta-fsck.html).
