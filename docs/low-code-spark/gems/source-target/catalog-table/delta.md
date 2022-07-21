@@ -9,7 +9,7 @@ tags:
   - delta
 ---
 
-Reads and writes Delta tables that are defined in the execution environment's Metadata catalog.
+Reads and writes Delta tables that are managed by the execution environment's Metadata catalog (Metastore).
 
 :::note
 Please choose set the property `provider` to `Delta` on the properties page.

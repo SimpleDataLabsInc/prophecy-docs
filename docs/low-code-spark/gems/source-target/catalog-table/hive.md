@@ -9,7 +9,7 @@ tags:
   - hive
 ---
 
-Reads data from or writes data to Hive tables managed by your workspace's Metastore.
+Reads and writes data Hive tables that are managed by the execution environment's Metadata catalog (Metastore).
 
 :::note
 Please choose the provider as `Hive` on properties page.
@@ -105,27 +105,27 @@ object Source {
 
 ### Target Parameters
 
-| Parameter         | Description                                                          | Required | Default       |
-| ----------------- | -------------------------------------------------------------------- | -------- | ------------- |
-| Database name     | Name of the database                                                 | True     |               |
-| Table name        | Name of the table                                                    | True     |               |
-| Custom file path  | Use custom file path to store underlying files                       | False    |               |
-| Provider          | Must be set to `hive`                                                | True     |               |
-| Write Mode        | Where clause to filter the table                                     | True     | (all records) |
-| File Format       | File format to use when saving data                                  | True     | `parquet`     |
-| Partition Columns | Columns to partition by                                              | False    | (empty)       |
-| Use insert into   | If `true`, use `.insertInto` instead of `.save` when generating code | False    | `false`       |
+| Parameter         | Description                                                                                               | Required | Default       |
+| ----------------- | --------------------------------------------------------------------------------------------------------- | -------- | ------------- |
+| Database name     | Name of the database                                                                                      | True     |               |
+| Table name        | Name of the table                                                                                         | True     |               |
+| Custom file path  | Use custom file path to store underlying files                                                            | False    |               |
+| Provider          | Must be set to `hive`                                                                                     | True     |               |
+| Write Mode        | Where clause to filter the table. See [this table](#supported-write-modes) for a detailed list of options | True     | (all records) |
+| File Format       | File format to use when saving data. See [this table](#supported-file-formats) for supported formats      | True     | `parquet`     |
+| Partition Columns | Columns to partition by                                                                                   | False    | (empty)       |
+| Use insert into   | If `true`, use `.insertInto` instead of `.save` when generating code                                      | False    | `false`       |
 
-Below are different type of write modes which prophecy provided hive catalog supports.
+#### Supported Write Modes
 
-| Write Mode | Description                                                                                                                                                                                     |
-| :--------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| overwrite  | If data already exists, existing data is expected to be overwritten by the contents of the DataFrame.                                                                                           |
-| append     | If data already exists, contents of the DataFrame are expected to be appended to existing data.                                                                                                 |
-| ignore     | If data already exists, the save operation is expected not to save the contents of the DataFrame and not to change the existing data. This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
-| error      | If data already exists, an exception is expected to be thrown.                                                                                                                                  |
+| Write Mode | Description                                                                                                                      |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| overwrite  | If data already exists, overwrite with the contents of the Dataframe                                                             |
+| append     | If data already exists, append the contents of the Dataframe                                                                     |
+| ignore     | If data already exists, do nothing with the contents of the Dataframe. This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
+| error      | If data already exists, throw an exception.                                                                                      |
 
-Below are different type of file formats during write which prophecy provided hive catalog supports.
+#### Supported File formats
 
 1. Parquet
 2. Text file
