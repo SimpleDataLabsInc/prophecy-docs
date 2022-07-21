@@ -9,29 +9,29 @@ tags:
   - delta
 ---
 
-Reads data from delta tables saved in data catalog and writes data into delta table in data catalog.
+Reads and writes Delta tables that are defined in the execution environment's Metadata catalog.
 
 :::note
-Please choose the provider as delta on properties page.
+Please choose set the property `provider` to `Delta` on the properties page.
 :::
 
 ## Source
 
 ### Source Parameters
 
-| Parameter        | Description                                | Required |
-| :--------------- | :----------------------------------------- | :------- |
-| Database name    | Name of the database                       | True     |
-| Table name       | Name of the table                          | True     |
-| Provider         | Provider needs to be selected as delta     | True     |
-| Filter Predicate | Where clause to filter the table           | False    |
-| Read Timestamp   | Time travel to a specific timestamp        | False    |
-| Read Version     | Time travel to a specific version of table | False    |
+| Parameter        | Description                                    | Required |
+| ---------------- | ---------------------------------------------- | -------- |
+| Database name    | Name of the database                           | True     |
+| Table name       | Name of the table                              | True     |
+| Provider         | Must be set to `Delta`                         | True     |
+| Filter Predicate | Where clause to filter the table               | False    |
+| Read Timestamp   | Time travel to a specific timestamp            | False    |
+| Read Version     | Time travel to a specific version of the table | False    |
 
 :::note
-For time travel on delta tables:
+For time travel on Delta tables:
 
-1. Only one among timestamp and version can be chosen at a time for time travel.
+1. Only `Read Timestamp` **_OR_** `Read Version` can be selected, not both.
 2. Timestamp should be between the first commit timestamp and the latest commit timestamp in the table.
 3. Version needs to be an integer. Its value has to be between min and max version of table.
 
@@ -39,7 +39,7 @@ By default most recent version of each row is fetched if no time travel option i
 :::
 
 :::info
-To read more about delta time travel and its use cases [click here](https://databricks.com/blog/2019/02/04/introducing-delta-time-travel-for-large-scale-data-lakes.html).
+To read more about Delta time travel and its use cases [click here](https://databricks.com/blog/2019/02/04/introducing-delta-time-travel-for-large-scale-data-lakes.html).
 :::
 
 ### Source Example
@@ -122,36 +122,36 @@ object Source {
 ### Target Parameters
 
 | Parameter                     | Description                                                                                                                                                                | Required |
-| :---------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------- |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | Database name                 | Name of the database                                                                                                                                                       | True     |
 | Table name                    | Name of the table                                                                                                                                                          | True     |
 | Custom file path              | Use custom file path to store underlying files                                                                                                                             | False    |
-| Provider                      | Provider needs to be selected as delta                                                                                                                                     | True     |
-| Write Mode                    | Where clause to filter the table (Default is set to overwrite)                                                                                                             | True     |
-| Use insert into               | Flag to use insert into method to write instead of save in spark.                                                                                                          | False    |
-| Optimise write                | If true, it optimizes spark partition sizes based on the actual data                                                                                                       | False    |
-| Overwrite table schema        | If true, overwrites the schema of the delta table as per the dataframe                                                                                                     | False    |
-| Merge schema                  | If true, then any columns that are present in the DataFrame but not in the target table are automatically added on to the end of the schema as part of a write transaction | False    |
-| Partition Columns             | List of columns to partition the delta table by                                                                                                                            | False    |
+| Provider                      | Must be set to `Delta`                                                                                                                                                     | True     |
+| Write Mode                    | How to handle existing data. See the table below for a detailed list of available options. (Default is set to overwrite)                                                   | True     |
+| Use insert into               | Flag to use `insertInto` method to write instead of `save`                                                                                                                 | False    |
+| Optimize write                | If true, it optimizes Spark partition sizes based on the actual data                                                                                                       | False    |
+| Overwrite table schema        | If true, overwrites the schema of the Delta table                                                                                                                          | False    |
+| Merge schema                  | If true, then any columns that are present in the Dataframe but not in the target table are automatically added on to the end of the schema as part of a write transaction | False    |
+| Partition Columns             | List of columns to partition the Delta table by                                                                                                                            | False    |
 | Overwrite partition predicate | If specified, then it selectively overwrites only the data that satisfies the given where clause expression.                                                               | False    |
 
-Below are different type of write modes which prophecy provided hive catalog supports.
+#### Supported Write Modes
 
-| Write Mode | Description                                                                                                                                                                                   |
-| :--------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| overwrite  | If data already exists, existing data is expected to be overwritten by the contents of the DataFrame.                                                                                         |
-| append     | If data already exists, contents of the DataFrame are expected to be appended to existing data.                                                                                               |
-| ignore     | If data already exists, the save operation is expected not to save the contents of the DataFrame and not to change the existing data. This is similar to a CREATE TABLE IF NOT EXISTS in SQL. |
-| error      | If data already exists, an exception is expected to be thrown.                                                                                                                                |
-| merge      | Insert, delete and update data using the delta merge command.                                                                                                                                 |
-| scd2 merge | It is a delta merge operation that stores and manages both current and historical data over time.                                                                                             |
+| Write Mode | Description                                                                                                                      |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| overwrite  | If data already exists, overwrite with the contents of the Dataframe                                                             |
+| append     | If data already exists, append the contents of the Dataframe                                                                     |
+| ignore     | If data already exists, do nothing with the contents of the Dataframe. This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
+| error      | If data already exists, throw an exception.                                                                                      |
+| merge      | Insert, delete and update data using the Delta `merge` command.                                                                  |
+| SCD2 merge | It is a Delta merge operation that stores and manages both current and historical data over time.                                |
 
 :::note
-Among these write modes overwrite, append, ignore and error works the same way as in case of parquet file writes.
+Among these write modes `overwrite`, `append`, `ignore` and `error` work the same way as with other native Spark-supported formats such as Parquet.
 
-To read more about using merge write mode [**click here**](../file/delta.md#merge-write-mode-with-delta)
+To read more about using `merge` write mode [**click here**](../file/delta.md#merge-write-mode-with-delta)
 
-To read more about using scd2 merge write mode [**click here**](../file/delta.md#scd2-merge-write-mode-with-delta)
+To read more about using `SCD2` merge write mode [**click here**](../file/delta.md#scd2-merge-write-mode-with-delta)
 :::
 
 ### Target Example
