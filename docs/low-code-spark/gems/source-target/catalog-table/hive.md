@@ -105,16 +105,16 @@ object Source {
 
 ### Target Parameters
 
-| Parameter         | Description                                                                                               | Required | Default       |
-| ----------------- | --------------------------------------------------------------------------------------------------------- | -------- | ------------- |
-| Database name     | Name of the database                                                                                      | True     |               |
-| Table name        | Name of the table                                                                                         | True     |               |
-| Custom file path  | Use custom file path to store underlying files                                                            | False    |               |
-| Provider          | Must be set to `hive`                                                                                     | True     |               |
-| Write Mode        | Where clause to filter the table. See [this table](#supported-write-modes) for a detailed list of options | True     | (all records) |
-| File Format       | File format to use when saving data. See [this table](#supported-file-formats) for supported formats      | True     | `parquet`     |
-| Partition Columns | Columns to partition by                                                                                   | False    | (empty)       |
-| Use insert into   | If `true`, use `.insertInto` instead of `.save` when generating code                                      | False    | `false`       |
+| Parameter         | Description                                                                                                | Required | Default   |
+| ----------------- | ---------------------------------------------------------------------------------------------------------- | -------- | --------- |
+| Database name     | Name of the database                                                                                       | True     |           |
+| Table name        | Name of the table                                                                                          | True     |           |
+| Custom file path  | Use custom file path to store underlying files                                                             | False    |           |
+| Provider          | Must be set to `hive`                                                                                      | True     |           |
+| Write Mode        | How to handle existing data. See the [this table](#supported-write-modes) for a list of available options. | True     | `error`   |
+| File Format       | File format to use when saving data. See [this table](#supported-file-formats) for supported formats       | True     | `parquet` |
+| Partition Columns | Columns to partition by                                                                                    | False    | (empty)   |
+| Use insert into   | If `true`, use `.insertInto` instead of `.save` when generating code                                       | False    | `false`   |
 
 #### Supported Write Modes
 

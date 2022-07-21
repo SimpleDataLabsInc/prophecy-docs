@@ -127,7 +127,7 @@ object Source {
 | Table name                    | Name of the table                                                                                                                                                          | True     |
 | Custom file path              | Use custom file path to store underlying files                                                                                                                             | False    |
 | Provider                      | Must be set to `Delta`                                                                                                                                                     | True     |
-| Write Mode                    | How to handle existing data. See the table below for a detailed list of available options. (Default is set to overwrite)                                                   | True     |
+| Write Mode                    | How to handle existing data. See [this table](#supported-write-modes) for a list of available options. (Default is set to `error`)                                         | True     |
 | Use insert into               | Flag to use `insertInto` method to write instead of `save`                                                                                                                 | False    |
 | Optimize write                | If true, it optimizes Spark partition sizes based on the actual data                                                                                                       | False    |
 | Overwrite table schema        | If true, overwrites the schema of the Delta table                                                                                                                          | False    |
