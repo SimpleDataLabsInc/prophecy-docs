@@ -2,20 +2,20 @@
 sidebar_position: 1
 title: SQL Statement
 id: sql-statement
-description: Create DataFrames based on custom SQL queries
+description: Create Dataframes based on custom SQL queries
 tags:
   - gems
   - sql
   - custom
 ---
 
-Create multiple dataframes based on provided SQL queries to run on input dataframe(s).
+Create one or more Dataframe(s) based on provided SQL queries to run against one or more input Dataframe(s).
 
 ### Parameters
 
 | Parameter    | Meaning                       | Required |
 | :----------- | :---------------------------- | :------- |
-| Dataframe(s) | Input dataframe(s)            | True     |
+| Dataframe(s) | Input Dataframe(s)            | True     |
 | SQL Queries  | SQL Query for each output tab | True     |
 
 ### Example
@@ -23,7 +23,7 @@ Create multiple dataframes based on provided SQL queries to run on input datafra
 ![SQL example 1](./img/sqlstatement_eg_1.png)
 
 :::info
-Number of inputs and outputs can be changed as per need by clicking the `+` button.
+Number of inputs and outputs can be changed as needed by clicking the `+` button on the respective tab.
 :::
 
 ### Generated Code
