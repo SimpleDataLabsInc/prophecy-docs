@@ -112,4 +112,57 @@ Most Gem types allow Inputs and Outputs to be renamed, which will have at least 
 
 ## Phase
 
+![Gem phase indicator](img/gems/phase.png)
+
+A Gem's _Phase_ in a Pipeline controls the output order for the code generated for the Pipeline. Gem `A` with a Phase of 0 will run before Gem `B` with a Phase of `1`. It can be any Integer, positive or negative. Let's see an example in action.
+
+### Example {#phase-example}
+
+![Gem phase example 1](img/gems/phase_ex1.png)
+
+Here we have a Pipeline with a number of Gems, each with the default Phase of `0`. Let's look at what the generated code is for this version of the Pipeline:
+
+```scala
+def apply(spark: SparkSession): Unit = {
+  val df_my_orders     = my_orders(spark).cache()
+  val df_Repartition_1 = Repartition_1(spark, df_my_orders)
+  Write_CSV(spark, df_Repartition_1)
+  val df_SchemaTransform_1 = SchemaTransform_1(spark, df_my_orders)
+}
+```
+
+So the order of operations is `my_orders`, `Repartition_1` (and its downstream Gem `Write_CSV`), then `Schema_Transform1`. If we wanted to run `Schema_Transform1` first instead, we can change `Repartition_1`'s Phase to be a higher number than `Schema_Transform1`'s Phase. The `Change Phase` button can be found under the `...` menu that will appear when a Gem is selected:
+
+![Gem change phase button](img/gems/phase_ex2.gif)
+
+Let's see how the code has changed.
+
+```scala
+def apply(spark: SparkSession): Unit = {
+  val df_my_orders     = my_orders(spark).cache()
+  val df_Repartition_1 = Repartition_1(spark, df_my_orders)
+  Write_CSV(spark, df_Repartition_1)
+  val df_SchemaTransform_1 = SchemaTransform_1(spark, df_my_orders)
+}
+```
+
+Not much has changed, because `Write_CSV` still has a Phase of `0`, and in order to be able to complete that step of the Pipeline all of the upstream steps required to complete `Write_CSV` (in this case, `Schema_Transform1`) have to be completed first. Let's change the Phase of `Write_CSV`.
+
+![Write_CSV with a phase of 1](img/gems/phase_ex3.png)
+
+And the new code:
+
+```scala
+def apply(spark: SparkSession): Unit = {
+  val df_my_orders         = my_orders(spark).cache()
+  val df_SchemaTransform_1 = SchemaTransform_1(spark, df_my_orders)
+  val df_Repartition_1     = Repartition_1(spark,     df_my_orders)
+  Write_CSV(spark, df_Repartition_1)
+}
+```
+
+Much better!
+
+So, in summary: the Phase of **_Leaf Nodes_** (that is, the final Gem in a given branch of a Pipeline) is the Phase that will dictate the order of the generated code.
+
 ## Caching
