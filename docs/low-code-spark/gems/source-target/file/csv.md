@@ -135,10 +135,20 @@ CSV **_Target_** supports all the available [Spark write options for CSV](https:
 
 The below list contains the additional parameters to write a CSV file:
 
-| Parameter    |     | Description                                                            | Required |
-| ------------ | --- | ---------------------------------------------------------------------- | -------- |
-| Dataset Name |     | Name of the Dataset                                                    | True     |
-| Location     |     | Location of the file(s) to be loaded <br/> Eg: `dbfs:/data/output.csv` | True     |
+| Parameter    | Description                                                                                            | Required |
+| ------------ | ------------------------------------------------------------------------------------------------------ | -------- |
+| Dataset Name | Name of the Dataset                                                                                    | True     |
+| Location     | Location of the file(s) to be loaded <br/> Eg: `dbfs:/data/output.csv`                                 | True     |
+| Write Mode   | How to handle existing data. See [this table](#supported-write-modes) for a list of available options. | False    |
+
+### Supported Write Modes
+
+| Write Mode | Description                                                                                                                      |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| overwrite  | If data already exists, overwrite with the contents of the Dataframe                                                             |
+| append     | If data already exists, append the contents of the Dataframe                                                                     |
+| ignore     | If data already exists, do nothing with the contents of the Dataframe. This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
+| error      | If data already exists, throw an exception.                                                                                      |
 
 ### Example {#target-example}
 
@@ -209,3 +219,15 @@ object write_as_csv {
 
 
 ````
+
+### Producing a single output file
+
+Because of Spark's distributed nature, output files are written as multiple separate partition files. If you need a single output for some reason (such as reporting or sharing the result), use a `Repartition` gem in `Coalesce` mode with 1 output partition:
+
+![Coalesce example](img/coalesce.gif)
+
+:::caution
+
+Note: This is not recommended for extremely large datasets as it may overwhelm the worker node writing the file.
+
+:::
