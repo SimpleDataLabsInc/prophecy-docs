@@ -111,10 +111,10 @@ Write data as avro files at the specified path.
 | Record Name       | Top level record name in write result, which is required in Avro spec.                                                                                                                                                                                                                | False    | topLevelRecord |
 | Record Namespace  | Record namespace in write result.                                                                                                                                                                                                                                                     | False    | ""             |
 | Compression       | Compression codec used when writing.<br/> Currently supported codecs are `uncompressed`, `snappy`, `deflate`, `bzip2`, `xz` and `zstandard`. Defaults to whatever `spark.sql.avro.compression.codec` is set to.                                                                       | False    | `snappy`       |
-| Write Mode        | How to handle existing data. See [this table](#supported-write-modes) for a list of available options. (Default is `error`)                                                                                                                                                           | True     | `error`        |
+| Write Mode        | How to handle existing data. See [this table](#supported-write-modes) for a list of available options.                                                                                                                                                                                | True     | `error`        |
 | Partition Columns | List of columns to partition the avro files by                                                                                                                                                                                                                                        | False    | None           |
 
-#### Supported Write Modes
+### Supported Write Modes
 
 | Write Mode | Description                                                                                                                      |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
