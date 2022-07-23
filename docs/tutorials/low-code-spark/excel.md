@@ -26,7 +26,7 @@ Reading an Excel file is quite easy in Prophecy! Simply follow these steps to cr
 3. Customize any properties you might need and tweak the schema to your liking <br />![Adjust parameters and schema](img/xlsx_src_3.png) <br />
 4. Preview the file and double-check that the schema matches your intentions <br />![Preview the input file](img/xlsx_src_4.png)
 
-Once the source gem is created and validation passes you'll be able to find the code of your new Source in the `graph` directory of your Pipeline code.
+Once the `Source` Gem is created and validation passes you'll be able to find the code of your new `Source` in the `graph` directory of your Pipeline code.
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -56,18 +56,18 @@ def Source_0(spark: SparkSession) -> DataFrame:
 
 ## Writing XLSX files
 
-Writing an Excel file is just as easy, with only one small caveat to be discussed after. Let's look at an example pipeline with an XLSX output target:
+Writing an Excel file is just as easy, with only one small caveat to be discussed after. Let's look at an example Pipeline with an XLSX output target:
 
-![Sample pipeline with XLSX output](img/xlsx_tgt_0.png)
+![Sample Pipeline with XLSX output](img/xlsx_tgt_0.png)
 
 In this scenario we're building a report of spending by customer and want an XLSX file as output.
 
 1. Select the XLSX format <br />![Select the XLSX target type](img/xlsx_tgt_1.png)<br />
 2. Navigate to the target location <br />![Select destination filename](img/xlsx_tgt_2.png)<br />
 3. Customize any properties needed when writing the output file <br />![Set output parameters](img/xlsx_tgt_3.png)<br />
-4. Run the pipeline!
+4. Run the Pipeline!
 
-Once the target gem is created and validation passes you'll be able to find the code of your new Target in the `graph` directory of your Pipeline code.
+Once the `Target` Gem is created and validation passes you'll be able to find the code of your new `Target` in the `graph` directory of your Pipeline code.
 
 ````mdx-code-block
 <Tabs>
@@ -96,15 +96,15 @@ def ExcelTarget(spark: SparkSession, in0: DataFrame):
 
 As mentioned above, there's a caveat when working with any text-based files in Spark. Because of the distributed nature of the framework, you'll find that your output file is not just a single output file but instead a directory with multiple separately partitioned files within it.
 
-For example, using `dbfs:/FileStore/Users/scott/customers.xlsx` as my Target location I can see the following in DBFS after running my pipeline:
+For example, using `dbfs:/FileStore/Users/scott/customers.xlsx` as my Target location I can see the following in DBFS after running my Pipeline:
 
 1. `customers.xlsx` is, in reality, a directory...<br />![Target output is a directory](img/xlsx_tgt_4.png)<br />
 2. ... that contains multiple partitions within it<br />![Target output is partitioned](img/xlsx_tgt_5.png)<br />
 
-Each file within this directory will be a separate valid XLSX file with a segment of the overall output data. If you want to output only a single file, you'll need to change your pipeline as such:
+Each file within this directory will be a separate valid XLSX file with a segment of the overall output data. If you want to output only a single file, you'll need to change your Pipeline as such:
 
-1. Add a `Repartition` gem in `Coalesce` mode with the `Partition Count` set to `1`. <br />![Coalesce using Repartition](img/xlsx_tgt_5.5.png)<br />
-2. Connect it between your second-to-last transformation and the target gem<br />![Attach coalesce before desired target](img/xlsx_tgt_6.png)<br />
+1. Add a `Repartition` Gem in `Coalesce` mode with the `Partition Count` set to `1`. <br />![Coalesce using Repartition](img/xlsx_tgt_5.5.png)<br />
+2. Connect it between your second-to-last transformation and the `Target` Gem<br />![Attach coalesce before desired target](img/xlsx_tgt_6.png)<br />
 
 After running, your output will still be a directory, but this time it will only contain a single output file.
 
