@@ -32,8 +32,7 @@ repos:
         args: ["-rtitle", "-rid", "-rdescription", "-rtags"]
       - id: commit-message-reuse
       - id: word-veto
-        args:
-          [
+        args: [
             --badwords,
             spark,
             --badwords,
@@ -48,4 +47,8 @@ repos:
             pipeline,
             --badwords,
             fabric,
+            --badwords,
+            GIT
+            --badwords,
+            git,
           ]
