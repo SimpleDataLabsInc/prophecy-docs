@@ -11,6 +11,8 @@ repos:
       - id: end-of-file-fixer
       - id: no-commit-to-branch
         args: [--branch, main]
+      - id: no-commit-to-branch
+        args: [--branch, master]
       - id: trailing-whitespace
         args: [--markdown-linebreak-ext=md]
 
@@ -19,12 +21,31 @@ repos:
     hooks:
       - id: prettier
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.31.1
+    rev: v0.32.0
     hooks:
       - id: markdownlint
 
   - repo: https://github.com/SimpleDataLabsInc/pre-commit-hooks
-    rev: 60227f120e168f19fc8df97378bae129e3ff550c
+    rev: c7e4df5681e887a58e1ecba3cc0628fbcb4c790e
     hooks:
       - id: check-docusaurus-frontmatter
         args: ["-rtitle", "-rid", "-rdescription", "-rtags"]
+      - id: commit-message-reuse
+      - id: word-veto
+        args:
+          [
+            --badwords,
+            spark,
+            --badwords,
+            dataframe,
+            --badwords,
+            json,
+            --badwords,
+            gem,
+            --badwords,
+            prophecy,
+            --badwords,
+            pipeline,
+            --badwords,
+            fabric,
+          ]
