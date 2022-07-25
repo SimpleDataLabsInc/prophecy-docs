@@ -78,7 +78,7 @@ Write data as ORC files at the specified path.
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
 | Location          | File path where ORC files will be written                                                                                                                                                                                   | True     | None    |
 | Compression       | Compression codec to use when saving to file. This can be one of the known case-insensitive shorten names (`none`, `uncompressed`, `snappy`, `gzip`, `lzo`, `brotli`, `lz4`, and `zstd`). This will override `orc.compress` | False    | snappy  |
-| Write Mode        | Write mode for Dataframe                                                                                                                                                                                                    | True     | error   |
+| Write Mode        | Write mode for DataFrame                                                                                                                                                                                                    | True     | error   |
 | Partition Columns | List of columns to partition the ORC files by                                                                                                                                                                               | False    | None    |
 
 ### Example {#example-target}

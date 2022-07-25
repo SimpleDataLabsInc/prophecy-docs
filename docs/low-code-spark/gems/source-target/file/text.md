@@ -87,17 +87,17 @@ Write data as text files at the specified path.
 | Line Separator    | Defines the line separator that should be used for writing.                                                                                                         | False    | `\n`    |
 
 :::info
-The Text data source supports only a single column apart from the partition columns. An `AnalysisException` will be thrown if the Dataframe has more than 1 column
-apart from parition columns as the input Dataframe to the `Target` Gem.
+The Text data source supports only a single column apart from the partition columns. An `AnalysisException` will be thrown if the DataFrame has more than 1 column
+apart from parition columns as the input DataFrame to the `Target` Gem.
 :::
 
 ### Supported Write Modes
 
 | Write Mode | Description                                                                                                                      |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| overwrite  | If data already exists, overwrite with the contents of the Dataframe                                                             |
-| append     | If data already exists, append the contents of the Dataframe                                                                     |
-| ignore     | If data already exists, do nothing with the contents of the Dataframe. This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
+| overwrite  | If data already exists, overwrite with the contents of the DataFrame                                                             |
+| append     | If data already exists, append the contents of the DataFrame                                                                     |
+| ignore     | If data already exists, do nothing with the contents of the DataFrame. This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
 | error      | If data already exists, throw an exception.                                                                                      |
 
 ### Example {#target-example}

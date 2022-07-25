@@ -56,7 +56,7 @@ In the below example we will create below unit tests:
 
 ## Generating sample data for test cases automatically
 
-To generate sample input data automatically from the source Dataframe, this option can be enabled while creating unit test.
+To generate sample input data automatically from the source DataFrame, this option can be enabled while creating unit test.
 
 :::note
 Pipeline needs to run once, to generate units test based on auto-generated sample data.

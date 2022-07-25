@@ -11,19 +11,19 @@ tags:
   - difference
 ---
 
-Allows you to perform addition or subtraction of rows from Dataframes with identical schemas and different data.
+Allows you to perform addition or subtraction of rows from DataFrames with identical schemas and different data.
 
 ### Parameters
 
 | Parameter      | Description                                                                                                                                                                                                                                                                                                                                                                                                      | Required |
 | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------- |
-| Dataframe 1    | First input Dataframe                                                                                                                                                                                                                                                                                                                                                                                            | True     |
-| Dataframe 2    | Second input Dataframe                                                                                                                                                                                                                                                                                                                                                                                           | True     |
-| Dataframe N    | Nth input Dataframe                                                                                                                                                                                                                                                                                                                                                                                              | False    |
-| Operation type | Operation to perform<br/>- `Union`: Returns a Dataframe containing rows in any one of the input Dataframes, while preserving duplicates.<br/>- `Intersect All`: Returns a Dataframe containing rows in all of the input Dataframes, while preserving duplicates. <br/>- `Except All`: Returns a Dataframes containing rows in the first Dataframe, but not in the other Dataframes, while preserving duplicates. | True     |
+| DataFrame 1    | First input DataFrame                                                                                                                                                                                                                                                                                                                                                                                            | True     |
+| DataFrame 2    | Second input DataFrame                                                                                                                                                                                                                                                                                                                                                                                           | True     |
+| DataFrame N    | Nth input DataFrame                                                                                                                                                                                                                                                                                                                                                                                              | False    |
+| Operation type | Operation to perform<br/>- `Union`: Returns a DataFrame containing rows in any one of the input DataFrames, while preserving duplicates.<br/>- `Intersect All`: Returns a DataFrame containing rows in all of the input DataFrames, while preserving duplicates. <br/>- `Except All`: Returns a DataFrames containing rows in the first DataFrame, but not in the other DataFrames, while preserving duplicates. | True     |
 
 :::info
-To add more input Dataframes, simply click `+` icon on the left sidebar
+To add more input DataFrames, simply click `+` icon on the left sidebar
 ![Set Operation - Add input dataframe](./img/set_add_inputs.png)
 :::
 

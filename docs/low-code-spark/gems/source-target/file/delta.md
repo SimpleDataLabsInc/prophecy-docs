@@ -152,10 +152,10 @@ object readDelta {
 | Parameter                     | Description                                                                                                                                                                | Required |
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | Location                      | File path to write the Delta table to                                                                                                                                      | True     |
-| Write mode                    | Write mode for Dataframe                                                                                                                                                   | True     |
+| Write mode                    | Write mode for DataFrame                                                                                                                                                   | True     |
 | Optimise write                | If true, it optimizes Spark partition sizes based on the actual data                                                                                                       | False    |
-| Overwrite table schema        | If true, overwrites the schema of the Delta table with the schema of the incoming Dataframe                                                                                | False    |
-| Merge schema                  | If true, then any columns that are present in the Dataframe but not in the target table are automatically added on to the end of the schema as part of a write transaction | False    |
+| Overwrite table schema        | If true, overwrites the schema of the Delta table with the schema of the incoming DataFrame                                                                                | False    |
+| Merge schema                  | If true, then any columns that are present in the DataFrame but not in the target table are automatically added on to the end of the schema as part of a write transaction | False    |
 | Partition Columns             | List of columns to partition the Delta table by                                                                                                                            | False    |
 | Overwrite partition predicate | If specified, then it selectively overwrites only the data that satisfies the given where clause expression.                                                               | False    |
 
@@ -163,9 +163,9 @@ object readDelta {
 
 | Write Mode | Description                                                                                                                      |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| overwrite  | If data already exists, overwrite with the contents of the Dataframe                                                             |
-| append     | If data already exists, append the contents of the Dataframe                                                                     |
-| ignore     | If data already exists, do nothing with the contents of the Dataframe. This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
+| overwrite  | If data already exists, overwrite with the contents of the DataFrame                                                             |
+| append     | If data already exists, append the contents of the DataFrame                                                                     |
+| ignore     | If data already exists, do nothing with the contents of the DataFrame. This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
 | error      | If data already exists, throw an exception.                                                                                      |
 | merge      | Insert, delete and update data using the Delta `merge` command.                                                                  |
 | SCD2 merge | It is a Delta merge operation that stores and manages both current and historical data over time.                                |
@@ -230,7 +230,7 @@ object writeDelta {
 
 ### Upsert data with Delta
 
-You can upsert data from a source Dataframe into a target Delta table by using the MERGE operation. Delta tables supports `Insert`s, `Update`s, and `Delete`s.
+You can upsert data from a source DataFrame into a target Delta table by using the MERGE operation. Delta tables supports `Insert`s, `Update`s, and `Delete`s.
 
 This operation is also known as SCD1 merge.
 
@@ -238,9 +238,9 @@ This operation is also known as SCD1 merge.
 
 | Parameter                       | Description                                                                                                                                   | Required |
 | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| Source alias                    | Alias to use for the source Dataframe                                                                                                         | True     |
+| Source alias                    | Alias to use for the source DataFrame                                                                                                         | True     |
 | Target alias                    | Alias to use for existing target Delta table                                                                                                  | True     |
-| Merge Condition                 | Condition to merge data from source Dataframe to target table, which would be used to perform update, delete, or insert actions as specified. | True     |
+| Merge Condition                 | Condition to merge data from source DataFrame to target table, which would be used to perform update, delete, or insert actions as specified. | True     |
 | When Matched Update Action      | Update the row from `Source` that already exists in `Target` (based on `Merge Condition`)                                                     | False    |
 | When Matched Update Condition   | Optional additional condition for updating row. If specified then it must evaluate to true for the row to be updated.                         | False    |
 | When Matched Update Expressions | Optional expressions for setting the values of columns that need to be updated.                                                               | False    |
@@ -254,7 +254,7 @@ This operation is also known as SCD1 merge.
 
 1. At least one action out of update, delete or insert needs to be set.
 2. Delete removes the data from the latest version of the Delta table but does not remove it from the physical storage until the old versions are explicitly vacuumed. See [vaccum](https://docs.delta.io/latest/delta-utility.html#-delta-vacuum) for details.
-3. A merge operation can fail if multiple rows of the source Dataframe match and the merge attempts to update the same rows of the target Delta table. Deduplicate gem can be placed before target if duplicate rows at source are expected.
+3. A merge operation can fail if multiple rows of the source DataFrame match and the merge attempts to update the same rows of the target Delta table. Deduplicate gem can be placed before target if duplicate rows at source are expected.
    :::
 
 :::tip

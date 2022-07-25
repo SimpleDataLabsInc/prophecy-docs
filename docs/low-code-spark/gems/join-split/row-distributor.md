@@ -2,7 +2,7 @@
 sidebar_position: 3
 title: Row Distributor
 id: row-distributor
-description: Create multiple Dataframes based on filter conditions
+description: Create multiple DataFrames based on filter conditions
 tags:
   - gems
   - split
@@ -10,15 +10,15 @@ tags:
   - row distributor
 ---
 
-Create multiple Dataframes based on provided filter conditions from an input Dataframe.
+Create multiple DataFrames based on provided filter conditions from an input DataFrame.
 
-This is useful for cases where rows from the input Dataframe needs to be distributed into multiple Dataframes in different ways for downstream Gems.
+This is useful for cases where rows from the input DataFrame needs to be distributed into multiple DataFrames in different ways for downstream Gems.
 
 ### Parameters
 
 | Parameter         | Description                                                                                               | Required |
 | ----------------- | --------------------------------------------------------------------------------------------------------- | -------- |
-| Dataframe         | Input Dataframe for which rows needs to be distributed into multiple Dataframes                           | True     |
+| DataFrame         | Input DataFrame for which rows needs to be distributed into multiple DataFrames                           | True     |
 | Filter Conditions | Boolean Type column or boolean expression for each output tab. Supports SQL, Python and Scala expressions | True     |
 
 ### Example

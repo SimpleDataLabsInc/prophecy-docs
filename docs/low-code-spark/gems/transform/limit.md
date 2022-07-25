@@ -14,7 +14,7 @@ Limits the number of rows in the output
 
 | Parameter | Description                                                               | Required |
 | :-------- | :------------------------------------------------------------------------ | :------- |
-| Dataframe | Input Dataframe                                                           | True     |
+| DataFrame | Input DataFrame                                                           | True     |
 | Limit     | Number of rows required in output (Allowed range: [0, 2<sup>31</sup> -1]) | True     |
 
 ### Example

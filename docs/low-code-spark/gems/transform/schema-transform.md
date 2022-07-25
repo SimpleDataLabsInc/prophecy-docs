@@ -10,7 +10,7 @@ tags:
   - schema
 ---
 
-SchemaTransform is used to add, edit, rename or drop columns from the incoming Dataframe.
+SchemaTransform is used to add, edit, rename or drop columns from the incoming DataFrame.
 
 :::info
 Unlike Reformat which is a set operation where all the transforms are applied in parallel, transformations here are applied _in order_.
@@ -21,7 +21,7 @@ Reformat is a SQL select and is preferable when making many changes.
 
 | Parameter       | Description                                                                | Required                                     |
 | :-------------- | :------------------------------------------------------------------------- | :------------------------------------------- |
-| Dataframe       | Input Dataframe                                                            | True                                         |
+| DataFrame       | Input DataFrame                                                            | True                                         |
 | Operation       | `Add/Replace Column`, `Rename Column` and `Drop Column`                    | Required if a transformation is added        |
 | New Column      | Output column name (when Add/Replace operation is selected)                | Required if `Add/Replace Column` is selected |
 | Expression      | Expression to generate new column (when Add/Replace operation is selected) | Required if `Add/Replace Column` is selected |

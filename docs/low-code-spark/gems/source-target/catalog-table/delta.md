@@ -131,7 +131,7 @@ object Source {
 | Use insert into               | Flag to use `insertInto` method to write instead of `save`                                                                                                                 | False    |
 | Optimize write                | If true, it optimizes Spark partition sizes based on the actual data                                                                                                       | False    |
 | Overwrite table schema        | If true, overwrites the schema of the Delta table                                                                                                                          | False    |
-| Merge schema                  | If true, then any columns that are present in the Dataframe but not in the target table are automatically added on to the end of the schema as part of a write transaction | False    |
+| Merge schema                  | If true, then any columns that are present in the DataFrame but not in the target table are automatically added on to the end of the schema as part of a write transaction | False    |
 | Partition Columns             | List of columns to partition the Delta table by                                                                                                                            | False    |
 | Overwrite partition predicate | If specified, then it selectively overwrites only the data that satisfies the given where clause expression.                                                               | False    |
 

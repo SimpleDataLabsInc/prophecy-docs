@@ -1,7 +1,7 @@
 ---
 title: Repartition
 id: Repartition
-description: Repartition or coalesce a Dataframe
+description: Repartition or coalesce a DataFrame
 sidebar_position: 2
 tags:
   - gems
@@ -11,7 +11,7 @@ tags:
   - coalesce
 ---
 
-This will repartition or coalesce the input Dataframe based on the specified configuration. There are four different repartitioning options:
+This will repartition or coalesce the input DataFrame based on the specified configuration. There are four different repartitioning options:
 
 ## Hash Repartitoning
 
@@ -21,7 +21,7 @@ Repartitions the data evenly across various partitions based on the hash value o
 
 | Parameter                    | Description                                   | Required |
 | ---------------------------- | --------------------------------------------- | -------- |
-| Dataframe                    | Input Dataframe                               | True     |
+| DataFrame                    | Input DataFrame                               | True     |
 | Overwrite default partitions | Flag to overwrite default partitions          | False    |
 | Number of partitions         | Integer value specifying number of partitions | False    |
 | Repartition expression(s)    | List of expressions to repartition by         | True     |
@@ -66,7 +66,7 @@ Repartitions without data distribution defined.
 
 | Parameter            | Description                                   | Required |
 | :------------------- | :-------------------------------------------- | :------- |
-| Dataframe            | Input Dataframe                               | True     |
+| DataFrame            | Input DataFrame                               | True     |
 | Number of partitions | Integer value specifying number of partitions | True     |
 
 ### Generated Code {#random-repartitioning}
@@ -106,7 +106,7 @@ Repartitions the data with tuples having keys within the same range on the same 
 
 | Parameter                              | Description                                                            | Required |
 | -------------------------------------- | ---------------------------------------------------------------------- | -------- |
-| Dataframe                              | Input Dataframe                                                        | True     |
+| DataFrame                              | Input DataFrame                                                        | True     |
 | Overwrite default partitions           | Flag to overwrite default partitions                                   | False    |
 | Number of partitions                   | Integer value specifying number of partitions                          | False    |
 | Repartition expression(s) with sorting | List of expressions to repartition by with corresponding sorting order | True     |
@@ -148,7 +148,7 @@ Reduces the number of partitions without shuffling the dataset.
 
 | Parameter            | Description                                   | Required |
 | :------------------- | :-------------------------------------------- | :------- |
-| Dataframe            | Input Dataframe                               | True     |
+| DataFrame            | Input DataFrame                               | True     |
 | Number of partitions | Integer value specifying number of partitions | True     |
 
 ### Generated Code {#coalesce}

@@ -17,7 +17,7 @@ Allows you to group the data and apply aggregation methods and pivot operation.
 
 | Parameter                     | Description                                                                                 | Required                                           |
 | ----------------------------- | ------------------------------------------------------------------------------------------- | -------------------------------------------------- |
-| Dataframe                     | Input Dataframe                                                                             | True                                               |
+| DataFrame                     | Input DataFrame                                                                             | True                                               |
 | Target column (Aggregate Tab) | Output column name of aggregated column                                                     | True                                               |
 | Expression (Aggregate Tab)    | Aggregate function expression<br/> Eg: `sum("amount")`, `count(*)`, `avg("amount")`         | True                                               |
 | Target column (Group By Tab)  | Output column name of grouped column                                                        | Required if `Pivot Column` is present              |

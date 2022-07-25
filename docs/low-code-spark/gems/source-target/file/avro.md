@@ -32,7 +32,7 @@ This Gem allows you to read from or write to an Avro file.
 
 #### Schema Evolution
 
-When reading Avro, the `Avro Schema` option can be set to a newer evolved schema which is compatible but different from the schema written to storage. The resulting Dataframe will follow the newer, evolved schema. For example, if we set an evolved schema containing one additional column with a default value, the resulting Dataframe will contain the new column too.
+When reading Avro, the `Avro Schema` option can be set to a newer evolved schema which is compatible but different from the schema written to storage. The resulting DataFrame will follow the newer, evolved schema. For example, if we set an evolved schema containing one additional column with a default value, the resulting DataFrame will contain the new column too.
 
 #### Ignoring the File Extension
 
@@ -118,9 +118,9 @@ Write data as avro files at the specified path.
 
 | Write Mode | Description                                                                                                                      |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| overwrite  | If data already exists, overwrite with the contents of the Dataframe                                                             |
-| append     | If data already exists, append the contents of the Dataframe                                                                     |
-| ignore     | If data already exists, do nothing with the contents of the Dataframe. This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
+| overwrite  | If data already exists, overwrite with the contents of the DataFrame                                                             |
+| append     | If data already exists, append the contents of the DataFrame                                                                     |
+| ignore     | If data already exists, do nothing with the contents of the DataFrame. This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
 | error      | If data already exists, throw an exception.                                                                                      |
 
 ### Example {#target}

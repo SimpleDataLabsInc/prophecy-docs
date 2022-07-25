@@ -16,7 +16,7 @@ Edits one or more column names or values, by using expressions and functions. It
 
 | Parameter     | Description                                   | Required                                 |
 | :------------ | :-------------------------------------------- | :--------------------------------------- |
-| Dataframe     | Input Dataframe on which changes are required | True                                     |
+| DataFrame     | Input DataFrame on which changes are required | True                                     |
 | Target column | Output column name                            | False                                    |
 | Expression    | Expression to compute target column           | Required if a `Target column` is present |
 
