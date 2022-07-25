@@ -35,5 +35,5 @@ repos:
         args:
           [
             --badwords,
-            "spark:Spark,dataframe:Dataframe,json:JSON,gem:Gem,prophecy:Prophecy,pipeline:Pipeline,fabric:Fabric,GIT:Git,git:Git,databricks:Databricks,DataBricks:Databricks,delta:Delta,fabric:Fabric,dataset:Dataset,&:and,sql:SQL,python:Python,scala:Scala",
+            "spark:Spark,dataframe:DataFrame,Dataframe:DataFrame,json:JSON,gem:Gem,prophecy:Prophecy,pipeline:Pipeline,fabric:Fabric,GIT:Git,git:Git,databricks:Databricks,DataBricks:Databricks,delta:Delta,fabric:Fabric,dataset:Dataset,&:and,sql:SQL,python:Python,scala:Scala",
           ]
