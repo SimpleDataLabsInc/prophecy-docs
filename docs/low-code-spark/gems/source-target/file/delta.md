@@ -153,10 +153,10 @@ object readDelta {
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | Location                      | File path to write the Delta table to                                                                                                                                      | True     |
 | Write mode                    | Write mode for Dataframe                                                                                                                                                   | True     |
-| Optimise write                | If true, it optimizes spark partition sizes based on the actual data                                                                                                       | False    |
-| Overwrite table schema        | If true, overwrites the schema of the delta table as per the dataframe                                                                                                     | False    |
-| Merge schema                  | If true, then any columns that are present in the DataFrame but not in the target table are automatically added on to the end of the schema as part of a write transaction | False    |
-| Partition Columns             | List of columns to partition the delta table by                                                                                                                            | False    |
+| Optimise write                | If true, it optimizes Spark partition sizes based on the actual data                                                                                                       | False    |
+| Overwrite table schema        | If true, overwrites the schema of the Delta table with the schema of the incoming Dataframe                                                                                | False    |
+| Merge schema                  | If true, then any columns that are present in the Dataframe but not in the target table are automatically added on to the end of the schema as part of a write transaction | False    |
+| Partition Columns             | List of columns to partition the Delta table by                                                                                                                            | False    |
 | Overwrite partition predicate | If specified, then it selectively overwrites only the data that satisfies the given where clause expression.                                                               | False    |
 
 #### Supported Write Modes

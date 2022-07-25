@@ -148,7 +148,7 @@ Reduces the number of partitions without shuffling the dataset.
 
 | Parameter            | Description                                   | Required |
 | :------------------- | :-------------------------------------------- | :------- |
-| Dataframe            | Input dataframe                               | True     |
+| Dataframe            | Input Dataframe                               | True     |
 | Number of partitions | Integer value specifying number of partitions | True     |
 
 ### Generated Code {#coalesce}

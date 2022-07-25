@@ -7,5 +7,4 @@ tags: []
 todo: true
 ---
 
-Subgraphs allow to take multiple different gems and wrap them under a gem. It allows the user to structure the complex
-pipelines in an easier way.
+Subgraphs allow you to take multiple different Gems and wrap them under a single reusable parent Gem. It allows the user to decompose complex logic into reusable components and simplify the Data Engineering process.

@@ -23,7 +23,7 @@ The below list contains the additional parameters to read a CSV file:
 | ------------ | --- | ----------------------------------------------------------------------------------------------------------- | -------- |
 | Dataset Name |     | Name of the Dataset                                                                                         | True     |
 | Location     |     | Location of the file(s) to be loaded <br/> Eg: `dbfs:/data/test.csv`                                        | True     |
-| Schema       |     | Schema to applied on the loaded data. Can be defined/edited as json or inferred using `Infer Schema` button | True     |
+| Schema       |     | Schema to applied on the loaded data. Can be defined/edited as JSON or inferred using `Infer Schema` button | True     |
 
 ### Example {#source-example}
 
@@ -222,12 +222,12 @@ object write_as_csv {
 
 ### Producing a single output file
 
-Because of Spark's distributed nature, output files are written as multiple separate partition files. If you need a single output file for some reason (such as reporting or exporting to an external system), use a `Repartition` gem in `Coalesce` mode with 1 output partition:
+Because of Spark's distributed nature, output files are written as multiple separate partition files. If you need a single output file for some reason (such as reporting or exporting to an external system), use a `Repartition` Gem in `Coalesce` mode with 1 output partition:
 
 ![Coalesce example](img/coalesce.gif)
 
 :::caution
 
-Note: This is not recommended for extremely large datasets as it may overwhelm the worker node writing the file.
+Note: This is not recommended for extremely large data sets as it may overwhelm the worker node writing the file.
 
 :::

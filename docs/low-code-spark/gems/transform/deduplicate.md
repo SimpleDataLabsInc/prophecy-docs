@@ -19,7 +19,7 @@ Removes rows with duplicate values of specified columns.
 | Dataframe           | Input dataframe                                                                                                                                                                                                                                                                                 | True     |
 | Row to keep         | - `Any`: Keeps any one row among duplicates. Uses underlying `dropDuplicates` construct<br/>- `First`: Keeps first occurrence of the duplicate row <br/>- `Last`: Keeps last occurrence of the duplicate row <br/>- `Unique Only`: Keeps rows that don't have duplicates <br/> Default is `Any` | True     |
 | Deduplicate columns | Columns to consider while removing duplicate rows                                                                                                                                                                                                                                               | True     |
-| Order columns       | Columns to sort dataframe on before de-duping in case of `First` and `Last` rows to keep                                                                                                                                                                                                        | False    |
+| Order columns       | Columns to sort Dataframe on before de-duping in case of `First` and `Last` rows to keep                                                                                                                                                                                                        | False    |
 
 ### Examples
 

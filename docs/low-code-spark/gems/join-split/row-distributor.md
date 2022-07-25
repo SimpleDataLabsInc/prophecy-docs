@@ -12,7 +12,7 @@ tags:
 
 Create multiple Dataframes based on provided filter conditions from an input Dataframe.
 
-This is useful for cases where rows from the input Dataframe needs to be distributed into multiple Dataframes in different ways for the downstream application/pipeline.
+This is useful for cases where rows from the input Dataframe needs to be distributed into multiple Dataframes in different ways for downstream Gems.
 
 ### Parameters
 

@@ -189,7 +189,7 @@ In this example we'll read JSON messages from Kafka, parse them, remove any null
 
 #### Metadata Table
 
-In order to avoid reprocessing messages on subsequent pipeline runs, we're going to update a certain table with the last processed offsets for each Kafka partition and topic. The next time the pipeline runs this table will be used to only get a batch of messages that have arrived since the previously-processed offset.
+In order to avoid reprocessing messages on subsequent Pipeline runs, we're going to update a certain table with the last processed offsets for each Kafka partition and topic. The next time the Pipeline runs this table will be used to only get a batch of messages that have arrived since the previously-processed offset.
 
 For this example, we're going to update `metadata.kafka_offsets`, which has the following structure:
 
@@ -202,12 +202,12 @@ For this example, we're going to update `metadata.kafka_offsets`, which has the 
 
 Taking this approach gives us the following benefits:
 
-1. Build the pipeline interactively without committing any offsets
+1. Build the Pipeline interactively without committing any offsets
 2. Production workflows will only consume messages that have arrived since the previously-processed offset
 3. We can replay old messages by modifying the Metadata table
 
 :::note
-For production workflows the [Phase](../../../../concepts/gems.md#phase) for the `Script` gem that updates the offsets should be greater than the Phase of the Target gem.
+For production workflows the [Phase](../../../../concepts/gems.md#phase) for the `Script` Gem that updates the offsets should be greater than the Phase of the Target Gem.
 This is to ensure that offsets are only updated in the table after data is safely persisted to the Target.
 :::
 

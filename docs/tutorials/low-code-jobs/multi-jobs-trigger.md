@@ -11,12 +11,7 @@ tags:
   - tutorial
 ---
 
-To better structure your projects, sometimes you would like to create multiple different jobs that trigger only a
-specific set of pipelines. E.g. when using
-the [Bronze, Silver, Gold](https://www.prophecy.io/blogs/prophecy-with-delta#bronze-silver-gold-layers) architecture,
-one might want to have a project for each one of the stages and run each stage sequentially - run _Gold_ after _Silver_
-is
-finished and _Silver_ and after _Bronze_.
+To better structure your projects, sometimes you would like to create multiple different jobs that trigger only a specific set of Pipelines. E.g. when using the [Bronze, Silver, Gold](https://www.prophecy.io/blogs/prophecy-with-delta#bronze-silver-gold-layers) architecture, one might want to have a project for each one of the stages and run each stage sequentially - run _Gold_ after _Silver_ is finished and _Silver_ and after _Bronze_.
 
 However, this poses a question: How to schedule multiple jobs together?
 
@@ -39,17 +34,17 @@ jobs completely. Recoverability and maintenance also becomes more difficult.
 This is where, it might be worth to explore the trigger-based approach. Using this approach, we place additional
 triggers in our upstream jobs that trigger the jobs that should be executed after those finished.
 
-To achieve that we can leverage the `Script` gem
+To achieve that we can leverage the `Script` Gem
 and [Databricks Jobs API](https://docs.databricks.com/dev-tools/api/latest/jobs.html#operation/JobsRunNow).
 
 To be able to trigger a job from within another job, we need to:
 
-1. deploy the job we want to trigger and find it's Databricks `job_id`
-2. add a `Script` gem to the scheduled job that triggers the other one
+1. Deploy the job we want to trigger and find it's Databricks `job_id`
+2. Add a `Script` Gem to the scheduled job that triggers the other one
 
 ### Deploying jobs
 
-First of all, to be able to trigger one job from another, we need to release it and get it’s databricks job id.
+First of all, to be able to trigger one job from another, we need to release it and get it’s Databricks job id.
 
 Please note that this job is disabled - as we’re only going to run it from a manual API, instead of a time-based
 trigger.
@@ -62,7 +57,7 @@ trigger.
 
 ### Job trigger
 
-Once we have the ID of the job that we'd like to trigger, we can go ahead and create a _Script_ gem in our upstream job
+Once we have the ID of the job that we'd like to trigger, we can go ahead and create a `Script` Gem in our upstream job
 that's going to run it.
 
 Insert the following script to trigger a job:
@@ -92,13 +87,14 @@ Make sure to specify the following arguments:
 
 1. Databricks workspace url - [How to find it?](https://docs.databricks.com/workspace/workspace-details.html#workspace-instance-names-urls-and-ids)
 2. Databricks token - [How to generate it?](https://docs.databricks.com/dev-tools/api/latest/authentication.html#generate-a-personal-access-token)
+3. The Databricks job id as previously embedded
 
-   Please note, that it's not recommended to store your databricks token within the code directly, as that creates a
-   potential venue for the attacker. A better approach is to laverage databricks secrets. Check
-   out [this guide](https://docs.databricks.com/security/secrets/secrets.html#create-a-secret-in-a-databricks-backed-scope)
-   to learn how to create databricks secrets.
-
-3. The databricks job id as previously embedded
+:::caution
+Please note, that it's not recommended to store your Databricks token within the code directly, as that creates a
+potential venue for the attacker. A better approach is to leverage Databricks secrets. Check
+out [this guide](https://docs.databricks.com/security/secrets/secrets.html#create-a-secret-in-a-databricks-backed-scope)
+to learn how to create Databricks secrets.
+:::
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>

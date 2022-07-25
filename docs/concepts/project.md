@@ -1,5 +1,5 @@
 ---
-title: Projects & Git
+title: Projects and Git
 id: project
 description: Keeping your Pipelines, Datasets and Jobs under (source) control
 sidebar_position: 5
@@ -17,15 +17,13 @@ Project is the primary unit of development and deployment to production in Proph
 
 A **project** contains
 
-- **Data pipelines** that read, transform and write data using Spark
+- **Data Dipelines** that read, transform and write data using Spark
 - **Datasets** point to the data that is read and written to by the _Data Pipelines_
 - **Jobs** run _Data Pipelines_ based on a **schedule**
 
 ## Project is Code on Git
 
-A **project** is **code** on **Git**. This means that within a project, the business logic of all the assets
-including _data pipelines_, _datasets_, and _jobs_ is stored as code on Git. This might be a repository on Github
-or a folder in a repository.
+A **project** is **code** on **Git**. This means that within a project, the business logic of all the assets including _Pipelines_, _Datasets_, and _Jobs_ is stored as code on Git. This might be a repository on Github or a folder in a repository.
 
 ![Project is code](img/project_is_code.png)
 
@@ -79,7 +77,7 @@ The `Commits` tab on the [Project Metadata](#project-metadata) page shows the cu
 
 For a walkthrough of the different phases of comitting a project, see [this section](#3-integrate-changes).
 
-## Development & Deployment
+## Development and Deployment
 
 Prophecy provides a standard and recommended mechanism for using Git based development
 (though other mechanisms are possible - including fork based development in our Enterprise product). A standard development pattern looks like this:
@@ -105,11 +103,11 @@ It is not currently possible to switch the output language of a project after it
 
 :::
 
-### 2. Create, edit and commit the pipeline
+### 2. Create, edit and commit the Pipeline
 
-When you **create a new pipeline**, you have to choose the **branch** where it will be created - an existing one or a new one.
+When you **create a new Pipeline**, you have to choose the **branch** where it will be created - an existing one or a new one.
 
-Then you will **develop** this pipeline - you will make **changes** and **commit** them in this branch multiple times.
+Then you will **develop** this Pipeline - you will make **changes** and **commit** them in this branch multiple times.
 The commit dialog opens when you click the bottom bar - orange color indicates uncommitted changes. When you **commit**, your changes are preserved in Git and are pushed to your **branch**.
 
 ![Commit](img/commit.png)
@@ -145,7 +143,7 @@ Click the button to pull the changes and you'll see the **_Pull_** view:
 
 #### Merge
 
-**_Merge_** will take the changes in the _Current Branch_ and merge them into the _Base Branch_. Your changes will become part of the _Base Branch_ and will be available to anyone else who's work is based on the _Base Branch_. It is steps 3 and 5 of [this diagram](#development--deployment).
+**_Merge_** will take the changes in the _Current Branch_ and merge them into the _Base Branch_. Your changes will become part of the _Base Branch_ and will be available to anyone else who's work is based on the _Base Branch_. It is steps 3 and 5 of [this diagram](#development-and-deployment).
 
 ![Project merge](img/project_merge.png)
 
@@ -153,7 +151,7 @@ Click the **_Merge_** button to merge the changes and push them back to your Git
 
 #### Release
 
-**_Release_** tags a particular commit in the _Base Branch_ with a user-specified version (step 6 in [this diagram](#development--deployment)). This allows you designate a new version as ready for production, or inform users who may be subscribed to Datasets defined within your Project that there might be changes in the published Dataset.
+**_Release_** tags a particular commit in the _Base Branch_ with a user-specified version (step 6 in [this diagram](#development-and-deployment)). This allows you designate a new version as ready for production, or inform users who may be subscribed to Datasets defined within your Project that there might be changes in the published Dataset.
 
 ![Project release](img/project_release.png)
 

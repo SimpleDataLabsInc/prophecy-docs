@@ -9,8 +9,8 @@ tags:
   - extensibility
 ---
 
-Dependencies allow you to make use of third-party or custom code in your data pipelines and jobs. Dependencies can be
-written in Java, Scala, or PySpark, and can be connected to your data pipelines by pointing it
+Dependencies allow you to make use of third-party or custom code in your data Pipelines and jobs. Dependencies can be
+written in Java, Scala, or PySpark, and can be connected to your data Pipelines by pointing it
 to [Maven](https://mvnrepository.com/) or [PyPi](https://pypi.org/) coordinates.
 
 ## Storage
@@ -18,8 +18,8 @@ to [Maven](https://mvnrepository.com/) or [PyPi](https://pypi.org/) coordinates.
 ![See Dependencies](img/dependencies-storage.png)
 
 All of your dependencies are stored at the project-level. This means, that when adding a dependency to a single
-pipeline, by default it becomes available to all the other pipelines, within the same project. However, within each
-pipeline you can control, if a given dependency should be enabled or disabled.
+Pipeline, by default it becomes available to all the other Pipelines, within the same project. However, within each
+Pipeline you can control, if a given dependency should be enabled or disabled.
 
 Dependencies are natively saved within your build-system files. E.g. if you're using Scala, they're saved in the
 **pom.xml** file, if you're using Python, they're saved in the **setup.py** file. To customize the build system further,
@@ -32,7 +32,7 @@ look at [Custom Build Tool](#build-tool-customization) section.
 
 ![See Dependencies](img/dependencies-open.gif)
 
-To see all of your project & pipeline dependencies simply open the **Manage Dependencies** screen by going to **... >
+To see all of your Project and Pipeline dependencies simply open the **Manage Dependencies** screen by going to **... >
 Options > Manage Dependencies**.
 
 ### Add dependency
@@ -46,13 +46,11 @@ To define new dependency, specify the following:
 
 1. **Type** - which can be either **Coordinates (Maven)** or **Package (PyPi)** (Python projects only).
 2. **Name** - the name of your dependency - this can be any name, chosen by you to easier identify each dependency
-3. **Coordinates** - maven coordinates in the `groupId:artifcatId:version` format (e.g. org.postgresql:postgresql:
-   42.3.3)
+3. **Coordinates** - maven coordinates in the `groupId:artifcatId:version` format (e.g. `org.postgresql:postgresql:42.3.3`)
 
 For further customization of your dependency you can additionally define **Advanced** properties:
 
-1. **Repository** - by default your dependency is fetched from **Maven Central** repository. If you'd like to use an
-   external repository (e.g. your organizations' repository) you can specify the link to it here. Please note, that
+1. **Repository** - by default your dependency is fetched from **Maven Central** repository. If you'd like to use an external repository (e.g. your organizations' repository) you can specify the link to it here. Please note, that
    the repository has to be publicly accessible.
 2. **Exclusions** - optional list of of `groupId:artifactId` pairs, of dependencies you'd like to exclude. Learn more
    about dependency
@@ -76,7 +74,7 @@ Anyways** to ignore that warning.
 ![Dependencies List](img/dependencies-list.png)
 
 Since dependencies are stored at a project-level, any changes, like adding or deleting a dependency affects all the
-pipelines. To selectively enable or disable a dependency for a specific pipeline, you can use the **Enable In Pipeline**
+Pipelines. To selectively enable or disable a dependency for a specific Pipeline, you can use the **Enable In Pipeline**
 option.
 
 ### Delete dependency
@@ -85,8 +83,8 @@ To delete a dependency click on a trash icon on the dependencies list.
 
 :::caution Deleting a dependency
 
-Deleting a dependency deletes it within the whole project, and all inheriting pipelines. If you're not confident about
-the functionality of the other pipelines, it's usually better to disable a dependency, instead of deleting it.
+Deleting a dependency deletes it within the whole project, and all inheriting Pipelines. If you're not confident about
+the functionality of the other Pipelines, it's usually better to disable a dependency, instead of deleting it.
 
 :::
 
@@ -94,12 +92,12 @@ the functionality of the other pipelines, it's usually better to disable a depen
 
 ![Dependencies Install](img/dependencies-install.gif)
 
-Whenever you connect the pipeline to a cluster, dependencies are automatically installed on your cluster. If the
+Whenever you connect the Pipeline to a cluster, dependencies are automatically installed on your cluster. If the
 cluster doesn't have the dependency installed yet, Prophecy installs it and restarts the cluster automatically.
 
 ## Build Tool Customization
 
-Project level templates can be defined on the **advanced** tab on the project main screen to generate the build files for all pipelines present inside a project.
+Project level templates can be defined on the **advanced** tab on the project main screen to generate the build files for all Pipelines present inside a project.
 By default, this is enabled by default for new projects.
 The **template** can be customised at the project level as per need.
 
@@ -149,15 +147,12 @@ are added on the **dependency management** screen in options.
 ---
 
 :::info
-For older projects in which templating is disabled, the dependencies added to the pipelines are not propagated to the scheduled jobs automatically.
+For older projects in which templating is disabled, the dependencies added to the Pipelines are not propagated to the scheduled jobs automatically.
 **(We highly recommend to enable the templating for all projects, rather than editing the pom.xml files manually)**
 
-Though, if you want to keep the templating disabled at project level and still want to add dependencies for scala projects such that it is visible to your pipeline when it's scheduled,
-it has to be **manually** added to the **pom.xml** file.
-Below is an example on how it can be achieved:
+Though, if you want to keep the templating disabled at project level and still want to add dependencies for Scala projects such that it is visible to your Pipeline when it's scheduled, it has to be **manually** added to the **pom.xml** file. Below is an example on how it can be achieved:
 
-The dependency should be added anywhere between the `<dependencies></dependencies>` tags. For instance to
-add `io.github.etspaceman:scalacheck-faker_2.12:7.0.0` dependency, add it to the **pom.xml** like so:
+The dependency should be added anywhere between the `<dependencies></dependencies>` tags. For instance to add `io.github.etspaceman:scalacheck-faker_2.12:7.0.0` dependency, add it to the **pom.xml** like so:
 
 ![Dependencies List](img/dependencies-pom-add.gif)
 

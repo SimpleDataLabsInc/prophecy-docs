@@ -12,12 +12,12 @@ tags:
   - right join
 ---
 
-Performs various types of joins with one more dataframes
+Performs various types of joins with one more Dataframes
 
 ### Parameters
 
 | Parameter   | Description            | Required |
 | :---------- | :--------------------- | :------- |
-| Dataframe 1 | First input dataframe  | True     |
-| Dataframe 2 | Second input dataframe | True     |
-| Dataframe N | Nth input dataframe    | False    |
+| Dataframe 1 | First input Dataframe  | True     |
+| Dataframe 2 | Second input Dataframe | True     |
+| Dataframe N | Nth input Dataframe    | False    |

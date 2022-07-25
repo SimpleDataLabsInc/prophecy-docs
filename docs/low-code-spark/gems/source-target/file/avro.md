@@ -13,7 +13,7 @@ Avro format is a row-based storage format for Hadoop, which is widely used as a 
 Avro format stores the schema in JSON format, making it easy to read and interpret by any program.
 The data itself is stored in a binary format making it compact and efficient.
 
-This gem allows you to read from or write to an Avro file.
+This Gem allows you to read from or write to an Avro file.
 
 ## Source
 

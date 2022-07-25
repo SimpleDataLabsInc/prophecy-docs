@@ -18,9 +18,9 @@ This document describes how to configure SAML using Okta as the identity provide
 - Click Create App Integration.
 - Select SAML 2.0 and click Next.
 - Set App name to "Prophecy SAML App" and click Next.
-- Single Sign On URL: https://your-prophecy-ide-url/api/oauth/samlCallback
+- Single Sign On URL: https://your-prophecy-ide-url.domain/api/oauth/samlCallback
 - Select Use this for Recipient URL and Destination URL
-- Audience URI (SP Entity ID): Give a name which will be used as entity issuer id. example: prophecyokta
+- Audience URI (SP Entity ID): Give a name which will be used as entity issuer ID. For example: `prophecyokta`
 - Name ID format: Choose "EmailAddress" from drop down
 - Application username: Email
 - Attribute Statements: Please add two attributes name and email with the same details as given in below screenshot.
@@ -48,7 +48,7 @@ This document describes how to configure SAML using Okta as the identity provide
 - Go to Sign On tab and find out "SAML Signing Certificates" section. Download the certificate by clicking on marked place in below image
   <img width="569" alt="Screenshot 2022-06-11 at 5 39 06 PM" src="https://user-images.githubusercontent.com/59466885/173188121-6324269d-c883-44b5-8462-32fb9014dc61.png" />
 
-### Entity & SSO Issuer
+### Entity and SSO Issuer
 
 - Go to General tab-> SAML Settings section -> Edit
 - Click Next to go to "Configure Saml" section and go to the bottom and click on "Preview the SAML assertion" button, it will open another tab in browser, and please note down the highlighted info from here to use as Entity Issuer and SSO Issuer in Prophecy IDE

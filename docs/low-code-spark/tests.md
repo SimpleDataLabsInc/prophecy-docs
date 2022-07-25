@@ -11,12 +11,9 @@ tags:
   - unit tests
 ---
 
-Writing good unit tests is one of the key stages of the CI/CD process.
-It ensures that the changes made by developers to projects will be verified and
-all the functionality will work correctly after deployment.
+Writing good unit tests is one of the key stages of the CI/CD process. It ensures that the changes made by developers to projects will be verified and all the functionality will work correctly after deployment.
 
-Prophecy makes the process of writing unit cases easier by giving an interactive environment via which unit test cases
-can be configured across each component.
+Prophecy makes the process of writing unit cases easier by giving an interactive environment via which unit test cases can be configured across each component.
 
 There are 2 types of unit test cases which can be configured through Porphecy UI:
 
@@ -27,8 +24,7 @@ Let us understand both types in detail:
 
 ## Output rows equality
 
-Automatically takes a snapshot of the data for the component and allows to continuously test that the logic performs
-as intended. This would simply check the equality of the output rows.
+Automatically takes a snapshot of the data for the component and allows to continuously test that the logic performs as intended. This would simply check the equality of the output rows.
 
 ### Example {#output-rows-equality}
 
@@ -44,12 +40,11 @@ In the below example we would create below unit tests:
 
 ## Output predicates
 
-These are more advanced unit tests where multiple rules can be configured which needs to be satisfied.
-Requires spark expression to be used as predicates.
+These are more advanced unit tests where multiple rules need to pass in order for the test as a whole to pass. Requires Spark expression to be used as predicates.
 
 ### Example {#output-predicates}
 
-In the below example we would create below unit tests:
+In the below example we will create below unit tests:
 
 1. Check that the value of amount column is `>0`.
 2. Check whether first name is not equal to last name.
@@ -61,7 +56,7 @@ In the below example we would create below unit tests:
 
 ## Generating sample data for test cases automatically
 
-To generate sample input data automatically from the source dataframe, this option can be enabled while creating unit test.
+To generate sample input data automatically from the source Dataframe, this option can be enabled while creating unit test.
 
 :::note
 Pipeline needs to run once, to generate units test based on auto-generated sample data.
