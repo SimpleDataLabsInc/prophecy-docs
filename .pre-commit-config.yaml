@@ -21,34 +21,19 @@ repos:
     hooks:
       - id: prettier
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.32.0
+    rev: v0.32.1
     hooks:
       - id: markdownlint
 
   - repo: https://github.com/SimpleDataLabsInc/pre-commit-hooks
-    rev: c7e4df5681e887a58e1ecba3cc0628fbcb4c790e
+    rev: 0a5662867ad7f4d2e5df0863c67ce12f0cf13263
     hooks:
       - id: check-docusaurus-frontmatter
         args: ["-rtitle", "-rid", "-rdescription", "-rtags"]
       - id: commit-message-reuse
       - id: word-veto
-        args: [
+        args:
+          [
             --badwords,
-            spark,
-            --badwords,
-            dataframe,
-            --badwords,
-            json,
-            --badwords,
-            gem,
-            --badwords,
-            prophecy,
-            --badwords,
-            pipeline,
-            --badwords,
-            fabric,
-            --badwords,
-            GIT
-            --badwords,
-            git,
+            "spark:Spark,dataframe:Dataframe,json:JSON,gem:Gem,prophecy:Prophecy,pipeline:Pipeline,fabric:Fabric,GIT:Git,git:Git,databricks:Databricks,DataBricks:Databricks,delta:Delta,fabric:Fabric,dataset:Dataset,&:and,sql:SQL,python:Python,scala:Scala",
           ]
