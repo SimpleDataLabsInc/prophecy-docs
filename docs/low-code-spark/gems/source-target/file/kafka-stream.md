@@ -11,29 +11,27 @@ tags:
 
 [Apache Kafka](https://kafka.apache.org/) is an open-source distributed event streaming platform. Supporting a number of streaming paradigms it's used by thousands of companies and organizations in scenarios including Data Ingestion, Analytics and more.
 
-This source currently connects with Kafka Brokers in Batch mode.
+This source currently connects with Kafka Brokers in **Batch** mode.
 
 ## Source
 
-Reads data from kafka stream in batch mode.
-Data is read only incrementally from the last offset stored in the metadata table. If metadata table
-is not present, then data with `earliest` offset would be read.
+Reads data from Kafka stream in batch mode. Data is read only incrementally from the last offset stored in the specified Metadata table. If the Metadata table is not present, then data will be read from the `earliest` offset.
 
 ### Source Parameters
 
 | Parameter         | Description                                                               | Required |
 | :---------------- | :------------------------------------------------------------------------ | :------- |
-| Broker List       | Comma separated list of kafka brokers                                     | True     |
-| Group Id          | Kafka consumer group id                                                   | True     |
-| Session Timeout   | Session timeout for kafka. (Default value set to 6000s)                   | False    |
-| Security Protocol | Security protocol for kafka (Default value set to SASL_SSL)               | True     |
+| Broker List       | Comma separated list of Kafka brokers                                     | True     |
+| Group Id          | Kafka consumer group ID                                                   | True     |
+| Session Timeout   | Session timeout for Kafka. (Default value set to 6000s)                   | False    |
+| Security Protocol | Security protocol for Kafka (Default value set to SASL_SSL)               | True     |
 | SASL Mechanism    | Default SASL Mechanism for SASL_SSL (Default value set to SCRAM-SHA-256)  | True     |
 | Credential Type   | Credential Type provider (Databricks Secrets or Username/Password)        | True     |
-| Credential Scope  | Scope to use for databricks secrets                                       | True     |
-| Kafka Topic       | Comma separated list of kafka topics                                      | True     |
+| Credential Scope  | Scope to use for Databricks secrets                                       | True     |
+| Kafka Topic       | Comma separated list of Kafka topics                                      | True     |
 | Metadata Table    | Table name which would be used to store offsets for each topic, partition | True     |
 
-### Source Example
+### Example {#source-example}
 
 ![Example usage of Filter](./img/kafka_source_eg_1.png)
 
@@ -121,20 +119,20 @@ Coming Soon
 
 ## Target
 
-Publishes the dataframe to kafka topic(s) as json messages.
+Writes each row from the Dataframe to Kafka topic(s) as JSON messages.
 
 ### Target Parameters
 
 | Parameter         | Description                                                              | Required |
 | :---------------- | :----------------------------------------------------------------------- | :------- |
-| Broker List       | Comma separated list of kafka brokers                                    | True     |
-| Security Protocol | Security protocol for kafka (Default value set to SASL_SSL)              | True     |
+| Broker List       | Comma separated list of Kafka brokers                                    | True     |
+| Security Protocol | Security protocol for Kafka (Default value set to SASL_SSL)              | True     |
 | SASL Mechanism    | Default SASL Mechanism for SASL_SSL (Default value set to SCRAM-SHA-256) | True     |
 | Credential Type   | Credential Type provider (Databricks Secrets or Username/Password)       | True     |
-| Credential Scope  | Scope to use for databricks secrets                                      | True     |
-| Kafka Topic       | Comma separated list of kafka topics                                     | True     |
+| Credential Scope  | Scope to use for Databricks secrets                                      | True     |
+| Kafka Topic       | Comma separated list of Kafka topics                                     | True     |
 
-### Target Example
+### Example {#target-example}
 
 ![Example usage of Filter](./img/kafka_target_eg_1.png)
 
@@ -185,14 +183,15 @@ Coming Soon
 
 ### Source Pipeline Example
 
-In this example we would be reading json messages from kafka stream, parse them, remove any null messages
-and then finally save it into a delta table.
+In this example we'll read JSON messages from Kafka, parse them, remove any null messagesand then finally persist it to a Delta table.
 
 ![Example usage of Filter](./img/kafka_pipeline_eg.gif)
 
-Also once the data is successfully written into our target, we would be updating the `metadata.kafka_offsets` table.
+#### Metadata Table
 
-The `metadata.kafka_offsets` table would save the max offset read for each topic, partition combination.
+In order to avoid reprocessing messages on subsequent Pipeline runs, we're going to update a certain table with the last processed offsets for each Kafka partition and topic. The next time the Pipeline runs this table will be used to only get a batch of messages that have arrived since the previously-processed offset.
+
+For this example, we're going to update `metadata.kafka_offsets`, which has the following structure:
 
 | topic           | partition | max_offset |
 | :-------------- | :-------- | :--------- |
@@ -201,16 +200,15 @@ The `metadata.kafka_offsets` table would save the max offset read for each topic
 | my_second_topic | 0         | 10         |
 | my_second_topic | 1         | 5          |
 
-This table would help us in below:
+Taking this approach gives us the following benefits:
 
-1. Build the pipeline interactively without committing any offset
-2. For batch production workflows this would help us to keep track on what offsets to read from in the subsequent run
-3. In case we want to relay older messages again from a particular offset, we can simply update the metadata table.
+1. Build the Pipeline interactively without committing any offsets
+2. Production workflows will only consume messages that have arrived since the previously-processed offset
+3. We can replay old messages by modifying the Metadata table
 
 :::note
-For production workflows the phase for update offset script gem should be greater than the phase of
-target gem (like in our example, phase for target gem is 0 and updateOffsets gem is 1).
-This is to ensure that offsets are only updated in the table post data is successfully written.
+For production workflows the [Phase](../../../../concepts/gems.md#phase) for the `Script` Gem that updates the offsets should be greater than the Phase of the Target Gem.
+This is to ensure that offsets are only updated in the table after data is safely persisted to the Target.
 :::
 
 #### Spark Code used for script component

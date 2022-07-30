@@ -9,13 +9,13 @@ tags:
   - udafs
 ---
 
-Allows you to create user defined functions (UDF) which are then usable anywhere in the pipeline
+Allows you to create user defined functions (UDF) which are then usable anywhere in the Pipeline
 
 ### Parameters
 
 | Parameter               | Description                                                                                                                              | Required |
 | :---------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- | :------- |
-| UDF Name                | Name of the udf to be used to register it. All calls to the udf will use this name                                                       | True     |
+| UDF Name                | Name of the UDF to be used to register it. All calls to the UDF will use this name                                                       | True     |
 | Definition              | Definition of the UDF function. <br/> Eg: `udf((value:Int)=>value*value)`                                                                | True     |
 | UDF initialization code | Code block that contains initialization of entities used by UDFs. This could for example contain any static mapping that a UDF might use | False    |
 

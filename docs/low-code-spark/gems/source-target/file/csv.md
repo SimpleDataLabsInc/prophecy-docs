@@ -9,32 +9,23 @@ tags:
   - csv
 ---
 
-Allows you to read or write a delimited file (often called Comma Separated File, CSV)
+Allows you to read or write delimited files such as CSV (Comma-separated Values) or TSV (Tab-separated Values)
+
+## Source
 
 ### Source Parameters
 
-CSV **_Source_** supports all the available [spark read options for CSV](https://spark.apache.org/docs/latest/sql-data-sources-csv.html).
+CSV **_Source_** supports all the available [Spark read options for CSV](https://spark.apache.org/docs/latest/sql-data-sources-csv.html).
 
 The below list contains the additional parameters to read a CSV file:
 
 | Parameter    |     | Description                                                                                                 | Required |
-| ------------ | :-- | ----------------------------------------------------------------------------------------------------------- | -------- |
-| Dataset Name |     | Name of the Dataset                             | True     |
-| Location     |     | Location of the file(s) to be loaded <br/> Eg: dbfs:/data/test.csv                                          | True     |
-| Schema       |     | Schema to applied on the loaded data. Can be defined/edited as json or inferred using `Infer Schema` button | True     |
+| ------------ | --- | ----------------------------------------------------------------------------------------------------------- | -------- |
+| Dataset Name |     | Name of the Dataset                                                                                         | True     |
+| Location     |     | Location of the file(s) to be loaded <br/> Eg: `dbfs:/data/test.csv`                                        | True     |
+| Schema       |     | Schema to applied on the loaded data. Can be defined/edited as JSON or inferred using `Infer Schema` button | True     |
 
-### Target Parameters
-
-CSV **_Target_** supports all the available [spark write options for CSV](https://spark.apache.org/docs/latest/sql-data-sources-csv.html).
-
-The below list contains the additional parameters to write a CSV file:
-
-| Parameter    |     | Description                                                                      | Required |
-| ------------ | :-- | -------------------------------------------------------------------------------- | -------- |
-| Dataset Name |     | Name of the Dataset  | True     |
-| Location     |     | Location of the file(s) to be loaded <br/> Eg: dbfs:/data/output.csv             | True     |
-
-### Loading a CSV file
+### Example {#source-example}
 
 ```mdx-code-block
 import App from '@site/src/components/slider';
@@ -68,6 +59,8 @@ export const ImageData = [
 
 <App ImageData={ImageData}></App>
 ```
+
+### Generated Code {#source-code}
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -134,7 +127,30 @@ object load_csv {
 
 ---
 
-### Writing a CSV file
+## Target
+
+### Target Parameters
+
+CSV **_Target_** supports all the available [Spark write options for CSV](https://spark.apache.org/docs/latest/sql-data-sources-csv.html).
+
+The below list contains the additional parameters to write a CSV file:
+
+| Parameter    | Description                                                                                            | Required |
+| ------------ | ------------------------------------------------------------------------------------------------------ | -------- |
+| Dataset Name | Name of the Dataset                                                                                    | True     |
+| Location     | Location of the file(s) to be loaded <br/> Eg: `dbfs:/data/output.csv`                                 | True     |
+| Write Mode   | How to handle existing data. See [this table](#supported-write-modes) for a list of available options. | False    |
+
+### Supported Write Modes
+
+| Write Mode | Description                                                                                                                      |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| overwrite  | If data already exists, overwrite with the contents of the DataFrame                                                             |
+| append     | If data already exists, append the contents of the DataFrame                                                                     |
+| ignore     | If data already exists, do nothing with the contents of the DataFrame. This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
+| error      | If data already exists, throw an exception.                                                                                      |
+
+### Example {#target-example}
 
 ```mdx-code-block
 
@@ -163,6 +179,8 @@ export const ImageData2 = [
 
 <App ImageData={ImageData2}></App>
 ```
+
+### Generated Code {#target-code}
 
 ````mdx-code-block
 
@@ -201,3 +219,15 @@ object write_as_csv {
 
 
 ````
+
+### Producing a single output file
+
+Because of Spark's distributed nature, output files are written as multiple separate partition files. If you need a single output file for some reason (such as reporting or exporting to an external system), use a `Repartition` Gem in `Coalesce` mode with 1 output partition:
+
+![Coalesce example](img/coalesce.gif)
+
+:::caution
+
+Note: This is not recommended for extremely large data sets as it may overwhelm the worker node writing the file.
+
+:::

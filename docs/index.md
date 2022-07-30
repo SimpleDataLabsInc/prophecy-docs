@@ -17,17 +17,17 @@ Prophecy's low-code designer provides a visual drag-and-drop canvas to develop d
 
 ## Code & DevOps
 
-Running at scale requires bringing the best software engineering practices to the refinement of data. Rapid development & deployment of data pipeline can be achieved by code on git & high test coverage, coupled with continuous integration & continuous deployment. Prophecy does the following to make this process work:
+Running at scale requires bringing the best software engineering practices to the refinement of data. Rapid development & deployment of data pipeline can be achieved by code on Git & high test coverage, coupled with continuous integration & continuous deployment. Prophecy does the following to make this process work:
 
-- **Visual data pipelines as code:** Prophecy low-code editor stores visual data pipelines as high-quality code on git
+- **Visual data pipelines as code:** Prophecy low-code editor stores visual data pipelines as high-quality code on Git
 - **High test coverage:** Prophecy makes test-generation & editing easy, and this results in high test coverage for our users after the switch
-- **Metadata as code:** Much of the metadata from projects including workflows, schedules and datasets, and computed metadata such as column-level lineage are also stored on git with Prophecy.
+- **Metadata as code:** Much of the metadata from projects including workflows, schedules and datasets, and computed metadata such as column-level lineage are also stored on Git with Prophecy.
 
 These provide the following benefits:
 
-- **DevOps practices:** For data projects, the pipeline code, schedules & tests are stored on git - with every developer working on her branch. Every change gets reviewed, and on every commit tests are run. The code is then deployed to be run per the schedule. Bad changes can be rolled back reliably. This process enables data teams to quickly move new and edited changes to production with high confidence.
+- **DevOps practices:** For data projects, the pipeline code, schedules & tests are stored on Git - with every developer working on her branch. Every change gets reviewed, and on every commit tests are run. The code is then deployed to be run per the schedule. Bad changes can be rolled back reliably. This process enables data teams to quickly move new and edited changes to production with high confidence.
 - **Zero lock-in:** Prophecy generated code is in 100% open-source format with data pipelines in Apache Spark format and schedules in Apache Airflow format. This ensures freedom from lock-in and cost management.
-- **Git versioning for time travel:** Given that data projects including metadata are stored together on git, the user can traverse across time, and for example see how a value is computed today, and compare it with how it was computed a month earlier to understand why a breakage has occurred.
+- **Git versioning for time travel:** Given that data projects including metadata are stored together on Git, the user can traverse across time, and for example see how a value is computed today, and compare it with how it was computed a month earlier to understand why a breakage has occurred.
 
 ## Complete Product
 

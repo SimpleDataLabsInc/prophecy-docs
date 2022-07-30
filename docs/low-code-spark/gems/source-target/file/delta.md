@@ -9,24 +9,22 @@ tags:
   - delta
 ---
 
-Reads data from delta files present at a path and writes delta files to a path based on configuration.
+Reads and writes Delta tables, including Delta Merge operations and Time travel..
 
 ## Source
-
-Reads data from delta files present at a path.
 
 ### Source Parameters
 
 | Parameter      | Description                                | Required |
-| :------------- | :----------------------------------------- | :------- |
-| Location       | File path where delta files are present    | True     |
+| -------------- | ------------------------------------------ | -------- |
+| Location       | File path for the Delta table              | True     |
 | Read Timestamp | Time travel to a specific timestamp        | False    |
 | Read Version   | Time travel to a specific version of table | False    |
 
 :::note
-For time travel on delta tables:
+For time travel on Delta tables:
 
-1. Only one among timestamp and version can be chosen at a time for time travel.
+1. Only `Read Timestamp` **_OR_** `Read Version` can be selected, not both.
 2. Timestamp should be between the first commit timestamp and the latest commit timestamp in the table.
 3. Version needs to be an integer. Its value has to be between min and max version of table.
 
@@ -34,10 +32,10 @@ By default most recent version of each row is fetched if no time travel option i
 :::
 
 :::info
-To read more about delta time travel and its use cases [click here](https://databricks.com/blog/2019/02/04/introducing-delta-time-travel-for-large-scale-data-lakes.html).
+To read more about Delta time travel and its use cases [click here](https://databricks.com/blog/2019/02/04/introducing-delta-time-travel-for-large-scale-data-lakes.html).
 :::
 
-### Source Example
+### Example {#source-example}
 
 ![Delta source example](./img/delta/delta_source_eg.gif)
 
@@ -75,7 +73,7 @@ object ReadDelta {
 
 ````
 
-#### Timestamp based time travel
+#### Timestamp-based time travel
 
 ````mdx-code-block
 
@@ -109,7 +107,7 @@ object ReadDelta {
 
 ````
 
-#### Version based time travel
+#### Version-based time travel
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -149,32 +147,28 @@ object readDelta {
 
 ## Target
 
-Writes data in delta format in parquet files based on the configuration.
-
 ### Target Parameters
 
 | Parameter                     | Description                                                                                                                                                                | Required |
-| :---------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------- |
-| Location                      | File path where delta files needs to be written                                                                                                                            | True     |
-| Write mode                    | Write mode for dataframe                                                                                                                                                   | True     |
-| Optimise write                | If true, it optimizes spark partition sizes based on the actual data                                                                                                       | False    |
-| Overwrite table schema        | If true, overwrites the schema of the delta table as per the dataframe                                                                                                     | False    |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| Location                      | File path to write the Delta table to                                                                                                                                      | True     |
+| Write mode                    | Write mode for DataFrame                                                                                                                                                   | True     |
+| Optimise write                | If true, it optimizes Spark partition sizes based on the actual data                                                                                                       | False    |
+| Overwrite table schema        | If true, overwrites the schema of the Delta table with the schema of the incoming DataFrame                                                                                | False    |
 | Merge schema                  | If true, then any columns that are present in the DataFrame but not in the target table are automatically added on to the end of the schema as part of a write transaction | False    |
-| Partition Columns             | List of columns to partition the delta table by                                                                                                                            | False    |
+| Partition Columns             | List of columns to partition the Delta table by                                                                                                                            | False    |
 | Overwrite partition predicate | If specified, then it selectively overwrites only the data that satisfies the given where clause expression.                                                               | False    |
 
-### Write modes
+#### Supported Write Modes
 
-Below are different type of write modes which prophecy provided delta format supports.
-
-| Write Mode | Description                                                                                                                                                                                   |
-| :--------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| overwrite  | If data already exists, existing data is expected to be overwritten by the contents of the DataFrame.                                                                                         |
-| append     | If data already exists, contents of the DataFrame are expected to be appended to existing data.                                                                                               |
-| ignore     | If data already exists, the save operation is expected not to save the contents of the DataFrame and not to change the existing data. This is similar to a CREATE TABLE IF NOT EXISTS in SQL. |
-| error      | If data already exists, an exception is expected to be thrown.                                                                                                                                |
-| merge      | Insert, delete and update data using the delta merge command.                                                                                                                                 |
-| scd2 merge | It is a delta merge operation that stores and manages both current and historical data over time.                                                                                             |
+| Write Mode | Description                                                                                                                      |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| overwrite  | If data already exists, overwrite with the contents of the DataFrame                                                             |
+| append     | If data already exists, append the contents of the DataFrame                                                                     |
+| ignore     | If data already exists, do nothing with the contents of the DataFrame. This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
+| error      | If data already exists, throw an exception.                                                                                      |
+| merge      | Insert, delete and update data using the Delta `merge` command.                                                                  |
+| SCD2 merge | It is a Delta merge operation that stores and manages both current and historical data over time.                                |
 
 Among these write modes overwrite, append, ignore and error works the same way as in case of parquet file writes.
 Merge and SCD2 merge would be explained with examples in the following sections.
@@ -236,32 +230,31 @@ object writeDelta {
 
 ### Upsert data with Delta
 
-You can upsert data from a source DataFrame into a target Delta table by using the
-MERGE operation. Delta Lake supports inserts, updates and deletes in MERGE.
+You can upsert data from a source DataFrame into a target Delta table by using the MERGE operation. Delta tables supports `Insert`s, `Update`s, and `Delete`s.
 
-This operation is also commonly known as upserting (update/insert) or SCD1 merge.
+This operation is also known as SCD1 merge.
 
 #### Parameters {#upsert-parameters}
 
 | Parameter                       | Description                                                                                                                                   | Required |
-| :------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------- | :------- |
-| Source alias                    | Alias to use for source dataframe                                                                                                             | True     |
-| Target alias                    | Alias to use for existing delta table                                                                                                         | True     |
-| Merge Condition                 | Condition to merge data from source dataframe to target table, which would be used to perform update, delete, or insert actions as specified. | True     |
-| When Matched Update Action      | Action to choose if update needs to be done or skipped.                                                                                       | False    |
-| When Matched Update Condition   | Optional condition for updating row. If a condition is specified, then it must evaluate to true for the row to be updated.                    | False    |
+| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| Source alias                    | Alias to use for the source DataFrame                                                                                                         | True     |
+| Target alias                    | Alias to use for existing target Delta table                                                                                                  | True     |
+| Merge Condition                 | Condition to merge data from source DataFrame to target table, which would be used to perform update, delete, or insert actions as specified. | True     |
+| When Matched Update Action      | Update the row from `Source` that already exists in `Target` (based on `Merge Condition`)                                                     | False    |
+| When Matched Update Condition   | Optional additional condition for updating row. If specified then it must evaluate to true for the row to be updated.                         | False    |
 | When Matched Update Expressions | Optional expressions for setting the values of columns that need to be updated.                                                               | False    |
-| When Matched Delete Action      | Action to choose if delete needs to be done or skipped.                                                                                       | False    |
-| When Matched Delete Condition   | Optional condition for deleting row. If a condition is specified, then it must evaluate to true for the row to be updated.                    | False    |
-| When Not Matched Action         | Action to choose if inserts needs to be done or skipped.                                                                                      | False    |
-| When Not Matched Condition      | Optional condition for inserting row. If a condition is specified, then it must evaluate to true for the row to be updated.                   | False    |
+| When Matched Delete Action      | Delete rows if `Merge Condition` (and the optional additional condition) evaluates to `true`                                                  | False    |
+| When Matched Delete Condition   | Optional additional condition for deleting row. If a condition is specified then it must evaluate to true for the row to be deleted.          | False    |
+| When Not Matched Action         | The action to perform if the row from `Source` is not present in `Target` (based on `Merge Condition`)                                        | False    |
+| When Not Matched Condition      | Optional condition for inserting row. If a condition is specified then it must evaluate to true for the row to be updated.                    | False    |
 | When Not Matched Expressions    | Optional expressions for setting the values of columns that need to be updated.                                                               | False    |
 
 :::note
 
 1. At least one action out of update, delete or insert needs to be set.
 2. Delete removes the data from the latest version of the Delta table but does not remove it from the physical storage until the old versions are explicitly vacuumed. See [vaccum](https://docs.delta.io/latest/delta-utility.html#-delta-vacuum) for details.
-3. A merge operation can fail if multiple rows of the source dataset match and the merge attempts to update the same rows of the target Delta table. Deduplicate gem can be placed before target if duplicate rows at source are expected.
+3. A merge operation can fail if multiple rows of the source DataFrame match and the merge attempts to update the same rows of the target Delta table. Deduplicate gem can be placed before target if duplicate rows at source are expected.
    :::
 
 :::tip
@@ -547,5 +540,5 @@ Using the same customer tables as in our merge example above, output and configu
 ---
 
 :::info
-To checkout our blogpost on making data lakehouse easier using Delta with Prophecy [click here](https://www.prophecy.io/blogs/prophecy-with-delta).
+To check out our blogpost on making data lakehouse easier using Delta with Prophecy [click here](https://www.prophecy.io/blogs/prophecy-with-delta).
 :::

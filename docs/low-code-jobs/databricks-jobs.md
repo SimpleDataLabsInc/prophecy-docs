@@ -9,8 +9,8 @@ tags:
   - deployment
 ---
 
-Once you have developed a spark workflow using prophecy, you will want to schedule it to run at some frequency. To
-support this, prophecy integrates with Airflow and provides a low-code interface to develop Airflow DAGs.
+Once you have developed a Dpark workflow using Prophecy, you will want to schedule it to run at some frequency. To
+support this, Prophecy integrates with Airflow and provides a low-code interface to develop Airflow DAGs.
 
 ## Development
 

@@ -10,24 +10,23 @@ tags:
   - row distributor
 ---
 
-Create multiple dataframes based on provided filter conditions from an input dataframe.
+Create multiple DataFrames based on provided filter conditions from an input DataFrame.
 
-This is useful for cases where rows from the input dataframe needs to be distributed
-into multiple dataframes in different ways for the downstream application/pipeline.
+This is useful for cases where rows from the input DataFrame needs to be distributed into multiple DataFrames in different ways for downstream Gems.
 
 ### Parameters
 
-| Parameter         | Description                                                                                              | Required |
-| :---------------- | :------------------------------------------------------------------------------------------------------- | :------- |
-| Dataframe         | Input dataframe for which rows needs to be distributed into multiple dataframes                          | True     |
-| Filter Conditions | BooleanType column or boolean expression for each output tab. Supports sql, python and scala expressions | True     |
+| Parameter         | Description                                                                                               | Required |
+| ----------------- | --------------------------------------------------------------------------------------------------------- | -------- |
+| DataFrame         | Input DataFrame for which rows needs to be distributed into multiple DataFrames                           | True     |
+| Filter Conditions | Boolean Type column or boolean expression for each output tab. Supports SQL, Python and Scala expressions | True     |
 
 ### Example
 
 ![Row distributor 1](./img/rowdistributor_eg_1.png)
 
 :::info
-Number of outputs can be changed as per need by clicking the `+` button.
+Number of outputs can be changed as needed by clicking the `+` button.
 :::
 
 ### Generated Code
