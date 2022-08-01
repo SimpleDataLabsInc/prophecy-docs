@@ -12,7 +12,7 @@ tags:
 Helps perform the following operations on Delta tables.
 
 1. Register table in catalog
-2. Vaccum table
+2. Vacuum table
 3. Optimize table
 4. Restore table
 5. Delete from table
@@ -29,7 +29,7 @@ Helps perform the following operations on Delta tables.
 | Action        | Action to perform on the table | True     |
 
 :::note
-At lease one value from table name or file path needs to be provided.
+At least one value from table name or file path needs to be provided.
 :::
 
 ## Example
@@ -40,11 +40,11 @@ At lease one value from table name or file path needs to be provided.
 
 This will register the data at mentioned file path as a table in the whichever Metadata catalog is available in your execution environment.
 
-## Vaccum table
+## Vacuum table
 
 Recursively vacuum directories associated with the Delta table. VACUUM removes all files from the table directory that are not managed by Delta, as well as data files that are no longer in the latest state of the transaction log for the table and are older than a retention threshold. The default threshold is 7 days.
 
-To learn more about vaccum [click here](https://docs.databricks.com/spark/latest/spark-sql/language-manual/delta-vacuum.html).
+To learn more about vacuum [click here](https://docs.databricks.com/spark/latest/spark-sql/language-manual/delta-vacuum.html).
 
 ### Parameters {#vacuum-parameters}
 
@@ -78,7 +78,7 @@ Restores a Delta table to an earlier state. Restoring to an earlier version numb
 
 ## Delete from table
 
-Delete removes the data from the latest version of the Delta table that matches the specified condition. Please note that delete does not remove it from the physical storage until the older versions are explicitly [vacuumed](#vaccum-table).
+Delete removes the data from the latest version of the Delta table that matches the specified condition. Please note that delete does not remove it from the physical storage until the older versions are explicitly [vacuumed](#vacuum-table).
 
 ### Parameters {#delete-parameters}
 
