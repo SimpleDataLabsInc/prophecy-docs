@@ -228,11 +228,13 @@ object writeDelta {
 
 ## Delta MERGE
 
-### Upsert data with Delta
+Delta merge lets us take advantage of three types of slowly changing dimension(SCD) approaches: SCD1, SCD2, and SCD3. These approaches refer to record modifications in which history is not retained (SCD1), history is retained at the row level (SCD2), or history is retained at the column level (SCD3).
+
+### SCD1
 
 You can upsert data from a source DataFrame into a target Delta table by using the MERGE operation. Delta tables supports `Insert`s, `Update`s, and `Delete`s.
 
-This operation is also known as SCD1 merge.
+This operation is also known as SCD1 merge because the table is modified directly and history is not retained.
 
 #### Parameters {#upsert-parameters}
 
@@ -343,6 +345,8 @@ object writeDeltaMerge {
 ````
 
 ### SCD2
+
+Let's use the Delta log to capture the historical `customer_zip_code` at the row-level.
 
 #### Parameters {#scd2-parameters}
 
@@ -530,7 +534,7 @@ object writeDeltaSCD2 {
 
 ### SCD3
 
-Using the same customer tables as in our merge example above, output and configurations for SCD3 merge will look like below.
+Using the same customer tables as in our merge example above, output and configurations for SCD3 merge will look like below. Let's track change for `customer_zip_code` by adding a column to show the previous value.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
