@@ -58,7 +58,7 @@ To allow for interactive code execution Prophecy can connect to either [Databric
 
 Prophecy connects to Databricks using [Rest API](https://docs.databricks.com/dev-tools/api/latest/index.html). Each [Fabric](/concepts/fabric) defined in Prophecy refers to a single [Databricks workspace](https://docs.databricks.com/workspace/index.html) and each user is required to provide a [personal access token](https://docs.databricks.com/dev-tools/api/latest/authentication.html) to authenticate to it.
 
-Security-conscious enterprises that use Databricks with limited network access have to additionally [whitelist](https://docs.databricks.com/security/network/ip-access-list.html#add-an-ip-access-list) the **Prophecy Data Plane IP address** (`3.133.35.237`).
+Security-conscious enterprises that use Databricks with limited network access have to additionally add the **Prophecy Data Plane IP address** (`3.133.35.237`) to the Databricks allowed [access list](https://docs.databricks.com/security/network/ip-access-list.html#add-an-ip-access-list).
 
 Primarily Prophecy uses Databricks for the following functionalities:
 
@@ -81,7 +81,7 @@ Supported Git providers:
 - **GitLab** (including GitLab self-hosted) - authenticates using per-user personal access tokens. [How to generate PAT?](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html)
 - **Azure DevOps** - authenticates using per-user personal access tokens. [How to generate PAT?](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=Windows)
 
-Security-conscious enterprises that use Git Providers within private networks behind firewalls have to additionally whitelist the Prophecy Control Plane IP address (`3.133.35.237`).
+Security-conscious enterprises that use Git Providers within private networks behind firewalls have to add the Prophecy Control Plane IP address (`3.133.35.237`) to the private network allow-list or to the Github Enterprise [allow-list](https://github.blog/2019-12-12-ip-allow-lists-now-in-public-beta/).
 
 :::info
 **Coming Soon**
