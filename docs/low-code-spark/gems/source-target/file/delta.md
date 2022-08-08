@@ -171,7 +171,7 @@ object readDelta {
 | SCD2 merge | It is a Delta merge operation that stores and manages both current and historical data over time.                                |
 
 Among these write modes overwrite, append, ignore and error works the same way as in case of parquet file writes.
-Merge and SCD2 merge would be explained with examples in the following sections.
+Merge will be explained with several examples in the following sections.
 
 ### Target Example
 
