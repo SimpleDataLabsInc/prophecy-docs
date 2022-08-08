@@ -9,7 +9,7 @@ tags:
   - delta
 ---
 
-Reads and writes Delta tables, including Delta Merge operations and Time travel..
+Reads and writes Delta tables, including Delta Merge operations and Time travel.
 
 ## Source
 
@@ -228,13 +228,11 @@ object writeDelta {
 
 ## Delta MERGE
 
-Delta merge lets us take advantage of three types of slowly changing dimension(SCD) approaches: SCD1, SCD2, and SCD3. These approaches refer to record modifications in which history is not retained (SCD1), history is retained at the row level (SCD2), or history is retained at the column level (SCD3).
+You can upsert data from a source DataFrame into a target Delta table by using the [MERGE](https://docs.delta.io/latest/delta-update.html#upsert-into-a-table-using-merge) operation. Delta MERGE supports `Insert`s, `Update`s, and `Delete`s in a variety of use cases, and Delta is particularly suited to examine data with individual records that slowly change over time. Here we consider the most common types of slowly changing dimension (SCD) cases: SCD1, SCD2, and SCD3. Records are modified in one of the following ways: history is not retained (SCD1), history is retained at the row level (SCD2), or history is retained at the column level (SCD3).
 
 ### SCD1
 
-You can upsert data from a source DataFrame into a target Delta table by using the MERGE operation. Delta tables supports `Insert`s, `Update`s, and `Delete`s.
-
-This operation is also known as SCD1 merge because the table is modified directly and history is not retained.
+Let's take the simplest case to illustrate a MERGE condition.
 
 #### Parameters {#upsert-parameters}
 
@@ -257,11 +255,9 @@ This operation is also known as SCD1 merge because the table is modified directl
 1. At least one action out of update, delete or insert needs to be set.
 2. Delete removes the data from the latest version of the Delta table but does not remove it from the physical storage until the old versions are explicitly vacuumed. See [vaccum](https://docs.delta.io/latest/delta-utility.html#-delta-vacuum) for details.
 3. A merge operation can fail if multiple rows of the source DataFrame match and the merge attempts to update the same rows of the target Delta table. Deduplicate gem can be placed before target if duplicate rows at source are expected.
-   :::
 
 :::tip
 When possible, provide predicates on the partition columns for a partitioned Delta table as such predicates can significantly speed up the operations.
-:::
 
 #### Example {#upsert-example}
 
