@@ -1,0 +1,92 @@
+---
+sidebar_position: 5
+title: Rest API Enrich
+id: rest-api-enrich
+description: Create DataFrames based on custom SQL queries
+tags:
+  - gems
+  - api
+  - custom
+  - rest
+---
+
+Enriches the DataFrame by adding column(s) with content from rest api output based on given configuration.
+
+### Parameters
+
+Each property can either be set as static value or value from existing column of the input DataFrame. Please refer
+examples in description column of each parameters for reference on how the string value should be formed to pass it to
+parameter.
+
+| Parameter       | Description                                                                                                                                                                                                                     | Required | Default |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
+| method          | method for the new Request object: `GET`, `OPTIONS`, `HEAD`, `POST`, `PUT`, `PATCH`, or `DELETE`.                                                                                                                               | true     |         |
+| url             | URL for the rest api.                                                                                                                                                                                                           | true     |         |
+| params          | Dictionary, list of tuples or bytes to send in the query string for the Request. eg: `{"key1":"value1", "key2": value2, "key3": ["value1", "value2"]}`                                                                          | false    |         |
+| data            | Dictionary to send in the body of the Request. eg: `{"key1":"value1", "key2": value2}`                                                                                                                                          | false    |         |
+| JSON            | A JSON serializable Python object to send in the body of the Request. eg: `{"key1":"value1", "key2": value2}`                                                                                                                   | false    |         |
+| headers         | Dictionary of HTTP Headers to send with the Request. eg: `{"key1":"value1", "key2": "value2"}`                                                                                                                                  | false    |         |
+| cookies         | Dictionary to send with the Request. eg: `{"key1":"value1", "key2": "value2"}`                                                                                                                                                  | false    |         |
+| auth            | Auth tuple to enable Basic/Digest/Custom HTTP Auth. eg: `user:pass`                                                                                                                                                             | false    |         |
+| timeout         | How many seconds to wait for the server to send data before giving up, as a float, eg: `0.5` or a (connect timeout, read timeout) tuple. eg: `0.5:0.25`                                                                         | false    |         |
+| allow redirects | Enable/disable GET/OPTIONS/POST/PUT/PATCH/DELETE/HEAD redirection. eg: `true` or `false`                                                                                                                                        | false    | true    |
+| proxies         | Dictionary mapping protocol to the URL of the proxy. eg: `{"https" : "https://1.1.0.1:80"}`                                                                                                                                     | false    |         |
+| verify          | Either a boolean, in which case it controls whether we verify the server’s TLS certificate eg: `true` or `false` or a string, in which case it must be a path to a CA bundle to use. Defaults to True. eg: `dbfs:/path-to-file` | false    | true    |
+| stream          | if False, the response content will be immediately downloaded. eg: `true` or `false`                                                                                                                                            | false    |         |
+| cert            | if String, path to ssl client cert file (.pem). eg. `dbfs:/path-to-file`. If Tuple, (‘cert’, ‘key’) pair. eg: `cert:key`.                                                                                                       | false    |         |
+| parse content   | Parse content as JSON (to make the schema available, please enable `custom schema` and click `infer from cluster` at the bottom left in the output tab)                                                                         |          |         |
+
+:::note
+All input parameters are expected to be in string format in case value is selected as input from existing column in DataFrame.
+Other column types such as array, JSON etc can be formed/created
+using combination of aggregate/window Gems along with reformat component (to cast value to string in required format)
+as per requirement.
+:::
+
+### Example
+
+![SQL example 1](./img/sqlstatement_eg_1.png)
+
+:::info
+To store sensitive information like API key (headers), auth etc `databricks secrets` can be used as shown in above example.
+:::
+
+### Generated Code
+
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+
+<TabItem value="py" label="Python">
+
+```py
+def rate_from_api(spark: SparkSession, in0: DataFrame) -> DataFrame:
+    requestDF = in0.withColumn(
+        "api_output",
+        get_rest_api(
+          to_json(struct(lit("GET").alias("method"), col("url"), lit(Config.coin_api_key).alias("headers"))),
+          lit("")
+        )
+    )
+
+    return requestDF.withColumn(
+        "content_parsed",
+        from_json(col("api_output.content"), schema_of_json(requestDF.select("api_output.content").take(1)[0][0]))
+    )
+
+```
+
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+Coming Soon!!!
+
+```
+
+</TabItem>
+</Tabs>
+
+````
