@@ -254,7 +254,7 @@ This operation is also known as SCD1 merge.
 
 1. At least one action out of update, delete or insert needs to be set.
 2. Delete removes the data from the latest version of the Delta table but does not remove it from the physical storage until the old versions are explicitly vacuumed. See [vaccum](https://docs.delta.io/latest/delta-utility.html#-delta-vacuum) for details.
-3. A merge operation can fail if multiple rows of the source DataFrame match and the merge attempts to update the same rows of the target Delta table. Deduplicate gem can be placed before target if duplicate rows at source are expected.
+3. A merge operation can fail if multiple rows of the source DataFrame match and the merge attempts to update the same rows of the target Delta table. Deduplicate Gem can be placed before target if duplicate rows at source are expected.
    :::
 
 :::tip
