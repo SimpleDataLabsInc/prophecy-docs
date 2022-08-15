@@ -2,7 +2,7 @@
 sidebar_position: 5
 title: Rest API Enrich
 id: rest-api-enrich
-description: Create DataFrames based on custom SQL queries
+description: Enrich DataFrame with content from rest API response based on configuration
 tags:
   - gems
   - api
@@ -15,7 +15,7 @@ Enriches the DataFrame by adding column(s) with content from rest api output bas
 ### Parameters
 
 Each property can either be set as static value or value from existing column of the input DataFrame. Please refer
-examples in description column of each parameters for reference on how the string value should be formed to pass it to
+examples in description column of each parameter for reference on how the string value should be formed to pass it to
 parameter.
 
 | Parameter       | Description                                                                                                                                                                                                                     | Required | Default |
@@ -34,24 +34,51 @@ parameter.
 | verify          | Either a boolean, in which case it controls whether we verify the server’s TLS certificate eg: `true` or `false` or a string, in which case it must be a path to a CA bundle to use. Defaults to True. eg: `dbfs:/path-to-file` | false    | true    |
 | stream          | if False, the response content will be immediately downloaded. eg: `true` or `false`                                                                                                                                            | false    |         |
 | cert            | if String, path to ssl client cert file (.pem). eg. `dbfs:/path-to-file`. If Tuple, (‘cert’, ‘key’) pair. eg: `cert:key`.                                                                                                       | false    |         |
-| parse content   | Parse content as JSON (to make the schema available, please enable `custom schema` and click `infer from cluster` at the bottom left in the output tab)                                                                         |          |         |
+| parse content   | Parse content as JSON (to make the schema available, please enable `custom schema` and click `infer from cluster` at the bottom left in the output tab)                                                                         | false    | false   |
+
+:::info
+
+1. To store sensitive information like API key (headers), auth etc., `Databricks secrets` can be used as shown in above
+   example.
+2. If the number of rows are very huge for which api calls needs to be made, it's better to provide `await time` in the
+   `advanced tab` so that number of api hits per minute does not get breached.
+3. For APIs which takes list of parameters as inputs, window functions like `collect_list` can be used
+   before `RestApiEnrich` Gem to reduce
+   the number of api calls.
+   :::
 
 :::note
-All input parameters are expected to be in string format in case value is selected as input from existing column in DataFrame.
-Other column types such as array, JSON etc can be formed/created
-using combination of aggregate/window Gems along with reformat component (to cast value to string in required format)
+All input parameters are expected to be in string format. Other column types such as array/JSON/struct can be created
+using combination of aggregate/window Gems along with reformat component and then can be cast as string prior to paasing the column in `RestAPIEnrich Gem`
 as per requirement.
 :::
 
-### Example
+### Example 1
 
-![SQL example 1](./img/sqlstatement_eg_1.png)
+Let's try to fetch prices for few cryptocurrencies from [coin-api](https://www.coinapi.io/).
 
-:::info
-To store sensitive information like API key (headers), auth etc `databricks secrets` can be used as shown in above example.
-:::
+We would be taking cryptocurrency and currency as input from DataFrame and pass url, headers as static values.
+Please note that URL in this example is created using static base url and adding cryptocurrency and currency as inputs
+from DataFrame.
 
-### Generated Code
+Also, we would be using Databricks-secrets to pass headers as it includes api-key.
+
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://user-images.githubusercontent.com/103921419/174399585-40067429-953e-4157-a5db-d80e25713d24.mp4" title="Rest API example 1" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+
+### Example 2
+
+Let's take a more complex example, where all method, url, headers, params etc are passed as values from DataFrame
+columns.
+
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://user-images.githubusercontent.com/103921419/174399585-40067429-953e-4157-a5db-d80e25713d24.mp4" title="Rest API example 2" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+
+#### Generated Code
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -62,7 +89,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="py" label="Python">
 
 ```py
-def rate_from_api(spark: SparkSession, in0: DataFrame) -> DataFrame:
+def get_data_from_api(spark: SparkSession, in0: DataFrame) -> DataFrame:
     requestDF = in0.withColumn(
         "api_output",
         get_rest_api(

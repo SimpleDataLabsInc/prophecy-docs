@@ -54,30 +54,115 @@ Now that you've created your first job, you can start adding the Gems onto the c
 time. To define dependencies between Gems, you can simply connect them, by dragging-and-dropping, the edges between
 them.
 
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://user-images.githubusercontent.com/103921419/174399585-40067429-953e-4157-a5db-d80e25713d24.mp4" title="Avro Source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+
 When using Databricks Jobs there are two Gem types available:
 
 #### Pipeline Gem
 
 The Pipeline Gem triggers a Spark Pipeline developed in Prophecy.
 
+![Pipeline Component](img/databricks-jobs-Pipeline-config.png)
+
+Settings for Pipeline component can be inherited from overall job configuration or can be set inside the component itself.
+
 #### Script Gem
 
 Script Gem can be used to write any ad-hoc code.
 
+![Script Component](img/databricks-jobs-script-config.png)
+
+Settings for script component can be inherited from overall job configuration or can be set inside the component itself.
+
 ### Visual == Code
 
-The visual graph created on the jobs page is automatically converted to code (JSON) behind the scenes.
+The visual graph created on the jobs page is automatically converted to code (JSON) behind the scenes, which is passed to Databricks j
+
+![Code View](img/databricks-jobs-code-view.png)
+
+## Configuration
+
+![Example Configuration](img/databricks-job-config-example.png)
+
+---
+
+| Field Name                | Description                                                                                                                                                                                                                                         |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Scheduler                 | The underlying engine that's going to execute your job. Databricks is recommended.                                                                                                                                                                  |
+| Fabric                    | The [execution fabric](/concepts/fabric) to which the job is going to be deployed.                                                                                                                                                                  |
+| Cluster Size              | The [default size](/concepts/fabric#whats-in-a-fabric) of the cluster, that's going to be created for the job to run.                                                                                                                               |
+| Cluster Mode              | Can be selected as `Single` (all Gems within job run on single cluster) or `Multi` (all Gems within job run on separate new cluster)                                                                                                                |
+| Schedule Interval         | Defines how often your job is going to run. The interval is defined using the [Quartz format](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html). You can click on the clock icon, to easily pick the interval. |
+| Pipeline level Timeout    | Timeout at Pipeline level                                                                                                                                                                                                                           |
+| Alerts Email for Pipeline | Comma separated list of emails, that are going to receive notifications on specific job status events (job start, failure, or success) for entire Pipeline.                                                                                         |
+| Per Gem Timeout           | Timeout for each Gem in job Pipeline                                                                                                                                                                                                                |
+| Number of retries per Gem | Number of retries for each Gem in job Pipeline                                                                                                                                                                                                      |
+| Alerts Email per Gem      | Comma separated list of emails, that are going to receive notifications on specific job status events (job start, failure, or success) for each Gem in job Pipeline.                                                                                |
+
+## Deployment
+
+To deploy a job on Databricks, we need to release the project from Prophecy UI as shown in example below. As soon as the project is
+released, the job would start appearing on Databricks jobs page as well.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://user-images.githubusercontent.com/103921419/174399585-40067429-953e-4157-a5db-d80e25713d24.mp4" title="Avro Source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-## Configuration
+---
 
-## Deployment
+:::info
+
+1. Please ensure to enable the job before release on the job page for it to run on the specified schedule.
+   If it is not enabled, then the job would get released but with paused state.
+2. If fabric is changed in the job, then it would create a new job in the Databricks jobs page,
+   but the job with older fabric would be paused automatically and the new job would be scheduled.
+   :::
+
+### Deployment modes
+
+Currently, there are 2 type of cluster options available to deploy jobs:
+
+#### Multi Job Cluster Mode
+
+In this mode, each component of job would spawn a separate cluster of its own.
+
+![Multi Job Cluster](img/databricks-jobs-multi-cluster-eg.png)
+
+#### Single Job Cluster Mode
+
+In this mode, each component of job would run on the same cluster.
+
+:::info
+To use single cluster mode, package name across each Pipeline in job should be unique.
+This is done to ensure that the folder structure for pipelines does not overwrite one another.
+Please refer below example, for steps on how to configure package name in Pipeline.
+:::
+
+---
+
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://user-images.githubusercontent.com/103921419/174399585-40067429-953e-4157-a5db-d80e25713d24.mp4" title="Avro Source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+
+![Single Job Cluster](img/databricks-jobs-single-cluster-eg.png)
+
+#### Fully Configurable Cluster Mode
+
+**Coming Soon!!!**
 
 ## Monitoring
+
+Prophecy provides monitoring page as shown in example below to review all the jobs that has been released for quick reference.
+
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://user-images.githubusercontent.com/103921419/174399585-40067429-953e-4157-a5db-d80e25713d24.mp4" title="Avro Source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
 
 ## Guides
 

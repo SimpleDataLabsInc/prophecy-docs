@@ -19,5 +19,4 @@ schedulers:
 2. **[Airflow](/low-code-jobs/airlfow)** - for more complex use-cases, where you have to use various operators, or need
    any additional data pre and post-processing, you can design your jobs using Prophecy's low-code Airflow environment.
 
-Alternatively, since Prophecy provides you native Spark code no Git, you can easily integrate with any other scheduler.
-Read more about it [here](/low-code-jobs/alternative-schedulers).
+Alternatively, since Prophecy provides you native Spark code on Git, you can easily integrate with any other scheduler.
