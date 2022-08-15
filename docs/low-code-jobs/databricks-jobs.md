@@ -122,17 +122,15 @@ released, the job would start appearing on Databricks jobs page as well.
    but the job with older fabric would be paused automatically and the new job would be scheduled.
    :::
 
-### Deployment modes
+As per the size and parallelism of job, below different cluster modes can be used for deployment.
 
-Currently, there are 2 type of cluster options available to deploy jobs:
-
-#### Multi Job Cluster Mode
+### Multi Job Cluster Mode
 
 In this mode, each component of job would spawn a separate cluster of its own.
 
 ![Multi Job Cluster](img/databricks-jobs-multi-cluster-eg.png)
 
-#### Single Job Cluster Mode
+### Single Job Cluster Mode
 
 In this mode, each component of job would run on the same cluster.
 
@@ -151,17 +149,18 @@ Please refer below example, for steps on how to configure package name in Pipeli
 
 ![Single Job Cluster](img/databricks-jobs-single-cluster-eg.png)
 
-#### Fully Configurable Cluster Mode
+### Fully Configurable Cluster Mode
 
 **Coming Soon!!!**
 
 ## Monitoring
 
-Prophecy provides monitoring page as shown in example below to review all the jobs that has been released for quick reference.
+Prophecy provides monitoring page which shows the status (enable/disable) of all the jobs deployed via Prophecy and
+status of historic/current runs (success/failure/in-progress) for quick reference.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/103921419/184726121-d2b7c5c7-ec01-48b1-9764-781292940f53.mp4" title=Monitoring" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+<iframe src="https://user-images.githubusercontent.com/103921419/184726121-d2b7c5c7-ec01-48b1-9764-781292940f53.mp4" title="Monitoring" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
 ## Guides
