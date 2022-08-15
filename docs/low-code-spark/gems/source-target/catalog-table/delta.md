@@ -12,7 +12,7 @@ tags:
 Reads and writes Delta tables that are managed by the execution environment's Metadata catalog (Metastore).
 
 :::note
-Please choose set the property `provider` to `Delta` on the properties page.
+Please set the property `provider` to `Delta` on the properties page.
 :::
 
 ## Source
@@ -33,7 +33,7 @@ For time travel on Delta tables:
 
 1. Only `Read Timestamp` **_OR_** `Read Version` can be selected, not both.
 2. Timestamp should be between the first commit timestamp and the latest commit timestamp in the table.
-3. Version needs to be an integer. Its value has to be between min and max version of table.
+3. Version needs to be an integer with value between min and max version of table.
 
 By default most recent version of each row is fetched if no time travel option is used.
 :::

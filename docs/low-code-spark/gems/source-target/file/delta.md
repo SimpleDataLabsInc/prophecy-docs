@@ -9,7 +9,7 @@ tags:
   - delta
 ---
 
-Reads and writes Delta tables, including Delta Merge operations and Time travel..
+Reads and writes Delta tables, including Delta Merge operations and Time travel.
 
 ## Source
 
@@ -171,7 +171,7 @@ object readDelta {
 | SCD2 merge | It is a Delta merge operation that stores and manages both current and historical data over time.                                |
 
 Among these write modes overwrite, append, ignore and error works the same way as in case of parquet file writes.
-Merge and SCD2 merge would be explained with examples in the following sections.
+Merge will be explained with several examples in the following sections.
 
 ### Target Example
 
@@ -228,11 +228,11 @@ object writeDelta {
 
 ## Delta MERGE
 
-### Upsert data with Delta
+You can upsert data from a source DataFrame into a target Delta table by using the [MERGE](https://docs.delta.io/latest/delta-update.html#upsert-into-a-table-using-merge) operation. Delta MERGE supports `Insert`s, `Update`s, and `Delete`s in a variety of use cases, and Delta is particularly suited to examine data with individual records that slowly change over time. Here we consider the most common types of slowly changing dimension (SCD) cases: SCD1, SCD2, and SCD3. Records are modified in one of the following ways: history is not retained (SCD1), history is retained at the row level (SCD2), or history is retained at the column level (SCD3).
 
-You can upsert data from a source DataFrame into a target Delta table by using the MERGE operation. Delta tables supports `Insert`s, `Update`s, and `Delete`s.
+### SCD1
 
-This operation is also known as SCD1 merge.
+Let's take the simplest case to illustrate a MERGE condition.
 
 #### Parameters {#upsert-parameters}
 
@@ -253,13 +253,11 @@ This operation is also known as SCD1 merge.
 :::note
 
 1. At least one action out of update, delete or insert needs to be set.
-2. Delete removes the data from the latest version of the Delta table but does not remove it from the physical storage until the old versions are explicitly vacuumed. See [vaccum](https://docs.delta.io/latest/delta-utility.html#-delta-vacuum) for details.
-3. A merge operation can fail if multiple rows of the source DataFrame match and the merge attempts to update the same rows of the target Delta table. Deduplicate Gem can be placed before target if duplicate rows at source are expected.
-   :::
+2. Delete removes the data from the latest version of the Delta table but does not remove it from the physical storage until the old versions are explicitly vacuumed. See [vacuum](https://docs.delta.io/latest/delta-utility.html#-delta-vacuum) for details.
+3. A merge operation can fail if multiple rows of the source DataFrame match and the merge attempts to update the same rows of the target Delta table. Deduplicate gem can be placed before target if duplicate rows at source are expected.
 
 :::tip
 When possible, provide predicates on the partition columns for a partitioned Delta table as such predicates can significantly speed up the operations.
-:::
 
 #### Example {#upsert-example}
 
@@ -343,6 +341,8 @@ object writeDeltaMerge {
 ````
 
 ### SCD2
+
+Let's use the Delta log to capture the historical `customer_zip_code` at the row-level.
 
 #### Parameters {#scd2-parameters}
 
@@ -530,7 +530,7 @@ object writeDeltaSCD2 {
 
 ### SCD3
 
-Using the same customer tables as in our merge example above, output and configurations for SCD3 merge will look like below.
+Using the same customer tables as in our merge example above, output and configurations for SCD3 merge will look like below. Let's track change for `customer_zip_code` by adding a column to show the previous value.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
