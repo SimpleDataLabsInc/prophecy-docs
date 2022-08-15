@@ -53,7 +53,6 @@ using combination of aggregate/window Gems along with reformat component and the
 as per requirement.
 :::
 
-
 ### Example 1
 
 Let's try to fetch prices for few cryptocurrencies from [coin-api](https://www.coinapi.io/).

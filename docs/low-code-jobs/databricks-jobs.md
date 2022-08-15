@@ -116,13 +116,12 @@ released, the job would start appearing on Databricks jobs page as well.
 
 :::info
 
-1. Please ensure to enable the job before release on the job page for it to run on the specified schedule.
-   If it is not enabled, then the job would get released but with paused state.
-2. If fabric is changed in the job, then it would create a new job in the Databricks jobs page,
-   but the job with older fabric would be paused automatically and the new job would be scheduled.
-   :::
+Please ensure to enable the job before release on the job page for it to run on the specified schedule. If it is not enabled, then the job would get released but with paused state.
 
-As per the size and parallelism of job, below different cluster modes can be used for deployment.
+If fabric is changed in the job, then it would create a new job in the Databricks jobs page, but the job with older fabric would be paused automatically and the new job would be scheduled.
+:::
+
+As per the size, cost and parallelism required for jobs, below different cluster modes can be used for deployment.
 
 ### Multi Job Cluster Mode
 
@@ -136,7 +135,7 @@ In this mode, each component of job would run on the same cluster.
 
 :::info
 To use single cluster mode, package name across each Pipeline in job should be unique.
-This is done to ensure that the folder structure for pipelines does not overwrite one another.
+This is done to ensure that the folder structure for Pipeline does not overwrite one another.
 Please refer below example, for steps on how to configure package name in Pipeline.
 :::
 
