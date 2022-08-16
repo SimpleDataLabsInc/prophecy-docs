@@ -65,7 +65,7 @@ When using Databricks Jobs there are two Gem types available:
 
 The Pipeline Gem triggers a Spark Pipeline developed in Prophecy.
 
-![Pipeline Component](img/databricks-jobs-Pipeline-config.png)
+![Pipeline Component](img/databricks-jobs-pipeline-config.png)
 
 Settings for Pipeline component can be inherited from overall job configuration or can be set inside the component itself.
 
