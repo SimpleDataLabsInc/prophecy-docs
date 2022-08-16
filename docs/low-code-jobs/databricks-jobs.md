@@ -21,7 +21,7 @@ You can create a job from two places. If you're going to schedule only a single 
 build a job for it is to do it directly from the Pipeline editor screen. This way your job is automatically initialized
 with the Pipeline you create it from.
 
-![Databricks Job Creation From Pipeline](img/databricks-job-creation-from-Pipeline.png)
+![Databricks Job Creation From Pipeline](img/databricks-job-creation-from-pipeline.png)
 
 To do that, simply navigate to your Pipeline, and click on the Schedule button (1). That opens a modal that shows all
 the jobs that refer to this job or allow you to create a completely new job from scratch. Upon clicking
