@@ -18,18 +18,18 @@ Joins 2 or more DataFrames based on the given configuration.
 
 ## Parameters
 
-| Parameter                        | Description                                                                                                                                    | Required |
-| :------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------- | :------- |
-| DataFrame 1                      | First input DataFrame                                                                                                                          | True     |
-| DataFrame 2                      | Second input DataFrame                                                                                                                         | True     |
-| DataFrame N                      | Nth input DataFrame                                                                                                                            | False    |
-| Join Condition (Conditions tab)  | The join condition specifies how the rows will be combined.                                                                                    | True     |
-| Type (Conditions tab)            | The type of JOIN `(Inner, Full Outer, Left , Right , Left Semi, Left Anti)`                                                                    | True     |
-| Where Clause (Conditions tab)    | `Filter` applied after the Join operation                                                                                                      | False    |
-| Target column (Expressions)      | Output column name                                                                                                                             | False    |
-| Expression (Expressions)         | Expression to compute target column. If no expression is given, then all columns from all DataFrames would reflect in output.                  | False    |
-| Hint Type (Advanced)             | The type of Join Hint (`Broadcast`, `Merge`, `Shuffle Hash`, `Shuffle Replicate NL` or `None`)                                                 | False    |
-| Propagate All Columns (Advanced) | If `true`, all columns from that DataFrame would be propagated to output DataFrame. Equivalent to selecting `df.*` for the selected DataFrame. | False    |
+| Parameter                        | Description                                                                                                                                                                                                     | Required |
+| :------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------- |
+| DataFrame 1                      | First input DataFrame                                                                                                                                                                                           | True     |
+| DataFrame 2                      | Second input DataFrame                                                                                                                                                                                          | True     |
+| DataFrame N                      | Nth input DataFrame                                                                                                                                                                                             | False    |
+| Join Condition (Conditions tab)  | The join condition specifies how the rows will be combined.                                                                                                                                                     | True     |
+| Type (Conditions tab)            | The type of JOIN `(Inner, Full Outer, Left , Right , Left Semi, Left Anti)`                                                                                                                                     | True     |
+| Where Clause (Conditions tab)    | `Filter` applied after the Join operation                                                                                                                                                                       | False    |
+| Target column (Expressions)      | Output column name                                                                                                                                                                                              | False    |
+| Expression (Expressions)         | Expression to compute target column. If no expression is given, then all columns from all DataFrames would reflect in output.                                                                                   | False    |
+| Hint Type (Advanced)             | The type of Join Hint (`Broadcast`, `Merge`, `Shuffle Hash`, `Shuffle Replicate NL` or `None`). To read more about join hints [click here](https://developpaper.com/analysis-of-five-join-strategies-of-spark/) | False    |
+| Propagate All Columns (Advanced) | If `true`, all columns from that DataFrame would be propagated to output DataFrame. Equivalent to selecting `df.*` for the selected DataFrame.                                                                  | False    |
 
 ## Adding a new input
 
