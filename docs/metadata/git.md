@@ -8,11 +8,11 @@ tags:
   - git
 ---
 
-## How to connect to external GIT
+## How to connect to external Git
 
-To connect to an external git, the process is as easy as configuring your:
+To connect to an external Git, the process is as easy as configuring your:
 
-1. GIT Repo URL: e.g. `https://github.com/user/git_demo.git`
+1. Git Repo URL: e.g. `https://github.com/user/git_demo.git`
 2. Path: path to project inside the repo. e.g. `/first_project`
 3. Email and username
 4. Access token
@@ -21,7 +21,7 @@ Please refer below video for step-by-step example:
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/103921419/174550405-4ffad723-6740-40a0-8888-d5368cc671c9.mp4" title="External GIT" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+<iframe src="https://user-images.githubusercontent.com/103921419/174550405-4ffad723-6740-40a0-8888-d5368cc671c9.mp4" title="External Git" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
 ## How to commit changes
@@ -38,7 +38,7 @@ Creation of first project and commit changes to `dev` branch:
 
 ## How to create/checkout branch
 
-Currently we are on `dev` branch which has our first_pipeline.
+Currently we are on `dev` branch which has our `first_pipeline`.
 Now let's see how to go back to our `main` branch and also create a new `second_branch` from the main branch.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
@@ -57,7 +57,7 @@ Let's merge our `first_pipeline` from `dev` branch into `main` branch.
 
 ## How to Pull changes
 
-Pulling changes from a branch is as simple as in any GUI based git interface.
+Pulling changes from a branch is as simple as in any GUI based Git interface.
 Let's pull our `main` branch into the empty `second_branch` which we created earlier. Please refer the below video for step-by-step example:
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
@@ -78,7 +78,7 @@ Once the changes are merged, we can `release` a branch straight from the UI itse
 <iframe src="https://user-images.githubusercontent.com/103921419/174550916-7d8beb20-2013-401d-be30-67c02983958f.mp4" title="How to release a branch" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-![GIT after release](./img/git_release_eg1.png)
+![Git after release](./img/git_release_eg1.png)
 
 :::note
 Databricks scheduler changes would only come into effect once the project is released.
@@ -86,27 +86,27 @@ Databricks scheduler changes would only come into effect once the project is rel
 
 ## How to resolve conflicts during merging
 
-Now let's create a project in `third_branch` with same name as `first_pipeline` and put a different path in dataset.
-Post this once we pull the changes from `main` into this branch, it would have conflicts as first_pipeline exists both in
+Now let's create a project in `third_branch` with same name as `first_pipeline` and put a different path in Dataset.
+Post this once we pull the changes from `main` into this branch, it would have conflicts as `first_pipeline` exists both in
 `main` and `current` branch.
 
-One way is to use the git interface directly to resolve conflicts between branches.
+One way is to use the Git interface directly to resolve conflicts between branches.
 
-Or we can use the simple merge UI on prophecy to resolve the conflicts
+Or we can use the simple merge UI on Prophecy to resolve the conflicts
 
-Let's see in the video below on how to resolve conflicts using simple merge on prophecy:
+Let's see in the video below on how to resolve conflicts using simple merge on Prophecy:
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://user-images.githubusercontent.com/103921419/174733075-b878a77d-97df-4bc9-8baf-5fcc72e268db.mp4" title="How to resolve conflicts" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-## How to use fork per usage GIT storage model
+## How to use fork per user Git storage model
 
-During the creation of project there is an option to choose fork per usage as GIT Storage model.
+During the creation of project there is an option to choose fork per usage as Git Storage model.
 When you fork a repository, you create a copy of the original repository (upstream repository) but the repository remains on your GitHub account.
 
-When using the fork per usage GIT storage model while creating a new project, apart from the `upstream repository` details, below extra
+When using the fork per usage Git storage model while creating a new project, apart from the `upstream repository` details, below extra
 pop-up would come for details of `forked repository`.
 
 ![Fork repo setup](./img/fork_repo_eg1.png)
@@ -126,4 +126,6 @@ Now to pull main branch from upstream repository or from origin of current repos
 :::note
 
 1. Any changes made in forked repository would not effect the `upstream repository` and would only reflect in the `forked repository`.
-2. Please follow the normal git flow for raising pull requests to the `original repository` (upstream repository) from the `forked repository`.
+2. Please follow the normal Gßit flow for raising pull requests to the `original repository` (upstream repository) from the `forked repository`.
+
+:::

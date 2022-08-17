@@ -4,39 +4,42 @@ title: Join
 id: join
 description: Join one or more DataFrames on conditions
 tags:
-- gems
-- join
-- inner
-- outer
-- left join
-- right join
+  - gems
+  - join
+  - inner
+  - outer
+  - left join
+  - right join
 ---
 
-Performs various types of joins with one more dataframes
+Performs various types of joins with one more DataFrames
 
 ### Parameters
 
-| Parameter                         | Description                                                                 | Required                               |
-|:----------------------------------|:----------------------------------------------------------------------------|:---------------------------------------|
-| Dataframe 1                       | First input dataframe                                                       | True                                   |
-| Dataframe 2                       | Second input dataframe                                                      | True                                   |
-| Dataframe N                       | Nth input dataframe                                                         | False                                  |
-| Join Condition ( Conditions tab ) | The join condition specifies how the rows will be combined.                 | True                                   |
-| Type ( Conditions tab )           | The type of JOIN (  Inner, Full Outer, Left , Right , Left Semi, Left Anti  | True                                   |
-| Where Clause ( Conditions tab )   | Filter applied after the Join operation                                     | False                                  |
-| Target column ( Expressions )     | Output column name                                                          | False                                  |
-| Expression   ( Expressions )      | Expression to compute target column                                         | Required if a Target column is present |
-| Type ( Hints )                    | The type of Hint ( Broadcast, Merge, Shuffle Hash, Shuffle Replicate NL )   | False                                  |
+| Parameter                         | Description                                                               | Required                               |
+| :-------------------------------- | :------------------------------------------------------------------------ | :------------------------------------- |
+| DataFrame 1                       | First input DataFrame                                                     | True                                   |
+| DataFrame 2                       | Second input DataFrame                                                    | True                                   |
+| DataFrame N                       | Nth input DataFrame                                                       | False                                  |
+| Join Condition ( Conditions tab ) | The join condition specifies how the rows will be combined.               | True                                   |
+| Type ( Conditions tab )           | The type of JOIN ( Inner, Full Outer, Left , Right , Left Semi, Left Anti | True                                   |
+| Where Clause ( Conditions tab )   | Filter applied after the Join operation                                   | False                                  |
+| Target column ( Expressions )     | Output column name                                                        | False                                  |
+| Expression ( Expressions )        | Expression to compute target column                                       | Required if a Target column is present |
+| Type ( Hints )                    | The type of Hint ( Broadcast, Merge, Shuffle Hash, Shuffle Replicate NL ) | False                                  |
 
 ### Add a new input
+
 1. Click on the plus icon to add a new input.
 2. Then add your condition expression for the newly added input.
    ![Example usage of Join - Add new input to join gem](./img/add_new_input.png)
 
 ### Examples
 
-#### Example 1 - Join with three dataframe inputs
-![Example usage of Join - Join three dataframe inputs](./img/join_without_hints.png)
+#### Example 1 - Join with three DataFrame inputs
+
+![Example usage of Join - Join three DataFrame inputs](./img/join_without_hints.png)
+
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -77,9 +80,11 @@ object total_orders {
 ````
 
 #### Example 2 - Join with Hints
-Join hints allow users to suggest the join strategy that Spark should use. For a quick overview, see Spark's Join Hints (documentation)[https://spark.apache.org/docs/3.0.0/sql-ref-syntax-qry-select-hints.html#join-hints].
+
+Join hints allow users to suggest the join strategy that Spark should use. For a quick overview, see Spark's Join Hints [documentation](https://spark.apache.org/docs/3.0.0/sql-ref-syntax-qry-select-hints.html#join-hints).
 
 ![Example usage of Join - Join with hints](./img/join_with_hints.png)
+
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -122,31 +127,35 @@ object total_orders {
 ````
 
 ### Types of Join
+
 Suppose there are 2 tables TableA and TableB with only 2 columns (Ref, Data) and following contents:
+
 ### Table A
-| Ref | Data     |    
-|:----|:---------|
-| 1   | Data_A11 | 
+
+| Ref | Data     |
+| :-- | :------- |
+| 1   | Data_A11 |
 | 1   | Data_A12 |
 | 1   | Data_A13 |
-| 2   | Data_A21 | 
-| 3   | Data_A31 | 
+| 2   | Data_A21 |
+| 3   | Data_A31 |
 
 ### Table B
-| Ref | Data     |    
-|:----|:---------|
-| 1   | Data_B11 | 
+
+| Ref | Data     |
+| :-- | :------- |
+| 1   | Data_B11 |
 | 2   | Data_B21 |
 | 2   | Data_B22 |
-| 2   | Data_B23 | 
-| 4   | Data_B41 | 
+| 2   | Data_B23 |
+| 4   | Data_B41 |
 
 ### INNER JOIN
-Inner Join on column Ref will return columns from both the tables and only the matching records  as long as the condition is satisfied:
 
+Inner Join on column Ref will return columns from both the tables and only the matching records as long as the condition is satisfied:
 
 | Ref | Data     | Ref | Data     |
-|:----|:---------|:----|:---------|
+| :-- | :------- | :-- | :------- |
 | 1   | Data_A11 | 1   | Data_B11 |
 | 1   | Data_A12 | 1   | Data_B11 |
 | 1   | Data_A13 | 1   | Data_B11 |
@@ -154,12 +163,12 @@ Inner Join on column Ref will return columns from both the tables and only the m
 | 2   | Data_A21 | 2   | Data_B22 |
 | 2   | Data_A21 | 2   | Data_B23 |
 
-
 ### LEFT JOIN
+
 Left Join (or Left Outer join) on column Ref will return columns from both the tables and match records with records from the left table. The result-set will contain null for the rows for which there is no matching row on the right side.
 
 | Ref | Data     | Ref  | Data     |
-|:----|:---------|:-----|:---------|
+| :-- | :------- | :--- | :------- |
 | 1   | Data_A11 | 1    | Data_B11 |
 | 1   | Data_A12 | 1    | Data_B11 |
 | 1   | Data_A13 | 1    | Data_B11 |
@@ -173,7 +182,7 @@ Left Join (or Left Outer join) on column Ref will return columns from both the t
 Right Join (or Right Outer join) on column Ref will return columns from both the tables and match records with records from the right table. The result-set will contain null for the rows for which there is no matching row on the left side.
 
 | Ref  | Data     | Ref | Data     |
-|:-----|:---------|:----|:---------|
+| :--- | :------- | :-- | :------- |
 | 1    | Data_A11 | 1   | Data_B11 |
 | 1    | Data_A12 | 1   | Data_B11 |
 | 1    | Data_A13 | 1   | Data_B11 |
@@ -183,33 +192,36 @@ Right Join (or Right Outer join) on column Ref will return columns from both the
 | NULL | NULL     | 4   | Data_B41 |
 
 ### FULL OUTER JOIN
-Full Outer Join on column Ref will return columns from both the tables and matching records with records from the left table and records from the right table .  The result-set will contain NULL values for the rows for which there is no matching.
 
-| Ref   | Data     | Ref   | Data     |
-|:------|:---------|:------|:---------|
-| 1     | Data_A11 | 1     | Data_B11 |
-| 1     | Data_A12 | 1     | Data_B11 |
-| 1     | Data_A13 | 1     | Data_B11 |
-| 2     | Data_A21 | 2     | Data_B21 |
-| 2     | Data_A21 | 2     | Data_B22 |
-| 2     | Data_A21 | 2     | Data_B23 |
-| 3     | Data_A31 | NULL  | NULL     |
-| NULL  | NULL     | 4     | Data_B41 |
+Full Outer Join on column Ref will return columns from both the tables and matching records with records from the left table and records from the right table . The result-set will contain NULL values for the rows for which there is no matching.
+
+| Ref  | Data     | Ref  | Data     |
+| :--- | :------- | :--- | :------- |
+| 1    | Data_A11 | 1    | Data_B11 |
+| 1    | Data_A12 | 1    | Data_B11 |
+| 1    | Data_A13 | 1    | Data_B11 |
+| 2    | Data_A21 | 2    | Data_B21 |
+| 2    | Data_A21 | 2    | Data_B22 |
+| 2    | Data_A21 | 2    | Data_B23 |
+| 3    | Data_A31 | NULL | NULL     |
+| NULL | NULL     | 4    | Data_B41 |
 
 ### LEFT SEMI JOIN
+
 Left Semi Join on column Ref will return columns only from left table and matching records only from left table.
 
-| Ref | Data     |    
-|:----|:---------|
-| 1   | Data_B11 | 
+| Ref | Data     |
+| :-- | :------- |
+| 1   | Data_B11 |
 | 1   | Data_B21 |
 | 1   | Data_B22 |
-| 2   | Data_B23 | 
-| 3   | Data_B41 | 
+| 2   | Data_B23 |
+| 3   | Data_B41 |
 
 ### LEFT ANTI JOIN
+
 Left anti join on column Ref will return columns from the left for non-matched records :
 
-| Ref | Data     | Ref  | Data     |
-|:----|:---------|:-----|:---------|
-| 3   | Data_A31 | NULL | NULL     |
+| Ref | Data     | Ref  | Data |
+| :-- | :------- | :--- | :--- |
+| 3   | Data_A31 | NULL | NULL |

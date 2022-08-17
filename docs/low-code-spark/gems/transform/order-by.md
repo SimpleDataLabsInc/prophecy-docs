@@ -11,14 +11,14 @@ tags:
   - descending
 ---
 
-Sorts dataframe on one or more columns in ascending or descending order.
+Sorts a DataFrame on one or more columns in ascending or descending order.
 
 ### Parameters
 
 | Parameter     | Description                                | Required |
-| :------------ | :----------------------------------------- | :------- |
-| Dataframe     | Input dataframe which needs to be sorted   | True     |
-| Order columns | Columns to sort dataframe by               | True     |
+| ------------- | ------------------------------------------ | -------- |
+| DataFrame     | Input DataFrame to be sorted               | True     |
+| Order columns | Columns to sort DataFrame by               | True     |
 | Sort          | Order of sorting - ascending or descending | True     |
 
 ### Example

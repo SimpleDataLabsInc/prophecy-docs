@@ -16,41 +16,26 @@ Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about 
 :::
 Allows read and write operations on `Snowflake`
 
+## Source
+
 ### Source Parameters
 
-| Parameter       | Description                                                                                                                                               | Required                                                        |
-| :-------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------- |
-| Dataset Name    | Name of the Dataset ([read more about Datasets](/docs/core/concepts/dataset.md))                                                                          | True                                                            |
-| Credential Type | Credential Type: `Databricks Secrets` or `Username & Password`                                                                                            | True                                                            |
-| Credentials     | Databricks credential name , else username and password for the snowflake account                                                                         | Required if `Databricks Secrets` is opted as `Credential Type`  |
-| Username        | Login name for the snowflake user                                                                                                                         | Required if `Username & Password` is opted as `Credential Type` |
-| Password        | Password for the snowflake user                                                                                                                           | Required if `Username & Password` is opted as `Credential Type` |
-| Url             | hostname for your account in the format: `<account_identifier>.snowflakecomputing.com`. <br/> Eg: `https://DJ07623.ap-south-1.aws.snowflakecomputing.com` | True                                                            |
-| Database        | Database to use for the session after connecting                                                                                                          | True                                                            |
-| Schema          | Schema to use for the session after connecting                                                                                                            | True                                                            |
-| Warehouse       | The default virtual warehouse to use for the session after connecting                                                                                     | False                                                           |
-| Data Source     | Strategy to read data: `DB Table` or `SQL Query`.                                                                                                         | True                                                            |
-| Table           | The name of the table to be read. All columns and records are retrieved (i.e. it is equivalent to `SELECT * FROM table`).                                 | Required if `DB Table` is opted as `Data Source`                |
-| SQL Query       | The exact query (SELECT statement) to run                                                                                                                 | Required if `SQL Query` is opted as `Data Source`               |
+| Parameter       | Description                                                                                                                                               | Required                                               |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| Dataset Name    | Name of the Dataset                                                                                                                                       | True                                                   |
+| Credential Type | Credential Type: `Databricks Secrets` or `Username & Password`                                                                                            | True                                                   |
+| Credentials     | Databricks credential name , else username and password for the snowflake account                                                                         | Required if `Credential Type` is `Databricks Secrets`  |
+| Username        | Login name for the Snowflake user                                                                                                                         | Required if `Credential Type` is `Username & Password` |
+| Password        | Password for the Snowflake user                                                                                                                           | Required if `Credential Type` is `Username & Password` |
+| Url             | Hostname for your account in the format: `<account_identifier>.snowflakecomputing.com`. <br/> Eg: `https://DJ07623.ap-south-1.aws.snowflakecomputing.com` | True                                                   |
+| Database        | Database to use for the session after connecting                                                                                                          | True                                                   |
+| Schema          | Schema to use for the session after connecting                                                                                                            | True                                                   |
+| Warehouse       | The default virtual warehouse to use for the session after connecting                                                                                     | False                                                  |
+| Data Source     | Strategy to read data: `DB Table` or `SQL Query`.                                                                                                         | True                                                   |
+| Table           | The name of the table to be read. All columns and records are retrieved (i.e. it is equivalent to `SELECT * FROM table`).                                 | Required if `Data Source` is `DB Table`                |
+| SQL Query       | The exact query (`SELECT` statement) to run                                                                                                               | Required if `Data Source` is `SQL Query`               |
 
-### Target Parameters
-
-| Parameter       | Description                                                                                                                                                                                                                                                                                                           | Required                                                        |
-| :-------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------- |
-| Dataset Name    | Name of the Dataset ([read more about Datasets](/docs/core/concepts/dataset.md))                                                                                                                                                                                                                                      | True                                                            |
-| Credential Type | Credential Type: `Databricks Secrets` or `Username & Password`                                                                                                                                                                                                                                                        | True                                                            |
-| Credentials     | Databricks credential name , else username and password for the snowflake account                                                                                                                                                                                                                                     | Required if `Databricks Secrets` is opted as `Credential Type`  |
-| Username        | Login name for the snowflake user                                                                                                                                                                                                                                                                                     | Required if `Username & Password` is opted as `Credential Type` |
-| Password        | Password for the snowflake user                                                                                                                                                                                                                                                                                       | Required if `Username & Password` is opted as `Credential Type` |
-| Url             | hostname for your account in the format: `<account_identifier>.snowflakecomputing.com`. <br/> Eg: `https://DJ07623.ap-south-1.aws.snowflakecomputing.com`                                                                                                                                                             | True                                                            |
-| Database        | Database to use for the session after connecting                                                                                                                                                                                                                                                                      | True                                                            |
-| Schema          | Schema to use for the session after connecting                                                                                                                                                                                                                                                                        | True                                                            |
-| Warehouse       | The default virtual warehouse to use for the session after connecting                                                                                                                                                                                                                                                 | False                                                           |
-| Table           | The name of the table to which data is to be written.                                                                                                                                                                                                                                                                 | True                                                            |
-| Write Mode      | How to handle existing data if present while writing.                                                                                                                                                                                                                                                                 | True                                                            |
-| Post-Script SQL | DDL/DML SQL statements to execute before writing data.<br/> It is intended for statements that do not return a result set, for example DDL statements like `CREATE TABLE` and DML statements like `INSERT, UPDATE, and DELETE`.<br/> It is not useful for statements that return a result set, such as SELECT or SHOW | False                                                           |
-
-### Reading from a Snowflake Table
+### Example {#source-example}
 
 ```mdx-code-block
 import App from '@site/src/components/slider';
@@ -84,6 +69,8 @@ export const ImageData = [
 
 <App ImageData={ImageData}></App>
 ```
+
+### Generated Code {#source-code}
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -145,7 +132,35 @@ object sf_customer {
 
 ---
 
-### Writing to a Snowflake Table
+## Target
+
+### Target Parameters
+
+| Parameter       | Description                                                                                                                                                                                                                                                                                                               | Required                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| Dataset Name    | Name of the Dataset                                                                                                                                                                                                                                                                                                       | True                                                   |
+| Credential Type | Credential Type: `Databricks Secrets` or `Username & Password`                                                                                                                                                                                                                                                            | True                                                   |
+| Credentials     | Databricks credential name , else username and password for the snowflake account                                                                                                                                                                                                                                         | Required if `Credential Type` is `Databricks Secrets`  |
+| Username        | Login name for the snowflake user                                                                                                                                                                                                                                                                                         | Required if `Credential Type` is `Username & Password` |
+| Password        | Password for the snowflake user                                                                                                                                                                                                                                                                                           | Required if `Credential Type` is `Username & Password` |
+| Url             | Hostname for your account in the format: `<account_identifier>.snowflakecomputing.com`. <br/> Eg: `https://DJ07623.ap-south-1.aws.snowflakecomputing.com`                                                                                                                                                                 | True                                                   |
+| Database        | Database to use for the session after connecting                                                                                                                                                                                                                                                                          | True                                                   |
+| Schema          | Schema to use for the session after connecting                                                                                                                                                                                                                                                                            | True                                                   |
+| Warehouse       | The default virtual warehouse to use for the session after connecting                                                                                                                                                                                                                                                     | False                                                  |
+| Table           | The name of the table to which data is to be written.                                                                                                                                                                                                                                                                     | True                                                   |
+| Write Mode      | How to handle existing data. See [this table](#supported-write-modes) for a list of available options.                                                                                                                                                                                                                    | True                                                   |
+| Post-Script SQL | DDL/DML SQL statements to execute before writing data.<br/> It is intended for statements that do not return a result set, for example DDL statements like `CREATE TABLE` and DML statements like `INSERT, UPDATE, and DELETE`.<br/> It is not useful for statements that return a result set, such as `SELECT` or `SHOW` | False                                                  |
+
+### Supported Write Modes
+
+| Write Mode | Description                                                                                                                      |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| overwrite  | If data already exists, overwrite with the contents of the DataFrame                                                             |
+| append     | If data already exists, append the contents of the DataFrame                                                                     |
+| ignore     | If data already exists, do nothing with the contents of the DataFrame. This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
+| error      | If data already exists, throw an exception.                                                                                      |
+
+### Example {#target-example}
 
 ```mdx-code-block
 
@@ -174,6 +189,8 @@ export const ImageData2 = [
 
 <App ImageData={ImageData2}></App>
 ```
+
+### Generated Code {#target-code}
 
 ````mdx-code-block
 

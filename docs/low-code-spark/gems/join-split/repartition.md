@@ -1,31 +1,30 @@
 ---
 title: Repartition
 id: Repartition
-description: Repartition
+description: Repartition or coalesce a DataFrame
 sidebar_position: 2
 tags:
   - gems
   - join-split
   - partition
   - repartition
+  - coalesce
 ---
 
-This will repartition/coalesce the input dataframe based on config.
-
-Below different types of configurations which can be given:
+This will repartition or coalesce the input DataFrame based on the specified configuration. There are four different repartitioning options:
 
 ## Hash Repartitoning
 
-Repartitions the data evenly across various partitions based on the key. Reshuffles the dataset.
+Repartitions the data evenly across various partitions based on the hash value of the specified key.
 
 ### Parameters {#hash-repartitoning}
 
-| Parameter                         | Description                                   | Required |
-| :-------------------------------- | :-------------------------------------------- | :------- |
-| Dataframe                         | Input dataframe                               | True     |
-| Overwrite default partitions flag | Flag to overwrite default partitions          | False    |
-| Number of partitions              | Integer value specifying number of partitions | False    |
-| Repartition expression(s)         | List of expressions to repartition by         | True     |
+| Parameter                    | Description                                   | Required |
+| ---------------------------- | --------------------------------------------- | -------- |
+| DataFrame                    | Input DataFrame                               | True     |
+| Overwrite default partitions | Flag to overwrite default partitions          | False    |
+| Number of partitions         | Integer value specifying number of partitions | False    |
+| Repartition expression(s)    | List of expressions to repartition by         | True     |
 
 ### Generated Code {#hash-repartitoning}
 
@@ -61,13 +60,13 @@ object hashRepartition {
 
 ## Random Repartitioning
 
-Repartitions without data distribution defined. Reshuffles the dataset.
+Repartitions without data distribution defined.
 
 ### Parameters {#random-repartitioning}
 
 | Parameter            | Description                                   | Required |
 | :------------------- | :-------------------------------------------- | :------- |
-| Dataframe            | Input dataframe                               | True     |
+| DataFrame            | Input DataFrame                               | True     |
 | Number of partitions | Integer value specifying number of partitions | True     |
 
 ### Generated Code {#random-repartitioning}
@@ -101,14 +100,14 @@ object randomRepartition {
 
 ## Range Repartitoning
 
-Repartitions the data with tuples having keys within the same range on the same worker. Reshuffles the dataset.
+Repartitions the data with tuples having keys within the same range on the same worker.
 
 ### Parameters {#range-repartitoning}
 
 | Parameter                              | Description                                                            | Required |
-| :------------------------------------- | :--------------------------------------------------------------------- | :------- |
-| Dataframe                              | Input dataframe                                                        | True     |
-| Overwrite default partitions flag      | Flag to overwrite default partitions                                   | False    |
+| -------------------------------------- | ---------------------------------------------------------------------- | -------- |
+| DataFrame                              | Input DataFrame                                                        | True     |
+| Overwrite default partitions           | Flag to overwrite default partitions                                   | False    |
 | Number of partitions                   | Integer value specifying number of partitions                          | False    |
 | Repartition expression(s) with sorting | List of expressions to repartition by with corresponding sorting order | True     |
 
@@ -149,7 +148,7 @@ Reduces the number of partitions without shuffling the dataset.
 
 | Parameter            | Description                                   | Required |
 | :------------------- | :-------------------------------------------- | :------- |
-| Dataframe            | Input dataframe                               | True     |
+| DataFrame            | Input DataFrame                               | True     |
 | Number of partitions | Integer value specifying number of partitions | True     |
 
 ### Generated Code {#coalesce}
@@ -181,7 +180,7 @@ object Coalesce {
 
 ````
 
-## Example
+## Video demo
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>

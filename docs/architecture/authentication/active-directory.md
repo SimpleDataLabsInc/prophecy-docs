@@ -22,16 +22,13 @@ These are the set of informations which we are supposed to provide for LDAP conf
 
 <img width="766" alt="Screenshot 2022-06-27 at 1 31 56 PM" src="https://user-images.githubusercontent.com/59466885/176030504-1420d323-5969-4f3f-98ae-996e1e63ed38.png" />
 
-### Host & Certs
+### Host and Certs
 
-**Host**: Host and optional port of the LDAP server in the form "host:port". If the port is not supplied, it will be
-guessed based on "Disable SSL", and "Start TLS" flags.
+**Host**: Host and optional port of the LDAP server in the form "host:port". If the port is not supplied, it will be guessed based on "Disable SSL", and "Start TLS" flags.
 
-**Disable SSL**: Following field is required if the LDAP host is not using TLS (port 389). Because this option
-inherently leaks passwords to anyone on the same network.
+**Disable SSL**: Following field is required if the LDAP host is not using TLS (port 389). Because this option inherently leaks passwords to anyone on the same network.
 
-**Skip Certificate Verification**: If a custom certificate isn't provided, this option can be used to turn on TLS
-certificate checks.
+**Skip Certificate Verification**: If a custom certificate isn't provided, this option can be used to turn on TLS certificate checks.
 
 **Certificates**: Please upload trusted Root certs, client certs and client keys
 

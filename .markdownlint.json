@@ -11,5 +11,6 @@
   "fenced-code-language": false,
   "first-line-h1": false,
   "MD014": false,
-  "MD003": false
+  "MD003": false,
+  "MD051": false
 }

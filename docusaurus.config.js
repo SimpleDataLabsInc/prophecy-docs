@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "Prophecy",
   tagline: "Low Code Data Engineering",
-  url: "https://beta.docs.prophecy.io/",
+  url: "https://docs.prophecy.io/",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",

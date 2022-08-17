@@ -15,7 +15,7 @@ Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about 
 
 :::
 
-Read data from fixed format files with expected schema, or write data to fixed format files with expected schema.
+Read and write fixed format files with an expected schema.
 
 ## Source
 
@@ -26,9 +26,9 @@ Reads data from fixed format files
 | Parameter           | Description                                                                      | Required |
 | :------------------ | :------------------------------------------------------------------------------- | :------- |
 | Location            | File path where fixed format files are present                                   | True     |
-| Fixed Format Schema | Schema string for the fixed format file, supports either ebcdic or ascii formats | True     |
+| Fixed Format Schema | Schema string for the fixed format file, supports either EBCDIC or ASCII formats | True     |
 
-### Source Example
+### Example {#source-example}
 
 ![Delta source example](./img/fixed-format/ff-source-small.gif)
 
@@ -85,24 +85,22 @@ Writes data in fixed file format according to the specified schema string.
 
 ### Target Parameters
 
-| Parameter           | Description                                                                      | Required |
-| :------------------ | :------------------------------------------------------------------------------- | :------- | --- | ---- |
-| Location            | File path where fixed format files will be written                               | True     |
-| Write mode          | Write mode for dataframe                                                         | False    |     | True |
-| Fixed Format Schema | Schema string for the fixed format file, supports either ebcdic or ascii formats | True     |
+| Parameter           | Description                                                                                            | Required |
+| ------------------- | ------------------------------------------------------------------------------------------------------ | -------- |
+| Location            | File path where fixed format files will be written                                                     | True     |
+| Write mode          | How to handle existing data. See [this table](#supported-write-modes) for a list of available options. | False    |
+| Fixed Format Schema | Schema string for the fixed format file, supports either EBCDIC or ASCII formats                       | True     |
 
-### Write modes
+### Supported Write Modes
 
-Below are different type of write modes which prophecy provided delta format supports.
+| Write Mode | Description                                                                                                                      |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| overwrite  | If data already exists, overwrite with the contents of the DataFrame                                                             |
+| append     | If data already exists, append the contents of the DataFrame                                                                     |
+| ignore     | If data already exists, do nothing with the contents of the DataFrame. This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
+| error      | If data already exists, throw an exception.                                                                                      |
 
-| Write Mode | Description                                                                                                                                                                                   |
-| :--------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| overwrite  | If data already exists, existing data is expected to be overwritten by the contents of the DataFrame.                                                                                         |
-| append     | If data already exists, contents of the DataFrame are expected to be appended to existing data.                                                                                               |
-| ignore     | If data already exists, the save operation is expected not to save the contents of the DataFrame and not to change the existing data. This is similar to a CREATE TABLE IF NOT EXISTS in SQL. |
-| error      | If data already exists, an exception is expected to be thrown.                                                                                                                                |
-
-### Target Example
+### Example {#target-example}
 
 ![Delta Target Example](./img/fixed-format/ff-target-small.gif)
 

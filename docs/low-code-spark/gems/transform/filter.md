@@ -9,14 +9,14 @@ tags:
   - where
 ---
 
-Filters dataframe based on provided filter condition
+Filters DataFrame based on the provided filter condition
 
 ### Parameters
 
 | Parameter        | Description                                                                           | Required |
 | :--------------- | :------------------------------------------------------------------------------------ | :------- |
-| Dataframe        | Input dataframe on which the filter condition will be applied.                        | True     |
-| Filter Condition | BooleanType column or boolean expression. Supports sql, python and scala expressions. | True     |
+| DataFrame        | Input DataFrame on which the filter condition will be applied.                        | True     |
+| Filter Condition | BooleanType column or boolean expression. Supports SQL, Python and Scala expressions. | True     |
 
 ### Example
 
