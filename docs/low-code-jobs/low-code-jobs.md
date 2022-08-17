@@ -17,6 +17,6 @@ schedulers:
    Databricks Native.
 
 2. **[Airflow](airflow.md)** - for more complex use-cases, where you have to use various operators, or need
-   any additional data pre and post-processing, you can design your jobs using Prophecy's low-code Airflow environment.
+   any additional data pre-and-post-processing, you can design your Jobs using Prophecy's low-code Airflow environment.
 
 Alternatively, since Prophecy provides you native Spark code on Git, you can easily integrate with any other scheduler.

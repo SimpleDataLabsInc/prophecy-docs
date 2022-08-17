@@ -51,15 +51,10 @@ Whenever, creating a new Job you're asked for the following details:
 ![Example Databricks Job](img/databricks-job-example.png)
 
 Now that you've created your first Job, you can start adding Gems to the canvas to define which Pipelines will
-be run during the Job. To define dependences between the Pipelines within the Job you can simply connect them
-by dragging and dropping a connection between them.
+be run during the Job. To define dependencies between the Pipelines within the Job you can simply connect them
+by dragging-and-dropping the edges between Gems.
 
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/103921419/174399585-40067429-953e-4157-a5db-d80e25713d24.mp4" title="Avro Source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
-
-When using Databricks Jobs there are two Gem types available:
+Two Gem types are available when defining Databricks Jobs:
 
 #### Pipeline Gem
 
@@ -77,13 +72,13 @@ Script Gem can be used to write any ad-hoc code.
 
 Settings for script component can be inherited from overall Job configuration or can be set inside the component itself.
 
-### Visual == Code
+## Visual == Code
 
-The visual graph created on the jobs page is automatically converted to code (JSON) behind the scenes.
+The visual graph created on the Jobs page is automatically converted to code (JSON) in the backend which gets committed to Git.
 
 ![Code View](img/databricks-jobs-code-view.png)
 
-## Configuration
+## Job Configuration
 
 ![Example Configuration](img/databricks-job-config-example.png)
 
@@ -102,10 +97,10 @@ The visual graph created on the jobs page is automatically converted to code (JS
 | Number of retries per Gem | Number of retries for each Gem in Job Pipeline                                                                                                                                                                                                |
 | Alerts Email per Gem      | Comma separated list of emails that are going to receive notifications on specific Job status events (start, failure, or success) for each Gem in Job Pipeline.                                                                               |
 
-## Deployment
+## Deployment Modes
 
 To deploy a Job on Databricks, we need to release the project from Prophecy UI as shown in example below. As soon as the project is
-released, the Job would start appearing on Databricks jobs page as well.
+released, the Job would start appearing on Databricks Jobs page as well.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -127,6 +122,8 @@ Prophecy supports two different Job deployment models. Each has different impact
 
 In this mode, each component of Job will spawn a separate cluster of its own.
 
+Here's how the Databricks UI looks for Prophecy's Multi Cluster Mode.
+
 ![Multi Job Cluster](img/databricks-jobs-multi-cluster-eg.png)
 
 ### Single Job Cluster Mode
@@ -136,7 +133,7 @@ In this mode, each component of Job will run on the same cluster.
 :::info
 To use single cluster mode the package name across each Pipeline in Job should be unique.
 This is done to ensure that the folder structure for one Pipeline does not overwrite another.
-Please refer to the example below for steps on how to configure package name in Pipeline.
+Please refer to the steps below in continuation to our earlier [Example](databricks-jobs#deployment-modes) on how to configure package name in Pipeline.
 :::
 
 ---
@@ -146,15 +143,17 @@ Please refer to the example below for steps on how to configure package name in 
 <iframe src="https://user-images.githubusercontent.com/103921419/184726133-51bf76ec-31d7-4976-8d7d-68230c28e233.mp4" title="Single Cluster Mode" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
+Here's how the Databricks UI looks for Prophecy's Single Cluster Mode.
+
 ![Single Job Cluster](img/databricks-jobs-single-cluster-eg.png)
 
 ### Fully Configurable Cluster Mode
 
 **Coming Soon!!!**
 
-## Monitoring
+## Job Monitoring
 
-Prophecy provides a monitoring page which shows the status (enable/disable) of all the jobs deployed via Prophecy and
+Prophecy provides monitoring page which shows the status (enable/disable) of all the Jobs deployed via Prophecy and
 status of historic/current runs (success/failure/in-progress) for quick reference.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>

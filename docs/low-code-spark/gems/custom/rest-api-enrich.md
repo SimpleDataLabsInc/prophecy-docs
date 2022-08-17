@@ -37,8 +37,8 @@ to the examples in the description column of each parameter for reference on how
 
 :::info
 
-1. To store sensitive information like API key (headers), auth etc., `Databricks secrets` can be used as shown in example 1 below.
-2. If the expected number of rows is very large, it's better to provide `await time` in the `advanced tab` so you don't overwhelm the source server or exceed any request limits.
+1. To store sensitive information like API key (headers), auth etc., `Databricks secrets` can be used as shown in [Example](rest-api-enrich#example-1) below.
+2. If the expected number of rows are very large, it's better to provide `await time` in the `advanced tab` so you don't overwhelm the source server or exceed any request limits.
 3. For APIs which takes list of parameters as inputs, window functions like `collect_list` can be used before `RestApiEnrich` Gem to reduce the number of API calls.
 
 Please make sure that cluster is connected while using the `parse content` option to `infer the schema from cluster` for the first time.
@@ -46,19 +46,19 @@ Please make sure that cluster is connected while using the `parse content` optio
 
 :::note
 All input parameters are expected to be in string format. Other column types such as `array/JSON/struct` can be created
-using combination of aggregate/window Gems along with reformat component and then can be cast as string prior to paasing the column in `RestAPIEnrich Gem`
+using combination of aggregate/window Gems along with reformat component and then can be cast as string prior to passing the column in `RestAPIEnrich Gem`
 as needed.
 :::
 
-### Example 1
+### Example 1 {#example-1}
 
-Let's try to fetch prices for few cryptocurrencies from [coin-api](https://www.coinapi.io/).
+Let's try to fetch prices for few cryptocurrencies from [Coin-API](https://www.coinapi.io/).
 
 We would be taking cryptocurrency and currency as input from DataFrame and pass url, headers as static values.
 Please note that URL in this example is created using static base url and adding cryptocurrency and currency as inputs
 from DataFrame.
 
-Also, we would be using Databricks-secrets to pass headers as it includes api-key.
+Also, we would be using Databricks-secrets to pass headers as it requires API-key.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
