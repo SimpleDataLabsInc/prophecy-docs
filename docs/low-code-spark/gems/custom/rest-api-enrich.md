@@ -18,40 +18,37 @@ Each property can either be set as static value or value from existing column of
 examples in description column of each parameter for reference on how the string value should be formed to pass it to
 parameter.
 
-| Parameter       | Description                                                                                                                                                                                                                     | Required | Default |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
-| method          | method for the new Request object: `GET`, `OPTIONS`, `HEAD`, `POST`, `PUT`, `PATCH`, or `DELETE`.                                                                                                                               | true     |         |
-| url             | URL for the rest api.                                                                                                                                                                                                           | true     |         |
-| params          | Dictionary, list of tuples or bytes to send in the query string for the Request. eg: `{"key1":"value1", "key2": value2, "key3": ["value1", "value2"]}`                                                                          | false    |         |
-| data            | Dictionary to send in the body of the Request. eg: `{"key1":"value1", "key2": value2}`                                                                                                                                          | false    |         |
-| JSON            | A JSON serializable Python object to send in the body of the Request. eg: `{"key1":"value1", "key2": value2}`                                                                                                                   | false    |         |
-| headers         | Dictionary of HTTP Headers to send with the Request. eg: `{"key1":"value1", "key2": "value2"}`                                                                                                                                  | false    |         |
-| cookies         | Dictionary to send with the Request. eg: `{"key1":"value1", "key2": "value2"}`                                                                                                                                                  | false    |         |
-| auth            | Auth tuple to enable Basic/Digest/Custom HTTP Auth. eg: `user:pass`                                                                                                                                                             | false    |         |
-| timeout         | How many seconds to wait for the server to send data before giving up, as a float, eg: `0.5` or a (connect timeout, read timeout) tuple. eg: `0.5:0.25`                                                                         | false    |         |
-| allow redirects | Enable/disable GET/OPTIONS/POST/PUT/PATCH/DELETE/HEAD redirection. eg: `true` or `false`                                                                                                                                        | false    | true    |
-| proxies         | Dictionary mapping protocol to the URL of the proxy. eg: `{"https" : "https://1.1.0.1:80"}`                                                                                                                                     | false    |         |
-| verify          | Either a boolean, in which case it controls whether we verify the server’s TLS certificate eg: `true` or `false` or a string, in which case it must be a path to a CA bundle to use. Defaults to True. eg: `dbfs:/path-to-file` | false    | true    |
-| stream          | if False, the response content will be immediately downloaded. eg: `true` or `false`                                                                                                                                            | false    |         |
-| cert            | if String, path to ssl client cert file (.pem). eg. `dbfs:/path-to-file`. If Tuple, (‘cert’, ‘key’) pair. eg: `cert:key`.                                                                                                       | false    |         |
-| parse content   | Parse content as JSON (to make the schema available, please enable `custom schema` and click `infer from cluster` at the bottom left in the output tab)                                                                         | false    | false   |
+| Parameter       | Description                                                                                                                                                                                                                   | Required | Default |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
+| method          | method for the new Request object: `GET`, `OPTIONS`, `HEAD`, `POST`, `PUT`, `PATCH`, or `DELETE`.                                                                                                                             | true     |         |
+| url             | URL for the rest api.                                                                                                                                                                                                         | true     |         |
+| params          | Dictionary, list of tuples or bytes to send in the query string for the Request. eg: `{"key1":"value1", "key2": value2, "key3": ["value1", "value2"]}`                                                                        | false    |         |
+| data            | Dictionary to send in the body of the Request. eg: `{"key1":"value1", "key2": value2}`                                                                                                                                        | false    |         |
+| JSON            | A JSON serializable Python object to send in the body of the Request. eg: `{"key1":"value1", "key2": value2}`                                                                                                                 | false    |         |
+| headers         | Dictionary of HTTP Headers to send with the Request. eg: `{"key1":"value1", "key2": "value2"}`                                                                                                                                | false    |         |
+| cookies         | Dictionary to send with the Request. eg: `{"key1":"value1", "key2": "value2"}`                                                                                                                                                | false    |         |
+| auth            | Auth tuple to enable Basic/Digest/Custom HTTP Auth. eg: `user:pass`                                                                                                                                                           | false    |         |
+| timeout         | How many seconds to wait for the server to send data before giving up, as a float, eg: `0.5` or a (connect timeout, read timeout) tuple. eg: `0.5:0.25`                                                                       | false    |         |
+| allow redirects | Enable redirection for all `true` or none `false` of the allowed methods for the Request object.                                                                                                                              | false    | true    |
+| proxies         | Dictionary mapping protocol to the URL of the proxy. eg: `{"https" : "https://1.1.0.1:80"}`                                                                                                                                   | false    |         |
+| verify          | Either a boolean, which controls whether we verify the server’s TLS certificate eg: `true` or `false` or a string, in which case it must be a path to a CA bundle to use. eg: `dbfs:/path-to-file` Defaults to boolean `true` | false    | true    |
+| stream          | if False, the response content will be immediately downloaded. eg: `true` or `false`                                                                                                                                          | false    |         |
+| cert            | if String, path to ssl client cert file (.pem). eg. `dbfs:/path-to-file`. If Tuple, (‘cert’, ‘key’) pair. eg: `cert:key`.                                                                                                     | false    |         |
+| parse content   | Parse content as JSON (to make the schema available, please enable `custom schema` and click `infer from cluster` at the bottom left in the output tab)                                                                       | false    | false   |
 
 :::info
 
-1. To store sensitive information like API key (headers), auth etc., `Databricks secrets` can be used as shown in above
-   example.
-2. If the number of rows are very huge for which api calls needs to be made, it's better to provide `await time` in the
+1. To store sensitive information like API key (headers), auth etc., `Databricks secrets` can be used as shown in Example 1 below.
+2. If the number of rows are very huge for which api calls needs to be made, it's better to provide `wait time` in the
    `advanced tab` so that number of api hits per minute does not get breached.
 3. For APIs which takes list of parameters as inputs, window functions like `collect_list` can be used
    before `RestApiEnrich` Gem to reduce
    the number of api calls.
-   :::
 
 :::note
 All input parameters are expected to be in string format. Other column types such as array/JSON/struct can be created
-using combination of aggregate/window Gems along with reformat component and then can be cast as string prior to paasing the column in `RestAPIEnrich Gem`
+using combination of aggregate/window Gems along with reformat component and then can be cast as string prior to passing the column in `RestAPIEnrich Gem`
 as per requirement.
-:::
 
 ### Example 1
 
@@ -61,7 +58,7 @@ We would be taking cryptocurrency and currency as input from DataFrame and pass 
 Please note that URL in this example is created using static base url and adding cryptocurrency and currency as inputs
 from DataFrame.
 
-Also, we would be using Databricks-secrets to pass headers as it includes api-key.
+Also, we would be using Databricks-secrets to pass headers including api-key.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
