@@ -42,4 +42,4 @@ Fabric includes everything required to run a data Pipeline
   - JDBC or other connections to these databases can be stored on the Fabric
 - **Credentials and Secrets**
   - Prophecy enables you to store credentials safely in the Databricks environment. You can store key-value pairs as secrets that are made available for reading to the running workflows.
-  - Please note that after a secret is created it is only readable by a running job. Prophecy does not have access to this value.
+  - Please note that after a secret is created it is only readable by a running Job. Prophecy does not have access to this value.

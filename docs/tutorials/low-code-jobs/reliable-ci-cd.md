@@ -60,7 +60,7 @@ By separating your **development** or QA use-cases from your **production** use-
 
 You can push your code to the **production environment** only after you're confident it's going to work well. The production environment has access to your real data, uses large optimal clusters, and has significantly restricted access. In some cases, only the operational support teams should have access to your production environment.
 
-If you'd like to involve more stages, to even further increase the reliability of your development process, you can add a **QA environment**. That environment should have data, hardware, and software that closely simulates the Production environment (e.g. data slices directly taken from production), and should serve as a holding area. Using QA, your engineers make sure that the jobs are going to run smoothly in the production environment, without actually potentially breaking production, if some code is wrong.
+If you'd like to involve more stages, to even further increase the reliability of your development process, you can add a **QA environment**. That environment should have data, hardware, and software that closely simulates the Production environment (e.g. data slices directly taken from production), and should serve as a holding area. Using QA, your engineers make sure that the Jobs are going to run smoothly in the production environment, without actually potentially breaking production, if some code is wrong.
 
 ### Development and Production
 
@@ -82,9 +82,9 @@ For our example, however, let's focus on a setup with two environments: **Develo
 
 3. Set up your **Projects** - create your projects, as you would before. Projects should be owned by the `developers` _team_.
 
-4. Set up your **Jobs** - for every single set of Pipelines you'd like to schedule, create two jobs:
-   - **job_development** - jobs built by the `developers` for integration and testing purposes
-   - **job_production** - jobs built by the `prod_support` team, based on the development jobs - they will run in the production environment
+4. Set up your **Jobs** - for every single set of Pipelines you'd like to schedule, create two Jobs:
+   - **Job_development** - Jobs built by the `developers` for integration and testing purposes
+   - **Job_production** - Jobs built by the `prod_support` team, based on the development Jobs - they will run in the production environment
 
 <div style={{position: 'relative', 'padding-bottom': '56.25%', height: 0}}>
    <iframe src="https://www.loom.com/embed/b9669f374f504e469b2f88374bcf35d3" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
@@ -102,18 +102,18 @@ Now that we have set up our Fabrics and Teams, built some Pipelines, it's time t
 Testing your Pipelines and Jobs is very simple. Simple click on the play button and watch your code run!
 
 :::info Coming Soon
-Note, that currently, we're spinning up a new cluster for each of the tasks, therefore your job might take a few minutes
+Note, that currently, we're spinning up a new cluster for each of the tasks, therefore your Job might take a few minutes
 to complete. However, soon, you will be able to have granular control over which Pipeline runs on which cluster.
 :::
 
 #### Deployment to Production
 
-Once we're confident that our job works correctly, and we have tested it well, we can start deploying it to our **production** environment. In our setup, only a production support engineer can do that. Therefore, login as them,
-duplicate your job on the production Fabric, set appropriate Pipeline configurations and enable it.
+Once we're confident that our Job works correctly, and we have tested it well, we can start deploying it to our **production** environment. In our setup, only a production support engineer can do that. Therefore, login as them,
+duplicate your Job on the production Fabric, set appropriate Pipeline configurations and enable it.
 
-That's it! Now you can commit any remaining changes and release your Pipeline. Prophecy automatically takes care of the release process, by building your Pipelines, running unit tests, and finally deploying the Pipeline JARs/wheels alongside the job definition directly to Databricks (or AirFlow).
+That's it! Now you can commit any remaining changes and release your Pipeline. Prophecy automatically takes care of the release process, by building your Pipelines, running unit tests, and finally deploying the Pipeline JARs/wheels alongside the Job definition directly to Databricks (or AirFlow).
 
-If you're new to this process, check out, our [Git](/metadata/git) and jobs deployment documentation.
+If you're new to this process, check out, our [Git](/metadata/git) and Jobs deployment documentation.
 
 <div style={{position: 'relative', 'padding-bottom': '56.25%', height: 0}}>
    <iframe src="https://www.loom.com/embed/28153636876f409184e6ba2dcbc8f273" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
@@ -122,7 +122,7 @@ If you're new to this process, check out, our [Git](/metadata/git) and jobs depl
 
 ## Multi-Fabric Deployment with GitHub
 
-So far, we looked at how Prophecy makes it really easy to deploy our jobs to multiple environments, directly using the CI / CD system built into it. However, it is often the case that you want to deploy your Pipelines from your Git instead. This enables you to have a more secure production environment, where it doesn't have to connect to directly Prophecy itself.
+So far, we looked at how Prophecy makes it really easy to deploy our Jobs to multiple environments, directly using the CI / CD system built into it. However, it is often the case that you want to deploy your Pipelines from your Git instead. This enables you to have a more secure production environment, where it doesn't have to connect to directly Prophecy itself.
 
 As we know, Prophecy publishes all the entities (Pipelines, Jobs, metadata, etc) directly on your Git. That means you can very easily deploy that code to whatever Databricks environment you'd like - very easily.
 

@@ -50,7 +50,7 @@ The checks in place are:
 3. AWS Credential check
 4. Detect Private Keys
 5. EOF Fixer
-6. No commiting to Master/Main
+6. No committing to Master/Main
 7. Trailing whitespaces
 8. Prettier formatting
 9. Markdown Lint
@@ -58,7 +58,7 @@ The checks in place are:
 11. Prevent commit message reuse
 12. Word Veto
 
-The last one is being used to set a standard for how things should be spelled, capitalized, etc. Spelling inside of `fenced code blocks` and URLs is exempted.
+The last one is being used to set a standard for how things should be spelled, capitalized, etc. Spelling inside of `fenced code blocks` and URLs is exempted. Add a word veto to .pre-commit-config.yaml, push, and following commits will automatically adjust the veto'd words.
 
 ### Installing pre-commit
 
