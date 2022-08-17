@@ -58,7 +58,7 @@ The checks in place are:
 11. Prevent commit message reuse
 12. Word Veto
 
-The last one is being used to set a standard for how things should be spelled, capitalized, etc. Spelling inside of `fenced code blocks` and URLs is exempted.
+The last one is being used to set a standard for how things should be spelled, capitalized, etc. Spelling inside of `fenced code blocks` and URLs is exempted. Add a word veto to .pre-commit-config.yaml, push, and following commits will automatically adjust the veto'd words.
 
 ### Installing pre-commit
 
