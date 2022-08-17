@@ -10,33 +10,36 @@ tags:
   - outer
   - left join
   - right join
+  - hints
+  - merge
 ---
 
-Performs various types of joins with one more DataFrames
+Joins 2 or more DataFrames based on the given configuration.
 
-### Parameters
+## Parameters
 
-| Parameter                         | Description                                                               | Required                               |
-| :-------------------------------- | :------------------------------------------------------------------------ | :------------------------------------- |
-| DataFrame 1                       | First input DataFrame                                                     | True                                   |
-| DataFrame 2                       | Second input DataFrame                                                    | True                                   |
-| DataFrame N                       | Nth input DataFrame                                                       | False                                  |
-| Join Condition ( Conditions tab ) | The join condition specifies how the rows will be combined.               | True                                   |
-| Type ( Conditions tab )           | The type of JOIN ( Inner, Full Outer, Left , Right , Left Semi, Left Anti | True                                   |
-| Where Clause ( Conditions tab )   | Filter applied after the Join operation                                   | False                                  |
-| Target column ( Expressions )     | Output column name                                                        | False                                  |
-| Expression ( Expressions )        | Expression to compute target column                                       | Required if a Target column is present |
-| Type ( Hints )                    | The type of Hint ( Broadcast, Merge, Shuffle Hash, Shuffle Replicate NL ) | False                                  |
+| Parameter                        | Description                                                                                                                                    | Required |
+| :------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------- | :------- |
+| DataFrame 1                      | First input DataFrame                                                                                                                          | True     |
+| DataFrame 2                      | Second input DataFrame                                                                                                                         | True     |
+| DataFrame N                      | Nth input DataFrame                                                                                                                            | False    |
+| Join Condition (Conditions tab)  | The join condition specifies how the rows will be combined.                                                                                    | True     |
+| Type (Conditions tab)            | The type of JOIN `(Inner, Full Outer, Left , Right , Left Semi, Left Anti)`                                                                    | True     |
+| Where Clause (Conditions tab)    | `Filter` applied after the Join operation                                                                                                      | False    |
+| Target column (Expressions)      | Output column name                                                                                                                             | False    |
+| Expression (Expressions)         | Expression to compute target column. If no expression is given, then all columns from all DataFrames would reflect in output.                  | False    |
+| Hint Type (Advanced)             | The type of Join Hint (`Broadcast`, `Merge`, `Shuffle Hash`, `Shuffle Replicate NL` or `None`)                                                 | False    |
+| Propagate All Columns (Advanced) | If `true`, all columns from that DataFrame would be propagated to output DataFrame. Equivalent to selecting `df.*` for the selected DataFrame. | False    |
 
-### Add a new input
+## Adding a new input
 
 1. Click on the plus icon to add a new input.
 2. Then add your condition expression for the newly added input.
    ![Example usage of Join - Add new input to join gem](./img/add_new_input.png)
 
-### Examples
+## Examples
 
-#### Example 1 - Join with three DataFrame inputs
+### Example 1 - Join with three DataFrame inputs
 
 ![Example usage of Join - Join three DataFrame inputs](./img/join_without_hints.png)
 
@@ -48,7 +51,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="py" label="Python">
 
 ```py
-def total_orders(spark: SparkSession, in0: DataFrame) -> DataFrame:
+def Join_1(spark: SparkSession, in0: DataFrame) -> DataFrame:
         return in0\
         .alias("in0")\
         .join(in1.alias("in1"), (col("in0.customer_id") == col("in1.customer_id")), "inner")\
@@ -60,13 +63,8 @@ def total_orders(spark: SparkSession, in0: DataFrame) -> DataFrame:
 <TabItem value="scala" label="Scala">
 
 ```scala
-object total_orders {
-   def apply(
-    spark: SparkSession,
-    in0:   DataFrame,
-    in1:   DataFrame,
-    in2:   DataFrame
-  ): DataFrame =
+object Join_1 {
+   def apply(spark: SparkSession, in0: DataFrame, in1: DataFrame, in2: DataFrame): DataFrame =
     in0
       .as("in0")
       .join(in1.as("in1"), col("in0.customer_id") === col("in1.customer_id"), "inner")
@@ -79,26 +77,25 @@ object total_orders {
 
 ````
 
-#### Example 2 - Join with Hints
+### Example 2 - Join with Hints
 
 Join hints allow users to suggest the join strategy that Spark should use. For a quick overview, see Spark's Join Hints [documentation](https://spark.apache.org/docs/3.0.0/sql-ref-syntax-qry-select-hints.html#join-hints).
 
 ![Example usage of Join - Join with hints](./img/join_with_hints.png)
 
 ````mdx-code-block
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 <Tabs>
 <TabItem value="py" label="Python">
 
 ```py
-def total_orders(spark: SparkSession, in0: DataFrame) -> DataFrame:
-        return in0\
+def Join_1(spark: SparkSession, in0: DataFrame, in1: DataFrame, in2: DataFrame) -> DataFrame:
+    df1 = in1.hint("merge")
+
+    return in0\
         .alias("in0")\
         .hint("broadcast")\
-        .join(in1.alias("in1").hint("merger"), (col("in0.customer_id") == col("in1.customer_id")), "inner")\
-        .join(in2.alias("in2"),                (col("in1.customer_id") == col("in2.customer_id")), "inner")
+        .join(df1.alias("in1"), col("in0.customer_id") == col("in1.customer_id"), "inner")\
+        .join(in2.alias("in2"), col("in0.customer_id") == col("in1.customer_id"), "inner")
 ```
 
 </TabItem>
@@ -106,18 +103,13 @@ def total_orders(spark: SparkSession, in0: DataFrame) -> DataFrame:
 <TabItem value="scala" label="Scala">
 
 ```scala
-object total_orders {
-   def apply(
-    spark: SparkSession,
-    in0:   DataFrame,
-    in1:   DataFrame,
-    in2:   DataFrame
-  ): DataFrame =
+object Join_1 {
+   def apply(spark: SparkSession, in0: DataFrame, in1: DataFrame, in2: DataFrame): DataFrame =
     in0
       .as("in0")
       .hint("broadcast")
       .join(in1.as("in1").hint("merge"), col("in0.customer_id") === col("in1.customer_id"), "inner")
-      .join(in2.as("in2"),                col("in1.customer_id") === col("in2.customer_id"), "inner")
+      .join(in2.as("in2"),               col("in1.customer_id") === col("in2.customer_id"), "inner")
 }
 ```
 
@@ -126,7 +118,67 @@ object total_orders {
 
 ````
 
-### Types of Join
+### Example 3 - Join with Propagate Columns
+
+```mdx-code-block
+import App from '@site/src/components/slider';
+
+export const ImageData = [
+  {
+    "image":"/img/join/join-eg3-conditions.png",
+    "description":<h3 style={{padding:'10px'}}>Step 1 - Specify join condition</h3>,
+  },
+  {
+    "image":"/img/join/join-eg3-expressions.png",
+    "description":<h3 style={{padding:'10px'}}>Step 2 - Choose required columns from dataframe</h3>,
+  },
+  {
+    "image":"/img/join/join-eg3-advanced.png",
+    "description":<h3 style={{padding:'10px'}}>Step 3 - Select Propagate all columns from in0</h3>,
+  },
+  {
+    "image":"/img/join/join-eg3-output.png",
+    "description":<h3 style={{padding:'10px'}}>Output - Output with all columns from in0 and selected columns from in1</h3>
+  },
+];
+
+<App ImageData={ImageData}></App>
+```
+
+````mdx-code-block
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+def Join_1(spark: SparkSession, in0: DataFrame, in1: DataFrame, ) -> DataFrame:
+    return in0\
+        .alias("in0")\
+        .join(in1.alias("in1"), (col("in0.customer_id") == col("in1.customer_id")), "inner")\
+        .select(*[col("in1.email").alias("email"), col("in1.phone").alias("phone")], col("in0.*"))
+```
+
+</TabItem>
+
+<TabItem value="scala" label="Scala">
+
+```scala
+object Join_1 {
+
+  def apply(spark: SparkSession, in0: DataFrame, in1: DataFrame): DataFrame =
+    in0
+      .as("in0")
+      .join(in1.as("in1"), col("in0.customer_id") === col("in1.customer_id"), "inner")
+      .select(col("in1.phone").as("phone"), col("in1.email").as("email"), col("in0.*"))
+
+}
+```
+
+</TabItem>
+</Tabs>
+
+````
+
+## Types of Join
 
 Suppose there are 2 tables TableA and TableB with only 2 columns (Ref, Data) and following contents:
 
