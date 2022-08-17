@@ -15,7 +15,7 @@ Writing good unit tests is one of the key stages of the CI/CD process. It ensure
 
 Prophecy makes the process of writing unit cases easier by giving an interactive environment via which unit test cases can be configured across each component.
 
-There are 2 types of unit test cases which can be configured through Porphecy UI:
+There are 2 types of unit test cases which can be configured through Prophecy UI:
 
 1. Output rows equality
 2. Output predicates
@@ -59,7 +59,7 @@ In the below example we will create below unit tests:
 To generate sample input data automatically from the source DataFrame, this option can be enabled while creating unit test.
 
 :::note
-Pipeline needs to run once, to generate units test based on auto-generated sample data.
+Pipeline needs to run once, to generate unit tests based on auto-generated sample data.
 :::
 
 Let's generate sample data automatically for the unit test case we created in above example.
