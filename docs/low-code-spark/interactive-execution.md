@@ -16,7 +16,7 @@ There are 2 ways to run a Pipeline interactively:
 ![Interactive run options](img/interactive-execution-play-options.png)
 
 1. Using the play button from the bottom right side. This would execute the entire Pipeline.
-2. Using the play button on a particular Gem. This would only execute the flow in the Pipeline till that Gem. This comes
+2. Using the play button on a particular Gem. This would only execute the flow in the Pipeline up to and including that Gem. This comes
    in handy during development, so that we don't have to run the entire Pipeline to debug/change a particular Gem.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
@@ -26,11 +26,11 @@ There are 2 ways to run a Pipeline interactively:
 
 ## Interims
 
-During development, often the user want to see data to make more sense of it and to check whether the expected output is getting
-generated or not after the transformation. To ease this process, Prophecy provides you the option to collect data samples at
-various level of the Pipelines based on the config.
+During development, often the user will want to see their data to make more sense of it and to check whether the expected output is getting
+generated or not after the transformation. Prophecy generates these data samples as `Interims`, which are temporarily cached previews of data after each Gem.
+Which Gems automatically get Interims created is controlled by the Pipeline settings as shown below.
 
-By default, for interactive runs, data sampling is enabled for all components. This behaviour can be configured as per need from the
+By default, for interactive runs, data sampling is enabled for all components. This behaviour can be configured as needed from the
 `options` menu as shown in image below:
 
 ```mdx-code-block
@@ -66,19 +66,19 @@ export const ImageData = [
 <App ImageData={ImageData}></App>
 ```
 
-(1) Option to enable/disable data sampling during interactive runs.
-(2) Option to choose the level of data sampling for interactive runs.
-(3) Option to enable/disable data sampling for Job runs (scheduled/interactive). Level of data sampling can be configured same as (2). If enabled the interims would be stored in [execution metrics](interactive-execution#execution-metrics) for scheduler runs as well.
+- (1) - Option to enable/disable data sampling during interactive runs.
+- (2) - Option to choose the level of data sampling for interactive runs.
+- (3) - Option to enable/disable data sampling for Job runs (scheduled/interactive). Level of data sampling can be configured same as (2). If enabled the interims would be stored in [execution metrics](interactive-execution#execution-metrics) for scheduler runs as well.
 
 ## Execution
 
-Once we run a Pipeline, we can use below options to better understand our Pipeline:
+Once we run a Pipeline, we have several options to better understand our Pipeline:
 
-1. Execution code
-2. Execution Errors
-3. Runtime Logs
-4. Runtime Metrics
-5. Execution Metrics
+- [Execution code](#execution-code)
+- [Execution Errors](#execution-errors)
+- [Runtime Logs](#runtime-logs)
+- [Runtime Metrics](#runtime-metrics)
+- [Execution Metrics](#execution-metrics)
 
 ### Execution Code
 
@@ -88,33 +88,34 @@ the selected Fabric.
 ![Execution code](img/interactive-execution-code.png)
 
 :::info
-Execution code can also directly run in `databricks notebook` or [shell](interactive-execution#shell) for debugging.
+Execution code can also be copy-pasted inside `databricks notebook` or [shell](#shell) and can directly
+be executed for debugging.
 :::
 
 ### Execution Errors
 
-If there are any errors in Pipeline, a pop-up window would open for `execution error`.
+If there are any errors in the Pipeline, a pop-up window will open for `execution errors`.
 ![Interactive execution error](img/interactive-execution-error.png)
 
-Also the error can be seen in the runtime logs as shown in the image below:
+Also the error can be seen in the runtime logs:
 ![Interactive execution error logs](img/interactive-execution-error-logs.png)
 
 ### Runtime Logs
 
-Overall progress with associated timestamps can be monitored from the Runtime Logs as shown in image below:
+Overall progress with associated timestamps can be monitored from the Runtime Logs as shown here:
 
 ![Runtime Logs](img/interactive-execution-runtime-logs.png)
 
 ### Runtime Metrics
 
-Various Spark metrics collected during runtime can be monitored as shown in image below:
+Various Spark metrics collected during runtime can be monitored as shown here:
 
 ![Runtime Metrics](img/interactive-execution-runtime-metrics.png)
 
 ### Execution Metrics
 
-For `interactive runs` execution metrics are collected, to make the development easier and more intuitive. These can be
-accessed from the `Metadata Page` inside the `run tab ` of the `Pipeline`.
+For `interactive runs` execution metrics are collected to make the development easier and performance tuning more intuitive. These can be
+accessed from the `Metadata Page` inside the `run tab` of the `Pipeline`.
 
 ![Execution Metrics](img/interactive-execution-execution-metrics.png)
 

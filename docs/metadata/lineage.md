@@ -31,7 +31,9 @@ Data lineage allows companies to:
 
 ## Navigation
 
-1. Directly from `pipeline tab` in `metadata` by clicking on button as shown in image below.
+There are two ways to get to the lineage view:
+
+1. Directly from `pipeline` tab in `Metadata` by clicking on button as shown in image below.
 2. Using the `Lineage Search` option from the left side pane.
 
 ![How to Open Lineage](img/lineage-open-from-metadata.png)
@@ -53,16 +55,16 @@ Zoom-in toggle for a particular Pipeline/Dataset can be used to better understan
 
 ### Pipeline Zoom-In View
 
-This would give code level info around all the components present in the Pipeline.
+This shows code-level info around all the components present in the Pipeline.
 
 :::info
-Please select a particular component as shown in below image, to get code level view.
+Please select a particular component aas shown below to get the code-level view.
 :::
 
 ![Pipeline zoom-in](img/lineage-pipeline-zoom-in.png)
 
 ### Dataset Zoom-In View
 
-This would give info around all the upstream and downstream transformations if any for all the columns of the selected Dataset.
+This view gives info around all the upstream and downstream transformations if any for all the columns of the selected Dataset.
 
 ![Dataset zoom-in](img/lineage-dataset-zoom-in.png)
