@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[5769],{31708:function(e){e.exports=JSON.parse('{"label":"ftp","permalink":"/tags/ftp","allTagsPath":"/tags","count":1,"items":[{"id":"low-code-spark/gems/source-target/file/ftp","title":"FTP","description":"FTP","permalink":"/low-code-spark/gems/source-target/file/ftp"}]}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[2561],{4681:function(e){e.exports=JSON.parse('{"label":"orc","permalink":"/tags/orc","allTagsPath":"/tags","count":1,"items":[{"id":"low-code-spark/gems/source-target/file/orc","title":"ORC","description":"ORC","permalink":"/low-code-spark/gems/source-target/file/orc"}]}')}}]);

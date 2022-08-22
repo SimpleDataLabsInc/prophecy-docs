@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[7395],{766:function(e){e.exports=JSON.parse('{"title":"Concepts","slug":"/category/concepts","permalink":"/category/concepts","navigation":{"previous":{"title":"Getting Started","permalink":"/getting-started"},"next":{"title":"Pipelines","permalink":"/concepts/pipeline"}}}')}}]);

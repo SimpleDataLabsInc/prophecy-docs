@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[2229],{3928:function(e){e.exports=JSON.parse('{"label":"pull","permalink":"/tags/pull","allTagsPath":"/tags","count":1,"items":[{"id":"concepts/project","title":"Projects and Git","description":"Keeping your Pipelines, Datasets and Jobs under (source) control","permalink":"/concepts/project"}]}')}}]);

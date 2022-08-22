@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[4491],{1013:function(e){e.exports=JSON.parse('{"label":"db2","permalink":"/tags/db-2","allTagsPath":"/tags","count":1,"items":[{"id":"low-code-spark/gems/source-target/warehouse/db2","title":"DB2","description":"DB2","permalink":"/low-code-spark/gems/source-target/warehouse/db2"}]}')}}]);

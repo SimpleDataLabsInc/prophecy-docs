@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[279],{5485:function(o){o.exports=JSON.parse('{"label":"config","permalink":"/tags/config","allTagsPath":"/tags","count":1,"items":[{"id":"low-code-spark/configuration","title":"Configuration","description":"Low-code Spark Configuration","permalink":"/low-code-spark/configuration"}]}')}}]);
