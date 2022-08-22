@@ -37,7 +37,7 @@ to the examples in the description column of each parameter for reference on how
 
 :::info
 
-1. To store sensitive information like API key (headers), auth etc., `Databricks secrets` can be used as shown in [Example](rest-api-enrich#example-1) below.
+1. To store sensitive information like API key (headers), auth etc., `Databricks secrets` can be used as shown in [Example](#example-1) below.
 2. If the expected number of rows are very large, it's better to provide `await time` in the `advanced tab` so you don't overwhelm the source server or exceed any request limits.
 3. For APIs which takes list of parameters as inputs, window functions like `collect_list` can be used before `RestApiEnrich` Gem to reduce the number of API calls.
 

@@ -34,11 +34,35 @@ Data lineage allows companies to:
 1. Directly from `pipeline tab` in `metadata` by clicking on button as shown in image below.
 2. Using the `Lineage Search` option from the left side pane.
 
+![How to Open Lineage](img/lineage-open-from-metadata.png)
+
 :::info
 Lineage is always computed on-demand directly on the Git code. Therefore, you can do experimental changes in branch and see how it
 will affect the overall lineage and rectify errors if any.
 :::
 
-<div class="video-container">
-<iframe src="https://www.youtube.com/embed/ErLWcWAfi8U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+## Lineage View
+
+![Lineage View](img/lineage-column-level-view.png)
+
+`Browse Datasets` option from right-hand side can be used to search/select the column/entity for which lineage needs to be computed.
+
+![Browse Datasets](img/lineage-browse-dataset.png)
+
+Zoom-in toggle for a particular Pipeline/Dataset can be used to better understand Pipeline/Dataset.
+
+### Pipeline Zoom-In View
+
+This would give code level info around all the components present in the Pipeline.
+
+:::info
+Please select a particular component as shown in below image, to get code level view.
+:::
+
+![Pipeline zoom-in](img/lineage-pipeline-zoom-in.png)
+
+### Dataset Zoom-In View
+
+This would give info around all the upstream and downstream transformations if any for all the columns of the selected Dataset.
+
+![Dataset zoom-in](img/lineage-dataset-zoom-in.png)
