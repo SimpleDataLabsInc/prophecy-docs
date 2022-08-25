@@ -165,6 +165,7 @@ env:
   DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
   FABRIC_NAME: "dev"
 ```
+
 The complete YML file definition is discussed in the next section.
 
 ### Setting up a Github Actions Workflow on every push to main branch
