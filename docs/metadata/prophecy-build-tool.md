@@ -98,13 +98,13 @@ Querying existing jobs to find current job: Offset: 0, Pagesize: 25
 
 #### Running all unit tests in project
 
-Running unit tests requires **FABRIC_NAME** environment variable to be set. Example:
+Running unit tests requires **FABRIC_NAME** environment variable to be set. This will be used to pick the correct configuration for running the unit tests. Example:
 
 ```shell
 export FABRIC_NAME="dev"
 ```
 
-This will be used to pick the correct configuration for running the unit tests.
+To run all unit tests present in the project, use the `test` command as follows:
 
 ```shell
 pbt test --path /path/to/your/prophecy_project/
