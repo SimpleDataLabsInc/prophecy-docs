@@ -9,76 +9,103 @@ tags:
   - config
 ---
 
-Allows you to define configurations to control various aspects of your Pipeline. Prophecy IDE allows you to define three kinds of configurations:
+Allows you to define configurations to control various aspects of your Pipeline.
+![Config Option](img/config-option.png)
 
-1. **Pipeline Configuration**: name-value pair per [Fabric](/concepts/fabric.md) which can then be accessed in Pipeline as `${name}`. <br/> Eg: `for Fabric = dev, SOURCE_PATH: dbfs:/dev/file.csv`, <br/> `for Fabric = prod, SOURCE_PATH: dbfs:/prod/file.csv`
-   :::note
-   Each name-value pair has to be first defined in the `Common` tab. This can then be overridden in the individual Fabric tabs.
-   ![Configurations - Common](./img/configs_common.png)
-   :::
-2. **Spark Configuration**: Runtime Spark configurations as name-value pairs.
-   :::note
-   The name-value pairs will be set inside the Spark runtime configurations as `spark.conf.set(name, value)`
-   ![Configurations - Spark](./img/configs_spark.png)
-   This will be compiled as:
+Prophecy IDE allows you to define three kinds of configurations:
 
-   ```python
-   spark.conf.set("spark.sql.autoBroadcastJoinThreshold", "10485760")
-   ```
+## Spark Configuration
 
-   :::<br/>
+Runtime Spark configurations as name-value pairs. The name-value pairs will be set inside the Spark runtime configurations as `spark.conf.set(name, value)`
 
-3. **Hadoop Configuration**: Hadoop configurations as name-value paris.
-   :::note
-   The name-value pairs will be set inside the Hadoop configuration as `spark.sparkContext.hadoopConfiguration.set(name, value)`
-   ![Configurations - Spark](./img/configs_hadoop.png)
-   This will be compiled as:
+![Configurations - Spark](./img/configs_spark.png)
 
-   ```python
-   spark.sparkContext.hadoopConfiguration.set("fs.s3a.access.key", "my_access_key")
-   ```
+## Hadoop Configuration
 
-   :::<br/>
+Hadoop configurations as name-value pairs. The name-value pairs will be set inside the Hadoop configuration as `spark.sparkContext.hadoopConfiguration.set(name, value)`
 
----
+![Configurations - Spark](./img/configs_hadoop.png)
 
-### Examples
+## Pipeline Configuration
 
-#### Dynamic Data Load Using Workflow Configurations
+Config values which can be set at Pipeline level and then be accessed inside any component in the Pipeline. [Multiple instances](#pipeline-configuration-instances)
+of configuration can be created per Pipeline.
+![Configurations - Common](img/config-pipeline-eg1.png)
 
-In this example, we'll see how we can configure different source file paths for different execution environments.
-We have two [Fabrics](/concepts/fabric/) available for our Pipeline: `DEV` and `PROD`
+Syntax for using configuration inside Gems:
 
-```mdx-code-block
-import App from '@site/src/components/slider';
+For visual language SQL : `'$config_name'`
+For visual language Scala/Python : `Config.config_name`
 
-export const ImageData = [
-  {
-    "image":"/img/configurations/1.png",
-    "description":<h3 style={{padding:'10px'}}>Step 1 - Open Config window</h3>,
-  },
-  {
-    "image":"/img/configurations/2.png",
-    "description":<h3 style={{padding:'10px'}}>Step 2 - Define Common <code>SOURCE_PATH</code> </h3>,
-  },
-  {
-    "image":"/img/configurations/3.png",
-    "description":<h3 style={{padding:'10px'}}> Step 3 - Define Dev <code>SOURCE_PATH</code></h3>
-  },
-  {
-    "image":"/img/configurations/4.png",
-    "description":<h3 style={{padding:'10px'}}>Step 4 - Define Prod <code>SOURCE_PATH</code></h3>,
-  },
-  {
-    "image":"/img/configurations/5.png",
-    "description":<h3 style={{padding:'10px'}}>Step 5 - Use the <code>SOURCE_PATH</code> to define the location in a <a href="./gems/source-target/">Source/Target</a> gem
-</h3>,
-  },
-];
+For using Spark expression with visual language SQL : `expr('$config_name')`
+For using Spark expression with visual language Scala/Python : `expr(Config.config_name)`
 
-<App ImageData={ImageData}></App>
-```
+## Examples for Pipeline level configurations
 
-The configuration is stored in the `resources` and is parsed by the `ConfigStore` to be usable in other parts of the code as `Config.SOURCE_PATH`.
-The resolution of the config will be done at the run-time according to the running Fabric.
-![Configurations - Resource](./img/configs_resource.png)
+Now let's use the [above defined configurations](#pipeline-configuration) in the below Pipeline.
+![Pipeline view](img/config-pipeline-view-eg.png)
+
+### Using Config in limit Gem
+
+In the below image `'$num_top_customers'` is fetching the integer value defined in configurations.
+
+![Config Limit Example](img/config-pipeline-limit-eg.png)
+
+### Using Spark-expression Config type in Gem
+
+Here we have used Spark expression directly from our config value to populate a column.
+
+In the below image `amounts` -> `expr('$test_expression')` is coming from configuration type defined as `Spark-expression`
+and `report_name` -> `'$report_name'` is coming configuration type defined as string.
+
+![Config Reformat example](img/config-pipeline-reformat-eg.png)
+
+Similarly configurations defined as type Spark-expression can be used directly in filter, join, reformat etc.
+
+### Using config in paths for Source/Target Gems
+
+Config can also be used to refer to paths. This type of configuration comes in handy in situation where we have dev, qa and prod data.
+And want to configure Dataset (or in general the Job runs) based on which environment we are running it in.
+
+![Config path example](img/config-pipeline-path-eg.png)
+
+## Pipeline Configuration instances
+
+Different configuration instances can be defined as per requirement. This comes in handy when Pipeline needs to run with different
+configurations in different environments or different users.
+
+New instances can be configured to override default values as shown in image below:
+
+![Create config instance](img/config-new-instance.png)
+
+![Create pipeline override](img/config-pipeline-override.png)
+
+### Using a particular configuration instance for interactive runs
+
+For interactive runs, configuration can be selected as shown in image below.
+![Config interactive run](img/config-instance-interactive-run.png)
+
+### Using configuration instances in Jobs
+
+Particular instances can also be configured in Databricks Jobs.
+
+![Config inside job](img/config-inside-job.png)
+
+### Overriding configuration values in Jobs
+
+Specific values from configuration instance can be overridden as shown in images below:
+
+![Config job override](img/config-job-override.png)
+
+## Code
+
+All configuration instances and values are automatically converted to code as well. Default configurations are stored as code and
+specific instance overrides are stored as JSON files as shown in image below.
+
+### Scala
+
+![Config scala code](img/config-scala-code.png)
+
+### Python
+
+![Config python code](img/config-python-code.png)
