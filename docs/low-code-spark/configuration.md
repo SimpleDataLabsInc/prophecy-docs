@@ -16,7 +16,7 @@ Prophecy IDE allows you to define three kinds of configurations:
 
 ## Spark Configuration
 
-Runtime Spark configurations as name-value pairs. The name-value pairs will be set inside the Spark runtime configurations as `spark.conf.set(name, value)`
+Set runtime Spark configurations as name-value pairs. The name-value pairs will be set inside the Spark runtime configurations as `spark.conf.set(name, value)`
 
 ![Configurations - Spark](./img/configs_spark.png)
 
@@ -32,12 +32,18 @@ Config values which can be set at Pipeline level and then be accessed inside any
 of configuration can be created per Pipeline.
 ![Configurations - Common](img/config-pipeline-eg1.png)
 
+---
+
 Syntax for using configuration inside Gems:
 
+![Visual Language Selection](img/config-pipeline-visual-language.png)
+
 For visual language SQL : `'$config_name'`
+
 For visual language Scala/Python : `Config.config_name`
 
 For using Spark expression with visual language SQL : `expr('$config_name')`
+
 For using Spark expression with visual language Scala/Python : `expr(Config.config_name)`
 
 ## Examples for Pipeline level configurations
@@ -47,24 +53,47 @@ Now let's use the [above defined configurations](#pipeline-configuration) in the
 
 ### Using Config in limit Gem
 
+#### SQL Visual Language
+
 In the below image `'$num_top_customers'` is fetching the integer value defined in configurations.
 
 ![Config Limit Example](img/config-pipeline-limit-eg.png)
+
+#### Scala/Python Visual Language
+
+In the below image `Config.num_top_customers` is fetching the integer value defined in configurations.
+
+![Config Limit Example](img/config-pipeline-limit-eg-scala-python.png)
 
 ### Using Spark-expression Config type in Gem
 
 Here we have used Spark expression directly from our config value to populate a column.
 
-In the below image `amounts` -> `expr('$test_expression')` is coming from configuration type defined as `Spark-expression`
-and `report_name` -> `'$report_name'` is coming configuration type defined as string.
+#### SQL Visual Language {#Spark-expression}
+
+In the below image:<br />
+
+**(1)** `amounts` -> `expr('$test_expression')` is coming from configuration type defined as `Spark-expression` <br />
+**(2)** `report_name` -> `'$report_name'` is coming configuration type defined as string
 
 ![Config Reformat example](img/config-pipeline-reformat-eg.png)
 
-Similarly configurations defined as type Spark-expression can be used directly in filter, join, reformat etc.
+#### Scala/Python Visual Language {#Spark-expression}
+
+In the below image: <br />
+
+**(1)** `amounts` -> `expr(Config.test_expression)` is coming from configuration type defined as `Spark-expression` <br />
+**(2)** `report_name` -> `Config.report_name` is coming configuration type defined as string
+
+![Config Reformat example](img/config-pipeline-reformat-eg-scala-python.png)
+
+:::note
+Similarly configurations defined as type `Spark-expression` can be used directly in filter, join, reformat etc Gems directly.
+:::
 
 ### Using config in paths for Source/Target Gems
 
-Config can also be used to refer to paths. This type of configuration comes in handy in situation where we have dev, qa and prod data.
+Config can also be used to refer to paths. This type of configuration comes in handy in situation where we have DEV, QA and PROD data.
 And want to configure Dataset (or in general the Job runs) based on which environment we are running it in.
 
 ![Config path example](img/config-pipeline-path-eg.png)
@@ -102,10 +131,54 @@ Specific values from configuration instance can be overridden as shown in images
 All configuration instances and values are automatically converted to code as well. Default configurations are stored as code and
 specific instance overrides are stored as JSON files as shown in image below.
 
-### Scala
+### Scala Config code
 
 ![Config scala code](img/config-scala-code.png)
 
-### Python
+### Python Config code
 
 ![Config python code](img/config-python-code.png)
+
+### Component code
+
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+
+<TabItem value="py" label="Python">
+
+```py
+def Reformat(spark: SparkSession, in0: DataFrame) -> DataFrame:
+    return in0.select(
+        col("customer_id"),
+        col("orders"),
+        col("account_length_days"),
+        expr(Config.test_expression).as("amounts"),
+        lit(Config.report_name).as("report_name")
+    )
+```
+
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+object Reformat {
+
+  def apply(spark: SparkSession, in: DataFrame): DataFrame =
+    in.select(col("customer_id"),
+              col("orders"),
+              col("account_length_days"),
+              expr(Config.test_expression).as("amounts"),
+              lit(Config.report_name).as("report_name")
+    )
+
+}
+
+```
+
+</TabItem>
+</Tabs>
+
+````
