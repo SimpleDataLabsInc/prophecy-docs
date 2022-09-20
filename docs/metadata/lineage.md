@@ -6,6 +6,7 @@ sidebar_position: 3
 tags:
   - metadata
   - lineage
+  - search
 ---
 
 ## What is Lineage?
@@ -34,7 +35,7 @@ Data lineage allows companies to:
 There are two ways to get to the lineage view:
 
 1. Directly from `pipeline` tab in `Metadata` by clicking on button as shown in image below.
-2. Using the `Lineage Search` option from the left side pane.
+2. Using the [Lineage Search](#lineage-search) option from the left side pane.
 
 ![How to Open Lineage](img/lineage-open-from-metadata.png)
 
@@ -68,3 +69,16 @@ Please select a particular component aas shown below to get the code-level view.
 This view gives info around all the upstream and downstream transformations if any for all the columns of the selected Dataset.
 
 ![Dataset zoom-in](img/lineage-dataset-zoom-in.png)
+
+## Lineage Search
+
+This option can be used to Search Lineage by Column, Dataset or Pipeline.
+
+![Lineage Search](img/lineage-search-high-level-view.png)
+
+Below filters are available to narrow down the search results:
+
+- `Type` - Filter by Datasets, Pipelines or Columns
+- `Project` - Filter by Project Name
+- `Author` - Filter by Project Author
+- `Last Modfified` - Filter by Last Modified Time
