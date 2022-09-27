@@ -1,16 +1,20 @@
 ---
 title: Prophecy IR
-description: Hidden page describing the Prophecy IR and how to generate the Prophecy pipelines using an API
+id: prophecy-ir
+description: Hidden page describing the Prophecy IR and how to generate the Prophecy Pipelines using an API
 hide_table_of_contents: false
+tags:
+  - prophecy
+  - internal representation
 ---
 
-# Prophecy IR
+## Prophecy IR
 
-## Introduction
+### Introduction
 
-This page describes how to generate the Prophecy pipelines programmatically. Prophecy generates code directly based on
+This page describes how to generate the Prophecy Pipelines programmatically. Prophecy generates code directly based on
 the Prophecy IR representation. Prophecy IR is the Prophecy internal representation format the generically describes
-the Prophecy PySpark, Spark, and SQL pipelines and expressions.
+the Prophecy PySpark, Spark, and SQL Pipelines and expressions.
 
 :::caution Beta
 
@@ -22,36 +26,36 @@ This documentation is only accessible to a select subset of design customers and
 
 The Prophecy IR lifecycle follows the following steps:
 
-1. **Read Prophecy IR** - Prophecy IR stores the current visual state of the pipeline as a
-   serialized `workflow.latest.json` file. This file is stored on a git repository, alongside the generated code.
+1. **Read Prophecy IR** - Prophecy IR stores the current visual state of the Pipeline as a
+   serialized `workflow.latest.json` file. This file is stored on a Git repository, alongside the generated code.
    Prophecy IR reads the state file, parses and validates it.
-2. **Read available gems** - Prophecy reads available gems specifications and validates the state file against them.
-3. **Visualize pipeline** - Prophecy visualizes the pipeline on the Prophecy IDE, based on the loaded state and gem
+2. **Read available Gems** - Prophecy reads available Gems specifications and validates the state file against them.
+3. **Visualize Pipeline** - Prophecy visualizes the Pipeline on the Prophecy IDE, based on the loaded state and Gem
    specifications.
-4. **Generate code** - After the pipeline is successfully visualized, Prophecy saves the pipelines code on the git
+4. **Generate code** - After the Pipeline is successfully visualized, Prophecy saves the Pipelines code on the Git
    repository.
 
-## Prophecy IR format
+### Prophecy IR format
 
-### Visual Representation
+#### Visual Representation
 
 ![Simple Pipeline](img/simple-pipeline.png)
 
-### workflow.latest.json
+#### workflow.latest.json
 
-```json 
+```json lines
 {
   "metainfo": {
-    // pipeline id in the format {project_id}/{repository_path}
-    "id" : "826/pipelines/customers_orders", 
+    // Pipeline id in the format {project_id}/{repository_path}
+    "id" : "826/pipelines/customers_orders",
     // backend language name (scala, python, or sql - coming soon)
-    "language" : "scala", 
+    "language" : "scala",
     // expressions language type (scala, python, or sql)
     "frontEndLanguage" : "sql",
     // functions definitions and configurations
     "udfs" : { "language" : "scala", "udfs" : [ ... ] },
     "udafs" : { "language" : "scala", "code" : "..." },
-    "configuration" : { ... },
+    "configuration" : { },
     // spark configurations
     "sparkConf" : [ ],
     "hadoopConf" : [ ],
@@ -69,21 +73,21 @@ The Prophecy IR lifecycle follows the following steps:
       "value" : 1000
     }
   },
-  // definitions of connections between the components 
-  "connections" : [ 
-      { "id" : "1", "source" : "source_id", "source" : "source_output", "target" : "reformat_id", "targetPort" : "reformat_input" },
-      { "id" : "1", "source" : "reformat_id", "source" : "reformat_output", "target" : "target_id", "targetPort" : "target_input" }
+  // definitions of connections between the components
+  "connections" : [
+      { "id" : "1", "source" : "source_id", "sourcePort" : "source_output", "target" : "reformat_id", "targetPort" : "reformat_input" },
+      { "id" : "1", "source" : "reformat_id", "sourcePort" : "reformat_output", "target" : "target_id", "targetPort" : "target_input" }
   ],
-  // instances of gems 
+  // instances of Gems
   "processes" : {
-    // each gem instance is composed of:
+    // each Gem instance is composed of:
     "source_id" : {
       // 1. unique id
       "id" : "source_id",
-      // 2. type of the gem
+      // 2. type of the Gem
       "component" : "Source",
-      // 3. gem descriptions and position
-      "metadata" : { "label" : "Customers", "slug" : "Customers", "x" : 120, "y" : 320, ... },
+      // 3. Gem descriptions and position
+      "metadata" : { "label" : "Customers", "slug" : "Customers", "x" : 120, "y" : 320, /* ... */ },
       // 4. definition of inputs and outputs
       "ports" : { "inputs" : [ ], "outputs" : [ { "id" : "source_output", "slug" : "out" } ] },
       // 5. properties describing the data source (for Source / Target only)
@@ -93,17 +97,17 @@ The Prophecy IR lifecycle follows the following steps:
       "id" : "target_id",
       "component" : "Target",
       "metadata" : { "label" : "CustomersCleaned", "slug" : "CustomersCleaned", "x" : 1370, "y" : 220 },
-      "ports" : { "inputs" : [ { "id" : "target_input", "slug" : "in" } ], "outputs" : [ ], ... },
+      "ports" : { "inputs" : [ { "id" : "target_input", "slug" : "in" } ], "outputs" : [ ], /* ... */ },
       "properties" : { "datasetId" : "826/datasets/customers_cleaned" }
     },
     "reformat_id" : {
       "id" : "reformat_id",
       "component" : "Reformat",
-      "metadata" : { "label" : "Cleanup", "slug" : "Cleanup", "x" : 565, "y" : 220, ... },
-      "ports" : { "inputs" : [ { "id" : "reformat_input", "slug" : "in" } ], "outputs" : [ { "id" : "reformat_output", "slug" : "out" } ] ... },
+      "metadata" : { "label" : "Cleanup", "slug" : "Cleanup", "x" : 565, "y" : 220, /* ... */ },
+      "ports" : { "inputs" : [ { "id" : "reformat_input", "slug" : "in" } ], "outputs" : [ { "id" : "reformat_output", "slug" : "out" } ] /* ... */ },
       // 6. properties describing the transformation logic
       "properties" : {
-        ...
+         /* ... */
         "expressions" : [ {
           "target" : "account_length_days",
           "expression" : { "format" : "sql", "expression" : "datediff(current_date(), account_open_date)" },
@@ -115,8 +119,8 @@ The Prophecy IR lifecycle follows the following steps:
 }
 ```
 
-## Complete example
+### Complete example
 
-For a complete example open any of the `workflow.latest.json`'s of the default pipelines in the HelloWorld project!
+For a complete example open any of the `workflow.latest.json`'s of the default Pipelines in the HelloWorld project!
 
 ![Example Pipelines](img/example-pipelines.png)
