@@ -19,13 +19,13 @@ This Gem has below features:
 :::note
 This connector is built on top of the already available [`spark-salesforce connector`](https://github.com/springml/spark-salesforce/)
 
-To use this Gem in Prophecy, `com.springml:spark-salesforce_2.12:1.1.4` maven external dependency needs to be installed on cluster.
+To use this Gem in Prophecy, `com.springml:spark-salesforce_2.12:1.1.4` Maven external dependency needs to be installed on cluster.
 For installing dependencies from Prophecy UI. Please check [dependency management docs](https://docs.prophecy.io/low-code-spark/extensibility/dependencies)
 :::
 
 ## Source
 
-Reads data from salesforce object and wave Datasets.
+Reads data from Salesforce object and wave Datasets.
 
 ### Source Parameters
 
@@ -104,7 +104,7 @@ Coming soon!!!
 
 ## Target
 
-Create/update Datasets and salesforce objects.
+Create/update Datasets and Salesforce objects.
 
 ### Target Parameters
 
