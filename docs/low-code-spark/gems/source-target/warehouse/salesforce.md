@@ -17,11 +17,11 @@ This Gem has below features:
 4. Update Salesforce Object - Salesforce object will be updated with the details present in DataFrame.
 
 :::note
+This connector is built on top of the already available [`spark-salesforce connector`](https://github.com/springml/spark-salesforce/)
 
-1. This connector is built on top of the already available `spark-salesforce` connector - https://github.com/springml/spark-salesforce/
-2. To use this Gem in Prophecy, `com.springml:spark-salesforce_2.12:1.1.4` maven external dependency needs to be installed on cluster.
-   For installing dependencies from Prophecy UI. Please check [dependency manaGement docs](https://docs.prophecy.io/low-code-spark/extensibility/dependencies)
-   :::
+To use this Gem in Prophecy, `com.springml:spark-salesforce_2.12:1.1.4` maven external dependency needs to be installed on cluster.
+For installing dependencies from Prophecy UI. Please check [dependency manaGement docs](https://docs.prophecy.io/low-code-spark/extensibility/dependencies)
+:::
 
 ## Source
 
