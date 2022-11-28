@@ -3,7 +3,6 @@ title: Pull request templates
 id: pr-templates
 description: Open Pull Requests from within Prophecy
 sidebar_position: 7
-draft: true
 tags:
   - metadata
   - pr
