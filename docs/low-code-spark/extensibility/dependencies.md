@@ -57,7 +57,7 @@ For further customization of your dependency you can additionally define **Advan
    .
 
 After you defined the Dependency press **Save**. Prophecy is going to validate the dependency and add it to the Project,
-making it enabled in the current workflow, and adding it as dependency (but disabled) among all other Pipelines in the Project.
+making it enabled in the current pipeline, and adding it as dependency (but disabled) among all other Pipelines in the Project.
 
 When adding dependencies, Prophecy validates that the dependency coordinates are valid and accessible. If
 that fails, you should see an invalid coordinates error.
