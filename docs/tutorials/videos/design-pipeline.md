@@ -62,8 +62,8 @@ See you next time!
 ### Prerequisites to follow along
 
 - Create a repository.
-- Snowflake and Databricks credentials are used here, but you can read/write to the data source(s) to which you have credentials. Setup [Databricks Secrets](https://docs.databricks.com/security/secrets/secrets.html#create-a-secret-in-a-databricks-backed-scope) to avoid exposing secrets when the project is committed to git.
-- Set Prophecy credentials while signing up for a free trial here: [app.prophecy.io](app.prophecy.io)
+- Snowflake and Databricks credentials are used here, but you can read/write to the data source(s) to which you have credentials. Setup [Databricks Secrets](https://docs.databricks.com/security/secrets/secrets.html#create-a-secret-in-a-databricks-backed-scope) to avoid exposing secrets when the project is committed to Git.
+- Set Prophecy credentials while signing up for a free trial here: [App.Prophecy.io](https://App.Prophecy.io/)
 - The Shipments Dataset is actually a table called ORDERSHIPMENTS in the TPC-H Dataset, and is available as sample data in Snowflake, Databricks File System, and many other data sources. The column names were edited for clarity.
 - Go for it! Follow the steps outlined in the video.
 - Ask questions on Prophecy's [Slack](https://join.slack.com/t/prophecy-io-support/shared_invite/zt-moq3xzoj-~5MSJ6WPnZfz7bwsqWi8tQ)
