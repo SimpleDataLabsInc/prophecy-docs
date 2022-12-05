@@ -18,8 +18,315 @@ allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; pic
 
 <br />
 
-:::caution Learn more
+# Gem Builder Tutorial
 
-Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about the Gem builder.
+## Getting Started
 
-:::
+//TODO: Showcase workflow to build Gem field
+
+### Introduction
+
+The Gem builder is a powerful tool that enables users to create any arbitrary Gems. The Gems can be among:
+
+* **Source/Target Gems**: These Gems enable reading and writing of data
+* **Transform Gems**: These Gems apply transformations/joins/any other custom logic onto any dataframe(s) that are passed into them.
+
+Programmatically, a Gem is a component with the following parts:
+
+* The **Gem UI Component** to get user information from the screen (This code is rendered on the Prophecy UI) 
+* The **Gem Code Logic** which is how the Gem acts within the context of a pipeline.
+
+### Source/Target Gem Code breakdown
+
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+
+<TabItem value="py" label="Python">
+
+```py
+from pyspark.sql import SparkSession, DataFrame
+from pyspark.sql.types import StructType
+from prophecy.cb.server.base.ComponentBuilderBase import ComponentCode, Diagnostic, SeverityLevelEnum
+from prophecy.cb.server.base.DatasetBuilderBase import DatasetSpec, DatasetProperties, Component
+from prophecy.cb.ui.uispec import *
+
+class ExampleGem(DatasetSpec):
+  name: str = "example-gem"
+  datasetType: str = "File"
+
+  def optimizeCode(self) -> bool:
+    return True
+
+  @dataclass(frozen=True)
+  class ExampleGemProperties(DatasetProperties):
+    property: Optional[int] = 1000000
+    someConfig: Optional[str] = ""
+
+  def sourceDialog(self) -> DatasetDialog:
+    # More details in next Section
+    return DataSourceDialog()
+
+  def targetDialog(self) -> DatasetDialog:
+    # More details in next Section
+    return DataSourceDialog()
+
+  def validate(self, component: Component) -> list:
+    diagnostics = super(DataCreatorFormat, self).validate(component)
+    if len(component.properties.path) == 0:
+      diagnostics.append(
+         Diagnostic("properties.someConfig", "property cannot be empty [Location]", SeverityLevelEnum.Error))
+    return diagnostics
+
+  def onChange(self, oldState: Component, newState: Component) -> Component:
+    # Save some data on state change from oldState -> newState
+    return newState
+
+  class ExampleDatasetCode(ComponentCode):
+    def __init__(self, props):
+        self.props: DataCreatorFormat.DataCreatorProperties = props
+
+    def sourceApply(self, spark: SparkSession) -> DataFrame:
+        reader = spark.read
+        if self.props.property is not None:
+            #do something using the value of the `property` variable
+        if self.props.someConfig is not None:
+            #do something with `someConfig` variable
+        return df #Return the output DF
+
+    def targetApply(self, spark: SparkSession, in0: DataFrame):
+      #Write the incoming df (in0) to some Target
+```
+
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+from pyspark.sql import SparkSession, DataFrame
+from pyspark.sql.types import StructType
+from prophecy.cb.server.base.ComponentBuilderBase import ComponentCode, Diagnostic, SeverityLevelEnum
+from prophecy.cb.server.base.DatasetBuilderBase import DatasetSpec, DatasetProperties, Component
+from prophecy.cb.ui.uispec import *
+
+class ExampleGem(DatasetSpec):
+  name: str = "example-gem"
+  datasetType: str = "File"
+
+  def optimizeCode(self) -> bool:
+    return True
+
+  @dataclass(frozen=True)
+  class ExampleGemProperties(DatasetProperties):
+    property: Optional[int] = 1000000
+    someConfig: Optional[str] = ""
+
+  def sourceDialog(self) -> DatasetDialog:
+    # More details in next Section
+    return DataSourceDialog()
+
+  def targetDialog(self) -> DatasetDialog:
+    # More details in next Section
+    return DataSourceDialog()
+
+  def validate(self, component: Component) -> list:
+    diagnostics = super(DataCreatorFormat, self).validate(component)
+    if len(component.properties.path) == 0:
+      diagnostics.append(
+         Diagnostic("properties.someConfig", "property cannot be empty [Location]", SeverityLevelEnum.Error))
+    return diagnostics
+
+  def onChange(self, oldState: Component, newState: Component) -> Component:
+    # Save some data on state change from oldState -> newState
+    return newState
+
+  class ExampleDatasetCode(ComponentCode):
+    def __init__(self, props):
+        self.props: DataCreatorFormat.DataCreatorProperties = props
+
+    def sourceApply(self, spark: SparkSession) -> DataFrame:
+        reader = spark.read
+        if self.props.property is not None:
+            #do something using the value of the `property` variable
+        if self.props.someConfig is not None:
+            #do something with `someConfig` variable
+        return df #Return the output DF
+
+    def targetApply(self, spark: SparkSession, in0: DataFrame):
+      #Write the incoming df (in0) to some Target
+```
+
+</TabItem>
+</Tabs>
+
+````
+#### DatasetSpec Class
+The overall wrapper class inherits the `DatasetSpec` class which is a representation of the overall Gem. This includes the UI and the logic.
+
+#### DatasetProperties Class
+There is one class (Here `ExampleGemProperties`) which contains a list of the properties to be made available to the user for this particular Gem. 
+This is where the various options that are to be provided to the user are captured. (here `property`, `someConfig`)
+These variables are accessible in the (and can be set from)  `validate`, `sourceDialog`, `targetDialog` functions
+
+#### sourceDialog(); targetDialog
+The `sourceDialog` and `targetDialog` functions contain code specific to how the Gem UI should look to the user. See next section for more details. 
+
+#### onChange(oldState, newState) -> Component[newDataCreatorProperties]
+The onChange method is given for the UI State maintenance. (eg. making bold columns that have already been selected etc.) The properties of the Gem are also accessible to this function, so functions like selecting columns etc. is possible to add from here.
+
+#### validate(component) -> List[Diagnostic]
+The validate method performs validation checks, so the pipeline compiler gives an error before running a pipeline, in case there’s any issue with the code.
+
+#### ComponentCode class
+The last class used here is `ExampleCode` which is inherited from `ComponentCode` class. This class contains the actual Spark code that needs to run. Here the above User Defined properties are accessible using self.props.{property}. The code for the Source is defined in sourceApply and for Target in targetApply functions respectively.
+The `sourceApply` function returns a Spark Dataframe, while the `targetApply` function takes a Spark Dataframe (in0) and performs some action. (eg. writing to a table, DBFS etc.)
+
+#### optimizeCode(self) -> bool
+This function returns a `True` or `False` value depending on whether we want the Prophecy Optimizer to run on this code to simplify it. Read more on the Optimizer here. //TODO: Link here
+
+### Transform Gem Code breakdown
+
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+
+<TabItem value="py" label="Python">
+
+```py
+from pyspark.sql import SparkSession, DataFrame
+from pyspark.sql.types import StructType
+from prophecy.cb.server.base.ComponentBuilderBase import ComponentCode, Diagnostic, SeverityLevelEnum
+from prophecy.cb.server.base.DatasetBuilderBase import ComponentSpec, DatasetProperties, Component
+from prophecy.cb.ui.uispec import *
+
+class ExampleGem(ComponentSpec):
+  name: str = "example-gem"
+  datasetType: str = "File"
+
+  def optimizeCode(self) -> bool:
+    return True
+
+  @dataclass(frozen=True)
+  class ExampleGemProperties(ComponentProperties):
+    property: Optional[int] = 1000000
+    someConfig: Optional[str] = ""
+
+  def dialog(self) -> DatasetDialog:
+    # More details in next Section
+    return DataSourceDialog()
+
+  def validate(self, component: Component) -> list:
+    diagnostics = super(DataCreatorFormat, self).validate(component)
+    if len(component.properties.path) == 0:
+      diagnostics.append(
+         Diagnostic("properties.someConfig", "property cannot be empty [Location]", SeverityLevelEnum.Error))
+    return diagnostics
+
+  def onChange(self, oldState: Component, newState: Component) -> Component:
+    # Save some data on state change from oldState -> newState
+    return newState
+
+  class ExampleCode(ComponentCode):
+    def __init__(self, props):
+        self.props: DataCreatorFormat.DataCreatorProperties = props
+
+    def apply(self, spark: SparkSession, in0: DataFrame, in1: DataFrame) -> DataFrame:
+        # Add in0, in1, in2 etc. to add more inputs if required.
+        if self.props.property is not None:
+            #do something using the value of the `property` variable
+        if self.props.someConfig is not None:
+            #do something with `someConfig` variable
+        return df #Return the output DF
+```
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+from pyspark.sql import SparkSession, DataFrame
+from pyspark.sql.types import StructType
+from prophecy.cb.server.base.ComponentBuilderBase import ComponentCode, Diagnostic, SeverityLevelEnum
+from prophecy.cb.server.base.DatasetBuilderBase import DatasetSpec, DatasetProperties, Component
+from prophecy.cb.ui.uispec import *
+
+class ExampleGem(DatasetSpec):
+  name: str = "example-gem"
+  datasetType: str = "File"
+
+  def optimizeCode(self) -> bool:
+    return True
+
+  @dataclass(frozen=True)
+  class ExampleGemProperties(DatasetProperties):
+    property: Optional[int] = 1000000
+    someConfig: Optional[str] = ""
+
+  def sourceDialog(self) -> DatasetDialog:
+    # More details in next Section
+    return DataSourceDialog()
+
+  def targetDialog(self) -> DatasetDialog:
+    # More details in next Section
+    return DataSourceDialog()
+
+  def validate(self, component: Component) -> list:
+    diagnostics = super(DataCreatorFormat, self).validate(component)
+    if len(component.properties.path) == 0:
+      diagnostics.append(
+         Diagnostic("properties.someConfig", "property cannot be empty [Location]", SeverityLevelEnum.Error))
+    return diagnostics
+
+  def onChange(self, oldState: Component, newState: Component) -> Component:
+    # Save some data on state change from oldState -> newState
+    return newState
+
+  class ExampleDatasetCode(ComponentCode):
+    def __init__(self, props):
+        self.props: DataCreatorFormat.DataCreatorProperties = props
+
+    def sourceApply(self, spark: SparkSession) -> DataFrame:
+        reader = spark.read
+        if self.props.property is not None:
+            #do something using the value of the `property` variable
+        if self.props.someConfig is not None:
+            #do something with `someConfig` variable
+        return df #Return the output DF
+
+    def targetApply(self, spark: SparkSession, in0: DataFrame):
+      #Write the incoming df (in0) to some Target
+```
+</TabItem>
+</Tabs>
+````
+
+#### ComponentSpec Class
+The overall wrapper class inherits the `ComponentSpec` class which is a representation of the overall Gem. This includes the UI and the logic.
+
+#### DatasetProperties Class
+There is one class (Here `ExampleGemProperties`) which contains a list of the properties to be made available to the user for this particular Gem.
+This is where the various options that are to be provided to the user are captured. (here `property`, `someConfig`)
+These variables are accessible in the (and can be set from)  `validate`, `sourceDialog`, `targetDialog` functions
+
+#### dialog()
+The `dialog` functions contain code specific to how the Gem UI should look to the user. See next section for more details.
+
+#### onChange(oldState, newState) -> Component[newDataCreatorProperties]
+The onChange method is given for the UI State maintenance. (eg. making bold columns that have already been selected etc.) The properties of the Gem are also accessible to this function, so functions like selecting columns etc. is possible to add from here.
+
+#### validate(component) -> List[Diagnostic]
+The validate method performs validation checks, so the pipeline compiler gives an error before running a pipeline, in case there’s any issue with the code.
+
+#### ComponentCode class
+The last class used here is `ExampleCode` which is inherited from `ComponentCode` class. This class contains the actual Spark code that needs to run. Here the above User Defined properties are accessible using self.props.{property}. The code for the Source is defined in sourceApply and for Target in targetApply functions respectively.
+The `apply` function takes any number of DataFrames, (`in0`, `in1`, etc.) performs some computation and returns a Spark Dataframe as output. 
+
+#### optimizeCode(self) -> bool
+This function returns a `True` or `False` value depending on whether we want the Prophecy Optimizer to run on this code to simplify it. Read more on the Optimizer here. //TODO: Link here
+
+
+
+
+
+
