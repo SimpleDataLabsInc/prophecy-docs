@@ -214,9 +214,9 @@ class ExampleGem(ComponentSpec):
     property: Optional[int] = 1000000
     someConfig: Optional[str] = ""
 
-  def dialog(self) -> DatasetDialog:
+  def dialog(self) -> Dialog:
     # More details in next Section
-    return DataSourceDialog()
+    return Dialog()
 
   def validate(self, component: Component) -> list:
     diagnostics = super(DataCreatorFormat, self).validate(component)
@@ -259,17 +259,13 @@ class ExampleGem(DatasetSpec):
     return True
 
   @dataclass(frozen=True)
-  class ExampleGemProperties(DatasetProperties):
+  class ExampleGemProperties(ComponentProperties):
     property: Optional[int] = 1000000
     someConfig: Optional[str] = ""
 
-  def sourceDialog(self) -> DatasetDialog:
+  def dialog(self) -> Dialog:
     # More details in next Section
-    return DataSourceDialog()
-
-  def targetDialog(self) -> DatasetDialog:
-    # More details in next Section
-    return DataSourceDialog()
+    return Dialog()
 
   def validate(self, component: Component) -> list:
     diagnostics = super(DataCreatorFormat, self).validate(component)
@@ -304,7 +300,7 @@ class ExampleGem(DatasetSpec):
 #### ComponentSpec Class
 The overall wrapper class inherits the `ComponentSpec` class which is a representation of the overall Gem. This includes the UI and the logic.
 
-#### DatasetProperties Class
+#### ComponentProperties Class
 There is one class (Here `ExampleGemProperties`) which contains a list of the properties to be made available to the user for this particular Gem.
 This is where the various options that are to be provided to the user are captured. (here `property`, `someConfig`)
 These variables are accessible in the (and can be set from)  `validate`, `sourceDialog`, `targetDialog` functions
@@ -313,10 +309,10 @@ These variables are accessible in the (and can be set from)  `validate`, `source
 The `dialog` functions contain code specific to how the Gem UI should look to the user. See next section for more details.
 
 #### onChange(oldState, newState) -> Component[newDataCreatorProperties]
-The onChange method is given for the UI State maintenance. (eg. making bold columns that have already been selected etc.) The properties of the Gem are also accessible to this function, so functions like selecting columns etc. is possible to add from here.
+The onChange method is given for the UI State maintenance. (eg. making bold columns that have already been selected etc.) The properties of the Gem are also accessible to this function, so functions like selecting columns etc. is possible to add from here. This will be illustrated in the next section.
 
 #### validate(component) -> List[Diagnostic]
-The validate method performs validation checks, so the pipeline compiler gives an error before running a pipeline, in case there’s any issue with the code.
+The validate method performs validation checks, so the pipeline compiler gives an error before running a pipeline, in case there’s any issue with the values entered as properties.
 
 #### ComponentCode class
 The last class used here is `ExampleCode` which is inherited from `ComponentCode` class. This class contains the actual Spark code that needs to run. Here the above User Defined properties are accessible using self.props.{property}. The code for the Source is defined in sourceApply and for Target in targetApply functions respectively.
@@ -327,6 +323,143 @@ This function returns a `True` or `False` value depending on whether we want the
 
 
 
+# UI Components
+
+## Dialog, SourceDialog and TargetDialog
+In the case of Datasource Gems, both functions `SourceDialog` and `TargetDialog` need to be defined. They return a `DatasetDialog` object.
+Similarly, for any Transform Gem, the `dialog` function is defined which returns a Dialog object. 
+These objects are essentially UI components that will render in React on the Prophecy Frontend. 
+There are various UI Components that can be defined.
+
+### DatasetDialog
+
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+
+<TabItem value="py" label="Python">
+
+```py
+
+class ExampleSpec(DatasetSpec):
+    def sourceDialog(self) -> DatasetDialog:
+        return DatasetDialog("Example") \
+            .addSection(
+            "PROPERTIES",
+            ColumnsLayout(gap=("1rem"), height=("100%"))
+            .addColumn(
+                ScrollBox().addElement(
+                    StackLayout(height=("100%"))
+                    .addElement(
+                        StackItem(grow=(1)).addElement(
+                            FieldPicker(height=("100%"))
+                            .addField(
+                                TextArea("Description", 2, placeholder="Data description..."),
+                                "description",
+                                True
+                            )
+                            .addField(TextBox("Number of Rows"), "numRows", True)
+                            .addField(TextArea("Json Config", 25), "dataConfig", True)
+                        )
+                    )
+                ),
+                "3fr"
+            )
+            .addColumn(SchemaTable("").bindProperty("schema"),"5fr")
+        )
+    
+    
+
+```
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+class ExampleSpec(DatasetSpec):
+    def sourceDialog(self) -> DatasetDialog:
+        return DatasetDialog("Example") \
+            .addSection(
+            "PROPERTIES",
+            ColumnsLayout(gap=("1rem"), height=("100%"))
+            .addColumn(
+                ScrollBox().addElement(
+                    StackLayout(height=("100%"))
+                    .addElement(
+                        StackItem(grow=(1)).addElement(
+                            FieldPicker(height=("100%"))
+                            .addField(
+                                TextArea("Description", 2, placeholder="Data description..."),
+                                "description",
+                                True
+                            )
+                            .addField(TextBox("Number of Rows"), "numRows", True)
+                            .addField(TextArea("Json Config", 25), "dataConfig", True)
+                        )
+                    )
+                ),
+                "3fr"
+            )
+            .addColumn(SchemaTable("").bindProperty("schema"),"5fr")
+        )
+```
+</TabItem>
+</Tabs>
+````
+The `DatasetDialog` object returned from here is serialized into JSON, sent to the UI and rendered there.
+
+### Containers
+#### Section
+In a `DatasetDialog`, sections can be defined which are different panes, each containing properties to be set etc.
+A section can be added to a `DatasetDialog` using the `addSection` function. 
+
+#### Layouts
+The child components of this `Section` are `Layouts`. We have the following kind of Layouts available:
+* `ColumnsLayout`: Divides the area on screen into different Columns. 
+* `StackLayout`: Stacks various child elements one under another (`direction:vertical`) or one next to the other (`direction:horizontal`)
+
+#### ScrollBox
+
+
+### Navigation related UI
+
+#### Tabs
+#### Buttons
+#### 
+
+
+### Forms and Capturing Data
+#### FieldSelector
+#### Checkbox
+#### Field
+#### RadioGroup
+
+#### Credentials
+#### FileEditor
+#### Editor
+#### SelectBox
+#### NumberBox
 
 
 
+
+### Prophecy Specific Components
+#### SchemaSelectBox
+#### SchemaTable
+#### PortSchema
+#### FileBrowser 
+#### Database/Catalog Table
+#### NewDataset
+#### Dataset
+#### PreviewTable
+#### ExpressionBox
+#### AutoComplete
+
+
+### Formatting Related UI Components
+#### Text
+#### Divider
+#### List
+#### CodeBlock
+#### Table
