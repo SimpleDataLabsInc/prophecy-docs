@@ -179,7 +179,7 @@ PBT can be integrated with your own CI/CD solution to build, test and deploy Pro
 
 ### Setting up environment variables and secrets
 
-PBT requires environment variables **DATABRICKS_URL, DATABRICKS_TOKEN** and **FABRIC_NAME** to be set for complete functionality.
+PBT requires environment variables **DATABRICKS_URL** and **DATABRICKS_TOKEN** to be set for complete functionality.
 Setting **DATABRICKS_TOKEN** as a secret in Github
 The **DATABRICKS_TOKEN** that needs to be used can be set as a secret inside the Github repository of the project.
 Steps:
@@ -263,5 +263,7 @@ The above workflow does the following in order:
 2. Sets the environment variables required for PBT to run: DATABRICKS_HOST, DATABRICKS_TOKEN and FABRIC_NAME
 3. Sets up JDK 11, Python 3 and other dependencies required for PBT to run
 4. Builds all the Pipelines present in the project and generates a .jar/.whl file. If the build fails at any point a non-zero exit code is returned which stops the workflow from proceeding further and the workflow run is marked as a failure.
-5. Runs all the unit tests present in the project using FABRIC_NAME as the configuration. If any of the unit test fails a non-zero exit code is returned which stops the workflow from proceeding further and the workflow run is marked as a failure.
-6. Deploys the built .jar/.whl to the Databricks location mentioned in `databricks-job.json` mentioned in the `jobs` directory of the project. If the Job already exists in Databricks it is updated with the new .jar/.whl. If this process fails at any step, a non-zero exit code is returned which stops the workflow from proceeding further and the workflow run is marked as a failure.
+5. Runs all the unit tests present in the project using FABRIC_NAME(optional) as the configuration. If any of the unit test fails a non-zero exit code is returned which stops the workflow from proceeding further and the workflow run is marked as a failure.
+6. Deploys the built .jar/.whl to the Databricks location mentioned in `databricks-job.json` mentioned in the `jobs` directory of the project. If the Job already exists in Databricks it is updated with the new .jar/.whl.
+7. Deploys Pipeline configurations, if present, to the DBFS path mentioned in `databricks-job.json`.
+8. If this process fails at any step, a non-zero exit code is returned which stops the workflow from proceeding further and the workflow run is marked as a failure.
