@@ -9,8 +9,8 @@ tags:
   - okta
 ---
 
-Single sign-on (SSO) enables you to authenticate your users using your organization’s identity provider. 
-This document focuses on using Okta as SAML IdP for Prophecy and enabling SCIM provisioning for syncing users and 
+Single sign-on (SSO) enables you to authenticate your users using your organization’s identity provider.
+This document focuses on using Okta as SAML IdP for Prophecy and enabling SCIM provisioning for syncing users and
 groups.
 
 ## Configure Okta
@@ -60,7 +60,7 @@ groups.
 ## Configure Prophecy to connect with your Okta setup
 
 - Login to Prophecy IDE using admin user
-- Go to settings and SSO tab and choose "Authentication Provider" as SAML 
+- Go to settings and SSO tab and choose "Authentication Provider" as SAML
 - Fill up Organization ID and Team Name that you want to set for your organization and team respectively.
 - Click Configure and this will generate SCIM Token. Make a note of this token which needs to be filled later while Provisioning SCIM in Okta.
 - Click Save.
@@ -73,40 +73,41 @@ groups.
 
 ![SSO Detailed Settings](./img/sso_settings_detailed.png)
 
-
 ## Sync Users and Groups from Okta using SCIM
 
-This section describes how to configure your Okta and Prophecy to provision users and groups to Prophecy using SCIM, 
+This section describes how to configure your Okta and Prophecy to provision users and groups to Prophecy using SCIM,
 or System for Cross-domain Identity Management, an open standard that allows you to automate user provisioning.
 
 ### About SCIM provisioning in Prophecy
+
 Prophecy provides a SCIM connector that lets you use Okta to create/update users and groups/teams in Prophecy, give them the proper level of access,
 and remove access (de-provision them) when they leave your organization or no longer need access to Prophecy.
 
-The 'Prophecy SAML App' in Okta must be assigned to users/groups in Okta for the SCIM connector to be triggered and 
-create corresponding users in Prophecy. 
+The 'Prophecy SAML App' in Okta must be assigned to users/groups in Okta for the SCIM connector to be triggered and
+create corresponding users in Prophecy.
 
 Note:
 
-- Any app assignments made to a group in Okta will only create new users in Prophecy which belonged to this 
-group in Okta. 'Push Group' operation should be triggered by admin in Okta to create a new team/group in Prophecy.
+- Any app assignments made to a group in Okta will only create new users in Prophecy which belonged to this
+  group in Okta. 'Push Group' operation should be triggered by admin in Okta to create a new team/group in Prophecy.
 
-- 'Push Group' operation only creates group/team in Prophecy and not users. To create users, the app must be assigned 
-to the group
+- 'Push Group' operation only creates group/team in Prophecy and not users. To create users, the app must be assigned
+  to the group
 
 - Importing user/groups from Okta to Prophecy is supported but not vice-versa i.e. any changes made to a synced user in
-Prophecy IDE will not be synced back to Okta and will get overwritten whenever any update to user is synced from Okta.  
+  Prophecy IDE will not be synced back to Okta and will get overwritten whenever any update to user is synced from Okta.
 
 - Update to primary email is not supported in Prophecy via SCIM.
 
 - Login via secondary emails registered with Okta is not supported in Prophecy.
 
-- De-provisioning of a user from Okta deletes that user from Prophecy and not deactivates it. As a result, a 
-de-provisioned user will lose their personal projects in Prophecy. 
+- De-provisioning of a user from Okta deletes that user from Prophecy and not deactivates it. As a result, a
+  de-provisioned user will lose their personal projects in Prophecy.
 
 #### Requirements
 
 To provision users/groups to your Prophecy account using SCIM,
+
 - you must be Okta admin
 - you must be a Prophecy account admin.
 
@@ -127,7 +128,7 @@ To provision users/groups to your Prophecy account using SCIM,
   - Push Profile Updates
   - Push Groups
 - For Authentication Mode, choose HTTP Header from dropdown box and in Authorization, provide the scim token as generated in Prophecy IDE above.
-- Click on Test Connector Configuration to check the connectivity to SCIM server. 
+- Click on Test Connector Configuration to check the connectivity to SCIM server.
 - If connectivity is fine, click Save. A new tab will appear on app integration's settings page named 'Push Groups'.
 
 ![Scim Provisioning](./img/scim_provisioning.png)
@@ -140,7 +141,8 @@ To provision users/groups to your Prophecy account using SCIM,
 
 ![Assign App](./img/app_assign.png)
 
-As mentioned earlier, assigning app to Group only creates new users in Prophecy IDE belonging to this group but doesn't create a group in Prophecy. To create group, 
+As mentioned earlier, assigning app to Group only creates new users in Prophecy IDE belonging to this group but doesn't create a group in Prophecy. To create group,
+
 - Go to Push Groups tab of "Prophecy SAML App" in Okta
 - Click Push Groups -> Find groups by name/rule, enter name/rule.
 - Select the checkbox to push group memberships immediately.
