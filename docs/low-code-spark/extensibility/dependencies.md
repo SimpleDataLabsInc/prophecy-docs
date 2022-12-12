@@ -10,21 +10,20 @@ tags:
 ---
 
 Dependencies allow you to make use of third-party or custom code in your data Pipelines and Jobs. Dependencies can be
-written in Java, Scala, or PySpark, and can be connected to your data Pipelines by pointing it
+written in Java, Scala, or PySpark, and can be connected to your data Pipelines by pointing
 to [Maven](https://mvnrepository.com/) or [PyPi](https://pypi.org/) coordinates.
 
 ## Storage
 
 ![See Dependencies](img/dependencies-storage.png)
 
-All of your dependencies are stored at the project-level. This means, that when adding a dependency to a single
-Pipeline, by default it becomes available to all the other Pipelines, within the same project. However, within each
-Pipeline you can control, if a given dependency should be enabled or disabled.
+All of your dependencies are stored at the Project-level. When adding a dependency to a single
+Pipeline, by default it becomes available to all the other Pipelines within the same Project. However, within each
+Pipeline you can control if a given dependency should be enabled or disabled.
 
 Dependencies are natively saved within your build-system files. E.g. if you're using Scala, they're saved in the
 **pom.xml** file, if you're using Python, they're saved in the **setup.py** file. To customize the build system further,
-please
-look at [Custom Build Tool](#build-tool-customization) section.
+please check out the [Custom Build Tool](#build-tool-customization) section.
 
 ## Common Actions
 
@@ -37,30 +36,30 @@ Options > Manage Dependencies**.
 
 ### Add dependency
 
-To add the dependency, the [dependencies list](#see-dependencies). There you will see a complete list of your
+To add the dependency, first click [dependencies list](#see-dependencies). There you will see a complete list of your
 dependencies. Click on **Create Dependency** to add a new dependency.
 
 ![Add Dependency](img/dependencies-add.png)
 
-To define new dependency, specify the following:
+To define a new dependency, specify the following:
 
-1. **Type** - which can be either **Coordinates (Maven)** or **Package (PyPi)** (Python projects only).
+1. **Type** - which can be either **Coordinates (Maven)** or **Package (PyPi)** (Python Projects only).
 2. **Name** - the name of your dependency - this can be any name, chosen by you to easier identify each dependency
 3. **Coordinates** - maven coordinates in the `groupId:artifcatId:version` format (e.g. `org.postgresql:postgresql:42.3.3`)
 
 For further customization of your dependency you can additionally define **Advanced** properties:
 
-1. **Repository** - by default your dependency is fetched from **Maven Central** repository. If you'd like to use an external repository (e.g. your organizations' repository) you can specify the link to it here. Please note, that
-   the repository has to be publicly accessible.
+1. **Repository** - by default your dependency is fetched from **Maven Central** repository. If you'd like to use an external repository (e.g. your organizations' repository) you can specify the link to it here. Please note
+   the repository must be publicly accessible.
 2. **Exclusions** - optional list of of `groupId:artifactId` pairs, of dependencies you'd like to exclude. Learn more
    about dependency
    exclusion [here](https://maven.apache.org/guides/introduction/introduction-to-optional-and-excludes-dependencies.html#dependency-exclusions)
    .
 
-After you defined the Dependency press **Save**. Prophecy is going to validate the dependency and add it to the project,
-making it enabled in the current workflow, and adding it as dependency (but disabled) among all other workflows in the project.
+After you defined the Dependency press **Save**. Prophecy is going to validate the dependency and add it to the Project,
+making it enabled in the current pipeline, and adding it as dependency (but disabled) among all other Pipelines in the Project.
 
-When adding dependencies, Prophecy validates that the dependency coordinates is valid, and it's able to access them. If
+When adding dependencies, Prophecy validates that the dependency coordinates are valid and accessible. If
 that fails, you should see an invalid coordinates error.
 
 :::info Invalid coordinates
@@ -73,8 +72,8 @@ Anyways** to ignore that warning.
 
 ![Dependencies List](img/dependencies-list.png)
 
-Since dependencies are stored at a project-level, any changes, like adding or deleting a dependency affects all the
-Pipelines. To selectively enable or disable a dependency for a specific Pipeline, you can use the **Enable In Pipeline**
+Since dependencies are stored at a Project-level, any changes, like adding or deleting a dependency affects all the
+Pipelines in that Project. To selectively enable or disable a dependency for a specific Pipeline, you can use the **Enable In Pipeline**
 option.
 
 ### Delete dependency
@@ -83,7 +82,7 @@ To delete a dependency click on a trash icon on the dependencies list.
 
 :::caution Deleting a dependency
 
-Deleting a dependency deletes it within the whole project, and all inheriting Pipelines. If you're not confident about
+Deleting a dependency deletes it within the whole Project, and all inheriting Pipelines. If you're not confident about
 the functionality of the other Pipelines, it's usually better to disable a dependency, instead of deleting it.
 
 :::
@@ -97,9 +96,9 @@ cluster doesn't have the dependency installed yet, Prophecy installs it and rest
 
 ## Build Tool Customization
 
-Project level templates can be defined on the **advanced** tab on the project main screen to generate the build files for all Pipelines present inside a project.
-By default, this is enabled by default for new projects.
-The **template** can be customised at the project level as per need.
+Project level templates can be defined on the **advanced** tab on the Project main screen to generate the build files for all Pipelines present inside a Project.
+By default, Project Level Templating is enabled for new Projects.
+The **template** can be customised at the Project level as per need.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -109,26 +108,26 @@ The **template** can be customised at the project level as per need.
 ---
 
 :::info
-For projects created before **Prophecy 2.0 release on 24th June 2022**, project templating would be disabled by default. We highly recommend you to enable it
+For Projects created before **Prophecy 2.0 release on 24th June 2022**, Project templating would be disabled by default. We highly recommend you to enable it
 as shown in the process below:
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/103921419/175944722-32fc6e26-75d7-4c91-be7d-e8cc9afb34be.mp4" title="Old project Enable templating" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+<iframe src="https://user-images.githubusercontent.com/103921419/175944722-32fc6e26-75d7-4c91-be7d-e8cc9afb34be.mp4" title="Old Project Enable templating" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-As soon as it is enabled and any workflow is opened on the browser, the existing **pom.xml/build.py** files
-would get updated automatically with the new template defined at the project level. Also, it would automatically include the dependencies defined
-in the **manage dependencies options tab** from the UI in **pom.xml/build.py** files. Please **commit the changes and re-release the project** for
+As soon as Project templating is enabled and any Pipeline is opened on the browser, the existing **pom.xml/build.py** files
+would get updated automatically with the new template defined at the Project level. The **pom.xml/build.py** files include the dependencies defined
+in the **... > Options > Manage Dependencies** screen as well. Please **commit the changes and re-release the Project** for
 changes to take effect in the Job.
 
-For any help required in enabling the project template for older projects, please reach out to prophecy support team.
+For any help required in enabling the Project template for older Projects, please reach out to Prophecy support team.
 :::
 
 ## Jobs Support
 
-For projects in which templating is enabled, dependencies are added automatically to **pom.xml/build.py** files as soon as they
-are added on the **dependency management** screen in options.
+For Projects in which templating is enabled, dependencies are added automatically to **pom.xml/build.py** files as soon as they
+are added on the **...> Options > Manage Dependencies** screen.
 
 ### Scala
 
@@ -147,10 +146,10 @@ are added on the **dependency management** screen in options.
 ---
 
 :::info
-For older projects in which templating is disabled, the dependencies added to the Pipelines are not propagated to the scheduled Jobs automatically.
-**(We highly recommend to enable the templating for all projects, rather than editing the pom.xml files manually)**
+For older Projects in which templating is disabled, the dependencies added to the Pipelines are not propagated to the scheduled Jobs automatically.
+**(We highly recommend to enable the templating for all Projects, rather than editing the pom.xml files manually)**
 
-Though, if you want to keep the templating disabled at project level and still want to add dependencies for Scala projects such that it is visible to your Pipeline when it's scheduled, it has to be **manually** added to the **pom.xml** file. Below is an example on how it can be achieved:
+Though, if you want to keep the templating disabled at Project level and still want to add dependencies for Scala Projects such that it is visible to your Pipeline when it's scheduled, it has to be **manually** added to the **pom.xml** file. Below is an example on how it can be achieved:
 
 The dependency should be added anywhere between the `<dependencies></dependencies>` tags. For instance to add `io.github.etspaceman:scalacheck-faker_2.12:7.0.0` dependency, add it to the **pom.xml** like so:
 
