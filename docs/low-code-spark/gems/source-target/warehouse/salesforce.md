@@ -23,7 +23,6 @@ To use this Gem in Prophecy, `com.springml:spark-salesforce_2.12:1.1.4` Maven ex
 For installing dependencies from Prophecy UI. Please check [dependency management docs](https://docs.prophecy.io/low-code-spark/extensibility/dependencies)
 :::
 
-
 ## Source
 
 Reads data from Salesforce object and wave Datasets.
