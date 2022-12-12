@@ -1,0 +1,7 @@
+:%s/pipeline/Pipeline/g
+:%s/git/Git/g
+:%s/dataset/Dataset/g
+:%s/&/and/g
+:%s/job/Job/g
+:%s/prophecy/Prophecy/g
+:%s/gem/Gem/g
