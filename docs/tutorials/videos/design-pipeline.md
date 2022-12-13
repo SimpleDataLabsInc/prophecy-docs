@@ -1,6 +1,6 @@
 ---
 title: Design a Pipeline
-id: design-pipeline
+id: design-Pipeline
 description: How to design your first Pipeline
 sidebar_position: 2
 tags:
@@ -67,4 +67,4 @@ Set Prophecy credentials while signing up for a free trial here: [App.Prophecy.i
 
 The Shipments Dataset is actually a table called ORDERSHIPMENTS in the TPC-H Dataset, and is available as sample data in Snowflake, Databricks File System, and many other data sources. The column names were edited for clarity.
 
-Go for it! Follow the steps outlined in the [video](https://fast.wistia.net/embed/channel/s98lbj0pfs?wchannelid=s98lbj0pfs&wvideoid=i61o34x245&wtime=0s); ask questions on Prophecy's [Slack](https://join.slack.com/t/prophecy-io-support/shared_invite/zt-moq3xzoj-~5MSJ6WPnZfz7bwsqWi8tQ)
+Go for it! Follow the steps outlined in the video above; ask questions on Prophecy's [Slack](https://join.slack.com/t/prophecy-io-support/shared_invite/zt-moq3xzoj-~5MSJ6WPnZfz7bwsqWi8tQ). When you are done, your repository should look something like [mine](https://Github.com/SimpleDataLabsInc/ShippingReports).
