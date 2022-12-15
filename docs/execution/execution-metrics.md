@@ -59,7 +59,9 @@ DDLs and Grant accesses are defined below
       output_datasets ARRAY<STRING>,
       workflow_code MAP<STRING, STRING>,
       expired Boolean,
-      branch STRING
+      branch STRING,
+      pipeline_config STRING,
+      user_config STRING
   )
   USING DELTA
   PARTITIONED BY (fabric_uid, pipeline_uri, created_by)
