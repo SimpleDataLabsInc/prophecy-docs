@@ -159,7 +159,6 @@ class ExampleGem(DatasetSpec):
 
 </TabItem>
 </Tabs>
-
 ````
 #### DatasetSpec Class
 The overall wrapper class inherits the `DatasetSpec` class which is a representation of the overall Gem. This includes the UI and the logic.
@@ -188,8 +187,6 @@ This function returns a `True` or `False` value depending on whether we want the
 ### Transform Gem Code breakdown
 
 ````mdx-code-block
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 <Tabs>
 
@@ -334,8 +331,6 @@ There are various UI Components that can be defined.
 ### DatasetDialog
 
 ````mdx-code-block
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 <Tabs>
 
