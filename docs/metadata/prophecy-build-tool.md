@@ -74,8 +74,8 @@ environment variables.
 
 Since v1.0.3 PBT supports new input parameters that are used to determine the DBFS path where your project's artifacts would
 be uploaded. These are the `--release-version` and `--project-id` parameters which would be used to replace the `__PROJECT_RELEASE_VERSION_ PLACEHOLDER__` and `__PROJECT_ID_PLACEHOLDER__` placeholders that would already be present in your Job's definition file
-(`databricks-job.json`). Using a unique release version of your choice and the project's Prophecy ID (as seen in the project's URL)
-is recommended.
+(`databricks-job.json`). Using a unique release version of your choice and the project's Prophecy ID
+(as seen in the project's URL on the Prophecy UI) is recommended.
 
 Example deploy command:
 
@@ -118,6 +118,8 @@ Example deploy command:
 ```shell
 pbt deploy --path /path/to/your/prophecy_project/ --release-version 1.0 --project-id 10 --dependent-projects-path /path/to/dependent/prophecy/projects
 ```
+
+Complete list of options for PBT `deploy`:
 
 ```shell
 pbt deploy --help
