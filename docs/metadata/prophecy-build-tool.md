@@ -74,7 +74,8 @@ environment variables.
 
 Since v1.0.3 PBT supports new input parameters that are used to determine the DBFS path where your project's artifacts would
 be uploaded. These are the `--release-version` and `--project-id` parameters which would be used to replace the `__PROJECT_RELEASE_VERSION_ PLACEHOLDER__` and `__PROJECT_ID_PLACEHOLDER__` placeholders that would already be present in your Job's definition file
-(`databricks-job.json`). Using a unique release version of your choice and the project's Prophecy ID is recommended.
+(`databricks-job.json`). Using a unique release version of your choice and the project's Prophecy ID (as seen in the project's URL)
+is recommended.
 
 Example deploy command:
 
@@ -109,7 +110,14 @@ Querying existing jobs to find current job: Offset: 0, Pagesize: 25
 
 The `deploy` command also supports an advanced option `--dependent-projects-path` if there is a need to build projects other than the main project that has to be deployed.
 This would be useful if there are dependent Pipelines whose source code can be cloned into a different directory accessible to PBT
-while running `deploy` for the main project.
+while running `deploy` for the main project. This option supports only one path as argument but the path itself can contain multiple Prophecy projects within it in different
+subdirectories.
+
+Example deploy command:
+
+```shell
+pbt deploy --path /path/to/your/prophecy_project/ --release-version 1.0 --project-id 10 --dependent-projects-path /path/to/dependent/prophecy/projects
+```
 
 ```shell
 pbt deploy --help
@@ -132,11 +140,8 @@ Options:
 
 #### Running all unit tests in project
 
-PBT supports running unit tests inside the Prophecy project. Unit tests run with the `default` configuration unless explicitly overridden with the `FABRIC_NAME` environment variable
-
-```shell
-export FABRIC_NAME="default"
-```
+PBT supports running unit tests inside the Prophecy project. Unit tests run with the `default` configuration present in the
+Pipeline's `configs/resources/config` directory.
 
 To run all unit tests present in the project, use the `test` command as follows:
 
@@ -197,7 +202,6 @@ The environment variables can now be all set within the Github actions YML file 
 env:
   DATABRICKS_HOST: "https://sample_databricks_url.cloud.databricks.com"
   DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
-  FABRIC_NAME: "default"
 ```
 
 The complete YML file definition is discussed in the next section.
@@ -226,7 +230,6 @@ on:
 env:
   DATABRICKS_HOST: "https://sample_databricks_url.cloud.databricks.com"
   DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
-  FABRIC_NAME: "default"
 
 jobs:
   build:
@@ -259,9 +262,9 @@ jobs:
 
 The above workflow does the following in order:
 
-1. Triggers on every change that is pushed to the branch ‘main’
-2. Sets the environment variables required for PBT to run: DATABRICKS_HOST, DATABRICKS_TOKEN and FABRIC_NAME
-3. Sets up JDK 11, Python 3 and other dependencies required for PBT to run
+1. Triggers on every change that is pushed to the branch ‘main’.
+2. Sets the environment variables required for PBT to run: DATABRICKS_HOST and DATABRICKS_TOKEN.
+3. Sets up JDK 11, Python 3 and other dependencies required for PBT to run.
 4. Builds all the Pipelines present in the project and generates a .jar/.whl file. If the build fails at any point a non-zero exit code is returned which stops the workflow from proceeding further and the workflow run is marked as a failure.
 5. Runs all the unit tests present in the project using FABRIC_NAME(optional) as the configuration. If any of the unit test fails a non-zero exit code is returned which stops the workflow from proceeding further and the workflow run is marked as a failure.
 6. Deploys the built .jar/.whl to the Databricks location mentioned in `databricks-job.json` mentioned in the `jobs` directory of the project. If the Job already exists in Databricks it is updated with the new .jar/.whl.
