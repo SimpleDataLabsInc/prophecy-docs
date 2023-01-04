@@ -27,7 +27,7 @@ An Example Configuration for Random Data Creator is the following:
   "boolean":5,
   "date":10,
   "datetime":10,"id":10,
-  "randInt(30, 70)":2,
+  "rand_int(30, 70)":2,
   "json":[{
     "numeric":4,
     "json":[{
