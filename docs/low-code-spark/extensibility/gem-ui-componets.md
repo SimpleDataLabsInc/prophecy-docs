@@ -6,16 +6,25 @@ description: UI components you can use in Gem builder
 tags: []
 ---
 
-# UI Components
-There are various UI Components that can be defined for your gem like you can divide a pane into section, add columns. You can have Scroll box, tabs, buttons, checkbox, etc.
-The `Dialog` object returned from here is serialized into JSON, sent to the UI and rendered there.
+There are various UI Components that can be defined for your custom Gem such as Scroll boxes, tabs, buttons, and more! These UI Components can be grouped
+together in various type of Panels to create a custom User experiences when using the Gem.
 
-In this document we will see how to add different UI compnents in you Gem builder dialog with examples. 
-Lets take below dialog function for example 
+After the `Dialog` object is defined, it's serialized as JSON, sent to the UI and rendered there.
 
-### Transform Dialog
+In this document we will see how to add different UI compnents to an example Gem.
+Let's take below dialog function for example
 
-The Dialog function defined in a transform gem returns a Dialog object.
+## Dialog Types
+
+Depending on what kind of Gem you're creating, you'll have to define either a `Dialog` or a `DatasetDialog`:
+
+### Transformation Dialog
+
+The Dialog for Transformation Gems (any Gem that is not a Dataset Gem) are created using the `dialog` method, which must return a `Dialog` object.
+
+#### Example (Transform Dialog)
+
+The Dialog function defined in a Transform Gem returns a Dialog object.
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -62,7 +71,7 @@ import TabItem from '@theme/TabItem';
           "5fr"
         )
     )
-    
+
 ```
 
 </TabItem>
@@ -72,15 +81,21 @@ import TabItem from '@theme/TabItem';
 This is how the Rendered UI looks for above dialog code.
 ![Gem_UI](img/gem-builder-ui.png)
 
-You start by giving a title to your dialog, "Filter" in this case. And then add one or more elements to it. Here we are adding just one.
+### DataSet Dialog
 
-#### Element
-Element is nothing but has child elements inside it to divide you UI pane. Everything you add essentially is an element like ColumnsLayout, TextBox, etc. 
-Elements can be added to a dialoge using the addElements method.
+The Dialog for a [Source/Target](../gems/source-target/) Gem is a `DatasetDialog` object. You will need to have `source` and `target` methods defined.
+
+## UI Component Types
+
+### Elements
+
+An Element is nothing but has child elements inside it to divide the UI. Everything you add essentially is an element like ColumnsLayout, TextBox, etc.
+Elements can be added to a dialoge using the `addElements` method.
 For example if we add two elements instead of one element with two columns, it will render something like this.
 
 ![Element](img/gem-builder-element.png)
-Example code: 
+Example code:
+
 ````mdx-code-block
 
 <Tabs>
@@ -113,7 +128,7 @@ Example code:
         .addColumn(
           PortSchemaTabs(selectedFieldsProperty = Some("columnsSelector")).importSchema(),
           "2fr"
-        )    
+        )
     ).addElement(
       ColumnsLayout(height = Some("50%"))
         .addColumn(
@@ -134,33 +149,34 @@ Example code:
 </Tabs>
 ````
 
-#### Layouts
-The child components of this `Element` are `Layouts`. We have the following kind of Layouts available:
-* `ColumnsLayout`: Divides the area on screen into different Columns. ColumnLayout is an element Which takes in an element Column,and you can pass in a width for that column. We have seen an example of this in the above example.
-* `StackLayout`: Stacks various child elements one under another (`direction:vertical`) or one next to the other (`direction:horizontal`). You can add elements to a stack again using the addElement method. 
+### Layouts
+
+The child components of `Element`s are `Layout`s. We have two kinds of `Layout`s available:
+
+- `ColumnsLayout`: Divides the area on screen into different Columns. It takes in an element for the Column and a width for that column. We have seen an example of this in the above example.
+- `StackLayout`: Stacks various child elements one under another (`direction:vertical`) or one next to the other (`direction:horizontal`). You can add elements to a stack again using the `addElement` method.
+
 Example:
 `StackLayout(height = Some("100%")).addElement(selectBox).addElement(testTable)`
 Where selectBox and testTable are already defined elements.
-  ![Stack](img/gem-builder-stack.png)
+![Stack](img/gem-builder-stack.png)
 
-## DataSet Dialog
+### Section
 
-The Dialog function defined in a transform gem returns a DatasetDialog object. Also note that a datasource gem will need to have source and target dialog functions separately.
-
-#### Section
-In a `DatasetDialog`, sections can be defined which are different panes, each containing properties to be set etc.
+In a `DatasetDialog` multiple `Section`s can be added. Each one is a "step" in the UI and can contain properties to be set, expected schema, etc.
 A section can be added to a `Dialig` using the `addSection` function.
-addSection takes in a title for the Section and an element object. 
+`addSection` takes in a title for the Section and an element object.
 Example: `.addSection("PREVIEW", PreviewTable("").bindProperty("schema")`
-
 
 ### Navigation related UI
 
 #### ScrollBox
-This component is used to add a scroll box on UI like this.
+
+This component is used to add a scroll box on UI like so:
 ![Scroll](img/scroll-box.png)
 
-Example code: 
+Example code:
+
 ````mdx-code-block
 
 <Tabs>
@@ -230,12 +246,14 @@ ScrollBox().addElement(
 </TabItem>
 </Tabs>
 ````
+
 #### Tabs
 
-This component is used to render Tabs in UI like this: 
+This component is used to render Tabs in UI like this:
 
 ![Tabs](img/tabs.png)
-Example code: 
+Example code:
+
 ````mdx-code-block
 
 <Tabs>
@@ -276,7 +294,6 @@ Example code:
 
 Used to add a button on UI.
 
-
 ````mdx-code-block
 
 <Tabs>
@@ -309,38 +326,54 @@ openCreateDatasetDialog(state.asInstanceOf[WorkflowProcess])
 </Tabs>
 ````
 
-
-
 ### Forms and Capturing Data
+
 #### FieldSelector
+
 #### Checkbox
+
 #### Field
+
 #### RadioGroup
 
 #### Credentials
+
 #### FileEditor
+
 #### Editor
+
 #### SelectBox
+
 #### NumberBox
 
-
-
-
 ### Prophecy Specific Components
+
 #### SchemaSelectBox
+
 #### SchemaTable
+
 #### PortSchema
+
 #### FileBrowser
+
 #### Dataset
+
 #### PreviewTable
+
 #### ExpressionBox
+
 #### AutoComplete
 
-More such component: NewDataSet, Database/Catalogue table, 
+More such component: NewDataSet, Database/Catalogue table,
 
 ### Formatting Related UI Components
+
 #### Text
+
 #### Divider
+
 #### List
+
 #### CodeBlock
+
 #### Table
