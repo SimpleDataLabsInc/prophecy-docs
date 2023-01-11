@@ -317,7 +317,7 @@ It is recommended to try out this dialogue code in Gem builder UI and see how ea
 
 :::info
 **Coming Soon**
-We will have a playground soon to try out the different UI components adn see how the UI renders for each of them hands on.
+We will soon launch a playground to try out the different UI components and test how the UI renders for each of them.
 :::
 
 ### Validation
