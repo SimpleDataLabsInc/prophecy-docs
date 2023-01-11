@@ -6,10 +6,17 @@ description: Gem-Builder
 tags: []
 ---
 
+:::caution Enterprise Only
+
+Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about the Enterprise offering.
+
+:::
+
+
 [Gems](docs/concepts/gems.md) are essentially what operations you can perform on you data like reading / writing and all other transformations. 
 
 Prophecy Data platform can be made more powerful and customised with **Gem Builder**. You can add **your own standard sources, targets and
-transforms** to Spark and roll it out to your entire team. You can build **your own frameworks with** custom Data Quality
+transforms** to Spark and roll it out to your entire team. You can build **your own frameworks** with custom Data Quality
 library, or auditing library. 
 
 <div class="video-container">
@@ -25,9 +32,9 @@ allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; pic
 ## Getting Started
 
 All of our gems are stored at account level. Once you land to Gem listing page, you will see all prophecy defined and User Defined gems. You can add a new gem or modify and exiting one too.
-![Add Gem from Gembuilder](img/gem-add.gif)
+![Add Gem from Gem_Builder](img/gem-add.gif)
 
-### Introduction
+## Introduction
 
 The Gem builder is a tool that enables users to create any custom Gems or modify any existing ones. There are two major categorisation of Gems :
 
@@ -39,9 +46,10 @@ Programmatically, a Gem is a component with the following parts:
 * The **Gem UI Component** to get user information from the screen (This code is rendered on the Prophecy UI) 
 * The **Gem Code Logic** which is how the Gem acts within the context of a pipeline.
 
+## Transform Gems
 You can write a gem code either using python or scala
 
-### Here is a simple Filter Gem Code example
+Here is a simple Filter Gem Code example
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -172,7 +180,7 @@ object Filter extends ComponentSpec {
 </TabItem>
 </Tabs>
 ````
-#### Parent Class
+### Parent Class
 Your Gem class needs to extend a parent class from which it inherits the representation of the overall Gem. This includes the UI and the logic.
 For transform Gems you need to extend ComponentSpec (Like in the example above), for Source/Target gem you need to extend DatasetSpec. We will see the difference between the two at the end.
 
@@ -211,7 +219,7 @@ override def optimizeCode: Boolean = true
 ````
 
 
-#### DatasetProperties Class
+### DatasetProperties Class
 There is one class (Here `FilterProperties`) which contains a list of the properties to be made available to the user for this particular Gem. Think of these as all the values a user fills out within the template of this gem.
  (here `columnsSelector`, `condition`)
 These properties are available in `validate`, `onChange` and `apply`  and can be set from `dialog`, functions. 
@@ -243,7 +251,7 @@ object Filter extends ComponentSpec {
 ````
 Let's look at each of these functions.
 
-#### dialog();
+### Dialog function
 The `dialog` function contain code specific to how the Gem UI should look to the user. 
 
 ````mdx-code-block
@@ -294,10 +302,12 @@ The above dialoge code in filter is rendered on UI like this
 ![Dialog](img/gem-builder-ui.png)
 
 Column Selector: This is a special property which you should add if you want to select the columns from UI and then highlight the used columns using the onChange function.
-It is recommended to try out this dialogue code in gem builder UI and se in action how each of these elements look in UI. More details on this is in [Gems UI Components](gem-ui-componets.md)
+It is recommended to try out this dialogue code in gem builder UI and se in action how each of these elements look in UI. 
 
 
-#### validate(component) -> List[Diagnostic]
+### Validate Function
+
+`validate(component) -> List[Diagnostic]`
 The validate method performs validation checks, so the pipeline compiler gives an error before running a pipeline, in case there’s any issue with any inputs provided for the user. For example in this case if Filter condition is empty. Similarly, you can add any validation on your properties.
 
 ````mdx-code-block
@@ -326,7 +336,9 @@ def validate(component: Component)(implicit context: WorkflowContext): List[Diag
 ````
 
 
-#### onChange(oldState, newState) -> Component[newDataCreatorProperties]
+### OnChange Function
+
+`onChange(oldState, newState) -> Component[newDataCreatorProperties]`
 The onChange method is given for the UI State maintenance. (eg. making bold columns that have already been selected etc.) The properties of the Gem are also accessible to this function, so functions like selecting columns etc. is possible to add from here.
 
 ````mdx-code-block
@@ -360,7 +372,8 @@ def onChange(oldState: Component, newState: Component)(implicit context: Workflo
 
 ````
 
-#### ComponentCode class
+### ComponentCode class
+
 The last class used here is `FilterCode` which is inherited from `ComponentCode` class. This class contains the actual Spark code that needs to run on your spark cluster. Here the above User Defined properties are accessible using self.props.{property}. The spark code for the Gem logic is defined in apply function.
 For example, we are calling the `.filter()` method in this example in the apply function. 
 ````mdx-code-block
@@ -396,7 +409,7 @@ class FilterCode(props: PropertiesType)(implicit context: WorkflowContext) exten
 
 You can go ahead and preview the component in the Gem Builder now to see how it looks like. You can modify the properties and then save it to preview the generated spark code which will eventually run on your cluster.
 
-# DataSources Gems 
+## DataSources Gems 
 
 DataSource gems also referred as Source/Tagret gems are gems which you use to read/write your datasets into sprf dataframes. Major difference between the Source/Target gem and a Transform gem is, A Source/Target gem will have two dialog and two apply functions each for Source and Target respectively. Let's look at them with an example
 
