@@ -5,6 +5,7 @@ id: gem-builder
 description: Gem-Builder
 tags: []
 ---
+
 :::caution Enterprise Only
 
 Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about the Enterprise offering.
@@ -24,8 +25,12 @@ allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; pic
 
 ## Getting Started
 
-All of our Gems are stored at account level. Once you navigate to the Gem listing page you will see all of the Prophecy defined and User Defined Gems. You can add a new Gem or modify an existing one.
-![Add Gem from Gembuilder](img/gem-add.gif)
+All of our Gems are stored at account level. Once you navigate to the Gem listing page you will see all the Prophecy defined and User Defined Gems. You can add a new Gem or modify an existing one.
+
+After writing your Gem code, you can click `Preview` to see, how the Gem UI look. You can fill in some values, and click save to check the Spark code which will be generated for the Gem.
+Finally, just publish the Gems and your Gem is ready to be used in the Pipelines.
+
+![Add Gem from Gembuilder](img/gem-builder-demo.gif)
 
 ## Tutorial
 
@@ -307,13 +312,14 @@ There are various UI Components that can be defined for your custom Gem such as 
 
 After the Dialog object is defined, it's serialized as JSON, sent to the UI and rendered there.
 
-Depending on what kind of Gem you're creating, you'll have to define either a `Dialog` or a `DatasetDialog`. 
-- The **Transformation Dialog**: The Dialog for Transformation Gems (any Gem that is not a Dataset Gem) are created using the `dialog` method, which must return a Dialog object. 
+Depending on what kind of Gem you're creating, you'll have to define either a `Dialog` or a `DatasetDialog`.
+
+- The **Transformation Dialog**: The Dialog for Transformation Gems (any Gem that is not a Dataset Gem) are created using the `dialog` method, which must return a Dialog object.
 
 - The **Dataset Dialog**: The Dialog for a [Source/Target](../gems/source-target/) Gem is a `DatasetDialog` object. You will need to have `source` and `target` methods defined.
 
 Column Selector: This is a special property which you should add if you want to select the columns from UI and then highlight the used columns using the `onChange` function.
-It is recommended to try out this dialogue code in Gem builder UI and see how each of these elements look in UI. 
+It is recommended to try out this dialogue code in Gem builder UI and see how each of these elements look in UI.
 
 :::info
 **Coming Soon**
