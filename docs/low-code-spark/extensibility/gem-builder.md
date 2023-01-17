@@ -30,7 +30,12 @@ All of our Gems are stored at account level. Once you navigate to the Gem listin
 After writing your Gem code, you can click `Preview` to see, how the Gem UI look. You can fill in some values, and click save to check the Spark code which will be generated for the Gem.
 Finally, just publish the Gems and your Gem is ready to be used in the Pipelines.
 
-![Add Gem from Gembuilder](img/gem-builder-demo.gif)
+Please refer below video for step-by-step example:
+
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://user-images.githubusercontent.com/121796483/212867119-a05b1204-0be7-4f0b-866b-675b4b0b4280.mp4" title="Gem builder" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
 
 ## Tutorial
 
