@@ -12,9 +12,7 @@ Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about 
 
 :::
 
-[Gems](docs/concepts/gems.md) are operations you can add to your Pipeline to perform actions on your data. The **Gem Builder** allows you to create custom UI experiences that will generate optimized code wherever it's used. You can add your own custom sources, targets and
-transformations and roll it out to your entire team. You can even build a custom Data Quality
-library, or auditing library.
+[Gems](docs/concepts/gems.md) are operations you can add to your Pipeline to perform actions on your data. The **Gem Builder** allows you to create custom UI experiences that will generate optimized code wherever it's used. You can add your own custom sources, targets, and transformations and roll them out to your entire team. You can even build a custom Data Quality library, or an auditing library.
 
 <div class="video-container">
 <iframe src="https://www.youtube.com/embed/K23pOatAeVE" title="YouTube video player" frameborder="0"
@@ -25,12 +23,12 @@ allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; pic
 
 ## Getting Started
 
-All of our Gems are stored at account level. Once you navigate to the Gem listing page you will see all the Prophecy defined and User Defined Gems. You can add a new Gem or modify an existing one.
+All of our Gems are stored at the account level. Once you navigate to the Gem listing page you will see all the Prophecy-defined and User Defined Gems. You can add a new Gem or modify an existing one.
 
 After writing your Gem code, you can click `Preview` to see how the Gem UI looks. You can fill in some values, and click save to check the Spark code which will be generated for the Gem.
 Finally, just publish the Gems and your Gem is ready to be used in the Pipelines.
 
-Please refer below video for step-by-step example:
+Please refer below video for a step-by-step example:
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -41,7 +39,7 @@ Please refer below video for step-by-step example:
 
 The Gem builder is a tool that enables users to create any custom Gems or modify existing ones. There are two types of Gems:
 
-- **DataSource Gems**: These Gems enable reading and writing of data from or to various data sources
+- **DataSource Gems**: These Gems enable the reading and writing of data from or to various data sources
 - **Transform Gems**: These Gems apply transformations/joins/any other custom logic onto any DataFrame(s) that are passed into them.
 
 Programmatically, a Gem is a component with the following parts:
@@ -188,12 +186,12 @@ object Filter extends ComponentSpec {
 ### Parent Class
 
 Your Gem class needs to extend a parent class from which it inherits the representation of the overall Gem. This includes the UI and the logic.
-For transform Gems you need to extend `ComponentSpec` (like in the example above), for Source/Target Gem you need to extend `DatasetSpec`. We will see the difference between the two at the end.
+For transform Gems, you need to extend `ComponentSpec` (like in the example above), and for Source/Target Gems you need to extend `DatasetSpec`. We will see the difference between the two at the end.
 
 First thing you give after this is the name and category of your Gem, `"Filter"` and `"Transform"` in this example.
 
 Another thing to note here is `optimizeCode`. This flag can be set to `True` or `False` value depending on whether we want the Prophecy Optimizer to run on this code to simplify it.
-In most cases it's best to leave this value as `True`.
+In most cases, it's best to leave this value as `True`.
 
 ````mdx-code-block
 <Tabs>
@@ -224,11 +222,11 @@ override def optimizeCode: Boolean = true
 
 ### Properties Classes
 
-There is one class (seen here as `FilterProperties`) which contains a list of the properties to be made available to the user for this particular Gem. Think of these as all the values a user fills out within the template of this Gem, or any other UI state that you need to maintain (seen here as `columnsSelector` and `condition`).
+There is one class (seen here as `FilterProperties`) that contains a list of the properties to be made available to the user for this particular Gem. Think of these as all the values a user fills out within the template of this Gem, or any other UI state that you need to maintain (seen here as `columnsSelector` and `condition`).
 
 :::caution
 
-The content of these `Properties` classes are persisted to JSON and stored in Git, so be careful not to keep any information in them that could be a potential security risk.
+The content of these `Properties` classes is persisted in JSON and stored in Git, so be careful not to keep any information in them that could be a potential security risk.
 
 :::
 
@@ -310,21 +308,21 @@ def dialog: Dialog = Dialog("Filter")
 
 ````
 
-The above Dialog code in filter is rendered on UI like this
+The above Dialog code in the filter is rendered on UI like this
 ![Dialog](img/gem-builder-ui.png)
 
-There are various UI components that can be defined for your custom Gem such as scroll boxes, tabs, buttons, and more! These UI components can be grouped together in various types of panels to create a custom user experience when using the Gem.
+There are various UI components that can be defined for your custom Gems such as scroll boxes, tabs, buttons, and more! These UI components can be grouped together in various types of panels to create a custom user experience when using the Gem.
 
-After the Dialog object is defined, it's serialized as JSON, sent to the UI and rendered there.
+After the Dialog object is defined, it's serialized as JSON, sent to the UI, and rendered there.
 
 Depending on what kind of Gem you're creating, you'll have to define either a `Dialog` or a `DatasetDialog`.
 
-- The **Transformation Dialog**: The Dialog for Transformation Gems (any Gem that is not a Dataset Gem) are created using the `dialog` method, which must return a Dialog object.
+- The **Transformation Dialog**: The Dialog for Transformation Gems (any Gem that is not a Dataset Gem) is created using the `dialog` method, which must return a Dialog object.
 
 - The **Dataset Dialog**: The Dialog for a [Source/Target](../gems/source-target/) Gem is a `DatasetDialog` object. You will need to have `source` and `target` methods defined.
 
-Column Selector: This is a special property which you should add if you want to select the columns from UI and then highlight the used columns using the `onChange` function.
-It is recommended to try out this dialogue code in Gem builder UI and see how each of these elements look in UI.
+Column Selector: This is a special property that you should add if you want to select the columns from UI and then highlight the used columns using the `onChange` function.
+It is recommended to try out this dialogue code in Gem builder UI and see how each of these elements looks in UI.
 
 :::info
 **Coming Soon**
@@ -362,7 +360,7 @@ def validate(component: Component)(implicit context: WorkflowContext): List[Diag
 
 ### State Changes
 
-The `onChange` method is given for the UI State transformations. You are given both the previous and the new incoming state and can merge or modify the state as needed. The properties of the Gem are also accessible to this function, so functions like selecting columns etc. is possible to add from here.
+The `onChange` method is given for the UI State transformations. You are given both the previous and the new incoming state and can merge or modify the state as needed. The properties of the Gem are also accessible to this function, so functions like selecting columns, etc. are possible to add from here.
 
 ````mdx-code-block
 <Tabs>
@@ -397,7 +395,7 @@ def onChange(oldState: Component, newState: Component)(implicit context: Workflo
 
 ### Component Code
 
-The last class used here is `FilterCode` which is inherited from `ComponentCode` class. This class contains the actual Spark code that needs to run on your Spark cluster. Here the above User Defined properties are accessible using `self.props.{property}`. The Spark code for the Gem logic is defined in apply function.
+The last class used here is `FilterCode` which is inherited from `ComponentCode` class. This class contains the actual Spark code that needs to run on your Spark cluster. Here the above User Defined properties are accessible using `self.props.{property}`. The Spark code for the Gem logic is defined in the apply function.
 For example, we are calling the `.filter()` method in this example in the apply function.
 
 ````mdx-code-block
@@ -435,7 +433,7 @@ You can go ahead and preview the component in the Gem Builder now to see how it 
 
 ## DataSources Gems
 
-DataSource Gems (also referred to as Source/Target Gems) are Gems which you use to read/write your Datasets into DataFrames. The only major difference between a Source/Target Gem and a Transformation Gem is that a Source/Target Gem will have two `dialog` and two `apply` functions each for Source and Target respectively. Let's look at them with an example
+DataSource Gems (also referred to as Source/Target Gems) are Gems that you use to read/write your Datasets into DataFrames. The only major difference between a Source/Target Gem and a Transformation Gem is that a Source/Target Gem will have two `dialog` and two `apply` functions each for Source and Target respectively. Let's look at them with an example
 
 ````mdx-code-block
 <Tabs>
@@ -858,7 +856,7 @@ object ParquetFormat extends DatasetSpec {
 Here you can see that the major difference between a Transform Gem and a DataSource Gem is
 
 1. The Source/Target Gem extends `DatasetSpec`
-2. It has two Dialog functions: `sourceDialog` and `targetDialog`. They return both a `DatasetDialog` object whereas for any Transform Gem, the dialog function returns a `Dialog` object.
+2. It has two Dialog functions: `sourceDialog` and `targetDialog`. They return both a `DatasetDialog` object, whereas for any Transform Gem, the dialog function returns a `Dialog` object.
 3. The `ComponentCode` class has two apply functions: `sourceApply` and `targetApply` for Source and Target modes respectively.
 
 There is no change in `onChange` and `validate` functions.
