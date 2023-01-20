@@ -27,7 +27,7 @@ allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; pic
 
 All of our Gems are stored at account level. Once you navigate to the Gem listing page you will see all the Prophecy defined and User Defined Gems. You can add a new Gem or modify an existing one.
 
-After writing your Gem code, you can click `Preview` to see, how the Gem UI look. You can fill in some values, and click save to check the Spark code which will be generated for the Gem.
+After writing your Gem code, you can click `Preview` to see how the Gem UI looks. You can fill in some values, and click save to check the Spark code which will be generated for the Gem.
 Finally, just publish the Gems and your Gem is ready to be used in the Pipelines.
 
 Please refer below video for step-by-step example:
@@ -188,11 +188,11 @@ object Filter extends ComponentSpec {
 ### Parent Class
 
 Your Gem class needs to extend a parent class from which it inherits the representation of the overall Gem. This includes the UI and the logic.
-For transform Gems you need to extend `ComponentSpec` (Like in the example above), for Source/Target Gem you need to extend `DatasetSpec`. We will see the difference between the two at the end.
+For transform Gems you need to extend `ComponentSpec` (like in the example above), for Source/Target Gem you need to extend `DatasetSpec`. We will see the difference between the two at the end.
 
 First thing you give after this is the name and category of your Gem, `"Filter"` and `"Transform"` in this example.
 
-Another thing note here is `optimizeCode`. This function returns a `True` or `False` value depending on whether we want the Prophecy Optimizer to run on this code to simplify it.
+Another thing to note here is `optimizeCode`. This flag can be set to `True` or `False` value depending on whether we want the Prophecy Optimizer to run on this code to simplify it.
 In most cases it's best to leave this value as `True`.
 
 ````mdx-code-block
@@ -264,7 +264,7 @@ Let's look at each of these functions.
 
 ### Dialog
 
-The `dialog` function contain code specific to how the Gem UI should look to the user.
+The `dialog` function contains code specific to how the Gem UI should look to the user.
 
 ````mdx-code-block
 <Tabs>
@@ -313,7 +313,7 @@ def dialog: Dialog = Dialog("Filter")
 The above Dialog code in filter is rendered on UI like this
 ![Dialog](img/gem-builder-ui.png)
 
-There are various UI Components that can be defined for your custom Gem such as Scroll boxes, tabs, buttons, and more! These UI Components can be grouped together in various type of Panels to create a custom User experiences when using the Gem.
+There are various UI components that can be defined for your custom Gem such as scroll boxes, tabs, buttons, and more! These UI components can be grouped together in various types of panels to create a custom user experience when using the Gem.
 
 After the Dialog object is defined, it's serialized as JSON, sent to the UI and rendered there.
 
@@ -431,11 +431,11 @@ class FilterCode(props: PropertiesType)(implicit context: WorkflowContext) exten
 
 ````
 
-You can go ahead and preview the component in the Gem Builder now to see how it looks like. You can modify the properties and then save it to preview the generated Spark code which will eventually run on your cluster.
+You can go ahead and preview the component in the Gem Builder now to see how it looks. You can modify the properties and then save it to preview the generated Spark code which will eventually run on your cluster.
 
 ## DataSources Gems
 
-DataSource Gems (also referred to as Source/Target Gems) are Gems which you use to read/write your Datasets into DataFrames. The only major difference between a Source/Target Gem and a Transformation Gem is that a Source/Target Gem will have two `dialog` and two `appl`y functions each for Source and Target respectively. Let's look at them with an example
+DataSource Gems (also referred to as Source/Target Gems) are Gems which you use to read/write your Datasets into DataFrames. The only major difference between a Source/Target Gem and a Transformation Gem is that a Source/Target Gem will have two `dialog` and two `apply` functions each for Source and Target respectively. Let's look at them with an example
 
 ````mdx-code-block
 <Tabs>
