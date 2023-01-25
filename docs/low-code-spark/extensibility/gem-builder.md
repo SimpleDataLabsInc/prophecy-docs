@@ -12,7 +12,9 @@ Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about 
 
 :::
 
-[Gems](docs/concepts/gems.md) are operations you can add to your Pipeline to perform actions on your data. The **Gem Builder** allows you to create custom UI experiences that will generate optimized code wherever it's used. You can add your own custom sources, targets, and transformations and roll them out to your entire team. You can even build a custom Data Quality library, or an auditing library.
+Each Prophecy Pipeline is composed of individual operations, or [Gems](docs/concepts/gems.md), that perform actions on data. While Prophecy offers dozens of Gems out-of-the-box, some data practitioners want to extend this idea and create their own Gems. Luckily, Gem Builder allows enterprise users to add custom Gems. Create custom source, target, and transformation Gems, publish, and your team can utilize your custom Gem. Like all Prophecy Gems, the Custom Gem code will be saved to Git using Python or Scala.
+
+Consider repeated patterns when deciding when to create a custom Gem. Does your team use a particular business logic frequently? Do you notice yourself doing the same Data Quality checks more than once a month? Does your team have an auditing use case that could benefit from re-usable code? Consider a custom Gem to capture these logical patterns for re-use!
 
 <div class="video-container">
 <iframe src="https://www.youtube.com/embed/K23pOatAeVE" title="YouTube video player" frameborder="0"
@@ -23,7 +25,7 @@ allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; pic
 
 ## Getting Started
 
-All of our Gems are stored at the account level. Once you navigate to the Gem listing page you will see all the Prophecy-defined and User Defined Gems. You can add a new Gem or modify an existing one.
+Custom Gem logic can be shared with other users within the Team and Organization. Navigate to the Gem listing to review Prophecy-defined and User-defined Gems. Add a new Gem or modify an existing Gem. Specify Gem name, preferred language, and Gem category. Paste your code specification at the prompt. Click Preview to review the UX. Fill in some values and click save to check the Python or Scala code generated. When the Gem is ready, Publish! The new Custom Gem is available to use in Pipelines!
 
 After writing your Gem code, you can click `Preview` to see how the Gem UI looks. You can fill in some values, and click save to check the Spark code which will be generated for the Gem.
 Finally, just publish the Gems and your Gem is ready to be used in the Pipelines.
