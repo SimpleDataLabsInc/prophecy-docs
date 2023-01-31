@@ -12,7 +12,7 @@ Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about 
 
 :::
 
-[Gems](docs/concepts/gems.md) are operations you can add to your Pipeline to perform actions on your data. The **Gem Builder** allows you to create custom UI experiences that will generate optimized code wherever it's used. You can add your own custom sources, targets, and transformations and roll them out to your entire team. You can even build a custom Data Quality library, or an auditing library.
+Each Prophecy Pipeline is composed of individual operations, or [Gems](docs/concepts/gems.md), that perform actions on data. While Prophecy offers dozens of Gems out-of-the-box, some data practitioners want to extend this idea and create their own Gems. Gem Builder allows enterprise users to add custom Gems. Create custom source, target, and transformation Gems, publish, and your team can utilize your custom Gem.
 
 <div class="video-container">
 <iframe src="https://www.youtube.com/embed/K23pOatAeVE" title="YouTube video player" frameborder="0"
@@ -23,16 +23,13 @@ allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; pic
 
 ## Getting Started
 
-All of our Gems are stored at the account level. Once you navigate to the Gem listing page you will see all the Prophecy-defined and User Defined Gems. You can add a new Gem or modify an existing one.
-
-After writing your Gem code, you can click `Preview` to see how the Gem UI looks. You can fill in some values, and click save to check the Spark code which will be generated for the Gem.
-Finally, just publish the Gems and your Gem is ready to be used in the Pipelines.
+Custom Gem logic can be shared with other users within the Team and Organization. Navigate to the Gem listing to review Prophecy-defined and User-defined Gems. Add a new Gem or modify an existing Gem. Specify Gem name, preferred language, and Gem category. Paste/Write your code specification at the prompt. Click `Preview` to review the UX. Fill in some values and click `save` to check the Python or Scala code generated. When the Gem is ready, `Publish`! The new Custom Gem is available to use in Pipelines!
 
 Please refer below video for a step-by-step example:
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/121796483/212867119-a05b1204-0be7-4f0b-866b-675b4b0b4280.mp4" title="Gem builder" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+<iframe src="https://user-images.githubusercontent.com/121796483/215807557-c64d2e96-9f2b-47d8-b5ed-7b449dba3246.mp4" title="Gem builder" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
 ## Tutorial
@@ -47,7 +44,7 @@ Programmatically, a Gem is a component with the following parts:
 - The **Gem UI Component** to get user information from the screen (This code is rendered on the Prophecy UI)
 - The **Gem Code Logic** which is how the Gem acts within the context of a Pipeline.
 
-You can write Gem code using either Python or Scala
+Gem code can be written using either Python or Scala.
 
 ## Defining a Gem
 
@@ -226,7 +223,7 @@ There is one class (seen here as `FilterProperties`) that contains a list of the
 
 :::caution
 
-The content of these `Properties` classes is persisted in JSON and stored in Git, so be careful not to keep any information in them that could be a potential security risk.
+The content of these `Properties` classes is persisted in JSON and stored in Git.
 
 :::
 
@@ -248,10 +245,13 @@ These properties are available in `validate`, `onChange` and `apply` and can be 
 <TabItem value="scala" label="Scala">
 
 ```scala
-object Filter extends ComponentSpec {
-  val name: String = "Filter"
-  val category: String = "Transform"
-  override def optimizeCode: Boolean = true
+    case class FilterProperties(
+    @Property("Columns selector")
+    columnsSelector: List[String] = Nil,
+    @Property("Filter", "Predicate expression to filter rows of incoming dataframe")
+    condition: SColumn = SColumn("lit(true)")
+  ) extends ComponentProperties
+
 ```
 </TabItem>
 </Tabs>
@@ -408,7 +408,7 @@ class FilterCode(ComponentCode):
 def __init__(self, newProps):
 self.props: Filter.FilterProperties = newProps
 
-        def apply(self, spark: SparkSession, in0: DataFrame) -> DataFrame:
+    def apply(self, spark: SparkSession, in0: DataFrame) -> DataFrame:
             return in0.filter(self.props.condition.column())
 ```
 </TabItem>
@@ -433,7 +433,7 @@ You can go ahead and preview the component in the Gem Builder now to see how it 
 
 ## DataSources Gems
 
-DataSource Gems (also referred to as Source/Target Gems) are Gems that you use to read/write your Datasets into DataFrames. The only major difference between a Source/Target Gem and a Transformation Gem is that a Source/Target Gem will have two `dialog` and two `apply` functions each for Source and Target respectively. Let's look at them with an example
+DataSource Gems (also referred to as Source/Target Gems) are Gems that you use to read/write your Datasets into DataFrames. There are certain differences between how you define a Source/Target Gem and a Transformation Gem. For example, a Source/Target Gem will have two `dialog` and two `apply` functions each for Source and Target respectively. Let's look at them with an example
 
 ````mdx-code-block
 <Tabs>
@@ -853,7 +853,7 @@ object ParquetFormat extends DatasetSpec {
 </Tabs>
 ````
 
-Here you can see that the major difference between a Transform Gem and a DataSource Gem is
+Here you can see that the differences between a Transform Gem and a DataSource Gem is
 
 1. The Source/Target Gem extends `DatasetSpec`
 2. It has two Dialog functions: `sourceDialog` and `targetDialog`. They return both a `DatasetDialog` object, whereas for any Transform Gem, the dialog function returns a `Dialog` object.
