@@ -182,7 +182,7 @@ object Filter extends ComponentSpec {
 
 ### Parent Class
 
-Your Gem class needs to extend a parent class from which it inherits the representation of the overall Gem. This includes the UI and the logic.
+Every Gem class needs to extend a parent class from which it inherits the representation of the overall Gem. This includes the UI and the logic.
 For transform Gems, you need to extend `ComponentSpec` (like in the example above), and for Source/Target Gems you need to extend `DatasetSpec`. We will see the difference between the two at the end.
 
 First thing you give after this is the name and category of your Gem, `"Filter"` and `"Transform"` in this example.
@@ -308,14 +308,15 @@ def dialog: Dialog = Dialog("Filter")
 
 ````
 
-The above Dialog code in the filter is rendered on UI like this
+The above Dialog code in the filter is rendered on UI like this:
+
 ![Dialog](img/gem-builder-ui.png)
 
-There are various UI components that can be defined for your custom Gems such as scroll boxes, tabs, buttons, and more! These UI components can be grouped together in various types of panels to create a custom user experience when using the Gem.
+There are various UI components that can be defined for custom Gems such as scroll boxes, tabs, buttons, and more! These UI components can be grouped together in various types of panels to create a custom user experience when using the Gem.
 
 After the Dialog object is defined, it's serialized as JSON, sent to the UI, and rendered there.
 
-Depending on what kind of Gem you're creating, you'll have to define either a `Dialog` or a `DatasetDialog`.
+Depending on what kind of Gem is being created, either a `Dialog` or a `DatasetDialog` needs to be defined.
 
 - The **Transformation Dialog**: The Dialog for Transformation Gems (any Gem that is not a Dataset Gem) is created using the `dialog` method, which must return a Dialog object.
 
@@ -395,7 +396,7 @@ def onChange(oldState: Component, newState: Component)(implicit context: Workflo
 
 ### Component Code
 
-The last class used here is `FilterCode` which is inherited from `ComponentCode` class. This class contains the actual Spark code that needs to run on your Spark cluster. Here the above User Defined properties are accessible using `self.props.{property}`. The Spark code for the Gem logic is defined in the apply function.
+The last class used here is `FilterCode` which is inherited from `ComponentCode` class. This class contains the actual Spark code that needs to run on your Spark cluster. Here the above User Defined properties are accessible using `self.props.{property}`. The Spark code for the Gem logic is defined in the apply function. Input/Output of apply method can only be DataFrame or list of DataFrames or empty.
 For example, we are calling the `.filter()` method in this example in the apply function.
 
 ````mdx-code-block
@@ -431,9 +432,9 @@ class FilterCode(props: PropertiesType)(implicit context: WorkflowContext) exten
 
 You can go ahead and preview the component in the Gem Builder now to see how it looks. You can modify the properties and then save it to preview the generated Spark code which will eventually run on your cluster.
 
-## DataSources Gems
+## Source/Target Gems
 
-DataSource Gems (also referred to as Source/Target Gems) are Gems that you use to read/write your Datasets into DataFrames. There are certain differences between how you define a Source/Target Gem and a Transformation Gem. For example, a Source/Target Gem will have two `dialog` and two `apply` functions each for Source and Target respectively. Let's look at them with an example
+Source/Target Gems are Gems that you use to read/write your Datasets into DataFrames. There are certain differences between how you define a Source/Target Gem and a Transformation Gem. For example, a Source/Target Gem will have two `dialog` and two `apply` functions each for Source and Target respectively. Let's look at them with an example
 
 ````mdx-code-block
 <Tabs>
