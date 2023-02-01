@@ -7,7 +7,7 @@ title: Release Notes
 sidebar_label: Release Notes
 ---
 
-The following new features, behavior changes, and updates (enhancements, fixes, etc.) have been introduced this month. If you have any questions about these additions, please [contact Prophecy] (mailto:contact.us@Prophecy.io).
+The following new features, behavior changes, and updates (enhancements, fixes, etc.) have been introduced this month. If you have any questions about these additions, please [contact Prophecy](mailto:contact.us@Prophecy.io).
 
 ### Important
 
