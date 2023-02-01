@@ -7,9 +7,11 @@ title: Release Notes
 sidebar_label: Release Notes
 ---
 
+### Release 2.6.0.0 February 2022
+
 The following new features, behavior changes, and updates (enhancements, fixes, etc.) have been introduced this month. If you have any questions about these additions, please [contact Prophecy](mailto:contact.us@Prophecy.io).
 
-### Important
+#### Important
 
 Each release may include updates that require the web interface to be refreshed.
 
