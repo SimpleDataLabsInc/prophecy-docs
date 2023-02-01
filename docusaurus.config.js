@@ -80,7 +80,7 @@ const config = {
             items: [
               {
                 label: "Slack",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
+                href: "https://join.slack.com/t/prophecy-io-support/shared_invite/zt-1dwuvkakg-JcavnQuoukyZ3q5jkSkKCg",
               },
             ],
           },

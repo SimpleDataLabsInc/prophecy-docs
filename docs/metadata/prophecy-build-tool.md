@@ -17,17 +17,19 @@ tags:
 PySpark Pipelines) to integrate with your own CI / CD (e.g. Github Actions), build system (e.g. Jenkins), and
 orchestration (e.g. Databricks Workflows).
 
-## Features (v1.0.1)
+## Features (v1.0.3.3)
 
 - Build and unit test all Pipelines in Prophecy projects (Scala and Python)
 - Deploy Jobs with built Pipelines on Databricks
-- Integrate with CI/CD tools like Github Actions
+- Integrate with CI/CD tools like GitHub Actions
 - Verify the project structure of Prophecy projects
+- Support for Project Configurations
 
 ## Requirements
 
-- Python >=3.6
+- Python >=3.6 (Recommended 3.9.13)
 - pip
+- `pyspark` (Recommended 3.3.0)
 
 ## Installation
 
@@ -67,14 +69,24 @@ export DATABRICKS_TOKEN="exampledatabrickstoken"
 
 #### Building Pipelines and deploying Jobs
 
+PBT can build and deploy Jobs inside your Prophecy project to the Databricks environment defined by the `DATABRICKS_HOST` and `DATABRICKS_TOKEN`
+environment variables.
+
+Since v1.0.3 PBT supports new input parameters that are used to determine the DBFS path where your project's artifacts would
+be uploaded. These are the `--release-version` and `--project-id` parameters which would be used to replace the `__PROJECT_RELEASE_VERSION_ PLACEHOLDER__` and `__PROJECT_ID_PLACEHOLDER__` placeholders that would already be present in your Job's definition file
+(`databricks-job.json`). Using a unique release version of your choice and the project's Prophecy ID
+(as seen in the project's URL on the Prophecy UI) is recommended.
+
+Example deploy command:
+
 ```shell
-pbt deploy --path /path/to/your/prophecy_project/
+pbt deploy --path /path/to/your/prophecy_project/ --release-version 1.0 --project-id 10
 ```
 
 Sample output:
 
 ```shell
-Prophecy-build-tool v1.0.1
+Prophecy-build-tool v1.0.3.3
 
 Found 1 jobs: daily
 Found 1 pipelines: customers_orders (python)
@@ -96,13 +108,42 @@ Querying existing jobs to find current job: Offset: 0, Pagesize: 25
 ✅ Deployment completed successfully!
 ```
 
-#### Running all unit tests in project
+The `deploy` command also supports an advanced option `--dependent-projects-path` if there is a need to build projects other than the main project that has to be deployed.
+This would be useful if there are dependent Pipelines whose source code can be cloned into a different directory accessible to PBT
+while running `deploy` for the main project. This option supports only one path as argument but the path itself can contain multiple Prophecy projects within it in different
+subdirectories.
 
-Running unit tests requires **FABRIC_NAME** environment variable to be set. This will be used to pick the correct configuration for running the unit tests. Example:
+Example deploy command:
 
 ```shell
-export FABRIC_NAME="dev"
+pbt deploy --path /path/to/your/prophecy_project/ --release-version 1.0 --project-id 10 --dependent-projects-path /path/to/dependent/prophecy/projects
 ```
+
+Complete list of options for PBT `deploy`:
+
+```shell
+pbt deploy --help
+Prophecy-build-tool v1.0.3.3
+
+Usage: pbt deploy [OPTIONS]
+
+Options:
+  --path TEXT                     Path to the directory containing the
+                                  pbt_project.yml file  [required]
+  --dependent-projects-path TEXT  Dependent projects path
+  --release-version TEXT          Release version to be used during
+                                  deployments
+  --project-id TEXT               Project Id placeholder to be used during
+                                  deployments
+  --prophecy-url TEXT             Prophecy URL placeholder to be used during
+                                  deployments
+  --help                          Show this message and exit.
+```
+
+#### Running all unit tests in project
+
+PBT supports running unit tests inside the Prophecy project. Unit tests run with the `default` configuration present in the
+Pipeline's `configs/resources/config` directory.
 
 To run all unit tests present in the project, use the `test` command as follows:
 
@@ -135,7 +176,7 @@ Found 1 pipelines: customers_orders (python)
 ✅ Unit test for pipeline: pipelines/customers_orders succeeded.
 ```
 
-## Integrating with Github Actions
+## Integrating with GitHub Actions
 
 PBT can be integrated with your own CI/CD solution to build, test and deploy Prophecy code. The steps for setting up PBT with Github Actions on your repository containing a Prophecy project is mentioned below.
 
@@ -145,7 +186,7 @@ PBT can be integrated with your own CI/CD solution to build, test and deploy Pro
 
 ### Setting up environment variables and secrets
 
-PBT requires environment variables **DATABRICKS_URL, DATABRICKS_TOKEN** and **FABRIC_NAME** to be set for complete functionality.
+PBT requires environment variables **DATABRICKS_URL** and **DATABRICKS_TOKEN** to be set for complete functionality.
 Setting **DATABRICKS_TOKEN** as a secret in Github
 The **DATABRICKS_TOKEN** that needs to be used can be set as a secret inside the Github repository of the project.
 Steps:
@@ -163,12 +204,11 @@ The environment variables can now be all set within the Github actions YML file 
 env:
   DATABRICKS_HOST: "https://sample_databricks_url.cloud.databricks.com"
   DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
-  FABRIC_NAME: "dev"
 ```
 
 The complete YML file definition is discussed in the next section.
 
-### Setting up a Github Actions Workflow on every push to main branch
+### Setting up a GitHub Actions Workflow on every push to main branch
 
 We’re now ready to setup CI/CD on the Prophecy project.
 To setup a workflow to build, run all unit tests and then deploy the built jar (Scala)/ whl (Python) on Databricks on every push to the main automatically:
@@ -192,7 +232,6 @@ on:
 env:
   DATABRICKS_HOST: "https://sample_databricks_url.cloud.databricks.com"
   DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
-  FABRIC_NAME: "dev"
 
 jobs:
   build:
@@ -205,29 +244,31 @@ jobs:
         with:
           java-version: "11"
           distribution: "adopt"
-      - name: Set up Python 3.x
+      - name: Set up Python 3.9.13
         uses: actions/setup-python@v4
         with:
-          python-version: "3.x"
+          python-version: "3.9.13"
       # Install all python dependencies
       # prophecy-libs not included here because prophecy-build-tool takes care of it by reading each pipeline's setup.py
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip
-          pip3 install build pytest wheel pytest-html pyspark  prophecy-build-tool
+          pip3 install build pytest wheel pytest-html pyspark==3.3.0  prophecy-build-tool
       - name: Run PBT build
         run: pbt build --path .
       - name: Run PBT test
         run: pbt test --path .
       - name: Run PBT deploy
-        run: pbt deploy --path .
+        run: pbt deploy --path . --release-version 1.0 --project-id example_project_id
 ```
 
 The above workflow does the following in order:
 
-1. Triggers on every change that is pushed to the branch ‘main’
-2. Sets the environment variables required for PBT to run: DATABRICKS_HOST, DATABRICKS_TOKEN and FABRIC_NAME
-3. Sets up JDK 11, Python 3 and other dependencies required for PBT to run
+1. Triggers on every change that is pushed to the branch ‘main’.
+2. Sets the environment variables required for PBT to run: DATABRICKS_HOST and DATABRICKS_TOKEN.
+3. Sets up JDK 11, Python 3 and other dependencies required for PBT to run.
 4. Builds all the Pipelines present in the project and generates a .jar/.whl file. If the build fails at any point a non-zero exit code is returned which stops the workflow from proceeding further and the workflow run is marked as a failure.
-5. Runs all the unit tests present in the project using FABRIC_NAME as the configuration. If any of the unit test fails a non-zero exit code is returned which stops the workflow from proceeding further and the workflow run is marked as a failure.
-6. Deploys the built .jar/.whl to the Databricks location mentioned in `databricks-job.json` mentioned in the `jobs` directory of the project. If the Job already exists in Databricks it is updated with the new .jar/.whl. If this process fails at any step, a non-zero exit code is returned which stops the workflow from proceeding further and the workflow run is marked as a failure.
+5. Runs all the unit tests present in the project using FABRIC_NAME(optional) as the configuration. If any of the unit test fails a non-zero exit code is returned which stops the workflow from proceeding further and the workflow run is marked as a failure.
+6. Deploys the built .jar/.whl to the Databricks location mentioned in `databricks-job.json` mentioned in the `jobs` directory of the project. If the Job already exists in Databricks it is updated with the new .jar/.whl.
+7. Deploys Pipeline configurations, if present, to the DBFS path mentioned in `databricks-job.json`.
+8. If this process fails at any step, a non-zero exit code is returned which stops the workflow from proceeding further and the workflow run is marked as a failure.
