@@ -31,13 +31,17 @@ real-time powered by Spark Structured Streaming.
 
 With this release, Prophecy is pleased to announce the support for integrating with Prophecy through Databricks Partner Connect on GCP. For example, when Databricks is deployed and running on GCP and integration between Prophecy and Databricks is needed, the user can integrate with Prophecy through Databricks Partner Connect.
 
+#### Interims for Unity Catalog Workspaces
+
+With this release, Prophecy is pleased to announce the ability to see interims in Unity Catalog workspaces and standalone Gems. Execution Metrics are now available in shared mode for non-Unity Catalog workspaces.
+
 #### Data Fabric ACL
 
 With this release, Prophecy is pleased to announce the support for Data Fabric authorization. This feature allows administrators within a team to assign proper access to its team members. For example, only a team’s administrator can perform tasks such as creation and deletion of Data Fabrics.
 
 #### Wide data set optimization
 
-With this release, Prophecy is pleased to announce the optimization for wide data sets. The new optimization speeds up wide table processing by adding pre-optimization phases. For example, for data with 200+ columns, processing time is optimized from double digit seconds to milliseconds.
+With this release, Prophecy is pleased to announce the optimization for wide data sets. The new optimization speeds up wide table processing on the UI layer by adding pre-optimization phases. For example, for data with 200+ columns, processing time is optimized from double digit seconds to milliseconds.
 
 #### Team-level execution metrics
 
@@ -46,10 +50,6 @@ With this release, Prophecy is pleased to announce team-level execution metrics.
 - Pipeline Metrics Table
 - Component (Dataset) Metrics Table
 - Interim Table
-
-#### Interims for Unity Catalog Workspaces
-
-With this release, Prophecy is pleased to announce the ability to see interims in Unity Catalog workspaces and standalone Gems. Execution Metrics are now available in shared mode for non-Unity Catalog workspaces.
 
 #### Spark configurations in Livy Fabric
 
