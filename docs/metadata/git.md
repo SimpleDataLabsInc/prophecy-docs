@@ -10,30 +10,44 @@ tags:
 
 ## How to connect to external Git
 
-To connect to an external Git, the process is as easy as configuring your:
+To connect to an external Git provider, Prophecy just need `Email`, `Username` and `Access Token`.
 
-1. Git Repo URL: e.g. `https://github.com/user/git_demo.git`
-2. Path: path to project inside the repo. e.g. `/first_project`
-3. Email and username
-4. Access token
+![GitConnector](img/git_connector.png)
 
-Please refer below video for step-by-step example:
+For Github Cloud we also have a first class integration to directly connect to your Github account by using `Login with Github` option.
+
+Please refer below video for step-by-step example for how to set up your external Git provider:
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://fast.wistia.net/embed/iframe/v3pjcr4gry?seo=false?videoFoam=true" title="External Git" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+<iframe src="https://user-images.githubusercontent.com/121796483/216262458-a2c4a45b-d999-4fe8-99eb-f39a494062ca.mp4" title="External Git" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
+
+Every user will have a `Prophecy Managed` Git provider already created in their account. You can just use this if you don't want to store your code to an external Git.
+
+## How to create a new project with external Git provider
+
+Once a Git Credential is created, these credentials can be used during project creation.
+
+Please refer below video for step-by-step example
+
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://user-images.githubusercontent.com/121796483/216262055-a2507bfa-b363-4e41-8a32-c11896606173.mp4" title="External Git" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+
+If you have not created your Git credentials already, you also have an option to create a new one from the project creation screen directly. They will also start reflecting in your Git screen and can be reused further for new projects.
 
 ## How to commit changes
 
 When you create your first project, `dev` branch is automatically created for you. This is to ensure that no edits/commits are
 made directly on the `main` branch and a proper CICD flow is followed during development.
 
-Creation of first project and commit changes to `dev` branch:
+Creation of first Pipeline and commit changes to `dev` branch:
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/103921419/174550520-ccd5ef9c-4733-47ed-abec-8012018b103f.mp4" title="How to commit" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+<iframe src="https://user-images.githubusercontent.com/121796483/216262123-8f1c71d2-f4d9-40a4-bc6f-a11b81e2b68c.mp4" title="How to commit" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
 ## How to create/checkout branch
