@@ -16,7 +16,7 @@ In the Metadata view of the UI you'll find the [Pipeline list](https://app.proph
 
 ![Pipeline list](img/pipeline/metadata_pipeline_list.png)
 
-If this list is empty, follow the instructions below to create a new one
+Follow the instructions below to create a new one
 
 ## Creating a Pipeline
 
@@ -40,7 +40,7 @@ Clicking the `Pipeline` button will pop up the **Pipeline Creation** UI.
 
 When editing a `Pipeline`, you'll be using the editor shown below.
 
-![Editing a pipeline](img/pipeline/edit_pipeline.png)
+![Editing a Pipeline](img/pipeline/edit_pipeline.png)
 
 1. _Pipeline Config_ : Buttons that bring up views related to the configuration of your `Pipeline`:
    1. [Config](../low-code-spark/configuration.md)
