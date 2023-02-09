@@ -15,7 +15,7 @@ Prophecy provides you with three different types of fabrics.
 
 ### **Prophecy Managed**
 
-Using this option, you can create a 14-Day Free Trial Fabric, On Prophecy Managed Databricks. This you can use when trying out Prophecy and when you don't want to spawn your own Spark Execution Environment. We already have some sample data and tables created to try out the different functionalities.
+Using this option, you can create a 14-Day Free Trial Fabric, On Prophecy Managed Databricks. You can use this when trying out Prophecy and when you don't want to connect your own Spark Execution Environment to Prophecy. We already have some sample data and tables created to try out the different functionalities.
 Please refer below video for step-by-step example
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
@@ -27,7 +27,8 @@ In this Fabric you can only change the [Databricks Runtime version](https://docs
 
 ### **Databricks**
 
-If using Databricks, to manage your Spark execution environment, you can use this option to create a Fabric. Think of a fabric as connection to your [Databricks workspace](https://docs.databricks.com/workspace/index.html#navigate-the-workspace).
+To connect your own Databricks Workspace to Prophecy, you can use this option to create a Fabric. Think of a fabric as connection to your [Databricks workspace](https://docs.databricks.com/workspace/index.html#navigate-the-workspace).
+
 Please refer below video for step-by-step example
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>

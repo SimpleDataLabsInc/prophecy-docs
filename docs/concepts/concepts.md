@@ -11,8 +11,8 @@ Before you begin using Prophecy, you should be familiar with the following key c
 
 Teams are the primary mechanism of ownership. Each Team represents a group of users who work together.
 
-- **Teams own projects** where Pipelines, Datasets and Jobs live
-- **Teams own execution Fabrics** that provide the execution and storage resources for execution including Spark clusters
+- **Teams own Projects** where Pipelines, Datasets and Jobs live
+- **Teams own Fabrics** that provide the execution and storage resources for execution including Spark clusters
 
 Users get access by being added to a teams
 
@@ -30,14 +30,7 @@ Metadata is how you access and configure all entities in Prophecy. You can go to
 ## Fabrics
 
 Fabric is a logical execution environment. Teams organize their data engineering into multiple environments such as _development_, _staging_, and _production_.
-Think of a Fabric as the Workspace where your actual Spark code will get executed.
-
-Fabric includes everything required to run a data Pipeline
-
-- Credentials and Secrets
-- Spark Environment
-- Scheduler
-- Database Connections
+As an example, if you have a Databricks Workspace, that would map to one Fabric in Prophecy.
 
 ![Fabrics](img/fabrics_details.png)
 
@@ -57,8 +50,8 @@ Datasets (not to be confused with a [Spark Dataset](https://spark.apache.org/doc
 To define a dataset, all you need is
 
 - **Type**: The type of data you are reading/writing like CSV, Parquet files or catalog tables.
-- **Location**: The location of your data like file path for CSV, and DB and table name for Catalog tables.
-- **Properties**: Schema, in this case, is the _shape_ of the data. Column names, their types and _how_ to read and write the data that fits this schema. and some other properties.
+- **Location**: The location of your data. It could be a file path for CSV or a table name.
+- **Properties**: Properties consists of Schema which is the _shape_ of the data and some other attributes specific to the file format. For example, in case of CSV, you can give Column delimiter in additional attributes.
 
 ![Dataset](img/dataset.png)
 
