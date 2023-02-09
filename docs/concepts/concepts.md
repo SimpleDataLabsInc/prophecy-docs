@@ -79,7 +79,7 @@ Each Gem _instance_ comes with their own configuration and each produces its own
 
 ## Jobs
 
-Once you have developed a Spark data Pipeline using Prophecy, you will want to schedule it to run at some frequency. You can schedule just a single Pipeline or he can create a DAG of Pipelines. He can also add scripts to run in between these Pipelines.
+Once you have developed a Spark data Pipeline using Prophecy, you will want to schedule it to run at some frequency. You can schedule just a single Pipeline or create a DAG of Pipelines. You can also add scripts to run in between these Pipelines.
 
 To support Jobs, Prophecy provides you with an easy to use low-code interface to develop, using two different schedulers:
 
