@@ -23,7 +23,7 @@ Please refer below video for step-by-step example
 <iframe src="https://user-images.githubusercontent.com/121796483/217787623-1cf01df2-54d6-4338-bd59-bd921e101ce9.mp4" title="Databricks Fabric" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-In this Fabric you can only change the [Databricks Runtime version](https://docs.databricks.com/runtime/dbr.html#databricks-runtime). The auto-termination timeout, Executor and Driver Machine Type and Job sizes in uneditable.
+In this Fabric you can only change the [Databricks Runtime version](https://docs.databricks.com/runtime/dbr.html#databricks-runtime). The auto-termination timeout, Executor and Driver Machine Type and Job sizes are uneditable.
 
 ### **Databricks**
 
@@ -37,9 +37,20 @@ Please refer below video for step-by-step example
 </div></div>
 
 - **Databricks Credentials** - Here you will provide your Databricks Workspace URL and the [Personal Access token](https://docs.databricks.com/dev-tools/api/latest/authentication.html#generate-a-personal-access-token)
-- **Cluster Details** - Here you would need to provide the [Databricks Runtime version](https://docs.databricks.com/runtime/dbr.html#databricks-runtime), Executor and Drive Machine Types and Termination Timeout if any. These cluster details will be used when creating a cluster for Interactive and Scheduled Job runs.
+- **Cluster Details** - Here you would need to provide the [Databricks Runtime version](https://docs.databricks.com/runtime/dbr.html#databricks-runtime), Executor and Drive Machine Types and Termination Timeout if any. These cluster details will be used when creating a cluster via Prophecy during Interactive development and for job clusters during Scheduled Databricks Job runs.
 - **Job sizes** - By default, you will see a Small Job size pre created. You can edit or add more Job sizes.Here you can provide total number of the Executors and Core and Memory for them.
-- **Prophecy Library** - These are some Scala and Python libraries written by Prophecy to provide additional functionalities on top of Spark. These need to be installed in you Spark execution environment when you spawn a new Session. These are publicly available on Maven central and Pypi respectively.
+  When you click on edit for a Job size, you will see two options: _Basic_ and _Advanced(Json)_.
+
+![Editing a Job](img/job_size.png)
+
+In Advanced Json you can just copy-paste your compute Json from Databricks. Please refer below video for example:
+
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://user-images.githubusercontent.com/121796483/218055564-76860e69-5811-41a7-b18a-6d96e19096ee.mp4" title="Databricks Fabric" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+
+- **Prophecy Library** - These are some Scala and Python libraries written by Prophecy to provide additional functionalities on top of Spark. These would get automatically installed in your Spark execution environment when you attach to a cluster/create new cluster. These libraries are also publicly available on Maven central and Pypi respectively.
 
 ### **Livy**
 
@@ -62,8 +73,8 @@ Please refer below video for step-by-step example
   - Total number of Executors
 
 - **Prophecy Library** -
-  These are some Scala and Python libraries written by Prophecy to provide additional functionalities on top of Spark. These need to be installed in you Spark execution environment when you spawn a new Session. These are publicly available on Maven central and Pypi respectively.
+  These are some Scala and Python libraries written by Prophecy to provide additional functionalities on top of Spark. These would get automatically installed in your Spark execution environment when you attach to a cluster/create new cluster. These libraries are also publicly available on Maven central and Pypi respectively.
 
 - **Spark Config** -
-  These are additional [Spark Properties](https://spark.apache.org/docs/latest/configuration.html#available-properties) you can set which are applied at startup of session.
+  These are additional [Spark Properties](https://spark.apache.org/docs/latest/configuration.html#available-properties) which you can set which would be applied at Spark session initialisation.
   For example if your Spark installation is configured to have dynamic allocation enabled, you can disable it for sessions created through Prophecy.

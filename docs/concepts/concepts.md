@@ -36,7 +36,7 @@ As an example, if you have a Databricks Workspace, that would map to one Fabric 
 
 ## Pipelines
 
-A `Pipeline` (formerly known as a _Workflow_) is a type of entity within Prophecy that is used to represent the flow of data. They are similar to a map you might use on a road trip: You have a **_Start_** and **_Finish_** (Datasets) and the **_stops_** to make along the way (Gems).
+A `Pipeline` (formerly known as a _Workflow_) within Prophecy is used to represent the flow of data. They are similar to a map you might use on a road trip: You have a **_Start_** and **_Finish_** (Datasets) and the **_stops_** to make along the way (Gems).
 
 ![Pipeline](img/pipeline.png)
 
@@ -51,7 +51,7 @@ To define a dataset, all you need is
 
 - **Type**: The type of data you are reading/writing like CSV, Parquet files or catalog tables.
 - **Location**: The location of your data. It could be a file path for CSV or a table name.
-- **Properties**: Properties consists of Schema which is the _shape_ of the data and some other attributes specific to the file format. For example, in case of CSV, you can give Column delimiter in additional attributes.
+- **Properties**: Properties consists of Schema which is the _shape_ of the data and some other attributes specific to the file format. For example, in case of CSV, you can give Column delimiter in additional attributes. User can also define Metadata for each column here like description, tags and mappings.
 
 ![Dataset](img/dataset.png)
 
@@ -76,11 +76,11 @@ Once you have developed a Spark data Pipeline using Prophecy, you will want to s
 
 To support Jobs, Prophecy provides you with an easy to use low-code interface to develop, using two different schedulers:
 
-- **[Databricks Jobs](databricks-jobs.md)** - for simpler data-Pipeline use-cases, where you just
+- **[Databricks Jobs](../low-code-jobs/databricks-jobs)** - for simpler data-Pipeline use-cases, where you just
   orchestrate multiple data-Pipelines to run together. Databricks Jobs is a **recommended** scheduler, if you're
   Databricks Native.
 
-- **[Airflow](airflow.md)** - for more complex use-cases, where you have to use various operators, or need
+- **[Airflow](../low-code-jobs/airflow.md)** - for more complex use-cases, where you have to use various operators, or need
   any additional data pre-and-post-processing, you can design your Jobs using Prophecy's low-code Airflow environment.
 
 Alternatively, since Prophecy provides you native Spark code on Git, you can easily integrate with any other scheduler.
