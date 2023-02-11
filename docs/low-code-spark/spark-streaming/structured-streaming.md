@@ -100,7 +100,7 @@ Watermarking has been added to:
 2. Deduplicate Gem: More details on Aggregate Gem [here](/low-code-spark/gems/transform/deduplicate.md)
 
 ## Custom Gems
-Watermarking has also been added to the SQL Statement Gem: More details on Aggregate Gem [here]((/low-code-spark/gems/custom/sql-statement.md))
+Watermarking has also been added to the SQL Statement Gem: More details on Aggregate Gem [here](/low-code-spark/gems/custom/sql-statement.md)
 
 ## Join/Split Gems
 Watermarking has been added to the Join Gem. More detail on the Join Gem [here](/low-code-spark/gems/join-split/join.md)
