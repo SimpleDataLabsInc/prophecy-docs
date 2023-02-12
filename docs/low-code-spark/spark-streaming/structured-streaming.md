@@ -8,7 +8,7 @@ tags:
   - streaming
 ---
 
-Starting with Prophecy 2.7, we now provide native support for Structured Streaming Applications. Currently, this feature is only available for Python projects. However, we plan to add support for Scala in the future.
+Starting with Prophecy 2.7, we now provide native support for streaming data running on Spark Structured Streaming. Currently, this feature is only available for Python projects. However, we plan to add support for Scala in the future.
 
 Streaming pipelines differ from batch pipelines in several important ways:
 
