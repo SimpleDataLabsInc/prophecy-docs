@@ -8,9 +8,9 @@ tags:
   - streaming
 ---
 
-Starting with Prophecy 2.7, we now provide native support for streaming data running on Spark Structured Streaming. Currently, this feature is only available for Python projects. However, we plan to add support for Scala in the future.
+Prophecy 2.7 introduces native support for streaming data running on Spark Structured Streaming. The streaming capability is available for Python projects. Support for Scala will be added in the future.
 
-Streaming pipelines differ from batch pipelines in several important ways:
+Streaming pipelines work differently from batch pipelines:
 
 1. Streaming applications are always running, continuously processing incoming data.
 2. Data is processed in microbatches. (with the exception of Continuous Triggers, which are still an experimental feature in Spark 3.3). More on Continuous Trigger [here](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#continuous-processing)
