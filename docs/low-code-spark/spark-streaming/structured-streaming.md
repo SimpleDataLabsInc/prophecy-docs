@@ -12,11 +12,11 @@ Starting with Prophecy 2.7, we now provide native support for Structured Streami
 
 Streaming pipelines differ from batch pipelines in several important ways:
 
-Streaming applications are always running, continuously processing incoming data.
-Data is processed in microbatches (with the exception of Continuous Triggers, which are still an experimental feature in Spark 3.3).
-Streaming applications handle transient data. Real-world aggregations and joins require watermarking for state maintenance.
-All Streaming Datasets can be made to behave as Batch datasets using the Spark ForEachBatch.
-This documentation assumes you are already familiar with how Structured Streaming works. For more information, you can consult the Structured Streaming documentation [here](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html).
+1. Streaming applications are always running, continuously processing incoming data.
+2. Data is processed in microbatches. (with the exception of Continuous Triggers, which are still an experimental feature in Spark 3.3). More on Continuous Trigger [here](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#continuous-processing)
+3. Streaming applications handle transient data, rather than maintain the entire data. Hence, Real-world aggregations and joins require watermarking for maintaining a limited state.
+4. All Streaming Datasets can be made to behave as Batch datasets using the Spark ForEachBatch. More on ForEachBatch [here](https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.sql.streaming.DataStreamWriter.foreachBatch.html) Note that forEachBatch is ont supported yet.
+   This documentation assumes you are already familiar with how Structured Streaming works. For more information, you can consult the Structured Streaming documentation [here](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html).
 
 ## Spark Streaming using Prophecy IDE
 
@@ -29,12 +29,13 @@ To create a Streaming Pipeline, users can follow a process similar to creating a
 
 1. Partial runs are not possible for streaming applications. Partial run is only allowed on a StreamingTarget Gem.
 2. Streaming pipelines are long-running tasks and capture data at intervals. They do not currently provide cumulative statistics, but they can be used to preview data.
-3. To stop the Pipeline, users need to click the "X" button.
+3. To stop the Pipeline, users need to click the "X" button. It will not automatically stop.
 4. To deploy the Pipeline on Databricks, users can follow the same process described [here](/low-code-jobs/databricks-jobs). A schedule will check if the Streaming Pipeline is running every X minutes. If it is not running, the Job will attempt to start it.
 
 ## Dataset Components
 
-There are a few key differences between the Prophecy Gems between a Batch Pipeline and a Streaming Pipeline. The following Source/Target options are available for Streaming Pipelines:
+There are a few key differences between the Prophecy Gems between a Batch Pipeline and a Streaming Pipeline.
+
 ![Sources and Targets](./img/source-screen.png)
 
 Spark Streaming applications have a variety of Source/Target components available for use in Pipeline construction. These include both normal batch data sources, which can be read using the `spark.read()` function at every processing trigger, and streaming-specific sources and targets, which are accessed using `spark.readStream()` or `spark.writeStream()`.
@@ -102,7 +103,3 @@ A Watermark Tab has been added to some Gems (Aggregate, Join, Deduplicate, SQLSt
 
 Transform Gems that generate code but do not work within Streaming Applications include Order By, Limit, and Window (partitionBy).
 Although Window would work with a watermarked column being part of the partitioning, it is advised to use `window()` or `session_window()` from the `pyspark.sql.functions package`. (More details on windowing [here](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#window-operations-on-event-time)) Watermarking has been added to the [Aggregate](/low-code-spark/gems/transform/aggregate.md) and [Deduplicate](/low-code-spark/gems/transform/deduplicate.md) Gems, as well as the [SQL Statement](/low-code-spark/gems/custom/sql-statement.md) Gem. The [Join Gem](/low-code-spark/gems/join-split/join.md) has also been updated with watermarking.
-
-## Future Work
-
-Adding a generic implementation for forEachBatch.
