@@ -8,6 +8,14 @@ tags: []
 
 Please note that this document is subject to change at any time without notice.
 
+## Request URL
+
+There are two components to the request URL: The base and the path.
+
+The base will depend on the endpoint that you use to access Prophecy, i.e `https://app.prophecy.io/`.
+
+The path is always the same for all deployments: `api/md/graphql`.
+
 ## Authentication
 
 Authentication with the Prophecy GraphQL API is via including a Prophecy API token with the appropriate header.
