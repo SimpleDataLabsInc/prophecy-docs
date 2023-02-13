@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[9021],{80607:function(a){a.exports=JSON.parse('{"label":"livy","permalink":"/tags/livy","allTagsPath":"/tags","count":1,"items":[{"id":"concepts/fabrics/create-a-fabric","title":"How to create a Fabric","description":"Guide on how to create Fabrics","permalink":"/concepts/fabrics/create-a-fabric"}]}')}}]);
