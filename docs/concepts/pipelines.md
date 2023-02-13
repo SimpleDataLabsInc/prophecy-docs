@@ -16,7 +16,7 @@ In the Metadata view of the UI you'll find the [Pipeline list](https://app.proph
 
 ![Pipeline list](img/pipeline/metadata_pipeline_list.png)
 
-If this list is empty, follow the instructions below to create a new one
+Follow the instructions below to create a new one
 
 ## Creating a Pipeline
 
@@ -40,7 +40,7 @@ Clicking the `Pipeline` button will pop up the **Pipeline Creation** UI.
 
 When editing a `Pipeline`, you'll be using the editor shown below.
 
-![Editing a pipeline](img/pipeline/edit_pipeline.png)
+![Editing a Pipeline](img/pipeline/edit_pipeline.png)
 
 1. _Pipeline Config_ : Buttons that bring up views related to the configuration of your `Pipeline`:
    1. [Config](../low-code-spark/configuration.md)
@@ -51,7 +51,7 @@ When editing a `Pipeline`, you'll be using the editor shown below.
    6. Spark Version
    7. Visual Language
 2. _View switch_ : Switch between the Visual development and the Generated Code. **Note:** The generated Code will only update if there are no errors detected in the Visual view.
-3. _Fabric Switch_ : Select the [Fabric](./fabric.md) to use during development, start a new or connect to an existing cluster
+3. _Fabric Switch_ : Select the [Fabric](fabrics/fabrics.md) to use during development, start a new cluster or connect to an existing one
 4. _Gem drawer_ : Click to select a category, then click on the Gem you wish to insert into the editor. See [here](./gems.md) for more information on the Gems
 5. _Workspace_ : Everything in the middle of the view is the _Workspace_. This is where you'll create and manipulate the Gems that make up this `Pipeline`.
 6. _Git Status_ : In Prophecy almost everything is stored in Git, and this is where you can interact with the version control for your Pipeline. See [Projects & Git](./project.md) for more information
