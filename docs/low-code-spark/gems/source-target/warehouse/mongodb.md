@@ -41,12 +41,12 @@ Built on [mongodb-connector-for-spark](https://www.mongodb.com/docs/spark-connec
 
 ### Example {#source-example}
 
-Below is an example of configuring MongoDB connection using Prophecy IDE.
+Below is an example of configuring MongoDB Source using Prophecy IDE.
 We will be reading Airbnb public `listingReviews` dataset using in-built `MongoDB` Source Gem.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/16856802/218704423-0d18ac13-a15c-426d-b667-5e6cc7808061.mp4" title="Salesforce Source" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen" width="100%" height="100%"></iframe>
+<iframe src="https://user-images.githubusercontent.com/16856802/218704423-0d18ac13-a15c-426d-b667-5e6cc7808061.mp4" title="MongoDB Source" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen" width="100%" height="100%"></iframe>
 </div></div>
 
 ### Generated Code {#source-code}
@@ -90,114 +90,74 @@ object input_mongodb {
 ---
 
 ## Target
+[Official documentation](https://www.mongodb.com/docs/spark-connector/v10.0/configuration/write/)
 
 ### Target Parameters
+| Parameter                      | Description                                                                                                                                                                                                                                                                   | Required |
+|--------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
+| Username                       | Username for MongoDB instance                                                                                                                                                                                                                                                 | True     |
+| Password                       | Password for MongoDB instance                                                                                                                                                                                                                                                 | True     |
+| Driver                         | Driver string for mongodb connection, eg. `mongodb` or `mongodb+srv`                                                                                                                                                                                                          | True     |
+| Cluster IP Address and Options | Cluster IP and options(if required) for the MongoDB connection, <br/> eg. `cluster0.prophecy.mongodb.xyz/?retryWrites=true&w=majority`                                                                                                                                        | True     |
+| Database                       | Database to which we want to write the data.                                                                                                                                                                                                                                  | True     |
+| Collection                     | Collection to which we want to write the data.                                                                                                                                                                                                                                | True     |
+| mongoClientFactory             | MongoClientFactory configuration key. <br/> You can specify a custom implementation which must implement the `com.mongodb.spark.sql.connector.connection.MongoClientFactory` interface. <br/> Default: `com.mongodb.spark.sql.connector.connection.DefaultMongoClientFactory` | False    |
+| maxBatchSize                   | Specifies the maximum number of operations to batch in bulk operations. <br/> Default: `512`                                                                                                                                                                                  | False    |
+| ordered                        | Specifies whether to perform ordered bulk operations. <br/> Default: `true`                                                                                                                                                                                                   | False    |
+| operationType                  | Specifies the type of write operation to perform. You can set this to one of the following values: `insert`, `replace` or `update` <br/> Default: `replace`                                                                                                                   | False    |
+| idFieldList                    | Field or list of fields by which to split the collection data. To specify more than one field, separate them using a comma as shown in the following example:`"fieldName1,fieldName2"` <br/> Default: `_id`                                                                   | False    |
+| writeConcern.w                 | Specifies w, a write concern option to acknowledge the level to which the change propagated in the MongoDB replica set. You can specify one of the following values: `MAJORITY`, `W1`, `W2`, `W3`, `ACKNOWLEDGED` or `UNACKNOWLEDGED`<br/> Default: `_ACKNOWLEDGED`           | False    |
+| writeConcern.journal           | Specifies j, a write concern option to enable request for acknowledgment that the data is confirmed on on-disk journal for the criteria specified in the w option.<br/> You can specify either `true` or `false`.                                                             | False    |
+| writeConcern.wTimeoutMS        | Specifies wTimeoutMS, a write concern option to return an error when a write operation exceeds the number of milliseconds. If you use this optional setting, you must specify a `non-negative` integer.                                                                       | False    |
 
-| Parameter       | Description                                                                                                                                                                                                                                                                                                               | Required                                               |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| Dataset Name    | Name of the Dataset                                                                                                                                                                                                                                                                                                       | True                                                   |
-| Credential Type | Credential Type: `Databricks Secrets` or `Username & Password`                                                                                                                                                                                                                                                            | True                                                   |
-| Credentials     | Databricks credential name , else username and password for the snowflake account                                                                                                                                                                                                                                         | Required if `Credential Type` is `Databricks Secrets`  |
-| Username        | Login name for the snowflake user                                                                                                                                                                                                                                                                                         | Required if `Credential Type` is `Username & Password` |
-| Password        | Password for the snowflake user                                                                                                                                                                                                                                                                                           | Required if `Credential Type` is `Username & Password` |
-| Url             | Hostname for your account in the format: `<account_identifier>.snowflakecomputing.com`. <br/> Eg: `https://DJ07623.ap-south-1.aws.snowflakecomputing.com`                                                                                                                                                                 | True                                                   |
-| Database        | Database to use for the session after connecting                                                                                                                                                                                                                                                                          | True                                                   |
-| Schema          | Schema to use for the session after connecting                                                                                                                                                                                                                                                                            | True                                                   |
-| Warehouse       | The default virtual warehouse to use for the session after connecting                                                                                                                                                                                                                                                     | False                                                  |
-| Table           | The name of the table to which data is to be written.                                                                                                                                                                                                                                                                     | True                                                   |
-| Write Mode      | How to handle existing data. See [this table](#supported-write-modes) for a list of available options.                                                                                                                                                                                                                    | True                                                   |
-| Post-Script SQL | DDL/DML SQL statements to execute before writing data.<br/> It is intended for statements that do not return a result set, for example DDL statements like `CREATE TABLE` and DML statements like `INSERT, UPDATE, and DELETE`.<br/> It is not useful for statements that return a result set, such as `SELECT` or `SHOW` | False                                                  |
 
 ### Supported Write Modes
 
-| Write Mode | Description                                                                                                                      |
-| ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| overwrite  | If data already exists, overwrite with the contents of the DataFrame                                                             |
-| append     | If data already exists, append the contents of the DataFrame                                                                     |
-| ignore     | If data already exists, do nothing with the contents of the DataFrame. This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
-| error      | If data already exists, throw an exception.                                                                                      |
+| Write Mode | Description                                                                     |
+|------------|---------------------------------------------------------------------------------|
+| overwrite  | If data already exists, `overwrite` the contents of the Collection with data.   |
+| append     | If data already exists, `append` the data on to the contents of the Collection. |
 
 ### Example {#target-example}
+Below is an example of configuring MongoDB Target using Prophecy IDE.
+We will be writing back Airbnb public `listingReviews` data into a collection in `MongoDB` using our in-built Target Gem.
 
-```mdx-code-block
-
-export const ImageData2 = [
-  {
-    "image":"/img/snowflake/write/1.png",
-    "description":<h3 style={{padding:'10px'}}>Step 1 - Create Target Component</h3>,
-  },
-  {
-    "image":"/img/snowflake/write/2.png",
-    "description":<h3 style={{padding:'10px'}}>Step 2 - Click 'Create Dataset'</h3>,
-  },
-  {
-    "image":"/img/snowflake/write/3.png",
-    "description":<h3 style={{padding:'10px'}}> Step 3 - Enter 'Dataset Name' and select the SNOWFLAKE format under WAREHOUSE type</h3>
-  },
-  {
-    "image":"/img/snowflake/write/4.png",
-    "description":<h3 style={{padding:'10px'}}>Step 4 - Enter Connection details</h3>,
-  },
-  {
-    "image":"/img/snowflake/write/5.png",
-    "description":<h3 style={{padding:'10px'}}>Step 5 - Define 'Write Mode' and optionally provide 'Post-Script SQL'</h3>,
-  }
-];
-
-<App ImageData={ImageData2}></App>
-```
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://user-images.githubusercontent.com/16856802/218750916-a3ea2ead-9c81-42c9-9ad2-c60a61cdde4a.mp4" title="MongoDB Target" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen" width="100%" height="100%"></iframe>
+</div></div>
 
 ### Generated Code {#target-code}
 
 ````mdx-code-block
 
-<Tabs>
-
+<Tabs defaultValue="scala">
 <TabItem value="py" label="Python">
 
 ```py
-def sf_customer(spark: SparkSession, in0: DataFrame):
-    from pyspark.dbutils import DBUtils
-    options = {
-        "sfUrl": "https://DJ07623.ap-south-1.aws.snowflakecomputing.com",
-        "sfUser": "anshuman",
-        "sfPassword": "******",
-        "sfDatabase": "SNOWFLAKE_SAMPLE_DATA",
-        "sfSchema": "TPCDS_SF100TCL",
-        "sfWarehouse": "COMPUTE_WH"
-    }
-    spark.sparkContext._jvm.net.snowflake.spark.snowflake.Utils.runQuery(
-        spark.sparkContext._jvm.PythonUtils.toScalaMap(options),
-        "CREATE TABLE test_table(id INTEGER)"
-    )
-    writer = in0.write.format("snowflake").options(**options)
-    writer.option("dbtable", "test_table").mode("overwrite").save()
+Coming Soon!!!
 ```
-
 </TabItem>
 <TabItem value="scala" label="Scala">
 
 ```scala
-object sf_customer {
-  def apply(spark: SparkSession, in: DataFrame): Unit = {
-    import net.snowflake.spark.snowflake.Utils
-    import com.databricks.dbutils_v1.DBUtilsHolder.dbutils
-    val options = Map("sfUrl" → "https://DJ07623.ap-south-1.aws.snowflakecomputing.com",
-                      "sfUser" → "anshuman",
-                      "sfPassword" → "******",
-                      "sfDatabase" → "SNOWFLAKE_SAMPLE_DATA",
-                      "sfSchema" → "TPCDS_SF100TCL",
-                      "sfWarehouse" → "COMPUTE_WH"
-    )
-    var writer = in.write.format("snowflake").options(options)
-    writer = writer.option("dbtable", "test_table")
-    writer = writer.mode("overwrite")
-    Utils.runQuery(options, "CREATE TABLE test_table(id INTEGER)")
-    writer.save()
+object output_mongodb {
+  def apply(context: Context, df: DataFrame): Unit = {
+    df.write
+      .format("mongodb")
+      .mode("overwrite")
+      .option(
+        "connection.uri",
+        f"${"mongodb+srv"}://${"ashish_mongotrial"}:${"password"}@${"cluster0.zveltwx.mongodb.net/?retryWrites=true&w=majority"}".trim
+      )
+      .option("database",      "test")
+      .option("collection",    "test_output")
+      .option("ordered",       "true")
+      .option("operationType", "replace")
+      .save()
   }
 }
 ```
-
 </TabItem>
 </Tabs>
 ````
