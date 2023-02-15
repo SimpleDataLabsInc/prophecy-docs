@@ -94,9 +94,6 @@ enum AspectKind {
     "Scheduler Provider Information for a fabric"
     SchedulerProviderInfo
 
-    "Sql Provider Information for a fabric"
-    SqlProviderInfo
-
     "Code content. Versioned."
     Code
 
@@ -174,9 +171,6 @@ enum AspectKind {
 
     "Resolution Mode for library"
     ResolutionModeInfo
-
-    "SQL Info"
-    SQLInfo
 
     "Admin level information for an entity"
     AdminInfo
@@ -271,12 +265,6 @@ enum EntityKind {
 
     "Subgraph Entity"
     Subgraph
-
-    "SQLModel Entity"
-    SQLModel
-
-    "SQLPipeline Entity"
-    SQLPipeline
 
     "Configuration Entity"
     Configuration
@@ -461,94 +449,6 @@ enum UserManagedType {
 
     "The Google managed user type"
     Google
-}
-```
-
-## SQLModel
-
-SQLModel Type
-
-```
-type SQLModel {
-    "SQLModel ID"
-    _id: String!
-
-    "SQLModel name"
-    name: String!
-
-    "SQLModel created timestamp"
-    created: Long!
-
-    path : String!
-
-    "SQLModel created By"
-    createdBy: String!
-
-    "Aspects of the entity"
-    aspects(
-        "List of aspects to fetch. If null, all the supported aspects will be fetched."
-        aspect: [AspectKind!],
-
-        "Branch name"
-        branch: String): [Aspect!]!
-
-    "Aspects of the entity"
-    versionedAspects(
-        "Branch name"
-        branch: String,
-
-        "List of versioned aspect arguments. If null, all the supported versioned aspects will be fetched."
-        aspectVers: [AspectQuery!]): [VAspect!]!
-
-    "Project SQLModel is part of"
-    project: Project!
-
-    files: [String!]!
-
-    dependentDatasets: [Dataset!]!
-
-    dependentModels: [String!]!
-}
-```
-
-## SQLPipeline
-
-SQLPipeline Type
-
-```
-type SQLPipeline {
-    "SQLPipeline ID"
-    _id: String!
-
-    "SQLPipeline name"
-    name: String!
-
-    "SQLPipeline created timestamp"
-    created: Long!
-
-    path : String!
-
-    "SQLPipeline created By"
-    createdBy: String!
-
-    "Aspects of the entity"
-    aspects(
-        "List of aspects to fetch. If null, all the supported aspects will be fetched."
-        aspect: [AspectKind!],
-
-        "Branch name"
-        branch: String): [Aspect!]!
-
-    "Aspects of the entity"
-    versionedAspects(
-        "Branch name"
-        branch: String,
-
-        "List of versioned aspect arguments. If null, all the supported versioned aspects will be fetched."
-        aspectVers: [AspectQuery!]): [VAspect!]!
-
-    "Project SQLPipeline is part of"
-    project: Project!
 }
 ```
 
