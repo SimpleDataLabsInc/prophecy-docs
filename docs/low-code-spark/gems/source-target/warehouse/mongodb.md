@@ -10,7 +10,8 @@ tags:
 ---
 
 :::info Built on
-Built on [MongoDB Spark Connector](https://www.mongodb.com/docs/spark-connector/v10.0/#mongodb-connector-for-spark) v10.0.
+Built on [MongoDB Spark Connector](https://www.mongodb.com/docs/spark-connector/v10.0/#mongodb-connector-for-spark) v10.0 <br/>
+Please add `mongodb-spark-connector` jar as dependency [for more](https://docs.prophecy.io/low-code-spark/extensibility/dependencies/#add-dependency)
 :::
 Allows read and write operations on `MongoDB`
 
@@ -42,11 +43,12 @@ Allows read and write operations on `MongoDB`
 ### Example {#source-example}
 
 Below is an example of configuring MongoDB Source using Prophecy IDE.
-We will be reading Airbnb public `listingReviews` dataset using in-built `MongoDB` Source Gem.
+We will be reading Airbnb public `listingReviews` dataset using in-built `MongoDB` Source Gem.<br/>
+After configuration you can view schema by clicking `Infer Schema` in properties tab and also view data by clicking `Load` inside Preview tab.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/16856802/218704423-0d18ac13-a15c-426d-b667-5e6cc7808061.mp4" title="MongoDB Source" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen" width="100%" height="100%"></iframe>
+<iframe src="https://user-images.githubusercontent.com/16856802/218975988-7e445ee5-81c1-4c0c-90dd-711ec28f0a38.mp4" title="MongoDB Source" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen" width="100%" height="100%"></iframe>
 </div></div>
 
 ### Generated Code {#source-code}
