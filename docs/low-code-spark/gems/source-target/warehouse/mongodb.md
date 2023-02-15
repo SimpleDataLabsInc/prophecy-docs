@@ -13,14 +13,15 @@ tags:
 Built on [mongodb-connector-for-spark](https://www.mongodb.com/docs/spark-connector/v10.0/#mongodb-connector-for-spark) v10.0.
 :::
 Allows read and write operations on `MongoDB`
+
 ## Source
 
-
 ### Source Parameters
+
 [Official documentation](https://www.mongodb.com/docs/spark-connector/v10.0/configuration/read/)
 
 | Parameter                                 | Description                                                                                                                                                                                                                                                                                                                                                                                                                           | Required |
-|-------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | Username                                  | Username for MongoDB instance                                                                                                                                                                                                                                                                                                                                                                                                         | True     |
 | Password                                  | Password for MongoDB instance                                                                                                                                                                                                                                                                                                                                                                                                         | True     |
 | Driver                                    | Driver string for mongodb connection, eg. `mongodb` or `mongodb+srv`                                                                                                                                                                                                                                                                                                                                                                  | True     |
@@ -30,14 +31,13 @@ Allows read and write operations on `MongoDB`
 | mongoClientFactory                        | MongoClientFactory configuration key. <br/> You can specify a custom implementation which must implement the `com.mongodb.spark.sql.connector.connection.MongoClientFactory` interface. <br/> Default: `com.mongodb.spark.sql.connector.connection.DefaultMongoClientFactory`                                                                                                                                                         | False    |
 | partitioner                               | The partitioner full class name. You can specify a custom implementation which must implement the `com.mongodb.spark.sql.connector.read.partitioner.Partitioner` interface. <br/> Default: `com.mongodb.spark.sql.connector.read.partitioner.SamplePartitioner`                                                                                                                                                                       | False    |
 | partitioner.options.partition.field       | The field to use for partitioning, which must be a unique field. <br/> Default: `_id`                                                                                                                                                                                                                                                                                                                                                 | False    |
-| partitioner.options.partition.size        | The size (in MB) for each partition. Smaller partition sizes create more partitions containing fewer documents. <br/> Default:  `64`                                                                                                                                                                                                                                                                                                  | False    |
+| partitioner.options.partition.size        | The size (in MB) for each partition. Smaller partition sizes create more partitions containing fewer documents. <br/> Default: `64`                                                                                                                                                                                                                                                                                                   | False    |
 | partitioner.options.samples.per.partition | The number of samples to take per partition. The total number of samples taken is: `samples per partiion * ( count / number of documents per partition)` <br/> Default: `10`                                                                                                                                                                                                                                                          | False    |
 | sampleSize                                | The number of documents to sample from the collection when inferring the schema. <br/> Default: `1000`                                                                                                                                                                                                                                                                                                                                | False    |
 | sql.inferSchema.mapTypes.enabled          | Whether to enable Map types when inferring the schema. When enabled, large compatible struct types are inferred to a MapType instead. <br/> Default: `true`                                                                                                                                                                                                                                                                           | False    |
 | sql.inferSchema.mapTypes.minimum.key.size | Minimum size of a StructType before inferring as a MapType. <br/> Default: `250`                                                                                                                                                                                                                                                                                                                                                      | False    |
 | aggregation.pipeline                      | Specifies a custom aggregation pipeline to apply to the collection before sending data to Spark. The value must be either an extended JSON single document or list of documents.<br/> A single document should resemble the following:<br/> `{"$match": {"closed": false}}` <br/> A list of documents should resemble the following:<br/> `[{"$match": {"closed": false}}, {"$project": {"status": 1, "name": 1, "description": 1}}]` | False    |
-| aggregation.allowDiskUse                  | Specifies whether to allow storage to disk when running the aggregation.  <br/> Default: `true`                                                                                                                                                                                                                                                                                                                                       | False    |
-
+| aggregation.allowDiskUse                  | Specifies whether to allow storage to disk when running the aggregation. <br/> Default: `true`                                                                                                                                                                                                                                                                                                                                        | False    |
 
 ### Example {#source-example}
 
@@ -90,11 +90,13 @@ object input_mongodb {
 ---
 
 ## Target
+
 [Official documentation](https://www.mongodb.com/docs/spark-connector/v10.0/configuration/write/)
 
 ### Target Parameters
+
 | Parameter                      | Description                                                                                                                                                                                                                                                                   | Required |
-|--------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
+| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | Username                       | Username for MongoDB instance                                                                                                                                                                                                                                                 | True     |
 | Password                       | Password for MongoDB instance                                                                                                                                                                                                                                                 | True     |
 | Driver                         | Driver string for mongodb connection, eg. `mongodb` or `mongodb+srv`                                                                                                                                                                                                          | True     |
@@ -110,15 +112,15 @@ object input_mongodb {
 | writeConcern.journal           | Specifies j, a write concern option to enable request for acknowledgment that the data is confirmed on on-disk journal for the criteria specified in the w option.<br/> You can specify either `true` or `false`.                                                             | False    |
 | writeConcern.wTimeoutMS        | Specifies wTimeoutMS, a write concern option to return an error when a write operation exceeds the number of milliseconds. If you use this optional setting, you must specify a `non-negative` integer.                                                                       | False    |
 
-
 ### Supported Write Modes
 
 | Write Mode | Description                                                                     |
-|------------|---------------------------------------------------------------------------------|
+| ---------- | ------------------------------------------------------------------------------- |
 | overwrite  | If data already exists, `overwrite` the contents of the Collection with data.   |
 | append     | If data already exists, `append` the data on to the contents of the Collection. |
 
 ### Example {#target-example}
+
 Below is an example of configuring MongoDB Target using Prophecy IDE.
 We will be writing back Airbnb public `listingReviews` data into a collection in `MongoDB` using our in-built Target Gem.
 
