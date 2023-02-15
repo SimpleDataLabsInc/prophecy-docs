@@ -279,15 +279,6 @@ type Query {
 
     ): Expression
 
-    "Fetches an SQL model"
-    SQLModel(
-        uid: String
-
-        optionalProjectUID: String
-
-        name: String
-    ): SQLModel
-
     "Search"
     Search(
         "query"
@@ -879,31 +870,6 @@ type Mutate {
 
     ): Subgraph!
 
-    "Adds a SQL Model"
-    addSQLModel(
-        "A pattern validated Entity name"
-        name: String!
-
-        "Project UID"
-        ownerUID: String!
-
-        "List of files related to this model"
-        files: [String!]!
-
-    ): SQLModel!
-
-    "Adds SQL Models"
-    addSQLModels(
-        "Project UID"
-        ownerUID: String!
-
-        "names of models to be added"
-        names: [String!]!
-
-        "List of list of files related to each model"
-        fileLists: [[String!]!]
-    ): [SQLModel!]!
-
     "Adds a datasetID to model as dependency"
     addDatasetsToModel(
         uid: String!
@@ -931,16 +897,6 @@ type Mutate {
 
         modelUID: String!
     ): Int!
-
-    "Adds a SQL Pipeline"
-    addSQLPipeline(
-        "A pattern validated Entity name"
-        name: String!
-
-        "Project UID"
-        ownerUID: String!
-
-    ): SQLPipeline!
 
     "Updates input/output dataset of a pipeline"
     updatePipelineDataset(
@@ -1104,15 +1060,6 @@ type Mutate {
         mode: String
 
         description: String
-
-        "Database name (Used for SQL datasets)"
-        databaseName: String
-
-        "Schema name (Used for SQL datasets)"
-        schemaName: String
-
-        "Table name (Used for SQL datasets)"
-        tableName: String): Dataset!
 
     addMultipleDatasets(
         "Owner entity ID"
