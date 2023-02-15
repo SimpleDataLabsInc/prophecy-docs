@@ -8,6 +8,10 @@ tags: []
 
 Please note that this document is subject to change at any time without notice.
 
+## Overview
+
+For an overview of the concepts used in the Metadata API, see [this blog post](https://www.prophecy.io/blog/prophecyhub-metadata-re-invented-with-git-graphql-for-data-engineering)
+
 ## Request URL
 
 There are two components to the request URL: The base and the path.
