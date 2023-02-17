@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[3416],{7986:function(e){e.exports=JSON.parse('{"label":"changelog","permalink":"/tags/changelog","allTagsPath":"/tags","count":1,"items":[{"id":"release_notes/2.6.0.0","title":"2.6.0.0 (February 3, 2023)","description":"Release notes for 2.6.0.0","permalink":"/release_notes/2.6.0.0"}]}')}}]);
