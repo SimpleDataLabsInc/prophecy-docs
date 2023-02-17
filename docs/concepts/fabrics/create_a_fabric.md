@@ -63,10 +63,13 @@ Please refer below video for step-by-step example
 <iframe src="https://user-images.githubusercontent.com/121796483/217732038-d01bbfbe-a140-4661-a279-1b4858ab2285.mp4" title="Livy Fabric" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-- **Spark Connection** - Here you will provide the Livy URL, Authentication, Spark version and Scala version. Please note, the Spark and Scala versions are now mandatory with recent [Release](/release_notes/Feb_2023#spark-and-scala-versions-are-now-required-in-livy-fabrics).
-  If users has an old Fabric which doesn't have Spark abd Scala versions present, they will now see below error on trying to attach a cluster. User would need to update the Fabric from the metadata page.
+- **Spark Connection** - Here you will provide the Livy URL, Authentication, Spark version and Scala version.
 
+:::note
+The Spark and Scala versions are now mandatory with recent [Release](/release_notes/Feb_2023#spark-and-scala-versions-are-now-required-in-livy-fabrics).
+If users has an old Fabric which doesn't have Spark abd Scala versions present, an error (seen below) will appear when trying to attach to a cluster. User would need to update the Fabric from the metadata page or by clicking `Update Fabric` button (seen below).
 ![Fabric_misconfigured](img/fabric_misconfigured.png)
+:::
 
 - **Job sizes** -
   By default, you will see a Small Job size pre created. You can edit or add more Job sizes. A Job sie consists off

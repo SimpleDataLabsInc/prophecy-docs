@@ -14,7 +14,7 @@ tags:
 ### What are execution metrics?
 
 When running Pipelines and Jobs, you may be interested to know few metrics related to execution like records
-read/written, bytes read/written, total time taken and Data samples b/w components. These Dataset, Pipeline-run and
+read/written, bytes read/written, total time taken and Data samples between components. These Dataset, Pipeline-run and
 Job-run related metrics are accumulated and stored on your data plane and can be viewed later from Prophecy UI.
 
 ### Team level access-control
