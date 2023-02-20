@@ -63,7 +63,7 @@ Please refer below video for step-by-step example
 <iframe src="https://user-images.githubusercontent.com/121796483/217732038-d01bbfbe-a140-4661-a279-1b4858ab2285.mp4" title="Livy Fabric" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-- **Spark Connection** - Here you will provide the Livy URL, Authentication, Spark version and Scala version.
+- **Spark Connection** - Here you will provide the Livy URL, Authentication, Spark version and Scala version. Spark and Scala versions are used when user tries to attach a cluster using this Fabric.
 
 :::note
 The Spark and Scala versions are now mandatory with recent [Release](/release_notes/Feb_2023#spark-and-scala-versions-are-now-required-in-livy-fabrics).
