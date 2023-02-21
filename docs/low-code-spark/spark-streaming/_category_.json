@@ -1,9 +1,6 @@
 {
-  "label": "Spark Streaming",
-  "position": 11,
-  "link": {
-    "type": "generated-index"
-  },
+  "label": "Spark Structured Streaming",
+  "position": 10,
   "collapsible": true,
   "collapsed": true
 }
