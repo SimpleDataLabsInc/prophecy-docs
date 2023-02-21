@@ -1,5 +1,5 @@
 ---
-title: File-based Gem
+title: File-based
 id: streaming-file-apps
 description: File-based Source and Target Gems for Streaming Data Applications
 sidebar_position: 2

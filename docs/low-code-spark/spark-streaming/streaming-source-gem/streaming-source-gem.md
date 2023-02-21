@@ -1,5 +1,5 @@
 ---
-title: Event-based Gem
+title: Event-based
 id: streaming-event-apps
 description: Event-based Source and Target Gems for Streaming Data Applications
 sidebar_position: 1
