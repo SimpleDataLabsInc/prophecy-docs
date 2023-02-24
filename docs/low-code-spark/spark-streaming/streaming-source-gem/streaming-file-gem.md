@@ -18,18 +18,16 @@ For file stream sources, incoming data files are incrementally and efficiently p
 
 Autoloader is available for use with a Databricks Fabric and supports loading data directory listing, as well as using file notifications via AWS's Simple Queue Service (SQS). More on Autoloader [here](https://docs.databricks.com/ingestion/auto-loader/index.html). For different Cloud Storages supported by Autoloader, please check [this](https://docs.databricks.com/ingestion/auto-loader/file-detection-modes.html) page.
 
+When you select Format and click NEXT, this Location Dialog opens:
 ![File Streaming](../img/file-source.png)
-When you select Format and click NEXT, this Location Dialog opens.
 
 ## Databricks Auto Loader
 
 Databricks Fabrics can utilize [Auto Loader](https://docs.databricks.com/ingestion/auto-loader/index.html).
 
-Auto Loader supports loading data directory listing as well as using AWS's Simple Queue Service (SQS) file notifications. More on this [here](https://docs.databricks.com/ingestion/auto-loader/file-detection-modes.html)
+Auto Loader supports loading data directory listing as well as using AWS's Simple Queue Service (SQS) file notifications. More on this [here](https://docs.databricks.com/ingestion/auto-loader/file-detection-modes.html). Stream sources using Auto Loader allow [configurable properties](https://docs.databricks.com/ingestion/auto-loader/options.html#file-format-options) that can be configured using the Field Picker on the Gem:
 ![Autoloader Directory Listing Mode](../img/autoloader-directory-listing.png)
 ![Autoloader Filer Notifiction Mode](../img/autoloader-file-notification.png)
-
-Stream sources using Auto Loader allow [configurable properties](https://docs.databricks.com/ingestion/auto-loader/options.html#file-format-options) that can be configured using the Field Picker on the Gem.
 
 ## Formats Supported
 

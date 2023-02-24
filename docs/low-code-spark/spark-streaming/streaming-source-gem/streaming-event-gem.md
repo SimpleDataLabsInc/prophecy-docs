@@ -12,7 +12,6 @@ tags:
 ## Event-based Sources and Targets
 
 Prophecy supports **Kafka Streaming** Source and Target. More information on supported Kafka Source and Target options are available [here](https://spark.apache.org/docs/latest/structured-streaming-kafka-integration.html).
-Prophecy allows a user to authenticate using user name and password via Databricks Secrets. It is **NOT RECOMMENDED** using the username and password option directly. It will commit credentials to the code. It is not a safe option.
 
 The Kafka Gem allows inferring the schema of the events by automatically populating the `value` column. Schema inference works with both JSON or AVRO file formats. A user is required to provide an example event for schema inference.
 
@@ -28,11 +27,17 @@ A Kafka Source Gem allows the Streaming Pipeline continuously pull data data fro
 
 ### Credentials
 
-- **User Name and Password**: Kafka cluster user name and password. API key can also be used as User Name and API secret as the Password
+- **Username and Password (not recommended)**: Kafka cluster user name and password. API key can also be used as Username and API secret as the Password
 - **Databricks Secrets (recommended)**: You may use Databricks to manage your credentials
 - **Kafka Topic**: Name of the topic that the Kafka Source is pulling data from
 
-### StreamingSource and StreamingTarget
+:::caution
+Typing the username and password into the Prophecy UI is **NOT RECOMMENDED**. This option is provided only for demonstration purposes; this option will commit credentials to the code. It is not a safe option.
 
-Streaming source gems render to `spark.readStream()` on the Spark side. Currently, we support file stream-based sources and targets, warehouse-based targets, and stream-based sources and targets:
+The recommended method is to use Databricks Secrets.
+:::
+
+## StreamingSource and StreamingTarget
+
+Streaming source gems render to `spark.readStream()` on the Spark side. Currently, we support file stream-based sources and targets, warehouse-based targets, and event stream-based sources and targets:
 ![Sources and Targets](../img/source-screen.png)
