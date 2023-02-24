@@ -22,8 +22,8 @@ A Kafka Source Gem allows the Streaming Pipeline continuously pull data data fro
 - **Broker List** allows users to enter multiple Kafka brokers separated by commas. For example: `kdj-ibg1.us-east-2.aws.cloud:9092, kdj-ibg2.us-east-2.aws.cloud:9092,kdj-ibg3.us-east-2.aws.cloud:9092`
 - **Group ID** is an optional field that allows users to input their consumer group ID. If consumer groups are not utilized, leave this field blank
 - **Session Timeout** is the timeout used to detect client failures when using Kafka's group management facility
-- **Security Protocol** only SASL_SSL is supported at this time
-- **SASL/SCRAM** a family of SASL mechanisms that addresses the security concerns with traditional mechanisms that perform username/password authentication like PALIN. `SCRAM-SHA-256` and `SCRAM-SHA-512` are supported
+- **Security Protocol** `SASL_SSL`, `PLAINTEXT`, `SSL`, `SSL_PLAINTEXT` are supported at this time
+- **SASL Mechanisms** a family of SASL mechanisms that addresses the security concerns with traditional mechanisms that perform username/password authentication like `PLAIN`, `SCRAM-SHA-256` and `SCRAM-SHA-512`, `GSSAPI`, `OAUTHBEARER` are supported
 
 ### Credentials
 
@@ -36,8 +36,3 @@ Typing the username and password into the Prophecy UI is **NOT RECOMMENDED**. Th
 
 The recommended method is to use Databricks Secrets.
 :::
-
-## StreamingSource and StreamingTarget
-
-Streaming source gems render to `spark.readStream()` on the Spark side. Currently, we support file stream-based sources and targets, warehouse-based targets, and event stream-based sources and targets:
-![Sources and Targets](../img/source-screen.png)
