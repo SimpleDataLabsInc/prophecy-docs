@@ -36,7 +36,7 @@ Spark Structured Streaming applications have a variety of source and target comp
 
 For more information on Batch Source and Target Gems, click [here](/low-code-spark/gems/source-target/source-target.md).
 
-For more information on Streaming Source and Target Gems, click [here](/low-code-spark/spark-streaming/streaming-source-gem).
+For more information on Streaming Source and Target Gems, click [here](/low-code-spark/spark-streaming/streaming-source-gem/streaming-event-gem.md).
 
 ### Streaming Transformations
 
