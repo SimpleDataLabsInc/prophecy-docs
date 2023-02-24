@@ -37,17 +37,17 @@ groups.
 
 ### Information required from Okta
 
-#### SSO URL
-
-Go to the `General` tab of _Prophecy SAML App_ in Okta and go towards the bottom of the page and find the section `App Embed Link`. Copy the URL.
-
-![App embed link](./img/okta_app_embed_link.png)
-
 #### Certificate
 
-Go to the `Sign On` tab and find the `SAML Signing Certificates` section. Download the certificate by clicking on the button marked in the example below:
+Go to the `Sign On` tab of _Prophecy SAML App_ in Okta and find the `SAML Signing Certificates` section. Download the certificate by clicking on the button marked in the example below:
 
 ![Download Okta Cert](./img/okta_dl_cert.png)
+
+#### SSO URL
+
+In the `Sign On` tab itself under `SAML Signing Certificates`, click on `View IdP metadata` in the above image. It will open up an XML file like below in another tab in browser. Copy the red highlighted text in Location section as `SSO URL` in Prophecy IDE.
+
+![IDP Metadata](./img/okta_idp_metadata_xml.png)
 
 #### Entity and SSO Issuer
 
