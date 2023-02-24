@@ -164,5 +164,3 @@ def apply(spark: SparkSession): Unit = {
 Much better!
 
 So, in summary: the Phase of **_Leaf Nodes_** (that is, the final Gem in a given branch of a Pipeline) is the Phase that will dictate the order of the generated code.
-
-## Caching
