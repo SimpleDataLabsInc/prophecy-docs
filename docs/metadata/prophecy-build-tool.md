@@ -187,7 +187,7 @@ PBT can be integrated with your own CI/CD solution to build, test and deploy Pro
 ### Setting up environment variables and secrets
 
 PBT requires environment variables **DATABRICKS_URL** and **DATABRICKS_TOKEN** to be set for complete functionality.
-
+Setting **DATABRICKS_TOKEN** as a secret in Github
 The **DATABRICKS_TOKEN** that needs to be used can be set as a secret inside the Github repository of the project.
 Steps:
 

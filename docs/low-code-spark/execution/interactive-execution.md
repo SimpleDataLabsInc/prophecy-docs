@@ -2,7 +2,7 @@
 title: Interactive Execution
 id: interactive-execution
 description: Interactive Execution
-sidebar_position: 1
+sidebar_position: 2
 tags:
   - spark
   - interactive
@@ -68,7 +68,7 @@ export const ImageData = [
 
 - (1) - Option to enable/disable data sampling during interactive runs.
 - (2) - Option to choose the level of data sampling for interactive runs.
-- (3) - Option to enable/disable data sampling for Job runs (scheduled/interactive). Level of data sampling can be configured same as (2). If enabled the interims would be stored in [execution metrics](#execution-metrics) for scheduled runs as well.
+- (3) - Option to enable/disable data sampling for Job runs (scheduled/interactive). Level of data sampling can be configured same as (2). If enabled the interims would be stored in [execution metrics](#execution-metrics) for scheduler runs as well.
 
 ## Execution
 

@@ -56,7 +56,7 @@ To allow for interactive code execution Prophecy can connect to either [Databric
 
 ![Prophecy <> Databricks Connectivity](./img/connectivity-databricks.png)
 
-Prophecy connects to Databricks using [Rest API](https://docs.databricks.com/dev-tools/api/latest/index.html). Each [Fabric](../../concepts/fabrics) defined in Prophecy refers to a single [Databricks workspace](https://docs.databricks.com/workspace/index.html) and each user is required to provide a [personal access token](https://docs.databricks.com/dev-tools/api/latest/authentication.html) to authenticate to it.
+Prophecy connects to Databricks using [Rest API](https://docs.databricks.com/dev-tools/api/latest/index.html). Each [Fabric](/concepts/fabric) defined in Prophecy refers to a single [Databricks workspace](https://docs.databricks.com/workspace/index.html) and each user is required to provide a [personal access token](https://docs.databricks.com/dev-tools/api/latest/authentication.html) to authenticate to it.
 
 Security-conscious enterprises that use Databricks with limited network access have to additionally add the **Prophecy Data Plane IP address** (`3.133.35.237`) to the Databricks allowed [access list](https://docs.databricks.com/security/network/ip-access-list.html#add-an-ip-access-list).
 
