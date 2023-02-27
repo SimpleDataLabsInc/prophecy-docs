@@ -12,7 +12,7 @@ tags:
 
 Configure your user's [Settings](https://app.prophecy.io/metadata/settings) with a new `Git` provider: enter `Email`, `Username` and `Personal Access Token`, or simply `Login with Github`.
 
-![GitConnector](./img/Git_connector.png)
+![GitConnector](./img/git_connector.png)
 
 The video below walks through connecting to an external Git provider:
 
