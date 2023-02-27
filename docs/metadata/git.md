@@ -25,7 +25,7 @@ Every user will have a `Prophecy Managed` Git provider already created in their 
 
 ## How to create a new Project with external Git provider
 
-Once a Git Credential is created, these credentials can be used during Project creation (video below). Later, these credentials will be used to commit and release changes to Git for the entire Project.
+Once a Git Credential is created, it can be used during Project creation (video below). Later, this credential will be used to commit and release changes to Git for the entire Project.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -36,9 +36,9 @@ If you have not created your Git credentials already, you also have an option to
 
 ## How to commit changes
 
-When you create your first Project, `dev` branch is automatically created for you. This is to ensure that no edits/commits are made directly on the `main` [branch](http://localhost:3000/concepts/Project/#Project-commits).
+When you create your first Project, `dev` branch is automatically created for you. This is to ensure that no edits/commits are made directly on the `main` [branch](/concepts/Project/#Project-commits).
 
-Within a Project, create a Pipeline and commit changes to a feature branch. The default feature branch is called `dev`:
+Within a Project, create a Pipeline and commit changes to the `dev/$USERNAME` branch:
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
