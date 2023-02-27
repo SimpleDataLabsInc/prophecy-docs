@@ -87,7 +87,7 @@ Once the changes are merged, we can `release` a branch straight from the UI itse
 <iframe src="https://user-images.Githubusercontent.com/103921419/174550916-7d8beb20-2013-401d-be30-67c02983958f.mp4" title="How to release a branch" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-![Git after release](./img/git_release_eg1.png)
+![Git after release](./img/git_release1.png)
 
 :::note
 Databricks scheduler changes would only come into effect once the Project is released.
