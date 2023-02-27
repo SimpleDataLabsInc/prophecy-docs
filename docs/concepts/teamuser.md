@@ -24,4 +24,4 @@ Teams represent a group of users who work together
 
 Teams, User, and Git [Settings](https://app.prophecy.io/metadata/settings) are accessed by clicking the `Settings` icon at the bottom left of the menu bar. The following image shows the page and the available functionality.
 
-![Team Page](img/team_page.png)
+![Team Page](./img/team_page.png)

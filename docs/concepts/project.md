@@ -94,7 +94,7 @@ Starting from the [Create Entity](https://app.prophecy.io/metadata/create) page,
 
 In the `Create Project` pane you can set the name, output language (Scala or Python) and which team the project belongs to. Add [Git credentials](./../metadata/Git) in [Settings](https://app.prophecy.io/metadata/settings) or connect new Git credentials as below.
 
-![New project](img/new_project_git_credentials.png)
+![New project](./img/new_project_git_credentials.png)
 
 :::caution
 
