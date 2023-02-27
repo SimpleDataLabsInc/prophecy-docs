@@ -92,15 +92,19 @@ Starting from the [Create Entity](https://app.prophecy.io/metadata/create) page,
 
 ![Create Entity page](img/create_entity.png)
 
-In the `Create Project` pane you can set the name, output language (Scala or Python) and which team the project belongs to. Add [Git credentials](./../metadata/Git) in [Settings](https://app.prophecy.io/metadata/settings) or connect new Git credentials as below.
+In the `Create Project` pane you can set the name, output language (Scala or Python) and which team the project belongs to. Visually designed pipelines will generate code in the selected Project output language. Advanced users can design expressions in SQL, Python, or Scala, and the project will _generate code_ in the Project output language.
 
-![New project](./img/new_project_git_credentials.png)
+![Project language](img/project_language.png)
 
 :::caution
 
-It is not currently possible to switch the output language of a project after it has been created. Please choose the appropriate language for your environment.
+It is not currently possible to switch the output language of a Project after it has been created. Please choose the appropriate language for your environment.
 
 :::
+
+Add [Git credentials](./../metadata/Git) in [Settings](https://app.prophecy.io/metadata/settings) or connect new Git credentials as below.
+
+![New project](./img/new_project_git_credentials.png)
 
 ### 2. Create, edit and commit the Pipeline
 
