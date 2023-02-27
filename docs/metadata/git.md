@@ -38,7 +38,7 @@ If you have not created your Git credentials already, you also have an option to
 
 When you create your first Project, `dev` branch is automatically created for you. This is to ensure that no edits/commits are made directly on the `main` [branch](http://localhost:3000/concepts/Project/#Project-commits).
 
-Within a Project, create a Pipeline and commit changes to `dev` branch:
+Within a Project, create a Pipeline and commit changes to a feature branch. The default feature branch is called `dev`:
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
