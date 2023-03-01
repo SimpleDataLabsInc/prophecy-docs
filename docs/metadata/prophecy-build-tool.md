@@ -21,7 +21,7 @@ orchestration (e.g. Databricks Workflows).
 
 - Build and unit test all Pipelines in Prophecy projects (Scala and Python)
 - Deploy Jobs with built Pipelines on Databricks
-- Deploying Jobs filtered with fabric ids on Databricks
+- Deploying Jobs filtered with Fabric ids on Databricks
 - Integrate with CI/CD tools like GitHub Actions
 - Verify the project structure of Prophecy projects
 - Support for Project Configurations
@@ -120,15 +120,17 @@ Example deploy command:
 pbt deploy --path /path/to/your/prophecy_project/ --release-version 1.0 --project-id 10 --dependent-projects-path /path/to/dependent/prophecy/projects
 ```
 
-The `deploy` command also supports an advanced option `--fabric-ids` ( comma separated if more than one ), if there is a need to only deploy Jobs associated with certain fabric-ids,
-you can find the fabric id in your prophecy metadata page.
-following command will filter out and only deploy the jobs associated with given fabric ids.
+The `deploy` command also supports an advanced option `--fabric-ids` ( comma separated if more than one ), if there is a need to only deploy Jobs associated with certain Fabric ids,
+you can find the Fabric id in your Prophecy metadata page.
+following command will filter out and only deploy the jobs associated with given Fabric ids.
 Example deploy:
 
 ```shell
 pbt deploy --fabric-ids 647,1527 --path /path/to/your/prophecy_project/
 ```
+
 Sample output:
+
 ```shell
 Project name: HelloWorld
 Found 2 jobs: ashish-TestJob2, ashish-TestJob
@@ -162,13 +164,12 @@ Deploying jobs only for given Fabric IDs: ['647', '1527']
 ✅ Deployment completed successfully!
 ```
 
-By default, `deploy` command builds all pipelines and then deploys them, if you want to skip building all pipelines 
-( this could be useful, if you are running a `deploy` command  after running `deploy` or `build` previously.)
+By default, `deploy` command builds all pipelines and then deploys them, if you want to skip building all pipelines
+( this could be useful, if you are running a `deploy` command after running `deploy` or `build` previously.)
 
 ```shell
 pbt deploy --skip-builds --path /path/to/your/prophecy_project/
 ```
-
 
 Complete list of options for PBT `deploy`:
 
