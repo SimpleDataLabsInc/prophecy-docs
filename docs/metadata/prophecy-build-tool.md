@@ -1,5 +1,5 @@
 ---
-title: Prophecy Build Tool
+title: Prophecy Build Tool (pbt)
 id: prophecy-build-tool
 description: Prophecy Build tool
 sidebar_position: 4
@@ -17,10 +17,11 @@ tags:
 PySpark Pipelines) to integrate with your own CI / CD (e.g. Github Actions), build system (e.g. Jenkins), and
 orchestration (e.g. Databricks Workflows).
 
-## Features (v1.0.3.3)
+## Features (v1.0.4.1)
 
 - Build and unit test all Pipelines in Prophecy projects (Scala and Python)
 - Deploy Jobs with built Pipelines on Databricks
+- Deploying Jobs filtered with fabric ids on Databricks
 - Integrate with CI/CD tools like GitHub Actions
 - Verify the project structure of Prophecy projects
 - Support for Project Configurations
@@ -86,7 +87,7 @@ pbt deploy --path /path/to/your/prophecy_project/ --release-version 1.0 --projec
 Sample output:
 
 ```shell
-Prophecy-build-tool v1.0.3.3
+Prophecy-build-tool v1.0.4.1
 
 Found 1 jobs: daily
 Found 1 pipelines: customers_orders (python)
@@ -119,11 +120,61 @@ Example deploy command:
 pbt deploy --path /path/to/your/prophecy_project/ --release-version 1.0 --project-id 10 --dependent-projects-path /path/to/dependent/prophecy/projects
 ```
 
+The `deploy` command also supports an advanced option `--fabric-ids` ( comma separated if more than one ), if there is a need to only deploy Jobs associated with certain fabric-ids,
+you can find the fabric id in your prophecy metadata page.
+following command will filter out and only deploy the jobs associated with given fabric ids.
+Example deploy:
+
+```shell
+pbt deploy --fabric-ids 647,1527 --path /path/to/your/prophecy_project/
+```
+Sample output:
+```shell
+Project name: HelloWorld
+Found 2 jobs: ashish-TestJob2, ashish-TestJob
+Found 4 pipelines: customers_orders (python), report_top_customers (python), join_agg_sort (python),
+farmers-markets-irs (python)
+[SKIP]: Skipping builds for all pipelines as '--skip-builds' flag is passed.
+
+ Deploying 2 jobs
+Deploying jobs only for given Fabric IDs: ['647', '1527']
+
+[START]:  Deploying job jobs/TestJob2 [1/2]
+[DEPLOY]: Job being deployed for fabric id: 1527
+    Pipeline pipelines/farmers-markets-irs might be shared, checking if it exists in DBFS
+    Dependent package exists on DBFS already, continuing with next pipeline
+    Pipeline pipelines/report_top_customers might be shared, checking if it exists in DBFS
+    Dependent package exists on DBFS already, continuing with next pipeline
+    Querying existing jobs to find current job: Offset: 0, Pagesize: 25
+    Updating an existing job: ashish-TestJob2
+
+[START]:  Deploying job jobs/TestJob [2/2]
+[DEPLOY]: Job being deployed for fabric id: 647
+    Pipeline pipelines/customers_orders might be shared, checking if it exists in DBFS
+    Dependent package exists on DBFS already, continuing with next pipeline
+    Pipeline pipelines/join_agg_sort might be shared, checking if it exists in DBFS
+    Dependent package exists on DBFS already, continuing with next pipeline
+    Pipeline pipelines/report_top_customers might be shared, checking if it exists in DBFS
+    Dependent package exists on DBFS already, continuing with next pipeline
+    Querying existing jobs to find current job: Offset: 0, Pagesize: 25
+    Updating an existing job: ashish-TestJob
+
+✅ Deployment completed successfully!
+```
+
+By default, `deploy` command builds all pipelines and then deploys them, if you want to skip building all pipelines 
+( this could be useful, if you are running a `deploy` command  after running `deploy` or `build` previously.)
+
+```shell
+pbt deploy --skip-builds --path /path/to/your/prophecy_project/
+```
+
+
 Complete list of options for PBT `deploy`:
 
 ```shell
 pbt deploy --help
-Prophecy-build-tool v1.0.3.3
+Prophecy-build-tool v1.0.4.1
 
 Usage: pbt deploy [OPTIONS]
 
@@ -137,6 +188,9 @@ Options:
                                   deployments
   --prophecy-url TEXT             Prophecy URL placeholder to be used during
                                   deployments
+  --fabric-ids TEXT               Fabric IDs(comma separated) which can be
+                                  used to filter jobs for deployments
+  --skip-builds                   Flag to skip building Pipelines
   --help                          Show this message and exit.
 ```
 
