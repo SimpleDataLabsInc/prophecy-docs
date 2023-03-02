@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[3538],{67159:e=>{e.exports=JSON.parse('{"label":"parquet","permalink":"/tags/parquet","allTagsPath":"/tags","count":1,"items":[{"id":"low-code-spark/gems/source-target/file/parquet","title":"Parquet","description":"Parquet","permalink":"/low-code-spark/gems/source-target/file/parquet"}]}')}}]);

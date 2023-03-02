@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[81],{35889:function(t){t.exports=JSON.parse('{"label":"build","permalink":"/tags/build","allTagsPath":"/tags","count":1,"items":[{"id":"metadata/prophecy-build-tool","title":"Prophecy Build Tool (pbt)","description":"Prophecy Build tool","permalink":"/metadata/prophecy-build-tool"}]}')}}]);

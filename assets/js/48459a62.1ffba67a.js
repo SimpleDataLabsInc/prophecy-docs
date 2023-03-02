@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[3410],{29711:e=>{e.exports=JSON.parse('{"label":"project","permalink":"/tags/project","allTagsPath":"/tags","count":1,"items":[{"id":"concepts/project","title":"Projects and Git","description":"Keeping your Pipelines, Datasets and Jobs under (source) control","permalink":"/concepts/project"}]}')}}]);
