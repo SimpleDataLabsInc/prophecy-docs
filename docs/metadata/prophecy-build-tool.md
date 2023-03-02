@@ -231,6 +231,44 @@ Found 1 pipelines: customers_orders (python)
 ✅ Unit test for pipeline: pipelines/customers_orders succeeded.
 ```
 
+#### Validating project
+
+PBT supports validating all pipelines inside the Prophecy project. This allows users to check pipelines before deploying. Validation involves checking if the pipelines have any diagnostics. These are the same diagnostics which are shown on our Visual IDE.
+
+To run validate all pipelines present in the project, use the `validate` command as follows:
+
+```shell
+pbt validate --path /path/to/your/prophecy_project/
+```
+
+Sample output:
+
+```shell
+Prophecy-build-tool v1.0.3.4
+
+Project name: HelloWorld
+Found 1 jobs: default_schedule
+Found 4 pipelines: customers_orders (python), report_top_customers (python), join_agg_sort (python), farmers-markets-irs (python)
+
+Validating 4 pipelines
+
+  Validating pipeline pipelines/customers_orders [1/4]
+
+ Pipeline is validated: customers_orders
+
+  Validating pipeline pipelines/report_top_customers [2/4]
+
+ Pipeline is validated: report_top_customers
+
+  Validating pipeline pipelines/join_agg_sort [3/4]
+
+ Pipeline is validated: join_agg_sort
+
+  Validating pipeline pipelines/farmers-markets-irs [4/4]
+
+ Pipeline is validated: farmers-markets-irs
+```
+
 ## Integrating with GitHub Actions
 
 PBT can be integrated with your own CI/CD solution to build, test and deploy Prophecy code. The steps for setting up PBT with Github Actions on your repository containing a Prophecy project is mentioned below.
