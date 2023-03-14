@@ -45,6 +45,7 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 This repo is checked using `pre-commit` as part of any Pull Requests that are opened on it. To ensure that your changes comply with the rules and checks put in place, make sure you have run `pre-commit install` at least once after checking out this repo. Before you commit the hook will run some checks and prevent you from committing unless you fix the issues. Some checks may modify a file, simply re-stage it and try the commit again. If you want to run the checks manually simply run `pre-commit run -a` to run them on the entire repo.
 
 The checks in place are:
+
 1. JSON Formatting checks
 2. Merge conflict checks
 3. AWS Credential check
