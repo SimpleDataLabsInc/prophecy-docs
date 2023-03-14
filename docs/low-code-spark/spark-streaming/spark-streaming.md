@@ -40,4 +40,4 @@ Additionally, any batch data sources can be used in a streaming application. Bat
 
 ### Streaming Transformations
 
-For more information on Streaming Transformations, click [here](/low-code-spark/spark-streaming/streaming-transformations).
+For more information on Streaming Transformations, click [here](./streaming-transformations.md).
