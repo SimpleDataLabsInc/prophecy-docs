@@ -24,7 +24,7 @@ orchestration (e.g. Databricks Workflows).
 - Deploying Jobs filtered with Fabric ids on Databricks
 - Integrate with CI/CD tools like GitHub Actions
 - Verify the project structure of Prophecy projects
-- Support for Project Configurations
+- Deploying Pipeline Configurations
 
 ## Requirements
 
