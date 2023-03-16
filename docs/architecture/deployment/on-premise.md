@@ -115,7 +115,7 @@ Following are estimated recommended cluster sizes for different user numbers:
 | ------------------------- | -------- | -------- | --------- |
 | CPUs                      | 44 vCPUs | 80 vCPUs | 230 vCPUs |
 | Memory                    | 86 GB    | 160 GB   | 460 GB    |
-| Disk space (with backups) | 360 GB   | 720 GB   | 1440 TB   |
+| Disk space (with backups) | 360 GB   | 720 GB   | 1440 GB   |
 
 :::info
 Please, note that the recommended resource may vary based on the intensity of the usage of each developer. The numbers
