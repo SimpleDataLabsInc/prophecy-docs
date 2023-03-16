@@ -11,19 +11,20 @@ Constitutes the set of Gems that help with loading and saving data.
 
 A collection of Gems related to working with various file-based formats.
 
-| Name                                | Description                                                                                                       |
-| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| [CSV](./file/csv)                   | Allows you to read or write a delimited file (often called Comma Separated File, CSV)                             |
-| [Parquet](./file/parquet)           | Parquet is an open source file format built to handle flat columnar storage data formats.                         |
-| [Avro](./file/avro)                 | Avro format is a row-based storage format for Hadoop, which is widely used as a serialization platform.           |
-| [Text](./file/text)                 | This Gem allows you to read from or write to text file.                                                           |
-| [Delta](./file/delta)               | Reads data from Delta files present at a path and writes Delta files to a path based on configuration.            |
-| [JSON](./file/json)                 | Allows you to read or write a delimited file (often called Comma Separated File, CSV)                             |
-| [ORC](./file/orc)                   | ORC (Optimized Row Columnar) is a columnar file format designed for Spark/Hadoop workloads.                       |
-| [Fixed Format](./file/fixed-format) | Read data from fixed format files with expected schema, or write data to fixed format files with expected schema. |
-| [Kafka](./file/kafka)               | This source currently connects with Kafka Brokers in Batch mode.                                                  |
-| [XLSX (Excel)](./file/xlsx)         | Allows you to read or write Excel-compatible files.                                                               |
-| [FTP](./file/ftp)                   | Allows you to read or write files (csv, text and binary) on a remote location                                     |
+| Name                                              | Description                                                                                                       |
+| ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| [CSV](./file/csv)                                 | Allows you to read or write a delimited file (often called Comma Separated File, CSV)                             |
+| [Parquet](./file/parquet)                         | Parquet is an open source file format built to handle flat columnar storage data formats.                         |
+| [Avro](./file/avro)                               | Avro format is a row-based storage format for Hadoop, which is widely used as a serialization platform.           |
+| [Text](./file/text)                               | This Gem allows you to read from or write to text file.                                                           |
+| [Delta](./file/delta)                             | Reads data from Delta files present at a path and writes Delta files to a path based on configuration.            |
+| [JSON](./file/json)                               | Allows you to read or write a delimited file (often called Comma Separated File, CSV)                             |
+| [ORC](./file/orc)                                 | ORC (Optimized Row Columnar) is a columnar file format designed for Spark/Hadoop workloads.                       |
+| [Fixed Format](./file/fixed-format)               | Read data from fixed format files with expected schema, or write data to fixed format files with expected schema. |
+| [Kafka](./file/kafka)                             | This source currently connects with Kafka Brokers in Batch mode.                                                  |
+| [XLSX (Excel)](./file/xlsx)                       | Allows you to read or write Excel-compatible files.                                                               |
+| [FTP](./file/ftp)                                 | Allows you to read or write files (csv, text and binary) on a remote location                                     |
+| [Random Data Creator](./file/random-data-creator) | Allows you to create Random Data for quickly testing pipelines                                                    |
 
 ## Warehouse
 
