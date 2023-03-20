@@ -37,6 +37,6 @@ schema {
 
 There are three kinds of entites in use in the API:
 
-1. [Type](/mdapi/types)s
-2. [Enum](/mdapi/enums)s
-3. [Input](/mdapi/inputs)s
+1. [Types](/mdapi/types)
+2. [Enums](/mdapi/enums)
+3. [Inputs](/mdapi/inputs)

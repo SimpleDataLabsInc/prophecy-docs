@@ -17,7 +17,7 @@ Project is the primary unit of development and deployment to production in Proph
 
 A **project** contains
 
-- **Data Dipelines** that read, transform and write data using Spark
+- **Data Pipelines** that read, transform and write data using Spark
 - **Datasets** point to the data that is read and written to by the _Data Pipelines_
 - **Jobs** run _Data Pipelines_ based on a **schedule**
 
