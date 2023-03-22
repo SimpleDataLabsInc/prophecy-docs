@@ -21,6 +21,8 @@ yarn-error.log*
 
 # IntelliJ
 .idea/*
+**/.idea
+
 
 .metals
 .vscode
