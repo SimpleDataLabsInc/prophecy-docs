@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[8677],{64736:e=>{e.exports=JSON.parse('{"label":"release notes","permalink":"/tags/release-notes","allTagsPath":"/tags","count":1,"items":[{"id":"release_notes/Feb_2023","title":"February 2023","description":"Release notes for February","permalink":"/release_notes/Feb_2023"}]}')}}]);
