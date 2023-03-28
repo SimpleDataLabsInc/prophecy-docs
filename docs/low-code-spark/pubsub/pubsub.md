@@ -1,6 +1,6 @@
 ---
 title: Publish-Subscribe Data Projects
-description: pubSub
+description: Publish-Subscribe Data Projects
 id: pubsub
 tags: []
 ---
@@ -12,7 +12,7 @@ One of the best practices during Data-Project development is to _Use standardize
 3. Configured Subgraphs
 4. Configured Pipelines
 
-`Pipeline`s, `Dataset`s, `Subgraph`s and `User-Defined Function`s can now be shared across multiple projects and teams. This allows central Data Platform teams to build reusable code to cover a wide variety of business needs, such as Encryption/Decryption or Identity Masking, and have their "consumers" (the Data Practitioners) take a dependency on that reusable code. Since it's all versioned, when the reusable code changes, the downstream consumers will be notified and can update accordingly.
+`Pipeline`s, `Dataset`s, `Subgraph`s, and `User-Defined Function`s can now be shared across multiple projects and teams. This allows central Data Platform teams to build reusable code to cover a wide variety of business needs, such as Encryption/Decryption or Identity Masking, and have their "consumers" (the Data Practitioners) take a dependency on that reusable code. Since it's all versioned, when the reusable code changes, the downstream consumers will be notified and can update accordingly.
 
 Data admins can also _Create deployment templates for the pipelines_ that have the best practices baked into them for authorization, notifications,
 handling of errors, and logging the correct information.
@@ -43,8 +43,8 @@ Once a project is released, It can be added as a dependency in other projects.
 
 ### Accessing Dependency Project
 
-Once dependencies are Added to a Project, User will be able to see all Pipelines/Datasets/Subgraphs available from that project in Project Browser.
-Please see below video for example.
+Once dependencies are added to a Project, the User will be able to see all Pipelines/Datasets/Subgraphs available from that project in Project Browser.
+Please see the below video for an example.
 
 <div style={{position: 'relative', 'padding-bottom': '56.25%', height: 0}}>
    <iframe src="https://www.loom.com/embed/35dd7ca85426420fbc5143f803e4939f" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
@@ -53,14 +53,14 @@ Please see below video for example.
 
 ### Update from Dependency Project
 
-If there are changes made to existing Subgraphs/UDFs etc or added new ones, to reflect these in Dependent Projects, user would need to release the project. After Release a new version, they would see an option to update Dependency in project browser. Please refer below video for same.
+If there are changes made to existing Subgraphs/UDFs etc or added new ones, to reflect these in Dependent Projects, the User would need to release the project. After you Release a new version, they would see an option to update Dependency in their project browser. Please see below for an example.
 
 <div style={{position: 'relative', 'padding-bottom': '56.25%', height: 0}}>
    <iframe src="https://www.loom.com/embed/107797cc6cdd4558ad5b99fdfb740322" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
       style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}></iframe>
 </div>
 
-Please see below links for details on sharing UDFs, Subgraphs, Datasets and Pipelines.
+Please see the below links for details on sharing UDFs, Subgraphs, Datasets, and Pipelines.
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
