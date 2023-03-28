@@ -39,4 +39,4 @@ Please note that all these UDF are ready only in _AppProject_ and can only be ed
 Also, If user has UDFs coming from two different Projects with conflicting definitions, they will see an error diagnostics in the UDF screen as below.
 ![UDFConflict](./img/UDFConflictError.png)
 
-If a UDF is modified or a new UDF is added in _BaseProject_, these changes will only reflect in _AppProject_ after the user Releases the _BaseProject_ again, and [updates dependency] in _AppProject_
+If a UDF is modified or a new UDF is added in _BaseProject_, these changes will only reflect in _AppProject_ after the user Releases the _BaseProject_ again, and updates dependency in _AppProject_

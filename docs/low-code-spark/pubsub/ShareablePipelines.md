@@ -16,6 +16,7 @@ They can add config variables to the Pipeline, values for which can be provided 
 Users can run these pipelines then interactively, or also schedule them in Jobs.
 
 To using a Pipeline from _base Project_ for interactive runs, User would need to create a Config in _App Project_. Once added, this Pipeline would be visible in _App Project_.
+Please see the below video for interactive runs.
 
 <div style={{position: 'relative', 'padding-bottom': '56.25%', height: 0}}>
    <iframe src="https://www.loom.com/embed/a0dd8b6c896d4bd8b784ca46c1ecc932" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
@@ -24,7 +25,6 @@ To using a Pipeline from _base Project_ for interactive runs, User would need to
 
 :::info
 Please note, this Pipeline is read only in _App Project_. Only configs can be added and edited for this Pipeline here in _app Project_.
-Please see the below video for interactive runs.
 :::
 
 For Jobs, User doesn't need to import a Pipeline. When they create a Job in _App project_, they would be able to select any Pipeline from _Base Project_ in the Pipeline operator. all configs from _Base Project_ and _App project_ are available here in Job screen.
