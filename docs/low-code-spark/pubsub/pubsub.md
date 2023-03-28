@@ -41,7 +41,7 @@ Once a project is released, It can be added as a dependency in other projects.
       style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}></iframe>
 </div>
 
-### Accessing Dependency Project
+### Using shared Project components
 
 Once dependencies are added to a Project, the User will be able to see all Pipelines/Datasets/Subgraphs available from that project in Project Browser.
 Please see the below video for an example.
@@ -51,7 +51,7 @@ Please see the below video for an example.
       style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}></iframe>
 </div>
 
-### Update from Dependency Project
+### Updating the Dependency Project
 
 If there are changes made to existing Subgraphs/UDFs etc or added new ones, to reflect these in Dependent Projects, the User would need to release the project. After you Release a new version, they would see an option to update Dependency in their project browser. Please see below for an example.
 
