@@ -9,7 +9,7 @@ One of the best practices during Data-Project development is to _Use standardize
 
 1. Datasets
 2. User-Defined Functions
-3. Reusable Subgraphs
+3. Configured Subgraphs
 4. Configured Pipelines
 
 `Pipeline`s, `Dataset`s, `Subgraph`s and `User-Defined Function`s can now be shared across multiple projects and teams. This allows central Data Platform teams to build reusable code to cover a wide variety of business needs, such as Encryption/Decryption or Identity Masking, and have their "consumers" (the Data Practitioners) take a dependency on that reusable code. Since it's all versioned, when the reusable code changes, the downstream consumers will be notified and can update accordingly.

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Sharable Datasets
+title: Share Datasets
 id: sharable-datasets
 description: Sharable Datasets within the project and to other projects
 tags: []
@@ -22,7 +22,7 @@ Please refer below video for example
 
 ## Across Projects
 
-Once a Project(lets call it _BaseProject_) is Released and added as a [Dependency](/low-code-spark/shareability#project-dependency) to another Project(lets call it _AppProject_), all Datasets from _BaseProject_ are available in all Pipelines of _AppProject_.
+Once a Project(lets call it _BaseProject_) is Released and added as a [Dependency](/low-code-spark/pubsub#project-dependency) to another Project(lets call it _AppProject_), all Datasets from _BaseProject_ are available in all Pipelines of _AppProject_.
 
 Any Modification to datasets, or new Datasets will be updated in _AppProject_, only after Releasing _BaseProject_, and updating the same in _AppProject_.
 

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Sharable UDFs
+title: Share UDFs
 id: sharable-udfs
 description: Sharable UDFs within the project and to other projects
 tags: []
@@ -27,7 +27,7 @@ So, If user has edited or added UDF in a Pipeline, you might see uncommitted cha
 
 ## Across Projects
 
-Once a Project(lets call it _BaseProject_) is added as a [Dependency](/low-code-spark/shareability#project-dependency) to another Project(lets call it _AppProject_), all Project level UDFs from _BaseProject_ are available in all Pipelines of _AppProject_.
+Once a Project(lets call it _BaseProject_) is added as a [Dependency](/low-code-spark/pubsub#project-dependency) to another Project(lets call it _AppProject_), all Project level UDFs from _BaseProject_ are available in all Pipelines of _AppProject_.
 Please refer below image for the same.
 
 ![SharedUDFs](./img/SharedUDFs.png)

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Sharable Subgraphs
+title: Configured Subgraphs
 id: sharable-subgraphs
 description: Sharable Subgraphs within the project and to other projects
 tags: []
@@ -38,7 +38,7 @@ Please see below video for example
 
 ### Sharing Subgraphs Across Projects
 
-Once a Project(lets call it _BaseProject_) is Released and added as a [Dependency](/low-code-spark/shareability#project-dependency) to another Project(lets call it _AppProject_), all Subgraphs from _BaseProject_ are available in all Pipelines of _AppProject_.
+Once a Project(lets call it _BaseProject_) is Released and added as a [Dependency](/low-code-spark/pubsub#project-dependency) to another Project(lets call it _AppProject_), all Subgraphs from _BaseProject_ are available in all Pipelines of _AppProject_.
 
 Please see below video for example
 

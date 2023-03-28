@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: Sharable Pipelines
+title: Configured Pipelines
 id: sharable-pipelines
 description: Sharable Pipelines within the project and to other projects
 tags: []
