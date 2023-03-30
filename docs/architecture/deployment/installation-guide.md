@@ -1,4 +1,4 @@
-docs/architecture/deployment/installation-guide.md---
+---
 title: "Installation Guide"
 id: installation-guide
 description: Installation Guide
@@ -62,10 +62,9 @@ As mentioned above, Prophecy is installed via Helm chart whose values can be set
 | istio.enabled                                | bool   | Set it to `true` if `istio` is already installed in the cluster, irrespective of whether you wish to use `istio` or `nginx` as ingress controller.                                                                                                                                                                                                                                                                               | false                                        |
 | istio.gateway.name                           | string | Name of the `istio` gateway to be used to pass to virtual service resource (created for exposing prophecy services when `istio` is used as ingress controller)                                                                                                                                                                                                                                                                   | istio-gateways/istio-gateway                 |
 
-:::warning
 
-Parameters marked with an asterisk(\*) are mandatory.
-:::
+:warning: Parameters marked with an asterisk(\*) are mandatory.
+
 
 ### Sample Helm commands for different use-cases
 
@@ -99,15 +98,15 @@ of these resources based on the usage.
 | Gitserver                                   | `gitserver`          | 1500m, 2000Mi            | 30Gi                   | N                         |
 | Openidfederator                             | `openidfederator`    | 2000m, 4000Mi            | 5Gi                    | N                         |
 | Sparkedge                                   | `sparkedge`          | 2000m, 4000Mi            | 30Gi                   | N                         |
-| Lineage (deployed in same pod as sparkedge) | `lineageweb`         | 2000m, 4000Mi            | -                      | N                         |
+| Lineage (deployed in same pod as edweb)     | `lineageweb`         | 2000m, 4000Mi            | -                      | N                         |
 | Postgres                                    | `postgres`           | 2000m, 4000Mi            | 5Gi                    | N                         |
 | Transpiler                                  | `transpilerweb`      | 2000m, 4000Mi            | 5Gi                    | N                         |
 | Execution                                   | `execution`          | 2000m, 4000Mi            | 5Gi                    | Y                         |
 | Kafka                                       | `kafka`              | 500m, 512Mi              | 5Gi                    | N                         |
 | Zookeeper                                   | `zookeeper `         | 250m, 500Mi              | 2 volumes of 5Gi each  | N                         |
 | Schema Registry                             | `schemaregistry`     | 250m, 500Mi              | -                      | N                         |
-| Package Manager                             | `pkg-manager`        | -                        | -                      | N                         |
-| AdminPanel                                  | `adminpanel`         | -                        | -                      | Y                         |
+| Package Manager                             | `pkg-manager`        | 250m, 500Mi              | -                      | N                         |
+| AdminPanel                                  | `adminpanel`         | 250m, 500Mi              | -                      | Y                         |
 | Athena                                      | `athena`             | 500m, 1000Mi             | 10Gi                   | Y                         |
 | Platform Postgres                           | `postgres`           | 2000m, 4000Mi            | 5Gi                    | N                         |
 | Prophecy Controlplane Operator              | `prophecy-operator`  | 100m, 128Mi              | -                      | N                         |
