@@ -1,17 +1,25 @@
 ---
-title: Personal Access Tokens
-id: personalAccessTokens
-description: Personal Access Tokens (PAT) support
+title: Prophecy API
+id: prophecyAPI
+description: Prophecy metadata available through the Prophecy API
 sidebar_position: 5
 tags:
   - PAT
   - token
   - Personal Access Token
+  - graphqlAPI
 ---
+
+## Prophecy metadata available through the Prophecy API
+
+Prophecy users can access their metadata using the Prophecy API.
+Just create a Personal Access Token [PAT](./../metadata/prophecyAPI).
+One popular use case is to access the Prophecy metadata through automated scripts and integrate this data into an existing data visualization system. Use the Prophecy API to create a single pane of glass interface for data stewards and engineers to see pipelines, datasets, Lineage, etc. Please see [here](./../metadata/prophecyAPI) for more details on this feature.
+
+## Personal Access Token
 
 A Personal Access Token(PAT) is the token which customer can use for authentication to our API servers.
 This will enable customers to use PAT in their scripts and integrate Prophecy seamlessly to their data visualization ecosystem.
-They would be able to access Prophecy metadata through APIs and create a single pane of glass interface for their data stewards and engineers to see pipelines, datasets, Lineage, etc.
 
 ## Generate an API token
 
