@@ -11,3 +11,10 @@ This is the change log for all features, behavior changes, and updates (enhancem
 Each release may include updates that require the web interface to be refreshed.
 As a general practice, to ensure these updates do not impact your usage, we recommend refreshing the web interface regularly.
 :::
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```
