@@ -4,8 +4,10 @@ id: installation-guide
 description: Installation Guide
 sidebar_position: 2
 tags:
-  - deployment
-  - installation
+
+- deployment
+- installation
+
 ---
 
 Prophecy installation requires a Kubernetes cluster. Its installation and upgrades are managed by our infrastructure management plane called `Athena`.
@@ -38,7 +40,7 @@ To install Prophecy, the following infrastructure requirements must be satisfied
 
 As mentioned above, Prophecy is installed via Helm chart whose values can be set as below based on the requirement.
 
-| Parameter                                  | Type   | Description                                                                                                                                                                                                                                                                                                                                                                                                               | Default value                                      |
+| Parameter                                  | Type   | Description                                                                                                                                                                                                                                                                                                                                                                                                                 | Default value                                      |
 | ------------------------------------------ | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
 | `global.customer.name`\*                   | string | Name of the customer                                                                                                                                                                                                                                                                                                                                                                                                        | `""`                                               |
 | `global.prophecy.rootUrl`\*                | string | Base URL to be used for hosting Prophecy IDE                                                                                                                                                                                                                                                                                                                                                                                | `"" `                                              |
