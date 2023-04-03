@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[549],{55461:s=>{s.exports=JSON.parse('{"label":"token","permalink":"/tags/token","allTagsPath":"/tags","count":1,"items":[{"id":"metadata/personalAccessTokens","title":"Personal Access Tokens","description":"Personal Access Tokens (PAT) support","permalink":"/metadata/personalAccessTokens"}]}')}}]);
