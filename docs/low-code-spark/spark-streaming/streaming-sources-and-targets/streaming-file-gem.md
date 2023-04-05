@@ -38,3 +38,10 @@ The following file formats are supported. The Gem properties are accessible unde
 3. Parquet: Native Connector Docs for Source [here](https://spark.apache.org/docs/3.1.3/api/python/reference/api/pyspark.sql.streaming.DataStreamReader.csv.html). Additional Autoloader Options [here](https://docs.databricks.com/ingestion/auto-loader/options.html#csv-options).
 4. ORC: Native Connector Docs for Source [here](https://spark.apache.org/docs/3.1.3/api/python/reference/api/pyspark.sql.streaming.DataStreamReader.orc.html). Additional Autoloader Options [here](https://docs.databricks.com/ingestion/auto-loader/options.html#orc-options).
 5. Delta: A quickstart on Delta Lake Stream Reading and Writing is available [here](https://docs.databricks.com/structured-streaming/delta-lake.html#delta-table-as-a-source). Connector Docs are available [here](https://docs.delta.io/latest/delta-streaming.html). Note, that this would require installing the Spark Delta Lake Connector if the user has an on prem deployment. We have additionally provided support for Merge in the Delta Lake Write Connector. (uses `forEatchBatch` behind the scenes).
+
+## File-based Streaming Tutorial
+
+<div style={{position: 'relative', 'padding-bottom': '56.25%', height: 0}}>
+   <iframe src="https://www.loom.com/embed/858342a85bbe4bd4bab68326225a3f31" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
+      style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}></iframe>
+</div>
