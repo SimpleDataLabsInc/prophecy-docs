@@ -14,16 +14,9 @@ If you've ever done anything with numbers in your line of work odds are you've w
 ## Prerequisites
 
 :::caution
-If you receive an error about the `excel` format not being available you must install a library on your Databricks cluster.
+If you receive an error about the `excel` format not being available you must add `spark-excel` library as a dependency.
 
-1. Navigate to your cluster settings page in your Databricks workspace
-2. Click the `Libraries` tab
-3. Click `Install new`
-4. Click `Maven`
-5. Use `com.crealytics:spark-excel_2.12:3.2.1_0.17.1` in the `Coordinates` field
-6. Click `Install`
-
-Refer to the [Databricks documentation](https://docs.databricks.com/libraries/cluster-libraries.html#install-a-library-on-a-cluster) for more information if needed.
+Follow the instructions on [this page](../../../extensibility/dependencies.md) to add the Maven coordinate `com.crealytics:spark-excel_2.12:3.2.1_0.17.1` to your Pipeline.
 :::
 
 ## Parameters
