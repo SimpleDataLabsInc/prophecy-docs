@@ -10,10 +10,8 @@ tags:
 ---
 
 :::info Built on
-This connector is built on top of the already available [`spark-bigquery-connector`](https://github.com/GoogleCloudDataproc/spark-bigquery-connector/)
-
-To use this Gem in Prophecy, `com.google.cloud.spark:spark-3.3-bigquery-pushdown_2.12:0.30.0` Maven external dependency needs to be installed on cluster if it's not present.
-For installing dependencies from Prophecy UI, Please check [dependency management docs](https://docs.prophecy.io/low-code-spark/extensibility/dependencies)
+This connector is built on top of the already available [`spark-bigquery-connector`](https://github.com/GoogleCloudDataproc/spark-bigquery-connector/) connector. <br/>
+For non-databricks clusters, we need to install the corresponding library and please refer the library compatiblity matrix in the [`Spark BigQuery`](https://github.com/GoogleCloudDataproc/spark-bigquery-connector#connector-to-spark-compatibility-matrix) documentation. <br/>
 :::
 
 Allows read and write operations on `BigQuery`
@@ -65,7 +63,7 @@ We will be using BigQuery table to fetch the customer data.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/103921419/193517497-54c5544d-3b98-45ae-95e1-cb036bad6e4c.mp4" title="Salesforce Source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+<iframe src="https://user-images.githubusercontent.com/103921419/193517497-54c5544d-3b98-45ae-95e1-cb036bad6e4c.mp4" title="Salesforce Source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"/>
 </div></div>
 
 ### Generated Code {#source-code}
