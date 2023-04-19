@@ -20,6 +20,24 @@ Allows read and write operations on `BigQuery`
 
 Reads data from BigQuery tables.
 
+For establishing the connecting to BigQuery we have below three options:
+- None: Users are not required to set any credentails if the BigQuery configurations are set at cluster level.
+- JSON Credentials Filepath: BigQuery JSON key configuration can be passed to BigQuery
+- Databricks secrets: If the JSON configuration is directly stored on pipeline configs as databricks secrets then refer the config variable as `${config_vairable}`  
+
+:::info How to get the JSON Credentials from BigQuery?
+<details>
+<summary>Steps to get download BigQuery JSON Credentials</summary>
+<ul> 
+    <li> Goto <a href="https://console.cloud.google.com/apis/credentials">https://console.cloud.google.com/apis/credentials</a> </li>
+    <li> Click on "+ CREATE CREDENTIALS" button on top next and select "Service account" </li>
+    <li> Fill in the credentail creation form and will create the Service account after submit </li>
+    <li> Skip the above steps if Service account is already created and goto "KEYS" section of service account </li>
+    <li> Click on "ADD KEY" -> Create new Key -> Select "JSON" key type -> CREATE will download the json configuration file </li>
+</ul>
+</details>
+:::
+
 ### Source Parameters
 
 | Parameter                             | Description                                                                                                                                                                                                                                                                                               | Required |
@@ -54,7 +72,6 @@ Reads data from BigQuery tables.
 | Cache read session timeout in sec's   | (Optional) Timeout in seconds to create a ReadSession when reading a table. For Extremely large table this value should be increased. Default is 600 sec's                                                                                                                                                |          |
 | Conversation datetime zone ID         | (Optional) Time zone ID used to convert BigQuery's DATETIME into Spark's Timestamp, and vice versa. The full list can be seen by running java.time.ZoneId.getAvailableZoneIds() in Java/Scala, or sc.\_jvm.java.time.ZoneId.getAvailableZoneIds() in pyspark. Default is UTC                              |          |
 | Job query priority                    | (Optional) Priority levels set for the job while reading data from BigQuery query. The permitted values are:BATCH - Query is queued and started as soon as idle resources are available, usually within a few minutes. If the query hasn't started within 3 hours, its priority is changed to INTERACTIVE |          |
-
 
 ## Example
 
