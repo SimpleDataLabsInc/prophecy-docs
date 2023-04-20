@@ -30,7 +30,7 @@ A collection of Gems related to working with various file-based formats.
 A collection of Gems specializing in connecting to warehouse-style data sources.
 
 | Name                               | Description                                                                                                       |
-|------------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
 | [Snowflake](./warehouse/snowflake) | Allows you to read or write data to the Snowflake warehouse, using a high-performance connector. Enterprise only. |
 | [Redshift](./warehouse/redshift)   | Allows you to read or write data to the Redshift warehouse, using a high-performance connector. Enterprise only.  |
 | [Teradata](./warehouse/teradata)   | Allows you to read or write data to the Teradata warehouse, using a high-performance connector. Enterprise only.  |
