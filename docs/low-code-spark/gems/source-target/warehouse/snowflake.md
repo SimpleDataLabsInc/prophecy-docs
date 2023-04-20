@@ -2,7 +2,7 @@
 title: Snowflake
 id: snowflake
 description: Snowflake
-sidebar_position: 1
+sidebar_position: 8
 tags:
   - gems
   - warehouse
