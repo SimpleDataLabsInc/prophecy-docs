@@ -37,6 +37,7 @@ A collection of Gems specializing in connecting to warehouse-style data sources.
 | [JDBC](./warehouse/jdbc)           | Allows you to read or write data to the JDBC database.                                                            |
 | [Oracle](./warehouse/oracle)       | Allows you to read or write data to the Oracle warehouse, using a high-performance connector. Enterprise only.    |
 | [DB2](./warehouse/db2)             | Allows you to read or write data to the DB2 warehouse, using a high-performance connector. Enterprise only.       |
+| [BigQuery](./warehouse/bigquery)   | Allows you to read or write data to the BigQuery warehouse, using a high-performance connector. Enterprise only.  |
 
 ## Catalog
 
