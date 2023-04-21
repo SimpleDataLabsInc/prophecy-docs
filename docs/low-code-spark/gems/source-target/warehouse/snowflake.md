@@ -16,7 +16,7 @@ Allows read and write operations on `Snowflake`
 ### Source Parameters
 
 | Parameter       | Description                                                                                                                                               | Required                                               |
-| --------------- |-----------------------------------------------------------------------------------------------------------------------------------------------------------| ------------------------------------------------------ |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
 | Dataset Name    | Name of the Dataset                                                                                                                                       | True                                                   |
 | Credential Type | Credential Type: `Databricks Secrets` or `Username & Password`                                                                                            | True                                                   |
 | Credentials     | Databricks credential name , else username and password for the snowflake account                                                                         | Required if `Credential Type` is `Databricks Secrets`  |
@@ -33,12 +33,10 @@ Allows read and write operations on `Snowflake`
 
 ### Example {#source-example}
 
-
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://user-images.githubusercontent.com/130362885/233564725-fc63cf8f-6143-42fb-8fe0-ef3ee356271d.mp4" title="Snowflake Source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"/>
 </div></div>
-
 
 ### Generated Code {#source-code}
 
@@ -109,7 +107,7 @@ object sf_customer {
 ### Target Parameters
 
 | Parameter       | Description                                                                                                                                                                                                                                                                                                               | Required                                               |
-| --------------- |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| ------------------------------------------------------ |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
 | Dataset Name    | Name of the Dataset                                                                                                                                                                                                                                                                                                       | True                                                   |
 | Credential Type | Credential Type: `Databricks Secrets` or `Username & Password`                                                                                                                                                                                                                                                            | True                                                   |
 | Credentials     | Databricks credential name , else username and password for the snowflake account                                                                                                                                                                                                                                         | Required if `Credential Type` is `Databricks Secrets`  |
@@ -135,12 +133,10 @@ object sf_customer {
 
 ### Example {#target-example}
 
-
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://user-images.githubusercontent.com/130362885/233564852-27887c62-4809-4308-a8ef-12b7b9685091.mp4" title="Snowflake Target" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"/>
 </div></div>
-
 
 ### Generated Code {#target-code}
 
