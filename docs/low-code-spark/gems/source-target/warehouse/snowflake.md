@@ -4,9 +4,9 @@ id: snowflake
 description: Snowflake
 sidebar_position: 1
 tags:
-- gems
-- warehouse
-- snowflake
+  - gems
+  - warehouse
+  - snowflake
 ---
 
 Allows read and write operations on `Snowflake`
