@@ -35,7 +35,7 @@ Allows read and write operations on `Snowflake`
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/130362885/233564725-fc63cf8f-6143-42fb-8fe0-ef3ee356271d.mp4" title="Snowflake Source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"/>
+<iframe src="https://user-images.githubusercontent.com/130362885/234174360-4b499a7c-39d0-4981-a348-b9c1125a55e1.mp4" title="Snowflake Source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"/>
 </div></div>
 
 ### Generated Code {#source-code}
@@ -51,20 +51,21 @@ import TabItem from '@theme/TabItem';
 ```py
 def sf_customer(spark: SparkSession) -> DataFrame:
     from pyspark.dbutils import DBUtils
+
     return spark.read\
         .format("snowflake")\
         .options(
           **{
             "sfUrl": "https://tu22760.ap-south-1.aws.snowflakecomputing.com",
-            "sfUser": "ashishprophecy",
-            "sfPassword": "******",
+            "sfUser": DBUtils(spark).secrets.get(scope = "ashish", key = "username"),
+            "sfPassword": DBUtils(spark).secrets.get(scope = "ashish", key = "username"),
             "sfDatabase": "ASHISH",
             "sfSchema": "PUBLIC",
             "sfWarehouse": "COMPUTE_WH",
             "sfRole": "ACCOUNTADMIN"
           }
         )\
-        .option("dbtable", "CUSTOMER")\
+        .option("dbtable", "CUSTOMERS")\
         .load()
 ```
 
@@ -72,23 +73,24 @@ def sf_customer(spark: SparkSession) -> DataFrame:
 <TabItem value="scala" label="Scala">
 
 ```scala
-object sf_customer {
+object customer_snow_src {
   def apply(spark: SparkSession): DataFrame = {
     import com.databricks.dbutils_v1.DBUtilsHolder.dbutils
-    var reader = spark.read
+    var reader = context.spark.read
       .format("snowflake")
       .options(
         Map(
           "sfUrl" → "https://tu22760.ap-south-1.aws.snowflakecomputing.com",
-          "sfUser" → "ashishprophecy",
-          "sfPassword" → "******",
+          "sfUser" → dbutils.secrets.get(scope = "ashish", key = "username"),
+          "sfPassword" → dbutils.secrets
+            .get(scope = "ashish", key = "password"),
           "sfDatabase" → "ASHISH",
           "sfSchema" → "PUBLIC",
           "sfWarehouse" → "COMPUTE_WH",
           "sfRole" → "ACCOUNTADMIN"
         )
       )
-    reader = reader.option("dbtable", "CUSTOMER")
+    reader = reader.option("dbtable", "CUSTOMERS")
     reader.load()
   }
 }
@@ -135,7 +137,7 @@ object sf_customer {
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/130362885/233564852-27887c62-4809-4308-a8ef-12b7b9685091.mp4" title="Snowflake Target" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"/>
+<iframe src="https://user-images.githubusercontent.com/130362885/234174404-d5c24de9-1aa6-41d2-97ab-fab47779054f.mp4" title="Snowflake Target" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"/>
 </div></div>
 
 ### Generated Code {#target-code}
@@ -147,45 +149,48 @@ object sf_customer {
 <TabItem value="py" label="Python">
 
 ```py
-def sf_customer(spark: SparkSession, in0: DataFrame):
+def customer_snow_tg(spark: SparkSession, in0: DataFrame):
     from pyspark.dbutils import DBUtils
     options = {
         "sfUrl": "https://tu22760.ap-south-1.aws.snowflakecomputing.com",
-        "sfUser": "ashishprophecy",
-        "sfPassword": "******",
+        "sfUser": DBUtils(spark).secrets.get(scope = "ashish", key = "username"),
+        "sfPassword": DBUtils(spark).secrets.get(scope = "ashish", key = "password"),
         "sfDatabase": "ASHISH",
         "sfSchema": "PUBLIC",
         "sfWarehouse": "COMPUTE_WH",
         "sfRole": "ACCOUNTADMIN"
     }
-    spark.sparkContext._jvm.net.snowflake.spark.snowflake.Utils.runQuery(
-        spark.sparkContext._jvm.PythonUtils.toScalaMap(options),
-        "CREATE TABLE test_table(id INTEGER)"
-    )
     writer = in0.write.format("snowflake").options(**options)
-    writer.option("dbtable", "test_table").mode("overwrite").save()
+    writer = writer.option("dbtable", "CUSTOMERS")
+    writer = writer.mode("overwrite")
+    writer.save()
 ```
 
 </TabItem>
 <TabItem value="scala" label="Scala">
 
 ```scala
-object sf_customer {
+object customer_snow_tg {
   def apply(spark: SparkSession, in: DataFrame): Unit = {
+
     import net.snowflake.spark.snowflake.Utils
     import com.databricks.dbutils_v1.DBUtilsHolder.dbutils
-    val options = Map("sfUrl" → "https://tu22760.ap-south-1.aws.snowflakecomputing.com",
-                      "sfUser" → "ashishprophecy",
-                      "sfPassword" → "******",
-                      "sfDatabase" → "ASHISH",
-                      "sfSchema" → "PUBLIC",
-                      "sfWarehouse" → "COMPUTE_WH",
-                      "sfRole" → "ACCOUNTADMIN"
-    )
-    var writer = in.write.format("snowflake").options(options)
-    writer = writer.option("dbtable", "test_table")
+    var writer = in.write
+      .format("snowflake")
+      .options(
+        Map(
+          "sfUrl" → "https://tu22760.ap-south-1.aws.snowflakecomputing.com",
+          "sfUser" → dbutils.secrets.get(scope = "ashish", key = "username"),
+          "sfPassword" → dbutils.secrets
+            .get(scope = "ashish", key = "password"),
+          "sfDatabase" → "ASHISH",
+          "sfSchema" → "PUBLIC",
+          "sfWarehouse" → "COMPUTE_WH",
+          "sfRole" -> "ACCOUNTADMIN"
+        )
+      )
+    writer = writer.option("dbtable", "CUSTOMERS")
     writer = writer.mode("overwrite")
-    Utils.runQuery(options, "CREATE TABLE test_table(id INTEGER)")
     writer.save()
   }
 }
