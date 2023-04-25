@@ -1,6 +1,6 @@
 ---
 title: Data Quality
-id: dataquality
+id: data-quality
 description: Data Quality
 sidebar_position: 5
 tags:
