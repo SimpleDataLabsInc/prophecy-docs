@@ -35,7 +35,7 @@ Allows read and write operations on `Snowflake`
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/130362885/234174360-4b499a7c-39d0-4981-a348-b9c1125a55e1.mp4" title="Snowflake Source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"/>
+<iframe src="https://user-images.githubusercontent.com/103921419/234223969-f6440b4f-fc6f-461a-8f2a-19d25f640292.mp4" title="Snowflake Source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"/>
 </div></div>
 
 ### Generated Code {#source-code}
@@ -57,8 +57,8 @@ def sf_customer(spark: SparkSession) -> DataFrame:
         .options(
           **{
             "sfUrl": "https://tu22760.ap-south-1.aws.snowflakecomputing.com",
-            "sfUser": DBUtils(spark).secrets.get(scope = "ashish", key = "username"),
-            "sfPassword": DBUtils(spark).secrets.get(scope = "ashish", key = "username"),
+            "sfUser": Config.sf_username,
+            "sfPassword": Config.sf_password,
             "sfDatabase": "ASHISH",
             "sfSchema": "PUBLIC",
             "sfWarehouse": "COMPUTE_WH",
@@ -81,9 +81,8 @@ object customer_snow_src {
       .options(
         Map(
           "sfUrl" → "https://tu22760.ap-south-1.aws.snowflakecomputing.com",
-          "sfUser" → dbutils.secrets.get(scope = "ashish", key = "username"),
-          "sfPassword" → dbutils.secrets
-            .get(scope = "ashish", key = "password"),
+          "sfUser" → (s"${Config.sf_username}"),
+          "sfPassword" → (s"${Config.sf_password}"),
           "sfDatabase" → "ASHISH",
           "sfSchema" → "PUBLIC",
           "sfWarehouse" → "COMPUTE_WH",
@@ -153,8 +152,8 @@ def customer_snow_tg(spark: SparkSession, in0: DataFrame):
     from pyspark.dbutils import DBUtils
     options = {
         "sfUrl": "https://tu22760.ap-south-1.aws.snowflakecomputing.com",
-        "sfUser": DBUtils(spark).secrets.get(scope = "ashish", key = "username"),
-        "sfPassword": DBUtils(spark).secrets.get(scope = "ashish", key = "password"),
+        "sfUser": Config.sf_username,
+        "sfPassword": Config.sf_password,
         "sfDatabase": "ASHISH",
         "sfSchema": "PUBLIC",
         "sfWarehouse": "COMPUTE_WH",
@@ -180,9 +179,8 @@ object customer_snow_tg {
       .options(
         Map(
           "sfUrl" → "https://tu22760.ap-south-1.aws.snowflakecomputing.com",
-          "sfUser" → dbutils.secrets.get(scope = "ashish", key = "username"),
-          "sfPassword" → dbutils.secrets
-            .get(scope = "ashish", key = "password"),
+          "sfUser" → (s"${Config.sf_username}"),
+          "sfPassword" → (s"${Config.sf_password}"),
           "sfDatabase" → "ASHISH",
           "sfSchema" → "PUBLIC",
           "sfWarehouse" → "COMPUTE_WH",
