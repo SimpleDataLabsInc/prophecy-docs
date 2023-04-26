@@ -24,12 +24,10 @@ Expectations are the measures that you can set on your Dataset to ensure data qu
 ### How to set expectations on your Dataset
 
 To set expectations in Prophecy, click on the "Expectations" tab in the Dataset view. From there, you can choose from a variety of expectation types, such as "No Duplicates," "Range Check," and "Not null." and many more.
-For an example, please refer to the video tutorial below.
 
 ### How to enable and schedule the Expectations
 
 Once expectations are added, users can enable them and release their project to start running them on their data.
-Please refer to below video tutorial.
 
 :::info
 
