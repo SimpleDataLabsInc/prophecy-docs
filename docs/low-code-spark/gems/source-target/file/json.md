@@ -29,7 +29,7 @@ The below list contains the additional parameters to read a JSON file:
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/130362885/234466732-cf4a4908-67eb-41cf-94a2-7f5102f37195.mp4" title="Output rows equality" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+<iframe src="https://user-images.githubusercontent.com/130362885/234556861-d5b82f1a-883e-4b49-bebe-0ac47511583e.mp4" title="Output rows equality" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
 ### Generated Code {#source-code}
@@ -118,7 +118,7 @@ Because of Spark's distributed nature, output files are written as multiple sepa
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/130362885/234466038-ce78626f-7d98-470c-bf43-e91de9d58cd9.mp4" title="Output rows equality" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+<iframe src="https://user-images.githubusercontent.com/130362885/234556999-72c22d9b-c99e-4e6c-8887-b54b8d5d94f1.mp4" title="Output rows equality" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
 :::caution
