@@ -27,7 +27,11 @@ The below list contains the additional parameters to read a JSON file:
 
 ### Example {#source-example}
 
-![JSON source example](./img/json/json_source.gif)
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://user-images.githubusercontent.com/130362885/234466732-cf4a4908-67eb-41cf-94a2-7f5102f37195.mp4" title="Output rows equality" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+
 
 ### Generated Code {#source-code}
 
@@ -39,7 +43,7 @@ The below list contains the additional parameters to read a JSON file:
 
 ```py
 def ReadDelta(spark: SparkSession) -> DataFrame:
-    return spark.read.format("json").load("dbfs:/FileStore/data/example.json")
+    return spark.read.format("json").load("dbfs:/Prophecy/kyakkala@prophecy.io/customer.json")
 ```
 
 </TabItem>
@@ -51,7 +55,7 @@ object ReadJson {
 def apply(spark: SparkSession): DataFrame =
 spark.read
 .format("json")
-.load("dbfs:/FileStore/data/example.json")
+.load("dbfs:/Prophecy/kyakkala@prophecy.io/customer.json")
 
 }
 ```
@@ -87,7 +91,7 @@ def write_json(spark: SparkSession, in0: DataFrame):
     in0.write\
         .format("json")\
         .mode("overwrite")\
-        .save("dbfs:/data/test_output.json")
+        .save("dbfs:/Prophecy/kyakkala@prophecy.io/customer_tg_json")
 ```
 
 </TabItem>
@@ -99,7 +103,7 @@ object write_json {
     in.write
         .format("json")
         .mode("overwrite")
-        .save("dbfs:/data/test_output.json")
+        .save("dbfs:/Prophecy/kyakkala@prophecy.io/customer_tg_json")
 }
 ```
 
@@ -113,7 +117,10 @@ object write_json {
 
 Because of Spark's distributed nature, output files are written as multiple separate partition files. If you need a single output file for some reason (such as reporting or exporting to an external system), use a `Repartition` Gem in `Coalesce` mode with 1 output partition:
 
-![Coalesce example](img/coalesce.gif)
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://user-images.githubusercontent.com/130362885/234466038-ce78626f-7d98-470c-bf43-e91de9d58cd9.mp4" title="Output rows equality" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
 
 :::caution
 
