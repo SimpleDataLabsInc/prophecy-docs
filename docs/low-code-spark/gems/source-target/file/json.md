@@ -32,7 +32,6 @@ The below list contains the additional parameters to read a JSON file:
 <iframe src="https://user-images.githubusercontent.com/130362885/234466732-cf4a4908-67eb-41cf-94a2-7f5102f37195.mp4" title="Output rows equality" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-
 ### Generated Code {#source-code}
 
 ````mdx-code-block
@@ -43,7 +42,7 @@ The below list contains the additional parameters to read a JSON file:
 
 ```py
 def ReadDelta(spark: SparkSession) -> DataFrame:
-    return spark.read.format("json").load("dbfs:/Prophecy/kyakkala@prophecy.io/customer.json")
+    return spark.read.format("json").load("dbfs:/FileStore/data/example.json")
 ```
 
 </TabItem>
@@ -55,7 +54,7 @@ object ReadJson {
 def apply(spark: SparkSession): DataFrame =
 spark.read
 .format("json")
-.load("dbfs:/Prophecy/kyakkala@prophecy.io/customer.json")
+.load("dbfs:/FileStore/data/example.json")
 
 }
 ```
@@ -91,7 +90,7 @@ def write_json(spark: SparkSession, in0: DataFrame):
     in0.write\
         .format("json")\
         .mode("overwrite")\
-        .save("dbfs:/Prophecy/kyakkala@prophecy.io/customer_tg_json")
+        .save("dbfs:/data/test_output.json")
 ```
 
 </TabItem>
@@ -103,7 +102,7 @@ object write_json {
     in.write
         .format("json")
         .mode("overwrite")
-        .save("dbfs:/Prophecy/kyakkala@prophecy.io/customer_tg_json")
+        .save("dbfs:/data/test_output.json")
 }
 ```
 
