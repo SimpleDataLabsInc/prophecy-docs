@@ -17,9 +17,9 @@ tags:
 PySpark Pipelines) to integrate with your own CI / CD (e.g. Github Actions), build system (e.g. Jenkins), and
 orchestration (e.g. Databricks Workflows).
 
-## Features (v1.0.4.1)
+## Features (v1.0.5)
 
-- Build and unit test all Pipelines in Prophecy projects (Scala and Python)
+- Build (with Pipeline filters) and unit test all Pipelines in Prophecy projects (Scala and Python)
 - Deploy Jobs with built Pipelines on Databricks
 - Deploying Jobs filtered with Fabric ids on Databricks
 - Integrate with CI/CD tools like GitHub Actions
@@ -78,7 +78,20 @@ be uploaded. These are the `--release-version` and `--project-id` parameters whi
 (`databricks-job.json`). Using a unique release version of your choice and the project's Prophecy ID
 (as seen in the project's URL on the Prophecy UI) is recommended.
 
-Example deploy command:
+##### Build command
+
+```shell
+pbt build --path /path/to/your/prophecy_project/
+```
+
+- we also have the ability to filter pipelines which we want to build, this can be huge time saving if we have large number of pipelines,
+- Additionally, multiple pipelines can be passed comma(,) separated.
+
+```shell
+pbt build --pipelines customers_orders,join_agg_sort  --path /path/to/your/prophecy_project/
+```
+
+##### Deploy command
 
 ```shell
 pbt deploy --path /path/to/your/prophecy_project/ --release-version 1.0 --project-id 10
