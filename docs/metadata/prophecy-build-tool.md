@@ -28,7 +28,7 @@ orchestration (e.g. Databricks Workflows).
 
 ## Requirements
 
-- Python >=3.6 (Recommended 3.9.13)
+- Python >=3.7 (Recommended 3.9.13)
 - pip
 - `pyspark` (Recommended 3.3.0)
 
