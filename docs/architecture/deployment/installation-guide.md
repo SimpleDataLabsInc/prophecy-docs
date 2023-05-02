@@ -73,14 +73,14 @@ Parameters marked with an asterisk(\*) are mandatory.
 #### When the certificate is provided by Prophecy
 
 ```
-helm -n <namespace> install prophecy prophecy/prophecy-marketplace --version <prophecy-chart-version>
+helm -n <namespace> install prophecy prophecy/prophecy-installer --version <prophecy-chart-version>
 --set global.customer.name=<customer name> --set global.prophecy.rootUrl=<Base URL>
 ```
 
 #### When the certificate is provided by the Customer and there is no internet connectivity
 
 ```
-helm -n <namespace> install prophecy prophecy/prophecy-marketplace --version <prophecy-chart-version>
+helm -n <namespace> install prophecy prophecy/prophecy-installer --version <prophecy-chart-version>
 --set global.customer.name=<customer name>  --set global.prophecy.rootUrl=<Base URL> --set global.prophecy.wildcardCert.useExternal=true
 --set global.prophecy.wildcardCert.name=<wildcard cert secret name> --set athena.controlcenter.disabled=true
 --set global.repository=<Image repository> --set global.prophecy.imagePullSecret=<Image pull secret name> --set athena.isDarkCluster=true
