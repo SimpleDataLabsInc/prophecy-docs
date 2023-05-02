@@ -19,7 +19,7 @@ orchestration (e.g. Databricks Workflows).
 
 ## Features (v1.0.5)
 
-- Build (with Pipeline filters) and unit test all Pipelines in Prophecy projects (Scala and Python)
+- Build (all or specify ones to build) and unit test all Pipelines in Prophecy projects (Scala and Python)
 - Deploy Jobs with built Pipelines on Databricks
 - Deploying Jobs filtered with Fabric ids on Databricks
 - Integrate with CI/CD tools like GitHub Actions
@@ -84,8 +84,8 @@ be uploaded. These are the `--release-version` and `--project-id` parameters whi
 pbt build --path /path/to/your/prophecy_project/
 ```
 
-- we also have the ability to filter pipelines which we want to build, this can be huge time saving if we have large number of pipelines,
-- Additionally, multiple pipelines can be passed comma(,) separated.
+- PBT provides user the ability to filter pipelines to be build, this can be huge time saving if we have large number of pipelines,
+- Additionally, multiple pipelines can be passed comma(,) separated. To only build certain pipelines we can use:
 
 ```shell
 pbt build --pipelines customers_orders,join_agg_sort  --path /path/to/your/prophecy_project/
