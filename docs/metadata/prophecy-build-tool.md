@@ -19,7 +19,8 @@ orchestration (e.g. Databricks Workflows).
 
 ## Features (v1.0.5)
 
-- Build (all or specify ones to build) and unit test all Pipelines in Prophecy projects (Scala and Python)
+- Build Pipelines (all or specify ones to build) in Prophecy projects (Scala and Python)
+- Unit test Pipelines in Prophecy projects (Scala and Python)
 - Deploy Jobs with built Pipelines on Databricks
 - Deploying Jobs filtered with Fabric ids on Databricks
 - Integrate with CI/CD tools like GitHub Actions
