@@ -17,9 +17,10 @@ tags:
 PySpark Pipelines) to integrate with your own CI / CD (e.g. Github Actions), build system (e.g. Jenkins), and
 orchestration (e.g. Databricks Workflows).
 
-## Features (v1.0.4.1)
+## Features (v1.0.5)
 
-- Build and unit test all Pipelines in Prophecy projects (Scala and Python)
+- Build Pipelines (all or specify ones to build) in Prophecy projects (Scala and Python)
+- Unit test Pipelines in Prophecy projects (Scala and Python)
 - Deploy Jobs with built Pipelines on Databricks
 - Deploying Jobs filtered with Fabric ids on Databricks
 - Integrate with CI/CD tools like GitHub Actions
@@ -28,7 +29,7 @@ orchestration (e.g. Databricks Workflows).
 
 ## Requirements
 
-- Python >=3.6 (Recommended 3.9.13)
+- Python >=3.7 (Recommended 3.9.13)
 - pip
 - `pyspark` (Recommended 3.3.0)
 
@@ -78,7 +79,20 @@ be uploaded. These are the `--release-version` and `--project-id` parameters whi
 (`databricks-job.json`). Using a unique release version of your choice and the project's Prophecy ID
 (as seen in the project's URL on the Prophecy UI) is recommended.
 
-Example deploy command:
+##### Build command
+
+```shell
+pbt build --path /path/to/your/prophecy_project/
+```
+
+- PBT provides user the ability to filter pipelines to be build, this can be huge time saving if we have large number of pipelines,
+- Additionally, multiple pipelines can be passed comma(,) separated. To only build certain pipelines we can use:
+
+```shell
+pbt build --pipelines customers_orders,join_agg_sort  --path /path/to/your/prophecy_project/
+```
+
+##### Deploy command
 
 ```shell
 pbt deploy --path /path/to/your/prophecy_project/ --release-version 1.0 --project-id 10
