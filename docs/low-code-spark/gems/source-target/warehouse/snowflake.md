@@ -11,59 +11,39 @@ tags:
 
 Allows read and write operations on `Snowflake`
 
+:::info How to configure Key Pair Authentication on Snowflake?
+Please refer the snowflake official documentation to attach private key to user account: <a href="https://docs.snowflake.com/en/user-guide/key-pair-auth#configuring-key-pair-authentication">Configuring Key Pair Authentication</a>
+:::
+
 ## Source
 
 ### Source Parameters
 
-| Parameter       | Description                                                                                                                                               | Required                                               |
-| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| Dataset Name    | Name of the Dataset                                                                                                                                       | True                                                   |
-| Credential Type | Credential Type: `Databricks Secrets` or `Username & Password`                                                                                            | True                                                   |
-| Credentials     | Databricks credential name , else username and password for the snowflake account                                                                         | Required if `Credential Type` is `Databricks Secrets`  |
-| Username        | Login name for the Snowflake user                                                                                                                         | Required if `Credential Type` is `Username & Password` |
-| Password        | Password for the Snowflake user                                                                                                                           | Required if `Credential Type` is `Username & Password` |
-| Url             | Hostname for your account in the format: `<account_identifier>.snowflakecomputing.com`. <br/> Eg: `https://DJ07623.ap-south-1.aws.snowflakecomputing.com` | True                                                   |
-| Database        | Database to use for the session after connecting                                                                                                          | True                                                   |
-| Schema          | Schema to use for the session after connecting                                                                                                            | True                                                   |
-| Warehouse       | The default virtual warehouse to use for the session after connecting                                                                                     | False                                                  |
-| Data Source     | Strategy to read data: `DB Table` or `SQL Query`.                                                                                                         | True                                                   |
-| Table           | The name of the table to be read. All columns and records are retrieved (i.e. it is equivalent to `SELECT * FROM table`).                                 | Required if `Data Source` is `DB Table`                |
-| SQL Query       | The exact query (`SELECT` statement) to run                                                                                                               | Required if `Data Source` is `SQL Query`               |
+| Parameter              | Description                                                                                                                                               | Required                                               |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| Dataset Name           | Name of the Dataset                                                                                                                                       | True                                                   |
+| Credential Type        | Credential Type: `Databricks Secrets` or `Username & Password`                                                                                            | True                                                   |
+| Credentials            | Databricks credential name , else username and password for the snowflake account                                                                         | Required if `Credential Type` is `Databricks Secrets`  |
+| Username               | Login name for the Snowflake user                                                                                                                         | Required if `Credential Type` is `Username & Password` |
+| Password               | Password for the Snowflake user                                                                                                                           | Required if `Credential Type` is `Username & Password` |
+| Private Key Details    | Enable Private Key Details if snowflake user is associated with private key                                                                               | False                                                  |
+| Private key format     | Private key format of the private key file                                                                                                                | Required if `Private Key Details` is enabled           |
+| Private key filepath   | Location of Private key filepath                                                                                                                          | Required if `Private Key Details` is enabled           |
+| Private key passphrase | Passphrase of Private key file                                                                                                                            | Required if private key file is passphrase enabled     |
+| Url                    | Hostname for your account in the format: `<account_identifier>.snowflakecomputing.com`. <br/> Eg: `https://DJ07623.ap-south-1.aws.snowflakecomputing.com` | True                                                   |
+| Database               | Database to use for the session after connecting                                                                                                          | True                                                   |
+| Schema                 | Schema to use for the session after connecting                                                                                                            | True                                                   |
+| Warehouse              | The default virtual warehouse to use for the session after connecting                                                                                     | False                                                  |
+| Data Source            | Strategy to read data: `DB Table` or `SQL Query`.                                                                                                         | True                                                   |
+| Table                  | The name of the table to be read. All columns and records are retrieved (i.e. it is equivalent to `SELECT * FROM table`).                                 | Required if `Data Source` is `DB Table`                |
+| SQL Query              | The exact query (`SELECT` statement) to run                                                                                                               | Required if `Data Source` is `SQL Query`               |
 
 ### Example {#source-example}
 
-```mdx-code-block
-import App from '@site/src/components/slider';
-
-export const ImageData = [
-  {
-    "image":"img/snowflake/load/1.png",
-    "description":<h3 style={{padding:'10px'}}>Step 1 - Create Source Component</h3>,
-  },
-  {
-    "image":"img/snowflake/load/2.png",
-    "description":<h3 style={{padding:'10px'}}>Step 2 - Click 'Create Dataset'</h3>,
-  },
-  {
-    "image":"img/snowflake/load/3.png",
-    "description":<h3 style={{padding:'10px'}}> Step 3 - Enter 'Dataset Name' and select the SNOWFLAKE format under WAREHOUSE type</h3>
-  },
-  {
-    "image":"img/snowflake/load/4.png",
-    "description":<h3 style={{padding:'10px'}}>Step 4 - Enter Connection details</h3>,
-  },
-  {
-    "image":"img/snowflake/load/5.png",
-    "description":<h3 style={{padding:'10px'}}>Step 5 - Click 'Infer Schema' to fetch schema details</h3>,
-  },
-  {
-    "image":"img/snowflake/load/6.png",
-    "description":<h3 style={{padding:'10px'}}>Step 6 - Hit 'Refresh' to preview data </h3>,
-  },
-];
-
-<App ImageData={ImageData}></App>
-```
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://user-images.githubusercontent.com/130362885/235865924-aff354cc-ab30-4ef7-8885-1e66c285d3d7.mp4" title="Snowfalke Source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"/>
+</div></div>
 
 ### Generated Code {#source-code}
 
@@ -131,20 +111,24 @@ object sf_customer {
 
 ### Target Parameters
 
-| Parameter       | Description                                                                                                                                                                                                                                                                                                               | Required                                               |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| Dataset Name    | Name of the Dataset                                                                                                                                                                                                                                                                                                       | True                                                   |
-| Credential Type | Credential Type: `Databricks Secrets` or `Username & Password`                                                                                                                                                                                                                                                            | True                                                   |
-| Credentials     | Databricks credential name , else username and password for the snowflake account                                                                                                                                                                                                                                         | Required if `Credential Type` is `Databricks Secrets`  |
-| Username        | Login name for the snowflake user                                                                                                                                                                                                                                                                                         | Required if `Credential Type` is `Username & Password` |
-| Password        | Password for the snowflake user                                                                                                                                                                                                                                                                                           | Required if `Credential Type` is `Username & Password` |
-| Url             | Hostname for your account in the format: `<account_identifier>.snowflakecomputing.com`. <br/> Eg: `https://DJ07623.ap-south-1.aws.snowflakecomputing.com`                                                                                                                                                                 | True                                                   |
-| Database        | Database to use for the session after connecting                                                                                                                                                                                                                                                                          | True                                                   |
-| Schema          | Schema to use for the session after connecting                                                                                                                                                                                                                                                                            | True                                                   |
-| Warehouse       | The default virtual warehouse to use for the session after connecting                                                                                                                                                                                                                                                     | False                                                  |
-| Table           | The name of the table to which data is to be written.                                                                                                                                                                                                                                                                     | True                                                   |
-| Write Mode      | How to handle existing data. See [this table](#supported-write-modes) for a list of available options.                                                                                                                                                                                                                    | True                                                   |
-| Post-Script SQL | DDL/DML SQL statements to execute before writing data.<br/> It is intended for statements that do not return a result set, for example DDL statements like `CREATE TABLE` and DML statements like `INSERT, UPDATE, and DELETE`.<br/> It is not useful for statements that return a result set, such as `SELECT` or `SHOW` | False                                                  |
+| Parameter              | Description                                                                                                                                                                                                                                                                                                               | Required                                               |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| Dataset Name           | Name of the Dataset                                                                                                                                                                                                                                                                                                       | True                                                   |
+| Credential Type        | Credential Type: `Databricks Secrets` or `Username & Password`                                                                                                                                                                                                                                                            | True                                                   |
+| Credentials            | Databricks credential name , else username and password for the snowflake account                                                                                                                                                                                                                                         | Required if `Credential Type` is `Databricks Secrets`  |
+| Username               | Login name for the snowflake user                                                                                                                                                                                                                                                                                         | Required if `Credential Type` is `Username & Password` |
+| Password               | Password for the snowflake user                                                                                                                                                                                                                                                                                           | Required if `Credential Type` is `Username & Password` |
+| Private Key Details    | Enable Private Key Details if snowflake user is associated with private key                                                                                                                                                                                                                                               | False                                                  |
+| Private key format     | Private key format of the private key file                                                                                                                                                                                                                                                                                | Required if `Private Key Details` is enabled           |
+| Private key filepath   | Location of Private key filepath                                                                                                                                                                                                                                                                                          | Required if `Private Key Details` is enabled           |
+| Private key passphrase | Passphrase of Private key file                                                                                                                                                                                                                                                                                            | Required if private key file is passphrase enabled     |
+| Url                    | Hostname for your account in the format: `<account_identifier>.snowflakecomputing.com`. <br/> Eg: `https://DJ07623.ap-south-1.aws.snowflakecomputing.com`                                                                                                                                                                 | True                                                   |
+| Database               | Database to use for the session after connecting                                                                                                                                                                                                                                                                          | True                                                   |
+| Schema                 | Schema to use for the session after connecting                                                                                                                                                                                                                                                                            | True                                                   |
+| Warehouse              | The default virtual warehouse to use for the session after connecting                                                                                                                                                                                                                                                     | False                                                  |
+| Table                  | The name of the table to which data is to be written.                                                                                                                                                                                                                                                                     | True                                                   |
+| Write Mode             | How to handle existing data. See [this table](#supported-write-modes) for a list of available options.                                                                                                                                                                                                                    | True                                                   |
+| Post-Script SQL        | DDL/DML SQL statements to execute before writing data.<br/> It is intended for statements that do not return a result set, for example DDL statements like `CREATE TABLE` and DML statements like `INSERT, UPDATE, and DELETE`.<br/> It is not useful for statements that return a result set, such as `SELECT` or `SHOW` | False                                                  |
 
 ### Supported Write Modes
 
@@ -157,33 +141,10 @@ object sf_customer {
 
 ### Example {#target-example}
 
-```mdx-code-block
-
-export const ImageData2 = [
-  {
-    "image":"/img/snowflake/write/1.png",
-    "description":<h3 style={{padding:'10px'}}>Step 1 - Create Target Component</h3>,
-  },
-  {
-    "image":"/img/snowflake/write/2.png",
-    "description":<h3 style={{padding:'10px'}}>Step 2 - Click 'Create Dataset'</h3>,
-  },
-  {
-    "image":"/img/snowflake/write/3.png",
-    "description":<h3 style={{padding:'10px'}}> Step 3 - Enter 'Dataset Name' and select the SNOWFLAKE format under WAREHOUSE type</h3>
-  },
-  {
-    "image":"/img/snowflake/write/4.png",
-    "description":<h3 style={{padding:'10px'}}>Step 4 - Enter Connection details</h3>,
-  },
-  {
-    "image":"/img/snowflake/write/5.png",
-    "description":<h3 style={{padding:'10px'}}>Step 5 - Define 'Write Mode' and optionally provide 'Post-Script SQL'</h3>,
-  }
-];
-
-<App ImageData={ImageData2}></App>
-```
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://user-images.githubusercontent.com/130362885/235865992-6af2ad3b-f98b-46b7-ae09-9bc3cd12e6cc.mp4" title="Snowfalke Target" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"/>
+</div></div>
 
 ### Generated Code {#target-code}
 
