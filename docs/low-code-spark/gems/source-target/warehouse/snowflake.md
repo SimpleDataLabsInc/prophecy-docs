@@ -40,38 +40,10 @@ Please refer the snowflake official documentation to attach private key to user 
 
 ### Example {#source-example}
 
-```mdx-code-block
-import App from '@site/src/components/slider';
-
-export const ImageData = [
-  {
-    "image":"img/snowflake/load/1.png",
-    "description":<h3 style={{padding:'10px'}}>Step 1 - Create Source Component</h3>,
-  },
-  {
-    "image":"img/snowflake/load/2.png",
-    "description":<h3 style={{padding:'10px'}}>Step 2 - Click 'Create Dataset'</h3>,
-  },
-  {
-    "image":"img/snowflake/load/3.png",
-    "description":<h3 style={{padding:'10px'}}> Step 3 - Enter 'Dataset Name' and select the SNOWFLAKE format under WAREHOUSE type</h3>
-  },
-  {
-    "image":"img/snowflake/load/4.png",
-    "description":<h3 style={{padding:'10px'}}>Step 4 - Enter Connection details</h3>,
-  },
-  {
-    "image":"img/snowflake/load/5.png",
-    "description":<h3 style={{padding:'10px'}}>Step 5 - Click 'Infer Schema' to fetch schema details</h3>,
-  },
-  {
-    "image":"img/snowflake/load/6.png",
-    "description":<h3 style={{padding:'10px'}}>Step 6 - Hit 'Refresh' to preview data </h3>,
-  },
-];
-
-<App ImageData={ImageData}></App>
-```
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://user-images.githubusercontent.com/130362885/235865924-aff354cc-ab30-4ef7-8885-1e66c285d3d7.mp4" title="Snowfalke Source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"/>
+</div></div>
 
 ### Generated Code {#source-code}
 
@@ -169,33 +141,10 @@ object sf_customer {
 
 ### Example {#target-example}
 
-```mdx-code-block
-
-export const ImageData2 = [
-  {
-    "image":"/img/snowflake/write/1.png",
-    "description":<h3 style={{padding:'10px'}}>Step 1 - Create Target Component</h3>,
-  },
-  {
-    "image":"/img/snowflake/write/2.png",
-    "description":<h3 style={{padding:'10px'}}>Step 2 - Click 'Create Dataset'</h3>,
-  },
-  {
-    "image":"/img/snowflake/write/3.png",
-    "description":<h3 style={{padding:'10px'}}> Step 3 - Enter 'Dataset Name' and select the SNOWFLAKE format under WAREHOUSE type</h3>
-  },
-  {
-    "image":"/img/snowflake/write/4.png",
-    "description":<h3 style={{padding:'10px'}}>Step 4 - Enter Connection details</h3>,
-  },
-  {
-    "image":"/img/snowflake/write/5.png",
-    "description":<h3 style={{padding:'10px'}}>Step 5 - Define 'Write Mode' and optionally provide 'Post-Script SQL'</h3>,
-  }
-];
-
-<App ImageData={ImageData2}></App>
-```
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://user-images.githubusercontent.com/130362885/235865992-6af2ad3b-f98b-46b7-ae09-9bc3cd12e6cc.mp4" title="Snowfalke Target" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"/>
+</div></div>
 
 ### Generated Code {#target-code}
 
