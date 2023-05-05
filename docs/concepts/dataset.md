@@ -15,7 +15,7 @@ Datasets (not to be confused with a [Spark Dataset](https://spark.apache.org/doc
 1. **Schema**: Schema, in this case, is the _shape_ of the data. Column names, their types and _how_ to read and write the data that fits this schema
 2. **Fabric**: The [Fabric](fabrics/fabrics.md) is the execution environment in which this data resides.
 
-In short: **_WHAT_** your data looks like and **_HOW_** to read it or write it in a given Fabric. Datasets are grouped together in [Projects](./project.md).
+In short: **_WHAT_** your data looks like and **_HOW_** to read it or write it in a given Fabric. Datasets are grouped together in [Projects](project).
 
 ## Creating a Dataset
 
@@ -27,7 +27,7 @@ The screens that follow will depend on what _kind_ of [Source or Target](../low-
 
 ## Viewing project Datasets
 
-There's two places to see Datasets: The [Dataset list](https://app.prophecy.io/metadata/entity/user/datasets), which displays all Datasets across all of your Projects, and the [Project Metadata](./project.md#project-metadata) section of a Project page, which is scoped to the Datasets of that given project.
+There's two places to see Datasets: The [Dataset list](https://app.prophecy.io/metadata/entity/user/datasets), which displays all Datasets across all of your Projects, and the [Project Metadata](project/#project-metadata) section of a Project page, which is scoped to the Datasets of that given project.
 
 ## Dataset Metadata
 
@@ -60,13 +60,13 @@ On the [Dataset Metadata](#dataset-metadata) page, you'll find the `Relations` t
 
 ## Publishing/Sharing Datasets
 
-As part of the [Project Release](./project.md#release) process, Datasets within that Project are _published_ to other Projects within the same Team, and can be published to other Teams in read-only mode. This allows you to share your Dataset configurations with other Teams without allowing them to make changes to the original Dataset definitions. Let's see this in action:
+As part of the [Project Release](project/#release) process, Datasets within that Project are _published_ to other Projects within the same Team, and can be published to other Teams in read-only mode. This allows you to share your Dataset configurations with other Teams without allowing them to make changes to the original Dataset definitions. Let's see this in action:
 
 1. `DI_TEAM` is the central Data Infrastructure team. They have defined a common Project named `DI_Common_Python`:
    ![DI Team Project](img/dataset/pub1.png)
 2. `DI_Common_Python` has a number of Datasets defined within it:
    ![DI Common Datasets](img/dataset/pub2.png)
-3. The `DI_Team` merges and releases (following [this](./project.md#development-and-deployment) development pattern) the `DI_Common_Python` Project, tagging it `0.1`:
+3. The `DI_Team` merges and releases (following [this](project/#development-and-deployment) development pattern) the `DI_Common_Python` Project, tagging it `0.1`:
    ![DI Common Release](img/dataset/pub3.png)
 4. As you can see, the `DI_Team` has published the `DI_Common_Python` project to the `DE_Team`, the Data Engineering Team.
 5. Now, whenever the `DE_Team` builds Pipelines, they can see the following:
