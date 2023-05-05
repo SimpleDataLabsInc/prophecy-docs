@@ -102,7 +102,7 @@ It is not currently possible to switch the output language of a Project after it
 
 :::
 
-Add [Git credentials](./../metadata/Git) in [Settings](https://app.prophecy.io/metadata/settings) or connect new Git credentials as below.
+Add [Git credentials](./../../metadata/Git) in [Settings](https://app.prophecy.io/metadata/settings) or connect new Git credentials as below.
 
 ![New project](../img/new_project_git_credentials.png)
 

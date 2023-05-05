@@ -22,7 +22,7 @@ When you are already on a Pipeline editor page, you can open the Project browser
 
 ### Environment tab
 
-When click on the Environment tab in the Project browser, User can also browse the `Catalog tables` from the Fabric he is connected to.
+When click on the Environment tab in the Project browser, User can also browse the `Catalog tables` from the Fabric they are connected to.
 Moreover, He can just click on the `+` button to add this table as a Source Gem in any Pipeline.
 
 Please see below video for example.
