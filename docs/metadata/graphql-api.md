@@ -3,7 +3,7 @@ title: GraphQL API
 id: graphql-api
 draft: true
 description: GraphQL API
-sidebar_position: 6
+sidebar_position: 8
 tags:
   - metadata
   - graphql
