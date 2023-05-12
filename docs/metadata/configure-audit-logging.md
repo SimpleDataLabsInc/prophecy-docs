@@ -13,15 +13,16 @@ For a list of each of these types of events and the associated parameters, see A
 
 ## Configure S3 bucket for logs
 
-1. Create/reuse a new AWS IAM user who is responsible for Prophecy libs.
-2. Share the ARN of the AWS user to grant permissions to our newly created S3 bucket. It should be of the format `arn:aws:iam::{{Customer-Account-ID}:user/{Customer-User}` with the actual customer details. Eg: `arn:aws:iam::022726153140:user/prashanth`
-3. Download the AWS CLI on customer machine and set it up on their machine.
-4. Create/reuse AWS access keys using the above user and configure the AWS CLI to use it.
-5. Use the below command to get the latest events bucket locally. You may use similar mechanism to access it from your applications.
+1. Create/reuse a AWS IAM user who is requires access to prophecy audit logs. There is no need to attach any policies to this user. 
+2. Share the ARN of the AWS user with Prophecy, inorder to grant permissions to access the audit events stored in prophecy S3 bucket. The ARN should be of the format `arn:aws:iam::{{Customer-Account-ID}:user/{Customer-User}` with the actual customer details. Eg: `arn:aws:iam::123456789012:user/bob`.
+3. Prophecy would provide the required access and communicate back the S3 bucket URL that can be used to access the events.
+4. You may now be able to access this bucket over an application (or) AWS CLI using the above user credentials.
+5. Example of AWS CLI access is given below. Use the below command to get the latest events bucket locally. You may use similar mechanism to access it from your applications.
 
 ```
+aws configure --> with user access keys
 cd {desired-directory}
-aws s3 sync s3://customer-backend-events-xyz .
+aws s3 sync s3://customer-backend-events-xyz
 ```
 
 ## Audit events
