@@ -55,3 +55,15 @@ This table lists events for each Entity Type/Action along with the Request and R
 |          | Table Query User                       |                                                     | ["uid"]                                                                        | ["_id","firstName","lastName","company","email"]                                                                                                                                                                                 |
 | Git      | DeleteBranch                           |                                                     | ["projectId", "branchName"]                                                    |                                                                                                                                                                                                                                  |
 |          |                                        |                                                     |                                                                                |                                                                                                                                                                                                                                  |
+
+## Steps at customer environment
+
+1. Create/reuse a new AWS IAM user who is responsible for prophecy libs. 
+2. Share the ARN of the AWS user to grant permissions to our newly created S3 bucket. It should be of the format `arn:aws:iam::{{Customer-Account-ID}:user/{Customer-User}` with the actual customer details. Eg: `arn:aws:iam::022726153140:user/prashanth`
+3. Download the AWS CLI on customer machine and set it up on their machine. 
+4. Create/reuse AWS access keys using the above user and configure the AWS CLI to use it. 
+5. Use the below command to get the latest events bucket locally. You may use similar mechanism to access it from your applications.
+```
+cd {desired-directory}
+aws s3 sync s3://customer-backend-events-xyz .
+```
