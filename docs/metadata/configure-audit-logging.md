@@ -8,6 +8,7 @@ tags:
 ---
 
 Prophecy provides access to audit logs of activities performed by Prophecy users, allowing your enterprise to monitor detailed usage patterns.
+User can configure a S3 bucket to sync these events from Prophecy to their environment.
 
 ## Configure S3 bucket for logs
 
@@ -26,7 +27,13 @@ aws s3 sync s3://customer-backend-events-xyz
 
 ## Audit events
 
-This table lists events for each Entity Type/Action along with the Request parameters grouped by the entity.
+This table lists events for each Entity/Action along with the Request parameters grouped by the entity.
+
+:::info
+
+Please note, Prophecy Uses GraphQL queries so User might find some difference in Request and Response parameters depending upon where the Queries are used from.
+
+:::
 
 | Entity     | Query                               | Description                                         | Request Parameters                                                                                                   |
 | ---------- | ----------------------------------- | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
