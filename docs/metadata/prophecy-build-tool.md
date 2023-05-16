@@ -192,13 +192,13 @@ we can use `job-ids` filter (we can find JobId on Job metadata page) , PBT will 
 this could be really useful, if we have many jobs and we only want to deploy only few.
 
 ```shell
-pbt deploy --path /path/to/your/prophecy_project/ --job-id "TestJob1"
+pbt deploy --path /path/to/your/prophecy_project/ --job-ids "TestJob1"
 ```
 
 - we can also pass multiple comma separated Job Ids
 
 ```shell
-pbt deploy --path /path/to/your/prophecy_project/ --job-id "TestJob1,TestJob2"
+pbt deploy --path /path/to/your/prophecy_project/ --job-ids "TestJob1,TestJob2"
 ```
 
 Complete list of options for PBT `deploy`:
