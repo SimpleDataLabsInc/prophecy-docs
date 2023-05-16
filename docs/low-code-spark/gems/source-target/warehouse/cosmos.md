@@ -22,7 +22,10 @@ com.azure.cosmos.spark:azure-cosmos-spark_3-3_2-12:4.18.1
 
 ## Usage
 
-//TODO: Add Loom Video
+<div style={{position: 'relative', 'padding-bottom': '56.25%', height: 0}}>
+   <iframe src="https://www.loom.com/share/f5c150ff8a1b4c1fb1485c20e08fde50" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
+      style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}></iframe>
+</div>
 
 ## Common Auth Properties
 
