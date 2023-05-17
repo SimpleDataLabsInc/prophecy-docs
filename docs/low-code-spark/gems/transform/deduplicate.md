@@ -14,12 +14,12 @@ Removes rows with duplicate values of specified columns.
 
 ### Parameters
 
-| Parameter           | Description                                                                                                                                                                                                                                                                                     | Required |
-| :------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------- |
-| Dataframe           | Input dataframe                                                                                                                                                                                                                                                                                 | True     |
-| Row to keep         | - `Any`: Keeps any one row among duplicates. Uses underlying `dropDuplicates` construct<br/>- `First`: Keeps first occurrence of the duplicate row <br/>- `Last`: Keeps last occurrence of the duplicate row <br/>- `Unique Only`: Keeps rows that don't have duplicates <br/> Default is `Any` | True     |
-| Deduplicate columns | Columns to consider while removing duplicate rows                                                                                                                                                                                                                                               | True     |
-| Order columns       | Columns to sort Dataframe on before de-duping in case of `First` and `Last` rows to keep                                                                                                                                                                                                        | False    |
+| Parameter           | Description                                                                                                                                                                                                                                                                                                                                                                                                  | Required |
+| :------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------- |
+| Dataframe           | Input dataframe                                                                                                                                                                                                                                                                                                                                                                                              | True     |
+| Row to keep         | - `Any`: Keeps any one row among duplicates. Uses underlying `dropDuplicates` construct<br/>- `First`: Keeps first occurrence of the duplicate row <br/>- `Last`: Keeps last occurrence of the duplicate row <br/>- `Unique Only`: Keeps rows that don't have duplicates <br/>- `Distinct Rows`: Keeps all distinct rows. This is equivalent to performing a `df.distinct()` operation <br/>Default is `Any` | True     |
+| Deduplicate columns | Columns to consider while removing duplicate rows (not required for `Distinct Rows`)                                                                                                                                                                                                                                                                                                                         | True     |
+| Order columns       | Columns to sort Dataframe on before de-duping in case of `First` and `Last` rows to keep                                                                                                                                                                                                                                                                                                                     | False    |
 
 ### Examples
 
@@ -79,8 +79,7 @@ def earliest_cust_order(spark: SparkSession, in0: DataFrame) -> DataFrame:
           row_number()\
             .over(Window\
             .partitionBy("customer_id")\
-            .orderBy(col("order_dt").asc())\
-            .rowsBetween(Window.unboundedPreceding, Window.currentRow))
+            .orderBy(col("order_dt").asc())
         )\
         .filter(col("row_number") == lit(1))\
         .drop("row_number")
@@ -99,7 +98,6 @@ object earliest_cust_order {
           Window
             .partitionBy("customer_id")
             .orderBy(col("order_date").asc)
-            .rowsBetween(Window.unboundedPreceding, Window.currentRow)
         )
       )
       .filter(col("row_number") === lit(1))
@@ -134,16 +132,13 @@ def latest_cust_order(spark: SparkSession, in0: DataFrame) -> DataFrame:
           row_number()\
             .over(Window\
             .partitionBy("customer_id")\
-            .orderBy(col("order_dt").asc())\
-            .rowsBetween(Window.unboundedPreceding, Window.currentRow))
+            .orderBy(col("order_dt").asc())
         )\
         .withColumn(
           "count",
           count("*")\
             .over(Window\
-            .partitionBy("customer_id")\
-            .orderBy(col("order_dt").asc())\
-            .rowsBetween(Window.unboundedPreceding, Window.unboundedFollowing))
+            .partitionBy("customer_id")
         )\
         .filter(col("row_number") == col("count"))\
         .drop("row_number")\
@@ -163,7 +158,6 @@ object latest_cust_order {
           Window
             .partitionBy("customer_id")
             .orderBy(col("order_date").asc)
-            .rowsBetween(Window.unboundedPreceding, Window.currentRow)
         )
       )
       .withColumn(
@@ -171,8 +165,6 @@ object latest_cust_order {
         count("*").over(
           Window
             .partitionBy("customer_id")
-            .orderBy(col("order_date").asc)
-            .rowsBetween(Window.unboundedPreceding, Window.unboundedFollowing)
         )
       )
       .filter(col("row_number") === col("count"))
@@ -205,9 +197,7 @@ def single_order_customers(spark: SparkSession, in0: DataFrame) -> DataFrame:
           "count",
           count("*")\
             .over(Window\
-            .partitionBy("customer_id")\
-            .orderBy(col("order_dt").asc())\
-            .rowsBetween(Window.unboundedPreceding, Window.unboundedFollowing))
+            .partitionBy("customer_id")
         )\
         .filter(col("count") == lit(1))\
         .drop("count")
@@ -225,12 +215,43 @@ object single_order_customers {
         count("*").over(
           Window
             .partitionBy("customer_id")
-            .orderBy(col("order_date").asc)
-            .rowsBetween(Window.unboundedPreceding, Window.unboundedFollowing)
         )
       )
       .filter(col("count") === lit(1))
       .drop("count")
+  }
+
+}
+```
+
+</TabItem>
+</Tabs>
+
+````
+
+#### Rows to keep - `Distinct Rows`
+
+![Example usage of Deduplicate - Distinct](./img/dedup_eg_distinct.png)
+
+````mdx-code-block
+
+
+<Tabs>
+
+<TabItem value="py" label="Python">
+
+```py
+def single_order_customers(spark: SparkSession, in0: DataFrame) -> DataFrame:
+    return in0.distinct()
+```
+
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+object single_order_customers {
+  def apply(spark: SparkSession, in: DataFrame): DataFrame = {
+    in.distinct()
   }
 
 }
