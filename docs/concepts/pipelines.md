@@ -54,5 +54,5 @@ When editing a `Pipeline`, you'll be using the editor shown below.
 3. _Fabric Switch_ : Select the [Fabric](fabrics/fabrics.md) to use during development, start a new cluster or connect to an existing one
 4. _Gem drawer_ : Click to select a category, then click on the Gem you wish to insert into the editor. See [here](./gems.md) for more information on the Gems
 5. _Workspace_ : Everything in the middle of the view is the _Workspace_. This is where you'll create and manipulate the Gems that make up this `Pipeline`.
-6. _Git Status_ : In Prophecy almost everything is stored in Git, and this is where you can interact with the version control for your Pipeline. See [Projects & Git](./project.md) for more information
+6. _Git Status_ : In Prophecy almost everything is stored in Git, and this is where you can interact with the version control for your Pipeline. See [Projects & Git](project) for more information
 7. _Run_ : If you just want to run your `Pipeline` from start to finish, click this button
