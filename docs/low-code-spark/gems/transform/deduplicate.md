@@ -12,7 +12,7 @@ tags:
 
 Removes rows with duplicate values of specified columns.
 
-### Parameters
+## Parameters
 
 | Parameter           | Description                                                                                                                                                                                                                                                                                                                                                                                                  | Required |
 | :------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------- |
@@ -21,11 +21,11 @@ Removes rows with duplicate values of specified columns.
 | Deduplicate columns | Columns to consider while removing duplicate rows (not required for `Distinct Rows`)                                                                                                                                                                                                                                                                                                                         | True     |
 | Order columns       | Columns to sort Dataframe on before de-duping in case of `First` and `Last` rows to keep                                                                                                                                                                                                                                                                                                                     | False    |
 
-### Examples
+## Examples
 
 ---
 
-#### Rows to keep - `Any`
+### Rows to keep - `Any`
 
 ![Example usage of Deduplicate](./img/deduplicate_eg_1.png)
 
@@ -60,7 +60,7 @@ object dedup {
 
 ---
 
-#### Rows to keep - `First`
+### Rows to keep - `First`
 
 ![Example usage of Deduplicate - First](./img/dedup_eg_first.png)
 
@@ -113,7 +113,7 @@ object earliest_cust_order {
 
 ---
 
-#### Rows to keep - `Last`
+### Rows to keep - `Last`
 
 ![Example usage of Deduplicate - Last](./img/dedup_eg_last.png)
 
@@ -179,7 +179,7 @@ object latest_cust_order {
 
 ````
 
-#### Rows to keep - `Unique Only`
+### Rows to keep - `Unique Only`
 
 ![Example usage of Deduplicate - Unique](./img/dedup_eg_unique.png)
 
@@ -229,7 +229,7 @@ object single_order_customers {
 
 ````
 
-#### Rows to keep - `Distinct Rows`
+### Rows to keep - `Distinct Rows`
 
 ![Example usage of Deduplicate - Distinct](./img/dedup_eg_distinct.png)
 
