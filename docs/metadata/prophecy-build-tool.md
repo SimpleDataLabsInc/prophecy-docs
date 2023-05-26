@@ -261,11 +261,11 @@ Found 1 pipelines: customers_orders (python)
 ✅ Unit test for pipeline: pipelines/customers_orders succeeded.
 ```
 
-Users can also pass `--driver-library-path` as a parameter to pbt test command to pass jars of prophecy-libs dependencies to the command.
+Users can also pass --driver-library-path as a parameter to pbt test command to pass jars of Prophecy-libs dependencies to the command.
+
 ```shell
 pbt test --path /path/to/your/prophecy_project/ --driver-library-path <path_to_the_jars>
 ```
-
 
 #### Validating project
 
