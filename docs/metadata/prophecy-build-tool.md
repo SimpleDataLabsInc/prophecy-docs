@@ -261,6 +261,12 @@ Found 1 pipelines: customers_orders (python)
 ✅ Unit test for pipeline: pipelines/customers_orders succeeded.
 ```
 
+Users can also pass `--driver-library-path` as a parameter to pbt test command to pass jars of prophecy-libs dependencies to the command.
+```shell
+pbt test --path /path/to/your/prophecy_project/ --driver-library-path <path_to_the_jars>
+```
+
+
 #### Validating project
 
 PBT supports validating all pipelines inside the Prophecy project. This allows users to check pipelines before deploying. Validation involves checking if the pipelines have any diagnostics. These are the same diagnostics which are shown on our Visual IDE.
