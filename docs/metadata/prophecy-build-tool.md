@@ -17,7 +17,7 @@ tags:
 PySpark Pipelines) to integrate with your own CI / CD (e.g. Github Actions), build system (e.g. Jenkins), and
 orchestration (e.g. Databricks Workflows).
 
-## Features (v1.0.5)
+## Features (v1.1.0)
 
 - Build Pipelines (all or specify ones to build) in Prophecy projects (Scala and Python)
 - Unit test Pipelines in Prophecy projects (Scala and Python)
@@ -185,6 +185,22 @@ By default, `deploy` command builds all pipelines and then deploys them, if you 
 pbt deploy --skip-builds --path /path/to/your/prophecy_project/
 ```
 
+##### Deploy specific Jobs using JobId filter
+
+By default, `deploy` command builds all pipelines and then deploys all jobs, if you want to deploy some specific jobs
+we can use `job-ids` filter (we can find JobId on Job metadata page) , PBT will automatically calculate all the pipelines needed for the jobs and then build them.
+this could be really useful, if we have many jobs and we only want to deploy only few.
+
+```shell
+pbt deploy --path /path/to/your/prophecy_project/ --job-ids "TestJob1"
+```
+
+- we can also pass multiple comma separated Job Ids
+
+```shell
+pbt deploy --path /path/to/your/prophecy_project/ --job-ids "TestJob1,TestJob2"
+```
+
 Complete list of options for PBT `deploy`:
 
 ```shell
@@ -243,6 +259,12 @@ Found 1 pipelines: customers_orders (python)
     ============================== 1 passed in 17.42s ==============================
 
 ✅ Unit test for pipeline: pipelines/customers_orders succeeded.
+```
+
+Users can also pass --driver-library-path as a parameter to pbt test command to pass jars of Prophecy-libs dependencies to the command. If user doesn't add it, the tool by default picks the libraries from maven central.
+
+```shell
+pbt test --path /path/to/your/prophecy_project/ --driver-library-path <path_to_the_jars>
 ```
 
 #### Validating project
