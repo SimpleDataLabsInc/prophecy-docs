@@ -37,7 +37,7 @@ When using the compute cluster JDBC end-points, the last parameter of the url co
 
 Here’s a correct example `url: jdbc:Databricks://dbc-abc.cluod.Databricks.com:443/...;UID=token;`
 
-For optimal performance and best governance options, we recommend using Shared, Photon-enabled clusters with Unity-catalog enabled.
+For optimal performance and best governance options, we recommend using [Shared, Photon-enabled](https://docs.databricks.com/clusters/cluster-config-best-practices.html) clusters with [Unity-catalog](https://docs.databricks.com/data-governance/unity-catalog/compute.html) enabled.
 
 #### Warehouse JDBC End-point
 
@@ -45,7 +45,7 @@ For optimal performance and best governance options, we recommend using Shared, 
 
 To use a warehouse as your execution environment for SQL queries, switch to the **(1) SQL** persona, choose **(2) SQL Warehouses** from the sidebar menu, pick your preferred warehouse, go to **(3) Connection** details, select the latest version of JDBC URL **(4) 2.6.25 or later** and save the the **(5) JDBC URL.**
 
-For optimal performance and best governance options, we recommend using Pro Serverless warehouses with Unity Catalog enabled.
+For optimal performance and best governance options, we recommend using [Pro](https://docs.databricks.com/sql/admin/create-sql-warehouse.html#upgrade-a-pro-or-classic-sql-warehouse-to-a-serverless-sql-warehouse) Serverless warehouses with [Unity Catalog](https://docs.databricks.com/data-governance/unity-catalog/compute.html) enabled.
 
 ### 2.2 Create Personal Access Token (PAT)
 
@@ -158,7 +158,7 @@ Finally, click **(6) Connect** to save the Git connection.
 
 ![Choose the repository](img/4-3-2-2-choose-the-repository.png)
 
-Once your GitHub account is setup, populate the **(1) Repository** field with an HTTPS URL to a .Git repository you’d like to pull.
+Once your GitHub account is setup, populate the **(1) Repository** field with an HTTPS URL to a Git repository you’d like to pull.
 
 Then, fill in the **(2) Default Branch** field based on the default main repository’s branch (this is usually main or master). Default branch is a central point where all the code changes are merged, serving as the primary, up-to-date source for a project.
 
@@ -244,13 +244,13 @@ To create a new model simply click on the **(1) + Add Model** in the sidebar, wh
 <iframe src="https://Prophecy-1.wistia.com/medias/wowmg8l0qq" title="Drag and Drop Models Graph" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-Building your model is very simple, thanks to the drag-and-drop interface. In the video above, we’re doing the following, in our newly defined customer_nations model.
+Building your model is very simple, thanks to the drag-and-drop interface. In the video above, we’re doing the following, in our newly defined `customer_nations` model.
 
-1. First we add the nation seed, that we’ve previously defined, by dragging and dropping it on the canvas.
-2. Then we add a table from an Environment. We click on the Environment tab in the left sidebar and drag the customer table from the samples.tpch catalog and database to the canvas.
-3. Note, that when two sources are dragged closely to each other a Join component is automatically created (as demonstrated on the video).
-4. Then we drag and drop an Aggregate component from the Transform Gems drawer and connect it to the upstream Join component.
-5. Finally connect your Aggregate to the TargetModel that defines your view itself.
+1. First we add the `nation` seed, that we’ve previously defined, by dragging and dropping it on the canvas.
+2. Then we add a table from an **Environment.** We click on the **Environment** tab in the left sidebar and drag the customer table from the `samples.tpch` catalog and database to the canvas.
+3. Note, that when two sources are dragged closely to each other a **Join** component is automatically created (as demonstrated on the video).
+4. Then we drag and drop an **Aggregate** component from the Transform Gems drawer and connect it to the upstream **Join** component.
+5. Finally connect your **Aggregate** to the **TargetModel** that defines your view itself.
 
 ### 7.2 Define business logic
 
@@ -262,19 +262,19 @@ Clicking on any of the Gems shows these options.
 
 **(1) Name Edit** - click to edit the name of the transformation for easy identification.
 
-**(2) Gem Edit** - to modify the Gem logic click on the Open > button.
+**(2) Gem Edit** - to modify the Gem logic click on the **Open >** button.
 
-**(3) More** - to see more Gem configuration options, like editing comments, changing phases or deleting the Gem, click on the ... button. Please note, that to delete the selected Gem you can also press delete / backspace on your keyboard .
+**(3) More** - to see more Gem configuration options, like editing comments, changing phases or deleting the Gem, click on the ... button. Please note, that to delete the selected Gem you can also press **delete / backspace** on your keyboard.
 
 **(4) Run** - runs the model upto the selected Gem. We will learn more about this in the section 7.3 Interactively test.
 
 **(5) See errors** - To see errors related to your Gem, hover over the red icon next to the Gem. If there’s no red icon, that means your Gem has no errors and is good to go!
 
-Join definition
+#### Join definition
 
-7.2 Join definition.png
+![Join definition](img/7-2-join-definition.png)
 
-Let’s start by building the Join transformation. Upon opening the Gem, you can see a drawer pop-up which provides several helpful features. For transparency, you can always see the **(1) Input schema** on the left hand-side, **(4) Errors** in the footer, and have the ability to **(5) Run** the Gem on the top right.
+Let’s start by building the **Join** transformation. Upon opening the Gem, you can see a drawer pop-up which provides several helpful features. For transparency, you can always see the **(1) Input schema** on the left hand-side, **(4) Errors** in the footer, and have the ability to **(5) Run** the Gem on the top right.
 
 To fill-in our **(3) Join condition** within the **(2) Conditions** section, type `nation.n_nationkey = customers.c_nationkey`. The following condition, for every single customer, finds a nation based on the c_nationkey field.
 
@@ -286,23 +286,23 @@ To rename our Gem to describe its functionality, click on it’s **(7) Name** an
 
 Once done, press **(8) Save.**
 
-Aggregate definition
+#### Aggregate definition
 
-7.2 Aggregate definition.png
+![Aggregate definition](img/7-2-aggregate-definition.png)
 
-Next, let’s define the transformation logic for our Aggregate Gem, which will sum up the number of customers within each of the geographical locations and return a clean set of columns.
+Next, let’s define the transformation logic for our **Aggregate** Gem, which will sum up the number of customers within each of the geographical locations and return a clean set of columns.
 
-Within the **(1) Aggregate** tab define the following expressions on the **(2) Expressions** List. Most importantly, we create the customers column by counting customers using the count(c_custkey) expression. We also, add two columns name and nation_key, that describe the selected location. Note, that to easily add columns you can simply click on them in the schema browser on the left side.
+Within the **(1) Aggregate** tab define the following expressions on the **(2) Expressions** List. Most importantly, we create the `customers` column by counting customers using the `count(c_custkey)` expression. We also add two columns `name` and `nation_key`, that describe the selected location. Note, that to easily add columns you can simply click on them in the schema browser on the left side.
 
 Once the aggregation expressions are specified, we can consider grouping by a particular column. Switch to the Group By tab, and type in n_nationkey .
 
-Finally, we **(3) Rename** our Gem to count_customers and **(4) Save** it.
+Finally, we **(3) Rename** our Gem to `count_customers` and **(4) Save** it.
 
 ### 7.3 Interactively test
 
 Now that our model is fully defined, with all the logic specified, it’s time to test it.
 
-7.3 Interactively run.png
+![Interactively run](img/7-3-interactively-run.png)
 
 Prophecy makes interactively testing the models incredibly easy! Simply click on the **(1) Play** button on any of the Gems and the model with all of it’s upstream dependencies will be executed. Once the model runs, the **(2) Result** icon appears. Click the Result icon to view a **(3) Sample** set of records.
 
@@ -312,13 +312,13 @@ Now that we’ve developed and tested our models, it’s time to schedule and de
 
 ### 8.1 Create your Job
 
-8.1 Create Job.png
+![Create Job](img/8-1-create-job.png)
 
 We start by creating a Job. Jobs are graphs that orchestrate various tasks that are executed by the scheduler.
 
-To create a Job, we start by clicking on the **(1) Add Job** button in the Jobs section of the project browser. Create Job drawer appears, where we define the details of our Job.
+To create a Job, we start by clicking on the **(1) Add Job** button in the **Jobs** section of the project browser. **Create Job** drawer appears, where we define the details of our Job.
 
-Most of the fields, like Project or Branch are automatically populated for us. We start by populating the **(2) Name** field. Here, we’re going to run a whole project as part of this Job so we give it the same name as the project: getting_started.
+Most of the fields, like **Project** or **Branch** are automatically populated for us. We start by populating the **(2) Name** field. Here, we’re going to run a whole project as part of this Job so we give it the same name as the project: `getting_started`.
 
 Most importantly, we have to choose the **(3) Fabric** (Databricks SQL warehouse) on which we’re wishing to execute our models and write our tables. You can leave the default here, as the same Fabric that we were testing our models on.
 
@@ -330,17 +330,17 @@ Finally, we create our Job by clicking on **(6) Create New.**
 
 ### 8.2 Configure the DBT task
 
-8.2 Configure DBT task.png
+![Configure the DBT task](img/8-2-configure-dbt-task.png)
 
 Once your Job is created, you are redirected to the Job editing canvas. You will notice that it looks very similar to the model editor with some subtle differences.
 
-The **(1) Gem drawer** has been restricted to only a few basic Gems relevant to Databricks Jobs. For SQL projects, it’s DBT and Script tasks only.
+The **(1) Gem drawer** has been restricted to only a few basic Gems relevant to Databricks Jobs. For SQL projects, it’s **DBT** and **Script** tasks only.
 
 Let’s start by dragging and dropping the the **(2) DBT Gem.** Once it’s on the canvas, we open and configure it. Within the **(3) Property** tab, there’s three basic fields we fill:
 
-1. DBT project to schedule - which we set to the current project;
-2. Databricks SQL Warehouse - defines on which warehouse our SQL code is going to execute, we set it to the recently created Fabric;
-3. Git reference value - defines from which branch on Git, the code is pulled to execute, we set it to the currently used developed branch - same as what we set in the step 5.1 Checkout development branch (the name can be also seen in the footer).
+1. **DBT project to schedule** - which we set to the current project;
+2. **Databricks SQL Warehouse** - defines on which warehouse our SQL code is going to execute, we set it to the recently created Fabric;
+3. **Git reference value** - defines from which branch on Git, the code is pulled to execute, we set it to the currently used developed branch - same as what we set in the step 5.1 Checkout development branch (the name can be also seen in the footer).
 
 Once all the basic properties are set click **(4) Save.**
 
@@ -363,7 +363,7 @@ The process of deploying code is composed of 4 steps:
 
 ### 8.4 Monitor the release
 
-8.4 Release the project.png
+![Release the Project](img/8-4-release-the-project.png)
 
 During the release process Prophecy automatically packages, tests, and deploys your project’s artifacts - mostly SQL queries - to your Databricks Warehouse. You can monitor this process in the final **(1) Release** page.
 
