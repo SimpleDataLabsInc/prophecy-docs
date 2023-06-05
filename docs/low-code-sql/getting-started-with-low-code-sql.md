@@ -61,7 +61,7 @@ Once, the token is generated copy and save it from **(5) Token** and you’re go
 
 Prophecy introduces the concept of a Fabric to describe an execution environment. In this case, we create a single Fabric to connect a Databricks cluster or warehouse, execute SQL models interactively, and deploy scheduled Jobs. The Fabric defines the environment where SQL tables and views are materialized. Typically you should setup at least one Fabric each for development and production environments. Use the development environment(Fabric) for quick ad-hoc building purposes with only sample data and use the production environment for daily runs with real data for your use case.
 
-You can read more about Fabrics here.
+You can read more about Fabrics [here.](https://docs.prophecy.io/concepts/fabrics/create-a-fabric/)
 
 ![Create Fabric](img/3-1-create-fabric.png)
 
@@ -81,7 +81,7 @@ Please note, Fabrics are owned by Teams. Every Member present within the Team wi
 
 ## 4. Create a new Project
 
-Prophecy’s Project is a Git repository or a directory on Git that contains all of your transformation logic. Each Prophecy Project contains a dbt Core™️ project. Learn more about Projects here.
+Prophecy’s Project is a Git repository or a directory on Git that contains all of your transformation logic. Each Prophecy Project contains a dbt Core™️ project. Learn more about Projects [here.](https://docs.prophecy.io/concepts/project)
 
 After Fabric creation you can see one project initialized for you by default called HelloWorld_SQL. If you just want to play around with Prophecy, you can start there. However, for the purpose of this tutorial we’re going to build a brand new project from scratch.
 
@@ -103,7 +103,7 @@ If you’re new to Git, we recommend starting by connecting to Prophecy Managed 
 
 When choosing, Prophecy Managed Git as your default Git repository, there’s no further steps required! Prophecy automatically takes care of repository creation, connection, and initialization. You can just click **(3) Continue** to finalize the project setup.
 
-Using Prophecy Managed Git is very easy, but has some major downsides and therefore not recommended for production use-cases. Primarily, you will not be able to access the repository externally from Prophecy programmatically (which is a common enterprise requirement) or create Pull Requests (which is also recommended as a part of standard Git flow).
+Using Prophecy Managed Git is very easy, but has some major downsides and therefore not recommended for production use-cases. Primarily, you will not be able to access the repository externally from Prophecy programmatically (which is a common enterprise requirement) or create [Pull Requests](https://docs.prophecy.io/metadata/pr-templates/#raising-pull-requests) (which is also recommended as a part of standard [Git flow](https://docs.github.com/en/get-started/quickstart/github-flow)).
 
 If you decide to choose this option, you can always migrate the project to an external Git Repository by cloning it.
 
@@ -120,7 +120,7 @@ When connecting to external Git repositories, you have to first setup a Git conn
 
 ![Connect With Github](img/4-3-1-connect-with-github.png)
 
-If you have an existing GitHub account this process is very simple, thanks to Prophecy’s strong OAuth GitHub integration. If you don’t, you can create an account at Github.com.
+If you have an existing GitHub account this process is very simple, thanks to Prophecy’s strong OAuth GitHub integration. If you don’t, you can create an account at [Github.com](http://github.com).
 
 Each Git connection in Prophecy starts with an **(1) Alias** that’s going to be used to allow you to identify the right Git account. In most cases, this can be left as default. With that set click **(2) Login** with GitHub which will redirect you to a GitHub login page (if you’re not yet logged in). Enter your details and **(3) Sign in** or create a new account. From there, you’ll be asked to approve Prophecy as a valid application.
 
@@ -134,7 +134,7 @@ Finally, click **(5) Connect** to save the Git connection.
 
 ![Choose the repository](img/4-3-1-2-choose-the-repository.png)
 
-Once your GitHub account is setup, select a repository where Prophecy will store all the code for this project. Choose a **(1) Repository** from the dropdown available. If you’d like to create a new repository from scratch follow this guide.
+Once your GitHub account is setup, select a repository where Prophecy will store all the code for this project. Choose a **(1) Repository** from the dropdown available. If you’d like to create a new repository from scratch follow [this guide.](https://docs.github.com/en/get-started/quickstart/create-a-repo)
 
 **(2) Default Branch** field should populate automatically based on the repository’s default main branch - you can change if necessary. Default branch is a central point where all the code changes are merged, serving as the primary, up-to-date source for a project.
 
@@ -152,7 +152,7 @@ Firstly, define the **(2) Alias** that will allow you to easily identify your Gi
 
 Then, you have to provide your **(3) Git Email,** **(4) Git Username,** and **(5) Git Personal Access Token.** For most of the Git providers the username is the same as the email, however this is not always the case. Ensure to provide correct email, as the commits made by Prophecy are going to appear as if made by it.
 
-Each provider is going to use a slightly different process to generate Personal Access Token, here are the guides for some of the most common providers: GitHub, BitBucket, and Azure DevOps.
+Each provider is going to use a slightly different process to generate Personal Access Token, here are the guides for some of the most common providers: [GitHub](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token), [BitBucket](https://support.atlassian.com/bitbucket-cloud/docs/create-a-repository-access-token/), and [Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=Windows).
 
 Finally, click **(6) Connect** to save the Git connection.
 
@@ -229,7 +229,7 @@ Importing datasets is really easy. We can just drag-and-drop our existing tables
 
 ## 7. Develop your first model
 
-A model is an entity that contains a set of data transformations and defines either a view or a table that will be created on the warehouse of choice. Each model is stored as a select statement in a SQL file within a project. Prophecy models are based on dbt Core models, you can read more about it here.
+A model is an entity that contains a set of data transformations and defines either a view or a table that will be created on the warehouse of choice. Each model is stored as a select statement in a SQL file within a project. Prophecy models are based on dbt Core [models](https://docs.getdbt.com/docs/build/models).
 
 ![Create the first model](img/7-1-create-the-first-model.png)
 
@@ -322,7 +322,7 @@ Most of the fields, like **Project** or **Branch** are automatically populated f
 
 Most importantly, we have to choose the **(3) Fabric** (Databricks SQL warehouse) on which we’re wishing to execute our models and write our tables. You can leave the default here, as the same Fabric that we were testing our models on.
 
-Next, we choose the **(4) Schedule Interval,** which describes how often our schedule is going to run. The interval is defined by a CRON expression. Click on the 🕒 icon to open an easy interval picker.
+Next, we choose the **(4) Schedule Interval,** which describes how often our schedule is going to run. The interval is defined by a [CRON expression.](https://en.wikipedia.org/wiki/Cron#Cron_expression) Click on the 🕒 icon to open an easy interval picker.
 
 After that, we can optionally provide a list of email address which are going to receive the success or failure alerts. Those can be written in the **(5) Alerts** on the full Job section.
 
