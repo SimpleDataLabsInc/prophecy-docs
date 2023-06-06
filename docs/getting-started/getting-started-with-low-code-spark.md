@@ -6,9 +6,7 @@ description: Getting started with Spark on Databricks
 tags: []
 ---
 
-
 The following video shows how to get started with Spark on Databricks.
-
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
