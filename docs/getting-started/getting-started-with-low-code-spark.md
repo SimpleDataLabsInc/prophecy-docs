@@ -7,7 +7,7 @@ tags: []
 ---
 
 
-The following video shows how to get started with Spark on Databricks using _Partner Connect_ from your Databricks UI.
+The following video shows how to get started with Spark on Databricks.
 
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>

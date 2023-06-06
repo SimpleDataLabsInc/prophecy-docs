@@ -1,6 +1,6 @@
 ---
 title: SQL with Databricks
-id: GettingStartedSQL
+id: sql-with-databricks
 description: A tutorial on using Low-code SQL
 sidebar_position: 5
 tags:
@@ -241,12 +241,12 @@ To create a new model simply click on the **(1) + Add Model** in the sidebar, wh
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://prophecy-1.wistia.com/medias/wowmg8l0qq?seo=false?videoFoam=true" title="Drag and Drop Model Graph Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+<iframe src="https://fast.wistia.net/embed/iframe/wowmg8l0qq?videoFoam=true" title="Drag and Drop Model Graph Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
 
-Building your model is very simple, thanks to the drag-and-drop interface. In the video above, we’re doing the following, in our newly defined `customer_nations` model.
+Building your model is very simple, thanks to the drag-and-drop interface. In the video above, we’re doing the following, in our newly defined `customer_nations` model:
 
 1. First we add the `nation` seed, that we’ve previously defined, by dragging and dropping it on the canvas.
 2. Then we add a table from an **Environment.** We click on the **Environment** tab in the left sidebar and drag the customer table from the `samples.tpch` catalog and database to the canvas.
