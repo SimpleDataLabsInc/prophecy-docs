@@ -241,8 +241,10 @@ To create a new model simply click on the **(1) + Add Model** in the sidebar, wh
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://Prophecy-1.wistia.com/medias/wowmg8l0qq" title="Drag and Drop Models Graph" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+<iframe src="https://prophecy-1.wistia.com/medias/wowmg8l0qq?seo=false?videoFoam=true" title="Drag and Drop Model Graph Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
+<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
+
 
 Building your model is very simple, thanks to the drag-and-drop interface. In the video above, we’re doing the following, in our newly defined `customer_nations` model.
 
