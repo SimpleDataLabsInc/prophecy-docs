@@ -1,5 +1,5 @@
 ---
-title: Getting Started With Low-code SQL
+title: SQL with Databricks
 id: GettingStartedSQL
 description: A tutorial on using Low-code SQL
 sidebar_position: 5
