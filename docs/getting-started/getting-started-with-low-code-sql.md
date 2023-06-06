@@ -8,12 +8,17 @@ tags:
   - tutorial
 ---
 
-In this quick-start, we will show you how to setup Prophecy low-code SQL with an existing Databricks warehouse.
+At Prophecy, we've added low-code SQL capabilities to version [3.0](https://www.prophecy.io/blog/announcing-prophecy-3-0-low-code-sql-transformations) of our platform, so users can build highly performant queries on par with the best analytics engineers without needing to be coding experts. We built this feature on top of [dbt Core™️ ](https://github.com/dbt-labs/dbt-core), an open-source tool for managing SQL-based data transformations. With low-code SQL, our customers can build complex queries visually, and the tool automatically translates them into optimized SQL code in Git that’s fully open and accessible to all. This makes it simpler for more people to work with data and extract insights. 
 
-Requirements:
+#### In this quick-start, we will show you how to setup Prophecy low-code SQL with an existing Databricks warehouse.
+
+We'll take you step by step from account setup to developing your first model. By the end of this training, you'll have an understanding of dbt models, be able to use low-code SQL to define and test your business logic, and commit this code and deploy it to production. That's a lot, but we make building complex queries easy with our drag and drop tooling. Let's dig in!
+
+#### You will need:
 
 - Databricks Account
-- GitHub Account (optional)
+- GitHub Account (recommended)
+
 
 ## 1. Setup Prophecy account
 
