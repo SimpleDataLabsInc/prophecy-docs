@@ -13,10 +13,10 @@ Helps perform file operations like `copy` and `move` on different file systems
 ## Parameters
 
 | Parameter          | Description                                                                                                                                                | Required |
-|:-------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------|:---------|
+| :----------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------- | :------- |
 | File System        | `Local` - for operations on driver node file system <br/> `DBFS` - for operations on Databricks file system <br/> `S3` - for operations on S3 object store | True     |
 | Operation          | Operation to perform, `Copy`, `Move` or `Sync`                                                                                                             | True     |
-| Filename Regex     | File name Regex Eg: stdlog.*\.txt                                                                                                                          | False    |
+| Filename Regex     | File name Regex Eg: stdlog.\*\.txt                                                                                                                         | False    |
 | Ignore empty files | Ignore if file size is empty                                                                                                                               | False    |
 | Recurse            | Boolean for performing `Operation` recursively. Default is `False`                                                                                         | False    |
 | Source Path        | Path of source file/directory. <br/>Eg: /dbfs/source_file.txt, dbfs:/source_file.txt, s3://source_bucket/source_prefix/filename.txt                        | True     |
@@ -138,7 +138,6 @@ def copy_file(spark: SparkSession):
 
 ### Copy All Files From A Directory
 
-
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://github.com/SimpleDataLabsInc/prophecy-docs/assets/130362885/107a8195-e76a-48ab-900f-28e07b7798ed" title="File Copy a directory" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"/>
@@ -234,8 +233,8 @@ def copy_file(spark: SparkSession):
             )
 
             if props.operation == "move":
-                s3.delete_object(Bucket = src_bucket, Key = obj['Key'])   
-                 
+                s3.delete_object(Bucket = src_bucket, Key = obj['Key'])
+
 ```
 
 </TabItem>
