@@ -54,14 +54,15 @@ Before proceeding, it is crucial to ensure that all the required settings are pr
 
 You may find your **Livy URL** under the **Applications** tab on your EMR Cluster page.
 
+Copy/paste your Livy URL under **Spark Connection** and choose the appropriate **Spark Version** and _Scala Version_ You may find the Spark version from your EMR console. Refer to [Spark documentation](https://spark.apache.org/docs) to find the Scala version in relation to your Spark version.
+
 <img src={require('./img/livyurl.png').default} alt="EMR create cluster" width="75%" />
 
-Copy/paste your Livy URL under _Spark Connection_ and choose the appropriate _Spark Version_ and _Scala Version_
+Configure appropriate **Prophecy Library**. Select **File System** under **Prophecy Library** for both **Scala** and **Python** Enter `s3://prophecy-public-bucket/prophecy-libs` for **Scala** and `s3://prophecy-public-bucket/python-prophecy-libs` for **Python**. Prophecy will automatically configure dependencies based on your **Spark Version** and **Scala Version**.
 
-Configure appropriate **Prophecy Library** based on your Spark and Scala version.
 <img src={require('./img/library.png').default} alt="EMR create cluster" width="75%" />
 
-Your Fabric for Amazon EMR is configured! Try creating a cluster and attach to it.
+Your Fabric for Amazon EMR is configured! Try creating a cluster using the Fabric that you've just created and attach to it.
 <img src={require('./img/attach.png').default} alt="EMR create cluster" width="75%" />
 
 Run a simple Pipeline and make sure that the interim returns data properly.
