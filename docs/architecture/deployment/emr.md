@@ -53,12 +53,12 @@ Choose **Livy** as your **Provider**.
 Before proceeding, it is crucial to ensure that all the required settings are properly configured. If you are uncertain about the necessary configurations, we recommend reaching out to your cloud infrastructure team for additional guidance and assistance. They will be able to provide you with the specific information and support needed to ensure a successful setup.
 
 You may find your **Livy URL** under the **Applications** tab on your EMR Cluster page.
-
-Copy/paste your Livy URL under **Spark Connection** and choose the appropriate **Spark Version** and _Scala Version_ You may find the Spark version from your EMR console. Refer to [Spark documentation](https://spark.apache.org/docs) to find the Scala version in relation to your Spark version.
-
 <img src={require('./img/livyurl.png').default} alt="EMR create cluster" width="75%" />
 
-Configure appropriate **Prophecy Library**. Select **File System** under **Prophecy Library** for both **Scala** and **Python** Enter `s3://prophecy-public-bucket/prophecy-libs` for **Scala** and `s3://prophecy-public-bucket/python-prophecy-libs` for **Python**. Prophecy will automatically configure dependencies based on your **Spark Version** and **Scala Version**.
+Copy/paste your Livy URL under **Spark Connection** and choose the appropriate **Spark Version** and _Scala Version_ You may find the Spark version from your EMR console. Refer to [Spark documentation](https://spark.apache.org/docs) to find the Scala version in relation to your Spark version.
+<img src={require('./img/sparkversion.png').default} alt="EMR create cluster" width="75%" />
+
+Configure appropriate **Prophecy Library** based on your Spark and Scala version. and click on **Complete**.
 
 <img src={require('./img/library.png').default} alt="EMR create cluster" width="75%" />
 
