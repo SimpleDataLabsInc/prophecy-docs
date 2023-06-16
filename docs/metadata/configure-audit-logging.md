@@ -61,7 +61,7 @@ User would require to share an empty AWS S3 bucket with read/write permissions. 
     ]
   }
   ```
-5. In the above, replace `prophecy-customer-backend-events-xyz` with the ARN of the customer's destination bucket.
+5. In the above, replace `arn:aws:s3:::prophecy-customer-backend-events-xyz` with the ARN of the customer's destination bucket.
 6. Please note that we need the prophecy user principal (`s3access`) to be able to create S3 location at prophecy's account and hence require this role with Sid `DataSyncCreateS3Location`.
 7. Reach out to Prophecy at [contact us](mailto:success@Prophecy.io) with bucket ARN and region to enable this in your account.
 
