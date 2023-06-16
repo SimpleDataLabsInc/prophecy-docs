@@ -14,14 +14,23 @@ The Prophecy admin can configure a S3 bucket to sync these events from Prophecy 
 Please note, this is only Available for our Saas Users only. Also, the initial Setup to enable this would require Manual Effort. Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about this in Details.
 :::
 
-User would require to share an empty AWS S3 bucket with read/write permissions. Follow below steps to enable this Feature.
+User would require to share an empty AWS S3 bucket with read/write permissions. Please follow the guidelines below to set up the bucket correctly.
 
 ## Configure S3 bucket for logs
 
-1. User/Customer needs to create a new S3 bucket to which the events are to be synced on their own AWS account. This bucket has to be preferably on the `us-east-1` (N. Virginia). Users can name this bucket as `prophecy-customer-backend-events-xyz`, where `xyz` is the name of the user/customer.
-2. If the user is unable to create the above bucket in `us-east-1`, please explicitly communicate the region to the Prophecy team as there is additional configuration required for the same at Prophecy's end.
-3. Make sure that the object ownership is `ACLs disabled (recommended)` during or post creation of the bucket.
-4. The user needs to open the bucket via AWS console and click on the permissions section. Now under the bucket policy, the user needs to apply the following permissions for the Prophecy's IAM role to be able to sync S3 objects using AWS data sync.
+1. Create the S3 Bucket:
+   - Log in to your AWS account and navigate to the S3 service.
+   - Click on "Create Bucket" to initiate the bucket creation process.
+   - Choose a unique name for your bucket, following the format: `prophecy-customer-backend-events-xyz`, where xyz represents your name or any identifier of your choice.
+   - Select the desired AWS Region for the bucket. Ideally, choose the `"US East (N. Virginia)" region (us-east-1)`. If this region is not available, please communicate back the selected region as it requires additional configuration on our end.
+2. Set Object Ownership:
+
+   - After creating the bucket, ensure that the object ownership is set to `ACLs disabled (recommended)`. This can be done during or after the bucket creation process.
+
+3. Configuring Bucket Permissions for Prophecy:
+   - Open the newly created bucket in the AWS Management Console.
+   - Go to the "Permissions" section and locate the "Bucket Policy" tab.
+   - Apply the following permissions to allow Prophecy's IAM role to sync S3 objects using AWS DataSync.
 
 ```
 {
@@ -63,9 +72,10 @@ User would require to share an empty AWS S3 bucket with read/write permissions. 
 }
 ```
 
-5. In the above, replace `arn:aws:s3:::prophecy-customer-backend-events-xyz` with the ARN of the customer's destination bucket.
-6. Please note that we need the Prophecy user principal (`s3access`) to be able to create S3 location at Prophecy's account and hence require this role with Sid `DataSyncCreateS3Location`.
-7. Reach out to Prophecy at [contact us](mailto:success@Prophecy.io) with bucket ARN and region to enable this in your account.
+In above, replace `arn:aws:s3:::prophecy-customer-backend-events-xyz` with the ARN of your destination bucket.
+
+Please note that we need the Prophecy user principal (`s3access`) to be able to create S3 location at Prophecy's account and hence require this role with Sid `DataSyncCreateS3Location`.
+Reach out to Prophecy at [contact us](mailto:success@Prophecy.io) with bucket ARN and region to enable this in your account.
 
 ## Audit events
 
