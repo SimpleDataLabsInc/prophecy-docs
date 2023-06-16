@@ -22,7 +22,7 @@ User would require to share an empty AWS S3 bucket with read/write permissions. 
    - Log in to your AWS account and navigate to the S3 service.
    - Click on "Create Bucket" to initiate the bucket creation process.
    - Choose a unique name for your bucket, following the format: `prophecy-customer-backend-events-xyz`, where xyz represents your name or any identifier of your choice.
-   - Select the desired AWS Region for the bucket. Ideally, choose the `"US East (N. Virginia)" region (us-east-1)`. If this region is not available, please communicate back the selected region as it requires additional configuration on our end.
+   - Select the desired AWS Region for the bucket. Ideally, choose the `us-east-1 (N. Virginia)`. If this region is not available, please communicate back the selected region as it requires additional configuration on our end.
 2. Set Object Ownership:
 
    - After creating the bucket, ensure that the object ownership is set to `ACLs disabled (recommended)`. This can be done during or after the bucket creation process.
