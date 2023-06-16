@@ -10,7 +10,7 @@ tags:
   - compare-columns
 ---
 
-Compare columns between two dataframe based on the key id columns defined
+Compare columns between two DataFrame based on the key id columns defined
 
 ## Parameters
 
