@@ -18,51 +18,53 @@ User would require to share an empty AWS S3 bucket with read/write permissions. 
 
 ## Configure S3 bucket for logs
 
-1. User/Customer needs to create a new S3 bucket to which the events are to be synced to on their own AWS account. This bucket has to be preferably on the `us-east-1` (N. Virginia). User can name this bucket as `prophecy-customer-backend-events-xyz`. Where `xyz` is the name of the user/customer.
-2. If user is unable to create the above bucket in `us-east-1`, please explicitly communicate the region to the prophecy team as their is additional configuration required for the same at prophecy's end.
+1. User/Customer needs to create a new S3 bucket to which the events are to be synced on their own AWS account. This bucket has to be preferably on the `us-east-1` (N. Virginia). Users can name this bucket as `prophecy-customer-backend-events-xyz`, where `xyz` is the name of the user/customer.
+2. If the user is unable to create the above bucket in `us-east-1`, please explicitly communicate the region to the Prophecy team as there is additional configuration required for the same at Prophecy's end.
 3. Make sure that the object ownership is `ACLs disabled (recommended)` during or post creation of the bucket.
-4. The user needs to open the bucket via AWS console and click on the permissions section. Now under the bucket policy, the user needs to apply the following permissions for the prophecy's IAM role to be able to sync S3 objects using AWS data sync.
-  ```
-  {
-    "Version": "2008-10-17",
-    "Statement": [
-      {
-        "Sid": "DataSyncCreateS3LocationAndTaskAccess",
-        "Effect": "Allow",
-        "Principal": {
-          "AWS": "arn:aws:iam::133450206866:role/AWSDataSyncS3BucketAccessCustomerBackendEventsRole"
-        },
-        "Action": [
-          "s3:GetBucketLocation",
-          "s3:ListBucket",
-          "s3:ListBucketMultipartUploads",
-          "s3:AbortMultipartUpload",
-          "s3:GetObject",
-          "s3:ListMultipartUploadParts",
-          "s3:PutObject",
-          "s3:GetObjectTagging",
-          "s3:PutObjectTagging",
-          "s3:DeleteObject"
-        ],
-        "Resource": [
-          "arn:aws:s3:::prophecy-customer-backend-events-xyz",
-          "arn:aws:s3:::prophecy-customer-backend-events-xyz/*"
-        ]
+4. The user needs to open the bucket via AWS console and click on the permissions section. Now under the bucket policy, the user needs to apply the following permissions for the Prophecy's IAM role to be able to sync S3 objects using AWS data sync.
+
+```
+{
+  "Version": "2008-10-17",
+  "Statement": [
+    {
+      "Sid": "DataSyncCreateS3LocationAndTaskAccess",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::133450206866:role/AWSDataSyncS3BucketAccessCustomerBackendEventsRole"
       },
-      {
-        "Sid": "DataSyncCreateS3Location",
-        "Effect": "Allow",
-        "Principal": {
-          "AWS": "arn:aws:iam::133450206866:user/s3access"
-        },
-        "Action": "s3:ListBucket",
-        "Resource": "arn:aws:s3:::prophecy-customer-backend-events-xyz"
-      }
-    ]
-  }
-  ```
+      "Action": [
+        "s3:GetBucketLocation",
+        "s3:ListBucket",
+        "s3:ListBucketMultipartUploads",
+        "s3:AbortMultipartUpload",
+        "s3:GetObject",
+        "s3:ListMultipartUploadParts",
+        "s3:PutObject",
+        "s3:GetObjectTagging",
+        "s3:PutObjectTagging",
+        "s3:DeleteObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::prophecy-customer-backend-events-xyz",
+        "arn:aws:s3:::prophecy-customer-backend-events-xyz/*"
+      ]
+    },
+    {
+      "Sid": "DataSyncCreateS3Location",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::133450206866:user/s3access"
+      },
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::prophecy-customer-backend-events-xyz"
+    }
+  ]
+}
+```
+
 5. In the above, replace `arn:aws:s3:::prophecy-customer-backend-events-xyz` with the ARN of the customer's destination bucket.
-6. Please note that we need the prophecy user principal (`s3access`) to be able to create S3 location at prophecy's account and hence require this role with Sid `DataSyncCreateS3Location`.
+6. Please note that we need the Prophecy user principal (`s3access`) to be able to create S3 location at Prophecy's account and hence require this role with Sid `DataSyncCreateS3Location`.
 7. Reach out to Prophecy at [contact us](mailto:success@Prophecy.io) with bucket ARN and region to enable this in your account.
 
 ## Audit events
