@@ -13,11 +13,11 @@ Helps perform file operations like `copy` and `move` on different file systems
 ## Parameters
 
 | Parameter          | Description                                                                                                                                                | Required |
-| :----------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------- | :------- |
+| :----------------- |:-----------------------------------------------------------------------------------------------------------------------------------------------------------| :------- |
 | File System        | `Local` - for operations on driver node file system <br/> `DBFS` - for operations on Databricks file system <br/> `S3` - for operations on S3 object store | True     |
 | Operation          | Operation to perform, `Copy`, `Move` or `Sync`                                                                                                             | True     |
-| Filename Regex     | File name Regex Eg: stdlog.\*\.txt                                                                                                                         | False    |
-| Ignore empty files | Ignore if file size is empty                                                                                                                               | False    |
+| Filename Regex     | Regex to Filter File Names Eg: stdlog.\*\.txt                                                                                                                         | False    |
+| Ignore empty files | Ignore if file size is empty (Size of file is 0 bytes)                                                                                                                              | False    |
 | Recurse            | Boolean for performing `Operation` recursively. Default is `False`                                                                                         | False    |
 | Source Path        | Path of source file/directory. <br/>Eg: /dbfs/source_file.txt, dbfs:/source_file.txt, s3://source_bucket/source_prefix/filename.txt                        | True     |
 | Destination Path   | Path of destination file/directory. <br/> Eg: /dbfs/target_file.txt, dbfs:/target_file.txt, s3://target_bucket/target_prefix/filename.txt                  | True     |
