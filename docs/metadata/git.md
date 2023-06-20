@@ -23,6 +23,25 @@ The video below walks through connecting to an external Git provider:
 
 Every user will have a `Prophecy Managed` Git provider already created in their account. You can just use this if you don't want to store your code to an external Git.
 
+## Authorizing Prophecy Oauth App
+
+If you are a member of a GitHub Organization, it's important to note that you may need to [authorize our application](https://docs.github.com/en/apps/oauth-apps/using-oauth-apps/authorizing-oauth-apps) to access your organization. This authorization step is necessary to ensure that our application can authenticate the APIs required to access the repositories.
+
+To grant authorization, please follow the steps below:
+
+1. Go to the [Authorized OAuth Apps settings page](https://github.com/settings/applications) on GitHub.
+2. Look for our application named Prophecy in the list of authorized apps and click on the entry to view its details.
+
+![GitOauthApps](img/git_oauth_apps.png)
+
+3. On the application details page, you should see an option to grant access to your organizations. Enable the necessary organization access permissions to allow our application to interact with your organization's repositories effectively. Please refer below image for permissions required.
+
+![Permissions](img/oauth_permissions.png)
+
+After selecting the appropriate organization access permissions, click the Save or Authorize button to save your changes and grant access to our application.
+
+If you encounter any issues during the authorization process or have any questions regarding organization access, please reach out to us at [contact us](mailto:success@Prophecy.io) for assistance.
+
 ## How to create a new Project with external Git provider
 
 Once a Git Credential is created, it can be used during Project creation (video below). Later, this credential will be used to commit and release changes to Git for the entire Project.
