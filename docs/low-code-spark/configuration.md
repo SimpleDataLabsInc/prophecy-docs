@@ -2,7 +2,7 @@
 title: Configuration
 id: configuration
 description: Low-code Spark Configuration
-sidebar_position: 4
+sidebar_position: 2
 tags:
   - spark
   - development

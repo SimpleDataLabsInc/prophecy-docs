@@ -3,7 +3,7 @@ title: Execution
 id: execution
 description: Execution
 tags: [execution, spark]
-sidebar_position: 10
+sidebar_position: 3
 ---
 
 ```mdx-code-block
