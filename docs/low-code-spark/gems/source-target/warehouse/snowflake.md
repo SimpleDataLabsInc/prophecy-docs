@@ -35,6 +35,7 @@ Please refer the snowflake official documentation to attach private key to user 
 | Table           | Name of the table to be read. All columns and records are retrieved (i.e. it is equivalent to `SELECT * FROM table`).                                     | Required if `Data Source` is `DB Table`                |
 | SQL Query       | Exact query (`SELECT` statement) to run                                                                                                                   | Required if `Data Source` is `SQL Query`               |
 
+
 ### Example {#source-example}
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
@@ -126,6 +127,7 @@ object customer_snow_src {
 | Table           | Name of the table to which data is to be written.                                                                                                                                                                                                                                                                         | True                                                   |
 | Write Mode      | How to handle existing data. See [this table](#supported-write-modes) for a list of available options.                                                                                                                                                                                                                    | True                                                   |
 | Post-Script SQL | DDL/DML SQL statements to execute before writing data.<br/> It is intended for statements that do not return a result set, for example DDL statements like `CREATE TABLE` and DML statements like `INSERT, UPDATE, and DELETE`.<br/> It is not useful for statements that return a result set, such as `SELECT` or `SHOW` | False                                                  |
+
 
 ### Supported Write Modes
 
