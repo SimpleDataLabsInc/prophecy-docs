@@ -18,7 +18,7 @@ The Data Explorer feature empowers users to explore and analyze their data sampl
 
 - Filter and Sort Options: Users can now apply filters and sort rows based on any column, providing enhanced visibility and improved data analysis.
 
-::: info
+:::info
 Please note that after applying or modifying any filter or sort criteria, you need to click the Run button to update the displayed data.
 :::
 
