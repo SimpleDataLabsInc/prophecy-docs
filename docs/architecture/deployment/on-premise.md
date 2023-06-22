@@ -106,8 +106,7 @@ The requirements outlined [above](#cluster) can support up-to 25 concurrent deve
 pipelines at the same time). To enable more concurrent users, Prophecy supports vertical and horizontal scaling.
 
 Scaling is taken care of by the **Autoscaler** component in our platform. Therefore, e.g., if the number of
-users increases by 10 times, the Prophecy deployment will automatically scale appropriately and require a
-proportionately more amount of resources (pod replicas).
+users increases by 10 times, the Prophecy deployment can be scaled appropriately.
 
 Following are estimated recommended cluster sizes for different user numbers:
 

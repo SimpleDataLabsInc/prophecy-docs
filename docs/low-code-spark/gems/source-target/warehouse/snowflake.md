@@ -11,6 +11,10 @@ tags:
 
 Allows read and write operations on `Snowflake`
 
+:::info How to configure Key Pair Authentication on Snowflake?
+Please refer the snowflake official documentation to attach private key to user account: <a href="https://docs.snowflake.com/en/user-guide/key-pair-auth#configuring-key-pair-authentication">Configuring Key Pair Authentication</a>
+:::
+
 ## Source
 
 ### Source Parameters
@@ -30,6 +34,7 @@ Allows read and write operations on `Snowflake`
 | Data Source     | Strategy to read data: `DB Table` or `SQL Query`.                                                                                                         | True                                                   |
 | Table           | Name of the table to be read. All columns and records are retrieved (i.e. it is equivalent to `SELECT * FROM table`).                                     | Required if `Data Source` is `DB Table`                |
 | SQL Query       | Exact query (`SELECT` statement) to run                                                                                                                   | Required if `Data Source` is `SQL Query`               |
+
 
 ### Example {#source-example}
 
@@ -123,6 +128,7 @@ object customer_snow_src {
 | Write Mode      | How to handle existing data. See [this table](#supported-write-modes) for a list of available options.                                                                                                                                                                                                                    | True                                                   |
 | Post-Script SQL | DDL/DML SQL statements to execute before writing data.<br/> It is intended for statements that do not return a result set, for example DDL statements like `CREATE TABLE` and DML statements like `INSERT, UPDATE, and DELETE`.<br/> It is not useful for statements that return a result set, such as `SELECT` or `SHOW` | False                                                  |
 
+
 ### Supported Write Modes
 
 | Write Mode | Description                                                                                                                      |
@@ -137,6 +143,7 @@ object customer_snow_src {
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://user-images.githubusercontent.com/130362885/234174404-d5c24de9-1aa6-41d2-97ab-fab47779054f.mp4" title="Snowflake Target" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"/>
+
 </div></div>
 
 ### Generated Code {#target-code}
