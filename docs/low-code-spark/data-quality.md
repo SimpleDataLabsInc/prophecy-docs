@@ -2,7 +2,7 @@
 title: Data Quality
 id: data-quality
 description: Data Quality
-sidebar_position: 5
+sidebar_position: 6
 tags:
   - spark
   - development
