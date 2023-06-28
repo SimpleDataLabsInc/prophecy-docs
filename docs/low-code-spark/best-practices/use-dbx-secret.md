@@ -41,7 +41,7 @@ It's now ready to be used in your Gems.
 ### Step4: Add a Snowflake Gem to your Pipeline and refer the above created Configs in the username and password field
 
 Now that we have a Pipeline config to refer our password stored in Databricks secrets securely, We can go ahead and add a snowflake Gem.
-Use the Config with syntax as `$config.snowflake_user` and `$config.snowflake_pass` in the username and password field respectively and define all other required fields in the Gem as is.
+Use the Config with syntax as `${snowflake_user}` and `${snowflake_pass}` in the username and password field respectively and define all other required fields in the Gem as is.
 Your Gem is now ready to Used and tested.
 
 ![img3.png](img/snowflake_gem.png)
