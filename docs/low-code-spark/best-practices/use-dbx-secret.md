@@ -21,27 +21,29 @@ In this example, we demonstrate the use of Databricks secrets to configure Snowf
 
 ### Step1: Create Your secrets in Databricks
 
-Please follow this [Secrets Documentation](https://docs.databricks.com/security/secrets/index.html) from Databricks to create your secret scope and keys in Databricks. For this example, You can create one for your Snowflake Password. Let's say we created scope `demo-scope` and the secret with key `snowflake-password`.
+Please follow this [Secrets Documentation](https://docs.databricks.com/security/secrets/index.html) from Databricks to create your secret scope and keys in Databricks. For this example, You can create one for your Snowflake Username and one for Password. Let's say we created scope `demo-scope` and added two secrets with key `snowflake-username` and `snowflake-password`.
 
 ### Step2: Create Config in Pipeline to map to Created Databricks Secrets
 
-Add a config of Type `databricks_secret` in [Pipeline Configs](https://docs.prophecy.io/low-code-spark/configuration#pipeline-configuration). Let's say we call it `snowflake_pass`
+Add configs of Type `databricks_secret` in [Pipeline Configs](https://docs.prophecy.io/low-code-spark/configuration#pipeline-configuration). Let's say we call it `snowflake_user` and `snowflake_pass`.
 
 ![img.png](img/databricks_secrets_config.png)
 
 ### Step3: Provide value to the config created
 
-Now, lets add value for the created config `snowflake_pass` in the default config. You can also add multiple values in different configs.
-For value, add the scope and key you created for your secret in the first step and save it.
+Now, lets add value for the created configs `snowflake_user` and `snowflake_pass` in the default config. You can also add multiple values in different configs.
+For value, add the scope and key you created for your secret in the first step and save it. Please refer below image
 
 ![img2.png](img/databricks_secrets_value.png)
 
 It's now ready to be used in your Gems.
 
-### Step4: Add a Snowflake Gem to your Pipeline and refer the above created Configs in the password field
+### Step4: Add a Snowflake Gem to your Pipeline and refer the above created Configs in the username and password field
 
 Now that we have a Pipeline config to refer our password stored in Databricks secrets securely, We can go ahead and add a snowflake Gem.
-Use the Config with syntax as `$Config.snowflake_pass` in the password field and defined all other required fields in the Gem as is.
+Use the Config with syntax as `$config.snowflake_user` and `$config.snowflake_pass` in the username and password field respectively and define all other required fields in the Gem as is.
 Your Gem is now ready to Used and tested.
 
-![img3.png](img/snowflake_example.png)
+![img3.png](img/snowflake_gem.png)
+
+If users still use plain-text, they would also see a Warning Diagnostics in their Gems.
