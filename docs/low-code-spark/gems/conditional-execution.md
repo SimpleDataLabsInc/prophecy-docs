@@ -46,5 +46,5 @@ Unlike pass-through conditions, removal conditions can be applied to any Gem in 
 Currently, SetOperations and Script Gems in the Pipeline are capable of handling missing inputs. For other Gems, if any input is missing, the Gem will be removed along with all downstream transformations. The same behavior applies to subgraphs as well.
 
 To modify the handling of missing inputs in other Gems, users can update the Gem specs in the [Gem Builder](./../extensibility/gem-builder) by adding a boolean parameter called allInputsRequired. By setting this parameter to true or false, users can determine whether a em should be removed if any of its inputs are missing.
-G
+
 This customization option allows users to tailor the behavior of the Pipeline and the handling of missing data based on their specific requirements.
