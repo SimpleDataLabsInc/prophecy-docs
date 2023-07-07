@@ -38,17 +38,11 @@ Please refer below video for step-by-step example
 
 - **Databricks Credentials** - Here you will provide your Databricks Workspace URL and the [Personal Access token](https://docs.databricks.com/dev-tools/api/latest/authentication.html#generate-a-personal-access-token)
 - **Cluster Details** - Here you would need to provide the [Databricks Runtime version](https://docs.databricks.com/runtime/dbr.html#databricks-runtime), Executor and Drive Machine Types and Termination Timeout if any. These cluster details will be used when creating a cluster via Prophecy during Interactive development and for job clusters during Scheduled Databricks Job runs.
-- **Job sizes** - By default, you will see a Small Job size pre created. You can edit or add more Job sizes.Here you can provide total number of the Executors and Core and Memory for them.
-  When you click on edit for a Job size, you will see two options: _Basic_ and _Advanced(Json)_.
+- **Job sizes** - User can create Job sizes here using which clusters can be spawned while testing through prophecy IDE. Here you can provide Cluster mode, Databricks Runtime version, total number of the Executors, Core and Memory for them, etc. This provides all the options which are available on Databricks while spawning clusters through Databricks.
 
-![Editing a Job](img/job_size.png)
+![Editing a Job](img/job_size_new.png)
 
-In Advanced Json you can just copy-paste your compute Json from Databricks. Please refer below video for example:
-
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/121796483/218055564-76860e69-5811-41a7-b18a-6d96e19096ee.mp4" title="Databricks Fabric" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
+In Json you can just copy-paste your compute Json from Databricks.
 
 - **Prophecy Library** - These are some Scala and Python libraries written by Prophecy to provide additional functionalities on top of Spark. These would get automatically installed in your Spark execution environment when you attach to a cluster/create new cluster. These libraries are also publicly available on Maven central and Pypi respectively.
 
