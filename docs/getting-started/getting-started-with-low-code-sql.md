@@ -25,7 +25,7 @@ Creating your first account on Prophecy is very simple. Go to [app.prophecy.io](
 
 ![Account Creation](img/1-1-account-creation.png)
 
-## 2. Setup Databricks and Prophecy Fabric (Connection)
+## 2. Connect to Databricks
 
 ### 2.1 Get Databricks Cluster or Warehouse details
 
