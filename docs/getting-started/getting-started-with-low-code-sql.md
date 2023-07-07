@@ -27,7 +27,7 @@ Creating your first account on Prophecy is very simple. Go to [app.prophecy.io](
 
 ## 2. Connect to Databricks
 
-### 2.1 Get Databricks Cluster or Warehouse details
+### 2.1 Get Databricks Cluster or Warehouse URL
 
 When connecting to Databricks, you have the option to either connect to Databricks compute cluster or warehouse. In both cases, make sure to get the 2.6.25 JDBC url that starts with `jdbc:Databricks....`
 
