@@ -29,7 +29,9 @@ Creating your first account on Prophecy is very simple. Go to [app.prophecy.io](
 
 ### 2.1 Get Databricks Cluster or Warehouse URL
 
-When connecting to Databricks, you have the option to either connect to Databricks compute cluster or warehouse. In both cases, make sure to get the 2.6.25 JDBC url that starts with `jdbc:Databricks....`
+When connecting to Databricks, you have the option to either connect to Databricks compute cluster or warehouse. In both cases, make sure to use this version JDBC url that starts with `jdbc:Databricks....`
+
+To authorize as yourself when accessing your Databricks cluster or warehouse a special token is required.
 
 #### Cluster JDBC End-point
 
@@ -310,6 +312,12 @@ Now that our model is fully defined, with all the logic specified, it’s time t
 ![Interactively run](img/4-9-interactively-run.png)
 
 Prophecy makes interactively testing the models incredibly easy! Simply click on the **(1) Play** button on any of the Gems and the model with all of it’s upstream dependencies will be executed. Once the model runs, the **(2) Result** icon appears. Click the Result icon to view a **(3) Sample** set of records.
+
+We can see our visual model here in Prophecy’s visual view. Don’t forget all this logic is translated to high quality, open source SQL code. You can view the code by clicking the code button at the top of the screen. A SQL model is really just a series of SQL statements that define a table or view. This is the code a lead engineer would write, on a good day, using all the best practices.
+
+If you’re a SQL writer, maybe you want to change the SQL code? Let’s add some new logic here in the code view. We are adding a filter statement. Toggle to the visual view and we can see there’s a new filter Gem. As you can see the changes in the code view are reflected in the visual view, and vice versa. Let’s remove the filter statement and restore our model to simply use a select \* from the Aggregate Gem.
+
+We did a lot in this section - we started development by checking out a Git branch, connecting to Databricks using a Fabric, defining Datasources, and developing our first Model depicted here.
 
 ## 5. Orchestrate and Deploy
 
