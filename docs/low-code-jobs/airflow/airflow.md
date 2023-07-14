@@ -9,6 +9,10 @@ tags:
   - jobs
 ---
 
+:::info Coming Soon
+Detailed documentation on this feature, including setup instructions and best practices
+:::
+
 Apache Airflow is an open-source platform used to programmatically author, schedule, and monitor workflows.
 
 Airflow allows users to define workflows as DAGs (Directed Acyclic Graphs), where each node in the graph represents a task that needs to be executed.

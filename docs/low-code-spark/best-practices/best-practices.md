@@ -1,9 +1,8 @@
 ---
-title: Execution
-id: execution
-description: Execution
-tags: [execution, spark]
-sidebar_position: 3
+title: Best Practices for Low-code-Spark
+id: best-practices-spark
+description: Best practices for spark
+tags: [spark, recommendations, best-practices, secrets]
 ---
 
 ```mdx-code-block
