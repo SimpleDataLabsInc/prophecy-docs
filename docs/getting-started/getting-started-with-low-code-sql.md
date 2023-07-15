@@ -224,7 +224,8 @@ The seed initializes by default empty. To define the value simple copy and paste
 
 For the purpose of this tutorial, create a nation seed, with the following content:
 
-```n_nationkey,n_name,n_regionkey,n_comment
+```
+n_nationkey,n_name,n_regionkey,n_comment
 0,ALGERIA,0,Vast Sahara; oil-rich.
 1,ARGENTINA,1,Tango; beef; Patagonia.
 2,BRAZIL,1,Amazon; Carnival; soccer.
