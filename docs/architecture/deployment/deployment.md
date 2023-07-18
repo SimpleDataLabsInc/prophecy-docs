@@ -75,7 +75,7 @@ When using **Active Directory**, Prophecy takes care of auto-generation and refr
 
 Code storage:
 
-The Prophecy IDE is a cloud-native data transformation tool, which functions similarly to a cloud-based IDE. For efficient code processing, it requires storing a cache of user code, which is automatically cleaned when not required. Prophecy stores processed code exclusively on the user-selected Git provider.
+The Prophecy IDE is a cloud-native data transformation tool, which functions similarly to a cloud-based IDE. For efficient code processing, it requires storing a cache of user code, which is encrypted and automatically removed when no longer required. Prophecy stores processed code exclusively on the user-selected Git provider.
 
 Supported Git providers:
 
