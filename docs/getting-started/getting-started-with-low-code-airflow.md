@@ -44,4 +44,49 @@ For connecting to Prophecy Managed Airflow, you don't need to provide any other 
 
 ![Fill Fabric Details](img/3-2-fill-fabric-details.png)
 To be able to Run your Databricks Pipelines and Models, you need to have connection from Prophecy Managed Airflow to your Databricks Environment.
-Here you would select the already
+Click on (1) Add Connection button, and select Databricks Spark or Databricks SQL in (2) Connection Type. Now under the (3) Fabric, you would select the already created Fabric for Databricks Spark or Databricks SQL and Prophecy would setup the connection.
+Once done, click (4) Save and then (5) Complete, to complete the Airflow Fabric Setup.
+
+You should now start seeing a new Fabric of type `Airflow` and Platform `Prophecy Managed`.
+
+## 2. Create an Airflow Job
+
+A Job is an entity that contains a Gems to represent a DAG consisting of various Tasks (Pipelines/Models/Scripts, etc) which you can Run once or schedule to run at a frequency. Each Job would represent an Airflow DAG in Python.
+
+Let's see how to create an Airflow Job in Prophecy.
+
+Click the (1) Create Entity button, and choose (2) Create Job option.
+
+On the first screen, you would provide the Basic Info of the Job.
+In (1) Project, select the Project in which you want to create the Job. You can pick the existing Databricks Spark or SQL project here where you have created Pipelines/Models.
+In (2) Branch, Pick a development branch for the new Job. Here you can pick an existing branch for development, or create a new one.
+In (3) Name, provide a name for your Job.
+In (4) Scheduler, pick the type as Airflow.
+In (5) Fabric, Select the Fabric we created in previous step.
+In (6) Schedule, Pick a schedule with which you want to schedule the Job. Please note, you can modify this again after testing before releasing your Job.
+In (7) Description, add a description about the Job you are creating.
+
+Once done, click (8) create new.
+
+This will take you the Job editor page where you would be creating the actual DAG for the Job.
+Let's start adding Pipelines to our Job now.
+
+Click on (1) Operators, and Drag the Pipeline Gem from the dropdown to the canvas. Then click the newly added Gem and click (2) Open to open the Gem Configurations.
+
+Here, we will select the Pipeline and provide Config values for the Pipeline if any.
+In (1), select the Pipeline you want to Run. As you select the Pipeline, You would start seeing the Configurations defined in the Pipeline. You Would not be able to modify the schema of these configs but can Config values.
+
+In (2), pick the Fabric and Job size for running this Pipeline in Databricks. And Save!!
+
+You would see a diagnostics error if you selected a Fabric, which is not added as connection in Step 1 above.
+
+Congratulations!!! And just like that, you have created a very simple Airflow Job with one Databricks Pipeline Task.
+
+Lets go ahead and see how to Run and Schedule it.
+
+## 3. Run and Debug
+
+Now that we have our Job ready, we can go ahead and run it.
+Click on the (1) Run button to trigger the One-time run
+
+## 4. Release and Schedule
