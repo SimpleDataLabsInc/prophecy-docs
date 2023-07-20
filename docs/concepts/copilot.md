@@ -33,6 +33,8 @@ Prophecy Data Co-Pilot provides suggestions from an AI model as you develop your
 
 ### Text to build Pipelines
 
+Get started quickly by typing your query into the text box. Prophecy can generate a new Pipeline or edit an existing Pipeline.
+
 #### Start a Pipeline
 
 ![Start a Pipeline](img/copilot_text_to_Pipeline.png)
