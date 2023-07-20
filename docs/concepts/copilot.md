@@ -133,7 +133,7 @@ Github Co-Pilot and Prophecy Data Co-Pilot are both excellent tools to boost pro
 
 #### Which Datasets are accessible to Prophecy Data Co-Pilot?
 
-In Prophecy’s 3.1 release, any Dataset, source, or seed within a Project are accessible when Data Co-Pilot is called from that project. In Prophecy 3.2 and beyond, these assets need only to be part of the linked (Databricks, Snowflake, etc) catalog. That is, if the user can access the Datasets with their token, the Datasets should appear in the Environment tab and Co-Pilot can access them.
+In Prophecy’s 3.1 release, any Dataset, source, or seed within a Project are accessible when Data Co-Pilot is called from that project. In an upcoming release this behavior will change as follows: The assets need only to be part of the linked (Databricks, Snowflake, etc) catalog. That is, if the user can access the Datasets with their token, the Datasets should appear in the Environment tab and Co-Pilot can access them.
 
 #### How much will I pay for use of Prophecy Co-Pilot?
 
