@@ -83,7 +83,7 @@ Unit tests and data quality checks are crucial for Pipeline and model production
 2. Coming soon, Prophecy Administrators will have the option to connect Prophecy Data Co-Pilot to their private subscription OpenAI.
 3. Data Co-pilot is designed with simplicity in mind, with minimal configurations for the user. If there’s a setting you’d like to see, let us know!
 
-| Project Type  | Code Suggested by Co-Pilot | Orchestration   | Features coming in Prophecy 3.2+                                     |
+| Project Type  | Code Suggested by Co-Pilot | Orchestration   | Features coming soon for Data Co-Pilot                               |
 | :------------ | :------------------------- | :-------------- | -------------------------------------------------------------------- |
 | Spark (Scala) | Spark SQL                  | Databricks Jobs | Airflow, Private LLM options, AutoDoc, Data Tests and Quality Checks |
 | PySpark       | Spark SQL                  | Databricks Jobs | Airflow, Private LLM options, AutoDoc, Data Tests and Quality Checks |
@@ -99,7 +99,7 @@ Briefly, Data Co-Pilot works by enhancing the user’s prompt using a knowledge 
 
 ![Knowledge Graph](img/copilot_knowledge_graph.png)
 
-In particular, the knowledge graph includes metadata for the Project’s entities (eg Datasets, schemas, seeds, models, and Pipelines) and statistical usages of these entities. Note for Prophecy 3.2 and later: If a user can access an entity in their Prophecy Project or Databricks workspace, then Co-Pilot will include that entity in the knowledge graph. We built the knowledge graph intentionally to include metadata but not data. Individual Dataset records, for example, are not included in the knowledge graph.
+In particular, the knowledge graph includes metadata for the Project’s entities (eg Datasets, schemas, seeds, models, and Pipelines) and statistical usages of these entities. We built the knowledge graph intentionally to include metadata but not data. Individual Dataset records, for example, are not included in the knowledge graph.
 
 ![Architecture](img/copilot_arch.png)
 
