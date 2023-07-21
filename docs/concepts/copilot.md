@@ -121,7 +121,7 @@ The Prophecy team employs top-notch industry practices to safeguard the security
 
 ###
 
-#### How is Prophecy Copilot different than Github Copilot
+#### How is Prophecy Copilot different than Github Copilot?
 
 Github Copilot is a great tool to boost productivity and extend the reach for the coding community. However, not every problem is solved with direct coding. More importantly, users need a Copilot with some context of the interesting data.
 
