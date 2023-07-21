@@ -83,7 +83,7 @@ Unit tests and data quality checks are crucial for Pipeline and model production
 
 1. Data Copilot is available for all customers using Prophecy’s managed, Public SaaS offering. For companies who run Prophecy within their own VPC (link), admins may choose to enable or disable Data Copilot across their Prophecy Platform at deployment time.
 2. Coming soon, Prophecy Administrators will have the option to connect Prophecy Data Copilot to their private subscription OpenAI.
-3. Data Co-pilot is designed with simplicity in mind, with minimal configurations for the user. If there’s a setting you’d like to see, let us know!
+3. Data Copilot is designed with simplicity in mind, with minimal configurations for the user. If there’s a setting you’d like to see, let us know!
 
 | Project Type  | Code Suggested by Copilot | Orchestration   | Features coming soon for Data Copilot                                |
 | :------------ | :------------------------ | :-------------- | -------------------------------------------------------------------- |
@@ -123,7 +123,7 @@ The Prophecy team employs top-notch industry practices to safeguard the security
 
 ###
 
-#### How is Prophecy Copilot different than Github Co-pilot
+#### How is Prophecy Copilot different than Github Copilot
 
 Github Copilot is a great tool to boost productivity and extend the reach for the coding community. However, not every problem is solved with direct coding. More importantly, users need a Copilot with some context of the interesting data.
 
