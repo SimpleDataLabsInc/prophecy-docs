@@ -24,6 +24,10 @@ To remove input/output DataFrame(s), simply click <svg width="24" height="24" vi
 ![Script - Remove inputs](./img/script_remove_inputs.png)
 :::
 
+## Schema
+
+When executing a custom script Gem, the output schema is not known by Prophecy so it must be inferred from a sample computation result. Click the `Custom Schema` button and `Infer from cluster` as shown [here.](https://docs.prophecy.io/concepts/Gems/#outputs) The schema will be inferred according to the script and the Spark version running on the connected cluster.
+
 ## Examples
 
 ---
