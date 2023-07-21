@@ -9,8 +9,6 @@ tags:
   - generativeai
 ---
 
-## About Data Copilot
-
 :::caution
 Prophecy Data Copilot is a Public Beta release and is constantly evolving to meet the needs of our customers. This document is current as of Prophecy Release 3.1. As with all applications that interface with Large Language Models (LLMs), Data Copilot can generate results which are incorrect and/or misleading.
 :::
