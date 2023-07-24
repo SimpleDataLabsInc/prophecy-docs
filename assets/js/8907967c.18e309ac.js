@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[7797],{71459:t=>{t.exports=JSON.parse('{"label":"copilot","permalink":"/tags/copilot","allTagsPath":"/tags","count":1,"items":[{"id":"concepts/copilot","title":"Data Copilot","description":"The AI assistant for data Pipelines and models","permalink":"/concepts/copilot"}]}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[2639],{89428:e=>{e.exports=JSON.parse('{"label":"generativeai","permalink":"/tags/generativeai","allTagsPath":"/tags","count":1,"items":[{"id":"concepts/copilot","title":"Data Copilot","description":"The AI assistant for data Pipelines and models","permalink":"/concepts/copilot"}]}')}}]);
