@@ -1,5 +1,5 @@
 ---
-title: Data Copilot
+title: Data Copilot (NEW!)
 id: copilot
 description: The AI assistant for data Pipelines and models
 sidebar_position: 8
@@ -46,7 +46,7 @@ Data Copilot can assist with starting a Pipeline. For example:
 1. Type a prompt with English text, such as `Which customers shipped the largest orders this year?`
 2. Data Copilot will use metadata from the accessible Datasets, Seeds, Models, Pipelines, etc. to create a Knowledge Graph.
 3. Data Copilot uses OpenAI's language model to create the Pipeline based on the text prompt, with the Knowledge Graph as the context. This Pipeline is accessible in the visual editor as well as the code editor.
-4. The user can **keep** or **reject** the suggested Pipeline and interactively execute it to see the results.
+4. The user can keep or reject the suggested Pipeline and interactively execute it to see the results.
 5. View Data Copilot's suggested changes in the visual editor.
 
 #### Modify an existing Pipeline
@@ -167,6 +167,10 @@ In a future release, Administrators will have the option to connect Prophecy Dat
 #### Can I use Data Copilot on my on-premise installation of Prophecy?
 
 Yes! Speak to your Prophecy account owner with questions.
+
+#### Does Prophecy Data Copilot support text prompts in languages other than English?
+
+While Prophecy does not actively test prompt languages other than English, the LLM providers do provide such support. Explorations of this area would be at the user discretion.
 
 ## Try Data Copilot
 
