@@ -9,7 +9,7 @@ tags:
   - generativeai
 ---
 
-:::caution
+:::tip
 Data Copilot is available for all customers using Prophecy’s managed Public SaaS offering.
 :::
 
@@ -47,6 +47,7 @@ Data Copilot can assist with starting a Pipeline. For example:
 2. Data Copilot will use metadata from the accessible Datasets, Seeds, Models, Pipelines, etc. to create a Knowledge Graph.
 3. Data Copilot uses OpenAI's language model to create the Pipeline based on the text prompt, with the Knowledge Graph as the context. This Pipeline is accessible in the visual editor as well as the code editor.
 4. The user can **keep** or **reject** the suggested Pipeline and interactively execute it to see the results.
+5. View Data Copilot's suggested changes in the visual editor.
 
 #### Modify an existing Pipeline
 
@@ -73,7 +74,7 @@ At the more granular level, Data Copilot can suggest expressions within Gems. Wi
 1. Type an English text prompt
 2. Data Copilot generates a code expression for a particular column.
 3. Click to accept the code expression or try again with a different prompt. Data Copilot’s returns are non-deterministic, so a retry can return a different expression.
-4. Run the Pipeline up to and including this Gem, and observe the resulting **data preview sample.**
+4. Run the Pipeline up to and including this Gem, and observe the resulting data sample.
 
 ### Auto Documentation
 
@@ -111,7 +112,7 @@ Data Copilot works by enhancing the user’s prompt using a knowledge graph.
 
 ![Knowledge Graph](img/copilot_knowledge_graph.png)
 
-Our knowledge graph includes metadata for a Project’s entities (eg Datasets, Schemas, Seeds, Models, and Pipelines) and the statistical usages of these entities. We built the knowledge graph intentionally to include metadata but not data. Individual Dataset records, for example, are not included in the knowledge graph, only the structure.
+Our knowledge graph includes metadata for a Project’s entities (eg Datasets, Schemas, Seeds, Models, and Pipelines) and the statistical usages of these entities. We built the knowledge graph intentionally to include metadata but not data. The Dataset structure is included in the knowledge graph but individual Dataset records are not.
 
 ![Architecture](img/copilot_arch.png)
 
@@ -149,11 +150,11 @@ Github Copilot and Prophecy Data Copilot are both excellent tools to boost produ
 
 #### Which Datasets are accessible to Prophecy Data Copilot?
 
-In Prophecy’s 3.1 release, any Dataset, Source, or Seed within a Project are accessible when Data Copilot is called from that Project. In an upcoming release, this behavior will change as follows: The assets need only to be part of the linked (Databricks, Snowflake, etc) catalog. That is, if the user can access the Datasets with their token, the Datasets should appear in the Environment tab and Copilot can access them.
+In Prophecy’s 3.1 release, any Dataset, Source, or Seed within a Project are accessible when Data Copilot is called from that Project. In an upcoming release, this behavior will change as follows: The assets need only to be part of the linked (Databricks, Snowflake, etc) catalog. That is, if the user can access the Datasets with their personal access token, then Datasets should appear in the Environment tab and Copilot can access them.
 
 #### How much will I pay for Prophecy Copilot?
 
-Copilot features are included with Prophecy’s Low-Code Spark and Low-Code SQL offerings. There would be an additional cost if you chose to use a private subscription Large Language Model (LLM) service. In this case, the cost depends on (1) the number of tokens sent to the LLM provider, (2) the size of the Datasets, and (3) the number of iterations Prophecy sends requests to the LLM provider.
+Copilot features are included with Prophecy’s Low-Code Spark and Low-Code SQL offerings. There would be an additional cost if you chose to use a private subscription Large Language Model (LLM) service. In this case, the cost depends on (1) the number of [word tokens](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them) sent to the LLM provider, (2) the size of the Datasets, and (3) the number of iterations Prophecy sends requests to the LLM provider.
 
 #### Can I disable this feature for my users?
 
@@ -162,6 +163,10 @@ For companies who run Prophecy within their [own VPC](/docs/architecture/deploym
 #### Can I use my own private OpenAI instance?
 
 In a future release, Administrators will have the option to connect Prophecy Data Copilot to their private subscription OpenAI.
+
+#### Can I use Data Copilot on my on-premise installation of Prophecy?
+
+Yes! Speak to your Prophecy account owner with questions.
 
 ## Try Data Copilot
 
