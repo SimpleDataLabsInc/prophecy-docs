@@ -116,7 +116,7 @@ Our knowledge graph includes metadata for a Project’s entities (eg Datasets, S
 
 ![Architecture](img/copilot_arch.png)
 
-Prophecy sends the enhanced Prompt to OpenAI (or the user’s preferred LLM). The model will return SQL or SparkSQL code, and Prophecy will verify whether this code is valid. Once Prophecy fixes the code, Prophecy generates a visual Pipeline and displays this Pipeline to the user for review.
+Prophecy sends the enhanced Prompt to OpenAI (or the user’s preferred LLM). The model will return SQL or Spark code, and Prophecy will verify whether this code is valid. Once Prophecy fixes the code, Prophecy generates a visual Pipeline and displays this Pipeline to the user for review.
 
 ### Language Model
 
