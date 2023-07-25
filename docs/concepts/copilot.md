@@ -10,7 +10,7 @@ tags:
 ---
 
 :::caution
-Prophecy Data Copilot is a Public Beta release and is constantly evolving to meet the needs of our customers. This document is current as of Prophecy Release 3.1. As with all applications that interface with Large Language Models (LLMs), Data Copilot can generate results which are incorrect and/or misleading.
+Prophecy Data Copilot is a Public Beta release and is constantly evolving to meet the needs of our customers. This document is current as of Prophecy Release 3.1. As with all applications that interface with Large Language Models (LLMs), Data Copilot can generate results that are incorrect and/or misleading. Data Copilot is available for all customers using Prophecy’s managed Public SaaS offering.
 :::
 
 ### Building Models and Pipelines with Prophecy’s Data Copilot
@@ -23,7 +23,11 @@ Prophecy Data Copilot is a Public Beta release and is constantly evolving to mee
 
 Prophecy’s low-code platform makes data Pipeline development faster and accessible to more users. Starting now, you’ve got an AI assistant to boost that productivity even further.
 
-We are open to feedback! Please send us an email (contact@Prophecy.io) or reach out in our Slack [community.](https://join.slack.com/t/prophecy-io-support/shared_invite/zt-moq3xzoj-~5MSJ6WPnZfz7bwsqWi8tQ)
+We are open to feedback! Please send us an email (contact@Prophecy.io) or reach out on our Slack [community.](https://join.slack.com/t/prophecy-io-support/shared_invite/zt-moq3xzoj-~5MSJ6WPnZfz7bwsqWi8tQ)
+
+:::caution
+Prophecy Data Copilot is a Public Beta release and is constantly evolving to meet the needs of our customers. This document is current as of Prophecy Release 3.1. As with all applications that interface with Large Language Models (LLMs), Data Copilot can generate results that are incorrect and/or misleading.
+:::
 
 ## Capabilities
 
