@@ -28,19 +28,19 @@ There are 2 ways to run a Pipeline interactively:
 
 During development, often the user will want to see their data to make more sense of it and to check whether the expected output is getting
 generated or not after the transformation. Prophecy generates these data samples as `Interims`, which are temporarily cached previews of data after each Gem.
+
 Which Gems automatically get Interims created is controlled by the Pipeline settings as shown below.
 
-By default, for interactive runs, data sampling is enabled for all components. This behaviour can be configured as needed from the
-`options` menu as shown in image below:
+![Data and Job Sampling](img/interactive-execution-job-data-sampling.png)
+
+From the Pipeline, select the **(1) dropdown** and **(2) Pipeline Settings**. Select **(3) Job Sampling** to generate interim samples for scheduled jobs. Select **(4) Sampling Mode** to chose the level of data sampling. Select **(5) Data Sampling** to generate interim samples during interactive runs, and select the Sampling Mode accordingly. These two options, Job sampling and Data sampling, are independent; one does not affect the other. For Job sampling, the interim metrics are stored in the compute cluster, such as the Databricks workspace, and visible in [execution metrics](#execution-metrics).
+
+Toggle the images below to view the various modes (or levels) of data sampling. By default, for interactive runs, data sampling is enabled for all components. Note [Vanilla](https://docs.prophecy.io/low-code-spark/execution/executions_on_databricks_clusters/#vanilla-interims) is an interim sampling mode reserved for Shared Databricks clusters.
 
 ```mdx-code-block
 import App from '@site/src/components/slider';
 
 export const ImageData = [
-  {
-    "image":"/img/interactive-execution/interactive-execution-interims-config.png",
-    "description":<h3 style={{padding:'10px'}}>Data Sampling Configuration</h3>,
-  },
   {
     "image":"/img/interactive-execution/interactive-execution-interim-all.png",
     "description":<h3 style={{padding:'10px'}}>Data Sampling Mode - All</h3>,
@@ -65,10 +65,6 @@ export const ImageData = [
 
 <App ImageData={ImageData}></App>
 ```
-
-- (1) - Option to enable/disable data sampling during interactive runs.
-- (2) - Option to choose the level of data sampling for interactive runs.
-- (3) - Option to enable/disable data sampling for Job runs (scheduled/interactive). Level of data sampling can be configured same as (2). If enabled the interims would be stored in [execution metrics](#execution-metrics) for scheduled runs as well.
 
 ## Execution
 
