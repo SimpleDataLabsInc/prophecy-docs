@@ -27,7 +27,7 @@ We are open to feedback! Please send us an email (contact@Prophecy.io) or reach 
 
 ## Capabilities
 
-Prophecy Data Copilot provides suggestions from an AI model as you develop your data Pipelines. You can view and incorporate suggestions directly within the Prophecy visual editor and code editor. Data Copilot makes suggestions for your entire Pipeline, for a single Gem (transformation,) and even for individual expressions within each Gem.
+Prophecy Data Copilot provides suggestions from an AI model as you develop your data Pipelines. You can view and incorporate suggestions directly within the Prophecy visual editor and code editor. Data Copilot makes suggestions for your entire Pipeline, for a single Gem (transformation), and even for individual expressions within each Gem.
 
 ### Text to build Pipelines
 
@@ -65,7 +65,7 @@ At the more granular level, Data Copilot can suggest expressions within Gems. Si
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-Understanding data assets is much easier with Data Copilot’s auto documentation, to be offered in an upcoming release. Data Copilot will deliver summary documentation suggestions for all Datasets, Pipelines, and orchestrations. How did a Dataset change? Data Copilot will recommend a description of the change for every edit you make. How was a column computed? Data Copilot suggests a description that explains how every column generated for analytics was computed and what it represents.
+Understanding data assets is much easier with Data Copilot’s auto documentation, to be offered in an upcoming release. Data Copilot will deliver summary documentation suggestions for all Datasets, Pipelines, and Orchestrations. How did a Dataset change? Data Copilot will recommend a description of the change for every edit you make. How was a column computed? Data Copilot suggests a description that explains how every column generated for analytics was computed and what it represents.
 
 ### Data Tests and Quality Checks - Coming soon
 
@@ -79,7 +79,7 @@ Unit tests and data quality checks are crucial for Pipeline and model production
 
 ### Settings
 
-1. Data Copilot is available for all customers using Prophecy’s managed, Public SaaS offering. For companies who run Prophecy within their own VPC (link), admins may choose to enable or disable Data Copilot across their Prophecy Platform at deployment time.
+1. Data Copilot is available for all customers using Prophecy’s managed, Public SaaS offering. For companies who run Prophecy within their own VPC ([link](/docs/architecture/deployment/deployment.md#private-saas-customer-vpc)), admins may choose to enable or disable Data Copilot across their Prophecy Platform at deployment time.
 2. Coming soon, Prophecy Administrators will have the option to connect Prophecy Data Copilot to their private subscription OpenAI.
 3. Data Copilot is designed with simplicity in mind, with minimal configurations for the user. If there’s a setting you’d like to see, let us know!
 
@@ -89,7 +89,7 @@ Unit tests and data quality checks are crucial for Pipeline and model production
 | PySpark       | Spark SQL                 | Databricks Jobs | Airflow, Private LLM options, AutoDoc, Data Tests and Quality Checks |
 | SQL           | SQL                       | Databricks Jobs | Airflow, Private LLM options, AutoDoc, Data Tests and Quality Checks |
 
-For Spark and PySpark projects, Data Copilot suggests code written in Spark SQL, which is Apache Spark’s module for working with structured data (link). Data co-pilot currently supports Databricks jobs, and Airflow support is coming soon.
+For Spark and PySpark projects, Data Copilot suggests code written in Spark SQL, which is Apache Spark’s module for working with structured data ([link](https://spark.apache.org/docs/latest/sql-programming-guide.html)). Data co-pilot currently supports Databricks jobs, and Airflow support is coming soon.
 
 ## Architecture
 
@@ -99,7 +99,7 @@ Briefly, Data Copilot works by enhancing the user’s prompt using a knowledge g
 
 ![Knowledge Graph](img/copilot_knowledge_graph.png)
 
-In particular, the knowledge graph includes metadata for the Project’s entities (eg Datasets, schemas, seeds, models, and Pipelines) and statistical usages of these entities. We built the knowledge graph intentionally to include metadata but not data. Individual Dataset records, for example, are not included in the knowledge graph.
+In particular, the knowledge graph includes metadata for the Project’s entities (eg Datasets, Schemas, Seeds, Models, and Pipelines) and statistical usages of these entities. We built the knowledge graph intentionally to include metadata but not data. Individual Dataset records, for example, are not included in the knowledge graph.
 
 ![Architecture](img/copilot_arch.png)
 
@@ -115,7 +115,7 @@ The Prophecy team employs top-notch industry practices to safeguard the security
 - Prophecy does not store or send any data to any third party LLM providers. Instead, Prophecy makes use of rich metadata to construct the knowledge graph. As a result, Data Copilot can interface with LLM providers while maintaining privacy of the data itself.
 - An annual penetration test is performed to validate Prophecy’s posture and identify vulnerabilities. Our latest penetration test report was issued in November 2022.
 - Prophecy maintains SOC-2 compliance as audited by PrescientAssurance.
-- Read more details on Prophecy’s security and compliance posture at our Security Portal [here](https://security.Prophecy.io/)
+- Read more details on Prophecy’s security and compliance posture at our Security Portal [here](https://security.Prophecy.io/).
 
 ## FAQ
 
@@ -133,8 +133,12 @@ Github Copilot and Prophecy Data Copilot are both excellent tools to boost produ
 
 #### Which Datasets are accessible to Prophecy Data Copilot?
 
-In Prophecy’s 3.1 release, any Dataset, source, or seed within a Project are accessible when Data Copilot is called from that project. In an upcoming release this behavior will change as follows: The assets need only to be part of the linked (Databricks, Snowflake, etc) catalog. That is, if the user can access the Datasets with their token, the Datasets should appear in the Environment tab and Copilot can access them.
+In Prophecy’s 3.1 release, any Dataset, Source, or Seed within a Project are accessible when Data Copilot is called from that Project. In an upcoming release this behavior will change as follows: The assets need only to be part of the linked (Databricks, Snowflake, etc) catalog. That is, if the user can access the Datasets with their token, the Datasets should appear in the Environment tab and Copilot can access them.
 
 #### How much will I pay for use of Prophecy Copilot?
 
 Copilot features are included with Prophecy’s Low-Code Spark and Low-Code SQL offerings. There would be an additional cost if you chose to use a private subscription Large Language Model (LLM) service. In this case, the cost depends on (1) the number of tokens sent to the LLM provider, (2) the size of the Datasets, and (3) the number of iterations Prophecy sends requests to the LLM provider.
+
+## Try Data Copilot
+
+Learn more about Prophecy [here](https://www.prophecy.io/), where you can sign up for a free trial account or schedule a demo. We'd love to hear your feedback!
