@@ -37,6 +37,8 @@ Reads data from fixed format files
 ### Generated Code {#source-code}
 
 ````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <Tabs>
 
@@ -73,6 +75,21 @@ object ReadEbcdic {
 ```
 
 </TabItem>
+<TabItem value="py" label="Python">
+
+```py
+def read_ebcdic(spark: SparkSession) -> DataFrame:
+    from prophecy.utils.transpiler import parse
+
+    return spark.read\
+        .option("schema", parse("ebcdic record\nstring(18) c_name;\ndecimal(10, 0) c_custkey ;\nend"))\
+        .format("io.prophecy.libs.FixedFileFormat")\
+        .load("/FileStore/tables/fixed_format/test/read_ebcdic")
+
+```
+
+</TabItem>
+
 </Tabs>
 
 ````
@@ -136,6 +153,20 @@ object write_ebcdic {
   }
 
 }
+```
+
+</TabItem>
+
+<TabItem value="py" label="Python">
+
+```py
+def write_ebcdic(spark: SparkSession, in0: DataFrame):
+    from prophecy.utils.transpiler import parse
+    in0.write\
+        .mode("overwrite")\
+        .option("schema", parse("ebcdic record\nstring(18) c_name ;\ndecimal(10, 0) c_custkey ;\nend"))\
+        .format("io.prophecy.libs.FixedFileFormat")\
+        .save("/FileStore/tables/fixed_format/test/write_ebcdic_alt")
 ```
 
 </TabItem>
