@@ -9,24 +9,18 @@ tags:
   - chatbot
 ---
 
-## Overview
+Todo: review the rest of the DAIS video and update below
 
-## Todo: review the rest of the DAIS video and update below
-
-This project showcases how easy it is to build a live chatbot application using your internal datasets on Spark. It features two main components:
+This guide showcases how easy it is to build a live chatbot application using your internal datasets on Spark. It features two main components:
 
 1. **batch ingestion** - set of Spark Pipelines that ingest unstructured data from your applications, pre-process, vectorizes it, store it within your vector database of choice
 2. **live inference** - a Spark streaming Pipeline that reads messages from Slack (soon also Teams) and answers them live using gathered knowledge.
 
-<br>
-
-<img width="1440" alt="container" src="https://github.com/prophecy-samples/gen-ai-chatbot-template/assets/3248329/c5f49bd5-5b4b-4c51-b050-e4e0ddf4f8e0">
-
-<br>
+![Architecture Diagram](img/genai_architecture.png)
 
 This template works best with [Databricks](https://databricks.com/) and [Prophecy](https://www.prophecy.io/). However, you can run it on any Spark. Spark allows us to easily scale and operationalize our chatbot to big datasets and large user bases, and Prophecy allows for easy development and debugging of the Pipelines.
 
-![gen-ai-chatbot-template-streaming](https://github.com/prophecy-samples/gen-ai-chatbot-template/assets/3248329/6fe672cb-5b60-4323-9380-de364afbce95)
+![gen-ai-chatbot-template-streaming](img/genai_intro_video.gif)
 
 This guide is an expanded view of [these](https://Github.com/atbida/gen-ai-chatbot-template/tree/main) succinct instructions and [this](https://www.youtube.com/watch?v=1exLfT-b-GM&t=1090s) Data+AI Summit session.
 
@@ -53,8 +47,6 @@ Below is a platform recommendation. The template is entirely code-based and also
 1. [**Prophecy Low-Code**](https://www.prophecy.io/) (version 3.1 and above) - for building the data Pipelines. A free account is available.
 2. [**Databricks**](https://databricks.com/) (DBR 12.2 ML and above) - for running the data Pipelines. A free community edition is available, or Prophecy provides Databricks' free trial.
 
-<br>
-
 ## Setup
 
 ### Dependencies Setup
@@ -64,10 +56,10 @@ Ensure that the above dependencies are satisfied. Create appropriate accounts on
 1. **Slack** - [quick video here](https://www.loom.com/share/2d7afeacd92e44809ab29b43665329dd?sid=c4e08d9d-bf86-4a6f-9e9d-fce9d7a12578)
 
    1. Use the slack workspace where you have permissions on the following steps.
-   2. [Setup Slack application](https://api.slack.com/reference/manifests#creating_apps) using the manifest file in [apps/slack/manifest.yml](apps/slack/manifest.yaml).
+   2. [Setup Slack application](https://api.slack.com/reference/manifests#creating_apps) using the manifest file in [apps/slack/manifest.yml](https://github.com/prophecy-samples/gen-ai-chatbot-template/blob/main/apps/slack/manifest.yaml).
    3. Install the Slack app to the workspace.
    4. Create an App-Level Token with `connections:write` permission. This token is going to be used for receiving messages from Slack. Save it as `SLACK_APP_TOKEN`.
-   5. Find the Bot User OAuth Token. The permissions (or scopes, in Slack terminology) are defined in the [apps/slack/manifest.yml](apps/slack/manifest.yaml) file. This token is going to be used for sending messages to Slack. Save it as `SLACK_TOKEN`
+   5. Find the Bot User OAuth Token. The permissions (or scopes, in Slack terminology) are defined in the [manifest](https://github.com/prophecy-samples/gen-ai-chatbot-template/blob/main/apps/slack/manifest.yaml) file. This token is going to be used for sending messages to Slack. Save it as `SLACK_TOKEN`
    6. Create a new Slack channel in this Slack workspace.
    7. Invite your Slack app to the channel.<br></br>
 
@@ -141,7 +133,7 @@ A new Gem is introduced in this Pipeline: the TextProcessing Gem helps scrape th
 
 The series of data transformations culminates with nicely formatted web Documentation data saved in a Unity Catalog table to end the Web Ingest Pipeline.
 
-Configuring the Web Ingest Pipeline:
+TODO: Configuring the Web Ingest Pipeline:
 
 ### Second Pipeline: Web Vectorize
 
@@ -150,6 +142,8 @@ Continuing with the goal of ingesting and vectorizing our web content, here we h
 ![Web Vectorize Pipeline](img/genai_web_vectorize.png)
 
 Once the document chunks have each been assigned a vector, these “embeddings” are stored to the Unity Catalog and to a vector database. We chose Pinecone, and you can choose any other vector database which enables quick lookup of content, id, and vector. The Pinecone vector db will be queried in the next Pipeline to figure out which document (chunks) are relevant for the question posed in Slack.
+
+TODO: Configuring the Web Vectorize Pipeline:
 
 ## Streaming Inference Pipelines to query LLMs
 
@@ -182,7 +176,7 @@ What kind of chatbots will you create? We’d love to hear your feedback - send 
 
 ## Coming soon
 
-Stay tuned for support for additional models beyond those provided by OpenAI! Also Prophecy will support private models and offer additional machine learning Gems out of the box. Minor improvements coming too, including support for the latest Databricks cli.
+Stay tuned for support for additional models beyond those provided by OpenAI! Also Prophecy will support private models and offer additional machine learning Gems out of the box. Minor improvements coming too, including support for the latest Databricks cli and [**Teams**](https://teams.com/) message ingestion.
 
 ## FAQ
 
