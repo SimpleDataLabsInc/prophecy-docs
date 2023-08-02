@@ -11,55 +11,91 @@ tags:
 
 ## Overview
 
-This is a guide for building a Generative AI Chatbot on Enterprise Data with Spark and Prophecy. This guide is an expanded view of [these](https://Github.com/atbida/gen-ai-chatbot-template/tree/main) succinct repository instructions. You can also see this project built in 13 minutes live during the latter half of [this](https://www.youtube.com/watch?v=1exLfT-b-GM&t=1090s) Data+AI Summit session.
+## Todo: review the rest of the DAIS video and update below
 
-TODO: unfortunately we'll have to copy paste from the git repo here
+This project showcases how easy it is to build a live chatbot application using your internal datasets on Spark. It features two main components:
 
-## Architecture
+1. **batch ingestion** - set of Spark Pipelines that ingest unstructured data from your applications, pre-process, vectorizes it, store it within your vector database of choice
+2. **live inference** - a Spark streaming Pipeline that reads messages from Slack (soon also Teams) and answers them live using gathered knowledge.
+
+<br>
+
+<img width="1440" alt="container" src="https://github.com/prophecy-samples/gen-ai-chatbot-template/assets/3248329/c5f49bd5-5b4b-4c51-b050-e4e0ddf4f8e0">
+
+<br>
+
+This template works best with [Databricks](https://databricks.com/) and [Prophecy](https://www.prophecy.io/). However, you can run it on any Spark. Spark allows us to easily scale and operationalize our chatbot to big datasets and large user bases, and Prophecy allows for easy development and debugging of the Pipelines.
+
+![gen-ai-chatbot-template-streaming](https://github.com/prophecy-samples/gen-ai-chatbot-template/assets/3248329/6fe672cb-5b60-4323-9380-de364afbce95)
+
+This guide is an expanded view of [these](https://Github.com/atbida/gen-ai-chatbot-template/tree/main) succinct instructions and [this](https://www.youtube.com/watch?v=1exLfT-b-GM&t=1090s) Data+AI Summit session.
 
 ## Requirements
 
-External dependencies
+### External dependencies
 
-Cluster dependencies
+Optional, but recommended for best results:
 
-Platform recommendations
+1. [**Pinecone**](https://www.pinecone.io/) - allows for efficient storage and retrieval of vectors. To simplify, it's possible to use Spark-ML cosine similarity alternatively; however, since that doesn't feature KNNs for more efficient lookup, it's only recommended for small datasets.
+2. [**OpenAI**](https://openai.com/) - for creating text embeddings and formulating questions. Alternatively, one can use Spark's [word2vec](https://spark.apache.org/docs/2.2.0/mllib-feature-extraction.html#word2vec) for word embeddings and an [alternative LLM (e.g., Dolly)](https://github.com/prophecy-io/spark-ai/tree/main) for answer formulation based on context.
+3. [**Slack**](https://slack.com/) or [**Teams**](https://teams.com/) (support coming soon) - for the chatbot interface. An example batch Pipeline is present for fast debugging when unavailable.
+
+### Cluster dependencies
+
+Required:
+
+1. [**Spark-AI**](https://github.com/prophecy-io/spark-ai/tree/main) - Toolbox for building Generative AI applications on top of Apache Spark.
+
+### Platform recommendations
+
+Below is a platform recommendation. The template is entirely code-based and also runs on open-source projects like Spark.
+
+1. [**Prophecy Low-Code**](https://www.prophecy.io/) (version 3.1 and above) - for building the data Pipelines. A free account is available.
+2. [**Databricks**](https://databricks.com/) (DBR 12.2 ML and above) - for running the data Pipelines. A free community edition is available, or Prophecy provides Databricks' free trial.
+
+<br>
 
 ## Setup
 
-Dependencies Setup
+### Dependencies Setup
 
-Slack: use the slack workspace where you have permissions for the following:
+Ensure that the above dependencies are satisfied. Create appropriate accounts on the services you want to use above. After that, save the generated tokens within the `.env` file (you can base it on the `sample.env` file).
 
-1. create a slack app
-2. Install the slack app to the workspace
-3. create an API_TOKEN with scope [connections:write]
-4. get the bot TOKEN with scopes defined in manifest
-5. create a new slack channel in this workspace
-6. invite your slack app to the channel
+1. **Slack** - [quick video here](https://www.loom.com/share/2d7afeacd92e44809ab29b43665329dd?sid=c4e08d9d-bf86-4a6f-9e9d-fce9d7a12578)
 
-OpenAI
+   1. Use the slack workspace where you have permissions on the following steps.
+   2. [Setup Slack application](https://api.slack.com/reference/manifests#creating_apps) using the manifest file in [apps/slack/manifest.yml](apps/slack/manifest.yaml).
+   3. Install the Slack app to the workspace.
+   4. Create an App-Level Token with `connections:write` permission. This token is going to be used for receiving messages from Slack. Save it as `SLACK_APP_TOKEN`.
+   5. Find the Bot User OAuth Token. The permissions (or scopes, in Slack terminology) are defined in the [apps/slack/manifest.yml](apps/slack/manifest.yaml) file. This token is going to be used for sending messages to Slack. Save it as `SLACK_TOKEN`
+   6. Create a new Slack channel in this Slack workspace.
+   7. Invite your Slack app to the channel.<br></br>
 
-1. Join your company OpenAI organization or create a new subscription.
-2. create an OpenAI token.
+2. **OpenAI**
 
-Pinecone
+   1. Join your company's OpenAI Organization by asking your Admin for an email invite.
+   2. Alternatively, create an account [here](https://platform.openai.com/signup).
+   3. Generate an OpenAI api key. Save it as `OPEN_AI_API_KEY`.
 
-1. Join your company Pinecone Organization by asking your Admin for an email invite. Alternatively, create your own Pinecone subscription.
-2. Open an existing Pinecone project or create a new project.
-3. Create an index. We used an index with dimensions 1536, Cosine metric and s1 pod type.
-4. Within the appropriate project, create a Pinecone token.
+3. **Pinecone**
+   1. Join your company's Pinecone Organization by asking your Admin for an email invite.
+   2. Alternatively, create an account [here](https://app.pinecone.io).
+   3. Open an existing Pinecone Project or create a new one.
+   4. Create an index. We used an index with dimensions 1536, Cosine metric, and s1 pod type.
+   5. Within the appropriate Pinecone Project, generate a Pinecone api key. Save it as `PINECONE_TOKEN`.
 
-Setup Databricks secrets & schemas
+### Setup Databricks Secrets and Schemas
 
-1. currently supports Databricks-cli 0.17.x, install using [pip install Databricks]
-2. update this file: `/Users/<username>/.Databrickscfg` with the Databricks host and personal access token (PAT)
-3. expected output of [setup_Databricks.sh]
+1.  Ensure that your `.env` file contains all the above secrets. Use the sample.env as an example, and `source` your `.env` file.
+2.  Install the `Databricks-cli` using `pip install databricks`. Currently version 0.17.x is supported.
+3.  Update this file: `/Users/<username>/.Databrickscfg` with the Databricks host and personal access token (PAT).
+4.  Run `setup_databricks.sh` to create the required secrets and schemas.
+5.  Expected output of [setup_Databricks.sh]
 
-- variable definitions
-- resources created, eg catalog tables, Databricks scopes, secrets
+    - variable definitions
+    - resources created, eg catalog tables, Databricks scopes, secrets
 
-4. verify setup_Databricks.sh creates the needed resources using these commands:
+6.  Verify `setup_Databricks.sh` creates the needed resources using these commands:
 
 ```
    Databricks unity-catalog catalogs list | grep gen_ai
@@ -68,14 +104,22 @@ Setup Databricks secrets & schemas
    Databricks secrets list --scope slack
 ```
 
-Load the Git repository
+### Load the Git repository
 
-1. Login to [Prophecy](https://app.prophecy.io/metadata/auth/signup)
-2. Create a new project. If you get stuck, see the quick steps [here.](https://docs.prophecy.io/concepts/project/#1-create-new-project)
-3. When it’s time to enter the Project repository, you’ll need a fork of the repo: [TODO: add pictures here]
-4. Add a dependency for the [spark-ai](https://Github.com/prophecy-io/spark-ai/tree/main) library following [these steps.](https://docs.prophecy.io/low-code-spark/extensibility/dependencies/#add-dependency) TODO: verify if this works ootb for this project or it needs to be a step here. TODO: add picture.
-5. Connect to your Spark cluster by creating a Fabric following [these steps.](https://docs.prophecy.io/concepts/fabrics/create-a-fabric/#Databricks)
-6. Explore the Prophecy Pipeline interface as in the picture below.
+1.  Fork the [gen-ai-chatbot-template](https://github.com/prophecy-samples/gen-ai-chatbot-template) repository.
+2.  Login to [Prophecy](https://app.prophecy.io/metadata/auth/signup)
+3.  Create a new Prophecy Project.
+4.  Load the forked Git repository to the Prophecy Project as shown in this 30 sec [video.](https://github.com/prophecy-samples/gen-ai-chatbot-template/assets/3248329/dcdfabaf-4870-421d-9f92-4ab028c5db5a)
+5.  Add a dependency for the [spark-ai](https://Github.com/prophecy-io/spark-ai/tree/main) library following [these steps.](https://docs.prophecy.io/low-code-spark/extensibility/dependencies/#add-dependency) TODO: verify if this works ootb for this project or it needs to be a step here. TODO: add picture.
+6.  Connect to your Spark cluster by creating a Fabric following [these steps.](https://docs.prophecy.io/concepts/fabrics/create-a-fabric/#Databricks)
+
+### Setup Databases
+
+This project runs on Databrick's Unity Catalog by default. However, you can also reconfigure Source & Target gems to use alternative sources.
+
+For Databricks Unity Catalog, the `setup_databricks.sh` script has already created the following catalog: `gen_ai` and the following databases: `web_bronze` and `web_silver`. The tables are going to be created automatically on the first boot-up.
+
+### Explore the Low-Code Interface
 
 ![Explore the low-code interface](img/genai_low_code_interface.png)
 
@@ -91,7 +135,7 @@ Now that we’ve had a brief introduction to the Prophecy Pipeline editor, let�
 
 We are ingesting unstructured data from [Prophecy Documentation](https://docs.prophecy.io/), in particular the [sitemap](https://docs.prophecy.io/sitemap.xml) which has links to all the individual web pages.
 
-![Web Ingest Pipeline](img/genai_web_ingest_Pipeline.png)
+![Web Ingest Pipeline](img/genai_web_ingest.png)
 
 A new Gem is introduced in this Pipeline: the TextProcessing Gem helps scrape the URL and content from the Documentation pages.
 
@@ -103,9 +147,9 @@ Configuring the Web Ingest Pipeline:
 
 Continuing with the goal of ingesting and vectorizing our web content, here we have the Web Vectorize Pipeline. We want to assign each document a number sequence, or vector, to map the similarity and relationships between those documents. Here we selected OpenAI [ada-002](https://openai.com/blog/new-and-improved-embedding-model) model based on performance and cost. As some of the documents are very long, we split them into smaller chunks. Each chunk is assigned an ID and sent to OpenAI’s ada model. Run the Pipeline using the “Play” button and you can see what each Gem is doing by opening the data previews between Gems. See the returned vector (or “embedding”) for each text chunk in the data preview following the OpenAI Gem.
 
-![Web Vectorize Pipeline](img/genai_web_vectorize_Pipeline.png)
+![Web Vectorize Pipeline](img/genai_web_vectorize.png)
 
-Once the document chunks have each been assigned a vector, these “embeddings” are stored to the Unity Catalog and to a vector database. We chose Pinecone; you can choose any other vector database which enables quick lookup of content, id, and vector. The Pinecone vector db will be queried in the next Pipeline to figure out which document (chunks) are relevant for the question posed in Slack.
+Once the document chunks have each been assigned a vector, these “embeddings” are stored to the Unity Catalog and to a vector database. We chose Pinecone, and you can choose any other vector database which enables quick lookup of content, id, and vector. The Pinecone vector db will be queried in the next Pipeline to figure out which document (chunks) are relevant for the question posed in Slack.
 
 ## Streaming Inference Pipelines to query LLMs
 
@@ -126,7 +170,7 @@ Configuring the Chatbot Live Pipeline
 1. Run the streaming Pipeline using the big “play” button rather than the individual Gem play buttons
 1. Type a question into the Slack channel and check the Pipeline to see if the question is ingested and processed. Open the data previews! (Data previews are the little blue boxes between Gems of a running Pipeline. They are handy when checking how far the Pipeline has succeeded.) Error messages are visible in the data preview samples.
 
-And that’s it! Congratulations on running the Generative AI Chatbot with Prophecy on Spark! You may notice a Chatbot Batch Pipeline available in the Project for those who wish to explore it. We won’t go into detail on Chatbot Batch because the steps are similar to those in the Chatbot Live (streaming) Pipeline.
+And that’s it! Congratulations on running the Generative AI Chatbot with Prophecy on Spark! You can check out the end result on the [video here](https://www.loom.com/share/a89ee52de80e41abb9b5647c1da73e18?sid=6fcf0298-79e8-412b-8e48-f58c9d6d7f3b) and a longer version [here](https://www.youtube.com/watch?v=1exLfT-b-GM&t=1090s). You may notice a Chatbot Batch Pipeline available in the Project for those who wish to explore it. We won’t go into detail on Chatbot Batch because the steps are similar to those in the Chatbot Live (streaming) Pipeline.
 
 ## Summary
 
@@ -142,6 +186,6 @@ Stay tuned for support for additional models beyond those provided by OpenAI! Al
 
 ## FAQ
 
-**Exactly which content is sent to OpenAI in the chatbot_live Pipeline?**
+Exactly which content is sent to OpenAI in the chatbot_live Pipeline?
 
 For this to work, you’re sending the scraped web data (here we use Prophecy documentation) to OpenAI for the vectorization Pipeline and again to answer the question. By the way, coming soon, Prophecy will support private models!
