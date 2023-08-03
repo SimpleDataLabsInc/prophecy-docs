@@ -106,7 +106,7 @@ Ensure that the above dependencies are satisfied. Create appropriate accounts on
 2.  Login to [Prophecy](https://app.prophecy.io/metadata/auth/signup)
 3.  Create a new Prophecy Project.
 4.  Load the forked Git repository to the Prophecy Project as shown in this 30 sec [video.](https://github.com/prophecy-samples/gen-ai-chatbot-template/assets/3248329/dcdfabaf-4870-421d-9f92-4ab028c5db5a)
-5.  Add a dependency for the [spark-ai](https://Github.com/prophecy-io/spark-ai/tree/main) library following [these steps.](https://docs.prophecy.io/low-code-spark/extensibility/dependencies/#add-dependency) TODO: verify if this works ootb for this project or it needs to be a step here. TODO: add picture.
+5.  Add a dependency for the [spark-ai](https://Github.com/prophecy-io/spark-ai/tree/main) library following [these steps.](https://docs.prophecy.io/low-code-spark/extensibility/dependencies/#add-dependency)
 6.  Connect to your Spark cluster by creating a Fabric following [these steps.](https://docs.prophecy.io/concepts/fabrics/create-a-fabric/#Databricks)
 
 ### 1d. Setup Databases
