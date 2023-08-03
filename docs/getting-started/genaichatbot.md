@@ -4,20 +4,25 @@ id: gen-ai-chatbot
 description: Build a generative AI application that answers questions in Slack based on relevant content from the web.
 sidebar_position: 9
 tags:
-  - tutorial
+  - guide
   - generativeai
   - chatbot
+  - tutorial
 ---
+
+<div class="wistia_responsive_padding" style={{padding:'62.5% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://fast.wistia.net/embed/iframe/mzi4es0kxn?seo=false?videoFoam=true" title="Getting Started With SQL Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
 This guide showcases how easy it is to build a live chatbot application using your internal datasets on Spark. Here is a summary of the steps you'll take to set up and explore the Generative AI Chatbot Pipelines:
 
 1. **Setup**: You'll configure the dependencies, define credential secrets and load the Pipelines from a Git repository.
-2. **Build a Knowledge Warehouse**: You'll explore a set of Spark Pipelines to [(a)ingest](/docs//tutorials/low-code-spark/genaichatbot.md#2a-web-ingest-Pipeline) unstructured data from your applications, pre-process, and [(b)vectorize](/docs//tutorials/low-code-spark/genaichatbot.md#2b-web-vectorize-Pipeline) and store the data within your vector database of choice.
-3. **Run a Live Inference Pipeline**: You'll run a Spark streaming [Chatbot](/docs//tutorials/low-code-spark/genaichatbot.md#step-3-live-inference) Pipeline that reads messages from Slack and answers them live using information from your new Knowledge Warehouse.
+2. **Build a Knowledge Warehouse**: You'll explore a set of Spark Pipelines to [(a)ingest](/docs/getting-started/genaichatbot.md#2a-web-ingest-Pipeline) unstructured data from your applications, pre-process, and [(b)vectorize](/docs/getting-started/genaichatbot.md#2b-web-vectorize-Pipeline) and store the data within your vector database of choice.
+3. **Run a Live Inference Pipeline**: You'll run a Spark streaming [Chatbot](/docs/getting-started/genaichatbot.md#step-3-live-inference) Pipeline that reads messages from Slack and answers them live using information from your new Knowledge Warehouse.
 
 ![Architecture Diagram](img/genai_architecture.png)
-
-![gen-ai-chatbot-template-streaming](img/genai_intro_video.gif)
 
 This guide is an expanded view of [these](https://Github.com/atbida/gen-ai-chatbot-template/tree/main) succinct instructions and [this](https://www.youtube.com/watch?v=1exLfT-b-GM&t=1090s) Data+AI Summit session.
 
@@ -113,7 +118,7 @@ databricks secrets list --scope slack
 1.  Login to [Prophecy](https://app.prophecy.io/metadata/auth/signup)
 2.  Create a new Prophecy Project.
 3.  Load the forked Git repository to the Prophecy Project as shown in this 30-second [video.](https://github.com/prophecy-samples/gen-ai-chatbot-template/assets/3248329/dcdfabaf-4870-421d-9f92-4ab028c5db5a), pointing to your fork at `https://github.com/<your_username>/gen-ai-chatbot-template`
-4.  Connect to your Spark cluster by creating a Fabric following [these steps.](https://docs.prophecy.io//tutorials/low-code-spark/fabrics/create-a-fabric/#Databricks)
+4.  Connect to your Spark cluster by creating a Fabric following [these steps.](https://docs.prophecy.io/getting-started/fabrics/create-a-fabric/#Databricks)
 
 ### 1d. Set up Databases
 
@@ -149,7 +154,7 @@ Continuing with the goal of ingesting and vectorizing our web content, here we h
 
 ![Web Vectorize Pipeline](img/genai_web_vectorize.png)
 
-Once the document chunks have each been assigned a vector, these “embeddings” are stored in the Unity Catalog and to a vector database. We chose Pinecone, and you can choose any other vector database to store the vector embedding and the corresponding ID. The Pinecone database will be queried in the next Pipeline.
+Once the document chunks have each been assigned a vector, these “embeddings” are stored in the Unity Catalog and to a [vector database](https://www.pinecone.io/learn/vector-database/) (eg Pinecone). We can use this Knowledge Warehouse to construct our LLM prompt in the next Pipeline.
 
 #### 2b.i Configuring the Web Vectorize Pipeline
 
