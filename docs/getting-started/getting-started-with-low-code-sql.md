@@ -27,7 +27,7 @@ We'll take you step by step from account setup to developing your first model. B
 
 ## 1. Setup Prophecy account
 
-Creating your first account on Prophecy is very simple. Go to [app.prophecy.io](https://app.Prophecy.io/metadata/auth/signup) to Sign-up for an initial 14-day trial. After you’ve tried the product for 14 days, simply reach out to us at Contact@Prophecy.io and we will help pick the best offering for you.
+Creating your first account on Prophecy is very simple. Go to [app.prophecy.io](https://app.Prophecy.io/metadata/auth/signup) to Sign-up for an initial 14-day trial. After you’ve tried the product for 14 days, simply reach out to us at Contact.us@Prophecy.io and we will help pick the best offering for you.
 
 ![Account Creation](img/1-1-account-creation.png)
 
@@ -389,6 +389,6 @@ You've successfully set up, developed, tested, and deployed your first SQL proje
 
 To continue learning and expanding your skills with Prophecy, explore other tutorials within our documentation, or apply your newfound knowledge to address real-world business challenges!
 
-If you ever encounter any difficulties, don't hesitate to reach out to us at Support@Prophecy.io or join our [Slack community](https://prophecy-io-support.slack.com/join/shared_invite/zt-moq3xzoj-~5MSJ6WPnZfz7bwsqWi8tQ#/shared-invite/email) for assistance. We're here to help!
+If you ever encounter any difficulties, don't hesitate to Contact.us@Prophecy.io or join our [Slack community](https://prophecy-io-support.slack.com/join/shared_invite/zt-moq3xzoj-~5MSJ6WPnZfz7bwsqWi8tQ#/shared-invite/email) for assistance. We're here to help!
 
 ---

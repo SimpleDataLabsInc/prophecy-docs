@@ -189,7 +189,7 @@ And that’s it! Congratulations on running the Generative AI Chatbot with Proph
 
 Making a GenAI chatbot is largely an ETL problem that can be solved using a low-code interface. Most of the work is setting up the dependencies (Slack, OpenAI, and Pinecone - or your favorite replacements for these). The ETL Pipelines ingest and vectorize the web content. Then the Chatbot Pipeline constructs a prompt for OpenAI using a question in Slack and the documentation content scraped from the web. Once we have the prompt, OpenAI (or another model) can respond with an answer.
 
-What kind of Generative AI applications will you create? We'd love to hear your ideas and feedback! Please send us an email (contact@Prophecy.io) or reach out on our Slack [community.](https://join.slack.com/t/prophecy-io-support/shared_invite/zt-moq3xzoj-~5MSJ6WPnZfz7bwsqWi8tQ) We are eager to share the Prophecy interface with as many low-code users as we can because we think enabling more people to build their own solutions is the best way to use the latest technologies.
+What kind of Generative AI applications will you create? We'd love to hear your ideas and feedback! Please send us an email (contact.us@Prophecy.io) or reach out on our Slack [community.](https://join.slack.com/t/prophecy-io-support/shared_invite/zt-moq3xzoj-~5MSJ6WPnZfz7bwsqWi8tQ) We are eager to share the Prophecy interface with as many low-code users as we can because we think enabling more people to build their own solutions is the best way to use the latest technologies.
 
 ## FAQ
 
