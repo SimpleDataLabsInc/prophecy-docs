@@ -12,8 +12,8 @@ tags:
 This guide showcases how easy it is to build a live chatbot application using your internal datasets on Spark. Here is a summary of the steps you'll take to set up and explore the Generative AI Chatbot Pipelines:
 
 1. **Setup**: You'll configure the dependencies, define credential secrets and load the Pipelines from a Git repository.
-2. **Build a Knowledge Warehouse**: You'll explore a set of Spark Pipelines to [(a)ingest](/docs/concepts/genaichatbot.md#2a-web-ingest-Pipeline) unstructured data from your applications, pre-process, and [(b)vectorize](/docs/concepts/genaichatbot.md#2b-web-vectorize-Pipeline) and store the data within your vector database of choice.
-3. **Run a Live Inference Pipeline**: You'll run a Spark streaming [Chatbot](/docs/concepts/genaichatbot.md#step-3-live-inference) Pipeline that reads messages from Slack and answers them live using information from your new Knowledge Warehouse.
+2. **Build a Knowledge Warehouse**: You'll explore a set of Spark Pipelines to [(a)ingest](/docs//tutorials/low-code-spark/genaichatbot.md#2a-web-ingest-Pipeline) unstructured data from your applications, pre-process, and [(b)vectorize](/docs//tutorials/low-code-spark/genaichatbot.md#2b-web-vectorize-Pipeline) and store the data within your vector database of choice.
+3. **Run a Live Inference Pipeline**: You'll run a Spark streaming [Chatbot](/docs//tutorials/low-code-spark/genaichatbot.md#step-3-live-inference) Pipeline that reads messages from Slack and answers them live using information from your new Knowledge Warehouse.
 
 ![Architecture Diagram](img/genai_architecture.png)
 
@@ -113,7 +113,7 @@ databricks secrets list --scope slack
 1.  Login to [Prophecy](https://app.prophecy.io/metadata/auth/signup)
 2.  Create a new Prophecy Project.
 3.  Load the forked Git repository to the Prophecy Project as shown in this 30-second [video.](https://github.com/prophecy-samples/gen-ai-chatbot-template/assets/3248329/dcdfabaf-4870-421d-9f92-4ab028c5db5a), pointing to your fork at `https://github.com/<your_username>/gen-ai-chatbot-template`
-4.  Connect to your Spark cluster by creating a Fabric following [these steps.](https://docs.prophecy.io/concepts/fabrics/create-a-fabric/#Databricks)
+4.  Connect to your Spark cluster by creating a Fabric following [these steps.](https://docs.prophecy.io//tutorials/low-code-spark/fabrics/create-a-fabric/#Databricks)
 
 ### 1d. Set up Databases
 
