@@ -12,7 +12,7 @@ tags:
 This guide showcases how easy it is to build a live chatbot application using your internal datasets on Spark. Here is a summary of the steps you'll take to set up and explore the Generative AI Chatbot Pipelines:
 
 1. **Setup**: You'll configure the dependencies, define credential secrets and load the Pipelines from a Git repository.
-2. **Build a Knowledge Warehouse**: You'll explore a set of Spark Pipelines to [(a)ingest](/docs/concepts/genaichatbot.md#2a-web-ingest-pipeline) unstructured data from your applications, pre-process, and [(b)vectorize](/docs/concepts/genaichatbot.md#2b-web-vectorize-pipeline) and store the data within your vector database of choice.
+2. **Build a Knowledge Warehouse**: You'll explore a set of Spark Pipelines to [(a)ingest](/docs/concepts/genaichatbot.md#2a-web-ingest-Pipeline) unstructured data from your applications, pre-process, and [(b)vectorize](/docs/concepts/genaichatbot.md#2b-web-vectorize-Pipeline) and store the data within your vector database of choice.
 3. **Run a Live Inference Pipeline**: You'll run a Spark streaming [Chatbot](/docs/concepts/genaichatbot.md#step-3-live-inference) Pipeline that reads messages from Slack and answers them live using information from your new Knowledge Warehouse.
 
 ![Architecture Diagram](img/genai_architecture.png)
@@ -65,10 +65,9 @@ For our example, we will be using Slack, OpenAI and Pinecone.
 
 #### Slack
 
-Here are the steps to set up the Slack bot. If you prefer a video walkthrough, [see here](https://www.loom.com/share/2d7afeacd92e44809ab29b43665329dd?sid=c4e08d9d-bf86-4a6f-9e9d-fce9d7a12578)
-Using a Slack workspace where you have Admin permissions, follow these steps:
+Here are the steps to set up the Slack bot. If you prefer a video walkthrough, [see here](https://www.loom.com/share/2d7afeacd92e44809ab29b43665329dd?sid=c4e08d9d-bf86-4a6f-9e9d-fce9d7a12578). Using a Slack workspace where you have Admin permissions, follow these steps:
 
-1. [Set up a Slack application](https://api.slack.com/reference/manifests#creating_apps) using the manifest file in [apps/slack/manifest.yml](https://github.com/prophecy-samples/gen-ai-chatbot-template/blob/main/apps/slack/manifest.yaml).
+1. [Set up a Slack application](https://api.slack.com/reference/manifests#creating_apps) using the manifest file [here](https://github.com/prophecy-samples/gen-ai-chatbot-template/blob/main/apps/slack/manifest.yaml).
 2. Install the Slack app in the workspace.
 3. Create an App-Level Token with `connections:write` permission. This token is going to be used for receiving messages from Slack. Save it as `SLACK_APP_TOKEN` in your `.env` file.
 4. Find the Bot User OAuth Token. The permissions (or scopes, in Slack terminology) are defined in the [manifest](https://github.com/prophecy-samples/gen-ai-chatbot-template/blob/main/apps/slack/manifest.yaml) file. This token is going to be used for sending messages to Slack. Save it as `SLACK_TOKEN` in your `.env` file
@@ -130,7 +129,7 @@ When you open any Prophecy Pipeline, you’ll see lots of features accessible. F
 
 The “play” button runs the Pipeline and offers data previews between Gems. This interactive feature is super handy to see how each Gem manipulates the data and to quickly check that the data is produced as expected. The project runs entirely on Spark and will scale for any data volume, big and small.
 
-Now that we’ve had a brief introduction to the Prophecy Pipeline editor, let’s dig into the Pipelines specific to the Generative AI Chatbot. The Pipelines accomplish two goals: (a) ingest web documentation text data and vectorize it, and (b) a streaming inference Pipeline to read messages from Slack, lookup vectors, query an LLM to formulate answers and send them back to Slack. Notice most of the data manipulations are standard transformations to help construct a prompt for the OpenAI model (or the model of your choice).
+Now that we’ve had a brief introduction to the Prophecy Pipeline editor, let’s dig into the Pipelines specific to the Generative AI Chatbot. The Pipelines accomplish two goals: (a) build a Knowledge Warehouse full of vectorized web documentation, and (b) a streaming inference Pipeline to read messages from Slack, query an LLM to formulate answers, and send them back to Slack. Notice most of the data manipulations are standard transformations to help construct a prompt for the OpenAI model (or the model of your choice).
 
 ## Step 2: Build a Knowledge Warehouse
 
@@ -161,21 +160,19 @@ Once the document chunks have each been assigned a vector, these “embeddings�
 
 ### 3a. Chatbot Live Pipeline
 
-Finally, we get to run the most exciting Pipeline! The Chatbot_Live streaming Pipeline ingests messages from Slack and sends the question and the relevant context to OpenAI which provides an answer.
+Finally, we get to run the most exciting Pipeline! The Chatbot Live streaming Pipeline ingests messages from Slack and sends the question and the relevant context to OpenAI which provides an answer.
 
-After ingesting the Slack question message and doing some transformation steps, the Chatbot_Live Pipeline queries OpenAI to create an embedding specifically for the question. Then, the Pinecone Lookup Gem identifies documents, based on their vectors, which could be relevant for the question. With the IDs and vectors in hand, we need to pull from the full document corpus the relevant documentation text. The Join Gem does exactly this: gets content for the relevant document IDs. Now we are well on our way to creating a wonderful prompt! The OpenAI Gem sends the relevant content chunks and the Slack question in a prompt to OpenAI, and the model returns an answer. Finally, the Pipeline writes the answer back to the Slack thread.
+After ingesting the Slack question message and doing some transformation steps, the Chatbot Live Pipeline queries OpenAI to create an embedding specifically for the question. Then, the Pinecone Lookup Gem identifies documents, based on their vectors, which could be relevant for the question. With the IDs and vectors in hand, we need to pull from the full document corpus the relevant documentation text. The Join Gem does exactly this: gets content for the relevant document IDs. Now we are well on our way to creating a wonderful prompt! The OpenAI Gem sends the relevant content chunks and the Slack question in a prompt to OpenAI, and the model returns an answer. Finally, the Pipeline writes the answer back to the Slack thread.
 
 ![Chatbot Live Pipeline](img/genai_chatbot_live.png)
 
 #### 3a.1 Configuring the Chatbot Live Pipeline
 
-1. Verify the source [slack_chat] Gem is configured with Databricks scope `slack` and Databricks Key `app_token`. While this token begins with `xapp-`, be sure not to use the plaintext value, as using the Databricks secret is a much more secure approach.
-2. Update the `only_user_msgs` Filter Gem with the Slack app member ID
-   :::error
-   Show image here
-   :::
+1. Verify the `slack_chat` Source Gem is configured with Databricks scope `slack` and Databricks Key `app_token`. While this token begins with `xapp-`, be sure not to use the plaintext value, as using the Databricks secret is a much more secure approach.
+2. Update the `only_user_msgs` Filter Gem with the Slack app member ID:
+   ![Slack App Member ID](img/genai_memberId.png)
 3. Verify the `bot_message` Target Gem is configured with Databricks scope `slack` and Databricks Key `token`. While this bot user OAuth token begins with `xoxb-`, be sure not to enter the plaintext value.
-4. Run the streaming Pipeline using the big “play” button rather than the individual Gem play buttons
+4. Run the streaming Pipeline using the big `play` button rather than the individual Gem `play` buttons
 5. Type a question into the Slack channel and check the Pipeline to see if the question is ingested and processed. Use the interims (as described above) to watch your message travel through the Pipeline. Error messages are visible in the data preview samples.
 6. Ask lots of questions!
 
