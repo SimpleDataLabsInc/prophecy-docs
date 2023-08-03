@@ -19,12 +19,12 @@ tags:
 This guide showcases how easy it is to build a live chatbot application using your internal datasets on Spark. Here is a summary of the steps you'll take to set up and explore the Generative AI Chatbot Pipelines:
 
 1. **Setup**: You'll configure the dependencies, define credential secrets and load the Pipelines from a Git repository.
-2. **Build a Knowledge Warehouse**: You'll explore a set of Spark Pipelines to [(a)ingest](/docs/getting-started/genaichatbot.md#2a-web-ingest-Pipeline) unstructured data from your applications, pre-process, and [(b)vectorize](/docs/getting-started/genaichatbot.md#2b-web-vectorize-Pipeline) and store the data within your vector database of choice.
+2. **Build a Knowledge Warehouse**: You'll explore a set of Spark Pipelines to [(a)ingest](/docs/getting-started/genaichatbot.md#2a-web-ingest-pipeline) unstructured data from your applications, pre-process, and [(b)vectorize](/docs/getting-started/genaichatbot.md#2b-web-vectorize-pipeline) and store the data within your vector database of choice.
 3. **Run a Live Inference Pipeline**: You'll run a Spark streaming [Chatbot](/docs/getting-started/genaichatbot.md#step-3-live-inference) Pipeline that reads messages from Slack and answers them live using information from your new Knowledge Warehouse.
 
 ![Architecture Diagram](img/genai_architecture.png)
 
-This guide is an expanded view of [these](https://Github.com/atbida/gen-ai-chatbot-template/tree/main) succinct instructions and [this](https://www.youtube.com/watch?v=1exLfT-b-GM&t=1090s) Data+AI Summit session.
+This guide is an expanded view of [these](https://github.com/prophecy-samples/gen-ai-chatbot-template) succinct instructions and [this](https://www.youtube.com/watch?v=1exLfT-b-GM&t=1090s) Data+AI Summit session.
 
 ## Requirements
 
@@ -95,7 +95,7 @@ Here are the steps to set up the Slack bot. If you prefer a video walkthrough, [
 
 1.  Ensure that your `.env` file contains all the above secrets. Use the sample.env as an example, and `source` your `.env` file (i.e `source .env`)
 2.  Install the Databricks CLI using `pip install Databricks`. Currently version 0.17.x is supported.
-3.  Use `databricks configure` to set up a connection from your local machine to your Workspace
+3.  Use `databricks configure` to set up a connection from your local machine to your Workspace.
 4.  Run `setup_Databricks.sh` to create the required secrets and schemas.
 5.  Expected output of `setup_Databricks.sh`:
 
@@ -118,7 +118,7 @@ databricks secrets list --scope slack
 1.  Login to [Prophecy](https://app.prophecy.io/metadata/auth/signup)
 2.  Create a new Prophecy Project.
 3.  Load the forked Git repository to the Prophecy Project as shown in this 30-second [video.](https://github.com/prophecy-samples/gen-ai-chatbot-template/assets/3248329/dcdfabaf-4870-421d-9f92-4ab028c5db5a), pointing to your fork at `https://github.com/<your_username>/gen-ai-chatbot-template`
-4.  Connect to your Spark cluster by creating a Fabric following [these steps.](https://docs.prophecy.io/getting-started/fabrics/create-a-fabric/#Databricks)
+4.  Connect to your Spark cluster by creating a Fabric following [these steps.](https://docs.prophecy.io/concepts/fabrics/create-a-fabric/#databricks)
 
 ### 1d. Set up Databases
 
@@ -132,7 +132,7 @@ For Databricks Unity Catalog, the `setup_Databricks.sh` script has already creat
 
 When you open any Prophecy Pipeline, you’ll see lots of features accessible. From the Environment tab, browse available datasets and tables in the linked data catalog. See a variety of Gems available out-of-the-box by clicking for example the Transformation or Join/Split headers. The visually designed Pipeline is translated to actual Spark code written in Scala, pySpark, or SQL. Just click at the top of the canvas to switch from the visual editor to the code editor. At the very bottom notice there’s a button to commit local changes to Git. Prophecy Pipelines are committed to the user’s Git repository and therefore offer the best software development practices: code review, versioning, proper releases, etc.
 
-The “play” button runs the Pipeline and offers data previews between Gems. This interactive feature is super handy to see how each Gem manipulates the data and to quickly check that the data is produced as expected. The project runs entirely on Spark and will scale for any data volume, big and small.
+The `play` button runs the Pipeline and offers data previews between Gems. This interactive feature is super handy to see how each Gem manipulates the data and to quickly check that the data is produced as expected. The project runs entirely on Spark and will scale for any data volume, big and small.
 
 Now that we’ve had a brief introduction to the Prophecy Pipeline editor, let’s dig into the Pipelines specific to the Generative AI Chatbot. The Pipelines accomplish two goals: (a) build a Knowledge Warehouse full of vectorized web documentation, and (b) a streaming inference Pipeline to read messages from Slack, query an LLM to formulate answers, and send them back to Slack. Notice most of the data manipulations are standard transformations to help construct a prompt for the OpenAI model (or the model of your choice).
 
@@ -180,6 +180,8 @@ After ingesting the Slack question message and doing some transformation steps, 
 4. Run the streaming Pipeline using the big `play` button rather than the individual Gem `play` buttons
 5. Type a question into the Slack channel and check the Pipeline to see if the question is ingested and processed. Use the interims (as described above) to watch your message travel through the Pipeline. Error messages are visible in the data preview samples.
 6. Ask lots of questions!
+
+![A GenerativeAI Chatbot](img/genai_intro_video.gif)
 
 And that’s it! Congratulations on running the Generative AI Chatbot with Prophecy on Spark! You can check out the end result in the [video here](https://www.loom.com/share/a89ee52de80e41abb9b5647c1da73e18?sid=6fcf0298-79e8-412b-8e48-f58c9d6d7f3b) and a longer version [here](https://www.youtube.com/watch?v=1exLfT-b-GM&t=1090s). Don't forget, all of these visually developed Pipelines are converted to Spark code behind the scenes. Toggle to the code editor to see the code. This code is available in your forked GitHub repository when you commit, merge, and release your changes via the Prophecy UI. Now your Spark project can be run on any Spark cluster via the Prophecy interface or using your favorite build and deploy toolset. You may notice a Chatbot Batch Pipeline available in the Project for those who wish to explore it. We won’t go into detail on Chatbot Batch because the steps are similar to those in the Chatbot Live (streaming) Pipeline.
 
