@@ -86,18 +86,20 @@ Ensure that the above dependencies are satisfied. Create appropriate accounts on
 2.  Install the `Databricks-cli` using `pip install Databricks`. Currently version 0.17.x is supported.
 3.  Update this file: `/Users/<username>/.Databrickscfg` with the Databricks host and personal access token (PAT).
 4.  Run `setup_Databricks.sh` to create the required secrets and schemas.
-5.  Expected output of [setup_Databricks.sh]
+5.  Expected output of `setup_Databricks.sh`:
 
-    - variable definitions
-    - resources created, eg catalog tables, Databricks scopes, secrets
+```
+Variable definitions
+Resources created, eg catalog tables, Databricks scopes, secrets
+```
 
 6.  Verify `setup_Databricks.sh` creates the needed resources using these commands:
 
 ```
-   Databricks unity-catalog catalogs list | grep gen_ai
-   Databricks unity-catalog schemas list --catalog-name gen_ai
-   Databricks secrets list-scopes
-   Databricks secrets list --scope slack
+Databricks unity-catalog catalogs list | grep gen_ai
+Databricks unity-catalog schemas list --catalog-name gen_ai
+Databricks secrets list-scopes
+Databricks secrets list --scope slack
 ```
 
 ### 1c. Load the Git repository
