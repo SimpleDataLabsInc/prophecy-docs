@@ -78,11 +78,12 @@ Here are the steps to set up the Slack bot. If you prefer a video walkthrough, [
 4. Find the Bot User OAuth [Token.](https://api.slack.com/authentication/token-types) The permissions (or scopes, in Slack terminology) are defined in the [manifest](https://github.com/prophecy-samples/gen-ai-chatbot-template/blob/main/apps/slack/manifest.yaml) file. This token is going to be used for sending messages to Slack. Save it as `SLACK_TOKEN` in your `.env` file
 5. Create a new Slack channel in this Slack workspace.
 6. Invite your Slack app to the channel.
+7. For more details on creating a Slack App, click [here.](https://api.slack.com/start/quickstart)
 
 #### OpenAI
 
 1. Join your company's OpenAI Organization by asking your Admin for an email invite. Alternatively, create an account [here](https://platform.openai.com/signup).
-2. Find your OpenAI API key as described [here.](https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key) Save it as `OPEN_AI_API_KEY` in your `.env` file
+2. Find your API key as described [here.](https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key) Save it as `OPEN_AI_API_KEY` in your `.env` file
 
 #### Pinecone
 
