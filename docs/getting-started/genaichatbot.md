@@ -176,7 +176,7 @@ After ingesting the Slack question message and doing some transformation steps, 
 
 ![Chatbot Live Pipeline](img/genai_chatbot_live.png)
 
-#### 3a.1 Configuring the Chatbot Live Pipeline
+#### 3a.i Configuring the Chatbot Live Pipeline
 
 1. Verify the `slack_chat` Source Gem is configured with Databricks scope `slack` and Databricks Key `app_token`. While this token begins with `xapp-`, be sure not to use the plaintext value, as using the Databricks secret is a much more secure approach.
 2. Update the `only_user_msgs` Filter Gem with the Slack app member ID:
