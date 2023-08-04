@@ -93,7 +93,7 @@ Here are the steps to set up the Slack bot. If you prefer a video walkthrough, [
 
 ### 1b. Databricks Secrets and Schemas
 
-The Databricks CLI is a command line tool that lets you interact with your Databricks workspace. Use the Databricks CLI here to store the tokens created in [Step 1a](/docs/getting-started/genaichatbot.md/gen-ai-chatbot#1a-dependencies) safely as Databricks `secrets`. Also, use the Databricks CLI to create catalog tables and schemas. Follow the steps below and for more details about the Databricks CLI read [here.](https://docs.databricks.com/en/archive/dev-tools/cli/index.html)
+The Databricks CLI is a command line tool that lets you interact with your Databricks workspace. Use the Databricks CLI here to store the tokens created in [Step 1a](/docs/getting-started/genaichatbot.md#1a-dependencies) safely as Databricks `secrets`. Also, use the Databricks CLI to create catalog tables and schemas. Follow the steps below and for more details about the Databricks CLI read [here.](https://docs.databricks.com/en/archive/dev-tools/cli/index.html)
 
 Find `setup_Databricks.sh` [here](https://github.com/prophecy-samples/gen-ai-chatbot-template/blob/main/setup_databricks.sh).
 
