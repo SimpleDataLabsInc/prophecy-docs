@@ -74,26 +74,30 @@ Here are the steps to set up the Slack bot. If you prefer a video walkthrough, [
 
 1. [Set up a Slack application](https://api.slack.com/reference/manifests#creating_apps) using the manifest file [here](https://github.com/prophecy-samples/gen-ai-chatbot-template/blob/main/apps/slack/manifest.yaml).
 2. Install the Slack app in the workspace.
-3. Create an App-Level Token with `connections:write` permission. This token is going to be used for receiving messages from Slack. Save it as `SLACK_APP_TOKEN` in your `.env` file.
-4. Find the Bot User OAuth Token. The permissions (or scopes, in Slack terminology) are defined in the [manifest](https://github.com/prophecy-samples/gen-ai-chatbot-template/blob/main/apps/slack/manifest.yaml) file. This token is going to be used for sending messages to Slack. Save it as `SLACK_TOKEN` in your `.env` file
+3. Create an [App-Level Token](https://api.slack.com/start/quickstart#getting-auth-token) with `connections:write` permission. This token is going to be used for receiving messages from Slack. Save it as `SLACK_APP_TOKEN` in your `.env` file.
+4. Find the Bot User OAuth [Token.](https://api.slack.com/authentication/token-types) The permissions (or scopes, in Slack terminology) are defined in the [manifest](https://github.com/prophecy-samples/gen-ai-chatbot-template/blob/main/apps/slack/manifest.yaml) file. This token is going to be used for sending messages to Slack. Save it as `SLACK_TOKEN` in your `.env` file
 5. Create a new Slack channel in this Slack workspace.
 6. Invite your Slack app to the channel.
 
 #### OpenAI
 
 1. Join your company's OpenAI Organization by asking your Admin for an email invite. Alternatively, create an account [here](https://platform.openai.com/signup).
-2. Generate an OpenAI API key. Save it as `OPEN_AI_API_KEY` in your `.env` file
+2. Find your OpenAI API key as described [here.](https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key) Save it as `OPEN_AI_API_KEY` in your `.env` file
 
 #### Pinecone
 
 1. Join your company's Pinecone Organization by asking your Admin for an email invite. Alternatively, create an account [here](https://app.pinecone.io).
 2. Open an existing Pinecone Project or create a new one.
 3. Create an index. We used an index with `1536` dimensions, `Cosine` metric, and an `s1` pod type.
-4. Within the appropriate Pinecone Project, generate a Pinecone API key. Save it as `PINECONE_TOKEN` in your `.env` file.
+4. Within the appropriate Pinecone Project, generate a Pinecone API key as mentioned [here.](https://docs.pinecone.io/docs/projects#api-keys) Save it as `PINECONE_TOKEN` in your `.env` file.
 
 ### 1b. Databricks Secrets and Schemas
 
-1.  Ensure that your `.env` file contains all the above secrets. Use the sample.env as an example, and `source` your `.env` file (i.e `source .env`)
+The Databricks CLI is a command line tool that lets you interact with your Databricks workspace. Use the Databricks CLI here to store the tokens created in [Step 1a](/docs/getting-started/genaichatbot.md/gen-ai-chatbot#1a-dependencies) safely as Databricks `secrets`. Also, use the Databricks CLI to create catalog tables and schemas. Follow the steps below and for more details about the Databricks CLI read [here.](https://docs.databricks.com/en/archive/dev-tools/cli/index.html)
+
+Find `setup_Databricks.sh` [here](https://github.com/prophecy-samples/gen-ai-chatbot-template/blob/main/setup_databricks.sh).
+
+1.  Ensure that your `.env` file contains all the above secrets. Use the [sample.env](https://github.com/prophecy-samples/gen-ai-chatbot-template/blob/main/sample.env) as an example, and `source` your `.env` file (i.e `source .env`)
 2.  Install the Databricks CLI using `pip install Databricks`. Currently version 0.17.x is supported.
 3.  Use `databricks configure` to set up a connection from your local machine to your Workspace.
 4.  Run `setup_Databricks.sh` to create the required secrets and schemas.
@@ -104,7 +108,7 @@ Variable definitions
 Resources created, eg catalog tables, Databricks scopes, secrets
 ```
 
-6.  Verify `setup_Databricks.sh` creates the needed resources using these commands:
+6.  Verify `setup_Databricks.sh` creates the needed resources using these commands described [here](https://docs.databricks.com/en/archive/dev-tools/cli/unity-catalog-cli.html) and [here](https://docs.databricks.com/en/archive/dev-tools/cli/secrets-cli.html):
 
 ```console
 databricks unity-catalog catalogs list | grep gen_ai
@@ -201,6 +205,6 @@ Stay tuned for support for additional models beyond those provided by OpenAI. Al
 
 For this to work, you’re sending the scraped web data (here we use Prophecy documentation) to OpenAI for the vectorization Pipeline and again to answer the question.
 
-\*\* Do you support private instances of Open AI or other language models?
+**Do you support private instances of Open AI or other language models?**
 
 Coming soon!
