@@ -35,10 +35,9 @@ Pinecone Lookup requires credentials and a model_embedding.
 
 ### Gem Configuration
 
-todo: increase font
 ![Configuration](./img/pinecone_lookup_configure.png)
 
-Verify an **(1) input column** contains an embedding from a foundational model, eg OpenAI.
+Verify the **(1) input columns** contain a column with the embeddings. The structure of this column's entries must be compatible with the structure of the Pinecone index.
 
 #### Credentials
 
@@ -48,9 +47,9 @@ Hardcoding the Pinecone credential is not recommended. Selecting this option cou
 
 #### Properties
 
-Pinecone DB uses indexing to map the vectors to a data structure that will enable faster searching. The Pinecone Lookup Gem searches through a Pinecone index to identify embeddings with similarity to the input embedding. Enter the Pinecone **[(4) Index name](/docs/low-code-spark/Gems/machine-learning/ml-pinecone-lookup.md#faq)** which you’d like to use for looking up embeddings.
+Pinecone DB uses indexing to map the vectors to a data structure that will enable faster searching. The Pinecone Lookup Gem searches through a Pinecone index to identify embeddings with similarity to the input embedding. Enter the Pinecone **[(4) Index name](/docs/low-code-spark/gems/machine-learning/ml-pinecone-lookup.md#faq)** which you’d like to use for looking up embeddings.
 
-Select one of the Gem’s input columns with vector embeddings as the **(5) Vector column** to send to Pinecone’s API. The column [must](/docs/low-code-spark/Gems/machine-learning/ml-pinecone-lookup.md#input-columns) be compatible with the Pinecone Index. To change the column’s datatype and properties, [configure](/docs/low-code-spark/Gems/machine-learning/ml-pinecone-lookup.md#faq) the Gem(s) preceding the Pinecone Lookup Gem.
+Select one of the Gem’s input columns with vector embeddings as the **(5) Vector column** to send to Pinecone’s API. The column [must](/docs/low-code-spark/gems/machine-learning/ml-pinecone-lookup.md#input-columns) be compatible with the Pinecone Index. To change the column’s datatype and properties, [configure](/docs/low-code-spark/gems/machine-learning/ml-pinecone-lookup.md#faq) the Gem(s) preceding the Pinecone Lookup Gem.
 
 Pinecone’s API can return multiple results. Depending on the use case, select the desired **(6) Number of results** sorted by similarity score. The result with highest similarity to the user’s text question will be listed first.
 
@@ -91,7 +90,7 @@ def vector_lookup(spark: SparkSession, in0: DataFrame) -> DataFrame:
 <TabItem value="scala" label="Scala">
 
 ```scala
-   todo
+  [page under construction]
 ```
 
 </TabItem>
@@ -108,22 +107,3 @@ To troubleshoot the Gem preceding Pinecone Lookup, open the data preview output 
 #### Creating a Pinecone Index
 
 If you don’t have one yet, [create a Pinecone index](https://docs.pinecone.io/docs/quickstart). Click [here](https://docs.pinecone.io/docs/choosing-index-type-and-size) for pointers on choosing an index type and size. How to populate the index? For example, [this guide](https://docs.prophecy.io/getting-started/gen-ai-chatbot#step-2-build-a-knowledge-warehouse) shows how to ingest and vectorize web content data to store in a Pinecone Database index.
-
-#### Do you support additional models and vector databases?
-
-LLMs Supported
-
-- 🚧 OpenAI
-- 🚧 Spark-ML
-- 🗺️ Databrick's Dolly
-- 🗺️ HuggingFace's Models
-
-Vector Databases Supported
-
-- 🚧 Pinecone
-- 🚧 Spark-ML (table store & cos sim)
-- 🗺 ElasticSearch
-
-And many more are coming soon (feel free to request at contact.us@Prophecy.io)! 🚀
-
-✅: General Availability; 🚧: Beta availability; 🗺️: Roadmap;
