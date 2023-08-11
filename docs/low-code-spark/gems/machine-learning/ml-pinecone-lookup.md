@@ -6,17 +6,17 @@ description: Lookup a vector embedding from a Pinecone Database
 tags: [generative-ai, machine-learning, llm, pinecone, openai]
 ---
 
-<div class="wistia_responsive_padding" style={{padding:'62.5% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://fast.wistia.net/embed/iframe/019qt3csq9?seo=false?videoFoam=true" title="Getting Started With SQL Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-The Pinecone Lookup Gem identifies content that is similar to a provided vector embedding. Briefly, we should understand the input, Gem configuration, and output.
+The Pinecone Lookup Gem identifies content that is similar to a provided vector embedding. Briefly, we should understand the input, Gem funtion, and output.
 
-**Input:** This Gem requires an embedding as input. The embedding is provided by a foundational model like [OpenAI](https://platform.openai.com/docs/introduction) or [Dolly](https://www.databricks.com/blog/2023/04/12/dolly-first-open-commercially-viable-instruction-tuned-llm).
+**Input:** This Gem requires an embedding as input. The embedding is provided by a foundational model like [OpenAI](https://platform.openai.com/docs/introduction).
 
-**Gem action:** The Pinecone Lookup Gem calls the Pinecone API and returns a set of IDs with highest similarity to the provided embedding.
+**Gem function:** The Pinecone Lookup Gem calls the Pinecone API and returns a set of IDs with highest similarity to the provided embedding.
 
 **Output:** This Gem outputs an array of IDs with corresponding similarity scores.
 
@@ -55,7 +55,7 @@ Pinecone’s API can return multiple results. Depending on the use case, select 
 
 ### Output columns
 
-The output dataset contains the pinecone_matches column. For each input content entry, this Gem adds an array to the pinecone_matches column. The output array will have [Number of Results](link to section in Gem config) entries.
+The output dataset contains the pinecone_matches column. For each input content entry, this Gem adds an array to the pinecone_matches column. The output array will have [Number of Results](/docs/low-code-spark/gems/machine-learning/ml-pinecone-lookup.md#properties) entries.
 
 | Name             | Description                                                                                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
