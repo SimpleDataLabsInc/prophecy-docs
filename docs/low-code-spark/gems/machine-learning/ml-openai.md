@@ -29,9 +29,13 @@ The OpenAI Gem allows the Prophecy user to interact with the OpenAI API using tw
 
 Follow along to learn how to interact with the OpenAI API using Prophecy's Low-code interface. Also recommended: follow [this guide](https://docs.prophecy.io/getting-started/gen-ai-chatbot) to use this Gem to build a Generative AI Chatbot.
 
+:::caution
+As with all applications that interface with Large Language Models (LLMs), the OpenAI Gem can generate results that are incorrect and/or misleading. The OpenAI Gem is subject to the same [limitations and risks](https://platform.openai.com/docs/guides/embeddings/limitations-risks) as those posed by OpenAI itself.
+:::
+
 ## Compute text embeddings
 
-Given a question input, the OpenAI Gem will return a text embedding by calling the OpenAI [ada-002 model](<](https://platform.openai.com/docs/guides/embeddings/how-to-get-embeddings)>). View the input and output from this Gem to understand the data formats and sample.
+Given a question input, the OpenAI Gem will return a text embedding by calling the OpenAI [ada-002 model](https://platform.openai.com/docs/guides/embeddings/how-to-get-embeddings). View the input and output from this Gem to understand the data formats and sample.
 
 ![Overview of the Gem showing the input and output for computing a text embedding](./img/openai-intro-compute-text-embeddings.png)
 
