@@ -27,19 +27,19 @@ The OpenAI Gem allows the Prophecy user to interact with the OpenAI API using tw
 1. Compute text embeddings ([link](/docs/low-code-spark/gems/machine-learning/ml-openai.md#compute-text-embeddings)).
 2. Answer a question, where the user has the option to provide context ([link](/docs/low-code-spark/gems/machine-learning/ml-openai.md#answer-a-question-with-a-given-context)).
 
-Follow along to learn how to interact with the OpenAI API using Prophecy's Low-code interface. Also recommended: follow [this guide](https://docs.prophecy.io/getting-started/gen-ai-chatbot) to use this Gem to build a Generative AI Chatbot.
+Follow along to learn how to interact with the OpenAI API using Prophecy's Low-code interface. For an example set of Pipelines that use these Gems to create a Generative AI Chatbot, see this [guide.](/docs/getting-started/genaichatbot.md)
 
 :::caution
 As with all applications that interface with Large Language Models (LLMs), the OpenAI Gem can generate results that are incorrect and/or misleading. The OpenAI Gem is subject to the same [limitations and risks](https://platform.openai.com/docs/guides/embeddings/limitations-risks) as those posed by OpenAI itself.
 :::
 
-## Compute text embeddings
+### 1. Compute text embeddings
 
 Given a question input, the OpenAI Gem will return a text embedding by calling the OpenAI [ada-002 model](https://platform.openai.com/docs/guides/embeddings/how-to-get-embeddings). View the input and output from this Gem to understand the data formats and sample.
 
 ![Overview of the Gem showing the input and output for computing a text embedding](./img/openai-intro-compute-text-embeddings.png)
 
-### Configure: compute text embeddings
+#### 1a. Configure
 
 Follow the steps below to configure the OpenAI Gem to compute text embeddings.
 
@@ -47,11 +47,15 @@ Follow the steps below to configure the OpenAI Gem to compute text embeddings.
 
 Storing the OpenAI API token as a **(1) Databricks Secret** is highly recommended. For instructions click [here.](https://docs.databricks.com/en/security/secrets/index.html) Be sure to use the ** (2) Fabric connection** to the Databricks workspace which contains the Databricks scope and secrets configured in this Gem. Contact us to understand the integrations with other secret managers.
 
-#### Operation: compute text embeddings
-
 Select the Operation type from the dropdown menu. **(3) Compute text embeddings** operation will send the selected **(4) Texts column** to the OpenAI API. For each entry in the Texts column, OpenAI's ada-002 model will return a text embedding.
 
 Instead of sending a single row to OpenAI's API, select the **(5) Group data** option. Group data is a window function, using a window of size 20, **(6) ordered by** the selected column. Using the Group data option influences model performance based on the column selected.
+
+#### 1b. Input
+
+#### 1c. Output
+
+#### 1d. Generated code
 
 All the visual designs are converted to code and committed to the Prophecy user's Git repository. See below for a sample of the code which calls the OpenAI API to compute text embeddings.
 
@@ -99,13 +103,13 @@ def vectorize(spark: SparkSession, question_seed: DataFrame) -> DataFrame:
 
 ````
 
-## Answer a question with a given context
+### 2. Answer a question with a given context
 
-In addition to computing text embeddings, OpenAI's ada-002 model is also very good at answering questions. The Prophecy low-code interface allows users to input a question and optionally provide a context for the question, as components of the `prompt` sent to OpenAI. In response, OpenAI's ada-002 model returns an answer(s) to the question. See the input and output data previews before and after the OpenAI Gem to understand the operation.
+In addition to computing text embeddings, OpenAI's ada-002 model is also very good at answering questions. The Prophecy low-code interface allows users to input a question (and optionally provide a context) as components of the `prompt` sent to OpenAI. In response, OpenAI's ada-002 model returns an answer(s) to the question. See the input and output data previews before and after the OpenAI Gem to understand the operation.
 
 ![Overview of the Gem showing the input and output for answering a question](./img/openai-intro-answer-question-context.png)
 
-### Configure
+#### 2a. Configure
 
 Follow the steps below to configure the OpenAI Gem to answer a question, and to understand how to provide a context if desired.
 
@@ -115,9 +119,13 @@ Storing the OpenAI API token as a **(1) Databricks Secret** is highly recommende
 
 Hardcoding the OpenAI credential is not recommended. Selecting this option could send credentials to be stored hardcoded in Git; use only for credentials that should be shared with the world. Contact us to understand the integrations with other secret managers. (contact.us@Prophecy.io)
 
-#### Operation: Answer a question with a given context
+Now it's time to craft a prompt to send to the OpenAI ada-002 model. Select the Operation type from the dropdown menu. The operation `Answer questions` will prompt OpenAI's ada-002 model to answer the provided question using the datasets the model was trained on, which have some [blindness.](https://platform.openai.com/docs/guides/embeddings/blindness-to-recent-events) For many users, you'll want to provide some context as part of your prompt. The operation **(3) Answer questions for given context** will likely generate answers more related to the context. Select the input column which has the question of interest as the **(4) Question text column**. To provide context in addition to the question, select **(5) Context text column**. For example, if the question is `Does Prophecy support on-premise environments?`, an appropriate context would be some section of Prophecy's documentation. The **(6) context** and **(7) question (query)** comprise the prompt sent to OpenAI.
 
-Here we are crafting a prompt to send to the OpenAI ada-002 model. Select the Operation type from the dropdown menu. The operation `Answer questions` will prompt OpenAI's ada-002 model to answer the provided question using only the information the model was trained on from the internet until Aug 2020. For many users, you'll want to provide some context as part of your prompt. The operation **(3) Answer questions for given context** will likely generate answers more related to the context. Select the input column which has the question of interest as the **(4) Question text column**. To provide context in addition to the question, select **(5) Context text column**. For example, if the question is `Does Prophecy support on-premise environments?`, an appropriate context would be some section of Prophecy's documentation. The **(6) context** and **(7) question or query** comprise the prompt sent to OpenAI.
+#### 2b. Input
+
+#### 2c. Output
+
+#### 2d. Generated code
 
 See below for a sample of the code which calls the OpenAI API to answer a question provided some context.
 
@@ -157,12 +165,12 @@ def OpenAI_1(spark: SparkSession, collect_context: DataFrame) -> DataFrame:
 
 ````
 
-## FAQ
+### FAQ
 
-### Troubleshooting
+#### Troubleshooting
 
 The output data sample following the OpenAI Gem also contains a column for any error message(s) returned from OpenAI. This handy column surfaces errors including invalid OpenAI credentials, invalid input questions, or problems with data formatting.
 
-### Can I choose other OpenAI models?
+#### Can I choose other OpenAI models?
 
 Currently we use ChatGPT 3.5 Turbo. Contact us for additional options: contact.us@Prophecy.io
