@@ -5,7 +5,7 @@ description: Preparing and Using Data for Machine Learning
 tags: [generative-ai, machine-learning, llm, pinecone, openai]
 ---
 
-Each page below describes one of the set of Gems that prepare or use data for Machine Learning. These Gems have a required [Cluster library dependency](/docs/low-code-spark/gems/machine-learning.md#cluster-library-dependencies). For an example set of Pipelines that use these Gems to create a Generative AI Chatbot, see this [guide.](/docs/getting-started/gen-ai-chatbot.md)
+Each page below describes one of the set of Gems that prepare or use data for Machine Learning. These Gems have a required [Cluster library dependency](/docs/low-code-spark/gems/machine-learning/machine-learning.md#cluster-library-dependencies). For an example set of Pipelines that use these Gems to create a Generative AI Chatbot, see this [guide.](/docs/getting-started/genaichatbot.md)
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
