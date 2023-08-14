@@ -53,7 +53,16 @@ Instead of sending a single row to OpenAI's API, select the **(5) Group data** o
 
 #### 1b. Input
 
+| Column        | Description                                    | Required |
+| ------------- | ---------------------------------------------- | -------- |
+| Question/Text | string - a question or text string of interest | True     |
+
 #### 1c. Output
+
+| Column           | Description                                                                                                                                                                                                                                |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| openai_embedding | array(float) - The vector embedding returned from OpenAI corresponding to the input question/text. Each record is an array of `1536` floating point numbers between `-1 and 1`, such as `[-0.0018493991, -0.0059955865, ... -0.02498541]`. |
+| openai_error     | string - this column is provided to display any error message returned from the OpenAI API; helpful for troubleshooting.                                                                                                                   |
 
 #### 1d. Generated code
 
@@ -123,7 +132,17 @@ Now it's time to craft a prompt to send to the OpenAI ada-002 model. Select the 
 
 #### 2b. Input
 
+| Column   | Description                                                                                                                                                                                                                                                                                                                                                                           | Required |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| Question | string - a question of interest to include in the prompt sent to OpenAI                                                                                                                                                                                                                                                                                                               | True     |
+| Context  | string - a text corpus related to the question of interest, also included in the prompt sent to OpenAI. Frequently the context column should undergo data transformations in the Gems preceding the OpenAI Gem. See [this guide](/docs/getting-started/genaichatbot.md) for a great example of preparing the text corpus and transforming sufficiently to include in a useful prompt. | False    |
+
 #### 2c. Output
+
+| Column        | Description                                                                                                                                  |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| openai_answer | struct - this column contains the answer response from OpenAI. Select/filter from multiple answer options in a Gem following the OpenAI Gem. |
+| openai_error  | string - this column is provided to display any error message returned from the OpenAI API; helpful for troubleshooting.                     |
 
 #### 2d. Generated code
 
