@@ -12,26 +12,17 @@ tags: [generative-ai, machine-learning, llm, pinecone, openai]
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-The Pinecone Lookup Gem identifies content that is similar to a provided vector embedding. Briefly, we should understand the input, Gem funtion, and output.
+The Pinecone Lookup Gem identifies content that is similar to a provided vector embedding. The Gem operation, input, and output are breifly described below.
+
+**Gem operation:** The Pinecone Lookup Gem calls the Pinecone API and returns a set of IDs with highest similarity to the provided embedding.
 
 **Input:** This Gem requires an embedding as input. The embedding is provided by a foundational model like [OpenAI](https://platform.openai.com/docs/introduction).
-
-**Gem function:** The Pinecone Lookup Gem calls the Pinecone API and returns a set of IDs with highest similarity to the provided embedding.
 
 **Output:** This Gem outputs an array of IDs with corresponding similarity scores.
 
 ![Input and Output](./img/pinecone_lookup_input_output.png)
 
-Now let’s understand the input, Gem Configuration, and output in more detail.
-
-### Input columns
-
-Pinecone Lookup requires credentials and a model_embedding.
-
-| Name            | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| credentials     | An API key for Pinecone. Store this key as a Databricks secret.                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| model_embedding | array(float) - for each content entry, the embedding received from a foundational model’s API. The format of this embedding is important. It must be an array of floating point numbers that matches the requirements of the Pinecone index. For example, we used a Pinecone index with `1536` dimensions, `Cosine` metric, and an `s1` pod type. So the embedding input to the Pinecone Lookup Gem must be an array of `1536` floating point numbers between `-1 and 1`, such as `[-0.0018493991, -0.0059955865, ... -0.02498541]`. |
+Now let’s understand the Gem Configuration, Input, and Output in detail.
 
 ### Gem Configuration
 
@@ -53,14 +44,24 @@ Select one of the Gem’s input columns with vector embeddings as the **(5) Vect
 
 Pinecone’s API can return multiple results. Depending on the use case, select the desired **(6) Number of results** sorted by similarity score. The result with highest similarity to the user’s text question will be listed first.
 
-### Output columns
+### Input
 
-The output dataset contains the pinecone_matches column. For each input content entry, this Gem adds an array to the pinecone_matches column. The output array will have [Number of Results](/docs/low-code-spark/gems/machine-learning/ml-pinecone-lookup.md#properties) entries.
+Pinecone Lookup requires a model_embedding column as input. Use one of Prophecy's Machine Learning Gems to provide the model_embedding. For example, the OpenAI Gem can precede the Pinecone Lookup Gem in the Pipeline. The OpenAI Gem, configured to `Compute a text embedding`, will output an openai_embedding column. This is a suitable input for the Pinecone Lookup Gem.
 
-| Name             | Description                                                                                                                                                     |
+| Column          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                     | Required |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| model_embedding | array(float) - The format of this embedding is important. It must be an array of floating point numbers that matches the requirements of the Pinecone index. For example, we used a Pinecone index with `1536` dimensions, `Cosine` metric, and an `s1` pod type. So each record in the model_embedding column must be an array of `1536` floating point numbers between `-1 and 1`, such as `[-0.0018493991, -0.0059955865, ... -0.02498541]`. | True     |
+
+### Output
+
+The output Dataset contains the pinecone_matches column. For each input content entry, this Gem adds an array to the pinecone_matches column. The output array will have [Number of Results](/docs/low-code-spark/gems/machine-learning/ml-pinecone-lookup.md#properties) entries.
+
+| Column           | Description                                                                                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | pinecone_matches | array - an array of several content IDs and their scores.                                                                                                       |
 | pinecone_error   | string - this column is provided to show any error message returned from Pinecone’s API; helpful for troubleshooting errors related to the Pinecone Lookup Gem. |
+
+Prophecy converts the visual design into Spark code avaialble on the Prophecy user's Git repository. Find the Spark code for the Pinecone Lookup Gem below.
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
