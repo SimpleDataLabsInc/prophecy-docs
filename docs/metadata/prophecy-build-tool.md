@@ -91,15 +91,15 @@ pbt build --path /path/to/your/prophecy_project/
 ```shell
 pbt build --pipelines customers_orders,join_agg_sort  --path /path/to/your/prophecy_project/
 ```
-- PBT builds by default fails(EXIT 1) if any of the pipeline builds failed either due to corrupt pipeline or build failure.
-- Although if we want to continue building other pipelines even if some are failed, we can use `--ignore-build-errors` and  `--ignore-parse-errors` flags
+
+- PBT builds by default fails(EXIT 1) if any of the Pipeline builds failed either due to corrupt Pipeline or build failure.
+- Although if we want to continue building other Pipelines even if some are failed, we can use `--ignore-build-errors` and `--ignore-parse-errors` flags
 - `--ignore-build-errors` flag skips package build failures
 - `--ignore-parse-errors` flag skips project parsing error failures
 
 ```shell
 pbt build --path /path/to/your/prophecy_project/ --ignore-build-errors --ignore-parse-errors
 ```
-
 
 ##### Deploy command
 
