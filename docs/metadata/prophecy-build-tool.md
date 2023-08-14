@@ -93,7 +93,7 @@ pbt build --pipelines customers_orders,join_agg_sort  --path /path/to/your/proph
 ```
 
 - PBT builds by default fails(EXIT 1) if any of the Pipeline builds failed either due to corrupt Pipeline or build failure.
-- Although if we want to continue skip these errors, we can use `--ignore-build-errors` and `--ignore-parse-errors` flags
+- Although if we want to continue, we can skip these errors by using `--ignore-build-errors` and `--ignore-parse-errors` flags
 - `--ignore-build-errors` flag skips package build failures
 - `--ignore-parse-errors` flag skips project parsing error failures
 
