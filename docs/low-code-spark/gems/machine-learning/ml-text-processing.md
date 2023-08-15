@@ -19,35 +19,28 @@ tags:
 
 TODO: REPLACE VIDEO LINK
 
-[Overview of the Gem showing the input and output for ml text processing](to be added)
+The TextProcessing Gem enables text data preparation for machine learning in two different ways:
 
-### Configure
+1. [Load](/docs/low-code-spark/gems/machine-learning/ml-text-processing.md#1-load-web-urls-and-extract-text) web URLs and extract text.
+2. [Split](<(/docs/low-code-spark/gems/machine-learning/ml-text-processing.md#2-split-text-data-into-equal-chunks)>) text data into equal chunks.
 
-![Configuring the operations for ML-text processing](./img/ml-text-proc-configure.png)
+Follow along to see how to use the TextProcessing Gem. For an example set of Pipelines that uses this Gem to create a Generative AI Chatbot, see this [guide.](/docs/getting-started/genaichatbot.md)
 
-TODO: intro
+### 1. Load web URLs and Extract Text
 
-**Input:**
+![Overview web scrape](./img/ml-text-proc-scrape-overview.png)
 
-**Gem function:**
+![Overview web scrape and extract text](./img/ml-text-proc-scrape-extract-overview.png)
 
-**Output:**
+#### 1a. Configure
 
-Now let’s understand the input, Gem Configuration, and output in more detail.
+![Configure to web scrape](./img/ml-text-proc-scrape-configure.png)
 
-### Input columns
+#### 1b. Input
 
-| Name | Description |
-| ---- | ----------- |
+#### 1c. Output
 
-### Gem Configuration
-
-#### Properties
-
-### Output columns
-
-| Name | Description |
-| ---- | ----------- |
+#### 1d. Generated Code
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -63,7 +56,7 @@ def scrape_pages(spark: SparkSession, in0: DataFrame) -> DataFrame:
     from spark_ai.webapps import WebUtils
     WebUtils().register_udfs(spark)
 
-    return in0.withColumn("result_content", expr(f"web_scrape_text(loc)"))
+    return in0.withColumn("result_content", expr(f"web_scrape(loc)"))
 ```
 
 </TabItem>
@@ -77,6 +70,18 @@ def scrape_pages(spark: SparkSession, in0: DataFrame) -> DataFrame:
 </Tabs>
 
 ````
+
+### 2. Split text data into equal chunks
+
+![Overview Chunkify](./img/ml-text-proc-overview-chunkify.png)
+
+#### 2a. Configure
+
+![Configure to Chunkify](./img/ml-text-proc-configure-chunkify.png)
+
+#### 2b. Input
+
+#### 2c. Output
 
 ### FAQ
 
