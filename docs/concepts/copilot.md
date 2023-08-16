@@ -10,7 +10,7 @@ tags:
 ---
 
 :::tip
-Data Copilot is available for all customers using Prophecy’s managed Public SaaS offering.
+**How to enable Data Copilot?** Data Copilot is enabled for all customers using Prophecy’s managed Public SaaS offering. Customers using the Private SaaS or on-prem offerings can enable Data Copilot as a flag in the deployment / upgrade configuration.
 :::
 
 ### Building Models and Pipelines with Prophecy’s Data Copilot
