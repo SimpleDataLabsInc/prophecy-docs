@@ -164,9 +164,9 @@ For companies who run Prophecy within their [own VPC](/docs/architecture/deploym
 
 In a future release, Administrators will have the option to connect Prophecy Data Copilot to their private subscription OpenAI.
 
-#### Can I use Data Copilot on my on-premise installation of Prophecy?
+#### Can I use Data Copilot on my Private SaaS or On-Premise installation of Prophecy?
 
-Yes! Speak to your Prophecy account owner with questions.
+Yes! Data Copilot is enabled or disabled at deployment time. Admins set the flag in the deployment or upgrade configuration. Speak to your Prophecy account owner with questions.
 
 #### Does Prophecy Data Copilot support text prompts in languages other than English?
 
