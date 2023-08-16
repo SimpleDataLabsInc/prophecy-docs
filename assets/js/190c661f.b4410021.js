@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[4306],{84878:e=>{e.exports=JSON.parse('{"label":"hdp","permalink":"/tags/hdp","allTagsPath":"/tags","count":1,"items":[{"id":"architecture/deployment/on-premise","title":"On premise","description":"On-premise deployments. Bring Your Own Hardware","permalink":"/architecture/deployment/on-premise"}]}')}}]);
