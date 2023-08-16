@@ -12,21 +12,23 @@ tags: [generative-ai, machine-learning, llm, pinecone, openai]
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-The Pinecone Lookup Gem identifies content that is similar to a provided vector embedding. The Gem operation, input, and output are breifly described below.
+<br />
 
-**Gem operation:** The Pinecone Lookup Gem calls the Pinecone API and returns a set of IDs with highest similarity to the provided embedding.
+The Pinecone Lookup Gem identifies content that is similar to a provided vector embedding. The Gem calls the Pinecone API and returns a set of IDs with highest similarity to the provided embedding.
 
-**Input:** This Gem requires an embedding as input. The embedding is provided by a foundational model like [OpenAI](https://platform.openai.com/docs/introduction).
+- [**Parameters:**](/docs/low-code-spark/gems/machine-learning/ml-pinecone-lookup.md#gem-parameters) Configure the parameters needed to call the Pinecone API.
 
-**Output:** This Gem outputs an array of IDs with corresponding similarity scores.
+- [**Input:**](/docs/low-code-spark/gems/machine-learning/ml-pinecone-lookup.md#input) This Gem requires an embedding as input. The embedding is provided by a foundational model like [OpenAI](https://platform.openai.com/docs/introduction).
+
+- [**Output:**](/docs/low-code-spark/gems/machine-learning/ml-pinecone-lookup.md#input) This Gem outputs an array of IDs with corresponding similarity scores.
 
 ![Input and Output](./img/pinecone_lookup_input_output.png)
 
-Now let’s understand the Gem Configuration, Input, and Output in detail.
+Now let’s understand the Gem Parameters, Input, and Output in detail.
 
-### Gem Configuration
+### Gem Parameters
 
-![Configuration](./img/pinecone_lookup_configure.png)
+![Parameters](./img/pinecone_lookup_configure.png)
 
 Verify the **(1) input columns** contain a column with the embeddings. The structure of this column's entries must be compatible with the structure of the Pinecone index.
 
@@ -34,7 +36,7 @@ Verify the **(1) input columns** contain a column with the embeddings. The struc
 
 Configure the Pinecone API credentials here. Storing the Pinecone API token as a **(2) Databricks Secret** is highly recommended. For instructions click [here.](https://docs.databricks.com/en/security/secrets/index.html) Be sure to use the **(3) Fabric connection** to the Databricks workspace which contains the Databricks scope and secrets configured in this Gem.
 
-Hardcoding the Pinecone credential is not recommended. Selecting this option could send credentials to be stored hardcoded in Git; use only for credentials that should be shared with the world. Contact us to understand the integrations with other secret managers.
+Hardcoding the Pinecone credential is not recommended. Selecting this option could send credentials to be stored hardcoded in Git; contact us (contact.us@Prophecy.io) to understand the integrations with other secret managers.
 
 #### Properties
 
@@ -48,20 +50,20 @@ Pinecone’s API can return multiple results. Depending on the use case, select 
 
 Pinecone Lookup requires a model_embedding column as input. Use one of Prophecy's Machine Learning Gems to provide the model_embedding. For example, the OpenAI Gem can precede the Pinecone Lookup Gem in the Pipeline. The OpenAI Gem, configured to `Compute a text embedding`, will output an openai_embedding column. This is a suitable input for the Pinecone Lookup Gem.
 
-| Column          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                     | Required |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| model_embedding | array(float) - The format of this embedding is important. It must be an array of floating point numbers that matches the requirements of the Pinecone index. For example, we used a Pinecone index with `1536` dimensions, `Cosine` metric, and an `s1` pod type. So each record in the model_embedding column must be an array of `1536` floating point numbers between `-1 and 1`, such as `[-0.0018493991, -0.0059955865, ... -0.02498541]`. | True     |
+| Column          | Description                                                                                                                                                                                                                                                                                                                                                                                                                  | Required |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| model_embedding | array(float) - The format of this embedding is important. It must be an array of floating point numbers that matches the requirements of the Pinecone index. For example, we used a Pinecone index with `1536` dimensions, `Cosine` metric, and an `s1` pod type. So each record in the model_embedding column must be an array of `1536` floating point numbers, such as `[-0.0018493991, -0.0059955865, ... -0.02498541]`. | True     |
 
 ### Output
 
-The output Dataset contains the pinecone_matches column. For each input content entry, this Gem adds an array to the pinecone_matches column. The output array will have [Number of Results](/docs/low-code-spark/gems/machine-learning/ml-pinecone-lookup.md#properties) entries.
+The output Dataset contains the pinecone_matches and pinecone_error columns. For each input content entry, this Gem adds an array to the pinecone_matches column. The output array will have [Number of Results](/docs/low-code-spark/gems/machine-learning/ml-pinecone-lookup.md#properties) entries.
 
-| Column           | Description                                                                                                                                                     |
-| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| pinecone_matches | array - an array of several content IDs and their scores.                                                                                                       |
-| pinecone_error   | string - this column is provided to show any error message returned from Pinecone’s API; helpful for troubleshooting errors related to the Pinecone Lookup Gem. |
+| Column           | Description                                                                                                                                                                          |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| pinecone_matches | array - an array of several content IDs and their scores. Example: `[{"id":"web-223","score":0.8437653},{"id":"web-224","score":0.8403446}, ...{"id":"web-237","score":0.82916564}]` |
+| pinecone_error   | string - this column is provided to show any error message returned from Pinecone’s API; helpful for troubleshooting errors related to the Pinecone Lookup Gem.                      |
 
-Prophecy converts the visual design into Spark code avaialble on the Prophecy user's Git repository. Find the Spark code for the Pinecone Lookup Gem below.
+Prophecy converts the visual design into Spark code available on the Prophecy user's Git repository. Find the Spark code for the Pinecone Lookup Gem below.
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -91,7 +93,7 @@ def vector_lookup(spark: SparkSession, in0: DataFrame) -> DataFrame:
 <TabItem value="scala" label="Scala">
 
 ```scala
-  [page under construction]
+  [Not yet supported]
 ```
 
 </TabItem>
