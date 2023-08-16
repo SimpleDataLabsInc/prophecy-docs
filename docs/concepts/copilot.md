@@ -10,7 +10,7 @@ tags:
 ---
 
 :::tip
-Data Copilot is available for all customers using Prophecy’s managed Public SaaS offering.
+**How to enable Data Copilot?** Data Copilot is enabled for all customers using Prophecy’s managed Public SaaS offering. Customers using the Private SaaS or on-prem offerings can enable Data Copilot as a flag in the deployment / upgrade configuration.
 :::
 
 ### Building Models and Pipelines with Prophecy’s Data Copilot
@@ -23,7 +23,7 @@ Data Copilot is available for all customers using Prophecy’s managed Public Sa
 
 Prophecy’s low-code platform makes data Pipeline development faster and accessible to more users. Starting now, you’ve got an AI assistant to boost that productivity even further.
 
-We are open to feedback! Please send us an email (contact@Prophecy.io) or reach out on our Slack [community.](https://join.slack.com/t/prophecy-io-support/shared_invite/zt-moq3xzoj-~5MSJ6WPnZfz7bwsqWi8tQ)
+We are open to feedback! Please send us an email (contact.us@Prophecy.io) or reach out on our Slack [community.](https://join.slack.com/t/prophecy-io-support/shared_invite/zt-moq3xzoj-~5MSJ6WPnZfz7bwsqWi8tQ)
 
 :::caution
 Prophecy Data Copilot is a Public Beta release and is constantly evolving to meet the needs of our customers. This document is current as of Prophecy Release 3.1. As with all applications that interface with Large Language Models (LLMs), Data Copilot can generate results that are incorrect and/or misleading.
@@ -164,9 +164,9 @@ For companies who run Prophecy within their [own VPC](/docs/architecture/deploym
 
 In a future release, Administrators will have the option to connect Prophecy Data Copilot to their private subscription OpenAI.
 
-#### Can I use Data Copilot on my on-premise installation of Prophecy?
+#### Can I use Data Copilot on my Private SaaS or On-Premise installation of Prophecy?
 
-Yes! Speak to your Prophecy account owner with questions.
+Yes! Data Copilot is enabled or disabled at deployment time. Admins set the flag in the deployment or upgrade configuration. Speak to your Prophecy account owner with questions.
 
 #### Does Prophecy Data Copilot support text prompts in languages other than English?
 
