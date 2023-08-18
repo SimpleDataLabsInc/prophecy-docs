@@ -22,6 +22,8 @@ tags:
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
+<br />
+
 The OpenAI Gem allows the Prophecy user to interact with the OpenAI API using two different requests:
 
 1. Compute text embeddings ([link](/docs/low-code-spark/gems/machine-learning/ml-openai.md#compute-text-embeddings)).
