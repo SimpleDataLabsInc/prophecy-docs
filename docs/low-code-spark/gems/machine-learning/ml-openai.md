@@ -18,7 +18,7 @@ tags:
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://fast.wistia.net/embed/iframe/8fuwr9738t?seo=false?videoFoam=true" title="Getting Started With SQL Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+<iframe src="https://fast.wistia.net/embed/iframe/i1x7g14wn4?seo=false?videoFoam=true" title="Getting Started With SQL Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
@@ -59,10 +59,10 @@ Instead of sending a single row to OpenAI's API, select the **(5) Group data** o
 
 #### 1c. Output
 
-| Column           | Description                                                                                                                                                                                                                                |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| openai_embedding | array(float) - The vector embedding returned from OpenAI corresponding to the input question/text. Each record is an array of `1536` floating point numbers between `-1 and 1`, such as `[-0.0018493991, -0.0059955865, ... -0.02498541]`. |
-| openai_error     | string - this column is provided to display any error message returned from the OpenAI API; helpful for troubleshooting.                                                                                                                   |
+| Column           | Description                                                                                                                                                                                                             |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| openai_embedding | array(float) - The vector embedding returned from OpenAI corresponding to the input question/text. Each record is an array of `1536` floating point numbers, such as `[-0.0018493991, -0.0059955865, ... -0.02498541]`. |
+| openai_error     | string - this column is provided to display any error message returned from the OpenAI API; helpful for troubleshooting.                                                                                                |
 
 #### 1d. Generated code
 
@@ -105,7 +105,7 @@ def vectorize(spark: SparkSession, question_seed: DataFrame) -> DataFrame:
 <TabItem value="scala" label="Scala">
 
 ```scala
-[under construction]
+[Not yet supported]
 ```
 </TabItem>
 </Tabs>
@@ -134,15 +134,17 @@ Now it's time to craft a prompt to send to the OpenAI ada-002 model. Select the 
 
 | Column   | Description                                                                                                                                                                                                                                                                                                                                                                           | Required |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| Question | string - a question of interest to include in the prompt sent to OpenAI                                                                                                                                                                                                                                                                                                               | True     |
+| Question | string - a question of interest to include in the prompt sent to OpenAI. Example: `What is Prophecy's AI Assistant feature?`                                                                                                                                                                                                                                                          | True     |
 | Context  | string - a text corpus related to the question of interest, also included in the prompt sent to OpenAI. Frequently the context column should undergo data transformations in the Gems preceding the OpenAI Gem. See [this guide](/docs/getting-started/genaichatbot.md) for a great example of preparing the text corpus and transforming sufficiently to include in a useful prompt. | False    |
 
 #### 2c. Output
 
-| Column        | Description                                                                                                                                  |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| openai_answer | struct - this column contains the answer response from OpenAI. Select/filter from multiple answer options in a Gem following the OpenAI Gem. |
-| openai_error  | string - this column is provided to display any error message returned from the OpenAI API; helpful for troubleshooting.                     |
+Since OpenAI's models are probabalistic, they return at least one, and frequently more than one, answer. These responses are formatted as a json array of answer choices. The user would usually select the best answer from the choices; we recommend selecting the first answer if you wish to select one by default. This can be done in the Gem following the OpenAI Gem as in this [example](/docs/getting-started/genaichatbot.md#3a-chatbot-live-pipeline).
+
+| Column        | Description                                                                                                                                                                                                                                 |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| openai_answer | struct - this column contains the response from OpenAI in as a json array. Example: `{"choices":["Prophecy's AI Assistant feature is called Data Copilot."]}` Select/filter from multiple answer choices in a Gem following the OpenAI Gem. |
+| openai_error  | string - this column is provided to display any error message returned from the OpenAI API; helpful for troubleshooting.                                                                                                                    |
 
 #### 2d. Generated code
 
