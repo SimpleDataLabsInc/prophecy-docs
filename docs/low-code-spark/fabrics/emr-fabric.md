@@ -1,18 +1,15 @@
 ---
-title: "Amazon EMR with Apache Livy"
-id: EMR-livy-installation-guide
-description: Installation Guide
-sidebar_position: 3
+title: "Amazon EMR Fabric"
+id: EMR-fabric-configuration
+description: Configuring the EMR Fabric
+sidebar_position: 1
 tags:
   - deployment
-  - installation
+  - fabric
   - emr
-  - livy
 ---
 
-In the context of Spark execution engines, users have the flexibility to opt for Amazon EMR while utilizing Prophecy. This comprehensive documentation aims to provide users with a clear understanding of the installation process for Amazon EMR and Apache Livy. Additionally, it offers step-by-step guidance on creating a Fabric that enables seamless connectivity to the EMR environment via Livy.
-
-Feel free to explore the following sections to gain insights into the integration of Amazon EMR and Apache Livy with Prophecy.
+In the context of Spark execution engines, users have the flexibility to opt for Amazon EMR. This guide offers step-by-step instructions on creating a Fabric that enables seamless connectivity to the EMR environment.
 
 ## Create Amazon EMR cluster with Apache Livy
 
@@ -40,29 +37,42 @@ If you intend to utilize Prophecy as a SaaS (Software as a Service) solution, pl
 
 By implementing these adjustments to your EMR cluster's security groups, you will establish the necessary network configuration for effective integration with Prophecy.
 
-## Create a Fabric to connect Prophecy to Livy
+## Create a Fabric to connect Prophecy to EMR
 
-Navigate to Prophecy's UI and click on **Create Fabric**. The Fabric will establish a connection with your EMR cluster and utilize it as the execution engine for your Pipelines.
+Navigate to Prophecy's UI and click on **Create Fabric**. The Fabric will establish a connection with your EMR cluster and utilizes it as the execution engine for your Pipelines.
+<img src={require('./img/create-entity-emr-Fabric.png').default} alt="EMR create cluster" width="75%" />
+<br/>
+<br/>
 
-<img src={require('./img/livyfabric.png').default} alt="EMR create cluster" width="75%" />
+**Name** your EMR Fabric and click on **Continue**.
 
-Choose **Livy** as your **Provider**.
+<br/>
+<br/>
 
-<img src={require('./img/provider.png').default} alt="EMR create cluster" width="75%" />
+<img src={require('./img/name-emr-Fabric.png').default} alt="EMR create Fabric" width="75%" />
+
+Choose **EMR** as your **Provider**.
+
+<img src={require('./img/emr-Fabric.png').default} alt="EMR create Fabric" width="75%" />
 
 Before proceeding, it is crucial to ensure that all the required settings are properly configured. If you are uncertain about the necessary configurations, we recommend reaching out to your cloud infrastructure team for additional guidance and assistance. They will be able to provide you with the specific information and support needed to ensure a successful setup.
 
-You may find your **Livy URL** under the **Applications** tab on your EMR Cluster page.
-<img src={require('./img/livyurl.png').default} alt="EMR create cluster" width="75%" />
+Enter your AWS credentials under **Access Key** and **Secret Key**. Choose the **Region** that your EMR cluster is running in.
+**Click** on **Fetch environments**.
+<img src={require('./img/emr-aws-cred.png').default} alt="EMR cred" width="75%" />
 
-Copy/paste your Livy URL under **Spark Connection** and choose the appropriate **Spark Version** and _Scala Version_ You may find the Spark version from your EMR console. Refer to [Spark documentation](https://spark.apache.org/docs) to find the Scala version in relation to your Spark version.
-<img src={require('./img/sparkversion.png').default} alt="EMR create cluster" width="75%" />
+**Select** your EMR cluster that you would like to connect to under **Spark Environment**.
 
-Configure appropriate **Prophecy Library** based on your Spark and Scala version. and click on **Complete**.
+<img src={require('./img/emr-cluster-select.png').default} alt="EMR select" width="75%" />
 
-<img src={require('./img/library.png').default} alt="EMR create cluster" width="75%" />
+Most of the fields should be automatically populated after selecting a EMR cluster. Enter the S3 path on the screenshot below under **S3 Location** if it's not populated.
 
-Your Fabric for Amazon EMR is configured! Try creating a cluster using the Fabric that you've just created and attach to it.
-<img src={require('./img/attach.png').default} alt="EMR create cluster" width="75%" />
+<img src={require('./img/emr-env-setup.png').default} alt="EMR dependencies" width="75%" />
+
+Add the Job size to your environment by clicking on **Add Job Size**. Configure your Job size and click on **Add**.
+<img src={require('./img/configure-Job-size.png').default} alt="EMR Job size" width="75%" />
+
+Click on **Complete** and your EMR Fabric is ready!
+<img src={require('./img/complete-Fabric.png').default} alt="EMR create cluster" width="75%" />
 
 Run a simple Pipeline and make sure that the interim returns data properly.
