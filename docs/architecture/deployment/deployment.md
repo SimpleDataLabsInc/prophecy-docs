@@ -16,7 +16,7 @@ Prophecy deployment is simple and flexible. Prophecy is written as a set of micr
 
 Prophecy in the cloud connects to your existing Spark and Scheduler/Orchestrator. Prophecy does not store any data, however, it does store metadata about your Pipelines, Datasets and schedules.
 
-![General architecture](img/arch_general.png)
+![General Architecture](img/arch_general.png)
 
 ### Public SaaS
 
@@ -27,17 +27,17 @@ This option is heavily used by customers to try Prophecy. Our startup and midsiz
 
 ### Private SaaS (Customer VPC)
 
-Our Enterprise customers and midsize/startup customers in segments which deal with very sensitive data primarily use this option. Here, Prophecy runs within the **Customer VPC** and connects to the identity, Spark clusters and the scheduler within the VPC.
+Customers in segments that deal with very sensitive data primarily use this option. Here, Prophecy runs within the **Customer VPC** and connects to the identity, Spark clusters and the scheduler within the VPC.
 
-![Customer VPC Architecure](img/arch_customervpc.png)
+![Customer VPC Architecture](img/arch_customervpc.png)
 
-This is the default option when you go through the cloud marketplaces. You can install the software from the [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/simpledatalabsinc1635791235920.prophecy-data-engineering). The install is very simple, takes about 20 minutes (with confirmation popup), and billing starts after 30 days.
+This is the default option when you go through the cloud marketplaces. You can install the software from the [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/simpledatalabsinc1635791235920.prophecy-data-engineering). The installation is very simple, takes about 20 minutes (with a confirmation popup), and billing starts after 30 days.
 
 ![Azure Architecture](img/prophecy_azure.png)
 
 ### On-Premise Deployment
 
-On rare occasions Prophecy will deploy on-premise for the large customers who are moving to the cloud. Often the order is that the organizations will move Pipelines from on-premise legacy ETL tools to Spark, then move it to Spark on the cloud. For more information read the [on-premise installation documentation](./on-premise.md) or reach out to our team by using [request a demo](https://www.prophecy.io/request-a-demo).
+On rare occasions, Prophecy will deploy on-premise for large customers who are moving to the cloud. Often the order is that the organizations will move Pipelines from on-premise legacy ETL tools to Spark, then move it to Spark on the cloud. For more information read the [on-premise installation documentation](on-premise/on-premise.md) or reach out to our team by using [request a demo](https://www.prophecy.io/request-a-demo).
 
 ## Connectivity
 
