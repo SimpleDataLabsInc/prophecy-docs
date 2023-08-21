@@ -1,0 +1,89 @@
+---
+sidebar_position: 1
+title: ML Text Processing
+id: ml-text-processing
+description: Text processing to prepare data to submit to a foundational model API.
+tags:
+  [
+    generative-ai,
+    machine-learning,
+    llm,
+    text-processing,
+    web-scraping,
+    chunk,
+    extract,
+  ]
+---
+
+[page under construction]
+
+TODO: REPLACE VIDEO LINK
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://fast.wistia.net/embed/iframe/8fuwr9738t?seo=false?videoFoam=true" title="Getting Started With SQL Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
+
+![Overview of the Gem showing the input and output for ml text processing](./img/.png)
+
+
+### Configure 
+
+
+
+TODO: intro
+
+**Input:** 
+
+**Gem function:** 
+
+**Output:**      
+
+
+Now let’s understand the input, Gem Configuration, and output in more detail.
+
+### Input columns
+
+
+| Name            | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+
+### Gem Configuration
+
+
+#### Credentials
+
+TODO: Configure the API credentials here. Storing the API token as a **(2) Databricks Secret** is highly recommended. For instructions click [here.](https://docs.databricks.com/en/security/secrets/index.html) Be sure to use the **(3) Fabric connection** to the Databricks workspace which contains the Databricks scope and secrets configured in this Gem.
+
+Hardcoding the Pinecone credential is not recommended. Selecting this option could send credentials to be stored hardcoded in Git; use only for credentials that should be shared with the world. Contact us to understand the integrations with other secret managers.
+
+#### Properties
+
+
+Pinecone’s API can return multiple results. Depending on the use case, select the desired **(6) Number of results** sorted by similarity score. The result with highest similarity to the user’s text question will be listed first.
+
+### Output columns
+
+
+| Name             | Description                                                                                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+<Tabs>
+<TabItem value="py" label="Python">
+```py
+```
+</TabItem>
+<TabItem value="scala" label="Scala">
+```scala
+  [page under construction]
+```
+</TabItem>
+</Tabs>
+````
+
+### FAQ
+
+#### Troubleshooting
