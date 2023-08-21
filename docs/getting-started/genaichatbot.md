@@ -44,7 +44,7 @@ Required:
 
 :::info
 
-These dependencies are automatically included if you Fork our sample project as detailed below.
+The cluster library dependencies are automatically included if you Fork our sample project as detailed below.
 
 :::
 
