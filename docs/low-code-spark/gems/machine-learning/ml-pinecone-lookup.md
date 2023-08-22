@@ -16,11 +16,11 @@ tags: [generative-ai, machine-learning, llm, pinecone, openai]
 
 The Pinecone Lookup Gem identifies content that is similar to a provided vector embedding. The Gem calls the Pinecone API and returns a set of IDs with highest similarity to the provided embedding.
 
-- [**Parameters:**](/docs/low-code-spark/gems/machine-learning/ml-pinecone-lookup.md#gem-parameters) Configure the parameters needed to call the Pinecone API.
+- [**Parameters:**](https://docs.prophecy.io/low-code-spark/gems/machine-learning/ml-pinecone-lookup#gem-parameters) Configure the parameters needed to call the Pinecone API.
 
-- [**Input:**](/docs/low-code-spark/gems/machine-learning/ml-pinecone-lookup.md#input) This Gem requires an embedding as input. The embedding is provided by a foundational model like [OpenAI](https://platform.openai.com/docs/introduction).
+- [**Input:**](https://docs.prophecy.io/low-code-spark/gems/machine-learning/ml-pinecone-lookup#input) This Gem requires an embedding as input. The embedding is provided by a foundational model like [OpenAI](https://platform.openai.com/docs/introduction).
 
-- [**Output:**](/docs/low-code-spark/gems/machine-learning/ml-pinecone-lookup.md#input) This Gem outputs an array of IDs with corresponding similarity scores.
+- [**Output:**](https://docs.prophecy.io/low-code-spark/gems/machine-learning/ml-pinecone-lookup#output) This Gem outputs an array of IDs with corresponding similarity scores.
 
 ![Input and Output](./img/pinecone_lookup_input_output.png)
 
@@ -36,13 +36,13 @@ Verify the **(1) input columns** contain a column with the embeddings. The struc
 
 Configure the Pinecone API credentials here. Storing the Pinecone API token as a **(2) Databricks Secret** is highly recommended. For instructions click [here.](https://docs.databricks.com/en/security/secrets/index.html) Be sure to use the **(3) Fabric connection** to the Databricks workspace which contains the Databricks scope and secrets configured in this Gem.
 
-Hardcoding the Pinecone credential is not recommended. Selecting this option could send credentials to be stored hardcoded in Git; contact us (contact.us@Prophecy.io) to understand the integrations with other secret managers.
+Hardcoding the Pinecone credential is not recommended. Selecting this option could send credentials to be stored hardcoded in Git; [reach out](https://www.prophecy.io/request-a-demo) to understand the integrations with other secret managers.
 
 #### Properties
 
-Pinecone DB uses indexing to map the vectors to a data structure that will enable faster searching. The Pinecone Lookup Gem searches through a Pinecone index to identify embeddings with similarity to the input embedding. Enter the Pinecone **[(4) Index name](/docs/low-code-spark/gems/machine-learning/ml-pinecone-lookup.md#faq)** which you’d like to use for looking up embeddings.
+Pinecone DB uses indexing to map the vectors to a data structure that will enable faster searching. The Pinecone Lookup Gem searches through a Pinecone index to identify embeddings with similarity to the input embedding. Enter the Pinecone **[(4) Index name](https://docs.prophecy.io/low-code-spark/gems/machine-learning/ml-pinecone-lookup#faq)** which you’d like to use for looking up embeddings.
 
-Select one of the Gem’s input columns with vector embeddings as the **(5) Vector column** to send to Pinecone’s API. The column [must](/docs/low-code-spark/gems/machine-learning/ml-pinecone-lookup.md#input-columns) be compatible with the Pinecone Index. To change the column’s datatype and properties, [configure](/docs/low-code-spark/gems/machine-learning/ml-pinecone-lookup.md#faq) the Gem(s) preceding the Pinecone Lookup Gem.
+Select one of the Gem’s input columns with vector embeddings as the **(5) Vector column** to send to Pinecone’s API. The column [must](https://docs.prophecy.io/low-code-spark/gems/machine-learning/ml-pinecone-lookup#input) be compatible with the Pinecone Index. To change the column’s datatype and properties, [configure](https://docs.prophecy.io/low-code-spark/gems/machine-learning/ml-pinecone-lookup#faq) the Gem(s) preceding the Pinecone Lookup Gem.
 
 Pinecone’s API can return multiple results. Depending on the use case, select the desired **(6) Number of results** sorted by similarity score. The result with highest similarity to the user’s text question will be listed first.
 
@@ -56,7 +56,7 @@ Pinecone Lookup requires a model_embedding column as input. Use one of Prophecy'
 
 ### Output
 
-The output Dataset contains the pinecone_matches and pinecone_error columns. For each input content entry, this Gem adds an array to the pinecone_matches column. The output array will have [Number of Results](/docs/low-code-spark/gems/machine-learning/ml-pinecone-lookup.md#properties) entries.
+The output Dataset contains the pinecone_matches and pinecone_error columns. For each input content entry, this Gem adds an array to the pinecone_matches column. The output array will have [Number of Results](https://docs.prophecy.io/low-code-spark/gems/machine-learning/ml-pinecone-lookup#properties) entries.
 
 | Column           | Description                                                                                                                                                                          |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -74,12 +74,12 @@ import TabItem from '@theme/TabItem';
 <TabItem value="py" label="Python">
 
 ```py
-def vector_lookup(spark: SparkSession, in0: DataFrame) -> DataFrame:
-    from pyspark.sql.functions import expr, array, struct
-    from spark_ai.dbs.pinecone import PineconeDB, IdVector
-    from pyspark.dbutils import DBUtils
-    PineconeDB(DBUtils(spark).secrets.get(scope = "< my_scope >", key = "< my_key >"), "us-east-1-aws")\
-        .register_udfs(spark)
+def vector_lookup(Spark: SparkSession, in0: DataFrame) -> DataFrame:
+    from pySpark.sql.functions import expr, array, struct
+    from Spark_ai.dbs.pinecone import PineconeDB, IdVector
+    from pySpark.dbutils import DBUtils
+    PineconeDB(DBUtils(Spark).secrets.get(scope = "< my_scope >", key = "< my_key >"), "us-east-1-aws")\
+        .register_udfs(Spark)
 
     return in0\
         .withColumn("_vector", col("<model>_embedding"))\
