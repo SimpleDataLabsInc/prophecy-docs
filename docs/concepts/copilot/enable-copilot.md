@@ -22,7 +22,7 @@ From the kubernetes cluster where Prophecy services are running:
 
 ```
 copilot:
-    image: 133450206866.dkr.ecr.us-west-1.amazonaws.com/copilot:3.1.0.0
+    image: <imageID>.dkr.ecr.<region>.amazonaws.com/copilot:3.1.0.0
 ```
 
 4. Once deployed, wait for the `copilot-cm` to be created. Then edit the default values in the configmap to match the ENVs required.
