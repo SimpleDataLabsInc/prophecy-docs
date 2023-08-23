@@ -23,7 +23,7 @@ We'll take you step by step from connecting your Databricks to Prophecy Managed 
 - Databricks Account
 - A Prophecy Project With Spark Pipeline or SQL Model running on Databricks
 
-If you don't have an existing project, please check out [this guide](./getting-started-with-low-code-spark) for setting up a Spark Pipeline, and [this guide](./getting-started-with-low-code-sql.md) for setting up a SQL model in Prophecy.
+If you don't have an existing project, please check out [this guide](/docs/getting-started/getting-started-with-low-code-spark.md) for setting up a Spark Pipeline, and [this guide](/docs/getting-started/getting-started-with-low-code-sql.md) for setting up a SQL model in Prophecy.
 
 ## 1. Setup Prophecy Fabric for Airflow
 
