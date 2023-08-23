@@ -16,7 +16,7 @@ schedulers:
    orchestrate multiple data-Pipelines to run together. Databricks Jobs is a **recommended** scheduler, if you're
    Databricks Native.
 
-2. **[Airflow](airflow/airflow.md)** - for more complex use-cases, where you have to use various operators, or need
+2. **[Airflow](airflow.md)** - for more complex use-cases, where you have to use various operators, or need
    any additional data pre-and-post-processing, you can design your Jobs using Prophecy's low-code Airflow environment.
 
 Alternatively, since Prophecy provides you native Spark code on Git, you can easily integrate with any other scheduler.
