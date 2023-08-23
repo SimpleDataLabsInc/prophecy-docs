@@ -18,7 +18,7 @@ From the kubernetes cluster where Prophecy services are running:
 4. In the `ProphecyCluster` CR, do the following:
 
 - add `copilot` to `enabledapps`
-- add `image` section if required as below, else defaults to `latest`
+- add `image` section as below, providing the version
 - add the `copilot` section as below in the same level as other enabled apps
 
 ```
@@ -27,13 +27,15 @@ copilot:
 ```
 
 5. Once deployed, wait for the `copilot-cm` to be created. Then edit the default values in the configmap to match the ENVs required.
-6. Supply the API keys for the appropriate ENV.
+6. Supply the API keys for the appropriate endpoint and ENV as below. The suggested model is `gpt-3.5-turbo`.
 
 OpenAI
 
 ```
 NUM_WORKERS: "< add value here >"
+OPENAI_MODEL: "< add value here, optional >"
 OPENAI_API_KEY: "< add value here >"
+NUM_WORKERS: "< add value here >"
 PORT: "< add value here >"
 ```
 
@@ -44,6 +46,8 @@ AZURE_DEPLOYMENT_NAME: "< add value here >"
 AZURE_OPENAI_API_KEY: "< add value here >"
 AZURE_OPENAI_ENDPOINT: "< add value here >"
 AZURE_OPENAI_VERSION: "< add value here >"
+NUM_WORKERS: "< add value here >"
+PORT: "< add value here >"
 ```
 
 7. Enable the below variable on the common CP config map
