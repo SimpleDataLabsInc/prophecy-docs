@@ -156,6 +156,17 @@ In Prophecy’s 3.1 release, any Dataset, Source, or Seed within a Project are a
 
 Copilot features are included with Prophecy’s Low-Code Spark and Low-Code SQL offerings. There would be an additional cost if you chose to use a private subscription Large Language Model (LLM) service. In this case, the cost depends on (1) the number of [word tokens](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them) sent to the LLM provider, (2) the size of the Datasets, and (3) the number of iterations Prophecy sends requests to the LLM provider.
 
+#### Can I use Data Copilot on my Private SaaS or On-Premise installation of Prophecy?
+
+Yes! Data Copilot is enabled or disabled at deployment time. Admins who run Prophecy within their [own VPC](/docs/architecture/deployment/deployment.md#private-saas-customer-vpc) set the flag in the deployment or upgrade configuration by following the instructions below. Speak to your Prophecy account owner with questions.
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```
+
 #### Can I disable this feature for my users?
 
 For companies who run Prophecy within their [own VPC](/docs/architecture/deployment/deployment.md#private-saas-customer-vpc), admins may choose to enable or disable Data Copilot across their Prophecy Platform at deployment time.
@@ -163,10 +174,6 @@ For companies who run Prophecy within their [own VPC](/docs/architecture/deploym
 #### Can I use my own private OpenAI instance?
 
 In a future release, Administrators will have the option to connect Prophecy Data Copilot to their private subscription OpenAI.
-
-#### Can I use Data Copilot on my Private SaaS or On-Premise installation of Prophecy?
-
-Yes! Data Copilot is enabled or disabled at deployment time. Admins set the flag in the deployment or upgrade configuration. Speak to your Prophecy account owner with questions.
 
 #### Does Prophecy Data Copilot support text prompts in languages other than English?
 
