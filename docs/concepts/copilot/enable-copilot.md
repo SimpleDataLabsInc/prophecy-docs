@@ -27,16 +27,23 @@ copilot:
 ```
 
 5. Once deployed, wait for the `copilot-cm` to be created. Then edit the default values in the configmap to match the ENVs required.
-6. Supply the API keys for the appropriate ENV:
+6. Supply the API keys for the appropriate ENV.
+
+OpenAI
+
+```
+NUM_WORKERS: "< add value here >"
+OPENAI_API_KEY: "< add value here >"
+PORT: "< add value here >"
+```
+
+Azure's OpenAI
 
 ```
 AZURE_DEPLOYMENT_NAME: "< add value here >"
 AZURE_OPENAI_API_KEY: "< add value here >"
-AZURE_OPENAI_ENDPOINT: ""< add value here >"
+AZURE_OPENAI_ENDPOINT: "< add value here >"
 AZURE_OPENAI_VERSION: "< add value here >"
-NUM_WORKERS: "< add value here >"
-OPENAI_API_KEY: "< add value here >"
-PORT: "< add value here >"
 ```
 
 7. Enable the below variable on the common CP config map
