@@ -44,7 +44,7 @@ Required:
 
 :::info
 
-These dependencies are automatically included if you Fork our sample project as detailed below.
+The cluster library dependencies are automatically included if you Fork our sample project as detailed below.
 
 :::
 
@@ -120,10 +120,10 @@ databricks secrets list --scope slack
 
 ### 1c. Load the Git repository
 
-1.  Login to [Prophecy](https://app.prophecy.io/metadata/auth/signup)
-2.  Create a new Prophecy Project.
-3.  Load the forked Git repository to the Prophecy Project as shown in this 30-second [video.](https://github.com/prophecy-samples/gen-ai-chatbot-template/assets/3248329/dcdfabaf-4870-421d-9f92-4ab028c5db5a), pointing to your fork at `https://github.com/<your_username>/gen-ai-chatbot-template`
-4.  Connect to your Spark cluster by creating a Fabric following [these steps.](https://docs.prophecy.io/concepts/fabrics/create-a-fabric/#databricks)
+1.  **Login** to [Prophecy](https://app.prophecy.io/metadata/auth/signup)
+2.  **Import** a new Prophecy [Project](/docs/concepts/project/project.md#1-create-new-project)
+3.  **Load the forked Git repository** to the Prophecy Project as shown in this 30-second [video.](https://github.com/prophecy-samples/gen-ai-chatbot-template/assets/3248329/dcdfabaf-4870-421d-9f92-4ab028c5db5a), pointing to your fork at `https://github.com/<your_username>/gen-ai-chatbot-template`
+4.  **Connect** to your Spark cluster by creating a Fabric following [these steps.](https://docs.prophecy.io/concepts/fabrics/create-a-fabric/#databricks)
 
 ### 1d. Set up Databases
 
