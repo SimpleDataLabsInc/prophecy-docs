@@ -40,7 +40,7 @@ By implementing these adjustments to your EMR cluster's security groups, you wil
 ## Create a Fabric to connect Prophecy to EMR
 
 Navigate to Prophecy's UI and click on **Create Fabric**. The Fabric will establish a connection with your EMR cluster and utilizes it as the execution engine for your Pipelines.
-<img src={require('./img/create-entity-emr-Fabric.png').default} alt="EMR create cluster" width="75%" />
+<img src={require('./img/create-entity-emr-fabric.png').default} alt="EMR create cluster" width="75%" />
 <br/>
 <br/>
 
