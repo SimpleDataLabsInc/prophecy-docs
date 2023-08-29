@@ -49,11 +49,11 @@ Navigate to Prophecy's UI and click on **Create Fabric**. The Fabric will establ
 <br/>
 <br/>
 
-<img src={require('./img/name-emr-Fabric.png').default} alt="EMR create Fabric" width="75%" />
+<img src={require('./img/name-emr.png').default} alt="EMR create Fabric" width="75%" />
 
 Choose **EMR** as your **Provider**.
 
-<img src={require('./img/emr-Fabric.png').default} alt="EMR create Fabric" width="75%" />
+<img src={require('./img/emr-f-abric.png').default} alt="EMR create Fabric" width="75%" />
 
 Before proceeding, it is crucial to ensure that all the required settings are properly configured. If you are uncertain about the necessary configurations, we recommend reaching out to your cloud infrastructure team for additional guidance and assistance. They will be able to provide you with the specific information and support needed to ensure a successful setup.
 
