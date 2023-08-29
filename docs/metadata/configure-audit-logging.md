@@ -1,28 +1,29 @@
 ---
-title: Configure Audit Logging
-id: auditLogging
+title: Syncing audit logs from SAAS
+id: audit-logging
 description: Prophecy Audit logs available to be exported in S3
 sidebar_position: 6
 tags:
-  - Audit Logs
+  - audit logs
+  - s3
 ---
 
 Prophecy provides access to audit logs of activities performed by Prophecy users, allowing your enterprise to monitor detailed usage patterns.
 The Prophecy admin can configure a S3 bucket to sync these events from Prophecy to their environment.
 
-:::info Saas Only
-Please note, this is only Available for our Saas Users only. Also, the initial Setup to enable this would require Manual Effort. Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about this in Details.
+:::info
+Please note, this is only available for our SaaS Users only. Also, the initial Setup to enable this would require Manual Effort. Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about this in detail.
 :::
 
-User would require to share an empty AWS S3 bucket with read/write permissions. Please follow the guidelines below to set up the bucket correctly.
+An empty AWS S3 bucket with read/write permissions is required. Please follow the guidelines below to set up the bucket correctly.
 
 ## Configure S3 bucket for logs
 
 1. Create the S3 Bucket:
    - Log in to your AWS account and navigate to the S3 service.
    - Click on "Create Bucket" to initiate the bucket creation process.
-   - Choose a unique name for your bucket, following the format: `prophecy-customer-backend-events-xyz`, where xyz represents your name or any identifier of your choice.
-   - Select the desired AWS Region for the bucket. Ideally, choose the `us-east-1 (N. Virginia)`. If this region is not available, please communicate back the selected region as it requires additional configuration on our end.
+   - Choose a unique name for your bucket, following the format: `prophecy-customer-backend-events-xyz`, where `xyz` represents your name or any identifier of your choice.
+   - Select the desired AWS Region for the bucket. Ideally, choose the `us-east-1 (N. Virginia)`. If this region is not available, please inform us which region you selected as it requires additional configuration on our end.
 2. Set Object Ownership:
 
    - After creating the bucket, ensure that the object ownership is set to `ACLs disabled (recommended)`. This can be done during or after the bucket creation process.
@@ -72,10 +73,10 @@ User would require to share an empty AWS S3 bucket with read/write permissions. 
 }
 ```
 
-In above, replace `arn:aws:s3:::prophecy-customer-backend-events-xyz` with the ARN of your destination bucket.
+In the sample above, replace `arn:aws:s3:::prophecy-customer-backend-events-xyz` with the ARN of your destination bucket.
 
 Please note that we need the Prophecy user principal (`s3access`) to be able to create S3 location at Prophecy's account and hence require this role with Sid `DataSyncCreateS3Location`.
-Reach out to Prophecy at [contact us](mailto:success@Prophecy.io) with bucket ARN and region to enable this in your account.
+Please [contact us](mailto:success@Prophecy.io) with bucket ARN and region to enable this in your account.
 
 ## Audit events
 
@@ -83,7 +84,7 @@ This table lists events for each Entity/Action along with the Request parameters
 
 :::info
 
-Please note, Prophecy Uses GraphQL queries so User might find some difference in Request and Response parameters depending upon where the Queries are used from.
+Please note, Prophecy Uses GraphQL queries so you may find some difference in Request and Response parameters depending upon where the Queries are used from.
 
 :::
 
