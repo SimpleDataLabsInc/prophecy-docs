@@ -16,11 +16,11 @@ tags:
 ---
 
 ## Cluster Types
+
 Execution metrics is supported for all types of clusters having Livy enabled and have a Hive metastore (HMS).
 we can just provide the table names in [execution metric setup page](./execution-metrics#team-level-access-control).
 
 Prophecy supports bring your own tables or users can also create their own table with [required table schema](./execution-metrics#creating-tables-for-livy) and provide them.
-
 
 ## Interims on Livy
 
@@ -28,10 +28,9 @@ During development, often the user will want to see their data to make more sens
 generated or not after the transformation. Prophecy generates these data samples as `Interims`, which are temporarily cached previews of data after each Gem.
 To check more about interims, please refer [here](https://docs.prophecy.io/low-code-spark/execution/interactive-execution#interims).
 
-We have interims available after each Gem of Pipeline. 
+We have interims available after each Gem of Pipeline.
 
 ![Regular Interims](img/SingleModeInterims.png)
-
 
 ## Execution Metrics on Livy
 

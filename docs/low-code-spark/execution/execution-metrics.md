@@ -144,6 +144,7 @@ DDLs and Grant accesses are defined below
   GRANT MODIFY ON <database.interims-table> TO group1;
   GRANT MODIFY ON <database.interims-table> TO group2;
 ```
+
 #### Restrictions
 
 - Reading execution metrics from High-Concurrency Clusters with Table-ACL enabled is supported in Databricks
@@ -151,9 +152,11 @@ DDLs and Grant accesses are defined below
 - Shared Access mode in Unity Catalog enabled workspaces is not supported
 
 ### Creating Tables (For Livy)
+
 Following are sample Create table commands for tables with schema, User can store these tables using any format like Avro, Parquet, ORC, Delta etc.
 
 - **Pipeline Metrics**
+
 ```sql
   CREATE TABLE IF NOT EXISTS <database.pipeline_runs_table_name>
   (
@@ -226,4 +229,3 @@ Following are sample Create table commands for tables with schema, User can stor
   ) stored as parquet
   PARTITIONED BY (created_by, fabric_uid)
 ```
-
