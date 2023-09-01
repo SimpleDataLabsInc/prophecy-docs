@@ -28,6 +28,8 @@ You will have the option to choose the following at the time of team creation:
 2.  Component (Dataset) Metrics Table - contains metrics for individual component runs
 3.  Interim Table - contains samples of data, depending on the interim mode selected
 
+![ExecutionMetricsConfig.png](img/ExecutionMetricsConfig.png)
+
 ### Pre-requisite
 
 Workspace / Catalog Admin will have to create tables and grant appropriate permissions to the users if they choose
@@ -35,7 +37,7 @@ to mention tables of their choice.
 It is recommended that this should be done at the time of team creation itself, to ensure best experience for the users.
 DDLs and Grant accesses are defined below
 
-### Create Table
+### Create Table (For Databricks Clusters)
 
 - **Pipeline Metrics**
 
@@ -61,7 +63,10 @@ DDLs and Grant accesses are defined below
       expired Boolean,
       branch STRING,
       pipeline_config STRING,
-      user_config STRING
+      user_config STRING,
+      expected_interims INT,
+      actual_interims INT,
+      logs STRING
   )
   USING DELTA
   PARTITIONED BY (fabric_uid, pipeline_uri, created_by)
@@ -97,7 +102,7 @@ DDLs and Grant accesses are defined below
   )
   USING DELTA
   PARTITIONED BY (fabric_uid, component_uri, created_by)
-  LOCATION '<table_path>
+  LOCATION '<table_path>'
   TBLPROPERTIES (delta.autoOptimize.optimizeWrite = true, delta.autoOptimize.autoCompact = true)
 ```
 
@@ -110,7 +115,7 @@ DDLs and Grant accesses are defined below
       interim STRING NOT NULL,
       created_by STRING NOT NULL,
       created_at TIMESTAMP,
-      fabric_uid STRING NOT NULL
+      fabric_uid STRING
   )
   USING DELTA
   PARTITIONED BY (created_by, fabric_uid)
