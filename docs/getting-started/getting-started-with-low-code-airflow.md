@@ -9,26 +9,26 @@ tags:
 ---
 
 Version 3.0.2 of our platform, Prophecy, introduces an exciting new feature: Low-code Airflow.
-Now, users can effortlessly create and manage Airflow jobs using a user-friendly drag-and-drop interface.
+Now, users can effortlessly create and manage Airflow Jobs using a user-friendly drag-and-drop interface.
 This empowers you to design and schedule intricate workflows without the need for coding expertise.
 The tool seamlessly translates your designs into highly optimized Python Airflow code, stored in Git, ensuring complete accessibility and openness to all users.
 Moreover, you have the flexibility to enhance functionality by incorporating your custom operators and sensors via our Gem Builder interface.
 
 #### In this quick-start, we will show you how to use Prophecy Managed Airflow to Run and schedule your Spark and SQL Pipelines
 
-We'll take you step by step from connecting your Databricks to Prophecy Managed Airflow to creating your first Airflow DAG and scheduling it. By the end of this training, you'll have an understanding of Airflow DAGs, be able to use our Visual interface to quickly create your DAG, and schedule this DAG on Prophecy Hosted Airflow. Let's dig in!
+We'll take you step by step from connecting your Databricks to Prophecy Managed Airflow to creating your first [Airflow DAG](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html) and scheduling it. By the end of this training, you'll have an understanding of Airflow DAGs, be able to use our Visual interface to quickly create your DAG, and schedule this DAG on Prophecy Hosted Airflow. Let's dig in!
 
 #### You will need
 
 - Databricks Account
 - A Prophecy Project With Spark Pipeline or SQL Model running on Databricks
 
-If you don't have an existing project, please check out [this guide](/docs/getting-started/getting-started-with-low-code-spark.md) for setting up a Spark Pipeline, and [this guide](/docs/getting-started/getting-started-with-low-code-sql.md) for setting up a SQL model in Prophecy.
+If you don't have an existing project, please check out [this guide](https://docs.prophecy.io/concepts/project/#1-create-new-project) for [setting up a Spark Project,](https://docs.prophecy.io/tutorials/videos/design-Pipeline) and [this guide](/docs/getting-started/getting-started-with-low-code-sql.md) for setting up a SQL model in Prophecy.
 
 ## 1. Setup Prophecy Fabric for Airflow
 
 Prophecy introduces the concept of a Fabric to describe an execution environment. In this case, we create a Fabric to connect to Airflow, and create and schedule DAGs in it.
-For this guide, we would be using Prophecy Managed Airflow, so you don't require to have an Airflow instance running.
+For this guide, we would be using Prophecy Managed Airflow, so an external Airflow instance is not required.
 
 ![Create Fabric](img/2-4-create-fabric.png)
 
@@ -63,7 +63,7 @@ A Job is an entity that contains Gems to represent a DAG consisting of various T
 
 Let's see how to create an Airflow Job in Prophecy.
 
-![Create_job](img/Airflow_2.1_Create_Job.png)
+![Create_Job](img/Airflow_2.1_Create_Job.png)
 
 Click the **(1) Create Entity** button, and choose **(2) Create Job** option.
 
@@ -79,6 +79,7 @@ In **(7) Description**, add a description about the Job you are creating.
 
 Once done, click **(8) Create New**.
 
+This will take you to the Job editor page where you would be creating the actual DAG for the Job.
 This will take you the Job editor page where you create the actual DAG for the Job.
 Let's start adding Pipelines/Models to our Job now.
 
@@ -94,10 +95,10 @@ For this guide, let's create a guide for setting up a Job that gets activated wh
 
 Click on **(1) Operators**, and Drag the **(2) Pipeline Gem** from the dropdown to the canvas. Then click the newly added Gem and click **(3) Open** to open the Gem Configurations.
 
-Here, you will select the Pipeline and Optionally override any config values for the Pipeline if you want.
+Here, you will select the Pipeline and optionally override any config values for the Pipeline.
 
 ![Pipeline_Gem_Configurations](img/Airflow_2.3_Pipeline_Gem_Configurations.png)
-In **(1) Pipeline to Schedule** , select the Pipeline you want to Run. As you select the Pipeline, You would start seeing the Configurations defined in the Pipeline. You Would not be able to modify the schema of these configs but can override the Config values.
+In **(1) Pipeline to Schedule** , select the Pipeline you want to Run. As you select the Pipeline, You would start seeing the Configurations defined in the Pipeline. You would not be able to modify the schema of these configs but can override the Config values.
 
 In (**2) Fabric and Cluster size to run this Pipeline**, pick the Fabric and Job size for running this Pipeline in Databricks. Once done, Click **(3) Save**!
 
@@ -111,10 +112,10 @@ Here, we will select the DBT Project/Model to Schedule, what SQL Fabric to sched
 
 ![DBT_Gem_Configurations](img/Airflow_2.5_DBT_Gem_Configurations.png)
 
-In **(1) DBT commands** , select the commands you want to run when scheduling your Models. You can select all (Deps, Seed, Run and Test) here.
-In **(2) DBT Project to Schedule** , select the project you want to schedule. In **(3) SQL Warehouse Fabric**, select the Databricks Fabric to schedule the Module on.
+In **(1) DBT commands** , select the commands you want to run when scheduling your Models. You can select all ([Dependencies](https://docs.prophecy.io/low-code-spark/pubsub/#project-dependency), [Seed](https://docs.prophecy.io/getting-started/sql-with-databricks/#431-create-seeds), Run and Test) here.
+In **(2) DBT Project to Schedule**, select the project you want to schedule. In **(3) SQL Warehouse Fabric**, select the Databricks Fabric to schedule the Module on.
 In **(4) Git reference**, select if you want to schedule a particular commit/tag or branch. Here you can select `branch` for this guide and then in **(5) Reference Value** give the current branch name you are working on.
-In **(6) Properties** , you can provide any additional DBT properties for your run and then click **(7) Save**. !!
+In **(6) Properties** , you can provide any additional DBT properties for your run and then click **(7) Save**!!
 
 Congratulations!!! And just like that, you have created a very simple Airflow Job with one Databricks Pipeline/Model Task.
 
@@ -124,19 +125,19 @@ Let's go ahead and see how to Run and Schedule it.
 
 Now that we have our Job ready, we can go ahead and run it.
 
-![Run_Airflow_job](img/Airflow_3.1_Run_Airflow_Job.png)
+![Run_Airflow_Job](img/Airflow_3.1_Run_Airflow_Job.png)
 
 Click on the **(1) Run button** to trigger the One-time run. This creates a temporary DAG and uploads to Airflow. User can check logs and status in the Prophecy UI itself. When you click on run, you will see a Job Details Toaster.
 Click on **(2) Details** to open the detailed logs of the Run.
 
-![Airflow_job_logs](img/Airflow_3.2_Airflow_Job_logs.png)
+![Airflow_Job_logs](img/Airflow_3.2_Airflow_Job_logs.png)
 
 Here you can see all the steps involved in the Run and also detailed logs for each step.
 Click on **(1) + button**, to open the logs for a particular step.
 
 ## 4. Release and Schedule
 
-Once we have the **Job** developed and tested it’s time to commit and push our code to our repository and release the Job to our Airflow.
+Once we have the **Job** developed and tested it’s time to commit and push our code to our Git repository and release the Job to our Airflow.
 ![Airflow_Release_Job](img/Airflow_4.1_Enable_Job.png)
 
 Start by toggling our Job to be **(1) Enabled.** This enables the Job on the Airflow and will ensure that the Job follows the previously set interval. Without enabling the DAG is not uploaded to Airflow.
@@ -152,20 +153,17 @@ The process of deploying code is composed of 4 steps:
 
 ## 5. Monitor
 
-During the release process Prophecy automatically packages, tests, and deploys your Jobs to Airflow. Once the process is finished you can see the deployed and running Job, within your Airflow environment. You can monitor this Job within Prophecy in the **(1) Observability** page.
+During the release process Prophecy automatically packages, tests, and deploys your Jobs to Airflow. Once the process is finished you can see the deployed and running Job within your Airflow environment. You can monitor this Job within Prophecy in the **(1) Observability** page.
 
 ![Airflow_Monitoring_page](img/Airflow_5.1_Monitor_Job.png)
 
-Click on **(1) Observability icon** on the left side menu bar to take you to the Observability page.
-Then in **(2) Fabric Selection box**, choose the right Fabric you created in Prophecy in step (1). This will show all the Past and Current Runs of the Jobs you released.
-Switch between **Attention Required**, **All events**, **Job Runs** to find any Particular Run you are looking for.  
-CLick on the **(3) Details** button to open up the logs of any particular Run.
+Click on **(1) Observability icon** on the left side menu bar to take you to the Observability page. Then in **(2) Fabric Selection box**, choose the Fabric you created. Now the Observability page will filter for all the Past and Current Runs of the Jobs you released on this Fabric. Switch between **Attention Required**, **All events**, **Job Runs** to find any Particular Run you are looking for. Click on the **(3) Details** button to open up the logs of any particular Run.
 
 ## What’s next?
 
 Great work! 🎉
 
-You've successfully set up, developed, tested, and deployed your first SQL project in the Databricks workspace. Take a moment to appreciate your accomplishment 🥳.
+You've created your first Airflow Job in Prophecy, run it successfully, released, scheduled, and monitored the Job. Take a moment to appreciate your accomplishment 🥳.
 
 To continue learning and expanding your skills with Prophecy, explore other tutorials within our documentation, or apply your newfound knowledge to address real-world business challenges!
 
