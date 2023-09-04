@@ -39,7 +39,7 @@ Once ready, click **(4) Continue**.
 
 ![Fill_fabric_details.png](img/Airflow_1.2_Create_Fabric.png)
 
-Since we’re setting up a Fabric connected to Airflow, we choose **Airflow** as the **(1) Provider Type** and **Prophecy Managed** as the **(2) Provider**.
+Since we’re setting up a Fabric connected to Airflow, choose **Airflow** as the **(1) Provider Type** and **Prophecy Managed** as the **(2) Provider**.
 For connecting to Prophecy Managed Airflow, you don't need to provide any other details, so go ahead and click on **(3) Continue**.
 
 ![Add_connection.png](img/Airflow_1.3_Add_connection.png)
@@ -79,10 +79,16 @@ In **(7) Description**, add a description about the Job you are creating.
 
 Once done, click **(8) Create New**.
 
-This will take you the Job editor page where you would be creating the actual DAG for the Job.
+This will take you the Job editor page where you create the actual DAG for the Job.
 Let's start adding Pipelines/Models to our Job now.
 
-### 2.1 Adding Spark Pipeline Gem For Databricks to your DAG
+For this guide, let's create a guide for setting up a Job that gets activated whenever a new file is uploaded to an S3 bucket. Additionally, we'll configure it to send an email notification prior to initiating the execution of both the Pipeline and SQL model.
+
+### 2.1 Adding S3 file Sensor Gem
+
+### 2.2 Adding Email Gem
+
+### 2.3 Adding Spark Pipeline Gem For Databricks to your DAG
 
 ![Add_Pipeline_Gem](img/Airflow_2.2_Add_Pipeline_Gem.png)
 
@@ -93,9 +99,9 @@ Here, you will select the Pipeline and Optionally override any config values for
 ![Pipeline_Gem_Configurations](img/Airflow_2.3_Pipeline_Gem_Configurations.png)
 In **(1) Pipeline to Schedule** , select the Pipeline you want to Run. As you select the Pipeline, You would start seeing the Configurations defined in the Pipeline. You Would not be able to modify the schema of these configs but can override the Config values.
 
-In (**2) Fabric and Cluster size to run this Pipeline**, pick the Fabric and Job size for running this Pipeline in Databricks. Once done, Click **(3) Save**!!
+In (**2) Fabric and Cluster size to run this Pipeline**, pick the Fabric and Job size for running this Pipeline in Databricks. Once done, Click **(3) Save**!
 
-### 2.2 Adding SQL DBT Gem For Databricks to your DAG
+### 2.4 Adding SQL DBT Gem For Databricks to your DAG
 
 ![Add_DBT_Gem](img/Airflow_2.4_Add_DBT_Gem.png)
 
