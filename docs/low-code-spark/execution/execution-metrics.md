@@ -28,6 +28,8 @@ You will have the option to choose the following at the time of team creation:
 2.  Component (Dataset) Metrics Table - contains metrics for individual component runs
 3.  Interim Table - contains samples of data, depending on the interim mode selected
 
+![ExecutionMetricsConfig.png](img/ExecutionMetricsConfig.png)
+
 ### Pre-requisite
 
 Workspace / Catalog Admin will have to create tables and grant appropriate permissions to the users if they choose
@@ -35,7 +37,7 @@ to mention tables of their choice.
 It is recommended that this should be done at the time of team creation itself, to ensure best experience for the users.
 DDLs and Grant accesses are defined below
 
-### Create Table
+### Creating Tables (For Databricks)
 
 - **Pipeline Metrics**
 
@@ -61,7 +63,10 @@ DDLs and Grant accesses are defined below
       expired Boolean,
       branch STRING,
       pipeline_config STRING,
-      user_config STRING
+      user_config STRING,
+      expected_interims INT,
+      actual_interims INT,
+      logs STRING
   )
   USING DELTA
   PARTITIONED BY (fabric_uid, pipeline_uri, created_by)
@@ -97,7 +102,7 @@ DDLs and Grant accesses are defined below
   )
   USING DELTA
   PARTITIONED BY (fabric_uid, component_uri, created_by)
-  LOCATION '<table_path>
+  LOCATION '<table_path>'
   TBLPROPERTIES (delta.autoOptimize.optimizeWrite = true, delta.autoOptimize.autoCompact = true)
 ```
 
@@ -110,7 +115,7 @@ DDLs and Grant accesses are defined below
       interim STRING NOT NULL,
       created_by STRING NOT NULL,
       created_at TIMESTAMP,
-      fabric_uid STRING NOT NULL
+      fabric_uid STRING
   )
   USING DELTA
   PARTITIONED BY (created_by, fabric_uid)
@@ -140,8 +145,87 @@ DDLs and Grant accesses are defined below
   GRANT MODIFY ON <database.interims-table> TO group2;
 ```
 
-### Restrictions
+#### Restrictions
 
 - Reading execution metrics from High-Concurrency Clusters with Table-ACL enabled is supported in Databricks
   Runtimes 11.0 or below
 - Shared Access mode in Unity Catalog enabled workspaces is not supported
+
+### Creating Tables (For Livy)
+
+Following are sample Create table commands for tables with schema, User can store these tables using any format like Avro, Parquet, ORC, Delta etc.
+
+- **Pipeline Metrics**
+
+```sql
+  CREATE TABLE IF NOT EXISTS <database.pipeline_runs_table_name>
+  (
+      uid STRING NOT NULL,
+      pipeline_uri STRING NOT NULL,
+      job_uri STRING,
+      job_run_uid STRING,
+      task_run_uid STRING,
+      status STRING,
+      fabric_uid STRING NOT NULL,
+      time_taken LONG,
+      rows_read LONG,
+      rows_written LONG,
+      created_at TIMESTAMP,
+      created_by STRING NOT NULL,
+      run_type STRING,
+      input_datasets ARRAY<STRING>,
+      output_datasets ARRAY<STRING>,
+      workflow_code MAP<STRING, STRING>,
+      expired Boolean,
+      branch STRING,
+      pipeline_config STRING,
+      user_config STRING,
+      expected_interims INT,
+      actual_interims INT,
+      logs STRING
+  ) stored as parquet
+  PARTITIONED BY (fabric_uid, pipeline_uri, created_by)
+```
+
+- **Component Metrics**
+
+```sql
+  CREATE TABLE IF NOT EXISTS <database.component_runs_table_name>
+  (
+      uid STRING NOT NULL,
+      component_uri STRING NOT NULL,
+      pipeline_uri STRING,
+      pipeline_run_uid String NOT NULL,
+      fabric_uid String NOT NULL,
+      component_name STRING,
+      interim_component_name STRING,
+      component_type STRING,
+      interim_subgraph_name STRING,
+      interim_process_id STRING,
+      interim_out_port STRING,
+      created_at TIMESTAMP,
+      created_by STRING NOT NULL,
+      records LONG,
+      bytes LONG,
+      partitions LONG,
+      expired BOOLEAN,
+      run_type STRING,
+      job_uri STRING,
+      branch STRING
+  ) stored as parquet
+  PARTITIONED BY (fabric_uid, component_uri, created_by)
+```
+
+- **Interims**
+
+```sql
+  CREATE TABLE IF NOT EXISTS <database.interims_table_name>
+  (
+      uid STRING NOT NULL,
+      interim STRING,
+      created_by STRING,
+      created_at,
+      fabric_uid STRING
+  ) stored as parquet
+  PARTITIONED BY (created_by, fabric_uid)
+```
