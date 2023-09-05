@@ -27,7 +27,7 @@ A properly configured Azure Synapse Analytics environment is required before con
    <img src={require('./img/workspaceiam.png').default} alt="Synapse security" width="75%" />
 2. Deploy a Synapse Spark Pool if one doesn't already exist.
    <img src={require('./img/sparkpool.png').default} alt="Synapse pool" width="75%" />
-3. Make sure a Enterprise Application is registered.
+3. Make sure the Application is registered.
    <img src={require('./img/add_app.png').default} alt="Synapse security" width="75%" />
 4. Create a secret for your Application.
    <img src={require('./img/secret.png').default} alt="Synapse security" width="75%" />
