@@ -57,6 +57,14 @@ The following plugins were used for this example:
 - [Github](https://plugins.jenkins.io/github/)
   - for the deploy Job
 
+:::caution
+
+These plugins may have published vulnerabilities for older versions of Jenkins.
+Please make sure to check with your Jenkins server admin or
+security admin before installing any plugins.
+
+:::
+
 ### Jenkins Secrets
 
 :::info
