@@ -23,7 +23,7 @@ Choose appropriate applications to include in your installation. At a minimum, p
 
 <img src={require('./img/livy.png').default} alt="EMR create cluster" width="75%" />
 
-### Allow connectivity between Amazon EMR and Prophecy
+### Allow network connectivity between Amazon EMR and Prophecy
 
 To configure the necessary network settings for seamless integration, specific modifications to the security groups of your EMR cluster are required. Please follow the instructions outlined below:
 If you intend to utilize Prophecy as a SaaS (Software as a Service) solution, please note that the Prophecy public IP is `3.133.35.237`. Ensure that the Core security group's outbound rule allows connections to this IP address.
