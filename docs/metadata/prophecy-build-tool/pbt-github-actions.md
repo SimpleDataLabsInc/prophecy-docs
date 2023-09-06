@@ -1,5 +1,5 @@
 ---
-title: Prophecy Build Tool (pbt) on Github Actions
+title: PBT on Github Actions
 id: prophecy-build-tool-github-actions
 description: Example usage of Prophecy Build Tool on Github Actions
 sidebar_position: 5
@@ -35,7 +35,7 @@ Steps:
 - Add the secret with name DATABRICKS_TOKEN and value of the Databricks token to be used by PBT.
 
 Screenshot after setting DATABRICKS_TOKEN secret:
-![Github Actions Secret addition](../img/pbt-github-secret.png)
+![Github Actions Secret addition](./img/pbt-github-secret.png)
 
 The environment variables can now be all set within the Github actions YML file as follows:
 
@@ -47,10 +47,10 @@ DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
 
 The complete YML file definition is discussed in the next section.
 
-### Setting up a GitHub Actions Workflow on every push to main branch
+### Setting up a GitHub Actions Workflow on every push to prod branch
 
 We’re now ready to setup CI/CD on the Prophecy project.
-To setup a workflow to build, run all unit tests and then deploy the built jar (Scala)/ whl (Python) on Databricks on every push to the main automatically:
+To setup a workflow to build, run all unit tests and then deploy the built jar (Scala)/ whl (Python) on Databricks on every push to the `prod` branch automatically:
 
 - Create a .YML file in the project repository at the below location (relative to root)
 
@@ -64,16 +64,17 @@ To setup a workflow to build, run all unit tests and then deploy the built jar (
   name: Example CI/CD with Github actions
   on:
   push:
-  branches: - "main"
+  branches: - "prod"
 
   env:
   DATABRICKS_HOST: "https://sample_databricks_url.cloud.databricks.com"
-  DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
+  DATABRICKS_TOKEN: ${{ secrets.PROD_DATABRICKS_TOKEN }}
+  # replace with your fabric id:
+  FABRIC_ID: "4004"
 
   jobs:
   build:
   runs-on: ubuntu-latest
-
       steps:
         - uses: actions/checkout@v3
         - name: Set up JDK 11
@@ -101,7 +102,7 @@ To setup a workflow to build, run all unit tests and then deploy the built jar (
 
 The above workflow does the following in order:
 
-1. Triggers on every change that is pushed to the branch ‘main’.
+1. Triggers on every change that is pushed to the branch ‘prod’.
 2. Sets the environment variables required for PBT to run: DATABRICKS_HOST and DATABRICKS_TOKEN.
 3. Sets up JDK 11, Python 3 and other dependencies required for PBT to run.
 4. Builds all the Pipelines present in the project and generates a .jar/.whl file. If the build fails at any point a non-zero exit code is returned which stops the workflow from proceeding further and the workflow run is marked as a failure.

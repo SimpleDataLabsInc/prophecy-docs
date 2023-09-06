@@ -1,5 +1,5 @@
 ---
-title: Prophecy Build Tool (pbt)
+title: Prophecy Build Tool (PBT)
 id: prophecy-build-tool
 description: Prophecy Build tool
 sidebar_position: 4
@@ -43,8 +43,9 @@ pip3 install prophecy-build-tool
 
 ## Integration Examples
 
-[Github Actions](./pbt-github-actions.md)
-[Jenkins](./pbt-jenkins.md)
+### [Github Actions](./pbt-github-actions.md)
+
+### [Jenkins](./pbt-jenkins.md)
 
 ## Quickstart
 
@@ -148,9 +149,11 @@ Example deploy command:
 pbt deploy --path /path/to/your/prophecy_project/ --release-version 1.0 --project-id 10 --dependent-projects-path /path/to/dependent/prophecy/projects
 ```
 
-The `deploy` command also supports an advanced option `--fabric-ids` ( comma separated if more than one ), if there is a need to only deploy Jobs associated with certain Fabric ids,
-you can find the Fabric id in your Prophecy metadata page.
-following command will filter out and only deploy the jobs associated with given Fabric ids.
+The `deploy` command also supports an advanced option `--fabric-ids` ( comma separated if more than one ) if there is a
+need to only deploy Jobs associated with certain Fabric IDs. This option is often used in a multi-workspace environment.
+[Find the Fabric ID](./pbt-jenkins.md#fabricid) for your Fabric by navigating to the Metadata page of that Fabric and observing the URL.
+
+The following command will filter out and only deploy the jobs associated with given Fabric ids.
 Example deploy:
 
 ```shell
@@ -203,7 +206,7 @@ pbt deploy --skip-builds --path /path/to/your/prophecy_project/
 
 By default, `deploy` command builds all pipelines and then deploys all jobs, if you want to deploy some specific jobs
 we can use `job-ids` filter (we can find JobId on Job metadata page) , PBT will automatically calculate all the pipelines needed for the jobs and then build them.
-this could be really useful, if we have many jobs and we only want to deploy only few.
+This could be really useful, if we have many jobs and we only want to deploy only few.
 
 ```shell
 pbt deploy --path /path/to/your/prophecy_project/ --job-ids "TestJob1"
