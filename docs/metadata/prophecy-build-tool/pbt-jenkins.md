@@ -299,6 +299,6 @@ The DATABRICKS_HOST and DATABRICKS_TOKEN env variables must match the configurat
 2. ('prepare system') - Ensure python3 is available on worker nodes. You can skip this if your Jenkins nodes already have `python3-venv` installed.
 3. ('install pbt') - Ensure PBT and its dependencies are installed
 4. ('deploy') - use PBT to deploy the Databricks jobs for our chosen Fabric
-5. Builds all the Pipelines present in the project and generates a .jar/.whl artifact for each Pipeline
-6. Uploads the Pipeline .jar/.whl artifacts for each of the deployed Jobs (next step)
-7. Creates or Updates the Databricks Jobs based on `databricks-job.json` files for the Prophecy Project (only those that use `$FABRIC_ID`)
+   - Builds all the Pipelines present in the project and generates a .jar/.whl artifact for each Pipeline
+   - Uploads the Pipeline .jar/.whl artifacts for each of the deployed Jobs (next step)
+   - Creates or Updates the Databricks Jobs based on `databricks-job.json` files for the Prophecy Project (only those that use `$FABRIC_ID`)
