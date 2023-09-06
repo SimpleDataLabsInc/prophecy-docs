@@ -49,5 +49,5 @@ Fabric includes everything required to run a data Pipeline
 Get started with hands-on guides. Learn step by step how to connect to your execution engine by creating a Fabric:
 
 1. Create a SQL Fabric with a JDBC or Unity Catalog connection following [this guide](/docs/getting-started/getting-started-with-low-code-sql.md#23-setup-prophecys-Fabric).
-2. Create a Databricks Fabric following [these steps](/docs/low-code-spark/Fabrics/create-a-Fabric.md).
-3. Create an EMR Fabric with Livy step by step [here](/docs/low-code-spark/Fabrics/emr-Fabric.md).
+2. Create a Databricks Fabric following [these steps](/docs/low-code-spark/fabrics/create-a-fabric.md).
+3. Create an EMR Fabric with Livy step by step [here](/docs/low-code-spark/fabrics/emr-fabric.md).

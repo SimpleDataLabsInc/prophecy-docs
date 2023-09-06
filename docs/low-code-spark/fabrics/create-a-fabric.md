@@ -50,7 +50,7 @@ In Json you can just copy-paste your compute Json from Databricks.
 
 [Apache Livy](https://livy.apache.org/) is a service that enables easy interaction with a Spark cluster over a REST interface. If you're running Spark-on-hadoop, most Hadoop distributions (CDP/MapR) come with livy bundled, you just need to enable it. For Spark-on-k8s, you can put a livy in the k8s cluster which exposes Spark over rest API.
 
-Please refer below video for step-by-step example, or learn how to configure an EMR Fabric with Livy [here](/docs/low-code-spark/Fabrics/emr-Fabric.md).
+Please refer below video for step-by-step example, or learn how to configure an EMR Fabric with Livy [here](/docs/low-code-spark/fabrics/emr-fabric.md).
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
