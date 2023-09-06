@@ -25,7 +25,7 @@ Fabric is a logical execution environment. Teams organize their data engineering
 
 Fabric includes everything required to run a data Pipeline
 
-![Data Pipeline](img/Fabric.png)
+![Data Pipeline](img/fabric.png)
 
 - **Spark Environment**
   - This is a named Spark environment, owned by one team and used by _one or more_ teams
