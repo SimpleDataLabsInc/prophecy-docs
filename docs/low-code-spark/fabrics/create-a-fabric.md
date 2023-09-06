@@ -1,17 +1,17 @@
 ---
 title: How to create a Fabric
-id: create-a-fabric
+id: create-a-Fabric
 description: Guide on how to create Fabrics
 sidebar_position: 1
 tags:
   - concepts
-  - fabric
+  - Fabric
   - databricks
   - livy
   - prophecyManaged
 ---
 
-Prophecy provides you with three different types of fabrics.
+Prophecy provides you with three different types of Fabrics.
 
 ### **Prophecy Managed**
 
@@ -50,7 +50,7 @@ In Json you can just copy-paste your compute Json from Databricks.
 
 [Apache Livy](https://livy.apache.org/) is a service that enables easy interaction with a Spark cluster over a REST interface. If you're running Spark-on-hadoop, most Hadoop distributions (CDP/MapR) come with livy bundled, you just need to enable it. For Spark-on-k8s, you can put a livy in the k8s cluster which exposes Spark over rest API.
 
-Please refer below video for step-by-step example
+Please refer below video for step-by-step example, or learn how to configure an EMR Fabric with Livy [here](/docs/low-code-spark/Fabrics/emr-Fabric.md).
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -60,9 +60,9 @@ Please refer below video for step-by-step example
 - **Spark Connection** - Here you will provide the Livy URL, Authentication, Spark version and Scala version. Spark and Scala versions are used when user tries to attach a cluster using this Fabric.
 
 :::note
-The Spark and Scala versions are now mandatory with recent [Release](/release_notes/Feb_2023#spark-and-scala-versions-are-now-required-in-livy-fabrics).
+The Spark and Scala versions are now mandatory with recent [Release](/release_notes/Feb_2023#spark-and-scala-versions-are-now-required-in-livy-Fabrics).
 If users has an old Fabric which doesn't have Spark abd Scala versions present, an error (seen below) will appear when trying to attach to a cluster. User would need to update the Fabric from the metadata page or by clicking `Update Fabric` button (seen below).
-![Fabric_misconfigured](img/fabric_misconfigured.png)
+![Fabric_misconfigured](img/Fabric_misconfigured.png)
 :::
 
 - **Job sizes** -

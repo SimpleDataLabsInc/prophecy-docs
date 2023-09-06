@@ -1,11 +1,11 @@
 ---
 title: Fabrics
-id: fabric
+id: Fabric
 description: Logical execution environments
 sidebar_position: 4
 tags:
   - concepts
-  - fabric
+  - Fabric
   - source
   - target
   - datasets
@@ -25,7 +25,7 @@ Fabric is a logical execution environment. Teams organize their data engineering
 
 Fabric includes everything required to run a data Pipeline
 
-![Data Pipeline](img/fabric.png)
+![Data Pipeline](img/Fabric.png)
 
 - **Spark Environment**
   - This is a named Spark environment, owned by one team and used by _one or more_ teams
@@ -43,3 +43,11 @@ Fabric includes everything required to run a data Pipeline
 - **Credentials and Secrets**
   - Prophecy enables you to store credentials safely in the Databricks environment. You can store key-value pairs as secrets that are made available for reading to the running workflows.
   - Please note that after a secret is created it is only readable by a running Job. Prophecy does not have access to this value.
+
+## Hands on
+
+Get started with hands-on guides. Learn step by step how to connect to your execution engine by creating a Fabric:
+
+1. Create a SQL Fabric with a JDBC or Unity Catalog connection following [this guide](/docs/getting-started/getting-started-with-low-code-sql.md#23-setup-prophecys-Fabric).
+2. Create a Databricks Fabric following [these steps](/docs/low-code-spark/Fabrics/create-a-Fabric.md).
+3. Create an EMR Fabric with Livy step by step [here](/docs/low-code-spark/Fabrics/emr-Fabric.md).
