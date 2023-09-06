@@ -17,7 +17,7 @@ tags:
 
 ## Integrating with GitHub Actions
 
-PBT can be integrated with your own CI/CD solution to build, test and deploy Prophecy code. The steps for setting up PBT with Github Actions on your repository containing a Prophecy project is mentioned below.
+PBT can be integrated with your own CI/CD solution to build, test and deploy Prophecy code. The steps for setting up PBT with Github Actions on your repository containing a Prophecy project are mentioned below.
 
 ### Pre-requisite
 
@@ -30,7 +30,7 @@ PBT requires environment variables **DATABRICKS_URL** and **DATABRICKS_TOKEN** t
 The **DATABRICKS_TOKEN** that needs to be used can be set as a secret inside the Github repository of the project.
 Steps:
 
-- Go to Settings > Secrets > Actions from the repository menu
+- Go to Settings > Secrets > Actions from the Github repository menu
 - Click ‘New Repository secret’
 - Add the secret with name DATABRICKS_TOKEN and value of the Databricks token to be used by PBT.
 
@@ -102,11 +102,11 @@ To setup a workflow to build, run all unit tests and then deploy the built jar (
 
 The above workflow does the following in order:
 
-1. Triggers on every change that is pushed to the branch ‘prod’.
+1. Triggers on every change that is pushed to the branch `prod`.
 2. Sets the environment variables required for PBT to run: DATABRICKS_HOST and DATABRICKS_TOKEN.
 3. Sets up JDK 11, Python 3 and other dependencies required for PBT to run.
 4. Builds all the Pipelines present in the project and generates a .jar/.whl file. If the build fails at any point a non-zero exit code is returned which stops the workflow from proceeding further and the workflow run is marked as a failure.
-5. Runs all the unit tests present in the project using FABRIC_NAME(optional) as the configuration. If any of the unit test fails a non-zero exit code is returned which stops the workflow from proceeding further and the workflow run is marked as a failure.
+5. Runs all the unit tests present in the project using FABRIC_NAME(optional) as the configuration. If any of the unit tests fail a non-zero exit code is returned which stops the workflow from proceeding further and the workflow run is marked as a failure.
 6. Deploys the built .jar/.whl to the Databricks location mentioned in `databricks-job.json` mentioned in the `jobs` directory of the project. If the Job already exists in Databricks it is updated with the new .jar/.whl.
 7. Deploys Pipeline configurations, if present, to the DBFS path mentioned in `databricks-job.json`.
 8. If this process fails at any step, a non-zero exit code is returned which stops the workflow from proceeding further and the workflow run is marked as a failure.

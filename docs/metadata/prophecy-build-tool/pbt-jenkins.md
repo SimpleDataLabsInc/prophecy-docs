@@ -29,7 +29,7 @@ _When PRs are made to a protected branch, the unit tests must pass before the PR
 
 Once the PR is merged successfully, we deploy the artifacts and Job definitions to Databricks.
 
-::: info
+:::info
 
 The Git project for this example will soon be made publicly available. To keep as much
 of the CICD logic attached to the Git project itself, we will store the Jenkinsfiles
