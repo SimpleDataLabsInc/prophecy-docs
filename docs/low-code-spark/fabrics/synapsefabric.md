@@ -33,7 +33,7 @@ A properly configured Azure Synapse Analytics environment is required before con
    <img src={require('./img/secret.png').default} alt="Synapse security" width="75%" />
 5. Make a note of your secret. We need this information for your Fabric.
    <img src={require('./img/secret2.png').default} alt="Synapse security" width="75%" />
-6. Configure Subscription, Workspace, Storage roles to ensure proper access.
+6. Configure Application, Workspace, Storage roles to ensure proper access.
 
 Find more information on assigning roles from [Azure's documentation](https://learn.microsoft.com/en-us/azure/synapse-analytics/security/how-to-set-up-access-control).
 
