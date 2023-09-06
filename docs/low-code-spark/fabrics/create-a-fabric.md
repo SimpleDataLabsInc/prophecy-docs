@@ -62,7 +62,7 @@ Please refer below video for step-by-step example, or learn how to configure an 
 :::note
 The Spark and Scala versions are now mandatory with recent [Release](/release_notes/Feb_2023#spark-and-scala-versions-are-now-required-in-livy-Fabrics).
 If users has an old Fabric which doesn't have Spark abd Scala versions present, an error (seen below) will appear when trying to attach to a cluster. User would need to update the Fabric from the metadata page or by clicking `Update Fabric` button (seen below).
-![Fabric_misconfigured](img/Fabric_misconfigured.png)
+![Fabric_misconfigured](img/fabric_misconfigured.png)
 :::
 
 - **Job sizes** -
