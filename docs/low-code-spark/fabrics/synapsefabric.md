@@ -48,7 +48,7 @@ Navigate to Prophecy's UI and click on **Create Fabric**. The Fabric will establ
 **Choose Synapse** as your **Provider**.
 <br/> <br/>
 
-<img src={require('./img/provider.png').default} alt="Synapse connect" width="75%" />
+<img src={require('./img/provider1.png').default} alt="Synapse connect" width="75%" />
 <br/> <br/>
 
 **Copy and paste** your **Application Client ID**, **Secret Value** and **Tenant ID** from the App Registration page.
