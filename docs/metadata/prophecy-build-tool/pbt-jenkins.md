@@ -112,7 +112,7 @@ This Pipeline uses PBT to validate the pipelines and run all Prophecy unit tests
 <details>
 <summary> Refer to this image for all settings. </summary>
 
-![jenkins-test-cicd-configuration1.png](img%2Fjenkins-test-cicd-configuration1.png)
+![hello-cicd-declarative-test_configure.png](img%2Fhello-cicd-declarative-test_configure.png)
 
 </details>
 
@@ -127,7 +127,7 @@ create webhooks in Github.
 <details>
 <summary> Refer to this image for all settings. </summary>
 
-![jenkins-test-cicd-configuration-trigger-details.png](img%2Fjenkins-test-cicd-configuration-trigger-details.png)
+![hello-cicd-declarative-test_configure-trigger.png](img%2Fhello-cicd-declarative-test_configure-trigger.png)
 
 </details>
 
@@ -151,7 +151,7 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                git branch: '${ghprbSourceBranch}', credentialsId: 'jenkins-cicd-runner-demo', url: 'git@github.com:SimpleDataLabsInc/HelloCICD.git'
+                git branch: '${ghprbSourceBranch}', credentialsId: 'jenkins-cicd-runner-demo', url: 'git@github.com:prophecy-samples/external-cicd-template.git'
                 sh "apt-get install -y python3-venv"
             }
         }
