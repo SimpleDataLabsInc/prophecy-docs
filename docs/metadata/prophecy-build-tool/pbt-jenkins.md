@@ -15,6 +15,8 @@ tags:
   - jenkins
 ---
 
+## [Example Github Repo](https://github.com/prophecy-samples/external-cicd-template)
+
 ## Context of the Jenkins CI/CD Example
 
 In this section we will explore how to set up separate "testing" and "deploying" Jenkins Jobs using declarative Pipelines. These Jobs will be triggered when items are merged into the following protected branches

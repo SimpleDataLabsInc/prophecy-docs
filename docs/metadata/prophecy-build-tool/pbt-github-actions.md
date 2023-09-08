@@ -15,6 +15,8 @@ tags:
   - cicd
 ---
 
+## [Example Github Repo](https://github.com/prophecy-samples/external-cicd-template)
+
 ## Integrating with GitHub Actions
 
 PBT can be integrated with your own CI/CD solution to build, test and deploy Prophecy code. The steps for setting up PBT with Github Actions on your repository containing a Prophecy project are mentioned below.
