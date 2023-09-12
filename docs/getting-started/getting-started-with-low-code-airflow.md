@@ -87,13 +87,30 @@ For this guide, let's create a guide for setting up a Job that gets activated wh
 
 ### 2.1 Adding S3 file Sensor Gem
 
+Click on **(1) Sensors**, and Drag the **(2) S3FileSensor Gem** from the dropdown to the canvas. Then click the newly added Gem and click **(3) Open** to open the Gem Configurations.
+
+Here, we will specify the S3 bucket/path on which we want to trigger the Job.
+
+In **(1) S3 Path(s)** specify
+
 ### 2.2 Adding Email Gem
+
+Click on the **(1) Operators**, and Drag the **(2) Email Gem** from the dropdown to the canvas. If you drag this closer to output port of the previous Gem, it will get auto-connected to it. Then click the newly added Gem and click **(3) Open** to open the Gem Configurations.
+
+Here we will specify our Email configurations.
+
+In **(1) To**, add your Email id where you want to receive the notification Email when the Job is triggered.
+In **(2) Connection name**, select the connection you created for Email in step 1.
+In **(3) Subject**, give a subject for the Email. You can simply write Starting Job <Job-name>.
+In **(4) Email content**, give any content you want to add to your email.
+Additionally, you can also add cc and bcc emails.
+Once done, Click **(3) Save**!
 
 ### 2.3 Adding Spark Pipeline Gem For Databricks to your DAG
 
 ![Add_Pipeline_Gem](img/Airflow_2.2_Add_Pipeline_Gem.png)
 
-Click on **(1) Operators**, and Drag the **(2) Pipeline Gem** from the dropdown to the canvas. Then click the newly added Gem and click **(3) Open** to open the Gem Configurations.
+Click on **(1) Operators**, and Drag the **(2) Pipeline Gem** from the dropdown to the canvas. Drag it close tot the output port of the Email Gem, so that it gets auto-connected. Then click the newly added Gem and click **(3) Open** to open the Gem Configurations.
 
 Here, you will select the Pipeline and optionally override any config values for the Pipeline.
 
@@ -108,7 +125,7 @@ In (**2) Fabric and Cluster size to run this Pipeline**, pick the Fabric and Job
 
 Click on **(1) Operators**, and Drag the **(2) DBT Gem** from the dropdown to the canvas. Then click the newly added Gem and click **(3) Open** to open the Gem Configurations.
 
-Here, we will select the DBT Project/Model to Schedule, what SQL Fabric to schedule it on, and other additional properties for running a DBT model.
+Here, you will select the DBT Project/Model to Schedule, what SQL Fabric to schedule it on, and other additional properties for running a DBT model.
 
 ![DBT_Gem_Configurations](img/Airflow_2.5_DBT_Gem_Configurations.png)
 
