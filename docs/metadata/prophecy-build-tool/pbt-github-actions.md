@@ -112,6 +112,6 @@ The above workflow does the following in order:
 4. Validate that the Pipeline code is free of syntax errors.
 5. Builds all the Pipelines present in the project and generates a .jar/.whl file. If the build fails at any point a non-zero exit code is returned which stops the workflow from proceeding further and the workflow run is marked as a failure.
 6. Runs all the unit tests present in the project using FABRIC_NAME(optional) as the configuration. If any of the unit tests fail a non-zero exit code is returned which stops the workflow from proceeding further and the workflow run is marked as a failure.
-7. Deploys the built .jar/.whl to the Databricks location mentioned in `databricks-job.json` mentioned in the `jobs` directory of the project. If the Job already exists in Databricks it is updated with the new .jar/.whl.
+7. Deploys the built .jar/.whl to the Databricks location mentioned in `databricks-job.json`, located in the `jobs` directory of the project. If the Job already exists in Databricks it is updated with the new .jar/.whl.
 8. Deploys Pipeline configurations, if present, to the DBFS path mentioned in `databricks-job.json`.
 9. If this process fails at any step, a non-zero exit code is returned which stops the workflow from proceeding further and the workflow run is marked as a failure.
