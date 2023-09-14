@@ -9,6 +9,12 @@ tags:
   - jobs
 ---
 
-### How to create an Airflow Fabric
+To connect to a running Airflow Instance, you would need to create a [Fabric](/docs/concepts/fabrics/fabrics.md) of type Airflow.
+Prophecy provides you with three different types of Fabrics depending upon where your Airflow Instance is running.
 
-To create an Airflow Fabric in Prophecy, you can use the "Airflow" Fabric type. This allows you to specify the parameters needed to connect to your Airflow instance based on the Provider. Currently, for Cloud Composer you would provide Airflow URL, Project Id, Dag location, and authentication key.
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```
