@@ -10,6 +10,12 @@ tags:
 
 At Prophecy, we've added low-code SQL capabilities to version [3.0](https://www.prophecy.io/blog/announcing-prophecy-3-0-low-code-sql-transformations) of our platform, so users can build highly performant queries on par with the best analytics engineers without needing to be coding experts. We built this feature on top of [dbt Core™️ ](https://github.com/dbt-labs/dbt-core), an open-source tool for managing SQL-based data transformations. With low-code SQL, our customers can build complex queries visually, and the tool automatically translates them into optimized SQL code in Git that’s fully open and accessible to all. This makes it simpler for more people to work with data and extract insights.
 
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://fast.wistia.net/embed/iframe/hfhh8fieiq?seo=false?videoFoam=true" title="Getting Started With SQL Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
+
 #### In this quick-start, we will show you how to setup Prophecy low-code SQL with an existing Databricks warehouse
 
 We'll take you step by step from account setup to developing your first model. By the end of this training, you'll have an understanding of dbt models, be able to use low-code SQL to define and test your business logic, and commit this code and deploy it to production. That's a lot, but we make building complex queries easy with our drag and drop tooling. Let's dig in!
@@ -21,13 +27,13 @@ We'll take you step by step from account setup to developing your first model. B
 
 ## 1. Setup Prophecy account
 
-Creating your first account on Prophecy is very simple. Go to [app.prophecy.io](https://app.Prophecy.io/metadata/auth/signup) to Sign-up for an initial 14-day trial. After you’ve tried the product for 14 days, simply reach out to us at Contact@Prophecy.io and we will help pick the best offering for you.
+Creating your first account on Prophecy is very simple. Go to [app.prophecy.io](https://app.Prophecy.io/metadata/auth/signup) to Sign-up for an initial 14-day trial. After you’ve tried the product for 14 days, simply reach out to us at Contact.us@Prophecy.io and we will help pick the best offering for you.
 
 ![Account Creation](img/1-1-account-creation.png)
 
-## 2. Get Databricks end-point details
+## 2. Connect to Databricks
 
-### 2.1. Cluster or Warehouse JDBC URL
+### 2.1 Get Databricks Cluster or Warehouse URL
 
 When connecting to Databricks, you have the option to either connect to Databricks compute cluster or warehouse. In both cases, make sure to get the 2.6.25 JDBC url that starts with `jdbc:Databricks....`
 
@@ -61,19 +67,19 @@ To get the personal access token, navigate to the **(1) User Settings** > **(2) 
 
 Once, the token is generated copy and save it from **(5) Token** and you’re good to go. Save it and we’re going to use both the JDBC url generated in the previous step and the token to setup your Prophecy account!
 
-## 3. Setup Prophecy’s Fabric
+### 2.3 Setup Prophecy’s Fabric
 
 Prophecy introduces the concept of a Fabric to describe an execution environment. In this case, we create a single Fabric to connect a Databricks cluster or warehouse, execute SQL models interactively, and deploy scheduled Jobs. The Fabric defines the environment where SQL tables and views are materialized. Typically you should setup at least one Fabric each for development and production environments. Use the development environment(Fabric) for quick ad-hoc building purposes with only sample data and use the production environment for daily runs with real data for your use case.
 
 You can read more about Fabrics [here.](https://docs.prophecy.io/concepts/fabrics/create-a-fabric/)
 
-![Create Fabric](img/3-1-create-fabric.png)
+![Create Fabric](img/2-4-create-fabric.png)
 
 Setting up a Fabric is very straightforward now that we have copied the JDBC URL and Personal Access Token from the previous steps. Click the **(1) Create Entity** button, and choose **(2) Create Fabric** option. Please note, until you setup a Fabric, creation of other entities is going to be disabled. The Fabric creation is composed of two steps: Basic Info and Providers setup. On the Basic Info screen, enter a **(1) Fabric Name**, **(2) Fabric Description,** and choose the **(3) Team** that’s going to own the Fabric.
 
 Once ready, click **(4) Continue.**
 
-![Fill Fabric Details](img/3-2-fill-fabric-details.png)
+![Fill Fabric Details](img/2-5-fill-fabric-details.png)
 
 Since we’re setting up a Fabric connected to Databrick’s JDBC SQL endpoint, we choose SQL as the **(1) Provider Type** and Databricks as the **(2) Provider.**
 
@@ -83,17 +89,17 @@ Click **(7) Complete** when finished. Prophecy checks the credentials and detail
 
 Please note, Fabrics are owned by Teams. Every Member present within the Team will be able to access the Fabric, however, each individual has to provide their own Personal Access Token!
 
-## 4. Create a new Project
+## 3. Create a new Project
 
 Prophecy’s Project is a Git repository or a directory on Git that contains all of your transformation logic. Each Prophecy Project contains a dbt Core™️ project. Learn more about Projects [here.](https://docs.prophecy.io/concepts/project)
 
 After Fabric creation you can see one project initialized for you by default called HelloWorld_SQL. If you just want to play around with Prophecy, you can start there. However, for the purpose of this tutorial we’re going to build a brand new project from scratch.
 
-![Create New Project](img/4-1-create-new-project.png)
+![Create New Project](img/3-1-create-new-project.png)
 
 To create a new Project press on the **(1) Create Entity** button on the sidebar and choose **(2) Create** on the Project tile. The Project creation screen will open. Here, on the first page: we configure basic project details; and on the second page: we configure the Git repository details. Fill in the Project’s **(3) Name,** **(4) Description** (optional), and set the **(5) Project Type** to SQL. After that, select the **(6) Team** which is going to own the newly selected project. By default, you can leave the selected team to be your personal one. Finally, we choose the same **(7) Provider** as we selected in the previous step - Databricks. Once all the details are filled out correctly, you can proceed to the next step by clicking **(8) Continue.**
 
-![Git Repository Connection](img/4-2-git-repository-connection.png)
+![Git Repository Connection](img/3-2-git-repository-connection.png)
 
 Once the basic project information is filled out, it’s time to configure the Git repository on which we’re going to store our project. Git brings the best software engineering practices to traditional data engineering. It allows it’s users to version their code, collaborate with teammates easier, and setup robust productionization pipelines.
 
@@ -103,7 +109,7 @@ Once you’re connected to Git using either of the above approaches press **(3) 
 
 If you’re new to Git, we recommend starting by connecting to Prophecy Managed Git.
 
-### 4.1. Connect to Prophecy Managed Git
+### 3.1. Connect to Prophecy Managed Git
 
 When choosing, Prophecy Managed Git as your default Git repository, there’s no further steps required! Prophecy automatically takes care of repository creation, connection, and initialization. You can just click **(3) Continue** to finalize the project setup.
 
@@ -111,18 +117,18 @@ Using Prophecy Managed Git is very easy, but has some major downsides and theref
 
 If you decide to choose this option, you can always migrate the project to an external Git Repository by cloning it.
 
-### 4.2 Connect to external Git repository
+### 3.2 Connect to external Git repository
 
-![Git Repository Connection](img/4-3-git-repository-connection.png)
+![Git Repository Connection](img/3-3-git-repository-connection.png)
 
 When connecting to external Git repositories, you have to first setup a Git connection with Prophecy. This can be done in two ways:
 
 1. For GitHub - with single click connection (through GitHub OAuth)
 2. For other Git providers (e.g. Bitbucket, GitLab, etc) - by providing a Personal Access Token
 
-#### 4.2.1 Connecting with GitHub
+#### 3.2.1 Connecting with GitHub
 
-![Connect With Github](img/4-3-1-connect-with-github.png)
+![Connect With Github](img/3-4-connect-with-github.png)
 
 If you have an existing GitHub account this process is very simple, thanks to Prophecy’s strong OAuth GitHub integration. If you don’t, you can create an account at [Github.com](http://github.com).
 
@@ -136,7 +142,7 @@ Once done, press on **(4) Authorize** SimpleDataLabsInc (legal organization name
 
 Finally, click **(5) Connect** to save the Git connection.
 
-![Choose the repository](img/4-3-1-2-choose-the-repository.png)
+![Choose the repository](img/3-5-choose-the-repository.png)
 
 Once your GitHub account is setup, select a repository where Prophecy will store all the code for this project. Choose a **(1) Repository** from the dropdown available. If you’d like to create a new repository from scratch follow [this guide.](https://docs.github.com/en/get-started/quickstart/create-a-repo)
 
@@ -146,9 +152,9 @@ Sometimes, you might want to load a project that’s within a specific subpath o
 
 Finally, click **(4) Continue** and your main project page will open.
 
-#### 4.2.2 Connecting with any other Git
+#### 3.2.2 Connecting with any other Git
 
-![Connect With Other Git](img/4-3-2-connect-with-other-git.png)
+![Connect With Other Git](img/3-6-connect-with-other-git.png)
 
 To establish Git connection with any other Git provider, simply choose the provider from the **(1) Git Provider** list or select Other. Setup steps for most providers are the same, as they follow standard secure Git protocol.
 
@@ -160,7 +166,7 @@ Each provider is going to use a slightly different process to generate Personal 
 
 Finally, click **(6) Connect** to save the Git connection.
 
-![Choose the repository](img/4-3-2-2-choose-the-repository.png)
+![Choose the repository](img/3-7-choose-the-repository.png)
 
 Once your GitHub account is setup, populate the **(1) Repository** field with an HTTPS URL to a Git repository you’d like to pull.
 
@@ -170,15 +176,15 @@ Sometimes, you might want to load a project that’s within a specific subpath o
 
 Finally, click **(4) Continue** and your main project page will open.
 
-## 5. Start development
+## 4. Start development
 
 Congratulations! We’ve now successfully went through the one-time setup process of Prophecy with all the required dependencies. We can now use Databricks’ performant SQL execution engine and Git’s source code versioning.
 
 It’s time to start building our first data transformation project!
 
-![Create Dev Branch](img/5-create-dev-branch.png)
+![Create Dev Branch](img/4-1-create-dev-branch.png)
 
-### 5.1 Checkout development branch
+### 4.1 Checkout development branch
 
 As a good teammate, we don’t want to write changes directly on the main branch of our Git repository. Every member should have their own branch on which they can freely build and play around with the project, without interrupting each other’s work. Prophecy enforces this best practice by ensuring that no changes can be made directly on the main branch.
 
@@ -186,7 +192,7 @@ Therefore, to start development we have to create our first development branch. 
 
 Note, that if the branch doesn’t exist, Prophecy creates a new branch automatically by essentially cloning what’s on the currently selected branch - therefore make sure to usually create new branch (checkout) from main. If the branch exists, the code for that branch is pulled from Git into Prophecy.
 
-### 5.2 Connect to a Fabric
+### 4.2 Connect to a Fabric
 
 Prophecy allows for interactive execution of your modeling work. This allows you to run any SQL model directly on the Fabric we’ve connected to and preview the resulting data. Fabric connection also allows Prophecy to introspect the schemas on your data warehouse and ensure that your development queries are correct.
 
@@ -196,7 +202,7 @@ Choose the Fabric of choice by clicking on it in the **(5) Fabrics** list, then 
 
 Prophecy will quickly load all the available catalogs, schemas, tables, and other metadata and shortly after allow you to start running your transformations!
 
-## 6. Define data sources
+### 4.3 Define data sources
 
 The first step, before building actual transformation logic, is definition of data sources. There are three primary ways to define data sources in a SQL project:
 
@@ -204,21 +210,22 @@ The first step, before building actual transformation logic, is definition of da
 2. **datasets** - table points with schema and additional metadata
 3. **other models** - since each model defines a table, models can serve as inputs to another model (we’re going to cover models in the next section)
 
-### 6.1 Create seeds
+#### 4.3.1 Create seeds
 
 Seeds allow you to define small CSV-based datasets that are going to be automatically uploaded to your warehouse as tables, whenever you execute your models. This is particularly useful for business data tables or for integration testing on data samples.
 
-![Create a new seed](img/6-1-1-create-a-new-seed.png)
+![Create a new seed](img/4-2-create-a-new-seed.png)
 
 To create a seed click on the **(1) + Add Seed** button. A new pop-up window will appear where you can define metadata of the seed. There you can define the **(2) Name** of seed (which is going to be the same as the name of the table created) and the **(3) Path** for for it. When ready press **(4) OK,** to add.
 
-![Define Seed Value](img/6-1-2-define-seed-value.png)
+![Define Seed Value](img/4-3-define-seed-value.png)
 
 The seed initializes by default empty. To define the value simple copy and paste the content of desired CSV (each column separate by a comma, each row separated by a new line, with a header as the first line) into the **(1) Code editor.** To verify whether the seed is parsed correctly, you can see it after switching again to the **(2) Visual editor.**
 
 For the purpose of this tutorial, create a nation seed, with the following content:
 
-```n_nationkey,n_name,n_regionkey,n_comment
+```
+n_nationkey,n_name,n_regionkey,n_comment
 0,ALGERIA,0,Vast Sahara; oil-rich.
 1,ARGENTINA,1,Tango; beef; Patagonia.
 2,BRAZIL,1,Amazon; Carnival; soccer.
@@ -227,21 +234,21 @@ For the purpose of this tutorial, create a nation seed, with the following conte
 5,ETHIOPIA,0,Coffee origin; diverse culture.
 ```
 
-### 6.2 Define datasets
+#### 4.3.2 Define datasets
 
 Importing datasets is really easy. We can just drag-and-drop our existing tables directly into a model. We’re going to demonstrate that in the next step.
 
-## 7. Develop your first model
+### 4.4 Develop your first model
 
 A model is an entity that contains a set of data transformations and defines either a view or a table that will be created on the warehouse of choice. Each model is stored as a select statement in a SQL file within a project. Prophecy models are based on dbt Core [models](https://docs.getdbt.com/docs/build/models).
 
-![Create the first model](img/7-1-create-the-first-model.png)
+![Create the first model](img/4-4-create-the-first-model.png)
 
 Here we create customers_nations model that’s going to enrich our customers and produce a report of which customers show up in which geographic areas most commonly.
 
 To create a new model simply click on the **(1) + Add Model** in the sidebar, when hovering over Models section, or **(2) Create Model** button. A model creation pop-up will show up, with very similar options, as when we defined the seed, available. Enter the **(3) Model Name** and **(4) Model Path** and that’s it. Finally save the model by pressing **(5) OK.**
 
-### 7.1 Drag and drop model’s graph
+#### 4.4.1 Drag and drop model’s graph
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -257,11 +264,11 @@ Building your model is very simple, thanks to the drag-and-drop interface. In th
 4. Then we drag and drop an **Aggregate** component from the Transform Gems drawer and connect it to the upstream **Join** component.
 5. Finally connect your **Aggregate** to the **TargetModel** that defines your view itself.
 
-### 7.2 Define business logic
+#### 4.4.2 Define business logic
 
 Once we have dragged and dropped all the relevant Gems (transformations) on our canvas, it’s time to fill in the business logic.
 
-![Edit Gem](img/7-2-edit-gem.png)
+![Edit Gem](img/4-5-edit-gem.png)
 
 Clicking on any of the Gems shows these options.
 
@@ -277,7 +284,7 @@ Clicking on any of the Gems shows these options.
 
 #### Join definition
 
-![Join definition](img/7-2-join-definition.png)
+![Join definition](img/4-6-join-definition.png)
 
 Let’s start by building the **Join** transformation. Upon opening the Gem, you can see a drawer pop-up which provides several helpful features. For transparency, you can always see the **(1) Input schema** on the left hand-side, **(4) Errors** in the footer, and have the ability to **(5) Run** the Gem on the top right.
 
@@ -293,7 +300,7 @@ Once done, press **(8) Save.**
 
 #### Aggregate definition
 
-![Aggregate definition](img/7-2-aggregate-definition.png)
+![Aggregate definition](img/4-8-aggregate-definition.png)
 
 Next, let’s define the transformation logic for our **Aggregate** Gem, which will sum up the number of customers within each of the geographical locations and return a clean set of columns.
 
@@ -303,21 +310,21 @@ Once the aggregation expressions are specified, we can consider grouping by a pa
 
 Finally, we **(3) Rename** our Gem to `count_customers` and **(4) Save** it.
 
-### 7.3 Interactively test
+#### 4.4.3 Interactively test
 
 Now that our model is fully defined, with all the logic specified, it’s time to test it.
 
-![Interactively run](img/7-3-interactively-run.png)
+![Interactively run](img/4-9-interactively-run.png)
 
 Prophecy makes interactively testing the models incredibly easy! Simply click on the **(1) Play** button on any of the Gems and the model with all of it’s upstream dependencies will be executed. Once the model runs, the **(2) Result** icon appears. Click the Result icon to view a **(3) Sample** set of records.
 
-## 8. Orchestrate and Deploy
+## 5. Orchestrate and Deploy
 
 Now that we’ve developed and tested our models, it’s time to schedule and deploy them to production. This will allow our code to run on a recurrent interval, e.g. daily, depending on how often our upstream data arrives and our business commitments.
 
-### 8.1 Create your Job
+### 5.1 Create your Job
 
-![Create Job](img/8-1-create-job.png)
+![Create Job](img/5-1-create-job.png)
 
 We start by creating a Job. Jobs are graphs that orchestrate various tasks that are executed by the scheduler.
 
@@ -333,9 +340,9 @@ After that, we can optionally provide a list of email address which are going to
 
 Finally, we create our Job by clicking on **(6) Create New.**
 
-### 8.2 Configure the DBT task
+### 5.2 Configure the DBT task
 
-![Configure the DBT task](img/8-2-configure-dbt-task.png)
+![Configure the DBT task](img/5-2-configure-dbt-task.png)
 
 Once your Job is created, you are redirected to the Job editing canvas. You will notice that it looks very similar to the model editor with some subtle differences.
 
@@ -353,7 +360,7 @@ We can quickly verify that our schedule runs correctly by executing it, by click
 
 Finally, we toggle our Job to be **(5) Enabled.** This enables the Job on the scheduler and will ensure that the Job follows the previously set interval.
 
-### 8.3 Commit your changes
+### 5.3 Commit your changes
 
 Once we have the **Job** developed and tested it’s time to commit and push our code to our repository.
 
@@ -366,9 +373,9 @@ The process of deploying code is composed of 4 steps:
 3. **Merge:** Now that our development branch is up to date, we can merge it to master. Here we can either create a **Pull Request** or if you’re the owner of the repository force **Merge** the changes. For now, we **Merge** them directly. Once the code is merged, you can now see the latest commits present on your **main** branch.
 4. **Release:** Finally, now that our changes are all versioned on Git, we can release them to our scheduler. Simply specify a **Release Version** number, e.g. `1.0` , and the **(4) Release Note,** which should clearly outline the latest changes. When ready, click **(5) Release.**
 
-### 8.4 Monitor the release
+### 5.4 Monitor the release
 
-![Release the Project](img/8-4-release-the-project.png)
+![Release the Project](img/5-3-release-the-project.png)
 
 During the release process Prophecy automatically packages, tests, and deploys your project’s artifacts - mostly SQL queries - to your Databricks Warehouse. You can monitor this process in the final **(1) Release** page.
 
@@ -382,6 +389,6 @@ You've successfully set up, developed, tested, and deployed your first SQL proje
 
 To continue learning and expanding your skills with Prophecy, explore other tutorials within our documentation, or apply your newfound knowledge to address real-world business challenges!
 
-If you ever encounter any difficulties, don't hesitate to reach out to us at Support@Prophecy.io or join our [Slack community](https://prophecy-io-support.slack.com/join/shared_invite/zt-moq3xzoj-~5MSJ6WPnZfz7bwsqWi8tQ#/shared-invite/email) for assistance. We're here to help!
+If you ever encounter any difficulties, don't hesitate to reach out to us (Contact.us@Prophecy.io) or join our [Slack community](https://prophecy-io-support.slack.com/join/shared_invite/zt-moq3xzoj-~5MSJ6WPnZfz7bwsqWi8tQ#/shared-invite/email) for assistance. We're here to help!
 
 ---
