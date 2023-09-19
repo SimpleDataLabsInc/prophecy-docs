@@ -13,11 +13,11 @@ Helps perform file operations like `copy` and `move` on different file systems
 ## Parameters
 
 | Parameter          | Description                                                                                                                                                | Required |
-| :----------------- |:-----------------------------------------------------------------------------------------------------------------------------------------------------------| :------- |
+| :----------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------- | :------- |
 | File System        | `Local` - for operations on driver node file system <br/> `DBFS` - for operations on Databricks file system <br/> `S3` - for operations on S3 object store | True     |
 | Operation          | Operation to perform, `Copy`, `Move` or `Sync`                                                                                                             | True     |
-| Filename Regex     | Regex to Filter File Names Eg: stdlog.\*\.txt                                                                                                                         | False    |
-| Ignore empty files | Ignore if file size is empty (Size of file is 0 bytes)                                                                                                                              | False    |
+| Filename Regex     | Regex to Filter File Names Eg: stdlog.\*\.txt                                                                                                              | False    |
+| Ignore empty files | Ignore if file size is empty (Size of file is 0 bytes)                                                                                                     | False    |
 | Recurse            | Boolean for performing `Operation` recursively. Default is `False`                                                                                         | False    |
 | Source Path        | Path of source file/directory. <br/>Eg: /dbfs/source_file.txt, dbfs:/source_file.txt, s3://source_bucket/source_prefix/filename.txt                        | True     |
 | Destination Path   | Path of destination file/directory. <br/> Eg: /dbfs/target_file.txt, dbfs:/target_file.txt, s3://target_bucket/target_prefix/filename.txt                  | True     |
@@ -71,21 +71,6 @@ def copy_file(spark: SparkSession):
 
 ```py
 def copy_file(spark: SparkSession):
-    import boto3
-    import re
-    from urllib.parse import urlparse
-    dest_files = {}
-    mode = "copy"
-    fileRegex = None
-    ignoreEmptyFiles = False
-    src_url = urlparse("s3://Prophecy/example/source/person.json")
-    dest_url = urlparse("s3://Prophecy/example/target/person.json")
-    src_bucket = src_url.netloc
-    src_prefix = src_url.path.lstrip('/')
-    dest_bucket = dest_url.netloc
-    dest_prefix = dest_url.path.lstrip('/')
-    s3 = boto3.client("s3")
-
     for obj in boto3.client("s3").list_objects_v2(Bucket = src_bucket, Prefix = src_url.path.lstrip('/'))['Contents']:
         new_dest_prefix = re.sub(src_prefix, dest_prefix, obj['Key'], 1)
 
@@ -178,21 +163,6 @@ def copy_file(spark: SparkSession):
 
 ```py
 def copy_file(spark: SparkSession):
-    import boto3
-    import re
-    from urllib.parse import urlparse
-    dest_files = {}
-    mode = "copy"
-    fileRegex = None
-    ignoreEmptyFiles = False
-    src_url = urlparse("s3://Prophecy/example/source/person.json")
-    dest_url = urlparse("s3://Prophecy/example/target/person.json")
-    src_bucket = src_url.netloc
-    src_prefix = src_url.path.lstrip('/')
-    dest_bucket = dest_url.netloc
-    dest_prefix = dest_url.path.lstrip('/')
-    s3 = boto3.client("s3")
-
     for obj in boto3.client("s3").list_objects_v2(Bucket = src_bucket, Prefix = src_url.path.lstrip('/'))['Contents']:
         new_dest_prefix = re.sub(src_prefix, dest_prefix, obj['Key'], 1)
 
@@ -280,21 +250,6 @@ def move_file(spark: SparkSession):
 
 ```py
 def move_file(spark: SparkSession):
-    import boto3
-    import re
-    from urllib.parse import urlparse
-    dest_files = {}
-    mode = "move"
-    fileRegex = ""
-    ignoreEmptyFiles = False
-    src_url = urlparse("s3://Prophecy/example/source/")
-    dest_url = urlparse("s3://Prophecy/example/target/")
-    src_bucket = src_url.netloc
-    src_prefix = src_url.path.lstrip('/')
-    dest_bucket = dest_url.netloc
-    dest_prefix = dest_url.path.lstrip('/')
-    s3 = boto3.client("s3")
-
     for obj in boto3.client("s3").list_objects_v2(Bucket = src_bucket, Prefix = src_url.path.lstrip('/'))['Contents']:
         new_dest_prefix = re.sub(src_prefix, dest_prefix, obj['Key'], 1)
 
@@ -358,19 +313,6 @@ def move_file(spark: SparkSession):
 
 ```python
 def sync_file(spark: SparkSession):
-    import boto3
-    import re
-    from urllib.parse import urlparse
-    mode = "sync"
-    fileRegex = ""
-    ignoreEmptyFiles = False
-    src_url = urlparse("s3://Prophecy/example/source/")
-    dest_url = urlparse("s3://Prophecy/example/target/")
-    src_bucket = src_url.netloc
-    src_prefix = src_url.path.lstrip('/')
-    dest_bucket = dest_url.netloc
-    dest_prefix = dest_url.path.lstrip('/')
-    s3 = boto3.client("s3")
     dest_files = set(
         [
           f_object['Key'].lstrip('/')
