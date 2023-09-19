@@ -44,23 +44,6 @@ import TabItem from '@theme/TabItem';
 
 ```py
 def CompareColumns_1(spark: SparkSession, in0: DataFrame, in1: DataFrame) -> DataFrame:
-    from pyspark.sql.functions import lit, sum, first, explode_outer, create_map, when, coalesce, col, row_number
-    from pyspark.sql.window import Window
-    from functools import reduce
-    valueColumnsMap = []
-
-    for vColumn in set(in0.columns).difference({"customer_id"}):
-        valueColumnsMap.extend([lit(vColumn), col(vColumn).cast("string")])
-
-    selectCols = [col("customer_id"),                   explode_outer(create_map(*valueColumnsMap))\
-                    .alias(
-                    "column_name",
-                    "##value##"
-                  )]
-    df1 = in0.select(*selectCols)
-    exploded1 = df1.alias("exploded1")
-    df2 = in1.select(*selectCols)
-    exploded2 = df2.alias("exploded2")
     joined = exploded1\
                  .join(
                    exploded2,
@@ -138,18 +121,6 @@ def CompareColumns_1(spark: SparkSession, in0: DataFrame, in1: DataFrame) -> Dat
           .otherwise(lit(0))
                  )
     mismatchExamples = joined\
-                           .filter(col("mismatch_count").__gt__(lit(0)))\
-                           .withColumn(
-                             "##row_number###",
-                             row_number()\
-                               .over(Window.partitionBy(col("column_name"), col("customer_id")).orderBy(col("customer_id")))
-                           )\
-                           .filter(
-                             (
-                               col("##row_number###")
-                               == lit(1)
-                             )
-                           )\
                            .select(
                              col("column_name"),
                              col("customer_id"),
@@ -167,14 +138,6 @@ def CompareColumns_1(spark: SparkSession, in0: DataFrame, in1: DataFrame) -> Dat
                            .dropDuplicates(["column_name"])
 
     return joined\
-        .drop(
-          "##left_value##"
-        )\
-        .drop(
-          "##right_value##"
-        )\
-        .withColumn("mismatch_example_left", lit(None))\
-        .withColumn("mismatch_example_right", lit(None))\
         .union(mismatchExamples)\
         .groupBy("column_name")\
         .agg(
@@ -257,31 +220,6 @@ object CompareColumns_1 {
         ).otherwise(lit(0))
       )
     joined
-      .drop("##left_value##")
-      .drop("##right_value##")
-      .withColumn("mismatch_example_left",  lit(null))
-      .withColumn("mismatch_example_right", lit(null))
-      .union(
-        joined
-          .filter(col("mismatch_count").gt(lit(0)))
-          .withColumn("##row_number###",
-                      row_number.over(
-                        Window
-                          .partitionBy(col("column_name"), col("customer_id"))
-                          .orderBy(col("customer_id"))
-                      )
-          )
-          .filter(col("##row_number###") === lit(1))
-          .select(
-            col("column_name"),
-            col("customer_id"),
-            lit(0).as("match_count"),
-            lit(0).as("mismatch_count"),
-            col("##left_value##").as("mismatch_example_left"),
-            col("##right_value##").as("mismatch_example_right")
-          )
-          .dropDuplicates("column_name")
-      )
       .groupBy("column_name")
       .agg(
         sum("match_count").as("match_count"),
@@ -307,3 +245,13 @@ object CompareColumns_1 {
 </Tabs>
 
 ````
+
+Below are the steps that are performed to compare two DataFrames in compare column Gem:
+
+- Pivot the DataFrame to get the key column's, compare column name and value
+- Join the pivoted DataFrames and compare the column value using key column's
+- Calculate the match and mismatch record counts
+
+:::note
+Repartition the DataFrames as they will be exploded and joined with each other
+:::
