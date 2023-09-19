@@ -1,35 +1,82 @@
 ---
-title: Configure Audit Logging
-id: auditLogging
+title: Syncing audit logs from SAAS
+id: audit-logging
 description: Prophecy Audit logs available to be exported in S3
 sidebar_position: 6
 tags:
-  - Audit Logs
+  - audit logs
+  - s3
 ---
 
 Prophecy provides access to audit logs of activities performed by Prophecy users, allowing your enterprise to monitor detailed usage patterns.
 The Prophecy admin can configure a S3 bucket to sync these events from Prophecy to their environment.
 
-:::info Saas Only
-Please note, this is only Available for our Saas Users only. Also, the initial Setup to enable this would require Manual Effort. Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about this in Details.
+:::info
+Please note, this is only available for our SaaS Users only. Also, the initial Setup to enable this would require Manual Effort. Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about this in detail.
 :::
 
-User needs to manually set up an S3 bucket and follow below steps to enable this Feature.
+An empty AWS S3 bucket with read/write permissions is required. Please follow the guidelines below to set up the bucket correctly.
 
 ## Configure S3 bucket for logs
 
-1. Create/reuse an AWS IAM user who requires access to Prophecy audit logs. There is no need to attach any policies to this user.
-2. Share the ARN of the AWS user with Prophecy, in order to grant permissions to access the audit events stored in Prophecy S3 bucket. The ARN should be of the format `arn:aws:iam::{{Customer-Account-ID}:user/{Customer-User}` with the actual customer details. Eg: `arn:aws:iam::123456789012:user/bob`.
-3. Reach out to Prophecy at [contact us](mailto:success@Prophecy.io) with above details to enable this in your account.
-4. Prophecy would provide the required access and communicate back the S3 bucket URL that can be used to access the events.
-5. You may now be able to access this bucket over an application (or) AWS CLI using the above user credentials.
-6. Example of AWS CLI access is given below. Use the below command to get the latest events bucket locally. You may use similar mechanism to access it from your applications.
+1. Create the S3 Bucket:
+   - Log in to your AWS account and navigate to the S3 service.
+   - Click on "Create Bucket" to initiate the bucket creation process.
+   - Choose a unique name for your bucket, following the format: `prophecy-customer-backend-events-xyz`, where `xyz` represents your name or any identifier of your choice.
+   - Select the desired AWS Region for the bucket. Ideally, choose the `us-east-1 (N. Virginia)`. If this region is not available, please inform us which region you selected as it requires additional configuration on our end.
+2. Set Object Ownership:
+
+   - After creating the bucket, ensure that the object ownership is set to `ACLs disabled (recommended)`. This can be done during or after the bucket creation process.
+
+3. Configuring Bucket Permissions for Prophecy:
+   - Open the newly created bucket in the AWS Management Console.
+   - Go to the "Permissions" section and locate the "Bucket Policy" tab.
+   - Apply the following permissions to allow Prophecy's IAM role to sync S3 objects using AWS DataSync.
 
 ```
-aws configure --> with user access keys
-cd {desired-directory}
-aws s3 sync s3://customer-backend-events-xyz
+{
+  "Version": "2008-10-17",
+  "Statement": [
+    {
+      "Sid": "DataSyncCreateS3LocationAndTaskAccess",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::133450206866:role/AWSDataSyncS3BucketAccessCustomerBackendEventsRole"
+      },
+      "Action": [
+        "s3:GetBucketLocation",
+        "s3:ListBucket",
+        "s3:ListBucketMultipartUploads",
+        "s3:AbortMultipartUpload",
+        "s3:GetObject",
+        "s3:ListMultipartUploadParts",
+        "s3:PutObject",
+        "s3:GetObjectTagging",
+        "s3:PutObjectTagging",
+        "s3:DeleteObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::prophecy-customer-backend-events-xyz",
+        "arn:aws:s3:::prophecy-customer-backend-events-xyz/*"
+      ]
+    },
+    {
+      "Sid": "DataSyncCreateS3Location",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::133450206866:user/s3access"
+      },
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::prophecy-customer-backend-events-xyz"
+    }
+  ]
+}
 ```
+
+In the sample above, replace `arn:aws:s3:::prophecy-customer-backend-events-xyz` with the ARN of your destination bucket.
+
+Please note that we need the Prophecy user principal (`s3access`) to be able to create S3 location at Prophecy's account and hence require this role with Sid `DataSyncCreateS3Location`.
+Please [contact us](mailto:success@Prophecy.io) with bucket ARN and region to enable this in your account.
 
 ## Audit events
 
@@ -37,7 +84,7 @@ This table lists events for each Entity/Action along with the Request parameters
 
 :::info
 
-Please note, Prophecy Uses GraphQL queries so User might find some difference in Request and Response parameters depending upon where the Queries are used from.
+Please note, Prophecy Uses GraphQL queries so you may find some difference in Request and Response parameters depending upon where the Queries are used from.
 
 :::
 

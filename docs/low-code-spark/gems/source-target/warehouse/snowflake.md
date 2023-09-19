@@ -26,17 +26,16 @@ Please refer the snowflake official documentation to attach private key to user 
 | Credentials            | Databricks credential name , else username and password for the snowflake account                                                                         | Required if `Credential Type` is `Databricks Secrets`  |
 | Username               | Login name for the Snowflake user                                                                                                                         | Required if `Credential Type` is `Username & Password` |
 | Password               | Password for the Snowflake user                                                                                                                           | Required if `Credential Type` is `Username & Password` |
-| Private Key Details    | Enable Private Key Details if snowflake user is associated with private key                                                                               | False                                                  |
-| Private key format     | Private key format of the private key file                                                                                                                | Required if `Private Key Details` is enabled           |
-| Private key filepath   | Location of Private key filepath                                                                                                                          | Required if `Private Key Details` is enabled           |
+| Private key filepath   | Location of Private key filepath in PKCS8 format                                                                                                          | Required if `Private Key Details` is enabled           |
 | Private key passphrase | Passphrase of Private key file                                                                                                                            | Required if private key file is passphrase enabled     |
 | Url                    | Hostname for your account in the format: `<account_identifier>.snowflakecomputing.com`. <br/> Eg: `https://DJ07623.ap-south-1.aws.snowflakecomputing.com` | True                                                   |
 | Database               | Database to use for the session after connecting                                                                                                          | True                                                   |
 | Schema                 | Schema to use for the session after connecting                                                                                                            | True                                                   |
-| Warehouse              | The default virtual warehouse to use for the session after connecting                                                                                     | False                                                  |
+| Warehouse              | Default virtual warehouse to use for the session after connecting                                                                                         | False                                                  |
+| Role                   | Default security role to use for the session after connecting                                                                                             | False                                                  |
 | Data Source            | Strategy to read data: `DB Table` or `SQL Query`.                                                                                                         | True                                                   |
-| Table                  | The name of the table to be read. All columns and records are retrieved (i.e. it is equivalent to `SELECT * FROM table`).                                 | Required if `Data Source` is `DB Table`                |
-| SQL Query              | The exact query (`SELECT` statement) to run                                                                                                               | Required if `Data Source` is `SQL Query`               |
+| Table                  | Name of the table to be read. All columns and records are retrieved (i.e. it is equivalent to `SELECT * FROM table`).                                     | Required if `Data Source` is `DB Table`                |
+| SQL Query              | Exact query (`SELECT` statement) to run                                                                                                                   | Required if `Data Source` is `SQL Query`               |
 
 ### Example {#source-example}
 
@@ -58,6 +57,7 @@ import TabItem from '@theme/TabItem';
 ```py
 def sf_customer(spark: SparkSession) -> DataFrame:
     from pyspark.dbutils import DBUtils
+
     return spark.read\
         .format("snowflake")\
         .options(
@@ -78,10 +78,10 @@ def sf_customer(spark: SparkSession) -> DataFrame:
 <TabItem value="scala" label="Scala">
 
 ```scala
-object sf_customer {
+object customer_snow_src {
   def apply(spark: SparkSession): DataFrame = {
     import com.databricks.dbutils_v1.DBUtilsHolder.dbutils
-    var reader = spark.read
+    var reader = context.spark.read
       .format("snowflake")
       .options(
         Map(
@@ -118,15 +118,14 @@ object sf_customer {
 | Credentials            | Databricks credential name , else username and password for the snowflake account                                                                                                                                                                                                                                         | Required if `Credential Type` is `Databricks Secrets`  |
 | Username               | Login name for the snowflake user                                                                                                                                                                                                                                                                                         | Required if `Credential Type` is `Username & Password` |
 | Password               | Password for the snowflake user                                                                                                                                                                                                                                                                                           | Required if `Credential Type` is `Username & Password` |
-| Private Key Details    | Enable Private Key Details if snowflake user is associated with private key                                                                                                                                                                                                                                               | False                                                  |
-| Private key format     | Private key format of the private key file                                                                                                                                                                                                                                                                                | Required if `Private Key Details` is enabled           |
-| Private key filepath   | Location of Private key filepath                                                                                                                                                                                                                                                                                          | Required if `Private Key Details` is enabled           |
+| Private key filepath   | Location of Private key filepath in PKCS8 format                                                                                                                                                                                                                                                                          | Required if `Private Key Details` is enabled           |
 | Private key passphrase | Passphrase of Private key file                                                                                                                                                                                                                                                                                            | Required if private key file is passphrase enabled     |
 | Url                    | Hostname for your account in the format: `<account_identifier>.snowflakecomputing.com`. <br/> Eg: `https://DJ07623.ap-south-1.aws.snowflakecomputing.com`                                                                                                                                                                 | True                                                   |
 | Database               | Database to use for the session after connecting                                                                                                                                                                                                                                                                          | True                                                   |
 | Schema                 | Schema to use for the session after connecting                                                                                                                                                                                                                                                                            | True                                                   |
-| Warehouse              | The default virtual warehouse to use for the session after connecting                                                                                                                                                                                                                                                     | False                                                  |
-| Table                  | The name of the table to which data is to be written.                                                                                                                                                                                                                                                                     | True                                                   |
+| Warehouse              | Default virtual warehouse to use for the session after connecting                                                                                                                                                                                                                                                         | False                                                  |
+| Role                   | Default security role to use for the session after connecting                                                                                                                                                                                                                                                             | False                                                  |
+| Table                  | Name of the table to which data is to be written.                                                                                                                                                                                                                                                                         | True                                                   |
 | Write Mode             | How to handle existing data. See [this table](#supported-write-modes) for a list of available options.                                                                                                                                                                                                                    | True                                                   |
 | Post-Script SQL        | DDL/DML SQL statements to execute before writing data.<br/> It is intended for statements that do not return a result set, for example DDL statements like `CREATE TABLE` and DML statements like `INSERT, UPDATE, and DELETE`.<br/> It is not useful for statements that return a result set, such as `SELECT` or `SHOW` | False                                                  |
 
@@ -155,7 +154,7 @@ object sf_customer {
 <TabItem value="py" label="Python">
 
 ```py
-def sf_customer(spark: SparkSession, in0: DataFrame):
+def customer_snow_tg(spark: SparkSession, in0: DataFrame):
     from pyspark.dbutils import DBUtils
     options = {
         "sfUrl": "https://DJ07623.ap-south-1.aws.snowflakecomputing.com",
@@ -165,20 +164,19 @@ def sf_customer(spark: SparkSession, in0: DataFrame):
         "sfSchema": "TPCDS_SF100TCL",
         "sfWarehouse": "COMPUTE_WH"
     }
-    spark.sparkContext._jvm.net.snowflake.spark.snowflake.Utils.runQuery(
-        spark.sparkContext._jvm.PythonUtils.toScalaMap(options),
-        "CREATE TABLE test_table(id INTEGER)"
-    )
     writer = in0.write.format("snowflake").options(**options)
-    writer.option("dbtable", "test_table").mode("overwrite").save()
+    writer = writer.option("dbtable", "CUSTOMERS")
+    writer = writer.mode("overwrite")
+    writer.save()
 ```
 
 </TabItem>
 <TabItem value="scala" label="Scala">
 
 ```scala
-object sf_customer {
+object customer_snow_tg {
   def apply(spark: SparkSession, in: DataFrame): Unit = {
+
     import net.snowflake.spark.snowflake.Utils
     import com.databricks.dbutils_v1.DBUtilsHolder.dbutils
     val options = Map("sfUrl" → "https://DJ07623.ap-south-1.aws.snowflakecomputing.com",
@@ -191,7 +189,6 @@ object sf_customer {
     var writer = in.write.format("snowflake").options(options)
     writer = writer.option("dbtable", "test_table")
     writer = writer.mode("overwrite")
-    Utils.runQuery(options, "CREATE TABLE test_table(id INTEGER)")
     writer.save()
   }
 }

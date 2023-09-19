@@ -16,6 +16,7 @@ are respected.
 We currently support
 
 - [Azure Active Directory](./azure-ad.md)
+- [Azure Active Directory with SCIM](./azuread-scim.md)
 - [Okta (SAML)](./saml-okta.md)
 - [Active Directory(LDAP)](./active-directory.md)
 
