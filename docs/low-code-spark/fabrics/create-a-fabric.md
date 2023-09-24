@@ -1,5 +1,5 @@
 ---
-title: How to create a Fabric
+title: Databricks
 id: create-a-Fabric
 description: Guide on how to create Fabrics
 sidebar_position: 1
