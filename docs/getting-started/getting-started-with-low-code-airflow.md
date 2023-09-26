@@ -23,7 +23,7 @@ We'll take you step by step from connecting your Databricks to Prophecy Managed 
 - Databricks Account
 - A Prophecy Project With Spark Pipeline or SQL Model running on Databricks
 
-If you don't have an existing project, please check out [this guide](https://docs.prophecy.io/concepts/project/#1-create-new-project) for [setting up a Spark Project,](https://docs.prophecy.io/tutorials/videos/design-Pipeline) and [this guide](/docs/getting-started/getting-started-with-low-code-sql.md) for setting up a SQL model in Prophecy.
+If you don't have an existing project, please check out [this guide](https://docs.prophecy.io/concepts/project/#1-create-new-project) for setting up a Spark Project, and [this guide](/docs/getting-started/getting-started-with-low-code-sql.md) for setting up a SQL model in Prophecy.
 
 ## 1. Setup Prophecy Fabric for Airflow
 
@@ -42,6 +42,8 @@ Once ready, click **(4) Continue**.
 Since we’re setting up a Fabric connected to Airflow, choose **Airflow** as the **(1) Provider Type** and **Prophecy Managed** as the **(2) Provider**.
 For connecting to Prophecy Managed Airflow, you don't need to provide any other details, so go ahead and click on **(3) Continue**.
 
+### 1.1 Adding Databricks Connection
+
 ![Add_connection.png](img/Airflow_1.3_Add_connection.png)
 To be able to Run your Databricks Pipelines and Models, you need to have connection from Prophecy Managed Airflow to your Databricks Environment.
 Click on **(1) Add Connection** button. This opens up the Add connection form.
@@ -50,6 +52,22 @@ Click on **(1) Add Connection** button. This opens up the Add connection form.
 Select Databricks Spark or Databricks SQL in **(1) Connection Type**. Now under the **(2) Fabric**, you would select the already created Fabric for Databricks Spark or Databricks SQL and Prophecy would setup the connection.
 You can provide a description in the **(3) Description**.
 Once done, click **(4) Save**.
+
+### 1.2 Adding AWS Connection
+
+To be able to trigger your Airflow Job, using an S3 File Sensor, you need to have connection from Prophecy Managed Airflow to you S3 account. For this, we need to add an AWS Connection.
+Click on **(1) Add Connection** button and select AWS in **(1) Connection Type**.
+
+Provide a **(1) Connection Name** to identify your connection, and provide the **(2) AWS Access Key ID** and **(3)AWS Secret Access Key**. Please check [here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) on how to get the access and secret key from AWS.
+Once done, hit **(4) Save**.
+
+### 1.3 Adding Email Connection
+
+To be able to send Email via Airflow using an Email Gem, you need to have Email connection in Prophecy Managed Airflow.
+Click on **(1) Add Connection** button and select Email in **(1) Connection Type**.
+
+Provide a **(1) Connection Name** to identify your connection, and provide the **(2) Host** as your SMTP host example `smtp.gmail.com`. Provide the login credentials for this server in **(2)Login** and **(3)Password** and provide your SMTP port in **(4) Port**.
+Once done, hit **(4) Save**.
 
 ![Fabric_complete.png](img/Airflow_1.5_Complete_Fabric_setup.png)
 You can add more than one connection for Databricks Spark,Databricks SQL, Email, HTTP, etc.
@@ -91,18 +109,14 @@ Click on **(1) Sensors**, and Drag the **(2) S3FileSensor Gem** from the dropdow
 
 Here, we will specify the S3 bucket/path on which we want to trigger the Job.
 
-In **(1) S3 Path(s)** specify
+In **(1) S3 Path(s)** specify the path of file in your Bucket and specify the bucket name in **(2) Bucket Name**. Airflow will check if this file exists in the specified bucket periodically and trigger the Job when it arrives. Select the created Connection for AWS in **(3) Connection name** and hit ** (4) Save**.
 
 ### 2.2 Adding Email Gem
 
 Click on the **(1) Operators**, and Drag the **(2) Email Gem** from the dropdown to the canvas. If you drag this closer to output port of the previous Gem, it will get auto-connected to it. Then click the newly added Gem and click **(3) Open** to open the Gem Configurations.
 
-Here we will specify our Email configurations.
-
-In **(1) To**, add your Email id where you want to receive the notification Email when the Job is triggered.
-In **(2) Connection name**, select the connection you created for Email in step 1.
-In **(3) Subject**, give a subject for the Email. You can simply write Starting Job <Job-name>.
-In **(4) Email content**, give any content you want to add to your email.
+Here we will specify our Email configurations. In **(1) To**, add your Email id where you want to receive the notification Email when the Job is triggered. Select the **(2) Connection name**, you created for Email in step 1.3.
+You can provide a **(3) Subject**, for the Email and also add **(4) Email content** you want to add to your email.
 Additionally, you can also add cc and bcc emails.
 Once done, Click **(3) Save**!
 
@@ -110,7 +124,7 @@ Once done, Click **(3) Save**!
 
 ![Add_Pipeline_Gem](img/Airflow_2.2_Add_Pipeline_Gem.png)
 
-Click on **(1) Operators**, and Drag the **(2) Pipeline Gem** from the dropdown to the canvas. Drag it close tot the output port of the Email Gem, so that it gets auto-connected. Then click the newly added Gem and click **(3) Open** to open the Gem Configurations.
+Click on **(1) Operators**, and Drag the **(2) Pipeline Gem** from the dropdown to the canvas. Drag it close to the output port of the Email Gem, so that it gets auto-connected. Then click the newly added Gem and click **(3) Open** to open the Gem Configurations.
 
 Here, you will select the Pipeline and optionally override any config values for the Pipeline.
 
