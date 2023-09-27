@@ -20,7 +20,7 @@ Just include a Package as a dependency to take advantage of its contents.
 - **Jobs** in Packages can be used across projects as a configured instance. Sharing Jobs in Packages is a feature that will be coming soon after the Prophecy 3.2 release.
 - **Datasets** in Prophecy are pointers to actual data in your data storage solution. Prophecy doesn’t store any data, and we recommend not to treat Datasets in Packages as “data products.” That is, we recommend not to configure Datasets in a Package. Instead, leave Datasets configurable in the project where they are used. Importantly, access to the actual data remains dependent upon the user’s personal access token or username/password credential. To access the data in a new project, the user must select a Fabric with access permissions for that data.
 
-See the sections below for step-by-step instructions on how to [use](/docs/package-hub/package-hub.md#Use-a-package), [build](/docs/package-hub/package-hub.md#build-a-package), and [share](/docs/package-hub/package-hub.md#share-a-package) Packages.
+See the sections below for step-by-step instructions on how to [use](/docs/package-hub/package-hub.md#use-a-package), [build](/docs/package-hub/package-hub.md#build-a-package), and [share](/docs/package-hub/package-hub.md#share-a-package) Packages.
 
 ## Use a package
 
@@ -53,7 +53,7 @@ Consider now the `Framework` Project and two Projects that have dependencies on 
 
 ### Re-using Pipelines
 
-Since `MarketingLeads` Project lists package `Framework` as a dependency, any Pipelines from `Framework` will be accessible in `MarketingLeads` by passing [configurable variables.](https://docs.prophecy.io/low-code-spark/configuration/#Pipeline-configuration-instances) The `MarketingLeads` Project cannot change the Framework Pipelines. This is a good thing - the Platform team decides how `Framework` will evolve.
+Since `MarketingLeads` Project lists package `Framework` as a dependency, any Pipelines from `Framework` will be accessible in `MarketingLeads` by passing [configurable variables.](/docs/low-code-spark/configuration/configuration.md#pipeline-configuration) The `MarketingLeads` Project cannot change the Framework Pipelines. This is a good thing - the Platform team decides how `Framework` will evolve.
 
 ![7](img/7-ph.png)
 The MarketingAnalytics team can create a **(1)new Pipeline configuration** and **(2)name** it `LeadsCleanup`. Then **(3)select** that configuration, perhaps change the variable “table” value from default to a more interesting **(4)value** for their use case. `LeadsCleanup` is a configuration instance of the `GenericCleanup` Pipeline template.
@@ -96,7 +96,7 @@ Next specify the Gem’s code.
 
 ![13](img/13-ph.png)
 
-When you create a new Gem, a **(1)code guide** appears. Use the guide or replace with your **(2)custom code.** Explore the [Gem Structure](/docs/package-hub/Gem-builder/Gem-builder.md) to understand the code requirements. Then go to the **(3)Visual View** and make sure the UI appears with [no errors.](/docs/package-hub/Gem-builder/Gem-builder.md) Now the Custom Gem is ready to try in the canvas.
+When you create a new Gem, a **(1)code guide** appears. Use the guide or replace with your **(2)custom code.** Explore the [Gem Structure](/docs/package-hub/gem-builder/gem-builder.md) to understand the code requirements. Then go to the **(3)Visual View** and make sure the UI appears with [no errors.](/docs/package-hub/gem-builder/gem-builder.md) Now the Custom Gem is ready to try in the canvas.
 
 ![14](img/14-ph.png)
 
@@ -106,7 +106,7 @@ When you create a new Gem, a **(1)code guide** appears. Use the guide or replace
 
 **(1)Run** the custom Gem to check whether the functionality works as expected. Click **(2)Data** to view the data input and **(3)(output)** preview. The customer_id is encrypted after our function is applied.
 
-For more details on building Packages with Custom Gems, see the [Gembuilder documentation](/docs/package-hub/Gem-builder/Gem-builder.md)
+For more details on building Packages with Custom Gems, see the [Gembuilder documentation.](/docs/package-hub/gem-builder/gem-builder.md)
 
 Once you have tested your Gem in the canvas, and you are happy with both the **Gem UI Component** and **Gem Code Logic**, you will want release a tagged version.
 
@@ -153,11 +153,11 @@ A: Be sure the new project and dependent project are using the same language, eg
 Q: How do I use subgraphs from a dependency?
 A: Like Pipelines, Subgraphs can be used by dependent projects via [configurable variables.](https://docs.prophecy.io/low-code-spark/pubsub/shareable-subgraphs/#configurable-subgraphs)
 
-Q: Do you have a DataQuality Package?
+Q: Does Prophecy provide a DataQuality Package?
 A: Not yet, but coming soon!
 
 Q: How would I take a Package built by another team and evolve it in a new direction? That is, how can two teams take a single project in two different directions?
-A: One excellent option here is to Clone the Project instead of use as a Package Dependency. For example, let’s say the MarketingAnalytics team loved the Framework Package and wanted it to become a holding place for all the Marketing Pipelines. The Platform team, however, wants to keep the Framework Project as general as possible. How can the two teams each take a version of the project in their own direction?
+A: One excellent option here is to **Clone** the Project instead of use as a Package Dependency. For example, let’s say the MarketingAnalytics team loved the `Framework` Package and wanted it to become a holding place for all the Marketing Pipelines. The Platform team, however, wants to keep the `Framework` Project as general as possible. How can the two teams each take a version of the project in their own direction?
 
 ![18](img/18-ph.png)
 Just **(1)Clone** the `Framework` Project, and **(2)provide** a new name, team, Git account, and repository.
