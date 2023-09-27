@@ -5,23 +5,20 @@ description: Create and Share Reusable Pipeline Components
 tags: [package-hub]
 ---
 
-Prophecy introduces **Package Hub,**  which enables data practitioners to create and share Pipeline components.
+Prophecy introduces **Package Hub,** which enables data practitioners to create and share Pipeline components.
 
 ![1](img/1-ph.png)
 
 A Package is a versioned Project that can be shared across teams. As such, a Package can contain Pipeline templates, custom Gems, functions, subgraph templates, etc - a reusable version of everything a Project contains. Package dependencies allow us to re-use components so we don’t have to rebuild them. The coding community has been using packages for ages, and finally the low-code community can take advantage of the same idea. Packages are shareable within and across teams. For extra visibility, the Package Hub is a curated selection of Packages that your teams create and publish for other users to leverage.
 
-
-
 Just include a Package as a dependency to take advantage of its contents.
-* **Pipelines** in Packages can be used as templates in new or existing projects. Pass configuration variables to a template Pipeline to re-use in a new Project. For example, read/write from configured table names using a template Pipeline.
-* **Custom Gems** in Packages can be dragged and dropped into new or existing projects as you would any Gem. Configure the Custom Gem visually, execute, and view data previews.
-* **Subgraphs** in Packages can also be used as templates in new or existing Projects, very similar to Pipelines. (A Subgraph is essentially a mini Pipeline that can be called within a Pipeline.)
-* **User Defined Functions (UDFs)** are custom functions that can be re-used across projects by calling the function inside the Gem expressions. Sharing UDFs in packages is a feature that will be coming soon after the Prophecy 3.2 release. 
-* **Jobs** in Packages can be used across projects as a configured instance.  Sharing Jobs in Packages is a feature that will be coming soon after the Prophecy 3.2 release.
-* **Datasets** in Prophecy are pointers to actual data in your data storage solution. Prophecy doesn’t store any data, and we recommend not to treat Datasets in Packages as “data products.” That is, we recommend not to configure Datasets in a Package. Instead, leave Datasets configurable in the project where they are used. Importantly, access to the actual data remains dependent upon the user’s personal access token or username/password credential. To access the data in a new project, the user must select a Fabric with access permissions for that data.
 
-
+- **Pipelines** in Packages can be used as templates in new or existing projects. Pass configuration variables to a template Pipeline to re-use in a new Project. For example, read/write from configured table names using a template Pipeline.
+- **Custom Gems** in Packages can be dragged and dropped into new or existing projects as you would any Gem. Configure the Custom Gem visually, execute, and view data previews.
+- **Subgraphs** in Packages can also be used as templates in new or existing Projects, very similar to Pipelines. (A Subgraph is essentially a mini Pipeline that can be called within a Pipeline.)
+- **User Defined Functions (UDFs)** are custom functions that can be re-used across projects by calling the function inside the Gem expressions. Sharing UDFs in packages is a feature that will be coming soon after the Prophecy 3.2 release.
+- **Jobs** in Packages can be used across projects as a configured instance. Sharing Jobs in Packages is a feature that will be coming soon after the Prophecy 3.2 release.
+- **Datasets** in Prophecy are pointers to actual data in your data storage solution. Prophecy doesn’t store any data, and we recommend not to treat Datasets in Packages as “data products.” That is, we recommend not to configure Datasets in a Package. Instead, leave Datasets configurable in the project where they are used. Importantly, access to the actual data remains dependent upon the user’s personal access token or username/password credential. To access the data in a new project, the user must select a Fabric with access permissions for that data.
 
 See the sections below for step-by-step instructions on how to [use](/docs/package-hub/package-hub.md#Use-a-package), [build](/docs/package-hub/package-hub.md#build-a-package), and [share](/docs/package-hub/package-hub.md#share-a-package) Packages.
 
@@ -65,7 +62,7 @@ The MarketingAnalytics team can create a **(1)new Pipeline configuration** and *
 
 Now, in the same `CustomersModeling` Project, **(1)select** the desired configuration instance, and **(2)run** the Pipeline with that configuration. Here the `GenericCleanup` Pipeline is a readonly template, so the MarketingAnalytics team gets to take advantage of the logic while passing configurations relevant for their own use cases.
 
-If a change is needed in the `Framework` Pipelines, the changes must be made in the `Framework` Project. When the `Framework` Project is released with the changes, `MarketingLeads` Project can **(3)update** the dependency. With `Framework v0.0.2`, the `GenericCleanup` Pipeline has been updated with  **(4)additional Gems** which can now be used with the `LeadsCleanup` configuration.
+If a change is needed in the `Framework` Pipelines, the changes must be made in the `Framework` Project. When the `Framework` Project is released with the changes, `MarketingLeads` Project can **(3)update** the dependency. With `Framework v0.0.2`, the `GenericCleanup` Pipeline has been updated with **(4)additional Gems** which can now be used with the `LeadsCleanup` configuration.
 
 ### Re-using custom Gems
 
@@ -93,7 +90,7 @@ Start by **(1)creating** a new Project called `SecurityPython`. There are no cha
 
 ![12](img/12-ph.png)
 
-From the Project Browser, **(1)Create a new Gem.** Give the Gem a **(2)name** like `Encrypt`. This will be a Transformation Gem; another time try  creating a different Gem mode or category.
+From the Project Browser, **(1)Create a new Gem.** Give the Gem a **(2)name** like `Encrypt`. This will be a Transformation Gem; another time try creating a different Gem mode or category.
 
 Next specify the Gem’s code.
 
@@ -115,10 +112,10 @@ Once you have tested your Gem in the canvas, and you are happy with both the **G
 
 ![16](img/16-ph.png)
 
-**(1) Commit** and **(2)Release** the Project, including the Custom Gem.  Continue developing and releasing new versions as incremental improvements!
+**(1) Commit** and **(2)Release** the Project, including the Custom Gem. Continue developing and releasing new versions as incremental improvements!
 
 ```
-Note: 
+Note:
 The release must be made from the branch specified on project creation, usually main or master.
 This implementation ensures teams will review code before releasing.
 ```
@@ -131,24 +128,19 @@ The entire Project is **(1)packaged** into a jar or wheel file and uploaded to P
 
 ![17](img/17-ph.png)
 
-Select the **(2) Metadata** tab, then select your **(3)Project’s page**. Then select **(4)Access**, select the **(5)Teams** that should have access to the package. **(6)Send an invitation** to those teams. For the team’s best  packages that are intended for broad consumption, **(7)Publish** to the Package Hub.
-
-
+Select the **(2) Metadata** tab, then select your **(3)Project’s page**. Then select **(4)Access**, select the **(5)Teams** that should have access to the package. **(6)Send an invitation** to those teams. For the team’s best packages that are intended for broad consumption, **(7)Publish** to the Package Hub.
 
 If another team wants to use the `SecurityPython` package in their newProject, just add `SecurityPython` as a dependency for `newProject`. Now the user can see and use the `Encrypt` custom Gem.
-
-
 
 We have built and shared our package with a custom `Encrypt` Gem!
 
 ```!Information
-Coming soon: 
+Coming soon:
 Administer using HubManager (coming post 3.2)
 Admin users can manage which packages show up on the PackageHub, and which users can access
 ```
 
-
-With Package Hub, Platform teams can build solutions once, and re-use the logic for additional cases. Errors can be handled just once. Updated Packages take advantage of logic updates and error-fixes. Data Analyst teams will build Pipelines faster by taking advantage of the building blocks - custom Gems, UDFs - provided by the Platform team. Or, Data Analyst teams might create their own building blocks! Everyone can create and share Pipeline components with Package Hub. We’d love to hear how your teams are creating, sharing, and even curating Packages. Drop us a line at contact.us@prophecy.io -  we would LOVE to hear your feedback!
+With Package Hub, Platform teams can build solutions once, and re-use the logic for additional cases. Errors can be handled just once. Updated Packages take advantage of logic updates and error-fixes. Data Analyst teams will build Pipelines faster by taking advantage of the building blocks - custom Gems, UDFs - provided by the Platform team. Or, Data Analyst teams might create their own building blocks! Everyone can create and share Pipeline components with Package Hub. We’d love to hear how your teams are creating, sharing, and even curating Packages. [Schedule](https://www.prophecy.io/request-a-demo) some time with us - we would LOVE to hear your feedback!
 
 ## FAQ
 
@@ -172,4 +164,3 @@ Just **(1)Clone** the `Framework` Project, and **(2)provide** a new name, team, 
 
 Now the MarketingAnalytics team has their own Project, `MarketingFramework`, to evolve in their own direction. Notice the Pipelines are not templates, rather the `GenericCleanup` Pipeline can be edited by adding a new Gem, eg Repartition:
 ![19](img/19-ph.png)
-
