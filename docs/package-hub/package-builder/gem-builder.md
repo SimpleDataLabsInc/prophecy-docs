@@ -5,7 +5,7 @@ description: Build custom Gems to share across teams with the Package Hub
 tags: []
 ---
 
-While Prophecy offers dozens of Gems out-of-the-box, some data practitioners want to extend this idea and create their own Gems. Incorporate your custom code into a Prophecy Gem with Prophecy’s **Gem Builder.** Then publish the Gem with the entire Project to the **Package Hub** or share with selected teams.
+While Prophecy offers dozens of Gems out-of-the-box, some data practitioners want to extend this idea and create their own Gems. Incorporate your custom code into a Prophecy Gem with Prophecy’s **Gem Builder.** Then publish the Gem with the entire Project to the **[Package Hub](/docs/package-hub/package-hub.md)** or share with selected teams.
 
 ## Quickstart
 
@@ -13,16 +13,13 @@ When you’re ready to create a package, everything within the selected project 
 
 ### Quicksteps to create and share a custom Gem
 
-1. Create a new Spark (Python / Scala) or SQL Project or open an existing project. While this document is focused on Python and Scala, SQL coders can also create Gems using Macros.
-2. Add a new Gem.
-   a. Notice some skeleton (guide) code to get started.
-   b. Click Preview to review the user interface (UI) for your custom Gem. Your code is autosaved and available to commit to the linked Git repository.
-3. Edit the Gem: Paste/Write your code specification at the prompt. Use the [Gem Structure] to understand each code section.
-4. Update the Gem:
-   a. When the Gem code and associated User Interface (UI) are ready, Release the Project. The new custom Gem is included in the versioned Package on Git with the rest of the elements of the Project. Now the Package can be named as a dependency in other Projects.
-   b. Share the Package with specific teams or publish to the Package Hub for everyone to use.
+1. Create a new Spark (Python / Scala) or SQL Project or open an existing project. While this document is focused on Python and Scala, [SQL coders can also create Gems using Macros](/docs/package-hub/package-builder/gem-builder.md#faq).
+2. [Add](/docs/package-hub/package-builder/gem-builder.md#add-gem) a new Gem.
+   Notice some skeleton (guide) code to get started. Click Preview to review the user interface (UI) for your custom Gem.
+3. [Edit](/docs/package-hub/package-builder/gem-builder.md#edit-gem) the Gem: Paste/Write your code specification at the prompt. Use the [Gem Structure](/docs/package-hub/package-builder/gem-builder.md#gem-structure) to understand each code section.
+4. [Update](/docs/package-hub/package-builder/gem-builder.md#update-gem) the Gem. Release the Project. The new custom Gem is included in the versioned Package on Git with the rest of the elements of the Project. Share the Package with specific teams or publish to the Package Hub for better visibility.
 
-That’s it! Creating a custom Gem in Prophecy is easy. Let’s dig into the steps in detail below.
+That’s it! Creating a custom Gem in Prophecy is easy. Now the Package can be named as a dependency and used across Projects. Let’s dig into the steps in detail below.
 
 ## Add Gem
 
