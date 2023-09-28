@@ -90,11 +90,15 @@ In our “CustomGem,” we don’t see any UI components yet because we need to 
 
 The Limit Gem’s code is explained in detail in the Gem Structure [sections] below. [Extend] the classes and make a change, for example change the default limit value from 10 to 50. Your new Gem is available to drag-n-drop into the Pipeline canvas as demonstrated in the short video below. Test it out in a Pipeline! Make any changes needed on the feature branch.
 
-TODO: add video
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://fast.wistia.net/embed/iframe/7jd6ns0m0b?seo=false?videoFoam=true" title="Getting Started With SQL Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
 ## Update
 
-Once you have tested your Gem in the canvas, and you are happy with both the **Gem UI Component** and **Gem Code Logic**, you will want to update the Gem by releasing a tagged version. Continue developing and releasing new versions as incremental improvements! When you’re ready to re-use this code in other projects, share with specific teams or publish to the PackageHub. See the PackageBuilder [page] for details.
+Once you have tested your Gem in the canvas, and you are happy with both the **Gem UI Component** and **Gem Code Logic**, you will want to update the Gem by releasing a tagged version. Continue developing and releasing new versions as incremental improvements! When you’re ready to re-use this code in other projects, share with specific teams or publish to the Package Hub. See the [Package Hub](/docs/package-hub/package-hub.md#build-a-package) page for details.
 
 ## Gem structure
 
@@ -252,10 +256,6 @@ These properties are available in validate, onChange and apply and can be set fr
 For our CustomLimit Gem, we can take the same case class as the Limit Gem, maybe changing the default limit value.
 
 Now let’s take a look at the methods for the UI Gem component.
-
-:::info
-Every Gem must have package and import statements, parent class, properties class, required methods (dialog, validation, onChange, serialize/deserialize, apply), and component code.
-:::
 
 #### Dialog
 
@@ -499,7 +499,7 @@ Open the **(1) SparkBasics** package dependency for Python or Scala. Explore and
 
 If you like the column layout, then add the ColumnsLayout element to your custom Gem. Each time you edit the code, you can click “Preview” to test the change in the UI.
 
-#### Extend the Component Code with functions
+### Extend the Component Code with functions
 
 The ComponentCode contains the actual Spark code that needs to run on your Spark cluster. Functions are supported inside the apply method; just define and call the function.
 
@@ -540,7 +540,7 @@ filter ComponentCode with the added withColumn function:
   }
 ```
 
-#### Extend the read/write capabilities with Dataset Format Gems
+### Extend the read/write capabilities with Dataset Format Gems
 
 You may also wish to create a source or target Dataset format beyond the [provided formats](https://docs.prophecy.io/low-code-spark/Gems/source-target/). With GemBuilder, it’s possible to create custom Dataset formats! You’ll need to know how the Custom [DatasetFormat](https://docs.prophecy.io/low-code-spark/Gems/source-target/) Gems differ from Transformation Gems.
 
@@ -558,7 +558,7 @@ We learned the essential code for all Transform Gems using the Limit Gem as an e
 
 ## FAQ
 
-**How does Gembuilder work for projects aside from Python and Scala?** PackageHub supports re-usable components in SQL, for example, to create a Macro to use custom Jinja logic. A user can create a Custom Gem to be used within the same project using Macros. As of Prophecy Version 3.2, support for reusable components in SQL is in “beta” release. These are the limitations:
+**How does Gembuilder work for projects aside from Python and Scala?** Package Hub supports re-usable components in SQL, for example, to create a Macro to use custom Jinja logic. A user can create a Custom Gem to be used within the same project using Macros. As of Prophecy Version 3.2, support for reusable components in SQL is in “beta” release. These are the limitations:
 
 1. A SQL project cannot be marked as package. so it wont show on package hub.
 2. User cannot reuse a model, Gem etc from one project to another for SQL projects.

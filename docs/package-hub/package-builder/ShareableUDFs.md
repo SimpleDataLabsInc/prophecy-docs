@@ -6,7 +6,7 @@ description: Sharable UDFs within the project and to other projects
 tags: []
 ---
 
-Users can share the [user-defined functions (UDF)](../extensibility/user-defined-functions.md) across their Pipelines and Projects.
+Users can share the [user-defined functions (UDF)](/docs/low-code-spark/extensibility/user-defined-functions.md) across their Pipelines and Projects.
 
 ## Across Pipelines
 
@@ -27,7 +27,7 @@ So, if a user has edited or added UDF in a Pipeline, you might see uncommitted c
 
 ## Across Projects
 
-Once a Project (let's call it _BaseProject_) is added as a [Dependency](/low-code-spark/pubsub#project-dependency) to another Project (let's call it _AppProject_), all Project-level UDFs from _BaseProject_ are available in all Pipelines of _AppProject_.
+Once a Project (let's call it _BaseProject_) is added as a [Dependency](/docs/package-hub/package-hub.md#use-a-package) to another Project (let's call it _AppProject_), all Project-level UDFs from _BaseProject_ are available in all Pipelines of _AppProject_.
 
 For example:
 

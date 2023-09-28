@@ -96,7 +96,7 @@ Next specify the Gem’s code.
 
 ![13](img/13-ph.png)
 
-When you create a new Gem, a **(1)code guide** appears. Use the guide or replace with your **(2)custom code.** Explore the [Gem Structure](/docs/package-hub/gem-builder/gem-builder.md) to understand the code requirements. Then go to the **(3)Visual View** and make sure the UI appears with [no errors.](/docs/package-hub/gem-builder/gem-builder.md) Now the Custom Gem is ready to try in the canvas.
+When you create a new Gem, a **(1)code guide** appears. Use the guide or replace with your **(2)custom code.** Explore the [Gem Structure](/docs/package-hub/package-builder/gem-builder.md) to understand the code requirements. Then go to the **(3)Visual View** and make sure the UI appears with [no errors.](/docs/package-hub/package-builder/gem-builder.md) Now the Custom Gem is ready to try in the canvas.
 
 ![14](img/14-ph.png)
 
@@ -106,7 +106,7 @@ When you create a new Gem, a **(1)code guide** appears. Use the guide or replace
 
 **(1)Run** the custom Gem to check whether the functionality works as expected. Click **(2)Data** to view the data input and **(3)output** preview. The `customer_id` is encrypted after our function is applied.
 
-For more details on building Packages with Custom Gems, see the [Gembuilder documentation.](/docs/package-hub/gem-builder/gem-builder.md)
+For more details on building Packages with Custom Gems, see the [Gembuilder documentation.](/docs/package-hub/package-builder/gem-builder.md)
 
 Once you have tested your Gem in the canvas, and you are happy with both the **Gem UI Component** and **Gem Code Logic**, you will want to release a tagged version.
 
