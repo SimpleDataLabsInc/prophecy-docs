@@ -24,7 +24,7 @@ Prophecy supports the usage of object stores as a service for two leading cloud 
 - Prophecy manages a persistence storage system, responsible for holding uncommitted changes, as well as other relevant data.
 - To safeguard against potential disasters or unrecoverable failures, Prophecy offers a backup feature. This feature allows users to dump the database to remote cloud storage, ensuring the ability to restore it to a new cluster or the same cluster when necessary.
 - The current backup support always performs full backups, providing comprehensive data protection.
-  This backup functionality has been available since the release of Prophecy version 3.1.2.0.
+  This backup functionality has been available since the release of Prophecy version 3.1.2.0 (Please note this doc is constantly updated with new features/options and hence it is better to always go with the latest version of Prophecy).
 
 ### User events audit logs
 
@@ -65,15 +65,15 @@ The following providers are supported where data can be pushed to. This can be s
 
 For this provider, set `OBJECT_STORE_LOCATION_TYPE` to `s3` and configure using the following variables:
 
-| Environment variable name     | Description                                 | Default value                                   |
-| ----------------------------- | ------------------------------------------- | ----------------------------------------------- |
-| `OBJECT_STORE_LOCATION_LOCAL` | Any PVC Mount point with storage            | `/backup`                                       |
-| `AWS_S3_BUCKET_NAME`          | S3 Bucket name                              | `athena-ondemand-backup`                        |
-| `AWS_S3_BUCKET_URL_PREFIX`    | S3 URL Prefix                               | `https://s3.console.aws.amazon.com/s3/buckets/` |
-| `AWS_S3_BUCKET_URL_SUFFIX`    | S3 URL Suffix                               | `&prefix=%v/%v/&showversions=false`             |
-| `AWS_S3_REGION`               | S3 Region                                   | `us-west-2`                                     |
-| `AWS_ACCESS_KEY`              | AWS Access key with the required privileges |                                                 |
-| `AWS_SECRET_KEY`              | AWS Secret key with the required privileges |                                                 |
+| Environment variable name     | Description                                 | Default value                        |
+| ----------------------------- | ------------------------------------------- | ------------------------------------ |
+| `OBJECT_STORE_LOCATION_LOCAL` | Any PVC Mount point with storage            | `/backup`                            |
+| `AWS_S3_BUCKET_NAME`          | S3 Bucket name                              | `athena-ondemand-backup`             |
+| `AWS_S3_ENDPOINT`             | S3 Endpoint used to communicate with        | `https://s3.us-west-2.amazonaws.com` |
+| `AWS_S3_FORCE_PATH_STYLE`     | If S3 should use path style for bucket name | `true`                               |
+| `AWS_S3_REGION`               | S3 Region                                   | `us-west-2`                          |
+| `AWS_ACCESS_KEY`              | AWS Access key with the required privileges |                                      |
+| `AWS_SECRET_KEY`              | AWS Secret key with the required privileges |                                      |
 
 #### Azure Blob Storage
 
