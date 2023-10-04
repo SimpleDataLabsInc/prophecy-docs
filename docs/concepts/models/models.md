@@ -10,4 +10,4 @@ tags:
   - target
 ---
 
-# Coming soon!
+Detailed documentation on **SQL Models** coming soon!

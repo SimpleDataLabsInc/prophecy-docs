@@ -1,11 +1,11 @@
 ---
-title: Gem Builder
+title: Build Shareable Gems
 id: Gem-builder
 description: Build custom Gems to share across teams with the Package Hub
 tags: []
 ---
 
-While Prophecy offers dozens of Gems out-of-the-box, some data practitioners want to extend this idea and create their own Gems. Incorporate your custom code into a Prophecy Gem with Prophecy’s **Gem Builder.** Then publish the Gem with the entire Project to the **[Package Hub](/docs/package-hub/package-hub.md)** or share with selected teams.
+While Prophecy offers dozens of Gems out-of-the-box, some data practitioners want to extend this idea and create their own Gems. Incorporate your custom code into a Prophecy Gem. As part of Prophecy’s **Package Builder**, publish your custom Gem with the entire Project to the **[Package Hub](/docs/package-hub/package-hub.md)** or share with selected teams.
 
 ## Quickstart
 
@@ -471,7 +471,7 @@ class LimitCode(props: PropertiesType) extends ComponentCode {
 
 ````
 
-You can go ahead and preview the component in the Gem Builder now to see how it looks. Note some Gem examples have functions defined within the apply method.
+You can go ahead and preview the component to see how it looks. Note some Gem examples have functions defined within the apply method.
 
 That’s all the code for our example Transformation, the Limit Gem. We walked through the package and import statements, parent class, and properties class. We explored the required methods dialog, validation, onChange, (de)serializeProperty. Finally we saw the Limit Gem’s component code. Now we have a basic understanding of the components needed for any Transformation Gem.
 

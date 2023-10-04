@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: Shareable Pipelines
+title: Build Shareable Pipelines
 id: shareable-pipelines
 description: Shareable Pipelines within the project and to other projects
 tags: []
