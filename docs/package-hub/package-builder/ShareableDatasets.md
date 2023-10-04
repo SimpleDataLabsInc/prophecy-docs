@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Shareable Datasets
+title: Build Shareable Datasets
 id: shareable-datasets
 description: Shareable Datasets within the project
 tags: []

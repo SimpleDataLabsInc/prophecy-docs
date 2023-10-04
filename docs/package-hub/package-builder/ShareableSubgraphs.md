@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Shareable Subgraphs
+title: Build Shareable Subgraphs
 id: shareable-subgraphs
 description: Sharable Subgraphs within the project and to other projects
 tags: []

@@ -9,3 +9,5 @@ tags:
   - sql
   - target
 ---
+
+Detailed documentation on **SQL Models** coming soon!
