@@ -1,5 +1,5 @@
 ---
-title: Data Copilot (NEW!)
+title: Data Copilot
 id: copilot
 description: The AI assistant for data Pipelines and models
 sidebar_position: 8
