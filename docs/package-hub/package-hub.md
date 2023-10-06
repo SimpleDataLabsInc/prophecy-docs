@@ -1,8 +1,8 @@
 ---
 title: Package Hub
-id: package-hub
+id: Package-hub
 description: Create and Share Reusable Pipeline Components
-tags: [package-hub]
+tags: [Package-hub]
 ---
 
 Prophecy introduces **Package Hub,** which enables data practitioners to create and share Pipeline components.
@@ -13,32 +13,34 @@ Prophecy introduces **Package Hub,** which enables data practitioners to create 
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-A Package is a versioned Project that can be shared across teams. As such, a Package can contain Pipeline templates, [custom Gems](/docs/package-hub/package-builder/gem-builder.md), functions, subgraph templates, etc - a reusable version of everything a Project contains. Package dependencies allow us to re-use components so we don’t have to rebuild them. The coding community has been using packages for ages, and finally the low-code community can take advantage of the same idea. Packages are shareable within and across teams. For extra visibility, the Package Hub is a curated selection of Packages that your teams create and publish for other users to leverage.
+<br />
 
-Just include a Package as a dependency to take advantage of its contents. See the sections below for step-by-step instructions on how to [use](/docs/package-hub/package-hub.md#use-a-package), [build](/docs/package-hub/package-hub.md#build-a-package), and [share](/docs/package-hub/package-hub.md#share-a-package) Packages. For those looking for a deeper dive on building packages, see the [Package Builder](/docs/package-hub/package-builder/package-builder.md) page.
+A Package is a versioned Project that can be shared across teams. As such, a Package can contain Pipeline templates, [custom Gems](/docs/Package-hub/Package-builder/gem-builder.md), functions, subgraph templates, etc - a reusable version of everything a Project contains. Package dependencies allow us to re-use components so we don’t have to rebuild them. The coding community has been using Packages for ages, and finally the low-code community can take advantage of the same idea. Packages are shareable within and across teams. For extra visibility, the Package Hub is a curated selection of Packages that your teams create and publish for other users to leverage.
 
-## Use a package
+Just include a Package as a dependency to take advantage of its contents. See the sections below for step-by-step instructions on how to [use](/docs/Package-hub/Package-hub.md#use-a-Package), [build](/docs/Package-hub/Package-hub.md#build-a-Package), and [share](/docs/Package-hub/Package-hub.md#share-a-Package) Packages. For those looking for a deeper dive on building Packages, see the [Package Builder](/docs/Package-hub/Package-builder/Package-builder.md) page.
 
-Open the helloworld project or create a new project. Notice the dependencies include `SparkBasics` Project:
+## Use a Package
+
+Open the helloworld Project or create a new Project. Notice the dependencies include `SparkBasics` Project:
 
 ![2](img/2-ph.png)
 
-On opening a NewPipeline, notice all the transformation dropdown Gems are from `SparkBasics` package. Drag and drop a Gem, eg Deduplicate, from SparkBasics package to use in a NewProject Pipeline.
+On opening a NewPipeline, notice all the transformation dropdown Gems are from `SparkBasics` Package. Drag and drop a Gem, eg Deduplicate, from SparkBasics Package to use in a NewProject Pipeline.
 
 ![3](img/3-ph.png)
-Already you are employing an engineering best practice: package dependencies! When we say that a project USES a package, another way to say it is “a Project has a dependency on the Package.” `NewProject` has a dependency on SparkBasics Package. But don’t stop there. You’ll want to use packages shared by your teammates!
+Already you are employing an engineering best practice: Package dependencies! When we say that a Project USES a Package, another way to say it is “a Project has a dependency on the Package.” `NewProject` has a dependency on SparkBasics Package. But don’t stop there. You’ll want to use Packages shared by your teammates!
 
 Adding a Package to your Project is easy. From a Pipeline, just **(1)Add a new Package.** Now the Package and all of the contents - Pipeline templates, custom Gems, jobs, UDFs, etc - will be accessible in your Pipeline and the entire Project. Want to see the list of Packages available for your Project? From the **(2)Project page,** click **(3)Dependencies** to see the Packages listed as Dependencies for your Project. **(4)Add or remove** dependencies using the dropdown.
 
 ![4](img/4-ph.png)
 
-Another great way to find Packages is via the **(1)Package Hub.** This Hub serves to give visibility to the best, curated Packages that Teams want to highlight. Therefore, only Published Packages appear in the PackageHub. Search for a Package by search string, or filter by content, type, or team. **(2)Select a package card** and **(3)Use** the Package as a dependency to a new or existing project.
+Another great way to find Packages is via the **(1)Package Hub.** This Hub serves to give visibility to the best, curated Packages that Teams want to highlight. Therefore, only Published Packages appear in the PackageHub. Search for a Package by search string, or filter by content, type, or team. **(2)Select a Package card** and **(3)Use** the Package as a dependency to a new or existing Project.
 
 ![5](img/5-ph.png)
 
 A Package can contain Pipeline templates, custom Gems, Subgraph templates, Functions, and more. In fact, a Package can contain anything a Project contains. Why? **A Package is a Project that has been Released with a version.**
 
-A Package is a set of logic to apply in various situations. Any changes to this logic would be done via versioned package release. For this reason, the projects that USE the package will not be able to change the package.
+A Package is a set of logic to apply in various situations. Any changes to this logic would be done via versioned Package release. For this reason, the Projects that USE the Package will not be able to change the Package.
 
 Let’s diagram a slightly more complex scenario that represents how your teams might use Packages. (So far we’ve considered `SparkBasics`, a Project created by the engineering team at Prophecy which only contains the Gems we already know and love.) We need a slightly more complex scenario to explore re-using Pipeline templates and custom Gems. (Detailed pages exploring re-usable subgraphs, UDFs, and jobs will be available in the near future.)
 
@@ -48,7 +50,7 @@ Consider now the `Framework` Project and two Projects that have dependencies on 
 
 ### Re-using Pipelines
 
-Since `MarketingLeads` Project lists package `Framework` as a dependency, any Pipelines from `Framework` will be accessible in `MarketingLeads` by passing [configurable variables.](/docs/low-code-spark/configuration/configuration.md#pipeline-configuration) The `MarketingLeads` Project cannot change the Framework Pipelines. This is a good thing - the Platform team decides how `Framework` will evolve.
+Since `MarketingLeads` Project lists Package `Framework` as a dependency, any Pipelines from `Framework` will be accessible in `MarketingLeads` by passing [configurable variables.](/docs/low-code-spark/configuration/configuration.md#pipeline-configuration) The `MarketingLeads` Project cannot change the Framework Pipelines. This is a good thing - the Platform team decides how `Framework` will evolve.
 
 ![7](img/7-ph.png)
 The MarketingAnalytics team can create a **(1)new Pipeline configuration** and **(2)name** it `LeadsCleanup`. Then **(3)select** that configuration, perhaps change the variable “table” value from default to a more interesting **(4)value** for their use case. `LeadsCleanup` is a configuration instance of the `GenericCleanup` Pipeline template.
@@ -73,11 +75,11 @@ Likewise, new Dataset Format Gems from `Framework` can be used in a new Pipeline
 
 Select from the **(1)source/target** dropdown menu, and **(2)select** the new Dataset format card from the options. The Platform and MarketingAnalytics teams are using the industry best-practice for re-usable components.
 
-Try this out for yourself! In the next sections, we’ll walk through how to [build](/docs/package-hub/package-hub.md#build-a-package) and [share](/docs/package-hub/package-hub.md#share-a-package) a package.
+Try this out for yourself! In the next sections, we’ll walk through how to [build](/docs/Package-hub/Package-hub.md#build-a-Package) and [share](/docs/Package-hub/Package-hub.md#share-a-Package) a Package.
 
-## Build a package
+## Build a Package
 
-A package is simply a released project. The project can contain Pipeline templates, functions, subgraph templates, custom Gems, etc. The most important of these components are custom Gems, so we’ll focus on building a Package with a Custom Gem here.
+A Package is simply a released Project. The Project can contain Pipeline templates, functions, subgraph templates, custom Gems, etc. The most important of these components are custom Gems, so we’ll focus on building a Package with a Custom Gem here.
 
 ![11](img/11-ph.png)
 
@@ -91,7 +93,7 @@ Next specify the Gem’s code.
 
 ![13](img/13-ph.png)
 
-When you create a new Gem, a **(1)code guide** appears. Use the guide or replace with your **(2)custom code.** Explore the [Gem Structure](/docs/package-hub/package-builder/gem-builder.md) to understand the code requirements. Then go to the **(3)Visual View** and make sure the UI appears with [no errors.](/docs/package-hub/package-builder/gem-builder.md) Now the Custom Gem is ready to try in the canvas.
+When you create a new Gem, a **(1)code guide** appears. Use the guide or replace with your **(2)custom code.** Explore the [Gem Structure](/docs/Package-hub/Package-builder/gem-builder.md) to understand the code requirements. Then go to the **(3)Visual View** and make sure the UI appears with [no errors.](/docs/Package-hub/Package-builder/gem-builder.md) Now the Custom Gem is ready to try in the canvas.
 
 ![14](img/14-ph.png)
 
@@ -101,7 +103,7 @@ When you create a new Gem, a **(1)code guide** appears. Use the guide or replace
 
 **(1)Run** the custom Gem to check whether the functionality works as expected. Click **(2)Data** to view the data input and **(3)output** preview. The `customer_id` is encrypted after our function is applied.
 
-Click [here](/docs/package-hub/package-builder/gem-builder.md) for a deep dive on building Packages with Custom Gems.
+Click [here](/docs/Package-hub/Package-builder/gem-builder.md) for a deep dive on building Packages with Custom Gems.
 
 Once you have tested your Gem in the canvas, and you are happy with both the **Gem UI Component** and **Gem Code Logic**, you will want to release a tagged version.
 
@@ -111,28 +113,28 @@ Once you have tested your Gem in the canvas, and you are happy with both the **G
 
 ```
 Note:
-The release must be made from the branch specified on project creation, usually main or master.
+The release must be made from the branch specified on Project creation, usually main or master.
 This implementation ensures teams will review code before releasing.
 ```
 
-Now we have built a package! Now other projects owned by the same team can use the package as a versioned dependency.
+Now we have built a Package! Now other Projects owned by the same team can use the Package as a versioned dependency.
 
-## Share a package
+## Share a Package
 
-The entire Project is **(1)packaged** into a jar or wheel file and uploaded to Prophecy’s artifactory. Once the Package is successfully released, it can be shared with specific teams or highlighted by publishing to the Package Hub.
+The entire Project is **(1)Packaged** into a jar or wheel file and uploaded to Prophecy’s artifactory. Once the Package is successfully released, it can be shared with specific teams or highlighted by publishing to the Package Hub.
 
 ![17](img/17-ph.png)
 
-Select the **(2) Metadata** tab, then select your **(3)Project’s page**. Then select **(4)Access**, select the **(5)Teams** that should have access to the package. **(6)Send an invitation** to those teams. For the team’s best packages that are intended for broad consumption, **(7)Publish** to the Package Hub.
+Select the **(2) Metadata** tab, then select your **(3)Project’s page**. Then select **(4)Access**, select the **(5)Teams** that should have access to the Package. **(6)Send an invitation** to those teams. For the team’s best Packages that are intended for broad consumption, **(7)Publish** to the Package Hub.
 
-If another team wants to use the `SecurityPython` package in their newProject, just add `SecurityPython` as a dependency for `newProject`. Now the user can see and use the `Encrypt` custom Gem.
+If another team wants to use the `SecurityPython` Package in their newProject, just add `SecurityPython` as a dependency for `newProject`. Now the user can see and use the `Encrypt` custom Gem.
 
-We have built and shared our package with a custom `Encrypt` Gem!
+We have built and shared our Package with a custom `Encrypt` Gem!
 
 ```!Information
 Coming soon:
 Administer using HubManager (coming post 3.2)
-Admin users can manage which packages show up on the PackageHub, and which users can access
+Admin users can manage which Packages show up on the PackageHub, and which users can access
 ```
 
 With Package Hub, Platform teams can build solutions once, and re-use the logic for additional cases. Errors can be handled just once. Updated Packages take advantage of logic updates and error-fixes. Data Analyst teams will build Pipelines faster by taking advantage of the building blocks - custom Gems, UDFs - provided by the Platform team. Or, Data Analyst teams might create their own building blocks! Everyone can create and share Pipeline components with Package Hub. We’d love to hear how your teams are creating, sharing, and even curating Packages. [Schedule](https://www.prophecy.io/request-a-demo) some time with us - we would LOVE to hear your feedback!
@@ -140,19 +142,19 @@ With Package Hub, Platform teams can build solutions once, and re-use the logic 
 ## FAQ
 
 **Q: I shared a dependency to a team, but we don’t see any email notification.**
-A: The share “invitation” is not sent via email. Rather, the team would be able to add that project as a dependency to their new or existing projects.
+A: The share “invitation” is not sent via email. Rather, the team would be able to add that Project as a dependency to their new or existing Projects.
 
-**Q: I shared a dependency to a team, but they don’t see the package listed when they try to add as a dependency.**
-A: Be sure the new project and dependent project are using the same language, eg Scala or Python. If the new project is a Scala project, only Scala Packages can be added as dependencies.
+**Q: I shared a dependency to a team, but they don’t see the Package listed when they try to add as a dependency.**
+A: Be sure the new Project and dependent Project are using the same language, eg Scala or Python. If the new Project is a Scala Project, only Scala Packages can be added as dependencies.
 
 **Q: How do I use subgraphs from a dependency?**
-A: Like Pipelines, Subgraphs can be used by dependent projects via [configurable variables.](https://docs.prophecy.io/low-code-spark/pubsub/shareable-subgraphs/#configurable-subgraphs)
+A: Like Pipelines, Subgraphs can be used by dependent Projects via [configurable variables.](https://docs.prophecy.io/low-code-spark/pubsub/shareable-subgraphs/#configurable-subgraphs)
 
 **Q: Does Prophecy provide a DataQuality Package?**
 A: Not yet, but coming soon!
 
-**Q: How would I take a Package built by another team and evolve it in a new direction? That is, how can two teams take a single project in two different directions?**
-A: One excellent option here is to **Clone** the Project instead of use as a Package Dependency. For example, let’s say the MarketingAnalytics team loved the `Framework` Package and wanted it to become a holding place for all the Marketing Pipelines. The Platform team, however, wants to keep the `Framework` Project as general as possible. How can the two teams each take a version of the project in their own direction?
+**Q: How would I take a Package built by another team and evolve it in a new direction? That is, how can two teams take a single Project in two different directions?**
+A: One excellent option here is to **Clone** the Project instead of use as a Package Dependency. For example, let’s say the MarketingAnalytics team loved the `Framework` Package and wanted it to become a holding place for all the Marketing Pipelines. The Platform team, however, wants to keep the `Framework` Project as general as possible. How can the two teams each take a version of the Project in their own direction?
 
 ![18](img/18-ph.png)
 Just **(1)Clone** the `Framework` Project, and **(2)provide** a new name, team, Git account, and repository.
