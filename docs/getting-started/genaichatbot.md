@@ -1,5 +1,5 @@
 ---
-title: Generative AI Chatbot (NEW!)
+title: Generative AI Chatbot
 id: gen-ai-chatbot
 description: Build a generative AI application that answers questions in Slack based on relevant content from the web.
 sidebar_position: 9

@@ -110,6 +110,7 @@ const config = {
         searchParameters: {},
         searchPagePath: "search",
       },
+      zoom: {},
     }),
 
   plugins: [
@@ -123,6 +124,9 @@ const config = {
           },
         ],
       },
+    ],
+    [
+      "@docusaurus/plugin-image-zoom",
     ],
   ],
 };
