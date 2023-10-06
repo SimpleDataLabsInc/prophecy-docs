@@ -71,15 +71,15 @@ Once, the token is generated copy and save it from **(5) Token** and you’re go
 
 Prophecy introduces the concept of a Fabric to describe an execution environment. In this case, we create a single Fabric to connect a Databricks cluster or warehouse, execute SQL models interactively, and deploy scheduled Jobs. The Fabric defines the environment where SQL tables and views are materialized. Typically you should setup at least one Fabric each for development and production environments. Use the development environment(Fabric) for quick ad-hoc building purposes with only sample data and use the production environment for daily runs with real data for your use case.
 
-You can read more about Fabrics [here.](https://docs.prophecy.io/concepts/fabrics/create-a-fabric/)
+You can read more about Fabrics [here.](/docs/concepts/fabrics/fabrics.md)
 
-![Create Fabric](img/2-4-create-fabric.png)
+![Create Fabric](img/2-4-create-fabric-replacement.png)
 
 Setting up a Fabric is very straightforward now that we have copied the JDBC URL and Personal Access Token from the previous steps. Click the **(1) Create Entity** button, and choose **(2) Create Fabric** option. Please note, until you setup a Fabric, creation of other entities is going to be disabled. The Fabric creation is composed of two steps: Basic Info and Providers setup. On the Basic Info screen, enter a **(1) Fabric Name**, **(2) Fabric Description,** and choose the **(3) Team** that’s going to own the Fabric.
 
 Once ready, click **(4) Continue.**
 
-![Fill Fabric Details](img/2-5-fill-fabric-details.png)
+![Fill Fabric Details](img/2-5-fill-fabric-details-replacement.png)
 
 Since we’re setting up a Fabric connected to Databrick’s JDBC SQL endpoint, we choose SQL as the **(1) Provider Type** and Databricks as the **(2) Provider.**
 
