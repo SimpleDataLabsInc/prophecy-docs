@@ -13,6 +13,8 @@ Prophecy introduces **Package Hub,** which enables data practitioners to create 
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
+<br />
+
 A Package is a versioned Project that can be shared across teams. As such, a Package can contain Pipeline templates, [custom Gems](/docs/package-hub/package-builder/gem-builder.md), functions, subgraph templates, etc - a reusable version of everything a Project contains. Package dependencies allow us to re-use components so we don’t have to rebuild them. The coding community has been using packages for ages, and finally the low-code community can take advantage of the same idea. Packages are shareable within and across teams. For extra visibility, the Package Hub is a curated selection of Packages that your teams create and publish for other users to leverage.
 
 Just include a Package as a dependency to take advantage of its contents. See the sections below for step-by-step instructions on how to [use](/docs/package-hub/package-hub.md#use-a-package), [build](/docs/package-hub/package-hub.md#build-a-package), and [share](/docs/package-hub/package-hub.md#share-a-package) Packages. For those looking for a deeper dive on building packages, see the [Package Builder](/docs/package-hub/package-builder/package-builder.md) page.
