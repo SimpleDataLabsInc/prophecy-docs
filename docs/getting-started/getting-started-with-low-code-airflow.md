@@ -16,7 +16,8 @@ Moreover, you have the flexibility to enhance functionality by incorporating you
 
 #### In this quick-start, we will show you how to use Prophecy Managed Airflow to Run and schedule your Spark and SQL Pipelines
 
-We'll take you step by step from connecting your Databricks to Prophecy Managed Airflow to creating your first [Airflow DAG](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html) and scheduling it. By the end of this training, you'll have an understanding of Airflow DAGs, be able to use our Visual interface to quickly create your DAG, and schedule this DAG on Prophecy Hosted Airflow. Let's dig in!
+We'll take you step by step from connecting your Databricks to Prophecy Managed Airflow to creating your first [Airflow DAG](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html) and scheduling it.
+By the end of this training, you'll have an understanding of Airflow DAGs, be able to use our Visual interface to quickly create your DAG, and schedule this DAG on Prophecy Hosted Airflow. Let's dig in!
 
 #### You will need
 
@@ -30,50 +31,66 @@ If you don't have an existing project, please check out [this guide](https://doc
 Prophecy introduces the concept of a Fabric to describe an execution environment. In this case, we create a Fabric to connect to Airflow, and create and schedule DAGs in it.
 For this guide, we would be using Prophecy Managed Airflow, so an external Airflow instance is not required.
 
-![Create Fabric](img/2-4-create-fabric.png)
+![Create Fabric](img/3.1_Create_Fabric.png)
 
 Setting up a Fabric is very straightforward. Click the **(1) Create Entity** button, and choose **(2) Create Fabric** option. The Fabric creation is composed of two steps: Basic Info and Providers setup.
 On the Basic Info screen, enter a **(1) Fabric Name**, **(2) Fabric Description**, and choose the **(3) Team** that’s going to own the Fabric.
 
 Once ready, click **(4) Continue**.
 
-![Fill_fabric_details.png](img/Airflow_1.2_Create_Fabric.png)
+![Fill_fabric_details.png](img/3.2_Create_Fabric.png)
 
 Since we’re setting up a Fabric connected to Airflow, choose **Airflow** as the **(1) Provider Type** and **Prophecy Managed** as the **(2) Provider**.
 For connecting to Prophecy Managed Airflow, you don't need to provide any other details, so go ahead and click on **(3) Continue**.
 
-### 1.1 Adding Databricks Connection
-
-![Add_connection.png](img/Airflow_1.3_Add_connection.png)
-To be able to Run your Databricks Pipelines and Models, you need to have connection from Prophecy Managed Airflow to your Databricks Environment.
-Click on **(1) Add Connection** button. This opens up the Add connection form.
-
-![Add_connection_form.png](img/Airflow_1.4_Add_connection_form.png)
-Select Databricks Spark or Databricks SQL in **(1) Connection Type**. Now under the **(2) Fabric**, you would select the already created Fabric for Databricks Spark or Databricks SQL and Prophecy would setup the connection.
-You can provide a description in the **(3) Description**.
-Once done, click **(4) Save**.
-
-### 1.2 Adding AWS Connection
+### 1.1 Adding AWS Connection
 
 To be able to trigger your Airflow Job, using an S3 File Sensor, you need to have connection from Prophecy Managed Airflow to you S3 account. For this, we need to add an AWS Connection.
-Click on **(1) Add Connection** button and select AWS in **(1) Connection Type**.
+Click on **(1) Add Connection** button. This Opens up the Connection form as shown.
 
-Provide a **(1) Connection Name** to identify your connection, and provide the **(2) AWS Access Key ID** and **(3)AWS Secret Access Key**. Please check [here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) on how to get the access and secret key from AWS.
-Once done, hit **(4) Save**.
+![Add_connection](img/3.3_Add_Connection.png)
+
+Select AWS in **(1) Connection Type**. Provide a **(2) Connection Name** to identify your connection, add a **(3) Description** of your choice, and provide the **(4) AWS Access Key ID** and **(5)AWS Secret Access Key**. Please check [here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) on how to get the access and secret key from AWS.
+Once done, hit **(6) Save**.
+
+![Add_AWS_connection](img/3.4_AWS_Connection.png)
 
 ### 1.3 Adding Email Connection
 
 To be able to send Email via Airflow using an Email Gem, you need to have Email connection in Prophecy Managed Airflow.
-Click on **(1) Add Connection** button and select Email in **(1) Connection Type**.
+Click again on Add Connection button and select Email in **(1) Connection Type**.
 
-Provide a **(1) Connection Name** to identify your connection, and provide the **(2) Host** as your SMTP host example `smtp.gmail.com`. Provide the login credentials for this server in **(2)Login** and **(3)Password** and provide your SMTP port in **(4) Port**.
-Once done, hit **(4) Save**.
+Provide a **(2) Connection Name** to identify your connection, add a **(3) Description** of your choice, and provide the **(4) Host** as your SMTP host example `smtp.gmail.com`. Provide the login credentials for this server in **(5)Login** and **(6)Password** and provide your SMTP port in **(7) Port**.
+Once done, hit **(8) Save**.
+![Add_Email_connection.png](img/3.5_Email_connection.png)
 
-![Fabric_complete.png](img/Airflow_1.5_Complete_Fabric_setup.png)
-You can add more than one connection for Databricks Spark,Databricks SQL, Email, HTTP, etc.
-Once done click **(1) Complete** to complete your Fabric Setup.
+### 1.3 Adding Databricks Spark Connection
 
-You should now start seeing a new Fabric of type `Airflow` in the Fabric listing page.
+To be able to Run your Databricks Pipelines, you need to have connection from Prophecy Managed Airflow to your Databricks Environment.
+Click again on Add Connection button.
+
+Select Databricks Spark in **(1) Connection Type**. Now under the **(2) Fabric**, you would select the already created Fabric for Databricks Spark and Prophecy would setup the connection.
+You can provide a description in the **(3) Description**.
+Once done, click **(4) Save**.
+
+![Add_DB_Spark_connection.png](img/3.6_DB_Spark_connection.png)
+
+### 1.4 Adding Databricks SQL Connection
+
+To be able to Run your Databricks SQL Models, you need to have connection from Prophecy Managed Airflow to your Databricks SQL Environment.
+Click again on Add Connection button.
+
+Select Databricks SQL in **(1) Connection Type**. Now under the **(2) Fabric**, you would select the already created Fabric for Databricks SQL and Prophecy would setup the connection.
+You can provide a description in the **(3) Description**.
+Once done, click **(4) Save**.
+
+![Ad_DB_SQL_connection.png](img/3.7_DB_Sql_connection.png)
+
+After adding all connections, click **(1) Complete**.
+
+![Complete_fabric](img/3.8_Complete_fabric.png)
+
+After creating the Fabric, Lets create our first Airflow Job.
 
 ## 2. Create an Airflow Job
 
@@ -81,27 +98,19 @@ A Job is an entity that contains Gems to represent a DAG consisting of various T
 
 Let's see how to create an Airflow Job in Prophecy.
 
-![Create_Job](img/Airflow_2.1_Create_Job.png)
-
 Click the **(1) Create Entity** button, and choose **(2) Create Job** option.
 
-On the first screen, you would provide the Basic Info of the Job.
+In the side drawer that opens, you would provide the Basic Info of the Job. Start by selecting the **(1) Project** in which you want to create the Job. You can pick the existing Databricks Spark or SQL project here where you have created Pipelines/Models.
+Then pick your development **(2) Branch**. Here you can pick an existing branch for development, or create a new one. Provide a **(3) Name** and pick **Airflow** in the **(4) Scheduler**. Select the **(5) Fabric** we created in Step 1.
+Pick a **(6) Schedule** with which you want to schedule the Job. Please note, you can modify this again after testing before releasing your Job.
+Add a **(7) Description**, about the Job you are creating. Once done, click **(8) Create New**.
 
-In **(1) Project**, select the Project in which you want to create the Job. You can pick the existing Databricks Spark or SQL project here where you have created Pipelines/Models.
-In **(2) Branch**, Pick a development branch for the new Job. Here you can pick an existing branch for development, or create a new one.
-In **(3) Name**, provide a name for your Job.
-In **(4) Scheduler**, pick the type as **Airflow**.
-In **(5) Fabric**, Select the Fabric we created in previous step.
-In **(6) Schedule**, Pick a schedule with which you want to schedule the Job. Please note, you can modify this again after testing before releasing your Job.
-In **(7) Description**, add a description about the Job you are creating.
+![Create_Job](img/3.9CreateJob.png)
 
-Once done, click **(8) Create New**.
+This will take you to the **Job editor** where you would be creating the actual DAG for the Job.
+Let's start adding Gems to our Job now.
 
-This will take you to the Job editor page where you would be creating the actual DAG for the Job.
-This will take you the Job editor page where you create the actual DAG for the Job.
-Let's start adding Pipelines/Models to our Job now.
-
-For this guide, let's create a guide for setting up a Job that gets activated whenever a new file is uploaded to an S3 bucket. Additionally, we'll configure it to send an email notification prior to initiating the execution of both the Pipeline and SQL model.
+For this guide, let's create a Job that gets activated whenever a new file is uploaded to an S3 bucket. Additionally, we'll configure it to send an email notification prior to initiating the execution of both the Pipeline and SQL model.
 
 ### 2.1 Adding S3 file Sensor Gem
 
