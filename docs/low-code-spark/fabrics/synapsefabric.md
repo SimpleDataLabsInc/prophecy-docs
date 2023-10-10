@@ -1,5 +1,5 @@
 ---
-title: "Azure Synapse Fabric"
+title: "Azure Synapse Analytics"
 id: azure-synapse-fabric-guide
 description: fabric configuration guide
 sidebar_position: 4

@@ -7,20 +7,17 @@ tags: [package-hub]
 
 Prophecy introduces **Package Hub,** which enables data practitioners to create and share Pipeline components.
 
-![1](img/1-ph.png)
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://fast.wistia.net/embed/iframe/699b96r7w8?seo=false?videoFoam=true" title="Getting Started With SQL Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
+
+<br />
 
 A Package is a versioned Project that can be shared across teams. As such, a Package can contain Pipeline templates, [custom Gems](/docs/package-hub/package-builder/gem-builder.md), functions, subgraph templates, etc - a reusable version of everything a Project contains. Package dependencies allow us to re-use components so we don’t have to rebuild them. The coding community has been using packages for ages, and finally the low-code community can take advantage of the same idea. Packages are shareable within and across teams. For extra visibility, the Package Hub is a curated selection of Packages that your teams create and publish for other users to leverage.
 
-Just include a Package as a dependency to take advantage of its contents.
-
-- **[Pipelines](/docs/package-hub/package-builder/ShareablePipelines.md)** in Packages can be used as templates in new or existing projects. Pass configuration variables to a template Pipeline to re-use in a new Project. For example, read/write from configured table names using a template Pipeline.
-- **[Custom Gems](/docs/package-hub/package-builder/gem-builder.md)** in Packages can be dragged and dropped into new or existing projects as you would any Gem. Configure the Custom Gem visually, execute, and view data previews.
-- **[Subgraphs](/docs/package-hub/package-builder/ShareableSubgraphs.md)** in Packages can also be used as templates in new or existing Projects, very similar to Pipelines. (A Subgraph is essentially a mini Pipeline that can be called within a Pipeline.)
-- **[User Defined Functions (UDFs)](/docs/package-hub/package-builder/ShareableUDFs.md)** are custom functions that can be re-used across projects by calling the function inside the Gem expressions. Sharing UDFs in packages is a feature that will be coming soon after the Prophecy 3.2 release.
-- **Jobs** in Packages can be used across projects as a configured instance. Sharing Jobs in Packages is a feature that will be coming soon after the Prophecy 3.2 release.
-- **[Datasets](/docs/package-hub/package-builder/ShareableDatasets.md)** in Prophecy are pointers to actual data in your data storage solution. Check this [page](/docs/package-hub/package-builder/ShareableDatasets.md) for our recommendations on sharing Datasets.
-
-See the sections below for step-by-step instructions on how to [use](/docs/package-hub/package-hub.md#use-a-package), [build](/docs/package-hub/package-hub.md#build-a-package), and [share](/docs/package-hub/package-hub.md#share-a-package) Packages.
+Just include a Package as a dependency to take advantage of its contents. See the sections below for step-by-step instructions on how to [use](/docs/package-hub/package-hub.md#use-a-package), [build](/docs/package-hub/package-hub.md#build-a-package), and [share](/docs/package-hub/package-hub.md#share-a-package) Packages. For those looking for a deeper dive on building packages, see the [Package Builder](/docs/package-hub/package-builder/package-builder.md) page.
 
 ## Use a package
 
@@ -106,7 +103,7 @@ When you create a new Gem, a **(1)code guide** appears. Use the guide or replace
 
 **(1)Run** the custom Gem to check whether the functionality works as expected. Click **(2)Data** to view the data input and **(3)output** preview. The `customer_id` is encrypted after our function is applied.
 
-For more details on building Packages with Custom Gems, see the [Gembuilder documentation.](/docs/package-hub/package-builder/gem-builder.md)
+Click [here](/docs/package-hub/package-builder/gem-builder.md) for a deep dive on building Packages with Custom Gems.
 
 Once you have tested your Gem in the canvas, and you are happy with both the **Gem UI Component** and **Gem Code Logic**, you will want to release a tagged version.
 
