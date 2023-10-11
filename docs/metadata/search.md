@@ -2,7 +2,7 @@
 title: Search
 id: search
 description: Search across entities within Prophecy
-sidebar_position: 2
+sidebar_position: 3
 draft: true
 tags:
   - metadata
