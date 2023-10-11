@@ -92,10 +92,10 @@ Enter the **(3) JDBC Url** and **(4) Personal Access Token** gathered from the p
 
 The Basic Info and Provider setup is complete for the Fabric. Finally, there's an optional Connection step available.
 
-For users with many hundreds or thousands of tables, a Connection is a great way to sync the metadata in Prophecy so those tables can be listed quickly. Optionally add a Connection by following the steps 7-14 pictured above. If a connection is configured, the connection details will be used to display data tables etc. in the [Project Browser](/docs/concepts/project/project-broswer.md#how-to-access-project-browser) `Environment` tab . **(7)Name** the Connection and provide an optional **(8)Description**. Add a **(9)Workspace URL**, **(10)JDBC URL**, and **(11)Access Token**. The Access Token created for the workspace must have read permission for the Catalogs or JDBC tables of interest. The access token can be a personal access token or service principle token. We recommend using a service principle token. For information on the service principle token, go to the Databricks [documentation.](https://docs.databricks.com/en/administration-guide/users-groups/service-principals.html#manage-service-principals-in-your-account) The JDBC URL and Access Token are only required if different from those defined for the data provider, eg Databricks. Finally, define the **(12)Refresh Frequency** for which the metadata connection should sync with the JDBC. When the connection is **(13)enabled**, Prophecy will sync with the JDBC and any accessible catalogs at the defined frequency. Only one metadata Connection can be enabled at a time for a particular Fabric. Click **(14)Add** the Connection and it will become listed in the Fabric. Now tables will be synced on a regular cadence and appear quickly when listed in the Project browser `Environment` tab.
+For users with many hundreds or thousands of tables, a Metadata Connection is a great way to sync the metadata in Prophecy so those tables can be listed quickly. Optionally add a Metadata Connection by following the steps 7-14 pictured above. If a Connection is configured, the Connection details will be used to display data tables etc. in the [Project Browser](/docs/concepts/project/project-browser.md#how-to-access-project-browser) `Environment` tab . **(7)Name** the Connection and provide an optional **(8)Description**. Add a **(9)Workspace URL**, **(10)JDBC URL**, and **(11)Access Token**. The JDBC URL and Access Token are only required if different from those defined for the data provider, eg Databricks. The Access Token created for the workspace must have read permission for the Catalogs or JDBC tables of interest. The access token can be a personal access token or service principle token. We recommend using a service principle token. For information on the service principle token, go to the Databricks [documentation.](https://docs.databricks.com/en/administration-guide/users-groups/service-principals.html#manage-service-principals-in-your-account) Finally, define the **(12)Refresh Frequency** for which the Metadata Connection should sync with the JDBC. When the Connection is **(13)enabled**, Prophecy will sync with the JDBC and any accessible catalogs at the defined frequency. Only one metadata Connection can be enabled at a time for a particular Fabric. Click **(14)Add** the Connection and it will become listed in the Fabric. Now tables will be synced on a regular cadence and appear quickly when listed in the Project browser `Environment` tab.
 
 :::caution
-Only one metadata connection can be enabled per Fabric at a time.
+Only one Metadata Connection can be enabled per Fabric at a time.
 :::
 
 Please note, Fabrics are owned by Teams. Every Member present within the Team will be able to access the Fabric, however, each individual has to provide their own Personal Access Token.
@@ -107,7 +107,7 @@ The Metadata Connection token, optionally provided to enhance performance, shoul
 
 ## 3. Create a new Project
 
-Prophecy’s Project is a Git repository or a directory on Git that contains all of your transformation logic. Each Prophecy Project contains a dbt Core™️ project. Learn more about Projects [here.](/docs/concepts/project.md)
+Prophecy’s Project is a Git repository or a directory on Git that contains all of your transformation logic. Each Prophecy Project contains a dbt Core™️ project. Learn more about Projects [here.](/docs/concepts/project/project.md)
 
 After Fabric creation you can see one project initialized for you by default called HelloWorld_SQL. If you just want to play around with Prophecy, you can start there. However, for the purpose of this tutorial we’re going to build a brand new project from scratch.
 
@@ -127,7 +127,7 @@ If you’re new to Git, we recommend starting by connecting to Prophecy Managed 
 
 ### 3.1. Connect to Prophecy Managed Git
 
-When choosing, Prophecy Managed Git as your default Git repository, there’s no further steps required! Prophecy automatically takes care of repository creation, connection, and initialization. You can just click **(3) Continue** to finalize the project setup.
+When choosing Prophecy Managed Git as your default Git repository, there are no further steps required! Prophecy automatically takes care of repository creation, connection, and initialization. You can just click **(3) Continue** to finalize the project setup.
 
 Using Prophecy Managed Git is very easy, but has some major downsides and therefore not recommended for production use-cases. Primarily, you will not be able to access the repository externally from Prophecy programmatically (which is a common enterprise requirement) or create [Pull Requests](/docs/metadata/pull-request-templates.md/#raising-pull-requests) (which is also recommended as a part of standard [Git flow](https://docs.github.com/en/get-started/quickstart/github-flow)).
 
