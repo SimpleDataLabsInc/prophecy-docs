@@ -69,29 +69,45 @@ Once, the token is generated copy and save it from **(5) Token** and you’re go
 
 ### 2.3 Setup Prophecy’s Fabric
 
-Prophecy introduces the concept of a Fabric to describe an execution environment. In this case, we create a single Fabric to connect a Databricks cluster or warehouse, execute SQL models interactively, and deploy scheduled Jobs. The Fabric defines the environment where SQL tables and views are materialized. Typically you should setup at least one Fabric each for development and production environments. Use the development environment(Fabric) for quick ad-hoc building purposes with only sample data and use the production environment for daily runs with real data for your use case.
+Prophecy introduces the concept of a Fabric to describe an execution environment. In this case, we create a single Fabric to connect a Databricks cluster or warehouse, execute SQL models interactively, and deploy scheduled Jobs. The Fabric defines the environment where SQL tables and views are materialized. Typically you should setup at least one Fabric each for development and production environments. Use the development environment (Fabric) for quick ad-hoc building purposes with only sample data and use the production environment for daily runs with real data for your use case.
+
+:::info
+A Fabric allows Prophecy to connect with your data. 
+To make this interface faster for hundreds or thousands of tables, supercharge your Fabric with a Metadata Connection.
+:::
 
 You can read more about Fabrics [here.](/docs/concepts/fabrics/fabrics.md)
 
 ![Create Fabric](img/2-4-create-fabric-replacement.png)
 
-Setting up a Fabric is very straightforward now that we have copied the JDBC URL and Personal Access Token from the previous steps. Click the **(1) Create Entity** button, and choose **(2) Create Fabric** option. Please note, until you setup a Fabric, creation of other entities is going to be disabled. The Fabric creation is composed of two steps: Basic Info and Providers setup. On the Basic Info screen, enter a **(1) Fabric Name**, **(2) Fabric Description,** and choose the **(3) Team** that’s going to own the Fabric.
+Setting up a Fabric is very straightforward now that we have copied the JDBC URL and Personal Access Token from the previous steps. Click the **(1) Create Entity** button, and choose **(2) Create Fabric** option. Please note, until you setup a Fabric, creation of other entities is going to be disabled. The Fabric creation is composed of three steps: Basic Info, Providers, and optional Connections. On the Basic Info screen, enter a **(3) Fabric Name** with optional Description, and choose the **(4) Team** that’s going to own the Fabric.
 
-Once ready, click **(4) Continue.**
+Once ready, click **(5) Continue.**
 
 ![Fill Fabric Details](img/2-5-fill-fabric-details-replacement.png)
 
 Since we’re setting up a Fabric connected to Databrick’s JDBC SQL endpoint, we choose SQL as the **(1) Provider Type** and Databricks as the **(2) Provider.**
 
-Enter the **(3) JDBC Url** and **(4) Personal Access Token** gathered from the previous steps. Finally, select your **(5) Catalog** and **(6) Schema** of choice. This step is recommended, however, optional. When using Databricks Unity Catalog, the default Catalog is main and the default Schema is default. Make sure you connect to a catalog and schema for which your user has write access. The tables resulting from the model will be written here.
+Enter the **(3) JDBC Url** and **(4) Personal Access Token** gathered from the previous steps. Finally, select your **(5) Catalog** and Schema of choice. This step is optional but recommended. When using Databricks Unity Catalog, the default Catalog is `main` and the default Schema is `default`. Make sure you connect to a catalog and schema for which your user has write access. The tables resulting from the model will be written here. Click **(6) Continue**. At this point, Prophecy checks the credentials and details for network and catalog accesses. If either fails, the Fabric won’t be created and you will receive an Exception error.
 
-Click **(7) Complete** when finished. Prophecy checks the credentials and details for network and catalog accesses. If either fails, the Fabric won’t be created and you will receive an Exception error.
+The Basic Info and Provider setup is complete for the Fabric. Finally, there's an optional Connection step available. 
 
-Please note, Fabrics are owned by Teams. Every Member present within the Team will be able to access the Fabric, however, each individual has to provide their own Personal Access Token!
+For users with many hundreds or thousands of tables, a Connection is a great way to sync the metadata in Prophecy so those tables can be listed quickly. Optionally add a Connection by following the steps 7-14 pictured above. If a connection is configured, the connection details will be used to display data tables etc. in the [Project Browser](/docs/concepts/project/project-broswer.md#how-to-access-project-browser) `Environment` tab . **(7)Name** the Connection and provide an optional **(8)Description**. Add a **(9)Workspace URL**, **(10)JDBC URL**, and **(11)Access Token**. The Access Token created for the workspace must have read permission for the Catalogs or JDBC tables of interest. The access token can be a personal access token or service principle token. We recommend using a service principle token. For information on the service principle token, go to the Databricks [documentation.](https://docs.databricks.com/en/administration-guide/users-groups/service-principals.html#manage-service-principals-in-your-account) The JDBC URL and Access Token are only required if different from those defined for the data provider, eg Databricks. Finally, define the **(12)Refresh Frequency** for which the metadata connection should sync with the JDBC. When the connection is **(13)enabled**, Prophecy will sync with the JDBC and any accessible catalogs at the defined frequency. Only one metadata Connection can be enabled at a time for a particular Fabric. Click **(14)Add** the Connection and it will become listed in the Fabric. Now tables will be synced on a regular cadence and appear quickly when listed in the Project browser `Environment` tab.
+
+:::caution
+Only one metadata connection can be enabled per fabric at a time. 
+:::
+ 
+Please note, Fabrics are owned by Teams. Every Member present within the Team will be able to access the Fabric, however, each individual has to provide their own Personal Access Token. 
+
+:::info
+The Fabric token should provide the user's personal permissions to read / write data. 
+The Metadata Connection token, optionally provided to enhance performance, should be a service principal with list permissions on the appropriate catalog and JDBC tables. 
+:::
 
 ## 3. Create a new Project
 
-Prophecy’s Project is a Git repository or a directory on Git that contains all of your transformation logic. Each Prophecy Project contains a dbt Core™️ project. Learn more about Projects [here.](https://docs.prophecy.io/concepts/project)
+Prophecy’s Project is a Git repository or a directory on Git that contains all of your transformation logic. Each Prophecy Project contains a dbt Core™️ project. Learn more about Projects [here.](/docs/concepts/project.md)
 
 After Fabric creation you can see one project initialized for you by default called HelloWorld_SQL. If you just want to play around with Prophecy, you can start there. However, for the purpose of this tutorial we’re going to build a brand new project from scratch.
 
@@ -113,7 +129,7 @@ If you’re new to Git, we recommend starting by connecting to Prophecy Managed 
 
 When choosing, Prophecy Managed Git as your default Git repository, there’s no further steps required! Prophecy automatically takes care of repository creation, connection, and initialization. You can just click **(3) Continue** to finalize the project setup.
 
-Using Prophecy Managed Git is very easy, but has some major downsides and therefore not recommended for production use-cases. Primarily, you will not be able to access the repository externally from Prophecy programmatically (which is a common enterprise requirement) or create [Pull Requests](https://docs.prophecy.io/metadata/pr-templates/#raising-pull-requests) (which is also recommended as a part of standard [Git flow](https://docs.github.com/en/get-started/quickstart/github-flow)).
+Using Prophecy Managed Git is very easy, but has some major downsides and therefore not recommended for production use-cases. Primarily, you will not be able to access the repository externally from Prophecy programmatically (which is a common enterprise requirement) or create [Pull Requests](/docs/metadata/pull-request-templates.md/#raising-pull-requests) (which is also recommended as a part of standard [Git flow](https://docs.github.com/en/get-started/quickstart/github-flow)).
 
 If you decide to choose this option, you can always migrate the project to an external Git Repository by cloning it.
 
