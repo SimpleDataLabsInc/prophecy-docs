@@ -72,7 +72,7 @@ Once, the token is generated copy and save it from **(5) Token** and you’re go
 Prophecy introduces the concept of a Fabric to describe an execution environment. In this case, we create a single Fabric to connect a Databricks cluster or warehouse, execute SQL models interactively, and deploy scheduled Jobs. The Fabric defines the environment where SQL tables and views are materialized. Typically you should setup at least one Fabric each for development and production environments. Use the development environment (Fabric) for quick ad-hoc building purposes with only sample data and use the production environment for daily runs with real data for your use case.
 
 :::info
-A Fabric allows Prophecy to connect with your data. 
+A Fabric allows Prophecy to connect with your data.
 To make this interface faster for hundreds or thousands of tables, supercharge your Fabric with a Metadata Connection.
 :::
 
@@ -95,14 +95,14 @@ The Basic Info and Provider setup is complete for the Fabric. Finally, there's a
 For users with many hundreds or thousands of tables, a Connection is a great way to sync the metadata in Prophecy so those tables can be listed quickly. Optionally add a Connection by following the steps 7-14 pictured above. If a connection is configured, the connection details will be used to display data tables etc. in the [Project Browser](/docs/concepts/project/project-broswer.md#how-to-access-project-browser) `Environment` tab . **(7)Name** the Connection and provide an optional **(8)Description**. Add a **(9)Workspace URL**, **(10)JDBC URL**, and **(11)Access Token**. The Access Token created for the workspace must have read permission for the Catalogs or JDBC tables of interest. The access token can be a personal access token or service principle token. We recommend using a service principle token. For information on the service principle token, go to the Databricks [documentation.](https://docs.databricks.com/en/administration-guide/users-groups/service-principals.html#manage-service-principals-in-your-account) The JDBC URL and Access Token are only required if different from those defined for the data provider, eg Databricks. Finally, define the **(12)Refresh Frequency** for which the metadata connection should sync with the JDBC. When the connection is **(13)enabled**, Prophecy will sync with the JDBC and any accessible catalogs at the defined frequency. Only one metadata Connection can be enabled at a time for a particular Fabric. Click **(14)Add** the Connection and it will become listed in the Fabric. Now tables will be synced on a regular cadence and appear quickly when listed in the Project browser `Environment` tab.
 
 :::caution
-Only one metadata connection can be enabled per fabric at a time. 
+Only one metadata connection can be enabled per Fabric at a time.
 :::
  
 Please note, Fabrics are owned by Teams. Every Member present within the Team will be able to access the Fabric, however, each individual has to provide their own Personal Access Token. 
 
 :::info
-The Fabric token should provide the user's personal permissions to read / write data. 
-The Metadata Connection token, optionally provided to enhance performance, should be a service principal with list permissions on the appropriate catalog and JDBC tables. 
+The Fabric token should provide the user's personal permissions to read / write data.
+The Metadata Connection token, optionally provided to enhance performance, should be a service principal with list permissions on the appropriate catalog and JDBC tables.
 :::
 
 ## 3. Create a new Project
