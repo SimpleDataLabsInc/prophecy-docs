@@ -103,7 +103,7 @@ Please note, Fabrics are owned by Teams. Every Member present within the Team wi
 
 :::info
 The Fabric token should provide the user's personal permissions to read / write data.
-The Metadata Connection token, optionally provided to enhance performance, should be a service principal with list permissions on the appropriate catalog and JDBC tables.
+The Metadata Connection token, optionally provided to enhance performance, should be a service principal with read-only permissions on the appropriate catalog and JDBC tables.
 :::
 
 ## 3. Create a new Project
