@@ -37,7 +37,7 @@ Steps:
 - Add the secret with name DATABRICKS_TOKEN and value of the Databricks token to be used by PBT.
 
 Screenshot after setting DATABRICKS_TOKEN secret:
-![Github Actions Secret addition](./img/pbt-github-secret.png)
+![Github Actions Secret addition](img/pbt-github-secret.png)
 
 The environment variables can now be all set within the Github actions YML file as follows:
 

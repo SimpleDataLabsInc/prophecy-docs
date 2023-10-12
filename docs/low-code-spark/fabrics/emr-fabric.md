@@ -1,5 +1,5 @@
 ---
-title: "Amazon EMR Fabric"
+title: "Amazon EMR"
 id: EMR-fabric-configuration
 description: Configuring the EMR Fabric
 sidebar_position: 1
@@ -12,10 +12,6 @@ tags:
 In the context of Spark execution engines, users have the flexibility to opt for Amazon EMR. This guide offers step-by-step instructions on creating a Fabric that enables seamless connectivity to the EMR environment.
 
 ## Create Amazon EMR cluster with Apache Livy
-
-:::caution Warning
-Livy does not work with Python version 3.8 and above.
-:::
 
 Navigate to Amazon EMR service and create a cluster. Under **Application bundle** select **Custom**.
 
