@@ -82,12 +82,12 @@ Now we configure the dependencies.
 
 Under **Scala** enter **Path**
 
-`https://prophecydevpublic.blob.core.windows.net/prophecy-libs/`
+`https://prophecypublicazure.blob.core.windows.net/prophecy-public-libs/prophecy-scala-libs/`
 
 Under **Python** enter **Path**
 
-`https://prophecydevpublic.blob.core.windows.net/python-prophecy-libs/`
-<img src={require('./img/lib.png').default} alt="Synapse connect" width="75%" />
+`https://prophecypublicazure.blob.core.windows.net/prophecy-public-libs/prophecy-python-libs/`
+
 <br/> <br/>
 
 **Click** on **Complete**.
