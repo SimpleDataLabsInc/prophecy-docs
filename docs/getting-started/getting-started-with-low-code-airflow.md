@@ -105,57 +105,63 @@ Then pick your development **(2) Branch**. Here you can pick an existing branch 
 Pick a **(6) Schedule** with which you want to schedule the Job. Please note, you can modify this again after testing before releasing your Job.
 Add a **(7) Description**, about the Job you are creating. Once done, click **(8) Create New**.
 
-![Create_Job](img/3.9CreateJob.png)
+![Create_Job](img/3.9_Create_Job.png)
 
 This will take you to the **Job editor** where you would be creating the actual DAG for the Job.
 Let's start adding Gems to our Job now.
 
-For this guide, let's create a Job that gets activated whenever a new file is uploaded to an S3 bucket. Additionally, we'll configure it to send an email notification prior to initiating the execution of both the Pipeline and SQL model.
+**For this guide, let's create a Job that gets activated whenever a new file is uploaded to an S3 bucket. Additionally, we'll configure it to send an email notification prior to initiating the execution of both the Pipeline and SQL model.**
 
 ### 2.1 Adding S3 file Sensor Gem
 
 Click on **(1) Sensors**, and Drag the **(2) S3FileSensor Gem** from the dropdown to the canvas. Then click the newly added Gem and click **(3) Open** to open the Gem Configurations.
+![Add_S3_gem](img/3.10_Add_s3_gem.png)
 
 Here, we will specify the S3 bucket/path on which we want to trigger the Job.
+In **(1) S3 Path(s)** specify the complete path of file in your Bucket. Airflow will check if this file exists in the specified bucket periodically and trigger the Job when it arrives. Select the created Connection for AWS in **(2) Connection name** and hit ** (3) Save**.
 
-In **(1) S3 Path(s)** specify the path of file in your Bucket and specify the bucket name in **(2) Bucket Name**. Airflow will check if this file exists in the specified bucket periodically and trigger the Job when it arrives. Select the created Connection for AWS in **(3) Connection name** and hit ** (4) Save**.
+![Add_S3_gem_details](img/3.11_Add_s3_gem_details.png)
 
 ### 2.2 Adding Email Gem
 
 Click on the **(1) Operators**, and Drag the **(2) Email Gem** from the dropdown to the canvas. If you drag this closer to output port of the previous Gem, it will get auto-connected to it. Then click the newly added Gem and click **(3) Open** to open the Gem Configurations.
 
+![Add_email_gem](img/3.12_Add_email_gem.png)
+
 Here we will specify our Email configurations. In **(1) To**, add your Email id where you want to receive the notification Email when the Job is triggered. Select the **(2) Connection name**, you created for Email in step 1.3.
-You can provide a **(3) Subject**, for the Email and also add **(4) Email content** you want to add to your email.
+You can provide a **(3) Subject**, for the Email and also add **(4) Email content** you want to add to your email. Here in the example, we are using a Airflow param available to access the execution time in a Job.
 Additionally, you can also add cc and bcc emails.
-Once done, Click **(3) Save**!
+Once done, Click **(5) Save**!
+
+![Add_email_gem_details](img/3.13_Add_email_gem_details.png)
 
 ### 2.3 Adding Spark Pipeline Gem For Databricks to your DAG
 
-![Add_Pipeline_Gem](img/Airflow_2.2_Add_Pipeline_Gem.png)
-
 Click on **(1) Operators**, and Drag the **(2) Pipeline Gem** from the dropdown to the canvas. Drag it close to the output port of the Email Gem, so that it gets auto-connected. Then click the newly added Gem and click **(3) Open** to open the Gem Configurations.
+
+![Add_Pipeline_Gem](img/Airflow_2.2_Add_Pipeline_Gem.png)
 
 Here, you will select the Pipeline and optionally override any config values for the Pipeline.
 
-![Pipeline_Gem_Configurations](img/Airflow_2.3_Pipeline_Gem_Configurations.png)
-In **(1) Pipeline to Schedule** , select the Pipeline you want to Run. As you select the Pipeline, You would start seeing the Configurations defined in the Pipeline. You would not be able to modify the schema of these configs but can override the Config values.
+Select the **(1) Pipeline to Schedule** you want to Run. As you select the Pipeline, You would start seeing the Configurations defined in the Pipeline. You would not be able to modify the schema of these configs but can override the Config values.
+Pick (**2) Fabric and Cluster size to run this Pipeline** for running this Pipeline in Databricks. Here, please select the Fabric for which you already created connection in step 1.3. Once done, Click **(3) Save**!
 
-In (**2) Fabric and Cluster size to run this Pipeline**, pick the Fabric and Job size for running this Pipeline in Databricks. Once done, Click **(3) Save**!
+![Add_pipeline_gem_details](img/3.15_Add_pipeline_gem_details.png)
 
 ### 2.4 Adding SQL DBT Gem For Databricks to your DAG
 
-![Add_DBT_Gem](img/Airflow_2.4_Add_DBT_Gem.png)
+Click on **(1) Operators**, and Drag the **(2) DBT Gem** from the dropdown to the canvas. Drag it close to the output port of the Pipeline Gem, so that it gets auto-connected. Then click the newly added Gem and click **(3) Open** to open the Gem Configurations.
 
-Click on **(1) Operators**, and Drag the **(2) DBT Gem** from the dropdown to the canvas. Then click the newly added Gem and click **(3) Open** to open the Gem Configurations.
+![Add_DBT_Gem](img/3.16_Add_DBT_gem.png)
 
 Here, you will select the DBT Project/Model to Schedule, what SQL Fabric to schedule it on, and other additional properties for running a DBT model.
 
-![DBT_Gem_Configurations](img/Airflow_2.5_DBT_Gem_Configurations.png)
-
-In **(1) DBT commands** , select the commands you want to run when scheduling your Models. You can select all ([Dependencies](https://docs.prophecy.io/low-code-spark/pubsub/#project-dependency), [Seed](https://docs.prophecy.io/getting-started/sql-with-databricks/#431-create-seeds), Run and Test) here.
-In **(2) DBT Project to Schedule**, select the project you want to schedule. In **(3) SQL Warehouse Fabric**, select the Databricks Fabric to schedule the Module on.
+Select the **(1) DBT commands** you want to run when scheduling your Models. You can select all ([Dependencies](https://docs.prophecy.io/low-code-spark/pubsub/#project-dependency), [Seed](https://docs.prophecy.io/getting-started/sql-with-databricks/#431-create-seeds), Run and Test) here.
+Select the **(2) DBT Project to Schedule**. And then select the **(3) SQL Warehouse Fabric** to schedule the Module on. Please select the Fabric for which connection was created in Step 1.4.
 In **(4) Git reference**, select if you want to schedule a particular commit/tag or branch. Here you can select `branch` for this guide and then in **(5) Reference Value** give the current branch name you are working on.
-In **(6) Properties** , you can provide any additional DBT properties for your run and then click **(7) Save**!!
+You can provide any additional **(6) Properties** for your run and then click **(7) Save**!!
+
+![Add_DBT_gem_details](img/3.17_Add_DBT_gem_details.png)
 
 Congratulations!!! And just like that, you have created a very simple Airflow Job with one Databricks Pipeline/Model Task.
 
