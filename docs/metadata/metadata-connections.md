@@ -11,8 +11,7 @@ tags:
   - data
 ---
 
-At Prophecy we're always looking to make your development faster. For teams that manage hundreds or thousands of tables, listing data catalogs, tables, and schemas can take precious minutes. In order to make this easier, Prophecy introduced Metadata Connections in release 3.2. The major benefit to Metadata Connections: [straightaway](/docs/metadata/metadata-connections.md) you can list and view your data directly in the [Prophecy UI](/docs/concepts/project/project-browser.md#Environment-tab). 
-
+At Prophecy we're always looking to make your development faster. For teams that manage hundreds or thousands of tables, listing data catalogs, tables, and schemas can take precious minutes. In order to make this easier, Prophecy introduced Metadata Connections in release 3.2. The major benefit to Metadata Connections: [straightaway](/docs/metadata/metadata-connections.md) you can list and view your data directly in the [Prophecy UI](/docs/concepts/project/project-browser.md#Environment-tab).
 
 Let's get down to basics by [defining](/docs/metadata/metadata-connections.md/#definition-of-entities) the relevant entities in Prophecy, setup the relevant data resource, then we'll walk through how to [setup](/docs/metadata/metadata-connections.md/#setup) Metadata Connections in Prophecy.
 
@@ -34,7 +33,7 @@ The Metadata Connection token, optionally provided to enhance performance, shoul
 
 A Cluster, also referred to as a Warehouse, represents a collection of resources that a Metadata Connection can utilize. Clusters are specific to certain data platforms or systems. For instance, a Snowflake Metadata Connection can access different warehouses that are available to the user. By associating a Metadata Connection with a workspace or warehouse, users can leverage the resources defined by the data providers.
 
-## Setup Resources 
+## Setup Resources
 
 ### Setup Provider Tokens
 
