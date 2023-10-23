@@ -39,23 +39,27 @@ Prophecy Metadata Connections will use APIs to make calls to your data provider 
 
 The Service Principal will need access to the [Workspace](https://docs.databricks.com/en/security/auth-authz/access-control/enable-access-control.html#enable-access-control-for-workspace-objects) and, if you're using a cluster for the metadata connection, the Service Principal will need access to create clusters. If you're not using Unity Catalog for the Metadata Connection, the Service Principal will need access to [Databricks SQL.](https://docs.databricks.com/en/sql/admin/index.html#grant-user-access-to-databricks-sql)
 
-### Setup Warehouse or Cluster
-
 ### Grant permissions
 
-The service principal must be able to collect metadata from any desired metastore in the workspace.
+The service principal must be able to collect metadata from any desired catalog or metastore in the workspace.
 
-To grant permissions on Unity Catalog, grant permissions to the service principal to read the catalogs, which by default grants read permissions on all schemas within that catalog:
+To grant the needed permissions on Unity Catalog, grant permissions to the service principal to read the catalogs, which by default grants the same permission on all schemas within that catalog:
 
 ```
 GRANT SELECT ON CATALOG <catalog> TO <service_principal>;
 ```
 
-To grant permissions on a Hive Metastore, which by default grants read permissions on all schemas within that metastore:
+To grant the needed permissions on a Hive Metastore, grant usage, read, and select on the catalog, which by default applies these same permissions to the catalog's schemas. These permissions would be needed for any relevant metastore catalog in addition to the default Hive Metastore catalog.
 
 ```
-GRANT USAGE, READ_METADATA, SELECT ON CATALOG <catalog> TO <service_principal>;
+GRANT USAGE, READ_METADATA, SELECT ON CATALOG <hive_metastore> TO <service_principal>;
 ```
+
+### Setup SQL Warehouse or Cluster
+
+Prophecy supports metadata collection through SQL Warehouses and Clusters on Databricks and Snowflake. In general, we recommend to create a [SQL Warehouse](https://docs.databricks.com/en/sql/admin/create-sql-warehouse.html#create-a-sql-warehouse) or cluster dedicated to the Metadata Connection. Using this approach, the recurring metadata syncs can have a cluster defined with appropriate resources, whereas execution clusters defined in the [Fabric](/docs/concepts/fabrics/fabrics.md) `Provider` would have a separate resource profile.
+
+Alternatively, the Metadata Connection can use the same Warehouse or Cluster which is being used for execution. In that case, the resources would be shared.
 
 ## Setup Prophecy Entities
 
