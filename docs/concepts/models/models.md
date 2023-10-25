@@ -21,11 +21,11 @@ Check out this getting started [guide](/docs/getting-started/getting-started-wit
 Prophecy displays Models using the visual and code views; the `customers` model is shown in the figure below.
 ![models-overview](./img/models-overview.png)
 
-Toggle to the code view to find the **(1)SQL select statement** for the `customers` model. The customers Model is stored inside the HelloWorld_SQL Project, in the `Models` directory, and has a `.sql` file extension. Typically, a Model corresponds to a single table or view. **(3)Here,** the `customers` model maps to the `customers` table; just click to configure as a view.
+Toggle to the code view to find the **(1)SQL select statement** for the `customers` model. The customers Model is stored inside the HelloWorld_SQL Project, in the `Models` directory, and has a `.sql` file extension. Typically, a Model corresponds to a single table or view. **(3)Here,** the `customers` model maps to the `customers` table; just click to `Config` to configure as a view.
 
 Models contain data transformations which are expressed in **(4)both visual and code** formats. Here the `Join` step is represented visually as a `Join` Gem and in code as the highlighted statement. By popular demand, the visual and code formats are editable interchangeably, as illustrated [here.](/docs/low-code-sql/low-code-sql.md) Visual developers and SQL coders can work together in the same project, and both types of edits are incorporated to the project when committed and merged to the main branch. See [this page](/docs/metadata/git.md#how-to-commit-changes) to understand the commit and release process.
 
-One model can **(5)refer** to another model; here the `customers` model refers to the `payments` model. The `payments` model defines a table as an earlier step in the data processing flow. Like Pipelines, Models can be **(6)run** using the play buttons and data previews are available.
+One model can **(5)refer** to another model; here the `customers` model refers to the `payments` model. The `payments` model defines a table as an earlier step in the data processing flow. Like Pipelines, Models can be **(6)run** using the play buttons to execute the entire model or execute upto a particular Gem. Click to open data previews. When the entire model is run, the table or view is materialized on the data warehouse.
 
 ### Models vs Pipelines
 
