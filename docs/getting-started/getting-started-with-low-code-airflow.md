@@ -135,11 +135,11 @@ Once done, Click **(5) Save**!
 
 ![Add_email_gem_details](img/3.13_Add_email_gem_details.png)
 
-### 2.3 Adding Spark Pipeline Gem For Databricks to your DAG
+### 2.3 Adding Spark Pipeline Gem
 
 Click on **(1) Operators**, and Drag the **(2) Pipeline Gem** from the dropdown to the canvas. Drag it close to the output port of the Email Gem, so that it gets auto-connected. Then click the newly added Gem and click **(3) Open** to open the Gem Configurations.
 
-![Add_Pipeline_Gem](img/Airflow_2.2_Add_Pipeline_Gem.png)
+![Add_Pipeline_Gem](img/3.14_Add_pipeline_gem.png)
 
 Here, you will select the Pipeline and optionally override any config values for the Pipeline.
 
@@ -148,7 +148,7 @@ Pick (**2) Fabric and Cluster size to run this Pipeline** for running this Pipel
 
 ![Add_pipeline_gem_details](img/3.15_Add_pipeline_gem_details.png)
 
-### 2.4 Adding SQL DBT Gem For Databricks to your DAG
+### 2.4 Adding SQL DBT Gem
 
 Click on **(1) Operators**, and Drag the **(2) DBT Gem** from the dropdown to the canvas. Drag it close to the output port of the Pipeline Gem, so that it gets auto-connected. Then click the newly added Gem and click **(3) Open** to open the Gem Configurations.
 
@@ -171,48 +171,58 @@ Let's go ahead and see how to Run and Schedule it.
 
 Now that we have our Job ready, we can go ahead and run it.
 
-![Run_Airflow_Job](img/Airflow_3.1_Run_Airflow_Job.png)
-
 Click on the **(1) Run button** to trigger the One-time run. This creates a temporary DAG and uploads to Airflow. User can check logs and status in the Prophecy UI itself. When you click on run, you will see a Job Details Toaster.
+
+![Run_job](img/3.18_Run_Job.png)
+
 Click on **(2) Details** to open the detailed logs of the Run.
-
-![Airflow_Job_logs](img/Airflow_3.2_Airflow_Job_logs.png)
-
 Here you can see all the steps involved in the Run and also detailed logs for each step.
+
+![Run_job_logs](img/3.19_Run_Job_logs.png)
 Click on **(1) + button**, to open the logs for a particular step.
 
 ## 4. Release and Schedule
 
-Once we have the **Job** developed and tested it’s time to commit and push our code to our Git repository and release the Job to our Airflow.
-![Airflow_Release_Job](img/Airflow_4.1_Enable_Job.png)
+Once we have developed and tested the Job, it’s time to commit and push our code to our Git repository and release the Job to our Airflow.
 
-Start by toggling our Job to be **(1) Enabled.** This enables the Job on the Airflow and will ensure that the Job follows the previously set interval. Without enabling the DAG is not uploaded to Airflow.
+![Enable_commit](img/3.20_start_commit.png)
 
-Click on the **(2) Commit files** button in the middle of the footer (bottom of the screen). This opens an easy-to-use Git management screen.
+Start by toggling our Job to be **(1) Enabled**. This enables the Job on the Airflow and will ensure that the Job follows the previously set interval. Without enabling the DAG is not uploaded to Airflow.
+
+Click on the **(2) Release** button in the top right corner or **(3) Commit** button in the middle of the footer (bottom of the screen) to start the commit process. This opens an easy-to-use Git management screen.
 
 The process of deploying code is composed of 4 steps:
 
-1. **Commit:** We start by creating a named version of our code and uploading it to our development branch on the secure Git repository. On the left hand side you can see the **Current branch** and the associated history of commits and on the right side, there’s a list of **Entities changed** (models, Jobs, etc) and their status. If everything looks good, type in the **(2) Commit message** which should clearly describe, in few sentences, all the changes that we’ve introduced.
-2. **Pull:** Before your changes can be safely merged into the **main** branch, we have to make sure that we’re up to date with it. If your colleagues introduced any code on **main** we have to **Pull** it first. This step is most of the time going to happen automatically for us without any further actions required.
-3. **Merge:** Now that our development branch is up to date, we can merge it to master. Here we can either create a **Pull Request** or if you’re the owner of the repository force **Merge** the changes. For now, we **Merge** them directly. Once the code is merged, you can now see the latest commits present on your **main** branch.
-4. **Release:** Finally, now that our changes are all versioned on Git, we can release them to our scheduler. Simply specify a **Release Version** number, e.g. `1.0` , and the **(4) Release Note,** which should clearly outline the latest changes. When ready, click **(5) Release.**
+1. **Commit:** We start by creating a named version of our code and uploading it to our development branch on the secure Git repository. On the left hand side you can see the **Current branch** and the associated history of commits and on the right side, there’s a list of **Entities changed** (models, Jobs, etc) and their status. If everything looks good, type in the **(1) Commit message** which should clearly describe, in few sentences, all the changes that we’ve introduced and click **(2) Commit**.
+   ![commit_screen](img/3.21_commit_screen.png)
+
+2. **Pull:** Before your changes can be safely merged into the **main** branch, we have to make sure that we’re up-to-date with it. If your colleagues introduced any code on **main** we have to **Pull** it first. For this, simply click on **(1) Continue** and then **(2) Pull**.
+   ![Pull_screen](img/3.22_Pull_screen.png)
+
+3. **Merge:** Now that our development branch is up-to-date, we can merge it to master. Here we can either create a **Pull Request** or if **Merge** the changes to main directly if your main branch isn't protected. For now, click on **(1) Merge** to merge them directly. Once the code is merged, you can now see the latest commits present on your **main** branch.
+   ![Merge_screen](img/3.23_merge_screen.png)
+
+4. **Release:** Finally, now that our changes are all versioned on Git, we can release them to our scheduler. Simply specify a **(1) Release Version** number, e.g. `1.0` , and the **(2) Release Note,** which should clearly outline the latest changes. When ready, click **(3) Release.**
+   ![Release_screen](img/3.24_release_screen.png)
+
+This will build and deploy your Airflow Job on the Airflow Fabric Specified in the Job and would schedule to run it on the specified schedule.
 
 ## 5. Monitor
 
-During the release process Prophecy automatically packages, tests, and deploys your Jobs to Airflow. Once the process is finished you can see the deployed and running Job within your Airflow environment. You can monitor this Job within Prophecy in the **(1) Observability** page.
+During the release process Prophecy automatically packages, tests, and deploys your Jobs to Airflow. Once the process is finished you can see the deployed and running Job within your Airflow environment. You can monitor this Job within Prophecy in the **Observability** page.
 
-![Airflow_Monitoring_page](img/Airflow_5.1_Monitor_Job.png)
+![Airflow_Monitoring_page](img/3.25_Observability.png)
 
-Click on **(1) Observability icon** on the left side menu bar to take you to the Observability page. Then in **(2) Fabric Selection box**, choose the Fabric you created. Now the Observability page will filter for all the Past and Current Runs of the Jobs you released on this Fabric. Switch between **Attention Required**, **All events**, **Job Runs** to find any Particular Run you are looking for. Click on the **(3) Details** button to open up the logs of any particular Run.
+Click on **(1) Observability icon** on the left side menu bar to take you to the Observability page. Then in **(2) Fabric Selection box**, choose the Airflow Fabric your have. The Observability page will show all the Past and Current Runs of the Jobs you released on this Fabric. Switch between **Attention Required**, **All events**, **Job Runs** to find any Particular Run you are looking for. Click on the **(3) Details** button to open up the logs of any particular Run.
 
 ## What’s next?
 
 Great work! 🎉
 
-You've created your first Airflow Job in Prophecy, run it successfully, released, scheduled, and monitored the Job. Take a moment to appreciate your accomplishment 🥳.
+You've created your first Airflow Job in Prophecy, ran it successfully, released, scheduled, and monitored the Job. Take a moment to appreciate your accomplishment 🥳.
 
-To continue learning and expanding your skills with Prophecy, explore other tutorials within our documentation, or apply your newfound knowledge to address real-world business challenges!
+To continue learning and expanding your skills with Prophecy, feel free to explore other tutorials within our documentation!
 
-If you ever encounter any difficulties, don't hesitate to reach out to us (Contact.us@Prophecy.io) or join our [Slack community](https://prophecy-io-support.slack.com/join/shared_invite/zt-moq3xzoj-~5MSJ6WPnZfz7bwsqWi8tQ#/shared-invite/email) for assistance. We're here to help!
+If you ever encounter any difficulties, don't hesitate to reach out to us (contact.us@Prophecy.io) or join our [Slack community](https://prophecy-io-support.slack.com/join/shared_invite/zt-moq3xzoj-~5MSJ6WPnZfz7bwsqWi8tQ#/shared-invite/email) for assistance. We're here to help!
 
 ---
