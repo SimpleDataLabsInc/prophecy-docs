@@ -104,7 +104,7 @@ pipelines at the same time). To enable more concurrent users, Prophecy supports 
 Scaling is taken care of by the **Autoscaler** component in our platform. Therefore, e.g., if the number of
 users increases by 10 times, the Prophecy deployment can be scaled appropriately.
 
-The following are estimated recommended cluster sizes for different user numbers:
+The following are estimated recommended cluster sizes depending on the number of concurrent users:
 
 | Number of users           | 25       | 50       | 150       |
 | ------------------------- | -------- | -------- | --------- |

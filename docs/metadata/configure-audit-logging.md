@@ -2,7 +2,7 @@
 title: Syncing audit logs from SAAS
 id: audit-logging
 description: Prophecy Audit logs available to be exported in S3
-sidebar_position: 6
+sidebar_position: 7
 tags:
   - audit logs
   - s3
