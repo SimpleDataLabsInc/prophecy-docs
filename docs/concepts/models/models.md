@@ -10,16 +10,20 @@ tags:
   - target
 ---
 
+TODO: UPDATE TO REFLECT TWO SEPARATE FIGURES
+
 **Data modeling** refers to the shaping of your data from the raw state all the way to a transformed final state. Data engineers are typically responsible for building tables that represent source data, transforming the data and saving as intermediate tables/views, and building final tables that can be queried by a BI tool and drive decision making for an organization.
 
 In Prophecy and dbt, **data models** are SQL select statements that represent the step-by-step logic to transform raw data to some intermediate or final state. These SQL select statements are stored in your Github repository project as `.sql` files. Each Model corresponds to a single table or view, aside from some advanced materialization cases.
 
-Check out this getting started [guide](/docs/getting-started/getting-started-with-low-code-sql.md) for step-by-step instructions on working with low-code SQL in Prophecy. Here we focus specifically on Models.
+Here we explore how to use models in Prophecy, adopting the concept and vernacular from dbt Core™. After you've read this page, get hands on with models in this getting started [guide](/docs/getting-started/getting-started-with-low-code-sql.md#44-develop-your-first-model).
 
 ### Using Models in Prophecy
 
+![lineage-view](./img/lineage-view.png)
+
 Prophecy displays Models using the visual and code views; the `customers` model is shown in the figure below.
-![models-overview](./img/models-overview.png)
+![model-view](./img/model-view.png)
 
 Toggle to the code view to find the **(1)SQL select statement** for the `customers` model. The customers Model is stored inside the HelloWorld_SQL Project, in the `Models` directory, and has a `.sql` file extension. Typically, a Model corresponds to a single table or view. **(3)Here,** the `customers` model maps to the `customers` table; just click to `Config` to configure as a view.
 
