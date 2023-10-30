@@ -124,6 +124,9 @@ const config = {
         ],
       },
     ],
+    [
+      "@docusaurus/plugin-auto-sidebars",
+    ],
   ],
 };
 
