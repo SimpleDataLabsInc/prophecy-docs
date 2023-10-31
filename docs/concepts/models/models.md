@@ -16,74 +16,22 @@ Typically business logic is stored as SQL files.
 
 <details>
 <summary> My SQL file </summary>
-WITH raw_customers AS (
-
-SELECT \*
-
-FROM {{ ref('raw_customers')}}
-
-),
-
-stg_orders AS (
-
-SELECT \*
-
-FROM {{ ref('stg_orders')}}
-
-),
-
-ordercount AS (
-
-SELECT
-customer_id,
-min(order_date) AS first_order,
-max(order_date) AS most_recent_order,
-count(order_id) AS number_of_orders
-
-FROM stg_orders AS orders
-
-GROUP BY customer_id
-
-),
-
-stg_payments AS (
-
-SELECT \*
-
-FROM {{ ref('stg_payments')}}
-
-),
-
-customer_total_payments AS (
-
-SELECT
-stg_orders.customer_id,
-sum(amount) AS total_amount
-
-FROM stg_payments
-LEFT JOIN stg_orders
-ON stg_payments.order_id = stg_orders.order_id
-
-GROUP BY stg_orders.customer_id
-
-),
-
 customer_data AS (
 
 SELECT
-in0.first_name AS first_name,
-in0.last_name AS last_name,
-in1.customer_id AS customer_id,
-in1.total_amount AS total_amount,
-in2.first_order AS first_order,
-in2.most_recent_order AS most_recent_order,
+in0.first_name AS first_name,<N></N>
+in0.last_name AS last_name,<N></N>
+in1.customer_id AS customer_id,<N></N>
+in1.total_amount AS total_amount,<N></N>
+in2.first_order AS first_order,<N></N>
+in2.most_recent_order AS most_recent_order,<N></N>
 in2.number_of_orders AS number_of_orders
 
-FROM raw_customers AS in0
-INNER JOIN customer_total_payments AS in1
-ON in0.id == in1.customer_id
-INNER JOIN ordercount AS in2
-ON in0.id == in2.customer_id
+FROM raw_customers AS in0<N></N>
+INNER JOIN customer_total_payments AS in1<N></N>
+ON in0.id == in1.customer_id<N></N>
+INNER JOIN ordercount AS in2<N></N>
+ON in0.id == in2.customer_id<N></N>
 
 )
 
