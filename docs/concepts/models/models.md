@@ -1,42 +1,128 @@
 ---
 title: Models
-id: model
+id: Model
 description: SQL Models
 sidebar_position: 5
 tags:
   - concepts
-  - models
+  - Models
   - sql
   - target
 ---
 
-TODO: UPDATE TO REFLECT TWO SEPARATE FIGURES
+**Data Modeling** refers to the shaping of your data from the raw state all the way to a transformed final state. Data engineers are typically responsible for building tables that represent source data, transforming the data and saving as intermediate tables/views, and building final tables that can be queried by a BI tool and drive decision making for an organization.
 
-**Data modeling** refers to the shaping of your data from the raw state all the way to a transformed final state. Data engineers are typically responsible for building tables that represent source data, transforming the data and saving as intermediate tables/views, and building final tables that can be queried by a BI tool and drive decision making for an organization.
+Typically business logic is stored as SQL files.
 
-In Prophecy and dbt, **data models** are SQL select statements that represent the step-by-step logic to transform raw data to some intermediate or final state. These SQL select statements are stored in your Github repository project as `.sql` files. Each Model corresponds to a single table or view, aside from some advanced materialization cases.
+<details>
+<summary> My SQL file </summary>
+WITH raw_customers AS (
 
-Here we explore how to use models in Prophecy, adopting the concept and vernacular from dbt Core™. After you've read this page, get hands on with models in this getting started [guide](/docs/getting-started/getting-started-with-low-code-sql.md#44-develop-your-first-model).
+SELECT \*
+
+FROM {{ ref('raw_customers')}}
+
+),
+
+stg_orders AS (
+
+SELECT \*
+
+FROM {{ ref('stg_orders')}}
+
+),
+
+ordercount AS (
+
+SELECT
+customer_id,
+min(order_date) AS first_order,
+max(order_date) AS most_recent_order,
+count(order_id) AS number_of_orders
+
+FROM stg_orders AS orders
+
+GROUP BY customer_id
+
+),
+
+stg_payments AS (
+
+SELECT \*
+
+FROM {{ ref('stg_payments')}}
+
+),
+
+customer_total_payments AS (
+
+SELECT
+stg_orders.customer_id,
+sum(amount) AS total_amount
+
+FROM stg_payments
+LEFT JOIN stg_orders
+ON stg_payments.order_id = stg_orders.order_id
+
+GROUP BY stg_orders.customer_id
+
+),
+
+customer_data AS (
+
+SELECT
+in0.first_name AS first_name,
+in0.last_name AS last_name,
+in1.customer_id AS customer_id,
+in1.total_amount AS total_amount,
+in2.first_order AS first_order,
+in2.most_recent_order AS most_recent_order,
+in2.number_of_orders AS number_of_orders
+
+FROM raw_customers AS in0
+INNER JOIN customer_total_payments AS in1
+ON in0.id == in1.customer_id
+INNER JOIN ordercount AS in2
+ON in0.id == in2.customer_id
+
+)
+
+SELECT \*
+
+FROM customer_data
+
+</details>
+
+But defining the business logic in a SQL file is only the first step. Data-ready teams know that data Modeling with ad-hoc SQL statements is error-prone. How are the SQL files stored? How can the relationships between SQL files be understood? Or the relationships between tables? How is this logic shared? Can the business logic evolve as many team members contribute?
+
+**Teams shouldn't have to puzzle through storing, sharing, and understanding which tables rely on which others. Business logic should be reusable and referenceable in subsequent work.**
+
+In Prophecy and dbt, **Data Models** are SQL statements that incorporate the step-by-step logic to transform raw data to some intermediate or final state. Each Model, stored as a `.sql` file in Git, generally builds a single table or view. The Model can include Common Table Expressions (CTEs) and refer to other Models. Importantly, SQL statements with Prophecy and dbt are re-usable. When a Model is updated, any reference to that Model is likewise updated.
+
+Here we explore how to use Models in Prophecy, adopting the concept and vernacular from dbt Core™. After you've read this page, get hands on with Models in this getting started [guide](/docs/getting-started/getting-started-with-low-code-sql.md#44-develop-your-first-model).
 
 ### Using Models in Prophecy
 
+Prophecy displays Models using a lineage view, a visual view, and a code view.
+
 ![lineage-view](./img/lineage-view.png)
+Open the HelloWorld_SQL Project. See the **(1)Lineage** for the HelloWorld_SQL Project pictured above. Each **(2)Project** contains folders of Models, [seeds](/docs/getting-started/getting-started-with-sql.md#431-create-seeds), and sources. The Lineage provides a high level view of the Project's **(3)Models** with **(4)dependencies** displayed from left to right. The `customers` Model depends on seed `raw_customers` and Models `stg_orders` and `stg_payments`. Click to open the `customers` Model as shown in the figure below.
 
-Prophecy displays Models using the visual and code views; the `customers` model is shown in the figure below.
 ![model-view](./img/model-view.png)
+Now we can explore the `customers` Model more closely. The Model is easy to understand with interchangable **(1)visual** and **(2)code** views. The visual view depicts each small step needed to move from the referenced tables/seeds/Models to the final `customers` Model. Each transformation step or Common Table Expression (CTE) is called a **(3)Gem** in Prophecy.
 
-Toggle to the code view to find the **(1)SQL select statement** for the `customers` model. The customers Model is stored inside the HelloWorld_SQL Project, in the `Models` directory, and has a `.sql` file extension. Typically, a Model corresponds to a single table or view. **(3)Here,** the `customers` model maps to the `customers` table; just click to `Config` to configure as a view.
-
-Models contain data transformations which are expressed in **(4)both visual and code** formats. Here the `Join` step is represented visually as a `Join` Gem and in code as the highlighted statement. By popular demand, the visual and code formats are editable interchangeably, as illustrated [here.](/docs/low-code-sql/low-code-sql.md) Visual developers and SQL coders can work together in the same project, and both types of edits are incorporated to the project when committed and merged to the main branch. See [this page](/docs/metadata/git.md#how-to-commit-changes) to understand the commit and release process.
-
-One model can **(5)refer** to another model; here the `customers` model refers to the `payments` model. The `payments` model defines a table as an earlier step in the data processing flow. Like Pipelines, Models can be **(6)run** using the play buttons to execute the entire model or execute upto a particular Gem. Click to open data previews. When the entire model is run, the table or view is materialized on the data warehouse.
+The **(4)`Aggregate`** step is represented visually as an `Aggregate` Gem and in code as the highlighted CTE code fragment. By popular demand, the visual and code formats are editable interchangeably, as illustrated [here.](/docs/low-code-sql/low-code-sql.md) Visual developers and SQL coders can work together in the same project, and both types of edits are incorporated to the project when [committed and merged](/docs/metadata/git.md#how-to-commit-changes).
 
 ### Models vs Pipelines
 
-If you’re already familiar with Prophecy Pipelines, models are very similar. The major difference is that each Pipeline can create an arbitrary number of outputs, whereas a model only defines one output. Where Pipeline’s can exist only within Spark-based projects, models can exist within SQL-based ones.
+If you’re already familiar with Prophecy Pipelines, Models are very similar. The major difference is that each Pipeline can create an arbitrary number of outputs, whereas a Model only defines one output. Where Pipelines can exist only within Spark-based projects, Models can exist within SQL-based ones.
 
 Like Pipelines, Models can be configured, committed and released to [Git](/docs/metadata/git.md), according to software engineering best practices. More details on Model configuration coming soon!
 
-### dbt Core™ models
+### dbt Core™ Models
 
-Prophecy uses dbt Core™ as the underlying build system for SQL projects. Therefore, our concept of a model is equivalent to dbt’s. You can read more about dbt’s models and their properties [here.](https://docs.getdbt.com/docs/build/models) dbt supports two primary types of models: SQL-based and Python-based. Today, Prophecy’s visual interface supports SQL models only, however, Python support is coming out soon. If you’d like to define Python models you can still use them within the code interface.
+Prophecy uses dbt Core™ as the underlying build system for SQL projects. Therefore, our concept of a Model is equivalent to dbt’s. You can read more about dbt’s Models and their properties [here.](https://docs.getdbt.com/docs/build/models) dbt supports two primary types of Models: SQL-based and Python-based. Today, Prophecy’s visual interface supports SQL Models only, however, Python support is coming out soon. If you’d like to define Python Models you can still use them within the code interface.
+
+#### What's next?
+
+Now that you have an understanding of data Models as defined by Prophecy and dbt, get hands on with Models in this getting started [guide](/docs/getting-started/getting-started-with-low-code-sql.md#44-develop-your-first-model).
