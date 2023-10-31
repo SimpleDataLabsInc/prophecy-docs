@@ -26,6 +26,8 @@ By the end of this training, you'll have an understanding of Airflow DAGs, be ab
 
 If you don't have an existing project, please check out [this guide](https://docs.prophecy.io/concepts/project/#1-create-new-project) for setting up a Spark Project, and [this guide](/docs/getting-started/getting-started-with-low-code-sql.md) for setting up a SQL model in Prophecy.
 
+**For this guide, let's create a Job that gets activated whenever a new file is uploaded to an S3 bucket. Additionally, we'll configure it to send an email notification prior to initiating the execution of both the Pipeline and SQL model.**
+
 ## 1. Setup Prophecy Fabric for Airflow
 
 Prophecy introduces the concept of a Fabric to describe an execution environment. In this case, we create a Fabric to connect to Airflow, and create and schedule DAGs in it.
@@ -109,8 +111,6 @@ Add a **(7) Description**, about the Job you are creating. Once done, click **(8
 
 This will take you to the **Job editor** where you would be creating the actual DAG for the Job.
 Let's start adding Gems to our Job now.
-
-**For this guide, let's create a Job that gets activated whenever a new file is uploaded to an S3 bucket. Additionally, we'll configure it to send an email notification prior to initiating the execution of both the Pipeline and SQL model.**
 
 ### 2.1 Adding S3 file Sensor Gem
 
