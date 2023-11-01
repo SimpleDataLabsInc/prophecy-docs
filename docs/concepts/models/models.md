@@ -16,28 +16,39 @@ Typically business logic is stored as SQL files.
 
 <details>
 <summary> My SQL file </summary>
-customer_data AS (
+with import_orders as (
 
-SELECT
-in0.first_name AS first_name,<N></N>
-in0.last_name AS last_name,<N></N>
-in1.customer_id AS customer_id,<N></N>
-in1.total_amount AS total_amount,<N></N>
-in2.first_order AS first_order,<N></N>
-in2.most_recent_order AS most_recent_order,<N></N>
-in2.number_of_orders AS number_of_orders
+    select * from {{ ref('orders') }}
 
-FROM raw_customers AS in0<N></N>
-INNER JOIN customer_total_payments AS in1<N></N>
-ON in0.id == in1.customer_id<N></N>
-INNER JOIN ordercount AS in2<N></N>
-ON in0.id == in2.customer_id<N></N>
+),
+aggregate_orders as (
+
+    select
+
+        customer_id,
+        count(order_id) as count_orders
+
+    from import_orders
+    where status not in ('returned', 'return pending')
+    group by 1
+
+),
+segment_users as (
+
+    select
+
+        *,
+        case
+            when count_orders >= 3 then 'super_buyer'
+            when count_orders <3 and count_orders >= 2 then
+                'regular_buyer'
+            else 'single_buyer'
+        end as buyer_type
+
+    from aggregate_orders
 
 )
-
-SELECT \*
-
-FROM customer_data
+select \* from segment_users
 
 </details>
 
@@ -45,16 +56,18 @@ But defining the business logic in a SQL file is only the first step. Data-ready
 
 **Teams shouldn't have to puzzle through storing, sharing, and understanding which tables rely on which others. Business logic should be reusable and referenceable in subsequent work.**
 
-In Prophecy and dbt, **Data Models** are SQL statements that incorporate the step-by-step logic to transform raw data to some intermediate or final state. Each Model, stored as a `.sql` file in Git, generally builds a single table or view. The Model can include Common Table Expressions (CTEs) and refer to other Models. Importantly, SQL statements with Prophecy and dbt are re-usable. When a Model is updated, any reference to that Model is likewise updated.
+In Prophecy and dbt, **Data Models** are SQL statements that build a single table or view - and allow for better management.
 
-Here we explore how to use Models in Prophecy, adopting the concept and vernacular from dbt Core™. After you've read this page, get hands on with Models in this getting started [guide](/docs/getting-started/getting-started-with-low-code-sql.md#44-develop-your-first-model).
+Data models incorporate the step-by-step logic to transform raw data to some intermediate or final state. Each Model, stored as a `.sql` file on Git, is managed as software - with best practices like peer review and version control. The Model can include Common Table Expressions (CTEs) and [refer](https://docs.getdbt.com/docs/build/sql-models#building-dependencies-between-models) to other Models. Importantly, SQL statements with Prophecy and dbt are re-usable. When a Model is updated, any reference to that Model is likewise updated.
+
+Here we explore how to use Models in Prophecy, adopting the concept and vernacular from dbt Core™. After you've read this page, get hands on with Models in this getting started [guide](/docs/getting-started/getting-started-with-low-code-sql.md#44-Develop-your-first-model).
 
 ### Using Models in Prophecy
 
 Prophecy displays Models using a lineage view, a visual view, and a code view.
 
 ![lineage-view](./img/lineage-view.png)
-Open the HelloWorld_SQL Project. See the **(1)Lineage** for the HelloWorld_SQL Project pictured above. Each **(2)Project** contains folders of Models, [seeds](/docs/getting-started/getting-started-with-sql.md#431-create-seeds), and sources. The Lineage provides a high level view of the Project's **(3)Models** with **(4)dependencies** displayed from left to right. The `customers` Model depends on seed `raw_customers` and Models `stg_orders` and `stg_payments`. Click to open the `customers` Model as shown in the figure below.
+Open the HelloWorld_SQL Project. See the **(1)Lineage** for the HelloWorld_SQL Project pictured above. Each **(2)Project** contains folders of Models, [seeds](/docs/getting-started/getting-started-with-low-code-sql.md#431-create-seeds), and sources. The Lineage provides a high level view of the Project's **(3)Models** with **(4)dependencies** displayed from left to right. The `customers` Model depends on seed `raw_customers` and Models `stg_orders` and `stg_payments`. Click to open the `customers` Model as shown in the figure below.
 
 ![model-view](./img/model-view.png)
 Now we can explore the `customers` Model more closely. The Model is easy to understand with interchangable **(1)visual** and **(2)code** views. The visual view depicts each small step needed to move from the referenced tables/seeds/Models to the final `customers` Model. Each transformation step or Common Table Expression (CTE) is called a **(3)Gem** in Prophecy.
