@@ -14,43 +14,23 @@ tags:
 
 Typically business logic is stored as SQL files.
 
-<details>
-<summary> My SQL file </summary>
-with import_orders as (
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-    select * from {{ ref('orders') }}
+<Tabs>
 
-),
-aggregate_orders as (
+<TabItem value="py" label="myFile.sql">
 
-    select
+```
+SELECT column1, column2, ...
+FROM table_name;
+```
 
-        customer_id,
-        count(order_id) as count_orders
+</TabItem>
+</Tabs>
 
-    from import_orders
-    where status not in ('returned', 'return pending')
-    group by 1
-
-),
-segment_users as (
-
-    select
-
-        *,
-        case
-            when count_orders >= 3 then 'super_buyer'
-            when count_orders <3 and count_orders >= 2 then
-                'regular_buyer'
-            else 'single_buyer'
-        end as buyer_type
-
-    from aggregate_orders
-
-)
-select \* from segment_users
-
-</details>
+````
 
 But defining the business logic in a SQL file is only the first step. Data-ready teams know that data Modeling with ad-hoc SQL statements is error-prone. How are the SQL files stored? How can the relationships between SQL files be understood? Or the relationships between tables? How is this logic shared? Can the business logic evolve as many team members contribute?
 
@@ -60,7 +40,7 @@ In Prophecy and dbt, **Data Models** are SQL statements that build a single tabl
 
 Data models incorporate the step-by-step logic to transform raw data to some intermediate or final state. Each Model, stored as a `.sql` file on Git, is managed as software - with best practices like peer review and version control. The Model can include Common Table Expressions (CTEs) and [refer](https://docs.getdbt.com/docs/build/sql-models#building-dependencies-between-models) to other Models. Importantly, SQL statements with Prophecy and dbt are re-usable. When a Model is updated, any reference to that Model is likewise updated.
 
-Here we explore how to use Models in Prophecy, adopting the concept and vernacular from dbt Core™. After you've read this page, get hands on with Models in this getting started [guide](/docs/getting-started/getting-started-with-low-code-sql.md#44-Develop-your-first-model).
+Here we explore how to use Models in Prophecy, adopting the concept and vernacular from dbt Core™. Later, we'll see how to import dbt projects to Prophecy, or you can create a new Project and Models using Prophecy's drag-and-drop interface. After you've read this page, get hands on with Models in this getting-started [guide](/docs/getting-started/getting-started-with-low-code-sql.md#44-Develop-your-first-model).
 
 ### Using Models in Prophecy
 
