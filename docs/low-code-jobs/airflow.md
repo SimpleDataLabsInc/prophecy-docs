@@ -9,8 +9,8 @@ tags:
   - jobs
 ---
 
-:::info Coming Soon
-Detailed documentation on this feature, including setup instructions and best practices
+:::info Guide
+Detailed documentation on this feature, including setup instructions and best practices for your first Airflow implementation can be found in this [guide.](/docs/getting-started/getting-started-with-low-code-airflow.md). Below are general guidelines for interfacing from Prophecy with Airflow, for example, interface with a production-grade Airflow deployment.
 :::
 
 Apache Airflow is an open-source platform used to programmatically author, schedule, and monitor workflows.
@@ -28,8 +28,6 @@ With Prophecy, you can create and manage Airflow jobs using a visual Drag and dr
 
 To create an Airflow Fabric in Prophecy, you can use the "Airflow" Fabric type. This allows you to specify the parameters needed to connect to your Airflow instance based on the Provider. Currently, for Cloud Composer you would provider Airflow URL, Project Id, Dag location, and authentication key.
 
-Please see below video for example.
-
 ### How to create an Airflow Job
 
 Once you've created the Fabric, you can use it to create and manage Airflow jobs within Prophecy. This makes it easy to build and schedule complex workflows without having to leave the Prophecy platform.
@@ -43,4 +41,4 @@ Once you've defined your DAG, you can schedule it to run at specific intervals, 
 Prophecy provides a powerful monitoring interface that allows you to track the progress of your DAGs and quickly identify any issues that may arise.
 Please see below video for example
 
-Once done, Simply enable them and release your Project to schedule these Jobs on Airflow.
+Once done, simply enable them and release your Project to schedule these Jobs on Airflow.
