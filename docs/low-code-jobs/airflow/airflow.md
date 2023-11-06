@@ -16,7 +16,7 @@ It is a popular choice for organizations of all sizes to handle data pipelines, 
 
 #### DAGs (Directed Acyclic Graphs)
 
-Airflow allows you to define workflows using Directed Acyclic Graphs, where each node represents a task, and the edges define the sequence and dependencies between tasks. In Prophecy, you define these DAGs as Airflow Jobs. Each Airflow Job represent a DAG in Airflow.
+Airflow allows you to define workflows using [Directed Acyclic Graphs](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html), where each node represents a task, and the edges define the sequence and dependencies between tasks. In Prophecy, you define these DAGs as Airflow Jobs. Each Airflow Job represent a DAG in Airflow.
 
 #### Dynamic Workflow Scheduling
 
@@ -24,7 +24,7 @@ Airflow provides a flexible scheduling system that allows you to set up complex 
 
 #### Extensibility
 
-Airflow is highly extensible, allowing you to define custom operators and sensors to suit your specific needs. It supports a wide range of plugins and integrations. Prophecy maintains this extensibility via Gem builder. Users can create Gems to represent any custom Operator or Sensor.
+Airflow is highly extensible, allowing you to define custom operators and sensors to suit your specific needs. It supports a wide range of plugins and integrations. Prophecy maintains this extensibility via [Package Hub](/docs/package-hub/package-hub.md). Users can create Gems to represent any custom Operator or Sensor.
 
 #### Monitoring and Logging
 
@@ -72,7 +72,8 @@ Low-Code Airflow in Prophecy brings numerous advantages to data engineers, analy
 - **Cost Savings**: Low-Code Airflow can lead to cost savings through increased operational efficiency and decreased development time.
 
 - **Scalability**: As your data processing needs grow, Low-Code Airflow can scale with your organization, handling more extensive and complex Jobs.
--
+
+Let's delve deeper into the specifics of utilizing low-code Airflow.
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
