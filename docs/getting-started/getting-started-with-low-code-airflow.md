@@ -68,7 +68,7 @@ Once done, hit **(8) Save**.
 
 ### 1.3 Adding Databricks Spark Connection
 
-To be able to Run your Databricks Pipelines, you need to have connection from Prophecy Managed Airflow to your Databricks Environment. If you don't yet have a separate Fabric connecting Prophecy to a Databricks Spark Workspace, follow [these steps.](/docs/low-code-spark/fabrics/create-a-Fabric.md)
+To be able to Run your Databricks Pipelines, you need to have connection from Prophecy Managed Airflow to your Databricks Environment. If you don't yet have a separate Fabric connecting Prophecy to a Databricks Spark Workspace, follow [these steps.](/docs/low-code-spark/fabrics/create-a-fabric.md)
 Click again on Add Connection button.
 
 Select Databricks Spark in **(1) Connection Type**. Now under the **(2) Fabric**, you would select the already created Fabric for Databricks Spark and Prophecy would setup the connection.
