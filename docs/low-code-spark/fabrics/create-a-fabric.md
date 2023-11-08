@@ -1,7 +1,7 @@
 ---
 title: Databricks
 id: create-a-Fabric
-description: Guide on how to create Fabrics
+description: Configuring Databricks Fabric
 sidebar_position: 1
 tags:
   - concepts
