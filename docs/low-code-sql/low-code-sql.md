@@ -13,11 +13,10 @@ At any step of the process, data users can interactively run their models to mak
 Projects built through Prophecy are stored in the dbt Core format as repositories on Git, which allows data teams to follow the best software engineering practices for CI/CD.
 Data users can import an existing dbt Core project or start from scratch. They can publish those projects to other teams or subscribe to already existing ones.
 
-<div style={{position: 'relative', 'padding-bottom': '56.25%', height: 0}}>
-   <iframe src="https://www.loom.com/embed/3adaf02c39c34fe3a9531d11bf2509a5" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
-      style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}></iframe>
-</div>
+<div class="wistia_responsive_padding" style={{padding:'56% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://fast.wistia.net/embed/iframe/3i9g2dciah?seo=false?videoFoam=true" title="Design a Pipeline Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-:::info
-Coming soon: Please watch this space for more detailed documentation on Low code SQL
-:::
+Get started with SQL by starting with [this guide](/docs/getting-started/getting-started-with-low-code-sql.md) and learning more about models [here.](/docs/concepts/models/models.md) Watch for more low-code SQL topics coming soon!
