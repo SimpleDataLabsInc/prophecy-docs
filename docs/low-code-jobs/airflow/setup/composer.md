@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 title: Composer
 id: composer_fabric
 description: How Prophecy create a Composer Airflow Fabric

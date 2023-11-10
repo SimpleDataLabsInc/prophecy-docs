@@ -9,7 +9,7 @@ tags:
   - jobs
 ---
 
-Apache Airflow is an open-source workflow automation and orchestration platform that helps organizations schedule, monitor, and manage complex data workflows.
+[Apache Airflow](https://airflow.apache.org/) is an open-source workflow automation and orchestration platform that helps organizations schedule, monitor, and manage complex data workflows.
 It is a popular choice for organizations of all sizes to handle data pipelines, ETL processes, and task automation.
 
 ### Key Features of Apache Airflow
