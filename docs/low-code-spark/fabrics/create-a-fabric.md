@@ -45,6 +45,7 @@ Please refer below video for step-by-step example
 In Json you can just copy-paste your compute Json from Databricks.
 
 - **Prophecy Library** - These are some Scala and Python libraries written by Prophecy to provide additional functionalities on top of Spark. These would get automatically installed in your Spark execution environment when you attach to a cluster/create new cluster. These libraries are also publicly available on Maven central and Pypi respectively.
+- **Metadata Connection** - Optionally, enhance your Fabric by creating a [Metadata Connection](/docs/metadata/metadata-connections.md), recommended for users with hundreds or thousands of tables housed in their data provider(s).
 
 ### **Livy**
 

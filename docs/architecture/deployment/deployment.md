@@ -1,6 +1,6 @@
 ---
 title: "Deployment"
-date: 2022-03-21T14:45:41-07:00
+date: 2023-11-01T14:45:41-07:00
 sidebar_position: 1
 id: deployment
 description: Prophecy deployment is flexible and supports multiple mechanisms
@@ -39,14 +39,37 @@ This is the default option when you go through the cloud marketplaces. You can i
 
 On rare occasions, Prophecy will deploy on-premise for large customers who are moving to the cloud. Often the order is that the organizations will move Pipelines from on-premise legacy ETL tools to Spark, then move it to Spark on the cloud. For more information read the [on-premise installation documentation](on-premise/on-premise.md) or reach out to our team by using [request a demo](https://www.prophecy.io/request-a-demo).
 
-## Connectivity
+## High-Level Architecture
 
-Prophecy connects to the following external services:
+There are four components of a successful Prophecy deployment:
 
-- [Spark](#spark) - for interactive code execution
-- Schedulers - for code orchestration
-- [Git](#git) - for code storage
-- Identity Providers - for easier user authentication and authorization
+- **Prophecy IDE** - The development environment, including Prophecy Microservices and Cloud Infrastructure, which is deployed using one of these options: [Public SaaS](#public-saas), [Private SaaS](#private-saas-customer-vpc), or (rarely) [On-Premise](#on-premise-deployment).
+
+- **Data Engine (eg Snowflake or Databricks)** - [SQL](#sql) or [Spark](#spark) execution environment. This is setup by a customer and connected to Prophecy through a secure and performant interface. No customer’s data is stored on Prophecy’s environment.
+
+- **Source Control (e.g. Bitbucket)** - Prophecy works similar to code-first IDEs, by natively integrating with [Git](#git) for best software engineering practices. An encrypted copy of customer’s code is stored within Prophecy’s environment for fast access, while the source-of-truth code is stored on Git.
+
+- **Identity Management (optional)** - For simple user authentication and permission control, Prophecy can connect your identity provider of choice.
+
+### Prophecy IDE
+
+A user who logs into Prophecy has access to the integrated development environment (IDE). This includes everything needed to enable all data users to transform raw data into reliable, analytics-ready data using visual data pipelines.
+
+![Prophecy IDE](./img/arch_ide.png)
+
+Teams are the primary mechanism of ownership. Teams own Projects where Pipelines, Datasets, and Jobs live. Teams also own execution fabrics that provide the execution and storage resources for execution including on SQL Warehouses and Spark clusters.
+
+### SQL
+
+#### Snowflake
+
+To connect with data stored in a SQL Warehouse, or to allow for interactive SQL execution, Prophecy can connect to an existing Snowflake execution environment through a secure and performant **Snowpark** interface.
+
+Each [Fabric](../../concepts/fabrics) defined in Prophecy connects to a single Snowflake Warehouse and each user is required to provide credentials to authenticate to it.
+
+![Arch_Diagram](./img/arch_snowflake.png)
+
+Notice the data provider (eg Snowflake) matches up to a Fabric. For another scenario, consider the same architecture diagram where the Fabric connects to a Spark engine instead of a SQL Warehouse.
 
 ### Spark
 
@@ -54,9 +77,9 @@ To allow for interactive code execution Prophecy can connect to either [Databric
 
 #### Databricks
 
-![Prophecy <> Databricks Connectivity](./img/connectivity-databricks.png)
+![Prophecy <> Databricks Connectivity](./img/arch_databricks.png)
 
-Prophecy connects to Databricks using [Rest API](https://docs.databricks.com/dev-tools/api/latest/index.html). Each [Fabric](../../concepts/fabrics) defined in Prophecy refers to a single [Databricks workspace](https://docs.databricks.com/workspace/index.html) and each user is required to provide a [personal access token](https://docs.databricks.com/dev-tools/api/latest/authentication.html) to authenticate to it.
+Prophecy connects to Databricks using [Rest API](https://docs.databricks.com/dev-tools/api/latest/index.html). Each [Fabric](../../concepts/fabrics) defined in Prophecy connects to a single [Databricks workspace](https://docs.databricks.com/workspace/index.html) and each user is required to provide a [personal access token](https://docs.databricks.com/dev-tools/api/latest/authentication.html) to authenticate to it.
 
 Security-conscious enterprises that use Databricks with limited network access have to additionally add the **Prophecy Data Plane IP address** (`3.133.35.237`) to the Databricks allowed [access list](https://docs.databricks.com/security/network/ip-access-list.html#add-an-ip-access-list).
 
@@ -89,3 +112,17 @@ Security-conscious enterprises that use Git Providers within private networks be
 **Coming Soon**
 Users will be able to connect to common Git providers, by leveraging their respective OAuth functionalities. E.g. [GitHub OAuth](https://docs.github.com/en/developers/apps/building-oauth-apps/authorizing-oauth-apps) or Azure AD.
 :::
+
+## Security and Privacy Practices
+
+The Prophecy team employs top-notch industry practices to safeguard the security of their application and maintain the privacy of customer data. Below are just a few components of our comprehensive security strategy and system structure:
+
+- **General** - An annual penetration test is performed to validate Prophecy’s posture and identify vulnerabilities. Our latest penetration test report was issued in November 2022. Prophecy maintains SOC-2 compliance as audited by PrescientAssurance.
+
+- **Public SaaS** - Prophecy IDE is hosted on secure servers on AWS. All storage systems are encrypted, and all servers are tightly access controlled and audited. Data is encrypted in transit at all times.
+
+- **Private SaaS** - Alternatively, Prophecy’s IDE can be installed within an Enterprise network as desired. Prophecy’s IDE accesses your environment through a single IP address dedicated to you, allowing you to protect access to your data resources at the network level. The credentials are stored per user, and only a fully authenticated user can access their environment.
+
+- **On-Premise** - Prophecy complies with your security requirements on-premise; [reach out](https://www.prophecy.io/request-a-demo) to start the discussion.
+
+Read more details on Prophecy’s security and compliance posture at our Security Portal [here.](https://security.prophecy.io/)
