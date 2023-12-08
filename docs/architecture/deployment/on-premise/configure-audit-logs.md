@@ -34,7 +34,7 @@ There are certain environment variables that need to be configured in Athena bas
 | `ENABLE_USER_EVENTS`          | Set to `true` to enable user event audit logs                                                                                                                                         | `false`         |
 | `OBJECT_STORE_LOCATION_TYPE`  | Which provider to use for the object store. Supports `local`, `s3`, `azure-blob-storage`                                                                                              | `local`         |
 | `OBJECT_STORE_LOCATION_LOCAL` | Any PVC Mount point with storage                                                                                                                                                      | `/backup`       |
-| `UEVENTS_SCHEDULE`            | How frequently to push user events to object store. Defaults to every one hour. Uses [6-digit CRON](https://pkg.go.dev/github.com/robfig cron#hdr-CRON_Expression_Format)             | `0 0 */1 * * *` |
+| `UEVENTS_SCHEDULE`            | How frequently to push user events to object store. Defaults to every one hour. Uses [6-digit CRON](https://pkg.go.dev/github.com/robfig/cron#hdr-CRON_Expression_Format)             | `0 0 */1 * * *` |
 | `UEVENTS_GC_SCHEDULE`         | How frequently to purge old user events from the internal database. Defaults to daily 1 am. Uses [6-digit CRON](https://pkg.go.dev/github.com/robfig/cron#hdr-CRON_Expression_Format) | `0 0 1 * * *`   |
 
 ### To enable user events audit logs

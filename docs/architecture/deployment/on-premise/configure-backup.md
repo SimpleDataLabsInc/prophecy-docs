@@ -134,11 +134,11 @@ Sample response when there is no ongoing backup. It returns the last backup oper
 }
 ```
 
-Sample response when there is an ongoing backup
+Sample response when there is an ongoing backup. When all (almost) all pending DBs and pending Volumes move to completed list, then the backup completes.
 
 ```
 {
-    "status":"backup/restore operation ongoing with pending DBs: [asp airflow gogs exec metadata] and pending Volumes: [artifactory edweb gitserver metagraph openidfederator] and completed DBs: [] and completed Volumes: []"
+  "status":"backup/restore operation ongoing with pending DBs: [airflow gogs exec metadata] and pending Volumes: [gitserver metagraph openidfederator] and completed DBs: [asp] and completed Volumes: [artifactory edweb]"
 }
 ```
 
@@ -172,7 +172,9 @@ Sample response when the required `timestamp` of backup is passed.
 Sample response when there is an ongoing backup and when there is no `timestamp` passed. When all (almost) all pending DBs and pending Volumes move to completed list, then the backup completes.
 
 ```
-{"status":"backup/restore operation ongoing with pending DBs: [airflow gogs exec metadata] and pending Volumes: [gitserver metagraph openidfederator] and completed DBs: [asp] and completed Volumes: [artifactory edweb]"}
+{
+  "status":"backup/restore operation ongoing with pending DBs: [airflow gogs exec metadata] and pending Volumes: [gitserver metagraph openidfederator] and completed DBs: [asp] and completed Volumes: [artifactory edweb]"
+}
 ```
 
 #### Get List of Available Backups
