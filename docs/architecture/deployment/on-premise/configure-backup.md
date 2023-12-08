@@ -120,7 +120,7 @@ Sample API call
 ```
 curl --location --request GET 'https://{prophecy-url}/athena/api/v1/backup/latest' \
 --header 'Authorization: {api-key}' \
---data-raw ''
+--header 'Content-Type: application/json'
 ```
 
 Sample response when there is no ongoing backup. It returns the last backup operation status.
