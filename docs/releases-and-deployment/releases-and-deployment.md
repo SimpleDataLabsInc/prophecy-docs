@@ -112,20 +112,20 @@ Enabling unit tests might lead to a slight increase the Build time
 
 ## Releases and Deployment History
 
-Click on **(1) Releases and Deployments** tab in the Project Metadata to access the release history and the currently deployed Jobs.
+Click on **(1) Releases and Deployments** tab in the Project Metadata to access the history and the currently deployed Jobs.
 
-![Releases_and_deployments](img/Release_Deployment_history.png)
+![Releases_and_Deployments](img/Release_&_Deployments.png)
 
 ### Releases
 
 In the **(2) Releases** tab, you'll find a list of all tags, who created them, when they were created, and the latest tag. It also provides **(3) logs** of the latest deployment associated with that tag.
 
-You can even use the **(4) Refresh** icon to pull release tags created outside of Prophecy directly into your Git.
+![Releases_and_deployments](img/Release_Deployment_history.png)
 
-### Deployments
+### Current Version
 
-In the **(5) Deployments** tab, you can view the current state of all deployed Jobs per environment. Select the **(6) Fabric** environment you want to see the deployed Jobs for, and it will list all the Jobs deployed in that environment, along with their versions and deployment logs.
+In the **(4) Current Version** tab, you can view the current state of all deployed Jobs per environment. Select the **(5) Fabric** environment you want to see the deployed Jobs for, and it will list all the Jobs deployed in that environment, along with their versions and deployment logs.
 
-:::note
-Coming soon: We'll soon be adding a way to view the history of all deployments triggered by any user, including logs for any failed deployments.
-:::
+### Deployment History
+
+In **(6) Deployment History** tab, you can view the history of all past deployments, along with the time at it was deployed and logs.
