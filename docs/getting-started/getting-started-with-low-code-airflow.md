@@ -14,6 +14,11 @@ This empowers you to design and schedule intricate workflows without the need fo
 The tool seamlessly translates your designs into highly optimized Python Airflow code, stored in Git, ensuring complete accessibility and openness to all users.
 Moreover, you have the flexibility to enhance functionality by incorporating your custom operators and sensors via our Gem Builder interface.
 
+<div style={{position: 'relative', 'padding-bottom': '56.25%', height: 0}}>
+   <iframe src="https://www.loom.com/embed/e12bf4819ac84b93a3a6642df0f38450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
+      style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}></iframe>
+</div>
+
 #### In this quick-start, we will show you how to use Prophecy Managed Airflow to Run and schedule your Spark and SQL Pipelines
 
 We'll take you step by step from connecting your Databricks to Prophecy Managed Airflow to creating your first [Airflow DAG](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html) and scheduling it.
