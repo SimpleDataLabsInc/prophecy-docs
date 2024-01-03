@@ -9,10 +9,6 @@ tags:
   - generativeai
 ---
 
-:::tip
-**How to enable Data Copilot?** Data Copilot is enabled for all customers using Prophecy’s managed Public SaaS offering. Customers using the Private SaaS or on-prem offerings can enable Data Copilot as a flag in the deployment / upgrade configuration.
-:::
-
 ### Building Models and Pipelines with Prophecy’s Data Copilot
 
 <div class="wistia_responsive_padding" style={{padding:'62.5% 0 0 0', position:'relative'}}>
@@ -116,11 +112,13 @@ Our knowledge graph includes metadata for a Project’s entities (eg Datasets, S
 
 ![Architecture](img/copilot_arch.png)
 
-Prophecy sends the enhanced Prompt to OpenAI (or the user’s preferred LLM). The model will return SQL or Spark code, and Prophecy will verify whether this code is valid. Once Prophecy fixes the code, Prophecy generates a visual Pipeline and displays this Pipeline to the user for review.
+Prophecy sends the enhanced Prompt to OpenAI. The model will return SQL or Spark code, and Prophecy will verify whether this code is valid. Once Prophecy fixes the code, Prophecy generates a visual Pipeline and displays this Pipeline to the user for review.
 
-### Language Model
+### Deployment
 
-Data Copilot is available for all customers using Prophecy’s managed Public SaaS offering and uses the public SaaS version of OpenAI's Language model. We will be releasing support for private Language model instances in an upcoming release.
+Data Copilot is available for all customers using Prophecy’s managed Public SaaS offering and uses the public SaaS version of OpenAI's Language model. Customers using the Private SaaS or on-prem offerings can enable Data Copilot as a flag in the deployment / upgrade configuration. 
+
+See [here](/architecture/deployment/enable-data-copilot) for more details.
 
 ### Data Privacy
 
@@ -160,12 +158,7 @@ Copilot features are included with Prophecy’s Low-Code Spark and Low-Code SQL 
 
 Yes! Data Copilot is enabled or disabled at deployment time. Admins who run Prophecy within their [own VPC](/docs/architecture/deployment/deployment.md#private-saas-customer-vpc) set the flag in the deployment or upgrade configuration by following the instructions below. Speak to your Prophecy account owner with questions.
 
-```mdx-code-block
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
-<DocCardList items={useCurrentSidebarCategory().items}/>
-```
+To learn more about how to connect Prophecy Data Copilot to private OpenAI endpoints, see [here](/architecture/deployment/enable-data-copilot).
 
 #### Can I disable this feature for my users?
 
