@@ -1,6 +1,6 @@
 ---
-title: Releases and Deployment
-id: releases-and-deployment
+title: Deployment
+id: Deployment
 description: Release and Deploy Process. How to Release your Projects and Deploy your Jobs
 tags:
   - metadata
@@ -11,7 +11,7 @@ tags:
 ---
 
 Once you have developed and tested your custom components like Gems, Pipelines, Models, or Jobs in Prophecy, the next step is to make them available for use. This involves Releasing and Deploying them to the respective environments.
-You can Release and Deploy via Prophecy UI or you can use [Prophecy Build Tool](/docs/releases-and-deployment/prophecy-build-tool/prophecy-build-tool.md) CLI to integrate with any other CI-CD tools.
+You can Release and Deploy via Prophecy UI or you can use [Prophecy Build Tool](/docs/deployment/prophecy-build-tool/prophecy-build-tool.md) CLI to integrate with any other CI-CD tools.
 Lets see how you can do it via Prophecy below.
 
 ## Overview
