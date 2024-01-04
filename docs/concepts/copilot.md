@@ -116,7 +116,7 @@ Prophecy sends the enhanced Prompt to OpenAI. The model will return SQL or Spark
 
 ### Deployment
 
-Data Copilot is available for all customers using Prophecy’s managed Public SaaS offering and uses the public SaaS version of OpenAI's Language model. Customers using the Private SaaS or on-prem offerings can enable Data Copilot as a flag in the deployment / upgrade configuration. 
+Data Copilot is available for all customers using Prophecy’s managed Public SaaS offering and uses the public SaaS version of OpenAI's Language model. Customers using the Private SaaS or on-prem offerings can enable Data Copilot as a flag in the deployment / upgrade configuration.
 
 See [here](/architecture/deployment/enable-data-copilot) for more details.
 
@@ -156,9 +156,7 @@ Copilot features are included with Prophecy’s Low-Code Spark and Low-Code SQL 
 
 #### Can I use Data Copilot on my Private SaaS or On-Premise installation of Prophecy?
 
-Yes! Data Copilot is enabled or disabled at deployment time. Admins who run Prophecy within their [own VPC](/docs/architecture/deployment/deployment.md#private-saas-customer-vpc) set the flag in the deployment or upgrade configuration by following the instructions below. Speak to your Prophecy account owner with questions.
-
-To learn more about how to connect Prophecy Data Copilot to private OpenAI endpoints, see [here](/architecture/deployment/enable-data-copilot).
+Yes! Data Copilot is enabled or disabled at deployment time. Admins who run Prophecy within their [own VPC](/docs/architecture/deployment/deployment.md#private-saas-customer-vpc) set the flag in the deployment or upgrade configuration. To learn more about how to connect Prophecy Data Copilot to private OpenAI endpoints, see [here](/architecture/deployment/enable-data-copilot). Speak to your Prophecy account owner with questions.
 
 #### Can I disable this feature for my users?
 
