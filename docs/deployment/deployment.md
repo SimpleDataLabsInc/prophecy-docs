@@ -83,7 +83,7 @@ This is an optional step and overrides the environment for this particular Job d
 :::
 
 **(3) Pick Jobs to Deploy** table provides an overview of the deployment status for each Job, indicating the targeted Fabric, and any actions taken, such as addition, deletion, or modification.
-In the **Staged Release and Deployment** setting, the ability to select or deselect specific Jobs is disabled. For more information on enabling this functionality, continue reading or directly jump [here](/docs/deployment/deployment.md#selective-job-deployment).
+In the **Staged Release and Deployment** setting, the ability to select or deselect specific Jobs is disabled. For more information on enabling this functionality, continue reading or directly jump [here](#selective-job-deployment).
 
 Click on **(4) Deploy** to start the deployment process. This will now build your Pipelines, Gems and update the Jobs as shown below. You would be able to see logs for each step in this screen.
 
@@ -91,7 +91,7 @@ Click on **(4) Deploy** to start the deployment process. This will now build you
 
 ### Selective Job Deployment
 
-If you activate **Selective Job Deployment** in the advance settings [here](/docs/deployment/deployment.md#advanced-release-settings), you would be able to select specific Jobs during the Deploy step. This is helpful when you have many Pipelines and Jobs in the same project and only want to deploy a few at a time. It also speeds up the overall process by only building the Pipelines used in the selected Jobs.
+If you activate **Selective Job Deployment** in the advance settings [here](#advanced-release-settings), you would be able to select specific Jobs during the Deploy step. This is helpful when you have many Pipelines and Jobs in the same project and only want to deploy a few at a time. It also speeds up the overall process by only building the Pipelines used in the selected Jobs.
 
 :::caution
 Different versions of pipelines, datasets, and Subgraphs may coexist within the same environment when selectively deploying jobs. Only the deployed jobs will use the latest versions of pipelines, datasets, and subgraphs.
