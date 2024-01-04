@@ -2,6 +2,7 @@
 sidebar_position: 2
 title: Composer
 id: composer_fabric
+draft: true
 description: How Prophecy create a Composer Airflow Fabric
 tags:
   - scheduling

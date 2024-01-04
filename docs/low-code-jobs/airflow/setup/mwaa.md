@@ -2,6 +2,7 @@
 sidebar_position: 3
 title: MWAA
 id: MWAA_fabric
+draft: true
 description: How Prophecy create a MWAA Airflow Fabric
 tags:
   - scheduling
