@@ -12,7 +12,7 @@ tags:
 
 Once you have developed and tested your custom components like Gems, Pipelines, Models, or Jobs in Prophecy, the next step is to make them available for use. This involves Releasing and Deploying them to the respective environments.
 You can Release and Deploy via Prophecy UI or you can use [Prophecy Build Tool](/docs/deployment/prophecy-build-tool/prophecy-build-tool.md) CLI to integrate with any other CI-CD tools.
-Lets see how you can do it via Prophecy below.
+Lets see how you can do it via the Prophecy UI below.
 
 ## Overview
 
@@ -64,11 +64,11 @@ When you switch to Staged Release and Deployment, you would start seeing a new s
 
 #### Release
 
-With Auto-deploy turned off, the Release step only creates a [Git Tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging) and pushes it to your Git repository. It doesn't build or upload any artifacts. This speeds up the release process for larger projects with numerous pipelines and jobs.
+With Auto-deploy turned off, the Release step only creates a [Git Tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging) and pushes the tagged code version to your Git repository. At this step, artifacts are not built. This speeds up the release process for larger projects with numerous pipelines and jobs.
 
 #### Deploy
 
-After the release, you can directly proceed to deploy or choose to deploy later from the Deploy option in three dots as shown below.
+After the release, you can directly proceed to deploy or choose to deploy later from the Deploy option in the dropdown shown below.
 
 ![Deploy_separately](img/deploy_separately.png)
 
@@ -83,7 +83,7 @@ This is an optional step and overrides the environment for this particular Job d
 :::
 
 **(3) Pick Jobs to Deploy** table provides an overview of the deployment status for each Job, indicating the targeted Fabric, and any actions taken, such as addition, deletion, or modification.
-In the **Staged Release and Deployment** setting, the ability to select or deselect specific Jobs is disabled. For more information on enabling this functionality, continue reading or directly jump [here](#selective-job-deployment).
+In the **Staged Release and Deployment** setting, the ability to select or deselect specific Jobs is disabled. For more information on enabling this functionality, continue reading or directly jump [here](/docs/deployment/deployment.md#selective-job-deployment).
 
 Click on **(4) Deploy** to start the deployment process. This will now build your Pipelines, Gems and update the Jobs as shown below. You would be able to see logs for each step in this screen.
 
@@ -91,7 +91,7 @@ Click on **(4) Deploy** to start the deployment process. This will now build you
 
 ### Selective Job Deployment
 
-If you activate **Selective Job Deployment** in the advance settings [here](#advanced-release-settings), you would be able to select specific Jobs during the Deploy step. This is helpful when you have many Pipelines and Jobs in the same project and only want to deploy a few at a time. It also speeds up the overall process by only building the Pipelines used in the selected Jobs.
+If you activate **Selective Job Deployment** in the advance settings [here](/docs/deployment/deployment.md#advanced-release-settings), you would be able to select specific Jobs during the Deploy step. This is helpful when you have many Pipelines and Jobs in the same project and only want to deploy a few at a time. It also speeds up the overall process by only building the Pipelines used in the selected Jobs.
 
 :::caution
 Different versions of pipelines, datasets, and Subgraphs may coexist within the same environment when selectively deploying jobs. Only the deployed jobs will use the latest versions of pipelines, datasets, and subgraphs.
@@ -101,7 +101,7 @@ Different versions of pipelines, datasets, and Subgraphs may coexist within the 
 
 ### Enable Unit Tests
 
-Writing good [Unit tests](/docs/low-code-spark/tests.md) is one of the key stages of the having Quality and Manageable Data Pipelines. Prophecy makes the process of writing unit cases easier by giving an interactive environment via which unit test cases can be configured across each component.
+Writing good [Unit tests](/docs/low-code-spark/tests.md) is a key component for Data Pipeline quality and management. Prophecy makes the process of writing unit cases easier by giving an interactive environment via which unit test cases can be configured across each component.
 This setting enables running Unit tests as part of Pipeline Builds.
 
 :::note
@@ -118,14 +118,14 @@ Click on **(1) Releases and Deployments** tab in the Project Metadata to access 
 
 ### Releases
 
-In the **(2) Releases** tab, you'll find a list of all tags, who created them, when they were created, and the latest tag. It also provides **(3) logs** of the latest deployment associated with that tag.
+In the **(2) Releases** tab, you'll find a list of all tags, who created them, when they were created, and the latest tag. Also find **(3) logs** of the latest deployment associated with that tag.
 
 ![Releases_and_deployments](img/Release_Deployment_history.png)
 
 ### Current Version
 
-In the **(4) Current Version** tab, you can view the current state of all deployed Jobs per environment. Select the **(5) Fabric** environment you want to see the deployed Jobs for, and it will list all the Jobs deployed in that environment, along with their versions and deployment logs.
+In the **(4) Current Version** tab, you can view the current state of all deployed Jobs per environment. Select the **(5) Fabric** environment you want to see the deployed Jobs for, and see the list for all the Jobs deployed in that environment, along with their versions and deployment logs.
 
 ### Deployment History
 
-In **(6) Deployment History** tab, you can view the history of all past deployments, along with the time at it was deployed and logs.
+In **(6) Deployment History** tab, you can view the history of all past deployments, along with the time that it was deployed and related logs.
