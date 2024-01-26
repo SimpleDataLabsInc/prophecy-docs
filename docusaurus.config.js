@@ -65,6 +65,11 @@ const config = {
             label: "Blog",
             position: "left",
           },
+          {
+            to: "https://docs.prophecy.io/getting-started/getting-help-with-prophecy/",
+            label: "Help",
+            position: "right",
+          },
           { to: "http://app.prophecy.io/", label: "Login", position: "right" },
         ],
       },

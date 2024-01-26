@@ -2,7 +2,7 @@
 title: SQL with Databricks
 id: sql-with-databricks
 description: A tutorial on using Low-code SQL
-sidebar_position: 5
+sidebar_position: 1
 tags:
   - sql
   - tutorial
