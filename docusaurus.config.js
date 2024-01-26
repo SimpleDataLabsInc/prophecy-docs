@@ -66,7 +66,7 @@ const config = {
             position: "left",
           },
           {
-            to: "https://docs.prophecy.io/getting-started/getting-help-with-prophecy/",
+            to: "/getting-started/getting-help",
             label: "Help",
             position: "right",
           },

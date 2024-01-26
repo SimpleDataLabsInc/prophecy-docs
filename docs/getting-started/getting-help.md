@@ -1,10 +1,13 @@
 ---
 title: Getting Help with Prophecy
-sidebar_position: 5
-id: getting-help-with-prophecy
+id: getting-help
+sidebar_position: 6
 description: Getting Help with Prophecy
+sidebar_label: Getting Help
 tags: []
 ---
+
+# Getting Help with Prophecy
 
 At Prophecy, we're dedicated to ensuring you have the support you need, whether you're exploring our platform during a trial or you're one of our valued customers.
 
