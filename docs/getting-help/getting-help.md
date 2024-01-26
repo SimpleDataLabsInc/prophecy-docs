@@ -12,6 +12,7 @@ At Prophecy, we're dedicated to ensuring you have the support you need, whether 
 
 - **Get Trial Support in Slack:** Have questions during your trial? Join the conversation in the #support channel on our Slack community. Our dynamic community is here to assist you. [Join #support on Slack](https://prophecy-io-support.slack.com/archives/C01P1PD7JJY).
 - _If you're a Trial customer and unable to signup for our Slack Community, please reach out to Sales@Prophecy.io for quick assistance._
+- If you'd like to see Prophecy in action, sign up [here](https://www.prophecy.io/request-a-demo) for a live demo with our incredible team.
 
 ## For Existing Customers
 
