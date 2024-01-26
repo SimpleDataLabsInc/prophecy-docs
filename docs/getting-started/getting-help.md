@@ -7,8 +7,6 @@ sidebar_label: Getting Help
 tags: []
 ---
 
-# Getting Help with Prophecy
-
 At Prophecy, we're dedicated to ensuring you have the support you need, whether you're exploring our platform during a trial or you're one of our valued customers.
 
 ## For Trial Users
