@@ -2,7 +2,7 @@
 title: Airflow with Databricks
 id: airflow-with-databricks
 description: A tutorial on using Low-code Airflow
-sidebar_position: 7
+sidebar_position: 3
 tags:
   - airflow
   - tutorial
