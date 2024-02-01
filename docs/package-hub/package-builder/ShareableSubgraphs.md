@@ -10,13 +10,13 @@ Users can share published [Subgraphs](/docs/low-code-spark/gems/subgraph/subgrap
 
 ## Configurable Subgraphs
 
-Use can add [configuration variables](/docs/low-code-spark/gems/subgraph/subgraph.md#subgraph-configurations) to Reusable Subgraphs and use these in the Gems of the Subgraph.
+User can add [configuration variables](/docs/low-code-spark/gems/subgraph/subgraph.md#subgraph-configurations) to reusable Subgraphs and use these in the Gems of the Subgraph.
 
 :::info
-Please note only subgraph Configs can be used inside a Subgraph. Pipeline config variables cannot be used in Gems inside a subgraph. Similarly, Subgraph configs are not available outside to other gems of the Pipeline.
-These subgraph configs can only be edited from inside the Subgraph.
+Please note only Subgraph Configs can be used inside a Subgraph. Pipeline config variables cannot be used in Gems inside a Subgraph. Similarly, Subgraph configs are not available to other outside gems of the Pipeline.
+These Subgraph configs can only be edited from inside the Subgraph.
 
-These subgraph configurations will also be shown as part of Pipeline configs.
+Also, Subgraph configurations will be shown as part of Pipeline configs.
 :::
 
 Please see this video for an example
@@ -28,7 +28,7 @@ Please see this video for an example
 
 ## Sharing Subgraphs Across Pipelines
 
-Once a subgraph is Published, a User can simply add it to any other Pipeline of the same project.
+Once a subgraph is published, the user can simply add it to any other Pipeline of the same Project.
 Please see this video for an example
 
 <div style={{position: 'relative', 'padding-bottom': '56.25%', height: 0}}>
