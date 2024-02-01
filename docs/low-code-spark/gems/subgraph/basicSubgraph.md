@@ -16,3 +16,8 @@ Furthermore, the ability to [Publish a Subgraph](/docs/package-hub/package-build
 ## Create a Subgraph
 
 ## Make Subgraph for existing Gems
+
+## Subgraph Configurations
+
+Like [Pipeline Configurations](../../configuration/configuration.md), In Subgraph Configs, User can define values that can be set at the Subgraph level and then be accessed inside any component in the Subgraph.
+These will also reflect under Configurations of Pipelines using these Subgraphs, but they can only be edited from Subgraph configs.
