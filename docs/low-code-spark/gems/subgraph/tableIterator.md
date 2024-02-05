@@ -67,8 +67,3 @@ You can click on the **(3) Interim** to check values for that Iteration.
 Click on the **(2) Iteration** button, and it will open up the Iterations table as shown below. Here you can see all iterations and config values for each of them.
 
 ![iterations](img/Iterations.png)
-
-## Adding More Inputs and Output to Iterator
-
-By default, the Table Iterator Gem as one input for looping DataFrame and no output.
-You can add more input and Output ports if you want as per the use case.

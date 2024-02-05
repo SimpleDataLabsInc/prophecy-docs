@@ -13,11 +13,29 @@ In a **Basic Subgraph**, you have the capability to encapsulate multiple distinc
 
 Furthermore, the ability to [Publish a Subgraph](/docs/package-hub/package-builder/ShareableSubgraphs.md) extends the utility beyond a singular Pipeline. By doing so, you can reuse the encapsulated logic in other pipelines or projects, promoting code re-usability and simplifying the overall development workflow.
 
-## Create a Subgraph
+## Create a Basic Subgraph
 
-## Make Subgraph for existing Gems
+To create a Basic Subgraph, Drag and Drop the **(1) Basic** Subgraph Gem from the Subgraph Menu and connect it to any previously created Gems on your canvas.
+Once the Gem is added, Click **(2) Open**, to open the subgraph canvas.
+
+![create_basic_subgraph](img/Create_basic_subgraph.png)
+
+Once you are on the canvas, You can start adding Gems to your subgraph by dragging and dropping from the Gems Menu, like you do on Pipeline canvas.
+
+## Add/Remove Port
+
+While using a Subgraph, You can control the Input and Output ports as per the requirements. Click on the **(1) Add/Remove Part** Button to open the port settings dialog as shown below.
+
+![add_remove_port](img/add_remove_part.png)
+
+In this dialog, you can add or remove the Input or Output ports.
+To Add an input Put click on **(1) + button**. This will add an input Port.
+To remove an Input port, Click the **(2) Delete** icon next to the input port you want to delete.
+
+Similarly, you can control the Output Ports by switching to the **() Output** Tab.
+As you connect the input and output ports to gems Outside the subgraph, you would be able to see the schema for the port reflected here.
 
 ## Subgraph Configurations
 
-Like [Pipeline Configurations](../../configuration/configuration.md), In Subgraph Configs, User can define values that can be set at the Subgraph level and then be accessed inside any component in the Subgraph.
+Like [Pipeline Configurations](/docs/low-code-spark/configuration/configuration.md), In Subgraph Configs, User can define values that can be set at the Subgraph level and then be accessed inside any component in the Subgraph.
 These will also reflect under Configurations of Pipelines using these Subgraphs, but they can only be edited from Subgraph configs.
