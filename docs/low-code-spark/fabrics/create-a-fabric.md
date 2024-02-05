@@ -1,7 +1,7 @@
 ---
-title: How to create a Fabric
+title: Databricks
 id: create-a-Fabric
-description: Guide on how to create Fabrics
+description: Configuring Databricks Fabric
 sidebar_position: 1
 tags:
   - concepts
@@ -45,6 +45,7 @@ Please refer below video for step-by-step example
 In Json you can just copy-paste your compute Json from Databricks.
 
 - **Prophecy Library** - These are some Scala and Python libraries written by Prophecy to provide additional functionalities on top of Spark. These would get automatically installed in your Spark execution environment when you attach to a cluster/create new cluster. These libraries are also publicly available on Maven central and Pypi respectively.
+- **Metadata Connection** - Optionally, enhance your Fabric by creating a [Metadata Connection](/docs/metadata/metadata-connections.md), recommended for users with hundreds or thousands of tables housed in their data provider(s).
 
 ### **Livy**
 
@@ -60,7 +61,7 @@ Please refer below video for step-by-step example, or learn how to configure an 
 - **Spark Connection** - Here you will provide the Livy URL, Authentication, Spark version and Scala version. Spark and Scala versions are used when user tries to attach a cluster using this Fabric.
 
 :::note
-The Spark and Scala versions are now mandatory with recent [Release](/release_notes/Feb_2023#spark-and-scala-versions-are-now-required-in-livy-Fabrics).
+The Spark and Scala versions are now mandatory with recent [Release](/docs/release_notes/2023/feb2023.md#spark-and-scala-versions-are-now-required-in-livy-Fabrics).
 If users has an old Fabric which doesn't have Spark abd Scala versions present, an error (seen below) will appear when trying to attach to a cluster. User would need to update the Fabric from the metadata page or by clicking `Update Fabric` button (seen below).
 ![Fabric_misconfigured](img/fabric_misconfigured.png)
 :::

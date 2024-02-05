@@ -2,7 +2,7 @@
 title: Prophecy API
 id: prophecyAPI
 description: Prophecy metadata available through the Prophecy API
-sidebar_position: 5
+sidebar_position: 6
 tags:
   - PAT
   - token

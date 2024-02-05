@@ -65,6 +65,11 @@ const config = {
             label: "Blog",
             position: "left",
           },
+          {
+            to: "/getting-started/getting-help",
+            label: "Help",
+            position: "right",
+          },
           { to: "http://app.prophecy.io/", label: "Login", position: "right" },
         ],
       },
@@ -99,7 +104,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ["java", "scala"],
+        additionalLanguages: ["java", "scala", "groovy"],
       },
       algolia: {
         appId: "ZWUS3CKBSL",
