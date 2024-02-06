@@ -6,21 +6,27 @@ tags:
   [spark, secrets, vault, environment, variable, databricks, secret-provider]
 ---
 
-Prophecy supports seamless integration with various data tools, enabling users to build code for ELT use-cases beyond basic warehousing transformations. This includes data ingestion from sources like Salesforce, data enrichment through Rest APIs for data masking, and data egress to platforms like Snowflake.
+Prophecy seamlessly integrates with various data tools, extending capabilities beyond basic warehousing transformations for ELT use-cases. This includes data ingestion from sources like Salesforce, data enrichment through Rest APIs for data masking, and data egress to platforms like Snowflake.
 
-To ensure robust security for enterprise customers, Prophecy facilitates secure authentication for all data tool connections. Users can store their credentials securely using centralized secret providers, following best practices such as encryption. This approach enhances security standards by allowing centralized management and distribution of credentials, with dedicated individuals or groups overseeing the security process.
+To ensure robust security for enterprise customers, Prophecy provides secure authentication for all data tool connections. Users can securely store credentials using centralized secret providers, following best practices such as encryption. This approach enhances security standards by enabling centralized management and distribution of credentials, with dedicated individuals or groups overseeing the security process.
 
-Users can connect these centralized secret providers to their Spark Fabrics, and access the secrets created in Prophecy.
-Please note, Prophecy never accesses the value for these secrets, Just keys to generate and execute correct code.
+Users can connect these centralized secret providers to their Spark Fabrics and access the secrets created in Prophecy.
 
-In this documentation, we'll walk you through the process of safely storing and accessing secrets in Prophecy.
-You'll learn best practices while gaining hands-on experience to ensure your secrets remain protected. Let's dive in.
+:::info
+Prophecy never accesses the value for these secrets, only keys to generate and execute correct code.
+:::
+
+This documentation guides you through the process of safely storing and accessing secrets in Prophecy, covering best practices and providing hands-on experience to ensure the protection of your secrets.
 
 ## Secret Provider
 
-Users can create a Secret Provider in their Spark Fabrics. Please note, the secrets are accessed When a Pipeline is Run on the cluster, So that the user has to make sure that their Spark cluster has proper access to the secret providers they are using.
+Users can create a Secret Provider in their Spark Fabrics. The secrets are accessed when a Pipeline is run on the cluster.
+Users must ensure that their Spark cluster has proper access to the secret providers they are using.
 
-These are the 3 types of Secret Providers supported.
+You can access the Secret Providers and Secrets connected to the Fabric from the **(1)Secrets** tab in your Fabric.
+This page shows the list of all Secret Providers and the Secrets for each provider. You can directly **(2)Refresh Secrets** to fetch all accessible secrets or **(3)Add** any secret from here. There are three types of Secret Providers supported:
+
+![secret_screen](img/Secret_provider_Screen.png)
 
 | Secret Provider                            | Details                               |
 | ------------------------------------------ | ------------------------------------- |
@@ -28,8 +34,16 @@ These are the 3 types of Secret Providers supported.
 | [HashiCorp Vault](./hashicorp-vault)       | Available for all Spark Fabrics       |
 | [Environment Variables](./env-variable)    | Available for all Spark Fabrics       |
 
-Lets look at how to create these Secret Providers in The Spark Fabric, How to access, Create, Edit, Delete Secrets Via Prophecy and then how to use these secrets in the Pipelines.
+Once you have secrets created in Fabrics, you can [Use a secret](./using-secrets.md) in your Source and Target gems in your Pipelines directly.
 
 ## Using Secrets in Prophecy Managed Spark Fabrics
 
-For POC and trial users, who are using Prophecy Managed Fabrics for exploring the Product, we support Databricks Secrets.
+For POC and trial users exploring the product with Prophecy Managed Fabrics, [Databricks Secrets](./databricks-secrets.md#managing-secrets-for-prophecy-managed-databricks) are supported. Users can create secrets in Prophecy Managed Databricks Fabrics and use them for POC and trial purposes.
+
+Any secrets created in Prophecy Managed Databricks Workspace will be automatically cleaned up after the POC expires.
+
+:::caution
+Prophecy ensures a separate scope for each Prophecy Managed Fabric, preventing access to your secrets by others during POC. However, it is not recommended to use your Production data tools for trials/POC and connect them to Prophecy Managed Fabric.
+:::
+
+Read [here](./databricks-secrets.md#managing-secrets-for-prophecy-managed-databricks) for managing secrets in Prophecy Managed Databricks Fabric.

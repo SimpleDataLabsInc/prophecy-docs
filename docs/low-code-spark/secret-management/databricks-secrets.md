@@ -6,17 +6,40 @@ description: Working with Databricks Secrets
 tags: [databricks-secrets, secrets]
 ---
 
-For Users using Databricks as their Spark Execution Engine, [Databricks Secrets](https://docs.databricks.com/en/security/secrets/index.html) is the most popular Secret Provider.
+For users leveraging Databricks for Spark Execution, [Databricks Secrets](https://docs.databricks.com/en/security/secrets/index.html) stand out as the most popular Secret Provider within Prophecy.
 
-Lets see how to use Databricks secrets seamlessly in Prophecy.
+Let's explore how to seamlessly utilize Databricks secrets in Prophecy.
 
 ## Manage Databricks Secret Provider
 
-By default, a Databricks secret provider is added to all Databricks fabrics.
-User can choose to delete it if they want to restrict their Users to not use Databricks secrets.
+By default, a Databricks secret provider is added to all Databricks Fabrics. Users can choose to delete it if they prefer to restrict using Databricks secrets and opt for another Secret Provider, such as [Hashicorp Vault](./hashicorp-vault.md).
 
-Please look at below steps to Add/Edit/Delete Databricks Secret Provider in your Fabric.
+To add a Databricks Secret Provider, click on the **(1) Add Provider** button, opening the Secret Provider form.
 
-1. Go to the Fabric Listing page and click on the Fabric you want to add Secret Provider in.
+![Add_Databricks_secret_provider](img/Add_databricks_provider.png)
 
-2.
+Provide a **(2) Name**, select **(3) Provider type** as **Databricks**, and add a **(4) Description** of your choice. A Databricks Secret Provider can only be created in a Databricks Fabric, and you do not need to provide any other Authentication details here. Once done, click **(5) Save**.
+
+## Manage Secrets and Scopes
+
+After adding your Secret provider, click on the **(1) Refresh** button to fetch secrets already created in Databricks. Ensure you have attached a Fabric from the top right corner for this.
+
+To create a new Secret, click on the **(2) Add Secret** button, opening the Add secret form.
+
+![Add_databricks_secrets](img/Add_databricks_secrets.png)
+
+Provide a **(3) Secret Name**, and select a **(4) Secret Scope** from the dropdown. Note that if the scope doesn't exist, it will be created as well. Add a **(5) Description**, and the **(6) value** for your secret. Once done, click **(7) Save**. This will create the Secret with the given key and value in the mentioned scope.
+
+You can also Edit/Delete an existing secret from the button next to the Secret in the table.
+
+## Managing secrets for Prophecy Managed Databricks
+
+For POC and trial users exploring the product with Prophecy Managed Fabrics, we support creating and managing Databricks Secrets in our Databricks Workspace. Each Prophecy Managed Trial Fabric has a pre-created scope of its own. You can use/add/manage secrets in this pre-created Scope only.
+
+:::info
+Secrets created by one Prophecy Managed Databricks Fabric cannot be accessed via another Fabric. These secrets are also deleted automatically on Trial expiry.
+:::
+
+To create a new Secret, click on the **Add Secret** button. In the form, you will notice a Secret-scope already selected. Go ahead and add your Secret name and value.
+
+Once you have created a Secret Provider and Secrets, you can start to [use](./using-secrets.md) them in your Pipelines.
