@@ -6,22 +6,22 @@ tags:
   [spark, secrets, vault, environment, variable, databricks, secret-provider]
 ---
 
-Prophecy seamlessly integrates with various data tools, extending capabilities beyond basic warehousing transformations for ELT use-cases. This includes data ingestion from sources like Salesforce, data enrichment through Rest APIs for data masking, and data egress to platforms like Snowflake.
+Prophecy seamlessly integrates with various data tools like data ingestion from sources like Salesforce, data enrichment through Rest APIs for data masking, and data egress to platforms like Snowflake.
 
-To ensure robust security for enterprise customers, Prophecy provides secure authentication for all data tool connections. Users can securely store credentials using centralized secret providers, following best practices such as encryption. This approach enhances security standards by enabling centralized management and distribution of credentials, with dedicated individuals or groups overseeing the security process.
+To ensure robust security for enterprise customers, Prophecy provides secure authentication for all data tool connections. Users can securely store credentials using centralized secret providers like Databricks Secrets or HashiCorp Vault, following best practices such as encryption.
 
 Users can connect these centralized secret providers to their Spark Fabrics and access the secrets created in Prophecy.
 
 :::info
-Prophecy never accesses the value for these secrets, only keys to generate and execute correct code.
+Prophecy never accesses the value for any secrets, only keys to generate and execute correct code.
 :::
 
 This documentation guides you through the process of safely storing and accessing secrets in Prophecy, covering best practices and providing hands-on experience to ensure the protection of your secrets.
 
 ## Secret Provider
 
-Users can create a Secret Provider in their Spark Fabrics. The secrets are accessed when a Pipeline is run on the cluster.
-Users must ensure that their Spark cluster has proper access to the secret providers they are using.
+Users can create a **Secret Provider** in their Spark Fabrics. The secrets are accessed when a Pipeline is run on the cluster.
+Users must ensure that their Spark clusters have proper access to the Secret Providers they are using.
 
 You can access the Secret Providers and Secrets connected to the Fabric from the **(1)Secrets** tab in your Fabric.
 This page shows the list of all Secret Providers and the Secrets for each provider. You can directly **(2)Refresh Secrets** to fetch all accessible secrets or **(3)Add** any secret from here. There are three types of Secret Providers supported:
