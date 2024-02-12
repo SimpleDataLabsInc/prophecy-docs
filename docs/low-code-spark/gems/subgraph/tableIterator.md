@@ -38,7 +38,7 @@ When you check Enable Parallel Execution, you can also control **(1) Number of t
 ![loop_settings](img/loop_settings.png)
 
 In the table below that, map the columns from the incoming DataFrame, to the configs of the Subgraph.
-When you pick a column name in **(2) Source column**, a config is automatically created with the same name in **(3) Config name**. You can see the configs created by switching to the **(4) Configuration** tab. 
+When you pick a column name in **(2) Source column**, a config is automatically created with the same name in **(3) Config name**. You can see the configs created by switching to the **(4) Configuration** tab.
 
 This will show all the configurations created for this Subgraph as shown below.
 

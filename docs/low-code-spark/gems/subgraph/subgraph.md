@@ -8,10 +8,10 @@ todo: true
 
 Subgraph allows you to take multiple different Gems and wrap them under a single reusable parent Gem. It allows the user to decompose complex logic into reusable components and simplify the Data Engineering process.
 
-There are two types of Subgraphs available by default.
+There are two types of Subgraph available by default.
 
 | Name                               | Description                                                                               |
-|------------------------------------|-------------------------------------------------------------------------------------------|
+| ---------------------------------- | ----------------------------------------------------------------------------------------- |
 | [Basic Subgraph](./basic-subgraph) | Captures one or more Gems within a Pipeline to reuse across other Pipelines and Projects. |
 | [Table Iterator](./table-iterator) | Iterates over one or more Gems for each row of the first input DataFrame                  |
 
