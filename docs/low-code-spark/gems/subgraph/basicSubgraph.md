@@ -20,19 +20,19 @@ Once the Gem is added, Click **(2) Open**, to open the subgraph canvas.
 
 ![create_basic_subgraph](img/Create_basic_subgraph.png)
 
-Once you are on the canvas, You can start adding Gems to your subgraph by dragging and dropping from the Gems Menu, like you do on Pipeline canvas.
+Once you are on the canvas, You can start adding Gems to your subgraph by dragging and dropping from the Gems Menu.
 
 ## Add/Remove Port
 
 While using a Subgraph, You can control the Input and Output ports as per the requirements. Click on the **(1) Add/Remove Part** Button to open the port settings dialog as shown below.
 
-![add_remove_port](img/add_remove_part.png)
+![add_remove_port](img/subgraph_additional_ports.png)
 
 In this dialog, you can add or remove the Input or Output ports.
-To Add an input Put click on **(1) + button**. This will add an input Port.
-To remove an Input port, Click the **(2) Delete** icon next to the input port you want to delete.
+To Add an input Put click on **(2) + button**. This will add an input Port.
+To remove an Input port, Click the **(3) Delete** icon next to the input port you want to delete.
 
-Similarly, you can control the Output Ports by switching to the **() Output** Tab.
+Similarly, you can control the Output Ports by switching to the **(4) Output** Tab.
 As you connect the input and output ports to gems Outside the subgraph, you would be able to see the schema for the port reflected here.
 
 ## Subgraph Configurations
