@@ -10,13 +10,11 @@ Prophecy seamlessly integrates with various data tools like data ingestion from 
 
 To ensure robust security for enterprise customers, Prophecy provides secure authentication for all data tool connections. Users can securely store credentials using centralized secret providers like Databricks Secrets or HashiCorp Vault, following best practices such as encryption.
 
-Users can connect these centralized secret providers to their Spark Fabrics and access the secrets created in Prophecy.
+Users can connect these centralized secret providers to their Spark Fabrics and access the secrets via Prophecy.
 
 :::info
-Prophecy never accesses the value for any secrets, only keys to generate and execute correct code.
+Prophecy never accesses the value for any secrets, only scopes and keys to generate and execute correct code, keeping your secrets safe and out of your Pipeline code committed to Git.
 :::
-
-This documentation guides you through the process of safely storing and accessing secrets in Prophecy, covering best practices and providing hands-on experience to ensure the protection of your secrets.
 
 ## Secret Provider
 
