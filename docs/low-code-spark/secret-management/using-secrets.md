@@ -6,7 +6,7 @@ description: Working with Secrets in Pipelines and Gems
 tags: [env-var, environment, variable, secrets]
 ---
 
-Once you have Secrets and [Secret Providers](./secret-provider.md) created in Fabrics, you can [Use a secret](./using-secrets.md) in your Source and Target Gems in your Pipelines directly.
+Once you have Secrets and [Secret Providers](./secret-management.md) created in Fabrics, you can [Use a secret](./using-secrets.md) in your Source and Target Gems in your Pipelines directly.
 Any Gem which requires a Authentication Field like Username or password,you will have an option to Insert Secret as shown below.
 
 ![use_secret](img/Use_secret.png)
