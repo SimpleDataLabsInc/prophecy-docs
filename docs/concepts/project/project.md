@@ -51,14 +51,14 @@ The `Relations` tab on the [Project Metadata](#project-metadata) page shows a li
 
 ![Project Relations](../img/project_relations.png)
 
-|     | Name         | Description                                                                          |
-| :-: | ------------ | ------------------------------------------------------------------------------------ |
-|  1  | Pipelines    | List of [Pipelines](../pipelines.md) in this project                                 |
-|  2  | Add Pipeline | Click this to add a new Pipeline                                                     |
-|  3  | Jobs         | List of Jobs in this project                                                         |
-|  4  | Add Job      | Click this to add a new Job                                                          |
-|  5  | Datasets     | List of Datasets in this project                                                     |
-|  6  | Subgraphs    | List of published [Subgraphs](/docs/low-code-spark/gems/subgraph.md) in this project |
+|     | Name         | Description                                                                                   |
+| :-: | ------------ | --------------------------------------------------------------------------------------------- |
+|  1  | Pipelines    | List of [Pipelines](../pipelines.md) in this project                                          |
+|  2  | Add Pipeline | Click this to add a new Pipeline                                                              |
+|  3  | Jobs         | List of Jobs in this project                                                                  |
+|  4  | Add Job      | Click this to add a new Job                                                                   |
+|  5  | Datasets     | List of Datasets in this project                                                              |
+|  6  | Subgraphs    | List of published [Subgraphs](/docs/low-code-spark/gems/subgraph/subgraph.md) in this project |
 
 ## Project Commits
 
