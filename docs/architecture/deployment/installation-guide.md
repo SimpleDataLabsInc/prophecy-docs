@@ -21,7 +21,7 @@ The following documentation pertains to the Helm installer for Prophecy version 
 
 To install Prophecy, the following infrastructure requirements must be satisfied:
 
-- **Kubernetes Version (minimum):** 1.14
+- **Kubernetes Version (minimum):** 1.21
 - **Helm** client to install Prophecy Helm chart
 - **Container Registry:** Prophecy publishes all its docker images in GCR(Google Container Registry: `gcr.io/prophecy-share`).
   Kubernetes cluster should be able to pull images from here. Alternatively, customers can use their internal container registry
