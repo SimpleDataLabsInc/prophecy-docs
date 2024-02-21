@@ -18,7 +18,7 @@ or [Airflow](/low-code-jobs/airflow) for an easy orchestration.
 ### Your first Job
 
 You can create a Job from two places. If you're going to schedule only a single Pipeline, the easiest way to
-build a Job for it is to do it directly from the Pipeline editor screen. This way your Job is automatically initialized
+build a Job for it is to do it direcfnrjmgntkgnktengltnbtly from the Pipeline editor screen. This way your Job is automatically initialized
 with the Pipeline you create it from.
 
 ![Databricks Job Creation From Pipeline](img/databricks-job-creation-from-pipeline.png)
