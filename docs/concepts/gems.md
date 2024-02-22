@@ -34,7 +34,7 @@ The Gem list will depend on two factors: Your project language (Python/Scala) an
 | **Transform**     | Gems related to the [transformation](../low-code-spark/gems/transform/transform.md) of your data               |
 | **Custom**        | [Custom](../low-code-spark/gems/custom/custom.md) gems and other gems that don't fit into the other categories |
 | **Join/Split**    | Gems related to [splitting or joining](../low-code-spark/gems/join-split/join-split.md) datasets together.     |
-| **Subgraph**      | Use [published subgraphs](../low-code-spark/gems/subgraph.md) in your Pipeline                                 |
+| **Subgraph**      | Use [published subgraphs](../low-code-spark/gems/subgraph/subgraph.md) in your Pipeline                        |
 
 ### Gem Instance
 
