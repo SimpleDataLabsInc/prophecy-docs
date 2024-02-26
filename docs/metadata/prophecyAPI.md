@@ -33,3 +33,18 @@ Please note, These tokens are per user and will inherit all the Access from that
 **Coming Soon**
 We will soon launch a detailed Documentation and a playground to try these APIs
 :::
+
+## Get the Prophecy GraphQL Schema
+
+Use this short guide to get started with Postman by importing Prophecy's graphql schema.
+
+1. Install [Postman](https://www.postman.com/downloads/)
+2. Create a new GraphQL request
+   ![postman_new_graphql_request.png](img%2Fpostman_new_graphql_request.png)
+3. Enter the GraphQL API endpoint as the URL `https://app.prophecy.io/api/md/graphql`
+4. Go to the Headers Tab and enter `X-Auth-Token` for the key and your API token as the value
+   ![postman_headers_token2.png](img%2Fpostman_headers_token2.png)
+5. Go to the Schema Tab and refresh the schema using GraphQL Introspection
+   ![postman_refresh_schema.png](img%2Fpostman_refresh_schema.png)
+6. Go to the Query Tab to see the schema
+   ![postman_schema_available.png](img%2Fpostman_schema_available.png)
