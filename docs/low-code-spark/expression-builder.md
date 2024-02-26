@@ -2,7 +2,7 @@
 title: Expression Builder
 id: expression-builder
 description: Expression Builder
-sidebar_position: 4
+sidebar_position: 5
 tags:
   - spark
   - development
