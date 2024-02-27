@@ -2,6 +2,7 @@
 sidebar_position: 3
 title: Testing and Monitoring
 id: testing_monitoring_airflow
+draft: true
 description: How to test, release and Monitor an Airflow DAG in Prophecy
 tags:
   - scheduling
