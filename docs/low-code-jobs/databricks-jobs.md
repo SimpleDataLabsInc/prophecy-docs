@@ -10,8 +10,7 @@ tags:
 ---
 
 Once you have developed a [Spark Pipeline](/concepts/Pipeline) using Prophecy, you will want to schedule it to run at
-some frequency. To support this, Prophecy provides a low-code layer on top of Databricks Jobs
-or [Airflow](/low-code-jobs/airflow) for an easy orchestration.
+some frequency. To support this, Prophecy provides a low-code layer on top of Databricks Jobs for an easy orchestration.
 
 ## Development
 
