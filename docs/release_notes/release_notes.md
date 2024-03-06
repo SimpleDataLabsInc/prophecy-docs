@@ -18,5 +18,3 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 <DocCardList items={useCurrentSidebarCategory().items}/>
 ```
-
-## [version_chart.md](version_chart.md)
