@@ -10,8 +10,8 @@ used with any given version of the Prophecy product. In general Prophecy strives
 older sets of Prophecy Libs should be able to run on a newer version of Prophecy.
 
 :::caution
-Always keep in mind to make sure the Spark version and Scala version of your Prophecy Scala Libs match the Spark and
-Scala versions of your cluster!
+Check to make sure the Spark version and Scala version of your Prophecy Scala Libs match the Spark and Scala versions
+of your cluster!
 :::
 
 | Prophecy version | [Prophecy Scala libs](https://mvnrepository.com/artifact/io.prophecy/prophecy-libs) | [Prophecy Python libs](https://pypi.org/project/prophecy-libs/) |
