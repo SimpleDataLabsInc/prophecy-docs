@@ -14,7 +14,7 @@ tags:
 
 Prophecy provides a reliable backup mechanism for safeguarding all critical data utilized by the Prophecy app. Users can consistently back up essential data through their preferred object store, such as AWS S3, Azure Blob Storage, or local storage (which could be backed up by a NFS). This systematic backup process guarantees the accessibility of data for future restoration needs. Prophecy leverages the advanced capabilities of these object stores to seamlessly synchronize the backups, ensuring a robust and efficient data protection strategy.
 
-:warning: Certain object store level configurations are shared with [audit event logs configurations here](./configure-audit-logs.md) as they both use a shared object store to store/backup their data.
+:warning: Certain [object store level configurations](./configure-object-store.md) are shared with [audit event logs configurations here](./configure-audit-logs.md). Make sure to configure the [object store level configurations](./configure-object-store.md) before proceeding below.
 
 ## Usecase
 
@@ -30,59 +30,48 @@ Prophecy provides a reliable backup mechanism for safeguarding all critical data
 
 There are certain environment variables that need to be configured in Athena based on the kind of backup-restore required.
 
-### Supported Environment Variables
+### Navigating to the Backup config UI
 
-| Environment variable name    | Description                                                                                                                                                                               | Default value |
-| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| `ENABLE_REGULAR_BACKUPS`     | Set to `true` to enable backups                                                                                                                                                           | `false`       |
-| `OBJECT_STORE_LOCATION_TYPE` | Which provider to use for the object store. Supports `local`, `s3`, `azure-blob-storage`                                                                                                  | `local`       |
-| `BACKUP_FREQUENCY`           | How frequently to purge old user events from the internal database. Defaults to daily at 00:00. Uses [6-digit CRON](https://pkg.go.dev/github.com/robfig/cron#hdr-CRON_Expression_Format) | `0 0 0 * * *` |
+To configure object store settings in the Prophecy UI, follow these steps:
 
-### To enable backup
+1. Log in to the Prophecy UI as an admin user.
+1. Click on the `three dots` at the bottom left corner and select the `settings icon` from the submenu.
+1. Navigate to the `Admin` main tab.
+1. Within the Admin main tab, access the `Config` sub tab.
+1. Finally, click on the `backupConfig` sub tab to configure the backup settings.
 
-- Set `ENABLE_REGULAR_BACKUPS` to `true`
+### JSON format
 
-### Configuration for object store
+Below are JSON configurations within the Prophecy UI that need to be enabled to support this functionality. You will have to configure only the options which you require. Please make sure to maintain a JSON format mentioned below while configuring the different options.
 
-The following providers are supported where data can be pushed to. This can be switched using the `OBJECT_STORE_LOCATION_TYPE` environment variable
+```
+{
+  "backupFrequency": "0 0 0 * * *",
+  "backupRetentionCount": "90",
+  "enableRegularBackups": false,
+}
+```
 
-#### AWS S3
+### Supported Configuration Variables
 
-For this provider, set `OBJECT_STORE_LOCATION_TYPE` to `s3` and configure using the following variables:
+| Configuration variable name | Description                                                                                                                                                                               | Default value |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `backupFrequency`           | How frequently to purge old user events from the internal database. Defaults to daily at 00:00. Uses [6-digit CRON](https://pkg.go.dev/github.com/robfig/cron#hdr-CRON_Expression_Format) | `0 0 0 * * *` |
+| `backupRetentionCount`      | No. of last `N` backups to retain.                                                                                                                                                        | `90`          |
+| `enableRegularBackups`      | Set to `true` to enable backups                                                                                                                                                           | `false`       |
 
-| Environment variable name     | Description                                 | Default value                        |
-| ----------------------------- | ------------------------------------------- | ------------------------------------ |
-| `OBJECT_STORE_LOCATION_LOCAL` | Any PVC Mount point with storage            | `/backup`                            |
-| `AWS_S3_BUCKET_NAME`          | S3 Bucket name                              | `athena-ondemand-backup`             |
-| `AWS_S3_ENDPOINT`             | S3 Endpoint used to communicate with        | `https://s3.us-west-2.amazonaws.com` |
-| `AWS_S3_FORCE_PATH_STYLE`     | If S3 should use path style for bucket name | `true`                               |
-| `AWS_S3_REGION`               | S3 Region                                   | `us-west-2`                          |
-| `AWS_ACCESS_KEY`              | AWS Access key with the required privileges |                                      |
-| `AWS_SECRET_KEY`              | AWS Secret key with the required privileges |                                      |
+## How to Backup
 
-#### Azure Blob Storage
+There are two ways to perform backup of data. Choose either one of the below options.
 
-For this provider, set `OBJECT_STORE_LOCATION_TYPE` to `azure-blob-storage` and configure using the following variables:
+1. Set `enableRegularBackups` to `true` - To enable perodic backup of data according to CRON provided or on every athena pod restart (safety feature).
+1. Trigger the backup through the backup API below.
 
-| Environment variable name           | Description                               | Default value                                         |
-| ----------------------------------- | ----------------------------------------- | ----------------------------------------------------- |
-| `OBJECT_STORE_LOCATION_LOCAL`       | Any PVC Mount point with storage          | `/backup`                                             |
-| `AZURE_STORAGE_ACCOUNT_NAME`        | Storage Account name                      | `prophecyathenabackup`                                |
-| `AZURE_STORAGE_ACCOUNT_SERVICE_URL` | Storage Account Service URL               | `https://prophecyathenabackup.blob.core.windows.net/` |
-| `AZURE_STORAGE_CONTAINER_NAME`      | Container name within the Storage Account | `athena-ondemand-backup`                              |
-| `AZURE_STORAGE_ACCESS_KEY`          | Storage Access key                        |                                                       |
+### Trigger Backup API
 
-#### Local Persistent Storage Volume (PV based)
+:warning: To trigger a backup/restore manually you would require a API key. [Follow the API Key generation document to generate the same](./generate-api-key) before proceeding below.
 
-For backup in Athena’s local Persistent Volume, `OBJECT_STORE_LOCATION_LOCAL` should be set to `local` (its default value). You can also set:
-
-| Environment variable name     | Description                      | Default value |
-| ----------------------------- | -------------------------------- | ------------- |
-| `OBJECT_STORE_LOCATION_LOCAL` | Any PVC Mount point with storage | `/backup`     |
-
-## Backup API
-
-### Triggering a backup
+#### Triggering a backup
 
 By default when you set the `ENABLE_REGULAR_BACKUPS` to `true`, backups are taken automatically at the configured `BACKUP_FREQUENCY` CRON schedule. However, we you would like to manually trigger a backup, you may use the API below.
 
@@ -106,8 +95,6 @@ You should get a response like:
 ```
 
 The timestamp `2023-02-02t16-00-00` above would be the key used to trigger a restore in future.
-
-### On-demand backup status
 
 On-demand backup is an asynchronous API. There are two APIs which can be used to query the status of a current or previous backup.
 
@@ -216,12 +203,12 @@ Sample response
 }
 ```
 
-## Restore APIs
+## How to Restore
 
 Restore is an on-demand based overwrite of the whole configuration to reflect the state at which backup is taken.
 
-:::error
-This API should be used with extreme caution
+:::warning
+This API should be used with extreme caution as triggerring this will lead to loss of current state/data.
 :::
 
 Note:
@@ -230,6 +217,8 @@ Note:
 - Restore operation always assumes a running destination Prophecy cluster where the data and the configuration of source cluster will be restored.
 
 ### Starting a Restore
+
+:warning: To trigger a backup/restore manually you would require a API key. [Follow the API Key generation document to generate the same](./generate-api-key) before proceeding below.
 
 The below API is used to trigger a store opertion. It expects one parameter which is the `timestamp` of a successful backup.
 

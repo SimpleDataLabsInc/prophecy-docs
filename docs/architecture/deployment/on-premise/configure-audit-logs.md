@@ -1,7 +1,7 @@
 ---
 title: Audit Events Configuration
 id: audit-events
-description: Prophecy on-prem installations audit events (logs) being synced to object stores like S3, Azure Blob Storage etc.
+description: Prophecy on-prem installations audit events (logs) being synced to object stores like S3, Azure Blob Storage, GCP Cloud Storage etc.
 sidebar_position: 1
 tags:
   - audit events
@@ -10,11 +10,12 @@ tags:
   - s3
   - azure blob
   - NFS
+  - GCS
 ---
 
-Prophecy offers robust support for storing audit events (logs) on two of the industry's leading cloud object stores: AWS S3 and Azure Blob Storage or even local persistent volume (PV). Leveraging the capabilities of these object stores, Prophecy seamlessly synchronizes and persistently stores audit events. This not only ensures the secure retention of crucial data but also facilitates streamlined tracking and in-depth analysis of user interactions and activities for enhanced operational insights.
+Prophecy offers robust support for storing audit events (logs) on two of the industry's leading cloud object stores: AWS S3, Azure Blob Storage, GCP Cloud Storage or even local persistent volume (PV). Leveraging the capabilities of these object stores, Prophecy seamlessly synchronizes and persistently stores audit events. This not only ensures the secure retention of crucial data but also facilitates streamlined tracking and in-depth analysis of user interactions and activities for enhanced operational insights.
 
-:warning: Certain object store level configurations are shared with [backup restore configurations here](./configure-backup.md) as they both use a shared object store to store/backup their data.
+:warning: Certain [object store level configurations](./configure-object-store.md) are shared with [backup restore configurations](./configure-backup.md). Make sure to configure the [object store level configurations](./configure-object-store.md) before proceeding below.
 
 ## Usecase
 
@@ -27,59 +28,44 @@ Prophecy offers robust support for storing audit events (logs) on two of the ind
 
 There are certain environment variables that need to be configured in Athena based on the kind of user events audit logs required.
 
-### Supported Environment Variables
+### Navigating to the Audit config UI
 
-| Environment variable name     | Description                                                                                                                                                                           | Default value   |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
-| `ENABLE_USER_EVENTS`          | Set to `true` to enable user event audit logs                                                                                                                                         | `false`         |
-| `OBJECT_STORE_LOCATION_TYPE`  | Which provider to use for the object store. Supports `local`, `s3`, `azure-blob-storage`                                                                                              | `local`         |
-| `OBJECT_STORE_LOCATION_LOCAL` | Any PVC Mount point with storage                                                                                                                                                      | `/backup`       |
-| `UEVENTS_SCHEDULE`            | How frequently to push user events to object store. Defaults to every one hour. Uses [6-digit CRON](https://pkg.go.dev/github.com/robfig/cron#hdr-CRON_Expression_Format)             | `0 0 */1 * * *` |
-| `UEVENTS_GC_SCHEDULE`         | How frequently to purge old user events from the internal database. Defaults to daily 1 am. Uses [6-digit CRON](https://pkg.go.dev/github.com/robfig/cron#hdr-CRON_Expression_Format) | `0 0 1 * * *`   |
+To configure object store settings in the Prophecy UI, follow these steps:
+
+1. Log in to the Prophecy UI as an admin user.
+1. Click on the `three dots` at the bottom left corner and select the `settings icon` from the submenu.
+1. Navigate to the `Admin` main tab.
+1. Within the Admin main tab, access the `Config` sub tab.
+1. Finally, click on the `auditConfig` sub tab to configure the audit settings.
+
+### JSON format
+
+Below are JSON configurations within the Prophecy UI that need to be enabled to support this functionality. You will have to configure only the options which you require. Please make sure to maintain a JSON format mentioned below while configuring the different options.
+
+```
+{
+  "disableUeventsGC": false,
+  "enableUserEvents": false,
+  "ueventsGCSchedule": "0 0 1 * * *",
+  "ueventsSchedule": "0 0 */1 * * *"
+}
+```
+
+### Supported Configuration Variables
+
+| Configuration variable name | Description                                                                                                                                                                                                                                                                                                           | Default value   |
+| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
+| `disableUeventsGC`          | Garbage collection of user events from local DB is enabled by default once the events have been pushed to upstream object store. Set this to `true` to disable this garbage collection to retain this data locally as well. Please note that setting this to `true` could potentially result in a very large DB size. | `false`         |
+| `enableUserEvents`          | Set to `true` to enable user event audit logs                                                                                                                                                                                                                                                                         | `false`         |
+| `ueventsSchedule`           | How frequently to push user events to object store. Defaults to every one hour. Uses [6-digit CRON](https://pkg.go.dev/github.com/robfig/cron#hdr-CRON_Expression_Format)                                                                                                                                             | `0 0 */1 * * *` |
+| `ueventsGCSchedule`         | How frequently to purge old user events from the internal database. Defaults to daily 1 am. Uses [6-digit CRON](https://pkg.go.dev/github.com/robfig/cron#hdr-CRON_Expression_Format)                                                                                                                                 | `0 0 1 * * *`   |
 
 ### To enable user events audit logs
 
-- Set `ENABLE_USER_EVENTS` to `true`
-- Set `UEVENTS_SCHEDULE` to the [CRON](https://pkg.go.dev/github.com/robfig/cron#hdr-CRON_Expression_Format) string for how frequently you'd like user events pushed to the object store.
-- Set `UEVENTS_GC_SCHEDULE` to the [CRON](https://pkg.go.dev/github.com/robfig/cron#hdr-CRON_Expression_Format) string for how frequently you'd like old user events removed from the database.
-
-### Configuration for different object stores
-
-The following providers are supported where data can be pushed to. This can be switched using the `OBJECT_STORE_LOCATION_TYPE` environment variable
-
-#### AWS S3
-
-For this provider, set `OBJECT_STORE_LOCATION_TYPE` to `s3` and configure using the following variables:
-
-| Environment variable name     | Description                                 | Default value                        |
-| ----------------------------- | ------------------------------------------- | ------------------------------------ |
-| `OBJECT_STORE_LOCATION_LOCAL` | Any PVC Mount point with storage            | `/backup`                            |
-| `AWS_S3_BUCKET_NAME`          | S3 Bucket name                              | `athena-ondemand-backup`             |
-| `AWS_S3_ENDPOINT`             | S3 Endpoint used to communicate with        | `https://s3.us-west-2.amazonaws.com` |
-| `AWS_S3_FORCE_PATH_STYLE`     | If S3 should use path style for bucket name | `true`                               |
-| `AWS_S3_REGION`               | S3 Region                                   | `us-west-2`                          |
-| `AWS_ACCESS_KEY`              | AWS Access key with the required privileges |                                      |
-| `AWS_SECRET_KEY`              | AWS Secret key with the required privileges |                                      |
-
-#### Azure Blob Storage
-
-For this provider, set `OBJECT_STORE_LOCATION_TYPE` to `azure-blob-storage` and configure using the following variables:
-
-| Environment variable name           | Description                               | Default value                                         |
-| ----------------------------------- | ----------------------------------------- | ----------------------------------------------------- |
-| `OBJECT_STORE_LOCATION_LOCAL`       | Any PVC Mount point with storage          | `/backup`                                             |
-| `AZURE_STORAGE_ACCOUNT_NAME`        | Storage Account name                      | `prophecyathenabackup`                                |
-| `AZURE_STORAGE_ACCOUNT_SERVICE_URL` | Storage Account Service URL               | `https://prophecyathenabackup.blob.core.windows.net/` |
-| `AZURE_STORAGE_CONTAINER_NAME`      | Container name within the Storage Account | `athena-ondemand-backup`                              |
-| `AZURE_STORAGE_ACCESS_KEY`          | Storage Access key                        |                                                       |
-
-#### Local Persistent Storage Volume (PV based)
-
-For backup in Athena’s local Persistent Volume (could be NFS), `OBJECT_STORE_LOCATION_LOCAL` should be set to `local` (its default value). You can also set:
-
-| Environment variable name     | Description                      | Default value |
-| ----------------------------- | -------------------------------- | ------------- |
-| `OBJECT_STORE_LOCATION_LOCAL` | Any PVC Mount point with storage | `/backup`     |
+- Set `enableUserEvents` to `true`
+- Set `ueventsSchedule` to the [CRON](https://pkg.go.dev/github.com/robfig/cron#hdr-CRON_Expression_Format) string for how frequently you'd like user events pushed to the object store.
+- Set `ueventsGCSchedule` to the [CRON](https://pkg.go.dev/github.com/robfig/cron#hdr-CRON_Expression_Format) string for how frequently you'd like old user events removed from the database.
+  PVC Mount point with storage | `/backup` |
 
 ## User events audit logs output
 
