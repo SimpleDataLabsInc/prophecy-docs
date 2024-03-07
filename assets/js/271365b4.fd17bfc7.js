@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[6418],{90718:e=>{e.exports=JSON.parse('{"label":"compatibility","permalink":"/tags/compatibility","allTagsPath":"/tags","count":1,"items":[{"id":"release_notes/version_chart","title":"Version Chart","description":"Prophecy library version chart","permalink":"/release_notes/version_chart"}]}')}}]);
