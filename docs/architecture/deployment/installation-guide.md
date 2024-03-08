@@ -149,3 +149,28 @@ helm -n <namespace> install prophecy prophecy/prophecy-installer --version <prop
 --set global.prophecy.wildcardCert.name=<wildcard cert secret name> --set athena.controlcenter.disabled=true
 --set global.repository=<Image repository> --set global.prophecy.imagePullSecret=<Image pull secret name> --set athena.isDarkCluster=true
 ```
+
+#### When an external SQL database is provided
+
+1. Create a external SQL Database (e.g. Google SQL instance).
+
+2. Run the following commands by connecting to the external SQL Database.
+
+```
+CREATE USER sdl WITH PASSWORD '<custom-sdl-password>';
+
+CREATE DATABASE gogs;
+GRANT ALL PRIVILEGES ON DATABASE gogs TO sdl;
+
+CREATE DATABASE federator;
+GRANT ALL PRIVILEGES ON DATABASE federator TO sdl;
+```
+
+3. Run the following helm command to complete the installation.
+
+```
+helm -n <namespace> upgrade -i prophecy-installer prophecy/prophecy-installer --version 3.3.1-1 --set version=3.3.1.1
+ --set global.customer.cluster={cluster-name} --set global.prophecy.rootUrl={cluster-name}-{customer-name}.dev.cloud.prophecy.io
+ --set global.customer.name={customer-name} --set postgres.isExternalPostgres=true --set postgres.host={googlesql-dns-name}
+ --set postgres.user={google-sql-user-name} --set postgres.password={google-sql-user-password} --debug
+```
