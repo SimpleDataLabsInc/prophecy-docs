@@ -98,6 +98,11 @@ And want to configure Dataset (or in general the Job runs) based on which enviro
 
 ![Config path example](img/config-pipeline-path-eg.png)
 
+### Edit Pipeline Name
+
+To change the Pipeline name itself, go to Prophecy's metadata page. Locate the Pipeline within a Project, and click the pencil icon.
+![EditPipelineName](img/edit-pipeline-name.png)
+
 ## Pipeline Configuration instances
 
 Different configuration instances can be defined as per requirement. This comes in handy when Pipeline needs to run with different

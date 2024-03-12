@@ -56,3 +56,6 @@ When editing a `Pipeline`, you'll be using the editor shown below.
 5. _Workspace_ : Everything in the middle of the view is the _Workspace_. This is where you'll create and manipulate the Gems that make up this `Pipeline`.
 6. _Git Status_ : In Prophecy almost everything is stored in Git, and this is where you can interact with the version control for your Pipeline. See [Projects & Git](project) for more information
 7. _Run_ : If you just want to run your `Pipeline` from start to finish, click this button
+
+To change the Pipeline name itself, go to Prophecy's metadata page. Locate the Pipeline within a Project, and click the pencil icon.
+![EditPipelineName](img/edit-pipeline-name.png)

@@ -96,6 +96,9 @@ The visual graph created on the Jobs page is automatically converted to code (JS
 | Number of retries per Gem | Number of retries for each Gem in Job Pipeline                                                                                                                                                                                                |
 | Alerts Email per Gem      | Comma separated list of emails that are going to receive notifications on specific Job status events (start, failure, or success) for each Gem in Job Pipeline.                                                                               |
 
+To change the Job name itself, go to Prophecy's metadata page. Locate the Job within a Project, and click the pencil icon.
+![EditJobName](img/edit-job-name.png)
+
 ## Deployment Modes
 
 To deploy a Job on Databricks, we need to release the project from Prophecy UI as shown in example below. As soon as the project is
