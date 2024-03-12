@@ -25,7 +25,7 @@ Once ready, click **(6) Continue**.
 
 Since we’re setting up a Fabric connected to MWAA Airflow, choose **Airflow** as the **(1) Provider Type** and **MWAA** as the **(2) Provider**.
 
-Once you selectMWAA, you will start seeing fields for credentials.
+Once you select MWAA, you will start seeing fields for credentials.
 MWAA Fabric offers two types of authentication.
 
 ### MWAA Access key auth
@@ -52,11 +52,11 @@ Please reach out to Prophecy support team to enable assume role Auth and disable
 
 To create an AssumeRole for Prophecy, we are going to use [IAM role access across Account](https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html).
 
-Go to the Identity and Access Management (IAM) home page in your AWS account, and go to **(1)Policies**. And click on **(2) Create policy** .
+Go to the Identity and Access Management (IAM) home page in your AWS account, and go to **(1)Policies**. Click on **(2) Create policy** .
 
 ![aws_iam_policies](img/aws_iamrole_policies.png)
 
-We need ListEnvironments permission for Airflow, PutObject, GetObject and DeleteObject to the S3 bucket used by your Airflow for DAGs and CreateCLiToken, GetEnvironment on the Airflow Instance.
+We need ListEnvironments permission for Airflow, PutObject, GetObject and DeleteObject to the S3 bucket used by your Airflow for uploading DAGs and Pipeline Artifacts and CreateCLiToken, GetEnvironment on the Airflow Instance.
 For simplicity, you can switch to **(3) JSON** and use below JSON policy and replace values for Airflow Environment and S3 bucket.
 
 ```json
