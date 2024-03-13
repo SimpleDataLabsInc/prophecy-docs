@@ -16,7 +16,7 @@ For this, you would need to create a MWAA Airflow Fabric.
 
 ## How to create a Composer Airflow Fabric
 
-Setting up a Fabric is very straightforward. Click the **(1) Create Entity** button, and choose the **(2) Create Fabric** option. The Fabric creation is composed of two steps: Basic Info and Providers setup.
+Setting up a Fabric is very straightforward. Click the **(1) Create Entity** button, and choose the **(2) Create Fabric** option. The Fabric creation is composed of three steps: Basic Info, Providers setup, and Connections.
 On the Basic Info screen, enter a **(3) Fabric Name**, **(4) Fabric Description**, and choose the **(5) Team** that’s going to own the Fabric.
 
 Once ready, click **(6) Continue**.
@@ -35,8 +35,7 @@ Provide your **(1) Access Key** and **(2) Secret Key** and then select the **(3)
 
 ![MWAA_auth1](img/MWAA_Auth1.png)
 
-You can now select the Airflow environment for which you want to create the Fabric in Prophecy. As you select the **(1) Airflow Environment**, the **(2) Environment name**, **(3) Airflow URL** and **(4) DAG Location** would be fetched for you.
-These details are only shown for verification purposes and cannot be edited. Once verified, click **(5) Continue**.
+You can now select the Airflow environment for which you want to create the Fabric in Prophecy. As you select the **(1) Airflow Environment**, **(2) Environment name**,and **(3) Airflow URL**, the **(4) DAG Location** would be fetched for you. The DAG Location is only shown for verification purposes and cannot be edited. Once verified, click **(5) Continue**.
 
 ![MWAA_auth_2](img/MWAA_Auth_2.png)
 
@@ -57,7 +56,7 @@ Go to the Identity and Access Management (IAM) home page in your AWS account, an
 ![aws_iam_policies](img/aws_iamrole_policies.png)
 
 We need ListEnvironments permission for Airflow, PutObject, GetObject and DeleteObject to the S3 bucket used by your Airflow for uploading DAGs and Pipeline Artifacts and CreateCLiToken, GetEnvironment on the Airflow Instance.
-For simplicity, you can switch to **(3) JSON** and use below JSON policy and replace values for Airflow Environment and S3 bucket.
+For simplicity, you can switch to **(3) JSON** and use the JSON policy below. Just replace the values for Airflow Environment and S3 bucket.
 
 ```json
 {
@@ -91,19 +90,18 @@ For simplicity, you can switch to **(3) JSON** and use below JSON policy and rep
 Once the permissions are selected (or provided via json), click on **(4) Next**.
 
 ![aws_policies](img/aws_iamrole_policies2.png)
-Give a **(1) Policy name. Optionally you can add a **(2) description** too. Once done, click on **(3) Create Policy\*\* to save this.
+Give a **(1) Policy** name. Optionally you can add a **(2) description** too. Once done, click on **(3) Create Policy** to save this.
 
 Now go to **(1) Roles** from the left sidebar, and click on **(2)Create Role**.
 
 ![aws_role](img/aws_create_role.png)
-In Trusted entity type, select **(3) AWS Account** and select **(4)Another AWS account** in An AWS account section.  
-Provide Prophecy's **(5) account ID** as `133450206866`. And click **(6) Next**.
+In Trusted entity type, select **(3) AWS Account** and select **(4)Another AWS account** in An AWS account section. Provide Prophecy's **(5) account ID** as `133450206866`. And click **(6) Next**.
 
 ![aws_role_2](img/aws_create_role_2.png)
 Select the Policy which you created just above and click on **(1) Next**.
 
 Provide a **(1)role name** and optionally provide a **(2)description**.
-**(3)Edit** the trusted Select trusted entities Json, to only provide access to `prophecy-mwaa` users created for this auth and not to all Prophecy Users as shown below.
+**(3)Edit** the trusted Select trusted entities Json, to only provide access to the `prophecy-mwaa` user created for this auth and not to all Prophecy Users as shown below.
 
 ```json
 {
@@ -125,14 +123,13 @@ Once done click on **(4)create role**. The role is created.
 
 Now you can go to the created Role and copy the ARN of this role to be provided in Prophecy Fabric.
 
-Once the assume role authentication is enabled, you would see below fields for authentication in MWAA Fabric.
+Once the assume role authentication is enabled (by reaching out to Prophecy Support), you would see the fields below for authentication in MWAA Fabric.
 
 ![MWAA_auth_3](img/MWAA_Auth_3.png)
 
-Here you can provide the AssumeRole created for Prophecy and provide the region where your Airflow instance is running. Once done, click on **(3) Fetch environment** to list the Airflow Instances which are accessible to provided AssumeRole.
+Here you can provide the **(1)AssumeRole** created for Prophecy and provide the **(2)Region** where your Airflow instance is running. Once done, click on **(3) Fetch environment** to list the Airflow Instances which are accessible to the provided AssumeRole.
 
-You can now select the Airflow environment for which you want to create the Fabric in Prophecy. As you select the **(1) Airflow Environment**, the **(2) Environment name**, **(3) Airflow URL** and **(4) DAG Location** would be fetched for you.
-These details are only shown for verification purposes and cannot be edited. Once verified, click **(5) Continue**.
+You can now select the Airflow environment for which you want to create the Fabric in Prophecy. As you select the **(1) Airflow Environment**, the **(2) Environment name**, **(3) Airflow URL** and **(4) DAG Location** would be fetched for you. The DAG Location is only shown for verification purposes and cannot be edited. Once verified, click **(5) Continue**.
 
 ![MWAA_auth_2](img/MWAA_Auth_2.png)
 
@@ -143,8 +140,7 @@ This completes the Fabric Creation and you can start setting up Connections.
 You need Airflow to talk to various other systems in your Data Platform to be able to do certain tasks like sending Email, triggering Spark pipelines, and SQL models.
 For these, we create [connections](https://airflow.apache.org/docs/apache-airflow/stable/authoring-and-scheduling/connections.html) in Airflow.
 
-You can map connections already created in your MWAA, in the Connections Tab of the Fabric.
-Prophecy will use these connections to fetch the connection-id to generate the correct Airflow Code when you use these in your Airflow Gems.
+The connections created in your MWAA interface can be mapped to Prophecy Connections in the Prophecy Fabric Tab. Prophecy can then fetch the connection-id to generate the correct Airflow Code when you use these in your Airflow Gems.
 
 For adding a connection, Click on **(1) Add Connection** button. This Opens up the Connection form as shown.
 
@@ -155,5 +151,5 @@ To be able to schedule your Snowflake SQL Models via Airflow, you need to have a
 
 Select **(2) Connection Type** as Snowflake(DBT), and select the **(3) Fabric** you have in Prophecy for your desired Snowflake environment. Provide the **(4) Profile Directory** and **(5) Profile Name** used while setting up the connection in Airflow.
 
-Please make sure you select the Fabric for the same Snowflake environment you have already created the connection for in your Airflow.
+Please make sure you select the Fabric for the same Snowflake environment which has the desired connection in your Airflow.
 Once done, hit **(4) Save**.
