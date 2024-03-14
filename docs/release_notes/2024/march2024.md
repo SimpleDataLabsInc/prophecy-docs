@@ -18,15 +18,13 @@ tags:
 
 #### Automatic Code Regeneration for Jobs
 
-With Prophecy 3.3.0, we facilitated automatic code regeneration whenever a user makes changes that could potentially impact the generated code for other Pipelines.
-With this release, we have extended the same support to all Jobs too. So now, whenever user changes anything in Pipeline like Renaming, or any dependency is changed at Pipeline Level, the corresponding Jobs are auto-regenerated.
+In Prophecy 3.3.0, we introduced automatic code regeneration whenever users make changes that could potentially impact the generated code for other Pipelines.
+With this release, we’ve extended the same support to all jobs as well. Now, whenever users modify anything in a Pipeline such as renaming or changing dependencies at the Pipeline level the corresponding jobs are automatically regenerated.
 
-#### Support External Release tags
+#### Support for External Release Tags
 
-Prophecy now supports deploying externally created release tags through our UI. Moreover, users can pull in any release tag created directly in their Git provider, and use them as dependency in Prophecy Projects.
+Prophecy now allows deploying externally created release tags through our user interface. Users can pull in any release tag directly from their Git provider, deploy it or use it as a dependency in Prophecy projects.
 
-#### Low code SQL enhancements
+#### Enhancements in Low-Code SQL
 
-We keep adding more Gems and features to our low code SQL offering to bring it to parity with DBT features and other SQL warehouse features.
-With this release we have added support for DBT Snapshots. Users can now create Snapshots through Prophecy, and also use them as sources in their Models.
-For snowflake users, we have added support for Snowflake pivot and unpivot Gems too.
+We continuously enhance our low-code SQL offering to match DBT features and other SQL warehouse capabilities. In this release, we’ve added support for DBT snapshots. Users can create snapshots through Prophecy and use them as sources in their models. Additionally, for Snowflake users, we’ve included support for Snowflake pivot and unpivot gems.
