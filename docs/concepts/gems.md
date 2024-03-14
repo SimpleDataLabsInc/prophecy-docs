@@ -10,6 +10,10 @@ tags:
   - source
   - target
   - datasets
+  - search
+  - custom
+  - infer
+  - schema
 ---
 
 If a [Pipeline](./pipelines.md) is a roadmap of the journey that your data will take from Start to Finish, the Gems are the stops to make along the way. Each Gem _instance_ comes with their own configuration and each produces its own block of output code. Each Gem instance can be seen as just another Spark DataFrame.
@@ -38,15 +42,15 @@ The Gem list will depend on two factors: Your project language (Python/Scala) an
 
 ### Gem Instance
 
-Once you've selected which Gem you want to use in your pipeline from the Drawer, an _Instance_ of the Gem will appear in the Pipeline Editor.
+Once you've selected which Gem you want to use in your Pipeline from the Drawer, an _Instance_ of the Gem will appear in the Pipeline Editor.
 
 ![Gem Instance](img/gems/instance.png)
 
 |     | UI element name   | Description                                                                                                                                                       |
 | :-: | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |  1  | Gem Instance name | The name of this particular instance. It must be unique within a given Pipeline. You can click this label to edit it.                                             |
-|  2  | Gem Type name     | The type of gem                                                                                                                                                   |
-|  3  | Error Indicator   | The error state of the Gem. If there's something wrong with the configuration of the gem this indicator will appear.                                              |
+|  2  | Gem Type name     | The type of Gem                                                                                                                                                   |
+|  3  | Error Indicator   | The error state of the Gem. If there's something wrong with the configuration of the Gem this indicator will appear.                                              |
 |  4  | Input Ports       | [Input ports](#inputs) that will accept connections from upstream Gems. If this Gem type supports multiple or editable inputs, more connections will appear here. |
 |  5  | Output Ports      | [Output ports](#outputs) that can be used with downstream Gems. If this Gem type supports multiple or editable outputs, more connections will appear here.        |
 |  6  | Gem Phase         | The [Phase](#phase) for this instance. Used to define the order in which Gem instances are executed                                                               |
@@ -109,6 +113,17 @@ Most Gem types allow Inputs and Outputs to be renamed, which will have at least 
   def Join_1(spark: SparkSession, input_one: DataFrame, in1: DataFrame, ) -> DataFrame:
     ...
 ```
+
+## Gem search
+
+When the Pipeline has become full with dozens or hundreds of Gems, you may wish to search the canvas for a Gem using the Project Browser.
+
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://fast.wistia.net/embed/iframe/7xdst62lub?seo=false?videoFoam=true" title="Search Gems in a Subgraph" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
+Search for a Gem on the Pipeline canvas. The Gem search includes Gems inside Subgraphs.
 
 ## Phase
 
