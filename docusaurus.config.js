@@ -60,7 +60,11 @@ const config = {
         items: [
           { to: "https://www.prophecy.io/", position: "left", label: "Home" },
           { type: "doc", docId: "index", position: "left", label: "Docs" },
-          { to: "https://transpiler.docs.prophecy.io/", position: "left", label: "Transpiler Docs" },
+          {
+            to: "https://transpiler.docs.prophecy.io/",
+            position: "left",
+            label: "Transpiler Docs",
+          },
           {
             to: "https://www.prophecy.io/blogs",
             label: "Blog",
