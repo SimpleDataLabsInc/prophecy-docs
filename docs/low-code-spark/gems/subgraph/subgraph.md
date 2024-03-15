@@ -16,7 +16,7 @@ Subgraph allows you to take multiple different Gems and wrap them under a single
 
 ## Types of Subgraphs
 
-There are three types of Subgraph available by default. The [Basic](./basic-subgraph.md) Subgraph is a great introduction to using Subgraphs.
+There are three types of Subgraph available by default. The [Basic](./basic-subgraph) Subgraph is a great introduction to using Subgraphs.
 
 | Name                                                         | Description                                                                                                                     |
 | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
