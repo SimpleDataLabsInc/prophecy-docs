@@ -37,7 +37,11 @@ As you connect the input and output ports to gems Outside the subgraph, you woul
 
 ## Subgraph Configurations
 
-Subgraphs are configurable just like [Pipelines are configurable](../../configuration/configuration.md). Checkout how to configure Subgraphs to [Accept Pipeline level configurations.](./basicSubgraph.md#accept-pipeline-level-configurations)
+Subgraphs are configurable just like [Pipelines are configurable](../../configuration/configuration.md). For Subgraphs, the configurations can apply in one of two ways: (1) Pipeline level Configurations apply to the Subgraph or (2) Specify Configurations only for the Subgraph
+
+### Pipeline Level Configurations can apply to the Subgraph
+
+Pipeline configs are accessible inside Subgraphs by **copying** the config to the Subgraph. Checkout the video below to see how this works.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -48,7 +52,3 @@ Subgraphs are configurable just like [Pipelines are configurable](../../configur
 ### Specify configurations only for the Subgraph
 
 In Subgraph Configs, user can define values that can be set at the Subgraph level and then be accessed inside any component in the Subgraph. These will also reflect under Configurations of Pipelines using these Subgraphs, but they can only be edited from Subgraph configs.
-
-### Accept Pipeline Level Configurations
-
-Pipeline configs are likewise accessible inside Subgraphs by **copying** the config to the Subgraph.
