@@ -61,15 +61,17 @@ Teams are the primary mechanism of ownership. Teams own Projects where Pipelines
 
 ### SQL
 
+To allow for SQL query execution Prophecy can connect to Snowflake and Databricks warehouses. Connectors for additional SQL warehouses coming soon.
+
 #### Snowflake
 
-To connect with data stored in a SQL Warehouse, or to allow for interactive SQL execution, Prophecy can connect to an existing Snowflake execution environment through a secure and performant **Snowpark** interface.
+To connect with data stored in a SQL Warehouse, or to allow for interactive SQL execution, Prophecy can connect to an existing Snowflake execution environment through secure and performant [Snowpark](https://docs.snowflake.com/en/developer-guide/snowpark/index) or [Snowflake](https://docs.snowflake.com/en/developer-guide/sql-api/reference) APIs.
 
 Each [Fabric](../../concepts/fabrics) defined in Prophecy connects to a single Snowflake Warehouse and each user is required to provide credentials to authenticate to it.
 
 ![Arch_Diagram](./img/arch_snowflake.png)
 
-Notice the data provider (eg Snowflake) matches up to a Fabric. For another scenario, consider the same architecture diagram where the Fabric connects to a Spark engine instead of a SQL Warehouse.
+Notice the data provider (eg Snowflake) matches up to a Fabric. For another scenario, consider the same architecture diagram where the Fabric connects to a Databricks SQL warehouse instead of Snowflake.
 
 ### Spark
 
