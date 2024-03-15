@@ -6,21 +6,23 @@ tags: []
 todo: true
 ---
 
-Subgraph allows you to take multiple different Gems and wrap them under a single reusable parent Gem. It allows the user to decompose complex logic into reusable components and simplify the Data Engineering process.
+Subgraph allows you to take multiple different Gems and wrap them under a single reusable parent Gem. It allows the user to decompose complex logic into reusable components. Just **publish**your Subgraph to make it reusable. See how this works in the video below.
 
-[Subgraphs 101](./Subgraphs101) 
-[Types of Subgraphs](./TypesOfSubgraphs)
-[Create your Own](./CreateYourOwnSubgraph)
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://fast.wistia.net/embed/iframe/e1q56n0gjb?seo=false?videoFoam=true" title="Getting Started With SQL Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-## Subgraphs 101
 ## Types of Subgraphs
 
-There are two types of Subgraph available by default.
+There are three types of Subgraph available by default.
 
-| Name                               | Description                                                                               |
-| ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| [Basic Subgraph](./basic-subgraph) | Captures one or more Gems within a Pipeline to reuse across other Pipelines and Projects.                                  |
-| [Table Iterator](./table-iterator) | Iterates over one or more Gems for each row of the first input DataFrame. Table iterator is for python projects only.      |
+| Name                                                         | Description                                                                                                                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| [Basic](./basic-subgraph)                                    | Captures one or more Gems within a Pipeline to reuse across other Pipelines and Projects.                                       |
+| [Table Iterator](./table-iterator)                           | Iterates over one or more Gems for each row of the first input DataFrame. Table iterator is available for Python Projects only. |
+| [Novel Type](./subgraph.md#create-your-own-type-of-subgraph) | Apply any custom logic to the group of Gems present inside the Subgraph.                                                        |
 
 ## Create your own type of Subgraph
 
