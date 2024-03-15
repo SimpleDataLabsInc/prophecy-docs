@@ -1,38 +1,35 @@
 ---
 title: JSON
 id: json
-description: JSON
 sidebar_position: 6
 tags:
   - gems
   - file
   - json
+description: JSON
 ---
+
+# JSON
 
 Read and write JSON formatted files
 
-## Source
+### Source
 
-### Source Parameters
+#### Source Parameters
 
-JSON **_Source_** supports all the available [Spark read options for JSON](https://spark.apache.org/docs/latest/sql-data-sources-json.html).
+JSON _**Source**_ supports all the available [Spark read options for JSON](https://spark.apache.org/docs/latest/sql-data-sources-json.html).
 
 The below list contains the additional parameters to read a JSON file:
 
 | Parameter    | Description                                                                                                 | Required |
 | ------------ | ----------------------------------------------------------------------------------------------------------- | -------- |
 | Dataset Name | Name of the Dataset                                                                                         | True     |
-| Location     | Location of the file(s) to be loaded <br/> Eg: `dbfs:/data/test.json`                                       | True     |
+| Location     | <p>Location of the file(s) to be loaded<br>Eg: <code>dbfs:/data/test.json</code></p>                        | True     |
 | Schema       | Schema to applied on the loaded data. Can be defined/edited as JSON or inferred using `Infer Schema` button | True     |
 
-### Example {#source-example}
+#### Example <a href="#source-example" id="source-example"></a>
 
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/130362885/234556861-d5b82f1a-883e-4b49-bebe-0ac47511583e.mp4" title="Json Source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
-
-### Generated Code {#source-code}
+#### Generated Code <a href="#source-code" id="source-code"></a>
 
 ````mdx-code-block
 
@@ -64,27 +61,22 @@ spark.read
 
 ````
 
-## Target
+### Target
 
-### Target Parameters
+#### Target Parameters
 
-JSON **_Target_** supports all the available [Spark write options for JSON](https://spark.apache.org/docs/latest/sql-data-sources-json.html).
+JSON _**Target**_ supports all the available [Spark write options for JSON](https://spark.apache.org/docs/latest/sql-data-sources-json.html).
 
 The below list contains the additional parameters to write a JSON file:
 
-| Parameter    | Description                                                             | Required |
-| ------------ | ----------------------------------------------------------------------- | -------- |
-| Dataset Name | Name of the Dataset                                                     | True     |
-| Location     | Location of the file(s) to be loaded <br/> Eg: `dbfs:/data/output.json` | True     |
+| Parameter    | Description                                                                            | Required |
+| ------------ | -------------------------------------------------------------------------------------- | -------- |
+| Dataset Name | Name of the Dataset                                                                    | True     |
+| Location     | <p>Location of the file(s) to be loaded<br>Eg: <code>dbfs:/data/output.json</code></p> | True     |
 
-### Example {#target-example}
+#### Example <a href="#target-example" id="target-example"></a>
 
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/130362885/234556999-72c22d9b-c99e-4e6c-8887-b54b8d5d94f1.mp4" title="Json Target" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
-
-### Generated Code {#target-code}
+#### Generated Code <a href="#target-code" id="target-code"></a>
 
 ````mdx-code-block
 
@@ -119,15 +111,12 @@ object write_json {
 
 ````
 
-### Producing a single output file
+#### Producing a single output file
 
 Because of Spark's distributed nature, output files are written as multiple separate partition files. If you need a single output file for some reason (such as reporting or exporting to an external system), use a `Repartition` Gem in `Coalesce` mode with 1 output partition:
 
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/130362885/234560215-5f85e164-638c-4cb9-abc6-dbd9cefb0e05.mp4" title="Single Output file" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
-<br/>
+\
+
 
 :::caution
 

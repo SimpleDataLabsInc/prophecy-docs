@@ -1,38 +1,35 @@
 ---
 title: Text
 id: text
-description: Text
 sidebar_position: 4
 tags:
   - gems
   - file
   - text
+description: Text
 ---
+
+# Text
 
 Allows you to read or write plain Text files
 
-## Source
+### Source
 
 Reads data from Text files at the given Location.
 
-### Source Parameters
+#### Source Parameters
 
-| Parameter             | Description                                                                                                                                                                   | Required | Default            |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------ |
-| Location              | File path where the Text files are located                                                                                                                                    | True     | None               |
-| Schema                | Schema to be applied on the loaded data. Can be defined/edited as JSON or inferred using `Infer Schema` button                                                                | True     | None               |
-| Recursive File Lookup | This is used to recursively load files from the given Location. Disables partition discovery. An exception will be thrown if this option and a `partitionSpec` are specified. | False    | False              |
-| Line Separator        | Defines the line separator that should be used for reading or writing.                                                                                                        | False    | `\r`, `\r\n`, `\n` |
-| Read as a single row  | If true, read each file from input path(s) as a single row.                                                                                                                   | False    | False              |
+| Parameter             | Description                                                                                                                                                                   | Required | Default  |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- |
+| Location              | File path where the Text files are located                                                                                                                                    | True     | None     |
+| Schema                | Schema to be applied on the loaded data. Can be defined/edited as JSON or inferred using `Infer Schema` button                                                                | True     | None     |
+| Recursive File Lookup | This is used to recursively load files from the given Location. Disables partition discovery. An exception will be thrown if this option and a `partitionSpec` are specified. | False    | False    |
+| Line Separator        | Defines the line separator that should be used for reading or writing.                                                                                                        | False    | , `\r`,  |
+| Read as a single row  | If true, read each file from input path(s) as a single row.                                                                                                                   | False    | False    |
 
-### Example {#source}
+#### Example <a href="#source" id="source"></a>
 
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/103921419/175029278-70a93cc5-a212-464b-8aad-61ab278f0bbf.mp4" title="Text Source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
-
-### Generated Code {#source-code}
+#### Generated Code <a href="#source-code" id="source-code"></a>
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -70,11 +67,11 @@ object read_avro {
 
 ````
 
----
+***
 
-## Target
+### Target
 
-### Target Parameters
+#### Target Parameters
 
 Write data as text files at the specified path.
 
@@ -82,16 +79,13 @@ Write data as text files at the specified path.
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
 | Location          | File path where text files will be written to                                                                                                                       | True     | None    |
 | Compression       | Compression codec to use when saving to file. This can be one of the known case-insensitive shorten names (`none`, `bzip2`, `gzip`, `lz4`, `snappy` and `deflate`). | False    | None    |
-| Write Mode        | How to handle existing data. See [this table](#supported-write-modes) for a list of available options.                                                              | True     | `error` |
+| Write Mode        | How to handle existing data. See [this table](text.md#supported-write-modes) for a list of available options.                                                       | True     | `error` |
 | Partition Columns | List of columns to partition the Text files by                                                                                                                      | False    | None    |
-| Line Separator    | Defines the line separator that should be used for writing.                                                                                                         | False    | `\n`    |
+| Line Separator    | Defines the line separator that should be used for writing.                                                                                                         | False    |         |
 
-:::info
-The Text data source supports only a single column apart from the partition columns. An `AnalysisException` will be thrown if the DataFrame has more than 1 column
-apart from parition columns as the input DataFrame to the `Target` Gem.
-:::
+:::info The Text data source supports only a single column apart from the partition columns. An `AnalysisException` will be thrown if the DataFrame has more than 1 column apart from parition columns as the input DataFrame to the `Target` Gem. :::
 
-### Supported Write Modes
+#### Supported Write Modes
 
 | Write Mode | Description                                                                                                                      |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
@@ -100,14 +94,9 @@ apart from parition columns as the input DataFrame to the `Target` Gem.
 | ignore     | If data already exists, do nothing with the contents of the DataFrame. This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
 | error      | If data already exists, throw an exception.                                                                                      |
 
-### Example {#target-example}
+#### Example <a href="#target-example" id="target-example"></a>
 
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/103921419/175029303-461687fe-a6e0-419e-85c6-229c17645746.mp4" title="Text Target" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
-
-### Generated Code {#target-code}
+#### Generated Code <a href="#target-code" id="target-code"></a>
 
 ````mdx-code-block
 
@@ -144,6 +133,4 @@ object write_text {
 
 ````
 
-:::info
-To know more about tweaking Text file related properties in Spark config [**click here**](https://spark.apache.org/docs/latest/sql-data-sources-text.html).
-:::
+:::info To know more about tweaking Text file related properties in Spark config [**click here**](https://spark.apache.org/docs/latest/sql-data-sources-text.html). :::
