@@ -5,7 +5,51 @@ description: Key Concepts of Prophecy
 tags: []
 ---
 
-Before you begin using Prophecy, you should be familiar with the following key concepts.
+Advance your productivity by becoming familiar with these key Prophecy concepts.
+
+## Projects and Git
+
+The Project is the primary unit of development and deployment to production in Prophecy.
+
+A **project** contains
+
+- **Pipelines** (Spark) or **Models** (SQL) which read, transform and write data.
+- **Datasets** point to the data that is read and written to by the _Data Pipelines_ or _Data Models_.
+- **Jobs** run _Data Pipelines_ and _Data Models_ individually or together based on a schedule.
+
+### Project is Code on Git
+
+A **project** is **code** on **Git**. This means that within a project, the business logic of all the assets including _Pipelines_/_Models_, _Datasets_, and _Jobs_ is stored as code on Git. This might be a repository on Github or a folder in a repository.
+
+![Project is code](img/project_is_code.png)
+
+## Metadata
+
+Metadata is how you access and configure all entities in Prophecy. You can go to metadata page to view, edit, delete any of your entities like Pipelines, Projects, Jobs, Fabrics etc.
+
+![Metadata](img/metadata.png)
+
+## Pipelines and Models
+
+Pipelines and models within Prophecy are used to represent the flow of data and transformations preformed in the middle. Each one reads data from certain locations (from Source gems), processes it (through Transform gems), and writes it back to another location (Target Gem). A Pipeline (left) and a Model (right) are shown below.
+
+![Pipeline and Model](img/pipeline-and-model.png)
+
+### Pipelines (for Spark)
+
+Pipelines are based on Spark-native code. Therefore, Prophecy users can leverage all of the powers of Spark to build their transformations. Spark can handle virtually any complexity and scale transformation.
+
+You will want to create pipelines when you’re running on a Spark environment, like Databricks or EMR. They’re particularly useful for more complex ingestion (e.g. loading data from Salesforce or JDBC), data transformations (e.g. working with complex data types) and machine learning use-cases.
+
+Learn more [here](../low-code-spark) about Prophecy’s low-code Spark environment and checkout this [guide](../getting-started/getting-started/getting-started-with-low-code-spark.md).
+
+### Models (for SQL)
+
+Models are based on SQL-native code and are backed by the dbt Core™️ build system. Models define a single Dataset (most commonly a table or a view) and they’re stored as a select statement in a SQL file. They can be used as part of the Low-code SQL product only.
+
+You will want to create models if you’d like to transform data directly on your data warehouse or you’re an existing dbt user. They’re best suited for data analytics and data transformation use-cases.
+
+Learn more [here](../low-code-sql/low-code-sql.md) about Prophecy’s low-code SQL environment and get started with low-code SQL on Databricks with [this guide](../getting-started/getting-started-with-low-code-sql.md).
 
 ## Teams And Users
 
@@ -21,12 +65,6 @@ Users get access by being added to a teams
 
 ![TeamsUsers](img/team_page.png)
 
-## Metadata
-
-Metadata is how you access and configure all entities in Prophecy. You can go to metadata page to view, edit, delete any of your entities like Pipelines, Projects, Jobs, Fabrics etc.
-
-![Metadata](img/metadata.png)
-
 ## Fabrics
 
 Fabric is a logical execution environment. Teams organize their data engineering into multiple environments such as _development_, _staging_, and _production_.
@@ -36,11 +74,11 @@ As an example, if you have a Databricks Workspace, that would map to one Fabric 
 
 ## Pipelines
 
-A `Pipeline` (formerly known as a _Workflow_) within Prophecy is used to represent the flow of data. They are similar to a map you might use on a road trip: You have a **_Start_** and **_Finish_** (Datasets) and the **_stops_** to make along the way (Gems).
+A `Pipeline` within Prophecy is used to represent the flow of data. They are similar to a map you might use on a road trip: You have a **_Start_** and **_Finish_** (Datasets) and the **_stops_** to make along the way (Gems).
 
 ![Pipeline](img/pipeline.png)
 
-### Datasets
+## Datasets
 
 Datasets (not to be confused with a [Spark Dataset](https://spark.apache.org/docs/3.1.3/api/scala/org/apache/spark/sql/Dataset.html)) in Prophecy are the union of two concepts:
 

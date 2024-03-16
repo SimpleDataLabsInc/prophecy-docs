@@ -2,7 +2,7 @@
 title: Project Browser and Environments
 id: project-browser
 description: Guide on how to use Project browser
-sidebar_position: 1
+sidebar_position: 4
 tags:
   - concepts
   - project

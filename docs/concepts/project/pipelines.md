@@ -14,7 +14,7 @@ A `Pipeline` (formerly known as a _Workflow_) is a type of entity within Prophec
 
 In the Metadata view of the UI you'll find the [Pipeline list](https://app.prophecy.io/metadata/entity/user/pipelines)
 
-![Pipeline list](img/pipeline/metadata_pipeline_list.png)
+![Pipeline list](img/pipelines/metadata_pipeline_list.png)
 
 Follow the instructions below to create a new one
 
@@ -22,11 +22,11 @@ Follow the instructions below to create a new one
 
 Pipelines can be created using the [Create Entity](https://app.prophecy.io/metadata/create) view.
 
-![Create entity](img/pipeline/create.png)
+![Create entity](img/pipelines/create.png)
 
 Clicking the `Pipeline` button will pop up the **Pipeline Creation** UI.
 
-![Pipeline Creation](img/pipeline/create_pipeline.png)
+![Pipeline Creation](img/pipelines/create_pipeline.png)
 
 | Field Name  | Description                                                                                                                                                                                               |
 | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -40,7 +40,7 @@ Clicking the `Pipeline` button will pop up the **Pipeline Creation** UI.
 
 When editing a `Pipeline`, you'll be using the editor shown below.
 
-![Editing a Pipeline](img/pipeline/edit_pipeline.png)
+![Editing a Pipeline](img/pipelines/edit_pipeline.png)
 
 1. _Pipeline Config_ : Buttons that bring up views related to the configuration of your `Pipeline`:
    1. [Config](../low-code-spark/configuration/configuration.md)

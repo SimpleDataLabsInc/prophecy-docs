@@ -2,7 +2,7 @@
 title: Projects and Git
 id: project
 description: Keeping your Pipelines, Datasets and Jobs under (source) control
-sidebar_position: 5
+sidebar_position: 1
 tags:
   - concepts
   - project
@@ -13,17 +13,17 @@ tags:
   - release
 ---
 
-Project is the primary unit of development and deployment to production in Prophecy.
+The Project is the primary unit of development and deployment to production in Prophecy.
 
 A **project** contains
 
-- **Data Pipelines** that read, transform and write data using Spark
-- **Datasets** point to the data that is read and written to by the _Data Pipelines_
-- **Jobs** run _Data Pipelines_ based on a **schedule**
+- **Pipelines** (Spark) or **Models** (SQL) which read, transform and write data.
+- **Datasets** point to the data that is read and written to by the _Data Pipelines_ or _Data Models_.
+- **Jobs** run _Data Pipelines_ and _Data Models_ individually or together based on a schedule.
 
 ## Project is Code on Git
 
-A **project** is **code** on **Git**. This means that within a project, the business logic of all the assets including _Pipelines_, _Datasets_, and _Jobs_ is stored as code on Git. This might be a repository on Github or a folder in a repository.
+A **project** is **code** on **Git**. This means that within a project, the business logic of all the assets including _Pipelines_/_Models_, _Datasets_, and _Jobs_ is stored as code on Git. This might be a repository on Github or a folder in a repository.
 
 ![Project is code](../img/project_is_code.png)
 
