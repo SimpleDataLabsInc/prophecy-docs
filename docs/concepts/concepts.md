@@ -41,7 +41,7 @@ Pipelines are based on Spark-native code. Therefore, Prophecy users can leverage
 
 You will want to create pipelines when you’re running on a Spark environment, like Databricks or EMR. They’re particularly useful for more complex ingestion (e.g. loading data from Salesforce or JDBC), data transformations (e.g. working with complex data types) and machine learning use-cases.
 
-Learn more [here](../low-code-spark) about Prophecy’s low-code Spark environment and checkout this [guide](../getting-started/getting-started/getting-started-with-low-code-spark.md).
+Learn more [here](../low-code-spark) about Prophecy’s low-code Spark environment and checkout this [guide](/docs/getting-started/getting-started-with-low-code-spark.md).
 
 ### Models (for SQL)
 
@@ -49,7 +49,7 @@ Models are based on SQL-native code and are backed by the dbt Core™️ build s
 
 You will want to create models if you’d like to transform data directly on your data warehouse or you’re an existing dbt user. They’re best suited for data analytics and data transformation use-cases.
 
-Learn more [here](../low-code-sql/low-code-sql.md) about Prophecy’s low-code SQL environment and get started with low-code SQL on Databricks with [this guide](../getting-started/getting-started-with-low-code-sql.md).
+Learn more [here](/docs/low-code-sql/low-code-sql.md) about Prophecy’s low-code SQL environment and get started with low-code SQL on Databricks with [this guide](/docs/getting-started/getting-started-with-low-code-sql.md).
 
 ## Teams And Users
 
@@ -118,7 +118,7 @@ To support Jobs, Prophecy provides you with an easy to use low-code interface to
   orchestrate multiple data-Pipelines to run together. Databricks Jobs is a **recommended** scheduler, if you're
   Databricks Native.
 
-- **[Airflow](../low-code-jobs/airflow/airflow.md)** - for more complex use-cases, where you have to use various operators, or need
+- **[Airflow](/docs/low-code-jobs/airflow/airflow.md)** - for more complex use-cases, where you have to use various operators, or need
   any additional data pre-and-post-processing, you can design your Jobs using Prophecy's low-code Airflow environment.
 
 Alternatively, since Prophecy provides you native Spark code on Git, you can easily integrate with any other scheduler.

@@ -53,7 +53,7 @@ The `Relations` tab on the [Project Metadata](#project-metadata) page shows a li
 
 |     | Name         | Description                                                                                   |
 | :-: | ------------ | --------------------------------------------------------------------------------------------- |
-|  1  | Pipelines    | List of [Pipelines](../pipelines.md) in this project                                          |
+|  1  | Pipelines    | List of [Pipelines](/docs/concepts/project/pipelines.md) in this project                      |
 |  2  | Add Pipeline | Click this to add a new Pipeline                                                              |
 |  3  | Jobs         | List of Jobs in this project                                                                  |
 |  4  | Add Job      | Click this to add a new Job                                                                   |

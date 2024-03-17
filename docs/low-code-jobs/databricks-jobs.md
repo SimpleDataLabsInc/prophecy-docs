@@ -9,7 +9,7 @@ tags:
   - scheduling
 ---
 
-Once you have developed a [Spark Pipeline](/concepts/Pipeline) using Prophecy, you will want to schedule it to run at
+Once you have developed a [Spark Pipeline](/docs/concepts/project/pipelines.md) using Prophecy, you will want to schedule it to run at
 some frequency. To support this, Prophecy provides a low-code layer on top of Databricks Jobs for an easy orchestration.
 
 ## Development
@@ -36,7 +36,7 @@ Whenever, creating a new Job you're asked for the following details:
 
 | Field Name        | Description                                                                                                                                                                                                                                   |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Project           | Which [Project](/concepts/project) to create the Job in. This controls who has access to the Job, groups Jobs together for lineage, and allows you to use Pipelines already published within that Project.                                    |
+| Project           | Which [Project](/docs/concepts/project/project.md) to create the Job in. This controls who has access to the Job, groups Jobs together for lineage, and allows you to use Pipelines already published within that Project.                    |
 | Branch            | Which Git branch to use when developing this Job.                                                                                                                                                                                             |
 | Name              | Unique Job name.                                                                                                                                                                                                                              |
 | Scheduler         | The underlying engine that's going to execute your Job. Databricks is recommended.                                                                                                                                                            |

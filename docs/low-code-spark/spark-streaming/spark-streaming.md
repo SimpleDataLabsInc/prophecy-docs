@@ -23,7 +23,7 @@ Within a Prophecy `Python` Project, a user can create a Structured Streaming Pip
 
 ### Working with a Streaming Pipeline
 
-To create a Streaming Pipeline, users can follow a process similar to creating a Batch Pipeline in a `Python` project. For more on Pipeline creation and understanding Prophecy pipelines, please check [this](/concepts/pipeline) link. Streaming Pipelines work differently from Batch Pipelines in the following ways:
+To create a Streaming Pipeline, users can follow a process similar to creating a Batch Pipeline in a `Python` project. For more on Pipeline creation and understanding Prophecy pipelines, please check [this](/docs/concepts/project/pipelines.md) link. Streaming Pipelines work differently from Batch Pipelines in the following ways:
 
 1. Partial runs are not supported for streaming applications. A partial run is only allowed on a `Streaming Target` Gem.
 2. Streaming pipelines are long-running tasks and process data at intervals. Currently, they do not capture cumulative statistics.
