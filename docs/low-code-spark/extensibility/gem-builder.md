@@ -264,6 +264,8 @@ Let's look at each of these functions.
 
 The `dialog` function contains code specific to how the Gem UI should look to the user.
 
+Please find the UISpec for Python and Scala here: [UI Spec](gem-builder%2Fui-spec.md)
+
 ````mdx-code-block
 <Tabs>
 
