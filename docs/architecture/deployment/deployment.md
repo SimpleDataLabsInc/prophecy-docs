@@ -27,7 +27,7 @@ This option is heavily used by customers to try Prophecy. Our startup and midsiz
 
 ### Private SaaS (Customer VPC)
 
-Customers in segments that deal with very sensitive data primarily use this option. Here, Prophecy runs within the **Customer VPC** and connects to the identity, Spark clusters and the scheduler within the VPC.
+Customers in segments that deal with very sensitive data primarily use this option. Here, Prophecy runs within the **Customer VPC** and connects to the identity, Spark clusters and the scheduler within the VPC. For more information read the [private SAAS installation documentation](private-saas/private-saas.md) or reach out to our team by using [request a demo](https://www.prophecy.io/request-a-demo).
 
 ![Customer VPC Architecture](img/arch_customervpc.png)
 
@@ -37,7 +37,7 @@ This is the default option when you go through the cloud marketplaces. You can i
 
 ### On-Premise Deployment
 
-On rare occasions, Prophecy will deploy on-premise for large customers who are moving to the cloud. Often the order is that the organizations will move Pipelines from on-premise legacy ETL tools to Spark, then move it to Spark on the cloud. For more information read the [on-premise installation documentation](on-premise/on-premise.md) or reach out to our team by using [request a demo](https://www.prophecy.io/request-a-demo).
+On rare occasions, Prophecy will deploy on-premise for large customers who are moving to the cloud. Often the order is that the organizations will move Pipelines from on-premise legacy ETL tools to Spark, then move it to Spark on the cloud.
 
 ## High-Level Architecture
 
