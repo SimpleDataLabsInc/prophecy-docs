@@ -1,7 +1,7 @@
 ---
 title: Audit Events Configuration
 id: audit-events
-description: Prophecy on-prem installations audit events (logs) being synced to object stores like S3, Azure Blob Storage, GCP Cloud Storage etc.
+description: Prophecy installations audit events (logs) being synced to object stores like S3, Azure Blob Storage, GCP Cloud Storage etc.
 sidebar_position: 1
 tags:
   - audit events
