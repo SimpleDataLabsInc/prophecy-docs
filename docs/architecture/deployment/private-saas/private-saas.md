@@ -1,18 +1,18 @@
 ---
-title: On-premise
-id: on-premise
-description: On-premise deployments. Bring Your Own Hardware
+title: Private SAAS
+id: private SAAS
+description: Private SAAS deployments. Bring Your Own Hardware
 sidebar_position: 2
 tags:
   - deployment
-  - on-prem
+  - private SAAS
   - cdp
   - hdp
   - mapr
 ---
 
-Prophecy can be deployed on-premise for customers who require maximum security or want to run on their own on-premise
-Spark versions (e.g. CDP, HDP, MapR). As for the cloud deployments, also for on-premise, Prophecy is deployed on a
+Prophecy can be deployed private SAAS for customers who require maximum security or want to run on their own private SAAS
+Spark versions (e.g. CDP, HDP, MapR). As for the cloud deployments, also for private SAAS, Prophecy is deployed on a
 Kubernetes cluster. With that setup, Prophecy seamlessly integrates with the rest of your infrastructure.
 
 Prophecy is installed through a Prophecy Kubernetes operator, which automatically takes care of the common ops tasks,
@@ -22,11 +22,11 @@ like maintenance of the service, health checks, updates, version rollback etc.
 
 ## Requirements
 
-To install Prophecy on-premise the following infrastructure requirements must be satisfied:
+To install Prophecy private SAAS the following infrastructure requirements must be satisfied:
 
 ### Cluster
 
-- **Kubernetes Version (minimum):** 1.14
+- **Kubernetes Version (minimum):** 1.21
 - **Images:** Accessible from a secure container registry available at `gcr.io`. This location can be configured to a customer's internal container registry.
 
 Minimum service requirements:
