@@ -69,7 +69,7 @@ Below are JSON configurations within the Prophecy UI that need to be enabled to 
 
 ## User events audit logs output
 
-By default pushes events to `/namespace/user-events-audit/` directory in the S3 bucket configured.
+By default pushes events to `/namespace/audit/` directory in the S3 bucket configured.
 
 ### Sample output of user audit logs
 
