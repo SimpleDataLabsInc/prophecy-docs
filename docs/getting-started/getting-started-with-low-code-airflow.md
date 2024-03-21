@@ -52,7 +52,7 @@ For connecting to Prophecy Managed Airflow, you don't need to provide any other 
 
 ### 1.1 Adding AWS Connection
 
-To be able to trigger your Airflow Job, using an S3 File Sensor, you need to have connection from Prophecy Managed Airflow to you S3 account. For this, we need to add an AWS Connection.
+To be able to trigger your Airflow Job, using an S3 File Sensor, you need to have connection from Prophecy Managed Airflow to your S3 bucket. For this, we need to add an AWS Connection.
 Click on **(1) Add Connection** button. This Opens up the Connection form as shown.
 
 ![Add_connection](img/3.3_Add_Connection.png)
@@ -73,7 +73,7 @@ Once done, hit **(8) Save**.
 
 ### 1.3 Adding Databricks Spark Connection
 
-To be able to Run your Databricks Pipelines, you need to have connection from Prophecy Managed Airflow to your Databricks Environment.
+To be able to Run your Databricks Pipelines, you need to have connection from Prophecy Managed Airflow to your Databricks Environment. If you don't yet have a separate Fabric connecting Prophecy to a Databricks Spark Workspace, follow [these steps.](/docs/low-code-spark/fabrics/create-a-fabric.md)
 Click again on Add Connection button.
 
 Select Databricks Spark in **(1) Connection Type**. Now under the **(2) Fabric**, you would select the already created Fabric for Databricks Spark and Prophecy would setup the connection.
@@ -84,7 +84,7 @@ Once done, click **(4) Save**.
 
 ### 1.4 Adding Databricks SQL Connection
 
-To be able to Run your Databricks SQL Models, you need to have connection from Prophecy Managed Airflow to your Databricks SQL Environment.
+To be able to Run your Databricks SQL Models, you need to have connection from Prophecy Managed Airflow to your Databricks SQL Environment. If you don't yet have a separate Fabric connecting Prophecy to a Databricks SQL Environment, follow [these steps.](/docs/getting-started/getting-started-with-low-code-sql.md#2-connect-to-databrics)
 Click again on Add Connection button.
 
 Select Databricks SQL in **(1) Connection Type**. Now under the **(2) Fabric**, you would select the already created Fabric for Databricks SQL and Prophecy would setup the connection.
@@ -161,7 +161,7 @@ Click on **(1) Operators**, and Drag the **(2) DBT Gem** from the dropdown to th
 
 Here, you will select the DBT Project/Model to Schedule, what SQL Fabric to schedule it on, and other additional properties for running a DBT model.
 
-Select the **(1) DBT commands** you want to run when scheduling your Models. You can select all ([Dependencies](https://docs.prophecy.io/low-code-spark/pubsub/#project-dependency), [Seed](https://docs.prophecy.io/getting-started/sql-with-databricks/#431-create-seeds), Run and Test) here.
+Select the **(1) DBT commands** you want to run when scheduling your Models. You can select all ([Dependencies](/docs/low-code-spark/extensibility/dependencies.md#see-dependency), [Seed](https://docs.prophecy.io/getting-started/sql-with-databricks/#431-create-seeds), Run and Test) here.
 Select the **(2) DBT Project to Schedule**. And then select the **(3) SQL Warehouse Fabric** to schedule the Module on. Please select the Fabric for which connection was created in Step 1.4.
 In **(4) Git reference**, select if you want to schedule a particular commit/tag or branch. Here you can select `branch` for this guide and then in **(5) Reference Value** give the current branch name you are working on.
 You can provide any additional **(6) Properties** for your run and then click **(7) Save**!!
@@ -218,7 +218,7 @@ During the release process Prophecy automatically packages, tests, and deploys y
 
 ![Airflow_Monitoring_page](img/3.25_Observability.png)
 
-Click on **(1) Observability icon** on the left side menu bar to take you to the Observability page. Then in **(2) Fabric Selection box**, choose the Airflow Fabric your have. The Observability page will show all the Past and Current Runs of the Jobs you released on this Fabric. Switch between **Attention Required**, **All events**, **Job Runs** to find any Particular Run you are looking for. Click on the **(3) Details** button to open up the logs of any particular Run.
+Click on **(1) Observability icon** on the left side menu bar to take you to the Observability page. Then in **(2) Fabric Selection box**, choose the Airflow Fabric your have. The Observability page will show all the Past and Current Runs of the Jobs you released on this Fabric. Note: If you don't see your Job, be sure the Job is [enabled](/docs/getting-started/getting-started-with-low-code-airflow.md#4-release-and-schedule), scheduled and released. Ad-hoc runs do not appear in the Observability page. Switch between **Attention Required**, **All events**, **Job Runs** to find any Particular Run you are looking for. Click on the **(3) Details** button to open up the logs of any particular Scheduled Run.
 
 ## What’s next?
 
