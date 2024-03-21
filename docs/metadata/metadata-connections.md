@@ -2,7 +2,7 @@
 title: Metadata Connections
 id: metadata-connections
 description: sync catalogs, tables, schemas, etc into Prophecy's Project viewer
-sidebar_position: 9
+sidebar_position: 3
 tags:
   - metadata
   - Datasets

@@ -28,7 +28,7 @@ Every component of the Project is represented both visually and in code on Git. 
 
 Now that Projects are stored as code on Git, users and teams get a collaboration boost. Users can work on the same project simultaneously because each user has their own branch. Projects are reviewed and released with a version, so every team member can confidently rely on the business logic. Each Project becomes a re-usable package for other teams to use with their own data and configurations. All of these best practices are in place for every Prophecy user from day one.
 
-Click on a tile below to learn about the different Project components, or checkout the [Metadata](/docs/concepts/project/project.md#project-metadata) section below for guidance on finding what you need in an existing Project. Ready to develop your own Project? Click [here](/docs/concepts/project/project.md#1-create-new-project)!
+Click on a tile below to learn about the different Project components, or checkout the [Project Metadata](/docs/metadata/project-metadata.md) page for guidance on finding what you need in an existing Project. Ready to develop your own Project? Click [here](/docs/concepts/project/project.md#1-create-new-project)!
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
@@ -37,12 +37,7 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 <DocCardList items={useCurrentSidebarCategory().items}/>
 ```
 
-Prophecy provides a standard and recommended mechanism for using Git based development
-(though other mechanisms are possible - including fork based development in our Enterprise product). A standard development pattern looks like this:
-
-![Project deploy](../img/project_deploy.png)
-
-Here are the steps explained:
+## Development and Deployment
 
 ### 1. Create new project
 
@@ -75,7 +70,11 @@ The commit dialog opens when you click the bottom bar - orange color indicates u
 
 ### 3. Integrate changes
 
-The four main phases of integrating your changes are: **_Commit_**, **_Pull_**, **_Merge_**, **_Release_**. Let's go over each in detail.
+Prophecy provides a standard and recommended mechanism for using Git based development. The four main phases of integrating your changes are: **_Commit_**, **_Pull_**, **_Merge_**, **_Release_**. A standard development pattern looks like this, though other mechanisms like forking are also supported:
+
+![Project deploy](../img/project_deploy.png)
+
+Let's go over each phase in detail.
 
 #### Commit
 

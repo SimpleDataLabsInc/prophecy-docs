@@ -2,7 +2,7 @@
 title: Git
 id: Git
 description: Source Control
-sidebar_position: 1
+sidebar_position: 2
 tags:
   - metadata
   - Git
