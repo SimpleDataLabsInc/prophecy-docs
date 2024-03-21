@@ -19,4 +19,4 @@ Data users can import an existing dbt Core project or start from scratch. They c
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-Get started with SQL by starting with [this guide](/docs/getting-started/getting-started-with-low-code-sql.md) and learning more about models [here.](/docs/concepts/models/models.md) Watch for more low-code SQL topics coming soon!
+Get started with SQL by starting with [this guide](/docs/getting-started/getting-started-with-low-code-sql.md) and learning more about models [here.](/docs/concepts/project/models.md) Watch for more low-code SQL topics coming soon!

@@ -1,8 +1,8 @@
 ---
 title: Models
 id: Model
-description: SQL Models
-sidebar_position: 5
+description: SQL models define a single target table or view.
+sidebar_position: 2
 tags:
   - concepts
   - Models
@@ -46,10 +46,10 @@ Here we explore how to use Models in Prophecy, adopting the concept and vernacul
 
 Prophecy displays Models using a lineage view, a visual view, and a code view.
 
-![lineage-view](./img/lineage-view.png)
+![lineage-view](./img/models/lineage-view.png)
 Open the HelloWorld_SQL Project. See the **(1)Lineage** for the HelloWorld_SQL Project pictured above. Each **(2)Project** contains folders of Models, [seeds](/docs/getting-started/getting-started-with-low-code-sql.md#431-create-seeds), and sources. The Lineage provides a high level view of the Project's **(3)Models** with **(4)dependencies** displayed from left to right. The `customers` Model depends on seed `raw_customers` and Models `stg_orders` and `stg_payments`. Click to open the `customers` Model as shown in the figure below.
 
-![model-view](./img/model-view.png)
+![model-view](./img/models/model-view.png)
 Now we can explore the `customers` Model more closely. The Model is easy to understand with interchangable **(1)visual** and **(2)code** views. The visual view depicts each small step needed to move from the referenced tables/seeds/Models to the final `customers` Model. Each transformation step or Common Table Expression (CTE) is called a **(3)Gem** in Prophecy.
 
 The **(4)`Aggregate`** step is represented visually as an `Aggregate` Gem and in code as the highlighted CTE code fragment. By popular demand, the visual and code formats are editable interchangeably, as illustrated [here.](/docs/low-code-sql/low-code-sql.md) Visual developers and SQL coders can work together in the same project, and both types of edits are incorporated to the project when [committed and merged](/docs/metadata/git.md#how-to-commit-changes).

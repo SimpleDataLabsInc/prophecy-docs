@@ -10,7 +10,7 @@ tags:
   - target
 ---
 
-Datasets (not to be confused with a [Spark Dataset](https://spark.apache.org/docs/3.1.3/api/scala/org/apache/spark/sql/Dataset.html)) in Prophecy are the union of two concepts:
+Datasets in Prophecy are the union of two concepts:
 
 1. **Schema**: Schema, in this case, is the _shape_ of the data. Column names, their types and _how_ to read and write the data that fits this schema
 2. **Fabric**: The [Fabric](fabrics/fabrics.md) is the execution environment in which this data resides.
