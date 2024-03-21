@@ -26,9 +26,11 @@ Every component of the Project is represented both visually and in code on Git. 
 
 ![Visual To Code](img/code-to-visual.png)
 
-Now that Projects are stored as code on Git, users and teams get a collaboration boost. Users can work on the same project simultaneously because each user has their own branch. Projects are reviewed and released with a version, so every team member can confidently rely on the business logic. Each Project becomes a re-usable package for other teams to use with their own data and configurations. All of these best practices are in place for every Prophecy user from day one.
+## Collaborate with Projects
 
-Click on a tile below to learn about the different Project components, or checkout the [Project Metadata](/docs/metadata/project-metadata.md) page for guidance on finding what you need in an existing Project. Ready to develop your own Project? Click [here](/docs/concepts/project/project.md#1-create-new-project)!
+Now that Projects are stored as code on Git, users and teams get a **collaboration boost**. Users can work on the same project simultaneously because each user has their own branch. Projects are reviewed and released with a version, so every team member can confidently rely on the business logic. Each Project can become a re-usable package for other teams to use with their own data and configurations. All of these best practices are in place for every Prophecy user from day one.
+
+Click on a tile below to learn about the different Project components, or checkout the [Project Metadata](/docs/metadata/project-metadata.md) page for guidance on finding what you need in an existing Project. Ready to [Develop and Deploy](/docs/concepts/project/project.md#development-and-deployment) your own Project? Follow the steps below and you'll be following all the industry standard best practices. Let's go!
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
