@@ -7,7 +7,7 @@ tags: []
 
 Advance your productivity by becoming familiar with these key Prophecy concepts.
 
-## Projects and Git
+## Projects
 
 The Project is the primary unit of development and deployment to production in Prophecy.
 
@@ -31,9 +31,9 @@ Metadata is how you access and configure all entities in Prophecy. You can go to
 
 ## Pipelines and Models
 
-Pipelines and models within Prophecy are used to represent the flow of data and transformations preformed in the middle. Each one reads data from certain locations (from Source gems), processes it (through Transform gems), and writes it back to another location (Target Gem). A Pipeline (left) and a Model (right) are shown below.
+`Pipelines` and `Models` within Prophecy are used to represent the flow of data. They are similar to a map you might use on a road trip: You have a **_Start_** and **_Finish_** (Datasets) and the **_stops_** to make along the way (Gems).
 
-![Pipeline and Model](img/pipeline-and-model.png)
+![Pipeline](img/pipeline.png)
 
 ### Pipelines (for Spark)
 
@@ -51,32 +51,12 @@ You will want to create models if you’d like to transform data directly on you
 
 Learn more [here](/docs/low-code-sql/low-code-sql.md) about Prophecy’s low-code SQL environment and get started with low-code SQL on Databricks with [this guide](/docs/getting-started/getting-started-with-low-code-sql.md).
 
-## Teams And Users
-
-Teams are the primary mechanism of ownership. Each Team represents a group of users who work together.
-
-- **Teams own Projects** where Pipelines, Datasets and Jobs live
-- **Teams own Fabrics** that provide the execution and storage resources for execution including Spark clusters
-
-Users get access by being added to a teams
-
-- **Personal Teams** For every user, a default team in created that only contains one user. If only one user is to be given access to a project, it can be done via this team
-- **Personal Projects** Users can put personal projects in their _personal team_ and not share it with others
-
-![TeamsUsers](img/team_page.png)
-
 ## Fabrics
 
-Fabric is a logical execution environment. Teams organize their data engineering into multiple environments such as _development_, _staging_, and _production_.
+A Fabric is a logical execution environment. Teams organize their data engineering into multiple environments such as _development_, _staging_, and _production_.
 As an example, if you have a Databricks Workspace, that would map to one Fabric in Prophecy.
 
 ![Fabrics](img/fabrics_details.png)
-
-## Pipelines
-
-A `Pipeline` within Prophecy is used to represent the flow of data. They are similar to a map you might use on a road trip: You have a **_Start_** and **_Finish_** (Datasets) and the **_stops_** to make along the way (Gems).
-
-![Pipeline](img/pipeline.png)
 
 ## Datasets
 
@@ -124,3 +104,17 @@ To support Jobs, Prophecy provides you with an easy to use low-code interface to
 Alternatively, since Prophecy provides you native Spark code on Git, you can easily integrate with any other scheduler.
 
 ![Job](img/Job.png)
+
+## Teams And Users
+
+Teams are the primary mechanism of ownership. Each Team represents a group of users who work together.
+
+- **Teams own Projects** where Pipelines, Datasets and Jobs live
+- **Teams own Fabrics** that provide the execution and storage resources for execution including Spark clusters
+
+Users get access by being added to a team
+
+- **Personal Teams** For every user, a default team in created that only contains one user. If only one user is to be given access to a project, it can be done via this team
+- **Personal Projects** Users can put personal projects in their _personal team_ and not share it with others
+
+![TeamsUsers](img/team_page.png)

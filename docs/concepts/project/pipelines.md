@@ -1,7 +1,7 @@
 ---
 title: "Pipelines"
 id: pipeline
-description: The recipes of the Prophecy world
+description: Spark Pipelines represent the data journey and can define multiple targets.
 sidebar_position: 1
 tags:
   - concepts
