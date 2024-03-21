@@ -96,6 +96,13 @@ The visual graph created on the Jobs page is automatically converted to code (JS
 | Number of retries per Gem | Number of retries for each Gem in Job Pipeline                                                                                                                                                                                                |
 | Alerts Email per Gem      | Comma separated list of emails that are going to receive notifications on specific Job status events (start, failure, or success) for each Gem in Job Pipeline.                                                                               |
 
+To change the Job name itself, go to Prophecy's metadata page. Locate the Job within a Project, and click the pencil icon.
+
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://fast.wistia.net/embed/iframe/hlqqxqyq87?seo=false?videoFoam=true" title="Getting Started With SQL Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+
 ## Deployment Modes
 
 To deploy a Job on Databricks, we need to release the project from Prophecy UI as shown in example below. As soon as the project is

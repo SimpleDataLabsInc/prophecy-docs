@@ -98,6 +98,15 @@ And want to configure Dataset (or in general the Job runs) based on which enviro
 
 ![Config path example](img/config-pipeline-path-eg.png)
 
+### Edit Pipeline Name
+
+To change the Pipeline name itself, go to Prophecy's metadata page. Locate the Pipeline within a Project, and click the pencil icon.
+
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://fast.wistia.net/embed/iframe/7t778aurgk?seo=false?videoFoam=true" title="Getting Started With SQL Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>                                                                                   <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
+
 ## Pipeline Configuration instances
 
 Different configuration instances can be defined as per requirement. This comes in handy when Pipeline needs to run with different
