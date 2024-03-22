@@ -1,10 +1,9 @@
-Upgrade Guide for Release 3.3.2.2
+# Upgrade Guide for Release 3.3.2.2
 
-List of Images that need to be synced in the private Repository.
+## List of Images that need to be synced in the private Repository.
 
 
-
-## Prophecy product Images available in gcr public repo :
+### Prophecy product Images available in gcr public repo :
 
 - gcr.io/prophecy-share/app:3.3.2.2
 - gcr.io/prophecy-share/adminpanel:3.3.2.2
@@ -24,7 +23,7 @@ List of Images that need to be synced in the private Repository.
 - gcr.io/prophecy-share/postgres-sdl:3.3.2.2
 - gcr.io/prophecy-share/transpilerweb:3.3.2.2
 
-## Prophecy platform components Images available in gcr public repo :
+### Prophecy platform components Images available in gcr public repo :
 
 - gcr.io/prophecy-share/grafana/loki:2.9.5
 - gcr.io/prophecy-share/grafana/grafana:10.0.12
@@ -43,7 +42,7 @@ List of Images that need to be synced in the private Repository.
 - gcr.io/prophecy-share/ingress-nginx/controller:v1.9.6
 - gcr.io/prophecy-share/ingress-nginx/nginx-errors:v1.9.6
 
-## Additional Images for Sandbox.
+### Additional Images for Sandbox.
 
 - gcr.io/prophecy-share/python_gem_service:3.3.2.2
 - gcr.io/prophecy-share/python_schema_analysis_service3.3.2.2
@@ -51,7 +50,7 @@ List of Images that need to be synced in the private Repository.
 - gcr.io/prophecy-share/scalaschemaanalysisserver3.3.2.2
 
 
-## Prophecy-Libs Version and location to download
+### Prophecy-Libs Version and location to download
 
 - https://prophecy-public-bucket.s3.us-east-2.amazonaws.com/prophecy-libs/prophecy-libs-assembly-2.3.0-7.1.79.jar
 - https://prophecy-public-bucket.s3.us-east-2.amazonaws.com/prophecy-libs/prophecy-libs-assembly-2.4.0-7.1.79.jar
@@ -64,7 +63,7 @@ List of Images that need to be synced in the private Repository.
 
 
 
-## prophecy-python-libs to download
+### prophecy-python-libs to download
 
 
 
@@ -74,14 +73,14 @@ List of Images that need to be synced in the private Repository.
 
 
 
-### To upgrade via the UI please follow the following path. Open the UI. Select the Triple Dot from the bottom left corner. Go to the Admin Page. Click on Upgrade Version. Select the Version you want to upgrade to. Click on the Upgrade. You will see a Maintenance window now.
+> #### To upgrade via the UI please follow the following path. Open the UI. Select the Triple Dot from the bottom left corner. Go to the Admin Page. Click on Upgrade Version. Select the Version you want to upgrade to. Click on the Upgrade. You will see a Maintenance window now.
 
 
 
-Please visit this [Installation-Guide](https://docs.prophecy.io/architecture/deployment/installation-guide) for more details.
+### Please visit this [Installation-Guide](https://docs.prophecy.io/architecture/deployment/installation-guide) for more details.
 
 
-### [Release Note](https://docs.prophecy.io/release_notes/2024/)
+## [Release Notes](https://docs.prophecy.io/release_notes/2024/)
 
 
 
