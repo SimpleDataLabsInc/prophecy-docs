@@ -74,14 +74,14 @@ List of Images that need to be synced in the private Repository.
 
 
 
-# To upgrade via the UI please follow the following path. Open the UI. Select the Triple Dot from the bottom left corner. Go to the Admin Page. Click on Upgrade Version. Select the Version you want to upgrade to. Click on the Upgrade. You will see a Maintenance window now.
+### To upgrade via the UI please follow the following path. Open the UI. Select the Triple Dot from the bottom left corner. Go to the Admin Page. Click on Upgrade Version. Select the Version you want to upgrade to. Click on the Upgrade. You will see a Maintenance window now.
 
 
 
 Please visit this [Installation-Guide](https://docs.prophecy.io/architecture/deployment/installation-guide) for more details.
 
 
-# [Release Note] (https://docs.prophecy.io/release_notes/2024/)
+### [Release Note](https://docs.prophecy.io/release_notes/2024/)
 
 
 
