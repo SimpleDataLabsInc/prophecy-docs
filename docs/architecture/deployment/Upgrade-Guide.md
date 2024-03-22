@@ -8,7 +8,6 @@
 - gcr.io/prophecy-share/app:3.3.2.2
 - gcr.io/prophecy-share/adminpanel:3.3.2.2
 - gcr.io/prophecy-share/prophecy-operator:3.3.2.2
-- gcr.io/prophecy-share/dataplane-operator:3.3.2.2
 - gcr.io/prophecy-share/editorweb:3.3.2.2
 - gcr.io/prophecy-share/lineageweb:3.3.2.2
 - gcr.io/prophecy-share/execution:3.3.2.2
@@ -45,9 +44,9 @@
 ### Additional Images for Sandbox.
 
 - gcr.io/prophecy-share/python_gem_service:3.3.2.2
-- gcr.io/prophecy-share/python_schema_analysis_service3.3.2.2
-- gcr.io/prophecy-share/scalagempluginserver3.3.2.2
-- gcr.io/prophecy-share/scalaschemaanalysisserver3.3.2.2
+- gcr.io/prophecy-share/python_schema_analysis_service:3.3.2.2
+- gcr.io/prophecy-share/scalagempluginserver:3.3.2.2
+- gcr.io/prophecy-share/scalaschemaanalysisserver:3.3.2.2
 
 
 ### Prophecy-Libs Version and location to download
