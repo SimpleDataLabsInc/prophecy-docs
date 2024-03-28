@@ -1,6 +1,6 @@
 ---
 title: Prophecy Fabrics
-description: Fabrics defines execution engine
+description: Fabrics define execution engines
 id: Fabrics
 tags: [Livy, Fabrics, Execution]
 ---
