@@ -5,27 +5,13 @@ description: Low-code SQL
 tags: []
 ---
 
-Prophecy low-code SQL combines the the best of both worlds: high-quality code based on software engineering best practices with a complete, easy-to-use visual environment.
+Low-Code SQL, brings a new way to develop data models in SQL through a visual interface.
+Visual = Code allows both SQL coders and business users to easily collaborate on the same project.
+Business users can visually create their data models, with all their work automatically turning into high-quality code on Git. Engineers can use SQL and advanced macros through a code-based editor, with Prophecy parses their code and visualizes it on an editable canvas and ensuring both views remain in sync at all times.
 
-![CodeToVisual](./img/CodeToVisual.png)
-
-## Visual = Code for easy collaboration
-
-Visual = Code allows both SQL coders and business users to easily collaborate on the same project. Business users can visually create their data models, with all their work automatically turning into high-quality code on Git. Engineers can use SQL and advanced macros through a code-based editor. Prophecy parses their code and visualizes it on an editable canvas and ensures both views remain in sync at all times.
-
-## Interactive development
-
-At any step of the process, data users can interactively run their models to make sure they're going in the right direction. Models can be additionally tested to ensure robustness over time. Power users can also extend the visual canvas through custom Gems; making even the most complex logic easily accessible in the visual view.
-
-## Deployment from code on Git
-
-Projects built through Prophecy are stored in the dbt Core format as repositories on Git, which allows data teams to follow best software engineering practices like CI/CD.
-
-Maintenance is simple since Prophecy gems turn into code on Git that’s always up-to-date with the latest version of the warehouse or lakehouse used. And, to ensure the best performance at all times, Prophecy is smart about which code construct (subquery or CTE) to use.
-
-## Sharing of data products
-
-With Prophecy 3.0, sharing data products has never been easier. Data users can import an existing dbt Core project or start from scratch. They can publish those projects to other teams or subscribe to already existing ones. Published projects contain models allowing for easy governance and functions and gems allowing for code reusability.
+At any step of the process, data users can interactively run their models to make sure they're going in the right direction
+Projects built through Prophecy are stored in the dbt Core format as repositories on Git, which allows data teams to follow the best software engineering practices for CI/CD.
+Data users can import an existing dbt Core project or start from scratch. They can publish those projects to other teams or subscribe to already existing ones.
 
 <div class="wistia_responsive_padding" style={{padding:'56% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
