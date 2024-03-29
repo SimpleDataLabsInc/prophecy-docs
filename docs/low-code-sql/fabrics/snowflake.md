@@ -11,21 +11,19 @@ tags:
   - fabric
 ---
 
-Snowflake has become a leading SQL Warehouse provider on the cloud. Follow the steps below to create a Fabric in Prophecy so that you can execute data transformations on your Snowflake Warehouse.
+Snowflake has become a leading SQL Warehouse provider on the cloud. Follow the steps below to [Create a Fabric](./snowflake.md#create-a-fabric) in Prophecy so that you can execute data transformations on your Snowflake Warehouse. Power up Production models with [scheduled Jobs](./snowflake.md#schedule-jobs) on your Snowflake Warehouse using Airflow. Prophecy supports low-code development at every step.
 
 ## Create a Fabric
 
 Create an entity by clicking the **plus** icon. Click to **Create a Fabric**.
-There are four steps to creating a Fabric:
+There are two essential steps to creating a Fabric:
 
 1. [Basic info](./snowflake.md#basic-info)
 2. [Providers](./snowflake.md#provider)
-3. [Connections](./snowflake.md#connections) (coming soon)
-4. [Secrets](./snowflake.md#secrets) (coming soon)
 
 ### Basic Info
 
-First we’ll give our Fabric some **Basic information**
+Each Fabric requires some **Basic information**
 ![SFBasicInfo](./img/SnowflakeFabric1.png)
 
 | Basic Info                                                                                                                                                                                       |
@@ -36,7 +34,7 @@ First we’ll give our Fabric some **Basic information**
 
 ### Provider
 
-Add the **Provider** details. The SQL provider is both the storage warehouse and the execution environment where your SQL code will run.
+The SQL **Provider** is both the storage warehouse and the execution environment where your SQL code will run.
 ![SFProvider](./img/SnowflakeFabric2.png)
 
 | Provider details                                                                                                                                                                                                                                                                                                                                                                       |
@@ -49,19 +47,27 @@ Add the **Provider** details. The SQL provider is both the storage warehouse and
 | **6 Role** - Add the Snowflake role that Prophecy will use to read data and execute queries on the Snowflake Warehouse. The role matches the username/password provided above and should be scoped according to the permission set desired for Prophecy.                                                                                                                               |
 | **7 Warehouse** - Specify the Snowflake warehouse for this execution environment.                                                                                                                                                                                                                                                                                                      |
 | **8 Database** - Specify the Snowflake database for this execution environment.                                                                                                                                                                                                                                                                                                        |
-| **9 Continue** to the Connections step, which is a feature coming soon for Snowflake Fabrics. Then Click Complete.                                                                                                                                                                                                                                                                     |
+| **9 Continue** to complete the Fabric creation.                                                                                                                                                                                                                                                                                                                                        |
 
-### Connections
-
-(Coming soon for Snowflake Fabrics.)
-
-### Secrets
-
-([Secrets](https://docs.prophecy.io/low-code-spark/secret-management/) are currently implemented for Spark fabrics and are coming soon for SQL Fabrics.)
-
-Now the Snowflake Fabric is complete! Once you’ve created a Fabric, it will appear on the Metadata page. Team Admins can manage their Team’s Fabrics by clicking into the Fabric from this Metadata page. Prophecy SQL Projects can connect to your new Snowflake SQL Fabric, read tables, and execute models.
+Completed Fabrics will appear on the Metadata page and can be managed by Team admins.
 ![FabricMetadata](./img/FabricMetadata.png)
 
-## Scheduling
+Each team member can attach completed Fabrics to their Projects and Models.
+![SFAttachCluster](./img/SnowflakeAttachCluster.png)
+
+| **Attach a Fabric to a Model**                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------------------------------ |
+| **1 Metadata** - Click the Prophecy Metadata and search for a Project or Model of interest. Open the Model.                          |
+| **2 Model** - Here we have opened a SQL model called "MyModel"                                                                       |
+| **3 Attach Cluster** - This dropdown menu lists the Fabrics and execution clusters available to this Project, according to the Team. |
+| **4 Snowflake Fabric** - The avaialable Fabrics appear here.                                                                         |
+| **5 Attach Cluster** - The Snowflake Warehouse can be attached to the Model for execution.                                           |
+| **6 Run Model** - Once a Fabric and Cluster are attached to the Project, the Model can be run interactively using the play button.   |
+
+:::info
+Remember, each user will be prompted to update the Fabric with their own credentials. Prophecy respects these credentials when accessing Snowflake tables, databases, etc.
+:::
+
+## Schedule Jobs
 
 SQL models can be scheduled using Airflow to run on Snowflake. Create an [Airflow Fabric](https://docs.prophecy.io/low-code-jobs/airflow/setup/), and setup a [Snowflake Connection](https://docs.prophecy.io/low-code-jobs/airflow/setup/MWAA_fabric#setting-up-connections) that references the Snowflake Fabric created above. Prophecy supports Snowflake Connections from these three Airflow flavors: [Composer](https://docs.prophecy.io/low-code-jobs/airflow/setup/composer_fabric), [MWAA](https://docs.prophecy.io/low-code-jobs/airflow/setup/MWAA_fabric#setting-up-connections), and [Prophecy Managed Airflow](https://docs.prophecy.io/low-code-jobs/airflow/setup/prophecy-managed/connections/prophecy_managed_airflow_fabric_snowflake_connections).

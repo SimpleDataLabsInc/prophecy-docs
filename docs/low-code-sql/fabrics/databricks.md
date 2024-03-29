@@ -16,16 +16,15 @@ Databricks SQL Warehouse offers seamless integration into the Databricks ecosyst
 ## Create a Fabric
 
 Create an entity by clicking the **plus** icon. Click to **Create a Fabric**.
-There are four steps to creating a Fabric:
+There are three steps to creating a Fabric:
 
 1. [Basic info](./databricks.md#basic-info)
 2. [Providers](./databricks.md#provider)
-3. [Connections](./databricks.md#connections)
-4. [Secrets](./databricks.md#secrets) (coming soon)
+3. [Connections](./databricks.md#connections) (optional)
 
 ### Basic Info
 
-First we’ll give our Fabric some **Basic information**
+Each Fabric requires some **Basic information**
 
 ![DBInfo](./img/DatabricksFabric1.png)
 
@@ -37,7 +36,7 @@ First we’ll give our Fabric some **Basic information**
 
 ### Provider
 
-Add the **Provider** details. The SQL provider is both the storage warehouse and the execution environment where your SQL code will run. Be sure to **Start** the Databricks Warehouse before trying to setup the Fabric.
+The SQL **provider** is both the storage warehouse and the execution environment where your SQL code will run. Be sure to **Start** the Databricks Warehouse before trying to setup the Fabric.
 
 ![SFProvider](./img/DatabricksFabric2.png)
 
@@ -48,18 +47,31 @@ Add the **Provider** details. The SQL provider is both the storage warehouse and
 | **3 - JDBC URL** - Copy the JDBC URL from the Databricks UI as shown. This is the URL that Prophecy will connect for SQL Warehouse data storage and execution.                                                                                                                                                                  |
 | **4 - Personal Databricks Access Token ** - This is the token Prophecy will use to connect to Databricks. Each user will need to apply their own token. To generate a Databricks PAT follow [these instructions](https://docs.databricks.com/en/dev-tools/auth/pat.html#databricks-personal-access-tokens-for-workspace-users). |
 | **5 - Catalog** - (Optional) Enter the Catalog name if you are using Unity Catalog                                                                                                                                                                                                                                              |
-| **6 - Continue** to the Connections step.                                                                                                                                                                                                                                                                                       |
+| **6 - Continue** to the optional Connections step.                                                                                                                                                                                                                                                                              |
 
 ### Connections
 
-If your Warehouse includes hundreds or thousands of tables, consider setting up a [Metadata Connection](/docs/metadata/metadata-connections.md). Follow the steps detailed [here](/docs/metadata/metadata-connections.md#add-a-metadata-connection) and enjoy a faster listing of Databricks SQL Warehouse tables in the Prophecy Project browser. Be sure to **enable** the connection to query the selected Warehouse at the interval defined in the Connection.
+(Optional) Browsing data catalogs, tables, and schemas can be a time-intensive operation especially for Warehouses with hundreds or thousands of tables. To address this challenge, Prophecy offers a [Metadata Connection](/docs/metadata/metadata-connections.md) to sync metadata from the data provider at regular intervals. These [steps](/docs/metadata/metadata-connections.md#add-a-metadata-connection) describe how to setup a metadata connection once a Databricks SQL Fabric is created.
 
-![DBConnection](./img/DatabricksFabric3.png)
+## Using Fabrics
 
-### Secrets
-
-([Secrets](https://docs.prophecy.io/low-code-spark/secret-management/) are currently implemented for Spark fabrics and are coming soon for SQL Fabrics.)
-
-Now the Databricks SQL Fabric is complete! Once you’ve created a Fabric, it will appear on the Metadata page. Team Admins can manage their Team’s Fabrics by clicking into the Fabric from this Metadata page. Prophecy SQL Projects can connect to your new Databricks SQL Fabric, read tables, and execute models.
-
+Completed Fabrics will appear on the Metadata page and can be managed by Team admins.
 ![FabricMetadata](./img/FabricMetadata.png)
+
+Each team member can attach completed Fabrics to their Projects and Models.
+![SFAttachCluster](./img/DatabricksAttachCluster.png)
+
+| **Attach a Fabric to a Model**                                                                                                            |
+| ----------------------------------------------------------------------------------------------------------------------------------------- |
+| **1 Metadata** - Click the Prophecy Metadata and search for a SQL Project or Model of interest. Open the Model.                           |
+| **2 Model** - Here we have opened a Model called "Customers."                                                                             |
+| **3 Attach Cluster Menu** - This dropdown menu lists the Fabrics and execution clusters available to this Project, according to the Team. |
+| **4 Databricks Fabric** - The available Fabrics appear here. Only SQL Fabrics are available to attach to SQL Projects.                    |
+| **5 Attach Cluster** - The Databricks Warehouse can be attached to the Model for execution.                                               |
+| **6 Run Model** - Once a Fabric and Cluster are attached to the Project, the Model can be run interactively using the play button.        |
+
+:::info
+Remember, each user will be prompted to update the Fabric with their own credentials. Prophecy respects these credentials when accessing Databricks catalogs, tables, databases, etc.
+:::
+
+Once a Project is attached to a Fabric, and the Project is released, the Project can be scheduled to run on a regular frequency using [Databricks Jobs](/docs/getting-started/getting-started-with-low-code-sql.md#5-orchestrate-and-deploy)
