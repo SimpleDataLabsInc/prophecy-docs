@@ -57,3 +57,7 @@ Please make sure you select the Fabric for the same Databricks workspace you hav
 Once done, hit **(4) Save**.
 
 ![Composer_connection](img/Composer_connections.png)
+
+### Setting up Snowflake SQL Connection
+
+Similarly, setup a connection to a Snowflake Fabric following [these](./mwaa.md#setting-up-connections) steps.
