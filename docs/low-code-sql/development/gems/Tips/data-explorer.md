@@ -14,7 +14,7 @@ tags:
 
 The Data Explorer feature empowers users to explore and analyze their data samples directly within the user interface (UI). With this feature, users can gain insights, verify data accuracy, and make informed decisions by leveraging the following capabilities:
 
-![DataExplorer](img/dataExplorer.png)
+![DataExplorer](./img/dataExplorer.png)
 
 ### Filter and Sort Options
 
