@@ -14,7 +14,7 @@ tags:
 You can use Prophecy to connect to your [Amazon Managed Workflows for Apache Airflow (Amazon MWAA)](https://aws.amazon.com/managed-workflows-for-apache-airflow/) , to create, run, and monitor your Airflow DAGs.
 For this, you would need to create a MWAA Airflow Fabric.
 
-## How to create a Composer Airflow Fabric
+## How to create an MWAA Airflow Fabric
 
 Setting up a Fabric is very straightforward. Click the **(1) Create Entity** button, and choose the **(2) Create Fabric** option. The Fabric creation is composed of two steps: Basic Info and Providers setup.
 On the Basic Info screen, enter a **(3) Fabric Name**, **(4) Fabric Description**, and choose the **(5) Team** that’s going to own the Fabric.

@@ -354,6 +354,10 @@ Let’s start by dragging and dropping the the **(2) DBT Gem.** Once it’s on t
 2. **Databricks SQL Warehouse** - defines on which warehouse our SQL code is going to execute, we set it to the recently created Fabric;
 3. **Git reference value** - defines from which branch on Git, the code is pulled to execute, we set it to the currently used developed branch - same as what we set in the step 5.1 Checkout development branch (the name can be also seen in the footer).
 
+:::info
+DBT Projects will appear in this dropdown if (1) the Project is released and (2) the Project is hosted on Git outside Prophecy's managed Git provider.
+:::
+
 Once all the basic properties are set click **(4) Save.**
 
 We can quickly verify that our schedule runs correctly by executing it, by clicking on the **(5) Play** button. Upon the click, the execution starts and you can track it’s progress. When finished successfully, we know that the project is ready to be deployed.

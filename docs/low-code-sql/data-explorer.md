@@ -2,7 +2,7 @@
 title: Data Explorer
 id: data-explorer
 description: Data Explorer for SQL
-sidebar_position: 2
+sidebar_position: 12
 tags:
   - execution
   - explorer
