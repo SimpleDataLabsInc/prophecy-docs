@@ -18,8 +18,8 @@ tags:
 
 #### Prophecy Libs as First class Project Dependency
 
-Prophecy Libs is a Prophecy provided library designed to enhance your Pipelines. These libraries provide essential features such as interims, monitoring, and secret management while maintaining clean and concise Pipeline code. When executing your Pipelines, Prophecy Libs need to be installed on your clusters.
-In our latest release, we’ve made Prophecy Libs a Project Dependency configurable by user. This gives you control over when to update dependencies in your Pipelines and on long-running clusters.
+Prophecy Libs is a Prophecy-provided library designed to enhance your Pipelines. These libraries provide essential features such as interims, monitoring, and secret management while maintaining clean and concise Pipeline code. When executing your Pipelines, Prophecy Libs need to be installed on your clusters.
+In our latest release, we’ve made Prophecy Libs a Project Dependency configurable by the user. This gives you control over when to update dependencies in your Pipelines and on long-running clusters.
 
 #### Secrets in Pipeline Config
 
