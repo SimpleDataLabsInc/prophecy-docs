@@ -8,3 +8,13 @@ tags:
   - sources
   - seeds
 ---
+
+Constitutes the set of Gems that help with loading data.
+
+## Source
+
+Read a table or view from the SQL Warehouse(s) specified in the Fabric.
+
+## Seed
+
+## Model
