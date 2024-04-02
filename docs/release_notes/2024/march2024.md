@@ -1,7 +1,7 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 id: March_2024
-description: Release notes for February
+description: Release notes for March
 title: March 2024
 tags:
   - release notes
