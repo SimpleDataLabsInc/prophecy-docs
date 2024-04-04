@@ -61,6 +61,11 @@ const config = {
           { to: "https://www.prophecy.io/", position: "left", label: "Home" },
           { type: "doc", docId: "index", position: "left", label: "Docs" },
           {
+            to: "https://transpiler.docs.prophecy.io/",
+            position: "left",
+            label: "Transpiler Docs",
+          },
+          {
             to: "https://www.prophecy.io/blogs",
             label: "Blog",
             position: "left",
@@ -76,10 +81,6 @@ const config = {
       footer: {
         style: "dark",
         links: [
-          {
-            title: "Docs",
-            items: [],
-          },
           {
             title: "Community",
             items: [
@@ -99,7 +100,7 @@ const config = {
             ],
           },
         ],
-        copyright: `© 2022 Prophecy Inc All Rights Reserved <a href="https://legal.prophecy.io/privacy" target="_blank">Privacy Policy</a>`,
+        copyright: `© 2024 Prophecy Inc All Rights Reserved <a href="https://legal.prophecy.io/privacy" target="_blank">Privacy Policy</a>`,
       },
       prism: {
         theme: lightCodeTheme,

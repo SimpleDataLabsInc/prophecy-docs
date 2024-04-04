@@ -1,90 +1,45 @@
 ---
-title: Projects and Git
+title: Projects
 id: project
 description: Keeping your Pipelines, Datasets and Jobs under (source) control
-sidebar_position: 5
+sidebar_position: 1
 tags:
   - concepts
   - project
-  - git
-  - commit
-  - pull
-  - merge
-  - release
 ---
 
-Project is the primary unit of development and deployment to production in Prophecy.
+The Project is the primary unit of development and deployment to production in Prophecy.
 
 A **project** contains
 
-- **Data Pipelines** that read, transform and write data using Spark
-- **Datasets** point to the data that is read and written to by the _Data Pipelines_
-- **Jobs** run _Data Pipelines_ based on a **schedule**
+- **Pipelines** (Spark) or **Models** (SQL) which read, transform and write data.
+- **Datasets** point to the data that is read and written to by the _Data Pipelines_ or _Data Models_.
+- **Jobs** run _Data Pipelines_ and _Data Models_ individually or together based on a schedule.
 
-## Project is Code on Git
+## Projects are Code on Git
 
-A **project** is **code** on **Git**. This means that within a project, the business logic of all the assets including _Pipelines_, _Datasets_, and _Jobs_ is stored as code on Git. This might be a repository on Github or a folder in a repository.
+A **project** is **code** on **Git**. This means that within a project, the business logic of all the assets including _Pipelines_/_Models_, _Datasets_, and _Jobs_ is stored as code on Git. This might be a repository on Github or a folder in a repository.
 
 ![Project is code](../img/project_is_code.png)
 
-## Project Metadata
+Every component of the Project is represented both visually and in code on Git. Prophecy supports Projects in one of three languages: Spark Projects are saved as code in Scala or Python and SQL Projects are saved as code in SQL. Open any Pipeline (left) or Model (right) in your Project. Simply toggle from visual to code to see the underlying code for that Pipeline or Model, as well as the rest of the Project components.
 
-The `Project Metadata` page provides several views about the various aspects of your project. You can get to this view by going to the [Metadata](https://app.prophecy.io/metadata/entity/user) page and clicking the name of your project.
+![Visual To Code](img/code-to-visual.png)
 
-![Project Metadata](../img/project_metadata.png)
+## Collaborate with Projects
 
-|     | Name                | Description                                                                                                                                            |
-| :-: | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-|  1  | Metadata tabs       | Switch between the various metadata views available for this project                                                                                   |
-|  2  | Rename project      | Change the name of the project. This only affects the name in the UI, no code directories will be renamed.                                             |
-|  3  | Project description | Edit the project description                                                                                                                           |
-|  4  | Project language    | Output language for this project                                                                                                                       |
-|  5  | Project Git status  | This is a list of branches that you or other users have used while developing this project, as well as the number of uncommitted files in that branch. |
+Now that Projects are stored as code on Git, users and teams get a **collaboration boost**. Users can work on the same project simultaneously because each user has their own branch. Projects are reviewed and released with a version, so every team member can confidently rely on the business logic. Each Project can become a re-usable package for other teams to use with their own data and configurations. All of these best practices are in place for every Prophecy user from day one.
 
-If you hover over any of the branches you'll have the option to commit the changes in that branch or delete the branch altogether.
+Click on a tile below to learn about the different Project components, or checkout the [Project Metadata](/docs/metadata/project-metadata.md) page for guidance on finding what you need in an existing Project. Ready to [Develop and Deploy](/docs/concepts/project/project.md#development-and-deployment) your own Project? Follow the steps below and you'll be following all the industry standard best practices. Let's go!
 
-![Branch hover](../img/project_branches.png)
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-## Project Relations
-
-The `Relations` tab on the [Project Metadata](#project-metadata) page shows a list of all the component pieces that belong to this Project.
-
-![Project Relations](../img/project_relations.png)
-
-|     | Name         | Description                                                                                   |
-| :-: | ------------ | --------------------------------------------------------------------------------------------- |
-|  1  | Pipelines    | List of [Pipelines](../pipelines.md) in this project                                          |
-|  2  | Add Pipeline | Click this to add a new Pipeline                                                              |
-|  3  | Jobs         | List of Jobs in this project                                                                  |
-|  4  | Add Job      | Click this to add a new Job                                                                   |
-|  5  | Datasets     | List of Datasets in this project                                                              |
-|  6  | Subgraphs    | List of published [Subgraphs](/docs/low-code-spark/gems/subgraph/subgraph.md) in this project |
-
-## Project Commits
-
-The `Commits` tab on the [Project Metadata](#project-metadata) page shows the current Git state of the project and allows you to step through the process of committing, merging, and releasing your chanages.
-
-![Project Commits](../img/project_commits.png)
-
-|     | Name              | Description                                                                                                                                                            |
-| :-: | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|  1  | Current Branch    | The branch you're currently working on                                                                                                                                 |
-|  2  | Base Branch       | The base (or upstream) branch you're comparing the Current Branch to                                                                                                   |
-|  3  | Commit Button     | Click this to commit any uncommitted files in this branch                                                                                                              |
-|  4  | Unmerged commits  | The number of commits that are in your Current Branch but are not yet in the Base Branch                                                                               |
-|  5  | Uncommitted files | The number of files that are uncommitted in this branch. Use the commit button to save these changes into the Current Branch                                           |
-|  6  | Remote commits    | If you or another user has merged their changes into the Base Branch you can see the number here. Use the pull button to bring these changes into your Current Branch. |
-
-For a walkthrough of the different phases of comitting a project, see [this section](#3-integrate-changes).
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```
 
 ## Development and Deployment
-
-Prophecy provides a standard and recommended mechanism for using Git based development
-(though other mechanisms are possible - including fork based development in our Enterprise product). A standard development pattern looks like this:
-
-![Project deploy](../img/project_deploy.png)
-
-Here are the steps explained:
 
 ### 1. Create new project
 
@@ -92,7 +47,7 @@ Starting from the [Create Entity](https://app.prophecy.io/metadata/create) page,
 
 ![Create Entity page](./img/project-create-import.png)
 
-In the `Create Project` pane you can set the name, output language (Scala or Python) and which team the project belongs to. Visually designed pipelines will generate code in the selected Project output language. Advanced users can design expressions in SQL, Python, or Scala, and the project will _generate code_ in the Project output language.
+In the `Create Project` pane you can set the name, output language (Python, Scala or SQL) and which team the project belongs to. Visually designed pipelines will generate code in the selected Project output language. Advanced users can design expressions in SQL, Python, or Scala, and the project will _generate code_ in the Project output language.
 
 ![Project language](../img/project_language.png)
 
@@ -117,7 +72,11 @@ The commit dialog opens when you click the bottom bar - orange color indicates u
 
 ### 3. Integrate changes
 
-The four main phases of integrating your changes are: **_Commit_**, **_Pull_**, **_Merge_**, **_Release_**. Let's go over each in detail.
+Prophecy provides a standard and recommended mechanism for using Git based development. The four main phases of integrating your changes are: **_Commit_**, **_Pull_**, **_Merge_**, **_Release_**. A standard development pattern looks like this, though other mechanisms like forking are also supported:
+
+![Project deploy](../img/project_deploy.png)
+
+Let's go over each phase in detail.
 
 #### Commit
 
@@ -163,3 +122,23 @@ Click the **_Merge_** button to merge the changes and push them back to your Git
 |  1  | Commit selection | Pick which commit will be tagged for release                                                                                                                      |
 |  2  | Release notes    | Free-form notes for the release                                                                                                                                   |
 |  3  | Version          | Enter whatever you'd like here. Best practices exist such as [Semantic Versioning](https://semver.org/), but you're free to use whatever matches your environment |
+
+## Project Browser
+
+When Opening a project, User can click on the Open project button. This takes you to the Bird's eye view of the entire Project.
+Here you can see all the entities in this project and how they are interlinked in various Pipelines/Jobs etc.
+
+![Project-browser1](img/project-browser1.gif)
+
+When you are already on a Pipeline editor page, you can open the Project browser by clicking on the `>>` icon on Top left corner.
+
+![Project-browser2](img/Project-browser2.gif)
+
+### Environment tab
+
+When click on the Environment tab in the Project browser, User can also browse the `Catalog tables` from the Fabric they are connected to.
+Moreover, He can just click on the `+` button to add this table as a Source Gem in any Pipeline.
+
+Please see below video for example.
+
+![env-tab](img/env-tab2.gif)

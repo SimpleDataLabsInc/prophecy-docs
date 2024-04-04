@@ -2,7 +2,7 @@
 title: Metadata Connections
 id: metadata-connections
 description: sync catalogs, tables, schemas, etc into Prophecy's Project viewer
-sidebar_position: 9
+sidebar_position: 3
 tags:
   - metadata
   - Datasets
@@ -11,7 +11,7 @@ tags:
   - data
 ---
 
-At Prophecy we're always looking to make your development faster. For teams that manage hundreds or thousands of tables, listing data catalogs, tables, and schemas can take precious minutes. In order to make this easier, Prophecy introduced Metadata Connections in release 3.2. The major benefit to Metadata Connections: [straightaway](/docs/metadata/metadata-connections.md) you can list and view your data directly in the [Prophecy UI](/docs/concepts/project/project-browser.md#Environment-tab).
+At Prophecy we're always looking to make your development faster. For teams that manage hundreds or thousands of tables, listing data catalogs, tables, and schemas can take precious minutes. In order to make this easier, Prophecy introduced Metadata Connections in release 3.2. The major benefit to Metadata Connections: [straightaway](/docs/metadata/metadata-connections.md) you can list and view your data directly in the [Prophecy UI](/docs/concepts/project/project.md#Environment-tab).
 
 Let's get down to basics by [defining](/docs/metadata/metadata-connections.md/#definition-of-entities) the relevant entities in Prophecy, setup the relevant data resource, then we'll walk through how to [setup](/docs/metadata/metadata-connections.md/#setup) Metadata Connections in Prophecy.
 
@@ -79,7 +79,7 @@ Define a **(3)Connection Name**, and add an optional **(4)Description** for your
 
 Define the **(8)Refresh Frequency** for Prophecy to sync the metadata from the workspace catalogs and JDBC warehouses accessible to the access token. **(9)Enable** the Metadata Connection to proceed with the sync and **(10)Add** the Metadata Connection.
 
-Once a Connection is configured, the Connection details will be used to display data in the [Project Browser](/docs/concepts/project/project-browser.md#how-to-access-project-browser) `Environment` tab.
+Once a Connection is configured, the Connection details will be used to display data in the [Project Browser](/docs/concepts/project/project.md#project-browser) `Environment` tab.
 
 ![AddGem](./img/2-add-gem.png)
 

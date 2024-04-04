@@ -27,7 +27,7 @@ This option is heavily used by customers to try Prophecy. Our startup and midsiz
 
 ### Private SaaS (Customer VPC)
 
-Customers in segments that deal with very sensitive data primarily use this option. Here, Prophecy runs within the **Customer VPC** and connects to the identity, Spark clusters and the scheduler within the VPC.
+Customers in segments that deal with very sensitive data primarily use this option. Here, Prophecy runs within the **Customer VPC** and connects to the identity, Spark clusters and the scheduler within the VPC. For more information read the [private SAAS installation documentation](private-saas/private-saas.md) or reach out to our team by using [request a demo](https://www.prophecy.io/request-a-demo).
 
 ![Customer VPC Architecture](img/arch_customervpc.png)
 
@@ -37,7 +37,7 @@ This is the default option when you go through the cloud marketplaces. You can i
 
 ### On-Premise Deployment
 
-On rare occasions, Prophecy will deploy on-premise for large customers who are moving to the cloud. Often the order is that the organizations will move Pipelines from on-premise legacy ETL tools to Spark, then move it to Spark on the cloud. For more information read the [on-premise installation documentation](on-premise/on-premise.md) or reach out to our team by using [request a demo](https://www.prophecy.io/request-a-demo).
+On rare occasions, Prophecy will deploy on-premise for large customers who are moving to the cloud. Often the order is that the organizations will move Pipelines from on-premise legacy ETL tools to Spark, then move it to Spark on the cloud.
 
 ## High-Level Architecture
 
@@ -61,15 +61,17 @@ Teams are the primary mechanism of ownership. Teams own Projects where Pipelines
 
 ### SQL
 
+To allow for SQL query execution Prophecy can connect to Snowflake and Databricks warehouses. Connectors for additional SQL warehouses coming soon.
+
 #### Snowflake
 
-To connect with data stored in a SQL Warehouse, or to allow for interactive SQL execution, Prophecy can connect to an existing Snowflake execution environment through a secure and performant **Snowpark** interface.
+To connect with data stored in a SQL Warehouse, or to allow for interactive SQL execution, Prophecy can connect to an existing Snowflake execution environment through secure and performant [Snowpark](https://docs.snowflake.com/en/developer-guide/snowpark/index) or [Snowflake](https://docs.snowflake.com/en/developer-guide/sql-api/reference) APIs.
 
 Each [Fabric](../../concepts/fabrics) defined in Prophecy connects to a single Snowflake Warehouse and each user is required to provide credentials to authenticate to it.
 
 ![Arch_Diagram](./img/arch_snowflake.png)
 
-Notice the data provider (eg Snowflake) matches up to a Fabric. For another scenario, consider the same architecture diagram where the Fabric connects to a Spark engine instead of a SQL Warehouse.
+Notice the data provider (eg Snowflake) matches up to a Fabric. For another scenario, consider the same architecture diagram where the Fabric connects to a Databricks SQL warehouse instead of Snowflake.
 
 ### Spark
 

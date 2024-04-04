@@ -9,9 +9,8 @@ tags:
   - scheduling
 ---
 
-Once you have developed a [Spark Pipeline](/concepts/Pipeline) using Prophecy, you will want to schedule it to run at
-some frequency. To support this, Prophecy provides a low-code layer on top of Databricks Jobs
-or [Airflow](/low-code-jobs/airflow) for an easy orchestration.
+Once you have developed a [Spark Pipeline](/docs/concepts/project/pipelines.md) using Prophecy, you will want to schedule it to run at
+some frequency. To support this, Prophecy provides a low-code layer on top of Databricks Jobs for an easy orchestration.
 
 ## Development
 
@@ -37,7 +36,7 @@ Whenever, creating a new Job you're asked for the following details:
 
 | Field Name        | Description                                                                                                                                                                                                                                   |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Project           | Which [Project](/concepts/project) to create the Job in. This controls who has access to the Job, groups Jobs together for lineage, and allows you to use Pipelines already published within that Project.                                    |
+| Project           | Which [Project](/docs/concepts/project/project.md) to create the Job in. This controls who has access to the Job, groups Jobs together for lineage, and allows you to use Pipelines already published within that Project.                    |
 | Branch            | Which Git branch to use when developing this Job.                                                                                                                                                                                             |
 | Name              | Unique Job name.                                                                                                                                                                                                                              |
 | Scheduler         | The underlying engine that's going to execute your Job. Databricks is recommended.                                                                                                                                                            |
@@ -96,6 +95,13 @@ The visual graph created on the Jobs page is automatically converted to code (JS
 | Per Gem Timeout           | Timeout for each Gem in Job Pipeline                                                                                                                                                                                                          |
 | Number of retries per Gem | Number of retries for each Gem in Job Pipeline                                                                                                                                                                                                |
 | Alerts Email per Gem      | Comma separated list of emails that are going to receive notifications on specific Job status events (start, failure, or success) for each Gem in Job Pipeline.                                                                               |
+
+To change the Job name itself, go to Prophecy's metadata page. Locate the Job within a Project, and click the pencil icon.
+
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://fast.wistia.net/embed/iframe/hlqqxqyq87?seo=false?videoFoam=true" title="Getting Started With SQL Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
 
 ## Deployment Modes
 
