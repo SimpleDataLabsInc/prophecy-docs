@@ -14,8 +14,24 @@ Check to make sure the Spark version and Scala version of your Prophecy Scala Li
 of your cluster!
 :::
 
+:::info
+Query this table using the following API and your ([personal access token](..%2Fmetadata%2FprophecyAPI.md)):
+
+```bash
+curl  --header 'X-Auth-Token: $PROPHECY_PAT' --location https://app.prophecy.io/api/editor/plibVersions
+```
+
+:::
+
 | Prophecy version | [Prophecy Scala libs](https://mvnrepository.com/artifact/io.prophecy/prophecy-libs) | [Prophecy Python libs](https://pypi.org/project/prophecy-libs/) |
 | ---------------- | ----------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| v3.3.3.1         | 7.1.83                                                                              | 1.8.13                                                          |
+| v3.3.3.0         | 7.1.82                                                                              | 1.8.13                                                          |
+| v3.3.2.4         | 7.1.83                                                                              | 1.8.12                                                          |
+| v3.3.2.3         | 7.1.79                                                                              | 1.8.12                                                          |
+| v3.3.2.2         | 7.1.79                                                                              | 1.8.12                                                          |
+| v3.3.2.1         | 7.1.79                                                                              | 1.8.9                                                           |
+| v3.3.2.0         | 7.1.79                                                                              | 1.8.9                                                           |
 | v3.3.1.3         | 7.1.72-1                                                                            | 1.8.7                                                           |
 | v3.3.1.2         | 7.1.72-1                                                                            | 1.8.7                                                           |
 | v3.3.1.1         | 7.1.72                                                                              | 1.8.7                                                           |
