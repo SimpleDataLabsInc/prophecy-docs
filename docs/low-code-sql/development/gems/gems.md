@@ -18,7 +18,7 @@ A Gem is a unit of functionality ranging from reading, transforming, writing, an
 | <div style={{'width':'100px'}}>Gem</div>      | Category                                              | Description                                                                               |
 | --------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | ![Source](img/Source%20and%20Target.png)      | [**Datasource**](./datasources.md)                    | Gems related to loading data: Seeds, Sources, or Models can be used as datasources        |
-| ![Transform](img/Transform.png)               | [**Transform**](./transformations/transformations.md) | Gems related to the transformation of your data                                           |
+| ![Transform](img/Transform.png)               | [**Transform**](./Transformations/transformations.md) | Gems related to the transformation of your data                                           |
 | ![Join and Split](img/Join%20and%20Split.png) | [**Join**](./joins.md)                                | Gems related to splitting or joining tables together                                      |
 | ![Custom](img/Custom.png)                     | [**Custom**](./custom/custom.md)                      | The set of Gems built to extend Prophecy's capabilities.                                  |
 | ![Model](img/Model.png)                       | [**Model**](/docs/concepts/project/models.md)         | Each model defines a single table or view; the model can also be considered a Target Gem. |

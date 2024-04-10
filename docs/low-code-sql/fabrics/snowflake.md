@@ -44,10 +44,14 @@ The SQL **Provider** is both the storage warehouse and the execution environment
 | **3 URL** - Add the Snowflake Account URL, which looks like this: https://<your_domain_here>.snowflakecomputing.com                                                                                                                                                                                                                                                                    |
 | **4 Username** - Add the username that Prophecy will use to connect to the Snowflake Warehouse.                                                                                                                                                                                                                                                                                        |
 | **5 Password** - Add the password that Prophecy will use to connect to the Snowflake Warehouse. These username/password credentials are encrypted for secure storage. Also, each Prophecy user will provide their own username/password credential upon login. Be sure these credentials are scoped appropriately; Prophecy respects the authorization granted to this Snowflake user. |
-| **6 Role** - Add the Snowflake role that Prophecy will use to read data and execute queries on the Snowflake Warehouse. The role matches the username/password provided above and should be scoped according to the permission set desired for Prophecy.                                                                                                                               |
-| **7 Warehouse** - Specify the Snowflake warehouse for this execution environment.                                                                                                                                                                                                                                                                                                      |
-| **8 Database** - Specify the Snowflake database for this execution environment.                                                                                                                                                                                                                                                                                                        |
+| **6 Role** - Add the Snowflake [role](https://docs.snowflake.com/en/user-guide/security-access-control-overview#roles) that Prophecy will use to read data and execute queries on the Snowflake Warehouse. The role must be already granted to the username/password provided above and should be scoped according to the permission set desired for Prophecy.                         |
+| **7 Warehouse** - Specify the Snowflake warehouse for default writes for this execution environment.                                                                                                                                                                                                                                                                                   |
+| **8 Database and Schema** - Specify the desired Snowflake database (and below, the schema) for default writes for this execution environment.                                                                                                                                                                                                                                          |
 | **9 Continue** to complete the Fabric creation.                                                                                                                                                                                                                                                                                                                                        |
+
+:::info
+Each user can read tables from each database and schema for which they have access. The default write database and schema is set here in the Fabric.
+:::
 
 Completed Fabrics will appear on the Metadata page and can be managed by Team admins.
 ![FabricMetadata](./img/FabricMetadata.png)
@@ -65,7 +69,7 @@ Each team member can attach completed Fabrics to their Projects and Models.
 | **6 Run Model** - Once a Fabric and Cluster are attached to the Project, the Model can be run interactively using the play button.   |
 
 :::info
-Remember, each user will be prompted to update the Fabric with their own credentials. Prophecy respects these credentials when accessing Snowflake tables, databases, etc.
+Remember, each user will be prompted to update the Fabric with their own credentials. Prophecy respects these credentials when reading Snowflake tables, databases, etc. User writes default to the database and schema defined in the Fabric.
 :::
 
 ## Schedule Jobs
