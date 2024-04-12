@@ -12,7 +12,7 @@ tags:
 ## 3.3.4 (April 12,2024)
 
 - Prophecy Python libs version: 1.8.15
-- Prophecy Scala libs version: 7.1.85-1
+- Prophecy Scala libs version: 7.1.88
 
 ### Minor Improvements {#MinorImprovements334}
 
