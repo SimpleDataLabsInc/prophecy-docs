@@ -21,10 +21,6 @@ Prophecy’s low-code platform makes data Pipeline development faster and access
 
 We are open to feedback! Please send us an email (contact.us@Prophecy.io) or reach out on our Slack [community.](https://join.slack.com/t/prophecy-io-support/shared_invite/zt-moq3xzoj-~5MSJ6WPnZfz7bwsqWi8tQ)
 
-:::caution
-Prophecy Data Copilot is a Public Beta release and is constantly evolving to meet the needs of our customers. This document is current as of Prophecy Release 3.1. As with all applications that interface with Large Language Models (LLMs), Data Copilot can generate results that are incorrect and/or misleading.
-:::
-
 ## Capabilities
 
 Prophecy Data Copilot provides suggestions from an AI model as you develop your data Pipelines. You can view and incorporate suggestions directly within the Prophecy visual editor and code editor. Data Copilot makes suggestions for your entire Pipeline, for a single Gem (transformation), and even for individual expressions within each Gem.
@@ -74,10 +70,6 @@ At the more granular level, Data Copilot can suggest expressions within Gems. Wi
 
 ### Auto Documentation
 
-:::caution
-This feature is under development and is coming soon!
-:::
-
 <div class="wistia_responsive_padding" style={{padding:'62.5% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://fast.wistia.net/embed/iframe/rec6bcdwet?seo=false?videoFoam=true" title="Design a Pipeline Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_responsive_wrapper" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
@@ -87,10 +79,6 @@ This feature is under development and is coming soon!
 Understanding data assets is much easier with Data Copilot’s auto-documentation, to be offered in an upcoming release. Data Copilot will deliver summary documentation suggestions for all Datasets, Pipelines, and Orchestrations. How did a Dataset change? Data Copilot will recommend a description of the change for every edit you make. How was a column computed? Data Copilot suggests a plain English description that explains how every column is generated and what it represents.
 
 ### Data Tests and Quality Checks
-
-:::caution
-This feature is under development and is coming soon!
-:::
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
