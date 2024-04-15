@@ -31,9 +31,9 @@ Customers in segments that deal with very sensitive data primarily use this opti
 
 ![Customer VPC Architecture](img/arch_customervpc.png)
 
-This is the default option when you go through the cloud marketplaces. You can install the software from the [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/simpledatalabsinc1635791235920.prophecy-data-engineering). The installation is very simple, takes about 20 minutes (with a confirmation popup), and billing starts after 30 days.
+Ready to setup Prophecy to run in your VPC? Login into your preferred cloud marketplace: [AWS](https://aws.amazon.com/marketplace/pp/prodview-gh3pyflmu7mlu?sr=0-1&ref_=beagle&applicationId=AWSMPContessa#external-reviews), [Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/simpledatalabsinc1635791235920.prophecy-data-engineering), or [GCP](https://console.cloud.google.com/marketplace/product/prophecy-on-gcp-public/prophecy-data-engineering), and search for "Prophecy." The installation is very simple, takes about 20 minutes (with a confirmation popup), and billing starts after 30 days.
 
-![Azure Architecture](img/prophecy_azure.png)
+![Marketplaces](img/prophecy_marketplaces.png)
 
 ### On-Premise Deployment
 
