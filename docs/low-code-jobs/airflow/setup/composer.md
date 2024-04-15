@@ -61,3 +61,7 @@ Once done, hit **(4) Save**.
 ### Setting up Snowflake SQL Connection
 
 Similarly, setup a connection to a Snowflake Fabric following [these](./mwaa.md#setting-up-connections) steps.
+
+## Create an Airflow Job
+
+Once the Airflow Composer Fabric is setup with the relevant connections, Airflow Job scheduling is done with a low-code easy-to-user interface. Follow this guide to [Create an Airflow Job](/docs/getting-started/getting-started-with-low-code-airflow.md#2-create-an-airflow-job).
