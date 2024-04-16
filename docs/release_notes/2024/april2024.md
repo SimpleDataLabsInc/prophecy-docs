@@ -9,6 +9,16 @@ tags:
   - march
 ---
 
+## 3.3.4 (April 12,2024)
+
+- Prophecy Python libs version: 1.8.15
+- Prophecy Scala libs version: 7.1.88
+
+### Minor Improvements {#MinorImprovements334}
+
+- **Streamlined Expression Suggestions**: Enhancing the Copilot feature, we now automatically suggest expressions when users add a new column in the Gem. These suggestions are tailored to the target column name and can be accepted with a simple press of the Tab button.
+- **Improved Filtering UX for Problem and Runtime Logs**: To enhance the debugging experience in pipelines, we've refined the user interface for logging. This includes the addition of search, filter, sort, and download options.
+
 ## 3.3.3 (April 1,2024)
 
 - Prophecy Python libs version: 1.8.13
