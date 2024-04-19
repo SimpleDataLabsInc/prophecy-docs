@@ -16,9 +16,11 @@ The Data Explorer feature empowers users to explore and analyze their data sampl
 
 ## Interims are Data Samples
 
-Within any **(1) SQL Model**, interactively **(2) Run** upto one of the Gems. Notice the **(3) Data Interim** appears. Open the [interim](/docs/low-code-spark/execution/interactive-execution.md#interims) to inspect the data.
+Within any **(1) SQL Model**, interactively **(2) Run** upto one of the Gems. Notice the **(3) Data Interim** appears. Open the interim (data sample) to inspect the data.
 
 ![DataExplorationSQL](./img/DataExplorationSQL.png)
+
+The interim reveals the sample data after the Join in this example. This is a great way to confirm the structure for each column, review data entries in the first few rows, and make sure the datatypes are correct.
 
 ### Filter and Sort Options
 
