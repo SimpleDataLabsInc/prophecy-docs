@@ -2,7 +2,7 @@
 title: Low-code SQL
 id: low-code-sql
 description: Low-code SQL
-tags: []
+tags: [sql, snowflake, databricks, warehouse]
 ---
 
 Prophecy low-code SQL combines the the best of both worlds; **high-quality code** based on software engineering best practices with a complete, **easy-to-use visual** environment.
