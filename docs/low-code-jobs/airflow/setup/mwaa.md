@@ -157,3 +157,7 @@ Select **(2) Connection Type** as Snowflake(DBT), and select the **(3) Fabric** 
 
 Please make sure you select the Fabric for the same Snowflake environment you have already created the connection for in your Airflow.
 Once done, hit **(4) Save**.
+
+## Create an Airflow Job
+
+Once the MWAA Airflow Fabric is setup with the relevant connections, Airflow Job scheduling is done with a low-code easy-to-user interface. Follow this guide to [Create an Airflow Job](/docs/getting-started/getting-started-with-low-code-airflow.md#2-create-an-airflow-job).

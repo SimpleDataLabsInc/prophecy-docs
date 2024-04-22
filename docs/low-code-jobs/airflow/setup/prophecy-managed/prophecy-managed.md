@@ -29,7 +29,7 @@ For connecting to Prophecy Managed Airflow, you don't need to provide any other 
 
 ![CreatePMFabric](../img/Create_PM_Fabric.png)
 
-This completes the Fabric creation for you. Now you can start setting up connections for Prophecy Managed Airflow to your AWS/Databricks etc.
+This completes the Fabric creation for you. Now you can start setting up optional connections for Prophecy Managed Airflow to your AWS/Databricks etc. Also keep in mind there are some [Limitations](./) that larger teams may experience when using Prophecy Managed Airflow. Please reach out to support@Prophecy.io if these limitations block your use cases.
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
@@ -37,3 +37,7 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 <DocCardList items={useCurrentSidebarCategory().items}/>
 ```
+
+## Create an Airflow Job
+
+Once the Prophecy Managed Airflow Fabric is setup with the relevant connections, Airflow Job scheduling is done with a low-code easy-to-user interface. Follow this guide to [Create an Airflow Job](/docs/getting-started/getting-started-with-low-code-airflow.md#2-create-an-airflow-job).
