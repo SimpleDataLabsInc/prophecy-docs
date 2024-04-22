@@ -8,7 +8,7 @@ tags: [sql, databricks, warehouse]
 
 Use Prophecy's interface to develop SQL projects on Databricks Warehouses.
 
-Take advantage of Prophecy's low-code interface to quickly develop data models on Databricks. Start building your Medallion Architecture - incorporate another existing framework. For your team, Prophecy facilitates faster development on Databricks.
+Take advantage of Prophecy's low-code interface to quickly develop data models on Databricks. Start building your Medallion Architecture - or incorporate another existing framework. For your team, Prophecy facilitates faster development on Databricks.
 
 ## Getting Started
 
