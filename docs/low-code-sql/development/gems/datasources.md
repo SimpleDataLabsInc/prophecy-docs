@@ -87,6 +87,6 @@ Now the new Model has been created and the canvas is displayed. Optionally, clic
 
 As a result, **MyNextModel** contains three sources: a Seed (ORDERDETAILS), a Source (ORDERSHIPMENTS), and a Model (MyModel). These three sources are joined together and materialized as a table or view in the database.schema defined in the Fabric.
 
-**MyNextModel** can be viewed visually (left) or as a SQL file (right). The Project browser (left) lists the Sources, Seeds, and Models available to drag-n-drop into the selected Model's canvas. 
+**MyNextModel** can be viewed visually (left) or as a SQL file (right). The Project browser (left) lists the Sources, Seeds, and Models available to drag-n-drop into the selected Model's canvas.
 
 For more details on dbt concepts including [Sources](https://docs.getdbt.com/docs/build/sources), [Seeds](https://docs.getdbt.com/docs/build/seeds), and [Models](https://docs.getdbt.com/docs/build/models), please explore the dbt documentation or checkout Prophecy's getting-started [guide](/docs/getting-started/getting-started-with-low-code-sql.md).
