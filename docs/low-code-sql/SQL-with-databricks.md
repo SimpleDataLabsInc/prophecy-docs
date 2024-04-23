@@ -2,6 +2,7 @@
 title: SQL with Databricks
 id: sql-with-databricks
 description: Low-code SQL on Databricks Warehouses
+draft: true
 sidebar_position: 2
 tags: [sql, databricks, warehouse]
 ---
