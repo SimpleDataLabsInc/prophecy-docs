@@ -12,11 +12,11 @@ Prophecy offers a low-code development environment for Spark and SQL and interfa
 
 ## Snowflake
 
-Snowflake is supported by connecting to an existing Snowflake Warehouse directly. 
+Snowflake is supported by connecting to an existing Snowflake Warehouse directly.
 
 ## Databricks
 
-Databricks is supported by connecting to an existing Databricks Cluster or Warehouse directly, via Databricks Partner Connect for Prophecy's SaaS offering, or via Cloud Marketplaces for Prophecy's install in customer VPC. If you don't have a Databricks account, try Prophecy's Enterprise trial. Enterprise trial is valid for 14 days and a Databricks account is provided. You can try the features, but you will not be able to use your private data.
+Databricks is supported by connecting to an existing Databricks Cluster or Warehouse directly, via Databricks Partner Connect for Prophecy's SaaS offering, or via Cloud Marketplaces for Prophecy's install in customer VPC. If you don't have a Databricks account, try Prophecy's [Enterprise trial](https://app.prophecy.io/metadata/auth/signup). Enterprise trial is valid for 14 days and a Databricks account is provided. You can try the features, but you will not be able to use your private data.
 
 ### Prophecy Databricks
 
