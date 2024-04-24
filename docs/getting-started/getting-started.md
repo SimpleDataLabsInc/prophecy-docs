@@ -6,16 +6,22 @@ description: Getting started with Prophecy
 tags: []
 ---
 
-Prophecy has a few different deployment models that are currently supported
+Prophecy offers a low-code development environment for Spark and SQL.
+Connect to multiple execution engines! Snowflake and Databricks are a two great options to get started.
 
-- **Prophecy Databricks** - Databricks is supported via Databricks Partner Connect for Prophecy SaaS or via Cloud
-  Marketplaces for Prophecy install in customer VPC
-- **Prophecy Enterprise Trial** - Prophecy Enterprise trial is valid for 14 days and uses Prophecy Databricks
-  account. You can try the features, but you will not be able to use your private data.
+![SupportedEngines](./img/SupportedEngines.png)
 
-## Prophecy Databricks
+## Snowflake
 
-### Use Partner Connect
+Snowflake is supported by connecting to an existing Snowflake Warehouse directly.
+
+## Databricks
+
+Databricks is supported by connecting to an existing Databricks Cluster or Warehouse directly, via Databricks Partner Connect for Prophecy's SaaS offering, or via Cloud Marketplaces for Prophecy's install in customer VPC. If you don't have a Databricks account, try Prophecy's Enterprise trial. Enterprise trial is valid for 14 days and a Databricks account is provided. You can try the features, but you will not be able to use your private data.
+
+### Prophecy Databricks
+
+#### Use Partner Connect
 
 The following video shows how to get started with Prophecy using _Partner Connect_ from your Databricks UI.
 
