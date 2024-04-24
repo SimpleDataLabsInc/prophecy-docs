@@ -24,11 +24,6 @@ Prophecy offers a few different ways to sign up:
 
 ![Marketplaces](img/prophecy_marketplaces.png)
 
-Prophecy can [connect](/docs/low-code-spark/gems/source-target/source-target.md) to your data wherever it resides, in various formats and storage options. Learn about Prophecy [concepts](/docs/concepts/concepts.md) or choose one of our guides to get started with your data today.
+### Next steps
 
-```mdx-code-block
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
-<DocCardList items={useCurrentSidebarCategory().items}/>
-```
+Prophecy can connect to your data wherever it resides, in various formats and storage options. Learn about Prophecy [concepts](/docs/concepts/concepts.md) or reach out and [start a conversation](./getting-help.md) today!
