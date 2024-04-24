@@ -6,14 +6,13 @@ description: Getting started with Prophecy
 tags: []
 ---
 
-Prophecy offers a low-code development environment for Spark and SQL.
-Connect to multiple execution engines! Snowflake and Databricks are a two great options to get started.
+Prophecy offers a low-code development environment for Spark and SQL and interfaces with multiple execution engines. Snowflake and Databricks are a two great options to get started.
 
 ![SupportedEngines](./img/SupportedEngines.png)
 
 ## Snowflake
 
-Snowflake is supported by connecting to an existing Snowflake Warehouse directly.
+Snowflake is supported by connecting to an existing Snowflake Warehouse directly. 
 
 ## Databricks
 

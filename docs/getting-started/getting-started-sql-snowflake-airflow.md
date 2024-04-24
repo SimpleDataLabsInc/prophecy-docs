@@ -3,6 +3,7 @@ title: SQL with Snowflake and Airflow
 id: sql-with-snowflake-and-airflow
 description: A tutorial on using Low-code SQL
 sidebar_position: 2
+draft: true
 tags:
   - sql
   - tutorial
