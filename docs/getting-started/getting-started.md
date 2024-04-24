@@ -6,17 +6,29 @@ description: Getting started with Prophecy
 tags: []
 ---
 
-Prophecy offers a low-code development environment for Spark and SQL.
+Prophecy offers a few different ways to sign up:
 
+### Prophecy's public SaaS offering on the cloud
 
-Databricks [**Partner Connect**](#Databricks Partner Connect) for Prophecy's SaaS offering, or via [**Cloud Marketplaces**](/docs/architecture/deployment/deployment.md#Private-SaaS-Customer-VPC) for Prophecy's install in customer VPC. If you don't have a Databricks account, try Prophecy's [**Enterprise trial**](https://app.prophecy.io/metadata/auth/signup). Enterprise trial is valid for 14 days and a Databricks account is provided. You can try the features, but you will not be able to use your private data.
+- [**Prophecy's Enterprise trial**](https://app.prophecy.io/metadata/auth/signup) - try out Prophecy's software-as-a-service offering free for for 14 days. Connect to your data, or opt for the Prophecy-provided Databricks account.
 
-### Databricks Partner Connect
-
-#### Use Partner Connect
-
-The following video shows how to get started with Prophecy using _Partner Connect_ from your Databricks UI.
+- [**Prophecy via Databricks Partner Connect**](#databricks-partner-connect) - try out Prophecy's SaaS offering via an existing Databricks account. The following video shows how to get started with Prophecy using _Partner Connect_ from your Databricks UI.
 
 <div class="video-container">
 <iframe src="https://www.youtube.com/embed/mh-6lpYJcqs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+
+### Prophecy's offering installed in customer VPC
+
+- **Prophecy via Cloud Marketplaces** - try out Prophecy's Private cloud offering in your VPC. Login into your preferred cloud marketplace: [AWS](https://aws.amazon.com/marketplace/pp/prodview-gh3pyflmu7mlu?sr=0-1&ref_=beagle&applicationId=AWSMPContessa#external-reviews), [Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/simpledatalabsinc1635791235920.prophecy-data-engineering), or [GCP](https://console.cloud.google.com/marketplace/product/prophecy-on-gcp-public/prophecy-data-engineering), and search for "Prophecy." The [installation](/docs/architecture/deployment/deployment.md) is very simple, takes about 20 minutes (with a confirmation popup), and billing starts after 30 days.
+
+![Marketplaces](img/prophecy_marketplaces.png)
+
+Prophecy can [connect](/docs/low-code-spark/gems/source-target/source-target.md) to your data wherever it resides, in various formats and storage options. Learn about Prophecy [concepts](/docs/concepts/concepts.md) or choose one of our guides to get started with your data today.
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```
