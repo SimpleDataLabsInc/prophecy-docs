@@ -11,25 +11,37 @@ tags:
   - airflow
 ---
 
+At Prophecy, we've added [low-code SQL capabilities](https://www.prophecy.io/blog/announcing-prophecy-3-0-low-code-sql-transformations) to our platform, so users can build highly performant queries on par with the best analytics engineers without needing to be coding experts. We built this feature on top of [dbt Core™️ ](https://github.com/dbt-labs/dbt-core), an open-source tool for managing SQL-based data transformations. With low-code SQL, our customers can build complex queries visually, and the tool automatically translates them into optimized SQL code in Git that’s fully open and accessible to all. This makes it simpler for more people to work with data and extract insights.
+
 #### This quick start gets you up and running with low-code SQL on Snowflake and low-code Jobs on Airflow
 
 #### You will need
 
 - Snowflake Account
 - Github Account (recommended)
-- Airflow (optional)
+- Airflow - MWAA or Composer (optional)
 
 ## 1. Setup Prophecy account
 
-![Account Creation](img/1-1-account-creation.png)
+Sign up for a [Prophecy account](https://app.Prophecy.io/metadata/auth/signup) to start a 21 day trial.
+
+[![Account Creation](img/1-1-account-creation.png)](https://app.prophecy.io/metadata/auth/signup)
 
 ## 2. Connect to Snowflake
 
-### 2.1
+### 2.1 Get Snowflake Account URL
 
-### 2.2
+URL
 
-### 2.3 Setup Prophecy's Fabric
+### 2.2 Get Snowflake Credentials
+
+Username, password, role
+
+### 2.3 Identify the location for writing tables
+
+Warehouse, Database, Schema
+
+### 2.4 Setup Prophecy's Fabric
 
 ## 3. Create a new Project
 
@@ -119,7 +131,7 @@ Finally, click **(4) Continue** and your main project page will open.
 
 ## 4. Start development
 
-Congratulations! We’ve now successfully went through the one-time setup process of Prophecy with all the required dependencies. We can now use Databricks’ performant SQL execution engine and Git’s source code versioning.
+Congratulations! We’ve now successfully completed the one-time setup process of Prophecy with all the required dependencies. We can now use Databricks’ performant SQL execution engine and Git’s source code versioning.
 
 It’s time to start building our first data transformation project!
 
@@ -141,7 +153,7 @@ After branch setup, Fabric selection should pop-up automatically; if not, you ca
 
 Choose the Fabric of choice by clicking on it in the **(5) Fabrics** list, then simply **(6) Save** the settings.
 
-Prophecy will quickly load all the available catalogs, schemas, tables, and other metadata and shortly after allow you to start running your transformations!
+Prophecy will quickly load all the available warehouses, databases, schemas, tables, and other metadata and shortly after to allow you to start running your transformations!
 
 ### 4.3 Define data sources
 

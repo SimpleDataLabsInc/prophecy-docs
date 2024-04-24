@@ -27,9 +27,9 @@ We'll take you step by step from account setup to developing your first model. B
 
 ## 1. Setup Prophecy account
 
-Creating your first account on Prophecy is very simple. Go to [app.prophecy.io](https://app.Prophecy.io/metadata/auth/signup) to Sign-up for an initial 14-day trial. After you’ve tried the product for 14 days, simply reach out to us at Contact.us@Prophecy.io and we will help pick the best offering for you.
+Creating your first account on Prophecy is very simple. Go to [app.prophecy.io](https://app.Prophecy.io/metadata/auth/signup) to Sign-up for an initial 21-day trial. After you’ve tried the product for 21 days, simply reach out to us at Contact.us@Prophecy.io and we will help pick the best offering for you.
 
-![Account Creation](img/1-1-account-creation.png)
+[![Account Creation](img/1-1-account-creation.png)](https://app.prophecy.io/metadata/auth/signup)
 
 ## 2. Connect to Databricks
 
@@ -200,7 +200,7 @@ After branch setup, Fabric selection should pop-up automatically; if not, you ca
 
 Choose the Fabric of choice by clicking on it in the **(5) Fabrics** list, then simply **(6) Save** the settings.
 
-Prophecy will quickly load all the available catalogs, schemas, tables, and other metadata and shortly after allow you to start running your transformations!
+Prophecy will quickly load all the available catalogs, schemas, tables, and other metadata and shortly after to allow you to start running your transformations!
 
 ### 4.3 Define data sources
 
