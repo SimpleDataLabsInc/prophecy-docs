@@ -45,11 +45,11 @@ Prophecy Low-code SQL features two editors:
 
 No matter which editor you prefer, Prophecy features a Code = Visual interface that allows teams to collaborate on both interfaces at the same time. Any changes made in the Visual Editor generate high-quality code on Git. And, any changes in the Code Editor can be visualized back as a visual graph.
 
-### Do I have to save my work progress?
+**Do I have to save my work progress?**
 
 No! Prophecy automatically saves your work as you develop in a working directory securely stored on the cloud. Just make sure to commit your changes every once in a while, to see your code reflected on your Git and to collaborate easier with your team.
 
-### Are all SQL and dbt constructs supported?
+**Are all SQL and dbt constructs supported?**
 
 Vast majority of dbt and SQL constructs are supported within the Prophecy Visual editor. However, if something is not yet supported, don’t worry!
 
