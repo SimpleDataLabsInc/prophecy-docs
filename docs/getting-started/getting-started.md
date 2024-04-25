@@ -21,13 +21,7 @@ Prophecy offers a few different ways to sign up: public SaaS or private installa
 
 ### Prophecy's private offering installed in customer VPC
 
-- **Prophecy via Cloud Marketplaces** - try out Prophecy's Private cloud offering in your VPC. Login into your preferred cloud marketplace: [AWS](https://aws.amazon.com/marketplace/pp/prodview-gh3pyflmu7mlu?sr=0-1&ref_=beagle&applicationId=AWSMPContessa#external-reviews), [Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/simpledatalabsinc1635791235920.prophecy-data-engineering), or [GCP](https://console.cloud.google.com/marketplace/product/prophecy-on-gcp-public/prophecy-data-engineering), and search for "Prophecy." The [installation](/docs/architecture/deployment/deployment.md) is very simple, takes about 20 minutes (with a confirmation popup), and billing starts after 30 days.
-
-[![AWS](./img/AWS.png)](https://aws.amazon.com/marketplace/pp/prodview-gh3pyflmu7mlu?sr=0-1&ref_=beagle&applicationId=AWSMPContessa#external-reviews)
-
-[![Azure](./img/Azure.png)](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/simpledatalabsinc1635791235920.prophecy-data-engineering)
-
-[![GCP](./img/GCP.png)](https://console.cloud.google.com/marketplace/product/prophecy-on-gcp-public/prophecy-data-engineering)
+- **Prophecy's Private Cloud** - [reach out](https://www.prophecy.io/request-a-demo) to explore Prophecy's Private cloud offering in your VPC. The installation is very simple, takes about 20 minutes (with a confirmation popup), and billing starts after 30 days.
 
 ### Next steps
 
