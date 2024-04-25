@@ -22,13 +22,14 @@ If you don't have an existing Prophecy Fabric, Project and Pipeline, please chec
 Enterprises have built **generic frameworks** to accelerate the development of data platforms and standardize the process. These frameworks allow data engineers to quickly build new pipelines using existing building blocks by modifying the pipeline configurations only, thus avoiding the need to create new pipelines from scratch.
 
 Let’s take an example to see how a generic pipeline works. Assume we have to build a **Customer Data Ingestion** pipeline that will read data from a CSV file, reformat data and write it into a SQL table.
-pic
+
+![Customer_Pipeline](img/customer_pipeline.png)
 
 Similarly, we need to build an **Order Data Ingestion** pipeline that will read data from a CSV file, reformat data and write it into a SQL table.
-pic
+![Order_Pipeline](img/order_pipeline.png)
 
 As we can see, both the above pipelines perform similar operations while ingesting data from source to target even though the **schema and transformation logics** are completely different. Thus, instead of creating new pipelines from scratch every time for similar use cases, we can create a single **Generic Data Ingestion** pipeline instead and run it differently using the **config variables**.
-pic
+![Generic_Pipeline](img/generic_pipeline.png)
 
 This process of creating generic pipelines helps enterprises speed up the development process by making the existing building blocks reusable.
 
@@ -37,105 +38,83 @@ This process of creating generic pipelines helps enterprises speed up the develo
 ## 1. Create  pipeline
 
 First, let’s create the generic data ingestion pipeline by going to IDE canvas, dragging and dropping the source, reformat and target gems as shown below:
-pic
+![Data_Ingestion](img/data_ingestion.png)
 
 ## 2. Create config instances
 
-As we are going to run the generic pipeline separately for both customer and order use cases, we need to create 2 configs: customer_config and order_config. Let’s click on (1) Config to open the pipeline configuration page.
+As we are going to run the generic pipeline separately for both customer and order use cases, we need to create 2 configs: customer_config and order_config. Let’s click on (1) Config tab to open the pipeline config page.
 
-pic
+![Pipeline_Config](img/pipeline_config.png)
 
 Switch to (1) config tab, click on the (2) instance dropdown and create a (3) new configuration. Name the config instance as customer_config.
 
-pic
+![Config_Instance](img/config_instance.png)
 
 Similarly, create another config instance with name order_config. Then click on (1) Save button as shown below:
 
-pic
+![Save_Instance](img/save_instance.png)
 
-## 3. Configure gems for customer_config instance
+## 3. Configure gems for customer ingestion pipeline
 
 ### 3.1 Configure source gem
 
-Go to (1) Config and create a config key named “input_file” as shown below:
+Go to pipeline config page and create a config key named “input_file” as shown below:
 
-pic
+![Input_File_Path](img/input_file_path.png)
 
-Click on (1) Config tab, switch (2) instance to customer_config and mention the file path from where you want to read the data. For this guide, I will be reading CSV data from Databricks.
+Click on (1) Config tab, switch (2) instance to customer_config and mention value of (3) input_file from where you want to read the data. For this guide, I will be reading CSV data from Databricks.
 
-pic
+![Config_Value](img/config_value.png)
 
-Click on (1) the source gem from the pipeline, select the relevant file type and click on (2) the Location tab.
+Click on (1) the source gem from the pipeline, select the relevant file type and click on the Location tab.
 
-pic
+![Configure_Source](img/configure_source.png)
 
-Now we have to provide the location from where data will be read. Add config key file_path in the location input as shown below:
+Now we have to provide the location from where data will be read. Add config key (1) input_file in the location input as shown below:
 
-pic
+![Source_location](img/source_location.png)
 
 Go to (3) Properties tab and click on Infer Schema button.
 
-pic
+![Infer_Schema](img/infer_schema.png)
 
 Go to (4) Preview tab and click on the Load button to preview the data. Post that, click on the Save button to store all the changes.
 
-pic
+![Data_Overview](img/data_overview.png)
 
 ### 3.2 Configure reformat gem
 
-Go to (1) reformat gem, click on the (2) icon  and create a config key named “reformat_logic” as shown below:
-pic
+Go to reformat gem, click on the (1) icon  and create a (2) config key named “reformat_logic” as shown below:
+
+![Configure_Reformat](img/configure_reformat.png)
 
 Write the (1) logic inside the reformat gem for the customer data ingestion pipeline and click on (2) Save button as shown below:
-pic
+![Reformat_Logic](img/reformat_logic.png)
 
-After you click on the Save button, the reformat_logic config key will be created and stored in the pipeline configuration. In order to check if reformat_logic config key was created with proper values, click on (1) Config tab, and you will be able to see the config key under (2) Schema tab as shown below:
-pic
+After you click on the Save button, the reformat_logic config key will be created and stored in the pipeline configuration. In order to check if reformat_logic config key was created with proper values, click on pipeline Config tab, and you will be able to see the config key (1) reformat_logic under (2) Schema tab as shown below:
+![Reformat_Config_Key](img/reformat_config_key.png)
 
-Under (1) Config tab, you will be able to see the values of the config key as shown below:
-pic
+Under (1) Config tab, you will be able to see the values of the config key (2) reformat_logic as shown below:
+![Reformat_Config_Value](img/reformat_config_value.png)
 
 ### 3.3 Configure target gem
 
-Go to (1) Config and create a config key named “output_file” as shown below:
-pic
+As we had configured the source gem in step 3.1, repeat the same steps to configure Target gem with relevant information.
 
-Click on (1) Config tab, switch (2) instance to customer_config and mention the file path (as shown below) where you want to write the data.
-pic
-
-Click on the (1) source gem from pipeline, select the relevant file type and click on (2) the Location tab.
-pic
-
-Now we have to provide the location from where data will be read. Add config key output_file in the location input as shown below:
-pic
-
-Go to (3) Properties tab and click on Infer Schema button.
-pic
-
-Post that, click on the Save button to store all the changes.
-pic
-
-**Note**: In order to configure the gems for order_config instance, repeat the steps from 3.1 to 3.3 with relevant details.
+**Note**: In order to configure the gems for order ingestion pipeline, repeat the steps from 3.1 to 3.3 with relevant details.
 
 ## 4. Run pipeline
 
 Now we will be running the pipeline for customer_config instance first. For that, click on the (1) Run button as shown below:
-pic
+![Run_Pipeline](img/run_pipeline.png)
 
 Now, you can check the final data by clicking the final (1) interim icon as shown below:
-pic
+![Interim](img/interim.png)
 
-You will see the customer details as shown below:
-pic
+The output data that we got is shown below:
+![Output_Data](img/output_data.png)
 
-Now, to run the same pipeline using order_config, click on the (1) Config tab:
-pic
-
-Select (1) Config tab, change (2) config instance dropdown to order_config and click on (3) Save button.
-pic
-
-Run the pipeline and check the final data by clicking on the final interm icon. You will see the order details as shown below:
-pic
+For running the pipeline for order_config instance, first change the pipeline config to order_config and then run the pipeline to check the final data. 
 
 ## What’s next?
 
