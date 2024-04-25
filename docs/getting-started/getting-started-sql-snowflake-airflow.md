@@ -25,23 +25,47 @@ At Prophecy, we've added [low-code SQL capabilities](https://www.prophecy.io/blo
 
 Sign up for a [Prophecy account](https://app.Prophecy.io/metadata/auth/signup) to start a 21 day trial.
 
-[![Account Creation](img/1-1-account-creation.png)](https://app.prophecy.io/metadata/auth/signup)
+[![Account Creation](img/Signup.png)](https://app.prophecy.io/metadata/auth/signup)
 
 ## 2. Connect to Snowflake
 
-### 2.1 Get Snowflake Account URL
+### 2.1 Get Snowflake Account URL and credentials
 
-URL
+To connect Prophecy to Snowflake, you'll need to assemble a few items. The Snowflake URL is a combination of the Snowflake organization and account, in the following format:
 
-### 2.2 Get Snowflake Credentials
+![URL](img/SnowURL.png)
 
-Username, password, role
+As a user, you'll login to Snowflake using your username and password credential. Prophecy will use the same credential so that the Prophecy user can obtain the same level of access for Snowflake tables. Snowflake also has a Role for each user; identify the appropriate Role for Prophecy to use.
 
-### 2.3 Identify the location for writing tables
+![Role](img/SnowRole.png)
 
-Warehouse, Database, Schema
+### 2.2 Identify the location for materializations
 
-### 2.4 Setup Prophecy's Fabric
+Identify the desired Warehouse and make sure the Warehouse is started.
+
+![Warehouse](img/SnowWarehouse.png)
+
+Prophecy needs a default location for materializing tables and views, etc. Identify the desired database and schema for default writes.
+
+![DbSchema](img/SnowDB.png)
+
+### 2.3 Setup Prophecy's Fabric
+
+Prophecy introduces the concept of a Fabric to describe an execution environment. In this case, we create a single Fabric to connect a Snowflake warehouse and execute SQL models interactively. The Fabric defines the environment where SQL tables and views are materialized. Typically you should setup at least one Fabric each for development and production environments. Use the development environment (Fabric) for quick ad-hoc building purposes with only sample data and use the production environment for daily runs with your production Snowflake Warehouse data for your use case. Many Snowflake users will setup daily scheduled runs using Airflow as detailed [below.](#job-orchestration-on-airflow)
+
+You can read more about Fabrics [here.](/docs/concepts/fabrics/fabrics.md)
+
+Setting up a Fabric is very straightforward because we have already identified the Snowflake URL, credentials, etc the previous steps.
+
+![CreateFabric](img/SnowCreateFabric.png)
+
+Create a Fabric by clicking the **Create** button pictured above. Please note, until you setup a Fabric, creation of other entities is going to be disabled. Only two steps are essential to create a Fabric: Basic Info and Providers setup. On the Basic Info screen, enter your Fabric name, description, and choose the **Team** that’s going to own the Fabric.
+
+![SnowProviderDetails](img/SnowFabProvider.png)
+
+Select the **SQL** provider type, and select the **Snowflake provider.** Then add the information needed for Prophecy to use the **Snowflake APIs:** the Snowflake [Account URL](https://docs.snowflake.com/en/user-guide/admin-account-identifier#where-are-account-identifiers-used), username, password and role. Prophecy will use this information to connect to Snowflake with the user's permissions.
+
+Now provide the Warehouse, database, and schema where you'd like Prophecy to materialize tables and views. Any SQL Model configured to use this Fabric will default to writing to this location.
 
 ## 3. Create a new Project
 
@@ -49,27 +73,13 @@ Prophecy’s Project is a Git repository or a directory on Git that contains all
 
 After Fabric creation you can see one project initialized for you by default called HelloWorld_SQL. If you just want to play around with Prophecy, you can start there. However, for the purpose of this tutorial we’re going to build a brand new project from scratch.
 
-![Create New Project](img/3-1-create-new-project.png)
+Create New Project(TODO: replace image)
 
 To create a new Project press on the **(1) Create Entity** button on the sidebar and choose **(2) Create** on the Project tile. The Project creation screen will open. Here, on the first page: we configure basic project details; and on the second page: we configure the Git repository details. Fill in the Project’s **(3) Name,** **(4) Description** (optional), and set the **(5) Project Type** to SQL. After that, select the **(6) Team** which is going to own the newly selected project. By default, you can leave the selected team to be your personal one. Finally, we choose the same **(7) Provider** as we selected in the previous step - Databricks. Once all the details are filled out correctly, you can proceed to the next step by clicking **(8) Continue.**
 
 ![Git Repository Connection](img/3-2-git-repository-connection.png)
 
 Once the basic project information is filled out, it’s time to configure the Git repository on which we’re going to store our project. Git brings the best software engineering practices to traditional data engineering. It allows it’s users to version their code, collaborate with teammates easier, and setup robust productionization pipelines.
-
-In Prophecy, there are two Git setup options: you can either use **(1) Prophecy Managed Git** or **(2) Connect Git** to an existing external repository.
-
-Once you’re connected to Git using either of the above approaches press **(3) Continue** to finalize project creation.
-
-If you’re new to Git, we recommend starting by connecting to Prophecy Managed Git.
-
-### 3.1. Connect to Prophecy Managed Git
-
-When choosing Prophecy Managed Git as your default Git repository, there are no further steps required! Prophecy automatically takes care of repository creation, connection, and initialization. You can just click **(3) Continue** to finalize the project setup.
-
-Using Prophecy Managed Git is very easy, but has some major downsides and therefore not recommended for production use-cases. Primarily, you will not be able to access the repository externally from Prophecy programmatically (which is a common enterprise requirement) or create [Pull Requests](/docs/metadata/pull-request-templates.md/#raising-pull-requests) (which is also recommended as a part of standard [Git flow](https://docs.github.com/en/get-started/quickstart/github-flow)).
-
-If you decide to choose this option, you can always migrate the project to an external Git Repository by cloning it.
 
 ### 3.2 Connect to external Git repository
 
