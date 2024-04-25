@@ -1,93 +1,47 @@
 ---
-title: SQL with Databricks
-id: sql-with-databricks
+title: SQL with Snowflake and Airflow
+id: sql-with-snowflake-and-airflow
 description: A tutorial on using Low-code SQL
-sidebar_position: 1
+sidebar_position: 2
+draft: true
 tags:
   - sql
   - tutorial
+  - snowflake
+  - airflow
 ---
 
-At Prophecy, we've added low-code SQL capabilities to version [3.0](https://www.prophecy.io/blog/announcing-prophecy-3-0-low-code-sql-transformations) of our platform, so users can build highly performant queries on par with the best analytics engineers without needing to be coding experts. We built this feature on top of [dbt Core™️ ](https://github.com/dbt-labs/dbt-core), an open-source tool for managing SQL-based data transformations. With low-code SQL, our customers can build complex queries visually, and the tool automatically translates them into optimized SQL code in Git that’s fully open and accessible to all. This makes it simpler for more people to work with data and extract insights.
+At Prophecy, we've added [low-code SQL capabilities](https://www.prophecy.io/blog/announcing-prophecy-3-0-low-code-sql-transformations) to our platform, so users can build highly performant queries on par with the best analytics engineers without needing to be coding experts. We built this feature on top of [dbt Core™️ ](https://github.com/dbt-labs/dbt-core), an open-source tool for managing SQL-based data transformations. With low-code SQL, our customers can build complex queries visually, and the tool automatically translates them into optimized SQL code in Git that’s fully open and accessible to all. This makes it simpler for more people to work with data and extract insights.
 
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://fast.wistia.net/embed/iframe/hfhh8fieiq?seo=false?videoFoam=true" title="Getting Started With SQL Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
-<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
-
-#### In this quick-start, we will show you how to setup Prophecy low-code SQL with an existing Databricks warehouse
-
-We'll take you step by step from account setup to developing your first model. By the end of this training, you'll have an understanding of dbt models, be able to use low-code SQL to define and test your business logic, and commit this code and deploy it to production. That's a lot, but we make building complex queries easy with our drag and drop tooling. Let's dig in!
+#### This quick start gets you up and running with low-code SQL on Snowflake and low-code Jobs on Airflow
 
 #### You will need
 
-- Databricks Account
-- GitHub Account (recommended)
+- Snowflake Account
+- Github Account (recommended)
+- Airflow - MWAA or Composer (optional)
 
 ## 1. Setup Prophecy account
 
-Creating your first account on Prophecy is very simple. Go to [app.prophecy.io](https://app.Prophecy.io/metadata/auth/signup) to Sign-up for an initial 21-day trial. After you’ve tried the product for 21 days, simply reach out to us at Contact.us@Prophecy.io and we will help pick the best offering for you.
+Sign up for a [Prophecy account](https://app.Prophecy.io/metadata/auth/signup) to start a 21 day trial.
 
 [![Account Creation](img/1-1-account-creation.png)](https://app.prophecy.io/metadata/auth/signup)
 
-## 2. Connect to Databricks
+## 2. Connect to Snowflake
 
-### 2.1 Get Databricks Cluster or Warehouse URL
+### 2.1 Get Snowflake Account URL
 
-When connecting to Databricks, you have the option to either connect to Databricks compute cluster or warehouse. In both cases, make sure to get the 2.6.25 JDBC url that starts with `jdbc:Databricks....`
+URL
 
-#### Cluster JDBC End-point
+### 2.2 Get Snowflake Credentials
 
-![Databricks compute cluster end-point](img/2-1-databricks-compute-cluster-end-point.png)
+Username, password, role
 
-To use a cluster as your execution environment for SQL queries, click on **(1) Compute** element in the menu, choose your preferred cluster, open cluster **(2) Configuration** > **(3) JDBC/ODBC,** switch the JDBC URL to the latest version **(4) 2.6.25 or later,** and finally copy the **(5) JDBC URL.**
+### 2.3 Identify the location for writing tables
 
-When using the compute cluster JDBC end-points, the last parameter of the url contains the password provided as user’s personal access token. Make sure to delete that URL fragment before entering it.
+Warehouse, Database, Schema
 
-Here’s a correct example `url: jdbc:Databricks://dbc-abc.cluod.Databricks.com:443/...;UID=token;`
-
-For optimal performance and best governance options, we recommend using [Shared, Photon-enabled](https://docs.databricks.com/clusters/cluster-config-best-practices.html) clusters with [Unity-catalog](https://docs.databricks.com/data-governance/unity-catalog/compute.html) enabled.
-
-#### Warehouse JDBC End-point
-
-![Databricks warehouse cluster end-point](img/2-2-databricks-warehouse-cluster-end-point.png)
-
-To use a warehouse as your execution environment for SQL queries, switch to the **(1) SQL** persona, choose **(2) SQL Warehouses** from the sidebar menu, pick your preferred warehouse, go to **(3) Connection** details, select the latest version of JDBC URL **(4) 2.6.25 or later** and save the the **(5) JDBC URL.**
-
-For optimal performance and best governance options, we recommend using [Pro](https://docs.databricks.com/sql/admin/create-sql-warehouse.html#upgrade-a-pro-or-classic-sql-warehouse-to-a-serverless-sql-warehouse) Serverless warehouses with [Unity Catalog](https://docs.databricks.com/data-governance/unity-catalog/compute.html) enabled.
-
-### 2.2 Create Personal Access Token (PAT)
-
-To authorize as yourself when accessing your Databricks cluster or warehouse through a JDBC a special password is required. This is what Personal Access Token is created for. It’s a temporary password created specifically for programmatic access.
-
-![get-personal-access-token](img/2-3-get-personal-access-token.png)
-
-To get the personal access token, navigate to the **(1) User Settings** > **(2) Access tokens** and click the **(3) Generate** new token button button. Give a clearly identifiable name to your access token, in case you ever have to delete and set your preferred lifetime. Please note, that after the lifetime passes and the token expires, it will no longer be valid and you will have to regenerate it again to keep using Prophecy.
-
-Once, the token is generated copy and save it from **(5) Token** and you’re good to go. Save it and we’re going to use both the JDBC url generated in the previous step and the token to setup your Prophecy account!
-
-### 2.3 Setup Prophecy’s Fabric
-
-Prophecy introduces the concept of a Fabric to describe an execution environment. In this case, we create a single Fabric to connect a Databricks cluster or warehouse, execute SQL models interactively, and deploy scheduled Jobs. The Fabric defines the environment where SQL tables and views are materialized. Typically you should setup at least one Fabric each for development and production environments. Use the development environment (Fabric) for quick ad-hoc building purposes with only sample data and use the production environment for daily runs with real data for your use case.
-
-You can read more about Fabrics [here.](/docs/concepts/fabrics/fabrics.md)
-
-![Create Fabric](img/2-4-create-fabric.png)
-
-Setting up a Fabric is very straightforward now that we have copied the JDBC URL and Personal Access Token from the previous steps. Click the **(1) Create Entity** button, and choose **(2) Create Fabric** option. Please note, until you setup a Fabric, creation of other entities is going to be disabled. The Fabric creation is composed of two steps: Basic Info and Providers setup. On the Basic Info screen, enter a **(1) Fabric Name**, **(2) Fabric Description,** and choose the **(3) Team** that’s going to own the Fabric.
-
-Once ready, click **(4) Continue.**
-
-![Fill Fabric Details](img/2-5-fill-fabric-details.png)
-
-Since we’re setting up a Fabric connected to Databrick’s JDBC SQL endpoint, we choose SQL as the **(1) Provider Type** and Databricks as the **(2) Provider.**
-
-Enter the **(3) JDBC Url** and **(4) Personal Access Token** gathered from the previous steps. Finally, select your **(5) Catalog** and **(6) Schema** of choice. This step is recommended, however, optional. When using Databricks Unity Catalog, the default Catalog is main and the default Schema is default. Make sure you connect to a catalog and schema for which your user has write access. The tables resulting from the model will be written here.
-
-Click **(7) Complete** when finished. Prophecy checks the credentials and details for network and catalog accesses. If either fails, the Fabric won’t be created and you will receive an Exception error. Optionally, enhance metadata viewing by creating a [Metadata Connection](/docs/metadata/metadata-connections.md), recommended for users with hundreds or thousands of tables housed in their data provider(s).
-
-Please note, Fabrics are owned by Teams. Every Member present within the Team will be able to access the Fabric, however, each individual has to provide their own Personal Access Token.
+### 2.4 Setup Prophecy's Fabric
 
 ## 3. Create a new Project
 
@@ -141,8 +95,7 @@ If you’d like to connect Prophecy to one of your GitHub organizations, make su
 Once done, press on **(4) Authorize** SimpleDataLabsInc (legal organization name of Prophecy.io). The tab should be automatically closed and you’ll be redirected back to Prophecy, which will mark the connection as complete. If for some reason this hasn’t happened (which can happen if you switched between other tabs), simply try clicking on the \*\*(2) Login with GitHub again.
 
 Finally, click **(5) Connect** to save the Git connection.
-
-![Choose the repository](img/3-5-choose-the-repository.png)
+Choose the repository(TODO: replace image)
 
 Once your GitHub account is setup, select a repository where Prophecy will store all the code for this project. Choose a **(1) Repository** from the dropdown available. If you’d like to create a new repository from scratch follow [this guide.](https://docs.github.com/en/get-started/quickstart/create-a-repo)
 
@@ -166,7 +119,7 @@ Each provider is going to use a slightly different process to generate Personal 
 
 Finally, click **(6) Connect** to save the Git connection.
 
-![Choose the repository](img/3-7-choose-the-repository.png)
+Choose the repository(TODO: replace Image)
 
 Once your GitHub account is setup, populate the **(1) Repository** field with an HTTPS URL to a Git repository you’d like to pull.
 
@@ -178,11 +131,11 @@ Finally, click **(4) Continue** and your main project page will open.
 
 ## 4. Start development
 
-Congratulations! We’ve now successfully went through the one-time setup process of Prophecy with all the required dependencies. We can now use Databricks’ performant SQL execution engine and Git’s source code versioning.
+Congratulations! We’ve now successfully completed the one-time setup process of Prophecy with all the required dependencies. We can now use Databricks’ performant SQL execution engine and Git’s source code versioning.
 
 It’s time to start building our first data transformation project!
 
-![Create Dev Branch](img/4-1-create-dev-branch.png)
+[Create Dev Branch](TODO: replace figure)
 
 ### 4.1 Checkout development branch
 
@@ -200,7 +153,7 @@ After branch setup, Fabric selection should pop-up automatically; if not, you ca
 
 Choose the Fabric of choice by clicking on it in the **(5) Fabrics** list, then simply **(6) Save** the settings.
 
-Prophecy will quickly load all the available catalogs, schemas, tables, and other metadata and shortly after to allow you to start running your transformations!
+Prophecy will quickly load all the available warehouses, databases, schemas, tables, and other metadata and shortly after to allow you to start running your transformations!
 
 ### 4.3 Define data sources
 
@@ -318,81 +271,12 @@ Now that our model is fully defined, with all the logic specified, it’s time t
 
 Prophecy makes interactively testing the models incredibly easy! Simply click on the **(1) Play** button on any of the Gems and the model with all of it’s upstream dependencies will be executed. Once the model runs, the **(2) Result** icon appears. Click the Result icon to view a **(3) Sample** set of records.
 
-## 5. Orchestrate and Deploy
+## 5. Job Orchestration on Airflow
 
-Now that we’ve developed and tested our models, it’s time to schedule and deploy them to production. This will allow our code to run on a recurrent interval, e.g. daily, depending on how often our upstream data arrives and our business commitments.
+### 5.1 Setup Airflow
 
-### 5.1 Create your Job
+### 5.2 Schedule a Job
 
-![Create Job](img/5-1-create-job.png)
+## 6. Deployment and Monitoring
 
-We start by creating a Job. Jobs are graphs that orchestrate various tasks that are executed by the scheduler.
-
-To create a Job, we start by clicking on the **(1) Add Job** button in the **Jobs** section of the project browser. **Create Job** drawer appears, where we define the details of our Job.
-
-Most of the fields, like **Project** or **Branch** are automatically populated for us. We start by populating the **(2) Name** field. Here, we’re going to run a whole project as part of this Job so we give it the same name as the project: `getting_started`.
-
-Most importantly, we have to choose the **(3) Fabric** (Databricks SQL warehouse) on which we’re wishing to execute our models and write our tables. You can leave the default here, as the same Fabric that we were testing our models on.
-
-Next, we choose the **(4) Schedule Interval,** which describes how often our schedule is going to run. The interval is defined by a [CRON expression.](https://en.wikipedia.org/wiki/Cron#Cron_expression) Click on the 🕒 icon to open an easy interval picker.
-
-After that, we can optionally provide a list of email address which are going to receive the success or failure alerts. Those can be written in the **(5) Alerts** on the full Job section.
-
-Finally, we create our Job by clicking on **(6) Create New.**
-
-### 5.2 Configure the DBT task
-
-![Configure the DBT task](img/5-2-configure-dbt-task.png)
-
-Once your Job is created, you are redirected to the Job editing canvas. You will notice that it looks very similar to the model editor with some subtle differences.
-
-The **(1) Gem drawer** has been restricted to only a few basic Gems relevant to Databricks Jobs. For SQL projects, it’s **DBT** and **Script** tasks only.
-
-Let’s start by dragging and dropping the the **(2) DBT Gem.** Once it’s on the canvas, we open and configure it. Within the **(3) Property** tab, there’s three basic fields we fill:
-
-1. **DBT project to schedule** - which we set to the current project;
-2. **Databricks SQL Warehouse** - defines on which warehouse our SQL code is going to execute, we set it to the recently created Fabric;
-3. **Git reference value** - defines from which branch on Git, the code is pulled to execute, we set it to the currently used developed branch - same as what we set in the step 5.1 Checkout development branch (the name can be also seen in the footer).
-
-:::info
-DBT Projects will appear in this dropdown if (1) the Project is released and (2) the Project is hosted on Git outside Prophecy's managed Git provider.
-:::
-
-Once all the basic properties are set click **(4) Save.**
-
-We can quickly verify that our schedule runs correctly by executing it, by clicking on the **(5) Play** button. Upon the click, the execution starts and you can track it’s progress. When finished successfully, we know that the project is ready to be deployed.
-
-Finally, we toggle our Job to be **(5) Enabled.** This enables the Job on the scheduler and will ensure that the Job follows the previously set interval.
-
-### 5.3 Commit your changes
-
-Once we have the **Job** developed and tested it’s time to commit and push our code to our repository.
-
-Start by clicking on the **Commit files** button in the middle of the footer (bottom of the screen). This opens an easy to use Git manaGement screen.
-
-The process of deploying code is composed of 4 steps:
-
-1. **Commit:** We start by creating a named version of our code and uploading it to our development branch on the secure Git repository. On the left hand side you can see the **Current branch** and the associated history of commits and on the right side, there’s a list of **Entities changed** (models, Jobs, etc) and their status. If everything looks good, type in the **(2) Commit message** which should clearly describe, in few sentences, all the changes that we’ve introduced.
-2. **Pull:** Before your changes can be safely merged into the **main** branch, we have to make sure that we’re up to date with it. If your colleagues introduced any code on **main** we have to **Pull** it first. This step is most of the time going to happen automatically for us without any further actions required.
-3. **Merge:** Now that our development branch is up to date, we can merge it to master. Here we can either create a **Pull Request** or if you’re the owner of the repository force **Merge** the changes. For now, we **Merge** them directly. Once the code is merged, you can now see the latest commits present on your **main** branch.
-4. **Release:** Finally, now that our changes are all versioned on Git, we can release them to our scheduler. Simply specify a **Release Version** number, e.g. `1.0` , and the **(4) Release Note,** which should clearly outline the latest changes. When ready, click **(5) Release.**
-
-### 5.4 Monitor the release
-
-![Release the Project](img/5-3-release-the-project.png)
-
-During the release process Prophecy automatically packages, tests, and deploys your project’s artifacts - mostly SQL queries - to your Databricks Warehouse. You can monitor this process in the final **(1) Release** page.
-
-Once the process is finished you can see the deployed and running Job, within your Databricks workspace defined within the Fabric that you released your Job to. To see it, go to your workspace and open the **(2) Workflows** section. Then choose the right Job - the name will be exactly the same as the name of the Job you created in Prophecy. A **(3) Job page** opens, where you can inspect all the details of your newly created Job.
-
-## What’s next?
-
-Great work! 🎉
-
-You've successfully set up, developed, tested, and deployed your first SQL project in the Databricks workspace. Take a moment to appreciate your accomplishment 🥳.
-
-To continue learning and expanding your skills with Prophecy, explore other tutorials within our documentation, or apply your newfound knowledge to address real-world business challenges!
-
-If you ever encounter any difficulties, don't hesitate to reach out to us (Contact.us@Prophecy.io) or join our [Slack community](https://prophecy-io-support.slack.com/join/shared_invite/zt-moq3xzoj-~5MSJ6WPnZfz7bwsqWi8tQ#/shared-invite/email) for assistance. We're here to help!
-
----
+##
