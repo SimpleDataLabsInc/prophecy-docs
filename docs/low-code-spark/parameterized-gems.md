@@ -14,9 +14,11 @@ Let’s take an example to see how a generic pipeline works. Assume we have to b
 ![Customer_Pipeline](img/customer_pipeline.png)
 
 Similarly, we need to build an **Order Data Ingestion** pipeline that will read data from a CSV file, reformat data and write it into a SQL table.
+
 ![Order_Pipeline](img/order_pipeline.png)
 
 As we can see, both the above pipelines perform similar operations while ingesting data from source to target even though the **schema and transformation logics** are completely different. Thus, instead of creating new pipelines from scratch every time for similar use cases, we can create a single **Generic Data Ingestion** pipeline instead and run it differently using the **config variables**.
+
 ![Generic_Pipeline](img/generic_pipeline.png)
 
 This process of creating generic framework helps enterprises speed up the development process by making the existing building blocks reusable. Now let's try to see how you can parameterize any gem for building generic frameworks.
