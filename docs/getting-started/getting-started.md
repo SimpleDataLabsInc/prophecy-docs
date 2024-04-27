@@ -11,7 +11,7 @@ Prophecy offers a few different ways to sign up: public SaaS or private installa
 ### Prophecy's public SaaS offering on the cloud
 
 - [**Prophecy's Enterprise trial**](https://app.prophecy.io/metadata/auth/signup) - try out Prophecy's software-as-a-service offering free for for 21 days. Connect to your data, or opt for the Prophecy-provided Databricks account.
-  [![Signup](./img/Signup.png)](https://app.prophecy.io/metadata/auth/signup)
+  [![Signup](./img/Snow1_signup.png)](https://app.prophecy.io/metadata/auth/signup)
 
 - **Prophecy via Databricks Partner Connect** - try out Prophecy's SaaS offering via an existing Databricks account. The following video shows how to get started with Prophecy using _Partner Connect_ from your Databricks UI.
 

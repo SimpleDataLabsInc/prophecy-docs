@@ -25,7 +25,7 @@ At Prophecy, we've added [low-code SQL capabilities](https://www.prophecy.io/blo
 
 Sign up for a [Prophecy account](https://app.Prophecy.io/metadata/auth/signup) to start a 21 day trial.
 
-[![Account Creation](img/Signup.png)](https://app.prophecy.io/metadata/auth/signup)
+[![Account Creation](img/Snow1_signup.png)](https://app.prophecy.io/metadata/auth/signup)
 
 ## 2. Connect to Snowflake
 
@@ -33,21 +33,21 @@ Sign up for a [Prophecy account](https://app.Prophecy.io/metadata/auth/signup) t
 
 To connect Prophecy to Snowflake, you'll need to assemble a few items. The Snowflake URL is a combination of the Snowflake organization and account, in the following format:
 
-![URL](img/SnowURL.png)
+![URL](img/Snow2.1_URL.png)
 
 As a user, you'll login to Snowflake using your username and password credential. Prophecy will use the same credential so that the Prophecy user can obtain the same level of access for Snowflake tables. Snowflake also has a Role for each user; identify the appropriate Role for Prophecy to use.
 
-![Role](img/SnowRole.png)
+![Role](img/Snow2.2_Role.png)
 
 ### 2.2 Identify the location for materializations
 
 Identify the desired Warehouse and make sure the Warehouse is started.
 
-![Warehouse](img/SnowWarehouse.png)
+![Warehouse](img/Snow2.3_Warehouse.png)
 
 Prophecy needs a default location for materializing tables and views, etc. Identify the desired database and schema for default writes.
 
-![DbSchema](img/SnowDB.png)
+![DbSchema](img/Snow2.4_DBschema.png)
 
 ### 2.3 Setup Prophecy's Fabric
 
@@ -57,7 +57,7 @@ You can read more about Fabrics [here.](/docs/concepts/fabrics/fabrics.md)
 
 Setting up a Fabric is very straightforward because we have already identified the Snowflake URL, credentials, etc the previous steps.
 
-![CreateFabric](img/SnowCreateFabric.png)
+![CreateFabric](img/Snow2.5_CreateFabric.png)
 
 | Basic Info                                                                                                                                                                                       |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -67,7 +67,7 @@ Setting up a Fabric is very straightforward because we have already identified t
 | **4 Team** - Select a team to own this Fabric. Click the dropdown to list the teams your user is a member. If you don’t see the desired team, ask a Prophecy Administrator to add you to a team. |
 | **5 Continue** to the Provider step.                                                                                                                                                             |
 
-![SnowProviderDetails](img/SnowFabProvider.png)
+![SnowProviderDetails](img/Snow2.6_providerDetails.png)
 
 | Provider details                                                                                                                                                                                                                                                                                                                                                                       |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -92,39 +92,51 @@ Prophecy’s Project is a Git repository or a directory on Git that contains all
 
 After Fabric creation you can see one project initialized for you by default called HelloWorld_SQL. If you just want to play around with Prophecy, you can start there. However, for the purpose of this tutorial we’re going to build a brand new project from scratch.
 
-Create New Project(TODO: replace image)
+![Create New Project](img/Snow3.1_createProject.png)
 
 To create a new Project press on the **(1) Create Entity** button on the sidebar and choose **(2) Create** on the Project tile. The Project creation screen will open. Here, on the first page: we configure basic project details; and on the second page: we configure the Git repository details. Fill in the Project’s **(3) Name,** **(4) Description** (optional), and set the **(5) Project Type** to SQL. After that, select the **(6) Team** which is going to own the newly selected project. By default, you can leave the selected team to be your personal one. Finally, we choose the same **(7) Provider** as we selected in the previous step - Databricks. Once all the details are filled out correctly, you can proceed to the next step by clicking **(8) Continue.**
 
-![Git Repository Connection](img/3-2-git-repository-connection.png)
-
 Once the basic project information is filled out, it’s time to configure the Git repository on which we’re going to store our project. Git brings the best software engineering practices to traditional data engineering. It allows it’s users to version their code, collaborate with teammates easier, and setup robust productionization pipelines.
 
-### 3.2 Connect to external Git repository
+![Git Repository Connection](img/Snow3.2_connectToGit.png)
 
-![Git Repository Connection](img/3-3-git-repository-connection.png)
+| Methods for connecting to Git                                                |
+| ---------------------------------------------------------------------------- |
+| **1 Prophecy Managed Git Credentials** - Not supported for this use case.    |
+| **2 Connect to External Git** - click to connect to an external Git account. |
+
+### 3.1 Connect to external Git repository
+
+![Git Repository Connection](img/Snow3.3_SelectGitProvider.png)
 
 When connecting to external Git repositories, you have to first setup a Git connection with Prophecy. This can be done in two ways:
 
-1. For GitHub - with single click connection (through GitHub OAuth)
-2. For other Git providers (e.g. Bitbucket, GitLab, etc) - by providing a Personal Access Token
+| Connect to external Git repos                                                                      |
+| -------------------------------------------------------------------------------------------------- |
+| **1 For GitHub** - with single click connection (through GitHub OAuth)                             |
+| **2 For other Git providers (e.g. Bitbucket, GitLab, etc)** - by providing a Personal Access Token |
 
-#### 3.2.1 Connecting with GitHub
+#### 3.1.1 Connecting with GitHub
 
-![Connect With Github](img/3-4-connect-with-github.png)
+![Connect With Github](img/Snow3.3_LinkAndAuthorize.png)
 
-If you have an existing GitHub account this process is very simple, thanks to Prophecy’s strong OAuth GitHub integration. If you don’t, you can create an account at [Github.com](http://github.com).
+If you have an existing GitHub account this process is very simple, thanks to Prophecy’s strong OAuth GitHub integration. If you don’t have an account, you can create one at [Github.com](http://github.com).
 
-Each Git connection in Prophecy starts with an **(1) Alias** that’s going to be used to allow you to identify the right Git account. In most cases, this can be left as default. With that set click **(2) Login** with GitHub which will redirect you to a GitHub login page (if you’re not yet logged in). Enter your details and **(3) Sign in** or create a new account. From there, you’ll be asked to approve Prophecy as a valid application.
+| Link and Authorize                                                                                                                                                                             |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **1 Alias** - Each Git connection in Prophecy starts with an **(1) Alias** that’s going to be used to allow you to identify the right Git account. In most cases, this can be left as default. |
+| **2 Login with Github** - redirects you to a GitHub login page (if you're not yet logged in).                                                                                                  |
+| **3 Sign in** - or create a new GitHub account.                                                                                                                                                |
+| **4 Authorize** - Authorize SimpleDataLabs (legal organization name of Prophecy.io). Here you are asked to approve Prophecy as a valid organization.                                           |
+| **5 Connect** - to save the Git connection.                                                                                                                                                    |
 
-Please note, that Prophecy will not store any information, beyond basic user details (like email) and repository content (only queried at your explicit permission for each repository).
+Please note that Prophecy will not store any information beyond basic user details (like email) and repository content (only queried at your explicit permission for each repository).
 
 If you’d like to connect Prophecy to one of your GitHub organizations, make sure those are approved in the Organization access section.
 
-Once done, press on **(4) Authorize** SimpleDataLabsInc (legal organization name of Prophecy.io). The tab should be automatically closed and you’ll be redirected back to Prophecy, which will mark the connection as complete. If for some reason this hasn’t happened (which can happen if you switched between other tabs), simply try clicking on the \*\*(2) Login with GitHub again.
+The tab should be automatically close and you’ll be redirected back to Prophecy, which will mark the connection as complete. If for some reason this hasn’t happened (which can happen if you switched between other tabs), simply try clicking on the **(2) Login** with GitHub again.
 
-Finally, click **(5) Connect** to save the Git connection.
-Choose the repository(TODO: replace image)
+![Choose the repository](img/Snow3.4_ChooseRepoOpenProject.png)
 
 Once your GitHub account is setup, select a repository where Prophecy will store all the code for this project. Choose a **(1) Repository** from the dropdown available. If you’d like to create a new repository from scratch follow [this guide.](https://docs.github.com/en/get-started/quickstart/create-a-repo)
 
@@ -134,9 +146,9 @@ Sometimes, you might want to load a project that’s within a specific subpath o
 
 Finally, click **(4) Continue** and your main project page will open.
 
-#### 3.2.2 Connecting with any other Git
+#### 3.1.2 Connecting with any other Git
 
-![Connect With Other Git](img/3-6-connect-with-other-git.png)
+![Connect With Other Git](img/Snow3.5_SelectOtherGitProvider.png)
 
 To establish Git connection with any other Git provider, simply choose the provider from the **(1) Git Provider** list or select Other. Setup steps for most providers are the same, as they follow standard secure Git protocol.
 
@@ -148,7 +160,7 @@ Each provider is going to use a slightly different process to generate Personal 
 
 Finally, click **(6) Connect** to save the Git connection.
 
-Choose the repository(TODO: replace Image)
+![Choose the repository](img/Snow3.4_ChooseRepoOpenProject.png)
 
 Once your GitHub account is setup, populate the **(1) Repository** field with an HTTPS URL to a Git repository you’d like to pull.
 
