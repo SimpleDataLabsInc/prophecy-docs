@@ -19,7 +19,7 @@ tags:
 #### Parametrized Gems in Spark
 
 Many enterprises use generic Pipelines that act like frameworks. These Pipelines have the same basic transformation rules but work with files that have different schemas. They generally have different output columns, computed using different expressions.
-To help with this, Prophecy now lets you completely parameterize your transformation gems. This means the logic for all the expressions along with output columns can come from a Pipeline config. So, you can use one Pipeline as a framework and run it with different setups. Learn more about this feature [here](../../low-code-spark/expression-builder.md).
+To help with this, Prophecy now lets you completely parameterize your transformation gems. This means the logic for all the expressions along with output columns can come from a Pipeline config. So, you can use one Pipeline as a framework and run it with different setups. Learn more about this feature [here](../../low-code-spark/parameterized-gems.md).
 
 #### Copilot Fix It for Spark and SQL expressions
 
