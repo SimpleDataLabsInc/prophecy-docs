@@ -29,7 +29,7 @@ We'll take you step by step from account setup to developing your first model. B
 
 Creating your first account on Prophecy is very simple. Go to [app.prophecy.io](https://app.Prophecy.io/metadata/auth/signup) to Sign-up for an initial 21-day trial. After you’ve tried the product for 21 days, simply reach out to us at Contact.us@Prophecy.io and we will help pick the best offering for you.
 
-[![Account Creation](img/1-1-account-creation.png)](https://app.prophecy.io/metadata/auth/signup)
+[![Account Creation](img/Snow1_signup.png)](https://app.prophecy.io/metadata/auth/signup)
 
 ## 2. Connect to Databricks
 
