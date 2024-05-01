@@ -1,6 +1,6 @@
 ---
-title: Airflow with Databricks
-id: airflow-with-databricks
+title: Spark and SQL Jobs with Airflow
+id: airflow
 description: A tutorial on using Low-code Airflow
 sidebar_position: 3
 tags:
@@ -21,13 +21,18 @@ Moreover, you have the flexibility to enhance functionality by incorporating you
 
 #### In this quick-start, we will show you how to use Prophecy Managed Airflow to Run and schedule your Spark and SQL Pipelines
 
-We'll take you step by step from connecting your Databricks to Prophecy Managed Airflow to creating your first [Airflow DAG](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html) and scheduling it.
+We'll take you step by step from connecting your compute cluster or warehouse to Prophecy Managed Airflow to creating your first [Airflow DAG](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html) and scheduling it.
 By the end of this training, you'll have an understanding of Airflow DAGs, be able to use our Visual interface to quickly create your DAG, and schedule this DAG on Prophecy Hosted Airflow. Let's dig in!
 
 #### You will need
 
 - Databricks Account
 - A Prophecy Project With Spark Pipeline or SQL Model running on Databricks
+
+OR
+
+- Snowflake Account
+- A Prophecy Project with SQL Model running on Snowflake
 
 If you don't have an existing project, please check out [this guide](https://docs.prophecy.io/concepts/project/#1-create-new-project) for setting up a Spark Project, and [this guide](/docs/getting-started/getting-started-with-low-code-sql.md) for setting up a SQL model in Prophecy.
 
@@ -93,6 +98,17 @@ Once done, click **(4) Save**.
 
 ![Ad_DB_SQL_connection.png](img/3.7_DB_Sql_connection.png)
 
+### 1.5 Adding Snowflake SQL Connection
+
+To be able to Run your Snowflake SQL Models, you need to have connection from Prophecy Managed Airflow to your Snowflake SQL Environment.
+Click again on Add Connection button.
+
+![Add_SF_SQL_connection](img/3.8_SF_Sql_connection.png)
+
+Select Snowflake SQL in **(1) Connection Type**. Now under the **(2) Fabric**, you would select the already created Fabric for Snowflake SQL and Prophecy would setup the connection.
+You can provide a description in the **(3) Description**.
+Once done, click **(4) Save**.
+
 After adding all connections, click **(1) Complete**.
 
 ![Complete_fabric](img/3.8_Complete_fabric.png)
@@ -107,7 +123,7 @@ Let's see how to create an Airflow Job in Prophecy.
 
 Click the **(1) Create Entity** button, and choose **(2) Create Job** option.
 
-In the side drawer that opens, you would provide the Basic Info of the Job. Start by selecting the **(1) Project** in which you want to create the Job. You can pick the existing Databricks Spark or SQL project here where you have created Pipelines/Models.
+In the side drawer that opens, you would provide the Basic Info of the Job. Start by selecting the **(1) Project** in which you want to create the Job. You can pick the existing Spark or SQL project here where you have created Pipelines/Models.
 Then pick your development **(2) Branch**. Here you can pick an existing branch for development, or create a new one. Provide a **(3) Name** and pick **Airflow** in the **(4) Scheduler**. Select the **(5) Fabric** we created in Step 1.
 Pick a **(6) Schedule** with which you want to schedule the Job. Please note, you can modify this again after testing before releasing your Job.
 Add a **(7) Description**, about the Job you are creating. Once done, click **(8) Create New**.
@@ -142,7 +158,7 @@ Once done, Click **(5) Save**!
 
 ### 2.3 Adding Spark Pipeline Gem
 
-Click on **(1) Operators**, and Drag the **(2) Pipeline Gem** from the dropdown to the canvas. Drag it close to the output port of the Email Gem, so that it gets auto-connected. Then click the newly added Gem and click **(3) Open** to open the Gem Configurations.
+If you have a Spark Databricks connection and a Spark Project with Pipeline, you can include Spark Pipeline Gems in the Job. Click on **(1) Operators**, and Drag the **(2) Pipeline Gem** from the dropdown to the canvas. Drag it close to the output port of the Email Gem, so that it gets auto-connected. Then click the newly added Gem and click **(3) Open** to open the Gem Configurations.
 
 ![Add_Pipeline_Gem](img/3.14_Add_pipeline_gem.png)
 
@@ -162,13 +178,13 @@ Click on **(1) Operators**, and Drag the **(2) DBT Gem** from the dropdown to th
 Here, you will select the DBT Project/Model to Schedule, what SQL Fabric to schedule it on, and other additional properties for running a DBT model.
 
 Select the **(1) DBT commands** you want to run when scheduling your Models. You can select all ([Dependencies](https://docs.prophecy.io/low-code-spark/pubsub/#project-dependency), [Seed](https://docs.prophecy.io/getting-started/sql-with-databricks/#431-create-seeds), Run and Test) here.
-Select the **(2) DBT Project to Schedule**. And then select the **(3) SQL Warehouse Fabric** to schedule the Module on. Please select the Fabric for which connection was created in Step 1.4.
+Select the **(2) DBT Project to Schedule**. And then select the **(3) SQL Warehouse Fabric** to schedule the Module on. Please select the Fabric for which connection was created in Step 1.4 or 1.5.
 In **(4) Git reference**, select if you want to schedule a particular commit/tag or branch. Here you can select `branch` for this guide and then in **(5) Reference Value** give the current branch name you are working on.
 You can provide any additional **(6) Properties** for your run and then click **(7) Save**!!
 
 ![Add_DBT_gem_details](img/3.17_Add_DBT_gem_details.png)
 
-Congratulations!!! And just like that, you have created a very simple Airflow Job with one Databricks Pipeline/Model Task.
+Congratulations!!! And just like that, you have created a very simple Airflow Job with one Databricks Pipeline Task and one DBT Model Task.
 
 Let's go ahead and see how to Run and Schedule it.
 
