@@ -312,6 +312,14 @@ Now that our model is fully defined, with all the logic specified, it’s time t
 
 Prophecy makes interactively testing the models incredibly easy! Simply click on the **(1) Play** button on any of the Gems and the model with all of it’s upstream dependencies will be executed. Once the model runs, the **(2) Result** icon appears. Click the Result icon to view a **(3) Sample** set of records.
 
+NEW SECTION -replace with copilot - COPILOT GENERATES CODE THAT IS HIGHLY STANDARDIZED AND WELL DOCUMENTED. Visual and code representations are equivalent. Modify visually or at the code view.
+
+NEW SECTION - replace with copilot - COPILOT MAKES suggestions at the code view too.
+
+NEW SECTION - copilot can fix errors
+
+NEW SECTION - copilot can EXPLAIN - document a model, define a commit message
+
 ## 5. Integration - TODO: walkthrough commit and release or link to another page
 
 ## What’s next?
