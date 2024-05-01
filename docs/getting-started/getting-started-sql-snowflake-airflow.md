@@ -1,6 +1,6 @@
 ---
-title: SQL with Snowflake and Airflow
-id: sql-with-snowflake-and-airflow
+title: SQL with Snowflake
+id: sql-with-snowflake
 description: A tutorial on using Low-code SQL
 sidebar_position: 2
 draft: true
@@ -312,12 +312,10 @@ Now that our model is fully defined, with all the logic specified, it’s time t
 
 Prophecy makes interactively testing the models incredibly easy! Simply click on the **(1) Play** button on any of the Gems and the model with all of it’s upstream dependencies will be executed. Once the model runs, the **(2) Result** icon appears. Click the Result icon to view a **(3) Sample** set of records.
 
-## 5. Job Orchestration on Airflow
+## What’s next?
 
-### 5.1 Setup Airflow
+Great work! 🎉
 
-### 5.2 Schedule a Job
+You've successfully set up, developed, tested, and deployed your first SQL project on a Snowflake Warehouse. Most Snowflake users want to schedule jobs using Airflow. Use this [guide](./getting-started-with-low-code-airflow.md) to schedule SQL models integrated with your Spark Pipelines, S3 file sensors, etc.
 
-## 6. Deployment and Monitoring
-
-##
+If you ever encounter any difficulties, don't hesitate to reach out to us (Contact.us@Prophecy.io) or join our [Slack community](https://prophecy-io-support.slack.com/join/shared_invite/zt-moq3xzoj-~5MSJ6WPnZfz7bwsqWi8tQ#/shared-invite/email) for assistance. We're here to help!
