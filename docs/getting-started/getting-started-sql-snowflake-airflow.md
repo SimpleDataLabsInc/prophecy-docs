@@ -242,7 +242,7 @@ Here we create customers_nations model that’s going to enrich our customers an
 
 To create a new model simply click on the **(1) + Add Model** in the sidebar, when hovering over Models section, or **(2) Create Model** button. A model creation pop-up will show up, with very similar options, as when we defined the seed, available. Enter the **(3) Model Name** and **(4) Model Path** and that’s it. Finally save the model by pressing **(5) OK.**
 
-#### 4.4.1 Drag and drop model’s graph - replace with copilot
+#### 4.4.1 Drag and drop model’s graph - replace with copilot - COPILOT can predict the next steps for me (1) predicting join table, suggesting a join, the join condition and expressions, or link to video to drag-n-drop and (2) suggesting next gems and defining them
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -311,6 +311,14 @@ Now that our model is fully defined, with all the logic specified, it’s time t
 ![Interactively run](img/4-9-interactively-run.png)
 
 Prophecy makes interactively testing the models incredibly easy! Simply click on the **(1) Play** button on any of the Gems and the model with all of it’s upstream dependencies will be executed. Once the model runs, the **(2) Result** icon appears. Click the Result icon to view a **(3) Sample** set of records.
+
+NEW SECTION -replace with copilot - COPILOT GENERATES CODE THAT IS HIGHLY STANDARDIZED AND WELL DOCUMENTED. Visual and code representations are equivalent. Modify visually or at the code view.
+
+NEW SECTION - replace with copilot - COPILOT MAKES suggestions at the code view too.
+
+NEW SECTION - copilot can fix errors
+
+NEW SECTION - copilot can EXPLAIN - document a model, define a commit message
 
 ## 5. Job Orchestration on Airflow
 
