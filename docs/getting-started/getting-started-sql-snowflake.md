@@ -282,15 +282,35 @@ Clicking on any of the Gems shows these options.
 
 Let’s start by building the **Join** transformation. Upon opening the Gem, you can see a drawer pop-up which provides several helpful features. For transparency, you can always see the **(1) Input schema** on the left hand-side, **(4) Errors** in the footer, and have the ability to **(5) Run** the Gem on the top right.
 
-To fill-in our **(3) Join condition** within the **(2) Conditions** section, type `nation.n_nationkey = customers.c_nationkey`. The following condition, for every single customer, finds a nation based on the c_nationkey field.
+To fill-in our **(3) Join condition** within the **(2) Conditions** section, type `nation.n_nationkey = customers.c_nationkey`. This condition finds a nation based on the c_nationkey feild for every single customer.
 
 When you’re writing your expressions, you’ll be able to see expression builder, which shows you available functions and columns to speed up your development. Whenever the autocomplete appears, press ↑, ↓ to navigate between the suggestions and press tab to accept the suggestion.
 
 The **(6) Expressions** tab allows you to define a set of output columns that are going to be returned from the Gem. Here we leave it empty, which by default, passes through all the input columns, from both of the joined sources, without any modifications.
 
-To rename our Gem to describe its functionality, click on it’s **(7) Name** and modify manually or try the **Auto-label** option. Note, that Gem names are going to be used as query names, which means that they should be concise and composed of alphanumeric characters with no spaces.
+To rename our Gem to describe its functionality, click on it’s **(7) Name** and modify or try the **Auto-label** option. Note, that Gem names are going to be used as query names, which means that they should be concise and composed of alphanumeric characters with no spaces.
 
 Once done, press **(8) Save.**
+
+#### Code view
+
+The visual developers will appreciate the drag-n-drop canvas, but sometimes it's also nice to view the code. Already Prophecy is creating highly performant code behind the scenes. Just click the **Code View** to reveal the SQL queries we've generated using our visual design editor. Each Gem is represented by a CTE or subquery. For example, the Join Gem `NATIONS_CUSTOMERS` is highlighted in both visual and code views.
+
+![ToggleToCode](./img/Snow4.6_toggleVisualCode.png)
+
+You may wish to edit the code view - give it a try! Add a SQL statement in the code view and notice the visual editor displays the updated code. For example, we've added a limit statement in the code view, and a new limit Gem appears in the visual view.
+
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://fast.wistia.net/embed/iframe/n0b5n5kdtf?videoFoam=true" title="Edit Code Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
+
+Coming soon, you'll see code suggestions in the code editor. Copilot helps write SQL queries in the code editor and in the visual editor.
+
+![CodeSuggestions](./img/SnowCodeSuggestions.png)
+
+NEW SECTION - replace with copilot - next best step
 
 #### Aggregate definition - replace with copilot
 
@@ -312,15 +332,13 @@ Now that our model is fully defined, with all the logic specified, it’s time t
 
 Prophecy makes interactively testing the models incredibly easy! Simply click on the **(1) Play** button on any of the Gems and the model with all of it’s upstream dependencies will be executed. Once the model runs, the **(2) Result** icon appears. Click the Result icon to view a **(3) Sample** set of records.
 
-NEW SECTION -replace with copilot - COPILOT GENERATES CODE THAT IS HIGHLY STANDARDIZED AND WELL DOCUMENTED. Visual and code representations are equivalent. Modify visually or at the code view.
-
-NEW SECTION - replace with copilot - COPILOT MAKES suggestions at the code view too.
-
 NEW SECTION - copilot can fix errors
 
 NEW SECTION - copilot can EXPLAIN - document a model, define a commit message
 
-## 5. Integration - TODO: walkthrough commit and release or link to another page
+## 5. Integration
+
+Once you've defined the model, interactively tested, and you'd like to integrate your work with your team, it's time to Commit your changes to Git. It's a good thing you've been working on your "development branch" for this guide, because now you'll step through the process of combining your hard work with the rest of your team on the "main branch." This process involves commit, pull, merge, and release and is detailed [here](/docs/metadata/git.md#how-to-commit-changes). This process is called "integration" and is a best practice in the software development world. Prophecy guides your team's integration - with version control, tagged releases, and lets multiple individuals contribute to the same project - so you can focus on solving your business problems.
 
 ## What’s next?
 
