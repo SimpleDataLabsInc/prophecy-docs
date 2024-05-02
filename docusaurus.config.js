@@ -49,17 +49,16 @@ const config = {
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    (
-      {
+    ({
       zoom: {
-        selector: '.markdown > img',
+        selector: ".markdown > img",
         background: {
-          light: 'rgb(255, 255, 255)',
-          dark: 'rgb(50, 50, 50)'
-        }
+          light: "rgb(255, 255, 255)",
+          dark: "rgb(50, 50, 50)",
+        },
       },
       imageZoom: {
-        selector: '.markdown img',
+        selector: ".markdown img",
       },
       navbar: {
         title: "",
@@ -130,7 +129,7 @@ const config = {
     }),
 
   plugins: [
-    ["docusaurus-plugin-image-zoom",], 
+    ["@docusaurus/plugin-image-zoom"],
     [
       "@docusaurus/plugin-client-redirects",
       {
