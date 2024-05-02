@@ -79,7 +79,7 @@ To allow for interactive code execution Prophecy can connect to either [Databric
 
 #### Databricks
 
-![Prophecy <> Databricks Connectivity](./img/arch_databricks.png)
+![Prophecy to Databricks Connectivity](./img/arch_databricks.png)
 
 Prophecy connects to Databricks using [Rest API](https://docs.databricks.com/dev-tools/api/latest/index.html). Each [Fabric](../../concepts/fabrics) defined in Prophecy connects to a single [Databricks workspace](https://docs.databricks.com/workspace/index.html) and each user is required to provide a [personal access token](https://docs.databricks.com/dev-tools/api/latest/authentication.html) to authenticate to it.
 
