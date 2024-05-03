@@ -219,7 +219,7 @@ The seed initializes by default empty. To define the value simply copy and paste
 For the purpose of this tutorial, create a nation seed, with the following content:
 
 ```
-n_nationkey,n_name,n_regionkey,n_comment
+NATIONKEY,NAME,REGIONKEY,COMMENT
 0,ALGERIA,0,Vast Sahara; oil-rich and culture-rich.
 1,ARGENTINA,1,Tango; beef; Patagonia.
 2,BRAZIL,1,Amazon; Carnival; soccer.
@@ -242,25 +242,35 @@ Here we create customers_nations model that’s going to enrich our customers an
 
 To create a new model simply click on the **(1) + Add Model** in the sidebar, when hovering over Models section, or **(2) Create Model** button. A model creation pop-up will show up, with very similar options, as when we defined the seed, available. Enter the **(3) Model Name** and **(4) Model Path** and that’s it. Finally save the model by pressing **(5) OK.**
 
-#### 4.4.1 Drag and drop model’s graph - replace with copilot
+#### 4.4.1 Build the Model's graph with Copilot
+
+Building your model is very simple - there are suggestions at every step, which you can keep or adjust. In the videos below, we’re doing the following in our newly defined `customer_nations` model:
+
+1. First we select a source of interest from the **Environment** tab, the `customers` table. Right away we notice there are suggestions for additional tables that might be of interest when working with the `customers` table.
+2. Then we select another table, in this case the `nations` seed.
+3. Note, that when two sources are dragged closely to each other a **Join** component is automatically created (as demonstrated on the video). The Join condition is suggested for us, and we'll keep that suggestion.
+
+##### 4.4.1.1 Suggested Sources
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://fast.wistia.net/embed/iframe/mpmqdg1ifx?videoFoam=true" title="Drag and Drop Model Graph Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+<iframe src="https://fast.wistia.net/embed/iframe/qamro53jwc?videoFoam=true" title="Drag and Drop Model Graph Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-Building your model is very simple, thanks to the drag-and-drop interface. In the video above, we’re doing the following, in our newly defined `customer_nations` model:
+Note: dragging a source will prompt Copilot to suggest seeds and sources. Seeds in particular are intended for quick tests, so dragging a seed will only prompt Copilot to suggest other seeds.
 
-1. First we add the `nation` seed, that we’ve previously defined, by dragging and dropping it on the canvas.
-2. Then we add a table from an **Environment.** We click on the **Environment** tab in the left sidebar and drag the customer table from the `snowflake_sample_data.tpch` database and schema to the canvas.
-3. Note, that when two sources are dragged closely to each other a **Join** component is automatically created (as demonstrated on the video).
-4. Then we drag and drop an **Aggregate** component from the Transform Gems drawer and connect it to the upstream **Join** component.
-5. Finally connect your **Aggregate** to the **TargetModel** that defines your view itself.
+#### 4.4.1.2 Select Table and Join Condition is suggested
 
-#### 4.4.2 Define business logic - replace with copilot
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://fast.wistia.net/embed/iframe/wo344ksiov?videoFoam=true" title="Drag and Drop Model Graph Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-Once we have dragged and dropped all the relevant Gems (transformations) on our canvas, it’s time to fill in the business logic.
+#### 4.4.2 Option to define the Join
+
+If the suggested Gems are not exactly what we need, we can just drag-and-drop components to the canvas and fill in the business logic.
 
 ![Edit Gem](img/Snow4.5_editGem.png)
 
@@ -276,11 +286,11 @@ Clicking on any of the Gems shows these options.
 
 **(5) See errors** - To see errors related to your Gem, hover over the red icon next to the Gem. If there’s no red icon, that means your Gem has no errors and is good to go!
 
-#### Join definition - replace with copilot
+Sometimes we'll want to specify the **Join** transformation by changing the Copilot suggestion or creating our own. Upon opening the Gem, you can see a drawer pop-up which provides several helpful features.
 
 ![Join definition](img/Snow4.5_JoinCondition.png)
 
-Let’s start by building the **Join** transformation. Upon opening the Gem, you can see a drawer pop-up which provides several helpful features. For transparency, you can always see the **(1) Input schema** on the left hand-side, **(4) Errors** in the footer, and have the ability to **(5) Run** the Gem on the top right.
+For transparency, you can always see the **(1) Input schema** on the left hand-side, **(4) Errors** in the footer, and have the ability to **(5) Run** the Gem on the top right.
 
 To fill-in our **(3) Join condition** within the **(2) Conditions** section, type `nation.n_nationkey = customers.c_nationkey`. This condition finds a nation based on the c_nationkey feild for every single customer.
 
@@ -292,7 +302,47 @@ To rename our Gem to describe its functionality, click on it’s **(7) Name** an
 
 Once done, press **(8) Save.**
 
-#### Code view
+#### 4.4.3 Aggregate with Copilot suggestions
+
+Let's define an english prompt explaining the **next best step** you'd like for the model. Copilot suggests meaningful Gems (transformations), and we can explore to decide if we want to keep the suggestion. If you're looking for a particular expression, open a Gem and start typing a desired column name to see suggestions in the **Expression Builder.**
+
+##### 4.4.3.1 Next best step
+
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://fast.wistia.net/embed/iframe/ayblbrnitr?videoFoam=true" title="Drag and Drop Model Graph Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
+
+##### 4.4.3.2 Expression Builder
+
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://fast.wistia.net/embed/iframe/qjer3rxano?videoFoam=true" title="Drag and Drop Model Graph Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
+
+#### 4.4.3.3 Option to define the Aggregate logic
+
+Of course it's always possible to define transformations in the easy-to-use interface. Here let’s define the transformation logic for our **Aggregate** Gem, which will sum up the number of customers within each of the geographical locations and return a clean set of columns.
+
+![Aggregate definition](img/4-8-aggregate-definition.png)
+
+Within the **(1) Aggregate** tab define the following expressions on the **(2) Expressions** List. Most importantly, we create the `customers` column by counting customers using the `count(c_custkey)` expression. We also add two columns `name` and `nation_key`, that describe the selected location. Note, that to easily add columns you can simply click on them in the schema browser on the left side.
+
+Once the aggregation expressions are specified, we can consider grouping by a particular column. Switch to the Group By tab, and type in n_nationkey .
+
+Finally, we **(3) Rename** our Gem to `count_customers` and **(4) Save** it.
+
+#### 4.5 Interactively test
+
+Now that our model is fully defined, with all the logic specified, it’s time to test it.
+
+![Interactively run](img/4-9-interactively-run.png)
+
+Prophecy makes interactively testing the models incredibly easy! Simply click on the **(1) Play** button on any of the Gems and the model with all of it’s upstream dependencies will be executed. Once the model runs, the **(2) Result** icon appears. Click the Result icon to view a **(3) Sample** set of records.
+
+## 5. Code view
 
 The visual developers will appreciate the drag-n-drop canvas, but sometimes it's also nice to view the code. Already Prophecy is creating highly performant code behind the scenes. Just click the **Code View** to reveal the SQL queries we've generated using our visual design editor. Each Gem is represented by a CTE or subquery. For example, the Join Gem `NATIONS_CUSTOMERS` is highlighted in both visual and code views.
 
@@ -302,7 +352,7 @@ You may wish to edit the code view - give it a try! Add a SQL statement in the c
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://fast.wistia.net/embed/iframe/n0b5n5kdtf?videoFoam=true" title="Edit Code Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+<iframe src="https://fast.wistia.net/embed/iframe/gpb6yu0bxv?videoFoam=true" title="Edit Code Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
@@ -310,35 +360,22 @@ Coming soon, you'll see code suggestions in the code editor. Copilot helps write
 
 ![CodeSuggestions](./img/SnowCodeSuggestions.png)
 
-NEW SECTION - replace with copilot - next best step
+## 6. Team considerations
 
-#### Aggregate definition - replace with copilot
+### 6.1 Document
 
-![Aggregate definition](img/4-8-aggregate-definition.png)
+Sometimes you'll want to share your project with your team, and you'll want to explain how the project works. Copilot helps by creating an understandable explanation for the model. Click **Explain** for each Model you'd like to document in your project.
 
-Next, let’s define the transformation logic for our **Aggregate** Gem, which will sum up the number of customers within each of the geographical locations and return a clean set of columns.
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://fast.wistia.net/embed/iframe/9r86rl0lbz?videoFoam=true" title="Edit Code Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
+This is a big time saver! Once you've defined the model, interactively tested, and you'd like to integrate your work with your team, it's time to Commit your changes to Git.
 
-Within the **(1) Aggregate** tab define the following expressions on the **(2) Expressions** List. Most importantly, we create the `customers` column by counting customers using the `count(c_custkey)` expression. We also add two columns `name` and `nation_key`, that describe the selected location. Note, that to easily add columns you can simply click on them in the schema browser on the left side.
+### 6.2 Integration
 
-Once the aggregation expressions are specified, we can consider grouping by a particular column. Switch to the Group By tab, and type in n_nationkey .
-
-Finally, we **(3) Rename** our Gem to `count_customers` and **(4) Save** it.
-
-#### 4.4.3 Interactively test
-
-Now that our model is fully defined, with all the logic specified, it’s time to test it.
-
-![Interactively run](img/4-9-interactively-run.png)
-
-Prophecy makes interactively testing the models incredibly easy! Simply click on the **(1) Play** button on any of the Gems and the model with all of it’s upstream dependencies will be executed. Once the model runs, the **(2) Result** icon appears. Click the Result icon to view a **(3) Sample** set of records.
-
-NEW SECTION - copilot can fix errors
-
-NEW SECTION - copilot can EXPLAIN - document a model, define a commit message
-
-## 5. Integration
-
-Once you've defined the model, interactively tested, and you'd like to integrate your work with your team, it's time to Commit your changes to Git. It's a good thing you've been working on your "development branch" for this guide, because now you'll step through the process of combining your hard work with the rest of your team on the "main branch." This process involves commit, pull, merge, and release and is detailed [here](/docs/metadata/git.md#how-to-commit-changes). This process is called "integration" and is a best practice in the software development world. Prophecy guides your team's integration - with version control, tagged releases, and lets multiple individuals contribute to the same project - so you can focus on solving your business problems.
+It's a good thing you've been working on your "development branch" for this guide, because now you'll step through the process of combining your hard work with the rest of your team on the "main branch." This process involves commit, pull, merge, and release and is detailed [here](/docs/metadata/git.md#how-to-commit-changes). This process is called "integration" and is a best practice in the software development world. Prophecy guides your team's integration - with version control, tagged releases, and lets multiple individuals contribute to the same project - so you can focus on solving your business problems.
 
 ## What’s next?
 
