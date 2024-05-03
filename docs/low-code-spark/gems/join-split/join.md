@@ -84,6 +84,9 @@ Join hints allow users to suggest the join strategy that Spark should use. For a
 ![Example usage of Join - Join with hints](./img/join_with_hints.png)
 
 ````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 <Tabs1>
 <TabItem value="py" label="Python">
 
@@ -146,6 +149,9 @@ export const ImageData = [
 ```
 
 ````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 <Tabs2>
 <TabItem value="py" label="Python">
 
