@@ -13,13 +13,12 @@ tags:
 
 At Prophecy, we've added [low-code SQL capabilities](https://www.prophecy.io/blog/announcing-prophecy-3-0-low-code-sql-transformations) to our platform, so users can build highly performant queries on par with the best analytics engineers without needing to be coding experts. We built this feature on top of [dbt Core™️ ](https://github.com/dbt-labs/dbt-core), an open-source tool for managing SQL-based data transformations. With low-code SQL, our customers can build complex queries visually, and the tool automatically translates them into optimized SQL code in Git that’s fully open and accessible to all. This makes it simpler for more people to work with data and extract insights.
 
-#### This quick start gets you up and running with low-code SQL on Snowflake and low-code Jobs on Airflow
+This quick start gets you up and running with low-code SQL on Snowflake. After completing this guide you'll be ready to schedule SQL jobs on [Airflow](getting-started-with-low-code-airflow.md)
 
 #### You will need
 
 - Snowflake Account
 - Github Account (recommended)
-- Airflow - MWAA or Composer (optional)
 
 ## 1. Setup Prophecy account
 
@@ -57,30 +56,39 @@ You can read more about Fabrics [here.](/docs/concepts/fabrics/fabrics.md)
 
 Setting up a Fabric is very straightforward because we have already identified the Snowflake URL, credentials, etc the previous steps.
 
-![CreateFabric](img/Snow2.5_CreateFabric.png)
+![CreateFabric](img/Snow2.5_createFabric.png)
 
-| Basic Info                                                                                                                                                                                       |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **1 Click** - to add a new entity.                                                                                                                                                               |
-| **2 Create** - a new Fabric.                                                                                                                                                                     |
-| **3 Fabric Name** - Specify a name, like devSnowflake, for your Fabric. “dev” or “prod” are helpful descriptors for this environment setup. Also specify a description (optional).               |
-| **4 Team** - Select a team to own this Fabric. Click the dropdown to list the teams your user is a member. If you don’t see the desired team, ask a Prophecy Administrator to add you to a team. |
-| **5 Continue** to the Provider step.                                                                                                                                                             |
+**(1) Click** - to add a new entity.
+
+**(2) Create** - a new Fabric.
+
+**(3) Fabric Name** - Specify a name, like devSnowflake, for your Fabric. “dev” or “prod” are helpful descriptors for this environment setup. Also specify a description (optional)
+
+**(4) Team** - Select a team to own this Fabric. Click the dropdown to list the teams your user is a member. If you don’t see the desired team, ask a Prophecy Administrator to add you to a team.
+
+**(5) Continue** - to the Provider step.
 
 ![SnowProviderDetails](img/Snow2.6_providerDetails.png)
 
-| Provider details                                                                                                                                                                                                                                                                                                                                                                       |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **1 Provider Type** - Select SQL as the Provider type.                                                                                                                                                                                                                                                                                                                                 |
-| **2 Provider** - Click the dropdown menu for the list of supported Provider types. Select Snowflake.                                                                                                                                                                                                                                                                                   |
-| **3 URL** - Add the Snowflake Account URL, which looks like this: https://<org\-account>.snowflakecomputing.com                                                                                                                                                                                                                                                                        |
-| **4 Username** - Add the username that Prophecy will use to connect to the Snowflake Warehouse.                                                                                                                                                                                                                                                                                        |
-| **5 Password** - Add the password that Prophecy will use to connect to the Snowflake Warehouse. These username/password credentials are encrypted for secure storage. Also, each Prophecy user will provide their own username/password credential upon login. Be sure these credentials are scoped appropriately; Prophecy respects the authorization granted to this Snowflake user. |
-| **6 Role** - Add the Snowflake [role](https://docs.snowflake.com/en/user-guide/security-access-control-overview#roles) that Prophecy will use to read data and execute queries on the Snowflake Warehouse. The role must be already granted to the username/password provided above and should be scoped according to the permission set desired for Prophecy.                         |
-| **7 Warehouse** - Specify the Snowflake warehouse for default writes for this execution environment.                                                                                                                                                                                                                                                                                   |
-| **8 Database** - Specify the desired Snowflake database for default writes for this execution environment.                                                                                                                                                                                                                                                                             |
-| **9 Schema** - Specify the desired Snowflake schema for default writes for this execution environment.                                                                                                                                                                                                                                                                                 |
-| **10 Continue** to complete the Fabric creation.                                                                                                                                                                                                                                                                                                                                       |
+**(1) Provider Type** - Select SQL as the Provider type.
+
+**(2) Provider** - Click the dropdown menu for the list of supported Provider types. Select Snowflake.
+
+**(3) URL** - Add the Snowflake Account URL, which looks like this: `https://<org>-<account>.snowflakecomputing.com`
+
+**(4) Username** - Add the username that Prophecy will use to connect to the Snowflake Warehouse.
+
+**(5) Password** - Add the password that Prophecy will use to connect to the Snowflake Warehouse. These username/password credentials are encrypted for secure storage. Also, each Prophecy user will provide their own username/password credential upon login. Be sure these credentials are scoped appropriately; Prophecy respects the authorization granted to this Snowflake user.
+
+**(6) Role** - Add the Snowflake [role](https://docs.snowflake.com/en/user-guide/security-access-control-overview#roles) that Prophecy will use to read data and execute queries on the Snowflake Warehouse. The role must be already granted to the username/password provided above and should be scoped according to the permission set desired for Prophecy.
+
+**(7) Warehouse** - Specify the Snowflake warehouse for default writes for this execution environment.
+
+**(8) Database** - Specify the desired Snowflake database for default writes for this execution environment.
+
+**(9) Schema** - Specify the desired Snowflake schema for default writes for this execution environment.
+
+**(10) Continue** - to complete the Fabric creation.
 
 :::info
 Each user can read tables from each database and schema for which they have access. The default write database and schema is set here in the Fabric.
@@ -94,27 +102,19 @@ After Fabric creation you can see one project initialized for you by default cal
 
 ![Create New Project](img/Snow3.1_createProject.png)
 
-To create a new Project press on the **(1) Create Entity** button on the sidebar and choose **(2) Create** on the Project tile. The Project creation screen will open. Here, on the first page: we configure basic project details; and on the second page: we configure the Git repository details. Fill in the Project’s **(3) Name,** **(4) Description** (optional), and set the **(5) Project Type** to SQL. After that, select the **(6) Team** which is going to own the newly selected project. By default, you can leave the selected team to be your personal one. Finally, we choose the same **(7) Provider** as we selected in the previous step - Databricks. Once all the details are filled out correctly, you can proceed to the next step by clicking **(8) Continue.**
+To create a new Project press on the **(1) Create Entity** button on the sidebar and choose **(2) Create** on the Project tile. The Project creation screen will open. Here, on the first page: we configure basic project details; and on the second page: we configure the Git repository details. Fill in the Project’s **(3) Name,** **(4) Description** (optional), and set the **(5) Project Type** to SQL. After that, select the **(6) Team** which is going to own the newly selected project. By default, you can leave the selected team to be your personal one. Finally, we choose the same **(7) Provider** as we selected in the previous step - Snowflake. Once all the details are filled out correctly, you can proceed to the next step by clicking **(8) Continue.**
 
 Once the basic project information is filled out, it’s time to configure the Git repository on which we’re going to store our project. Git brings the best software engineering practices to traditional data engineering. It allows it’s users to version their code, collaborate with teammates easier, and setup robust productionization pipelines.
 
 ![Git Repository Connection](img/Snow3.2_connectToGit.png)
 
-| Methods for connecting to Git                                                |
-| ---------------------------------------------------------------------------- |
-| **1 Prophecy Managed Git Credentials** - Not supported for this use case.    |
-| **2 Connect to External Git** - click to connect to an external Git account. |
+You'll see two options to connect to Git. **(1) Prophecy Managed Git Credentials** are not supported for this use case. You will need a Github account for this getting started guide. If you don't have one, create one by following [these instructions](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github). Select **(2) Connect to External Git** to connect to your external Git account.
 
 ### 3.1 Connect to external Git repository
 
 ![Git Repository Connection](img/Snow3.3_SelectGitProvider.png)
 
-When connecting to external Git repositories, you have to first setup a Git connection with Prophecy. This can be done in two ways:
-
-| Connect to external Git repos                                                                      |
-| -------------------------------------------------------------------------------------------------- |
-| **1 For GitHub** - with single click connection (through GitHub OAuth)                             |
-| **2 For other Git providers (e.g. Bitbucket, GitLab, etc)** - by providing a Personal Access Token |
+When connecting to external Git repositories, you have to first setup a Git connection with Prophecy. This can be done in two ways: **(1) For GitHub** with single click connection (through GitHub OAuth); **(2) For other Git providers (e.g. Bitbucket, GitLab, etc)** by providing a Personal Access Token.
 
 #### 3.1.1 Connecting with GitHub
 
@@ -122,13 +122,15 @@ When connecting to external Git repositories, you have to first setup a Git conn
 
 If you have an existing GitHub account this process is very simple, thanks to Prophecy’s strong OAuth GitHub integration. If you don’t have an account, you can create one at [Github.com](http://github.com).
 
-| Link and Authorize                                                                                                                                                                             |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **1 Alias** - Each Git connection in Prophecy starts with an **(1) Alias** that’s going to be used to allow you to identify the right Git account. In most cases, this can be left as default. |
-| **2 Login with Github** - redirects you to a GitHub login page (if you're not yet logged in).                                                                                                  |
-| **3 Sign in** - or create a new GitHub account.                                                                                                                                                |
-| **4 Authorize** - Authorize SimpleDataLabs (legal organization name of Prophecy.io). Here you are asked to approve Prophecy as a valid organization.                                           |
-| **5 Connect** - to save the Git connection.                                                                                                                                                    |
+**(1) Alias** - Each Git connection in Prophecy starts with an **Alias** that’s going to be used to allow you to identify the right Git account. In most cases, this can be left as default.
+
+**(2) Login with Github** - redirects you to a GitHub login page (if you're not yet logged in).
+
+**(3) Sign in** - or create a new GitHub account.
+
+**(4) Authorize** - Authorize SimpleDataLabs (legal organization name of Prophecy.io). Here you are asked to approve Prophecy as a valid organization.
+
+**(5) Connect** - to save the Git connection.
 
 Please note that Prophecy will not store any information beyond basic user details (like email) and repository content (only queried at your explicit permission for each repository).
 
@@ -182,7 +184,7 @@ It’s time to start building our first data transformation project!
 
 As a good teammate, we don’t want to write changes directly on the main branch of our Git repository. Every member should have their own branch on which they can freely build and play around with the project, without interrupting each other’s work. Prophecy enforces this best practice by ensuring that no changes can be made directly on the main branch.
 
-Therefore, to start development we have to create our first development branch. Start by clicking on the **(1) Checkout Branch** and type in the desired name in the **(2) Branch** field. The best branch names should be representative of the changes that you’re making, so that your colleagues can quickly identify which changes are on which branch. The best branch names should be representative of the changes, and who made them, so that your colleagues can quickly identify which changes are on which branch. A good default name is dev/{first_name} . Once you decide on the name, click **(3) Checkout.** The new branch name will be displayed in the **(4) Git footer**.
+Therefore, to start development we have to create our first development branch. Start by clicking on the **(1) Checkout Branch** and type in the desired name in the **(2) Branch** field. The best branch names should be representative of the changes that you’re making, so that your colleagues can quickly identify which changes are on which branch. The best branch names should be representative of the changes, and who made them, so that your colleagues can quickly identify which changes are on which branch. A good default name is `dev/{first_name}`. Once you decide on the name, click **(3) Checkout.** The new branch name will be displayed in the **(4) Git footer**.
 
 Note, that if the branch doesn’t exist, Prophecy creates a new branch automatically by essentially cloning what’s on the currently selected branch - therefore make sure to usually create new branch (checkout) from main. If the branch exists, the code for that branch is pulled from Git into Prophecy.
 
@@ -242,13 +244,13 @@ Here we create customers_nations model that’s going to enrich our customers an
 
 To create a new model simply click on the **(1) + Add Model** in the sidebar, when hovering over Models section, or **(2) Create Model** button. A model creation pop-up will show up, with very similar options, as when we defined the seed, available. Enter the **(3) Model Name** and **(4) Model Path** and that’s it. Finally save the model by pressing **(5) OK.**
 
-#### 4.4.1 Build the Model's graph with Copilot
+#### 4.4.1 Add Sources to the Model with Copilot
 
 Building your model is very simple - there are suggestions at every step, which you can keep or adjust. In the videos below, we’re doing the following in our newly defined `customer_nations` model:
 
 1. First we select a source of interest from the **Environment** tab, the `customers` table. Right away we notice there are suggestions for additional tables that might be of interest when working with the `customers` table.
 2. Then we select another table, in this case the `nations` seed.
-3. Note, that when two sources are dragged closely to each other a **Join** component is automatically created (as demonstrated on the video). The Join condition is suggested for us, and we'll keep that suggestion.
+3. Note, that when two sources are dragged closely to each other a **Join** component is automatically created ([link](#4.4.1.2-select-table-and-join-condition-is-suggested)). The Join condition is suggested for us, and we'll keep that suggestion.
 
 ##### 4.4.1.1 Suggested Sources
 
@@ -282,7 +284,7 @@ Clicking on any of the Gems shows these options.
 
 **(3) More** - to see more Gem configuration options, like editing comments, changing phases or deleting the Gem, click on the ... button. Please note, that to delete the selected Gem you can also press **delete / backspace** on your keyboard.
 
-**(4) Run** - runs the model upto the selected Gem. We will learn more about this in the section 4.4.3 Interactively test.
+**(4) Run** - runs the model upto the selected Gem. We will learn more about this in the section [4.5 Interactively test](#4.5-interactively-test).
 
 **(5) See errors** - To see errors related to your Gem, hover over the red icon next to the Gem. If there’s no red icon, that means your Gem has no errors and is good to go!
 
@@ -292,19 +294,19 @@ Sometimes we'll want to specify the **Join** transformation by changing the Copi
 
 For transparency, you can always see the **(1) Input schema** on the left hand-side, **(4) Errors** in the footer, and have the ability to **(5) Run** the Gem on the top right.
 
-To fill-in our **(3) Join condition** within the **(2) Conditions** section, type `nation.n_nationkey = customers.c_nationkey`. This condition finds a nation based on the c_nationkey feild for every single customer.
+To fill-in our **(3) Join condition** within the **(2) Conditions** section, type `nation.nationkey = customers.nationkey`. This condition finds a nation based on the c_nationkey feild for every single customer.
 
 When you’re writing your expressions, you’ll be able to see expression builder, which shows you available functions and columns to speed up your development. Whenever the autocomplete appears, press ↑, ↓ to navigate between the suggestions and press tab to accept the suggestion.
 
 The **(6) Expressions** tab allows you to define a set of output columns that are going to be returned from the Gem. Here we leave it empty, which by default, passes through all the input columns, from both of the joined sources, without any modifications.
 
-To rename our Gem to describe its functionality, click on it’s **(7) Name** and modify or try the **Auto-label** option. Note, that Gem names are going to be used as query names, which means that they should be concise and composed of alphanumeric characters with no spaces.
+To rename our Gem to describe its functionality, click on it’s **(7) Name** and modify or try the **Auto-label** option. Gem names are going to be used as query names, which means that they should be concise and composed of alphanumeric characters with no spaces.
 
 Once done, press **(8) Save.**
 
 #### 4.4.3 Aggregate with Copilot suggestions
 
-Let's define an english prompt explaining the **next best step** you'd like for the model. Copilot suggests meaningful Gems (transformations), and we can explore to decide if we want to keep the suggestion. If you're looking for a particular expression, open a Gem and start typing a desired column name to see suggestions in the **Expression Builder.**
+Let's define an english prompt explaining the [**next best step**](#4.4.3.1-next-best-step) you'd like for the model. Copilot suggests meaningful Gems (transformations), and we can explore to decide if we want to keep the suggestion. If you'd like suggestions for a particular expression, open a Gem and start typing a desired column name to see suggestions in the [**Expression Builder.**](#4.4.3.2-expression-builder)
 
 ##### 4.4.3.1 Next best step
 
@@ -328,9 +330,9 @@ Of course it's always possible to define transformations in the easy-to-use inte
 
 ![Aggregate definition](img/4-8-aggregate-definition.png)
 
-Within the **(1) Aggregate** tab define the following expressions on the **(2) Expressions** List. Most importantly, we create the `customers` column by counting customers using the `count(c_custkey)` expression. We also add two columns `name` and `nation_key`, that describe the selected location. Note, that to easily add columns you can simply click on them in the schema browser on the left side.
+Within the **(1) Aggregate** tab define the following expressions on the **(2) Expressions** List. Most importantly, we create the `customers` column by counting customers using the `count(custkey)` expression. We also add two columns `name` and `nation_key`, that describe the selected location. Note, that to easily add columns you can simply click on them in the schema browser on the left side.
 
-Once the aggregation expressions are specified, we can consider grouping by a particular column. Switch to the Group By tab, and type in n_nationkey .
+Once the aggregation expressions are specified, we can consider grouping by a particular column. Switch to the Group By tab, and type in `nationkey`.
 
 Finally, we **(3) Rename** our Gem to `count_customers` and **(4) Save** it.
 
@@ -371,7 +373,7 @@ Sometimes you'll want to share your project with your team, and you'll want to e
 <iframe src="https://fast.wistia.net/embed/iframe/9r86rl0lbz?videoFoam=true" title="Edit Code Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
-This is a big time saver! Once you've defined the model, interactively tested, and you'd like to integrate your work with your team, it's time to Commit your changes to Git.
+This is a big time saver! The **Explain** documentation will be committed to your repository. Once you've defined the model, interactively tested, and you'd like to integrate your work with your team, it's time to Commit your changes to Git.
 
 ### 6.2 Integration
 
