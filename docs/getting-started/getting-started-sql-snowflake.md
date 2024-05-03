@@ -284,7 +284,7 @@ Clicking on any of the Gems shows these options.
 
 **(3) More** - to see more Gem configuration options, like editing comments, changing phases or deleting the Gem, click on the ... button. Please note, that to delete the selected Gem you can also press **delete / backspace** on your keyboard.
 
-**(4) Run** - runs the model upto the selected Gem. We will learn more about this in the section [4.5 Interactively test](#4.5-interactively-test).
+**(4) Run** - runs the model upto the selected Gem. We will learn more about this in the section [4.5 Interactively Test and Fix](#4.5-interactively-test-and-fix).
 
 **(5) See errors** - To see errors related to your Gem, hover over the red icon next to the Gem. If there’s no red icon, that means your Gem has no errors and is good to go!
 
@@ -336,13 +336,29 @@ Once the aggregation expressions are specified, we can consider grouping by a pa
 
 Finally, we **(3) Rename** our Gem to `count_customers` and **(4) Save** it.
 
-#### 4.5 Interactively test
+#### 4.5 Interactively Test and Fix
 
-Now that our model is fully defined, with all the logic specified, it’s time to test it.
+Now that our model is fully defined, with all the logic specified, it’s time to make sure it works (and keeps working)!
+
+#### 4.5.1 Test
+
+You'll want to know how the data looks after each step, not just for the final table or view.
 
 ![Interactively run](img/4-9-interactively-run.png)
 
 Prophecy makes interactively testing the models incredibly easy! Simply click on the **(1) Play** button on any of the Gems and the model with all of it’s upstream dependencies will be executed. Once the model runs, the **(2) Result** icon appears. Click the Result icon to view a **(3) Sample** set of records.
+
+##### 4.5.2 FixIt
+
+If your model has some errors, perhaps introduced upstream without your knowledge, Prophecy's Copilot will suggest fixes automatically.
+
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://fast.wistia.net/embed/iframe/17q9stsz6n?videoFoam=true" title="Drag and Drop Model Graph Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
+
+The Fix with AI option appears at any point where you see an error message.
 
 ## 5. Code view
 
