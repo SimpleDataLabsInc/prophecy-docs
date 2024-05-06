@@ -1,7 +1,7 @@
 ---
-title: SQL with Snowflake
+title: Copilot for Snowflake
 id: sql-with-snowflake
-description: A tutorial on using Low-code SQL
+description: A tutorial on using Copilot for Snowflake
 sidebar_position: 2
 draft: true
 tags:
@@ -11,9 +11,13 @@ tags:
   - airflow
 ---
 
-At Prophecy, we've added [low-code SQL capabilities](https://www.prophecy.io/blog/announcing-prophecy-3-0-low-code-sql-transformations) to our platform, so users can build highly performant queries on par with the best analytics engineers without needing to be coding experts. We built this feature on top of [dbt Core™️ ](https://github.com/dbt-labs/dbt-core), an open-source tool for managing SQL-based data transformations. With low-code SQL, our customers can build complex queries visually, and the tool automatically translates them into optimized SQL code in Git that’s fully open and accessible to all. This makes it simpler for more people to work with data and extract insights.
+Prophecy's Copilot - a delightful tool for interactively building data transformations - is now fully extended to Snowflake.
 
-This quick start gets you up and running with low-code SQL on Snowflake. After completing this guide you'll be ready to schedule SQL jobs on [Airflow](getting-started-with-low-code-airflow.md)
+With Copilot for Snowflake, our customers can build complex queries visually, and the tool automatically translates them into optimized SQL code in Git. No more proprietary formats! Code in Git (representing visual designs) means more people can work with data and extract insights.
+
+We built Copilot for Snowflake on top of [dbt Core™️ ](https://github.com/dbt-labs/dbt-core), an open-source tool for managing SQL-based data transformations. Users take advantage of Git and dbt Core™️ best practices without needing to be coding experts. You'll soon notice: Copilot is not only translating visual designs to code, Copilot is also making helpful suggestions every step of the way.
+
+This quick-start gets you up and running with **building data transformations using Copilot for Snowflake.** Ready to schedule SQL queries and models? Prophecy supports [Airflow](/docs/low-code-jobs/airflow/setup/setup.md) for Job Scheduling.
 
 #### You will need
 
@@ -58,40 +62,40 @@ Setting up a Fabric is very straightforward because we have already identified t
 
 ![CreateFabric](img/Snow2.5_createFabric.png)
 
-**(1) Click** - to add a new entity.
+1. **Click** - to add a new entity.
 
-**(2) Create** - a new Fabric.
+2. **Create** - a new Fabric.
 
-**(3) Fabric Name** - Specify a name, like devSnowflake, for your Fabric. “dev” or “prod” are helpful descriptors for this environment setup. Also specify a description (optional)
+3. **Fabric Name** - Specify a name, like devSnowflake, for your Fabric. “dev” or “prod” are helpful descriptors for this environment setup. Also specify a description (optional)
 
-**(4) Team** - Select a team to own this Fabric. Click the dropdown to list the teams your user is a member. If you don’t see the desired team, ask a Prophecy Administrator to add you to a team.
+4. **Team** - Select a team to own this Fabric. Click the dropdown to list the teams your user is a member. If you don’t see the desired team, ask a Prophecy Administrator to add you to a team.
 
-**(5) Continue** - to the Provider step.
+5. **Continue** - to the Provider step.
 
 ![SnowProviderDetails](img/Snow2.6_providerDetails.png)
 
-**(1) Provider Type** - Select SQL as the Provider type.
+1. **Provider Type** - Select SQL as the Provider type.
 
-**(2) Provider** - Click the dropdown menu for the list of supported Provider types. Select Snowflake.
+2. **Provider** - Click the dropdown menu for the list of supported Provider types. Select Snowflake.
 
-**(3) URL** - Add the Snowflake Account URL, which looks like this: `https://<org>-<account>.snowflakecomputing.com`
+3. **URL** - Add the Snowflake Account URL, which looks like this: `https://<org>-<account>.snowflakecomputing.com`
 
-**(4) Username** - Add the username that Prophecy will use to connect to the Snowflake Warehouse.
+4. **Username** - Add the username that Prophecy will use to connect to the Snowflake Warehouse.
 
-**(5) Password** - Add the password that Prophecy will use to connect to the Snowflake Warehouse. These username/password credentials are encrypted for secure storage. Also, each Prophecy user will provide their own username/password credential upon login. Be sure these credentials are scoped appropriately; Prophecy respects the authorization granted to this Snowflake user.
+5. **Password** - Add the password that Prophecy will use to connect to the Snowflake Warehouse. These username/password credentials are encrypted for secure storage. Also, each Prophecy user will provide their own username/password credential upon login. Be sure these credentials are scoped appropriately; Prophecy respects the authorization granted to this Snowflake user.
 
-**(6) Role** - Add the Snowflake [role](https://docs.snowflake.com/en/user-guide/security-access-control-overview#roles) that Prophecy will use to read data and execute queries on the Snowflake Warehouse. The role must be already granted to the username/password provided above and should be scoped according to the permission set desired for Prophecy.
+6. **Role** - Add the Snowflake [role](https://docs.snowflake.com/en/user-guide/security-access-control-overview#roles) that Prophecy will use to read data and execute queries on the Snowflake Warehouse. The role must be already granted to the username/password provided above and should be scoped according to the permission set desired for Prophecy.
 
-**(7) Warehouse** - Specify the Snowflake warehouse for default writes for this execution environment.
+7. **Warehouse** - Specify the Snowflake warehouse for default writes for this execution environment.
 
-**(8) Database** - Specify the desired Snowflake database for default writes for this execution environment.
+8. **Database** - Specify the desired Snowflake database for default writes for this execution environment.
 
-**(9) Schema** - Specify the desired Snowflake schema for default writes for this execution environment.
+9. **Schema** - Specify the desired Snowflake schema for default writes for this execution environment.
 
-**(10) Continue** - to complete the Fabric creation.
+10. **Continue** - to complete the Fabric creation.
 
 :::info
-Each user can read tables from each database and schema for which they have access. The default write database and schema is set here in the Fabric.
+Each user can read tables from any database and schema for which they have access. The default write database and schema is set here in the Fabric.
 :::
 
 ## 3. Create a new Project
@@ -122,15 +126,15 @@ When connecting to external Git repositories, you have to first setup a Git conn
 
 If you have an existing GitHub account this process is very simple, thanks to Prophecy’s strong OAuth GitHub integration. If you don’t have an account, you can create one at [Github.com](http://github.com).
 
-**(1) Alias** - Each Git connection in Prophecy starts with an **Alias** that’s going to be used to allow you to identify the right Git account. In most cases, this can be left as default.
+1. **Alias** - Each Git connection in Prophecy starts with an **Alias** that’s going to be used to allow you to identify the right Git account. In most cases, this can be left as default.
 
-**(2) Login with Github** - redirects you to a GitHub login page (if you're not yet logged in).
+2. **Login with Github** - redirects you to a GitHub login page (if you're not yet logged in).
 
-**(3) Sign in** - or create a new GitHub account.
+3. **Sign in** - or create a new GitHub account.
 
-**(4) Authorize** - Authorize SimpleDataLabs (legal organization name of Prophecy.io). Here you are asked to approve Prophecy as a valid organization.
+4. **Authorize** - Authorize SimpleDataLabs (legal organization name of Prophecy.io). Here you are asked to approve Prophecy as a valid organization.
 
-**(5) Connect** - to save the Git connection.
+5. **Connect** - to save the Git connection.
 
 Please note that Prophecy will not store any information beyond basic user details (like email) and repository content (only queried at your explicit permission for each repository).
 
@@ -240,15 +244,21 @@ A model is an entity that contains a set of data transformations and defines eit
 
 ![Create the first model](img/Snow4.4_DefineModel.png)
 
-Here we create customers_nations model that’s going to enrich our customers and produce a report of which customers show up in which geographic areas most commonly.
+Here we create `customers_nations` model that’s going to enrich our customers and produce a report of which customers show up in which geographic areas most commonly.
 
-To create a new model simply click on the **(1) + Add Model** in the sidebar, when hovering over Models section, or **(2) Create Model** button. A model creation pop-up will show up, with very similar options, as when we defined the seed, available. Enter the **(3) Model Name** and **(4) Model Path** and that’s it. Finally save the model by pressing **(5) OK.**
+To create a new model:
+
+1. Click to **+ Add Model** in the sidebar, when hovering over Models section, or
+2. Click the **Create Model** button. A model creation pop-up will appear with very similar options as the seed definition.
+3. Enter the **Model Name**.
+4. Enter the **Model Path** which defines the location to store the Model's code in Git.
+5. Finally save the Model by pressing **OK.**
 
 #### 4.4.1 Add Sources to the Model with Copilot
 
 Building your model is very simple - there are suggestions at every step, which you can keep or adjust. In the videos below, we’re doing the following in our newly defined `customer_nations` model:
 
-1. First we select a source of interest from the **Environment** tab, the `customers` table. Right away we notice there are suggestions for additional tables that might be of interest when working with the `customers` table.
+1. First we select a source of interest from the **Environment** tab, the `customers` table. Right away we notice there are suggested sources - additional tables that might be of interest when working with the `customers` table.
 2. Then we select another table, in this case the `nations` seed.
 3. Note, that when two sources are dragged closely to each other a **Join** component is automatically created ([link](#4.4.1.2-select-table-and-join-condition-is-suggested)). The Join condition is suggested for us, and we'll keep that suggestion.
 
@@ -278,15 +288,15 @@ If the suggested Gems are not exactly what we need, we can just drag-and-drop co
 
 Clicking on any of the Gems shows these options.
 
-**(1) Name Edit** - click to edit the name of the transformation for easy identification.
+1. **Name Edit** - click to edit the name of the transformation for easy identification.
 
-**(2) Gem Edit** - to modify the Gem logic click on the **Open >** button.
+2. **Gem Edit** - to modify the Gem logic click on the **Open >** button.
 
-**(3) More** - to see more Gem configuration options, like editing comments, changing phases or deleting the Gem, click on the ... button. Please note, that to delete the selected Gem you can also press **delete / backspace** on your keyboard.
+3. **More** - to see more Gem configuration options, like editing comments, changing phases or deleting the Gem, click on the ... button. Please note, that to delete the selected Gem you can also press **delete / backspace** on your keyboard.
 
-**(4) Run** - runs the model upto the selected Gem. We will learn more about this in the section [4.5 Interactively Test and Fix](#4.5-interactively-test-and-fix).
+4. **Run** - runs the model upto the selected Gem. We will learn more about this in the section [4.5 Interactively Test and Fix](#4.5-interactively-test-and-fix).
 
-**(5) See errors** - To see errors related to your Gem, hover over the red icon next to the Gem. If there’s no red icon, that means your Gem has no errors and is good to go!
+5. **See errors** - To see errors related to your Gem, hover over the red icon next to the Gem. If there’s no red icon, that means your Gem has no errors and is good to go!
 
 Sometimes we'll want to specify the **Join** transformation by changing the Copilot suggestion or creating our own. Upon opening the Gem, you can see a drawer pop-up which provides several helpful features.
 
@@ -336,29 +346,19 @@ Once the aggregation expressions are specified, we can consider grouping by a pa
 
 Finally, we **(3) Rename** our Gem to `count_customers` and **(4) Save** it.
 
-#### 4.5 Interactively Test and Fix
+### 4.5 Interactively Test
 
 Now that our model is fully defined, with all the logic specified, it’s time to make sure it works (and keeps working)!
 
-#### 4.5.1 Test
-
-You'll want to know how the data looks after each step, not just for the final table or view.
-
 ![Interactively run](img/4-9-interactively-run.png)
 
-Prophecy makes interactively testing the models incredibly easy! Simply click on the **(1) Play** button on any of the Gems and the model with all of it’s upstream dependencies will be executed. Once the model runs, the **(2) Result** icon appears. Click the Result icon to view a **(3) Sample** set of records.
+Prophecy makes **interactively testing** the models incredibly easy! Simply:
 
-##### 4.5.2 FixIt
+1. Click the **Play** button on any of the Gems and the model with all of it’s upstream dependencies will be executed.
+2. Once the model runs, the **Result** icon appears.
+3. Click the Result icon to view a **Sample** set of records.
 
-If your model has some errors, perhaps introduced upstream without your knowledge, Prophecy's Copilot will suggest fixes automatically.
-
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://fast.wistia.net/embed/iframe/17q9stsz6n?videoFoam=true" title="Drag and Drop Model Graph Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
-<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
-
-The Fix with AI option appears at any point where you see an error message.
+Notice Copilot is offering suggested fixes when errors appear. See how **Fix with AI** works [here](/docs/concepts/copilot.md#fix-with-ai). Explore suggested fixes in the canvas, inside each transformation Gem, or inside Gem expressions.
 
 ## 5. Code view
 
@@ -374,31 +374,20 @@ You may wish to edit the code view - give it a try! Add a SQL statement in the c
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-Coming soon, you'll see code suggestions in the code editor. Copilot helps write SQL queries in the code editor and in the visual editor.
+## 6. Commit and Release with Git
 
-![CodeSuggestions](./img/SnowCodeSuggestions.png)
+It's a good thing you've been working on your "development branch" for this guide, because now you'll step through the process of integrating your hard work with the rest of your team on the "main branch." Integration with Git is easier than it sounds. Commit early and commit often! You will commit, pull, merge, and release by following the steps [here](/docs/metadata/git.md#how-to-commit-changes).
 
-## 6. Team considerations
+Prophecy guides your team's code management - with version control, tagged releases, and lets multiple individuals contribute to the same project - so you can focus on solving your business problems.
 
-### 6.1 Document
+## 7. Schedule Jobs with Airflow
 
-Sometimes you'll want to share your project with your team, and you'll want to explain how the project works. Copilot helps by creating an understandable explanation for the model. Click **Explain** for each Model you'd like to document in your project.
+Most Snowflake users want to schedule jobs using Airflow. Prophecy integrates with MWAA and Composer Airflows. Don't have an Airflow account? Prophecy also provides a managed Airflow option. [Setup](/docs/low-code-jobs/airflow/setup/setup.md) your favorite Airflow option and use this [guide](./getting-started-with-low-code-airflow.md) to schedule Airflow Jobs. Now you can schedule SQL models integrated with your Spark Pipelines, S3 file sensors, etc.
 
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://fast.wistia.net/embed/iframe/9r86rl0lbz?videoFoam=true" title="Edit Code Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
-<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
-This is a big time saver! The **Explain** documentation will be committed to your repository. Once you've defined the model, interactively tested, and you'd like to integrate your work with your team, it's time to Commit your changes to Git.
-
-### 6.2 Integration
-
-It's a good thing you've been working on your "development branch" for this guide, because now you'll step through the process of combining your hard work with the rest of your team on the "main branch." This process involves commit, pull, merge, and release and is detailed [here](/docs/metadata/git.md#how-to-commit-changes). This process is called "integration" and is a best practice in the software development world. Prophecy guides your team's integration - with version control, tagged releases, and lets multiple individuals contribute to the same project - so you can focus on solving your business problems.
-
-## What’s next?
+## Wrap up
 
 Great work! 🎉
 
-You've successfully set up, developed, tested, and released your first SQL project on a Snowflake Warehouse. Most Snowflake users want to schedule jobs using Airflow. Use this [guide](./getting-started-with-low-code-airflow.md) to schedule SQL models integrated with your Spark Pipelines, S3 file sensors, etc.
+You've successfully set up, developed, and tested your first SQL project on a Snowflake Warehouse. Integration and Job Scheduling put you on solid footing for production-readiness. Wherever you are in your data journey, know that Prophecy is here to encourage best practices to boost your productivity.
 
 If you ever encounter any difficulties, don't hesitate to reach out to us (Contact.us@Prophecy.io) or join our [Slack community](https://prophecy-io-support.slack.com/join/shared_invite/zt-moq3xzoj-~5MSJ6WPnZfz7bwsqWi8tQ#/shared-invite/email) for assistance. We're here to help!
