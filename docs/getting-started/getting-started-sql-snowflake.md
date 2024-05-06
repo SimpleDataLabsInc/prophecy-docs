@@ -1,5 +1,5 @@
 ---
-title: Copilot for Snowflake
+title: SQL with Snowflake
 id: sql-with-snowflake
 description: A tutorial on using Copilot for Snowflake
 sidebar_position: 2
