@@ -47,7 +47,7 @@ Below are JSON configurations within the Prophecy UI that need to be enabled to 
 ```
 {
   "backupFrequency": "0 0 0 * * *",
-  "backupRetentionCount": "90",
+  "backupRetentionCount": "30",
   "enableRegularBackups": false,
 }
 ```
@@ -57,7 +57,7 @@ Below are JSON configurations within the Prophecy UI that need to be enabled to 
 | Configuration variable name | Description                                                                                                                                                                               | Default value |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
 | `backupFrequency`           | How frequently to purge old user events from the internal database. Defaults to daily at 00:00. Uses [6-digit CRON](https://pkg.go.dev/github.com/robfig/cron#hdr-CRON_Expression_Format) | `0 0 0 * * *` |
-| `backupRetentionCount`      | No. of last `N` backups to retain.                                                                                                                                                        | `90`          |
+| `backupRetentionCount`      | No. of last `N` backups to retain.                                                                                                                                                        | `30`          |
 | `enableRegularBackups`      | Set to `true` to enable backups                                                                                                                                                           | `false`       |
 
 ## How to Backup
@@ -78,11 +78,10 @@ By default when you set the `ENABLE_REGULAR_BACKUPS` to `true`, backups are take
 To trigger an on-demand backup, make a REST call like so:
 
 ```
-curl --location --request POST 'https://{prophecy-url}/athena/api/v1/ondemandbackup' \
---header 'Authorization: {api-key}' \
+curl --location --request POST 'https://{prophecy-url}/api/backup' \
+--header 'Cookie: prophecy-token={api-key}' \
 --header 'Content-Type: application/json' \
---data-raw '{
-}'
+--data-raw '{}'
 ```
 
 You should get a response like:
@@ -105,9 +104,10 @@ This API returns the status current/last backup operation triggered. It doesn't 
 Sample API call
 
 ```
-curl --location --request GET 'https://{prophecy-url}/athena/api/v1/backup/latest' \
---header 'Authorization: {api-key}' \
---header 'Content-Type: application/json'
+curl --location --request GET 'https://{prophecy-url}/api/backup/latest' \
+--header 'Cookie: prophecy-token={api-key}' \
+--header 'Content-Type: application/json' \
+--data-raw '{}'
 ```
 
 Sample response when there is no ongoing backup. It returns the last backup operation status.
@@ -137,8 +137,8 @@ If there is no timestamp passed and there is an ongoing backup, the status for t
 Sample API call
 
 ```
-curl --location --request GET 'https://{prophecy-url}/athena/api/v1/backup/status' \
---header 'Authorization: {api-key}' \
+curl --location --request GET 'https://{prophecy-url}/api/backup/status' \
+--header 'Cookie: prophecy-token={api-key}' \
 --header 'Content-Type: application/json'  \
 --data-raw '{
 "timestamp": "2023-02-02t16-00-00"
@@ -171,9 +171,10 @@ This API returns the list of available backups. It doesn't expect any parameters
 Sample API call
 
 ```
-curl --location --request GET 'https://{prophecy-url}/athena/api/v1/backup/list' \
---header 'Authorization: {api-key}' \
---header 'Content-Type: application/json'
+curl --location --request GET 'https://{prophecy-url}/api/backup/list' \
+--header 'Cookie: prophecy-token={api-key}' \
+--header 'Content-Type: application/json' \
+--data-raw '{}'
 ```
 
 Sample response
@@ -203,6 +204,27 @@ Sample response
 }
 ```
 
+#### Delete Backup Entry
+
+This API attempts the delete the backup data (local and upstream) and also the metadata (database entries) associated with it. Please note that in case of `enableRegularBackups` set to `true`, backups are older than `backupRetentionCount` in reverse order are garbage collected automatically.
+
+Sample API call
+
+```
+curl --location --request GET 'https://{prophecy-url}/api/backup/delete' \
+--header 'Cookie: prophecy-token={api-key}' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+"timestamp": "2023-02-02t16-00-00"
+}'
+```
+
+Sample response
+
+```
+{"success":true,"message":"Deleted backup entry successfully"}
+```
+
 ## How to Restore
 
 Restore is an on-demand based overwrite of the whole configuration to reflect the state at which backup is taken.
@@ -223,8 +245,8 @@ Note:
 The below API is used to trigger a store opertion. It expects one parameter which is the `timestamp` of a successful backup.
 
 ```
-curl --location --request POST 'https://{destination-prophecy-url}/athena/api/v1/ondemandrestore' \
---header 'Authorization: {api-key}' \
+curl --location --request POST 'https://{prophecy-url}/api/restore' \
+--header 'Cookie: prophecy-token={api-key}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "timestamp": "2022-11-22t10-00-00",
@@ -235,8 +257,8 @@ curl --location --request POST 'https://{destination-prophecy-url}/athena/api/v1
 Sample API call with disable of gitserver restore. You may use similar options for `artifactory` / `edweb` / `metagraph` / `openidfederator`.
 
 ```
-curl --location --request POST 'https://{destination-prophecy-url}/athena/api/v1/ondemandrestore' \
---header 'Authorization: {api-key}' \
+curl --location --request POST 'https://{prophecy-url}/api/restore' \
+--header 'Cookie: prophecy-token={api-key}' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "timestamp": "2022-11-22t10-00-00",
@@ -272,8 +294,8 @@ If there is no timestamp passed and there is an ongoing restore, the status for 
 Sample API call
 
 ```
-curl --location --request GET 'https://{prophecy-url}/athena/api/v1/restore/status' \
---header 'Authorization: {api-key}' \
+curl --location --request GET 'https://{prophecy-url}/api/restore/status' \
+--header 'Cookie: prophecy-token={api-key}' \
 --header 'Content-Type: application/json'  \
 --data-raw '{
 "timestamp": "2023-02-02t16-00-00"

@@ -53,7 +53,8 @@ Please note that all sensitive keys are displayed in `********` format. However,
       "accountName": "prophecyathenabackup",
       "containerName": "athena-ondemand-backup",
       "serviceURL": "https://prophecyathenabackup.blob.core.windows.net/"
-    }
+    },
+    "useManagedIdentityToAuthenticate": false
   },
   "cloudProvider": "gcp",
   "gcp": {
@@ -99,14 +100,15 @@ For this provider, set `locationType` to `s3` and configure using the following 
 
 For this provider, set `locationType` to `azure-blob-storage` and configure using the following variables:
 
-| Environment variable name         | Description                               | Default value                                         |
-| --------------------------------- | ----------------------------------------- | ----------------------------------------------------- |
-| `azure.blobStorage.accountName`   | Storage Account name                      | `prophecyathenabackup`                                |
-| `azure.blobStorage.serviceURL`    | Storage Account Service URL               | `https://prophecyathenabackup.blob.core.windows.net/` |
-| `azure.blobStorage.containerName` | Container name within the Storage Account | `athena-ondemand-backup`                              |
-| `azure.accessKey`                 | Storage Access key                        |                                                       |
-| `localLocation`                   | Any PVC Mount point with storage          | `/backup`                                             |
-| `locationType`                    | Set to Azure Blob Storage                 | `azure-blob-storage`                                  |
+| Environment variable name                | Description                                                    | Default value                                         |
+| ---------------------------------------- | -------------------------------------------------------------- | ----------------------------------------------------- |
+| `azure.blobStorage.accountName`          | Storage Account name                                           | `prophecyathenabackup`                                |
+| `azure.blobStorage.serviceURL`           | Storage Account Service URL                                    | `https://prophecyathenabackup.blob.core.windows.net/` |
+| `azure.blobStorage.containerName`        | Container name within the Storage Account                      | `athena-ondemand-backup`                              |
+| `azure.useManagedIdentityToAuthenticate` | Wheather to use system managed identity (role) to authenticate | `false`                                               |
+| `azure.accessKey`                        | Storage Access key                                             |                                                       |
+| `localLocation`                          | Any PVC Mount point with storage                               | `/backup`                                             |
+| `locationType`                           | Set to Azure Blob Storage                                      | `azure-blob-storage`                                  |
 
 #### GCP Cloud Storage
 
