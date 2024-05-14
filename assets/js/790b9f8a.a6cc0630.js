@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[402],{16765:e=>{e.exports=JSON.parse('{"label":"matrix","permalink":"/tags/matrix","allTagsPath":"/tags","count":1,"items":[{"id":"release_notes/version_chart","title":"Version Chart","description":"Prophecy library version chart","permalink":"/release_notes/version_chart"}]}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[4405],{65178:s=>{s.exports=JSON.parse('{"label":"udafs","permalink":"/tags/udafs","allTagsPath":"/tags","count":1,"items":[{"id":"low-code-spark/extensibility/udfs","title":"User-defined functions","description":"User-defined functions","permalink":"/low-code-spark/extensibility/udfs"}]}')}}]);

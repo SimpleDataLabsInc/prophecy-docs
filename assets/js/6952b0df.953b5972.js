@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[9334],{48003:s=>{s.exports=JSON.parse('{"label":"cosmos","permalink":"/tags/cosmos","allTagsPath":"/tags","count":1,"items":[{"id":"low-code-spark/gems/source-target/warehouse/cosmos","title":"CosmosDB","description":"CosmosDB","permalink":"/low-code-spark/gems/source-target/warehouse/cosmos"}]}')}}]);

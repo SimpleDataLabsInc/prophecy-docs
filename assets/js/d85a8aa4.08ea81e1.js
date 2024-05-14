@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[403],{38013:a=>{a.exports=JSON.parse('{"label":"PAT","permalink":"/tags/pat","allTagsPath":"/tags","count":1,"items":[{"id":"metadata/prophecyAPI","title":"Prophecy API","description":"Prophecy metadata available through the Prophecy API","permalink":"/metadata/prophecyAPI"}]}')}}]);
