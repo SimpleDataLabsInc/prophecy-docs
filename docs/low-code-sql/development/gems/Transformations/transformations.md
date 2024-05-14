@@ -9,6 +9,23 @@ tags:
   - cte
 ---
 
-:::caution
-This detailed page all about SQL Transformations is under construction. Please pardon our dust.
+Constitutes the set of Gems that help with transforming data
+
+<div class="transformations-gems-table">
+
+| <div style={{'width':'100px'}}>Transforms</div>      | Description                                                                                                   |
+| --------------------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+|  **Aggregate**                       | Group data and apply aggregation functions such as avg or sum.                                  |
+|  **Filter**                            | Select rows of data that meet a condition.                                                                    |
+|  **OrderBy**                           | Arrange the rows in a table or view in alphanumeric order based on the values of the specified data columns.  |
+|  **Reformat**                         | Select columns, rename columns, or redefine existing columns from a table or view.                            |
+|  **Limit**                              | Limit the number of rows in a table or view.                                                              |
+</div>
+
+
+
+:::info
+To explore the Gem UI, see [this page](/docs/concepts/project/gems.md) which applies to all Gems.
 :::
+
+When your Transformation Gem has the desired condition and expression, consider running interactively to view [sample data](/docs/low-code-sql/development/interactive-development/data-explorer.md).

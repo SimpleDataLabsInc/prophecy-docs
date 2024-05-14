@@ -282,37 +282,7 @@ Note: dragging a source will prompt Copilot to suggest seeds and sources. Seeds 
 
 #### 4.4.2 Option to define the Join
 
-If the suggested Gems are not exactly what we need, we can just drag-and-drop components to the canvas and fill in the business logic.
-
-![Edit Gem](img/Snow4.5_editGem.png)
-
-Clicking on any of the Gems shows these options.
-
-1. **Name Edit** - click to edit the name of the transformation for easy identification.
-
-2. **Gem Edit** - to modify the Gem logic click on the **Open >** button.
-
-3. **More** - to see more Gem configuration options, like editing comments, changing phases or deleting the Gem, click on the ... button. Please note, that to delete the selected Gem you can also press **delete / backspace** on your keyboard.
-
-4. **Run** - runs the model upto the selected Gem. We will learn more about this in the section [4.5 Interactively Test and Fix](#4.5-interactively-test-and-fix).
-
-5. **See errors** - To see errors related to your Gem, hover over the red icon next to the Gem. If there’s no red icon, that means your Gem has no errors and is good to go!
-
-Sometimes we'll want to specify the **Join** transformation by changing the Copilot suggestion or creating our own. Upon opening the Gem, you can see a drawer pop-up which provides several helpful features.
-
-![Join definition](img/Snow4.5_JoinCondition.png)
-
-For transparency, you can always see the **(1) Input schema** on the left hand-side, **(4) Errors** in the footer, and have the ability to **(5) Run** the Gem on the top right.
-
-To fill-in our **(3) Join condition** within the **(2) Conditions** section, type `nation.nationkey = customers.nationkey`. This condition finds a nation based on the c_nationkey feild for every single customer.
-
-When you’re writing your expressions, you’ll be able to see expression builder, which shows you available functions and columns to speed up your development. Whenever the autocomplete appears, press ↑, ↓ to navigate between the suggestions and press tab to accept the suggestion.
-
-The **(6) Expressions** tab allows you to define a set of output columns that are going to be returned from the Gem. Here we leave it empty, which by default, passes through all the input columns, from both of the joined sources, without any modifications.
-
-To rename our Gem to describe its functionality, click on it’s **(7) Name** and modify or try the **Auto-label** option. Gem names are going to be used as query names, which means that they should be concise and composed of alphanumeric characters with no spaces.
-
-Once done, press **(8) Save.**
+If the suggested Gems are not exactly what we need, we can just drag-and-drop components to the canvas and fill in the business logic. Sometimes we'll want to specify the **Join** transformation by changing the Copilot suggestion or creating our own. 
 
 #### 4.4.3 Aggregate with Copilot suggestions
 
