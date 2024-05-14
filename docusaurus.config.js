@@ -50,6 +50,9 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      zoom: {
+        selector: ".markdown :not(em) > img",
+      },
       navbar: {
         title: "",
         logo: {
@@ -119,6 +122,7 @@ const config = {
     }),
 
   plugins: [
+    "docusaurus-plugin-image-zoom",
     [
       "@docusaurus/plugin-client-redirects",
       {
