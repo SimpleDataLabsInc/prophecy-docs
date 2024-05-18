@@ -188,7 +188,7 @@ It’s time to start building our first data transformation project!
 
 As a good teammate, we don’t want to write changes directly on the main branch of our Git repository. Every member should have their own branch on which they can freely build and play around with the project, without interrupting each other’s work. Prophecy enforces this best practice by ensuring that no changes can be made directly on the main branch.
 
-Therefore, to start development we have to create our first development branch. Start by clicking on the **(1) Checkout Branch** and type in the desired name in the **(2) Branch** field. The best branch names should be representative of the changes that you’re making, so that your colleagues can quickly identify which changes are on which branch. The best branch names should be representative of the changes, and who made them, so that your colleagues can quickly identify which changes are on which branch. A good default name is `dev/{first_name}`. Once you decide on the name, click **(3) Checkout.** The new branch name will be displayed in the **(4) Git footer**.
+Therefore, to start development we have to create our first development branch. Start by clicking on the **(1) Checkout Branch** and type in the desired name in the **(2) Branch** field. The best branch names should be representative of the changes that you’re making, so that your colleagues can quickly identify which changes are on which branch. The best branch names should be representative of the changes, and who made them, so that your colleagues can quickly identify which changes are on which branch. A good default name is `dev/firstName`. Once you decide on the name, click **(3) Checkout.** The new branch name will be displayed in the **(4) Git footer**.
 
 Note, that if the branch doesn’t exist, Prophecy creates a new branch automatically by essentially cloning what’s on the currently selected branch - therefore make sure to usually create new branch (checkout) from main. If the branch exists, the code for that branch is pulled from Git into Prophecy.
 
@@ -282,7 +282,7 @@ Note: dragging a source will prompt Copilot to suggest seeds and sources. Seeds 
 
 #### 4.4.2 Option to define the Join
 
-If the suggested Gems are not exactly what we need, we can just drag-and-drop components to the canvas and fill in the business logic. Sometimes we'll want to specify the **Join** transformation by changing the Copilot suggestion or creating our own. 
+If the suggested Gems are not exactly what we need, we can just drag-and-drop components to the canvas and fill in the business logic. Sometimes we'll want to specify the **Join** transformation by changing the Copilot suggestion or creating our own.
 
 #### 4.4.3 Aggregate with Copilot suggestions
 
