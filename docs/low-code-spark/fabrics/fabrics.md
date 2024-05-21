@@ -9,27 +9,27 @@ A Fabric is a logical execution environment. Teams can organize their data engin
 
 ## Databricks Fabric
 
-[Databricks Configurations](https://docs.prophecy.io/low-code-spark/fabrics/create-a-Fabric#databricks)
+[Databricks Configurations](/docs/low-code-spark/fabrics/create-a-fabric.md#databricks)
 
 ## Databricks Execution
 
-[Execution on Databricks](https://docs.prophecy.io/low-code-spark/execution/executions_on_databricks_clusters)
+[Execution on Databricks](/docs/low-code-spark/execution/databricks-clusters-behaviours.md)
 
-[Interactive Execution](https://docs.prophecy.io/low-code-spark/execution/interactive-execution)
+[Interactive Execution](/docs/low-code-spark/execution/interactive-execution.md)
 
-[Execution Metrics](https://docs.prophecy.io/low-code-spark/execution/execution-metrics)
+[Execution Metrics](/docs/low-code-spark/execution/execution-metrics.md)
 
 ## Fabrics Using Apache Livy
 
-[Amazon EMR Configurations](https://docs.prophecy.io/low-code-spark/fabrics/EMR-fabric-configuration#create-a-fabric-to-connect-prophecy-to-emr)
+[Amazon EMR Configurations](/docs/low-code-spark/fabrics/emr-fabric.md#create-a-fabric-to-connect-prophecy-to-emr)
 
-[Azure Synapase Analytics Configurations](https://docs.prophecy.io/low-code-spark/fabrics/azure-synapse-fabric-guide#configure-connectivity-between-synapse-and-prophecy)
+[Azure Synapase Analytics Configurations](/docs/low-code-spark/fabrics/synapsefabric.md#configure-connectivity-between-synapse-and-prophecy)
 
-[Google Cloud Dataproc Configurations](https://docs.prophecy.io/low-code-spark/fabrics/gcp-dataproc-fabric-guide#create-a-dataproc-fabric)
+[Google Cloud Dataproc Configurations](/docs/low-code-spark/fabrics/dataproc.md)
 
 ## Execution on Livy
 
-[Execution on Livy](https://docs.prophecy.io/low-code-spark/execution/executions_on_livy_clusters)
+[Execution on Livy](/docs/low-code-spark/execution/execution-metrics-on-livy.md)
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
