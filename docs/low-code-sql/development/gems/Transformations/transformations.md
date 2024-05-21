@@ -24,9 +24,9 @@ Constitutes the set of Gems that help with transforming data
 </div>
 
 :::info
-To learn more about the UI for Transformation Gems, see [this page](/docs/concepts/project/gems.md) which illustrates features across all Gems.
+To learn more about the UI for Transformation Gems, see [this page](/docs/concepts/project/gems.md) which illustrates features common to all Gems.
 :::
 
 ## Run
 
-When your Transformation Gem has the desired condition and expression, consider running interactively to view [sample data](/docs/low-code-sql/development/interactive-development/data-explorer.md).
+When your Transformation Gem has the desired condition and expression, run interactively to view [sample data](/docs/low-code-sql/development/interactive-development/data-explorer.md).

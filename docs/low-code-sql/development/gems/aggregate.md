@@ -1,18 +1,25 @@
 ---
-title: Joins
-id: data-joins
-description: Join data from multiple tables
+title: Aggregate
+id: data-aggregate
+description: Perform aggregation transformations with the option to group by columns.
 sidebar_position: 3
 tags:
-  - join
+  - aggregate
+  - groupby
   - data
   - gem
   - transformation
 ---
 
-Upon opening the join Gem, you can see a pop-up which provides several helpful features.
+Together let's build an Aggregate Gem. Follow along in the `HelloWorld_SQL` Project.
 
-![Join definition](img/JoinCondition.png)
+:::info
+To learn more about the Aggregate Gem UI, see [this page](/docs/concepts/project/gems.md) which illustrates features common to all Gems.
+:::
+
+## Run
+
+When you're ready to see how your Aggregate Gem works, **() Run** interactively to view **()[sample data](../interactive-development/data-explorer.md).**
 
 For transparency, you can always see the **(1) Input schema** on the left hand-side, **(2) Errors** in the footer, and have the ability to **(3) Run** the Gem on the top right.
 
@@ -25,27 +32,3 @@ Select the **(6)Join Type** according to the provider, eg [Databricks](https://d
 The **(7) Expressions** tab allows you to define the set of output columns that are going to be returned from the Gem. Here we leave it empty, which by default passes through all the input columns, from both of the joined sources, without any modifications.
 
 To rename our Gem to describe its functionality, click on it’s **(8) Name** or try the **Auto-label** option. Gem names are going to be used as query names, which means that they should be concise and composed of alphanumeric characters with no spaces.
-
-Once done, press **(9) Save.**
-
-:::info
-To learn more about the Join Gem UI, see [this page](/docs/concepts/project/gems.md) which illustrates features common to all Gems.
-:::
-
-## Add a port
-
-It's easy to add an extra source to a Join Gem. Just connect and configure.
-
-![JoinPort](img/JoinAddPort.png)
-
-Once the source is **(1) connected**, click to **(2) edit** the ports.
-
-Update the **(3) port name** from the default input `in2` to a more descriptive name such as the table name, in this case `NATIONS`.
-
-Fill in the **(4) Join condition** for the new table and specify the **(5) Join type**.
-
-Click **(6) Save**.
-
-## Run
-
-When your Join Gem has the desired inputs, conditions and expressions, **(7) run** interactively to view **(8)[sample data](../interactive-development/data-explorer.md).**

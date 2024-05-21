@@ -244,14 +244,14 @@ A model is an entity that contains a set of data transformations and defines eit
 
 ![Create the first model](img/Snow4.4_DefineModel.png)
 
-Here we create `customers_nations` model that’s going to enrich our customers and produce a report of which customers show up in which geographic areas most commonly.
+Here we create a `customers_nations` model that’s going to enrich our customers and produce a report of which customers show up in which geographic areas most commonly.
 
 To create a new model:
 
-1. Click to **+ Add Model** in the sidebar, when hovering over Models section, or
+1. Click to **+ Add Model** in the sidebar, when hovering over the Models section, or
 2. Click the **Create Model** button. A model creation pop-up will appear with very similar options as the seed definition.
-3. Enter the **Model Name**.
-4. Enter the **Model Path** which defines the location to store the Model's code in Git.
+3. Enter the **Model Name**. Since each Model defines a single table or view, the model name will also be the name of the table or view.
+4. Enter the **Model Path**, the desired directory folder in the Git repository where the Model's `.sql` file will be stored. Where is the table's data stored in the Warehouse? The table's warehouse, database, schema, and table location are defined by default in the attached Fabric.
 5. Finally save the Model by pressing **OK.**
 
 #### 4.4.1 Add Sources to the Model with Copilot
