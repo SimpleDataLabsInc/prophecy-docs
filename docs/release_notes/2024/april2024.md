@@ -1,12 +1,12 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 id: April_2024
 description: Release notes for April
 title: April 2024
 tags:
   - release notes
   - changelog
-  - march
+  - april
 ---
 
 ## 3.3.5.\* (April 30,2024)
