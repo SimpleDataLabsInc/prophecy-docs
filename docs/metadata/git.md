@@ -56,7 +56,7 @@ If you have not created your Git credentials already, you also have an option to
 Note that each Project is associated with a repository. This is the location Prophecy will store the Project's code. Select a default branch and path within that repository.
 
 :::info
-To see a dropdown of repositories accessible to the Git user, be sure to connect from Prophecy using the native Git Authentication method, ie **Login with GitHub** or **Login with Bitbucket**. The dropdown list of repositories is not accessible to Prophecy if the Git connection uses the Personal Access Token method of authentication.
+To see a dropdown of repositories accessible to the Git user, be sure to connect from Prophecy using the native GitHub Oauth method, ie **Login with GitHub**. The dropdown list of repositories is not accessible to Prophecy if the Git connection uses the Personal Access Token method of authentication.
 :::
 
 ## How to commit changes

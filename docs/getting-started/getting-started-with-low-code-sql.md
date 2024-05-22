@@ -126,6 +126,10 @@ When connecting to external Git repositories, you have to first setup a Git conn
 1. For GitHub - with single click connection (through GitHub OAuth)
 2. For other Git providers (e.g. Bitbucket, GitLab, etc) - by providing a Personal Access Token
 
+:::info
+To see a dropdown of repositories accessible to the Git user, be sure to connect from Prophecy using the native GitHub Oauth method, ie **Login with GitHub**. The dropdown list of repositories is not accessible to Prophecy if the Git connection uses the Personal Access Token method of authentication.
+:::
+
 #### 3.2.1 Connecting with GitHub
 
 ![Connect With Github](img/3-4-connect-with-github.png)
@@ -145,10 +149,6 @@ Finally, click **(5) Connect** to save the Git connection.
 ![Choose the repository](img/3-5-choose-the-repository.png)
 
 Once your GitHub account is setup, select a repository where Prophecy will store all the code for this project. Choose a **(1) Repository** from the dropdown available. If you’d like to create a new repository from scratch follow [this guide.](https://docs.github.com/en/get-started/quickstart/create-a-repo)
-
-:::info
-To see a dropdown of repositories accessible to the Git user, be sure to connect from Prophecy using the native Git Authentication method, ie **Login with GitHub** or **Login with Bitbucket**. The dropdown list of repositories is not accessible to Prophecy if the Git connection uses the Personal Access Token method of authentication.
-:::
 
 **(2) Default Branch** field should populate automatically based on the repository’s default main branch - you can change if necessary. Default branch is a central point where all the code changes are merged, serving as the primary, up-to-date source for a project.
 
