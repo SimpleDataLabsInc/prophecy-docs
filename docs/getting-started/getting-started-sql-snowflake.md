@@ -282,7 +282,7 @@ Note: dragging a source will prompt Copilot to suggest seeds and sources. Seeds 
 
 #### 4.4.2 Option to define the Join
 
-If the suggested Gems are not exactly what we need, we can just drag-and-drop components to the canvas and fill in the business logic. Sometimes we'll want to specify the **Join** transformation by changing the Copilot suggestion or creating our own.
+If the suggested Gems are not exactly what we need, we can just drag-and-drop components to the canvas and fill in the business logic. Sometimes we'll want to specify the **Join** transformation by changing the Copilot suggestion or creating our own. Check [here](/docs/low-code-sql/development/gems/joins.md) for details on configuring Join Gems.
 
 #### 4.4.3 Aggregate with Copilot suggestions
 
@@ -305,6 +305,8 @@ Let's define an english prompt explaining the [**next best step**](#4.4.3.1-next
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
 #### 4.4.3.3 Option to define the Aggregate logic
+
+TODO: replace with [this](low-code-sql/development/gems/Transformations/aggregate.md)
 
 Of course it's always possible to define transformations in the easy-to-use interface. Here let’s define the transformation logic for our **Aggregate** Gem, which will sum up the number of customers within each of the geographical locations and return a clean set of columns.
 
