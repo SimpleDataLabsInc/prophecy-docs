@@ -68,19 +68,20 @@ Please refer to the below video for a step-by-step example, or learn how to conf
 
 :::note
 The Spark and Scala versions are now mandatory with recent [Release](/docs/release_notes/2023/feb2023.md#spark-and-scala-versions-are-now-required-in-livy-Fabrics).
-If you have an older Fabric which doesn't have Spark abd Scala versions present, an error (seen below) will appear when trying to attach to a cluster. Just update the Fabric from the metadata page or by clicking `Update Fabric` button (seen below).
+If you have an older Fabric which doesn't have Spark and Scala versions present, an error (seen below) will appear when trying to attach to a cluster. Just update the Fabric from the metadata page or by clicking `Update Fabric` button (seen below).
 ![Fabric_misconfigured](img/fabric_misconfigured.png)
 :::
 
 - **Job sizes** -
-  By default, you will see a Small Job size pre created. You can edit or add more Job sizes. A Job sie consists off
+  By default, you will see a Small Job size pre created. You can edit or add more Job sizes. A Job size consists of
 
   - Size of the Driver: Driver Core and Memory
   - Size of the Executor: Core and Memory for each executor
   - Total number of Executors
 
 - **Prophecy Library** -
-  These are some Scala and Python libraries written by Prophecy to provide additional functionalities on top of Spark. These would get automatically installed in your Spark execution environment when you attach to a cluster/create new cluster. These libraries are also publicly available on Maven central and Pypi respectively.
+  These are some Scala and Python libraries written by Prophecy to provide additional functionalities on top of Spark. These would get automatically installed in your Spark execution environment when 
+  you attach to a cluster/create new cluster. These libraries are also publicly available on Maven central and Pypi respectively.
 
 - **Spark Config** -
   These are additional [Spark Properties](https://spark.apache.org/docs/latest/configuration.html#available-properties) which you can set which would be applied at Spark session initialisation.
