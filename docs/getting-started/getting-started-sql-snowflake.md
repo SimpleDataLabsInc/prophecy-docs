@@ -206,13 +206,13 @@ Prophecy will quickly load all the available warehouses, databases, schemas, tab
 
 The first step, before building actual transformation logic, is definition of data sources. There are three primary ways to define data sources in a SQL project:
 
-1. **seeds** - which allow for loading small CSV datasets into your warehouse (useful for small test datasets or lookup mappings, like list of countries)
-2. **datasets** - table points with schema and additional metadata
+1. **seeds** - which allow for loading small CSV Datasets into your warehouse (useful for small test Datasets or lookup mappings, like list of countries)
+2. **Datasets** - table points with schema and additional metadata
 3. **other models** - since each model defines a table, models can serve as inputs to another model (we’re going to cover models in the next section)
 
 #### 4.3.1 Create seeds
 
-Seeds allow you to define small CSV-based datasets that are going to be automatically uploaded to your warehouse as tables, whenever you execute your models. This is particularly useful for business data tables or for integration testing on data samples.
+Seeds allow you to define small CSV-based Datasets that are going to be automatically uploaded to your warehouse as tables, whenever you execute your models. This is particularly useful for business data tables or for integration testing on data samples.
 
 ![Create a new seed](img/Snow4.2_createNewSeed.png)
 
@@ -234,13 +234,22 @@ NATIONKEY,NAME,REGIONKEY,COMMENT
 5,ETHIOPIA,0,Coffee origin; diverse culture.
 ```
 
-#### 4.3.2 Define datasets
+#### 4.3.2 Define Datasets
 
-Importing datasets is really easy. We can just drag-and-drop our existing tables directly into a model. We’re going to demonstrate that in the next step.
+Importing Datasets is really easy. We can just drag-and-drop our existing tables directly into a model. We’re going to demonstrate that in the next step.
 
 ### 4.4 Develop your first model
 
-A model is an entity that contains a set of data transformations and defines either a view or a table that will be created on the warehouse of choice. Each model is stored as a select statement in a SQL file within a project. Prophecy models are based on dbt Core [models](https://docs.getdbt.com/docs/build/models).
+Figma: https://www.figma.com/design/DOqevNGzwkcPlwwUx1f5Dd/Documentation-%26-Blogs-(docs.prophecy.io)?node-id=5342-2500&t=wBPd5IOTLQA7I5I6-0
+TODO: insert one video here with audio, chapters, and text below
+
+1. Create a model
+2. Text to model --> oh, that's cool, also let's try another way --> actually maybe skip this step if it's not working yet
+3. Select one Dataset, see suggested Dataset and join. For more info on Joins, see the new joins [page](low-code-sql/development/gems/joins.md)
+4. Suggested next transform (aggregate). For more info on Aggregation, see the new Agg [page](low-code-sql/development/gems/Transformations/aggregate.md)
+5. Suggested expression in the aggregate Gem
+
+A model is an entity [like a pipeline](/docs/concepts/project/models.md#models-vs-pipelines) that contains a set of data transformations. However a Model defines a single output - a view or a table that will be created on the warehouse of choice. Each model is stored as a select statement in a SQL file within a project. Prophecy models are based on dbt Core [models](https://docs.getdbt.com/docs/build/models).
 
 ![Create the first model](img/Snow4.4_DefineModel.png)
 
