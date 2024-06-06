@@ -25,6 +25,7 @@ curl  --header 'X-Auth-Token: $PROPHECY_PAT' --location https://app.prophecy.io/
 
 | Prophecy version | [Prophecy Scala libs](https://mvnrepository.com/artifact/io.prophecy/prophecy-libs) | [Prophecy Python libs](https://pypi.org/project/prophecy-libs/) |
 | ---------------- | ----------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| v3.3.6.3         | 7.1.102                                                                             | 1.8.19                                                          |
 | v3.3.6.2         | 7.1.102                                                                             | 1.8.19                                                          |
 | v3.3.6.1         | 7.1.102                                                                             | 1.8.19                                                          |
 | v3.3.6.0         | 7.1.97                                                                              | 1.8.19                                                          |
