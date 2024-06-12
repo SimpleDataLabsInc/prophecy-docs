@@ -15,7 +15,7 @@ You can use data tests to ensure that your business data is generated reliably o
 
 ## What you'll need to know
 
-Data tests use [dbt](https://docs.getdbt.com/docs/build/data-tests) for the underlying test execution, but you don’t need to know dbt or how to write your own tests. Prophecy simplifies the test definitions that are normally defined in .sql and .yaml files.
+Data tests use [dbt](https://docs.getdbt.com/docs/build/data-tests) for the underlying test execution, but you don’t need to know dbt or how to write your own tests. Prophecy simplifies the test definitions that are normally defined in `.sql` and `.yaml` files.
 
 You can use data tests in Prophecy the same way you use other database objects in your Databricks environment.
 
