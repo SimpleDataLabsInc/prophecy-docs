@@ -17,7 +17,7 @@ Note: There could be many tests within a project. Each test is checking a table 
 
 By default, and most often, the condition for a project test is simply a check that the given query does not return any failing rows.
 
-<div class="wistia_responsive_padding" style={{padding:'62.5% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://fast.wistia.net/embed/iframe/mvk1axfn7e?seo=false?videoFoam=true" title="Design a Pipeline Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
