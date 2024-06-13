@@ -41,6 +41,8 @@ To develop a project test, start by opening a project:
 
 4. Create your test Model by dragging and dropping Gems to your Visual canvas. Connect them to your Data Test. You can also write your test on the Code view. You can use as many Models and other database objects as you’d like in your test.
 
+   ![Project test canvas](img/project-test-canvas.png)
+
 ### Run a test
 
 After you’ve developed your project test and executed all of your Models, you can run the test.
@@ -56,7 +58,7 @@ After you’ve developed your project test and executed all of your Models, you 
 
    ![View test summary](img/project-test-summary.png)
 
-In addition to the previous relational integrity test, you can create tests to check that the total payment amount from customers is positive or simply check that all of your tables are still accessible.
+In addition to the previous relational integrity test, you can create tests to check that the total payment amount from customers is positive or simply check that all of your tables are still accessible. You can test any series of transformation Gems, because a project test simply asserts that the resulting table meets a certain criteria.
 
 ## Fix a failed test
 
@@ -80,7 +82,7 @@ By default, project tests are configured to fail if the table has one or more ro
 
 You can configure your own passing condition of your project test.
 
-You can use the configurations to help decide which tables to focus on if you have too many with failed rows. Or conversely, you might care less about cases with multiple failed rows. For example, you might have a customer churn use case where you have 50 complaints from one customer. Configuring your test can help you identify and take action, such as assigning more resources to assist that customer.
+You can use the configurations to help decide which cases to focus on if you have too many failed rows. Or conversely, you might care less about cases with multiple failed rows. For example, you might have a customer churn use case where you have 50 complaints from one customer. Configuring your test can help you identify and take action, such as assigning more resources to assist that customer.
 
 To configure a test:
 
