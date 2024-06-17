@@ -71,9 +71,9 @@ In addition to the previous relational integrity test, you can create tests to c
 
 If your project test fails, check your test model for any changes.
 
-![Failed test](img/project-test-fail.png)
-
 - Click the test output to see your failed rows.
+
+  ![View test summary](img/project-test-failed-test.png)
 
 Some examples of test failure causes include:
 
@@ -136,5 +136,3 @@ To Schedule your project to run with tests:
 6. Check that your **Project, model**, and **Fabric** are correct.
 
 7. Click **Save**. The Job runs automatically. You can see the Job status by clicking **Detail**.
-
-   ![Run a schedule job](img/project-test-schedule-detail.png)
