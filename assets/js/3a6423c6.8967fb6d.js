@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[4943],{7224:s=>{s.exports=JSON.parse('{"label":"how-to","permalink":"/tags/how-to","allTagsPath":"/tags","count":1,"items":[{"id":"low-code-sql/data-tests/use-project-tests","title":"Use project tests","description":"Custom SQL query tests","permalink":"/low-code-sql/data-tests/use-project-tests"}]}')}}]);
