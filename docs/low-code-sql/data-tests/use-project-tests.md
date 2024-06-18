@@ -104,10 +104,10 @@ To configure a test:
 
    ![Configure a test](img/project-test-config.png)
 
-   - **A** **Failure Calculation** - Sets the failure condition used to run against the test result. You can use `count()` or any function that operates on a column or multiple columns.
-   - **B** **Limit**- Sets the maximum number of failures returned by a test query. You can set the limit to save resources and time by having the test stop its query as soon as it encounters a certain number of failed rows.
-   - **C** **Severity** - Determines whether the failure of the test returns an error or warning. The severity operates from the highest priority selection, error, to the lowest, warning. So if you select error, then the test first checks for errors. If it doesn’t find any, then it then checks for warnings. If you select warning, then the test only checks for warnings. If you don’t select a severity, then error is chosen by default.
-   - **D** **Error If** and **E** **Warning If** - Sets the number of failed rows to determine a failed test. Depending on the selected severity, your test only returns a failed test for error checks. Warning won’t return a failed test.
+   - **(A)** **Failure Calculation** - Sets the failure condition used to run against the test result. You can use `count()` or any function that operates on a column or multiple columns.
+   - **(B)** **Limit**- Sets the maximum number of failures returned by a test query. You can set the limit to save resources and time by having the test stop its query as soon as it encounters a certain number of failed rows.
+   - **(C)** **Severity** - Determines whether the failure of the test returns an error or warning. The severity operates from the highest priority selection, error, to the lowest, warning. So if you select error, then the test first checks for errors. If it doesn’t find any, then it then checks for warnings. If you select warning, then the test only checks for warnings. If you don’t select a severity, then error is chosen by default.
+   - **(D)** **Error If** and **(E)** **Warning If** - Sets the number of failed rows to determine a failed test. Depending on the selected severity, your test only returns a failed test for error checks. Warning won’t return a failed test.
 
 3. Click **Save**.
 
@@ -123,15 +123,14 @@ To Schedule your project to run with tests:
 
 3. Click the Model to open the Model Properties.
 
-4. Select **Run tests**.
-
-   ![Add a schedule job](img/project-test-schedule.png)
-
-5. Select the database object you want to run the test on. The options are:
+4. Select the database object you want to run the test on. You can schedule the entire project or just a single Model:
 
    - Run entire Project
    - Run a SQL Model
-   - Run a Snapshot
+
+   ![Add a schedule job](img/project-test-schedule.png)
+
+5. Select **Run tests**.
 
 6. Check that your **Project, model**, and **Fabric** are correct.
 
