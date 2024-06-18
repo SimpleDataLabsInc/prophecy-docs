@@ -13,7 +13,7 @@ You can use data tests to ensure that your business data is generated reliably o
 
 A data test is an assertion you make about a Dataset in your project. The Dataset can be the output from a series of transformations, or the Dataset can be a particular data source, seed, or model.
 
-For example, find the following Test named `ref_int_orders_customers` which checks the validity of the SQL in the `HelloWorld_SQL` Project. In particular, the referential integrity check for orders and customers asserts that every `customer_id` entry in the `orders` table is present in the `customers` table.
+For example, the following test named `ref_int_orders_customers` checks the validity of the SQL in the `HelloWorld_SQL` Project. In particular, the referential integrity check for orders and customers asserts that every `customer_id` entry in the `orders` table is present in the `customers` table.
 
 ![Project test canvas](img/project-test-canvas.png)
 
@@ -27,7 +27,7 @@ You can test any series of transformations with a Data Test Gem. The following s
 
 Data tests use [dbt](https://docs.getdbt.com/docs/build/data-tests) for the underlying test execution, but you don’t need to know dbt or how to write your own tests. Prophecy simplifies the test definitions that are normally defined in `.sql` and `.yaml` files.
 
-You can create Data Tests in Prophecy using the visual canvas.
+You can create data tests in Prophecy using the visual canvas.
 
 ### Supported database objects
 
