@@ -17,7 +17,7 @@ A Fabric is a logical execution environment. Teams can organize their data engin
 
 [Interactive Execution](/docs/low-code-spark/execution/interactive-execution.md)
 
-[Execution Metrics](/docs/low-code-spark/execution/execution-metrics.md)
+[Execution Metrics](/docs/low-code-spark/execution/execution-metrics/execution-metrics.md)
 
 ## Fabrics Using Apache Livy
 
@@ -29,7 +29,7 @@ A Fabric is a logical execution environment. Teams can organize their data engin
 
 ## Execution on Livy
 
-[Execution on Livy](/docs/low-code-spark/execution/execution-metrics-on-livy.md)
+[Execution on Livy](/docs/low-code-spark/execution/execution-metrics/livy/execution-metrics-on-livy.md)
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
