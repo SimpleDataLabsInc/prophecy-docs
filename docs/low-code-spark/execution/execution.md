@@ -8,9 +8,9 @@ sidebar_position: 3
 
 ## What is interactive execution?
 
-When running a Pipeline or Job, you'll want to see a data sample (interim) after each step in the Pipeline. Any errors will be surfaced in the Pipeline canvas along with logs to quickly get moving.
+When running a Pipeline or Job, you'll want to [explore](./data-explorer.md) a data sample ([interim](./interactive-execution.md#interims)) after each step in the Pipeline. Any errors will be surfaced in the Pipeline canvas along with logs to quickly get moving.
 
-After running a Pipeline multiple times, you may be interested to compare metrics related to execution like records read/written, bytes read/written, total time taken and Data samples between components. These Dataset, Pipeline-run and Job-run related metrics are accumulated and stored on your data plane and can be viewed later from the Prophecy UI.
+After running a Pipeline multiple times, you may be interested to compare [metrics](./interactive-execution.md#execution-metrics) related to execution like records read/written, bytes read/written, total time taken and Data samples between components. These Dataset, Pipeline-run and Job-run related metrics are accumulated and stored on your data plane and can be viewed later from the Prophecy UI.
 
 ## How to setup interactive execution
 
