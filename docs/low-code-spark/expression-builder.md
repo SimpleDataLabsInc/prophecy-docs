@@ -30,5 +30,5 @@ You can also insert configs and input columns directly.
 
 ### Run and Verify the output
 
-You can now Attach to a cluster and Run your Pipeline till current Gem from the same screen. Once the code has finished running, you can verify the results to make sure they match your expectations. This Data is same as what you see in [interims](./execution/executions_on_databricks_clusters#interims) view.
+You can now Attach to a cluster and Run your Pipeline till current Gem from the same screen. Once the code has finished running, you can verify the results to make sure they match your expectations. This Data is same as what you see in [interims](/docs/low-code-spark/execution/setup-execution/databricks/execution-metrics-on-databricks.md#interims) view.
 By testing and verifying your expressions, you can ensure that your data analysis tasks are accurate and reliable.

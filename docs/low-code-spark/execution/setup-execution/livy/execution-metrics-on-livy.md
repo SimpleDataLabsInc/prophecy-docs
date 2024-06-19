@@ -1,6 +1,6 @@
 ---
-title: Execution on Livy
-id: executions_on_livy_clusters
+title: Setup Livy Clusters for Interactive Execution
+id: execution-metrics-on-livy
 description: Execution on Livy
 sidebar_position: 1
 tags:
@@ -18,10 +18,9 @@ tags:
 ## Cluster Types
 
 Execution metrics is supported for all types of clusters having Livy enabled and have a Hive metastore (HMS).
-we can just provide the table names in [execution metric setup page](../../execution-metrics#team-level-access-control).
 
-- Prophecy **automatically creates** table if they do not exist, Or users can also create their own table with [required table schema](./livy-create-tables.md).
-- Creating tables can be specially useful if user want to use **External tables** or want to change the default storage format (**parquet**).
+- Create your Metrics table with the [required table schema](./livy-create-tables.md).
+- Creating tables can be especially useful if you want to use **External tables** or want to change the default storage format (**parquet**).
 
 ## Interims on Livy
 
@@ -37,7 +36,7 @@ We have interims available after each Gem of Pipeline.
 
 When running Pipelines and Jobs, you may be interested to know few metrics related to execution like records
 read/written, bytes read/written, total time taken and Data samples b/w components. These Dataset, Pipeline-run and
-Job-run related metrics are accumulated and stored on your data plane and can be viewed later from Prophecy UI. For more details please refer [here](../../execution-metrics)
+Job-run related metrics are accumulated and stored on your data plane and can be viewed later from Prophecy UI.
 
 Please refer below images for Execution Metrics on Pipelines page.
 

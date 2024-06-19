@@ -15,6 +15,28 @@ tags:
   - spark
 ---
 
+### Team level access-control
+
+For clusters with table ACL enabled, users may have limited access on catalogs, schemas and tables. Here we advise
+users to setup the execution metrics tables beforehand. Data is stored in the workspace storage itself and the
+tables can be chosen from Team view in Prophecy UI.
+You will have the option to choose the following at the time of team creation:
+
+1.  Pipeline Metrics Table - contains metrics and code for Pipeline runs
+2.  Component (Dataset) Metrics Table - contains metrics for individual component runs
+3.  Interim Table - contains samples of data, depending on the interim mode selected
+
+![ExecutionMetricsConfig.png](../../img/ExecutionMetricsConfig.png)
+
+### Pre-requisite
+
+Workspace / Catalog Admin will have to create tables and grant appropriate permissions to the users if they choose
+to mention tables of their choice.
+It is recommended that this should be done at the time of team creation itself, to ensure best experience for the users.
+DDLs and Grant accesses are defined below
+
+### Creating Tables
+
 Following are sample Create table commands for tables with schema, User can store these tables using any format like Avro, Parquet, ORC, Delta etc.
 
 - **Pipeline Metrics**
