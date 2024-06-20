@@ -39,7 +39,7 @@ A Seed is an excellent way to load small CSV files into Prophecy. This is super 
 
 ## Source
 
-Each Source points to a table in the SQL Warehouse(s) specified in the Fabric. Prophecy does not store the contents of the Source Table. Inside a Project, the `Env` tab allows for browsing the database and schema. Tables in the `Env` tab can be drag-n-dropped to the canvas without manually specifying any metadata. Follow the steps below to create and use a Source.
+Each Source points to a table in the SQL Warehouse(s) specified in the Fabric. Prophecy does not store the contents of the Source Table. Inside a Project, the `Env` tab allows for browsing the database and schema. Tables in the `Env` tab can be drag-n-dropped to the canvas without manually specifying any metadata. You can also upload a source table directly to your environment. For more information about how to upload a file, see [Upload files](./upload-files/). Follow the steps below to create and use a Source.
 
 ![Source1](img/Source1.png)
 
