@@ -1,17 +1,17 @@
 ---
-title: Upload SQL files
-id: upload-sql-files
-description: Upload SQL files to the Visual canvas
-sidebar_position: 13
+title: Upload files
+id: upload-files
+description: Upload files to the Visual canvas
+sidebar_position: 7
 tags:
   - how-to
   - upload
   - sql
 ---
 
-You can add a source table to your SQL Environment by uploading a SQL file directly onto the Visual canvas. As a business user, this gives you more control over your SQL files and how you choose to incorporate them into your Model transformation.
+You can add a source table to your SQL Environment by uploading a file directly onto the Visual canvas. As a business user, this gives you more control over your files and how you choose to incorporate them into your Model transformation.
 
-Depending on your SQL warehouse, the SQL file can be one of the following file types:
+Depending on your SQL warehouse, the file can be one of the following file types:
 
 - CSV
 - Excel
@@ -91,6 +91,6 @@ Preview the table:
 
   ![Preview the table](img/upload-file-preview.png)
 
-  If you selected a table to write your uploaded file to, you will need to confirm the upload in the pop-up window by clicking **Proceed**.
+  If you selected a table to write your uploaded file to, you'll need to confirm the upload in the pop-up window by clicking **Proceed**.
 
 The uploaded file is now available in the Source/Target node. You can upload another file or start working with your new source Gem.
