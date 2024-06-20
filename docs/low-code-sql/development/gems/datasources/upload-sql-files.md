@@ -2,7 +2,7 @@
 title: Upload SQL files
 id: upload-sql-files
 description: Upload SQL files to the Visual canvas
-sidebar_position: 13
+sidebar_position: 7
 tags:
   - how-to
   - upload
@@ -91,6 +91,6 @@ Preview the table:
 
   ![Preview the table](img/upload-file-preview.png)
 
-  If you selected a table to write your uploaded file to, you will need to confirm the upload in the pop-up window by clicking **Proceed**.
+  If you selected a table to write your uploaded file to, you'll need to confirm the upload in the pop-up window by clicking **Proceed**.
 
 The uploaded file is now available in the Source/Target node. You can upload another file or start working with your new source Gem.
