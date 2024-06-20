@@ -2,7 +2,7 @@
 title: Use project tests
 id: use-project-tests
 description: Custom SQL query tests
-sidebar_position: 8
+sidebar_position: 1
 tags:
   - how-to
   - testing
@@ -96,7 +96,7 @@ You can configure your own passing condition of your project test to help decide
 
 You might need to pay more attention as the number of rows in a table increases. For example, you might have a customer churn use case where many customers have a few comments (represented by rows in a table), but you need to change course when the number of customer comments exceeds a threshold of five comments. Configuring your test can help you identify and take action, such as assigning more resources to assist that customer.
 
-To configure a test:
+To configure a test, follow these steps:
 
 1. Click on the test to open the test details.
 
@@ -115,7 +115,7 @@ To configure a test:
 
 When scheduling your project, you can opt in to run a test along with the project or model. Scheduling a test allows you to ensure on a daily basis that your data is correct. You can only schedule a test with a project or model. You cannot schedule one individually.
 
-To Schedule your project to run with tests:
+To Schedule your project to run with tests, follow these steps:
 
 1. Under the Project Browser, click **Add Job**.
 
