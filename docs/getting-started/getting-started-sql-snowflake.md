@@ -207,7 +207,7 @@ Prophecy will quickly load all the available warehouses, databases, schemas, tab
 The first step, before building actual transformation logic, is definition of data sources. There are three primary ways to define data sources in a SQL project:
 
 1. **seeds** - which allow for loading small CSV Datasets into your warehouse (useful for small test Datasets or lookup mappings, like list of countries)
-2. **Datasets** - table points with schema and additional metadata
+2. **Datasets** - table pointer with schema and additional metadata
 3. **other models** - since each model defines a table, models can serve as inputs to another model (we’re going to cover models in the next section)
 
 #### 4.3.1 Create seeds
@@ -236,9 +236,14 @@ NATIONKEY,NAME,REGIONKEY,COMMENT
 
 #### 4.3.2 Define Datasets
 
-Importing Datasets is really easy. We can just drag-and-drop our existing tables directly into a model. We’re going to demonstrate that in the next step.
+Importing Datasets is really easy. [Upload a file](/docs/low-code-sql/development/gems/datasources/upload-files.md) or drag-and-drop existing tables directly into a model. We’re going to demonstrate that in the next step.
 
 ### 4.4 Develop your first model
+
+A model is an entity [like a pipeline](/docs/concepts/project/models.md#models-vs-pipelines) that contains a set of data transformations. However a Model defines a single output - a view or a table that will be created on the warehouse of choice. Each model is stored as a select statement in a SQL file within a project. Prophecy models are based on dbt Core [models](https://docs.getdbt.com/docs/build/models).
+
+Here we create a `customers_nations` model that’s going to enrich our customers and produce a report of which customers show up in which geographic areas most commonly.
+
 
 Figma: https://www.figma.com/design/DOqevNGzwkcPlwwUx1f5Dd/Documentation-%26-Blogs-(docs.prophecy.io)?node-id=5342-2500&t=wBPd5IOTLQA7I5I6-0
 TODO: insert one video here with audio, chapters, and text below
@@ -249,11 +254,29 @@ TODO: insert one video here with audio, chapters, and text below
 4. Suggested next transform (aggregate). For more info on Aggregation, see the new Agg [page](low-code-sql/development/gems/Transformations/aggregate.md)
 5. Suggested expression in the aggregate Gem
 
-A model is an entity [like a pipeline](/docs/concepts/project/models.md#models-vs-pipelines) that contains a set of data transformations. However a Model defines a single output - a view or a table that will be created on the warehouse of choice. Each model is stored as a select statement in a SQL file within a project. Prophecy models are based on dbt Core [models](https://docs.getdbt.com/docs/build/models).
 
-![Create the first model](img/Snow4.4_DefineModel.png)
 
-Here we create a `customers_nations` model that’s going to enrich our customers and produce a report of which customers show up in which geographic areas most commonly.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 To create a new model:
 
@@ -313,19 +336,10 @@ Let's define an english prompt explaining the [**next best step**](#4.4.3.1-next
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-#### 4.4.3.3 Option to define the Aggregate logic
+#### 4.4.3.3 Option to define the transformation logic
 
-TODO: replace with [this](low-code-sql/development/gems/Transformations/aggregate.md)
+In case the suggested transformation Gem is not what you had in mind, use a Transformation Gem such as [Aggregate](low-code-sql/development/gems/Transformations/aggregate.md) and configure the expressions as desired.
 
-Of course it's always possible to define transformations in the easy-to-use interface. Here let’s define the transformation logic for our **Aggregate** Gem, which will sum up the number of customers within each of the geographical locations and return a clean set of columns.
-
-![Aggregate definition](img/4-8-aggregate-definition.png)
-
-Within the **(1) Aggregate** tab define the following expressions on the **(2) Expressions** List. Most importantly, we create the `customers` column by counting customers using the `count(custkey)` expression. We also add two columns `name` and `nation_key`, that describe the selected location. Note, that to easily add columns you can simply click on them in the schema browser on the left side.
-
-Once the aggregation expressions are specified, we can consider grouping by a particular column. Switch to the Group By tab, and type in `nationkey`.
-
-Finally, we **(3) Rename** our Gem to `count_customers` and **(4) Save** it.
 
 ### 4.5 Interactively Test
 
