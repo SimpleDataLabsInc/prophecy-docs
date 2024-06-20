@@ -131,6 +131,18 @@ const config = {
             to: "/getting-started",
             from: "/developer/videos/",
           },
+          {
+            to: "/low-code-spark/execution/overview",
+            from: "/low-code-spark/execution/execution-metrics",
+          },
+          {
+            to: "/low-code-spark/execution/setup-execution/databricks/setup-databricks-for-execution",
+            from: "/low-code-spark/execution/executions_on_databricks_clusters",
+          },
+          {
+            to: "/low-code-spark/execution/setup-execution/livy/execution-metrics-on-livy",
+            from: "/low-code-spark/execution/executions_on_livy_clusters",
+          },
         ],
       },
     ],
