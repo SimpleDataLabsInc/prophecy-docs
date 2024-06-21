@@ -3,7 +3,6 @@ title: SQL with Snowflake
 id: sql-with-snowflake
 description: A tutorial on using Copilot for Snowflake
 sidebar_position: 2
-draft: true
 tags:
   - sql
   - tutorial
@@ -236,7 +235,7 @@ NATIONKEY,NAME,REGIONKEY,COMMENT
 
 #### 4.3.2 Define Datasets
 
-Importing Datasets is really easy. [Upload a file](/docs/low-code-sql/development/gems/datasources/upload-files.md) or drag-and-drop existing tables directly into a model. We’re going to demonstrate that in the next step.
+Importing Datasets is really easy. Upload a file or drag-and-drop existing tables directly into a model. We’re going to demonstrate that in the next step.
 
 ### 4.4 Develop your first model
 
