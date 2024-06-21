@@ -9,20 +9,26 @@ tags:
   - sql
 ---
 
-You can add a source table to your SQL Environment by uploading a file directly onto the Visual canvas. As a business user, this gives you more control over your files and how you choose to incorporate them into your Model transformation.
+You can add a source table to your SQL Environment by uploading a file directly onto the Visual canvas. This effectively uploads your file as a table. As a business user, this gives you more control over your data and how you choose to incorporate them into your Model transformation.
 
-Depending on your SQL warehouse, the file can be one of the following file types:
+The file can be one of the following file types:
 
-- CSV
-- Excel
-- JSON
-- Parquet
+- CSV - The default format is comma-separated. You have the option to change this during upload.
+- Excel - The upload supports both XLS and XLSX.
+- JSON - The upload supports single JSON per line with a consistent set of keys.
+- Parquet - The upload supports single file upload.
 
-When you upload your file through Prophecy, it's added directly to your Databricks or Snowflake SQL warehouse. This eliminates the need to use other tools to upload your files. Once you've uploaded your file, you can join the data in the file's table with existing big data tables that already exist in your SQL warehouse.
+When you upload your file through Prophecy, it's added directly to your Databricks or Snowflake SQL warehouse as a table. This eliminates the need to use other tools to upload your files. Once you've uploaded your file, you can join the data in the file's table with existing big data tables that already exist in your SQL warehouse.
 
 ## Upload a file
 
-To upload your SQL file, start by opening a project and following one of these steps:
+To upload your file, start by opening a project and following one of these steps:
+
+:::note
+
+The recommended maximum file size is 100&nbsp;MB.
+
+:::
 
 - Under the Environment Browser, click **Upload File**, and then select your file.
 
@@ -34,7 +40,7 @@ To upload your SQL file, start by opening a project and following one of these s
 
 ### Select the file type
 
-The supported file type depends on your SQL warehouse.
+Both Databricks and Snowflake SQL warehouses support CSV, Excel, JSON, and Parquet file types.
 
 Select the file type:
 
@@ -93,4 +99,4 @@ Preview the table:
 
   If you selected a table to write your uploaded file to, you'll need to confirm the upload in the pop-up window by clicking **Proceed**.
 
-The uploaded file is now available in the Source/Target node. You can upload another file or start working with your new source Gem.
+The uploaded file's table is now available in the Source/Target node. The table is created in your environment and a source is created within your project. You can upload another file or start working with your new source Gem.
