@@ -45,7 +45,7 @@ To use a cluster as your execution environment for SQL queries, click on **(1) C
 
 When using the compute cluster JDBC end-points, the last parameter of the url contains the password provided as user’s personal access token. Make sure to delete that URL fragment before entering it.
 
-Here’s a correct example `url: jdbc:Databricks://dbc-abc.cloud.Databricks.com:443/...;UID=token;`
+Here’s a correct example `url: jdbc:Databricks://dbc-abc.cluod.Databricks.com:443/...;UID=token;`
 
 For optimal performance and best governance options, we recommend using [Shared, Photon-enabled](https://docs.databricks.com/clusters/cluster-config-best-practices.html) clusters with [Unity-catalog](https://docs.databricks.com/data-governance/unity-catalog/compute.html) enabled.
 
@@ -125,10 +125,6 @@ When connecting to external Git repositories, you have to first setup a Git conn
 
 1. For GitHub - with single click connection (through GitHub OAuth)
 2. For other Git providers (e.g. Bitbucket, GitLab, etc) - by providing a Personal Access Token
-
-:::info
-To see a dropdown of repositories accessible to the Git user, be sure to connect from Prophecy using the native GitHub Oauth method, ie **Login with GitHub**. The dropdown list of repositories is not accessible to Prophecy if the Git connection uses the Personal Access Token method of authentication.
-:::
 
 #### 3.2.1 Connecting with GitHub
 
@@ -374,12 +370,6 @@ Once we have the **Job** developed and tested it’s time to commit and push our
 
 Start by clicking on the **Commit files** button in the middle of the footer (bottom of the screen). This opens an easy to use Git management screen.
 
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://fast.wistia.net/embed/iframe/13eplbunnt?seo=false?videoFoam=true" title="Getting Started With SQL Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
-<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
-
 The process of deploying code is composed of 4 steps:
 
 1. **Commit:** We start by creating a named version of our code and uploading it to our development branch on the secure Git repository. On the left hand side you can see the **Current branch** and the associated history of commits and on the right side, there’s a list of **Entities changed** (models, Jobs, etc) and their status. If everything looks good, type in the **(2) Commit message** which should clearly describe, in few sentences, all the changes that we’ve introduced.
@@ -404,3 +394,5 @@ You've successfully set up, developed, tested, and deployed your first SQL proje
 To continue learning and expanding your skills with Prophecy, explore other tutorials within our documentation, or apply your newfound knowledge to address real-world business challenges!
 
 If you ever encounter any difficulties, don't hesitate to reach out to us (Contact.us@Prophecy.io) or join our [Slack community](https://prophecy-io-support.slack.com/join/shared_invite/zt-moq3xzoj-~5MSJ6WPnZfz7bwsqWi8tQ#/shared-invite/email) for assistance. We're here to help!
+
+---
