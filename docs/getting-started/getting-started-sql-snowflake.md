@@ -15,7 +15,7 @@ Prophecy's Copilot - a delightful tool for interactively building data transform
 
 With Copilot for Snowflake, our customers can build complex queries visually, and the tool automatically translates them into optimized SQL code in Git. No more proprietary formats! Code in Git (representing visual designs) means more people can work with data and extract insights.
 
-We built Copilot for Snowflake on top of [dbt Core™️ ](https://github.com/dbt-labs/dbt-core), an open-source tool for managing SQL-based data transformations. Users take advantage of Git and dbt Core™️ best practices without needing to be coding experts. You'll soon notice: Copilot is not only translating visual designs to code, Copilot is also making helpful suggestions every step of the way.
+We built Copilot for Snowflake on top of [dbt Core™️ ](https://github.com/dbt-labs/dbt-core), an open-source tool for managing SQL-based data transformations. Users take advantage of Git and dbt Core™️ best practices without needing to be coding experts. You'll soon notice: Copilot is not only translating between code and visual designs, Copilot is also making helpful suggestions every step of the way.
 
 This quick-start gets you up and running with **building data transformations using Copilot for Snowflake.** Ready to schedule SQL queries and models? Prophecy supports [Airflow](/docs/low-code-jobs/airflow/setup/setup.md) for Job Scheduling.
 
@@ -240,106 +240,15 @@ Importing Datasets is really easy. [Upload a file](/docs/low-code-sql/developmen
 
 ### 4.4 Develop your first model
 
-A model is an entity [like a pipeline](/docs/concepts/project/models.md#models-vs-pipelines) that contains a set of data transformations. However a Model defines a single output - a view or a table that will be created on the warehouse of choice. Each model is stored as a select statement in a SQL file within a project. Prophecy models are based on dbt Core [models](https://docs.getdbt.com/docs/build/models).
+A model is an entity [like a pipeline](/docs/concepts/project/models.md#models-vs-pipelines) that contains a set of data transformations. However a Model defines a single output - a view or a table that will be created on the warehouse of choice. Each model is stored as a select statement in a [SQL file](#5-code-view) within a project. Prophecy models are based on dbt Core [models](https://docs.getdbt.com/docs/build/models).
+
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://fast.wistia.net/embed/iframe/9dtht17yj6?videoFoam=true" title="Edit Code Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
 Here we create a `customers_nations` model that’s going to enrich our customers and produce a report of which customers show up in which geographic areas most commonly.
-
-
-Figma: https://www.figma.com/design/DOqevNGzwkcPlwwUx1f5Dd/Documentation-%26-Blogs-(docs.prophecy.io)?node-id=5342-2500&t=wBPd5IOTLQA7I5I6-0
-TODO: insert one video here with audio, chapters, and text below
-
-1. Create a model
-2. Text to model --> oh, that's cool, also let's try another way --> actually maybe skip this step if it's not working yet
-3. Select one Dataset, see suggested Dataset and join. For more info on Joins, see the new joins [page](low-code-sql/development/gems/joins.md)
-4. Suggested next transform (aggregate). For more info on Aggregation, see the new Agg [page](low-code-sql/development/gems/Transformations/aggregate.md)
-5. Suggested expression in the aggregate Gem
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-To create a new model:
-
-1. Click to **+ Add Model** in the sidebar, when hovering over the Models section, or
-2. Click the **Create Model** button. A model creation pop-up will appear with very similar options as the seed definition.
-3. Enter the **Model Name**. Since each Model defines a single table or view, the model name will also be the name of the table or view.
-4. Enter the **Model Path**, the desired directory folder in the Git repository where the Model's `.sql` file will be stored. Where is the table's data stored in the Warehouse? The table's warehouse, database, schema, and table location are defined by default in the attached Fabric.
-5. Finally save the Model by pressing **OK.**
-
-#### 4.4.1 Add Sources to the Model with Copilot
-
-Building your model is very simple - there are suggestions at every step, which you can keep or adjust. In the videos below, we’re doing the following in our newly defined `customer_nations` model:
-
-1. First we select a source of interest from the **Environment** tab, the `customers` table. Right away we notice there are suggested sources - additional tables that might be of interest when working with the `customers` table.
-2. Then we select another table, in this case the `nations` seed.
-3. Note, that when two sources are dragged closely to each other a **Join** component is automatically created ([link](#4.4.1.2-select-table-and-join-condition-is-suggested)). The Join condition is suggested for us, and we'll keep that suggestion.
-
-##### 4.4.1.1 Suggested Sources
-
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://fast.wistia.net/embed/iframe/qamro53jwc?videoFoam=true" title="Drag and Drop Model Graph Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
-<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
-
-Note: dragging a source will prompt Copilot to suggest seeds and sources. Seeds in particular are intended for quick tests, so dragging a seed will only prompt Copilot to suggest other seeds.
-
-#### 4.4.1.2 Select Table and Join Condition is suggested
-
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://fast.wistia.net/embed/iframe/wo344ksiov?videoFoam=true" title="Drag and Drop Model Graph Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
-<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
-
-#### 4.4.2 Option to define the Join
-
-If the suggested Gems are not exactly what we need, we can just drag-and-drop components to the canvas and fill in the business logic. Sometimes we'll want to specify the **Join** transformation by changing the Copilot suggestion or creating our own. Check [here](/docs/low-code-sql/development/gems/joins.md) for details on configuring Join Gems.
-
-#### 4.4.3 Aggregate with Copilot suggestions
-
-Let's define an english prompt explaining the [**next best step**](#4.4.3.1-next-best-step) you'd like for the model. Copilot suggests meaningful Gems (transformations), and we can explore to decide if we want to keep the suggestion. If you'd like suggestions for a particular expression, open a Gem and start typing a desired column name to see suggestions in the [**Expression Builder.**](#4.4.3.2-expression-builder)
-
-##### 4.4.3.1 Next best step
-
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://fast.wistia.net/embed/iframe/ayblbrnitr?videoFoam=true" title="Drag and Drop Model Graph Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
-<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
-
-##### 4.4.3.2 Expression Builder
-
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://fast.wistia.net/embed/iframe/qjer3rxano?videoFoam=true" title="Drag and Drop Model Graph Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
-<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
-
-#### 4.4.3.3 Option to define the transformation logic
-
-In case the suggested transformation Gem is not what you had in mind, use a Transformation Gem such as [Aggregate](low-code-sql/development/gems/Transformations/aggregate.md) and configure the expressions as desired.
-
 
 ### 4.5 Interactively Test
 
@@ -371,7 +280,7 @@ You may wish to edit the code view - give it a try! Add a SQL statement in the c
 
 ## 6. Commit and Release with Git
 
-It's a good thing you've been working on your "development branch" for this guide, because now you'll step through the process of integrating your hard work with the rest of your team on the "main branch." Integration with Git is easier than it sounds. Commit early and commit often! You will commit, pull, merge, and release by following the steps [here](/docs/metadata/git.md#how-to-commit-changes).
+It's a good thing you've been working on your "development branch" for this guide, because now you'll step through the process of integrating your hard work with the rest of your team on the "main branch." Integration with Git is easier than it sounds. Commit early and commit often! You will commit, pull, merge, and release by following the steps [here](./getting-started-with-low-code-sql.md#53-commit-your-changes).
 
 Prophecy guides your team's code management - with version control, tagged releases, and lets multiple individuals contribute to the same project - so you can focus on solving your business problems.
 
