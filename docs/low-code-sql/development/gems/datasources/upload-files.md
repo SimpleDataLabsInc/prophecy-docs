@@ -15,6 +15,8 @@ Depending on your SQL warehouse, the file can be one of the following file types
 
 - CSV
 - Excel
+  - XLS
+  - XLSX
 - JSON
 - Parquet
 
