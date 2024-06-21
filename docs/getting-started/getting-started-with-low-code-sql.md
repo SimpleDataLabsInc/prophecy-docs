@@ -126,6 +126,10 @@ When connecting to external Git repositories, you have to first setup a Git conn
 1. For GitHub - with single click connection (through GitHub OAuth)
 2. For other Git providers (e.g. Bitbucket, GitLab, etc) - by providing a Personal Access Token
 
+:::info
+To see a dropdown of repositories accessible to the Git user, be sure to connect from Prophecy using the native GitHub Oauth method, ie **Login with GitHub**. The dropdown list of repositories is not accessible to Prophecy if the Git connection uses the Personal Access Token method of authentication.
+:::
+
 #### 3.2.1 Connecting with GitHub
 
 ![Connect With Github](img/3-4-connect-with-github.png)
