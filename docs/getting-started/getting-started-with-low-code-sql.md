@@ -372,11 +372,11 @@ Finally, we toggle our Job to be **(5) Enabled.** This enables the Job on the sc
 
 Once we have the **Job** developed and tested it’s time to commit and push our code to our repository.
 
-Start by clicking on the **Commit files** button in the middle of the footer (bottom of the screen, see 13min20sec in the video at the top of this page). This opens an easy to use Git management screen.
+Start by clicking on the **Commit files** button in the middle of the footer (bottom of the screen, see 13min20sec in the video at the top of this page/). This opens an easy to use Git management screen.
 
 The process of deploying code is composed of 4 steps:
 
-1. **Commit:** We start by creating a named version of our code and uploading it to our development branch on the secure Git repository. On the left hand side you can see the **Current branch** and the associated history of commits and on the right side, there’s a list of **Entities changed** (models, Jobs, etc) and their status. If everything looks good, type in the **(2) Commit message** which should clearly describe, in few sentences, all the changes that we’ve introduced.
+1. **Commit:** We start by creating a named version of our code and uploading it to our development branch on the secure Git repository. On the left hand side you can see the **Current branch** and the associated history of commits and on the right side, there’s a list of **Entities changed** (models, Jobs, etc) and their status. If everything looks good, type in the **Commit message** which should clearly describe, in few sentences, all the changes that we’ve introduced.
 2. **Pull:** Before your changes can be safely merged into the **main** branch, we have to make sure that we’re up to date with it. If your colleagues introduced any code on **main** we have to **Pull** it first. This step is most of the time going to happen automatically for us without any further actions required.
 3. **Merge:** Now that our development branch is up to date, we can merge it to master. Here we can either create a **Pull Request** or if you’re the owner of the repository force **Merge** the changes. For now, we **Merge** them directly. Once the code is merged, you can now see the latest commits present on your **main** branch.
 4. **Release:** Finally, now that our changes are all versioned on Git, we can release them to our scheduler. Simply specify a **Release Version** number, e.g. `1.0` , and the **Release Note,** which should clearly outline the latest changes. When ready, click **Release.**
