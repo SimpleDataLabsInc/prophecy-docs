@@ -53,6 +53,12 @@ Once a Git Credential is created, it can be used during Project creation (video 
 
 If you have not created your Git credentials already, you also have an option to create a Git credential from the Project creation screen directly. This Git credential can be reused for new Projects.
 
+Note that each Project is associated with a repository. This is the location Prophecy will store the Project's code. Select a default branch and path within that repository.
+
+:::info
+To see a dropdown of repositories accessible to the Git user, be sure to connect from Prophecy using the native GitHub Oauth method, ie **Login with GitHub**. The dropdown list of repositories is not accessible to Prophecy if the Git connection uses the Personal Access Token method of authentication.
+:::
+
 ## How to commit changes
 
 When you create your first Project, `dev` branch is automatically created for you. This is to ensure that no edits/commits are made directly on the `main` [branch](/concepts/Project/#Project-commits).
