@@ -372,7 +372,7 @@ Finally, we toggle our Job to be **(5) Enabled.** This enables the Job on the sc
 
 Once we have the **Job** developed and tested it’s time to commit and push our code to our repository.
 
-Start by clicking on the **Commit files** button in the middle of the footer (bottom of the screen). This opens an easy to use Git management screen.
+Start by clicking on the **Commit files** button in the middle of the footer (bottom of the screen, see 13min20sec in the video at the top of this page). This opens an easy to use Git management screen.
 
 The process of deploying code is composed of 4 steps:
 

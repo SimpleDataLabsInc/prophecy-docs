@@ -3,7 +3,6 @@ title: SQL with Snowflake
 id: sql-with-snowflake
 description: A tutorial on using Copilot for Snowflake
 sidebar_position: 2
-draft: true
 tags:
   - sql
   - tutorial
@@ -249,6 +248,10 @@ A model is an entity [like a pipeline](/docs/concepts/project/models.md#models-v
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
 Here we create a `customers_nations` model that’s going to enrich our customers and produce a report of which customers show up in which geographic areas most commonly.
+
+The `customers_nations` model is stored as a `.sql` file on Git. The table or view defined by the model is stored on the SQL warehouse, database, and schema defined in the attached Fabric.
+
+Suggestions are provided each step of the way. If Copilot's suggestions aren't exactly what you need, just select and configure the Gems as desired. Click [here](../low-code-sql/development/gems/joins.md) for details on configuring joins or [here](/low-code-sql/development/gems/Transformations/aggregate.md) for aggregations.
 
 ### 4.5 Interactively Test
 
