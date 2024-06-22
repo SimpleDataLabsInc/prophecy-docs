@@ -247,7 +247,7 @@ A model is an entity [like a pipeline](/docs/concepts/project/models.md#models-v
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-Here we create a `customers_nations` model that’s going to enrich our customers and produce a report of which customers show up in which geographic areas most commonly. Follow along with the `customer` table from your Snowflake Warehouse (Database: SAMPLE_DATA, Schema: TPCH).   
+Here we create a `customers_nations` model that’s going to enrich our customers and produce a report of which customers show up in which geographic areas most commonly. Follow along with the `customer` table from your Snowflake Warehouse (Database: SAMPLE_DATA, Schema: TPCH).
 
 The `customers_nations` model is stored as a `.sql` file on Git. The table or view defined by the model is stored on the SQL warehouse, database, and schema defined in the attached Fabric.
 
