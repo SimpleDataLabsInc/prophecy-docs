@@ -1,11 +1,11 @@
 ---
-title: Low-code SQL
-id: low-code-sql
-description: Low-code SQL
+title: Copilot for SQL users
+id: sql
+description: Copilot for SQL users SQL
 tags: [sql, snowflake, databricks, warehouse]
 ---
 
-Prophecy low-code SQL combines the best of both worlds; **high-quality code** based on software engineering best practices with a complete, **easy-to-use visual** environment.
+Prophecy Data Transformation Copilot for SQL combines the best of both worlds; **high-quality code** based on software engineering best practices with a complete, **easy-to-use visual** environment.
 
 ![CodeToVisual](./img/CodeToVisual.png)
 
@@ -39,4 +39,4 @@ A word from Prophecy's co-Founder, Maciej! See how Prophecy allows every team, w
 
 ### Get started
 
-Get started with SQL by starting with [this guide](/docs/getting-started/getting-started-with-low-code-sql.md) and learning more about models [here.](/docs/concepts/project/models.md) Watch for more low-code SQL topics coming soon!
+Get started with Copilot for SQL by following this guide for [Databricks](/docs/getting-started/getting-started-with-low-code-sql.md) or [Snowflake.](/docs/getting-started/getting-started-sql-snowflake.md)
