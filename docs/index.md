@@ -1,10 +1,10 @@
 ---
 sidebar_position: 1
-title: Prophecy - Low Code Data Engineering
+title: Prophecy Data Transformation Copilot
 sidebar_label: Prophecy
 ---
 
-Prophecy's Data Transformation Copilot is designed to enable all users to be productive with data engineering. It also replaces legacy ETL products. Following are the primary pillars of Prophecy Copilot:
+Prophecy's Copilot is designed to enable all users to be productive with data engineering. It also replaces legacy ETL products. Following are the primary pillars of Prophecy Copilot:
 
 ## Visual Interface
 
