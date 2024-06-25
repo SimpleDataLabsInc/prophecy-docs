@@ -161,14 +161,14 @@ const config = {
 
          */
         createRedirects(existingPath) {
-          if (existingPath.includes('/SQL')) {
-            return [
-              existingPath.replace('/SQL', '/low-code-sql')
-            ];
+          if (existingPath.includes("/SQL")) {
+            return [existingPath.replace("/SQL", "/low-code-sql")];
           }
-
+          if (existingPath.includes("/Spark")) {
+            return [existingPath.replace("/Spark", "/low-code-spark")];
+          }
           return undefined;
-        }
+        },
       },
     ],
   ],
