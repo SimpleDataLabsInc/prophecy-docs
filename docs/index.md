@@ -4,11 +4,11 @@ title: Prophecy - Low Code Data Engineering
 sidebar_label: Prophecy
 ---
 
-Prophecy is designed to enable all users to be productive with data engineering. It also replaces legacy ETL products. Following are the primary pillars of Prophecy
+Prophecy's Data Transformation Copilot is designed to enable all users to be productive with data engineering. It also replaces legacy ETL products. Following are the primary pillars of Prophecy Copilot:
 
 ## Visual Interface
 
-Prophecy's low-code designer provides a visual drag-and-drop canvas to develop data pipelines, where business logic can be written as simple SQL expressions. We believe it is superior in every way to developing custom scripts:
+Prophecy's designer provides a visual drag-and-drop canvas to develop data pipelines, where business logic can be written as simple SQL expressions. We believe it is superior in every way to developing custom scripts:
 
 - **Many data users:** Our users don't need to be experts in Spark or Airflow, and this enables all the data users - data engineers, visual ETL developers, data scientists and data analysts to succeed.
 - **Productive development:** It is very quick to develop pipelines - you can drag and drop visual blocks into a pipeline and interactively run them to see the data after every step along the journey. Even coding data engineers are more productive with our product.
@@ -19,7 +19,7 @@ Prophecy's low-code designer provides a visual drag-and-drop canvas to develop d
 
 Running at scale requires bringing the best software engineering practices to the refinement of data. Rapid development & deployment of data pipeline can be achieved by code on Git & high test coverage, coupled with continuous integration & continuous deployment. Prophecy does the following to make this process work:
 
-- **Visual data pipelines as code:** Prophecy low-code editor stores visual data pipelines as high-quality code on Git
+- **Visual data pipelines as code:** Prophecy's code editor stores visual data pipelines as high-quality code on Git
 - **High test coverage:** Prophecy makes test-generation & editing easy, and this results in high test coverage for our users after the switch
 - **Metadata as code:** Much of the metadata from projects including workflows, schedules and datasets, and computed metadata such as column-level lineage are also stored on Git with Prophecy.
 
