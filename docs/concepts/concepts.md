@@ -49,7 +49,7 @@ Models are based on SQL-native code and are backed by the dbt Core™️ build s
 
 You will want to create models if you’d like to transform data directly on your data warehouse or you’re an existing dbt user. They’re best suited for data analytics and data transformation use-cases.
 
-Learn more [here](/docs/low-code-sql/low-code-sql.md) about Prophecy’s low-code SQL environment and get started with low-code SQL on Databricks with [this guide](/docs/getting-started/getting-started-with-low-code-sql.md).
+Learn more [here](/docs/SQL/low-code-sql.md) about Prophecy’s low-code SQL environment and get started with low-code SQL on Databricks with [this guide](/docs/getting-started/getting-started-with-low-code-sql.md).
 
 ## Fabrics
 
