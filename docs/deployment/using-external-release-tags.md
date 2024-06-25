@@ -50,3 +50,11 @@ Click **(4) Create Dependency** to save.
 
 ![Add_dependency_2](img/External_release_tags_dependency_1.png)
 Similarly, you can also edit the dependency and update the version to an externally released version.
+
+## FAQ
+
+1. _How does Prophecy support Tags from a repo, which is linked to multiple Prophecy Projects?_
+   A Git tag is a pointer to a specific commit in the repo. It is not linked to a subfolder in the repo. So in this case, if user creates a tag, it would be available for all Projects linked to the repo.
+
+2. _Do the tags have to follow a certain pattern to be recognized?_
+   No. Prophecy supports all tag patterns supported in Git. We automatically refresh the tags in the Release and Deployment page when user lands on the page.
