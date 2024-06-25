@@ -235,7 +235,7 @@ NATIONKEY,NAME,REGIONKEY,COMMENT
 
 #### 4.3.2 Define Datasets
 
-Importing Datasets is really easy. [Upload a file](/docs/low-code-sql/development/gems/datasources/upload-files.md) or drag-and-drop existing tables directly into a model. We’re going to demonstrate that in the next step.
+Importing Datasets is really easy. [Upload a file](/docs/SQL/development/gems/datasources/upload-files.md) or drag-and-drop existing tables directly into a model. We’re going to demonstrate that in the next step.
 
 ### 4.4 Develop your first model
 
@@ -251,7 +251,7 @@ Here we create a `customers_nations` model that’s going to enrich our customer
 
 The `customers_nations` model is stored as a `.sql` file on Git. The table or view defined by the model is stored on the SQL warehouse, database, and schema defined in the attached Fabric.
 
-Suggestions are provided each step of the way. If Copilot's suggestions aren't exactly what you need, just select and configure the Gems as desired. Click [here](../low-code-sql/development/gems/joins.md) for details on configuring joins or [here](/low-code-sql/development/gems/Transformations/aggregate.md) for aggregations.
+Suggestions are provided each step of the way. If Copilot's suggestions aren't exactly what you need, just select and configure the Gems as desired. Click [here](../SQL/development/gems/joins.md) for details on configuring joins or [here](/low-code-sql/development/gems/Transformations/aggregate.md) for aggregations.
 
 ### 4.5 Interactively Test
 

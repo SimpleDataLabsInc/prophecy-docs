@@ -52,4 +52,4 @@ Supported test types include:
 
 ## What's next
 
-To set up a project test, see [Use project tests](/docs/low-code-sql/data-tests/use-project-tests.md).
+To set up a project test, see [Use project tests](/docs/SQL/data-tests/use-project-tests.md).
