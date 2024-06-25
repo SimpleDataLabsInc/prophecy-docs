@@ -18,7 +18,7 @@ If you use external CI-CD tools like Github or Jenkins to merge and release your
 
 Any externally created release tag that you pull into Prophecy is visible on Releases and Deployments.
 
-![External_tags_list](img/external_release_tags_list.png)
+![External_tags_list](img/external_release_tag_list.png)
 
 Tags that are created externally are labeled with an **(1) External** tag. If your latest tags aren't showing, click on the **(2) Refresh** button to refresh the list of tags.
 
@@ -28,19 +28,19 @@ To deploy an existing tag, follow these steps:
 
 1. From `...` in the top right corner, select **(1) Deploy**.
 
-   ![Deploy_button](img/external_release_tags_deploy.png)
+   ![Deploy_button](img/external_release_tag_deploy.png)
 
    This opens up the Deploy dialog.
 
 2. Select a release version you wish to deploy by using the **(1) Choose a release** dropdown. Once you select a version, the table below shows the Jobs that are going to be modified.
 
-   ![Deploy_start](img/external_release_tags_deploy_start.png)
+   ![Deploy_start](img/external_release_tag_deploy_start.png)
 
    1. Optional: You can override the Fabric for all Jobs, or if you have enabled Selective Job Deployment, then you can pick the Jobs you wish to deploy. For more details about these settings, see [Deployment](./deployment.md#selective-job-deployment).
 
    2. Click **Deploy** to start the deployment. The deployment process is shown.
 
-   ![Deploy_finished](img/external_release_tags_deploy_complete.png)
+   ![Deploy_finished](img/external_release_tag_deploy_complete.png)
 
 You can access these deployment logs from the [Deployment History](./deployment.md#deployment-history) tab.
 
@@ -52,7 +52,7 @@ To add a tag as a dependency, follow these steps:
 
 1. Navigate to the **(1) Dependencies** tab in the Project you want to add dependency in, and click on **(2) + Add Dependency**.
 
-   ![Add_dependency](img/external_release_tags_dependency.png)
+   ![Add_dependency](img/external_release_tag_dependency.png)
 
    This opens up the Create Dependency dialog.
 
@@ -64,7 +64,7 @@ To add a tag as a dependency, follow these steps:
 
    Click **(4) Create Dependency** to save.
 
-   ![Add_dependency_2](img/external_release_tags_create_dependency.png)
+   ![Add_dependency_2](img/external_release_tag_create_dependency.png)
 
 Similarly, you can also edit the dependency and update the version to an externally released version.
 
