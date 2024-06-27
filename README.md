@@ -68,3 +68,8 @@ Run this command once:
 ```shell
 $ pip install pre-commit && pre-commit install
 ```
+
+### Troubleshooting Tips
+1. Only run `yarn build` in /prophecy-docs rather than subdirectories. This avoids caching extra copies of the package management files.
+2. If `yarn build` is slow, try `rm -rf .docusaurus/ node_modules`, then run `yarn` and then `yarn build` again.
+3. If you want to check that redirects are working without relying on `yarn build`, an option is to run this command `yarn global add serve` then `serve`. This brings up the files on localhost:3000 in an approximation of the live site. 

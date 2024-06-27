@@ -79,7 +79,7 @@ If a Pipeline is a roadmap of the journey that your data will take from Start to
 Gems are categorised as below:
 
 | <div style={{'width':'100px'}}>Gem</div>   | Category                                            | Description                                                                                                |
-| ------------------------------------------ |-----------------------------------------------------| ---------------------------------------------------------------------------------------------------------- |
+| ------------------------------------------ | --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | ![Source and Target](img/SourceTarget.png) | [**Source and Target**](/Spark/gems/source-target/) | The set of Gems that help with loading and saving data.                                                    |
 | ![Transform](img/Transform.png)            | [**Transform**](/Spark/gems/transform/)             | The set of Gems that help with transforming data.                                                          |
 | ![Join and split](img/JoinSplit.png)       | [**Join and Split**](/Spark/gems/join-split/)       | The set of Gems that help with the process of merging or splitting DataFrame(s) to create new DataFrame(s) |
