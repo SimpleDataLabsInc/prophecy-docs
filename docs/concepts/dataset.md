@@ -23,7 +23,7 @@ Datasets are created where they're first used: When creating `Source`s or `Targe
 
 ![Create a Dataset](img/dataset/create.png)
 
-The screens that follow will depend on what _kind_ of [Source or Target](../low-code-spark/gems/source-target/source-target.md) in question. Once you finish configuring the Dataset, give it a name and click `Save`. This Dataset can now be used by Pipelines within this project, and in some cases can even be used by other projects _within the same Team_. This makes defining common `Source`s and `Target`s super easy!
+The screens that follow will depend on what _kind_ of [Source or Target](../Spark/gems/source-target/source-target.md) in question. Once you finish configuring the Dataset, give it a name and click `Save`. This Dataset can now be used by Pipelines within this project, and in some cases can even be used by other projects _within the same Team_. This makes defining common `Source`s and `Target`s super easy!
 
 ## Viewing project Datasets
 

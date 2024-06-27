@@ -50,7 +50,7 @@ Consider now the `Framework` Project and two Projects that have dependencies on 
 
 ### Re-using Pipelines
 
-Since `MarketingLeads` Project lists package `Framework` as a dependency, any Pipelines from `Framework` will be accessible in `MarketingLeads` by passing [configurable variables.](/docs/low-code-spark/configuration/configuration.md#pipeline-configuration) The `MarketingLeads` Project cannot change the Framework Pipelines. This is a good thing - the Platform team decides how `Framework` will evolve.
+Since `MarketingLeads` Project lists package `Framework` as a dependency, any Pipelines from `Framework` will be accessible in `MarketingLeads` by passing [configurable variables.](/docs/Spark/configuration/configuration.md#pipeline-configuration) The `MarketingLeads` Project cannot change the Framework Pipelines. This is a good thing - the Platform team decides how `Framework` will evolve.
 
 ![7](img/7-ph.png)
 The MarketingAnalytics team can create a **(1)new Pipeline configuration** and **(2)name** it `LeadsCleanup`. Then **(3)select** that configuration, perhaps change the variable “table” value from default to a more interesting **(4)value** for their use case. `LeadsCleanup` is a configuration instance of the `GenericCleanup` Pipeline template.

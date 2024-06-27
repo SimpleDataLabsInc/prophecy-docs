@@ -1,7 +1,7 @@
 ---
-title: Spark and SQL Jobs with Airflow
+title: Orchestration with Airflow
 id: airflow
-description: A tutorial on using Low-code Airflow
+description: A tutorial on orchestrating Spark and SQL jobs with Airflow
 sidebar_position: 3
 tags:
   - airflow

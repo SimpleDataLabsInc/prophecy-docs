@@ -16,7 +16,7 @@ With Copilot for Snowflake, our customers can build complex queries visually, an
 
 We built Copilot for Snowflake on top of [dbt Core™️ ](https://github.com/dbt-labs/dbt-core), an open-source tool for managing SQL-based data transformations. Users take advantage of Git and dbt Core™️ best practices without needing to be coding experts. You'll soon notice: Copilot is not only translating between code and visual designs, Copilot is also making helpful suggestions every step of the way.
 
-This quick-start gets you up and running with **building data transformations using Copilot for Snowflake.** Ready to schedule SQL queries and models? Prophecy supports [Airflow](/docs/low-code-jobs/airflow/setup/setup.md) for Job Scheduling.
+This quick-start gets you up and running with **building data transformations using Copilot for Snowflake.** Ready to schedule SQL queries and models? Prophecy supports [Airflow](/docs/Orchestration/airflow/setup/setup.md) for Job Scheduling.
 
 #### You will need
 
@@ -289,7 +289,7 @@ Prophecy guides your team's code management - with version control, tagged relea
 
 ## 7. Schedule Jobs with Airflow
 
-Most Snowflake users want to schedule jobs using Airflow. Prophecy integrates with MWAA and Composer Airflows. Don't have an Airflow account? Prophecy also provides a managed Airflow option. [Setup](/docs/low-code-jobs/airflow/setup/setup.md) your favorite Airflow option and use this [guide](./getting-started-with-low-code-airflow.md) to schedule Airflow Jobs. Now you can schedule SQL models integrated with your Spark Pipelines, S3 file sensors, etc.
+Most Snowflake users want to schedule jobs using Airflow. Prophecy integrates with MWAA and Composer Airflows. Don't have an Airflow account? Prophecy also provides a managed Airflow option. [Setup](/docs/Orchestration/airflow/setup/setup.md) your favorite Airflow option and use this [guide](./getting-started-with-low-code-airflow.md) to schedule Airflow Jobs. Now you can schedule SQL models integrated with your Spark Pipelines, S3 file sensors, etc.
 
 ## Wrap up
 
