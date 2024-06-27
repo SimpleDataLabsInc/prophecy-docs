@@ -1,4 +1,4 @@
-exclude: "docs/index.md|README.md"
+exclude: "docs/sql.md|README.md"
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.3.0
@@ -35,5 +35,5 @@ repos:
         args:
           [
             --badwords,
-            "spark:Spark,dataframe:DataFrame,Dataframe:DataFrame,gem:Gem,prophecy:Prophecy,pipeline:Pipeline,fabric:Fabric,GIT:Git,git:Git,databricks:Databricks,DataBricks:Databricks,delta:Delta,fabric:Fabric,dataset:Dataset,&:and,sql:SQL,python:Python,scala:Scala,vaccum:vacuum,Vaccum:Vacuum,partion:partition,job:Job,api:API,airflow:Airflow",
+            "spark:Spark,dataframe:DataFrame,Dataframe:DataFrame,gem:Gem,prophecy:Prophecy,pipeline:Pipeline,fabric:Fabric,GIT:Git,git:Git,databricks:Databricks,DataBricks:Databricks,delta:Delta,fabric:Fabric,dataset:Dataset,sql:SQL,python:Python,scala:Scala,vaccum:vacuum,Vaccum:Vacuum,partion:partition,job:Job,api:API,airflow:Airflow",
           ]

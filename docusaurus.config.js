@@ -136,7 +136,7 @@ const config = {
             from: "/getting-started/getting-started-sql-snowflake-airflow.md",
           },
           {
-            to: "/SQL/copilot-for-sql-users.md",
+            to: "/SQL/sql.md",
             from: "/low-code-sql/low-code-sql.md",
           },
         ],
