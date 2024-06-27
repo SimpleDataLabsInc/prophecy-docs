@@ -1,7 +1,7 @@
 ---
 title: Development
 id: development
-description: Designing low-code-sql projects
+description: Designing SQL projects with Copilot
 sidebar_position: 2
 tags:
   - SQL
@@ -13,11 +13,11 @@ tags:
   - ad-hoc
 ---
 
-Develop SQL Projects efficiently with Prophecy's Low-code canvas.
+Develop SQL Projects efficiently with Prophecy's visual canvas. Copilot will convert your visual designs into SQL code.
 
-## Low-code Canvas
+## Visual Canvas
 
-The low-code canvas is the main place to develop data models.
+The visual canvas is the main place to develop data models.
 Open any SQL Project in Prophecy to find the complete end-to-end **Project Lineage**. The Project Lineage provides a quick understanding of how Models refer to other Models, Seeds, or Sources. This quick, high-level project overview is explainable without having to read code.
 
 ![ProjectLineage](img/ProjectLineage.png)
@@ -35,7 +35,7 @@ Here we can see the `customers` Model starts with three existing Models. The dat
 
 ## Code = Visual
 
-Prophecy Low-code SQL features two editors:
+Prophecy Copilot for SQL features two editors:
 
 ![CodeEqualsVisual](img/CodeEqualsVisual.png)
 
