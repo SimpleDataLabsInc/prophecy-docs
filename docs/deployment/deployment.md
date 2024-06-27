@@ -101,7 +101,7 @@ Different versions of pipelines, datasets, and Subgraphs may coexist within the 
 
 ### Enable Unit Tests
 
-Writing good [Unit tests](/docs/low-code-spark/tests.md) is a key component for Data Pipeline quality and management. Prophecy makes the process of writing unit cases easier by giving an interactive environment via which unit test cases can be configured across each component.
+Writing good [Unit tests](/docs/Spark/tests.md) is a key component for Data Pipeline quality and management. Prophecy makes the process of writing unit cases easier by giving an interactive environment via which unit test cases can be configured across each component.
 This setting enables running Unit tests as part of Pipeline Builds.
 
 :::note

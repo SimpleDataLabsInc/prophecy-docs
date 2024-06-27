@@ -6,7 +6,7 @@ description: Sharable UDFs within the project and to other projects
 tags: []
 ---
 
-Users can share the [user-defined functions (UDF)](/docs/low-code-spark/extensibility/user-defined-functions.md) across their Pipelines and Projects.
+Users can share the [user-defined functions (UDF)](/docs/Spark/extensibility/user-defined-functions.md) across their Pipelines and Projects.
 
 ## Across Pipelines
 

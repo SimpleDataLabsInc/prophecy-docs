@@ -6,11 +6,11 @@ description: Sharable Subgraphs within the project and to other projects
 tags: []
 ---
 
-Users can share published [Subgraphs](/docs/low-code-spark/gems/subgraph/subgraph.md) across their Pipelines and Projects. This allows central Data Platform teams to build reusable code to cover a wide variety of business needs, such as Encryption/Decryption or Identity Masking, and have their "consumers" (the Data Practitioners) take a dependency on that reusable code.
+Users can share published [Subgraphs](/docs/Spark/gems/subgraph/subgraph.md) across their Pipelines and Projects. This allows central Data Platform teams to build reusable code to cover a wide variety of business needs, such as Encryption/Decryption or Identity Masking, and have their "consumers" (the Data Practitioners) take a dependency on that reusable code.
 
 ## Configurable Subgraphs
 
-User can add [configuration variables](/docs/low-code-spark/gems/subgraph/basicSubgraph.md#subgraph-configurations) to reusable Subgraphs and use these in the Gems of the Subgraph.
+User can add [configuration variables](/docs/Spark/gems/subgraph/basicSubgraph.md#subgraph-configurations) to reusable Subgraphs and use these in the Gems of the Subgraph.
 
 :::info
 Please note only Subgraph Configs can be used inside a Subgraph. Pipeline config variables cannot be used in Gems inside a Subgraph. Similarly, Subgraph configs are not available to other outside gems of the Pipeline.

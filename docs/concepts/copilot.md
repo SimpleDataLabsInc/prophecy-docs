@@ -61,7 +61,7 @@ Data Copilot can suggest the next transformation in a series. In this example:
 
 ![Suggest expressions](img/copilot_next_suggestion_expression.png)
 
-At the more granular level, Data Copilot can suggest expressions within Gems. Within our [advanced Expression Builder](/docs/low-code-spark/expression-builder.md) a User can:
+At the more granular level, Data Copilot can suggest expressions within Gems. Within our [advanced Expression Builder](/docs/Spark/expression-builder.md) a User can:
 
 1. Type an English text prompt
 2. Data Copilot generates a code expression for a particular column.
@@ -110,7 +110,7 @@ This is a big time saver! The documentation suggestions are editable and can be 
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-Unit tests and data quality checks are crucial for Pipeline and Job productionalization, yet many teams leave little time to develop these tests or worse, don’t build them at all. With Data Copilot, you’ll have one or more suggested [unit tests](/docs/low-code-spark/tests.md) that can be seamlessly integrated into your CICD process. Data Copilot will also be able to suggest data quality checks based on the data profile and expectations.
+Unit tests and data quality checks are crucial for Pipeline and Job productionalization, yet many teams leave little time to develop these tests or worse, don’t build them at all. With Data Copilot, you’ll have one or more suggested [unit tests](/docs/Spark/tests.md) that can be seamlessly integrated into your CICD process. Data Copilot will also be able to suggest data quality checks based on the data profile and expectations.
 
 ## Architecture
 

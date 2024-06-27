@@ -41,7 +41,7 @@ Pipelines are based on Spark-native code. Therefore, Prophecy users can leverage
 
 You will want to create pipelines when you’re running on a Spark environment, like Databricks or EMR. They’re particularly useful for more complex ingestion (e.g. loading data from Salesforce or JDBC), data transformations (e.g. working with complex data types) and machine learning use-cases.
 
-Learn more [here](../low-code-spark) about Prophecy’s Data Transformation Copilot for Spark and checkout this [guide](/docs/getting-started/getting-started-with-low-code-spark.md).
+Learn more [here](/Spark) about Prophecy’s Data Transformation Copilot for Spark and checkout this [guide](/docs/getting-started/getting-started-with-low-code-spark.md).
 
 ### Models (for SQL)
 
@@ -78,13 +78,13 @@ To define a dataset, all you need is
 If a Pipeline is a roadmap of the journey that your data will take from Start to Finish, the Gems are the stops to make along the way. Each Gem instance can be seen as just another Spark Transformation you perform on your data like Reformat, Join, Limit or Filter.
 Gems are categorised as below:
 
-| <div style={{'width':'100px'}}>Gem</div>   | Category                                                     | Description                                                                                                |
-| ------------------------------------------ | ------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- |
-| ![Source and Target](img/SourceTarget.png) | [**Source and Target**](/low-code-spark/gems/source-target/) | The set of Gems that help with loading and saving data.                                                    |
-| ![Transform](img/Transform.png)            | [**Transform**](/low-code-spark/gems/transform/)             | The set of Gems that help with transforming data.                                                          |
-| ![Join and split](img/JoinSplit.png)       | [**Join and Split**](/low-code-spark/gems/join-split/)       | The set of Gems that help with the process of merging or splitting DataFrame(s) to create new DataFrame(s) |
-| ![Custom](img/Custom.png)                  | [**Custom**](/low-code-spark/gems/custom/)                   | Set of Gems that do not fall into the other categories.                                                    |
-| ![Subgraph](img/Subgraph.png)              | [**Subgraph**](/low-code-spark/gems/subgraph/)               | A Gem that can contain many other Gems within it.                                                          |
+| <div style={{'width':'100px'}}>Gem</div>   | Category                                            | Description                                                                                                |
+| ------------------------------------------ |-----------------------------------------------------| ---------------------------------------------------------------------------------------------------------- |
+| ![Source and Target](img/SourceTarget.png) | [**Source and Target**](/Spark/gems/source-target/) | The set of Gems that help with loading and saving data.                                                    |
+| ![Transform](img/Transform.png)            | [**Transform**](/Spark/gems/transform/)             | The set of Gems that help with transforming data.                                                          |
+| ![Join and split](img/JoinSplit.png)       | [**Join and Split**](/Spark/gems/join-split/)       | The set of Gems that help with the process of merging or splitting DataFrame(s) to create new DataFrame(s) |
+| ![Custom](img/Custom.png)                  | [**Custom**](/Spark/gems/custom/)                   | Set of Gems that do not fall into the other categories.                                                    |
+| ![Subgraph](img/Subgraph.png)              | [**Subgraph**](/Spark/gems/subgraph/)               | A Gem that can contain many other Gems within it.                                                          |
 
 Each Gem _instance_ comes with their own configuration and each produces its own block of output code.
 
@@ -94,11 +94,11 @@ Once you have developed a Spark data Pipeline using Prophecy, you will want to s
 
 To support Jobs, Prophecy provides you with an easy to use interface to develop, using two different schedulers:
 
-- **[Databricks Jobs](../low-code-jobs/databricks-jobs)** - for simpler data-Pipeline use-cases, where you just
+- **[Databricks Jobs](../Orchestration/databricks-jobs)** - for simpler data-Pipeline use-cases, where you just
   orchestrate multiple data-Pipelines to run together. Databricks Jobs is a **recommended** scheduler, if you're
   Databricks Native.
 
-- **[Airflow](/docs/low-code-jobs/airflow/airflow.md)** - for more complex use-cases, where you have to use various operators, or need
+- **[Airflow](/docs/Orchestration/airflow/airflow.md)** - for more complex use-cases, where you have to use various operators, or need
   any additional data pre-and-post-processing, you can design your Jobs using Prophecy's interface for Airflow.
 
 Alternatively, since Prophecy provides you native Spark code on Git, you can easily integrate with any other scheduler.

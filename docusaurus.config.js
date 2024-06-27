@@ -167,6 +167,9 @@ const config = {
           if (existingPath.includes("/Spark")) {
             return [existingPath.replace("/Spark", "/low-code-spark")];
           }
+          if (existingPath.includes("/Orchestration")) {
+            return [existingPath.replace("/Orchestration", "/low-code-jobs")];
+          }
           return undefined;
         },
       },
