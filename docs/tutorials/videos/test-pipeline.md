@@ -23,7 +23,7 @@ Generate unit tests to ensure each transformation functions as expected.
 
 ### Description
 
-Generate unit tests using Prophecy's template test builder, run tests and check results all in Prophecy's low-code interface. Create custom data samples or configure Prophecy to generate a data sample based on your Pipeline. Go further with custom predicate expressions. Commit your tests, and Prophecy will run the tests any time the main branch is updated. Maintain tests in Prophecy and gate releases based on test outcomes. Achieve greater test coverage with Prophecy!
+Generate unit tests using Prophecy's template test builder, run tests and check results all in Prophecy's visual interface. Create custom data samples or configure Prophecy to generate a data sample based on your Pipeline. Go further with custom predicate expressions. Commit your tests, and Prophecy will run the tests any time the main branch is updated. Maintain tests in Prophecy and gate releases based on test outcomes. Achieve greater test coverage with Prophecy!
 
 ### Transcript
 

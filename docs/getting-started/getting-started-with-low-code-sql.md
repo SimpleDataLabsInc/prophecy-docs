@@ -1,14 +1,14 @@
 ---
 title: SQL with Databricks
 id: sql-with-databricks
-description: A tutorial on using Low-code SQL
+description: A tutorial on using SQL with the help of Data Transformation Copilot
 sidebar_position: 1
 tags:
   - sql
   - tutorial
 ---
 
-At Prophecy, we've added low-code SQL capabilities to version [3.0](https://www.prophecy.io/blog/announcing-prophecy-3-0-low-code-sql-transformations) of our platform, so users can build highly performant queries on par with the best analytics engineers without needing to be coding experts. We built this feature on top of [dbt Core™️ ](https://github.com/dbt-labs/dbt-core), an open-source tool for managing SQL-based data transformations. With low-code SQL, our customers can build complex queries visually, and the tool automatically translates them into optimized SQL code in Git that’s fully open and accessible to all. This makes it simpler for more people to work with data and extract insights.
+At Prophecy, we've added Copilot for SQL capabilities to version [3.0](https://www.prophecy.io/blog/announcing-prophecy-3-0-low-code-sql-transformations) of our platform, so users can build highly performant queries on par with the best analytics engineers without needing to be coding experts. We built this feature on top of [dbt Core™️ ](https://github.com/dbt-labs/dbt-core), an open-source tool for managing SQL-based data transformations. With Copilot for SQL, our customers can build complex queries visually, and the tool automatically translates them into optimized SQL code in Git that’s fully open and accessible to all. This makes it simpler for more people to work with data and extract insights.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -16,9 +16,9 @@ At Prophecy, we've added low-code SQL capabilities to version [3.0](https://www.
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-#### In this quick-start, we will show you how to setup Prophecy low-code SQL with an existing Databricks warehouse
+#### In this quick-start, we will show you how to setup Prophecy's Copilot for SQL with an existing Databricks warehouse
 
-We'll take you step by step from account setup to developing your first model. By the end of this training, you'll have an understanding of dbt models, be able to use low-code SQL to define and test your business logic, and commit this code and deploy it to production. That's a lot, but we make building complex queries easy with our drag and drop tooling. Let's dig in!
+We'll take you step by step from account setup to developing your first model. By the end of this training, you'll have an understanding of dbt models, be able to use Prophecy's visual interface to define and test your business logic, and commit this code and deploy it to production. That's a lot, but we make building complex queries easy with our drag and drop tooling. Let's dig in!
 
 #### You will need
 

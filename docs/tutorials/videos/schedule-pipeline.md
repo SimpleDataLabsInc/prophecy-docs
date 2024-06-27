@@ -41,7 +41,7 @@ In the last training, we designed a Pipeline and we committed our code to Git. W
 Today, we’ll schedule our Pipeline and commit our schedule details to our feature branch.
 
 [Create Schedule](https://fast.wistia.net/embed/iframe/dvayf1k9us?wtime=1m3s?seo=false?videoFoam=true)  
-It’s very easy to design and commit to Git using best software development practices in Prophecy’s low-code canvas. From our Pipeline, create a schedule to run the Pipeline at regular intervals and setup alerts.
+It’s very easy to design and commit to Git using the best software development practices in Prophecy’s visual canvas. From our Pipeline, create a schedule to run the Pipeline at regular intervals and setup alerts.
 
 [Git Branches](https://fast.wistia.net/embed/iframe/dvayf1k9us?wtime=1m30s?seo=false?videoFoam=true)  
 Enable the Job, and prepare to release. Prophecy makes it easy for everyone to work with Git. On the left is our feature branch; on the right is our main branch. The main branch is where your final code should exist. We have done some new work, designing a new Pipeline and new schedule for the Pipeline. Let’s commit our work to our feature branch.

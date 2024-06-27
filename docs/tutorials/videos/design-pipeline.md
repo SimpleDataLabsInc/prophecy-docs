@@ -16,11 +16,11 @@ tags:
 
 ### Summary
 
-Design a data transformation Pipeline and generate a report - all using a low-code interface for Apache Spark.
+Design a data transformation Pipeline and generate a report - all using a visual to code interface for Apache Spark.
 
 ### Description
 
-Using a low-code interface, ingest a shipments Dataset and create a pricing summary report. Read and write from multiple data sources, including Snowflake and Delta Catalog Table. Run the Pipeline interactively and see the Job in Databricks. View the generated code - either Python or Scala - which runs on Apache Spark. In the next trainings, we'll see how to commit this code to Git, version our changes, schedule, and test our Pipeline.
+Using a visual interface, ingest a shipments Dataset and create a pricing summary report. Read and write from multiple data sources, including Snowflake and Delta Catalog Table. Run the Pipeline interactively and see the Job in Databricks. View the generated code - either Python or Scala - which runs on Apache Spark. In the next trainings, we'll see how to commit this code to Git, version our changes, schedule, and test our Pipeline.
 
 ### Transcript
 
