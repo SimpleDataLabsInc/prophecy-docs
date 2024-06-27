@@ -1,7 +1,6 @@
 ---
 sidebar_position: 1
 title: Prophecy Data Transformation Copilot
-id: copilot-sql
 sidebar_label: Prophecy
 description: get a little help from Copilot
 ---
