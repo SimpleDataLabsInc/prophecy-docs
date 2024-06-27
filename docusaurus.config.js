@@ -132,12 +132,8 @@ const config = {
             from: "/developer/videos/",
           },
           {
-            to: "/getting-started/getting-started-sql-snowflake.md",
-            from: "/getting-started/getting-started-sql-snowflake-airflow.md",
-          },
-          {
-            to: "/SQL/sql.md",
-            from: "/low-code-sql/low-code-sql.md",
+            to: "/SQL/copilot-for-sql",
+            from: "/low-code-sql/low-code-sql",
           },
         ],
         /*

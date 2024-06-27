@@ -49,7 +49,7 @@ Models are based on SQL-native code and are backed by the dbt Core™️ build s
 
 You will want to create models if you’d like to transform data directly on your data warehouse or you’re an existing dbt user. They’re best suited for data analytics and data transformation use-cases.
 
-Learn more [here](/docs/SQL/sql) about Prophecy’s Data Transformation Copilot for SQL and get started with SQL on Databricks with [this guide](/docs/getting-started/getting-started-with-low-code-sql.md) or Snowflake with [this guide](/docs/getting-started/getting-started-sql-snowflake.md).
+Learn more [here](../SQL/copilot-for-sql) about Prophecy’s Data Transformation Copilot for SQL and get started with SQL on Databricks with [this guide](/docs/getting-started/getting-started-with-low-code-sql.md) or Snowflake with [this guide](/docs/getting-started/getting-started-sql-snowflake.md).
 
 ## Fabrics
 
