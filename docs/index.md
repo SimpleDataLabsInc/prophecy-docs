@@ -19,7 +19,7 @@ Prophecy's designer provides a visual drag-and-drop canvas to develop data Pipel
 - **Many data users:** Our users do not need to be experts in Spark or Airflow, and this enables all the data users - data engineers, visual ETL developers, data scientists and data analysts to succeed.
 - **Productive development:** It is very quick to develop Pipelines - you can drag and drop visual blocks into a Pipeline and interactively run them to see the data after every step along the journey. Even coding data engineers are more productive with our product.
 
-![Data Pipeline](./img/dataPipeline.png)
+![Data Pipeline](./img/datapipeline.png)
 
 ## Code & DevOps
 
