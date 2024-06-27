@@ -1,6 +1,6 @@
 ---
 title: Copilot for SQL users
-id: copilot-for-sql
+id: copilot-for-sql-users
 description: Copilot for SQL users SQL
 tags: [sql, snowflake, databricks, warehouse]
 ---
