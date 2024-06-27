@@ -62,4 +62,4 @@ Prophecy enables you to construct data Pipelines from predefined visual blocks (
 
 In the Gem builder UI, the left half is where you write the template code for the Gem. The top right has a functional UI generated in real time from the template code. You can fill business logic values into this generated UI, and you can immediately see the generated code at the bottom right. You can run this generated code against input data and see the results to ensure everything is working well.
 
-![Complete](./img/Gem-builder.png)
+![Complete](./img/gem-builder.png)
