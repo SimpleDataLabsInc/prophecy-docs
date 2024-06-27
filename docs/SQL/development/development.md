@@ -13,7 +13,7 @@ tags:
   - ad-hoc
 ---
 
-Develop SQL Projects efficiently with Prophecy's visual canvas. Copilot will convert your visual designs into SQL code.
+Develop SQL Projects efficiently with Prophecy's visual canvas. Copilot converts your visual designs into SQL code.
 
 ## Visual Canvas
 

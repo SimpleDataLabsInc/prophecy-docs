@@ -32,7 +32,7 @@ Running at scale requires bringing the best software engineering practices to th
 These provide the following benefits:
 
 - **DevOps practices:** For data projects, the Pipeline code, schedules & tests are stored on Git - with every developer working on her branch. Every change gets reviewed, and on every commit tests are run. The code is then deployed to be run per the schedule. Bad changes can be rolled back reliably. This process enables data teams to quickly move new and edited changes to production with high confidence.
-- **Zero lock-in:** Prophecy generated code is in 100% open-source format with data Pipelines in Apache Spark format and schedules in Apache Airflow format. This ensures freedom from lock-in and cost manaGement.
+- **Zero lock-in:** Prophecy generated code is in 100% open-source format with data Pipelines in Apache Spark format and schedules in Apache Airflow format. This ensures freedom from lock-in and cost management.
 - **Git versioning for time travel:** Given that data projects including metadata are stored together on Git, the user can traverse across time, and for example see how a value is computed today, and compare it with how it was computed a month earlier to understand why a breakage has occurred.
 
 ## Complete Product
