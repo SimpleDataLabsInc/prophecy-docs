@@ -16,7 +16,7 @@ Prophecy supports Databricks and Snowflake SQL Warehouses, with more options com
 
 ## Job Scheduling
 
-In addition to secure, ad-hoc model runs on Snowflake and Databricks, Job scheduling is done with a low-code easy-to-use interface.
+In addition to secure, ad-hoc model runs on Snowflake and Databricks, Job scheduling is done with a visual, easy-to-use interface.
 
 1. Snowflake users schedule Jobs with Airflow. Prophecy's [Airflow Fabric](/docs/low-code-jobs/airflow/setup/setup.md) facilitates a [Connection](/docs/low-code-jobs/airflow/setup/mwaa.md#setting-up-snowflake-connection) to the Snowflake Fabric.
 

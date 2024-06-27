@@ -11,7 +11,7 @@ tags:
   - fabric
 ---
 
-Snowflake has become a leading SQL Warehouse provider on the cloud. Follow the steps below to [Create a Fabric](./snowflake.md#create-a-fabric) in Prophecy so that you can execute data transformations on your Snowflake Warehouse. Power up Production models with [scheduled Jobs](./snowflake.md#schedule-jobs) on your Snowflake Warehouse using Airflow. Prophecy supports low-code development at every step.
+Snowflake has become a leading SQL Warehouse provider on the cloud. Follow the steps below to [Create a Fabric](./snowflake.md#create-a-fabric) in Prophecy so that you can execute data transformations on your Snowflake Warehouse. Power up Production models with [scheduled Jobs](./snowflake.md#schedule-jobs) on your Snowflake Warehouse using Airflow. Prophecy's easy-to-use environment supports development at every step.
 
 ## Create a Fabric
 
