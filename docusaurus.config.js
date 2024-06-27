@@ -131,10 +131,6 @@ const config = {
             to: "/getting-started",
             from: "/developer/videos/",
           },
-          {
-            to: "/SQL/copilot-for-sql",
-            from: "/low-code-sql/low-code-sql",
-          },
         ],
         /*
 
