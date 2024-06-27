@@ -1,5 +1,5 @@
 ---
-title: Data Copilot
+title: Data Copilot AI Capabilities
 id: copilot
 description: The AI assistant for data Pipelines and models
 sidebar_position: 8
@@ -9,7 +9,7 @@ tags:
   - generativeai
 ---
 
-### Building Models and Pipelines with Prophecy’s Data Copilot
+### Building Models and Pipelines with Prophecy’s Copilot
 
 <div class="wistia_responsive_padding" style={{padding:'62.5% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -17,7 +17,7 @@ tags:
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-Prophecy’s low-code platform makes data Pipeline development faster and accessible to more users. Starting now, you’ve got an AI assistant to boost that productivity even further.
+Prophecy’s end-to-end platform makes data Pipeline development faster and accessible to more users. Starting now, you’ve got an AI assistant to boost that productivity even further.
 
 We are open to feedback! Please send us an email (contact.us@Prophecy.io) or reach out on our Slack [community.](https://join.slack.com/t/prophecy-io-support/shared_invite/zt-moq3xzoj-~5MSJ6WPnZfz7bwsqWi8tQ)
 
@@ -164,7 +164,7 @@ In Prophecy’s 3.1 release, any Dataset, Source, or Seed within a Project are a
 
 #### How much will I pay for Prophecy Copilot?
 
-Copilot features are included with Prophecy’s Low-Code Spark and Low-Code SQL offerings. There would be an additional cost if you chose to use a private subscription Large Language Model (LLM) service. In this case, the cost depends on (1) the number of [word tokens](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them) sent to the LLM provider, (2) the size of the Datasets, and (3) the number of iterations Prophecy sends requests to the LLM provider.
+Copilot features are included with Prophecy’s Spark and SQL offerings. There would be an additional cost if you chose to use a private subscription Large Language Model (LLM) service. In this case, the cost depends on (1) the number of [word tokens](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them) sent to the LLM provider, (2) the size of the Datasets, and (3) the number of iterations Prophecy sends requests to the LLM provider.
 
 #### Can I use Data Copilot on my Private SaaS or On-Premise installation of Prophecy?
 
