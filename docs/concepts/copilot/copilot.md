@@ -35,7 +35,7 @@ Prophecy sends the enhanced Prompt to OpenAI. The model will return SQL or Spark
 
 Data Copilot is available for all customers using Prophecy’s managed Public SaaS offering and uses the public SaaS version of OpenAI's Language model. Customers using the Private SaaS or on-prem offerings can enable Data Copilot as a flag in the deployment / upgrade configuration.
 
-See [here](/architecture/deployment/enable-data-copilot) for more details.
+See [Enable Data Copilot](/concepts/copilot/enable-data-copilot) for more details.
 
 ## FAQ
 
