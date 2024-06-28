@@ -16,10 +16,6 @@ Data Copilot leverages OpenAI's generative AI models to understand user intent, 
 
 However, for the most security conscious organizations, it is possible to configure Prophecy to use your own OpenAI endpoint. This page describes how to enable Prophecy Data Copilot for private VPC SaaS environments and configure it to use your own OpenAI or Azure OpenAI endpoint.
 
-## Architecture
-
-![Prophecy Data Copilot & OpenAI Flow Architecture](img/data_copilot_open_ai_flow_architecture.png)
-
 ## Installation
 
 From the kubernetes cluster where Prophecy services are running:
@@ -65,6 +61,10 @@ PORT: "< add value here >"
 7. Enable the below variable on the common CP config map
    `COPILOT_ENABLED: "true"`
 8. The app pod, especially `copilot`, may redeploy itself. If not, restart the app pod.
+
+## Architecture
+
+![Prophecy Data Copilot & OpenAI Flow Architecture](img/data_copilot_open_ai_flow_architecture.png)
 
 ## FAQ
 

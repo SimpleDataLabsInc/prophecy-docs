@@ -9,8 +9,6 @@ tags:
   - generativeai
 ---
 
-## Capabilities
-
 Prophecy Data Copilot provides suggestions from an AI model as you develop your data Pipelines. You can view and incorporate suggestions directly within the Prophecy visual editor and code editor. Data Copilot makes suggestions for your entire Pipeline, for a single Gem (transformation), and even for individual expressions within each Gem.
 
 ### Text to Pipelines
