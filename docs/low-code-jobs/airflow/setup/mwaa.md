@@ -66,7 +66,7 @@ For simplicity, you can switch to **(3) JSON** and use below JSON policy and rep
     {
       "Sid": "VisualEditor0",
       "Effect": "Allow",
-      "Action": "airflow:ListEnvironments",
+      "Action": ["airflow:ListEnvironments", "airflow:GetEnvironment"],
       "Resource": "*"
     },
     {
@@ -76,8 +76,7 @@ For simplicity, you can switch to **(3) JSON** and use below JSON policy and rep
         "s3:PutObject",
         "s3:GetObject",
         "airflow:CreateCliToken",
-        "s3:DeleteObject",
-        "airflow:GetEnvironment"
+        "s3:DeleteObject"
       ],
       "Resource": [
         "arn:aws:airflow:<location>:<account id>:environment/<mwaa-environment-name>",
