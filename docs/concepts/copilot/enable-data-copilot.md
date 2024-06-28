@@ -2,7 +2,7 @@
 title: Enable Data Copilot
 id: enable-data-copilot
 description: How to enable Prophecy Data Copilot for private VPC SaaS environments.
-sidebar_position: 4
+sidebar_position: 10
 tags:
   - concepts
   - copilot
@@ -65,3 +65,15 @@ PORT: "< add value here >"
 7. Enable the below variable on the common CP config map
    `COPILOT_ENABLED: "true"`
 8. The app pod, especially `copilot`, may redeploy itself. If not, restart the app pod.
+
+## FAQ
+
+###
+
+#### Can I use Data Copilot on my Private SaaS or On-Premise installation of Prophecy?
+
+Yes! Data Copilot is enabled or disabled at deployment time. Admins who run Prophecy within their [own VPC](/docs/architecture/deployment/deployment.md#private-saas-customer-vpc) set the flag in the deployment or upgrade configuration. To learn more about how to connect Prophecy Data Copilot to private OpenAI endpoints, see [here](/architecture/deployment/enable-data-copilot). Speak to your Prophecy account owner with questions.
+
+#### Can I disable this feature for my users?
+
+For companies who run Prophecy within their [own VPC](/docs/architecture/deployment/deployment.md#private-saas-customer-vpc), admins may choose to enable or disable Data Copilot across their Prophecy Platform at deployment time.
