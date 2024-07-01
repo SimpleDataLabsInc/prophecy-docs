@@ -10,7 +10,7 @@ tags:
   - upgrade
 ---
 
-**Prophecy Data Copilot** is an AI-powered assistant that delivers intelligent suggestions and automates repetitive tasks for visual data transformations. You can read more about it [here](/concepts/copilot.md).
+**Prophecy Data Copilot** is an AI-powered assistant that delivers intelligent suggestions and automates repetitive tasks for visual data transformations. You can read more about it at [Data Copilot](/concepts/copilot).
 
 Data Copilot leverages OpenAI's generative AI models to understand user intent, and enriched by the organizations' [knowledge graph](/concepts/copilot#knowledge-graph), to automate repetitive data engineering tasks. By default, Data Copilot leverages **Prophecy's managed OpenAI subscription and is entirely free** for existing Prophecy customers. Prophecy uses user queries and metadata when communicating with OpenAI. Prophecy never sends any customer data to OpenAI.
 
@@ -72,7 +72,7 @@ PORT: "< add value here >"
 
 #### Can I use Data Copilot on my Private SaaS or On-Premise installation of Prophecy?
 
-Yes! Data Copilot is enabled or disabled at deployment time. Admins who run Prophecy within their [own VPC](/docs/architecture/deployment/deployment.md#private-saas-customer-vpc) set the flag in the deployment or upgrade configuration. To learn more about how to connect Prophecy Data Copilot to private OpenAI endpoints, see [here](/architecture/deployment/enable-data-copilot). Speak to your Prophecy account owner with questions.
+Yes! Data Copilot is enabled or disabled at deployment time. Admins who run Prophecy within their [own VPC](/docs/architecture/deployment/deployment.md#private-saas-customer-vpc) set the flag in the deployment or upgrade configuration. To learn more about how to connect Prophecy Data Copilot to private OpenAI endpoints, speak to your Prophecy account owner.
 
 #### Can I disable this feature for my users?
 

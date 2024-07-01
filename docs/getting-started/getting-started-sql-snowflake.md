@@ -265,7 +265,7 @@ Prophecy makes **interactively testing** the models incredibly easy! Simply:
 2. Once the model runs, the **Result** icon appears.
 3. Click the Result icon to view a **Sample** set of records.
 
-Notice Copilot is offering suggested fixes when errors appear. See how **Fix with AI** works [here](/docs/concepts/copilot.md#fix-with-ai). Explore suggested fixes in the canvas, inside each transformation Gem, or inside Gem expressions.
+Notice Copilot is offering suggested fixes when errors appear. See how **Fix with AI** works [here](/docs/concepts/copilot/copilot-ai-capabilities.md#fix-with-ai). Explore suggested fixes in the canvas, inside each transformation Gem, or inside Gem expressions.
 
 ## 5. Code view
 
