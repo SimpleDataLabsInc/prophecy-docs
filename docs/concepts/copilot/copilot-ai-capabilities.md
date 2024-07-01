@@ -10,7 +10,7 @@ tags:
   - capabilities
 ---
 
-Prophecy Data Copilot provides suggestions from an AI model as you develop your data Pipelines. You can view and incorporate suggestions directly within the Prophecy visual editor and code editor. Data Copilot makes suggestions for your entire Pipeline, for a single Gem (transformation), and even for individual expressions within each Gem.
+Prophecy Data Copilot provides suggestions from an AI model as you develop your data Pipelines and Models. You can view and incorporate suggestions directly within the Prophecy visual editor and code editor. Data Copilot makes suggestions for your entire Pipeline, for a single Gem (transformation), and even for individual expressions within each Gem.
 
 ## Supported AI capabilities by engine
 
@@ -42,14 +42,14 @@ Get started on a new Pipeline quickly by typing your query into the text box and
 The following example uses Data Copilot to help start a Pipeline:
 
 1. Type a prompt with English text, such as `Which customers shipped the largest orders this year?`
-2. Data Copilot uses metadata from the accessible Datasets, Seeds, Models, and Pipelines, to create a Knowledge Graph.
+2. Data Copilot uses metadata from the accessible Datasets, Seeds, Pipelines, and Models, to create a Knowledge Graph.
 3. Data Copilot uses OpenAI's language model to create the Pipeline based on the text prompt, with the Knowledge Graph as the context. This Pipeline is accessible in the visual editor as well as the code editor.
 4. You can keep or reject the suggested Pipeline and interactively execute it to see the results.
 5. View Data Copilot's suggested changes in the visual editor.
 
 ### Modify an existing Pipeline
 
-You can also call Data Copilot to modify an existing Pipeline. Select which Gem should be the starting point for modifications downstream, and type a new text prompt. Data Copilot will suggest a new sequence of data transformations after the selected starting point.
+You can also call Data Copilot to modify an existing Model. Select which Gem should be the starting point for modifications downstream, and type a new text prompt. Data Copilot will suggest a new sequence of data transformations after the selected starting point.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -98,7 +98,7 @@ Data Copilot can generate scripts, user-defined functions, or functions for macr
 
 ## Map with AI
 
-You don't have to worry about mapping the schema across your Pipeline. Data Copilot will map the target schema with the existing Gems and datasets.
+You don't have to worry about mapping the schema across your Model. Data Copilot will map the target schema with the existing Gems and datasets.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -112,7 +112,7 @@ In addition to the visual editor above, you'll also see code suggestions in the 
 
 ![CodeSuggestions](./img/copilot_code_suggestion.png)
 
-Data Copilot helps you build your Pipeline in the code interface by making predictions as you type your code. And when you go back to the visual interface, you'll see your code represented as a Pipeline.
+Data Copilot helps you build your Model in the code interface by making predictions as you type your code. And when you go back to the visual interface, you'll see your code represented as a Model.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -134,7 +134,7 @@ The Fix with AI option appears at any point where you see an error message.
 
 ## Auto Documentation
 
-Understanding data assets is much easier with Data Copilot’s auto-documentation. Data Copilot delivers summary documentation suggestions for all Datasets, Pipelines, and Orchestrations.
+Understanding data assets is much easier with Data Copilot’s auto-documentation. Data Copilot delivers summary documentation suggestions for all Datasets, Pipelines, Models, and Orchestrations.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
