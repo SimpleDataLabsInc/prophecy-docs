@@ -1,12 +1,13 @@
 ---
 title: Data Copilot data privacy
 id: copilot-data-privacy
-description: The AI assistant for data Pipelines and models
+description: The AI assistant data privacy for data Pipelines and models
 sidebar_position: 11
 tags:
   - concepts
   - copilot
   - generativeai
+  - data privacy
 ---
 
 The Prophecy team employs top-notch industry practices to safeguard the security of their application and maintain the privacy of customer data. Below are just a few components of our comprehensive security strategy and system structure:

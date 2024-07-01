@@ -19,6 +19,8 @@ Prophecy’s end-to-end platform makes data Pipeline development faster and acce
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
+To learn more about what Data Copilot can do, see [Data Copilot AI capabilities](/concepts/copilot/copilot-ai-capabilities).
+
 ## Knowledge Graph
 
 Data Copilot works by enhancing the user’s prompt using a knowledge graph.
@@ -35,7 +37,7 @@ Prophecy sends the enhanced Prompt to OpenAI. The model returns SQL or Spark cod
 
 Data Copilot is available for all customers using Prophecy’s managed Public SaaS offering and uses the public SaaS version of OpenAI's Language model. Customers using the Private SaaS or on-prem offerings can enable Data Copilot as a flag in the deployment / upgrade configuration.
 
-See [Enable Data Copilot](/concepts/copilot/enable-data-copilot) for more details.
+For more details, see [Enable Data Copilot](/concepts/copilot/enable-data-copilot).
 
 ## FAQ
 
@@ -53,19 +55,19 @@ Github Copilot and Prophecy Data Copilot are both excellent tools to boost produ
 
 #### Which Datasets are accessible to Prophecy Data Copilot?
 
-In Prophecy’s 3.1 release, any Dataset, Source, or Seed within a Project are accessible when Data Copilot is called from that Project. In an upcoming release, this behavior may change as follows: The assets need only to be part of the linked (Databricks, Snowflake, etc.) catalog. That is, if the user can access the Datasets with their personal access token, then Datasets should appear in the Environment tab and Copilot can access them.
+Any Dataset, Source, or Seed that is part of the linked (Databricks, Snowflake, etc.) catalog is accessible. That is, if you can access the Datasets with your personal access token, then the Datasets should appear in the Environment tab and Copilot can access them.
 
 #### How much will I pay for Prophecy Copilot?
 
 Copilot features are included with Prophecy’s Spark and SQL offerings. There would be an additional cost if you chose to use a private subscription Large Language Model (LLM) service. In this case, the cost depends on the following:
 
 - the number of [word tokens](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them) sent to the LLM provider
-- the size of the Datasets, and
+- the size of the Datasets
 - the number of iterations Prophecy sends requests to the LLM provider
 
 #### Can I use my own private OpenAI instance?
 
-In a future release, Administrators will have the option to connect Prophecy Data Copilot to their private subscription OpenAI.
+Yes! Administrators have the option to connect Prophecy Data Copilot to their private subscription OpenAI from the Kubernetes cluster where Prophecy services are running. For details on how to do this, see [Installation](/concepts/copilot/enable-data-copilot#installation).
 
 #### Does Prophecy Data Copilot support text prompts in languages other than English?
 
