@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[9674],{12058:e=>{e.exports=JSON.parse('{"label":"descending","permalink":"/tags/descending","allTagsPath":"/tags","count":1,"items":[{"id":"Spark/gems/transform/order-by","title":"Order By","description":"Sort your data based on one or more Columns","permalink":"/Spark/gems/transform/order-by"}]}')}}]);

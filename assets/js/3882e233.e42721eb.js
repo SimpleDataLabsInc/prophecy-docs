@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[244],{35983:s=>{s.exports=JSON.parse('{"label":"Fabrics","permalink":"/tags/fabrics","allTagsPath":"/tags","count":1,"items":[{"id":"Spark/fabrics/Fabrics","title":"Prophecy Fabrics","description":"Fabrics define execution engines","permalink":"/Spark/fabrics/"}]}')}}]);

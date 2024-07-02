@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[6670],{16382:e=>{e.exports=JSON.parse('{"label":"where","permalink":"/tags/where","allTagsPath":"/tags","count":1,"items":[{"id":"Spark/gems/transform/filter","title":"Filter","description":"Filter your data based on a custom filter condition","permalink":"/Spark/gems/transform/filter"}]}')}}]);

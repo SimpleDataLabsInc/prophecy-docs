@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[3844],{9495:e=>{e.exports=JSON.parse('{"label":"fixed-format","permalink":"/tags/fixed-format","allTagsPath":"/tags","count":1,"items":[{"id":"Spark/gems/source-target/file/fixed-format","title":"Fixed Format","description":"Fixed Format","permalink":"/Spark/gems/source-target/file/fixed-format"}]}')}}]);

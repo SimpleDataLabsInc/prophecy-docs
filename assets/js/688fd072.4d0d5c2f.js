@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[536],{73048:e=>{e.exports=JSON.parse('{"label":"jdbc","permalink":"/tags/jdbc","allTagsPath":"/tags","count":1,"items":[{"id":"low-code-spark/gems/source-target/warehouse/jdbc","title":"JDBC","description":"JDBC","permalink":"/low-code-spark/gems/source-target/warehouse/jdbc"}]}')}}]);
