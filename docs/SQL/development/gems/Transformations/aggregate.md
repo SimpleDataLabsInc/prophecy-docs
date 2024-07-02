@@ -20,9 +20,6 @@ Together let's deconstruct a commonly used Transformation, the Aggregate Gem. Fo
 1. **Open** the HelloWorld_SQL [Project](https://app.prophecy.io/metadata).
 2. From the list of Models, select the **Orders** Model. A Model is a series of transformation steps (Gems) that describe how to create a single table or view. The Orders Model defines the steps to create the Orders table.
 3. Open the **Transformation** dropdown to see the available Transformation Gems. The Aggregate Gem has already been dragged to the canvas and configured in this HelloWorld_SQL example.
-
-Let's explore the Aggregate Gem by checking the input and output data samples, and then check how the Aggregate Gem is configured.
-
 4. Click the arrow to **Run upto the Aggregate Gem**.
 5. Preview a **data sample** before the Aggregate Gem.
 6. This is the `payments` data sample before the Aggregate Gem. There is one row per payment.
