@@ -79,7 +79,7 @@ At the more granular level, Data Copilot can suggest expressions within Gems.
 
 ![Suggest expressions](img/copilot_next_suggestion_expression.png)
 
-Within our [advanced Expression Builder](/docs/spark/expression-builder.md) you can:
+Within our [advanced Expression Builder](/Spark/expression-builder) you can:
 
 1. Type an English text prompt.
 2. Data Copilot generates a code expression for a particular column.
@@ -158,7 +158,7 @@ In addition to data sources and column summaries, Data Copilot also auto-documen
 
 ## Data Tests and Quality Checks
 
-Unit tests and data quality checks are crucial for Pipeline and Job productionalization, yet many teams leave little time to develop these tests or worse, don’t build them at all. With Data Copilot, you’ll have one or more suggested [unit tests](/docs/spark/tests.md) that can be seamlessly integrated into your CICD process.
+Unit tests and data quality checks are crucial for Pipeline and Job productionalization, yet many teams leave little time to develop these tests or worse, don’t build them at all. With Data Copilot, you’ll have one or more suggested [unit tests](/Spark/tests) that can be seamlessly integrated into your CICD process.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
