@@ -14,7 +14,7 @@ Prophecy Data Copilot provides suggestions from an AI model as you develop your 
 
 ## Supported AI capabilities by engine
 
-Data Copilot supports the following capabilites for the Spark and SQL engines:
+Data Copilot supports the following capabilities for the Spark and SQL engines:
 
 | AI Capability                                      | Spark                    | SQL                      |
 | -------------------------------------------------- | ------------------------ | ------------------------ |
@@ -33,7 +33,7 @@ Data Copilot supports the following capabilites for the Spark and SQL engines:
 
 ## Text to Pipelines
 
-Get started on a new Pipeline quickly by typing your query into the text box and Data Copilot will generate a new Pipeline or modify an existing one.
+Get started on a new Pipeline quickly by typing your prompt into the text box and Data Copilot will generate a new Pipeline or modify an existing one.
 
 ### Start a new Pipeline
 
@@ -44,12 +44,12 @@ The following example uses Data Copilot to help start a Pipeline:
 1. Type a prompt with English text, such as `Which customers shipped the largest orders this year?`
 2. Data Copilot uses metadata from the accessible Datasets, Seeds, Pipelines, and Models, to create a Knowledge Graph.
 3. Data Copilot uses OpenAI's language model to create the Pipeline based on the text prompt, with the Knowledge Graph as the context. This Pipeline is accessible in the visual editor as well as the code editor.
-4. You can keep or reject the suggested Pipeline and interactively execute it to see the results.
+4. If you'd like, review the suggested changes before you decide to keep or reject the suggested Pipeline. Then interactively execute it to see the results.
 5. View Data Copilot's suggested changes in the visual editor.
 
 ### Modify an existing Pipeline
 
-You can also call Data Copilot to modify an existing Model. Select which Gem should be the starting point for modifications downstream, and type a new text prompt. Data Copilot will suggest a new sequence of data transformations after the selected starting point.
+You can also call Data Copilot to modify an existing Model. Type a new text prompt, and Data Copilot will suggest a new sequence of data transformations.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -108,9 +108,7 @@ You don't have to worry about mapping the schema across your Model. Data Copilot
 
 ## Code with AI
 
-In addition to the visual editor above, you'll also see code suggestions in the code editor as below.
-
-![CodeSuggestions](./img/copilot_code_suggestion.png)
+In addition to the visual editor above, you'll also see code suggestions in the code editor.
 
 Data Copilot helps you build your Model in the code interface by making predictions as you type your code. And when you go back to the visual interface, you'll see your code represented as a Model.
 
@@ -136,6 +134,8 @@ The Fix with AI option appears at any point where you see an error message.
 
 Understanding data assets is much easier with Data Copilot’s auto-documentation. Data Copilot delivers summary documentation suggestions for all Datasets, Pipelines, Models, and Orchestrations.
 
+Here Data Copilot provides a high-level summary of a Pipeline and more detailed description of each Gem.
+
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://fast.wistia.net/embed/iframe/9r86rl0lbz?videoFoam=true" title="Edit Code Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
@@ -143,14 +143,13 @@ Understanding data assets is much easier with Data Copilot’s auto-documentatio
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
 How did a Dataset change? Data Copilot recommends a description of the change for every edit you make.
+How was a column computed? Data Copilot suggests a plain English description that explains data sources and how every column is generated and what it represents.
 
 <div class="wistia_responsive_padding" style={{padding:'62.5% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://fast.wistia.net/embed/iframe/rec6bcdwet?seo=false?videoFoam=true" title="Design a Pipeline Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_responsive_wrapper" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
-
-How was a column computed? Data Copilot suggests a plain English description that explains data sources and how every column is generated and what it represents.
 
 This is a big time saver! You can edit the documentation suggestions and commit them to your repository.
 
