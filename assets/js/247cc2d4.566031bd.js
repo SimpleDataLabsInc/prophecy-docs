@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[224],{20797:e=>{e.exports=JSON.parse('{"label":"bigquery","permalink":"/tags/bigquery","allTagsPath":"/tags","count":1,"items":[{"id":"Spark/gems/source-target/warehouse/bigquery","title":"BigQuery","description":"BigQuery","permalink":"/Spark/gems/source-target/warehouse/bigquery"}]}')}}]);

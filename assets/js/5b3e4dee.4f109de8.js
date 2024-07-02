@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[36948],{1746:e=>{e.exports=JSON.parse('{"label":"mongodb","permalink":"/tags/mongodb","allTagsPath":"/tags","count":1,"items":[{"id":"Spark/gems/source-target/warehouse/mongodb","title":"MongoDB","description":"MongoDB","permalink":"/Spark/gems/source-target/warehouse/mongodb"}]}')}}]);

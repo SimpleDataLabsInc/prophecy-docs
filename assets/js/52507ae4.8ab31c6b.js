@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[8074],{43734:e=>{e.exports=JSON.parse('{"label":"salesforce","permalink":"/tags/salesforce","allTagsPath":"/tags","count":1,"items":[{"id":"Spark/gems/source-target/warehouse/salesforce","title":"Salesforce","description":"Salesforce","permalink":"/Spark/gems/source-target/warehouse/salesforce"}]}')}}]);

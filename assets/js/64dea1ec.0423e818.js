@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[3518],{85167:e=>{e.exports=JSON.parse('{"label":"runs","permalink":"/tags/runs","allTagsPath":"/tags","count":1,"items":[{"id":"SQL/development/development","title":"Development","description":"Designing SQL projects with Copilot","permalink":"/SQL/development/"}]}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[44127],{59077:e=>{e.exports=JSON.parse('{"label":"plib","permalink":"/tags/plib","allTagsPath":"/tags","count":1,"items":[{"id":"release_notes/version_chart","title":"Version Chart","description":"Prophecy library version chart","permalink":"/release_notes/version_chart"}]}')}}]);

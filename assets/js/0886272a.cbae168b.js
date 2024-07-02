@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[31331],{22540:e=>{e.exports=JSON.parse('{"label":"redshift","permalink":"/tags/redshift","allTagsPath":"/tags","count":1,"items":[{"id":"Spark/gems/source-target/warehouse/redshift","title":"Redshift","description":"Redshift","permalink":"/Spark/gems/source-target/warehouse/redshift"}]}')}}]);

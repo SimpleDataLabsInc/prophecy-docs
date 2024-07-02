@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[7480],{83527:s=>{s.exports=JSON.parse('{"label":"csv","permalink":"/tags/csv","allTagsPath":"/tags","count":1,"items":[{"id":"Spark/gems/source-target/file/csv","title":"CSV","description":"CSV","permalink":"/Spark/gems/source-target/file/csv"}]}')}}]);

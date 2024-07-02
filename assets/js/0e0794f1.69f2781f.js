@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[59053],{63671:a=>{a.exports=JSON.parse('{"label":"teradata","permalink":"/tags/teradata","allTagsPath":"/tags","count":1,"items":[{"id":"Spark/gems/source-target/warehouse/teradata","title":"Teradata","description":"Teradata","permalink":"/Spark/gems/source-target/warehouse/teradata"}]}')}}]);

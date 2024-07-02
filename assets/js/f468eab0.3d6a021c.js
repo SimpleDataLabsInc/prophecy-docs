@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[5988],{13086:t=>{t.exports=JSON.parse('{"label":"concept","permalink":"/tags/concept","allTagsPath":"/tags","count":1,"items":[{"id":"SQL/data-tests/data-tests","title":"Data tests","description":"Data tests check the validity of your SQL","permalink":"/SQL/data-tests/"}]}')}}]);

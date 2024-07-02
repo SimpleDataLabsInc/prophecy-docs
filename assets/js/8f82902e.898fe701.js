@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[1787],{11974:i=>{i.exports=JSON.parse('{"label":"join-split","permalink":"/tags/join-split","allTagsPath":"/tags","count":1,"items":[{"id":"Spark/gems/join-split/Repartition","title":"Repartition","description":"Repartition or coalesce a DataFrame","permalink":"/Spark/gems/join-split/Repartition"}]}')}}]);

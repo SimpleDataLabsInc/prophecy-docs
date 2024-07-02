@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[78222],{46851:s=>{s.exports=JSON.parse('{"label":"synase","permalink":"/tags/synase","allTagsPath":"/tags","count":1,"items":[{"id":"Spark/fabrics/fabric-diagnostics","title":"Diagnostics","description":"Troubleshooting Fabrics using diagnostics","permalink":"/Spark/fabrics/fabric-diagnostics"}]}')}}]);

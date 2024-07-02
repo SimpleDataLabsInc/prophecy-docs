@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[66078],{86247:e=>{e.exports=JSON.parse('{"label":"pull requests","permalink":"/tags/pull-requests","allTagsPath":"/tags","count":1,"items":[{"id":"metadata/pr-templates","title":"Pull request templates","description":"Open Pull Requests from within Prophecy","permalink":"/metadata/pr-templates"}]}')}}]);

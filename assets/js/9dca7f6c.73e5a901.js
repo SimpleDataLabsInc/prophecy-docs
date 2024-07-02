@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[4566],{1447:e=>{e.exports=JSON.parse('{"label":"infer","permalink":"/tags/infer","allTagsPath":"/tags","count":1,"items":[{"id":"concepts/project/gems","title":"Gems","description":"Transforming your data","permalink":"/concepts/project/gems"}]}')}}]);
