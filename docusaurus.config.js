@@ -131,6 +131,10 @@ const config = {
             to: "/getting-started",
             from: "/developer/videos/",
           },
+          {
+            to: "/concepts/copilot/enable-data-copilot",
+            from: "/architecture/deployment/enable-data-copilot",
+          },
         ],
         /*
 
