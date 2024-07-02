@@ -49,7 +49,7 @@ The following example uses Data Copilot to help start a Pipeline:
 
 ### Modify an existing Pipeline
 
-You can also call Data Copilot to modify an existing Model. Type a new text prompt, and Data Copilot will suggest a new sequence of data transformations.
+You can also call Data Copilot to modify an existing Model. Type a new text prompt, and Data Copilot will suggest a new sequence of data transformations. You don't necessarily have to select where you want to make your modification for Data Copilot to make its suggestion.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -83,7 +83,7 @@ Within our [advanced Expression Builder](/Spark/expression-builder) you can:
 
 1. Type an English text prompt.
 2. Data Copilot generates a code expression for a particular column.
-3. Click to accept the code expression or try again with a different prompt.
+3. Review the code expression, and if you'd like, try again with a different prompt.
 4. Run the Pipeline up to and including this Gem, and observe the resulting data sample.
 
 ## Generate with AI
