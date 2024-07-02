@@ -1,7 +1,7 @@
 ---
-title: Aggregate
-id: sql-aggregate
-description: Perform aggregation transformations with the option to group by columns.
+title: Anatomy of a Transformation Gem
+id: transform-deep-dive
+description: Understand how to use transformation gems, use expressions, and use variables
 sidebar_position: 3
 tags:
   - aggregate
@@ -11,9 +11,9 @@ tags:
   - transformation
 ---
 
-Together let's deconstruct the Aggregate Gem. Follow along in the `HelloWorld_SQL` Project.
+Together let's deconstruct a commonly used Transformation, the Aggregate Gem. Follow along in the `HelloWorld_SQL` Project.
 
-## Find an example Aggregate
+## Using the Gem
 
 ![1](../img/Snow4.6.1_Aggregate.png)
 
@@ -33,17 +33,17 @@ Let's explore the Aggregate Gem by checking the input and output data samples, a
 
 ## Using Expressions
 
-### GroupBy expression
+### GroupBy Expression
 
 ![2](../img/Snow4.6.2_Aggregate.png)
 
 1. There is one **Input** Dataset, `payments`, and we can see the columns and datatypes below.
 2. Open the **GroupBy** tab.
 3. We can see the Gem is configured to group according to the `order_id` column. Just click any column name listed in **(1) Input** to add a column to the GroupBy expressions.
-4. Syntax **errors** are surfaced here as you're desiging your Gem (and Model) on the canvas. That's handy so you don't have to run a Job to discover a typo.
+4. Syntax **errors** are surfaced here as you're designing your Gem (and Model) on the canvas. That's handy so you don't have to run a Job to discover a typo.
 5. The **Run** button is available here to test and view data samples. This way you can make sure your Aggregate Gem is configured as desired.
 
-### Aggregate expressions
+### Aggregate Expressions
 
 Next we'll walk through the Aggregate tab, where we have a lot more bells and knobs to turn.
 ![3](../img/Snow4.6.3_Aggregate.png)
@@ -56,13 +56,13 @@ Next we'll walk through the Aggregate tab, where we have a lot more bells and kn
 Let's go through several columns to see how the Aggregate Gem manipulates each column.
 
 5. The `order_id` column is getting passed through the Aggregate step without being changed. Recall this is the column that will be used to group the data. To add any column, just click the column name from the Input list, or start typing the column name and Prophecy Copilot will provide suggestions.
-6. Since the `order_id` column was **(5)selected,** then this column appears in the output Dataset. It has a number datatype.
+6. Since the `order_id` column was **(5)selected**, then this column appears in the output Dataset. It has a number datatype.
 7. Here is an **expression** that includes some data manipulation logic. The amount is summed according to the payment method. `payment_method` is being passed as a configurable variable surrounded by curly braces `{{ }}`. We'll see how to configure the variables `credit_card`, `coupon`, `bank_transfer`, `gift_card` in the next section.
-8. These are the **output columns** according to the **(3)Target Column.** `{{ payment_method }}` is a configurable parameter, and each of the payment methods (e.g. GIFT_CARD) has been appended with the string `amount`. Now we are starting to see how the data sample output from the Aggregate Gem will be constructed.
+8. These are the **output columns** according to the **(3)Target Column**. `{{ payment_method }}` is a configurable parameter, and each of the payment methods (e.g. GIFT_CARD) has been appended with the string `amount`. Now we are starting to see how the data sample output from the Aggregate Gem will be constructed.
 9. Let's **AskAI** to help write a new expression. Type "Calculate customer size based on the amount purchased." Copilot AI generates a SQL expression and we can keep or reject the suggestion.
 10. The new expression will be reflected in the Aggregate Gem output, `CUSTOMER_SIZE` column.
 
-## Using variables
+## Using Variables
 
 Now let's see how to configure the `payment_methods` variable.
 

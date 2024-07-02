@@ -251,7 +251,7 @@ Here we create a `customers_nations` model that’s going to enrich our customer
 
 The `customers_nations` model is stored as a `.sql` file on Git. The table or view defined by the model is stored on the SQL warehouse, database, and schema defined in the attached Fabric.
 
-Suggestions are provided each step of the way. If Copilot's suggestions aren't exactly what you need, just select and configure the Gems as desired. Click [here](../SQL/development/gems/joins.md) for details on configuring joins or [here](../SQL/development/gems/Transformations/aggregate.md) for aggregations.
+Suggestions are provided each step of the way. If Copilot's suggestions aren't exactly what you need, just select and configure the Gems as desired. Click [here](../SQL/development/gems/joins.md) for details on configuring joins or [here](../SQL/development/gems/Transformations/transform-deep-dive) for aggregations.
 
 ### 4.5 Interactively Test
 
