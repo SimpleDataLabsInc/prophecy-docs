@@ -57,6 +57,7 @@ Next we'll walk through the Aggregate tab, where we have a lot more bells and kn
 10. The new expression will be reflected in the Aggregate Gem output, `CUSTOMER_SIZE` column.
 
 ## Using Variables
+
 Now let's see how to configure the `payment_methods` variable.
 
 ![4](../img/Snow4.6.4_Aggregate.png)
