@@ -16,7 +16,7 @@ With Copilot for Snowflake, our customers can build complex queries visually, an
 
 We built Copilot for Snowflake on top of [dbt Core™️ ](https://github.com/dbt-labs/dbt-core), an open-source tool for managing SQL-based data transformations. Users take advantage of Git and dbt Core™️ best practices without needing to be coding experts. You'll soon notice: Copilot is not only translating between code and visual designs, Copilot is also making helpful suggestions every step of the way.
 
-This quick-start gets you up and running with **building data transformations using Copilot for Snowflake.** Ready to schedule SQL queries and models? Prophecy supports [Airflow](/docs/low-code-jobs/airflow/setup/setup.md) for Job Scheduling.
+This quick-start gets you up and running with **building data transformations using Copilot for Snowflake.** Ready to schedule SQL queries and models? Prophecy supports [Airflow](/docs/Orchestration/airflow/setup/setup.md) for Job Scheduling.
 
 #### You will need
 
@@ -235,7 +235,7 @@ NATIONKEY,NAME,REGIONKEY,COMMENT
 
 #### 4.3.2 Define Datasets
 
-Importing Datasets is really easy. [Upload a file](/docs/low-code-sql/development/gems/datasources/upload-files.md) or drag-and-drop existing tables directly into a model. We’re going to demonstrate that in the next step.
+Importing Datasets is really easy. [Upload a file](/docs/SQL/development/gems/datasources/upload-files.md) or drag-and-drop existing tables directly into a model. We’re going to demonstrate that in the next step.
 
 ### 4.4 Develop your first model
 
@@ -251,7 +251,7 @@ Here we create a `customers_nations` model that’s going to enrich our customer
 
 The `customers_nations` model is stored as a `.sql` file on Git. The table or view defined by the model is stored on the SQL warehouse, database, and schema defined in the attached Fabric.
 
-Suggestions are provided each step of the way. If Copilot's suggestions aren't exactly what you need, just select and configure the Gems as desired. Click [here](../low-code-sql/development/gems/joins.md) for details on configuring joins or [here](/low-code-sql/development/gems/Transformations/aggregate.md) for aggregations.
+Suggestions are provided each step of the way. If Copilot's suggestions aren't exactly what you need, just select and configure the Gems as desired. Click [here](../SQL/development/gems/joins.md) for details on configuring joins or [here](../SQL/development/gems/Transformations/aggregate.md) for aggregations.
 
 ### 4.5 Interactively Test
 
@@ -289,7 +289,7 @@ Prophecy guides your team's code management - with version control, tagged relea
 
 ## 7. Schedule Jobs with Airflow
 
-Most Snowflake users want to schedule jobs using Airflow. Prophecy integrates with MWAA and Composer Airflows. Don't have an Airflow account? Prophecy also provides a managed Airflow option. [Setup](/docs/low-code-jobs/airflow/setup/setup.md) your favorite Airflow option and use this [guide](./getting-started-with-low-code-airflow.md) to schedule Airflow Jobs. Now you can schedule SQL models integrated with your Spark Pipelines, S3 file sensors, etc.
+Most Snowflake users want to schedule jobs using Airflow. Prophecy integrates with MWAA and Composer Airflows. Don't have an Airflow account? Prophecy also provides a managed Airflow option. [Setup](/docs/Orchestration/airflow/setup/setup.md) your favorite Airflow option and use this [guide](./getting-started-with-low-code-airflow.md) to schedule Airflow Jobs. Now you can schedule SQL models integrated with your Spark Pipelines, S3 file sensors, etc.
 
 ## Wrap up
 

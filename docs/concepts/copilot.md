@@ -1,5 +1,5 @@
 ---
-title: Data Copilot
+title: Data Copilot AI Capabilities
 id: copilot
 description: The AI assistant for data Pipelines and models
 sidebar_position: 8
@@ -9,7 +9,7 @@ tags:
   - generativeai
 ---
 
-### Building Models and Pipelines with Prophecy’s Data Copilot
+### Building Models and Pipelines with Prophecy’s Copilot
 
 <div class="wistia_responsive_padding" style={{padding:'62.5% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -17,7 +17,7 @@ tags:
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-Prophecy’s low-code platform makes data Pipeline development faster and accessible to more users. Starting now, you’ve got an AI assistant to boost that productivity even further.
+Prophecy’s end-to-end platform makes data Pipeline development faster and accessible to more users. Starting now, you’ve got an AI assistant to boost that productivity even further.
 
 We are open to feedback! Please send us an email (contact.us@Prophecy.io) or reach out on our Slack [community.](https://join.slack.com/t/prophecy-io-support/shared_invite/zt-moq3xzoj-~5MSJ6WPnZfz7bwsqWi8tQ)
 
@@ -61,7 +61,7 @@ Data Copilot can suggest the next transformation in a series. In this example:
 
 ![Suggest expressions](img/copilot_next_suggestion_expression.png)
 
-At the more granular level, Data Copilot can suggest expressions within Gems. Within our [advanced Expression Builder](/docs/low-code-spark/expression-builder.md) a User can:
+At the more granular level, Data Copilot can suggest expressions within Gems. Within our [advanced Expression Builder](/docs/Spark/expression-builder.md) a User can:
 
 1. Type an English text prompt
 2. Data Copilot generates a code expression for a particular column.
@@ -84,7 +84,7 @@ If your model has some errors, perhaps introduced upstream without your knowledg
 
 ### Auto Documentation
 
-Understanding data assets is much easier with Data Copilot’s auto-documentation. Data Copilot will deliver summary documentation suggestions for all Datasets, Pipelines, and Orchestrations.
+Understanding data assets is much easier with Data Copilot’s auto-documentation. Data Copilot delivers summary documentation suggestions for all Datasets, Pipelines, and Orchestrations.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -92,7 +92,7 @@ Understanding data assets is much easier with Data Copilot’s auto-documentatio
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-How did a Dataset change? Data Copilot will recommend a description of the change for every edit you make. How was a column computed? Data Copilot suggests a plain English description that explains how every column is generated and what it represents.
+How did a Dataset change? Data Copilot recommends a description of the change for every edit you make. How was a column computed? Data Copilot suggests a plain English description that explains how every column is generated and what it represents.
 
 <div class="wistia_responsive_padding" style={{padding:'62.5% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -100,7 +100,7 @@ How did a Dataset change? Data Copilot will recommend a description of the chang
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-This is a big time saver! The documentation suggestions are editable and can be committed to your repository.
+This is a big time saver! You can edit the documentation suggestions and commit them to your repository.
 
 ### Data Tests and Quality Checks
 
@@ -110,7 +110,7 @@ This is a big time saver! The documentation suggestions are editable and can be 
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-Unit tests and data quality checks are crucial for Pipeline and Job productionalization, yet many teams leave little time to develop these tests or worse, don’t build them at all. With Data Copilot, you’ll have one or more suggested [unit tests](/docs/low-code-spark/tests.md) that can be seamlessly integrated into your CICD process. Data Copilot will also be able to suggest data quality checks based on the data profile and expectations.
+Unit tests and data quality checks are crucial for Pipeline and Job productionalization, yet many teams leave little time to develop these tests or worse, don’t build them at all. With Data Copilot, you’ll have one or more suggested [unit tests](/docs/Spark/tests.md) that can be seamlessly integrated into your CICD process. Data Copilot also suggests data quality checks based on the data profile and expectations.
 
 ## Architecture
 
@@ -152,7 +152,7 @@ The Prophecy team employs top-notch industry practices to safeguard the security
 
 Github Copilot is a great tool to boost productivity and extend the reach of the coding community. However, not every problem is solved with direct coding. More importantly, users need a Copilot with some context of the interesting data.
 
-For teams of analysts, data platform providers, or line-of-business users, the pain points are not resolved by teaching every team member how to code. Data Copilot empowers less technical users because they don’t have to code. Importantly, technical and coding users benefit from Data Copilot because visual Pipelines are easier to understand, explain, and leverage. Prophecy’s Data Copilot boosts the productivity of the low-code user and the more technical coding team members.
+For teams of analysts, data platform providers, or line-of-business users, the pain points are not resolved by teaching every team member how to code. Data Copilot empowers less technical users because they don’t have to code. Importantly, technical and coding users benefit from Data Copilot because visual Pipelines are easier to understand, explain, and leverage. Prophecy’s Data Copilot boosts the productivity of the business user and the more technical coding team members.
 
 When all of these data practitioners reach for an AI assistant, they’ll need one specific to the data space. The assistant should collect metadata from the Databricks Workspace, for example. Prophecy Data Copilot has the context of your data. Data Copilot can guide Pipeline and model development by suggesting which Datasets to use and how to use them.
 
@@ -164,7 +164,7 @@ In Prophecy’s 3.1 release, any Dataset, Source, or Seed within a Project are a
 
 #### How much will I pay for Prophecy Copilot?
 
-Copilot features are included with Prophecy’s Low-Code Spark and Low-Code SQL offerings. There would be an additional cost if you chose to use a private subscription Large Language Model (LLM) service. In this case, the cost depends on (1) the number of [word tokens](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them) sent to the LLM provider, (2) the size of the Datasets, and (3) the number of iterations Prophecy sends requests to the LLM provider.
+Copilot features are included with Prophecy’s Spark and SQL offerings. There would be an additional cost if you chose to use a private subscription Large Language Model (LLM) service. In this case, the cost depends on (1) the number of [word tokens](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them) sent to the LLM provider, (2) the size of the Datasets, and (3) the number of iterations Prophecy sends requests to the LLM provider.
 
 #### Can I use Data Copilot on my Private SaaS or On-Premise installation of Prophecy?
 

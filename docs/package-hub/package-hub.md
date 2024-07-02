@@ -15,7 +15,7 @@ Prophecy introduces **Package Hub,** which enables data practitioners to create 
 
 <br />
 
-A Package is a versioned Project that can be shared across teams. As such, a Package can contain Pipeline templates, [custom Gems](/docs/package-hub/package-builder/gem-builder.md), functions, subgraph templates, etc - a reusable version of everything a Project contains. Package dependencies allow us to re-use components so we don’t have to rebuild them. The coding community has been using packages for ages, and finally the low-code community can take advantage of the same idea. Packages are shareable within and across teams. For extra visibility, the Package Hub is a curated selection of Packages that your teams create and publish for other users to leverage.
+A Package is a versioned Project that can be shared across teams. As such, a Package can contain Pipeline templates, [custom Gems](/docs/package-hub/package-builder/gem-builder.md), functions, subgraph templates, etc - a reusable version of everything a Project contains. Package dependencies allow us to re-use components so we don’t have to rebuild them. The coding community has been using packages for ages, and finally the non-coding data practitioners can take advantage of the same idea. Packages are shareable within and across teams. For extra visibility, the Package Hub is a curated selection of Packages that your teams create and publish for other users to leverage.
 
 Just include a Package as a dependency to take advantage of its contents. See the sections below for step-by-step instructions on how to [use](/docs/package-hub/package-hub.md#use-a-package), [build](/docs/package-hub/package-hub.md#build-a-package), and [share](/docs/package-hub/package-hub.md#share-a-package) Packages. For those looking for a deeper dive on building packages, see the [Package Builder](/docs/package-hub/package-builder/package-builder.md) page.
 
@@ -50,7 +50,7 @@ Consider now the `Framework` Project and two Projects that have dependencies on 
 
 ### Re-using Pipelines
 
-Since `MarketingLeads` Project lists package `Framework` as a dependency, any Pipelines from `Framework` will be accessible in `MarketingLeads` by passing [configurable variables.](/docs/low-code-spark/configuration/configuration.md#pipeline-configuration) The `MarketingLeads` Project cannot change the Framework Pipelines. This is a good thing - the Platform team decides how `Framework` will evolve.
+Since `MarketingLeads` Project lists package `Framework` as a dependency, any Pipelines from `Framework` will be accessible in `MarketingLeads` by passing [configurable variables.](/docs/Spark/configuration/configuration.md#pipeline-configuration) The `MarketingLeads` Project cannot change the Framework Pipelines. This is a good thing - the Platform team decides how `Framework` will evolve.
 
 ![7](img/7-ph.png)
 The MarketingAnalytics team can create a **(1)new Pipeline configuration** and **(2)name** it `LeadsCleanup`. Then **(3)select** that configuration, perhaps change the variable “table” value from default to a more interesting **(4)value** for their use case. `LeadsCleanup` is a configuration instance of the `GenericCleanup` Pipeline template.

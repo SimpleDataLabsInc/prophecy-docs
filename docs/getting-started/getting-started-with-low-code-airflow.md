@@ -1,14 +1,14 @@
 ---
-title: Spark and SQL Jobs with Airflow
+title: Orchestration with Airflow
 id: airflow
-description: A tutorial on using Low-code Airflow
+description: A tutorial on orchestrating Spark and SQL jobs with Airflow
 sidebar_position: 3
 tags:
   - airflow
   - tutorial
 ---
 
-Version 3.0.2 of our platform, Prophecy, introduces an exciting new feature: Low-code Airflow.
+Version 3.0.2 of our platform, Prophecy, introduces an exciting new integration: Orchestration with Airflow.
 Now, users can effortlessly create and manage Airflow Jobs using a user-friendly drag-and-drop interface.
 This empowers you to design and schedule intricate workflows without the need for coding expertise.
 The tool seamlessly translates your designs into highly optimized Python Airflow code, stored in Git, ensuring complete accessibility and openness to all users.

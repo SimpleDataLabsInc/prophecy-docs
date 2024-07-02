@@ -132,6 +132,46 @@ const config = {
             from: "/developer/videos/",
           },
         ],
+        /*
+
+        Example of how the function works:
+
+
+        - SQL
+         - data-tests
+          - data-tests.md
+          - use-project-tests.md
+         ...
+
+        =>
+
+        /SQL/index.html
+        /SQL/data-tests/index.html
+        /SQL/data-tests/use-project-tests.html
+
+        => createRedirects =>
+
+        /SQL/index.html
+        /low-code-sql/index.html => /SQL/index.html
+        /SQL/data-tests/index.html
+        /low-code-sql/data-tests/index.html => /SQL/data-tests/index.html
+        /SQL/data-tests/use-project-tests.html
+        /low-code-sql/data-tests/use-project-tests.html => /SQL/data-tests/use-project-tests.html
+
+
+         */
+        createRedirects(existingPath) {
+          if (existingPath.includes("/SQL")) {
+            return [existingPath.replace("/SQL", "/low-code-sql")];
+          }
+          if (existingPath.includes("/Spark")) {
+            return [existingPath.replace("/Spark", "/low-code-spark")];
+          }
+          if (existingPath.includes("/Orchestration")) {
+            return [existingPath.replace("/Orchestration", "/low-code-jobs")];
+          }
+          return undefined;
+        },
       },
     ],
   ],
