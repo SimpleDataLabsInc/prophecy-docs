@@ -16,20 +16,20 @@ Prophecy Data Copilot provides suggestions from an AI model as you develop your 
 
 Data Copilot supports the following capabilites for the Spark and SQL engines:
 
-| AI Capability                 | Spark                    | SQL                      |
-| ----------------------------- | ------------------------ | ------------------------ |
-| Start a new Pipeline          | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg)  |
-| Modify an existing Pipeline   | ![Tick](./img/cross.svg) | ![Tick](./img/tick.svg)  |
-| Suggest Gems                  | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg)  |
-| Suggest Expressions           | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg)  |
-| Generate with AI, Scripts     | ![Tick](./img/tick.svg)  | ![Tick](./img/cross.svg) |
-| Generate with AI Functions    | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg)  |
-| Map with AI                   | ![Tick](./img/cross.svg) | ![Tick](./img/tick.svg)  |
-| Code with AI                  | ![Tick](./img/cross.svg) | ![Tick](./img/tick.svg)  |
-| Fix with AI, Gems             | ![Tick](./img/cross.svg) | ![Tick](./img/tick.svg)  |
-| Fix with AI, Expressions      | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg)  |
-| Auto Documentation            | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg)  |
-| Data Tests and Quality Checks | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg)  |
+| AI Capability                                      | Spark                    | SQL                      |
+| -------------------------------------------------- | ------------------------ | ------------------------ |
+| Start a new Pipeline (Spark) or Model (SQL)        | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg)  |
+| Modify an existing Pipeline (Spark) or Model (SQL) | ![Tick](./img/cross.svg) | ![Tick](./img/tick.svg)  |
+| Suggest Gems                                       | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg)  |
+| Suggest Expressions                                | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg)  |
+| Generate with AI, Scripts                          | ![Tick](./img/tick.svg)  | ![Tick](./img/cross.svg) |
+| Generate with AI Functions                         | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg)  |
+| Map with AI                                        | ![Tick](./img/cross.svg) | ![Tick](./img/tick.svg)  |
+| Code with AI                                       | ![Tick](./img/cross.svg) | ![Tick](./img/tick.svg)  |
+| Fix with AI, Gems                                  | ![Tick](./img/cross.svg) | ![Tick](./img/tick.svg)  |
+| Fix with AI, Expressions                           | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg)  |
+| Auto Documentation                                 | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg)  |
+| Data Tests and Quality Checks                      | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg)  |
 
 ## Text to Pipelines
 
