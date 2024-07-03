@@ -153,7 +153,7 @@ How was a column computed? Data Copilot suggests a plain English description tha
 
 This is a big time saver! You can edit the documentation suggestions and commit them to your repository.
 
-In addition to data sources and column summaries, Data Copilot also auto-documents your Project description, as well as your Git Commit Message and Release Note. And it can auto-label your Gems.
+Data Copilot auto-documents anywhere you need it - from the granular data sources and columns to Gem labels, all the way to project descriptions. Copilot even helps you write commit messages and release notes.
 
 ## Data Tests and Quality Checks
 
