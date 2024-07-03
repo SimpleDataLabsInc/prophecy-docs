@@ -23,7 +23,7 @@ To learn more about what Data Copilot can do, see [Data Copilot AI capabilities]
 
 ## Knowledge Graph
 
-Data Copilot works by enhancing the user’s prompt using a knowledge graph.
+Data Copilot works by enhancing the user’s prompt using a knowledge graph. Each team in each organization gets its own knowledge graph.
 
 ![Knowledge Graph](img/copilot_knowledge_graph.png)
 
