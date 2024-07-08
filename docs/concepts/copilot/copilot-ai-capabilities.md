@@ -63,7 +63,7 @@ Data Copilot can suggest the next transformation in a series or the next express
 
 ### Suggest Gems
 
-Data Copilot can suggest the next transformation in a series as long as there is an open Tail node.
+Data Copilot can suggest the next transformation for Leaf Nodes in a graph.
 
 ![Suggest Gems](img/copilot_next_suggestion.png)
 
