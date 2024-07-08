@@ -109,12 +109,12 @@ Alternatively, since Prophecy provides you native Spark code on Git, you can eas
 
 Teams are the primary mechanism of ownership. Each Team represents a group of users who work together.
 
-- **Teams own Projects** where Pipelines, Datasets and Jobs live
-- **Teams own Fabrics** that provide the execution and storage resources for execution including Spark clusters
+- **Teams own Projects** where Pipelines, Datasets, and Jobs live.
+- **Teams own Fabrics** that provide the execution and storage resources for execution including Spark clusters.
 
-Users get access by being added to a team
+Users get access by being added to a team.
 
-- **Personal Teams** For every user, a default team in created that only contains one user. If only one user is to be given access to a project, it can be done via this team
-- **Personal Projects** Users can put personal projects in their _personal team_ and not share it with others
+- **Personal Teams** For every user, a default team in created that only contains one user. If only one user is to be given access to a project, it can be done via this team.
+- **Personal Projects** Users can put personal projects in their _personal team_ and not share it with others.
 
 ![TeamsUsers](img/team_page.png)

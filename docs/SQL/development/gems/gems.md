@@ -20,9 +20,9 @@ Each Gem represents a SQL statement, and allows users to construct that statemen
 | <div style={{'width':'100px'}}>Gem</div>      | Category                                              | Description                                                                                                   |
 | --------------------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | ![Model](img/Model.png)                       | [**Model**](/docs/concepts/project/models.md)         | Each model is a DAG that defines a single table or view. A model can also serve as an input for other Models. |
-| ![Source](img/Source%20and%20Target.png)      | [**Datasource**](./datasources/)                      | Gems related to loading data: Seeds, Sources, or Models can be used as datasources                            |
-| ![Transform](img/Transform.png)               | [**Transform**](./Transformations/transformations.md) | Gems related to the transformation of data                                                                    |
-| ![Join and Split](img/Join%20and%20Split.png) | [**Join**](./joins.md)                                | Gems related to splitting or joining tables together                                                          |
+| ![Source](img/Source%20and%20Target.png)      | [**Datasource**](./datasources/)                      | Gems related to loading data: Seeds, Sources, or Models can be used as datasources.                           |
+| ![Transform](img/Transform.png)               | [**Transform**](./Transformations/transformations.md) | Gems related to the transformation of data.                                                                   |
+| ![Join and Split](img/Join%20and%20Split.png) | [**Join**](./joins.md)                                | Gems related to splitting or joining tables together.                                                         |
 | ![Custom](img/Custom.png)                     | [**Custom**](./custom/custom.md)                      | The set of Gems built to extend Prophecy's capabilities.                                                      |
 
 </div>

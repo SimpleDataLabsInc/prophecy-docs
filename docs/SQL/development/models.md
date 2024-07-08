@@ -13,4 +13,4 @@ tags:
 This detailed page all about SQL Models is under construction. Please pardon our dust.
 :::
 
-For an overview of Models, please check [this page](/docs/concepts/project/models.md).
+For an overview of Models, see [Models](/docs/concepts/project/models.md).
