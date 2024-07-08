@@ -10,7 +10,7 @@ tags:
   - jobs
 ---
 
-After setting up your [Airflow Fabric](../setup/setup.md), You can create an Airflow Job in any Project of your choice.
+After setting up your [Airflow Fabric](../fabric/fabric.md), You can create an Airflow Job in any Project of your choice.
 A Job is an entity that contains **Gems** to represent a DAG consisting of various Tasks (Pipelines/Models/Scripts, etc) which you can Run once or schedule to run at a frequency.
 Each Airflow Job in Prophecy would represent one [Airflow DAG](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html) in Python.
 

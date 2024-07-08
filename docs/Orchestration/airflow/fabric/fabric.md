@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
-title: Setup
-id: setup_airflow
+title: Fabrics
+id: fabrics_airflow
 description: How Prophecy integrates with Airflow
 tags:
   - scheduling
@@ -18,6 +18,4 @@ Prophecy provides you with three different types of Fabrics depending upon where
 
 3. **[Composer](./composer.md)** - for those who are using Google Cloud Platform and have a GCP Cloud Composer Airflow instance running.
 
-## Create an Airflow Job
-
-Once the Airflow Fabric is setup, Airflow Job scheduling is done with an easy-to-use interface. Follow this guide to [Create an Airflow Job](/docs/getting-started/getting-started-with-low-code-airflow.md#2-create-an-airflow-job).
+Once the Airflow Fabric is set up, Airflow Job scheduling is done with an easy-to-use interface. Follow this guide to [Create an Airflow Job](/docs/getting-started/getting-started-with-low-code-airflow.md#2-create-an-airflow-job).
