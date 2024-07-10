@@ -39,4 +39,4 @@ A word from Prophecy's co-Founder, Maciej! See how Prophecy allows every team, w
 
 ### Get started
 
-Get started with Copilot for SQL by following this guide for [Databricks](/docs/getting-started/getting-started-with-low-code-sql.md) or [Snowflake.](/docs/getting-started/getting-started-sql-snowflake.md)
+Get started with Copilot for SQL by following this guide for [Databricks](/docs/getting-started/getting-started-with-low-code-sql.md) or [Snowflake](/docs/getting-started/getting-started-sql-snowflake.md).

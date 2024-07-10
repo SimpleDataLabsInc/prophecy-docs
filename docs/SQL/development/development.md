@@ -58,7 +58,7 @@ Vast majority of dbt and SQL constructs are supported within the Prophecy Visual
 
 ## Hands-on
 
-To get started developing SQL models, check out the pages below or try the getting-started [guide](/docs/getting-started/getting-started-with-low-code-sql.md).
+To get started developing SQL models, check out the pages below or try the [SQL with Databricks](/docs/getting-started/getting-started-with-low-code-sql.md) getting-started guide.
 
 1. [**Models**](./models.md) - All the steps needed to define a table or view.
 

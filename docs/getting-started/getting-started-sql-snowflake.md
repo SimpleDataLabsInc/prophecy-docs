@@ -269,7 +269,7 @@ Notice Copilot is offering suggested fixes when errors appear. See how **Fix wit
 
 ## 5. Code view
 
-The visual developers will appreciate the drag-n-drop canvas, but sometimes it's also nice to view the code. Already Prophecy is creating highly performant code behind the scenes. Just click the **Code View** to reveal the SQL queries we've generated using our visual design editor. Each Gem is represented by a CTE or subquery. For example, the Join Gem `NATIONS_CUSTOMERS` is highlighted in both visual and code views.
+The visual developers will appreciate the drag-n-drop canvas, but sometimes it's also nice to view the code. Already Prophecy creates highly performant code behind the scenes. Just click the **Code View** to reveal the SQL queries we've generated using our visual design editor. Each Gem is represented by a CTE or subquery. For example, the Join Gem `NATIONS_CUSTOMERS` is highlighted in both visual and code views.
 
 ![ToggleToCode](./img/Snow4.6_toggleVisualCode.png)
 
