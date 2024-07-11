@@ -29,6 +29,8 @@ Data Copilot works by enhancing the user’s prompt using a knowledge graph. Eac
 
 Our knowledge graph includes metadata for a Project’s entities (such as Datasets, Schemas, Seeds, Models, and Pipelines) and the statistical usages of these entities. We built the knowledge graph intentionally to include metadata but not data. The Dataset structure is included in the knowledge graph but individual Dataset records are not.
 
+For more details, see [Data privacy with Data Copilot](/concepts/copilot/copilot-data-privacy).
+
 ![Architecture](img/copilot_arch.png)
 
 Prophecy sends the enhanced Prompt to OpenAI. The large language model (LLM) returns SQL or Spark code, and Prophecy verifies whether this code is valid. Once Prophecy fixes the code, Prophecy generates a visual Pipeline and displays this Pipeline to you for review.
@@ -77,6 +79,6 @@ While Prophecy does not actively test prompt languages other than English, the L
 
 ## Try Data Copilot
 
-Learn more about Prophecy [here](https://www.prophecy.io/), where you can sign up for a free trial account or schedule a demo.
+Learn more about Prophecy at [prophecy.io](https://www.prophecy.io/), where you can sign up for a free trial account or schedule a demo.
 
 We are open to feedback! Send us an email (contact.us@Prophecy.io) or reach out on our [Slack community](https://join.slack.com/t/prophecy-io-support/shared_invite/zt-moq3xzoj-~5MSJ6WPnZfz7bwsqWi8tQ).
