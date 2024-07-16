@@ -12,13 +12,14 @@ tags:
   - data
 ---
 
-aa
+Engineers can use SQL and advanced macros through a code-based editor. Prophecy parses their code and visualizes it on an editable canvas and ensures both views remain in sync at all times.
 
 ## Code view
 
 The visual developers will appreciate the drag-n-drop canvas, but sometimes it's also nice to view the code. Already Prophecy creates highly performant code behind the scenes. Just click the **Code View** to reveal the SQL queries we've generated using our visual design editor. Each Gem is represented by a CTE or subquery. For example, the Join Gem `NATIONS_CUSTOMERS` is highlighted in both visual and code views.
 
-![ToggleToCode](./img/Snow4.6_toggleVisualCode.png)
+![aa](./img/CodeEqualsVisual.png)
+-to update to just code editor image (with callouts?)
 
 You may wish to edit the code view - give it a try! Add a SQL statement in the code view and notice the visual editor displays the updated code. For example, we've added a limit statement in the code view, and a new limit Gem appears in the visual view.
 
@@ -28,15 +29,44 @@ You may wish to edit the code view - give it a try! Add a SQL statement in the c
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-Prophecy low-code SQL combines the the best of both worlds: high-quality code based on software engineering best practices with a complete, easy-to-use visual environment.
+## Code within Gems
 
-Visual = Code for easy collaboration
-Visual = Code allows both SQL coders and business users to easily collaborate on the same project. Business users can visually create their data models, with all their work automatically turning into high-quality code on Git. Engineers can use SQL and advanced macros through a code-based editor, with Prophecy parses their code and visualizes it on an editable canvas and ensuring both views remain in sync at all times.
-Interactive development
-At any step of the process, data users can interactively run their models to make sure they're going in the right direction. Models can be additionally tested to ensure robustness over-time. Power users can also extend the visual canvas through custom gems; making even the most complex logic easily accessible in the visual view.
-Deployment from code on Git
-Projects built through Prophecy are stored in the dbt Core format as repositories on Git, which allows data teams to follow best software engineering practices like CI/CD.
-Maintenance is simple since Prophecy gems turn into code on Git that’s always up-to-date with the latest version of the warehouse or lakehouse used. And, to ensure the best perform
+You can modify Gems on the code level after building them.
 
-Code within Gems
-Can modify on the code level after building of the Gems
+### Allow user to define Gem dependencies
+
+As a Gem evolves over time, the properties of the Gem will change. Some of these changes will require explicit logic to migrate existing instances of the Gem in pipelines. A Gem architect should be able to define these evolutions in the Gem spec itself. Prophecy should be able to execute these evolutions on older existing instances of gems upon dependency update for the users.
+
+Feature description
+
+- Allow users to define dependencies for each Gem (E.g. - mysql for MySQL source Gem)
+- Automatically add dependencies to Pipeline when Gem is used.
+- Internal packages are pretty critical - MS etc
+- Allowing external third party libraries to be used inside onChange and validate method.
+- Allow transitive dependencies.
+  - Some artifacts might require their own set of dependencies to run correctly in sandbox.
+  - Complex libraries can have large set of transitive dependencies. - Spark excel has 25 dependent jars.
+  - Adding these many dependencies to interpreter can get very messy. Proper error propagation might also prove difficult.
+
+User flows
+
+- Gem creation
+  - User needs to be able to add dependencies to a Gem from Gem editor
+  - User should be able to test Gem in Gem editor as well as Pipeline editor in same branch.
+- Gem Usage
+  - Downstream users should be able to use Gem with dependencies in the Pipeline editor
+  - Schema analysis should work as expected
+
+User workflows
+
+- Updating dependencies
+  - User clicks on update dependency.
+  - User is asked to save any changes before migration & code regeneration starts. (For easier roll back)
+  - Project is marked as migrating
+    - no one can edit & can view ? (View depends on dialog which depends on props, will have to wait for migration)
+  - Post migration, pipelines will be marked for auto generate
+  - User should be able to track the progress of migration and code regeneration
+- Changing Gem properties
+  - User opens Gem editor and creates the necessary migration.
+  - Will have to document how to write migrations(documentation)
+  - Share real world examples(we can share our secret management related migrations)
