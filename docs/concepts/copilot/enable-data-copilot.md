@@ -16,13 +16,19 @@ Data Copilot leverages OpenAI's generative AI models to understand user intent, 
 
 However, for the most security conscious organizations, it is possible to configure Prophecy to use your own OpenAI endpoint. This page describes how to enable Prophecy Data Copilot for private VPC SaaS environments and configure it to use your own OpenAI or Azure OpenAI endpoint.
 
+:::note
+
+Prophecy also supports running Data Copilot from a locally hosted private model. Additionally, you can configure Prophecy Data Copilot to use custom LLM endpoints provided by AWS Bedrock, Google Vertex AI, and Databricks Model Serving.
+
+:::
+
 ## Installation
 
 From the Kubernetes cluster where Prophecy services are running:
 
-1. Check that the `prophecy-operator`, `edweb`, `metagraph`, and other Prophecy services are running version `3.1.0.0` or greater.
-   1. The above services should all be running the same release-version as the `copilot` service defined in the image below, for example `3.1.0.0`.
-2. Check that the `athena` Prophecy service is running version `3.1.0.0` or greater. This is only required if using the Pipeline approach to the upgrade.
+1. Check that the `prophecy-operator`, `edweb`, `metagraph`, and other Prophecy services are running version `3.3.8.0` or greater.
+   1. The above services should all be running the same release-version as the `copilot` service defined in the image below, for example `3.3.8.0`.
+2. Check that the `athena` Prophecy service is running version `3.3.8.0` or greater. This is only required if using the Pipeline approach to the upgrade.
 3. In the `ProphecyCluster` CR, do the following:
 
    - add `copilot` to `enabledapps`

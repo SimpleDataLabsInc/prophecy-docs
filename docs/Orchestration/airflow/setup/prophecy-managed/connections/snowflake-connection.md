@@ -14,9 +14,11 @@ tags:
   - sql
 ---
 
-### Adding Snowflake connection (DBT)
+To be able to Run your Snowflake SQL Models, you need to have connection from Prophecy Managed Airflow to your Snowflake Environment
 
-To be able to Run your Snowflake SQL Models, you need to have connection from Prophecy Managed Airflow to your Snowflake Environment. Click on Add Connection button.
+### Add Snowflake connection (DBT)
+
+To add a Snowflake connection, click on **+ Add Connection**.
 
 ![Add_connection](../../img/Add_Connection.png)
 
