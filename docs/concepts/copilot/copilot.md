@@ -23,11 +23,13 @@ To learn more about what Data Copilot can do, see [Data Copilot AI capabilities]
 
 ## Knowledge Graph
 
-Data Copilot works by enhancing the user’s prompt using a knowledge graph.
+Data Copilot works by enhancing the user’s prompt using a knowledge graph. Each team in each organization gets its own knowledge graph.
 
 ![Knowledge Graph](img/copilot_knowledge_graph.png)
 
 Our knowledge graph includes metadata for a Project’s entities (such as Datasets, Schemas, Seeds, Models, and Pipelines) and the statistical usages of these entities. We built the knowledge graph intentionally to include metadata but not data. The Dataset structure is included in the knowledge graph but individual Dataset records are not.
+
+For more details, see [Data privacy with Data Copilot](/concepts/copilot/copilot-data-privacy).
 
 ![Architecture](img/copilot_arch.png)
 
@@ -77,6 +79,6 @@ While Prophecy does not actively test prompt languages other than English, the L
 
 ## Try Data Copilot
 
-Learn more about Prophecy [here](https://www.prophecy.io/), where you can sign up for a free trial account or schedule a demo.
+Learn more about Prophecy at [prophecy.io](https://www.prophecy.io/), where you can sign up for a free trial account or schedule a demo.
 
 We are open to feedback! Send us an email (contact.us@Prophecy.io) or reach out on our [Slack community](https://join.slack.com/t/prophecy-io-support/shared_invite/zt-moq3xzoj-~5MSJ6WPnZfz7bwsqWi8tQ).
