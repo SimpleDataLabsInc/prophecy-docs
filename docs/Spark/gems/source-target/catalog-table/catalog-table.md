@@ -1,11 +1,11 @@
 ---
-title: Transform
-id: transform
-description: Set of gems related to the transformation of data
+title: Catalog Table
+id: catalog-table
+description: Supported catalog tables
 tags: []
 ---
 
-Constitutes the set of Gems that help with transforming data.
+List of supported catalog tables:
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
