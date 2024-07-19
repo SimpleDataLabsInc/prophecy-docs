@@ -2,7 +2,7 @@
 title: XLSX (Excel)
 id: xlsx
 description: XLSX (Excel)
-sidebar_position: 10
+sidebar_position: 12
 tags:
   - gems
   - file
@@ -43,7 +43,7 @@ The following is a list of options that are available while using XLSX as a **_S
 | NaN Value                     | Value to use in the case of NaN                                                                                                                                                                                               | False    | `"NaN"`           |
 | Negative Infinity             | Value to use in the case of negative infinity                                                                                                                                                                                 | False    | `"Inf"`           |
 | Null Value                    | Value to use for Null                                                                                                                                                                                                         | False    | (empty)           |
-| Parse Mode                    | Parsing mode. Supports `Permissive`, `Drop Malformed` and `Fail Fast`                                                                                                                                                         | False    | `Permissive`      |
+| Parse Mode                    | Parsing mode. Supports `Permissive`, `Drop Malformed` and `Fail Fast`.                                                                                                                                                        | False    | `Permissive`      |
 | Positive Infinity             | Value to use in case of positive infinity                                                                                                                                                                                     | False    | `"Inf"`           |
 | Sampling Ratio                | Defines how much of the input to sample from when inferring the schema.                                                                                                                                                       | False    | `1.0`             |
 | Timestamp Format              | Format to parse timestamps from text cells                                                                                                                                                                                    | False    | Spark default     |

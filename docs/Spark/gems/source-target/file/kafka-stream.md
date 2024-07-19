@@ -2,7 +2,7 @@
 title: Kafka
 id: kafka
 description: Reading and writing data from Apache Kafka in batch mode
-sidebar_position: 9
+sidebar_position: 8
 tags:
   - gems
   - file

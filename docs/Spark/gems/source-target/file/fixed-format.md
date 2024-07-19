@@ -2,7 +2,7 @@
 title: Fixed Format
 id: fixed-format
 description: Fixed Format
-sidebar_position: 8
+sidebar_position: 4
 tags:
   - gems
   - file
@@ -19,7 +19,7 @@ Read and write fixed format files with an expected schema.
 
 ## Source
 
-Reads data from fixed format files
+Reads data from fixed format files.
 
 ### Source Parameters
 

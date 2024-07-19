@@ -2,47 +2,47 @@
 title: FTP
 id: ftp
 description: FTP
-sidebar_position: 1
+sidebar_position: 5
 tags:
   - gems
   - file
   - ftp
 ---
 
-Allows you to read or write files (csv, text and binary) on a remote location
+Allows you to read or write files (csv, text and binary) on a remote location.
 
 ### Source Parameters
 
-| Parameter       | Description                                                                                                                                                      | Required                                                        |
-| :-------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------- |
-| Dataset Name    | Name of the Dataset                                                                                                                                              | True                                                            |
-| Credential Type | Credential Type: `Databricks Secrets` or `Username & Password`                                                                                                   | True                                                            |
-| Credentials     | Databricks credential name , else username and password for the remote account                                                                                   | Required if `Databricks Secrets` is opted as `Credential Type`  |
-| Username        | Login name for the remote user                                                                                                                                   | Required if `Username & Password` is opted as `Credential Type` |
-| Password        | Password for the remote user                                                                                                                                     | Required if `Username & Password` is opted as `Credential Type` |
-| Protocol        | Protocol to use for file transfer: `FTP` or `SFTP`                                                                                                               | Required if `Username & Password` is opted as `Credential Type` |
-| Host            | hostname for your remote account. <br/> Eg: `prophecy.files.com`                                                                                                 | True                                                            |
-| Path            | Path of the file(s) or folder to be loaded. Supports wildcard matching at the lowest level of the path. <br/> Eg: `/folder`, `/folder/test.csv`, `/folder/*.csv` | True                                                            |
-| File Format     | Format of the file to be loaded. <br/> Supported formats are `text`, `csv` and `binary`                                                                          | True                                                            |
+| Parameter       | Description                                                                                                                                                        | Required                                                        |
+| :-------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------- |
+| Dataset Name    | Name of the Dataset                                                                                                                                                | True                                                            |
+| Credential Type | Credential Type: `Databricks Secrets` or `Username & Password`                                                                                                     | True                                                            |
+| Credentials     | Databricks credential name, else username and password for the remote account                                                                                      | Required if `Databricks Secrets` is opted as `Credential Type`  |
+| Username        | Login name for the remote user                                                                                                                                     | Required if `Username & Password` is opted as `Credential Type` |
+| Password        | Password for the remote user                                                                                                                                       | Required if `Username & Password` is opted as `Credential Type` |
+| Protocol        | Protocol to use for file transfer: `FTP` or `SFTP`                                                                                                                 | Required if `Username & Password` is opted as `Credential Type` |
+| Host            | hostname for your remote account. <br/> E.g.: `prophecy.files.com`                                                                                                 | True                                                            |
+| Path            | Path of the file(s) or folder to be loaded. Supports wildcard matching at the lowest level of the path. <br/> E.g.: `/folder`, `/folder/test.csv`, `/folder/*.csv` | True                                                            |
+| File Format     | Format of the file to be loaded. <br/> Supported formats are `text`, `csv` and `binary`.                                                                           | True                                                            |
 
 ### Target Parameters
 
-| Parameter       | Description                                                                                                                                                      | Required                                                        |
-| :-------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------- |
-| Dataset Name    | Name of the Dataset                                                                                                                                              | True                                                            |
-| Credential Type | Credential Type: `Databricks Secrets` or `Username & Password`                                                                                                   | True                                                            |
-| Credentials     | Databricks credential name , else username and password for the remote account                                                                                   | Required if `Databricks Secrets` is opted as `Credential Type`  |
-| Username        | Login name for the remote user                                                                                                                                   | Required if `Username & Password` is opted as `Credential Type` |
-| Password        | Password for the remote user                                                                                                                                     | Required if `Username & Password` is opted as `Credential Type` |
-| Protocol        | Protocol to use for file transfer: `FTP` or `SFTP`                                                                                                               | Required if `Username & Password` is opted as `Credential Type` |
-| Host            | hostname for your remote account. <br/> Eg: `prophecy.files.com`                                                                                                 | True                                                            |
-| Path            | Path of the file(s) or folder to be loaded. Supports wildcard matching at the lowest level of the path. <br/> Eg: `/folder`, `/folder/test.csv`, `/folder/*.csv` | True                                                            |
-| File Format     | Format of the file to be loaded. <br/> Supported formats are `text`, `csv` and `binary`                                                                          | True                                                            |
-| Write Mode      | How to handle existing data if present while writing. `Error` or `Overwrite`                                                                                     | True                                                            |
+| Parameter       | Description                                                                                                                                                        | Required                                                        |
+| :-------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------- |
+| Dataset Name    | Name of the Dataset                                                                                                                                                | True                                                            |
+| Credential Type | Credential Type: `Databricks Secrets` or `Username & Password`                                                                                                     | True                                                            |
+| Credentials     | Databricks credential name, else username and password for the remote account                                                                                      | Required if `Databricks Secrets` is opted as `Credential Type`  |
+| Username        | Login name for the remote user                                                                                                                                     | Required if `Username & Password` is opted as `Credential Type` |
+| Password        | Password for the remote user                                                                                                                                       | Required if `Username & Password` is opted as `Credential Type` |
+| Protocol        | Protocol to use for file transfer: `FTP` or `SFTP`                                                                                                                 | Required if `Username & Password` is opted as `Credential Type` |
+| Host            | hostname for your remote account. <br/> E.g.: `prophecy.files.com`                                                                                                 | True                                                            |
+| Path            | Path of the file(s) or folder to be loaded. Supports wildcard matching at the lowest level of the path. <br/> E.g.: `/folder`, `/folder/test.csv`, `/folder/*.csv` | True                                                            |
+| File Format     | Format of the file to be loaded. <br/> Supported formats are `text`, `csv` and `binary`.                                                                           | True                                                            |
+| Write Mode      | How to handle existing data if present while writing. `Error` or `Overwrite`                                                                                       | True                                                            |
 
 :::info
 Based on the selected **File Format**, you can provide additional read/write options in the **Properties** tab.
-For example, if the File Format is `CSV`, you can set CSV specific options like `header`, `separator` etc.
+For example, if the File Format is `CSV`, you can set CSV specific options like `header`, `separator`, etc.
 :::
 
 :::note
