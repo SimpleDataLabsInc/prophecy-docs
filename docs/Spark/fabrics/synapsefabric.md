@@ -2,12 +2,11 @@
 title: "Azure Synapse Analytics"
 id: azure-synapse-fabric-guide
 description: Configuring Synapse Fabric
-sidebar_position: 4
+sidebar_position: 5
 tags:
   - deployment
   - configuration
-  - azure
-  - synapse
+  - open-source-spark
   - livy
 ---
 

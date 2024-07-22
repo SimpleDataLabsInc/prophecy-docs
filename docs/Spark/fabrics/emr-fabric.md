@@ -2,7 +2,7 @@
 title: "Amazon EMR"
 id: EMR-fabric-configuration
 description: Configuring the EMR Fabric
-sidebar_position: 1
+sidebar_position: 4
 tags:
   - deployment
   - fabric
