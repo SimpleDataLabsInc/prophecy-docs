@@ -1,11 +1,11 @@
 ---
-title: Transform
-id: transform
-description: Set of gems related to the transformation of data
+title: Warehouse
+id: warehouse
+description: Supported warehouses
 tags: []
 ---
 
-Constitutes the set of Gems that help with transforming data.
+List of supported warehouses:
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

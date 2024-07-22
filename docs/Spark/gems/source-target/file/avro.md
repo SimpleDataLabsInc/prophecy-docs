@@ -2,7 +2,7 @@
 title: Avro
 id: avro
 description: Avro
-sidebar_position: 3
+sidebar_position: 1
 tags:
   - gems
   - file
@@ -22,13 +22,13 @@ This Gem allows you to read from or write to an Avro file.
 | Parameter             | Description                                                                                                                                                                                                                                              | Required | Default |
 | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
 | Location              | File path where avro files are present                                                                                                                                                                                                                   | True     | None    |
-| Schema                | Schema to be applied on the loaded data. Can be defined/edited as JSON or inferred using `Infer Schema` button                                                                                                                                           | True     | None    |
+| Schema                | Schema to be applied on the loaded data. Can be defined/edited as JSON or inferred using `Infer Schema` button.                                                                                                                                          | True     | None    |
 | Recursive File Lookup | This is used to recursively load files and it disables partition inferring. If data source explicitly specifies the partitionSpec when recursiveFileLookup is true, an exception will be thrown.                                                         | False    | False   |
 | Path Global Filter    | An optional glob pattern to only include files with paths matching the pattern. The syntax follows [GlobFilter](https://hadoop.apache.org/docs/stable/api/org/apache/hadoop/fs/GlobFilter.html). It does not change the behavior of partition discovery. | False    | None    |
 | Modified Before       | An optional timestamp to only include files with modification times occurring before the specified Time. The provided timestamp must be in the following form: YYYY-MM-DDTHH:mm:ss (e.g. 2020-06-01T13:00:00)                                            | False    | None    |
 | Modified After        | An optional timestamp to only include files with modification times occurring after the specified Time. The provided timestamp must be in the following form: YYYY-MM-DDTHH:mm:ss (e.g. 2020-06-01T13:00:00)                                             | False    | None    |
 | Avro Schema           | Optional schema in JSON format. See [here](#schema-evolution) for more details.                                                                                                                                                                          | False    | None    |
-| ignoreExtension       | **_DEPRECATED_**. Enable to load files without the `.avro` extension. See caveats [here](#ignoring-the-file-extension)                                                                                                                                   | False    | True    |
+| ignoreExtension       | **_DEPRECATED_**. Enable to load files without the `.avro` extension. See caveats [here](#ignoring-the-file-extension).                                                                                                                                  | False    | True    |
 
 #### Schema Evolution
 
@@ -118,8 +118,8 @@ Write data as avro files at the specified path.
 
 | Write Mode | Description                                                                                                                      |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| overwrite  | If data already exists, overwrite with the contents of the DataFrame                                                             |
-| append     | If data already exists, append the contents of the DataFrame                                                                     |
+| overwrite  | If data already exists, overwrite with the contents of the DataFrame.                                                            |
+| append     | If data already exists, append the contents of the DataFrame.                                                                    |
 | ignore     | If data already exists, do nothing with the contents of the DataFrame. This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
 | error      | If data already exists, throw an exception.                                                                                      |
 

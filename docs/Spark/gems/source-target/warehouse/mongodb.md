@@ -2,7 +2,7 @@
 title: MongoDB
 id: mongodb
 description: MongoDB
-sidebar_position: 1
+sidebar_position: 5
 tags:
   - gems
   - warehouse
@@ -10,10 +10,10 @@ tags:
 ---
 
 :::info Built on
-Built on [MongoDB Spark Connector](https://www.mongodb.com/docs/spark-connector/v10.0/#mongodb-connector-for-spark) v10.0 <br/>
-Please add `mongodb-spark-connector` jar as dependency [for more](https://docs.prophecy.io/low-code-spark/extensibility/dependencies/#add-dependency)
+Built on [MongoDB Spark Connector](https://www.mongodb.com/docs/spark-connector/v10.0/#mongodb-connector-for-spark) v10.0. <br/>
+Please add `mongodb-spark-connector` jar as dependency [for more](https://docs.prophecy.io/low-code-spark/extensibility/dependencies/#add-dependency).
 :::
-Allows read and write operations on `MongoDB`
+Allows read and write operations on `MongoDB`.
 
 ## Source
 
@@ -25,8 +25,8 @@ Allows read and write operations on `MongoDB`
 | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | Username                                  | Username for MongoDB instance                                                                                                                                                                                                                                                                                                                                                                                                         | True     |
 | Password                                  | Password for MongoDB instance                                                                                                                                                                                                                                                                                                                                                                                                         | True     |
-| Driver                                    | Driver string for mongodb connection, eg. `mongodb` or `mongodb+srv`                                                                                                                                                                                                                                                                                                                                                                  | True     |
-| Cluster IP Address and Options            | Cluster IP and options(if required) for the MongoDB connection, <br/> eg. `cluster0.prophecy.mongodb.xyz/?retryWrites=true&w=majority`                                                                                                                                                                                                                                                                                                | True     |
+| Driver                                    | Driver string for mongodb connection, e.g. `mongodb` or `mongodb+srv`                                                                                                                                                                                                                                                                                                                                                                 | True     |
+| Cluster IP Address and Options            | Cluster IP and options(if required) for the MongoDB connection, <br/> e.g. `cluster0.prophecy.mongodb.xyz/?retryWrites=true&w=majority`                                                                                                                                                                                                                                                                                               | True     |
 | Database                                  | Database from which we want to read the data.                                                                                                                                                                                                                                                                                                                                                                                         | True     |
 | Collection                                | Collection from which we want to read the data.                                                                                                                                                                                                                                                                                                                                                                                       | True     |
 | mongoClientFactory                        | MongoClientFactory configuration key. <br/> You can specify a custom implementation which must implement the `com.mongodb.spark.sql.connector.connection.MongoClientFactory` interface. <br/> Default: `com.mongodb.spark.sql.connector.connection.DefaultMongoClientFactory`                                                                                                                                                         | False    |
@@ -101,8 +101,8 @@ object input_mongodb {
 | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | Username                       | Username for MongoDB instance                                                                                                                                                                                                                                                 | True     |
 | Password                       | Password for MongoDB instance                                                                                                                                                                                                                                                 | True     |
-| Driver                         | Driver string for mongodb connection, eg. `mongodb` or `mongodb+srv`                                                                                                                                                                                                          | True     |
-| Cluster IP Address and Options | Cluster IP and options(if required) for the MongoDB connection, <br/> eg. `cluster0.prophecy.mongodb.xyz/?retryWrites=true&w=majority`                                                                                                                                        | True     |
+| Driver                         | Driver string for mongodb connection, e.g. `mongodb` or `mongodb+srv`                                                                                                                                                                                                         | True     |
+| Cluster IP Address and Options | Cluster IP and options(if required) for the MongoDB connection, <br/> e.g. `cluster0.prophecy.mongodb.xyz/?retryWrites=true&w=majority`                                                                                                                                       | True     |
 | Database                       | Database to which we want to write the data.                                                                                                                                                                                                                                  | True     |
 | Collection                     | Collection to which we want to write the data.                                                                                                                                                                                                                                | True     |
 | mongoClientFactory             | MongoClientFactory configuration key. <br/> You can specify a custom implementation which must implement the `com.mongodb.spark.sql.connector.connection.MongoClientFactory` interface. <br/> Default: `com.mongodb.spark.sql.connector.connection.DefaultMongoClientFactory` | False    |
