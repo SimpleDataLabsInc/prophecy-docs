@@ -14,7 +14,7 @@ tags:
 
 If you don't have a Databricks environment, use the Prophecy Managed Databricks Fabric to get started.
 Using this option, you can create a 14-Day Free Trial Fabric using Prophecy Managed Databricks. You can use this when trying out Prophecy and when you don't want to connect your own Spark Execution Environment to Prophecy. We already have some sample data and tables created to try out the different functionalities.
-Please refer to the video below for a step-by-step example
+Please refer to the video below for a step-by-step example.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>

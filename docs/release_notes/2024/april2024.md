@@ -9,7 +9,7 @@ tags:
   - april
 ---
 
-## 3.3.5.\* (April 30,2024)
+## 3.3.5.\* (April 30, 2024)
 
 - Prophecy Python libs version: 1.8.15
 - Prophecy Scala libs version: 7.1.93
@@ -25,7 +25,7 @@ To help with this, Prophecy now lets you completely parameterize your transforma
 
 Also, in our last update, we'd enabled Copilot to suggest expressions automatically based on output column names. With this release, we've added a feature called Copilot Fix It. It can fix any errors in your expression logic with just a click of the "Fix with AI" button. It can correct things like syntax mistakes, wrong function calls, or typos. We'll have a detailed document on this feature soon.
 
-## 3.3.4.\* (April 12,2024)
+## 3.3.4.\* (April 12, 2024)
 
 - Prophecy Python libs version: 1.8.15
 - Prophecy Scala libs version: 7.1.88
@@ -35,7 +35,7 @@ Also, in our last update, we'd enabled Copilot to suggest expressions automatica
 - **Streamlined Expression Suggestions**: Enhancing the Copilot feature, we now automatically suggest expressions when users add a new column in the Gem. These suggestions are tailored to the target column name and can be accepted with a simple press of the Tab button.
 - **Improved Filtering UX for Problem and Runtime Logs**: To enhance the debugging experience in Pipelines, we've refined the user interface for logging. This includes the addition of search, filter, sort, and download options.
 
-## 3.3.3.\* (April 1,2024)
+## 3.3.3.\* (April 1, 2024)
 
 - Prophecy Python libs version: 1.8.13
 - Prophecy Scala libs version: 7.1.82
