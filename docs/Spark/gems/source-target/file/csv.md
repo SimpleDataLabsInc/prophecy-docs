@@ -2,14 +2,14 @@
 title: CSV
 id: csv
 description: CSV
-sidebar_position: 1
+sidebar_position: 2
 tags:
   - gems
   - file
   - csv
 ---
 
-Allows you to read or write delimited files such as CSV (Comma-separated Values) or TSV (Tab-separated Values)
+Allows you to read or write delimited files such as CSV (Comma-separated Values) or TSV (Tab-separated Values).
 
 ## Source
 
@@ -19,11 +19,11 @@ CSV **_Source_** supports all the available [Spark read options for CSV](https:/
 
 The below list contains the additional parameters to read a CSV file:
 
-| Parameter    |     | Description                                                                                                 | Required |
-| ------------ | --- | ----------------------------------------------------------------------------------------------------------- | -------- |
-| Dataset Name |     | Name of the Dataset                                                                                         | True     |
-| Location     |     | Location of the file(s) to be loaded <br/> Eg: `dbfs:/data/test.csv`                                        | True     |
-| Schema       |     | Schema to applied on the loaded data. Can be defined/edited as JSON or inferred using `Infer Schema` button | True     |
+| Parameter    |     | Description                                                                                                  | Required |
+| ------------ | --- | ------------------------------------------------------------------------------------------------------------ | -------- |
+| Dataset Name |     | Name of the Dataset                                                                                          | True     |
+| Location     |     | Location of the file(s) to be loaded <br/> E.g.: `dbfs:/data/test.csv`                                       | True     |
+| Schema       |     | Schema to applied on the loaded data. Can be defined/edited as JSON or inferred using `Infer Schema` button. | True     |
 
 ### Example {#source-example}
 
@@ -138,15 +138,15 @@ The below list contains the additional parameters to write a CSV file:
 | Parameter    | Description                                                                                            | Required |
 | ------------ | ------------------------------------------------------------------------------------------------------ | -------- |
 | Dataset Name | Name of the Dataset                                                                                    | True     |
-| Location     | Location of the file(s) to be loaded <br/> Eg: `dbfs:/data/output.csv`                                 | True     |
+| Location     | Location of the file(s) to be loaded <br/> E.g.: `dbfs:/data/output.csv`                               | True     |
 | Write Mode   | How to handle existing data. See [this table](#supported-write-modes) for a list of available options. | False    |
 
 ### Supported Write Modes
 
 | Write Mode | Description                                                                                                                      |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| overwrite  | If data already exists, overwrite with the contents of the DataFrame                                                             |
-| append     | If data already exists, append the contents of the DataFrame                                                                     |
+| overwrite  | If data already exists, overwrite with the contents of the DataFrame.                                                            |
+| append     | If data already exists, append the contents of the DataFrame.                                                                    |
 | ignore     | If data already exists, do nothing with the contents of the DataFrame. This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
 | error      | If data already exists, throw an exception.                                                                                      |
 

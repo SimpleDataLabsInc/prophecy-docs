@@ -2,7 +2,7 @@
 title: DB2
 id: db2
 description: DB2
-sidebar_position: 5
+sidebar_position: 3
 tags:
   - gems
   - warehouse

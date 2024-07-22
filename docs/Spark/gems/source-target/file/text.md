@@ -2,14 +2,14 @@
 title: Text
 id: text
 description: Text
-sidebar_position: 4
+sidebar_position: 11
 tags:
   - gems
   - file
   - text
 ---
 
-Allows you to read or write plain Text files
+Allows you to read or write plain Text files.
 
 ## Source
 
@@ -20,7 +20,7 @@ Reads data from Text files at the given Location.
 | Parameter             | Description                                                                                                                                                                   | Required | Default            |
 | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------ |
 | Location              | File path where the Text files are located                                                                                                                                    | True     | None               |
-| Schema                | Schema to be applied on the loaded data. Can be defined/edited as JSON or inferred using `Infer Schema` button                                                                | True     | None               |
+| Schema                | Schema to be applied on the loaded data. Can be defined/edited as JSON or inferred using `Infer Schema` button.                                                               | True     | None               |
 | Recursive File Lookup | This is used to recursively load files from the given Location. Disables partition discovery. An exception will be thrown if this option and a `partitionSpec` are specified. | False    | False              |
 | Line Separator        | Defines the line separator that should be used for reading or writing.                                                                                                        | False    | `\r`, `\r\n`, `\n` |
 | Read as a single row  | If true, read each file from input path(s) as a single row.                                                                                                                   | False    | False              |
@@ -84,7 +84,7 @@ Write data as text files at the specified path.
 | Compression       | Compression codec to use when saving to file. This can be one of the known case-insensitive shorten names (`none`, `bzip2`, `gzip`, `lz4`, `snappy` and `deflate`). | False    | None    |
 | Write Mode        | How to handle existing data. See [this table](#supported-write-modes) for a list of available options.                                                              | True     | `error` |
 | Partition Columns | List of columns to partition the Text files by                                                                                                                      | False    | None    |
-| Line Separator    | Defines the line separator that should be used for writing.                                                                                                         | False    | `\n`    |
+| Line Separator    | Defines the line separator that should be used for writing                                                                                                          | False    | `\n`    |
 
 :::info
 The Text data source supports only a single column apart from the partition columns. An `AnalysisException` will be thrown if the DataFrame has more than 1 column
@@ -95,8 +95,8 @@ apart from parition columns as the input DataFrame to the `Target` Gem.
 
 | Write Mode | Description                                                                                                                      |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| overwrite  | If data already exists, overwrite with the contents of the DataFrame                                                             |
-| append     | If data already exists, append the contents of the DataFrame                                                                     |
+| overwrite  | If data already exists, overwrite with the contents of the DataFrame.                                                            |
+| append     | If data already exists, append the contents of the DataFrame.                                                                    |
 | ignore     | If data already exists, do nothing with the contents of the DataFrame. This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
 | error      | If data already exists, throw an exception.                                                                                      |
 

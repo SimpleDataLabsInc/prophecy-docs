@@ -2,7 +2,7 @@
 title: JSON
 id: json
 description: JSON
-sidebar_position: 6
+sidebar_position: 7
 tags:
   - gems
   - file
@@ -19,11 +19,11 @@ JSON **_Source_** supports all the available [Spark read options for JSON](https
 
 The below list contains the additional parameters to read a JSON file:
 
-| Parameter    | Description                                                                                                 | Required |
-| ------------ | ----------------------------------------------------------------------------------------------------------- | -------- |
-| Dataset Name | Name of the Dataset                                                                                         | True     |
-| Location     | Location of the file(s) to be loaded <br/> Eg: `dbfs:/data/test.json`                                       | True     |
-| Schema       | Schema to applied on the loaded data. Can be defined/edited as JSON or inferred using `Infer Schema` button | True     |
+| Parameter    | Description                                                                                                  | Required |
+| ------------ | ------------------------------------------------------------------------------------------------------------ | -------- |
+| Dataset Name | Name of the Dataset                                                                                          | True     |
+| Location     | Location of the file(s) to be loaded <br/> E.g.: `dbfs:/data/test.json`                                      | True     |
+| Schema       | Schema to applied on the loaded data. Can be defined/edited as JSON or inferred using `Infer Schema` button. | True     |
 
 ### Example {#source-example}
 
@@ -72,10 +72,10 @@ JSON **_Target_** supports all the available [Spark write options for JSON](http
 
 The below list contains the additional parameters to write a JSON file:
 
-| Parameter    | Description                                                             | Required |
-| ------------ | ----------------------------------------------------------------------- | -------- |
-| Dataset Name | Name of the Dataset                                                     | True     |
-| Location     | Location of the file(s) to be loaded <br/> Eg: `dbfs:/data/output.json` | True     |
+| Parameter    | Description                                                               | Required |
+| ------------ | ------------------------------------------------------------------------- | -------- |
+| Dataset Name | Name of the Dataset                                                       | True     |
+| Location     | Location of the file(s) to be loaded <br/> E.g.: `dbfs:/data/output.json` | True     |
 
 ### Example {#target-example}
 
