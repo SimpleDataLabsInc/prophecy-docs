@@ -2,7 +2,7 @@
 title: Delta
 id: delta
 description: Delta
-sidebar_position: 5
+sidebar_position: 3
 tags:
   - gems
   - file
@@ -265,7 +265,7 @@ Let's assume our initial customers table is as below:
 
 ![Initial customer table](./img/delta/delta_customers_initial_eg1.png)
 
-And we have the below updates coming into customers table
+And we have the below updates coming into customers table:
 
 ![Customer table updates](./img/delta/delta_customers_updates_eg1.png)
 

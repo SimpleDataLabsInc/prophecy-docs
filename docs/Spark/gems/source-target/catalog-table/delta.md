@@ -2,7 +2,7 @@
 title: Delta Table
 id: delta
 description: Delta Table
-sidebar_position: 2
+sidebar_position: 1
 tags:
   - gems
   - catalog
@@ -121,26 +121,26 @@ object Source {
 
 ### Target Parameters
 
-| Parameter                     | Description                                                                                                                                                                | Required |
-| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| Database name                 | Name of the database                                                                                                                                                       | True     |
-| Table name                    | Name of the table                                                                                                                                                          | True     |
-| Custom file path              | Use custom file path to store underlying files                                                                                                                             | False    |
-| Provider                      | Must be set to `Delta`                                                                                                                                                     | True     |
-| Write Mode                    | How to handle existing data. See [this table](../file/delta.md#supported-write-modes) for a list of available options. (Default is set to `error`)                         | True     |
-| Use insert into               | Flag to use `insertInto` method to write instead of `save`                                                                                                                 | False    |
-| Optimize write                | If true, it optimizes Spark partition sizes based on the actual data                                                                                                       | False    |
-| Overwrite table schema        | If true, overwrites the schema of the Delta table                                                                                                                          | False    |
-| Merge schema                  | If true, then any columns that are present in the DataFrame but not in the target table are automatically added on to the end of the schema as part of a write transaction | False    |
-| Partition Columns             | List of columns to partition the Delta table by                                                                                                                            | False    |
-| Overwrite partition predicate | If specified, then it selectively overwrites only the data that satisfies the given where clause expression.                                                               | False    |
+| Parameter                     | Description                                                                                                                                                                 | Required |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| Database name                 | Name of the database                                                                                                                                                        | True     |
+| Table name                    | Name of the table                                                                                                                                                           | True     |
+| Custom file path              | Use custom file path to store underlying files.                                                                                                                             | False    |
+| Provider                      | Must be set to `Delta`                                                                                                                                                      | True     |
+| Write Mode                    | How to handle existing data. See [this table](../file/delta.md#supported-write-modes) for a list of available options. (Default is set to `error`.)                         | True     |
+| Use insert into               | Flag to use `insertInto` method to write instead of `save`                                                                                                                  | False    |
+| Optimize write                | If true, it optimizes Spark partition sizes based on the actual data.                                                                                                       | False    |
+| Overwrite table schema        | If true, overwrites the schema of the Delta table.                                                                                                                          | False    |
+| Merge schema                  | If true, then any columns that are present in the DataFrame but not in the target table are automatically added on to the end of the schema as part of a write transaction. | False    |
+| Partition Columns             | List of columns to partition the Delta table by                                                                                                                             | False    |
+| Overwrite partition predicate | If specified, then it selectively overwrites only the data that satisfies the given where clause expression.                                                                | False    |
 
 :::note
-Among these write modes `overwrite`, `append`, `ignore` and `error` work the same way as with other native Spark-supported formats such as Parquet.
+Among these write modes `overwrite`, `append`, `ignore`, and `error` work the same way as with other native Spark-supported formats such as Parquet.
 
-To read more about using `merge` write mode [**click here**](../file/delta.md#merge-write-mode-with-delta)
+To read more about using `merge` write mode [**click here**](../file/delta.md#merge-write-mode-with-delta).
 
-To read more about using `SCD2` merge write mode [**click here**](../file/delta.md#scd2-merge-write-mode-with-delta)
+To read more about using `SCD2` merge write mode [**click here**](../file/delta.md#scd2-merge-write-mode-with-delta).
 :::
 
 ### Target Example

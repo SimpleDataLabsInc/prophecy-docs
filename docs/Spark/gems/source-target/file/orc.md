@@ -2,7 +2,7 @@
 title: ORC
 id: orc
 description: ORC
-sidebar_position: 7
+sidebar_position: 9
 tags:
   - gems
   - file
@@ -22,7 +22,7 @@ Reads data from ORC files present at a path.
 | Parameter             | Description                                                                                                                                                                                                                        | Required | Default |
 | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
 | Location              | File path where ORC files are present                                                                                                                                                                                              | True     | None    |
-| Schema                | Schema to be applied on the loaded data. Can be defined/edited as JSON or inferred using `Infer Schema` button                                                                                                                     | True     | None    |
+| Schema                | Schema to be applied on the loaded data. Can be defined/edited as JSON or inferred using `Infer Schema` button.                                                                                                                    | True     | None    |
 | Recursive File Lookup | This is used to recursively load files and it disables partition inferring. Its default value is `false`. If data source explicitly specifies the `partitionSpec` when `recursiveFileLookup` is true, an exception will be thrown. | False    | False   |
 
 ### Example {#source-example}
@@ -74,12 +74,12 @@ object read_orc {
 
 Write data as ORC files at the specified path.
 
-| Parameter         | Description                                                                                                                                                                                                                 | Required | Default |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
-| Location          | File path where ORC files will be written                                                                                                                                                                                   | True     | None    |
-| Compression       | Compression codec to use when saving to file. This can be one of the known case-insensitive shorten names (`none`, `uncompressed`, `snappy`, `gzip`, `lzo`, `brotli`, `lz4`, and `zstd`). This will override `orc.compress` | False    | snappy  |
-| Write Mode        | Write mode for DataFrame                                                                                                                                                                                                    | True     | error   |
-| Partition Columns | List of columns to partition the ORC files by                                                                                                                                                                               | False    | None    |
+| Parameter         | Description                                                                                                                                                                                                                  | Required | Default |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
+| Location          | File path where ORC files will be written                                                                                                                                                                                    | True     | None    |
+| Compression       | Compression codec to use when saving to file. This can be one of the known case-insensitive shorten names (`none`, `uncompressed`, `snappy`, `gzip`, `lzo`, `brotli`, `lz4`, and `zstd`). This will override `orc.compress`. | False    | snappy  |
+| Write Mode        | Write mode for DataFrame                                                                                                                                                                                                     | True     | error   |
+| Partition Columns | List of columns to partition the ORC files by                                                                                                                                                                                | False    | None    |
 
 ### Example {#example-target}
 

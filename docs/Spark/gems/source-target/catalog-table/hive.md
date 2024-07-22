@@ -2,7 +2,7 @@
 title: Hive Table
 id: hive
 description: Read from or write to Tables managed by a Hive metastore
-sidebar_position: 1
+sidebar_position: 2
 tags:
   - gems
   - catalog
@@ -109,19 +109,19 @@ object Source {
 | ----------------- | ---------------------------------------------------------------------------------------------------------- | -------- | --------- |
 | Database name     | Name of the database                                                                                       | True     |           |
 | Table name        | Name of the table                                                                                          | True     |           |
-| Custom file path  | Use custom file path to store underlying files                                                             | False    |           |
+| Custom file path  | Use custom file path to store underlying files.                                                            | False    |           |
 | Provider          | Must be set to `hive`                                                                                      | True     |           |
 | Write Mode        | How to handle existing data. See the [this table](#supported-write-modes) for a list of available options. | True     | `error`   |
-| File Format       | File format to use when saving data. See [this table](#supported-file-formats) for supported formats       | True     | `parquet` |
+| File Format       | File format to use when saving data. See [this table](#supported-file-formats) for supported formats.      | True     | `parquet` |
 | Partition Columns | Columns to partition by                                                                                    | False    | (empty)   |
-| Use insert into   | If `true`, use `.insertInto` instead of `.save` when generating code                                       | False    | `false`   |
+| Use insert into   | If `true`, use `.insertInto` instead of `.save` when generating code.                                      | False    | `false`   |
 
 #### Supported Write Modes
 
 | Write Mode | Description                                                                                                                      |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| overwrite  | If data already exists, overwrite with the contents of the DataFrame                                                             |
-| append     | If data already exists, append the contents of the DataFrame                                                                     |
+| overwrite  | If data already exists, overwrite with the contents of the DataFrame.                                                            |
+| append     | If data already exists, append the contents of the DataFrame.                                                                    |
 | ignore     | If data already exists, do nothing with the contents of the DataFrame. This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
 | error      | If data already exists, throw an exception.                                                                                      |
 
