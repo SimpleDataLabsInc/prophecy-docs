@@ -52,7 +52,7 @@ Click on **(1) Test Connection**.
 This will validate the Livy URL and authentication. Once the test connection is successful, you can configure the other Provider settings as below.
 
 - **Job sizes** -
-  By default, you will see a small Job size that has been pre-created. You can edit or add more Job sizes. A Job size consists of
+  By default, you will see a small Job size that has been pre-created. You can edit or add more Job sizes. A Job size consists of:
 
   - Size of the Driver: Driver Core and Memory
   - Size of the Executor: Core and Memory for each executor
@@ -77,7 +77,7 @@ Once ready, click **Continue**.
 Connections still need to be supported for Livy Fabrics.
 :::
 
-click **Continue**.
+Click **Continue**.
 
 ### Secrets
 
