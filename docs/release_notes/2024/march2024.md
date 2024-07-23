@@ -9,7 +9,7 @@ tags:
   - march
 ---
 
-## 3.3.2.\* (March 15,2024)
+## 3.3.2.\* (March 15, 2024)
 
 - Prophecy Python libs version: 1.8.9
 - Prophecy Scala libs version: 7.1.79

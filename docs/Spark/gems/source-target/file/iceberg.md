@@ -23,6 +23,12 @@ You must configure a required Spark JAR dependency in your Fabric environment.
 
   - Package: `https://repo1.maven.org/maven2/org/apache/iceberg/iceberg-spark-runtime-3.3_2.12/1.5.0/iceberg-spark-runtime-3.3_2.12-1.5.0.jar`
 
+  :::note
+
+  The JAR dependency is available on your compute platform wherever Spark is installed, such as on your Databricks cluster, EMR, or Dataproc.
+
+  :::
+
 ### Initialization Settings
 
 You must configure the following Spark session property during the Spark session initialization.

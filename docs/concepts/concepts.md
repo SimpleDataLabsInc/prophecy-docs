@@ -1,5 +1,5 @@
 ---
-title: Key Concepts
+title: Prophecy Concepts
 id: key-concepts
 description: Key Concepts of Prophecy
 tags: []
