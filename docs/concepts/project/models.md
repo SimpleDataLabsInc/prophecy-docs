@@ -40,7 +40,7 @@ In Prophecy and dbt, **Data Models** are SQL statements that build a single tabl
 
 Data models incorporate the step-by-step logic to transform raw data to some intermediate or final state. Each Model, stored as a `.sql` file on Git, is managed as software - with best practices like peer review and version control. The Model can include Common Table Expressions (CTEs) and [refer](https://docs.getdbt.com/docs/build/sql-models#building-dependencies-between-models) to other Models. Importantly, SQL statements with Prophecy and dbt are re-usable. When a Model is updated, any reference to that Model is likewise updated.
 
-Here we explore how to use Models in Prophecy, adopting the concept and vernacular from dbt Core™. Later, we'll see how to import dbt projects to Prophecy, or you can create a new Project and Models using Prophecy's drag-and-drop interface. After you've read this page, get hands on with Models in this getting-started [guide](/docs/getting-started/getting-started-with-low-code-sql.md#44-Develop-your-first-model).
+Here we explore how to use Models in Prophecy, adopting the concept and vernacular from dbt Core™. Later, we'll see how to import dbt projects to Prophecy, or you can create a new Project and Models using Prophecy's drag-and-drop interface. After you've read this page, get hands on with Models in the [SQL with Databricks](/docs/getting-started/getting-started-with-low-code-sql.md#44-Develop-your-first-model) getting-started guide.
 
 ### Using Models in Prophecy
 
@@ -58,12 +58,12 @@ The **(4)`Aggregate`** step is represented visually as an `Aggregate` Gem and in
 
 If you’re already familiar with Prophecy Pipelines, Models are very similar. The major difference is that each Pipeline can create an arbitrary number of outputs, whereas a Model only defines one output. Where Pipelines can exist only within Spark-based projects, Models can exist within SQL-based ones.
 
-Like Pipelines, Models can be configured, committed and released to [Git](/docs/metadata/git.md), according to software engineering best practices. More details on Model configuration coming soon!
+Like Pipelines, Models can be configured, committed and released to [Git](/docs/metadata/git.md), according to software engineering best practices.
 
 ### dbt Core™ Models
 
-Prophecy uses dbt Core™ as the underlying build system for SQL projects. Therefore, our concept of a Model is equivalent to dbt’s. You can read more about dbt’s Models and their properties [here.](https://docs.getdbt.com/docs/build/models) dbt supports two primary types of Models: SQL-based and Python-based. Today, Prophecy’s visual interface supports SQL Models only, however, Python support is coming out soon. If you’d like to define Python Models you can still use them within the code interface.
+Prophecy uses dbt Core™ as the underlying build system for SQL projects. Therefore, our concept of a Model is equivalent to dbt’s. You can read more about [dbt’s Models and their properties](https://docs.getdbt.com/docs/build/models). dbt supports two primary types of Models: SQL-based and Python-based. Today, Prophecy’s visual interface supports SQL Models only. If you’d like to define Python Models you can still use them within the code interface.
 
 #### What's next?
 
-Now that you have an understanding of data Models as defined by Prophecy and dbt, get hands on with Models in this getting started [guide](/docs/getting-started/getting-started-with-low-code-sql.md#44-develop-your-first-model).
+Now that you have an understanding of data Models as defined by Prophecy and dbt, get hands on with Models by [developing your first Model](/docs/getting-started/getting-started-with-low-code-sql.md#44-develop-your-first-model).
