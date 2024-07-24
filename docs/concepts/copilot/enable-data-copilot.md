@@ -43,11 +43,13 @@ From the Kubernetes cluster where Prophecy services are running:
 4. Once deployed, wait for the `copilot-cm` to be created. Then edit the default values in the configmap to match the ENVs required.
 5. Supply the API keys for the appropriate endpoint and ENV as below. Prophecy Copilot requires two types of models:
 
-   1. **Smart LLM for Complex Tasks**
+   1. **Smart LLM for complex tasks**
+
       - Recommended Model: `gpt-4o`
       - Supported Models: Any model from the gpt-4 family
 
-   2. **Fast LLM for Easy and Fast Tasks**
+   2. **Fast LLM for easy and fast tasks**
+
       - Recommended Model: `gpt-4o-mini`
       - Examples: `gpt-4o-mini`, `gpt-3.5-turbo`
 
