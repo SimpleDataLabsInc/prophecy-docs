@@ -2,7 +2,7 @@
 title: "Datasets"
 id: dataset
 description: Schema, meet Data.
-sidebar_position: 2
+sidebar_position: 3
 tags:
   - concepts
   - datasets
@@ -12,7 +12,7 @@ tags:
 
 Datasets in Prophecy are the union of two concepts:
 
-1. **Schema**: Schema, in this case, is the _shape_ of the data. Column names, their types and _how_ to read and write the data that fits this schema
+1. **Schema**: Schema, in this case, is the _shape_ of the data. This refers to column names, their types, and _how_ to read and write the data that fits this schema.
 2. **Fabric**: The [Fabric](fabrics/fabrics.md) is the execution environment in which this data resides.
 
 In short: **_WHAT_** your data looks like and **_HOW_** to read it or write it in a given Fabric. Datasets are grouped together in [Projects](project).
@@ -35,15 +35,15 @@ If you navigate to the Metadata page for one of the Datasets you'll see the foll
 
 ![Dataset metadata page](img/dataset/ds_metadata.png)
 
-|     | Name                | Description                                                                                                     |
-| :-: | ------------------- | --------------------------------------------------------------------------------------------------------------- |
-|  1  | Metadata views      | Switch between the different views of the Metadata page                                                         |
-|  2  | Dataset name        | The name of this Dataset. Clicking the pencil icon to edit the name                                             |
-|  3  | Dataset description | Description of this Dataset                                                                                     |
-|  4  | Fabric dropdown     | Switch between the various Fabrics available to your account to see how this Dataset is defined for that Fabric |
-|  5  | Dataset properties  | A small subset of the properties used for Reading or Writing to this Dataset                                    |
-|  6  | Dataset schema      | This Dataset's Columns and their types                                                                          |
-|  7  | Delete Dataset      | Delete this Dataset. Use with caution.                                                                          |
+|     | Name                | Description                                                                                                      |
+| :-: | ------------------- | ---------------------------------------------------------------------------------------------------------------- |
+|  1  | Metadata views      | Switch between the different views of the Metadata. page                                                         |
+|  2  | Dataset name        | The name of this Dataset. Click the pencil icon to edit the name.                                                |
+|  3  | Dataset description | Description of this Dataset.                                                                                     |
+|  4  | Fabric dropdown     | Switch between the various Fabrics available to your account to see how this Dataset is defined for that Fabric. |
+|  5  | Dataset properties  | A small subset of the properties used for Reading or Writing to this Dataset.                                    |
+|  6  | Dataset schema      | This Dataset's Columns and their types.                                                                          |
+|  7  | Delete Dataset      | Delete this Dataset. Use with caution.                                                                           |
 
 ## Dataset Relations
 
