@@ -17,12 +17,12 @@ A Seed is an excellent way to load small CSV files into Prophecy. This is super 
 
 ![Seed1](img/Seed1.png)
 
-| **Seed Creation**                                                                                                                           |
-| ------------------------------------------------------------------------------------------------------------------------------------------- |
-| **1 Add Seed** - Inside the Model canvas, from the Project tab, select + Add Seed and provide a name. Here the Seed was named ORDERDETAILS. |
-| **2 Toggle to `Code`** - The code view displays a text editor.                                                                              |
-| **3 Paste data** - Paste content in CSV format with header and separated by commas.                                                         |
-| **4 Seed file** - The Seed file is now listed in the files that will be committed to Git when the Project is committed and released.        |
+| **Seed Creation**                                                                                                                               |
+| ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| **1 Add Seed** - Inside the Model canvas, from the Project tab, select **+ Add Seed** and provide a name. Here the Seed was named ORDERDETAILS. |
+| **2 Toggle to `Code`** - The code view displays a text editor.                                                                                  |
+| **3 Paste data** - Paste content in CSV format with header and separated by commas.                                                             |
+| **4 Seed file** - The Seed file is now listed in the files that will be committed to Git when the Project is committed and released.            |
 
 ![Seed2](img/Seed2.png)
 
@@ -33,7 +33,7 @@ A Seed is an excellent way to load small CSV files into Prophecy. This is super 
 | **7 Add Seed to Model** - Add the Seed as a datasource for this Model.                                                                                                                                                                                                                      |
 | **8 Seed appears in the Model Canvas** - Now the content of the Seed is part of the Model and can be transformed, joined, etc.                                                                                                                                                              |
 | **9 Interactive Run** - Click the Play button to interactively run the Model, including the Seed datasource.                                                                                                                                                                                |
-| **10 Click the Environment tab** - to browse the SQL Warehouse                                                                                                                                                                                                                              |
+| **10 Click the Environment tab** - Click to browse the SQL Warehouse.                                                                                                                                                                                                                       |
 | **11 Refetch Sources** - Crawls the SQL Warehouse to list tables in each of the databases and schemas accessible to your user. Seeds are by default materialized as Tables.                                                                                                                 |
 | **12 Seed appears as a Table in the Warehouse** - Once Prophecy has refetched the sources, Prophecy lists the Seed in the Project Browser. So the Seed exists as both a Table in the Warehouse and is also saved as a versioned CSV file on Git when the Project is committed and released. |
 
@@ -59,13 +59,13 @@ Models are represented as visual format or as a single .sql file in `code` forma
 
 ![Model1](img/Model1.png)
 
-| Model Creation                                                                                                                                                |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **1 Open existing Model** - Within a Project, open an existing Model, eg MyNextModel.                                                                         |
-| **2 Add Model** - Click to add a new Model to the existing Model.                                                                                             |
-| **3 Model Name and File Path ** - Provide a name for the new Model, eg MyModel. Define the desired storage path in Git to store the new Model as a .sql file. |
+| Model Creation                                                                                                                                                  |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **1 Open existing Model** - Within a Project, open an existing Model, e.g. MyNextModel.                                                                         |
+| **2 Add Model** - Click to add a new Model to the existing Model.                                                                                               |
+| **3 Model Name and File Path ** - Provide a name for the new Model, e.g. MyModel. Define the desired storage path in Git to store the new Model as a .sql file. |
 
-Now the new Model has been created and the canvas is displayed. Optionally, click `Config`. Prophecy makes it easy to decide whether a model should be materialized as a view, table, ephemeral, incremental, or dynamic table. Click [here](https://www.prophecy.io/blog/interactive-development) to see how to configure a table's materiliazation.
+Now the new Model has been created and the canvas is displayed. Optionally, click `Config`. Prophecy makes it easy to decide whether a model should be materialized as a view, table, ephemeral, incremental, or dynamic table. For more information on how to configure a table's materiliazation, read this [interactive development blog post](https://www.prophecy.io/blog/interactive-development).
 
 ![Model2](img/Model2.png)
 
@@ -76,7 +76,7 @@ Now the new Model has been created and the canvas is displayed. Optionally, clic
 | **6 Interactive Run** - Click the "Play" button to execute the new Model and create a materiaized view of the new Model. |
 | **7 Project Tab** - Click the Project tab and notice MyModel is now available in the Project Browser.                    |
 | **8 Existing Model** - Open the existing Model of interest. In this example, MyNextModel is opened.                      |
-| **9 Add Model as a Source** - Add the new Model (eg MyModel) as a Source.                                                |
+| **9 Add Model as a Source** - Add the new Model (e.g. MyModel) as a Source.                                              |
 
 ![Model3](img/Model3.png)
 
@@ -89,4 +89,4 @@ As a result, **MyNextModel** contains three sources: a Seed (ORDERDETAILS), a So
 
 **MyNextModel** can be viewed visually (left) or as a SQL file (right). The Project browser (left) lists the Sources, Seeds, and Models available to drag-n-drop into the selected Model's canvas.
 
-For more details on dbt concepts including [Sources](https://docs.getdbt.com/docs/build/sources), [Seeds](https://docs.getdbt.com/docs/build/seeds), and [Models](https://docs.getdbt.com/docs/build/models), please explore the dbt documentation or checkout Prophecy's getting-started [guide](/docs/getting-started/getting-started-with-low-code-sql.md).
+For more details on dbt concepts including [Sources](https://docs.getdbt.com/docs/build/sources), [Seeds](https://docs.getdbt.com/docs/build/seeds), and [Models](https://docs.getdbt.com/docs/build/models), please explore the dbt documentation or checkout Prophecy's [SQL with Databricks getting-started guide](/docs/getting-started/getting-started-with-low-code-sql.md).
