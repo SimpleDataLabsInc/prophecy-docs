@@ -48,4 +48,4 @@ Click **(6) Save**.
 
 ## Run
 
-When your Join Gem has the desired inputs, conditions and expressions, **(7) run** interactively to view **(8)[sample data](visual-editor/interactive-development/data-explorer).**
+When your Join Gem has the desired inputs, conditions and expressions, **(7) run** interactively to view **(8)[sample data](development/visual-editor/interactive-development/data-explorer).**
