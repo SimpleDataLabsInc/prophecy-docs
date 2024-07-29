@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[94045],{36225:s=>{s.exports=JSON.parse('{"label":"sources","permalink":"/tags/sources","allTagsPath":"/tags","count":1,"items":[{"id":"SQL/gems/datasources/datasources-sql","title":"Data Sources","description":"access your data","permalink":"/SQL/gems/datasources/"}]}')}}]);
