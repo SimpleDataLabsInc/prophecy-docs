@@ -77,4 +77,4 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 <DocCardList items={useCurrentSidebarCategory().items}/>
 ```
 
-As you're building your Model by adding individual Gems, see how the process is going by interactively running the model. To learn more, explore the [Data Explorer](visual-editor/interactive-development/data-explorer) page under Interactive Development.
+As you're building your Model by adding [individual Gems](/docs/SQL/gems.md), see how the process is going by interactively running the model. To learn more, explore the [Data Explorer](visual-editor/interactive-development/data-explorer) page under Interactive Development.
