@@ -41,14 +41,25 @@ From the Kubernetes cluster where Prophecy services are running:
    ```
 
 4. Once deployed, wait for the `copilot-cm` to be created. Then edit the default values in the configmap to match the ENVs required.
-5. Supply the API keys for the appropriate endpoint and ENV as below. The suggested model is `gpt-3.5-turbo`.
+5. Supply the API keys for the appropriate endpoint and ENV as below. Prophecy Copilot requires two types of models:
+
+   1. **Smart LLM for complex tasks**
+
+      - Recommended Model: `gpt-4o`
+      - Supported Models: Any model from the gpt-4 family
+
+   2. **Fast LLM for easy and fast tasks**
+
+      - Recommended Model: `gpt-4o-mini`
+      - Examples: `gpt-4o-mini`, `gpt-3.5-turbo`
+
+   These models ensure optimal performance and efficiency for various tasks within Prophecy Copilot.
 
    OpenAI
 
    ```
-   NUM_WORKERS: "< add value here >"
-   OPENAI_MODEL: "< add value here, optional >"
-   OPENAI_API_KEY: "< add value here >"
+   AI_MODEL_PROVIDERS_CREDS: "{ 'openai' : {'api_key': '___openai_api_key___'} }"
+   AVAILABLE_AI_MODELS: "{ 'fast_model': {'provider': 'openai', 'model_name': 'gpt-4o-mini' }, 'smart_model': {'provider': 'openai', 'model_name': 'gpt-4o'} }"
    NUM_WORKERS: "< add value here >"
    PORT: "< add value here >"
    ```
@@ -56,10 +67,8 @@ From the Kubernetes cluster where Prophecy services are running:
    Azure's OpenAI
 
    ```
-   AZURE_DEPLOYMENT_NAME: "< add value here >"
-   AZURE_OPENAI_API_KEY: "< add value here >"
-   AZURE_OPENAI_ENDPOINT: "< add value here >"
-   AZURE_OPENAI_VERSION: "< add value here >"
+   AI_MODEL_PROVIDERS_CREDS: "{ 'azure_openai' : {'api_key': '___azure_openai_api_key___', 'api_endpoint': 'https://name.openai.azure.com/'} }"
+   AVAILABLE_AI_MODELS: "{ 'fast_model': {'provider': 'azure_openai', 'model_name': 'gpt-4o-mini', 'deployment_name': '___azure_openai_4omini_deployment_name___' }, 'smart_model': {'provider': 'azure_openai', 'model_name': 'gpt-4o', 'deployment_name': '___azure_openai_4o_deployment_name___'} }"
    NUM_WORKERS: "< add value here >"
    PORT: "< add value here >"
    ```
