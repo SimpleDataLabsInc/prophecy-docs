@@ -13,33 +13,19 @@ tags:
   - ad-hoc
 ---
 
-Develop SQL Projects efficiently with Prophecy's visual canvas. Copilot converts your visual designs into SQL code.
+Prophecy Data Transformation Copilot for SQL combines the best of both worlds; **high-quality code** based on software engineering best practices with a complete, **easy-to-use visual** environment.
 
-## Visual Canvas
+## Visual = Code for easy collaboration
 
-The visual canvas is the main place to develop data models.
-Open any SQL Project in Prophecy to find the complete end-to-end **Project Lineage**. The Project Lineage provides a quick understanding of how Models refer to other Models, Seeds, or Sources. This quick, high-level project overview is explainable without having to read code.
+Visual = Code allows both SQL coders and business users to easily collaborate on the same project.
 
-![ProjectLineage](img/ProjectLineage.png)
-
-The Project Browser displays entities available or used within this Project. Just click the Environment tab to browse through available databases and tables. Each Project connects to a Fabric, or execution environment. This Fabric defines the SQL Warehouse where each Model will materialize a single table or view. There are lots of additional features to learn more about, including configurations and committing code to Git. A single Project page contains lots of capabilities!
-
-From here easily create new models by clicking on the "+" next to the Models pane, or edit existing Models.
-![AddModel](img/AddModel.png)
-
-Once a Model is open, the model-editing canvas appears.
-
-![Canvas](img/Canvas.png)
-
-Here we can see the `customers` Model starts with three existing Models. The data is transformed according to Aggregate, SQLStatement, and Join Gems. The available Transformation Gems are available by clicking the dropdown menu. As the Model is being developed, iteratively run and see sample data as well as the relevant logs.
-
-## Code = Visual
+### Code = Visual
 
 Prophecy Copilot for SQL features two editors:
 
 ![CodeEqualsVisual](img/CodeEqualsVisual.png)
 
-1. **Visual Editor** - enables data practitioners to easily see and modify the data model definitions in a graphical way. The visual graph is perfect to quickly grasp the purpose and inner workings of the existing models. It’s also a great way to develop brand new models with step-by-step [interactive execution](./interactive-development/data-explorer.md). All models developed through the visual interface will be written in a highly standardized format.
+1. **Visual Editor** - enables data practitioners to easily see and modify the data model definitions in a graphical way. The visual graph is perfect to quickly grasp the purpose and inner workings of the existing models. It’s also a great way to develop brand new models with step-by-step [interactive execution](visual-editor/interactive-development/data-explorer). All models developed through the visual interface will be written in a highly standardized format.
 
 2. **Code Editor** - enables the users already familiar with SQL to optimize and understand their queries in-depth. New data practitioners can also learn best practices as they develop their models by sneak-peaking into the code editor in real-time.
 
@@ -56,12 +42,39 @@ Vast majority of dbt and SQL constructs are supported within the Prophecy Visual
 - **For SQL** - Prophecy automatically maps unsupported SQL statements to a generic SQL Gem, allowing you to still freely edit even unsupported code.
 - **For dbt** - Features in dbt-core that may lack their visual-editor alternatives still work as expected from the standard dbt cli. Prophecy will never modify your existing codebase in unsupported ways.
 
+## Interactive development
+
+At any step of the process, data users can interactively run their models to make sure they're going in the right direction. Models can be additionally tested to ensure robustness over time. Power users can also extend the visual canvas through custom Gems; making even the most complex logic easily accessible in the visual view.
+
+## Deployment from code on Git
+
+Projects built through Prophecy are stored in the dbt Core format as repositories on Git, which allows data teams to follow best software engineering practices like CI/CD.
+
+Maintenance is simple since Prophecy gems turn into code on Git that’s always up-to-date with the latest version of the warehouse or lakehouse used. And, to ensure the best performance at all times, Prophecy is smart about which code construct (subquery or CTE) to use.
+
+## Sharing of Projects as Packages
+
+Data users can import an existing dbt Core project or start from scratch. They can publish those projects to other teams or subscribe to already existing ones. Projects published as packages contain models, functions and Gems allowing for code reusability at every level.
+
+## Learn more
+
+A word from Prophecy's co-Founder, Maciej! See how Prophecy allows every team, whether visual or code developers, to use the same software development best practices.
+
+<div class="wistia_responsive_padding" style={{padding:'56% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://fast.wistia.net/embed/iframe/3i9g2dciah?seo=false?videoFoam=true" title="Design a Pipeline Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
+
 ## Hands-on
 
-To get started developing SQL models, check out the pages below or try the getting-started [guide](/docs/getting-started/getting-started-with-low-code-sql.md).
+To get started developing SQL models, check out the pages below or try this guide for [Databricks](/docs/getting-started/getting-started-with-low-code-sql.md) or [Snowflake](/docs/getting-started/getting-started-sql-snowflake.md).
 
-1. [**Models**](./models.md) - All the steps needed to define a table or view.
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-2. [**Gems**](./gems/gems.md) - The individual steps, or transformations, to define a table or view.
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```
 
-As you're building your Model by adding individual Gems, see how the process is going by interactively running the model. Explore the [Interactive Development](./interactive-development/data-explorer.md) page to learn more.
+As you're building your Model by adding [individual Gems](/docs/SQL/gems/gems.md), see how the process is going by interactively running the model. To learn more, explore the [Data Explorer](visual-editor/interactive-development/data-explorer) page under Interactive Development.
