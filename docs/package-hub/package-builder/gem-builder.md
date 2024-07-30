@@ -177,7 +177,7 @@ class Limit(ComponentSpec):
     name: str = "Limit"
     category: str = "Transform"
     GemDescription: str = "Limits the number of rows in the output"
-    docUrl: str = "https://docs.prophecy.io/low-code-spark/Gems/transform/limit/"
+    docUrl: str = "https://docs.prophecy.io/Spark/Gems/transform/limit/"
 
     def optimizeCode(self) -> bool:
         return True
@@ -197,7 +197,7 @@ class Limit extends ComponentSpec {
   val name: String = "Limit"
   val category: String = "Transform"
   val GemDescription: String = "Limits the number of rows in the input data"
-  val docUrl: String = "https://docs.prophecy.io/low-code-spark/Gems/transform/limit/"
+  val docUrl: String = "https://docs.prophecy.io/Spark/Gems/transform/limit/"
 
   type PropertiesType = LimitProperties
   override def optimizeCode: Boolean = true
@@ -539,7 +539,7 @@ filter ComponentCode with the added withColumn function:
 
 ### Extend the read/write capabilities with Dataset Format Gems
 
-You may also wish to create a source or target Dataset format beyond the [provided formats](https://docs.prophecy.io/low-code-spark/Gems/source-target/). With GemBuilder, it’s possible to create custom Dataset formats! You’ll need to know how the Custom [DatasetFormat](https://docs.prophecy.io/low-code-spark/Gems/source-target/) Gems differ from Transformation Gems.
+You may also wish to create a source or target Dataset format beyond the [provided formats](https://docs.prophecy.io/Spark/Gems/source-target/). With GemBuilder, it’s possible to create custom Dataset formats! You’ll need to know how the Custom [DatasetFormat](https://docs.prophecy.io/Spark/Gems/source-target/) Gems differ from Transformation Gems.
 
 The DatasetFormat Gem:
 
@@ -547,7 +547,7 @@ The DatasetFormat Gem:
 2. has two Dialog functions: sourceDialog and targetDialog . They both return a DatasetDialog object, whereas for any Transform Gem, the dialog function returns a Dialog object.
 3. The ComponentCode class has two apply functions: sourceApply and targetApply for Source and Target modes respectively.
 
-There is no distinction between Transformation and DatasetFormat Gem onChange and validate functions. Check the [Gem list](https://docs.prophecy.io/low-code-spark/Gems/source-target/) for code examples of DatasetFormat Gems.
+There is no distinction between Transformation and DatasetFormat Gem onChange and validate functions. Check the [Gem list](https://docs.prophecy.io/Spark/Gems/source-target/) for code examples of DatasetFormat Gems.
 
 ### What’s next?
 
