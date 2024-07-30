@@ -53,6 +53,9 @@ const config = {
       zoom: {
         selector: ".markdown :not(em) > img",
       },
+      NotFound: {
+        p2: "This page might need a browser refresh due to an update. If that doesn't work, please contact Prophecy at contact.us@prophecy.io and let us know our link is broken.",
+      },
       navbar: {
         title: "",
         logo: {
