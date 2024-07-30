@@ -16,7 +16,7 @@ tags:
 
 Databricks clusters comes with various [Access Modes](https://docs.databricks.com/clusters/create-cluster.html#what-is-cluster-access-mode).
 
-For [Interims](https://docs.prophecy.io/low-code-spark/execution/interactive-execution#interims) and [Execution Metrics](./execution-metrics) to work, Prophecy has written some libraries in Python and Scala, which need to be installed on the cluster. Hence, because of below restrictions, interims behavior is different for different clusters.
+For [Interims](https://docs.prophecy.io/Spark/execution/interactive-execution#interims) and [Execution Metrics](./execution-metrics) to work, Prophecy has written some libraries in Python and Scala, which need to be installed on the cluster. Hence, because of below restrictions, interims behavior is different for different clusters.
 
 | Access mode dropdown      | Library Installations Allowed?          | Language supported | Interims             | Execution Metrics |
 | ------------------------- | --------------------------------------- | ------------------ | -------------------- | ----------------- |
@@ -44,7 +44,7 @@ When using Databricks with a `Shared` access mode, you must also connect to `Sha
 
 During development, often the user will want to see their data to make more sense of it and to check whether the expected output is getting
 generated or not after the transformation. Prophecy generates these data samples as `Interims`, which are temporarily cached previews of data after each Gem.
-To check more about interims, refer [here](https://docs.prophecy.io/low-code-spark/execution/interactive-execution#interims).
+To check more about interims, refer [here](https://docs.prophecy.io/Spark/execution/interactive-execution#interims).
 
 Depending on the type of clusters, we have two modes of Interims
 
