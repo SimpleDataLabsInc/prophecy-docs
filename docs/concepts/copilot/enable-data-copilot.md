@@ -18,7 +18,7 @@ However, for the most security conscious organizations, it is possible to config
 
 :::note
 
-Prophecy also supports running Data Copilot from a locally hosted private model. Additionally, you can configure Prophecy Data Copilot to use custom LLM endpoints provided by AWS Bedrock, Google Vertex AI, and Databricks Model Serving.
+Prophecy also supports running Data Copilot from a locally hosted private models such as Llama or Mistral. Additionally, you can configure Prophecy Data Copilot to use custom LLM endpoints provided by Anthropic, AWS Bedrock, Google Vertex AI, and Databricks Model Serving.
 
 :::
 
@@ -68,7 +68,7 @@ From the Kubernetes cluster where Prophecy services are running:
 
    ```
    AI_MODEL_PROVIDERS_CREDS: "{ 'azure_openai' : {'api_key': '___azure_openai_api_key___', 'api_endpoint': 'https://name.openai.azure.com/'} }"
-   AVAILABLE_AI_MODELS: "{ 'fast_model': {'provider': 'azure_openai', 'model_name': 'gpt-4o-mini', 'deployment_name': '___azure_openai_4omini_deployment_name___' }, 'smart_model': {'provider': 'azure_openai', 'model_name': 'gpt-4o', 'deployment_name': '___azure_openai_4o_deployment_name___'} }"
+   AVAILABLE_AI_MODELS: "{ 'fast_model': {'provider': 'azure_openai', 'model_name': 'gpt-4o-mini', 'deployment_name': '___4o_mini_deployment___' }, 'smart_model': {'provider': 'azure_openai', 'model_name': 'gpt-4o', 'deployment_name': '___4o_deployment___'} }"
    NUM_WORKERS: "< add value here >"
    PORT: "< add value here >"
    ```
