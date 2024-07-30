@@ -1,5 +1,5 @@
 ---
-title: "Deployment"
+title: Prophecy deployment
 date: 2023-11-01T14:45:41-07:00
 sidebar_position: 1
 id: deployment
@@ -10,7 +10,7 @@ tags:
   - databricks
 ---
 
-Prophecy deployment is simple and flexible. Prophecy is written as a set of microservices that run on Kubernetes and is built to be multi-tenant. There are three primary options:
+Prophecy deployment is simple and flexible. Prophecy is written as a set of microservices that run on Kubernetes and is built to be multi-tenant. There are three primary options within cloud deployment.
 
 ## Cloud Deployment
 

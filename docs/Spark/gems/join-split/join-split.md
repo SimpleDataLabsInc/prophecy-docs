@@ -5,7 +5,7 @@ description: The set of Gems that can split or join one or more DataFrames
 tags: []
 ---
 
-The set of Gems that help with the process of merging or splitting DataFrame(s) to create new DataFrame(s)
+Includes the set of Gems that help with the process of merging or splitting DataFrame(s) to create new DataFrame(s).
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
