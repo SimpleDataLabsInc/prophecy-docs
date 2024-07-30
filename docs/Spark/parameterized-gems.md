@@ -48,7 +48,7 @@ Similary, you can parameterize other gems in the Pipeline as per your business r
 
 :::info
 Please note, that Source gems can also be parameterized by using config variable to provide the file location. Check
-out [this guide](https://docs.prophecy.io/low-code-spark/configuration/#examples-for-pipeline-level-configurations)
+out [this guide](https://docs.prophecy.io/Spark/configuration/#examples-for-pipeline-level-configurations)
 to learn more.
 :::
 
