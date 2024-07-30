@@ -84,8 +84,6 @@ For interactive development, Prophecy requires:
 - **Databricks API 1.2** - for Databricks-based Spark deployments or
 - **Livy 0.7.x** - for any other Spark-deployment support (e.g. CDP, HDP, MapR, Spark on Kubernetes)
 
-For jobs deployment, Prophecy requires
-
 ### Airflow
 
 For interactive and jobs deployment to Airflow, Prophecy requires a customer-managed **Airflow deployment version 2.x.x** (latest recommended). **Astronomer**'s managed Airflow offering is supported.
