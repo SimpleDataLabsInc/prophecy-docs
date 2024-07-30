@@ -34,7 +34,7 @@ In Json you can just copy-paste your compute Json from Databricks.
 
 ## Databricks Execution
 
-[Execution on Databricks](/docs/Spark/execution/databricks-clusters-behaviours.md)
+[Execution on Databricks](/docs/Spark/execution/databricks-clusters-behaviors.md)
 
 [Interactive Execution](/docs/Spark/execution/interactive-execution.md)
 
