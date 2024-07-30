@@ -34,6 +34,7 @@ As denoted in the Cluter Types table, some feature behaviors are different for d
 - Execution Metrics
 - Run history
 - Job progress
+- Interactive Job runs on pre-existing clusters
 
 When using Databricks with a `Shared` access mode, you must also connect to `Shared Mode` clusters.
 
