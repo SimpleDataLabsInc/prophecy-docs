@@ -18,7 +18,7 @@ However, for the most security conscious organizations, it is possible to config
 
 :::note
 
-Prophecy also supports running Data Copilot from a locally hosted private models such as Llama or Mistral. Additionally, you can configure Prophecy Data Copilot to use custom LLM endpoints provided by Anthropic, AWS Bedrock, Google Vertex AI, and Databricks Model Serving.
+Prophecy also supports running Data Copilot from locally hosted private models such as Llama or Mistral. Additionally, you can configure Prophecy Data Copilot to use custom LLM endpoints provided by Anthropic, AWS Bedrock, Google Vertex AI, and Databricks Model Serving.
 
 :::
 
