@@ -19,10 +19,11 @@ Job-run related metrics are accumulated and stored on your data plane and can be
 
 ### Team level access-control
 
-For clusters with table ACL enabled, users may have limited access on catalogs, schemas and tables. Here we advise
+For clusters with table ACL enabled, users may have limited access on catalogs, schemas, and tables. Here we advise
 users to setup the execution metrics tables beforehand. Data is stored in the workspace storage itself and the
 tables can be chosen from Team view in Prophecy UI.
-You will have the option to choose the following at the time of team creation:
+
+There are three execution metrics tables which store data for Pipelines, individual components, and the generated data samples, also known as interims. You will have the option to choose the following at the time of team creation:
 
 1.  Pipeline Metrics Table - contains metrics and code for Pipeline runs
 2.  Component (Dataset) Metrics Table - contains metrics for individual component runs
