@@ -148,7 +148,7 @@ A: The share “invitation” is not sent via email. Rather, the team would be a
 A: Be sure the new project and dependent project are using the same language, eg Scala or Python. If the new project is a Scala project, only Scala Packages can be added as dependencies.
 
 **Q: How do I use subgraphs from a dependency?**
-A: Like Pipelines, Subgraphs can be used by dependent projects via [configurable variables.](https://docs.prophecy.io/low-code-spark/pubsub/shareable-subgraphs/#configurable-subgraphs)
+A: Like Pipelines, Subgraphs can be used by dependent projects via [configurable variables.](https://docs.prophecy.io/package-hub/package-builder/shareable-subgraphs/#configurable-subgraphs)
 
 **Q: Does Prophecy provide a DataQuality Package?**
 A: Not yet, but coming soon!
