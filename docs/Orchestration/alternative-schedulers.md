@@ -39,7 +39,7 @@ spark-submit \
   --executor-cores 4  \
   --packages io.prophecy:prophecy-libs_2.12:3.5.0-8.0.29 \
   --class io.prophecy.pipelines.demo_pipeline.Main \
-  demo_pipeline-1.0.jar
+  demo_pipeline-1.0.jar -i default -O "{}"
 ```
 
 ### PySpark Pipelines
@@ -65,7 +65,7 @@ file using a customized launcher script.
   --executor-cores 4  \
   --packages io.prophecy:prophecy-libs_2.12:3.5.0-8.0.29 \
   --py-files demo_pipeline-1.0-py3-none-any.whl \
-  launcher.py
+  launcher.py -i default -O "{}"
 ```
 
 In this example `launcher.py` would import the whl file and call the `main()` entrypoint like so:
@@ -82,31 +82,52 @@ from demo_pipeline import main
 main()
 ```
 
-### Passing Runtime Configuration Variables
+### Setting Runtime Configuration Variables
 
 In some cases a user may want to override runtime configuration variables of a Pipeline.
-We offer several options for changing the Pipeline configuration at runtime:
+We offer several options for changing the Pipeline configuration at runtime. Each example will show a sample
+as "parameters" (e.g. for a Databricks Job) and as "sys args" (e.g. for passing at the end of a `spark-submit` command)
+
+Sample Configuration Schema for below examples:
+
+| Name      | Type    |
+| --------- | ------- |
+| str_var   | string  |
+| bool_var  | boolean |
+| float_var | float   |
 
 #### `-i` set the Pipeline Configuration Instance
 
 A Pipeline may be run with a different [Pipeline Configuration Instance](..%2FSpark%2Fconfiguration%2Fconfiguration.md#pipeline-configuration-instances)
 by using the `-i` option and providing the name of the configuration profile instance.
 
-Example system arguments: `['-i', 'default']`
+Examples:
+
+as parameters: `['-i', 'default']`
+
+as sysargs: `-i default`
 
 #### `-O` override many parameters as a json blob
 
 This may be used in conjunction with `-i` and it will only override parameters which are given. You must
-specify the name and value of each variable that you
+specify the name and value of each variable that you want to override.
 
-Example system arguments: `['-i', '{"'"a':1,'b':2}']`
+Examples:
+
+as parameters: `['-O', '{"str_var":"overridden", "float_var":0.5}']`
+
+as sysargs: `-O "{\"str_var\":\"overridden\",\"float_var\":0.5}"`
 
 #### `-C` override individual parameters
 
 This may be used in conjunction with `-i` and it will only override parameters which are given.
 This option may be used more than once.
 
-Example system arguments: `['-C', 'a=1', 'b=2']`
+Examples:
+
+as parameters: `['-C', 'str_var=test1', 'float_var=0.5']`
+
+as sysargs: `-C str_var=test1 float_var=0.5`
 
 #### `-f` set configuration using a file
 
@@ -119,22 +140,18 @@ All Configuration Schema fields must be provided in this file
 
 :::
 
-Example system arguments: `['-f', '/path/to/somefile.json']`
+Examples
+
+as parameters: `['-f', '/path/to/somefile.json']`
+
+as sysargs: `-f /path/to/somefile.json`
 
 Example json file:
 
 ```json
 {
-  "table_var": "vendor1",
-  "run_date_var": "2024-01-01",
-  "threshold_var": 0.5
+  "str_var": "vendor1",
+  "bool_var": true,
+  "float_var": 0.5
 }
 ```
-
-Associated Configuration Schema for such a Pipeline:
-
-| Name          | Type   |
-| ------------- | ------ |
-| table_var     | string |
-| run_date_var  | date   |
-| threshold_var | float  |
