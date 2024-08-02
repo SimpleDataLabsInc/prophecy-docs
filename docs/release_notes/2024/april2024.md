@@ -23,7 +23,7 @@ To help with this, Prophecy now lets you completely parameterize your transforma
 
 #### Copilot Fix It for Spark and SQL expressions
 
-Also, in our last update, we'd enabled Copilot to suggest expressions automatically based on output column names. With this release, we've added a feature called Copilot Fix It. It can fix any errors in your expression logic with just a click of the "Fix with AI" button. It can correct things like syntax mistakes, wrong function calls, or typos. We'll have a detailed document on this feature soon.
+Also, in our last update, we'd enabled Copilot to suggest expressions automatically based on output column names. With this release, we've added a feature called Copilot Fix It. It can fix any errors in your expression logic with just a click of the "Fix with AI" button. It can correct things like syntax mistakes, wrong function calls, or typos.
 
 ## 3.3.4.\* (April 12, 2024)
 
