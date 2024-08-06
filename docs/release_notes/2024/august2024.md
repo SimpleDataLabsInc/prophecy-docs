@@ -3,13 +3,14 @@ sidebar_position: 1
 id: August_2024
 description: Release notes for August
 title: August 2024
+draft: true
 tags:
   - release notes
   - changelog
   - august
 ---
 
-## 3.3.9.\* (August 6, 2024)
+## 3.3.9.\* (August 8, 2024)
 
 - Prophecy Python libs version: 1.9.9
 - Prophecy Scala libs version: 8.0.29
@@ -35,6 +36,8 @@ tags:
   - **Schema**: Make schema changes
   - **SQL Query**: View and enable your custom SQL query
   - **Write Options**: Use Write Modes such as Overwrite, Append, and Merge
+
+- **Visual Expression Builder**: You can use a simplified expression builder within your data transformation Gems, Data Explorer, and Data Tests. The Visual Expression Builder takes you through building your expressions, following a step-by-step visual guide. It suggests expressions and functions to you, including nested and conditional functions. All the while, you don't have to worry about writing the expression syntax since it takes care of that for you.
 
 #### Airflow Copilot Enhancements
 
