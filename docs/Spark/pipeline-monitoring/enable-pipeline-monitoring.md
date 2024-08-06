@@ -14,9 +14,14 @@ To use Pipeline Monitoring, you must enable it by updating the Prophecy Library 
 
 ## Update Prophecy Library version
 
-Pipeline Monitoring requires your Project to be on Prophecy Python libs version 1.9.9 or above. You can check your **ProphecyLibsPython** version under **Dependencies**.
+Pipeline Monitoring requires your Project to be on the follow versions:
 
-- If your Project's Prophecy Python libs version is below 1.9.9, **Update** it.
+- Prophecy Scala libs version 8.0.23 or above.
+- Prophecy Python libs version 1.9.9 or above.
+
+You can check your **ProphecyLibsPython** version under **Dependencies**.
+
+- If your Project's Prophecy Scala and Python libs versions are out of date, **Update** them.
 
 ![ProphecyLibsPython](img/prophecy-libs-python.png)
 
