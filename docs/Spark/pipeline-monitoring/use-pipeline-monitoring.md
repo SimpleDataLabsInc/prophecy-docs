@@ -22,7 +22,7 @@ After your scheduled or ad-hoc run, you can view detected failures on your Pipel
 
 - You can click **Open Logs** to open the Runtime Logs of that Gem.
 
-From the Runtime Logs panel, you can see other runs and jobs, including those that have succeeded. You can filer or sort the logs, and adjust the view.
+From the Runtime Logs panel, you can see other logs of the current run, including those that have succeeded. You can filter or sort the logs, and adjust the view.
 
 - Click **More details** to see the entire exception details.
 
@@ -30,7 +30,7 @@ From the Runtime Logs panel, you can see other runs and jobs, including those th
 
 ## Troubleshoot and fix problems
 
-From the Runtime Logs panel, you can swap the tabs by clicking **Problems**. The Problems tab shows you a list of all the Warnings or Errors, where they can be found, and brief descriptions of each.
+From the Runtime Logs panel, you can swap the tabs by clicking **Problems**. The Problems tab shows you a compilation of Warnings and Errors, where they can be found, and brief descriptions of each.
 
 - Click the name to view the problem. A side panel will open, taking you to the error location.
 - Or you can click **Fix with AI** to use a recommended solution made by Spark Copilot. And then try rerunning your task.
