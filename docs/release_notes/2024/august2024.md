@@ -3,7 +3,6 @@ sidebar_position: 1
 id: August_2024
 description: Release notes for August
 title: August 2024
-draft: true
 tags:
   - release notes
   - changelog
