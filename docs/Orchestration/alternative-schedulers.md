@@ -77,7 +77,7 @@ This launcher must import the name of your specific Pipeline package!
 :::
 
 ```python
-from demo_pipeline import main
+from demo_pipeline.pipeline import main
 
 main()
 ```
