@@ -6,7 +6,7 @@ sidebar_position: 3
 tags:
   - how-to
   - monitoring
-  - historial runs
+  - historical runs
   - spark
 ---
 
@@ -18,7 +18,7 @@ After your scheduled or ad-hoc run, you can view detected failures on your Pipel
 
 - Hover over the Gem to see failure details, such as run duration and the exception.
 
-![Gem failture-details](img/gem-failure-details.png)
+![Gem failure-details](img/gem-failure-details.png)
 
 - You can click **Open Logs** to open the Runtime Logs of that Gem.
 
