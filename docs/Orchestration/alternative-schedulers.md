@@ -51,7 +51,7 @@ Prerequisites:
 - Install Python dependencies by installing the WHL file using `pip`.
   - `pip install ./demo_pipeline-1.0-py3-none-any.whl`
 - Gather necessary Maven dependencies and put into the `--jars` (local) or `--packages` (repo) option.
-  - TODO PBT will have a command to generate dependencies or pom.xml for PySpark projects.
+  - PBT will have a command to generate dependencies or pom.xml for PySpark projects.
 - Optional: Modify ivysettings.xml to point to a custom Maven mirror or PyPi mirror.
 
 Given a PySpark Pipeline named "demo_pipeline" with a WHL artifact from [PBT](../../deployment/prophecy-build-tool)
