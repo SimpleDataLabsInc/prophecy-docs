@@ -11,7 +11,7 @@ tags:
   - expression
 ---
 
-- **Visual Expression Builder**: You can use a simplified expression builder within your data transformation Gems, Data Explorer, and Data Tests. The Visual Expression Builder takes you through building your expressions, following a step-by-step visual guide. It suggests expressions and functions to you, including nested and conditional functions. All the while, you don't have to worry about writing the expression syntax since it takes care of that for you.
+- **Visual Expression Builder**: You can use a simplified expression builder within your data transformation Gems, Data Explorer, and Data Tests. The Visual Expression Builder takes you through building your expressions, following a step-by-step visual guide. It suggests expressions and functions to you, including nested and conditional functions. All the while, you don't have to worry about writing the expression syntax since it takes care of that for you. Data users will never again need to remember the right syntax.
 
 To perform data analysis and manipulation, Spark has provided various functions. These functions enable users to perform various data analysis tasks on their data. In order to perform complex data analysis tasks, it's important to be able to construct expressions that combine the Spark functions in various ways. Prophecy has now made this easy with the support of Expression Builder. Using the Spark Expression Builder can save you time and effort when constructing complex expressions, and can help you to better understand the relationships between different functions and their arguments.
 
