@@ -61,7 +61,7 @@ Teams are the primary mechanism of ownership. Teams own Projects where Pipelines
 
 ### SQL
 
-To allow for SQL query execution Prophecy can connect to Snowflake and Databricks warehouses. Connectors for additional SQL warehouses coming soon.
+To allow for SQL query execution Prophecy can connect to Snowflake and Databricks warehouses. Connectors for additional SQL warehouses will be announced as they are added.
 
 #### Snowflake
 

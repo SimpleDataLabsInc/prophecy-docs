@@ -153,10 +153,6 @@ Here's how the Databricks UI looks for Prophecy's Single Cluster Mode.
 
 ![Single Job Cluster](img/databricks-jobs-single-cluster-eg.png)
 
-### Fully Configurable Cluster Mode
-
-**Coming Soon!!!**
-
 ## Job Monitoring
 
 Prophecy provides monitoring page which shows the status (enable/disable) of all the Jobs deployed via Prophecy and

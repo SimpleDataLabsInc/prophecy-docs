@@ -101,9 +101,9 @@ Now that we have set up our Fabrics and Teams, built some Pipelines, it's time t
 
 Testing your Pipelines and Jobs is very simple. Simple click on the play button and watch your code run!
 
-:::info Coming Soon
-Note, that currently, we're spinning up a new cluster for each of the tasks, therefore your Job might take a few minutes
-to complete. However, soon, you will be able to have granular control over which Pipeline runs on which cluster.
+:::info
+Currently, we're spinning up a new cluster for each of the tasks, therefore your Job might take a few minutes
+to complete.
 :::
 
 #### Deployment to Production
