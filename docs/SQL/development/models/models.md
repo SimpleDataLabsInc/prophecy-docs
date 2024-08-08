@@ -9,8 +9,4 @@ tags:
   - table
 ---
 
-:::caution
-This detailed page all about SQL Models is under construction. Please pardon our dust.
-:::
-
 For an overview of Models, see [Models](/docs/concepts/project/models.md).
