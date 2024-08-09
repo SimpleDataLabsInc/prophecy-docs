@@ -18,7 +18,7 @@ In the context of Spark execution engines, users have the flexibility to opt for
 
 <br/><br/>
 
-:::caution Warning
+:::caution
 Livy is required for the Fabric. Prophecy provides a script required to deploy a Dataproc Cluster.
 :::
 
