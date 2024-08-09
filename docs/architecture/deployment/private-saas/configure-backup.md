@@ -14,9 +14,13 @@ tags:
 
 Prophecy provides a reliable backup mechanism for safeguarding all critical data utilized by the Prophecy app. Users can consistently back up essential data through their preferred object store, such as AWS S3, Azure Blob Storage, or local storage (which could be backed up by a NFS). This systematic backup process guarantees the accessibility of data for future restoration needs. Prophecy leverages the advanced capabilities of these object stores to seamlessly synchronize the backups, ensuring a robust and efficient data protection strategy.
 
-:warning: Certain [object store level configurations](./configure-object-store.md) are shared with [audit event logs configurations here](./configure-audit-logs.md). Make sure to configure the [object store level configurations](./configure-object-store.md) before proceeding below.
+:::note
 
-## Usecase
+Certain [object store level configurations](./configure-object-store.md) are shared with [audit event logs configurations here](./configure-audit-logs.md). Make sure to configure the [object store level configurations](./configure-object-store.md) before proceeding below.
+
+:::
+
+## Use case
 
 - Prophecy, by design, does not store or own any customer data or code. Instead, it focuses on maintaining essential metadata related to various projects, user-created gems, users, and team information.
 - Prophecy manages a persistence storage system, responsible for holding uncommitted changes, as well as other relevant data.
@@ -24,7 +28,11 @@ Prophecy provides a reliable backup mechanism for safeguarding all critical data
 - The current backup support always performs full backups, providing comprehensive data protection.
   This backup functionality has been available since the release of Prophecy version 3.1.2.0.
 
-:warning: Please note this doc is constantly updated with new features/options and hence it is better to always go with the latest version of Prophecy.
+:::tip
+
+Note this doc is constantly updated with new features/options and hence it is better to always go with the latest version of Prophecy.
+
+:::
 
 ## Configuration
 
@@ -42,7 +50,7 @@ To configure object store settings in the Prophecy UI, follow these steps:
 
 ### JSON format
 
-Below are JSON configurations within the Prophecy UI that need to be enabled to support this functionality. You will have to configure only the options which you require. Please make sure to maintain a JSON format mentioned below while configuring the different options.
+Below are JSON configurations within the Prophecy UI that need to be enabled to support this functionality. You will have to configure only the options which you require. Make sure to maintain a JSON format mentioned below while configuring the different options.
 
 ```
 {
@@ -69,7 +77,11 @@ There are two ways to perform backup of data. Choose either one of the below opt
 
 ### Trigger Backup API
 
-:warning: To trigger a backup/restore manually you would require a API key. [Follow the API Key generation document to generate the same](./generate-api-key) before proceeding below.
+:::note
+
+To trigger a backup/restore manually you would require a API key. [Follow the API Key generation document to generate the same](./generate-api-key) before proceeding below.
+
+:::
 
 #### Triggering a backup
 
@@ -206,7 +218,7 @@ Sample response
 
 #### Delete Backup Entry
 
-This API attempts the delete the backup data (local and upstream) and also the metadata (database entries) associated with it. Please note that in case of `enableRegularBackups` set to `true`, backups are older than `backupRetentionCount` in reverse order are garbage collected automatically.
+This API attempts the delete the backup data (local and upstream) and also the metadata (database entries) associated with it. Note that in case of `enableRegularBackups` set to `true`, backups are older than `backupRetentionCount` in reverse order are garbage collected automatically.
 
 Sample API call
 
@@ -229,18 +241,22 @@ Sample response
 
 Restore is an on-demand based overwrite of the whole configuration to reflect the state at which backup is taken.
 
-:::warning
-This API should be used with extreme caution as triggerring this will lead to loss of current state/data.
+:::danger
+This API should be used with extreme caution as triggering this will lead to loss of current state/data.
 :::
 
-Note:
+Note the following:
 
 - If backup was taken in Athena’s local Persistent Volume, it needs to be copied to Athena’s Persistent Volume in the destination cluster before the restore operation can be performed.
 - Restore operation always assumes a running destination Prophecy cluster where the data and the configuration of source cluster will be restored.
 
 ### Starting a Restore
 
-:warning: To trigger a backup/restore manually you would require a API key. [Follow the API Key generation document to generate the same](./generate-api-key) before proceeding below.
+:::note
+
+To trigger a backup/restore manually you would require a API key. [Follow the API Key generation document to generate the same](./generate-api-key) before proceeding below.
+
+:::
 
 The below API is used to trigger a store opertion. It expects one parameter which is the `timestamp` of a successful backup.
 
