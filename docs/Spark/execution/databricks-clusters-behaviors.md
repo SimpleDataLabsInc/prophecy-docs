@@ -69,7 +69,7 @@ When running Pipelines and Jobs, you may be interested to know few metrics relat
 read/written, bytes read/written, total time taken and Data samples b/w components. These Dataset, Pipeline-run and
 Job-run related metrics are accumulated and stored on your data plane and can be viewed later from Prophecy UI. For more details, refer [here](./execution-metrics).
 
-:::warning
+:::caution
 These metrics are **not available** for `Shared mode` clusters (both normal workspaces and Unity catalog workspaces). You should see a proper error when trying to get historical runs of Pipelines/Jobs executed on `Shared mode` clusters.
 
 :::
