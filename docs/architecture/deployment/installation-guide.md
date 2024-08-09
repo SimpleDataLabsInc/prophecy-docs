@@ -11,7 +11,7 @@ tags:
 Prophecy installation requires a Kubernetes cluster. Its installation and upgrades are managed by our infrastructure management plane called `Athena`.
 Athena is installed through helm chart which internally deploys Prophecy Kubernetes Operator to manage different Prophecy services.
 
-:::warning
+:::caution
 
 The following documentation pertains to the Helm installer for Prophecy version 3.3 and above. If you're considering migrating your current Helm installer chart to this version, we encourage you to reach out to the Prophecy support team for personalized assistance and guidance.
 
@@ -50,7 +50,7 @@ As mentioned above, Prophecy is installed via Helm chart called the Prophecy-ins
 1. **Platform:** Is the section used to configure the various platform components like - elastic-search, promethus, grafana, loki etc.
 1. **Version:** The Prophecy version to be deployed
 
-:::warning
+:::note
 
 Parameters marked with an asterisk(\*) are mandatory.
 

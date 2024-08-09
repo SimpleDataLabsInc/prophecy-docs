@@ -20,7 +20,7 @@ Please see this video for an example
       style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}></iframe>
 </div>
 
-:::warning
+:::caution
 Please note that UDF code is only copied to Code for that Pipeline once the Pipeline is opened.
 So, if a user has edited or added UDF in a Pipeline, you might see uncommitted changes for another Pipeline whenever you open it.  
 :::

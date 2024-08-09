@@ -15,9 +15,13 @@ tags:
 
 Prophecy offers robust support for storing audit events (logs) on two of the industry's leading cloud object stores: AWS S3, Azure Blob Storage, GCP Cloud Storage or even local persistent volume (PV). Leveraging the capabilities of these object stores, Prophecy seamlessly synchronizes and persistently stores audit events. This not only ensures the secure retention of crucial data but also facilitates streamlined tracking and in-depth analysis of user interactions and activities for enhanced operational insights.
 
-:warning: Certain [object store level configurations](./configure-object-store.md) are shared with [backup restore configurations](./configure-backup.md). Make sure to configure the [object store level configurations](./configure-object-store.md) before proceeding below.
+:::note
 
-## Usecase
+Certain [object store level configurations](./configure-object-store.md) are shared with [backup restore configurations](./configure-backup.md). Make sure to configure the [object store level configurations](./configure-object-store.md) before proceeding below.
+
+:::
+
+## Use case
 
 - The overarching objective is to comprehensively track and log every user-level action.
 - All user actions will be meticulously recorded and stored, enabling easy retrieval from a persistent storage or object store, particularly when an audit is required.

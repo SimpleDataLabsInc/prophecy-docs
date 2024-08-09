@@ -31,7 +31,7 @@ To configure object store settings in the Prophecy UI, follow these steps:
 
 Below are JSON configurations within the Prophecy UI that need to be enabled to support this functionality. You will have to configure only the options which you require. Please make sure to maintain a JSON format mentioned below while configuring the different options.
 
-:::warning
+:::caution
 Please note that all sensitive keys are displayed in `********` format. However, you may supply the new values in normal text and save the JSON to update the keys.
 :::
 

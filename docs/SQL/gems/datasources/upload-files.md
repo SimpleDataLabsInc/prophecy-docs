@@ -54,7 +54,7 @@ You can also replace your uploaded file or delete it.
 
 You can select the database and schema for your table. For the table location, you can either create a new table or select a table you want to write your uploaded file to.
 
-:::warning
+:::caution Warning
 
 Selecting a table to write your uploaded file to deletes and re-creates the table.
 
