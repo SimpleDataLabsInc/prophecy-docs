@@ -131,12 +131,6 @@ If another team wants to use the `SecurityPython` package in their newProject, j
 
 We have built and shared our package with a custom `Encrypt` Gem!
 
-```!Information
-Coming soon:
-Administer using HubManager (coming post 3.2)
-Admin users can manage which packages show up on the PackageHub, and which users can access
-```
-
 With Package Hub, Platform teams can build solutions once, and re-use the logic for additional cases. Errors can be handled just once. Updated Packages take advantage of logic updates and error-fixes. Data Analyst teams will build Pipelines faster by taking advantage of the building blocks - custom Gems, UDFs - provided by the Platform team. Or, Data Analyst teams might create their own building blocks! Everyone can create and share Pipeline components with Package Hub. We’d love to hear how your teams are creating, sharing, and even curating Packages. [Schedule](https://www.prophecy.io/request-a-demo) some time with us - we would LOVE to hear your feedback!
 
 ## FAQ
@@ -149,9 +143,6 @@ A: Be sure the new project and dependent project are using the same language, eg
 
 **Q: How do I use subgraphs from a dependency?**
 A: Like Pipelines, Subgraphs can be used by dependent projects via [configurable variables.](https://docs.prophecy.io/package-hub/package-builder/shareable-subgraphs/#configurable-subgraphs)
-
-**Q: Does Prophecy provide a DataQuality Package?**
-A: Not yet, but coming soon!
 
 **Q: How would I take a Package built by another team and evolve it in a new direction? That is, how can two teams take a single project in two different directions?**
 A: One excellent option here is to **Clone** the Project instead of use as a Package Dependency. For example, let’s say the MarketingAnalytics team loved the `Framework` Package and wanted it to become a holding place for all the Marketing Pipelines. The Platform team, however, wants to keep the `Framework` Project as general as possible. How can the two teams each take a version of the project in their own direction?

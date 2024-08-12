@@ -559,5 +559,3 @@ We learned the essential code for all Transform Gems using the Limit Gem as an e
 
 1. A SQL project cannot be marked as package. so it wont show on package hub.
 2. User cannot reuse a model, Gem etc from one project to another for SQL projects.
-
-Stay tuned for a detailed documentation page on SQL Macros in Prophecy Packages.

@@ -13,4 +13,4 @@ tags:
 
 ## Warehouse-based Sources and Targets
 
-Warehouse-based sources and targets are also supported. Prophecy provides Splunk HTTP Event Collector (HEC) Streaming Target with more coming soon.
+Warehouse-based sources and targets are supported. Prophecy also provides Splunk HTTP Event Collector (HEC) Streaming Target.
