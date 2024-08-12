@@ -8,11 +8,11 @@ tags:
   - code
 ---
 
-Engineers can use SQL and advanced macros through a code-based editor. Prophecy parses their code and visualizes it on an editable canvas and ensures both views remain in sync at all times.
+You can use SQL and advanced macros through a code-based editor. Prophecy parses your code and visualizes it on an editable canvas and ensures both views remain in sync at all times.
 
 ## Code view
 
-Visual developers will appreciate the drag-n-drop canvas, but sometimes it's also nice to view the code. Prophecy creates highly performant code behind the scenes. Click the **Code View** to reveal the SQL queries we've generated using our visual design editor. Each Gem is represented by a CTE or subquery.
+As a visual developer, you'll appreciate the drag-n-drop canvas, but sometimes it's also nice to view the code. Prophecy creates highly performant code behind the scenes. Click the **Code View** to reveal the SQL queries we've generated using our visual design editor. Each Gem is represented by a CTE or subquery.
 
 ![Code View](./img/sql-as-code.png)
 
