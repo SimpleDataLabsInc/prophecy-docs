@@ -16,11 +16,6 @@ tags:
 
 ### Features {#Features}
 
-<div style={{position: 'relative', 'padding-bottom': '56.25%', height: 0}}>
-   <iframe src="https://www.loom.com/embed/3b181d2e60ad4e3094c0a8bb36f8a601" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
-      style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}></iframe>
-</div>
-
 #### Spark Copilot Enhancements
 
 - **Support custom artifactory resolve plibs version**: We now support adding custom Pypi or Maven dependencies for Pipelines running on all Spark Fabrics including EMR, Dataproc, etc.
