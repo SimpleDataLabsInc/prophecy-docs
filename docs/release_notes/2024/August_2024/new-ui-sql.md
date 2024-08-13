@@ -23,7 +23,7 @@ Prophecy's SQL Transformation Copilot has a new user interface in four different
 
 ### Model write options
 
-In this release, we've updated the UX and capabilities of the target model format and write options. In the previous release, you'd find **advance settings** are available for defining model write formats and lots of other DBT options (left). In this release, the advance settings are still available, but the most frequently used settings are accessible in the target model Gem as well (right).
+In this release, we've updated the UX and capabilities of the target model format and write options. In the previous release, you'd find **Advance Settings** are available for defining model write formats and lots of other DBT options (left). In this release, the advance settings are still available, but the most frequently used settings are accessible in the target model Gem as well (right).
 
 ![ModelWrites](./img/target-model.png)
 
@@ -37,7 +37,7 @@ There are now the following tabs within the model:
 
 ### Variable Declaration and the Target Model SQL Query interface
 
-We've added the powerful functionality to configure variables directly in a SQL Query for each target model. Normally only advanced users would be able to use Jinja or DBT templating with declared variables for their last mile data processing. Declared variables are accessible by clicking **configuration** to add the variable of interest (left). With this release, you can use the variable (along with standard DBT functions) in the target model SQL Query tab (right).
+We've added the powerful functionality to configure variables directly in a SQL Query for each target model. Normally only advanced users would be able to use Jinja or DBT templating with declared variables for their last mile data processing. Declared variables are accessible by clicking **Configuration** to add the variable of interest (left). With this release, you can use the variable (along with standard DBT functions) in the target model SQL Query tab (right).
 
 ![DelcarVars](./img/declare-vars.png)
 
