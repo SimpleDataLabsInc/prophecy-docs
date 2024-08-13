@@ -12,36 +12,55 @@ tags:
   - sql
 ---
 
-The Visual Expression Builder takes you through building your expressions, following a step-by-step visual guide. You can use the simplified Visual Expression Builder within the following features of Prophecy:
-
-- Data transformation Gems
-  - Aggregate
-  - Filter
-  - Join
-  - Reformat
-- Data Explorer
-  - Filter and Sort Options
-- Data Tests
-
-In order to perform complex data analysis tasks, it's important to be able to construct expressions that combine the SQL functions in various ways. Prophecy has now made this easy with support of the Visual Expression Builder. Using the SQL Visual Expression Builder can save you time and effort when constructing complex expressions, and can help you to better understand the relationships between different functions and their arguments.
+In order to perform data analysis tasks, it's important to be able to construct expressions that combine the SQL functions in various ways. Prophecy makes this easy with the support of the Visual Expression Builder. The Visual Expression Builder takes you through building your expressions, following a step-by-step visual guide.
 
 ![Visual Expression Builder](img/visual-expression-builder.png)
 
+Using the SQL Visual Expression Builder can save you time and effort when constructing complex expressions, and can help you to better understand the relationships between different functions and their arguments.
+
+## Supported Gems and features
+
+You can use the simplified Visual Expression Builder within the following data transformation Gems:
+
+- **Aggregate**
+- **Filter**
+- **Join**
+- **Reformat**
+
+And you can use it within the following Prophecy features:
+
+- **Data Explorer**
+  - Filter and Sort Options
+- **Data Tests**
+
+## Expression types
+
+You can use the Visual Expression Builder to build expressions in accordance with the following expression types:
+
+- **Static** (native to SQL):
+  - Column selection - e.g. `customer_id`, `amounts`
+  - Hardcoded value (based on the listed types) - e.g. `15`, `Poland`
+  - Function call - e.g. `concat(amount, " ", currency)`
+  - Case statement - e.g. `WHEN active_flag = True THEN first_name OTHERWISE last_name`
+- **Dynamic** (native to Prophecy):
+  - Configuration value - e.g. `$currency`
+  - Secret value - e.g. `$jdbc_url`
+
 ## Expression syntax
 
-As a data user, you'll never again need to remember the right syntax for your expressions. The Visual Expression Builder takes care of the semantics and syntax for you as you build your expressions. You can check the syntax of your expressions by viewing the code view of your expression.
+As a data user, you'll never again need to remember the right syntax for your expressions. The Visual Expression Builder takes care of the semantics and syntax for you as you build your expressions. If you're interested, you can check the syntax of your expressions by viewing the code view of your expressions.
 
 ![Code Expression Builder](img/code-expression-builder.png)
 
-While you're viewing the code view, you can click **Expand Editor** of any of your expressions to open the [Expression Builder](../../../../Spark/expression-builder.md).
+While you're viewing the code view, you can click **Expand Editor** next to any of your expressions to open the [Expression Builder](../../../../Spark/expression-builder.md).
 
-## Suggests expressions and functions
+## Suggesting expressions and functions
 
 As you build your expressions, Data Copilot can suggest expressions and functions to you, including nested and conditional functions.
 
-While viewing the code view of your expression, you can --Ask AI-- to generate your expression using an English text prompt. You can then review the code expression, and test it by running the Model up to and including the Gem with the expression.
-
 ![Ask AI to generate](img/ask-ai-expression.png)
+
+While viewing the code view of your expressions, you can click **Ask AI** to generate your expressions using an English text prompt. You can then review the code expressions, and test them by running the Model up to and including the Gem with the expressions.
 
 ## What's next
 
