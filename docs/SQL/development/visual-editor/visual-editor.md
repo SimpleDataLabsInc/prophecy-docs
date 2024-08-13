@@ -4,8 +4,10 @@ id: visual-editor
 description: Visual editor
 sidebar_position: 4
 tags:
+  - concept
   - development
   - visual
+  - sql
 ---
 
 Prophecy’s visual interface is where you can build data pipelines using a drag and drop interface or with SQL code. As a business user, you can visually create your SQL data models with Prophecy's visual canvas, with all of your work automatically turning into high-quality SQL code on Git.
