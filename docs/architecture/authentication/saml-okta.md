@@ -2,7 +2,7 @@
 title: "SAML Using Okta"
 id: saml_okta
 description: SAML authentication using OKTA
-sidebar_position: 2
+sidebar_position: 4
 tags:
   - authentication
   - saml
