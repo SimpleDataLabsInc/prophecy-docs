@@ -34,7 +34,7 @@ Optional, but recommended for best results:
 
 1. [**Pinecone**](https://www.pinecone.io/) - allows for efficient storage and retrieval of vectors. To simplify, it's possible to use Spark-ML cosine similarity alternatively; however, since that doesn't feature KNNs for more efficient lookup, it's only recommended for small datasets.
 2. [**OpenAI**](https://openai.com/) - for creating text embeddings and formulating questions. Alternatively, one can use Spark's [word2vec](https://spark.apache.org/docs/2.2.0/mllib-feature-extraction.html#word2vec) for word embeddings and an [alternative LLM (e.g., Dolly)](https://github.com/prophecy-io/spark-ai/tree/main) for answer formulation based on context.
-3. [**Slack**](https://slack.com/) or [**Teams**](https://teams.com/) (support coming soon) - for the chatbot interface. An example batch Pipeline is present for fast debugging when unavailable.
+3. [**Slack**](https://slack.com/) or [**Teams**](https://teams.com/) - for the chatbot interface. An example batch Pipeline is present for fast debugging when unavailable.
 
 ### Cluster library dependencies
 
@@ -198,14 +198,10 @@ What kind of Generative AI applications will you create? We'd love to hear your 
 
 ## FAQ
 
-**What features will be coming soon?**
+**Does Prophecy support additional models, including private models?**
 
-Stay tuned for support for additional models beyond those provided by OpenAI. Also, Prophecy will support private models and offer additional machine-learning Gems out of the box. [**Teams**](https://teams.com/) message ingestion will soon be available out of the box as well. Of course, Prophecy is entirely extensible to interface with more applications. If you'd like to see a particular application supported, don't hesitate to let us know.
+Stay tuned for support for additional models beyond those provided by OpenAI. Also, Prophecy will support private models and offer additional machine-learning Gems out of the box. [**Teams**](https://teams.com/) message ingestion will be available out of the box as well. Of course, Prophecy is entirely extensible to interface with more applications. If you'd like to see a particular application supported, don't hesitate to let us know.
 
 **Exactly which content is sent to OpenAI in the Chatbot Live Pipeline?**
 
 For this to work, you’re sending the scraped web data (here we use Prophecy documentation) to OpenAI for the vectorization Pipeline and again to answer the question.
-
-**Do you support private instances of Open AI or other language models?**
-
-Coming soon!
