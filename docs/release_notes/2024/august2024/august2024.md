@@ -26,15 +26,7 @@ tags:
 
 #### SQL Copilot Enhancements
 
-- **Target Model**: In this release, we've updated the UX and capabilities of the target model in SQL projects. There are now the following tabs within the model:
-
-  - **Type & Format**: Update the format of the model from View to Table
-  - **Location**: Update the location by overwriting the Database, Schema, or Alias
-  - **Schema**: Make schema changes
-  - **SQL Query**: View and enable your custom SQL query
-  - **Write Options**: Use Write Modes such as Overwrite, Append, and Merge
-
-- **Visual Expression Builder**: You can use a simplified expression builder within your data transformation Gems, Data Explorer, and Data Tests. The Visual Expression Builder takes you through building your expressions, following a step-by-step visual guide. It suggests expressions and functions to you, including nested and conditional functions. All the while, you don't have to worry about writing the expression syntax since it takes care of that for you.
+In this release, we've updated the UX and capabilities of the expression builder, target model, and more. Read our New SQL UI Onboarding Guide [here](./new-ui-sql.md) to get familiar with the updated interface.
 
 #### Airflow Copilot Enhancements
 
