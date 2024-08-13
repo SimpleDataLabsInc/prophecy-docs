@@ -19,11 +19,11 @@ Let's get down to basics by [defining](/docs/metadata/metadata-connections.md/#d
 
 ### Metadata Connection
 
-A Metadata Connection is a user-defined link between Prophecy and a data provider. Its purpose is to establish communication between Prophecy and external systems. For instance, a Metadata Connection can be established between Prophecy and platforms like Databricks (Catalog or JDBC) or Snowflake (coming soon). Different from Metadata Connections, Prophecy also supports Airflow Connections which perform a similar function for Airflow jobs.
+A Metadata Connection is a user-defined link between Prophecy and a data provider. Its purpose is to establish communication between Prophecy and external systems. For instance, a Metadata Connection can be established between Prophecy and platforms like Databricks (Catalog or JDBC). Different from Metadata Connections, Prophecy also supports Airflow Connections which perform a similar function for Airflow jobs.
 
 ### Fabric
 
-A Fabric represents a logical grouping of Connections. For Prophecy 3.2, each Fabric will enable only one Metadata Connection, but look for multiple connections per Fabric coming soon. Fabrics contain the user credentials for a data provider, whereas Metadata Connections have the added benefit of syncing metadata from the data provider at a defined interval.
+A Fabric represents a logical grouping of Connections. For Prophecy 3.2, each Fabric will enable only one Metadata Connection. Fabrics contain the user credentials for a data provider, whereas Metadata Connections have the added benefit of syncing metadata from the data provider at a defined interval.
 :::info
 The Fabric token should provide the user's personal permissions to read / write data.
 The Metadata Connection token, optionally provided to enhance performance, should be a service principal with read-only permissions on the appropriate catalog and JDBC tables.
@@ -67,7 +67,7 @@ Alternatively, the Metadata Connection can use the same Warehouse or Cluster whi
 
 ### User Permissions
 
-System Admins can define and monitor Metadata Connections for platform users. Then, Data Practitioners can use Metadata Connections within their Pipelines. Coming soon, Data Architects will be able to define new Metadata Connection types through an extensible Package Builder interface.
+System Admins can define and monitor Metadata Connections for platform users. Then, Data Practitioners can use Metadata Connections within their Pipelines.
 
 ### Add a Metadata Connection
 

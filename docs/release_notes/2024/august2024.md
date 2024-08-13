@@ -3,7 +3,6 @@ sidebar_position: 1
 id: August_2024
 description: Release notes for August
 title: August 2024
-draft: true
 tags:
   - release notes
   - changelog
@@ -26,8 +25,6 @@ tags:
 - **Support for proxy-user impersonation in Kerberos Livy Fabric Auth**: As an admin user, you can configure multiple Keytab accounts in the [Admin Settings](/docs/settings/admin-settings.md). You can upload the Keytab files and set up proxy-user impersonation in Kerberos for secure authentication to Livy Fabrics.
 
 #### SQL Copilot Enhancements
-
-##### Enhancements in Low-Code SQL
 
 - **Target Model**: In this release, we've updated the UX and capabilities of the target model in SQL projects. There are now the following tabs within the model:
 
