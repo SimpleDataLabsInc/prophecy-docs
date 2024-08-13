@@ -12,3 +12,10 @@ tags:
 ---
 
 **Type & Format**: Update the format of the model from View to Table
+
+Easy to select the type of data you want to write.
+
+- View
+- Table
+- Ephemeral
+- Materialized View

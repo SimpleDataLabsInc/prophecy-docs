@@ -11,3 +11,5 @@ tags:
 ---
 
 **Schema**: Make schema changes
+
+View the schema, and add any additional properties.
