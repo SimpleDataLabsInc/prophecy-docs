@@ -9,7 +9,7 @@ tags:
   - august
 ---
 
-## 3.3.9.\* (August 8, 2024)
+## 3.3.9.\* (August 12, 2024)
 
 - Prophecy Python libs version: 1.9.9
 - Prophecy Scala libs version: 8.0.29
