@@ -14,7 +14,7 @@ tags:
 - Prophecy Python libs version: 1.9.9
 - Prophecy Scala libs version: 8.0.29
 
-### Features {#Features}
+### Features {#Features339}
 
 #### Spark Copilot Enhancements
 
