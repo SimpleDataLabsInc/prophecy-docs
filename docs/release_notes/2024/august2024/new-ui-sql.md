@@ -21,21 +21,25 @@ Prophecy's SQL Transformation Copilot has a new user interface in four different
       style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}></iframe>
 </div>
 
-### Target Model
+### Model write options
 
-In this release, we've updated the UX and capabilities of the target model in SQL projects. In the previous release, you'd find advanced settings (left) are available for defining model write formats and lots of other DBT options. In this release, the advanced settings are still available, but the most frequently used settings are accessible in the target model Gem as well (right).
+In this release, we've updated the UX and capabilities of the target model format and write options. In the previous release, you'd find **advanced settings** are available for defining model write formats and lots of other DBT options (left). In this release, the advanced settings are still available, but the most frequently used settings are accessible in the target model Gem as well (right).
 
-![TargetModel](./img/target-model.png)
+![ModelWrites](./img/target-model.png)
 
 There are now the following tabs within the model:
 
-- **Type & Format**: Update the format of the model
+- **Type & Format**: Update the format of the model, eg table, view, ephemeral, etc.
 - **Location**: Update the location by overwriting the Database, Schema, or Alias
 - **Schema**: Make schema changes
 - **SQL Query**: View and enable your custom SQL query
 - **Write Options**: Use Write Modes such as Overwrite, Append, and Merge
 
 ### Variable Declaration Interface
+
+We've added the powerful functionality to configure variables directly in the SQL Query for each target model. Normally only advanced users would be able to configure the code view with declared variables. With this release, declared variables are accessible by clicking **configure** to add the variable of interest (left). Just use the variable for the relevant model in the target model SQL Query tab (right).
+
+![DelcarVars](./img/declare-vars.png)
 
 ### Building SCD2 Tables
 
