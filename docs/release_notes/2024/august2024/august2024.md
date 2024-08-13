@@ -26,7 +26,7 @@ tags:
 
 #### SQL Copilot Enhancements
 
-In this release, we've updated the UX and capabilities of the expression builder, target model, and more. Read our New SQL UI Onboarding Guide [here](./new-ui-sql.md) to get familiar with the updated interface.
+In this release, we've updated the UX and capabilities of the expression builder, target model, and more. Read our [New SQL UI Onboarding Guide](./new-ui-sql.md) to get familiar with the updated interface.
 
 #### Airflow Copilot Enhancements
 

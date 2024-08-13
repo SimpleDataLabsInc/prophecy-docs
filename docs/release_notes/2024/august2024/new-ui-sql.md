@@ -14,17 +14,17 @@ tags:
 
 ## Available in Prophecy Release 3.3.9
 
-Prophecy's SQL Transformation Copilot has a new user interface in four different areas. Check them out in the video or the descriptions below. Find out what to expect in your new user interface for an even easier experience.
+Prophecy's SQL Transformation Copilot has a new user interface in four different areas. Check them out in the following video or the descriptions. Find out what to expect in your new user interface for an even easier experience.
 
 ### Model write options
 
-In this release, we've updated the UX and capabilities of the target model format and write options. In the previous release, you'd find **advanced settings** are available for defining model write formats and lots of other DBT options (left). In this release, the advanced settings are still available, but the most frequently used settings are accessible in the target model Gem as well (right).
+In this release, we've updated the UX and capabilities of the target model format and write options. In the previous release, you'd find **advance settings** are available for defining model write formats and lots of other DBT options (left). In this release, the advance settings are still available, but the most frequently used settings are accessible in the target model Gem as well (right).
 
 ![ModelWrites](./img/target-model.png)
 
 There are now the following tabs within the model:
 
-- **Type & Format**: Update the format of the model, eg table, view, ephemeral, etc.
+- **Type & Format**: Update the format of the model, e.g., table, view, ephemeral, etc.
 - **Location**: Update the location by overwriting the Database, Schema, or Alias
 - **Schema**: Make schema changes
 - **SQL Query**: View and enable your custom SQL query
@@ -32,7 +32,7 @@ There are now the following tabs within the model:
 
 ### Variable Declaration and the Target Model SQL Query interface
 
-We've added the powerful functionality to configure variables directly in a SQL Query for each target model. Normally only advanced users would be able to use jinja or DBT templating with declared variables for their last mile data processing. Declared variables are accessible by clicking **configure** to add the variable of interest (left). With this release, you can use the variable (along with standard DBT functions) in the target model SQL Query tab (right).
+We've added the powerful functionality to configure variables directly in a SQL Query for each target model. Normally only advanced users would be able to use Jinja or DBT templating with declared variables for their last mile data processing. Declared variables are accessible by clicking **configuration** to add the variable of interest (left). With this release, you can use the variable (along with standard DBT functions) in the target model SQL Query tab (right).
 
 ![DelcarVars](./img/declare-vars.png)
 
