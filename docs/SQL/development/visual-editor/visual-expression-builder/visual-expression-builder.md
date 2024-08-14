@@ -48,19 +48,27 @@ You can use the Visual Expression Builder to build expressions in accordance wit
 
 ## Expression syntax
 
-As a data user, you'll never again need to remember the right syntax for your expressions. The Visual Expression Builder takes care of the semantics and syntax for you as you build your expressions. If you're interested, you can check the syntax of your expressions by viewing the code view of your expressions.
+As a data user, you'll never again need to remember the right syntax for your expressions. The Visual Expression Builder takes care of the semantics and syntax for you as you build your expressions.
+
+If you're interested, you can check the syntax of your expressions by viewing the Code view of your expressions.
 
 ![Code Expression Builder](img/code-expression-builder.png)
 
-While you're viewing the code view, you can click **Expand Editor** next to any of your expressions to open the [Expression Builder](../../../../Spark/expression-builder.md).
+## Converting from code
 
-## Suggesting expressions and functions
+If you prefer, you can always choose to continue to write your expressions in the Code view.
+
+All of the expressions you write in the Code view are converted to visual expressions by the Visual Expression Builder when you view the Visual view.
+
+### Suggesting expressions and functions
 
 As you build your expressions, Data Copilot can suggest expressions and functions to you, including nested and conditional functions.
 
+While viewing the Code view of your expressions, you can click **Ask AI** to generate your expressions using an English text prompt. You can then review the code expressions, view them on the Visual view, and test them by running the Model up to and including the Gem with the expressions.
+
 ![Ask AI to generate](img/ask-ai-expression.png)
 
-While viewing the code view of your expressions, you can click **Ask AI** to generate your expressions using an English text prompt. You can then review the code expressions, and test them by running the Model up to and including the Gem with the expressions.
+While you're viewing the Code view, you can also take advantage of the [Expression Builder](../../../../Spark/expression-builder.md) by clicking **Expand Editor** next to any of your expressions.
 
 ## What's next
 

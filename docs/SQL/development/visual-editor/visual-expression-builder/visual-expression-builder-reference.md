@@ -18,7 +18,7 @@ This page contains a reference of the different Visual Expression Builder compon
 
 The Visual Expression Builder supports the following expression options:
 
-- **Column**: Allows you to select an input column from your source tables. You can view all of the available input columns from under the dropdown menu or under **Input** on the left of the Gem dialog.
+- **Column**: Allows you to select an input column from your source tables. You can view all of the available input columns from under the dropdown menu or under **Input** on the left-hand side of the Gem dialog.
 - **Value**: Allows you to enter any kind of value.
   - If you enter a string value, it'll be considered as a string within quotes.
   - If you enter a number, it'll be considered as a numerical value, but you have the option to click to **Check to read value as string**.
@@ -29,7 +29,7 @@ The Visual Expression Builder supports the following expression options:
   - You can add multiple `CASES` of the `WHEN` clause, but you can only have one `ELSE` statement. `ELSE` also uses a simple expression.
   - You can also add `IF`, `ELSEIF`, or `FOR` conditions between each of your expressions. `FOR` conditions take a variable name and an expression value. `IF` and `ELSEIF` conditions are considered comparisons.
 - **Configuration Variable**: Consists of **Model Variables** and **Project Variables**. You can see and edit your variables from the canvas settings by navigating to **...** > **Configuration**. When you select a Project Variable, you can add a default value if no value is set in the Configuration setting.
-- **Incremental**: Allows you to use for dbt configurations.
+- **Incremental**: Allows you to use for advanced dbt configurations.
 - **Custom Code**: Allows you can write your own custom code to create your own expressions that are not yet supported by the Visual Expression Builder. For example, you can use custom code to use mathematical operations, such as addition and subtraction. As you type, you'll be given suggestions.
 
 ## Operator options
