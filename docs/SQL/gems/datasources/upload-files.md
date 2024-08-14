@@ -30,6 +30,7 @@ The recommended maximum file size is 100&nbsp;MB.
 
 :::
 
+- Open a Model within the Project
 - Under the Environment Browser, click **Upload File**, and then select your file.
 
   ![Upload file from your folders](img/upload-file-source.png)
@@ -99,4 +100,4 @@ Preview the table:
 
   If you selected a table to write your uploaded file to, you'll need to confirm the upload in the pop-up window by clicking **Proceed**.
 
-The uploaded file's table is now available in the Source/Target node. The table is created in your environment and a source is created within your project. You can upload another file or start working with your new source Gem.
+The uploaded file's table is now available in the Source/Target node. The table is created in your environment and a source is created within your Model. You can upload another file or start working with your new source Gem.
