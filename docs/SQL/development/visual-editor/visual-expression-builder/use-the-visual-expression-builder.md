@@ -16,15 +16,23 @@ Develop your SQL expressions by using the Visual Expression Builder, which shows
 
 ## Navigate to the Visual Expression Builder
 
-The Visual Expression Builder is supported wherever you see Visual and Code views within your transformation Gems. The view you select persists across Gems.
+The Visual Expression Builder is supported wherever you see Visual and Code views within your transformation Gems.
 
 - Create or open an existing transformation Gem, and select the **Visual** view.
 
+:::note
+
+The view you select persists across your Gems.
+
+:::
+
 All of the expressions you build using the Visual Expression Builder are converted to code in the Gem and Model Code views. Similarly, edits you make in the Code view, whether it's in an expression or condition editor, will be converted into Visual view.
+
+This allows you to take advantage of both Visual and Code views when building your expressions.
 
 ## Build an expression
 
-You can build an expression using the following modes:
+Using the Visual Expression Builder, you can build an expression using the following modes:
 
 - **Simple Expression**: This mode prompts you to add a target column and an expression.
 - **Comparison**: This mode prompts you to add a left-hand expression, an operator, and a right-hand expression. You also have the options of using conditions, such as `IF` and `ELSEIF` statements.
@@ -53,7 +61,7 @@ To set up the join condition, follow these steps:
 
 1. After creating the Join Gem, in the Join section, click **+Add Condition**. An option to Select expression appears.
 2. Click **Select expression** and select **Column**. Search for or click to select `in0.id` from the populated list. An option to Select operator appears.
-3. Click **Select operator** and select the Comparison operator `= equals`. An option to Select expression appears.
+3. Click **Select operator** and select the Comparison operator `equals`. An option to Select expression appears.
 4. Click **Select expression** and select **Column**. Search for or click to select `in1.ACCOUNT_ID` from the populated list.
 
 To set up the simple expressions, follow these steps:
@@ -79,7 +87,7 @@ To set up the comparison expressions, follow these steps:
 2. Click **Select expression** and select **Conditional**. A `WHEN` clause appears.
 3. For `WHEN`, click **Select expression** and select **Function**. Search for and click to select `TRY_CAST`, which converts a value of one data type into another data type. An option to select source_string_expr appears.
 4. Click **source_string_expr** and select **Column**. Search for or click to select `ANNUALREVENUE AS FLOAT` from the populated list.
-5. Click **Select operator** and select **less than**.
+5. Click **Select operator** and select the Comparison operator `less than`.
 6. Click **Select expression** and select **Value**. Enter `1000000` as the value.
    :::tip
    Whenever you enter a numerical or boolean value, a checkbox appears on the value dialog giving you the option to **Check to read value as string**.
@@ -102,9 +110,9 @@ In our Aggregate example, we want to use other conditional expressions, such as 
 To set up additional comparison expressions, follow these steps:
 
 1. After creating and setting up the initial Aggregate Gem, hover your pointer between two expression rows and click **+** to add a condition. You're given the option to insert another column or an `IF` or `FOR` condition.
-2. Select **FOR**. A `FOR` condition appears.
+2. Select **IF**. An `IF` condition appears.
 3. Click **Select expression** and select **Configuration Variable**. Search for or click to select `id_threshold` from the populated list.
-4. Click **Select operator** and select **greater than**.
+4. Click **Select operator** and select the Comparison operator `greater than`.
 5. Click **Select expression** and select **Value**. Enter `50` as the value.
 6. Optional: You can hover your pointer below the express row you just created and click **+** to add another condition. You're now given additional options to insert an `ELSEIF` or `ELSE` condition.
 
@@ -120,7 +128,7 @@ In our Filter example, we want to filter for the following:
 
 - Total expected revenue that `is not null`
 - Total amounts that are greater than `100000`
-- Latest closed quarters that equals `2023Q2` or `2024Q2`.
+- Latest closed quarters that equals `2023Q2` or `2024Q2`
 
 To set up the grouping expressions, follow these steps:
 
@@ -142,13 +150,13 @@ To set up the grouping expressions, follow these steps:
 
 ## Tips
 
-Here are some additional tips when using the Visual Expression Builder.
+Here are some additional tips to keep in mind when using the Visual Expression Builder:
 
 - The expression dropdowns support search.
 - Each argument of your function can be another expression since you have the same expression options to choose from.
   - You can add optional arguments to your functions.
 - You can drag and drop your comparison expressions.
-- Just as with conditions, you can drag and drop your grouping expressions.
+- Just as with conditions, you can also drag and drop your grouping expressions.
 - You can delete individual expressions, conditions, and groupings by clicking the trash icon at the end of the rows.
 
 ## Run and Verify the output
