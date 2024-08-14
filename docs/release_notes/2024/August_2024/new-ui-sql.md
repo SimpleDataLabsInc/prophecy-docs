@@ -17,7 +17,7 @@ tags:
 Prophecy's SQL Transformation Copilot has a new user interface in four different areas. Check them out in the following video or the descriptions. Find out what to expect in your new user interface for an even easier experience.
 
 <div style={{position: 'relative', 'padding-bottom': '56.25%', height: 0}}>
-   <iframe src="https://www.loom.com/embed/3b181d2e60ad4e3094c0a8bb36f8a601?sid=d8385d0b-b309-4e72-b5ed-a49ade2ee492" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
+   <iframe src="https://www.loom.com/embed/df8d4b45a0bd4d7d9a448621986c840b?sid=b4a9c18e-26b6-47bf-aaa4-06c08745c23c" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
       style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}></iframe>
 </div>
 
