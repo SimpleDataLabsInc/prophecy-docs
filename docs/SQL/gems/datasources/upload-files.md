@@ -22,7 +22,7 @@ When you upload your file through Prophecy, it's added directly to your Databric
 
 ## Upload a file
 
-To upload your file, start by opening a project and following one of these steps:
+To upload your file, start by opening a Model within a project and following one of these steps:
 
 :::note
 
@@ -30,7 +30,6 @@ The recommended maximum file size is 100&nbsp;MB.
 
 :::
 
-- Open a Model within the Project
 - Under the Environment Browser, click **Upload File**, and then select your file.
 
   ![Upload file from your folders](img/upload-file-source.png)
