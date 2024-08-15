@@ -1,11 +1,11 @@
-
-
 import git
 import argparse
 import re
 import os
+from datetime import datetime
 
 versions = []
+
 
 def get_versions_for_tag(repo, tag):
     deps_file_path = "project/Dependencies.scala"
@@ -28,13 +28,15 @@ def get_versions_for_tag(repo, tag):
         ver_dict = {
             "prophecy_version": tag,
             "scala_version": scala_version[0],
-            "python_version": python_version[0]
+            "python_version": python_version[0],
+            "date": datetime.fromtimestamp(tag.commit.committed_date).strftime('%Y/%m/%d')
         }
         versions.append(ver_dict)
     except FileNotFoundError:
         FileNotFoundError(f"File '{deps_file_path}' not found in this version.")
     except git.exc.GitCommandError:
         IOError(f"Error checking out tag '{tag}'.")
+
 
 def update_version_chart_file(docs_repo_path):
     version_chart_file = os.path.join(docs_repo_path, "docs/release_notes/version_chart.md")
@@ -50,10 +52,11 @@ def update_version_chart_file(docs_repo_path):
     header = ''.join(header_lines)
 
     delimiter_parts = delimiter.split("|")
-    rows = ["| {} | {} | {} |\n".format(
+    rows = ["| {} | {} | {} | {} |\n".format(
         v['prophecy_version'].ljust(len(delimiter_parts[1].strip())),
         v['scala_version'].ljust(len(delimiter_parts[2].strip())),
-        v['python_version'].ljust(len(delimiter_parts[3].strip()))
+        v['python_version'].ljust(len(delimiter_parts[3].strip())),
+        v['date'].ljust(len(delimiter_parts[4].strip()))
     ) for v in versions]
     output_string = "".join(rows)
 
@@ -62,6 +65,7 @@ def update_version_chart_file(docs_repo_path):
 
     with open(version_chart_file, 'w') as output_file:
         output_file.write(header + delimiter + output_string)
+
 
 def process_args(prophecy_repo_path, docs_repo_path, tag=None):
     repo = git.Repo(prophecy_repo_path)
@@ -76,7 +80,6 @@ def process_args(prophecy_repo_path, docs_repo_path, tag=None):
                 get_versions_for_tag(repo, tag.name)
 
     update_version_chart_file(docs_repo_path)
-
 
 
 if __name__ == "__main__":
