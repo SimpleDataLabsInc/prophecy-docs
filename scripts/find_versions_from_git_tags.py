@@ -55,10 +55,10 @@ def update_version_chart_file(docs_repo_path):
 
     delimiter_parts = delimiter.split("|")
     rows = ["| {} | {} | {} | {} |\n".format(
-        v['prophecy_version'].ljust(len(delimiter_parts[1].strip()) - 2),
-        v['scala_version'].ljust(len(delimiter_parts[2].strip()) - 2),
-        v['python_version'].ljust(len(delimiter_parts[3].strip()) - 2),
-        v['date'].ljust(len(delimiter_parts[4].strip()) - 2)
+        v['prophecy_version'].ljust(len(delimiter_parts[1].strip())),
+        v['scala_version'].ljust(len(delimiter_parts[2].strip())),
+        v['python_version'].ljust(len(delimiter_parts[3].strip())),
+        v['date'].ljust(len(delimiter_parts[4].strip()))
     ) for v in versions]
     output_string = "".join(rows)
 
