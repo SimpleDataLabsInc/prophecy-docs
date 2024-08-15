@@ -7,11 +7,12 @@ from datetime import datetime
 versions = []
 
 
-def get_versions_for_tag(repo, tag):
+def get_versions_for_tag(repo, tag_name):
     deps_file_path = "project/Dependencies.scala"
 
     try:
-        file_contents = repo.git.show(f"{tag}:{deps_file_path}")
+        tag = repo.tags[tag_name]
+        file_contents = repo.git.show(f"{tag_name}:{deps_file_path}")
 
         prophecy_libs_version_regex = r'prophecyLibsVersion\s*=\s*"([^"]+)"'
         scala_version = re.findall(prophecy_libs_version_regex, file_contents)
@@ -26,7 +27,7 @@ def get_versions_for_tag(repo, tag):
             return  # ignore for now if we can't find missing old versions
 
         ver_dict = {
-            "prophecy_version": tag,
+            "prophecy_version": tag_name,
             "scala_version": scala_version[0],
             "python_version": python_version[0],
             "date": datetime.fromtimestamp(tag.commit.committed_date).strftime('%Y/%m/%d')
@@ -35,7 +36,7 @@ def get_versions_for_tag(repo, tag):
     except FileNotFoundError:
         FileNotFoundError(f"File '{deps_file_path}' not found in this version.")
     except git.exc.GitCommandError:
-        IOError(f"Error checking out tag '{tag}'.")
+        IOError(f"Error checking out tag '{tag_name}'.")
 
 
 def update_version_chart_file(docs_repo_path):
@@ -53,10 +54,10 @@ def update_version_chart_file(docs_repo_path):
 
     delimiter_parts = delimiter.split("|")
     rows = ["| {} | {} | {} | {} |\n".format(
-        v['prophecy_version'].ljust(len(delimiter_parts[1].strip())),
-        v['scala_version'].ljust(len(delimiter_parts[2].strip())),
-        v['python_version'].ljust(len(delimiter_parts[3].strip())),
-        v['date'].ljust(len(delimiter_parts[4].strip()))
+        v['prophecy_version'].ljust(len(delimiter_parts[1].strip()) - 2),
+        v['scala_version'].ljust(len(delimiter_parts[2].strip()) - 2),
+        v['python_version'].ljust(len(delimiter_parts[3].strip()) - 2),
+        v['date'].ljust(len(delimiter_parts[4].strip()) - 2)
     ) for v in versions]
     output_string = "".join(rows)
 
@@ -67,11 +68,11 @@ def update_version_chart_file(docs_repo_path):
         output_file.write(header + delimiter + output_string)
 
 
-def process_args(prophecy_repo_path, docs_repo_path, tag=None):
+def process_args(prophecy_repo_path, docs_repo_path, tag_name=None):
     repo = git.Repo(prophecy_repo_path)
 
-    if tag:  # If a specific tag is provided
-        get_versions_for_tag(repo, tag)
+    if tag_name:  # If a specific tag is provided
+        get_versions_for_tag(repo, tag_name)
     else:  # If processing all tags
         sorted_tags = sorted(repo.tags, key=lambda t: t.commit.committed_datetime, reverse=True)
         for tag in sorted_tags:
