@@ -22,7 +22,7 @@ When you upload your file through Prophecy, it's added directly to your Databric
 
 ## Upload a file
 
-To upload your file, start by opening a project and following one of these steps:
+To upload your file, start by opening a Model within a project and following one of these steps:
 
 :::note
 
@@ -99,4 +99,4 @@ Preview the table:
 
   If you selected a table to write your uploaded file to, you'll need to confirm the upload in the pop-up window by clicking **Proceed**.
 
-The uploaded file's table is now available in the Source/Target node. The table is created in your environment and a source is created within your project. You can upload another file or start working with your new source Gem.
+The uploaded file's table is now available in the Source/Target node. The table is created in your environment and a source is created within your Model. You can upload another file or start working with your new source Gem.
