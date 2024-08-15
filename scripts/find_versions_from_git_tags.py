@@ -3,6 +3,7 @@ import argparse
 import re
 import os
 from datetime import datetime
+from packaging import version as packaging_version
 
 versions = []
 
@@ -77,7 +78,8 @@ def process_args(prophecy_repo_path, docs_repo_path, tag_name=None):
         sorted_tags = sorted(repo.tags, key=lambda t: t.commit.committed_datetime, reverse=True)
         for tag in sorted_tags:
             version_match = re.search(r'v\d+\.\d+\.\d+', tag.name)
-            if version_match:
+
+            if version_match and packaging_version.parse(tag.name) >= packaging_version.parse("3.3.1.1"):
                 get_versions_for_tag(repo, tag.name)
 
     update_version_chart_file(docs_repo_path)
