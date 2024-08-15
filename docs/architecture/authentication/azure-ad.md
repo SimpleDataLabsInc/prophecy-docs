@@ -2,7 +2,7 @@
 title: "Azure Active Directory"
 id: azure_ad
 description: Authentication using Azure Active Directory
-sidebar_position: 2
+sidebar_position: 3
 tags:
   - authentication
   - active-directory

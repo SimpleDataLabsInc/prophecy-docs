@@ -9,7 +9,7 @@ tags:
   - august
 ---
 
-## 3.3.9.\* (August 6, 2024)
+## 3.3.9.\* (August 12, 2024)
 
 - Prophecy Python libs version: 1.9.9
 - Prophecy Scala libs version: 8.0.29
@@ -22,19 +22,11 @@ tags:
 
 - **Support for config resolution inside call_func()**: Config variables inside of the `call_function()` and `call_func()` are now supported. The new syntax is `call_function("{{catalogName}}.{{database}}.{{funcName}}", "{{firstArg}}")`.
 
-- **Support for proxy-user impersonation in Kerberos Livy Fabric Auth**: As an admin user, you can configure multiple Keytab accounts in the [Admin Settings](/docs/settings/admin-settings.md). You can upload the Keytab files and set up proxy-user impersonation in Kerberos for secure authentication to Livy Fabrics.
+- **Support for proxy-user impersonation in Kerberos Livy Fabric Auth**: As an admin user, you can configure multiple Keytab accounts in the [Admin Settings](../../../architecture/authentication/admin-settings.md). You can upload the Keytab files and set up proxy-user impersonation in Kerberos for secure authentication to Livy Fabrics.
 
 #### SQL Copilot Enhancements
 
-##### Enhancements in Low-Code SQL
-
-- **Target Model**: In this release, we've updated the UX and capabilities of the target model in SQL projects. There are now the following tabs within the model:
-
-  - **Type & Format**: Update the format of the model from View to Table
-  - **Location**: Update the location by overwriting the Database, Schema, or Alias
-  - **Schema**: Make schema changes
-  - **SQL Query**: View and enable your custom SQL query
-  - **Write Options**: Use Write Modes such as Overwrite, Append, and Merge
+In this release, we've updated the UX and capabilities of the expression builder, target model, and more. Read our [New SQL UI Onboarding Guide](./new-ui-sql.md) to get familiar with the updated interface.
 
 #### Airflow Copilot Enhancements
 

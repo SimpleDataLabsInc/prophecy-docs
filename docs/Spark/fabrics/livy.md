@@ -31,19 +31,30 @@ Once ready, click **(4) Continue**.
 ### Providers
 
 Since we're setting up a Fabric connected to Livy, choose **Spark** as the **(1) Provider Type** and **Livy** as the **(2) Provider**.
-To connect to Livy, you must provide the Livy URL and Authentication settings for your Livy Server.
-Prophecy supports two Authentication modes for Livy.
+To connect to Livy, you must provide the **(3)Livy URL** and authentication settings for your Livy Server.
 
 ![livy-provider](img/livy-provider-1.png)
 
+If your Livy is secured behind mTLS authentication, you can configure mTLS encryption in Prophecy. Enable the **(1)Use mTLS Encryption** option and provide the **Client Certificate** and **Client Key** required for mTLS.
+
+![livy-provider-mtls](img/livy-provider-mtls.png)
+
+Prophecy supports **three** Authentication modes for Livy.
+
 - **None** -
-  This is used for setups where Livy and Prophecy are on the same private network, or Prophecy can talk to Livy securely through IP whitelisting.
+  Use Authentication Mode None for setups where Livy and Prophecy are on the same private network or when Prophecy can securely communicate with Livy through IP whitelisting.
   You can create different Fabrics for different livy URLs in other teams to control who can access livy clusters through Prophecy.
+  ![livy-none-auth](img/livy-none-auth.png)
+
+- **Bearer Token** -
+  Prophecy authenticates with Livy using a pre-configured bearer token in this authentication. This mode is useful when you want to authenticate using a secure token-based system, making it more secure than no authentication for public environments. All team users would use the same token configured by a Team admin in **(2) Bearer Token** to authenticate to Livy.
+
+  ![livy-bearer-token](img/livy-bearer-token.png)
 
 - **Kerberos** -
   For Kerberos authentication, Prophecy authenticates with Livy via Kerberos as a service.
-  This is used when you have Kerebrised Hadoop set up. Prophecy will use the key tabs configured for this Livy URL by an Admin User in [Admin Settings](/docs/settings/admin-settings.md#keytabs-for-kerberos-authentication).
-  To enable user-level authorization in Kerberized Hadoop, you can enable Impersonation. When **Impersonation using proxy-user** is enabled, Prophecy will use the Proxy User obtained from LDAP/AAD as per [proxy-user setting](/docs/settings/admin-settings.md#proxy-user-settings--per-user-) by an Admin user when talking to Livy.
+  This is used when you have Kerebrised Hadoop set up. Prophecy will use the key tabs configured for this Livy URL by an Admin User in [Admin Settings](../../architecture/authentication/admin-settings#keytabs-for-kerberos-authentication).
+  To enable user-level authorization in Kerberized Hadoop, you can enable Impersonation. When **Impersonation using proxy-user** is enabled, Prophecy will use the Proxy User obtained from LDAP/AAD as per [proxy-user setting](../../architecture/authentication/admin-settings#proxy-user-settings-per-user) by an Admin user when talking to Livy.
 
 ![kerberos](img/kerberos-settings.png)
 

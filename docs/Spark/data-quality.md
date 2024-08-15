@@ -1,5 +1,6 @@
 ---
 title: Data Quality
+draft: true
 id: data-quality
 description: Data Quality
 sidebar_position: 8
@@ -38,8 +39,3 @@ Please note, Expectations should be enabled and Project needs to be released via
 ### Data Observability view
 
 In the Data Observability tab, users can monitor their expectations as well as Job runs. This page should be monitored closely for all scheduled expectations and jobs, as users would be able to see past runs, filter out failed runs/quality incidents, and filter by project/timeline, among other features.
-
-:::info
-
-Coming soon: Prophecy will add the ability to view detailed statistics and visualizations of their data, such as data distribution, missing values, and outliers. This will allow users to quickly identify any potential issues with their data and take corrective action as needed.
-:::
