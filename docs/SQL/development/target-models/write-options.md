@@ -18,6 +18,8 @@ Incremental models in dbt is a materialization strategy designed to efficiently 
 
 You can overwrite the target data entirely, append to existing target data, or merge to address slowly changing dimension scenarios.
 
+- To select write modes, you must set the Target Model Type & Format to **Table**.
+
 The following table shows which write modes and approaches are available for which provider.
 
 | Provider   | Overwrite               | Append                  | Merge - Specify Columns | Merge - SCD 2           | Merge - Use delete and insert | Merge - Insert and overwrite |
