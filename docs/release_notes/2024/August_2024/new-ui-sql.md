@@ -27,23 +27,23 @@ In this release, we've updated the UX and capabilities of the target model forma
 
 ![ModelWrites](./img/target-model.png)
 
-There are now the following tabs within the model:
+There are now the following tabs within the [target model](../../../SQL/development/models/target-models/target-models.md):
 
-- **Type & Format**: Update the format of the model, e.g., table, view, ephemeral, etc.
-- **Location**: Update the location by overwriting the Database, Schema, or Alias
-- **Schema**: Make schema changes
-- **SQL Query**: View and enable your custom SQL query
-- **Write Options**: Use Write Modes such as Overwrite, Append, and Merge
+- **[Type & Format](../../../SQL/development/models/target-models/type-and-format.md)**: Update the format of the model, e.g., table, view, ephemeral, etc.
+- **[Location](../../../SQL/development/models/target-models/location.md)**: Update the location by overwriting the Database, Schema, or Alias
+- **[Schema](../../../SQL/development/models/target-models/schema.md)**: Make schema changes
+- **[SQL Query](../../../SQL/development/models/target-models/sql-query.md)**: View and enable your custom SQL query
+- **[Write Options](../../../SQL/development/models/target-models/write-options.md)**: Use Write Modes such as Overwrite, Append, and Merge
 
 ### Variable Declaration and the Target Model SQL Query interface
 
-We've added the powerful functionality to configure variables directly in a SQL Query for each target model. Normally only advanced users would be able to use Jinja or DBT templating with declared variables for their last mile data processing. Declared variables are accessible by clicking **Configuration** to add the variable of interest (left). With this release, you can use the variable (along with standard DBT functions) in the target model SQL Query tab (right).
+We've added the powerful functionality to configure variables directly in a [SQL Query](../../../SQL/development/models/target-models/sql-query.md) for each target model. Normally only advanced users would be able to use Jinja or DBT templating with declared variables for their last mile data processing. Declared variables are accessible by clicking **Configuration** to add the variable of interest (left). With this release, you can use the variable (along with standard DBT functions) in the target model SQL Query tab (right).
 
 ![DelcarVars](./img/declare-vars.png)
 
 ### Building SCD2 Tables
 
-Slowly changing dimensions (SCD) doesn't have to be so challenging. With this release, you can take advantage of Prophecy's visual interface to configure SCD type 2 writes and retain data history. Open the Target Model Gem, select Table format. Just select a unique key and the relevant timestamp column for your data. Now any data practitioner can capture updated records without deleting the previous records.
+Slowly changing dimensions (SCD) doesn't have to be so challenging. With this release, you can take advantage of Prophecy's visual interface to configure [SCD type 2 writes](../../../SQL/development/models/target-models/write-options#scd-2.md) and retain data history. Open the Target Model Gem, select Table format. Just select a unique key and the relevant timestamp column for your data. Now any data practitioner can capture updated records without deleting the previous records.
 
 ![SCD2](./img/scd2.png)
 
