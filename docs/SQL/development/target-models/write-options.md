@@ -98,7 +98,7 @@ Incremental models can be configured to include an optional `on_schema_change` p
 - **ignore**: Newly added columns will not be written to the model.
 - **fail**: Triggers an error message when the source and target schemas diverge.
 - **append_new_columns**: Append new columns to the existing table.
-- **sync_all_columns**: Adds any new columns to the existing table, and removes any columns that are now missing. Includes data type changes.
+- **sync_all_columns**: Adds any new columns to the existing table, and removes any columns that are now missing. Includes data type changes. Uses the output of the previous Gem.
 
 ![Advanced](img/advanced.png)
 
