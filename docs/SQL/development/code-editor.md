@@ -4,21 +4,17 @@ id: code-editor
 description: Code editor for SQL
 sidebar_position: 4
 tags:
-  - execution
-  - explorer
-  - sort
-  - filter
-  - interim
-  - data
+  - development
+  - code
 ---
 
-Engineers can use SQL and advanced macros through a code-based editor. Prophecy parses their code and visualizes it on an editable canvas and ensures both views remain in sync at all times.
+You can use SQL and advanced macros through a code-based editor. Prophecy parses your code and visualizes it on an editable canvas and ensures both views remain in sync at all times.
 
 ## Code view
 
-Visual developers will appreciate the drag-n-drop canvas, but sometimes it's also nice to view the code. Prophecy creates highly performant code behind the scenes. Click the **Code View** to reveal the SQL queries we've generated using our visual design editor. Each Gem is represented by a CTE or subquery.
+As a visual developer, you'll appreciate the drag-n-drop canvas, but sometimes it's also nice to view the code. Prophecy creates highly performant code behind the scenes. Click the **Code View** to reveal the SQL queries we've generated using our visual design editor. Each Gem is represented by a CTE or subquery.
 
-![CodeEqualsVisual](./img/CodeEqualsVisual.png)
+![Code View](./img/sql-as-code.png)
 
 You may wish to edit the code view. Add a SQL statement in the code view and notice the visual editor displays the updated code. For example, we've added a limit statement in the code view, and a new limit Gem appears in the visual view.
 
