@@ -12,17 +12,17 @@ tags:
 
 In the context of Spark execution engines, users have the flexibility to opt for Amazon EMR Serverless. This guide offers step-by-step instructions on creating a Fabric that enables seamless connectivity to the EMR Serverless environment.
 
-## Create Amazon EMR cluster with Apache Livy
+## Create Amazon EMR Serverless cluster with Apache Livy
 
-Navigate to Amazon EMR service and create a cluster. Under **Application bundle** select **Custom**.
+Navigate to Amazon EMR Serverless service and create a cluster. Under **Application bundle** select **Custom**.
 
 Choose appropriate applications to include in your installation. At a minimum, please make sure sure **Livy** and **Spark** are included in the install.
 
 <img src={require('./img/livy.png').default} alt="EMR create cluster" width="75%" />
 
-### Allow network connectivity between Amazon EMR and Prophecy
+### Allow network connectivity between Amazon EMR Serverless and Prophecy
 
-To configure the necessary network settings for seamless integration, specific modifications to the security groups of your EMR cluster are required. Please follow the instructions outlined below:
+To configure the necessary network settings for seamless integration, specific modifications to the security groups of your EMR Serverless cluster are required. Please follow the instructions outlined below:
 If you intend to utilize Prophecy as a SaaS (Software as a Service) solution, please note that the Prophecy public IP is `3.133.35.237`. Ensure that the Core security group's outbound rule allows connections to this IP address.
 
 1. Modify the **Primary Node** security group:
@@ -32,16 +32,16 @@ If you intend to utilize Prophecy as a SaaS (Software as a Service) solution, pl
    - Allow outgoing connections to the Prophecy public IP over HTTPS.
    - To enable this, add an outbound rule to the Core security group that allows outgoing traffic over HTTPS protocol to the Prophecy public IP.
 
-By implementing these adjustments to your EMR cluster's security groups, you will establish the necessary network configuration for effective integration with Prophecy.
+By implementing these adjustments to your EMR Serverless cluster's security groups, you will establish the necessary network configuration for effective integration with Prophecy.
 
-## Create a Fabric to connect Prophecy to EMR
+## Create a Fabric to connect Prophecy to EMR Serverless
 
-Navigate to Prophecy's UI and click on **Create Fabric**. The Fabric will establish a connection with your EMR cluster and utilizes it as the execution engine for your Pipelines.
+Navigate to Prophecy's UI and click on **Create Fabric**. The Fabric will establish a connection with your EMR Serverless cluster and utilizes it as the execution engine for your Pipelines.
 <img src={require('./img/create-entity-emr.png').default} alt="EMR create cluster" width="75%" />
 <br/>
 <br/>
 
-**Name** your EMR Fabric and click on **Continue**.
+**Name** your EMR Serverless Fabric and click on **Continue**.
 
 <br/>
 <br/>
@@ -54,34 +54,30 @@ Choose **EMR** as your **Provider**.
 
 Before proceeding, it is crucial to ensure that all the required settings are properly configured. If you are uncertain about the necessary configurations, we recommend reaching out to your cloud infrastructure team for additional guidance and assistance. They will be able to provide you with the specific information and support needed to ensure a successful setup.
 
-Enter your AWS credentials under **Access Key** and **Secret Key**. Choose the **Region** that your EMR cluster is running in.
+Enter your AWS credentials under **Access Key** and **Secret Key**. Choose the **Region** that your EMR Serverless cluster is running in.
 
 **Click** on **Fetch environments**.
 <img src={require('./img/emr-aws-cred.png').default} alt="EMR cred" width="75%" />
 
-**Select** your EMR cluster that you would like to connect to under **Spark Environment**.
+**Select** your EMR Serverless cluster that you would like to connect to under **Spark Environment**.
 
-<img src={require('./img/emr-cluster-select.png').default} alt="EMR select" width="75%" />
+<img src={require('./img/emr-serverless-dev.png').default} alt="EMR select" width="80%" />
 
-Most of the fields should be automatically populated after selecting a EMR cluster. Enter the S3 path that points to the location where you would like your logs to persist.
+Most of the fields should be automatically populated after selecting a EMR Serverless cluster. Enter the S3 path that points to the location where you would like your logs to persist.
 
-<img src={require('./img/emr-setup.png').default} alt="EMR dependencies" width="75%" />
+<img src={require('./img/emr-serverless-environment.png').default} alt="EMR dependencies" width="80%" />
 
 Add the Job size to your environment by clicking on **Add Job Size**. Configure your Job size and click on **Add**.
-<img src={require('./img/configure-j-ob-size.png').default} alt="EMR Job size" width="75%" />
+<img src={require('./img/add-sizes.png').default} alt="EMR Job size" width="55%" />
 
 Configure the Prophecy Library:
 
 **Select** **File System** under **Scala Resolution mode** and provide the path:
 
-`s3://prophecy-public-bucket/prophecy-libs`
+`s3://prophecy-public-bucket/prophecy-public-libs/prophecy-scala-libs`
 
-**Select** **File System** under **Python Resolution mode** and provide the path:
+<img src={require('./img/sizes-and-libraries.png').default} alt="EMR Job size" width="75%" />
 
-`s3://prophecy-public-bucket/python-prophecy-libs`
-<img src={require('./img/library.png').default} alt="EMR Job size" width="75%" />
-
-Click on **Complete** and your EMR Fabric is ready!
-<img src={require('./img/complete-f-abric.png').default} alt="EMR create cluster" width="75%" />
+Click on **Complete** and your EMR Serverless Fabric is ready!
 
 Run a simple Pipeline and make sure that the interim returns data properly.
