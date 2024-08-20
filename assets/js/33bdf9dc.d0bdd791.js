@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[52839],{95280:s=>{s.exports=JSON.parse('{"label":"functions","permalink":"/tags/functions","allTagsPath":"/tags","count":1,"items":[{"id":"Spark/expression-builder","title":"Expression Builder","description":"Expression Builder","permalink":"/Spark/expression-builder"}]}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[32307],{40299:a=>{a.exports=JSON.parse('{"label":"visual","permalink":"/tags/visual","allTagsPath":"/tags","count":1,"items":[{"id":"index","title":"Prophecy Data Transformation Copilot","description":"get a little help from Copilot","permalink":"/"}]}')}}]);
