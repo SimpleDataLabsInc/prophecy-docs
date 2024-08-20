@@ -16,16 +16,16 @@ The full location of a table, view, and other objects consists of a database, sc
 
 ## Overwrite location
 
-Prophecy introduces it’s macro to overwrite the schema behavior to allow users to define it from scratch.
+Prophecy allows you to overwrite the schema behavior, and define it from scratch.
 
 You can select how you want to store the table, choosing the location by overwriting the properties. The defaults are automatically provided for you.
 
 - **Location**: The final location may vary depending on the model's execution environment.
 
-Toggle **Overwrite** for any of the following location to add your own overwrite macro:
+For the following locations, toggle **Overwrite** to add your own overwrite macro:
 
-- **Database**: Optional, if Unity Database is enabled. By default, it is determined by Fabric connection. You can overwrite it.
+- **Database**: Optional, if Unity Database is enabled. By default, it is determined by the Fabric connection. You can overwrite it.
 - **Schema**: The default schema is determined by the Fabric connection. You can overwrite it.
-- **Alias** - Alias is the name of created table or view. By default, it is equivalent to model name, but can be overwritten.
+- **Alias** - Alias is the name of the created table or view. By default, it is equivalent to model name, but you can be overwrite it.
 
 ![Location](img/location.png)
