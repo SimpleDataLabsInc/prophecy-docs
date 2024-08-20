@@ -65,47 +65,53 @@ There are several merge approaches to choose from in the following sections.
 
 ## Merge Approach
 
-The merge approaches integrate new data to ensure consistency and maintain unique keys.
+The available merge approaches integrate new data to ensure consistency and maintain unique keys.
 
-Under **Merge Condition**, set the **Merge Details**.
+There are three tabs to configure when working with merge approaches:
+
+- Merge Condition
+- Merge Columns
+- Advanced
+
+Under **Merge Condition**, you must set the **Merge Details**.
 
 ![Merge condition](img/merge-condition.png)
 
 - Set the **Unique Key**. The unique key is used to choose the records to update. If not specified, all rows are appended.
 - Optional: Toggle **Use Predicate**. Build an expression.
 - Optional: Toggle **Use a condition to filter data or incremental runs**. Build an expression.
-  User **Merge Columns**, specify the columns to merge by clicking **+**. If you don’t specify then it will merge all columns.
+
+Under **Merge Columns**, you must specify the columns to merge by clicking **+**. If you don’t specify then the merge approach will merge all columns.
 
 ![Merge columns](img/merge-columns.png)
 
-Under **Advanced**, select an option for **On Schema Change**:
+Under **Advanced**, select an option for **On Schema Change**.
+
+:::info
+Incremental models can be configured to include an optional `on_schema_change` parameter to enable additional control when incremental model columns change. These options enable dbt to continue running incremental models in the presence of schema changes, resulting in fewer `--full-refresh` scenarios and saving query costs.
+:::
 
 - **ignore**: Newly added columns will not be written to the model.
 - **fail**: Triggers an error message when the source and target schemas diverge.
 - **append_new_columns**: Append new columns to the existing table.
-- **sync_all_columns**: Adds any new columns to the existing table, and removes any columns that are now missing.Includes data type changes
+- **sync_all_columns**: Adds any new columns to the existing table, and removes any columns that are now missing. Includes data type changes.
 
 ![Advanced](img/advanced.png)
 
 ### Specify Columns
 
-Customize the columns you want to include in your data queries. Select, deselect, and reorder columns to tailor your Dataset to your specific needs.
+Use Specify Columns to customize the columns you want to include in your data queries. Select, deselect, and reorder columns to tailor your Dataset to your specific needs.
 
-- Select which columns would like to merge
-- Example with order_id as the Unique Key
+- Select which columns you would like to merge
 
 ![Specify columns](img/specify-columns.png)
-
-Imagine you have a table with . If an ORDER_ID exists for a given order that is coming in, then update the status. And leave all of the other fields untouched.
-
-With ORDER_ID as the unique key, if any new records come in that match an existing ORDER_ID, perform a merge. And you want to merge the SHIPPING_STATUS.
 
 To use Specify Columns, follow these steps:
 
 1. Under **Merge Condition**, set the **Merge Details**.
-2. Set the **Unique Key**. The unique key is used to choose the records to update. If not specified, all rows are appended.
-3. Optional: Toggle **Use Predicate**. Build an expression.
-4. Optional: Toggle **Use a condition to filter data or incremental runs**. Build an expression.
+2. Set the **Unique Key**.
+3. Optional: Toggle **Use Predicate**.
+4. Optional: Toggle **Use a condition to filter data or incremental runs**.
 5. User **Merge Columns**, specify the columns to merge by clicking **+**.
 6. Specify the columns to exclude by clicking **+**.
 7. Under **Advanced**, select an option for **On Schema Change**:
@@ -113,8 +119,6 @@ To use Specify Columns, follow these steps:
    2. **fail**: Triggers an error message when the source and target schemas diverge.
    3. **append_new_columns**: Append new columns to the existing table.
    4. **sync_all_columns**: Adds any new columns to the existing table, and removes any columns that are now missing.
-
-Incremental models can be configured to include an optional on_schema_change parameter to enable additional control when incremental model columns change. These options enable dbt to continue running incremental models in the presence of schema changes, resulting in fewer --full-refresh scenarios and saving query costs.
 
 ### SCD 2
 
@@ -205,19 +209,19 @@ The two additional columns valid_from and valid_to represent the validity period
 
 ### Use delete and insert
 
-Replace outdated data efficiently. Delete existing records and insert new ones in a single operation, insuring your Dataset remains accurate and up-to-date.
+Use delete and insert to replace outdated data efficiently. It deletes existing records and inserts new ones in a single operation, insuring your Dataset remains up-to-date.
 
+- Deletes rows that use the predicate
 - Use delete and insert for Snowflake
-  - Delete rows that use the predicate
 
 ![Use delete and insert](img/use-delete-and-insert.png)
 
 To use delete and insert, follow these steps:
 
 1. Under **Merge Condition**, set the **Merge Details**.
-2. Set the **Unique Key**. The unique key is used to choose the records to update. If not specified, all rows are appended.
-3. Optional: Toggle **Use Predicate**. Build an expression.
-4. Optional: Toggle **Use a condition to filter data or incremental runs**. Build an expression.
+2. Set the **Unique Key**.
+3. Optional: Toggle **Use Predicate**.
+4. Optional: Toggle **Use a condition to filter data or incremental runs**.
 5. User **Merge Columns**, specify the columns to merge by clicking **+**. There's no need to set the merge columns for incremental strategy delete and insert.
 6. Specify the columns to exclude by clicking **+**.
 7. Under **Advanced**, select an option for **On Schema Change**:
@@ -226,14 +230,12 @@ To use delete and insert, follow these steps:
    3. **append_new_columns**: Append new columns to the existing table.
    4. **sync_all_columns**: Adds any new columns to the existing table, and removes any columns that are now missing.
 
-Incremental models can be configured to include an optional on_schema_change parameter to enable additional control when incremental model columns change. These options enable dbt to continue running incremental models in the presence of schema changes, resulting in fewer --full-refresh scenarios and saving query costs.
-
 ### Insert and overwrite
 
-Overwrite existing records and insert new ones in a single operation, insuring your Dataset remains accurate and up-to-date.
+Use insert and overwrite to overwrite existing records and insert new ones in a single operation, insuring your Dataset remains accurate.
 
+- Replaces all partitions included in your query
 - Use insert and overwrite for Databricks
-  - Replaces all partitions included in your query
 
 ![Insert and overwrite](img/insert-and-overwrite.png)
 
@@ -249,5 +251,3 @@ To use insert and overwrite, follow these steps:
    2. **fail**: Triggers an error message when the source and target schemas diverge.
    3. **append_new_columns**: Append new columns to the existing table.
    4. **sync_all_columns**: Adds any new columns to the existing table, and removes any columns that are now missing.
-
-Incremental models can be configured to include an optional on_schema_change parameter to enable additional control when incremental model columns change. These options enable dbt to continue running incremental models in the presence of schema changes, resulting in fewer --full-refresh scenarios and saving query costs.
