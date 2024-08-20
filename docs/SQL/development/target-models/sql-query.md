@@ -10,23 +10,24 @@ tags:
   - SQL
 ---
 
-You can use the SQL Query tab to view and enable your custom SQL query at the end of your Model. Custom query enables you to perform one last data transformation step as a SQL query, before creating the model.
+You can use the SQL Query tab to view and enable your custom SQL query at the end of your target model. A custom SQL query enables you to perform one last data transformation step as a SQL query, before creating the model.
 
-If you import your own codebase and your final query has additional conditions, your query is saved here for you to view and edit. For low code users you can use a Filter Gem to achieve the same.
+This is useful if you import your own codebase and your final query has additional conditions. Your query is saved here for you to view and edit. For low code users you can use a Filter Gem to achieve the same results.
 
 ## Enable custom SQL query
 
-You can add a custom SQL Query. Useful if you are doing data processing with advance Jinja or dbt templating.
-that you need flexibility when doing last mile operations for your SQL models. To that end, we support use of declared variables in the SQL queries for those last mile operations on each model write.
-We've added the powerful functionality to configure variables directly in a SQL Query for each target model. Normally only advanced users would be able to use Jinja or DBT templating with declared variables for their last mile data processing.
+You can add a custom SQL Query if you're doing data processing with advance Jinja or dbt templating.
+This gives you flexibility when doing last mile operations for your SQL models. To that end, we support the use of declared variables directly in the SQL queries for those last mile operations on each model write.
 
 ### Ports
 
-Ports represent Gem or generated code functions inputs and outputs. Port name is a variable name in Python and Scala code and table alias in the SQL code. Visual order of the ports defines the order of the variables.
+Ports represent Gem or generated code functions inputs and outputs. Port name is a variable name in Python and Scala code, and table alias in the SQL code. Visual order of the ports defines the order of the variables.
 
 You can edit or add Ports for Input and Output.
 
 ### SQL Query
+
+You can enable customer SQL query on the SQL Query tab.
 
 - Toggle **Enable custom SQL query** to enable your custom SQL query at the end of your Model.
 
@@ -42,14 +43,16 @@ FROM customers_raw
 WHERE customer_id > {{ id_threshold }}
 ```
 
-You can use dbt variables in the SQL query.
+You can use your declared dbt variables in the SQL query.
 
 ## Declare variables
 
 The variable declaration interface allows you to configure variables directly in the SQL Query for your target model.
 
-Declared variables are accessible by clicking configuration to add the variable of interest. You can use the variable, along with standard dbt functions, in the target model SQL Query tab.
+Declared variables are accessible by clicking configuration to add the variable of interest.
 
 - You can declare the variables under **...** > **Configuration** using key-value pairs, and they can be defined at the model or project level.
 
 ![Configuration](img/configuration.png)
+
+You can then use the variable, along with standard dbt functions, in the target model SQL Query tab.

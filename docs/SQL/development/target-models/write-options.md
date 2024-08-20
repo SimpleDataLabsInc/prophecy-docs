@@ -10,9 +10,9 @@ tags:
   - SQL
 ---
 
-You can use Write Modes such as Overwrite, Append, and Merge to materialize your data. The Write Options tab within your target model Gem guides you through building different merge approaches, such as historical data changes table with SCD 2.
+You can use Write Modes such as Overwrite, Append, and Merge to materialize your data. The Write Options tab within your target model Gem guides you through building different merge approaches, such as historical data changes with SCD 2, which use incremental materialization strategy.
 
-Incremental models in dbt is a materialization strategy designed to efficiently update your data warehouse tables by only transforming and loading new or changed data since the last run. Instead of processing your entire Dataset every time, incremental models append or update only the new rows, significantly reducing the time and resources required for your data transformations.
+Target models are considered incremental models, which use a materialization strategy to update your data warehouse tables by only transforming and loading new or changed data since the last run. Instead of processing your entire Dataset every time, incremental models append or update only the new rows. This significantly reduces the time and resources required for your data transformations.
 
 ## Write Modes
 
@@ -20,14 +20,14 @@ You can overwrite the target data entirely, append to existing target data, or m
 
 - To select write modes, you must set the Target Model Type & Format to **Table**.
 
+Once you've selected your write mode, you'll see in the Code view that the table is stored as a `"materialized": "incremental",` table, with `"incremental_strategy:` set to whichever write mode and merge approach you choose.
+
 The following table shows which write modes and approaches are available for which provider.
 
 | Provider   | Overwrite               | Append                  | Merge - Specify Columns | Merge - SCD 2           | Merge - Use delete and insert | Merge - Insert and overwrite |
 | ---------- | ----------------------- | ----------------------- | ----------------------- | ----------------------- | ----------------------------- | ---------------------------- |
 | Databricks | ![Tick](./img/tick.svg) | ![Tick](./img/tick.svg) | ![Tick](./img/tick.svg) | ![Tick](./img/tick.svg) | ![Tick](./img/cross.svg)      | ![Tick](./img/tick.svg)      |
 | Snowflake  | ![Tick](./img/tick.svg) | ![Tick](./img/tick.svg) | ![Tick](./img/tick.svg) | ![Tick](./img/tick.svg) | ![Tick](./img/tick.svg)       | ![Tick](./img/cross.svg)     |
-
-In Code view, you will see that the table is stored as an `"materialized": "incremental",` table, with `"incremental_strategy:` set to whichever write mode and merge approach you choose.
 
 ### Overwrite
 
@@ -38,32 +38,28 @@ You can use overwrite to clear existing data and replace it with new data on eac
 
 ![Overwrite](img/overwrite.png)
 
-We use overwrite if we don’t need to keep any historical data. It overwrites the table, then schema has to match, unless you overwrite schema.
+Use overwrite if you don’t need to keep any historical data. When it overwrites the table, the schema has to match, unless you also overwrite the schema.
 
-Overwrite will clear all existing data, and replace it with new data on every run. This is often the right approach for staging and intermediate tables, but is rarely the desired behavior for final tables.
+Overwrite will clear all existing data, and replace it with new data on every run. This is often the right approach for staging and intermediate tables, but is rarely what you'd want for final tables.
 
 ### Append
 
-You can use append to add new rows to the table. It's suitable if the table lacks a unique key. Otherwise, use merge to ensure unique keys.
-
-It appends new data on every single run. So choose an Append write mode.
+You can use append to add new rows to the table on each run. It's suitable if the table lacks a unique key. Otherwise, use merge to ensure unique keys.
 
 - Add new rows to the table
 
 ![Append](img/append.png)
 
-We use append when we aren’t concerned with duplicated records.
+Use append when you aren’t concerned with duplicated records. This strategy cannot update, overwrite, or delete existing data, so it's likely to insert duplicate records for many data sources.
 
-However, this strategy cannot update, overwrite, or delete existing data, so it is likely to insert duplicate records for many data sources.
-
-Append will add all new rows to the table. If your target table does not have a unique key, this approach can be fine. However, if you're trying to ensure unique keys, use merge instead.
+Append will add all new rows to the table. If your target table doesn't have a unique key, this approach can be fine. However, if you're trying to ensure unique keys, use merge instead.
 
 ### Merge
 
 You can use merge to integrate new data by updating existing rows and inserting new ones. It ensures data consistency and maintains unique keys in the target table.
-If a unique key is specified, dbt will update old records with values from new records that match on the key column.
+If a unique key is specified, it will update old records with values from new records that match on the key column.
 
-If we want to keep historical events and also don’t want duplicates, then we use the merge write option for SCD 2 scenario.
+If you want to keep historical events and also don’t want duplicates, then use the merge write option for SCD 2 scenario.
 
 There are several merge approaches to choose from in the following sections.
 
