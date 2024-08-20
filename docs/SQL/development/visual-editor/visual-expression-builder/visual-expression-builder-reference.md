@@ -25,9 +25,14 @@ The Visual Expression Builder supports the following expression options:
   - The same applies to a boolean value. For example, if you enter `True`, then it'll be considered a boolean value unless you **Check to read value as string**.
 - **Function**: Includes a list of all of the function category groups and functions that are supported. The list displays each function description, including mandatory arguments.
 - **Conditional**: Allows you to use a conditional `WHEN` clause.
-  - Within `WHEN`, you can select your columns and operator, and within `THEN` you can add a single simple expression.
-  - You can add multiple `CASES` of the `WHEN` clause, but you can only have one `ELSE` statement. `ELSE` also uses a simple expression.
-  - You can also add `IF`, `ELSEIF`, or `FOR` conditions between each of your expressions. `FOR` conditions take a variable name and an expression value. `IF` and `ELSEIF` conditions are considered comparisons.
+  - Within `WHEN`, you use a comparison expression.
+  - Within `THEN` you use a simple expression.
+  - You can add multiple `CASES` of the `WHEN` clause, but you can only have one `ELSE` statement.
+    - `ELSE` also uses a simple expression.
+  - You can also add `IF`, `ELSEIF`, or `FOR` conditions between each of your expressions.
+    - `FOR` conditions take a variable name and an expression value.
+    - `IF` and `ELSEIF` conditions are considered comparisons.
+    - These are available only in expressions tables in Aggregate, Join, and Reformat Gems.
 - **Configuration Variable**: Consists of **Model Variables** and **Project Variables**. You can see and edit your variables from the canvas settings by navigating to **...** > **Configuration**. When you select a Project Variable, you can add a default value if no value is set in the Configuration setting.
 - **Incremental**: Allows you to use for advanced dbt configurations.
 - **Custom Code**: Allows you can write your own custom code to create your own expressions that are not yet supported by the Visual Expression Builder. For example, you can use custom code to use mathematical operations, such as addition and subtraction. As you type, you'll be given suggestions.

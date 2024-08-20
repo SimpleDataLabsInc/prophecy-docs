@@ -34,18 +34,18 @@ This allows you to take advantage of both Visual and Code views when building yo
 
 Using the Visual Expression Builder, you can build an expression using the following modes:
 
-- **Simple Expression**: This mode prompts you to add a target column and an expression.
-- **Comparison**: This mode prompts you to add a left-hand expression, an operator, and a right-hand expression. You also have the options of using conditions, such as `IF` and `ELSEIF` statements.
-- **Grouping**: This mode include multiple comparisons using logical operators `AND` and `OR`.
+- **Simple Expression**: This mode allows you to choose an expression, like a column, function, or Case statement.
+- **Comparison**: This mode allows you to compare two simple expressions. You have the option of using conditions, such as `IF` and `ELSEIF` statements.
+- **Grouping**: This mode allows you to build complex conditions by allowing the combinations of comparision expressions using logical operators `AND` or `OR`.
 
 See which Gems support which modes in the following table:
 
-|           | Simple Expression mode   | Comparison mode         | Grouping mode            |
-| --------- | ------------------------ | ----------------------- | ------------------------ |
-| Aggregate | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg) | ![Tick](./img/cross.svg) |
-| Filter    | ![Tick](./img/cross.svg) | ![Tick](./img/tick.svg) | ![Tick](./img/tick.svg)  |
-| Join      | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg) | ![Tick](./img/tick.svg)  |
-| Reformat  | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg) | ![Tick](./img/cross.svg) |
+|           | Simple Expression mode   | Comparison mode          | Grouping mode            |
+| --------- | ------------------------ | ------------------------ | ------------------------ |
+| Aggregate | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg)  | ![Tick](./img/cross.svg) |
+| Filter    | ![Tick](./img/cross.svg) | ![Tick](./img/cross.svg) | ![Tick](./img/tick.svg)  |
+| Join      | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg)  |
+| Reformat  | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg)  | ![Tick](./img/cross.svg) |
 
 ### Build using the Simple Expression mode
 
@@ -153,7 +153,7 @@ To set up the grouping expressions, follow these steps:
 Here are some additional tips to keep in mind when using the Visual Expression Builder:
 
 - The expression dropdowns support search.
-- Each argument of your function can be another expression since you have the same expression options to choose from.
+- Each argument of your function is another expression since you have the same expression options to choose from.
   - You can add optional arguments to your functions.
 - You can drag and drop your comparison expressions.
 - Just as with conditions, you can also drag and drop your grouping expressions.
