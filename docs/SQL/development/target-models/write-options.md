@@ -40,6 +40,8 @@ You can use overwrite to clear existing data and replace it with new data on eac
 
 Use overwrite if you don’t need to keep any historical data. When it overwrites the table, the schema has to match, unless you also overwrite the schema.
 
+For example, imagine you have a CUSTOMERS table where you're storing phone numbers and addresses. You can use overwrite to replace that data whenever your customers change phone carriers or move, so that you have the most update-to-date data.
+
 Overwrite will clear all existing data, and replace it with new data on every run. This is often the right approach for staging and intermediate tables, but is rarely what you'd want for final tables.
 
 ### Append
@@ -52,7 +54,9 @@ You can use append to add new rows to the table on each run. It's suitable if th
 
 Use append when you aren’t concerned with duplicated records. This strategy cannot update, overwrite, or delete existing data, so it's likely to insert duplicate records for many data sources.
 
-Append will add all new rows to the table. If your target table doesn't have a unique key, this approach can be fine. However, if you're trying to ensure unique keys, use merge instead.
+For example, imagine you have a CUSTOMERS table, and you want to simply add new rows for new or returning customers. Append will add new rows for them without modifying any of the existing data.
+
+Append adds all new rows to the table. If your target table doesn't have a unique key, this approach can be fine. However, if you're trying to ensure unique keys, use merge instead.
 
 ### Merge
 
@@ -106,6 +110,10 @@ Use Specify Columns to customize the columns you want to include in your data qu
 
 ![Specify columns](img/specify-columns.png)
 
+For example, imagine you have an ORDERS table with ORDER_ID. If an ORDER_ID exists for a given order that is coming in, then you want to update the status while leaving all of the other fields untouched.
+
+With ORDER_ID as the unique key, if any new records come in that match an existing ORDER_ID, specify columms performs a merge on the SHIPPING_STATUS.
+
 To use Specify Columns, follow these steps:
 
 1. Under **Merge Condition**, set the **Merge Details**.
@@ -122,40 +130,24 @@ To use Specify Columns, follow these steps:
 
 ### SCD 2
 
-Manage historical data changes with SCD 2. Type 2 Slowly Changing Dimensions in Data warehouse is the most popular dimension that is used in the data warehouse. You can use SCD 2 to manage changes to data over time, essentially tracking changes in dimension records over time, preserving both current and historical data for comprehensive analysis.
+You can use SCD 2 to manage historical data changes. Type 2 Slowly Changing Dimensions in data warehouse is one of the most most popular dimensions that is used. You can use SCD 2 to manage changes to data over time, essentially tracking changes in dimension records over time, preserving both current and historical data for later analysis.
 
 - Preserves all changes in target model
-  - Additional Meta Fields
-- Null is new row
-  - And Status is completed
+- Null is a new row
 
 Instead of natively exposing the complexity of dbt snapshots, Prophecy introduces SCD 2 as a model write option.
 
-You can take advantage of Prophecy's visual interface to configure SCD type 2 writes and retain data history. Open the Target Model Gem, select Table format. Just select a unique key and the relevant timestamp column for your data. Now any data practitioner can capture updated records without deleting the previous records.
-
-To use SCD 2, follow these steps:
-
-1. Under **Merge Details**, set the **Unique Key**. The unique key is used to choose the records to update. If not specified, all rows are appended.
-2. Optional: Toggle **Invalidate deleted rows**. Finds hard deleted records in the source and sets the dbt_valid_to to current time, if no longer exists.
-3. Choose one of the following to configure how to detect record changes.
-   1. Select **Determine new records by checking timestamp column**.
-      ![SCD 2](img/scd-2-timestamp.png)
-      1. Under Updated at, click **Add Column**.
-   2. Select **Determine new records by looking for differences in column values**.
-      ![SCD 2](img/scd-2-column-values.png)
-      1. Click **+** to choose a column in Schema.
-
-Updated at timestamp to verify if the row has actually now been updated with new values.
+You can take advantage of Prophecy's visual interface to configure SCD type 2 writes and retain data history. See the following SCD 2 merge example for how it works.
 
 #### SCD 2 merge example
 
-Slowly Changing Dimensions in Data Warehouse is an important concept that is used to enable the historic aspect of data in an analytical system. As you know, the data warehouse is used to analyze historical data, it is essential to store the different states of data.
+Slowly Changing Dimensions in Data Warehouse is an important concept that is used to enable the historic aspect of data in a data warehouse. As you know, the data warehouse is used to analyze historical data and it's essential to store the different states of data.
 
-In data warehousing, we have fact and dimension tables to store the data. Dimensional tables are used to analyze the measures in the fact tables. These dimension attributes are modified over time and in the data warehouse, we need to maintain the history. In operational systems, we may overwrite the modified attributes as we may not need the historical aspects of data.
+In data warehousing, we have fact and dimension tables to store the data. As these dimension attributes are modified over time and in the data warehouse, we need to maintain the history. In operational systems, we may overwrite the modified attributes as we may not need the historical aspects of data.
 
-Since our primary target in data warehousing is to analyze data with the perspective of history, we may not be able to simply overwrite the data and we need to implement special techniques to maintain the history considering analytical and volume aspects of the data warehouse. This implementation is done using Slowly Changing Dimensions in Data Warehouse.
+Since our primary target in data warehousing is to analyze data with the perspective of history, we may not be able to simply overwrite the data and we need to implement techniques to maintain the history considering analytical and volume aspects of the data warehouse. This implementation is done using Slowly Changing Dimensions in Data Warehouse.
 
-For SCD 2, history is added as a new row.
+For SCD 2, the history is added as a new row.
 
 As we discussed, data warehouse is used for data analysis. If you need to analyze data, you need to accommodate historical aspects of data. Let's see how we can implement SCD Type 2.
 
@@ -177,15 +169,20 @@ Table 2
 | 1        | shipped         | 2024-01-02 |
 | 2        | pending         | 2024-01-02 |
 
-The order is now in the "shipped" state, but we've lost the information about when the order was last in the "pending" state. As you can see though, if you simply update the record with the new value, you will not see the previous records. In order to analyze how long it took for an order to ship, therefore, a new record will be created with a new SHIPPING_STATUS. However, other attributes will remain the same.
+The order is now in the "shipped" state, but we've lost the information about when the order was last in the "pending" state. As you can see though, if you simply update the record with the new value, you will not see the previous records. In order to analyze how long it took for an order to ship, we therefore need to create a new record with a new SHIPPING_STATUS. However, we want other attributes to remain the same.
 
-Once the query is executed, the following results will be observed.
+Once the query is executed, the following results are observed.
 
 Table 3
 
+There are two options you can choose from to configure how to detect record changes:
+
+- Determine new records by checking timestamp column
+- Determine new records by looking for differences in column values
+
 For **Determine new records by checking timestamp column**:
 
-The merge checks the UPDATED_AT column to determine if there is a new record. Here, it sees a new timestamp for ORDER_ID 1, which is 2024-01-02, so it sets the new data to be valid from then. It sets the historical data to be valid to 2024-01-02.
+Use Determine new records by checking timestamp columns to verify if the record has been updated by looking for a different timestamp for your data. The merge checks the UPDATED_AT column to determine if there is a new record. Here, it sees a new timestamp for ORDER_ID 1, which is 2024-01-02, so it sets the new data to be valid from then. It sets the historical data to be valid to 2024-01-02.
 
 | ORDER_ID | SHIPPING_STATUS | UPDATED_AT | valid_from | valid_to   |
 | -------- | --------------- | ---------- | ---------- | ---------- |
@@ -195,7 +192,7 @@ The merge checks the UPDATED_AT column to determine if there is a new record. He
 
 For **Determine new records by looking for differences in column values**:
 
-The merge checks to see if there is a difference between the values of the columns to determine if there is a new record. Here, it sees that the SHIPPING_STATUS of ORDER_ID 1 has changed.
+Use Determine new records by looking for differences in column values to verify if the record has been updated by looking for a different value for your data. The merge checks to see if there is a difference between the values of the columns to determine if there is a new record. Here, it sees that the SHIPPING_STATUS of ORDER_ID 1 has changed from pending to shipped.
 
 | ORDER_ID | SHIPPING_STATUS | valid_from | valid_to   |
 | -------- | --------------- | ---------- | ---------- |
@@ -203,9 +200,23 @@ The merge checks to see if there is a difference between the values of the colum
 | 1        | shipped         | 2024-01-02 | null       |
 | 2        | pending         | 2024-01-02 | null       |
 
-The historical data help you understand how values in a row change ove time.
+The two additional columns valid_from and valid_to represent the validity period of the data. If the data doesn't have a date but instead has `null`, then it means that the data is currently valid.
 
-The two additional columns valid_from and valid_to represent the validity period of the data. null means that the data is currently valid.
+The new historical data helps you understand how values in a row change over time.
+
+#### Use SCD 2
+
+To use SCD 2, follow these steps:
+
+1. Under **Merge Details**, set the **Unique Key**. The unique key is used to choose the records to update. If not specified, all rows are appended.
+2. Optional: Toggle **Invalidate deleted rows**. Finds hard deleted records in the source and sets the dbt_valid_to to current time, if no longer exists.
+3. Choose one of the following to configure how to detect record changes.
+   1. Select **Determine new records by checking timestamp column**.
+      ![SCD 2](img/scd-2-timestamp.png)
+      1. Under Updated at, click **Add Column**.
+   2. Select **Determine new records by looking for differences in column values**.
+      ![SCD 2](img/scd-2-column-values.png)
+      1. Click **+** to choose a column in Schema.
 
 ### Use delete and insert
 
@@ -215,6 +226,8 @@ Use delete and insert to replace outdated data efficiently. It deletes existing 
 - Use delete and insert for Snowflake
 
 ![Use delete and insert](img/use-delete-and-insert.png)
+
+For example, imagine you have an ORDERS table where you want to replace outdated SHIPPING_STATUS data.
 
 To use delete and insert, follow these steps:
 
@@ -238,6 +251,8 @@ Use insert and overwrite to overwrite existing records and insert new ones in a 
 - Use insert and overwrite for Databricks
 
 ![Insert and overwrite](img/insert-and-overwrite.png)
+
+For example, imagine you have a CUSTOMERS table where you want to replace all partitions by CUSTOMER_ID.
 
 To use insert and overwrite, follow these steps:
 
