@@ -103,7 +103,7 @@ Providing `Unique values` while performing pivot operation improves the performa
 
 ### Aggregation without Grouping
 
-![Example usage of Aggregate - Aggregation without Grouping](./img/agg_eg_1.png)
+![Example usage of Aggregate - Aggregation without Grouping](img/agg_eg_1.png)
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
