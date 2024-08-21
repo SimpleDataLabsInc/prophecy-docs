@@ -18,15 +18,14 @@ Subgraph allows you to take multiple different Gems and wrap them under a single
 
 There are three types of Subgraph available by default. The [Basic](./basic-subgraph) Subgraph is a great introduction to using Subgraphs.
 
-| Name                                                         | Description                                                                                                                     |
-| ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
-| [Basic](./basic-subgraph)                                    | Captures one or more Gems within a Pipeline to reuse across other Pipelines and Projects.                                       |
-| [Table Iterator](./table-iterator)                           | Iterates over one or more Gems for each row of the first input DataFrame. Table iterator is available for Python Projects only. |
-| [Novel Type](./subgraph.md#create-your-own-type-of-subgraph) | Apply any custom logic to the group of Gems present inside the Subgraph.                                                        |
+| Name                                                         | Description                                                                               |
+| ------------------------------------------------------------ | ----------------------------------------------------------------------------------------- |
+| [Basic](./basic-subgraph)                                    | Captures one or more Gems within a Pipeline to reuse across other Pipelines and Projects. |
+| [Novel Type](./subgraph.md#create-your-own-type-of-subgraph) | Apply any custom logic to the group of Gems present inside the Subgraph.                  |
 
 ## Create your own type of Subgraph
 
-You can also create your own Subgraph to apply any custom logic on the group of Gems present inside it. For example Try Catch, other kinds of Iterators, etc.
+You can also create your own Subgraph to apply any custom logic on the group of Gems present inside it. For example Try Catch, etc.
 
 To create your own Subgraph type, Go to the project you want to create the Gem in.
 Click on the **(1) Create Gem** button. This will open up the **Create Gem** Form. Provide a **(2) Name** for the Gem, and select the mode as **Control Flow Gem**.
