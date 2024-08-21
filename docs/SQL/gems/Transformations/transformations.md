@@ -20,6 +20,9 @@ Constitutes the set of Gems that help with transforming data
 | **OrderBy**                                     | Arrange the rows in a table or view in alphanumeric order based on the values of the specified data columns. |
 | **Reformat**                                    | Select columns, rename columns, or redefine existing columns from a table or view.                           |
 | **Limit**                                       | Limit the number of rows in a table or view.                                                                 |
+| **Pivot**                                       | ?Limit the number of rows in a table or view.                                                                |
+| **Unpivot**                                     | ?Limit the number of rows in a table or view.                                                                |
+| **SetOperation**                                | Allows you to perform addition or subtraction of rows in a table or view.                                    |
 
 </div>
 

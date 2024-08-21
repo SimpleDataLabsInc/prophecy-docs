@@ -1,5 +1,5 @@
 ---
-title: Joins
+title: Join
 id: data-joins
 description: Join data from multiple tables
 sidebar_position: 3
@@ -48,4 +48,104 @@ Click **(6) Save**.
 
 ## Run
 
-When your Join Gem has the desired inputs, conditions and expressions, **(7) run** interactively to view **(8)[sample data](/docs/SQL/development/visual-editor/interactive-development/data-explorer.md).**
+When your Join Gem has the desired inputs, conditions and expressions, **(7) run** interactively to view **(8) [sample data](/docs/SQL/development/visual-editor/interactive-development/data-explorer.md).**
+
+## Types of Join
+
+Suppose there are 2 tables TableA and TableB with only 2 columns (Ref, Data) and following contents:
+
+### Table A
+
+| Ref | Data     |
+| :-- | :------- |
+| 1   | Data_A11 |
+| 1   | Data_A12 |
+| 1   | Data_A13 |
+| 2   | Data_A21 |
+| 3   | Data_A31 |
+
+### Table B
+
+| Ref | Data     |
+| :-- | :------- |
+| 1   | Data_B11 |
+| 2   | Data_B21 |
+| 2   | Data_B22 |
+| 2   | Data_B23 |
+| 4   | Data_B41 |
+
+### INNER JOIN
+
+Inner Join on column Ref will return columns from both the tables and only the matching records as long as the condition is satisfied:
+
+| Ref | Data     | Ref | Data     |
+| :-- | :------- | :-- | :------- |
+| 1   | Data_A11 | 1   | Data_B11 |
+| 1   | Data_A12 | 1   | Data_B11 |
+| 1   | Data_A13 | 1   | Data_B11 |
+| 2   | Data_A21 | 2   | Data_B21 |
+| 2   | Data_A21 | 2   | Data_B22 |
+| 2   | Data_A21 | 2   | Data_B23 |
+
+### LEFT JOIN
+
+Left Join (or Left Outer join) on column Ref will return columns from both the tables and match records with records from the left table. The result-set will contain null for the rows for which there is no matching row on the right side.
+
+| Ref | Data     | Ref  | Data     |
+| :-- | :------- | :--- | :------- |
+| 1   | Data_A11 | 1    | Data_B11 |
+| 1   | Data_A12 | 1    | Data_B11 |
+| 1   | Data_A13 | 1    | Data_B11 |
+| 2   | Data_A21 | 2    | Data_B21 |
+| 2   | Data_A21 | 2    | Data_B22 |
+| 2   | Data_A21 | 2    | Data_B23 |
+| 3   | Data_A31 | NULL | NULL     |
+
+### RIGHT JOIN
+
+Right Join (or Right Outer join) on column Ref will return columns from both the tables and match records with records from the right table. The result-set will contain null for the rows for which there is no matching row on the left side.
+
+| Ref  | Data     | Ref | Data     |
+| :--- | :------- | :-- | :------- |
+| 1    | Data_A11 | 1   | Data_B11 |
+| 1    | Data_A12 | 1   | Data_B11 |
+| 1    | Data_A13 | 1   | Data_B11 |
+| 2    | Data_A21 | 2   | Data_B21 |
+| 2    | Data_A21 | 2   | Data_B22 |
+| 2    | Data_A21 | 2   | Data_B23 |
+| NULL | NULL     | 4   | Data_B41 |
+
+### FULL OUTER JOIN
+
+Full Outer Join on column Ref will return columns from both the tables and matching records with records from the left table and records from the right table . The result-set will contain NULL values for the rows for which there is no matching.
+
+| Ref  | Data     | Ref  | Data     |
+| :--- | :------- | :--- | :------- |
+| 1    | Data_A11 | 1    | Data_B11 |
+| 1    | Data_A12 | 1    | Data_B11 |
+| 1    | Data_A13 | 1    | Data_B11 |
+| 2    | Data_A21 | 2    | Data_B21 |
+| 2    | Data_A21 | 2    | Data_B22 |
+| 2    | Data_A21 | 2    | Data_B23 |
+| 3    | Data_A31 | NULL | NULL     |
+| NULL | NULL     | 4    | Data_B41 |
+
+### LEFT SEMI JOIN
+
+Left Semi Join on column Ref will return columns only from left table and matching records only from left table.
+
+| Ref | Data     |
+| :-- | :------- |
+| 1   | Data_B11 |
+| 1   | Data_B21 |
+| 1   | Data_B22 |
+| 2   | Data_B23 |
+| 3   | Data_B41 |
+
+### LEFT ANTI JOIN
+
+Left anti join on column Ref will return columns from the left for non-matched records :
+
+| Ref | Data     | Ref  | Data |
+| :-- | :------- | :--- | :--- |
+| 3   | Data_A31 | NULL | NULL |
