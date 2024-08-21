@@ -37,7 +37,7 @@ As you connect the input and output ports to gems Outside the subgraph, you woul
 
 ## Subgraph Configurations
 
-Subgraphs are configurable just like [Pipelines are configurable](../../configuration/configuration.md). For Subgraphs, the configurations can apply in one of two ways: (1) Pipeline level Configurations apply to the Subgraph or (2) Specify Configurations only for the Subgraph
+Subgraphs are configurable just like [Pipelines are configurable](../../../configuration/configuration.md). For Subgraphs, the configurations can apply in one of two ways: (1) Pipeline level Configurations apply to the Subgraph or (2) Specify Configurations only for the Subgraph
 
 ### Pipeline Level Configurations can apply to the Subgraph
 
