@@ -28,7 +28,7 @@ The tabs within the Target Model include the following:
 
 ## dbt advance settings
 
-You can find advance settings are available for defining model write formats and lots of other DBT options. These include all dbt native settings, traditionally accessible from the yaml file.
+You can find advance settings are available for defining model write formats and other DBT options. These include all dbt native settings, traditionally accessible from the yaml file.
 
 If you're familiar with dbt, then you can navigate to and update the advance settings.
 
