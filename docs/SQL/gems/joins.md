@@ -50,9 +50,26 @@ Click **(6) Save**.
 
 When your Join Gem has the desired inputs, conditions and expressions, **(7) run** interactively to view **(8) [sample data](/docs/SQL/development/visual-editor/interactive-development/data-explorer.md).**
 
+## From Spark
+
+## Parameters
+
+| Parameter                        | Description                                                                                                                                                                                                     | Required |
+| :------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------- |
+| DataFrame 1                      | First input DataFrame                                                                                                                                                                                           | True     |
+| DataFrame 2                      | Second input DataFrame                                                                                                                                                                                          | True     |
+| DataFrame N                      | Nth input DataFrame                                                                                                                                                                                             | False    |
+| Join Condition (Conditions tab)  | The join condition specifies how the rows will be combined.                                                                                                                                                     | True     |
+| Type (Conditions tab)            | The type of JOIN `(Inner, Full Outer, Left , Right , Left Semi, Left Anti)`                                                                                                                                     | True     |
+| Where Clause (Conditions tab)    | `Filter` applied after the Join operation                                                                                                                                                                       | False    |
+| Target column (Expressions)      | Output column name                                                                                                                                                                                              | False    |
+| Expression (Expressions)         | Expression to compute target column. If no expression is given, then all columns from all DataFrames would reflect in output.                                                                                   | False    |
+| Hint Type (Advanced)             | The type of Join Hint (`Broadcast`, `Merge`, `Shuffle Hash`, `Shuffle Replicate NL` or `None`). To read more about join hints [click here](https://developpaper.com/analysis-of-five-join-strategies-of-spark/) | False    |
+| Propagate All Columns (Advanced) | If `true`, all columns from that DataFrame would be propagated to output DataFrame. Equivalent to selecting `df.*` for the selected DataFrame.                                                                  | False    |
+
 ## Types of Join
 
-Suppose there are 2 tables TableA and TableB with only 2 columns (Ref, Data) and following contents:
+Suppose there are two tables TableA and TableB with only two columns (Ref, Data) and following contents:
 
 ### Table A
 
@@ -87,7 +104,7 @@ Inner Join on column Ref will return columns from both the tables and only the m
 | 2   | Data_A21 | 2   | Data_B22 |
 | 2   | Data_A21 | 2   | Data_B23 |
 
-### LEFT JOIN
+### LEFT Outer JOIN
 
 Left Join (or Left Outer join) on column Ref will return columns from both the tables and match records with records from the left table. The result-set will contain null for the rows for which there is no matching row on the right side.
 
@@ -101,7 +118,7 @@ Left Join (or Left Outer join) on column Ref will return columns from both the t
 | 2   | Data_A21 | 2    | Data_B23 |
 | 3   | Data_A31 | NULL | NULL     |
 
-### RIGHT JOIN
+### RIGHT Outer JOIN
 
 Right Join (or Right Outer join) on column Ref will return columns from both the tables and match records with records from the right table. The result-set will contain null for the rows for which there is no matching row on the left side.
 
@@ -130,22 +147,34 @@ Full Outer Join on column Ref will return columns from both the tables and match
 | 3    | Data_A31 | NULL | NULL     |
 | NULL | NULL     | 4    | Data_B41 |
 
-### LEFT SEMI JOIN
+### Cross Join
 
-Left Semi Join on column Ref will return columns only from left table and matching records only from left table.
+Returns the Cartesian product of two Datasets.
 
-| Ref | Data     |
-| :-- | :------- |
-| 1   | Data_B11 |
-| 1   | Data_B21 |
-| 1   | Data_B22 |
-| 2   | Data_B23 |
-| 3   | Data_B41 |
+| Ref | Data |
+| :-- | :--- |
+| 1   | a    |
 
-### LEFT ANTI JOIN
+### Natural Inner Join
 
-Left anti join on column Ref will return columns from the left for non-matched records :
+Inner join using common columns.
 
-| Ref | Data     | Ref  | Data |
-| :-- | :------- | :--- | :--- |
-| 3   | Data_A31 | NULL | NULL |
+| Ref | Data |
+| :-- | :--- |
+| 1   | a    |
+
+### Natural Left Outer Join
+
+Left join using common columns.
+
+| Ref | Data |
+| :-- | :--- |
+| 1   | a    |
+
+### Natural Right Outer Join
+
+Right join using common columns.
+
+| Ref | Data |
+| :-- | :--- |
+| 1   | a    |
