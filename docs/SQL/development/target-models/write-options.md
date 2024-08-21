@@ -8,17 +8,18 @@ tags:
   - model
   - write options
   - SQL
+  - scd2
 ---
 
 You can use Write Modes such as Overwrite, Append, and Merge to materialize your data. The Write Options tab within your target model Gem guides you through building different merge approaches, such as historical data changes with SCD 2, which use incremental materialization strategy.
 
-Target models are considered incremental models, which use a materialization strategy to update your data warehouse tables by only transforming and loading new or changed data since the last run. Instead of processing your entire Dataset every time, incremental models append or update only the new rows. This significantly reduces the time and resources required for your data transformations.
+Target models are considered incremental models, which use a materialization strategy to update your data warehouse tables by only loading and transforming new or changed data since the last run. Instead of processing your entire Dataset every time, incremental models append or update only the new rows. This significantly reduces the time and resources required for your data transformations.
 
 ## Write Modes
 
 You can overwrite the target data entirely, append to existing target data, or merge to address slowly changing dimension scenarios.
 
-- To select write modes, you must set the Target Model Type & Format to **Table**.
+- To select write modes, you must set the Target Model [Type & Format](type-and-format.md) to **Table**.
 
 Once you've selected your write mode, you'll see in the Code view that the table is stored as a `"materialized": "incremental",` table, with `"incremental_strategy:` set to whichever write mode and merge approach you choose.
 
@@ -34,13 +35,19 @@ The following table shows which write modes and approaches are available for whi
 You can use overwrite to clear existing data and replace it with new data on each run. It's good for staging and intermediate tables, but not for final tables. It's the default write mode for all types and formats.
 
 - Clear existing data and replace with new data
-- Overwrite entire table
+- Overwrite the entire table
 
 ![Overwrite](img/overwrite.png)
 
 Use overwrite if you don’t need to keep any historical data. When it overwrites the table, the schema has to match, unless you also overwrite the schema.
 
-For example, imagine you have a CUSTOMERS table where you're storing phone numbers and addresses. You can use overwrite to replace that data whenever your customers change phone carriers or move, so that you have the most update-to-date data.
+For example, imagine you have a CUSTOMERS table where you're storing phone numbers and addresses. You can use overwrite to replace that data whenever your customers change phone carriers or move to a new address so that you have the most update-to-date data.
+
+To use Overwrite, follow these steps:
+
+1. For the **Write Mode**, select **Overwrite**.
+2. Click **Save**.
+3. Run the Target Model and check that the write mode returns data properly.
 
 Overwrite will clear all existing data, and replace it with new data on every run. This is often the right approach for staging and intermediate tables, but is rarely what you'd want for final tables.
 
@@ -54,7 +61,13 @@ You can use append to add new rows to the table on each run. It's suitable if th
 
 Use append when you aren’t concerned with duplicated records. This strategy cannot update, overwrite, or delete existing data, so it's likely to insert duplicate records for many data sources.
 
-For example, imagine you have a CUSTOMERS table, and you want to simply add new rows for new or returning customers. Append will add new rows for them without modifying any of the existing data.
+For example, imagine you have a CUSTOMERS table, where you allow your customers to sign up using alternative accounts. In that case, you want to simply add new rows for new or returning customers. Append will add new rows for them without modifying any of the existing data.
+
+To use Append, follow these steps:
+
+1. For the **Write Mode**, select **Append**.
+2. Click **Save**.
+3. Run the Target Model and check that the write mode returns data properly.
 
 Append adds all new rows to the table. If your target table doesn't have a unique key, this approach can be fine. However, if you're trying to ensure unique keys, use merge instead.
 
@@ -82,8 +95,8 @@ Under **Merge Condition**, you must set the **Merge Details**.
 ![Merge condition](img/merge-condition.png)
 
 - Set the **Unique Key**. The unique key is used to choose the records to update. If not specified, all rows are appended.
-- Optional: Toggle **Use Predicate**. Build an expression.
-- Optional: Toggle **Use a condition to filter data or incremental runs**. Build an expression.
+- Optional: Toggle **Use Predicate**. Build an expression to use predicate.
+- Optional: Toggle **Use a condition to filter data or incremental runs**. Build an expression to use a condition to filter data.
 
 Under **Merge Columns**, you must specify the columns to merge by clicking **+**. If you don’t specify then the merge approach will merge all columns.
 
@@ -95,10 +108,10 @@ Under **Advanced**, select an option for **On Schema Change**.
 Incremental models can be configured to include an optional `on_schema_change` parameter to enable additional control when incremental model columns change. These options enable dbt to continue running incremental models in the presence of schema changes, resulting in fewer `--full-refresh` scenarios and saving query costs.
 :::
 
-- **ignore**: Newly added columns will not be written to the model.
+- **ignore**: Newly added columns will not be written to the model. This is the default option.
 - **fail**: Triggers an error message when the source and target schemas diverge.
 - **append_new_columns**: Append new columns to the existing table.
-- **sync_all_columns**: Adds any new columns to the existing table, and removes any columns that are now missing. Includes data type changes. Uses the output of the previous Gem.
+- **sync_all_columns**: Adds any new columns to the existing table, and removes any columns that are now missing. Includes data type changes. This option uses the output of the previous Gem.
 
 ![Advanced](img/advanced.png)
 
@@ -116,17 +129,16 @@ With ORDER_ID as the unique key, if any new records come in that match an existi
 
 To use Specify Columns, follow these steps:
 
-1. Under **Merge Condition**, set the **Merge Details**.
-2. Set the **Unique Key**.
-3. Optional: Toggle **Use Predicate**.
-4. Optional: Toggle **Use a condition to filter data or incremental runs**.
-5. User **Merge Columns**, specify the columns to merge by clicking **+**.
-6. Specify the columns to exclude by clicking **+**.
-7. Under **Advanced**, select an option for **On Schema Change**:
-   1. **ignore**: Newly added columns will not be written to the model.
-   2. **fail**: Triggers an error message when the source and target schemas diverge.
-   3. **append_new_columns**: Append new columns to the existing table.
-   4. **sync_all_columns**: Adds any new columns to the existing table, and removes any columns that are now missing.
+1. For the **Write Mode**, select **Merge**.
+2. For the **Merge Approach**, select **Specify Columns**.
+3. Under **Merge Condition**, set the **Unique Key** to `ORDER_ID`.
+4. Optional: Toggle to **Use Predicate**.
+5. Optional: Toggle to **Use a condition to filter data or incremental runs**.
+6. Under **Merge Columns**, specify the `SHIPPING_STATUS` column to merge by clicking **+**.
+7. Optional: Specify the columns to exclude by clicking **+**.
+8. Under **Advanced**, select an option for **On Schema Change**.
+9. Click **Save**.
+10. Run the Target Model and check that the merge approach returns data properly.
 
 ### SCD 2
 
@@ -208,15 +220,22 @@ The new historical data helps you understand how values in a row change over tim
 
 To use SCD 2, follow these steps:
 
-1. Under **Merge Details**, set the **Unique Key**. The unique key is used to choose the records to update. If not specified, all rows are appended.
-2. Optional: Toggle **Invalidate deleted rows**. Finds hard deleted records in the source and sets the dbt_valid_to to current time, if no longer exists.
-3. Choose one of the following to configure how to detect record changes.
-   1. Select **Determine new records by checking timestamp column**.
+1. For the **Write Mode**, select **Merge**.
+2. For the **Merge Approach**, select **Scd 2**.
+3. Under **Merge Details**, set the **Unique Key** to `ORDER_ID`.
+4. Optional: Toggle on **Invalidate deleted rows**.
+   :::info
+   This option finds hard deleted records in the source and sets the dbt_valid_to to the current time, if it no longer exists.
+   :::
+5. Choose one of the following to configure how to detect record changes.
+   1. If you select **Determine new records by checking timestamp column**:
       ![SCD 2](img/scd-2-timestamp.png)
-      1. Under Updated at, click **Add Column**.
-   2. Select **Determine new records by looking for differences in column values**.
+      1. Under Updated at, click **Add Column** and select `UPDATED_AT`.
+   2. If you select **Determine new records by looking for differences in column values**:
       ![SCD 2](img/scd-2-column-values.png)
-      1. Click **+** to choose a column in Schema.
+      1. Click **+** and select `SHIPPING_STATUS`.
+6. Click **Save**.
+7. Run the Target Model and check that the merge approach returns data properly.
 
 ### Use delete and insert
 
@@ -231,17 +250,15 @@ For example, imagine you have an ORDERS table where you want to replace outdated
 
 To use delete and insert, follow these steps:
 
-1. Under **Merge Condition**, set the **Merge Details**.
-2. Set the **Unique Key**.
-3. Optional: Toggle **Use Predicate**.
-4. Optional: Toggle **Use a condition to filter data or incremental runs**.
-5. User **Merge Columns**, specify the columns to merge by clicking **+**. There's no need to set the merge columns for incremental strategy delete and insert.
-6. Specify the columns to exclude by clicking **+**.
-7. Under **Advanced**, select an option for **On Schema Change**:
-   1. **ignore**: Newly added columns will not be written to the model.
-   2. **fail**: Triggers an error message when the source and target schemas diverge.
-   3. **append_new_columns**: Append new columns to the existing table.
-   4. **sync_all_columns**: Adds any new columns to the existing table, and removes any columns that are now missing.
+1. For the **Write Mode**, select **Merge**.
+2. For the **Merge Approach**, select **Use delete and insert**.
+3. Under **Merge Condition**, set the **Unique Key** to `SHIPPING_STATUS`.
+4. Optional: Toggle to **Use Predicate**.
+5. Optional: Toggle to **Use a condition to filter data or incremental runs**.
+6. Under **Merge Columns**, there's no need to set the merge columns for incremental strategy delete and insert.
+7. Under **Advanced**, select an option for **On Schema Change**.
+8. Click **Save**.
+9. Run the Target Model and check that the merge approach returns data properly.
 
 ### Insert and overwrite
 
@@ -256,13 +273,14 @@ For example, imagine you have a CUSTOMERS table where you want to replace all pa
 
 To use insert and overwrite, follow these steps:
 
-1. Under **Merge Condition**, set the **Merge Details**.
-2. Set **Partition By**. Select columns in Schema. dbt will run an atomic insert overwrite statement that dynamically replaces all partitions included in your query.
+1. For the **Write Mode**, select **Merge**.
+2. For the **Merge Approach**, select **Insert and overwrite**.
+3. Under **Merge Condition**, set **Partition By** by selecting `customer_id`.
+   :::info
+   dbt will run an atomic insert overwrite statement that dynamically replaces all partitions included in your query.
    If no partition_by is specified, then the insert_overwrite strategy will atomically replace all contents of the table, overriding all existing data with only the new records. The column schema of the table remains the same.
-3. User **Merge Columns**, specify the columns to merge by clicking **+**. There's no need to set the merge columns for incremental strategy delete and insert.
-4. Specify the columns to exclude by clicking **+**.
-5. Under **Advanced**, select an option for **On Schema Change**:
-   1. **ignore**: Newly added columns will not be written to the model.
-   2. **fail**: Triggers an error message when the source and target schemas diverge.
-   3. **append_new_columns**: Append new columns to the existing table.
-   4. **sync_all_columns**: Adds any new columns to the existing table, and removes any columns that are now missing.
+   :::
+4. Under **Merge Columns**, there's no need to set the merge columns for incremental strategy delete and insert.
+5. Under **Advanced**, select an option for **On Schema Change**.
+6. Click **Save**.
+7. Run the Target Model and check that the merge approach returns data properly.
