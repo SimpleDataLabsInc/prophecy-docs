@@ -78,7 +78,7 @@ To learn more about the Aggregate Gem UI, see [this page](/docs/concepts/project
 
 Here we used the Aggregate Gem from the HelloWorld_SQL Project as a learning guide. What types of Aggregations will you build? [Reach out](/docs/getting-started/getting-help.md) with questions and to let us know how you're using Prophecy.
 
-## From Spark
+## Content from here and below is from Spark
 
 Allows you to group the data and apply aggregation methods and pivot operation.
 
