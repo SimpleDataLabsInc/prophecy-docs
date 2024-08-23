@@ -111,6 +111,17 @@ The following are estimated recommended cluster sizes depending on the number of
 | Disk space (with backups) | 360 GB   | 720 GB   | 1440 GB   |
 
 :::info
-Please, note that the recommended resource may vary based on the intensity of the usage of each developer. The numbers
+The recommended resource may vary based on the intensity of the usage of each developer. The numbers
 presented above are based on the average recorded usage of Prophecy customers.
 :::
+
+## What's next
+
+To continue with your private SAAS deployment, see the following pages:
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```

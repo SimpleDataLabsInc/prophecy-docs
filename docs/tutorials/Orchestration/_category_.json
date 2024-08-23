@@ -1,9 +1,6 @@
 {
-  "label": "Orchestration",
+  "label": "Orchestration tutorials",
   "position": 2,
-  "link": {
-    "type": "generated-index"
-  },
   "collapsible": true,
   "collapsed": true
 }

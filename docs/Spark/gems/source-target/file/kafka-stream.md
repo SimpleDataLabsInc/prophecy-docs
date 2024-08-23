@@ -104,13 +104,6 @@ def KafkaSource(spark: SparkSession) -> DataFrame:
 ```
 
 </TabItem>
-<TabItem value="scala" label="Scala">
-
-```scala
-Coming Soon
-```
-
-</TabItem>
 </Tabs>
 
 ````
@@ -163,14 +156,6 @@ def KafkaTarget(spark: SparkSession, in0: DataFrame):
           }
         )\
         .save()
-
-```
-
-</TabItem>
-<TabItem value="scala" label="Scala">
-
-```scala
-Coming Soon
 
 ```
 
@@ -244,14 +229,6 @@ def UpdateOffsets(spark: SparkSession, in0: DataFrame):
                 .whenMatchedUpdateAll()\
                 .whenNotMatchedInsertAll()\
                 .execute()
-
-```
-
-</TabItem>
-<TabItem value="scala" label="Scala">
-
-```scala
-Coming Soon
 
 ```
 

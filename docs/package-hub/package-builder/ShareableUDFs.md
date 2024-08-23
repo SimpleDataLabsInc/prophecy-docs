@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 4
 title: Build Shareable UDFs
 id: sharable-udfs
 description: Sharable UDFs within the project and to other projects
