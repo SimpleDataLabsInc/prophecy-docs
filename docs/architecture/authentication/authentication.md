@@ -13,7 +13,7 @@ provider. For authorization, when you access the execution infrastructure (that 
 other cloud resources), your identity is passed through by Prophecy, ensuring that your existing authorization mechanisms
 are respected.
 
-We currently support
+We currently support the following:
 
 - [Active Directory (LDAP)](./active-directory.md)
 - [Azure Active Directory](./azure-ad.md)
@@ -21,3 +21,14 @@ We currently support
 - [Okta (SAML)](./saml-okta.md)
 
 If you require some other authentication mechanism, please reach out to our team.
+
+## What's next
+
+To learn more about with authentication with Prophecy, see the following pages:
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```

@@ -73,6 +73,8 @@ Visual development for Airflow in Prophecy brings numerous advantages to data en
 
 - **Scalability**: As your data processing needs grow, Prophecy's Airflow interface can scale with your organization, handling more extensive and complex Jobs.
 
+## What's next
+
 Let's delve deeper into the specifics of utilizing Airflow in Prophecy.
 
 ```mdx-code-block

@@ -17,3 +17,14 @@ Create a Project with any combination of building blocks below. For example, the
 - **[User Defined Functions (UDFs)](/docs/package-hub/package-builder/ShareableUDFs.md)** are custom functions that can be re-used across projects by calling the function inside the Gem expressions.
 - **Jobs** in Packages can be used across projects as a configured instance.
 - **[Datasets](/docs/package-hub/package-builder/ShareableDatasets.md)** in Prophecy are pointers to actual data in your data storage solution.
+
+## What's next
+
+To continue using the Package Builder, see the following pages:
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```

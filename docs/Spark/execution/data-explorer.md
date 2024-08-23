@@ -21,7 +21,7 @@ The Data Explorer feature empowers users to seamlessly explore and analyze their
 Users can apply filters and sort rows based on any column, enhancing visibility and improving data analysis.
 
 :::info
-Please note that after applying or modifying any filter or sort criteria, you need to click the **Run** button to update the displayed data.
+After applying or modifying any filter or sort criteria, you need to click the **Run** button to update the displayed data.
 :::
 
 ### Reset Applied Filters and Sort

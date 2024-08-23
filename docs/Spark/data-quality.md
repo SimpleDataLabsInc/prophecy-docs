@@ -32,7 +32,7 @@ Once expectations are added, users can enable them and release their project to 
 
 :::info
 
-Please note, Expectations should be enabled and Project needs to be released via Prophecy, to be able to Run the Expecations
+Expectations should be enabled and Project needs to be released via Prophecy, to be able to Run the Expecations
 
 :::
 

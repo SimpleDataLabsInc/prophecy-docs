@@ -11,7 +11,7 @@ tags:
 
 :::info Built on
 Built on [MongoDB Spark Connector](https://www.mongodb.com/docs/spark-connector/v10.0/#mongodb-connector-for-spark) v10.0. <br/>
-Please add `mongodb-spark-connector` jar as dependency [for more](https://docs.prophecy.io/Spark/extensibility/dependencies/#add-dependency).
+Add `mongodb-spark-connector` jar as dependency [for more](https://docs.prophecy.io/Spark/extensibility/dependencies/#add-dependency).
 :::
 Allows read and write operations on `MongoDB`.
 

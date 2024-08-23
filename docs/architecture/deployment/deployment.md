@@ -123,3 +123,14 @@ The Prophecy team employs top-notch industry practices to safeguard the security
 - **On-Premise** - Prophecy complies with your security requirements on-premise; [reach out](https://www.prophecy.io/request-a-demo) to start the discussion.
 
 Read more details on Prophecy’s security and compliance posture at our Security Portal [here.](https://security.prophecy.io/)
+
+## What's next
+
+To continue with your Prophecy deployment, see the following pages:
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```
