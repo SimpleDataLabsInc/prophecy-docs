@@ -40,3 +40,7 @@ Furthermore, you have the option to Release this project, enabling its use as a 
 Read [here](/docs/package-hub/package-hub.md) for more details on project as a dependency.
 
 ![Use_subgraph](img/Use_new_subgraph.png)
+
+## What's next
+
+To create a basic subgraph, see [Basic Subgraph](basic-subgraph.md).
