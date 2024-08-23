@@ -79,8 +79,9 @@ The following table maps all of the dbt properties for Databricks and Snowflake 
 
 To continue configuring your Target Model, see the following pages:
 
-- [Type & Format](type-and-format.md)
-- [Location](location.md)
-- [Schema](schema.md)
-- [SQL Query](sql-query.md)
-- [Write Options](write-options.md)
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```
