@@ -33,3 +33,14 @@ To learn more about the UI for Transformation Gems, see [this page](/docs/concep
 ## Run
 
 When your Transformation Gem has the desired condition and expression, run interactively to view [sample data](/docs/SQL/development/visual-editor/interactive-development/data-explorer.md).
+
+## What's next
+
+To learn more about SQL transform Gems, see the following pages:
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```
