@@ -45,3 +45,14 @@ Prophecy ensures a separate scope for each Prophecy Managed Fabric, preventing a
 :::
 
 Read [here](./databricks-secrets.md#managing-secrets-for-prophecy-managed-databricks) for managing secrets in Prophecy Managed Databricks Fabric.
+
+## What's next
+
+To learn more about secret management for Spark Fabrics, see the following pages:
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```

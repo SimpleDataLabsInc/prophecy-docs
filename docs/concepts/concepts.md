@@ -118,3 +118,14 @@ Users get access by being added to a team.
 - **Personal Projects** Users can put personal projects in their _personal team_ and not share it with others.
 
 ![TeamsUsers](img/team_page.png)
+
+## What's next
+
+To learn more about Prophecy concepts, see the following pages:
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```

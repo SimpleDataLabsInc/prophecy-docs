@@ -11,7 +11,7 @@ tags:
 
 :::info Built on
 Built on [MongoDB Spark Connector](https://www.mongodb.com/docs/spark-connector/v10.0/#mongodb-connector-for-spark) v10.0. <br/>
-Please add `mongodb-spark-connector` jar as dependency [for more](https://docs.prophecy.io/Spark/extensibility/dependencies/#add-dependency).
+Add `mongodb-spark-connector` jar as dependency [for more](https://docs.prophecy.io/Spark/extensibility/dependencies/#add-dependency).
 :::
 Allows read and write operations on `MongoDB`.
 
@@ -58,12 +58,6 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs defaultValue="scala">
-<TabItem value="py" label="Python">
-
-```py
-Coming Soon!!!
-```
-</TabItem>
 <TabItem value="scala" label="Scala">
 
 ```scala
@@ -136,12 +130,6 @@ We will be writing back Airbnb public `listingReviews` data into a collection in
 ````mdx-code-block
 
 <Tabs defaultValue="scala">
-<TabItem value="py" label="Python">
-
-```py
-Coming Soon!!!
-```
-</TabItem>
 <TabItem value="scala" label="Scala">
 
 ```scala

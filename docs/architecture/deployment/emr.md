@@ -22,14 +22,14 @@ Livy does not work with Python version 3.8 and above.
 
 Navigate to Amazon EMR service and create a cluster. Under **Application bundle** select **Custom**.
 
-Choose appropriate applications to include in your installation. At a minimum, please make sure sure **Livy** and **Spark** are included in the install.
+Choose appropriate applications to include in your installation. At a minimum, make sure sure **Livy** and **Spark** are included in the install.
 
 <img src={require('./img/livy.png').default} alt="EMR create cluster" width="75%" />
 
 ### Configure network connectivity between Livy and Prophecy
 
-To configure the necessary network settings for seamless integration, specific modifications to the security groups of your EMR cluster are required. Please follow the instructions outlined below:
-If you intend to utilize Prophecy as a SaaS (Software as a Service) solution, please note that the Prophecy public IP is `3.133.35.237`. Ensure that the Core security group's outbound rule allows connections to this IP address.
+To configure the necessary network settings for seamless integration, specific modifications to the security groups of your EMR cluster are required. Follow the instructions outlined below:
+If you intend to utilize Prophecy as a SaaS (Software as a Service) solution, note that the Prophecy public IP is `3.133.35.237`. Ensure that the Core security group's outbound rule allows connections to this IP address.
 
 1. Modify the **Primary Node** security group:
    - Allow incoming connections to port `8998` from the Prophecy IP.

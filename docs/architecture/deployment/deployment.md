@@ -110,11 +110,6 @@ Supported Git providers:
 
 Security-conscious enterprises that use Git Providers within private networks behind firewalls have to add the Prophecy Control Plane IP address (`3.133.35.237`) to the private network allow-list or to the Git provider [allow-list](https://github.blog/2019-12-12-ip-allow-lists-now-in-public-beta/).
 
-:::info
-**Coming Soon**
-Users will be able to connect to common Git providers, by leveraging their respective OAuth functionalities. E.g. [GitHub OAuth](https://docs.github.com/en/developers/apps/building-oauth-apps/authorizing-oauth-apps) or Azure AD.
-:::
-
 ## Security and Privacy Practices
 
 The Prophecy team employs top-notch industry practices to safeguard the security of their application and maintain the privacy of customer data. Below are just a few components of our comprehensive security strategy and system structure:
@@ -128,3 +123,14 @@ The Prophecy team employs top-notch industry practices to safeguard the security
 - **On-Premise** - Prophecy complies with your security requirements on-premise; [reach out](https://www.prophecy.io/request-a-demo) to start the discussion.
 
 Read more details on Prophecy’s security and compliance posture at our Security Portal [here.](https://security.prophecy.io/)
+
+## What's next
+
+To continue with your Prophecy deployment, see the following pages:
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```
