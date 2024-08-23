@@ -214,7 +214,7 @@ Click on the **(2) Release** button in the top right corner or **(3) Commit** bu
 
 The process of deploying code is composed of 4 steps:
 
-1. **Commit:** We start by creating a named version of our code and uploading it to our development branch on the secure Git repository. On the left hand side you can see the **Current branch** and the associated history of commits and on the right side, there’s a list of **Entities changed** (models, Jobs, etc) and their status. If everything looks good, type in the **(1) Commit message** which should clearly describe, in few sentences, all the changes that we’ve introduced and click **(2) Commit**.
+1. **Commit:** We start by creating a named version of our code and uploading it to our development branch on the secure Git repository. On the left-hand side you can see the **Current branch** and the associated history of commits and on the right side, there’s a list of **Entities changed** (models, Jobs, etc) and their status. If everything looks good, type in the **(1) Commit message** which should clearly describe, in few sentences, all the changes that we’ve introduced and click **(2) Commit**.
    ![commit_screen](img/3.21_commit_screen.png)
 
 2. **Pull:** Before your changes can be safely merged into the **main** branch, we have to make sure that we’re up-to-date with it. If your colleagues introduced any code on **main** we have to **Pull** it first. For this, simply click on **(1) Continue** and then **(2) Pull**.
