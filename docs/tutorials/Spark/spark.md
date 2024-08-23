@@ -1,11 +1,11 @@
 ---
-title: Tutorials
-id: tutorials
-description: Tutorials and approaches to solving certain common Data Engineering problems within Prophecy
+title: Spark tutorials
+id: spark-tutorials
+description: Spark tutorials and approaches to solving certain common Data Engineering problems within Prophecy
 tags: []
 ---
 
-Tutorials include the following topics:
+Spark tutorials include the following topic:
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
