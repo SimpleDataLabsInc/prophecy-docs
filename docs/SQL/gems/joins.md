@@ -14,7 +14,7 @@ Upon opening the join Gem, you can see a pop-up which provides several helpful f
 
 ![Join definition](img/JoinCondition.png)
 
-For transparency, you can always see the **(1) Input schema** on the left hand-side, **(2) Errors** in the footer, and have the ability to **(3) Run** the Gem on the top right.
+For transparency, you can always see the **(1) Input schema** on the left-hand side, **(2) Errors** in the footer, and have the ability to **(3) Run** the Gem on the top right.
 
 To fill-in our **(5) Join condition** within the **(4) Conditions** section, start typing the input table name and key. For example, if we have two input tables, `nation` and `customer`, type `nation.nationkey = customers.nationkey`. This condition finds a nation based on the nationkey feild for every single customer.
 
