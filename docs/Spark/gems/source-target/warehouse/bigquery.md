@@ -106,13 +106,6 @@ def read_bigquery(spark: SparkSession) -> DataFrame:
 ```
 
 </TabItem>
-<TabItem value="scala" label="Scala">
-
-```scala
-Coming soon!!!
-```
-
-</TabItem>
 </Tabs>
 
 
@@ -182,13 +175,6 @@ def write_bigquery(spark: SparkSession, in0: DataFrame):
         .format("bigquery") \
         .option("temporaryGcsBucket","some-bucket") \
         .save("dataset.table")
-```
-
-</TabItem>
-<TabItem value="scala" label="Scala">
-
-```scala
-Coming Soon!!!
 ```
 
 </TabItem>

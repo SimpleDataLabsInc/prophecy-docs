@@ -27,7 +27,7 @@ Every user will have a `Prophecy Managed` Git provider already created in their 
 
 If you are a member of a GitHub Organization, it's important to note that you may need to [authorize our application](https://docs.github.com/en/apps/oauth-apps/using-oauth-apps/authorizing-oauth-apps) to access your organization. This authorization step is necessary to ensure that our application can authenticate the APIs required to access the repositories.
 
-To grant authorization, please follow the steps below:
+To grant authorization, follow the steps below:
 
 1. Go to the [Authorized OAuth Apps settings page](https://github.com/settings/applications) on GitHub.
 2. Look for our application named Prophecy in the list of authorized apps and click on the entry to view its details.

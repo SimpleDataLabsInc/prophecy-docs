@@ -24,7 +24,7 @@ Click the **(1) Create Entity** button, and choose **(2) Create Job** option.
 
 In the side drawer that opens, you would provide the Basic Info of the Job. Start by selecting the **(1) Project** in which you want to create the Job. You can pick the existing Databricks Spark or SQL project here where you have created Pipelines/Models.
 Then pick your development **(2) Branch**. Here you can pick an existing branch for development, or create a new one. Provide a **(3) Name** and pick **Airflow** in the **(4) Scheduler**. Select the **(5) Fabric** we created in Step 1.
-Pick a **(6) Schedule** with which you want to schedule the Job. Please note, you can modify this again after testing before releasing your Job.
+Pick a **(6) Schedule** with which you want to schedule the Job. Note, you can modify this again after testing before releasing your Job.
 Add a **(7) Description**, about the Job you are creating. Once done, click **(8) Create New**.
 
 ![Create_Job](img/Create_Job.png)
@@ -45,3 +45,14 @@ This is where you would be adding Gems which represent Tasks in Airflow.
 ### Config
 
 ### Functions
+
+## What's next
+
+To continue with Airflow development, see the following pages:
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```

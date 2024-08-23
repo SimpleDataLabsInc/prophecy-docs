@@ -75,7 +75,7 @@ You can read more about Fabrics [here.](/docs/concepts/fabrics/fabrics.md)
 
 ![Create Fabric](img/2-4-create-fabric.png)
 
-Setting up a Fabric is very straightforward now that we have copied the JDBC URL and Personal Access Token from the previous steps. Click the **(1) Create Entity** button, and choose **(2) Create Fabric** option. Please note, until you setup a Fabric, creation of other entities is going to be disabled. The Fabric creation is composed of two steps: Basic Info and Providers setup. On the Basic Info screen, enter a **(1) Fabric Name**, **(2) Fabric Description,** and choose the **(3) Team** that’s going to own the Fabric.
+Setting up a Fabric is very straightforward now that we have copied the JDBC URL and Personal Access Token from the previous steps. Click the **(1) Create Entity** button, and choose **(2) Create Fabric** option. Note, until you setup a Fabric, creation of other entities is going to be disabled. The Fabric creation is composed of two steps: Basic Info and Providers setup. On the Basic Info screen, enter a **(1) Fabric Name**, **(2) Fabric Description,** and choose the **(3) Team** that’s going to own the Fabric.
 
 Once ready, click **(4) Continue.**
 
@@ -87,7 +87,7 @@ Enter the **(3) JDBC Url** and **(4) Personal Access Token** gathered from the p
 
 Click **(7) Complete** when finished. Prophecy checks the credentials and details for network and catalog accesses. If either fails, the Fabric won’t be created and you will receive an Exception error. Optionally, enhance metadata viewing by creating a [Metadata Connection](/docs/metadata/metadata-connections.md), recommended for users with hundreds or thousands of tables housed in their data provider(s).
 
-Please note, Fabrics are owned by Teams. Every Member present within the Team will be able to access the Fabric, however, each individual has to provide their own Personal Access Token.
+Note, Fabrics are owned by Teams. Every Member present within the Team will be able to access the Fabric, however, each individual has to provide their own Personal Access Token.
 
 ## 3. Create a new Project
 
@@ -138,7 +138,7 @@ If you have an existing GitHub account this process is very simple, thanks to Pr
 
 Each Git connection in Prophecy starts with an **(1) Alias** that’s going to be used to allow you to identify the right Git account. In most cases, this can be left as default. With that set click **(2) Login** with GitHub which will redirect you to a GitHub login page (if you’re not yet logged in). Enter your details and **(3) Sign in** or create a new account. From there, you’ll be asked to approve Prophecy as a valid application.
 
-Please note, that Prophecy will not store any information, beyond basic user details (like email) and repository content (only queried at your explicit permission for each repository).
+Note, that Prophecy will not store any information, beyond basic user details (like email) and repository content (only queried at your explicit permission for each repository).
 
 If you’d like to connect Prophecy to one of your GitHub organizations, make sure those are approved in the Organization access section.
 
@@ -280,7 +280,7 @@ Clicking on any of the Gems shows these options.
 
 **(2) Gem Edit** - to modify the Gem logic click on the **Open >** button.
 
-**(3) More** - to see more Gem configuration options, like editing comments, changing phases or deleting the Gem, click on the ... button. Please note, that to delete the selected Gem you can also press **delete / backspace** on your keyboard.
+**(3) More** - to see more Gem configuration options, like editing comments, changing phases or deleting the Gem, click on the ... button. Note, that to delete the selected Gem you can also press **delete / backspace** on your keyboard.
 
 **(4) Run** - runs the model upto the selected Gem. We will learn more about this in the section 7.3 Interactively test.
 

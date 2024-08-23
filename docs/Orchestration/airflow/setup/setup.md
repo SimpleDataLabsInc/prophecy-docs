@@ -21,3 +21,14 @@ Prophecy provides you with three different types of Fabrics depending upon where
 ## Create an Airflow Job
 
 Once the Airflow Fabric is setup, Airflow Job scheduling is done with an easy-to-use interface. Follow this guide to [Create an Airflow Job](/docs/getting-started/getting-started-with-low-code-airflow.md#2-create-an-airflow-job).
+
+## What's next
+
+To continue with Airflow setup, see the following pages:
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```

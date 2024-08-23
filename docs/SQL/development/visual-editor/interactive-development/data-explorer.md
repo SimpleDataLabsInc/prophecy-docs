@@ -27,7 +27,7 @@ The interim reveals the sample data after the Join in this example. This is a gr
 Users can now apply filters and sort rows based on any column, providing enhanced visibility and improved data analysis.
 
 :::info
-Please note that after applying or modifying any filter or sort criteria, you need to click the Run button to update the displayed data.
+After applying or modifying any filter or sort criteria, you need to click the Run button to update the displayed data.
 :::
 
 ### Column Visibility Filtering

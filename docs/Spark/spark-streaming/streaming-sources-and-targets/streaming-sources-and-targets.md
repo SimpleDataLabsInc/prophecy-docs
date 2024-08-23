@@ -1,11 +1,11 @@
 ---
-title: Tutorials
-id: tutorials
-description: Tutorials and approaches to solving certain common Data Engineering problems within Prophecy
+title: Streaming Sources and Targets
+id: streaming-sources-and-targets
+description: Spark streaming sources and targets
 tags: []
 ---
 
-Tutorials include the following topics:
+Spark streaming sources and targets include the following topics:
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

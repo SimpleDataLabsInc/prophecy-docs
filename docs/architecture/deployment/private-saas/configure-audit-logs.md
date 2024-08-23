@@ -44,7 +44,7 @@ To configure object store settings in the Prophecy UI, follow these steps:
 
 ### JSON format
 
-Below are JSON configurations within the Prophecy UI that need to be enabled to support this functionality. You will have to configure only the options which you require. Please make sure to maintain a JSON format mentioned below while configuring the different options.
+Below are JSON configurations within the Prophecy UI that need to be enabled to support this functionality. You will have to configure only the options which you require. Make sure to maintain a JSON format mentioned below while configuring the different options.
 
 ```
 {
@@ -57,12 +57,12 @@ Below are JSON configurations within the Prophecy UI that need to be enabled to 
 
 ### Supported Configuration Variables
 
-| Configuration variable name | Description                                                                                                                                                                                                                                                                                                           | Default value   |
-| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
-| `disableUeventsGC`          | Garbage collection of user events from local DB is enabled by default once the events have been pushed to upstream object store. Set this to `true` to disable this garbage collection to retain this data locally as well. Please note that setting this to `true` could potentially result in a very large DB size. | `false`         |
-| `enableUserEvents`          | Set to `true` to enable user event audit logs                                                                                                                                                                                                                                                                         | `false`         |
-| `ueventsSchedule`           | How frequently to push user events to object store. Defaults to every one hour. Uses [6-digit CRON](https://pkg.go.dev/github.com/robfig/cron#hdr-CRON_Expression_Format)                                                                                                                                             | `0 0 */1 * * *` |
-| `ueventsGCSchedule`         | How frequently to purge old user events from the internal database. Defaults to daily 1 am. Uses [6-digit CRON](https://pkg.go.dev/github.com/robfig/cron#hdr-CRON_Expression_Format)                                                                                                                                 | `0 0 1 * * *`   |
+| Configuration variable name | Description                                                                                                                                                                                                                                                                                                    | Default value   |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
+| `disableUeventsGC`          | Garbage collection of user events from local DB is enabled by default once the events have been pushed to upstream object store. Set this to `true` to disable this garbage collection to retain this data locally as well. Note that setting this to `true` could potentially result in a very large DB size. | `false`         |
+| `enableUserEvents`          | Set to `true` to enable user event audit logs                                                                                                                                                                                                                                                                  | `false`         |
+| `ueventsSchedule`           | How frequently to push user events to object store. Defaults to every one hour. Uses [6-digit CRON](https://pkg.go.dev/github.com/robfig/cron#hdr-CRON_Expression_Format)                                                                                                                                      | `0 0 */1 * * *` |
+| `ueventsGCSchedule`         | How frequently to purge old user events from the internal database. Defaults to daily 1 am. Uses [6-digit CRON](https://pkg.go.dev/github.com/robfig/cron#hdr-CRON_Expression_Format)                                                                                                                          | `0 0 1 * * *`   |
 
 ### To enable user events audit logs
 

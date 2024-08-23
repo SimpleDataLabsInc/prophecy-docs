@@ -1,9 +1,6 @@
 {
-  "label": "Video Tutorials",
+  "label": "Video tutorials",
   "position": 3,
-  "link": {
-    "type": "generated-index"
-  },
   "collapsible": true,
   "collapsed": true
 }

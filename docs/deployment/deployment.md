@@ -19,7 +19,7 @@ Lets see how you can do it via the Prophecy UI below.
 As part of the release process, we start by creating a [Git Tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging) with a specified version. This tag is then pushed to your configured Git repository. Following this, the Pipelines, Gems, and Jobs in the Project are built and deployed to the respective environments.
 Here's a breakdown of what deploying means for each component:
 
-1. **Gems**: With Prophecy 3.2, you can create [Custom Gems](/docs/package-hub/package-builder/gem-builder.md) and use in your Pipelines. During the release, these gems are built and uploaded to an internal Artifactory. They aren't directly copied to your environments, as they are used in generating code for the Pipelines, not during Job/Pipeline execution. Please note, the code for Gems do get committed to your Git repo as part of the Project.
+1. **Gems**: With Prophecy 3.2, you can create [Custom Gems](/docs/package-hub/package-builder/gem-builder.md) and use in your Pipelines. During the release, these gems are built and uploaded to an internal Artifactory. They aren't directly copied to your environments, as they are used in generating code for the Pipelines, not during Job/Pipeline execution. Note, the code for Gems do get committed to your Git repo as part of the Project.
 
 2. **Pipelines**: Each Pipeline in the project is compiled and built into an artifact (Wheel file for Python and Jar file for Scala). These artifacts are then uploaded to your environment as part of the release process.
 
@@ -129,3 +129,14 @@ In the **(4) Current Version** tab, you can view the current state of all deploy
 ### Deployment History
 
 In **(6) Deployment History** tab, you can view the history of all past deployments, along with the time that it was deployed and related logs.
+
+## What's next
+
+To continue with your Prophecy deployment, see the following pages:
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```
