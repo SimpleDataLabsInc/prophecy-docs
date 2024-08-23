@@ -19,3 +19,14 @@ Gem is a unit of functionality ranging from reading, transforming, writing and v
 | ![Subgraph](img/Subgraph.png)                       | [**Subgraph**](/Spark/gems/subgraph/)                 | A Gem that can contain many other Gems within it.                                                           |
 
 </div>
+
+## What's next
+
+To learn more Spark Gems, see the following pages:
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```

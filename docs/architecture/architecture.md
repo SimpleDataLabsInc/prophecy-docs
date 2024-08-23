@@ -14,6 +14,10 @@ built to be multi-tenant.
 | [Private SaaS (Customer VPC)](./deployment#private-saas-customer-vpc) | Enterprises in the Cloud                                        |
 | [On-Premise](./deployment#on-premise-deployment)                      | Large Enterprises in the middle of cloud migration (rare cases) |
 
+## What's next
+
+To learn more about Prophecy's architecture, see the following pages:
+
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';

@@ -25,7 +25,7 @@ groups.
 8. `Audience URI (SP Entity ID)`: Give a name which will be used as entity issuer ID. For example: _prophecyokta_
 9. `Name ID format`: Choose `EmailAddress` from the drop dow
 10. Set `Application username` to `Email`
-11. Attribute Statements: Please add two attributes, `name` and `email`, with the same details. For example:
+11. Attribute Statements: Add two attributes, `name` and `email`, with the same details. For example:
 
 ![Okta config example](./img/okta_example.png)
 
@@ -52,7 +52,7 @@ In the `Sign On` tab itself under `SAML Signing Certificates`, click on `View Id
 #### Entity and SSO Issuer
 
 - Go to the `General` tab-> `SAML Settings` section -> `Edit`
-- Click `Next`, go to the `Configure Saml` section, go to the bottom and click on `Preview the SAML assertion` button. It will open another tab in browser. Please copy the highlighted info from here to use as `Entity Issuer` and `SSO Issuer` in Prophecy IDE.
+- Click `Next`, go to the `Configure Saml` section, go to the bottom and click on `Preview the SAML assertion` button. It will open another tab in browser. Copy the highlighted info from here to use as `Entity Issuer` and `SSO Issuer` in Prophecy IDE.
 
 ![SAML Assertion](./img/okta_xml.png)
 

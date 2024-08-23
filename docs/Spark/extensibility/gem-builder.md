@@ -325,11 +325,6 @@ Depending on what kind of Gem is being created, either a `Dialog` or a `DatasetD
 Column Selector: This is a special property that you should add if you want to select the columns from UI and then highlight the used columns using the `onChange` function.
 It is recommended to try out this dialogue code in Gem builder UI and see how each of these elements looks in UI.
 
-:::info
-**Coming Soon**
-We will soon launch a playground to try out the different UI components and test how the UI renders for each of them.
-:::
-
 ### Validation
 
 The `validate` method performs validation checks so that in the case where there's any issue with any inputs provided for the user an Error can be displayed. In our example case if the Filter condition is empty. Similarly, you can add any validation on your properties.

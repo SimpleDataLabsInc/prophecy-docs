@@ -29,7 +29,7 @@ Newer versions of Prophecy are defaulted to use sandboxing (`ENABLE_SANDBOXING: 
 
 ## Configuration options
 
-Below are JSON configurations within the Prophecy UI that need to be enabled to support this functionality. You will have to configure only the options which you require. Please make sure to maintain a JSON format mentioned below while configuring the different options.
+Below are JSON configurations within the Prophecy UI that need to be enabled to support this functionality. You will have to configure only the options which you require. Make sure to maintain a JSON format mentioned below while configuring the different options.
 
 ```
 {

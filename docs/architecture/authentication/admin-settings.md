@@ -13,7 +13,7 @@ A user given Admin Permissions on the Prophecy environment would see an addition
 Admins can see all users, teams, fabrics, etc., in their Prophecy environment.
 
 :::info
-Please note that this is only available for Private Saas/On-prem installations of Prophecy.
+This is only available for Private Saas/On-prem installations of Prophecy.
 :::
 
 ## Security
@@ -38,6 +38,6 @@ Any changes in the Kerberos Authentication section would require a restart of th
 
 If you want to use impersonation-enabled authentication to the Livy server, you can set how to obtain the proxy-user value for each user here.
 Currently, Prophecy supports two ways to sync this proxy-user value from AAD or LDAP.
-Please note that these values will sync to Prophecy every time the user logs in.
+Note that these values will sync to Prophecy every time the user logs in.
 
 ![proxy-user](img/proxy-settings.png)

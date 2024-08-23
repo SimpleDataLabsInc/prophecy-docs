@@ -53,7 +53,7 @@ In the `Create Project` pane you can set the name, output language (Python, Scal
 
 :::caution
 
-It is not currently possible to switch the output language of a Project after it has been created. Please choose the appropriate language for your environment.
+It is not currently possible to switch the output language of a Project after it has been created. Choose the appropriate language for your environment.
 
 :::
 

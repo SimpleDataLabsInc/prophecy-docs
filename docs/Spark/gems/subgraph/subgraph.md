@@ -41,3 +41,14 @@ Furthermore, you have the option to Release this project, enabling its use as a 
 Read [here](/docs/package-hub/package-hub.md) for more details on project as a dependency.
 
 ![Use_subgraph](img/Use_new_subgraph.png)
+
+## What's next
+
+To learn more about Spark Subgraphs, see the following pages:
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```

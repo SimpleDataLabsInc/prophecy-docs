@@ -47,7 +47,7 @@ This will show all the configurations created for this Subgraph as shown below.
 You can add default values for any of these by switching to the **(1) Config Tab**, as shown above. You can also add more configurations in case you want to use in your subgraph.
 
 :::info
-Please note, the configurations associated with a source column will have different values for each iteration based on the input data's current row value for that column.
+Note, the configurations associated with a source column will have different values for each iteration based on the input data's current row value for that column.
 The configs which are not mapped to a source column, will have a fixed value for each Iteration provided in the Config tab.
 :::
 
