@@ -26,7 +26,7 @@ This document describes how to configure Azure Active Directory as the identity 
 
 ### API Permission
 
-- Go to "API permissions" on the left hand side and add these set of API permissions
+- Go to "API permissions" on the left-hand side and add these set of API permissions
   <img width="799" alt="Screenshot 2022-06-13 at 9 57 16 PM" src="https://user-images.githubusercontent.com/59466885/173400731-acb084df-31a7-4858-b6ba-f395e888e60e.png" />
 
 ### Certificates and Secrets
@@ -37,7 +37,7 @@ This document describes how to configure Azure Active Directory as the identity 
 
 ### Client ID
 
-- Click on "Overview" on the left hand side and note down the Application(client) ID. This will be used as the client ID in Prophecy IDE
+- Click on "Overview" on the left-hand side and note down the Application(client) ID. This will be used as the client ID in Prophecy IDE
 
 ### Client Secret
 
