@@ -7,7 +7,7 @@ tags: [Fabric, SQL, Execution, Snowflake, Databricks]
 
 A Fabric is a logical execution environment. Teams can organize their data engineering into multiple environments such as development, staging, and production. SQL Fabrics define the credentials for Prophecy to connect to the SQL Warehouse or Lakehouse. Importantly, each user must update the relevant Fabric with their own credentials. Once a SQL Fabric is created, Prophecy can access data, execute data models and generate target tables.
 
-Prophecy supports Databricks and Snowflake SQL Warehouses, with more options coming soon.
+Prophecy supports Databricks and Snowflake SQL Warehouses.
 ![Providers](./img/Providers.png)
 
 1. **[Snowflake SQL Fabrics](./snowflake.md)** - Provide Prophecy access to use the Snowflake warehouse data storage and compute engine capabilities.

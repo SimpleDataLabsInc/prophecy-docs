@@ -103,14 +103,6 @@ def get_data_from_api(spark: SparkSession, in0: DataFrame) -> DataFrame:
 ```
 
 </TabItem>
-<TabItem value="scala" label="Scala">
-
-```scala
-Coming Soon!!!
-
-```
-
-</TabItem>
 </Tabs>
 
 ````

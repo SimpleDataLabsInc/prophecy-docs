@@ -1,4 +1,5 @@
 ---
+sidebar_position: 2
 title: Build Shareable Gems
 id: Gem-builder
 description: Build custom Gems to share across teams with the Package Hub
@@ -46,7 +47,7 @@ Programmatically, a Gem is a component with the following parts:
 
 ### Create Gem
 
-When you create a new project, notice there are **(1) default dependencies** included and there’s a new entity inside each project called **(2) “Gems.”** Click the + icon to create a new Gem. **(3) Name** your Gem, **(4) select** mode (either transformation or Dataset format), and select the **(5) category.** (Coming soon you’ll be able to define your own category.) In this simple example, we name our Gem “Custom Limit.”
+When you create a new project, notice there are **(1) default dependencies** included and there’s a new entity inside each project called **(2) “Gems.”** Click the + icon to create a new Gem. **(3) Name** your Gem, **(4) select** mode (either transformation or Dataset format), and select the **(5) category.** In this simple example, we name our Gem “Custom Limit.”
 
 ![2](img/2-gm.png)
 Together you and Prophecy will create code that will later be committed to your repository. Prophecy starts by providing skeleton code to get started.

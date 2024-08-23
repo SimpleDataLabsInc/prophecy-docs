@@ -58,12 +58,6 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs defaultValue="scala">
-<TabItem value="py" label="Python">
-
-```py
-Coming Soon!!!
-```
-</TabItem>
 <TabItem value="scala" label="Scala">
 
 ```scala
@@ -136,12 +130,6 @@ We will be writing back Airbnb public `listingReviews` data into a collection in
 ````mdx-code-block
 
 <Tabs defaultValue="scala">
-<TabItem value="py" label="Python">
-
-```py
-Coming Soon!!!
-```
-</TabItem>
 <TabItem value="scala" label="Scala">
 
 ```scala

@@ -15,9 +15,9 @@ are respected.
 
 We currently support
 
+- [Active Directory (LDAP)](./active-directory.md)
 - [Azure Active Directory](./azure-ad.md)
 - [Azure Active Directory with SCIM](./azuread-scim.md)
 - [Okta (SAML)](./saml-okta.md)
-- [Active Directory(LDAP)](./active-directory.md)
 
 If you require some other authentication mechanism, please reach out to our team.
