@@ -44,7 +44,7 @@ Fabric includes everything required to run a data Pipeline
   - Optionally, enhance your Fabric by creating a [Metadata Connection](/docs/metadata/metadata-connections.md), recommended for users with hundreds or thousands of tables housed in their data provider(s).
 - **Credentials and Secrets**
   - Prophecy enables you to store credentials safely in the Databricks environment. You can store key-value pairs as secrets that are made available for reading to the running workflows.
-  - Please note that after a secret is created it is only readable by a running Job. Prophecy does not have access to this value.
+  - Note that after a secret is created it is only readable by a running Job. Prophecy does not have access to this value.
 
 ## Hands on
 

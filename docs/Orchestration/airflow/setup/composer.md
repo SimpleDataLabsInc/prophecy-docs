@@ -53,7 +53,7 @@ For adding a connection, Click on **(1) Add Connection** button. This Opens up t
 To be able to schedule your Databricks Spark pipelines via Airflow, you need to have a Databricks Spark Connections from Airflow to your Databricks Workspace. You need to create the connection in Airflow and provide the mapping to Prophecy in this form.
 
 Select **(2) Connection Type** as Databricks(Spark), and select the **(3) Fabric** you have in Prophecy for the desired Databricks Workspace. Select the **(4) Connection id** you have created for this Databricks workspace in your Airflow.
-Please make sure you select the Fabric for the same Databricks workspace you have already created the connection for in your Airflow.
+Make sure you select the Fabric for the same Databricks workspace you have already created the connection for in your Airflow.
 Once done, hit **(4) Save**.
 
 ![Composer_connection](img/Composer_connections.png)

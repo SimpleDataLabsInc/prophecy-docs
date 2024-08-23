@@ -33,7 +33,7 @@ to the examples in the description column of each parameter for reference on how
 | verify          | Either a boolean, in which case it controls whether we verify the server’s TLS certificate eg: `true` or `false` or a string, in which case it must be a path to a CA bundle to use. Defaults to True. eg: `dbfs:/path-to-file` | false    | true    |
 | stream          | if False, the response content will be immediately downloaded. eg: `true` or `false`                                                                                                                                            | false    |         |
 | cert            | if String, path to SSL client cert file (.pem). eg. `dbfs:/path-to-file`. If Tuple, (‘cert’, ‘key’) pair. eg: `cert:key`.                                                                                                       | false    |         |
-| parse content   | Parse content as JSON (to make the schema available, please enable `custom schema` and click `infer from cluster` at the bottom left in the output tab)                                                                         | false    | false   |
+| parse content   | Parse content as JSON (to make the schema available, enable `custom schema`, and click `infer from cluster` at the bottom left in the output tab)                                                                               | false    | false   |
 
 :::info
 
@@ -55,7 +55,7 @@ as needed.
 Let's try to fetch prices for few cryptocurrencies from [Coin-API](https://www.coinapi.io/).
 
 We would be taking cryptocurrency and currency as input from DataFrame and pass url, headers as static values.
-Please note that URL in this example is created using static base url and adding cryptocurrency and currency as inputs
+Note that URL in this example is created using static base url and adding cryptocurrency and currency as inputs
 from DataFrame.
 
 Also, we would be using Databricks-secrets to pass headers as it requires API-key.
@@ -99,14 +99,6 @@ def get_data_from_api(spark: SparkSession, in0: DataFrame) -> DataFrame:
         "content_parsed",
         from_json(col("api_output.content"), schema_of_json(requestDF.select("api_output.content").take(1)[0][0]))
     )
-
-```
-
-</TabItem>
-<TabItem value="scala" label="Scala">
-
-```scala
-Coming Soon!!!
 
 ```
 

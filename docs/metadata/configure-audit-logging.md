@@ -12,10 +12,10 @@ Prophecy provides access to audit logs of activities performed by Prophecy users
 The Prophecy admin can configure a S3 bucket to sync these events from Prophecy to their environment.
 
 :::info
-Please note, this is only available for our SaaS Users only. Also, the initial Setup to enable this would require Manual Effort. Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about this in detail.
+This is only available for our SaaS Users only. Also, the initial Setup to enable this would require Manual Effort. Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about this in detail.
 :::
 
-An empty AWS S3 bucket with read/write permissions is required. Please follow the guidelines below to set up the bucket correctly.
+An empty AWS S3 bucket with read/write permissions is required. Follow the guidelines below to set up the bucket correctly.
 
 ## Configure S3 bucket for logs
 
@@ -75,7 +75,7 @@ An empty AWS S3 bucket with read/write permissions is required. Please follow th
 
 In the sample above, replace `arn:aws:s3:::prophecy-customer-backend-events-xyz` with the ARN of your destination bucket.
 
-Please note that we need the Prophecy user principal (`s3access`) to be able to create S3 location at Prophecy's account and hence require this role with Sid `DataSyncCreateS3Location`.
+Note that we need the Prophecy user principal (`s3access`) to be able to create S3 location at Prophecy's account and hence require this role with Sid `DataSyncCreateS3Location`.
 Please [contact us](mailto:success@Prophecy.io) with bucket ARN and region to enable this in your account.
 
 ## Audit events
@@ -84,7 +84,7 @@ This table lists events for each Entity/Action along with the Request parameters
 
 :::info
 
-Please note, Prophecy Uses GraphQL queries so you may find some difference in Request and Response parameters depending upon where the Queries are used from.
+Prophecy Uses GraphQL queries so you may find some difference in Request and Response parameters depending upon where the Queries are used from.
 
 :::
 

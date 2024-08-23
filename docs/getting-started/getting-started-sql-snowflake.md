@@ -135,7 +135,7 @@ If you have an existing GitHub account this process is very simple, thanks to Pr
 
 5. **Connect** - to save the Git connection.
 
-Please note that Prophecy will not store any information beyond basic user details (like email) and repository content (only queried at your explicit permission for each repository).
+Note that Prophecy will not store any information beyond basic user details (like email) and repository content (only queried at your explicit permission for each repository).
 
 If you’d like to connect Prophecy to one of your GitHub organizations, make sure those are approved in the Organization access section.
 

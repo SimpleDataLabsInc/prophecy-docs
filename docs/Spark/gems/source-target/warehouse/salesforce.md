@@ -88,13 +88,6 @@ def read_salesforce(spark: SparkSession) -> DataFrame:
 ```
 
 </TabItem>
-<TabItem value="scala" label="Scala">
-
-```scala
-Coming soon!!!
-```
-
-</TabItem>
 </Tabs>
 
 
@@ -137,13 +130,6 @@ def write_salesforce(spark: SparkSession, in0: DataFrame):
 		  .option("password", "your_salesforce_password_with_secutiry_token")\
 		  .option("DatasetName", "your_Dataset_name")
 		  .save()
-```
-
-</TabItem>
-<TabItem value="scala" label="Scala">
-
-```scala
-Coming Soon!!!
 ```
 
 </TabItem>
