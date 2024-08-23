@@ -48,7 +48,7 @@ The Prophecy IR lifecycle follows the following steps:
   "metainfo": {
     // Pipeline id in the format {project_id}/{repository_path}
     "id" : "826/pipelines/customers_orders",
-    // backend language name (scala, python, or sql - coming soon)
+    // backend language name (scala, python, or sql)
     "language" : "scala",
     // expressions language type (scala, python, or sql)
     "frontEndLanguage" : "sql",
