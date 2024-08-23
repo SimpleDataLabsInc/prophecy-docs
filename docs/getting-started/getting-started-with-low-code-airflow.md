@@ -125,7 +125,7 @@ Click the **(1) Create Entity** button, and choose **(2) Create Job** option.
 
 In the side drawer that opens, you would provide the Basic Info of the Job. Start by selecting the **(1) Project** in which you want to create the Job. You can pick the existing Spark or SQL project here where you have created Pipelines/Models.
 Then pick your development **(2) Branch**. Here you can pick an existing branch for development, or create a new one. Provide a **(3) Name** and pick **Airflow** in the **(4) Scheduler**. Select the **(5) Fabric** we created in Step 1.
-Pick a **(6) Schedule** with which you want to schedule the Job. Please note, you can modify this again after testing before releasing your Job.
+Pick a **(6) Schedule** with which you want to schedule the Job. Note, you can modify this again after testing before releasing your Job.
 Add a **(7) Description**, about the Job you are creating. Once done, click **(8) Create New**.
 
 ![Create_Job](img/3.9_Create_Job.png)
@@ -165,7 +165,7 @@ If you have a Spark Databricks connection and a Spark Project with Pipeline, you
 Here, you will select the Pipeline and optionally override any config values for the Pipeline.
 
 Select the **(1) Pipeline to Schedule** you want to Run. As you select the Pipeline, You would start seeing the Configurations defined in the Pipeline. You would not be able to modify the schema of these configs but can override the Config values.
-Pick (**2) Fabric and Cluster size to run this Pipeline** for running this Pipeline in Databricks. Here, please select the Fabric for which you already created connection in step 1.3. Once done, Click **(3) Save**!
+Pick (**2) Fabric and Cluster size to run this Pipeline** for running this Pipeline in Databricks. Here, select the Fabric for which you already created connection in step 1.3. Once done, Click **(3) Save**!
 
 ![Add_pipeline_gem_details](img/3.15_Add_pipeline_gem_details.png)
 
@@ -178,7 +178,7 @@ Click on **(1) Operators**, and Drag the **(2) DBT Gem** from the dropdown to th
 Here, you will select the DBT Project/Model to Schedule, what SQL Fabric to schedule it on, and other additional properties for running a DBT model.
 
 Select the **(1) DBT commands** you want to run when scheduling your Models. You can select all ([Dependencies](https://docs.prophecy.io/Spark/extensibility/dependencies), [Seed](https://docs.prophecy.io/getting-started/sql-with-databricks/#431-create-seeds), Run and Test) here.
-Select the **(2) DBT Project to Schedule**. And then select the **(3) SQL Warehouse Fabric** to schedule the Module on. Please select the Fabric for which connection was created in Step 1.4 or 1.5.
+Select the **(2) DBT Project to Schedule**. And then select the **(3) SQL Warehouse Fabric** to schedule the Module on. Select the Fabric for which connection was created in Step 1.4 or 1.5.
 In **(4) Git reference**, select if you want to schedule a particular commit/tag or branch. Here you can select `branch` for this guide and then in **(5) Reference Value** give the current branch name you are working on.
 You can provide any additional **(6) Properties** for your run and then click **(7) Save**!!
 

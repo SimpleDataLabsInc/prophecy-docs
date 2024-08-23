@@ -59,7 +59,7 @@ Zoom-in toggle for a particular Pipeline/Dataset can be used to better understan
 This shows code-level info around all the components present in the Pipeline.
 
 :::info
-Please select a particular component aas shown below to get the code-level view.
+Select a particular component aas shown below to get the code-level view.
 :::
 
 ![Pipeline zoom-in](img/lineage-pipeline-zoom-in.png)

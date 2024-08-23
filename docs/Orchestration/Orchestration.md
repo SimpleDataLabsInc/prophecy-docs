@@ -20,3 +20,14 @@ schedulers:
    any additional data pre-and-post-processing, you can interface from Prophecy with your production-ready Airflow deployment. To get started with your first Airflow jobs, try Prophecy Managed Airflow using this [guide](/docs/getting-started/getting-started-with-low-code-airflow.md).
 
 3. **[Custom](alternative-schedulers.md)** - Alternatively, since Prophecy provides you native Spark code on Git, you can easily integrate with any other scheduler or custom solution.
+
+## What's next
+
+To continue using orchestration solutions, see the following pages:
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```

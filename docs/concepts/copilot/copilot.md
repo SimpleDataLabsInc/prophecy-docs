@@ -82,3 +82,14 @@ While Prophecy does not actively test prompt languages other than English, the L
 Learn more about Prophecy at [prophecy.io](https://www.prophecy.io/), where you can sign up for a free trial account or schedule a demo.
 
 We are open to feedback! Send us an email (contact.us@Prophecy.io) or reach out on our [Slack community](https://join.slack.com/t/prophecy-io-support/shared_invite/zt-moq3xzoj-~5MSJ6WPnZfz7bwsqWi8tQ).
+
+## What's next
+
+To learn more about Data Copilot, see the following pages:
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```

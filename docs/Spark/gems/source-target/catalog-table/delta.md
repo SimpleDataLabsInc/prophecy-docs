@@ -12,7 +12,7 @@ tags:
 Reads and writes Delta tables that are managed by the execution environment's Metadata catalog (Metastore).
 
 :::note
-Please set the property `provider` to `Delta` on the properties page.
+Set the property `provider` to `Delta` on the properties page.
 :::
 
 ## Source

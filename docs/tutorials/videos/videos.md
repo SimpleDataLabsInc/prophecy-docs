@@ -1,11 +1,11 @@
 ---
-title: Tutorials
-id: tutorials
-description: Tutorials and approaches to solving certain common Data Engineering problems within Prophecy
+title: Video tutorials
+id: video-tutorials
+description: Video tutorials and approaches to solving certain common Data Engineering problems within Prophecy
 tags: []
 ---
 
-Tutorials include the following topics:
+Video tutorials include the following topics:
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

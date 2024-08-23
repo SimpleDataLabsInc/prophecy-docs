@@ -30,7 +30,7 @@ These are the set of informations which we are supposed to provide for LDAP conf
 
 **Skip Certificate Verification**: If a custom certificate isn't provided, this option can be used to turn on TLS certificate checks.
 
-**Certificates**: Please upload trusted Root certs, client certs and client keys
+**Certificates**: Upload trusted Root certs, client certs, and client keys.
 
 ### Binds
 

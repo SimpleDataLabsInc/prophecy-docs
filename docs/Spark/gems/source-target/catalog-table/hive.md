@@ -12,7 +12,7 @@ tags:
 Reads and writes data Hive tables that are managed by the execution environment's Metadata catalog (Metastore).
 
 :::note
-Please choose the provider as `Hive` on properties page.
+Choose the provider as `Hive` on properties page.
 :::
 
 ## Source

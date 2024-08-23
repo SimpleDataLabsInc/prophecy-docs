@@ -155,7 +155,7 @@ To be able to schedule your Snowflake SQL Models via Airflow, you need to have a
 
 Select **(2) Connection Type** as Snowflake(DBT), and select the **(3) Fabric** you have in Prophecy for your desired Snowflake environment. Provide the **(4) Profile Directory** and **(5) Profile Name** used while setting up the connection in Airflow.
 
-Please make sure you select the Fabric for the same Snowflake environment you have already created the connection for in your Airflow.
+Make sure you select the Fabric for the same Snowflake environment you have already created the connection for in your Airflow.
 Once done, hit **(4) Save**.
 
 ## Create an Airflow Job

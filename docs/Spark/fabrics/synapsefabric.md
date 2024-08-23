@@ -39,7 +39,7 @@ Find more information on assigning roles from [Azure's documentation](https://le
 
 ### Configure connectivity between Synapse and Prophecy
 
-Please note that the Prophecy public IP is `3.133.35.237`.
+Note that the Prophecy public IP is `3.133.35.237`.
 
 Navigate to Prophecy's UI and click on **Create Fabric**. The Fabric will establish a connection with your Synapse environment and utilize it as the execution engine for your Pipelines.
 <br/> <br/>
