@@ -16,12 +16,12 @@ This is useful if you import your own codebase and your final query has addition
 
 ## Enable custom SQL query
 
-You can add a custom SQL Query if you're doing data processing with advance Jinja or dbt templating.
+You can add a custom SQL query if you're doing data processing with advance Jinja or dbt templating.
 This gives you flexibility when doing last mile operations for your SQL models. To that end, we support the use of declared variables directly in the SQL queries for those last mile operations on each model write.
 
 ### Ports
 
-Ports represent Gem or generated code functions inputs and outputs. The port name is a variable name in Python and Scala code, and table alias in the SQL code. The visual order of the ports defines the order of the variables.
+Ports represent the tables or Gems that you want to use in the SQL query. You can access them using the table aliases, or port names. The visual order of the ports defines the order of the variables.
 
 You can edit or add Ports for Input and Output.
 
@@ -47,7 +47,7 @@ You can use your declared dbt variables in the SQL query.
 
 ## Declare variables
 
-The variable declaration interface allows you to configure variables directly in the SQL Query for your Target Model.
+The variable declaration interface allows you to configure variables directly in the SQL query for your Target Model.
 
 Declared variables are accessible by clicking configuration to add the variable of interest.
 

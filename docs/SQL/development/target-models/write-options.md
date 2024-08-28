@@ -21,7 +21,7 @@ You can overwrite the target data entirely, append to existing target data, or m
 
 - To select write modes, you must set the Target Model [Type & Format](type-and-format.md) to **Table**.
 
-Once you've selected your write mode, you'll see in the Code view that the table is stored as a `"materialized": "incremental",` table, with `"incremental_strategy:` set to whichever write mode and merge approach you choose.
+Once you've selected your write mode, you'll see in the Code view that the table is stored as a `"materialized": "incremental"` table, with `"incremental_strategy:` set to whichever write mode and merge approach you choose.
 
 The following table shows which write modes and approaches are available for which provider.
 
@@ -189,7 +189,7 @@ Table 1
 | 1        | pending         | 2024-01-01 |
 | 2        | pending         | 2024-01-02 |
 
-In the previous orders table, there are `SHIPPING_STATUS` and `UPDATED_AT` fields that are overwritten as the order is processed. When the status changes, the order goes from "pending" to "shipped", and the date is updated. That same record now looks like:
+In the previous orders table, there are `SHIPPING_STATUS` and `UPDATED_AT` fields that are overwritten as the order is processed. When the status changes, the order goes from "pending" to "shipped", and the date is updated. That same record now looks like the following:
 
 Table 2
 
@@ -200,7 +200,7 @@ Table 2
 
 The order is now in the "shipped" state, but we've lost the information about when the order was last in the "pending" state. If we simply update the record with the new value, we won't see the previous records. In order to analyze how long it took for an order to ship, we therefore need to create a new record with a new `SHIPPING_STATUS`. However, we want the other attributes to remain the same.
 
-Once the query is executed, we have the the following results.
+Once the query is executed, we have the following tables.
 
 Table 3
 
