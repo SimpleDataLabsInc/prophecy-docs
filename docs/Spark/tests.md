@@ -15,7 +15,7 @@ Writing good unit tests is one of the key stages of the CI/CD process. It ensure
 
 Prophecy makes the process of writing unit cases easier by giving an interactive environment via which unit test cases can be configured across each component.
 
-There are 2 types of unit test cases which can be configured through Prophecy UI:
+There are two types of unit test cases which can be configured through Prophecy UI:
 
 1. Output rows equality
 2. Output predicates
