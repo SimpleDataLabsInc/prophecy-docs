@@ -104,8 +104,8 @@ Under **Merge Condition**, you must set the **Merge Details**.
 ![Merge condition](img/merge-condition.png)
 
 - Set the **(A) Unique Key**. The unique key is used to choose the records to update. If not specified, all rows are appended.
-- Optional: Toggle **(B) Use Predicate**. Build an expression to use predicate.
-- Optional: Toggle **(C) Use a condition to filter data or incremental runs**. Build an expression to use a condition to filter data.
+- Optional: Toggle **(B) Use Predicate**. Only processes the rows that match the predicate. Build an expression to use predicate.
+- Optional: Toggle **(C) Use a condition to filter data or incremental runs**. Filters columns to only select the rows with the latest records. For example, `ORDER_ID greater than fx max ORDER_ID` only selects rows that are newer than the latest `ORDER_ID` since the last run. Build an expression to use a condition to filter data.
 
 Merge Columns tab
 
