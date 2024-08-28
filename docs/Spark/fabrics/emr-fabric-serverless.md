@@ -63,7 +63,7 @@ Enter your AWS credentials under **Access Key** and **Secret Key**. Choose the *
 
 <img src={require('./img/emr-serverless-dev.png').default} alt="EMR select" width="80%" />
 
-Most of the fields should be automatically populated after selecting a EMR Serverless cluster. Enter the S3 path that points to the location where you would like your logs to persist.
+Most of the fields should be automatically populated after selecting a EMR Serverless cluster. Enter the S3 path that points to the location where you would like your logs and Pipeline artifacts to persist.
 
 <img src={require('./img/emr-serverless-environment.png').default} alt="EMR dependencies" width="80%" />
 
