@@ -23,6 +23,7 @@ Constitutes the set of Gems that help with transforming data
 | **Pivot**                                       | ?Limit the number of rows in a table or view.                                                                |
 | **Unpivot**                                     | ?Limit the number of rows in a table or view.                                                                |
 | **SetOperation**                                | Allows you to perform addition or subtraction of rows in a table or view.                                    |
+| **FlattenSchema**                               | Allows you to flatten complex data types into simpler schemas.                                               |
 
 </div>
 
