@@ -18,13 +18,13 @@ tags:
 
 #### Spark Copilot Enhancements {#Spark3310}
 
-- **Source suggestion**: We now show source suggestions in the Spark IDE.
+- **Source suggestion**: While working on your Pipeline, if there is an unconnected source, Data Copilot will now suggest other sources that you can add to it on the graph.
 
 #### SQL Copilot Enhancements {#SQL3310}
 
 - **SQL Subgraph**: We now support Subgraphs in your SQL models. Subgraphs allow you to wrap multiple different Gems under a single parent Gem. These logical groupings can simplify the Visual view of your model.
 
-- **Support for configurations in the Target Model**: The Target Model supports configurations and column selection.
+- **Support for configurations in the Target Model**: The Target Model supports column selection and project-level configurations.
 
 - **Schedule button**: Just as you can schedule a Pipeline in Spark, you can now use the Schedule button to schedule a model in SQL. Opening the Schedule screen shows all existing Jobs. You can also create a new Job.
 
