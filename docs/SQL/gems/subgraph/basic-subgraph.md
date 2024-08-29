@@ -41,7 +41,7 @@ Subgraphs are configurable just like [Pipelines are configurable](../../../Spark
 
 ### Pipeline Level Configurations can apply to the Subgraph
 
-Pipeline configs are accessible inside Subgraphs by **copying** the config to the Subgraph. Checkout the video below to see how this works.
+Pipeline configs are accessible inside Subgraphs by **copying** the config to the Subgraph.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>

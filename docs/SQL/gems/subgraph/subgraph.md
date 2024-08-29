@@ -8,11 +8,10 @@ todo: true
 
 Subgraph allows you to take multiple different Gems and wrap them under a single reusable parent Gem. It allows the user to decompose complex logic into reusable components. See how to **create** and **publish** a Subgraph in the video below.
 
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://fast.wistia.net/embed/iframe/e1q56n0gjb?seo=false?videoFoam=true" title="Getting Started With SQL Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
-<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
+Incorporate Gems into a Subgraph.
+To make a cleaner Model
+Subgraph works just like the sequence of Gems, can run to see the output
+Connect the input port, can add more input ports
 
 ## Types of Subgraphs
 
