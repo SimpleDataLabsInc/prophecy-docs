@@ -2,7 +2,7 @@
 sidebar_position: 1
 title: Basic Subgraph
 id: basic-subgraph
-description: Basic Subgraph, Group your gems in reusable Parent Gems.
+description: Basic Subgraph, Group your Gems in reusable Parent Gems.
 tags:
   - subgraph
   - Reusable
