@@ -9,7 +9,7 @@ tags:
   - emr
 ---
 
-In the context of Spark execution engines, users have the flexibility to opt for Amazon EMR. This guide offers step-by-step instructions on creating a Fabric that enables seamless connectivity to the EMR environment.
+In the context of Spark execution engines, you have the flexibility to opt for Amazon EMR. This guide offers step-by-step instructions on creating a Fabric that enables seamless connectivity to the EMR environment.
 
 ## Create Amazon EMR cluster with Apache Livy
 
@@ -35,7 +35,7 @@ By implementing these adjustments to your EMR cluster's security groups, you wil
 
 ## Create a Fabric to connect Prophecy to EMR
 
-Navigate to Prophecy's UI and click on **Create Fabric**. The Fabric will establish a connection with your EMR cluster and utilizes it as the execution engine for your Pipelines.
+Navigate to Prophecy's UI and click on **Create Fabric**. The Fabric will establish a connection with your EMR cluster and use it as the execution engine for your Pipelines.
 <img src={require('./img/create-entity-emr.png').default} alt="EMR create cluster" width="75%" />
 <br/>
 <br/>
@@ -55,10 +55,10 @@ Before proceeding, it is crucial to ensure that all the required settings are pr
 
 Enter your AWS credentials under **Access Key** and **Secret Key**. Choose the **Region** that your EMR cluster is running in.
 
-**Click** on **Fetch environments**.
+Click on **Fetch environments**.
 <img src={require('./img/emr-aws-cred.png').default} alt="EMR cred" width="75%" />
 
-**Select** your EMR cluster that you would like to connect to under **Spark Environment**.
+Select your EMR cluster that you would like to connect to under **Spark Environment**.
 
 <img src={require('./img/emr-cluster-select.png').default} alt="EMR select" width="75%" />
 
@@ -67,17 +67,18 @@ Most of the fields should be automatically populated after selecting a EMR clust
 <img src={require('./img/emr-setup.png').default} alt="EMR dependencies" width="75%" />
 
 Add the Job size to your environment by clicking on **Add Job Size**. Configure your Job size and click on **Add**.
-<img src={require('./img/configure-j-ob-size.png').default} alt="EMR Job size" width="55%" />
+<img src={require('./img/configure-j-ob-size.png').default} alt="EMR Job size" width="49%" />
 
 Configure the Prophecy Library:
 
-**Select** **File System** under **Scala Resolution mode** and provide the path:
+Select **File System** under **Scala Resolution mode** and provide the following path:
 
 `s3://prophecy-public-bucket/prophecy-libs`
 
-**Select** **File System** under **Python Resolution mode** and provide the path:
+Select **File System** under **Python Resolution mode** and provide the following path:
 
 `s3://prophecy-public-bucket/python-prophecy-libs`
+
 <img src={require('./img/library.png').default} alt="EMR Job size" width="75%" />
 
 Click on **Complete** and your EMR Fabric is ready!

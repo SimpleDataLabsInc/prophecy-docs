@@ -10,7 +10,7 @@ tags:
   - serverless
 ---
 
-In the context of Spark execution engines, users have the flexibility to opt for Amazon EMR Serverless. This guide offers step-by-step instructions on creating a Fabric that enables seamless connectivity to the EMR Serverless environment.
+In the context of Spark execution engines, you have the flexibility to opt for Amazon EMR Serverless. This guide offers step-by-step instructions on creating a Fabric that enables seamless connectivity to the EMR Serverless environment.
 
 ## Create Amazon EMR Serverless cluster with Apache Livy
 
@@ -18,7 +18,7 @@ Navigate to Amazon EMR Serverless service and create a cluster. Under **Applicat
 
 Choose appropriate applications to include in your installation. At a minimum, make sure sure **Livy** and **Spark** are included in the install.
 
-<img src={require('./img/livy.png').default} alt="EMR create cluster" width="75%" />
+<img src={require('./img/livy.png').default} alt="EMR Serverless create cluster" width="75%" />
 
 ### Allow network connectivity between Amazon EMR Serverless and Prophecy
 
@@ -36,8 +36,8 @@ By implementing these adjustments to your EMR Serverless cluster's security grou
 
 ## Create a Fabric to connect Prophecy to EMR Serverless
 
-Navigate to Prophecy's UI and click on **Create Fabric**. The Fabric will establish a connection with your EMR Serverless cluster and utilizes it as the execution engine for your Pipelines.
-<img src={require('./img/create-entity-emr.png').default} alt="EMR create cluster" width="75%" />
+Navigate to Prophecy's UI and click on **Create Fabric**. The Fabric will establish a connection with your EMR Serverless cluster and use it as the execution engine for your Pipelines.
+<img src={require('./img/create-entity-emr.png').default} alt="EMR Serverless create Fabric" width="75%" />
 <br/>
 <br/>
 
@@ -46,37 +46,57 @@ Navigate to Prophecy's UI and click on **Create Fabric**. The Fabric will establ
 <br/>
 <br/>
 
-<img src={require('./img/name-emr.png').default} alt="EMR create Fabric" width="75%" />
+<img src={require('./img/name-emr-serverless.png').default} alt="EMR Serverless Fabric name" width="80%" />
 
-Choose **EMR** as your **Provider**.
+Choose **EMR** as your **Provider**. At this point, there is no distinction between creating an EMR and an EMR Serverless Fabric.
 
-<img src={require('./img/emr-f-abric.png').default} alt="EMR create Fabric" width="75%" />
+<img src={require('./img/emr-f-abric.png').default} alt="EMR Serverless Provider" width="75%" />
 
 Before proceeding, it is crucial to ensure that all the required settings are properly configured. If you are uncertain about the necessary configurations, we recommend reaching out to your cloud infrastructure team for additional guidance and assistance. They will be able to provide you with the specific information and support needed to ensure a successful setup.
 
 Enter your AWS credentials under **Access Key** and **Secret Key**. Choose the **Region** that your EMR Serverless cluster is running in.
 
-**Click** on **Fetch environments**.
-<img src={require('./img/emr-aws-cred.png').default} alt="EMR cred" width="75%" />
+Click on **Fetch environments**.
+<img src={require('./img/emr-aws-cred.png').default} alt="EMR Serverless cred" width="75%" />
 
-**Select** your EMR Serverless cluster that you would like to connect to under **Spark Environment**.
+Select your EMR Serverless cluster that you would like to connect to under **Spark Environment**. The EMR cluster listing also shows Serverless clusters. From the list of active clusters, you can identify your EMR Serverless cluster by finding `emr-serverless-services` within the Livy URL.
 
-<img src={require('./img/emr-serverless-dev.png').default} alt="EMR select" width="80%" />
+<img src={require('./img/emr-serverless-dev-select.png').default} alt="EMR Serverless select" width="80%" />
 
-Most of the fields should be automatically populated after selecting a EMR Serverless cluster. Enter the S3 path that points to the location where you would like your logs and Pipeline artifacts to persist.
+Most of the fields should be automatically populated after selecting a EMR Serverless cluster.
 
-<img src={require('./img/emr-serverless-environment.png').default} alt="EMR dependencies" width="80%" />
+Optional: You can enable Lake Formation by clicking the toggle.
+
+Select your Authentication type. We suggest choosing `AWS Sig V4`.
+<img src={require('./img/emr-serverless-auth-type.png').default} alt="EMR Serverless Authentication type" width="50%" />
+
+Select your Runtime Role. You will only see roles that you have access to.
+<img src={require('./img/emr-serverless-runtime-role.png').default} alt="EMR Serverless Runtime Role" width="75%" />
+
+Enter the S3 path that points to the location where you would like your logs and Pipeline artifacts to persist.
+
+<img src={require('./img/emr-serverless-environment.png').default} alt="EMR Serverless dependencies" width="80%" />
 
 Add the Job size to your environment by clicking on **Add Job Size**. Configure your Job size and click on **Add**.
-<img src={require('./img/add-sizes.png').default} alt="EMR Job size" width="55%" />
+<img src={require('./img/configure-j-ob-size.png').default} alt="EMR Job size" width="49%" />
 
 Configure the Prophecy Library:
 
-**Select** **File System** under **Scala Resolution mode** and provide the path:
+:::note
 
-`s3://prophecy-public-bucket/prophecy-public-libs/prophecy-scala-libs`
+The Spark Version and Scala Version are fixed.
 
-<img src={require('./img/sizes-and-libraries.png').default} alt="EMR Job size" width="75%" />
+:::
+
+Select **File System** under **Scala Resolution mode** and provide the following path:
+
+`s3://prophecy-public-bucket/prophecy-libs`
+
+Select **File System** under **Python Resolution mode** and provide the following path:
+
+`s3://prophecy-public-bucket/python-prophecy-libs`
+
+<img src={require('./img/emr-serverless-sizes-and-libraries.png').default} alt="EMR Serverless Library" width="78%" />
 
 Click on **Complete** and your EMR Serverless Fabric is ready!
 

@@ -44,52 +44,52 @@ Note that the Prophecy public IP is `3.133.35.237`.
 Navigate to Prophecy's UI and click on **Create Fabric**. The Fabric will establish a connection with your Synapse environment and utilize it as the execution engine for your Pipelines.
 <br/> <br/>
 
-**Choose Synapse** as your **Provider**.
+Choose **Synapse** as your **Provider**.
 <br/> <br/>
 
 <img src={require('./img/provider1.png').default} alt="Synapse connect" width="75%" />
 <br/> <br/>
 
-**Copy and paste** your **Application Client ID**, **Secret Value** and **Tenant ID** from the App Registration page.
+Copy and paste your **Application Client ID**, **Secret Value**, and **Tenant ID** from the App Registration page.
 <br/> <br/>
 
 <img src={require('./img/appconfig.png').default} alt="Synapse connect" width="75%" />
 <br/> <br/>
 
-**Copy and paste** your Synapse **Resource Group Name** and **Subscription ID** from your Synapse workspace.
+Copy and paste your Synapse **Resource Group Name** and **Subscription ID** from your Synapse workspace.
 <br/> <br/>
 
 <img src={require('./img/workspaceconfig.png').default} alt="Synapse connect" width="75%" />
 <br/> <br/>
 
-**Click** on **Fetch environments**.
+Click on **Fetch environments**.
 <br/> <br/>
 
-**Select** your Spark pool from the _Spark environment_ dropdown. All other fields should be automatically populated after selecting your Spark Pool.
+Select your Spark pool from the _Spark environment_ dropdown. All other fields should be automatically populated after selecting your Spark Pool.
 <br/> <br/>
 
 <img src={require('./img/selectsparkpool.png').default} alt="Synapse connect" width="75%" />
 <br/> <br/>
 
-**Click** on **Add Job Size** and configure the Job size that you would like to use for processing.
+Click on **Add Job Size** and configure the Job size that you would like to use for processing.
 <br/> <br/>
 
-<img src={require('./img/addjsize.png').default} alt="Synapse connect" width="75%" />
+<img src={require('./img/addjsize.png').default} alt="Synapse connect" width="55%" />
 <br/> <br/>
 
 Now we configure the dependencies.
 
-Under **Scala** enter **Path**
+Under **Scala** enter the following **Path**:
 
 `https://prophecypublicazure.blob.core.windows.net/prophecy-public-libs/prophecy-scala-libs/`
 
-Under **Python** enter **Path**
+Under **Python** enter the following **Path**:
 
 `https://prophecypublicazure.blob.core.windows.net/prophecy-public-libs/prophecy-python-libs/`
 
 <br/> <br/>
 
-**Click** on **Complete**.
+Click on **Complete**.
 <br/> <br/>
 
 Your Fabric for Azure Synapase Fabric is configured! Try creating a cluster using the Fabric that you've just created and attach to it.
