@@ -12,25 +12,27 @@ tags:
 ## 3.3.10.\* (August 30, 2024)
 
 - Prophecy Python libs version: 1.9.9
-- Prophecy Scala libs version: 8.0.29
+- Prophecy Scala libs version: 8.0.31
 
 ### Features {#Features3310}
 
 #### Spark Copilot Enhancements {#Spark3310}
 
-- **Support custom artifactory resolve plibs version**: We now support adding custom Pypi or Maven dependencies for Pipelines running on all Spark Fabrics including EMR, Dataproc, etc.
-
-- **Support for config resolution inside call_func()**: Config variables inside of the `call_function()` and `call_func()` are now supported. The new syntax is `call_function("{{catalogName}}.{{database}}.{{funcName}}", "{{firstArg}}")`.
-
-- **Support for proxy-user impersonation in Kerberos Livy Fabric Auth**: As an admin user, you can configure multiple Keytab accounts in the Admin Settings. You can upload the Keytab files and set up proxy-user impersonation in Kerberos for secure authentication to Livy Fabrics.
+- **Spark **: We now support
 
 #### SQL Copilot Enhancements {#SQL3310}
 
-In this release, we've updated the UX and capabilities of the expression builder, target model, and more.
+- **SQL Subgraph**: We now support Subgraphs in your SQL Models. Subgraphs allow you to wrap multiple different Gems under a single parent Gem. These logical groupings can simplify the Visual view of your Model.
+
+- **Support for configurations in the Target Model**: The Target Model supports configurations and column selection.
+
+- **Schedule button**: Just as you can schedule a Pipeline in Spark, you can now use the Schedule button to schedule a Model in SQL. Opening the Schedule screen shows all existing Jobs. You can also create a new Job.
+
+- **Support dragging function parameters**: You can drag and drop function parameters in the Visual view of the expression builder.
 
 ### Minor Improvements {#MinorImprovements3310}
 
-- **Clone a Prophecy Job**: You can now clone a Prophecy Job just as you may clone a Pipeline. This is useful for Job renaming issues.
+- **Auto describe Datasets**: We now automatically describe columns using interim data when you run your Model and when you drop a Dataset from the Environment tab.
 
 ## 3.3.9.\* (August 12, 2024)
 
