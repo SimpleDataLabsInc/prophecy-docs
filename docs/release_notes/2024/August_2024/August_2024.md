@@ -38,6 +38,8 @@ tags:
 
 ### Minor Improvements {#MinorImprovements3310}
 
+- **Fix with AI while saving Gems**: When saving a Gem, Data Copilot provides a one-click option to automatically resolve any diagnostic errors within the Gem.
+
 - **Auto describe Datasets**: We now automatically describe columns using interim data when you run your model and when you drop a Dataset from the Environment tab.
 
 - **Prevent unnecessary code changes**: Unnecessary code changes are no longer made for the following cases:
