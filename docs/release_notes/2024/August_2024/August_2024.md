@@ -40,7 +40,9 @@ tags:
 
 - **Fix with AI while saving Gems**: When saving a Gem, Data Copilot provides a one-click option to automatically resolve any diagnostic errors within the Gem.
 
-- **Auto describe Datasets**: We now automatically describe columns using interim data when you run your model and when you drop a Dataset from the Environment tab.
+- **Auto describe Datasets**: We now automatically describe Datasets and their columns when you drop a Dataset from the Environment tab. Additionally, we improved the quality of the descriptions using interim data when you run your Pipeline.
+
+- **UDFs and Macros in Copilot expression suggestions**: The Data Copilot can now generate expressions using custom UDFs and Macros defined in Spark and SQL projects.
 
 - **Prevent unnecessary code changes**: Unnecessary code changes are no longer made for the following cases:
 
