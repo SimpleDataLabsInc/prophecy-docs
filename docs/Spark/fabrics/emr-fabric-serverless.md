@@ -65,12 +65,10 @@ Select your EMR Serverless cluster that you would like to connect to under **Spa
 
 Most of the fields should be automatically populated after selecting a EMR Serverless cluster.
 
-Optional: You can enable Lake Formation by clicking the toggle.
-
-Select your Authentication type. We suggest choosing `AWS Sig V4`.
+For the Authentication type, select `AWS Sig V4`. This is the only option that will work for EMR Serverless.
 <img src={require('./img/emr-serverless-auth-type.png').default} alt="EMR Serverless Authentication type" width="50%" />
 
-Select your Runtime Role. You will only see roles that you have access to.
+Select your Runtime Role. The role must have enough permissions to use the selected Serverless App.
 <img src={require('./img/emr-serverless-runtime-role.png').default} alt="EMR Serverless Runtime Role" width="75%" />
 
 Enter the S3 path that points to the location where you would like your logs and Pipeline artifacts to persist.
