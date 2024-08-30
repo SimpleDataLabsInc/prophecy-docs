@@ -1,56 +1,71 @@
 ---
 title: Subgraph
 id: subgraph
-description: Work with Subgraphs by grouping your Gems in reusable Parent Gems
+description: Work with Subgraphs by grouping your Gems in Parent Gems
 tags:
   - subgraph
-  - Reusable
-  - Group
+  - group
+  - SQL
 ---
 
-Subgraph allows you to take multiple different Gems and wrap them under a single parent Gem. It allows you to decompose complex logic into components.
-
-By incorporating Gems into a Subgraph, you can make your Model look cleaner
+Subgraph allows you to take multiple distinct Gems and wrap them under a single parent Gem. Doing so can help you decompose complex logic into more manageable components and simplify the Visual view of your model.
 
 ## Basic Subgraph
 
-Subgraph works just like the sequence of Gems, can run to see the output
-Connect the input port, can add more input ports
+Basic Subgraphs are single use containers that capture one or more Gems within a Model. They are the equivalent of a nested CTE.
 
-The [Basic](./basic-subgraph) Subgraph is a great introduction to using Subgraphs.
-
-| Name                      | Description                                                    |
-| ------------------------- | -------------------------------------------------------------- |
-| [Basic](./basic-subgraph) | Captures one or more Gems within a Model across your Projects. |
-
-In a **Basic Subgraph**, you have the capability to encapsulate multiple distinct Gems within a single, reusable parent Gem. This organizational approach enhances the visual clarity of your Model by grouping various sections together under a common parent Gem. Additionally, it empowers users to break down intricate logic into modular components, thereby streamlining the Data Engineering processes.
+If you want to create a complex model with a large set of Transform and Join Gems, you can use a Basic Subgraph to group them into logical groupings. This organizational approach enhances the visual clarity of your model by grouping various sections together under a common parent Gem. Additionally, it empowers you to break down intricate logic into modular components, thereby streamlining the Data Engineering processes.
 
 ### Create a Basic Subgraph
 
-To create a Basic Subgraph, Drag and Drop the **(1) Basic** Subgraph Gem from the Subgraph Menu and connect it to any previously created Gems on your canvas.
-Once the Gem is added, Click **(2) Open**, to open the subgraph canvas.
+You can create a Basic Subgraph the same way you create other Gems.
 
-![create_basic_subgraph](img/Create_basic_subgraph.png)
+To create a Basic Subgraph, follow these steps:
 
-Once you are on the canvas, You can start adding Gems to your subgraph by dragging and dropping from the Gems Menu.
+1. Drag and drop the **Subgraph** Gem from the Subgraph menu, and connect it to any previously created Gem on your canvas.
+
+![create_basic_subgraph](img/create-subgraph.png)
+
+2. Once you've added the Gem, click on it to open the subgraph canvas.
+
+3. On the subgraph canvas, add Gems to your Basic Subgraph by dragging and dropping from the Gems menu. You can even add a subgraph within the subgraph to create a nested subgraph.
+
+### Run a Basic Subgraph
+
+A Basic Subgraph works just like the sequence of Gems that it contains. You can run a Basic Subgraph to see the output.
+
+To run a Basic Subgraph, follow this step:
+
+- Click on the play button, either on the subgraph canvas or on the Basic Subgraph Gem.
+
+![run_basic_subgraph](img/run-subgraph.png)
+
+The final node of the Basic Subgraph can have interims.
 
 ### Add/Remove Port
 
-While using a Subgraph, You can control the Input and Output ports as per the requirements. Click on the **(1) Add/Remove Part** Button to open the port settings dialog as shown below.
+A Gem is an operation or transformation that takes one or more tables as inputs. Therefore, Input ports signify the number of tables that a Basic Subgraph is taking as inputs. There is no limit to the number of Input ports you can have.
 
-![add_remove_port](img/subgraph_additional_ports.png)
+While using a Subgraph, you can control the Input ports as per the requirements. However, as with all SQL Gems, there can only be one Output port.
 
-In this dialog, you can add or remove the Input or Output ports.
-To Add an input Put click on **(2) + button**. This will add an input Port.
-To remove an Input port, Click the **(3) Delete** icon next to the input port you want to delete.
+To add an Input port, follow these steps:
 
-Similarly, you can control the Output Ports by switching to the **(4) Output** Tab.
-As you connect the input and output ports to gems Outside the subgraph, you would be able to see the schema for the port reflected here.
+1. On the subgraph canvas, click on the **+** button to add new port.
+2. Optional: You can click the **Delete** icon next to the input port you want to remove.
+
+![add_remove_port](img/add-remove-subgraph-port.png)
 
 ## Code view
 
-a
+Normally from the Code view, we create one Gem per CTE. However, since subgraphs are represented as nested CTEs in code, one subgraph can represent multiple nested SQL statements.
+
+![subgraph_code_view](img/subgraph-code-view.png)
+
+You can create a subgraph from the Code view by writing multiple nested statements, and toggle back to the Visual view to see an auto-generated Subgraph Gem based on your defined transformations.
 
 ## Subgraph Configurations
 
-Subgraphs are configurable just like how Models and projects are configurable. For Subgraphs, the configurations can apply in one of two ways: (1) Model-level configurations apply to the Subgraph or (2) Project-level configurations apply to the Subgraph.
+You can configure your subgraphs by using either:
+
+- Model-level configurations
+- Project-level configurations
