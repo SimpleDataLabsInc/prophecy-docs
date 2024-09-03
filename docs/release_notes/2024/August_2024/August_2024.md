@@ -16,7 +16,7 @@ tags:
 
 ### Features {#Features339}
 
-#### Spark Copilot Enhancements
+#### Spark Copilot Enhancements {#Spark339}
 
 - **Support custom artifactory resolve plibs version**: We now support adding custom Pypi or Maven dependencies for Pipelines running on all Spark Fabrics including EMR, Dataproc, etc.
 
@@ -24,16 +24,16 @@ tags:
 
 - **Support for proxy-user impersonation in Kerberos Livy Fabric Auth**: As an admin user, you can configure multiple Keytab accounts in the [Admin Settings](../../../architecture/authentication/admin-settings.md). You can upload the Keytab files and set up proxy-user impersonation in Kerberos for secure authentication to Livy Fabrics.
 
-#### SQL Copilot Enhancements
+#### SQL Copilot Enhancements {#SQL339}
 
 In this release, we've updated the UX and capabilities of the expression builder, target model, and more. Read our [New SQL UI Onboarding Guide](./new-ui-sql.md) to get familiar with the updated interface.
 
-#### Airflow Copilot Enhancements
+#### Airflow Copilot Enhancements {#Airflow339}
 
 - **Support for partial run for Airflow Jobs**: We've added play buttons on Gems, which you can use to start partial runs for Airflow Jobs.
 
 - **Ability to create a model from the model dropdown**: While configuring the model Gem in your Job, you now have the option to create a model from the Model dropdown.
 
-### Minor Enhancements
+### Minor Improvements {#MinorImprovements339}
 
 - **Clone a Prophecy Job**: You can now clone a Prophecy Job just as you may clone a Pipeline. This is useful for Job renaming issues.
