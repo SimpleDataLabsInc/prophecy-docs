@@ -6,7 +6,7 @@ description: Loop over each row of an input Dataframe
 tags:
   - loop
   - table
-  - Iterator
+  - iterator
 ---
 
 Table Iterator allows you to iterate over one or more Gems for each row of the first input DataFrame.
@@ -17,7 +17,7 @@ Let's see how to create a Basic Loop which loops over a Metadata Table, and for 
 First add the Input Gem on which you want to Iterate over. For this, simply use an existing Dataset or create a new [Source Gem](/docs/Spark/gems/source-target/source-target.md) pointing to your Metadata table.
 You can run this Source Gem to see the data your loop would be running for.
 
-Now, Drag and Drop the **(1) Table Iterator** Gem from the Subgraph Menu, and connect it to the above created Source Gem.
+Now, Drag and Drop the **(1) Table Iterator** Gem from the Subgraph menu, and connect it to the above created Source Gem.
 
 ![Create_table_iterator](img/Create_table_iterator.png)
 
