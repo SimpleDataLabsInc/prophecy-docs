@@ -2,7 +2,7 @@
 title: "Google Cloud Dataproc"
 id: gcp-dataproc-fabric-guide
 description: Configuring GCP Dataproc Fabric
-sidebar_position: 6
+sidebar_position: 7
 tags:
   - deployment
   - configuration
@@ -77,15 +77,15 @@ gcloud config set account meitestserviceaccount@core-shard-398601.iam.gserviceac
 
 ## Create a Dataproc Fabric
 
-1. Create a Fabric and **select Dataproc**
+1. Create a Fabric and select **Dataproc**.
    <br/><br/>
    <img src={require('./img/selectdataproc.png').default} alt="select dataproc" width="75%" />
    <br/><br/>
-2. Fill out your **Project Name**, **Region** and **upload** the **private key**.
+2. Fill out your **Project Name** and **Region**, and upload the **Private Key**.
    <br/><br/>
    <img src={require('./img/configuredataproc.png').default} alt="configure dataproc" width="75%" />
    <br/><br/>
-3. **Click** on **Fetch environments** and **select** the Dataproc **cluster** that you created earlier.
+3. Click on **Fetch environments** and select the Dataproc **cluster** that you created earlier.
    <br/><br/>
    <img src={require('./img/selectenv.png').default} alt="select cluster" width="75%" />
    <br/><br/>
@@ -99,15 +99,15 @@ gcloud config set account meitestserviceaccount@core-shard-398601.iam.gserviceac
    <br/><br/>
 6. Add the **Job Size**.
    <br/><br/>
-   <img src={require('./img/procjobsize.png').default} alt="Job Size" width="75%" />
+   <img src={require('./img/procjobsize.png').default} alt="Job Size" width="55%" />
    <br/><br/>
 7. Configure Scala Library Path.
-   `gs://prophecy-public-gcp/prophecy-scala-libs/`
+   `gs://prophecy-public-gcp/prophecy-scala-libs/`.
 8. Configure Python Library Path.
-   `gs://prophecy-public-gcp/prophecy-python-libs/`
+   `gs://prophecy-public-gcp/prophecy-python-libs/`.
    <br/><br/>
-   <img src={require('./img/proclib.png').default} alt="dependences" width="75%" />
+   <img src={require('./img/proclib.png').default} alt="dependences" width="85%" />
    <br/><br/>
-9. **Click** on **Complete**.
+9. Click on **Complete**.
    <br/><br/>
    Run a simple Pipeline and make sure that the interim returns data properly.

@@ -11,7 +11,7 @@ tags:
   - SQL
 ---
 
-You can use the Type & format tab to update the format of the model between different types of materializations. This determines the underlying physical format of your Target Model.
+You can use the Type & Format tab to update the format of the model between different types of materializations. This determines the underlying physical format of your Target Model.
 
 You can select the type of data you want to write from. The Warehouse represents all native warehouse and optimized data formats.
 
