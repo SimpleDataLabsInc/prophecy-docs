@@ -1,5 +1,5 @@
 ---
-title: Transformations
+title: Transform
 id: data-transformations
 description: data transformation steps in SQL
 sidebar_position: 12
@@ -24,11 +24,12 @@ Constitutes the set of Gems that help with transforming data
 | **Unpivot**                                     | ?Limit the number of rows in a table or view.                                                                |
 | **Set Operation**                               | Allows you to perform addition or subtraction of rows in a table or view.                                    |
 | **Flatten Schema**                              | Allows you to flatten complex data types into simpler schemas.                                               |
+| **Deduplicate**                                 | Allows you to remove rows with duplicate values schemas.                                                     |
 
 </div>
 
 :::info
-To learn more about the UI for Transformation Gems, see [this page](/docs/concepts/project/gems.md) which illustrates features common to all Gems.
+To learn more about the UI for Transform Gems, see [this page](/docs/concepts/project/gems.md) which illustrates features common to all Gems.
 :::
 
 ## Run
