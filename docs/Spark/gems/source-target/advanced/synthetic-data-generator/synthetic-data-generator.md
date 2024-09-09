@@ -15,6 +15,12 @@ Generate synthetic data with this special kind of Source Gem.
 
 Generating mock data is crucial when building data Pipelines to simulate real-world scenarios for testing, validating, and optimizing Pipeline performance before using actual production data. It helps ensure the Pipeline handles various data formats, structures, and edge cases effectively, minimizing potential issues in a live environment.
 
+A wide range of synthetic data can be created using any column name and an array of datatypes. For example, generate browser history which tracks fictitious devices and the details on when that device visits a particular website with a particular click count and frequency.
+
+![img](../../../img/synth_0_datasample.png)
+
+Follow the steps below to generate your own mock data using the Synthetic Data Generator Gem.
+
 ## Create the Gem
 
 Create a new Dataset and select the Type as Synthetic Data Generator. Note we are not specifying a storage location yet; we will [store the data](#store-the-data) in a separate Gem.  
