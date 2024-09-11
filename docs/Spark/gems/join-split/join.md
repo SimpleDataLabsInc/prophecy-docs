@@ -14,7 +14,7 @@ tags:
   - merge
 ---
 
-Joins 2 or more DataFrames based on the given configuration.
+Joins two or more DataFrames based on the given configuration.
 
 ## Parameters
 
@@ -180,7 +180,7 @@ object Join_1 {
 
 ## Types of Join
 
-Suppose there are 2 tables TableA and TableB with only 2 columns (Ref, Data) and following contents:
+Suppose there are two tables TableA and TableB with only two columns (Ref, Data) and following contents:
 
 ### Table A
 

@@ -26,3 +26,14 @@ Each Gem represents a SQL statement, and allows users to construct that statemen
 | ![Custom](img/Custom.png)                     | [**Custom**](./custom/custom.md)                      | The set of Gems built to extend Prophecy's capabilities.                                                      |
 
 </div>
+
+## What's next
+
+To learn more about SQL Gems, see the following pages:
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```
