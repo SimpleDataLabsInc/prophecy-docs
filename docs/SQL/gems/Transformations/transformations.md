@@ -29,4 +29,4 @@ To learn more about the UI for Transformation Gems, see [this page](/docs/concep
 
 ## Run
 
-When your Transformation Gem has the desired condition and expression, run interactively to view [sample data](/docs/SQL/development/visual-editor/interactive-development/data-explorer.md).
+When your Transformation Gem has the desired condition and expression, run interactively to view [sample data](/docs/SQL/execution/data-explorer.md).
