@@ -31,7 +31,8 @@ There are two Gem modes:
 #### Dataset Format
 
 1. This mode allows for the custom definition of Dataset Formats beyond the provided formats (xml, csv, avro, parquet, json, etc).
-2. When a Dataset Format Gem is created, the new format can be used when creating Datasets. Find a new card for your custom DatasetFormat Gem in the **(1) Dataset Type and Format** listing. See the image below.
+2. Select whether you'd like your data to be read as a batch, which can be defined incrementally, or as a stream in real time.
+3. When a Dataset Format Gem is created, the new format can be used when creating Datasets. Find a new card for your custom DatasetFormat Gem in the **(1) Dataset Type and Format** listing. See the image below.
 
 #### Transformation
 
@@ -86,7 +87,7 @@ In our “CustomGem,” we don’t see any UI components yet because we need to 
 
 **(1) Open the SparkBasicsScala dependency**. (If you’re using a Python project, then open the SparkBasicsPython dependency). **(2) Click Limit**, an existing Gem we can use for inspiration. Explore the **(3) Limit Gem code**. We will use some or all the code for our new Custom Limit Gem. **(4) Click Preview** and **(5) view the UI** for the Limit Gem. This UI has an example **(6) Input schema** so we can see how the user would interact with the Gem’s interface. The user will be able to view input/output schema and enter a **(7) value** in the Limit field.
 
-The Limit Gem’s code is explained in detail in the Gem Structure [sections] below. [Extend] the classes and make a change, for example change the default limit value from 10 to 50. Your new Gem is available to drag-n-drop into the Pipeline canvas as demonstrated in the short video below. Test it out in a Pipeline! Make any changes needed on the feature branch.
+The Limit Gem’s code is explained in detail in the Gem Structure [sections](#gem-structure) below. [Extend](#extend) the classes and make a change, for example change the default limit value from 10 to 50. Your new Gem is available to drag-n-drop into the Pipeline canvas as demonstrated in the short video below. Test it out in a Pipeline! Make any changes needed on the feature branch.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -475,6 +476,10 @@ class LimitCode(props: PropertiesType) extends ComponentCode {
 You can go ahead and preview the component to see how it looks. Note some Gem examples have functions defined within the apply method.
 
 That’s all the code for our example Transformation, the Limit Gem. We walked through the package and import statements, parent class, and properties class. We explored the required methods dialog, validation, onChange, (de)serializeProperty. Finally we saw the Limit Gem’s component code. Now we have a basic understanding of the components needed for any Transformation Gem.
+
+:::info
+If you are using an existing Gem as a guide to creating your new Gem, you will need to change the following at a minimum: ComponentSpec, ComponentProperties, ComponentCode.
+:::
 
 ## Extend
 
