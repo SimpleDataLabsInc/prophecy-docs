@@ -11,13 +11,11 @@ tags:
 
 ## What is Lineage?
 
-Lineage tell us about the life cycle of data. Data lineage is the process of understanding, recording, and visualizing
-data as it flows from source to destination. This includes all transformations the data underwent along the way.
+Lineage tell us about the life cycle of data. Data lineage is the process of understanding, recording, and visualizing data as it flows from source to destination. This includes all transformations the data underwent along the way.
 
 ## Why is it important?
 
-Just knowing the source of a particular data set is not always enough to understand its importance,
-perform error resolution, understand process changes, and perform system migrations and updates.
+Just knowing the source of a particular data set is not always enough to understand its importance, perform error resolution, understand process changes, and perform system migrations and updates.
 
 Knowing how data is updated and using what transformations, improves overall data quality.
 Also, it allows data custodians to ensure the integrity and confidentiality of data is protected throughout its lifecycle.
