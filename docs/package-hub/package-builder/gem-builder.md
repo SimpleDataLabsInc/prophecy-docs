@@ -478,7 +478,7 @@ You can go ahead and preview the component to see how it looks. Note some Gem ex
 That’s all the code for our example Transformation, the Limit Gem. We walked through the package and import statements, parent class, and properties class. We explored the required methods dialog, validation, onChange, (de)serializeProperty. Finally we saw the Limit Gem’s component code. Now we have a basic understanding of the components needed for any Transformation Gem.
 
 :::info
-If you are using an existing Gem as a guide to creating your new Gem, you will need to change the following at a minimum: ComponentSpec, ComponentProperties, ComponentCode.
+If you are using an existing Gem as a guide to creating your new Gem, you will need to change the following at a minimum: ComponentSpec, ComponentProperties, and ComponentCode.
 :::
 
 ## Extend
