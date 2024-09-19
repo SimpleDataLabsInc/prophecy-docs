@@ -165,4 +165,4 @@ Run the Pipeline up to and including the Gem with your expression, and observe t
 
 - Click the **Play** button on either the canvas or the Gem.
 
-Once the code has finished running, you can verify the results to make sure they match your expectations. This Data is same as what you see in [interims view](../interactive-development/data-explorer.md). By testing and verifying your expressions, you can ensure that your data analysis tasks are accurate and reliable.
+Once the code has finished running, you can verify the results to make sure they match your expectations. This Data is same as what you see in [interims view](../../../execution/data-explorer.md). By testing and verifying your expressions, you can ensure that your data analysis tasks are accurate and reliable.
