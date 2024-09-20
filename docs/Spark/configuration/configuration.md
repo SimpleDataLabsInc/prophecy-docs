@@ -10,6 +10,7 @@ tags:
 ---
 
 Allows you to define configurations to control various aspects of your Pipeline.
+
 ![Config Option](img/config-option.png)
 
 Prophecy IDE allows you to define three kinds of configurations:
@@ -30,6 +31,7 @@ Hadoop configurations as name-value pairs. The name-value pairs will be set insi
 
 Config values which can be set at Pipeline level and then be accessed inside any component in the Pipeline. [Multiple instances](#pipeline-configuration-instances)
 of configuration can be created per Pipeline.
+
 ![Configurations - Common](img/config-pipeline-eg1.png)
 
 ### Syntax for using configuration inside Gems
