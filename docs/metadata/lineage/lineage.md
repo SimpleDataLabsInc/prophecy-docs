@@ -2,11 +2,10 @@
 title: Lineage
 id: lineage
 description: Project lineage
-sidebar_position: 4
+sidebar_position: 1
 tags:
   - metadata
   - lineage
-  - search
 ---
 
 ## What is Lineage?
@@ -41,42 +40,3 @@ There are two ways to get to the lineage view:
 Lineage is always computed on-demand directly on the Git code. Therefore, you can do experimental changes in branch and see how it
 will affect the overall lineage and rectify errors if any.
 :::
-
-## Lineage View
-
-![Lineage View](img/lineage-column-level-view.png)
-
-`Browse Datasets` option from right-hand side can be used to search/select the column/entity for which lineage needs to be computed.
-
-![Browse Datasets](img/lineage-browse-dataset.png)
-
-Zoom-in toggle for a particular Pipeline/Dataset can be used to better understand Pipeline/Dataset.
-
-### Pipeline Zoom-In View
-
-This shows code-level info around all the components present in the Pipeline.
-
-:::info
-Select a particular component aas shown below to get the code-level view.
-:::
-
-![Pipeline zoom-in](img/lineage-pipeline-zoom-in.png)
-
-### Dataset Zoom-In View
-
-This view gives info around all the upstream and downstream transformations if any for all the columns of the selected Dataset.
-
-![Dataset zoom-in](img/lineage-dataset-zoom-in.png)
-
-## Lineage Search
-
-This option can be used to Search Lineage by Column, Dataset or Pipeline.
-
-![Lineage Search](img/lineage-search-high-level-view.png)
-
-Below filters are available to narrow down the search results:
-
-- `Type` - Filter by Datasets, Pipelines or Columns
-- `Project` - Filter by Project Name
-- `Author` - Filter by Project Author
-- `Last Modfified` - Filter by Last Modified Time
