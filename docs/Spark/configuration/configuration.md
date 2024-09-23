@@ -74,6 +74,7 @@ So for example, instead of using `'$read_env'` for SQL or `Config.read_env` for 
 
 Jinja config syntax supports the following functionalities:
 
+- **Integer/String data type** - You can use a data type as it is, such as an integer field as an integer by using `{{ integer_field }}`. For strings, use `<some_character>{{ integer_field }}<some_character>`.
 - **Concatenation** - You can define multiple Jinja syntaxes in the same string, and the generated code will be a formatted string. For example, `'{{c_string}}___{{ c_int }}'`
 - **SQL Statement queries** - You can use Jinja syntax in SQL Statement Gem queries. For example, `select {{col1}} from {{table}} where {{condition}}`
 - **Nested `call_func`** - You can use Jinja syntax inside of `call_func` or `call_function`, including those that are nested within other functions.
@@ -106,6 +107,17 @@ In the below image `Config.num_top_customers` is fetching the integer value defi
 In the below image `{{num_top_customers}}` is fetching the integer value defined in configurations.
 
 ![Config Limit Example](img/config-pipeline-limit-eg-jinja.png)
+
+Also see the following syntax examples for specific Gem property field data types:
+
+- SColumnExpression: `lit("{{a.b.c}}")`
+- SString: `{{ a.b.c }}`
+- String: `{{ a.b.c }}`
+
+You can use the following syntax examples for accessing elements of array and record fields:
+
+- For array: `{{ config1.array_config[23] }}`
+- For record: `{{ record1.record2.field1 }}`
 
 ### Using Spark-expression Config type in Gem
 
