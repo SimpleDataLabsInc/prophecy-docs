@@ -2,7 +2,7 @@
 title: Git
 id: Git
 description: Source Control
-sidebar_position: 2
+sidebar_position: 1
 tags:
   - metadata
   - Git
@@ -12,7 +12,7 @@ tags:
 
 Configure your user's [Settings](https://app.prophecy.io/metadata/settings) with a new `Git` provider: enter `Email`, `Username` and `Personal Access Token`, or simply `Login with Github`.
 
-![GitConnector](./img/git_connector.png)
+![GitConnector](./../img/git_connector.png)
 
 The video below walks through connecting to an external Git provider:
 
@@ -32,11 +32,11 @@ To grant authorization, follow the steps below:
 1. Go to the [Authorized OAuth Apps settings page](https://github.com/settings/applications) on GitHub.
 2. Look for our application named Prophecy in the list of authorized apps and click on the entry to view its details.
 
-![GitOauthApps](img/git_oauth_apps.png)
+![GitOauthApps](./../img/git_oauth_apps.png)
 
 3. On the application details page, you should see an option to grant access to your organizations. Enable the necessary organization access permissions to allow our application to interact with your organization's repositories effectively. Please refer below image for permissions required.
 
-![Permissions](img/oauth_permissions.png)
+![Permissions](./../img/oauth_permissions.png)
 
 After selecting the appropriate organization access permissions, click the Save or Authorize button to save your changes and grant access to our application.
 
@@ -112,7 +112,7 @@ Once the changes are merged, we can `release` a branch straight from the UI itse
 <iframe src="https://user-images.Githubusercontent.com/103921419/174550916-7d8beb20-2013-401d-be30-67c02983958f.mp4" title="How to release a branch" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-![Git after release](./img/git_release1.png)
+![Git after release](./../img/git_release1.png)
 
 :::note
 Databricks scheduler changes would only come into effect once the Project is released.
@@ -142,7 +142,7 @@ When you fork a repository, you create a copy of the original repository (upstre
 
 When using the fork per usage Git storage model while creating a new Project, apart from the `upstream repository` details, some additional information is needed for the `forked repository`.
 
-![Fork repo setup](./img/fork_repo_eg1.png)
+![Fork repo setup](./../img/fork_repo_eg1.png)
 
 Let's create a fork of our original repository and pull `main` branch from original repository to our newly created forked repository.
 
@@ -154,7 +154,7 @@ Let's create a fork of our original repository and pull `main` branch from origi
 Now to pull main branch from upstream repository or from origin of current repository is as simple as clicking on below
 `Pull Upstream` or `Pull Origin` options
 
-![Fork repo extra options](./img/fork_repo_eg2.png)
+![Fork repo extra options](./../img/fork_repo_eg2.png)
 
 :::note
 

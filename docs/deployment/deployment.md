@@ -29,7 +29,7 @@ There is no specific deployment step needed for other entities.
 
 ## How to Release a Project
 
-Once you've [committed](/docs/metadata/git.md#how-to-commit-changes) and [merged](/docs/metadata/git.md#how-to-merge-changes) your changes, you're ready to release them. To do this, Simply proceed with the [Release and Deploy](/docs/metadata/git.md#how-to-release-a-branch), which takes care of both the release and deployment of Pipelines, Gems, and Jobs to respective environments.
+Once you've [committed](/docs/metadata/Git/git.md#how-to-commit-changes) and [merged](/docs/metadata/Git/git.md#how-to-merge-changes) your changes, you're ready to release them. To do this, Simply proceed with the [Release and Deploy](/docs/metadata/Git/git.md#how-to-release-a-branch), which takes care of both the release and deployment of Pipelines, Gems, and Jobs to respective environments.
 
 ![Release_screen](img/release_and_deploy_screen.png)
 
