@@ -54,4 +54,4 @@ The steps below are intended for Private SaaS deployments, i.e. Prophecy is depl
 
 ## Reach out for assistance
 
-If you're still facing issues, please don't hesitate to [reach out to us](/docs/getting-started/getting-help).
+If you're still facing issues, please don't hesitate to [reach out to us](/docs/getting-started/getting-help.md).
