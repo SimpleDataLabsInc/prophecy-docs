@@ -17,7 +17,7 @@ or
 
 Sometimes your personal access token (PAT) has expired or lacks a certain permission.
 
-1. Check if your PAT has expired. If so, create a new one with sufficient read and write access to the repository of interest. Here are the instructions to locate existing tokens and create new tokens for [Github](<(https://docs.github.com/en/enterprise-cloud@latest/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic)>), [Bitbucket](https://support.atlassian.com/bitbucket-cloud/docs/repository-access-tokens/), or [GitLab](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html#create-a-personal-access-token).
+1. Check if your PAT has expired. If so, create a new one with sufficient read and write access to the repository of interest. Here are the instructions to locate existing tokens and create new tokens for [Github](https://docs.github.com/en/enterprise-cloud@latest/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens), [Bitbucket](https://support.atlassian.com/bitbucket-cloud/docs/repository-access-tokens/), or [GitLab](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html#create-a-personal-access-token).
 2. Open a terminal from a computer that can access your Git repository. If you need help with this step, please reach out to your Git administrator.
 3. Have the new PAT ready; you'll use it in place of a password.
 4. Check for read access by testing your ability to [clone](https://git-scm.com/docs/git-clone) a repo  
