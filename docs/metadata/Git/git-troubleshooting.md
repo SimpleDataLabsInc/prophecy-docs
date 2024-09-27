@@ -5,7 +5,11 @@ description: How to troubleshoot permissions and network issues with Git
 tags: []
 ---
 
-Sometimes there is an error when Prophecy tries to reach Git. This could be caused by your user's [authorization](#debugging-git-credentials), a [repository setting](debugging-repository-setttings), or a [network](#debugging-network-issues) issue. Fear not! This guide outlines what to do if you see error messages such as: `not authorized`, `git-upload-pack-not-permitted`, or `git-recieve-pack-not-permitted`.
+Sometimes there is an error when Prophecy tries to reach Git. This could be caused by your user's [authorization](#debugging-git-credentials), a [repository setting](debugging-repository-setttings), or a [network](#debugging-network-issues) issue. Fear not! This guide outlines what to do if you see error messages such as:  
+`not authorized`  
+`git-upload-pack-not-permitted`  
+or  
+`git-recieve-pack-not-permitted`
 
 ![errorMsgs](./../img/git_troubleshooting_1.png)
 
