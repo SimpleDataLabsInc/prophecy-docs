@@ -49,7 +49,8 @@ The steps below are intended for Private SaaS deployments, i.e. Prophecy is depl
 
 1. Login to the metagraph pod.
 2. If the remote repository is configured using SSL and the metagraph pod cannot reach the remote Git server, then set `SKIP_SSL_VERIFICATION` to true.
-3. If the remote repository is configured via a proxy and the metagraph pod cannot reach the remote Git server, then add the proxy details to JVM options and restart.
+3. If Prophecy is running on an encrypted cluster, then `ENABLE_PROPHECY_ENCRYPTION_PII` must be set to true.
+4. If the remote repository is configured via a proxy and the metagraph pod cannot reach the remote Git server, then add the proxy details to JVM options and restart.
 
 ## Reach out for assistance
 
