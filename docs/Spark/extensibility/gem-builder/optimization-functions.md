@@ -7,30 +7,28 @@ tags:
   - gem builder
 ---
 
-This page includes advanced tips and optimization functions that you can use in the Gem builder.
+Custom Gems create code by defining functionality in their `def apply()` method.
+By default Prophecy will apply optimizations to this generated code to assist the Spark
+Catalyst optimization engine when it creates the Spark Plan. The optimizations make replacements
+using functionally equivalent code, but in some corner cases this may cause unwanted side effects.
+
+In certain corner cases you may want disable some or all optimizations.
 
 ## Turn off loop unrolling
+
+By default Prophecy will unroll small static loops.
 
 You can turn off loop unrolling by adding `# skipLoopUnRolling` as a comment on the same line as the for loop.
 
 ![Turn off loop unrolling example](img/turn-off-loop-unrolling.png)
 
-## Disable all optimizations
-
-You can turn off all optimizations by setting the optimize function stub to False.
-
-```py
-def optimizeCode(self) -> bool:
-        return False
-```
-
 ## Replace variables and optimize objects
 
-You can use two functions to replace variables and optimize objects.
+You can use two functions to disable substitution of variables during the optimization step.
 
-- `SubstituteDisabled` - Disables the replacement of this variable with the value in all places it's used.
+- `SubstituteDisabled` - Disables the substitution of this variable with the value in all places it's used.
 
-- `PostSubstituteDisabled` - Uses the replacement and tries to optimize. After optimization, if the value replaced still exists, then it creates that object back.
+- `PostSubstituteDisabled` - Only performs optimization substitution if all instances of the variable can be replaced.
 
 Example:
 
@@ -87,6 +85,16 @@ def testLoopUnRoll():
             updateCond1 = (updateCond | (existingDF[scdCol2] != updatesDF[scdCol2]))
 ```
 
-- In above code sample, `SubstituteDisabled` (`myCols`) didn’t replace the variable so the entire loop didn’t get optimized.
-- In the first occurrence of `PostSubstituteDisabled` (`cols`), the function went ahead and substituted it. However, post substitution it was able to completely optimize that variable and its usages, so the variable didn’t get recreated in the final code.
-- In the second occurrence of `PostSubstituteDisabled` (`cols1`), the function went ahead and substituted it. However, the for loop that it's used in was marked to skip optimization (`skipLoopUnRolling`), so post optimization it recreated the original variable (`cols1`) back.
+- In above code sample, `SubstituteDisabled` (`myCols`) did not replace the variable so the entire loop was not optimized.
+- In the first occurrence of `PostSubstituteDisabled` (`cols`), all instances of `cols` could be replaced so the original variable was removed.
+- In the second occurrence of `PostSubstituteDisabled` (`cols1`), the for loop was marked to skip optimization (`skipLoopUnRolling`).
+  Since at least one instance of the `cols1` variable was marked to avoid optimization, the variable could not be optimized.
+
+## Disable all optimizations
+
+You can turn off all optimizations by setting the optimize function stub to False.
+
+```py
+def optimizeCode(self) -> bool:
+        return False
+```
