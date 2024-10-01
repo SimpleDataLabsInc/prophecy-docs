@@ -2,7 +2,7 @@
 title: Lookup
 id: lookup
 description: Lookup
-sidebar_position: 4
+sidebar_position: 2
 tags:
   - gems
   - lookup
@@ -10,9 +10,9 @@ tags:
 
 Lookups are a special kind of Gem that allow you to mark a particular DataFrame as a _Broadcast_ DataFrame. Spark will ensure that this data is available on every computation node so that these lookups can be done without shuffling data. This is useful for looking up values in tables, hence the name.
 
-![Lookup Gem](../img/lookup.png)
+![Lookup Gem](../../img/lookup.png)
 
-![Lookup UI](../img/lookup_ui.png)
+![Lookup UI](../../img/lookup_ui.png)
 
 |     | Name          | Description                                                                  |
 | :-: | ------------- | ---------------------------------------------------------------------------- |
@@ -85,9 +85,9 @@ MyLookup(customer_id)['order_category']
 </Tabs>
 ````
 
-For example, let's look at a [Reformat](../transform/reformat.md) component:
+For example, let's look at a [Reformat](../../transform/reformat.md) component:
 
-![Reformat example](../img/lookup_use.png)
+![Reformat example](../../img/lookup_use.png)
 
 Here we have a column named `category` that is set to the value of `MyLookup(customer_id)['order_category']` in SQL Expression mode. Whatever the value of `order_category` is for the key found in the `c_id` column (compared to the source `customer_id` key column) will be used for the new column.
 
