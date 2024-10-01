@@ -6,18 +6,22 @@ sidebar_position: 4
 tags: [functionality, compatibility, version, library, plib, plibs, license]
 ---
 
-Prophecy-libs is a small and lightweight utility library, offering a comprehensive set of Spark functions tailored for Prophecy customers. It addresses the most common data transformation use cases, including monitoring, auditing, connectors, and other data processing functions. This versatile library supports Scala and Python Spark environments.
+Prophecy Libs are small and lightweight utility libraries, offering comprehensive sets of Spark functions tailored for Prophecy customers. They address the most common data transformation use cases, including monitoring, auditing, connectors, and other data processing functions. These versatile libraries support Scala and Python Spark environments.
 
-Released artifacts are available below:
+Here are the released artifacts:
 
-- Prophecy-libs for Scala (latest version: 8.0.29): [Maven](https://mvnrepository.com/artifact/io.prophecy/prophecy-libs)
-- Prophecy-libs for Python (latest version 1.9.9): [PyPi](https://pypi.org/project/prophecy-libs/)
+- Prophecy Libs for Scala: [Maven](https://mvnrepository.com/artifact/io.prophecy/prophecy-libs)
+- Prophecy Libs for Python: [PyPi](https://pypi.org/project/prophecy-libs/)
+
+For a list of the latest versions, see [Version Chart](/docs/release_notes/version_chart.md).
 
 ## Functionality
 
+This section includes the functionalities offered by Prophecy Libs.
+
 ### Pipeline Monitoring
 
-Out of the box, Spark lacks auditing or monitoring capabilities for its Pipelines. Prophecy-libs bridges this gap by offering step-by-step transformation monitoring, enabling users to easily comprehend pipeline execution metrics (e.g., times of arrival, amount of data processed), data profiles, and detailed debugging information at every Pipeline step.
+Out of the box, Spark lacks auditing or monitoring capabilities for its Pipelines. Prophecy Libs bridges this gap by offering step-by-step transformation monitoring, enabling users to easily comprehend Pipeline execution metrics (e.g., times of arrival, amount of data processed), data profiles, and detailed debugging information at every Pipeline step.
 
 :::note
 
@@ -25,11 +29,11 @@ Pipeline Monitoring is fully independent of the Prophecy IDE, using standard met
 
 :::
 
-Learn more about Prophecy monitoring capabilities [here](https://docs.prophecy.io/Spark/pipeline-monitoring/) and the metrics setup [here](https://docs.prophecy.io/Spark/execution/execution-metrics/).
+To learn more about Prophecy monitoring capabilities, see [Pipeline Monitoring](/docs/Spark/pipeline-monitoring/pipeline-monitoring.md). And to learn more about the metrics setup, see [Execution Metrics](/docs/Spark/execution/execution-metrics.md).
 
 ### Utility Functions
 
-The standard Spark function library covers the basics of data transformation but often falls short for enterprise data platforms. Prophecy-libs offers additional utility functions essential for complex data operations, especially during legacy platform migrations.
+The standard Spark function library covers the basics of data transformation but often falls short for enterprise data platforms. Prophecy Libs offers additional utility functions essential for complex data operations, especially during legacy platform migrations.
 
 This includes comprehensive data lookup functionality, configuration management, complex type processing UDFs, secret manager integration, and other high-demand functions.
 
@@ -39,4 +43,4 @@ Prophecy-libs provides several high-performance connectors missing from the stan
 
 ## License
 
-Prophecy-libs is source-available to all Prophecy customers in perpetuity. The built artifacts of Prophecy-libs are published in public repositories. Source code access is available via secure file-sharing per request.
+Prophecy Libs is source-available to all Prophecy customers. The built artifacts of Prophecy Libs are published in public repositories. Source code access is available via secure file-sharing per request.
