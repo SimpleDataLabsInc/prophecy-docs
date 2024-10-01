@@ -328,7 +328,7 @@ It is recommended to try out this dialogue code in Gem builder UI and see how ea
 
 ### Validation
 
-The `validate` method performs validation checks so that in the case where there's any issue with any inputs provided for the user an Error can be displayed. In our example case if the Filter condition is empty. Similarly, you can add any validation on your properties.
+The `validate` method performs validation checks so that in the case where there's any issue with any inputs provided for the user an Error can be displayed. In our example case, this would happen if the Filter condition is empty. Similarly, you can add any validation on your properties.
 
 ````mdx-code-block
 <Tabs>
@@ -430,7 +430,7 @@ You can go ahead and preview the component in the Gem Builder now to see how it 
 
 ## Source/Target Gems
 
-Source/Target Gems are Gems that you use to read/write your Datasets into DataFrames. There are certain differences between how you define a Source/Target Gem and a Transformation Gem. For example, a Source/Target Gem will have two `dialog` and two `apply` functions each for Source and Target respectively. Let's look at them with an example
+Source/Target Gems are Gems that you use to read/write your Datasets into DataFrames. There are certain differences between how you define a Source/Target Gem and a Transformation Gem. For example, a Source/Target Gem will have two `dialog` and two `apply` functions each for Source and Target respectively. Let's look at them with an example.
 
 ````mdx-code-block
 <Tabs>
