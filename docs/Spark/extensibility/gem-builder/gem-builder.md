@@ -1,9 +1,10 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
 title: Gem builder
 id: gem-builder
-description: Gem-Builder
-tags: []
+description: Gem builder
+tags:
+  - gem builder
 ---
 
 :::caution Enterprise Only
@@ -258,7 +259,7 @@ These properties are available in `validate`, `onChange` and `apply` and can be 
 
 ````
 
-Let's look at each of these functions.
+Let's look at each of these functions. For details on our optimization functions, see [Optimization functions](/docs/).
 
 ### Dialog
 
@@ -849,12 +850,10 @@ object ParquetFormat extends DatasetSpec {
 </Tabs>
 ````
 
-Here you can see that the differences between a Transform Gem and a DataSource Gem is
+Here you can see the differences between a Transform Gem and a DataSource Gem.
 
-1. The Source/Target Gem extends `DatasetSpec`
+1. The Source/Target Gem extends `DatasetSpec`.
 2. It has two Dialog functions: `sourceDialog` and `targetDialog`. They return both a `DatasetDialog` object, whereas for any Transform Gem, the dialog function returns a `Dialog` object.
 3. The `ComponentCode` class has two apply functions: `sourceApply` and `targetApply` for Source and Target modes respectively.
 
 There is no change in `onChange` and `validate` functions.
-
-a
