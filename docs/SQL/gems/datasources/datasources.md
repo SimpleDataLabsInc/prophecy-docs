@@ -89,4 +89,10 @@ As a result, **MyNextModel** contains three sources: a Seed (ORDERDETAILS), a So
 
 **MyNextModel** can be viewed visually (left) or as a SQL file (right). The Project browser (left) lists the Sources, Seeds, and Models available to drag-n-drop into the selected Model's canvas.
 
+:::note
+
+You can't use statements, such as `CALL` and `EXECUTE IMMEDIATE`, directly inside of Models. Instead of trying to use these statements in SQL statements or macros, you must use them in pre-hooks.
+
+:::
+
 For more details on dbt concepts including [Sources](https://docs.getdbt.com/docs/build/sources), [Seeds](https://docs.getdbt.com/docs/build/seeds), and [Models](https://docs.getdbt.com/docs/build/models), please explore the dbt documentation or checkout Prophecy's [SQL with Databricks getting-started guide](/docs/getting-started/getting-started-with-low-code-sql.md).
