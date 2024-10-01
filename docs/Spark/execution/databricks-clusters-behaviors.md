@@ -30,6 +30,7 @@ For [Interims](https://docs.prophecy.io/Spark/execution/interactive-execution#in
 
 As denoted in the Cluter Types table, some feature behaviors are different for different clusters. When using `Shared Mode` or `Unity Catalog Shared` access mode, the following features aren't supported:
 
+- Lookups
 - Regular Interims (beyond Vanilla)
 - Execution Metrics
 - Run history
