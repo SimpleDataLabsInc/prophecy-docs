@@ -7,173 +7,86 @@ tags:
   - gem builder
 ---
 
-how to use some of our optimization functions in gembuilder
+This page includes advanced tips and optimization functions that you can use in the Gem builder.
 
-## test
+## Turn off loop unrolling
 
-### Dialog
+You can turn off loop unrolling by adding `# skipLoopUnRolling` as a comment on the same line as the for loop.
 
-The `dialog` function contains code specific to how the Gem UI should look to the user.
+![Turn off loop unrolling example](img/turn-off-loop-unrolling.png)
 
-````mdx-code-block
-<Tabs>
+## Disable all optimizations
 
-<TabItem value="py" label="Python">
-
-```py
-def dialog(self) -> Dialog:
-        return Dialog("Filter").addElement(
-            ColumnsLayout(height="100%")
-                .addColumn(PortSchemaTabs(selectedFieldsProperty=("columnsSelector")).importSchema(), "2fr")
-                .addColumn(StackLayout(height=("100%"))
-                .addElement(TitleElement("Filter Condition"))
-                .addElement(
-                Editor(height=("100%")).withSchemaSuggestions().bindProperty("condition.expression")
-            ), "5fr"))
-```
-</TabItem>
-<TabItem value="scala" label="Scala">
-
-```scala
-def dialog: Dialog = Dialog("Filter")
-    .addElement(
-      ColumnsLayout(height = Some("100%"))
-        .addColumn(
-          PortSchemaTabs(selectedFieldsProperty = Some("columnsSelector")).importSchema(),
-          "2fr"
-        )
-        .addColumn(
-          StackLayout(height = Some("100%"))
-            .addElement(TitleElement("Filter Condition"))
-            .addElement(
-              Editor(height = Some("100%"))
-                .withSchemaSuggestions()
-                .bindProperty("condition.expression")
-            ),
-          "5fr"
-        )
-    )
-```
-</TabItem>
-</Tabs>
-
-````
-
-The above Dialog code in the filter is rendered on UI like this:
-
-![Dialog](img/gem-builder-ui.png)
-
-There are various UI components that can be defined for custom Gems such as scroll boxes, tabs, buttons, and more! These UI components can be grouped together in various types of panels to create a custom user experience when using the Gem.
-
-After the Dialog object is defined, it's serialized as JSON, sent to the UI, and rendered there.
-
-Depending on what kind of Gem is being created, either a `Dialog` or a `DatasetDialog` needs to be defined.
-
-- The **Transformation Dialog**: The Dialog for Transformation Gems (any Gem that is not a Dataset Gem) is created using the `dialog` method, which must return a Dialog object.
-
-- The **Dataset Dialog**: The Dialog for a [Source/Target](../gems/source-target/) Gem is a `DatasetDialog` object. You will need to have `source` and `target` methods defined.
-
-Column Selector: This is a special property that you should add if you want to select the columns from UI and then highlight the used columns using the `onChange` function.
-It is recommended to try out this dialogue code in Gem builder UI and see how each of these elements looks in UI.
-
-### Validation
-
-The `validate` method performs validation checks so that in the case where there's any issue with any inputs provided for the user an Error can be displayed. In our example case if the Filter condition is empty. Similarly, you can add any validation on your properties.
-
-````mdx-code-block
-<Tabs>
-
-<TabItem value="py" label="Python">
+You can turn off all optimizations by setting the optimize function stub to False.
 
 ```py
-def validate(self, component: Component[FilterProperties]) -> List[Diagnostic]:
-        return validateSColumn(component.properties.condition, "condition", component)
-
+def optimizeCode(self) -> bool:
+        return False
 ```
-</TabItem>
-<TabItem value="scala" label="Scala">
 
-```scala
-def validate(component: Component)(implicit context: WorkflowContext): List[Diagnostic] = {
-    val diagnostics =
-      validateSColumn(component.properties.condition, "condition", component)
-    diagnostics.toList
-  }
-```
-</TabItem>
-</Tabs>
+## Replace variables and optimize objects
 
-````
+You can use two functions to replace variables and optimize objects.
 
-### State Changes
+- `SubstituteDisabled` - Disables the replacement of this variable with the value in all places it's used.
 
-The `onChange` method is given for the UI State transformations. You are given both the previous and the new incoming state and can merge or modify the state as needed. The properties of the Gem are also accessible to this function, so functions like selecting columns, etc. are possible to add from here.
+- `PostSubstituteDisabled` - Uses the replacement and tries to optimize. After optimization, if the value replaced still exists, then it creates that object back.
 
-````mdx-code-block
-<Tabs>
-
-<TabItem value="py" label="Python">
+Example:
 
 ```py
-def onChange(self, oldState: Component[FilterProperties], newState: Component[FilterProperties]) -> Component[
-        FilterProperties]:
-        newProps = newState.properties
-        usedColExps = getColumnsToHighlight2([newProps.condition], newState)
-        return newState.bindProperties(replace(newProps, columnsSelector=usedColExps))
+def testLoopUnRoll():
+    myCols: SubstituteDisabled = ['a']
+    cond = None
+    for scdCol in myCols:
+        if cond is None:
+            cond = (existingDF[scdCol] != updatesDF[scdCol])
+        else:
+            cond = (cond | (existingDF[scdCol] != updatesDF[scdCol]))
+    stagedUpdatesDF = updatesDF.where((existingDF["current"] == lit("true")) & (cond))
 
+    cols: PostSubstituteDisabled = ['a']
+    updateCond = None
+    for scdCol1 in cols:
+        if updateCond is None:
+            updateCond = (existingDF[scdCol1] != updatesDF[scdCol1])
+        else:
+            updateCond = (updateCond | (existingDF[scdCol1] != updatesDF[scdCol1]))
+    updatedDF = updatesDF.where((existingDF["current"] == lit("true")) & (updateCond))
+
+    cols1: PostSubstituteDisabled = ['a']
+    updateCond1 = None
+    for scdCol2 in cols1:#skipLoopUnRolling
+        if updateCond is None:
+            updateCond1 = (existingDF[scdCol2] != updatesDF[scdCol2])
+        else:
+            updateCond1 = (updateCond | (existingDF[scdCol2] != updatesDF[scdCol2]))
+    updatedDF1 = updatesDF.where((existingDF["current"] == lit("true")) & (updateCond1))
 ```
-</TabItem>
-<TabItem value="scala" label="Scala">
 
-```scala
-def onChange(oldState: Component, newState: Component)(implicit context: WorkflowContext): Component = {
-    val newProps = newState.properties
-    val portId = newState.ports.inputs.head.id
-
-    val expressions = getColumnsToHighlight(List(newProps.condition), newState)
-
-    newState.copy(properties = newProps.copy(columnsSelector = expressions))
-  }
-```
-</TabItem>
-</Tabs>
-
-````
-
-### Component Code
-
-The last class used here is `FilterCode` which is inherited from `ComponentCode` class. This class contains the actual Spark code that needs to run on your Spark cluster. Here the above User Defined properties are accessible using `self.props.{property}`. The Spark code for the Gem logic is defined in the apply function. Input/Output of apply method can only be DataFrame or list of DataFrames or empty.
-For example, we are calling the `.filter()` method in this example in the apply function.
-
-````mdx-code-block
-<Tabs>
-
-<TabItem value="py" label="Python">
+The previous code sample becomes the following:
 
 ```py
-class FilterCode(ComponentCode):
-def __init__(self, newProps):
-self.props: Filter.FilterProperties = newProps
+def testLoopUnRoll():
+    myCols = ['a']
+    cond = None
 
-    def apply(self, spark: SparkSession, in0: DataFrame) -> DataFrame:
-            return in0.filter(self.props.condition.column())
+    for scdCol in myCols:
+        if cond is None:
+            cond = (existingDF[scdCol] != updatesDF[scdCol])
+        else:
+            cond = (cond | (existingDF[scdCol] != updatesDF[scdCol]))
+
+    updateCond = (existingDF['a'] != updatesDF['a'])
+    cols1 = ['a']
+
+    for scdCol2 in cols1:
+        if updateCond is None:
+            updateCond1 = (existingDF[scdCol2] != updatesDF[scdCol2])
+        else:
+            updateCond1 = (updateCond | (existingDF[scdCol2] != updatesDF[scdCol2]))
 ```
-</TabItem>
-<TabItem value="scala" label="Scala">
 
-```scala
-class FilterCode(props: PropertiesType)(implicit context: WorkflowContext) extends ComponentCode {
-
-    def apply(spark: SparkSession, in: DataFrame): DataFrame = {
-      val out = in.filter(props.condition.column)
-      out
-    }
-
-  }
-```
-</TabItem>
-</Tabs>
-
-````
-
-You can go ahead and preview the component in the Gem Builder now to see how it looks. You can modify the properties and then save it to preview the generated Spark code which will eventually run on your cluster.
+- In above code sample, `SubstituteDisabled` (`myCols`) didn’t replace the variable so the entire loop didn’t get optimized.
+- In the first occurrence of `PostSubstituteDisabled` (`cols`), the function went ahead and substituted it. However, post substitution it was able to completely optimize that variable and its usages, so the variable didn’t get recreated in the final code.
+- In the second occurrence of `PostSubstituteDisabled` (`cols1`), the function went ahead and substituted it. However, the for loop that it's used in was marked to skip optimization (`skipLoopUnRolling`), so post optimization it recreated the original variable (`cols1`) back.
