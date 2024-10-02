@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[27262],{71044:e=>{e.exports=JSON.parse('{"label":"license","permalink":"/tags/license","allTagsPath":"/tags","count":1,"items":[{"id":"concepts/fabrics/prophecy-libraries","title":"Prophecy Libraries","description":"Prophecy library README","permalink":"/concepts/fabrics/prophecy-libraries"}]}')}}]);
