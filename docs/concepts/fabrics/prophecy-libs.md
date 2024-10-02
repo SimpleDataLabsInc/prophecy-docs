@@ -2,7 +2,7 @@
 title: Prophecy Libraries
 id: prophecy-libraries
 description: Prophecy library README
-sidebar_position: 4
+sidebar_position: 2
 tags: [functionality, compatibility, version, library, plib, plibs, license]
 ---
 
