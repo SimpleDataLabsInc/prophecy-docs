@@ -323,7 +323,7 @@ Depending on what kind of Gem is being created, either a `Dialog` or a `DatasetD
 
 - The **Transformation Dialog**: The Dialog for Transformation Gems (any Gem that is not a Dataset Gem) is created using the `dialog` method, which must return a Dialog object.
 
-- The **Dataset Dialog**: The Dialog for a [Source/Target](../../gems/source-target/source-target.md) Gem is a `DatasetDialog` object. You will need to have `source` and `target` methods defined.
+- The **Dataset Dialog**: The Dialog for a Gem is a `DatasetDialog` object. You will need to have `source` and `target` methods defined.
 
 Column Selector: This is a special property that you should add if you want to select the columns from UI and then highlight the used columns using the `onChange` function.
 It is recommended to try out this dialogue code in Gem builder UI and see how each of these elements looks in UI.
