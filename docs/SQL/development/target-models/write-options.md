@@ -210,7 +210,6 @@ Table 3
 | 1        | shipped         | 2024-01-02 |
 | 2        | pending         | 2024-01-02 |
 
-
 There are two options you can choose from to configure how to detect record changes:
 
 - Determine new records by checking timestamp column
