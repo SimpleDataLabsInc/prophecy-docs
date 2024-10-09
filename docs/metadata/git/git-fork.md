@@ -1,5 +1,5 @@
 ---
-title: Git fork a repository
+title: Fork a repository
 id: git-fork
 description: Source Control
 sidebar_position: 5
@@ -9,7 +9,9 @@ tags:
   - fork
 ---
 
-## How to use fork per user Git storage model
+This page describes how to fork a repository in cases where you may want to create a copy of the original repository.
+
+## Use fork per user Git storage model
 
 During the creation of Project there is an option to choose fork per usage as Git Storage model.
 When you fork a repository, you create a copy of the original repository (upstream repository) but the repository remains on your GitHub account.
@@ -26,7 +28,7 @@ Let's create a fork of our original repository and pull `main` branch from origi
 </div></div>
 
 Now to pull main branch from upstream repository or from origin of current repository is as simple as clicking on below
-`Pull Upstream` or `Pull Origin` options
+`Pull Upstream` or `Pull Origin` options.
 
 ![Fork repo extra options](./img/fork_repo_eg2.png)
 

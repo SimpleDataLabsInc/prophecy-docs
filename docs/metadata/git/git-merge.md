@@ -1,5 +1,5 @@
 ---
-title: Git merge
+title: Merge changes
 id: git-merge
 description: Source Control
 sidebar_position: 3
@@ -9,7 +9,9 @@ tags:
   - merge
 ---
 
-## How to merge changes
+This page describes how to merge your changes into the main branch. You can also pull changes from the main branch into a new branch. Once you're done with merging, you can release your branch.
+
+## Merge changes into the main branch
 
 Let's merge our `first_Pipeline` from `dev` branch into `main` branch.
 
@@ -18,7 +20,7 @@ Let's merge our `first_Pipeline` from `dev` branch into `main` branch.
 <iframe src="https://user-images.Githubusercontent.com/103921419/174550866-10de3632-0576-417f-99dd-8a71a916bed6.mp4" title="How to merge changes" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-## How to Pull changes
+## Pull changes
 
 Pulling changes from a branch is as simple as in any GUI based Git interface.
 Let's pull our `main` branch into the empty `second_branch` which we created earlier. Please refer the below video for step-by-step example:
@@ -32,7 +34,7 @@ Let's pull our `main` branch into the empty `second_branch` which we created ear
 Currently pull only from `main` branch to any specific branch is supported.
 :::
 
-## How to release a branch
+## Release a branch
 
 Once the changes are merged, we can `release` a branch straight from the UI itself.
 

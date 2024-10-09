@@ -1,5 +1,5 @@
 ---
-title: Git commit
+title: Commit changes
 id: git-commit
 description: Source Control
 sidebar_position: 2
@@ -9,7 +9,9 @@ tags:
   - commit
 ---
 
-## How to commit changes
+This page describes how to commit your changes and create new branches from the main branch.
+
+## Commit changes into the dev branch
 
 When you create your first Project, `dev` branch is automatically created for you. This is to ensure that no edits/commits are made directly on the `main` [branch](/concepts/Project/#Project-commits).
 
@@ -20,7 +22,7 @@ Within a Project, create a Pipeline and commit changes to the `dev/$USERNAME` br
 <iframe src="https://user-images.Githubusercontent.com/121796483/216262123-8f1c71d2-f4d9-40a4-bc6f-a11b81e2b68c.mp4" title="How to commit" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-## How to create/checkout branch
+## Create or checkout a branch
 
 Currently we are on `dev` branch which has our `first_Pipeline`.
 Now let's see how to go back to our `main` branch and also create a new `second_branch` from the main branch.
