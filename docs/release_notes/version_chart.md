@@ -2,6 +2,7 @@
 title: Version Chart
 id: version_chart
 description: Prophecy library version chart
+sidebar_position: 3
 tags: [compatibility, matrix, version, chart, library, plib, plibs]
 ---
 
@@ -25,6 +26,8 @@ curl  --header 'X-Auth-Token: $PROPHECY_PAT' --location https://app.prophecy.io/
 
 | Prophecy version | [Prophecy Scala libs](https://mvnrepository.com/artifact/io.prophecy/prophecy-libs) | [Prophecy Python libs](https://pypi.org/project/prophecy-libs/) | Release Date |
 | ---------------- | ----------------------------------------------------------------------------------- | --------------------------------------------------------------- | ------------ |
+| v3.3.11.5        | 8.2.1                                                                               | 1.9.16                                                          | 2024/10/09   |
+| v3.3.11.4        | 8.2.1                                                                               | 1.9.16                                                          | 2024/10/01   |
 | v3.3.11.3        | 8.2.1                                                                               | 1.9.16                                                          | 2024/09/30   |
 | v3.3.11.2        | 8.2.1                                                                               | 1.9.16                                                          | 2024/09/24   |
 | v3.3.11.1        | 8.2.1                                                                               | 1.9.16                                                          | 2024/09/20   |
