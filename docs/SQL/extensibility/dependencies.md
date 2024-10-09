@@ -17,13 +17,13 @@ To see all of your Project and Model dependencies simply open the Manage Depende
 
 ![View your dependencies](img/dependencies-view.png)
 
-You can also view your dependencies and get the same Manage Dependencies screen from the bottom left-hand side of the canvas, under **DEPENDENCIES**.
+You can also view your dependencies and get to the same Manage Dependencies screen from the bottom left-hand side of the canvas, under **DEPENDENCIES**.
 
 ![View your dependencies](img/dependencies-list.png)
 
 ## Add dependency
 
-To add the dependency, first navigate to [Manage Dependencies](#view-dependencies). There you will see a complete list of your dependencies. Click on **Add Dependency** to add a new dependency.
+To add a dependency, first navigate to [Manage Dependencies](#view-dependencies). There you will see a complete list of your dependencies. Click on **+ Add Dependency** to add a new dependency.
 
 You will be taken to the Create Dependency screen, where you can choose to create a dependency from the DBT Hub, GitHub, or another Prophecy Project.
 
