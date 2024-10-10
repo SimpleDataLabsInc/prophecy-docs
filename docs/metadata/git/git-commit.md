@@ -22,7 +22,7 @@ Within a Project, create a Pipeline and commit changes to the `dev/$USERNAME` br
 <iframe src="https://user-images.Githubusercontent.com/121796483/216262123-8f1c71d2-f4d9-40a4-bc6f-a11b81e2b68c.mp4" title="How to commit" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-a
+![View Git code changes](img/git-code-changes.png)
 
 ## Create or checkout a branch
 

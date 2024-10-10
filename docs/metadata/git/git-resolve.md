@@ -27,3 +27,9 @@ Let's see in the video below on how to resolve conflicts using simple merge on P
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://user-images.Githubusercontent.com/103921419/174733075-b878a77d-97df-4bc9-8baf-5fcc72e268db.mp4" title="How to resolve conflicts" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
+
+![Choose a Git conflict manual merge](img/git-conflict-manual-merge.png)
+
+View on branch master on the left, view on branch dev on the right.
+
+![View Git conflict merge strategies](img/git-conflict-merge-strategy.png)
