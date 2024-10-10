@@ -28,32 +28,24 @@ Let's see in the video below on how to resolve conflicts using simple merge on P
 <iframe src="https://user-images.Githubusercontent.com/103921419/174733075-b878a77d-97df-4bc9-8baf-5fcc72e268db.mp4" title="How to resolve conflicts" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-For SQL, you code-based merge
+### Resolve conflicts using manual merge
 
-Effective Conflict Resolution: Users require a mechanism to resolve merge conflicts for these granular changes efficiently.
+For SQL, you can use manual merge to resolve conflicts. This provides you with a simple, yet effective way to resolve merge conflicts for granular changes.
 
 ![Choose a Git conflict manual merge](img/git-conflict-manual-merge.png)
 
-Choose left or Right, Next, (Conflict resolved), Can toggle Code changes to view the code before validating.
-Compile the files
+- **(A)** **Strategy** - You must choose a preferred strategy to resolve the conflict. Here the Left strategy keeps the version on branch `master`, while the Right strategy keeps the version on branch `dev`.
+- **(B)** **Open on master** - Clicking this opens the Model on branch `master` for you to view.
+- **(C)** **Open on dev** - Clicking this opens the Model on branch `dev` for you to view.
 
-View on branch master on the left, view on branch dev on the right.
+Here are the read-only views on branch `master` on the left and branch `dev` on the right:
 
 ![View Git conflict merge strategies](img/git-conflict-merge-strategy.png)
 
-Diagnostics
-File icon here as well
-Errors caused by conflict resolution
-"Compilation failed due to errors. Please fix them before proceding."
-Bottom Diagnostics, "Please connect the input port."
-:::info Invalid coordinates
-In rare cases, your dependency might be only accessible to the Spark cluster or the build system but not Prophecy
-itself. If you're confident that the dependency is correct, but the validation error shows up, it's safe to press **Save
-Anyways** to ignore that warning.
-"Ignore Errors" or "Try Again" after fixing the errors.
-:::
+You can also toggle on **Code Changes** to view the code before validating. Once you choose the strategy that you want to keep, click **Next**. The merge process will compile the files.
 
-if the remote branch in a repo has a different commit history than the local copy of the branch then we will get an error.
-In this case the only way to move forward would be to delete the local copy of the branch and then check it out again to pull the correct reference from the remote (origin).
-Shouldn’t even arise, but if they did then they probably refreshed on screen
-This doesn’t fix that
+:::info Errors caused by conflict resolution
+In rare cases, your merge attempt may result in an error after the compile completes. You'll be asked to fix the error before proceeding. See **Diagnostics** at the bottom for details on what the error is and how you might go about fixing it. Once you've fixed the error, click **Try Again**.
+
+If you're confident that the errors are fine to leave as is, click **Ignore Errors**.
+:::
