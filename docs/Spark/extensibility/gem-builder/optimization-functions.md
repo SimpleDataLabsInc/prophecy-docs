@@ -14,6 +14,12 @@ using functionally equivalent code, but in some corner cases this may cause unwa
 
 In certain corner cases you may want disable some or all optimizations.
 
+:::note
+
+These functions are Python specific.
+
+:::
+
 ## Turn off loop unrolling
 
 By default Prophecy will unroll small static loops.
@@ -92,7 +98,7 @@ def testLoopUnRoll():
 
 ## Disable all optimizations
 
-You can turn off all optimizations by setting the optimize function stub to False.
+You can turn off all optimizations by setting the optimize function stub to `False`.
 
 ```py
 def optimizeCode(self) -> bool:
