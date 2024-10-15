@@ -1,6 +1,6 @@
 ---
-title: Use project tests
-id: use-project-tests
+title: Use model tests
+id: use-model-tests
 description: Custom SQL query tests
 sidebar_position: 1
 tags:
