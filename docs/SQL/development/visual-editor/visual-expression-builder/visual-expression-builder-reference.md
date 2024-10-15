@@ -78,6 +78,7 @@ The Visual Expression Builder supports the following data types:
   - Char
   - Calendar interval / Day time interval / Year month interval
   - Null
+  - Variant
 
 ### Booleon predicates
 
