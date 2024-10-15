@@ -26,6 +26,6 @@ For the following locations, toggle **Overwrite** to add your own overwrite macr
 
 - **(A) Database**: Optional, if Unity Database is enabled. By default, it's determined by the Fabric connection. You can overwrite it.
 - **(B) Schema**: The default schema is determined by the Fabric connection. You can overwrite it.
-- **(C) Alias** - Alias is the name of the created table or view. By default, it's equivalent to model name. You can overwrite it.
+- **(C) Alias**: Alias is the name of the created table or view. By default, it's equivalent to model name. You can overwrite it.
 
 ![Location](img/location.png)
