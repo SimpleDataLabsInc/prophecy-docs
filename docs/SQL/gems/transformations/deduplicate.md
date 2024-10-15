@@ -1,8 +1,8 @@
 ---
-title: Anatomy of a Transformation Gem
-id: transform-deep-dive
+title: Flatten Schema
+id: flatten-schema
 description: Understand how to use transformation gems, use expressions, and use variables
-sidebar_position: 3
+sidebar_position: 4
 tags:
   - aggregate
   - groupby
