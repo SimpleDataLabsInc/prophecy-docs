@@ -9,12 +9,12 @@ tags:
   - fork
 ---
 
-This page describes how to fork a repository in cases where you may want to create a copy of the original repository.
+This page describes how to fork a repository in cases where you may want to create a copy of the original (upstream) repository.
 
 ## Use fork per user Git storage model
 
 During the creation of Project there is an option to choose fork per usage as Git Storage model.
-When you fork a repository, you create a copy of the original repository (upstream repository) but the repository remains on your GitHub account.
+When you fork a repository, you must already have both the upstream repository and a fork per usage repository present. Both repositories remain on your GitHub account.
 
 When using the fork per usage Git storage model while creating a new Project, apart from the `upstream repository` details, some additional information is needed for the `forked repository`.
 
@@ -35,6 +35,6 @@ Now to pull main branch from upstream repository or from origin of current repos
 :::note
 
 1. Any changes made in forked repository would not effect the `upstream repository` and would only reflect in the `forked repository`.
-2. Please follow the normal Gßit flow for raising pull requests to the `original repository` (upstream repository) from the `forked repository`.
+2. Please follow the normal Git flow for raising pull requests to the `original repository` from the `forked repository`.
 
 :::

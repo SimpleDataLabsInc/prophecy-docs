@@ -13,9 +13,9 @@ This page describes how to commit your changes and create new branches from the 
 
 ## Commit changes into the dev branch
 
-When you create your first Project, `dev` branch is automatically created for you. This is to ensure that no edits/commits are made directly on the `main` [branch](/concepts/Project/#Project-commits).
+When you create your first Project, `dev/$USERNAME` branch is automatically suggested for you to create. This is to ensure that no edits/commits are made directly on the `main` [branch](/concepts/Project/#Project-commits).
 
-Within a Project, create a Pipeline and commit changes to the `dev/$USERNAME` branch:
+Within a Project, create a Pipeline and commit changes to the `dev` branch:
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>

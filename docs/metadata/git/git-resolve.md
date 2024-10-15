@@ -28,9 +28,13 @@ Let's see in the video below on how to resolve conflicts using simple merge on P
 <iframe src="https://user-images.Githubusercontent.com/103921419/174733075-b878a77d-97df-4bc9-8baf-5fcc72e268db.mp4" title="How to resolve conflicts" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-### Resolve conflicts using manual merge
+## Resolve conflicts using manual merge
 
-For SQL, you can use manual merge to resolve conflicts. This provides you with a simple, yet effective way to resolve merge conflicts for granular changes.
+You can use manual merge to resolve conflicts. This provides you with simple, yet effective ways to resolve merge conflicts for granular changes.
+
+### Use Left or Right merge strategy
+
+The Left or Right merge strategy gives you a the option to resolve the conflict by choosing one version of your code to keep. After choosing, you can click **Next** to continue the merge process.
 
 ![Choose a Git conflict manual merge](img/git-conflict-manual-merge.png)
 
@@ -42,7 +46,9 @@ Here are the read-only views on branch `master` on the left and branch `dev` on 
 
 ![View Git conflict merge strategies](img/git-conflict-merge-strategy.png)
 
-You can also toggle on **Code Changes** to view the code before validating. Once you choose the strategy that you want to keep, click **Next**. The merge process will compile the files.
+### Use Code Changes strategy
+
+For SQL, you can also toggle on **Code Changes** to view and edit the code before validating. You can resolve conflicts by making code changes directly on the files. Once you've made the changes that you want to keep, click **Next**. The merge process will compile the files.
 
 :::info Errors caused by conflict resolution
 In rare cases, your merge attempt may result in an error after the compile completes. You'll be asked to fix the error before proceeding. See **Diagnostics** at the bottom for details on what the error is and how you might go about fixing it. Once you've fixed the error, click **Try Again**.
