@@ -1,8 +1,8 @@
 ---
-title: Flatten Schema
-id: flatten-schema
+title: Deduplicate
+id: deduplicate
 description: Understand how to use transformation gems, use expressions, and use variables
-sidebar_position: 4
+sidebar_position: 5
 tags:
   - aggregate
   - groupby
