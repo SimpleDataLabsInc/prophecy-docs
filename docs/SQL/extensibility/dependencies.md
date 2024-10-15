@@ -45,7 +45,7 @@ To add a DBT dependency, you must select **DBT Hub** and provide the dbt package
 
 ![Add a DBT Dependency](img/dependencies-dbt.png)
 
-You can find the dbt package and version number from the [dbt Package hub](https://hub.getdbt.com/dbt-labs/dbt_utils/latest/).
+You can find the DBT package and version number for DBT dependencies from the [dbt Package hub](https://hub.getdbt.com/dbt-labs/). For example, to use the latest `dbt_utils` package, see the [`dbt_utils` package page](https://hub.getdbt.com/dbt-labs/dbt_utils/latest/).
 
 ![dbt_utils dependency](img/dependencies-dbt-utils.png)
 
@@ -57,7 +57,13 @@ To add a GitHub dependency, you must select **GitHub** and provide the Git Repos
 
 ![Add a GitHub Dependency](img/dependencies-github.png)
 
-The Revision must be either a Git tag, commit has, or branch name.
+The Revision must be either a Git tag, commit hash, or branch name.
+
+:::caution
+
+Enable **Warn unpinned** only if you want to point to your GitHub Repository without specifying any version, commit, or branch. Doing so may result in unexpected behavior if there are changes to your latest default branch.
+
+:::
 
 ### Add a Prophecy Project dependency
 
@@ -77,6 +83,7 @@ Once you've added a dependency, you can use the following entities from them:
 
 - Models
 - Seeds
+- Sources
 - Functions
 - Gems
 - Data Tests
@@ -96,12 +103,10 @@ the functionality of the other Models, it's usually better to disable a dependen
 
 :::
 
-## Installation on a cluster
-
-Whenever you connect the Models to a cluster, dependencies are automatically installed on your cluster. If the cluster doesn't have the dependency installed yet, Prophecy installs it and restarts the cluster automatically.
-
 ## Storage
 
 All of your dependencies are stored at the Project-level. When adding a dependency to a single Model, by default it becomes available to all the other Models within the same Project.
 
-Dependencies are natively saved within your build-system files. E.g. if you're using Scala, they're saved in the **pom.xml** file, if you're using Python, they're saved in the **setup.py** file.
+Prophecy takes care of pulling the dependencies automatically when a Model is run.
+
+Dependencies are saved within your **packages.yml** file.
