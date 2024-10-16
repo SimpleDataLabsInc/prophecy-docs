@@ -17,6 +17,8 @@ Comprehensive support for semi-structured data types in Prophecy Copilot for bot
 
 Using the SQL Visual Expression Builder can save you time and effort when constructing complex expressions, and can help you to better understand the relationships between different functions and their arguments.
 
+Support for semi-structured data like JSON, so columns will have nesting for different data types
+
 ## Core features
 
 1. Parse Json/Xml Gem
@@ -37,6 +39,10 @@ Building reliable data transformations hinges on correctly understanding schemas
 3. Column Selection: With the schema visually represented, users can easily select columns of interest for their transformations. Prophecy automatically handles the necessary data casting.
 
 ![Schema and column selector](img/variant-infer-schema.png)
+
+Infer nested schema, user need to do first for each variant, so they can see full schema they are working with.
+
+Clicking Edit Schema opens the variant and allows you to manually choose the type of each nested schema.
 
 The provided mockup (refer to Figma) demonstrates a method for inferring nested schemas directly from the schema selector. The only user action required is clicking the infer icon. Behind the scenes, Prophecy initiates a run similar to an interactive run but incorporates an appropriate recursive lateral join. This process samples records to identify all potential iterations of keys and values within the schema.
 
