@@ -42,7 +42,7 @@ After you infer the schema, you can click **Edit Schema** to view the variant sc
 
 ![Edit schema view](img/variant-edit-schema.png)
 
-You can always use the Code view to write the code query if you want to determine the schema yourself.
+You can always use the Code view to write the code query if you want to set the schema yourself.
 
 ## Variant sampling setting
 
@@ -77,8 +77,6 @@ When adding a column nested within a variant, the output column name, expression
 - Data type: The data type is automatically `CAST` to the closest inferred type.
 
 ### Default casting
-
-for their transformations. Prophecy automatically handles the necessary data casting.
 
 Prophecy automatically adds a `CAST` to any column you add from a nested type. By default, the column is cast using the standard `CAST(x AS y)` syntax.
 
