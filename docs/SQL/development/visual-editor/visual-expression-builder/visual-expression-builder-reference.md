@@ -24,7 +24,7 @@ The Visual Expression Builder supports the following expression options:
   - If you enter a number, it'll be considered as a numerical value, but you have the option to click to **Check to read value as string**.
   - The same applies to a boolean value. For example, if you enter `True`, then it'll be considered a boolean value unless you **Check to read value as string**.
 - **Function**: Includes a list of all of the function category groups and functions that are supported. The list displays each function description, including mandatory arguments.
-- **Data type cast**: Allows you to cast a variant column into its appropriate data type. Instead of explicit casting, you can use `TRY_CAST` to avoid errors by setting the data type to null on failure.
+- **Data type cast**: Allows you to cast a variant column into its appropriate data type. Instead of explicit casting, you can use `TRY_CAST` to avoid errors by setting the data type to `null` on failure.
 - **Conditional**: Allows you to use a conditional `WHEN` clause.
   - Within `WHEN`, you use a comparison expression.
   - Within `THEN` you use a simple expression.
