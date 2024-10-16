@@ -48,7 +48,11 @@ Here are the read-only views on branch `master` on the left and branch `dev` on 
 
 ### Use Code Changes strategy
 
-For SQL, you can also toggle on **Code Changes** to view and edit the code before validating. You can resolve conflicts by making code changes directly on the files. Once you've made the changes that you want to keep, click **Next**. The merge process will compile the files.
+For SQL, you can also toggle on **Code Changes** to view and edit the code before validating. You can resolve conflicts by making code changes directly on the files.
+
+![View Git conflict merge strategies](img/git-conflict-code-changes.png)
+
+Once you've made the changes that you want to keep, click **Next**. The merge process will compile the files.
 
 :::info Errors caused by conflict resolution
 In rare cases, your merge attempt may result in an error after the compile completes. You'll be asked to fix the error before proceeding. See **Diagnostics** at the bottom for details on what the error is and how you might go about fixing it. Once you've fixed the error, click **Try Again**.
