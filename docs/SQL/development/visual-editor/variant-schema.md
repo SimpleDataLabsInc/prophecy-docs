@@ -9,11 +9,11 @@ tags:
   - sql
 ---
 
-You can use Prophecy to parse your semi-structured data types, and convert them into flat, structured formats to make them easier to understand and use for analytics. This is available for when you want to determine the variant schema of your Snowflake arrays.
+You can use Prophecy to parse your semi-structured data types, and convert them into flat, structured formats to make them easier to understand and use for analytics. This is available for when you want to determine the variant schema of your Snowflake array or object.
 
 Using the variant schema functionality, you can do the following:
 
-- Parse JSON and XML formats
+- Parse JSON formats
 - Infer the variant schema
 - Configure the parsing limit for inferring the column structure
 - Use a nested column inside of the Visual Expression Builder
@@ -42,8 +42,6 @@ After you infer the schema, you can click **Edit Schema** to view the variant sc
 
 ![Edit schema view](img/variant-edit-schema.png)
 
-You can always use the Code view to write the code query if you want to set the schema yourself.
-
 ## Variant sampling setting
 
 When Prophecy infers the variant schema, it samples the records to identify all potential iterations of keys and values within the schema.
@@ -68,9 +66,9 @@ With in the column selector, you can add a nested column by clicking **Add Colum
 
 When adding a column nested within a variant, the output column name, expression, and data type are automatically generated according to the following rules:
 
-- Column name: The column name matches the input field name. If there's a duplicate, the name is prefixed with the next available parent field until it becomes unique.
+- Column name: The column name matches the input field name, and is prefixed with the parent field path. If there's a conflict, Prophecy appends numbers starting with `_0` until it becomes unique.
 
-  For example, if the column name `name` already exists, the new field might be named `customers_name`.
+  For example, if the column name `customers_name` already exists, the new field might be named `customers_name_0`.
 
 - Expression: The expression represents the full path to the selected field, and uses existing flattened subpaths.
 
@@ -82,4 +80,4 @@ Prophecy automatically adds a `CAST` to any column you add from a nested type. B
 
 In some cases, a path within a variant may hold different value types across rows. For instance, consider a Dataset where each row’s value key contains different data types, such as integer, object, and boolean.
 
-Prophecy supports this scenario by presenting each detected data type for a given key, array, or object as a separate item in the column selector. When you add one of those columns to the expression, instead of explicit casting we use the `as_*` function, which returns `null` if the cast is not possible.
+Prophecy supports this scenario by presenting each detected data type for a given key, array, or object as a separate item in the column selector. When you add one of those columns to the expression, we use explicit casting, which may error out if the cast is not possible. You can change this behavior by using `TRY_CAST`, which returns `null` if the cast is not possible.
