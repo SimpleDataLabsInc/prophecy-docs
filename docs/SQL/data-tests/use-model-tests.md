@@ -20,12 +20,12 @@ There could be many tests within a project. Each test is checking a table create
 
 :::
 
-For each Model, refer to macro as a function
+For each model, you can create a macro-based test definition to use as a model test.
 
-For each column within a model, you can define out-of-the box supported dbt data tests.
+For each column within a model, you can define out-of-the box supported dbt Simple data tests.
 
-- Not null: Asserts that each value within a column is not null
 - Unique: Asserts that each value within a column is unique
+- Not null: Asserts that each value within a column is not null
 - Accepted values: Asserts that column contains values present within a pre-defined set of values
 - Relationships: Asserts that column contains values present within another column
 
@@ -33,11 +33,13 @@ You can also use generic tests defined within the project or those defined withi
 
 ## Set up a test
 
-Since project tests share the same canvas as models, you can set them up the same way you would develop and run a model.
+Depending on the type of test, you can set up a new model or column test from either the Tests section of the project tab or the Data Tests tab of the Target Model.
 
 ### Develop a test
 
-To develop a project test, start by opening a project:
+You can create a new data test definition to use in your model or column test. You can also skip creating a data test definition, and use one of the Simple data tests previously mentioned.
+
+To develop a model or column test, start by opening a project:
 
 Add New Test, see four out of box tests
 For unique
@@ -49,7 +51,7 @@ under the current project name
 Dependencies
 also dependencies, such as github_dbt_base dependency
 
-1. Under the Project Browser, click **Add Test**.
+1. Under the Project Browser, click **Add Test definition**. You can also click **+ New Data Test Type** from the Target Model Data Tests tab.
 
    ![Add a new model test definition](img/model-test-new-definition.png)
 
