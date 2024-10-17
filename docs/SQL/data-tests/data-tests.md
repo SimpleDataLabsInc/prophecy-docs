@@ -48,8 +48,19 @@ Data tests can accept input data from any table, no matter if the table is defin
 
 Supported test types include:
 
-- Project tests
+- Project tests: Singular use tests that depend on the Model that they were created for
+- Generic tests: Generic use test that are not tied to a specific Model, and can be reused repeatedly
+  - Model tests
+  - Column tests
+
+It's recommended to use each test type for the following situations:
+
+- Project tests: Use to test referential integrity, late arriving data, and data consistency verification
+- Model tests: Use to test model size and aggregations
+- Column tests: Use to test column data format and data presence (nulls, empty strings, etc.)
 
 ## What's next
 
 To set up a project test, see [Use project tests](/docs/SQL/data-tests/use-project-tests.md).
+
+If you need to reuse a test that is defined by a parametrized query, see [Use model tests](/docs/SQL/data-tests/use-model-tests.md).
