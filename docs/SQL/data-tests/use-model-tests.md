@@ -9,10 +9,10 @@ tags:
   - sql
 ---
 
-Model and column data tests are dbt macro generated tests that can be parametrized? and applied to a given model or any number of columns. These tests are called generic data tests, and are based on the following [dbt generic test types](https://docs.getdbt.com/docs/build/data-tests#generic-data-tests):
+Model and column data tests are dbt macro generated tests that can be parametrized and applied to a given model or any number of columns. These tests are called generic data tests, and are based on the following [dbt generic test types](https://docs.getdbt.com/docs/build/data-tests#generic-data-tests).
 
-- Model-level tests, which can span across many columns for a given model, or even multiple models, and are defined at a model level
-- Column-level tests, which are defined on a column level of each model
+- Model-level tests: Can span across many columns for a given model, or even multiple models, and are defined at a model level
+- Column-level tests: Are defined on a column level of each model
 
 :::note
 
@@ -22,14 +22,14 @@ There could be many tests within a project. Each test is checking a table create
 
 For each Model, refer to macro as a function
 
-For each column within model, the user can define out-of-the box supported dbt data tests. Those are:
+For each column within a model, you can define out-of-the box supported dbt data tests.
 
 - Not null: Asserts that each value within a column is not null
 - Unique: Asserts that each value within a column is unique
 - Accepted values: Asserts that column contains values present within a pre-defined set of values
 - Relationships: Asserts that column contains values present within another column
 
-You can also use new generic tests defined within the project or those defined within other packages.
+You can also use generic tests defined within the project or those defined within dependency packages.
 
 ## Set up a test
 
@@ -51,7 +51,7 @@ also dependencies, such as github_dbt_base dependency
 
 1. Under the Project Browser, click **Add Test**.
 
-   ![Add a new test](img/project-test-add-new.png)
+   ![Add a new model test definition](img/model-test-new-definition.png)
 
 2. Enter your **Test Name**. Project tests are saved to a tests SQL file in the Git directory by default.
 
@@ -59,13 +59,19 @@ also dependencies, such as github_dbt_base dependency
 
 4. Create your test model by dragging and dropping Gems to your visual canvas. Connect them to your Data Test. You can also write your test on the Code view. You can use as many models and other database objects as you’d like in your test.
 
-   ![Project test canvas](img/project-test-canvas.png)
+   ![Create a new model test definition](img/model-test-create-definition.png)
 
 On Schema tab
 Update for data mismatch
 If something changed like a reformat Gem
 If column isn’t there anymore, then the test will delete
 If updating schema then could affect data test
+
+![Create a new model test](img/model-test-create-new.png)
+
+![Create a new model test type](img/model-test-new-test.png)
+
+![Model test types examples](img/model-test-types.png)
 
 ### Run a test
 
@@ -79,11 +85,9 @@ After you’ve developed your project test and executed all of your models, you 
 
 2. Click **See Run Details** to view the test Summary. Depending on the outcome of the test, the icon displays a different color.
 
-   ![See Run Details](img/project-test-run-details.png)
+   ![Run model tests](img/model-test-run.png)
 
    You can click to expand the test logs in the Summary to view the dbt logs.
-
-   ![View test summary](img/project-test-summary.png)
 
 In addition to the previous relational integrity test, you can create tests to check that the total payment amount from customers is positive or simply check that all of your tables are still accessible. You can test any series of transformation Gems, because a project test simply asserts that the resulting table meets a certain criteria.
 
@@ -94,8 +98,6 @@ If your project test fails, check your test model for any changes.
 See Store Failures
 
 - Click the test output to see your failed rows.
-
-  ![View test summary](img/project-test-failed-test.png)
 
 Some examples of test failure causes include:
 
@@ -139,9 +141,13 @@ When working with huge table with millions of rows, and only care if fails or no
 
 1. Click on the test to open the test details.
 
+   ![Edit a test](img/model-test-edit.png)
+
 2. Enter conditional values for the following options:
 
-   ![Configure a test](img/project-test-config.png)
+   ![Advanced settings](img/model-test-advanced.png)
+
+   ![Continued Advanced settings](img/model-test-advanced-settings.png)
 
    - **(A)** **Failure Calculation** - Sets the failure condition used to run against the test result. You can use the `count()` function on a column or multiple columns.
    - **(B)** **Limit**- Sets the maximum number of failures returned by a test query. You can set the limit to save resources and time by having the test stop its query as soon as it encounters a certain number of failed rows.
@@ -161,6 +167,8 @@ Runs all tests for the project or if you choose model
 
 1. Under the Project Browser, click **Add Job**.
 
+   ![Create a job](img/model-test-create-job.png)
+
 2. Drag a Model Gem to your visual canvas.
 
 3. Click the Model to open the Model Properties.
@@ -170,7 +178,7 @@ Runs all tests for the project or if you choose model
    - Run entire Project
    - Run a SQL Model
 
-   ![Add a schedule job](img/project-test-schedule.png)
+   ![Schedule a job](img/model-test-schedule-job.png)
 
 5. Select **Run tests**.
 
