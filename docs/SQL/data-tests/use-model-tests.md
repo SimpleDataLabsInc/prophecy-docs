@@ -126,9 +126,9 @@ toggle on and add a filter condition expression
 Severity
 Warn over fail
 fail*calc for how many rows fail for error, otherwise just warn
-set "fail_calc" property to fx count <>* +, which counts all of the rows which are failing
-set Error If fx count <>\_ + greater than <>20
-set Warn If to fx count <>\* + not equals <>0
+set "fail_calc" property to fx count anglebrackets* +, which counts all of the rows which are failing
+set Error If fx count anglebrackets\_ + greater than anglebrackets20
+set Warn If to fx count anglebrackets\* + not equals anglebrackets0
 Store Failures
 The data values that fail will be stored
 if true, saves all records that failed the test. failures are saved in a new table with the name of the test.
