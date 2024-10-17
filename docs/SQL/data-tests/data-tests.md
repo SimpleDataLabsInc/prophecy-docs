@@ -53,11 +53,19 @@ Supported test types include:
   - Model tests
   - Column tests
 
-It's recommended to use each test type for the following situations:
+### When to use each test type
 
-- Project tests: Use to test referential integrity, late arriving data, and data consistency verification
-- Model tests: Use to test model size and aggregations
-- Column tests: Use to test column data format and data presence (nulls, empty strings, etc.)
+See the following table to get an idea of when to use each test type.
+
+| Situation                                                                  | Project test              | Model test                | Column test               |
+| :------------------------------------------------------------------------- | :------------------------ | :------------------------ | :------------------------ |
+| Test for referential integrity                                             | ![Tick](./img/tick.svg)   | ![Cross](./img/cross.svg) | ![Cross](./img/cross.svg) |
+| Test for late arriving data                                                | ![Tick](./img/tick.svg)   | ![Cross](./img/cross.svg) | ![Cross](./img/cross.svg) |
+| Test for data consistency verification                                     | ![Tick](./img/tick.svg)   | ![Cross](./img/cross.svg) | ![Cross](./img/cross.svg) |
+| Test for model size and aggregations                                       | ![Cross](./img/cross.svg) | ![Tick](./img/tick.svg)   | ![Cross](./img/cross.svg) |
+| Test for column data format and data presence (nulls, empty strings, etc.) | ![Cross](./img/cross.svg) | ![Cross](./img/cross.svg) | ![Tick](./img/tick.svg)   |
+| Test a single Model                                                        | ![Tick](./img/tick.svg)   | ![Cross](./img/cross.svg) | ![Cross](./img/cross.svg) |
+| Test multiple Models                                                       | ![Cross](./img/cross.svg) | ![Tick](./img/tick.svg)   | ![Tick](./img/tick.svg)   |
 
 ## What's next
 
