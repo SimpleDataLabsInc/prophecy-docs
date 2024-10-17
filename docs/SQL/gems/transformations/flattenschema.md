@@ -30,7 +30,15 @@ We want to extract the `contact`, and all of the columns from the `struct`s in `
 
 ## The Expressions
 
-Having added a `FlattenSchema` Gem to your Model, all you need to do is click the column names you wish to extract and they'll be added to the `Expressions` section. Once added you can change the `Output Column` for a given row to change the name of the Column in the output.
+Having added a `FlattenSchema` Gem to your Model, all you need to do is click the column names you wish to extract and they'll be added to the `Expressions` section.
+
+:::tip
+
+You can click to add all columns, which would make all nested leaf level values of an object visible as columns.
+
+:::
+
+Once added you can change the `Output Column` for a given row to change the name of the Column in the output.
 
 ![Adding expressions](./img/flatten_add_exp.png)
 
