@@ -57,11 +57,11 @@ also dependencies, such as github_dbt_base dependency
 
 2. Enter your **Test Name**. Project tests are saved to a tests SQL file in the Git directory by default.
 
+   ![Create a new model test definition](img/model-test-create-definition.png)
+
 3. Click **OK** to create your new test.
 
 4. Create your test model by dragging and dropping Gems to your visual canvas. Connect them to your Data Test. You can also write your test on the Code view. You can use as many models and other database objects as you’d like in your test.
-
-   ![Create a new model test definition](img/model-test-create-definition.png)
 
 On Schema tab
 Update for data mismatch
