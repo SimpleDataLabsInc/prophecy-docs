@@ -563,5 +563,5 @@ We learned the essential code for all Transform Gems using the Limit Gem as an e
 
 **How does Gembuilder work for projects aside from Python and Scala?** Package Hub supports re-usable components in SQL, for example, to create a Macro to use custom Jinja logic. A user can create a Custom Gem to be used within the same project using Macros. As of Prophecy Version 3.2, support for reusable components in SQL is in “beta” release. These are the limitations:
 
-1. A SQL project cannot be marked as package. so it wont show on package hub.
-2. User cannot reuse a model, Gem etc from one project to another for SQL projects.
+1. A SQL project cannot be marked as package. Therefore, it won't show on package hub.
+2. You cannot reuse a model or Gem from one project to another for SQL projects.
