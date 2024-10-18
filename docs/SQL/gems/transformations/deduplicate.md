@@ -76,8 +76,23 @@ For `Distinct Rows`, the interim data will show the following:
 | Alice      | Johnson   |
 | Bob        | Smith     |
 
+:::note
+
+For `First`, `Last`, and `Unique Only`, the interim data will contain all columns, irrespective of the columns that were added.
+
+For `First` and `Last`, the interim data will look like the following:
+
+| First_Name | Last_Name | Type  | Contact           |
+| :--------- | :-------- | :---- | :---------------- |
+| John       | Doe       | phone | 123-456-7890      |
+| Alice      | Johnson   | phone | 246-135-0987      |
+| Alice      | Johnson   | email | alice@johnson.com |
+| Bob        | Smith     | email | bob@smith.com     |
+
 For `Unique Only`, the interim data will look like the following:
 
-| First_Name | Last_Name |
-| :--------- | :-------- |
-| Bob        | Smith     |
+| First_Name | Last_Name | Type  | Contact       |
+| :--------- | :-------- | :---- | :------------ |
+| Bob        | Smith     | email | bob@smith.com |
+
+:::
