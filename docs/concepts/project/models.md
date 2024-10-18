@@ -52,13 +52,13 @@ Open the HelloWorld_SQL Project. See the **(1)Lineage** for the HelloWorld_SQL P
 ![model-view](./img/models/model-view.png)
 Now we can explore the `customers` Model more closely. The Model is easy to understand with interchangable **(1)visual** and **(2)code** views. The visual view depicts each small step needed to move from the referenced tables/seeds/Models to the final `customers` Model. Each transformation step or Common Table Expression (CTE) is called a **(3)Gem** in Prophecy.
 
-The **(4)`Aggregate`** step is represented visually as an `Aggregate` Gem and in code as the highlighted CTE code fragment. By popular demand, the visual and code formats are editable interchangeably. Visual developers and SQL coders can work together in the same project, and both types of edits are incorporated to the project when [committed and merged](/docs/metadata/git.md#how-to-commit-changes).
+The **(4)`Aggregate`** step is represented visually as an `Aggregate` Gem and in code as the highlighted CTE code fragment. By popular demand, the visual and code formats are editable interchangeably. Visual developers and SQL coders can work together in the same project, and both types of edits are incorporated to the project when [committed and merged](/docs/metadata/git/git-commit.md).
 
 ### Models vs Pipelines
 
 If you’re already familiar with Prophecy Pipelines, Models are very similar. The major difference is that each Pipeline can create an arbitrary number of outputs, whereas a Model only defines one output. Where Pipelines can exist only within Spark-based projects, Models can exist within SQL-based ones.
 
-Like Pipelines, Models can be configured, committed and released to [Git](/docs/metadata/git.md), according to software engineering best practices.
+Like Pipelines, Models can be configured, committed and released to [Git](/docs/metadata/git/git.md), according to software engineering best practices.
 
 ### dbt Core™ Models
 
