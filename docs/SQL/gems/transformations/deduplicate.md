@@ -14,15 +14,15 @@ Removes rows with duplicate values of specified columns.
 
 ## Parameters
 
-| Parameter              | Description                                                                                                                                                                                                                                                                                                                | Required |
-| :--------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------- |
-| Source                 | Input source                                                                                                                                                                                                                                                                                                               | True     |
-| Row to keep            | - `Distinct Rows`: Keeps all distinct rows. This is equivalent to performing a `df.distinct()` operation <br/>- `Unique Only`: Keeps rows that don't have duplicates <br/>- `First`: Keeps first occurrence of the duplicate row <br/>- `Last`: Keeps last occurrence of the duplicate row <br/>Default is `Distinct Rows` | True     |
-| Deduplicate On Columns | Columns to consider while removing duplicate rows (not required for `Distinct Rows`)                                                                                                                                                                                                                                       | True     |
+| Parameter              | Description                                                                                                                                                                                                                                                                                                                  | Required |
+| :--------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------- |
+| Source                 | Input source                                                                                                                                                                                                                                                                                                                 | True     |
+| Row to keep            | - `Distinct Rows`: Keeps all distinct rows. This is equivalent to performing a `select distinct` operation <br/>- `Unique Only`: Keeps rows that don't have duplicates <br/>- `First`: Keeps first occurrence of the duplicate row <br/>- `Last`: Keeps last occurrence of the duplicate row <br/>Default is `Distinct Rows` | True     |
+| Deduplicate On Columns | Columns to consider while removing duplicate rows (not required for `Distinct Rows`)                                                                                                                                                                                                                                         | True     |
 
 ## Row to keep options
 
-As mentioned in the previous parameters, there are four Row to keep options that you can use in your deduplicate Gem.
+As mentioned in the previous parameters, there are four **Row to keep** options that you can use in your deduplicate Gem.
 
 ![Deduplicate row to keep](./img/deduplicate_row_to_keep.png)
 
