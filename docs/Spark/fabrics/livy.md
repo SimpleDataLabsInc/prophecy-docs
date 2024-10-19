@@ -96,6 +96,8 @@ Here, you can configure any Secret Provider and secrets for your Livy Fabric. Re
 
 Click on **Complete** to complete the Fabric setup.
 
+### Settings
+
 ## Execution on Livy
 
 [Execution on Livy](/docs/Spark/execution/execution-metrics-on-livy.md)
