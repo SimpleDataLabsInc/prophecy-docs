@@ -35,6 +35,18 @@ Which Gems automatically get Interims created is controlled by the Pipeline sett
 
 From the Pipeline, select the **(1) dropdown** and **(2) Pipeline Settings**. Select **(3) Job Sampling** to generate interim samples for scheduled jobs. Select **(4) Sampling Mode** to chose the level of data sampling. Select **(5) Data Sampling** to generate interim samples during interactive runs, and select the Sampling Mode accordingly. These two options, Job sampling and Data sampling, are independent; one does not affect the other. For Job sampling, the interim metrics are stored in the compute cluster, such as the Databricks workspace, and visible in [execution metrics](#execution-metrics).
 
+### Advanced Data sampling setting
+
+There is also a global level Development Settings flag that admins can use to disable Data sampling for a given Fabric. This flag overrides the Pipeline level Data sampling settings. When disabled, you won't be able to see production data in the interims when you run the Pipeline.
+
+From the Metadata page, click the **Fabrics** tab and select the Fabric that you want to change the Data sampling setting for. Click the **Advanced** tab and click the **Allow for data sampling** toggle to turn on or off the flag.
+
+![Create a new model test](./img/limit-data-preview-interims.png)
+
+Data sampling is enabled on by default. When left enabled, Data sampling uses the Pipeline's Data sampling settings. Prophecy samples data during the interactive run experience to provide the best debugging experience for users.
+
+### Data sampling modes
+
 Toggle the images below to view the various modes (or levels) of data sampling. By default, for interactive runs, data sampling is enabled for all components. Note [Vanilla](https://docs.prophecy.io/Spark/execution/executions_on_databricks_clusters/#vanilla-interims) is an interim sampling mode reserved for Shared Databricks clusters.
 
 ```mdx-code-block

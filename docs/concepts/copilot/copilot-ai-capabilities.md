@@ -59,6 +59,8 @@ You can also call Data Copilot to modify an existing Model. Type a new text prom
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
+Added/updated Gems are highlighted in yellow.
+
 ## Next-transformation suggestions
 
 Data Copilot can suggest the next transformation in a series or the next expression within a Gem.
