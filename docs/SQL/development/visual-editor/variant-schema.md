@@ -9,11 +9,10 @@ tags:
   - sql
 ---
 
-You can use Prophecy to parse your semi-structured data types, and convert them into flat, structured formats to make them easier to understand and use for analytics. This is available for when you want to determine the variant schema of your Snowflake array or object.
+You can use Prophecy to convert your variant schemas into flat, structured formats to make them easier to understand and use for analytics. This is available for when you want to determine the variant schema of your Snowflake array or object.
 
 Using the variant schema functionality, you can do the following:
 
-- Parse JSON formats
 - Infer the variant schema
 - Configure the parsing limit for inferring the column structure
 - Use a nested column inside of the Visual Expression Builder
@@ -38,9 +37,13 @@ To refresh the schema, simply click **Infer Schema** again.
 
 :::
 
+### Editing the variant schema
+
 After you infer the schema, you can click **Edit Schema** to view the variant schema and make edits to it. Use the Type dropdowns to manually choose the data type of each nested schema.
 
 ![Edit schema view](img/variant-edit-schema.png)
+
+Editing the variant schema is useful in cases where not all of the schema cases were covered while sampling the records.
 
 ## Variant sampling setting
 
