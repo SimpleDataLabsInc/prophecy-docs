@@ -48,8 +48,30 @@ Data tests can accept input data from any table, no matter if the table is defin
 
 Supported test types include:
 
-- Project tests
+- Project tests: Singular use tests that depend on the Model that they were created for
+- Generic tests: Generic use test that are not tied to a specific Model, and can be reused repeatedly
+  - Model tests
+  - Column tests
+
+### When to use each test type
+
+See a few recommendations in the following table to get an idea of when to use each test type.
+
+| General situations &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; | Project test              | Model test                | Column test               |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------ | :------------------------ | :------------------------ |
+| Test a single Model                                                                                                                                                                                                                                                                                                                                                                                                                                    | ![Tick](./img/tick.svg)   | ![Cross](./img/cross.svg) | ![Cross](./img/cross.svg) |
+| Test multiple Models                                                                                                                                                                                                                                                                                                                                                                                                                                   | ![Cross](./img/cross.svg) | ![Tick](./img/tick.svg)   | ![Tick](./img/tick.svg)   |
+
+| Specific situations                                                        | Project test              | Model test                | Column test               |
+| :------------------------------------------------------------------------- | :------------------------ | :------------------------ | :------------------------ |
+| Test for referential integrity                                             | ![Tick](./img/tick.svg)   | ![Cross](./img/cross.svg) | ![Cross](./img/cross.svg) |
+| Test for late arriving data                                                | ![Tick](./img/tick.svg)   | ![Cross](./img/cross.svg) | ![Cross](./img/cross.svg) |
+| Test for data consistency verification                                     | ![Tick](./img/tick.svg)   | ![Cross](./img/cross.svg) | ![Cross](./img/cross.svg) |
+| Test for model size and aggregations                                       | ![Cross](./img/cross.svg) | ![Tick](./img/tick.svg)   | ![Cross](./img/cross.svg) |
+| Test for column data format and data presence (nulls, empty strings, etc.) | ![Cross](./img/cross.svg) | ![Cross](./img/cross.svg) | ![Tick](./img/tick.svg)   |
 
 ## What's next
 
 To set up a project test, see [Use project tests](/docs/SQL/data-tests/use-project-tests.md).
+
+If you need to reuse a test that is defined by a parametrized query, see [Use model tests](/docs/SQL/data-tests/use-model-tests.md).
