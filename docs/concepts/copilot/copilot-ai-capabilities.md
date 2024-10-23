@@ -61,13 +61,6 @@ You can also call Data Copilot to modify an existing Model. Type a new text prom
 
 Added/updated Gems are highlighted in yellow.
 
-Here are a few examples that you can use to build prompts from:
-
-- Propagate the customer ID through all the Gems
-- Add a reformat Gem after the filter Gem
-- Join two terminal Gems on common columns
-- Add or remove a passthrough Gem between two Gems
-
 ## Next-transformation suggestions
 
 Data Copilot can suggest the next transformation in a series or the next expression within a Gem.
