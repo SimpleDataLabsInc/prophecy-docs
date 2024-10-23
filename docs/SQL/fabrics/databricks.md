@@ -49,6 +49,8 @@ The SQL **provider** is both the storage warehouse and the execution environment
 | **5 - Catalog** - (Optional) Enter the Catalog name if you are using Unity Catalog                                                                                                                                                                                                                                              |
 | **6 - Continue** to the optional Connections step.                                                                                                                                                                                                                                                                              |
 
+Prophecy supports Databricks Volumes. When you run a Python or Scala Pipeline via a Job, you must bundle them as whl/jar artifacts. These artifacts must then be made accessible to the Databricks Job in order to use them as a library installed on the cluster. You can designate a path to a Volume for uploading the whl/jar files under Artifacts.
+
 ### Connections
 
 (Optional) Browsing data catalogs, tables, and schemas can be a time-intensive operation especially for Warehouses with hundreds or thousands of tables. To address this challenge, Prophecy offers a [Metadata Connection](/docs/metadata/metadata-connections.md) to sync metadata from the data provider at regular intervals. These [steps](/docs/metadata/metadata-connections.md#add-a-metadata-connection) describe how to setup a metadata connection once a Databricks SQL Fabric is created.
