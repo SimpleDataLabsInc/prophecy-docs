@@ -10,7 +10,7 @@ tags:
   - flatten
 ---
 
-When processing raw data it can be useful to flatten complex data types like `Struct`s and `Array`s into simpler, flatter schemas. This allows you to preserve all schemas, and not just the first one.
+When processing raw data it can be useful to flatten complex data types like `Struct`s and `Array`s into simpler, flatter schemas. This allows you to preserve all schemas, and not just the first one. You can use FlattenSchema with Snowflake Models.
 
 ![The FlattenSchema gem](./img/flatten_gem.png)
 
