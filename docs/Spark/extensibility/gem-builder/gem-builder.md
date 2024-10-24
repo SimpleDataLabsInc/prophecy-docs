@@ -868,3 +868,14 @@ Here you can see the differences between a Transform Gem and a DataSource Gem.
 3. The `ComponentCode` class has two apply functions: `sourceApply` and `targetApply` for Source and Target modes respectively.
 
 There is no change in `onChange` and `validate` functions.
+
+## What's next
+
+To learn more about the Gem builder and additional optimization options, see the following page:
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```
