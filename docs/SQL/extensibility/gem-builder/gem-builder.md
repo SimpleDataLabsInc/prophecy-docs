@@ -19,7 +19,7 @@ Our SQL Gem builder supports Databricks and Snowflake SQL. It's built on dbt Cor
 
 You can create a Gem that writes a reference to either of the following options:
 
-- a new user-defined macro or SQL query
+- a new user-defined macro
 - an existing macro present in a dependency (such as `dbt-utils`)
 
 ## Getting Started
@@ -34,12 +34,6 @@ You can get started with creating your own Gem by completing the following steps
 
 Now you can customize the Gem using the split-screen code editor. See the following [Creating a Gem](#creating-a-gem) section to learn how to define your Gem.
 
-:::note
-
-Custom Gem logic can be shared with other users within the Team and Organization. Navigate to the Gem listing to review Prophecy-defined and User-defined Gems. When your Gem is ready, publish it so that it is available to use in other Models.
-
-:::
-
 ## Creating a Gem
 
 A Gem is made up of multiple components that determine the UI and logic of the Gem. The Gem builder breaks up these components into steps for you while you create your Gem.
@@ -53,7 +47,7 @@ There are two types of Gems that you can create while using the Gem builder:
 
 Programmatically, a Gem is a component with the following parts:
 
-- The **Gem UI Component** which gets user information from the screen. This code is rendered on the Prophecy UI.
+- The **Gem UI Component** defines the user experience of using the Gem on the visual canvas. This code is rendered on the Prophecy UI.
 - The **Gem Code Logic** which is how the Gem acts within the context of a Model.
 
 Gem code can be written using either Python or Scala.
@@ -181,7 +175,8 @@ Depending on what kind of Gem is being created, a `Dialog` needs to be defined.
 
 #### Column selector
 
-You can use the column selector property if you want to select the columns from UI and then highlight the used columns using the `onChange` function.
+You can use the column selector property if you want to select the columns from UI and then highlight the used columns using the `onChange` function. The function defines the changes that you want to apply to the Gem properties once changes have been made from the UI. For example, in the reformat component provided by Prophecy, based on the columns used on the expression table `onChange` highlights the columns used on the input schema.
+
 It is recommended to try out this dialogue code in Gem builder UI and see how each of these elements looks in UI.
 
 ### Validation
@@ -212,7 +207,7 @@ The `onChange` method is given for the UI State transformations. You are given b
 
 ### Apply
 
-The code for the Gem logic is defined in the `apply` function. Here the above User Defined properties are accessible using `self.projectName.{self.name}`.
+The code for invoking the macro with the Gem logic is defined in the `apply` function. Here the above User Defined properties are accessible using `self.projectName.{self.name}`.
 
 ```sql
 
@@ -224,9 +219,29 @@ The code for the Gem logic is defined in the `apply` function. Here the above Us
 
 ```
 
-### Load and Unload Properties
+### Macro Properties
 
-The `loadProperties` and `unloadProperties` methods load and convert the component's state to the default macro property representation.
+When Prophecy parses a macro invocation, it represents a macro definition in a default state. `MacroProperties` consists of the following:
+
+- macro name
+- project name
+- parameters used
+
+For example, if macro invocation is
+
+```sql
+dbt_utils.deduplicate(relation, partition_by, order_by)`
+```
+
+then Prophecy parses it into an object such as the following:
+
+```sql
+MacroParameter(value="relation"),
+MacroParameter(value="partition_by"),
+MacroParameter(value="relation")
+```
+
+This object now has to be converted into the Gem state defined by the user. This logic is defined in `loadProperties`.
 
 ```sql
 
@@ -249,6 +264,8 @@ The `loadProperties` and `unloadProperties` methods load and convert the compone
 
 ```
 
+Similarly the opposite case where this enhanced UX is not available due to some reason, Prophecy needs to be able to render the default macro UI. For this purpose you must define the logic to convert the Gem properties back to the default macro properties object which Prophecy understands.
+
 ## 3. Preview
 
 You can preview the component in the Gem builder to see how it looks. You can modify the properties and then save it to preview the generated code which will eventually run on your cluster.
@@ -256,6 +273,12 @@ You can preview the component in the Gem builder to see how it looks. You can mo
 ![Gem builder preview](img/gem-builder-preview.png)
 
 Certain Gems may generate SQL code that isn’t compatible with a specific Fabric provider, rendering the Gem unusable and guaranteeing failure if attempted. This issue arises because some dbt macros are designed to support only specific warehouse types.
+
+:::note
+
+Custom Gem logic can be shared with other users within the Team and Organization. Navigate to the Gem listing to review Prophecy-defined and User-defined Gems. When your Gem is ready, publish it so that it is available to use in other Models.
+
+:::
 
 ## Example code
 
