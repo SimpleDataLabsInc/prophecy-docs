@@ -200,9 +200,15 @@ Table 2
 
 The order is now in the "shipped" state, but we've lost the information about when the order was last in the "pending" state. If we simply update the record with the new value, we won't see the previous records. In order to analyze how long it took for an order to ship, we therefore need to create a new record with a new `SHIPPING_STATUS`. However, we want the other attributes to remain the same.
 
-Once the query is executed, we have the following tables.
+Once the query is executed, we have the following table.
 
 Table 3
+
+| ORDER_ID | SHIPPING_STATUS | UPDATED_AT |
+| -------- | --------------- | ---------- |
+| 1        | pending         | 2024-01-01 |
+| 1        | shipped         | 2024-01-02 |
+| 2        | pending         | 2024-01-02 |
 
 There are two options you can choose from to configure how to detect record changes:
 
