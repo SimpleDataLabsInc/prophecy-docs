@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[60888],{33290:t=>{t.exports=JSON.parse('{"label":"fork","permalink":"/tags/fork","allTagsPath":"/tags","count":1,"items":[{"id":"metadata/git/git-fork","title":"Fork a repository","description":"Source Control","permalink":"/metadata/git/git-fork"}]}')}}]);
