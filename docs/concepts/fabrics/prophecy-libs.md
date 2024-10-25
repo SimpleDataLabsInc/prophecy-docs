@@ -13,7 +13,11 @@ Here are the released artifacts:
 - Prophecy Libs for Scala: [Maven](https://mvnrepository.com/artifact/io.prophecy/prophecy-libs)
 - Prophecy Libs for Python: [PyPi](https://pypi.org/project/prophecy-libs/)
 
-You can see which Prophecy Libs version is running on your Spark cluster by checking the cluster dropdown in the Pipeline. For a list of the latest versions, see [Version Chart](/docs/release_notes/version_chart.md).
+You can see which Prophecy Libs version is running on your Spark cluster by checking the Cluster Attached dropdown in the Pipeline.
+
+<img src={require('./img/libs-version-cluster.png').default} alt="Prophecy libs version in the Fabric cluster" width="58%" />
+
+For a list of the latest versions, see [Version Chart](/docs/release_notes/version_chart.md).
 
 ## Functionality
 
