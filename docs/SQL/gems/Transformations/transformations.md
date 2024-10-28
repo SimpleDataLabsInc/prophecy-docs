@@ -1,6 +1,6 @@
 ---
 title: Transformations
-id: data-transformations
+id: transformations
 description: data transformation steps in SQL
 sidebar_position: 12
 tags:
@@ -9,7 +9,7 @@ tags:
   - cte
 ---
 
-Constitutes the set of Gems that help with transforming data
+Constitutes the set of Gems that help with transforming data.
 
 <div class="transformations-gems-table">
 
