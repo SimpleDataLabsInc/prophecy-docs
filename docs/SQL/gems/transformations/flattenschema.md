@@ -1,6 +1,6 @@
 ---
 title: Flatten Schema
-id: flatten-schema
+id: flattenschema
 description: Flatten nested data
 sidebar_position: 5
 tags:
