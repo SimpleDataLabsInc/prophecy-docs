@@ -1,6 +1,6 @@
 ---
 title: Aggregate
-id: transform-deep-dive
+id: sql-aggregate
 description: Understand how to use transformation gems, use expressions, and use variables
 sidebar_position: 3
 tags:
