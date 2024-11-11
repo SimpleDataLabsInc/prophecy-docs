@@ -17,7 +17,6 @@ If you haven't tried these lately, you're missing a lot!
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://fast.wistia.net/embed/iframe/sv181sqwc2?seo=false?videoFoam=true" title="EnglishToVisual" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
-Click [here](https://docs.prophecy.io/concepts/copilot/copilot-ai-capabilities/#text-to-pipelines) for details.
 
 ### Predictive Autocomplete
 
@@ -25,7 +24,6 @@ Click [here](https://docs.prophecy.io/concepts/copilot/copilot-ai-capabilities/#
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://fast.wistia.net/embed/iframe/0wanxrqre9?seo=false?videoFoam=true" title="PredictiveAutocomplete" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
-Click [here](https://docs.prophecy.io/concepts/copilot/copilot-ai-capabilities#next-transformation-suggestions) for further details.
 
 ### Auto Documentation
 
@@ -33,7 +31,6 @@ Click [here](https://docs.prophecy.io/concepts/copilot/copilot-ai-capabilities#n
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://fast.wistia.net/embed/iframe/hp18xgo300?seo=false?videoFoam=true" title="AutoDoc" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
-Click [here](https://docs.prophecy.io/concepts/copilot/copilot-ai-capabilities#auto-documentation) for further details.
 
 ### Error Fixing
 
@@ -41,7 +38,6 @@ Click [here](https://docs.prophecy.io/concepts/copilot/copilot-ai-capabilities#a
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://fast.wistia.net/embed/iframe/tze2u3ojim?seo=false?videoFoam=true" title="ErrorFixing" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
-Click [here](https://docs.prophecy.io/concepts/copilot/copilot-ai-capabilities#fix-with-ai) for further details.
 
 ## New AI Capabilities released in Prophecy 3.4
 
