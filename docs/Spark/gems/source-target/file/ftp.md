@@ -3,6 +3,7 @@ title: FTP
 id: ftp
 description: FTP
 sidebar_position: 5
+draft: true
 tags:
   - gems
   - file
