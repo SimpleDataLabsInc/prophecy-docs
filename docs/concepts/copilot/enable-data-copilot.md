@@ -32,13 +32,6 @@ From the Kubernetes cluster where Prophecy services are running:
 3. In the `ProphecyCluster` CR, do the following:
 
    - add `copilot` to `enabledapps`
-   - add `image` section as below, providing the version
-   - add the `copilot` section as below in the same level as other enabled apps
-
-   ```
-   copilot:
-       image:  gcr.io/prophecy-share/copilot:<release-version>
-   ```
 
 4. Once deployed, wait for the `copilot-cm` to be created. Then edit the default values in the configmap to match the ENVs required.
 5. Supply the API keys for the appropriate endpoint and ENV as below. Prophecy Copilot requires two types of models:
