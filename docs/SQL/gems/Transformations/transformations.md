@@ -1,6 +1,6 @@
 ---
 title: Transformations
-id: Transformations
+id: Data Transformations
 description: data transformation steps in SQL
 sidebar_position: 12
 tags:
