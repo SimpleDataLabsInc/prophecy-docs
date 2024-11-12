@@ -5,11 +5,11 @@ description: Don't miss these features - upgrade today
 title: Webinar New Features to Turbocharge Pipeline Development
 tags:
   - release
+  - webinar
 ---
 
-We've assembled some of our favorite features released recently including the latest and greatest features from 3.4. Click the image below to see the slides; full webinar video coming shortly.
+We've assembled some of our favorite features released recently including the latest and greatest features from 3.4.
 
-[![webinar thumbnail](./../img/webinar-Nov-2024-thumbnail.png)](https://docs.google.com/presentation/d/1IyT3v94xWE4mn146DUyiPUmsTMvtZIAhIaHU7TiXCUQ/edit?usp=sharing)
+![thumbnail](./../img/webinar-Nov-2024-thumbnail.png)
 
-There's bite-size content for each feature linked in the slides.
-Don't miss out - upgrade today!
+Click [here](./../img/WhatsNewWebinarNov13Slides.pdf) to see the slides; full webinar video coming shortly. Don't miss out - upgrade today!

@@ -3,6 +3,7 @@ sidebar_position: 3
 id: ai_capabilities
 description: Build Pipelines using English text and voice prompts
 title: Accelerating with AI
+draft: true
 tags:
   - release
 ---
