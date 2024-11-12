@@ -56,7 +56,7 @@ On the [Dataset Metadata](#dataset-metadata) page, you'll find the `Relations` t
 |  1  | Physical Datasets   | Each _Physical Dataset_ represents a variation of this Dataset in a particular Fabric.                                                        |
 |  2  | Pipelines           | This is a list of Pipelines that use this Dataset in some way. The `Relation` column will indicate if this is for `Read` or `Write` purposes. |
 |  3  | Jobs                | This is a list of Jobs that use this Dataset in some way. The `Relation` column will indicate if this is for `Read` or `Write` purposes.      |
-|  4  | Open Lineage Viewer | Opens this Dataset in the [Lineage](../metadata/lineage.md) Viewer, showing column-level lineage for this Dataset.                            |
+|  4  | Open Lineage Viewer | Opens this Dataset in the [Lineage](../metadata/lineage/lineage.md) Viewer, showing column-level lineage for this Dataset.                    |
 
 ## Publishing/Sharing Datasets
 

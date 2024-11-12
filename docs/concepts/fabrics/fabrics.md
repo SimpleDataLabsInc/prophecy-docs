@@ -53,3 +53,14 @@ Get started with hands-on guides. Learn step by step how to connect to your exec
 1. Create a SQL Fabric with a JDBC or Unity Catalog connection following [this guide](/docs/getting-started/getting-started-with-low-code-sql.md#23-setup-prophecys-Fabric).
 2. Create a Databricks Fabric following [these steps](/docs/Spark/fabrics/databricks.md).
 3. Create an EMR Fabric with Livy step by step [here](/docs/Spark/fabrics/emr-fabric.md).
+
+## What's next
+
+To learn more about Fabrics and the Prophecy Libraries, see the following page:
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```
