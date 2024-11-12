@@ -1,7 +1,7 @@
 ---
-title: Transformations
-id: transformations
-description: data transformation steps in SQL
+title: SQL Transformations
+id: sql-transformations
+description: Data transformation steps in SQL
 sidebar_position: 1
 tags:
   - gems
