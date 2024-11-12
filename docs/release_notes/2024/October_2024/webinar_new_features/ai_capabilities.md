@@ -48,9 +48,9 @@ If you haven't tried these lately, you're missing a lot!
 <iframe src="https://fast.wistia.net/embed/iframe/qrrt5by0v6?seo=false?videoFoam=true" title="ChatInterface" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-### Schema mapping
+### Schema mapping suggestions
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://fast.wistia.net/embed/iframe/1t55kn37g4?seo=false?videoFoam=true" title="SchemaMapping" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+<iframe src="https://fast.wistia.net/embed/iframe/32gdo73xp0?seo=false?videoFoam=true" title="SchemaMapping" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
