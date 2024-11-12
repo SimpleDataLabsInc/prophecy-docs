@@ -2,12 +2,12 @@
 sidebar_position: 3
 id: ai_capabilities
 description: Build Pipelines using English text and voice prompts
-title: AI Capabilities
+title: Accelerating with AI
 tags:
   - release
 ---
 
-## AI Features overview
+## Overview of AI Copilot
 
 If you haven't tried these lately, you're missing a lot!
 

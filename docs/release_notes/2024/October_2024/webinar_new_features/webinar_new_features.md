@@ -3,7 +3,6 @@ sidebar_position: 1
 id: webinar_new_features
 description: Don't miss these features - upgrade today
 title: Webinar New Features to Turbocharge Pipeline Development
-draft: true
 tags:
   - release
 ---
