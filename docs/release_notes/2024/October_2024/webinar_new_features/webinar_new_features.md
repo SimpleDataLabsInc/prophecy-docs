@@ -8,7 +8,7 @@ tags:
   - webinar
 ---
 
-We've assembled some of our favorite features released recently including the latest and greatest features from 3.4. If you missed the webinar, don't worry! The slides mention each feature, and several slides link to doc pages and a 1-2min video about the feature.
+We've assembled some of our favorite features released recently including the latest and greatest features from 3.4. If you missed the webinar, don't worry! The pages below have 1-2min videos about each feature.
 
 ![thumbnail](./../img/webinar-Nov-2024-thumbnail.png)
 
