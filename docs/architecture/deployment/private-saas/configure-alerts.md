@@ -55,22 +55,22 @@ Below are JSON configurations within the Prophecy UI that need to be enabled to 
 {
   "alertConfigs": [
     {
-      "maxAllowedOccuranceCount": 20,
+      "maxAllowedOccurrenceCount": 20,
       "metricsType": "CPU_USAGE",
       "thresholdValue": 0.95
     },
     {
-      "maxAllowedOccuranceCount": 3,
+      "maxAllowedOccurrenceCount": 3,
       "metricsType": "DISK_USAGE",
       "thresholdValue": 0.95
     },
     {
-      "maxAllowedOccuranceCount": 3,
+      "maxAllowedOccurrenceCount": 3,
       "metricsType": "FILE_COUNT",
       "thresholdValue": 0.95
     },
     {
-      "maxAllowedOccuranceCount": 20,
+      "maxAllowedOccurrenceCount": 20,
       "metricsType": "MEMORY_USAGE",
       "thresholdValue": 0.8
     }
@@ -81,7 +81,7 @@ Below are JSON configurations within the Prophecy UI that need to be enabled to 
     "customer1@test.com",
     "customer2@test.com"
   ],
-  "reAlertIntervelinMinutes": 120,
+  "reAlertIntervalinMinutes": 120,
   "relativeWarningThreshold": 0.05,
   "smtp": {
     "password": "********",
