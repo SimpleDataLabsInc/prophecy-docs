@@ -17,7 +17,6 @@ A collection of Gems related to working with various file-based formats.
 | [CSV](./file/csv)                   | Allows you to read or write a delimited file (often called Comma Separated File, CSV).                            |
 | [Delta](./file/delta)               | Reads data from Delta files present at a path and writes Delta files to a path based on configuration.            |
 | [Fixed Format](./file/fixed-format) | Read data from fixed format files with expected schema, or write data to fixed format files with expected schema. |
-| [FTP](./file/ftp)                   | Allows you to read or write files (csv, text and binary) on a remote location.                                    |
 | [Iceberg](./file/iceberg)           | Reads data from Iceberg files present at a path and writes Iceberg files to a path based on configuration.        |
 | [JSON](./file/json)                 | Allows you to read or write a delimited file (often called Comma Separated File, CSV).                            |
 | [Kafka](./file/kafka)               | This source currently connects with Kafka Brokers in Batch mode.                                                  |

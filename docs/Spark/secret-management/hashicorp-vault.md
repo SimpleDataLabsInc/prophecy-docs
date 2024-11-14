@@ -15,7 +15,7 @@ To add a HashiCorp Vault Secret Provider, click on the **(1) Add Provider** butt
 ![Add_Hashicorp_Vault_provider](img/Add_hashicorp_provider.png)
 
 Provide a **(2) Name**, select **(3) Provider type** as **HashiCorp**, and add a **(4) Description** of your choice.
-For authentication, Prophecy currently supports fixed Environment variables with names **(5) VAULT_ADDR** and **(6) VAULT_TOKEN**. Ensure your Spark cluster has these environment variables set correctly, pointing to the respective Vault URL and token. Verify the configuration by clicking the **(7) Test connection** button.
+For authentication, Prophecy currently supports fixed Environment variables with names **(5) VAULT_ADDR** and **(6) VAULT_TOKEN**. Ensure your Spark cluster has these environment variables set correctly, pointing to the respective Vault URL and token. These Environment variables must be present on the Spark cluster, not on the Prophecy side. Attach the cluster in order to verify the configuration by clicking the **(7) Test connection** button.
 
 Once done, click **(8) Save**.
 
