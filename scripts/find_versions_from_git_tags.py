@@ -9,8 +9,7 @@ from packaging import version as packaging_version
 versions = []
 
 LTS_VERSIONS = [
-    #"3.4.1.0"
-    "3.4.0.0"
+    # "v3.4.1.0"
 ]
 
 def get_versions_for_tag(repo, tag_name):
@@ -32,18 +31,18 @@ def get_versions_for_tag(repo, tag_name):
             #print("pythonProphecyLibsVersion not found.")
             return  # ignore for now if we can't find missing old versions
 
-        create_date = tag.commit.committed_date
-        if tag in LTS_VERSIONS:
+        create_date = datetime.fromtimestamp(tag.commit.committed_date)
+        if tag_name in LTS_VERSIONS:
             end_of_support_date = create_date + relativedelta(years=1)
-            tag_name = tag_name + " LTS"
+            tag_name = tag_name + " EM"
         else:
             end_of_support_date = create_date + relativedelta(months=6)
         ver_dict = {
             "prophecy_version": tag_name,
             "scala_version": scala_version[0],
             "python_version": python_version[0],
-            "date": datetime.fromtimestamp(create_date).strftime('%Y/%m/%d'),
-            "end_of_support_date": datetime.fromtimestamp(end_of_support_date).strftime('%Y/%m/%d')
+            "date": create_date.strftime('%Y/%m/%d'),
+            "end_of_support_date": end_of_support_date.strftime('%Y/%m/%d')
         }
         versions.append(ver_dict)
     except FileNotFoundError:
