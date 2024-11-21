@@ -19,7 +19,7 @@ A **project** contains
 
 ### Project is Code on Git
 
-A **project** is **code** on **Git**. This means that within a project, the business logic of all the assets including _Pipelines_/_Models_, _Datasets_, and _Jobs_ is stored as code on Git. This might be a repository on Github or a folder in a repository.
+A **project** is **code** on **Git**. This means that within a project, the business logic of all the assets including _Pipelines_/_Models_, _Datasets_, and _Jobs_ is stored as code on Git. This might be a repository on GitHub or a folder in a repository.
 
 ![Project is code](img/project_is_code.png)
 
