@@ -3,10 +3,14 @@ import argparse
 import re
 import os
 from datetime import datetime
+from dateutil.relativedelta import relativedelta
 from packaging import version as packaging_version
 
 versions = []
 
+LTS_VERSIONS = [
+    # "v3.4.1.0"
+]
 
 def get_versions_for_tag(repo, tag_name):
     deps_file_path = "project/Dependencies.scala"
@@ -27,11 +31,18 @@ def get_versions_for_tag(repo, tag_name):
             #print("pythonProphecyLibsVersion not found.")
             return  # ignore for now if we can't find missing old versions
 
+        create_date = datetime.fromtimestamp(tag.commit.committed_date)
+        if tag_name in LTS_VERSIONS:
+            end_of_support_date = create_date + relativedelta(years=1)
+            tag_name = tag_name + " EM"
+        else:
+            end_of_support_date = create_date + relativedelta(months=6)
         ver_dict = {
             "prophecy_version": tag_name,
             "scala_version": scala_version[0],
             "python_version": python_version[0],
-            "date": datetime.fromtimestamp(tag.commit.committed_date).strftime('%Y/%m/%d')
+            "date": create_date.strftime('%Y/%m/%d'),
+            "end_of_support_date": end_of_support_date.strftime('%Y/%m/%d')
         }
         versions.append(ver_dict)
     except FileNotFoundError:
@@ -54,11 +65,12 @@ def update_version_chart_file(docs_repo_path):
     header = ''.join(header_lines)
 
     delimiter_parts = delimiter.split("|")
-    rows = ["| {} | {} | {} | {} |\n".format(
+    rows = ["| {} | {} | {} | {} | {} |\n".format(
         v['prophecy_version'].ljust(len(delimiter_parts[1].strip())),
         v['scala_version'].ljust(len(delimiter_parts[2].strip())),
         v['python_version'].ljust(len(delimiter_parts[3].strip())),
-        v['date'].ljust(len(delimiter_parts[4].strip()))
+        v['date'].ljust(len(delimiter_parts[4].strip())),
+        v['end_of_support_date'].ljust(len(delimiter_parts[5].strip()))
     ) for v in versions]
     output_string = "".join(rows)
 
