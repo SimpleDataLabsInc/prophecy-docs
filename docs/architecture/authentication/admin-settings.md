@@ -41,5 +41,3 @@ Currently, Prophecy supports two ways to sync this proxy-user value from AAD or 
 Note that these values will sync to Prophecy every time the user logs in.
 
 ![proxy-user](img/proxy-settings.png)
-
-## Log download
