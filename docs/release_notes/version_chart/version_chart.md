@@ -15,13 +15,14 @@ Check to make sure the Spark version and Scala version of your Prophecy Scala Li
 of your cluster!
 :::
 
-:::info
-Query this table using the following API and your ([personal access token](..%2Fmetadata%2FprophecyAPI.md)):
+You can query this table using the following API and your ([personal access token](..%2Fmetadata%2FprophecyAPI.md)):
 
 ```bash
 curl  --header 'X-Auth-Token: $PROPHECY_PAT' --location https://app.prophecy.io/api/editor/plibVersions
 ```
 
+:::note
+Prophecy versions that are labeled with `EM` are Extended Maintenance releases. For more information, see [Prophecy versions support](/docs/release_notes/version_chart/versions_support.md).
 :::
 
 | Prophecy version | [Prophecy Scala libs](https://mvnrepository.com/artifact/io.prophecy/prophecy-libs) | [Prophecy Python libs](https://pypi.org/project/prophecy-libs/) | Release Date | End-of-support Date |
