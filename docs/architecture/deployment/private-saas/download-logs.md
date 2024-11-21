@@ -22,7 +22,7 @@ You can use the Download Logs feature to capture logs using the Services and tim
 - All services are selected by default.
 - The download supports one hour of logs from the Start Time.
 
-The captured logs include all relevant Prophecy configurations, which includes the following items:
+The captured logs include all relevant Prophecy configurations, such as the following items:
 
 - Kubernetes cluster configuration
   - Resource quotas
