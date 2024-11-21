@@ -15,7 +15,7 @@ Check to make sure the Spark version and Scala version of your Prophecy Scala Li
 of your cluster!
 :::
 
-You can query this table using the following API and your ([personal access token](..%2Fmetadata%2FprophecyAPI.md)):
+You can query this table using the following API and your ([personal access token](/docs/metadata/prophecyAPI.md)):
 
 ```bash
 curl  --header 'X-Auth-Token: $PROPHECY_PAT' --location https://app.prophecy.io/api/editor/plibVersions
