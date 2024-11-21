@@ -45,15 +45,15 @@ For more details, see [Enable Data Copilot](/concepts/copilot/enable-data-copilo
 
 ###
 
-#### How is Prophecy Copilot different than Github Copilot?
+#### How is Prophecy Copilot different than GitHub Copilot?
 
-Github Copilot is a great tool to boost productivity and extend the reach of the coding community. However, not every problem is solved with direct coding. More importantly, users need a Copilot with some context of the interesting data.
+GitHub Copilot is a great tool to boost productivity and extend the reach of the coding community. However, not every problem is solved with direct coding. More importantly, users need a Copilot with some context of the interesting data.
 
 For teams of analysts, data platform providers, or line-of-business users, the pain points are not resolved by teaching every team member how to code. Data Copilot empowers less technical users because they don’t have to code. Importantly, technical and coding users benefit from Data Copilot because visual Pipelines are easier to understand, explain, and leverage. Prophecy’s Data Copilot boosts the productivity of the business user and the more technical coding team members.
 
 When all of these data practitioners reach for an AI assistant, they’ll need one specific to the data space. For example, the assistant should collect metadata from the data warehouse, catalog, or storage provider. Prophecy Data Copilot has the context of your data, and it can guide Pipeline and Model development by suggesting which Datasets to use and how to use them.
 
-Github Copilot and Prophecy Data Copilot are both excellent tools to boost productivity, but Prophecy Data Copilot is accessible to a larger user base and can make data suggestions because it maintains data context.
+GitHub Copilot and Prophecy Data Copilot are both excellent tools to boost productivity, but Prophecy Data Copilot is accessible to a larger user base and can make data suggestions because it maintains data context.
 
 #### Which Datasets are accessible to Prophecy Data Copilot?
 
