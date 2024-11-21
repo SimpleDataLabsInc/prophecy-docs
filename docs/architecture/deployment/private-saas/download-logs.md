@@ -22,17 +22,14 @@ You can use the Download Logs feature to capture logs using the Services and tim
 - All services are selected by default.
 - The download supports one hour of logs from the Start Time.
 
-The captured logs include all relevant Kubernetes services, including sandbox pods.
+The captured logs include all relevant Prophecy configurations, which includes the following items:
 
-- Configuration Data Collection:
-
-  - Captures Kubernetes cluster configuration, such as resource quotas and node configuration.
-  - Collects Helm charts, deployment manifests, flags, and other configuration files.
-  - Includes current versions of deployed services and Kubernetes components.
-
-- Environment State Capture:
-  - Captures pod status, node health checks, and resource allocation across the cluster, such as kubectl describe nodes and kubectl describe pods.
-  - Includes resource consumption.
+- Kubernetes cluster configuration
+  - Resource quotas
+  - Node configuration
+- Cluster custom resources
+- Config maps and files
+- Resource consumption logs
 
 :::note
 
