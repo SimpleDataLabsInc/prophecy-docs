@@ -102,7 +102,6 @@ if __name__ == "__main__":
     parser.add_argument("--prophecy-repo-path", default='./prophecy/', help="Path to the prophecy Git repository")
     parser.add_argument("--docs-repo-path", default='./prophecy-docs/', help="Path to the docs Git repository")
     parser.add_argument("--tag", help="Process a specific tag (if omitted we process all that match semver structure)")
-    parser.add_argument("--output-path", help="absolute path for output file", default="./version_chart.md")
 
     args = parser.parse_args()
 
