@@ -14,7 +14,7 @@ tags:
   - cicd
 ---
 
-If you use external CI-CD tools like Github or Jenkins to merge and release your projects, you can use release tags from those tools in Prophecy for deployment and dependencies. Once you've deployed the tags via Prophecy, you can add them as a dependency to your Projects.
+If you use external CI-CD tools like GitHub or Jenkins to merge and release your projects, you can use release tags from those tools in Prophecy for deployment and dependencies. Once you've deployed the tags via Prophecy, you can add them as a dependency to your Projects.
 
 Any externally created release tag that you pull into Prophecy is visible on Releases and Deployments.
 

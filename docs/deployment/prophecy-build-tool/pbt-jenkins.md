@@ -15,7 +15,7 @@ tags:
   - jenkins
 ---
 
-## [Example Github Repo](https://github.com/prophecy-samples/external-cicd-template)
+## [Example GitHub Repo](https://github.com/prophecy-samples/external-cicd-template)
 
 ## Context of the Jenkins CI/CD Example
 
@@ -23,7 +23,7 @@ In this section we will explore how to set up separate "testing" and "deploying"
 `prod`, `qa`, `develop`. Each of these three branches represents a different Databricks Workspace environment. We
 want to be able to test and deploy our Pipelines into each of these three workspaces during our release workflow.
 
-The release process on Github is defined as merging and testing to branches in the following
+The release process on GitHub is defined as merging and testing to branches in the following
 order: `feature-branch` > `develop` > `qa` > `prod`
 
 ![branch_protection_checks_example.png](img%2Fbranch_protection_checks_example.png)
@@ -54,9 +54,9 @@ You should have access to:
 
 The following plugins were used for this example:
 
-- [Github Pull Request Builder](https://plugins.jenkins.io/ghprb/)
+- [GitHub Pull Request Builder](https://plugins.jenkins.io/ghprb/)
   - for the build/test Job
-- [Github](https://plugins.jenkins.io/github/)
+- [GitHub](https://plugins.jenkins.io/github/)
   - for the deploy Job
 
 :::caution
@@ -101,10 +101,10 @@ This Pipeline uses PBT to validate the pipelines and run all Prophecy unit tests
 
 - Create a Jenkins Pipeline
   ![jenkins-pipeline-type.png](img%2Fjenkins-pipeline-type.png)
-- Configure the Github Project URL
-- Choose Github Pull Request Builder as the trigger type.
-- Provide credentials to Github
-  - creating a fine-grained Personal Acces Token (PAT) in Github. The PAT should be
+- Configure the GitHub Project URL
+- Choose GitHub Pull Request Builder as the trigger type.
+- Provide credentials to GitHub
+  - creating a fine-grained Personal Acces Token (PAT) in GitHub. The PAT should be
     scoped to yourself or your Organization, have access to the repository containing the Prophecy project, and
     appropriate permissions:
     ![github-pat-permissions.png](img%2Fgithub-pat-permissions.png)
@@ -120,11 +120,11 @@ This Pipeline uses PBT to validate the pipelines and run all Prophecy unit tests
 
 ### Testing Pipeline - Trigger
 
-We use the [Github Pull Request Builder](https://plugins.jenkins.io/ghprb/) to trigger any time there is a new pull request or a change
+We use the [GitHub Pull Request Builder](https://plugins.jenkins.io/ghprb/) to trigger any time there is a new pull request or a change
 on a pull request (comment or new commit) to our special branches: `develop`, `qa`, `prod`.
 
-By providing Github credentials to the GHPRB plugin it will be able to automatically
-create webhooks in Github.
+By providing GitHub credentials to the GHPRB plugin it will be able to automatically
+create webhooks in GitHub.
 
 <details>
 <summary> Refer to this image for all settings. </summary>
@@ -217,8 +217,8 @@ This Pipeline uses PBT to deploy the Prophecy Pipelines to their appropriate Fab
 
 - Create a Jenkins Pipeline
   ![jenkins-pipeline-type.png](img%2Fjenkins-pipeline-type.png)
-- Choose "Github hook for GITScm polling" as the trigger.
-- Choose "Pipeline from SCM" with our Github repo as the repository
+- Choose "GitHub hook for GITScm polling" as the trigger.
+- Choose "Pipeline from SCM" with our GitHub repo as the repository
 - Choose the branches to trigger on (`develop`, `qa`, `prod`)
 - Point the "Script path" [to our Jenkinsfile](#deploy-pipeline---pipeline-code) containing the deploy logic
 
@@ -231,7 +231,7 @@ This Pipeline uses PBT to deploy the Prophecy Pipelines to their appropriate Fab
 
 ### Deploy Pipeline - Trigger
 
-Set up a simple webhook trigger for this Job inside of Github.
+Set up a simple webhook trigger for this Job inside of GitHub.
 
 - Navigate to `Settings > Webhooks > Add Webhook`
 - Create a new webhook like this:
