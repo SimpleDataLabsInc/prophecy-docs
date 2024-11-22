@@ -21,7 +21,7 @@ This quick-start gets you up and running with **building data transformations us
 #### You will need
 
 - Snowflake Account
-- Github Account (recommended)
+- GitHub Account (recommended)
 
 ## 1. Setup Prophecy account
 
@@ -111,7 +111,7 @@ Once the basic project information is filled out, it’s time to configure the G
 
 ![Git Repository Connection](img/Snow3.2_connectToGit.png)
 
-You'll see two options to connect to Git. **(1) Prophecy Managed Git Credentials** are not supported for this use case. You will need a Github account for this getting started guide. If you don't have one, create one by following [these instructions](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github). Select **(2) Connect to External Git** to connect to your external Git account.
+You'll see two options to connect to Git. **(1) Prophecy Managed Git Credentials** are not supported for this use case. You will need a GitHub account for this getting started guide. If you don't have one, create one by following [these instructions](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github). Select **(2) Connect to External Git** to connect to your external Git account.
 
 ### 3.1 Connect to external Git repository
 
@@ -121,13 +121,13 @@ When connecting to external Git repositories, you have to first setup a Git conn
 
 #### 3.1.1 Connecting with GitHub
 
-![Connect With Github](img/Snow3.3_LinkAndAuthorize.png)
+![Connect With GitHub](img/Snow3.3_LinkAndAuthorize.png)
 
-If you have an existing GitHub account this process is very simple, thanks to Prophecy’s strong OAuth GitHub integration. If you don’t have an account, you can create one at [Github.com](http://github.com).
+If you have an existing GitHub account this process is very simple, thanks to Prophecy’s strong OAuth GitHub integration. If you don’t have an account, you can create one at [GitHub.com](http://github.com).
 
 1. **Alias** - Each Git connection in Prophecy starts with an **Alias** that’s going to be used to allow you to identify the right Git account. In most cases, this can be left as default.
 
-2. **Login with Github** - redirects you to a GitHub login page (if you're not yet logged in).
+2. **Login with GitHub** - redirects you to a GitHub login page (if you're not yet logged in).
 
 3. **Sign in** - or create a new GitHub account.
 

@@ -132,9 +132,9 @@ To see a dropdown of repositories accessible to the Git user, be sure to connect
 
 #### 3.2.1 Connecting with GitHub
 
-![Connect With Github](img/3-4-connect-with-github.png)
+![Connect With GitHub](img/3-4-connect-with-github.png)
 
-If you have an existing GitHub account this process is very simple, thanks to Prophecy’s strong OAuth GitHub integration. If you don’t, you can create an account at [Github.com](http://github.com).
+If you have an existing GitHub account this process is very simple, thanks to Prophecy’s strong OAuth GitHub integration. If you don’t, you can create an account at [GitHub.com](http://github.com).
 
 Each Git connection in Prophecy starts with an **(1) Alias** that’s going to be used to allow you to identify the right Git account. In most cases, this can be left as default. With that set click **(2) Login** with GitHub which will redirect you to a GitHub login page (if you’re not yet logged in). Enter your details and **(3) Sign in** or create a new account. From there, you’ll be asked to approve Prophecy as a valid application.
 

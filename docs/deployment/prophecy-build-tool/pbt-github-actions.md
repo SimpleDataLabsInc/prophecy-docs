@@ -1,7 +1,7 @@
 ---
-title: PBT on Github Actions
+title: PBT on GitHub Actions
 id: prophecy-build-tool-github-actions
-description: Example usage of Prophecy Build Tool on Github Actions
+description: Example usage of Prophecy Build Tool on GitHub Actions
 sidebar_position: 5
 tags:
   - metadata
@@ -15,31 +15,31 @@ tags:
   - cicd
 ---
 
-## [Example Github Repo](https://github.com/prophecy-samples/external-cicd-template)
+## [Example GitHub Repo](https://github.com/prophecy-samples/external-cicd-template)
 
 ## Integrating with GitHub Actions
 
-PBT can be integrated with your own CI/CD solution to build, test and deploy Prophecy code. The steps for setting up PBT with Github Actions on your repository containing a Prophecy project are mentioned below.
+PBT can be integrated with your own CI/CD solution to build, test and deploy Prophecy code. The steps for setting up PBT with GitHub Actions on your repository containing a Prophecy project are mentioned below.
 
 ### Pre-requisite
 
-- A Prophecy project that is currently hosted in a Github repository
+- A Prophecy project that is currently hosted in a GitHub repository
 
 ### Setting up environment variables and secrets
 
 PBT requires environment variables **DATABRICKS_URL** and **DATABRICKS_TOKEN** to be set for complete functionality.
 
-The **DATABRICKS_TOKEN** that needs to be used can be set as a secret inside the Github repository of the project.
+The **DATABRICKS_TOKEN** that needs to be used can be set as a secret inside the GitHub repository of the project.
 Steps:
 
-- Go to Settings > Secrets > Actions from the Github repository menu
+- Go to Settings > Secrets > Actions from the GitHub repository menu
 - Click ‘New Repository secret’
 - Add the secret with name DATABRICKS_TOKEN and value of the Databricks token to be used by PBT.
 
 Screenshot after setting DATABRICKS_TOKEN secret:
-![Github Actions Secret addition](img/pbt-github-secret.png)
+![GitHub Actions Secret addition](img/pbt-github-secret.png)
 
-The environment variables can now be all set within the Github actions YML file as follows:
+The environment variables can now be all set within the GitHub actions YML file as follows:
 
 ```yaml
 env:
@@ -63,7 +63,7 @@ To setup a workflow to build, run all unit tests and then deploy the built jar (
 - Add the below contents to **exampleWorkflow.yml**
 
   ```yaml
-  name: Example CI/CD with Github actions
+  name: Example CI/CD with GitHub actions
   on:
   push:
   branches: - "prod"
