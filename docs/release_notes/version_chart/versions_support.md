@@ -6,7 +6,7 @@ sidebar_position: 1
 tags: [compatibility, matrix, version, chart, library, plib, plibs]
 ---
 
-This versions support page describes the Prophecy version system, version types, and version lifecycles.
+This page describes the Prophecy versioning system, version types, and version lifecycles.
 
 ## Release version system
 
