@@ -23,7 +23,7 @@ The following table shows details of the different Prophecy version types.
 
 Extended Maintenance (EM) releases provide you with a long-term support Prophecy version, along with the following benefits:
 
-- Upgraded 3rd party libraries for robust security posture
+- Upgraded third party libraries for robust security posture
 - Full performance and scale testing to check resource guidance
 - Direct upgrade path from a previous EM release to the next one
 - One year of technical support and hotfixes for critical issues
@@ -37,7 +37,9 @@ Extended Maintenance releases require additional resources, such as CPU and memo
 - CPI: 500m
 - Memory: 512Mi
 
-After upgrading to 3.4.1, you must enable SQL Sandbox Config in the UI by navigating to the **Sandbox Config** tab in the Config sub tab of the Admin Settings. `"sqlSandboxPoolSize"` must be set to a minimum of `2`.
+After upgrading to 3.4.1, you must enable SQL Sandbox Config in the UI by navigating to the **Sandbox Config** tab in the Config sub tab of the Admin Settings.
+
+`"sqlSandboxPoolSize"` must be set to a minimum of `2`. This parameter determines the number of pods that are kept in a ready state. You will need additional SQL Sandbox resources for each simultaneous user session.
 
 ## Prophecy support lifecycles
 
