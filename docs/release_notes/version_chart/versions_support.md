@@ -21,7 +21,7 @@ The following table shows details of the different Prophecy version types.
 
 ## Extended Maintenance release
 
-Extended Maintenance (EM) releases provide you with a long-term support Prophecy version. They provide the following benefits:
+Extended Maintenance (EM) releases provide you with a long-term support Prophecy version, along with the following benefits:
 
 - Upgraded 3rd party libraries for robust security posture
 - Full performance and scale testing to check resource guidance
