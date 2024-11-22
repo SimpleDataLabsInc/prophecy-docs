@@ -57,7 +57,7 @@ Now the main branch contains the Pipeline and the scheduled Job. Let’s release
 We have released the Job to run in Databricks workflows. At the same time, We have created a versioned release of our codebase. So, our Pipeline and schedule are now on the main branch, and a versioned tag has been created.
 
 [CI/CD](https://fast.wistia.net/embed/iframe/dvayf1k9us?wtime=4m9s?seo=false?videoFoam=true)  
-You’re probably curious if Prophecy’s deployments integrate with your jenkins, Github actions, or existing deployment toolset. YES! Use Prophecy Build tool to integrate with these in-house CI/CD tools.
+You’re probably curious if Prophecy’s deployments integrate with your jenkins, GitHub actions, or existing deployment toolset. YES! Use Prophecy Build tool to integrate with these in-house CI/CD tools.
 
 [Prophecy Build Tool](https://fast.wistia.net/embed/iframe/dvayf1k9us?wtime=4m9s?seo=false?videoFoam=true) (available [here](https://Github.com/SimpleDataLabsInc/Prophecy-build-tool))
 
