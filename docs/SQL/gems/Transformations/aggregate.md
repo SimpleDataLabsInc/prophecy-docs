@@ -63,7 +63,7 @@ Now let's see how to configure the `payment_methods` variable.
 ![4](../img/Snow4.6.4_Aggregate.png)
 
 1. Click **Config** to open the configuration screen.
-2. We see the option to apply a configuration at several different **levels:** apply to the entire Model, all the Models in the Github folder, or all the Models in the Project. Here we can see there are Configurations that apply to this particular `Orders` Model.
+2. We see the option to apply a configuration at several different **levels:** apply to the entire Model, all the Models in the GitHub folder, or all the Models in the Project. Here we can see there are Configurations that apply to this particular `Orders` Model.
 3. See the list of [DBT Defined Configs](https://docs.getdbt.com/reference/configs-and-properties). These are configs every user could employ with their DBT Projects, such as whether to materialize the model as table, view, ephemeral, or incremental. Click the dropdown to select the config of interest, then enter the appropriate value. Hover over the "i" icon for a short description of each DBT Config.
 4. See the list of user-defined **Variables**. In our HelloWorld_SQL project, the `payment_methods` variable has been defined with the four **values** shown.
 5. Click **Save** after editing the Config for the Model, Folder, or Project.
