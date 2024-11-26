@@ -9,7 +9,7 @@ from packaging import version as packaging_version
 versions = []
 
 LTS_VERSIONS = [
-    # "v3.4.1.0"
+    "v3.4.1.0",
 ]
 
 def get_versions_for_tag(repo, tag_name):
