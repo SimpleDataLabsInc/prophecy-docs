@@ -2,7 +2,7 @@
 title: Object Store Configuration
 id: object-store-config
 description: Prophecy installations allow certain critical data like backups and audit logs to synced to object stores like S3, Azure Blob Storage, GCS etc.
-sidebar_position: 4
+sidebar_position: 5
 tags:
   - object store
   - configuration

@@ -2,7 +2,7 @@
 title: Backup/Restore Configuration
 id: backup-restore
 description: Prophecy installations backup-restore being synced to object stores like S3, Azure Blob Storage etc.
-sidebar_position: 3
+sidebar_position: 4
 tags:
   - backup
   - restore
