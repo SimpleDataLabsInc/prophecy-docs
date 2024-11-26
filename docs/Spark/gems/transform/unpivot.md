@@ -32,9 +32,9 @@ The image below shows sample input and output tables for this scenario.
 
 This table describes how this transformation was achieved:
 
-| Parameter                       | Input                                                                                            |
-| ------------------------------- | ------------------------------------------------------------------------------------------------ |
-| Column(s) to use as identifiers | The _Product_ column is the identifier because it defines which product the sales correspond to. |
-| Columns to unpivot              | All of the quarterly sales columns will be unpivoted.                                            |
-| Variable column name            | The variable column is named _Quarter_ because it identifies the sales period.                   |
-| Value column name               | The value column is named _UnitsSold_ because it contains information about number of units sold.  |
+| Parameter                       | Input                                                                                             |
+| ------------------------------- | ------------------------------------------------------------------------------------------------- |
+| Column(s) to use as identifiers | The _Product_ column is the identifier because it defines which product the sales correspond to.  |
+| Columns to unpivot              | All of the quarterly sales columns will be unpivoted.                                             |
+| Variable column name            | The variable column is named _Quarter_ because it identifies the sales period.                    |
+| Value column name               | The value column is named _UnitsSold_ because it contains information about number of units sold. |
