@@ -1,5 +1,5 @@
 ---
-title: Download Logs
+title: Download logs
 id: download-logs
 description: Download Prophecy support logs
 sidebar_position: 3
@@ -15,7 +15,7 @@ As an admin user, you can download your environment logs from Prophecy without n
 - The overarching objective is to debug what is going on with your Prophecy services.
 - To achieve this, we've enabled admins to be able to download Prophecy logs and environment information so that they can upload them to Zendesk.
 
-### Download Logs features
+### Download logs features
 
 You can use the Download Logs feature to capture logs using the Services and time selectors.
 
@@ -37,7 +37,70 @@ Sensitive information, such as customer preview data, credentials, tokens, or pa
 
 :::
 
-### Navigating to the Download Logs UI
+## Enable Prophecy Downloads logs
+
+Before you can download logs, you must enable it in your private SAAS deployment.
+
+See the following requirements for enabling the Prophecy logs:
+
+- Prophecy collects the logs of all pods and stores it in the Athena Pod.
+- Each pod uses an additional 500 MB ephemeral storage for temporary storage.
+- Athena requires additional storage of around 100 GB to store one week of logs.
+- A new container image fluentbit (`gcr.io/prophecy-share/fluent-bit:2.2.3`) is required for this feature.
+
+To enable Minio in Athena and provide it a volume, follow these steps:
+
+1. Add env variables to Athena STS:
+
+```
+  - name: MINIO_ENDPOINT
+    value: athena:9000
+  - name: ENABLE_FLUENTBIT_SIDECARS
+    value: "true"
+  - name: RUN_ATHENA_MINIO
+    value: "true"
+```
+
+2. Add volume to Athena STS:
+
+```
+  volumeClaimTemplates:
+  ...
+  - apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      creationTimestamp: null
+      name: minio-storage
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: 10Gi
+      volumeMode: Filesystem
+```
+
+3. Add volume mount to Athena:
+
+```
+  volumeMounts:
+  ...
+  - mountPath: /minio/data
+    name: minio-storage
+```
+
+4. Add the Minio port to Athena SVC:
+
+```
+  ports:
+  ...
+  - name: minio
+    port: 9000
+    protocol: TCP
+    targetPort: 9000
+```
+
+## Navigate to the Download logs UI
 
 To download logs in the Prophecy UI, follow these steps:
 
