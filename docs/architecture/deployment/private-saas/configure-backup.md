@@ -2,7 +2,7 @@
 title: Backup/Restore Configuration
 id: backup-restore
 description: Prophecy installations backup-restore being synced to object stores like S3, Azure Blob Storage etc.
-sidebar_position: 3
+sidebar_position: 4
 tags:
   - backup
   - restore
@@ -38,7 +38,7 @@ Note this doc is constantly updated with new features/options and hence it is be
 
 There are certain environment variables that need to be configured in Athena based on the kind of backup-restore required.
 
-### Navigating to the Backup config UI
+### Navigate to the Backup config UI
 
 To configure object store settings in the Prophecy UI, follow these steps:
 
@@ -83,7 +83,7 @@ To trigger a backup/restore manually you would require a API key. [Follow the AP
 
 :::
 
-#### Triggering a backup
+#### Trigger a backup
 
 By default when you set the `ENABLE_REGULAR_BACKUPS` to `true`, backups are taken automatically at the configured `BACKUP_FREQUENCY` CRON schedule. However, we you would like to manually trigger a backup, you may use the API below.
 
@@ -250,7 +250,7 @@ Note the following:
 - If backup was taken in Athena’s local Persistent Volume, it needs to be copied to Athena’s Persistent Volume in the destination cluster before the restore operation can be performed.
 - Restore operation always assumes a running destination Prophecy cluster where the data and the configuration of source cluster will be restored.
 
-### Starting a Restore
+### Start a Restore
 
 :::note
 
@@ -344,7 +344,7 @@ Sample response when there is an ongoing backup and when there is no `timestamp`
 4. Disaster Recovery restore can be initiated from the remote region when the primary goes down
 5. Once the restore is done the Disaster Recovery site is available for work to continue.
 
-## Migrating to different cluster
+## Migrate to different cluster
 
 If there is a requirement to migrate to a different Kubernetes cluster, you can leverage the backups for that:
 

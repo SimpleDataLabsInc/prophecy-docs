@@ -32,7 +32,7 @@ Certain [object store level configurations](./configure-object-store.md) are sha
 
 There are certain environment variables that need to be configured in Athena based on the kind of user events audit logs required.
 
-### Navigating to the Audit config UI
+### Navigate to the Audit config UI
 
 To configure object store settings in the Prophecy UI, follow these steps:
 
