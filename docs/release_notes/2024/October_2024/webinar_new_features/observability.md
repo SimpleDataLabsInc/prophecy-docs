@@ -2,8 +2,7 @@
 sidebar_position: 2
 id: observability
 description: Everyone should be able to keep Pipelines running
-title: Observability
-draft: true
+title: Observing data and pipelines
 tags:
   - release
 ---
