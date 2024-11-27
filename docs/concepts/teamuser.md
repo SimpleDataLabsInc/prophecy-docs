@@ -26,7 +26,7 @@ Teams, User, and Git [Settings](https://app.prophecy.io/metadata/settings) are a
 
 ## Team Metadata
 
-Manage the entities within a team by accessing the Team's metadata page. Click **(1) Metadata**, **(2) Teams**, and select the **(3) team of interest**. Now you can see all the metadata for that team - including Info, which Projects, Pipelines, Jobs, etc are owned by that team. Also, Team admins can manage **(4) Settings** for the Team.
+Manage the entities within a team by accessing the team's metadata page. Click **(1) Metadata**, **(2) Teams**, and select the **(3) team of interest**. Now you can see all the metadata for that team - including Info, which Projects, Pipelines, Jobs, etc are owned by that team. Also, team admins can manage **(4) Settings** for the team.
 ![Team metadata](./img/team_metadata.png)
 
 **[Execution Metrics](/docs/Spark/execution/execution-metrics.md)** - collect metrics and data samples for each execution.
