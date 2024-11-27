@@ -26,8 +26,8 @@ tags:
 
 The OpenAI Gem allows the Prophecy user to interact with the OpenAI API using two different requests:
 
-1. Compute text embeddings ([link](/docs/Spark/gems/machine-learning/ml-openai.md#compute-text-embeddings)).
-2. Answer a question, where the user has the option to provide context ([link](/docs/Spark/gems/machine-learning/ml-openai.md#answer-a-question-with-a-given-context)).
+1. Compute text embeddings
+2. Answer a question, where the user has the option to provide context
 
 Follow along to learn how to interact with the OpenAI API using Prophecy's easy-to-use interface. For an example set of Pipelines that use these Gems to create a Generative AI Chatbot, see this [guide.](/docs/getting-started/genaichatbot.md)
 

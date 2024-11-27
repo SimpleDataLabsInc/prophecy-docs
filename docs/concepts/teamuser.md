@@ -23,3 +23,14 @@ Teams represent a group of users who work together.
 Teams, User, and Git [Settings](https://app.prophecy.io/metadata/settings) are accessed by clicking the `Settings` icon at the bottom left of the menu bar. The following image shows the page and the available functionality.
 
 ![Team Page](./img/team_page.png)
+
+## Team Metadata
+
+Manage the entities within a team by accessing the Team's metadata page. Click **(1) Metadata**, **(2) Teams**, and select the **(3) team of interest**. Now you can see all the metadata for that team - including Info, which Projects, Pipelines, Jobs, etc are owned by that team. Also, Team admins can manage **(4) Settings** for the Team.
+![Team metadata](./img/team_metadata.png)
+
+**[Execution Metrics](/docs/Spark/execution/execution-metrics.md)** - collect metrics and data samples for each execution.
+
+**Code Generation** - enable multi-file code generation in the case of code payload size limitations.
+
+**Advanced** - update the artifactid, generative AI settings, etc for the team's projects.
