@@ -16,13 +16,13 @@ The Bulk Column Expressions Gem primarily lets you cast or change the data type 
 
 ## Parameters
 
-| Parameter                                    | Description                                                         | Required |
-| -------------------------------------------- | ------------------------------------------------------------------- | -------- |
-| Data Type of the columns to do operations on | The data type of columns to select.                                 | True     |
-| Selected Columns                             | The columns on which to apply transformations.                      | False    |
-| Change output column name                    | An option to add a prefix or suffix to the selected column names.   | False    |
-| Change output column type                    | The data type that the columns will be transformed into.            | False    |
-| Output Expression                            | A Spark SQL expression that can be applied to the selected columns. | False    |
+| Parameter                                    | Description                                                        |
+| -------------------------------------------- | ------------------------------------------------------------------ |
+| Data Type of the columns to do operations on | The data type of columns to select.                                |
+| Selected Columns                             | The columns on which to apply transformations                      |
+| Change output column name                    | An option to add a prefix or suffix to the selected column names   |
+| Change output column type                    | The data type that the columns will be transformed into            |
+| Output Expression                            | A Spark SQL expression that can be applied to the selected columns |
 
 ## Example
 
