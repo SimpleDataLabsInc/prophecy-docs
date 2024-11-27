@@ -9,7 +9,7 @@ from packaging import version as packaging_version
 versions = []
 
 LTS_VERSIONS = [
-    # "v3.4.1.0"
+    "v3.4.1.0",
 ]
 
 def get_versions_for_tag(repo, tag_name):
@@ -52,7 +52,7 @@ def get_versions_for_tag(repo, tag_name):
 
 
 def update_version_chart_file(docs_repo_path):
-    version_chart_file = os.path.join(docs_repo_path, "docs/release_notes/version_chart.md")
+    version_chart_file = os.path.join(docs_repo_path, "docs/release_notes/version_chart/version_chart.md")
     header_lines = []
     delimiter = ""
     delimiter_regex = "-------------"
@@ -102,7 +102,6 @@ if __name__ == "__main__":
     parser.add_argument("--prophecy-repo-path", default='./prophecy/', help="Path to the prophecy Git repository")
     parser.add_argument("--docs-repo-path", default='./prophecy-docs/', help="Path to the docs Git repository")
     parser.add_argument("--tag", help="Process a specific tag (if omitted we process all that match semver structure)")
-    parser.add_argument("--output-path", help="absolute path for output file", default="./version_chart.md")
 
     args = parser.parse_args()
 

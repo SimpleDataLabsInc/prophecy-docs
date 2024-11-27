@@ -15,18 +15,21 @@ Check to make sure the Spark version and Scala version of your Prophecy Scala Li
 of your cluster!
 :::
 
-:::info
-Query this table using the following API and your ([personal access token](..%2Fmetadata%2FprophecyAPI.md)):
+You can query this table using the following API and your [personal access token](/docs/metadata/prophecyAPI.md):
 
 ```bash
 curl  --header 'X-Auth-Token: $PROPHECY_PAT' --location https://app.prophecy.io/api/editor/plibVersions
 ```
 
+:::note
+Prophecy versions that are labeled with `EM` are Extended Maintenance releases. For more information, see [Prophecy versions support](/docs/release_notes/version_chart/versions_support.md).
 :::
 
 | Prophecy version | [Prophecy Scala libs](https://mvnrepository.com/artifact/io.prophecy/prophecy-libs) | [Prophecy Python libs](https://pypi.org/project/prophecy-libs/) | Release Date | End-of-support Date |
 | ---------------- | ----------------------------------------------------------------------------------- | --------------------------------------------------------------- | ------------ | ------------------- |
-| v3.4.0.2         | 8.4.0                                                                               | 1.9.24                                                          | 2024/11/13   | 2025/05/13          |
+| v3.4.1.0 EM      | 8.5.0                                                                               | 1.9.24                                                          | 2024/11/25   | 2025/11/25          |
+| v3.4.0.3         | 8.4.0                                                                               | 1.9.24                                                          | 2024/11/20   | 2025/05/20          |
+| v3.4.0.2         | 8.4.0                                                                               | 1.9.24                                                          | 2024/11/14   | 2025/05/14          |
 | v3.4.0.1         | 8.4.0                                                                               | 1.9.24                                                          | 2024/11/13   | 2025/05/13          |
 | v3.4.0.0         | 8.4.0                                                                               | 1.9.24                                                          | 2024/10/29   | 2025/04/29          |
 | v3.3.11.7        | 8.2.1                                                                               | 1.9.16                                                          | 2024/10/24   | 2025/04/24          |
@@ -55,7 +58,7 @@ curl  --header 'X-Auth-Token: $PROPHECY_PAT' --location https://app.prophecy.io/
 | v3.3.8.4         | 8.0.29                                                                              | 1.9.9                                                           | 2024/07/22   | 2025/01/22          |
 | v3.3.8.3         | 8.0.29                                                                              | 1.9.9                                                           | 2024/07/17   | 2025/01/17          |
 | v3.3.8.2         | 8.0.29                                                                              | 1.9.9                                                           | 2024/07/16   | 2025/01/16          |
-| v3.3.8.1         | 8.0.23                                                                              | 1.9.9                                                           | 2024/07/09   | 2025/01/09          |
+| v3.3.8.1         | 8.0.25                                                                              | 1.9.9                                                           | 2024/07/10   | 2025/01/10          |
 | v3.3.8.0         | 8.0.23                                                                              | 1.9.9                                                           | 2024/07/08   | 2025/01/08          |
 | v3.3.7.13        | 8.0.11-1                                                                            | 1.9.7                                                           | 2024/07/05   | 2025/01/05          |
 | v3.3.7.12        | 8.0.11-1                                                                            | 1.9.7                                                           | 2024/07/04   | 2025/01/04          |
@@ -89,10 +92,10 @@ curl  --header 'X-Auth-Token: $PROPHECY_PAT' --location https://app.prophecy.io/
 | v3.3.3.1         | 7.1.83                                                                              | 1.8.13                                                          | 2024/04/03   | 2024/10/03          |
 | v3.3.3.0         | 7.1.82                                                                              | 1.8.13                                                          | 2024/04/01   | 2024/10/01          |
 | v3.3.2.4         | 7.1.83                                                                              | 1.8.12                                                          | 2024/03/27   | 2024/09/27          |
-| v3.3.2.3         | 7.1.79                                                                              | 1.8.12                                                          | 2024/03/25   | 2024/09/25          |
-| v3.3.2.2         | 7.1.79                                                                              | 1.8.12                                                          | 2024/03/20   | 2024/09/20          |
+| v3.3.2.3         | 7.1.79                                                                              | 1.8.12                                                          | 2024/03/26   | 2024/09/26          |
+| v3.3.2.2         | 7.1.79                                                                              | 1.8.12                                                          | 2024/03/21   | 2024/09/21          |
 | v3.3.2.1         | 7.1.79                                                                              | 1.8.9                                                           | 2024/03/15   | 2024/09/15          |
-| v3.3.2.0         | 7.1.79                                                                              | 1.8.9                                                           | 2024/03/13   | 2024/09/13          |
+| v3.3.2.0         | 7.1.79                                                                              | 1.8.9                                                           | 2024/03/14   | 2024/09/14          |
 | v3.3.1.3         | 7.1.72-1                                                                            | 1.8.7                                                           | 2024/03/08   | 2024/09/08          |
 | v3.3.1.2         | 7.1.72-1                                                                            | 1.8.7                                                           | 2024/03/07   | 2024/09/07          |
 | v3.3.1.1         | 7.1.72                                                                              | 1.8.7                                                           | 2024/03/05   | 2024/09/05          |
