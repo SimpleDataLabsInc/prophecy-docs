@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Compare Columns
+title: CompareColumns
 id: compare-columns
 description: Compare columns between two dataframes
 tags:
@@ -10,7 +10,7 @@ tags:
   - compare-columns
 ---
 
-Compare columns between two DataFrame based on the key id columns defined
+The CompareColumns Gem lets you compare columns between two DataFrames based on the key id columns defined.
 
 ## Parameters
 

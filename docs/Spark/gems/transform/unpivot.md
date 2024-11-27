@@ -11,6 +11,12 @@ tags:
 
 Use the Unpivot Gem to transform your data from a wide format to a long format.
 
+:::note
+
+If you want to pivot the data, rather than unpivot, use the [Aggregate](aggregate.md) Gem.
+
+:::
+
 ## Parameters
 
 | Parameter                       | Description                                                                                                                  |

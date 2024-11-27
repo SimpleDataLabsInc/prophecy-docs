@@ -1,6 +1,6 @@
 ---
 sidebar_position: 8
-title: Set Operation
+title: SetOperation
 id: set-operation
 description: Union, Intersect and Difference
 tags:
@@ -11,7 +11,7 @@ tags:
   - difference
 ---
 
-Allows you to perform addition or subtraction of rows from DataFrames with identical schemas and different data.
+Use the SetOperation Gem to perform addition or subtraction of rows from DataFrames with identical schemas and different data.
 
 ### Parameters
 

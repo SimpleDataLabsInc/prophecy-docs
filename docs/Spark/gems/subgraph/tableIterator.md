@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Table Iterator
+title: TableIterator
 id: table-iterator
 description: Loop over each row of an input Dataframe
 tags:
@@ -9,21 +9,21 @@ tags:
   - iterator
 ---
 
-Table Iterator allows you to iterate over one or more Gems for each row of the first input DataFrame.
+TableIterator allows you to iterate over one or more Gems for each row of the first input DataFrame.
 Let's see how to create a Basic Loop which loops over a Metadata Table, and for each row of the table will run the Gems inside the Subgraph.
 
-## Creating a Table Iterator Gem
+## Creating a TableIterator Gem
 
 First add the Input Gem on which you want to Iterate over. For this, simply use an existing Dataset or create a new [Source Gem](/docs/Spark/gems/source-target/source-target.md) pointing to your Metadata table.
 You can run this Source Gem to see the data your loop would be running for.
 
-Now, Drag and Drop the **(1) Table Iterator** Gem from the Subgraph menu, and connect it to the above created Source Gem.
+Now, Drag and Drop the **(1) TableIterator** Gem from the Subgraph menu, and connect it to the above created Source Gem.
 
 ![Create_table_iterator](img/Create_table_iterator.png)
 
-## Configure the Table Iterator
+## Configure the TableIterator
 
-Open the Table Iterator Gem, and click on **(1) Configure** to open the Settings dialog.
+Open the TableIterator Gem, and click on **(1) Configure** to open the Settings dialog.
 Here, on the left side panel you can edit the **(2) Name ** of your Gem, check the **(3) Input Schema** for your DataFrame on which the loop will iterate.
 
 On the right side, you can define your Iterator Settings, and any other Subgraph Configs you want to use in the Subgraph.
@@ -70,7 +70,7 @@ Click on the **(2) Iteration** button, and it will open up the Iterations table 
 
 ## Adding Inputs and Outputs to TableIterator
 
-For a Table Iterator Gem, the first input port is for your DataFrame on which you want to Iterate Over.
+For a TableIterator Gem, the first input port is for your DataFrame on which you want to Iterate Over.
 You can **(1)Add** more Inputs or Switch to **(2) Output** tab to add more Outputs as needed. These extra inputs would not change for every iteration.
 Also, the output will be a Union of output of all Iterations. You can **(3) Delete** any port by hovering over it.
 

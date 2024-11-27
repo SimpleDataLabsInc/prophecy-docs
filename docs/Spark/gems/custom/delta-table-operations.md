@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Delta Table Operations
+title: DeltaTableOperations
 id: delta-ops
 description: Gem that encompasses some of the import side operations of Delta
 tags:

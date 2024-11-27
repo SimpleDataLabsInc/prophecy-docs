@@ -1,6 +1,6 @@
 ---
 sidebar_position: 9
-title: Window Function
+title: WindowFunction
 id: window-function
 description: Aggregate and transform Windowed data
 tags:
@@ -9,7 +9,7 @@ tags:
   - aggregate
 ---
 
-Allows you to define a **WindowSpec** and apply Window functions on a DataFrame
+The WindowFunction lets you define a **WindowSpec** and apply window functions on a DataFrame.
 
 ### Parameters
 

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: File Operation
+title: FileOperation
 id: file-operations
 description: Perform file operations on different file systems
 tags:
@@ -8,7 +8,7 @@ tags:
   - dbfs
 ---
 
-Helps perform file operations like `copy` and `move` on different file systems
+Helps perform file operations like `copy` and `move` on different file systems.
 
 ## Parameters
 

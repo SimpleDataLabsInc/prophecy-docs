@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: Order By
+title: OrderBy
 id: order-by
 description: Sort your data based on one or more Columns
 tags:
