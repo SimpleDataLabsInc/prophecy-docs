@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[80056],{55100:e=>{e.exports=JSON.parse('{"label":"set","permalink":"/tags/set","allTagsPath":"/tags","count":1,"items":[{"id":"Spark/gems/transform/set-operation","title":"SetOperation","description":"Union, Intersect and Difference","permalink":"/Spark/gems/transform/set-operation"}]}')}}]);
