@@ -1,6 +1,6 @@
 ---
 sidebar_position: 13
-title: Dynamic Select
+title: DynamicSelect
 id: dynamic-select
 description: Dynamically filter columns of your dataset based on a set of conditions.
 tags:
@@ -9,11 +9,11 @@ tags:
   - dynamic
 ---
 
-Use the Dynamic Select Gem to dynamically filter columns of your Dataset based on a set of conditions.
+Use the DynamicSelect Gem to dynamically filter columns of your Dataset based on a set of conditions.
 
 ## Configuration
 
-There are two ways to configure the Dynamic Select.
+There are two ways to configure the DynamicSelect.
 
 | Configuration         | Description                                                                                   |
 | --------------------- | --------------------------------------------------------------------------------------------- |
@@ -22,7 +22,7 @@ There are two ways to configure the Dynamic Select.
 
 ## Examples
 
-You’ll use Dynamic Select when you want to avoid hard-coding your choice of columns. In other words, rather than define each column to keep in your Pipeline, you let the system automatically choose the columns based on certain conditions or rules.
+You’ll use DynamicSelect when you want to avoid hard-coding your choice of columns. In other words, rather than define each column to keep in your Pipeline, you let the system automatically choose the columns based on certain conditions or rules.
 
 ### Remove date columns using field type
 

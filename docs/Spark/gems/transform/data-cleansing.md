@@ -1,6 +1,6 @@
 ---
 sidebar_position: 12
-title: Data Cleansing
+title: DataCleansing
 id: data-cleansing
 description: Standardize data formats and address missing or null values in the data.
 tags:
@@ -9,7 +9,7 @@ tags:
   - format
 ---
 
-Use the Data Cleansing Gem to standardize data formats and address missing or null values in the data.
+Use the DataCleansing Gem to standardize data formats and address missing or null values in the data.
 
 ## Parameters
 
@@ -22,6 +22,6 @@ Use the Data Cleansing Gem to standardize data formats and address missing or nu
 
 ## Example
 
-Assume you have a table that includes customer feedback on individual orders. In this scenario, some customers may not provide feedback, resulting in null values in the data. You can use the Data Cleansing Gem to replace null values with the string `NA`.
+Assume you have a table that includes customer feedback on individual orders. In this scenario, some customers may not provide feedback, resulting in null values in the data. You can use the DataCleansing Gem to replace null values with the string `NA`.
 
 ![Replace null with string](./img/replace-null-with-string.png)
