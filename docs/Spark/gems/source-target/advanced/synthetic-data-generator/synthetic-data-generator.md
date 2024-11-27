@@ -15,7 +15,7 @@ Generate synthetic data with this special kind of Source Gem.
 
 Generating mock data is crucial when building data Pipelines to simulate real-world scenarios for testing, validating, and optimizing Pipeline performance before using actual production data. It helps ensure the Pipeline handles various data formats, structures, and edge cases effectively, minimizing potential issues in a live environment.
 
-A wide range of synthetic data can be created using any column name and an array of data types. For example, generate browser history to track fictitious devices and the details on when that device visits a particular website with a particular click count and frequency.
+A wide range of synthetic data can be created using any column name and an array of data types. For example, generate browser history data as shown below.
 
 ![img](../../../img/synth_0_datasample.png)
 
@@ -55,6 +55,9 @@ Create a new Dataset and select the Type as Data Generator. Note we are not spec
 What type of data do you need to generate? Specify the data structure using Random Data Providers. Prophecy offers a selection of [Random Data Providers](./providers) including integers, booleans, and elements from a list.
 
 ![img](../../../img/synth_3_properties.png)
+
+Generate column using a sequence of integers (left). Generate another column by referencing an existing catalog table (right). Randomly select elements of the foreign key from that table.  
+![img](../../../img/synth_7_seq_or_foreign.png)
 
 ### Infer the Schema
 
