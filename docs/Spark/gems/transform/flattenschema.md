@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title: Flatten Schema
+title: FlattenSchema
 id: flatten-schema
 description: Flatten nested data
 tags:
@@ -10,7 +10,7 @@ tags:
   - flatten
 ---
 
-When processing raw data it can be useful to flatten complex data types like `Struct`s and `Array`s into simpler, flatter schemas.
+When processing raw data it can be useful to flatten complex data types like structures and arrays into simpler, flatter schemas.
 
 ![The FlattenSchema gem](./img/flatten_gem.png)
 
@@ -26,19 +26,19 @@ And the data looks like so:
 
 ![Input data](./img/flatten_input_interim.png)
 
-We want to extract `count`, and all of the columns from the `struct`s in `events` into a flattened schema.
+We want to extract `count` from _result_ and all of the columns from _events_ into a flattened schema.
 
 ## The Expressions
 
-Having added a `FlattenSchema` Gem to your Pipeline, all you need to do is click the column names you wish to extract and they'll be added to the `Expressions` section. Once added you can change the `Target Column` for a given row to change the name of the Column in the output.
+Having added a FlattenSchema Gem to your Pipeline, all you need to do is click the column names you wish to extract and they'll be added to the **Expressions** section. Then, you can change the values in the **Target Column** to change the name of output columns.
 
 ![Adding Expressions](./img/flatten_add_exp.gif)
 
-The `Columns Delimiter` dropdown allows you to control how the names of the new columns are derived. Currently dashes and underscores are supported.
+The **Columns Delimiter** dropdown allows you to control how the names of the new columns are derived. Currently dashes and underscores are supported.
 
 ## The Output
 
-If we check the `Output` tab in the Gem, you'll see the schema that we've created using the selected columns.
+If we check the **Output** tab in the Gem, you'll see the schema that we've created using the selected columns.
 
 ![Output schema](./img/flatten_output.png)
 

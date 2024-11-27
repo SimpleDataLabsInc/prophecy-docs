@@ -1,6 +1,6 @@
 ---
 sidebar_position: 11
-title: Bulk Column Expressions
+title: BulkColumnExpressions
 id: bulk-column-expressions
 description: Change the data type of multiple columns at once.
 tags:
@@ -9,7 +9,7 @@ tags:
   - columns
 ---
 
-The Bulk Column Expressions Gem primarily lets you cast or change the data type of multiple columns at once. It provides additional functionality, including:
+The BulkColumnExpressions Gem primarily lets you cast or change the data type of multiple columns at once. It provides additional functionality, including:
 
 - Adding a prefix or suffix to selected columns.
 - Applying a custom expression to selected columns.
@@ -28,7 +28,7 @@ The Bulk Column Expressions Gem primarily lets you cast or change the data type 
 
 Assume you have some columns in a table that represent zero-based indices and are stored as long data types. You want them to represent one-based indices and be stored as integers to optimize memory use.
 
-Using the Bulk Column Expressions Gem, you can:
+Using the BulkColumnExpressions Gem, you can:
 
 - Filter your columns by long data types.
 - Select the columns you wish to transform.

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title: Schema Transform
+title: SchemaTransform
 id: schema-transform
 description: Add, Edit, Rename or Drop Columns
 tags:
@@ -80,11 +80,11 @@ object transform {
 
 ## Advanced Import
 
-The Advanced Import feature allows you to bulk import statements that are structured similarly to CSV/TSV files. This can be useful if you have your expressions/transformation logic in another format and just want to quickly configure a `Schema Transform` Gem based on existing logic.
+The Advanced Import feature allows you to bulk import statements that are structured similarly to CSV/TSV files. This can be useful if you have your expressions/transformation logic in another format and just want to quickly configure a SchemaTransform Gem based on existing logic.
 
 ### Using Advanced Import
 
-1. Click the `Advanced` button in the `Schema Transform` Gem UI
+1. Click the **Advanced** button in the SchemaTransform Gem UI
 
 ![Advanced import toggle](./img/schematransform_advanced_1.png)
 
@@ -92,7 +92,7 @@ The Advanced Import feature allows you to bulk import statements that are struct
 
 ![Advanced import mode](./img/schematransform_advanced_2.png)
 
-3. Use the button at the top (labeled `Expressions`) to switch back to the expressions view. This will translate the expressions from the CSV format to the table format and will show any errors detected.
+3. Use the button at the top (labeled **Expressions**) to switch back to the expressions view. This will translate the expressions from the CSV format to the table format and will show any errors detected.
 
 ### Format
 

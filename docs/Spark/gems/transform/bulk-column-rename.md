@@ -1,6 +1,6 @@
 ---
 sidebar_position: 10
-title: Bulk Column Rename
+title: BulkColumnRename
 id: bulk-column-rename
 description: Rename multiple columns in your Dataset in a systematic way.
 tags:
@@ -9,7 +9,7 @@ tags:
   - columns
 ---
 
-Use the Bulk Column Rename Gem to rename multiple columns in your Dataset in a systematic way.
+Use the BulkColumnRename Gem to rename multiple columns in your Dataset in a systematic way.
 
 ## Parameters
 

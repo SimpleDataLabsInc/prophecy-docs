@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Text Processing
+title: TextProcessing
 id: ml-text-processing
 description: Text processing to prepare data to submit to a foundational model API.
 tags:

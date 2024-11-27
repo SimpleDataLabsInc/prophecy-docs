@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: Row Distributor
+title: RowDistributor
 id: row-distributor
 description: Create multiple DataFrames based on filter conditions
 tags:
@@ -10,7 +10,7 @@ tags:
   - row distributor
 ---
 
-Create multiple DataFrames based on provided filter conditions from an input DataFrame.
+Use the RowDistributor Gem to create multiple DataFrames based on provided filter conditions from an input DataFrame.
 
 This is useful for cases where rows from the input DataFrame needs to be distributed into multiple DataFrames in different ways for downstream Gems.
 
