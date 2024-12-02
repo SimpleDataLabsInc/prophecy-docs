@@ -1,5 +1,5 @@
 ---
-title: "Troubleshooting Tips"
+title: "Connectivity Tips"
 id: gcp-dataproc-fabric-tips
 description: If your cluster doesn't connect, try these tips
 sidebar_position: 1
