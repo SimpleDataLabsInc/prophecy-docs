@@ -1,65 +1,67 @@
 ---
 sidebar_position: 1
-title: Prophecy Data Transformation Copilot
+title: Prophecy and the Data Copilot
 id: index
 sidebar_label: Prophecy
-description: get a little help from Copilot
+description: Get a little help from Copilot
 tags:
   - visual
   - code
   - copilot
 ---
 
-Prophecy's Copilot is designed to enable all users to be productive with data engineering. It also replaces legacy ETL products. Following are the primary pillars of Prophecy Copilot:
+Prophecy empowers users of all skill levels to excel in data engineering.
+Anyone can use the visual interface, especially with the help of the [Data Copilot](./concepts/copilot/), to achieve results that go beyond traditional ETL tools.
+Below, we highlight Prophecy's core pillars.
 
-## Visual Interface
+## Visual interface
 
-Prophecy's designer provides a visual drag-and-drop canvas to develop data Pipelines, where business logic can be written as simple SQL expressions. We believe it is superior in every way to developing custom scripts:
+Prophecy's designer provides a visual drag-and-drop canvas to develop data Pipelines. The visual interface:
 
-- **Many data users:** Our users do not need to be experts in Spark or Airflow, and this enables all the data users - data engineers, visual ETL developers, data scientists and data analysts to succeed.
-- **Productive development:** It is very quick to develop Pipelines - you can drag and drop visual blocks into a Pipeline and interactively run them to see the data after every step along the journey. Even coding data engineers are more productive with our product.
+- **Is accessible to a variety users.** Users don't need to be experts in Spark or Airflow to leverage the visual interface. Anyone, including data engineers, visual ETL developers, data scientists and data analysts, can develop Pipelines this way.
+- **Facilitates productivity.** The visual interface speeds up the Pipeline development process because you can interactively run your transformations at each phase of development.
+- **Generates reusable code.** Each component of the Pipeline is automatically compiled into code that you can reuse and customize.
 
 ![Data Pipeline](./img/datapipeline.png)
 
-## Code & DevOps
+### Gems
 
-Running at scale requires bringing the best software engineering practices to the refinement of data. Rapid development & deployment of data Pipeline can be achieved by code on Git & high test coverage, coupled with continuous integration & continuous deployment. Prophecy does the following to make this process work:
+One of the core building blocks of visual data Pipelines is what we call [Gems](./concepts/project/gems).
+Gems are predefined visual blocks (like Lego pieces) that let you perform a variety of operations including data transformations and storing data.
 
-- **Visual data Pipelines as code:** Prophecy's code editor stores visual data Pipelines as high-quality code on Git
-- **High test coverage:** Prophecy makes test-generation & editing easy, and this results in high test coverage for our users after the switch
-- **Metadata as code:** Much of the metadata from projects including workflows, schedules and datasets, and computed metadata such as column-level lineage are also stored on Git with Prophecy.
+Prophecy provides dozens of Gems ready to use out of the box. Gems consist of Spark or SQL code, user-defined properties that are populated through the UI, and a function that specifies the visual layout of the Gem. Jump to the section on [Extensibility](#extensibility) to learn about Gem customization.
+
+## Code and DevOps
+
+Running at scale requires applying strong software engineering practices to data refinement. Rapid development and deployment of data pipelines can be achieved by using code stored in Git, maintaining high test coverage, and implementing [continuous integration and continuous deployment](./tutorials/Orchestration/reliable-ci-cd/). In Prophecy, this looks like:
+
+- **Pipelines stored as code.** Prophecy's code editor stores visual data Pipelines as high-quality code on Git.
+- **High test coverage.** Prophecy makes test generation and editing easy.
+- **Metadata as code.** Metadata is also stored as code on Git. This includes metadata from projects like workflows, schedules, and datasets. It also includes computed metadata such as column-level lineage.
 
 These provide the following benefits:
 
-- **DevOps practices:** For data projects, the Pipeline code, schedules & tests are stored on Git - with every developer working on her branch. Every change gets reviewed, and on every commit tests are run. The code is then deployed to be run per the schedule. Bad changes can be rolled back reliably. This process enables data teams to quickly move new and edited changes to production with high confidence.
-- **Zero lock-in:** Prophecy generated code is in 100% open-source format with data Pipelines in Apache Spark format and schedules in Apache Airflow format. This ensures freedom from lock-in and cost management.
-- **Git versioning for time travel:** Given that data projects including metadata are stored together on Git, the user can traverse across time, and for example see how a value is computed today, and compare it with how it was computed a month earlier to understand why a breakage has occurred.
+- **Alignment with DevOps practices.** You can follow DevOps practices in Prophecy such as collaboration, automation, and reviews because of the integration with Git.
+- **Zero lock-in.** Prophecy generated code is in 100% open-source format with data Pipelines in Apache Spark format and schedules in Apache Airflow format. This ensures freedom from lock-in and cost management.
+- **Git versioning for time travel.** Given that data projects including metadata are stored together on Git, you can traverse across time. For example, you can compare how a value was computed today against how it was computed a month earlier to understand why a breakage has occurred.
 
-## Complete Product
+## Complete product
 
-In the cloud, data engineering only has point products forcing the customer data platform teams to stitch together custom solutions. However, this means that development, deployment and metadata is spread across multiple systems - this is not sustainable over the medium term.
+In the cloud, data engineering often relies on point products, which forces customer data platform teams to create custom solutions. However, this approach leads to fragmented development, deployment, and metadata management across multiple systems, making it unsustainable in the long term.
 
-Prophecy instead chooses to provide a complete product:
+Prophecy instead chooses to provide a complete product that lets you:
 
-- Build data Pipelines on Spark
-- Deploy & Schedule data Pipelines on Airflow
-- Get unified metadata with search that includes business logic, datasets, execution information
-- Column level lineage to see how values flow end-to-end
+- Build data Pipelines on Spark.
+- Deploy and schedule data Pipelines on Airflow.
+- Access unified metadata with search that includes business logic, datasets, execution information.
+- View column-level lineage to see how values flow from end to end in the Pipeline.
 
 ![Complete](./img/complete.png)
 
-## Extensibility
+## Extensibility {#extensibility}
 
-Standardization is essential to scale but the scope of Data Engineering has increased quite beyond what traditional ETL or data integration products provide. It is no longer acceptable to only have a limited palette of visual components, where users get stuck if something does not fit the paradigm.
+Standardization is crucial for scaling, but it's no longer sufficient to rely on a limited set of components, where users are blocked when something falls outside the predefined paradigm.
 
-Prophecy provides extensibility - not as an afterthought - but as the concept at the heart of our architecture. Prophecy provides a set of inbuilt visual operators - such as Spark standard library, and Delta lake library. New visual operators are defined by our customers - usually the data platform teams develop these extensions as data products for their organizations. These extensions include custom connectors and transforms such as an encryption library. Customers also ask us to develop new operators as they need them and we're happy to add new libraries as requested.
+Because of this, extensibility is at the heart of Prophecy's architecture. In addition to built-in visual operators, custom operators can be defined at any time, including [custom Gems](./Spark/extensibility/gem-builder/). Usually, data platform teams develop these extensions as data products for their organizations. These extensions can include custom connectors and transforms such as an encryption library. Prophecy is also always building new operators to grow our functionality.
 
 ![Extensible](./img/extensible.png)
-
-### Gems
-
-Prophecy enables you to construct data Pipelines from predefined visual blocks (like Lego pieces), that we call Gems. Prophecy provides dozens of Gems ready to use out of the box. We also offer Gem customization. The custom Gems require users to be able to write Spark code and our customers often rely on Prophecy to help out. Gems include Spark code, properties that are blanks to be filled by the user from UI, and a function to describe the visual layout of the Gem.
-
-In the Gem builder UI, the left half is where you write the template code for the Gem. The top right has a functional UI generated in real time from the template code. You can fill business logic values into this generated UI, and you can immediately see the generated code at the bottom right. You can run this generated code against input data and see the results to ensure everything is working well.
-
-![Complete](./img/gem-builder.png)
