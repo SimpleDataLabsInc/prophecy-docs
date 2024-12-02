@@ -39,9 +39,7 @@ def get_versions_for_tag(repo, tag_name):
 
         if not tag_name.endswith(".0"):
             # for patch versions, get the date of the minor version
-            create_date = get_commit_date(get_commit_date(repo,
-                                                          re.sub(r'(\d+)\.(\d+)\.(\d+)\.(\d+)$', r'\1.\2.\3.0',
-                                                                 tag_name)))
+            create_date = get_commit_date(repo, re.sub(r'(\d+)\.(\d+)\.(\d+)\.(\d+)$', r'\1.\2.\3.0', tag_name))
         else:
             create_date = get_commit_date(repo, tag_name)
 
