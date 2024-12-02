@@ -9,46 +9,32 @@ tags:
   - udafs
 ---
 
-Allows you to create user defined functions (UDF) which are then usable anywhere in the Pipeline
+Prophecy lets you create user-defined functions (UDFs) which can be used anywhere in the Pipeline.
 
-### Parameters
+## Parameters
 
-| Parameter               | Description                                                                                                                              | Required |
-| :---------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- | :------- |
-| UDF Name                | Name of the UDF to be used to register it. All calls to the UDF will use this name                                                       | True     |
-| Definition              | Definition of the UDF function. <br/> Eg: `udf((value:Int)=>value*value)`                                                                | True     |
-| UDF initialization code | Code block that contains initialization of entities used by UDFs. This could for example contain any static mapping that a UDF might use | False    |
+| Parameter               | Description                                                                                                                                 | Required |
+| :---------------------- | :------------------------------------------------------------------------------------------------------------------------------------------ | :------- |
+| Function name           | The name of the function as it appears in your project.                                                                                     | True     |
+| UDF Name                | Name of the UDF that will register it. All calls to the UDF will use this name.                                                             | True     |
+| Definition              | Definition of the UDF function. <br/> Eg: `udf((value:Int)=>value*value)`                                                                   | True     |
+| UDF initialization code | Code block that contains initialization of entities used by UDFs. This could, for example, contain any static mapping that a UDF might use. | False    |
 
-### Examples
+## Steps
 
----
+There are a few steps to take to create and use a new UDF.
 
-#### Defining and Using UDF
+1. Create a new function.
 
-```mdx-code-block
-import App from '@site/src/components/slider';
+![Add a function to the pipeline](img/add-function.png)
 
-export const ImageData = [
-  {
-    "image":"/img/udf/1.png",
-    "description":<h3 style={{padding:'10px'}}>Step 1 - Open UDF definition window</h3>,
-  },
-  {
-    "image":"/img/udf/2.1.png",
-    "description":<h3 style={{padding:'10px'}}>Step 2 (Python)- Define Python UDF</h3>,
-  },
-  {
-    "image":"/img/udf/2.2.png",
-    "description":<h3 style={{padding:'10px'}}> Step 2 (Scala) - Define Scala UDf</h3>
-  },
-  {
-    "image":"/img/udf/3.png",
-    "description":<h3 style={{padding:'10px'}}>Step 3 - UDFs can now be called by their defined names</h3>,
-  },
-];
+2. Define the function.
 
-<App ImageData={ImageData}></App>
-```
+![Define the function](img/define-function.png)
+
+3. Call the function.
+
+![Call the function](img/call-function.png)
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
