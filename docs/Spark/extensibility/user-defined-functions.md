@@ -24,7 +24,7 @@ Prophecy lets you create user-defined functions (UDFs) which can be used anywher
 
 There are a few steps to take to create and use a new UDF.
 
-1. Create a new function.
+1. Create a new function. You'll find the **Functions** section in the left sidebar of a project page.
 
 ![Add a function to the pipeline](img/add-function.png)
 
