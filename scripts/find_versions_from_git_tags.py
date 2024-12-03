@@ -12,11 +12,17 @@ LTS_VERSIONS = [
     "v3.4.1.0",
 ]
 
+def get_commit_date(repo, tag_name):
+    try:
+        tag = repo.tags[tag_name]
+        return datetime.fromtimestamp(tag.commit.committed_date)
+    except git.exc.GitCommandError:
+        IOError(f"Error checking out tag '{tag_name}'.")
+
 def get_versions_for_tag(repo, tag_name):
     deps_file_path = "project/Dependencies.scala"
 
     try:
-        tag = repo.tags[tag_name]
         file_contents = repo.git.show(f"{tag_name}:{deps_file_path}")
 
         prophecy_libs_version_regex = r'prophecyLibsVersion\s*=\s*"([^"]+)"'
@@ -31,10 +37,15 @@ def get_versions_for_tag(repo, tag_name):
             #print("pythonProphecyLibsVersion not found.")
             return  # ignore for now if we can't find missing old versions
 
-        create_date = datetime.fromtimestamp(tag.commit.committed_date)
+
+        create_date = get_commit_date(repo, tag_name)
         if tag_name in LTS_VERSIONS:
             end_of_support_date = create_date + relativedelta(years=1)
             tag_name = tag_name + " EM"
+        elif not tag_name.endswith(".0"):
+            # for patch versions, set the same end date as associated minor version
+            minor_create_date = get_commit_date(repo, re.sub(r'(\d+)\.(\d+)\.(\d+)\.(\d+)$', r'\1.\2.\3.0', tag_name))
+            end_of_support_date = minor_create_date + relativedelta(months=6)
         else:
             end_of_support_date = create_date + relativedelta(months=6)
         ver_dict = {
