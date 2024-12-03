@@ -32,7 +32,7 @@ You can expect a new Extended Maintenance release two to six weeks after each Ma
 
 ### Required resources
 
-Extended Maintenance releases require additional resources, such as CPU and memory. Starting with `v3.4.1.0 EM`, SQL Sandbox is enabled, so every SQL Pipeline session will spin up an additional pod with the following configuration:
+Starting with `v3.4.1.0 EM`, SQL Sandbox is enabled, so every SQL Pipeline session will spin up an additional pod with the following configuration:
 
 - CPI: 500m
 - Memory: 512Mi

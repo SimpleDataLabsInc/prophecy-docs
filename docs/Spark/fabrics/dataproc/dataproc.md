@@ -26,7 +26,7 @@ Livy is required for the Fabric. Prophecy provides a script required to deploy a
 
 1. If you don't already have a private key, create a private key for the service account that you're using.
    <br/><br/>
-   <img src={require('./img/createkey.png').default} alt="dataproc security" width="75%" />
+   <img src={require('./../img/createkey.png').default} alt="dataproc security" width="75%" />
    <br/><br/>
 2. Ensure you have the following permissions configured.
 
@@ -79,35 +79,42 @@ gcloud config set account meitestserviceaccount@core-shard-398601.iam.gserviceac
 
 1. Create a Fabric and select **Dataproc**.
    <br/><br/>
-   <img src={require('./img/selectdataproc.png').default} alt="select dataproc" width="75%" />
+   <img src={require('./../img/selectdataproc.png').default} alt="select dataproc" width="75%" />
    <br/><br/>
 2. Fill out your **Project Name** and **Region**, and upload the **Private Key**.
    <br/><br/>
-   <img src={require('./img/configuredataproc.png').default} alt="configure dataproc" width="75%" />
+   <img src={require('./../img/configuredataproc.png').default} alt="configure dataproc" width="75%" />
    <br/><br/>
 3. Click on **Fetch environments** and select the Dataproc **cluster** that you created earlier.
    <br/><br/>
-   <img src={require('./img/selectenv.png').default} alt="select cluster" width="75%" />
+   <img src={require('./../img/selectenv.png').default} alt="select cluster" width="75%" />
    <br/><br/>
 4. Leave everything as default and provide the **Livy URL**. Locate the **External IP** of your cluster instance. Optionally, you may configure the DNS instead of using the IP. The URL is `http://<external-ip>:8998`.
    <br/><br/>
-   <img src={require('./img/externalip.png').default} alt="livy ip" width="75%" />
+   <img src={require('./../img/externalip.png').default} alt="livy ip" width="75%" />
    <br/><br/>
 5. Configure the bucket associated with your cluster.
    <br/><br/>
-   <img src={require('./img/bucketloc.png').default} alt="bucket location" width="75%" />
+   <img src={require('./../img/bucketloc.png').default} alt="bucket location" width="75%" />
    <br/><br/>
 6. Add the **Job Size**.
    <br/><br/>
-   <img src={require('./img/procjobsize.png').default} alt="Job Size" width="55%" />
+   <img src={require('./../img/procjobsize.png').default} alt="Job Size" width="55%" />
    <br/><br/>
 7. Configure Scala Library Path.
    `gs://prophecy-public-gcp/prophecy-scala-libs/`.
 8. Configure Python Library Path.
    `gs://prophecy-public-gcp/prophecy-python-libs/`.
    <br/><br/>
-   <img src={require('./img/proclib.png').default} alt="dependences" width="85%" />
+   <img src={require('./../img/proclib.png').default} alt="dependences" width="85%" />
    <br/><br/>
 9. Click on **Complete**.
    <br/><br/>
    Run a simple Pipeline and make sure that the interim returns data properly.
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```
