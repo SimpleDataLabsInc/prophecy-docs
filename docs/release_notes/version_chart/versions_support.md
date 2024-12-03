@@ -34,7 +34,7 @@ You can expect a new Extended Maintenance release two to six weeks after each Ma
 
 Starting with `v3.4.1.0 EM`, SQL Sandbox is enabled, so every SQL Pipeline session will spin up an additional pod with the following configuration:
 
-- CPI: 500m
+- CPU: 500m
 - Memory: 512Mi
 
 After upgrading to 3.4.1, you must enable SQL Sandbox Config in the UI by navigating to the **Sandbox Config** tab in the Config sub tab of the Admin Settings.
