@@ -37,15 +37,15 @@ def get_versions_for_tag(repo, tag_name):
             #print("pythonProphecyLibsVersion not found.")
             return  # ignore for now if we can't find missing old versions
 
-        if not tag_name.endswith(".0"):
-            # for patch versions, get the date of the minor version
-            create_date = get_commit_date(repo, re.sub(r'(\d+)\.(\d+)\.(\d+)\.(\d+)$', r'\1.\2.\3.0', tag_name))
-        else:
-            create_date = get_commit_date(repo, tag_name)
 
+        create_date = get_commit_date(repo, tag_name)
         if tag_name in LTS_VERSIONS:
             end_of_support_date = create_date + relativedelta(years=1)
             tag_name = tag_name + " EM"
+        elif not tag_name.endswith(".0"):
+            # for patch versions, set the same end date as associated minor version
+            minor_create_date = get_commit_date(repo, re.sub(r'(\d+)\.(\d+)\.(\d+)\.(\d+)$', r'\1.\2.\3.0', tag_name))
+            end_of_support_date = minor_create_date + relativedelta(months=6)
         else:
             end_of_support_date = create_date + relativedelta(months=6)
         ver_dict = {
