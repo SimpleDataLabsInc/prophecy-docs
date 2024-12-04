@@ -1,0 +1,30 @@
+export default function Requirements(props) {
+  return (
+    <div>
+      <table style={{ width: "auto", tableLayout: "auto" }}>
+        <thead>
+          <tr>
+            <th>Required dependencies</th>
+            <th>
+              <a href="./release_notes/version_chart/">Minimum version</a>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{props.packagename}</td>
+            <td>{props.packageversion}</td>
+          </tr>
+          <tr>
+            <td>ProphecyLibsScala</td>
+            <td>{props.scalalib}</td>
+          </tr>
+          <tr>
+            <td>ProphecyLibsPython</td>
+            <td>{props.pythonlib}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
+}
