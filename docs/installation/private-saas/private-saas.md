@@ -18,7 +18,7 @@ Kubernetes cluster. With that setup, Prophecy seamlessly integrates with the res
 Prophecy is installed through a Prophecy Kubernetes operator, which automatically takes care of the common ops tasks,
 like maintenance of the service, health checks, updates, version rollback etc.
 
-![Customer VPC deployment](../img/arch_customervpc.png)
+![Customer VPC deployment](../../architecture/deployment/img/arch_customervpc.png)
 
 ## Requirements
 
@@ -75,7 +75,7 @@ Prophecy requires:
 
 ### Authentication
 
-Prophecy supports all of the most popular **authentication providers** as per the [Authentication](../../authentication/authentication.md) documentation.
+Prophecy supports all of the most popular **authentication providers** as per the [Authentication](../authentication/authentication.md) documentation.
 
 ### Spark
 

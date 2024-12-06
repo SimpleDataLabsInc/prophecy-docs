@@ -1,0 +1,96 @@
+---
+title: "Installation via Helm"
+id: installation-helm
+description: Installation via Helm
+sidebar_position: 1
+tags:
+  - deployment
+  - installation
+  - helm
+---
+
+import HelmValues from "./_helm-values.mdx";
+
+One way to install Prophecy is to use [Helm](https://helm.sh/docs/intro/quickstart/).
+Installation requirements and Helm chart values are outlined in this page.
+
+For an example step-by-step installation, visit [Installation on AWS](install-on-aws).
+
+:::caution
+
+The following documentation pertains to the Helm installer for Prophecy version 3.3 and above. If you're considering migrating your current Helm installer chart to this version, we encourage you to reach out to the Prophecy support team for personalized assistance and guidance.
+
+:::
+
+## Requirements
+
+To install Prophecy, you need:
+
+- Kubernetes version 1.21 or later.
+- A namespace in Kubernetes cluster where you will install Prophecy.
+- Permission to install custom resources, or CRDs. Alternatively, you can deploy a single Helm chart that can be shared on request.
+- Persistent storage with dynamic provisioning (like `gp2`).
+- [Helm](https://helm.sh/docs/intro/quickstart/) for Prophecy installation.
+
+## Install Prophecy
+
+The `helm install` command installs Prophecy via the provided Helm chart.
+
+1. To retrieve the Prophecy Helm chart, run the command:
+
+   ```
+   helm repo add prophecy https://prophecy-chart.s3.us-west-2.amazonaws.com
+   ```
+
+2. If you want to install Prophecy using all of the provided values, the simplest command to run is:
+
+   ```
+   helm -n <namespace> install prophecy prophecy/prophecy-installer --version <prophecy-chart-version> --set global.customer.name=<customer-name> --set global.prophecy.rootUrl=<IDE-URL>
+   ```
+
+Read through the rest of this page to understand how to customize the installation command.
+
+## Helm chart values {#helm-chart-values}
+
+Prophecy is installed via Helm chart called the Prophecy-installer. The following are the commonly used values which can be configured for this helm chart. The Helm chart values can be broadly classified into 5 different sections:
+
+- **Athena:** Configurations related to the management plane.
+- **Global:** Configurations for all common values between components like Athena, Postgres, and Platform.
+- **Postgres:** Configurations related to Postgres or at the database level.
+- **Platform:** Configurations regarding various platform components like elastic search, Prometheus, Grafana, etc.
+- **Version:** The Prophecy version you want to deploy.
+
+<details>
+  <summary>Complete table of Helm values</summary>
+  <HelmValues />
+</details>
+
+### Common configurations
+
+Here are some configurations that are commonly changed from the default.
+
+#### Internal repository
+
+During the Helm installation, docker images are pulled from Prophecy's public [Google Container Registry](gcr.io/prophecy-share). If you want to use your own internal container registry, you can specify it by setting the `global.repository` value during installation. Make sure to download the images from the public GCR first.
+
+#### Nginx ingress controller
+
+By default, Prophecy will install its own managed Nginx ingress controller during the Helm installation. If you want to use your own Nginx ingress controller already installed on your Kubernetes cluster, you can do so if it supports external service exposure via a LoadBalancer. You'll have to set `global.disableIngressCreation` to true, and set `global.ingressController.class` to the appropriate name.
+
+#### Custom domain names
+
+If you are using Prophecy's domain, you don't have to worry about hostname resolution. However, if you want to use your own domain, you need to create SSL certificates, set up the correct DNS configurations, and include that information during the Helm installation.
+
+## Additional example Helm install commands
+
+- Using your own SSL certificates without internet connectivity:
+
+  ```
+  helm -n <namespace> install prophecy prophecy/prophecy-installer --version <prophecy-chart-version> --set global.customer.name=<customer name> --set global.prophecy.rootUrl=<Base URL> --set global.prophecy.wildcardCert.useExternal=true --set global.prophecy.wildcardCert.name=<wildcard cert secret name> --set athena.controlcenter.disabled=true --set global.repository=<Image repository> --set global.prophecy.imagePullSecret=<Image pull secret name> --set athena.isDarkCluster=true
+  ```
+
+- Using an external SQL database:
+
+  ```
+  helm -n <namespace> upgrade -i prophecy-installer prophecy/prophecy-installer --version 3.3.1-1 --set version=3.3.1.1 --set global.customer.cluster={cluster-name} --set global.prophecy.rootUrl={cluster-name}-{customer-name}.dev.cloud.prophecy.io --set global.customer.name={customer-name} --set postgres.isExternalPostgres=true --set postgres.host={googlesql-dns-name} --set postgres.user={google-sql-user-name} --set postgres.password={google-sql-user-password} --debug
+  ```

@@ -27,7 +27,7 @@ This option is heavily used by customers to try Prophecy. Our startup and midsiz
 
 ### Private SaaS (Customer VPC)
 
-Customers in segments that deal with very sensitive data primarily use this option. Here, Prophecy runs within the **Customer VPC** and connects to the identity, Spark clusters and the scheduler within the VPC. For more information read the [private SAAS installation documentation](private-saas/private-saas.md) or reach out to our team by using [request a demo](https://www.prophecy.io/request-a-demo).
+Customers in segments that deal with very sensitive data primarily use this option. Here, Prophecy runs within the **Customer VPC** and connects to the identity, Spark clusters and the scheduler within the VPC. For more information read the [private SAAS installation documentation](../../installation/installation.md) or reach out to our team by using [request a demo](https://www.prophecy.io/request-a-demo).
 
 ![Customer VPC Architecture](img/arch_customervpc.png)
 
