@@ -2,7 +2,7 @@
 title: "Diagnostics"
 id: fabric-diagnostics
 description: Troubleshooting Fabrics using diagnostics
-sidebar_position: 8
+sidebar_position: 9
 tags:
   - diagnostics
   - fabric
