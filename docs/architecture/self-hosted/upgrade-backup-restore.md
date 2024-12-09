@@ -1,7 +1,8 @@
 ---
-title: Upgrades and Backups
+title: Upgrades and backups
 id: upgrade-backup-restore
 description: Learn how to upgrade, back up, and restore Prophecy.
+sidebar_position: 4
 tags:
   - upgrade
   - backup
@@ -32,7 +33,7 @@ Backups can be triggered manually via the API, or they can be configured to run 
 
 ### On-demand backups
 
-You can use the Backup API to start a backup. See [Generate API Key](./private-saas/generate-api-key/) if you need an API key.
+You can use the Backup API to start a backup. See [Generate API Key](./generate-api-key/) if you need an API key.
 
 Example:
 
@@ -91,7 +92,7 @@ If backup was taken in Athena's local Persistent Volume, it needs to be copied t
 
 ### On-demand restore
 
-You can restore using the Restore API. See [Generate API Key](./private-saas/generate-api-key/) if you need an API key.
+You can restore using the Restore API. See [Generate API Key](./generate-api-key/) if you need an API key.
 
 :::danger
 This API should be used with extreme caution as triggering this will lead to loss of current state/data.

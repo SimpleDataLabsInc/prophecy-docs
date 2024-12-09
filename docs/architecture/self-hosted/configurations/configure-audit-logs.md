@@ -17,7 +17,7 @@ Prophecy offers robust support for storing audit events (logs) on two of the ind
 
 :::note
 
-Certain [object store level configurations](./configure-object-store.md) are shared with [backup restore configurations](../upgrade-backup-restore.mdx). Make sure to configure the [object store level configurations](./configure-object-store.md) before proceeding below.
+Certain [object store level configurations](./configure-object-store.md) are shared with [backup restore configurations](../upgrade-backup-restore.md). Make sure to configure the [object store level configurations](./configure-object-store.md) before proceeding below.
 
 :::
 

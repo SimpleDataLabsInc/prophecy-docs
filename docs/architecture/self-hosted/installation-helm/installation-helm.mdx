@@ -29,8 +29,18 @@ To install Prophecy, you need:
 - Kubernetes version 1.21 or later.
 - A namespace in Kubernetes cluster where you will install Prophecy.
 - Permission to install custom resources, or CRDs. Alternatively, you can deploy a single Helm chart that can be shared on request.
+- Block storage in the Kubernetes cluster.
+- Kubernetes cluster configured in either **multi-AZ** or **single-AZ** mode. For multi-AZ mode, the block storage has to have the volume binding mode set to `waitforfirstconsumer`.
 - Persistent storage with dynamic provisioning (like `gp2`).
 - [Helm](https://helm.sh/docs/intro/quickstart/) for Prophecy installation.
+
+Minimum service requirements:
+
+| Namespace     | Description                                                                 | # Cores  | # RAM | # Block Storage |
+| ------------- | --------------------------------------------------------------------------- | -------- | ----- | --------------- |
+| Control Plane | Main services (front-end, code editor, metadata, lineage, etc)              | 34 Cores | 68GB  | 150GB           |
+| Data Plane    | Services serving as a bridge between Spark and Prophecy UI                  | 6 Cores  | 10GB  | 10GB            |
+| Platform      | Backup(Twice-a-day, configurable) , Monitoring, logging services (optional) | 4 Cores  | 8GB   | 200GB           |
 
 ## Install Prophecy
 
