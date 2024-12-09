@@ -2,7 +2,7 @@
 title: "Amazon EMR with Apache Livy"
 id: EMR-livy-installation-guide
 description: Installation Guide
-sidebar_position: 3
+sidebar_position: 6
 tags:
   - deployment
   - installation

@@ -53,8 +53,8 @@ Prophecy supports **three** Authentication modes for Livy.
 
 - **Kerberos** -
   For Kerberos authentication, Prophecy authenticates with Livy via Kerberos as a service.
-  This is used when you have Kerebrised Hadoop set up. Prophecy will use the key tabs configured for this Livy URL by an Admin User in [Admin Settings](../../architecture/authentication/admin-settings#keytabs-for-kerberos-authentication).
-  To enable user-level authorization in Kerberized Hadoop, you can enable Impersonation. When **Impersonation using proxy-user** is enabled, Prophecy will use the Proxy User obtained from LDAP/AAD as per [proxy-user setting](../../architecture/authentication/admin-settings#proxy-user-settings-per-user) by an Admin user when talking to Livy.
+  This is used when you have Kerebrised Hadoop set up. Prophecy will use the key tabs configured for this Livy URL by an Admin User in [Security settings](docs/architecture/self-hosted/authentication/security-settings.md#keytabs-for-kerberos-authentication).
+  To enable user-level authorization in Kerberized Hadoop, you can enable Impersonation. When **Impersonation using proxy-user** is enabled, Prophecy will use the Proxy User obtained from LDAP/AAD as per [proxy-user setting](docs/architecture/self-hosted/authentication/security-settings.md#proxy-user-settings-per-user) by an Admin user when talking to Livy.
 
 ![kerberos](img/kerberos-settings.png)
 

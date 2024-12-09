@@ -1,27 +1,23 @@
 ---
 sidebar_position: 1
-title: Admin Settings
-description: admin settings
-id: admin-settings
+title: Security
+description: security
+id: security-settings
 tags:
   - admin
   - settings
   - keytab
+  - security
 ---
 
-A user given Admin Permissions on the Prophecy environment would see an additional Page to access Admin Settings.
-Admins can see all users, teams, fabrics, etc., in their Prophecy environment.
-
-:::info
-This is only available for Private Saas/On-prem installations of Prophecy.
-:::
-
-## Security
-
-An admin user can configure Keytab files and Proxy User settings under the Security tab of the Admin settings.
+The **Security** page of the Admin settings in Prophecy lets you configure Keytab files and Proxy User settings.
 These connect to Kerberised Livy Setup while setting up Kerberos Auth in the [Livy Fabric](/docs/Spark/fabrics/livy.md).
 
 ![admin_settings](img/Admin_Settings.png)
+
+:::info
+This is only available for admin users on Private Saas/On-prem installations of Prophecy.
+:::
 
 ### Keytabs for Kerberos Authentication
 
@@ -29,7 +25,7 @@ Here, the Admins can upload Keytab files for secure Authentication to Livy Fabri
 Simply click on the `Add Keytab` button and provide the Livy URL, Kerberos Principal, and Keytab File for the given Livy URL.
 
 :::info
-Any changes in the Kerberos Authentication section would require a restart of the execution service for the Prophecy Installation.
+Any changes in the Kerberos Authentication section would require a restart of the execution service for the Prophecy installation.
 :::
 
 ![keytab](img/Keytab.png)
