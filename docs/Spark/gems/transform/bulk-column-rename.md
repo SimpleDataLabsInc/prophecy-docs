@@ -9,6 +9,8 @@ tags:
   - columns
 ---
 
+<h3><span class="badge rounded-pill text-bg-light">Spark Gem</span></h3>
+
 Use the BulkColumnRename Gem to rename multiple columns in your Dataset in a systematic way.
 
 ## Parameters

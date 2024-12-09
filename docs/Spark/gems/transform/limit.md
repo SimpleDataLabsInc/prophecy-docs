@@ -8,7 +8,9 @@ tags:
   - limit
 ---
 
-Limits the number of rows in the output
+<h3><span class="badge rounded-pill text-bg-light">Spark Gem</span></h3>
+
+Limits the number of rows in the output.
 
 ### Parameters
 

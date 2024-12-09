@@ -9,6 +9,8 @@ tags:
   - where
 ---
 
+<h3><span class="badge rounded-pill text-bg-light">Spark Gem</span></h3>
+
 Filters DataFrame based on the provided filter condition
 
 ### Parameters

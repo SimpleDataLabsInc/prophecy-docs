@@ -1,5 +1,5 @@
 ---
-title: Gems
+title: SQL Gems
 id: sql-gems
 description: Gems are data seeds, sources, transformations, and targets
 sidebar_position: 2
@@ -11,9 +11,11 @@ tags:
   - cte
 ---
 
-In Prophecy and dbt, Data [Models](/docs/concepts/project/models.md) are SQL statements that build a single table or view. Prophecy visualizes Data Models to illustrate the many steps needed to generate a single table or view. Gems represent the individual steps. A Gem is a unit of functionality ranging from reading, transforming, writing, and various other ad-hoc operations on data.
+In Prophecy and dbt, data [models](/docs/concepts/project/models.md) are groups of SQL statements used to create a single table or view. Prophecy simplifies data modeling by visualizing the data model as a series of steps, each represented by a [Gem](/docs/concepts/project/gems.md). Gems are functional units that perform tasks such as reading, transforming, writing, or handling other data operations.
 
-Each Gem represents a SQL statement, and allows users to construct that statement by configuring a visual interface. Prophecy is smart about whether to construct a CTE or subquery for each Gem; users just configure the visual interface, and Prophecy includes the Gem's SQL statement as part of the Model. Here is a nice [overview](/docs/concepts/project/gems.md) of all the aspects of the Gem user interface. The table below outlines each Gem category:
+Each Gem corresponds to a SQL statement, which users can construct through an intuitive visual interface. Prophecy handles the underlying complexity by deciding whether each Gem should generate a CTE or a subquery. Users simply configure the Gem's interface, and Prophecy integrates the resulting SQL into the larger data model.
+
+The table below outlines the different SQL Gem categories.
 
 <div class="gems-table">
 
