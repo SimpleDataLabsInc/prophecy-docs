@@ -34,3 +34,5 @@ Manage the entities within a team by accessing the team's metadata page. Click *
 **Code Generation** - enable multi-file code generation in the case of code payload size limitations.
 
 **Advanced** - update the artifactid, generative AI settings, etc for the team's projects.
+
+## Active users
