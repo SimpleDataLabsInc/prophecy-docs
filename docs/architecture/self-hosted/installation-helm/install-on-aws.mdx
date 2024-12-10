@@ -83,13 +83,13 @@ Prophecy can install its own Nginx ingress controller to expose services externa
 
 ### Hostname resolution
 
-If you use a Prophecy domain in the format `*.cloud.prophecy.io`, Prophecy handles the hostname resolution. SSL certificates are managed using Let’s Encrypt and the DNS configuration is done for you.
+If you use a Prophecy domain in the format `*.cloud.prophecy.io`, Prophecy handles the hostname resolution. SSL certificates are managed using [Let's Encrypt](https://letsencrypt.org/how-it-works/), and the DNS configuration is done for you.
 
 If you want to use your own domain:
 
 1. Obtain SSL certificates for your domain.
 2. Install the certificates in your Kubernetes cluster.
-3. Add DNS entries for the services in your domain’s DNS zone.
+3. Add DNS entries for the services in your domain's DNS zone.
 4. Ensure the entries point to the external IP address of the Nginx ingress controller LoadBalancer.
 
 ## Install Prophecy with Helm {#helm-installation}

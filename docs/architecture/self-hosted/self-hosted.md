@@ -8,7 +8,11 @@ tags:
   - self-hosted
 ---
 
-Prophecy is written as a set of microservices that run on a Kubernetes cluster. The most commonly used platforms to run Kubernetes are AWS, Azure, and GCP.
+Prophecy is written as a set of microservices that run on a Kubernetes cluster. Our recommended platforms to run Kubernetes are:
+
+- Amazon Web Services managed EKS
+- Microsoft Azure managed AKS
+- Google Cloud Platform managed GKE
 
 There are a couple of ways to install the self-managed version of Prophecy:
 

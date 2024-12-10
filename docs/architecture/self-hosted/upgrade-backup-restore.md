@@ -74,6 +74,15 @@ Below is a list of supported variables that you can change.
 
 ### Additional backup APIs
 
+Here is a list of additional APIs for backups. One sample call may look like:
+
+```
+ curl --location --request POST 'https://{prophecy-url}/api/backup' \
+ --header 'Cookie: prophecy-token={api-key}' \
+ --header 'Content-Type: application/json' \
+ --data-raw '{}'
+```
+
 | API                                                | Description                                                                                                                                                                                                                                                                                 | Parameters    |
 | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
 | **GET** `https://{prophecy-url}/api/backup/latest` | This API returns the status current/last backup operation triggered.                                                                                                                                                                                                                        | None expected |
@@ -143,6 +152,15 @@ Sample response
 ```
 
 ### Additional restore APIs
+
+Here is a list of additional APIs for restore. One sample call may look like:
+
+```
+curl --location --request POST 'https://{prophecy-url}/api/backup'
+--header 'Cookie: prophecy-token={api-key}'
+--header 'Content-Type: application/json'
+--data-raw '{}'
+```
 
 | API                                                 | Description                                                                                                                                                                                     | Parameters  |
 | --------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
