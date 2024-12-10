@@ -14,6 +14,10 @@ This page outlines different actions you may perform to maintain your Prophecy i
 
 ## Upgrade
 
+:::note
+You may want to back up Prophecy before you upgrade.
+:::
+
 To upgrade Prophecy, you can do so in **Settings > Admin**.
 
 1. Navigate to the **Admin** tab of the Prophecy **Settings** page.
@@ -22,10 +26,6 @@ To upgrade Prophecy, you can do so in **Settings > Admin**.
 4. Make sure that **Disable Rollback** toggle is on.
 
 ![Upgrade version in Admin settings](img/upgrade-version.png)
-
-:::note
-You may want to back up Prophecy before you upgrade.
-:::
 
 ## Backup
 

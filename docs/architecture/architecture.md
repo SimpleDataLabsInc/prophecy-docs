@@ -18,13 +18,12 @@ built to be multi-tenant.
 
 There are four components of a successful Prophecy deployment:
 
-- **Prophecy IDE** - The development environment, including Prophecy Microservices and Cloud Infrastructure, which is deployed using one of these options: [Public SaaS](#public-saas), [Private SaaS](#private-saas-customer-vpc), or (rarely) [On-Premise](#on-premise-deployment).
-
-- **Data Engine (eg Snowflake or Databricks)** - [SQL](#sql) or [Spark](#spark) execution environment. This is setup by a customer and connected to Prophecy through a secure and performant interface. No customer’s data is stored on Prophecy’s environment.
-
-- **Source Control (e.g. Bitbucket)** - Prophecy works similar to code-first IDEs, by natively integrating with [Git](#git) for best software engineering practices. An encrypted copy of customer’s code is stored within Prophecy’s environment for fast access, while the source-of-truth code is stored on Git.
-
-- **Identity Management (optional)** - For simple user authentication and permission control, Prophecy can connect your identity provider of choice.
+| Component                          | Description                                                                                                                                                                                                                                                     |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prophecy IDE**                   | The development environment, including Prophecy microservices and cloud infrastructure, that is deployed.                                                                                                                                                       |
+| **Data engine**                    | The [SQL](#sql) or [Spark](#spark) execution environment, like Snowflake or Databricks. This is set up by a customer and connected to Prophecy through a secure and performant interface. No customer data is stored on Prophecy’s environment.                 |
+| **Source control**                 | Prophecy works similar to code-first IDEs by natively integrating with [Git](#git) and platforms like Bitbucket. An encrypted copy of customer’s code is stored within Prophecy’s environment for fast access, while the source-of-truth code is stored on Git. |
+| **Identity management (optional)** | For simple user authentication and permission control, Prophecy can connect your identity provider of choice.                                                                                                                                                   |
 
 ### Prophecy IDE
 
@@ -46,7 +45,7 @@ Each [Fabric](../../concepts/fabrics) defined in Prophecy connects to a single S
 
 ![Arch_Diagram](./img/arch_snowflake.png)
 
-Notice the data provider (eg Snowflake) matches up to a Fabric. For another scenario, consider the same architecture diagram where the Fabric connects to a Databricks SQL warehouse instead of Snowflake.
+Notice the data provider (e.g. Snowflake) matches up to a Fabric. For another scenario, consider the same architecture diagram where the Fabric connects to a Databricks SQL warehouse instead of Snowflake.
 
 ### Spark
 
