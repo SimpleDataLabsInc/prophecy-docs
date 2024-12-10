@@ -6,7 +6,7 @@ tags: []
 todo: true
 ---
 
-Subgraph allows you to take multiple different Gems and wrap them under a single reusable parent Gem. It allows you to decompose complex logic into reusable components. See how to **create** and **publish** a Subgraph in the video below.
+Subgraph Gems let you take multiple different Gems and wrap them under a single reusable parent Gem. In other words, they allow you to decompose complex logic into reusable components. See how to **create** and **publish** a Subgraph in the video below.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
