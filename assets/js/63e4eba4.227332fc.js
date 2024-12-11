@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[15795],{48433:t=>{t.exports=JSON.parse('{"label":"okta","permalink":"/tags/okta","allTagsPath":"/tags","count":1,"items":[{"id":"architecture/authentication/saml_okta","title":"SAML Using Okta","description":"SAML authentication using OKTA","permalink":"/architecture/authentication/saml_okta"}]}')}}]);

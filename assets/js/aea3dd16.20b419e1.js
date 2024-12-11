@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[11220],{30624:e=>{e.exports=JSON.parse('{"label":"self-hosted","permalink":"/tags/self-hosted","allTagsPath":"/tags","count":1,"items":[{"id":"architecture/self-hosted/self-hosted","title":"Self Hosted","description":"Self Hosted","permalink":"/architecture/self-hosted/"}]}')}}]);
