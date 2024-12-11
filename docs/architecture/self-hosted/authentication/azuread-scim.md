@@ -1,6 +1,6 @@
 ---
 title: "SAML Using AzureAD with SCIM"
-id: azuread_scim
+id: azuread-scim
 description: SAML authentication using AzureAD with SCIM
 sidebar_position: 4
 tags:

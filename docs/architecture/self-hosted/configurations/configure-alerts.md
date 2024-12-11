@@ -1,6 +1,6 @@
 ---
 title: Alerts Configuration
-id: alerts-config
+id: configure-alerts
 description: Prophecy alerts configuration
 sidebar_position: 1
 tags:

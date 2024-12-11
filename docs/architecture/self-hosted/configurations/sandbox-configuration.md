@@ -1,6 +1,6 @@
 ---
 title: Sandbox Configuration
-id: sandbox-config
+id: sandbox-configuration
 description: Prophecy installations allows configuration of various sandbox configuration
 sidebar_position: 7
 tags:
