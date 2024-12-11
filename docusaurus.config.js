@@ -151,14 +151,14 @@ const config = {
           {
             to: "/Spark/fabrics/emr",
             from: "/Spark/fabrics/EMR-fabric-configuration",
-          },          
+          },
           {
             to: "/architecture/self-hosted/upgrade-backup-restore",
-            from: "/architecture/deployment/private-saas/configure-backup",
+            from: "/architecture/deployment/private-saas/backup-restore",
           },
           {
             to: "/architecture/self-hosted/",
-            from: "/architecture/deployment/private-saas/private-saas",
+            from: "/architecture/deployment/private-saas/",
           },
           {
             to: "/architecture/self-hosted/authentication/security-settings",
