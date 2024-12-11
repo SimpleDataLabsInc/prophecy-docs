@@ -11,7 +11,7 @@ tags:
   - descending
 ---
 
-<h3><span class="badge rounded-pill text-bg-light">Spark Gem</span></h3>
+<h3><span class="badge">Spark Gem</span></h3>
 
 Sorts a DataFrame on one or more columns in ascending or descending order.
 

@@ -9,7 +9,7 @@ tags:
   - aggregate
 ---
 
-<h3><span class="badge rounded-pill text-bg-light">Spark Gem</span></h3>
+<h3><span class="badge">Spark Gem</span></h3>
 
 The WindowFunction lets you define a **WindowSpec** and apply window functions on a DataFrame.
 

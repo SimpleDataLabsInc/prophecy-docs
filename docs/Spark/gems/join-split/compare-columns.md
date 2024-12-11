@@ -10,7 +10,7 @@ tags:
   - compare-columns
 ---
 
-<h3><span class="badge rounded-pill text-bg-light">Spark Gem</span></h3>
+<h3><span class="badge">Spark Gem</span></h3>
 
 The CompareColumns Gem lets you compare columns between two DataFrames based on the key id columns defined.
 

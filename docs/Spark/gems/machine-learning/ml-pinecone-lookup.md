@@ -6,7 +6,7 @@ description: Lookup a vector embedding from a Pinecone Database
 tags: [generative-ai, machine-learning, llm, pinecone, openai]
 ---
 
-<h3><span class="badge rounded-pill text-bg-light">Spark Gem</span></h3>
+<h3><span class="badge">Spark Gem</span></h3>
 
 The PineconeLookup Gem identifies content that is similar to a provided vector embedding. The Gem calls the Pinecone API and returns a set of IDs with highest similarity to the provided embedding.
 
