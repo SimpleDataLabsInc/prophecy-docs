@@ -8,7 +8,7 @@ tags:
   - dbfs
 ---
 
-<h3><span class="badge rounded-pill text-bg-light">Spark Gem</span></h3>
+<h3><span class="badge">Spark Gem</span></h3>
 
 Helps perform file operations like `copy` and `move` on different file systems.
 

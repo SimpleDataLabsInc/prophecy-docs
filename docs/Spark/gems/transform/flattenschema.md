@@ -10,7 +10,7 @@ tags:
   - flatten
 ---
 
-<h3><span class="badge rounded-pill text-bg-light">Spark Gem</span></h3>
+<h3><span class="badge">Spark Gem</span></h3>
 
 When processing raw data it can be useful to flatten complex data types like structures and arrays into simpler, flatter schemas.
 

@@ -14,7 +14,7 @@ tags:
   - merge
 ---
 
-<h3><span class="badge rounded-pill text-bg-light">Spark Gem</span></h3>
+<h3><span class="badge">Spark Gem</span></h3>
 
 Joins 2 or more DataFrames based on the given configuration.
 

@@ -11,7 +11,7 @@ tags:
   - difference
 ---
 
-<h3><span class="badge rounded-pill text-bg-light">Spark Gem</span></h3>
+<h3><span class="badge">Spark Gem</span></h3>
 
 Use the SetOperation Gem to perform addition or subtraction of rows from DataFrames with identical schemas and different data.
 
