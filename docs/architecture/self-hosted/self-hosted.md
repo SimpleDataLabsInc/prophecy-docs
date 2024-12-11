@@ -16,23 +16,23 @@ Prophecy is written as a set of microservices that run on a Kubernetes cluster. 
 
 There are a couple of ways to install the self-managed version of Prophecy:
 
-- Installation via [Helm](https://helm.sh/docs/intro/quickstart/).
-- Installation via Marketplaces.
+- Installation via [Helm](https://helm.sh/docs/intro/quickstart/)
+- Installation via Marketplaces
 
 Once Prophecy is installed, you'll have to manually perform upgrades, backups, restores, etc.
 
-### Spark
+## Spark
 
 After installation, Prophecy requires the following for interactive development:
 
 - **Databricks API 1.2** for Databricks-based Spark deployments, or
 - **Livy 0.7.x** for any other Spark deployment support (like CDP, HDP, MapR, Spark on Kubernetes).
 
-### Airflow
+## Airflow
 
 For interactive and jobs deployment to Airflow, Prophecy requires a customer-managed **Airflow deployment version 2.x.x** (latest recommended). **Astronomer**'s managed Airflow offering is supported.
 
-### Logging / Metrics
+## Logging / Metrics
 
 - Prophecy comes with a built-in **lightweight infrastructure for monitoring** (based on Loki & Grafana)
   and **logging** (based on Prometheus, Grafana and alert-manager, etc.).
