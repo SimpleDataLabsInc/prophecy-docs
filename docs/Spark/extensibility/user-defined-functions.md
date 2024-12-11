@@ -16,15 +16,15 @@ Prophecy lets you create user-defined functions (UDFs) which can be used anywher
 | Parameter               | Description                                                                                                                                 | Required |
 | :---------------------- | :------------------------------------------------------------------------------------------------------------------------------------------ | :------- |
 | Function name           | The name of the function as it appears in your project.                                                                                     | True     |
-| UDF Name                | Name of the UDF that will register it. All calls to the UDF will use this name.                                                             | True     |
-| Definition              | Definition of the UDF function. <br/> Eg: `udf((value:Int)=>value*value)`                                                                   | True     |
+| UDF Name                | The name of the UDF that will register it. All calls to the UDF will use this name.                                                         | True     |
+| Definition              | Definition of the UDF function. <br/> For example, `udf((value:Int)=>value*value)`                                                          | True     |
 | UDF initialization code | Code block that contains initialization of entities used by UDFs. This could, for example, contain any static mapping that a UDF might use. | False    |
 
 ## Steps
 
 There are a few steps to take to create and use a new UDF.
 
-1. Create a new function. You'll find the **Functions** section in the left sidebar of a project page.
+1. Create a new function. You can find the **Functions** section in the left sidebar of a project page.
 
 ![Add a function to the pipeline](img/add-function.png)
 

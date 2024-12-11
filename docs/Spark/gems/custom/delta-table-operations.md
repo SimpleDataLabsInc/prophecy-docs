@@ -9,6 +9,8 @@ tags:
   - devops
 ---
 
+<h3><span class="badge rounded-pill text-bg-light">Spark Gem</span></h3>
+
 Helps perform the following operations on Delta tables.
 
 1. Register table in catalog

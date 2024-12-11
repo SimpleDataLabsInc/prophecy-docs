@@ -1,5 +1,5 @@
 ---
-title: Joins
+title: Join
 id: data-joins
 description: Join data from multiple tables
 sidebar_position: 3
@@ -10,7 +10,9 @@ tags:
   - transformation
 ---
 
-Upon opening the join Gem, you can see a pop-up which provides several helpful features.
+<h3><span class="badge rounded-pill text-bg-light">SQL Gem</span></h3>
+
+Upon opening the Join Gem, you can see a pop-up which provides several helpful features.
 
 ![Join definition](img/JoinCondition.png)
 

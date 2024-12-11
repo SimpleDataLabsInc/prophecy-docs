@@ -8,6 +8,8 @@ tags:
   - sql
 ---
 
+<h3><span class="badge rounded-pill text-bg-light">SQL Gem</span></h3>
+
 :::caution
 This page about Custom SQL Gems is under construction. Please pardon our dust.
 :::

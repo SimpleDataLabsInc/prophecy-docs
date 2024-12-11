@@ -11,6 +11,8 @@ tags:
   - generator
 ---
 
+<h3><span class="badge rounded-pill text-bg-light">Spark Gem</span></h3>
+
 Generate synthetic data with this special kind of Source Gem.
 
 Generating mock data is crucial when building data Pipelines to simulate real-world scenarios for testing, validating, and optimizing Pipeline performance before using actual production data. It helps ensure the Pipeline handles various data formats, structures, and edge cases effectively, minimizing potential issues in a live environment.
