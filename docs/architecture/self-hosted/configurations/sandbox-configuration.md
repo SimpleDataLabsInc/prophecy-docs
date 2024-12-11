@@ -21,11 +21,10 @@ To tackle the aforementioned challenge, in Prophecy version 3.2, we introduced a
 
 Newer versions of Prophecy are defaulted to use sandboxing (`ENABLE_SANDBOXING: true`) as the default way to deploy Prophecy services. To configure object store settings in the Prophecy UI, follow these steps:
 
-1. Log in to the Prophecy UI as an admin user.
-1. Click on the `three dots` at the bottom left corner and select the `settings icon` from the submenu.
-1. Navigate to the `Admin` main tab.
-1. Within the Admin main tab, access the `Config` sub tab.
-1. Finally, click on the `sandboxConfig` sub tab to configure the settings.
+1. Log in to Prophecy as an admin user.
+1. Navigate to the **Admin** tab of the Prophecy **Settings** page.
+1. Within the Admin main tab, select the **Config** subtab.
+1. Finally, click on the `Sandbox Config` subtab to configure the settings.
 
 ## Configuration options
 

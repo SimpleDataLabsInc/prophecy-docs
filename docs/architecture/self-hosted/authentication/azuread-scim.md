@@ -11,32 +11,53 @@ tags:
 ---
 
 Single sign-on (SSO) enables you to authenticate your users using your organization’s identity provider.
-This document focuses on using AzureAD as SAML IdP for Prophecy and enabling SCIM provisioning for syncing users and
+This document focuses on using AzureAD as the SAML IdP for Prophecy and enabling SCIM provisioning for syncing users and
 groups.
 
 ## Configure AzureAD
 
-1. Log into AzureAD as an administrator and create a new Enterprise Application say `ProphecyAzureADApp`.
-2. In the home page search bar, search for `Enterprise Applications`
-3. Click `New Application` -> `Create your own application`
-4. Give name for the application say `ProphecyAzureADApp`, choose the radio button which says `Integrate any other application you don't find in the gallery (Non-gallery)`, and then click on `Create` button.
-5. In Manage section on the left, click `Single sign-on`
-6. Choose `SAML` as the Single sign-on method
-7. Now the form for `Set up Single Sign-On with SAML` will open which will have various sections as mentioned below:
-   - In `Basic SAML Configuration` section, provide `Identifier (Entity ID)` which is a unique ID to identify this application to Azure Active Directory say `prophecyWithSamlEntity`.
-   - In the same section, configure `Reply URL` and `Sign on URL` with same values: `https://your-prophecy-ide-url.domain/api/oauth/samlCallback`. Then click on Save.
-   - In `Attributes & Claims` section, click Edit button and then `Add new claim`. Give `Name` as `email` and `Source Attribute` as `user.userprincipalname`, and click Save.
-   - Similarly, add one more claim by clicking on `Add new claim`. Give `Name` as `name` and `Source Attribute` as `user.givenname`, and click Save and go back to the page with `Set up Single Sign-On with SAML` form.
-   - From `SAML certificates` section, download `Certificate (Base64)` file to be used while configuring SSO in Prophecy UI.
-   - From `Set up ProphecyAzureADApp` section, copy `Login URL` and `Azure AD Identifier` to be used while configuring SSO in Prophecy UI.
-8. Before configuring rest of the sections like `Users and groups` and `Provisioning` in this Enterprise Application, lets configure SSO in Prophecy UI and get the SCIM token.
+1. Log into AzureAD as an administrator and create a new Enterprise Application like `ProphecyAzureADApp`.
+2. In the home page search bar, search for **Enterprise Applications**.
+3. Click **New Application > Create your own application**.
+4. Give name for the application like `ProphecyAzureADApp`.
+5. Choose the radio button **Integrate any other application you don't find in the gallery (Non-gallery)**.
+6. Click **Create**.
+7. In Manage section on the left, click **Single sign-on**.
+8. Choose **SAML** as the Single sign-on method.
+
+Now the form for **Set up Single Sign-On with SAML** will open. You'll have to fill out different sections of the form.
+
+### Basic SAML Configuration
+
+1. Provide an Identifier (Entity ID) which is a unique ID to identify this application to Azure Active Directory.
+2. In the same section, configure **Reply URL** and **Sign on URL** as:  
+   `https://your-prophecy-ide-url.domain/api/oauth/samlCallback`
+3. Click **Save**.
+
+### Attributes & Claims
+
+1. Click **Edit** button and then **Add new claim**.
+2. Give **Name** as `email` and **Source Attribute** as `user.userprincipalname`, and click **Save**.
+3. Add one more claim by clicking on **Add new claim**.
+4. Give **Name** as `name` and **Source Attribute** as `user.givenname`, and click **Save**.
+
+### SAML certificates
+
+In the **SAML certificates** section, download `Certificate (Base64)` file to be used while configuring SSO in Prophecy UI.
+
+### Set up ProphecyAzureADApp
+
+In the **Set up ProphecyAzureADApp** section, copy `Login URL` and `Azure AD Identifier` to be used while configuring SSO in Prophecy UI.
 
 ![AzureAD config example](./img/azure_enterpriseapp_sso.png)
 
 ## Configure Prophecy to connect to Azure AD
 
-1. Login to Prophecy IDE as an admin user
-2. Go to settings and SSO tab which will show `Authentication Provider` as `ProphecyManaged`
+Before configuring rest of the sections like **Users and groups** and **Provisioning** in this Enterprise Application, lets configure SSO in Prophecy UI and get the SCIM token.
+
+1. Log in to Prophecy IDE as an admin user.
+2. Navigate to the **SSO** tab of the Prophecy **Settings** page. 
+3. Under **Authentication Provider**, select SAML.
 
 ![SSO Settings](./img/sso_settings.png)
 
@@ -67,6 +88,13 @@ Note: To be able to assign groups to an Enterprise Application in Azure, make su
 This section describes how to configure your Azure AD and Prophecy to provision users and groups to Prophecy using SCIM,
 or System for Cross-domain Identity Management, an open standard that allows you to automate user provisioning.
 
+### Requirements
+
+To provision users/groups to your Prophecy account using SCIM:
+
+- You must be AzureAD admin.
+- You must be a Prophecy account admin.
+
 ### About SCIM provisioning in Prophecy
 
 Prophecy provides a SCIM connector that lets you use Azure AD to create/update users and groups/teams in Prophecy, give them the proper level of access,
@@ -85,13 +113,6 @@ Note:
 - Login via secondary emails registered with AzureAD is not supported in Prophecy.
 - De-provisioning of a user from Azure deletes that user from Prophecy and not deactivates it. As a result, a
   de-provisioned user will lose their personal projects in Prophecy.
-
-#### Requirements
-
-To provision users/groups to your Prophecy account using SCIM,
-
-- you must be AzureAD admin
-- you must be a Prophecy account admin.
 
 ### Enable SCIM Provisioning for _Prophecy Enterprise App_ in AzureAD
 

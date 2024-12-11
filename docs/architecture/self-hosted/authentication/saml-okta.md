@@ -58,8 +58,9 @@ In the `Sign On` tab itself under `SAML Signing Certificates`, click on `View Id
 
 ### Configuring Prophecy
 
-1. Login to Prophecy IDE as an admin user
-2. Go to settings and SSO tab and choose "Authentication Provider" as SAML
+1. Log in to Prophecy IDE as an admin user.
+2. Navigate to the **SSO** tab of the Prophecy **Settings** page. 
+3. Under **Authentication Provider**, select SAML.
 
 ![SSO Settings](./img/sso_settings.png)
 

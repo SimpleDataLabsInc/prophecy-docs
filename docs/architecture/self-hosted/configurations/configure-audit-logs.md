@@ -32,15 +32,14 @@ Certain [object store level configurations](./configure-object-store.md) are sha
 
 There are certain environment variables that need to be configured in Athena based on the kind of user events audit logs required.
 
-### Navigate to the Audit config UI
+### Edit Audit Configs
 
-To configure object store settings in the Prophecy UI, follow these steps:
+To edit audit configurations in Prophecy, follow these steps:
 
-1. Log in to the Prophecy UI as an admin user.
-1. Click on the `three dots` at the bottom left corner and select the `settings icon` from the submenu.
-1. Navigate to the `Admin` main tab.
-1. Within the Admin main tab, access the `Config` sub tab.
-1. Finally, click on the `auditConfig` sub tab to configure the audit settings.
+1. Log in to Prophecy as an admin user.
+1. Navigate to the **Admin** tab of the Prophecy **Settings** page.
+1. Within the Admin main tab, select the **Config** subtab.
+1. Finally, click on the `Audit Config` subtab to configure the audit settings.
 
 ### JSON format
 

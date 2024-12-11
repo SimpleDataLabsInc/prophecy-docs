@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 title: Security
-description: security
+description: Configure Keytab files and Proxy User settings
 id: security-settings
 tags:
   - admin
