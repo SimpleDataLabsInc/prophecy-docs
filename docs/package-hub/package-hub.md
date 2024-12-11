@@ -25,7 +25,7 @@ Open the helloworld project or create a new project. Notice the dependencies inc
 
 ![2](img/2-ph.png)
 
-On opening a NewPipeline, notice all the transformation dropdown Gems are from `SparkBasics` package. Drag and drop a Gem, eg Deduplicate, from SparkBasics package to use in a NewProject Pipeline.
+On opening a NewPipeline, notice all the transformation dropdown Gems are from `SparkBasics` package. Drag and drop a Gem like Deduplicate from SparkBasics package to use in a NewProject Pipeline.
 
 ![3](img/3-ph.png)
 Already you are employing an engineering best practice: package dependencies! When we say that a project USES a package, another way to say it is “a Project has a dependency on the Package.” `NewProject` has a dependency on SparkBasics Package. But don’t stop there. You’ll want to use packages shared by your teammates!
@@ -67,7 +67,7 @@ Configuring Pipelines is just one way to take advantage of the shared, reusable 
 
 ![9](img/9-ph.png)
 
-If the MarketingAnalytics team wishes to use one of the custom Gems from `Framework` in a new Pipeline, just **(1)drag-and-drop the Gem**, eg DataMasking , to the Pipeline canvas. **(2)Visually configure** the Gem and execute the Pipeline as you would for any Transformation Gem.
+If the MarketingAnalytics team wishes to use one of the custom Gems from `Framework` in a new Pipeline, just **(1)drag-and-drop the Gem**, e.g. DataMasking , to the Pipeline canvas. **(2)Visually configure** the Gem and execute the Pipeline as you would for any Transformation Gem.
 
 Likewise, new Dataset Format Gems from `Framework` can be used in a new Pipeline.
 
@@ -139,7 +139,7 @@ With Package Hub, Platform teams can build solutions once, and re-use the logic 
 A: The share “invitation” is not sent via email. Rather, the team would be able to add that project as a dependency to their new or existing projects.
 
 **Q: I shared a dependency to a team, but they don’t see the package listed when they try to add as a dependency.**
-A: Be sure the new project and dependent project are using the same language, eg Scala or Python. If the new project is a Scala project, only Scala Packages can be added as dependencies.
+A: Be sure the new project and dependent project are using the same language, like Scala or Python. If the new project is a Scala project, only Scala Packages can be added as dependencies.
 
 **Q: How do I use subgraphs from a dependency?**
 A: Like Pipelines, Subgraphs can be used by dependent projects via [configurable variables.](https://docs.prophecy.io/package-hub/package-builder/shareable-subgraphs/#configurable-subgraphs)
@@ -150,5 +150,5 @@ A: One excellent option here is to **Clone** the Project instead of use as a Pac
 ![18](img/18-ph.png)
 Just **(1)Clone** the `Framework` Project, and **(2)provide** a new name, team, Git account, and repository.
 
-Now the MarketingAnalytics team has their own Project, `MarketingFramework`, to evolve in their own direction. Notice the Pipelines are not templates, rather the `GenericCleanup` Pipeline can be edited by adding a new Gem, eg Repartition:
+Now the MarketingAnalytics team has their own Project, `MarketingFramework`, to evolve in their own direction. Notice the Pipelines are not templates, rather the `GenericCleanup` Pipeline can be edited by adding a new Gem, like Repartition:
 ![19](img/19-ph.png)

@@ -162,3 +162,11 @@ Gems table page
 .gems-table table th:nth-of-type(2) {
   width: 150px;
 }
+
+/* Summary or details style*/
+
+.alert--info {
+  --ifm-alert-background-color: var(--ifm-color-secondary-contrast-background);
+  --ifm-alert-border-color: rgb(216, 219, 230);
+  --ifm-code-background: inherit;
+}

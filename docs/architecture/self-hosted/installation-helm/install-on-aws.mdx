@@ -1,0 +1,112 @@
+---
+title: Installation on AWS
+id: install-on-aws
+description: Use this guide to help when installing Prophecy on AWS.
+tags:
+  - deployment
+  - installation
+  - aws
+---
+
+import TOCInline from "@theme/TOCInline";
+
+If you are deploying Prophecy with the private SaaS option, you need to install Prophecy in your Virtual Private Cloud (VPC). Use this guide to help when installing Prophecy on AWS.
+
+<TOCInline toc={toc} maxHeadingLevel={2} />
+
+## Get started
+
+In this guide, we'll walk you through how to install Prophecy on an [EKS cluster](https://aws.amazon.com/eks/) in AWS. Note that this is just one way to perform the installation.
+
+## Connect to your Kubernetes cluster
+
+Let's start by connecting to the Kubernetes cluster where you will install Prophecy.
+
+1. Throughout this guide, you'll need to interact with the command line interface. Make sure you have these command line tools:
+
+   - [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+   - [kubectl](https://kubernetes.io/docs/tasks/tools/)
+   - [Helm](https://helm.sh/docs/intro/install/)
+
+2. [Configure your AWS CLI](https://docs.aws.amazon.com/cli/latest/reference/configure/) if you have not already.
+3. Configure `kubectl` to connect to your cluster using the following command.
+
+   ```
+   aws eks --region <aws-region> update-kubeconfig --name <cluster-name> --alias <alias>
+   ```
+
+Now, your EKS cluster should be included in your local Kubernetes configuration.
+
+## Validate your Kubernetes configurations
+
+The Kubernetes cluster on which you will install Prophecy must meet a set of requirements.
+
+1. Kubernetes must be version 1.21 or later. Check your Kubernetes server version using the following command.
+
+   ```
+   kubectl version
+   ```
+
+2. Your Kubernetes cluster must have [persistant storage with dynamic provisioning](https://kubernetes.io/docs/concepts/storage/persistent-volumes/). To make sure you have at least one [StorageClass](https://kubernetes.io/docs/concepts/storage/storage-classes/) that has a provisioner and reclaimPolicy set, run:
+
+   ```
+   kubectl get storageclass
+   ```
+
+3. You must have permission to install [custom resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/), or CRDs, to your Kubernetes cluster. CRDs will be installed during installation with the Helm command. You can check if you have this permission with the following command.
+
+   ```
+   kubectl auth can-i create customresourcedefinitions --all-namespaces
+   ```
+
+   If you do not have this permission, contact your Kubernetes admin or EKS owner to grant you `cluster-admin` or equivalent permissions. Alternatively, you can deploy a single Helm chart instead that can be shared on request.
+
+4. You need a namespace in your Kubernetes cluster where you will install Prophecy. Create a namespace using the command:
+
+   ```
+   kubectl create namespace <namespace>
+   ```
+
+   A common namespace to use is `prophecy`. To check if you namespace was created, run:
+
+   ```
+   kubectl get namespaces
+   ```
+
+## Define network configurations
+
+There are certain configurations that control how Prophecy's services are exposed, secured, and accessed in a networked environment. Network configurations can be managed by Prophecy, or they can be self-managed.
+
+### Ingress controller
+
+Prophecy can install its own Nginx ingress controller to expose services externally. However, you can also use an Nginx ingress controller already installed on your Kubernetes cluster if it supports external service exposure via a LoadBalancer. You'll have to specify a ingress controller during the [Helm installation](#helm-installation) if you are not using the Prophecy ingress controller.
+
+### Hostname resolution
+
+If you use a Prophecy domain in the format `*.cloud.prophecy.io`, Prophecy handles the hostname resolution. SSL certificates are managed using [Let's Encrypt](https://letsencrypt.org/how-it-works/), and the DNS configuration is done for you.
+
+If you want to use your own domain:
+
+1. Obtain SSL certificates for your domain.
+2. Install the certificates in your Kubernetes cluster.
+3. Add DNS entries for the services in your domain's DNS zone.
+4. Ensure the entries point to the external IP address of the Nginx ingress controller LoadBalancer.
+
+## Install Prophecy with Helm {#helm-installation}
+
+At this point, you should be ready to install Prophecy using Helm.
+
+1. Add the Prophecy Helm chart repository:
+
+   ```
+   helm repo add prophecy https://prophecy-chart.s3.us-west-2.amazonaws.com
+   ```
+
+2. Run the Helm install command. Below is the most basic configuration command that only includes required Helm chart values:
+
+   ```
+   helm -n <namespace> install prophecy prophecy/prophecy-installer --version <version-number>
+   --set global.customer.name=<customer-name> --set global.prophecy.rootUrl=<base-url>
+   ```
+
+For a full list of Helm chart values that you can set during the installation, visit [Helm chart values](installation-helm.mdx#helm-chart-values).
