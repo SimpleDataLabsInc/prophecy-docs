@@ -8,12 +8,9 @@ tags:
   - support logs
 ---
 
-As an admin user, you can download your environment logs from Prophecy without needing access to your Prophecy cluster or the assistance of Prophecy Support. This reduces the delay in debugging any issues with your Prophecy services.
+Prophecy lets you download logs to help debug issues with your Prophecy services. As an admin, you can download environment logs directly from Prophecy without needing access to your Prophecy cluster or assistance from Prophecy Support.
 
-## Use case
-
-- The overarching objective is to debug what is going on with your Prophecy services.
-- To achieve this, we've enabled admins to be able to download Prophecy logs and environment information so that they can upload them to Zendesk.
+This streamlines the process and reduces delays in troubleshooting by enabling you to quickly share logs and environment details with Zendesk for further analysis.
 
 ### Download logs features
 
@@ -24,9 +21,7 @@ You can use the Download Logs feature to capture logs using the Services and tim
 
 The captured logs include all relevant Prophecy configurations, such as the following items:
 
-- Kubernetes cluster configuration
-  - Resource quotas
-  - Node configuration
+- Kubernetes cluster configuration, including resource quotas and node configuration
 - Cluster custom resources
 - Config maps and files
 - Resource consumption logs
