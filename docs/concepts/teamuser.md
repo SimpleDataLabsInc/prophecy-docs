@@ -37,7 +37,7 @@ Manage the entities within a team by accessing the team's metadata page. Click *
 
 ## Active and Total Users
 
-You can use the Active Users and Total Users APIs to find out the number of current and tottal users who are logged in to Prophecy. This can help you understand usage and times of high traffic, enabling you to manage capacity more effectively.
+You can use the Active Users and Total Users APIs to find out the number of current and total users who are logged in to Prophecy. This can help you understand usage and times of high traffic, enabling you to manage capacity more effectively.
 
 ### Active Users API
 
