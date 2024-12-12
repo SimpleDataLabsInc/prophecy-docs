@@ -15,7 +15,7 @@ tags:
   ]
 ---
 
-<h3><span class="badge rounded-pill text-bg-light">Spark Gem</span></h3>
+<h3><span class="badge">Spark Gem</span></h3>
 
 The TextProcessing Gem enables text data preparation for machine learning in two different ways:
 

@@ -45,7 +45,6 @@ const config = {
   ],
   stylesheets: [
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
-    "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css",
   ],
 
   themeConfig:
@@ -135,6 +134,78 @@ const config = {
           {
             to: "/concepts/copilot/enable-data-copilot",
             from: "/architecture/deployment/enable-data-copilot",
+          },
+          {
+            to: "/architecture/self-hosted/authentication/active_directory",
+            from: "/architecture/authentication/active_directory",
+          },
+          {
+            to: "/Spark/fabrics/emr",
+            from: "/architecture/deployment/EMR-livy-installation-guide",
+          },
+          {
+            to: "/Spark/fabrics/emr",
+            from: "/Spark/fabrics/EMR-serverless-fabric-configuration",
+          },
+          {
+            to: "/Spark/fabrics/emr",
+            from: "/Spark/fabrics/EMR-fabric-configuration",
+          },
+          {
+            to: "/architecture/self-hosted/upgrade-backup-restore",
+            from: "/architecture/deployment/private-saas/backup-restore",
+          },
+          {
+            to: "/architecture/self-hosted/",
+            from: "/architecture/deployment/private-saas/",
+          },
+          {
+            to: "/architecture/self-hosted/authentication/security-settings",
+            from: "/architecture/authentication/admin-settings",
+          },
+          {
+            to: "/architecture/self-hosted/authentication/",
+            from: "/architecture/authentication",
+          },
+          {
+            to: "/architecture/self-hosted/authentication/azure-ad",
+            from: "/architecture/authentication/azure_ad",
+          },
+          {
+            to: "/architecture/self-hosted/authentication/azuread-scim",
+            from: "/architecture/authentication/azuread_scim",
+          },
+          {
+            to: "/architecture/self-hosted/authentication/saml-okta",
+            from: "/architecture/authentication/saml_okta",
+          },
+          {
+            to: "/architecture/self-hosted/configurations/configure-audit-logs",
+            from: "/architecture/deployment/private-saas/audit-events",
+          },
+          {
+            to: "/architecture/self-hosted/configurations/configure-object-store",
+            from: "/architecture/deployment/private-saas/object-store-config",
+          },
+          {
+            to: "/architecture/self-hosted/configurations/sandbox-configuration",
+            from: "/architecture/deployment/private-saas/sandbox-config",
+          },
+          {
+            to: "/architecture/self-hosted/configurations/configure-alerts",
+            from: "/architecture/deployment/private-saas/alerts-config",
+          },
+          {
+            to: "/architecture/self-hosted/download-logs",
+            from: "/architecture/deployment/private-saas/download-logs",
+          },
+          {
+            to: "/architecture/self-hosted/generate-api-key",
+            from: "/architecture/deployment/private-saas/generate-api-key",
+          },
+          {
+            to: "/architecture/self-hosted/installation-helm/",
+            from: "/architecture/deployment/installation-guide",
           },
         ],
         /*
