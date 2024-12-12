@@ -10,7 +10,7 @@ tags:
   - unique
 ---
 
-<h3><span class="badge rounded-pill text-bg-light">Spark Gem</span></h3>
+<h3><span class="badge">Spark Gem</span></h3>
 
 Removes rows with duplicate values of specified columns.
 

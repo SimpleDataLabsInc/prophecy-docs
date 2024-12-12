@@ -11,7 +11,7 @@ tags:
   - transformation
 ---
 
-<h3><span class="badge rounded-pill text-bg-light">SQL Gem</span></h3>
+<h3><span class="badge">SQL Gem</span></h3>
 
 Together let's deconstruct a commonly used Transformation, the Aggregate Gem. Follow along in the `HelloWorld_SQL` Project.
 

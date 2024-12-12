@@ -9,7 +9,7 @@ tags:
   - custom
 ---
 
-<h3><span class="badge rounded-pill text-bg-light">Spark Gem</span></h3>
+<h3><span class="badge">Spark Gem</span></h3>
 
 Create one or more DataFrame(s) based on provided SQL queries to run against one or more input DataFrames.
 

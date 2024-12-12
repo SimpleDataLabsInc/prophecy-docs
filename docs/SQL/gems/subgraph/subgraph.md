@@ -8,7 +8,7 @@ tags:
   - SQL
 ---
 
-<h3><span class="badge rounded-pill text-bg-light">SQL Gem</span></h3>
+<h3><span class="badge">SQL Gem</span></h3>
 
 Subgraph Gems let you take multiple different Gems and wrap them under a single reusable parent Gem. In other words, they allow you to decompose complex logic into reusable components and simplify the visual view of your data model.
 
