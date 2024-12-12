@@ -68,7 +68,7 @@ To see the UI, click **(1) Preview**. The **(2) UI** appears basic and is ready 
 Errors are surfaced in the GemBuilder UserInterface (UI). If there’s an error on any of the [required] methods, the UI will inform you this way:
 
 ![5](img/5-gm.png)
-If there is a **(1) typo / error** in a required method, eg dialog1 instead of dialog, Prophecy will direct your attention to a particular line of code. Click the **(2) underlined code**, and notice a **(3) detailed error message**. Click **(4) Preview** to see how the Gem will look as rendered in the UI. If a value is incorrect, the Gem will not be able to be parsed, and a very clear error will appear **(5) here** as well. Click the **(6) Errors** button to see the **(7) full error message**.
+If there is a **(1) typo / error** in a required method (e.g. dialog1 instead of dialog), Prophecy will direct your attention to a particular line of code. Click the **(2) underlined code**, and notice a **(3) detailed error message**. Click **(4) Preview** to see how the Gem will look as rendered in the UI. If a value is incorrect, the Gem will not be able to be parsed, and a very clear error will appear **(5) here** as well. Click the **(6) Errors** button to see the **(7) full error message**.
 
 :::caution
 
@@ -498,7 +498,7 @@ Looking to read or write to a data format beyond the (filetypes, warehouses, and
 Let’s see how to use the ColumnsLayout UI element in detail:
 
 ![8](img/8-gm.png)
-Open the **(1) SparkBasics** package dependency for Python or Scala. Explore and scroll to find a Gem, eg **(2) OrderBy** with the desired visual component, in this case ColumnsLayout. Find the **(3) relevant code** for the visual element and click **(4) Preview** to see how this visual element is rendered. Try it out! Click on the **(5)customer_id and email** columns, and note these columns now **(6) appear** in the Order Columns list.
+Open the **(1) SparkBasics** package dependency for Python or Scala. Explore and scroll to find a Gem, e.g. **(2) OrderBy** with the desired visual component, in this case ColumnsLayout. Find the **(3) relevant code** for the visual element and click **(4) Preview** to see how this visual element is rendered. Try it out! Click on the **(5)customer_id and email** columns, and note these columns now **(6) appear** in the Order Columns list.
 
 If you like the column layout, then add the ColumnsLayout element to your custom Gem. Each time you edit the code, you can click “Preview” to test the change in the UI.
 

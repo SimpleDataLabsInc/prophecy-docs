@@ -11,6 +11,8 @@ tags:
   - coalesce
 ---
 
+<h3><span class="badge">Spark Gem</span></h3>
+
 This will repartition or coalesce the input DataFrame based on the specified configuration. There are four different repartitioning options:
 
 ## Hash Repartitoning

@@ -10,6 +10,8 @@ tags:
   - flatten
 ---
 
+<h3><span class="badge">Spark Gem</span></h3>
+
 When processing raw data it can be useful to flatten complex data types like structures and arrays into simpler, flatter schemas.
 
 ![The FlattenSchema gem](./img/flatten_gem.png)
