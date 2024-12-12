@@ -11,6 +11,8 @@ tags:
   - descending
 ---
 
+<h3><span class="badge">Spark Gem</span></h3>
+
 Sorts a DataFrame on one or more columns in ascending or descending order.
 
 ### Parameters

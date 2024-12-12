@@ -15,13 +15,7 @@ tags:
   ]
 ---
 
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://fast.wistia.net/embed/iframe/7v6y4ldt5x?seo=false?videoFoam=true" title="Getting Started With SQL Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
-<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
-
-<br />
+<h3><span class="badge">Spark Gem</span></h3>
 
 The TextProcessing Gem enables text data preparation for machine learning in two different ways:
 
@@ -29,6 +23,14 @@ The TextProcessing Gem enables text data preparation for machine learning in two
 2. [Split](/docs/Spark/gems/machine-learning/ml-text-processing.md#2-split-text-data-into-equal-chunks) text data into equal chunks.
 
 Follow along to see how to use the TextProcessing Gem. For an example set of Pipelines that uses this Gem to create a Generative AI Chatbot, see this [guide.](https://docs.prophecy.io/getting-started/gen-ai-chatbot)
+
+<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
+<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
+<iframe src="https://fast.wistia.net/embed/iframe/7v6y4ldt5x?seo=false?videoFoam=true" title="Getting Started With SQL Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+</div></div>
+<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
+
+<br />
 
 ### 1. Load web URLs and Extract Text
 

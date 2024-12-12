@@ -106,7 +106,7 @@ Find `setup_Databricks.sh` [here](https://github.com/prophecy-samples/gen-ai-cha
 
 ```
 Variable definitions
-Resources created, eg catalog tables, Databricks scopes, secrets
+Resources created, like catalog tables, Databricks scopes, secrets
 ```
 
 6.  Verify `setup_Databricks.sh` creates the needed resources using these commands described [here](https://docs.databricks.com/en/archive/dev-tools/cli/unity-catalog-cli.html) and [here](https://docs.databricks.com/en/archive/dev-tools/cli/secrets-cli.html):
@@ -159,7 +159,7 @@ Continuing with the goal of ingesting and vectorizing our web content, here we h
 
 ![Web Vectorize Pipeline](img/genai_web_vectorize.png)
 
-Once the document chunks have each been assigned a vector, these “embeddings” are stored in the Unity Catalog and to a [vector database](https://www.pinecone.io/learn/vector-database/) (eg Pinecone). We can use this Knowledge Warehouse to construct our LLM prompt in the next Pipeline.
+Once the document chunks have each been assigned a vector, these “embeddings” are stored in the Unity Catalog and to a [vector database](https://www.pinecone.io/learn/vector-database/) (e.g. Pinecone). We can use this Knowledge Warehouse to construct our LLM prompt in the next Pipeline.
 
 #### 2b.i Configuring the Web Vectorize Pipeline
 

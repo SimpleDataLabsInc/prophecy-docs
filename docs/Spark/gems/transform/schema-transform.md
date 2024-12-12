@@ -10,6 +10,8 @@ tags:
   - schema
 ---
 
+<h3><span class="badge">Spark Gem</span></h3>
+
 SchemaTransform is used to add, edit, rename or drop columns from the incoming DataFrame.
 
 :::info
