@@ -38,7 +38,7 @@ The lineage extractor can be integrated with your GitHub Actions. The steps for 
 
 ### Set up environment variables and secrets
 
-The lineage extractor requires environment variables **PROPHECY_URL** and **PROPHECY_PAT** to be set for complete functionality.
+The lineage extractor requires environment variables `PROPHECY_URL` and `PROPHECY_PAT` to be set for complete functionality.
 
 Optionally, if you choose to set up email notifications, you must also set secrets for your `SMTP_USERNAME` and `SMTP_PASSWORD`.
 
@@ -55,58 +55,185 @@ SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
 
 The complete YML file definition is discussed in the next section.
 
-### Set up a GitHub Actions Workflow on every push to prod branch
+### Run the lineage extractor
 
-We’re now ready to setup the lineage extractor on the Prophecy project.
+We’re now ready to run the lineage extractor on the Prophecy project.
 
-To setup a workflow to run on every push to the `prod` branch automatically:
+To run the extractor, use the following example with your own environment variables:
 
-- Create a .YML file in the project repository at the below location (relative to root)
+:::note
+
+You only need to provide SMTP credentials if you plan to pass the `--send-email` argument.
+
+:::
+
+```
+export PROPHECY_URL=https://app.prophecy.io
+export PROPHECY_PAT=${{ secrets.PROPHECY_PAT }}
+
+export SMTP_HOST=smtp.gmail.com
+export SMTP_PORT=587
+export SMTP_USERNAME=${{ secrets.SMTP_USERNAME }}
+export SMTP_PASSWORD=${{ secrets.SMTP_PASSWORD }}
+export RECEIVER_EMAIL=ashish@prophecy.io
+
+python -m prophecy_lineage_extractor --project-id 36587 --pipeline-id 36587/pipelines/customer_orders_demo --send-email --branch dev
+```
+
+- Create a .YML file in the project repository at the below location (relative to root):
 
   ```
   .github/workflows/prophecy_lineage_extractor.yml
   ```
 
-- Add the below contents to **exampleWorkflow.yml**
+- Add the below contents with your own environment variables to `prophecy_lineage_extractor.yml`:
 
-  ```yaml
-  name: Example CI/CD with GitHub actions
+  <details>
+  <summary>On the default branch</summary>
+
+  ```
+  name: Run Prophecy Lineage extractor on main
+
   on:
-  push:
-  branches: - "prod"
+    push:
+      branches:
+        - main  # Trigger on merge to the main branch
+      paths:
+        - 'datasets/**'
+        - 'pipelines/**'
+        - 'pbt_project.yml'
+        - '.github/workflows/prophecy_lineage_extractor.yml'
 
-  env:
-  DATABRICKS_HOST: "https://sample_databricks_url.cloud.databricks.com"
-  DATABRICKS_TOKEN: ${{ secrets.PROD_DATABRICKS_TOKEN }}
-  # replace with your fabric id:
-  FABRIC_ID: "4004"
+  permissions:
+    contents: write
 
   jobs:
-  build:
-  runs-on: ubuntu-latest
+    extract-and-mail-prophecy-lineage:
+      runs-on: ubuntu-latest
+      env:
+        OUTPUT_DIR: "output"
       steps:
         - uses: actions/checkout@v3
-        - name: Set up JDK 11
-          uses: actions/setup-java@v3
-          with:
-            java-version: "11"
-            distribution: "adopt"
-        - name: Set up Python 3.9.13
+        - name: Set up Python
           uses: actions/setup-python@v4
           with:
-            python-version: "3.9.13"
-        # Install all python dependencies
-        # prophecy-libs not included here because prophecy-build-tool takes care of it by reading each pipeline's setup.py
-        - name: Install dependencies
+            python-version: '3.9'  # Adjust Python version as needed
+
+        - name: Install Package from PyPI
           run: |
-            python3 -m pip install --upgrade pip
-            pip3 install build pytest wheel pytest-html pyspark==3.3.0  prophecy-build-tool
-        - name: Run PBT validate
-          run: pbt validate --path .
-        - name: Run PBT build
-          run: pbt build --path .
-        - name: Run PBT test
-          run: pbt test --path .
-        - name: Run PBT deploy
-          run: pbt deploy --path . --release-version 1.0 --project-id example_project_id
+            pip install --no-cache-dir prophecy-lineage-extractor
+
+        - name: Extract and Send Prophecy Lineage
+          env:
+            PROPHECY_URL: "https://app.prophecy.io"
+            MONITOR_TIME_ENV: ${{ vars.MONITOR_TIME_ENV }}
+            PROPHECY_PAT: ${{ secrets.PROPHECY_PAT }}
+            SMTP_HOST: "smtp.gmail.com"
+            SMTP_PORT: "587"
+            SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+            SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+            RECEIVER_EMAIL: "ashish@prophecy.io"
+          run: |
+            python -m prophecy_lineage_extractor --project-id 36587 --pipeline-id 36587/pipelines/customer_orders_demo  --send-email --output-dir $OUTPUT_DIR
+
+        - name: Commit file to output directory
+          env:
+             GIT_COMMIT: ${{ vars.GIT_COMMIT }} # whether to commit output file to github
+          run: |
+            # set this in secret to enable git commits
+            echo "Output Directory: '$OUTPUT_DIR'"
+            if [[ $GIT_COMMIT == "1" ]]; then
+                git config --global user.name 'pateash'
+                git config --global user.email 'ashishpatel0720@gmail.com'
+                echo "Commiting enabled, adding output file"
+                git add $OUTPUT_DIR/*
+                echo "========================================"
+                git commit -m "[Github Action: main]: Adding excel lineage report"
+                echo "========================================"
+                echo "Pushing Changes to git"
+                git push
+            else
+                # simple version are created manually from code edits.
+                echo "Commiting to git is not enabled"
+            fi
   ```
+
+  </details>
+
+  <details>
+  <summary> On a custom branch</summary>
+
+  ```
+  name: Run Prophecy Lineage extractor on dev
+
+  on:
+    push:
+      branches:
+        - dev  # Trigger on merge to the dev branch
+      paths:
+        - 'datasets/**'
+        - 'pipelines/**'
+        - 'pbt_project.yml'
+        - '.github/workflows/prophecy_lineage_extractor_dev.yml'
+
+  permissions:
+    contents: write
+
+  jobs:
+    extract-and-mail-prophecy-lineage:
+      runs-on: ubuntu-latest
+      env:
+        OUTPUT_DIR: "output_dev"
+      steps:
+        - uses: actions/checkout@v3
+        - name: Set up Python
+          uses: actions/setup-python@v4
+          with:
+            python-version: '3.9'  # Adjust Python version as needed
+
+        - name: Install Package from PyPI
+          run: |
+            pip install --no-cache-dir prophecy-lineage-extractor
+
+        - name: Extract and Send Prophecy Lineage
+          env:
+            PROPHECY_URL: "https://app.prophecy.io"
+            MONITOR_TIME_ENV: ${{ vars.MONITOR_TIME_ENV }}
+            PROPHECY_PAT: ${{ secrets.PROPHECY_PAT }}
+            SMTP_HOST: "smtp.gmail.com"
+            SMTP_PORT: "587"
+            SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+            SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+            RECEIVER_EMAIL: "ashish@prophecy.io"
+          run: |
+            python -m prophecy_lineage_extractor --project-id 36587 --pipeline-id 36587/pipelines/customer_orders_demo  --send-email --output-dir $OUTPUT_DIR --branch dev
+
+        - name: Commit file to output directory
+          env:
+             GIT_COMMIT: ${{ vars.GIT_COMMIT }}  # Reference the GitHub variable here
+          run: |
+            # set this in secret to enable git commits
+            echo "output dir '$OUTPUT_DIR'"
+            if [[ $GIT_COMMIT == "1" ]]; then
+                git config --global user.name 'pateash'
+                git config --global user.email 'ashishpatel0720@gmail.com'
+                echo "Commiting enabled, adding output file"
+                git add $OUTPUT_DIR/*
+                echo "========================================"
+                git commit -m "[Github Action: dev]: Adding excel lineage report"
+                echo "========================================"
+                echo "Pushing Changes to git"
+                git push
+            else
+                # simple version are created manually from code edits.
+                echo "Commiting to git is not enabled"
+            fi
+  ```
+
+  </details>
+
+## Output example
+
+The lineage extractor output is in the form of an XLSX file.
+
+![Lineage extractor output](./img/prophecy-lineage-report-for-pipeline.png)

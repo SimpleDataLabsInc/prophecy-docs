@@ -54,13 +54,13 @@ The complete YML file definition is discussed in the next section.
 We’re now ready to setup CI/CD on the Prophecy project.
 To setup a workflow to build, run all unit tests and then deploy the built jar (Scala)/ whl (Python) on Databricks on every push to the `prod` branch automatically:
 
-- Create a .YML file in the project repository at the below location (relative to root)
+- Create a .YML file in the project repository at the below location (relative to root):
 
   ```
   .github/workflows/exampleWorkflow.yml
   ```
 
-- Add the below contents to **exampleWorkflow.yml**
+- Add the below contents to `exampleWorkflow.yml`:
 
   ```yaml
   name: Example CI/CD with GitHub actions
