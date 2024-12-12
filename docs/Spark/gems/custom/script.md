@@ -8,7 +8,9 @@ tags:
   - code
 ---
 
-Provides a `SparkSession` and allows you to run custom code
+<h3><span class="badge">Spark Gem</span></h3>
+
+Provides a `SparkSession` and allows you to run custom code.
 
 ## Parameters
 

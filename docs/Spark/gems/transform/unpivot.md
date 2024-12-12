@@ -9,6 +9,8 @@ tags:
   - longformat
 ---
 
+<h3><span class="badge">Spark Gem</span></h3>
+
 Use the Unpivot Gem to transform your data from a wide format to a long format.
 
 :::note

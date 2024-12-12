@@ -1,11 +1,15 @@
 ---
-title: Standard Gems
-id: gems
-description: Prophecy standard gems
-tags: []
+title: Spark Gems
+id: spark-gems
+description: Prophecy Spark Gems
+tags:
+  - spark
+  - gem
 ---
 
-Gem is a unit of functionality ranging from reading, transforming, writing and various other ad-hoc operations on data
+[Gems](/docs/concepts/project/gems.md) are functional units in a [Pipeline](/docs/concepts/project/pipelines.md) that perform tasks such as reading, transforming, writing, or handling other data operations.
+
+The table below outlines the different Spark Gem categories.
 
 <div class="gems-table">
 
