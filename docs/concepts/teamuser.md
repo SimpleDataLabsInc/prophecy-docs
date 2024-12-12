@@ -35,4 +35,40 @@ Manage the entities within a team by accessing the team's metadata page. Click *
 
 **Advanced** - update the artifactid, generative AI settings, etc for the team's projects.
 
-## Active users
+## Active and Total Users
+
+You can use the Active Users and Total Users APIs to find out the number of current and tottal users who are logged in to Prophecy. This can help you understand usage and times of high traffic, enabling you to manage capacity more effectively.
+
+### Active Users API
+
+Example:
+
+```
+curl --location 'https://<prophecy-env-url>/api/auth/userDetails' \
+--header 'Cookie: prophecy-token=<prophecy-access-token>' | jq -r .activeUsers
+```
+
+Response:
+
+```
+{
+  53
+}
+```
+
+### Total Users API
+
+Example:
+
+```
+curl --location 'https://<prophecy-env-url>/api/auth/userDetails' \
+--header 'Cookie: prophecy-token=<prophecy-access-token>' | jq -r .userDetails.totalUsers
+```
+
+Response:
+
+```
+{
+  1023
+}
+```
