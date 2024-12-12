@@ -8,7 +8,13 @@ tags:
   - support logs
 ---
 
+:::info
+This feature requires Prophecy 3.4.1.0 or later.
+:::
+
 Prophecy lets you download logs to help debug issues with your Prophecy services. As an admin, you can download environment logs directly from Prophecy without needing access to your Prophecy cluster or assistance from Prophecy Support.
+
+![Download logs](../../release_notes/2024/img/nov-download-logs.png)
 
 This streamlines the process and reduces delays in troubleshooting by enabling you to quickly share logs and environment details with Zendesk for further analysis.
 
