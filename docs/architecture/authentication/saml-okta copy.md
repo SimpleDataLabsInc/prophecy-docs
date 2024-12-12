@@ -27,7 +27,7 @@ groups.
 10. Set `Application username` to `Email`
 11. Attribute Statements: Add two attributes, `name` and `email`, with the same details. For example:
 
-![Okta config example](./img/okta_example.png)
+!
 
 12. Click `Next`.
 13. Select `I’m an Okta customer adding an internal app`.
