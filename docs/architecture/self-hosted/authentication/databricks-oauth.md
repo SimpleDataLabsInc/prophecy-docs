@@ -1,12 +1,12 @@
 ---
-title: "SAML Using Okta"
-id: saml_okta
-description: SAML authentication using OKTA
-sidebar_position: 5
+title: "Databricks OAuth"
+id: databricks_oatuh
+description: Prophecy Databricks OAuth integration
+sidebar_position: 6
 tags:
   - authentication
-  - saml
-  - okta
+  - databricks
+  - oauth
 ---
 
 Single sign-on (SSO) enables you to authenticate your users using your organization’s identity provider.
@@ -41,38 +41,38 @@ groups.
 
 Go to the `Sign On` tab of _Prophecy SAML App_ in Okta and find the `SAML Signing Certificates` section. Download the certificate by clicking on the button marked in the example below:
 
-![Download Okta Cert](./img/okta_dl_cert.png)
+!
 
 #### SSO URL
 
 In the `Sign On` tab itself under `SAML Signing Certificates`, click on `View IdP metadata` in the above image. It will open up an XML file like below in another tab in browser. Copy the red highlighted text in Location section as `SSO URL` in Prophecy IDE.
 
-![IDP Metadata](./img/okta_idp_metadata_xml.png)
+!
 
 #### Entity and SSO Issuer
 
 - Go to the `General` tab-> `SAML Settings` section -> `Edit`
 - Click `Next`, go to the `Configure Saml` section, go to the bottom and click on `Preview the SAML assertion` button. It will open another tab in browser. Copy the highlighted info from here to use as `Entity Issuer` and `SSO Issuer` in Prophecy IDE.
 
-![SAML Assertion](./img/okta_xml.png)
+!
 
 ### Configuring Prophecy
 
 1. Login to Prophecy IDE as an admin user
 2. Go to settings and SSO tab and choose "Authentication Provider" as SAML
 
-![SSO Settings](./img/sso_settings.png)
+!
 
 3. Fill in `Organization ID` and `Team Name` that you want to set for your organization and team respectively.
 4. Click `Configure` and this will generate a SCIM Token. Make a note of this token which needs to be filled later while Provisioning SCIM in Okta.
 
-![SSO Settings With SCIM token](./img/sso_settings_with_token.png)
+!
 
 5. Click `Save`.
 6. Fill in the information you noted down in your Okta setup and click Save.
 7. Once SCIM Provisioning is enabled for the _Prophecy SAML app_ in Okta and users/groups are assigned to it, you can logout from Prophecy IDE and the assigned users will be able to login to Prophecy IDE via Okta.
 
-![SSO Detailed Settings](./img/sso_settings_detailed.png)
+!
 
 ## Assigning Users to Prophecy in Okta
 
@@ -139,7 +139,7 @@ To provision users/groups to your Prophecy account using SCIM,
 7. Click on `Test Connector Configuration` to check the connectivity to the SCIM server.
 8. If the connection test succeeds, click Save. A new tab will appear on app integration's settings page named `Push Groups`.
 
-![Scim Provisioning](./img/scim_provisioning.png)
+!
 
 #### User/Group Assignment to _Prophecy SAML App_ in Okta
 
@@ -147,17 +147,17 @@ To provision users/groups to your Prophecy account using SCIM,
 2. To assign to individual people, click `Assign` -> `Assign to People`. Search your users and assign them to the Prophecy app.
 3. To assign to groups, click `Assign` -> `Assign to Groups`. Search your groups and assign them to the Prophecy app.
 
-![Assign App](./img/app_assign.png)
+!
 
 As mentioned earlier, assigning app to Group only creates new users in Prophecy IDE belonging to this group but doesn't create a group in Prophecy. To create a group:
 
 1. Go to the `Push Groups` tab of the _Prophecy SAML App_ in Okta
 2. Click `Push Groups` -> `Find groups by name/rule`, enter the name/rule.
 
-![Find Groups](./img/push_groups_find.png)
+!
 
 3. Select the checkbox to `Push group memberships immediately`.
 4. In dropdown of Create/Link Group, select `Create Group` (leave as is if already selected)
 5. Click `Save`.
 
-![Push Groups by Name](./img/push_groups_by_name.png)
+!
