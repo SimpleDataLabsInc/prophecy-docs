@@ -9,7 +9,7 @@ tags:
   - format
 ---
 
-<h3><span class="badge rounded-pill text-bg-light">Spark Gem</span></h3>
+<h3><span class="badge">Spark Gem</span></h3>
 
 Use the DataCleansing Gem to standardize data formats and address missing or null values in the data.
 

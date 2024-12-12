@@ -9,7 +9,7 @@ tags:
   - dynamic
 ---
 
-<h3><span class="badge rounded-pill text-bg-light">Spark Gem</span></h3>
+<h3><span class="badge">Spark Gem</span></h3>
 
 Use the DynamicSelect Gem to dynamically filter columns of your Dataset based on a set of conditions.
 
