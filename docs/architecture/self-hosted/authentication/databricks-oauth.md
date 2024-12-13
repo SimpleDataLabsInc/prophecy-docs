@@ -29,7 +29,7 @@ The authentication flow then uses Prophecy-hosted callback URL to capture and pr
 
 ### Token storage
 
-Prophecy stores the refresh token, which are used to renew the refresh token itself, and also get a new access token to maintain authenticated connectivity to Databricks.
+Prophecy stores the refresh token, which is used to renew the refresh token itself, and also gets a new access token to maintain authenticated connectivity to Databricks.
 
 The tokens are stored securely, with access limited to authorized Prophecy processes. This includes encrypting tokens before storing them in our database, in the same way that we encrypt other credentials that Prophecy stores.
 
