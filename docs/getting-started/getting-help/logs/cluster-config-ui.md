@@ -12,7 +12,7 @@ Send the following via the Prophecy [Support Portal](https://prophecy.zendesk.co
 1. Overall Cluster config (what spark version, databricks runtime version, UC single or UC shared, etc). Please send a screenshot.
    ![img](./../img/cluster_1.png)
 
-2. Please provide the json  
+2. Please provide the json, edited to remove any private or sensitive information.  
    ![img](./../img/cluster_2.png)
 
 3. What libraries are installed on the cluster? Please send a screenshot.

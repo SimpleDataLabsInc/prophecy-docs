@@ -11,18 +11,26 @@ Which logs to send in the [Support Portal](https://prophecy.zendesk.com/)?
 
 <div class="troubleshooting-table">
 
-| <div style={{'width':'100px'}}>I'm having an issue with...</div>   | My Prophecy endpoint is app.prophecy.io             | My Prophecy endpoint is custom.prophecy.io          |
-| ------------------------------------------------------------------ | --------------------------------------------------- | --------------------------------------------------- |
-| ...attaching a Pipeline to a spark cluster, or running a Pipeline. | Spark cluster configuration and connectivity check. | Spark cluster configuration and connectivity check. |
-| ...with a Spark application.                                       | Prophecy Pipeline logs and Spark Driver logs.       | Prophecy Pipeline logs and Spark Driver logs.       |
-| ...anything else.                                                  | Support team can access Prophecy logs directly.     | Prophecy logs from admin page.                      |
+| <div style={{'width':'100px'}}>I'm having an issue with...</div>   | My Prophecy endpoint is app.prophecy.io                                                                                                                                | My Prophecy endpoint is custom.prophecy.io                                                                                                                             |
+| ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ...attaching a Pipeline to a spark cluster, or running a Pipeline. | Spark cluster [configuration](./logs.md#configurations) and [connectivity](./logs.md#connectivity-check) check.                                                        | Spark cluster [configuration](./logs.md#configurations) and [connectivity](./logs.md#connectivity-check) check.                                                        |
+| ...with a Spark application.                                       | Prophecy [Pipeline](./logs.md#pipeline-logs) logs and Spark [Driver](https://docs.databricks.com/en/compute/troubleshooting/debugging-spark-ui.html#driver-logs) logs. | Prophecy [Pipeline](./logs.md#pipeline-logs) logs and Spark [Driver](https://docs.databricks.com/en/compute/troubleshooting/debugging-spark-ui.html#driver-logs) logs. |
+| ...anything else.                                                  | Support team can access [Prophecy logs](./logs.md#prophecy-system-logs)) directly.                                                                                     | [Prophecy logs](./logs.md#prophecy-system-logs) from admin page.                                                                                                       |
 
 </div>
 
 ## Prophecy Issues
 
-Use the log collection feature (if [enabled](/docs/architecture/self-hosted/download-logs.md)) to download all Prophecy system logs from the admin page.
+### Prophecy System Logs
+
+:::info
+This feature requires Prophecy 3.4.1.0 or later.
+:::
+
+Use the log collection feature to download all Prophecy system logs from the [admin page.](/docs/architecture/self-hosted/download-logs.md#navigate-to-the-download-logs-ui)
 ![img](./../img/prophecy_logs.png)
+
+### Pipeline Logs
 
 Use the log download button inside any Pipeline to download logs related to that particular Pipeline.
 ![img](./../img/pipeline_logs.png)
