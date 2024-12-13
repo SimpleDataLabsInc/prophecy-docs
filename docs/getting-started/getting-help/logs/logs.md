@@ -37,6 +37,8 @@ Use the log download button inside any Pipeline to download logs related to that
 
 ## Spark Cluster Issues
 
+When attaching a Spark cluster to a Pipeline, Prophecy uses the Fabric details. Check for error codes [here](/docs/Spark/fabrics/diagnostics.md) and send this information via the Support Portal if applicable.
+
 ### Configurations
 
 Use the [Spark UI](./cluster-config-ui.md) or a [notebook](./cluster-config-notebook.md) to collect cluster configurations and send via the Support Portal.
