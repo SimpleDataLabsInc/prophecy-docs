@@ -21,7 +21,7 @@ Which logs to send in the [Support Portal](https://prophecy.zendesk.com/)?
 
 ## Prophecy Issues
 
-Use the log collection feature (if [enabled](/docs/architecture/self-hosted/download-logs.md)) to download all [Prophecy system logs](/docs/architecture/self-hosted/download-logs.md) from the admin page.
+Use the log collection feature (if [enabled](/docs/architecture/self-hosted/download-logs.md)) to download all Prophecy system logs from the admin page.
 ![img](./../img/prophecy_logs.png)
 
 Use the log download button inside any Pipeline to download logs related to that particular Pipeline.
@@ -70,4 +70,4 @@ Seq("/bin/bash", "-c", command).!!
 
 This command tests the reverse websocket protocol required by Prophecy to execute Pipelines on Spark clusters. Please send the output from this command in the Support Portal.
 
-## We look forward to hearing from you
+**We look forward to hearing from you!**
