@@ -32,7 +32,7 @@ python -m prophecy_lineage_extractor --project-id <PROJECT_ID> --pipeline-id <PI
 
 The lineage extractor can be integrated with your GitHub Actions. The steps for setting up the lineage extractor with GitHub Actions on your repository containing a Prophecy project are mentioned below.
 
-### Pre-requisite
+### Prerequisite
 
 - A Prophecy project that is currently hosted in a GitHub repository
 
