@@ -78,4 +78,4 @@ Using Config variables (and DBT Defined Configs) within a Gem is easy. Just wrap
 To learn more about the Aggregate Gem UI, see [this page](/docs/concepts/project/gems.md) which illustrates features common to all [Gems](/SQL/gems/gems.md).
 :::
 
-Here we used the Aggregate Gem from the HelloWorld_SQL Project as a learning guide. What types of Aggregations will you build? [Reach out](/docs/getting-started/getting-help.md) with questions and to let us know how you're using Prophecy.
+Here we used the Aggregate Gem from the HelloWorld_SQL Project as a learning guide. What types of Aggregations will you build? [Reach out](/docs/getting-started/getting-help/getting-help.md) with questions and to let us know how you're using Prophecy.
