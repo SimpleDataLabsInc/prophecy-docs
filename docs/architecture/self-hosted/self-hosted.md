@@ -21,6 +21,10 @@ There are a couple of ways to install the self-managed version of Prophecy:
 
 Once Prophecy is installed, you'll have to manually perform upgrades, backups, restores, etc.
 
+:::info
+For personalized help, contact [support](https://prophecy.zendesk.com/). If applicable, send along your [logs](download-logs.md) to help us troubleshoot.
+:::
+
 ## Spark
 
 After installation, Prophecy requires the following for interactive development:
