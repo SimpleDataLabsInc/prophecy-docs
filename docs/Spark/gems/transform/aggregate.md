@@ -11,7 +11,7 @@ tags:
   - count
 ---
 
-<h3><span class="badge rounded-pill text-bg-light">Spark Gem</span></h3>
+<h3><span class="badge">Spark Gem</span></h3>
 
 Allows you to group the data and apply aggregation methods and pivot operation.
 

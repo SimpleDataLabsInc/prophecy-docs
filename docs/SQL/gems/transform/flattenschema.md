@@ -10,7 +10,7 @@ tags:
   - flatten
 ---
 
-<h3><span class="badge rounded-pill text-bg-light">SQL Gem</span></h3>
+<h3><span class="badge">SQL Gem</span></h3>
 
 When processing raw data it can be useful to flatten complex data types like `Struct`s and `Array`s into simpler, flatter schemas. This allows you to preserve all schemas, and not just the first one. You can use FlattenSchema with Snowflake Models.
 
