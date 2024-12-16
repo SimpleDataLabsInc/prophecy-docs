@@ -1,8 +1,8 @@
 ---
-title: Getting Help with Prophecy
+title: Getting help with Prophecy
 id: getting-help
 sidebar_position: 6
-description: Getting Help with Prophecy
+description: Getting help with Prophecy
 sidebar_label: Getting Help
 tags: []
 ---

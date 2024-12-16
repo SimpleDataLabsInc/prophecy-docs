@@ -1,27 +1,26 @@
 ---
-title: Send Details in the Support Portal
+title: Send logs to Support
 id: logs
 sidebar_position: 1
 description: How to download logs and send for support
-sidebar_label: Send Logs
+sidebar_label: Send logs
 tags: []
 ---
 
-Which logs to send in the [Support Portal](https://prophecy.zendesk.com/)?
+To assist with troubleshooting, gather logs from your Prophecy environment and send them to our Support team.
 
-<div class="troubleshooting-table">
+Review the table below to learn which logs to send in the [Support Portal](https://prophecy.zendesk.com/) according to your use case.
 
-| <div style={{'width':'100px'}}>I'm having an issue with...</div>   | My Prophecy endpoint is app.prophecy.io                                                                                                                                | My Prophecy endpoint is custom.prophecy.io                                                                                                                             |
-| ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ...attaching a Pipeline to a spark cluster, or running a Pipeline. | Spark cluster [configuration](./logs.md#configurations) and [connectivity](./logs.md#connectivity-check) check.                                                        | Spark cluster [configuration](./logs.md#configurations) and [connectivity](./logs.md#connectivity-check) check.                                                        |
-| ...with a Spark application.                                       | Prophecy [Pipeline](./logs.md#pipeline-logs) logs and Spark [Driver](https://docs.databricks.com/en/compute/troubleshooting/debugging-spark-ui.html#driver-logs) logs. | Prophecy [Pipeline](./logs.md#pipeline-logs) logs and Spark [Driver](https://docs.databricks.com/en/compute/troubleshooting/debugging-spark-ui.html#driver-logs) logs. |
-| ...anything else.                                                  | Support team can access [Prophecy logs](./logs.md#prophecy-system-logs)) directly.                                                                                     | [Prophecy logs](./logs.md#prophecy-system-logs) from admin page.                                                                                                       |
+| **Issue**                               | **Logs to Send**                                                                                                                                                                                                                        |
+| --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Attaching a Pipeline to a Spark cluster | Spark cluster [configuration](./logs.md#configurations) and [connectivity](./logs.md#connectivity-check) check.                                                                                                                         |
+| Running a Pipeline                      | Spark cluster [configuration](./logs.md#configurations) and [connectivity](./logs.md#connectivity-check) check.                                                                                                                         |
+| Spark application issues                | Prophecy [Pipeline](./logs.md#pipeline-logs) logs and Spark [Driver](https://docs.databricks.com/en/compute/troubleshooting/debugging-spark-ui.html#driver-logs) logs.                                                                  |
+| Other issues                            | For the `app.prophecy.io` endpoint, support team can access [Prophecy logs](./logs.md#prophecy-system-logs) directly. For a `custom.prophecy.io` endpoint, provide [Prophecy logs](./logs.md#prophecy-system-logs) from the admin page. |
 
-</div>
+## Prophecy issues
 
-## Prophecy Issues
-
-### Prophecy System Logs
+### Prophecy system logs
 
 :::info
 This feature requires Prophecy 3.4.1.0 or later.
@@ -30,20 +29,20 @@ This feature requires Prophecy 3.4.1.0 or later.
 Use the log collection feature to download all Prophecy system logs from the [admin page.](/docs/architecture/self-hosted/download-logs.md#navigate-to-the-download-logs-ui)
 ![img](./../img/prophecy_logs.png)
 
-### Pipeline Logs
+### Pipeline logs
 
 Use the log download button inside any Pipeline to download logs related to that particular Pipeline.
 ![img](./../img/pipeline_logs.png)
 
-## Spark Cluster Issues
+## Spark cluster issues
 
-When attaching a Spark cluster to a Pipeline, Prophecy uses the Fabric details. Check for error codes [here](/docs/Spark/fabrics/diagnostics.md) and send this information via the Support Portal if applicable.
+When attaching a Spark cluster to a Pipeline, Prophecy uses the [Fabric](docs/concepts/fabrics/fabrics.md) details. Check for error codes [here](/docs/Spark/fabrics/diagnostics.md) and send this information via the Support Portal if applicable.
 
 ### Configurations
 
-Use the [Spark UI](./cluster-config-ui.md) or a [notebook](./cluster-config-notebook.md) to collect cluster configurations and send via the Support Portal.
+Use the [Spark UI](./cluster-config.md#configUI) or a [notebook](./cluster-config.md#configNB) to collect cluster configurations and send via the Support Portal.
 
-### Connectivity Check
+### Connectivity check
 
 Open a notebook on the Spark cluster and run the following command, adjusting the Prophecy endpoint:
 
