@@ -18,4 +18,5 @@ At Prophecy, we're dedicated to ensuring you have the support you need, whether 
 ## For Existing Customers
 
 - **Log a Ticket in the Support Portal:** For our existing customers, the Customer Support Portal is your hub for logging tickets and getting personalized assistance. Log in to the Support Portal [here](https://prophecy.zendesk.com/).
+- Please send Prophecy [logs](./logs/logs.md), Spark Cluster [Configuration](./logs/logs.md), and [Connectivity Check output](./logs/logs.md) (if applicable) via the Support Portal.
 - _Trouble Logging In? If you're encountering issues accessing the Customer Support Portal, don't worry. Please reach out to Support@Prophecy.io, and we'll get you back on track!_
