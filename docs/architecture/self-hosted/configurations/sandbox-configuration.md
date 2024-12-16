@@ -11,11 +11,13 @@ tags:
   - reserve pods
 ---
 
-In the traditional Prophecy deployment model, a single microservice known as the editor web was tasked with managing all user requests using a threading approach. Each user request corresponds to a browser tab (session) utilized by individuals to execute operations on their pipelines within our integrated development environment (IDE). However, this model encountered constraints in isolation and vertically scaling the micro-service to accommodate the growing volume of user requests. As a result, this engendered significant resource consumption within the editor web microservice, ultimately impairing its ability to efficiently handle requests.
+In the traditional Prophecy deployment model, a single microservice, known as the editor web, handled all user requests using a threading approach. Each user request corresponded to a browser tab (session) used to perform operations on pipelines within the integrated development environment (IDE). However, this model faced limitations in isolating sessions and scaling the microservice vertically to handle increasing user requests. These limitations led to significant resource consumption in the editor web microservice, reducing its ability to manage requests effectively.
 
-## What is sandboxing
+## What is sandboxing?
 
-To tackle the aforementioned challenge, in Prophecy version 3.2, we introduced a novel approach to isolation and load manaGement known as sandboxing. This feature enables the provisioning of a pair of microservices for each user request: the Gem Plugin and Schema Analysis together termed as a single sandbox. This empowers users to execute their pipelines independently within dedicated environments. For instance, in a scenario where there are three users each with two browser tabs open in the IDE, this results in the provisioning of six pods each for the Gem Plugin and Schema Analysis. Consequently, users can seamlessly run their pipelines without interference in complete isolation.
+To address these challenges, Prophecy version 3.2 introduced a new approach to isolation and load management called sandboxing. This feature provisions a pair of microservices for each user request: the Gem Plugin and Schema Analysis, collectively referred to as a sandbox. This allows users to run their pipelines independently in isolated environments.
+
+For example, if three users each open two browser tabs in the IDE, six pods are provisioned for both the Gem Plugin and Schema Analysis. This ensures that users can run their pipelines without interference, maintaining complete isolation.
 
 ## How to configure sandboxes
 
@@ -24,7 +26,7 @@ Newer versions of Prophecy are defaulted to use sandboxing (`ENABLE_SANDBOXING: 
 1. Log in to Prophecy as an admin user.
 1. Navigate to the **Admin** tab of the Prophecy **Settings** page.
 1. Within the Admin main tab, select the **Config** subtab.
-1. Finally, click on the `Sandbox Config` subtab to configure the settings.
+1. Finally, click on the **Sandbox Config** subtab to configure the settings.
 
 ## Configuration options
 

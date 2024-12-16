@@ -30,8 +30,8 @@ Alerts are of two levels:
 
 Different thresholds are tracked:
 
-| Parameter      | Alerts generated on:    |
-|----------------|-------------------------|
+| Parameter    | Alerts generated on     |
+| ------------ | ----------------------- |
 | CPU_USAGE    | `CRITICAL`              |
 | DISK_USAGE   | `WARNING` or `CRITICAL` |
 | FILE_COUN    | `WARNING` or `CRITICAL` |

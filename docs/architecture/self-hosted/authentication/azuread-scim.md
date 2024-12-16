@@ -56,32 +56,32 @@ In the **Set up ProphecyAzureADApp** section, copy `Login URL` and `Azure AD Ide
 Before configuring rest of the sections like **Users and groups** and **Provisioning** in this Enterprise Application, lets configure SSO in Prophecy UI and get the SCIM token.
 
 1. Log in to Prophecy IDE as an admin user.
-2. Navigate to the **SSO** tab of the Prophecy **Settings** page. 
-3. Under **Authentication Provider**, select SAML.
+2. Navigate to the **SSO** tab of the Prophecy **Settings** page.
+3. Under **Authentication Provider**, select **Prophecy Managed**.
 
 ![SSO Settings](./img/sso_settings.png)
 
-3. Fill in `Organization ID` and `Team Name` that you want to set for your organization and team respectively. Make sure both these fields are of the regex `[a-zA-z0-9]*` and have no spaces or special characters.
-4. Click `Configure` and this will generate a SCIM Token. Make a note of this token which needs to be filled later while Provisioning SCIM in AzureAD. Also, now the Authentication Provider should show as `SAML`.
+3. Fill in **Organization ID** and **Team Name** that you want to set for your organization and team respectively. Make sure both these fields are of the regex `[a-zA-z0-9]*` and have no spaces or special characters.
+4. Click **Configure** to generate a SCIM Token. Make a note of this token, which needs to be filled later while Provisioning SCIM in AzureAD. Also, now the Authentication Provider should show as `SAML`.
 
 ![SSO Settings With SCIM token](./img/sso_settings_with_token.png)
 
-5. Click `Save`.
-6. Choose IDP as `Azure Active Directory` from the drop-down.
-7. Fill in `SSO URL` as the Login URL you copied from Azure AD application in step 7 of above section.
-8. Upload the Base64 certificate downloaded from Azure AD application in step 7 of above section.
-9. Fill in `Entity issuer` as `Identifier (Entity ID)` you chose in Azure AD application in step 7 to identify it to Azure Active Directory. Identifier as per this documentation example will be `prophecyWithSamlEntity`.
-10. Fill in `SSO issuer` as `Azure AD Identifier` you copied from Azure AD application in step 7 of above section.
+5. Click **Save**.
+6. From the IDP dropdown, select **Azure Active Directory**.
+7. Fill in **SSO URL** with the Login URL you copied from Azure AD application in the section above.
+8. Upload the Base64 certificate downloaded from Azure AD application in the section above.
+9. In the **Entity issuer** field, paste the `Identifier (Entity ID)` you chose in the Azure AD application to identify it to Azure Active Directory. We used **prophecyWithSamlEntity** in a previous example.
+10. In the **SSO issuer** field, paste the `Azure AD Identifier` you copied from the Azure AD application.
 11. Once SCIM Provisioning is enabled for the _Prophecy Enterprise app_ in Azure AD and users/groups are assigned to it, you can logout from Prophecy IDE and the assigned users will be able to login to Prophecy IDE via AzureAD.
 
 ![SSO Detailed Settings for AzureAD](./img/sso_settings_detailed_azuread.png)
 
 ## Assigning Users/Groups to Prophecy in Azure AD
 
-1. Go to `Users and Groups` tab in `Manage` section of _Prophecy Enterprise App_ in Azure AD
-2. Click `Add user/group` -> `Users/Groups None Selected`. Search for your users/groups and assign them to Prophecy app.
+1. Go to **Users and Groups** tab in the **Manage** section of _Prophecy Enterprise App_ in Azure AD
+2. Click **Add user/group > Users/Groups None Selected**. Search for your users/groups and assign them to Prophecy app.
 
-Note: To be able to assign groups to an Enterprise Application in Azure, make sure your plan should be `Azure AD Premium P2`.
+Note: To be able to assign groups to an Enterprise Application in Azure, your plan should be **Azure AD Premium P2**.
 
 ## Sync Users and Groups from Azure AD using SCIM
 
@@ -116,9 +116,10 @@ Note:
 
 ### Enable SCIM Provisioning for _Prophecy Enterprise App_ in AzureAD
 
-- Go to `Provisioning` tab in `Manage` section of _Prophecy Enterprise App_ in Azure AD and click on `Get Started`.
-- Choose the `Provisioning Mode` to be `Automatic` from the drop down.
-- In `Admin Credentials`, provide the `Tenant URL` as `https://your-prophecy-ide-url.domain/proscim` and `Secret Token` as the `SCIM token` copied from Prophecy IDE.
-- Click `Test Connection` to check the connectivity with Prophecy's SCIM connector.
-- Click `Save`.
-- User Provisioning doesn't start automatically. You need to go back to `Provisioning` section of the app and click on `Start Provisioning`.
+- Go to **Provisioning** tab in **Manage** section of _Prophecy Enterprise App_ in Azure AD and click on **Get Started**.
+- Choose the **Provisioning Mode** to be **Automatic** from the drop-down.
+- In **Admin Credentials**, provide the **Tenant URL** as `https://your-prophecy-ide-url.domain/proscim`.
+- For the **Secret Token**, provide the **SCIM token** copied from the Prophecy IDE.
+- Click **Test Connection** to check the connectivity with Prophecy's SCIM connector.
+- Click **Save**.
+- User Provisioning doesn't start automatically. You need to go back to **Provisioning** section of the app and click on **Start Provisioning**.

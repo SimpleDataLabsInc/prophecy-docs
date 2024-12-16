@@ -15,7 +15,7 @@ tags:
   - GCS
 ---
 
-Prophecy provides reliable support for storing essential data such as backups and audit logs. However, to enable this functionality, a storage location is required. Prophecy seamlessly integrates with the industry's leading cloud (provider) object stores, including AWS S3, Azure Blob Storage, and GCP Cloud Storage, as well as local persistent volumes (which could be backed by a NFS). This section outlines how to configure these storage options effectively.
+Prophecy supports storing essential data, including backups and audit logs, by integrating with cloud object stores like AWS S3, Azure Blob Storage, GCP Cloud Storage, and local persistent volumes (e.g., NFS-backed). This section explains how to configure these storage options.
 
 ## Edit Object Store Configurations
 
@@ -24,7 +24,7 @@ To edit object store configurations in Prophecy, follow these steps:
 1. Log in to Prophecy as an admin user.
 1. Navigate to the **Admin** tab of the Prophecy **Settings** page.
 1. Within the Admin main tab, select the **Config** subtab.
-1. Finally, click on the `Object Store Config` sub tab to configure the object store settings.
+1. Finally, click on the **Object Store Config** subtab to configure the object store settings.
 
 ## Configuration options
 
