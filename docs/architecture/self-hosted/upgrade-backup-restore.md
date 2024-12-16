@@ -33,7 +33,7 @@ Backups can be triggered manually via the API, or they can be configured to run 
 
 :::info
 
-Backup storage depends on [object store configurations](./configure-object-store.md). Make sure to configure these before proceeding below.
+Backup storage depends on [object store configurations](./configurations/configure-object-store.md). Make sure to configure these before proceeding below.
 
 :::
 
