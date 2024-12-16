@@ -12,6 +12,10 @@ import TOCInline from '@theme/TOCInline';
 
 Learn how to configure custom library access in Sparkedge pods using Maven, PyPI, and Ivy configurations. This is necessary when you want to connect your development environment to private repositories or mirrors.
 
+:::tip
+Sparkedge is responsible for actions like running unit tests, building Gem packages with custom Gems, and installing Pipeline dependencies in sandboxes.
+:::
+
 Navigate to the section that corresponds to your use case:
 
 <TOCInline toc={toc} maxHeadingLevel={2} />
