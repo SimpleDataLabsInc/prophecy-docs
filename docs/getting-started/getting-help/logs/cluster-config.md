@@ -79,9 +79,15 @@ Please send screenshots of each configuration if possible.
       </td>
     </tr>
     <tr>
-      <td>Output of attaching cluster in a notebook </td>
+      <td>Output of attaching cluster in a notebook. You may need to duplicate the tab and try attaching the same cluster in the duplicate tab.</td>
       <td>
-        Send the error screenshot if any. You may need to duplicate the tab and try attaching the same cluster in the duplicate tab.
+        <br />
+        <img
+          src={require("./../img/cluster_5.png").default}
+          alt="Notebook attach to cluster example"
+          width="75%"
+        />
+        <br />
       </td>
     </tr>
   </tbody>
