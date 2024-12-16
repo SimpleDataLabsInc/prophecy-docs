@@ -25,7 +25,7 @@ Prophecy offers a few different ways to sign up: public SaaS or private installa
 
 ### Next steps
 
-Prophecy can connect to your data wherever it resides, in various formats and storage options. Learn about Prophecy [concepts](/docs/concepts/concepts.md), read more about [deployment options](/docs/architecture/deployment/deployment.md), or reach out to [start a conversation](./getting-help.md) today!
+Prophecy can connect to your data wherever it resides, in various formats and storage options. Learn about Prophecy [concepts](/docs/concepts/concepts.md), read more about [deployment options](/docs/architecture/deployment/deployment.md), or reach out to [start a conversation](./getting-help/getting-help.md) today!
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
