@@ -80,22 +80,12 @@ This will validate the Livy URL and authentication. Once the test connection is 
 
 ![advance-settings](img/advance-settings-livy.png)
 
-Once ready, click **Continue**.
+When ready, you can continue and complete your Fabric setup.
 
-### Connections
+Once the Fabric has been created, you can test your Fabric. Open a project, connect to a cluster, and try to run a pipeline!
 
 :::info
-Connections still need to be supported for Livy Fabrics.
+
+[Dependencies](docs/Spark/extensibility/dependencies.md) must be installed directly on Livy clusters to use them in your projects. This includes Prophecy libraries, which you can find in our [version chart](docs/release_notes/version_chart/).
+
 :::
-
-Click **Continue**.
-
-### Secrets
-
-Here, you can configure any Secret Provider and secrets for your Livy Fabric. Read more about Secret Management [here](/docs/Spark/secret-management/secret-management.md)
-
-Click on **Complete** to complete the Fabric setup.
-
-## Execution on Livy
-
-[Execution on Livy](/docs/Spark/execution/execution-metrics-on-livy.md)
