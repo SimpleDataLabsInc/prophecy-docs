@@ -12,14 +12,12 @@ tags:
 
 This page outlines how to install Prophecy via Azure Marketplace.
 
-![Prophecy on Azure Marketplace](./img/azure-marketplace.png)
-
 ## Requirements
 
 To complete this process, you need:
 
-- The `Contributor` or `Owner` role in Azure. A new resource group will be created as part of the installation and all the Prophecy resources will be created inside it.
-- A minimum of 6 Standard_DS4_v2 family types of VMs. You'll need to assign an appropriate quota in your Azure subscription for a region where you are planning to deploy Prophecy.
+- The **Contributor** or **Owner** role in Azure.
+- A minimum of six Standard_DS4_v2 family types of VMs. You'll need to assign an appropriate quota in your Azure subscription for a region where you are planning to deploy Prophecy.
 
 :::note
 Contact Prophecy to discuss future scaling needs.
@@ -31,19 +29,23 @@ To get started:
 
 1. Open the [Prophecy](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/simpledatalabsinc1635791235920.prophecy-data-engineering) product page in Azure Marketplace.
 2. Click **Get It Now**.
-3. In the **Create this app** in Azure window, click **Continue**. You will be directed to the Azure portal.
+3. In the **Create this app in Azure** window, click **Continue**. You will be directed to the Azure portal.
 4. In the portal, click **Create** to begin the Prophecy IDE setup.
 
 ## Create Prophecy
 
 Next, fill out the required fields of the **Basics** tab.
 
-For the **Configure Base Domain and TLS** option, note these two choices:
+1. Select your Azure subscription.
+1. In the **Resource group** field, choose or create a resource group for the application.
+1. Select the **Region** of the instance.
+1. For the **Configure Base Domain and TLS** option, you have two choices:
+   - Use Prophecy's Base Domain. If you choose this option, Prophecy manages the certificates and domain for you.
+   - Use your own Base Domain and Certificate. If you choose this option, you can deploy your own TLS certificates and manage the domain for the Prophecy IDE using your own DNS zones.
+1. Give the application a name.
+1. Note that this installation will generate a managed resource group where all Prophecy resources will be created.
 
-- Use Prophecy's Base Domain. If you choose this option, Prophecy manages the certificates and domain for you.
-- Use your own Base Domain and Certificate. If you choose this option, you can deploy your own TLS certificates and manage the domain for the Prophecy IDE using your own DNS zones.
-
-When you have finished filling out the **Basics** tab, click **Review + create**. Then, agree to the terms and conditions and click **Create**.
+When you have finished filling out the **Basics** tab, click **Review + create**. Then, agree to the terms and conditions and click **Create**. This will start the Prophecy deployment.
 
 ## Go to resource
 
