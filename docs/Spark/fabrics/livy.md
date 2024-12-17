@@ -82,7 +82,7 @@ This will validate the Livy URL and authentication. Once the test connection is 
 
 When ready, you can continue and complete your Fabric setup.
 
-Once the Fabric has been created, you can test your Fabric. Open a project, connect to a cluster, and try to run a pipeline!
+Once the Fabric has been created, you can test your Fabric. Open a project, connect to a cluster, and try to run a Pipeline!
 
 :::info
 
