@@ -9,33 +9,33 @@ tags:
   - monitoring
 ---
 
-Prophecy offers a reliable solution for configuring alerts to monitor resource usage in Prophecy-managed microservices. It enables proactive alerting when resource utilization approaches defined thresholds, ensuring timely intervention before limits are reached. Additionally, it supports the suspension of critical services in the event of resource overflows.
+One way to monitor resource usage in Prophecy-managed microservices is to configure alerts. Some configurations include:
 
-## Alerting summary
+- Alerting when resource utilization approaches defined thresholds
+- Suspending critical services in the event of resource overflows
+- Resending email alerts at certain time intervals
 
-:::tip
-Note this doc is constantly updated with new features/options and hence it is better to always go with the latest version of Prophecy. Alerting is supported from Prophecy version 3.4.1 and above.
-:::
+Resource monitoring is enabled by default, providing insights into CPU, memory, and disk usage for critical services. This feature reports current usage levels alongside defined limits, ensuring admins have a clear view of resource consumption. This feature can be disabled if not necessary.
 
-Resource monitoring is enabled by default for cluster administrators, providing insights into CPU, memory, and disk usage for critical services. This feature reports current usage levels alongside defined limits, ensuring admins have a clear view of resource consumption.
+## Requirements
 
-Alerting is also enabled by default for all customers, allowing proactive monitoring of resource usage and facilitating timely resolution as limits approach. However, this feature can be disabled if not necessary.
+Alerting is supported for Prophecy version 3.4.1 and above.
 
-### Alerting features
-
-Currently, the following alerts are tracked, with plans to expand this list in the future to include more in-depth application-level monitoring and alerting.
-
-- `CPU_USAGE`
-- `DISK_USAGE`
-- `FILE_COUNT`
-- `MEMORY_USAGE`
+## Alerting features
 
 Alerts are of two levels:
 
 - `WARNING`: Nearing configured limits
 - `CRITICAL`: At or above configured limits
 
-And they are generated when they reach `CRITICAL` for `MEMORY_USAGE` / `CPU_USAGE` and `WARNING` / `CRITICAL` for `DISK_USAGE` / `FILE_COUNT`.
+Different thresholds are tracked:
+
+| Parameter    | Alerts generated on     |
+| ------------ | ----------------------- |
+| CPU_USAGE    | `CRITICAL`              |
+| DISK_USAGE   | `WARNING` or `CRITICAL` |
+| FILE_COUN    | `WARNING` or `CRITICAL` |
+| MEMORY_USAGE | `CRITICAL`              |
 
 To prevent data corruption, certain critical services, such as Metagraph and Gitserver, are automatically suspended when disk usage limits are reached. This feature is enabled by default but can be disabled if needed.
 
@@ -47,15 +47,14 @@ We also support email-based alerts, which can be configured by providing the nec
 
 There are certain environment variables that need to be configured in the Prophecy admin UI.
 
-### Navigating to the Backup Config UI
+### Edit Alert Configs
 
-To configure object store settings in the Prophecy UI, follow these steps:
+To edit the alert configurations in Prophecy, follow these steps:
 
-1. Log in to the Prophecy UI as an admin user.
-1. Click on the **three dots** at the bottom left corner and select the **Settings** icon from the submenu.
-1. Navigate to the **Admin** main tab.
-1. Within the Admin main tab, select the **Config** sub tab.
-1. Click on the **Alert Config** sub tab to configure the alert settings.
+1. Log in to Prophecy as an admin user.
+1. Navigate to the **Admin** tab of the Prophecy **Settings** page.
+1. Within the Admin main tab, select the **Config** subtab.
+1. Click on the **Alert Config** subtab to configure the alert settings.
 
 ### JSON format
 
@@ -123,4 +122,4 @@ Below are JSON configurations within the Prophecy UI that need to be enabled to 
 ## Alerting guidelines
 
 - The default configured values satisfy most use cases.
-- If you set `enableAlerts` to false, this will disable the alerting system. Monitoring will work and be visible from within the Admin Monitoring sub tab.
+- If you set `enableAlerts` to false, this will disable the alerting system. Monitoring will still work and be visible from the Admin Monitoring subtab.

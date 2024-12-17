@@ -15,69 +15,78 @@ groups.
 
 ## Configure Okta
 
-1. Log into Okta as an administrator.
-2. In the home page, click `Applications` > `Applications`.
-3. Click `Create App Integration`.
-4. Select `SAML 2.0` and click `Next`.
-5. Set `App name` to _Prophecy SAML App_ and click `Next`.
-6. Single Sign On URL: `https://your-prophecy-ide-url.domain/api/oauth/samlCallback`
-7. Select `Use this` for Recipient URL and Destination URL
-8. `Audience URI (SP Entity ID)`: Give a name which will be used as entity issuer ID. For example: _prophecyokta_
-9. `Name ID format`: Choose `EmailAddress` from the drop dow
-10. Set `Application username` to `Email`
-11. Attribute Statements: Add two attributes, `name` and `email`, with the same details. For example:
+1. Log in to Okta as an administrator.
+2. On the homepage, navigate to **Applications** > **Applications**.
+3. Click **Create App Integration**.
+4. Select **SAML 2.0** and click **Next**.
+5. Enter **App Name** as _Prophecy SAML App_ and click **Next**.
+6. For **Single Sign-On URL**, specify `https://your-prophecy-ide-url.domain/api/oauth/samlCallback`.
+7. Select **Use this** for both **Recipient URL** and **Destination URL**.
+8. In **Audience URI (SP Entity ID)**, provide a name to serve as the entity issuer ID (e.g., _prophecyokta_).
+9. Set **Name ID format** to **EmailAddress** from the dropdown.
+10. For **Application Username**, select **Email**.
+11. Under **Attribute Statements**, add two attributes **name** and **email**.
 
 ![Okta config example](./img/okta_example.png)
 
-12. Click `Next`.
-13. Select `I’m an Okta customer adding an internal app`.
-14. Click `Finish`. The _Prophecy SAML app_ is shown.
+12. Click **Next**.
+13. Choose **I’m an Okta customer adding an internal app**.
+14. Click **Finish**. The _Prophecy SAML App_ is now displayed.
 
 ## Configure Prophecy to connect to Okta
 
 ### Information required from Okta
 
-#### Certificate
+#### Download SAML Signing Certificate
 
-Go to the `Sign On` tab of _Prophecy SAML App_ in Okta and find the `SAML Signing Certificates` section. Download the certificate by clicking on the button marked in the example below:
+1. Navigate to the **Sign On** tab of _Prophecy SAML App_ in Okta.
+2. Locate the **SAML Signing Certificates** section.
+3. Click the download button, as shown in the example below, to download the certificate:
 
 ![Download Okta Cert](./img/okta_dl_cert.png)
 
 #### SSO URL
 
-In the `Sign On` tab itself under `SAML Signing Certificates`, click on `View IdP metadata` in the above image. It will open up an XML file like below in another tab in browser. Copy the red highlighted text in Location section as `SSO URL` in Prophecy IDE.
+1. In the same **Sign On** tab under **SAML Signing Certificates**, click **View IdP metadata**.
+2. This action opens an XML file in a new browser tab.
+3. Copy the red-highlighted text in the **Location** section of the XML file and use it as the **SSO URL** in Prophecy IDE.
 
 ![IDP Metadata](./img/okta_idp_metadata_xml.png)
 
 #### Entity and SSO Issuer
 
-- Go to the `General` tab-> `SAML Settings` section -> `Edit`
-- Click `Next`, go to the `Configure Saml` section, go to the bottom and click on `Preview the SAML assertion` button. It will open another tab in browser. Copy the highlighted info from here to use as `Entity Issuer` and `SSO Issuer` in Prophecy IDE.
+1. Go to the **General** tab, then navigate to the **SAML Settings** section and click **Edit**.
+2. Click **Next** to reach the **Configure SAML** section.
+3. Scroll to the bottom and click the **Preview the SAML assertion** button.
+4. This opens a new browser tab.
+5. Copy the highlighted information from the preview and use it as the **Entity Issuer** and **SSO Issuer** in Prophecy IDE.
 
 ![SAML Assertion](./img/okta_xml.png)
 
 ### Configuring Prophecy
 
-1. Login to Prophecy IDE as an admin user
-2. Go to settings and SSO tab and choose "Authentication Provider" as SAML
+1. Log in to Prophecy IDE as an admin user.
+2. Navigate to the **SSO** tab of the Prophecy **Settings** page.
+3. Under **Authentication Provider**, select **Prophecy Managed**.
 
 ![SSO Settings](./img/sso_settings.png)
 
-3. Fill in `Organization ID` and `Team Name` that you want to set for your organization and team respectively.
-4. Click `Configure` and this will generate a SCIM Token. Make a note of this token which needs to be filled later while Provisioning SCIM in Okta.
+4. Enter the **Organization ID** and **Team Name** for your organization and team, respectively.
+5. Click **Configure** to generate a SCIM Token. Make a record of this token, as it will be required later for provisioning SCIM in Okta.
 
 ![SSO Settings With SCIM token](./img/sso_settings_with_token.png)
 
-5. Click `Save`.
-6. Fill in the information you noted down in your Okta setup and click Save.
-7. Once SCIM Provisioning is enabled for the _Prophecy SAML app_ in Okta and users/groups are assigned to it, you can logout from Prophecy IDE and the assigned users will be able to login to Prophecy IDE via Okta.
+6. Click **Save**.
+7. Enter the information noted during the Okta setup and click **Save**.
+8. Once SCIM Provisioning is enabled for the _Prophecy SAML App_ in Okta and users/groups are assigned to it, logout from Prophecy IDE. The assigned users will then be able to log in to Prophecy IDE via Okta.
 
 ![SSO Detailed Settings](./img/sso_settings_detailed.png)
 
-## Assigning Users to Prophecy in Okta
+### Assigning Users to Prophecy in Okta
 
-1. Go to `Assignment` tab of _Prophecy SAML App_ in Okta
-2. Click `Assign` -> `Assign to People`. Search for your users and assign them to Prophecy app.
+1. Navigate to the **Assignment** tab of _Prophecy SAML App_ in Okta.
+2. Click **Assign** > **Assign to People**.
+3. Search for your users and assign them to the Prophecy app.
 
 ## Sync Users and Groups from Okta using SCIM
 
