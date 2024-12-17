@@ -31,6 +31,12 @@ To upgrade Prophecy, you can do so in **Settings > Admin**.
 
 Backups can be triggered manually via the API, or they can be configured to run automatically.
 
+:::info
+
+Backup storage depends on [object store configurations](./configurations/configure-object-store.md). Make sure to configure these before proceeding below.
+
+:::
+
 ### On-demand backups
 
 You can use the Backup API to start a backup. See [Generate API Key](./generate-api-key/) if you need an API key.
