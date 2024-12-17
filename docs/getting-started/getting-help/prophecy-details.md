@@ -18,7 +18,7 @@ Gather logs from your Prophecy environment and send them to the support team via
   </thead>
   <tbody>
     <tr>
-      <td>Prophecy <a href="https://docs.prophecy.io/architecture/self-hosted/download-logs/#enable-prophecy-downloads-logs">System logs.</a></td>
+      <td>Prophecy <a href="../../architecture/self-hosted/download-logs#enable-prophecy-downloads-logs">System logs</a></td>
       <td>
         <br />
         <img
@@ -42,7 +42,7 @@ Gather logs from your Prophecy environment and send them to the support team via
       </td>
     </tr>
     <tr>
-      <td>Connection logs from Prophecy with error <a href="https://docs.prophecy.io/Spark/fabrics/fabric-diagnostics">code</a></td>
+      <td>Connection logs from Prophecy with error <a href="../../Spark/fabrics/fabric-diagnostics/">code</a></td>
       <td>
         <br />
         <img
