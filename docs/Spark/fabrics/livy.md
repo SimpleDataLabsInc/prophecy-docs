@@ -86,6 +86,6 @@ Once the Fabric has been created, you can test your Fabric. Open a project, conn
 
 :::info
 
-[Dependencies](docs/Spark/extensibility/dependencies.md) must be installed directly on Livy clusters to use them in your projects. This includes Prophecy libraries, which you can find in our [version chart](docs/release_notes/version_chart/).
+[Dependencies](docs/Spark/extensibility/dependencies.md) must be installed directly on Livy clusters to use them in your projects. This includes Prophecy libraries, which you can find in our [version chart](docs/release_notes/version_chart/version_chart.md).
 
 :::
