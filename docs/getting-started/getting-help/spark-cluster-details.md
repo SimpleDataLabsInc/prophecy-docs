@@ -1,20 +1,22 @@
 ---
-title: Send Spark cluster configurations
-id: cluster-config
+title: Send Spark cluster details
+id: spark-cluster-details
 sidebar_position: 2
 description: Helpful Spark cluster configurations to send to Support
-sidebar_label: Send Spark cluster configurations
+sidebar_label: Send info from the Spark cluster
 tags: [help, connectivity]
 ---
 
-There are helpful Spark cluster configurations that you can send to us via the Prophecy [Support Portal](https://prophecy.zendesk.com/) for troubleshooting.
+There are helpful Spark cluster configurations and a connectivity check that you can send to us via the Prophecy [Support Portal](https://prophecy.zendesk.com/) for troubleshooting.
 
-Two ways to access these configurations include:
+## Spark configurations
+
+Two ways to access the configurations:
 
 - Browsing the Spark UI
 - Running a notebook
 
-## Configurations in the UI {#configUI}
+### Configurations in the UI {#configUI}
 
 You can access your Spark cluster configurations directly from the Spark UI.
 
@@ -35,7 +37,7 @@ Please send screenshots of each configuration if possible.
       <td>
         <br />
         <img
-          src={require("./../img/cluster_1.png").default}
+          src={require("./img/cluster_1.png").default}
           alt="Cluster configuration example"
           width="75%"
         />
@@ -47,7 +49,7 @@ Please send screenshots of each configuration if possible.
       <td>
         <br />
         <img
-          src={require("./../img/cluster_2.png").default}
+          src={require("./img/cluster_2.png").default}
           alt="Cluster JSON example"
           width="75%"
         />
@@ -59,7 +61,7 @@ Please send screenshots of each configuration if possible.
       <td>
         <br />
         <img
-          src={require("./../img/cluster_3.png").default}
+          src={require("./img/cluster_3.png").default}
           alt="Cluster libraries example"
           width="75%"
         />
@@ -71,7 +73,7 @@ Please send screenshots of each configuration if possible.
       <td>
         <br />
         <img
-          src={require("./../img/cluster_4.png").default}
+          src={require("./img/cluster_4.png").default}
           alt="Cluster init scripts example"
           width="75%"
         />
@@ -83,7 +85,7 @@ Please send screenshots of each configuration if possible.
       <td>
         <br />
         <img
-          src={require("./../img/cluster_5.png").default}
+          src={require("./img/cluster_5.png").default}
           alt="Notebook attach to cluster example"
           width="75%"
         />
@@ -93,13 +95,16 @@ Please send screenshots of each configuration if possible.
   </tbody>
 </table>
 
-## Run a notebook {#configNB}
+### Run a notebook {#configNB}
 
-You can also create a notebook (example below) and send the output via the Prophecy [Support Portal](https://prophecy.zendesk.com/).
+For those who prefer to use code, create a notebook (example below) and send the output via the Prophecy [Support Portal](https://prophecy.zendesk.com/).
 
 :::info
 Replace the workspace URL, personal access token, clusterID, and API token as appropriate.
 :::
+
+<details><summary>Python</summary>
+<p>
 
 ```
 # Databricks notebook source
@@ -147,3 +152,49 @@ response = requests.get(url, headers={"Authorization": f"Bearer {token}"}, param
 cluster_access_info=response.json()
 print(f"Cluster Access Mode: {cluster_access_info['data_security_mode']}")
 ```
+
+</p>
+</details>
+
+## Connectivity Check
+
+Open a notebook on the Spark cluster and run the following command.
+
+:::info
+Replace the Prophecy endpoint.
+:::
+
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+
+<TabItem value="py" label="Python">
+
+```py
+import subprocess
+
+command = 'curl -X GET "https://customer_prophecy_url/execution"'
+output = subprocess.check_output(['/bin/bash', '-c', command], text=True)
+
+print(output)
+```
+
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+%scala
+import sys.process._
+val command = """curl -X GET "https://customer_prophecy_url/execution""""
+Seq("/bin/bash", "-c", command).!!
+```
+</TabItem>
+</Tabs>
+
+````
+
+This command tests the reverse websocket protocol required by Prophecy to execute Pipelines on Spark clusters. Please send the output from this command in the Support Portal.
+
+**We look forward to hearing from you!**
