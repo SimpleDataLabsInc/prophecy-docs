@@ -13,9 +13,9 @@ This document describes how to configure Azure Active Directory for Prophecy aut
 
 ## Register a new Azure App
 
-First, you need to log in to the [Azure Portal](https://portal.azure.com/) as an administrator and register a new app.
+First, you need to log in to the [Azure portal](https://portal.azure.com/) as an administrator and register a new app.
 
-1. In the homepage search bar, search for "App Registrations."
+1. In the Azure portal, open the **App registrations** page.
 2. Click **New Registration**.
 3. Name it `ProphecyAzureADApp`.
 4. Choose the supported account type: **Accounts in this organizational directory only (xxxxx only - Single tenant)**

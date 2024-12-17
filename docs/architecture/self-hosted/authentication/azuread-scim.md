@@ -78,7 +78,7 @@ Before configuring rest of the sections like **Users and groups** and **Provisio
 
 ## Assigning Users/Groups to Prophecy in Azure AD
 
-1. Go to **Users and Groups** tab in the **Manage** section of _Prophecy Enterprise App_ in Azure AD
+1. Go to **Users and Groups** tab in the **Manage** section of _Prophecy Enterprise App_ in Azure AD.
 2. Click **Add user/group > Users/Groups None Selected**. Search for your users/groups and assign them to Prophecy app.
 
 Note: To be able to assign groups to an Enterprise Application in Azure, your plan should be **Azure AD Premium P2**.
