@@ -78,6 +78,10 @@ Below is a list of supported variables that you can change.
 | `backupRetentionCount`      | Number of last `N` backups to retain.                                                                                                                                                     | `30`          |
 | `enableRegularBackups`      | State of automated backup creation.                                                                                                                                                       | `false`       |
 
+### View past backups
+
+You can view a history of backups in **Settings > Admin > Backup**.
+
 ### Additional backup APIs
 
 Here is a list of additional APIs for backups. One sample call may look like:

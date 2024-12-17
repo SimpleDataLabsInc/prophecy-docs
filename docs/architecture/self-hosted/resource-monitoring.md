@@ -2,6 +2,7 @@
 title: Resource monitoring
 id: resource-monitoring
 description: Find an overview of resource monitoring, alert configuration, and scaling recommendations
+sidebar_position: 5
 tags:
   - scaling
   - resources
@@ -10,9 +11,11 @@ tags:
 
 This page provides an overview of resource monitoring, alert configuration, and scaling recommendations for effectively managing Prophecy deployments.
 
-## Resource monitoring
+## Monitoring
 
 To have a better understanding of how Prophecy is using resources, you can find an overview in **Settings > Admin > Monitoring**.
+
+![Monitoring settings](./img/monitoring.png)
 
 ## Alerts
 
