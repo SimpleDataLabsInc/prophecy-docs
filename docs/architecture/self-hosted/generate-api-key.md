@@ -2,7 +2,7 @@
 title: Generate API key
 id: generate-api-key
 description: Generate your own custom API key per deployment
-sidebar_position: 6
+sidebar_position: 7
 tags:
   - Generate
   - API
