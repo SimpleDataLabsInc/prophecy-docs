@@ -1,6 +1,6 @@
 {
-  "label": "Data Copilot",
-  "position": 5,
+  "label": "Airflow",
+  "position": 2,
   "collapsible": true,
   "collapsed": true
 }

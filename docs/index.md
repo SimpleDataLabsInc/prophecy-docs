@@ -33,7 +33,7 @@ Prophecy provides dozens of Gems ready to use out of the box. Gems consist of Sp
 
 ## Code and DevOps
 
-Running at scale requires applying strong software engineering practices to data refinement. Rapid development and deployment of data pipelines can be achieved by using code stored in Git, maintaining high test coverage, and implementing [continuous integration and continuous deployment](./tutorials/Orchestration/reliable-ci-cd/). In Prophecy, this looks like:
+Running at scale requires applying strong software engineering practices to data refinement. Rapid development and deployment of data pipelines can be achieved by using code stored in Git, maintaining high test coverage, and implementing [continuous integration and continuous deployment](./Orchestration/reliable-ci-cd/). In Prophecy, this looks like:
 
 - **Pipelines stored as code.** Prophecy's code editor stores visual data Pipelines as high-quality code on Git.
 - **High test coverage.** Prophecy makes test generation and editing easy.
