@@ -53,6 +53,11 @@ const config = {
       zoom: {
         selector: ".markdown :not(em) > img",
       },
+      docs: {
+        sidebar: {
+          autoCollapseCategories: true,
+        },
+      },
       navbar: {
         title: "",
         logo: {
