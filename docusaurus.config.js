@@ -132,6 +132,18 @@ const config = {
             from: "/developer/videos/",
           },
           {
+            to: "/getting-started/getting-help/spark-cluster-details",
+            from: "/getting-started/getting-help/logs/config-sparkui",
+          },
+          {
+            to: "/getting-started/getting-help/prophecy-details",
+            from: "/getting-started/getting-help/logs/",
+          },
+          {
+            to: "/getting-started/getting-help/spark-cluster-details",
+            from: "/getting-started/getting-help/logs/config-sparknotebook",
+          },
+          {
             to: "/concepts/copilot/enable-data-copilot",
             from: "/architecture/deployment/enable-data-copilot",
           },
