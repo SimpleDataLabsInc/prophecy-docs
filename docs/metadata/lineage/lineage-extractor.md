@@ -28,9 +28,9 @@ python -m prophecy_lineage_extractor --project-id <PROJECT_ID> --pipeline-id <PI
 | `--send-email`  | flag | If specified, sends an email with the generated lineage report to the environment variable `RECEIVER_EMAIL`. You must set the following environment variables for this option if passed: <br /><br /> <ul><li>`SMTP_HOST`</li><li>`SMTP_PORT`</li><li>`SMTP_USERNAME`</li><li>`SMTP_PASSWORD`</li><li>`RECEIVER_EMAIL`</li></ul> | False    |
 | `--branch`      | str  | Branch to run the lineage extractor on. <br /> The default branch in Prophecy is generally 'main'.                                                                                                                                                                                                                               | True     |
 
-## Integrate with GitHub Actions
+## Integrate with GitHub Actions or GitLab Actions
 
-The lineage extractor can be integrated with your GitHub Actions. The steps for setting up the lineage extractor with GitHub Actions on your repository containing a Prophecy project are mentioned below.
+The lineage extractor can be integrated with your GitHub Actions or GitLab Actions. The steps for setting up the lineage extractor on your repository containing a Prophecy project are mentioned below.
 
 ### Prerequisite
 
@@ -44,13 +44,23 @@ Optionally, if you choose to set up email notifications, you must also set secre
 
 These environment variables can be set as secrets inside the GitHub repository of the project. For more information, see [Set up environment variables and secrets](../../deployment/prophecy-build-tool/pbt-github-actions.md#set-up-environment-variables-and-secrets).
 
-The environment variables can also be set within the GitHub actions YML file as follows:
+The environment variables can also be set within the GitHub Actions or GitLab Actions YML file.
+
+For GitHub Actions:
 
 ```yaml
 env:
 PROPHECY_PAT: ${{ secrets.PROPHECY_PAT }}
 SMTP_USERNAME: ${{ secrets.SMTP_USERNAME}}
 SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+```
+
+For GitLab Actions:
+
+```yaml
+export PROPHECY_PAT="$PROPHECY_PAT"
+export SMTP_USERNAME="$SMTP_USERNAME"
+export SMTP_PASSWORD="$SMTP_PASSWORD"
 ```
 
 The complete YML file definition is discussed in the next section.
@@ -79,6 +89,8 @@ export RECEIVER_EMAIL=ashish@prophecy.io
 
 python -m prophecy_lineage_extractor --project-id 36587 --pipeline-id 36587/pipelines/customer_orders_demo --send-email --branch dev
 ```
+
+#### GitHub Actions file
 
 - Create a .YML file in the project repository at the below location (relative to root):
 
@@ -228,6 +240,66 @@ python -m prophecy_lineage_extractor --project-id 36587 --pipeline-id 36587/pipe
                 # simple version are created manually from code edits.
                 echo "Commiting to git is not enabled"
             fi
+  ```
+
+  </details>
+
+#### GitLab Actions file
+
+- Create a .YML file in the project repository.
+
+- Add the below contents with your own environment variables to `.gitlab-ci.yml`:
+
+  <details>
+  <summary>GitLab action</summary>
+
+  ```
+  stages:
+  - extract
+
+  variables:
+    GIT_COMMIT: "1" # to enable committing report file to git
+    OUTPUT_DIR: "output_dev"
+  extract_and_mail:
+    stage: extract
+    image: python:3.9
+    script:
+      - pip install --no-cache-dir prophecy-lineage-extractor
+      - |
+        # gitlab ci/cd variables, access_token also need to be defined if using git commit
+        export PROPHECY_URL="$PROPHECY_URL"
+        export PROPHECY_PAT="$PROPHECY_PAT"
+        export SMTP_USERNAME="$SMTP_USERNAME"
+        export SMTP_PASSWORD="$SMTP_PASSWORD"
+        export SMTP_HOST="smtp.gmail.com"
+        export SMTP_PORT="587"
+        export RECEIVER_EMAIL="ashish@prophecy.io"
+        # value in seconds for monitoring, this might be increased depending on pipeline size
+        export MONITOR_TIME_ENV="50"
+      - |
+        BRANCH="dev"
+        python -m prophecy_lineage_extractor \
+          --project-id 36587 \
+          --pipeline-id 36587/pipelines/customer_orders_demo \
+          --send-email \
+          --output-dir $OUTPUT_DIR \
+          --branch $BRANCH
+      - |
+        if [ "$GIT_COMMIT" == "1" ]; then
+          echo "Git commit is enabled, output directory '$OUTPUT_DIR'"
+          git config --global user.name 'pateash'
+          git config --global user.email 'ashishpatel0720@gmail.com'
+          git add $OUTPUT_DIR/*
+          git commit -m "[GitLab CI - $BRANCH] Adding excel lineage report"
+          git remote add gitlab_origin https://oauth2:$ACCESS_TOKEN@gitlab.com/pateash/ProphecyHelloWorld.git
+          echo "Pushing changes to git branch $BRANCH"
+          git push gitlab_origin HEAD:$BRANCH -o ci.skip # prevent triggering pipeline again
+        else
+            echo "Committing to git is not enabled"
+        fi
+    only:
+      refs:
+        - dev
   ```
 
   </details>
