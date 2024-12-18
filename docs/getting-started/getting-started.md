@@ -1,6 +1,7 @@
 ---
 title: Getting Started
 sidebar_position: 3
+sidebar_class_name: hidden
 id: getting-started
 description: Getting started with Prophecy
 tags: []

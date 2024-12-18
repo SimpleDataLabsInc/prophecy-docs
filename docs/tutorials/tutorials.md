@@ -2,6 +2,7 @@
 title: Tutorials
 id: tutorials
 description: Tutorials and approaches to solving certain common Data Engineering problems within Prophecy
+sidebar_class_name: hidden
 tags: []
 ---
 
