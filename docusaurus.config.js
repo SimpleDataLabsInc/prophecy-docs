@@ -137,19 +137,19 @@ const config = {
             from: "/developer/videos/",
           },
           {
-            to: "/getting-started/getting-help/spark-cluster-details",
+            to: "/getting-help/spark-cluster-details",
             from: "/getting-started/getting-help/logs/config-sparkui",
           },
           {
-            to: "/getting-started/getting-help/prophecy-details",
+            to: "/getting-help/prophecy-details",
             from: "/getting-started/getting-help/logs/",
           },
           {
-            to: "/getting-started/getting-help/spark-cluster-details",
+            to: "/getting-help/spark-cluster-details",
             from: "/getting-started/getting-help/logs/config-sparknotebook",
           },
           {
-            to: "/concepts/copilot/enable-data-copilot",
+            to: "/copilot/enable-data-copilot",
             from: "/architecture/deployment/enable-data-copilot",
           },
           {
@@ -262,6 +262,17 @@ const config = {
           }
           if (existingPath.includes("/Orchestration")) {
             return [existingPath.replace("/Orchestration", "/low-code-jobs")];
+          }
+          if (existingPath.includes("/getting-help")) {
+            return [
+              existingPath.replace(
+                "/getting-help",
+                "/getting-started/getting-help",
+              ),
+            ];
+          }
+          if (existingPath.includes("/copilot")) {
+            return [existingPath.replace("/copilot", "/concepts/copilot")];
           }
           return undefined;
         },

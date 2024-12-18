@@ -11,7 +11,7 @@ tags:
 ---
 
 Prophecy empowers users of all skill levels to excel in data engineering.
-Anyone can use the visual interface, especially with the help of the [Data Copilot](./concepts/copilot/), to achieve results that go beyond traditional ETL tools.
+Anyone can use the visual interface, especially with the help of the [Data Copilot](/docs/copilot/copilot.md/), to achieve results that go beyond traditional ETL tools.
 Below, we highlight Prophecy's core pillars.
 
 ## Visual interface
