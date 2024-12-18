@@ -1,28 +1,31 @@
 ---
-title: Configure custom library access for Sparkedge pods
+title: Configure a Custom Artifact Repository (Sparkedge)
 id: configure-sparkedge
-description: Connect to private repositories or mirrors
+description: Connect to private artifact repositories or mirrors
 sidebar_position: 5
-sidebar_label: Custom library access
+sidebar_label: Custom Artifact Repository
 tags:
   - sparkedge
+  - mirror
+  - artifact repository
+  - artifactory
+  - custom
+  - private
+  - jfrog
+  - library
 ---
 
 import TOCInline from '@theme/TOCInline';
 
-Learn how to configure custom library access in Sparkedge pods using Maven, PyPI, and Ivy configurations. This is necessary when you want to connect your development environment to private repositories or mirrors.
+Learn how to configure the Sparkedge pod to use a private Maven or Pypi artifact repository (mirror). This is necessary when you want to connect your development environment to private repositories or mirrors.
 
 :::tip
 Sparkedge is responsible for actions like running unit tests, building Gem packages with custom Gems, and installing Pipeline dependencies in sandboxes.
 :::
 
-Navigate to the section that corresponds to your use case:
-
-<TOCInline toc={toc} maxHeadingLevel={2} />
-
 ## Maven configuration
 
-To configure custom library access for Maven in Sparkedge, follow these steps:
+To configure custom artifact repository for Maven in Sparkedge, follow these steps:
 
 1. Either create or locate the settings.xml file to hold the Maven configuration.
 1. If you want to modify the existing file, you can retrieve it from the Sparkedge pod using the following command:
@@ -31,7 +34,7 @@ To configure custom library access for Maven in Sparkedge, follow these steps:
    kubectl cp -n <namespace> <sparkedgepod>:/opt/docker/apache-maven-3.9.6/conf/settings.xml settings.xml
    ```
 
-1. Edit the settings.xml file to include the details of your custom library repository.
+1. Edit the settings.xml file to include the details of your custom artifact repository.
 1. Run the following to create a Kubernetes secret:
 
    ```
@@ -57,13 +60,13 @@ To configure custom library access for Maven in Sparkedge, follow these steps:
 
 ## PyPI configuration
 
-To configure PyPI for custom library access in Sparkedge, follow these steps:
+To configure PyPI for custom artifact repository in Sparkedge, follow these steps:
 
 1. First, create a pip.conf file and define the custom PyPI repository. The file **must** be named pip.conf. Example:
 
    ```
    [global]
-   index-url=https://yourcompany.com/library/api/pypi/pypi/simple
+   index-url=https://yourcompany.com/artifactory/api/pypi/pypi/simple
    ```
 
 1. Run the following to create a Kubernetes secret:
@@ -99,15 +102,15 @@ For custom Maven repository access in Ivy, use the following steps:
    <ivysettings>
        <settings defaultResolver="default"/>
        <credentials>
-           <credential host="https://your.private-mirror.com/library/maven-external/"
+           <credential host="https://your.private-mirror.com/artifactory/maven-external/"
                        realm="Your Realm" username="your-username" passwd="your-password"/>
        </credentials>
        <resolvers>
-           <ibiblio name="custom-library" m2compatible="true"
-                    root="https://your.private-mirror.com/library/maven-external/"/>
+           <ibiblio name="custom-artifactory" m2compatible="true"
+                    root="https://your.private-mirror.com/artifactory/maven-external/"/>
            <ibiblio name="central" m2compatible="true"/>
            <chain name="default">
-               <resolver ref="custom-library"/>
+               <resolver ref="custom-artifactory"/>
            </chain>
        </resolvers>
    </ivysettings>
@@ -125,7 +128,7 @@ For custom Maven repository access in Ivy, use the following steps:
    kubectl -n <namespace> cp ./ivysettings.xml <sparkedge_pod_name>:/app/.m2/ivysettings.xml
    ```
 
-## Proxy configuration
+## Proxy configuration (optional)
 
 If your Maven repositories are behind a proxy, you’ll need to add proxy settings to your settings.xml file.
 
