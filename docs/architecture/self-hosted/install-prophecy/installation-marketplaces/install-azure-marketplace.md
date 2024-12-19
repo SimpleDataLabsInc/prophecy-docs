@@ -27,10 +27,10 @@ Contact Prophecy to discuss future scaling needs.
 
 To get started:
 
-1. Open the [Prophecy](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/simpledatalabsinc1635791235920.prophecy-data-engineering) product page in Azure Marketplace.
-2. Click **Get It Now**.
-3. In the **Create this app in Azure** window, click **Continue**. You will be directed to the Azure portal.
-4. In the portal, click **Create** to begin the Prophecy IDE setup.
+1. Open the [Prophecy](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/simpledatalabsinc1635791235920.prophecy-data-engineering) product page in Azure Marketplace and click **Get It Now**.
+1. In the **Create this app in Azure** window, select the **Prophecy Private SaaS - Enterprise Grade Support** plan (unless advised otherwise).
+1. Click **Continue**. You will be directed to the Azure portal.
+1. In the portal, click **Create** to begin the Prophecy IDE setup.
 
 ## Create Prophecy
 
