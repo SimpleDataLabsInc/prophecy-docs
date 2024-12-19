@@ -1,7 +1,7 @@
 ---
 title: Audit Events Configuration
 id: configure-audit-logs
-description: Prophecy installations audit events (logs) being synced to object stores like S3, Azure Blob Storage, GCP Cloud Storage etc.
+description: Track and log user actions for auditing purposes
 sidebar_position: 2
 tags:
   - audit events
@@ -13,34 +13,31 @@ tags:
   - GCS
 ---
 
-Prophecy offers robust support for storing audit events (logs) on two of the industry's leading cloud object stores: AWS S3, Azure Blob Storage, GCP Cloud Storage or even local persistent volume (PV). Leveraging the capabilities of these object stores, Prophecy seamlessly synchronizes and persistently stores audit events. This not only ensures the secure retention of crucial data but also facilitates streamlined tracking and in-depth analysis of user interactions and activities for enhanced operational insights.
+Prophecy provides strong support for storing audit events (logs) in cloud object stores, including AWS S3, Azure Blob Storage, GCP Cloud Storage, or local persistent volumes (PV). Customize the audit events configuration to:
 
-:::note
+- Track and log every user action.
+- Enable retrieval of user activity records from persistent storage or an object store for auditing.
+- Store user actions in designated database tables for structured tracking.
+- Periodically transfer recorded data to an object store for efficient long-term storage and management.
 
-Certain [object store level configurations](./configure-object-store.md) are shared with [backup restore configurations](../upgrade-backup-restore.md). Make sure to configure the [object store level configurations](./configure-object-store.md) before proceeding below.
+:::info
+
+Events storage depends on [object store configurations](./configure-object-store.md). Make sure to configure these before proceeding below.
 
 :::
-
-## Use case
-
-- The overarching objective is to comprehensively track and log every user-level action.
-- All user actions will be meticulously recorded and stored, enabling easy retrieval from a persistent storage or object store, particularly when an audit is required.
-- To achieve this, each user action will be meticulously tracked and written into designated database tables.
-- The data accumulated in these database tables will be periodically transferred and pushed to an object store for efficient storage and management.
 
 ## Configuration
 
 There are certain environment variables that need to be configured in Athena based on the kind of user events audit logs required.
 
-### Navigate to the Audit config UI
+### Edit Audit Configs
 
-To configure object store settings in the Prophecy UI, follow these steps:
+To edit audit configurations in Prophecy, follow these steps:
 
-1. Log in to the Prophecy UI as an admin user.
-1. Click on the `three dots` at the bottom left corner and select the `settings icon` from the submenu.
-1. Navigate to the `Admin` main tab.
-1. Within the Admin main tab, access the `Config` sub tab.
-1. Finally, click on the `auditConfig` sub tab to configure the audit settings.
+1. Log in to Prophecy as an admin user.
+1. Navigate to the **Admin** tab of the Prophecy **Settings** page.
+1. Within the Admin main tab, select the **Config** subtab.
+1. Finally, click on the **Audit Config** subtab to configure the audit settings.
 
 ### JSON format
 

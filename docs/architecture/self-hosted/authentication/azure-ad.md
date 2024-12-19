@@ -9,42 +9,40 @@ tags:
   - azure
 ---
 
-This document describes how to configure Azure Active Directory as the identity provider for Prophecy.
+This document describes how to configure Azure Active Directory for Prophecy authentication.
 
 ## Register a new Azure App
 
-- In a new browser tab, log into [Azure Portal](https://portal.azure.com/) as an administrator and register a new app "ProphecyAzureADApp"
+First, you need to log in to the [Azure portal](https://portal.azure.com/) as an administrator and register a new app.
 
-- In the home page search bar, search for "App Registrations"
+1. In the Azure portal, open the **App registrations** page.
+2. Click **New Registration**.
+3. Name it `ProphecyAzureADApp`.
+4. Choose the supported account type: **Accounts in this organizational directory only (xxxxx only - Single tenant)**
+5. For the Redirect URI, choose **Web** in the dropdown and use:  
+   `https://your-prophecy-ide-url.domain/api/oauth/azureadCallback`
+6. Click **Register**.
 
-- Click "New Registration"
-- Give name as "ProphecyAzureADApp"
-- Supported account type as "Accounts in this organizational directory only (xxxxx only - Single tenant)"
-- Redirect URI : Choose "Web" in drop down
-- Redirect URI : https://your-prophecy-ide-url.domain/api/oauth/azureadCallback
-- Click Register
+## API Permission
 
-### API Permission
+Next, go to **API permissions** on the left-hand side and add this set of API permissions:
 
-- Go to "API permissions" on the left-hand side and add these set of API permissions
-  <img width="799" alt="Screenshot 2022-06-13 at 9 57 16 PM" src="https://user-images.githubusercontent.com/59466885/173400731-acb084df-31a7-4858-b6ba-f395e888e60e.png" />
+<br /><img width="799" alt="Screenshot 2022-06-13 at 9 57 16 PM" src="https://user-images.githubusercontent.com/59466885/173400731-acb084df-31a7-4858-b6ba-f395e888e60e.png" />
 
-### Certificates and Secrets
+## Certificates and Secrets
 
-- Go to "Certificates and Secrets" add a new secret and note down the "value" of this secret.
+Then, go to **Certificates and Secrets**, add a new secret, and note down the value of this secret.
 
-## Note down Azure AD params for Prophecy IDE configuration
+## Client ID
 
-### Client ID
-
-- Click on "Overview" on the left-hand side and note down the Application(client) ID. This will be used as the client ID in Prophecy IDE
-
-### Client Secret
-
-- You have already noted down the "value" of the secret you create earlier.
+Finally, click on **Overview** on the left-hand side and note down the Application (client) ID.
 
 ## Configure Prophecy to connect with Azure Active Directory
 
-- Login to Prophecy IDE using admin user
-- Go to settings and Admin tab and choose "Authentication Provider" as Azure Active Directory and fill up the information you noted down earlier. Save it.
-- Logout and you will be able to see "Login with Azure Active Directory" option. Now users your Azure AD users will be able to login to Prophecy IDE using "Login with Azure Active Directory" option
+1. Log in to Prophecy as an admin user.
+2. Navigate to the **SSO** tab of the Prophecy **Settings** page.
+3. Under **Authentication Provider**, select Azure Active Directory.
+4. Enter the **Client ID** and the **Client Secret** at minimum.
+5. Click **Save**.
+
+Once you have logged out, you will be able to see a **Login with Azure Active Directory** option. Now, your Azure AD users will be able to login to Prophecy with this option.

@@ -53,6 +53,11 @@ const config = {
       zoom: {
         selector: ".markdown :not(em) > img",
       },
+      docs: {
+        sidebar: {
+          autoCollapseCategories: true,
+        },
+      },
       navbar: {
         title: "",
         logo: {
@@ -132,7 +137,19 @@ const config = {
             from: "/developer/videos/",
           },
           {
-            to: "/concepts/copilot/enable-data-copilot",
+            to: "/getting-help/spark-cluster-details",
+            from: "/getting-started/getting-help/logs/config-sparkui",
+          },
+          {
+            to: "/getting-help/prophecy-details",
+            from: "/getting-started/getting-help/logs/",
+          },
+          {
+            to: "/getting-help/spark-cluster-details",
+            from: "/getting-started/getting-help/logs/config-sparknotebook",
+          },
+          {
+            to: "/copilot/enable-data-copilot",
             from: "/architecture/deployment/enable-data-copilot",
           },
           {
@@ -207,6 +224,42 @@ const config = {
             to: "/architecture/self-hosted/install-prophecy/installation-helm/",
             from: "/architecture/deployment/installation-guide",
           },
+          {
+            to: "/Orchestration/multi-jobs-trigger",
+            from: "/tutorials/Orchestration/multi-jobs-trigger",
+          },
+          {
+            to: "/Orchestration/reliable-ci-cd",
+            from: "/tutorials/Orchestration/reliable-ci-cd",
+          },
+          {
+            to: "/Orchestration/",
+            from: "/tutorials/Orchestration/",
+          },
+          {
+            to: "/Spark/gems/source-target/file/xlsx",
+            from: "/tutorials/Spark/excel",
+          },
+          {
+            to: "/Spark/",
+            from: "/tutorials/Spark/",
+          },
+          {
+            to: "/Spark/",
+            from: "/tutorials/videos/design-pipeline",
+          },
+          {
+            to: "/Spark/",
+            from: "/tutorials/videos/schedule-pipeline",
+          },
+          {
+            to: "/Spark/",
+            from: "/tutorials/videos/test-pipeline",
+          },
+          {
+            to: "/Spark/",
+            from: "/tutorials/videos/",
+          },
         ],
         /*
 
@@ -245,6 +298,17 @@ const config = {
           }
           if (existingPath.includes("/Orchestration")) {
             return [existingPath.replace("/Orchestration", "/low-code-jobs")];
+          }
+          if (existingPath.includes("/getting-help")) {
+            return [
+              existingPath.replace(
+                "/getting-help",
+                "/getting-started/getting-help",
+              ),
+            ];
+          }
+          if (existingPath.includes("/copilot")) {
+            return [existingPath.replace("/copilot", "/concepts/copilot")];
           }
           return undefined;
         },
