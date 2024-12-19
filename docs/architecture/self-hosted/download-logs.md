@@ -2,7 +2,7 @@
 title: Download logs
 id: download-logs
 description: Download Prophecy support logs
-sidebar_position: 5
+sidebar_position: 6
 tags:
   - download
   - support logs
