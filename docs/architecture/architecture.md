@@ -1,6 +1,7 @@
 ---
 title: Architecture
 id: architecture
+sidebar_class_name: hidden
 description: Describing the architecture of Prophecy and how it can integrate into your use cases
 tags: []
 ---

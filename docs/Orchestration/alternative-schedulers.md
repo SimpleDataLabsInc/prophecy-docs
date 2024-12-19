@@ -1,6 +1,7 @@
 ---
 title: Alternative Schedulers
 id: alternative-schedulers
+sidebar_position: 3
 description: Support for Alternative Orchestration Solutions
 tags:
   - jobs

@@ -67,7 +67,28 @@ The following is a list of options that are available while using XLSX as a **_T
 | Write Mode              | Write mode, same as underlying Spark write mode                     | False    | `"append"`    |
 | Parition Columns        | Columns to partition output files by                                | False    | (empty)       |
 
-## Example output
+## Writing a single output file
+
+When working with text-based files in Spark, your output isn't a single file but a directory containing multiple partitioned files due to Spark's distributed nature.
+
+For example, if you write to a location like **dbfs:/FileStore/Users/test/customers.xlsx**, you'll see the following in the DBFS:
+
+- A **customers.xlsx** directory.
+- Partitions within the **customers.xlsx** directory.
+
+Each partition is a separate valid XLSX file with a segment of the overall output data. If you want to output only a single file, you'll need to:
+
+1. Add a Repartition Gem in **Coalesce** mode with the **Partition Count** set to `1`.
+
+   ![Coalesce using Repartition](img/xlsx_tgt_5.5.png)
+
+2. Connect it between your second-to-last transformation and the `Target` Gem.
+
+   ![Attach coalesce before desired target](img/xlsx_tgt_6.png)
+
+After running, your output will still be a directory, but this time it will only contain a single output file.
+
+## Example code
 
 Below is a snippet of the optimized code that is generated when using the XLSX source.
 

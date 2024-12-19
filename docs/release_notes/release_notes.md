@@ -2,6 +2,7 @@
 title: Release Notes
 id: release_notes
 description: Prophecy release notes
+sidebar_class_name: hidden
 tags: []
 ---
 

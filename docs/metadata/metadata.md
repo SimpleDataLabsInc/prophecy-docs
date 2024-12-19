@@ -2,6 +2,7 @@
 title: Metadata
 id: metadata
 description: Metadata
+sidebar_class_name: hidden
 tags: []
 ---
 

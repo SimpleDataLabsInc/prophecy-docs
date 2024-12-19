@@ -2,7 +2,6 @@
 title: Multi Jobs Trigger
 id: multi-jobs-trigger
 description: Complex pipeline interactions and timing
-sidebar_position: 1
 tags:
   - scheduling
   - jobs
@@ -95,9 +94,3 @@ potential venue for the attacker. A better approach is to leverage Databricks se
 out [this guide](https://docs.databricks.com/security/secrets/secrets.html#create-a-secret-in-a-databricks-backed-scope)
 to learn how to create Databricks secrets.
 :::
-
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://fast.wistia.net/embed/iframe/rf59zd5fgv?videoFoam=true" title="Deploying Jobs Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
-<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
