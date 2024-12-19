@@ -19,7 +19,7 @@ Prophecy’s end-to-end platform makes data Pipeline development faster and acce
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-To learn more about what Data Copilot can do, see [Data Copilot AI capabilities](/concepts/copilot/copilot-ai-capabilities).
+To learn more about what Data Copilot can do, see [Data Copilot AI capabilities](/docs/copilot/copilot-ai-capabilities.md).
 
 ## Knowledge Graph
 
@@ -29,7 +29,7 @@ Data Copilot works by enhancing the user’s prompt using a knowledge graph. Eac
 
 Our knowledge graph includes metadata for a Project’s entities (such as Datasets, Schemas, Seeds, Models, and Pipelines) and the statistical usages of these entities. We built the knowledge graph intentionally to include metadata but not data. The Dataset structure is included in the knowledge graph but individual Dataset records are not.
 
-For more details, see [Data privacy with Data Copilot](/concepts/copilot/copilot-data-privacy).
+For more details, see [Data privacy with Data Copilot](/docs/copilot/copilot-data-privacy.md).
 
 ![Architecture](img/copilot_arch.png)
 
@@ -39,7 +39,7 @@ Prophecy sends the enhanced Prompt to OpenAI. The large language model (LLM) ret
 
 Data Copilot is available for all customers using Prophecy’s managed Public SaaS offering and uses the public SaaS version of OpenAI's Language model. Customers using the Private SaaS or on-prem offerings can enable Data Copilot as a flag in the deployment / upgrade configuration.
 
-For more details, see [Enable Data Copilot](/concepts/copilot/enable-data-copilot).
+For more details, see [Enable Data Copilot](/docs/copilot/enable-data-copilot.md).
 
 ## FAQ
 
@@ -71,7 +71,7 @@ Copilot features are included with Prophecy’s Spark and SQL offerings. There w
 
 #### Can I use my own private OpenAI instance?
 
-Yes! Administrators have the option to connect Prophecy Data Copilot to their private subscription OpenAI from the Kubernetes cluster where Prophecy services are running. For details on how to do this, see [Installation](/concepts/copilot/enable-data-copilot#installation).
+Yes! Administrators have the option to connect Prophecy Data Copilot to their private subscription OpenAI from the Kubernetes cluster where Prophecy services are running. For details on how to do this, see [Installation](/docs/copilot/enable-data-copilot.md#installation).
 
 #### Does Prophecy Data Copilot support text prompts in languages other than English?
 
