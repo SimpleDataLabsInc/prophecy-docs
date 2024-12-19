@@ -28,10 +28,10 @@ users increases by 10 times, the Prophecy deployment can be scaled appropriately
 
 The following are estimated recommended cluster sizes depending on the number of concurrent users:
 
-| Number of users           | 25       | 50       | 150       |
+| Number of users           | 25       | 50       | 100       |
 | ------------------------- | -------- | -------- | --------- |
-| CPUs                      | 44 vCPUs | 80 vCPUs | 230 vCPUs |
-| Memory                    | 86 GB    | 160 GB   | 460 GB    |
+| CPUs                      | 56 vCPUs | 96 vCPUs | 180 vCPUs |
+| Memory                    | 128 GB   | 256 GB   | 440 GB    |
 | Disk space (with backups) | 360 GB   | 720 GB   | 1440 GB   |
 
 :::info
