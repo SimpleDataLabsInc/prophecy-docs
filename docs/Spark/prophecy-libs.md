@@ -1,8 +1,8 @@
 ---
 title: Prophecy Libraries
 id: prophecy-libraries
-description: Prophecy library README
-sidebar_position: 2
+description: Learn about these small and lightweight utility libraries
+sidebar_position: 5
 tags: [functionality, compatibility, version, library, plib, plibs, license]
 ---
 
