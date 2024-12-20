@@ -10,7 +10,11 @@ tags:
   - target
 ---
 
-**Data Modeling** refers to the shaping of your data from the raw state all the way to a transformed final state. Data engineers are typically responsible for building tables that represent source data, transforming the data and saving as intermediate tables/views, and building final tables that can be queried by a BI tool and drive decision making for an organization.
+Models are based on SQL-native code and use the dbt Core™️ build system. Models define a single dataset, typically a table or view, and are stored as SQL select statements. Models are useful for transforming data directly in a data warehouse or for existing dbt users. They are best suited for data analytics and transformation needs.
+
+## Data modeling
+
+**Data modeling** refers to the shaping of your data from the raw state all the way to a transformed final state. Data engineers are typically responsible for building tables that represent source data, transforming the data and saving as intermediate tables/views, and building final tables that can be queried by a BI tool and drive decision making for an organization.
 
 Typically business logic is stored as SQL files.
 
@@ -64,6 +68,6 @@ Like Pipelines, Models can be configured, committed and released to [Git](/docs/
 
 Prophecy uses dbt Core™ as the underlying build system for SQL projects. Therefore, our concept of a Model is equivalent to dbt’s. You can read more about [dbt’s Models and their properties](https://docs.getdbt.com/docs/build/models). dbt supports two primary types of Models: SQL-based and Python-based. Today, Prophecy’s visual interface supports SQL Models only. If you’d like to define Python Models you can still use them within the code interface.
 
-#### What's next?
+## What's next?
 
-Now that you have an understanding of data Models as defined by Prophecy and dbt, get hands on with Models by [developing your first Model](/docs/getting-started/getting-started-with-low-code-sql.md#44-develop-your-first-model).
+Visit the [SQL](/SQL) documentation to learn more. You can also get started with [SQL on Databricks](/docs/getting-started/getting-started-with-low-code-sql.md) or [Snowflake](/docs/getting-started/getting-started-sql-snowflake.md).

@@ -11,7 +11,11 @@ tags:
   - datasets
 ---
 
-Fabric is a logical execution environment. Teams organize their data engineering into multiple environments such as _development_, _staging_, and _production_.
+Prophecy helps you develop data pipelines in high-quality Spark or SQL code—but what does Prophecy use to compute these pipelines? The first thing you need to understand before building any pipeline is that your pipeline must be connected to an **execution environment**.
+
+This is why **Fabrics** exist in Prophecy. Fabrics let Prophecy connect to specific execution environments.
+
+Prophecy provides a Prophecy-managed Fabric that can get you started with building your pipelines. However, you can also create your own Fabrics to connect to other execution environments, such as a Databricks workspace.
 
 ## Common Usage Pattern
 
