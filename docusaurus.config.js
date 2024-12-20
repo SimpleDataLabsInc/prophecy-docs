@@ -221,7 +221,7 @@ const config = {
             from: "/architecture/deployment/private-saas/generate-api-key",
           },
           {
-            to: "/architecture/self-hosted/installation-helm/",
+            to: "/architecture/self-hosted/install-prophecy/installation-helm/",
             from: "/architecture/deployment/installation-guide",
           },
           {
