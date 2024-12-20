@@ -11,7 +11,7 @@ tags:
 
 Dependencies allow you to make use of third-party or custom code in your data Pipelines and Jobs. Dependencies can be
 written in Java, Scala, or PySpark, and can be connected to your data Pipelines by pointing
-to [Maven](https://mvnrepository.com/) or [PyPi](https://pypi.org/) coordinates.
+to [Maven](https://mvnrepository.com/) or [PyPI](https://pypi.org/) coordinates.
 
 ## Storage
 
