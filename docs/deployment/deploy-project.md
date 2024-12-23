@@ -1,6 +1,7 @@
 ---
 title: Develop and deploy a Project
 id: project
+sidebar_label: Develop a Project
 description: Learn how to use Git for deployment
 sidebar_position: 1
 tags:
