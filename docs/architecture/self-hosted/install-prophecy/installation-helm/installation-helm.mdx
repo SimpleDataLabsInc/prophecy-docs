@@ -16,24 +16,27 @@ Installation requirements and Helm chart values are outlined in this page.
 
 For an example step-by-step installation, visit [Installation on AWS](install-on-aws).
 
-## Requirements
+### Kubernetes cluster requirements
 
-To install Prophecy, you need:
+- **Kubernetes Version**: 1.21 or later.
+- **Namespace**: Dedicated namespace for Prophecy installation.
+- **Permissions**: Ability to install custom resources (CRDs) or deploy an additional provided Helm chart.
+- **Cluster Configuration**: Supports multi-AZ or single-AZ mode.
+- **Block Storage**: Required; in multi-AZ mode, set volume binding mode to `waitforfirstconsumer`.
+- **Persistent Storage**: Dynamic provisioning (e.g., gp2) required.
 
-- Kubernetes version 1.21 or later.
-- A namespace in Kubernetes cluster where you will install Prophecy.
-- Permission to install custom resources, or CRDs. Alternatively, you can deploy a single Helm chart that can be shared on request.
-- Block storage in the Kubernetes cluster.
-- Kubernetes cluster configured in either **multi-AZ** or **single-AZ** mode. For multi-AZ mode, the block storage has to have the volume binding mode set to `waitforfirstconsumer`.
-- Persistent storage with dynamic provisioning (like `gp2`).
-- [Helm](https://helm.sh/docs/intro/quickstart/) for Prophecy installation.
+### Helm requirements
 
-Minimum service requirements:
+- **[Helm](https://helm.sh/docs/intro/quickstart/)**: Must be installed to deploy Prophecy.
+- **[Custom Domain Hosting](#custom-domain-names)**: Requires SSL certificates and DNS configuration; include during Helm installation.
+- **[Private Container Registry](#private-container-registry)**: Pull images from `gcr.io/prophecy-share` and push to your private registry. Set `global.repository` during Helm installation.
 
-| Namespace     | Description                                                                 | # Cores  | # RAM | # Block Storage |
-| ------------- | --------------------------------------------------------------------------- | -------- | ----- | --------------- |
-| Control Plane | Main services (front-end, code editor, metadata, lineage, etc.)             | 40 Cores | 78GB  | 160GB           |
-| Platform      | Backup (twice a day, configurable), monitoring, logging services (optional) | 4 Cores  | 8GB   | 200GB           |
+### Minimum resource requirements
+
+| Components             | Description                                                     | # Cores  | # RAM | # Block Storage |
+| ---------------------- | --------------------------------------------------------------- | -------- | ----- | --------------- |
+| Prophecy core services | Main services (front-end, code editor, metadata, lineage, etc.) | 40 Cores | 78GB  | 160GB           |
+| Platform               | Backups, monitoring, logging services (optional)                | 4 Cores  | 8GB   | 200GB           |
 
 ## Install Prophecy
 
@@ -72,13 +75,13 @@ Prophecy is installed via Helm chart called the Prophecy-installer. The followin
 
 Here are some configurations that are commonly changed from the default.
 
-#### Internal repository
-
-During the Helm installation, docker images are pulled from Prophecy's public Google Container Registry `gcr.io/prophecy-share`. If you want to use your own internal container registry, you can specify it by setting the `global.repository` value during installation. Make sure to download the images from the public GCR first.
-
 #### Nginx ingress controller
 
 By default, Prophecy will install its own managed Nginx ingress controller during the Helm installation. If you want to use your own Nginx ingress controller already installed on your Kubernetes cluster, you can do so if it supports external service exposure via a LoadBalancer. You'll have to set `global.disableIngressCreation` to true, and set `global.ingressController.class` to the appropriate name.
+
+#### Private container registry
+
+During the Helm installation, docker images are pulled from Prophecy's public Google Container Registry `gcr.io/prophecy-share`. If you want to use your own private container registry, you can specify it by setting the `global.repository` value during installation. Make sure to push all the images to your private registry first.
 
 #### Custom domain names
 
