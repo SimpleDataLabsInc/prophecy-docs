@@ -260,6 +260,10 @@ const config = {
             to: "/Spark/",
             from: "/tutorials/videos/",
           },
+          {
+            to: "/concepts/project/gems/",
+            from: "/concepts/gems/",
+          },
         ],
         /*
 
