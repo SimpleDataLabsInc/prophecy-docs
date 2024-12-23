@@ -1,7 +1,7 @@
 ---
 title: Models
 id: Model
-description: SQL models define a single target table or view.
+description: SQL models define a single target table or view
 sidebar_position: 2
 tags:
   - concepts

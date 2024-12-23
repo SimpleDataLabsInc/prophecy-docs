@@ -12,7 +12,7 @@ A **Project** in Prophecy is the core unit for developing, organizing, and deplo
 
 ## Project types
 
-When you create a project, you must choose a **Project Type**: Spark/Python, Spark/Scala, or SQL. Visually designed pipelines will generate code in the selected Project output language.
+When you create a project, you must choose a **project type**: Spark/Python, Spark/Scala, or SQL. Visually designed pipelines will generate code in the selected Project output language.
 
 ![Project language](../img/project_language.png)
 
@@ -32,4 +32,13 @@ Open any Pipeline (left) or Model (right) in your Project. Simply toggle from vi
 
 Version control lets users and teams collaborate on Projects, contribute simultaneously, and reuse code.
 
-## Project deployment
+## What's next
+
+Learn about Project components in the following pages:
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```

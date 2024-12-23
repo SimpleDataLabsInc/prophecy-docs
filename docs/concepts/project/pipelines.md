@@ -1,7 +1,7 @@
 ---
 title: "Pipelines"
 id: pipeline
-description: Spark Pipelines represent the data journey and can define multiple targets.
+description: Flows that represent the data journey
 sidebar_position: 1
 tags:
   - concepts
