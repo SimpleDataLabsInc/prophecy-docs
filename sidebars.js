@@ -105,7 +105,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Release and deploy",
+      label: "Release and Deploy",
       collapsible: true,
       collapsed: true,
       link: { type: "doc", id: "deployment/Deployment" },
