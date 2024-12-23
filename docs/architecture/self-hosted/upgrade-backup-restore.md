@@ -31,6 +31,12 @@ To upgrade Prophecy, you can do so in **Settings > Admin**.
 
 Backups can be triggered manually via the API, or they can be configured to run automatically.
 
+:::info
+
+Backup storage depends on [object store configurations](./configurations/configure-object-store.md). Make sure to configure these before proceeding below.
+
+:::
+
 ### On-demand backups
 
 You can use the Backup API to start a backup. See [Generate API Key](./generate-api-key/) if you need an API key.
@@ -71,6 +77,10 @@ Below is a list of supported variables that you can change.
 | `backupFrequency`           | How frequently to purge old user events from the internal database. Defaults to daily at 00:00. Uses [6-digit CRON](https://pkg.go.dev/github.com/robfig/cron#hdr-CRON_Expression_Format) | `0 0 0 * * *` |
 | `backupRetentionCount`      | Number of last `N` backups to retain.                                                                                                                                                     | `30`          |
 | `enableRegularBackups`      | State of automated backup creation.                                                                                                                                                       | `false`       |
+
+### View past backups
+
+You can view a history of backups in **Settings > Admin > Backup**.
 
 ### Additional backup APIs
 

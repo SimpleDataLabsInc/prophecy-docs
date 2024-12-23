@@ -183,3 +183,22 @@ Gems table page
   line-height: 1;
   padding: var(--ifm-badge-padding-vertical) var(--ifm-badge-padding-horizontal);
 }
+
+/* Sidebar styles from https://github.com/facebook/docusaurus/pull/6519 */
+.sidebar-title {
+  font-size: 0.8rem;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ifm-color-gray-600);
+}
+
+.sidebar-divider {
+  border-top: 1px solid var(--ifm-color-gray-200);
+  display: block;
+  margin: 0.5rem 0.5rem 0.25rem;
+}
+
+.hidden {
+  display: none !important;
+}
