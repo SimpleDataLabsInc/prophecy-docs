@@ -5,15 +5,14 @@ description: Prophecy Streaming Gems
 tags: [streaming, gems, source, target]
 ---
 
-Prophecy provides native support for streaming data running on Spark Structured Streaming. 
-The streaming capability is available for `Python` projects that do not use UC Shared clusters. 
+Prophecy provides native support for streaming data running on Spark Structured Streaming.
+The streaming capability is available for `Python` projects that do not use UC Shared clusters.
 
-| Project Type                      | Spark Cluster    | Structured Streaming Capability   |
-| --------------------------------- | ---------------- | --------------------------------- |
-| Python                            | Single User Mode | Supported                         |
-| Python                            | UC Shared Mode   | Not supported yet                 |
-| Scala                             | Any Mode         | Not supported yet                 |
-
+| Project Type | Spark Cluster    | Structured Streaming Capability |
+| ------------ | ---------------- | ------------------------------- |
+| Python       | Single User Mode | Supported                       |
+| Python       | UC Shared Mode   | Not supported yet               |
+| Scala        | Any Mode         | Not supported yet               |
 
 Streaming pipelines work differently from batch pipelines:
 

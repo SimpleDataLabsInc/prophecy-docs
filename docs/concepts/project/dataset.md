@@ -67,3 +67,9 @@ As part of the Project Release process, Datasets within that Project are _publis
    ![Common Datasets](./img/dataset/pub4.png)
 
 We can see the `DI_Common_Python` Project's Datasets, and the fact that they're listed as `Read-only`. This means that `DE_Team` can _use_ the Datasets, but cannot _edit_ them.
+
+:::info
+
+For regular usage, we suggest having only one instance of a particular Dataset within a Pipeline, as the Dataset's properties and underlying data can change each time the dataset is read or written.
+
+:::
