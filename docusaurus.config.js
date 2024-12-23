@@ -264,6 +264,10 @@ const config = {
             to: "/concepts/project/dataset",
             from: "/concepts/dataset",
           },
+          {
+            to: "/architecture/feature-matrix",
+            from: "/feature-matrix",
+          },
         ],
         /*
 
