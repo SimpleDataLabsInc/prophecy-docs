@@ -78,6 +78,22 @@ Below is a list of supported variables that you can change.
 | `backupRetentionCount`      | Number of last `N` backups to retain.                                                                                                                                                     | `30`          |
 | `enableRegularBackups`      | State of automated backup creation.                                                                                                                                                       | `false`       |
 
+You can also use the Backup Schedule API to schedule a backup.
+
+Example:
+
+```
+curl -s 'https://<prophecy-env-url>/api/feature/getConfig?configType=backup' \
+  -H 'cookie: prophecy-token=<prophecy-access-token>' \
+  | jq -r '.data.backupConfig.backupFrequency'
+```
+
+Response:
+
+```
+0 0 0 * * *
+```
+
 ### View past backups
 
 You can view a history of backups in **Settings > Admin > Backup**.
@@ -99,6 +115,10 @@ Here is a list of additional APIs for backups. One sample call may look like:
 | **GET** `https://{prophecy-url}/api/backup/status` | This API returns the status of the backup with a certain timestamp. If there is no timestamp passed and there is an ongoing backup, the status for ongoing backup is returned.                                                                                                              | `timestamp`   |
 | **GET** `https://{prophecy-url}/api/backup/list`   | This API returns the list of available backups.                                                                                                                                                                                                                                             | None expected |
 | **GET** `https://{prophecy-url}/api/backup/delete` | This API attempts the delete the backup data (local and upstream) and also the metadata (database entries) associated with it. Note that in case of `enableRegularBackups` set to true, backups are older than `backupRetentionCount` in reverse order are garbage collected automatically. | `timestamp`   |
+
+:::tip
+You can add `| jq '.data["backup-list"] | map(select(.status == "Success"))'` to your `backup/list` API request to retrieve a list of only usable backups. Conversely, use `| jq '.data["backup-list"] | map(select(.status != "Success"))'` to retrieve a list of failed backups.
+:::
 
 ## Restore
 
