@@ -13,7 +13,7 @@ tags:
 
 <h3><span class="badge">SQL Gem</span></h3>
 
-Let's deconstruct a commonly used Transformation, the Aggregate Gem. Follow along in the `HelloWorld_SQL` Project.
+Together let's deconstruct a commonly used Transformation, the Aggregate Gem. Follow along in the `HelloWorld_SQL` Project.
 
 ## Using the Gem
 
