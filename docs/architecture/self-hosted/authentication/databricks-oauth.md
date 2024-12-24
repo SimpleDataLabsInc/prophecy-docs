@@ -20,6 +20,8 @@ Databricks supports the following OAuth use cases:
 - Works with Spark (clusters) as well as SQL (warehouses).
 - Works with one or more Prophecy Fabrics.
   - Allow users to quickly establish multiple Prophecy Fabrics, each linked to a separate Databricks schema, leveraging the same OAuth connection/tokens.
+- Supports authentication with Service Principals, allowing Prophecy to perform release tasks without requiring user interaction.
+- Enables fields for OAuth configuration (Service Principal Client ID and Client secret) when creating Fabrics, supporting environments that need automated administration.
 
 ## How it works
 
@@ -33,7 +35,7 @@ Prophecy stores the refresh token, which is used to renew the refresh token itse
 
 The tokens are stored securely, with access limited to authorized Prophecy processes. This includes encrypting tokens before storing them in our database, in the same way that we encrypt other credentials that Prophecy stores.
 
-### Pipeline and Job configuration
+### Pipeline and Job interactions
 
 As mentioned previously, members of your team developing Pipelines and Jobs can leverage their own personal identity via OAuth to gain access to all Databricks resources from within Prophecy. That means that whatever permissions they have within Databricks (including permissions governed by Unity Catalog) will be enforced in Prophecy as well.
 
@@ -60,6 +62,14 @@ To proceed through the login overlays, complete the following steps:
 You only need to perform this authentication periodically, depending on the OAuth timeout settings within Databricks. Your Databricks Account Administrator can adjust the timeout setting.
 
 :::
+
+#### Run Job configuration
+
+When configuring a Job for SQL, the the Service Principal specified during Fabric creation will be used instead of the user specified under Run As.
+
+![Job configuration](img/data-bricks-oauth-job-configuration.png)
+
+A warning display will include the name or ID of the Service Principal that will be used.
 
 ### Project Release and Deployment
 
@@ -89,11 +99,13 @@ As the Databricks Account Admin, complete the following steps:
 
 Your Prophecy Team Admin must paste the credentials obtained by your Databricks Account Admin into the Prophecy Admin Setting. Also, they must configure new Spark and SQL Fabrics within Prophecy with OAuth details.
 
+This will enable all users on the Prophecy instance to use Databricks OAuth authentication.
+
 As the Prophecy Team Admin, complete the following steps:
 
-1. Navigate to **Admin Settings**.
+1. Navigate to **Admin Settings > Security**.
 
-2. Under **Databrick OAuth Application (U2M)**, paste the **Client ID** and the **Client Secret**.
+2. Under **Databrick OAuth Application (U2M)**, paste the **Client ID** and the **Client Secret** into the respective fields.
 
    <img
    src={require("./img/data-bricks-oauth-admin.png").default}
@@ -101,7 +113,7 @@ As the Prophecy Team Admin, complete the following steps:
    width="75%"
    />
 
-3. When creating new Fabrics, select **OAuth**, and enter the **Service Principal Client ID** and **Service Principal Client Secret**.
+3. When creating new Fabrics, select **OAuth**, and enter the **Service Principal Client ID** and **Service Principal Client Secret** into the respective fields.
 
    <img
    src={require("./img/data-bricks-oauth-service-principal.png").default}
