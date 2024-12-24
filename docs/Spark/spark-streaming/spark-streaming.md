@@ -5,7 +5,7 @@ description: Prophecy Streaming Gems
 tags: [streaming, gems, source, target]
 ---
 
-Prophecy 2.7 introduces native support for streaming data running on Spark Structured Streaming. The streaming capability is available for `Python` projects. Support for Scala will be added in the future.
+Prophecy provides native support for streaming data running on Spark Structured Streaming. This documentation assumes you are already familiar with how Structured Streaming works. For more information, you can consult the Structured Streaming documentation [here](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html).
 
 Streaming pipelines work differently from batch pipelines:
 
@@ -14,7 +14,13 @@ Streaming pipelines work differently from batch pipelines:
 3. Streaming applications handle transient data rather than maintain the entire data. Aggregations and joins require watermarking for maintaining a limited state.
 4. All Streaming Datasets can behave similarly to Batch datasets using the Spark `ForEachBatch`. More on `ForEachBatch` [here](https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.sql.streaming.DataStreamWriter.foreachBatch.html) Note that `forEachBatch` is not supported by Prophecy.
 
-This documentation assumes you are already familiar with how Structured Streaming works. For more information, you can consult the Structured Streaming documentation [here](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html).
+The streaming capability is available for `Python` projects that do not use UC Shared clusters.
+
+| Project Type | Spark Cluster Access Mode | Spark Cluster Type | Structured Streaming Capability |
+| ------------ | ------------------------- | ------------------ | ------------------------------- |
+| Python       | Single User               | UC, legacy         | Supported                       |
+| Python       | Shared                    | UC                 | Not supported yet               |
+| Scala        | Any Mode                  | Any type           | Not supported yet               |
 
 ## Spark Structured Streaming using Prophecy IDE
 

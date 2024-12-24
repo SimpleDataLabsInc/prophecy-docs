@@ -260,6 +260,18 @@ const config = {
             to: "/Spark/",
             from: "/tutorials/videos/",
           },
+          {
+            to: "/concepts/project/gems/",
+            from: "/concepts/gems/",
+          },
+          {
+            to: "/concepts/project/dataset",
+            from: "/concepts/dataset",
+          },
+          {
+            to: "/architecture/feature-matrix",
+            from: "/feature-matrix",
+          },
         ],
         /*
 
