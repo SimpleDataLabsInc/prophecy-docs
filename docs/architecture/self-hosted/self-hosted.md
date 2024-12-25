@@ -42,6 +42,108 @@ For interactive and jobs deployment to Airflow, Prophecy requires a customer-man
   and **logging** (based on Prometheus, Grafana and alert-manager, etc.).
 - You can optionally **redirect the logs and metrics** to your own logging services.
 
+## Prophecy services
+
+You can use the Running Services API to retrieve the status of your Prophecy services. 200 denotes that the service is running, while 404 denotes that the service is disabled. Any other error code denotes a service failure.
+
+### Running Services API
+
+Example:
+
+```
+curl 'https://<prophecy-env-url>/athena/api/v1/prophecy/status'
+```
+
+<details>
+  <summary>Response:</summary>
+
+```
+{
+ "anyServiceDown": false,
+ "data": {
+  "services": [
+   {
+    "isPrimary": true,
+    "name": "App",
+    "statusCode": 200
+   },
+   {
+    "isPrimary": true,
+    "name": "Metadata",
+    "statusCode": 200
+   },
+   {
+    "isPrimary": false,
+    "name": "Pipeline/Jobs Editor",
+    "statusCode": 200
+   },
+   {
+    "isPrimary": false,
+    "name": "Prophecy Managed Git",
+    "statusCode": 200
+   },
+   {
+    "isPrimary": false,
+    "name": "Execution",
+    "statusCode": 200
+   },
+   {
+    "isPrimary": false,
+    "name": "CI / CD",
+    "statusCode": 200
+   },
+   {
+    "isPrimary": false,
+    "name": "Lineage",
+    "statusCode": 200
+   },
+   {
+    "isPrimary": false,
+    "name": "Search",
+    "statusCode": 404
+   },
+   {
+    "isPrimary": false,
+    "name": "Kafka",
+    "statusCode": 404
+   },
+   {
+    "isPrimary": false
+   },
+   {
+    "isPrimary": false,
+    "name": "Transpiler",
+    "statusCode": 404
+   },
+   {
+    "isPrimary": false,
+    "name": "Data Quality",
+    "statusCode": 404
+   },
+   {
+    "isPrimary": false,
+    "name": "Data Copilot",
+    "statusCode": 404
+   },
+   {
+    "isPrimary": false,
+    "name": "Sandboxing",
+    "statusCode": 200
+   },
+   {
+    "isPrimary": false,
+    "name": "Database Connectivity",
+    "statusCode": 200
+   }
+  ]
+ },
+ "isProphecyDown": false,
+ "success": true
+}
+```
+
+  </details>
+
 To learn more about installation methods and management, see the following pages:
 
 ```mdx-code-block
