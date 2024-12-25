@@ -65,11 +65,11 @@ You only need to perform this authentication periodically, depending on the OAut
 
 #### Run Job configuration
 
-When configuring a Job for SQL, the the Service Principal specified during Fabric creation will be used instead of the user specified under Run As.
+Scheduled jobs for SQL will run as the Service Principal specified in the Fabric, instead of the user specified under Run As. Adhoc jobs will run as the user.
 
 ![Job configuration](img/data-bricks-oauth-job-configuration.png)
 
-A warning display will include the name or ID of the Service Principal that will be used.
+In Airflow and Databricks Job IDE, a warning will display if any SQL Fabric being used doesn't contain Service Principal OAuth Credentials yet.
 
 ### Project Release and Deployment
 
