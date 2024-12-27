@@ -10,7 +10,9 @@ tags:
   - target
 ---
 
-Models are based on SQL-native code and use the dbt Core™️ build system. Models define a single dataset, typically a table or view, and are stored as SQL select statements. Models are useful for transforming data directly in a data warehouse or for existing dbt users. They are best suited for data analytics and transformation needs.
+Models are based on SQL-native code and use the dbt Core™️ build system. Models define a single dataset, typically a table or view, and are useful for transforming data directly in a data warehouse or for existing dbt users. They are best suited for data analytics and transformation needs.
+
+You can build Models from a **visual** or **code** interface. When using the visual interface, Model components are automatically compiled into SQL select statements that you can reuse and customize.
 
 ## Data modeling
 

@@ -8,6 +8,13 @@ tags:
   - Git
 ---
 
+One way to align Prophecy with your DevOps practices is to utilize Git. This looks like:
+
+- **Pipelines stored as code.** Prophecy's code editor stores visual data Pipelines as high-quality code on Git.
+- **Metadata as code.** Metadata stored on Git includes metadata from projects like workflows, schedules, and datasets. It also includes computed metadata such as column-level lineage.
+- **Collaboration, automation, and reviews.** These practices are enabled because of Git.
+- **Git versioning.** Given that data projects including metadata are stored together on Git, you can traverse across time.
+
 You must connect a Git account and authorize the Prophecy OAuth App in order to make commits and other changes to your Prophecy Project.
 
 ## How to connect to external Git
