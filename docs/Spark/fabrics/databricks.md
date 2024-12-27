@@ -23,9 +23,9 @@ Please refer to the video below for a step-by-step example.
 
 - **Databricks Credentials** - Here you will provide your Databricks Workspace URL and [Personal Access Token](https://docs.databricks.com/dev-tools/api/latest/authentication.html#generate-a-personal-access-token) (PAT). The PAT must have permission to attach clusters. If you'd like to create clusters or read/write data from Prophecy, then these permissions should be enabled for the PAT as well. Keep in mind each user will need to use their own PAT in the Fabric. Prophecy respects the permissions scoped to each user.
 - **Cluster Details** - Here you would need to provide the [Databricks Runtime version](https://docs.databricks.com/runtime/dbr.html#databricks-runtime), Executor and Drive Machine Types and Termination Timeout if any. These cluster details will be used when creating a cluster via Prophecy during Interactive development and for job clusters during Scheduled Databricks Job runs.
-:::caution
-Unity Catalog (UC) clusters in Shared access mode have [particular limitations](https://docs.databricks.com/en/compute/access-mode-limitations.html#shared-access-mode-limitations-on-unity-catalog) that prevent some Prophecy features from working as expected. These include the job progress bar and several Gems using Prophecy's batch capabilities, as well as all streaming capabilities. 
-:::
+  :::caution
+  Unity Catalog (UC) clusters in Shared access mode have [particular limitations](https://docs.databricks.com/en/compute/access-mode-limitations.html#shared-access-mode-limitations-on-unity-catalog) that prevent some Prophecy features from working as expected. These include the job progress bar and several Gems using Prophecy's batch capabilities, as well as all streaming capabilities.
+  :::
 - **Job sizes** - User can create Job sizes here using which clusters can be spawned while testing through prophecy IDE. Here you can provide Cluster mode, Databricks Runtime version, total number of the Executors, Core and Memory for them, etc. This provides all the options which are available on Databricks while spawning clusters through Databricks. We recommend using the smallest machines and smallest number of nodes appropriate for your use case.
 
 ![Editing a Job](img/job_size_new.png)

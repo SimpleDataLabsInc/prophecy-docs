@@ -10,7 +10,8 @@ tags:
   - data
   - generator
 ---
-import Requirements from "../\_gem-requirements.mdx";
+
+import Requirements from "../../../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
 
