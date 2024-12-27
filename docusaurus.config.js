@@ -149,8 +149,12 @@ const config = {
             from: "/getting-started/getting-help/logs/config-sparknotebook",
           },
           {
-            to: "/copilot/enable-data-copilot",
+            to: "/architecture/self-hosted/enable-data-copilot",
             from: "/architecture/deployment/enable-data-copilot",
+          },
+          {
+            to: "/architecture/self-hosted/enable-data-copilot",
+            from: "/copilot/enable-data-copilot",
           },
           {
             to: "/architecture/self-hosted/authentication/active_directory",
