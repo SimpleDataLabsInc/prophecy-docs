@@ -54,3 +54,21 @@ Workloads on unsupported Prophecy versions may continue to run, but Prophecy doe
 | GA, full support for Extended Maintenance releases | Critical stability and security fixes are backported only for EM releases.                         |
 | End of support                                     | If a version is unsupported, then workloads running on these versions receive no Prophecy support. |
 | End of Life                                        | Prophecy reserves the right to completely remove a release version at any time after support ends. |
+
+## Prophecy version
+
+You can use the Software Version API to retrieve your current Prophecy version number.
+
+### Software Version API
+
+Example:
+
+```
+curl -s 'https://<prophecy-env-url>/athena/api/v1/cluster' | jq -r .current_version.controlplane_version
+```
+
+Response:
+
+```
+3.4.1.0
+```
