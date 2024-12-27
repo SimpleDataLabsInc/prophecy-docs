@@ -24,12 +24,6 @@ const sidebars = {
       value: '<span class="sidebar-divider" />',
     },
     {
-      type: "html",
-      className: "sidebar-title",
-      value: "Overview",
-      defaultStyle: true,
-    },
-    {
       type: "category",
       label: "Quick starts",
       collapsible: true,
@@ -64,12 +58,6 @@ const sidebars = {
     {
       type: "html",
       value: '<span class="sidebar-divider" />',
-    },
-    {
-      type: "html",
-      className: "sidebar-title",
-      value: "Guides",
-      defaultStyle: true,
     },
     {
       type: "category",
