@@ -2,7 +2,7 @@
 title: Flatten Schema
 id: flattenschema
 description: Flatten nested data
-sidebar_position: 4
+sidebar_position: 5
 tags:
   - gems
   - schema
