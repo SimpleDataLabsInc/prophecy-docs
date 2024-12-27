@@ -8,7 +8,9 @@ tags:
   - pipelines
 ---
 
-Pipelines are based on Spark-native code, allowing users to utilize Spark's capabilities for data transformations. They are ideal for Spark environments like Databricks or EMR, particularly for tasks such as complex data ingestion (e.g., loading data from Salesforce or JDBC), handling advanced data transformations (e.g., working with complex data types), and supporting machine learning workflows.
+Pipelines are groups of data transformations that you can build from a **visual** or **code** interface. When using the visual interface, each component of a Pipeline is automatically compiled into code that you can reuse and customize.
+
+Under the hood, Pipelines are based on Spark-native code. Pipelines are ideal for Spark environments like Databricks or EMR, particularly for tasks such as complex data ingestion (e.g., loading data from Salesforce or JDBC), handling advanced data transformations (e.g., working with complex data types), and supporting machine learning workflows.
 
 ## Actions
 
