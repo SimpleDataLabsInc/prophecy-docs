@@ -1,6 +1,6 @@
 ---
 title: Orchestration with Airflow
-id: airflow
+id: airflow-tutorial
 description: A tutorial on orchestrating Spark and SQL jobs with Airflow
 sidebar_position: 3
 tags:

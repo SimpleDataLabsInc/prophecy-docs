@@ -276,6 +276,50 @@ const config = {
             to: "/architecture/feature-matrix",
             from: "/feature-matrix",
           },
+          {
+            to: "/Orchestration/airflow/airflow-tutorial",
+            from: "/getting-started/airflow",
+          },
+          {
+            to: "/concepts/metadata",
+            from: "/metadata/metadata-connections",
+          },
+          {
+            to: "/concepts/git",
+            from: "/metadata/git",
+          },
+          {
+            to: "/concepts/git",
+            from: "/metadata/git/git-commit",
+          },
+          {
+            to: "/concepts/git",
+            from: "/metadata/git/git-merge",
+          },
+          {
+            to: "/concepts/git/pr-templates",
+            from: "/metadata/pr-templates",
+          },
+          {
+            to: "/concepts/git",
+            from: "/metadata/git/git-fork",
+          },
+          {
+            to: "/concepts/git/git-resolve",
+            from: "/metadata/git/git-resolve",
+          },
+          {
+            to: "/getting-help/prophecyAPI",
+            from: "/metadata/prophecyAPI",
+          },
+          {
+            to: "/settings/audit-logging",
+            from: "/metadata/audit-logging",
+          },
+          {
+            to: "/settings/teamuser",
+            from: "/concepts/teamuser",
+          },
         ],
         /*
 
@@ -325,6 +369,9 @@ const config = {
           }
           if (existingPath.includes("/copilot")) {
             return [existingPath.replace("/copilot", "/concepts/copilot")];
+          }
+          if (existingPath.includes("/metadata/lineage")) {
+            return [existingPath.replace("/metadata/lineage", "/lineage")];
           }
           return undefined;
         },
