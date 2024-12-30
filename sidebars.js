@@ -109,7 +109,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Settings and Admin",
+      label: "Settings",
       collapsible: true,
       collapsed: true,
       link: { type: "doc", id: "settings/settings" },
