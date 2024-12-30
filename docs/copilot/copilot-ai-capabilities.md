@@ -2,7 +2,8 @@
 title: Data Copilot AI capabilities
 id: copilot-ai-capabilities
 description: The AI assistant capabilities for data Pipelines and models
-sidebar_position: 9
+sidebar_label: AI capabilities
+sidebar_position: 1
 tags:
   - concepts
   - copilot
