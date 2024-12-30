@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[41514],{66788:t=>{t.exports=JSON.parse('{"label":"commit","permalink":"/tags/commit","allTagsPath":"/tags","count":1,"items":[{"id":"metadata/git/git-commit","title":"Commit changes","description":"Source Control","permalink":"/metadata/git/git-commit"}]}')}}]);
