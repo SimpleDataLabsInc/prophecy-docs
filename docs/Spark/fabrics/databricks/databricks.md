@@ -1,6 +1,6 @@
 ---
 title: Databricks
-id: databricks-fabric
+id: databricks
 description: Configuring Databricks Fabric
 sidebar_position: 2
 tags:
@@ -28,7 +28,7 @@ Please refer to the video below for a step-by-step example.
   :::
 - **Job sizes** - User can create Job sizes here using which clusters can be spawned while testing through prophecy IDE. Here you can provide Cluster mode, Databricks Runtime version, total number of the Executors, Core and Memory for them, etc. This provides all the options which are available on Databricks while spawning clusters through Databricks. We recommend using the smallest machines and smallest number of nodes appropriate for your use case.
 
-![Editing a Job](img/job_size_new.png)
+![Editing a Job](./../img/job_size_new.png)
 
 In Json you can just copy-paste your compute Json from Databricks.
 

@@ -71,7 +71,7 @@ System Admins can define and monitor Metadata Connections for platform users. Th
 
 ### Add a Metadata Connection
 
-Once a [Fabric](/docs/Spark/fabrics/databricks.md) is **(1)created**, a **(2)Metadata Connection** is an optional step to enable syncing metadata for a particular cluster or warehouse accessible via the Data Provider. Add a Metadata Connection by providing the following details.
+Once a [Fabric](/docs/Spark/fabrics/databricks/databricks.md) is **(1)created**, a **(2)Metadata Connection** is an optional step to enable syncing metadata for a particular cluster or warehouse accessible via the Data Provider. Add a Metadata Connection by providing the following details.
 
 ![CreateConnection](./img/1-create-connection.png)
 
