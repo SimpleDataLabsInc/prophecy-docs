@@ -2,7 +2,6 @@
 title: Version Chart
 id: version_chart
 description: Prophecy library version chart
-sidebar_position: 3
 tags: [compatibility, matrix, version, chart, library, plib, plibs]
 ---
 
