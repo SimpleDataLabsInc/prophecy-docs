@@ -1,0 +1,9 @@
+|Catalog|ProphecyStreamingPython|Pending|Pending|Pending|
+|SplunkHEC|ProphecyStreamingPython|Pending|Pending|Pending|
+|Watermark|ProphecyStreamingPython|Pending|Pending|Pending|
+|csv|ProphecyStreamingPython|Not Supported|Not Supported|Not Supported|
+|delta|ProphecyStreamingPython|Not Supported|Not Supported|Not Supported|
+|json|ProphecyStreamingPython|Not Supported|Not Supported|Not Supported|
+|Kafka|ProphecyStreamingPython|Not Supported|Not Supported|Not Supported|
+|orc|ProphecyStreamingPython|Not Supported|Not Supported|Not Supported|
+|parquet|ProphecyStreamingPython|Not Supported|Not Supported|Not Supported|

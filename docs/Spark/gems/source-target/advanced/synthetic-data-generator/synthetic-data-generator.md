@@ -95,3 +95,8 @@ Be sure to configure the write mode for the target Gem. This is **very important
 :::caution
 The Data Generator only generates the data. If you want to store the data just connect the output to a target Gem and configure the location, write properties etc. The data generated is new for each run (execution). The target write mode can be error, overwrite, append, or ignore as desired.
 :::
+
+:::info
+Using Unity Catalog Shared Spark Clusters?
+Check [here](../../../../fabrics/databricks/ucshared.md) to see if this Gem is supported.
+:::

@@ -1,0 +1,14 @@
+|CustomAVROBatch||Supported|Supported|Supported|
+|ComplexCategoryReformat1||Supported|Supported|Supported|
+|CustomLimit||Supported|Supported|Supported|
+|CustomOrderByMainTransformCategory||Supported|Supported|Supported|
+|CustomReformatGem||Supported|Supported|Supported|
+|CustomSetOperation||Supported|Supported|Supported|
+|CustomSQLStatementMainCustomCategory||Supported|Supported|Supported|
+|DepAvro||Not Supported|Supported|Supported|
+|DepDedup||Not Supported|Supported|Supported|
+|DepLimit||Not Supported|Supported|Supported|
+|DepReformat||Not Supported|Supported|Supported|
+|DepReformatScala||Not Supported|Supported|Supported|
+|SQLStatement||Supported|Supported|Supported|
+|CustomParquetStreamingSource||Pending|Pending|Pending|

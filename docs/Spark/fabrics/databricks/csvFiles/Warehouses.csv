@@ -1,0 +1,11 @@
+|JDBC|ProphecySparkBasicsPython|Not Supported|0.2.39|0.2.39|
+|synapse|ProphecyWarehousePython |0.0.8|Not Supported|Not Supported|
+|Data Generator|ProphecySparkBasicsPython|Not Supported|Not Supported|0.2.39|
+|Kafka (Source)|ProphecySparkBasicsPython|0.2.39|0.2.39|0.2.39|
+|Kafka (Target)|ProphecySparkBasicsPython|0.2.39|0.2.39|0.2.39|
+|Bigquery (Source)|ProphecyWarehousePython |Not Supported|Not Supported|Not Supported|
+|Bigquery (Target)|ProphecyWarehousePython |Not Supported|Not Supported|Not Supported|
+|Cosmodb|ProphecyWarehousePython |TBD|TBD|TBD|
+|mongodb (Driver mongodb+srv)|ProphecyWarehousePython |Not Supported|Not Supported|Not Supported|
+|mongodb (Driver mongodb)|ProphecyWarehousePython |Not Supported|Not Supported|Not Supported|
+|Redshift|ProphecyWarehousePython |Not Supported|Not Supported|Not Supported|
