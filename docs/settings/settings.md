@@ -50,3 +50,7 @@ This page displays the Personal Access Tokens created to access Prophecy APIs se
 This page displays the current version and state of all services in Prophecy deployment.
 
 ![About](img/About.png)
+
+## What's next?
+
+Learn more about our [settings for self-managed Prophecy administration](docs/architecture/self-hosted/self-hosted.md).

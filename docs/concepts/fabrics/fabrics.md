@@ -51,7 +51,7 @@ Data Pipelines often require connections to operational databases, such as MySQL
 
 ### Metadata Connection
 
-Optionally, you can enhance your Fabric by creating a **Metadata Connection**. This is especially useful for users managing hundreds or thousands of tables in their data providers. For more details, see the [Metadata Connections documentation](/docs/metadata/metadata-connections.md).
+Optionally, you can enhance your Fabric by creating a **Metadata Connection**. This is especially useful for users managing hundreds or thousands of tables in their data providers. For more details, see the [Metadata Connections documentation](/docs/concepts/fabrics/metadata-connections.md).
 
 ### Credentials and Secrets
 
