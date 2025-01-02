@@ -24,6 +24,8 @@ We recommend that users store dependencies at the Project level whenever possibl
 Dependencies are natively saved within your build system files. For example, if you're using Scala, dependencies are saved in the
 **pom.xml** file. If you're using Python, dependencies are saved in the **setup.py** file.
 
+![Storage code for Scala and Python](img/dependencies-storage.png)
+
 ## View dependencies
 
 There are two ways to view all of your Project dependencies:

@@ -324,6 +324,10 @@ const config = {
             to: "/architecture/self-hosted/enable-data-copilot",
             from: "/concepts/copilot/enable-data-copilot",
           },
+          {
+            to: "/Spark/prophecy-libraries",
+            from: "/concepts/fabrics/prophecy-libraries",
+          },
         ],
         /*
 
