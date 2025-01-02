@@ -3,7 +3,7 @@ title: Reliable CI/CD with Prophecy
 image: img/reliable-ci-cd/dev-qa-prod.png
 id: reliable-ci-cd
 description: Explore Continuous Integration and Continuous Delivery within Prophecy
-sidebar_position: 5
+sidebar_position: 1
 tags:
   - cicd
   - deployment
@@ -113,7 +113,7 @@ duplicate your Job on the production Fabric, set appropriate Pipeline configurat
 
 That's it! Now you can commit any remaining changes and release your Pipeline. Prophecy automatically takes care of the release process, by building your Pipelines, running unit tests, and finally deploying the Pipeline JARs/wheels alongside the Job definition directly to Databricks (or AirFlow).
 
-If you're new to this process, check out, our [Git](/metadata/git) and Jobs deployment documentation.
+If you're new to this process, check out, our [Git](docs/concepts/git/git.md) and Jobs deployment documentation.
 
 <div style={{position: 'relative', 'padding-bottom': '56.25%', height: 0}}>
    <iframe src="https://www.loom.com/embed/28153636876f409184e6ba2dcbc8f273" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen

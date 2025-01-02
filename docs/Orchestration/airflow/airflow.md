@@ -75,11 +75,4 @@ Visual development for Airflow in Prophecy brings numerous advantages to data en
 
 ## What's next
 
-Let's delve deeper into the specifics of utilizing Airflow in Prophecy.
-
-```mdx-code-block
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
-<DocCardList items={useCurrentSidebarCategory().items}/>
-```
+Let's dive deeper into the specifics of utilizing Airflow in Prophecy.
