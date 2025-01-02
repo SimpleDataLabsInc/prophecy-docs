@@ -18,7 +18,33 @@ In Prophecy, you can use Databricks OAuth in two ways:
 - [User-to-Machine (U2M)](https://docs.databricks.com/en/dev-tools/auth/oauth-u2m.html). This method is used for **Pipeline development** and **Job configuration**. Any user can authenticate individually via Databricks or an Identity Provider (IDP) such as Okta, Entra ID, or Ping. In this case, users access data based on their individual identity and the permissions already defined within the Databricks Unity Catalog. No additional credentials are required for this flow.
 - [Machine-to-Machine (M2M)](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html). This method is used for **Automation** and **Project deployment**. Authentication is performed using a Service Principal in Databricks, which enables unattended operations (such as automated deployment). The permissions for this flow are determined by the Service Principal’s configuration within the Databricks Unity Catalog.
 
-You can configure Databricks OAuth individually across multiple Fabrics (U2M) or on an organizational scale in your Prophecy environment settings (M2M). This integration works with both Spark clusters and SQL warehouses.
+This integration works with both Spark clusters and SQL warehouses.
+
+## Requirements
+
+### Register Prophecy as an App Connection in Databricks
+
+As the Databricks Account Admin, complete the following steps:
+
+1. On Databricks, navigate to **Account Settings > App connections**.
+2. Create a new App connection for Prophecy. This process generates Databricks OAuth Application fields in the Prophecy side for your Prophecy Team Admin to complete.
+3. Under Client ID, copy your **OAuth Client ID** for the application, and share it with your Prophecy Team Admin.
+4. Under Client secret, select **Generate a client secret**. Share it with your Prophecy Team Admin.
+5. Click **Save**.
+
+### Add Databricks credentials to Prophecy
+
+Your Prophecy Team Admin must paste the credentials obtained by your Databricks Account Admin into the Prophecy Admin Setting. This will enable all users on the Prophecy instance to use Databricks OAuth authentication.
+
+To add the Databricks credentials to Prophecy:
+
+1. Navigate to **Admin Settings > Security**.
+2. Under **Databrick OAuth Application (U2M)**, paste the **Client ID** and the **Client Secret** into the respective fields.
+
+To configure new Spark and SQL Fabrics within Prophecy using OAuth:
+
+1. When creating a new Databricks Fabric, select **OAuth** under **Credentials**.
+2. Enter the **Service Principal Client ID** and **Service Principal Client Secret** into the respective fields, if necessary.
 
 ## Pipeline development and Job configuration
 
@@ -53,32 +79,6 @@ In the Airflow and Databricks Job IDE, a warning will display if the SQL Fabric 
 ## Project release and deployment
 
 Your Prophecy Team Admin is the only member of your team able to perform deployment of the Pipelines and jobs created by the team. Prophecy uses a Databricks Service Principal via Databricks OAuth, to perform this task on behalf of the Team Admin. The Team Admin is the only user who can use this Service Principal, and only for the purpose of deploying team projects.
-
-## Requirements
-
-### Register Prophecy as an App Connection in Databricks
-
-As the Databricks Account Admin, complete the following steps:
-
-1. On Databricks, navigate to **Account Settings > App connections**.
-2. Create a new App connection for Prophecy. This process generates Databricks OAuth Application fields in the Prophecy side for your Prophecy Team Admin to complete.
-3. Under Client ID, copy your **OAuth Client ID** for the application, and share it with your Prophecy Team Admin.
-4. Under Client secret, select **Generate a client secret**. Share it with your Prophecy Team Admin.
-5. Click **Save**.
-
-### Add Databricks credentials to Prophecy
-
-Your Prophecy Team Admin must paste the credentials obtained by your Databricks Account Admin into the Prophecy Admin Setting. This will enable all users on the Prophecy instance to use Databricks OAuth authentication.
-
-To add the Databricks credentials to Prophecy:
-
-1. Navigate to **Admin Settings > Security**.
-2. Under **Databrick OAuth Application (U2M)**, paste the **Client ID** and the **Client Secret** into the respective fields.
-
-To configure new Spark and SQL Fabrics within Prophecy using OAuth:
-
-1. When creating a new Databricks Fabric, select **OAuth** under **Credentials**.
-2. Enter the **Service Principal Client ID** and **Service Principal Client Secret** into the respective fields.
 
 ## Security
 
