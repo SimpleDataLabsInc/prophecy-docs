@@ -320,6 +320,10 @@ const config = {
             to: "/settings/teamuser",
             from: "/concepts/teamuser",
           },
+          {
+            to: "/architecture/self-hosted/enable-data-copilot",
+            from: "/concepts/copilot/enable-data-copilot",
+          },
         ],
         /*
 
@@ -370,8 +374,8 @@ const config = {
           if (existingPath.includes("/copilot")) {
             return [existingPath.replace("/copilot", "/concepts/copilot")];
           }
-          if (existingPath.includes("/metadata/lineage")) {
-            return [existingPath.replace("/metadata/lineage", "/lineage")];
+          if (existingPath.includes("/lineage")) {
+            return [existingPath.replace("/lineage", "/metadata/lineage")];
           }
           return undefined;
         },
