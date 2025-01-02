@@ -20,17 +20,17 @@ Lets see how you can do it via the Prophecy UI below.
 As part of the release process, we start by creating a [Git Tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging) with a specified version. This tag is then pushed to your configured Git repository. Following this, the Pipelines, Gems, and Jobs in the Project are built and deployed to the respective environments.
 Here's a breakdown of what deploying means for each component:
 
-1. **Gems**: With Prophecy 3.2, you can create [Custom Gems](/docs/package-hub/package-builder/gem-builder.md) and use in your Pipelines. During the release, these gems are built and uploaded to an internal Artifactory. They aren't directly copied to your environments, as they are used in generating code for the Pipelines, not during Job/Pipeline execution. Note, the code for Gems do get committed to your Git repo as part of the Project.
+- **Gems**: With Prophecy 3.2, you can create [Custom Gems](/docs/package-hub/package-builder/gem-builder.md) and use in your Pipelines. During the release, these gems are built and uploaded to an internal Artifactory. They aren't directly copied to your environments, as they are used in generating code for the Pipelines, not during Job/Pipeline execution. Note, the code for Gems do get committed to your Git repo as part of the Project.
 
-2. **Pipelines**: Each Pipeline in the project is compiled and built into an artifact (Wheel file for Python and Jar file for Scala). These artifacts are then uploaded to your environment as part of the release process.
+- **Pipelines**: Each Pipeline in the project is compiled and built into an artifact (Wheel file for Python and Jar file for Scala). These artifacts are then uploaded to your environment as part of the release process.
 
-3. **Jobs**: Depending on the type of Job (Databricks or Airflow), the Job is copied to the respective environments as a Json file for Databricks Jobs and as a Python DAG for Airflow.
+- **Jobs**: Depending on the type of Job (Databricks or Airflow), the Job is copied to the respective environments as a Json file for Databricks Jobs and as a Python DAG for Airflow.
 
 There is no specific deployment step needed for other entities.
 
 ## How to Release a Project
 
-Once you've [committed](/docs/metadata/git/git-commit.md) and [merged](/docs/metadata/git/git-merge.md) your changes, you're ready to release them. To do this, Simply proceed with the [Release and Deploy](/docs/metadata/git/git-merge.md#release-a-branch), which takes care of both the release and deployment of Pipelines, Gems, and Jobs to respective environments.
+Once you've committed and merged your changes, you're ready to release them. To do this, Simply proceed with the [Release and Deploy](/docs/concepts/git/git.md#release-a-branch), which takes care of both the release and deployment of Pipelines, Gems, and Jobs to respective environments.
 
 ![Release_screen](img/release_and_deploy_screen.png)
 

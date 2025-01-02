@@ -56,13 +56,13 @@ tags:
 
   FlattenSchema works on Snowflake sources that have nested columns that you'd like to extract into a flat schema.
 
-  For more information, see FlattenSchema.
+  For more information, see [FlattenSchema](/docs/SQL/gems/transform/flattenschema.md).
 
 - **Deduplicate Gem**: You can use the deduplicate Gem to remove rows with duplicate values of specified columns. There are four **Row to keep** options that you can use in your deduplicate Gem.
 
   ![Deduplicate Row to keep](./../img/oct-deduplicate_row_to_keep.png)
 
-  For more information, see Deduplicate.
+  For more information, see [Deduplicate](/docs/SQL/gems/transform/deduplicate.md).
 
 - **Gem builder**: You can add custom Gems to your SQL projects using the Gem builder. You can create custom source, target, and transformation Gems, and then publish them for your team to use.
 
@@ -111,7 +111,7 @@ Added/updated Gems are highlighted in yellow.
 
   You can also use manual merge to resolve conflicts. This provides you with simple, yet effective ways to resolve merge conflicts for granular changes. For SQL, you can also toggle on **Code Changes** to view and edit the code directly on the files.
 
-  For more information, see the [Git docs](/docs/metadata/git/git.md).
+  For more information, see the [Git docs](/docs/concepts/git/git.md).
 
 - **Databricks Volumes support**: Prophecy now supports Databricks Volumes. When you run a Python or Scala Pipeline via a Job, you must bundle them as whl/jar artifacts. These artifacts must then be made accessible to the Databricks Job in order to use them as a library installed on the cluster.
 

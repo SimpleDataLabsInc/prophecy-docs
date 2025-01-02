@@ -16,7 +16,7 @@ tags:
   - schema
 ---
 
-If a [Pipeline](./pipelines.md) is a roadmap of the journey that your data will take from Start to Finish, the Gems are the stops to make along the way. Each Gem _instance_ comes with their own configuration and each produces its own block of output code. Each Gem instance can be seen as just another Spark DataFrame.
+A Gem is a reusable component or transformation step in a data pipeline that performs a certain operation on the data. Each Gem has its own configuration and produces its own block of output code.
 
 ## Gem UI
 
@@ -179,3 +179,7 @@ def apply(spark: SparkSession): Unit = {
 Much better!
 
 So, in summary: the Phase of **_Leaf Nodes_** (that is, the final Gem in a given branch of a Pipeline) is the Phase that will dictate the order of the generated code.
+
+## What's next
+
+Prophecy provides specific Spark Gems and SQL Gems for your Pipelines and Models. Not only does Prophecy add new Gems for your use, but you can also create Gems yourself. To learn more, visit our documentation on [Spark Gems](/Spark/gems) or [SQL Gems](/SQL/gems).
