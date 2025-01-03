@@ -149,8 +149,12 @@ const config = {
             from: "/getting-started/getting-help/logs/config-sparknotebook",
           },
           {
-            to: "/copilot/enable-data-copilot",
+            to: "/architecture/self-hosted/enable-data-copilot",
             from: "/architecture/deployment/enable-data-copilot",
+          },
+          {
+            to: "/architecture/self-hosted/enable-data-copilot",
+            from: "/copilot/enable-data-copilot",
           },
           {
             to: "/architecture/self-hosted/authentication/active_directory",
@@ -276,6 +280,54 @@ const config = {
             to: "/architecture/feature-matrix",
             from: "/feature-matrix",
           },
+          {
+            to: "/Orchestration/airflow/airflow-tutorial",
+            from: "/getting-started/airflow",
+          },
+          {
+            to: "/concepts/metadata",
+            from: "/metadata/metadata-connections",
+          },
+          {
+            to: "/concepts/git",
+            from: "/metadata/git",
+          },
+          {
+            to: "/concepts/git",
+            from: "/metadata/git/git-commit",
+          },
+          {
+            to: "/concepts/git",
+            from: "/metadata/git/git-merge",
+          },
+          {
+            to: "/concepts/git/pr-templates",
+            from: "/metadata/pr-templates",
+          },
+          {
+            to: "/concepts/git",
+            from: "/metadata/git/git-fork",
+          },
+          {
+            to: "/concepts/git/git-resolve",
+            from: "/metadata/git/git-resolve",
+          },
+          {
+            to: "/getting-help/prophecyAPI",
+            from: "/metadata/prophecyAPI",
+          },
+          {
+            to: "/settings/audit-logging",
+            from: "/metadata/audit-logging",
+          },
+          {
+            to: "/settings/teamuser",
+            from: "/concepts/teamuser",
+          },
+          {
+            to: "/architecture/self-hosted/enable-data-copilot",
+            from: "/concepts/copilot/enable-data-copilot",
+          },
         ],
         /*
 
@@ -325,6 +377,9 @@ const config = {
           }
           if (existingPath.includes("/copilot")) {
             return [existingPath.replace("/copilot", "/concepts/copilot")];
+          }
+          if (existingPath.includes("/lineage")) {
+            return [existingPath.replace("/lineage", "/metadata/lineage")];
           }
           return undefined;
         },

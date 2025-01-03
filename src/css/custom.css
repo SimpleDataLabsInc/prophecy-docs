@@ -244,3 +244,14 @@ Gems table page
   font-size: 0.9rem;
   color: var(var(--ifm-menu-color));
 }
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 100%; /* Take up full width on smaller screens */
+  }
+
+  .card-container {
+    gap: 12px; /* Adjust gap for smaller screens if needed */
+  }
+}
