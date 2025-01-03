@@ -20,6 +20,9 @@ import Requirements from "../../../\_gem-requirements.mdx";
   packageversion="0.2.36"
   scalalib="8.5.0"
   pythonlib="1.9.24"
+  packageversion122="Not Supported"
+  packageversion143="Not Supported"
+  packageversion154="0.2.36"
 />
 
 Generate synthetic data with this special kind of Source Gem.

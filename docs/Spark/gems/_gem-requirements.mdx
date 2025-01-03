@@ -25,6 +25,26 @@ export default function Requirements(props) {
           </tr>
         </tbody>
       </table>
+      <table style={{ width: "auto", tableLayout: "auto" }}>
+        <thead>
+          <tr>
+            <th>Required Prophecy Package</th>
+            <th>Minimum Package Version</th>
+            <th>12.2 Shared</th>
+            <th>14.3 UC Shared</th>
+            <th>15.4 UC Shared</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{props.packagename}</td>
+            <td>{props.packageversion}</td>
+            <td>{props.packageversion122}</td>
+            <td>{props.packageversion143}</td>
+            <td>{props.packageversion154}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 }
