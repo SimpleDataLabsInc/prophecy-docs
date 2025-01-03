@@ -25,6 +25,28 @@ export default function Requirements(props) {
           </tr>
         </tbody>
       </table>
+      <table style={{ width: "auto", tableLayout: "auto" }}>
+        <thead>
+          <tr>
+            <th>UC Shared Cluster Version</th>
+            <th>Minimum Package Version</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>12.2</td>
+            <td>{props.packageversion12}</td>
+          </tr>
+          <tr>
+            <td>14.3</td>
+            <td>{props.packageversion14}</td>
+          </tr>
+          <tr>
+            <td>15.4</td>
+            <td>{props.packageversion15}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 }

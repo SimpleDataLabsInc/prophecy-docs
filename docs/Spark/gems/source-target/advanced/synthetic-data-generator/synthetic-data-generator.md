@@ -11,6 +11,8 @@ tags:
   - generator
 ---
 
+import Requirements from "../../../\_gem-requirements.mdx"
+
 <h3><span class="badge">Spark Gem</span></h3>
 
 Generate synthetic data with this special kind of Source Gem.
@@ -22,6 +24,16 @@ A wide range of synthetic data can be created using any column name and an array
 ![img](../../../img/synth_0_datasample.png)
 
 Follow the steps below to generate your own mock data using the Data Generator Gem.
+
+<Requirements
+  packagename="ProphecySparkBasicsPython"
+  packageversion="0.2.36"
+  scalalib="8.5.0"
+  pythonlib="1.9.24"
+  packageversion122="2.2.2"
+  packageversion143="Not Supported"
+  packageversion154="Not Supported"
+/>
 
 ## Cluster requirements
 
