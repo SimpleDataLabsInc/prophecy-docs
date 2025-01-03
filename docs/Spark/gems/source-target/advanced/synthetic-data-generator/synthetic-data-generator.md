@@ -22,7 +22,7 @@ import Requirements from "../../../\_gem-requirements.mdx";
   pythonlib="1.9.24"
   packageversion122="Not Supported"
   packageversion143="Not Supported"
-  packageversion154="0.2.36"
+  packageversion154="Supported 0.2.36+"
 />
 
 Generate synthetic data with this special kind of Source Gem.

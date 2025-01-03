@@ -8,28 +8,6 @@ export default function Requirements(props) {
             <th>
               <a href="./release_notes/version_chart/">Minimum version</a>
             </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{props.packagename}</td>
-            <td>{props.packageversion}</td>
-          </tr>
-          <tr>
-            <td>ProphecyLibsScala</td>
-            <td>{props.scalalib}</td>
-          </tr>
-          <tr>
-            <td>ProphecyLibsPython</td>
-            <td>{props.pythonlib}</td>
-          </tr>
-        </tbody>
-      </table>
-      <table style={{ width: "auto", tableLayout: "auto" }}>
-        <thead>
-          <tr>
-            <th>Required Prophecy Package</th>
-            <th>Minimum Package Version</th>
             <th>12.2 Shared</th>
             <th>14.3 UC Shared</th>
             <th>15.4 UC Shared</th>
@@ -42,6 +20,20 @@ export default function Requirements(props) {
             <td>{props.packageversion122}</td>
             <td>{props.packageversion143}</td>
             <td>{props.packageversion154}</td>
+          </tr>
+          <tr>
+            <td>ProphecyLibsScala</td>
+            <td>{props.scalalib}</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+          </tr>
+          <tr>
+            <td>ProphecyLibsPython</td>
+            <td>{props.pythonlib}</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
           </tr>
         </tbody>
       </table>
