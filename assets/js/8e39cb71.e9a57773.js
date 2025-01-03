@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[44645],{64301:e=>{e.exports=JSON.parse('{"label":"architecture","permalink":"/tags/architecture","allTagsPath":"/tags","count":1,"items":[{"id":"administration/index","title":"Architecture","description":"Understand the high-level design and organization of Prophecy","permalink":"/administration/"}]}')}}]);
