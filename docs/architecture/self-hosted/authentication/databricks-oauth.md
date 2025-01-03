@@ -73,11 +73,11 @@ You only need to perform this authentication periodically, depending on the OAut
 
 ## Automated Jobs
 
-When you run a job on-command, the job will authenticate your user credentials. In contrast, scheduled jobs for SQL will run as the Service Principal specified in the Fabric, instead of the user.
+When you run a job on command, you have the option to run the job as a user or Service Principal. In contrast, **scheduled jobs will always run as the Service Principal** specified in the Fabric, regardless of the job settings.
 
 ![Job configuration](img/data-bricks-oauth-job-configuration.png)
 
-In the Airflow and Databricks Job IDE, a warning will display if the SQL Fabric does not contain Service Principal OAuth Credentials.
+In the Airflow and Databricks Job IDE, a warning will display if the Fabric does not contain Service Principal OAuth Credentials.
 
 ## Project release and deployment
 
