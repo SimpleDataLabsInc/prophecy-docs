@@ -1,5 +1,0 @@
-|Basic||Supported|Supported|Supported|
-|Published subgraph||Supported|Supported|Supported|
-|WhileIterator|ProphecySparkAlteryxPython|Not Supported|0.0.4|0.0.4|
-|Table Iterator|ProphecySparkBasicsPython|0.2.39|0.2.39|0.2.39|
-|Catalog|ProphecyStreamingPython|Pending|Pending|Pending|
