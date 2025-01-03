@@ -15,7 +15,7 @@ Prophecy is written as a set of microservices that run on a Kubernetes cluster. 
 - Microsoft Azure managed AKS
 - Google Cloud Platform managed GKE
 
-There are a couple of ways to install the self-managed version of Prophecy:
+There are a couple of ways to install a Self Hosted Prophecy deployment:
 
 - Installation via [Helm](https://helm.sh/docs/intro/quickstart/)
 - Installation via Marketplaces

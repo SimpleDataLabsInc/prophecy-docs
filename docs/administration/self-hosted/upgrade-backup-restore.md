@@ -7,7 +7,6 @@ tags:
   - upgrade
   - backup
   - restore
-  - self-managed
 ---
 
 This page outlines different actions you may perform to maintain your Prophecy installation.

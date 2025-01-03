@@ -5,35 +5,42 @@ id: deployment
 description: Prophecy deployment is flexible and supports multiple mechanisms
 tags:
   - deployment
-  - jobs
-  - databricks
+  - saas
+  - dedicated saas
+  - self hosted
 ---
 
-Prophecy deployment is simple and flexible. Prophecy is written as a set of microservices that run on Kubernetes and is built to be multi-tenant. There are three primary options within cloud deployment.
+Learn about the different cloud deployment options for deploying Prophecy.
+
+_Note: On rare occasions, Prophecy will deploy on-premise for large customers who will later move to the cloud._
 
 ## Cloud Deployment
 
-Prophecy in the cloud connects to your existing Spark and Scheduler/Orchestrator. Prophecy does not store any data, however, it does store metadata about your Pipelines, Datasets and schedules.
+Prophecy in the cloud connects to your existing Spark and Scheduler/Orchestrator. Prophecy does not store any data, however, it does store metadata about your Pipelines, Datasets and schedules. There are three types of Prophecy deployments:
 
-![General Architecture](img/arch_general.png)
+| Feature                                                       | SaaS                     | Dedicated SaaS           | Self Hosted              |
+| ------------------------------------------------------------- | ------------------------ | ------------------------ | ------------------------ |
+| Suitable for enterprise                                       | ![Tick](../img/tick.svg) | ![Tick](../img/tick.svg) | ![Tick](../img/tick.svg) |
+| Free trial                                                    | ![Tick](../img/tick.svg) | ![Tick](../img/tick.svg) | ![Tick](../img/tick.svg) |
+| No installation required                                      | ![Tick](../img/tick.svg) | ![Tick](../img/tick.svg) |                          |
+| Automatic upgrades every 2-4 weeks; access to latest features | ![Tick](../img/tick.svg) | ![Tick](../img/tick.svg) |                          |
+| Managed infrastructure costs                                  | ![Tick](../img/tick.svg) | ![Tick](../img/tick.svg) |                          |
+| Isolated data/environment                                     |                          | ![Tick](../img/tick.svg) | ![Tick](../img/tick.svg) |
 
-### Public SaaS
+### SaaS
 
-Public SaaS (Prophecy managed SaaS) is the default option when you connect from **Databricks Partner Connect** and is free for one user.
-This option is heavily used by customers to try Prophecy. Our startup and midsize customers who like the convenience of a managed service prefer this option. You can also use this by directly going to the [Prophecy Application](https://app.prophecy.io/).
+The SaaS deployment option is entirely Prophecy-managed and has a multi-tenant architecture. Try out SaaS by directly going to the [Prophecy application](https://app.prophecy.io/).
 
 ![VPC Architecture](img/arch_separate_vpc.png)
 
-### Private SaaS (Customer VPC)
+### Dedicated SaaS
 
-Customers in segments that deal with very sensitive data primarily use this option. Here, Prophecy runs within the **Customer VPC** and connects to the identity, Spark clusters and the scheduler within the VPC. For more information read the [private SAAS installation documentation](docs/administration/self-hosted/self-hosted.md) or reach out to our team by using [request a demo](https://www.prophecy.io/request-a-demo).
+Like our SaaS deployment, the Dedicated SaaS deployment is Prophecy-managed. However, Dedicated SaaS provides the convenience of a Prophecy-managed environment, but also the privacy of an isolated space on Prophecy’s Virtual Private Cloud. This is also known as a single-tenant architecture.
+
+You can choose your preferred cloud platform (AWS, Azure, or GCP), and Prophecy will manage installation, maintenance, resource allocation, and more.
+
+### Self Hosted (formerly Private SaaS) {#self-hosted}
+
+If you deal with very sensitive data, you may opt to get the Self Hosted version of Prophecy. In this case, Prophecy runs within the **Customer VPC**, as well as the execution infrastructure. For more information, read about [installation and settings](docs/architecture/self-hosted/self-hosted.md) on a Self Hosted deployment or [request a demo](https://www.prophecy.io/request-a-demo) from Prophecy.
 
 ![Customer VPC Architecture](img/arch_customervpc.png)
-
-Ready to setup Prophecy to run in your VPC? Login into your preferred cloud marketplace: [AWS](https://aws.amazon.com/marketplace/pp/prodview-gh3pyflmu7mlu?sr=0-1&ref_=beagle&applicationId=AWSMPContessa#external-reviews), [Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/simpledatalabsinc1635791235920.prophecy-data-engineering), or [GCP](https://console.cloud.google.com/marketplace/product/prophecy-on-gcp-public/prophecy-data-engineering), and search for "Prophecy." The installation billing starts after 30 days.
-
-![Marketplaces](img/prophecy_marketplaces.png)
-
-### On-Premise Deployment
-
-On rare occasions, Prophecy will deploy on-premise for large customers who are moving to the cloud. Often the order is that the organizations will move Pipelines from on-premise legacy ETL tools to Spark, then move it to Spark on the cloud.
