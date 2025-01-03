@@ -144,12 +144,3 @@ curl 'https://<prophecy-env-url>/athena/api/v1/prophecy/status'
 ```
 
   </details>
-
-To learn more about installation methods and management, see the following pages:
-
-```mdx-code-block
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
-<DocCardList items={useCurrentSidebarCategory().items}/>
-```

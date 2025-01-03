@@ -40,7 +40,7 @@ Sensitive information, such as customer preview data, credentials, tokens, or pa
 
 ## Enable Prophecy Downloads logs
 
-Before you can download logs, you must enable it in your [Self Hosted](docs/architecture/deployment/deployment.md) deployment.
+Before you can download logs, you must enable it in your [Self Hosted](../deployment) deployment.
 
 See the following requirements for enabling the Prophecy logs:
 

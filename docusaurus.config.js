@@ -237,8 +237,12 @@ const config = {
             from: "/architecture/deployment/private-saas/generate-api-key",
           },
           {
-            to: "/administration/self-hosted/install-prophecy/installation-helm/",
+            to: "/administration/self-hosted/installation-helm",
             from: "/architecture/deployment/installation-guide",
+          },
+          {
+            to: "/administration/self-hosted/installation-helm",
+            from: "/administration/self-hosted/install-prophecy/installation-helm",
           },
           {
             to: "/Orchestration/multi-jobs-trigger",
@@ -325,8 +329,12 @@ const config = {
             from: "/metadata/prophecyAPI",
           },
           {
-            to: "/settings/audit-logging",
+            to: "/administration/saas/audit-logging",
             from: "/metadata/audit-logging",
+          },
+          {
+            to: "/administration/saas/audit-logging",
+            from: "/settings/audit-logging",
           },
           {
             to: "/settings/teamuser",

@@ -1,17 +1,23 @@
 ---
 title: Architecture
-id: architecture
-description: Describing the architecture of Prophecy and how it can integrate into your use cases
-tags: []
+id: index
+description: Understand the high-level design and organization of Prophecy
+tags:
+  - saas
+  - dedicated saas
+  - self hosted
+  - architecture
 ---
 
-Prophecy deployment is simple and flexible. Prophecy is written as a set of microservices that run on Kubernetes, and it can run on various cloud platforms.
+Prophecy is written as a set of microservices that run on Kubernetes, and it can run on various cloud platforms.
 
-| Deployment Model                              | Description                                                                                                                                             |
-| --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [SaaS](./deployment#saas)                     | Prophecy-managed, multi-tenant architecture. [Try it here](https://app.prophecy.io/).                                                                   |
-| [Dedicated SaaS](./deployment#dedicated-saas) | Prophecy-managed, single-tenant architecture in Prophecy’s VPC.                                                                                         |
-| [Self Hosted](./deployment#self-hosted)       | Self-managed and runs within the customer’s VPC. Formerly known as Private SaaS deployment. [Learn more](docs/architecture/self-hosted/self-hosted.md). |
+## Deployment
+
+| Deployment Model                              | Description                                                                                                              |
+| --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| [SaaS](./deployment#saas)                     | Prophecy-managed, multi-tenant architecture. [Try it here](https://app.prophecy.io/).                                    |
+| [Dedicated SaaS](./deployment#dedicated-saas) | Prophecy-managed, single-tenant architecture in Prophecy’s VPC.                                                          |
+| [Self Hosted](./deployment#self-hosted)       | Self-managed and runs within the customer’s VPC. Formerly known as Private SaaS deployment. [Learn more](./self-hosted). |
 
 ## High-level architecture
 
