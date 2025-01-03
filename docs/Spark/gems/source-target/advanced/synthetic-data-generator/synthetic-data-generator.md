@@ -13,8 +13,7 @@ tags:
 
 import Requirements from "../../../\_gem-requirements.mdx";
 
-<h3><span class="badge:q
-">Spark Gem</span></h3>
+<h3><span class="badge">Spark Gem</span></h3>
 
 <Requirements
   packagename="ProphecySparkBasicsPython"

@@ -14,7 +14,7 @@ tags:
 
 ## Cluster Types
 
-Databricks clusters come with various [Access Modes](https://docs.databricks.com/clusters/create-cluster.html#what-is-cluster-access-mode). To use Unity Catalog Shared clusters, check for feature support [here.](../fabrics/databricks/ucshared.md)
+Databricks clusters come with various [Access Modes](https://docs.databricks.com/clusters/create-cluster.html#what-is-cluster-access-mode). To use Unity Catalog Shared clusters, check for feature support [here.](./../fabrics/databricks/ucshared)
 
 ## Interims
 
