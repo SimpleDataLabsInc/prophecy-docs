@@ -185,6 +185,10 @@ const config = {
             from: "/Spark/fabrics/EMR-fabric-configuration",
           },
           {
+            to: "/Spark/fabrics/databricks/",
+            from: "/Spark/fabrics/databricks-fabric",
+          },
+          {
             to: "/administration/self-hosted/upgrade-backup-restore",
             from: "/architecture/deployment/private-saas/backup-restore",
           },
