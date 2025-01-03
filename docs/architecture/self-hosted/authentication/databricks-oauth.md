@@ -25,7 +25,7 @@ This integration works with both Spark clusters and SQL warehouses.
 
 ### Register Prophecy as an App Connection in Databricks
 
-First, the Databricks Account Admin need to complete the following steps **once** for your Prophecy deployment:
+First, the Databricks Account Admin needs to complete the following steps **once** for your Prophecy deployment:
 
 1. On Databricks, navigate to **Account Settings > App connections**.
 2. Create a new App connection for Prophecy. This process generates Databricks OAuth Application fields on the Prophecy side.
@@ -73,7 +73,7 @@ You only need to perform this authentication periodically, depending on the OAut
 
 ## Automated Jobs
 
-When you run a job on command, you have the option to run the job as a user or Service Principal. In contrast, **scheduled jobs will always run as the Service Principal** specified in the Fabric, regardless of the job settings.
+When you run a job manually, you have the option to run the job as a user or Service Principal. In contrast, **scheduled jobs will always run as the Service Principal** specified in the Fabric, regardless of the job settings.
 
 ![Job configuration](img/data-bricks-oauth-job-configuration.png)
 
