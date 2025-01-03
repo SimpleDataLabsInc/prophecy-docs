@@ -31,13 +31,15 @@ Prophecy in the cloud connects to your existing Spark and Scheduler/Orchestrator
 
 The SaaS deployment option is entirely Prophecy-managed and has a multi-tenant architecture. Try out SaaS by directly going to the [Prophecy application](https://app.prophecy.io/).
 
-![VPC Architecture](img/arch_separate_vpc.png)
+![SaaS VPC Architecture](img/arch_separate_vpc.png)
 
 ### Dedicated SaaS
 
 Like our SaaS deployment, the Dedicated SaaS deployment is Prophecy-managed. However, Dedicated SaaS provides the convenience of a Prophecy-managed environment, but also the privacy of an isolated space on Prophecy’s Virtual Private Cloud. This is also known as a single-tenant architecture.
 
 You can choose your preferred cloud platform (AWS, Azure, or GCP), and Prophecy will manage installation, maintenance, resource allocation, and more.
+
+![Dedicated SaaS VPC Architecture](img/arch_dedicated_vpc.png)
 
 ### Self Hosted (formerly Private SaaS) {#self-hosted}
 
