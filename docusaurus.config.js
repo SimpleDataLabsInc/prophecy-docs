@@ -237,12 +237,8 @@ const config = {
             from: "/architecture/deployment/private-saas/generate-api-key",
           },
           {
-            to: "/administration/self-hosted/installation-helm",
+            to: "/administration/self-hosted/installation-helm/",
             from: "/architecture/deployment/installation-guide",
-          },
-          {
-            to: "/administration/self-hosted/installation-helm",
-            from: "/administration/self-hosted/install-prophecy/installation-helm",
           },
           {
             to: "/Orchestration/multi-jobs-trigger",
@@ -344,6 +340,30 @@ const config = {
             to: "/administration/self-hosted/enable-data-copilot",
             from: "/concepts/copilot/enable-data-copilot",
           },
+          {
+            to: "/administration/deployment",
+            from: "/architecture/deployment",
+          },
+          {
+            to: "/administration",
+            from: "/architecture",
+          },
+          {
+            to: "/administration/self-hosted/installation-helm/",
+            from: "/architecture/self-hosted/install-prophecy/installation-helm",
+          },
+          {
+            to: "/administration/self-hosted/installation-helm/install-on-aws",
+            from: "/architecture/self-hosted/install-prophecy/installation-helm/install-on-aws",
+          },
+          {
+            to: "/administration/self-hosted/installation-marketplaces/",
+            from: "/architecture/self-hosted/install-prophecy/installation-marketplaces",
+          },
+          {
+            to: "/administration/self-hosted/installation-marketplaces/install-azure-marketplace",
+            from: "/architecture/self-hosted/install-prophecy/installation-marketplaces/install-azure-marketplace",
+          },
         ],
         /*
 
@@ -396,6 +416,22 @@ const config = {
           }
           if (existingPath.includes("/lineage")) {
             return [existingPath.replace("/lineage", "/metadata/lineage")];
+          }
+          if (existingPath.includes("/administration/authentication")) {
+            return [
+              existingPath.replace(
+                "/administration/authentication",
+                "/architecture/self-hosted/authentication/",
+              ),
+            ];
+          }
+          if (existingPath.includes("/administration/self-hosted")) {
+            return [
+              existingPath.replace(
+                "/administration/self-hosted",
+                "/architecture/self-hosted/",
+              ),
+            ];
           }
           return undefined;
         },
