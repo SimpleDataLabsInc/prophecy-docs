@@ -98,5 +98,5 @@ The Data Generator only generates the data. If you want to store the data just c
 
 :::info
 Using Unity Catalog Shared Spark Clusters?
-Check [here](../../../../fabrics/databricks/ucshared.md) to see if this Gem is supported.
+Check [here](../../../../fabrics/databricks/ucshared) to see if this Gem is supported.
 :::

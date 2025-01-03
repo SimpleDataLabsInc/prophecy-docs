@@ -14,32 +14,7 @@ tags:
 
 ## Cluster Types
 
-Databricks clusters comes with various [Access Modes](https://docs.databricks.com/clusters/create-cluster.html#what-is-cluster-access-mode).
-
-For [Interims](https://docs.prophecy.io/Spark/execution/interactive-execution#interims) and [Execution Metrics](./execution-metrics) to work, Prophecy has written some libraries in Python and Scala, which needs to be installed on the cluster. Hence, because of below restrictions, interims behaviour will be different for different clusters.
-
-| Access mode dropdown      | Library Installations Allowed?          | Language supported | Interims             | Execution Metrics |
-| ------------------------- | --------------------------------------- | ------------------ | -------------------- | ----------------- |
-| Single User               | Yes                                     | Python, Scala      | Regular Interims     | Yes               |
-| Shared                    | Yes, but interim nodes cant be attached | Python             | **Vanilla Interims** | **No**            |
-| No isolation shared       | Yes                                     | Python, Scala      | Regular Interims     | Yes               |
-| Unity Catalog Single User | Yes                                     | Python, Scala      | Regular Interims     | Yes               |
-| Unity Catalog Shared      | No                                      | Python             | **Vanilla Interims** | **No**            |
-
-:::note
-
-As denoted in the Cluter Types table, some feature behaviors are different for different clusters. When using `Shared Mode` or `Unity Catalog Shared` access mode, the following features aren't supported:
-
-- Lookups
-- Regular Interims (beyond Vanilla)
-- Execution Metrics
-- Run history
-- Job progress
-- Interactive Job runs on pre-existing clusters
-
-When using Databricks with a `Shared` access mode, you must also connect to `Shared Mode` clusters.
-
-:::
+Databricks clusters come with various [Access Modes](https://docs.databricks.com/clusters/create-cluster.html#what-is-cluster-access-mode). To use Unity Catalog Shared clusters, check for feature support [here.](../fabrics/databricks/ucshared.md)
 
 ## Interims
 

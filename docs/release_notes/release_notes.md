@@ -13,15 +13,8 @@ Each release may include updates that require the web interface to be refreshed.
 As a general practice, to ensure these updates do not impact your usage, we recommend refreshing the web interface regularly.
 :::
 
-<CardContainer>
-  <Card title="2024" to="./2024">
-    Releases for the year
-  </Card>
-  <Card title="2023" to="./2023">
-    Releases for the year
-  </Card>
-  <Card title="Version Chart" to="./version_chart">
-    Libraries
-  </Card>
-</CardContainer>
-<br />
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```

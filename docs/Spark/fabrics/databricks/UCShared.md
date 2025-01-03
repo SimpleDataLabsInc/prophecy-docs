@@ -13,9 +13,30 @@ tags:
   - databricks
 ---
 
-Databricks Unity Catalog clusters in Shared mode have some [pecularities](https://docs.databricks.com/en/compute/access-mode-limitations.html#shared-access-mode-limitations-on-unity-catalog) that require adaptations in Prophecy. Please find your Gem of interest below, and see if that Gem is supported according to the UC Shared cluster version (12.2, 14.3, or 15.4). Each row indicates the minimum Prophecy Package version required for that Gem to be supported on the relevant UC Shared cluster version listed.
+## Cluster Types
 
-## Sources / Targets
+Databricks clusters come with various [Access Modes](https://docs.databricks.com/clusters/create-cluster.html#what-is-cluster-access-mode).
+
+To implement some features, Prophecy has written some libraries in Python and Scala. These libraries need to be installed on the cluster.
+
+| Prophecy Feature                                                                        | Single User      | Shared                                  | No isolation shared | Unity Catalog Single User                                                             | Unity Catalog Shared                                                                      |
+| --------------------------------------------------------------------------------------- | ---------------- | --------------------------------------- | ------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| Library installations allowed?                                                          | Yes              | Yes but interim nodes can't be attached | Yes                 | Yes                                                                                   | Version-dependent                                                                         |
+| [Interims](../../execution/databricks-clusters-behaviors.md#interims)                   | Regular Interims | Vanilla Interims                        | Regular Interims    | [Regular Interims](../../execution/databricks-clusters-behaviors.md#regular-interims) | [**Vanilla Interims**](../../execution/databricks-clusters-behaviors.md#vanilla-interims) |
+| [Execution metrics](../../execution/databricks-clusters-behaviors.md#execution-metrics) | Yes              | No                                      | Yes                 | Yes                                                                                   | **No**                                                                                    |
+| [Run history](../../pipeline-monitoring/use-pipeline-monitoring#view-historical-runs)   | Yes              | No                                      | Yes                 | Yes                                                                                   | **No**                                                                                    |
+| [Interactive run](../../execution/interactive-execution) progress                       | Yes              | No                                      | Yes                 | Yes                                                                                   | **No**                                                                                    |
+| Interactive runs on pre-existing clusters                                               | Yes              | No                                      | Yes                 | Yes                                                                                   | **No**                                                                                    |
+
+When using Databricks with a `Shared` access mode, you must also connect to `Shared Mode` clusters.
+
+## Gem Support
+
+A subset of Prophecy Gems are not supported on UC Shared clusters according to the UC Shared cluster version (12.2, 14.3, or 15.4). Each row indicates the minimum Prophecy Package version required for that Gem to be supported on the relevant UC Shared cluster version listed.
+
+Legacy Shared clusters 12.2 and below are shown for reference only; the later versions are strongly recommended.
+
+### Sources / Targets
 
 Minimum Prophecy Package version required to support Databricks Unity Catalog Shared Clusters:
 
@@ -34,10 +55,10 @@ Minimum Prophecy Package version required to support Databricks Unity Catalog Sh
 | Xlsx                      | ProphecySparkBasicsPython   | Not Supported | Not Supported    | Not Supported    |
 | Xml                       | ProphecySparkBasicsPython   | Not Supported | 0.2.39           | 0.2.39           |
 | Seed                      | ProphecySparkBasicsPython   | Not Supported | Not Supported    | Not Supported    |
-| Createdata                | ProphecySparkAbinitioPython | Not Supported | Not Supported    | Pending          |
-| Mtime                     | ProphecySparkAbinitioPython | Not Supported | Not Supported    | Pending          |
+| Createdata                | ProphecySparkAbinitioPython | Not Supported | Not Supported    | Not Supported    |
+| Mtime                     | ProphecySparkAbinitioPython | Not Supported | Not Supported    | Not Supported    |
 
-## Warehouses
+### Warehouses
 
 Minimum Prophecy Package version required to support Databricks Unity Catalog Shared Clusters:
 
@@ -50,12 +71,11 @@ Minimum Prophecy Package version required to support Databricks Unity Catalog Sh
 | Kafka (Target)               | ProphecySparkBasicsPython | 0.2.39        | 0.2.39           | 0.2.39           |
 | Bigquery (Source)            | ProphecyWarehousePython   | Not Supported | Not Supported    | Not Supported    |
 | Bigquery (Target)            | ProphecyWarehousePython   | Not Supported | Not Supported    | Not Supported    |
-| Cosmodb                      | ProphecyWarehousePython   | Pending       | Pending          | Pending          |
 | Mongodb (Driver Mongodb+srv) | ProphecyWarehousePython   | Not Supported | Not Supported    | Not Supported    |
 | Mongodb (Driver Mongodb)     | ProphecyWarehousePython   | Not Supported | Not Supported    | Not Supported    |
 | Redshift                     | ProphecyWarehousePython   | Not Supported | Not Supported    | Not Supported    |
 
-## Catalog Table
+### Catalog Table
 
 Minimum Prophecy Package version required to support Databricks Unity Catalog Shared Clusters:
 
@@ -64,23 +84,15 @@ Minimum Prophecy Package version required to support Databricks Unity Catalog Sh
 | Catalog Table | ProphecySparkBasicsPython | 0.2.39        | 0.2.39           | 0.2.39           |
 | Iceberg       | ProphecySparkBasicsPython | Pending       | Pending          | Pending          |
 
-## Application
-
-Minimum Prophecy Package version required to support Databricks Unity Catalog Shared Clusters:
-
-| Gem        | Package              | 12.2 - Shared | 14.3 - UC shared | 15.4 - UC shared |
-| ---------- | -------------------- | ------------- | ---------------- | ---------------- |
-| Salesforce | ProphecyWebAppPython | Pending       | Pending          | Pending          |
-
-## Lookup
+### Lookup
 
 Minimum Prophecy Package version required to support Databricks Unity Catalog Shared Clusters:
 
 | Gem    | Package | 12.2 - Shared | 14.3 - UC shared | 15.4 - UC shared |
 | ------ | ------- | ------------- | ---------------- | ---------------- |
-| Lookup |         | Supported     | Supported        | Supported        |
+| Lookup | N/A     | Not Supported | Not Supported    | Not Supported    |
 
-## Transform
+### Transform
 
 Minimum Prophecy Package version required to support Databricks Unity Catalog Shared Clusters:
 
@@ -116,7 +128,7 @@ Minimum Prophecy Package version required to support Databricks Unity Catalog Sh
 | DynamicReplace                 | ProphecySparkAlteryxPython  | Not Supported | Pending          | Pending          |
 | FuzzyMatch                     | ProphecySparkAlteryxPython  | Not Supported | Pending          | Pending          |
 
-## Join/Split
+### Join/Split
 
 Minimum Prophecy Package version required to support Databricks Unity Catalog Shared Clusters:
 
@@ -127,13 +139,13 @@ Minimum Prophecy Package version required to support Databricks Unity Catalog Sh
 | RowDistributor | ProphecySparkBasicsPython | 0.2.39        | 0.2.39           | 0.2.39           |
 | CompareColumns | ProphecySparkBasicsPython | 0.2.39        | 0.2.39           | 0.2.39           |
 
-## Custom
+### Custom
 
 Minimum Prophecy Package version required to support Databricks Unity Catalog Shared Clusters:
 
 | Gem                       | Package                     | 12.2 - Shared | 14.3 - UC shared | 15.4 - UC shared |
 | ------------------------- | --------------------------- | ------------- | ---------------- | ---------------- |
-| Script                    |                             | Supported     | Supported        | Supported        |
+| Script                    | N/A                         | Supported     | Supported        | Supported        |
 | DeltaTableOperations      | ProphecySparkBasicsPython   | Supported     | Supported        | Supported        |
 | FileOperation (DBFS Copy) | ProphecySparkBasicsPython   | Supported     | Supported        | Supported        |
 | FileOperation             | ProphecySparkBasicsPython   | Pending       | Pending          | Pending          |
@@ -150,30 +162,18 @@ Minimum Prophecy Package version required to support Databricks Unity Catalog Sh
 | Assertions                | ProphecySparkAbinitioPython | Not Supported | 0.0.24           | 0.0.24           |
 | Log                       | ProphecySparkAbinitioPython | Not Supported | 0.0.24           | 0.0.24           |
 
-## Subgraph
+### Subgraph
 
 Minimum Prophecy Package version required to support Databricks Unity Catalog Shared Clusters:
 
 | Gem                | Package                    | 12.2 - Shared | 14.3 - UC shared | 15.4 - UC shared |
 | ------------------ | -------------------------- | ------------- | ---------------- | ---------------- |
-| Basic              |                            | Supported     | Supported        | Supported        |
-| Published subgraph |                            | Supported     | Supported        | Supported        |
+| Basic              | N/A                        | Supported     | Supported        | Supported        |
+| Published subgraph | N/A                        | Supported     | Supported        | Supported        |
 | WhileIterator      | ProphecySparkAlteryxPython | Not Supported | 0.0.4            | 0.0.4            |
 | Table Iterator     | ProphecySparkBasicsPython  | 0.2.39        | 0.2.39           | 0.2.39           |
 | Catalog            | ProphecyStreamingPython    | Pending       | Pending          | Pending          |
 
-## Streaming
+### Streaming
 
-Minimum Prophecy Package version required to support Databricks Unity Catalog Shared Clusters:
-
-| Gem       | Package                 | 12.2 - Shared | 14.3 - UC shared | 15.4 - UC shared |
-| --------- | ----------------------- | ------------- | ---------------- | ---------------- |
-| Catalog   | ProphecyStreamingPython | Pending       | Pending          | Pending          |
-| SplunkHEC | ProphecyStreamingPython | Pending       | Pending          | Pending          |
-| Watermark | ProphecyStreamingPython | Pending       | Pending          | Pending          |
-| CSV       | ProphecyStreamingPython | Not Supported | Not Supported    | Not Supported    |
-| Delta     | ProphecyStreamingPython | Not Supported | Not Supported    | Not Supported    |
-| JSON      | ProphecyStreamingPython | Not Supported | Not Supported    | Not Supported    |
-| Kafka     | ProphecyStreamingPython | Not Supported | Not Supported    | Not Supported    |
-| Orc       | ProphecyStreamingPython | Not Supported | Not Supported    | Not Supported    |
-| Parquet   | ProphecyStreamingPython | Not Supported | Not Supported    | Not Supported    |
+Streaming Gems and capabilities are not supported on UC Shared clusters as of Prophecy 3.4.x.
