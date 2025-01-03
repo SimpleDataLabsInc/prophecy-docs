@@ -1,7 +1,6 @@
 ---
 title: Architecture
 id: architecture
-sidebar_class_name: hidden
 description: Describing the architecture of Prophecy and how it can integrate into your use cases
 tags: []
 ---
@@ -9,13 +8,15 @@ tags: []
 Prophecy deployment is simple and flexible. Prophecy is written as a set of Microservices that run on Kubernetes and is
 built to be multi-tenant.
 
+## Deployment
+
 | Deployment Model                                                      | Customers Who Prefer it                                         |
 | --------------------------------------------------------------------- | --------------------------------------------------------------- |
 | [Prophecy Managed SaaS](./deployment#public-saas)                     | Midsize Companies and Startups                                  |
 | [Private SaaS (Customer VPC)](./deployment#private-saas-customer-vpc) | Enterprises in the Cloud                                        |
 | [On-Premise](./deployment#on-premise-deployment)                      | Large Enterprises in the middle of cloud migration (rare cases) |
 
-## High-Level Architecture
+## High-level architecture
 
 There are four components of a successful Prophecy deployment:
 
@@ -85,7 +86,7 @@ Supported Git providers:
 
 Security-conscious enterprises that use Git Providers within private networks behind firewalls have to add the Prophecy Control Plane IP address (`3.133.35.237`) to the private network allow-list or to the Git provider [allow-list](https://github.blog/2019-12-12-ip-allow-lists-now-in-public-beta/).
 
-## Security and Privacy Practices
+## Security and privacy practices
 
 The Prophecy team employs top-notch industry practices to safeguard the security of their application and maintain the privacy of customer data. Below are just a few components of our comprehensive security strategy and system structure:
 
@@ -98,14 +99,3 @@ The Prophecy team employs top-notch industry practices to safeguard the security
 - **On-Premise** - Prophecy complies with your security requirements on-premise; [reach out](https://www.prophecy.io/request-a-demo) to start the discussion.
 
 Read more details on Prophecy’s security and compliance posture at our Security Portal [here.](https://security.prophecy.io/)
-
-## What's next
-
-To learn more about Prophecy's architecture, see the following pages:
-
-```mdx-code-block
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
-<DocCardList items={useCurrentSidebarCategory().items}/>
-```

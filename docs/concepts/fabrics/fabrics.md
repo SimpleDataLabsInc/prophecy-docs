@@ -55,7 +55,7 @@ Optionally, you can enhance your Fabric by creating a **Metadata Connection**. T
 
 ### Credentials and Secrets
 
-Prophecy enables you to securely store credentials in the Databricks environment. When connecting to Databricks, you can either use a Personal Access Token (PAT) or leverage [Databricks OAuth](/docs/architecture/self-hosted/authentication/databricks-oauth.md).
+Prophecy enables you to securely store credentials in the Databricks environment. When connecting to Databricks, you can either use a Personal Access Token (PAT) or leverage [Databricks OAuth](/docs/administration/authentication/databricks-oauth.md).
 
 Key-value pairs can be stored as secrets, which are accessible to running workflows. After a secret is created, it can only be read by running jobs, and Prophecy does not have access to its value.
 

@@ -2,6 +2,7 @@
 title: Self Hosted
 id: self-hosted
 description: Self Hosted
+sidebar_class_name: hidden
 tags:
   - deployment
   - installation
