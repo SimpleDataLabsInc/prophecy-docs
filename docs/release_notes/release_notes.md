@@ -15,8 +15,10 @@ Each release may include updates that require the web interface to be refreshed.
 To ensure these updates do not impact your usage, we recommend refreshing the web interface regularly.
 :::
 
-## [2025](./2025)
+## 2025
 
 <Release item={require('./2025/2025.md')} path="./2025" />
 
-## [2024](./2024)
+## 2024
+
+<Release item={require('./2024/2024.md')} path="./2024" />
