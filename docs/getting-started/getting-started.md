@@ -23,7 +23,7 @@ You can also try out Prophecy's SaaS offering via an existing Databricks account
 
 :::info
 
-For more permanent deployment options, visit our page on [Prophecy deployment](docs/administration/deployment.md).
+For more permanent deployment options, visit our page on [Prophecy deployment](docs/administration/prophecy-deployment.md).
 
 :::
 

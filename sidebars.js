@@ -130,7 +130,7 @@ const sidebars = {
   ],
   adminSidebar: [
     "administration/index",
-    "administration/deployment",
+    "administration/prophecy-deployment",
     {
       type: "category",
       label: "Authentication",
@@ -154,7 +154,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Self Hosted",
+      label: "Self-hosted",
       link: { type: "doc", id: "administration/self-hosted/self-hosted" },
       items: [
         {

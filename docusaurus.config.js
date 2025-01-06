@@ -345,8 +345,12 @@ const config = {
             from: "/concepts/copilot/enable-data-copilot",
           },
           {
-            to: "/administration/deployment",
+            to: "/administration/prophecy-deployment",
             from: "/architecture/deployment",
+          },
+          {
+            to: "/administration/prophecy-deployment",
+            from: "/administration/deployment",
           },
           {
             to: "/administration",

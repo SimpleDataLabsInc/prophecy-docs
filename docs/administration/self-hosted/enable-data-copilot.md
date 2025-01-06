@@ -78,10 +78,10 @@ From the Kubernetes cluster where Prophecy services are running:
 
 ## Additional installation options
 
-### How to enable Data Copilot on my Self Hosted or On-Premise installation of Prophecy
+### How to enable Data Copilot on my self-hosted or on-premise installation of Prophecy
 
-Data Copilot is enabled or disabled at deployment time. If you run Prophecy within your [own VPC](/docs/administration/deployment.md#private-saas-customer-vpc), set the flag in the deployment or upgrade configuration. To learn more about how to connect Prophecy Data Copilot to private OpenAI endpoints, speak to your Prophecy account owner.
+Data Copilot is enabled or disabled at deployment time. If you run Prophecy within your [own VPC](../prophecy-deployment.md#self-hosted), set the flag in the deployment or upgrade configuration. To learn more about how to connect Prophecy Data Copilot to private OpenAI endpoints, speak to your Prophecy account owner.
 
 ### How to disable Data Copilot for my users
 
-You have the option to disable Data Copilot if you run Prophecy within your [own VPC](/docs/administration/deployment.md#private-saas-customer-vpc). You may choose to enable or disable Data Copilot across your Prophecy Platform at deployment time.
+You have the option to disable Data Copilot if you run Prophecy within your [own VPC](../prophecy-deployment.md#self-hosted). You may choose to enable or disable Data Copilot across your Prophecy Platform at deployment time.

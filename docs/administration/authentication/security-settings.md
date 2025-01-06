@@ -16,7 +16,7 @@ These connect to Kerberised Livy Setup while setting up Kerberos Auth in the [Li
 ![admin_settings](img/Admin_Settings.png)
 
 :::info
-This is only available for admin users on [Self Hosted](../deployment) or [on-prem](../deployment) deployments of Prophecy.
+This is only available for admin users on [self-hosted](../prophecy-deployment#self-hosted) or [on-prem](../prophecy-deployment) deployments of Prophecy.
 :::
 
 ### Keytabs for Kerberos Authentication
