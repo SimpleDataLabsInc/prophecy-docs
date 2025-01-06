@@ -12,15 +12,15 @@ Streaming pipelines work differently from batch pipelines:
 1. Streaming applications are always running, continuously processing incoming data.
 2. Data is processed in micro-batches, with the notable exception of [Continuous Triggers](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#continuous-processing) (an experimental feature available in Spark3.3). Continuous triggers are not supported by Prophecy.
 3. Streaming applications handle transient data rather than maintain the entire data. Aggregations and joins require watermarking for maintaining a limited state.
-4. All Streaming Datasets can behave similarly to Batch datasets using the Spark `ForEachBatch`. More on `ForEachBatch` [here](https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.sql.streaming.DataStreamWriter.foreachBatch.html) Note that `forEachBatch` is not supported by Prophecy.
+4. All Streaming Datasets can behave similarly to Batch datasets using the Spark [`ForEachBatch`](https://spark.apache.org/docs/latest/api/python/reference/pyspark.ss/api/pyspark.sql.streaming.DataStreamWriter.foreachBatch.html), though `ForEachBatch` is not supported by Prophecy.
 
 The streaming capability is available for `Python` projects that do not use UC Shared clusters.
 
-| Project Type | Spark Cluster Access Mode | Spark Cluster Type | Structured Streaming Capability |
-| ------------ | ------------------------- | ------------------ | ------------------------------- |
-| Python       | Single User               | UC, legacy         | Supported                       |
-| Python       | Shared                    | UC                 | Not supported yet               |
-| Scala        | Any Mode                  | Any type           | Not supported yet               |
+| Project Type | Spark Cluster Access Mode | Spark Cluster Type | Structured Streaming Capability   |
+| ------------ | ------------------------- | ------------------ | --------------------------------- |
+| Python       | Single User               | UC, legacy         | Supported as of Prophecy3.4.x     |
+| Python       | Shared                    | UC                 | Not supported as of Prophecy3.4.x |
+| Scala        | Any Mode                  | Any type           | Not supported as of Prophecy3.4.x |
 
 ## Spark Structured Streaming using Prophecy IDE
 

@@ -11,7 +11,19 @@ tags:
   - generator
 ---
 
+import Requirements from "../../../\_gem-requirements.mdx";
+
 <h3><span class="badge">Spark Gem</span></h3>
+
+<Requirements
+  packagename="ProphecySparkBasicsPython"
+  packageversion="0.2.36"
+  scalalib="8.5.0"
+  pythonlib="1.9.24"
+  packageversion122="Not Supported"
+  packageversion143="Not Supported"
+  packageversion154="Supported 0.2.36+"
+/>
 
 Generate synthetic data with this special kind of Source Gem.
 
@@ -25,7 +37,7 @@ Follow the steps below to generate your own mock data using the Data Generator G
 
 ## Cluster requirements
 
-Create a Fabric and configure the [Job Size](/docs/Spark/fabrics/databricks.md) as below, or log into an existing Spark cluster UI. Here we use Databricks as an example.
+Create a Fabric and configure the [Job Size](/docs/Spark/fabrics/databricks/databricks.md) as below, or log into an existing Spark cluster UI. Here we use Databricks as an example.
 
 1. Verify the Databricks Runtime uses Python version >= 3.8.
    For example, [Databricks Runtime 12.2 LTS](https://docs.databricks.com/en/release-notes/runtime/12.2lts.html) uses Python 3.9.19. If you are using Databricks Runtime 12.2+, the Python version meets this requirement.
@@ -84,4 +96,9 @@ Be sure to configure the write mode for the target Gem. This is **very important
 
 :::caution
 The Data Generator only generates the data. If you want to store the data just connect the output to a target Gem and configure the location, write properties etc. The data generated is new for each run (execution). The target write mode can be error, overwrite, append, or ignore as desired.
+:::
+
+:::info
+Using Unity Catalog Shared Spark Clusters?
+Check [here](../../../../fabrics/databricks/ucshared) to see if this Gem is supported.
 :::

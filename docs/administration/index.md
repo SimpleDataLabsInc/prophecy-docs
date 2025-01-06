@@ -1,21 +1,25 @@
 ---
 title: Architecture
-id: architecture
-sidebar_class_name: hidden
-description: Describing the architecture of Prophecy and how it can integrate into your use cases
-tags: []
+id: index
+description: Understand the high-level design and organization of Prophecy
+tags:
+  - saas
+  - dedicated saas
+  - self-hosted
+  - architecture
 ---
 
-Prophecy deployment is simple and flexible. Prophecy is written as a set of Microservices that run on Kubernetes and is
-built to be multi-tenant.
+Prophecy is written as a set of microservices that run on Kubernetes, and it can run on various cloud platforms.
 
-| Deployment Model                                                      | Customers Who Prefer it                                         |
-| --------------------------------------------------------------------- | --------------------------------------------------------------- |
-| [Prophecy Managed SaaS](./deployment#public-saas)                     | Midsize Companies and Startups                                  |
-| [Private SaaS (Customer VPC)](./deployment#private-saas-customer-vpc) | Enterprises in the Cloud                                        |
-| [On-Premise](./deployment#on-premise-deployment)                      | Large Enterprises in the middle of cloud migration (rare cases) |
+## Deployment
 
-## High-Level Architecture
+| Deployment Model                                                            | Description                                                                                                              |
+| --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| [SaaS](docs/administration/prophecy-deployment.md#saas)                     | Prophecy-managed, multi-tenant architecture. [Try it here](https://app.prophecy.io/).                                    |
+| [Dedicated SaaS](docs/administration/prophecy-deployment.md#dedicated-saas) | Prophecy-managed, single-tenant architecture in Prophecy’s VPC.                                                          |
+| [Self-hosted](docs/administration/prophecy-deployment.md#self-hosted)       | Self-managed and runs within the customer’s VPC. Formerly known as Private SaaS deployment. [Learn more](./self-hosted). |
+
+## High-level architecture
 
 There are four components of a successful Prophecy deployment:
 
@@ -56,20 +60,20 @@ To allow for interactive code execution Prophecy can connect to either [Databric
 
 ![Prophecy to Databricks Connectivity](./img/arch_databricks.png)
 
-Prophecy connects to Databricks using [Rest API](https://docs.databricks.com/dev-tools/api/latest/index.html). Each [Fabric](../../concepts/fabrics) defined in Prophecy connects to a single [Databricks workspace](https://docs.databricks.com/workspace/index.html) and each user is required to provide a [personal access token](https://docs.databricks.com/dev-tools/api/latest/authentication.html) to authenticate to it.
+Prophecy connects to Databricks using [Rest API](https://docs.databricks.com/dev-tools/api/latest/index.html). Each [Fabric](../../concepts/fabrics) defined in Prophecy connects to a single [Databricks workspace](https://docs.databricks.com/workspace/index.html). You can connect a Databricks workspace to your Fabric using a [personal access token (PAT)](https://docs.databricks.com/dev-tools/api/latest/authentication.html) or [Databricks OAuth](docs/administration/authentication/databricks-oauth.md).
+
+:::note
+When using **Active Directory**, Prophecy takes care of the auto-generation and refreshing of the Databricks personal access tokens. Read more about it [here](https://docs.microsoft.com/en-us/azure/databricks/dev-tools/api/latest/aad/).
+:::
 
 Security-conscious enterprises that use Databricks with limited network access have to additionally add the **Prophecy Data Plane IP address** (`3.133.35.237`) to the Databricks allowed [access list](https://docs.databricks.com/security/network/ip-access-list.html#add-an-ip-access-list).
 
-Primarily Prophecy uses Databricks for the following functionalities:
+Prophecy primarily uses Databricks for the following functionalities:
 
 - **Interactive Execution** - Prophecy allows its users to spin up new clusters or connect to existing clusters. When a cluster connection exists, Prophecy allows the user to run their code in the interactive mode. Interactive code queries are sent to Databricks using the [Databricks Command API 1.2](https://docs.databricks.com/dev-tools/api/1.2/index.html).
 - **Scheduling** - Prophecy allows the user to build and orchestrate Databricks Jobs. This works through the [Databricks Jobs API 2.1](https://docs.databricks.com/dev-tools/api/latest/jobs.html).
 
 By default, Prophecy does not store any data samples when executing code using Databricks. Data samples can be optionally stored for observability purposes (execution metrics).
-
-:::note
-When using **Active Directory**, Prophecy takes care of auto-generation and refreshing of the Databricks personal access tokens. Read more about it [here](https://docs.microsoft.com/en-us/azure/databricks/dev-tools/api/latest/aad/).
-:::
 
 ### Git
 
@@ -83,29 +87,18 @@ Supported Git providers:
 - **GitLab** (including GitLab self-hosted) - authenticates using per-user personal access tokens. [How to generate PAT?](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html)
 - **Azure DevOps** - authenticates using per-user personal access tokens. [How to generate PAT?](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=Windows)
 
-Security-conscious enterprises that use Git Providers within private networks behind firewalls have to add the Prophecy Control Plane IP address (`3.133.35.237`) to the private network allow-list or to the Git provider [allow-list](https://github.blog/2019-12-12-ip-allow-lists-now-in-public-beta/).
+Security-conscious enterprises that use Git providers within private networks behind firewalls have to add the Prophecy Control Plane IP address (`3.133.35.237`) to the private network allow-list or to the Git provider [allow-list](https://github.blog/2019-12-12-ip-allow-lists-now-in-public-beta/).
 
-## Security and Privacy Practices
+## Security and privacy practices
 
 The Prophecy team employs top-notch industry practices to safeguard the security of their application and maintain the privacy of customer data. Below are just a few components of our comprehensive security strategy and system structure:
 
 - **General** - An annual penetration test is performed to validate Prophecy’s posture and identify vulnerabilities. Our latest penetration test report was issued in November 2022. Prophecy maintains SOC-2 compliance as audited by PrescientAssurance.
 
-- **Public SaaS** - Prophecy IDE is hosted on secure servers on AWS. All storage systems are encrypted, and all servers are tightly access controlled and audited. Data is encrypted in transit at all times.
+- **SaaS** - Prophecy IDE is hosted on secure servers on AWS. All storage systems are encrypted, and all servers are tightly access controlled and audited. Data is encrypted in transit at all times.
 
-- **Private SaaS** - Alternatively, Prophecy’s IDE can be installed within an Enterprise network as desired. Prophecy’s IDE accesses your environment through a single IP address dedicated to you, allowing you to protect access to your data resources at the network level. The credentials are stored per user, and only a fully authenticated user can access their environment.
+- **Self-hosted** - Alternatively, Prophecy’s IDE can be installed within an Enterprise network as desired. Prophecy’s IDE accesses your environment through a single IP address dedicated to you, allowing you to protect access to your data resources at the network level. The credentials are stored per user, and only a fully authenticated user can access their environment.
 
-- **On-Premise** - Prophecy complies with your security requirements on-premise; [reach out](https://www.prophecy.io/request-a-demo) to start the discussion.
+- **On-premise** - Prophecy complies with your security requirements on-premise; [reach out](https://www.prophecy.io/request-a-demo) to start the discussion.
 
 Read more details on Prophecy’s security and compliance posture at our Security Portal [here.](https://security.prophecy.io/)
-
-## What's next
-
-To learn more about Prophecy's architecture, see the following pages:
-
-```mdx-code-block
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
-<DocCardList items={useCurrentSidebarCategory().items}/>
-```
