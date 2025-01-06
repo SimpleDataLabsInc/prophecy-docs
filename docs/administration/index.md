@@ -5,7 +5,7 @@ description: Understand the high-level design and organization of Prophecy
 tags:
   - saas
   - dedicated saas
-  - self hosted
+  - self-hosted
   - architecture
 ---
 
@@ -13,11 +13,11 @@ Prophecy is written as a set of microservices that run on Kubernetes, and it can
 
 ## Deployment
 
-| Deployment Model                              | Description                                                                                                              |
-| --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| [SaaS](./deployment#saas)                     | Prophecy-managed, multi-tenant architecture. [Try it here](https://app.prophecy.io/).                                    |
-| [Dedicated SaaS](./deployment#dedicated-saas) | Prophecy-managed, single-tenant architecture in Prophecy’s VPC.                                                          |
-| [Self Hosted](./deployment#self-hosted)       | Self-managed and runs within the customer’s VPC. Formerly known as Private SaaS deployment. [Learn more](./self-hosted). |
+| Deployment Model                                                            | Description                                                                                                              |
+| --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| [SaaS](docs/administration/prophecy-deployment.md#saas)                     | Prophecy-managed, multi-tenant architecture. [Try it here](https://app.prophecy.io/).                                    |
+| [Dedicated SaaS](docs/administration/prophecy-deployment.md#dedicated-saas) | Prophecy-managed, single-tenant architecture in Prophecy’s VPC.                                                          |
+| [Self-hosted](docs/administration/prophecy-deployment.md#self-hosted)       | Self-managed and runs within the customer’s VPC. Formerly known as Private SaaS deployment. [Learn more](./self-hosted). |
 
 ## High-level architecture
 
@@ -97,8 +97,8 @@ The Prophecy team employs top-notch industry practices to safeguard the security
 
 - **SaaS** - Prophecy IDE is hosted on secure servers on AWS. All storage systems are encrypted, and all servers are tightly access controlled and audited. Data is encrypted in transit at all times.
 
-- **Self Hosted** - Alternatively, Prophecy’s IDE can be installed within an Enterprise network as desired. Prophecy’s IDE accesses your environment through a single IP address dedicated to you, allowing you to protect access to your data resources at the network level. The credentials are stored per user, and only a fully authenticated user can access their environment.
+- **Self-hosted** - Alternatively, Prophecy’s IDE can be installed within an Enterprise network as desired. Prophecy’s IDE accesses your environment through a single IP address dedicated to you, allowing you to protect access to your data resources at the network level. The credentials are stored per user, and only a fully authenticated user can access their environment.
 
-- **On-Premise** - Prophecy complies with your security requirements on-premise; [reach out](https://www.prophecy.io/request-a-demo) to start the discussion.
+- **On-premise** - Prophecy complies with your security requirements on-premise; [reach out](https://www.prophecy.io/request-a-demo) to start the discussion.
 
 Read more details on Prophecy’s security and compliance posture at our Security Portal [here.](https://security.prophecy.io/)

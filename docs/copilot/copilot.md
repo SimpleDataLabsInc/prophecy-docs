@@ -37,7 +37,7 @@ Prophecy sends the enhanced Prompt to OpenAI. The large language model (LLM) ret
 
 ## Deployment
 
-Data Copilot is available for all customers using Prophecy’s managed SaaS offering and uses the SaaS version of OpenAI's Language model. Customers using the Self Hosted or on-prem offerings can enable Data Copilot as a flag in the deployment / upgrade configuration.
+Data Copilot is available for all customers using Prophecy’s managed SaaS offering and uses the SaaS version of OpenAI's Language model. Customers using the self-hosted or on-premise offerings can enable Data Copilot as a flag in the deployment / upgrade configuration.
 
 For more details, see [Enable Data Copilot](/docs/administration/self-hosted/enable-data-copilot.md).
 

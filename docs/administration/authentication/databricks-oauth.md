@@ -21,7 +21,7 @@ In Prophecy, you can use Databricks OAuth in two ways:
 This integration works with both Spark clusters and SQL warehouses.
 
 <details>
-  <summary>Required if you are on a Dedicated SaaS or Self Hosted deployment</summary>
+  <summary>Required if you are on a Dedicated SaaS or self-hosted deployment</summary>
 
 ### Register Prophecy as an App Connection in Databricks
 
@@ -68,7 +68,7 @@ width="70%"
 When you click **Continue**, a separate browser tab opens, and you can log in to Databricks.
 
 :::note
-You only need to perform this authentication periodically, depending on the OAuth timeout settings within Databricks. SaaS deployments automatically use the default time period. If you have a Dedicated SaaS or Self Hosted deployment, your Databricks Account Administrator can adjust the timeout setting.
+You only need to perform this authentication periodically, depending on the OAuth timeout settings within Databricks. SaaS deployments automatically use the default time period. If you have a Dedicated SaaS or self-hosted deployment, your Databricks Account Administrator can adjust the timeout setting.
 :::
 
 ## Automated Jobs
