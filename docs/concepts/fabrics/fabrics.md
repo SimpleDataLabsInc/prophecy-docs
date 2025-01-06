@@ -55,7 +55,7 @@ Optionally, you can enhance your Fabric by creating a **Metadata Connection**. T
 
 ### Credentials and Secrets
 
-Prophecy enables you to securely store credentials in the Databricks environment. When connecting to Databricks, you can either use a Personal Access Token (PAT) or leverage [Databricks OAuth](/docs/architecture/self-hosted/authentication/databricks-oauth.md).
+Prophecy enables you to securely store credentials in the Databricks environment. When connecting to Databricks, you can either use a Personal Access Token (PAT) or leverage [Databricks OAuth](/docs/administration/authentication/databricks-oauth.md).
 
 Key-value pairs can be stored as secrets, which are accessible to running workflows. After a secret is created, it can only be read by running jobs, and Prophecy does not have access to its value.
 
@@ -64,7 +64,7 @@ Key-value pairs can be stored as secrets, which are accessible to running workfl
 Get started with hands-on guides. Learn step by step how to connect to your execution engine by creating a Fabric:
 
 1. Create a SQL Fabric with a JDBC or Unity Catalog connection following [this guide](/docs/getting-started/getting-started-with-low-code-sql.md#23-setup-prophecys-Fabric).
-2. Create a Databricks Fabric following [these steps](/docs/Spark/fabrics/databricks.md).
+2. Create a Databricks Fabric following [these steps](/docs/Spark/fabrics/databricks/databricks.md).
 3. Create an EMR Fabric with Livy step by step [here](/docs/Spark/fabrics/emr.mdx).
 
 ## What's next

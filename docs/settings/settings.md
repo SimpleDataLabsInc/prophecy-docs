@@ -53,4 +53,4 @@ This page displays the current version and state of all services in Prophecy dep
 
 ## What's next?
 
-Learn more about our [settings for self-managed Prophecy administration](docs/architecture/self-hosted/self-hosted.md).
+Learn more about our [settings for self-managed Prophecy administration](docs/administration/self-hosted/self-hosted.md).

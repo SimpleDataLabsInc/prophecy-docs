@@ -18,7 +18,7 @@ Gather logs from your Prophecy environment and send them to the support team via
   </thead>
   <tbody>
     <tr>
-      <td>Prophecy <a href="../../architecture/self-hosted/download-logs#enable-prophecy-downloads-logs">System logs</a></td>
+      <td>Prophecy <a href="../../administration/self-hosted/download-logs#enable-prophecy-downloads-logs">System logs</a></td>
       <td>
         <br />
         <img
