@@ -6,7 +6,7 @@ sidebar_class_name: hidden
 tags: []
 ---
 
-import PlainTextTOC from '@site/src/components/inlinetoc';
+import { Release } from '@site/src/components/releases';
 
 Review our release notes to see features, enhancements, changes, and fixes that have been introduced with a release. If you have any questions, please [contact Prophecy](mailto:contact.us@Prophecy.io).
 
@@ -17,8 +17,6 @@ To ensure these updates do not impact your usage, we recommend refreshing the we
 
 ## [2025](./2025)
 
-export const toc2025 = require('./2025/2025.md').toc;
-
-<PlainTextTOC toc={toc2025} />
+<Release item={require('./2025/2025.md')} path="./2025" />
 
 ## [2024](./2024)
