@@ -7,10 +7,11 @@ tags:
   - gems
   - lookup
 ---
-import Requirements from "../../_gem-requirements.mdx";
+
+import Requirements from "../../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
-        
+
 <Requirements packagename=""
   packageversion=""
   scalalib=""
@@ -19,8 +20,6 @@ import Requirements from "../../_gem-requirements.mdx";
   packageversion143="Supported +"
   packageversion154="Supported +"
 />
-
-<h3><span class="badge">Spark Gem</span></h3>
 
 Lookups are a special kind of Gem that allow you to mark a particular DataFrame as a _Broadcast_ DataFrame. Spark will ensure that this data is available on every computation node so that these lookups can be done without shuffling data. This is useful for looking up values in tables, hence the name.
 

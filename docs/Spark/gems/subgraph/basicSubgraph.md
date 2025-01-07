@@ -8,10 +8,11 @@ tags:
   - reusable
   - group
 ---
-import Requirements from "../_gem-requirements.mdx";
+
+import Requirements from "../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
-        
+
 <Requirements packagename=""
   packageversion=""
   scalalib=""
@@ -20,8 +21,6 @@ import Requirements from "../_gem-requirements.mdx";
   packageversion143="Supported +"
   packageversion154="Supported +"
 />
-
-<h3><span class="badge">Spark Gem</span></h3>
 
 In a **Basic Subgraph**, you have the capability to encapsulate multiple distinct Gems within a single, reusable parent Gem. This organizational approach enhances the visual clarity of your Pipeline by grouping various sections together under a common parent Gem. Additionally, it empowers you to break down intricate logic into modular components, thereby streamlining the Data Engineering processes.
 

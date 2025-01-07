@@ -8,10 +8,11 @@ tags:
   - filter
   - where
 ---
-import Requirements from "../_gem-requirements.mdx";
+
+import Requirements from "../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
-        
+
 <Requirements packagename="ProphecySparkBasicPython"
   packageversion="0.0.1"
   scalalib=""
@@ -20,8 +21,6 @@ import Requirements from "../_gem-requirements.mdx";
   packageversion143="Supported 0.0.1+"
   packageversion154="Supported 0.0.1+"
 />
-
-<h3><span class="badge">Spark Gem</span></h3>
 
 Filters DataFrame based on the provided filter condition
 

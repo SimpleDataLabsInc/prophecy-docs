@@ -7,10 +7,11 @@ tags:
   - custom
   - code
 ---
-import Requirements from "../_gem-requirements.mdx";
+
+import Requirements from "../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
-        
+
 <Requirements packagename=""
   packageversion=""
   scalalib=""
@@ -19,8 +20,6 @@ import Requirements from "../_gem-requirements.mdx";
   packageversion143="Supported +"
   packageversion154="Supported +"
 />
-
-<h3><span class="badge">Spark Gem</span></h3>
 
 Provides a `SparkSession` and allows you to run custom code.
 

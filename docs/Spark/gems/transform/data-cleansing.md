@@ -8,10 +8,11 @@ tags:
   - clean
   - format
 ---
-import Requirements from "../_gem-requirements.mdx";
+
+import Requirements from "../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
-        
+
 <Requirements packagename="ProphecySparkBasicPython"
   packageversion=""
   scalalib=""
@@ -20,8 +21,6 @@ import Requirements from "../_gem-requirements.mdx";
   packageversion143="Supported +"
   packageversion154="Supported +"
 />
-
-<h3><span class="badge">Spark Gem</span></h3>
 
 Use the DataCleansing Gem to standardize data formats and address missing or null values in the data.
 

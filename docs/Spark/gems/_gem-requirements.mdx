@@ -21,20 +21,24 @@ export default function Requirements(props) {
             <td>{props.packageversion143}</td>
             <td>{props.packageversion154}</td>
           </tr>
-          <tr>
-            <td>ProphecyLibsScala</td>
-            <td>{props.scalalib}</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-          </tr>
-          <tr>
-            <td>ProphecyLibsPython</td>
-            <td>{props.pythonlib}</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-          </tr>
+          {props.scalalib && (
+            <tr>
+              <td>ProphecyLibsScala</td>
+              <td>{props.scalalib}</td>
+              <td>N/A</td>
+              <td>N/A</td>
+              <td>N/A</td>
+            </tr>
+          )}
+          {props.pythonlib && (
+            <tr>
+              <td>ProphecyLibsPython</td>
+              <td>{props.pythonlib}</td>
+              <td>N/A</td>
+              <td>N/A</td>
+              <td>N/A</td>
+            </tr>
+          )}
         </tbody>
       </table>
     </div>

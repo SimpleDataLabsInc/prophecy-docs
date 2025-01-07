@@ -8,10 +8,11 @@ tags:
   - type
   - columns
 ---
-import Requirements from "../_gem-requirements.mdx";
+
+import Requirements from "../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
-        
+
 <Requirements packagename="ProphecySparkBasicPython"
   packageversion=""
   scalalib=""
@@ -20,8 +21,6 @@ import Requirements from "../_gem-requirements.mdx";
   packageversion143="Supported +"
   packageversion154="Supported +"
 />
-
-<h3><span class="badge">Spark Gem</span></h3>
 
 The BulkColumnExpressions Gem primarily lets you cast or change the data type of multiple columns at once. It provides additional functionality, including:
 

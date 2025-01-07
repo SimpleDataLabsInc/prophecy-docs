@@ -8,10 +8,11 @@ tags:
   - rename
   - columns
 ---
-import Requirements from "../_gem-requirements.mdx";
+
+import Requirements from "../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
-        
+
 <Requirements packagename="ProphecySparkBasicPython"
   packageversion="0.2.11"
   scalalib="7.1.97"
@@ -20,8 +21,6 @@ import Requirements from "../_gem-requirements.mdx";
   packageversion143="Not Supported"
   packageversion154="Not Supported"
 />
-
-<h3><span class="badge">Spark Gem</span></h3>
 
 Use the BulkColumnRename Gem to rename multiple columns in your Dataset in a systematic way.
 
