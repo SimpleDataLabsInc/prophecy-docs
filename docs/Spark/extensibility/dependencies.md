@@ -104,9 +104,16 @@ To add the `io.github.etspaceman:scalacheck-faker_2.12:7.0.0` dependency, edit t
 
 ### Managing dependencies for WHL format deployments
 
-When deploying Pipelines using WHL format, you need to account for dependencies in both Python and Scala.
+:::info
+Special consideration for Scala dependencies in Pyspark projects must be given when deploying WHL files outside of PBT.
+If you do not create Jobs in the Prophecy editor or use the `pbt deploy` or `pbt deploy-v2` commands, then this
+section will help track those Scala dependencies.
+:::
+
+When manually deploying Pipelines using WHL format, you need to account for dependencies in both Python and Scala.
 WHL files inherently record Python dependencies, which ensures Python-related packages are handled during deployment.
-However, you need to use the [Prophecy Build Tool (PBT)](docs/deployment/prophecy-build-tool/prophecy-build-tool.md) to generate and include Scala dependency metadata in your deployment.
+You can use the following option in [Prophecy Build Tool (PBT)](docs/deployment/prophecy-build-tool/prophecy-build-tool.md) to
+generate and include Scala dependency metadata in your deployment.
 
 #### Run the PBT command
 
@@ -118,7 +125,8 @@ pbt build-v2 --add-pom-xml-python --path .
 
 This command will :
 
-- Generate pom.xml and MAVEN_COORDINATES.
+- Generate a dummy pom.xml and MAVEN_COORDINATES containing maven dependencies.
+  (These files contain the same information in different formats for your convenience)
 - Add these files to the WHL package under the directory: `{package_name}-1.0.data/data/`
 
 #### Configuring Spark version
@@ -127,4 +135,4 @@ Set the SPARK_VERSION environment variable to specify the Spark version you inte
 
 The version must end with `.0`. To set the environment variable, run a command like `export SPARK_VERSION=3.4.0`.
 
-If SPARK_VERSION is not set, PBT will replace the Spark version in the Maven coordinate with the placeholder string `{{REPLACE_ME}}`.
+If SPARK_VERSION is not set, PBT will set the Spark version in the Maven coordinate with the placeholder string `{{REPLACE_ME}}`.
