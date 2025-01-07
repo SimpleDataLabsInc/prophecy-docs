@@ -47,12 +47,13 @@ Follow these steps to complete the file configuration:
    ![Upload and create a table](./img/upload-create-table.png)
 
    :::note
-   Once you define the target location and click Next, your table will be uploaded to the file store, regardless of whether you complete the Gem configuration.
+   Once you define the target location and click Next, the file is uploaded to the file path, regardless of whether you complete the Gem configuration.
    :::
 
 1. Fill in any properties depending on your requirements.
 1. Click **Infer Schema**. _This step is required._
 1. Validate or update the schema and click **Next**.
-1. **Load** the data if you want to preview the table. Then, click **Create Dataset**.
+1. **Load** the data if you want to preview the table.
+1. Click **Create Dataset**. This action creates the dataset and also creates the table if using the **Upload and create a table** option.
 
-Now, your table is ready for use in your Pipeline via the Source Gem!
+Now, your data is ready for use in your Pipeline via the Source Gem!
