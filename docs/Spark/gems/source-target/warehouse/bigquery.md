@@ -8,6 +8,18 @@ tags:
   - warehouse
   - bigquery
 ---
+import Requirements from "../../_gem-requirements.mdx";
+
+<h3><span class="badge">Spark Gem</span></h3>
+        
+<Requirements packagename="ProphecyWarehousePython"
+  packageversion="0.0.1"
+  scalalib=""
+  pythonlib=""
+  packageversion122="Not Supported"
+  packageversion143="Not Supported"
+  packageversion154="Not Supported"
+/>
 
 :::info Built on
 This connector is built on top of the already available [`spark-bigquery-connector`](https://github.com/GoogleCloudDataproc/spark-bigquery-connector/) connector. <br/>

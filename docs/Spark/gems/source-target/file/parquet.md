@@ -8,6 +8,18 @@ tags:
   - file
   - parquet
 ---
+import Requirements from "../../_gem-requirements.mdx";
+
+<h3><span class="badge">Spark Gem</span></h3>
+        
+<Requirements packagename="ProphecySparkBasicPython"
+  packageversion="0.0.1"
+  scalalib=""
+  pythonlib=""
+  packageversion122="Supported 0.0.1+"
+  packageversion143="Supported 0.0.1+"
+  packageversion154="Supported 0.0.1+"
+/>
 
 Parquet is an open-source Columnar storage data format. It handles large volumes of data by supporting complex pushdown predicates, nested schemas and a wide variety of column encoding types.
 

@@ -8,6 +8,18 @@ tags:
   - reusable
   - group
 ---
+import Requirements from "../_gem-requirements.mdx";
+
+<h3><span class="badge">Spark Gem</span></h3>
+        
+<Requirements packagename=""
+  packageversion=""
+  scalalib=""
+  pythonlib=""
+  packageversion122="Supported +"
+  packageversion143="Supported +"
+  packageversion154="Supported +"
+/>
 
 <h3><span class="badge">Spark Gem</span></h3>
 

@@ -8,6 +8,18 @@ tags:
   - file
   - csv
 ---
+import Requirements from "../../_gem-requirements.mdx";
+
+<h3><span class="badge">Spark Gem</span></h3>
+        
+<Requirements packagename="ProphecySparkBasicPython"
+  packageversion="0.2.35"
+  scalalib=""
+  pythonlib=""
+  packageversion122="Not Supported"
+  packageversion143="Not Supported"
+  packageversion154="Not Supported"
+/>
 
 Allows you to read or write delimited files such as CSV (Comma-separated Values) or TSV (Tab-separated Values).
 

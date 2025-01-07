@@ -8,6 +8,18 @@ tags:
   - rename
   - columns
 ---
+import Requirements from "../_gem-requirements.mdx";
+
+<h3><span class="badge">Spark Gem</span></h3>
+        
+<Requirements packagename="ProphecySparkBasicPython"
+  packageversion="0.2.11"
+  scalalib="7.1.97"
+  pythonlib="1.8.19"
+  packageversion122="Not Supported"
+  packageversion143="Not Supported"
+  packageversion154="Not Supported"
+/>
 
 <h3><span class="badge">Spark Gem</span></h3>
 

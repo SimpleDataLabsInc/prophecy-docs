@@ -8,6 +8,18 @@ tags:
   - file
   - kafka
 ---
+import Requirements from "../../_gem-requirements.mdx";
+
+<h3><span class="badge">Spark Gem</span></h3>
+        
+<Requirements packagename="ProphecyStreamingPython"
+  packageversion=""
+  scalalib=""
+  pythonlib=""
+  packageversion122="Not Supported"
+  packageversion143="Not Supported"
+  packageversion154="Not Supported"
+/>
 
 [Apache Kafka](https://kafka.apache.org/) is an open-source distributed event streaming platform. Supporting a number of streaming paradigms it's used by thousands of companies and organizations in scenarios including Data Ingestion, Analytics and more.
 

@@ -8,6 +8,18 @@ tags:
   - filter
   - dynamic
 ---
+import Requirements from "../_gem-requirements.mdx";
+
+<h3><span class="badge">Spark Gem</span></h3>
+        
+<Requirements packagename="ProphecySparkBasicPython"
+  packageversion="0.2.27"
+  scalalib="8.2.1"
+  pythonlib="1.9.16"
+  packageversion122="Not Supported"
+  packageversion143="Not Supported"
+  packageversion154="Not Supported"
+/>
 
 <h3><span class="badge">Spark Gem</span></h3>
 

@@ -8,6 +8,18 @@ tags:
   - table
   - iterator
 ---
+import Requirements from "../_gem-requirements.mdx";
+
+<h3><span class="badge">Spark Gem</span></h3>
+        
+<Requirements packagename="ProphecySparkBasicPython"
+  packageversion="0.1.4"
+  scalalib="7.1.66"
+  pythonlib="1.8.4"
+  packageversion122="Supported 0.1.4+"
+  packageversion143="Supported 0.1.4+"
+  packageversion154="Supported 0.1.4+"
+/>
 
 <h3><span class="badge">Spark Gem</span></h3>
 

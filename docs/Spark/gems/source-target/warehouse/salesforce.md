@@ -8,6 +8,18 @@ tags:
   - warehouse
   - salesforce
 ---
+import Requirements from "../../_gem-requirements.mdx";
+
+<h3><span class="badge">Spark Gem</span></h3>
+        
+<Requirements packagename="ProphecyWebAppPython"
+  packageversion="0.0.1"
+  scalalib=""
+  pythonlib=""
+  packageversion122="TBD"
+  packageversion143="TBD"
+  packageversion154="TBD"
+/>
 
 This Gem has below features:
 

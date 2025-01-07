@@ -8,6 +8,18 @@ tags:
   - wideformat
   - longformat
 ---
+import Requirements from "../_gem-requirements.mdx";
+
+<h3><span class="badge">Spark Gem</span></h3>
+        
+<Requirements packagename="ProphecySparkBasicPython"
+  packageversion="0.2.36"
+  scalalib=""
+  pythonlib=""
+  packageversion122="Supported 0.2.36+"
+  packageversion143="Supported 0.2.36+"
+  packageversion154="Supported 0.2.36+"
+/>
 
 <h3><span class="badge">Spark Gem</span></h3>
 

@@ -9,6 +9,18 @@ tags:
   - cosmos
   - azure
 ---
+import Requirements from "../../_gem-requirements.mdx";
+
+<h3><span class="badge">Spark Gem</span></h3>
+        
+<Requirements packagename="ProphecyWarehousePython"
+  packageversion="0.0.1"
+  scalalib=""
+  pythonlib=""
+  packageversion122="TBD"
+  packageversion143="TBD"
+  packageversion154="TBD"
+/>
 
 The `azure-cosmos-spark` connector is an integration between Azure CosmosDB and Apache Spark, enabling you to read and write data from and to CosmosDB using Spark. This document will cover the key properties available for configuration when using this connector.
 
