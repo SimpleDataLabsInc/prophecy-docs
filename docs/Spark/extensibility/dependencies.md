@@ -123,10 +123,10 @@ Run the following PBT command in your project directory to capture Scala depende
 pbt build-v2 --add-pom-xml-python --path .
 ```
 
-This command will :
+This command will:
 
-- Generate a dummy pom.xml and MAVEN_COORDINATES containing maven dependencies.
-  (These files contain the same information in different formats for your convenience)
+- Generate a dummy `pom.xml` and `MAVEN_COORDINATES` containing Maven dependencies.
+  (These files contain the same information in different formats for your convenience.)
 - Add these files to the WHL package under the directory: `{package_name}-1.0.data/data/`
 
 #### Configuring Spark version
