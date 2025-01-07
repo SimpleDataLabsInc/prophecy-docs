@@ -1,5 +1,5 @@
 ---
-title: Syncing audit logs from SAAS
+title: Syncing audit logs from SaaS
 id: audit-logging
 description: Prophecy Audit logs available to be exported in S3
 sidebar_position: 7
@@ -13,7 +13,7 @@ Prophecy provides access to audit logs of activities performed by Prophecy users
 The Prophecy admin can configure a S3 bucket to sync these events from Prophecy to their environment.
 
 :::info
-This is only available for our SaaS Users only. Also, the initial Setup to enable this would require Manual Effort. Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about this in detail.
+This is only available for SaaS and requires manual effort. Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about this in detail.
 :::
 
 An empty AWS S3 bucket with read/write permissions is required. Follow the guidelines below to set up the bucket correctly.

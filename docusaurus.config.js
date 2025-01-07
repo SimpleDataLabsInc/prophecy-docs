@@ -66,17 +66,16 @@ const config = {
           srcDark: "img/Prophecy Logo White.png",
         },
         items: [
-          { to: "https://www.prophecy.io/", position: "left", label: "Home" },
           { type: "doc", docId: "index", position: "left", label: "Docs" },
+          {
+            to: "administration",
+            label: "Administration",
+            position: "left",
+          },
           {
             to: "https://transpiler.docs.prophecy.io/",
             position: "left",
-            label: "Transpiler Docs",
-          },
-          {
-            to: "https://www.prophecy.io/blogs",
-            label: "Blog",
-            position: "left",
+            label: "Transpiler",
           },
           {
             to: "/getting-started/getting-help",
@@ -89,6 +88,19 @@ const config = {
       footer: {
         style: "dark",
         links: [
+          {
+            title: "Prophecy",
+            items: [
+              {
+                label: "Home",
+                href: "https://www.prophecy.io/",
+              },
+              {
+                label: "Blog",
+                href: "https://www.prophecy.io/blogs",
+              },
+            ],
+          },
           {
             title: "Community",
             items: [
@@ -149,15 +161,15 @@ const config = {
             from: "/getting-started/getting-help/logs/config-sparknotebook",
           },
           {
-            to: "/architecture/self-hosted/enable-data-copilot",
+            to: "/administration/self-hosted/enable-data-copilot",
             from: "/architecture/deployment/enable-data-copilot",
           },
           {
-            to: "/architecture/self-hosted/enable-data-copilot",
+            to: "/administration/self-hosted/enable-data-copilot",
             from: "/copilot/enable-data-copilot",
           },
           {
-            to: "/architecture/self-hosted/authentication/active_directory",
+            to: "/administration/authentication/active_directory",
             from: "/architecture/authentication/active_directory",
           },
           {
@@ -173,59 +185,63 @@ const config = {
             from: "/Spark/fabrics/EMR-fabric-configuration",
           },
           {
-            to: "/architecture/self-hosted/upgrade-backup-restore",
+            to: "/Spark/fabrics/databricks/",
+            from: "/Spark/fabrics/databricks-fabric",
+          },
+          {
+            to: "/administration/self-hosted/upgrade-backup-restore",
             from: "/architecture/deployment/private-saas/backup-restore",
           },
           {
-            to: "/architecture/self-hosted/",
+            to: "/administration/self-hosted/",
             from: "/architecture/deployment/private-saas/",
           },
           {
-            to: "/architecture/self-hosted/authentication/security-settings",
+            to: "/administration/authentication/security-settings",
             from: "/architecture/authentication/admin-settings",
           },
           {
-            to: "/architecture/self-hosted/authentication/",
+            to: "/administration/authentication/",
             from: "/architecture/authentication",
           },
           {
-            to: "/architecture/self-hosted/authentication/azure-ad",
+            to: "/administration/authentication/azure-ad",
             from: "/architecture/authentication/azure_ad",
           },
           {
-            to: "/architecture/self-hosted/authentication/azuread-scim",
+            to: "/administration/authentication/azuread-scim",
             from: "/architecture/authentication/azuread_scim",
           },
           {
-            to: "/architecture/self-hosted/authentication/saml-okta",
+            to: "/administration/authentication/saml-okta",
             from: "/architecture/authentication/saml_okta",
           },
           {
-            to: "/architecture/self-hosted/configurations/configure-audit-logs",
+            to: "/administration/self-hosted/configurations/configure-audit-logs",
             from: "/architecture/deployment/private-saas/audit-events",
           },
           {
-            to: "/architecture/self-hosted/configurations/configure-object-store",
+            to: "/administration/self-hosted/configurations/configure-object-store",
             from: "/architecture/deployment/private-saas/object-store-config",
           },
           {
-            to: "/architecture/self-hosted/configurations/sandbox-configuration",
+            to: "/administration/self-hosted/configurations/sandbox-configuration",
             from: "/architecture/deployment/private-saas/sandbox-config",
           },
           {
-            to: "/architecture/self-hosted/configurations/configure-alerts",
+            to: "/administration/self-hosted/configurations/configure-alerts",
             from: "/architecture/deployment/private-saas/alerts-config",
           },
           {
-            to: "/architecture/self-hosted/download-logs",
+            to: "/administration/self-hosted/download-logs",
             from: "/architecture/deployment/private-saas/download-logs",
           },
           {
-            to: "/architecture/self-hosted/generate-api-key",
+            to: "/administration/self-hosted/generate-api-key",
             from: "/architecture/deployment/private-saas/generate-api-key",
           },
           {
-            to: "/architecture/self-hosted/install-prophecy/installation-helm/",
+            to: "/administration/self-hosted/installation-helm/",
             from: "/architecture/deployment/installation-guide",
           },
           {
@@ -273,7 +289,7 @@ const config = {
             from: "/concepts/dataset",
           },
           {
-            to: "/architecture/feature-matrix",
+            to: "/administration/feature-matrix",
             from: "/feature-matrix",
           },
           {
@@ -313,16 +329,48 @@ const config = {
             from: "/metadata/prophecyAPI",
           },
           {
-            to: "/settings/audit-logging",
+            to: "/administration/saas/audit-logging",
             from: "/metadata/audit-logging",
+          },
+          {
+            to: "/administration/saas/audit-logging",
+            from: "/settings/audit-logging",
           },
           {
             to: "/settings/teamuser",
             from: "/concepts/teamuser",
           },
           {
-            to: "/architecture/self-hosted/enable-data-copilot",
+            to: "/administration/self-hosted/enable-data-copilot",
             from: "/concepts/copilot/enable-data-copilot",
+          },
+          {
+            to: "/administration/prophecy-deployment",
+            from: "/architecture/deployment",
+          },
+          {
+            to: "/administration/prophecy-deployment",
+            from: "/administration/deployment",
+          },
+          {
+            to: "/administration",
+            from: "/architecture",
+          },
+          {
+            to: "/administration/self-hosted/installation-helm/",
+            from: "/architecture/self-hosted/install-prophecy/installation-helm",
+          },
+          {
+            to: "/administration/self-hosted/installation-helm/install-on-aws",
+            from: "/architecture/self-hosted/install-prophecy/installation-helm/install-on-aws",
+          },
+          {
+            to: "/administration/self-hosted/installation-marketplaces/",
+            from: "/architecture/self-hosted/install-prophecy/installation-marketplaces",
+          },
+          {
+            to: "/administration/self-hosted/installation-marketplaces/install-azure-marketplace",
+            from: "/architecture/self-hosted/install-prophecy/installation-marketplaces/install-azure-marketplace",
           },
           {
             to: "/Spark/prophecy-libraries",
@@ -380,6 +428,22 @@ const config = {
           }
           if (existingPath.includes("/lineage")) {
             return [existingPath.replace("/lineage", "/metadata/lineage")];
+          }
+          if (existingPath.includes("/administration/authentication")) {
+            return [
+              existingPath.replace(
+                "/administration/authentication",
+                "/architecture/self-hosted/authentication/",
+              ),
+            ];
+          }
+          if (existingPath.includes("/administration/self-hosted")) {
+            return [
+              existingPath.replace(
+                "/administration/self-hosted",
+                "/architecture/self-hosted/",
+              ),
+            ];
           }
           return undefined;
         },

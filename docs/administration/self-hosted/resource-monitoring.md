@@ -19,7 +19,7 @@ To have a better understanding of how Prophecy is using resources, you can find 
 
 ## Alerts
 
-To set up automated alerts about your resource usage, visit the page on [Alerts Configuration](docs/architecture/self-hosted/configurations/configure-alerts.md).
+To set up automated alerts about your resource usage, visit the page on [Alerts Configuration](docs/administration/self-hosted/configurations/configure-alerts.md).
 
 ## Scaling
 

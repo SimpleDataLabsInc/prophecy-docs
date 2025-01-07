@@ -37,9 +37,9 @@ Prophecy sends the enhanced Prompt to OpenAI. The large language model (LLM) ret
 
 ## Deployment
 
-Data Copilot is available for all customers using Prophecy’s managed Public SaaS offering and uses the public SaaS version of OpenAI's Language model. Customers using the Private SaaS or on-prem offerings can enable Data Copilot as a flag in the deployment / upgrade configuration.
+Data Copilot is available for all customers using Prophecy’s managed SaaS offering and uses the SaaS version of OpenAI's Language model. Customers using the self-hosted or on-premise offerings can enable Data Copilot as a flag in the deployment / upgrade configuration.
 
-For more details, see [Enable Data Copilot](/docs/architecture/self-hosted/enable-data-copilot.md).
+For more details, see [Enable Data Copilot](/docs/administration/self-hosted/enable-data-copilot.md).
 
 ## FAQ
 
@@ -71,7 +71,7 @@ Copilot features are included with Prophecy’s Spark and SQL offerings. There w
 
 #### Can I use my own private OpenAI instance?
 
-Yes! Administrators have the option to connect Prophecy Data Copilot to their private subscription OpenAI from the Kubernetes cluster where Prophecy services are running. For details on how to do this, see [Installation](/docs/architecture/self-hosted/enable-data-copilot.md#installation).
+Yes! Administrators have the option to connect Prophecy Data Copilot to their private subscription OpenAI from the Kubernetes cluster where Prophecy services are running. For details on how to do this, see [Installation](/docs/administration/self-hosted/enable-data-copilot.md#installation).
 
 #### Does Prophecy Data Copilot support text prompts in languages other than English?
 
