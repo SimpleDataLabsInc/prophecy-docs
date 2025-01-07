@@ -13,15 +13,6 @@ import Requirements from "../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
 
-<Requirements packagename="ProphecySparkBasicPython"
-  packageversion="0.0.1"
-  scalalib=""
-  pythonlib=""
-  packageversion122="Supported 0.0.1+"
-  packageversion143="Supported 0.0.1+"
-  packageversion154="Supported 0.0.1+"
-/>
-
 Helps perform the following operations on Delta tables.
 
 1. Register table in catalog
@@ -31,6 +22,17 @@ Helps perform the following operations on Delta tables.
 5. Delete from table
 6. Drop table
 7. FSCK Repair table
+
+## Requirements
+
+<Requirements packagename="ProphecySparkBasicPython"
+  packageversion="0.0.1"
+  scalalib=""
+  pythonlib=""
+  packageversion122="Supported 0.0.1+"
+  packageversion143="Supported 0.0.1+"
+  packageversion154="Supported 0.0.1+"
+/>
 
 ## Parameters
 

@@ -14,6 +14,10 @@ import Requirements from "../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
 
+The CompareColumns Gem lets you compare columns between two DataFrames based on the key id columns defined.
+
+## Requirements
+
 <Requirements packagename="ProphecySparkBasicPython"
   packageversion="0.0.1"
   scalalib=""
@@ -22,8 +26,6 @@ import Requirements from "../\_gem-requirements.mdx";
   packageversion143="Supported 0.0.1+"
   packageversion154="Supported 0.0.1+"
 />
-
-The CompareColumns Gem lets you compare columns between two DataFrames based on the key id columns defined.
 
 ## Parameters
 

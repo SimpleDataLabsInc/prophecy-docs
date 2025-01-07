@@ -8,10 +8,15 @@ tags:
   - file
   - xlsx
 ---
-import Requirements from "../../_gem-requirements.mdx";
+
+import Requirements from "../../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
-        
+
+If you've ever done anything with numbers in your line of work odds are you've worked with Excel at one point or another. Prophecy supports the format as both a data source and data target, so if you're migrating from a legacy system or you need to produce an Excel-compatible file for a report, we've got you covered.
+
+## Requirements
+
 <Requirements packagename="ProphecySparkBasicPython"
   packageversion="0.0.1"
   scalalib=""
@@ -20,8 +25,6 @@ import Requirements from "../../_gem-requirements.mdx";
   packageversion143="Not Supported"
   packageversion154="Not Supported"
 />
-
-If you've ever done anything with numbers in your line of work odds are you've worked with Excel at one point or another. Prophecy supports the format as both a data source and data target, so if you're migrating from a legacy system or you need to produce an Excel-compatible file for a report, we've got you covered.
 
 ## Prerequisites
 

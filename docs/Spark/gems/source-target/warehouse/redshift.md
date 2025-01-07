@@ -8,10 +8,13 @@ tags:
   - warehouse
   - redshift
 ---
-import Requirements from "../../_gem-requirements.mdx";
+
+import Requirements from "../../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
-        
+
+## Requirements
+
 <Requirements packagename="ProphecyWarehousePython"
   packageversion="0.0.1"
   scalalib=""

@@ -8,10 +8,15 @@ tags:
   - warehouse
   - bigquery
 ---
-import Requirements from "../../_gem-requirements.mdx";
+
+import Requirements from "../../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
-        
+
+Allows read and write operations on `BigQuery`.
+
+## Requirements
+
 <Requirements packagename="ProphecyWarehousePython"
   packageversion="0.0.1"
   scalalib=""
@@ -25,8 +30,6 @@ import Requirements from "../../_gem-requirements.mdx";
 This connector is built on top of the already available [`spark-bigquery-connector`](https://github.com/GoogleCloudDataproc/spark-bigquery-connector/) connector. <br/>
 For non-Databricks clusters, we need to install the corresponding library and please refer the library compatiblity matrix in the [`Spark BigQuery`](https://github.com/GoogleCloudDataproc/spark-bigquery-connector#connector-to-spark-compatibility-matrix) documentation. <br/>
 :::
-
-Allows read and write operations on `BigQuery`.
 
 ## Source
 

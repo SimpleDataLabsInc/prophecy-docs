@@ -13,6 +13,10 @@ import Requirements from "../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
 
+Use the DynamicSelect Gem to dynamically filter columns of your Dataset based on a set of conditions.
+
+## Requirements
+
 <Requirements packagename="ProphecySparkBasicPython"
   packageversion="0.2.27"
   scalalib="8.2.1"
@@ -21,8 +25,6 @@ import Requirements from "../\_gem-requirements.mdx";
   packageversion143="Not Supported"
   packageversion154="Not Supported"
 />
-
-Use the DynamicSelect Gem to dynamically filter columns of your Dataset based on a set of conditions.
 
 ## Configuration
 

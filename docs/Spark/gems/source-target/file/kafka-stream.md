@@ -8,10 +8,17 @@ tags:
   - file
   - kafka
 ---
-import Requirements from "../../_gem-requirements.mdx";
+
+import Requirements from "../../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
-        
+
+[Apache Kafka](https://kafka.apache.org/) is an open-source distributed event streaming platform. Supporting a number of streaming paradigms it's used by thousands of companies and organizations in scenarios including Data Ingestion, Analytics and more.
+
+This source currently connects with Kafka Brokers in **Batch** mode.
+
+## Requirements
+
 <Requirements packagename="ProphecyStreamingPython"
   packageversion=""
   scalalib=""
@@ -20,10 +27,6 @@ import Requirements from "../../_gem-requirements.mdx";
   packageversion143="Not Supported"
   packageversion154="Not Supported"
 />
-
-[Apache Kafka](https://kafka.apache.org/) is an open-source distributed event streaming platform. Supporting a number of streaming paradigms it's used by thousands of companies and organizations in scenarios including Data Ingestion, Analytics and more.
-
-This source currently connects with Kafka Brokers in **Batch** mode.
 
 ## Source
 

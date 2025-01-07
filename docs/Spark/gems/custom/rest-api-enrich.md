@@ -14,6 +14,10 @@ import Requirements from "../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
 
+Enriches the DataFrame by adding column(s) with content from REST API output based on the given configuration.
+
+## Requirements
+
 <Requirements packagename="ProphecySparkBasicPython"
   packageversion="0.0.1"
   scalalib=""
@@ -22,8 +26,6 @@ import Requirements from "../\_gem-requirements.mdx";
   packageversion143="Not Supported"
   packageversion154="Supported 0.0.1+"
 />
-
-Enriches the DataFrame by adding column(s) with content from REST API output based on the given configuration.
 
 ### Parameters
 

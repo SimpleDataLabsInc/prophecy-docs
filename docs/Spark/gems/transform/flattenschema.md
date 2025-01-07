@@ -14,6 +14,12 @@ import Requirements from "../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
 
+When processing raw data it can be useful to flatten complex data types like structures and arrays into simpler, flatter schemas.
+
+![The FlattenSchema gem](./img/flatten_gem.png)
+
+## Requirements
+
 <Requirements packagename="ProphecySparkBasicPython"
   packageversion="0.0.1"
   scalalib=""
@@ -22,10 +28,6 @@ import Requirements from "../\_gem-requirements.mdx";
   packageversion143="Supported 0.0.1+"
   packageversion154="Supported 0.0.1+"
 />
-
-When processing raw data it can be useful to flatten complex data types like structures and arrays into simpler, flatter schemas.
-
-![The FlattenSchema gem](./img/flatten_gem.png)
 
 ## The Input
 

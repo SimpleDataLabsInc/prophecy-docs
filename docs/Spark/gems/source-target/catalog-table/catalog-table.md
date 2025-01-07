@@ -4,10 +4,13 @@ id: catalog-table
 description: Supported catalog tables
 tags: []
 ---
-import Requirements from "../../_gem-requirements.mdx";
+
+import Requirements from "../../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
-        
+
+## Requirements
+
 <Requirements packagename="ProphecySparkBasicPython"
   packageversion="0.0.1"
   scalalib=""
@@ -17,7 +20,7 @@ import Requirements from "../../_gem-requirements.mdx";
   packageversion154="Supported 0.0.1+"
 />
 
-List of supported catalog tables:
+## Supported catalog tables
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

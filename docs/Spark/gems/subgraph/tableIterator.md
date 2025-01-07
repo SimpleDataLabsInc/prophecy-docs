@@ -13,6 +13,11 @@ import Requirements from "../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
 
+TableIterator allows you to iterate over one or more Gems for each row of the first input DataFrame.
+Let's see how to create a Basic Loop which loops over a Metadata Table, and for each row of the table will run the Gems inside the Subgraph.
+
+## Requirements
+
 <Requirements packagename="ProphecySparkBasicPython"
   packageversion="0.1.4"
   scalalib="7.1.66"
@@ -21,9 +26,6 @@ import Requirements from "../\_gem-requirements.mdx";
   packageversion143="Supported 0.1.4+"
   packageversion154="Supported 0.1.4+"
 />
-
-TableIterator allows you to iterate over one or more Gems for each row of the first input DataFrame.
-Let's see how to create a Basic Loop which loops over a Metadata Table, and for each row of the table will run the Gems inside the Subgraph.
 
 ## Creating a TableIterator Gem
 

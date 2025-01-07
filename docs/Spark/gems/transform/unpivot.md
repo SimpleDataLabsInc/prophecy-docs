@@ -13,6 +13,16 @@ import Requirements from "../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
 
+Use the Unpivot Gem to transform your data from a wide format to a long format.
+
+:::note
+
+If you want to pivot the data, rather than unpivot, use the [Aggregate](aggregate.md) Gem.
+
+:::
+
+## Requirements
+
 <Requirements packagename="ProphecySparkBasicPython"
   packageversion="0.2.36"
   scalalib=""
@@ -21,14 +31,6 @@ import Requirements from "../\_gem-requirements.mdx";
   packageversion143="Supported 0.2.36+"
   packageversion154="Supported 0.2.36+"
 />
-
-Use the Unpivot Gem to transform your data from a wide format to a long format.
-
-:::note
-
-If you want to pivot the data, rather than unpivot, use the [Aggregate](aggregate.md) Gem.
-
-:::
 
 ## Parameters
 

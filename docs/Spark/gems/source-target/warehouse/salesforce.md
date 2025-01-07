@@ -8,10 +8,20 @@ tags:
   - warehouse
   - salesforce
 ---
-import Requirements from "../../_gem-requirements.mdx";
+
+import Requirements from "../../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
-        
+
+This Gem has below features:
+
+1. Dataset Creation - Create Dataset in Salesforce Wave from Spark DataFrame.
+2. Read Salesforce Wave Dataset - User has to provide SAQL to read data from Salesforce Wave. The query result will be constructed as DataFrame.
+3. Read Salesforce Object - User has to provide SOQL to read data from Salesforce object. The query result will be constructed as DataFrame.
+4. Update Salesforce Object - Salesforce object will be updated with the details present in DataFrame.
+
+## Requirements
+
 <Requirements packagename="ProphecyWebAppPython"
   packageversion="0.0.1"
   scalalib=""
@@ -20,13 +30,6 @@ import Requirements from "../../_gem-requirements.mdx";
   packageversion143="TBD"
   packageversion154="TBD"
 />
-
-This Gem has below features:
-
-1. Dataset Creation - Create Dataset in Salesforce Wave from Spark DataFrame.
-2. Read Salesforce Wave Dataset - User has to provide SAQL to read data from Salesforce Wave. The query result will be constructed as DataFrame.
-3. Read Salesforce Object - User has to provide SOQL to read data from Salesforce object. The query result will be constructed as DataFrame.
-4. Update Salesforce Object - Salesforce object will be updated with the details present in DataFrame.
 
 :::note
 This connector is built on top of the already available [`spark-salesforce connector`](https://github.com/springml/spark-salesforce/).
