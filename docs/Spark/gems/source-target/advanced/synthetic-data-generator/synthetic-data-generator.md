@@ -20,13 +20,13 @@ Generate synthetic data with this special kind of Source Gem.
 ## Requirements
 
 <Requirements
-  packagename="ProphecySparkBasicsPython"
-  packageversion="0.2.36"
-  scalalib="8.5.0"
+  packagename="ProphecySparkBasicPython"
+  packageversion="0.2.32"
+  scalalib=""
   pythonlib="1.9.24"
-  packageversion122="Not Supported"
   packageversion143="Not Supported"
-  packageversion154="Supported 0.2.36+"
+  packageversion154="Supported 0.2.32+"
+  packageversion350="TBD"
 />
 
 ## Use cases

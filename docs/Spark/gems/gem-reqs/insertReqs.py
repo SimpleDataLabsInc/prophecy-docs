@@ -13,7 +13,7 @@ for text_file in glob.glob(os.path.join(base_directory, "**/*.txt"), recursive=T
 
     # Find a corresponding markdown file with the same base name
     markdown_file = next(
-        (file for file in glob.glob(os.path.join(base_directory, "**/*.md"), recursive=True)
+        (file for file in glob.glob(os.path.join(base_directory, "./*/*/*.md"), recursive=True)
          if os.path.basename(file) == f"{base_name}.md"),
         None
     )

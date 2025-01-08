@@ -2,8 +2,10 @@ export default function Requirements(props) {
   return (
     <div>
       <p>
-        This table describes the dependencies required for this Gem. It also
-        includes information about compatibility with Databricks clusters.
+        This table describes the dependencies required for this Gem to run with
+        Spark (eg Apache Synapse, EMR, Databricks, etc.). Prophecy needs to
+        install these dependencies on the Spark cluster, so this table
+        specifically mentions compatibility with Databricks UC Shared clusters.
       </p>
       <table>
         <thead>
@@ -12,7 +14,6 @@ export default function Requirements(props) {
             <th>
               <a href="./release_notes/version_chart/">Minimum version</a>
             </th>
-            <th>12.2 Shared</th>
             <th>14.3 UC Shared</th>
             <th>15.4 UC Shared</th>
           </tr>
@@ -21,7 +22,6 @@ export default function Requirements(props) {
           <tr>
             <td>{props.packagename}</td>
             <td>{props.packageversion}</td>
-            <td>{props.packageversion122}</td>
             <td>{props.packageversion143}</td>
             <td>{props.packageversion154}</td>
           </tr>
@@ -31,14 +31,12 @@ export default function Requirements(props) {
               <td>{props.scalalib}</td>
               <td>N/A</td>
               <td>N/A</td>
-              <td>N/A</td>
             </tr>
           )}
           {props.pythonlib && (
             <tr>
               <td>ProphecyLibsPython</td>
               <td>{props.pythonlib}</td>
-              <td>N/A</td>
               <td>N/A</td>
               <td>N/A</td>
             </tr>
