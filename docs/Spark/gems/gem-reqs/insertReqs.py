@@ -7,13 +7,13 @@ import shutil
 base_directory = "./"  # Replace with the path to your directories
 
 # Use glob to find all text files within the directory and up to two level of subdirectories
-for text_file in glob.glob(os.path.join(base_directory, "**/*.txt"), recursive=True):
+for text_file in glob.glob(os.path.join(base_directory, "./*.txt"), recursive=True):
     # Extract the base name without the extension
     base_name = os.path.splitext(os.path.basename(text_file))[0]
 
     # Find a corresponding markdown file with the same base name
     markdown_file = next(
-        (file for file in glob.glob(os.path.join(base_directory, "./*/*/*.md"), recursive=True)
+        (file for file in glob.glob(os.path.join(base_directory, "./../**/*.md"), recursive=True)
          if os.path.basename(file) == f"{base_name}.md"),
         None
     )

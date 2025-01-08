@@ -18,13 +18,14 @@ Enriches the DataFrame by adding column(s) with content from REST API output bas
 
 ## Requirements
 
-<Requirements packagename="ProphecySparkBasicPython"
+<Requirements
+  packagename="ProphecySparkBasicPython"
   packageversion="0.0.1"
   scalalib=""
   pythonlib=""
-  packageversion122="Not Supported"
   packageversion143="Not Supported"
   packageversion154="Supported 0.0.1+"
+  packageversion350="TBD"
 />
 
 ### Parameters
