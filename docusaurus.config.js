@@ -372,6 +372,10 @@ const config = {
             to: "/administration/self-hosted/installation-marketplaces/install-azure-marketplace",
             from: "/architecture/self-hosted/install-prophecy/installation-marketplaces/install-azure-marketplace",
           },
+          {
+            to: "/Spark/prophecy-libraries",
+            from: "/concepts/fabrics/prophecy-libraries",
+          },
         ],
         /*
 
