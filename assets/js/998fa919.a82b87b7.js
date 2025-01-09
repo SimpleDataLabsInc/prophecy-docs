@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[72591],{13360:a=>{a.exports=JSON.parse('{"label":"azureAD","permalink":"/tags/azure-ad","allTagsPath":"/tags","count":1,"items":[{"id":"administration/authentication/saml-scim","title":"SAML and SCIM","description":"SAML authentication","permalink":"/administration/authentication/saml-scim"}]}')}}]);

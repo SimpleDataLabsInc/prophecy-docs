@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[52362],{31064:a=>{a.exports=JSON.parse('{"label":"saml","permalink":"/tags/saml","allTagsPath":"/tags","count":1,"items":[{"id":"administration/authentication/saml-scim","title":"SAML and SCIM","description":"SAML authentication","permalink":"/administration/authentication/saml-scim"}]}')}}]);
