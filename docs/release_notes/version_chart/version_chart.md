@@ -2,7 +2,6 @@
 title: Version Chart
 id: version_chart
 description: Prophecy library version chart
-sidebar_position: 3
 tags: [compatibility, matrix, version, chart, library, plib, plibs]
 ---
 
@@ -27,7 +26,8 @@ Prophecy versions that are labeled with `EM` are Extended Maintenance releases. 
 
 | Prophecy version | [Prophecy Scala libs](https://mvnrepository.com/artifact/io.prophecy/prophecy-libs) | [Prophecy Python libs](https://pypi.org/project/prophecy-libs/) | Release Date | End-of-support Date |
 | ---------------- | ----------------------------------------------------------------------------------- | --------------------------------------------------------------- | ------------ | ------------------- |
-| v3.4.2.0         | 8.6.0                                                                               | 1.9.28                                                          | 2024/12/16   | 2025/06/16          |
+| v3.4.3.0         | 8.7.0                                                                               | 1.9.29                                                          | 2025/01/08   | 2025/07/08          |
+| v3.4.2.0         | 8.6.0                                                                               | 1.9.28                                                          | 2024/12/18   | 2025/06/18          |
 | v3.4.1.2         | 8.5.0                                                                               | 1.9.24                                                          | 2024/12/11   | 2025/06/03          |
 | v3.4.1.1         | 8.5.0                                                                               | 1.9.24                                                          | 2024/12/09   | 2025/06/03          |
 | v3.4.1.0 EM      | 8.5.0                                                                               | 1.9.24                                                          | 2024/12/03   | 2025/12/03          |

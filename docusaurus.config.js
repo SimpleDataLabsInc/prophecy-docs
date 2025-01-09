@@ -380,6 +380,10 @@ const config = {
             to: "/administration/authentication/saml-scim",
             from: "/administration/authentication/saml-okta",
           },
+          {
+            to: "/Spark/prophecy-libraries",
+            from: "/concepts/fabrics/prophecy-libraries",
+          },
         ],
         /*
 
