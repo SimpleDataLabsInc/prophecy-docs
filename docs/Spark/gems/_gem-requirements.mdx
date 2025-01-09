@@ -10,37 +10,31 @@ export default function Requirements(props) {
       <table>
         <thead>
           <tr>
-            <th>Required dependencies</th>
-            <th>
-              <a href="./release_notes/version_chart/">Minimum version</a>
-            </th>
+            <th>Dependency Requirement</th>
+            {props.packageversion && (
+              <th>
+                <a href="https://docs.prophecy.io/package-hub/">Min version</a>
+              </th>
+            )}
+            {props.scalalibs && <th>ScalaLib min version</th>}
+            {props.pythonlibs && <th>PythonLib min version</th>}
             <th>14.3 UC Shared</th>
             <th>15.4 UC Shared</th>
+            {props.additional_requirements && <th>Additional requirements</th>}
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>{props.packagename}</td>
-            <td>{props.packageversion}</td>
+            {props.packageversion && <td>{props.packageversion}</td>}
+            {props.scalalibs && <td>{props.scalalibs}</td>}
+            {props.pythonlibs && <td>{props.pythonlibs}</td>}
             <td>{props.packageversion143}</td>
             <td>{props.packageversion154}</td>
+            {props.additional_requirements && (
+              <td>{props.additional_requirements}</td>
+            )}
           </tr>
-          {props.scalalib && (
-            <tr>
-              <td>ProphecyLibsScala</td>
-              <td>{props.scalalib}</td>
-              <td>N/A</td>
-              <td>N/A</td>
-            </tr>
-          )}
-          {props.pythonlib && (
-            <tr>
-              <td>ProphecyLibsPython</td>
-              <td>{props.pythonlib}</td>
-              <td>N/A</td>
-              <td>N/A</td>
-            </tr>
-          )}
         </tbody>
       </table>
     </div>

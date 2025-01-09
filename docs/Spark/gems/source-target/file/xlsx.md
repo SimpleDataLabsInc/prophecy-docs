@@ -17,13 +17,14 @@ If you've ever done anything with numbers in your line of work odds are you've w
 
 ## Requirements
 
-<Requirements packagename="ProphecySparkBasicPython"
+<Requirements
+  packagename="ProphecySparkBasicsPython"
   packageversion="0.0.1"
   scalalib=""
   pythonlib=""
-  packageversion122="Not Supported"
   packageversion143="Not Supported"
   packageversion154="Not Supported"
+  additional_requirements=""
 />
 
 ## Prerequisites

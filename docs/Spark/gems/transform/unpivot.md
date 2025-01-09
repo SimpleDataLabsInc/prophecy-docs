@@ -23,13 +23,14 @@ If you want to pivot the data, rather than unpivot, use the [Aggregate](aggregat
 
 ## Requirements
 
-<Requirements packagename="ProphecySparkBasicPython"
+<Requirements
+  packagename="ProphecySparkBasicsPython"
   packageversion="0.2.36"
   scalalib=""
   pythonlib=""
-  packageversion122="Supported 0.2.36+"
-  packageversion143="Supported 0.2.36+"
-  packageversion154="Supported 0.2.36+"
+  packageversion143="Supported"
+  packageversion154="Supported"
+  additional_requirements=""
 />
 
 ## Parameters

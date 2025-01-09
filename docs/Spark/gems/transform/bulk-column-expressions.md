@@ -20,13 +20,14 @@ The BulkColumnExpressions Gem primarily lets you cast or change the data type of
 
 ## Requirements
 
-<Requirements packagename="ProphecySparkBasicPython"
-  packageversion=""
+<Requirements
+  packagename="ProphecySparkBasicsPython"
+  packageversion="0.2.36"
   scalalib=""
   pythonlib=""
-  packageversion122="Supported +"
-  packageversion143="Supported +"
-  packageversion154="Supported +"
+  packageversion143="Supported"
+  packageversion154="Supported"
+  additional_requirements=""
 />
 
 ## Parameters

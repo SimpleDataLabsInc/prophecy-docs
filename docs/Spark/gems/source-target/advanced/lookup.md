@@ -16,13 +16,14 @@ Lookups are a special kind of Gem that allow you to mark a particular DataFrame 
 
 ## Requirements
 
-<Requirements packagename=""
+<Requirements
+  packagename="None"
   packageversion=""
   scalalib=""
   pythonlib=""
-  packageversion122="Supported +"
-  packageversion143="Supported +"
-  packageversion154="Supported +"
+  packageversion143="Not Supported"
+  packageversion154="Not Supported"
+  additional_requirements=""
 />
 
 ## Parameters

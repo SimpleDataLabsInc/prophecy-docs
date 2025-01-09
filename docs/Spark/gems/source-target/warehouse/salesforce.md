@@ -22,13 +22,14 @@ This Gem has below features:
 
 ## Requirements
 
-<Requirements packagename="ProphecyWebAppPython"
+<Requirements
+  packagename="ProphecyWebAppPython"
   packageversion="0.0.1"
   scalalib=""
   pythonlib=""
-  packageversion122="TBD"
   packageversion143="TBD"
   packageversion154="TBD"
+  additional_requirements=""
 />
 
 :::note

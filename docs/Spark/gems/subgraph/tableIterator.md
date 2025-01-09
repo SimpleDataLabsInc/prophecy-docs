@@ -18,13 +18,14 @@ Let's see how to create a Basic Loop which loops over a Metadata Table, and for 
 
 ## Requirements
 
-<Requirements packagename="ProphecySparkBasicPython"
+<Requirements
+  packagename="ProphecySparkBasicsPython"
   packageversion="0.1.4"
   scalalib="7.1.66"
   pythonlib="1.8.4"
-  packageversion122="Supported 0.1.4+"
-  packageversion143="Supported 0.1.4+"
-  packageversion154="Supported 0.1.4+"
+  packageversion143="Supported"
+  packageversion154="Supported"
+  additional_requirements=""
 />
 
 ## Creating a TableIterator Gem

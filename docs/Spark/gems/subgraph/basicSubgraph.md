@@ -19,13 +19,14 @@ Furthermore, the ability to [Publish a Subgraph](/docs/package-hub/package-build
 
 ## Requirements
 
-<Requirements packagename=""
+<Requirements
+  packagename="None"
   packageversion=""
   scalalib=""
   pythonlib=""
-  packageversion122="Supported +"
-  packageversion143="Supported +"
-  packageversion154="Supported +"
+  packageversion143="Supported"
+  packageversion154="Supported"
+  additional_requirements=""
 />
 
 ## Create a Basic Subgraph

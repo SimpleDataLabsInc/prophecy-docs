@@ -17,13 +17,14 @@ Use the BulkColumnRename Gem to rename multiple columns in your Dataset in a sys
 
 ## Requirements
 
-<Requirements packagename="ProphecySparkBasicPython"
+<Requirements
+  packagename="ProphecySparkBasicsPython"
   packageversion="0.2.11"
   scalalib="7.1.97"
   pythonlib="1.8.19"
-  packageversion122="Not Supported"
   packageversion143="Not Supported"
   packageversion154="Not Supported"
+  additional_requirements=""
 />
 
 ## Parameters

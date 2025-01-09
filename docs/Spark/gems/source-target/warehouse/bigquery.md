@@ -17,13 +17,14 @@ Allows read and write operations on `BigQuery`.
 
 ## Requirements
 
-<Requirements packagename="ProphecyWarehousePython"
+<Requirements
+  packagename="ProphecyWarehousePython"
   packageversion="0.0.1"
   scalalib=""
   pythonlib=""
-  packageversion122="Not Supported"
   packageversion143="Not Supported"
   packageversion154="Not Supported"
+  additional_requirements=""
 />
 
 :::info Built on

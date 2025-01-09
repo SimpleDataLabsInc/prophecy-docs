@@ -17,13 +17,14 @@ Read and write fixed format files with an expected schema.
 
 ## Requirements
 
-<Requirements packagename="ProphecySparkBasicPython"
+<Requirements
+  packagename="ProphecySparkBasicsPython"
   packageversion="0.0.1"
   scalalib=""
   pythonlib=""
-  packageversion122="Not Supported"
   packageversion143="Not Supported"
   packageversion154="Not Supported"
+  additional_requirements=""
 />
 
 :::caution Enterprise Only

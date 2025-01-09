@@ -15,13 +15,14 @@ import Requirements from "../../\_gem-requirements.mdx";
 
 ## Requirements
 
-<Requirements packagename="ProphecyWarehousePython"
+<Requirements
+  packagename="ProphecyWarehousePython"
   packageversion="0.0.1"
   scalalib=""
   pythonlib=""
-  packageversion122="Not Supported"
   packageversion143="Not Supported"
   packageversion154="Not Supported"
+  additional_requirements="Please inquire"
 />
 
 :::caution Enterprise Only

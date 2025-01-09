@@ -19,13 +19,14 @@ This source currently connects with Kafka Brokers in **Batch** mode.
 
 ## Requirements
 
-<Requirements packagename="ProphecyStreamingPython"
+<Requirements
+  packagename="ProphecyStreamingPython"
   packageversion=""
   scalalib=""
   pythonlib=""
-  packageversion122="Not Supported"
   packageversion143="Not Supported"
   packageversion154="Not Supported"
+  additional_requirements=""
 />
 
 ## Source

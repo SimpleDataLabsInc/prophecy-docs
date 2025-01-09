@@ -18,13 +18,14 @@ The `azure-cosmos-spark` connector is an integration between Azure CosmosDB and 
 
 ## Requirements
 
-<Requirements packagename="ProphecyWarehousePython"
+<Requirements
+  packagename="ProphecyWarehousePython"
   packageversion="0.0.1"
   scalalib=""
   pythonlib=""
-  packageversion122="TBD"
   packageversion143="TBD"
   packageversion154="TBD"
+  additional_requirements=""
 />
 
 ## Installation

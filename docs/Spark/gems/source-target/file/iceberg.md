@@ -17,13 +17,14 @@ Reads and writes Iceberg tables, including Iceberg Merge operations and Time tra
 
 ## Requirements
 
-<Requirements packagename="ProphecySparkBasicPython"
+<Requirements
+  packagename="ProphecySparkBasicsPython"
   packageversion="0.2.15"
   scalalib=""
   pythonlib=""
-  packageversion122="TBD"
   packageversion143="TBD"
   packageversion154="TBD"
+  additional_requirements="See below"
 />
 
 ## Required Settings

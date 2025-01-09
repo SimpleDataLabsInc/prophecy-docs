@@ -1,0 +1,102 @@
+Package,Gem,14.3 - UC shared,15.4 - UC shared,Minimum package version,Min Scala libs version,Min Python libs version,Doc file prefix,Doc Additional libs requirement
+ProphecySparkBasicsPython,Avro,Supported,Supported,0.0.1,,,avro,
+ProphecySparkBasicsPython,Csv (Only File Path),Supported,Supported,0.0.1,,,csv,
+ProphecySparkBasicsPython,CSV (SFTP),Not supported,Not supported,0.2.35,,,csv (new),PyPI -- paramiko
+ProphecySparkBasicsPython,Csv (Sharepoint - Source),Not supported,Not supported,0.2.35,,,csv (new),PyPI -- Office365-REST-Python-Client
+ProphecySparkBasicsPython,Delta,Supported,Supported,0.0.1,,,delta,"Needed only for non-databricks spark environments
+PyPI -- delta-spark
+Maven -- delta-core"
+ProphecySparkBasicsPython,Json,Supported,Supported,0.0.1,,,json,
+ProphecySparkBasicsPython,ORC,Supported,Supported,0.0.1,,,orc,
+ProphecySparkBasicsPython,Parque,Supported,Supported,0.0.1,,,parquet,
+ProphecySparkBasicsPython,Text,Supported,Supported,0.0.1,,,text,
+ProphecySparkBasicsPython,Fixed Format,Not supported,Not supported,0.0.1,,,fixed-format,
+ProphecySparkBasicsPython,Xlsx,Not supported,Not supported,0.0.1,,,xlsx,
+ProphecySparkBasicsPython,Xml,Supported,Supported,0.0.1,,,?,
+ProphecySparkBasicsPython,Seed,Not supported,Not supported,0.2.31,,,?,
+ProphecySparkBasicsPython,JDBC,Supported,Supported,0.0.1,,,jdbc,
+ProphecyWarehousePython ,synapse,Not supported,Not supported,0.0.7,,,,Please inquire
+ProphecySparkBasicsPython,Data Generator,Not supported,Supported,0.2.32,,1.9.24,synthetic-data-generator,
+ProphecySparkBasicsPython,Kafka (Source),Supported,Supported,0.0.1,,,,
+ProphecySparkBasicsPython,Kafka (Target),Supported,Supported,0.0.1,,,,
+ProphecyWarehousePython ,Bigquery (Source),Not supported,Not supported,0.0.1,,,bigquery,
+ProphecyWarehousePython ,Bigquery (Target),Not supported,Not supported,0.0.1,,,(new),
+ProphecyWarehousePython ,Cosmodb,TBD,TBD,0.0.1,,,cosmos,
+ProphecyWarehousePython ,mongodb (Driver mongodb+srv),Not supported,Not supported,0.0.1,,,mongodb (new),
+ProphecyWarehousePython ,mongodb (Driver mongodb),Not supported,Not supported,0.0.1,,,mongodb,
+ProphecyWarehousePython ,Redshift,Not supported,Not supported,0.0.1,,,redshift,Please inquire
+ProphecyWarehousePython ,Snowflake,Supported,Supported,0.0.1,,,,Please inquire
+ProphecySparkBasicsPython,Catalog Table,Supported,Supported,0.0.1,,,catalog-table,"Needed only for non-databricks spark environments
+PyPI -- delta-spark
+Maven -- delta-core"
+ProphecySparkBasicsPython,Iceberg,TBD,TBD,0.2.15,,,iceberg,See below
+ProphecyWebAppPython,Salesforce,TBD,TBD,0.0.1,,,salesforce,
+ProphecyWebAppPython,Smartsheet,TBD,TBD,0.1.0,,,(new),PyPI -- smartsheet-python-sdk
+None,Lookup,Not supported,Not supported,,,,lookup,
+ProphecySparkBasicsPython,Aggregate,Supported,Supported,0.0.1,,,aggregate,
+ProphecySparkBasicsPython,BulkColumnExpressions,Supported,Supported,0.2.36,,,bulk-column-expressions,
+ProphecySparkBasicsPython,SampleRows,Supported,Supported,0.2.25,,,(new),
+ProphecySparkBasicsPython,Unpivot,Supported,Supported,0.2.36,,,unpivot,
+ProphecySparkBasicsPython,ColumnParser,Supported,Supported,0.2.27,8.2.1,1.9.16,(new),
+ProphecySparkBasicsPython,DynamicSelect,Not supported,Not supported,0.2.27,8.2.1,1.9.16,dynamic-select,
+ProphecySparkBasicsPython,Deduplicate,Supported,Supported,0.0.1,,,deduplicate,
+ProphecySparkBasicsPython,Filter,Supported,Supported,0.0.1,,,filter,
+ProphecySparkBasicsPython,FlattenSchema,Supported,Supported,0.0.1,,,flattenschema,
+ProphecySparkBasicsPython,Limit,Supported,Supported,0.0.1,,,limit,
+ProphecySparkBasicsPython,OrderBy,Supported,Supported,0.0.1,,,order-by,
+ProphecySparkBasicsPython,Reformat,Supported,Supported,0.0.1,,,reformat,
+ProphecySparkBasicsPython,DataCleansing,Supported,Supported,0.2.36,,,data-cleansing,
+ProphecySparkBasicsPython,SchemaTransform,Supported,Supported,0.0.1,,,schema-transform,
+ProphecySparkBasicsPython,SetOperation,Supported,Supported,0.0.1,,,set-operation,
+ProphecySparkBasicsPython,WindowFunction,Supported,Supported,0.0.1,,,window-function,
+ProphecySparkBasicsPython,BulkColumnRename,Not supported,Not supported,0.2.11,7.1.97,1.8.19,bulk-column-rename,
+ProphecySparkAbinitioPython,Normalize,Supported,Supported,,,,(new),
+ProphecySparkAbinitioPython,MetaPivot,Supported,Supported,,,,(new),
+ProphecySparkAbinitioPython,ReadSeparated Values,Supported,Supported,,,,(new),
+ProphecySparkAbinitioPython,WriteSeparated Values,Supported,Supported,,,,(new),
+ProphecySparkAbinitioPython,SyncDataFrameColumnsWithSchema,Supported,Supported,,,,(new),
+ProphecySparkAbinitioPython,Sequence,Supported,Supported,,,,(new),
+ProphecySparkAbinitioPython,AssignKeys,Supported,Supported,,,,(new),
+ProphecySparkAbinitioPython,RoundRobinPartition,Supported,Supported,,,,(new),
+ProphecySparkAbinitioPython,CompareRecords,Supported,Supported,,,,(new),
+ProphecySparkDataQualityPython,DataQualityCheck,Not supported,Not supported,0.0.1,8.2.1,1.9.16,tbd,"* set SPARK_VERSION env variable on cluster
+  * Gem is supported for Spark version >=3.3
+  * pydeequ python library
+  * deequ spark jar file (As per spark version)"
+ProphecySparkBasicsPython,Join,Supported,Supported,0.0.1,,,join,
+ProphecySparkBasicsPython,Repartition,Supported,Supported,0.0.1,,,repartition,
+ProphecySparkBasicsPython,RowDistributor,Supported,Supported,0.0.1,,,row-distributor,
+ProphecySparkBasicsPython,CompareColumns,Supported,Supported,0.0.1,,,compare-columns,
+None,Script,Supported,Supported,,,,script,
+ProphecySparkBasicsPython,DeltaTableOperations,Supported,Supported,0.0.1,,,delta-table-operations,
+ProphecySparkBasicsPython,file,Supported,Supported,0.0.1,,,file-operation,
+ProphecySparkBasicsPython,Directory,Not supported,Not supported,0.2.27,8.2.1,1.9.16,(new),
+ProphecySparkBasicsPython,RestAPlEnrich,Not supported,Supported,0.0.1,,,rest-api-enrich,
+ProphecyWebAppPython,Email,Not supported,Not supported,0.0.6,,1.9.11,tbd,Please inquire
+ProphecyWebAppPython,EmailData,Not supported,Not supported,0.0.7,,1.9.23,tbd,Please inquire
+ProphecyWebAppPython,Tableau,Not supported,Not supported,0.0.6,,1.9.11,tbd,Please inquire
+ProphecySparkAbinitioPython,Assertions,Supported,Supported,,,,(new),
+ProphecySparkAbinitioPython,Log,Supported,Supported,,,,(new),
+None,Basic,Supported,Supported,,,,basicSubgraph,
+None,Published subgraph,Supported,Supported,,,,(new),
+ProphecySparkAlteryxPython,WhileIterator,Supported,Supported,,,,(new),
+ProphecySparkBasicsPython,Table Iterator,Supported,Supported,0.1.4,7.1.66,1.8.4,tableIterator,
+ProphecyStreamingPython,csv,Not supported,Not supported,,,,,
+ProphecyStreamingPython,delta,Not supported,Not supported,,,,,
+ProphecyStreamingPython,json,Not supported,Not supported,,,,,
+ProphecyStreamingPython,Kafka,Not supported,Not supported,,,,kafka-stream,
+ProphecyStreamingPython,orc,Not supported,Not supported,,,,,
+ProphecyStreamingPython,parquet,Not supported,Not supported,,,,,
+None,CustomAVROBatch,Supported,Supported,,,,,
+None,ComplexCategoryReformat1,Supported,Supported,,,,,
+None,CustomLimit,Supported,Supported,,,,,
+None,CustomOrderByMainTransformCategory,Supported,Supported,,,,,
+None,CustomReformatGem,Supported,Supported,,,,,
+None,CustomSetOperation,Supported,Supported,,,,,
+None,CustomSQLStatementMainCustomCategory,Supported,Supported,,,,,
+None,DepAvro,Supported,Supported,,,,,
+None,DepDedup,Supported,Supported,,,,,
+None,DepLimit,Supported,Supported,,,,,
+None,DepReformat,Supported,Supported,,,,,
+None,DepReformatScala,Supported,Supported,,,,,
+None,SQLStatement,Supported,Supported,,,,,

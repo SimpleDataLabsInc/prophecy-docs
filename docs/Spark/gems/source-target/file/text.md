@@ -17,13 +17,14 @@ Allows you to read or write plain Text files.
 
 ## Requirements
 
-<Requirements packagename="ProphecySparkBasicPython"
+<Requirements
+  packagename="ProphecySparkBasicsPython"
   packageversion="0.0.1"
   scalalib=""
   pythonlib=""
-  packageversion122="Supported 0.0.1+"
-  packageversion143="Supported 0.0.1+"
-  packageversion154="Supported 0.0.1+"
+  packageversion143="Supported"
+  packageversion154="Supported"
+  additional_requirements=""
 />
 
 ## Source

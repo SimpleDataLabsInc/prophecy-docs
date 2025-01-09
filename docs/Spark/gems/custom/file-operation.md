@@ -17,13 +17,13 @@ Helps perform file operations like `copy` and `move` on different file systems.
 ## Requirements
 
 <Requirements
-  packagename="ProphecySparkBasicPython"
+  packagename="ProphecySparkBasicsPython"
   packageversion="0.0.1"
   scalalib=""
   pythonlib=""
-  packageversion143="Supported 0.0.1+"
-  packageversion154="Supported 0.0.1+"
-  packageversion350="TBD"
+  packageversion143="Supported"
+  packageversion154="Supported"
+  additional_requirements=""
 />
 
 ## Parameters

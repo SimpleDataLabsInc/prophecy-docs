@@ -17,13 +17,14 @@ Use the DynamicSelect Gem to dynamically filter columns of your Dataset based on
 
 ## Requirements
 
-<Requirements packagename="ProphecySparkBasicPython"
+<Requirements
+  packagename="ProphecySparkBasicsPython"
   packageversion="0.2.27"
   scalalib="8.2.1"
   pythonlib="1.9.16"
-  packageversion122="Not Supported"
   packageversion143="Not Supported"
   packageversion154="Not Supported"
+  additional_requirements=""
 />
 
 ## Configuration

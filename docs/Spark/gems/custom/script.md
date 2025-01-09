@@ -17,13 +17,13 @@ Provides a `SparkSession` and allows you to run custom code.
 ## Requirements
 
 <Requirements
-  packagename=""
+  packagename="None"
   packageversion=""
   scalalib=""
   pythonlib=""
-  packageversion143="Supported +"
-  packageversion154="Supported +"
-  packageversion350="TBD"
+  packageversion143="Supported"
+  packageversion154="Supported"
+  additional_requirements=""
 />
 
 ## Parameters
