@@ -16,7 +16,7 @@ Prophecy provides Databricks OAuth to align with industry-standard authenticatio
 In Prophecy, you can use Databricks OAuth in two ways:
 
 - [User-to-Machine (U2M)](https://docs.databricks.com/en/dev-tools/auth/oauth-u2m.html). This method is used for **Pipeline development** and **Job configuration**. Any user can authenticate individually via Databricks. In this case, users access data based on their individual identity and the permissions already defined within the Databricks Unity Catalog. No additional credentials are required for this flow.
-- [Machine-to-Machine (M2M)](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html). This method is used by Team Admins for **Automation** and **Project deployment**. Authentication is performed using a Service Principal in Databricks, which enables unattended operations (such as automated deployment). The permissions for this flow are determined by the Service Principal’s configuration within the Databricks Unity Catalog.
+- [Machine-to-Machine (M2M)](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html). This method is used for **Automation** and **Project deployment**. Authentication is performed using a Service Principal in Databricks, which enables unattended operations (such as automated deployment). The permissions for this flow are determined by the Service Principal’s configuration within the Databricks Unity Catalog.
 
 This integration works with both Spark clusters and SQL warehouses.
 
@@ -25,9 +25,9 @@ This integration works with both Spark clusters and SQL warehouses.
 
 ### Register Prophecy as an App Connection in Databricks
 
-First, the Databricks Account Admin needs to complete the following steps **once** for your Prophecy deployment:
+First, a Databricks [account admin](https://docs.databricks.com/en/admin/index.html#what-are-account-admins) needs to complete the following steps **once** for your Prophecy deployment:
 
-1. On Databricks, navigate to **Account Settings > App connections**.
+1. On Databricks, navigate to **Account Settings > App connections** in your account console.
 2. Create a new App connection for Prophecy. This process generates Databricks OAuth Application fields on the Prophecy side.
 3. Under Client ID, copy your **OAuth Client ID** for the application, and share it with your Prophecy Cluster Admin.
 4. Under Client secret, select **Generate a client secret**. Share it with your Prophecy Cluster Admin.
