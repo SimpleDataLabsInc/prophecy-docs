@@ -13,7 +13,7 @@ Business rules can be created in Spark Projects as functions. They can also be g
 
 | Field       | Description                                                                                                          |
 | ----------- | -------------------------------------------------------------------------------------------------------------------- |
-| Column Name | This is the name of the **output column** that the business rule will calculate.                                     |
+| Column Name | The name of the output column that the business rule will calculate.                                                 |
 | Parameters  | The columns you would like to use in your business rule condition(s). Each column must have a Name and Type defined. |
 | Rules       | The set(s) of conditions that define the business rule.                                                              |
 
@@ -69,9 +69,9 @@ You can add multiple business rules to the SchemaTransform Gem at a time. You ca
 
 ## Managing business rules in Packages
 
-You can also import business rules into Projects via Packages. Imported rules are read-only. They can only be edited from their source Project.
+You can also import business rules into Projects via Packages. Imported rules are read-only and can only be edited from their source Project.
 
-This is important if:
+This can be useful if:
 
 - You want to group rules by their function or use case.
 - You only want specific users to create and edit rules.
@@ -90,8 +90,10 @@ Let's say you want to create a PromoCodeRule that will be used in various other 
 Then, you must give other users access to your Project.
 
 1. In your Project metadata, open the **Access** tab.
-1. You can either share your Project with a specific **team**, or toggle-on the option to **Publish to Package Hub**.
+1. Toggle-on the option to **Publish to Package Hub**. This will make the Package available to others.
+
+When someone adds the Package as a [dependency](/Spark/extensibility/dependencies) in their Project, they will be able to see the rule definition. However, they will not be able to edit the fields.
 
 ![PromoCodeRule](./img/promo-code-rule.png)
 
-This rule includes a set of conditions to determine the type of promotions that a customer is eligible for.
+This example rule includes a set of conditions to determine the type of promotions that a customer is eligible for.
