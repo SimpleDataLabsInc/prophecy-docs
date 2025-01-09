@@ -209,11 +209,11 @@ const config = {
             from: "/architecture/authentication/azure_ad",
           },
           {
-            to: "/administration/authentication/azuread-scim",
+            to: "/administration/authentication/saml-scim",
             from: "/architecture/authentication/azuread_scim",
           },
           {
-            to: "/administration/authentication/saml-okta",
+            to: "/administration/authentication/saml-scim",
             from: "/architecture/authentication/saml_okta",
           },
           {
@@ -371,6 +371,14 @@ const config = {
           {
             to: "/administration/self-hosted/installation-marketplaces/install-azure-marketplace",
             from: "/architecture/self-hosted/install-prophecy/installation-marketplaces/install-azure-marketplace",
+          },
+          {
+            to: "/administration/authentication/saml-scim",
+            from: "/administration/authentication/azuread-scim",
+          },
+          {
+            to: "/administration/authentication/saml-scim",
+            from: "/administration/authentication/saml-okta",
           },
           {
             to: "/Spark/prophecy-libraries",
