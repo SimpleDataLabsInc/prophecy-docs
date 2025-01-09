@@ -24,6 +24,8 @@ To create a new business rule:
 1. In the Project browser, click the **plus** icon next to **Functions**.
 1. Name the Rule and choose **Business Rule** as the **Function Type**. Then, click **OK**.
 
+![Create business rule](./img/create-bre.png)
+
 Next, you need to define the rule parameters.
 
 1. Fill in the **Column Name**. This will be the name of your output column.
@@ -97,3 +99,11 @@ When someone adds the Package as a [dependency](/Spark/extensibility/dependencie
 ![PromoCodeRule](./img/promo-code-rule.png)
 
 This example rule includes a set of conditions to determine the type of promotions that a customer is eligible for.
+
+## Viewing the business rules in code
+
+Prophecy automatically compiles visually-developed business rules into code.
+
+Business rules are stored in the **functions** folder of your Pipeline's code. This is true for both Python and Scala Projects. Note that you can also see the imported business rules in the code view.
+
+![Business rules in Python and Scala](./img/bre-code.png)
