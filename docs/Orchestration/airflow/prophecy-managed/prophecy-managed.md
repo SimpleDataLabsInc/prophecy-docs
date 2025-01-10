@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Prophecy Managed
+title: Prophecy Managed Airflow
 id: prophecy_managed_airflow_fabric
 description: How Prophecy create a Prophecy Managed Airflow Fabric
 tags:
