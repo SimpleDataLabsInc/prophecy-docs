@@ -2,7 +2,6 @@
 title: Configuration
 id: configuration
 description: Configuring Prophecy's interface for Spark
-sidebar_position: 2
 tags:
   - spark
   - development
