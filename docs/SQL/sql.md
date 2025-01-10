@@ -2,7 +2,6 @@
 title: Copilot for SQL users
 id: copilot-for-sql-users
 description: Using SQL with Prophecy's Data Transformation Copilot
-sidebar_class_name: hidden
 tags: [sql, snowflake, databricks, warehouse]
 ---
 

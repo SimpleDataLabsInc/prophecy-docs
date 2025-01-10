@@ -1,7 +1,6 @@
 ---
 title: Deployment
 id: Deployment
-sidebar_class_name: hidden
 description: Release and Deploy Process. How to Release your Projects and Deploy your Jobs
 tags:
   - metadata

@@ -2,7 +2,6 @@
 title: Settings
 id: settings
 description: This page describes the Settings pages of Prophecy
-sidebar_class_name: hidden
 tags:
   - settings
   - admin

@@ -2,7 +2,6 @@
 title: Release notes
 id: release_notes
 description: Changelog for all features, behavior changes, and updates
-sidebar_class_name: hidden
 tags: []
 ---
 

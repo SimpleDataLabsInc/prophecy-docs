@@ -1,7 +1,6 @@
 ---
 title: Concepts
 id: key-concepts
-sidebar_class_name: hidden
 description: Key Concepts of Prophecy
 tags: []
 ---

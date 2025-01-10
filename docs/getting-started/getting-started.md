@@ -1,6 +1,5 @@
 ---
 title: Quick starts
-sidebar_class_name: hidden
 id: getting-started
 description: Getting started with Prophecy
 tags: []

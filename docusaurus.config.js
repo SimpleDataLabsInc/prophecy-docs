@@ -289,8 +289,12 @@ const config = {
             from: "/concepts/dataset",
           },
           {
-            to: "/administration/feature-matrix",
+            to: "/administration/",
             from: "/feature-matrix",
+          },
+          {
+            to: "/administration/",
+            from: "/administration/feature-matrix",
           },
           {
             to: "/Orchestration/airflow/airflow-tutorial",
@@ -353,7 +357,7 @@ const config = {
             from: "/administration/deployment",
           },
           {
-            to: "/administration",
+            to: "/administration/",
             from: "/architecture",
           },
           {

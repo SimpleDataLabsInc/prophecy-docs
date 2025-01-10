@@ -2,7 +2,6 @@
 title: Package Hub
 id: package-hub
 description: Create and Share Reusable Pipeline Components
-sidebar_class_name: hidden
 tags: [package-hub]
 ---
 
