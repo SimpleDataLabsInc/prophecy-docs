@@ -1,5 +1,6 @@
 ---
-title: Use External Release tags in Prophecy
+title: External release tags in Prophecy
+sidebar_label: External release tags
 id: use-external-release-tags
 description: Use external release tags for deployment and dependency in Prophecy
 sidebar_position: 5
@@ -14,59 +15,54 @@ tags:
   - cicd
 ---
 
-If you use external CI-CD tools like GitHub or Jenkins to merge and release your projects, you can use release tags from those tools in Prophecy for deployment and dependencies. Once you've deployed the tags via Prophecy, you can add them as a dependency to your Projects.
+If you use external CI-CD tools to merge and release your projects, you can use [release tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) from those tools within Prophecy for deployment and dependencies.
 
-Any externally created release tag that you pull into Prophecy is visible on Releases and Deployments.
+Once you've deployed an external tag in Prophecy, you can add that release as a dependency in a Project.
+
+## View external release tags
+
+Any externally created release tag that you pull into Prophecy is visible on the **Releases & Deployments** tab of your Project metadata.
 
 ![External_tags_list](img/external_release_tag_list.png)
 
 Tags that are created externally are labeled with an **(1) External** tag. If your latest tags aren't showing, click on the **(2) Refresh** button to refresh the list of tags.
 
-## Deploy an External Release tag
+## Deploy an external release tag
 
 To deploy an existing tag, follow these steps:
 
-1. From `...` in the top right corner, select **(1) Deploy**.
+1. From `...` in the top right corner, select **(1) Deploy**. This opens the Deploy dialog.
 
    ![Deploy_button](img/external_release_tag_deploy.png)
 
-   This opens up the Deploy dialog.
-
-2. Select a release version you wish to deploy by using the **(1) Choose a release** dropdown. Once you select a version, the table below shows the Jobs that are going to be modified.
+2. Select a release version you wish to deploy by using the **(1) Choose a release** dropdown. Once you select a version, the table below shows the Jobs that are going to be modified (there might not be any Jobs). Click **(2) Deploy** to start the deployment.
 
    ![Deploy_start](img/external_release_tag_deploy_start.png)
 
-   1. Optional: You can override the Fabric for all Jobs, or if you have enabled Selective Job Deployment, then you can pick the Jobs you wish to deploy. For more details about these settings, see [Selective Job Deployment](./deployment.md#selective-job-deployment).
+   :::note
+   If you have enabled [Selective Job Deployment](./deployment.md#selective-job-deployment), then you can pick the Jobs you wish to deploy. Additionally, you have the option to override the Fabrics for these Jobs. Job selection **is not required** to deploy the release.
+   :::
 
-   2. Click **(2) Deploy** to start the deployment. The deployment process is shown.
+This deploys a new release. You can access deployment logs from the [Deployment History](./deployment.md#deployment-history) tab.
 
-   ![Deploy_finished](img/external_release_tag_deploy_complete.png)
+## Use the release as a dependency
 
-You can access these deployment logs from the [Deployment History](./deployment.md#deployment-history) tab.
+Once you've deployed a tag, you can use the release as a dependency in a Project.
 
-## Use External Release tag for dependencies
+First, navigate to the **(1) Dependencies** tab of the relevant Project and click **(2) + Add Dependency**.
 
-Once you've deployed a tag, you can use it as a dependency in an existing Project.
+![Add_dependency](img/external_release_tag_dependency.png)
 
-To add a tag as a dependency, follow these steps:
+Next, in the **Create Dependency** dialog:
 
-1. Navigate to the **(1) Dependencies** tab in the Project you want to add dependency in, and click on **(2) + Add Dependency**.
+1. For **Type**, select **Package Hub Dependency**.
+1. For **Name**, choose the Project that contains the external release tag.
+1. For **Version**, select the option that matches your external release tag.
+1. Click **Create Dependency**.
 
-   ![Add_dependency](img/external_release_tag_dependency.png)
+![Add_dependency_2](img/external_release_tag_create_dependency.png)
 
-   This opens up the Create Dependency dialog.
-
-2. Select the following fields:
-
-   1. Select `Package Hub Dependency` as the **(1) Type**.
-   2. Select the **(2) Name** of the Project.
-   3. Select the **(3) Version** you want for the dependency.
-
-   Click **(4) Create Dependency** to save.
-
-   ![Add_dependency_2](img/external_release_tag_create_dependency.png)
-
-Similarly, you can also edit the dependency and update the version to an externally released version.
+You can also edit a dependency and update its version to an externally released version.
 
 ## FAQ
 
