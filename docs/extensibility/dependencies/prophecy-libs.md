@@ -1,17 +1,19 @@
 ---
-title: Prophecy Libraries
+title: Prophecy libraries
 id: prophecy-libraries
 description: Learn about these small and lightweight utility libraries
 sidebar_position: 5
 tags: [functionality, compatibility, version, library, plib, plibs, license]
 ---
 
-Prophecy Libs are small and lightweight utility libraries, offering comprehensive sets of Spark functions tailored for Prophecy customers. They address the most common data transformation use cases, including monitoring, auditing, connectors, and other data processing functions. These versatile libraries support Scala and Python Spark environments.
+Prophecy libraries are small and lightweight utility libraries that offer comprehensive sets of Spark functions tailored for Prophecy customers. They address the most common data transformation use cases, including monitoring, auditing, connectors, and other data processing functions.
 
 Here are the released artifacts:
 
-- Prophecy Libs for Scala: [Maven](https://mvnrepository.com/artifact/io.prophecy/prophecy-libs)
-- Prophecy Libs for Python: [PyPi](https://pypi.org/project/prophecy-libs/)
+- ProphecyLibsScala: [Maven](https://mvnrepository.com/artifact/io.prophecy/prophecy-libs)
+- ProphecyLibsPython: [PyPi](https://pypi.org/project/prophecy-libs/)
+
+Depending on the language you are working in, one of these artifacts will always be be a **system dependency** in your Prophecy project.
 
 You can see which Prophecy Libs version is running on your Spark cluster by checking the Cluster Attached dropdown in the Pipeline.
 

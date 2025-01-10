@@ -2,6 +2,7 @@
 title: Prophecy Fabrics
 description: Fabrics define execution engines
 id: Fabrics
+sidebar_class_name: hidden
 tags: [Livy, Fabrics, Execution]
 ---
 

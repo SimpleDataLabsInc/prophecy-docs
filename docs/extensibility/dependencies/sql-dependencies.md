@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Dependencies
+title: SQL dependencies
 id: sql-dependencies
 description: Dependency management
 tags:

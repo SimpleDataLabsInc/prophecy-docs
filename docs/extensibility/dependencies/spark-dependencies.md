@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Dependencies
+title: Spark dependencies
 id: spark-dependencies
 description: Dependency management
 tags:
