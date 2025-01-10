@@ -173,19 +173,19 @@ const config = {
             from: "/architecture/authentication/active_directory",
           },
           {
-            to: "/Spark/fabrics/emr",
+            to: "/administration/spark-fabrics/emr",
             from: "/architecture/deployment/EMR-livy-installation-guide",
           },
           {
-            to: "/Spark/fabrics/emr",
+            to: "/administration/spark-fabrics/emr",
             from: "/Spark/fabrics/EMR-serverless-fabric-configuration",
           },
           {
-            to: "/Spark/fabrics/emr",
+            to: "/administration/spark-fabrics/emr",
             from: "/Spark/fabrics/EMR-fabric-configuration",
           },
           {
-            to: "/Spark/fabrics/databricks/",
+            to: "/administration/spark-fabrics/databricks/",
             from: "/Spark/fabrics/databricks-fabric",
           },
           {
@@ -249,7 +249,7 @@ const config = {
             from: "/tutorials/Orchestration/multi-jobs-trigger",
           },
           {
-            to: "/Orchestration/reliable-ci-cd",
+            to: "/ci-cd/reliable-ci-cd",
             from: "/tutorials/Orchestration/reliable-ci-cd",
           },
           {
@@ -381,7 +381,7 @@ const config = {
             from: "/administration/authentication/saml-okta",
           },
           {
-            to: "/Spark/prophecy-libraries",
+            to: "/extensibility/dependencies/prophecy-libraries",
             from: "/concepts/fabrics/prophecy-libraries",
           },
         ],
