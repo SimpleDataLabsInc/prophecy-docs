@@ -21,7 +21,7 @@ Prerequisites:
 
 - Optional: Modify `ivysettings.xml` to point to a custom Maven mirror.
 
-Given a Scala Pipeline named "demo_pipeline" with a JAR artifact from [PBT](../../deployment/prophecy-build-tool)
+Given a Scala Pipeline named "demo_pipeline" with a JAR artifact from [PBT](docs/ci-cd/prophecy-build-tool/prophecy-build-tool.md)
 called `demo_pipeline-1.0.jar` you could call the following commands to invoke the Main class from the JAR
 file and run the Pipeline on a local Spark cluster.
 
@@ -55,7 +55,7 @@ Prerequisites:
   - PBT will have a command to generate dependencies or pom.xml for PySpark projects.
 - Optional: Modify ivysettings.xml to point to a custom Maven mirror or PyPi mirror.
 
-Given a PySpark Pipeline named "demo_pipeline" with a WHL artifact from [PBT](../../deployment/prophecy-build-tool)
+Given a PySpark Pipeline named "demo_pipeline" with a WHL artifact from [PBT](docs/ci-cd/prophecy-build-tool/prophecy-build-tool.md)
 called `demo_pipeline-1.0-py3-none-any.whl` you could call the following commands to invoke the `main()` method from the WHL
 file using a customized launcher script.
 

@@ -166,4 +166,4 @@ status of historic/current runs (success/failure/in-progress) for quick referenc
 ## Guides
 
 1. [How to trigger a job from another job?](multi-jobs-trigger)
-2. [How to design a reliable CI/CD process?](reliable-ci-cd)
+2. [How to design a reliable CI/CD process?](docs/ci-cd/reliable-ci-cd.md)

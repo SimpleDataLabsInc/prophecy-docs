@@ -38,7 +38,7 @@ Please see this video for an example
 
 ## Sharing Subgraphs Across Projects
 
-Once a Project (let's call it _BaseProject_) is Released and added as a [Dependency](/extensbility/package-hub#Use-a-package) to another Project(let's call it _AppProject_), all Subgraphs from _BaseProject_ are available in all Pipelines of _AppProject_.
+Once a Project (let's call it _BaseProject_) is Released and added as a dependency to another Project(let's call it _AppProject_), all Subgraphs from _BaseProject_ are available in all Pipelines of _AppProject_.
 
 Please see this video for an example
 

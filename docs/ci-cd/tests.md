@@ -1,7 +1,7 @@
 ---
-title: Unit Testing
+title: Unit Testing for Spark
 id: tests
-description: Unit testing for Spark
+description: Implementing unit tests in Prophecy
 sidebar_position: 6
 tags:
   - spark

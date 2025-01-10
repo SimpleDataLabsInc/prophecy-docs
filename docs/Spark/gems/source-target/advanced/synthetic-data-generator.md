@@ -66,7 +66,7 @@ Create a new Dataset and select the Type as Data Generator. Note we are not spec
 
 ### Properties: Specify Data Structure
 
-What type of data do you need to generate? Specify the data structure using Random Data Providers. Prophecy offers a selection of [Random Data Providers](./providers) including integers, booleans, and elements from a list. If you prefer, provide the same information as a JSON schema.
+What type of data do you need to generate? Specify the data structure using random data providers. Prophecy offers a selection of providers including integers, booleans, and elements from a list. If you prefer, provide the same information as a JSON schema.
 
 <details>
 <summary>Providers</summary>
@@ -129,5 +129,5 @@ The Data Generator only generates the data. If you want to store the data just c
 
 :::info
 Using Unity Catalog Shared Spark Clusters?
-Check [here](../../../fabrics/databricks/ucshared) to see if this Gem is supported.
+Check [here](docs/administration/spark-fabrics/databricks/UCShared.md) to see if this Gem is supported.
 :::

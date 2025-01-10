@@ -143,7 +143,7 @@ A: The share “invitation” is not sent via email. Rather, the team would be a
 A: Be sure the new project and dependent project are using the same language, like Scala or Python. If the new project is a Scala project, only Scala Packages can be added as dependencies.
 
 **Q: How do I use subgraphs from a dependency?**
-A: Like Pipelines, Subgraphs can be used by dependent projects via [configurable variables.](/docs/extensibility//package-hub/shareable-subgraphs/#configurable-subgraphs)
+A: Like Pipelines, Subgraphs can be used by dependent projects via [configurable variables.](docs/extensibility/package-hub/ShareableSubgraphs.md)
 
 **Q: How would I take a Package built by another team and evolve it in a new direction? That is, how can two teams take a single project in two different directions?**
 A: One excellent option here is to **Clone** the Project instead of use as a Package Dependency. For example, let’s say the MarketingAnalytics team loved the `Framework` Package and wanted it to become a holding place for all the Marketing Pipelines. The Platform team, however, wants to keep the `Framework` Project as general as possible. How can the two teams each take a version of the project in their own direction?

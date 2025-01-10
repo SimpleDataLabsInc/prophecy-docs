@@ -36,4 +36,4 @@ The `Commits` tab on the [Project Metadata](#project-metadata) page shows the cu
 
 ### Project Releases and Deployments
 
-This tab displays the history of released projects and deployed jobs. Click [here](../deployment) to learn more.
+This tab displays the history of released projects and deployed jobs. Click [here](docs/ci-cd/deployment/deployment.md) to learn more.

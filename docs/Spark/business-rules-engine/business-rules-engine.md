@@ -7,7 +7,7 @@ tags:
   - business rules
 ---
 
-Business rules can be created in Spark Projects as functions. They can also be grouped and released via [Packages](/package-hub/).
+Business rules can be created in Spark Projects as functions. They can also be grouped and released via [Packages](docs/extensibility/package-hub/package-hub.md).
 
 ## Configuration
 
@@ -94,7 +94,7 @@ Then, you must give other users access to your Project.
 1. In your Project metadata, open the **Access** tab.
 1. Toggle-on the option to **Publish to Package Hub**. This will make the Package available to others.
 
-When someone adds the Package as a [dependency](/extensibility/dependencies) in their Project, they will be able to see the rule definition. However, they will not be able to edit the fields.
+When someone adds the Package as a [dependency](docs/extensibility/dependencies/spark-dependencies.md) in their Project, they will be able to see the rule definition. However, they will not be able to edit the fields.
 
 ![PromoCodeRule](./img/promo-code-rule.png)
 
