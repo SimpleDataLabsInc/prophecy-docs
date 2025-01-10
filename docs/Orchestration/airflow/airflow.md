@@ -24,7 +24,7 @@ Airflow provides a flexible scheduling system that allows you to set up complex 
 
 #### Extensibility
 
-Airflow is highly extensible, allowing you to define custom operators and sensors to suit your specific needs. It supports a wide range of plugins and integrations. Prophecy maintains this extensibility via [Package Hub](/docs/package-hub/package-hub.md). Users can create Gems to represent any custom Operator or Sensor.
+Airflow is highly extensible, allowing you to define custom operators and sensors to suit your specific needs. It supports a wide range of plugins and integrations. Prophecy maintains this extensibility via [Package Hub](docs/extensibility/package-hub/package-hub.md). Users can create Gems to represent any custom Operator or Sensor.
 
 #### Monitoring and Logging
 

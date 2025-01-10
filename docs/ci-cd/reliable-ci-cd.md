@@ -128,4 +128,4 @@ As we know, Prophecy publishes all the entities (Pipelines, Jobs, metadata, etc)
 
 ### Deploy with Prophecy Build Tool
 
-[Prophecy Build Tool (PBT)](/docs/deployment/prophecy-build-tool/prophecy-build-tool.md) is a cli tool that can be used to build, test, and deploy projects created by Prophecy. PBT integrates with either [github actions](/docs/deployment/prophecy-build-tool/pbt-github-actions.md) or [Jenkins](/docs/deployment/prophecy-build-tool/pbt-jenkins.md) to facilitate deploying your code from your Git repository. Make use of the `--fabric-ids` option to deploy using the Multi-Fabric approach.
+[Prophecy Build Tool (PBT)](/docs/ci-cd/prophecy-build-tool/prophecy-build-tool.md) is a cli tool that can be used to build, test, and deploy projects created by Prophecy. PBT integrates with either [github actions](/docs/ci-cd/prophecy-build-tool/pbt-github-actions.md) or [Jenkins](/docs/ci-cd/prophecy-build-tool/pbt-jenkins.md) to facilitate deploying your code from your Git repository. Make use of the `--fabric-ids` option to deploy using the Multi-Fabric approach.

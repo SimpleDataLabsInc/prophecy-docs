@@ -12,7 +12,7 @@ tags:
 ---
 
 Once you have developed and tested your custom components like Gems, Pipelines, Models, or Jobs in Prophecy, the next step is to make them available for use. This involves Releasing and Deploying them to the respective environments.
-You can Release and Deploy via Prophecy UI or you can use [Prophecy Build Tool](/docs/deployment/prophecy-build-tool/prophecy-build-tool.md) CLI to integrate with any other CI-CD tools.
+You can Release and Deploy via Prophecy UI or you can use [Prophecy Build Tool](/docs/ci-cd/prophecy-build-tool/prophecy-build-tool.md) CLI to integrate with any other CI-CD tools.
 Lets see how you can do it via the Prophecy UI below.
 
 ## Overview
@@ -20,7 +20,7 @@ Lets see how you can do it via the Prophecy UI below.
 As part of the release process, we start by creating a [Git Tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging) with a specified version. This tag is then pushed to your configured Git repository. Following this, the Pipelines, Gems, and Jobs in the Project are built and deployed to the respective environments.
 Here's a breakdown of what deploying means for each component:
 
-- **Gems**: With Prophecy 3.2, you can create [Custom Gems](/docs/package-hub/package-builder/gem-builder.md) and use in your Pipelines. During the release, these gems are built and uploaded to an internal Artifactory. They aren't directly copied to your environments, as they are used in generating code for the Pipelines, not during Job/Pipeline execution. Note, the code for Gems do get committed to your Git repo as part of the Project.
+- **Gems**: With Prophecy 3.2, you can create [Custom Gems](docs/extensibility/package-hub/gem-builder.md) and use in your Pipelines. During the release, these gems are built and uploaded to an internal Artifactory. They aren't directly copied to your environments, as they are used in generating code for the Pipelines, not during Job/Pipeline execution. Note, the code for Gems do get committed to your Git repo as part of the Project.
 
 - **Pipelines**: Each Pipeline in the project is compiled and built into an artifact (Wheel file for Python and Jar file for Scala). These artifacts are then uploaded to your environment as part of the release process.
 
@@ -102,7 +102,7 @@ Different versions of pipelines, datasets, and Subgraphs may coexist within the 
 
 ### Enable Unit Tests
 
-Writing good [Unit tests](/docs/Spark/tests.md) is a key component for Data Pipeline quality and management. Prophecy makes the process of writing unit cases easier by giving an interactive environment via which unit test cases can be configured across each component.
+Writing good [Unit tests](/ci-cd/tests) is a key component for Data Pipeline quality and management. Prophecy makes the process of writing unit cases easier by giving an interactive environment via which unit test cases can be configured across each component.
 This setting enables running Unit tests as part of Pipeline Builds.
 
 :::note

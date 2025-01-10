@@ -42,7 +42,7 @@ The lineage extractor requires environment variables `PROPHECY_URL` and `PROPHEC
 
 Optionally, if you choose to set up email notifications, you must also set secrets for your `SMTP_USERNAME` and `SMTP_PASSWORD`.
 
-These environment variables can be set as secrets inside the GitHub repository of the project. For more information, see [Set up environment variables and secrets](docs/deployment/prophecy-build-tool/pbt-github-actions.md#set-up-environment-variables-and-secrets).
+These environment variables can be set as secrets inside the GitHub repository of the project. For more information, see [Set up environment variables and secrets](docs/ci-cd/prophecy-build-tool/pbt-github-actions.md#set-up-environment-variables-and-secrets).
 
 The environment variables can also be set within the GitHub Actions or GitLab Actions YML file.
 

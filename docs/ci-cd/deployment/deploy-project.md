@@ -1,6 +1,6 @@
 ---
 title: Develop and deploy a Project
-id: project
+id: deploy-project
 sidebar_label: Deploy a Project
 description: Learn how to use Git for deployment
 sidebar_position: 1
@@ -85,4 +85,4 @@ When you **Release and Deploy** your project, a particular commit is tagged in t
 
 ![Release changes](img/release-project.png)
 
-At this point, you have worked through one iteration of your Project's lifecycle! To learn more about different deployment options, visit [Deployment](docs/deployment/deployment.md).
+At this point, you have worked through one iteration of your Project's lifecycle! To learn more about different deployment options, visit [Deployment](docs/ci-cd/deployment/deployment.md).

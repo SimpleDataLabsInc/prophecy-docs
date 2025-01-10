@@ -177,7 +177,7 @@ Click on **(1) Operators**, and Drag the **(2) DBT Gem** from the dropdown to th
 
 Here, you will select the DBT Project/Model to Schedule, what SQL Fabric to schedule it on, and other additional properties for running a DBT model.
 
-Select the **(1) DBT commands** you want to run when scheduling your Models. You can select all ([Dependencies](https://docs.prophecy.io/Spark/extensibility/dependencies), [Seed](https://docs.prophecy.io/getting-started/sql-with-databricks/#431-create-seeds), Run and Test) here.
+Select the **(1) DBT commands** you want to run when scheduling your Models. You can select all ([Dependencies](/extensibility/dependencies), [Seed](/getting-started/sql-with-databricks#431-create-seeds), Run and Test) here.
 Select the **(2) DBT Project to Schedule**. And then select the **(3) SQL Warehouse Fabric** to schedule the Module on. Select the Fabric for which connection was created in Step 1.4 or 1.5.
 In **(4) Git reference**, select if you want to schedule a particular commit/tag or branch. Here you can select `branch` for this guide and then in **(5) Reference Value** give the current branch name you are working on.
 You can provide any additional **(6) Properties** for your run and then click **(7) Save**!!

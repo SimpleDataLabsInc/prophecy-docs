@@ -10,11 +10,11 @@ tags: [generative-ai, machine-learning, llm, pinecone, openai]
 
 The PineconeLookup Gem identifies content that is similar to a provided vector embedding. The Gem calls the Pinecone API and returns a set of IDs with highest similarity to the provided embedding.
 
-- [**Parameters:**](https://docs.prophecy.io/Spark/gems/machine-learning/ml-pinecone-lookup#gem-parameters) Configure the parameters needed to call the Pinecone API.
+- [**Parameters:**](/docs/Spark/gems/machine-learning/ml-pinecone-lookup.md#gem-parameters) Configure the parameters needed to call the Pinecone API.
 
-- [**Input:**](https://docs.prophecy.io/Spark/gems/machine-learning/ml-pinecone-lookup#input) This Gem requires an embedding as input. The embedding is provided by a foundational model like [OpenAI](https://platform.openai.com/docs/introduction).
+- [**Input:**](/docs/Spark/gems/machine-learning/ml-pinecone-lookup.md#input) This Gem requires an embedding as input. The embedding is provided by a foundational model like [OpenAI](https://platform.openai.com/docs/introduction).
 
-- [**Output:**](https://docs.prophecy.io/Spark/gems/machine-learning/ml-pinecone-lookup#output) This Gem outputs an array of IDs with corresponding similarity scores.
+- [**Output:**](/docs/Spark/gems/machine-learning/ml-pinecone-lookup.md#output) This Gem outputs an array of IDs with corresponding similarity scores.
 
 ![Input and Output](./img/pinecone_lookup_input_output.png)
 
@@ -42,9 +42,9 @@ Hardcoding the Pinecone credential is not recommended. Selecting this option cou
 
 #### Properties
 
-Pinecone DB uses indexing to map the vectors to a data structure that will enable faster searching. The PineconeLookup Gem searches through a Pinecone index to identify embeddings with similarity to the input embedding. Enter the Pinecone **[(4) Index name](https://docs.prophecy.io/Spark/gems/machine-learning/ml-pinecone-lookup#faq)** which you’d like to use for looking up embeddings.
+Pinecone DB uses indexing to map the vectors to a data structure that will enable faster searching. The PineconeLookup Gem searches through a Pinecone index to identify embeddings with similarity to the input embedding. Enter the Pinecone **[(4) Index name](/docs/Spark/gems/machine-learning/ml-pinecone-lookup.md#faq)** which you’d like to use for looking up embeddings.
 
-Select one of the Gem’s input columns with vector embeddings as the **(5) Vector column** to send to Pinecone’s API. The column [must](https://docs.prophecy.io/Spark/gems/machine-learning/ml-pinecone-lookup#input) be compatible with the Pinecone Index. To change the column’s datatype and properties, [configure](https://docs.prophecy.io/Spark/gems/machine-learning/ml-pinecone-lookup#faq) the Gem(s) preceding the PineconeLookup Gem.
+Select one of the Gem’s input columns with vector embeddings as the **(5) Vector column** to send to Pinecone’s API. The column [must](/docs/Spark/gems/machine-learning/ml-pinecone-lookup.md#input) be compatible with the Pinecone Index. To change the column’s datatype and properties, [configure](/docs/Spark/gems/machine-learning/ml-pinecone-lookup.md#faq) the Gem(s) preceding the PineconeLookup Gem.
 
 Pinecone’s API can return multiple results. Depending on the use case, select the desired **(6) Number of results** sorted by similarity score. The result with highest similarity to the user’s text question will be listed first.
 
@@ -58,7 +58,7 @@ PineconeLookup requires a model_embedding column as input. Use one of Prophecy's
 
 ### Output
 
-The output Dataset contains the pinecone_matches and pinecone_error columns. For each input content entry, this Gem adds an array to the pinecone_matches column. The output array will have [Number of Results](https://docs.prophecy.io/Spark/gems/machine-learning/ml-pinecone-lookup#properties) entries.
+The output Dataset contains the pinecone_matches and pinecone_error columns. For each input content entry, this Gem adds an array to the pinecone_matches column. The output array will have [Number of Results](/docs/Spark/gems/machine-learning/ml-pinecone-lookup.md#properties) entries.
 
 | Column           | Description                                                                                                                                                                          |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -111,4 +111,4 @@ To troubleshoot the Gem preceding PineconeLookup, open the data preview output f
 
 #### Creating a Pinecone Index
 
-If you don’t have one yet, [create a Pinecone index](https://docs.pinecone.io/docs/quickstart). Click [here](https://docs.pinecone.io/docs/choosing-index-type-and-size) for pointers on choosing an index type and size. How to populate the index? For example, [this guide](https://docs.prophecy.io/getting-started/gen-ai-chatbot#step-2-build-a-knowledge-warehouse) shows how to ingest and vectorize web content data to store in a Pinecone Database index.
+If you don’t have one yet, [create a Pinecone index](https://docs.pinecone.io/docs/quickstart). Click [here](https://docs.pinecone.io/docs/choosing-index-type-and-size) for pointers on choosing an index type and size. How to populate the index? For example, [this guide](/docs/getting-started/genaichatbot.md#step-2-build-a-knowledge-warehouse) shows how to ingest and vectorize web content data to store in a Pinecone Database index.

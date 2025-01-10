@@ -47,7 +47,7 @@ Data sampling is enabled on by default. When left enabled, Data sampling uses th
 
 ### Data sampling modes
 
-Toggle the images below to view the various modes (or levels) of data sampling. By default, for interactive runs, data sampling is enabled for all components. Note [Vanilla](https://docs.prophecy.io/Spark/execution/executions_on_databricks_clusters/#vanilla-interims) is an interim sampling mode reserved for Shared Databricks clusters.
+Toggle the images below to view the various modes (or levels) of data sampling. By default, for interactive runs, data sampling is enabled for all components. Note [Vanilla](docs/Spark/execution/databricks-clusters-behaviors.md#vanilla-interims) is an interim sampling mode reserved for Shared Databricks clusters.
 
 ```mdx-code-block
 import App from '@site/src/components/slider';

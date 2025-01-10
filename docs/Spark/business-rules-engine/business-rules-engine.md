@@ -87,14 +87,14 @@ Let's say you want to create a PromoCodeRule that will be used in various other 
 1. Add the business rule to the Project.
 1. Commit your changes to the Project.
 1. Merge the changes to the main branch.
-1. [Release and deploy](docs/deployment/deployment.md##how-to-release-a-project) the Project.
+1. [Release and deploy](docs/ci-cd/deployment/deployment.md##how-to-release-a-project) the Project.
 
 Then, you must give other users access to your Project.
 
 1. In your Project metadata, open the **Access** tab.
 1. Toggle-on the option to **Publish to Package Hub**. This will make the Package available to others.
 
-When someone adds the Package as a [dependency](/Spark/extensibility/dependencies) in their Project, they will be able to see the rule definition. However, they will not be able to edit the fields.
+When someone adds the Package as a [dependency](/extensibility/dependencies) in their Project, they will be able to see the rule definition. However, they will not be able to edit the fields.
 
 ![PromoCodeRule](./img/promo-code-rule.png)
 

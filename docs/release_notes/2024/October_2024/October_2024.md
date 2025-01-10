@@ -70,7 +70,7 @@ tags:
 
   ![Gem builder customize interface](./../img/oct-gem-builder-interface.png)
 
-  For more information, see [Gem builder](/docs/SQL/extensibility/gem-builder/gem-builder.md).
+  For more information, see [Gem builder](/docs/extensibility/gem-builder/sql-gem-builder.md).
 
 #### AI Copilot Enhancements {#AICopilot34}
 
