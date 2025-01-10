@@ -51,6 +51,7 @@ const sidebars = {
       type: "html",
       value: '<span class="sidebar-divider" />',
     },
+    /// PIPELINE DEVELOPMENT
     {
       type: "category",
       label: "Pipeline development",
@@ -125,6 +126,85 @@ const sidebars = {
                 },
               ],
             },
+            {
+              type: "category",
+              label: "Transform",
+              link: {
+                type: "doc",
+                id: "Spark/gems/transform/transform",
+              },
+              items: [
+                "Spark/gems/transform/aggregate",
+                "Spark/gems/transform/data-cleansing",
+                "Spark/gems/transform/deduplicate",
+                "Spark/gems/transform/dynamic-select",
+                "Spark/gems/transform/filter",
+                "Spark/gems/transform/bulk-column-expressions",
+                "Spark/gems/transform/bulk-column-rename",
+                "Spark/gems/transform/flatten-schema",
+                "Spark/gems/transform/limit",
+                "Spark/gems/transform/order-by",
+                "Spark/gems/transform/reformat",
+                "Spark/gems/transform/schema-transform",
+                "Spark/gems/transform/set-operation",
+                "Spark/gems/transform/transform",
+                "Spark/gems/transform/unpivot",
+              ],
+            },
+            {
+              type: "category",
+              label: "Join/Split",
+              link: {
+                type: "doc",
+                id: "Spark/gems/join-split/join-split",
+              },
+              items: [
+                "Spark/gems/join-split/compare-columns",
+                "Spark/gems/join-split/join",
+                "Spark/gems/join-split/Repartition",
+                "Spark/gems/join-split/row-distributor",
+              ],
+            },
+            {
+              type: "category",
+              label: "Subgraph",
+              link: {
+                type: "doc",
+                id: "Spark/gems/subgraph/subgraph",
+              },
+              items: [
+                "Spark/gems/subgraph/basic-subgraph",
+                "Spark/gems/subgraph/table-iterator",
+              ],
+            },
+            {
+              type: "category",
+              label: "Machine learning",
+              link: {
+                type: "doc",
+                id: "Spark/gems/machine-learning/machine-learning",
+              },
+              items: [
+                "Spark/gems/machine-learning/ml-openai",
+                "Spark/gems/machine-learning/ml-pinecone-lookup",
+                "Spark/gems/machine-learning/ml-text-processing",
+              ],
+            },
+            {
+              type: "category",
+              label: "Custom",
+              link: {
+                type: "doc",
+                id: "Spark/gems/custom/custom",
+              },
+              items: [
+                "Spark/gems/custom/delta-ops",
+                "Spark/gems/custom/file-operations",
+                "Spark/gems/custom/rest-api-enrich",
+                "Spark/gems/custom/script",
+                "Spark/gems/custom/sql-statement",
+              ],
+            },
           ],
         },
         {
@@ -151,7 +231,7 @@ const sidebars = {
         {
           type: "category",
           label: "Spark streaming",
-          link: { type: "doc", id: "SQL/gems/sql-gems" },
+          link: { type: "doc", id: "Spark/spark-streaming/streaming" },
           items: [
             {
               type: "category",
@@ -166,6 +246,7 @@ const sidebars = {
                 "Spark/spark-streaming/streaming-sources-and-targets/streaming-warehouse-apps",
               ],
             },
+            "Spark/spark-streaming/transformations-streaming",
           ],
         },
         "Spark/expression-builder",
@@ -173,11 +254,20 @@ const sidebars = {
         { "Best practices": ["Spark/best-practices/use-dbx-secrets"] },
       ],
     },
+    /// MODEL DEVELOPMENT
     {
       type: "category",
       label: "Model development",
       link: { type: "doc", id: "SQL/copilot-for-sql-users" },
       items: [
+        "SQL/development",
+        {
+          type: "category",
+          label: "Visual editor",
+          link: { type: "doc", id: "SQL/visual-editor/visual-editor" },
+          items: ["SQL/visual-editor/variant-schema"],
+        },
+        "SQL/code-editor",
         {
           type: "category",
           label: "gems",
@@ -191,8 +281,36 @@ const sidebars = {
             },
           ],
         },
+        {
+          type: "category",
+          label: "Execution",
+          link: { type: "doc", id: "SQL/execution/execution" },
+          items: ["SQL/execution/data-explorer"],
+        },
+        {
+          type: "category",
+          label: "Visual expression builder",
+          link: {
+            type: "doc",
+            id: "SQL/visual-expression-builder/visual-expression-builder",
+          },
+          items: [
+            "SQL/visual-expression-builder/visual-expression-builder-reference",
+            "SQL/visual-expression-builder/use-the-expression-builder",
+          ],
+        },
+        {
+          type: "category",
+          label: "Data tests",
+          link: { type: "doc", id: "SQL/data-tests/data-tests" },
+          items: [
+            "SQL/data-tests/use-model-tests",
+            "SQL/data-tests/use-project-tests",
+          ],
+        },
       ],
     },
+    /// LINEAGE
     {
       type: "category",
       label: "Lineage",
@@ -203,6 +321,7 @@ const sidebars = {
         "lineage/lineage-view-and-search",
       ],
     },
+    /// ORCHESTRATION
     {
       type: "category",
       label: "Orchestration",
@@ -254,8 +373,23 @@ const sidebars = {
             "Orchestration/airflow/airflow-tutorial",
           ],
         },
+        {
+          type: "category",
+          label: "Pipeline monitoring",
+          link: {
+            type: "doc",
+            id: "Orchestration/pipeline-monitoring/pipeline-monitoring",
+          },
+          items: [
+            "Orchestration/pipeline-monitoring/enable-pipeline-monitoring",
+            "Orchestration/pipeline-monitoring/use-pipeline-monitoring",
+          ],
+        },
+        "Orchestration/databricks-jobs",
+        "Orchestration/multi-jobs-trigger",
       ],
     },
+    /// CI-CD
     {
       type: "category",
       label: "CI/CD",
@@ -286,6 +420,7 @@ const sidebars = {
         },
       ],
     },
+    /// EXTENSIBILITY
     {
       type: "category",
       label: "Extensibility",

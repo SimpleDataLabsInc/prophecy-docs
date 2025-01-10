@@ -2,7 +2,6 @@
 title: File-based
 id: streaming-file-apps
 description: File-based Source and Target Gems for Streaming Data Applications
-sidebar_position: 2
 tags:
   - spark
   - streaming

@@ -26,8 +26,8 @@ If your email account has two-factor authentication (2FA) turned on, you may run
 
 To add an Email connection, click on **+ Add Connection** and select Email in **(1) Connection Type**.
 
-![Add_connection](../../img/Add_Connection.png)
+![Add_connection](../img/Add_Connection.png)
 
 Provide a **(2) Connection Name** to identify your connection, add a **(3) Description** of your choice, and provide the **(4) Host** as your SMTP host example `smtp.gmail.com`. Provide the login credentials for this server in **(5) Login** and **(6) Password** and provide your SMTP port in **(7) Port**. Once done, hit **(8) Save**.
 
-![Email_connection](../../img/Email_connection.png)
+![Email_connection](../img/Email_connection.png)

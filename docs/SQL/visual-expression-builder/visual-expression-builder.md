@@ -68,7 +68,7 @@ While viewing the Code view of your expressions, you can click **Ask AI** to gen
 
 ![Ask AI to generate](img/ask-ai-expression.png)
 
-While you're viewing the Code view, you can also take advantage of the [Expression Builder](../../../../Spark/expression-builder.md) by clicking **Expand Editor** next to any of your expressions.
+While you're viewing the Code view, you can also take advantage of the expression builder by clicking **Expand Editor** next to any of your expressions.
 
 ## What's next
 

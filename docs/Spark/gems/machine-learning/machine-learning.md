@@ -1,6 +1,6 @@
 ---
 title: Machine Learning
-id: Machine Learning
+id: machine-learning
 description: Preparing and Using Data for Machine Learning
 tags: [generative-ai, machine-learning, llm, pinecone, openai]
 ---
