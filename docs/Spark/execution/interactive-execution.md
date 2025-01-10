@@ -2,7 +2,6 @@
 title: Interactive Execution
 id: interactive-execution
 description: Interactive Execution
-sidebar_position: 1
 tags:
   - spark
   - interactive

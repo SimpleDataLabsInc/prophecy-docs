@@ -2,7 +2,6 @@
 title: Data tests
 id: data-tests
 description: Data tests check the validity of your SQL
-sidebar_position: 8
 tags:
   - concept
   - testing

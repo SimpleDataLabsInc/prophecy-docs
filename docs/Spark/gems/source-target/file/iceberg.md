@@ -2,7 +2,6 @@
 title: Iceberg
 id: iceberg
 description: Iceberg
-sidebar_position: 6
 tags:
   - gems
   - file

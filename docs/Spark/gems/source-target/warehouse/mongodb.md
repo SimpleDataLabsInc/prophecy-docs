@@ -2,7 +2,6 @@
 title: MongoDB
 id: mongodb
 description: MongoDB
-sidebar_position: 5
 tags:
   - gems
   - warehouse

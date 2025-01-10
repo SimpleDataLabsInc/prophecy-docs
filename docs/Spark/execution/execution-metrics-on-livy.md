@@ -2,7 +2,6 @@
 title: Execution on Livy
 id: executions_on_livy_clusters
 description: Execution on Livy
-sidebar_position: 3
 tags:
   - execution
   - interim

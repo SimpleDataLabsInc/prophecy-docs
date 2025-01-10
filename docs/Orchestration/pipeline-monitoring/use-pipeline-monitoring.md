@@ -2,7 +2,6 @@
 title: Use Pipeline Monitoring
 id: use-pipeline-monitoring
 description: How to use Pipeline Monitoring for Spark
-sidebar_position: 3
 tags:
   - how-to
   - monitoring

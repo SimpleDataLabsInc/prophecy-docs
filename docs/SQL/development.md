@@ -2,7 +2,6 @@
 title: Development
 id: development
 description: Designing SQL projects with Copilot
-sidebar_position: 2
 tags:
   - SQL
   - development

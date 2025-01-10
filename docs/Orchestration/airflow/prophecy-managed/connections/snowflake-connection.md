@@ -1,5 +1,4 @@
 ---
-sidebar_position: 6
 title: Snowflake Connection
 id: prophecy_managed_airflow_fabric_snowflake_connections
 description: How to create Databricks SQL connection in Prophecy Managed Airflow Fabric

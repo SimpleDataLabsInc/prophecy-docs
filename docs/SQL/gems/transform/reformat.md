@@ -1,5 +1,4 @@
 ---
-sidebar_position: 8
 title: Reformat
 id: reformat
 description: Select one or more columns or values using expressions and functions.

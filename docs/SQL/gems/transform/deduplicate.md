@@ -2,7 +2,6 @@
 title: Deduplicate
 id: deduplicate
 description: Remove rows with duplicate values of specified columns
-sidebar_position: 3
 tags:
   - gems
   - dedupe

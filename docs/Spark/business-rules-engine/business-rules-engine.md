@@ -1,5 +1,4 @@
 ---
-sidebar_position: 8
 title: Business Rules Engine
 id: business-rules-engine
 description: Create business rules as functions

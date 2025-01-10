@@ -1,5 +1,4 @@
 ---
-sidebar_position: 1
 title: Join
 id: join
 description: Join one or more DataFrames on conditions

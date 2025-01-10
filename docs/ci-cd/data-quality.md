@@ -3,7 +3,6 @@ title: Data Quality
 draft: true
 id: data-quality
 description: Data Quality
-sidebar_position: 8
 tags:
   - spark
   - development

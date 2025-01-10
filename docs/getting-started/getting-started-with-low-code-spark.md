@@ -1,6 +1,5 @@
 ---
 title: Spark with Databricks
-sidebar_position: 2
 id: spark-with-databricks
 description: Getting started with Spark on Databricks
 tags: []

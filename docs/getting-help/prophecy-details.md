@@ -1,7 +1,6 @@
 ---
 title: Send Prophecy details to Support
 id: prophecy-details
-sidebar_position: 1
 description: How to download logs and send for support
 sidebar_label: Send info from Prophecy
 tags: []

@@ -2,7 +2,6 @@
 title: Visual editor
 id: visual-editor
 description: Visual editor
-sidebar_position: 4
 tags:
   - concept
   - development

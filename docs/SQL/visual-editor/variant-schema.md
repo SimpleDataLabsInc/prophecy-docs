@@ -2,7 +2,6 @@
 title: Variant schema
 id: variant-schema
 description: About variant schema
-sidebar_position: 2
 tags:
   - concept
   - variant

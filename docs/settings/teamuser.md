@@ -2,7 +2,6 @@
 title: Teams and Users
 id: teamuser
 description: Teams represent a group of users who work together
-sidebar_position: 7
 tags:
   - concepts
   - teams

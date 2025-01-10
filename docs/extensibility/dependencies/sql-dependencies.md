@@ -1,5 +1,4 @@
 ---
-sidebar_position: 1
 title: SQL dependencies
 id: sql-dependencies
 description: Dependency management

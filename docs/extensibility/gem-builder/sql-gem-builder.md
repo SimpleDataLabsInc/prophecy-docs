@@ -1,5 +1,4 @@
 ---
-sidebar_position: 1
 title: Gem builder
 id: sql-gem-builder
 description: Gem builder

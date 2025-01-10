@@ -2,7 +2,6 @@
 title: JDBC
 id: jdbc
 description: JDBC
-sidebar_position: 4
 tags:
   - gems
   - warehouse

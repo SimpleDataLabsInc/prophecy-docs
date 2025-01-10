@@ -3,7 +3,6 @@ title: Reliable CI/CD with Prophecy
 image: img/reliable-ci-cd/dev-qa-prod.png
 id: reliable-ci-cd
 description: Explore Continuous Integration and Continuous Delivery within Prophecy
-sidebar_position: 1
 tags:
   - cicd
   - deployment

@@ -2,7 +2,6 @@
 title: PBT on GitHub Actions
 id: prophecy-build-tool-github-actions
 description: Example usage of Prophecy Build Tool on GitHub Actions
-sidebar_position: 5
 tags:
   - metadata
   - build

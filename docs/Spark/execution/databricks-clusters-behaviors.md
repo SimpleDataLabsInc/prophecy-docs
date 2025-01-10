@@ -2,7 +2,6 @@
 title: Execution on Databricks
 id: executions_on_databricks_clusters
 description: Execution on Databricks clusters
-sidebar_position: 3
 tags:
   - execution
   - interim

@@ -1,5 +1,4 @@
 ---
-sidebar_position: 1
 title: Setup
 id: setup_airflow
 description: How Prophecy integrates with Airflow

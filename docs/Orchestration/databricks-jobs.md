@@ -1,7 +1,6 @@
 ---
 title: Databricks Jobs
 description: Databricks jobs
-sidebar_position: 3
 id: databricks-jobs
 tags:
   - jobs

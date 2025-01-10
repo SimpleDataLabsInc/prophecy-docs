@@ -2,7 +2,6 @@
 title: Visual Expression Builder
 id: visual-expression-builder
 description: About the Visual Expression Builder
-sidebar_position: 1
 tags:
   - concept
   - development

@@ -2,7 +2,6 @@
 title: Salesforce
 id: salesforce
 description: Salesforce
-sidebar_position: 8
 tags:
   - gems
   - warehouse

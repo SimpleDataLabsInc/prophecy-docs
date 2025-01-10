@@ -2,7 +2,6 @@
 title: Enable Pipeline Monitoring
 id: enable-pipeline-monitoring
 description: How to enable Pipeline Monitoring for Spark
-sidebar_position: 2
 tags:
   - how-to
   - setup

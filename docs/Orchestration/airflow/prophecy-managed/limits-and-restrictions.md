@@ -1,5 +1,4 @@
 ---
-sidebar_position: 2
 title: Limits and Restrictions
 id: prophecy_managed_airflow_fabric_limits
 description: Limits and Security restrictions for Prophecy Managed Airflow

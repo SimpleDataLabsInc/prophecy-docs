@@ -2,7 +2,6 @@
 title: Data Generator
 id: data-generator
 description: Don't have the right data? Create some!
-sidebar_position: 1
 tags:
   - synthetic
   - random

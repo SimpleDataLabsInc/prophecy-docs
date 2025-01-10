@@ -2,7 +2,6 @@
 title: CosmosDB
 id: cosmos
 description: CosmosDB
-sidebar_position: 2
 tags:
   - gems
   - warehouse

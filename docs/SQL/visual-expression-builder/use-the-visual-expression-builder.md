@@ -2,7 +2,6 @@
 title: Use the Visual Expression Builder
 id: use-the-expression-builder
 description: Use the Expression Builder
-sidebar_position: 2
 tags:
   - how-to
   - development

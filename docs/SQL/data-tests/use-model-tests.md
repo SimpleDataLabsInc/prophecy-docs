@@ -2,7 +2,6 @@
 title: Use model and column tests
 id: use-model-tests
 description: Reusable SQL query tests
-sidebar_position: 2
 tags:
   - how-to
   - testing

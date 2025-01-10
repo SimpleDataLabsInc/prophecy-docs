@@ -2,7 +2,6 @@
 title: Execution Metrics
 id: execution-metrics
 description: Execution Metrics
-sidebar_position: 2
 tags:
   - execution
   - metrics

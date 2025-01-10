@@ -2,7 +2,6 @@
 title: SQL Query
 id: sql-query
 description: SQL Query of Target Models
-sidebar_position: 5
 tags:
   - concept
   - model

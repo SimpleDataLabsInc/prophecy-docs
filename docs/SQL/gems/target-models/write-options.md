@@ -2,7 +2,6 @@
 title: Write Options
 id: write-options
 description: Write Options of Target Models
-sidebar_position: 6
 tags:
   - concept
   - model

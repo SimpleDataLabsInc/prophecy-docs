@@ -1,5 +1,4 @@
 ---
-sidebar_position: 1
 title: Conditional Execution in Spark
 id: conditional-execution
 description: Guide on conditional Execution of a Gem

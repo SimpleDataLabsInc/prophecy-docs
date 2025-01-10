@@ -2,7 +2,6 @@
 title: Unit Testing for Spark
 id: tests
 description: Implementing unit tests in Prophecy
-sidebar_position: 6
 tags:
   - spark
   - development

@@ -2,7 +2,6 @@
 title: Redshift
 id: redshift
 description: Redshift
-sidebar_position: 7
 tags:
   - gems
   - warehouse

@@ -2,7 +2,6 @@
 title: PBT on Jenkins
 id: prophecy-build-tool-jenkins
 description: Example Usage of Prophecy Build Tool on Jenkins
-sidebar_position: 5
 tags:
   - metadata
   - build

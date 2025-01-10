@@ -2,7 +2,6 @@
 title: Execution
 id: execution
 description: Execution
-sidebar_position: 3
 tags:
   - execution
   - explorer

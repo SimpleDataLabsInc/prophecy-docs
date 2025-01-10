@@ -1,5 +1,4 @@
 ---
-sidebar_position: 2
 title: OpenAI
 id: ml-openai
 description: Request OpenAI to generate a vector embedding or request OpenAI to answer a question with an optional context.

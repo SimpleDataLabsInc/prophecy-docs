@@ -3,7 +3,6 @@ title: External release tags in Prophecy
 sidebar_label: External release tags
 id: use-external-release-tags
 description: Use external release tags for deployment and dependency in Prophecy
-sidebar_position: 5
 tags:
   - how-to
   - external

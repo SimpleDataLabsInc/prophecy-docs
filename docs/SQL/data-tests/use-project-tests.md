@@ -2,7 +2,6 @@
 title: Use project tests
 id: use-project-tests
 description: Custom SQL query tests
-sidebar_position: 1
 tags:
   - how-to
   - testing

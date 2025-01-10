@@ -2,7 +2,6 @@
 title: Pipeline Monitoring
 id: pipeline-monitoring
 description: About Pipeline Monitoring for Spark
-sidebar_position: 1
 tags:
   - concept
   - monitoring

@@ -2,7 +2,6 @@
 title: Visual Expression Builder reference
 id: visual-expression-builder-reference
 description: Visual Expression Builder reference
-sidebar_position: 3
 tags:
   - reference
   - development

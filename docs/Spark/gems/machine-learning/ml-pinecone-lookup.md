@@ -1,5 +1,4 @@
 ---
-sidebar_position: 3
 title: PineconeLookup
 id: ml-pinecone-lookup
 description: Lookup a vector embedding from a Pinecone Database

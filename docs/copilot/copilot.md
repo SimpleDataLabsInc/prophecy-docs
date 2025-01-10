@@ -1,6 +1,7 @@
 ---
 title: Data Copilot
 id: copilot
+sidebar_class_name: hidden
 description: The AI assistant for data Pipelines and models
 tags:
   - concepts

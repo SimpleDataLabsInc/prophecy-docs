@@ -2,7 +2,6 @@
 title: Code editor
 id: code-editor
 description: Code editor for SQL
-sidebar_position: 4
 tags:
   - development
   - code

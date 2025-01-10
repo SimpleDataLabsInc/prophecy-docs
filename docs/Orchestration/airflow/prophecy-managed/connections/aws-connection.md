@@ -1,5 +1,4 @@
 ---
-sidebar_position: 2
 title: AWS Connection
 id: prophecy_managed_airflow_fabric_aws_connections
 description: How to create AWS connection in Prophecy Managed Airflow Fabric

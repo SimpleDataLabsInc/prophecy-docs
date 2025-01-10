@@ -1,5 +1,4 @@
 ---
-sidebar_position: 4
 title: Databricks SQL Connection
 id: prophecy_managed_airflow_fabric_dbx_sql_connections
 description: How to create Databricks SQL connection (over DBT) in Prophecy Managed Airflow Fabric

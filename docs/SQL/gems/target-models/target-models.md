@@ -2,7 +2,6 @@
 title: Target Models
 id: target-models
 description: Target Models are a sequence of data transformation steps which define a single table or view
-sidebar_position: 2
 tags:
   - concept
   - model

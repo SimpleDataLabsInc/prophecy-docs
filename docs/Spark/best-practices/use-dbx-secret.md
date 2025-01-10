@@ -2,7 +2,6 @@
 title: Use Databricks Secrets for Username Password fields in Gems
 id: use-dbx-secrets
 description: using Databricks secrets in UserName Passwords fields in Gems
-sidebar_position: 1
 tags:
   - spark
   - databricks

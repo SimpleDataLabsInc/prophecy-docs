@@ -2,7 +2,6 @@
 title: ORC
 id: orc
 description: ORC
-sidebar_position: 9
 tags:
   - gems
   - file

@@ -2,7 +2,6 @@
 title: Lineage extractor
 id: lineage-extractor
 description: Prophecy lineage extractor on GitHub Actions
-sidebar_position: 4
 tags:
   - metadata
   - lineage

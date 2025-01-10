@@ -1,5 +1,4 @@
 ---
-sidebar_position: 2
 title: Build Shareable Gems
 id: Gem-builder
 description: Build custom Gems to share across teams with the Package Hub

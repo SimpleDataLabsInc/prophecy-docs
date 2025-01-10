@@ -1,5 +1,4 @@
 ---
-sidebar_position: 1
 title: Build Shareable Pipelines
 id: shareable-pipelines
 description: Shareable Pipelines within the project and to other projects
