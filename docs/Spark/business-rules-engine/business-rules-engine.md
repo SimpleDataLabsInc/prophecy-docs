@@ -1,21 +1,27 @@
 ---
 sidebar_position: 8
-title: Business Rules Engine
+title: Business rules engine
 id: business-rules-engine
 description: Create business rules as functions
 tags:
   - business rules
 ---
 
-Business rules can be created in Spark Projects as functions. They can also be grouped and released via [Packages](/package-hub/).
+[Business rules](https://www.ibm.com/think/topics/business-rules) are conditions that define how data should be structured, manipulated, and validated within a system.
+
+Use the business rules engine in Prophecy to incorporate business logic in your Pipelines. You can also reuse business rules in different Projects by releasing them via [Packages](/package-hub/).
 
 ## Configuration
+
+Business rules can be created in Spark Projects as functions. The following table describes the parameters of a business rule.
 
 | Field       | Description                                                                                                          |
 | ----------- | -------------------------------------------------------------------------------------------------------------------- |
 | Column Name | The name of the output column that the business rule will calculate.                                                 |
 | Parameters  | The columns you would like to use in your business rule condition(s). Each column must have a Name and Type defined. |
 | Rules       | The set(s) of conditions that define the business rule.                                                              |
+
+Once you have defined your business rule function, you can incorporate it into your Pipeline with the [SchemaTransform Gem](docs/Spark/gems/transform/schema-transform.md).
 
 ## Create a business rule
 
@@ -69,7 +75,7 @@ After completing these steps, you will see the required inputs for the business 
 You can add multiple business rules to the SchemaTransform Gem at a time. You can also use the output column of one rule as an input column for a subsequent rule.
 :::
 
-## Managing business rules in Packages
+## Manage business rules in Packages
 
 You can also import business rules into Projects via Packages. Imported rules are read-only and can only be edited from their source Project.
 
@@ -100,7 +106,7 @@ When someone adds the Package as a [dependency](/Spark/extensibility/dependencie
 
 This example rule includes a set of conditions to determine the type of promotions that a customer is eligible for.
 
-## Viewing the business rules in code
+## View the business rules in code
 
 Prophecy automatically compiles visually-developed business rules into code.
 
