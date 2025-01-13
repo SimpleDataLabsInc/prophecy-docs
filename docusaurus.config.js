@@ -463,53 +463,11 @@ const config = {
         /SQL/data-tests/use-project-tests.html
         /low-code-sql/data-tests/use-project-tests.html => /SQL/data-tests/use-project-tests.html
 
+        ENSURE that more specific paths are evaluated first so that they match before broader conditions like /SQL or /Spark, which could otherwise override them.
+        By ordering conditions based on specificity, you can prevent unintended matches and ensure the correct redirect logic is applied.
 
          */
         createRedirects(existingPath) {
-          if (existingPath.includes("/SQL")) {
-            return [existingPath.replace("/SQL", "/low-code-sql")];
-          }
-          if (existingPath.includes("/Spark")) {
-            return [existingPath.replace("/Spark", "/low-code-spark")];
-          }
-          if (existingPath.includes("/Orchestration")) {
-            return [existingPath.replace("/Orchestration", "/low-code-jobs")];
-          }
-          if (existingPath.includes("/getting-help")) {
-            return [
-              existingPath.replace(
-                "/getting-help",
-                "/getting-started/getting-help",
-              ),
-            ];
-          }
-          if (existingPath.includes("/copilot")) {
-            return [existingPath.replace("/copilot", "/concepts/copilot")];
-          }
-          if (existingPath.includes("/lineage")) {
-            return [existingPath.replace("/lineage", "/metadata/lineage")];
-          }
-          if (existingPath.includes("/administration/authentication")) {
-            return [
-              existingPath.replace(
-                "/administration/authentication",
-                "/architecture/self-hosted/authentication/",
-              ),
-            ];
-          }
-          if (existingPath.includes("/administration/self-hosted")) {
-            return [
-              existingPath.replace(
-                "/administration/self-hosted",
-                "/architecture/self-hosted/",
-              ),
-            ];
-          }
-          if (existingPath.includes("/administration/settings")) {
-            return [
-              existingPath.replace("/administration/settings", "/settings"),
-            ];
-          }
           if (
             existingPath.includes("/Orchestration/airflow/prophecy-managed")
           ) {
@@ -568,6 +526,27 @@ const config = {
               ),
             ];
           }
+          if (existingPath.includes("/administration/authentication")) {
+            return [
+              existingPath.replace(
+                "/administration/authentication",
+                "/architecture/self-hosted/authentication/",
+              ),
+            ];
+          }
+          if (existingPath.includes("/administration/self-hosted")) {
+            return [
+              existingPath.replace(
+                "/administration/self-hosted",
+                "/architecture/self-hosted/",
+              ),
+            ];
+          }
+          if (existingPath.includes("/administration/settings")) {
+            return [
+              existingPath.replace("/administration/settings", "/settings"),
+            ];
+          }
           if (existingPath.includes("/ci-cd/deployment")) {
             return [existingPath.replace("/ci-cd/deployment", "/deployment")];
           }
@@ -586,6 +565,29 @@ const config = {
                 "/package-hub",
               ),
             ];
+          }
+          if (existingPath.includes("/getting-help")) {
+            return [
+              existingPath.replace(
+                "/getting-help",
+                "/getting-started/getting-help",
+              ),
+            ];
+          }
+          if (existingPath.includes("/copilot")) {
+            return [existingPath.replace("/copilot", "/concepts/copilot")];
+          }
+          if (existingPath.includes("/lineage")) {
+            return [existingPath.replace("/lineage", "/metadata/lineage")];
+          }
+          if (existingPath.includes("/Orchestration")) {
+            return [existingPath.replace("/Orchestration", "/low-code-jobs")];
+          }
+          if (existingPath.includes("/SQL")) {
+            return [existingPath.replace("/SQL", "/low-code-sql")];
+          }
+          if (existingPath.includes("/Spark")) {
+            return [existingPath.replace("/Spark", "/low-code-spark")];
           }
           return undefined;
         },
