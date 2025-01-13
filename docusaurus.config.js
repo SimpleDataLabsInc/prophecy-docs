@@ -341,7 +341,7 @@ const config = {
             from: "/settings/audit-logging",
           },
           {
-            to: "/settings/teamuser",
+            to: "/administration/settings/teamuser",
             from: "/concepts/teamuser",
           },
           {
