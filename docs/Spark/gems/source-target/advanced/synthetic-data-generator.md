@@ -36,7 +36,7 @@ Follow the steps below to generate your own mock data using the Data Generator G
 
 ## Cluster requirements
 
-Create a Fabric and configure the [Job Size](/docs/administration/spark-fabrics/databricks/databricks.md) as below, or log into an existing Spark cluster UI. Here we use Databricks as an example.
+Create a Fabric and configure the [Job Size](/docs/administration/Spark-fabrics/databricks/databricks.md) as below, or log into an existing Spark cluster UI. Here we use Databricks as an example.
 
 1. Verify the Databricks Runtime uses Python version >= 3.8.
    For example, [Databricks Runtime 12.2 LTS](https://docs.databricks.com/en/release-notes/runtime/12.2lts.html) uses Python 3.9.19. If you are using Databricks Runtime 12.2+, the Python version meets this requirement.
@@ -128,5 +128,5 @@ The Data Generator only generates the data. If you want to store the data just c
 
 :::info
 Using Unity Catalog Shared Spark Clusters?
-Check [here](docs/administration/spark-fabrics/databricks/UCShared.md) to see if this Gem is supported.
+Check [here](docs/administration/Spark-fabrics/databricks/UCShared.md) to see if this Gem is supported.
 :::

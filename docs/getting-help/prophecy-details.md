@@ -41,7 +41,7 @@ Gather logs from your Prophecy environment and send them to the support team via
       </td>
     </tr>
     <tr>
-      <td>Connection logs from Prophecy with error <a href="../../administration/spark-fabrics/fabric-diagnostics/">code</a></td>
+      <td>Connection logs from Prophecy with error <a href="../../administration/Spark-fabrics/fabric-diagnostics/">code</a></td>
       <td>
         <br />
         <img

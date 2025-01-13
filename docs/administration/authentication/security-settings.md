@@ -11,7 +11,7 @@ tags:
 ---
 
 The **Security** page of the Admin settings in Prophecy lets you configure Keytab files and Proxy User settings.
-These connect to Kerberised Livy Setup while setting up Kerberos Auth in the [Livy Fabric](/docs/administration/spark-fabrics/livy.md).
+These connect to Kerberised Livy Setup while setting up Kerberos Auth in the [Livy Fabric](/docs/administration/Spark-fabrics/livy.md).
 
 ![admin_settings](img/Admin_Settings.png)
 

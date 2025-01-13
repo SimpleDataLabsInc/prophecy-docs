@@ -173,19 +173,19 @@ const config = {
             from: "/architecture/authentication/active_directory",
           },
           {
-            to: "/administration/spark-fabrics/emr",
+            to: "/administration/Spark-fabrics/emr",
             from: "/architecture/deployment/EMR-livy-installation-guide",
           },
           {
-            to: "/administration/spark-fabrics/emr",
+            to: "/administration/Spark-fabrics/emr",
             from: "/Spark/fabrics/EMR-serverless-fabric-configuration",
           },
           {
-            to: "/administration/spark-fabrics/emr",
+            to: "/administration/Spark-fabrics/emr",
             from: "/Spark/fabrics/EMR-fabric-configuration",
           },
           {
-            to: "/administration/spark-fabrics/databricks/",
+            to: "/administration/Spark-fabrics/databricks/",
             from: "/Spark/fabrics/databricks-fabric",
           },
           {
