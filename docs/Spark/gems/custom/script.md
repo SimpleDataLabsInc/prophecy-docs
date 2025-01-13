@@ -1,5 +1,4 @@
 ---
-sidebar_position: 2
 title: Script
 id: script
 description: Provide a place to use a SparkSession and whatever code you wish to use

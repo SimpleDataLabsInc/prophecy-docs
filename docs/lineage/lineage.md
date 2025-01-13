@@ -2,7 +2,6 @@
 title: Lineage
 id: lineage
 description: Project lineage
-sidebar_class_name: hidden
 tags:
   - metadata
   - lineage

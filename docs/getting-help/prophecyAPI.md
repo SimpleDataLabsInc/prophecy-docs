@@ -2,7 +2,6 @@
 title: Prophecy API
 id: prophecyAPI
 description: Prophecy metadata available through the Prophecy API
-sidebar_position: 4
 tags:
   - reference
 ---

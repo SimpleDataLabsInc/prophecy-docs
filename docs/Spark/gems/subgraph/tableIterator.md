@@ -1,5 +1,4 @@
 ---
-sidebar_position: 2
 title: TableIterator
 id: table-iterator
 description: Loop over each row of an input Dataframe

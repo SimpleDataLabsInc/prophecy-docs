@@ -2,7 +2,6 @@
 title: Execution on Livy
 id: executions_on_livy_clusters
 description: Execution on Livy
-sidebar_position: 3
 tags:
   - execution
   - interim
@@ -27,7 +26,7 @@ we can just provide the table names in [execution metric setup page](./execution
 
 During development, often the user will want to see their data to make more sense of it and to check whether the expected output is getting
 generated or not after the transformation. Prophecy generates these data samples as `Interims`, which are temporarily cached previews of data after each Gem.
-To check more about interims, please refer [here](https://docs.prophecy.io/Spark/execution/interactive-execution#interims).
+To check more about interims, please refer [here](/docs/Spark/execution/interactive-execution.md#interims).
 
 We have interims available after each Gem of Pipeline.
 

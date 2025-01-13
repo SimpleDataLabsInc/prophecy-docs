@@ -1,5 +1,4 @@
 ---
-sidebar_position: 3
 title: MWAA
 id: MWAA_fabric
 description: How Prophecy create a MWAA Airflow Fabric

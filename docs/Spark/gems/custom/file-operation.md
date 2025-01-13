@@ -1,5 +1,4 @@
 ---
-sidebar_position: 3
 title: FileOperation
 id: file-operations
 description: Perform file operations on different file systems

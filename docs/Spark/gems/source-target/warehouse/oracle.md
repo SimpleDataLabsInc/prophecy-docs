@@ -2,7 +2,6 @@
 title: Oracle
 id: oracle
 description: Oracle
-sidebar_position: 6
 tags:
   - gems
   - warehouse

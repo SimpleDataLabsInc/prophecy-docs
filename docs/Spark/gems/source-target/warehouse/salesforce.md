@@ -2,7 +2,6 @@
 title: Salesforce
 id: salesforce
 description: Salesforce
-sidebar_position: 8
 tags:
   - gems
   - warehouse
@@ -20,7 +19,7 @@ This Gem has below features:
 This connector is built on top of the already available [`spark-salesforce connector`](https://github.com/springml/spark-salesforce/).
 
 To use this Gem in Prophecy, `com.springml:spark-salesforce_2.12:1.1.4` Maven external dependency needs to be installed on cluster.
-For installing dependencies from Prophecy UI. Please check [dependency management docs](https://docs.prophecy.io/Spark/extensibility/dependencies).
+For installing dependencies from Prophecy UI. Please check [dependency management docs](docs/extensibility/dependencies/spark-dependencies.md).
 :::
 
 ## Source

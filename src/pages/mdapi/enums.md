@@ -2,7 +2,6 @@
 title: Prophecy Metadata API Enums
 id: mdapi-enums
 description: Metadata API Enums
-sidebar_position: 1
 tags: []
 ---
 

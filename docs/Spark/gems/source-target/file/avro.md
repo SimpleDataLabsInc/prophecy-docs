@@ -2,7 +2,6 @@
 title: Avro
 id: avro
 description: Avro
-sidebar_position: 2
 tags:
   - gems
   - file

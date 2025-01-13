@@ -2,7 +2,6 @@
 title: Upload files
 id: upload-files
 description: Upload files to the Visual canvas
-sidebar_position: 7
 tags:
   - how-to
   - upload

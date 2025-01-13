@@ -88,4 +88,4 @@ When you fork a repository, you must already have both the upstream repository a
 
 ## What's next
 
-Learn more about how to integrate Git in your Project lifecycle in [Develop and deploy a Project](https://docs.prophecy.io/deployment/project).
+Learn more about how to integrate Git in your Project lifecycle in [Develop and deploy a Project](docs/ci-cd/deployment/deployment.md).

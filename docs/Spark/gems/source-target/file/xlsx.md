@@ -16,7 +16,7 @@ If you've ever done anything with numbers in your line of work odds are you've w
 :::caution
 If you receive an error about the `excel` format not being available you must add `spark-excel` library as a dependency.
 
-Follow the instructions on [this page](../../../extensibility/dependencies.md) to add the Maven coordinate `com.crealytics:spark-excel_2.12:3.5.1_0.20.4` to your Pipeline.
+Follow the instructions on [this page](docs/extensibility/dependencies/spark-dependencies.md) to add the Maven coordinate `com.crealytics:spark-excel_2.12:3.5.1_0.20.4` to your Pipeline.
 :::
 
 ## Parameters

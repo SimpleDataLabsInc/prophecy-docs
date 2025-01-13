@@ -2,7 +2,6 @@
 title: CosmosDB
 id: cosmos
 description: CosmosDB
-sidebar_position: 2
 tags:
   - gems
   - warehouse
@@ -14,7 +13,7 @@ The `azure-cosmos-spark` connector is an integration between Azure CosmosDB and 
 
 ## Installation
 
-On your Execution Cluster (Databricks or OnPrem), [connect a dependency](../../../extensibility/dependencies.md) that has the following Maven coordinates (for Spark 3.3; For others please check [this](https://github.com/Azure/azure-sdk-for-java/tree/main/sdk/cosmos/azure-cosmos-spark_3-3_2-12) link):
+On your Execution Cluster (Databricks or OnPrem), [connect a dependency](docs/extensibility/dependencies/spark-dependencies.md) that has the following Maven coordinates (for Spark 3.3; For others please check [this](https://github.com/Azure/azure-sdk-for-java/tree/main/sdk/cosmos/azure-cosmos-spark_3-3_2-12) link):
 
 ```json
 com.azure.cosmos.spark:azure-cosmos-spark_3-3_2-12:4.18.1

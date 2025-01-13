@@ -2,7 +2,6 @@
 title: Upload files
 id: upload-file
 description: Upload files to your Spark Pipeline
-sidebar_position: 1
 tags:
   - gems
   - file

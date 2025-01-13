@@ -34,7 +34,7 @@ When editing a Pipeline, you'll be using the editor shown below.
 ![Editing a Pipeline](img/pipelines/edit_pipeline.png)
 
 1. **Pipeline Config**: Buttons that bring up views related to the configuration of your Pipeline:
-   1. [Config](/docs/Spark/configuration/configuration.md)
+   1. [Config](/docs/Spark/configuration.md)
    2. Scheduling
    3. Unit Tests
    4. UDFs/UDAFs

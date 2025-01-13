@@ -1,5 +1,4 @@
 ---
-sidebar_position: 7
 title: Deduplicate
 id: deduplicate
 description: Remove rows with duplicate values of specified columns

@@ -2,7 +2,6 @@
 title: Copilot for Spark users
 id: copilot-for-spark-users
 description: Using Spark with Prophecy's Data Transformation Copilot
-sidebar_class_name: hidden
 tags: [spark, warehouse]
 ---
 

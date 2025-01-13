@@ -1,5 +1,4 @@
 ---
-sidebar_position: 1
 title: SQLStatement
 id: sql-statement
 description: Create Models based on custom SQL queries

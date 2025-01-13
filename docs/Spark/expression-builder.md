@@ -1,8 +1,7 @@
 ---
-title: Expression Builder
+title: Expression builder
 id: expression-builder
 description: Expression Builder
-sidebar_position: 5
 tags:
   - spark
   - development

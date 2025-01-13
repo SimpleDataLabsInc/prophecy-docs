@@ -3,7 +3,6 @@ title: Parameterized Gems
 draft: true
 id: parameterized-gems
 description: Parameterized Gems
-sidebar_position: 5
 tags: []
 ---
 

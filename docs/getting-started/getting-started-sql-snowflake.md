@@ -2,7 +2,6 @@
 title: SQL with Snowflake
 id: sql-with-snowflake
 description: A tutorial on using Copilot for Snowflake
-sidebar_position: 2
 tags:
   - sql
   - tutorial

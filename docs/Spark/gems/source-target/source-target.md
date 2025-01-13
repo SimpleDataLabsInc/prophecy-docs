@@ -57,4 +57,4 @@ A collection of Gems related to working with various table-based formats.
 
 ## Synthetic Data Generator
 
-If you don't have the data you need, try generating fake data. Using the [Synthetic Data Generator Gem](/docs/Spark/gems/source-target/advanced/synthetic-data-generator/synthetic-data-generator.md), you can specify columns with various datatypes and populate fields with randomly generated data. Specify the boundaries for each row, the percentage of rows which should have null values, etc. It's not real data but it's the next best thing!
+If you don't have the data you need, try generating fake data. Using the [Synthetic Data Generator Gem](/docs/Spark/gems/source-target/advanced/synthetic-data-generator.md), you can specify columns with various datatypes and populate fields with randomly generated data. Specify the boundaries for each row, the percentage of rows which should have null values, etc. It's not real data but it's the next best thing!
