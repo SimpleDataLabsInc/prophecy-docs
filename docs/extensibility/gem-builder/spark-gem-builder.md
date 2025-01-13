@@ -1,5 +1,5 @@
 ---
-title: Gem builder
+title: Gem builder for Spark
 id: spark-gem-builder
 description: Gem builder
 tags:

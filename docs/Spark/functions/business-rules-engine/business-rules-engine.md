@@ -1,5 +1,5 @@
 ---
-title: Business Rules Engine
+title: Business rules
 id: business-rules-engine
 description: Create business rules as functions
 tags:

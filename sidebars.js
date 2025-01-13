@@ -220,16 +220,23 @@ const sidebars = {
             "Spark/execution/conditional-execution",
           ],
         },
-        "Spark/expression-builder",
         {
           type: "category",
-          label: "Business rules engine",
-          link: {
-            type: "doc",
-            id: "Spark/business-rules-engine/business-rules-engine",
-          },
-          items: [],
+          label: "Functions",
+          items: [
+            {
+              type: "category",
+              label: "Business rules engine",
+              link: {
+                type: "doc",
+                id: "Spark/functions/business-rules-engine/business-rules-engine",
+              },
+              items: [],
+            },
+            "Spark/functions/udfs",
+          ],
         },
+        "Spark/expression-builder",
         "Spark/configuration",
         {
           type: "category",
@@ -360,6 +367,36 @@ const sidebars = {
         "lineage/lineage-view-and-search",
       ],
     },
+    /// CI-CD
+    {
+      type: "category",
+      label: "CI/CD",
+      link: { type: "doc", id: "ci-cd/reliable-ci-cd" },
+      items: [
+        "ci-cd/tests",
+        {
+          type: "category",
+          label: "Release and Deploy",
+          link: { type: "doc", id: "ci-cd/deployment/Deployment" },
+          items: [
+            "ci-cd/deployment/deploy-project",
+            "ci-cd/deployment/use-external-release-tags",
+          ],
+        },
+        {
+          type: "category",
+          label: "Prophecy Build Tool (PBT)",
+          link: {
+            type: "doc",
+            id: "ci-cd/prophecy-build-tool/prophecy-build-tool",
+          },
+          items: [
+            "ci-cd/prophecy-build-tool/prophecy-build-tool-github-actions",
+            "ci-cd/prophecy-build-tool/prophecy-build-tool-jenkins",
+          ],
+        },
+      ],
+    },
     /// ORCHESTRATION
     {
       type: "category",
@@ -426,37 +463,6 @@ const sidebars = {
         },
         "Orchestration/databricks-jobs",
         "Orchestration/multi-jobs-trigger",
-      ],
-    },
-    /// CI-CD
-    {
-      type: "category",
-      label: "CI/CD",
-      link: { type: "doc", id: "ci-cd/reliable-ci-cd" },
-      items: [
-        "ci-cd/tests",
-        "ci-cd/data-quality",
-        {
-          type: "category",
-          label: "Release and Deploy",
-          link: { type: "doc", id: "ci-cd/deployment/Deployment" },
-          items: [
-            "ci-cd/deployment/deploy-project",
-            "ci-cd/deployment/use-external-release-tags",
-          ],
-        },
-        {
-          type: "category",
-          label: "Prophecy Build Tool (PBT)",
-          link: {
-            type: "doc",
-            id: "ci-cd/prophecy-build-tool/prophecy-build-tool",
-          },
-          items: [
-            "ci-cd/prophecy-build-tool/prophecy-build-tool-github-actions",
-            "ci-cd/prophecy-build-tool/prophecy-build-tool-jenkins",
-          ],
-        },
       ],
     },
     /// EXTENSIBILITY

@@ -388,6 +388,54 @@ const config = {
             to: "/extensibility/dependencies/prophecy-libraries",
             from: "/concepts/fabrics/prophecy-libraries",
           },
+          {
+            to: "/Spark/execution/conditional-execution",
+            from: "/Spark/configuration/conditional-execution",
+          },
+          {
+            to: "/ci-cd/tests",
+            from: "/Spark/tests",
+          },
+          {
+            to: "/ci-cd/reliable-ci-cd",
+            from: "/Orchestration/reliable-ci-cd",
+          },
+          {
+            to: "/extensibility/dependencies/spark-dependencies",
+            from: "/Spark/extensibility/dependencies",
+          },
+          {
+            to: "/extensibility/dependencies/sql-dependencies",
+            from: "/SQL/extensibility/dependencies",
+          },
+          {
+            to: "/extensibility/gem-builder/sql-gem-builder",
+            from: "/SQL/extensibility/gem-builder/",
+          },
+          {
+            to: "/extensibility/gem-builder/spark-gem-builder",
+            from: "/Spark/extensibility/gem-builder/",
+          },
+          {
+            to: "/extensibility/gem-builder/optimization-functions",
+            from: "/Spark/extensibility/gem-builder/optimization-functions",
+          },
+          {
+            to: "/Spark/functions/udfs",
+            from: "/Spark/extensibility/udfs",
+          },
+          {
+            to: "/Spark/functions/business-rules-engine/",
+            from: "/Spark/business-rules-engine/",
+          },
+          {
+            to: "/SQL/",
+            from: "/SQL/development/",
+          },
+          {
+            to: "/extensibility/package-hub/",
+            from: "/package-hub/package-builder/",
+          },
         ],
         /*
 
@@ -454,6 +502,88 @@ const config = {
               existingPath.replace(
                 "/administration/self-hosted",
                 "/architecture/self-hosted/",
+              ),
+            ];
+          }
+          if (existingPath.includes("/administration/settings")) {
+            return [
+              existingPath.replace("/administration/settings", "/settings"),
+            ];
+          }
+          if (
+            existingPath.includes("/Orchestration/airflow/prophecy-managed")
+          ) {
+            return [
+              existingPath.replace(
+                "/Orchestration/airflow/prophecy-managed",
+                "/Orchestration/airflow/setup/prophecy-managed",
+              ),
+            ];
+          }
+          if (existingPath.includes("/Orchestration/pipeline-monitoring")) {
+            return [
+              existingPath.replace(
+                "/Orchestration/pipeline-monitoring",
+                "/Spark/pipeline-monitoring",
+              ),
+            ];
+          }
+          if (existingPath.includes("/SQL/gems/target-models/")) {
+            return [
+              existingPath.replace(
+                "/SQL/gems/target-models/",
+                "/SQL/development/target-models/",
+              ),
+            ];
+          }
+          if (existingPath.includes("/SQL/visual-expression-builder")) {
+            return [
+              existingPath.replace(
+                "/SQL/visual-expression-builder",
+                "/SQL/development/visual-editor/visual-expression-builder",
+              ),
+            ];
+          }
+          if (existingPath.includes("/administration/Spark-fabrics/")) {
+            return [
+              existingPath.replace(
+                "/administration/Spark-fabrics/",
+                "/Spark/fabrics/",
+              ),
+            ];
+          }
+          if (existingPath.includes("/administration/sql-fabrics")) {
+            return [
+              existingPath.replace(
+                "/administration/sql-fabrics",
+                "/SQL/fabrics/",
+              ),
+            ];
+          }
+          if (existingPath.includes("/administration/secret-management")) {
+            return [
+              existingPath.replace(
+                "/administration/secret-management",
+                "/Spark/secret-management",
+              ),
+            ];
+          }
+          if (existingPath.includes("/ci-cd/deployment")) {
+            return [existingPath.replace("/ci-cd/deployment", "/deployment")];
+          }
+          if (existingPath.includes("/ci-cd/prophecy-build-tool")) {
+            return [
+              existingPath.replace(
+                "/ci-cd/prophecy-build-tool",
+                "/deployment/prophecy-build-tool",
+              ),
+            ];
+          }
+          if (existingPath.includes("/extensibility/package-hub")) {
+            return [
+              existingPath.replace(
+                "/extensibility/package-hub",
+                "/package-hub",
               ),
             ];
           }

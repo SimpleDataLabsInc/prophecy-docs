@@ -1,5 +1,5 @@
 ---
-title: Gem builder
+title: Gem builder for SQL
 id: sql-gem-builder
 description: Gem builder
 tags:
