@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[24157],{6823:i=>{i.exports=JSON.parse('{"label":"config","permalink":"/tags/config","allTagsPath":"/tags","count":1,"items":[{"id":"Spark/configuration","title":"Configuration","description":"Configuring Prophecy\'s interface for Spark","permalink":"/Spark/configuration"}]}')}}]);

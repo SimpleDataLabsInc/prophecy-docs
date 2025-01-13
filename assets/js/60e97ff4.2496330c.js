@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[18994],{93320:t=>{t.exports=JSON.parse('{"label":"location","permalink":"/tags/location","allTagsPath":"/tags","count":1,"items":[{"id":"SQL/gems/target-models/location","title":"Location","description":"Location of Target Models","permalink":"/SQL/gems/target-models/location"}]}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[30001],{21092:s=>{s.exports=JSON.parse('{"label":"uc","permalink":"/tags/uc","allTagsPath":"/tags","count":1,"items":[{"id":"Spark/fabrics/databricks/ucshared","title":"UC Shared Cluster Support","description":"Gem support for UC Shared clusters","permalink":"/Spark/fabrics/databricks/ucshared"}]}')}}]);

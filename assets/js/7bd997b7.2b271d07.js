@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[75388],{96987:s=>{s.exports=JSON.parse('{"label":"user","permalink":"/tags/user","allTagsPath":"/tags","count":1,"items":[{"id":"settings/settings","title":"Settings","description":"This page describes the Settings pages of Prophecy","permalink":"/settings/"}]}')}}]);

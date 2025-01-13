@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[11669],{42333:e=>{e.exports=JSON.parse('{"label":"maven","permalink":"/tags/maven","allTagsPath":"/tags","count":1,"items":[{"id":"Spark/extensibility/dependencies","title":"Dependencies","description":"Dependency management","permalink":"/Spark/extensibility/dependencies"}]}')}}]);

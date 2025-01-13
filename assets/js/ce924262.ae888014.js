@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[95376],{66746:a=>{a.exports=JSON.parse('{"label":"package-hub","permalink":"/tags/package-hub","allTagsPath":"/tags","count":1,"items":[{"id":"package-hub/package-hub","title":"Package Hub","description":"Create and Share Reusable Pipeline Components","permalink":"/package-hub/"}]}')}}]);

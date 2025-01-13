@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[25922],{90126:e=>{e.exports=JSON.parse('{"label":"scd2","permalink":"/tags/scd-2","allTagsPath":"/tags","count":1,"items":[{"id":"SQL/gems/target-models/write-options","title":"Write Options","description":"Write Options of Target Models","permalink":"/SQL/gems/target-models/write-options"}]}')}}]);
