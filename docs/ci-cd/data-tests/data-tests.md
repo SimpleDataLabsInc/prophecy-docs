@@ -1,5 +1,5 @@
 ---
-title: Data tests
+title: Data tests for SQL
 id: data-tests
 description: Data tests check the validity of your SQL
 tags:
@@ -71,6 +71,6 @@ See a few recommendations in the following table to get an idea of when to use e
 
 ## What's next
 
-To set up a project test, see [Use project tests](/docs/SQL/data-tests/use-project-tests.md).
+To set up a project test, see [Use project tests](/docs/ci-cd/data-tests/use-project-tests.md).
 
-If you need to reuse a test that is defined by a parametrized query, see [Use model tests](/docs/SQL/data-tests/use-model-tests.md).
+If you need to reuse a test that is defined by a parametrized query, see [Use model tests](/docs/ci-cd/data-tests/use-model-tests.md).

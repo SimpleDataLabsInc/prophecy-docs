@@ -1,5 +1,5 @@
 ---
-title: Visual Expression Builder
+title: Visual expression builder
 id: visual-expression-builder
 description: About the Visual Expression Builder
 tags:

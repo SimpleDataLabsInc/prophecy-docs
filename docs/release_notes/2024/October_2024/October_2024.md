@@ -34,7 +34,7 @@ tags:
 
   ![Create a new model test](./../img/oct-model-test-new-test.png)
 
-  For more information, see [Use model and column tests](/docs/SQL/data-tests/use-model-tests.md).
+  For more information, see [Use model and column tests](/docs/ci-cd/data-tests/use-model-tests.md).
 
 - **Variant type support**: You can use Prophecy to convert your variant schemas into flat, structured formats to make them easier to understand and use for analytics.
 
@@ -48,7 +48,7 @@ tags:
   - Configure the parsing limit for inferring the column structure
   - Use a nested column inside of the Visual Expression Builder
 
-  For more information, see [Variant schema](/docs/SQL/editor/variant-schema.md).
+  For more information, see [Variant schema](docs/SQL/visual-expression-builder/variant-schema.md).
 
 - **Flatten Schema Gem**: When processing raw data it can be useful to flatten complex data types like `Struct`s and `Array`s into simpler, flatter schemas. This Gem builds upon the variant type support by allowing you to preserve all schemas, and not just the first one.
 

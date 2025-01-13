@@ -1,5 +1,5 @@
 ---
-title: Use the Visual Expression Builder
+title: Use visual expressions
 id: use-the-expression-builder
 description: Use the Expression Builder
 tags:

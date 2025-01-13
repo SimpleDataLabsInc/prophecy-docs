@@ -270,15 +270,6 @@ const sidebars = {
       items: [
         {
           type: "category",
-          label: "IDE",
-          items: [
-            "SQL/editor/visual-editor",
-            "SQL/editor/code-editor",
-            "SQL/editor/variant-schema",
-          ],
-        },
-        {
-          type: "category",
           label: "Gems",
           link: { type: "doc", id: "SQL/gems/sql-gems" },
           items: [
@@ -335,7 +326,7 @@ const sidebars = {
         },
         {
           type: "category",
-          label: "Visual expression builder",
+          label: "Visual expressions",
           link: {
             type: "doc",
             id: "SQL/visual-expression-builder/visual-expression-builder",
@@ -343,15 +334,7 @@ const sidebars = {
           items: [
             "SQL/visual-expression-builder/visual-expression-builder-reference",
             "SQL/visual-expression-builder/use-the-expression-builder",
-          ],
-        },
-        {
-          type: "category",
-          label: "Data tests",
-          link: { type: "doc", id: "SQL/data-tests/data-tests" },
-          items: [
-            "SQL/data-tests/use-model-tests",
-            "SQL/data-tests/use-project-tests",
+            "SQL/visual-expression-builder/variant-schema",
           ],
         },
       ],
@@ -374,6 +357,15 @@ const sidebars = {
       link: { type: "doc", id: "ci-cd/reliable-ci-cd" },
       items: [
         "ci-cd/tests",
+        {
+          type: "category",
+          label: "Data tests for SQL",
+          link: { type: "doc", id: "ci-cd/data-tests/data-tests" },
+          items: [
+            "ci-cd/data-tests/use-model-tests",
+            "ci-cd/data-tests/use-project-tests",
+          ],
+        },
         {
           type: "category",
           label: "Release and Deploy",

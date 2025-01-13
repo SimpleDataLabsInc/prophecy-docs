@@ -436,6 +436,18 @@ const config = {
             to: "/extensibility/package-hub/",
             from: "/package-hub/package-builder/",
           },
+          {
+            to: "/SQL/visual-expression-builder/variant-schema",
+            from: "/SQL/development/visual-editor/variant-schema",
+          },
+          {
+            to: "/SQL/",
+            from: "/SQL/development/visual-editor/",
+          },
+          {
+            to: "/SQL/",
+            from: "/SQL/development/code-editor",
+          },
         ],
         /*
 
@@ -556,6 +568,11 @@ const config = {
                 "/ci-cd/prophecy-build-tool",
                 "/deployment/prophecy-build-tool",
               ),
+            ];
+          }
+          if (existingPath.includes("/ci-cd/data-tests")) {
+            return [
+              existingPath.replace("/ci-cd/data-tests", "/SQL/data-tests"),
             ];
           }
           if (existingPath.includes("/extensibility/package-hub")) {

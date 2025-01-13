@@ -1,5 +1,5 @@
 ---
-title: Unit testing for Spark
+title: Unit tests for Spark
 id: tests
 description: Implementing unit tests in Prophecy
 tags:

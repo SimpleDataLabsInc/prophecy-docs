@@ -9,13 +9,35 @@ Prophecy Data Transformation Copilot for SQL combines the best of both worlds; *
 
 ## Editor interface
 
-Prophecy Copilot for SQL includes a Visual Editor and a Code Editor. They will always be in sync—any changes made in the Visual Editor generate high-quality code on Git. And, any changes in the Code Editor can be visualized back as a visual graph.
+Prophecy Copilot for SQL includes a visual editor and a code editor. They will always be in sync—any changes made in the visual editor generate high-quality code on Git. And, any changes in the code editor can be visualized back as a visual graph.
 
 ![CodeEqualsVisual](img/CodeEqualsVisual.png)
 
-1. **Visual Editor** - enables data practitioners to easily see and modify the data model definitions in a graphical way. The visual graph is perfect to quickly grasp the purpose and inner workings of the existing models. It’s also a great way to develop brand new models with step-by-step [interactive execution](docs/SQL/execution/data-explorer.md). All models developed through the visual interface will be written in a highly standardized format.
+### Visual editor
 
-2. **Code Editor** - enables the users already familiar with SQL to optimize and understand their queries in-depth. New data practitioners can also learn best practices as they develop their models by sneak-peaking into the code editor in real-time.
+The visual canvas is the main place to develop data models.
+Open any SQL Project in Prophecy to find the complete end-to-end **Project Lineage**. The Project Lineage provides a quick understanding of how Models refer to other Models, Seeds, or Sources. This quick, high-level project overview is explainable without having to read code.
+
+![ProjectLineage](img/ProjectLineage.png)
+
+The Project Browser displays entities available or used within this Project. Just click the Environment tab to browse through available databases and tables. Each Project connects to a Fabric, or execution environment. This Fabric defines the SQL Warehouse where each Model will materialize a single table or view. There are lots of additional features to learn more about, including configurations and committing code to Git. A single Project page contains lots of capabilities!
+
+From here you can easily create new models by clicking on **+** next to the Models pane, or you can edit existing Models.
+![AddModel](img/AddModel.png)
+
+Once a Model is open, the model-editing canvas appears.
+
+![Canvas](img/Canvas.png)
+
+Here we can see the `customers` Model starts with three existing Models. The data is transformed according to Aggregate, SQLStatement, and Join Gems. The available Transformation Gems are available by clicking the dropdown menu. As you develop the Model, you can iteratively run and see sample data as well as the relevant logs.
+
+### Code editor
+
+As a visual developer, you'll appreciate the drag-n-drop canvas, but sometimes it's also nice to view the code. Prophecy creates highly performant code behind the scenes. Click the **Code View** to reveal the SQL queries we've generated using our visual design editor. Each Gem is represented by a CTE or subquery.
+
+![Code View](./img/sql-as-code.png)
+
+You may wish to edit the code view. Add a SQL statement in the code view and notice the visual editor displays the updated code. For example, we've added a limit statement in the code view, and a new limit Gem appears in the visual view.
 
 ## Version control
 

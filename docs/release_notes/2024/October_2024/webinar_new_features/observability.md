@@ -23,4 +23,4 @@ Detailed documentation coming soon.
 
 ### Data Quality Tests for SQL
 
-Click [here](/docs/SQL/data-tests/data-tests.md) for further details.
+Click [here](/docs/ci-cd/data-tests/data-tests.md) for further details.
