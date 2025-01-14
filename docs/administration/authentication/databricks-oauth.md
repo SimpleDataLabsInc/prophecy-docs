@@ -11,19 +11,13 @@ tags:
 
 Prophecy provides Databricks OAuth to align with industry-standard authentication flows. This gives you more granular access control, making it a good alternative to Personal Access Tokens (PATs).
 
-## Use cases supported by Databricks
+## Requirements
 
-In Prophecy, you can use Databricks OAuth in two ways:
-
-- [User-to-Machine (U2M)](https://docs.databricks.com/en/dev-tools/auth/oauth-u2m.html). This method is used for **Pipeline development** and **Job configuration**. Any user can authenticate individually via Databricks. In this case, users access data based on their individual identity and the permissions already defined within the Databricks Unity Catalog. No additional credentials are required for this flow.
-- [Machine-to-Machine (M2M)](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html). This method is used for **Automation** and **Project deployment**. Authentication is performed using a Service Principal in Databricks, which enables unattended operations (such as automated deployment). The permissions for this flow are determined by the Service Principal’s configuration within the Databricks Unity Catalog.
-
-This integration works with both Spark clusters and SQL warehouses.
+- Prophecy 3.4.3.1 or later.
+- An app connection between Databricks and Prophecy. This connection is set up by default in SaaS environments and no further action is needed.
 
 <details>
-  <summary>Required if you are on a Dedicated SaaS or self-hosted deployment</summary>
-
-### Register Prophecy as an App Connection in Databricks
+  <summary>Register Prophecy as an app connection in Databricks</summary>
 
 First, a Databricks [account admin](https://docs.databricks.com/en/admin/index.html#what-are-account-admins) needs to complete the following steps **once** for your Prophecy deployment:
 
@@ -39,6 +33,15 @@ Then, the Prophecy Cluster Admin has to add the Databricks credentials to Prophe
 2. Under **Databrick OAuth Application (U2M)**, paste the **Client ID** and the **Client Secret** into the respective fields.
 
 </details>
+
+## Use cases supported by Databricks
+
+In Prophecy, you can use Databricks OAuth in two ways:
+
+- [User-to-Machine (U2M)](https://docs.databricks.com/en/dev-tools/auth/oauth-u2m.html). This method is used for **Pipeline development** and **Job configuration**. Any user can authenticate individually via Databricks. In this case, users access data based on their individual identity and the permissions already defined within the Databricks Unity Catalog. No additional credentials are required for this flow.
+- [Machine-to-Machine (M2M)](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html). This method is used for **Automation** and **Project deployment**. Authentication is performed using a Service Principal in Databricks, which enables unattended operations (such as automated deployment). The permissions for this flow are determined by the Service Principal’s configuration within the Databricks Unity Catalog.
+
+This integration works with both Spark clusters and SQL warehouses.
 
 ## Configure new Fabrics using OAuth
 
