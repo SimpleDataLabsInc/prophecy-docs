@@ -145,7 +145,7 @@ const config = {
       {
         redirects: [
           {
-            to: "/getting-started",
+            to: "/tutorials/quick-starts/",
             from: "/developer/videos/",
           },
           {
@@ -591,8 +591,16 @@ const config = {
               ),
             ];
           }
-          if (existingPath.includes("/copilot")) {
-            return [existingPath.replace("/copilot", "/concepts/copilot")];
+          if (existingPath.includes("/tutorials/quick-starts")) {
+            return [
+              existingPath.replace(
+                "/tutorials/quick-starts",
+                "/getting-started",
+              ),
+            ];
+          }
+          if (existingPath.includes("/concepts/copilot")) {
+            return [existingPath.replace("/concepts/copilot", "/copilot")];
           }
           if (existingPath.includes("/lineage")) {
             return [existingPath.replace("/lineage", "/metadata/lineage")];

@@ -21,7 +21,7 @@ The TextProcessing Gem enables text data preparation for machine learning in two
 1. [Load](/docs/Spark/gems/machine-learning/ml-text-processing.md#1-load-web-urls-and-extract-text) web URLs and extract text.
 2. [Split](/docs/Spark/gems/machine-learning/ml-text-processing.md#2-split-text-data-into-equal-chunks) text data into equal chunks.
 
-Follow along to see how to use the TextProcessing Gem. For an example set of Pipelines that uses this Gem to create a Generative AI Chatbot, see this [guide.](/getting-started/gen-ai-chatbot)
+Follow along to see how to use the TextProcessing Gem. For an example set of Pipelines that uses this Gem to create a Generative AI Chatbot, see this [guide.](/tutorials/end-to-end/gen-ai-chatbot)
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -146,7 +146,7 @@ def Chunkify(spark: SparkSession, web_bronze_content: DataFrame) -> DataFrame:
 
 **How does this Gem fit into the bigger picture of building a generative AI application?**
 
-For an example set of Pipelines that uses this Gem to create a Generative AI Chatbot, see this [guide.](/getting-started/gen-ai-chatbot) Feel free to [reach out](https://www.prophecy.io/request-a-demo) and explore your use case with us.
+For an example set of Pipelines that uses this Gem to create a Generative AI Chatbot, see this [guide.](/tutorials/end-to-end/gen-ai-chatbot) Feel free to [reach out](https://www.prophecy.io/request-a-demo) and explore your use case with us.
 
 #### Troubleshooting
 
