@@ -37,7 +37,10 @@ const sidebars = {
             type: "doc",
             id: "tutorials/quick-starts/quick-starts",
           },
-          items: [],
+          items: [
+            "tutorials/quick-starts/sql-onboarding",
+            "tutorials/quick-starts/spark-onboarding",
+          ],
         },
         {
           type: "category",
