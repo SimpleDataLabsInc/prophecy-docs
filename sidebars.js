@@ -486,7 +486,7 @@ const sidebars = {
         },
         {
           type: "category",
-          label: "Gem builder",
+          label: "Gem Builder",
           items: [
             "extensibility/gem-builder/sql-gem-builder",
             "extensibility/gem-builder/spark-gem-builder",

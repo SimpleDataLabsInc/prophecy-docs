@@ -1,10 +1,14 @@
 ---
-title: Gem builder for Spark
+title: Gem Builder for Spark
 id: spark-gem-builder
-description: Gem builder
+description: Build Spark gems in Python or Scala
 tags:
   - gem builder
 ---
+
+[Gems](docs/concepts/project/gems.md) are visually-packaged parcels of code that perform specific operations on data. Spark gems are written in either Python or Scala.
+
+While Prophecy provides many gems out of the box, you can use Prophecy's Gem Builder to create your own gems! Then, you can also **publish** and **share** your custom gems with your Prophecy team.
 
 :::caution Enterprise Only
 
@@ -12,18 +16,18 @@ Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about 
 
 :::
 
-Each Prophecy Pipeline is composed of individual operations, or [Gems](/docs/concepts/project/gems.md), that perform actions on data. While Prophecy offers dozens of Gems out-of-the-box, some data practitioners want to extend this idea and create their own Gems. Gem Builder allows enterprise users to add custom Gems. Create custom source, target, and transformation Gems, publish, and your team can utilize your custom Gem.
+## Overview
 
-<div class="video-container">
-<iframe src="https://www.youtube.com/embed/K23pOatAeVE" title="YouTube video player" frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
-</div>
-<br />
+At a high level, using the Gem Builder involves the following steps:
 
-## Getting Started
+1. Open the **Gem Builder** from the left navigation bar.
+1. Add a new gem or modify an existing gem.
+1. Specify gem name, preferred language, and gem category.
+1. Write your code specifications.
+1. Preview the rendered visual interface of your gem.
+1. Fill in some values and review the generated Python or Scala code.
 
-Custom Gem logic can be shared with other users within the Team and Organization. Navigate to the Gem listing to review Prophecy-defined and User-defined Gems. Add a new Gem or modify an existing Gem. Specify Gem name, preferred language, and Gem category. Paste/Write your code specification at the prompt. Click `Preview` to review the UX. Fill in some values and click `save` to check the Python or Scala code generated. When the Gem is ready, `Publish`! The new Custom Gem is available to use in Pipelines!
+When the gem is ready, click **Publish** to make it available for use in Pipelines! The custom gem can also be shared with other users in the team and organization.
 
 Please refer below video for a step-by-step example:
 
@@ -32,23 +36,27 @@ Please refer below video for a step-by-step example:
 <iframe src="https://user-images.githubusercontent.com/121796483/215807557-c64d2e96-9f2b-47d8-b5ed-7b449dba3246.mp4" title="Gem builder" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-## Tutorial
+## Gem definition
 
-The Gem builder is a tool that enables users to create any custom Gems or modify existing ones. There are two types of Gems:
+Gems have two main requirements to fulfill:
 
-- **DataSource Gems**: These Gems enable the reading and writing of data from or to various data sources
-- **Transform Gems**: These Gems apply transformations/joins/any other custom logic onto any DataFrame(s) that are passed into them.
+- The **UI component** that retrieves user information from the graphical interface. (This code is rendered on the Prophecy UI.)
+- The **code logic** that determines how the gem acts within the context of a Pipeline. The code can be written in Python or Scala.
 
-Programmatically, a Gem is a component with the following parts:
+### Code components
 
-- The **Gem UI Component** to get user information from the screen (This code is rendered on the Prophecy UI)
-- The **Gem Code Logic** which is how the Gem acts within the context of a Pipeline.
+To write the code for a custom gem, you need to include the following components:
 
-Gem code can be written using either Python or Scala.
+| Component             | Description                                                                                 |
+| --------------------- | ------------------------------------------------------------------------------------------- |
+| Parent class          | Extends a parent class from which it inherits the representation of the overall gem.        |
+| Properties class      | Contains a list of the properties to be made available to the user for this particular gem. |
+| Dialog function       | Contains code specific to how the gem UI should look to the user.                           |
+| Validate function     | Recognizes errors with any inputs provided by the user.                                     |
+| State change function | Defines UI State transformations.                                                           |
+| Component code class  | Contains the Spark code that needs to run on your Spark cluster.                            |
 
-## Defining a Gem
-
-### Example
+Review the example code below in Python or Scala to see how these components are used.
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -182,10 +190,10 @@ object Filter extends ComponentSpec {
 
 ### Parent Class
 
-Every Gem class needs to extend a parent class from which it inherits the representation of the overall Gem. This includes the UI and the logic.
-For transform Gems, you need to extend `ComponentSpec` (like in the example above), and for Source/Target Gems you need to extend `DatasetSpec`. We will see the difference between the two at the end.
+Every gem class needs to extend a parent class from which it inherits the representation of the overall gem. This includes the UI and the logic.
+For transform gems, you need to extend `ComponentSpec` (like in the example above), and for Source/Target gems you need to extend `DatasetSpec`. Each type of gem extends a different parent class.
 
-First thing you give after this is the name and category of your Gem, `"Filter"` and `"Transform"` in this example.
+First thing you give after this is the name and category of your gem, `"Filter"` and `"Transform"` in this example.
 
 Another thing to note here is `optimizeCode`. This flag can be set to `True` or `False` value depending on whether we want the Prophecy Optimizer to run on this code to simplify it.
 In most cases, it's best to leave this value as `True`.
@@ -217,9 +225,11 @@ override def optimizeCode: Boolean = true
 
 ````
 
+In this class, you also have the ability to enable the **Custom Schema** option in your gem output by default.
+
 ### Properties Classes
 
-There is one class (seen here as `FilterProperties`) that contains a list of the properties to be made available to the user for this particular Gem. Think of these as all the values a user fills out within the template of this Gem, or any other UI state that you need to maintain (seen here as `columnsSelector` and `condition`).
+There is one class (seen here as `FilterProperties`) that contains a list of the properties to be made available to the user for this particular gem. Think of these as all the values a user fills out within the template of this gem, or any other UI state that you need to maintain (seen here as `columnsSelector` and `condition`).
 
 :::caution
 
@@ -264,7 +274,7 @@ Additional information on these functions are available in the following section
 
 ### Dialog (UI)
 
-The `dialog` function contains code specific to how the Gem UI should look to the user.
+The `dialog` function contains code specific to how the gem UI should look to the user.
 
 ````mdx-code-block
 <Tabs>
@@ -314,18 +324,18 @@ The above Dialog code in the filter is rendered on UI like this:
 
 ![Dialog](img/gem-builder-ui.png)
 
-There are various UI components that can be defined for custom Gems such as scroll boxes, tabs, buttons, and more! These UI components can be grouped together in various types of panels to create a custom user experience when using the Gem.
+There are various UI components that can be defined for custom gems such as scroll boxes, tabs, buttons, and more! These UI components can be grouped together in various types of panels to create a custom user experience when using the gem.
 
 After the Dialog object is defined, it's serialized as JSON, sent to the UI, and rendered there.
 
-Depending on what kind of Gem is being created, either a `Dialog` or a `DatasetDialog` needs to be defined.
+Depending on what kind of gem is being created, either a `Dialog` or a `DatasetDialog` needs to be defined.
 
-- The **Transformation Dialog**: The Dialog for Transformation Gems (any Gem that is not a Dataset Gem) is created using the `dialog` method, which must return a Dialog object.
+- The **Transformation Dialog**: The Dialog for Transformation gems (any gem that is not a Dataset gem) is created using the `dialog` method, which must return a Dialog object.
 
-- The **Dataset Dialog**: The Dialog for a [Source/Target](docs/Spark/gems/source-target/source-target.md) Gem is a `DatasetDialog` object. You will need to have `source` and `target` methods defined.
+- The **Dataset Dialog**: The Dialog for a [Source/Target](docs/Spark/gems/source-target/source-target.md) gem is a `DatasetDialog` object. You will need to have `source` and `target` methods defined.
 
 Column Selector: This is a special property that you should add if you want to select the columns from UI and then highlight the used columns using the `onChange` function.
-It is recommended to try out this dialogue code in Gem builder UI and see how each of these elements looks in UI.
+It is recommended to try out this dialogue code in gem builder UI and see how each of these elements looks in UI.
 
 ### Validation
 
@@ -358,7 +368,7 @@ def validate(component: Component)(implicit context: WorkflowContext): List[Diag
 
 ### State Changes
 
-The `onChange` method is given for the UI State transformations. You are given both the previous and the new incoming state and can merge or modify the state as needed. The properties of the Gem are also accessible to this function, so functions like selecting columns, etc. are possible to add from here.
+The `onChange` method is given for the UI State transformations. You are given both the previous and the new incoming state and can merge or modify the state as needed. The properties of the gem are also accessible to this function, so functions like selecting columns, etc. are possible to add from here.
 
 ````mdx-code-block
 <Tabs>
@@ -393,7 +403,7 @@ def onChange(oldState: Component, newState: Component)(implicit context: Workflo
 
 ### Component Code
 
-The last class used here is `FilterCode` which is inherited from `ComponentCode` class. This class contains the actual Spark code that needs to run on your Spark cluster. Here the above User Defined properties are accessible using `self.props.{property}`. The Spark code for the Gem logic is defined in the apply function. Input/Output of apply method can only be DataFrame or list of DataFrames or empty.
+The last class used here is `FilterCode` which is inherited from `ComponentCode` class. This class contains the actual Spark code that needs to run on your Spark cluster. Here the above User Defined properties are accessible using `self.props.{property}`. The Spark code for the gem logic is defined in the apply function. Input/Output of apply method can only be DataFrame or list of DataFrames or empty.
 For example, we are calling the `.filter()` method in this example in the apply function.
 
 ````mdx-code-block
@@ -438,9 +448,12 @@ For details on our optimization functions, see [Optimization functions](optimiza
 
 :::
 
-## Source/Target Gems
+## Source/target gems
 
-Source/Target Gems are Gems that you use to read/write your Datasets into DataFrames. There are certain differences between how you define a Source/Target Gem and a Transformation Gem. For example, a Source/Target Gem will have two `dialog` and two `apply` functions each for Source and Target respectively. Let's look at them with an example.
+Source/target gems let you read and write your Datasets into DataFrames. Let's look an example source/target gem definition.
+
+<details>
+<summary>Example code for a source/target gem</summary>
 
 ````mdx-code-block
 <Tabs>
@@ -860,17 +873,18 @@ object ParquetFormat extends DatasetSpec {
 </Tabs>
 ````
 
-Here you can see the differences between a Transform Gem and a DataSource Gem.
+</details>
 
-1. The Source/Target Gem extends `DatasetSpec`.
-2. It has two Dialog functions: `sourceDialog` and `targetDialog`. They return both a `DatasetDialog` object, whereas for any Transform Gem, the dialog function returns a `Dialog` object.
-3. The `ComponentCode` class has two apply functions: `sourceApply` and `targetApply` for Source and Target modes respectively.
+Lets compare this source/target gem definition with a transformation gem definition.
 
-There is no change in `onChange` and `validate` functions.
+- The source/target gem extends `DatasetSpec`.
+- The source/target gem has two dialog functions: `sourceDialog` and `targetDialog`. They return both a `DatasetDialog` object, whereas for any Transform gem, the dialog function returns a `Dialog` object.
+- The `ComponentCode` class for the source/target gem has two apply functions: `sourceApply` and `targetApply` for Source and Target modes respectively.
+- The `onChange` and `validate` function definitions do not differ between the types of gems.
 
 ## What's next
 
-To learn more about the Gem builder and additional optimization options, see the following page:
+To learn more about the gem builder and additional optimization options, see the following page:
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
