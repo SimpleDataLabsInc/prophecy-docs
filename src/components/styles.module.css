@@ -3,3 +3,9 @@
   font-size: initial !important;
   padding-top: 0 !important;
 }
+
+.tableOfContentsInline ul ul {
+  list-style-type: circle !important;
+  font-size: initial !important;
+  padding-top: 0 !important;
+}
