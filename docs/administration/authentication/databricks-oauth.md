@@ -9,7 +9,7 @@ tags:
   - oauth
 ---
 
-Prophecy provides Databricks OAuth to align with industry-standard authentication flows. This gives you more granular access control, making it a good alternative to Personal Access Tokens (PATs).
+Prophecy provides Databricks OAuth to align with industry-standard authentication flows. This gives you more granular access control, making it a good alternative to Personal Access Tokens (PATs). This integration works with both Spark clusters and SQL warehouses.
 
 ## Requirements
 
@@ -39,9 +39,7 @@ Then, the Prophecy Cluster Admin has to add the Databricks credentials to Prophe
 In Prophecy, you can use Databricks OAuth in two ways:
 
 - [User-to-Machine (U2M)](https://docs.databricks.com/en/dev-tools/auth/oauth-u2m.html). This method is used for **Pipeline development** and **Job configuration**. Any user can authenticate individually via Databricks. In this case, users access data based on their individual identity and the permissions already defined within the Databricks Unity Catalog. No additional credentials are required for this flow.
-- [Machine-to-Machine (M2M)](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html). This method is used for **Automation** and **Project deployment**. Authentication is performed using a Service Principal in Databricks, which enables unattended operations (such as automated deployment). The permissions for this flow are determined by the Service Principal’s configuration within the Databricks Unity Catalog.
-
-This integration works with both Spark clusters and SQL warehouses.
+- [Machine-to-Machine (M2M)](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html). This method is used for **Automation** and **Project deployment**. Authentication is performed using a service principal in Databricks, which enables unattended operations (such as automated deployment). Service principals are created and configured in Databricks. The minimum level of access that your service principal requires (including access to clusters, tables, etc.) will vary per use case.
 
 ## Configure new Fabrics using OAuth
 
@@ -50,7 +48,7 @@ To configure new Spark and SQL Fabrics within Prophecy using OAuth:
 1. When creating a new Databricks Fabric, select **OAuth** under **Credentials**.
 2. Enter the **Service Principal Client ID** and **Service Principal Client Secret** into the respective fields to take advantage of M2M authentication.
 
-Visit the Databricks documentation to learn more about creating a [Service Principal](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html).
+Visit the Databricks documentation to learn more about creating a [service principal](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html).
 
 ## Pipeline development and Job configuration
 
@@ -76,15 +74,15 @@ You only need to perform this authentication periodically, depending on the OAut
 
 ## Automated Jobs
 
-When you run a job manually, you have the option to run the job as a user or Service Principal. In contrast, **scheduled jobs will always run as the Service Principal** specified in the Fabric, regardless of the job settings.
+When you run a job manually, you have the option to run the job as a user or service principal. In contrast, **scheduled jobs will always run as the service principal** specified in the Fabric, regardless of the job settings.
 
 ![Job configuration](img/data-bricks-oauth-job-configuration.png)
 
-In the Airflow and Databricks Job IDE, a warning will display if the Fabric does not contain Service Principal OAuth Credentials.
+In the Airflow and Databricks Job IDE, a warning will display if the Fabric does not contain service principal OAuth Credentials.
 
 ## Project release and deployment
 
-Your Prophecy Team Admin is the only member of your team able to perform deployment of the Pipelines and jobs created by the team. Prophecy uses a Databricks Service Principal via Databricks OAuth to perform this task on behalf of the Team Admin. The Team Admin is the only user who can use this Service Principal and only for the purpose of deploying team projects.
+Your Prophecy Team Admin is the only member of your team able to perform deployment of the Pipelines and jobs created by the team. Prophecy uses a Databricks service principal via Databricks OAuth to perform this task on behalf of the Team Admin. The Team Admin is the only user who can use this service principal and only for the purpose of deploying team projects.
 
 ## Security
 
