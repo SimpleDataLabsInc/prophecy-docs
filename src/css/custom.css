@@ -255,3 +255,11 @@ Gems table page
     gap: 12px; /* Adjust gap for smaller screens if needed */
   }
 }
+
+/* Inline ToC */
+
+.tableOfContentsInline {
+  list-style-type: disc;
+  font-size: initial;
+  padding-top: 0;
+}
