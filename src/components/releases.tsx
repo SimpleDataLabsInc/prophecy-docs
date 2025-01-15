@@ -1,7 +1,7 @@
 import React, { type ReactNode } from "react";
 import CustomTOCItems from "./toc-index";
 import type { Props } from "@theme/TOCInline";
-// import styles from "../css/custom.css";
+import styles from "./styles.module.css";
 
 // Extend Props to include the path variable
 // Extend Props to include item and path
@@ -20,7 +20,7 @@ export default function CustomTOCInline({
   const toc = item.toc ?? []; // Adjust this based on the structure of `item`
 
   return (
-    <div>
+    <div className={styles.tableOfContentsInline}>
       <CustomTOCItems
         toc={toc}
         minHeadingLevel={minHeadingLevel}
