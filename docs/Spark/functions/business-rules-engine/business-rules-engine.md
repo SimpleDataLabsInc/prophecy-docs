@@ -6,23 +6,27 @@ tags:
   - business rules
 ---
 
-[Business rules](https://www.ibm.com/think/topics/business-rules) are conditions that define how data should be structured, manipulated, and validated within a system.
+Business rules empower organizations to model, manage, and automate repeatable business decisions throughout the enterprise.
 
-Use the business rules engine in Prophecy to incorporate business logic in your Pipelines. You can also reuse business rules in different Projects by releasing them via [Packages](/package-hub/).
+## Overview
 
-## Configuration
+The business rules engine in Prophecy lets you incorporate business logic in your Pipelines. Often, different users will interact with business rules at various stages of Pipeline development. One common workflow is as follows:
 
-Business rules can be created in Spark Projects as functions. The following table describes the parameters of a business rule.
+1. Business users create business rules using predefined enterprise logic.
+1. These business rules are deployed and become available as [dependencies](docs/extensibility/dependencies/spark-dependencies.md) in the [Package Hub](docs/extensibility/package-hub/package-hub.md).
+1. Data engineers and others working on Pipelines can incorporate these rules using the [SchemaTransform Gem](docs/Spark/gems/transform/schema-transform.md).
+
+These stages are explained in more detail below.
+
+## Create a business rule
+
+Business rules require the following parameters.
 
 | Field       | Description                                                                                                          |
 | ----------- | -------------------------------------------------------------------------------------------------------------------- |
 | Column Name | The name of the output column that the business rule will calculate.                                                 |
 | Parameters  | The columns you would like to use in your business rule condition(s). Each column must have a Name and Type defined. |
 | Rules       | The set(s) of conditions that define the business rule.                                                              |
-
-Once you have defined your business rule function, you can incorporate it into your Pipeline with the [SchemaTransform Gem](docs/Spark/gems/transform/schema-transform.md).
-
-## Create a business rule
 
 To create a new business rule:
 
