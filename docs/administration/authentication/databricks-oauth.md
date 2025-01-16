@@ -16,8 +16,9 @@ Prophecy provides Databricks OAuth to align with industry-standard authenticatio
 - Prophecy 3.4.3.1 or later.
 - An app connection between Databricks and Prophecy. This connection is set up by default in SaaS environments and no further action is needed.
 
-<details>
-  <summary>Register Prophecy as an app connection in Databricks</summary>
+For Dedicated SaaS and self-hosted deployments, follow the steps below. Prior to performing this one-time registration process, **users will see the OAuth option in fabrics but will be unable to use it.**
+
+### Register Prophecy as an app connection in Databricks {#app-connection}
 
 First, a Databricks [account admin](https://docs.databricks.com/en/admin/index.html#what-are-account-admins) needs to complete the following steps **once** for your Prophecy deployment:
 
@@ -27,66 +28,65 @@ First, a Databricks [account admin](https://docs.databricks.com/en/admin/index.h
 4. Under Client secret, select **Generate a client secret**. Share it with your Prophecy Cluster Admin.
 5. Click **Save**.
 
-Then, the Prophecy Cluster Admin has to add the Databricks credentials to Prophecy:
+Then, the Prophecy cluster admin has to add the Databricks credentials to Prophecy:
 
 1. Navigate to **Admin Settings > Security**.
-2. Under **Databrick OAuth Application (U2M)**, paste the **Client ID** and the **Client Secret** into the respective fields.
+2. Under **Databricks OAuth Application (U2M)**, paste the **Client ID** and the **Client Secret** into the respective fields.
 
-</details>
+![Security settings in Prophecy](./img/databricks-oauth-admin.png)
+
+Finally, the Prophecy Kubernetes cluster must be restarted to enact these changes.
 
 ## Use cases supported by Databricks
 
-In Prophecy, you can use Databricks OAuth in two ways:
+In Prophecy, you can use Databricks OAuth in two ways. The most common method is U2M, but you can optionally use M2M as well.
 
-- [User-to-Machine (U2M)](https://docs.databricks.com/en/dev-tools/auth/oauth-u2m.html). This method is used for **Pipeline development** and **Job configuration**. Any user can authenticate individually via Databricks. In this case, users access data based on their individual identity and the permissions already defined within the Databricks Unity Catalog. No additional credentials are required for this flow.
-- [Machine-to-Machine (M2M)](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html). This method is used for **Automation** and **Project deployment**. Authentication is performed using a service principal in Databricks, which enables unattended operations (such as automated deployment). Service principals are created and configured in Databricks. The minimum level of access that your service principal requires (including access to clusters, tables, etc.) will vary per use case.
+### [User-to-Machine (U2M)](https://docs.databricks.com/en/dev-tools/auth/oauth-u2m.html)
 
-## Configure new Fabrics using OAuth
+This method is used for **pipeline development** and **job configuration**. In this case, users authenticate individually via Databricks. In this case, users access data based on their individual identity and the permissions already defined within the Databricks Unity Catalog.
 
-To configure new Spark and SQL Fabrics within Prophecy using OAuth:
+To configure a [fabric](docs/concepts/fabrics/fabrics.md) for this use case:
 
-1. When creating a new Databricks Fabric, select **OAuth** under **Credentials**.
-2. Enter the **Service Principal Client ID** and **Service Principal Client Secret** into the respective fields to take advantage of M2M authentication.
+1. Create a new Spark or SQL fabric.
+1. Choose **Databricks** as the provider.
+1. Enter the relevant Databricks workspace URL.
+1. Choose **OAuth** as the authentication method.
+1. Click **Test Connection** to test the sign in to Databricks.
+1. Finish the fabric configuration as normal and click **Complete**.
 
-Visit the Databricks documentation to learn more about creating a [service principal](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html).
+You **do not** have to fill out the Service Principal Client ID and Service Principal Client Secret for this use case.
 
-## Pipeline development and Job configuration
+Now, anyone who uses this fabric can use their individual Databricks credentials for authentication. Prophecy will automatically prompt users to sign in when necessary.
 
-As mentioned previously, members of your team developing Pipelines and Jobs can leverage their own personal identity via OAuth to gain access to all Databricks resources from within Prophecy. That means that whatever permissions they have within Databricks (including permissions governed by Unity Catalog) will be enforced in Prophecy as well.
-
-When you need to connect to Databricks, you will see a login window appear in Prophecy. This includes when you:
-
-- Select a Fabric in the Pipeline IDE
-- Select a Fabric in the Jobs IDE
-- Access the settings page in the Jobs IDE
-
-<img
-src={require("./img/data-bricks-oauth-select-fab.png").default}
-alt="Select a Fabric"
-width="70%"
-/>
-
-When you click **Continue**, a separate browser tab opens, and you can log in to Databricks.
+![Databricks login prompt](./img/databricks-fabric-login.png)
 
 :::note
 You only need to perform this authentication periodically, depending on the OAuth timeout settings within Databricks. SaaS deployments automatically use the default time period. If you have a Dedicated SaaS or self-hosted deployment, your Databricks Account Administrator can adjust the timeout setting.
 :::
 
-## Automated Jobs
+### [Machine-to-Machine (M2M)](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html)
 
-When you run a job manually, you have the option to run the job as a user or service principal. In contrast, **scheduled jobs will always run as the service principal** specified in the Fabric, regardless of the job settings.
+This method is used for **project deployment**. In this case, authentication is performed using Databricks [service principal](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html) credentials for unattended operations (such as automated deployment). The minimum level of access that your service principal requires (including access to clusters, tables, etc.) will vary per use case.
 
-![Job configuration](img/data-bricks-oauth-job-configuration.png)
+To configure a [fabric](docs/concepts/fabrics/fabrics.md) for this use case:
 
-In the Airflow and Databricks Job IDE, a warning will display if the Fabric does not contain service principal OAuth Credentials.
+1. Create a new Spark or SQL fabric.
+1. Choose **Databricks** as the provider.
+1. Enter the relevant Databricks workspace URL.
+1. Choose **OAuth** as the authentication method.
+1. Enter the **Service Principal Client ID** and **Service Principal Client Secret** into the respective fields. This is different from the Client ID and Client Secret that was used to set up the [app connection](#app-connection).
+1. Click **Test Connection** to test the sign in to Databricks.
+1. Finish the fabric configuration as normal and click **Complete**.
 
-## Project release and deployment
+![Databricks fabric configuration](./img/databricks-fabric-config.png)
 
-Your Prophecy Team Admin is the only member of your team able to perform deployment of the Pipelines and jobs created by the team. Prophecy uses a Databricks service principal via Databricks OAuth to perform this task on behalf of the Team Admin. The Team Admin is the only user who can use this service principal and only for the purpose of deploying team projects.
+Now, when this fabric is used, **scheduled jobs will always run as the service principal**. In the Airflow and Databricks Job IDE, a warning will display if the connected fabric does not contain service principal OAuth Credentials.
+
+Additionally, project releases and deployment will be performed by the service principal on behalf of the Prophecy team admin when using this fabric.
 
 ## Security
 
-Prophecy ensures robust security measures during the OAuth authentication process.
+Prophecy ensures robust security measures during the OAuth authentication process, following best practices documented by Databricks. For example:
 
-- **Authentication flow.** The authentication process follows a three-step OAuth flow to generate tokens, leveraging Proof Key for Code Exchange (PKCE) to enhance security. Prophecy uses a Prophecy-hosted callback URL to capture and process authorization codes, issuing and securely storing access tokens.
-- **Token storage.** Prophecy securely stores the refresh token, which is used to renew itself and obtain new access tokens, ensuring uninterrupted authenticated connectivity to Databricks. Tokens are encrypted before being stored in the database, following the same stringent encryption standards applied to other credentials managed by Prophecy.
+- The authentication process follows a three-step OAuth flow to generate tokens, leveraging Proof Key for Code Exchange (PKCE) to enhance security. Prophecy uses a Prophecy-hosted callback URL to capture and process authorization codes, issuing and securely storing access tokens.
+- Prophecy securely stores the refresh token, which is used to renew itself and obtain new access tokens, to ensure uninterrupted authenticated connectivity to Databricks. Tokens are encrypted before being stored in the database, following the same stringent encryption standards applied to other credentials managed by Prophecy.
