@@ -11,13 +11,13 @@ tags:
 Prophecy utilizes Git to align with DevOps practices. Git lets you:
 
 - Store your visual pipelines as code.
-- Track your Project metadata, including workflows, schedules, datasets, and computed metadata.
-- Collaborate on your Projects and perform code reviews.
+- Track your project metadata, including workflows, schedules, datasets, and computed metadata.
+- Collaborate on your projects and perform code reviews.
 - Track changes across time.
 
 ## Connect a Git repository
 
-When you create a Project in Prophecy, you must choose an empty Git repository or a path in a repository to host the Project code. You can either choose a Prophecy-managed repository, or connect an external repository.
+When you create a project in Prophecy, you must choose an empty Git repository or a path in a repository to host the project code. You can either choose a Prophecy-managed repository, or connect an external repository.
 
 To add a Git account to your Prohecy environment:
 
@@ -26,7 +26,7 @@ To add a Git account to your Prohecy environment:
 1. Click **Add new**.
 1. Choose the relevant Git Provider and provide your login details.
 
-You can also enter new Git credentials directly in the Project creation page.
+You can also enter new Git credentials directly in the project creation page.
 
 :::info
 
@@ -109,4 +109,4 @@ When you fork a repository, you must already have both the upstream repository a
 
 ## What's next
 
-Learn more about how to integrate Git in your Project lifecycle in [Develop and deploy a Project](docs/ci-cd/deployment/deployment.md).
+Learn more about how to integrate Git in your project lifecycle in [Develop and deploy a project](docs/ci-cd/deployment/deployment.md).
