@@ -5,41 +5,6 @@ description: Build custom Gems to share across teams with the Package Hub
 tags: []
 ---
 
-While Prophecy offers dozens of Gems out-of-the-box, some data practitioners want to extend this idea and create their own Gems. Incorporate your custom code into a Prophecy Gem. As part of Prophecy’s **Package Builder**, publish your custom Gem with the entire Project to the **[Package Hub](/docs/extensibility/package-hub/package-hub.md)** or share with selected teams.
-
-## Quickstart
-
-When you’re ready to create a package, everything within the selected project will be part of the package. That includes Pipelines, subgraphs, jobs, custom Gems, etc. This document explores the most important part of the package: Custom Gems.
-
-### Quicksteps to create and share a custom Gem
-
-1. Create a new Spark (Python / Scala) or SQL Project or open an existing project. While this document is focused on Python and Scala, [SQL coders can also create Gems using Macros](docs/extensibility/package-hub/gem-builder.md#faq).
-2. [Add](docs/extensibility/package-hub/gem-builder.md#add-gem) a new Gem.
-   Notice some skeleton (guide) code to get started. Click Preview to review the user interface (UI) for your custom Gem.
-3. [Edit](docs/extensibility/package-hub/gem-builder.md#edit-gem) the Gem: Paste/Write your code specification at the prompt. Use the [Gem Structure](docs/extensibility/package-hub/gem-builder.md#gem-structure) to understand each code section.
-4. [Update](docs/extensibility/package-hub/gem-builder.md#update-gem) the Gem. Release the Project. The new custom Gem is included in the versioned Package on Git with the rest of the elements of the Project. Share the Package with specific teams or publish to the Package Hub for better visibility.
-
-That’s it! Creating a custom Gem in Prophecy is easy. Now the Package can be named as a dependency and used across Projects. Let’s dig into the steps in detail below.
-
-## Add Gem
-
-### Gem modes
-
-There are two Gem modes:
-
-#### Dataset Format
-
-1. This mode allows for the custom definition of Dataset Formats beyond the provided formats (xml, csv, avro, parquet, json, etc).
-2. Select whether you'd like your data to be read as a batch, which can be defined incrementally, or as a stream in real time.
-3. When a Dataset Format Gem is created, the new format can be used when creating Datasets. Find a new card for your custom DatasetFormat Gem in the **(1) Dataset Type and Format** listing. See the image below.
-
-#### Transformation
-
-1. These Gems apply transformations/joins/any other custom logic onto any DataFrame(s) that are passed into them.
-2. When a new Transformation Gem is created, the user will be able to drag-and-drop the new Gem from the list in the **(2) Project Browser** or **(3) Gem dropdown menu.**
-
-![1](img/1-gm.png)
-
 Programmatically, a Gem is a component with the following parts:
 
 - The **Gem UI Component** to get user information from the screen. (This code is rendered on the Prophecy UI).

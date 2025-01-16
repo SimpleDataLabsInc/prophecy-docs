@@ -6,46 +6,38 @@ tags:
   - gem builder
 ---
 
-[Gems](docs/concepts/project/gems.md) are visually-packaged parcels of code that perform specific operations on data. Spark gems are written in either Python or Scala.
-
-While Prophecy provides many gems out of the box, you can use Prophecy's Gem Builder to create your own gems! Then, you can also **publish** and **share** your custom gems with your Prophecy team.
-
-:::caution Enterprise Only
-
-Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about the Enterprise offering.
-
-:::
+[Gems](docs/concepts/project/gems.md) are visually-packaged parcels of code that perform specific operations on data. While Prophecy provides many gems out of the box, Prophecy also lets you create your own gems! Not only can you create new gems, but you can also share them in the [Package Hub](/docs/extensibility/package-hub/package-hub.md) or with selected teams.
 
 ## Overview
 
-At a high level, using the Gem Builder involves the following steps:
+Let's learn how to create a Spark gem. At a high level, this involves the following steps:
 
-1. Open the **Gem Builder** from the left navigation bar.
-1. Add a new gem or modify an existing gem.
-1. Specify gem name, preferred language, and gem category.
+1. Create a Spark project in which you will create your custom gem. The gem will be written in Python or Scala depending on the project-level language.
+1. Add a gem to the Gems section of the project sidebar.
+1. Specify the name and type of gem that you want to create.
 1. Write your code specifications.
 1. Preview the rendered visual interface of your gem.
-1. Fill in some values and review the generated Python or Scala code.
+1. Fill in some values and review the generated code.
 
-When the gem is ready, click **Publish** to make it available for use in Pipelines! The custom gem can also be shared with other users in the team and organization.
+:::note
+If you plan to share these gems in a package, be aware that everything in the project (pipelines, subgraphs, jobs, etc.) will be part of the package, too.
+:::
 
-Please refer below video for a step-by-step example:
+Next, we will review these steps in greater detail.
 
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/121796483/215807557-c64d2e96-9f2b-47d8-b5ed-7b449dba3246.mp4" title="Gem builder" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
+## Gem mode
 
-## Gem definition
+There are a few different types of gems that you can create. The table below describes each mode you can choose.
 
-Gems have two main requirements to fulfill:
+| Mode            | Description                                                                                                | Additional settings                                    |
+| --------------- | ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| Transformation  | Edits intermediate data in the pipeline that is in-memory.                                                 | Choose the **category** of the transformation gem      |
+| Dataset Format  | Reads and writes data between storage and memory.                                                          | Choose whether the type is **batch** or **streaming**. |
+| Custom Subgraph | Controls the flow of gems. Visit the [Subgraph](docs/Spark/gems/subgraph/subgraph.md) page for an example. | None                                                   |
 
-- The **UI component** that retrieves user information from the graphical interface. (This code is rendered on the Prophecy UI.)
-- The **code logic** that determines how the gem acts within the context of a Pipeline. The code can be written in Python or Scala.
+### Gem template
 
-### Code components
-
-To write the code for a custom gem, you need to include the following components:
+Each type of gem will have a different code template that Prophecy provides. Let's review the template of a **transformation** gem.
 
 | Component             | Description                                                                                 |
 | --------------------- | ------------------------------------------------------------------------------------------- |
@@ -224,8 +216,6 @@ override def optimizeCode: Boolean = true
 </Tabs>
 
 ````
-
-In this class, you also have the ability to enable the **Custom Schema** option in your gem output by default.
 
 ### Properties Classes
 
