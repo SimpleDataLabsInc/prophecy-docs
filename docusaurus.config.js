@@ -448,6 +448,10 @@ const config = {
             to: "/SQL/",
             from: "/SQL/development/code-editor",
           },
+          {
+            to: "/extensibility/gem-builder/spark-gem-builder",
+            from: "/package-hub/package-builder/Gem-builder",
+          },
         ],
         /*
 
