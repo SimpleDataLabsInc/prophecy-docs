@@ -2,7 +2,11 @@
 title: Create a SQL model
 id: sql-onboarding
 description: Follow along in the product to make your first Spark pipeline
-tags: []
+tags:
+  - SQL
+  - quick start
+  - onboarding
+  - models
 ---
 
 Follow the orange dot in the product to know where to click.
@@ -14,8 +18,7 @@ You can skip to see the end model by clicking **Skip**.
 ## Get started
 
 1. Click **Onboarding**.
-
-1. Wait until your SQL cluster is attached. We provide a default fabric (execution environment) for this onboarding project.
+1. Wait until your SQL cluster is attached. We provide a default [fabric](docs/concepts/fabrics/fabrics.md) (execution environment) for this onboarding project.
 
 ## Add data sources
 
