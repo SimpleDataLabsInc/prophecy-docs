@@ -452,6 +452,10 @@ const config = {
             to: "/extensibility/gem-builder/spark-gem-builder",
             from: "/package-hub/package-builder/Gem-builder",
           },
+          {
+            to: "/extensibility/gem-builder/spark-gem-builder",
+            from: "/extensibility/package-hub/Gem-builder",
+          },
         ],
         /*
 

@@ -15,7 +15,7 @@ Prophecy introduces **Package Hub,** which enables data practitioners to create 
 
 <br />
 
-A Package is a versioned Project that can be shared across teams. As such, a Package can contain Pipeline templates, [custom Gems](docs/extensibility/package-hub/gem-builder.md), functions, subgraph templates, etc - a reusable version of everything a Project contains. Package dependencies allow us to re-use components so we don’t have to rebuild them. The coding community has been using packages for ages, and finally the non-coding data practitioners can take advantage of the same idea. Packages are shareable within and across teams. For extra visibility, the Package Hub is a curated selection of Packages that your teams create and publish for other users to leverage.
+A Package is a versioned Project that can be shared across teams. As such, a Package can contain Pipeline templates, [custom Gems](docs/extensibility/gem-builder/spark-gem-builder.md), functions, subgraph templates, etc - a reusable version of everything a Project contains. Package dependencies allow us to re-use components so we don’t have to rebuild them. The coding community has been using packages for ages, and finally the non-coding data practitioners can take advantage of the same idea. Packages are shareable within and across teams. For extra visibility, the Package Hub is a curated selection of Packages that your teams create and publish for other users to leverage.
 
 Just include a Package as a dependency to take advantage of its contents. See the sections below for step-by-step instructions on how to [use](#use-a-package), [build](#build-a-package), and [share](#share-a-package) Packages.
 
@@ -93,7 +93,7 @@ Next specify the Gem’s code.
 
 ![13](img/13-ph.png)
 
-When you create a new Gem, a **(1)code guide** appears. Use the guide or replace with your **(2)custom code.** Explore the [Gem Structure](docs/extensibility/package-hub/gem-builder.md) to understand the code requirements. Then go to the **(3)Visual View** and make sure the UI appears with [no errors.](docs/extensibility/package-hub/gem-builder.md) Now the Custom Gem is ready to try in the canvas.
+When you create a new Gem, a **(1)code guide** appears. Use the guide or replace with your **(2)custom code.** Explore the [Gem Structure](docs/extensibility/gem-builder/spark-gem-builder.md) to understand the code requirements. Then go to the **(3)Visual View** and make sure the UI appears with [no errors.](docs/extensibility/gem-builder/spark-gem-builder.md) Now the Custom Gem is ready to try in the canvas.
 
 ![14](img/14-ph.png)
 
@@ -103,7 +103,7 @@ When you create a new Gem, a **(1)code guide** appears. Use the guide or replace
 
 **(1)Run** the custom Gem to check whether the functionality works as expected. Click **(2)Data** to view the data input and **(3)output** preview. The `customer_id` is encrypted after our function is applied.
 
-Click [here](docs/extensibility/package-hub/gem-builder.md) for a deep dive on building Packages with Custom Gems.
+Click [here](docs/extensibility/gem-builder/spark-gem-builder.md) for a deep dive on building Packages with Custom Gems.
 
 Once you have tested your Gem in the canvas, and you are happy with both the **Gem UI Component** and **Gem Code Logic**, you will want to release a tagged version.
 
