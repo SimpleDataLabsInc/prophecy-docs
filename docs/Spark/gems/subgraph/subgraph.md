@@ -34,7 +34,7 @@ Click on the **(1) Create Gem** button. This will open up the **Create Gem** For
 ![Create_subgraph_gem](img/create_subgraph_type.png)
 
 This takes to you the Gem Code Editor with a basic structure of the code generated. Here you can start modifying your dialog, validation and the actual logic of the Gem.
-Read [here](/docs/extensibility/package-hub/gem-builder.md) for more details of the Gem code. More detailed docs on writing Subgraph Gems to follow soon.
+Read [here](/docs/extensibility/gem-builder/spark-gem-builder.md) for more details of the Gem code. More detailed docs on writing Subgraph Gems to follow soon.
 
 The newly constructed Subgraph Gem can be utilized within any Pipeline of this Project, accessible through the Subgraph menu as demonstrated below.
 Furthermore, you have the option to Release this project, enabling its use as a dependency in other projects, thus incorporating the created Gem into various projects.

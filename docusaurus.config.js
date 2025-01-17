@@ -4,6 +4,20 @@
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
+// Reverse the sidebar items ordering
+function reverseSidebarItems(items) {
+  // Reverse items in categories
+  const result = items.map((item) => {
+    if (item.type === "category") {
+      return { ...item, items: reverseSidebarItems(item.items) };
+    }
+    return item;
+  });
+  // Reverse items at current level
+  result.reverse();
+  return result;
+}
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Prophecy",
@@ -35,6 +49,20 @@ const config = {
         docs: {
           routeBasePath: "/",
           sidebarPath: require.resolve("./sidebars.js"),
+          async sidebarItemsGenerator({
+            defaultSidebarItemsGenerator,
+            ...args
+          }) {
+            // console.log("Arguments passed:", args);
+            // Check if the current item is from the 'release_notes' directory
+            if (args.item && args.item.dirName === "release_notes") {
+              const sidebarItems = await defaultSidebarItemsGenerator(args);
+              return reverseSidebarItems(sidebarItems);
+            }
+            // Otherwise, return the sidebar items without applying reversal
+            const sidebarItems = await defaultSidebarItemsGenerator(args);
+            return sidebarItems;
+          },
         },
         blog: false,
         theme: {
@@ -451,6 +479,10 @@ const config = {
           {
             to: "/extensibility/gem-builder/spark-gem-builder",
             from: "/package-hub/package-builder/Gem-builder",
+          },
+          {
+            to: "/extensibility/gem-builder/spark-gem-builder",
+            from: "/extensibility/package-hub/Gem-builder",
           },
         ],
         /*
