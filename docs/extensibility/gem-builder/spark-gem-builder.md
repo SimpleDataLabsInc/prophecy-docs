@@ -28,16 +28,6 @@ If you plan to share these gems in a package, be aware that everything in the pr
 
 Next, we will review these steps in greater detail.
 
-## Gem mode
-
-There are a few different types of gems that you can create. The table below describes each mode you can choose.
-
-| Mode                              | Description                                                                                                | Additional settings                                   |
-| --------------------------------- | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
-| Transformation                    | Edits intermediate data in the pipeline that is in-memory.                                                 | Choose the **category** of the transformation gem     |
-| Dataset Format                    | Reads and writes data between storage and memory.                                                          | Choose whether the type is **batch** or **streaming** |
-| Custom Subgraph (**Python only**) | Controls the flow of gems. Visit the [Subgraph](docs/Spark/gems/subgraph/subgraph.md) page for an example. | None                                                  |
-
 ## Gem template
 
 Each type of gem will have a different code template that Prophecy provides. Let's review the template of a **transformation** gem.
@@ -165,7 +155,7 @@ The template consists of the following components:
 1. Create a Spark project in Python. The gem will inherit the project-level language.
 1. Click on the **+** in the Gems section of the project sidebar. This will appear on hover.
 1. In the **Gem Name** field, write `CustomLimit`.
-1. Choose **Transformation Gem** mode.
+1. Choose **Transformation Gem** [mode](/extensibility/gem-builder/gem-builder-reference#mode).
 1. Select the **Transform** category.
 1. Click **Create Gem**.
 
@@ -569,18 +559,6 @@ filter ComponentCode with the added withColumn function:
 
   }
 ```
-
-### Extend the read/write capabilities with Dataset Format Gems
-
-You may also wish to create a source or target Dataset format beyond the [provided formats](/docs/Spark/gems/source-target/source-target.md). With GemBuilder, it’s possible to create custom Dataset formats! You’ll need to know how the source Gems differ from transformation Gems.
-
-The DatasetFormat Gem:
-
-1. class extends DatasetSpec
-2. has two Dialog functions: sourceDialog and targetDialog . They both return a DatasetDialog object, whereas for any Transform Gem, the dialog function returns a Dialog object.
-3. The ComponentCode class has two apply functions: sourceApply and targetApply for Source and Target modes respectively.
-
-There is no distinction between Transformation and DatasetFormat Gem onChange and validate functions.
 
 ## Troubleshoot errors
 

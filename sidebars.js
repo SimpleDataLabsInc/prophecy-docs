@@ -487,6 +487,7 @@ const sidebars = {
             "extensibility/gem-builder/sql-gem-builder",
             "extensibility/gem-builder/spark-gem-builder",
             "extensibility/gem-builder/optimization-functions",
+            "extensibility/gem-builder/gem-builder-reference",
           ],
         },
       ],
