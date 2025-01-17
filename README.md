@@ -1,14 +1,20 @@
 # Prophecy Documentation
 
+## Branches
+
+The `main` branch is our documentation production branch. Add content to release branches (e.g. `release/3.4.4`) to add feature content to the relevant release. Release branches will be merged into `main` on the product release date.
+
+## Docusaurus build
+
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
-## Installation
+### Installation
 
 ```
 $ yarn
 ```
 
-## Local Development
+### Local Development
 
 ```
 $ yarn start
@@ -16,7 +22,7 @@ $ yarn start
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-## Build
+### Build
 
 ```
 $ yarn build
@@ -24,15 +30,17 @@ $ yarn build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-## Deployment
+### Deployment
 
-Using SSH:
+Any change on the `main` branch is automatically deployed to the live documentation website. 
+
+To manually deploy using SSH:
 
 ```
 $ USE_SSH=true yarn deploy
 ```
 
-Not using SSH:
+To manually deploy otherwise:
 
 ```
 $ GIT_USER=<Your GitHub username> yarn deploy
@@ -40,7 +48,7 @@ $ GIT_USER=<Your GitHub username> yarn deploy
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
 
-## Rules checks
+## Repository rules and checks
 
 This repo is checked using `pre-commit` as part of any Pull Requests that are opened on it. To ensure that your changes comply with the rules and checks put in place, make sure you have run `pre-commit install` at least once after checking out this repo. Before you commit the hook will run some checks and prevent you from committing unless you fix the issues. Some checks may modify a file, simply re-stage it and try the commit again. If you want to run the checks manually simply run `pre-commit run -a` to run them on the entire repo.
 
