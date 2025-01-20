@@ -8,9 +8,13 @@ tags:
   - udafs
 ---
 
-Prophecy lets you create user-defined functions (UDFs) which can be used anywhere in the Pipeline.
+Prophecy lets you [create](#create-udfs) or [import](#import-udfs) user-defined functions (UDFs) which can be used anywhere in the Pipeline.
 
-## Parameters
+## Create UDFs
+
+Prophecy supports creating UDFs written in Python or Scala.
+
+### Parameters
 
 | Parameter               | Description                                                                                                                                 | Required |
 | :---------------------- | :------------------------------------------------------------------------------------------------------------------------------------------ | :------- |
@@ -19,9 +23,7 @@ Prophecy lets you create user-defined functions (UDFs) which can be used anywher
 | Definition              | Definition of the UDF function. <br/> For example, `udf((value:Int)=>value*value)`                                                          | True     |
 | UDF initialization code | Code block that contains initialization of entities used by UDFs. This could, for example, contain any static mapping that a UDF might use. | False    |
 
-## Steps
-
-There are a few steps to take to create and use a new UDF.
+### How to Create UDFs
 
 1. Create a new function. You can find the **Functions** section in the left sidebar of a project page.
 
@@ -77,3 +79,21 @@ object UDFs extends Serializable {
 
 
 ````
+
+## Import UDFs
+
+SQL UDFs stored in Databricks Unity Catalog can be imported to Python projects and re-used within any Gem.
+
+### How to Import UDFs
+
+1. From a Python Project, attach to a Databricks Spark cluster using a Fabric. Be sure the Fabric credentials allow access to the Databricks Catalog containing the desired SQL function(s).
+
+2. Open the Environment tab, select the appropriate Catalog and Schema. The list of SQL functions appears in the Environment tab.
+   ![img](./img/sql-udf.png)
+
+3. Call the SQL UDF from any Gem in the Project. There's no need to click infer schema; Prophecy saves you a step by using the UDF to automatically infer the schema.
+   ![img](./img/sql-call-function.png)
+
+:::info
+Prophecy supports importing SQL functions into Python Projects.
+:::
