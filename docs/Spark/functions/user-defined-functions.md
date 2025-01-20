@@ -6,6 +6,8 @@ tags:
   - extensibility
   - udfs
   - udafs
+  - SQL
+  - python
 ---
 
 Prophecy lets you [create](#create-udfs) or [import](#import-udfs) user-defined functions (UDFs) which can be used anywhere in the Pipeline.
