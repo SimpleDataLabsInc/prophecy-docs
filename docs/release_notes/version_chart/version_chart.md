@@ -1,5 +1,5 @@
 ---
-title: Version Chart
+title: Version chart
 id: version_chart
 description: Prophecy library version chart
 tags: [compatibility, matrix, version, chart, library, plib, plibs]

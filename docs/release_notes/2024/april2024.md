@@ -1,5 +1,5 @@
 ---
-sidebar_position: 9
+sidebar_position: 4
 id: April_2024
 description: Release notes for April
 title: April 2024
