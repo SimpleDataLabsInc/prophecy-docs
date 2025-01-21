@@ -2,6 +2,7 @@
 title: Data Generator
 id: data-generator
 description: Don't have the right data? Create some!
+sidebar_position: 1
 tags:
   - synthetic
   - random
@@ -14,17 +15,21 @@ import Requirements from "../../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
 
+Generate synthetic data with this special kind of Source Gem.
+
+## Requirements
+
 <Requirements
   packagename="ProphecySparkBasicsPython"
-  packageversion="0.2.36"
-  scalalib="8.5.0"
+  packageversion="0.2.32"
+  scalalib=""
   pythonlib="1.9.24"
-  packageversion122="Not Supported"
   packageversion143="Not Supported"
-  packageversion154="Supported 0.2.36+"
+  packageversion154="Supported"
+  additional_requirements=""
 />
 
-Generate synthetic data with this special kind of Source Gem.
+## Use cases
 
 Generating mock data is crucial when building data Pipelines to simulate real-world scenarios for testing, validating, and optimizing Pipeline performance before using actual production data. It helps ensure the Pipeline handles various data formats, structures, and edge cases effectively, minimizing potential issues in a live environment.
 
@@ -36,7 +41,7 @@ Follow the steps below to generate your own mock data using the Data Generator G
 
 ## Cluster requirements
 
-Create a Fabric and configure the [Job Size](/docs/administration/Spark-fabrics/databricks/databricks.md) as below, or log into an existing Spark cluster UI. Here we use Databricks as an example.
+Create a Fabric and configure the [Job Size](docs/administration/Spark-fabrics/databricks/databricks.md) as below, or log into an existing Spark cluster UI. Here we use Databricks as an example.
 
 1. Verify the Databricks Runtime uses Python version >= 3.8.
    For example, [Databricks Runtime 12.2 LTS](https://docs.databricks.com/en/release-notes/runtime/12.2lts.html) uses Python 3.9.19. If you are using Databricks Runtime 12.2+, the Python version meets this requirement.
