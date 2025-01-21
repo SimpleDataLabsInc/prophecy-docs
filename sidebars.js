@@ -272,6 +272,12 @@ const sidebars = {
           items: [
             {
               type: "category",
+              label: "Data sources",
+              link: { type: "doc", id: "SQL/gems/datasources/datasources-sql" },
+              items: ["SQL/gems/datasources/upload-files"],
+            },
+            {
+              type: "category",
               label: "Target models",
               link: { type: "doc", id: "SQL/gems/target-models/target-models" },
               items: [
@@ -281,12 +287,6 @@ const sidebars = {
                 "SQL/gems/target-models/type-and-format",
                 "SQL/gems/target-models/write-options",
               ],
-            },
-            {
-              type: "category",
-              label: "Data sources",
-              link: { type: "doc", id: "SQL/gems/datasources/datasources-sql" },
-              items: ["SQL/gems/datasources/upload-files"],
             },
             {
               type: "category",
