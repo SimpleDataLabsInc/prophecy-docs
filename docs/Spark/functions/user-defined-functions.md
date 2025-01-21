@@ -10,7 +10,13 @@ tags:
   - python
 ---
 
-Prophecy lets you [create](#create-udfs) or [import](#import-udfs) user-defined functions (UDFs) which can be used anywhere in the Pipeline.
+Prophecy lets you [create](#create-udfs) or [import](#import-udfs) user-defined functions (UDFs) which can be used anywhere in the pipeline. Prophecy supports creating UDFs written in Python/Scala, and importing UDFs written in SQL.
+
+| Project Type | Create UDFs   | Import UDFs   |
+| :----------- | :------------ | :------------ |
+| Python       | Python/Scala  | SQL           |
+| Scala        | Python/Scala  | Not supported |
+| SQL          | Not supported | Not supported |
 
 ## Create UDFs
 
@@ -93,9 +99,7 @@ SQL UDFs stored in Databricks Unity Catalog can be imported to Python projects a
 2. Open the Environment tab, select the appropriate Catalog and Schema. The list of SQL functions appears in the Environment tab.
    ![img](./img/sql-udf.png)
 
-3. Call the SQL UDF from any Gem in the Project. There's no need to click infer schema; Prophecy saves you a step by using the UDF to automatically infer the schema.
+3. Call the SQL UDF from any Gem in the Project.
    ![img](./img/sql-call-function.png)
 
-:::info
-Prophecy supports importing SQL functions into Python Projects.
-:::
+4. If the Fabric is updated, click the list of functions inside the Environment tab. This will refresh to reflect the functions available according to the new Fabric's credentials.
