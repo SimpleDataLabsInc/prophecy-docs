@@ -39,9 +39,9 @@ To create a new business rule:
 
 Next, you need to define the rule parameters.
 
-1. Fill in the **Column Name**. This will be the name of your output column.
-1. Define columns in the **Parameters** table using a Name, Type, and (optionally) Description.
-1. Each column in the **Parameters** table will automatically be added to the **Rules** table under **Inputs**.
+1. Define columns in the **Input Columns** table using a name, type, and (optionally) description.
+1. Define columns in the **Output Columns** table with an optional description.
+1. Each column in these tables will automatically be added to the **Rules** table.
 
 ![Rule Parameters](./img/rule-parameters.png)
 
