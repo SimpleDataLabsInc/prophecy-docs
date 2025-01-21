@@ -1,5 +1,4 @@
 ---
-sidebar_position: 5
 title: FlattenSchema
 id: flatten-schema
 description: Flatten nested data

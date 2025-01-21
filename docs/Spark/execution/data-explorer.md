@@ -2,7 +2,6 @@
 title: Data Explorer
 id: data-explorer
 description: Data Explorer for Spark
-sidebar_position: 7
 tags:
   - execution
   - explorer

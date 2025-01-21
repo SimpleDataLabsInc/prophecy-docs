@@ -34,7 +34,7 @@ Version control lets users and teams collaborate on Projects, contribute simulta
 
 ## What's next
 
-To learn about the Project lifecycle, visit [Develop and deploy a Project](docs/deployment/deploy-project.md).
+To learn about the Project lifecycle, visit [Develop and deploy a Project](docs/ci-cd/deployment/deploy-project.md).
 
 To explore different Project components, view the following pages:
 

@@ -12,7 +12,7 @@ The [Metadata](https://app.prophecy.io/metadata/entity/user) page in Prophecy pr
 
 ![Project Metadata](./img/project_metadata_1.png)
 
-Typically a Team Administrator will setup Fabrics and each user will enter their own token to use the Fabric. Once your Administrator has setup [Spark Fabrics](/docs/Spark/fabrics/fabrics.md), SQL Fabrics, or [Airflow Fabrics](/Orchestration/airflow/setup/setup.md), then each Project can access data sources via the relevant Fabric. Notice the language Type is shown for each Fabric. SQL Projects can use SQL and Airflow fabrics. Python (and Scala) Projects can use Spark and Airflow Fabrics. Clicking on the Projects tab reveals all the projects my user has permission to view. Notice the **Language** is shown for each Project; this is the language for the output code on that Project.
+Typically a Team Administrator will setup Fabrics and each user will enter their own token to use the Fabric. Once your Administrator has setup [Spark Fabrics](/docs/administration/Spark-fabrics/fabrics.md), SQL Fabrics, or [Airflow Fabrics](/Orchestration/airflow/setup/setup.md), then each Project can access data sources via the relevant Fabric. Notice the language Type is shown for each Fabric. SQL Projects can use SQL and Airflow fabrics. Python (and Scala) Projects can use Spark and Airflow Fabrics. Clicking on the Projects tab reveals all the projects my user has permission to view. Notice the **Language** is shown for each Project; this is the language for the output code on that Project.
 
 ![Project Metadata SQL](./img/project_metadata_2.png)
 
@@ -28,7 +28,7 @@ Here we can search for the entities within this Project. Where SQL Projects capt
 
 ### Project Dependencies
 
-Each Project can re-use logic from other projects and avoid code duplication. The Dependencies tab shows the Packages that the current Project is re-using. Read more about Packages and Dependencies [here](/docs/package-hub/package-builder/package-builder.md), including how to [Use a package](/docs/package-hub/package-hub.md#use-a-package) or even [build your own](/docs/package-hub/package-hub.md#build-a-package)!
+Each Project can re-use logic from other projects and avoid code duplication. The Dependencies tab shows the Packages that the current Project is re-using. Read more about Packages and Dependencies, including how to [Use a package](/docs/extensibility/package-hub/package-hub.md#use-a-package) or even [build your own](/docs/extensibility/package-hub/package-hub.md#build-a-package)!
 
 ### Project Commits
 
@@ -36,4 +36,4 @@ The `Commits` tab on the [Project Metadata](#project-metadata) page shows the cu
 
 ### Project Releases and Deployments
 
-This tab displays the history of released projects and deployed jobs. Click [here](../deployment) to learn more.
+This tab displays the history of released projects and deployed jobs. Click [here](docs/ci-cd/deployment/deployment.md) to learn more.

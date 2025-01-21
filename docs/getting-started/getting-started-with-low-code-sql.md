@@ -2,7 +2,6 @@
 title: SQL with Databricks
 id: sql-with-databricks
 description: A tutorial on using SQL with the help of Data Transformation Copilot
-sidebar_position: 1
 tags:
   - sql
   - tutorial

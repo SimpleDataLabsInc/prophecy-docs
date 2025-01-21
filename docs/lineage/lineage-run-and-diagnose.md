@@ -2,7 +2,6 @@
 title: Lineage run and diagnose
 id: lineage-run-and-diagnose
 description: Project lineage run and diagnose
-sidebar_position: 3
 tags:
   - metadata
   - lineage

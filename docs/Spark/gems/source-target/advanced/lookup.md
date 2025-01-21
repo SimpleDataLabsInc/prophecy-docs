@@ -2,7 +2,6 @@
 title: Lookup
 id: lookup
 description: Lookup
-sidebar_position: 2
 tags:
   - gems
   - lookup

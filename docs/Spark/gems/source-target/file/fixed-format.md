@@ -2,7 +2,6 @@
 title: Fixed Format
 id: fixed-format
 description: Fixed Format
-sidebar_position: 4
 tags:
   - gems
   - file

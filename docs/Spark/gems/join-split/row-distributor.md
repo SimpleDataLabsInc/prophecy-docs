@@ -1,5 +1,4 @@
 ---
-sidebar_position: 3
 title: RowDistributor
 id: row-distributor
 description: Create multiple DataFrames based on filter conditions

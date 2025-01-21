@@ -2,7 +2,6 @@
 title: CSV
 id: csv
 description: CSV
-sidebar_position: 2
 tags:
   - gems
   - file

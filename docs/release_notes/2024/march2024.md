@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 3
 id: March_2024
 description: Release notes for March
 title: March 2024

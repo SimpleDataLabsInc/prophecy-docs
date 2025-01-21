@@ -1,5 +1,4 @@
 ---
-sidebar_position: 1
 title: Basic subgraph
 id: basic-subgraph
 description: Basic Subgraph, Group your Gems in reusable Parent Gems.
@@ -15,7 +14,7 @@ import Requirements from "../\_gem-requirements.mdx";
 
 In a **Basic Subgraph**, you have the capability to encapsulate multiple distinct Gems within a single, reusable parent Gem. This organizational approach enhances the visual clarity of your Pipeline by grouping various sections together under a common parent Gem. Additionally, it empowers you to break down intricate logic into modular components, thereby streamlining the Data Engineering processes.
 
-Furthermore, the ability to [Publish a Subgraph](/docs/package-hub/package-builder/ShareableSubgraphs.md) extends the utility beyond a singular Pipeline. By doing so, you can reuse the encapsulated logic in other Pipelines or Projects, promoting code re-usability and simplifying the overall development workflow.
+Furthermore, the ability to [Publish a Subgraph](docs/extensibility/package-hub/ShareableSubgraphs.md) extends the utility beyond a singular Pipeline. By doing so, you can reuse the encapsulated logic in other Pipelines or Projects, promoting code re-usability and simplifying the overall development workflow.
 
 ## Requirements
 
@@ -54,7 +53,7 @@ As you connect the input and output ports to gems Outside the subgraph, you woul
 
 ## Subgraph Configurations
 
-Subgraphs are configurable just like [Pipelines are configurable](../../configuration/configuration.md). For Subgraphs, the configurations can apply in one of two ways: (1) Pipeline level Configurations apply to the Subgraph or (2) Specify Configurations only for the Subgraph
+Subgraphs are configurable just like [Pipelines are configurable](../../configuration.md). For Subgraphs, the configurations can apply in one of two ways: (1) Pipeline level Configurations apply to the Subgraph or (2) Specify Configurations only for the Subgraph
 
 ### Pipeline Level Configurations can apply to the Subgraph
 

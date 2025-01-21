@@ -1,5 +1,4 @@
 ---
-sidebar_position: 4
 title: Aggregate
 id: aggregate
 description: Group data and apply aggregation methods or pivot operations

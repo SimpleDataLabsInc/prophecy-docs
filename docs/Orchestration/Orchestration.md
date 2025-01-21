@@ -1,7 +1,6 @@
 ---
 title: Orchestration
 id: Orchestration
-sidebar_class_name: hidden
 description: Airflow and Databricks Jobs
 tags:
   - jobs

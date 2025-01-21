@@ -2,7 +2,6 @@
 title: Repartition
 id: Repartition
 description: Repartition or coalesce a DataFrame
-sidebar_position: 2
 tags:
   - gems
   - join-split

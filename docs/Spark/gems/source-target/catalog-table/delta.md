@@ -2,7 +2,6 @@
 title: Delta Table
 id: delta
 description: Delta Table
-sidebar_position: 1
 tags:
   - gems
   - catalog

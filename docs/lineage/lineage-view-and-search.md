@@ -2,7 +2,6 @@
 title: Lineage view and search
 id: lineage-view-and-search
 description: Project lineage view and search
-sidebar_position: 2
 tags:
   - metadata
   - lineage

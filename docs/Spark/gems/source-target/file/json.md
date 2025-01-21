@@ -2,7 +2,6 @@
 title: JSON
 id: json
 description: JSON
-sidebar_position: 7
 tags:
   - gems
   - file

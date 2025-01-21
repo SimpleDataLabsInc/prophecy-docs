@@ -1,5 +1,4 @@
 ---
-sidebar_position: 5
 title: RestAPIEnrich
 id: rest-api-enrich
 description: Enrich DataFrame with content from rest API response based on configuration

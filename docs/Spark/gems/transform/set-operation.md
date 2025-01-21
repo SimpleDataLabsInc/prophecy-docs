@@ -1,5 +1,4 @@
 ---
-sidebar_position: 8
 title: SetOperation
 id: set-operation
 description: Union, Intersect and Difference

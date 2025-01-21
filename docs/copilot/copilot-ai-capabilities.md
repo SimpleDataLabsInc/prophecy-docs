@@ -3,7 +3,6 @@ title: Data Copilot AI capabilities
 id: copilot-ai-capabilities
 description: The AI assistant capabilities for data Pipelines and models
 sidebar_label: AI capabilities
-sidebar_position: 1
 tags:
   - concepts
   - copilot
@@ -174,7 +173,7 @@ Data Copilot auto-documents anywhere you need it - from the granular data source
 
 ## Data Tests and Quality Checks
 
-Unit tests and data quality checks are crucial for Pipeline and Job productionalization, yet many teams leave little time to develop these tests or worse, don’t build them at all. With Data Copilot, you’ll have one or more suggested [unit tests](/Spark/tests) that can be seamlessly integrated into your CICD process.
+Unit tests and data quality checks are crucial for Pipeline and Job productionalization, yet many teams leave little time to develop these tests or worse, don’t build them at all. With Data Copilot, you’ll have one or more suggested [unit tests](docs/ci-cd/tests.md) that can be seamlessly integrated into your CICD process.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>

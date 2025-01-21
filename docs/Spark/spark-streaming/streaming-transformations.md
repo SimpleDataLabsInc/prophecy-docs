@@ -2,7 +2,6 @@
 title: Streaming Transformations
 id: transformations-streaming
 description: Spark Streaming with Prophecy's easy-to-use interface
-sidebar_position: 5
 tags:
   - spark
   - streaming

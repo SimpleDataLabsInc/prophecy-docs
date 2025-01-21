@@ -2,7 +2,6 @@
 title: BigQuery
 id: bigquery
 description: BigQuery
-sidebar_position: 1
 tags:
   - gems
   - warehouse

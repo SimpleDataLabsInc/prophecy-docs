@@ -1,5 +1,4 @@
 ---
-sidebar_position: 6
 title: Limit
 id: limit
 description: Limit the number of rows

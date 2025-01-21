@@ -70,7 +70,7 @@ Gem instances can be configured by hovering over their icons in the Pipeline Edi
 |  2  | Inputs/Outputs    | Inputs and outputs for this Gem instance. See [here](#inputs-outputs) for more information                                             |
 |  3  | Gem Configuration | Configuration for this instance. Each Gem Type will have a different UI. See the documentation for each Gem type for more information. |
 |  4  | Diagnostics       | If there's a problem with the configuration for this Gem instance, clicking here will show a list of configuration errors.             |
-|  5  | Unit Tests        | Each Gem instance can have its own set of Unit tests. See [here](/docs/Spark/tests.md) for more details                                |
+|  5  | Unit Tests        | Each Gem instance can have its own set of Unit tests. See [here](/ci-cd/tests) for more details                                        |
 
 ## Input/Output ports {#inputs-outputs}
 

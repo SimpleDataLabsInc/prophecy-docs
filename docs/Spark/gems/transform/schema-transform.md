@@ -1,5 +1,4 @@
 ---
-sidebar_position: 5
 title: SchemaTransform
 id: schema-transform
 description: Add, Edit, Rename or Drop Columns

@@ -1,5 +1,4 @@
 ---
-sidebar_position: 4
 title: CompareColumns
 id: compare-columns
 description: Compare columns between two dataframes
