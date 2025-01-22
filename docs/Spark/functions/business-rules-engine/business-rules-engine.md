@@ -115,7 +115,6 @@ After adding a business rule, Prophecy will automatically perform a few checks t
 
 - Each rule input column exists in the gem input.
 - The type of each rule input column matches that of the gem input.
-- Rules do not have overlapping output columns.
 
 Error messages can be found in the Diagnostics of the gem.
 
