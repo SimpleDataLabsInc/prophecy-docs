@@ -6,7 +6,7 @@ description: Use this API to manage the Git provider configured for specific Pro
 tags: [git, api, gitlab, bitbucket, github]
 ---
 
-If you've migrated Git providers, you'll need to update Prophecy Projects to use the new Git provider. You can use the Git migration API to configure Prophecy Projects to point to the migrated repositories.
+If you've migrated Git providers, you'll need to update Prophecy Projects to use the new Git provider. You can use the `updateRemoteURI` API to configure Prophecy Projects to point to the migrated repositories.
 
 You'll be able to perform the API call manually or using [Postman](#tips). If you need to migrate projects in bulk, [follow these steps](#tips) before calling the `updateRemoteURI` API.
 
@@ -107,7 +107,7 @@ Response:
 | externalRepoUri         | Repository target for migration. Be sure to use the \*.git suffix as appropriate for cloning using https or SSH options. | Required | "https://gitlab.com/****/examplerepo.git" |
 | externalGitProvider     | Possible values (case sensitive): Github, GithubEnterprise, GitLab, GitLabEnterprise, BitBucket, AzureDevOps, Other      | Required | GitLab                                    |
 | externalRepoEmail       | If provided, the API call will validate the two repos are the same.                                                      | Optional | "myemail@mycompany.com"                   |
-| externalRepoUsername    | If provided, the API call will validate the two repos are the same.                                                      | Optional | "myGitUsername"                           |
+| externalRepoUsername    | If provided, the API call will validate the two repos are the same.                                                      | Optional | "myGitLabUsername"                        |
 | externalRepoAccessToken | If provided, the API call will validate the two repos are the same.                                                      | Optional | "gitlab-token"                            |
 
 ### Each user needs to update their Git credential
