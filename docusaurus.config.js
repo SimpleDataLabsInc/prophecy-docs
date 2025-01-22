@@ -106,11 +106,15 @@ const config = {
             label: "Transpiler",
           },
           {
-            to: "/getting-started/getting-help",
+            to: "/getting-help",
             label: "Help",
             position: "right",
           },
-          { to: "http://app.prophecy.io/", label: "Login", position: "right" },
+          {
+            to: "mailto:docs@prophecy.io",
+            label: "Feedback",
+            position: "right",
+          },
         ],
       },
       footer: {
@@ -141,6 +145,10 @@ const config = {
           {
             title: "More",
             items: [
+              {
+                label: "Documentation feedback",
+                href: "mailto:docs@prophecy.io",
+              },
               {
                 label: "Login",
                 href: "https://app.prophecy.io/",

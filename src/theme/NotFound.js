@@ -13,10 +13,8 @@ export default function NotFound() {
               <p>We could not find what you were looking for.</p>
               <p>
                 Please contact Prophecy at{" "}
-                <a href="mailto:contact.us@prophecy.io">
-                  contact.us@prophecy.io
-                </a>{" "}
-                to let us know our link is broken.
+                <a href="mailto:docs@prophecy.io">docs@prophecy.io</a> to let us
+                know our link is broken.
               </p>
             </div>
           </div>
