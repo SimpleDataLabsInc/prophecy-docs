@@ -6,13 +6,17 @@ description: Use this API to manage the Git provider configured for specific Pro
 tags: [git, api, gitlab, bitbucket, github]
 ---
 
-If you've migrated Git providers, you'll need to update Prophecy Projects to use the new Git provider. You can use the GraphQL API to configure Prophecy Projects to point to the migrated repositories. The steps below will work for all the Git providers supported in Prophecy.
+If you've migrated Git providers, you'll need to update Prophecy Projects to use the new Git provider. You can use the git migration API to configure Prophecy Projects to point to the migrated repositories.
+
+You'll be able to perform the API call manually or using [Postman](#anchor1). If you need to migrate projects in bulk, [follow these steps](#anchor2) before running the git migration API.
 
 ### Steps
 
+The steps below will work for all the Git providers supported in Prophecy.
+
 1. Login to Prophecy as the Team Admin.
-2. Generate a [Prophecy API token](https://docs.prophecy.io/api/#personal-access-token).
-3. Craft the API calls as below. Use Postman if desired.
+2. Generate a  [Prophecy API token](https://docs.prophecy.io/api/#personal-access-token).
+3. Craft the API calls as below.
 
 Example:
 
