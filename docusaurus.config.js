@@ -106,7 +106,7 @@ const config = {
             label: "Transpiler",
           },
           {
-            to: "/getting-started/getting-help",
+            to: "/getting-help",
             label: "Help",
             position: "right",
           },
