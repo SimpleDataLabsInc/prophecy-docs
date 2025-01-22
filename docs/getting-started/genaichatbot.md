@@ -134,9 +134,9 @@ For Databricks Unity Catalog, the `setup_Databricks.sh` script has already creat
 
 ![Explore the interface](img/genai_low_code_interface.png)
 
-When you open any Prophecy Pipeline, you’ll see lots of features accessible. From the Environment tab, browse available datasets and tables in the linked data catalog. See a variety of Gems available out-of-the-box by clicking for example the Transformation or Join/Split headers. The visually designed Pipeline is translated to actual Spark code written in Scala, pySpark, or SQL. Just click at the top of the canvas to switch from the visual editor to the code editor. At the very bottom notice there’s a button to commit local changes to Git. Prophecy Pipelines are committed to the user’s Git repository and therefore offer the best software development practices: code review, versioning, proper releases, etc.
+When you open any Prophecy Pipeline, you’ll see lots of features accessible. From the Environment tab, browse available datasets and tables in the linked data catalog. See a variety of gems available out-of-the-box by clicking for example the Transformation or Join/Split headers. The visually designed Pipeline is translated to actual Spark code written in Scala, pySpark, or SQL. Just click at the top of the canvas to switch from the visual editor to the code editor. At the very bottom notice there’s a button to commit local changes to Git. Prophecy Pipelines are committed to the user’s Git repository and therefore offer the best software development practices: code review, versioning, proper releases, etc.
 
-The `play` button runs the Pipeline and offers data previews between Gems. This interactive feature is super handy to see how each Gem manipulates the data and to quickly check that the data is produced as expected. The project runs entirely on Spark and will scale for any data volume, big and small.
+The `play` button runs the Pipeline and offers data previews between gems. This interactive feature is super handy to see how each gem manipulates the data and to quickly check that the data is produced as expected. The project runs entirely on Spark and will scale for any data volume, big and small.
 
 Now that we’ve had a brief introduction to the Prophecy Pipeline editor, let’s dig into the Pipelines specific to the Generative AI Chatbot. The Pipelines accomplish two goals: (a) build a Knowledge Warehouse full of vectorized web documentation, and (b) a streaming inference Pipeline to read messages from Slack, query an LLM to formulate answers, and send them back to Slack. Notice most of the data manipulations are standard transformations to help construct a prompt for the OpenAI model (or the model of your choice).
 
@@ -148,13 +148,13 @@ We are ingesting unstructured data from [Prophecy Documentation](https://docs.pr
 
 ![Web Ingest Pipeline](img/genai_web_ingest.png)
 
-A new Gem is introduced in this Pipeline: the TextProcessing Gem helps scrape the URL and content from the Documentation pages.
+A new gem is introduced in this Pipeline: the TextProcessing gem helps scrape the URL and content from the Documentation pages.
 
 The series of data transformations culminates with nicely formatted web Documentation data saved in a Unity Catalog table to end the Web Ingest Pipeline.
 
 ### 2b. Web Vectorize Pipeline
 
-Continuing with the goal of ingesting and vectorizing our web content, here we have the Web Vectorize Pipeline. We want to assign each document a number sequence, or vector, to map the similarity and relationships between those documents. Here we selected OpenAI [ada-002](https://openai.com/blog/new-and-improved-embedding-model) model based on performance and cost. As some of the documents are very long, we split them into smaller chunks. Each chunk is sent to OpenAI’s ada model. Run the Pipeline using the “Play” button and data preview buttons appear between Gems. Open the data preview following the OpenAI Gem and see the schema now includes a vector (or “embedding”) provided by the OpenAI model for each text chunk.
+Continuing with the goal of ingesting and vectorizing our web content, here we have the Web Vectorize Pipeline. We want to assign each document a number sequence, or vector, to map the similarity and relationships between those documents. Here we selected OpenAI [ada-002](https://openai.com/blog/new-and-improved-embedding-model) model based on performance and cost. As some of the documents are very long, we split them into smaller chunks. Each chunk is sent to OpenAI’s ada model. Run the Pipeline using the “Play” button and data preview buttons appear between gems. Open the data preview following the OpenAI gem and see the schema now includes a vector (or “embedding”) provided by the OpenAI model for each text chunk.
 
 ![Web Vectorize Pipeline](img/genai_web_vectorize.png)
 
@@ -162,8 +162,8 @@ Once the document chunks have each been assigned a vector, these “embeddings�
 
 #### 2b.i Configuring the Web Vectorize Pipeline
 
-1. Verify the Vectorize OpenAI Gem is configured with Databricks scope `open_ai` and Databricks key `api_key`.
-2. Verify the vector_db Target Gem is configured with the Databricks scope `pinecone` and Databricks key `token`.
+1. Verify the Vectorize OpenAI gem is configured with Databricks scope `open_ai` and Databricks key `api_key`.
+2. Verify the vector_db Target gem is configured with the Databricks scope `pinecone` and Databricks key `token`.
 
 ## Step 3: Live Inference
 
@@ -171,17 +171,17 @@ Once the document chunks have each been assigned a vector, these “embeddings�
 
 Finally, we get to run the most exciting Pipeline! The Chatbot Live streaming Pipeline ingests messages from Slack and sends the question and the relevant context to OpenAI which provides an answer.
 
-After ingesting the Slack question message and doing some transformation steps, the Chatbot Live Pipeline queries OpenAI to create an embedding specifically for the question. Then, the Pinecone Lookup Gem identifies documents, based on their vectors, which could be relevant for the question. With the IDs and vectors in hand, we need to pull from the full document corpus the relevant documentation text. The Join Gem does exactly this: gets content for the relevant document IDs. Now we are well on our way to creating a wonderful prompt! The OpenAI Gem sends the relevant content chunks and the Slack question in a prompt to OpenAI, and the model returns an answer. Finally, the Pipeline writes the answer back to the Slack thread.
+After ingesting the Slack question message and doing some transformation steps, the Chatbot Live Pipeline queries OpenAI to create an embedding specifically for the question. Then, the Pinecone Lookup gem identifies documents, based on their vectors, which could be relevant for the question. With the IDs and vectors in hand, we need to pull from the full document corpus the relevant documentation text. The Join gem does exactly this: gets content for the relevant document IDs. Now we are well on our way to creating a wonderful prompt! The OpenAI gem sends the relevant content chunks and the Slack question in a prompt to OpenAI, and the model returns an answer. Finally, the Pipeline writes the answer back to the Slack thread.
 
 ![Chatbot Live Pipeline](img/genai_chatbot_live.png)
 
 #### 3a.1 Configuring the Chatbot Live Pipeline
 
-1. Verify the `slack_chat` Source Gem is configured with Databricks scope `slack` and Databricks Key `app_token`. While this token begins with `xapp-`, be sure not to use the plaintext value, as using the Databricks secret is a much more secure approach.
-2. Update the `only_user_msgs` Filter Gem with the Slack app member ID:
+1. Verify the `slack_chat` Source gem is configured with Databricks scope `slack` and Databricks Key `app_token`. While this token begins with `xapp-`, be sure not to use the plaintext value, as using the Databricks secret is a much more secure approach.
+2. Update the `only_user_msgs` Filter gem with the Slack app member ID:
    ![Slack App Member ID](img/genai_memberId.png)
-3. Verify the `bot_message` Target Gem is configured with Databricks scope `slack` and Databricks Key `token`. While this bot user OAuth token begins with `xoxb-`, be sure not to enter the plaintext value.
-4. Run the streaming Pipeline using the big `play` button rather than the individual Gem `play` buttons
+3. Verify the `bot_message` Target gem is configured with Databricks scope `slack` and Databricks Key `token`. While this bot user OAuth token begins with `xoxb-`, be sure not to enter the plaintext value.
+4. Run the streaming Pipeline using the big `play` button rather than the individual gem `play` buttons
 5. Type a question into the Slack channel and check the Pipeline to see if the question is ingested and processed. Use the interims (as described above) to watch your message travel through the Pipeline. Error messages are visible in the data preview samples.
 6. Ask lots of questions!
 
@@ -199,7 +199,7 @@ What kind of Generative AI applications will you create? We'd love to hear your 
 
 **Does Prophecy support additional models, including private models?**
 
-Stay tuned for support for additional models beyond those provided by OpenAI. Also, Prophecy will support private models and offer additional machine-learning Gems out of the box. [**Teams**](https://teams.com/) message ingestion will be available out of the box as well. Of course, Prophecy is entirely extensible to interface with more applications. If you'd like to see a particular application supported, don't hesitate to let us know.
+Stay tuned for support for additional models beyond those provided by OpenAI. Also, Prophecy will support private models and offer additional machine-learning gems out of the box. [**Teams**](https://teams.com/) message ingestion will be available out of the box as well. Of course, Prophecy is entirely extensible to interface with more applications. If you'd like to see a particular application supported, don't hesitate to let us know.
 
 **Exactly which content is sent to OpenAI in the Chatbot Live Pipeline?**
 

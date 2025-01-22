@@ -17,7 +17,7 @@ In Prophecy, Datasets are grouped by [Projects](docs/concepts/project/project.md
 
 ## Create Datasets
 
-Datasets are created where they are first used in a [Source or Target Gems](docs/Spark/gems/source-target/source-target.md). A Dataset definition includes its:
+Datasets are created where they are first used in a [Source or Target gems](docs/Spark/gems/source-target/source-target.md). A Dataset definition includes its:
 
 - **Type**: The type of data you are reading/writing like CSV, Parquet files or catalog tables.
 - **Location**: The location of your data. It could be a file path for CSV or a table name.

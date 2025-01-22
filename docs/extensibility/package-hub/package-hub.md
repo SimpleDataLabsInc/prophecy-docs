@@ -15,7 +15,7 @@ Prophecy introduces **Package Hub,** which enables data practitioners to create 
 
 <br />
 
-A Package is a versioned Project that can be shared across teams. As such, a Package can contain Pipeline templates, [custom Gems](docs/extensibility/gem-builder/spark-gem-builder.md), functions, subgraph templates, etc - a reusable version of everything a Project contains. Package dependencies allow us to re-use components so we don’t have to rebuild them. The coding community has been using packages for ages, and finally the non-coding data practitioners can take advantage of the same idea. Packages are shareable within and across teams. For extra visibility, the Package Hub is a curated selection of Packages that your teams create and publish for other users to leverage.
+A Package is a versioned Project that can be shared across teams. As such, a Package can contain Pipeline templates, [custom gems](docs/extensibility/gem-builder/spark-gem-builder.md), functions, subgraph templates, etc - a reusable version of everything a Project contains. Package dependencies allow us to re-use components so we don’t have to rebuild them. The coding community has been using packages for ages, and finally the non-coding data practitioners can take advantage of the same idea. Packages are shareable within and across teams. For extra visibility, the Package Hub is a curated selection of Packages that your teams create and publish for other users to leverage.
 
 Just include a Package as a dependency to take advantage of its contents. See the sections below for step-by-step instructions on how to [use](#use-a-package), [build](#build-a-package), and [share](#share-a-package) Packages.
 
@@ -25,12 +25,12 @@ Open the helloworld project or create a new project. Notice the dependencies inc
 
 ![2](img/2-ph.png)
 
-On opening a NewPipeline, notice all the transformation dropdown Gems are from `SparkBasics` package. Drag and drop a Gem like Deduplicate from SparkBasics package to use in a NewProject Pipeline.
+On opening a NewPipeline, notice all the transformation dropdown gems are from `SparkBasics` package. Drag and drop a gem like Deduplicate from SparkBasics package to use in a NewProject Pipeline.
 
 ![3](img/3-ph.png)
 Already you are employing an engineering best practice: package dependencies! When we say that a project USES a package, another way to say it is “a Project has a dependency on the Package.” `NewProject` has a dependency on SparkBasics Package. But don’t stop there. You’ll want to use packages shared by your teammates!
 
-Adding a Package to your Project is easy. From a Pipeline, just **(1)Add a new Package.** Now the Package and all of the contents - Pipeline templates, custom Gems, jobs, UDFs, etc - will be accessible in your Pipeline and the entire Project. Want to see the list of Packages available for your Project? From the **(2)Project page,** click **(3)Dependencies** to see the Packages listed as Dependencies for your Project. **(4)Add or remove** dependencies using the dropdown.
+Adding a Package to your Project is easy. From a Pipeline, just **(1)Add a new Package.** Now the Package and all of the contents - Pipeline templates, custom gems, jobs, UDFs, etc - will be accessible in your Pipeline and the entire Project. Want to see the list of Packages available for your Project? From the **(2)Project page,** click **(3)Dependencies** to see the Packages listed as Dependencies for your Project. **(4)Add or remove** dependencies using the dropdown.
 
 ![4](img/4-ph.png)
 
@@ -38,11 +38,11 @@ Another great way to find Packages is via the **(1)Package Hub.** This Hub serve
 
 ![5](img/5-ph.png)
 
-A Package can contain Pipeline templates, custom Gems, Subgraph templates, Functions, and more. In fact, a Package can contain anything a Project contains. Why? **A Package is a Project that has been Released with a version.**
+A Package can contain Pipeline templates, custom gems, Subgraph templates, Functions, and more. In fact, a Package can contain anything a Project contains. Why? **A Package is a Project that has been Released with a version.**
 
 A Package is a set of logic to apply in various situations. Any changes to this logic would be done via versioned package release. For this reason, the projects that USE the package will not be able to change the package.
 
-Let’s diagram a slightly more complex scenario that represents how your teams might use Packages. (So far we’ve considered `SparkBasics`, a Project created by the engineering team at Prophecy which only contains the Gems we already know and love.) We need a slightly more complex scenario to explore re-using Pipeline templates and custom Gems. (Detailed pages exploring re-usable subgraphs, UDFs, and jobs will be available in the near future.)
+Let’s diagram a slightly more complex scenario that represents how your teams might use Packages. (So far we’ve considered `SparkBasics`, a Project created by the engineering team at Prophecy which only contains the gems we already know and love.) We need a slightly more complex scenario to explore re-using Pipeline templates and custom gems. (Detailed pages exploring re-usable subgraphs, UDFs, and jobs will be available in the near future.)
 
 Consider now the `Framework` Project and two Projects that have dependencies on the `Framework` Project.
 
@@ -59,17 +59,17 @@ The MarketingAnalytics team can create a **(1)new Pipeline configuration** and *
 
 Now, in the same `CustomersModeling` Project, **(1)select** the desired configuration instance, and **(2)run** the Pipeline with that configuration. Here the `GenericCleanup` Pipeline is a readonly template, so the MarketingAnalytics team gets to take advantage of the logic while passing configurations relevant for their own use cases.
 
-If a change is needed in the `Framework` Pipelines, the changes must be made in the `Framework` Project. When the `Framework` Project is released with the changes, `MarketingLeads` Project can **(3)update** the dependency. With `Framework v0.0.2`, the `GenericCleanup` Pipeline has been updated with **(4)additional Gems** which can now be used with the `LeadsCleanup` configuration.
+If a change is needed in the `Framework` Pipelines, the changes must be made in the `Framework` Project. When the `Framework` Project is released with the changes, `MarketingLeads` Project can **(3)update** the dependency. With `Framework v0.0.2`, the `GenericCleanup` Pipeline has been updated with **(4)additional gems** which can now be used with the `LeadsCleanup` configuration.
 
-### Re-using custom Gems
+### Re-using custom gems
 
-Configuring Pipelines is just one way to take advantage of the shared, reusable components in a Package. Another (very powerful) way is to use custom Gems.
+Configuring Pipelines is just one way to take advantage of the shared, reusable components in a Package. Another (very powerful) way is to use custom gems.
 
 ![9](img/9-ph.png)
 
-If the MarketingAnalytics team wishes to use one of the custom Gems from `Framework` in a new Pipeline, just **(1)drag-and-drop the Gem**, e.g. DataMasking , to the Pipeline canvas. **(2)Visually configure** the Gem and execute the Pipeline as you would for any Transformation Gem.
+If the MarketingAnalytics team wishes to use one of the custom gems from `Framework` in a new Pipeline, just **(1)drag-and-drop the gem**, e.g. DataMasking , to the Pipeline canvas. **(2)Visually configure** the gem and execute the Pipeline as you would for any Transformation gem.
 
-Likewise, new Dataset Format Gems from `Framework` can be used in a new Pipeline.
+Likewise, new Dataset Format gems from `Framework` can be used in a new Pipeline.
 
 ![10](img/10-ph.png)
 
@@ -79,7 +79,7 @@ Try this out for yourself! In the next sections, we’ll walk through how to [bu
 
 ## Build a package
 
-A package is simply a released project. The project can contain Pipeline templates, functions, subgraph templates, custom Gems, etc. The most important of these components are custom Gems, so we’ll focus on building a Package with a Custom Gem here.
+A package is simply a released project. The project can contain Pipeline templates, functions, subgraph templates, custom gems, etc. The most important of these components are custom gems, so we’ll focus on building a Package with a Custom gem here.
 
 ![11](img/11-ph.png)
 
@@ -87,29 +87,29 @@ Start by **(1)creating** a new Project called `SecurityPython`. There are no cha
 
 ![12](img/12-ph.png)
 
-From the Project Browser, **(1)Create a new Gem.** Give the Gem a **(2)name** like `Encrypt`. This will be a Transformation Gem; another time try creating a different Gem mode or category.
+From the Project Browser, **(1)Create a new gem.** Give the gem a **(2)name** like `Encrypt`. This will be a Transformation gem; another time try creating a different gem mode or category.
 
-Next specify the Gem’s code.
+Next specify the gem’s code.
 
 ![13](img/13-ph.png)
 
-When you create a new Gem, a **(1)code guide** appears. Use the guide or replace with your **(2)custom code.** Explore the [Gem Structure](docs/extensibility/gem-builder/spark-gem-builder.md) to understand the code requirements. Then go to the **(3)Visual View** and make sure the UI appears with [no errors.](docs/extensibility/gem-builder/spark-gem-builder.md) Now the Custom Gem is ready to try in the canvas.
+When you create a new gem, a **(1)code guide** appears. Use the guide or replace with your **(2)custom code.** Explore the [Gem Structure](docs/extensibility/gem-builder/spark-gem-builder.md) to understand the code requirements. Then go to the **(3)Visual View** and make sure the UI appears with [no errors.](docs/extensibility/gem-builder/spark-gem-builder.md) Now the Custom gem is ready to try in the canvas.
 
 ![14](img/14-ph.png)
 
-**(1)Click and drag** the custom Gem Encrypt (in the list of Gems within the SecurityPython Project) to a new or existing Pipeline canvas. **(2) Configure** the custom Gem as with any other Gem: **(3)define expressions,** check the **(4)output** column list, even **(5)infer** the schema based on the attached Fabric. **(6)Save** the configured Gem to start using it.
+**(1)Click and drag** the custom gem Encrypt (in the list of gems within the SecurityPython Project) to a new or existing Pipeline canvas. **(2) Configure** the custom gem as with any other gem: **(3)define expressions,** check the **(4)output** column list, even **(5)infer** the schema based on the attached Fabric. **(6)Save** the configured gem to start using it.
 
 ![15](img/15-ph.png)
 
-**(1)Run** the custom Gem to check whether the functionality works as expected. Click **(2)Data** to view the data input and **(3)output** preview. The `customer_id` is encrypted after our function is applied.
+**(1)Run** the custom gem to check whether the functionality works as expected. Click **(2)Data** to view the data input and **(3)output** preview. The `customer_id` is encrypted after our function is applied.
 
-Click [here](docs/extensibility/gem-builder/spark-gem-builder.md) for a deep dive on building Packages with Custom Gems.
+Click [here](docs/extensibility/gem-builder/spark-gem-builder.md) for a deep dive on building Packages with Custom gems.
 
-Once you have tested your Gem in the canvas, and you are happy with both the **Gem UI Component** and **Gem Code Logic**, you will want to release a tagged version.
+Once you have tested your gem in the canvas, and you are happy with both the **Gem UI Component** and **Gem Code Logic**, you will want to release a tagged version.
 
 ![16](img/16-ph.png)
 
-**(1) Commit** and **(2)Release** the Project, including the Custom Gem. Continue developing and releasing new versions as incremental improvements!
+**(1) Commit** and **(2)Release** the Project, including the Custom gem. Continue developing and releasing new versions as incremental improvements!
 
 ```
 Note:
@@ -127,11 +127,11 @@ The entire Project is **(1)packaged** into a jar or wheel file and uploaded to P
 
 Select the **(2) Metadata** tab, then select your **(3)Project’s page**. Then select **(4)Access**, select the **(5)Teams** that should have access to the package. **(6)Send an invitation** to those teams. For the team’s best packages that are intended for broad consumption, **(7)Publish** to the Package Hub.
 
-If another team wants to use the `SecurityPython` package in their newProject, just add `SecurityPython` as a dependency for `newProject`. Now the user can see and use the `Encrypt` custom Gem.
+If another team wants to use the `SecurityPython` package in their newProject, just add `SecurityPython` as a dependency for `newProject`. Now the user can see and use the `Encrypt` custom gem.
 
-We have built and shared our package with a custom `Encrypt` Gem!
+We have built and shared our package with a custom `Encrypt` gem!
 
-With Package Hub, Platform teams can build solutions once, and re-use the logic for additional cases. Errors can be handled just once. Updated Packages take advantage of logic updates and error-fixes. Data Analyst teams will build Pipelines faster by taking advantage of the building blocks - custom Gems, UDFs - provided by the Platform team. Or, Data Analyst teams might create their own building blocks! Everyone can create and share Pipeline components with Package Hub. We’d love to hear how your teams are creating, sharing, and even curating Packages. [Schedule](https://www.prophecy.io/request-a-demo) some time with us - we would LOVE to hear your feedback!
+With Package Hub, Platform teams can build solutions once, and re-use the logic for additional cases. Errors can be handled just once. Updated Packages take advantage of logic updates and error-fixes. Data Analyst teams will build Pipelines faster by taking advantage of the building blocks - custom gems, UDFs - provided by the Platform team. Or, Data Analyst teams might create their own building blocks! Everyone can create and share Pipeline components with Package Hub. We’d love to hear how your teams are creating, sharing, and even curating Packages. [Schedule](https://www.prophecy.io/request-a-demo) some time with us - we would LOVE to hear your feedback!
 
 ## FAQ
 
@@ -150,5 +150,5 @@ A: One excellent option here is to **Clone** the Project instead of use as a Pac
 ![18](img/18-ph.png)
 Just **(1)Clone** the `Framework` Project, and **(2)provide** a new name, team, Git account, and repository.
 
-Now the MarketingAnalytics team has their own Project, `MarketingFramework`, to evolve in their own direction. Notice the Pipelines are not templates, rather the `GenericCleanup` Pipeline can be edited by adding a new Gem, like Repartition:
+Now the MarketingAnalytics team has their own Project, `MarketingFramework`, to evolve in their own direction. Notice the Pipelines are not templates, rather the `GenericCleanup` Pipeline can be edited by adding a new gem, like Repartition:
 ![19](img/19-ph.png)

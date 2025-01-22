@@ -264,32 +264,32 @@ Building your model is very simple, thanks to the drag-and-drop interface. In th
 1. First we add the `nation` seed, that we’ve previously defined, by dragging and dropping it on the canvas.
 2. Then we add a table from an **Environment.** We click on the **Environment** tab in the left sidebar and drag the customer table from the `samples.tpch` catalog and database to the canvas.
 3. Note, that when two sources are dragged closely to each other a **Join** component is automatically created (as demonstrated on the video).
-4. Then we drag and drop an **Aggregate** component from the Transform Gems drawer and connect it to the upstream **Join** component.
+4. Then we drag and drop an **Aggregate** component from the Transform gems drawer and connect it to the upstream **Join** component.
 5. Finally connect your **Aggregate** to the **TargetModel** that defines your view itself.
 
 #### 4.4.2 Define business logic
 
-Once we have dragged and dropped all the relevant Gems (transformations) on our canvas, it’s time to fill in the business logic.
+Once we have dragged and dropped all the relevant gems (transformations) on our canvas, it’s time to fill in the business logic.
 
-![Edit Gem](img/4-5-edit-gem.png)
+![Edit gem](img/4-5-edit-gem.png)
 
-Clicking on any of the Gems shows these options.
+Clicking on any of the gems shows these options.
 
 **(1) Name Edit** - click to edit the name of the transformation for easy identification.
 
-**(2) Gem Edit** - to modify the Gem logic click on the **Open >** button.
+**(2) Gem Edit** - to modify the gem logic click on the **Open >** button.
 
-**(3) More** - to see more Gem configuration options, like editing comments, changing phases or deleting the Gem, click on the ... button. Note, that to delete the selected Gem you can also press **delete / backspace** on your keyboard.
+**(3) More** - to see more gem configuration options, like editing comments, changing phases or deleting the gem, click on the ... button. Note, that to delete the selected gem you can also press **delete / backspace** on your keyboard.
 
-**(4) Run** - runs the model upto the selected Gem. We will learn more about this in the section 7.3 Interactively test.
+**(4) Run** - runs the model up to the selected gem. We will learn more about this in the section 7.3 Interactively test.
 
-**(5) See errors** - To see errors related to your Gem, hover over the red icon next to the Gem. If there’s no red icon, that means your Gem has no errors and is good to go!
+**(5) See errors** - To see errors related to your gem, hover over the red icon next to the gem. If there’s no red icon, that means your gem has no errors and is good to go!
 
 #### Join definition
 
 ![Join definition](img/4-6-join-definition.png)
 
-Let’s start by building the **Join** transformation. Upon opening the Gem, you can see a drawer pop-up which provides several helpful features. For transparency, you can always see the **(1) Input schema** on the left-hand side, **(4) Errors** in the footer, and have the ability to **(5) Run** the Gem on the top right.
+Let’s start by building the **Join** transformation. Upon opening the gem, you can see a drawer pop-up which provides several helpful features. For transparency, you can always see the **(1) Input schema** on the left-hand side, **(4) Errors** in the footer, and have the ability to **(5) Run** the Gem on the top right.
 
 To fill-in our **(3) Join condition** within the **(2) Conditions** section, type `nation.n_nationkey = customers.c_nationkey`. The following condition, for every single customer, finds a nation based on the c_nationkey field.
 

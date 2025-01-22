@@ -23,7 +23,7 @@ Airflow provides a flexible scheduling system that allows you to set up complex 
 
 #### Extensibility
 
-Airflow is highly extensible, allowing you to define custom operators and sensors to suit your specific needs. It supports a wide range of plugins and integrations. Prophecy maintains this extensibility via [Package Hub](docs/extensibility/package-hub/package-hub.md). Users can create Gems to represent any custom Operator or Sensor.
+Airflow is highly extensible, allowing you to define custom operators and sensors to suit your specific needs. It supports a wide range of plugins and integrations. Prophecy maintains this extensibility via [Package Hub](docs/extensibility/package-hub/package-hub.md). Users can create gems to represent any custom Operator or Sensor.
 
 #### Monitoring and Logging
 
@@ -42,13 +42,13 @@ You have the flexibility to integrate and utilize Prophecy with your managed Air
 
 - **Setup**: Seamlessly connect to your Airflow Instance, or use Prophecy hosted Airflow for getting started.
 
-- **Development**: A visual drag-and-drop interface that allows users to design Jobs by connecting Gems and defining dependencies effortlessly.
+- **Development**: A visual drag-and-drop interface that allows users to design Jobs by connecting gems and defining dependencies effortlessly.
 
 - **Scheduling and Triggers**: Easily set up schedules for your Jobs and define triggers to automate the execution.
 
 - **Monitoring and Reporting**: Monitor the progress of your Jobs, receive notifications on status, and access logs and reporting features for real-time insights into Jobs execution.
 
-- **Extensibility**: For advanced users, Prophecy's Airflow interface offers scripting capabilities and Gem builder to accommodate custom requirements.
+- **Extensibility**: For advanced users, Prophecy's Airflow interface offers scripting capabilities and gem builder to accommodate custom requirements.
 
 This combination of visual development and the power of Airflow enables organizations to streamline data pipelines, reduce development time, and improve operational efficiency.
 

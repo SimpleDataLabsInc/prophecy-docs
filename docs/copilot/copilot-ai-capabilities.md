@@ -10,7 +10,7 @@ tags:
   - capabilities
 ---
 
-Prophecy Data Copilot provides suggestions from an AI model as you develop your data Pipelines and Models. You can view and incorporate suggestions directly within the Prophecy visual editor and code editor. Data Copilot makes suggestions for your entire Pipeline, for a single Gem (transformation), and even for individual expressions within each Gem.
+Prophecy Data Copilot provides suggestions from an AI model as you develop your data Pipelines and Models. You can view and incorporate suggestions directly within the Prophecy visual editor and code editor. Data Copilot makes suggestions for your entire Pipeline, for a single gem (transformation), and even for individual expressions within each gem.
 
 ## Supported AI capabilities by engine
 
@@ -59,27 +59,27 @@ You can also call Data Copilot to modify an existing Model. Type a new text prom
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-Added/updated Gems are highlighted in yellow.
+Added/updated gems are highlighted in yellow.
 
 ## Next-transformation suggestions
 
-Data Copilot can suggest the next transformation in a series or the next expression within a Gem.
+Data Copilot can suggest the next transformation in a series or the next expression within a gem.
 
-### Suggest Gems
+### Suggest gems
 
 Data Copilot can suggest the next transformation for Leaf Nodes in a graph.
 
-![Suggest Gems](img/copilot_next_suggestion.png)
+![Suggest gems](img/copilot_next_suggestion.png)
 
 See the following Join suggestion example:
 
 1. Select and drop a Dataset of interest on the canvas.
 2. Data Copilot suggests Datasets which are frequently used with the selected Dataset.
-3. Data Copilot then suggests a next transformation, in this case, a Join Gem.
+3. Data Copilot then suggests a next transformation, in this case, a Join gem.
 
 ### Suggest Expressions
 
-As we continue development within Gems, Data Copilot can suggest expressions within Gems.
+As we continue development within gems, Data Copilot can suggest expressions within gems.
 
 ![Suggest expressions](img/copilot_next_suggestion_expression.png)
 
@@ -88,11 +88,11 @@ Within our [advanced Expression Builder](/Spark/expression-builder) you can:
 1. Type an English text prompt.
 2. Data Copilot generates a code expression for a particular column.
 3. Review the code expression, and if you'd like, try again with a different prompt.
-4. Run the Pipeline up to and including this Gem, and observe the resulting data sample.
+4. Run the Pipeline up to and including this gem, and observe the resulting data sample.
 
 ## Generate with AI
 
-Data Copilot can generate script Gems, user-defined functions in Spark, or macro functions in SQL.
+Data Copilot can generate script gems, user-defined functions in Spark, or macro functions in SQL.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -102,7 +102,7 @@ Data Copilot can generate script Gems, user-defined functions in Spark, or macro
 
 ## Map with AI
 
-You don't have to worry about mapping the schema across your Model. Data Copilot will map the target schema with the existing Gems and Datasets.
+You don't have to worry about mapping the schema across your Model. Data Copilot will map the target schema with the existing gems and Datasets.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -124,7 +124,7 @@ Data Copilot helps you build your Model in the code interface by making predicti
 
 ## Fix with AI
 
-If there are any errors in your Gems, perhaps introduced upstream without your knowledge, Data Copilot will automatically suggest one-click fixes.
+If there are any errors in your gems, perhaps introduced upstream without your knowledge, Data Copilot will automatically suggest one-click fixes.
 
 The Fix with AI option appears on the diagnostic screen where you see the error messages or directly with the expression itself.
 
@@ -138,9 +138,9 @@ The Fix with AI option appears on the diagnostic screen where you see the error 
 
 Understanding data assets is much easier with Data Copilot’s auto-documentation. Data Copilot delivers summary documentation suggestions for all Datasets, Pipelines, Models, and Orchestrations.
 
-### Explain Gems
+### Explain gems
 
-Here Data Copilot provides a high-level summary of a Pipeline and more detailed description of each Gem.
+Here Data Copilot provides a high-level summary of a Pipeline and more detailed description of each gem.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -163,7 +163,7 @@ This is a big time saver! You can edit the documentation suggestions and commit 
 
 ### Write Commit Messages and Release Notes
 
-Data Copilot auto-documents anywhere you need it - from the granular data sources and columns to Gem labels, all the way to project descriptions. Copilot even helps you write commit messages and release notes.
+Data Copilot auto-documents anywhere you need it - from the granular data sources and columns to gem labels, all the way to project descriptions. Copilot even helps you write commit messages and release notes.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>

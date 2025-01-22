@@ -16,11 +16,11 @@ For example, the following test named `ref_int_orders_customers` checks the vali
 
 ![Project test canvas](img/project-test-canvas.png)
 
-This test starts with several models from the `HelloWorld_SQL` Project, combines their data with a series of transformation steps, and feeds the resulting table into the Data Test Gem.
+This test starts with several models from the `HelloWorld_SQL` Project, combines their data with a series of transformation steps, and feeds the resulting table into the Data Test gem.
 
 If there are `customer_id` entries in the `orders` table that are not present in the `customers` table, then the `ref_int_orders_customers` test fails.
 
-You can test any series of transformations with a Data Test Gem. The following sections include more details about data tests.
+You can test any series of transformations with a Data Test gem. The following sections include more details about data tests.
 
 ## What you'll need to know
 

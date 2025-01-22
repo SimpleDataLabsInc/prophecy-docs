@@ -250,7 +250,7 @@ Here we create a `customers_nations` model that’s going to enrich our customer
 
 The `customers_nations` model is stored as a `.sql` file on Git. The table or view defined by the model is stored on the SQL warehouse, database, and schema defined in the attached Fabric.
 
-Suggestions are provided each step of the way. If Copilot's suggestions aren't exactly what you need, just select and configure the Gems as desired. Click [here](../SQL/gems/joins.md) for details on configuring joins or [here](../SQL/gems/transform/aggregate.md) for aggregations.
+Suggestions are provided each step of the way. If Copilot's suggestions aren't exactly what you need, just select and configure the gems as desired. Click [here](../SQL/gems/joins.md) for details on configuring joins or [here](../SQL/gems/transform/aggregate.md) for aggregations.
 
 ### 4.5 Interactively Test
 
@@ -260,19 +260,19 @@ Now that our model is fully defined, with all the logic specified, it’s time t
 
 Prophecy makes **interactively testing** the models incredibly easy! Simply:
 
-1. Click the **Play** button on any of the Gems and the model with all of it’s upstream dependencies will be executed.
+1. Click the **Play** button on any of the gems and the model with all of it’s upstream dependencies will be executed.
 2. Once the model runs, the **Result** icon appears.
 3. Click the Result icon to view a **Sample** set of records.
 
-Notice Copilot is offering suggested fixes when errors appear. See how **Fix with AI** works [here](/docs/copilot/copilot-ai-capabilities.md#fix-with-ai). Explore suggested fixes in the canvas, inside each transformation Gem, or inside Gem expressions.
+Notice Copilot is offering suggested fixes when errors appear. See how **Fix with AI** works [here](/docs/copilot/copilot-ai-capabilities.md#fix-with-ai). Explore suggested fixes in the canvas, inside each transformation gem, or inside gem expressions.
 
 ## 5. Code view
 
-The visual developers will appreciate the drag-n-drop canvas, but sometimes it's also nice to view the code. Already Prophecy creates highly performant code behind the scenes. Just click the **Code View** to reveal the SQL queries we've generated using our visual design editor. Each Gem is represented by a CTE or subquery. For example, the Join Gem `NATIONS_CUSTOMERS` is highlighted in both visual and code views.
+The visual developers will appreciate the drag-n-drop canvas, but sometimes it's also nice to view the code. Already Prophecy creates highly performant code behind the scenes. Just click the **Code View** to reveal the SQL queries we've generated using our visual design editor. Each gem is represented by a CTE or subquery. For example, the Join gem `NATIONS_CUSTOMERS` is highlighted in both visual and code views.
 
 ![ToggleToCode](./img/Snow4.6_toggleVisualCode.png)
 
-You may wish to edit the code view - give it a try! Add a SQL statement in the code view and notice the visual editor displays the updated code. For example, we've added a limit statement in the code view, and a new limit Gem appears in the visual view.
+You may wish to edit the code view - give it a try! Add a SQL statement in the code view and notice the visual editor displays the updated code. For example, we've added a limit statement in the code view, and a new limit gem appears in the visual view.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>

@@ -10,16 +10,16 @@ tags:
   - deploy
 ---
 
-Once you have developed and tested your custom components like Gems, Pipelines, Models, or Jobs in Prophecy, the next step is to make them available for use. This involves Releasing and Deploying them to the respective environments.
+Once you have developed and tested your custom components like gems, pipelines, models, or jobs in Prophecy, the next step is to make them available for use. This involves Releasing and Deploying them to the respective environments.
 You can Release and Deploy via Prophecy UI or you can use [Prophecy Build Tool](/docs/ci-cd/prophecy-build-tool/prophecy-build-tool.md) CLI to integrate with any other CI-CD tools.
 Lets see how you can do it via the Prophecy UI below.
 
 ## Overview
 
-As part of the release process, we start by creating a [Git Tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging) with a specified version. This tag is then pushed to your configured Git repository. Following this, the Pipelines, Gems, and Jobs in the Project are built and deployed to the respective environments.
+As part of the release process, we start by creating a [Git Tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging) with a specified version. This tag is then pushed to your configured Git repository. Following this, the pipelines, gems, and jobs in the Project are built and deployed to the respective environments.
 Here's a breakdown of what deploying means for each component:
 
-- **Gems**: With Prophecy 3.2, you can create [Custom Gems](docs/extensibility/gem-builder/spark-gem-builder.md) and use in your Pipelines. During the release, these gems are built and uploaded to an internal Artifactory. They aren't directly copied to your environments, as they are used in generating code for the Pipelines, not during Job/Pipeline execution. Note, the code for Gems do get committed to your Git repo as part of the Project.
+- **Gems**: With Prophecy 3.2, you can create [custom gems](docs/extensibility/gem-builder/spark-gem-builder.md) and use in your Pipelines. During the release, these gems are built and uploaded to an internal Artifactory. They aren't directly copied to your environments, as they are used in generating code for the Pipelines, not during Job/Pipeline execution. Note, the code for gems do get committed to your Git repo as part of the Project.
 
 - **Pipelines**: Each Pipeline in the project is compiled and built into an artifact (Wheel file for Python and Jar file for Scala). These artifacts are then uploaded to your environment as part of the release process.
 
@@ -29,7 +29,7 @@ There is no specific deployment step needed for other entities.
 
 ## How to Release a Project
 
-Once you've committed and merged your changes, you're ready to release them. To do this, Simply proceed with the [Release and Deploy](/docs/concepts/git/git.md#release-a-branch), which takes care of both the release and deployment of Pipelines, Gems, and Jobs to respective environments.
+Once you've committed and merged your changes, you're ready to release them. To do this, Simply proceed with the [Release and Deploy](/docs/concepts/git/git.md#release-a-branch), which takes care of both the release and deployment of pipelines, gems, and jobs to respective environments.
 
 ![Release_screen](img/release_and_deploy_screen.png)
 
@@ -39,7 +39,7 @@ Only an Admin user of the team can initiate a Project Release and Deployment.
 
 ## Advanced Release Settings
 
-For most users, a regular project release takes care of both the release and deployment of Pipelines, Gems, and Jobs to respective environments. However, for users who want more control over their deployment process, we offer some advanced options in Project Settings.
+For most users, a regular project release takes care of both the release and deployment of pipelines, gems, and jobs to respective environments. However, for users who want more control over their deployment process, we offer some advanced options in Project Settings.
 
 To access these settings, go to the **(1) Settings page** in your Project, and click on **(2) Deployment**.
 
@@ -53,7 +53,7 @@ When you navigate to Settings and Deployment, you'll find the following options:
 
 ### Deploy on Release
 
-This option is enabled by default, meaning the release and deployment happen in a single step. The **Release and Deploy** button handles building and deploying all Pipelines, Gems, and Jobs, and uploading the required artifacts to the respective environments.
+This option is enabled by default, meaning the release and deployment happen in a single step. The **Release and Deploy** button handles building and deploying all pipelines, gems, and jobs, and uploading the required artifacts to the respective environments.
 You can switch the selection to **Staged Release and Deployment** to break down the process into two steps: **Release** and **Deploy**.
 
 ### Staged Release and Deployment
@@ -72,7 +72,7 @@ After the release, you can directly proceed to deploy or choose to deploy later 
 
 ![Deploy_separately](img/deploy_separately.png)
 
-This Deploy step builds all the Pipelines and Gems, uploads the artifacts, and schedules all the Jobs in the Project to the respective environments.
+This Deploy step builds all the pipelines and gems, uploads the artifacts, and schedules all the jobs in the project to the respective environments.
 
 ![Deployment_steps](img/deployment_steps.png)
 
@@ -85,7 +85,7 @@ This is an optional step and overrides the environment for this particular Job d
 **(3) Pick Jobs to Deploy** table provides an overview of the deployment status for each Job, indicating the targeted Fabric, and any actions taken, such as addition, deletion, or modification.
 In the **Staged Release and Deployment** setting, the ability to select or deselect specific Jobs is disabled. For more information on enabling this functionality, continue reading or directly jump [here](#selective-job-deployment).
 
-Click on **(4) Deploy** to start the deployment process. This will now build your Pipelines, Gems and update the Jobs as shown below. You would be able to see logs for each step in this screen.
+Click on **(4) Deploy** to start the deployment process. This will now build your Pipelines, gems and update the Jobs as shown below. You would be able to see logs for each step in this screen.
 
 ![Deployment_logs](img/deployment_steps_complete.png)
 

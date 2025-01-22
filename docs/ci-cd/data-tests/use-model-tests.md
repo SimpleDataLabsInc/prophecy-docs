@@ -15,7 +15,7 @@ Model and column data tests are dbt macro generated tests that can be parametriz
 
 :::note
 
-There could be many tests within a project. Each test is checking a table created by your choice of input models, data sources, and transformation Gems.
+There could be many tests within a project. Each test is checking a table created by your choice of input models, data sources, and transformation gems.
 
 :::
 
@@ -78,7 +78,7 @@ If changes are made to the columns or schemas used in your data test, then Proph
 
 After you’ve developed your model or column test, you can run it.
 
-1. From the Data Tests tab of your Target Model, select the data tests that you'd like to run, and then click **Run tests** to execute your tests. The table input to the Target Model Gem is what’s tested.
+1. From the Data Tests tab of your Target Model, select the data tests that you'd like to run, and then click **Run tests** to execute your tests. The table input to the Target Model gem is what’s tested.
 
    ![Run model tests](img/model-test-run.png)
 
@@ -130,7 +130,7 @@ To Schedule your project to run with tests, follow these steps:
 
    ![Create a job](img/model-test-create-job.png)
 
-2. Drag a Model Gem to your visual canvas.
+2. Drag a Model gem to your visual canvas.
 
 3. Click the Model to open the Model Properties.
 

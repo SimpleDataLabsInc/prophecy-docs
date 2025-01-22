@@ -14,7 +14,7 @@ Project tests perform a SQL query that checks the executed result of your projec
 
 :::note
 
-There could be many tests within a project. Each test is checking a table created by your choice of input models, data sources, and transformation Gems.
+There could be many tests within a project. Each test is checking a table created by your choice of input models, data sources, and transformation gems.
 
 :::
 
@@ -42,7 +42,7 @@ To develop a project test, start by opening a project:
 
 3. Click **OK** to create your new test.
 
-4. Create your test model by dragging and dropping Gems to your visual canvas. Connect them to your Data Test. You can also write your test on the Code view. You can use as many models and other database objects as you’d like in your test.
+4. Create your test model by dragging and dropping gems to your visual canvas. Connect them to your Data Test. You can also write your test on the Code view. You can use as many models and other database objects as you’d like in your test.
 
    ![Project test canvas](img/project-test-canvas.png)
 
@@ -50,11 +50,11 @@ To develop a project test, start by opening a project:
 
 After you’ve developed your project test and executed all of your models, you can run the test.
 
-1. Click the **Play** button on either the canvas or an individual Gem to execute your test. The table input to the data test Gem is what’s tested.
+1. Click the **Play** button on either the canvas or an individual gem to execute your test. The table input to the data test gem is what’s tested.
 
-   1. Run a whole test. Clicking the canvas **Play** button executes the complete test and shows the interim data after the Data Test Gem. Additionally, it displays the final test status, succeeded, warning, or failed, in a summary.
+   1. Run a whole test. Clicking the canvas **Play** button executes the complete test and shows the interim data after the Data Test gem. Additionally, it displays the final test status, succeeded, warning, or failed, in a summary.
 
-   2. Run a partial test. Clicking the Gem **Play** button executes the test SQL up to a particular Gem, and displays that Gem’s data on the output. This option doesn’t execute the data test.
+   2. Run a partial test. Clicking the gem **Play** button executes the test SQL up to a particular gem, and displays that gem’s data on the output. This option doesn’t execute the data test.
 
 2. Click **See Run Details** to view the test Summary. Depending on the outcome of the test, the icon displays a different color.
 
@@ -64,7 +64,7 @@ After you’ve developed your project test and executed all of your models, you 
 
    ![View test summary](img/project-test-summary.png)
 
-In addition to the previous relational integrity test, you can create tests to check that the total payment amount from customers is positive or simply check that all of your tables are still accessible. You can test any series of transformation Gems, because a project test simply asserts that the resulting table meets a certain criteria.
+In addition to the previous relational integrity test, you can create tests to check that the total payment amount from customers is positive or simply check that all of your tables are still accessible. You can test any series of transformation gems, because a project test simply asserts that the resulting table meets a certain criteria.
 
 ## Fix a failed test
 
@@ -118,7 +118,7 @@ To Schedule your project to run with tests, follow these steps:
 
 1. Under the Project Browser, click **Add Job**.
 
-2. Drag a Model Gem to your visual canvas.
+2. Drag a Model gem to your visual canvas.
 
 3. Click the Model to open the Model Properties.
 

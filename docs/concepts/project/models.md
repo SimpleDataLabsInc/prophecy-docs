@@ -58,7 +58,7 @@ Open the HelloWorld_SQL Project. See the **(1)Lineage** for the HelloWorld_SQL P
 ![model-view](./img/models/model-view.png)
 Now we can explore the `customers` Model more closely. The Model is easy to understand with interchangable **(1)visual** and **(2)code** views. The visual view depicts each small step needed to move from the referenced tables/seeds/Models to the final `customers` Model. Each transformation step or Common Table Expression (CTE) is called a **(3)Gem** in Prophecy.
 
-The **(4)`Aggregate`** step is represented visually as an `Aggregate` Gem and in code as the highlighted CTE code fragment. By popular demand, the visual and code formats are editable interchangeably. Visual developers and SQL coders can work together in the same project, and both types of edits are incorporated to the project when [committed and merged](/docs/concepts/git/git.md).
+The **(4)`Aggregate`** step is represented visually as an `Aggregate` gem and in code as the highlighted CTE code fragment. By popular demand, the visual and code formats are editable interchangeably. Visual developers and SQL coders can work together in the same project, and both types of edits are incorporated to the project when [committed and merged](/docs/concepts/git/git.md).
 
 ### Models vs Pipelines
 
