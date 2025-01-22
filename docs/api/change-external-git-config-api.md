@@ -181,7 +181,6 @@ tableQueryProject(<insert_project_uid_here>: String!) {
 }
 ```
 
-Now you can use the returned list of Project UIDs to call the Git migration API, once per Project UID.
-This can be automated using a simple script.
+Now you can use the returned list of Project UIDs to call the `updateRemoteURI` API, once per Project UID. This can be automated using a simple script.
 
 </details>
