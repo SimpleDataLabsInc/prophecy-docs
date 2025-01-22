@@ -68,7 +68,7 @@ Once done, hit **(6) Save**.
 
 ### 1.3 Adding Email Connection
 
-To be able to send Email via Airflow using an Email Gem, you need to have Email connection in Prophecy Managed Airflow.
+To be able to send Email via Airflow using an Email gem, you need to have Email connection in Prophecy Managed Airflow.
 Click again on Add Connection button and select Email in **(1) Connection Type**.
 
 Provide a **(2) Connection Name** to identify your connection, add a **(3) Description** of your choice, and provide the **(4) Host** as your SMTP host example `smtp.gmail.com`. Provide the login credentials for this server in **(5)Login** and **(6)Password** and provide your SMTP port in **(7) Port**.
@@ -116,7 +116,7 @@ After creating the Fabric, Lets create our first Airflow Job.
 
 ## 2. Create an Airflow Job
 
-A Job is an entity that contains Gems to represent a DAG consisting of various Tasks (Pipelines/Models/Scripts, etc) which you can Run once or schedule to run at a frequency. Each Job would represent an Airflow DAG in Python.
+A Job is an entity that contains gems to represent a DAG consisting of various Tasks (Pipelines/Models/Scripts, etc) which you can Run once or schedule to run at a frequency. Each Job would represent an Airflow DAG in Python.
 
 Let's see how to create an Airflow Job in Prophecy.
 
@@ -130,11 +130,11 @@ Add a **(7) Description**, about the Job you are creating. Once done, click **(8
 ![Create_Job](img/3.9_Create_Job.png)
 
 This will take you to the **Job editor** where you would be creating the actual DAG for the Job.
-Let's start adding Gems to our Job now.
+Let's start adding gems to our Job now.
 
-### 2.1 Adding S3 file Sensor Gem
+### 2.1 Adding S3 file Sensor gem
 
-Click on **(1) Sensors**, and Drag the **(2) S3FileSensor Gem** from the dropdown to the canvas. Then click the newly added Gem and click **(3) Open** to open the Gem Configurations.
+Click on **(1) Sensors**, and Drag the **(2) S3FileSensor gem** from the dropdown to the canvas. Then click the newly added gem and click **(3) Open** to open the gem Configurations.
 ![Add_S3_gem](img/3.10_Add_s3_gem.png)
 
 Here, we will specify the S3 bucket/path on which we want to trigger the Job.
@@ -142,9 +142,9 @@ In **(1) S3 Path(s)** specify the complete path of file in your Bucket. Airflow 
 
 ![Add_S3_gem_details](img/3.11_Add_s3_gem_details.png)
 
-### 2.2 Adding Email Gem
+### 2.2 Adding Email gem
 
-Click on the **(1) Operators**, and Drag the **(2) Email Gem** from the dropdown to the canvas. If you drag this closer to output port of the previous Gem, it will get auto-connected to it. Then click the newly added Gem and click **(3) Open** to open the Gem Configurations.
+Click on the **(1) Operators**, and Drag the **(2) Email gem** from the dropdown to the canvas. If you drag this closer to output port of the previous gem, it will get auto-connected to it. Then click the newly added gem and click **(3) Open** to open the gem Configurations.
 
 ![Add_email_gem](img/3.12_Add_email_gem.png)
 
@@ -155,9 +155,9 @@ Once done, Click **(5) Save**!
 
 ![Add_email_gem_details](img/3.13_Add_email_gem_details.png)
 
-### 2.3 Adding Spark Pipeline Gem
+### 2.3 Adding Spark Pipeline gem
 
-If you have a Spark Databricks connection and a Spark Project with Pipeline, you can include Spark Pipeline Gems in the Job. Click on **(1) Operators**, and Drag the **(2) Pipeline Gem** from the dropdown to the canvas. Drag it close to the output port of the Email Gem, so that it gets auto-connected. Then click the newly added Gem and click **(3) Open** to open the Gem Configurations.
+If you have a Spark Databricks connection and a Spark Project with Pipeline, you can include Spark Pipeline gems in the Job. Click on **(1) Operators**, and Drag the **(2) Pipeline gem** from the dropdown to the canvas. Drag it close to the output port of the Email gem, so that it gets auto-connected. Then click the newly added gem and click **(3) Open** to open the gem configurations.
 
 ![Add_Pipeline_Gem](img/3.14_Add_pipeline_gem.png)
 
@@ -168,9 +168,9 @@ Pick (**2) Fabric and Cluster size to run this Pipeline** for running this Pipel
 
 ![Add_pipeline_gem_details](img/3.15_Add_pipeline_gem_details.png)
 
-### 2.4 Adding SQL DBT Gem
+### 2.4 Adding SQL DBT gem
 
-Click on **(1) Operators**, and Drag the **(2) DBT Gem** from the dropdown to the canvas. Drag it close to the output port of the Pipeline Gem, so that it gets auto-connected. Then click the newly added Gem and click **(3) Open** to open the Gem Configurations.
+Click on **(1) Operators**, and Drag the **(2) DBT gem** from the dropdown to the canvas. Drag it close to the output port of the Pipeline gem, so that it gets auto-connected. Then click the newly added gem and click **(3) Open** to open the gem Configurations.
 
 ![Add_DBT_Gem](img/3.16_Add_DBT_gem.png)
 

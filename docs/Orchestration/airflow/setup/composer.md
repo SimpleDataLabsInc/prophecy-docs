@@ -43,7 +43,7 @@ You need Airflow to talk to various other systems in your Data Platform to be ab
 For these, we create [connections](https://airflow.apache.org/docs/apache-airflow/stable/authoring-and-scheduling/connections.html) in Airflow.
 
 You can map connections already created in your Composer, in the Connections Tab of the Fabric.
-Prophecy will use these connections to fetch the connection-id to generate the correct Airflow Code when you use these in your Airflow Gems.
+Prophecy will use these connections to fetch the connection-id to generate the correct Airflow Code when you use these in your Airflow gems.
 
 For adding a connection, Click on **(1) Add Connection** button. This Opens up the Connection form as shown.
 

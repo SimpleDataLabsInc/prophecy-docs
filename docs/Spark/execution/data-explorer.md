@@ -41,4 +41,4 @@ Download the visible data in the UI in CSV and JSON format using the dedicated d
 
 ### Create Gems
 
-After analyzing the data, users can retain the filter and sort options in the Pipeline by clicking on the **Create Gems** option. This action saves the applied filter and sort as a `Filter` and `OrderBy` Gem in the Pipeline.
+After analyzing the data, users can retain the filter and sort options in the Pipeline by clicking on the **Create gems** option. This action saves the applied filter and sort as a `Filter` and `OrderBy` gem in the Pipeline.

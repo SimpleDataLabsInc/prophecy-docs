@@ -15,11 +15,11 @@ You can use Pipeline Monitoring to help identify errors and failures at runtime.
 
 After your scheduled or ad-hoc run, you can view detected failures on your Pipeline. Gems with an error or warning are highlighted on the Visual canvas.
 
-- Hover over the Gem to see failure details, such as run duration and the exception.
+- Hover over the gem to see failure details, such as run duration and the exception.
 
 ![Gem failure-details](img/gem-failure-details.png)
 
-- You can click **Open Logs** to open the Runtime Logs of that Gem.
+- You can click **Open Logs** to open the Runtime Logs of that gem.
 
 From the Runtime Logs panel, you can see other logs of the current run, including those that have succeeded. You can filter or sort the logs, and adjust the view.
 

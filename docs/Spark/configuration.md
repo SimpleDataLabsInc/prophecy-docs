@@ -33,9 +33,9 @@ of configuration can be created per Pipeline.
 
 ![Configurations - Common](img/configuration/config-pipeline-eg1.png)
 
-### Syntax for using configuration inside Gems
+### Syntax for using configuration inside gems
 
-We support language-specific config syntaxes for different data types and coding languages for configurations inside of your Spark Gems. We also support a common Jinja config syntax. You can use either syntax or a combination of them.
+We support language-specific config syntaxes for different data types and coding languages for configurations inside of your Spark gems. We also support a common Jinja config syntax. You can use either syntax or a combination of them.
 
 #### Language-specific Config syntax
 
@@ -53,7 +53,7 @@ See the following language-specific config syntax for SQL, Scala, and Python in 
 
 #### Jinja Config syntax
 
-You can choose to use a common Jinja config syntax for configurations inside of your Spark Gems.
+You can choose to use a common Jinja config syntax for configurations inside of your Spark gems.
 
 You must enable it by navigating to **...** > **Pipeline Settings**.
 
@@ -75,7 +75,7 @@ Jinja config syntax supports the following functionalities:
 
 - **Integer/String data type** - You can use a data type as it is, such as an integer field as an integer by using `{{ integer_field }}`. For strings, use `<some_character>{{ integer_field }}<some_character>`.
 - **Concatenation** - You can define multiple Jinja syntaxes in the same string, and the generated code will be a formatted string. For example, `'{{c_string}}___{{ c_int }}'`
-- **SQL Statement queries** - You can use Jinja syntax in SQL Statement Gem queries. For example, `select {{col1}} from {{table}} where {{condition}}`
+- **SQL Statement queries** - You can use Jinja syntax in SQL Statement gem queries. For example, `select {{col1}} from {{table}} where {{condition}}`
 - **Nested `call_func`** - You can use Jinja syntax inside of `call_func` or `call_function`, including those that are nested within other functions.
 
   ```
@@ -87,7 +87,7 @@ Jinja config syntax supports the following functionalities:
 Now let's use the [above defined configurations](#pipeline-configuration) in the below Pipeline.
 ![Pipeline view](img/configuration/config-pipeline-view-eg.png)
 
-### Using Config in limit Gem
+### Using Config in limit gem
 
 #### SQL Visual Language
 
@@ -107,7 +107,7 @@ In the below image `{{num_top_customers}}` is fetching the integer value defined
 
 ![Config Limit Example](img/configuration/config-pipeline-limit-eg-jinja.png)
 
-Also see the following syntax examples for specific Gem property field data types:
+Also see the following syntax examples for specific gem property field data types:
 
 - SColumnExpression: `lit("{{a.b.c}}")`
 - SString: `{{ a.b.c }}`
@@ -118,7 +118,7 @@ You can use the following syntax examples for accessing elements of array and re
 - For array: `{{ config1.array_config[23] }}`
 - For record: `{{ record1.record2.field1 }}`
 
-### Using Spark-expression Config type in Gem
+### Using Spark-expression Config type in gem
 
 Here we have used Spark expression directly from our config value to populate a column.
 
@@ -141,7 +141,7 @@ In the below image: <br />
 ![Config Reformat example](img/configuration/config-pipeline-reformat-eg-scala-python.png)
 
 :::note
-Similarly configurations defined as type `Spark-expression` can be used directly in filter, join, reformat etc Gems directly.
+Similarly configurations defined as type `Spark-expression` can be used directly in filter, join, reformat etc gems directly.
 :::
 
 #### Jinja Config {#Spark-expression}
@@ -153,7 +153,7 @@ In the below image: <br />
 
 ![Config Reformat example](img/configuration/config-pipeline-reformat-eg-jinja.png)
 
-### Using config in paths for Source/Target Gems
+### Using config in paths for Source/Target gems
 
 Config can also be used to refer to paths. This type of configuration comes in handy in situation where you have DEV, QA, and PROD data, and you want to configure Dataset (or in general the Job runs) based on which environment you are running it in.
 

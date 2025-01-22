@@ -17,7 +17,7 @@ Click [here](/docs/lineage/lineage-run-and-diagnose.md) for further details
 
 Click [here](/docs/Orchestration/pipeline-monitoring/use-pipeline-monitoring.md) for further details.
 
-### Data Quality Gem for Spark
+### Data Quality gem for Spark
 
 Detailed documentation coming soon.
 

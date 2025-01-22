@@ -15,8 +15,8 @@ There are 2 ways to run a Pipeline interactively:
 ![Interactive run options](img/interactive-execution-play-options.png)
 
 1. Using the play button from the bottom right side. This would execute the entire Pipeline.
-2. Using the play button on a particular Gem. This would only execute the flow in the Pipeline up to and including that Gem. This comes
-   in handy during development, so that we don't have to run the entire Pipeline to debug/change a particular Gem.
+2. Using the play button on a particular gem. This would only execute the flow in the Pipeline up to and including that gem. This comes
+   in handy during development, so that we don't have to run the entire Pipeline to debug/change a particular gem.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -26,9 +26,9 @@ There are 2 ways to run a Pipeline interactively:
 ## Interims
 
 During development, often the user will want to see their data to make more sense of it and to check whether the expected output is getting
-generated or not after the transformation. Prophecy generates these data samples as `Interims`, which are temporarily cached previews of data after each Gem.
+generated or not after the transformation. Prophecy generates these data samples as `Interims`, which are temporarily cached previews of data after each gem.
 
-Which Gems automatically get Interims created is controlled by the Pipeline settings as shown below.
+Which gems automatically get Interims created is controlled by the Pipeline settings as shown below.
 
 ![Data and Job Sampling](img/interactive-execution-job-data-sampling.png)
 

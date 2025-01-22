@@ -54,18 +54,18 @@ This is because we decided to represent whether a customer was a high spender or
 
 ## Use a business rule in your Pipeline
 
-To use a business rule in your Pipeline, you can use the [SchemaTransform Gem](docs/Spark/gems/transform/schema-transform.md).
+To use a business rule in your Pipeline, you can use the [SchemaTransform gem](docs/Spark/gems/transform/schema-transform.md).
 
-1. Add a SchemaTransform Gem to the Pipeline.
-1. Open the Gem and add the appropriate input.
+1. Add a SchemaTransform gem to the Pipeline.
+1. Open the gem and add the appropriate input.
 1. Click **Add Transformation**.
 1. In the **Operation** dropdown, choose **Add Rule**.
 1. Choose the appropriate rule in the **Rule** field. This will populate the **New Column** field. If an input column has the same name as the new column, then its data will be overwritten—no new column will be appended.
 
-After completing these steps, you will see the required inputs for the business rule. Prophecy will automatically check if each the required input columns are present in the Gem input. Prophecy will also check to see if the column types match. Any error messages can be found in the Diagnostics of the Gem.
+After completing these steps, you will see the required inputs for the business rule. Prophecy will automatically check if each the required input columns are present in the gem input. Prophecy will also check to see if the column types match. Any error messages can be found in the Diagnostics of the gem.
 
 :::note
-You can add multiple business rules to the SchemaTransform Gem at a time. You can also use the output column of one rule as an input column for a subsequent rule.
+You can add multiple business rules to the SchemaTransform gem at a time. You can also use the output column of one rule as an input column for a subsequent rule.
 :::
 
 ## Managing business rules in Packages

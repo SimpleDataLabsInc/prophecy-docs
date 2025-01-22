@@ -1,8 +1,8 @@
 ---
-title: Parameterized Gems
+title: Parameterized gems
 draft: true
 id: parameterized-gems
-description: Parameterized Gems
+description: Parameterized gems
 tags: []
 ---
 
@@ -22,17 +22,17 @@ As we can see, both the above pipelines perform similar operations while ingesti
 
 ![Generic_Pipeline](img/generic_pipeline.png)
 
-This process of creating generic framework helps enterprises speed up the development process by making the existing building blocks reusable. Now let's try to see how you can parameterize any Gem for building generic frameworks.
+This process of creating generic framework helps enterprises speed up the development process by making the existing building blocks reusable. Now let's try to see how you can parameterize any gem for building generic frameworks.
 
-## Parameterize Gem
+## Parameterize gem
 
-Currently, Prophecy allows you to parameterize only those gems which have any table component inside it. For example, let's try to parameterize the Expression table inside the Reformat Gem.
+Currently, Prophecy allows you to parameterize only those gems which have any table component inside it. For example, let's try to parameterize the Expression table inside the Reformat gem.
 
-Go to Reformat Gem, click on the (1) parameterize icon and create a (2) config key where all the transformation will be stored as shown below:
+Go to Reformat gem, click on the (1) parameterize icon and create a (2) config key where all the transformation will be stored as shown below:
 
 ![Configure_Reformat](img/configure_reformat.png)
 
-Write the (1) transformation logic inside the Reformat Gem and click on (2) Save button as shown below:
+Write the (1) transformation logic inside the Reformat gem and click on (2) Save button as shown below:
 
 ![Reformat_Logic](img/reformat_logic.png)
 

@@ -13,7 +13,7 @@ tags:
   - smtp
 ---
 
-To be able to send email via Airflow using an Email Gem, you need to have Email connection in Prophecy Managed Airflow.
+To be able to send email via Airflow using an Email gem, you need to have Email connection in Prophecy Managed Airflow.
 
 :::info
 

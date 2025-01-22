@@ -50,7 +50,7 @@ tags:
 
   For more information, see [Variant schema](docs/SQL/visual-expression-builder/variant-schema.md).
 
-- **Flatten Schema Gem**: When processing raw data it can be useful to flatten complex data types like `Struct`s and `Array`s into simpler, flatter schemas. This Gem builds upon the variant type support by allowing you to preserve all schemas, and not just the first one.
+- **Flatten Schema gem**: When processing raw data it can be useful to flatten complex data types like `Struct`s and `Array`s into simpler, flatter schemas. This gem builds upon the variant type support by allowing you to preserve all schemas, and not just the first one.
 
   ![Input schema](./../img/oct-flatten_input.png)
 
@@ -58,15 +58,15 @@ tags:
 
   For more information, see [FlattenSchema](/docs/SQL/gems/transform/flattenschema.md).
 
-- **Deduplicate Gem**: You can use the deduplicate Gem to remove rows with duplicate values of specified columns. There are four **Row to keep** options that you can use in your deduplicate Gem.
+- **Deduplicate gem**: You can use the deduplicate gem to remove rows with duplicate values of specified columns. There are four **Row to keep** options that you can use in your deduplicate gem.
 
   ![Deduplicate Row to keep](./../img/oct-deduplicate_row_to_keep.png)
 
   For more information, see [Deduplicate](/docs/SQL/gems/transform/deduplicate.md).
 
-- **Gem builder**: You can add custom Gems to your SQL projects using the Gem builder. You can create custom source, target, and transformation Gems, and then publish them for your team to use.
+- **Gem builder**: You can add custom gems to your SQL projects using the gem builder. You can create custom source, target, and transformation gems, and then publish them for your team to use.
 
-  Our SQL Gem builder supports Databricks and Snowflake SQL.
+  Our SQL gem builder supports Databricks and Snowflake SQL.
 
   ![Gem builder customize interface](./../img/oct-gem-builder-interface.png)
 
@@ -84,14 +84,14 @@ You must use Google Chrome to use the voice interface.
 
 For example, here are a few ideas that you can base your prompts on:
 
-- Propagate the customer ID through all the Gems
-- Add a reformat Gem after this
-- Join selected Gems on common columns
-- Join this Gem with payment data
+- Propagate the customer ID through all the gems
+- Add a reformat gem after this
+- Join selected gems on common columns
+- Join this gem with payment data
 
-![Modify Gems in copilot conversations](./../img/oct-modify-gems-copilot2.png)
+![Modify gems in copilot conversations](./../img/oct-modify-gems-copilot2.png)
 
-Added/updated Gems are highlighted in yellow.
+Added/updated gems are highlighted in yellow.
 
 - **Use previous prompts in chat with AI Copilot**: Now you can revert to a previous prompt, and Copilot will return the result for that prompt. Go ahead and edit the previous prompt - AI Copilot will accept the edits and generate a suggestion accordingly.
 

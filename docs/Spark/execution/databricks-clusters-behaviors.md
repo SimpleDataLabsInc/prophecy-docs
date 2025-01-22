@@ -18,21 +18,21 @@ Databricks clusters come with various [Access Modes](https://docs.databricks.com
 ## Interims
 
 During development, often the user will want to see their data to make more sense of it and to check whether the expected output is getting
-generated or not after the transformation. Prophecy generates these data samples as `Interims`, which are temporarily cached previews of data after each Gem.
+generated or not after the transformation. Prophecy generates these data samples as `Interims`, which are temporarily cached previews of data after each gem.
 To check more about interims, please refer [here](/docs/Spark/execution/interactive-execution.md#interims).
 
 Depending on the type of clusters, we have two modes of Interims
 
 ### Regular Interims
 
-For `Single User` clusters, and `No isolation Shared` clusters, we have interims available after each Gem of Pipeline. These are available on both Unity and Non Unity catalog workspaces.
+For `Single User` clusters, and `No isolation Shared` clusters, we have interims available after each gem of Pipeline. These are available on both Unity and Non Unity catalog workspaces.
 
 ![Regular Interims](img/SingleModeInterims.png)
 
 ### Vanilla Interims
 
 For `Shared mode` clusters, we have added interims on all Tail nodes of the Pipeline.
-These interims will come Just before Target Gems, and if there is no Target Gem, then as a dangling edge after last Gem. See below images for the same.
+These interims will come Just before Target gems, and if there is no Target gem, then as a dangling edge after last gem. See below images for the same.
 
 ![Vanilla Interims](img/SharedModeInterims.png)
 
