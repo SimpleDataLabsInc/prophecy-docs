@@ -76,16 +76,17 @@ X-Auth-Token: '****'
 Content-Type: 'application/json'
 
 Body:
-mutation {
-  updateRemoteUri(
-    projectUID: "<insert_project_UID_here>"
-    externalRepoUri: "<insert_target_repo_here>"
-    externalGitProvider: <insert_target_git_provider_here>
-    externalRepoEmail: "<insert_your_email_here>"
-    externalRepoUsername: "<insert_your_git_provider_username_here>"
-    externalRepoAccessToken: "<insert_gitlab_token_here>"
-  )
-}
+Body:
+"query": "mutation {
+            updateRemoteUri(
+              projectUID: \"***123***\"
+              externalRepoUri: \"https://gitlab.com/****/my-destination-repo.git\"
+              externalGitProvider: GitLab
+              externalRepoEmail: \"****@****.com\"
+              externalRepoUsername: \"****\"
+              externalRepoAccessToken: \"glpat-***\"
+            )
+         }"
 ```
 
 </TabItem>
