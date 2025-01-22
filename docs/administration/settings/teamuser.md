@@ -11,7 +11,7 @@ tags:
 Teams represent a group of users who work together.
 
 - Teams are the primary mechanism of ownership:
-  - **Teams own projects** where Pipelines, Datasets and Jobs live
+  - **Teams own projects** where pipelines, datasets, and jobs live
   - **Teams own execution Fabrics** that provide the execution and storage resources for execution including Spark clusters
 - Users get access via teams:
   - **Personal Teams** For every user, a default team in created that only contains one user. If only one user is to be given access to a project, it can be done via this team

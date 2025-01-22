@@ -8,7 +8,7 @@ tags:
   - Project
 ---
 
-The [Metadata](https://app.prophecy.io/metadata/entity/user) page in Prophecy provides a searchable directory of Projects and Project components including Pipelines, Models, and Jobs. We can also see Teams and importantly [Fabrics](/docs/concepts/fabrics/fabrics.md).
+The [Metadata](https://app.prophecy.io/metadata/entity/user) page in Prophecy provides a searchable directory of Projects and Project components including pipelines, models, and jobs. We can also see Teams and importantly [Fabrics](/docs/concepts/fabrics/fabrics.md).
 
 ![Project Metadata](./img/project_metadata_1.png)
 
@@ -24,7 +24,7 @@ The **About** tab displays the Project's language and description. Switch betwee
 
 ![Project Metadata Python](./img/project_metadata_4.png)
 
-Here we can search for the entities within this Project. Where SQL Projects capture a series of Data Transformation steps using **Models**, Python and Scala Projects use **Pipelines**. All Projects contain Jobs for scheduling the Models or Pipelines. SQL Projects have a few more items, including **Seeds** for defining starter datasets.
+Here we can search for the entities within this project. Where SQL projects capture a series of Data Transformation steps using **models**, Python and Scala projects use **Pipelines**. All projects contain jobs for scheduling the models or pipelines. SQL projects have a few more items, including **seeds** for defining starter datasets.
 
 ### Project Dependencies
 

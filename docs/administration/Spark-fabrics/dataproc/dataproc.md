@@ -110,7 +110,7 @@ gcloud config set account meitestserviceaccount@core-shard-398601.iam.gserviceac
    <br/><br/>
 9. Click on **Complete**.
    <br/><br/>
-   Run a simple Pipeline and make sure that the interim returns data properly.
+   Run a simple pipeline and make sure that the interim returns data properly.
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

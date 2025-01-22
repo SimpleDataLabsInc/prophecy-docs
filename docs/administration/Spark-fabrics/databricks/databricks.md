@@ -53,7 +53,7 @@ Optionally, enhance your Fabric by creating a [Metadata Connection](/docs/concep
 
 ### Artifacts
 
-Prophecy supports Databricks Volumes. When you run a Python or Scala Pipeline via a Job, you must bundle them as whl/jar artifacts. These artifacts must then be made accessible to the Databricks Job in order to use them as a library installed on the cluster. You can designate a path to a Volume for uploading the whl/jar files under Artifacts.
+Prophecy supports Databricks Volumes. When you run a Python or Scala pipeline via a Job, you must bundle them as whl/jar artifacts. These artifacts must then be made accessible to the Databricks Job in order to use them as a library installed on the cluster. You can designate a path to a Volume for uploading the whl/jar files under Artifacts.
 
 ## Databricks execution
 

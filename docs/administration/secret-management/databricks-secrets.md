@@ -47,4 +47,4 @@ Your POC secrets are safe, but it's best not to use production systems for POC w
 
 To create a new Secret, click on the **Add Secret** button. In the form, you will notice a Secret-scope already selected. Go ahead and add your Secret name and value. Note that Prophecy doesn't store the Secret value.
 
-Once you have created a Secret Provider and Secrets, you can start to [use](./using-secrets.md) them in your Pipelines.
+Once you have created a Secret Provider and Secrets, you can start to [use](./using-secrets.md) them in your pipelines.

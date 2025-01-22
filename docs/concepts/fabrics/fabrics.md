@@ -29,9 +29,9 @@ In this example, all users in the Marketing_DSS Team will have access to the `de
 
 ## Components
 
-Fabrics include everything required to run a data Pipeline.
+Fabrics include everything required to run a data pipeline.
 
-![Data Pipeline](img/fabric.png)
+![Data pipeline](img/fabric.png)
 
 ### Spark Environment
 
@@ -47,7 +47,7 @@ The **Scheduler** executes one or more Spark data pipelines on a defined schedul
 
 ### Database Connections
 
-Data Pipelines often require connections to operational databases, such as MySQL or Postgres, or to data warehouses, such as Snowflake. These connections, using JDBC or other protocols, can be securely stored on the Fabric for convenient reuse.
+Data pipelines often require connections to operational databases, such as MySQL or Postgres, or to data warehouses, such as Snowflake. These connections, using JDBC or other protocols, can be securely stored on the Fabric for convenient reuse.
 
 ### Metadata Connection
 

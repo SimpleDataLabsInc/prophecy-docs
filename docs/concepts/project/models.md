@@ -60,11 +60,11 @@ Now we can explore the `customers` Model more closely. The Model is easy to unde
 
 The **(4)`Aggregate`** step is represented visually as an `Aggregate` gem and in code as the highlighted CTE code fragment. By popular demand, the visual and code formats are editable interchangeably. Visual developers and SQL coders can work together in the same project, and both types of edits are incorporated to the project when [committed and merged](/docs/concepts/git/git.md).
 
-### Models vs Pipelines
+### Models vs pipelines
 
-If you’re already familiar with Prophecy Pipelines, Models are very similar. The major difference is that each Pipeline can create an arbitrary number of outputs, whereas a Model only defines one output. Where Pipelines can exist only within Spark-based projects, Models can exist within SQL-based ones.
+If you’re already familiar with Prophecy pipelines, models are very similar. The major difference is that each pipeline can create an arbitrary number of outputs, whereas a model only defines one output. Where pipelines can exist only within Spark-based projects, Models can exist within SQL-based ones.
 
-Like Pipelines, Models can be configured, committed and released to [Git](/docs/concepts/git/git.md), according to software engineering best practices.
+Like pipelines, models can be configured, committed and released to [Git](/docs/concepts/git/git.md), according to software engineering best practices.
 
 ### dbt Core™ Models
 

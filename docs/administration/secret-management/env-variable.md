@@ -33,4 +33,4 @@ You can delete an existing env variable from the button next to the Secret in th
 
 ## Using Environment Variables Secrets in Pipelines
 
-Once you have added an Environment Variables Secret Provider and stored secrets, you can effortlessly [use](./using-secrets.md) them in your Pipelines.
+Once you have added an Environment Variables Secret Provider and stored secrets, you can effortlessly [use](./using-secrets.md) them in your pipelines.

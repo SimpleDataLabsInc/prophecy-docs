@@ -19,9 +19,9 @@ Lets see how you can do it via the Prophecy UI below.
 As part of the release process, we start by creating a [Git Tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging) with a specified version. This tag is then pushed to your configured Git repository. Following this, the pipelines, gems, and jobs in the Project are built and deployed to the respective environments.
 Here's a breakdown of what deploying means for each component:
 
-- **Gems**: With Prophecy 3.2, you can create [custom gems](docs/extensibility/gem-builder/spark-gem-builder.md) and use in your Pipelines. During the release, these gems are built and uploaded to an internal Artifactory. They aren't directly copied to your environments, as they are used in generating code for the Pipelines, not during Job/Pipeline execution. Note, the code for gems do get committed to your Git repo as part of the Project.
+- **Gems**: With Prophecy 3.2, you can create [custom gems](docs/extensibility/gem-builder/spark-gem-builder.md) and use in your pipelines. During the release, these gems are built and uploaded to an internal Artifactory. They aren't directly copied to your environments, as they are used in generating code for the pipelines, not during job/pipeline execution. Note, the code for gems do get committed to your Git repo as part of the Project.
 
-- **Pipelines**: Each Pipeline in the project is compiled and built into an artifact (Wheel file for Python and Jar file for Scala). These artifacts are then uploaded to your environment as part of the release process.
+- **Pipelines**: Each pipeline in the project is compiled and built into an artifact (Wheel file for Python and Jar file for Scala). These artifacts are then uploaded to your environment as part of the release process.
 
 - **Jobs**: Depending on the type of Job (Databricks or Airflow), the Job is copied to the respective environments as a Json file for Databricks Jobs and as a Python DAG for Airflow.
 
@@ -85,13 +85,13 @@ This is an optional step and overrides the environment for this particular Job d
 **(3) Pick Jobs to Deploy** table provides an overview of the deployment status for each Job, indicating the targeted Fabric, and any actions taken, such as addition, deletion, or modification.
 In the **Staged Release and Deployment** setting, the ability to select or deselect specific Jobs is disabled. For more information on enabling this functionality, continue reading or directly jump [here](#selective-job-deployment).
 
-Click on **(4) Deploy** to start the deployment process. This will now build your Pipelines, gems and update the Jobs as shown below. You would be able to see logs for each step in this screen.
+Click on **(4) Deploy** to start the deployment process. This will now build your pipelines, gems and update the Jobs as shown below. You would be able to see logs for each step in this screen.
 
 ![Deployment_logs](img/deployment_steps_complete.png)
 
 ### Selective Job Deployment
 
-If you activate **Selective Job Deployment** in the advance settings [here](#advanced-release-settings), you would be able to select specific Jobs during the Deploy step. This is helpful when you have many Pipelines and Jobs in the same project and only want to deploy a few at a time. It also speeds up the overall process by only building the Pipelines used in the selected Jobs.
+If you activate **Selective Job Deployment** in the advance settings [here](#advanced-release-settings), you would be able to select specific Jobs during the Deploy step. This is helpful when you have many pipelines and Jobs in the same project and only want to deploy a few at a time. It also speeds up the overall process by only building the pipelines used in the selected Jobs.
 
 :::caution
 Different versions of pipelines, datasets, and Subgraphs may coexist within the same environment when selectively deploying jobs. Only the deployed jobs will use the latest versions of pipelines, datasets, and subgraphs.
@@ -101,8 +101,8 @@ Different versions of pipelines, datasets, and Subgraphs may coexist within the 
 
 ### Enable Unit Tests
 
-Writing good [Unit tests](/ci-cd/tests) is a key component for Data Pipeline quality and management. Prophecy makes the process of writing unit cases easier by giving an interactive environment via which unit test cases can be configured across each component.
-This setting enables running Unit tests as part of Pipeline Builds.
+Writing good [Unit tests](/ci-cd/tests) is a key component for data pipeline quality and management. Prophecy makes the process of writing unit cases easier by giving an interactive environment via which unit test cases can be configured across each component.
+This setting enables running Unit tests as part of pipeline builds.
 
 :::note
 Enabling unit tests might lead to a slight increase the Build time

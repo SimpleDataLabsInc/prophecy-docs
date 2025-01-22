@@ -23,7 +23,7 @@ Datasets are created where they are first used in a [Source or Target gems](docs
 - **Location**: The location of your data. It could be a file path for CSV or a table name.
 - **Properties**: Properties consists of Schema and some other attributes specific to the file format. For example, in case of CSV, you can give Column delimiter in additional attributes. You can also define Metadata for each column here like description, tags, and mappings.
 
-Datasets can be used by any Pipeline within the same Project, and in some cases by other Projects within the same team.
+Datasets can be used by any pipeline within the same Project, and in some cases by other Projects within the same team.
 
 ## View Datasets
 
@@ -49,7 +49,7 @@ In the **Relations** tab, there is additional information about where and how th
 | Name                | Description                                                                                                                      |
 | ------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | Physical Datasets   | Location of the Dataset in relation to a Fabric.                                                                                 |
-| Pipelines           | A list of Pipelines that use this Dataset, with the `Relation` column indicating if it is for `Read` or `Write` purposes.        |
+| Pipelines           | A list of pipelines that use this Dataset, with the `Relation` column indicating if it is for `Read` or `Write` purposes.        |
 | Jobs                | A list of Jobs that use this Dataset, with the `Relation` column indicating if it is for `Read` or `Write` purposes.             |
 | Open Lineage Viewer | The option to open this Dataset in the [Lineage](docs/lineage/lineage.md) viewer, showing column-level lineage for this Dataset. |
 
@@ -63,13 +63,13 @@ As part of the Project Release process, Datasets within that Project are _publis
 3. The `DI_Team` merges and releases the `DI_Common_Python` Project, tagging it `0.1`.
    ![DI Common Release](img/dataset/pub3.png)
 4. As you can see, the `DI_Team` has published the `DI_Common_Python` project to the `DE_Team`, the Data Engineering Team.
-5. Now, whenever the `DE_Team` builds Pipelines, they can see the following:
+5. Now, whenever the `DE_Team` builds pipelines, they can see the following:
    ![Common Datasets](./img/dataset/pub4.png)
 
 We can see the `DI_Common_Python` Project's Datasets, and the fact that they're listed as `Read-only`. This means that `DE_Team` can _use_ the Datasets, but cannot _edit_ them.
 
 :::info
 
-For regular usage, we suggest having only one instance of a particular Dataset within a Pipeline, as the Dataset's properties and underlying data can change each time the dataset is read or written.
+For regular usage, we suggest having only one instance of a particular Dataset within a pipeline, as the Dataset's properties and underlying data can change each time the dataset is read or written.
 
 :::

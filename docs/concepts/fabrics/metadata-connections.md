@@ -67,7 +67,7 @@ Alternatively, the Metadata Connection can use the same Warehouse or Cluster whi
 
 ### User Permissions
 
-System Admins can define and monitor Metadata Connections for platform users. Then, Data Practitioners can use Metadata Connections within their Pipelines.
+System Admins can define and monitor Metadata Connections for platform users. Then, Data Practitioners can use Metadata Connections within their pipelines.
 
 ### Add a Metadata Connection
 

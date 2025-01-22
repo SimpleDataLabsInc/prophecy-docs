@@ -41,7 +41,7 @@ Find more information on assigning roles from [Azure's documentation](https://le
 
 Note that the Prophecy public IP is `3.133.35.237`.
 
-Navigate to Prophecy's UI and click on **Create Fabric**. The Fabric will establish a connection with your Synapse environment and utilize it as the execution engine for your Pipelines.
+Navigate to Prophecy's UI and click on **Create Fabric**. The Fabric will establish a connection with your Synapse environment and utilize it as the execution engine for your pipelines.
 <br/> <br/>
 
 Choose **Synapse** as your **Provider**.
@@ -94,4 +94,4 @@ Click on **Complete**.
 
 Your Fabric for Azure Synapase Fabric is configured! Try creating a cluster using the Fabric that you've just created and attach to it.
 
-Run a simple Pipeline and make sure that the interim returns data properly.
+Run a simple pipeline and make sure that the interim returns data properly.

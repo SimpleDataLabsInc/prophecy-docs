@@ -44,16 +44,16 @@ Let's checkout (or switch to) a different branch.
 
 ## Make changes on the branch
 
-A **commit** represents changes to one or more files in your Project that let you keep and view Project history. When you make changes to the Pipeline, you will want to commit them. Let's see how to commit Pipeline changes to preserve them in Git.
+A **commit** represents changes to one or more files in your Project that let you keep and view Project history. When you make changes to the pipeline, you will want to commit them. Let's see how to commit pipeline changes to preserve them in Git.
 
-1. Make a change in your Project, such as creating a new Pipeline.
+1. Make a change in your Project, such as creating a new pipeline.
 1. Click **Commit Changes** to open the Commit window.
 1. Write a commit message or let our Copilot write one for you.
 1. Review the change and click **Commit**.
 
 ![Commit changes](img/commit-changes.png)
 
-Once you have commited your changes, you have the option to continue developing your Pipelines or to **merge** your changes. In this case, choose **Continue**.
+Once you have commited your changes, you have the option to continue developing your pipelines or to **merge** your changes. In this case, choose **Continue**.
 
 ## Merge changes
 

@@ -14,12 +14,12 @@ To ensure robust security for enterprise customers, Prophecy provides secure aut
 Users can connect these centralized secret providers to their Spark Fabrics and access the secrets via Prophecy.
 
 :::info
-Prophecy never accesses the value for any secrets, only scopes and keys to generate and execute correct code, keeping your secrets safe and out of your Pipeline code committed to Git.
+Prophecy never accesses the value for any secrets, only scopes and keys to generate and execute correct code, keeping your secrets safe and out of your pipeline code committed to Git.
 :::
 
 ## Secret Provider
 
-Users can create a **Secret Provider** in their Spark Fabrics. The secrets are accessed when a Pipeline is run on the cluster.
+Users can create a **Secret Provider** in their Spark Fabrics. The secrets are accessed when a pipeline is run on the cluster.
 Users must ensure that their Spark clusters have proper access to the Secret Providers they are using.
 
 You can access the Secret Providers and Secrets connected to the Fabric from the **(1)Secrets** tab in your Fabric.
@@ -33,7 +33,7 @@ This page shows the list of all Secret Providers and the Secrets for each provid
 | [HashiCorp Vault](./hashicorp-vault)       | Available for all Spark Fabrics       |
 | [Environment Variables](./env-variable)    | Available for all Spark Fabrics       |
 
-Once you have secrets created in Fabrics, you can [Use a secret](./using-secrets.md) in your Source and Target gems in your Pipelines directly.
+Once you have secrets created in Fabrics, you can [Use a secret](./using-secrets.md) in your Source and Target gems in your pipelines directly.
 
 ## Using Secrets in Prophecy Managed Spark Fabrics
 
