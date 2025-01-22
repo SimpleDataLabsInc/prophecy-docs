@@ -29,8 +29,8 @@ The Prophecy IR lifecycle follows the following steps:
 1. **Read Prophecy IR** - Prophecy IR stores the current visual state of the Pipeline as a
    serialized `workflow.latest.json` file. This file is stored on a Git repository, alongside the generated code.
    Prophecy IR reads the state file, parses and validates it.
-2. **Read available Gems** - Prophecy reads available Gems specifications and validates the state file against them.
-3. **Visualize Pipeline** - Prophecy visualizes the Pipeline on the Prophecy IDE, based on the loaded state and Gem
+2. **Read available gems** - Prophecy reads available gems specifications and validates the state file against them.
+3. **Visualize Pipeline** - Prophecy visualizes the Pipeline on the Prophecy IDE, based on the loaded state and gem
    specifications.
 4. **Generate code** - After the Pipeline is successfully visualized, Prophecy saves the Pipelines code on the Git
    repository.
@@ -78,15 +78,15 @@ The Prophecy IR lifecycle follows the following steps:
       { "id" : "1", "source" : "source_id", "sourcePort" : "source_output", "target" : "reformat_id", "targetPort" : "reformat_input" },
       { "id" : "1", "source" : "reformat_id", "sourcePort" : "reformat_output", "target" : "target_id", "targetPort" : "target_input" }
   ],
-  // instances of Gems
+  // instances of gems
   "processes" : {
-    // each Gem instance is composed of:
+    // each gem instance is composed of:
     "source_id" : {
       // 1. unique id
       "id" : "source_id",
-      // 2. type of the Gem
+      // 2. type of the gem
       "component" : "Source",
-      // 3. Gem descriptions and position
+      // 3. gem descriptions and position
       "metadata" : { "label" : "Customers", "slug" : "Customers", "x" : 120, "y" : 320, /* ... */ },
       // 4. definition of inputs and outputs
       "ports" : { "inputs" : [ ], "outputs" : [ { "id" : "source_output", "slug" : "out" } ] },

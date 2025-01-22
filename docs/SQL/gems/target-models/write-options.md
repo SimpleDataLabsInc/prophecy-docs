@@ -10,7 +10,7 @@ tags:
   - scd2
 ---
 
-You can use Write Modes such as Overwrite, Append, and Merge to materialize your data. The Write Options tab within your Target Model Gem guides you through building different merge approaches, such as historical data changes with SCD 2, which use incremental materialization strategy.
+You can use Write Modes such as Overwrite, Append, and Merge to materialize your data. The Write Options tab within your Target Model gem guides you through building different merge approaches, such as historical data changes with SCD 2, which use incremental materialization strategy.
 
 Target Models are considered incremental models, which use a materialization strategy to update your data warehouse tables by loading and transforming just the changed data since the last run. Incremental models avoid processing your entire Dataset, which allows them to update only the new rows. This greatly reduces the time and resources you need to dedicate for your data transformations.
 
@@ -132,7 +132,7 @@ The advanced on schema change options include the following:
 - **ignore**: Newly added columns will not be written to the model. This is the default option.
 - **fail**: Triggers an error message when the source and target schemas diverge.
 - **append_new_columns**: Append new columns to the existing table.
-- **sync_all_columns**: Adds any new columns to the existing table, and removes any columns that are now missing. Includes data type changes. This option uses the output of the previous Gem.
+- **sync_all_columns**: Adds any new columns to the existing table, and removes any columns that are now missing. Includes data type changes. This option uses the output of the previous gem.
 
 ### Specify Columns
 

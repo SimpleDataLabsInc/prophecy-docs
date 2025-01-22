@@ -8,7 +8,7 @@ tags:
   - cte
 ---
 
-Constitutes the set of Gems that help with transforming data.
+Constitutes the set of gems that help with transforming data.
 
 <div class="transformations-gems-table">
 
@@ -28,9 +28,9 @@ Constitutes the set of Gems that help with transforming data.
 </div>
 
 :::info
-To learn more about the UI for Transformation Gems, see [this page](/docs/concepts/project/gems.md) which illustrates features common to all Gems, or the [Aggregate](./aggregate.md) Gem page, which provides a thorough description for using SQL Gems.
+To learn more about the UI for Transformation gems, see [this page](/docs/concepts/project/gems.md) which illustrates features common to all gems, or the [Aggregate](./aggregate.md) gem page, which provides a thorough description for using SQL gems.
 :::
 
 ## Run
 
-When your Transformation Gem has the desired condition and expression, run interactively to view [sample data](/docs/SQL/execution/data-explorer.md).
+When your Transformation gem has the desired condition and expression, run interactively to view [sample data](/docs/SQL/execution/data-explorer.md).

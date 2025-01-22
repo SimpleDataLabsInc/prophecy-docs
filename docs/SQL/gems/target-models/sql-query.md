@@ -11,7 +11,7 @@ tags:
 
 You can use the SQL Query tab to view and enable your custom SQL query at the end of your Target Model. A custom SQL query enables you to perform one last data transformation step as a SQL query, before creating the model.
 
-This is useful if you import your own codebase and your final query has additional conditions. Your query is saved here for you to view and edit. For low code users you can use a Filter Gem to achieve the same results.
+This is useful if you import your own codebase and your final query has additional conditions. Your query is saved here for you to view and edit. For low code users you can use a Filter gem to achieve the same results.
 
 ## Enable custom SQL query
 
@@ -20,7 +20,7 @@ This gives you flexibility when doing last mile operations for your SQL models. 
 
 ### Ports
 
-Ports represent the tables or Gems that you want to use in the SQL query. You can access them using the table aliases, or port names. The visual order of the ports defines the order of the variables.
+Ports represent the tables or gems that you want to use in the SQL query. You can access them using the table aliases, or port names. The visual order of the ports defines the order of the variables.
 
 You can edit or add Ports for Input and Output.
 

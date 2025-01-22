@@ -98,4 +98,4 @@ Preview the table:
 
   If you selected a table to write your uploaded file to, you'll need to confirm the upload in the pop-up window by clicking **Proceed**.
 
-The uploaded file's table is now available in the Source/Target node. The table is created in your environment and a source is created within your Model. You can upload another file or start working with your new source Gem.
+The uploaded file's table is now available in the Source/Target node. The table is created in your environment and a source is created within your Model. You can upload another file or start working with your new source gem.

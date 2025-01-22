@@ -8,7 +8,7 @@ tags:
   - seeds
 ---
 
-Loading data into Prophecy is done via the [Seed](#seed), [Source](#source), or [Model](#model) Gems - all based on [dbt](https://docs.getdbt.com/docs/build/projects) concepts.
+Loading data into Prophecy is done via the [Seed](#seed), [Source](#source), or [Model](#model) gems - all based on [dbt](https://docs.getdbt.com/docs/build/projects) concepts.
 
 ## Seed
 
@@ -71,7 +71,7 @@ Now the new Model has been created and the canvas is displayed. Optionally, clic
 | Model as a Datasource                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------ |
 | **4 Add a Source** - From the Environment tab, select a source for the new Model.                                        |
-| **5 Configure ** - Configure the new source, do any transformation steps or simply connect to the new Model Gem.         |
+| **5 Configure ** - Configure the new source, do any transformation steps or simply connect to the new Model gem.         |
 | **6 Interactive Run** - Click the "Play" button to execute the new Model and create a materiaized view of the new Model. |
 | **7 Project Tab** - Click the Project tab and notice MyModel is now available in the Project Browser.                    |
 | **8 Existing Model** - Open the existing Model of interest. In this example, MyNextModel is opened.                      |
@@ -81,8 +81,8 @@ Now the new Model has been created and the canvas is displayed. Optionally, clic
 
 | Model as a Datasource (cont'd)                                                                                                                                                                                                         |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **10 Model as a Source** - The new Model (MyModel) appears on the canvas of the existing Model (MyNextModel). Connect the new Model as an input to the Join Gem or any desired transformation Gem. The new Model acts as a Datasource. |
-| **11 Toggle to `code`** - The SQL `code` view for the open Model, MyNextModel, is shown. Each code fragment represents one Gem in MyNextModel.                                                                                         |
+| **10 Model as a Source** - The new Model (MyModel) appears on the canvas of the existing Model (MyNextModel). Connect the new Model as an input to the Join gem or any desired transformation gem. The new Model acts as a Datasource. |
+| **11 Toggle to `code`** - The SQL `code` view for the open Model, MyNextModel, is shown. Each code fragment represents one gem in MyNextModel.                                                                                         |
 
 As a result, **MyNextModel** contains three sources: a Seed (ORDERDETAILS), a Source (ORDERSHIPMENTS), and a Model (MyModel). These three sources are joined together and materialized as a table or view in the database.schema defined in the Fabric.
 
