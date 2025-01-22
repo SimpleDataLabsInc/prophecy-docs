@@ -5,11 +5,11 @@ description: Set of gems related to the input and output of data
 tags: []
 ---
 
-Constitutes the set of Gems that help with loading and saving data.
+Constitutes the set of gems that help with loading and saving data.
 
 ## File
 
-A collection of Gems related to working with various file-based formats.
+A collection of gems related to working with various file-based formats.
 
 | Name                                | Description                                                                                                       |
 | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
@@ -22,12 +22,12 @@ A collection of Gems related to working with various file-based formats.
 | [Kafka](./file/kafka)               | This source currently connects with Kafka Brokers in Batch mode.                                                  |
 | [ORC](./file/orc)                   | ORC (Optimized Row Columnar) is a columnar file format designed for Spark/Hadoop workloads.                       |
 | [Parquet](./file/parquet)           | Parquet is an open source file format built to handle flat columnar storage data formats.                         |
-| [Text](./file/text)                 | This Gem allows you to read from or write to text file.                                                           |
+| [Text](./file/text)                 | This gem allows you to read from or write to text file.                                                           |
 | [XLSX (Excel)](./file/xlsx)         | Allows you to read or write Excel-compatible files.                                                               |
 
 ## Warehouse
 
-A collection of Gems specializing in connecting to warehouse-style data sources.
+A collection of gems specializing in connecting to warehouse-style data sources.
 
 | Name                                 | Description                                                                                                       |
 | ------------------------------------ | ----------------------------------------------------------------------------------------------------------------- |
@@ -44,7 +44,7 @@ A collection of Gems specializing in connecting to warehouse-style data sources.
 
 ## Catalog
 
-A collection of Gems related to working with various table-based formats.
+A collection of gems related to working with various table-based formats.
 
 | Name                           | Description                                                                                                 |
 | ------------------------------ | ----------------------------------------------------------------------------------------------------------- |
@@ -57,4 +57,4 @@ A collection of Gems related to working with various table-based formats.
 
 ## Synthetic Data Generator
 
-If you don't have the data you need, try generating fake data. Using the [Synthetic Data Generator Gem](/docs/Spark/gems/source-target/advanced/synthetic-data-generator.md), you can specify columns with various datatypes and populate fields with randomly generated data. Specify the boundaries for each row, the percentage of rows which should have null values, etc. It's not real data but it's the next best thing!
+If you don't have the data you need, try generating fake data. Using the [Synthetic Data Generator gem](/docs/Spark/gems/source-target/advanced/synthetic-data-generator.md), you can specify columns with various datatypes and populate fields with randomly generated data. Specify the boundaries for each row, the percentage of rows which should have null values, etc. It's not real data but it's the next best thing!

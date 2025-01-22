@@ -221,7 +221,7 @@ object write_as_csv {
 
 ### Producing a single output file
 
-Because of Spark's distributed nature, output files are written as multiple separate partition files. If you need a single output file for some reason (such as reporting or exporting to an external system), use a `Repartition` Gem in `Coalesce` mode with 1 output partition:
+Because of Spark's distributed nature, output files are written as multiple separate partition files. If you need a single output file for some reason (such as reporting or exporting to an external system), use a `Repartition` gem in `Coalesce` mode with 1 output partition:
 
 ![Coalesce example](img/coalesce.gif)
 

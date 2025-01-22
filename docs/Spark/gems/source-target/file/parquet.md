@@ -11,7 +11,7 @@ tags:
 
 Parquet is an open-source Columnar storage data format. It handles large volumes of data by supporting complex pushdown predicates, nested schemas and a wide variety of column encoding types.
 
-This Gem allows you to read from or write to Parquet files.
+This gem allows you to read from or write to Parquet files.
 
 ## Source
 

@@ -11,7 +11,7 @@ tags:
 
 <h3><span class="badge">Spark Gem</span></h3>
 
-Use the BulkColumnRename Gem to rename multiple columns in your Dataset in a systematic way.
+Use the BulkColumnRename gem to rename multiple columns in your Dataset in a systematic way.
 
 ## Parameters
 

@@ -29,15 +29,15 @@ Once a Model is open, the model-editing canvas appears.
 
 ![Canvas](img/Canvas.png)
 
-Here we can see the `customers` Model starts with three existing Models. The data is transformed according to Aggregate, SQLStatement, and Join Gems. The available Transformation Gems are available by clicking the dropdown menu. As you develop the Model, you can iteratively run and see sample data as well as the relevant logs.
+Here we can see the `customers` Model starts with three existing Models. The data is transformed according to Aggregate, SQLStatement, and Join gems. The available Transformation gems are available by clicking the dropdown menu. As you develop the Model, you can iteratively run and see sample data as well as the relevant logs.
 
 ### Code editor
 
-As a visual developer, you'll appreciate the drag-n-drop canvas, but sometimes it's also nice to view the code. Prophecy creates highly performant code behind the scenes. Click the **Code View** to reveal the SQL queries we've generated using our visual design editor. Each Gem is represented by a CTE or subquery.
+As a visual developer, you'll appreciate the drag-n-drop canvas, but sometimes it's also nice to view the code. Prophecy creates highly performant code behind the scenes. Click the **Code View** to reveal the SQL queries we've generated using our visual design editor. Each gem is represented by a CTE or subquery.
 
 ![Code View](./img/sql-as-code.png)
 
-You may wish to edit the code view. Add a SQL statement in the code view and notice the visual editor displays the updated code. For example, we've added a limit statement in the code view, and a new limit Gem appears in the visual view.
+You may wish to edit the code view. Add a SQL statement in the code view and notice the visual editor displays the updated code. For example, we've added a limit statement in the code view, and a new limit gem appears in the visual view.
 
 ## Version control
 
@@ -49,18 +49,18 @@ Prophecy automatically saves your work as you develop in a working directory sec
 
 The vast majority of dbt and SQL constructs are supported within the Prophecy Visual editor. However, if something is not yet supported, don’t worry!
 
-- **For SQL** - Prophecy automatically maps unsupported SQL statements to a generic SQL Gem, allowing you to still freely edit even unsupported code.
+- **For SQL** - Prophecy automatically maps unsupported SQL statements to a generic SQL gem, allowing you to still freely edit even unsupported code.
 - **For dbt** - Features in dbt-core that may lack their visual-editor alternatives still work as expected from the standard dbt cli. Prophecy will never modify your existing codebase in unsupported ways.
 
 ## Interactive development
 
-At any step of the process, data users can interactively run their models to make sure they're going in the right direction. Models can be additionally tested to ensure robustness over time. Power users can also extend the visual canvas through custom Gems; making even the most complex logic easily accessible in the visual view.
+At any step of the process, data users can interactively run their models to make sure they're going in the right direction. Models can be additionally tested to ensure robustness over time. Power users can also extend the visual canvas through custom gems; making even the most complex logic easily accessible in the visual view.
 
-As you're building your Model by adding [individual Gems](/docs/SQL/gems/gems.md), see how the process is going by interactively running the model. To learn more, see [Data Explorer](docs/SQL/execution/data-explorer.md).
+As you're building your Model by adding [individual gems](/docs/SQL/gems/gems.md), see how the process is going by interactively running the model. To learn more, see [Data Explorer](docs/SQL/execution/data-explorer.md).
 
 ## Share Projects as Packages
 
-Data users can import an existing dbt Core project or start from scratch. They can publish those projects to other teams or subscribe to already existing ones. Projects published as packages contain models, functions and Gems allowing for code reusability at every level.
+Data users can import an existing dbt Core project or start from scratch. They can publish those projects to other teams or subscribe to already existing ones. Projects published as packages contain models, functions and gems allowing for code reusability at every level.
 
 ## Learn more
 

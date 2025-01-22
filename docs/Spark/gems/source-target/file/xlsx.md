@@ -78,11 +78,11 @@ For example, if you write to a location like **dbfs:/FileStore/Users/test/custom
 
 Each partition is a separate valid XLSX file with a segment of the overall output data. If you want to output only a single file, you'll need to:
 
-1. Add a Repartition Gem in **Coalesce** mode with the **Partition Count** set to `1`.
+1. Add a Repartition gem in **Coalesce** mode with the **Partition Count** set to `1`.
 
    ![Coalesce using Repartition](img/xlsx_tgt_5.5.png)
 
-2. Connect it between your second-to-last transformation and the `Target` Gem.
+2. Connect it between your second-to-last transformation and the `Target` gem.
 
    ![Attach coalesce before desired target](img/xlsx_tgt_6.png)
 

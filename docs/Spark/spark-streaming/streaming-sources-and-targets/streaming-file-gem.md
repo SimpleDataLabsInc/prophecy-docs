@@ -1,7 +1,7 @@
 ---
 title: File-based
 id: streaming-file-apps
-description: File-based Source and Target Gems for Streaming Data Applications
+description: File-based Source and Target gems for Streaming Data Applications
 tags:
   - spark
   - streaming
@@ -24,13 +24,13 @@ When you select Format and click NEXT, this Location Dialog opens:
 
 Databricks Fabrics can utilize [Auto Loader](https://docs.databricks.com/ingestion/auto-loader/index.html).
 
-Auto Loader supports loading data directory listing as well as using AWS's Simple Queue Service (SQS) file notifications. More on this [here](https://docs.databricks.com/ingestion/auto-loader/file-detection-modes.html). Stream sources using Auto Loader allow [configurable properties](https://docs.databricks.com/ingestion/auto-loader/options.html#file-format-options) that can be configured using the Field Picker on the Gem:
+Auto Loader supports loading data directory listing as well as using AWS's Simple Queue Service (SQS) file notifications. More on this [here](https://docs.databricks.com/ingestion/auto-loader/file-detection-modes.html). Stream sources using Auto Loader allow [configurable properties](https://docs.databricks.com/ingestion/auto-loader/options.html#file-format-options) that can be configured using the Field Picker on the gem:
 ![Autoloader Directory Listing Mode](../img/autoloader-directory-listing.png)
 ![Autoloader Filer Notifiction Mode](../img/autoloader-file-notification.png)
 
 ## Formats Supported
 
-The following file formats are supported. The Gem properties are accessible under the Properties Tab by clicking on `+` :
+The following file formats are supported. The gem properties are accessible under the Properties Tab by clicking on `+` :
 
 1. JSON: Native Connector Docs for Source [here](https://spark.apache.org/docs/3.1.3/api/python/reference/api/pyspark.sql.streaming.DataStreamReader.json.html). Additional Autoloader Options [here](https://docs.databricks.com/ingestion/auto-loader/options.html#json-options).
 2. CSV: Native Connector Docs for Source [here](https://spark.apache.org/docs/3.1.3/api/python/reference/api/pyspark.sql.streaming.DataStreamReader.csv.html). Additional Autoloader Options [here](https://docs.databricks.com/ingestion/auto-loader/options.html#csv-options).

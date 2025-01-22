@@ -8,7 +8,7 @@ tags:
   - salesforce
 ---
 
-This Gem has below features:
+This gem has below features:
 
 1. Dataset Creation - Create Dataset in Salesforce Wave from Spark DataFrame.
 2. Read Salesforce Wave Dataset - User has to provide SAQL to read data from Salesforce Wave. The query result will be constructed as DataFrame.
@@ -18,7 +18,7 @@ This Gem has below features:
 :::note
 This connector is built on top of the already available [`spark-salesforce connector`](https://github.com/springml/spark-salesforce/).
 
-To use this Gem in Prophecy, `com.springml:spark-salesforce_2.12:1.1.4` Maven external dependency needs to be installed on cluster.
+To use this gem in Prophecy, `com.springml:spark-salesforce_2.12:1.1.4` Maven external dependency needs to be installed on cluster.
 For installing dependencies from Prophecy UI. Please check [dependency management docs](docs/extensibility/dependencies/spark-dependencies.md).
 :::
 
