@@ -10,13 +10,13 @@ tags:
   - tutorial
 ---
 
-To better structure your projects, sometimes you would like to create multiple different Jobs that trigger only a specific set of Pipelines. E.g. when using the [Bronze, Silver, Gold](https://www.prophecy.io/blogs/prophecy-with-delta#bronze-silver-gold-layers) architecture, one might want to have a project for each one of the stages and run each stage sequentially - run _Gold_ after _Silver_ is finished and _Silver_ and after _Bronze_.
+To better structure your projects, sometimes you would like to create multiple different Jobs that trigger only a specific set of pipelines. E.g. when using the [Bronze, Silver, Gold](https://www.prophecy.io/blogs/prophecy-with-delta#bronze-silver-gold-layers) architecture, one might want to have a project for each one of the stages and run each stage sequentially - run _Gold_ after _Silver_ is finished and _Silver_ and after _Bronze_.
 
 However, this poses a question: How to schedule multiple Jobs together?
 
 ## Time-based Approach
 
-![Data Pipeline](img/jobs-tigger-time-based.png)
+![Data pipeline](img/jobs-tigger-time-based.png)
 
 One traditional approach is to schedule the sequential Jobs to run at different time intervals. E.g. the _first Job_ can
 run at 7am and the _second Job_ can run an hour later. This works well, if there's no data dependencies between those
@@ -28,7 +28,7 @@ Jobs completely. Recoverability and maintenance also becomes more difficult.
 
 ## Trigger-based Approach
 
-![Data Pipeline](img/jobs-tigger-trigger-based.png)
+![Data pipeline](img/jobs-tigger-trigger-based.png)
 
 This is where, it might be worth to explore the trigger-based approach. Using this approach, we place additional
 triggers in our upstream Jobs that trigger the Jobs that should be executed after those finished.

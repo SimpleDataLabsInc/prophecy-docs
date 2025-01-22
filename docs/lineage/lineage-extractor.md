@@ -9,7 +9,7 @@ tags:
   - github actions
 ---
 
-The Prophecy lineage extractor tool extracts lineage information from Prophecy projects and Pipelines. It allows you to specify a project, Pipeline, and branch, and outputs the extracted lineage to a specified directory. You can also optionally set up email notifications.
+The Prophecy lineage extractor tool extracts lineage information from Prophecy projects and pipelines. It allows you to specify a project, pipeline, and branch, and outputs the extracted lineage to a specified directory. You can also optionally set up email notifications.
 
 ## Python command
 

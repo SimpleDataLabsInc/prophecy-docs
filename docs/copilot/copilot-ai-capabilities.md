@@ -1,7 +1,7 @@
 ---
 title: Data Copilot AI capabilities
 id: copilot-ai-capabilities
-description: The AI assistant capabilities for data Pipelines and models
+description: The AI assistant capabilities for data pipelines and models
 sidebar_label: AI capabilities
 tags:
   - concepts
@@ -10,7 +10,7 @@ tags:
   - capabilities
 ---
 
-Prophecy Data Copilot provides suggestions from an AI model as you develop your data Pipelines and Models. You can view and incorporate suggestions directly within the Prophecy visual editor and code editor. Data Copilot makes suggestions for your entire Pipeline, for a single gem (transformation), and even for individual expressions within each gem.
+Prophecy Data Copilot provides suggestions from an AI model as you develop your data pipelines and models. You can view and incorporate suggestions directly within the Prophecy visual editor and code editor. Data Copilot makes suggestions for your entire pipeline, for a single gem (transformation), and even for individual expressions within each gem.
 
 ## Supported AI capabilities by engine
 
@@ -18,8 +18,8 @@ Data Copilot supports the following capabilities for the Spark and SQL engines:
 
 | AI Capability                                      | Spark                    | SQL                      |
 | -------------------------------------------------- | ------------------------ | ------------------------ |
-| Start a new Pipeline (Spark) or Model (SQL)        | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg)  |
-| Modify an existing Pipeline (Spark) or Model (SQL) | ![Tick](./img/cross.svg) | ![Tick](./img/tick.svg)  |
+| Start a new pipeline (Spark) or model (SQL)        | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg)  |
+| Modify an existing pipeline (Spark) or model (SQL) | ![Tick](./img/cross.svg) | ![Tick](./img/tick.svg)  |
 | Suggest Gems                                       | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg)  |
 | Suggest Expressions                                | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg)  |
 | Generate with AI, Scripts                          | ![Tick](./img/tick.svg)  | ![Tick](./img/cross.svg) |
@@ -31,25 +31,25 @@ Data Copilot supports the following capabilities for the Spark and SQL engines:
 | Auto Documentation                                 | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg)  |
 | Data Tests and Quality Checks                      | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg)  |
 
-## Text to Pipelines
+## Text to pipelines
 
-Get started on a new Pipeline quickly by typing your prompt into the text box and Data Copilot will generate a new Pipeline or modify an existing one.
+Get started on a new pipeline quickly by typing your prompt into the text box and Data Copilot will generate a new pipeline or modify an existing one.
 
-### Start a new Pipeline
+### Start a new pipeline
 
-You can use Data Copilot to start a new Pipeline by typing a simple English text prompt.
+You can use Data Copilot to start a new pipeline by typing a simple English text prompt.
 
-![Start a Pipeline](img/copilot_text_to_Pipeline.png)
+![Start a pipeline](img/copilot_text_to_Pipeline.png)
 
-The following example uses Data Copilot to help start a Pipeline:
+The following example uses Data Copilot to help start a pipeline:
 
 1. Type a prompt with English text, such as `Which customers shipped the largest orders this year?`
-2. Data Copilot uses metadata from the accessible Datasets, Seeds, Pipelines, and Models, to create a Knowledge Graph.
-3. Data Copilot creates the Pipeline based on the text prompt, using the Knowledge Graph as the context. This Pipeline is accessible in both the visual editor and the code editor.
-4. If you'd like, review the suggested changes before you decide to keep or reject the suggested Pipeline. Then interactively execute it to see the results.
+2. Data Copilot uses metadata from the accessible datasets, seeds, pipelines, and models, to create a Knowledge Graph.
+3. Data Copilot creates the pipeline based on the text prompt, using the Knowledge Graph as the context. This pipeline is accessible in both the visual editor and the code editor.
+4. If you'd like, review the suggested changes before you decide to keep or reject the suggested pipeline. Then interactively execute it to see the results.
 5. View Data Copilot's suggested changes in the visual editor.
 
-### Modify an existing Pipeline
+### Modify an existing pipeline
 
 You can also call Data Copilot to modify an existing Model. Type a new text prompt, and Data Copilot will suggest a new sequence of data transformations. You don't necessarily have to select where you want to make your modification for Data Copilot to make its suggestion.
 
@@ -88,7 +88,7 @@ Within our [advanced Expression Builder](/Spark/expression-builder) you can:
 1. Type an English text prompt.
 2. Data Copilot generates a code expression for a particular column.
 3. Review the code expression, and if you'd like, try again with a different prompt.
-4. Run the Pipeline up to and including this gem, and observe the resulting data sample.
+4. Run the pipeline up to and including this gem, and observe the resulting data sample.
 
 ## Generate with AI
 
@@ -136,11 +136,11 @@ The Fix with AI option appears on the diagnostic screen where you see the error 
 
 ## Auto Documentation
 
-Understanding data assets is much easier with Data Copilot’s auto-documentation. Data Copilot delivers summary documentation suggestions for all Datasets, Pipelines, Models, and Orchestrations.
+Understanding data assets is much easier with Data Copilot’s auto-documentation. Data Copilot delivers summary documentation suggestions for all aatasets, pipelines, models, and orchestrations.
 
 ### Explain gems
 
-Here Data Copilot provides a high-level summary of a Pipeline and more detailed description of each gem.
+Here Data Copilot provides a high-level summary of a pipeline and more detailed description of each gem.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -173,7 +173,7 @@ Data Copilot auto-documents anywhere you need it - from the granular data source
 
 ## Data Tests and Quality Checks
 
-Unit tests and data quality checks are crucial for Pipeline and Job productionalization, yet many teams leave little time to develop these tests or worse, don’t build them at all. With Data Copilot, you’ll have one or more suggested [unit tests](docs/ci-cd/tests.md) that can be seamlessly integrated into your CICD process.
+Unit tests and data quality checks are crucial for pipeline and job productionalization, yet many teams leave little time to develop these tests or worse, don’t build them at all. With Data Copilot, you’ll have one or more suggested [unit tests](docs/ci-cd/tests.md) that can be seamlessly integrated into your CICD process.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>

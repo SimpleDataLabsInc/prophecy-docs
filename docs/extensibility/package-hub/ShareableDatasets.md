@@ -5,12 +5,12 @@ description: Shareable Datasets within the project
 tags: []
 ---
 
-Users can share a [Dataset](/docs/concepts/project/dataset.md) across their Pipelines, but use caution when sharing across Projects.
+Users can share a [Dataset](/docs/concepts/project/dataset.md) across their pipelines, but use caution when sharing across Projects.
 
-## Across Pipelines
+## Across pipelines
 
-Once a User adds a new Dataset as a Source or Target in their Pipeline, that Dataset is immediately available to be used in all Pipelines of that project. A User can use that Dataset as a Source or Target in other pipelines.
-Once a Dataset is modified in one Pipeline, it gets modified in all the Pipelines using it (in that Project) automatically.
+Once a User adds a new Dataset as a Source or Target in their pipeline, that Dataset is immediately available to be used in all pipelines of that project. A User can use that Dataset as a Source or Target in other pipelines.
+Once a Dataset is modified in one pipeline, it gets modified in all the pipelines using it (in that Project) automatically.
 
 For example:
 

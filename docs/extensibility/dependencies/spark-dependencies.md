@@ -8,14 +8,14 @@ tags:
   - extensibility
 ---
 
-Dependencies allow you to make use of third-party or custom code in your data Pipelines and Jobs. Dependencies can be
-written in Java, Scala, or PySpark, and can be connected to your data Pipelines by pointing
+Dependencies allow you to make use of third-party or custom code in your data pipelines and jobs. Dependencies can be
+written in Java, Scala, or PySpark, and can be connected to your data pipelines by pointing
 to [Maven](https://mvnrepository.com/) or [PyPI](https://pypi.org/) coordinates.
 
-Dependencies can be stored at the Project or Pipeline level. Project-level dependencies are available to all Pipelines in the Project.
+Dependencies can be stored at the project or pipeline level. Project-level dependencies are available to all pipelines in the Project.
 
 :::info
-We recommend that users store dependencies at the Project level whenever possible to improve the experience of interactive development. This will minimize the time spent connecting to clusters when switching between Pipelines in the IDE.
+We recommend that users store dependencies at the Project level whenever possible to improve the experience of interactive development. This will minimize the time spent connecting to clusters when switching between pipelines in the IDE.
 :::
 
 ## Storage
@@ -40,7 +40,7 @@ The table below describes the fields available when you select **Add Dependency*
 
 | Parameter                   | Description                                                                                                                                                                                                                                                                             |
 | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Scope                       | The dependency is enabled at the Project level or the Pipeline level.                                                                                                                                                                                                                   |
+| Scope                       | The dependency is enabled at the Project level or the pipeline level.                                                                                                                                                                                                                   |
 | Type                        | The dependency is either from the Package Hub, Scala (Maven) or Python (PyPi).                                                                                                                                                                                                          |
 | Name                        | This will identify the dependency.                                                                                                                                                                                                                                                      |
 | Version/Package/Coordinates | For Package Hub dependencies, input the package version. For Scala, use the Maven coordinates in the `groupId:artifcatId:version` format. For example, use `org.postgresql:postgresql:42.3.3` For Python, use the package and the version number.                                       |
@@ -58,13 +58,13 @@ Anyways** to ignore that warning.
 
 ## Update dependencies
 
-To update dependencies, you can do so in the Dependencies section of your Pipeline IDE. The **Update** label should appear if an update is available. Connecting a Prophecy project to a Spark cluster with a different dependency version will prompt a cluster restart.
+To update dependencies, you can do so in the Dependencies section of your pipeline IDE. The **Update** label should appear if an update is available. Connecting a Prophecy project to a Spark cluster with a different dependency version will prompt a cluster restart.
 
 ![Update dependencies](./img/synth_0_2_proph_reqiuirements.png)
 
 ## Install dependencies on a Spark cluster
 
-When you connect a Pipeline to a cluster, dependencies are automatically installed on that cluster. However, there are two cases that can prevent automatic installation:
+When you connect a pipeline to a cluster, dependencies are automatically installed on that cluster. However, there are two cases that can prevent automatic installation:
 
 - **Dependency on the cluster's Spark and Scala versions.** A few dependencies depend on your cluster’s Spark and Scala versions. You can usually find these version requirements in the respective repositories. For example, take a look at the [Spark Excel](https://mvnrepository.com/artifact/com.crealytics/spark-excel) page in the Maven Repository.
 - **Required manual installation on cluster**. Additionally, certain dependencies must be installed directly on your cluster. This is documented per dependency.
@@ -83,7 +83,7 @@ For any help required to enable the template for older Projects, please reach ou
 
 When the Build System template is enabled for a Project and you [add a dependency](#add-dependencies), Prophecy will automatically update your **pom.xml** or **setup.py** files to include it.
 
-Though not recommended, if templating is disabled and you still want to add dependencies that are visible to your Pipelines when scheduled, you can manually edit the **pom.xml** or **setup.py** files. Below is an example for a Scala Project.
+Though not recommended, if templating is disabled and you still want to add dependencies that are visible to your pipelines when scheduled, you can manually edit the **pom.xml** or **setup.py** files. Below is an example for a Scala Project.
 
 To add the `io.github.etspaceman:scalacheck-faker_2.12:7.0.0` dependency, edit the **pom.xml** like so:
 
@@ -109,7 +109,7 @@ If you do not create Jobs in the Prophecy editor or use the `pbt deploy` or `pbt
 section will help track those Scala dependencies.
 :::
 
-When manually deploying Pipelines using WHL format, you need to account for dependencies in both Python and Scala.
+When manually deploying pipelines using WHL format, you need to account for dependencies in both Python and Scala.
 WHL files inherently record Python dependencies, which ensures Python-related packages are handled during deployment.
 You can use the following option in [Prophecy Build Tool (PBT)](docs/ci-cd/prophecy-build-tool/prophecy-build-tool.md) to
 generate and include Scala dependency metadata in your deployment.

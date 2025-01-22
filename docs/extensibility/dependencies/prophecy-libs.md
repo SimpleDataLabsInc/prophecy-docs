@@ -14,7 +14,7 @@ Here are the released artifacts:
 
 Depending on the language you are working in, one of these artifacts will always be be a **system dependency** in your Prophecy project.
 
-You can see which Prophecy Libs version is running on your Spark cluster by checking the Cluster Attached dropdown in the Pipeline.
+You can see which Prophecy Libs version is running on your Spark cluster by checking the Cluster Attached dropdown in the pipeline.
 
 <img src={require('./img/libs-version-cluster.png').default} alt="Prophecy libs version in the Fabric cluster" width="58%" />
 
@@ -26,7 +26,7 @@ This section includes the functionalities offered by Prophecy Libs.
 
 ### Pipeline Monitoring
 
-Out of the box, Spark lacks auditing or monitoring capabilities for its Pipelines. Prophecy Libs bridges this gap by offering step-by-step transformation monitoring, enabling users to easily comprehend Pipeline execution metrics (e.g., times of arrival, amount of data processed), data profiles, and detailed debugging information at every Pipeline step.
+Out of the box, Spark lacks auditing or monitoring capabilities for its pipelines. Prophecy Libs bridges this gap by offering step-by-step transformation monitoring, enabling users to easily comprehend pipeline execution metrics (e.g., times of arrival, amount of data processed), data profiles, and detailed debugging information at every pipeline step.
 
 :::note
 

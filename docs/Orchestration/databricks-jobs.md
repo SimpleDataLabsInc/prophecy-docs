@@ -8,20 +8,20 @@ tags:
   - scheduling
 ---
 
-Once you have developed a [Spark Pipeline](/docs/concepts/project/pipelines.md) using Prophecy, you will want to schedule it to run at
+Once you have developed a [Spark pipeline](/docs/concepts/project/pipelines.md) using Prophecy, you will want to schedule it to run at
 some frequency. To support this, Prophecy provides a visual layer on top of Databricks Jobs for an easy orchestration.
 
 ## Development
 
 ### Your first Job
 
-You can create a Job from two places. If you're going to schedule only a single Pipeline, the easiest way to
-build a Job for it is to do it directly from the Pipeline editor screen. This way your Job is automatically initialized
-with the Pipeline you create it from.
+You can create a Job from two places. If you're going to schedule only a single pipeline, the easiest way to
+build a Job for it is to do it directly from the pipeline editor screen. This way your Job is automatically initialized
+with the pipeline you create it from.
 
-![Databricks Job Creation From Pipeline](img/databricks-job-creation-from-pipeline.png)
+![Databricks Job Creation From pipeline](img/databricks-job-creation-from-pipeline.png)
 
-To do that, simply navigate to your Pipeline, and click on the Schedule button (1). That opens a modal that shows all
+To do that, simply navigate to your pipeline, and click on the Schedule button (1). That opens a modal that shows all
 the Jobs that refer to this Job or allow you to create a completely new Job from scratch. Upon clicking
 Create New (2) you are redirected to the [Job building page](/Orchestration/databricks-jobs#building-the-job).
 
@@ -35,7 +35,7 @@ Whenever, creating a new Job you're asked for the following details:
 
 | Field Name        | Description                                                                                                                                                                                                                                   |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Project           | Which [Project](/docs/concepts/project/project.md) to create the Job in. This controls who has access to the Job, groups Jobs together for lineage, and allows you to use Pipelines already published within that Project.                    |
+| Project           | Which [Project](/docs/concepts/project/project.md) to create the Job in. This controls who has access to the Job, groups Jobs together for lineage, and allows you to use pipelines already published within that Project.                    |
 | Branch            | Which Git branch to use when developing this Job.                                                                                                                                                                                             |
 | Name              | Unique Job name.                                                                                                                                                                                                                              |
 | Scheduler         | The underlying engine that's going to execute your Job. Databricks is recommended.                                                                                                                                                            |
@@ -48,19 +48,19 @@ Whenever, creating a new Job you're asked for the following details:
 
 ![Example Databricks Job](img/databricks-job-example.png)
 
-Now that you've created your first Job, you can start adding Gems to the canvas to define which Pipelines will
-be run during the Job. To define dependencies between the Pipelines within the Job you can simply connect them
+Now that you've created your first Job, you can start adding Gems to the canvas to define which pipelines will
+be run during the Job. To define dependencies between the pipelines within the Job you can simply connect them
 by dragging-and-dropping the edges between Gems.
 
 Two Gem types are available when defining Databricks Jobs:
 
 #### Pipeline Gem
 
-The Pipeline Gem triggers a Spark Pipeline developed in Prophecy.
+The Pipeline gem triggers a Spark pipeline developed in Prophecy.
 
 ![Pipeline Component](img/databricks-jobs-pipeline-config.png)
 
-Settings for Pipeline component can be inherited from overall Job configuration or can be set inside the component itself.
+Settings for pipeline component can be inherited from overall Job configuration or can be set inside the component itself.
 
 #### Script Gem
 
@@ -89,11 +89,11 @@ The visual graph created on the Jobs page is automatically converted to code (JS
 | Cluster Size              | The [default size](/concepts/fabrics#whats-in-a-fabric) of the cluster that's going to be created for the Job to run.                                                                                                                         |
 | Cluster Mode              | Can be selected as `Single` (all Gems within the Job re-use the same Cluster) or `Multi` (all Gems within the Job run on a separate new cluster)                                                                                              |
 | Schedule Interval         | Defines how often your Job is going to run. The interval is defined using the [Quartz format](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html). You can click on the clock icon to select the interval. |
-| Pipeline level Timeout    | Timeout at Pipeline level                                                                                                                                                                                                                     |
-| Alerts Email for Pipeline | Comma separated list of emails, that are going to receive notifications on specific Job status events (Job start, failure, or success) for entire Pipeline.                                                                                   |
-| Per Gem Timeout           | Timeout for each Gem in Job Pipeline                                                                                                                                                                                                          |
-| Number of retries per Gem | Number of retries for each Gem in Job Pipeline                                                                                                                                                                                                |
-| Alerts Email per Gem      | Comma separated list of emails that are going to receive notifications on specific Job status events (start, failure, or success) for each Gem in Job Pipeline.                                                                               |
+| Pipeline level Timeout    | Timeout at pipeline level                                                                                                                                                                                                                     |
+| Alerts Email for pipeline | Comma separated list of emails, that are going to receive notifications on specific Job status events (Job start, failure, or success) for entire pipeline.                                                                                   |
+| Per Gem Timeout           | Timeout for each Gem in Job pipeline                                                                                                                                                                                                          |
+| Number of retries per Gem | Number of retries for each Gem in Job pipeline                                                                                                                                                                                                |
+| Alerts Email per Gem      | Comma separated list of emails that are going to receive notifications on specific Job status events (start, failure, or success) for each Gem in Job pipeline.                                                                               |
 
 To change the Job name itself, go to Prophecy's metadata page. Locate the Job within a Project, and click the pencil icon.
 
@@ -136,9 +136,9 @@ Here's how the Databricks UI looks for Prophecy's Multi Cluster Mode.
 In this mode, each component of Job will run on the same cluster.
 
 :::info
-To use single cluster mode the package name across each Pipeline in Job should be unique.
-This is done to ensure that the folder structure for one Pipeline does not overwrite another.
-Please refer to the steps below in continuation to our earlier [Example](databricks-jobs#deployment-modes) on how to configure package name in Pipeline.
+To use single cluster mode the package name across each pipeline in Job should be unique.
+This is done to ensure that the folder structure for one pipeline does not overwrite another.
+Please refer to the steps below in continuation to our earlier [Example](databricks-jobs#deployment-modes) on how to configure package name in pipeline.
 :::
 
 ---
