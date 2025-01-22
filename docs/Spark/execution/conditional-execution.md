@@ -24,10 +24,6 @@ To configure a condition on a gem:
 
 When a condition is set on a gem, a (C) symbol will appear before the gem name. When a gem meets a pass-through or removed condition, the interims will not be displayed on the edges associated with that gem.
 
-:::note
-Conditions cannot access data within the pipeline. They are designed to evaluate pipeline configurations and any other factors that can be determined at runtime.
-:::
-
 ## Pass-through condition
 
 Pass-through conditions let you skip the transformation of a gem or subgraph and maintain the input data as the output data. This ensures that the data passes through the gem or subgraph without any modification.
