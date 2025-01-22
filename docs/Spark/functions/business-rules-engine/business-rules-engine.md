@@ -6,17 +6,29 @@ tags:
   - business rules
 ---
 
-Business rules can be created in Spark Projects as functions. They can also be grouped and released via [Packages](docs/extensibility/package-hub/package-hub.md).
+Business rules empower organizations to model, manage, and automate repeatable business decisions throughout the enterprise.
 
-## Configuration
+## Overview
 
-| Field       | Description                                                                                                          |
-| ----------- | -------------------------------------------------------------------------------------------------------------------- |
-| Column Name | The name of the output column that the business rule will calculate.                                                 |
-| Parameters  | The columns you would like to use in your business rule condition(s). Each column must have a Name and Type defined. |
-| Rules       | The set(s) of conditions that define the business rule.                                                              |
+The business rules engine in Prophecy lets you incorporate business logic in your Pipelines. Often, different users will interact with business rules at various stages of Pipeline development. One common workflow is as follows:
 
-## Create a business rule
+1. Business users create business rules using predefined enterprise logic.
+1. These business rules are deployed and become available as [dependencies](docs/extensibility/dependencies/spark-dependencies.md) in the [Package Hub](docs/extensibility/package-hub/package-hub.md).
+1. Data engineers and others working on Pipelines can incorporate these rules using the [SchemaTransform gem](docs/Spark/gems/transform/schema-transform.md).
+
+These stages are explained in more detail below.
+
+## Business rule parameters
+
+Business rules require the following parameters.
+
+| Field          | Description                                                                                                                                       |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Input Columns  | The columns you would like to use in your business rule conditions. Each column must have a Name and Type defined.                                |
+| Output Columns | The names of the output columns that the business rule will calculate.                                                                            |
+| Rules          | The set of conditions that define the business rule. These can be grouped by date ranges, such that they only apply during a certain time period. |
+
+## Create business rules
 
 To create a new business rule:
 
@@ -27,9 +39,9 @@ To create a new business rule:
 
 Next, you need to define the rule parameters.
 
-1. Fill in the **Column Name**. This will be the name of your output column.
-1. Define columns in the **Parameters** table using a Name, Type, and (optionally) Description.
-1. Each column in the **Parameters** table will automatically be added to the **Rules** table under **Inputs**.
+1. Define columns in the **Input Columns** table using a name, type, and (optionally) description.
+1. Define columns in the **Output Columns** table with an optional description.
+1. Each column in these tables will automatically be added to the **Rules** table.
 
 ![Rule Parameters](./img/rule-parameters.png)
 
@@ -38,6 +50,12 @@ Each row in the Rules table corresponds to one rule condition. To add a rule con
 1. Add conditions under the corresponding inputs in SQL expression format. Note that each expression must be true in a row (logical `AND`) for the rule condition to be met.
 1. Add an output value for your condition. This can be a hard-coded value, or you can write in SQL expression format. The default output value is `Null`.
 1. Optionally, you can add a description of the rule.
+
+:::note
+
+Prophecy will generate an error if there is conflicting logic in your conditions.
+
+:::
 
 ### Example: IdentifyHighSpendingCustomer
 
@@ -52,23 +70,7 @@ In this example, we created an **IdentifyHighSpendingCustomer** business rule. T
 As you can see, we needed to use multiple rule conditions to achieve this outcome. Additionally, you can see that the output is either `1` or `0`.
 This is because we decided to represent whether a customer was a high spender or not with a binary flag.
 
-## Use a business rule in your Pipeline
-
-To use a business rule in your Pipeline, you can use the [SchemaTransform Gem](docs/Spark/gems/transform/schema-transform.md).
-
-1. Add a SchemaTransform Gem to the Pipeline.
-1. Open the Gem and add the appropriate input.
-1. Click **Add Transformation**.
-1. In the **Operation** dropdown, choose **Add Rule**.
-1. Choose the appropriate rule in the **Rule** field. This will populate the **New Column** field. If an input column has the same name as the new column, then its data will be overwritten—no new column will be appended.
-
-After completing these steps, you will see the required inputs for the business rule. Prophecy will automatically check if each the required input columns are present in the Gem input. Prophecy will also check to see if the column types match. Any error messages can be found in the Diagnostics of the Gem.
-
-:::note
-You can add multiple business rules to the SchemaTransform Gem at a time. You can also use the output column of one rule as an input column for a subsequent rule.
-:::
-
-## Managing business rules in Packages
+## Share business rules
 
 You can also import business rules into Projects via Packages. Imported rules are read-only and can only be edited from their source Project.
 
@@ -99,7 +101,28 @@ When someone adds the Package as a [dependency](docs/extensibility/dependencies/
 
 This example rule includes a set of conditions to determine the type of promotions that a customer is eligible for.
 
-## Viewing the business rules in code
+## Use business rules in your Pipeline
+
+To use a business rule in your Pipeline, you can use the [SchemaTransform gem](docs/Spark/gems/transform/schema-transform.md).
+
+1. Add a SchemaTransform gem to the Pipeline.
+1. Open the gem and add the appropriate input.
+1. Click **Add Transformation**.
+1. In the **Operation** dropdown, choose **Add Rule**.
+1. Choose the appropriate rule in the **Rule** field. This will populate the **New Column** field. If an input column has the same name as the new column, then its data will be overwritten—no new column will be appended.
+
+After adding a business rule, Prophecy will automatically perform a few checks to verify that:
+
+- Each rule input column exists in the gem input.
+- The type of each rule input column matches that of the gem input.
+
+Error messages can be found in the Diagnostics of the gem.
+
+:::note
+You can add multiple business rules to the SchemaTransform gem at a time. You can also use the output column of one rule as an input column for a subsequent rule.
+:::
+
+## View the business rules in code
 
 Prophecy automatically compiles visually-developed business rules into code.
 
