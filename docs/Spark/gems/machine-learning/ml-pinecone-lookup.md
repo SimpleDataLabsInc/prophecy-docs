@@ -49,7 +49,7 @@ Pinecone’s API can return multiple results. Depending on the use case, select 
 
 ### Input
 
-PineconeLookup requires a model_embedding column as input. Use one of Prophecy's Machine Learning gems to provide the model_embedding. For example, the OpenAI gem can precede the PineconeLookup gem in the Pipeline. The OpenAI gem, configured to `Compute a text embedding`, will output an openai_embedding column. This is a suitable input for the PineconeLookup gem.
+PineconeLookup requires a model_embedding column as input. Use one of Prophecy's Machine Learning gems to provide the model_embedding. For example, the OpenAI gem can precede the PineconeLookup gem in the pipeline. The OpenAI gem, configured to `Compute a text embedding`, will output an openai_embedding column. This is a suitable input for the PineconeLookup gem.
 
 | Column          | Description                                                                                                                                                                                                                                                                                                                                                                                                                  | Required |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |

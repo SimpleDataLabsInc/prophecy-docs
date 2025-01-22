@@ -55,7 +55,7 @@ Go to the Identity and Access Management (IAM) home page in your AWS account, an
 
 ![aws_iam_policies](img/aws_iamrole_policies.png)
 
-We need ListEnvironments permission for Airflow, PutObject, GetObject and DeleteObject to the S3 bucket used by your Airflow for uploading DAGs and Pipeline Artifacts and CreateCLiToken, GetEnvironment on the Airflow Instance.
+We need ListEnvironments permission for Airflow, PutObject, GetObject and DeleteObject to the S3 bucket used by your Airflow for uploading DAGs and pipeline Artifacts and CreateCLiToken, GetEnvironment on the Airflow Instance.
 For simplicity, you can switch to **(3) JSON** and use below JSON policy and replace values for Airflow Environment and S3 bucket.
 
 ```json

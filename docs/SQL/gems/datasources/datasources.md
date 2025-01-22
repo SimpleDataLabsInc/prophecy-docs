@@ -52,7 +52,7 @@ Each Source points to a table in the SQL Warehouse(s) specified in the Fabric. P
 
 ## Model
 
-A Model is similar to a Pipeline, as both contain data transformation steps. Unlike a Pipeline, however, each Model defines a single [materialized view or table](https://docs.getdbt.com/docs/build/materializations#materializations).
+A model is similar to a pipeline, as both contain data transformation steps. Unlike a pipeline, however, each Model defines a single [materialized view or table](https://docs.getdbt.com/docs/build/materializations#materializations).
 
 Models are represented as visual format or as a single .sql file in `code` format. Because Models define a single materialized view or table, Models can serve as inputs to other models.
 

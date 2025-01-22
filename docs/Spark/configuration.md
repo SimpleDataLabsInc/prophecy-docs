@@ -8,7 +8,7 @@ tags:
   - config
 ---
 
-Allows you to define configurations to control various aspects of your Pipeline.
+Allows you to define configurations to control various aspects of your pipeline.
 
 ![Config Option](img/configuration/config-option.png)
 
@@ -28,8 +28,8 @@ Hadoop configurations as name-value pairs. The name-value pairs will be set insi
 
 ## Pipeline Configuration
 
-Config values which can be set at Pipeline level and then be accessed inside any component in the Pipeline. [Multiple instances](#pipeline-configuration-instances)
-of configuration can be created per Pipeline.
+Config values which can be set at pipeline level and then be accessed inside any component in the pipeline. [Multiple instances](#pipeline-configuration-instances)
+of configuration can be created per pipeline.
 
 ![Configurations - Common](img/configuration/config-pipeline-eg1.png)
 
@@ -59,7 +59,7 @@ You must enable it by navigating to **...** > **Pipeline Settings**.
 
 ![Pipeline Settings](img/configuration/navigate-pipeline-settings.png)
 
-Under the **Code** section, click to enable Jinja config syntax. This setting is toggled on by default for new Pipelines.
+Under the **Code** section, click to enable Jinja config syntax. This setting is toggled on by default for new pipelines.
 
 ![Enable Jinja Config syntax](img/configuration/enable-jinja-config-syntax.png)
 
@@ -82,9 +82,9 @@ Jinja config syntax supports the following functionalities:
   LEAST((LEAST(product.SAS, COALESCE(product.SAS, call_func('data_{{read_env}}.business_rules.datum', DTM, '123456789')))) + 1, cast('9999-12-31' as DATE))
   ```
 
-## Examples for Pipeline level configurations
+## Examples for pipeline-level configurations
 
-Now let's use the [above defined configurations](#pipeline-configuration) in the below Pipeline.
+Now let's use the [above defined configurations](#pipeline-configuration) in the below pipeline.
 ![Pipeline view](img/configuration/config-pipeline-view-eg.png)
 
 ### Using Config in limit gem
@@ -163,7 +163,7 @@ When using Jinja config for the previous example, you would use `dbfs:/Prophecy/
 
 ### Edit Pipeline Name
 
-To change the Pipeline name itself, go to Prophecy's metadata page. Locate the Pipeline within a Project, and click the pencil icon.
+To change the pipeline name itself, go to Prophecy's metadata page. Locate the pipeline within a Project, and click the pencil icon.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -172,7 +172,7 @@ To change the Pipeline name itself, go to Prophecy's metadata page. Locate the P
 
 ## Pipeline Configuration instances
 
-Different configuration instances can be defined as per requirement. This comes in handy when Pipeline needs to run with different
+Different configuration instances can be defined as per requirement. This comes in handy when pipeline needs to run with different
 configurations in different environments or different users.
 
 New instances can be configured to override default values as shown in image below:

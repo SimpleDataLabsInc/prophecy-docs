@@ -24,7 +24,7 @@ There are two ways to configure the DynamicSelect.
 
 ## Examples
 
-You’ll use DynamicSelect when you want to avoid hard-coding your choice of columns. In other words, rather than define each column to keep in your Pipeline, you let the system automatically choose the columns based on certain conditions or rules.
+You’ll use DynamicSelect when you want to avoid hard-coding your choice of columns. In other words, rather than define each column to keep in your pipeline, you let the system automatically choose the columns based on certain conditions or rules.
 
 ### Remove date columns using field type
 

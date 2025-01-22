@@ -31,7 +31,7 @@ We want to extract `count` from _result_ and all of the columns from _events_ in
 
 ## The Expressions
 
-Having added a FlattenSchema gem to your Pipeline, all you need to do is click the column names you wish to extract and they'll be added to the **Expressions** section. Then, you can change the values in the **Target Column** to change the name of output columns.
+Having added a FlattenSchema gem to your pipeline, all you need to do is click the column names you wish to extract and they'll be added to the **Expressions** section. Then, you can change the values in the **Target Column** to change the name of output columns.
 
 ![Adding Expressions](./img/flatten_add_exp.gif)
 

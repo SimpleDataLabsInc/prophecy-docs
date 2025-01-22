@@ -10,9 +10,9 @@ tags:
 
 <h3><span class="badge">Spark Gem</span></h3>
 
-In a **Basic Subgraph**, you have the capability to encapsulate multiple distinct gems within a single, reusable parent gem. This organizational approach enhances the visual clarity of your Pipeline by grouping various sections together under a common parent gem. Additionally, it empowers you to break down intricate logic into modular components, thereby streamlining the Data Engineering processes.
+In a **Basic Subgraph**, you have the capability to encapsulate multiple distinct gems within a single, reusable parent gem. This organizational approach enhances the visual clarity of your pipeline by grouping various sections together under a common parent gem. Additionally, it empowers you to break down intricate logic into modular components, thereby streamlining the Data Engineering processes.
 
-Furthermore, the ability to [Publish a Subgraph](docs/extensibility/package-hub/ShareableSubgraphs.md) extends the utility beyond a singular Pipeline. By doing so, you can reuse the encapsulated logic in other Pipelines or Projects, promoting code re-usability and simplifying the overall development workflow.
+Furthermore, the ability to [Publish a Subgraph](docs/extensibility/package-hub/ShareableSubgraphs.md) extends the utility beyond a singular pipeline. By doing so, you can reuse the encapsulated logic in other pipelines or Projects, promoting code re-usability and simplifying the overall development workflow.
 
 ## Create a Basic Subgraph
 
@@ -39,7 +39,7 @@ As you connect the input and output ports to gems Outside the subgraph, you woul
 
 ## Subgraph Configurations
 
-Subgraphs are configurable just like [Pipelines are configurable](../../configuration.md). For Subgraphs, the configurations can apply in one of two ways: (1) Pipeline level Configurations apply to the Subgraph or (2) Specify Configurations only for the Subgraph
+Subgraphs are configurable just like [pipelines are configurable](../../configuration.md). For Subgraphs, the configurations can apply in one of two ways: (1) Pipeline level Configurations apply to the Subgraph or (2) Specify Configurations only for the Subgraph
 
 ### Pipeline Level Configurations can apply to the Subgraph
 
@@ -53,4 +53,4 @@ Pipeline configs are accessible inside Subgraphs by **copying** the config to th
 
 ### Specify configurations only for the Subgraph
 
-In Subgraph Configs, you can define values that can be set at the Subgraph level and then be accessed inside any component in the Subgraph. These will also reflect under Configurations of Pipelines using these Subgraphs, but they can only be edited from Subgraph configs.
+In Subgraph Configs, you can define values that can be set at the Subgraph level and then be accessed inside any component in the Subgraph. These will also reflect under Configurations of pipelines using these Subgraphs, but they can only be edited from Subgraph configs.

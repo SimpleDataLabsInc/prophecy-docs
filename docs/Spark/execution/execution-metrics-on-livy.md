@@ -28,25 +28,25 @@ During development, often the user will want to see their data to make more sens
 generated or not after the transformation. Prophecy generates these data samples as `Interims`, which are temporarily cached previews of data after each gem.
 To check more about interims, please refer [here](/docs/Spark/execution/interactive-execution.md#interims).
 
-We have interims available after each gem of Pipeline.
+We have interims available after each gem of pipeline.
 
 ![Regular Interims](img/SingleModeInterims.png)
 
 ## Execution Metrics on Livy
 
-When running Pipelines and Jobs, you may be interested to know few metrics related to execution like records
-read/written, bytes read/written, total time taken and Data samples b/w components. These Dataset, Pipeline-run and
+When running pipelines and Jobs, you may be interested to know few metrics related to execution like records
+read/written, bytes read/written, total time taken and Data samples b/w components. These Dataset, pipeline-run and
 Job-run related metrics are accumulated and stored on your data plane and can be viewed later from Prophecy UI. For more details please refer [here](./execution-metrics)
 
-Please refer below images for Execution Metrics on Pipelines page.
+Please refer below images for Execution Metrics on pipelines page.
 
-![Pipeline_Execution_Metrics](img/execution-metrics-pipeline.png)
+![pipeline_Execution_Metrics](img/execution-metrics-pipeline.png)
 
-Each row here is one run of the Pipeline. You can click and go to a particular run and see the interims for that run or metrics like Rows read/written, time taken etc
+Each row here is one run of the pipeline. You can click and go to a particular run and see the interims for that run or metrics like Rows read/written, time taken etc
 
 ![Execution_Metrics](img/ExecutionMetrics.png)
 
-You can also see Execution Metrics for each Dataset in the Pipeline.
+You can also see Execution Metrics for each Dataset in the pipeline.
 
 ![Dataset_metrcis](img/execution-metrcis-dataset1.png)
 

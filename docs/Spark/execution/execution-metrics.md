@@ -8,13 +8,13 @@ tags:
   - spark
 ---
 
-When running Pipelines and Jobs, you may be interested to know few metrics related to execution like records
-read/written, bytes read/written, total time taken, and Data samples between components. These Dataset, Pipeline-run, and
-Job-run related metrics are accumulated and stored on your data plane and can be viewed later from Prophecy UI.
+When running pipelines and jobs, you may be interested to know few metrics related to execution like records
+read/written, bytes read/written, total time taken, and Data samples between components. These dataset, pipeline-run, and
+job-run related metrics are accumulated and stored on your data plane and can be viewed later from Prophecy UI.
 
 ## Data storage behavior
 
-Depending on the flags setting, the storage behavior for execution metrics changes. For example, certain data may be written depending on whether a Pipeline flag is turned on or off. See the following table to learn how the behavior changes.
+Depending on the flags setting, the storage behavior for execution metrics changes. For example, certain data may be written depending on whether a pipeline flag is turned on or off. See the following table to learn how the behavior changes.
 
 |                             | On                                                                                                                                                                        | Off                                                                                                                                                              |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -29,9 +29,9 @@ For clusters with table ACL enabled, you may have limited access on catalogs, sc
 you to setup the execution metrics tables beforehand. Data is stored in the workspace storage itself, and you can choose
 the tables from Team view in the Prophecy UI.
 
-There are three execution metrics tables that store data for Pipelines, individual components, and the generated data samples, also known as interims. You have the option to choose the following at the time of team creation:
+There are three execution metrics tables that store data for pipelines, individual components, and the generated data samples, also known as interims. You have the option to choose the following at the time of team creation:
 
-- **Pipeline runs table** - The Pipeline metrics table that contains metrics and code for Pipeline runs
+- **Pipeline runs table** - The pipeline metrics table that contains metrics and code for pipeline runs
 - **Component runs table** - The component (Dataset) metrics table that contains metrics for individual component runs
 - **Interims table** - The interims table that contains samples of data, depending on the interim mode selected
 

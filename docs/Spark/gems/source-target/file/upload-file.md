@@ -1,7 +1,7 @@
 ---
 title: Upload files
 id: upload-file
-description: Upload files to your Spark Pipeline
+description: Upload files to your Spark pipeline
 tags:
   - gems
   - file
@@ -18,9 +18,9 @@ You can upload files of the following types to your file store:
 
 ## Steps to upload
 
-To upload a file and incorporate it into your Spark Pipeline, you can use a Source gem. There are a few ways to get started:
+To upload a file and incorporate it into your Spark pipeline, you can use a Source gem. There are a few ways to get started:
 
-- Drag and drop the file directly to the Pipeline canvas.
+- Drag and drop the file directly to the pipeline canvas.
 
   ![Drag and drop file](./img/drag-drop-file.png)
 
@@ -55,4 +55,4 @@ Follow these steps to complete the file configuration:
 1. **Load** the data if you want to preview the table.
 1. Click **Create Dataset**. This action creates the dataset and also creates the table if using the **Upload and create a table** option.
 
-Now, your data is ready for use in your Pipeline via the Source gem!
+Now, your data is ready for use in your pipeline via the Source gem!

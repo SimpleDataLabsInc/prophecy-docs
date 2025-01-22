@@ -25,13 +25,13 @@ Depending on the type of clusters, we have two modes of Interims
 
 ### Regular Interims
 
-For `Single User` clusters, and `No isolation Shared` clusters, we have interims available after each gem of Pipeline. These are available on both Unity and Non Unity catalog workspaces.
+For `Single User` clusters, and `No isolation Shared` clusters, we have interims available after each gem of pipeline. These are available on both Unity and Non Unity catalog workspaces.
 
 ![Regular Interims](img/SingleModeInterims.png)
 
 ### Vanilla Interims
 
-For `Shared mode` clusters, we have added interims on all Tail nodes of the Pipeline.
+For `Shared mode` clusters, we have added interims on all Tail nodes of the pipeline.
 These interims will come Just before Target gems, and if there is no Target gem, then as a dangling edge after last gem. See below images for the same.
 
 ![Vanilla Interims](img/SharedModeInterims.png)
@@ -40,24 +40,24 @@ These interims will come Just before Target gems, and if there is no Target gem,
 
 ## Execution Metrics
 
-When running Pipelines and Jobs, you may be interested to know few metrics related to execution like records
-read/written, bytes read/written, total time taken and Data samples b/w components. These Dataset, Pipeline-run and
+When running pipelines and jobs, you may be interested to know few metrics related to execution like records
+read/written, bytes read/written, total time taken and Data samples b/w components. These Dataset, pipeline-run and
 Job-run related metrics are accumulated and stored on your data plane and can be viewed later from Prophecy UI. For more details, refer [here](./execution-metrics).
 
 :::caution
-These metrics are **not available** for `Shared mode` clusters (both normal workspaces and Unity catalog workspaces). You should see a proper error when trying to get historical runs of Pipelines/Jobs executed on `Shared mode` clusters.
+These metrics are **not available** for `Shared mode` clusters (both normal workspaces and Unity catalog workspaces). You should see a proper error when trying to get historical runs of pipelines/jobs executed on `Shared mode` clusters.
 
 :::
 
-Refer below images for Execution Metrics on Pipelines page.
+Refer below images for Execution Metrics on pipelines page.
 
 ![Pipeline_Execution_Metrics](img/execution-metrics-pipeline.png)
 
-Each row here is one run of the Pipeline. You can click and go to a particular run and see the interims for that run or metrics like Rows read/written, time taken, etc.
+Each row here is one run of the pipeline. You can click and go to a particular run and see the interims for that run or metrics like Rows read/written, time taken, etc.
 
 ![Execution_Metrics](img/ExecutionMetrics.png)
 
-You can also see Execution Metrics for each Dataset in the Pipeline.
+You can also see Execution Metrics for each dataset in the pipeline.
 
 ![Dataset_metrcis](img/execution-metrcis-dataset1.png)
 
@@ -67,6 +67,6 @@ Each row here is one run where this Dataset was used. You can click and go to a 
 
 :::info
 
-When using `High Concurrency` or `Shared Mode` Databricks Clusters you may notice a delay when running the first command, or when your cluster is scaling up to meet demand. This delay is due to Prophecy and Pipeline dependencies (Maven or Python packages) being installed. For the best performance, it is recommended that you cache packages in an Artifactory or on DBFS. Please [contact us](https://help.prophecy.io/support/tickets/new) to learn more about this.
+When using `High Concurrency` or `Shared Mode` Databricks Clusters you may notice a delay when running the first command, or when your cluster is scaling up to meet demand. This delay is due to Prophecy and pipeline dependencies (Maven or Python packages) being installed. For the best performance, it is recommended that you cache packages in an Artifactory or on DBFS. Please [contact us](https://help.prophecy.io/support/tickets/new) to learn more about this.
 
 :::

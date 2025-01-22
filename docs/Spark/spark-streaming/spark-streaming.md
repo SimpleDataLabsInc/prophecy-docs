@@ -24,17 +24,17 @@ The streaming capability is available for `Python` projects that do not use UC S
 
 ## Spark Structured Streaming using Prophecy IDE
 
-![How to Create a Streaming Pipeline](./img/create-streaming-pipeline.png)
-Within a Prophecy `Python` Project, a user can create a Structured Streaming Pipeline using the Streaming(beta) mode.
+![How to Create a Streaming pipeline](./img/create-streaming-pipeline.png)
+Within a Prophecy `Python` Project, a user can create a Structured Streaming pipeline using the Streaming(beta) mode.
 
-### Working with a Streaming Pipeline
+### Working with a Streaming pipeline
 
-To create a Streaming Pipeline, users can follow a process similar to creating a Batch Pipeline in a `Python` project. For more on Pipeline creation and understanding Prophecy pipelines, please check [this](/docs/concepts/project/pipelines.md) link. Streaming Pipelines work differently from Batch Pipelines in the following ways:
+To create a Streaming pipeline, users can follow a process similar to creating a Batch pipeline in a `Python` project. For more on pipeline creation and understanding Prophecy pipelines, please check [this](/docs/concepts/project/pipelines.md) link. Streaming pipelines work differently from Batch pipelines in the following ways:
 
 1. Partial runs are not supported for streaming applications. A partial run is only allowed on a `Streaming Target` gem.
 2. Streaming pipelines are long-running tasks and process data at intervals. Currently, they do not capture cumulative statistics.
-3. Streaming Pipelines are continuous and do not stop running. To terminate a Streaming Pipeline, users need to click the "X" button. A Streaming Pipeline is an ongoing process and will not terminate itself.
-4. To deploy the Pipeline on Databricks, users can follow the same process described [here](/Orchestration/databricks-jobs). A scheduled Job will check if the Streaming Pipeline is running every X minutes. If the Pipeline is not running, the Job will attempt to start it.
+3. Streaming pipelines are continuous and do not stop running. To terminate a Streaming pipeline, users need to click the "X" button. A Streaming pipeline is an ongoing process and will not terminate itself.
+4. To deploy the pipeline on Databricks, users can follow the same process described [here](/Orchestration/databricks-jobs). A scheduled Job will check if the Streaming pipeline is running every X minutes. If the pipeline is not running, the Job will attempt to start it.
 
 ### Streaming Sources and Targets
 

@@ -20,7 +20,7 @@ There are three types of Subgraph available by default. The [Basic](./basic-subg
 
 | Name                                                         | Description                                                                                                                     |
 | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
-| [Basic](./basic-subgraph)                                    | Captures one or more gems within a Pipeline to reuse across other Pipelines and Projects.                                       |
+| [Basic](./basic-subgraph)                                    | Captures one or more gems within a pipeline to reuse across other pipelines and Projects.                                       |
 | [Table Iterator](./table-iterator)                           | Iterates over one or more gems for each row of the first input DataFrame. Table iterator is available for Python Projects only. |
 | [Novel Type](./subgraph.md#create-your-own-type-of-subgraph) | Apply any custom logic to the group of gems present inside the Subgraph.                                                        |
 
@@ -36,7 +36,7 @@ Click on the **(1) Create Gem** button. This will open up the **Create Gem** For
 This takes to you the gem code editor with a basic structure of the code generated. Here you can start modifying your dialog, validation and the actual logic of the gem.
 Read [here](/docs/extensibility/gem-builder/spark-gem-builder.md) for more details of the gem code.
 
-The newly constructed Subgraph gem can be utilized within any Pipeline of this Project, accessible through the Subgraph menu as demonstrated below.
+The newly constructed Subgraph gem can be utilized within any pipeline of this Project, accessible through the Subgraph menu as demonstrated below.
 Furthermore, you have the option to Release this project, enabling its use as a dependency in other projects, thus incorporating the created gem into various projects.
 Read [here](/docs/extensibility/package-hub/package-hub.md) for more details on project as a dependency.
 

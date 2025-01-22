@@ -8,15 +8,15 @@ tags:
   - development
 ---
 
-## Running a Pipeline
+## Running a pipeline
 
-There are 2 ways to run a Pipeline interactively:
+There are 2 ways to run a pipeline interactively:
 
 ![Interactive run options](img/interactive-execution-play-options.png)
 
-1. Using the play button from the bottom right side. This would execute the entire Pipeline.
-2. Using the play button on a particular gem. This would only execute the flow in the Pipeline up to and including that gem. This comes
-   in handy during development, so that we don't have to run the entire Pipeline to debug/change a particular gem.
+1. Using the play button from the bottom right side. This would execute the entire pipeline.
+2. Using the play button on a particular gem. This would only execute the flow in the pipeline up to and including that gem. This comes
+   in handy during development, so that we don't have to run the entire pipeline to debug/change a particular gem.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -28,21 +28,21 @@ There are 2 ways to run a Pipeline interactively:
 During development, often the user will want to see their data to make more sense of it and to check whether the expected output is getting
 generated or not after the transformation. Prophecy generates these data samples as `Interims`, which are temporarily cached previews of data after each gem.
 
-Which gems automatically get Interims created is controlled by the Pipeline settings as shown below.
+Which gems automatically get Interims created is controlled by the pipeline settings as shown below.
 
 ![Data and Job Sampling](img/interactive-execution-job-data-sampling.png)
 
-From the Pipeline, select the **(1) dropdown** and **(2) Pipeline Settings**. Select **(3) Job Sampling** to generate interim samples for scheduled jobs. Select **(4) Sampling Mode** to chose the level of data sampling. Select **(5) Data Sampling** to generate interim samples during interactive runs, and select the Sampling Mode accordingly. These two options, Job sampling and Data sampling, are independent; one does not affect the other. For Job sampling, the interim metrics are stored in the compute cluster, such as the Databricks workspace, and visible in [execution metrics](#execution-metrics).
+From the pipeline, select the **(1) dropdown** and **(2) Pipeline Settings**. Select **(3) Job Sampling** to generate interim samples for scheduled jobs. Select **(4) Sampling Mode** to chose the level of data sampling. Select **(5) Data Sampling** to generate interim samples during interactive runs, and select the Sampling Mode accordingly. These two options, Job sampling and Data sampling, are independent; one does not affect the other. For Job sampling, the interim metrics are stored in the compute cluster, such as the Databricks workspace, and visible in [execution metrics](#execution-metrics).
 
 ### Advanced Data sampling setting
 
-There is also a global level Development Settings flag that admins can use to disable Data sampling for a given Fabric. This flag overrides the Pipeline level Data sampling settings. When disabled, you won't be able to see production data in the interims when you run the Pipeline.
+There is also a global level Development Settings flag that admins can use to disable Data sampling for a given Fabric. This flag overrides the pipeline level Data sampling settings. When disabled, you won't be able to see production data in the interims when you run the pipeline.
 
 From the Metadata page, click the **Fabrics** tab and select the Fabric that you want to change the Data sampling setting for. Click the **Advanced** tab and click the **Allow for data sampling** toggle to turn on or off the flag.
 
 ![Create a new model test](./img/limit-data-preview-interims.png)
 
-Data sampling is enabled on by default. When left enabled, Data sampling uses the Pipeline's Data sampling settings. Prophecy samples data during the interactive run experience to provide the best debugging experience for users.
+Data sampling is enabled on by default. When left enabled, Data sampling uses the pipeline's data sampling settings. Prophecy samples data during the interactive run experience to provide the best debugging experience for users.
 
 ### Data sampling modes
 
@@ -79,7 +79,7 @@ export const ImageData = [
 
 ## Execution
 
-Once we run a Pipeline, we have several options to better understand our Pipeline:
+Once we run a pipeline, we have several options to better understand our pipeline:
 
 - [Execution code](#execution-code)
 - [Execution Errors](#execution-errors)
@@ -89,7 +89,7 @@ Once we run a Pipeline, we have several options to better understand our Pipelin
 
 ### Execution Code
 
-Once we run a Pipeline interactively Prophecy generates the execution code in the backend, which is then executed in
+Once we run a pipeline interactively Prophecy generates the execution code in the backend, which is then executed in
 the selected Fabric.
 
 ![Execution code](img/interactive-execution-code.png)
@@ -101,7 +101,7 @@ be executed for debugging.
 
 ### Execution Errors
 
-If there are any errors in the Pipeline, a pop-up window will open for `execution errors`.
+If there are any errors in the pipeline, a pop-up window will open for `execution errors`.
 ![Interactive execution error](img/interactive-execution-error.png)
 
 Also the error can be seen in the runtime logs:

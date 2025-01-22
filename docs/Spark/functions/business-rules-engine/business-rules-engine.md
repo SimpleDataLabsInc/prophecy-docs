@@ -52,11 +52,11 @@ In this example, we created an **IdentifyHighSpendingCustomer** business rule. T
 As you can see, we needed to use multiple rule conditions to achieve this outcome. Additionally, you can see that the output is either `1` or `0`.
 This is because we decided to represent whether a customer was a high spender or not with a binary flag.
 
-## Use a business rule in your Pipeline
+## Use a business rule in your pipeline
 
-To use a business rule in your Pipeline, you can use the [SchemaTransform gem](docs/Spark/gems/transform/schema-transform.md).
+To use a business rule in your pipeline, you can use the [SchemaTransform gem](docs/Spark/gems/transform/schema-transform.md).
 
-1. Add a SchemaTransform gem to the Pipeline.
+1. Add a SchemaTransform gem to the pipeline.
 1. Open the gem and add the appropriate input.
 1. Click **Add Transformation**.
 1. In the **Operation** dropdown, choose **Add Rule**.
@@ -103,6 +103,6 @@ This example rule includes a set of conditions to determine the type of promotio
 
 Prophecy automatically compiles visually-developed business rules into code.
 
-Business rules are stored in the **functions** folder of your Pipeline's code. This is true for both Python and Scala Projects. Note that you can also see the imported business rules in the code view.
+Business rules are stored in the **functions** folder of your pipeline's code. This is true for both Python and Scala Projects. Note that you can also see the imported business rules in the code view.
 
 ![Business rules in Python and Scala](./img/bre-code.png)

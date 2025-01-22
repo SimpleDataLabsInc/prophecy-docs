@@ -53,7 +53,7 @@ A collection of gems related to working with various table-based formats.
 
 ## Lookup
 
-[Lookup](/docs/Spark/gems/source-target/advanced/lookup.md) is a special component that allows you to broadcast any data, to later be used anywhere in your Pipeline.
+[Lookup](/docs/Spark/gems/source-target/advanced/lookup.md) is a special component that allows you to broadcast any data, to later be used anywhere in your pipeline.
 
 ## Synthetic Data Generator
 

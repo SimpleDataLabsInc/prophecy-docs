@@ -18,11 +18,11 @@ tags:
 
 #### Spark Copilot Enhancements {#Spark34}
 
-- **Limit data preview in interims**: There is a new global level flag that admins can use to disable Data sampling for a given Fabric. This flag overrides the Pipeline level Data sampling settings. When disabled, you won't be able to see production data in the interims when you run the Pipeline.
+- **Limit data preview in interims**: There is a new global level flag that admins can use to disable Data sampling for a given Fabric. This flag overrides the pipeline level Data sampling settings. When disabled, you won't be able to see production data in the interims when you run the pipeline.
 
   ![Create a new model test](./../img/oct-limit-data-preview-interims.png)
 
-  Data sampling is enabled on by default. When left enabled, Data sampling uses the Pipeline's data sampling settings. Prophecy samples data during the interactive run experience to provide the best debugging experience for users.
+  Data sampling is enabled on by default. When left enabled, Data sampling uses the pipeline's data sampling settings. Prophecy samples data during the interactive run experience to provide the best debugging experience for users.
 
   For more information, see [Interims](/docs/Spark/execution/interactive-execution.md#interims).
 
@@ -105,7 +105,7 @@ Added/updated gems are highlighted in yellow.
 
 ### Minor Improvements {#MinorImprovements34}
 
-- **Code diff on merge screen**: You can view the code changes of your commit when you start the process to commit changes. This gives you granular change visibility so that you can understand the detailed changes being made to your Pipelines, Models, datasets, and other entities.
+- **Code diff on merge screen**: You can view the code changes of your commit when you start the process to commit changes. This gives you granular change visibility so that you can understand the detailed changes being made to your pipelines, models, datasets, and other entities.
 
   ![View Git code changes](./../img/oct-git-code-changes.png)
 
@@ -113,7 +113,7 @@ Added/updated gems are highlighted in yellow.
 
   For more information, see the [Git docs](/docs/concepts/git/git.md).
 
-- **Databricks Volumes support**: Prophecy now supports Databricks Volumes. When you run a Python or Scala Pipeline via a Job, you must bundle them as whl/jar artifacts. These artifacts must then be made accessible to the Databricks Job in order to use them as a library installed on the cluster.
+- **Databricks Volumes support**: Prophecy now supports Databricks Volumes. When you run a Python or Scala pipeline via a Job, you must bundle them as whl/jar artifacts. These artifacts must then be made accessible to the Databricks Job in order to use them as a library installed on the cluster.
 
   You can designate a path to a Volume for uploading the whl/jar files on the Providers tab of your Databricks Fabric.
 

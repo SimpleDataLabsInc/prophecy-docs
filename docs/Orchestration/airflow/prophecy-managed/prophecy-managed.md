@@ -11,8 +11,8 @@ tags:
 ---
 
 If you are new to Airflow and do not have an Airflow Instance running in your environment, we provide a `Prophecy Managed Airflow` to expedite your trial and POC.
-You can use this to connect to your Spark or SQL execution env and try out scheduling for your Spark Pipelines or SQL Models.
-Let's see how to set up this Fabric.
+You can use this to connect to your Spark or SQL execution env and try out scheduling for your Spark pipelines or SQL models.
+Let's see how to set up this fabric.
 
 ## How to create Prophecy Managed Airflow Fabric
 

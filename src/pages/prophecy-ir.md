@@ -1,7 +1,7 @@
 ---
 title: Prophecy IR
 id: prophecy-ir
-description: Hidden page describing the Prophecy IR and how to generate the Prophecy Pipelines using an API
+description: Hidden page describing the Prophecy IR and how to generate the Prophecy pipelines using an API
 hide_table_of_contents: false
 tags:
   - prophecy
@@ -12,9 +12,9 @@ tags:
 
 ### Introduction
 
-This page describes how to generate the Prophecy Pipelines programmatically. Prophecy generates code directly based on
+This page describes how to generate the Prophecy pipelines programmatically. Prophecy generates code directly based on
 the Prophecy IR representation. Prophecy IR is the Prophecy internal representation format the generically describes
-the Prophecy PySpark, Spark, and SQL Pipelines and expressions.
+the Prophecy PySpark, Spark, and SQL pipelines and expressions.
 
 :::caution Beta
 
@@ -26,20 +26,20 @@ This documentation is only accessible to a select subset of design customers and
 
 The Prophecy IR lifecycle follows the following steps:
 
-1. **Read Prophecy IR** - Prophecy IR stores the current visual state of the Pipeline as a
+1. **Read Prophecy IR** - Prophecy IR stores the current visual state of the pipeline as a
    serialized `workflow.latest.json` file. This file is stored on a Git repository, alongside the generated code.
    Prophecy IR reads the state file, parses and validates it.
 2. **Read available gems** - Prophecy reads available gems specifications and validates the state file against them.
-3. **Visualize Pipeline** - Prophecy visualizes the Pipeline on the Prophecy IDE, based on the loaded state and gem
+3. **Visualize pipeline** - Prophecy visualizes the pipeline on the Prophecy IDE, based on the loaded state and gem
    specifications.
-4. **Generate code** - After the Pipeline is successfully visualized, Prophecy saves the Pipelines code on the Git
+4. **Generate code** - After the pipeline is successfully visualized, Prophecy saves the pipelines code on the Git
    repository.
 
 ### Prophecy IR format
 
 #### Visual Representation
 
-![Simple Pipeline](img/simple-pipeline.png)
+![Simple pipeline](img/simple-pipeline.png)
 
 #### workflow.latest.json
 
@@ -121,6 +121,6 @@ The Prophecy IR lifecycle follows the following steps:
 
 ### Complete example
 
-For a complete example open any of the `workflow.latest.json`'s of the default Pipelines in the HelloWorld project!
+For a complete example open any of the `workflow.latest.json`'s of the default pipelines in the HelloWorld project!
 
-![Example Pipelines](img/example-pipelines.png)
+![Example pipelines](img/example-pipelines.png)

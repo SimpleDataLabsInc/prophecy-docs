@@ -1,13 +1,13 @@
 ---
 sidebar_position: 2
 id: observability
-description: Everyone should be able to keep Pipelines running
+description: Everyone should be able to keep pipelines running
 title: Observing data and pipelines
 tags:
   - release
 ---
 
-Highlighted improvements for Pipeline Observability
+Highlighted improvements for pipeline Observability
 
 ### Lineage Run
 

@@ -160,7 +160,7 @@ Here are some additional tips to keep in mind when using the Visual Expression B
 
 ## Run and Verify the output
 
-Run the Pipeline up to and including the gem with your expression, and observe the resulting data sample.
+Run the pipeline up to and including the gem with your expression, and observe the resulting data sample.
 
 - Click the **Play** button on either the canvas or the gem.
 

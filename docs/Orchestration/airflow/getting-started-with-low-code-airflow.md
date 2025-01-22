@@ -18,7 +18,7 @@ Moreover, you have the flexibility to enhance functionality by incorporating you
       style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}></iframe>
 </div>
 
-#### In this quick-start, we will show you how to use Prophecy Managed Airflow to Run and schedule your Spark and SQL Pipelines
+#### In this quick-start, we will show you how to use Prophecy Managed Airflow to Run and schedule your Spark and SQL pipelines
 
 We'll take you step by step from connecting your compute cluster or warehouse to Prophecy Managed Airflow to creating your first [Airflow DAG](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html) and scheduling it.
 By the end of this training, you'll have an understanding of Airflow DAGs, be able to use our Visual interface to quickly create your DAG, and schedule this DAG on Prophecy Hosted Airflow. Let's dig in!
@@ -26,7 +26,7 @@ By the end of this training, you'll have an understanding of Airflow DAGs, be ab
 #### You will need
 
 - Databricks Account
-- A Prophecy Project With Spark Pipeline or SQL Model running on Databricks
+- A Prophecy Project With Spark pipeline or SQL model running on Databricks
 
 OR
 
@@ -35,7 +35,7 @@ OR
 
 If you don't have an existing project, please check out [this guide](https://docs.prophecy.io/concepts/project/#1-create-new-project) for setting up a Spark Project, and [this guide](/docs/getting-started/getting-started-with-low-code-sql.md) for setting up a SQL model in Prophecy.
 
-**For this guide, let's create a Job that gets activated whenever a new file is uploaded to an S3 bucket. Additionally, we'll configure it to send an email notification prior to initiating the execution of both the Pipeline and SQL model.**
+**For this guide, let's create a Job that gets activated whenever a new file is uploaded to an S3 bucket. Additionally, we'll configure it to send an email notification prior to initiating the execution of both the pipeline and SQL model.**
 
 ## 1. Setup Prophecy Fabric for Airflow
 
@@ -77,7 +77,7 @@ Once done, hit **(8) Save**.
 
 ### 1.3 Adding Databricks Spark Connection
 
-To be able to Run your Databricks Pipelines, you need to have connection from Prophecy Managed Airflow to your Databricks Environment.
+To be able to Run your Databricks pipelines, you need to have connection from Prophecy Managed Airflow to your Databricks Environment.
 Click again on Add Connection button.
 
 Select Databricks Spark in **(1) Connection Type**. Now under the **(2) Fabric**, you would select the already created Fabric for Databricks Spark and Prophecy would setup the connection.
@@ -116,13 +116,13 @@ After creating the Fabric, Lets create our first Airflow Job.
 
 ## 2. Create an Airflow Job
 
-A Job is an entity that contains gems to represent a DAG consisting of various Tasks (Pipelines/Models/Scripts, etc) which you can Run once or schedule to run at a frequency. Each Job would represent an Airflow DAG in Python.
+A Job is an entity that contains gems to represent a DAG consisting of various Tasks (pipelines/models/scripts, etc) which you can Run once or schedule to run at a frequency. Each Job would represent an Airflow DAG in Python.
 
 Let's see how to create an Airflow Job in Prophecy.
 
 Click the **(1) Create Entity** button, and choose **(2) Create Job** option.
 
-In the side drawer that opens, you would provide the Basic Info of the Job. Start by selecting the **(1) Project** in which you want to create the Job. You can pick the existing Spark or SQL project here where you have created Pipelines/Models.
+In the side drawer that opens, you would provide the Basic Info of the Job. Start by selecting the **(1) Project** in which you want to create the Job. You can pick the existing Spark or SQL project here where you have created pipelines/Models.
 Then pick your development **(2) Branch**. Here you can pick an existing branch for development, or create a new one. Provide a **(3) Name** and pick **Airflow** in the **(4) Scheduler**. Select the **(5) Fabric** we created in Step 1.
 Pick a **(6) Schedule** with which you want to schedule the Job. Note, you can modify this again after testing before releasing your Job.
 Add a **(7) Description**, about the Job you are creating. Once done, click **(8) Create New**.
@@ -155,16 +155,16 @@ Once done, Click **(5) Save**!
 
 ![Add_email_gem_details](img/3.13_Add_email_gem_details.png)
 
-### 2.3 Adding Spark Pipeline gem
+### 2.3 Adding Spark pipeline gem
 
-If you have a Spark Databricks connection and a Spark Project with Pipeline, you can include Spark Pipeline gems in the Job. Click on **(1) Operators**, and Drag the **(2) Pipeline gem** from the dropdown to the canvas. Drag it close to the output port of the Email gem, so that it gets auto-connected. Then click the newly added gem and click **(3) Open** to open the gem configurations.
+If you have a Spark Databricks connection and a Spark Project with pipeline, you can include Spark pipeline gems in the Job. Click on **(1) Operators**, and Drag the **(2) Pipeline gem** from the dropdown to the canvas. Drag it close to the output port of the Email gem, so that it gets auto-connected. Then click the newly added gem and click **(3) Open** to open the gem configurations.
 
 ![Add_Pipeline_Gem](img/3.14_Add_pipeline_gem.png)
 
-Here, you will select the Pipeline and optionally override any config values for the Pipeline.
+Here, you will select the pipeline and optionally override any config values for the pipeline.
 
-Select the **(1) Pipeline to Schedule** you want to Run. As you select the Pipeline, You would start seeing the Configurations defined in the Pipeline. You would not be able to modify the schema of these configs but can override the Config values.
-Pick (**2) Fabric and Cluster size to run this Pipeline** for running this Pipeline in Databricks. Here, select the Fabric for which you already created connection in step 1.3. Once done, Click **(3) Save**!
+Select the **(1) Pipeline to Schedule** you want to Run. As you select the pipeline, You would start seeing the Configurations defined in the pipeline. You would not be able to modify the schema of these configs but can override the Config values.
+Pick (**2) Fabric and Cluster size to run this Pipeline** for running this pipeline in Databricks. Here, select the Fabric for which you already created connection in step 1.3. Once done, Click **(3) Save**!
 
 ![Add_pipeline_gem_details](img/3.15_Add_pipeline_gem_details.png)
 
@@ -183,7 +183,7 @@ You can provide any additional **(6) Properties** for your run and then click **
 
 ![Add_DBT_gem_details](img/3.17_Add_DBT_gem_details.png)
 
-Congratulations!!! And just like that, you have created a very simple Airflow Job with one Databricks Pipeline Task and one DBT Model Task.
+Congratulations!!! And just like that, you have created a very simple Airflow Job with one Databricks pipeline Task and one DBT Model Task.
 
 Let's go ahead and see how to Run and Schedule it.
 

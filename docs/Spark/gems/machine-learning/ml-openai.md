@@ -22,7 +22,7 @@ The OpenAI gem allows the Prophecy user to interact with the OpenAI API using tw
 1. Compute text embeddings
 2. Answer a question, where the user has the option to provide context
 
-Follow along to learn how to interact with the OpenAI API using Prophecy's easy-to-use interface. For an example set of Pipelines that use these gems to create a Generative AI Chatbot, see this [guide.](/docs/getting-started/genaichatbot.md)
+Follow along to learn how to interact with the OpenAI API using Prophecy's easy-to-use interface. For an example set of pipelines that use these gems to create a Generative AI Chatbot, see this [guide.](/docs/getting-started/genaichatbot.md)
 
 :::caution
 As with all applications that interface with Large Language Models (LLMs), the OpenAI gem can generate results that are incorrect and/or misleading. The OpenAI gem is subject to the same [limitations and risks](https://platform.openai.com/docs/guides/embeddings/limitations-risks) as those posed by OpenAI itself.

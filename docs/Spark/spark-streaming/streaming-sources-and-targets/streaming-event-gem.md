@@ -16,7 +16,7 @@ The Kafka gem allows inferring the schema of the events by automatically populat
 
 ## Create a Kafka Source gem
 
-A Kafka Source gem allows the Streaming Pipeline continuously pull data from a Kafka topic. The following options are supported:
+A Kafka Source gem allows the Streaming pipeline continuously pull data from a Kafka topic. The following options are supported:
 
 | **Property**          | Optional | **Default Value** | **Comment**                                                                                                                                                 |
 | --------------------- | -------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |

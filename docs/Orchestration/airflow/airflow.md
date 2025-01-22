@@ -62,11 +62,11 @@ Visual development for Airflow in Prophecy brings numerous advantages to data en
 
 - **Reduced Maintenance**: Visually designed Jobs are easier to maintain and update, as they require less coding, resulting in fewer errors and quicker adjustments.
 
-- **Centralized Management**: Streamline the management of workflows by having them all in one platform, providing a unified view of your data Pipeline.
+- **Centralized Management**: Streamline the management of workflows by having them all in one platform, providing a unified view of your data pipeline.
 
 - **Automation and Scheduling**: Automate data processes and set schedules for tasks, ensuring that critical data operations occur at the right time.
 
-- **Error Handling and Monitoring**: Easily track task execution, set up error handling, and receive alerts when issues arise, improving data Pipeline reliability.
+- **Error Handling and Monitoring**: Easily track task execution, set up error handling, and receive alerts when issues arise, improving data pipeline reliability.
 
 - **Cost Savings**: Visually designed Airflow can lead to cost savings through increased operational efficiency and decreased development time.
 

@@ -26,7 +26,7 @@ import Requirements from "../../\_gem-requirements.mdx";
 
 Generate synthetic data with this special kind of Source gem.
 
-Generating mock data is crucial when building data Pipelines to simulate real-world scenarios for testing, validating, and optimizing Pipeline performance before using actual production data. It helps ensure the Pipeline handles various data formats, structures, and edge cases effectively, minimizing potential issues in a live environment.
+Generating mock data is crucial when building data pipelines to simulate real-world scenarios for testing, validating, and optimizing pipeline performance before using actual production data. It helps ensure the pipeline handles various data formats, structures, and edge cases effectively, minimizing potential issues in a live environment.
 
 A wide range of synthetic data can be created using any column name and an array of data types. For example, generate browser history data as shown below.
 

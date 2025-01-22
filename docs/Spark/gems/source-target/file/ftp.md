@@ -46,7 +46,7 @@ For example, if the File Format is `CSV`, you can set CSV specific options like 
 :::
 
 :::note
-For **SFTP**, make sure you have the dependency `io.prophecy.spark:filetransfer_2.12:0.1.1` included in your Pipeline.
+For **SFTP**, make sure you have the dependency `io.prophecy.spark:filetransfer_2.12:0.1.1` included in your pipeline.
 [**Read more**](docs/extensibility/dependencies/spark-dependencies.md) about how to manage dependencies.
 ![Adding SFTP dependency](./img/sftp_dependency.png)
 

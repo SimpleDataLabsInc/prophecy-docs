@@ -39,7 +39,7 @@ It's now ready to be used in your gems.
 
 ### Step4: Add a Snowflake gem to your pipeline and refer the above created Configs in the username and password field
 
-Now that we have a Pipeline config to refer our password stored in Databricks secrets securely, We can go ahead and add a Snowflake gem.
+Now that we have a pipeline config to refer our password stored in Databricks secrets securely, We can go ahead and add a Snowflake gem.
 Use the Config with syntax as `${snowflake_user}` and `${snowflake_pass}` in the username and password field respectively and define all other required fields in the gem as is.
 Your gem is now ready to Used and tested.
 
