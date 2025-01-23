@@ -98,25 +98,27 @@ Response:
 
 ```
 {
- 200
+ "data": {
+   "updateRemoteUri":1
+ }
 }
 ```
 
-| Parameter               | Description                                                                                                              | Required | Example                                   |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------ | -------- | ----------------------------------------- |
-| projectUID              | Prophecy project ID, found in the project URL                                                                            | Required | "11"                                      |
-| externalRepoUri         | Repository target for migration. Be sure to use the \*.git suffix as appropriate for cloning using https or SSH options. | Required | "https://gitlab.com/****/examplerepo.git" |
-| externalGitProvider     | Possible values (case sensitive): Github, GithubEnterprise, GitLab, GitLabEnterprise, BitBucket, AzureDevOps, Other      | Required | GitLab                                    |
-| externalRepoEmail       | If provided, the API call will validate the two repos are the same.                                                      | Optional | "myemail@mycompany.com"                   |
-| externalRepoUsername    | If provided, the API call will validate the two repos are the same.                                                      | Optional | "myGitLabUsername"                        |
-| externalRepoAccessToken | If provided, the API call will validate the two repos are the same.                                                      | Optional | "gitlab-token"                            |
+| Parameter               | Description                                                                                                         | Required | Example                                   |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------- | -------- | ----------------------------------------- |
+| projectUID              | Prophecy Project ID, found in the Project URL                                                                       | Required | "11"                                      |
+| externalRepoUri         | Repository target for migration. Use the https url.                                                                 | Required | "https://gitlab.com/****/examplerepo.git" |
+| externalGitProvider     | Possible values (case sensitive): Github, GithubEnterprise, GitLab, GitLabEnterprise, BitBucket, AzureDevOps, Other | Required | GitLab                                    |
+| externalRepoEmail       | If provided, the API call will validate the two repos are the same.                                                 | Optional | "myemail@mycompany.com"                   |
+| externalRepoUsername    | If provided, the API call will validate the two repos are the same.                                                 | Optional | "myGitLabUsername"                        |
+| externalRepoAccessToken | If provided, the API call will validate the two repos are the same.                                                 | Optional | "gitlab-token"                            |
 
 ### Each user needs to update their Git credential
 
 After each project is configured for a new Git provider's repo, the Prophecy users will need to update their Git credentials.
 
-1. Open the new Git provider (eg Gitlab) and create a new token. Be sure the new token has permission to write to all the important repositories.
-2. Open Prophecy. Add a new Git credential for the new provider (eg Gitlab). Configure projects to use the new Git credential.
+1. Open the new Git provider (eg GitLab) and create a new token. Be sure the new token has permission to write to all the important repositories.
+2. Open Prophecy. Add a new Git credential for the new provider (eg GitLab). Configure projects to use the new Git credential.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -158,7 +160,7 @@ If you see an `access denied` error response when calling the Git migration API:
 2. Verify the token for the target Git provider
    [a] has permission to push to the repo
    [b] has permission to push to the branch, and
-   [c] is the right type of token (app token for gitlab, personal access token for github, etc.).
+   [c] is the right type of token (app token for GitLab, personal access token for Github, etc.).
 
 </details>
 
@@ -168,8 +170,8 @@ If you see an `access denied` error response when calling the Git migration API:
 If you have many projects to change, use a separate API call to list your team’s project IDs and URLs. Duplicate the query, modify the Body tab, and enter the following:
 
 ```
-tableQueryProject(<insert_project_uid_here>: String!) {
-  Team(uid: <insert_team_uid_here>) {
+tableQueryProject($UID: String!) {
+  Team(uid: $UID) {
     _id
     name
     projects {
