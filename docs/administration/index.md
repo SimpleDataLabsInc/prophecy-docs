@@ -36,7 +36,7 @@ A user who logs into Prophecy has access to the integrated development environme
 
 ![Prophecy IDE](./img/arch_ide.png)
 
-Teams are the primary mechanism of ownership. Teams own Projects where pipelines, Datasets, and Jobs live. Teams also own execution fabrics that provide the execution and storage resources for execution including on SQL Warehouses and Spark clusters.
+Teams are the primary mechanism of ownership. Teams own Projects where pipelines, datasets, and jobs live. Teams also own execution fabrics that provide the execution and storage resources for execution including on SQL Warehouses and Spark clusters.
 
 ### SQL
 
@@ -71,7 +71,7 @@ Security-conscious enterprises that use Databricks with limited network access h
 Prophecy primarily uses Databricks for the following functionalities:
 
 - **Interactive Execution** - Prophecy allows its users to spin up new clusters or connect to existing clusters. When a cluster connection exists, Prophecy allows the user to run their code in the interactive mode. Interactive code queries are sent to Databricks using the [Databricks Command API 1.2](https://docs.databricks.com/dev-tools/api/1.2/index.html).
-- **Scheduling** - Prophecy allows the user to build and orchestrate Databricks Jobs. This works through the [Databricks Jobs API 2.1](https://docs.databricks.com/dev-tools/api/latest/jobs.html).
+- **Scheduling** - Prophecy allows the user to build and orchestrate Databricks jobs. This works through the [Databricks Jobs API 2.1](https://docs.databricks.com/dev-tools/api/latest/jobs.html).
 
 By default, Prophecy does not store any data samples when executing code using Databricks. Data samples can be optionally stored for observability purposes (execution metrics).
 

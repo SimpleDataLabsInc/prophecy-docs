@@ -18,7 +18,7 @@ tags:
 
 #### Spark Copilot Enhancements {#Spark339}
 
-- **Support custom artifactory resolve plibs version**: We now support adding custom Pypi or Maven dependencies for Pipelines running on all Spark Fabrics including EMR, Dataproc, etc.
+- **Support custom artifactory resolve plibs version**: We now support adding custom Pypi or Maven dependencies for pipelines running on all Spark Fabrics including EMR, Dataproc, etc.
 
 - **Support for config resolution inside call_func()**: Config variables inside of the `call_function()` and `call_func()` are now supported. The new syntax is `call_function("{{catalogName}}.{{database}}.{{funcName}}", "{{firstArg}}")`.
 
@@ -36,4 +36,4 @@ In this release, we've updated the UX and capabilities of the expression builder
 
 ### Minor Improvements {#MinorImprovements339}
 
-- **Clone a Prophecy Job**: You can now clone a Prophecy Job just as you may clone a Pipeline. This is useful for Job renaming issues.
+- **Clone a Prophecy Job**: You can now clone a Prophecy Job just as you may clone a pipeline. This is useful for Job renaming issues.

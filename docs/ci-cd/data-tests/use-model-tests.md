@@ -126,7 +126,7 @@ When scheduling your project, you can opt in to run a test along with the projec
 
 To Schedule your project to run with tests, follow these steps:
 
-1. Under the Project Browser, click **Add Job**. Enter a name for your Job and click **Create New**.
+1. Under the Project Browser, click **Add Job**. Enter a name for your job and click **Create New**.
 
    ![Create a job](img/model-test-create-job.png)
 
@@ -145,4 +145,4 @@ To Schedule your project to run with tests, follow these steps:
 
 6. Check that your **Project, model**, and **Fabric** are correct.
 
-7. Click **Save**. The Job runs automatically. You can see the Job status by clicking **Detail**.
+7. Click **Save**. The job runs automatically. You can see the job status by clicking **Detail**.

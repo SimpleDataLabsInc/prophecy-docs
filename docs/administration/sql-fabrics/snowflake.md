@@ -11,7 +11,7 @@ tags:
   - fabric
 ---
 
-Snowflake has become a leading SQL Warehouse provider on the cloud. Follow the steps below to [Create a Fabric](./snowflake.md#create-a-fabric) in Prophecy so that you can execute data transformations on your Snowflake Warehouse. Power up Production models with [scheduled Jobs](./snowflake.md#schedule-jobs) on your Snowflake Warehouse using Airflow. Prophecy's easy-to-use environment supports development at every step.
+Snowflake has become a leading SQL Warehouse provider on the cloud. Follow the steps below to [Create a Fabric](./snowflake.md#create-a-fabric) in Prophecy so that you can execute data transformations on your Snowflake Warehouse. Power up Production models with [scheduled jobs](./snowflake.md#schedule-jobs) on your Snowflake Warehouse using Airflow. Prophecy's easy-to-use environment supports development at every step.
 
 ## Create a Fabric
 
@@ -72,6 +72,6 @@ Each team member can attach completed Fabrics to their Projects and Models.
 Remember, each user will be prompted to update the Fabric with their own credentials. Prophecy respects these credentials when reading Snowflake tables, databases, etc. User writes default to the database and schema defined in the Fabric.
 :::
 
-## Schedule Jobs
+## Schedule jobs
 
 SQL models can be scheduled using Airflow to run on Snowflake. Create an [Airflow Fabric](/docs/Orchestration/airflow/setup/setup.md), and set up a Snowflake Connection that references the Snowflake Fabric created above. Prophecy supports Snowflake Connections from these three Airflow flavors: [Composer](docs/Orchestration/airflow/setup/composer.md), [MWAA](docs/Orchestration/airflow/setup/mwaa.md), and [Prophecy Managed Airflow](docs/Orchestration/airflow/prophecy-managed/prophecy-managed.md).

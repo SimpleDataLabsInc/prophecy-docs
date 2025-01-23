@@ -49,7 +49,7 @@ The SQL **provider** is both the storage warehouse and the execution environment
 | **5 - Catalog** - (Optional) Enter the Catalog name if you are using Unity Catalog                                                                                                                                                                                                                                              |
 | **6 - Continue** to the optional Connections step.                                                                                                                                                                                                                                                                              |
 
-Prophecy supports Databricks Volumes. When you run a Python or Scala pipeline via a Job, you must bundle them as whl/jar artifacts. These artifacts must then be made accessible to the Databricks Job in order to use them as a library installed on the cluster. You can designate a path to a Volume for uploading the whl/jar files under Artifacts.
+Prophecy supports Databricks Volumes. When you run a Python or Scala pipeline via a job, you must bundle them as whl/jar artifacts. These artifacts must then be made accessible to the Databricks job in order to use them as a library installed on the cluster. You can designate a path to a Volume for uploading the whl/jar files under Artifacts.
 
 ### Connections
 
@@ -76,4 +76,4 @@ Each team member can attach completed Fabrics to their Projects and Models.
 Remember, each user will be prompted to update the Fabric with their own credentials. Prophecy respects these credentials when accessing Databricks catalogs, tables, databases, etc.
 :::
 
-Once a Project is attached to a Fabric, and the Project is released, the Project can be scheduled to run on a regular frequency using [Databricks Jobs](/docs/getting-started/getting-started-with-low-code-sql.md#5-orchestrate-and-deploy)
+Once a Project is attached to a Fabric, and the Project is released, the Project can be scheduled to run on a regular frequency using [Databricks jobs](/docs/getting-started/getting-started-with-low-code-sql.md#5-orchestrate-and-deploy)

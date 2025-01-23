@@ -34,7 +34,7 @@ A branch in Git is like a separate version of your project where you can make ch
 
 Let's checkout (or switch to) a different branch.
 
-1. Open a Project in the Editor.
+1. Open a Project in the editor.
 1. Select the **Git** tab in the bottom bar.
 1. Click **Checkout branch**.
 1. Choose an existing branch from the dropdown or create a new branch by typing a new name.

@@ -42,7 +42,7 @@ The gem list will depend on two factors: Your project language (Python/Scala) an
 
 ### Gem Instance
 
-Once you've selected which gem you want to use in your pipeline from the Drawer, an _Instance_ of the gem will appear in the pipeline Editor.
+Once you've selected which gem you want to use in your pipeline from the Drawer, an _Instance_ of the gem will appear in the pipeline editor.
 
 ![Gem Instance](img/gems/instance.png)
 
@@ -60,7 +60,7 @@ Once you've selected which gem you want to use in your pipeline from the Drawer,
 
 ### Gem Configuration
 
-Gem instances can be configured by hovering over their icons in the pipeline Editor and clicking `Open`.
+Gem instances can be configured by hovering over their icons in the pipeline editor and clicking `Open`.
 
 ![Gem instance configuration](img/gems/instance_open.png)
 
@@ -104,7 +104,7 @@ Outputs define the outgoing schema(s) that will be available to downstream gem i
 
 ### Port renaming
 
-Most gem types allow Inputs and Outputs to be renamed, which will have at least two effects: Renaming the input variable in the generated code and change the port name in the pipeline Editor.
+Most gem types allow Inputs and Outputs to be renamed, which will have at least two effects: Renaming the input variable in the generated code and change the port name in the pipeline editor.
 
 ![Port rename](img/gems/input_rename_port.png)
 ![Port name in pipeline editor](img/gems/input_rename.png)

@@ -30,7 +30,7 @@ Dependencies are natively saved within your build system files. For example, if 
 There are two ways to view all of your Project dependencies:
 
 - Open your Project from the **Metadata** page. Then, click on the **Dependencies** tab.
-- Open your Project in the **Pipeline Editor**. Then, click **… > Dependencies** from the project header.
+- Open your Project in the **Pipeline editor**. Then, click **… > Dependencies** from the project header.
 
 You can add, edit, and delete dependencies from these views, too.
 

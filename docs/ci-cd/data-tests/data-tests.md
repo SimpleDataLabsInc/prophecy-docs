@@ -8,7 +8,7 @@ tags:
   - sql
 ---
 
-You can use data tests to ensure that your business data is generated reliably over time. As a data engineer, data analyst, or business user, you can run data tests so that you don’t have to manually check every Dataset every time you run a Job or model. The data test checks the validity of the SQL in your project.
+You can use data tests to ensure that your business data is generated reliably over time. As a data engineer, data analyst, or business user, you can run data tests so that you don’t have to manually check every Dataset every time you run a job or model. The data test checks the validity of the SQL in your project.
 
 A data test is an assertion you make about a Dataset in your project. The Dataset can be the output from a series of transformations, or the Dataset can be a particular data source, seed, or model.
 

@@ -31,10 +31,10 @@ Once expectations are added, users can enable them and release their project to 
 
 :::info
 
-Expectations should be enabled and Project needs to be released via Prophecy, to be able to Run the Expecations
+Expectations should be enabled and Project needs to be released via Prophecy, to be able to Run the Expectations.
 
 :::
 
 ### Data Observability view
 
-In the Data Observability tab, users can monitor their expectations as well as Job runs. This page should be monitored closely for all scheduled expectations and jobs, as users would be able to see past runs, filter out failed runs/quality incidents, and filter by project/timeline, among other features.
+In the Data Observability tab, users can monitor their expectations as well as job runs. This page should be monitored closely for all scheduled expectations and jobs, as users would be able to see past runs, filter out failed runs/quality incidents, and filter by project/timeline, among other features.
