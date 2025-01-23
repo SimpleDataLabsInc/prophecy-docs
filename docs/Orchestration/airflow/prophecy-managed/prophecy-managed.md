@@ -21,12 +21,12 @@ On the Basic Info screen, enter a **(1) fabric Name**, **(2) fabric Description*
 
 Once ready, click **(4) Continue**.
 
-![Createfabric](./img/Create_fabric.png)
+![Create fabric](./img/Create_Fabric.png)
 
 Since we’re setting up a fabric connected to Airflow, choose **Airflow** as the **(1) Provider Type** and **Prophecy Managed** as the **(2) Provider**.
 For connecting to Prophecy Managed Airflow, you don't need to provide any other details, so go ahead and click on **(3) Continue**.
 
-![CreatePMfabric](./img/Create_PM_fabric.png)
+![Create PM fabric](./img/Create_PM_Fabric.png)
 
 This completes the fabric creation for you. Now you can start setting up optional connections for Prophecy Managed Airflow to your AWS/Databricks etc. Also keep in mind there are some [Limitations](./) that larger teams may experience when using Prophecy Managed Airflow. Please reach out to support@Prophecy.io if these limitations block your use cases.
 
