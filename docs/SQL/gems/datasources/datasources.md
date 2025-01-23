@@ -68,14 +68,14 @@ Now the new model has been created and the canvas is displayed. Optionally, clic
 
 ![Model2](img/Model2.png)
 
-| Model as a Datasource                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------ |
-| **4 Add a Source** - From the Environment tab, select a source for the new model.                                        |
-| **5 Configure ** - Configure the new source, do any transformation steps or simply connect to the new model gem.         |
+| Model as a Datasource                                                                                                     |
+| ------------------------------------------------------------------------------------------------------------------------- |
+| **4 Add a Source** - From the Environment tab, select a source for the new model.                                         |
+| **5 Configure ** - Configure the new source, do any transformation steps or simply connect to the new model gem.          |
 | **6 Interactive Run** - Click the "Play" button to execute the new model and create a materialized view of the new model. |
-| **7 Project Tab** - Click the project tab and notice MyModel is now available in the Project Browser.                    |
-| **8 Existing Model** - Open the existing model of interest. In this example, MyNextModel is opened.                      |
-| **9 Add Model as a Source** - Add the new model (e.g. MyModel) as a Source.                                              |
+| **7 Project Tab** - Click the project tab and notice MyModel is now available in the Project Browser.                     |
+| **8 Existing Model** - Open the existing model of interest. In this example, MyNextModel is opened.                       |
+| **9 Add Model as a Source** - Add the new model (e.g. MyModel) as a Source.                                               |
 
 ![Model3](img/Model3.png)
 

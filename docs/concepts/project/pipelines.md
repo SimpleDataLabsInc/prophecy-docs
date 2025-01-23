@@ -25,7 +25,7 @@ Under the hood, pipelines are based on Spark-native code. pipelines are ideal fo
 | Branch      | The Git branch to use for pipeline development.                                                                                                   |
 | Name        | The name of the pipeline.                                                                                                                         |
 | Mode        | Whether the pipeline will be Batch mode or Streaming.                                                                                             |
-| Description | A field to describe the purpose of the pipeline.                                                                                                   |
+| Description | A field to describe the purpose of the pipeline.                                                                                                  |
 
 ## Edit a pipeline
 
