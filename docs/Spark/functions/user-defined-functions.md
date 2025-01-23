@@ -91,7 +91,7 @@ object UDFs extends Serializable {
 
 ## Import UDFs
 
-SQL UDFs stored in Databricks Unity Catalog can be imported to Python projects and re-used within any Gem.
+SQL UDFs stored in Databricks Unity Catalog can be imported to Python projects and reused within any Gem.
 
 ### How to Import UDFs
 
