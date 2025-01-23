@@ -1,152 +1,72 @@
 ---
-title: Interactive Execution
+title: Interactive execution
 id: interactive-execution
-description: Interactive Execution
+description: Run a pipeline interactively in the pipeline canvas
 tags:
   - spark
   - interactive
   - development
 ---
 
-## Running a Pipeline
+When developing pipelines in Prophecy, you can run the pipeline interactively in the pipeline canvas. In other words, you can preview the output of your data transformations at every step in your pipeline.
 
-There are 2 ways to run a Pipeline interactively:
+## Interim data sampling
+
+When you run a pipeline in the pipeline canvas, Prophecy generates **interim** data samples that let you preview the output of your data transformations.
+
+There are two ways to run a pipeline interactively:
+
+- Click the **play** button on the pipeline canvas to run the entire pipeline.
+- Click the **play** button on a particular gem to execute the flow of the pipeline **up to and including that gem**. This is useful for testing and debugging when you don't want to run the entire pipeline.
 
 ![Interactive run options](img/interactive-execution-play-options.png)
 
-1. Using the play button from the bottom right side. This would execute the entire Pipeline.
-2. Using the play button on a particular Gem. This would only execute the flow in the Pipeline up to and including that Gem. This comes
-   in handy during development, so that we don't have to run the entire Pipeline to debug/change a particular Gem.
+After you run your pipeline, you will see the interims appear between gems. These previews are temporarily cached. Learn more about how to navigate the interim data samples in [Data explorer](docs/Spark/execution/data-explorer.md).
 
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/103921419/185360973-928612ae-7655-4e67-8f95-ae9b63829231.mp4" title="Monitoring" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
+## Enable data sampling
 
-## Interims
+Data sampling is enabled by default for interactive execution. To change data sampling settings:
 
-During development, often the user will want to see their data to make more sense of it and to check whether the expected output is getting
-generated or not after the transformation. Prophecy generates these data samples as `Interims`, which are temporarily cached previews of data after each Gem.
-
-Which Gems automatically get Interims created is controlled by the Pipeline settings as shown below.
+1. Select the **...** (ellipses) dropdown.
+2. Open the **Pipeline Settings**.
+3. Toggle **Job Sampling** to enable or disable generating interim samples for scheduled jobs. For job sampling, interim metrics are stored in the compute cluster (such as a Databricks workspace) and are visible in [execution metrics](#execution-metrics).
+4. Select **Sampling Mode** to chose the level of data sampling.
+5. Toggle **Data Sampling** to enable or disable generating interim samples during interactive runs.
 
 ![Data and Job Sampling](img/interactive-execution-job-data-sampling.png)
 
-From the Pipeline, select the **(1) dropdown** and **(2) Pipeline Settings**. Select **(3) Job Sampling** to generate interim samples for scheduled jobs. Select **(4) Sampling Mode** to chose the level of data sampling. Select **(5) Data Sampling** to generate interim samples during interactive runs, and select the Sampling Mode accordingly. These two options, Job sampling and Data sampling, are independent; one does not affect the other. For Job sampling, the interim metrics are stored in the compute cluster, such as the Databricks workspace, and visible in [execution metrics](#execution-metrics).
+:::note
+[Vanilla](docs/Spark/execution/databricks-clusters-behaviors.md#vanilla-interims) is an interim sampling mode reserved for Shared Databricks clusters.
+:::
 
-### Advanced Data sampling setting
+### Advanced settings
 
-There is also a global level Development Settings flag that admins can use to disable Data sampling for a given Fabric. This flag overrides the Pipeline level Data sampling settings. When disabled, you won't be able to see production data in the interims when you run the Pipeline.
-
-From the Metadata page, click the **Fabrics** tab and select the Fabric that you want to change the Data sampling setting for. Click the **Advanced** tab and click the **Allow for data sampling** toggle to turn on or off the flag.
+There is also a global-level **Development Settings** flag admins can use to disable data sampling for a given [fabric](docs/concepts/fabrics/fabrics.md). This flag overrides pipeline-level data sampling settings. You can find these settings in the **Advanced** tab of a fabric.
 
 ![Create a new model test](./img/limit-data-preview-interims.png)
 
-Data sampling is enabled on by default. When left enabled, Data sampling uses the Pipeline's Data sampling settings. Prophecy samples data during the interactive run experience to provide the best debugging experience for users.
+## Execution information
 
-### Data sampling modes
+Once you run a pipeline, there are several ways for you to better understand the execution.
 
-Toggle the images below to view the various modes (or levels) of data sampling. By default, for interactive runs, data sampling is enabled for all components. Note [Vanilla](docs/Spark/execution/databricks-clusters-behaviors.md#vanilla-interims) is an interim sampling mode reserved for Shared Databricks clusters.
+| Callout | Information                                                    | Description                                                                                                             |
+| ------- | -------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| **1**   | Problems                                                       | Errors from your pipeline execution that will be shown in a dialog window, as well as in the canvas footer.             |
+| **2**   | Runtime logs                                                   | The progress with timestamps of your pipeline runs and any errors.                                                      |
+| **3**   | Execution code                                                 | The code Prophecy runs to execute your pipeline. You can copy and paste this code elsewhere for debugging.              |
+| **4**   | Runtime metrics                                                | Various Spark metrics collected during runtime.                                                                         |
+| **5**   | [Execution metrics](docs/Spark/execution/execution-metrics.md) | Metrics that can be found in the **Metadata** of a pipeline, or from the **Run History** button under the **...** menu. |
 
-```mdx-code-block
-import App from '@site/src/components/slider';
+Use the image below to help you find the relevant information.
 
-export const ImageData = [
-  {
-    "image":"/img/interactive-execution/interactive-execution-interim-all.png",
-    "description":<h3 style={{padding:'10px'}}>Data Sampling Mode - All</h3>,
-  },
-  {
-    "image":"/img/interactive-execution/interactive-execution-interim-source.png",
-    "description":<h3 style={{padding:'10px'}}>Data Sampling Mode - Source</h3>
-  },
-  {
-    "image":"/img/interactive-execution/interactive-execution-interim-target.png",
-    "description":<h3 style={{padding:'10px'}}>Data Sampling Mode - Target</h3>,
-  },
-  {
-    "image":"/img/interactive-execution/interactive-execution-interim-io.png",
-    "description":<h3 style={{padding:'10px'}}>Data Sampling Mode - IO</h3>,
-  },
-  {
-    "image":"/img/interactive-execution/interactive-execution-sample-interim.png",
-    "description":<h3 style={{padding:'10px'}}>Interim example</h3>,
-  },
-];
-
-<App ImageData={ImageData}></App>
-```
-
-## Execution
-
-Once we run a Pipeline, we have several options to better understand our Pipeline:
-
-- [Execution code](#execution-code)
-- [Execution Errors](#execution-errors)
-- [Runtime Logs](#runtime-logs)
-- [Runtime Metrics](#runtime-metrics)
-- [Execution Metrics](#execution-metrics)
-
-### Execution Code
-
-Once we run a Pipeline interactively Prophecy generates the execution code in the backend, which is then executed in
-the selected Fabric.
-
-![Execution code](img/interactive-execution-code.png)
-
-:::info
-Execution code can also be copy-pasted inside `databricks notebook` or [shell](#shell) and can directly
-be executed for debugging.
-:::
-
-### Execution Errors
-
-If there are any errors in the Pipeline, a pop-up window will open for `execution errors`.
-![Interactive execution error](img/interactive-execution-error.png)
-
-Also the error can be seen in the runtime logs:
-![Interactive execution error logs](img/interactive-execution-error-logs.png)
-
-### Runtime Logs
-
-Overall progress with associated timestamps can be monitored from the Runtime Logs as shown here:
-
-![Runtime Logs](img/interactive-execution-runtime-logs.png)
-
-### Runtime Metrics
-
-Various Spark metrics collected during runtime can be monitored as shown here:
-
-![Runtime Metrics](img/interactive-execution-runtime-metrics.png)
-
-### Execution Metrics
-
-For `interactive runs` execution metrics are collected to make the development easier and performance tuning more intuitive. These can be
-accessed from the `Metadata Page` inside the `run tab` of the `Pipeline`.
-
-![Execution Metrics](img/interactive-execution-execution-metrics.png)
+![Execution information](./img/run-info.png)
 
 ## Shell
 
-Prophecy IDE comes with an inbuilt interactive Spark shell that supports both `Python` and `Scala`. The shell is an easy way to quickly analyze data or test Spark commands
+Prophecy comes with an built-in interactive Spark shell that supports both Python and Scala. The shell is an easy way to quickly analyze data or test Spark commands.
+
 ![Interactive execution](./img/int_exc_1.png)
 
 :::info
-`Spark context` and `session` are available within the shell as variables `sc` and `spark` respectively
+`Spark context` and `session` are available within the shell as variables `sc` and `spark` respectively.
 :::
-
----
-
-### Examples
-
-:::note
-You need to be connected to a cluster to access the interactive shell
-:::
-
-#### Python
-
-![Python interactive execution](./img/int_exc_py.png)
-
-#### Scala
-
-![Scala interactive execution](./img/int_exc_scala.png)
