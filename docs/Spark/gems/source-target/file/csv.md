@@ -20,7 +20,7 @@ The below list contains the additional parameters to read a CSV file:
 
 | Parameter    |     | Description                                                                                                  | Required |
 | ------------ | --- | ------------------------------------------------------------------------------------------------------------ | -------- |
-| Dataset Name |     | Name of the Dataset                                                                                          | True     |
+| Dataset Name |     | Name of the dataset                                                                                          | True     |
 | Location     |     | Location of the file(s) to be loaded <br/> E.g.: `dbfs:/data/test.csv`                                       | True     |
 | Schema       |     | Schema to applied on the loaded data. Can be defined/edited as JSON or inferred using `Infer Schema` button. | True     |
 
@@ -136,7 +136,7 @@ The below list contains the additional parameters to write a CSV file:
 
 | Parameter    | Description                                                                                            | Required |
 | ------------ | ------------------------------------------------------------------------------------------------------ | -------- |
-| Dataset Name | Name of the Dataset                                                                                    | True     |
+| Dataset Name | Name of the dataset                                                                                    | True     |
 | Location     | Location of the file(s) to be loaded <br/> E.g.: `dbfs:/data/output.csv`                               | True     |
 | Write Mode   | How to handle existing data. See [this table](#supported-write-modes) for a list of available options. | False    |
 
@@ -221,7 +221,7 @@ object write_as_csv {
 
 ### Producing a single output file
 
-Because of Spark's distributed nature, output files are written as multiple separate partition files. If you need a single output file for some reason (such as reporting or exporting to an external system), use a `Repartition` Gem in `Coalesce` mode with 1 output partition:
+Because of Spark's distributed nature, output files are written as multiple separate partition files. If you need a single output file for some reason (such as reporting or exporting to an external system), use a `Repartition` gem in `Coalesce` mode with 1 output partition:
 
 ![Coalesce example](img/coalesce.gif)
 

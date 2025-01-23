@@ -15,7 +15,7 @@ Model and column data tests are dbt macro generated tests that can be parametriz
 
 :::note
 
-There could be many tests within a project. Each test is checking a table created by your choice of input models, data sources, and transformation Gems.
+There could be many tests within a project. Each test is checking a table created by your choice of input models, data sources, and transformation gems.
 
 :::
 
@@ -38,7 +38,7 @@ Prophecy doesn't differentiate between model and column tests, and refers to the
 
 ## Set up a test
 
-Depending on the type of test, you can set up a new model or column test from either the Tests section of the project tab or the Data Tests tab of the Target Model.
+Depending on the type of test, you can set up a new model or column test from either the Tests section of the project tab or the Data Tests tab of the Target model.
 
 ### Develop a test
 
@@ -56,7 +56,7 @@ To develop a model or column test, start by opening a project:
 
 3. On the test definition page, enter the description, parameters, and definition. In the previous image example, we created a test definition that checks that the column value doesn't exceed a certain threshold value.
 
-4. To create a new data test, whether it's one that uses a test definition or one that uses an out-of-the-box Simple data test, navigate to the Data Tests tab in the Target Model, and then click **+ New Test**.
+4. To create a new data test, whether it's one that uses a test definition or one that uses an out-of-the-box Simple data test, navigate to the Data Tests tab in the Target model, and then click **+ New Test**.
 
    ![Create a new model test](img/model-test-create-new.png)
 
@@ -70,7 +70,7 @@ To develop a model or column test, start by opening a project:
 
 :::caution
 
-If changes are made to the columns or schemas used in your data test, then Prophecy will delete the data test. For example, if you run into a data mismatch error on the Schema tab of your Target Model or update the schema, then your data test will be affected.
+If changes are made to the columns or schemas used in your data test, then Prophecy will delete the data test. For example, if you run into a data mismatch error on the Schema tab of your Target model or update the schema, then your data test will be affected.
 
 :::
 
@@ -78,7 +78,7 @@ If changes are made to the columns or schemas used in your data test, then Proph
 
 After you’ve developed your model or column test, you can run it.
 
-1. From the Data Tests tab of your Target Model, select the data tests that you'd like to run, and then click **Run tests** to execute your tests. The table input to the Target Model Gem is what’s tested.
+1. From the Data Tests tab of your Target model, select the data tests that you'd like to run, and then click **Run tests** to execute your tests. The table input to the Target model gem is what’s tested.
 
    ![Run model tests](img/model-test-run.png)
 
@@ -102,7 +102,7 @@ You can configure your model or column test to help decide which cases to focus 
 
 To configure a test, follow these steps:
 
-1. From the Data Tests tab of your Target Model, hover over the data test that you'd like to configure, and then click the edit icon.
+1. From the Data Tests tab of your Target model, hover over the data test that you'd like to configure, and then click the edit icon.
 
    ![Edit a test](img/model-test-edit.png)
 
@@ -126,23 +126,23 @@ When scheduling your project, you can opt in to run a test along with the projec
 
 To Schedule your project to run with tests, follow these steps:
 
-1. Under the Project Browser, click **Add Job**. Enter a name for your Job and click **Create New**.
+1. Under the Project Browser, click **Add Job**. Enter a name for your job and click **Create New**.
 
    ![Create a job](img/model-test-create-job.png)
 
-2. Drag a Model Gem to your visual canvas.
+2. Drag a Model gem to your visual canvas.
 
-3. Click the Model to open the Model Properties.
+3. Click the model to open the model properties.
 
-4. Select the database object you want to run the test on. You can schedule the entire project or just a single Model:
+4. Select the database object you want to run the test on. You can schedule the entire project or just a single model:
 
-   - Run entire Project
-   - Run a SQL Model
+   - Run entire project
+   - Run a SQL model
 
    ![Schedule a job](img/model-test-schedule-job.png)
 
 5. Select **Run tests**.
 
-6. Check that your **Project, model**, and **Fabric** are correct.
+6. Check that your **project, model**, and **fabric** are correct.
 
-7. Click **Save**. The Job runs automatically. You can see the Job status by clicking **Detail**.
+7. Click **Save**. The job runs automatically. You can see the job status by clicking **Detail**.
