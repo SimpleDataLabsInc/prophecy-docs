@@ -29,7 +29,7 @@ These tokens are per user and will inherit all the access from that user.
 
 ## Get the Prophecy GraphQL Schema
 
-You can use Prophecy API Endpoints to create a single pane of glass interface for data stewards and engineers to see Pipelines, Datasets, and Lineage.
+You can use Prophecy API Endpoints to create a single pane of glass interface for data stewards and engineers to see pipelines, datasets, and lineage.
 
 Use this short guide to get started with Postman by importing Prophecy's GraphQL schema.
 

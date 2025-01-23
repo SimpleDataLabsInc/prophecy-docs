@@ -68,35 +68,35 @@ Once, the token is generated copy and save it from **(5) Token** and you’re go
 
 ### 2.3 Setup Prophecy’s Fabric
 
-Prophecy introduces the concept of a Fabric to describe an execution environment. In this case, we create a single Fabric to connect a Databricks cluster or warehouse, execute SQL models interactively, and deploy scheduled Jobs. The Fabric defines the environment where SQL tables and views are materialized. Typically you should setup at least one Fabric each for development and production environments. Use the development environment (Fabric) for quick ad-hoc building purposes with only sample data and use the production environment for daily runs with real data for your use case.
+Prophecy introduces the concept of a fabric to describe an execution environment. In this case, we create a single fabric to connect a Databricks cluster or warehouse, execute SQL models interactively, and deploy scheduled jobs. The fabric defines the environment where SQL tables and views are materialized. Typically you should setup at least one fabric each for development and production environments. Use the development environment (fabric) for quick ad-hoc building purposes with only sample data and use the production environment for daily runs with real data for your use case.
 
-You can read more about Fabrics [here.](/docs/concepts/fabrics/fabrics.md)
+You can read more about fabrics [here.](/docs/concepts/fabrics/fabrics.md)
 
 ![Create Fabric](img/2-4-create-fabric.png)
 
-Setting up a Fabric is very straightforward now that we have copied the JDBC URL and Personal Access Token from the previous steps. Click the **(1) Create Entity** button, and choose **(2) Create Fabric** option. Note, until you setup a Fabric, creation of other entities is going to be disabled. The Fabric creation is composed of two steps: Basic Info and Providers setup. On the Basic Info screen, enter a **(1) Fabric Name**, **(2) Fabric Description,** and choose the **(3) Team** that’s going to own the Fabric.
+Setting up a fabric is very straightforward now that we have copied the JDBC URL and Personal Access Token from the previous steps. Click the **(1) Create Entity** button, and choose **(2) Create Fabric** option. Note, until you setup a fabric, creation of other entities is going to be disabled. The fabric creation is composed of two steps: Basic Info and Providers setup. On the Basic Info screen, enter a **(1) Fabric Name**, **(2) Fabric Description,** and choose the **(3) Team** that’s going to own the fabric.
 
 Once ready, click **(4) Continue.**
 
 ![Fill Fabric Details](img/2-5-fill-fabric-details.png)
 
-Since we’re setting up a Fabric connected to Databrick’s JDBC SQL endpoint, we choose SQL as the **(1) Provider Type** and Databricks as the **(2) Provider.**
+Since we’re setting up a fabric connected to Databrick’s JDBC SQL endpoint, we choose SQL as the **(1) Provider Type** and Databricks as the **(2) Provider.**
 
 Enter the **(3) JDBC Url** and **(4) Personal Access Token** gathered from the previous steps. Finally, select your **(5) Catalog** and **(6) Schema** of choice. This step is recommended, however, optional. When using Databricks Unity Catalog, the default Catalog is main and the default Schema is default. Make sure you connect to a catalog and schema for which your user has write access. The tables resulting from the model will be written here.
 
-Click **(7) Complete** when finished. Prophecy checks the credentials and details for network and catalog accesses. If either fails, the Fabric won’t be created and you will receive an Exception error. Optionally, enhance metadata viewing by creating a [Metadata Connection](/docs/concepts/fabrics/metadata-connections.md), recommended for users with hundreds or thousands of tables housed in their data provider(s).
+Click **(7) Complete** when finished. Prophecy checks the credentials and details for network and catalog accesses. If either fails, the fabric won’t be created and you will receive an Exception error. Optionally, enhance metadata viewing by creating a [Metadata Connection](/docs/concepts/fabrics/metadata-connections.md), recommended for users with hundreds or thousands of tables housed in their data provider(s).
 
-Note, Fabrics are owned by Teams. Every Member present within the Team will be able to access the Fabric, however, each individual has to provide their own Personal Access Token.
+Note, fabrics are owned by Teams. Every Member present within the Team will be able to access the fabric, however, each individual has to provide their own Personal Access Token.
 
-## 3. Create a new Project
+## 3. Create a new project
 
-Prophecy’s Project is a Git repository or a directory on Git that contains all of your transformation logic. Each Prophecy Project contains a dbt Core™️ project. Learn more about Projects [here.](/docs/concepts/project/project.md)
+Prophecy’s project is a Git repository or a directory on Git that contains all of your transformation logic. Each Prophecy project contains a dbt Core™️ project. Learn more about projects [here.](/docs/concepts/project/project.md)
 
-After Fabric creation you can see one project initialized for you by default called HelloWorld_SQL. If you just want to play around with Prophecy, you can start there. However, for the purpose of this tutorial we’re going to build a brand new project from scratch.
+After fabric creation you can see one project initialized for you by default called HelloWorld_SQL. If you just want to play around with Prophecy, you can start there. However, for the purpose of this tutorial we’re going to build a brand new project from scratch.
 
-![Create New Project](img/3-1-create-new-project.png)
+![Create New project](img/3-1-create-new-project.png)
 
-To create a new Project press on the **(1) Create Entity** button on the sidebar and choose **(2) Create** on the Project tile. The Project creation screen will open. Here, on the first page: we configure basic project details; and on the second page: we configure the Git repository details. Fill in the Project’s **(3) Name,** **(4) Description** (optional), and set the **(5) Project Type** to SQL. After that, select the **(6) Team** which is going to own the newly selected project. By default, you can leave the selected team to be your personal one. Finally, we choose the same **(7) Provider** as we selected in the previous step - Databricks. Once all the details are filled out correctly, you can proceed to the next step by clicking **(8) Continue.**
+To create a new project press on the **(1) Create Entity** button on the sidebar and choose **(2) Create** on the project tile. The project creation screen will open. Here, on the first page: we configure basic project details; and on the second page: we configure the Git repository details. Fill in the project’s **(3) Name,** **(4) Description** (optional), and set the **(5) project Type** to SQL. After that, select the **(6) Team** which is going to own the newly selected project. By default, you can leave the selected team to be your personal one. Finally, we choose the same **(7) Provider** as we selected in the previous step - Databricks. Once all the details are filled out correctly, you can proceed to the next step by clicking **(8) Continue.**
 
 ![Git Repository Connection](img/3-2-git-repository-connection.png)
 
@@ -195,13 +195,13 @@ Therefore, to start development we have to create our first development branch. 
 
 Note, that if the branch doesn’t exist, Prophecy creates a new branch automatically by essentially cloning what’s on the currently selected branch - therefore make sure to usually create new branch (checkout) from main. If the branch exists, the code for that branch is pulled from Git into Prophecy.
 
-### 4.2 Connect to a Fabric
+### 4.2 Connect to a fabric
 
-Prophecy allows for interactive execution of your modeling work. This allows you to run any SQL model directly on the Fabric we’ve connected to and preview the resulting data. Fabric connection also allows Prophecy to introspect the schemas on your data warehouse and ensure that your development queries are correct.
+Prophecy allows for interactive execution of your modeling work. This allows you to run any SQL model directly on the fabric we’ve connected to and preview the resulting data. Fabric connection also allows Prophecy to introspect the schemas on your data warehouse and ensure that your development queries are correct.
 
-After branch setup, Fabric selection should pop-up automatically; if not, you can easily set the Fabric by clicking on the **(4) Choose cluster** dropdown.
+After branch setup, fabric selection should pop-up automatically; if not, you can easily set the fabric by clicking on the **(4) Choose cluster** dropdown.
 
-Choose the Fabric of choice by clicking on it in the **(5) Fabrics** list, then simply **(6) Save** the settings.
+Choose the fabric of choice by clicking on it in the **(5) Fabrics** list, then simply **(6) Save** the settings.
 
 Prophecy will quickly load all the available catalogs, schemas, tables, and other metadata and shortly after to allow you to start running your transformations!
 
@@ -249,7 +249,7 @@ A model is an entity that contains a set of data transformations and defines eit
 
 Here we create customers_nations model that’s going to enrich our customers and produce a report of which customers show up in which geographic areas most commonly.
 
-To create a new model simply click on the **(1) + Add Model** in the sidebar, when hovering over Models section, or **(2) Create Model** button. A model creation pop-up will show up, with very similar options, as when we defined the seed, available. Enter the **(3) Model Name** and **(4) Model Path** and that’s it. Finally save the model by pressing **(5) OK.**
+To create a new model simply click on the **(1) + Add Model** in the sidebar, when hovering over models section, or **(2) Create Model** button. A model creation pop-up will show up, with very similar options, as when we defined the seed, available. Enter the **(3) Model Name** and **(4) Model Path** and that’s it. Finally save the model by pressing **(5) OK.**
 
 #### 4.4.1 Drag and drop model’s graph
 
@@ -264,32 +264,32 @@ Building your model is very simple, thanks to the drag-and-drop interface. In th
 1. First we add the `nation` seed, that we’ve previously defined, by dragging and dropping it on the canvas.
 2. Then we add a table from an **Environment.** We click on the **Environment** tab in the left sidebar and drag the customer table from the `samples.tpch` catalog and database to the canvas.
 3. Note, that when two sources are dragged closely to each other a **Join** component is automatically created (as demonstrated on the video).
-4. Then we drag and drop an **Aggregate** component from the Transform Gems drawer and connect it to the upstream **Join** component.
+4. Then we drag and drop an **Aggregate** component from the Transform gems drawer and connect it to the upstream **Join** component.
 5. Finally connect your **Aggregate** to the **TargetModel** that defines your view itself.
 
 #### 4.4.2 Define business logic
 
-Once we have dragged and dropped all the relevant Gems (transformations) on our canvas, it’s time to fill in the business logic.
+Once we have dragged and dropped all the relevant gems (transformations) on our canvas, it’s time to fill in the business logic.
 
-![Edit Gem](img/4-5-edit-gem.png)
+![Edit gem](img/4-5-edit-gem.png)
 
-Clicking on any of the Gems shows these options.
+Clicking on any of the gems shows these options.
 
 **(1) Name Edit** - click to edit the name of the transformation for easy identification.
 
-**(2) Gem Edit** - to modify the Gem logic click on the **Open >** button.
+**(2) Gem Edit** - to modify the gem logic click on the **Open >** button.
 
-**(3) More** - to see more Gem configuration options, like editing comments, changing phases or deleting the Gem, click on the ... button. Note, that to delete the selected Gem you can also press **delete / backspace** on your keyboard.
+**(3) More** - to see more gem configuration options, like editing comments, changing phases or deleting the gem, click on the ... button. Note, that to delete the selected gem you can also press **delete / backspace** on your keyboard.
 
-**(4) Run** - runs the model upto the selected Gem. We will learn more about this in the section 7.3 Interactively test.
+**(4) Run** - runs the model up to the selected gem. We will learn more about this in the section 7.3 Interactively test.
 
-**(5) See errors** - To see errors related to your Gem, hover over the red icon next to the Gem. If there’s no red icon, that means your Gem has no errors and is good to go!
+**(5) See errors** - To see errors related to your gem, hover over the red icon next to the gem. If there’s no red icon, that means your gem has no errors and is good to go!
 
 #### Join definition
 
 ![Join definition](img/4-6-join-definition.png)
 
-Let’s start by building the **Join** transformation. Upon opening the Gem, you can see a drawer pop-up which provides several helpful features. For transparency, you can always see the **(1) Input schema** on the left-hand side, **(4) Errors** in the footer, and have the ability to **(5) Run** the Gem on the top right.
+Let’s start by building the **Join** transformation. Upon opening the gem, you can see a drawer pop-up which provides several helpful features. For transparency, you can always see the **(1) Input schema** on the left-hand side, **(4) Errors** in the footer, and have the ability to **(5) Run** the Gem on the top right.
 
 To fill-in our **(3) Join condition** within the **(2) Conditions** section, type `nation.n_nationkey = customers.c_nationkey`. The following condition, for every single customer, finds a nation based on the c_nationkey field.
 
@@ -325,47 +325,47 @@ Prophecy makes interactively testing the models incredibly easy! Simply click on
 
 Now that we’ve developed and tested our models, it’s time to schedule and deploy them to production. This will allow our code to run on a recurrent interval, e.g. daily, depending on how often our upstream data arrives and our business commitments.
 
-### 5.1 Create your Job
+### 5.1 Create your job
 
-![Create Job](img/5-1-create-job.png)
+![Create job](img/5-1-create-job.png)
 
-We start by creating a Job. Jobs are graphs that orchestrate various tasks that are executed by the scheduler.
+We start by creating a job. Jobs are graphs that orchestrate various tasks that are executed by the scheduler.
 
-To create a Job, we start by clicking on the **(1) Add Job** button in the **Jobs** section of the project browser. **Create Job** drawer appears, where we define the details of our Job.
+To create a job, we start by clicking on the **(1) Add Job** button in the **Jobs** section of the project browser. **Create Job** drawer appears, where we define the details of our job.
 
-Most of the fields, like **Project** or **Branch** are automatically populated for us. We start by populating the **(2) Name** field. Here, we’re going to run a whole project as part of this Job so we give it the same name as the project: `getting_started`.
+Most of the fields, like **Project** or **Branch** are automatically populated for us. We start by populating the **(2) Name** field. Here, we’re going to run a whole project as part of this job so we give it the same name as the project: `getting_started`.
 
-Most importantly, we have to choose the **(3) Fabric** (Databricks SQL warehouse) on which we’re wishing to execute our models and write our tables. You can leave the default here, as the same Fabric that we were testing our models on.
+Most importantly, we have to choose the **(3) Fabric** (Databricks SQL warehouse) on which we’re wishing to execute our models and write our tables. You can leave the default here, as the same fabric that we were testing our models on.
 
 Next, we choose the **(4) Schedule Interval,** which describes how often our schedule is going to run. The interval is defined by a [CRON expression.](https://en.wikipedia.org/wiki/Cron#Cron_expression) Click on the 🕒 icon to open an easy interval picker.
 
-After that, we can optionally provide a list of email address which are going to receive the success or failure alerts. Those can be written in the **(5) Alerts** on the full Job section.
+After that, we can optionally provide a list of email address which are going to receive the success or failure alerts. Those can be written in the **(5) Alerts** on the full job section.
 
-Finally, we create our Job by clicking on **(6) Create New.**
+Finally, we create our job by clicking on **(6) Create New.**
 
 ### 5.2 Configure the DBT task
 
 ![Configure the DBT task](img/5-2-configure-dbt-task.png)
 
-Once your Job is created, you are redirected to the Job editing canvas. You will notice that it looks very similar to the model editor with some subtle differences.
+Once your job is created, you are redirected to the job editing canvas. You will notice that it looks very similar to the model editor with some subtle differences.
 
-The **(1) Gem drawer** has been restricted to only a few basic Gems relevant to Databricks Jobs. For SQL projects, it’s **DBT** and **Script** tasks only.
+The **(1) Gem drawer** has been restricted to only a few basic Gems relevant to Databricks jobs. For SQL projects, it’s **DBT** and **Script** tasks only.
 
 Let’s start by dragging and dropping the the **(2) DBT Gem.** Once it’s on the canvas, we open and configure it. Within the **(3) Property** tab, there’s three basic fields we fill:
 
 1. **DBT project to schedule** - which we set to the current project;
-2. **Databricks SQL Warehouse** - defines on which warehouse our SQL code is going to execute, we set it to the recently created Fabric;
+2. **Databricks SQL Warehouse** - defines on which warehouse our SQL code is going to execute, we set it to the recently created fabric;
 3. **Git reference value** - defines from which branch on Git, the code is pulled to execute, we set it to the currently used developed branch - same as what we set in the step 5.1 Checkout development branch (the name can be also seen in the footer).
 
 :::info
-DBT Projects will appear in this dropdown if (1) the Project is released and (2) the Project is hosted on Git outside Prophecy's managed Git provider.
+DBT projects will appear in this dropdown if (1) the project is released and (2) the project is hosted on Git outside Prophecy's managed Git provider.
 :::
 
 Once all the basic properties are set click **(4) Save.**
 
 We can quickly verify that our schedule runs correctly by executing it, by clicking on the **(5) Play** button. Upon the click, the execution starts and you can track it’s progress. When finished successfully, we know that the project is ready to be deployed.
 
-Finally, we toggle our Job to be **(5) Enabled.** This enables the Job on the scheduler and will ensure that the Job follows the previously set interval.
+Finally, we toggle our job to be **(5) Enabled.** This enables the job on the scheduler and will ensure that the job follows the previously set interval.
 
 ### 5.3 Commit your changes
 
@@ -375,18 +375,18 @@ At the bottom of the screen, click on the **Commit files** button. This opens an
 
 The process of deploying code is composed of 4 steps:
 
-1. **Commit:** We start by creating a named version of our code and uploading it to our development branch on the secure Git repository. On the left-hand side you can see the **Current branch** and the associated history of commits and on the right side, there’s a list of **Entities changed** (models, Jobs, etc) and their status. If everything looks good, type in the **Commit message** which should clearly describe, in few sentences, all the changes that we’ve introduced.
+1. **Commit:** We start by creating a named version of our code and uploading it to our development branch on the secure Git repository. On the left-hand side you can see the **Current branch** and the associated history of commits and on the right side, there’s a list of **Entities changed** (models, jobs, etc) and their status. If everything looks good, type in the **Commit message** which should clearly describe, in few sentences, all the changes that we’ve introduced.
 2. **Pull:** Before your changes can be safely merged into the **main** branch, we have to make sure that we’re up to date with it. If your colleagues introduced any code on **main** we have to **Pull** it first. This step is most of the time going to happen automatically for us without any further actions required.
 3. **Merge:** Now that our development branch is up to date, we can merge it to master. Here we can either create a **Pull Request** or if you’re the owner of the repository force **Merge** the changes. For now, we **Merge** them directly. Once the code is merged, you can now see the latest commits present on your **main** branch.
 4. **Release:** Finally, now that our changes are all versioned on Git, we can release them to our scheduler. Simply specify a **Release Version** number, e.g. `1.0` , and the **Release Note,** which should clearly outline the latest changes. When ready, click **Release.**
 
 ### 5.4 Monitor the release
 
-![Release the Project](img/5-3-release-the-project.png)
+![Release the project](img/5-3-release-the-project.png)
 
 During the release process Prophecy automatically packages, tests, and deploys your project’s artifacts - mostly SQL queries - to your Databricks Warehouse. You can monitor this process in the final **(1) Release** page.
 
-Once the process is finished you can see the deployed and running Job, within your Databricks workspace defined within the Fabric that you released your Job to. To see it, go to your workspace and open the **(2) Workflows** section. Then choose the right Job - the name will be exactly the same as the name of the Job you created in Prophecy. A **(3) Job page** opens, where you can inspect all the details of your newly created Job.
+Once the process is finished you can see the deployed and running job, within your Databricks workspace defined within the fabric that you released your job to. To see it, go to your workspace and open the **(2) Workflows** section. Then choose the right job - the name will be exactly the same as the name of the job you created in Prophecy. A **(3) Job page** opens, where you can inspect all the details of your newly created job.
 
 ## What’s next?
 

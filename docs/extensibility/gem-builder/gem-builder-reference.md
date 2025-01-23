@@ -147,7 +147,7 @@ After the Dialog object is defined, it's serialized as JSON, sent to the UI, and
 
 Depending on what kind of gem is being created, either a `Dialog` or a `DatasetDialog` needs to be defined.
 
-- The **Transformation Dialog**: The Dialog for Transformation gems (any gem that is not a Dataset gem) is created using the `dialog` method, which must return a Dialog object.
+- The **Transformation Dialog**: The Dialog for Transformation gems (any gem that is not a dataset gem) is created using the `dialog` method, which must return a Dialog object.
 
 - The **Dataset Dialog**: The Dialog for a [Source/Target](docs/Spark/gems/source-target/source-target.md) gem is a `DatasetDialog` object. You will need to have `source` and `target` methods defined.
 
@@ -267,7 +267,7 @@ For details on our optimization functions, see [Optimization functions](optimiza
 
 ## Source/target gems
 
-Source/target gems let you read and write your Datasets into DataFrames. Let's look an example source/target gem definition.
+Source/target gems let you read and write your datasets into DataFrames. Let's look an example source/target gem definition.
 
 <details>
 <summary>Example code for a source/target gem</summary>

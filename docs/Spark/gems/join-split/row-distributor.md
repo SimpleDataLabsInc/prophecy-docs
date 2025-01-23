@@ -11,9 +11,9 @@ tags:
 
 <h3><span class="badge">Spark Gem</span></h3>
 
-Use the RowDistributor Gem to create multiple DataFrames based on provided filter conditions from an input DataFrame.
+Use the RowDistributor gem to create multiple DataFrames based on provided filter conditions from an input DataFrame.
 
-This is useful for cases where rows from the input DataFrame needs to be distributed into multiple DataFrames in different ways for downstream Gems.
+This is useful for cases where rows from the input DataFrame needs to be distributed into multiple DataFrames in different ways for downstream gems.
 
 ### Parameters
 

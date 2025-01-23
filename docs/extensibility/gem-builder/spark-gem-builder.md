@@ -359,7 +359,7 @@ These UI components can be grouped together in various types of panels to create
 
 Depending on what kind of Gem is being created, either a Dialog or a DatasetDialog needs to be defined. See Transformation vs DatasetFormat Gems for details.
 
-Take a look through the Gems inside SparkBasicsScala and SparkBasicsPython Projects to for more example dialog methods.
+Take a look through the Gems inside SparkBasicsScala and SparkBasicsPython projects to for more example dialog methods.
 
 ### Validate user input
 
