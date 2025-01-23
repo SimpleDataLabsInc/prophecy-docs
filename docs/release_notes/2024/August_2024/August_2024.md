@@ -32,8 +32,8 @@ In this release, we've updated the UX and capabilities of the expression builder
 
 - **Support for partial run for Airflow Jobs**: We've added play buttons on gems, which you can use to start partial runs for Airflow Jobs.
 
-- **Ability to create a model from the model dropdown**: While configuring the model gem in your Job, you now have the option to create a model from the Model dropdown.
+- **Ability to create a model from the model dropdown**: While configuring the model gem in your job, you now have the option to create a model from the Model dropdown.
 
 ### Minor Improvements {#MinorImprovements339}
 
-- **Clone a Prophecy Job**: You can now clone a Prophecy Job just as you may clone a pipeline. This is useful for Job renaming issues.
+- **Clone a Prophecy Job**: You can now clone a Prophecy job just as you may clone a pipeline. This is useful for job renaming issues.

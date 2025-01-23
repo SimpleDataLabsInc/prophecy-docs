@@ -63,4 +63,4 @@ Similarly, setup a connection to a Snowflake Fabric following [these](./mwaa.md#
 
 ## Create an Airflow Job
 
-Once the Airflow Composer Fabric is setup with the relevant connections, Airflow Job scheduling is done with an easy-to-use interface. Follow this guide to [Create an Airflow Job](/docs/Orchestration/airflow/getting-started-with-low-code-airflow.md#2-create-an-airflow-job).
+Once the Airflow Composer Fabric is setup with the relevant connections, Airflow job scheduling is done with an easy-to-use interface. Follow this guide to [Create an Airflow job](/docs/Orchestration/airflow/getting-started-with-low-code-airflow.md#2-create-an-airflow-job).

@@ -18,7 +18,7 @@ tags:
 
 ## Context of the Jenkins CI/CD Example
 
-In this section we will explore how to set up separate "testing" and "deploying" Jenkins Jobs using declarative pipelines. These Jobs will be triggered when items are merged into the following protected branches
+In this section we will explore how to set up separate "testing" and "deploying" Jenkins jobs using declarative pipelines. These jobs will be triggered when items are merged into the following protected branches
 `prod`, `qa`, `develop`. Each of these three branches represents a different Databricks Workspace environment. We
 want to be able to test and deploy our pipelines into each of these three workspaces during our release workflow.
 
@@ -28,7 +28,7 @@ order: `feature-branch` > `develop` > `qa` > `prod`
 ![branch_protection_checks_example.png](img%2Fbranch_protection_checks_example.png)
 _When PRs are made to a protected branch, the unit tests must pass before the PR can be merged_
 
-Once the PR is merged successfully, we deploy the artifacts and Job definitions to Databricks.
+Once the PR is merged successfully, we deploy the artifacts and job definitions to Databricks.
 
 :::info
 
@@ -54,9 +54,9 @@ You should have access to:
 The following plugins were used for this example:
 
 - [GitHub Pull Request Builder](https://plugins.jenkins.io/ghprb/)
-  - for the build/test Job
+  - for the build/test job
 - [GitHub](https://plugins.jenkins.io/github/)
-  - for the deploy Job
+  - for the deploy job
 
 :::caution
 
@@ -230,7 +230,7 @@ This pipeline uses PBT to deploy the Prophecy pipelines to their appropriate Fab
 
 ### Deploy Pipeline - Trigger
 
-Set up a simple webhook trigger for this Job inside of GitHub.
+Set up a simple webhook trigger for this job inside of GitHub.
 
 - Navigate to `Settings > Webhooks > Add Webhook`
 - Create a new webhook like this:
@@ -309,5 +309,5 @@ The DATABRICKS_HOST and DATABRICKS_TOKEN env variables must match the configurat
 3. ('install pbt') - Ensure PBT and its dependencies are installed
 4. ('deploy') - use PBT to deploy the Databricks jobs for our chosen Fabric
    - Builds all the pipelines present in the project and generates a .jar/.whl artifact for each pipeline
-   - Uploads the pipeline .jar/.whl artifacts for each of the deployed Jobs (next step)
-   - Creates or Updates the Databricks Jobs based on `databricks-job.json` files for the Prophecy Project (only those that use `$FABRIC_ID`)
+   - Uploads the pipeline .jar/.whl artifacts for each of the deployed jobs (next step)
+   - Creates or Updates the Databricks jobs based on `databricks-job.json` files for the Prophecy Project (only those that use `$FABRIC_ID`)

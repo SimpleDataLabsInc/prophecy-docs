@@ -9,7 +9,7 @@ tags:
 ---
 
 Once you have developed a Spark data pipeline or an SQL Model using Prophecy, you will want to schedule it to run at some frequency. To
-support this, Prophecy provides you with an easy-to-use interface to develop Jobs, using two different
+support this, Prophecy provides you with an easy-to-use interface to develop jobs, using two different
 schedulers:
 
 1. **[Databricks Jobs](databricks-jobs.md)** - for simpler data-pipeline use-cases, where you just

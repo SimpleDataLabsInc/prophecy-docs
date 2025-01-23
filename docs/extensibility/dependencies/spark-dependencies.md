@@ -105,7 +105,7 @@ To add the `io.github.etspaceman:scalacheck-faker_2.12:7.0.0` dependency, edit t
 
 :::info
 Special consideration for Scala dependencies in Pyspark projects must be given when deploying WHL files outside of PBT.
-If you do not create Jobs in the Prophecy editor or use the `pbt deploy` or `pbt deploy-v2` commands, then this
+If you do not create jobs in the Prophecy editor or use the `pbt deploy` or `pbt deploy-v2` commands, then this
 section will help track those Scala dependencies.
 :::
 

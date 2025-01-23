@@ -15,11 +15,11 @@ It is a popular choice for organizations of all sizes to handle data pipelines, 
 
 #### DAGs (Directed Acyclic Graphs)
 
-Airflow allows you to define workflows using [Directed Acyclic Graphs](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html), where each node represents a task, and the edges define the sequence and dependencies between tasks. In Prophecy, you define these DAGs as Airflow Jobs. Each Airflow Job represent a DAG in Airflow.
+Airflow allows you to define workflows using [Directed Acyclic Graphs](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html), where each node represents a task, and the edges define the sequence and dependencies between tasks. In Prophecy, you define these DAGs as Airflow jobs. Each Airflow job represent a DAG in Airflow.
 
 #### Dynamic Workflow Scheduling
 
-Airflow provides a flexible scheduling system that allows you to set up complex dependencies, retries, and time-based triggers for your tasks. All these can be set in the settings page for a Job.
+Airflow provides a flexible scheduling system that allows you to set up complex dependencies, retries, and time-based triggers for your tasks. All these can be set in the settings page for a job.
 
 #### Extensibility
 
@@ -27,7 +27,7 @@ Airflow is highly extensible, allowing you to define custom operators and sensor
 
 #### Monitoring and Logging
 
-It offers built-in tools for monitoring task progress, logging, and alerting. You can easily track the status of your workflows through a web-based UI. Users would be able to monitor and debug these Jobs directly via Prophecy UI as well.
+It offers built-in tools for monitoring task progress, logging, and alerting. You can easily track the status of your workflows through a web-based UI. Users would be able to monitor and debug these jobs directly via Prophecy UI as well.
 
 #### Parallel Execution and Scalability
 
@@ -42,11 +42,11 @@ You have the flexibility to integrate and utilize Prophecy with your managed Air
 
 - **Setup**: Seamlessly connect to your Airflow Instance, or use Prophecy hosted Airflow for getting started.
 
-- **Development**: A visual drag-and-drop interface that allows users to design Jobs by connecting gems and defining dependencies effortlessly.
+- **Development**: A visual drag-and-drop interface that allows users to design jobs by connecting gems and defining dependencies effortlessly.
 
-- **Scheduling and Triggers**: Easily set up schedules for your Jobs and define triggers to automate the execution.
+- **Scheduling and Triggers**: Easily set up schedules for your jobs and define triggers to automate the execution.
 
-- **Monitoring and Reporting**: Monitor the progress of your Jobs, receive notifications on status, and access logs and reporting features for real-time insights into Jobs execution.
+- **Monitoring and Reporting**: Monitor the progress of your jobs, receive notifications on status, and access logs and reporting features for real-time insights into jobs execution.
 
 - **Extensibility**: For advanced users, Prophecy's Airflow interface offers scripting capabilities and gem builder to accommodate custom requirements.
 
@@ -58,9 +58,9 @@ Visual development for Airflow in Prophecy brings numerous advantages to data en
 
 - **Simplified Workflow Development**: With a user-friendly visual interface, even users with limited programming experience can create and manage complex data workflows, reducing the learning curve.
 
-- **Accelerated Development**: Rapidly build, test, and deploy Jobs, reducing the time and effort needed to set up and execute data processes.
+- **Accelerated Development**: Rapidly build, test, and deploy jobs, reducing the time and effort needed to set up and execute data processes.
 
-- **Reduced Maintenance**: Visually designed Jobs are easier to maintain and update, as they require less coding, resulting in fewer errors and quicker adjustments.
+- **Reduced Maintenance**: Visually designed jobs are easier to maintain and update, as they require less coding, resulting in fewer errors and quicker adjustments.
 
 - **Centralized Management**: Streamline the management of workflows by having them all in one platform, providing a unified view of your data pipeline.
 
@@ -70,7 +70,7 @@ Visual development for Airflow in Prophecy brings numerous advantages to data en
 
 - **Cost Savings**: Visually designed Airflow can lead to cost savings through increased operational efficiency and decreased development time.
 
-- **Scalability**: As your data processing needs grow, Prophecy's Airflow interface can scale with your organization, handling more extensive and complex Jobs.
+- **Scalability**: As your data processing needs grow, Prophecy's Airflow interface can scale with your organization, handling more extensive and complex jobs.
 
 ## What's next
 

@@ -68,7 +68,7 @@ Once, the token is generated copy and save it from **(5) Token** and you’re go
 
 ### 2.3 Setup Prophecy’s Fabric
 
-Prophecy introduces the concept of a Fabric to describe an execution environment. In this case, we create a single Fabric to connect a Databricks cluster or warehouse, execute SQL models interactively, and deploy scheduled Jobs. The Fabric defines the environment where SQL tables and views are materialized. Typically you should setup at least one Fabric each for development and production environments. Use the development environment (Fabric) for quick ad-hoc building purposes with only sample data and use the production environment for daily runs with real data for your use case.
+Prophecy introduces the concept of a Fabric to describe an execution environment. In this case, we create a single Fabric to connect a Databricks cluster or warehouse, execute SQL models interactively, and deploy scheduled jobs. The Fabric defines the environment where SQL tables and views are materialized. Typically you should setup at least one Fabric each for development and production environments. Use the development environment (Fabric) for quick ad-hoc building purposes with only sample data and use the production environment for daily runs with real data for your use case.
 
 You can read more about Fabrics [here.](/docs/concepts/fabrics/fabrics.md)
 
@@ -325,31 +325,31 @@ Prophecy makes interactively testing the models incredibly easy! Simply click on
 
 Now that we’ve developed and tested our models, it’s time to schedule and deploy them to production. This will allow our code to run on a recurrent interval, e.g. daily, depending on how often our upstream data arrives and our business commitments.
 
-### 5.1 Create your Job
+### 5.1 Create your job
 
-![Create Job](img/5-1-create-job.png)
+![Create job](img/5-1-create-job.png)
 
-We start by creating a Job. Jobs are graphs that orchestrate various tasks that are executed by the scheduler.
+We start by creating a job. Jobs are graphs that orchestrate various tasks that are executed by the scheduler.
 
-To create a Job, we start by clicking on the **(1) Add Job** button in the **Jobs** section of the project browser. **Create Job** drawer appears, where we define the details of our Job.
+To create a job, we start by clicking on the **(1) Add Job** button in the **Jobs** section of the project browser. **Create Job** drawer appears, where we define the details of our job.
 
-Most of the fields, like **Project** or **Branch** are automatically populated for us. We start by populating the **(2) Name** field. Here, we’re going to run a whole project as part of this Job so we give it the same name as the project: `getting_started`.
+Most of the fields, like **Project** or **Branch** are automatically populated for us. We start by populating the **(2) Name** field. Here, we’re going to run a whole project as part of this job so we give it the same name as the project: `getting_started`.
 
 Most importantly, we have to choose the **(3) Fabric** (Databricks SQL warehouse) on which we’re wishing to execute our models and write our tables. You can leave the default here, as the same Fabric that we were testing our models on.
 
 Next, we choose the **(4) Schedule Interval,** which describes how often our schedule is going to run. The interval is defined by a [CRON expression.](https://en.wikipedia.org/wiki/Cron#Cron_expression) Click on the 🕒 icon to open an easy interval picker.
 
-After that, we can optionally provide a list of email address which are going to receive the success or failure alerts. Those can be written in the **(5) Alerts** on the full Job section.
+After that, we can optionally provide a list of email address which are going to receive the success or failure alerts. Those can be written in the **(5) Alerts** on the full job section.
 
-Finally, we create our Job by clicking on **(6) Create New.**
+Finally, we create our job by clicking on **(6) Create New.**
 
 ### 5.2 Configure the DBT task
 
 ![Configure the DBT task](img/5-2-configure-dbt-task.png)
 
-Once your Job is created, you are redirected to the Job editing canvas. You will notice that it looks very similar to the model editor with some subtle differences.
+Once your job is created, you are redirected to the job editing canvas. You will notice that it looks very similar to the model editor with some subtle differences.
 
-The **(1) Gem drawer** has been restricted to only a few basic Gems relevant to Databricks Jobs. For SQL projects, it’s **DBT** and **Script** tasks only.
+The **(1) Gem drawer** has been restricted to only a few basic Gems relevant to Databricks jobs. For SQL projects, it’s **DBT** and **Script** tasks only.
 
 Let’s start by dragging and dropping the the **(2) DBT Gem.** Once it’s on the canvas, we open and configure it. Within the **(3) Property** tab, there’s three basic fields we fill:
 
@@ -365,7 +365,7 @@ Once all the basic properties are set click **(4) Save.**
 
 We can quickly verify that our schedule runs correctly by executing it, by clicking on the **(5) Play** button. Upon the click, the execution starts and you can track it’s progress. When finished successfully, we know that the project is ready to be deployed.
 
-Finally, we toggle our Job to be **(5) Enabled.** This enables the Job on the scheduler and will ensure that the Job follows the previously set interval.
+Finally, we toggle our job to be **(5) Enabled.** This enables the job on the scheduler and will ensure that the job follows the previously set interval.
 
 ### 5.3 Commit your changes
 
@@ -375,7 +375,7 @@ At the bottom of the screen, click on the **Commit files** button. This opens an
 
 The process of deploying code is composed of 4 steps:
 
-1. **Commit:** We start by creating a named version of our code and uploading it to our development branch on the secure Git repository. On the left-hand side you can see the **Current branch** and the associated history of commits and on the right side, there’s a list of **Entities changed** (models, Jobs, etc) and their status. If everything looks good, type in the **Commit message** which should clearly describe, in few sentences, all the changes that we’ve introduced.
+1. **Commit:** We start by creating a named version of our code and uploading it to our development branch on the secure Git repository. On the left-hand side you can see the **Current branch** and the associated history of commits and on the right side, there’s a list of **Entities changed** (models, jobs, etc) and their status. If everything looks good, type in the **Commit message** which should clearly describe, in few sentences, all the changes that we’ve introduced.
 2. **Pull:** Before your changes can be safely merged into the **main** branch, we have to make sure that we’re up to date with it. If your colleagues introduced any code on **main** we have to **Pull** it first. This step is most of the time going to happen automatically for us without any further actions required.
 3. **Merge:** Now that our development branch is up to date, we can merge it to master. Here we can either create a **Pull Request** or if you’re the owner of the repository force **Merge** the changes. For now, we **Merge** them directly. Once the code is merged, you can now see the latest commits present on your **main** branch.
 4. **Release:** Finally, now that our changes are all versioned on Git, we can release them to our scheduler. Simply specify a **Release Version** number, e.g. `1.0` , and the **Release Note,** which should clearly outline the latest changes. When ready, click **Release.**
@@ -386,7 +386,7 @@ The process of deploying code is composed of 4 steps:
 
 During the release process Prophecy automatically packages, tests, and deploys your project’s artifacts - mostly SQL queries - to your Databricks Warehouse. You can monitor this process in the final **(1) Release** page.
 
-Once the process is finished you can see the deployed and running Job, within your Databricks workspace defined within the Fabric that you released your Job to. To see it, go to your workspace and open the **(2) Workflows** section. Then choose the right Job - the name will be exactly the same as the name of the Job you created in Prophecy. A **(3) Job page** opens, where you can inspect all the details of your newly created Job.
+Once the process is finished you can see the deployed and running job, within your Databricks workspace defined within the Fabric that you released your job to. To see it, go to your workspace and open the **(2) Workflows** section. Then choose the right job - the name will be exactly the same as the name of the job you created in Prophecy. A **(3) Job page** opens, where you can inspect all the details of your newly created job.
 
 ## What’s next?
 

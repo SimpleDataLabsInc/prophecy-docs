@@ -88,7 +88,7 @@ main()
 
 In some cases you may want to override runtime configuration variables of a pipeline.
 We offer several options for changing the pipeline configuration at runtime. Each example will show a sample
-as "parameters" (e.g. for a Databricks Job) and as "sys args" (e.g. for passing at the end of a `spark-submit` command).
+as "parameters" (e.g. for a Databricks job) and as "sys args" (e.g. for passing at the end of a `spark-submit` command).
 
 Sample Configuration Schema for below examples:
 

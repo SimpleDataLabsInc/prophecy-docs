@@ -8,7 +8,7 @@ tags:
   - extensibility
 ---
 
-Dependencies allow you to make use of third-party or custom code in your Models and Jobs. You can connect dependencies to your SQL projects, and create them from the DBT Hub, GitHub, or another Prophecy Project.
+Dependencies allow you to make use of third-party or custom code in your models and jobs. You can connect dependencies to your SQL projects, and create them from the DBT Hub, GitHub, or another Prophecy project.
 
 ## View dependencies
 

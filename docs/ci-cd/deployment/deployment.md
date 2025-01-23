@@ -1,7 +1,7 @@
 ---
 title: Deployment
 id: Deployment
-description: Release and Deploy Process. How to Release your Projects and Deploy your Jobs
+description: Release and Deploy Process. How to Release your Projects and Deploy your jobs
 tags:
   - metadata
   - Git
@@ -23,7 +23,7 @@ Here's a breakdown of what deploying means for each component:
 
 - **Pipelines**: Each pipeline in the project is compiled and built into an artifact (Wheel file for Python and Jar file for Scala). These artifacts are then uploaded to your environment as part of the release process.
 
-- **Jobs**: Depending on the type of Job (Databricks or Airflow), the Job is copied to the respective environments as a Json file for Databricks Jobs and as a Python DAG for Airflow.
+- **jobs**: Depending on the type of job (Databricks or Airflow), the job is copied to the respective environments as a Json file for Databricks jobs and as a Python DAG for Airflow.
 
 There is no specific deployment step needed for other entities.
 
@@ -77,21 +77,21 @@ This Deploy step builds all the pipelines and gems, uploads the artifacts, and s
 ![Deployment_steps](img/deployment_steps.png)
 
 Start with **(1) Choose a release**, where you would select a version created in Release step. This would be prefilled with the version you created, if you continue to Deploy from the release step directly.
-In **(2) Override Fabric** , you have the option to choose a specific environment (Fabric) for deploying the Jobs. This is useful for testing purposes, allowing you to deploy all Jobs to a designated test environment.
+In **(2) Override Fabric** , you have the option to choose a specific environment (Fabric) for deploying the jobs. This is useful for testing purposes, allowing you to deploy all jobs to a designated test environment.
 :::note
-This is an optional step and overrides the environment for this particular Job deployment. Leave it blank to use the fabrics pre-configured in Jobs.
+This is an optional step and overrides the environment for this particular job deployment. Leave it blank to use the fabrics pre-configured in jobs.
 :::
 
-**(3) Pick Jobs to Deploy** table provides an overview of the deployment status for each Job, indicating the targeted Fabric, and any actions taken, such as addition, deletion, or modification.
-In the **Staged Release and Deployment** setting, the ability to select or deselect specific Jobs is disabled. For more information on enabling this functionality, continue reading or directly jump [here](#selective-job-deployment).
+**(3) Pick Jobs to Deploy** table provides an overview of the deployment status for each job, indicating the targeted Fabric, and any actions taken, such as addition, deletion, or modification.
+In the **Staged Release and Deployment** setting, the ability to select or deselect specific jobs is disabled. For more information on enabling this functionality, continue reading or directly jump [here](#selective-job-deployment).
 
-Click on **(4) Deploy** to start the deployment process. This will now build your pipelines, gems and update the Jobs as shown below. You would be able to see logs for each step in this screen.
+Click on **(4) Deploy** to start the deployment process. This will now build your pipelines, gems and update the jobs as shown below. You would be able to see logs for each step in this screen.
 
 ![Deployment_logs](img/deployment_steps_complete.png)
 
 ### Selective Job Deployment
 
-If you activate **Selective Job Deployment** in the advance settings [here](#advanced-release-settings), you would be able to select specific Jobs during the Deploy step. This is helpful when you have many pipelines and Jobs in the same project and only want to deploy a few at a time. It also speeds up the overall process by only building the pipelines used in the selected Jobs.
+If you activate **Selective Job Deployment** in the advance settings [here](#advanced-release-settings), you would be able to select specific jobs during the Deploy step. This is helpful when you have many pipelines and jobs in the same project and only want to deploy a few at a time. It also speeds up the overall process by only building the pipelines used in the selected jobs.
 
 :::caution
 Different versions of pipelines, datasets, and Subgraphs may coexist within the same environment when selectively deploying jobs. Only the deployed jobs will use the latest versions of pipelines, datasets, and subgraphs.
@@ -112,7 +112,7 @@ Enabling unit tests might lead to a slight increase the Build time
 
 ## Releases and Deployment History
 
-Click on **(1) Releases and Deployments** tab in the Project Metadata to access the history and the currently deployed Jobs.
+Click on **(1) Releases and Deployments** tab in the Project Metadata to access the history and the currently deployed jobs.
 
 ![Releases_and_Deployments](img/Release_&_Deployments.png)
 
@@ -124,7 +124,7 @@ In the **(2) Releases** tab, you'll find a list of all tags, who created them, w
 
 ### Current Version
 
-In the **(4) Current Version** tab, you can view the current state of all deployed Jobs per environment. Select the **(5) Fabric** environment you want to see the deployed Jobs for, and see the list for all the Jobs deployed in that environment, along with their versions and deployment logs.
+In the **(4) Current Version** tab, you can view the current state of all deployed jobs per environment. Select the **(5) Fabric** environment you want to see the deployed jobs for, and see the list for all the jobs deployed in that environment, along with their versions and deployment logs.
 
 ### Deployment History
 

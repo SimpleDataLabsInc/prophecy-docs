@@ -38,7 +38,7 @@ Together let's deconstruct a commonly used Transformation, the Aggregate gem. Fo
 1. There is one **Input** Dataset, `payments`, and we can see the columns and datatypes below.
 2. Open the **GroupBy** tab.
 3. We can see the gem is configured to group according to the `order_id` column. Just click any column name listed in **(1) Input** to add a column to the GroupBy expressions.
-4. Syntax **errors** are surfaced here as you're designing your gem (and Model) on the canvas. That's handy so you don't have to run a Job to discover a typo.
+4. Syntax **errors** are surfaced here as you're designing your gem (and Model) on the canvas. That's handy so you don't have to run a job to discover a typo.
 5. The **Run** button is available here to test and view data samples. This way you can make sure your Aggregate gem is configured as desired.
 
 ### Aggregate expressions

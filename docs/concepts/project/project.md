@@ -1,7 +1,7 @@
 ---
 title: Projects
 id: project
-description: Keeping your pipelines, Datasets and Jobs under (source) control
+description: Keeping your pipelines, Datasets and jobs under (source) control
 sidebar_position: 1
 tags:
   - concepts
@@ -16,7 +16,7 @@ When you create a project, you must choose a **project type**: Spark/Python, Spa
 
 ![Project language](../img/project_language.png)
 
-Spark projects contain [pipelines](docs/concepts/project/pipelines.md), [Datasets](docs/concepts/project/dataset.md), and [Jobs](docs/Orchestration/Orchestration.md). SQL Projects contain [Models](docs/concepts/project/models.md), [Datasets](docs/concepts/project/dataset.md), and [Jobs](docs/Orchestration/Orchestration.md). You can view these components in the **Metadata** tab of the Prophecy user interface.
+Spark projects contain [pipelines](docs/concepts/project/pipelines.md), [datasets](docs/concepts/project/dataset.md), and [jobs](docs/Orchestration/Orchestration.md). SQL Projects contain [models](docs/concepts/project/models.md), [datasets](docs/concepts/project/dataset.md), and [jobs](docs/Orchestration/Orchestration.md). You can view these components in the **Metadata** tab of the Prophecy user interface.
 
 :::note
 It is not currently possible to switch the output language of a Project after it has been created.

@@ -113,7 +113,7 @@ Added/updated gems are highlighted in yellow.
 
   For more information, see the [Git docs](/docs/concepts/git/git.md).
 
-- **Databricks Volumes support**: Prophecy now supports Databricks Volumes. When you run a Python or Scala pipeline via a Job, you must bundle them as whl/jar artifacts. These artifacts must then be made accessible to the Databricks Job in order to use them as a library installed on the cluster.
+- **Databricks Volumes support**: Prophecy now supports Databricks Volumes. When you run a Python or Scala pipeline via a job, you must bundle them as whl/jar artifacts. These artifacts must then be made accessible to the Databricks job in order to use them as a library installed on the cluster.
 
   You can designate a path to a Volume for uploading the whl/jar files on the Providers tab of your Databricks Fabric.
 

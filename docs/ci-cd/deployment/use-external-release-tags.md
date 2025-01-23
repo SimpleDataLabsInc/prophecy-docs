@@ -34,7 +34,7 @@ To deploy an existing tag, follow these steps:
 
    ![Deploy_button](img/external_release_tag_deploy.png)
 
-2. Select a release version you wish to deploy by using the **(1) Choose a release** dropdown. Once you select a version, the table below shows the Jobs that are going to be modified (there might not be any Jobs). Click **(2) Deploy** to start the deployment.
+2. Select a release version you wish to deploy by using the **(1) Choose a release** dropdown. Once you select a version, the table below shows the jobs that are going to be modified (there might not be any jobs). Click **(2) Deploy** to start the deployment.
 
    ![Deploy_start](img/external_release_tag_deploy_start.png)
 

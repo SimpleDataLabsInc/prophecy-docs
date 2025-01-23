@@ -50,7 +50,7 @@ In the **Relations** tab, there is additional information about where and how th
 | ------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | Physical Datasets   | Location of the Dataset in relation to a Fabric.                                                                                 |
 | Pipelines           | A list of pipelines that use this Dataset, with the `Relation` column indicating if it is for `Read` or `Write` purposes.        |
-| Jobs                | A list of Jobs that use this Dataset, with the `Relation` column indicating if it is for `Read` or `Write` purposes.             |
+| Jobs                | A list of jobs that use this Dataset, with the `Relation` column indicating if it is for `Read` or `Write` purposes.             |
 | Open Lineage Viewer | The option to open this Dataset in the [Lineage](docs/lineage/lineage.md) viewer, showing column-level lineage for this Dataset. |
 
 ## Publishing/Sharing Datasets

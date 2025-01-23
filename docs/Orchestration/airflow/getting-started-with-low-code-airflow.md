@@ -8,7 +8,7 @@ tags:
 ---
 
 Version 3.0.2 of our platform, Prophecy, introduces an exciting new integration: Orchestration with Airflow.
-Now, users can effortlessly create and manage Airflow Jobs using a user-friendly drag-and-drop interface.
+Now, users can effortlessly create and manage Airflow jobs using a user-friendly drag-and-drop interface.
 This empowers you to design and schedule intricate workflows without the need for coding expertise.
 The tool seamlessly translates your designs into highly optimized Python Airflow code, stored in Git, ensuring complete accessibility and openness to all users.
 Moreover, you have the flexibility to enhance functionality by incorporating your custom operators and sensors via our Gem Builder interface.
@@ -35,7 +35,7 @@ OR
 
 If you don't have an existing project, please check out [this guide](https://docs.prophecy.io/concepts/project/#1-create-new-project) for setting up a Spark Project, and [this guide](/docs/getting-started/getting-started-with-low-code-sql.md) for setting up a SQL model in Prophecy.
 
-**For this guide, let's create a Job that gets activated whenever a new file is uploaded to an S3 bucket. Additionally, we'll configure it to send an email notification prior to initiating the execution of both the pipeline and SQL model.**
+**For this guide, let's create a job that gets activated whenever a new file is uploaded to an S3 bucket. Additionally, we'll configure it to send an email notification prior to initiating the execution of both the pipeline and SQL model.**
 
 ## 1. Setup Prophecy Fabric for Airflow
 
@@ -56,7 +56,7 @@ For connecting to Prophecy Managed Airflow, you don't need to provide any other 
 
 ### 1.1 Adding AWS Connection
 
-To be able to trigger your Airflow Job, using an S3 File Sensor, you need to have connection from Prophecy Managed Airflow to you S3 account. For this, we need to add an AWS Connection.
+To be able to trigger your Airflow job, using an S3 File Sensor, you need to have connection from Prophecy Managed Airflow to you S3 account. For this, we need to add an AWS Connection.
 Click on **(1) Add Connection** button. This Opens up the Connection form as shown.
 
 ![Add_connection](img/3.3_Add_Connection.png)
@@ -112,33 +112,33 @@ After adding all connections, click **(1) Complete**.
 
 ![Complete_fabric](img/3.8_Complete_fabric.png)
 
-After creating the Fabric, Lets create our first Airflow Job.
+After creating the Fabric, Lets create our first Airflow job.
 
-## 2. Create an Airflow Job
+## 2. Create an Airflow job
 
-A Job is an entity that contains gems to represent a DAG consisting of various Tasks (pipelines/models/scripts, etc) which you can Run once or schedule to run at a frequency. Each Job would represent an Airflow DAG in Python.
+A job is an entity that contains gems to represent a DAG consisting of various Tasks (pipelines/models/scripts, etc) which you can Run once or schedule to run at a frequency. Each job would represent an Airflow DAG in Python.
 
-Let's see how to create an Airflow Job in Prophecy.
+Let's see how to create an Airflow job in Prophecy.
 
 Click the **(1) Create Entity** button, and choose **(2) Create Job** option.
 
-In the side drawer that opens, you would provide the Basic Info of the Job. Start by selecting the **(1) Project** in which you want to create the Job. You can pick the existing Spark or SQL project here where you have created pipelines/Models.
+In the side drawer that opens, you would provide the Basic Info of the job. Start by selecting the **(1) Project** in which you want to create the job. You can pick the existing Spark or SQL project here where you have created pipelines/Models.
 Then pick your development **(2) Branch**. Here you can pick an existing branch for development, or create a new one. Provide a **(3) Name** and pick **Airflow** in the **(4) Scheduler**. Select the **(5) Fabric** we created in Step 1.
-Pick a **(6) Schedule** with which you want to schedule the Job. Note, you can modify this again after testing before releasing your Job.
-Add a **(7) Description**, about the Job you are creating. Once done, click **(8) Create New**.
+Pick a **(6) Schedule** with which you want to schedule the job. Note, you can modify this again after testing before releasing your job.
+Add a **(7) Description**, about the job you are creating. Once done, click **(8) Create New**.
 
 ![Create_Job](img/3.9_Create_Job.png)
 
-This will take you to the **Job editor** where you would be creating the actual DAG for the Job.
-Let's start adding gems to our Job now.
+This will take you to the **job editor** where you would be creating the actual DAG for the job.
+Let's start adding gems to our job now.
 
 ### 2.1 Adding S3 file Sensor gem
 
 Click on **(1) Sensors**, and Drag the **(2) S3FileSensor gem** from the dropdown to the canvas. Then click the newly added gem and click **(3) Open** to open the gem Configurations.
 ![Add_S3_gem](img/3.10_Add_s3_gem.png)
 
-Here, we will specify the S3 bucket/path on which we want to trigger the Job.
-In **(1) S3 Path(s)** specify the complete path of file in your Bucket. Airflow will check if this file exists in the specified bucket periodically and trigger the Job when it arrives. Select the created Connection for AWS in **(2) Connection name** and hit ** (3) Save**.
+Here, we will specify the S3 bucket/path on which we want to trigger the job.
+In **(1) S3 Path(s)** specify the complete path of file in your Bucket. Airflow will check if this file exists in the specified bucket periodically and trigger the job when it arrives. Select the created Connection for AWS in **(2) Connection name** and hit ** (3) Save**.
 
 ![Add_S3_gem_details](img/3.11_Add_s3_gem_details.png)
 
@@ -148,8 +148,8 @@ Click on the **(1) Operators**, and Drag the **(2) Email gem** from the dropdown
 
 ![Add_email_gem](img/3.12_Add_email_gem.png)
 
-Here we will specify our Email configurations. In **(1) To**, add your Email id where you want to receive the notification Email when the Job is triggered. Select the **(2) Connection name**, you created for Email in step 1.3.
-You can provide a **(3) Subject**, for the Email and also add **(4) Email content** you want to add to your email. Here in the example, we are using a Airflow param available to access the execution time in a Job.
+Here we will specify our Email configurations. In **(1) To**, add your Email id where you want to receive the notification Email when the job is triggered. Select the **(2) Connection name**, you created for Email in step 1.3.
+You can provide a **(3) Subject**, for the Email and also add **(4) Email content** you want to add to your email. Here in the example, we are using a Airflow param available to access the execution time in a job.
 Additionally, you can also add cc and bcc emails.
 Once done, Click **(5) Save**!
 
@@ -157,7 +157,7 @@ Once done, Click **(5) Save**!
 
 ### 2.3 Adding Spark pipeline gem
 
-If you have a Spark Databricks connection and a Spark Project with pipeline, you can include Spark pipeline gems in the Job. Click on **(1) Operators**, and Drag the **(2) Pipeline gem** from the dropdown to the canvas. Drag it close to the output port of the Email gem, so that it gets auto-connected. Then click the newly added gem and click **(3) Open** to open the gem configurations.
+If you have a Spark Databricks connection and a Spark Project with pipeline, you can include Spark pipeline gems in the job. Click on **(1) Operators**, and Drag the **(2) Pipeline gem** from the dropdown to the canvas. Drag it close to the output port of the Email gem, so that it gets auto-connected. Then click the newly added gem and click **(3) Open** to open the gem configurations.
 
 ![Add_Pipeline_Gem](img/3.14_Add_pipeline_gem.png)
 
@@ -183,13 +183,13 @@ You can provide any additional **(6) Properties** for your run and then click **
 
 ![Add_DBT_gem_details](img/3.17_Add_DBT_gem_details.png)
 
-Congratulations!!! And just like that, you have created a very simple Airflow Job with one Databricks pipeline Task and one DBT Model Task.
+Congratulations!!! And just like that, you have created a very simple Airflow job with one Databricks pipeline Task and one DBT Model Task.
 
 Let's go ahead and see how to Run and Schedule it.
 
 ## 3. Run and Debug
 
-Now that we have our Job ready, we can go ahead and run it.
+Now that we have our job ready, we can go ahead and run it.
 
 Click on the **(1) Run button** to trigger the One-time run. This creates a temporary DAG and uploads to Airflow. User can check logs and status in the Prophecy UI itself. When you click on run, you will see a Job Details Toaster.
 
@@ -203,17 +203,17 @@ Click on **(1) + button**, to open the logs for a particular step.
 
 ## 4. Release and Schedule
 
-Once we have developed and tested the Job, it’s time to commit and push our code to our Git repository and release the Job to our Airflow.
+Once we have developed and tested the job, it’s time to commit and push our code to our Git repository and release the job to our Airflow.
 
 ![Enable_commit](img/3.20_start_commit.png)
 
-Start by toggling our Job to be **(1) Enabled**. This enables the Job on the Airflow and will ensure that the Job follows the previously set interval. Without enabling the DAG is not uploaded to Airflow.
+Start by toggling our job to be **(1) Enabled**. This enables the job on the Airflow and will ensure that the job follows the previously set interval. Without enabling the DAG is not uploaded to Airflow.
 
 Click on the **(2) Release** button in the top right corner or **(3) Commit** button in the middle of the footer (bottom of the screen) to start the commit process. This opens an easy-to-use Git management screen.
 
 The process of deploying code is composed of 4 steps:
 
-1. **Commit:** We start by creating a named version of our code and uploading it to our development branch on the secure Git repository. On the left-hand side you can see the **Current branch** and the associated history of commits and on the right side, there’s a list of **Entities changed** (models, Jobs, etc) and their status. If everything looks good, type in the **(1) Commit message** which should clearly describe, in few sentences, all the changes that we’ve introduced and click **(2) Commit**.
+1. **Commit:** We start by creating a named version of our code and uploading it to our development branch on the secure Git repository. On the left-hand side you can see the **Current branch** and the associated history of commits and on the right side, there’s a list of **Entities changed** (models, jobs, etc) and their status. If everything looks good, type in the **(1) Commit message** which should clearly describe, in few sentences, all the changes that we’ve introduced and click **(2) Commit**.
    ![commit_screen](img/3.21_commit_screen.png)
 
 2. **Pull:** Before your changes can be safely merged into the **main** branch, we have to make sure that we’re up-to-date with it. If your colleagues introduced any code on **main** we have to **Pull** it first. For this, simply click on **(1) Continue** and then **(2) Pull**.
@@ -225,21 +225,21 @@ The process of deploying code is composed of 4 steps:
 4. **Release:** Finally, now that our changes are all versioned on Git, we can release them to our scheduler. Simply specify a **(1) Release Version** number, e.g. `1.0` , and the **(2) Release Note,** which should clearly outline the latest changes. When ready, click **(3) Release.**
    ![Release_screen](img/3.24_release_screen.png)
 
-This will build and deploy your Airflow Job on the Airflow Fabric Specified in the Job and would schedule to run it on the specified schedule.
+This will build and deploy your Airflow job on the Airflow Fabric Specified in the job and would schedule to run it on the specified schedule.
 
 ## 5. Monitor
 
-During the release process Prophecy automatically packages, tests, and deploys your Jobs to Airflow. Once the process is finished you can see the deployed and running Job within your Airflow environment. You can monitor this Job within Prophecy in the **Observability** page.
+During the release process Prophecy automatically packages, tests, and deploys your jobs to Airflow. Once the process is finished you can see the deployed and running job within your Airflow environment. You can monitor this job within Prophecy in the **Observability** page.
 
 ![Airflow_Monitoring_page](img/3.25_Observability.png)
 
-Click on **(1) Observability icon** on the left side menu bar to take you to the Observability page. Then in **(2) Fabric Selection box**, choose the Airflow Fabric your have. The Observability page will show all the Past and Current Runs of the Jobs you released on this Fabric. Switch between **Attention Required**, **All events**, **Job Runs** to find any Particular Run you are looking for. Click on the **(3) Details** button to open up the logs of any particular Run.
+Click on **(1) Observability icon** on the left side menu bar to take you to the Observability page. Then in **(2) Fabric Selection box**, choose the Airflow Fabric your have. The Observability page will show all the Past and Current Runs of the jobs you released on this Fabric. Switch between **Attention Required**, **All events**, **Job Runs** to find any Particular Run you are looking for. Click on the **(3) Details** button to open up the logs of any particular Run.
 
 ## What’s next?
 
 Great work! 🎉
 
-You've created your first Airflow Job in Prophecy, ran it successfully, released, scheduled, and monitored the Job. Take a moment to appreciate your accomplishment 🥳.
+You've created your first Airflow job in Prophecy, ran it successfully, released, scheduled, and monitored the job. Take a moment to appreciate your accomplishment 🥳.
 
 To continue learning and expanding your skills with Prophecy, feel free to explore other tutorials within our documentation!
 

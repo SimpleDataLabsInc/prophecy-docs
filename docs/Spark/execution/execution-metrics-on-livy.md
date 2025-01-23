@@ -34,7 +34,7 @@ We have interims available after each gem of pipeline.
 
 ## Execution Metrics on Livy
 
-When running pipelines and Jobs, you may be interested to know few metrics related to execution like records
+When running pipelines and jobs, you may be interested to know few metrics related to execution like records
 read/written, bytes read/written, total time taken and Data samples b/w components. These Dataset, pipeline-run and
 Job-run related metrics are accumulated and stored on your data plane and can be viewed later from Prophecy UI. For more details please refer [here](./execution-metrics)
 

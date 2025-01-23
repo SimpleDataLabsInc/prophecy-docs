@@ -155,7 +155,7 @@ In the below image: <br />
 
 ### Using config in paths for Source/Target gems
 
-Config can also be used to refer to paths. This type of configuration comes in handy in situation where you have DEV, QA, and PROD data, and you want to configure Dataset (or in general the Job runs) based on which environment you are running it in.
+Config can also be used to refer to paths. This type of configuration comes in handy in situation where you have DEV, QA, and PROD data, and you want to configure Dataset (or in general the job runs) based on which environment you are running it in.
 
 ![Config path example](img/configuration/config-pipeline-path-eg.png)
 
@@ -186,13 +186,13 @@ New instances can be configured to override default values as shown in image bel
 For interactive runs, configuration can be selected as shown in image below.
 ![Config interactive run](img/configuration/config-instance-interactive-run.png)
 
-### Using configuration instances in Jobs
+### Using configuration instances in jobs
 
-Particular instances can also be configured in Databricks Jobs.
+Particular instances can also be configured in Databricks jobs.
 
 ![Config inside job](img/configuration/config-inside-job.png)
 
-### Overriding configuration values in Jobs
+### Overriding configuration values in jobs
 
 Specific values from configuration instance can be overridden as shown in images below:
 

@@ -20,8 +20,8 @@ orchestration (e.g. Databricks Workflows).
 
 - Build pipelines (all or specify ones to build) in Prophecy projects (Scala and Python)
 - Unit test pipelines in Prophecy projects (Scala and Python)
-- Deploy Jobs with built pipelines on Databricks
-- Deploying Jobs filtered with Fabric ids on Databricks
+- Deploy jobs with built pipelines on Databricks
+- Deploying jobs filtered with Fabric ids on Databricks
 - Integrate with CI/CD tools like GitHub Actions
 - Verify the project structure of Prophecy projects
 - Deploying pipeline Configurations
@@ -76,11 +76,11 @@ export DATABRICKS_TOKEN="exampledatabrickstoken"
 
 #### Building pipelines and deploying jobs
 
-PBT can build and deploy Jobs inside your Prophecy project to the Databricks environment defined by the `DATABRICKS_HOST` and `DATABRICKS_TOKEN`
+PBT can build and deploy jobs inside your Prophecy project to the Databricks environment defined by the `DATABRICKS_HOST` and `DATABRICKS_TOKEN`
 environment variables.
 
 Since v1.0.3 PBT supports new input parameters that are used to determine the DBFS path where your project's artifacts would
-be uploaded. These are the `--release-version` and `--project-id` parameters which would be used to replace the `__PROJECT_RELEASE_VERSION_ PLACEHOLDER__` and `__PROJECT_ID_PLACEHOLDER__` placeholders that would already be present in your Job's definition file
+be uploaded. These are the `--release-version` and `--project-id` parameters which would be used to replace the `__PROJECT_RELEASE_VERSION_ PLACEHOLDER__` and `__PROJECT_ID_PLACEHOLDER__` placeholders that would already be present in your job's definition file
 (`databricks-job.json`). Using a unique release version of your choice and the project's Prophecy ID
 (as seen in the project's URL on the Prophecy UI) is recommended.
 
@@ -149,7 +149,7 @@ pbt deploy --path /path/to/your/prophecy_project/ --release-version 1.0 --projec
 ```
 
 The `deploy` command also supports an advanced option `--fabric-ids` ( comma separated if more than one ) if there is a
-need to only deploy Jobs associated with certain Fabric IDs. This option is often used in a multi-workspace environment.
+need to only deploy jobs associated with certain Fabric IDs. This option is often used in a multi-workspace environment.
 [Find the Fabric ID](pbt-jenkins.md#fabricid) for your Fabric by navigating to the Metadata page of that Fabric and observing the URL.
 
 The following command will filter out and only deploy the jobs associated with given Fabric ids.
@@ -204,7 +204,7 @@ pbt deploy --skip-builds --path /path/to/your/prophecy_project/
 ##### Deploy specific Jobs using JobId filter
 
 By default, `deploy` command builds all pipelines and then deploys all jobs, if you want to deploy some specific jobs
-we can use `job-ids` filter (we can find JobId on Job metadata page) , PBT will automatically calculate all the pipelines needed for the jobs and then build them.
+we can use `job-ids` filter (we can find JobId on job metadata page) , PBT will automatically calculate all the pipelines needed for the jobs and then build them.
 This could be really useful, if we have many jobs and we only want to deploy only few.
 
 ```shell

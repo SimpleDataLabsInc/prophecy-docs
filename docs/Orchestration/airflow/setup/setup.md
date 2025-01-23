@@ -19,7 +19,7 @@ Prophecy provides you with three different types of Fabrics depending upon where
 
 ## Create an Airflow Job
 
-Once the Airflow Fabric is setup, Airflow Job scheduling is done with an easy-to-use interface. Follow this guide to [Create an Airflow Job](/docs/Orchestration/airflow/getting-started-with-low-code-airflow.md#2-create-an-airflow-job).
+Once the Airflow Fabric is setup, Airflow job scheduling is done with an easy-to-use interface. Follow this guide to [Create an Airflow job](/docs/Orchestration/airflow/getting-started-with-low-code-airflow.md#2-create-an-airflow-job).
 
 ## What's next
 

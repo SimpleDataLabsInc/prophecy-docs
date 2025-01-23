@@ -12,7 +12,7 @@ handling of errors, and logging the correct information.
 An Admin User will create the pipeline in a Project, let's call it _Base Project_.
 They can add config variables to the pipeline, values for which can be provided while using the pipeline in another Project called _App Project_.
 
-Users can run these pipelines then interactively, or also schedule them in Jobs.
+Users can run these pipelines then interactively, or also schedule them in jobs.
 
 To use a pipeline from _Base Project_ for interactive runs, the User would need to create a Config in _App Project_. Once added, this pipeline would be visible in _App Project_.
 Please see the below video for interactive runs.
@@ -26,9 +26,9 @@ Please see the below video for interactive runs.
 Please note, this pipeline is marked as **read-only** in _App Project_. Only configs can be added and edited for this pipeline here in _App Project_.
 :::
 
-For Jobs, a User doesn't need to import a pipeline. When they create a Job in _App project_ they would be able to select any pipeline from _Base Project_ in the pipeline operator. All configs from _Base Project_ and _App project_ are then available here in Job.
+For jobs, you don't need to import a pipeline. When tyou create a job in _App project_ you will be able to select any pipeline from _Base Project_ in the pipeline operator. All configs from _Base Project_ and _App project_ are then available here in job.
 
-Please see the below video for sharing **Configured Pipelines** in Jobs.
+Please see the below video for sharing **Configured Pipelines** in jobs.
 
 <div style={{position: 'relative', 'padding-bottom': '56.25%', height: 0}}>
    <iframe src="https://www.loom.com/embed/77536ed8e8f149849a1997cd369eaeb4" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
