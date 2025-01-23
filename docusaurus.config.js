@@ -106,7 +106,7 @@ const config = {
             label: "Transpiler",
           },
           {
-            to: "/getting-started/getting-help",
+            to: "/getting-help",
             label: "Help",
             position: "right",
           },
@@ -483,6 +483,10 @@ const config = {
           {
             to: "/extensibility/gem-builder/spark-gem-builder",
             from: "/extensibility/package-hub/Gem-builder",
+          },
+          {
+            to: "/api/active-users-api/",
+            from: "/settings/active-users-api/",
           },
         ],
         /*
