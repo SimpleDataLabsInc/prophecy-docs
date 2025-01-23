@@ -10,7 +10,7 @@ tags:
 
 <h3><span class="badge">Spark Gem</span></h3>
 
-Use the SchemaTransform Gem to apply transformations to columns from the incoming DataFrame. This page describes the different transformations—or _operations_—that you can use in this Gem.
+Use the SchemaTransform gem to apply transformations to columns from the incoming DataFrame. This page describes the different transformations—or _operations_—that you can use in this gem.
 
 ![Example usage of SchemaTransform](./img/schemaTransform_eg_1.png)
 
@@ -103,11 +103,11 @@ object transform {
 
 ## Advanced Import
 
-The Advanced Import feature allows you to bulk import statements that are structured similarly to CSV/TSV files. This can be useful if you have your expressions/transformation logic in another format and just want to quickly configure a SchemaTransform Gem based on existing logic.
+The Advanced Import feature allows you to bulk import statements that are structured similarly to CSV/TSV files. This can be useful if you have your expressions/transformation logic in another format and just want to quickly configure a SchemaTransform gem based on existing logic.
 
 ### Using Advanced Import
 
-1. Click the **Advanced** tab in the SchemaTransform Gem.
+1. Click the **Advanced** tab in the SchemaTransform gem.
 2. Enter the expressions into the text area.
 
 ![Advanced import mode](./img/schematransform_advanced_2.png)

@@ -1,7 +1,7 @@
 ---
 title: Upload files
 id: upload-file
-description: Upload files to your Spark Pipeline
+description: Upload files to your Spark pipeline
 tags:
   - gems
   - file
@@ -18,19 +18,19 @@ You can upload files of the following types to your file store:
 
 ## Steps to upload
 
-To upload a file and incorporate it into your Spark Pipeline, you can use a Source Gem. There are a few ways to get started:
+To upload a file and incorporate it into your Spark pipeline, you can use a Source gem. There are a few ways to get started:
 
-- Drag and drop the file directly to the Pipeline canvas.
+- Drag and drop the file directly to the pipeline canvas.
 
   ![Drag and drop file](./img/drag-drop-file.png)
 
-- Open the Source/Target Gem drawer and click **Upload file**.
+- Open the Source/Target gem drawer and click **Upload file**.
 
-  ![Source/Target Gem drawer](./img/upload-file-gem-drawer.png)
+  ![Source/Target gem drawer](./img/upload-file-gem-drawer.png)
 
-- Create a new Source Gem, click **+ New Dataset**, and select **Upload file**.
+- Create a new Source gem, click **+ New Dataset**, and select **Upload file**.
 
-  ![Source Gem](./img/upload-file-source-gem.png)
+  ![Source gem](./img/upload-file-source-gem.png)
 
 After following any of the above steps, you will see the **Type & Format** settings for your file.
 
@@ -46,7 +46,7 @@ Follow these steps to complete the file configuration:
    ![Upload and create a table](./img/upload-create-table.png)
 
    :::note
-   Once you define the target location and click Next, the file is uploaded to the file path, regardless of whether you complete the Gem configuration.
+   Once you define the target location and click Next, the file is uploaded to the file path, regardless of whether you complete the gem configuration.
    :::
 
 1. Fill in any properties depending on your requirements.
@@ -55,4 +55,4 @@ Follow these steps to complete the file configuration:
 1. **Load** the data if you want to preview the table.
 1. Click **Create Dataset**. This action creates the dataset and also creates the table if using the **Upload and create a table** option.
 
-Now, your data is ready for use in your Pipeline via the Source Gem!
+Now, your data is ready for use in your pipeline via the Source gem!

@@ -14,20 +14,20 @@ tags:
 
 The following sections contain Scala, PySpark and runtime configuration variables to use with custom orchestration solutions.
 
-### Scala Spark Pipelines
+### Scala Spark pipelines
 
 Prerequisites:
 
 - Optional: Modify `ivysettings.xml` to point to a custom Maven mirror.
 
-Given a Scala Pipeline named "demo_pipeline" with a JAR artifact from [PBT](docs/ci-cd/prophecy-build-tool/prophecy-build-tool.md)
+Given a Scala pipeline named "demo_pipeline" with a JAR artifact from [PBT](docs/ci-cd/prophecy-build-tool/prophecy-build-tool.md)
 called `demo_pipeline-1.0.jar` you could call the following commands to invoke the Main class from the JAR
-file and run the Pipeline on a local Spark cluster.
+file and run the pipeline on a local Spark cluster.
 
 :::caution
 
-Make sure to use the correct version of `io.prophecy:prophecy-libs_2.12` for your Pipeline.
-Find this version in the `pom.xml` or `pbt_project.yml` in the Pipeline's source code directory.
+Make sure to use the correct version of `io.prophecy:prophecy-libs_2.12` for your pipeline.
+Find this version in the `pom.xml` or `pbt_project.yml` in the pipeline's source code directory.
 Alternatively use a tool like `jdeps` on the jar file itself.
 
 :::
@@ -44,7 +44,7 @@ spark-submit \
   demo_pipeline-1.0.jar -i default -O "{}"
 ```
 
-### PySpark Pipelines
+### PySpark pipelines
 
 Prerequisites:
 
@@ -54,7 +54,7 @@ Prerequisites:
   - PBT will have a command to generate dependencies or pom.xml for PySpark projects.
 - Optional: Modify ivysettings.xml to point to a custom Maven mirror or PyPi mirror.
 
-Given a PySpark Pipeline named "demo_pipeline" with a WHL artifact from [PBT](docs/ci-cd/prophecy-build-tool/prophecy-build-tool.md)
+Given a PySpark pipeline named "demo_pipeline" with a WHL artifact from [PBT](docs/ci-cd/prophecy-build-tool/prophecy-build-tool.md)
 called `demo_pipeline-1.0-py3-none-any.whl` you could call the following commands to invoke the `main()` method from the WHL
 file using a customized launcher script.
 
@@ -74,7 +74,7 @@ In this example `launcher.py` would import the whl file and call the `main()` en
 
 :::caution
 
-This launcher must import the name of your specific Pipeline package!
+This launcher must import the name of your specific pipeline package!
 
 :::
 
@@ -86,9 +86,9 @@ main()
 
 ### Set Runtime Configuration variables
 
-In some cases you may want to override runtime configuration variables of a Pipeline.
-We offer several options for changing the Pipeline configuration at runtime. Each example will show a sample
-as "parameters" (e.g. for a Databricks Job) and as "sys args" (e.g. for passing at the end of a `spark-submit` command).
+In some cases you may want to override runtime configuration variables of a pipeline.
+We offer several options for changing the pipeline configuration at runtime. Each example will show a sample
+as "parameters" (e.g. for a Databricks job) and as "sys args" (e.g. for passing at the end of a `spark-submit` command).
 
 Sample Configuration Schema for below examples:
 
@@ -98,9 +98,9 @@ Sample Configuration Schema for below examples:
 | bool_var  | boolean |
 | float_var | float   |
 
-#### `-i` set the Pipeline Configuration instance
+#### `-i` set the pipeline Configuration instance
 
-A Pipeline may be run with a different Pipeline Configuration instance by using the `-i` option and providing the name of the configuration profile instance. For more information on configuration instances and overrides, see [Pipeline Configuration instances](../../Spark/configuration/#pipeline-configuration-instances).
+A pipeline may be run with a different pipeline Configuration instance by using the `-i` option and providing the name of the configuration profile instance. For more information on configuration instances and overrides, see [Pipeline Configuration instances](../../Spark/configuration/#pipeline-configuration-instances).
 
 ##### `-i` examples
 
@@ -132,7 +132,7 @@ This option may be used more than once.
 
 #### `-f` set configuration using a file
 
-This option will set all parameters for a Pipeline by using a json file which can be reached locally by the
+This option will set all parameters for a pipeline by using a json file which can be reached locally by the
 `spark-submit` command.
 
 :::caution

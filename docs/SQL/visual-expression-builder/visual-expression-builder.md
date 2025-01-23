@@ -17,9 +17,9 @@ In order to perform data analysis tasks, it's important to be able to construct 
 
 Using the SQL Visual Expression Builder can save you time and effort when constructing complex expressions, and can help you to better understand the relationships between different functions and their arguments.
 
-## Supported Gems and features
+## Supported gems and features
 
-You can use the simplified Visual Expression Builder within the following data transformation Gems:
+You can use the simplified Visual Expression Builder within the following data transformation gems:
 
 - **Aggregate**
 - **Filter**
@@ -63,7 +63,7 @@ All of the expressions you write in the Code view are converted to visual expres
 
 As you build your expressions, Data Copilot can suggest expressions and functions to you, including nested and conditional functions.
 
-While viewing the Code view of your expressions, you can click **Ask AI** to generate your expressions using an English text prompt. You can then review the code expressions, view them on the Visual view, and test them by running the Model up to and including the Gem with the expressions.
+While viewing the Code view of your expressions, you can click **Ask AI** to generate your expressions using an English text prompt. You can then review the code expressions, view them on the Visual view, and test them by running the model up to and including the gem with the expressions.
 
 ![Ask AI to generate](img/ask-ai-expression.png)
 

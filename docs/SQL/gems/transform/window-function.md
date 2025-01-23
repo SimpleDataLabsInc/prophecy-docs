@@ -11,7 +11,7 @@ tags:
 
 <h3><span class="badge">SQL Gem</span></h3>
 
-The WindowFunction lets you define a **WindowSpec** and apply window functions on a Model.
+The WindowFunction lets you define a **WindowSpec** and apply window functions on a model.
 
 ### Parameters
 

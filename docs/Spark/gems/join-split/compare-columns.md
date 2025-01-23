@@ -11,7 +11,7 @@ tags:
 
 <h3><span class="badge">Spark Gem</span></h3>
 
-The CompareColumns Gem lets you compare columns between two DataFrames based on the key id columns defined.
+The CompareColumns gem lets you compare columns between two DataFrames based on the key id columns defined.
 
 ## Parameters
 
@@ -247,7 +247,7 @@ object CompareColumns_1 {
 
 ````
 
-Below are the steps that are performed to compare two DataFrames in compare column Gem:
+Below are the steps that are performed to compare two DataFrames in compare column gem:
 
 - Pivot the DataFrame to get the key column's, compare column name and value
 - Join the pivoted DataFrames and compare the column value using key column's
