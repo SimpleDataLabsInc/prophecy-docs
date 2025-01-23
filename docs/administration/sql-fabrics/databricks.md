@@ -60,20 +60,20 @@ Prophecy supports Databricks Volumes. When you run a Python or Scala pipeline vi
 Completed fabrics will appear on the Metadata page and can be managed by Team admins.
 ![FabricMetadata](./img/FabricMetadata.png)
 
-Each team member can attach completed Fabrics to their Projects and Models.
+Each team member can attach completed fabrics to their projects and models.
 ![SFAttachCluster](./img/DatabricksAttachCluster.png)
 
 | **Attach a fabric to a model**                                                                                                            |
 | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| **1 Metadata** - Click the Prophecy Metadata and search for a SQL Project or Model of interest. Open the Model.                           |
-| **2 Model** - Here we have opened a Model called "Customers."                                                                             |
+| **1 Metadata** - Click the Prophecy Metadata and search for a SQL Project or model of interest. Open the model.                           |
+| **2 Model** - Here we have opened a model called "Customers."                                                                             |
 | **3 Attach Cluster Menu** - This dropdown menu lists the fabrics and execution clusters available to this Project, according to the Team. |
 | **4 Databricks Fabric** - The available fabrics appear here. Only SQL fabrics are available to attach to SQL Projects.                    |
-| **5 Attach Cluster** - The Databricks Warehouse can be attached to the Model for execution.                                               |
-| **6 Run Model** - Once a fabric and Cluster are attached to the Project, the Model can be run interactively using the play button.        |
+| **5 Attach Cluster** - The Databricks Warehouse can be attached to the model for execution.                                               |
+| **6 Run model** - Once a fabric and cluster are attached to the Project, the model can be run interactively using the play button.        |
 
 :::info
 Remember, each user will be prompted to update the fabric with their own credentials. Prophecy respects these credentials when accessing Databricks catalogs, tables, databases, etc.
 :::
 
-Once a Project is attached to a Fabric, and the Project is released, the Project can be scheduled to run on a regular frequency using [Databricks jobs](/docs/getting-started/getting-started-with-low-code-sql.md#5-orchestrate-and-deploy)
+Once a project is attached to a fabric, and the project is released, the project can be scheduled to run on a regular frequency using [Databricks jobs](/docs/getting-started/getting-started-with-low-code-sql.md#5-orchestrate-and-deploy)

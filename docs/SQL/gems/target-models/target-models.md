@@ -9,13 +9,13 @@ tags:
   - table
 ---
 
-The Target Model Gem has different tabs that help you set advanced options and make it easy for you define how you want to materialize your data using write formats. You can see the UI and capabilities by opening the Target Model in your SQL projects.
+The Target Model Gem has different tabs that help you set advanced options and make it easy for you define how you want to materialize your data using write formats. You can see the UI and capabilities by opening the Target model in your SQL projects.
 
 These simplified options allow you to use dbt Core™ properties without the need to have any dbt knowledge.
 
 ## Target Model tabs
 
-The tabs within the Target Model include the following:
+The tabs within the Target model include the following:
 
 - **[Type & Format](type-and-format.md)**: Update the format of the model between different types of materializations
 - **[Location](location.md)**: Update the location by overwriting the Database, Schema, or Alias
@@ -39,9 +39,9 @@ The object properties describe everything from physical locations, materializati
 
 ### dbt properties mapping
 
-The following table maps all of the dbt properties for Databricks and Snowflake to the tabs of Prophecy’s Target Model:
+The following table maps all of the dbt properties for Databricks and Snowflake to the tabs of Prophecy’s Target model:
 
-| dbt property name      | Provider         | Target Model tab |
+| dbt property name      | Provider         | Target model tab |
 | ---------------------- | ---------------- | ---------------- |
 | file_format            | Databricks       | Type & Format    |
 | alias                  | All              | Location         |
@@ -76,7 +76,7 @@ The following table maps all of the dbt properties for Databricks and Snowflake 
 
 ## What's next
 
-To continue configuring your Target Model, see the following pages:
+To continue configuring your Target model, see the following pages:
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

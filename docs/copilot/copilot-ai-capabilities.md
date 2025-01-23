@@ -51,7 +51,7 @@ The following example uses Data Copilot to help start a pipeline:
 
 ### Modify an existing pipeline
 
-You can also call Data Copilot to modify an existing Model. Type a new text prompt, and Data Copilot will suggest a new sequence of data transformations. You don't necessarily have to select where you want to make your modification for Data Copilot to make its suggestion.
+You can also call Data Copilot to modify an existing model. Type a new text prompt, and Data Copilot will suggest a new sequence of data transformations. You don't necessarily have to select where you want to make your modification for Data Copilot to make its suggestion.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -102,7 +102,7 @@ Data Copilot can generate script gems, user-defined functions in Spark, or macro
 
 ## Map with AI
 
-You don't have to worry about mapping the schema across your Model. Data Copilot will map the target schema with the existing gems and Datasets.
+You don't have to worry about mapping the schema across your model. Data Copilot will map the target schema with the existing gems and Datasets.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -114,7 +114,7 @@ You don't have to worry about mapping the schema across your Model. Data Copilot
 
 In addition to the visual editor above, you'll also see code completion suggestions in the code editor.
 
-Data Copilot helps you build your Model in the code interface by making predictions as you type your code. And when you go back to the visual interface, you'll see your code represented as a Model.
+Data Copilot helps you build your model in the code interface by making predictions as you type your code. And when you go back to the visual interface, you'll see your code represented as a model.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -130,7 +130,7 @@ The Fix with AI option appears on the diagnostic screen where you see the error 
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://fast.wistia.net/embed/iframe/17q9stsz6n?videoFoam=true" title="Drag and Drop Model Graph Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+<iframe src="https://fast.wistia.net/embed/iframe/17q9stsz6n?videoFoam=true" title="Drag and Drop model Graph Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
@@ -167,7 +167,7 @@ Data Copilot auto-documents anywhere you need it - from the granular data source
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://fast.wistia.net/embed/iframe/z3x5tfu1cf?videoFoam=true" title="Drag and Drop Model Graph Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
+<iframe src="https://fast.wistia.net/embed/iframe/z3x5tfu1cf?videoFoam=true" title="Drag and Drop model Graph Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 

@@ -8,7 +8,7 @@ tags:
   - scheduling
 ---
 
-Once you have developed a Spark data pipeline or an SQL Model using Prophecy, you will want to schedule it to run at some frequency. To
+Once you have developed a Spark data pipeline or an SQL model using Prophecy, you will want to schedule it to run at some frequency. To
 support this, Prophecy provides you with an easy-to-use interface to develop jobs, using two different
 schedulers:
 

@@ -30,7 +30,7 @@ Prophecy will automatically detect and identify the variant types in your input 
 
 :::note
 
-The inferred schema is cached so that you can use it again in the future whenever you reopen the Model, gem, or another gem connected to the same input port. Check the bottom of the column selector to see the last time the variant schema was inferred.
+The inferred schema is cached so that you can use it again in the future whenever you reopen the model, gem, or another gem connected to the same input port. Check the bottom of the column selector to see the last time the variant schema was inferred.
 
 To refresh the schema, simply click **Infer Schema** again.
 

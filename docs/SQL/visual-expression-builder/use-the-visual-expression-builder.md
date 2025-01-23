@@ -25,7 +25,7 @@ The view you select persists across your gems.
 
 :::
 
-All of the expressions you build using the Visual Expression Builder are converted to code in the gem and Model Code views. Similarly, edits you make in the Code view, whether it's in an expression or condition editor, will be converted into Visual view.
+All of the expressions you build using the Visual Expression Builder are converted to code in the gem and model code views. Similarly, edits you make in the Code view, whether it's in an expression or condition editor, will be converted into Visual view.
 
 This allows you to take advantage of both Visual and Code views when building your expressions.
 

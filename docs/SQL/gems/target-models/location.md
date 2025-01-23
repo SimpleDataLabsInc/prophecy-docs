@@ -9,7 +9,7 @@ tags:
   - SQL
 ---
 
-You can use the Location tab to overwrite the Database, Schema, or Alias of your Target Model.
+You can use the Location tab to overwrite the Database, Schema, or Alias of your Target model.
 
 The full location of a table, view, and other objects consists of a database, schema, and alias. dbt allows its users to overwrite any of those parts of the location, with a combination of macros and additional project, folder, and model-level configurations. This tab simplifies those dbt object location parts.
 

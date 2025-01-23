@@ -14,7 +14,7 @@ tags:
   - dbt
 ---
 
-To be able to Run your Databricks SQL Models, you need to have connection from Prophecy Managed Airflow to your Databricks SQL Environment.
+To be able to Run your Databricks SQL models, you need to have connection from Prophecy Managed Airflow to your Databricks SQL Environment.
 
 ## Add a Databricks SQL connection (DBT)
 

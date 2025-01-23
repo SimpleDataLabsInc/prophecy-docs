@@ -47,8 +47,8 @@ Data tests can accept input data from any table, no matter if the table is defin
 
 Supported test types include:
 
-- Project tests: Singular use tests that depend on the Model that they were created for
-- Generic tests: Generic use test that are not tied to a specific Model, and can be reused repeatedly
+- Project tests: Singular use tests that depend on the model that they were created for
+- Generic tests: Generic use test that are not tied to a specific model, and can be reused repeatedly
   - Model tests
   - Column tests
 

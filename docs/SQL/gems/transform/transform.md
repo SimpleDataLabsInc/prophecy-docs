@@ -23,7 +23,7 @@ Constitutes the set of gems that help with transforming data.
 | **[Reformat](./reformat.md)**                   | Select columns, rename columns, or redefine existing columns from a table or view.                               |
 | **[SetOperation](./set-operation.md)**          | Add or subtract rows with identical schemas and different data.                                                  |
 | **[Unpivot](./unpivot.md)**                     | Transform data from a wide format to a long one.                                                                 |
-| **[WindowFunction](./window-function.md)**      | Define a WindowSpec and apply window functions on a Model.                                                       |
+| **[WindowFunction](./window-function.md)**      | Define a WindowSpec and apply window functions on a model.                                                       |
 
 </div>
 

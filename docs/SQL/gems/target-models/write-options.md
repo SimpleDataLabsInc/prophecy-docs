@@ -10,15 +10,15 @@ tags:
   - scd2
 ---
 
-You can use Write Modes such as Overwrite, Append, and Merge to materialize your data. The Write Options tab within your Target Model gem guides you through building different merge approaches, such as historical data changes with SCD 2, which use incremental materialization strategy.
+You can use Write Modes such as Overwrite, Append, and Merge to materialize your data. The Write Options tab within your Target model gem guides you through building different merge approaches, such as historical data changes with SCD 2, which use incremental materialization strategy.
 
-Target Models are considered incremental models, which use a materialization strategy to update your data warehouse tables by loading and transforming just the changed data since the last run. Incremental models avoid processing your entire Dataset, which allows them to update only the new rows. This greatly reduces the time and resources you need to dedicate for your data transformations.
+Target models are considered incremental models, which use a materialization strategy to update your data warehouse tables by loading and transforming just the changed data since the last run. Incremental models avoid processing your entire Dataset, which allows them to update only the new rows. This greatly reduces the time and resources you need to dedicate for your data transformations.
 
 ## Write Modes
 
 You can overwrite the target data entirely, append to existing target data, or merge to address slowly changing dimension scenarios.
 
-- To select write modes, you must set the Target Model [Type & Format](type-and-format.md) to **Table**.
+- To select write modes, you must set the Target model [Type & Format](type-and-format.md) to **Table**.
 
 Once you've selected your write mode, you'll see in the Code view that the table is stored as a `"materialized": "incremental"` table, with `"incremental_strategy:` set to whichever write mode and merge approach you choose.
 
@@ -44,10 +44,10 @@ For example, imagine you have a `CUSTOMERS` table where you're storing phone num
 
 To use Overwrite, follow these steps:
 
-1. Open your Target Model and navigate to the **Write Options** tab.
+1. Open your Target model and navigate to the **Write Options** tab.
 2. For the **Write Mode**, select **Overwrite**.
 3. Click **Save**.
-4. Run the Target Model and check that the write mode returns data properly.
+4. Run the Target model and check that the write mode returns data properly.
 
 Overwrite will clear all existing data, and replace it with new data on every run. This is often the right approach for staging and intermediate tables, but it's rarely what you'd want for final tables.
 
@@ -65,10 +65,10 @@ For example, imagine you have a `CUSTOMERS` table, where you allow your customer
 
 To use Append, follow these steps:
 
-1. Open your Target Model and navigate to the **Write Options** tab.
+1. Open your Target model and navigate to the **Write Options** tab.
 2. For the **Write Mode**, select **Append**.
 3. Click **Save**.
-4. Run the Target Model and check that the write mode returns data properly.
+4. Run the Target model and check that the write mode returns data properly.
 
 Append adds all new rows to the table. If your target table doesn't have a unique key, this approach can be fine. However, if you're trying to ensure unique keys, use merge instead.
 
@@ -148,7 +148,7 @@ With `ORDER_ID` as the unique key, if any new records come in that match an exis
 
 To use Specify Columns, follow these steps:
 
-1. Open your Target Model and navigate to the **Write Options** tab.
+1. Open your Target model and navigate to the **Write Options** tab.
 2. For the **Write Mode**, select **Merge**.
 3. For the **Merge Approach**, select **Specify Columns**.
 4. Under **Merge Condition**, set the **Unique Key** to `ORDER_ID`.
@@ -158,13 +158,13 @@ To use Specify Columns, follow these steps:
 8. Optional: Specify the columns to exclude by clicking **+**.
 9. Under **Advanced**, select an option for **On Schema Change**.
 10. Click **Save**.
-11. Run the Target Model and check that the merge approach returns data properly.
+11. Run the Target model and check that the merge approach returns data properly.
 
 ### SCD 2
 
 You can use SCD 2 to manage historical data changes. Type 2 Slowly Changing Dimensions in data warehouse is one of the most popular dimensions that is used. You can use SCD 2 to manage changes to data over time, essentially tracking changes in dimension records, preserving both current and historical data for later analysis.
 
-- Preserve all changes in the Target Model
+- Preserve all changes in the Target model
 - Null is a new, active, and currently valid row
 
 Instead of natively exposing the complexity of dbt snapshots, Prophecy introduces SCD 2 as a model write option.
@@ -242,7 +242,7 @@ The new historical data helps us understand how values in a row change over time
 
 To use SCD 2, follow these steps:
 
-1. Open your Target Model and navigate to the **Write Options** tab.
+1. Open your Target model and navigate to the **Write Options** tab.
 2. For the **Write Mode**, select **Merge**.
 3. For the **Merge Approach**, select **Scd 2**.
 4. Under **Merge Details**, set the **Unique Key** to `ORDER_ID`.
@@ -258,7 +258,7 @@ To use SCD 2, follow these steps:
       ![SCD 2](img/scd-2-column-values.png)
       1. Click **+** and select `SHIPPING_STATUS`.
 7. Click **Save**.
-8. Run the Target Model and check that the merge approach returns data properly.
+8. Run the Target model and check that the merge approach returns data properly.
 
 ### Use delete and insert
 
@@ -273,7 +273,7 @@ For example, imagine you have an `ORDERS` table where you want to replace outdat
 
 To use delete and insert, follow these steps:
 
-1. Open your Target Model and navigate to the **Write Options** tab.
+1. Open your Target model and navigate to the **Write Options** tab.
 2. For the **Write Mode**, select **Merge**.
 3. For the **Merge Approach**, select **Use delete and insert**.
 4. Under **Merge Condition**, set the **Unique Key** to `SHIPPING_STATUS`.
@@ -282,7 +282,7 @@ To use delete and insert, follow these steps:
 7. Under **Merge Columns**, there's no need to set the merge columns for incremental strategy delete and insert.
 8. Under **Advanced**, select an option for **On Schema Change**.
 9. Click **Save**.
-10. Run the Target Model and check that the merge approach returns data properly.
+10. Run the Target model and check that the merge approach returns data properly.
 
 ### Insert and overwrite
 
@@ -297,7 +297,7 @@ For example, imagine you have a `CUSTOMERS` table where you want to replace all 
 
 To use insert and overwrite, follow these steps:
 
-1. Open your Target Model and navigate to the **Write Options** tab.
+1. Open your Target model and navigate to the **Write Options** tab.
 2. For the **Write Mode**, select **Merge**.
 3. For the **Merge Approach**, select **Insert and overwrite**.
 4. Under **Merge Condition**, set **Partition By** by selecting `CUSTOMER_ID`.
@@ -308,4 +308,4 @@ To use insert and overwrite, follow these steps:
 5. Under **Merge Columns**, there's no need to set the merge columns for incremental strategy delete and insert.
 6. Under **Advanced**, select an option for **On Schema Change**.
 7. Click **Save**.
-8. Run the Target Model and check that the merge approach returns data properly.
+8. Run the Target model and check that the merge approach returns data properly.

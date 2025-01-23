@@ -32,7 +32,7 @@ In this release, we've updated the UX and capabilities of the expression builder
 
 - **Support for partial run for Airflow Jobs**: We've added play buttons on gems, which you can use to start partial runs for Airflow Jobs.
 
-- **Ability to create a model from the model dropdown**: While configuring the model gem in your job, you now have the option to create a model from the Model dropdown.
+- **Ability to create a model from the model dropdown**: While configuring the model gem in your job, you now have the option to create a model from the model dropdown.
 
 ### Minor Improvements {#MinorImprovements339}
 

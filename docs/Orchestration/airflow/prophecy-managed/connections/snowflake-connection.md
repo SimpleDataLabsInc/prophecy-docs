@@ -13,7 +13,7 @@ tags:
   - sql
 ---
 
-To be able to Run your Snowflake SQL Models, you need to have connection from Prophecy Managed Airflow to your Snowflake Environment
+To be able to Run your Snowflake SQL models, you need to have connection from Prophecy Managed Airflow to your Snowflake Environment
 
 ### Add Snowflake connection (DBT)
 

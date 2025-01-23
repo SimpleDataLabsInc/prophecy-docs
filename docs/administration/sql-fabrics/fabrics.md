@@ -23,7 +23,7 @@ In addition to secure, ad-hoc model runs on Snowflake and Databricks, job schedu
 
 2. Databricks users schedule jobs with [Databricks jobs](/docs/Orchestration/databricks-jobs.md) in Prophecy.
 
-Once a Snowflake or Databricks SQL fabric is setup, Prophecy's interface makes it easy to run Models on a daily, weekly, or monthly basis using Airflow or Databricks jobs.
+Once a Snowflake or Databricks SQL fabric is setup, Prophecy's interface makes it easy to run models on a daily, weekly, or monthly basis using Airflow or Databricks jobs.
 
 ## What's next
 

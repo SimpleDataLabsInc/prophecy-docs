@@ -249,7 +249,7 @@ A model is an entity that contains a set of data transformations and defines eit
 
 Here we create customers_nations model that’s going to enrich our customers and produce a report of which customers show up in which geographic areas most commonly.
 
-To create a new model simply click on the **(1) + Add Model** in the sidebar, when hovering over Models section, or **(2) Create Model** button. A model creation pop-up will show up, with very similar options, as when we defined the seed, available. Enter the **(3) Model Name** and **(4) Model Path** and that’s it. Finally save the model by pressing **(5) OK.**
+To create a new model simply click on the **(1) + Add Model** in the sidebar, when hovering over models section, or **(2) Create Model** button. A model creation pop-up will show up, with very similar options, as when we defined the seed, available. Enter the **(3) Model Name** and **(4) Model Path** and that’s it. Finally save the model by pressing **(5) OK.**
 
 #### 4.4.1 Drag and drop model’s graph
 

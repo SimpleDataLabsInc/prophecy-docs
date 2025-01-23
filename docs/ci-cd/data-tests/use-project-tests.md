@@ -120,12 +120,12 @@ To Schedule your project to run with tests, follow these steps:
 
 2. Drag a Model gem to your visual canvas.
 
-3. Click the Model to open the Model Properties.
+3. Click the model to open the model properties.
 
-4. Select the database object you want to run the test on. You can schedule the entire project or just a single Model:
+4. Select the database object you want to run the test on. You can schedule the entire project or just a single model:
 
    - Run entire Project
-   - Run a SQL Model
+   - Run a SQL model
 
    ![Add a schedule job](img/project-test-schedule.png)
 

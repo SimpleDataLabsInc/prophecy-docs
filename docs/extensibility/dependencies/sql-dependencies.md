@@ -12,7 +12,7 @@ Dependencies allow you to make use of third-party or custom code in your models 
 
 ## View dependencies
 
-To see all of your Project and Model dependencies simply open the Manage Dependencies screen by clicking **... > Dependencies**.
+To see all of your Project and model dependencies simply open the Manage Dependencies screen by clicking **... > Dependencies**.
 
 ![View your dependencies](img/dependencies-view.png)
 
@@ -28,7 +28,7 @@ You will be taken to the Create Dependency screen, where you can choose to creat
 
 ![Add a Dependency](img/dependencies-add.png)
 
-After you've defined the Dependency, click **Create**. Prophecy will validate the dependency and add it to the Project, making it enabled in the current Model, and adding it as a dependency within all of the other Models in the Project.
+After you've defined the Dependency, click **Create**. Prophecy will validate the dependency and add it to the Project, making it enabled in the current model, and adding it as a dependency within all of the other models in the Project.
 
 When adding dependencies, Prophecy validates that the dependency coordinates are valid and accessible. If that fails, you will see an invalid coordinates error.
 

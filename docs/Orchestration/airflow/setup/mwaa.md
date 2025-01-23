@@ -150,7 +150,7 @@ For adding a connection, Click on **(1) Add Connection** button. This Opens up t
 ### Setting up Snowflake connection
 
 ![snowflake](img/mwaa_snowflake_connection.png)
-To be able to schedule your Snowflake SQL Models via Airflow, you need to have a Snowflake Connection over DBT from Airflow to your Snowflake Airflow. You need to create the connection in Airflow and provide the mapping to Prophecy in this form.
+To be able to schedule your Snowflake SQL models via Airflow, you need to have a Snowflake Connection over DBT from Airflow to your Snowflake Airflow. You need to create the connection in Airflow and provide the mapping to Prophecy in this form.
 
 Select **(2) Connection Type** as Snowflake(DBT), and select the **(3) Fabric** you have in Prophecy for your desired Snowflake environment. Provide the **(4) Profile Directory** and **(5) Profile Name** used while setting up the connection in Airflow.
 

@@ -31,7 +31,7 @@ By the end of this training, you'll have an understanding of Airflow DAGs, be ab
 OR
 
 - Snowflake Account
-- A Prophecy Project with SQL Model running on Snowflake
+- A Prophecy Project with SQL model running on Snowflake
 
 If you don't have an existing project, please check out [this guide](https://docs.prophecy.io/concepts/project/#1-create-new-project) for setting up a Spark Project, and [this guide](/docs/getting-started/getting-started-with-low-code-sql.md) for setting up a SQL model in Prophecy.
 
@@ -88,7 +88,7 @@ Once done, click **(4) Save**.
 
 ### 1.4 Adding Databricks SQL Connection
 
-To be able to Run your Databricks SQL Models, you need to have connection from Prophecy Managed Airflow to your Databricks SQL Environment.
+To be able to Run your Databricks SQL models, you need to have connection from Prophecy Managed Airflow to your Databricks SQL Environment.
 Click again on Add Connection button.
 
 Select Databricks SQL in **(1) Connection Type**. Now under the **(2) Fabric**, you would select the already created fabric for Databricks SQL and Prophecy would setup the connection.
@@ -99,7 +99,7 @@ Once done, click **(4) Save**.
 
 ### 1.5 Adding Snowflake SQL Connection
 
-To be able to Run your Snowflake SQL Models, you need to have connection from Prophecy Managed Airflow to your Snowflake SQL Environment.
+To be able to Run your Snowflake SQL models, you need to have connection from Prophecy Managed Airflow to your Snowflake SQL Environment.
 Click again on Add Connection button.
 
 ![Add_SF_SQL_connection](img/3.8_SF_Sql_connection.png)
@@ -176,14 +176,14 @@ Click on **(1) Operators**, and Drag the **(2) DBT gem** from the dropdown to th
 
 Here, you will select the DBT Project/Model to Schedule, what SQL fabric to schedule it on, and other additional properties for running a DBT model.
 
-Select the **(1) DBT commands** you want to run when scheduling your Models. You can select all ([Dependencies](docs/extensibility/dependencies/sql-dependencies.md), [Seed](/getting-started/sql-with-databricks#431-create-seeds), Run and Test) here.
+Select the **(1) DBT commands** you want to run when scheduling your models. You can select all ([Dependencies](docs/extensibility/dependencies/sql-dependencies.md), [Seed](/getting-started/sql-with-databricks#431-create-seeds), Run and Test) here.
 Select the **(2) DBT Project to Schedule**. And then select the **(3) SQL Warehouse Fabric** to schedule the Module on. Select the fabric for which connection was created in Step 1.4 or 1.5.
 In **(4) Git reference**, select if you want to schedule a particular commit/tag or branch. Here you can select `branch` for this guide and then in **(5) Reference Value** give the current branch name you are working on.
 You can provide any additional **(6) Properties** for your run and then click **(7) Save**!!
 
 ![Add_DBT_gem_details](img/3.17_Add_DBT_gem_details.png)
 
-Congratulations!!! And just like that, you have created a very simple Airflow job with one Databricks pipeline Task and one DBT Model Task.
+Congratulations!!! And just like that, you have created a very simple Airflow job with one Databricks pipeline Task and one DBT model Task.
 
 Let's go ahead and see how to Run and Schedule it.
 

@@ -182,4 +182,4 @@ So, in summary: the Phase of **_Leaf Nodes_** (that is, the final gem in a given
 
 ## What's next
 
-Prophecy provides specific Spark gems and SQL gems for your pipelines and Models. Not only does Prophecy add new gems for your use, but you can also create gems yourself. To learn more, visit our documentation on [Spark gems](/Spark/gems) or [SQL gems](/SQL/gems).
+Prophecy provides specific Spark gems and SQL gems for your pipelines and models. Not only does Prophecy add new gems for your use, but you can also create gems yourself. To learn more, visit our documentation on [Spark gems](/Spark/gems) or [SQL gems](/SQL/gems).

@@ -11,7 +11,7 @@ tags:
 
 <h3><span class="badge">SQL Gem</span></h3>
 
-When processing raw data it can be useful to flatten complex data types like `Struct`s and `Array`s into simpler, flatter schemas. This allows you to preserve all schemas, and not just the first one. You can use FlattenSchema with Snowflake Models.
+When processing raw data it can be useful to flatten complex data types like `Struct`s and `Array`s into simpler, flatter schemas. This allows you to preserve all schemas, and not just the first one. You can use FlattenSchema with Snowflake models.
 
 ![The FlattenSchema gem](./img/flatten_gem.png)
 
@@ -31,7 +31,7 @@ We want to extract the `contact`, and all of the columns from the `struct`s in `
 
 ## The Expressions
 
-Having added a `FlattenSchema` gem to your Model, all you need to do is click the column names you wish to extract and they'll be added to the `Expressions` section.
+Having added a `FlattenSchema` gem to your model, all you need to do is click the column names you wish to extract and they'll be added to the `Expressions` section.
 
 :::tip
 

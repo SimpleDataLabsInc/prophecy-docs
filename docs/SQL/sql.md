@@ -16,20 +16,20 @@ Prophecy Copilot for SQL includes a visual editor and a code editor. They will a
 ### Visual editor
 
 The visual canvas is the main place to develop data models.
-Open any SQL Project in Prophecy to find the complete end-to-end **Project Lineage**. The Project Lineage provides a quick understanding of how Models refer to other Models, Seeds, or Sources. This quick, high-level project overview is explainable without having to read code.
+Open any SQL Project in Prophecy to find the complete end-to-end **Project Lineage**. The Project Lineage provides a quick understanding of how models refer to other models, seeds, or sources. This quick, high-level project overview is explainable without having to read code.
 
 ![ProjectLineage](img/ProjectLineage.png)
 
-The Project Browser displays entities available or used within this Project. Just click the Environment tab to browse through available databases and tables. Each Project connects to a fabric, or execution environment. This fabric defines the SQL Warehouse where each Model will materialize a single table or view. There are lots of additional features to learn more about, including configurations and committing code to Git. A single Project page contains lots of capabilities!
+The Project Browser displays entities available or used within this Project. Just click the Environment tab to browse through available databases and tables. Each Project connects to a fabric, or execution environment. This fabric defines the SQL Warehouse where each model will materialize a single table or view. There are lots of additional features to learn more about, including configurations and committing code to Git. A single Project page contains lots of capabilities!
 
-From here you can easily create new models by clicking on **+** next to the Models pane, or you can edit existing Models.
+From here you can easily create new models by clicking on **+** next to the models pane, or you can edit existing models.
 ![AddModel](img/AddModel.png)
 
-Once a Model is open, the model-editing canvas appears.
+Once a model is open, the model-editing canvas appears.
 
 ![Canvas](img/Canvas.png)
 
-Here we can see the `customers` Model starts with three existing Models. The data is transformed according to Aggregate, SQLStatement, and Join gems. The available Transformation gems are available by clicking the dropdown menu. As you develop the Model, you can iteratively run and see sample data as well as the relevant logs.
+Here we can see the `customers` model starts with three existing models. The data is transformed according to Aggregate, SQLStatement, and Join gems. The available Transformation gems are available by clicking the dropdown menu. As you develop the model, you can iteratively run and see sample data as well as the relevant logs.
 
 ### Code editor
 
@@ -56,7 +56,7 @@ The vast majority of dbt and SQL constructs are supported within the Prophecy Vi
 
 At any step of the process, data users can interactively run their models to make sure they're going in the right direction. Models can be additionally tested to ensure robustness over time. Power users can also extend the visual canvas through custom gems; making even the most complex logic easily accessible in the visual view.
 
-As you're building your Model by adding [individual gems](/docs/SQL/gems/gems.md), see how the process is going by interactively running the model. To learn more, see [Data Explorer](docs/SQL/execution/data-explorer.md).
+As you're building your model by adding [individual gems](/docs/SQL/gems/gems.md), see how the process is going by interactively running the model. To learn more, see [Data Explorer](docs/SQL/execution/data-explorer.md).
 
 ## Share Projects as Packages
 

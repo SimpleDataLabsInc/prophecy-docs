@@ -19,7 +19,7 @@ Together let's deconstruct a commonly used Transformation, the Aggregate gem. Fo
 ![1](../img/Snow4.6.1_Aggregate.png)
 
 1. **Open** the HelloWorld_SQL [Project](https://app.prophecy.io/metadata).
-2. From the list of Models, select the **Orders** Model. A Model is a series of transformation steps (Gems) that describe how to create a single table or view. The Orders Model defines the steps to create the Orders table.
+2. From the list of models, select the **Orders** model. A model is a series of transformation steps (Gems) that describe how to create a single table or view. The Orders model defines the steps to create the Orders table.
 3. Open the **Transformation** dropdown to see the available Transformation gems. The Aggregate gem has already been dragged to the canvas and configured in this HelloWorld_SQL example.
 4. Click the arrow to **Run up to the Aggregate gem**.
 5. Preview a **data sample** before the Aggregate gem.
@@ -38,7 +38,7 @@ Together let's deconstruct a commonly used Transformation, the Aggregate gem. Fo
 1. There is one **Input** Dataset, `payments`, and we can see the columns and datatypes below.
 2. Open the **GroupBy** tab.
 3. We can see the gem is configured to group according to the `order_id` column. Just click any column name listed in **(1) Input** to add a column to the GroupBy expressions.
-4. Syntax **errors** are surfaced here as you're designing your gem (and Model) on the canvas. That's handy so you don't have to run a job to discover a typo.
+4. Syntax **errors** are surfaced here as you're designing your gem (and model) on the canvas. That's handy so you don't have to run a job to discover a typo.
 5. The **Run** button is available here to test and view data samples. This way you can make sure your Aggregate gem is configured as desired.
 
 ### Aggregate expressions
@@ -64,12 +64,12 @@ Now let's see how to configure the `payment_methods` variable.
 ![4](../img/Snow4.6.4_Aggregate.png)
 
 1. Click **Config** to open the configuration screen.
-2. We see the option to apply a configuration at several different **levels:** apply to the entire Model, all the Models in the GitHub folder, or all the Models in the Project. Here we can see there are Configurations that apply to this particular `Orders` Model.
+2. We see the option to apply a configuration at several different **levels:** apply to the entire model, all the models in the GitHub folder, or all the models in the Project. Here we can see there are Configurations that apply to this particular `Orders` model.
 3. See the list of [DBT Defined Configs](https://docs.getdbt.com/reference/configs-and-properties). These are configs every user could employ with their DBT Projects, such as whether to materialize the model as table, view, ephemeral, or incremental. Click the dropdown to select the config of interest, then enter the appropriate value. Hover over the "i" icon for a short description of each DBT Config.
 4. See the list of user-defined **Variables**. In our HelloWorld_SQL project, the `payment_methods` variable has been defined with the four **values** shown.
-5. Click **Save** after editing the Config for the Model, Folder, or Project.
+5. Click **Save** after editing the Config for the model, folder, or project.
 
-Click the code view to see the Config encoded in the `dbt_project.yml` file or the `schema.yml/properties.yml` file. Further information can be found in DBT documentation, as Prophecy's Model Config is based on DBT's [Model Configurations](https://docs.getdbt.com/reference/model-configs).
+Click the code view to see the Config encoded in the `dbt_project.yml` file or the `schema.yml/properties.yml` file. Further information can be found in DBT documentation, as Prophecy's model Config is based on DBT's [Model Configurations](https://docs.getdbt.com/reference/model-configs).
 
 Using Config variables (and DBT Defined Configs) within a gem is easy. Just wrap the variable name (e.g. `payment_method`) in curly braces `{{ }}` like this: `{{ payment_method }}`.
 

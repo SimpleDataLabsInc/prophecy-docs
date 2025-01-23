@@ -26,7 +26,7 @@ It is not currently possible to switch the output language of a Project after it
 
 Each project must be stored in a Git repository. You can either choose to host your project on a Prophecy-managed repository, or you can connect your own external repository, like one on GitHub. Additionally, all assets within a project (like pipelines, models, datasets, and jobs) are stored as code in the project's Git repository.
 
-Open any pipeline (left) or Model (right) in your project. Simply toggle from visual to code to see the underlying code for that pipeline or model, as well as the rest of the project components.
+Open any pipeline (left) or model (right) in your project. Simply toggle from visual to code to see the underlying code for that pipeline or model, as well as the rest of the project components.
 
 ![Visual To Code](img/code-to-visual.png)
 

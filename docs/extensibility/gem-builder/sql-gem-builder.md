@@ -12,7 +12,7 @@ Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about 
 
 :::
 
-Each Prophecy Model is composed of individual operations, or [Gems](/docs/concepts/project/gems.md), that perform actions on data. While Prophecy offers dozens of gems out-of-the-box, some data practitioners want to extend this idea and create their own gems. Gem builder allows enterprise users to add custom gems. You can create custom source, target, and transformation gems, and then publish them for your team to use.
+Each Prophecy model is composed of individual operations, or [Gems](/docs/concepts/project/gems.md), that perform actions on data. While Prophecy offers dozens of gems out-of-the-box, some data practitioners want to extend this idea and create their own gems. Gem builder allows enterprise users to add custom gems. You can create custom source, target, and transformation gems, and then publish them for your team to use.
 
 Our SQL Gem builder supports Databricks and Snowflake SQL. It's built on dbt Core™, allowing you to build upon existing dbt libraries to define new macros to use in your custom gem.
 
@@ -47,7 +47,7 @@ There are two types of gems that you can create while using the Gem builder:
 Programmatically, a gem is a component with the following parts:
 
 - The **Gem UI Component** defines the user experience of using the gem on the visual canvas. This code is rendered on the Prophecy UI.
-- The **Gem Code Logic** which is how the gem acts within the context of a Model.
+- The **Gem Code Logic** which is how the gem acts within the context of a model.
 
 Gem code can be written using either Python or Scala.
 
@@ -275,7 +275,7 @@ Certain gems may generate SQL code that isn’t compatible with a specific fabri
 
 :::note
 
-Custom gem logic can be shared with other users within the Team and Organization. Navigate to the gem listing to review Prophecy-defined and User-defined gems. When your gem is ready, publish it so that it is available to use in other Models.
+Custom gem logic can be shared with other users within the Team and Organization. Navigate to the gem listing to review Prophecy-defined and User-defined gems. When your gem is ready, publish it so that it is available to use in other models.
 
 :::
 
