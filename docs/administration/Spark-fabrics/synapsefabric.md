@@ -10,13 +10,13 @@ tags:
   - livy
 ---
 
-In the context of Spark execution engines, users have the flexibility to opt for Azure Synapse Analytics while utilizing Prophecy. This comprehensive documentation aims to provide users with a clear understanding of the configuration process for Azure Synapse Analytics. Additionally, it offers step-by-step guidance on creating a Fabric that enables seamless connectivity to the Azure Synapse Workspace via Livy.
+In the context of Spark execution engines, users have the flexibility to opt for Azure Synapse Analytics while utilizing Prophecy. This comprehensive documentation aims to provide users with a clear understanding of the configuration process for Azure Synapse Analytics. Additionally, it offers step-by-step guidance on creating a fabric that enables seamless connectivity to the Azure Synapse Workspace via Livy.
 
 Feel free to explore the following sections to gain insights into the integration of Azure Synapse Analytics with Prophecy.
 
 ## An existing Azure Synapse Analytics environment
 
-A properly configured Azure Synapse Analytics environment is required before configuring a Synapse Fabric on Prophecy. Prophecy configurations include the following:
+A properly configured Azure Synapse Analytics environment is required before configuring a Synapse fabric on Prophecy. Prophecy configurations include the following:
 
 1. A Synapse workspace with proper security configured. If you don't have an existing workspace, you may deploy one from the [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/microsoft.synapse?tab=overview).
    <img src={require('./img/workspaceiam.png').default} alt="Synapse security" width="75%" />
@@ -30,7 +30,7 @@ A properly configured Azure Synapse Analytics environment is required before con
 4. Create a secret for your Application.
    <img src={require('./img/secret.png').default} alt="Synapse security" width="75%" />
 
-5. Make a note of your secret. We need this information for your Fabric.
+5. Make a note of your secret. We need this information for your fabric.
    <img src={require('./img/secret2.png').default} alt="Synapse security" width="75%" />
 
 6. Configure Application, Workspace, Storage roles to ensure proper access.
@@ -41,7 +41,7 @@ Find more information on assigning roles from [Azure's documentation](https://le
 
 Note that the Prophecy public IP is `3.133.35.237`.
 
-Navigate to Prophecy's UI and click on **Create Fabric**. The Fabric will establish a connection with your Synapse environment and utilize it as the execution engine for your pipelines.
+Navigate to Prophecy's UI and click on **Create Fabric**. The fabric will establish a connection with your Synapse environment and utilize it as the execution engine for your pipelines.
 <br/> <br/>
 
 Choose **Synapse** as your **Provider**.
@@ -92,6 +92,6 @@ Under **Python** enter the following **Path**:
 Click on **Complete**.
 <br/> <br/>
 
-Your Fabric for Azure Synapase Fabric is configured! Try creating a cluster using the Fabric that you've just created and attach to it.
+Your fabric for Azure Synapase fabric is configured! Try creating a cluster using the fabric that you've just created and attach to it.
 
 Run a simple pipeline and make sure that the interim returns data properly.

@@ -39,7 +39,7 @@ To deploy an existing tag, follow these steps:
    ![Deploy_start](img/external_release_tag_deploy_start.png)
 
    :::note
-   If you have enabled [Selective Job Deployment](./deployment.md#selective-job-deployment), then you can pick the Jobs you wish to deploy. Additionally, you have the option to override the Fabrics for these Jobs. Job selection **is not required** to deploy the release.
+   If you have enabled [Selective Job Deployment](./deployment.md#selective-job-deployment), then you can pick the jobs you wish to deploy. Additionally, you have the option to override the fabrics for these jobs. Job selection **is not required** to deploy the release.
    :::
 
 This deploys a new release. You can access deployment logs from the [Deployment History](./deployment.md#deployment-history) tab.

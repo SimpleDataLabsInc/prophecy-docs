@@ -24,7 +24,7 @@ This has been mostly caused by **difficult to work with formats** (like notebook
 
 Here comes Prophecy! Since Prophecy works very similarly to a **code-based IDE** with an additional **low-code productivity layer**, all your code for data pipelines and jobs is directly accessible to you and stored in Git. This enables any data practitioners to leverage the **best DevOps practices easily**.
 
-## Single-Fabric Development
+## Single-fabric Development
 
 ![Minimum project setup](img/reliable-ci-cd/min-project-setup.png)
 
@@ -36,13 +36,13 @@ In Prophecy, at minimum, you will find yourself having:
 - **Multiple data pipelines** - various ETL / ELT tasks written in Spark
 - **Multiple jobs** - the orchestration of your data pipelines written in Databricks jobs or Airflow
 - **A single Team** - all your teammates in the same place, with the same access
-- **A single Fabric** - the connection to your Databricks workspace
+- **A single fabric** - the connection to your Databricks workspace
 
 This is great for simple setups and very small teams, but can quickly lead to many problems. In such a setup, it's very easy for you and your teammates to make mistakes and **accidentally affect production** pipelines. There's also **lack of data separation**, so any PII information becomes visible to everyone!
 
 A better approach is to have physical environments, connected to different stages of development. A common example is a setup with three stages: **Development**, **QA**, **Production**. Each environment has usually its independent data, metastore, clusters, and even permissions.
 
-## Multi-Fabric Deployment with Prophecy
+## Multi-fabric Deployment with Prophecy
 
 Let's consider a better alternative to a single environment development.
 
@@ -74,7 +74,7 @@ For our example, however, let's focus on a setup with two environments: **Develo
    - `developers` - a superset of all the teams, which contains your developers and members of the `prod_support` team
    - `prod_support` - team composed of members who have privileged production access permissions
 
-2. Create two **Fabrics**:
+2. Create two **fabrics**:
 
    - `development` - owned by the `developers` team
    - `production` - owned by the `prod_support` team
@@ -96,7 +96,7 @@ Phew, that was a lot of work! But the biggest chunk is behind us 💪.
 
 ![Run Progress](img/reliable-ci-cd/run-progress.png)
 
-Now that we have set up our Fabrics and Teams, built some pipelines, it's time to test the whole data flow on our development environment.
+Now that we have set up our fabrics and Teams, built some pipelines, it's time to test the whole data flow on our development environment.
 
 Testing your pipelines and jobs is very simple. Simple click on the play button and watch your code run!
 
@@ -108,7 +108,7 @@ to complete.
 #### Deployment to Production
 
 Once we're confident that our job works correctly, and we have tested it well, we can start deploying it to our **production** environment. In our setup, only a production support engineer can do that. Therefore, login as them,
-duplicate your job on the production Fabric, set appropriate pipeline configurations and enable it.
+duplicate your job on the production fabric, set appropriate pipeline configurations and enable it.
 
 That's it! Now you can commit any remaining changes and release your pipeline. Prophecy automatically takes care of the release process, by building your pipelines, running unit tests, and finally deploying the pipeline JARs/wheels alongside the job definition directly to Databricks (or AirFlow).
 
@@ -119,7 +119,7 @@ If you're new to this process, check out, our [Git](docs/concepts/git/git.md) an
       style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}></iframe>
 </div>
 
-## Multi-Fabric Deployment with GitHub
+## Multi-fabric Deployment with GitHub
 
 So far, we looked at how Prophecy makes it really easy to deploy our jobs to multiple environments, directly using the CI / CD system built into it. However, it is often the case that you want to deploy your pipelines from your Git instead. This enables you to have a more secure production environment, where it doesn't have to connect to directly Prophecy itself.
 
@@ -127,4 +127,4 @@ As we know, Prophecy publishes all the entities (pipelines, jobs, metadata, etc)
 
 ### Deploy with Prophecy Build Tool
 
-[Prophecy Build Tool (PBT)](/docs/ci-cd/prophecy-build-tool/prophecy-build-tool.md) is a cli tool that can be used to build, test, and deploy projects created by Prophecy. PBT integrates with either [github actions](/docs/ci-cd/prophecy-build-tool/pbt-github-actions.md) or [Jenkins](/docs/ci-cd/prophecy-build-tool/pbt-jenkins.md) to facilitate deploying your code from your Git repository. Make use of the `--fabric-ids` option to deploy using the Multi-Fabric approach.
+[Prophecy Build Tool (PBT)](/docs/ci-cd/prophecy-build-tool/prophecy-build-tool.md) is a cli tool that can be used to build, test, and deploy projects created by Prophecy. PBT integrates with either [github actions](/docs/ci-cd/prophecy-build-tool/pbt-github-actions.md) or [Jenkins](/docs/ci-cd/prophecy-build-tool/pbt-jenkins.md) to facilitate deploying your code from your Git repository. Make use of the `--fabric-ids` option to deploy using the Multi-fabric approach.

@@ -21,7 +21,7 @@ orchestration (e.g. Databricks Workflows).
 - Build pipelines (all or specify ones to build) in Prophecy projects (Scala and Python)
 - Unit test pipelines in Prophecy projects (Scala and Python)
 - Deploy jobs with built pipelines on Databricks
-- Deploying jobs filtered with Fabric ids on Databricks
+- Deploying jobs filtered with fabric ids on Databricks
 - Integrate with CI/CD tools like GitHub Actions
 - Verify the project structure of Prophecy projects
 - Deploying pipeline Configurations
@@ -150,7 +150,7 @@ pbt deploy --path /path/to/your/prophecy_project/ --release-version 1.0 --projec
 
 The `deploy` command also supports an advanced option `--fabric-ids` ( comma separated if more than one ) if there is a
 need to only deploy jobs associated with certain Fabric IDs. This option is often used in a multi-workspace environment.
-[Find the Fabric ID](pbt-jenkins.md#fabricid) for your Fabric by navigating to the Metadata page of that Fabric and observing the URL.
+[Find the Fabric ID](pbt-jenkins.md#fabricid) for your fabric by navigating to the Metadata page of that fabric and observing the URL.
 
 The following command will filter out and only deploy the jobs associated with given Fabric ids.
 Example deploy:

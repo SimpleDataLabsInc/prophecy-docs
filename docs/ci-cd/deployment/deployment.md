@@ -77,12 +77,12 @@ This Deploy step builds all the pipelines and gems, uploads the artifacts, and s
 ![Deployment_steps](img/deployment_steps.png)
 
 Start with **(1) Choose a release**, where you would select a version created in Release step. This would be prefilled with the version you created, if you continue to Deploy from the release step directly.
-In **(2) Override Fabric** , you have the option to choose a specific environment (Fabric) for deploying the jobs. This is useful for testing purposes, allowing you to deploy all jobs to a designated test environment.
+In **(2) Override Fabric** , you have the option to choose a specific environment (fabric) for deploying the jobs. This is useful for testing purposes, allowing you to deploy all jobs to a designated test environment.
 :::note
 This is an optional step and overrides the environment for this particular job deployment. Leave it blank to use the fabrics pre-configured in jobs.
 :::
 
-**(3) Pick Jobs to Deploy** table provides an overview of the deployment status for each job, indicating the targeted Fabric, and any actions taken, such as addition, deletion, or modification.
+**(3) Pick Jobs to Deploy** table provides an overview of the deployment status for each job, indicating the targeted fabric, and any actions taken, such as addition, deletion, or modification.
 In the **Staged Release and Deployment** setting, the ability to select or deselect specific jobs is disabled. For more information on enabling this functionality, continue reading or directly jump [here](#selective-job-deployment).
 
 Click on **(4) Deploy** to start the deployment process. This will now build your pipelines, gems and update the jobs as shown below. You would be able to see logs for each step in this screen.

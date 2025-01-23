@@ -39,20 +39,20 @@ To make sure that EMR can communicate with Prophecy, you need to configure speci
 1. Modify the **Primary Node** security group to allow incoming connections to port `8998` from the Prophecy IP. You can do so by adding an inbound rule to the Master security group that permits incoming traffic on port `8998` from the Prophecy IP address.
 2. Modify the **Core Node** security group to allow outgoing connections to the Prophecy public IP `3.133.35.237` over HTTPS. Do this by adding an outbound rule to the Core security group that allows outgoing traffic over HTTPS protocol to the Prophecy public IP.
 
-## Create a Fabric
+## Create a fabric
 
-To connect EMR and Prophecy, you must create a Fabric. You can either create an EMR Fabric (suggested), or a [Livy Fabric](livy.md).
+To connect EMR and Prophecy, you must create a fabric. You can either create an EMR fabric (suggested), or a [Livy fabric](livy.md).
 
 <Tabs>
   <TabItem value="emr" label="EMR" default>
-    <p>To create an EMR Fabric:</p>
+    <p>To create an EMR fabric:</p>
     <ol>
       <li>
         Open Prophecy and click <strong>Create Entity</strong> from the left
-        navigation menu. Then, click on the Fabric tile.
+        navigation menu. Then, click on the fabric tile.
       </li>
       <li>
-        Name your Fabric and click <strong>Continue</strong>.
+        Name your fabric and click <strong>Continue</strong>.
       </li>
       <li>
         Keep the Provider Type as <strong>Spark</strong>, and choose{" "}
@@ -101,18 +101,18 @@ To connect EMR and Prophecy, you must create a Fabric. You can either create an 
       </li>
     </ol>
     <p>
-      Click <strong>Complete</strong> to save your new EMR Fabric.
+      Click <strong>Complete</strong> to save your new EMR fabric.
     </p>
   </TabItem>
   <TabItem value="emr-serverless" label="EMR Serverless">
-    <p>To create an EMR Fabric for your serverless cluster:</p>
+    <p>To create an EMR fabric for your serverless cluster:</p>
     <ol>
       <li>
         Open Prophecy and click <strong>Create Entity</strong> from the left
-        navigation menu. Then, click on the Fabric tile.
+        navigation menu. Then, click on the fabric tile.
       </li>
       <li>
-        Name your Fabric and click <strong>Continue</strong>.
+        Name your fabric and click <strong>Continue</strong>.
       </li>
       <li>
         Keep the Provider Type as <strong>Spark</strong>, and choose{" "}
@@ -174,7 +174,7 @@ To connect EMR and Prophecy, you must create a Fabric. You can either create an 
       </li>
     </ol>
     <p>
-      Click <strong>Complete</strong> to save your new EMR Fabric.
+      Click <strong>Complete</strong> to save your new EMR fabric.
     </p>
   </TabItem>
   <TabItem value="livy" label="Livy">
@@ -184,15 +184,15 @@ To connect EMR and Prophecy, you must create a Fabric. You can either create an 
       </strong>
       <br />
       <br />
-      To create a Livy Fabric:
+      To create a Livy fabric:
     </p>
     <ol>
       <li>
         Open Prophecy and click <strong>Create Entity</strong> from the left
-        navigation menu. Then, click on the Fabric tile.
+        navigation menu. Then, click on the fabric tile.
       </li>
       <li>
-        Name your Fabric and click <strong>Continue</strong>.
+        Name your fabric and click <strong>Continue</strong>.
       </li>
       <li>
         Keep the Provider Type as <strong>Spark</strong>, and choose{" "}
@@ -236,9 +236,9 @@ To connect EMR and Prophecy, you must create a Fabric. You can either create an 
       />
     </ol>
     <p>
-      Click <strong>Complete</strong> to save your new Livy Fabric.
+      Click <strong>Complete</strong> to save your new Livy fabric.
     </p>
   </TabItem>
 </Tabs>
 
-At this point, you can test your Fabric. Open a project, connect to a cluster, and try to run a pipeline!
+At this point, you can test your fabric. Open a project, connect to a cluster, and try to run a pipeline!

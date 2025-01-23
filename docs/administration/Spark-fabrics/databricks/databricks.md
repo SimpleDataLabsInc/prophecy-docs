@@ -5,14 +5,14 @@ description: Configuring Databricks Fabric
 sidebar_position: 2
 tags:
   - concepts
-  - Fabric
+  - fabric
   - databricks
   - livy
   - prophecyManaged
 ---
 
-Create a Databricks Fabric to connect Prophecy to your existing Databricks environment. Think of a Fabric as connection to your [Databricks workspace](https://docs.databricks.com/workspace/index.html#navigate-the-workspace).
-This Fabric enables Prophecy to connect to existing Spark clusters (or create new ones), execute Spark pipelines, read and write data, etc - all according to each user's permissions defined by their personal access token.
+Create a Databricks fabric to connect Prophecy to your existing Databricks environment. Think of a fabric as connection to your [Databricks workspace](https://docs.databricks.com/workspace/index.html#navigate-the-workspace).
+This fabric enables Prophecy to connect to existing Spark clusters (or create new ones), execute Spark pipelines, read and write data, etc - all according to each user's permissions defined by their personal access token.
 
 Please refer to the video below for a step-by-step example.
 
@@ -25,7 +25,7 @@ Please refer to the video below for a step-by-step example.
 
 ### Databricks credentials
 
-Here you will provide your Databricks Workspace URL and [Personal Access Token](https://docs.databricks.com/dev-tools/api/latest/authentication.html#generate-a-personal-access-token) (PAT). The PAT must have permission to attach clusters. If you'd like to create clusters or read/write data from Prophecy, then these permissions should be enabled for the PAT as well. Keep in mind each user will need to use their own PAT in the Fabric. Prophecy respects the permissions scoped to each user.
+Here you will provide your Databricks Workspace URL and [Personal Access Token](https://docs.databricks.com/dev-tools/api/latest/authentication.html#generate-a-personal-access-token) (PAT). The PAT must have permission to attach clusters. If you'd like to create clusters or read/write data from Prophecy, then these permissions should be enabled for the PAT as well. Keep in mind each user will need to use their own PAT in the fabric. Prophecy respects the permissions scoped to each user.
 
 ### Cluster details
 
@@ -49,7 +49,7 @@ These are some Scala and Python libraries written by Prophecy to provide additio
 
 ### Metadata connection
 
-Optionally, enhance your Fabric by creating a [Metadata Connection](/docs/concepts/fabrics/metadata-connections.md), recommended for users with hundreds or thousands of tables housed in their data provider(s).
+Optionally, enhance your fabric by creating a [Metadata Connection](/docs/concepts/fabrics/metadata-connections.md), recommended for users with hundreds or thousands of tables housed in their data provider(s).
 
 ### Artifacts
 

@@ -86,7 +86,7 @@ are deploying to.
 
 ### FABRIC_ID
 
-Find the Fabric IDs for your Fabrics by navigating to the Metadata page of that Fabric and observing the URL.
+Find the Fabric IDs for your fabrics by navigating to the Metadata page of that Fabric and observing the URL.
 
 `Metadata` > `Fabrics` > `<your Fabric>`
 
@@ -210,7 +210,7 @@ source the venv containing the `pbt` tool at the beginning of each `sh` command.
 
 ## Deploy pipeline
 
-This pipeline uses PBT to deploy the Prophecy pipelines to their appropriate Fabrics.
+This pipeline uses PBT to deploy the Prophecy pipelines to their appropriate fabrics.
 
 ### Deploy pipeline - Pipeline Creation
 
@@ -244,7 +244,7 @@ Create a Groovy Jenkinsfile in the project repository at the below location (rel
 .jenkins/test-declarative.groovy
 ```
 
-Use the following code as a template, replacing the Fabric IDs and URLs as necessary:
+Use the following code as a template, replacing the fabric IDs and URLs as necessary:
 
 ```groovy
 def DEFAULT_FABRIC = "1174"
@@ -297,17 +297,17 @@ pipeline {
 
 ### Deploy Pipeline - Explanation of Pipeline
 
-1. ('environment' block) - Choose which Prophecy Fabric / Databricks Workspace to deploy jobs to.
+1. ('environment' block) - Choose which Prophecy fabric / Databricks Workspace to deploy jobs to.
 
 :::caution
 
-The DATABRICKS_HOST and DATABRICKS_TOKEN env variables must match the configuration of the Fabric we are attempting to deploy.
+The DATABRICKS_HOST and DATABRICKS_TOKEN env variables must match the configuration of the fabric we are attempting to deploy.
 
 :::
 
 2. ('prepare system') - Ensure python3 is available on worker nodes. You can skip this if your Jenkins nodes already have `python3-venv` installed.
 3. ('install pbt') - Ensure PBT and its dependencies are installed
-4. ('deploy') - use PBT to deploy the Databricks jobs for our chosen Fabric
+4. ('deploy') - use PBT to deploy the Databricks jobs for our chosen fabric
    - Builds all the pipelines present in the project and generates a .jar/.whl artifact for each pipeline
    - Uploads the pipeline .jar/.whl artifacts for each of the deployed jobs (next step)
    - Creates or Updates the Databricks jobs based on `databricks-job.json` files for the Prophecy Project (only those that use `$FABRIC_ID`)

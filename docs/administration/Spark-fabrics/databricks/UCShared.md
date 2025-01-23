@@ -9,7 +9,7 @@ tags:
   - uc
   - unity
   - catalog
-  - Fabric
+  - fabric
   - databricks
 ---
 

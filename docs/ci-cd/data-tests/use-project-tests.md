@@ -131,6 +131,6 @@ To Schedule your project to run with tests, follow these steps:
 
 5. Select **Run tests**.
 
-6. Check that your **Project, model**, and **Fabric** are correct.
+6. Check that your **Project, model**, and **fabric** are correct.
 
 7. Click **Save**. The job runs automatically. You can see the job status by clicking **Detail**.

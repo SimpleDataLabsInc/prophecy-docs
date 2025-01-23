@@ -19,7 +19,7 @@ Once done, click **(5) Save**.
 
 ## Managing Environment Variables Secrets
 
-You can now add in Prophecy, what all environment variables are present in your Spark Cluster/Fabric. We dont currently support fetching all environment variables which are already set in the cluster.
+You can now add in Prophecy, what all environment variables are present in your Spark C]cluster/fabric. We dont currently support fetching all environment variables which are already set in the cluster.
 To create a new Secret, click on the **(1) Add Secret** button, opening the Add secret form.
 
 Provide a **(2) Secret Name**, and add a **(3) Description**. Once done, click **(4) Save**. This will store the mapping of secret with the given key in Prophecy.

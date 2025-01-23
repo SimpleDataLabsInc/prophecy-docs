@@ -23,9 +23,9 @@ A Metadata Connection is a user-defined link between Prophecy and a data provide
 
 ### Fabric
 
-A Fabric represents a logical grouping of Connections. For Prophecy 3.2, each Fabric will enable only one Metadata Connection. Fabrics contain the user credentials for a data provider, whereas Metadata Connections have the added benefit of syncing metadata from the data provider at a defined interval.
+A fabric represents a logical grouping of Connections. For Prophecy 3.2, each fabric will enable only one Metadata Connection. Fabrics contain the user credentials for a data provider, whereas Metadata Connections have the added benefit of syncing metadata from the data provider at a defined interval.
 :::info
-The Fabric token should provide the user's personal permissions to read / write data.
+The fabric token should provide the user's personal permissions to read / write data.
 The Metadata Connection token, optionally provided to enhance performance, should be a service principal with read-only permissions on the appropriate catalog and JDBC tables.
 :::
 
@@ -59,7 +59,7 @@ GRANT USAGE, READ_METADATA, SELECT ON CATALOG <hive_metastore> TO <service_princ
 
 ### Setup SQL Warehouse or Cluster
 
-Prophecy supports metadata collection through SQL Warehouses and Clusters on Databricks and Snowflake. In general, we recommend to create a [SQL Warehouse](https://docs.databricks.com/en/sql/admin/create-sql-warehouse.html#create-a-sql-warehouse) or cluster dedicated to the Metadata Connection. Using this approach, the recurring metadata syncs can have a cluster defined with appropriate resources, whereas execution clusters defined in the [Fabric](/docs/concepts/fabrics/fabrics.md) `Provider` would have a separate resource profile.
+Prophecy supports metadata collection through SQL Warehouses and Clusters on Databricks and Snowflake. In general, we recommend to create a [SQL Warehouse](https://docs.databricks.com/en/sql/admin/create-sql-warehouse.html#create-a-sql-warehouse) or cluster dedicated to the Metadata Connection. Using this approach, the recurring metadata syncs can have a cluster defined with appropriate resources, whereas execution clusters defined in the [fabric](/docs/concepts/fabrics/fabrics.md) `Provider` would have a separate resource profile.
 
 Alternatively, the Metadata Connection can use the same Warehouse or Cluster which is being used for execution. In that case, the resources would be shared.
 
@@ -71,11 +71,11 @@ System Admins can define and monitor Metadata Connections for platform users. Th
 
 ### Add a Metadata Connection
 
-Once a [Fabric](/docs/administration/Spark-fabrics/databricks/databricks.md) is **(1)created**, a **(2)Metadata Connection** is an optional step to enable syncing metadata for a particular cluster or warehouse accessible via the Data Provider. Add a Metadata Connection by providing the following details.
+Once a [fabric](/docs/administration/Spark-fabrics/databricks/databricks.md) is **(1)created**, a **(2)Metadata Connection** is an optional step to enable syncing metadata for a particular cluster or warehouse accessible via the Data Provider. Add a Metadata Connection by providing the following details.
 
 ![CreateConnection](./img/1-create-connection.png)
 
-Define a **(3)Connection Name**, and add an optional **(4)Description** for your team's understanding. Define the **(5)Workspace URL**, which could be a Databricks workspace. Within that Workspace, all the accessible Data Catalogs will be included in the syncing. If you choose to define a **(6)JDBC URL** different than that defined in the Fabric, the Metadata Connection JDBC will be the only JDBC included in the syncing. Now define the **(7)Access Token** for the Metadata Connection. Like the JDBC URL, the Access Token is only required if different from that defined in the Fabric. The Access Token created for the workspace must have read permission for the Catalogs or JDBC databases, tables, and schemas of interest. The access token should be a [service principle token](https://docs.databricks.com/en/administration-guide/users-groups/service-principals.html#manage-service-principals-in-your-account) (recommended) or a personal access token.
+Define a **(3)Connection Name**, and add an optional **(4)Description** for your team's understanding. Define the **(5)Workspace URL**, which could be a Databricks workspace. Within that Workspace, all the accessible Data Catalogs will be included in the syncing. If you choose to define a **(6)JDBC URL** different than that defined in the fabric, the Metadata Connection JDBC will be the only JDBC included in the syncing. Now define the **(7)Access Token** for the Metadata Connection. Like the JDBC URL, the Access Token is only required if different from that defined in the fabric. The Access Token created for the workspace must have read permission for the Catalogs or JDBC databases, tables, and schemas of interest. The access token should be a [service principle token](https://docs.databricks.com/en/administration-guide/users-groups/service-principals.html#manage-service-principals-in-your-account) (recommended) or a personal access token.
 
 Define the **(8)Refresh Frequency** for Prophecy to sync the metadata from the workspace catalogs and JDBC warehouses accessible to the access token. **(9)Enable** the Metadata Connection to proceed with the sync and **(10)Add** the Metadata Connection.
 
@@ -86,5 +86,5 @@ Once a Connection is configured, the Connection details will be used to display 
 Inside a Project, **(1)Attach a Fabric** which has a Metadata Connection. Now the **(2)Environment** tab lists the data accessible in the provider **(3)Workspace** synced at the frequency defined in the Metadata Connection. So thousands of tables should be visible more quickly as the data is synced regularly. Browse the catalogs, databases, and tables. Add a **(4)table** to the canvas as a Dataset, and define whether your Dataset should be a **(5)Source or Target**. Now the Dataset **(6)appears** on the canvas, ready for transformations.
 
 :::caution
-Only one Metadata Connection can be enabled per Fabric at once.
+Only one Metadata Connection can be enabled per fabric at once.
 :::

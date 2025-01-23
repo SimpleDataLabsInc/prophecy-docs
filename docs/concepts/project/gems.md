@@ -91,7 +91,7 @@ Inputs define the incoming connections accepted by the gem. Most gem types only 
 
 ### Outputs
 
-Outputs define the outgoing schema(s) that will be available to downstream gem instances. In some cases the Prophecy compiler can't infer the output schema automatically, so we've provided an option to try inferring the schema using your connected Fabric or just specifying it manually.
+Outputs define the outgoing schema(s) that will be available to downstream gem instances. In some cases the Prophecy compiler can't infer the output schema automatically, so we've provided an option to try inferring the schema using your connected fabric or just specifying it manually.
 
 ![Output port definition](img/gems/outputs.png)
 
