@@ -1,7 +1,7 @@
 ---
 title: Email Connection
 id: prophecy_managed_airflow_fabric_email_connections
-description: How to create Email connection in Prophecy Managed Airflow Fabric
+description: How to create Email connection in Prophecy Managed Airflow fabric
 tags:
   - scheduling
   - airflow
@@ -13,7 +13,7 @@ tags:
   - smtp
 ---
 
-To be able to send email via Airflow using an Email Gem, you need to have Email connection in Prophecy Managed Airflow.
+To be able to send email via Airflow using an Email gem, you need to have Email connection in Prophecy Managed Airflow.
 
 :::info
 

@@ -194,6 +194,6 @@ Seq("/bin/bash", "-c", command).!!
 
 ````
 
-This command tests the reverse websocket protocol required by Prophecy to execute Pipelines on Spark clusters. Please send the output from this command in the Support Portal.
+This command tests the reverse websocket protocol required by Prophecy to execute pipelines on Spark clusters. Please send the output from this command in the Support Portal.
 
 **We look forward to hearing from you!**

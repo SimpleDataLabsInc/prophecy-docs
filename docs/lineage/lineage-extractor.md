@@ -9,7 +9,7 @@ tags:
   - github actions
 ---
 
-The Prophecy lineage extractor tool extracts lineage information from Prophecy projects and Pipelines. It allows you to specify a project, Pipeline, and branch, and outputs the extracted lineage to a specified directory. You can also optionally set up email notifications.
+The Prophecy lineage extractor tool extracts lineage information from Prophecy projects and pipelines. It allows you to specify a project, pipeline, and branch, and outputs the extracted lineage to a specified directory. You can also optionally set up email notifications.
 
 ## Python command
 
@@ -21,8 +21,8 @@ python -m prophecy_lineage_extractor --project-id <PROJECT_ID> --pipeline-id <PI
 
 | Argument        | Type | Description                                                                                                                                                                                                                                                                                                                      | Required |
 | :-------------- | :--- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------- |
-| `--project-id`  | str  | Prophecy Project ID                                                                                                                                                                                                                                                                                                              | True     |
-| `--pipeline-id` | str  | Prophecy Pipeline ID                                                                                                                                                                                                                                                                                                             | True     |
+| `--project-id`  | str  | Prophecy project ID                                                                                                                                                                                                                                                                                                              | True     |
+| `--pipeline-id` | str  | Prophecy pipeline ID                                                                                                                                                                                                                                                                                                             | True     |
 | `--output-dir`  | str  | Output directory inside the project where lineage files will be stored                                                                                                                                                                                                                                                           | True     |
 | `--send-email`  | flag | If specified, sends an email with the generated lineage report to the environment variable `RECEIVER_EMAIL`. You must set the following environment variables for this option if passed: <br /><br /> <ul><li>`SMTP_HOST`</li><li>`SMTP_PORT`</li><li>`SMTP_USERNAME`</li><li>`SMTP_PASSWORD`</li><li>`RECEIVER_EMAIL`</li></ul> | False    |
 | `--branch`      | str  | Branch to run the lineage extractor on. <br /> The default branch in Prophecy is generally 'main'.                                                                                                                                                                                                                               | True     |

@@ -9,7 +9,7 @@ tags:
   - uc
   - unity
   - catalog
-  - Fabric
+  - fabric
   - databricks
 ---
 
@@ -34,7 +34,7 @@ When using Databricks with a `Shared` access mode, you must also connect to `Sha
 
 ## Gem Support
 
-A subset of Prophecy Gems are not supported on UC Shared clusters according to the UC Shared cluster version (12.2, 14.3, or 15.4). Each row indicates the minimum Prophecy Package version required for that Gem to be supported on the relevant UC Shared cluster version listed.
+A subset of Prophecy gems are not supported on UC Shared clusters according to the UC Shared cluster version (12.2, 14.3, or 15.4). Each row indicates the minimum Prophecy Package version required for that gem to be supported on the relevant UC Shared cluster version listed.
 
 Legacy Shared clusters 12.2 and below are shown for reference only; the later versions are strongly recommended.
 
@@ -178,4 +178,4 @@ Minimum Prophecy Package version required to support Databricks Unity Catalog Sh
 
 ### Streaming
 
-Streaming Gems and capabilities are not supported on UC Shared clusters as of Prophecy 3.4.x.
+Streaming gems and capabilities are not supported on UC Shared clusters as of Prophecy 3.4.x.

@@ -23,7 +23,7 @@ Prophecy's SQL Transformation Copilot has a new user interface in four different
 
 ### Model write options
 
-In this release, we've updated the UX and capabilities of the target model format and write options. In the previous release, you'd find **Advance Settings** are available for defining model write formats and lots of other DBT options (left). In this release, the advance settings are still available, but the most frequently used settings are accessible in the target model Gem as well (right).
+In this release, we've updated the UX and capabilities of the target model format and write options. In the previous release, you'd find **Advance Settings** are available for defining model write formats and lots of other DBT options (left). In this release, the advance settings are still available, but the most frequently used settings are accessible in the target model gem as well (right).
 
 ![ModelWrites](./img/target-model.png)
 
@@ -43,12 +43,12 @@ We've added the powerful functionality to configure variables directly in a [SQL
 
 ### Building SCD2 Tables
 
-Slowly changing dimensions (SCD) doesn't have to be so challenging. With this release, you can take advantage of Prophecy's visual interface to configure [SCD type 2 writes](/SQL/gems/target-models/write-options#scd-2) and retain data history. Open the Target Model Gem, select Table format. For the merge write option, select SCD2 and choose a unique key and relevant timestamp column for your data. Now any data practitioner can capture updated records without deleting the previous records.
+Slowly changing dimensions (SCD) doesn't have to be so challenging. With this release, you can take advantage of Prophecy's visual interface to configure [SCD type 2 writes](/SQL/gems/target-models/write-options#scd-2) and retain data history. Open the Target Model gem, select Table format. For the merge write option, select SCD2 and choose a unique key and relevant timestamp column for your data. Now any data practitioner can capture updated records without deleting the previous records.
 
 ![SCD2](./img/scd2.png)
 
 ### Visual Expression Builder
 
-You can use a simplified expression builder within your data transformation Gems, Data Explorer, and Data Tests. The [Visual Expression Builder](/docs/SQL/visual-expression-builder/visual-expression-builder.md) takes you through building your expressions, following a step-by-step visual guide. It suggests expressions and functions to you, including nested and conditional functions. All the while, you don't have to worry about writing the expression syntax since it takes care of that for you.
+You can use a simplified expression builder within your data transformation gems, Data Explorer, and Data Tests. The [Visual Expression Builder](/docs/SQL/visual-expression-builder/visual-expression-builder.md) takes you through building your expressions, following a step-by-step visual guide. It suggests expressions and functions to you, including nested and conditional functions. All the while, you don't have to worry about writing the expression syntax since it takes care of that for you.
 
 ![expressionBuilder](./img/expression-builder.png)

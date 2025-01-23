@@ -1,13 +1,13 @@
 ---
 sidebar_position: 2
 id: observability
-description: Everyone should be able to keep Pipelines running
+description: Everyone should be able to keep pipelines running
 title: Observing data and pipelines
 tags:
   - release
 ---
 
-Highlighted improvements for Pipeline Observability
+Highlighted improvements for pipeline Observability
 
 ### Lineage Run
 
@@ -17,7 +17,7 @@ Click [here](/docs/lineage/lineage-run-and-diagnose.md) for further details
 
 Click [here](/docs/Orchestration/pipeline-monitoring/use-pipeline-monitoring.md) for further details.
 
-### Data Quality Gem for Spark
+### Data Quality gem for Spark
 
 Detailed documentation coming soon.
 

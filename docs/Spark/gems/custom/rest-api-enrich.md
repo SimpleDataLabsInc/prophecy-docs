@@ -40,14 +40,14 @@ to the examples in the description column of each parameter for reference on how
 
 1. To store sensitive information like API key (headers), auth etc., `Databricks secrets` can be used as shown in [Example](#example-1) below.
 2. If the expected number of rows are very large, it's better to provide `await time` in the `advanced tab` so you don't overwhelm the source server or exceed any request limits.
-3. For APIs which takes list of parameters as inputs, window functions like `collect_list` can be used before `RestApiEnrich` Gem to reduce the number of API calls.
+3. For APIs which takes list of parameters as inputs, window functions like `collect_list` can be used before `RestApiEnrich` gem to reduce the number of API calls.
 
 Please make sure that cluster is connected while using the `parse content` option to `infer the schema from cluster` for the first time.
 :::
 
 :::note
 All input parameters are expected to be in string format. Other column types such as `array/JSON/struct` can be created
-using combination of aggregate/window Gems along with reformat component and then can be cast as string prior to passing the column in `RestAPIEnrich Gem`
+using combination of aggregate/window gems along with reformat component and then can be cast as string prior to passing the column in `RestAPIEnrich gem`
 as needed.
 :::
 

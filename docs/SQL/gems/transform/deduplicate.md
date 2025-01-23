@@ -23,11 +23,11 @@ Removes rows with duplicate values of specified columns.
 
 ## Row to keep options
 
-As mentioned in the previous parameters, there are four **Row to keep** options that you can use in your deduplicate Gem.
+As mentioned in the previous parameters, there are four **Row to keep** options that you can use in your deduplicate gem.
 
 ![Deduplicate row to keep](./img/deduplicate_row_to_keep.png)
 
-In the Code view, you can see that the Deduplicate Gem contains `SELECT DISTINCT *` when using the `Distinct Rows` option.
+In the Code view, you can see that the Deduplicate gem contains `SELECT DISTINCT *` when using the `Distinct Rows` option.
 
 ![Deduplicate code view](./img/deduplicate_code_view.png)
 

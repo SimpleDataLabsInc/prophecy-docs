@@ -8,7 +8,7 @@ tags:
   - udafs
 ---
 
-Prophecy lets you create user-defined functions (UDFs) which can be used anywhere in the Pipeline.
+Prophecy lets you create user-defined functions (UDFs) which can be used anywhere in the pipeline.
 
 ## Parameters
 

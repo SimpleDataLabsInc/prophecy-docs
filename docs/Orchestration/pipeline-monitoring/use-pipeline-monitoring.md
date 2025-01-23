@@ -13,13 +13,13 @@ You can use Pipeline Monitoring to help identify errors and failures at runtime.
 
 ## Detect and monitor failures
 
-After your scheduled or ad-hoc run, you can view detected failures on your Pipeline. Gems with an error or warning are highlighted on the Visual canvas.
+After your scheduled or ad-hoc run, you can view detected failures on your pipeline. Gems with an error or warning are highlighted on the Visual canvas.
 
-- Hover over the Gem to see failure details, such as run duration and the exception.
+- Hover over the gem to see failure details, such as run duration and the exception.
 
 ![Gem failure-details](img/gem-failure-details.png)
 
-- You can click **Open Logs** to open the Runtime Logs of that Gem.
+- You can click **Open Logs** to open the Runtime Logs of that gem.
 
 From the Runtime Logs panel, you can see other logs of the current run, including those that have succeeded. You can filter or sort the logs, and adjust the view.
 
@@ -42,7 +42,7 @@ You can see a complete history with logs and other debugging details for all of 
 
 - To view historical runs, select **Run History**.
 
-This will take you to the Historical View of your Pipeline in your particular Fabric.
+This will take you to the Historical View of your pipeline in your particular fabric.
 
 ![View run history](img/view-run-history.png)
 
@@ -52,7 +52,7 @@ It may take a moment to load the Historical View since Prophecy is using your cl
 
 :::
 
-- You can view different versions of your Pipeline from the dropdown, or go back to view the Run Details.
+- You can view different versions of your pipeline from the dropdown, or go back to view the Run Details.
 
 Successful runs are labeled with a :heavy_check_mark:, while failed runs are labeled with a :warning:.
 
