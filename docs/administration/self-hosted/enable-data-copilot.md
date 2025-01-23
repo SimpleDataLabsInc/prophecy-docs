@@ -28,7 +28,7 @@ From the Kubernetes cluster where Prophecy services are running:
 
 1. Check that the `prophecy-operator`, `edweb`, `metagraph`, and other Prophecy services are running version `3.3.8.0` or greater.
    1. The above services should all be running the same release-version as the `copilot` service defined in the image below, for example `3.3.8.0`.
-2. Check that the `athena` Prophecy service is running version `3.3.8.0` or greater. This is only required if using the Pipeline approach to the upgrade.
+2. Check that the `athena` Prophecy service is running version `3.3.8.0` or greater. This is only required if using the pipeline approach to the upgrade.
 3. In the `ProphecyCluster` CR, do the following:
 
    - Add `copilot` to `enabledapps`.

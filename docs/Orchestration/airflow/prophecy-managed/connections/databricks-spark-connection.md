@@ -1,7 +1,7 @@
 ---
 title: Databricks Spark Connection
 id: prophecy_managed_airflow_fabric_dbx_spark_connections
-description: How to create Databricks Spark connection in Prophecy Managed Airflow Fabric
+description: How to create Databricks Spark connection in Prophecy Managed Airflow fabric
 tags:
   - scheduling
   - airflow

@@ -7,7 +7,7 @@ tags:
   - release
 ---
 
-Recently released features to make Pipeline Development faster and more efficient
+Recently released features to make pipeline development faster and more efficient
 
 ### Upload files
 

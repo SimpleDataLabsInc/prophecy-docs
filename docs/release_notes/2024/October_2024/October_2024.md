@@ -18,11 +18,11 @@ tags:
 
 #### Spark Copilot Enhancements {#Spark34}
 
-- **Limit data preview in interims**: There is a new global level flag that admins can use to disable Data sampling for a given Fabric. This flag overrides the Pipeline level Data sampling settings. When disabled, you won't be able to see production data in the interims when you run the Pipeline.
+- **Limit data preview in interims**: There is a new global level flag that admins can use to disable Data sampling for a given fabric. This flag overrides the pipeline level Data sampling settings. When disabled, you won't be able to see production data in the interims when you run the pipeline.
 
   ![Create a new model test](./../img/oct-limit-data-preview-interims.png)
 
-  Data sampling is enabled on by default. When left enabled, Data sampling uses the Pipeline's data sampling settings. Prophecy samples data during the interactive run experience to provide the best debugging experience for users.
+  Data sampling is enabled on by default. When left enabled, Data sampling uses the pipeline's data sampling settings. Prophecy samples data during the interactive run experience to provide the best debugging experience for users.
 
   For more information, see [Interims](/docs/Spark/execution/interactive-execution.md#interims).
 
@@ -50,7 +50,7 @@ tags:
 
   For more information, see [Variant schema](docs/SQL/visual-expression-builder/variant-schema.md).
 
-- **Flatten Schema Gem**: When processing raw data it can be useful to flatten complex data types like `Struct`s and `Array`s into simpler, flatter schemas. This Gem builds upon the variant type support by allowing you to preserve all schemas, and not just the first one.
+- **Flatten Schema gem**: When processing raw data it can be useful to flatten complex data types like `Struct`s and `Array`s into simpler, flatter schemas. This gem builds upon the variant type support by allowing you to preserve all schemas, and not just the first one.
 
   ![Input schema](./../img/oct-flatten_input.png)
 
@@ -58,15 +58,15 @@ tags:
 
   For more information, see [FlattenSchema](/docs/SQL/gems/transform/flattenschema.md).
 
-- **Deduplicate Gem**: You can use the deduplicate Gem to remove rows with duplicate values of specified columns. There are four **Row to keep** options that you can use in your deduplicate Gem.
+- **Deduplicate gem**: You can use the deduplicate gem to remove rows with duplicate values of specified columns. There are four **Row to keep** options that you can use in your deduplicate gem.
 
   ![Deduplicate Row to keep](./../img/oct-deduplicate_row_to_keep.png)
 
   For more information, see [Deduplicate](/docs/SQL/gems/transform/deduplicate.md).
 
-- **Gem builder**: You can add custom Gems to your SQL projects using the Gem builder. You can create custom source, target, and transformation Gems, and then publish them for your team to use.
+- **Gem builder**: You can add custom gems to your SQL projects using the gem builder. You can create custom source, target, and transformation gems, and then publish them for your team to use.
 
-  Our SQL Gem builder supports Databricks and Snowflake SQL.
+  Our SQL gem builder supports Databricks and Snowflake SQL.
 
   ![Gem builder customize interface](./../img/oct-gem-builder-interface.png)
 
@@ -84,14 +84,14 @@ You must use Google Chrome to use the voice interface.
 
 For example, here are a few ideas that you can base your prompts on:
 
-- Propagate the customer ID through all the Gems
-- Add a reformat Gem after this
-- Join selected Gems on common columns
-- Join this Gem with payment data
+- Propagate the customer ID through all the gems
+- Add a reformat gem after this
+- Join selected gems on common columns
+- Join this gem with payment data
 
-![Modify Gems in copilot conversations](./../img/oct-modify-gems-copilot2.png)
+![Modify gems in copilot conversations](./../img/oct-modify-gems-copilot2.png)
 
-Added/updated Gems are highlighted in yellow.
+Added/updated gems are highlighted in yellow.
 
 - **Use previous prompts in chat with AI Copilot**: Now you can revert to a previous prompt, and Copilot will return the result for that prompt. Go ahead and edit the previous prompt - AI Copilot will accept the edits and generate a suggestion accordingly.
 
@@ -105,7 +105,7 @@ Added/updated Gems are highlighted in yellow.
 
 ### Minor Improvements {#MinorImprovements34}
 
-- **Code diff on merge screen**: You can view the code changes of your commit when you start the process to commit changes. This gives you granular change visibility so that you can understand the detailed changes being made to your Pipelines, Models, datasets, and other entities.
+- **Code diff on merge screen**: You can view the code changes of your commit when you start the process to commit changes. This gives you granular change visibility so that you can understand the detailed changes being made to your pipelines, models, datasets, and other entities.
 
   ![View Git code changes](./../img/oct-git-code-changes.png)
 
@@ -113,12 +113,12 @@ Added/updated Gems are highlighted in yellow.
 
   For more information, see the [Git docs](/docs/concepts/git/git.md).
 
-- **Databricks Volumes support**: Prophecy now supports Databricks Volumes. When you run a Python or Scala Pipeline via a Job, you must bundle them as whl/jar artifacts. These artifacts must then be made accessible to the Databricks Job in order to use them as a library installed on the cluster.
+- **Databricks Volumes support**: Prophecy now supports Databricks Volumes. When you run a Python or Scala pipeline via a job, you must bundle them as whl/jar artifacts. These artifacts must then be made accessible to the Databricks job in order to use them as a library installed on the cluster.
 
-  You can designate a path to a Volume for uploading the whl/jar files on the Providers tab of your Databricks Fabric.
+  You can designate a path to a Volume for uploading the whl/jar files on the Providers tab of your Databricks fabric.
 
   ![Databricks Volume Artifacts](./../img/oct-databricks-volume-artifacts.png)
 
-- **Prophecy Lib version**: You can now find out what the current Prophecy Library version is on your clusters. Use the Cluster Attached dropdown to see the log for the current version in the Fabric connection logs.
+- **Prophecy Lib version**: You can now find out what the current Prophecy Library version is on your clusters. Use the Cluster Attached dropdown to see the log for the current version in the fabric connection logs.
 
-  <img src={require('./../img/oct-libs-version-cluster.png').default} alt="Prophecy libs version in the Fabric cluster" width="58%" />
+  <img src={require('./../img/oct-libs-version-cluster.png').default} alt="Prophecy libs version in the fabric cluster" width="58%" />

@@ -26,7 +26,7 @@ const config = {
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.png",
+  favicon: "img/favicon2.png",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -106,7 +106,7 @@ const config = {
             label: "Transpiler",
           },
           {
-            to: "/getting-started/getting-help",
+            to: "/getting-help",
             label: "Help",
             position: "right",
           },
@@ -483,6 +483,10 @@ const config = {
           {
             to: "/extensibility/gem-builder/spark-gem-builder",
             from: "/extensibility/package-hub/Gem-builder",
+          },
+          {
+            to: "/api/active-users-api/",
+            from: "/settings/active-users-api/",
           },
         ],
         /*

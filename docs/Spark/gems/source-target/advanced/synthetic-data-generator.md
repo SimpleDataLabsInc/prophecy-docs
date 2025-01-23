@@ -24,19 +24,19 @@ import Requirements from "../../\_gem-requirements.mdx";
   packageversion154="Supported 0.2.36+"
 />
 
-Generate synthetic data with this special kind of Source Gem.
+Generate synthetic data with this special kind of Source gem.
 
-Generating mock data is crucial when building data Pipelines to simulate real-world scenarios for testing, validating, and optimizing Pipeline performance before using actual production data. It helps ensure the Pipeline handles various data formats, structures, and edge cases effectively, minimizing potential issues in a live environment.
+Generating mock data is crucial when building data pipelines to simulate real-world scenarios for testing, validating, and optimizing pipeline performance before using actual production data. It helps ensure the pipeline handles various data formats, structures, and edge cases effectively, minimizing potential issues in a live environment.
 
 A wide range of synthetic data can be created using any column name and an array of data types. For example, generate browser history data as shown below.
 
 ![img](../../img/synth_0_datasample.png)
 
-Follow the steps below to generate your own mock data using the Data Generator Gem.
+Follow the steps below to generate your own mock data using the Data Generator gem.
 
 ## Cluster requirements
 
-Create a Fabric and configure the [Job Size](/docs/administration/Spark-fabrics/databricks/databricks.md) as below, or log into an existing Spark cluster UI. Here we use Databricks as an example.
+Create a fabric and configure the [Job Size](/docs/administration/Spark-fabrics/databricks/databricks.md) as below, or log into an existing Spark cluster UI. Here we use Databricks as an example.
 
 1. Verify the Databricks Runtime uses Python version >= 3.8.
    For example, [Databricks Runtime 12.2 LTS](https://docs.databricks.com/en/release-notes/runtime/12.2lts.html) uses Python 3.9.19. If you are using Databricks Runtime 12.2+, the Python version meets this requirement.
@@ -46,19 +46,19 @@ Create a Fabric and configure the [Job Size](/docs/administration/Spark-fabrics/
 
 ## Prophecy requirements
 
-Open a Prophecy Project and upgrade the `ProphecySparkBasicsPython` Dependency to `0.2.34` or later. Connecting a Prophecy project to a Spark cluster with a different dependency version will prompt a cluster restart. Ideally this is a one-time restart, and you're ready to proceed!
+Open a Prophecy project and upgrade the `ProphecySparkBasicsPython` Dependency to `0.2.34` or later. Connecting a Prophecy project to a Spark cluster with a different dependency version will prompt a cluster restart. Ideally this is a one-time restart, and you're ready to proceed!
 
 ![img](../../img/synth_0_2_proph_reqiuirements.png)
 
 :::caution Caution
-Using two Prophecy projects with the same Spark cluster will cause cluster restarts (when each project attaches to the cluster) unless the `ProphecySparkBasicsPython` versions match across both Projects. The same caution applies to `ProphecyLibsPython` versions.
+Using two Prophecy projects with the same Spark cluster will cause cluster restarts (when each project attaches to the cluster) unless the `ProphecySparkBasicsPython` versions match across both projects. The same caution applies to `ProphecyLibsPython` versions.
 
 _The Fix:_ Do yourself a favor and upgrade all your Prophecy projects to the same `ProphecySparkBasicsPython` and `ProphecyLibsPython` versions or use separate Spark clusters.
 :::
 
-## Create the Gem
+## Create the gem
 
-Create a new Dataset and select the Type as Data Generator. Note we are not specifying a storage location yet; we will [store the data](#store-the-data) in a separate Gem.  
+Create a new dataset and select the Type as Data Generator. Note we are not specifying a storage location yet; we will [store the data](#store-the-data) in a separate gem.  
 ![img](../../img/synth_1_new_dataset.png)
 
 ![img](../../img/synth_2_type.png)
@@ -107,26 +107,26 @@ Changes to the columns in the Properties tab are incorporated by inferring the s
 
 ### Preview the data
 
-This Gem returns a DataFrame with randomly generated values. Preview the first few records to verify the schema is correct. Then save the Gem.
+This gem returns a DataFrame with randomly generated values. Preview the first few records to verify the schema is correct. Then save the gem.
 
 ## Store the data
 
-The newly generated data from the Data Generator Gem is not saved by default. Store the data (use your favorite file type!) using the Target Gem.
+The newly generated data from the Data Generator gem is not saved by default. Store the data (use your favorite file type!) using the Target gem.
 
-Create the target Gem.
+Create the target gem.
 ![img](../../img/synth_4_new_target.png)
 
-Connect the Data Generator SOURCE Gem to the Target Gem.
+Connect the Data Generator SOURCE gem to the Target gem.
 ![img](../../img/synth_5_connect_target.png)
 
-Be sure to configure the write mode for the target Gem. This is **very important** because the Data Generator Gem is **not** idempotent. There is a **new random seed** each time the Gem is run.
+Be sure to configure the write mode for the Target gem. This is **very important** because the Data Generator gem is **not** idempotent. There is a **new random seed** each time the gem is run.
 ![img](../../img/synth_6_write_mode.png)
 
 :::caution
-The Data Generator only generates the data. If you want to store the data just connect the output to a target Gem and configure the location, write properties etc. The data generated is new for each run (execution). The target write mode can be error, overwrite, append, or ignore as desired.
+The Data Generator only generates the data. If you want to store the data just connect the output to a target gem and configure the location, write properties etc. The data generated is new for each run (execution). The target write mode can be error, overwrite, append, or ignore as desired.
 :::
 
 :::info
 Using Unity Catalog Shared Spark Clusters?
-Check [here](docs/administration/Spark-fabrics/databricks/UCShared.md) to see if this Gem is supported.
+Check [here](docs/administration/Spark-fabrics/databricks/UCShared.md) to see if this gem is supported.
 :::
