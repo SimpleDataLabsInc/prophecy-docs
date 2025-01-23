@@ -10,7 +10,7 @@ tags:
 
 <h3><span class="badge">SQL Gem</span></h3>
 
-Filters models based on the provided filter condition
+Filters models based on the provided filter condition.
 
 ### Parameters
 
