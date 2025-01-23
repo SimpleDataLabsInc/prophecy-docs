@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[99063],{75741:a=>{a.exports=JSON.parse('{"label":"MWAA","permalink":"/tags/mwaa","allTagsPath":"/tags","count":1,"items":[{"id":"Orchestration/airflow/setup/MWAA_fabric","title":"MWAA","description":"How to create a MWAA Airflow fabric","permalink":"/Orchestration/airflow/setup/MWAA_fabric"}]}')}}]);
