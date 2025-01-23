@@ -2,7 +2,7 @@
 sidebar_position: 10
 title: Unpivot
 id: unpivot
-description: Use the Unpivot Gem to transform your data from a wide format to a long format.
+description: Use the Unpivot gem to transform your data from a wide format to a long format.
 tags:
   - gems
   - unpivot
@@ -12,7 +12,7 @@ tags:
 
 <h3><span class="badge">SQL Gem</span></h3>
 
-Use the Unpivot Gem to transform your data from a wide format to a long format.
+Use the Unpivot gem to transform your data from a wide format to a long format.
 
 ## Parameters
 

@@ -18,7 +18,7 @@ You can use the Schema tab to view the schema, and add any additional properties
 You can use the Generic Properties to do the following:
 
 - add a description
-- apply Dataset tags to the resource
+- apply dataset tags to the resource
 
 ## Schema
 

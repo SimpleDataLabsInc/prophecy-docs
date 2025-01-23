@@ -12,58 +12,58 @@ Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about 
 
 :::
 
-Each Prophecy Model is composed of individual operations, or [Gems](/docs/concepts/project/gems.md), that perform actions on data. While Prophecy offers dozens of Gems out-of-the-box, some data practitioners want to extend this idea and create their own Gems. Gem builder allows enterprise users to add custom Gems. You can create custom source, target, and transformation Gems, and then publish them for your team to use.
+Each Prophecy model is composed of individual operations, or [Gems](/docs/concepts/project/gems.md), that perform actions on data. While Prophecy offers dozens of gems out-of-the-box, some data practitioners want to extend this idea and create their own gems. Gem builder allows enterprise users to add custom gems. You can create custom source, target, and transformation gems, and then publish them for your team to use.
 
-Our SQL Gem builder supports Databricks and Snowflake SQL. It's built on dbt Core™, allowing you to build upon existing dbt libraries to define new macros to use in your custom Gem.
+Our SQL Gem builder supports Databricks and Snowflake SQL. It's built on dbt Core™, allowing you to build upon existing dbt libraries to define new macros to use in your custom gem.
 
-You can create a Gem that writes a reference to either of the following options:
+You can create a gem that writes a reference to either of the following options:
 
 - a new user-defined macro
 - an existing macro present in a dependency (such as `dbt-utils`)
 
 ## Getting Started
 
-You can get started with creating your own Gem by completing the following steps:
+You can get started with creating your own gem by completing the following steps:
 
 1. Open a SQL project, and the click **Add Gem**.
 
-   ![Gem builder new Gem](img/gem-builder-new.png)
+   ![Gem builder new gem](img/gem-builder-new.png)
 
-2. Enter a Gem Name, choose a Category, and verify the Directory Path. Then click **Create**. The Gem is automatically set to save in `macros/` as `gem_name.py` and `gem_name.sql` files.
+2. Enter a Gem Name, choose a Category, and verify the Directory Path. Then click **Create**. The gem is automatically set to save in `macros/` as `gem_name.py` and `gem_name.sql` files.
 
-Now you can customize the Gem using the split-screen code editor. See the following [Creating a Gem](#creating-a-gem) section to learn how to define your Gem.
+Now you can customize the gem using the split-screen code editor. See the following [Creating a gem](#creating-a-gem) section to learn how to define your gem.
 
-## Creating a Gem
+## Creating a gem
 
-A Gem is made up of multiple components that determine the UI and logic of the Gem. The Gem builder breaks up these components into steps for you while you create your Gem.
+A gem is made up of multiple components that determine the UI and logic of the gem. The Gem builder breaks up these components into steps for you while you create your gem.
 
 ### Gem components
 
-There are two types of Gems that you can create while using the Gem builder:
+There are two types of gems that you can create while using the Gem builder:
 
-- **DataSource Gems**: These Gems enable the reading and writing of data from or to various data sources.
-- **Transform Gems**: These Gems apply transformations/joins/any other custom logic onto any source that is passed into them.
+- **DataSource gems**: These gems enable the reading and writing of data from or to various data sources.
+- **Transform gems**: These gems apply transformations/joins/any other custom logic onto any source that is passed into them.
 
-Programmatically, a Gem is a component with the following parts:
+Programmatically, a gem is a component with the following parts:
 
-- The **Gem UI Component** defines the user experience of using the Gem on the visual canvas. This code is rendered on the Prophecy UI.
-- The **Gem Code Logic** which is how the Gem acts within the context of a Model.
+- The **Gem UI Component** defines the user experience of using the gem on the visual canvas. This code is rendered on the Prophecy UI.
+- The **Gem Code Logic** which is how the gem acts within the context of a model.
 
 Gem code can be written using either Python or Scala.
 
 ### Steps to follow
 
-There are three parts to creating a Gem:
+There are three parts to creating a gem:
 
 1. [Create SQL Query](#1-create-sql-query)
 2. [Customize Interface](#2-customize-interface)
 3. [Preview](#3-preview)
 
-In the first part, you'll define the SQL query using a new or existing macro. You'll then need to customize the UI and logic of your Gem. Finally, you can preview your Gem.
+In the first part, you'll define the SQL query using a new or existing macro. You'll then need to customize the UI and logic of your gem. Finally, you can preview your gem.
 
 ## 1. Create SQL Query
 
-Prophecy Gems are powered by macros. Therefore, you can either define a new macro or leverage an existing one for your custom Gem.
+Prophecy gems are powered by macros. Therefore, you can either define a new macro or leverage an existing one for your custom gem.
 
 ![Gem builder create SQL query](img/gem-builder-sql-query.png)
 
@@ -71,7 +71,7 @@ Existing dbt macros can help define table-to-table transformations. Consider usi
 
 ## 2. Customize Interface
 
-Customizing your Gem involves editing the code for specific classes, functions, and methods.
+Customizing your gem involves editing the code for specific classes, functions, and methods.
 
 ![Gem builder customize interface](img/gem-builder-interface.png)
 
@@ -89,13 +89,13 @@ from prophecy.cb.ui.uispec import *
 
 ```
 
-The following sections describe how to make edits to your Gem's interface.
+The following sections describe how to make edits to your gem's interface.
 
 ### Parent Class
 
-Every Gem class needs to extend a parent class from which it inherits the representation of the overall Gem. This includes the UI and the logic.
+Every gem class needs to extend a parent class from which it inherits the representation of the overall gem. This includes the UI and the logic.
 
-You can determine the name and category of your Gem, which are `"macro_gem"` and `"Custom"` in this template.
+You can determine the name and category of your gem, which are `"macro_gem"` and `"Custom"` in this template.
 
 ```sql
 
@@ -108,7 +108,7 @@ class macro_gem(MacroSpec):
 
 ### Properties Classes
 
-There is one class that contains a list of the properties to be made available to the user for this particular Gem. Think of these as all the values a user fills out within the template of this Gem, or any other UI state that you need to maintain.
+There is one class that contains a list of the properties to be made available to the user for this particular gem. Think of these as all the values a user fills out within the template of this gem, or any other UI state that you need to maintain.
 
 - A collection of input tables, represented as input ports (optional).
 - A configurable set of additional parameters through the dialog (optional).
@@ -136,7 +136,7 @@ Additional information on these functions are available in the following section
 
 ### Dialog (UI)
 
-The `dialog` function contains code specific to how the Gem UI should look to the user.
+The `dialog` function contains code specific to how the gem UI should look to the user.
 
 - Automatically generated based on parameters (default).
 - Custom dialogs using Python or visual configurations.
@@ -162,27 +162,27 @@ The `dialog` function contains code specific to how the Gem UI should look to th
 
 ```
 
-After defining a Gem in the code editor, you can preview and test it. See [Preview](#3-preview). This feature directly renders the interface for the selected Gem using a dummy schema, enabling you to configure and experiment with the Gem’s UI components. You can then finalize them by previewing the generated SQL code.
+After defining a gem in the code editor, you can preview and test it. See [Preview](#3-preview). This feature directly renders the interface for the selected gem using a dummy schema, enabling you to configure and experiment with the gem’s UI components. You can then finalize them by previewing the generated SQL code.
 
 ![Gem builder preview](img/gem-builder-preview.png)
 
-There are various UI components that can be defined for custom Gems such as scroll boxes, tabs, and buttons. These UI components can be grouped together in various types of panels to create a custom user experience when using the Gem.
+There are various UI components that can be defined for custom gems such as scroll boxes, tabs, and buttons. These UI components can be grouped together in various types of panels to create a custom user experience when using the gem.
 
 After the Dialog object is defined, it's serialized as JSON, sent to the UI, and rendered there.
 
-Depending on what kind of Gem is being created, a `Dialog` needs to be defined.
+Depending on what kind of gem is being created, a `Dialog` needs to be defined.
 
 #### Column selector
 
-You can use the column selector property if you want to select the columns from UI and then highlight the used columns using the `onChange` function. The function defines the changes that you want to apply to the Gem properties once changes have been made from the UI. For example, in the reformat component provided by Prophecy, based on the columns used on the expression table `onChange` highlights the columns used on the input schema.
+You can use the column selector property if you want to select the columns from UI and then highlight the used columns using the `onChange` function. The function defines the changes that you want to apply to the gem properties once changes have been made from the UI. For example, in the reformat component provided by Prophecy, based on the columns used on the expression table `onChange` highlights the columns used on the input schema.
 
-It is recommended to try out this dialogue code in Gem builder UI and see how each of these elements looks in UI.
+It is recommended to try out this dialogue code in gem builder UI and see how each of these elements looks in UI.
 
 ### Validation
 
 The `validate` method performs validation checks so that in the case where there's any issue with any inputs provided for the user an Error can be displayed. You can add any validation on your properties.
 
-- Optional functions such as `onChange` or `validate`, which are executed on user actions. They can dynamically alter the state of how the Gem works based on the user input.
+- Optional functions such as `onChange` or `validate`, which are executed on user actions. They can dynamically alter the state of how the gem works based on the user input.
 
 ```sql
 
@@ -194,7 +194,7 @@ The `validate` method performs validation checks so that in the case where there
 
 ### State Changes
 
-The `onChange` method is given for the UI State transformations. You are given both the previous and the new incoming state and can merge or modify the state as needed. The properties of the Gem are also accessible to this function, so functions like selecting columns, etc. are possible to add from here.
+The `onChange` method is given for the UI State transformations. You are given both the previous and the new incoming state and can merge or modify the state as needed. The properties of the gem are also accessible to this function, so functions like selecting columns, etc. are possible to add from here.
 
 ```sql
 
@@ -206,7 +206,7 @@ The `onChange` method is given for the UI State transformations. You are given b
 
 ### Apply
 
-The code for invoking the macro with the Gem logic is defined in the `apply` function. Here the above User Defined properties are accessible using `self.projectName.{self.name}`.
+The code for invoking the macro with the gem logic is defined in the `apply` function. Here the above User Defined properties are accessible using `self.projectName.{self.name}`.
 
 ```sql
 
@@ -240,7 +240,7 @@ MacroParameter(value="partition_by"),
 MacroParameter(value="relation")
 ```
 
-This object now has to be converted into the Gem state defined by the user. This logic is defined in `loadProperties`.
+This object now has to be converted into the gem state defined by the user. This logic is defined in `loadProperties`.
 
 ```sql
 
@@ -263,25 +263,25 @@ This object now has to be converted into the Gem state defined by the user. This
 
 ```
 
-Similarly the opposite case where this enhanced UX is not available due to some reason, Prophecy needs to be able to render the default macro UI. For this purpose you must define the logic to convert the Gem properties back to the default macro properties object which Prophecy understands.
+Similarly the opposite case where this enhanced UX is not available due to some reason, Prophecy needs to be able to render the default macro UI. For this purpose you must define the logic to convert the gem properties back to the default macro properties object which Prophecy understands.
 
 ## 3. Preview
 
-You can preview the component in the Gem builder to see how it looks. You can modify the properties and then save it to preview the generated code which will eventually run on your cluster.
+You can preview the component in the gem builder to see how it looks. You can modify the properties and then save it to preview the generated code which will eventually run on your cluster.
 
 ![Gem builder preview](img/gem-builder-preview.png)
 
-Certain Gems may generate SQL code that isn’t compatible with a specific Fabric provider, rendering the Gem unusable and guaranteeing failure if attempted. This issue arises because some dbt macros are designed to support only specific warehouse types.
+Certain gems may generate SQL code that isn’t compatible with a specific fabric provider, rendering the gem unusable and guaranteeing failure if attempted. This issue arises because some dbt macros are designed to support only specific warehouse types.
 
 :::note
 
-Custom Gem logic can be shared with other users within the Team and Organization. Navigate to the Gem listing to review Prophecy-defined and User-defined Gems. When your Gem is ready, publish it so that it is available to use in other Models.
+Custom gem logic can be shared with other users within the Team and Organization. Navigate to the gem listing to review Prophecy-defined and User-defined gems. When your gem is ready, publish it so that it is available to use in other models.
 
 :::
 
 ## Example code
 
-This is an example specification of a Gem for an existing deduplicate macro from `dbt utils`.
+This is an example specification of a gem for an existing deduplicate macro from `dbt utils`.
 
 ```sql
 from dataclasses import dataclass

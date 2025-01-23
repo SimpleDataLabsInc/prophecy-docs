@@ -8,7 +8,7 @@ tags:
   - config
 ---
 
-Allows you to define configurations to control various aspects of your Pipeline.
+Allows you to define configurations to control various aspects of your pipeline.
 
 ![Config Option](img/configuration/config-option.png)
 
@@ -28,14 +28,14 @@ Hadoop configurations as name-value pairs. The name-value pairs will be set insi
 
 ## Pipeline Configuration
 
-Config values which can be set at Pipeline level and then be accessed inside any component in the Pipeline. [Multiple instances](#pipeline-configuration-instances)
-of configuration can be created per Pipeline.
+Config values which can be set at pipeline level and then be accessed inside any component in the pipeline. [Multiple instances](#pipeline-configuration-instances)
+of configuration can be created per pipeline.
 
 ![Configurations - Common](img/configuration/config-pipeline-eg1.png)
 
-### Syntax for using configuration inside Gems
+### Syntax for using configuration inside gems
 
-We support language-specific config syntaxes for different data types and coding languages for configurations inside of your Spark Gems. We also support a common Jinja config syntax. You can use either syntax or a combination of them.
+We support language-specific config syntaxes for different data types and coding languages for configurations inside of your Spark gems. We also support a common Jinja config syntax. You can use either syntax or a combination of them.
 
 #### Language-specific Config syntax
 
@@ -53,13 +53,13 @@ See the following language-specific config syntax for SQL, Scala, and Python in 
 
 #### Jinja Config syntax
 
-You can choose to use a common Jinja config syntax for configurations inside of your Spark Gems.
+You can choose to use a common Jinja config syntax for configurations inside of your Spark gems.
 
 You must enable it by navigating to **...** > **Pipeline Settings**.
 
 ![Pipeline Settings](img/configuration/navigate-pipeline-settings.png)
 
-Under the **Code** section, click to enable Jinja config syntax. This setting is toggled on by default for new Pipelines.
+Under the **Code** section, click to enable Jinja config syntax. This setting is toggled on by default for new pipelines.
 
 ![Enable Jinja Config syntax](img/configuration/enable-jinja-config-syntax.png)
 
@@ -75,19 +75,19 @@ Jinja config syntax supports the following functionalities:
 
 - **Integer/String data type** - You can use a data type as it is, such as an integer field as an integer by using `{{ integer_field }}`. For strings, use `<some_character>{{ integer_field }}<some_character>`.
 - **Concatenation** - You can define multiple Jinja syntaxes in the same string, and the generated code will be a formatted string. For example, `'{{c_string}}___{{ c_int }}'`
-- **SQL Statement queries** - You can use Jinja syntax in SQL Statement Gem queries. For example, `select {{col1}} from {{table}} where {{condition}}`
+- **SQL Statement queries** - You can use Jinja syntax in SQL Statement gem queries. For example, `select {{col1}} from {{table}} where {{condition}}`
 - **Nested `call_func`** - You can use Jinja syntax inside of `call_func` or `call_function`, including those that are nested within other functions.
 
   ```
   LEAST((LEAST(product.SAS, COALESCE(product.SAS, call_func('data_{{read_env}}.business_rules.datum', DTM, '123456789')))) + 1, cast('9999-12-31' as DATE))
   ```
 
-## Examples for Pipeline level configurations
+## Examples for pipeline-level configurations
 
-Now let's use the [above defined configurations](#pipeline-configuration) in the below Pipeline.
+Now let's use the [above defined configurations](#pipeline-configuration) in the below pipeline.
 ![Pipeline view](img/configuration/config-pipeline-view-eg.png)
 
-### Using Config in limit Gem
+### Using Config in limit gem
 
 #### SQL Visual Language
 
@@ -107,7 +107,7 @@ In the below image `{{num_top_customers}}` is fetching the integer value defined
 
 ![Config Limit Example](img/configuration/config-pipeline-limit-eg-jinja.png)
 
-Also see the following syntax examples for specific Gem property field data types:
+Also see the following syntax examples for specific gem property field data types:
 
 - SColumnExpression: `lit("{{a.b.c}}")`
 - SString: `{{ a.b.c }}`
@@ -118,7 +118,7 @@ You can use the following syntax examples for accessing elements of array and re
 - For array: `{{ config1.array_config[23] }}`
 - For record: `{{ record1.record2.field1 }}`
 
-### Using Spark-expression Config type in Gem
+### Using Spark-expression Config type in gem
 
 Here we have used Spark expression directly from our config value to populate a column.
 
@@ -141,7 +141,7 @@ In the below image: <br />
 ![Config Reformat example](img/configuration/config-pipeline-reformat-eg-scala-python.png)
 
 :::note
-Similarly configurations defined as type `Spark-expression` can be used directly in filter, join, reformat etc Gems directly.
+Similarly configurations defined as type `Spark-expression` can be used directly in filter, join, reformat etc gems directly.
 :::
 
 #### Jinja Config {#Spark-expression}
@@ -153,9 +153,9 @@ In the below image: <br />
 
 ![Config Reformat example](img/configuration/config-pipeline-reformat-eg-jinja.png)
 
-### Using config in paths for Source/Target Gems
+### Using config in paths for Source/Target gems
 
-Config can also be used to refer to paths. This type of configuration comes in handy in situation where you have DEV, QA, and PROD data, and you want to configure Dataset (or in general the Job runs) based on which environment you are running it in.
+Config can also be used to refer to paths. This type of configuration comes in handy in situation where you have DEV, QA, and PROD data, and you want to configure dataset (or in general the job runs) based on which environment you are running it in.
 
 ![Config path example](img/configuration/config-pipeline-path-eg.png)
 
@@ -163,7 +163,7 @@ When using Jinja config for the previous example, you would use `dbfs:/Prophecy/
 
 ### Edit Pipeline Name
 
-To change the Pipeline name itself, go to Prophecy's metadata page. Locate the Pipeline within a Project, and click the pencil icon.
+To change the pipeline name itself, go to Prophecy's metadata page. Locate the pipeline within a project, and click the pencil icon.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -172,7 +172,7 @@ To change the Pipeline name itself, go to Prophecy's metadata page. Locate the P
 
 ## Pipeline Configuration instances
 
-Different configuration instances can be defined as per requirement. This comes in handy when Pipeline needs to run with different
+Different configuration instances can be defined as per requirement. This comes in handy when pipeline needs to run with different
 configurations in different environments or different users.
 
 New instances can be configured to override default values as shown in image below:
@@ -186,13 +186,13 @@ New instances can be configured to override default values as shown in image bel
 For interactive runs, configuration can be selected as shown in image below.
 ![Config interactive run](img/configuration/config-instance-interactive-run.png)
 
-### Using configuration instances in Jobs
+### Using configuration instances in jobs
 
-Particular instances can also be configured in Databricks Jobs.
+Particular instances can also be configured in Databricks jobs.
 
 ![Config inside job](img/configuration/config-inside-job.png)
 
-### Overriding configuration values in Jobs
+### Overriding configuration values in jobs
 
 Specific values from configuration instance can be overridden as shown in images below:
 

@@ -20,7 +20,7 @@ The below list contains the additional parameters to read a JSON file:
 
 | Parameter    | Description                                                                                                  | Required |
 | ------------ | ------------------------------------------------------------------------------------------------------------ | -------- |
-| Dataset Name | Name of the Dataset                                                                                          | True     |
+| Dataset Name | Name of the dataset                                                                                          | True     |
 | Location     | Location of the file(s) to be loaded <br/> E.g.: `dbfs:/data/test.json`                                      | True     |
 | Schema       | Schema to applied on the loaded data. Can be defined/edited as JSON or inferred using `Infer Schema` button. | True     |
 
@@ -73,7 +73,7 @@ The below list contains the additional parameters to write a JSON file:
 
 | Parameter    | Description                                                               | Required |
 | ------------ | ------------------------------------------------------------------------- | -------- |
-| Dataset Name | Name of the Dataset                                                       | True     |
+| Dataset Name | Name of the dataset                                                       | True     |
 | Location     | Location of the file(s) to be loaded <br/> E.g.: `dbfs:/data/output.json` | True     |
 
 ### Example {#target-example}
@@ -120,7 +120,7 @@ object write_json {
 
 ### Producing a single output file
 
-Because of Spark's distributed nature, output files are written as multiple separate partition files. If you need a single output file for some reason (such as reporting or exporting to an external system), use a `Repartition` Gem in `Coalesce` mode with 1 output partition:
+Because of Spark's distributed nature, output files are written as multiple separate partition files. If you need a single output file for some reason (such as reporting or exporting to an external system), use a `Repartition` gem in `Coalesce` mode with 1 output partition:
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>

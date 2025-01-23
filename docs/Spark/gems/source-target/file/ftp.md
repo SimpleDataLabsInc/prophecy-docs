@@ -15,7 +15,7 @@ Allows you to read or write files (csv, text and binary) on a remote location.
 
 | Parameter       | Description                                                                                                                                                        | Required                                                        |
 | :-------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------- |
-| Dataset Name    | Name of the Dataset                                                                                                                                                | True                                                            |
+| Dataset Name    | Name of the dataset                                                                                                                                                | True                                                            |
 | Credential Type | Credential Type: `Databricks Secrets` or `Username & Password`                                                                                                     | True                                                            |
 | Credentials     | Databricks credential name, else username and password for the remote account                                                                                      | Required if `Databricks Secrets` is opted as `Credential Type`  |
 | Username        | Login name for the remote user                                                                                                                                     | Required if `Username & Password` is opted as `Credential Type` |
@@ -29,7 +29,7 @@ Allows you to read or write files (csv, text and binary) on a remote location.
 
 | Parameter       | Description                                                                                                                                                        | Required                                                        |
 | :-------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------- |
-| Dataset Name    | Name of the Dataset                                                                                                                                                | True                                                            |
+| Dataset Name    | Name of the dataset                                                                                                                                                | True                                                            |
 | Credential Type | Credential Type: `Databricks Secrets` or `Username & Password`                                                                                                     | True                                                            |
 | Credentials     | Databricks credential name, else username and password for the remote account                                                                                      | Required if `Databricks Secrets` is opted as `Credential Type`  |
 | Username        | Login name for the remote user                                                                                                                                     | Required if `Username & Password` is opted as `Credential Type` |
@@ -46,7 +46,7 @@ For example, if the File Format is `CSV`, you can set CSV specific options like 
 :::
 
 :::note
-For **SFTP**, make sure you have the dependency `io.prophecy.spark:filetransfer_2.12:0.1.1` included in your Pipeline.
+For **SFTP**, make sure you have the dependency `io.prophecy.spark:filetransfer_2.12:0.1.1` included in your pipeline.
 [**Read more**](docs/extensibility/dependencies/spark-dependencies.md) about how to manage dependencies.
 ![Adding SFTP dependency](./img/sftp_dependency.png)
 

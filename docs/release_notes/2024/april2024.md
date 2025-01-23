@@ -18,8 +18,8 @@ tags:
 
 #### Parametrized Gems in Spark
 
-Many enterprises use generic Pipelines that act like frameworks. These Pipelines have the same basic transformation rules but work with files that have different schemas. They generally have different output columns, computed using different expressions.
-To help with this, Prophecy now lets you completely parameterize your transformation gems. This means the logic for all the expressions along with output columns can come from a Pipeline config. So, you can use one Pipeline as a framework and run it with different setups.
+Many enterprises use generic pipelines that act like frameworks. These pipelines have the same basic transformation rules but work with files that have different schemas. They generally have different output columns, computed using different expressions.
+To help with this, Prophecy now lets you completely parameterize your transformation gems. This means the logic for all the expressions along with output columns can come from a pipeline config. So, you can use one pipeline as a framework and run it with different setups.
 
 #### Copilot Fix It for Spark and SQL expressions
 
@@ -32,8 +32,8 @@ Also, in our last update, we'd enabled Copilot to suggest expressions automatica
 
 ### Minor Improvements {#MinorImprovements334}
 
-- **Streamlined Expression Suggestions**: Enhancing the Copilot feature, we now automatically suggest expressions when users add a new column in the Gem. These suggestions are tailored to the target column name and can be accepted with a simple press of the Tab button.
-- **Improved Filtering UX for Problem and Runtime Logs**: To enhance the debugging experience in Pipelines, we've refined the user interface for logging. This includes the addition of search, filter, sort, and download options.
+- **Streamlined Expression Suggestions**: Enhancing the Copilot feature, we now automatically suggest expressions when users add a new column in the gem. These suggestions are tailored to the target column name and can be accepted with a simple press of the Tab button.
+- **Improved Filtering UX for Problem and Runtime Logs**: To enhance the debugging experience in pipelines, we've refined the user interface for logging. This includes the addition of search, filter, sort, and download options.
 
 ## 3.3.3.\* (April 1, 2024)
 
@@ -44,17 +44,17 @@ Also, in our last update, we'd enabled Copilot to suggest expressions automatica
 
 #### Prophecy Libs as First class Project Dependency
 
-Prophecy Libs is a Prophecy-provided library designed to enhance your Pipelines. These libraries provide essential features such as interims, monitoring, and secret management while maintaining clean and concise Pipeline code. When executing your Pipelines, Prophecy Libs need to be installed on your clusters.
-In our latest release, we’ve made Prophecy Libs a Project Dependency configurable by the user. This gives you control over when to update dependencies in your Pipelines and on long-running clusters.
+Prophecy Libs is a Prophecy-provided library designed to enhance your pipelines. These libraries provide essential features such as interims, monitoring, and secret management while maintaining clean and concise pipeline code. When executing your pipelines, Prophecy Libs need to be installed on your clusters.
+In our latest release, we’ve made Prophecy Libs a Project Dependency configurable by the user. This gives you control over when to update dependencies in your pipelines and on long-running clusters.
 
 #### Secrets in Pipeline Config
 
-Users can now create Pipeline configurations of type Secrets. These configurations can be utilized within their Gems. This flexibility allows users to manage username/password changes across different environments by creating distinct config instances. With this, even when working with various Fabrics, users can continue using the same Gem and Pipeline.
+Users can now create pipeline configurations of type Secrets. These configurations can be utilized within their gems. This flexibility allows users to manage username/password changes across different environments by creating distinct config instances. With this, even when working with various fabrics, users can continue using the same gem and pipeline.
 
 ### Minor Improvements {#MinorImprovements333}
 
-- **Code Generation Improvements**: We’ve fine-tuned the code generation process for Spark Pipelines, ensuring top-notch quality. You might notice some minor uncommitted changes when you revisit your Pipeline Code.
-- **Low Code SQL Improvements**: We’ve revamped the UI for Port schema in SQL Gems, enhancing the user experience for modifying and managing Input/Output Ports. Additionally, our Copilot fix-it feature now helps users rectify expression errors interactively.
+- **Code Generation Improvements**: We’ve fine-tuned the code generation process for Spark pipelines, ensuring top-notch quality. You might notice some minor uncommitted changes when you revisit your pipeline code.
+- **Low Code SQL Improvements**: We’ve revamped the UI for Port schema in SQL gems, enhancing the user experience for modifying and managing Input/Output Ports. Additionally, our Copilot fix-it feature now helps users rectify expression errors interactively.
 - **Airflow Improvements**: While building Jobs interactively in Airflow, users can now utilize the Trigger DAG run operator to test unreleased DAGs.
 - **Git Improvements**: Git Merge screens now allow merging to branches other than the main branch. Plus, if you’re rolling back on the main branch, you’ll be prompted to create a new branch for the rollback.
 

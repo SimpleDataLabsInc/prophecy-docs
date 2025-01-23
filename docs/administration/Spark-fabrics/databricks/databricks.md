@@ -5,14 +5,14 @@ description: Configuring Databricks Fabric
 sidebar_position: 2
 tags:
   - concepts
-  - Fabric
+  - fabric
   - databricks
   - livy
   - prophecyManaged
 ---
 
-Create a Databricks Fabric to connect Prophecy to your existing Databricks environment. Think of a Fabric as connection to your [Databricks workspace](https://docs.databricks.com/workspace/index.html#navigate-the-workspace).
-This Fabric enables Prophecy to connect to existing Spark clusters (or create new ones), execute Spark pipelines, read and write data, etc - all according to each user's permissions defined by their personal access token.
+Create a Databricks fabric to connect Prophecy to your existing Databricks environment. Think of a fabric as connection to your [Databricks workspace](https://docs.databricks.com/workspace/index.html#navigate-the-workspace).
+This fabric enables Prophecy to connect to existing Spark clusters (or create new ones), execute Spark pipelines, read and write data, etc - all according to each user's permissions defined by their personal access token.
 
 Please refer to the video below for a step-by-step example.
 
@@ -25,11 +25,11 @@ Please refer to the video below for a step-by-step example.
 
 ### Databricks credentials
 
-Here you will provide your Databricks Workspace URL and [Personal Access Token](https://docs.databricks.com/dev-tools/api/latest/authentication.html#generate-a-personal-access-token) (PAT). The PAT must have permission to attach clusters. If you'd like to create clusters or read/write data from Prophecy, then these permissions should be enabled for the PAT as well. Keep in mind each user will need to use their own PAT in the Fabric. Prophecy respects the permissions scoped to each user.
+Here you will provide your Databricks Workspace URL and [Personal Access Token](https://docs.databricks.com/dev-tools/api/latest/authentication.html#generate-a-personal-access-token) (PAT). The PAT must have permission to attach clusters. If you'd like to create clusters or read/write data from Prophecy, then these permissions should be enabled for the PAT as well. Keep in mind each user will need to use their own PAT in the fabric. Prophecy respects the permissions scoped to each user.
 
 ### Cluster details
 
-Here you would need to provide the [Databricks Runtime version](https://docs.databricks.com/runtime/dbr.html#databricks-runtime), Executor and Drive Machine Types and Termination Timeout if any. These cluster details will be used when creating a cluster via Prophecy during Interactive development and for job clusters during Scheduled Databricks Job runs.
+Here you would need to provide the [Databricks Runtime version](https://docs.databricks.com/runtime/dbr.html#databricks-runtime), Executor and Drive Machine Types and Termination Timeout if any. These cluster details will be used when creating a cluster via Prophecy during Interactive development and for job clusters during Scheduled Databricks job runs.
 
 :::caution
 If you're interested in the Shared cluster mode, please note: Unity Catalog (UC) clusters in Shared access mode have [particular limitations](https://docs.databricks.com/en/compute/access-mode-limitations.html#shared-access-mode-limitations-on-unity-catalog) that prevent [these](./ucshared) Prophecy features from working as designed.
@@ -37,7 +37,7 @@ If you're interested in the Shared cluster mode, please note: Unity Catalog (UC)
 
 ### Job sizes
 
-You can create Job sizes here using which clusters can be spawned while testing through the Prophecy UI. Here you can provide Cluster mode, Databricks Runtime version, total number of the Executors, Core and Memory for them, etc. This provides all the options which are available on Databricks while spawning clusters through Databricks. We recommend using the smallest machines and smallest number of nodes appropriate for your use case.
+You can create job sizes here using which clusters can be spawned while testing through the Prophecy UI. Here you can provide Cluster mode, Databricks Runtime version, total number of the Executors, Core and Memory for them, etc. This provides all the options which are available on Databricks while spawning clusters through Databricks. We recommend using the smallest machines and smallest number of nodes appropriate for your use case.
 
 ![Editing a Job](./../img/job_size_new.png)
 
@@ -49,11 +49,11 @@ These are some Scala and Python libraries written by Prophecy to provide additio
 
 ### Metadata connection
 
-Optionally, enhance your Fabric by creating a [Metadata Connection](/docs/concepts/fabrics/metadata-connections.md), recommended for users with hundreds or thousands of tables housed in their data provider(s).
+Optionally, enhance your fabric by creating a [Metadata Connection](/docs/concepts/fabrics/metadata-connections.md), recommended for users with hundreds or thousands of tables housed in their data provider(s).
 
 ### Artifacts
 
-Prophecy supports Databricks Volumes. When you run a Python or Scala Pipeline via a Job, you must bundle them as whl/jar artifacts. These artifacts must then be made accessible to the Databricks Job in order to use them as a library installed on the cluster. You can designate a path to a Volume for uploading the whl/jar files under Artifacts.
+Prophecy supports Databricks Volumes. When you run a Python or Scala pipeline via a job, you must bundle them as whl/jar artifacts. These artifacts must then be made accessible to the Databricks job in order to use them as a library installed on the cluster. You can designate a path to a Volume for uploading the whl/jar files under Artifacts.
 
 ## Databricks execution
 
