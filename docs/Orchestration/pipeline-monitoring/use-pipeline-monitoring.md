@@ -42,7 +42,7 @@ You can see a complete history with logs and other debugging details for all of 
 
 - To view historical runs, select **Run History**.
 
-This will take you to the Historical View of your pipeline in your particular Fabric.
+This will take you to the Historical View of your pipeline in your particular fabric.
 
 ![View run history](img/view-run-history.png)
 

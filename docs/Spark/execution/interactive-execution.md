@@ -36,9 +36,9 @@ From the pipeline, select the **(1) dropdown** and **(2) Pipeline Settings**. Se
 
 ### Advanced Data sampling setting
 
-There is also a global level Development Settings flag that admins can use to disable Data sampling for a given Fabric. This flag overrides the pipeline level Data sampling settings. When disabled, you won't be able to see production data in the interims when you run the pipeline.
+There is also a global level Development Settings flag that admins can use to disable Data sampling for a given fabric. This flag overrides the pipeline level Data sampling settings. When disabled, you won't be able to see production data in the interims when you run the pipeline.
 
-From the Metadata page, click the **Fabrics** tab and select the Fabric that you want to change the Data sampling setting for. Click the **Advanced** tab and click the **Allow for data sampling** toggle to turn on or off the flag.
+From the Metadata page, click the **Fabrics** tab and select the fabric that you want to change the Data sampling setting for. Click the **Advanced** tab and click the **Allow for data sampling** toggle to turn on or off the flag.
 
 ![Create a new model test](./img/limit-data-preview-interims.png)
 
@@ -90,7 +90,7 @@ Once we run a pipeline, we have several options to better understand our pipelin
 ### Execution Code
 
 Once we run a pipeline interactively Prophecy generates the execution code in the backend, which is then executed in
-the selected Fabric.
+the selected fabric.
 
 ![Execution code](img/interactive-execution-code.png)
 

@@ -49,7 +49,7 @@ In our latest release, we’ve made Prophecy Libs a Project Dependency configura
 
 #### Secrets in Pipeline Config
 
-Users can now create pipeline configurations of type Secrets. These configurations can be utilized within their gems. This flexibility allows users to manage username/password changes across different environments by creating distinct config instances. With this, even when working with various Fabrics, users can continue using the same gem and pipeline.
+Users can now create pipeline configurations of type Secrets. These configurations can be utilized within their gems. This flexibility allows users to manage username/password changes across different environments by creating distinct config instances. With this, even when working with various fabrics, users can continue using the same gem and pipeline.
 
 ### Minor Improvements {#MinorImprovements333}
 

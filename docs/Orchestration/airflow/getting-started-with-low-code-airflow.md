@@ -39,19 +39,19 @@ If you don't have an existing project, please check out [this guide](https://doc
 
 ## 1. Setup Prophecy Fabric for Airflow
 
-Prophecy introduces the concept of a Fabric to describe an execution environment. In this case, we create a Fabric to connect to Airflow, and create and schedule DAGs in it.
+Prophecy introduces the concept of a fabric to describe an execution environment. In this case, we create a fabric to connect to Airflow, and create and schedule DAGs in it.
 For this guide, we would be using Prophecy Managed Airflow, so an external Airflow instance is not required.
 
 ![Create Fabric](img/3.1_Create_Fabric.png)
 
-Setting up a Fabric is very straightforward. Click the **(1) Create Entity** button, and choose **(2) Create Fabric** option. The Fabric creation is composed of two steps: Basic Info and Providers setup.
-On the Basic Info screen, enter a **(1) Fabric Name**, **(2) Fabric Description**, and choose the **(3) Team** that’s going to own the Fabric.
+Setting up a fabric is very straightforward. Click the **(1) Create Entity** button, and choose **(2) Create Fabric** option. The fabric creation is composed of two steps: Basic Info and Providers setup.
+On the Basic Info screen, enter a **(1) Fabric Name**, **(2) Fabric Description**, and choose the **(3) Team** that’s going to own the fabric.
 
 Once ready, click **(4) Continue**.
 
 ![Fill_fabric_details.png](img/3.2_Create_Fabric.png)
 
-Since we’re setting up a Fabric connected to Airflow, choose **Airflow** as the **(1) Provider Type** and **Prophecy Managed** as the **(2) Provider**.
+Since we’re setting up a fabric connected to Airflow, choose **Airflow** as the **(1) Provider Type** and **Prophecy Managed** as the **(2) Provider**.
 For connecting to Prophecy Managed Airflow, you don't need to provide any other details, so go ahead and click on **(3) Continue**.
 
 ### 1.1 Adding AWS Connection
@@ -80,7 +80,7 @@ Once done, hit **(8) Save**.
 To be able to Run your Databricks pipelines, you need to have connection from Prophecy Managed Airflow to your Databricks Environment.
 Click again on Add Connection button.
 
-Select Databricks Spark in **(1) Connection Type**. Now under the **(2) Fabric**, you would select the already created Fabric for Databricks Spark and Prophecy would setup the connection.
+Select Databricks Spark in **(1) Connection Type**. Now under the **(2) Fabric**, you would select the already created fabric for Databricks Spark and Prophecy would setup the connection.
 You can provide a description in the **(3) Description**.
 Once done, click **(4) Save**.
 
@@ -91,7 +91,7 @@ Once done, click **(4) Save**.
 To be able to Run your Databricks SQL Models, you need to have connection from Prophecy Managed Airflow to your Databricks SQL Environment.
 Click again on Add Connection button.
 
-Select Databricks SQL in **(1) Connection Type**. Now under the **(2) Fabric**, you would select the already created Fabric for Databricks SQL and Prophecy would setup the connection.
+Select Databricks SQL in **(1) Connection Type**. Now under the **(2) Fabric**, you would select the already created fabric for Databricks SQL and Prophecy would setup the connection.
 You can provide a description in the **(3) Description**.
 Once done, click **(4) Save**.
 
@@ -104,7 +104,7 @@ Click again on Add Connection button.
 
 ![Add_SF_SQL_connection](img/3.8_SF_Sql_connection.png)
 
-Select Snowflake SQL in **(1) Connection Type**. Now under the **(2) Fabric**, you would select the already created Fabric for Snowflake SQL and Prophecy would setup the connection.
+Select Snowflake SQL in **(1) Connection Type**. Now under the **(2) Fabric**, you would select the already created fabric for Snowflake SQL and Prophecy would setup the connection.
 You can provide a description in the **(3) Description**.
 Once done, click **(4) Save**.
 
@@ -112,7 +112,7 @@ After adding all connections, click **(1) Complete**.
 
 ![Complete_fabric](img/3.8_Complete_fabric.png)
 
-After creating the Fabric, Lets create our first Airflow job.
+After creating the fabric, Lets create our first Airflow job.
 
 ## 2. Create an Airflow job
 
@@ -164,7 +164,7 @@ If you have a Spark Databricks connection and a Spark Project with pipeline, you
 Here, you will select the pipeline and optionally override any config values for the pipeline.
 
 Select the **(1) Pipeline to Schedule** you want to Run. As you select the pipeline, You would start seeing the Configurations defined in the pipeline. You would not be able to modify the schema of these configs but can override the Config values.
-Pick (**2) Fabric and Cluster size to run this Pipeline** for running this pipeline in Databricks. Here, select the Fabric for which you already created connection in step 1.3. Once done, Click **(3) Save**!
+Pick (**2) Fabric and Cluster size to run this Pipeline** for running this pipeline in Databricks. Here, select the fabric for which you already created connection in step 1.3. Once done, Click **(3) Save**!
 
 ![Add_pipeline_gem_details](img/3.15_Add_pipeline_gem_details.png)
 
@@ -174,10 +174,10 @@ Click on **(1) Operators**, and Drag the **(2) DBT gem** from the dropdown to th
 
 ![Add_DBT_Gem](img/3.16_Add_DBT_gem.png)
 
-Here, you will select the DBT Project/Model to Schedule, what SQL Fabric to schedule it on, and other additional properties for running a DBT model.
+Here, you will select the DBT Project/Model to Schedule, what SQL fabric to schedule it on, and other additional properties for running a DBT model.
 
 Select the **(1) DBT commands** you want to run when scheduling your Models. You can select all ([Dependencies](docs/extensibility/dependencies/sql-dependencies.md), [Seed](/getting-started/sql-with-databricks#431-create-seeds), Run and Test) here.
-Select the **(2) DBT Project to Schedule**. And then select the **(3) SQL Warehouse Fabric** to schedule the Module on. Select the Fabric for which connection was created in Step 1.4 or 1.5.
+Select the **(2) DBT Project to Schedule**. And then select the **(3) SQL Warehouse Fabric** to schedule the Module on. Select the fabric for which connection was created in Step 1.4 or 1.5.
 In **(4) Git reference**, select if you want to schedule a particular commit/tag or branch. Here you can select `branch` for this guide and then in **(5) Reference Value** give the current branch name you are working on.
 You can provide any additional **(6) Properties** for your run and then click **(7) Save**!!
 
@@ -225,7 +225,7 @@ The process of deploying code is composed of 4 steps:
 4. **Release:** Finally, now that our changes are all versioned on Git, we can release them to our scheduler. Simply specify a **(1) Release Version** number, e.g. `1.0` , and the **(2) Release Note,** which should clearly outline the latest changes. When ready, click **(3) Release.**
    ![Release_screen](img/3.24_release_screen.png)
 
-This will build and deploy your Airflow job on the Airflow Fabric Specified in the job and would schedule to run it on the specified schedule.
+This will build and deploy your Airflow job on the Airflow fabric specified in the job and would schedule to run it on the specified schedule.
 
 ## 5. Monitor
 
@@ -233,7 +233,7 @@ During the release process Prophecy automatically packages, tests, and deploys y
 
 ![Airflow_Monitoring_page](img/3.25_Observability.png)
 
-Click on **(1) Observability icon** on the left side menu bar to take you to the Observability page. Then in **(2) Fabric Selection box**, choose the Airflow Fabric your have. The Observability page will show all the Past and Current Runs of the jobs you released on this Fabric. Switch between **Attention Required**, **All events**, **Job Runs** to find any Particular Run you are looking for. Click on the **(3) Details** button to open up the logs of any particular Run.
+Click on **(1) Observability icon** on the left side menu bar to take you to the Observability page. Then in **(2) Fabric Selection box**, choose the Airflow fabric your have. The Observability page will show all the Past and Current Runs of the jobs you released on this fabric. Switch between **Attention Required**, **All events**, **Job Runs** to find any Particular Run you are looking for. Click on the **(3) Details** button to open up the logs of any particular Run.
 
 ## What’s next?
 

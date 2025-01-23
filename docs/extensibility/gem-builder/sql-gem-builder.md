@@ -271,7 +271,7 @@ You can preview the component in the gem builder to see how it looks. You can mo
 
 ![Gem builder preview](img/gem-builder-preview.png)
 
-Certain gems may generate SQL code that isn’t compatible with a specific Fabric provider, rendering the gem unusable and guaranteeing failure if attempted. This issue arises because some dbt macros are designed to support only specific warehouse types.
+Certain gems may generate SQL code that isn’t compatible with a specific fabric provider, rendering the gem unusable and guaranteeing failure if attempted. This issue arises because some dbt macros are designed to support only specific warehouse types.
 
 :::note
 

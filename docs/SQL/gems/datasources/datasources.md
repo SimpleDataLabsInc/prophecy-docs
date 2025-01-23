@@ -12,7 +12,7 @@ Loading data into Prophecy is done via the [Seed](#seed), [Source](#source), or 
 
 ## Seed
 
-A Seed is an excellent way to load small CSV files into Prophecy. This is super useful for small test datasets or lookup mappings, like a list of cities or countries. Seeds are saved as .sql files on Git when Projects are committed and released. Follow the steps below to Create a Seed and write to the SQL Warehouse defined in the Fabric.
+A Seed is an excellent way to load small CSV files into Prophecy. This is super useful for small test datasets or lookup mappings, like a list of cities or countries. Seeds are saved as .sql files on Git when Projects are committed and released. Follow the steps below to Create a Seed and write to the SQL Warehouse defined in the fabric.
 
 ![Seed1](img/Seed1.png)
 
@@ -38,14 +38,14 @@ A Seed is an excellent way to load small CSV files into Prophecy. This is super 
 
 ## Source
 
-Each Source points to a table in the SQL Warehouse(s) specified in the Fabric. Prophecy does not store the contents of the Source Table. Inside a Project, the `Env` tab allows for browsing the database and schema. Tables in the `Env` tab can be drag-n-dropped to the canvas without manually specifying any metadata. You can also upload a source table directly to your environment. For more information about how to upload a file, see [Upload files](./upload-files). Follow the steps below to create and use a Source.
+Each Source points to a table in the SQL Warehouse(s) specified in the fabric. Prophecy does not store the contents of the Source Table. Inside a Project, the `Env` tab allows for browsing the database and schema. Tables in the `Env` tab can be drag-n-dropped to the canvas without manually specifying any metadata. You can also upload a source table directly to your environment. For more information about how to upload a file, see [Upload files](./upload-files). Follow the steps below to create and use a Source.
 
 ![Source1](img/Source1.png)
 
 | **Source creation and usage**                                                                                                                                     |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **1 Cluster and Fabric** - The Cluster and Fabric define the SQL Warehouse execution environment. Attach the desired Fabric which contains the Table of interest. |
-| **2 Click the Environment tab** - Browse the SQL Warehouse specified in the selected Fabric.                                                                      |
+| **1 Cluster and Fabric** - The Cluster and fabric define the SQL Warehouse execution environment. Attach the desired fabric which contains the Table of interest. |
+| **2 Click the Environment tab** - Browse the SQL Warehouse specified in the selected fabric.                                                                      |
 | **3 Add a table** - Prophecy respects the user's permissions. Any table for which the user has read permission can be added to the Model canvas.                  |
 | **4 Source is added to the Model Canvas** - The Source named ORDERSHIPMENTS is now part of the Model, and is ready for transformation, joins, etc.                |
 | **5 Click the Project tab** - Lists all the Sources that are now accessible to any Model in the Project.                                                          |
@@ -84,7 +84,7 @@ Now the new Model has been created and the canvas is displayed. Optionally, clic
 | **10 Model as a Source** - The new Model (MyModel) appears on the canvas of the existing Model (MyNextModel). Connect the new Model as an input to the Join gem or any desired transformation gem. The new Model acts as a Datasource. |
 | **11 Toggle to `code`** - The SQL `code` view for the open Model, MyNextModel, is shown. Each code fragment represents one gem in MyNextModel.                                                                                         |
 
-As a result, **MyNextModel** contains three sources: a Seed (ORDERDETAILS), a Source (ORDERSHIPMENTS), and a Model (MyModel). These three sources are joined together and materialized as a table or view in the database.schema defined in the Fabric.
+As a result, **MyNextModel** contains three sources: a Seed (ORDERDETAILS), a Source (ORDERSHIPMENTS), and a Model (MyModel). These three sources are joined together and materialized as a table or view in the database.schema defined in the fabric.
 
 **MyNextModel** can be viewed visually (left) or as a SQL file (right). The Project browser (left) lists the Sources, Seeds, and Models available to drag-n-drop into the selected Model's canvas.
 

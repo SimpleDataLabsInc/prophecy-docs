@@ -16,7 +16,7 @@ Depending on the language you are working in, one of these artifacts will always
 
 You can see which Prophecy Libs version is running on your Spark cluster by checking the Cluster Attached dropdown in the pipeline.
 
-<img src={require('./img/libs-version-cluster.png').default} alt="Prophecy libs version in the Fabric cluster" width="58%" />
+<img src={require('./img/libs-version-cluster.png').default} alt="Prophecy libs version in the fabric cluster" width="58%" />
 
 For a list of the latest versions, see [Version Chart](/docs/release_notes/version_chart/version_chart.md).
 

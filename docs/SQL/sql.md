@@ -20,7 +20,7 @@ Open any SQL Project in Prophecy to find the complete end-to-end **Project Linea
 
 ![ProjectLineage](img/ProjectLineage.png)
 
-The Project Browser displays entities available or used within this Project. Just click the Environment tab to browse through available databases and tables. Each Project connects to a Fabric, or execution environment. This Fabric defines the SQL Warehouse where each Model will materialize a single table or view. There are lots of additional features to learn more about, including configurations and committing code to Git. A single Project page contains lots of capabilities!
+The Project Browser displays entities available or used within this Project. Just click the Environment tab to browse through available databases and tables. Each Project connects to a fabric, or execution environment. This fabric defines the SQL Warehouse where each Model will materialize a single table or view. There are lots of additional features to learn more about, including configurations and committing code to Git. A single Project page contains lots of capabilities!
 
 From here you can easily create new models by clicking on **+** next to the Models pane, or you can edit existing Models.
 ![AddModel](img/AddModel.png)

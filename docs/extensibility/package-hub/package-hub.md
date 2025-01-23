@@ -97,7 +97,7 @@ When you create a new gem, a **(1)code guide** appears. Use the guide or replace
 
 ![14](img/14-ph.png)
 
-**(1)Click and drag** the custom gem Encrypt (in the list of gems within the SecurityPython Project) to a new or existing pipeline canvas. **(2) Configure** the custom gem as with any other gem: **(3)define expressions,** check the **(4)output** column list, even **(5)infer** the schema based on the attached Fabric. **(6)Save** the configured gem to start using it.
+**(1)Click and drag** the custom gem Encrypt (in the list of gems within the SecurityPython Project) to a new or existing pipeline canvas. **(2) Configure** the custom gem as with any other gem: **(3)define expressions,** check the **(4)output** column list, even **(5)infer** the schema based on the attached fabric. **(6)Save** the configured gem to start using it.
 
 ![15](img/15-ph.png)
 

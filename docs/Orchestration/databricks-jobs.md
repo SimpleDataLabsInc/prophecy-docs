@@ -39,7 +39,7 @@ Whenever, creating a new job you're asked for the following details:
 | Branch            | Which Git branch to use when developing this job.                                                                                                                                                                                             |
 | Name              | Unique job name.                                                                                                                                                                                                                              |
 | Scheduler         | The underlying engine that's going to execute your job. Databricks is recommended.                                                                                                                                                            |
-| Fabric            | The [execution Fabric](/concepts/fabrics) to which the job is going to be deployed.                                                                                                                                                           |
+| Fabric            | The [execution fabric](/concepts/fabrics) to which the job is going to be deployed.                                                                                                                                                           |
 | Job Size          | The [default size](/concepts/fabrics#whats-in-a-fabric) of the cluster that's going to be created for the job to run.                                                                                                                         |
 | Schedule Interval | Defines how often your job is going to run. The interval is defined using the [Quartz format](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html). You can click on the clock icon to select the interval. |
 | Alerts email      | Comma separated list of emails that are going to receive notifications on specific job status events (start, failure, or success).                                                                                                            |
@@ -85,7 +85,7 @@ The visual graph created on the jobs page is automatically converted to code (JS
 | Field Name                | Description                                                                                                                                                                                                                                   |
 | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Scheduler                 | The underlying engine that's going to execute your job. Databricks is recommended.                                                                                                                                                            |
-| Fabric                    | The [execution Fabric](/concepts/fabrics) to which the job is going to be deployed.                                                                                                                                                           |
+| Fabric                    | The [execution fabric](/concepts/fabrics) to which the job is going to be deployed.                                                                                                                                                           |
 | Cluster Size              | The [default size](/concepts/fabrics#whats-in-a-fabric) of the cluster that's going to be created for the job to run.                                                                                                                         |
 | Cluster Mode              | Can be selected as `Single` (all Gems within the job re-use the same Cluster) or `Multi` (all Gems within the job run on a separate new cluster)                                                                                              |
 | Schedule Interval         | Defines how often your job is going to run. The interval is defined using the [Quartz format](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html). You can click on the clock icon to select the interval. |
@@ -118,7 +118,7 @@ released, the job would start appearing on Databricks jobs page as well.
 
 Make sure to enable the job before creating a Release. If it is not enabled the job will not run on the specified schedule.
 
-If a job's selected Fabric is changed it will create a separate Databricks job definition. The previous job (with the previous Fabric) will be paused automatically and the new version will be scheduled.
+If a job's selected fabric is changed it will create a separate Databricks job definition. The previous job (with the previous fabric) will be paused automatically and the new version will be scheduled.
 :::
 
 Prophecy supports two different job deployment models. Each has different impacts on job cost and parallelism.

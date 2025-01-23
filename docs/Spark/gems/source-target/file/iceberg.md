@@ -16,7 +16,7 @@ Before you can use Iceberg source gems, you must configure some required setting
 
 ### Environment Setting
 
-You must configure a required Spark JAR dependency in your Fabric environment.
+You must configure a required Spark JAR dependency in your fabric environment.
 
 - JAR dependency
 

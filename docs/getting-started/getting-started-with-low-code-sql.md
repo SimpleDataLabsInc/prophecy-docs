@@ -68,31 +68,31 @@ Once, the token is generated copy and save it from **(5) Token** and you’re go
 
 ### 2.3 Setup Prophecy’s Fabric
 
-Prophecy introduces the concept of a Fabric to describe an execution environment. In this case, we create a single Fabric to connect a Databricks cluster or warehouse, execute SQL models interactively, and deploy scheduled jobs. The Fabric defines the environment where SQL tables and views are materialized. Typically you should setup at least one Fabric each for development and production environments. Use the development environment (Fabric) for quick ad-hoc building purposes with only sample data and use the production environment for daily runs with real data for your use case.
+Prophecy introduces the concept of a fabric to describe an execution environment. In this case, we create a single fabric to connect a Databricks cluster or warehouse, execute SQL models interactively, and deploy scheduled jobs. The fabric defines the environment where SQL tables and views are materialized. Typically you should setup at least one fabric each for development and production environments. Use the development environment (fabric) for quick ad-hoc building purposes with only sample data and use the production environment for daily runs with real data for your use case.
 
-You can read more about Fabrics [here.](/docs/concepts/fabrics/fabrics.md)
+You can read more about fabrics [here.](/docs/concepts/fabrics/fabrics.md)
 
 ![Create Fabric](img/2-4-create-fabric.png)
 
-Setting up a Fabric is very straightforward now that we have copied the JDBC URL and Personal Access Token from the previous steps. Click the **(1) Create Entity** button, and choose **(2) Create Fabric** option. Note, until you setup a Fabric, creation of other entities is going to be disabled. The Fabric creation is composed of two steps: Basic Info and Providers setup. On the Basic Info screen, enter a **(1) Fabric Name**, **(2) Fabric Description,** and choose the **(3) Team** that’s going to own the Fabric.
+Setting up a fabric is very straightforward now that we have copied the JDBC URL and Personal Access Token from the previous steps. Click the **(1) Create Entity** button, and choose **(2) Create Fabric** option. Note, until you setup a fabric, creation of other entities is going to be disabled. The fabric creation is composed of two steps: Basic Info and Providers setup. On the Basic Info screen, enter a **(1) Fabric Name**, **(2) Fabric Description,** and choose the **(3) Team** that’s going to own the fabric.
 
 Once ready, click **(4) Continue.**
 
 ![Fill Fabric Details](img/2-5-fill-fabric-details.png)
 
-Since we’re setting up a Fabric connected to Databrick’s JDBC SQL endpoint, we choose SQL as the **(1) Provider Type** and Databricks as the **(2) Provider.**
+Since we’re setting up a fabric connected to Databrick’s JDBC SQL endpoint, we choose SQL as the **(1) Provider Type** and Databricks as the **(2) Provider.**
 
 Enter the **(3) JDBC Url** and **(4) Personal Access Token** gathered from the previous steps. Finally, select your **(5) Catalog** and **(6) Schema** of choice. This step is recommended, however, optional. When using Databricks Unity Catalog, the default Catalog is main and the default Schema is default. Make sure you connect to a catalog and schema for which your user has write access. The tables resulting from the model will be written here.
 
-Click **(7) Complete** when finished. Prophecy checks the credentials and details for network and catalog accesses. If either fails, the Fabric won’t be created and you will receive an Exception error. Optionally, enhance metadata viewing by creating a [Metadata Connection](/docs/concepts/fabrics/metadata-connections.md), recommended for users with hundreds or thousands of tables housed in their data provider(s).
+Click **(7) Complete** when finished. Prophecy checks the credentials and details for network and catalog accesses. If either fails, the fabric won’t be created and you will receive an Exception error. Optionally, enhance metadata viewing by creating a [Metadata Connection](/docs/concepts/fabrics/metadata-connections.md), recommended for users with hundreds or thousands of tables housed in their data provider(s).
 
-Note, Fabrics are owned by Teams. Every Member present within the Team will be able to access the Fabric, however, each individual has to provide their own Personal Access Token.
+Note, fabrics are owned by Teams. Every Member present within the Team will be able to access the fabric, however, each individual has to provide their own Personal Access Token.
 
 ## 3. Create a new Project
 
 Prophecy’s Project is a Git repository or a directory on Git that contains all of your transformation logic. Each Prophecy Project contains a dbt Core™️ project. Learn more about Projects [here.](/docs/concepts/project/project.md)
 
-After Fabric creation you can see one project initialized for you by default called HelloWorld_SQL. If you just want to play around with Prophecy, you can start there. However, for the purpose of this tutorial we’re going to build a brand new project from scratch.
+After fabric creation you can see one project initialized for you by default called HelloWorld_SQL. If you just want to play around with Prophecy, you can start there. However, for the purpose of this tutorial we’re going to build a brand new project from scratch.
 
 ![Create New Project](img/3-1-create-new-project.png)
 
@@ -195,13 +195,13 @@ Therefore, to start development we have to create our first development branch. 
 
 Note, that if the branch doesn’t exist, Prophecy creates a new branch automatically by essentially cloning what’s on the currently selected branch - therefore make sure to usually create new branch (checkout) from main. If the branch exists, the code for that branch is pulled from Git into Prophecy.
 
-### 4.2 Connect to a Fabric
+### 4.2 Connect to a fabric
 
-Prophecy allows for interactive execution of your modeling work. This allows you to run any SQL model directly on the Fabric we’ve connected to and preview the resulting data. Fabric connection also allows Prophecy to introspect the schemas on your data warehouse and ensure that your development queries are correct.
+Prophecy allows for interactive execution of your modeling work. This allows you to run any SQL model directly on the fabric we’ve connected to and preview the resulting data. Fabric connection also allows Prophecy to introspect the schemas on your data warehouse and ensure that your development queries are correct.
 
-After branch setup, Fabric selection should pop-up automatically; if not, you can easily set the Fabric by clicking on the **(4) Choose cluster** dropdown.
+After branch setup, fabric selection should pop-up automatically; if not, you can easily set the fabric by clicking on the **(4) Choose cluster** dropdown.
 
-Choose the Fabric of choice by clicking on it in the **(5) Fabrics** list, then simply **(6) Save** the settings.
+Choose the fabric of choice by clicking on it in the **(5) Fabrics** list, then simply **(6) Save** the settings.
 
 Prophecy will quickly load all the available catalogs, schemas, tables, and other metadata and shortly after to allow you to start running your transformations!
 
@@ -335,7 +335,7 @@ To create a job, we start by clicking on the **(1) Add Job** button in the **Job
 
 Most of the fields, like **Project** or **Branch** are automatically populated for us. We start by populating the **(2) Name** field. Here, we’re going to run a whole project as part of this job so we give it the same name as the project: `getting_started`.
 
-Most importantly, we have to choose the **(3) Fabric** (Databricks SQL warehouse) on which we’re wishing to execute our models and write our tables. You can leave the default here, as the same Fabric that we were testing our models on.
+Most importantly, we have to choose the **(3) Fabric** (Databricks SQL warehouse) on which we’re wishing to execute our models and write our tables. You can leave the default here, as the same fabric that we were testing our models on.
 
 Next, we choose the **(4) Schedule Interval,** which describes how often our schedule is going to run. The interval is defined by a [CRON expression.](https://en.wikipedia.org/wiki/Cron#Cron_expression) Click on the 🕒 icon to open an easy interval picker.
 
@@ -354,7 +354,7 @@ The **(1) Gem drawer** has been restricted to only a few basic Gems relevant to 
 Let’s start by dragging and dropping the the **(2) DBT Gem.** Once it’s on the canvas, we open and configure it. Within the **(3) Property** tab, there’s three basic fields we fill:
 
 1. **DBT project to schedule** - which we set to the current project;
-2. **Databricks SQL Warehouse** - defines on which warehouse our SQL code is going to execute, we set it to the recently created Fabric;
+2. **Databricks SQL Warehouse** - defines on which warehouse our SQL code is going to execute, we set it to the recently created fabric;
 3. **Git reference value** - defines from which branch on Git, the code is pulled to execute, we set it to the currently used developed branch - same as what we set in the step 5.1 Checkout development branch (the name can be also seen in the footer).
 
 :::info
@@ -386,7 +386,7 @@ The process of deploying code is composed of 4 steps:
 
 During the release process Prophecy automatically packages, tests, and deploys your project’s artifacts - mostly SQL queries - to your Databricks Warehouse. You can monitor this process in the final **(1) Release** page.
 
-Once the process is finished you can see the deployed and running job, within your Databricks workspace defined within the Fabric that you released your job to. To see it, go to your workspace and open the **(2) Workflows** section. Then choose the right job - the name will be exactly the same as the name of the job you created in Prophecy. A **(3) Job page** opens, where you can inspect all the details of your newly created job.
+Once the process is finished you can see the deployed and running job, within your Databricks workspace defined within the fabric that you released your job to. To see it, go to your workspace and open the **(2) Workflows** section. Then choose the right job - the name will be exactly the same as the name of the job you created in Prophecy. A **(3) Job page** opens, where you can inspect all the details of your newly created job.
 
 ## What’s next?
 

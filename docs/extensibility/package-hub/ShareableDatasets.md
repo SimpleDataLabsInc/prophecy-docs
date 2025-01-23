@@ -21,4 +21,4 @@ For example:
 
 ## Across Projects
 
-**Datasets** in Prophecy are pointers to actual data in your data storage solution. Prophecy doesn’t store any data, and we recommend not to treat Datasets in Packages as “data products.” That is, we recommend not to configure Datasets in a Package. Instead, leave Datasets configurable in the project where they are used. Importantly, access to the actual data remains dependent upon the user’s personal access token or username/password credential. To access the data in a new project, the user must select a Fabric with access permissions for that data.
+**Datasets** in Prophecy are pointers to actual data in your data storage solution. Prophecy doesn’t store any data, and we recommend not to treat Datasets in Packages as “data products.” That is, we recommend not to configure Datasets in a Package. Instead, leave Datasets configurable in the project where they are used. Importantly, access to the actual data remains dependent upon the user’s personal access token or username/password credential. To access the data in a new project, the user must select a fabric with access permissions for that data.

@@ -18,11 +18,11 @@ tags:
 
 #### Spark Copilot Enhancements {#Spark339}
 
-- **Support custom artifactory resolve plibs version**: We now support adding custom Pypi or Maven dependencies for pipelines running on all Spark Fabrics including EMR, Dataproc, etc.
+- **Support custom artifactory resolve plibs version**: We now support adding custom Pypi or Maven dependencies for pipelines running on all Spark fabrics including EMR, Dataproc, etc.
 
 - **Support for config resolution inside call_func()**: Config variables inside of the `call_function()` and `call_func()` are now supported. The new syntax is `call_function("{{catalogName}}.{{database}}.{{funcName}}", "{{firstArg}}")`.
 
-- **Support for proxy-user impersonation in Kerberos Livy Fabric Auth**: As an admin user, you can configure multiple Keytab accounts in the [Security settings](docs/administration/authentication/security-settings.md). You can upload the Keytab files and set up proxy-user impersonation in Kerberos for secure authentication to Livy Fabrics.
+- **Support for proxy-user impersonation in Kerberos Livy Fabric Auth**: As an admin user, you can configure multiple Keytab accounts in the [Security settings](docs/administration/authentication/security-settings.md). You can upload the Keytab files and set up proxy-user impersonation in Kerberos for secure authentication to Livy fabrics.
 
 #### SQL Copilot Enhancements {#SQL339}
 

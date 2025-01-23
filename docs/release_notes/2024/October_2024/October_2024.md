@@ -18,7 +18,7 @@ tags:
 
 #### Spark Copilot Enhancements {#Spark34}
 
-- **Limit data preview in interims**: There is a new global level flag that admins can use to disable Data sampling for a given Fabric. This flag overrides the pipeline level Data sampling settings. When disabled, you won't be able to see production data in the interims when you run the pipeline.
+- **Limit data preview in interims**: There is a new global level flag that admins can use to disable Data sampling for a given fabric. This flag overrides the pipeline level Data sampling settings. When disabled, you won't be able to see production data in the interims when you run the pipeline.
 
   ![Create a new model test](./../img/oct-limit-data-preview-interims.png)
 
@@ -115,10 +115,10 @@ Added/updated gems are highlighted in yellow.
 
 - **Databricks Volumes support**: Prophecy now supports Databricks Volumes. When you run a Python or Scala pipeline via a job, you must bundle them as whl/jar artifacts. These artifacts must then be made accessible to the Databricks job in order to use them as a library installed on the cluster.
 
-  You can designate a path to a Volume for uploading the whl/jar files on the Providers tab of your Databricks Fabric.
+  You can designate a path to a Volume for uploading the whl/jar files on the Providers tab of your Databricks fabric.
 
   ![Databricks Volume Artifacts](./../img/oct-databricks-volume-artifacts.png)
 
-- **Prophecy Lib version**: You can now find out what the current Prophecy Library version is on your clusters. Use the Cluster Attached dropdown to see the log for the current version in the Fabric connection logs.
+- **Prophecy Lib version**: You can now find out what the current Prophecy Library version is on your clusters. Use the Cluster Attached dropdown to see the log for the current version in the fabric connection logs.
 
-  <img src={require('./../img/oct-libs-version-cluster.png').default} alt="Prophecy libs version in the Fabric cluster" width="58%" />
+  <img src={require('./../img/oct-libs-version-cluster.png').default} alt="Prophecy libs version in the fabric cluster" width="58%" />
