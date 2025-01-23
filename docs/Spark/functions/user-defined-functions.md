@@ -97,7 +97,7 @@ SQL UDFs stored in Databricks Unity Catalog can be imported to Python projects a
 
 1. From a Python Project, attach to a Databricks Spark cluster using a Fabric. Be sure the Fabric credentials allow access to the Databricks Catalog containing the desired SQL function(s).
 
-2. Open the Environment tab, select the appropriate Catalog and Schema. The list of SQL functions appears in the Environment tab.
+2. Open the Environment tab, and select the appropriate Catalog and Schema. The list of SQL functions appears in the Environment tab.
    ![img](./img/sql-udf.png)
 
 3. Call the SQL UDF from any Gem in the Project.
