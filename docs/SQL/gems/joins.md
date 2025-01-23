@@ -160,7 +160,7 @@ ON e.department_id = d.department_id;
 
 ### CROSS JOIN
 
-Returns the Cartesian product of two Datasets. It combines all rows from both tables. Cross Join will not have any Join conditions specified.
+Returns the Cartesian product of two datasets. It combines all rows from both tables. Cross Join will not have any Join conditions specified.
 
 For example, the sample query would be:
 

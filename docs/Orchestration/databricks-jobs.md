@@ -35,7 +35,7 @@ Whenever, creating a new job you're asked for the following details:
 
 | Field Name        | Description                                                                                                                                                                                                                                   |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Project           | Which [Project](/docs/concepts/project/project.md) to create the job in. This controls who has access to the job, groups jobs together for lineage, and allows you to use pipelines already published within that Project.                    |
+| Project           | Which [Project](/docs/concepts/project/project.md) to create the job in. This controls who has access to the job, groups jobs together for lineage, and allows you to use pipelines already published within that project.                    |
 | Branch            | Which Git branch to use when developing this job.                                                                                                                                                                                             |
 | Name              | Unique job name.                                                                                                                                                                                                                              |
 | Scheduler         | The underlying engine that's going to execute your job. Databricks is recommended.                                                                                                                                                            |
@@ -95,7 +95,7 @@ The visual graph created on the jobs page is automatically converted to code (JS
 | Number of retries per Gem | Number of retries for each Gem in job pipeline                                                                                                                                                                                                |
 | Alerts Email per Gem      | Comma separated list of emails that are going to receive notifications on specific job status events (start, failure, or success) for each Gem in job pipeline.                                                                               |
 
-To change the job name itself, go to Prophecy's metadata page. Locate the job within a Project, and click the pencil icon.
+To change the job name itself, go to Prophecy's metadata page. Locate the job within a project, and click the pencil icon.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>

@@ -12,10 +12,10 @@ Dependencies allow you to make use of third-party or custom code in your data pi
 written in Java, Scala, or PySpark, and can be connected to your data pipelines by pointing
 to [Maven](https://mvnrepository.com/) or [PyPI](https://pypi.org/) coordinates.
 
-Dependencies can be stored at the project or pipeline level. Project-level dependencies are available to all pipelines in the Project.
+Dependencies can be stored at the project or pipeline level. Project-level dependencies are available to all pipelines in the project.
 
 :::info
-We recommend that users store dependencies at the Project level whenever possible to improve the experience of interactive development. This will minimize the time spent connecting to clusters when switching between pipelines in the IDE.
+We recommend that users store dependencies at the project level whenever possible to improve the experience of interactive development. This will minimize the time spent connecting to clusters when switching between pipelines in the IDE.
 :::
 
 ## Storage
@@ -27,10 +27,10 @@ Dependencies are natively saved within your build system files. For example, if 
 
 ## View dependencies
 
-There are two ways to view all of your Project dependencies:
+There are two ways to view all of your project dependencies:
 
-- Open your Project from the **Metadata** page. Then, click on the **Dependencies** tab.
-- Open your Project in the **Pipeline editor**. Then, click **… > Dependencies** from the project header.
+- Open your project from the **Metadata** page. Then, click on the **Dependencies** tab.
+- Open your project in the **Pipeline editor**. Then, click **… > Dependencies** from the project header.
 
 You can add, edit, and delete dependencies from these views, too.
 
@@ -40,7 +40,7 @@ The table below describes the fields available when you select **Add Dependency*
 
 | Parameter                   | Description                                                                                                                                                                                                                                                                             |
 | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Scope                       | The dependency is enabled at the Project level or the pipeline level.                                                                                                                                                                                                                   |
+| Scope                       | The dependency is enabled at the project level or the pipeline level.                                                                                                                                                                                                                   |
 | Type                        | The dependency is either from the Package Hub, Scala (Maven) or Python (PyPi).                                                                                                                                                                                                          |
 | Name                        | This will identify the dependency.                                                                                                                                                                                                                                                      |
 | Version/Package/Coordinates | For Package Hub dependencies, input the package version. For Scala, use the Maven coordinates in the `groupId:artifcatId:version` format. For example, use `org.postgresql:postgresql:42.3.3` For Python, use the package and the version number.                                       |
@@ -73,17 +73,17 @@ When you connect a pipeline to a cluster, dependencies are automatically install
 
 ## Build System template
 
-The **Build System** template in the Settings tab of a Project defines how build files are generated for all pipelines within a project. You can edit the template to include specific items you need during the build process—for example, adding the JaCoCo plugin to enable coverage report generation.
+The **Build System** template in the Settings tab of a project defines how build files are generated for all pipelines within a project. You can edit the template to include specific items you need during the build process—for example, adding the JaCoCo plugin to enable coverage report generation.
 
 :::info
-For any help required to enable the template for older Projects, please reach out to the Prophecy support team.
+For any help required to enable the template for older projects, please reach out to the Prophecy support team.
 :::
 
 ### Jobs support
 
-When the Build System template is enabled for a Project and you [add a dependency](#add-dependencies), Prophecy will automatically update your **pom.xml** or **setup.py** files to include it.
+When the Build System template is enabled for a project and you [add a dependency](#add-dependencies), Prophecy will automatically update your **pom.xml** or **setup.py** files to include it.
 
-Though not recommended, if templating is disabled and you still want to add dependencies that are visible to your pipelines when scheduled, you can manually edit the **pom.xml** or **setup.py** files. Below is an example for a Scala Project.
+Though not recommended, if templating is disabled and you still want to add dependencies that are visible to your pipelines when scheduled, you can manually edit the **pom.xml** or **setup.py** files. Below is an example for a Scala project.
 
 To add the `io.github.etspaceman:scalacheck-faker_2.12:7.0.0` dependency, edit the **pom.xml** like so:
 

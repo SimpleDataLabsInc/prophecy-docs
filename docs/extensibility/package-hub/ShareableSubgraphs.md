@@ -27,7 +27,7 @@ Please see this video for an example
 
 ## Sharing Subgraphs Across Pipelines
 
-Once a subgraph is published, the user can simply add it to any other pipeline of the same Project.
+Once a subgraph is published, the user can simply add it to any other pipeline of the same project.
 Please see this video for an example
 
 <div style={{position: 'relative', 'padding-bottom': '56.25%', height: 0}}>
@@ -37,7 +37,7 @@ Please see this video for an example
 
 ## Sharing Subgraphs Across Projects
 
-Once a Project (let's call it _BaseProject_) is Released and added as a dependency to another Project(let's call it _AppProject_), all Subgraphs from _BaseProject_ are available in all pipelines of _AppProject_.
+Once a project (let's call it _BaseProject_) is Released and added as a dependency to another project(let's call it _AppProject_), all Subgraphs from _BaseProject_ are available in all pipelines of _AppProject_.
 
 Please see this video for an example
 

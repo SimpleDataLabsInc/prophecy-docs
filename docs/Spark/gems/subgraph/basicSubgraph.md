@@ -12,7 +12,7 @@ tags:
 
 In a **Basic Subgraph**, you have the capability to encapsulate multiple distinct gems within a single, reusable parent gem. This organizational approach enhances the visual clarity of your pipeline by grouping various sections together under a common parent gem. Additionally, it empowers you to break down intricate logic into modular components, thereby streamlining the Data Engineering processes.
 
-Furthermore, the ability to [Publish a Subgraph](docs/extensibility/package-hub/ShareableSubgraphs.md) extends the utility beyond a singular pipeline. By doing so, you can reuse the encapsulated logic in other pipelines or Projects, promoting code re-usability and simplifying the overall development workflow.
+Furthermore, the ability to [Publish a Subgraph](docs/extensibility/package-hub/ShareableSubgraphs.md) extends the utility beyond a singular pipeline. By doing so, you can reuse the encapsulated logic in other pipelines or projects, promoting code re-usability and simplifying the overall development workflow.
 
 ## Create a Basic Subgraph
 

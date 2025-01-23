@@ -12,16 +12,16 @@ Loading data into Prophecy is done via the [Seed](#seed), [Source](#source), or 
 
 ## Seed
 
-A Seed is an excellent way to load small CSV files into Prophecy. This is super useful for small test datasets or lookup mappings, like a list of cities or countries. Seeds are saved as .sql files on Git when Projects are committed and released. Follow the steps below to Create a Seed and write to the SQL Warehouse defined in the fabric.
+A Seed is an excellent way to load small CSV files into Prophecy. This is super useful for small test datasets or lookup mappings, like a list of cities or countries. Seeds are saved as .sql files on Git when projects are committed and released. Follow the steps below to Create a Seed and write to the SQL Warehouse defined in the fabric.
 
 ![Seed1](img/Seed1.png)
 
 | **Seed Creation**                                                                                                                               |
 | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| **1 Add Seed** - Inside the model canvas, from the Project tab, select **+ Add Seed** and provide a name. Here the Seed was named ORDERDETAILS. |
+| **1 Add Seed** - Inside the model canvas, from the project tab, select **+ Add Seed** and provide a name. Here the Seed was named ORDERDETAILS. |
 | **2 Toggle to `Code`** - The code view displays a text editor.                                                                                  |
 | **3 Paste data** - Paste content in CSV format with header and separated by commas.                                                             |
-| **4 Seed file** - The Seed file is now listed in the files that will be committed to Git when the Project is committed and released.            |
+| **4 Seed file** - The Seed file is now listed in the files that will be committed to Git when the project is committed and released.            |
 
 ![Seed2](img/Seed2.png)
 
@@ -34,11 +34,11 @@ A Seed is an excellent way to load small CSV files into Prophecy. This is super 
 | **9 Interactive Run** - Click the Play button to interactively run the model, including the Seed datasource.                                                                                                                                                                                |
 | **10 Click the Environment tab** - Click to browse the SQL Warehouse.                                                                                                                                                                                                                       |
 | **11 Refetch Sources** - Crawls the SQL Warehouse to list tables in each of the databases and schemas accessible to your user. Seeds are by default materialized as Tables.                                                                                                                 |
-| **12 Seed appears as a Table in the Warehouse** - Once Prophecy has refetched the sources, Prophecy lists the Seed in the Project Browser. So the Seed exists as both a Table in the Warehouse and is also saved as a versioned CSV file on Git when the Project is committed and released. |
+| **12 Seed appears as a Table in the Warehouse** - Once Prophecy has refetched the sources, Prophecy lists the Seed in the Project Browser. So the Seed exists as both a Table in the Warehouse and is also saved as a versioned CSV file on Git when the project is committed and released. |
 
 ## Source
 
-Each Source points to a table in the SQL Warehouse(s) specified in the fabric. Prophecy does not store the contents of the Source Table. Inside a Project, the `Env` tab allows for browsing the database and schema. Tables in the `Env` tab can be drag-n-dropped to the canvas without manually specifying any metadata. You can also upload a source table directly to your environment. For more information about how to upload a file, see [Upload files](./upload-files). Follow the steps below to create and use a Source.
+Each Source points to a table in the SQL Warehouse(s) specified in the fabric. Prophecy does not store the contents of the Source Table. Inside a project, the `Env` tab allows for browsing the database and schema. Tables in the `Env` tab can be drag-n-dropped to the canvas without manually specifying any metadata. You can also upload a source table directly to your environment. For more information about how to upload a file, see [Upload files](./upload-files). Follow the steps below to create and use a Source.
 
 ![Source1](img/Source1.png)
 
@@ -48,7 +48,7 @@ Each Source points to a table in the SQL Warehouse(s) specified in the fabric. P
 | **2 Click the Environment tab** - Browse the SQL Warehouse specified in the selected fabric.                                                                      |
 | **3 Add a table** - Prophecy respects the user's permissions. Any table for which the user has read permission can be added to the model canvas.                  |
 | **4 Source is added to the model canvas** - The Source named ORDERSHIPMENTS is now part of the model, and is ready for transformation, joins, etc.                |
-| **5 Click the Project tab** - Lists all the Sources that are now accessible to any model in the Project.                                                          |
+| **5 Click the Project tab** - Lists all the Sources that are now accessible to any model in the project.                                                          |
 
 ## Model
 
@@ -60,7 +60,7 @@ Models are represented as visual format or as a single .sql file in `code` forma
 
 | Model Creation                                                                                                                                                  |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **1 Open existing Model** - Within a Project, open an existing model, e.g. MyNextModel.                                                                         |
+| **1 Open existing Model** - Within a project, open an existing model, e.g. MyNextModel.                                                                         |
 | **2 Add Model** - Click to add a new model to the existing Model.                                                                                               |
 | **3 Model Name and File Path ** - Provide a name for the new model, e.g. MyModel. Define the desired storage path in Git to store the new model as a .sql file. |
 
@@ -73,7 +73,7 @@ Now the new model has been created and the canvas is displayed. Optionally, clic
 | **4 Add a Source** - From the Environment tab, select a source for the new model.                                        |
 | **5 Configure ** - Configure the new source, do any transformation steps or simply connect to the new model gem.         |
 | **6 Interactive Run** - Click the "Play" button to execute the new model and create a materialized view of the new model. |
-| **7 Project Tab** - Click the Project tab and notice MyModel is now available in the Project Browser.                    |
+| **7 Project Tab** - Click the project tab and notice MyModel is now available in the Project Browser.                    |
 | **8 Existing Model** - Open the existing model of interest. In this example, MyNextModel is opened.                      |
 | **9 Add Model as a Source** - Add the new model (e.g. MyModel) as a Source.                                              |
 
@@ -86,7 +86,7 @@ Now the new model has been created and the canvas is displayed. Optionally, clic
 
 As a result, **MyNextModel** contains three sources: a Seed (ORDERDETAILS), a Source (ORDERSHIPMENTS), and a model (MyModel). These three sources are joined together and materialized as a table or view in the database.schema defined in the fabric.
 
-**MyNextModel** can be viewed visually (left) or as a SQL file (right). The Project browser (left) lists the sources, seeds, and models available to drag-n-drop into the selected model's canvas.
+**MyNextModel** can be viewed visually (left) or as a SQL file (right). The project browser (left) lists the sources, seeds, and models available to drag-n-drop into the selected model's canvas.
 
 :::note
 

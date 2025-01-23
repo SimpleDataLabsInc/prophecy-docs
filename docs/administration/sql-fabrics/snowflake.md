@@ -61,12 +61,12 @@ Each team member can attach completed fabrics to their projects and models.
 
 | **Attach a fabric to a model**                                                                                                       |
 | ------------------------------------------------------------------------------------------------------------------------------------ |
-| **1 Metadata** - Click the Prophecy Metadata and search for a Project or model of interest. Open the model.                          |
+| **1 Metadata** - Click the Prophecy Metadata and search for a project or model of interest. Open the model.                          |
 | **2 Model** - Here we have opened a SQL model called "MyModel"                                                                       |
-| **3 Attach Cluster** - This dropdown menu lists the fabrics and execution clusters available to this Project, according to the Team. |
+| **3 Attach Cluster** - This dropdown menu lists the fabrics and execution clusters available to this project, according to the Team. |
 | **4 Snowflake Fabric** - The available fabrics appear here.                                                                         |
 | **5 Attach Cluster** - The Snowflake Warehouse can be attached to the model for execution.                                           |
-| **6 Run model** - Once a fabric and Cluster are attached to the Project, the model can be run interactively using the play button.   |
+| **6 Run model** - Once a fabric and Cluster are attached to the project, the model can be run interactively using the play button.   |
 
 :::info
 Remember, each user will be prompted to update the fabric with their own credentials. Prophecy respects these credentials when reading Snowflake tables, databases, etc. User writes default to the database and schema defined in the fabric.

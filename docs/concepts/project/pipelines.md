@@ -21,7 +21,7 @@ Under the hood, pipelines are based on Spark-native code. pipelines are ideal fo
 
 | Field       | Description                                                                                                                                       |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Project     | The Project to create the pipeline in. This controls access to the pipeline, groups pipelines together, and lets you use Datasets in the project. |
+| Project     | The project to create the pipeline in. This controls access to the pipeline, groups pipelines together, and lets you use datasets in the project. |
 | Branch      | The Git branch to use for pipeline development.                                                                                                   |
 | Name        | The name of the pipeline.                                                                                                                         |
 | Mode        | Whether the pipeline will be Batch mode or Streaming.                                                                                             |

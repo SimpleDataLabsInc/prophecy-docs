@@ -80,6 +80,6 @@ When adding a column nested within a variant, the output column name, expression
 
 Prophecy automatically adds a `CAST` to any column you add from a nested type. By default, the column is cast using the standard `CAST(x AS y)` syntax.
 
-In some cases, a path within a variant may hold different value types across rows. For instance, consider a Dataset where each row’s value key contains different data types, such as integer, object, and boolean.
+In some cases, a path within a variant may hold different value types across rows. For instance, consider a dataset where each row’s value key contains different data types, such as integer, object, and boolean.
 
 Prophecy supports this scenario by presenting each detected data type for a given key, array, or object as a separate item in the column selector. When you add one of those columns to the expression, we use explicit casting, which may error out if the cast is not possible. You can change this behavior by using `TRY_CAST`, which returns `null` if the cast is not possible.

@@ -10,7 +10,7 @@ tags:
   - passwords
 ---
 
-Using hardcoded usernames and passwords is not recommended when working with gems. This approach can result in unsafe code, as the credentials may be exposed in your configured Git repository for the Project.
+Using hardcoded usernames and passwords is not recommended when working with gems. This approach can result in unsafe code, as the credentials may be exposed in your configured Git repository for the project.
 
 For users who are not using Databricks or have private Git repositories, or for those who simply need to quickly test some gems, plain-text username/password may be used. However, it is strongly advised to utilize the Databricks secrets option when committing the code.
 

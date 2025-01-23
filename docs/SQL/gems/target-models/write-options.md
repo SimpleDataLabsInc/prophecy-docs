@@ -12,7 +12,7 @@ tags:
 
 You can use Write Modes such as Overwrite, Append, and Merge to materialize your data. The Write Options tab within your Target model gem guides you through building different merge approaches, such as historical data changes with SCD 2, which use incremental materialization strategy.
 
-Target models are considered incremental models, which use a materialization strategy to update your data warehouse tables by loading and transforming just the changed data since the last run. Incremental models avoid processing your entire Dataset, which allows them to update only the new rows. This greatly reduces the time and resources you need to dedicate for your data transformations.
+Target models are considered incremental models, which use a materialization strategy to update your data warehouse tables by loading and transforming just the changed data since the last run. Incremental models avoid processing your entire dataset, which allows them to update only the new rows. This greatly reduces the time and resources you need to dedicate for your data transformations.
 
 ## Write Modes
 
@@ -136,7 +136,7 @@ The advanced on schema change options include the following:
 
 ### Specify Columns
 
-Use Specify Columns to customize the columns you want to include in your data queries. Select, deselect, and reorder columns to tailor your Dataset to your specific needs.
+Use Specify Columns to customize the columns you want to include in your data queries. Select, deselect, and reorder columns to tailor your dataset to your specific needs.
 
 - Select which columns you would like to merge
 
@@ -262,7 +262,7 @@ To use SCD 2, follow these steps:
 
 ### Use delete and insert
 
-Use delete and insert to replace outdated data efficiently. It deletes existing records and inserts new ones in a single operation, insuring your Dataset remains up-to-date.
+Use delete and insert to replace outdated data efficiently. It deletes existing records and inserts new ones in a single operation, insuring your dataset remains up-to-date.
 
 - Delete rows that use the predicate
 - Use delete and insert for Snowflake
@@ -286,7 +286,7 @@ To use delete and insert, follow these steps:
 
 ### Insert and overwrite
 
-Use insert and overwrite to overwrite existing records and insert new ones in a single operation, insuring your Dataset remains accurate.
+Use insert and overwrite to overwrite existing records and insert new ones in a single operation, insuring your dataset remains accurate.
 
 - Replace all partitions included in your query
 - Use insert and overwrite for Databricks

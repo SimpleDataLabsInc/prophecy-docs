@@ -1,7 +1,7 @@
 ---
 title: Deployment
 id: Deployment
-description: Release and Deploy Process. How to Release your Projects and Deploy your jobs
+description: Release projects and deploy jobs
 tags:
   - metadata
   - Git
@@ -16,10 +16,10 @@ Lets see how you can do it via the Prophecy UI below.
 
 ## Overview
 
-As part of the release process, we start by creating a [Git Tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging) with a specified version. This tag is then pushed to your configured Git repository. Following this, the pipelines, gems, and jobs in the Project are built and deployed to the respective environments.
+As part of the release process, we start by creating a [Git Tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging) with a specified version. This tag is then pushed to your configured Git repository. Following this, the pipelines, gems, and jobs in the project are built and deployed to the respective environments.
 Here's a breakdown of what deploying means for each component:
 
-- **Gems**: With Prophecy 3.2, you can create [custom gems](docs/extensibility/gem-builder/spark-gem-builder.md) and use in your pipelines. During the release, these gems are built and uploaded to an internal Artifactory. They aren't directly copied to your environments, as they are used in generating code for the pipelines, not during job/pipeline execution. Note, the code for gems do get committed to your Git repo as part of the Project.
+- **Gems**: With Prophecy 3.2, you can create [custom gems](docs/extensibility/gem-builder/spark-gem-builder.md) and use in your pipelines. During the release, these gems are built and uploaded to an internal Artifactory. They aren't directly copied to your environments, as they are used in generating code for the pipelines, not during job/pipeline execution. Note, the code for gems do get committed to your Git repo as part of the project.
 
 - **Pipelines**: Each pipeline in the project is compiled and built into an artifact (Wheel file for Python and Jar file for Scala). These artifacts are then uploaded to your environment as part of the release process.
 
@@ -41,7 +41,7 @@ Only an Admin user of the team can initiate a Project Release and Deployment.
 
 For most users, a regular project release takes care of both the release and deployment of pipelines, gems, and jobs to respective environments. However, for users who want more control over their deployment process, we offer some advanced options in Project Settings.
 
-To access these settings, go to the **(1) Settings page** in your Project, and click on **(2) Deployment**.
+To access these settings, go to the **(1) Settings page** in your project, and click on **(2) Deployment**.
 
 ![Deployment_settings](img/settings_for_deployment.png)
 

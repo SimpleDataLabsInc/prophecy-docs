@@ -26,14 +26,14 @@ By the end of this training, you'll have an understanding of Airflow DAGs, be ab
 #### You will need
 
 - Databricks Account
-- A Prophecy Project With Spark pipeline or SQL model running on Databricks
+- A Prophecy project With Spark pipeline or SQL model running on Databricks
 
 OR
 
 - Snowflake Account
-- A Prophecy Project with SQL model running on Snowflake
+- A Prophecy project with SQL model running on Snowflake
 
-If you don't have an existing project, please check out [this guide](https://docs.prophecy.io/concepts/project/#1-create-new-project) for setting up a Spark Project, and [this guide](/docs/getting-started/getting-started-with-low-code-sql.md) for setting up a SQL model in Prophecy.
+If you don't have an existing project, please check out [this guide](https://docs.prophecy.io/concepts/project/#1-create-new-project) for setting up a Spark project, and [this guide](/docs/getting-started/getting-started-with-low-code-sql.md) for setting up a SQL model in Prophecy.
 
 **For this guide, let's create a job that gets activated whenever a new file is uploaded to an S3 bucket. Additionally, we'll configure it to send an email notification prior to initiating the execution of both the pipeline and SQL model.**
 
@@ -157,7 +157,7 @@ Once done, Click **(5) Save**!
 
 ### 2.3 Adding Spark pipeline gem
 
-If you have a Spark Databricks connection and a Spark Project with pipeline, you can include Spark pipeline gems in the job. Click on **(1) Operators**, and Drag the **(2) Pipeline gem** from the dropdown to the canvas. Drag it close to the output port of the Email gem, so that it gets auto-connected. Then click the newly added gem and click **(3) Open** to open the gem configurations.
+If you have a Spark Databricks connection and a Spark project with pipeline, you can include Spark pipeline gems in the job. Click on **(1) Operators**, and Drag the **(2) Pipeline gem** from the dropdown to the canvas. Drag it close to the output port of the Email gem, so that it gets auto-connected. Then click the newly added gem and click **(3) Open** to open the gem configurations.
 
 ![Add_Pipeline_Gem](img/3.14_Add_pipeline_gem.png)
 
@@ -174,7 +174,7 @@ Click on **(1) Operators**, and Drag the **(2) DBT gem** from the dropdown to th
 
 ![Add_DBT_Gem](img/3.16_Add_DBT_gem.png)
 
-Here, you will select the DBT Project/Model to Schedule, what SQL fabric to schedule it on, and other additional properties for running a DBT model.
+Here, you will select the DBT project/model to Schedule, what SQL fabric to schedule it on, and other additional properties for running a DBT model.
 
 Select the **(1) DBT commands** you want to run when scheduling your models. You can select all ([Dependencies](docs/extensibility/dependencies/sql-dependencies.md), [Seed](/getting-started/sql-with-databricks#431-create-seeds), Run and Test) here.
 Select the **(2) DBT Project to Schedule**. And then select the **(3) SQL Warehouse Fabric** to schedule the Module on. Select the fabric for which connection was created in Step 1.4 or 1.5.

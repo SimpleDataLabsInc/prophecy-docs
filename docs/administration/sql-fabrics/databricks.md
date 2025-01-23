@@ -65,12 +65,12 @@ Each team member can attach completed fabrics to their projects and models.
 
 | **Attach a fabric to a model**                                                                                                            |
 | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| **1 Metadata** - Click the Prophecy Metadata and search for a SQL Project or model of interest. Open the model.                           |
+| **1 Metadata** - Click the Prophecy Metadata and search for a SQL project or model of interest. Open the model.                           |
 | **2 Model** - Here we have opened a model called "Customers."                                                                             |
-| **3 Attach Cluster Menu** - This dropdown menu lists the fabrics and execution clusters available to this Project, according to the Team. |
-| **4 Databricks Fabric** - The available fabrics appear here. Only SQL fabrics are available to attach to SQL Projects.                    |
+| **3 Attach Cluster Menu** - This dropdown menu lists the fabrics and execution clusters available to this project, according to the Team. |
+| **4 Databricks Fabric** - The available fabrics appear here. Only SQL fabrics are available to attach to SQL projects.                    |
 | **5 Attach Cluster** - The Databricks Warehouse can be attached to the model for execution.                                               |
-| **6 Run model** - Once a fabric and cluster are attached to the Project, the model can be run interactively using the play button.        |
+| **6 Run model** - Once a fabric and cluster are attached to the project, the model can be run interactively using the play button.        |
 
 :::info
 Remember, each user will be prompted to update the fabric with their own credentials. Prophecy respects these credentials when accessing Databricks catalogs, tables, databases, etc.

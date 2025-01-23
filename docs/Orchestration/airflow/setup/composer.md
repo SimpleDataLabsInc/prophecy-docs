@@ -29,7 +29,7 @@ Once you select Cloud Composer, you will start seeing fields for credentials as 
 ![ComposerFabric](img/Composer_Fabric.png)
 
 Type in your GCP project in the **(3)Project ID** field, and select the **(4)Location** from dropdown. And Upload your **(5)Private key** file to authenticate.
-Click on **(6) Fetch Environments** to fetch the Airflow Instances running in the mentioned GCP Project.
+Click on **(6) Fetch Environments** to fetch the Airflow Instances running in the mentioned GCP project.
 
 ![ComposerFabric2](img/Composer_Fabric2.png)
 Select the desired instance of Airflow, in the **(1) Airflow Environment** dropdown. This will autofill the **(2) Airflow URL** and **(3)Dag location** field which are uneditable.

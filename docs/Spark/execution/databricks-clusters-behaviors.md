@@ -41,7 +41,7 @@ These interims will come Just before Target gems, and if there is no Target gem,
 ## Execution Metrics
 
 When running pipelines and jobs, you may be interested to know few metrics related to execution like records
-read/written, bytes read/written, total time taken and Data samples b/w components. These Dataset, pipeline-run and
+read/written, bytes read/written, total time taken and Data samples b/w components. These dataset, pipeline-run and
 Job-run related metrics are accumulated and stored on your data plane and can be viewed later from Prophecy UI. For more details, refer [here](./execution-metrics).
 
 :::caution
@@ -61,7 +61,7 @@ You can also see Execution Metrics for each dataset in the pipeline.
 
 ![Dataset_metrcis](img/execution-metrcis-dataset1.png)
 
-Each row here is one run where this Dataset was used. You can click and go to a particular run and see more detailed insights on your data along with preview.
+Each row here is one run where this dataset was used. You can click and go to a particular run and see more detailed insights on your data along with preview.
 
 ![Dataset_stats](img/dataset-statistics.png)
 

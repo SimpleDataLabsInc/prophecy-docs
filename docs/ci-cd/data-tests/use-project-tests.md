@@ -124,7 +124,7 @@ To Schedule your project to run with tests, follow these steps:
 
 4. Select the database object you want to run the test on. You can schedule the entire project or just a single model:
 
-   - Run entire Project
+   - Run entire project
    - Run a SQL model
 
    ![Add a schedule job](img/project-test-schedule.png)

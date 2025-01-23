@@ -46,19 +46,19 @@ Create a fabric and configure the [Job Size](/docs/administration/Spark-fabrics/
 
 ## Prophecy requirements
 
-Open a Prophecy Project and upgrade the `ProphecySparkBasicsPython` Dependency to `0.2.34` or later. Connecting a Prophecy project to a Spark cluster with a different dependency version will prompt a cluster restart. Ideally this is a one-time restart, and you're ready to proceed!
+Open a Prophecy project and upgrade the `ProphecySparkBasicsPython` Dependency to `0.2.34` or later. Connecting a Prophecy project to a Spark cluster with a different dependency version will prompt a cluster restart. Ideally this is a one-time restart, and you're ready to proceed!
 
 ![img](../../img/synth_0_2_proph_reqiuirements.png)
 
 :::caution Caution
-Using two Prophecy projects with the same Spark cluster will cause cluster restarts (when each project attaches to the cluster) unless the `ProphecySparkBasicsPython` versions match across both Projects. The same caution applies to `ProphecyLibsPython` versions.
+Using two Prophecy projects with the same Spark cluster will cause cluster restarts (when each project attaches to the cluster) unless the `ProphecySparkBasicsPython` versions match across both projects. The same caution applies to `ProphecyLibsPython` versions.
 
 _The Fix:_ Do yourself a favor and upgrade all your Prophecy projects to the same `ProphecySparkBasicsPython` and `ProphecyLibsPython` versions or use separate Spark clusters.
 :::
 
 ## Create the gem
 
-Create a new Dataset and select the Type as Data Generator. Note we are not specifying a storage location yet; we will [store the data](#store-the-data) in a separate gem.  
+Create a new dataset and select the Type as Data Generator. Note we are not specifying a storage location yet; we will [store the data](#store-the-data) in a separate gem.  
 ![img](../../img/synth_1_new_dataset.png)
 
 ![img](../../img/synth_2_type.png)

@@ -15,14 +15,14 @@ Prophecy supports opening pull requests on your external Git provider to merge
 development branches to a base branch on a remote repository.
 
 :::note
-You will not see this option if using Prophecy-managed Git for your Project.
+You will not see this option if using Prophecy-managed Git for your project.
 :::
 
 ## Enable Pull Request Template
 
 To enable pull requests:
 
-1. Open your Project metadata.
+1. Open your project metadata.
 1. Open the **Settings** tab.
 1. Next to **Pull Request Template**, toggle on the **Enabled** button.
 1. Review the template URL.
@@ -55,4 +55,4 @@ If the pull request template is configured correctly and enabled, you can open a
 
 ![PR creation](img/pr-template-openpr.png)
 
-When you open a pull request from the Prophecy interface, Prophecy will redirect you to your external Git provider based on the template defined in the Project **Settings** tab.
+When you open a pull request from the Prophecy interface, Prophecy will redirect you to your external Git provider based on the template defined in the project **Settings** tab.

@@ -10,8 +10,8 @@ tags:
 
 This gem has below features:
 
-1. Dataset Creation - Create Dataset in Salesforce Wave from Spark DataFrame.
-2. Read Salesforce Wave Dataset - User has to provide SAQL to read data from Salesforce Wave. The query result will be constructed as DataFrame.
+1. Dataset Creation - Create dataset in Salesforce Wave from Spark DataFrame.
+2. Read Salesforce Wave dataset - User has to provide SAQL to read data from Salesforce Wave. The query result will be constructed as DataFrame.
 3. Read Salesforce Object - User has to provide SOQL to read data from Salesforce object. The query result will be constructed as DataFrame.
 4. Update Salesforce Object - Salesforce object will be updated with the details present in DataFrame.
 
@@ -24,20 +24,20 @@ For installing dependencies from Prophecy UI. Please check [dependency managemen
 
 ## Source
 
-Reads data from Salesforce object and wave Datasets.
+Reads data from Salesforce object and wave datasets.
 
 ### Source Parameters
 
 | Parameter            | Description                                                                                                                                                                                                                                                                                                | Required                                               |
 | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| Dataset Name         | Name of the Dataset                                                                                                                                                                                                                                                                                        | True                                                   |
+| Dataset Name         | Name of the dataset                                                                                                                                                                                                                                                                                        | True                                                   |
 | Credential Type      | Credential Type: `Databricks Secrets` or `Username & Password`                                                                                                                                                                                                                                             | True                                                   |
 | Credentials          | Databricks credential name, else username and password for the snowflake account                                                                                                                                                                                                                           | Required if `Credential Type` is `Databricks Secrets`  |
-| Username             | Salesforce Wave Username. This user should have privilege to upload Datasets or execute SAQL or execute SOQL.                                                                                                                                                                                              | Required if `Credential Type` is `Username & Password` |
+| Username             | Salesforce Wave Username. This user should have privilege to upload datasets or execute SAQL or execute SOQL.                                                                                                                                                                                              | Required if `Credential Type` is `Username & Password` |
 | Password             | Salesforce Wave Password. Please append security token along with password. For example, if a user’s password is mypassword, and the security token is XXXXXXXXXX, the user must provide mypasswordXXXXXXXXXX                                                                                              | Required if `Credential Type` is `Username & Password` |
 | Login Url            | (Optional) Salesforce Login URL. Default value https://login.salesforce.com.                                                                                                                                                                                                                               | True                                                   |
 | Read from source     | Strategy to read data: `SAQL` or `SOQL`.                                                                                                                                                                                                                                                                   | True                                                   |
-| SAQL Query           | (Optional) SAQL query to used to query Salesforce Wave. Mandatory for reading Salesforce Wave Dataset                                                                                                                                                                                                      |                                                        |
+| SAQL Query           | (Optional) SAQL query to used to query Salesforce Wave. Mandatory for reading Salesforce Wave dataset                                                                                                                                                                                                      |                                                        |
 | SOQL Query           | (Optional) SOQL query to used to query Salesforce Object. Mandatory for reading Salesforce Object like Opportunity                                                                                                                                                                                         |                                                        |
 | Version              | (Optional) Salesforce API Version. Default 35.0                                                                                                                                                                                                                                                            |                                                        |
 | Infer Schema         | (Optional) Infer schema from the query results. Sample rows will be taken to find the datatype.                                                                                                                                                                                                            |                                                        |
@@ -58,7 +58,7 @@ Steps to reset your Salesforce security token can be found at this [link.](https
 ## Example
 
 Below is an example of fetching all leads from sales cloud using Prophecy IDE.
-We will be using `SOQL` query to query our leads Dataset on sales cloud.
+We will be using `SOQL` query to query our leads dataset on sales cloud.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -96,19 +96,19 @@ def read_salesforce(spark: SparkSession) -> DataFrame:
 
 ## Target
 
-Create/update Datasets and Salesforce objects.
+Create/update datasets and Salesforce objects.
 
 ### Target Parameters
 
 | Parameter               | Description                                                                                                                                                                                                                                             | Required                                               |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| Dataset Name            | Name of the Dataset                                                                                                                                                                                                                                     | True                                                   |
+| Dataset Name            | Name of the dataset                                                                                                                                                                                                                                     | True                                                   |
 | Credential Type         | Credential Type: `Databricks Secrets` or `Username & Password`                                                                                                                                                                                          | True                                                   |
 | Credentials             | Databricks credential name, else username and password for the snowflake account                                                                                                                                                                        | Required if `Credential Type` is `Databricks Secrets`  |
-| Username                | Salesforce Wave Username. This user should have privilege to upload Datasets or execute SAQL or execute SOQL.                                                                                                                                           | Required if `Credential Type` is `Username & Password` |
+| Username                | Salesforce Wave Username. This user should have privilege to upload datasets or execute SAQL or execute SOQL.                                                                                                                                           | Required if `Credential Type` is `Username & Password` |
 | Password                | Salesforce Wave Password. Please append security token along with password.For example, if a user’s password is mypassword, and the security token is XXXXXXXXXX, the user must provide mypasswordXXXXXXXXXX                                            | Required if `Credential Type` is `Username & Password` |
 | Login Url               | (Optional) Salesforce Login URL. Default value https://login.salesforce.com.                                                                                                                                                                            | True                                                   |
-| Salesforce Dataset name | (Optional) Name of the Dataset to be created in Salesforce Wave. Required for Dataset Creation.                                                                                                                                                         |                                                        |
+| Salesforce dataset name | (Optional) Name of the Dataset to be created in Salesforce Wave. Required for Dataset Creation.                                                                                                                                                         |                                                        |
 | Salesforce object name  | (Optional) Salesforce Object to be updated. (e.g.) Contact. Mandatory if bulk is true.                                                                                                                                                                  |                                                        |
 | Metadata Config in JSON | (Optional) Metadata configuration which will be used to construct [Salesforce Wave Dataset Metadata] <br/> (https://resources.docs.salesforce.com/sfdc/pdf/bi_dev_guide_ext_data_format.pdf). Metadata configuration has to be provided in JSON format. |                                                        |
 | Upsert                  | (Optional) Flag to upsert data to Salesforce. This performs an insert or update operation using the "externalIdFieldName" as the primary ID. Existing fields that are not in the DataFrame being pushed will not be updated. Default "false".           |                                                        |

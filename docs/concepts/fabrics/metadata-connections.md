@@ -1,11 +1,11 @@
 ---
 title: Metadata Connections
 id: metadata-connections
-description: sync catalogs, tables, schemas, etc into Prophecy's Project viewer
+description: Sync catalogs, tables, schemas, etc into Prophecy's project viewer
 sidebar_position: 3
 tags:
   - metadata
-  - Datasets
+  - datasets
   - tables
   - connections
   - data
@@ -83,7 +83,7 @@ Once a Connection is configured, the Connection details will be used to display 
 
 ![AddGem](./img/2-add-gem.png)
 
-Inside a Project, **(1)Attach a Fabric** which has a Metadata Connection. Now the **(2)Environment** tab lists the data accessible in the provider **(3)Workspace** synced at the frequency defined in the Metadata Connection. So thousands of tables should be visible more quickly as the data is synced regularly. Browse the catalogs, databases, and tables. Add a **(4)table** to the canvas as a Dataset, and define whether your Dataset should be a **(5)Source or Target**. Now the Dataset **(6)appears** on the canvas, ready for transformations.
+Inside a project, **(1)Attach a Fabric** which has a Metadata Connection. Now the **(2)Environment** tab lists the data accessible in the provider **(3)Workspace** synced at the frequency defined in the Metadata Connection. So thousands of tables should be visible more quickly as the data is synced regularly. Browse the catalogs, databases, and tables. Add a **(4)table** to the canvas as a dataset, and define whether your dataset should be a **(5)Source or Target**. Now the dataset **(6)appears** on the canvas, ready for transformations.
 
 :::caution
 Only one Metadata Connection can be enabled per fabric at once.

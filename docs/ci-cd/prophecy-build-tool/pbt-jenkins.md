@@ -46,7 +46,7 @@ for Scala pipelines, just make sure `JDK 11` is installed on your Jenkins nodes.
 
 You should have access to:
 
-- a Git repo with an existing Prophecy Project
+- a Git repo with an existing Prophecy project
 - a Jenkins Server where you can create new pipelines and credentials
 
 ### Jenkins plugins
@@ -100,7 +100,7 @@ This pipeline uses PBT to validate the pipelines and run all Prophecy unit tests
 
 - Create a Jenkins pipeline
   ![jenkins-pipeline-type.png](img%2Fjenkins-pipeline-type.png)
-- Configure the GitHub Project URL
+- Configure the GitHub project URL
 - Choose GitHub Pull Request Builder as the trigger type.
 - Provide credentials to GitHub
   - creating a fine-grained Personal Acces Token (PAT) in GitHub. The PAT should be
@@ -310,4 +310,4 @@ The DATABRICKS_HOST and DATABRICKS_TOKEN env variables must match the configurat
 4. ('deploy') - use PBT to deploy the Databricks jobs for our chosen fabric
    - Builds all the pipelines present in the project and generates a .jar/.whl artifact for each pipeline
    - Uploads the pipeline .jar/.whl artifacts for each of the deployed jobs (next step)
-   - Creates or Updates the Databricks jobs based on `databricks-job.json` files for the Prophecy Project (only those that use `$FABRIC_ID`)
+   - Creates or Updates the Databricks jobs based on `databricks-job.json` files for the Prophecy project (only those that use `$FABRIC_ID`)

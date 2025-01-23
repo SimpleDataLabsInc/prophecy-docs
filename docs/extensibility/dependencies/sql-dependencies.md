@@ -12,7 +12,7 @@ Dependencies allow you to make use of third-party or custom code in your models 
 
 ## View dependencies
 
-To see all of your Project and model dependencies simply open the Manage Dependencies screen by clicking **... > Dependencies**.
+To see all of your project and model dependencies simply open the Manage Dependencies screen by clicking **... > Dependencies**.
 
 ![View your dependencies](img/dependencies-view.png)
 
@@ -24,11 +24,11 @@ You can also view your dependencies and get to the same Manage Dependencies scre
 
 To add a dependency, first navigate to [Manage Dependencies](#view-dependencies). There you will see a complete list of your dependencies. Click on **+ Add Dependency** to add a new dependency.
 
-You will be taken to the Create Dependency screen, where you can choose to create a dependency from the DBT Hub, GitHub, or another Prophecy Project.
+You will be taken to the Create Dependency screen, where you can choose to create a dependency from the DBT Hub, GitHub, or another Prophecy project.
 
 ![Add a Dependency](img/dependencies-add.png)
 
-After you've defined the Dependency, click **Create**. Prophecy will validate the dependency and add it to the Project, making it enabled in the current model, and adding it as a dependency within all of the other models in the Project.
+After you've defined the Dependency, click **Create**. Prophecy will validate the dependency and add it to the project, making it enabled in the current model, and adding it as a dependency within all of the other models in the project.
 
 When adding dependencies, Prophecy validates that the dependency coordinates are valid and accessible. If that fails, you will see an invalid coordinates error.
 
@@ -64,13 +64,13 @@ Enable **Warn unpinned** only if you want to point to your GitHub Repository wit
 
 :::
 
-### Add a Prophecy Project dependency
+### Add a Prophecy project dependency
 
-To add another Prophecy Project as a dependency, you must select **Prophecy Project** and select a project from the Project Depedencies dropdown.
+To add another Prophecy project as a dependency, you must select **Prophecy Project** and select a project from the project dependencies dropdown.
 
 :::note
 
-The Prophecy Project must already be released for it to show up in the dropdown.
+The Prophecy project must already be released for it to show up in the dropdown.
 
 :::
 
@@ -97,15 +97,15 @@ To delete a dependency, first navigate to the dependencies list on the [Manage D
 
 :::caution Deleting a dependency
 
-Deleting a dependency deletes it within the whole Project, and all inheriting Models. If you're not confident about
-the functionality of the other Models, it's usually better to disable a dependency, instead of deleting it.
+Deleting a dependency deletes it within the whole project, and all inheriting Models. If you're not confident about
+the functionality of the other models, it's usually better to disable a dependency, instead of deleting it.
 
 :::
 
 ## Storage
 
-All of your dependencies are stored at the Project-level. When adding a dependency to a single Model, by default it becomes available to all the other Models within the same Project.
+All of your dependencies are stored at the project level. When adding a dependency to a single model, by default it becomes available to all the other models within the same project.
 
-Prophecy takes care of pulling the dependencies automatically when a Model is run.
+Prophecy takes care of pulling the dependencies automatically when a model is run.
 
 Dependencies are saved within your **packages.yml** file.

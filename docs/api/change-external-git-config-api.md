@@ -6,7 +6,7 @@ description: Use this API to manage the Git provider configured for specific Pro
 tags: [git, api, gitlab, bitbucket, github]
 ---
 
-If you've migrated Git providers, you'll need to update Prophecy Projects to use the new Git provider. You can use the `updateRemoteURI` API to configure Prophecy Projects to point to the migrated repositories.
+If you've migrated Git providers, you'll need to update Prophecy projects to use the new Git provider. You can use the `updateRemoteURI` API to configure Prophecy projects to point to the migrated repositories.
 
 You'll be able to perform the API call manually or using [Postman](#tips). If you need to migrate projects in bulk, [follow these steps](#tips) before calling the `updateRemoteURI` API.
 
@@ -104,7 +104,7 @@ Response:
 
 | Parameter               | Description                                                                                                              | Required | Example                                   |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------ | -------- | ----------------------------------------- |
-| projectUID              | Prophecy Project ID, found in the Project URL                                                                            | Required | "11"                                      |
+| projectUID              | Prophecy project ID, found in the project URL                                                                            | Required | "11"                                      |
 | externalRepoUri         | Repository target for migration. Be sure to use the \*.git suffix as appropriate for cloning using https or SSH options. | Required | "https://gitlab.com/****/examplerepo.git" |
 | externalGitProvider     | Possible values (case sensitive): Github, GithubEnterprise, GitLab, GitLabEnterprise, BitBucket, AzureDevOps, Other      | Required | GitLab                                    |
 | externalRepoEmail       | If provided, the API call will validate the two repos are the same.                                                      | Optional | "myemail@mycompany.com"                   |
@@ -113,10 +113,10 @@ Response:
 
 ### Each user needs to update their Git credential
 
-After each Project is configured for a new Git provider's repo, the Prophecy users will need to update their Git credentials.
+After each project is configured for a new Git provider's repo, the Prophecy users will need to update their Git credentials.
 
 1. Open the new Git provider (eg Gitlab) and create a new token. Be sure the new token has permission to write to all the important repositories.
-2. Open Prophecy. Add a new Git credential for the new provider (eg Gitlab). Configure Projects to use the new Git credential.
+2. Open Prophecy. Add a new Git credential for the new provider (eg Gitlab). Configure projects to use the new Git credential.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -181,6 +181,6 @@ tableQueryProject(<insert_project_uid_here>: String!) {
 }
 ```
 
-Now you can use the returned list of Project UIDs to call the `updateRemoteURI` API, once per Project UID. This can be automated using a simple script.
+Now you can use the returned list of project UIDs to call the `updateRemoteURI` API, once per project UID. This can be automated using a simple script.
 
 </details>

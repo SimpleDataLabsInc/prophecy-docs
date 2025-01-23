@@ -20,7 +20,7 @@ The below list contains the additional parameters to read a JSON file:
 
 | Parameter    | Description                                                                                                  | Required |
 | ------------ | ------------------------------------------------------------------------------------------------------------ | -------- |
-| Dataset Name | Name of the Dataset                                                                                          | True     |
+| Dataset Name | Name of the dataset                                                                                          | True     |
 | Location     | Location of the file(s) to be loaded <br/> E.g.: `dbfs:/data/test.json`                                      | True     |
 | Schema       | Schema to applied on the loaded data. Can be defined/edited as JSON or inferred using `Infer Schema` button. | True     |
 
@@ -73,7 +73,7 @@ The below list contains the additional parameters to write a JSON file:
 
 | Parameter    | Description                                                               | Required |
 | ------------ | ------------------------------------------------------------------------- | -------- |
-| Dataset Name | Name of the Dataset                                                       | True     |
+| Dataset Name | Name of the dataset                                                       | True     |
 | Location     | Location of the file(s) to be loaded <br/> E.g.: `dbfs:/data/output.json` | True     |
 
 ### Example {#target-example}

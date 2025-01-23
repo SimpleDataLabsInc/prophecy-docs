@@ -88,15 +88,15 @@ Click **(7) Complete** when finished. Prophecy checks the credentials and detail
 
 Note, fabrics are owned by Teams. Every Member present within the Team will be able to access the fabric, however, each individual has to provide their own Personal Access Token.
 
-## 3. Create a new Project
+## 3. Create a new project
 
-Prophecy’s Project is a Git repository or a directory on Git that contains all of your transformation logic. Each Prophecy Project contains a dbt Core™️ project. Learn more about Projects [here.](/docs/concepts/project/project.md)
+Prophecy’s project is a Git repository or a directory on Git that contains all of your transformation logic. Each Prophecy project contains a dbt Core™️ project. Learn more about projects [here.](/docs/concepts/project/project.md)
 
 After fabric creation you can see one project initialized for you by default called HelloWorld_SQL. If you just want to play around with Prophecy, you can start there. However, for the purpose of this tutorial we’re going to build a brand new project from scratch.
 
-![Create New Project](img/3-1-create-new-project.png)
+![Create New project](img/3-1-create-new-project.png)
 
-To create a new Project press on the **(1) Create Entity** button on the sidebar and choose **(2) Create** on the Project tile. The Project creation screen will open. Here, on the first page: we configure basic project details; and on the second page: we configure the Git repository details. Fill in the Project’s **(3) Name,** **(4) Description** (optional), and set the **(5) Project Type** to SQL. After that, select the **(6) Team** which is going to own the newly selected project. By default, you can leave the selected team to be your personal one. Finally, we choose the same **(7) Provider** as we selected in the previous step - Databricks. Once all the details are filled out correctly, you can proceed to the next step by clicking **(8) Continue.**
+To create a new project press on the **(1) Create Entity** button on the sidebar and choose **(2) Create** on the project tile. The project creation screen will open. Here, on the first page: we configure basic project details; and on the second page: we configure the Git repository details. Fill in the project’s **(3) Name,** **(4) Description** (optional), and set the **(5) project Type** to SQL. After that, select the **(6) Team** which is going to own the newly selected project. By default, you can leave the selected team to be your personal one. Finally, we choose the same **(7) Provider** as we selected in the previous step - Databricks. Once all the details are filled out correctly, you can proceed to the next step by clicking **(8) Continue.**
 
 ![Git Repository Connection](img/3-2-git-repository-connection.png)
 
@@ -358,7 +358,7 @@ Let’s start by dragging and dropping the the **(2) DBT Gem.** Once it’s on t
 3. **Git reference value** - defines from which branch on Git, the code is pulled to execute, we set it to the currently used developed branch - same as what we set in the step 5.1 Checkout development branch (the name can be also seen in the footer).
 
 :::info
-DBT Projects will appear in this dropdown if (1) the Project is released and (2) the Project is hosted on Git outside Prophecy's managed Git provider.
+DBT projects will appear in this dropdown if (1) the project is released and (2) the project is hosted on Git outside Prophecy's managed Git provider.
 :::
 
 Once all the basic properties are set click **(4) Save.**
@@ -382,7 +382,7 @@ The process of deploying code is composed of 4 steps:
 
 ### 5.4 Monitor the release
 
-![Release the Project](img/5-3-release-the-project.png)
+![Release the project](img/5-3-release-the-project.png)
 
 During the release process Prophecy automatically packages, tests, and deploys your project’s artifacts - mostly SQL queries - to your Databricks Warehouse. You can monitor this process in the final **(1) Release** page.
 

@@ -12,7 +12,7 @@ Streaming pipelines work differently from batch pipelines:
 1. Streaming applications are always running, continuously processing incoming data.
 2. Data is processed in micro-batches, with the notable exception of [Continuous Triggers](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#continuous-processing) (an experimental feature available in Spark3.3). Continuous triggers are not supported by Prophecy.
 3. Streaming applications handle transient data rather than maintain the entire data. Aggregations and joins require watermarking for maintaining a limited state.
-4. All Streaming Datasets can behave similarly to Batch datasets using the Spark [`ForEachBatch`](https://spark.apache.org/docs/latest/api/python/reference/pyspark.ss/api/pyspark.sql.streaming.DataStreamWriter.foreachBatch.html), though `ForEachBatch` is not supported by Prophecy.
+4. All Streaming datasets can behave similarly to Batch datasets using the Spark [`ForEachBatch`](https://spark.apache.org/docs/latest/api/python/reference/pyspark.ss/api/pyspark.sql.streaming.DataStreamWriter.foreachBatch.html), though `ForEachBatch` is not supported by Prophecy.
 
 The streaming capability is available for `Python` projects that do not use UC Shared clusters.
 
@@ -25,7 +25,7 @@ The streaming capability is available for `Python` projects that do not use UC S
 ## Spark Structured Streaming using Prophecy IDE
 
 ![How to Create a Streaming pipeline](./img/create-streaming-pipeline.png)
-Within a Prophecy `Python` Project, a user can create a Structured Streaming pipeline using the Streaming(beta) mode.
+Within a Prophecy `Python` project, a user can create a Structured Streaming pipeline using the Streaming(beta) mode.
 
 ### Working with a Streaming pipeline
 

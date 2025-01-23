@@ -15,7 +15,7 @@ Let's see how to create a Basic Loop which loops over a Metadata Table, and for 
 
 ## Creating a TableIterator gem
 
-First add the Input gem on which you want to Iterate over. For this, simply use an existing Dataset or create a new [Source gem](/docs/Spark/gems/source-target/source-target.md) pointing to your Metadata table.
+First add the Input gem on which you want to Iterate over. For this, simply use an existing dataset or create a new [Source gem](/docs/Spark/gems/source-target/source-target.md) pointing to your Metadata table.
 You can run this Source gem to see the data your loop would be running for.
 
 Now, Drag and Drop the **(1) TableIterator** gem from the Subgraph menu, and connect it to the above created Source gem.

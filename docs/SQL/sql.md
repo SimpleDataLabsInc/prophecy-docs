@@ -16,11 +16,11 @@ Prophecy Copilot for SQL includes a visual editor and a code editor. They will a
 ### Visual editor
 
 The visual canvas is the main place to develop data models.
-Open any SQL Project in Prophecy to find the complete end-to-end **Project Lineage**. The Project Lineage provides a quick understanding of how models refer to other models, seeds, or sources. This quick, high-level project overview is explainable without having to read code.
+Open any SQL project in Prophecy to find the complete end-to-end **Project Lineage**. The Project Lineage provides a quick understanding of how models refer to other models, seeds, or sources. This quick, high-level project overview is explainable without having to read code.
 
 ![ProjectLineage](img/ProjectLineage.png)
 
-The Project Browser displays entities available or used within this Project. Just click the Environment tab to browse through available databases and tables. Each Project connects to a fabric, or execution environment. This fabric defines the SQL Warehouse where each model will materialize a single table or view. There are lots of additional features to learn more about, including configurations and committing code to Git. A single Project page contains lots of capabilities!
+The Project Browser displays entities available or used within this project. Just click the Environment tab to browse through available databases and tables. Each project connects to a fabric, or execution environment. This fabric defines the SQL Warehouse where each model will materialize a single table or view. There are lots of additional features to learn more about, including configurations and committing code to Git. A single project page contains lots of capabilities!
 
 From here you can easily create new models by clicking on **+** next to the models pane, or you can edit existing models.
 ![AddModel](img/AddModel.png)

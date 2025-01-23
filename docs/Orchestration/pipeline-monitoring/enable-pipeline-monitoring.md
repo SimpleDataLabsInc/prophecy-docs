@@ -9,22 +9,22 @@ tags:
   - spark
 ---
 
-To use Pipeline Monitoring, you must enable it by updating the Prophecy Library version in your Project dependencies, and turn on the Pipeline Monitoring flag in Pipeline Settings.
+To use Pipeline Monitoring, you must enable it by updating the Prophecy Library version in your project dependencies, and turn on the Pipeline Monitoring flag in Pipeline Settings.
 
 ## Update Prophecy Library version
 
-Pipeline Monitoring requires your Project to be on the follow versions:
+Pipeline Monitoring requires your project to be on the follow versions:
 
 - Prophecy Scala libs version 8.0.23 or above.
 - Prophecy Python libs version 1.9.9 or above.
 
 You can check your **ProphecyLibsPython** version under **Dependencies**.
 
-- If your Project's Prophecy Scala and Python libs versions are out of date, **Update** them.
+- If your project's Prophecy Scala and Python libs versions are out of date, **Update** them.
 
 ![ProphecyLibsPython](img/prophecy-libs-python.png)
 
-If you have uncommitted changes in your pipelines, you may be prompted to either **Commit & Save** or **Save Without Committing**. The update will affect all pipelines in your Project.
+If you have uncommitted changes in your pipelines, you may be prompted to either **Commit & Save** or **Save Without Committing**. The update will affect all pipelines in your project.
 
 For an up-to-date list of Prophecy versions and libraries, see [Version Chart](/docs/release_notes/version_chart/version_chart.md).
 

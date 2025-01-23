@@ -33,7 +33,7 @@ Conveniently filter columns visible in the UI by clicking on the ellipsis `...` 
 
 ### Load More Rows and Total Count
 
-View and assess a larger Dataset by loading more rows. The total count of rows and columns is visible, providing a comprehensive overview of the data.
+View and assess a larger dataset by loading more rows. The total count of rows and columns is visible, providing a comprehensive overview of the data.
 
 ### Download Data
 

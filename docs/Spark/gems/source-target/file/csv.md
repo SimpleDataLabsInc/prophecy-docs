@@ -20,7 +20,7 @@ The below list contains the additional parameters to read a CSV file:
 
 | Parameter    |     | Description                                                                                                  | Required |
 | ------------ | --- | ------------------------------------------------------------------------------------------------------------ | -------- |
-| Dataset Name |     | Name of the Dataset                                                                                          | True     |
+| Dataset Name |     | Name of the dataset                                                                                          | True     |
 | Location     |     | Location of the file(s) to be loaded <br/> E.g.: `dbfs:/data/test.csv`                                       | True     |
 | Schema       |     | Schema to applied on the loaded data. Can be defined/edited as JSON or inferred using `Infer Schema` button. | True     |
 
@@ -136,7 +136,7 @@ The below list contains the additional parameters to write a CSV file:
 
 | Parameter    | Description                                                                                            | Required |
 | ------------ | ------------------------------------------------------------------------------------------------------ | -------- |
-| Dataset Name | Name of the Dataset                                                                                    | True     |
+| Dataset Name | Name of the dataset                                                                                    | True     |
 | Location     | Location of the file(s) to be loaded <br/> E.g.: `dbfs:/data/output.csv`                               | True     |
 | Write Mode   | How to handle existing data. See [this table](#supported-write-modes) for a list of available options. | False    |
 

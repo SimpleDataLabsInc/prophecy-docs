@@ -73,8 +73,8 @@ Data Copilot can suggest the next transformation for Leaf Nodes in a graph.
 
 See the following Join suggestion example:
 
-1. Select and drop a Dataset of interest on the canvas.
-2. Data Copilot suggests Datasets which are frequently used with the selected Dataset.
+1. Select and drop a dataset of interest on the canvas.
+2. Data Copilot suggests datasets which are frequently used with the selected dataset.
 3. Data Copilot then suggests a next transformation, in this case, a Join gem.
 
 ### Suggest Expressions
@@ -102,7 +102,7 @@ Data Copilot can generate script gems, user-defined functions in Spark, or macro
 
 ## Map with AI
 
-You don't have to worry about mapping the schema across your model. Data Copilot will map the target schema with the existing gems and Datasets.
+You don't have to worry about mapping the schema across your model. Data Copilot will map the target schema with the existing gems and datasets.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -150,7 +150,7 @@ Here Data Copilot provides a high-level summary of a pipeline and more detailed 
 
 ### Describe Datasets and Metadata
 
-How did a Dataset change? Data Copilot recommends a description of the change for every edit you make.
+How did a dataset change? Data Copilot recommends a description of the change for every edit you make.
 How was a column computed? Data Copilot suggests a plain English description that explains data sources and how every column is generated and what it represents.
 
 <div class="wistia_responsive_padding" style={{padding:'62.5% 0 0 0', position:'relative'}}>

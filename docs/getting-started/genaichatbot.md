@@ -87,9 +87,9 @@ Here are the steps to set up the Slack bot. If you prefer a video walkthrough, [
 #### Pinecone
 
 1. Join your company's Pinecone Organization by asking your Admin for an email invite. Alternatively, create an account [here](https://app.pinecone.io).
-2. Open an existing Pinecone Project or create a new one.
+2. Open an existing Pinecone project or create a new one.
 3. Create an index. We used an index with `1536` dimensions, `Cosine` metric, and an `s1` pod type.
-4. Within the appropriate Pinecone Project, generate a Pinecone API key as mentioned [here.](https://docs.pinecone.io/docs/projects#api-keys) Save it as `PINECONE_TOKEN` in your `.env` file.
+4. Within the appropriate Pinecone project, generate a Pinecone API key as mentioned [here.](https://docs.pinecone.io/docs/projects#api-keys) Save it as `PINECONE_TOKEN` in your `.env` file.
 
 ### 1b. Databricks Secrets and Schemas
 
@@ -121,7 +121,7 @@ databricks secrets list --scope slack
 
 1.  **Login** to [Prophecy](https://app.prophecy.io/metadata/auth/signup)
 2.  **Import** a new Prophecy [Project](/docs/concepts/project/project.md#1-create-new-project)
-3.  **Load the forked Git repository** to the Prophecy Project as shown in this 30-second [video.](https://github.com/prophecy-samples/gen-ai-chatbot-template/assets/3248329/dcdfabaf-4870-421d-9f92-4ab028c5db5a), pointing to your fork at `https://github.com/<your_username>/gen-ai-chatbot-template`
+3.  **Load the forked Git repository** to the Prophecy project as shown in this 30-second [video.](https://github.com/prophecy-samples/gen-ai-chatbot-template/assets/3248329/dcdfabaf-4870-421d-9f92-4ab028c5db5a), pointing to your fork at `https://github.com/<your_username>/gen-ai-chatbot-template`
 4.  **Connect** to your Spark cluster by creating a fabric following [these steps.](docs/administration/Spark-fabrics/databricks/databricks.md)
 
 ### 1d. Set up Databases
@@ -187,7 +187,7 @@ After ingesting the Slack question message and doing some transformation steps, 
 
 ![A GenerativeAI Chatbot](img/genai_intro_video.gif)
 
-And that’s it! Congratulations on running the Generative AI Chatbot with Prophecy on Spark! You can check out the end result in the [video here](https://www.loom.com/share/a89ee52de80e41abb9b5647c1da73e18?sid=6fcf0298-79e8-412b-8e48-f58c9d6d7f3b) and a longer version [here](https://www.youtube.com/watch?v=1exLfT-b-GM&t=1090s). Don't forget, all of these visually developed pipelines are converted to Spark code behind the scenes. Toggle to the code editor to see the code. This code is available in your forked GitHub repository when you commit, merge, and release your changes via the Prophecy UI. Now your Spark project can be run on any Spark cluster via the Prophecy interface or using your favorite build and deploy toolset. You may notice a Chatbot Batch pipeline available in the Project for those who wish to explore it. We won’t go into detail on Chatbot Batch because the steps are similar to those in the Chatbot Live (streaming) pipeline.
+And that’s it! Congratulations on running the Generative AI Chatbot with Prophecy on Spark! You can check out the end result in the [video here](https://www.loom.com/share/a89ee52de80e41abb9b5647c1da73e18?sid=6fcf0298-79e8-412b-8e48-f58c9d6d7f3b) and a longer version [here](https://www.youtube.com/watch?v=1exLfT-b-GM&t=1090s). Don't forget, all of these visually developed pipelines are converted to Spark code behind the scenes. Toggle to the code editor to see the code. This code is available in your forked GitHub repository when you commit, merge, and release your changes via the Prophecy UI. Now your Spark project can be run on any Spark cluster via the Prophecy interface or using your favorite build and deploy toolset. You may notice a Chatbot Batch pipeline available in the project for those who wish to explore it. We won’t go into detail on Chatbot Batch because the steps are similar to those in the Chatbot Live (streaming) pipeline.
 
 ## Summary
 

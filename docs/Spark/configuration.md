@@ -155,7 +155,7 @@ In the below image: <br />
 
 ### Using config in paths for Source/Target gems
 
-Config can also be used to refer to paths. This type of configuration comes in handy in situation where you have DEV, QA, and PROD data, and you want to configure Dataset (or in general the job runs) based on which environment you are running it in.
+Config can also be used to refer to paths. This type of configuration comes in handy in situation where you have DEV, QA, and PROD data, and you want to configure dataset (or in general the job runs) based on which environment you are running it in.
 
 ![Config path example](img/configuration/config-pipeline-path-eg.png)
 
@@ -163,7 +163,7 @@ When using Jinja config for the previous example, you would use `dbfs:/Prophecy/
 
 ### Edit Pipeline Name
 
-To change the pipeline name itself, go to Prophecy's metadata page. Locate the pipeline within a Project, and click the pencil icon.
+To change the pipeline name itself, go to Prophecy's metadata page. Locate the pipeline within a project, and click the pencil icon.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>

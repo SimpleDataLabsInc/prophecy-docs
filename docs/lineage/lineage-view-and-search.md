@@ -33,7 +33,7 @@ Select a particular component aas shown below to get the code-level view.
 
 ### Dataset zoom-in view
 
-This view gives info around all the upstream and downstream transformations if any for all the columns of the selected Dataset.
+This view gives info around all the upstream and downstream transformations if any for all the columns of the selected dataset.
 
 ![Dataset zoom-in](img/lineage-dataset-zoom-in.png)
 

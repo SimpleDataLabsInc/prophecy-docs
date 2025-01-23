@@ -36,7 +36,7 @@ A user who logs into Prophecy has access to the integrated development environme
 
 ![Prophecy IDE](./img/arch_ide.png)
 
-Teams are the primary mechanism of ownership. Teams own Projects where pipelines, datasets, and jobs live. Teams also own execution fabrics that provide the execution and storage resources for execution including on SQL Warehouses and Spark clusters.
+Teams are the primary mechanism of ownership. Teams own projects where pipelines, datasets, and jobs live. Teams also own execution fabrics that provide the execution and storage resources for execution including on SQL Warehouses and Spark clusters.
 
 ### SQL
 

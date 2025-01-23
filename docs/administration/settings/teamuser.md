@@ -15,7 +15,7 @@ Teams represent a group of users who work together.
   - **Teams own execution Fabrics** that provide the execution and storage resources for execution including Spark clusters
 - Users get access via teams:
   - **Personal Teams** For every user, a default team in created that only contains one user. If only one user is to be given access to a project, it can be done via this team
-  - **Personal Projects** Users can put personal projects in their _personal team_ and not share it with others
+  - **Personal projects** Users can put personal projects in their _personal team_ and not share it with others
 
 ## Settings Page
 

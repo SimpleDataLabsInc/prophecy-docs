@@ -57,7 +57,7 @@ PineconeLookup requires a model_embedding column as input. Use one of Prophecy's
 
 ### Output
 
-The output Dataset contains the pinecone_matches and pinecone_error columns. For each input content entry, this gem adds an array to the pinecone_matches column. The output array will have [Number of Results](/docs/Spark/gems/machine-learning/ml-pinecone-lookup.md#properties) entries.
+The output dataset contains the pinecone_matches and pinecone_error columns. For each input content entry, this gem adds an array to the pinecone_matches column. The output array will have [Number of Results](/docs/Spark/gems/machine-learning/ml-pinecone-lookup.md#properties) entries.
 
 | Column           | Description                                                                                                                                                                          |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
