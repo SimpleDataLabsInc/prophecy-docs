@@ -115,6 +115,7 @@ const config = {
             label: "Feedback",
             position: "right",
           },
+          { to: "http://app.prophecy.io/", label: "Login", position: "right" },
         ],
       },
       footer: {
