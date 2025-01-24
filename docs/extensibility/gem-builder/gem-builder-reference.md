@@ -11,6 +11,10 @@ import TabItem from '@theme/TabItem';
 
 This page provides information about how gems are written in code. Reference this page when you are building or editing custom gems.
 
+## Requirements
+
+Some options require a specific **gemLibsVersion**. To update this, you must manually change the `gemLibsVersion` value inside **pbt_project.yml** in your project Git repository.
+
 ## Mode
 
 There are a few different types of gems that you can create. The table below describes each mode you can choose.
@@ -23,29 +27,33 @@ There are a few different types of gems that you can create. The table below des
 
 ## Classes
 
-The following classes must be included in all Spark gems.
+The following classes must be included in all Spark gems. Each class extends a base class that Prophecy has defined.
 
-| Class      | Purpose                                                                                                                                                                                    |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Parent     | The class where you inherit the representation of the overall gem. For Transformation gems, this class extends `ComponentSpec`. For Dataset Format gems, this class extends `DatasetSpec`. |
-| Properties | Contains the properties to be made available to the user for this particular gem. Extends `ComponentProperties`. This class is persisted in JSON and stored in Git.                        |
-| Code       | Contains the Spark code that needs to run on your Spark cluster. Extends `ComponentCode`.                                                                                                  |
+- A class where you inherit the representation of the overall gem.
+- A class that contains the properties to be made available to the user for this particular gem.
+- A class that defines the Spark code that needs to run on your Spark cluster.
+
+| Class                           | Base Class for Transformation | Base Class for Dataset Format | Base Class for Custom Subgraph |
+| ------------------------------- | ----------------------------- | ----------------------------- | ------------------------------ |
+| class CustomGem(BaseClass)      | `ComponentSpec`               | `DatasetSpec`                 | `MetaComponentSpec`            |
+| class YourProperties(BaseClass) | `ComponentProperties`         | `ComponentProperties`         | `MetaComponentProperties`      |
+| class YourCode(BaseClass)       | `ComponentCode`               | `ComponentCode`               | `MetaComponentCode`            |
 
 ## Functions
 
 The following functions can be used to customize Spark gems.
 
-| Function                    | Purpose                                                                                          | Return                 | Gem Mode       |
-| --------------------------- | ------------------------------------------------------------------------------------------------ | ---------------------- | -------------- |
-| `customOutputSchemaEnabled` | Enables the [custom schema](docs/concepts/project/gems.md#outputs) option by default in the gem. | Boolean                | Transformation |
-| `optimizeCode`              | Enables the Prophecy optimizer to simplify the gem code when it runs.                            | Boolean                | All            |
-| `dialog`                    | Defines how you want the gem to look like in the visual interface.                               | `Dialog` object        | Transformation |
-| `sourceDialog`              | Defines how you want the source gem to look like in the visual interface.                        | `DatasetDialog` object | Dataset        |
-| `targetDialog`              | Defines how you want the target gem to look like in the visual interface.                        | `DatasetDialog` object | Dataset        |
-| `validate`                  | Defines how to detect user errors when using the gem.                                            | `Diagnostics` array    | All            |
-| `onChange`                  | Define UI state transformations                                                                  | New state              | All            |
-| `serializeProperty`         | (**Scala only**) Takes a Properties object and converts it into JSON format                      | String                 | All            |
-| `deserializeProperty`       | (**Scala only**) Parses a JSON string and converts it into a Properties object                   | `Properties` object    | All            |
+| Function                    | Purpose                                                                                                                                     | Return                 | Gem Mode                    |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- | --------------------------- |
+| `optimizeCode`              | Enables the Prophecy optimizer to simplify the gem code when it runs.                                                                       | Boolean                | All                         |
+| `customOutputSchemaEnabled` | Enables the [custom schema](docs/concepts/project/gems.md#outputs) option by default in the gem. Requires gemLibsVersion 1.1.47+ for Scala. | Boolean                | Transformation              |
+| `dialog`                    | Defines how you want the gem to look like in the visual interface.                                                                          | `Dialog` object        | Transformation and Subgraph |
+| `sourceDialog`              | Defines how you want the source gem to look like in the visual interface.                                                                   | `DatasetDialog` object | Dataset and Subgraph        |
+| `targetDialog`              | Defines how you want the target gem to look like in the visual interface.                                                                   | `DatasetDialog` object | Dataset and Subgraph        |
+| `validate`                  | Defines how to detect user errors when using the gem.                                                                                       | `Diagnostics` array    | All                         |
+| `onChange`                  | Define UI state transformations                                                                                                             | New state              | All                         |
+| `serializeProperty`         | (**Scala only**) Takes a Properties object and converts it into JSON format                                                                 | String                 | All                         |
+| `deserializeProperty`       | (**Scala only**) Parses a JSON string and converts it into a Properties object                                                              | `Properties` object    | All                         |
 
 ## Examples
 
