@@ -1,7 +1,8 @@
 ---
-title: Gem Builder Reference
+title: Gem Builder reference for Spark
 id: gem-builder-reference
 description: Detailed explanation of custom gem code structure
+sidebar_label: Reference for Spark
 tags:
   - gem builder
 ---
