@@ -82,3 +82,13 @@ If the pull request template is configured correctly and enabled, you can open a
 ![PR creation](img/pr-template-openpr.png)
 
 When you open a pull request from the Prophecy interface, Prophecy will redirect you to your external Git provider based on the template defined in the project **Settings** tab.
+
+## Merged Externally
+
+After you merge any branch remotely:
+
+1. Open your Prophecy project.
+1. Go to the **Merge** step of the Git dialog.
+1. Click **Merged Externally** and **Confirm**.
+
+![Merged externally](img/merge-externally.png)
