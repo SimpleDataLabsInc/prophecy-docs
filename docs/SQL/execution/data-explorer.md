@@ -16,7 +16,7 @@ The Data Explorer feature empowers users to explore and analyze their data sampl
 
 ## Interims are Data Samples
 
-Within any **(1) SQL Model**, interactively **(2) Run** upto one of the Gems. Notice the **(3) Data Interim** appears. Open the interim (data sample) to inspect the data.
+Within any **(1) SQL Model**, interactively **(2) Run** upto one of the gems. Notice the **(3) Data Interim** appears. Open the interim (data sample) to inspect the data.
 
 ![DataExplorationSQL](./img/DataExplorationSQL.png)
 

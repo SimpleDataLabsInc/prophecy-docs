@@ -18,9 +18,9 @@ Using the variant schema functionality, you can do the following:
 
 ## Inferring the variant schema
 
-Variant schemas are not stored within the table definition and can vary for each row, making them difficult to infer and use. Fortunately, you don't have to infer the schema yourself. You can use the column selector inside of your Gems to automatically infer the variant schema, explore the multi-type variant structure, and later select a nested column to use in your transformations.
+Variant schemas are not stored within the table definition and can vary for each row, making them difficult to infer and use. Fortunately, you don't have to infer the schema yourself. You can use the column selector inside of your gems to automatically infer the variant schema, explore the multi-type variant structure, and later select a nested column to use in your transformations.
 
-To automatically infer the variant schema, start by opening a Gem that uses a variant column input.
+To automatically infer the variant schema, start by opening a gem that uses a variant column input.
 
 - Select the variant column, and click **Infer Schema**.
 
@@ -30,7 +30,7 @@ Prophecy will automatically detect and identify the variant types in your input 
 
 :::note
 
-The inferred schema is cached so that you can use it again in the future whenever you reopen the Model, Gem, or another Gem connected to the same input port. Check the bottom of the column selector to see the last time the variant schema was inferred.
+The inferred schema is cached so that you can use it again in the future whenever you reopen the model, gem, or another gem connected to the same input port. Check the bottom of the column selector to see the last time the variant schema was inferred.
 
 To refresh the schema, simply click **Infer Schema** again.
 
@@ -80,6 +80,6 @@ When adding a column nested within a variant, the output column name, expression
 
 Prophecy automatically adds a `CAST` to any column you add from a nested type. By default, the column is cast using the standard `CAST(x AS y)` syntax.
 
-In some cases, a path within a variant may hold different value types across rows. For instance, consider a Dataset where each row’s value key contains different data types, such as integer, object, and boolean.
+In some cases, a path within a variant may hold different value types across rows. For instance, consider a dataset where each row’s value key contains different data types, such as integer, object, and boolean.
 
 Prophecy supports this scenario by presenting each detected data type for a given key, array, or object as a separate item in the column selector. When you add one of those columns to the expression, we use explicit casting, which may error out if the cast is not possible. You can change this behavior by using `TRY_CAST`, which returns `null` if the cast is not possible.

@@ -1,61 +1,48 @@
 ---
-title: Gem builder for Spark
+title: Gem Builder for Spark
 id: spark-gem-builder
-description: Gem builder
+description: Build Spark gems in Python or Scala
 tags:
   - gem builder
 ---
 
-:::caution Enterprise Only
-
-Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about the Enterprise offering.
-
-:::
-
-Each Prophecy Pipeline is composed of individual operations, or [Gems](/docs/get-started/concepts/project/gems.md), that perform actions on data. While Prophecy offers dozens of Gems out-of-the-box, some data practitioners want to extend this idea and create their own Gems. Gem Builder allows enterprise users to add custom Gems. Create custom source, target, and transformation Gems, publish, and your team can utilize your custom Gem.
-
-<div class="video-container">
-<iframe src="https://www.youtube.com/embed/K23pOatAeVE" title="YouTube video player" frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
-</div>
-<br />
-
-## Getting Started
-
-Custom Gem logic can be shared with other users within the Team and Organization. Navigate to the Gem listing to review Prophecy-defined and User-defined Gems. Add a new Gem or modify an existing Gem. Specify Gem name, preferred language, and Gem category. Paste/Write your code specification at the prompt. Click `Preview` to review the UX. Fill in some values and click `save` to check the Python or Scala code generated. When the Gem is ready, `Publish`! The new Custom Gem is available to use in Pipelines!
-
-Please refer below video for a step-by-step example:
-
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/121796483/215807557-c64d2e96-9f2b-47d8-b5ed-7b449dba3246.mp4" title="Gem builder" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
-
-## Tutorial
-
-The Gem builder is a tool that enables users to create any custom Gems or modify existing ones. There are two types of Gems:
-
-- **DataSource Gems**: These Gems enable the reading and writing of data from or to various data sources
-- **Transform Gems**: These Gems apply transformations/joins/any other custom logic onto any DataFrame(s) that are passed into them.
-
-Programmatically, a Gem is a component with the following parts:
-
-- The **Gem UI Component** to get user information from the screen (This code is rendered on the Prophecy UI)
-- The **Gem Code Logic** which is how the Gem acts within the context of a Pipeline.
-
-Gem code can be written using either Python or Scala.
-
-## Defining a Gem
-
-### Example
-
-````mdx-code-block
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs>
+[Gems](docs/concepts/project/gems.md) are visually-packaged parcels of code that perform specific operations on data. While Prophecy provides many gems out of the box, Prophecy also lets you create your own gems! Not only can you create new gems, but you can also share them in the [Package Hub](/docs/extensibility/package-hub/package-hub.md) or with selected teams.
 
+## Overview
+
+Let's learn how to create a Spark gem. At a high level, this involves the following steps:
+
+1. Create a Spark project in which you will create your custom gem.
+1. Add a gem to the Gems section of the project sidebar.
+1. Specify the name and type of gem that you want to create.
+1. Write your code specifications.
+1. Preview the rendered visual interface of your gem.
+1. Fill in some values and review the generated code.
+
+:::note
+If you plan to share these gems in a package, be aware that everything in the project (pipelines, subgraphs, jobs, etc.) will be part of the package, too.
+:::
+
+Next, we will review these steps in greater detail.
+
+## Gem mode
+
+There are a few different types of gems that you can create. The table below describes each mode you can choose.
+
+| Mode                              | Description                                                                                                | Additional settings                                   |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| Transformation                    | Edits intermediate data in the pipeline that is in-memory.                                                 | Choose the **category** of the transformation gem     |
+| Dataset Format                    | Reads and writes data between storage and memory.                                                          | Choose whether the type is **batch** or **streaming** |
+| Custom Subgraph (**Python only**) | Controls the flow of gems. Visit the [Subgraph](docs/Spark/gems/subgraph/subgraph.md) page for an example. | None                                                  |
+
+## Gem template
+
+Each type of gem will have a different code template that Prophecy provides. Let's review the template of a **transformation** gem.
+
+<Tabs>
 <TabItem value="py" label="Python">
 
 ```py
@@ -63,106 +50,496 @@ from prophecy.cb.server.base.ComponentBuilderBase import *
 from pyspark.sql import *
 from pyspark.sql.functions import *
 
-from prophecy.cb.ui.UISpecUtil import getColumnsToHighlight2, validateSColumn
+from prophecy.cb.server.base import WorkflowContext
+from prophecy.cb.server.base.datatypes import SInt, SString
 from prophecy.cb.ui.uispec import *
-from prophecy.cb.util.StringUtils import isBlank
 
 
-class Filter(ComponentSpec):
-    name: str = "Filter"
+class CustomLimit(ComponentSpec):
+    name: str = "CustomLimit"
     category: str = "Transform"
+
+    def optimizeCode(self) -> bool:
+        # Return whether code optimization is enabled for this component
+        return True
+
+    @dataclass(frozen=True)
+    class CustomLimitProperties(ComponentProperties):
+        # properties for the component with default values
+        my_property: SString = SString("default value of my property")
+
+    def dialog(self) -> Dialog:
+        # Define the UI dialog structure for the component
+        return Dialog("CustomLimit")
+
+    def validate(self, context: WorkflowContext, component: Component[CustomLimitProperties]) -> List[Diagnostic]:
+        # Validate the component's state
+        return []
+
+    def onChange(self, context: WorkflowContext, oldState: Component[CustomLimitProperties], newState: Component[CustomLimitProperties]) -> Component[
+    CustomLimitProperties]:
+        # Handle changes in the component's state and return the new state
+        return newState
+
+
+    class CustomLimitCode(ComponentCode):
+        def __init__(self, newProps):
+            self.props: CustomLimit.CustomLimitProperties = newProps
+
+        def apply(self, spark: SparkSession, in0: DataFrame) -> DataFrame:
+            # This method contains logic used to generate the spark code from the given inputs.
+            return in0
+```
+
+</TabItem>
+
+<TabItem value="Scala" label="Scala">
+
+```scala
+
+package prophecyioteam.helloworldscala.gems
+
+import io.prophecy.gems._
+import io.prophecy.gems.dataTypes._
+import io.prophecy.gems.uiSpec._
+import io.prophecy.gems.diagnostics._
+import io.prophecy.gems.componentSpec._
+import org.apache.spark.sql.{DataFrame, SparkSession}
+import io.prophecy.gems.copilot._
+import play.api.libs.json.{Format, OFormat, JsResult, JsValue, Json}
+
+
+class CustomLimit extends ComponentSpec {
+
+  val name: String = "CustomLimit"
+  val category: String = "Transform"
+  type PropertiesType = CustomLimitProperties
+  override def optimizeCode: Boolean = true
+
+  case class CustomLimitProperties(
+    @Property("Property1")
+    property1: String = ""
+  ) extends ComponentProperties
+
+  implicit val CustomLimitPropertiesFormat: Format[CustomLimitProperties] = Json.format
+
+  def dialog: Dialog = Dialog("CustomLimit")
+
+  def validate(component: Component)(implicit context: WorkflowContext): List[Diagnostic] = Nil
+
+  def onChange(oldState: Component, newState: Component)(implicit context: WorkflowContext): Component = newState
+
+  def deserializeProperty(props: String): CustomLimitProperties = Json.parse(props).as[CustomLimitProperties]
+
+  def serializeProperty(props: CustomLimitProperties): String = Json.toJson(props).toString()
+
+  class CustomLimitCode(props: PropertiesType) extends ComponentCode {
+    def apply(spark: SparkSession, in: DataFrame): DataFrame = {
+      val out = in
+      out
+    }
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+The template consists of the following components:
+
+| Component                                       | Description                                                                                      |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| Parent class                                    | Extends a parent class from which it inherits the representation of the overall gem.             |
+| Optimize function                               | Enable or disable [code optimization](docs/extensibility/gem-builder/optimization-functions.md). |
+| Properties class                                | Contains a list of the properties to be made available to the user for this particular gem.      |
+| Dialog function                                 | Contains code specific to how the gem UI should look to the user.                                |
+| Serialize/deserialize function (**Scala only**) | Persists objects or exchanges data between different parts of a system                           |
+| Validate function                               | Recognizes errors with any inputs provided by the user.                                          |
+| State change function                           | Defines UI state transformations.                                                                |
+| Component code class                            | Contains the Spark code that needs to run on your Spark cluster.                                 |
+
+## Tutorial
+
+### Create a gem
+
+1. Create a Spark project in Python. The gem will inherit the project-level language.
+1. Click on the **+** in the Gems section of the project sidebar. This will appear on hover.
+1. In the **Gem Name** field, write `CustomLimit`.
+1. Choose **Transformation Gem** mode.
+1. Select the **Transform** category.
+1. Click **Create Gem**.
+
+![Create gem](img/create-gem.png)
+
+Next, we'll add custom code the to code template. The best way to learn how to create new gems is to review the code of existing gems. In this tutorial, we will base our custom gem on the Limit gem. Afterward, you can extend the custom gem logic further.
+
+### Update header
+
+:::note
+
+For gems written in Scala, be sure to update the package to reflect the project name. For example, if the gem is in a "Framework" project, use the statement `package platform.framework.Gems`
+
+:::
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+from prophecy.cb.server.base.ComponentBuilderBase import *
+from pyspark.sql import *
+from pyspark.sql.functions import *
+
+from prophecy.cb.server.base.datatypes import SInt
+from prophecy.cb.ui.uispec import *
+from prophecy.cb.server.base import WorkflowContext
+
+```
+
+</TabItem>
+
+<TabItem value="Scala" label="Scala">
+
+```scala
+
+package platform.< project name >.Gems
+import io.prophecy.Gems._
+import io.prophecy.Gems.componentSpec._
+import io.prophecy.Gems.dataTypes._
+import io.prophecy.Gems.diagnostics._
+import io.prophecy.Gems.uiSpec._
+import org.apache.spark.sql.{DataFrame, SparkSession}
+import play.api.libs.json.{Format, Json}
+
+```
+
+</TabItem>
+</Tabs>
+
+### Extend parent class
+
+Every Gem class needs to extend a parent class from which it inherits the representation of the overall Gem. This includes the UI and the logic. For transform Gems, you need to extend ComponentSpec .
+
+Next provide the name and category of your Gem, "Limit" and "Transform" in this example.
+
+Another thing to note here is optimizeCode. This flag can be set to True or False value depending on whether we want the Prophecy Optimizer to run on this code to simplify it. In most cases, it's best to leave this value as True.
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+class Limit(ComponentSpec):
+    name: str = "Limit"
+    category: str = "Transform"
+    GemDescription: str = "Limits the number of rows in the output"
+    docUrl: str = "https://docs.prophecy.io/Spark/Gems/transform/limit/"
 
     def optimizeCode(self) -> bool:
         return True
 
     @dataclass(frozen=True)
-    class FilterProperties(ComponentProperties):
-        columnsSelector: List[str] = field(default_factory=list)
-        condition: SColumn = SColumn("lit(True)")
 
-    def dialog(self) -> Dialog:
-        return Dialog("Filter").addElement(
-            ColumnsLayout(height="100%")
-                .addColumn(PortSchemaTabs(selectedFieldsProperty=("columnsSelector")).importSchema(), "2fr")
-                .addColumn(StackLayout(height=("100%"))
-                .addElement(TitleElement("Filter Condition"))
-                .addElement(
-                Editor(height=("100%")).withSchemaSuggestions().bindProperty("condition.expression")
-            ), "5fr"))
-
-    def validate(self, component: Component[FilterProperties]) -> List[Diagnostic]:
-        return validateSColumn(component.properties.condition, "condition", component)
-
-    def onChange(self, oldState: Component[FilterProperties], newState: Component[FilterProperties]) -> Component[
-        FilterProperties]:
-        newProps = newState.properties
-        usedColExps = getColumnsToHighlight2([newProps.condition], newState)
-        return newState.bindProperties(replace(newProps, columnsSelector=usedColExps))
-
-    class FilterCode(ComponentCode):
-        def __init__(self, newProps):
-            self.props: Filter.FilterProperties = newProps
-
-        def apply(self, spark: SparkSession, in0: DataFrame) -> DataFrame:
-            return in0.filter(self.props.condition.column())
 ```
 
 </TabItem>
-<TabItem value="scala" label="Scala">
+
+<TabItem value="Scala" label="Scala">
 
 ```scala
-package io.prophecy.core.instructions.all
-import io.prophecy.core.instructions.spec._
-import io.prophecy.core.program.WorkflowContext
-import org.apache.spark.sql.{DataFrame, SparkSession}
 
-object Filter extends ComponentSpec {
-  val name: String = "Filter"
+class Limit extends ComponentSpec {
+
+  val name: String = "Limit"
   val category: String = "Transform"
-  override def optimizeCode: Boolean = true
+  val GemDescription: String = "Limits the number of rows in the input data"
+  val docUrl: String = "https://docs.prophecy.io/Spark/Gems/transform/limit/"
 
-    type PropertiesType = FilterProperties
-  case class FilterProperties(
-    @Property("Columns selector")
-    columnsSelector: List[String] = Nil,
-    @Property("Filter", "Predicate expression to filter rows of incoming dataframe")
-    condition: SColumn = SColumn("lit(true)")
+  type PropertiesType = LimitProperties
+  override def optimizeCode: Boolean = true
+  ...
+```
+
+</TabItem>
+</Tabs>
+
+For our CustomLimit gem, we can start with the same code as the Limit gem and change the `class` name and the `val` name.
+
+### Populate properties class
+
+There is one class (seen here as LimitProperties) that contains a list of the properties to be made available to the user for this particular Gem. Think of these as all the values a user fills out within the interface of this Gem, or any other UI state that you need to maintain (seen here as limit).
+
+:::caution
+
+The content of these Properties classes is persisted in JSON and stored in Git.
+
+:::
+
+These properties are available in validate, onChange and apply and can be set from dialog, functions.
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+    class LimitProperties(ComponentProperties):
+        limit: SInt = SInt("10")
+
+```
+
+</TabItem>
+
+<TabItem value="Scala" label="Scala">
+
+```scala
+
+  case class LimitProperties(
+    @Property("Limit", "Number of rows to limit the incoming DataFrame to")
+    limit: SInt = SInt("10")
   ) extends ComponentProperties
 
-  def dialog: Dialog = Dialog("Filter")
-    .addElement(
-      ColumnsLayout(height = Some("100%"))
-        .addColumn(
-          PortSchemaTabs(selectedFieldsProperty = Some("columnsSelector")).importSchema(),
-          "2fr"
+```
+
+</TabItem>
+</Tabs>
+
+For our CustomLimit Gem, we can take the same case class as the Limit Gem, maybe changing the default limit value.
+
+Now let’s take a look at the methods for the UI Gem component.
+
+### Create UI components
+
+The dialog function contains code specific to how the Gem UI should look to the user.
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+ def dialog(self) -> Dialog:
+        return Dialog("Limit").addElement(
+            ColumnsLayout(gap="1rem", height="100%")
+                .addColumn(PortSchemaTabs().importSchema(), "2fr")
+                .addColumn(
+                ExpressionBox("Limit")
+                    .bindPlaceholder("10")
+                    .bindProperty("limit")
+                    .withFrontEndLanguage(),
+                "5fr"
+            )
         )
+
+
+```
+
+</TabItem>
+
+<TabItem value="Scala" label="Scala">
+
+```scala
+ def dialog: Dialog = Dialog("Limit")
+    .addElement(
+      ColumnsLayout(gap = Some("1rem"), height = Some("100%"))
+        .addColumn(PortSchemaTabs().importSchema(), "2fr")
         .addColumn(
-          StackLayout(height = Some("100%"))
-            .addElement(TitleElement("Filter Condition"))
-            .addElement(
-              Editor(height = Some("100%"))
-                .withSchemaSuggestions()
-                .bindProperty("condition.expression")
-            ),
+          ExpressionBox("Limit")
+            .bindProperty("limit")
+            .bindPlaceholder("10")
+            .withFrontEndLanguage,
           "5fr"
         )
     )
+```
 
-  def validate(component: Component)(implicit context: WorkflowContext): List[Diagnostic] = {
-    val diagnostics =
-      validateSColumn(component.properties.condition, "condition", component)
+</TabItem>
+</Tabs>
+
+The above Dialog function in the limit Gem is rendered on the UI like this:
+![UI](img/UI.png)
+
+There are various UI components that can be defined for custom Gems such as scroll boxes, tabs, buttons, etc.
+
+These UI components can be grouped together in various types of panels to create a custom user experience when using the Gem. After the Dialog object is defined, it's serialized as JSON, sent to the UI, and rendered there.
+
+Depending on what kind of Gem is being created, either a Dialog or a DatasetDialog needs to be defined. See Transformation vs DatasetFormat Gems for details.
+
+Take a look through the Gems inside SparkBasicsScala and SparkBasicsPython projects to for more example dialog methods.
+
+### Validate user input
+
+The validate method performs validation checks so that in the case where there's any issue with any inputs provided for the user an Error can be displayed. In our example case the Limit condition must be an integer within a defined range. Similarly, you can add any validation on your properties.
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+ def validate(self, context: WorkflowContext, component: Component[LimitProperties]) -> List[Diagnostic]:
+        diagnostics = []
+        limitDiagMsg = "Limit has to be an integer between [0, (2**31)-1]"
+        if component.properties.limit.diagnosticMessages is not None and len(component.properties.limit.diagnosticMessages) > 0:
+            for message in component.properties.limit.diagnosticMessages:
+                diagnostics.append(Diagnostic("properties.limit", message, SeverityLevelEnum.Error))
+        else:
+            resolved = component.properties.limit.value
+            if resolved <= 0:
+                diagnostics.append(Diagnostic("properties.limit", limitDiagMsg, SeverityLevelEnum.Error))
+            else:
+                pass
+        return diagnostics
+```
+
+</TabItem>
+
+<TabItem value="Scala" label="Scala">
+
+```scala
+ def validate(component: Component)(implicit context: WorkflowContext): List[Diagnostic] = {
+    import Scala.collection.mutable.ListBuffer
+
+    val diagnostics = ListBuffer[Diagnostic]()
+
+    val (diag, limit) = (component.properties.limit.diagnostics, component.properties.limit.value)
+    diagnostics ++= diag
+
+    val limitDiagMsg = "Limit has to be an integer between [0, (2**31)-1]"
+    if (limit.isDefined) {
+      if (limit.get < 0)
+        diagnostics += Diagnostic("properties.limit", limitDiagMsg, SeverityLevel.Error)
+    }
     diagnostics.toList
   }
 
-  def onChange(oldState: Component, newState: Component)(implicit context: WorkflowContext): Component = {
-    val newProps = newState.properties
-    val portId = newState.ports.inputs.head.id
+```
 
-    val expressions = getColumnsToHighlight(List(newProps.condition), newState)
+</TabItem>
+</Tabs>
 
-    newState.copy(properties = newProps.copy(columnsSelector = expressions))
+### Define state changes
+
+The onChange method is given for the UI State transformations. You are given both the previous and the new incoming state and can merge or modify the state as needed. The properties of the Gem are also accessible to this function, so functions like selecting columns, etc. are possible to add from here.
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+    def onChange(self, context: WorkflowContext, oldState: Component[LimitProperties], newState: Component[LimitProperties]) -> Component[
+        LimitProperties]:
+        return newState
+```
+
+</TabItem>
+
+<TabItem value="Scala" label="Scala">
+
+```scala
+  def onChange(oldState: Component, newState: Component)(implicit context: WorkflowContext): Component = newState
+```
+
+</TabItem>
+</Tabs>
+
+### Serialize or deserialize
+
+Serialize and deserialize methods in Scala are now open source and exposed to the user, so you could extend your own serializer classes if desired, using Play JSON [library](https://www.playframework.com/documentation/2.8.x/ScalaJson) or any other format.
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+< not applicable for Python >
+```
+
+</TabItem>
+
+<TabItem value="Scala" label="Scala">
+
+```scala
+
+ override def deserializeProperty(props: String): PropertiesType = Json.parse(props).as[PropertiesType]
+
+  override def serializeProperty(props: PropertiesType): String = Json.stringify(Json.toJson(props))
+
+```
+
+</TabItem>
+</Tabs>
+
+:::note
+For Scala, this snippet binds the UI Properties to the case class:
+
+`(props: testProperties): String = Json.toJson(props).toString()`
+:::
+
+### Define Spark logic
+
+The last class used here is LimitCode which is inherited from ComponentCode class. This class contains the actual Spark code that needs to run on your Spark cluster. The Spark code for the Gem logic is defined in the apply function. Input/Output of apply method can only be DataFrame or list of DataFrames or empty. For example, we are calling the .limit() method in this example in the apply function.
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+
+    class LimitCode(ComponentCode):
+        def __init__(self, newProps):
+            self.props: Limit.LimitProperties = newProps
+
+        def apply(self, spark: SparkSession, in0: DataFrame) -> DataFrame:
+            return in0.limit(self.props.limit.value)
+
+```
+
+</TabItem>
+
+<TabItem value="Scala" label="Scala">
+
+```scala
+class LimitCode(props: PropertiesType) extends ComponentCode {
+
+    def apply(spark: SparkSession, in: DataFrame): DataFrame = {
+      val out = in.limit(props.limit)
+      out
+    }
+
   }
+```
 
+</TabItem>
+</Tabs>
+
+You can go ahead and preview the component to see how it looks. Note some Gem examples have functions defined within the apply method.
+
+That’s all the code for our example Transformation, the Limit Gem. We walked through the package and import statements, parent class, and properties class. We explored the required methods dialog, validation, onChange, (de)serializeProperty. Finally we saw the Limit Gem’s component code. Now we have a basic understanding of the components needed for any Transformation Gem.
+
+:::info
+If you are using an existing Gem as a guide to creating your new Gem, you will need to change the following at a minimum: ComponentSpec, ComponentProperties, and ComponentCode.
+:::
+
+## Extend functionality
+
+Now for the fun part! We understand a Transform example, and now we want to explore extending to our custom Gem needs. There are several ways to extend your custom Gem.
+
+Looking to craft or adjust a UI element for your custom Gem? Get inspiration from the existing Gems. Find a Gem that has a UI element you want to use - like ColumnsLayout - and use that Gem’s code.
+
+Looking to supply your own function for your custom Gem? Add your function in the ComponentCode’s apply method.
+
+Looking to read or write to a data format beyond the (filetypes, warehouses, and catalog) provided out of the box? GemBuilder is not just for Transformations. Design a new DatasetFormat with GemBuilder using some modifications from the Transformation example.
+
+### Extend UI
+
+Let’s see how to use the ColumnsLayout UI element in detail:
+
+![8](img/8-gm.png)
+Open the **(1) SparkBasics** package dependency for Python or Scala. Explore and scroll to find a Gem, e.g. **(2) OrderBy** with the desired visual component, in this case ColumnsLayout. Find the **(3) relevant code** for the visual element and click **(4) Preview** to see how this visual element is rendered. Try it out! Click on the **(5)customer_id and email** columns, and note these columns now **(6) appear** in the Order Columns list.
+
+If you like the column layout, then add the ColumnsLayout element to your custom Gem. Each time you edit the code, you can click “Preview” to test the change in the UI.
+
+### Extend the Component Code with functions
+
+The ComponentCode contains the actual Spark code that needs to run on your Spark cluster. Functions are supported inside the apply method; just define and call the function.
+
+For example, the existing Filter ComponentCode can be **(1) edited** by adding the withColumn function:
+![9](img/9-gm.png)
+Clicking **(2) Preview** will allow you to view the Gem’s **(3) UI**. Clicking **(4) Preview Code** will allow you to view the Gem’s **(5) code** together with the **(3) UI**, facilitating iteration. See the code samples below in Scala.
+
+filter ComponentCode:
+
+```
   class FilterCode(props: PropertiesType)(implicit context: WorkflowContext) extends ComponentCode {
 
     def apply(spark: SparkSession, in: DataFrame): DataFrame = {
@@ -171,710 +548,59 @@ object Filter extends ComponentSpec {
     }
 
   }
-
-}
-
 ```
 
-</TabItem>
-</Tabs>
-````
+filter ComponentCode with the added withColumn function:
 
-### Parent Class
-
-Every Gem class needs to extend a parent class from which it inherits the representation of the overall Gem. This includes the UI and the logic.
-For transform Gems, you need to extend `ComponentSpec` (like in the example above), and for Source/Target Gems you need to extend `DatasetSpec`. We will see the difference between the two at the end.
-
-First thing you give after this is the name and category of your Gem, `"Filter"` and `"Transform"` in this example.
-
-Another thing to note here is `optimizeCode`. This flag can be set to `True` or `False` value depending on whether we want the Prophecy Optimizer to run on this code to simplify it.
-In most cases, it's best to leave this value as `True`.
-
-````mdx-code-block
-<Tabs>
-
-<TabItem value="py" label="Python">
-
-```py
-class Filter(ComponentSpec):
-name: str = "Filter"
-    category: str = "Transform"
-    def optimizeCode(self) -> bool:
-        return True
 ```
-</TabItem>
+  class FilterCode(props: PropertiesType)(implicit context: WorkflowContext) extends ComponentCode {
 
-<TabItem value="scala" label="Scala">
+    def apply(spark: SparkSession, in: DataFrame): DataFrame = {
+      import org.apache.spark.sql.functions._
 
-```scala
-object Filter extends ComponentSpec {
-val name: String = "Filter"
-val category: String = "Transform"
-override def optimizeCode: Boolean = true
+      def func(df: DataFrame): DataFrame = {
+        df.withColumn("test_col", lit(123))
+          .where("1 == 1")
+      }
+
+      val out = in.filter(props.condition.column)
+      func(out)
+    }
+
+  }
 ```
-</TabItem>
-</Tabs>
 
-````
+### Extend the read/write capabilities with Dataset Format Gems
 
-### Properties Classes
+You may also wish to create a source or target Dataset format beyond the [provided formats](/docs/Spark/gems/source-target/source-target.md). With GemBuilder, it’s possible to create custom Dataset formats! You’ll need to know how the source Gems differ from transformation Gems.
 
-There is one class (seen here as `FilterProperties`) that contains a list of the properties to be made available to the user for this particular Gem. Think of these as all the values a user fills out within the template of this Gem, or any other UI state that you need to maintain (seen here as `columnsSelector` and `condition`).
+The DatasetFormat Gem:
+
+1. class extends DatasetSpec
+2. has two Dialog functions: sourceDialog and targetDialog . They both return a DatasetDialog object, whereas for any Transform Gem, the dialog function returns a Dialog object.
+3. The ComponentCode class has two apply functions: sourceApply and targetApply for Source and Target modes respectively.
+
+There is no distinction between Transformation and DatasetFormat Gem onChange and validate functions.
+
+## Troubleshoot errors
+
+If there is an error in your code, your gem preview might not render correctly.
+
+![5](img/5-gm.png)
+If there is a **(1) typo / error** in a required method (e.g. dialog1 instead of dialog), Prophecy will direct your attention to a particular line of code.
+
+- Click the **(2) underlined code**.
+- Notice a **(3) detailed error message**.
+- Click **(4) Preview** to see how the Gem will look as rendered in the UI.
+- If a value is incorrect, the Gem will not be able to be parsed, and a very clear error will appear **(5) here** as well.
+- Click the **(6) Errors** button to see the **(7) full error message**.
 
 :::caution
 
-The content of these `Properties` classes is persisted in JSON and stored in Git.
+“The gem specification could not be parsed” means that there’s an error in one or more required methods, classes, or properties. These components could not be analyzed and/or converted into the gem UI.
 
 :::
 
-These properties can be **set** in the `dialog` function by taking input from user-controlled UI elements.
-The properties are then available for reading in the following functions:
-`validate`, `onChange`, `apply`
+## What's next?
 
-````mdx-code-block
-<Tabs>
-
-<TabItem value="py" label="Python">
-
-```py
-@dataclass(frozen=True)
-    class FilterProperties(ComponentProperties):
-        columnsSelector: List[str] = field(default_factory=list)
-        condition: SColumn = SColumn("lit(True)")
-```
-</TabItem>
-
-<TabItem value="scala" label="Scala">
-
-```scala
-    case class FilterProperties(
-    @Property("Columns selector")
-    columnsSelector: List[String] = Nil,
-    @Property("Filter", "Predicate expression to filter rows of incoming dataframe")
-    condition: SColumn = SColumn("lit(true)")
-  ) extends ComponentProperties
-
-```
-</TabItem>
-</Tabs>
-
-````
-
-Additional information on these functions are available in the following sections.
-
-### Dialog (UI)
-
-The `dialog` function contains code specific to how the Gem UI should look to the user.
-
-````mdx-code-block
-<Tabs>
-
-<TabItem value="py" label="Python">
-
-```py
-def dialog(self) -> Dialog:
-        return Dialog("Filter").addElement(
-            ColumnsLayout(height="100%")
-                .addColumn(PortSchemaTabs(selectedFieldsProperty=("columnsSelector")).importSchema(), "2fr")
-                .addColumn(StackLayout(height=("100%"))
-                .addElement(TitleElement("Filter Condition"))
-                .addElement(
-                Editor(height=("100%")).withSchemaSuggestions().bindProperty("condition.expression")
-            ), "5fr"))
-```
-</TabItem>
-<TabItem value="scala" label="Scala">
-
-```scala
-def dialog: Dialog = Dialog("Filter")
-    .addElement(
-      ColumnsLayout(height = Some("100%"))
-        .addColumn(
-          PortSchemaTabs(selectedFieldsProperty = Some("columnsSelector")).importSchema(),
-          "2fr"
-        )
-        .addColumn(
-          StackLayout(height = Some("100%"))
-            .addElement(TitleElement("Filter Condition"))
-            .addElement(
-              Editor(height = Some("100%"))
-                .withSchemaSuggestions()
-                .bindProperty("condition.expression")
-            ),
-          "5fr"
-        )
-    )
-```
-</TabItem>
-</Tabs>
-
-````
-
-The above Dialog code in the filter is rendered on UI like this:
-
-![Dialog](img/gem-builder-ui.png)
-
-There are various UI components that can be defined for custom Gems such as scroll boxes, tabs, buttons, and more! These UI components can be grouped together in various types of panels to create a custom user experience when using the Gem.
-
-After the Dialog object is defined, it's serialized as JSON, sent to the UI, and rendered there.
-
-Depending on what kind of Gem is being created, either a `Dialog` or a `DatasetDialog` needs to be defined.
-
-- The **Transformation Dialog**: The Dialog for Transformation Gems (any Gem that is not a Dataset Gem) is created using the `dialog` method, which must return a Dialog object.
-
-- The **Dataset Dialog**: The Dialog for a [Source/Target](docs/Spark/gems/source-target/source-target.md) Gem is a `DatasetDialog` object. You will need to have `source` and `target` methods defined.
-
-Column Selector: This is a special property that you should add if you want to select the columns from UI and then highlight the used columns using the `onChange` function.
-It is recommended to try out this dialogue code in Gem builder UI and see how each of these elements looks in UI.
-
-### Validation
-
-The `validate` method performs validation checks so that in the case where there's any issue with any inputs provided for the user an Error can be displayed. In our example case, this would happen if the Filter condition is empty. Similarly, you can add any validation on your properties.
-
-````mdx-code-block
-<Tabs>
-
-<TabItem value="py" label="Python">
-
-```py
-def validate(self, component: Component[FilterProperties]) -> List[Diagnostic]:
-        return validateSColumn(component.properties.condition, "condition", component)
-
-```
-</TabItem>
-<TabItem value="scala" label="Scala">
-
-```scala
-def validate(component: Component)(implicit context: WorkflowContext): List[Diagnostic] = {
-    val diagnostics =
-      validateSColumn(component.properties.condition, "condition", component)
-    diagnostics.toList
-  }
-```
-</TabItem>
-</Tabs>
-
-````
-
-### State Changes
-
-The `onChange` method is given for the UI State transformations. You are given both the previous and the new incoming state and can merge or modify the state as needed. The properties of the Gem are also accessible to this function, so functions like selecting columns, etc. are possible to add from here.
-
-````mdx-code-block
-<Tabs>
-
-<TabItem value="py" label="Python">
-
-```py
-def onChange(self, oldState: Component[FilterProperties], newState: Component[FilterProperties]) -> Component[
-        FilterProperties]:
-        newProps = newState.properties
-        usedColExps = getColumnsToHighlight2([newProps.condition], newState)
-        return newState.bindProperties(replace(newProps, columnsSelector=usedColExps))
-
-```
-</TabItem>
-<TabItem value="scala" label="Scala">
-
-```scala
-def onChange(oldState: Component, newState: Component)(implicit context: WorkflowContext): Component = {
-    val newProps = newState.properties
-    val portId = newState.ports.inputs.head.id
-
-    val expressions = getColumnsToHighlight(List(newProps.condition), newState)
-
-    newState.copy(properties = newProps.copy(columnsSelector = expressions))
-  }
-```
-</TabItem>
-</Tabs>
-
-````
-
-### Component Code
-
-The last class used here is `FilterCode` which is inherited from `ComponentCode` class. This class contains the actual Spark code that needs to run on your Spark cluster. Here the above User Defined properties are accessible using `self.props.{property}`. The Spark code for the Gem logic is defined in the apply function. Input/Output of apply method can only be DataFrame or list of DataFrames or empty.
-For example, we are calling the `.filter()` method in this example in the apply function.
-
-````mdx-code-block
-<Tabs>
-
-<TabItem value="py" label="Python">
-
-```py
-class FilterCode(ComponentCode):
-def __init__(self, newProps):
-self.props: Filter.FilterProperties = newProps
-
-    def apply(self, spark: SparkSession, in0: DataFrame) -> DataFrame:
-            return in0.filter(self.props.condition.column())
-```
-</TabItem>
-<TabItem value="scala" label="Scala">
-
-```scala
-class FilterCode(props: PropertiesType)(implicit context: WorkflowContext) extends ComponentCode {
-
-    def apply(spark: SparkSession, in: DataFrame): DataFrame = {
-      val out = in.filter(props.condition.column)
-      out
-    }
-
-  }
-```
-</TabItem>
-</Tabs>
-
-````
-
-You can preview the component in the Gem Builder to see how it looks. You can modify the properties and then save it to preview the generated Spark code which will eventually run on your cluster.
-
-To assist the Spark Catalyst Optimizer to build scalable code, Prophecy performs some minor optimizations to the code
-generated by the `apply()` method.
-
-:::info
-
-For details on our optimization functions, see [Optimization functions](optimization-functions.md).
-
-:::
-
-## Source/Target Gems
-
-Source/Target Gems are Gems that you use to read/write your Datasets into DataFrames. There are certain differences between how you define a Source/Target Gem and a Transformation Gem. For example, a Source/Target Gem will have two `dialog` and two `apply` functions each for Source and Target respectively. Let's look at them with an example.
-
-````mdx-code-block
-<Tabs>
-
-<TabItem value="py" label="Python">
-
-```py
-from pyspark.sql import SparkSession, DataFrame
-from pyspark.sql.types import StructType
-
-from prophecy.cb.server.base.ComponentBuilderBase import ComponentCode, Diagnostic, SeverityLevelEnum
-from prophecy.cb.server.base.DatasetBuilderBase import DatasetSpec, DatasetProperties, Component
-from prophecy.cb.ui.uispec import *
-
-
-class ParquetFormat(DatasetSpec):
-    name: str = "parquet"
-    datasetType: str = "File"
-
-    def optimizeCode(self) -> bool:
-        return True
-
-    @dataclass(frozen=True)
-    class ParquetProperties(DatasetProperties):
-        schema: Optional[StructType] = None
-        description: Optional[str] = ""
-        useSchema: Optional[bool] = False
-        path: str = ""
-        mergeSchema: Optional[bool] = None
-        datetimeRebaseMode: Optional[str] = None
-        int96RebaseMode: Optional[str] = None
-        compression: Optional[str] = None
-        partitionColumns: Optional[List[str]] = None
-        writeMode: Optional[str] = None
-        pathGlobFilter: Optional[str] = None
-        modifiedBefore: Optional[str] = None
-        modifiedAfter: Optional[str] = None
-        recursiveFileLookup: Optional[bool] = None
-
-    def sourceDialog(self) -> DatasetDialog:
-        return DatasetDialog("parquet") \
-            .addSection("LOCATION", TargetLocation("path")) \
-            .addSection(
-            "PROPERTIES",
-            ColumnsLayout(gap=("1rem"), height=("100%"))
-                .addColumn(
-                ScrollBox().addElement(
-                    StackLayout(height=("100%"))
-                        .addElement(
-                        StackItem(grow=(1)).addElement(
-                            FieldPicker(height=("100%"))
-                                .addField(
-                                TextArea("Description", 2, placeholder="Dataset description..."),
-                                "description",
-                                True
-                            )
-                                .addField(Checkbox("Use user-defined schema"), "useSchema", True)
-                                .addField(Checkbox("Merge schema"), "mergeSchema")
-                                .addField(
-                                SelectBox("Datetime Rebase Mode")
-                                    .addOption("EXCEPTION", "EXCEPTION")
-                                    .addOption("CORRECTED", "CORRECTED")
-                                    .addOption("LEGACY", "LEGACY"),
-                                "datetimeRebaseMode"
-                            )
-                                .addField(
-                                SelectBox("Int96 Rebase Mode")
-                                    .addOption("EXCEPTION", "EXCEPTION")
-                                    .addOption("CORRECTED", "CORRECTED")
-                                    .addOption("LEGACY", "LEGACY"),
-                                "int96RebaseMode"
-                            )
-                                .addField(Checkbox("Recursive File Lookup"), "recursiveFileLookup")
-                                .addField(TextBox("Path Global Filter").bindPlaceholder(""), "pathGlobFilter")
-                                .addField(TextBox("Modified Before").bindPlaceholder(""), "modifiedBefore")
-                                .addField(TextBox("Modified After").bindPlaceholder(""), "modifiedAfter")
-                        )
-                    )
-                ),
-                "auto"
-            )
-                .addColumn(SchemaTable("").bindProperty("schema"), "5fr")
-        ) \
-            .addSection(
-            "PREVIEW",
-            PreviewTable("").bindProperty("schema")
-        )
-
-    def targetDialog(self) -> DatasetDialog:
-        return DatasetDialog("parquet") \
-            .addSection("LOCATION", TargetLocation("path")) \
-            .addSection(
-            "PROPERTIES",
-            ColumnsLayout(gap=("1rem"), height=("100%"))
-                .addColumn(
-                ScrollBox().addElement(
-                    StackLayout(height=("100%")).addElement(
-                        StackItem(grow=(1)).addElement(
-                            FieldPicker(height=("100%"))
-                                .addField(
-                                TextArea("Description", 2, placeholder="Dataset description..."),
-                                "description",
-                                True
-                            )
-                                .addField(
-                                SelectBox("Write Mode")
-                                    .addOption("error", "error")
-                                    .addOption("overwrite", "overwrite")
-                                    .addOption("append", "append")
-                                    .addOption("ignore", "ignore"),
-                                "writeMode"
-                            )
-                                .addField(
-                                SchemaColumnsDropdown("Partition Columns")
-                                    .withMultipleSelection()
-                                    .bindSchema("schema")
-                                    .showErrorsFor("partitionColumns"),
-                                "partitionColumns"
-                            )
-                                .addField(
-                                SelectBox("Compression Codec")
-                                    .addOption("none", "none")
-                                    .addOption("uncompressed", "uncompressed")
-                                    .addOption("gzip", "gzip")
-                                    .addOption("lz4", "lz4")
-                                    .addOption("snappy", "snappy")
-                                    .addOption("lzo", "lzo")
-                                    .addOption("brotli", "brotli")
-                                    .addOption("zstd", "zstd"),
-                                "compression"
-                            )
-                        )
-                    )
-                ),
-                "auto"
-            )
-                .addColumn(SchemaTable("").isReadOnly().withoutInferSchema().bindProperty("schema"), "5fr")
-        )
-
-    def validate(self, component: Component) -> list:
-        diagnostics = super(ParquetFormat, self).validate(component)
-        if len(component.properties.path) == 0:
-            diagnostics.append(
-                Diagnostic("properties.path", "path variable cannot be empty [Location]", SeverityLevelEnum.Error))
-        return diagnostics
-
-    def onChange(self, oldState: Component, newState: Component) -> Component:
-        return newState
-
-    class ParquetFormatCode(ComponentCode):
-        def __init__(self, props):
-            self.props: ParquetFormat.ParquetProperties = props
-
-        def sourceApply(self, spark: SparkSession) -> DataFrame:
-            reader = spark.read.format("parquet")
-            if self.props.mergeSchema is not None:
-                reader = reader.option("mergeSchema", self.props.mergeSchema)
-            if self.props.datetimeRebaseMode is not None:
-                reader = reader.option("datetimeRebaseMode", self.props.datetimeRebaseMode)
-            if self.props.int96RebaseMode is not None:
-                reader = reader.option("int96RebaseMode", self.props.int96RebaseMode)
-            if self.props.modifiedBefore is not None:
-                reader = reader.option("modifiedBefore", self.props.modifiedBefore)
-            if self.props.modifiedAfter is not None:
-                reader = reader.option("modifiedAfter", self.props.modifiedAfter)
-            if self.props.recursiveFileLookup is not None:
-                reader = reader.option("recursiveFileLookup", self.props.recursiveFileLookup)
-            if self.props.pathGlobFilter is not None:
-                reader = reader.option("pathGlobFilter", self.props.pathGlobFilter)
-
-            if self.props.schema is not None and self.props.useSchema:
-                reader = reader.schema(self.props.schema)
-
-            return reader.load(self.props.path)
-
-        def targetApply(self, spark: SparkSession, in0: DataFrame):
-            writer = in0.write.format("parquet")
-            if self.props.compression is not None:
-                writer = writer.option("compression", self.props.compression)
-
-            if self.props.writeMode is not None:
-                writer = writer.mode(self.props.writeMode)
-            if self.props.partitionColumns is not None and len(self.props.partitionColumns) > 0:
-                writer = writer.partitionBy(*self.props.partitionColumns)
-
-            writer.save(self.props.path)
-
-```
-
-</TabItem>
-<TabItem value="scala" label="Scala">
-
-```scala
-package io.prophecy.core.instructions.all.datasets
-
-import io.prophecy.core.instructions.all._
-import io.prophecy.core.instructions.spec._
-import io.prophecy.core.program.WorkflowContext
-import org.apache.spark.sql.{DataFrame, SparkSession}
-import org.apache.spark.sql.types.StructType
-import io.prophecy.libs._
-
-object ParquetFormat extends DatasetSpec {
-
-  val name: String = "parquet"
-  val datasetType: String = "File"
-
-  type PropertiesType = ParquetProperties
-  case class ParquetProperties(
-    @Property("Schema")
-    schema: Option[StructType] = None,
-    @Property("Description")
-    description: Option[String] = Some(""),
-    @Property("useSchema")
-    useSchema: Option[Boolean] = Some(false),
-    @Property("Path")
-    path: String = "",
-    @Property(
-      "",
-      "(default is the value specified in spark.sql.parquet.mergeSchema(false)): sets whether we should merge schemas collected from all Parquet part-files. This will override spark.sql.parquet.mergeSchema."
-    )
-    mergeSchema: Option[Boolean] = None,
-    @Property(
-      "datetimeRebaseMode",
-      "The datetimeRebaseMode option allows to specify the rebasing mode for the values of the DATE, TIMESTAMP_MILLIS, TIMESTAMP_MICROS logical types from the Julian to Proleptic Gregorian calendar."
-    )
-    datetimeRebaseMode: Option[String] = None,
-    @Property(
-      "int96RebaseMode",
-      "The int96RebaseMode option allows to specify the rebasing mode for INT96 timestamps from the Julian to Proleptic Gregorian calendar."
-    )
-    int96RebaseMode: Option[String] = None,
-    @Property("compression", "(default: none) compression codec to use when saving to file.")
-    compression: Option[String] = None,
-    @Property("partitionColumns", "Partitioning column.")
-    partitionColumns: Option[List[String]] = None,
-    @Property("Write Mode", """(default: "error") Specifies the behavior when data or table already exists.""")
-    writeMode: Option[String] = None,
-    @Property(
-      "",
-      "an optional glob pattern to only include files with paths matching the pattern. The syntax follows org.apache.hadoop.fs.GlobFilter. It does not change the behavior of partition discovery."
-    )
-    pathGlobFilter: Option[String] = None,
-    @Property(
-      "",
-      "(batch only): an optional timestamp to only include files with modification times occurring before the specified Time. The provided timestamp must be in the following form: YYYY-MM-DDTHH:mm:ss (e.g. 2020-06-01T13:00:00)"
-    )
-    modifiedBefore: Option[String] = None,
-    @Property(
-      "",
-      "(batch only): an optional timestamp to only include files with modification times occurring after the specified Time. The provided timestamp must be in the following form: YYYY-MM-DDTHH:mm:ss (e.g. 2020-06-01T13:00:00)"
-    )
-    modifiedAfter: Option[String] = None,
-    @Property("", "recursively scan a directory for files. Using this option disables partition discovery")
-    recursiveFileLookup: Option[Boolean] = None
-  ) extends DatasetProperties
-
-  def sourceDialog: DatasetDialog = DatasetDialog("parquet")
-    .addSection("LOCATION", TargetLocation("path"))
-    .addSection(
-      "PROPERTIES",
-      ColumnsLayout(gap = Some("1rem"), height = Some("100%"))
-        .addColumn(
-          ScrollBox().addElement(
-            StackLayout(height = Some("100%"))
-              .addElement(
-                StackItem(grow = Some(1)).addElement(
-                  FieldPicker(height = Some("100%"))
-                    .addField(
-                      TextArea("Description", 2, placeholder = "Dataset description..."),
-                      "description",
-                      true
-                    )
-                    .addField(Checkbox("Use user-defined schema"), "useSchema", true)
-                    .addField(Checkbox("Merge schema"), "mergeSchema")
-                    .addField(
-                      SelectBox("Datetime Rebase Mode")
-                        .addOption("EXCEPTION", "EXCEPTION")
-                        .addOption("CORRECTED", "CORRECTED")
-                        .addOption("LEGACY", "LEGACY"),
-                      "datetimeRebaseMode"
-                    )
-                    .addField(
-                      SelectBox("Int96 Rebase Mode")
-                        .addOption("EXCEPTION", "EXCEPTION")
-                        .addOption("CORRECTED", "CORRECTED")
-                        .addOption("LEGACY", "LEGACY"),
-                      "int96RebaseMode"
-                    )
-                    .addField(Checkbox("Recursive File Lookup"), "recursiveFileLookup")
-                    .addField(TextBox("Path Global Filter").bindPlaceholder(""), "pathGlobFilter")
-                    .addField(TextBox("Modified Before").bindPlaceholder(""), "modifiedBefore")
-                    .addField(TextBox("Modified After").bindPlaceholder(""), "modifiedAfter")
-                )
-              )
-          ),
-          "auto"
-        )
-        .addColumn(SchemaTable("").bindProperty("schema"), "5fr")
-    )
-    .addSection(
-      "PREVIEW",
-      PreviewTable("").bindProperty("schema")
-    )
-
-  def targetDialog: DatasetDialog = DatasetDialog("parquet")
-    .addSection("LOCATION", TargetLocation("path"))
-    .addSection(
-      "PROPERTIES",
-      ColumnsLayout(gap = Some("1rem"), height = Some("100%"))
-        .addColumn(
-          ScrollBox().addElement(
-            StackLayout(height = Some("100%")).addElement(
-              StackItem(grow = Some(1)).addElement(
-                FieldPicker(height = Some("100%"))
-                  .addField(
-                    TextArea("Description", 2, placeholder = "Dataset description..."),
-                    "description",
-                    true
-                  )
-                  .addField(
-                    SelectBox("Write Mode")
-                      .addOption("error", "error")
-                      .addOption("overwrite", "overwrite")
-                      .addOption("append", "append")
-                      .addOption("ignore", "ignore"),
-                    "writeMode"
-                  )
-                  .addField(
-                    SchemaColumnsDropdown("Partition Columns")
-                      .withMultipleSelection()
-                      .bindSchema("schema")
-                      .showErrorsFor("partitionColumns"),
-                    "partitionColumns"
-                  )
-                  .addField(
-                    SelectBox("Compression Codec")
-                      .addOption("none", "none")
-                      .addOption("uncompressed", "uncompressed")
-                      .addOption("gzip", "gzip")
-                      .addOption("lz4", "lz4")
-                      .addOption("snappy", "snappy")
-                      .addOption("lzo", "lzo")
-                      .addOption("brotli", "brotli")
-                      .addOption("zstd", "zstd"),
-                    "compression"
-                  )
-              )
-            )
-          ),
-          "auto"
-        )
-        .addColumn(SchemaTable("").isReadOnly().withoutInferSchema().bindProperty("schema"), "5fr")
-    )
-
-  override def validate(component: Component)(implicit context: WorkflowContext): List[Diagnostic] = {
-    import scala.collection.mutable.ListBuffer
-    val diagnostics = ListBuffer[Diagnostic]()
-    diagnostics ++= super.validate(component)
-
-    if (component.properties.path.isEmpty) {
-      diagnostics += Diagnostic("properties.path", "path variable cannot be empty [Location]", SeverityLevel.Error)
-    }
-    if (component.properties.schema.isEmpty) {
-      // diagnostics += Diagnostic("properties.schema", "Schema cannot be empty [Properties]", SeverityLevel.Error)
-    }
-
-    diagnostics.toList
-  }
-
-  def onChange(oldState: Component, newState: Component)(implicit context: WorkflowContext): Component = newState
-
-  class ParquetFormatCode(props: ParquetProperties) extends ComponentCode {
-
-    def sourceApply(spark: SparkSession): DataFrame = {
-      var reader = spark.read
-        .format("parquet")
-        .option("mergeSchema", props.mergeSchema)
-        .option("datetimeRebaseMode", props.datetimeRebaseMode)
-        .option("int96RebaseMode", props.int96RebaseMode)
-        .option("modifiedBefore", props.modifiedBefore)
-        .option("modifiedAfter", props.modifiedAfter)
-        .option("recursiveFileLookup", props.recursiveFileLookup)
-        .option("pathGlobFilter", props.pathGlobFilter)
-
-      if (props.useSchema.isDefined && props.useSchema.get)
-        props.schema.foreach(schema ⇒ reader = reader.schema(schema))
-
-      reader.load(props.path)
-    }
-
-    def targetApply(spark: SparkSession, in: DataFrame): Unit = {
-      var writer = in.write
-        .format("parquet")
-        .option("compression", props.compression)
-
-      props.writeMode.foreach { mode ⇒
-        writer = writer.mode(mode)
-      }
-      props.partitionColumns.foreach(pcols ⇒
-        writer = pcols match {
-          case Nil ⇒ writer
-          case _ ⇒ writer.partitionBy(pcols: _*)
-        }
-      )
-      writer.save(props.path)
-    }
-
-  }
-
-}
-
-
-```
-
-</TabItem>
-</Tabs>
-````
-
-Here you can see the differences between a Transform Gem and a DataSource Gem.
-
-1. The Source/Target Gem extends `DatasetSpec`.
-2. It has two Dialog functions: `sourceDialog` and `targetDialog`. They return both a `DatasetDialog` object, whereas for any Transform Gem, the dialog function returns a `Dialog` object.
-3. The `ComponentCode` class has two apply functions: `sourceApply` and `targetApply` for Source and Target modes respectively.
-
-There is no change in `onChange` and `validate` functions.
-
-## What's next
-
-To learn more about the Gem builder and additional optimization options, see the following page:
-
-```mdx-code-block
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
-<DocCardList items={useCurrentSidebarCategory().items}/>
-```
+Now that you know how to create Spark gems, have a look at how to [create custom SQL gems](docs/extensibility/gem-builder/sql-gem-builder.md).

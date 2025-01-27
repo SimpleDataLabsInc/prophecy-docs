@@ -5,12 +5,12 @@ description: Sharable UDFs within the project and to other projects
 tags: []
 ---
 
-Users can share the [user-defined functions (UDF)](docs/Spark/functions/user-defined-functions.md) across their Pipelines and Projects.
+Users can share the [user-defined functions (UDF)](docs/Spark/functions/user-defined-functions.md) across their pipelines and projects.
 
 ## Across Pipelines
 
-Any UDF defined in a Pipeline is defined at the Project level by default. So, it is accessible to all Pipelines in the Project immediately.
-As a user opens a Pipeline, the UDFs are also copied to the Code of that Pipeline. They would also see the same changes reflected in the uncommitted changes for their Pipeline.
+Any UDF defined in a pipeline is defined at the project level by default. So, it is accessible to all pipelines in the project immediately.
+As a user opens a pipeline, the UDFs are also copied to the Code of that pipeline. They would also see the same changes reflected in the uncommitted changes for their pipeline.
 
 Please see this video for an example
 
@@ -20,13 +20,13 @@ Please see this video for an example
 </div>
 
 :::caution
-Please note that UDF code is only copied to Code for that Pipeline once the Pipeline is opened.
-So, if a user has edited or added UDF in a Pipeline, you might see uncommitted changes for another Pipeline whenever you open it.  
+Please note that UDF code is only copied to Code for that pipeline once the pipeline is opened.
+So, if a user has edited or added UDF in a pipeline, you might see uncommitted changes for another pipeline whenever you open it.  
 :::
 
-## Across Projects
+## Across projects
 
-Once a Project (let's call it _BaseProject_) is added as a dependency to another Project (let's call it _AppProject_), all Project-level UDFs from _BaseProject_ are available in all Pipelines of _AppProject_.
+Once a project (let's call it _BaseProject_) is added as a dependency to another project (let's call it _AppProject_), all project-level UDFs from _BaseProject_ are available in all pipelines of _AppProject_.
 
 For example:
 
@@ -36,7 +36,7 @@ For example:
 Please note that all these UDF are ready only in _AppProject_ and can only be edited in _BaseProject_
 :::
 
-Also, if a User has UDFs coming from two different Projects with conflicting definitions, they will see an error diagnostics in the UDF screen as below.
+Also, if a User has UDFs coming from two different projects with conflicting definitions, they will see an error diagnostics in the UDF screen as below.
 ![UDFConflict](./img/UDFConflictError.png)
 
 If a UDF is modified or a new UDF is added in _BaseProject_, these changes will only reflect in _AppProject_ after the user Releases the _BaseProject_ again, and updates dependency in _AppProject_

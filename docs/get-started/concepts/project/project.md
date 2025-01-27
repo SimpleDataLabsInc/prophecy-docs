@@ -1,7 +1,7 @@
 ---
 title: Projects
 id: project
-description: Keeping your Pipelines, Datasets and Jobs under (source) control
+description: Keeping your pipelines, datasets and jobs under (source) control
 sidebar_position: 1
 tags:
   - concepts
@@ -12,31 +12,31 @@ A **Project** in Prophecy is the core unit for developing, organizing, and deplo
 
 ## Project types
 
-When you create a project, you must choose a **project type**: Spark/Python, Spark/Scala, or SQL. Visually designed pipelines will generate code in the selected Project output language.
+When you create a project, you must choose a **project type**: Spark/Python, Spark/Scala, or SQL. Visually designed pipelines will generate code in the selected project output language.
 
 ![Project language](../img/project_language.png)
 
-Spark projects contain [Pipelines](docs/get-started/concepts/project/pipelines.md), [Datasets](docs/get-started/concepts/project/dataset.md), and [Jobs](docs/Orchestration/Orchestration.md). SQL Projects contain [Models](docs/get-started/concepts/project/models.md), [Datasets](docs/get-started/concepts/project/dataset.md), and [Jobs](docs/Orchestration/Orchestration.md). You can view these components in the **Metadata** tab of the Prophecy user interface.
+Spark projects contain [pipelines](docs/get-started/concepts/project/pipelines.md), [datasets](docs/get-started/concepts/project/dataset.md), and [jobs](docs/Orchestration/Orchestration.md). SQL projects contain [models](docs/get-started/concepts/project/models.md), [datasets](docs/get-started/concepts/project/dataset.md), and [jobs](docs/Orchestration/Orchestration.md). You can view these components in the **Metadata** tab of the Prophecy user interface.
 
 :::note
-It is not currently possible to switch the output language of a Project after it has been created.
+It is not currently possible to switch the output language of a project after it has been created.
 :::
 
 ## Projects and Git
 
-Each project must be stored in a Git repository. You can either choose to host your project on a Prophecy-managed repository, or you can connect your own external repository, like one on GitHub. Additionally, all assets within a Project (like Pipelines, Models, Datasets, and Jobs) are stored as code in the Project's Git repository.
+Each project must be stored in a Git repository. You can either choose to host your project on a Prophecy-managed repository, or you can connect your own external repository, like one on GitHub. Additionally, all assets within a project (like pipelines, models, datasets, and jobs) are stored as code in the project's Git repository.
 
-Open any Pipeline (left) or Model (right) in your Project. Simply toggle from visual to code to see the underlying code for that Pipeline or Model, as well as the rest of the Project components.
+Open any pipeline (left) or model (right) in your project. Simply toggle from visual to code to see the underlying code for that pipeline or model, as well as the rest of the project components.
 
 ![Visual To Code](img/code-to-visual.png)
 
-Version control lets users and teams collaborate on Projects, contribute simultaneously, and reuse code.
+Version control lets users and teams collaborate on projects, contribute simultaneously, and reuse code.
 
 ## What's next
 
-To learn about the Project lifecycle, visit [Develop and deploy a Project](docs/ci-cd/deployment/deploy-project.md).
+To learn about the project lifecycle, visit [Develop and deploy a project](docs/ci-cd/deployment/deploy-project.md).
 
-To explore different Project components, view the following pages:
+To explore different project components, view the following pages:
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

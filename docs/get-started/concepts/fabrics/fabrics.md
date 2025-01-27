@@ -5,7 +5,7 @@ description: Logical execution environments
 sidebar_position: 4
 tags:
   - concepts
-  - Fabric
+  - fabric
   - source
   - target
   - datasets
@@ -13,25 +13,25 @@ tags:
 
 Prophecy helps you develop data pipelines in high-quality Spark or SQL code—but what does Prophecy use to compute these pipelines? The first thing you need to understand before building any pipeline is that your pipeline must be connected to an **execution environment**.
 
-This is why **Fabrics** exist in Prophecy. Fabrics let Prophecy connect to specific execution environments.
+This is why **fabrics** exist in Prophecy. Fabrics let Prophecy connect to specific execution environments.
 
-Prophecy provides a Prophecy-managed Fabric that can get you started with building your pipelines. However, you can also create your own Fabrics to connect to other execution environments, such as a Databricks workspace.
+Prophecy provides a Prophecy-managed fabric that can get you started with building your pipelines. However, you can also create your own fabrics to connect to other execution environments, such as a Databricks workspace.
 
 ## Example
 
-Here is one way you might set up your Fabrics. First, the Admin creates:
+Here is one way you might set up your fabrics. First, the Admin creates:
 
 - A team named Marketing_DSS for the Marketing Decision Support System users.
-- A `dev` Fabric for development activities that specifies the Marketing_DSS team.
-- A `prod` Fabric for production pipelines that specifies the Marketing_DSS team.
+- A `dev` fabric for development activities that specifies the Marketing_DSS team.
+- A `prod` fabric for production pipelines that specifies the Marketing_DSS team.
 
-In this example, all users in the Marketing_DSS Team will have access to the `dev` and `prod` Fabrics.
+In this example, all users in the Marketing_DSS Team will have access to the `dev` and `prod` fabrics.
 
 ## Components
 
-Fabrics include everything required to run a data Pipeline.
+Fabrics include everything required to run a data pipeline.
 
-![Data Pipeline](img/fabric.png)
+![Data pipeline](img/fabric.png)
 
 ### Spark Environment
 
@@ -47,11 +47,11 @@ The **Scheduler** executes one or more Spark data pipelines on a defined schedul
 
 ### Database Connections
 
-Data Pipelines often require connections to operational databases, such as MySQL or Postgres, or to data warehouses, such as Snowflake. These connections, using JDBC or other protocols, can be securely stored on the Fabric for convenient reuse.
+Data pipelines often require connections to operational databases, such as MySQL or Postgres, or to data warehouses, such as Snowflake. These connections, using JDBC or other protocols, can be securely stored on the fabric for convenient reuse.
 
 ### Metadata Connection
 
-Optionally, you can enhance your Fabric by creating a **Metadata Connection**. This is especially useful for users managing hundreds or thousands of tables in their data providers. For more details, see the [Metadata Connections documentation](/docs/get-started/concepts/fabrics/metadata-connections.md).
+Optionally, you can enhance your fabric by creating a **Metadata Connection**. This is especially useful for users managing hundreds or thousands of tables in their data providers. For more details, see the [Metadata Connections documentation](/docs/get-started/concepts/fabrics/metadata-connections.md).
 
 ### Credentials and Secrets
 
@@ -61,15 +61,15 @@ Key-value pairs can be stored as secrets, which are accessible to running workfl
 
 ## Hands on
 
-Get started with hands-on guides. Learn step by step how to connect to your execution engine by creating a Fabric:
+Get started with hands-on guides. Learn step by step how to connect to your execution engine by creating a fabric:
 
-1. Create a SQL Fabric with a JDBC or Unity Catalog connection following [this guide](/docs/get-started/tutorials/getting-started-with-low-code-sql.md#23-setup-prophecys-Fabric).
-2. Create a Databricks Fabric following [these steps](/docs/administration/Spark-fabrics/databricks/databricks.md).
-3. Create an EMR Fabric with Livy step by step [here](/docs/administration/Spark-fabrics/emr.mdx).
+1. Create a SQL fabric with a JDBC or Unity Catalog connection following [this guide](/docs/get-started/tutorials/getting-started-with-low-code-sql.md#23-setup-prophecys-Fabric).
+2. Create a Databricks fabric following [these steps](/docs/administration/Spark-fabrics/databricks/databricks.md).
+3. Create an EMR fabric with Livy step by step [here](/docs/administration/Spark-fabrics/emr.mdx).
 
 ## What's next
 
-To learn more about Fabrics and the Prophecy Libraries, see the following page:
+To learn more about fabrics and the Prophecy Libraries, see the following page:
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

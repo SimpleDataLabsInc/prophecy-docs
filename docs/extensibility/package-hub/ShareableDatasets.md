@@ -5,12 +5,12 @@ description: Shareable Datasets within the project
 tags: []
 ---
 
-Users can share a [Dataset](/docs/get-started/concepts/project/dataset.md) across their Pipelines, but use caution when sharing across Projects.
+Users can share a [dataset](/docs/get-started/concepts/project/dataset.md) across their pipelines, but use caution when sharing across projects.
 
-## Across Pipelines
+## Across pipelines
 
-Once a User adds a new Dataset as a Source or Target in their Pipeline, that Dataset is immediately available to be used in all Pipelines of that project. A User can use that Dataset as a Source or Target in other pipelines.
-Once a Dataset is modified in one Pipeline, it gets modified in all the Pipelines using it (in that Project) automatically.
+Once a User adds a new dataset as a Source or Target in their pipeline, that dataset is immediately available to be used in all pipelines of that project. A User can use that dataset as a Source or Target in other pipelines.
+Once a dataset is modified in one pipeline, it gets modified in all the pipelines using it (in that project) automatically.
 
 For example:
 
@@ -19,6 +19,6 @@ For example:
       style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}></iframe>
 </div>
 
-## Across Projects
+## Across projects
 
-**Datasets** in Prophecy are pointers to actual data in your data storage solution. Prophecy doesn’t store any data, and we recommend not to treat Datasets in Packages as “data products.” That is, we recommend not to configure Datasets in a Package. Instead, leave Datasets configurable in the project where they are used. Importantly, access to the actual data remains dependent upon the user’s personal access token or username/password credential. To access the data in a new project, the user must select a Fabric with access permissions for that data.
+**Datasets** in Prophecy are pointers to actual data in your data storage solution. Prophecy doesn’t store any data, and we recommend not to treat datasets in Packages as “data products.” That is, we recommend not to configure datasets in a Package. Instead, leave datasets configurable in the project where they are used. Importantly, access to the actual data remains dependent upon the user’s personal access token or username/password credential. To access the data in a new project, the user must select a fabric with access permissions for that data.

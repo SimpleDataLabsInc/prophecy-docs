@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 3
 id: March_2024
 description: Release notes for March
 title: March 2024
@@ -18,8 +18,8 @@ tags:
 
 #### Automatic Code Regeneration for Jobs
 
-In Prophecy 3.3.0, we introduced automatic code regeneration whenever users make changes that could potentially impact the generated code for other Pipelines.
-With this release, we’ve extended the same support to all jobs as well. Now, whenever users modify anything in a Pipeline such as renaming or changing dependencies at the Pipeline level the corresponding jobs are automatically regenerated.
+In Prophecy 3.3.0, we introduced automatic code regeneration whenever users make changes that could potentially impact the generated code for other pipelines.
+With this release, we’ve extended the same support to all jobs as well. Now, whenever users modify anything in a pipeline such as renaming or changing dependencies at the pipeline level the corresponding jobs are automatically regenerated.
 
 #### Support for External Release Tags
 

@@ -1,7 +1,7 @@
 ---
 title: AWS Connection
 id: prophecy_managed_airflow_fabric_aws_connections
-description: How to create AWS connection in Prophecy Managed Airflow Fabric
+description: How to create AWS connection in Prophecy Managed Airflow fabric
 tags:
   - scheduling
   - airflow
@@ -12,7 +12,7 @@ tags:
   - aws
 ---
 
-To be able to trigger your Airflow Job using an S3 File Sensor, you need to have connection from Prophecy Managed Airflow to you S3 account. For this, we need to add an AWS Connection. You would need this AWS connection for connecting to any AWS services.
+To be able to trigger your Airflow job using an S3 File Sensor, you need to have connection from Prophecy Managed Airflow to you S3 account. For this, we need to add an AWS Connection. You would need this AWS connection for connecting to any AWS services.
 
 ## Add an AWS connection
 

@@ -10,7 +10,7 @@ tags:
 
 ORC (Optimized Row Columnar) is a columnar file format designed for Spark/Hadoop workloads. It is optimized for large streaming reads, but with integrated support for finding required rows quickly. Because ORC files are type-aware, the writer chooses the most appropriate encoding for the type and builds an internal index as the file is written.
 
-This Gem allows you to read from or write to ORC files.
+This gem allows you to read from or write to ORC files.
 
 ## Source
 

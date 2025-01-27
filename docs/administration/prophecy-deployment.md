@@ -16,7 +16,7 @@ _Note: On rare occasions, Prophecy will deploy on-premise for large customers wh
 
 ## Cloud Deployment
 
-Prophecy in the cloud connects to your existing Spark and Scheduler/Orchestrator. Prophecy does not store any data, however, it does store metadata about your Pipelines, Datasets and schedules. There are three types of Prophecy deployments:
+Prophecy in the cloud connects to your existing Spark and Scheduler/Orchestrator. Prophecy does not store any data, however, it does store metadata about your pipelines, datasets, and schedules. There are three types of Prophecy deployments:
 
 | Feature                                                       | SaaS                    | Dedicated SaaS          | Self-hosted             |
 | ------------------------------------------------------------- | ----------------------- | ----------------------- | ----------------------- |

@@ -8,8 +8,8 @@ tags:
   - jobs
 ---
 
-To connect to a running Airflow Instance, you would need to create a [Fabric](/docs/get-started/concepts/fabrics/fabrics.md) of type Airflow.
-Prophecy provides you with three different types of Fabrics depending upon where your Airflow Instance is running.
+To connect to a running Airflow Instance, you would need to create a [fabric](/docs/get-started/concepts/fabrics/fabrics.md) of type Airflow.
+Prophecy provides you with three different types of fabrics depending upon where your Airflow Instance is running.
 
 1. **[Prophecy Managed Airflow](docs/Orchestration/airflow/prophecy-managed/prophecy-managed.md)** - for those who are new to Airflow and do not have an Airflow instance, we provide a Prophecy Managed Airflow to expedite your trial and POC.
 
@@ -19,7 +19,7 @@ Prophecy provides you with three different types of Fabrics depending upon where
 
 ## Create an Airflow Job
 
-Once the Airflow Fabric is setup, Airflow Job scheduling is done with an easy-to-use interface. Follow this guide to [Create an Airflow Job](/docs/Orchestration/airflow/getting-started-with-low-code-airflow.md#2-create-an-airflow-job).
+Once the Airflow fabric is setup, Airflow job scheduling is done with an easy-to-use interface. Follow this guide to [Create an Airflow job](/docs/Orchestration/airflow/getting-started-with-low-code-airflow.md#2-create-an-airflow-job).
 
 ## What's next
 
