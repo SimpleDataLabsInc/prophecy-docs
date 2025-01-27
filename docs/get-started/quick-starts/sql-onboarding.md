@@ -1,7 +1,6 @@
 ---
 title: SQL onboarding
 id: sql-onboarding
-draft: true
 description: Follow along in the product to make your first SQL model
 tags:
   - SQL
