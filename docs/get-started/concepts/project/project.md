@@ -16,7 +16,7 @@ When you create a project, you must choose a **project type**: Spark/Python, Spa
 
 ![Project language](../img/project_language.png)
 
-Spark projects contain [pipelines](docs/concepts/project/pipelines.md), [datasets](docs/concepts/project/dataset.md), and [jobs](docs/Orchestration/Orchestration.md). SQL projects contain [models](docs/concepts/project/models.md), [datasets](docs/concepts/project/dataset.md), and [jobs](docs/Orchestration/Orchestration.md). You can view these components in the **Metadata** tab of the Prophecy user interface.
+Spark projects contain [pipelines](docs/get-started/concepts/project/pipelines.md), [datasets](docs/get-started/concepts/project/dataset.md), and [jobs](docs/Orchestration/Orchestration.md). SQL projects contain [models](docs/get-started/concepts/project/models.md), [datasets](docs/get-started/concepts/project/dataset.md), and [jobs](docs/Orchestration/Orchestration.md). You can view these components in the **Metadata** tab of the Prophecy user interface.
 
 :::note
 It is not currently possible to switch the output language of a project after it has been created.

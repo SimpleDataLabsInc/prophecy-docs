@@ -8,7 +8,7 @@ tags:
   - scheduling
 ---
 
-Once you have developed a [Spark pipeline](/docs/concepts/project/pipelines.md) using Prophecy, you will want to schedule it to run at
+Once you have developed a [Spark pipeline](/docs/get-started/concepts/project/pipelines.md) using Prophecy, you will want to schedule it to run at
 some frequency. To support this, Prophecy provides a visual layer on top of Databricks jobs for an easy orchestration.
 
 ## Development
@@ -35,12 +35,12 @@ Whenever, creating a new job you're asked for the following details:
 
 | Field Name        | Description                                                                                                                                                                                                                                   |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Project           | Which [Project](/docs/concepts/project/project.md) to create the job in. This controls who has access to the job, groups jobs together for lineage, and allows you to use pipelines already published within that project.                    |
+| Project           | Which [Project](/docs/get-started/concepts/project/project.md) to create the job in. This controls who has access to the job, groups jobs together for lineage, and allows you to use pipelines already published within that project.        |
 | Branch            | Which Git branch to use when developing this job.                                                                                                                                                                                             |
 | Name              | Unique job name.                                                                                                                                                                                                                              |
 | Scheduler         | The underlying engine that's going to execute your job. Databricks is recommended.                                                                                                                                                            |
-| Fabric            | The [execution fabric](/concepts/fabrics) to which the job is going to be deployed.                                                                                                                                                           |
-| Job Size          | The [default size](/concepts/fabrics#whats-in-a-fabric) of the cluster that's going to be created for the job to run.                                                                                                                         |
+| Fabric            | The [execution fabric](/get-started/concepts/fabrics) to which the job is going to be deployed.                                                                                                                                               |
+| Job Size          | The [default size](/get-started/concepts/fabrics#whats-in-a-fabric) of the cluster that's going to be created for the job to run.                                                                                                             |
 | Schedule Interval | Defines how often your job is going to run. The interval is defined using the [Quartz format](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html). You can click on the clock icon to select the interval. |
 | Alerts email      | Comma separated list of emails that are going to receive notifications on specific job status events (start, failure, or success).                                                                                                            |
 
@@ -85,8 +85,8 @@ The visual graph created on the jobs page is automatically converted to code (JS
 | Field Name                | Description                                                                                                                                                                                                                                   |
 | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Scheduler                 | The underlying engine that's going to execute your job. Databricks is recommended.                                                                                                                                                            |
-| Fabric                    | The [execution fabric](/concepts/fabrics) to which the job is going to be deployed.                                                                                                                                                           |
-| Cluster Size              | The [default size](/concepts/fabrics#whats-in-a-fabric) of the cluster that's going to be created for the job to run.                                                                                                                         |
+| Fabric                    | The [execution fabric](/get-started/concepts/fabrics) to which the job is going to be deployed.                                                                                                                                               |
+| Cluster Size              | The [default size](/get-started/concepts/fabrics#whats-in-a-fabric) of the cluster that's going to be created for the job to run.                                                                                                             |
 | Cluster Mode              | Can be selected as `Single` (all Gems within the job re-use the same Cluster) or `Multi` (all Gems within the job run on a separate new cluster)                                                                                              |
 | Schedule Interval         | Defines how often your job is going to run. The interval is defined using the [Quartz format](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html). You can click on the clock icon to select the interval. |
 | Pipeline level Timeout    | Timeout at pipeline level                                                                                                                                                                                                                     |

@@ -18,8 +18,8 @@ tags:
 This guide showcases how easy it is to build a live chatbot application using your internal datasets on Spark. Here is a summary of the steps you'll take to set up and explore the Generative AI Chatbot pipelines:
 
 1. **Setup**: You'll configure the dependencies, define credential secrets and load the pipelines from a Git repository.
-2. **Build a Knowledge Warehouse**: You'll explore a set of Spark pipelines to [(a)ingest](docs/tutorials/end-to-end/genaichatbot.md#2a-web-ingest-pipeline) unstructured data from your applications, pre-process, and [(b)vectorize](docs/tutorials/end-to-end/genaichatbot.md#2b-web-vectorize-pipeline) and store the data within your vector database of choice.
-3. **Run a Live Inference Pipeline**: You'll run a Spark streaming [Chatbot](docs/tutorials/end-to-end/genaichatbot.md#step-3-live-inference) pipeline that reads messages from Slack and answers them live using information from your new Knowledge Warehouse.
+2. **Build a Knowledge Warehouse**: You'll explore a set of Spark pipelines to [(a)ingest](docs/Spark/gems/machine-learning/genaichatbot.md#2a-web-ingest-pipeline) unstructured data from your applications, pre-process, and [(b)vectorize](docs/Spark/gems/machine-learning/genaichatbot.md#2b-web-vectorize-pipeline) and store the data within your vector database of choice.
+3. **Run a Live Inference Pipeline**: You'll run a Spark streaming [Chatbot](docs/Spark/gems/machine-learning/genaichatbot.md#step-3-live-inference) pipeline that reads messages from Slack and answers them live using information from your new Knowledge Warehouse.
 
 ![Architecture Diagram](img/genai_architecture.png)
 
@@ -93,7 +93,7 @@ Here are the steps to set up the Slack bot. If you prefer a video walkthrough, [
 
 ### 1b. Databricks Secrets and Schemas
 
-The Databricks CLI is a command line tool that lets you interact with your Databricks workspace. Use the Databricks CLI here to store the tokens created in [Step 1a](docs/tutorials/end-to-end/genaichatbot.md#1a-dependencies) safely as Databricks `secrets`. Also, use the Databricks CLI to create catalog tables and schemas. Follow the steps below and for more details about the Databricks CLI read [here.](https://docs.databricks.com/en/archive/dev-tools/cli/index.html)
+The Databricks CLI is a command line tool that lets you interact with your Databricks workspace. Use the Databricks CLI here to store the tokens created in [Step 1a](docs/Spark/gems/machine-learning/genaichatbot.md#1a-dependencies) safely as Databricks `secrets`. Also, use the Databricks CLI to create catalog tables and schemas. Follow the steps below and for more details about the Databricks CLI read [here.](https://docs.databricks.com/en/archive/dev-tools/cli/index.html)
 
 Find `setup_Databricks.sh` [here](https://github.com/prophecy-samples/gen-ai-chatbot-template/blob/main/setup_databricks.sh).
 
@@ -120,7 +120,7 @@ databricks secrets list --scope slack
 ### 1c. Load the Git repository
 
 1.  **Login** to [Prophecy](https://app.prophecy.io/metadata/auth/signup)
-2.  **Import** a new Prophecy [Project](/docs/concepts/project/project.md#1-create-new-project)
+2.  **Import** a new Prophecy [Project](/docs/get-started/concepts/project/project.md#1-create-new-project)
 3.  **Load the forked Git repository** to the Prophecy project as shown in this 30-second [video.](https://github.com/prophecy-samples/gen-ai-chatbot-template/assets/3248329/dcdfabaf-4870-421d-9f92-4ab028c5db5a), pointing to your fork at `https://github.com/<your_username>/gen-ai-chatbot-template`
 4.  **Connect** to your Spark cluster by creating a fabric following [these steps.](docs/administration/Spark-fabrics/databricks/databricks.md)
 

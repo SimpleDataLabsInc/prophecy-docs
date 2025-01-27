@@ -33,7 +33,7 @@ OR
 - Snowflake Account
 - A Prophecy project with SQL model running on Snowflake
 
-If you don't have an existing project, please check out [this guide](https://docs.prophecy.io/concepts/project/#1-create-new-project) for setting up a Spark project, and [this guide](/docs/tutorials/end-to-end/getting-started-with-low-code-sql.md) for setting up a SQL model in Prophecy.
+If you don't have an existing project, please check out [this guide](https://docs.prophecy.io/concepts/project/#1-create-new-project) for setting up a Spark project, and [this guide](/docs/get-started/tutorials/getting-started-with-low-code-sql.md) for setting up a SQL model in Prophecy.
 
 **For this guide, let's create a job that gets activated whenever a new file is uploaded to an S3 bucket. Additionally, we'll configure it to send an email notification prior to initiating the execution of both the pipeline and SQL model.**
 
@@ -176,7 +176,7 @@ Click on **(1) Operators**, and Drag the **(2) DBT gem** from the dropdown to th
 
 Here, you will select the DBT project/model to Schedule, what SQL fabric to schedule it on, and other additional properties for running a DBT model.
 
-Select the **(1) DBT commands** you want to run when scheduling your models. You can select all ([dependencies](docs/extensibility/dependencies/sql-dependencies.md), [seeds](docs/tutorials/end-to-end/getting-started-with-low-code-sql.md#431-create-seeds), runs, and tests) here.
+Select the **(1) DBT commands** you want to run when scheduling your models. You can select all ([dependencies](docs/extensibility/dependencies/sql-dependencies.md), [seeds](docs/get-started/tutorials/getting-started-with-low-code-sql.md#431-create-seeds), runs, and tests) here.
 Select the **(2) DBT Project to Schedule**. And then select the **(3) SQL Warehouse Fabric** to schedule the Module on. Select the Fabric for which connection was created in Step 1.4 or 1.5.
 In **(4) Git reference**, select if you want to schedule a particular commit/tag or branch. Here you can select `branch` for this guide and then in **(5) Reference Value** give the current branch name you are working on.
 You can provide any additional **(6) Properties** for your run and then click **(7) Save**!!
