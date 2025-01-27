@@ -51,7 +51,7 @@ Data Pipelines often require connections to operational databases, such as MySQL
 
 ### Metadata Connection
 
-Optionally, you can enhance your Fabric by creating a **Metadata Connection**. This is especially useful for users managing hundreds or thousands of tables in their data providers. For more details, see the [Metadata Connections documentation](/docs/concepts/fabrics/metadata-connections.md).
+Optionally, you can enhance your Fabric by creating a **Metadata Connection**. This is especially useful for users managing hundreds or thousands of tables in their data providers. For more details, see the [Metadata Connections documentation](/docs/get-started/concepts/fabrics/metadata-connections.md).
 
 ### Credentials and Secrets
 
@@ -63,7 +63,7 @@ Key-value pairs can be stored as secrets, which are accessible to running workfl
 
 Get started with hands-on guides. Learn step by step how to connect to your execution engine by creating a Fabric:
 
-1. Create a SQL Fabric with a JDBC or Unity Catalog connection following [this guide](/docs/tutorials/end-to-end/getting-started-with-low-code-sql.md#23-setup-prophecys-Fabric).
+1. Create a SQL Fabric with a JDBC or Unity Catalog connection following [this guide](/docs/get-started/tutorials/getting-started-with-low-code-sql.md#23-setup-prophecys-Fabric).
 2. Create a Databricks Fabric following [these steps](/docs/administration/Spark-fabrics/databricks/databricks.md).
 3. Create an EMR Fabric with Livy step by step [here](/docs/administration/Spark-fabrics/emr.mdx).
 

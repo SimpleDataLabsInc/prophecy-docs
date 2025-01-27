@@ -12,7 +12,7 @@ Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about 
 
 :::
 
-Each Prophecy Model is composed of individual operations, or [Gems](/docs/concepts/project/gems.md), that perform actions on data. While Prophecy offers dozens of Gems out-of-the-box, some data practitioners want to extend this idea and create their own Gems. Gem builder allows enterprise users to add custom Gems. You can create custom source, target, and transformation Gems, and then publish them for your team to use.
+Each Prophecy Model is composed of individual operations, or [Gems](/docs/get-started/concepts/project/gems.md), that perform actions on data. While Prophecy offers dozens of Gems out-of-the-box, some data practitioners want to extend this idea and create their own Gems. Gem builder allows enterprise users to add custom Gems. You can create custom source, target, and transformation Gems, and then publish them for your team to use.
 
 Our SQL Gem builder supports Databricks and Snowflake SQL. It's built on dbt Core™, allowing you to build upon existing dbt libraries to define new macros to use in your custom Gem.
 

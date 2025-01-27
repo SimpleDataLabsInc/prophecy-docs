@@ -29,7 +29,7 @@ There is no specific deployment step needed for other entities.
 
 ## How to Release a Project
 
-Once you've committed and merged your changes, you're ready to release them. To do this, Simply proceed with the [Release and Deploy](/docs/concepts/git/git.md#release-a-branch), which takes care of both the release and deployment of Pipelines, Gems, and Jobs to respective environments.
+Once you've committed and merged your changes, you're ready to release them. To do this, Simply proceed with the [Release and Deploy](/docs/ci-cd/git/git.md#release-a-branch), which takes care of both the release and deployment of Pipelines, Gems, and Jobs to respective environments.
 
 ![Release_screen](img/release_and_deploy_screen.png)
 

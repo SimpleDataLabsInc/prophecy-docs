@@ -11,7 +11,7 @@ tags:
   - data
 ---
 
-At Prophecy we're always looking to make your development faster. For teams that manage hundreds or thousands of tables, listing data catalogs, tables, and schemas can take precious minutes. In order to make this easier, Prophecy introduced Metadata Connections in release 3.2. The major benefit to Metadata Connections: you can list and view your data directly in the [Prophecy UI](/docs/concepts/project/project.md#Environment-tab).
+At Prophecy we're always looking to make your development faster. For teams that manage hundreds or thousands of tables, listing data catalogs, tables, and schemas can take precious minutes. In order to make this easier, Prophecy introduced Metadata Connections in release 3.2. The major benefit to Metadata Connections: you can list and view your data directly in the [Prophecy UI](/docs/get-started/concepts/project/project.md#Environment-tab).
 
 Let's get down to basics by [defining](#definition-of-entities) the relevant entities in Prophecy, setup the relevant data resource, then we'll walk through how to [setup](/#setup-resources) Metadata Connections in Prophecy.
 
@@ -59,7 +59,7 @@ GRANT USAGE, READ_METADATA, SELECT ON CATALOG <hive_metastore> TO <service_princ
 
 ### Setup SQL Warehouse or Cluster
 
-Prophecy supports metadata collection through SQL Warehouses and Clusters on Databricks and Snowflake. In general, we recommend to create a [SQL Warehouse](https://docs.databricks.com/en/sql/admin/create-sql-warehouse.html#create-a-sql-warehouse) or cluster dedicated to the Metadata Connection. Using this approach, the recurring metadata syncs can have a cluster defined with appropriate resources, whereas execution clusters defined in the [Fabric](/docs/concepts/fabrics/fabrics.md) `Provider` would have a separate resource profile.
+Prophecy supports metadata collection through SQL Warehouses and Clusters on Databricks and Snowflake. In general, we recommend to create a [SQL Warehouse](https://docs.databricks.com/en/sql/admin/create-sql-warehouse.html#create-a-sql-warehouse) or cluster dedicated to the Metadata Connection. Using this approach, the recurring metadata syncs can have a cluster defined with appropriate resources, whereas execution clusters defined in the [Fabric](/docs/get-started/concepts/fabrics/fabrics.md) `Provider` would have a separate resource profile.
 
 Alternatively, the Metadata Connection can use the same Warehouse or Cluster which is being used for execution. In that case, the resources would be shared.
 
@@ -79,7 +79,7 @@ Define a **(3)Connection Name**, and add an optional **(4)Description** for your
 
 Define the **(8)Refresh Frequency** for Prophecy to sync the metadata from the workspace catalogs and JDBC warehouses accessible to the access token. **(9)Enable** the Metadata Connection to proceed with the sync and **(10)Add** the Metadata Connection.
 
-Once a Connection is configured, the Connection details will be used to display data in the [Project Browser](/docs/concepts/project/project.md#project-browser) `Environment` tab.
+Once a Connection is configured, the Connection details will be used to display data in the [Project Browser](/docs/get-started/concepts/project/project.md#project-browser) `Environment` tab.
 
 ![AddGem](./img/2-add-gem.png)
 

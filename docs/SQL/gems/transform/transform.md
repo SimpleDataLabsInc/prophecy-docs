@@ -28,7 +28,7 @@ Constitutes the set of Gems that help with transforming data.
 </div>
 
 :::info
-To learn more about the UI for Transformation Gems, see [this page](/docs/concepts/project/gems.md) which illustrates features common to all Gems, or the [Aggregate](./aggregate.md) Gem page, which provides a thorough description for using SQL Gems.
+To learn more about the UI for Transformation Gems, see [this page](/docs/get-started/concepts/project/gems.md) which illustrates features common to all Gems, or the [Aggregate](./aggregate.md) Gem page, which provides a thorough description for using SQL Gems.
 :::
 
 ## Run

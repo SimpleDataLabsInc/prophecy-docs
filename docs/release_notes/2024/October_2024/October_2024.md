@@ -111,7 +111,7 @@ Added/updated Gems are highlighted in yellow.
 
   You can also use manual merge to resolve conflicts. This provides you with simple, yet effective ways to resolve merge conflicts for granular changes. For SQL, you can also toggle on **Code Changes** to view and edit the code directly on the files.
 
-  For more information, see the [Git docs](/docs/concepts/git/git.md).
+  For more information, see the [Git docs](/docs/ci-cd/git/git.md).
 
 - **Databricks Volumes support**: Prophecy now supports Databricks Volumes. When you run a Python or Scala Pipeline via a Job, you must bundle them as whl/jar artifacts. These artifacts must then be made accessible to the Databricks Job in order to use them as a library installed on the cluster.
 

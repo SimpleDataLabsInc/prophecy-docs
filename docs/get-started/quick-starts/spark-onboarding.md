@@ -9,22 +9,30 @@ tags:
   - pipelines
 ---
 
-Follow the orange dot in the product to know where to click.
+To get started with Prophecy, you can use the in-product walkthrough for a SQL model or Spark pipeline. This page will describe the **Spark** onboarding option. If you have completed this walkthrough, you can always return to it again.
 
-You can automatically go through steps by clicking in the product.
+:::info
 
-You can skip to see the end model by clicking **Skip**.
+The in-product walkthrough is designed to familiarize you with the visual canvas. To understand an entire Project workflow, including connecting to execution environments and deploying pipelines, try one of our [Deep Dive] tutorials.
 
 ## Get started
 
 1. Click **Onboarding**.
-1. Wait until your Spark cluster is attached. We provide a default [fabric](docs/concepts/fabrics/fabrics.md) (execution environment) for this onboarding project.
+1. Wait until your Spark cluster is attached. We provide a default [fabric](docs/get-started/concepts/fabrics/fabrics.md) (execution environment) for this onboarding project.
+
+## Follow the steps
+
+In this onboarding quick start, follow the orange dot in the product interface to click through the tutorial.
+
+You can automatically go through steps by clicking **Auto-configure the Gem**. You can also select **Skip** to complete the entire model design.
+
+## Summary
 
 ## Orders dataset
 
-1. Open orders
-1. Add **+ New Dataset**.
-1. Name dataset.
+1. Open the **Orders** Source gem.
+1. Click on **+ New Dataset**.
+1. Name the new dataset.
 1. Choose csv format.
 1. Next
 1. Click on the correct data location `dbfs:/Prophecy/onboarding/84c5e71f6dc236ee6530ead6d18208d4/OrdersDatasetInput.csv`

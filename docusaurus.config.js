@@ -145,7 +145,7 @@ const config = {
       {
         redirects: [
           {
-            to: "/tutorials/quick-starts/",
+            to: "/get-started/tutorials/",
             from: "/developer/videos/",
           },
           {
@@ -281,11 +281,11 @@ const config = {
             from: "/tutorials/videos/",
           },
           {
-            to: "/concepts/project/gems/",
+            to: "/get-started/concepts/project/gems/",
             from: "/concepts/gems/",
           },
           {
-            to: "/concepts/project/dataset",
+            to: "/get-started/concepts/project/dataset",
             from: "/concepts/dataset",
           },
           {
@@ -301,31 +301,31 @@ const config = {
             from: "/getting-started/airflow",
           },
           {
-            to: "/concepts/metadata",
+            to: "/get-started/concepts/metadata",
             from: "/metadata/metadata-connections",
           },
           {
-            to: "/concepts/git",
+            to: "/ci-cd/git/",
             from: "/metadata/git",
           },
           {
-            to: "/concepts/git",
+            to: "/ci-cd/git/",
             from: "/metadata/git/git-commit",
           },
           {
-            to: "/concepts/git",
+            to: "/ci-cd/git/",
             from: "/metadata/git/git-merge",
           },
           {
-            to: "/concepts/git/pr-templates",
+            to: "/ci-cd/git/pr-templates",
             from: "/metadata/pr-templates",
           },
           {
-            to: "/concepts/git",
+            to: "/ci-cd/git/",
             from: "/metadata/git/git-fork",
           },
           {
-            to: "/concepts/git/git-resolve",
+            to: "/ci-cd/git/git-resolve",
             from: "/metadata/git/git-resolve",
           },
           {
@@ -591,16 +591,13 @@ const config = {
               ),
             ];
           }
-          if (existingPath.includes("/tutorials/quick-starts")) {
+          if (existingPath.includes("/get-started/quick-starts")) {
             return [
               existingPath.replace(
-                "/tutorials/quick-starts",
+                "/get-started/quick-starts",
                 "/getting-started",
               ),
             ];
-          }
-          if (existingPath.includes("/concepts/copilot")) {
-            return [existingPath.replace("/concepts/copilot", "/copilot")];
           }
           if (existingPath.includes("/lineage")) {
             return [existingPath.replace("/lineage", "/metadata/lineage")];

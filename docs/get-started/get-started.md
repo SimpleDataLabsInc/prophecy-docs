@@ -1,15 +1,15 @@
 ---
-title: Quick starts
-id: quick-starts
+title: Getting started
+id: get-started
 description: Getting started with Prophecy
 tags: []
 ---
 
-To quickly get started wih Prophecy, you can begin with a free trial.
+If you want to get started with Prophecy,
 
 ## Prophecy Enterprise SaaS
 
-Begin a free 21-day trial by [signing up](https://app.prophecy.io/metadata/auth/signup). You'll be able to use your own data, or you can opt to use Prophecy-managed Databricks.
+To quickly get started wih Prophecy, you can begin with a free trial. Begin a free 21-day trial by [signing up](https://app.prophecy.io/metadata/auth/signup). You'll be able to use your own data, or you can opt to use Prophecy-managed Databricks.
 
 ## Prophecy via Databricks Partner Connect
 
@@ -26,13 +26,4 @@ For more permanent deployment options, visit our page on [Prophecy deployment](d
 
 :::
 
-### Next steps
-
-Try out these quick starts to get yourself up and running with Prophecy!
-
-```mdx-code-block
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
-<DocCardList items={useCurrentSidebarCategory().items}/>
-```
+## Try it yourself

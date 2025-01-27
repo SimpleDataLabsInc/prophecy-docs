@@ -30,7 +30,7 @@ To rename our Gem to describe its functionality, click on it’s **(8) Name** or
 Once done, press **(9) Save.**
 
 :::info
-To learn more about the Join Gem UI, see [this page](/docs/concepts/project/gems.md) which illustrates features common to all Gems.
+To learn more about the Join Gem UI, see [this page](/docs/get-started/concepts/project/gems.md) which illustrates features common to all Gems.
 :::
 
 ## Add a port

@@ -1,7 +1,6 @@
 ---
 title: Data Copilot
 id: copilot
-sidebar_class_name: hidden
 description: The AI assistant for data Pipelines and models
 tags:
   - concepts
@@ -19,7 +18,7 @@ Prophecy’s end-to-end platform makes data Pipeline development faster and acce
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-To learn more about what Data Copilot can do, see [Data Copilot AI capabilities](/docs/concepts/copilot/copilot-ai-capabilities.md).
+To learn more about what Data Copilot can do, see [Data Copilot AI capabilities](/docs/copilot/copilot-ai-capabilities.md).
 
 ## Knowledge Graph
 
@@ -29,7 +28,7 @@ Data Copilot works by enhancing the user’s prompt using a knowledge graph. Eac
 
 Our knowledge graph includes metadata for a Project’s entities (such as Datasets, Schemas, Seeds, Models, and Pipelines) and the statistical usages of these entities. We built the knowledge graph intentionally to include metadata but not data. The Dataset structure is included in the knowledge graph but individual Dataset records are not.
 
-For more details, see [Data privacy with Data Copilot](/docs/concepts/copilot/copilot-data-privacy.md).
+For more details, see [Data privacy with Data Copilot](/docs/copilot/copilot-data-privacy.md).
 
 ![Architecture](img/copilot_arch.png)
 

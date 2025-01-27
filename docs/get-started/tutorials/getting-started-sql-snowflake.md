@@ -54,7 +54,7 @@ Prophecy needs a default location for materializing tables and views, etc. Ident
 
 Prophecy introduces the concept of a Fabric to describe an execution environment. In this case, we create a single Fabric to connect a Snowflake warehouse and execute SQL models interactively. The Fabric defines the environment where SQL tables and views are materialized. Typically you should setup at least one Fabric each for development and production environments. Use the development environment (Fabric) for quick ad-hoc building purposes with only sample data and use the production environment for daily runs with your production Snowflake Warehouse data for your use case. Many Snowflake users will setup daily scheduled runs using Airflow as detailed [below.](#job-orchestration-on-airflow)
 
-You can read more about Fabrics [here.](/docs/concepts/fabrics/fabrics.md)
+You can read more about Fabrics [here.](/docs/get-started/concepts/fabrics/fabrics.md)
 
 Setting up a Fabric is very straightforward because we have already identified the Snowflake URL, credentials, etc the previous steps.
 
@@ -98,7 +98,7 @@ Each user can read tables from any database and schema for which they have acces
 
 ## 3. Create a new Project
 
-Prophecy’s Project is a Git repository or a directory on Git that contains all of your transformation logic. Each Prophecy Project contains a dbt Core™️ project. Learn more about Projects [here.](/docs/concepts/project/project.md)
+Prophecy’s Project is a Git repository or a directory on Git that contains all of your transformation logic. Each Prophecy Project contains a dbt Core™️ project. Learn more about Projects [here.](/docs/get-started/concepts/project/project.md)
 
 After Fabric creation you can see one project initialized for you by default called HelloWorld_SQL. If you just want to play around with Prophecy, you can start there. However, for the purpose of this tutorial we’re going to build a brand new project from scratch.
 
@@ -238,7 +238,7 @@ Importing Datasets is really easy. [Upload a file](/docs/SQL/gems/datasources/up
 
 ### 4.4 Develop your first model
 
-A model is an entity [like a pipeline](/docs/concepts/project/models.md#models-vs-pipelines) that contains a set of data transformations. However, a Model defines a single output - a view or a table that will be created on the warehouse of choice. Each model is stored as a select statement in a [SQL file](#5-code-view) within a project. Prophecy models are based on dbt Core [models](https://docs.getdbt.com/docs/build/models).
+A model is an entity [like a pipeline](/docs/get-started/concepts/project/models.md#models-vs-pipelines) that contains a set of data transformations. However, a Model defines a single output - a view or a table that will be created on the warehouse of choice. Each model is stored as a select statement in a [SQL file](#5-code-view) within a project. Prophecy models are based on dbt Core [models](https://docs.getdbt.com/docs/build/models).
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -264,7 +264,7 @@ Prophecy makes **interactively testing** the models incredibly easy! Simply:
 2. Once the model runs, the **Result** icon appears.
 3. Click the Result icon to view a **Sample** set of records.
 
-Notice Copilot is offering suggested fixes when errors appear. See how **Fix with AI** works [here](/docs/concepts/copilot/copilot-ai-capabilities.md#fix-with-ai). Explore suggested fixes in the canvas, inside each transformation Gem, or inside Gem expressions.
+Notice Copilot is offering suggested fixes when errors appear. See how **Fix with AI** works [here](/docs/copilot/copilot-ai-capabilities.md#fix-with-ai). Explore suggested fixes in the canvas, inside each transformation Gem, or inside Gem expressions.
 
 ## 5. Code view
 

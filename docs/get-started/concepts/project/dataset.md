@@ -10,10 +10,10 @@ tags:
   - target
 ---
 
-In Prophecy, Datasets are grouped by [Projects](docs/concepts/project/project.md) and rely on the following:
+In Prophecy, Datasets are grouped by [Projects](docs/get-started/concepts/project/project.md) and rely on the following:
 
 - **Schema**: The structure or shape of the data, including column names, data types, and the method for reading and writing the data in this format.
-- **[Fabric](docs/concepts/fabrics/fabrics.md)**: The execution environment in which the data resides.
+- **[Fabric](docs/get-started/concepts/fabrics/fabrics.md)**: The execution environment in which the data resides.
 
 ## Create Datasets
 
