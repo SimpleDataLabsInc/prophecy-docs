@@ -4,11 +4,6 @@
   padding-top: 0 !important;
 }
 
-.tableOfContentsInline > ul > li > a {
-  text-decoration: none !important;
-  color: inherit !important;
-}
-
 .tableOfContentsInline ul ul {
   list-style-type: circle !important;
   font-size: initial !important;
