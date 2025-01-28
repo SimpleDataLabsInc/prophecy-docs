@@ -208,10 +208,13 @@ const sidebars = {
         {
           type: "category",
           label: "Execution",
+          link: {
+            type: "doc",
+            id: "Spark/execution/interactive-execution",
+          },
           items: [
-            "Spark/execution/interactive-execution",
-            "Spark/execution/conditional-execution",
             "Spark/execution/data-explorer",
+            "Spark/execution/conditional-execution",
             "Spark/execution/execution-metrics",
             "Spark/execution/executions_on_databricks_clusters",
             "Spark/execution/executions_on_livy_clusters",
