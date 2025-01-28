@@ -54,7 +54,7 @@ When you are selecting a branch to checkout, you might be able to select branche
 
 ### Commit
 
-When you make changes to your Pipeline, you need to commit these changes to save them. You can view these changes either visually, or using the **Code changes** view.
+When you make changes to your pipeline, you need to commit these changes to save them. You can view these changes either visually, or using the **Code changes** view.
 
 ![View Git changes](img/git-code-changes.png)
 

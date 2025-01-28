@@ -18,7 +18,7 @@ tags:
 This page outlines how to configure the Sparkedge pod to use a private Maven or PyPI artifact repository (mirror).
 
 :::tip
-Sparkedge is responsible for actions like running unit tests, building Gem packages with custom Gems, and installing Pipeline dependencies in sandboxes.
+Sparkedge is responsible for actions like running unit tests, building gem packages with custom gems, and installing pipeline dependencies in sandboxes.
 :::
 
 ### Requirements

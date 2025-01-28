@@ -8,19 +8,19 @@ tags:
   - sql
 ---
 
-You can use data tests to ensure that your business data is generated reliably over time. As a data engineer, data analyst, or business user, you can run data tests so that you don’t have to manually check every Dataset every time you run a Job or model. The data test checks the validity of the SQL in your project.
+You can use data tests to ensure that your business data is generated reliably over time. As a data engineer, data analyst, or business user, you can run data tests so that you don’t have to manually check every dataset every time you run a job or model. The data test checks the validity of the SQL in your project.
 
-A data test is an assertion you make about a Dataset in your project. The Dataset can be the output from a series of transformations, or the Dataset can be a particular data source, seed, or model.
+A data test is an assertion you make about a dataset in your project. The dataset can be the output from a series of transformations, or the dataset can be a particular data source, seed, or model.
 
-For example, the following test named `ref_int_orders_customers` checks the validity of the SQL in the `HelloWorld_SQL` Project. In particular, the referential integrity check for orders and customers asserts that every `customer_id` entry in the `orders` table is present in the `customers` table.
+For example, the following test named `ref_int_orders_customers` checks the validity of the SQL in the `HelloWorld_SQL` project. In particular, the referential integrity check for orders and customers asserts that every `customer_id` entry in the `orders` table is present in the `customers` table.
 
 ![Project test canvas](img/project-test-canvas.png)
 
-This test starts with several models from the `HelloWorld_SQL` Project, combines their data with a series of transformation steps, and feeds the resulting table into the Data Test Gem.
+This test starts with several models from the `HelloWorld_SQL` project, combines their data with a series of transformation steps, and feeds the resulting table into the Data Test gem.
 
 If there are `customer_id` entries in the `orders` table that are not present in the `customers` table, then the `ref_int_orders_customers` test fails.
 
-You can test any series of transformations with a Data Test Gem. The following sections include more details about data tests.
+You can test any series of transformations with a Data Test gem. The following sections include more details about data tests.
 
 ## What you'll need to know
 
@@ -47,8 +47,8 @@ Data tests can accept input data from any table, no matter if the table is defin
 
 Supported test types include:
 
-- Project tests: Singular use tests that depend on the Model that they were created for
-- Generic tests: Generic use test that are not tied to a specific Model, and can be reused repeatedly
+- Project tests: Singular use tests that depend on the model that they were created for
+- Generic tests: Generic use test that are not tied to a specific model, and can be reused repeatedly
   - Model tests
   - Column tests
 

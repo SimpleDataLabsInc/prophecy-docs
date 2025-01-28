@@ -9,9 +9,9 @@ tags:
 
 <h3><span class="badge">Spark Gem</span></h3>
 
-Lookups are a special kind of Gem that allow you to mark a particular DataFrame as a _Broadcast_ DataFrame. Spark will ensure that this data is available on every computation node so that these lookups can be done without shuffling data. This is useful for looking up values in tables, hence the name.
+Lookups are a special kind of gem that allow you to mark a particular DataFrame as a _Broadcast_ DataFrame. Spark will ensure that this data is available on every computation node so that these lookups can be done without shuffling data. This is useful for looking up values in tables, hence the name.
 
-![Lookup Gem](../../img/lookup.png)
+![Lookup gem](../../img/lookup.png)
 
 ![Lookup UI](../../img/lookup_ui.png)
 

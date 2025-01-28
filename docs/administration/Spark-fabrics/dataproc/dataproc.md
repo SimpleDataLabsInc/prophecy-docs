@@ -12,14 +12,14 @@ tags:
   - livy
 ---
 
-In the context of Spark execution engines, users have the flexibility to opt for Google Cloud Dataproc. This guide offers step-by-step instructions on creating a Fabric that enables seamless connectivity to the Dataproc environment.
+In the context of Spark execution engines, users have the flexibility to opt for Google Cloud Dataproc. This guide offers step-by-step instructions on creating a fabric that enables seamless connectivity to the Dataproc environment.
 
 ## Create a Dataproc Cluster
 
 <br/><br/>
 
 :::caution
-Livy is required for the Fabric. Prophecy provides a script required to deploy a Dataproc Cluster.
+Livy is required for the fabric. Prophecy provides a script required to deploy a Dataproc Cluster.
 :::
 
 <br/><br/>
@@ -75,9 +75,9 @@ gcloud config set account meitestserviceaccount@core-shard-398601.iam.gserviceac
    --dataproc-metastore=projects/<project-name>/locations/<region>/services/<metastore-service-name>
    ```
 
-## Create a Dataproc Fabric
+## Create a Dataproc fabric
 
-1. Create a Fabric and select **Dataproc**.
+1. Create a fabric and select **Dataproc**.
    <br/><br/>
    <img src={require('./../img/selectdataproc.png').default} alt="select dataproc" width="75%" />
    <br/><br/>
@@ -110,7 +110,7 @@ gcloud config set account meitestserviceaccount@core-shard-398601.iam.gserviceac
    <br/><br/>
 9. Click on **Complete**.
    <br/><br/>
-   Run a simple Pipeline and make sure that the interim returns data properly.
+   Run a simple pipeline and make sure that the interim returns data properly.
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

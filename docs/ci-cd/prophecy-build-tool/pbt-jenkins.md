@@ -18,9 +18,9 @@ tags:
 
 ## Context of the Jenkins CI/CD Example
 
-In this section we will explore how to set up separate "testing" and "deploying" Jenkins Jobs using declarative Pipelines. These Jobs will be triggered when items are merged into the following protected branches
+In this section we will explore how to set up separate "testing" and "deploying" Jenkins jobs using declarative pipelines. These jobs will be triggered when items are merged into the following protected branches
 `prod`, `qa`, `develop`. Each of these three branches represents a different Databricks Workspace environment. We
-want to be able to test and deploy our Pipelines into each of these three workspaces during our release workflow.
+want to be able to test and deploy our pipelines into each of these three workspaces during our release workflow.
 
 The release process on GitHub is defined as merging and testing to branches in the following
 order: `feature-branch` > `develop` > `qa` > `prod`
@@ -28,7 +28,7 @@ order: `feature-branch` > `develop` > `qa` > `prod`
 ![branch_protection_checks_example.png](img%2Fbranch_protection_checks_example.png)
 _When PRs are made to a protected branch, the unit tests must pass before the PR can be merged_
 
-Once the PR is merged successfully, we deploy the artifacts and Job definitions to Databricks.
+Once the PR is merged successfully, we deploy the artifacts and job definitions to Databricks.
 
 :::info
 
@@ -37,8 +37,8 @@ of the CICD logic attached to the Git project itself, we will store the Jenkinsf
 directly in the repo and only store the Jenkins Triggers and Credentials in the Jenkins
 server.
 
-This example is currently designed for Pyspark Pipelines. To use the same recipe
-for Scala Pipelines, just make sure `JDK 11` is installed on your Jenkins nodes.
+This example is currently designed for Pyspark pipelines. To use the same recipe
+for Scala pipelines, just make sure `JDK 11` is installed on your Jenkins nodes.
 
 :::
 
@@ -46,7 +46,7 @@ for Scala Pipelines, just make sure `JDK 11` is installed on your Jenkins nodes.
 
 You should have access to:
 
-- a Git repo with an existing Prophecy Project
+- a Git repo with an existing Prophecy project
 - a Jenkins Server where you can create new pipelines and credentials
 
 ### Jenkins plugins
@@ -54,9 +54,9 @@ You should have access to:
 The following plugins were used for this example:
 
 - [GitHub Pull Request Builder](https://plugins.jenkins.io/ghprb/)
-  - for the build/test Job
+  - for the build/test job
 - [GitHub](https://plugins.jenkins.io/github/)
-  - for the deploy Job
+  - for the deploy job
 
 :::caution
 
@@ -86,28 +86,28 @@ are deploying to.
 
 ### FABRIC_ID
 
-Find the Fabric IDs for your Fabrics by navigating to the Metadata page of that Fabric and observing the URL.
+Find the Fabric IDs for your fabrics by navigating to the Metadata page of that Fabric and observing the URL.
 
 `Metadata` > `Fabrics` > `<your Fabric>`
 
 ![finding_fabric_id.png](img%2Ffinding_fabric_id.png)
 
-## Testing Pipeline
+## Testing pipeline
 
-This Pipeline uses PBT to validate the pipelines and run all Prophecy unit tests.
+This pipeline uses PBT to validate the pipelines and run all Prophecy unit tests.
 
-### Testing Pipeline - Pipeline Creation
+### Testing pipeline - Pipeline Creation
 
-- Create a Jenkins Pipeline
+- Create a Jenkins pipeline
   ![jenkins-pipeline-type.png](img%2Fjenkins-pipeline-type.png)
-- Configure the GitHub Project URL
+- Configure the GitHub project URL
 - Choose GitHub Pull Request Builder as the trigger type.
 - Provide credentials to GitHub
   - creating a fine-grained Personal Acces Token (PAT) in GitHub. The PAT should be
     scoped to yourself or your Organization, have access to the repository containing the Prophecy project, and
     appropriate permissions:
     ![github-pat-permissions.png](img%2Fgithub-pat-permissions.png)
-- Choose Pipeline Script from SCM
+- Choose pipeline Script from SCM
 - Provide the path to our Jenkinsfile within the repo
 
 <details>
@@ -117,7 +117,7 @@ This Pipeline uses PBT to validate the pipelines and run all Prophecy unit tests
 
 </details>
 
-### Testing Pipeline - Trigger
+### Testing pipeline - Trigger
 
 We use the [GitHub Pull Request Builder](https://plugins.jenkins.io/ghprb/) to trigger any time there is a new pull request or a change
 on a pull request (comment or new commit) to our special branches: `develop`, `qa`, `prod`.
@@ -132,7 +132,7 @@ create webhooks in GitHub.
 
 </details>
 
-### Testing Pipeline - Pipeline Code
+### Testing pipeline - Pipeline Code
 
 Create a Groovy Jenkinsfile in the project repository at the below location (relative to root)
 
@@ -189,30 +189,30 @@ pipeline {
 }
 ```
 
-### Testing Pipeline - Explanation of Stages
+### Testing pipeline - Explanation of Stages
 
-The Pipeline performs the following actions in order:
+The pipeline performs the following actions in order:
 
 1. ('checkout') SCM checkout of the Prophecy project from Git
-   - Since we are using the GHRPB plugin to trigger this Pipeline, it will checkout the code
+   - Since we are using the GHRPB plugin to trigger this pipeline, it will checkout the code
      the source branch that triggered the PR with the special provided environment variable
      `${ghprbSourceBranch}`.
 2. ('install pbt') Install PBT and its dependencies to our Jenkins worker node
-3. ('valiadate') Use PBT to validate the Pipelines do not have any syntactical errors.
-4. ('test') Use PBT to run unit tests defined in the Prophecy Pipelines
+3. ('valiadate') Use PBT to validate the pipelines do not have any syntactical errors.
+4. ('test') Use PBT to run unit tests defined in the Prophecy pipelines
 
 :::info
 
-Each invocation of `sh` in the Jenkins Pipeline runs in its own shell context. For this reason we
+Each invocation of `sh` in the Jenkins pipeline runs in its own shell context. For this reason we
 source the venv containing the `pbt` tool at the beginning of each `sh` command.
 
 :::
 
-## Deploy Pipeline
+## Deploy pipeline
 
-This Pipeline uses PBT to deploy the Prophecy Pipelines to their appropriate Fabrics.
+This pipeline uses PBT to deploy the Prophecy pipelines to their appropriate fabrics.
 
-### Deploy Pipeline - Pipeline Creation
+### Deploy pipeline - Pipeline Creation
 
 - Create a Jenkins Pipeline
   ![jenkins-pipeline-type.png](img%2Fjenkins-pipeline-type.png)
@@ -230,7 +230,7 @@ This Pipeline uses PBT to deploy the Prophecy Pipelines to their appropriate Fab
 
 ### Deploy Pipeline - Trigger
 
-Set up a simple webhook trigger for this Job inside of GitHub.
+Set up a simple webhook trigger for this job inside of GitHub.
 
 - Navigate to `Settings > Webhooks > Add Webhook`
 - Create a new webhook like this:
@@ -244,7 +244,7 @@ Create a Groovy Jenkinsfile in the project repository at the below location (rel
 .jenkins/test-declarative.groovy
 ```
 
-Use the following code as a template, replacing the Fabric IDs and URLs as necessary:
+Use the following code as a template, replacing the fabric IDs and URLs as necessary:
 
 ```groovy
 def DEFAULT_FABRIC = "1174"
@@ -297,17 +297,17 @@ pipeline {
 
 ### Deploy Pipeline - Explanation of Pipeline
 
-1. ('environment' block) - Choose which Prophecy Fabric / Databricks Workspace to deploy jobs to.
+1. ('environment' block) - Choose which Prophecy fabric / Databricks Workspace to deploy jobs to.
 
 :::caution
 
-The DATABRICKS_HOST and DATABRICKS_TOKEN env variables must match the configuration of the Fabric we are attempting to deploy.
+The DATABRICKS_HOST and DATABRICKS_TOKEN env variables must match the configuration of the fabric we are attempting to deploy.
 
 :::
 
 2. ('prepare system') - Ensure python3 is available on worker nodes. You can skip this if your Jenkins nodes already have `python3-venv` installed.
 3. ('install pbt') - Ensure PBT and its dependencies are installed
-4. ('deploy') - use PBT to deploy the Databricks jobs for our chosen Fabric
-   - Builds all the Pipelines present in the project and generates a .jar/.whl artifact for each Pipeline
-   - Uploads the Pipeline .jar/.whl artifacts for each of the deployed Jobs (next step)
-   - Creates or Updates the Databricks Jobs based on `databricks-job.json` files for the Prophecy Project (only those that use `$FABRIC_ID`)
+4. ('deploy') - use PBT to deploy the Databricks jobs for our chosen fabric
+   - Builds all the pipelines present in the project and generates a .jar/.whl artifact for each pipeline
+   - Uploads the pipeline .jar/.whl artifacts for each of the deployed jobs (next step)
+   - Creates or Updates the Databricks jobs based on `databricks-job.json` files for the Prophecy project (only those that use `$FABRIC_ID`)

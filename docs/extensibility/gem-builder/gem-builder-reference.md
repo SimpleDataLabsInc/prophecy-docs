@@ -1,21 +1,67 @@
 ---
-title: Gem builder reference
+title: Gem Builder reference for Spark
 id: gem-builder-reference
-draft: true
-description: Detailed explanation of gem code structure
+description: Detailed explanation of custom gem code structure
+sidebar_label: Reference for Spark
 tags:
   - gem builder
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+This page provides information about how gems are written in code. Reference this page when you are building or editing custom gems.
+
+## Requirements
+
+Some options require a specific **gemLibsVersion**. To update this, you must manually change the `gemLibsVersion` value inside **pbt_project.yml** in your project Git repository.
+
+## Mode
+
+There are a few different types of gems that you can create. The table below describes each mode you can choose.
+
+| Mode                              | Description                                                                                                | Additional settings                                   |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| Transformation                    | Edits intermediate data in the pipeline that is in-memory.                                                 | Choose the **category** of the transformation gem     |
+| Dataset Format                    | Reads and writes data between storage and memory.                                                          | Choose whether the type is **batch** or **streaming** |
+| Custom Subgraph (**Python only**) | Controls the flow of gems. Visit the [Subgraph](docs/Spark/gems/subgraph/subgraph.md) page for an example. | None                                                  |
+
+## Classes
+
+The following classes must be included in all Spark gems. Each class extends a base class that Prophecy has defined.
+
+- A class where you inherit the representation of the overall gem.
+- A class that contains the properties to be made available to the user for this particular gem.
+- A class that defines the Spark code that needs to run on your Spark cluster.
+
+| Class                           | Base Class for Transformation | Base Class for Dataset Format | Base Class for Custom Subgraph |
+| ------------------------------- | ----------------------------- | ----------------------------- | ------------------------------ |
+| class CustomGem(BaseClass)      | `ComponentSpec`               | `DatasetSpec`                 | `MetaComponentSpec`            |
+| class YourProperties(BaseClass) | `ComponentProperties`         | `ComponentProperties`         | `MetaComponentProperties`      |
+| class YourCode(BaseClass)       | `ComponentCode`               | `ComponentCode`               | `MetaComponentCode`            |
+
+## Functions
+
+The following functions can be used to customize Spark gems.
+
+| Function                    | Purpose                                                                                                                                     | Return                                 | Gem Mode                    |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- | --------------------------- |
+| `optimizeCode`              | Enables the Prophecy optimizer to simplify the gem code when it runs.                                                                       | Boolean                                | All                         |
+| `customOutputSchemaEnabled` | Enables the [custom schema](docs/concepts/project/gems.md#outputs) option by default in the gem. Requires gemLibsVersion 1.1.47+ for Scala. | Boolean                                | Transformation              |
+| `dialog`                    | Defines how you want the gem to look like in the visual interface.                                                                          | `Dialog` object                        | Transformation and Subgraph |
+| `sourceDialog`              | Defines how you want the source gem to look like in the visual interface.                                                                   | `DatasetDialog` object                 | Dataset and Subgraph        |
+| `targetDialog`              | Defines how you want the target gem to look like in the visual interface.                                                                   | `DatasetDialog` object                 | Dataset and Subgraph        |
+| `validate`                  | Defines how to detect user errors when using the gem.                                                                                       | `Diagnostics` array                    | All                         |
+| `onChange`                  | Define UI state transformations.                                                                                                            | `Properties` object                    | All                         |
+| `serializeProperty`         | (**Scala only**) Takes a Properties object and converts it into JSON format.                                                                | String                                 | All                         |
+| `deserializeProperty`       | (**Scala only**) Parses a JSON string and converts it into a Properties object.                                                             | `Properties` object                    | All                         |
+| `apply`                     | Included in the class that extends [component code](#component-code) to define Spark logic.                                                 | None, DataFrame, or list of DataFrames | Transformation and Subgraph |
+| `sourceApply`               | Included in the class that extends [component code](#component-code) to define Spark logic.                                                 | DataFrame                              | Dataset                     |
+| `targetApply`               | Included in the class that extends [component code](#component-code) to define Spark logic.                                                 | None                                   | Dataset                     |
+
+## Examples
+
 ### Parent Class
-
-Every gem class needs to extend a parent class from which it inherits the representation of the overall gem. This includes the UI and the logic.
-For transform gems, you need to extend `ComponentSpec` (like in the example above), and for Source/Target gems you need to extend `DatasetSpec`. Each type of gem extends a different parent class.
-
-First thing you give after this is the name and category of your gem, `"Filter"` and `"Transform"` in this example.
-
-Another thing to note here is `optimizeCode`. This flag can be set to `True` or `False` value depending on whether we want the Prophecy Optimizer to run on this code to simplify it.
-In most cases, it's best to leave this value as `True`.
 
 ````mdx-code-block
 <Tabs>
@@ -46,18 +92,6 @@ override def optimizeCode: Boolean = true
 
 ### Properties Classes
 
-There is one class (seen here as `FilterProperties`) that contains a list of the properties to be made available to the user for this particular gem. Think of these as all the values a user fills out within the template of this gem, or any other UI state that you need to maintain (seen here as `columnsSelector` and `condition`).
-
-:::caution
-
-The content of these `Properties` classes is persisted in JSON and stored in Git.
-
-:::
-
-These properties can be **set** in the `dialog` function by taking input from user-controlled UI elements.
-The properties are then available for reading in the following functions:
-`validate`, `onChange`, `apply`
-
 ````mdx-code-block
 <Tabs>
 
@@ -87,11 +121,7 @@ The properties are then available for reading in the following functions:
 
 ````
 
-Additional information on these functions are available in the following sections.
-
 ### Dialog (UI)
-
-The `dialog` function contains code specific to how the gem UI should look to the user.
 
 ````mdx-code-block
 <Tabs>
@@ -137,26 +167,15 @@ def dialog: Dialog = Dialog("Filter")
 
 ````
 
-The above Dialog code in the filter is rendered on UI like this:
+After the Dialog object is defined, it is serialized as JSON and rendered in the UI. When you preview this visual interface of the example code above, it appears like this:
 
 ![Dialog](img/gem-builder-ui.png)
 
-There are various UI components that can be defined for custom gems such as scroll boxes, tabs, buttons, and more! These UI components can be grouped together in various types of panels to create a custom user experience when using the gem.
-
-After the Dialog object is defined, it's serialized as JSON, sent to the UI, and rendered there.
-
-Depending on what kind of gem is being created, either a `Dialog` or a `DatasetDialog` needs to be defined.
-
-- The **Transformation Dialog**: The Dialog for Transformation gems (any gem that is not a Dataset gem) is created using the `dialog` method, which must return a Dialog object.
-
-- The **Dataset Dialog**: The Dialog for a [Source/Target](docs/Spark/gems/source-target/source-target.md) gem is a `DatasetDialog` object. You will need to have `source` and `target` methods defined.
+Various UI components can be added to this function such as scroll boxes, tabs, buttons, and more. You can also group these components into different panels.
 
 Column Selector: This is a special property that you should add if you want to select the columns from UI and then highlight the used columns using the `onChange` function.
-It is recommended to try out this dialogue code in gem builder UI and see how each of these elements looks in UI.
 
 ### Validation
-
-The `validate` method performs validation checks so that in the case where there's any issue with any inputs provided for the user an Error can be displayed. In our example case, this would happen if the Filter condition is empty. Similarly, you can add any validation on your properties.
 
 ````mdx-code-block
 <Tabs>
@@ -184,8 +203,6 @@ def validate(component: Component)(implicit context: WorkflowContext): List[Diag
 ````
 
 ### State Changes
-
-The `onChange` method is given for the UI State transformations. You are given both the previous and the new incoming state and can merge or modify the state as needed. The properties of the gem are also accessible to this function, so functions like selecting columns, etc. are possible to add from here.
 
 ````mdx-code-block
 <Tabs>
@@ -220,9 +237,6 @@ def onChange(oldState: Component, newState: Component)(implicit context: Workflo
 
 ### Component Code
 
-The last class used here is `FilterCode` which is inherited from `ComponentCode` class. This class contains the actual Spark code that needs to run on your Spark cluster. Here the above User Defined properties are accessible using `self.props.{property}`. The Spark code for the gem logic is defined in the apply function. Input/Output of apply method can only be DataFrame or list of DataFrames or empty.
-For example, we are calling the `.filter()` method in this example in the apply function.
-
 ````mdx-code-block
 <Tabs>
 
@@ -254,27 +268,27 @@ class FilterCode(props: PropertiesType)(implicit context: WorkflowContext) exten
 
 ````
 
-You can preview the component in the Gem Builder to see how it looks. You can modify the properties and then save it to preview the generated Spark code which will eventually run on your cluster.
+If you want to test your Spark code, you can modify properties in the visual preview and save the changes. Then, you can see the generated Spark code which will eventually run on your cluster.
+
+:::info
+
+To keep gems generally compatible with each other, they must conform to a common interface. Therefore, as defined in the `apply()` method, gems must accept and produce **DataFrame objects** at the input and output ports.
+
+:::
+
+:::note
 
 To assist the Spark Catalyst Optimizer to build scalable code, Prophecy performs some minor optimizations to the code
 generated by the `apply()` method.
 
-:::info
-
-For details on our optimization functions, see [Optimization functions](optimization-functions.md).
-
 :::
 
-## Source/target gems
+### Dataset Format example
 
-Source/target gems let you read and write your Datasets into DataFrames. Let's look an example source/target gem definition.
-
-<details>
-<summary>Example code for a source/target gem</summary>
+The previous examples were for Transformation gems. The following example is the code for a Dataset Format gem.
 
 ````mdx-code-block
 <Tabs>
-
 <TabItem value="py" label="Python">
 
 ```py
@@ -689,12 +703,3 @@ object ParquetFormat extends DatasetSpec {
 </TabItem>
 </Tabs>
 ````
-
-</details>
-
-Lets compare this source/target gem definition with a transformation gem definition.
-
-- The source/target gem extends `DatasetSpec`.
-- The source/target gem has two dialog functions: `sourceDialog` and `targetDialog`. They return both a `DatasetDialog` object, whereas for any Transform gem, the dialog function returns a `Dialog` object.
-- The `ComponentCode` class for the source/target gem has two apply functions: `sourceApply` and `targetApply` for Source and Target modes respectively.
-- The `onChange` and `validate` function definitions do not differ between the types of gems.

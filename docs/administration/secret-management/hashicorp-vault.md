@@ -39,4 +39,4 @@ You can also Edit/Delete an existing secret from the button next to the Secret i
 
 ## Using HashiCorp Vault Secrets in Pipelines
 
-Once you have added a HashiCorp Vault Secret Provider and stored secrets, you can seamlessly [use](./using-secrets.md) them in your Pipelines.
+Once you have added a HashiCorp Vault Secret Provider and stored secrets, you can seamlessly [use](./using-secrets.md) them in your pipelines.

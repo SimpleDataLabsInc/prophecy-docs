@@ -15,7 +15,7 @@ With Copilot for Snowflake, our customers can build complex queries visually, an
 
 We built Copilot for Snowflake on top of [dbt Core™️ ](https://github.com/dbt-labs/dbt-core), an open-source tool for managing SQL-based data transformations. Users take advantage of Git and dbt Core™️ best practices without needing to be coding experts. You'll soon notice: Copilot is not only translating between code and visual designs, Copilot is also making helpful suggestions every step of the way.
 
-This quick-start gets you up and running with **building data transformations using Copilot for Snowflake.** Ready to schedule SQL queries and models? Prophecy supports [Airflow](/docs/Orchestration/airflow/setup/setup.md) for Job Scheduling.
+This quick-start gets you up and running with **building data transformations using Copilot for Snowflake.** Ready to schedule SQL queries and models? Prophecy supports [Airflow](/docs/Orchestration/airflow/setup/setup.md) for job scheduling.
 
 #### You will need
 
@@ -50,23 +50,23 @@ Prophecy needs a default location for materializing tables and views, etc. Ident
 
 ![DbSchema](img/Snow2.4_DBschema.png)
 
-### 2.3 Setup Prophecy's Fabric
+### 2.3 Setup Prophecy's fabric
 
-Prophecy introduces the concept of a Fabric to describe an execution environment. In this case, we create a single Fabric to connect a Snowflake warehouse and execute SQL models interactively. The Fabric defines the environment where SQL tables and views are materialized. Typically you should setup at least one Fabric each for development and production environments. Use the development environment (Fabric) for quick ad-hoc building purposes with only sample data and use the production environment for daily runs with your production Snowflake Warehouse data for your use case. Many Snowflake users will setup daily scheduled runs using Airflow as detailed [below.](#job-orchestration-on-airflow)
+Prophecy introduces the concept of a fabric to describe an execution environment. In this case, we create a single fabric to connect a Snowflake warehouse and execute SQL models interactively. The fabric defines the environment where SQL tables and views are materialized. Typically you should setup at least one fabric each for development and production environments. Use the development environment (fabric) for quick ad-hoc building purposes with only sample data and use the production environment for daily runs with your production Snowflake Warehouse data for your use case. Many Snowflake users will setup daily scheduled runs using Airflow as detailed [below.](#job-orchestration-on-airflow)
 
-You can read more about Fabrics [here.](/docs/concepts/fabrics/fabrics.md)
+You can read more about fabrics [here.](/docs/concepts/fabrics/fabrics.md)
 
-Setting up a Fabric is very straightforward because we have already identified the Snowflake URL, credentials, etc the previous steps.
+Setting up a fabric is very straightforward because we have already identified the Snowflake URL, credentials, etc the previous steps.
 
 ![CreateFabric](img/Snow2.5_createFabric.png)
 
 1. **Click** - to add a new entity.
 
-2. **Create** - a new Fabric.
+2. **Create** - a new fabric.
 
-3. **Fabric Name** - Specify a name, like devSnowflake, for your Fabric. “dev” or “prod” are helpful descriptors for this environment setup. Also specify a description (optional)
+3. **Fabric Name** - Specify a name, like devSnowflake, for your fabric. “dev” or “prod” are helpful descriptors for this environment setup. Also specify a description (optional)
 
-4. **Team** - Select a team to own this Fabric. Click the dropdown to list the teams your user is a member. If you don’t see the desired team, ask a Prophecy Administrator to add you to a team.
+4. **Team** - Select a team to own this fabric. Click the dropdown to list the teams your user is a member. If you don’t see the desired team, ask a Prophecy Administrator to add you to a team.
 
 5. **Continue** - to the Provider step.
 
@@ -90,21 +90,21 @@ Setting up a Fabric is very straightforward because we have already identified t
 
 9. **Schema** - Specify the desired Snowflake schema for default writes for this execution environment.
 
-10. **Continue** - to complete the Fabric creation.
+10. **Continue** - to complete the fabric creation.
 
 :::info
-Each user can read tables from any database and schema for which they have access. The default write database and schema is set here in the Fabric.
+Each user can read tables from any database and schema for which they have access. The default write database and schema is set here in the fabric.
 :::
 
-## 3. Create a new Project
+## 3. Create a new project
 
-Prophecy’s Project is a Git repository or a directory on Git that contains all of your transformation logic. Each Prophecy Project contains a dbt Core™️ project. Learn more about Projects [here.](/docs/concepts/project/project.md)
+Prophecy’s project is a Git repository or a directory on Git that contains all of your transformation logic. Each Prophecy project contains a dbt Core™️ project. Learn more about projects [here.](/docs/concepts/project/project.md)
 
-After Fabric creation you can see one project initialized for you by default called HelloWorld_SQL. If you just want to play around with Prophecy, you can start there. However, for the purpose of this tutorial we’re going to build a brand new project from scratch.
+After fabric creation you can see one project initialized for you by default called HelloWorld_SQL. If you just want to play around with Prophecy, you can start there. However, for the purpose of this tutorial we’re going to build a brand new project from scratch.
 
-![Create New Project](img/Snow3.1_createProject.png)
+![Create New project](img/Snow3.1_createProject.png)
 
-To create a new Project press on the **(1) Create Entity** button on the sidebar and choose **(2) Create** on the Project tile. The Project creation screen will open. Here, on the first page: we configure basic project details; and on the second page: we configure the Git repository details. Fill in the Project’s **(3) Name,** **(4) Description** (optional), and set the **(5) Project Type** to SQL. After that, select the **(6) Team** which is going to own the newly selected project. By default, you can leave the selected team to be your personal one. Finally, we choose the same **(7) Provider** as we selected in the previous step - Snowflake. Once all the details are filled out correctly, you can proceed to the next step by clicking **(8) Continue.**
+To create a new project press on the **(1) Create Entity** button on the sidebar and choose **(2) Create** on the project tile. The project creation screen will open. Here, on the first page: we configure basic project details; and on the second page: we configure the Git repository details. Fill in the project’s **(3) Name,** **(4) Description** (optional), and set the **(5) Project Type** to SQL. After that, select the **(6) Team** which is going to own the newly selected project. By default, you can leave the selected team to be your personal one. Finally, we choose the same **(7) Provider** as we selected in the previous step - Snowflake. Once all the details are filled out correctly, you can proceed to the next step by clicking **(8) Continue.**
 
 Once the basic project information is filled out, it’s time to configure the Git repository on which we’re going to store our project. Git brings the best software engineering practices to traditional data engineering. It allows it’s users to version their code, collaborate with teammates easier, and setup robust productionization pipelines.
 
@@ -148,7 +148,7 @@ Once your GitHub account is setup, select a repository where Prophecy will store
 
 Sometimes, you might want to load a project that’s within a specific subpath of a repository as opposed to the root. In that case, you can specify that path in the **(3) Path** field. Note, that the selected path should be either empty (in which case, Prophecy is going to treat it as a new project) or contain a valid dbt Core project (in which case, Prophecy is going to import it).
 
-Finally, click **(4) Continue** and your main project page will open. The Project will be populated with our data sources, models, etc. Click **Open in Editor** to begin developing.
+Finally, click **(4) Continue** and your main project page will open. The project will be populated with our data sources, models, etc. Click **Open in Editor** to begin developing.
 
 #### 3.1.2 Connecting with any other Git
 
@@ -172,7 +172,7 @@ Then, fill in the **(2) Default Branch** field based on the default main reposit
 
 Sometimes, you might want to load a project that’s within a specific subpath of a repository as opposed to the root. In that case, you can specify that path in the **(3) Path** field. Note, that the selected path should be either empty (in which case, Prophecy is going to treat it as a new project) or contain a valid dbt Core project (in which case, Prophecy is going to import it).
 
-Finally, click **(4) Continue** and your main project page will open. The Project will be populated with our data sources, models, etc. Click **Open in Editor** to begin developing.
+Finally, click **(4) Continue** and your main project page will open. The project will be populated with our data sources, models, etc. Click **Open in Editor** to begin developing.
 
 ## 4. Start development
 
@@ -190,13 +190,13 @@ Therefore, to start development we have to create our first development branch. 
 
 Note, that if the branch doesn’t exist, Prophecy creates a new branch automatically by essentially cloning what’s on the currently selected branch - therefore make sure to usually create new branch (checkout) from main. If the branch exists, the code for that branch is pulled from Git into Prophecy.
 
-### 4.2 Connect to a Fabric
+### 4.2 Connect to a fabric
 
-Prophecy allows for interactive execution of your modeling work. This allows you to run any SQL model directly on the Fabric we’ve connected to and preview the resulting data. Fabric connection also allows Prophecy to introspect the schemas on your data warehouse and ensure that your development queries are correct.
+Prophecy allows for interactive execution of your modeling work. This allows you to run any SQL model directly on the fabric we’ve connected to and preview the resulting data. Fabric connection also allows Prophecy to introspect the schemas on your data warehouse and ensure that your development queries are correct.
 
-After branch setup, Fabric selection should pop-up automatically; if not, you can easily set the Fabric by clicking on the **(5) Choose cluster** dropdown.
+After branch setup, fabric selection should pop-up automatically; if not, you can easily set the fabric by clicking on the **(5) Choose cluster** dropdown.
 
-Choose the Fabric of choice by clicking on it in the **(6) Fabrics** list, then simply **(7) Save** the settings.
+Choose the fabric of choice by clicking on it in the **(6) Fabrics** list, then simply **(7) Save** the settings.
 
 Prophecy will quickly load all the available warehouses, databases, schemas, tables, and other metadata and shortly after to allow you to start running your transformations!
 
@@ -204,13 +204,13 @@ Prophecy will quickly load all the available warehouses, databases, schemas, tab
 
 The first step, before building actual transformation logic, is definition of data sources. There are three primary ways to define data sources in a SQL project:
 
-1. **seeds** - which allow for loading small CSV Datasets into your warehouse (useful for small test Datasets or lookup mappings, like list of countries)
+1. **seeds** - which allow for loading small CSV datasets into your warehouse (useful for small test datasets or lookup mappings, like list of countries)
 2. **Datasets** - table pointer with schema and additional metadata
 3. **other models** - since each model defines a table, models can serve as inputs to another model (we’re going to cover models in the next section)
 
 #### 4.3.1 Create seeds
 
-Seeds allow you to define small CSV-based Datasets that are going to be automatically uploaded to your warehouse as tables, whenever you execute your models. This is particularly useful for business data tables or for integration testing on data samples.
+Seeds allow you to define small CSV-based datasets that are going to be automatically uploaded to your warehouse as tables, whenever you execute your models. This is particularly useful for business data tables or for integration testing on data samples.
 
 ![Create a new seed](img/Snow4.2_createNewSeed.png)
 
@@ -232,13 +232,13 @@ NATIONKEY,NAME,REGIONKEY,COMMENT
 5,ETHIOPIA,0,Coffee origin; diverse culture.
 ```
 
-#### 4.3.2 Define Datasets
+#### 4.3.2 Define datasets
 
-Importing Datasets is really easy. [Upload a file](/docs/SQL/gems/datasources/upload-files.md) or drag-and-drop existing tables directly into a model. We’re going to demonstrate that in the next step.
+Importing datasets is really easy. [Upload a file](/docs/SQL/gems/datasources/upload-files.md) or drag-and-drop existing tables directly into a model. We’re going to demonstrate that in the next step.
 
 ### 4.4 Develop your first model
 
-A model is an entity [like a pipeline](/docs/concepts/project/models.md#models-vs-pipelines) that contains a set of data transformations. However, a Model defines a single output - a view or a table that will be created on the warehouse of choice. Each model is stored as a select statement in a [SQL file](#5-code-view) within a project. Prophecy models are based on dbt Core [models](https://docs.getdbt.com/docs/build/models).
+A model is an entity [like a pipeline](/docs/concepts/project/models.md#models-vs-pipelines) that contains a set of data transformations. However, a model defines a single output - a view or a table that will be created on the warehouse of choice. Each model is stored as a select statement in a [SQL file](#5-code-view) within a project. Prophecy models are based on dbt Core [models](https://docs.getdbt.com/docs/build/models).
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -248,9 +248,9 @@ A model is an entity [like a pipeline](/docs/concepts/project/models.md#models-v
 
 Here we create a `customers_nations` model that’s going to enrich our customers and produce a report of which customers show up in which geographic areas most commonly. Follow along with the `customer` table from your Snowflake Warehouse (Database: SAMPLE_DATA, Schema: TPCH).
 
-The `customers_nations` model is stored as a `.sql` file on Git. The table or view defined by the model is stored on the SQL warehouse, database, and schema defined in the attached Fabric.
+The `customers_nations` model is stored as a `.sql` file on Git. The table or view defined by the model is stored on the SQL warehouse, database, and schema defined in the attached fabric.
 
-Suggestions are provided each step of the way. If Copilot's suggestions aren't exactly what you need, just select and configure the Gems as desired. Click [here](../SQL/gems/joins.md) for details on configuring joins or [here](../SQL/gems/transform/aggregate.md) for aggregations.
+Suggestions are provided each step of the way. If Copilot's suggestions aren't exactly what you need, just select and configure the gems as desired. Click [here](../SQL/gems/joins.md) for details on configuring joins or [here](../SQL/gems/transform/aggregate.md) for aggregations.
 
 ### 4.5 Interactively Test
 
@@ -260,19 +260,19 @@ Now that our model is fully defined, with all the logic specified, it’s time t
 
 Prophecy makes **interactively testing** the models incredibly easy! Simply:
 
-1. Click the **Play** button on any of the Gems and the model with all of it’s upstream dependencies will be executed.
+1. Click the **Play** button on any of the gems and the model with all of it’s upstream dependencies will be executed.
 2. Once the model runs, the **Result** icon appears.
 3. Click the Result icon to view a **Sample** set of records.
 
-Notice Copilot is offering suggested fixes when errors appear. See how **Fix with AI** works [here](/docs/copilot/copilot-ai-capabilities.md#fix-with-ai). Explore suggested fixes in the canvas, inside each transformation Gem, or inside Gem expressions.
+Notice Copilot is offering suggested fixes when errors appear. See how **Fix with AI** works [here](/docs/copilot/copilot-ai-capabilities.md#fix-with-ai). Explore suggested fixes in the canvas, inside each transformation gem, or inside gem expressions.
 
 ## 5. Code view
 
-The visual developers will appreciate the drag-n-drop canvas, but sometimes it's also nice to view the code. Already Prophecy creates highly performant code behind the scenes. Just click the **Code View** to reveal the SQL queries we've generated using our visual design editor. Each Gem is represented by a CTE or subquery. For example, the Join Gem `NATIONS_CUSTOMERS` is highlighted in both visual and code views.
+The visual developers will appreciate the drag-n-drop canvas, but sometimes it's also nice to view the code. Already Prophecy creates highly performant code behind the scenes. Just click the **Code View** to reveal the SQL queries we've generated using our visual design editor. Each gem is represented by a CTE or subquery. For example, the Join gem `NATIONS_CUSTOMERS` is highlighted in both visual and code views.
 
 ![ToggleToCode](./img/Snow4.6_toggleVisualCode.png)
 
-You may wish to edit the code view - give it a try! Add a SQL statement in the code view and notice the visual editor displays the updated code. For example, we've added a limit statement in the code view, and a new limit Gem appears in the visual view.
+You may wish to edit the code view - give it a try! Add a SQL statement in the code view and notice the visual editor displays the updated code. For example, we've added a limit statement in the code view, and a new limit gem appears in the visual view.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -288,12 +288,12 @@ Prophecy guides your team's code management - with version control, tagged relea
 
 ## 7. Schedule Jobs with Airflow
 
-Most Snowflake users want to schedule jobs using Airflow. Prophecy integrates with MWAA and Composer Airflows. Don't have an Airflow account? Prophecy also provides a managed Airflow option. [Setup](/docs/Orchestration/airflow/setup/setup.md) your favorite Airflow option and use this [guide](docs/Orchestration/airflow/getting-started-with-low-code-airflow.md) to schedule Airflow Jobs. Now you can schedule SQL models integrated with your Spark Pipelines, S3 file sensors, etc.
+Most Snowflake users want to schedule jobs using Airflow. Prophecy integrates with MWAA and Composer Airflows. Don't have an Airflow account? Prophecy also provides a managed Airflow option. [Setup](/docs/Orchestration/airflow/setup/setup.md) your favorite Airflow option and use this [guide](docs/Orchestration/airflow/getting-started-with-low-code-airflow.md) to schedule Airflow jobs. Now you can schedule SQL models integrated with your Spark pipelines, S3 file sensors, etc.
 
 ## Wrap up
 
 Great work! 🎉
 
-You've successfully set up, developed, and tested your first SQL project on a Snowflake Warehouse. Integration and Job Scheduling put you on solid footing for production-readiness. Wherever you are in your data journey, know that Prophecy is here to encourage best practices to boost your productivity.
+You've successfully set up, developed, and tested your first SQL project on a Snowflake Warehouse. Integration and job scheduling put you on solid footing for production-readiness. Wherever you are in your data journey, know that Prophecy is here to encourage best practices to boost your productivity.
 
 If you ever encounter any difficulties, don't hesitate to reach out to us (Contact.us@Prophecy.io) or join our [Slack community](https://prophecy-io-support.slack.com/join/shared_invite/zt-moq3xzoj-~5MSJ6WPnZfz7bwsqWi8tQ#/shared-invite/email) for assistance. We're here to help!
