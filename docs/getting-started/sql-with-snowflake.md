@@ -234,7 +234,7 @@ You may wish to edit the code view - give it a try! Add a SQL statement in the c
 
 ## Commit and Release with Git
 
-It's a good thing you've been working on your "development branch" for this guide, because now you'll step through the process of integrating your hard work with the rest of your team on the "main branch." Integration with Git is easier than it sounds. Commit early and commit often! You will commit, pull, merge, and release by following the steps [here](./getting-started-with-low-code-sql.md#53-commit-your-changes).
+It's a good thing you've been working on your "development branch" for this guide, because now you'll step through the process of integrating your hard work with the rest of your team on the "main branch." Integration with Git is easier than it sounds. Commit early and commit often! You will commit, pull, merge, and release by following the steps [here](docs/getting-started/sql-with-databricks.md#commit-your-changes).
 
 Prophecy guides your team's code management - with version control, tagged releases, and lets multiple individuals contribute to the same project - so you can focus on solving your business problems.
 

@@ -33,7 +33,7 @@ OR
 - Snowflake Account
 - A Prophecy project with SQL model running on Snowflake
 
-If you don't have an existing project, please check out [this guide](https://docs.prophecy.io/concepts/project/#1-create-new-project) for setting up a Spark project, and [this guide](/docs/getting-started/getting-started-with-low-code-sql.md) for setting up a SQL model in Prophecy.
+If you don't have an existing project, please check out [this guide](https://docs.prophecy.io/concepts/project/#1-create-new-project) for setting up a Spark project, and [this guide](docs/getting-started/sql-with-databricks.md) for setting up a SQL model in Prophecy.
 
 **For this guide, let's create a job that gets activated whenever a new file is uploaded to an S3 bucket. Additionally, we'll configure it to send an email notification prior to initiating the execution of both the pipeline and SQL model.**
 

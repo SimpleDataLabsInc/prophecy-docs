@@ -94,4 +94,4 @@ You can't use statements, such as `CALL` and `EXECUTE IMMEDIATE`, directly insid
 
 :::
 
-For more details on dbt concepts including [Sources](https://docs.getdbt.com/docs/build/sources), [Seeds](https://docs.getdbt.com/docs/build/seeds), and [Models](https://docs.getdbt.com/docs/build/models), please explore the dbt documentation or checkout Prophecy's [SQL with Databricks getting-started guide](/docs/getting-started/getting-started-with-low-code-sql.md).
+For more details on dbt concepts including [Sources](https://docs.getdbt.com/docs/build/sources), [Seeds](https://docs.getdbt.com/docs/build/seeds), and [Models](https://docs.getdbt.com/docs/build/models), please explore the dbt documentation or checkout Prophecy's [SQL with Databricks getting-started guide](docs/getting-started/sql-with-databricks.md).
