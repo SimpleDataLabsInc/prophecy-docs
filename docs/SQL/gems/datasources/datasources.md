@@ -12,7 +12,7 @@ Loading data into Prophecy is done via the [Seed](#seed), [Source](#source), or 
 
 ## Seed
 
-A Seed is an excellent way to load small CSV files into Prophecy. This is useful for small test datasets or lookup mappings, like a list of cities or countries. Seeds are saved as **.sql** files on Git when projects are committed and released. Follow the steps below to create a seed and write to the SQL warehouse defined in the fabric.
+A Seed is an excellent way to load small CSV files into Prophecy. This is useful for small test datasets or lookup mappings, like a list of cities or countries. Seeds are saved as SQL files on Git when projects are committed and released. Follow the steps below to create a seed and write to the SQL warehouse defined in the fabric.
 
 ![Seed1](img/Seed1.png)
 
@@ -25,7 +25,7 @@ A Seed is an excellent way to load small CSV files into Prophecy. This is useful
 
 :::note
 
-When you create a new seed, paste the seed contents using the code view. Then, save the seed by clicking the **large play button** in the bottom right corner. Finally, you can open the model of interest and run/execute the seed using the **small play button on the Seed gem**.
+When you create a new seed, paste the seed contents using the code view. Then, save the seed by clicking the **large play button** in the bottom right corner. Finally, you can open the model of interest and run/execute the seed using the **small play button on the Seed gem itself**.
 
 :::
 
@@ -60,15 +60,15 @@ Each Source points to a table in the SQL Warehouse(s) specified in the fabric. P
 
 A model is similar to a pipeline, as both contain data transformation steps. Unlike a pipeline, however, each model defines a single [materialized view or table](https://docs.getdbt.com/docs/build/materializations#materializations).
 
-Models are represented as visual format or as a single .sql file in `code` format. Because models define a single materialized view or table, models can serve as inputs to other models.
+Models are represented as visual format or as a single SQL file in `code` format. Because models define a single materialized view or table, models can serve as inputs to other models.
 
 ![Model1](img/Model1.png)
 
-| Model Creation                                                                                                                                                  |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **1 Open existing Model** - Within a project, open an existing model, e.g. MyNextModel.                                                                         |
-| **2 Add Model** - Click to add a new model to the existing Model.                                                                                               |
-| **3 Model Name and File Path ** - Provide a name for the new model, e.g. MyModel. Define the desired storage path in Git to store the new model as a .sql file. |
+| Callout | Step                         | Description                                                                                                                  |
+| ------- | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| 1       | **Open existing Model**      | Within a project, open an existing model, e.g. MyNextModel.                                                                  |
+| 2       | **Add Model**                | Click to add a new model to the existing Model.                                                                              |
+| 3       | **Model Name and File Path** | Provide a name for the new model, e.g. MyModel. Define the desired storage path in Git to store the new model as a SQL file. |
 
 Now the new model has been created and the canvas is displayed. Optionally, click `Config`. Prophecy makes it easy to decide whether a model should be materialized as a view, table, ephemeral, incremental, or dynamic table. For more information on how to configure a table's materiliazation, read this [interactive development blog post](https://www.prophecy.io/blog/interactive-development).
 
