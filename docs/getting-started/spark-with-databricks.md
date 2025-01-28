@@ -56,9 +56,7 @@ After you create your first Spark fabric, you'll see a [project](/docs/concepts/
 
 ### Set up Git repository
 
-Prophecy uses [Git](docs/concepts/git/git.md) for version control. Each project in Prophecy is stored as code in its own repository or folder in a repository.
-
-For this project, you can either use Prophecy-managed Git or connect an external Git provider. If you connect an external Git provider, you'll have to provide some additional information, including the repository name for the project, the default branch of the project, and the path where the project will live in your repository.
+Prophecy uses [Git](docs/concepts/git/git.md) for version control. Each project in Prophecy is stored as code in its own repository or folder in a repository. For this project, we suggest that you use **Prophecy-managed Git**. When you are ready to use Prophecy for a production use case, [connect to an external Git provider](docs/concepts/git/git.md#Git-credentials). This provides extra functionality for you to work with.
 
 Once you have set up your Git repository, click **Continue**.
 
@@ -84,37 +82,29 @@ Next, we can start building the pipeline. If you want to run the pipeline as you
 1. Select the fabric you created earlier.
 1. Choose a cluster to attach to. If you don't have any clusters, or if your clusters aren't running, you can choose to create a new cluster from the Prophecy UI.
 
-Once the cluster is up and running, you can move on to the next section.
+The cluster may take some time to start up. Once the cluster is up and running, you can move on to the next section.
 
 ### Source gem
 
 The first thing we need in the pipeline is a data source.
 
-When you are connected to a Databricks fabric, you can browse the Databricks catalogs in the **Environment** tab of the left sidebar. From here, you can drag and drop tables on to the pipeline canvas. To make things easier, we'll provide a source dataset to practice with.
+When you are connected to a Databricks fabric, you can browse the Databricks catalogs in the **Environment** tab of the left sidebar. From here, you can drag and drop tables on to the pipeline canvas. To make things easy, we'll use one of Databricks' sample tables.
 
-1. Download this file.
-1. Drag the file onto the canvas. This will open a Source gem configuration.
-1. Make sure the selected file type is **CSV** and click **Next**.
-1. Create a new table in your file store using the **Upload and create a table option**.
-1. Choose the appropriate Catalog, Schema, and Table. If you write a unique table name, a new table will be created.
-1. Click **Next**.
-1. Click **Infer Schema**.
-1. Take a moment to review the schema of the provided table. Then, click **Next**.
-1. **Load** the data to preview the contents of the table.
-1. Click **Create Dataset**.
+1. Open the **Environment** tab of the left sidebar.
+1. Select the **samples** catalog.
+1. Under **tpch > Tables**, click the **plus** sign next to the **orders** table.
+1. A [Source](docs/Spark/gems/source-target/source-target.md) gem should be added to the pipeline canvas.
 
 ### Reformat gem
 
-Next, let's add a new column to the dataset using the [Reformat](docs/Spark/gems/transform/reformat.md) gem to extract the month from the order date.
+Next, let's add a new column to the dataset using the [Reformat](docs/Spark/gems/transform/reformat.md) gem to extract the month and year from the order date.
 
 1. Click on **Transformations** to see the transformation gems.
 1. Select **Reformat**. This adds the gem to the canvas.
 1. Connect the **Source** gem output to the **Reformat** gem input and open the **Reformat** gem.
-1. Hover **in0 : orders** and click **Add 6 columns**.
-1. In the next available row, type `order_month` in the **Target Column**. This is the name of the new output column.
-1. In the **Expression** cell, paste `date_format(CAST(to_date(order_date) AS TIMESTAMP), 'MMMM')`.
-   This will extract the numerical month from **order_date** and convert it to the name of the month.
-1. Drag the column under **order_date**.
+1. Hover **in0:tpch_orders** and click **Add 9 columns**.
+1. In the next available row, type `ordermonth` in the **Target Column**. This is the name of the new output column. In the **Expression** cell, paste `month(o_orderdate)`.
+1. In the next available row, type `orderyear` as the target column and `year(o_orderdate)` as the expression.
 1. Review the new output schema in the **Output** tab of the gem.
 
 To preview the output of the gem, click **Run** in the top right corner. This will execute the pipeline up to and including the gem.
@@ -124,20 +114,19 @@ You'll be able to see a sample output dataset under **Data** in the gem footer. 
 :::note
 
 - To learn more about running pipelines, visit [Interactive Execution](docs/Spark/execution/interactive-execution.md).
-- To learn more about expressions in gems, visit [Expression Builder](docs/Spark/expression-builder.md).
+- To learn more about Spark SQL expressions in gems, visit [Expression Builder](docs/Spark/expression-builder.md).
 
 :::
 
 ### Aggregate gem
 
-Another common gem to use is the [Aggregate](docs/Spark/gems/transform/aggregate.md) gem. Let's use it to find the total sales amount per month.
+Another common gem to use is the [Aggregate](docs/Spark/gems/transform/aggregate.md) gem. Let's use it to find the total sales amount per month each year.
 
 1. Select **Transformations > Aggregate** to add the Aggregate gem to the canvas.
 1. Connect the output of **Reformat** to the input of **Aggregate**. Then, open the Aggregate gem.
-1. Add the **amount** column to the Aggregate table.
-1. Next to amount, write `sum(amount)` as the expression.
-1. Select the **Propagate all input columns** checkbox to include all other columns in the output.
-1. Switch to the **Group By** tab, and add the **order_month** column.
+1. Add the **o_totalprice** column to the Aggregate table.
+1. Next to amount, write `sum(o_totalprice)` as the expression.
+1. Switch to the **Group By** tab, and add the **orderyear** and **ordermonth** columns.
 1. **Save** the gem.
 
 ### Target gem
@@ -149,15 +138,14 @@ Once you know how to use a couple of gems, you can experiment with others in the
 1. Click **+ New Dataset** and give the new dataset a name.
 1. Choose the format to save the dataset, then click **Next**.
 1. Choose the location to save the dataset, then click **Next**.
+1. In the Properties tab, under **Write Mode**, select [overwrite](/Spark/gems/source-target/file/delta#supported-write-modes).
 1. Confirm the schema, and then click **Create Dataset**.
 
 To write the data, we should run the whole pipeline. Click on the big play button in the bottom right corner to do so.
 
 ## Review the code
 
-This far, we've only made changes in the visual editor of the project. If you want to see how your pipeline looks in code, switch to the **Code** view.
-
-Since we made a Python project in this tutorial, the code is in Python. You can also find this code in your project's Git repository.
+This far, we've only made changes in the visual editor of the project. If you want to see how your pipeline looks in code, switch to the **Code** view. Since we made a Python project in this tutorial, the code is in Python.
 
 ## Release and deploy the project
 
@@ -193,7 +181,7 @@ To enable this job, you **must** complete the following two steps:
 
 ## What's next?
 
-Great work! You've successfully set up, developed, run, and deployed your first Spark project using a Databricks connection. Take a moment to appreciate your accomplishment!
+Great work! You've successfully set up, developed, run, and deployed your first Spark project using a Databricks execution environment. Take a moment to appreciate your accomplishment!
 
 To continue learning and expanding your skills with Prophecy, keep exploring our documentation and apply your newfound knowledge to address real-world business challenges!
 
