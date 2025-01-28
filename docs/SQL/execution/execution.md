@@ -23,12 +23,6 @@ There are two ways to run a model interactively:
 
 ![Interactive run options](img/interactive-execution-sql.png)
 
-:::note
-
-When you add a new seed to a model, run the model using the play button on the model canvas to save that seed.
-
-:::
-
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';

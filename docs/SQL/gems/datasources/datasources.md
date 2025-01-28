@@ -8,20 +8,26 @@ tags:
   - seeds
 ---
 
-Loading data into Prophecy is done via the [Seed](#seed), [Source](#source), or [Model](#model) gems - all based on [dbt](https://docs.getdbt.com/docs/build/projects) concepts.
+Loading data into Prophecy is done via the [Seed](#seed), [Source](#source), or [Model](#model) gems. These are all based on [dbt](https://docs.getdbt.com/docs/build/projects) concepts.
 
 ## Seed
 
-A Seed is an excellent way to load small CSV files into Prophecy. This is super useful for small test datasets or lookup mappings, like a list of cities or countries. Seeds are saved as .sql files on Git when projects are committed and released. Follow the steps below to Create a Seed and write to the SQL Warehouse defined in the fabric.
+A Seed is an excellent way to load small CSV files into Prophecy. This is useful for small test datasets or lookup mappings, like a list of cities or countries. Seeds are saved as **.sql** files on Git when projects are committed and released. Follow the steps below to create a seed and write to the SQL warehouse defined in the fabric.
 
 ![Seed1](img/Seed1.png)
 
-| **Seed Creation**                                                                                                                               |
-| ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| **1 Add Seed** - Inside the model canvas, from the project tab, select **+ Add Seed** and provide a name. Here the Seed was named ORDERDETAILS. |
-| **2 Toggle to `Code`** - The code view displays a text editor.                                                                                  |
-| **3 Paste data** - Paste content in CSV format with header and separated by commas.                                                             |
-| **4 Seed file** - The Seed file is now listed in the files that will be committed to Git when the project is committed and released.            |
+| Callout | Step                 | Description                                                                                                                    |
+| ------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| 1       | **Add Seed**         | Inside the model canvas, from the project tab, select **+ Add Seed** and provide a name. Here the Seed was named ORDERDETAILS. |
+| 2       | **Toggle to `Code`** | The code view displays a text editor.                                                                                          |
+| 3       | **Paste data**       | Paste content in CSV format with header and separated by commas.                                                               |
+| 4       | **Seed file**        | The Seed file is now listed in the files that will be committed to Git when the project is committed and released.             |
+
+:::note
+
+When you create a new seed, paste the seed contents using the code view. Then, save the seed by clicking the **large play button** in the bottom right corner. Finally, you can open the model of interest and run/execute the seed using the **small play button on the Seed gem**.
+
+:::
 
 ![Seed2](img/Seed2.png)
 
