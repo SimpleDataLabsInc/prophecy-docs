@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[58525],{32013:e=>{e.exports=JSON.parse('{"label":"Models","permalink":"/tags/models","allTagsPath":"/tags","count":1,"items":[{"id":"concepts/project/Model","title":"Models","description":"SQL models define a single target table or view","permalink":"/concepts/project/Model"}]}')}}]);
