@@ -8,7 +8,7 @@ tags:
   - jobs
 ---
 
-To connect to a running Airflow Instance, you would need to create a [fabric](/docs/get-started/concepts/fabrics/fabrics.md) of type Airflow.
+To connect to a running Airflow Instance, you would need to create a [fabric](/docs/getting-started/concepts/fabrics/fabrics.md) of type Airflow.
 Prophecy provides you with three different types of fabrics depending upon where your Airflow Instance is running.
 
 1. **[Prophecy Managed Airflow](docs/Orchestration/airflow/prophecy-managed/prophecy-managed.md)** - for those who are new to Airflow and do not have an Airflow instance, we provide a Prophecy Managed Airflow to expedite your trial and POC.

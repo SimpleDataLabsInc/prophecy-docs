@@ -42,12 +42,12 @@ When editing a pipeline, you'll be using the editor shown below.
    6. Spark Version
    7. Visual Language
 2. **View switch**: Switch between the Visual view and Code view. The generated code will only update if there are no errors detected in the Visual view.
-3. **Fabric switch**: Select the [fabric](/docs/get-started/concepts/fabrics/fabrics.md) to use during development; start a new cluster or connect to an existing one.
+3. **Fabric switch**: Select the [fabric](/docs/getting-started/concepts/fabrics/fabrics.md) to use during development; start a new cluster or connect to an existing one.
 4. **Gem drawer**: Click to select a category, then click on the gem you wish to insert into the editor. See [here](./gems.md) for more information on the gems.
 5. **Workspace**: Everything in the middle of the view is the _Workspace_. This is where you'll create and manipulate the gems that make up this pipeline.
-6. **Git status**: In Prophecy almost everything is stored in Git, and this is where you can interact with the version control for your pipeline. See [Projects & Git](/docs/get-started/concepts/project/project.md) for more information.
+6. **Git status**: In Prophecy almost everything is stored in Git, and this is where you can interact with the version control for your pipeline. See [Projects & Git](/docs/getting-started/concepts/project/project.md) for more information.
 7. **Run**: If you just want to run your pipeline from start to finish, click this button.
 
 ## What's next
 
-Visit the [Spark](/Spark) documentation to learn more, or view how to use [Spark with Databricks](/docs/get-started/tutorials/getting-started-with-low-code-spark.md).
+Visit the [Spark](/Spark) documentation to learn more, or view how to use [Spark with Databricks](docs/getting-started/tutorials/spark-with-databricks.md).

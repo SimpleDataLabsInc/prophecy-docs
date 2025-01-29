@@ -182,7 +182,7 @@ const config = {
       {
         redirects: [
           {
-            to: "/get-started/tutorials/",
+            to: "/getting-started/tutorials/",
             from: "/developer/videos/",
           },
           {
@@ -318,11 +318,11 @@ const config = {
             from: "/tutorials/videos/",
           },
           {
-            to: "/get-started/concepts/project/gems/",
+            to: "/getting-started/concepts/project/gems/",
             from: "/concepts/gems/",
           },
           {
-            to: "/get-started/concepts/project/dataset",
+            to: "/getting-started/concepts/project/dataset",
             from: "/concepts/dataset",
           },
           {
@@ -338,7 +338,7 @@ const config = {
             from: "/getting-started/airflow",
           },
           {
-            to: "/get-started/concepts/metadata",
+            to: "/getting-started/concepts/metadata",
             from: "/metadata/metadata-connections",
           },
           {
@@ -497,6 +497,22 @@ const config = {
             to: "/api/active-users-api/",
             from: "/settings/active-users-api/",
           },
+          {
+            to: "/getting-started/tutorials/spark-with-databricks",
+            from: "/getting-started/spark-with-databricks",
+          },
+          {
+            to: "/getting-started/tutorials/sql-with-snowflake",
+            from: "/getting-started/sql-with-snowflake",
+          },
+          {
+            to: "/getting-started/tutorials/sql-with-databricks",
+            from: "/getting-started/sql-with-databricks",
+          },
+          {
+            to: "/Spark/gems/machine-learning/gen-ai-chatbot",
+            from: "/getting-started/gen-ai-chatbot",
+          },
         ],
         /*
 
@@ -640,10 +656,10 @@ const config = {
               ),
             ];
           }
-          if (existingPath.includes("/get-started/quick-starts")) {
+          if (existingPath.includes("/getting-started/quick-starts")) {
             return [
               existingPath.replace(
-                "/get-started/quick-starts",
+                "/getting-started/quick-starts",
                 "/getting-started",
               ),
             ];

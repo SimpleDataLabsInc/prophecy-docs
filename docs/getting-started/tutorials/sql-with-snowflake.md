@@ -1,42 +1,55 @@
 ---
 title: SQL with Snowflake
 id: sql-with-snowflake
-description: A tutorial on using Copilot for Snowflake
+description: Use this tutorial to create a project with data in Snowflake
 tags:
-  - sql
+  - SQL
   - tutorial
   - snowflake
   - airflow
 ---
 
-Prophecy's Copilot - a delightful tool for interactively building data transformations - is now fully extended to Snowflake.
+If you store your data in Snowflake, you can use Prophecy to build SQL models and carry out data transformations. Use this tutorial to understand how to connect Snowflake and Prophecy, develop visual models, review optimized and open-source SQL code, and deploy projects.
 
-With Copilot for Snowflake, our customers can build complex queries visually, and the tool automatically translates them into optimized SQL code in Git. No more proprietary formats! Code in Git (representing visual designs) means more people can work with data and extract insights.
+Along the way, our Data Copilot will help! Prophecy has built our Data Copilot for SQL on top of [dbt Core™️ ](https://github.com/dbt-labs/dbt-core), an open-source tool for managing SQL-based data transformations.
 
-We built Copilot for Snowflake on top of [dbt Core™️ ](https://github.com/dbt-labs/dbt-core), an open-source tool for managing SQL-based data transformations. Users take advantage of Git and dbt Core™️ best practices without needing to be coding experts. You'll soon notice: Copilot is not only translating between code and visual designs, Copilot is also making helpful suggestions every step of the way.
+## Requirements
 
-This quick-start gets you up and running with **building data transformations using Copilot for Snowflake.** Ready to schedule SQL queries and models? Prophecy supports [Airflow](/docs/Orchestration/airflow/setup/setup.md) for job scheduling.
+For this tutorial, you will need:
 
-#### You will need
+- A Prophecy account.
+  :::tip
+  If you do not already have access to Prophecy, you can [sign up](https://app.Prophecy.io/metadata/auth/signup) and start a 21 day free trial.
+  :::
+- A Snowflake account.
+- A GitHub account.
 
-- Snowflake Account
-- GitHub Account (recommended)
+## Connect to Snowflake
 
-## 1. Setup Prophecy account
+Let's start by connecting Prophecy and Snowflake.
 
-Sign up for a [Prophecy account](https://app.Prophecy.io/metadata/auth/signup) to start a 21 day trial.
+### Get Snowflake Account URL and credentials
 
-[![Account Creation](img/Snow1_signup.png)](https://app.prophecy.io/metadata/auth/signup)
+You'll first have to retrieve the following information from Snowflake to pass to Prophecy.
 
-## 2. Connect to Snowflake
+1. Open Snowflake.
+1. Write down your SnowflakeURL. It should look like `https://<org-account>.snowflakecomputing.com`.
+1. Note your user's **Role** in Snowflake.
+   ![Role](img/Snow2.2_Role.png)
+1. Identify which [warehouse](https://docs.snowflake.com/en/user-guide/warehouses) you want to connect. Make sure the warehouse is started.
+   ![Warehouse](img/Snow2.3_Warehouse.png)
+1. Identify a database and schema that you want Prophecy to access.
+   ![DbSchema](img/Snow2.4_DBschema.png)
 
-### 2.1 Get Snowflake Account URL and credentials
+### Set up a fabric in Prophecy
 
-To connect Prophecy to Snowflake, you'll need to assemble a few items. The Snowflake URL is a combination of the Snowflake organization and account, in the following format:
+A [fabric](docs/getting-started/concepts/fabrics/fabrics.md) in Prophecy is an execution environment. In this case, you already know you want to use Snowflake for your computation, so we'll make a Snowflake fabric!
 
-![URL](img/Snow2.1_URL.png)
+:::note
+Typically you should setup at least one fabric each for development and production environments. Use the development fabric for quick development with sample data, and use the production environment for daily runs with your production Snowflake warehouse data. Many Snowflake users will setup daily scheduled runs using Airflow as detailed [below](#job-orchestration-on-airflow).
+:::
 
-As a user, you'll login to Snowflake using your username and password credential. Prophecy will use the same credential so that the Prophecy user can obtain the same level of access for Snowflake tables. Snowflake also has a Role for each user; identify the appropriate Role for Prophecy to use.
+Let's use the information we identified previously to create the fabric.
 
 ![Role](img/Snow2.2_Role.png)
 
@@ -54,95 +67,74 @@ Prophecy needs a default location for materializing tables and views, etc. Ident
 
 Prophecy introduces the concept of a fabric to describe an execution environment. In this case, we create a single fabric to connect a Snowflake warehouse and execute SQL models interactively. The fabric defines the environment where SQL tables and views are materialized. Typically you should setup at least one fabric each for development and production environments. Use the development environment (fabric) for quick ad-hoc building purposes with only sample data and use the production environment for daily runs with your production Snowflake Warehouse data for your use case. Many Snowflake users will setup daily scheduled runs using Airflow as detailed [below.](#job-orchestration-on-airflow)
 
-You can read more about fabrics [here.](/docs/get-started/concepts/fabrics/fabrics.md)
+You can read more about fabrics [here.](/docs/getting-started/concepts/fabrics/fabrics.md)
 
 Setting up a fabric is very straightforward because we have already identified the Snowflake URL, credentials, etc the previous steps.
 
-![CreateFabric](img/Snow2.5_createFabric.png)
-
 1. **Click** - to add a new entity.
-
 2. **Create** - a new fabric.
-
 3. **Fabric Name** - Specify a name, like devSnowflake, for your fabric. “dev” or “prod” are helpful descriptors for this environment setup. Also specify a description (optional)
-
 4. **Team** - Select a team to own this fabric. Click the dropdown to list the teams your user is a member. If you don’t see the desired team, ask a Prophecy Administrator to add you to a team.
-
 5. **Continue** - to the Provider step.
 
-![SnowProviderDetails](img/Snow2.6_providerDetails.png)
+![CreateFabric](img/Snow2.5_createFabric.png)
 
 1. **Provider Type** - Select SQL as the Provider type.
-
 2. **Provider** - Click the dropdown menu for the list of supported Provider types. Select Snowflake.
-
 3. **URL** - Add the Snowflake Account URL, which looks like this: `https://<org>-<account>.snowflakecomputing.com`
-
 4. **Username** - Add the username that Prophecy will use to connect to the Snowflake Warehouse.
-
 5. **Password** - Add the password that Prophecy will use to connect to the Snowflake Warehouse. These username/password credentials are encrypted for secure storage. Also, each Prophecy user will provide their own username/password credential upon login. Be sure these credentials are scoped appropriately; Prophecy respects the authorization granted to this Snowflake user.
-
 6. **Role** - Add the Snowflake [role](https://docs.snowflake.com/en/user-guide/security-access-control-overview#roles) that Prophecy will use to read data and execute queries on the Snowflake Warehouse. The role must be already granted to the username/password provided above and should be scoped according to the permission set desired for Prophecy.
-
 7. **Warehouse** - Specify the Snowflake warehouse for default writes for this execution environment.
-
 8. **Database** - Specify the desired Snowflake database for default writes for this execution environment.
-
 9. **Schema** - Specify the desired Snowflake schema for default writes for this execution environment.
-
 10. **Continue** - to complete the fabric creation.
+
+![SnowProviderDetails](img/Snow2.6_providerDetails.png)
 
 :::info
 Each user can read tables from any database and schema for which they have access. The default write database and schema is set here in the fabric.
 :::
 
-## 3. Create a new project
+## Create a new project
 
-Prophecy’s project is a Git repository or a directory on Git that contains all of your transformation logic. Each Prophecy project contains a dbt Core™️ project. Learn more about projects [here.](/docs/get-started/concepts/project/project.md)
+Prophecy’s project is a Git repository or a directory on Git that contains all of your transformation logic. Each Prophecy project contains a dbt Core™️ project. Learn more about projects [here.](/docs/getting-started/concepts/project/project.md)
 
-After fabric creation you can see one project initialized for you by default called HelloWorld_SQL. If you just want to play around with Prophecy, you can start there. However, for the purpose of this tutorial we’re going to build a brand new project from scratch.
+After you create your first SQL fabric, you'll see a [project](/docs/getting-started/concepts/project/project.md) in Prophecy called HelloWorld_SQL. If you just want to play around with Prophecy, you can start there. However, for the purpose of this tutorial, let's build a new project from scratch.
+
+To create a new project:
+
+1. Click the **(1) Create Entity** button on the sidebar and choose **(2) Create** on the project tile. The project creation screen will open.
+1. Fill in the project’s **(3) Name,** **(4) Description** (optional), and set the **(5) Project Type** to SQL.
+1. After that, select the **(6) Team** which is going to own the newly selected project. By default, you can leave the selected team to be your personal one.
+1. Finally, we choose the same **(7) Provider** as we selected in the previous step (Snowflake). Once all the details are filled out correctly, you can proceed to the next step by clicking **(8) Continue.**
 
 ![Create New project](img/Snow3.1_createProject.png)
 
-To create a new project press on the **(1) Create Entity** button on the sidebar and choose **(2) Create** on the project tile. The project creation screen will open. Here, on the first page: we configure basic project details; and on the second page: we configure the Git repository details. Fill in the project’s **(3) Name,** **(4) Description** (optional), and set the **(5) Project Type** to SQL. After that, select the **(6) Team** which is going to own the newly selected project. By default, you can leave the selected team to be your personal one. Finally, we choose the same **(7) Provider** as we selected in the previous step - Snowflake. Once all the details are filled out correctly, you can proceed to the next step by clicking **(8) Continue.**
+Once the basic project information is filled out, it’s time to configure the Git repository on which we’re going to store our project.
 
-Once the basic project information is filled out, it’s time to configure the Git repository on which we’re going to store our project. Git brings the best software engineering practices to traditional data engineering. It allows it’s users to version their code, collaborate with teammates easier, and setup robust productionization pipelines.
-
-![Git Repository Connection](img/Snow3.2_connectToGit.png)
+### Connect to external Git repository
 
 You'll see two options to connect to Git. **(1) Prophecy Managed Git Credentials** are not supported for this use case. You will need a GitHub account for this getting started guide. If you don't have one, create one by following [these instructions](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github). Select **(2) Connect to External Git** to connect to your external Git account.
 
-### 3.1 Connect to external Git repository
+![Git Repository Connection](img/Snow3.2_connectToGit.png)
 
-![Git Repository Connection](img/Snow3.3_SelectGitProvider.png)
+Now, you will use Prophecy's OAuth GitHub integration for authentication.
 
-When connecting to external Git repositories, you have to first setup a Git connection with Prophecy. This can be done in two ways: **(1) For GitHub** with single click connection (through GitHub OAuth); **(2) For other Git providers (e.g. Bitbucket, GitLab, etc)** by providing a Personal Access Token.
-
-#### 3.1.1 Connecting with GitHub
+1. **Git Provider** - Choose GitHub as the Git provider for this project.
+1. **Alias** - Each Git connection in Prophecy starts with an **Alias** that’s going to be used to allow you to identify the right Git account. In most cases, this can be left as default.
+1. **Login with GitHub** - redirects you to a GitHub login page (if you're not yet logged in).
+1. **Sign in** - or create a new GitHub account.
+1. **Authorize** - Authorize SimpleDataLabs (legal organization name of Prophecy.io). Here you are asked to approve Prophecy as a valid organization.
+1. **Connect** - to save the Git connection.
 
 ![Connect With GitHub](img/Snow3.3_LinkAndAuthorize.png)
-
-If you have an existing GitHub account this process is very simple, thanks to Prophecy’s strong OAuth GitHub integration. If you don’t have an account, you can create one at [GitHub.com](http://github.com).
-
-1. **Alias** - Each Git connection in Prophecy starts with an **Alias** that’s going to be used to allow you to identify the right Git account. In most cases, this can be left as default.
-
-2. **Login with GitHub** - redirects you to a GitHub login page (if you're not yet logged in).
-
-3. **Sign in** - or create a new GitHub account.
-
-4. **Authorize** - Authorize SimpleDataLabs (legal organization name of Prophecy.io). Here you are asked to approve Prophecy as a valid organization.
-
-5. **Connect** - to save the Git connection.
 
 Note that Prophecy will not store any information beyond basic user details (like email) and repository content (only queried at your explicit permission for each repository).
 
 If you’d like to connect Prophecy to one of your GitHub organizations, make sure those are approved in the Organization access section.
 
-The tab should be automatically close and you’ll be redirected back to Prophecy, which will mark the connection as complete. If for some reason this hasn’t happened (which can happen if you switched between other tabs), simply try clicking on the **(2) Login** with GitHub again.
-
-![Choose the repository](img/Snow3.4_ChooseRepoOpenProject.png)
-
-Once your GitHub account is setup, select a repository where Prophecy will store all the code for this project. Choose a **(1) Repository** from the dropdown available. If you’d like to create a new repository from scratch follow [this guide.](https://docs.github.com/en/get-started/quickstart/create-a-repo)
+Once your GitHub account is setup, select a repository where Prophecy will store all the code for this project. Choose a **(1) Repository** from the dropdown available. If you’d like to create a new repository from scratch follow [this guide](https://docs.github.com/en/get-started/quickstart/create-a-repo).
 
 **(2) Default Branch** field should populate automatically based on the repository’s default main branch - you can change if necessary. Default branch is a central point where all the code changes are merged, serving as the primary, up-to-date source for a project.
 
@@ -150,31 +142,13 @@ Sometimes, you might want to load a project that’s within a specific subpath o
 
 Finally, click **(4) Continue** and your main project page will open. The project will be populated with our data sources, models, etc. Click **Open in Editor** to begin developing.
 
-#### 3.1.2 Connecting with any other Git
-
-![Connect With Other Git](img/Snow3.5_SelectOtherGitProvider.png)
-
-To establish Git connection with any other Git provider, simply choose the provider from the **(1) Git Provider** list or select Other. Setup steps for most providers are the same, as they follow standard secure Git protocol.
-
-Firstly, define the **(2) Alias** that will allow you to easily identify your Git account. If you intend on connecting to only one Git account, you can simply leave as default.
-
-Then, you have to provide your **(3) Git Email,** **(4) Git Username,** and **(5) Git Personal Access Token.** For most of the Git providers the username is the same as the email, however this is not always the case. Ensure to provide correct email, as the commits made by Prophecy are going to appear as if made by it.
-
-Each provider is going to use a slightly different process to generate Personal Access Token, here are the guides for some of the most common providers: [GitHub](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token), [BitBucket](https://support.atlassian.com/bitbucket-cloud/docs/create-a-repository-access-token/), and [Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=Windows).
-
-Finally, click **(6) Connect** to save the Git connection.
-
 ![Choose the repository](img/Snow3.4_ChooseRepoOpenProject.png)
 
-Once your GitHub account is setup, populate the **(1) Repository** field with an HTTPS URL to a Git repository you’d like to pull.
+:::tip
+You can also connect to other external repositories like Bitbucket. Simply select a different Git provider and fill in the required credentials.
+:::
 
-Then, fill in the **(2) Default Branch** field based on the default main repository’s branch (this is usually main or master). Default branch is a central point where all the code changes are merged, serving as the primary, up-to-date source for a project.
-
-Sometimes, you might want to load a project that’s within a specific subpath of a repository as opposed to the root. In that case, you can specify that path in the **(3) Path** field. Note, that the selected path should be either empty (in which case, Prophecy is going to treat it as a new project) or contain a valid dbt Core project (in which case, Prophecy is going to import it).
-
-Finally, click **(4) Continue** and your main project page will open. The project will be populated with our data sources, models, etc. Click **Open in Editor** to begin developing.
-
-## 4. Start development
+## Start development
 
 Congratulations! We’ve now successfully completed the one-time setup process of Prophecy with all the required dependencies. We can now execute queries on Snowflake's Warehouse and take advantage of Git’s source code versioning.
 
@@ -182,7 +156,7 @@ It’s time to start building our first data transformation project!
 
 ![Create Dev Branch](img/Snow4.1_checkoutBranch.png)
 
-### 4.1 Checkout development branch
+### Checkout development branch
 
 As a good teammate, we don’t want to write changes directly on the main branch of our Git repository. Every member should have their own branch on which they can freely build and play around with the project, without interrupting each other’s work. Prophecy enforces this best practice by ensuring that no changes can be made directly on the main branch.
 
@@ -190,7 +164,7 @@ Therefore, to start development we have to create our first development branch. 
 
 Note, that if the branch doesn’t exist, Prophecy creates a new branch automatically by essentially cloning what’s on the currently selected branch - therefore make sure to usually create new branch (checkout) from main. If the branch exists, the code for that branch is pulled from Git into Prophecy.
 
-### 4.2 Connect to a fabric
+### Connect to a fabric
 
 Prophecy allows for interactive execution of your modeling work. This allows you to run any SQL model directly on the fabric we’ve connected to and preview the resulting data. Fabric connection also allows Prophecy to introspect the schemas on your data warehouse and ensure that your development queries are correct.
 
@@ -200,7 +174,7 @@ Choose the fabric of choice by clicking on it in the **(6) Fabrics** list, then 
 
 Prophecy will quickly load all the available warehouses, databases, schemas, tables, and other metadata and shortly after to allow you to start running your transformations!
 
-### 4.3 Define data sources
+### Define data sources
 
 The first step, before building actual transformation logic, is definition of data sources. There are three primary ways to define data sources in a SQL project:
 
@@ -208,7 +182,7 @@ The first step, before building actual transformation logic, is definition of da
 2. **Datasets** - table pointer with schema and additional metadata
 3. **other models** - since each model defines a table, models can serve as inputs to another model (we’re going to cover models in the next section)
 
-#### 4.3.1 Create seeds
+#### Create seeds
 
 Seeds allow you to define small CSV-based datasets that are going to be automatically uploaded to your warehouse as tables, whenever you execute your models. This is particularly useful for business data tables or for integration testing on data samples.
 
@@ -232,13 +206,13 @@ NATIONKEY,NAME,REGIONKEY,COMMENT
 5,ETHIOPIA,0,Coffee origin; diverse culture.
 ```
 
-#### 4.3.2 Define datasets
+#### Define datasets
 
 Importing datasets is really easy. [Upload a file](/docs/SQL/gems/datasources/upload-files.md) or drag-and-drop existing tables directly into a model. We’re going to demonstrate that in the next step.
 
-### 4.4 Develop your first model
+### Develop your first model
 
-A model is an entity [like a pipeline](/docs/get-started/concepts/project/models.md#models-vs-pipelines) that contains a set of data transformations. However, a model defines a single output - a view or a table that will be created on the warehouse of choice. Each model is stored as a select statement in a [SQL file](#5-code-view) within a project. Prophecy models are based on dbt Core [models](https://docs.getdbt.com/docs/build/models).
+A model is an entity [like a pipeline](/docs/getting-started/concepts/project/models.md#models-vs-pipelines) that contains a set of data transformations. However, a model defines a single output - a view or a table that will be created on the warehouse of choice. Each model is stored as a select statement in a [SQL file](#5-code-view) within a project. Prophecy models are based on dbt Core [models](https://docs.getdbt.com/docs/build/models).
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -252,7 +226,9 @@ The `customers_nations` model is stored as a `.sql` file on Git. The table or vi
 
 Suggestions are provided each step of the way. If Copilot's suggestions aren't exactly what you need, just select and configure the gems as desired. Click [here](../../SQL/gems/joins.md) for details on configuring joins or [here](../../SQL/gems/transform/aggregate.md) for aggregations.
 
-### 4.5 Interactively Test
+Suggestions are provided each step of the way. If Copilot's suggestions aren't exactly what you need, just select and configure the gems as desired. Click [here](docs/SQL/gems/joins.md) for details on configuring joins or [here](docs/SQL/gems/transform/aggregate.md) for aggregations.
+
+### Interactively Test
 
 Now that our model is fully defined, with all the logic specified, it’s time to make sure it works (and keeps working)!
 
@@ -266,7 +242,7 @@ Prophecy makes **interactively testing** the models incredibly easy! Simply:
 
 Notice Copilot is offering suggested fixes when errors appear. See how **Fix with AI** works [here](/docs/copilot/copilot-ai-capabilities.md#fix-with-ai). Explore suggested fixes in the canvas, inside each transformation gem, or inside gem expressions.
 
-## 5. Code view
+## Code view
 
 The visual developers will appreciate the drag-n-drop canvas, but sometimes it's also nice to view the code. Already Prophecy creates highly performant code behind the scenes. Just click the **Code View** to reveal the SQL queries we've generated using our visual design editor. Each gem is represented by a CTE or subquery. For example, the Join gem `NATIONS_CUSTOMERS` is highlighted in both visual and code views.
 
@@ -280,20 +256,18 @@ You may wish to edit the code view - give it a try! Add a SQL statement in the c
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-## 6. Commit and Release with Git
+## Commit and Release with Git
 
-It's a good thing you've been working on your "development branch" for this guide, because now you'll step through the process of integrating your hard work with the rest of your team on the "main branch." Integration with Git is easier than it sounds. Commit early and commit often! You will commit, pull, merge, and release by following the steps [here](./getting-started-with-low-code-sql.md#53-commit-your-changes).
+It's a good thing you've been working on your "development branch" for this guide, because now you'll step through the process of integrating your hard work with the rest of your team on the "main branch." Integration with Git is easier than it sounds. Commit early and commit often! You will commit, pull, merge, and release by following the steps [here](docs/getting-started/tutorials/sql-with-databricks.md#commit-your-changes).
 
 Prophecy guides your team's code management - with version control, tagged releases, and lets multiple individuals contribute to the same project - so you can focus on solving your business problems.
 
-## 7. Schedule Jobs with Airflow
+## Schedule Jobs with Airflow
 
 Most Snowflake users want to schedule jobs using Airflow. Prophecy integrates with MWAA and Composer Airflows. Don't have an Airflow account? Prophecy also provides a managed Airflow option. [Setup](/docs/Orchestration/airflow/setup/setup.md) your favorite Airflow option and use this [guide](docs/Orchestration/airflow/getting-started-with-low-code-airflow.md) to schedule Airflow jobs. Now you can schedule SQL models integrated with your Spark pipelines, S3 file sensors, etc.
 
-## Wrap up
+## What's next?
 
-Great work! 🎉
-
-You've successfully set up, developed, and tested your first SQL project on a Snowflake Warehouse. Integration and job scheduling put you on solid footing for production-readiness. Wherever you are in your data journey, know that Prophecy is here to encourage best practices to boost your productivity.
+Great work! You've successfully set up, developed, and tested your first SQL project on a Snowflake warehouse. Integration and job scheduling put you on solid footing for production-readiness. Wherever you are in your data journey, know that Prophecy is here to encourage best practices to boost your productivity.
 
 If you ever encounter any difficulties, don't hesitate to reach out to us (Contact.us@Prophecy.io) or join our [Slack community](https://prophecy-io-support.slack.com/join/shared_invite/zt-moq3xzoj-~5MSJ6WPnZfz7bwsqWi8tQ#/shared-invite/email) for assistance. We're here to help!

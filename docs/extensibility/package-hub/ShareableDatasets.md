@@ -5,7 +5,7 @@ description: Shareable Datasets within the project
 tags: []
 ---
 
-Users can share a [dataset](/docs/get-started/concepts/project/dataset.md) across their pipelines, but use caution when sharing across projects.
+Users can share a [dataset](/docs/getting-started/concepts/project/dataset.md) across their pipelines, but use caution when sharing across projects.
 
 ## Across pipelines
 

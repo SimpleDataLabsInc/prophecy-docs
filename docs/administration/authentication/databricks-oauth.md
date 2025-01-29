@@ -23,10 +23,13 @@ For Dedicated SaaS and self-hosted deployments, follow the steps below. Prior to
 First, a Databricks [account admin](https://docs.databricks.com/en/admin/index.html#what-are-account-admins) needs to complete the following steps **once** for your Prophecy deployment:
 
 1. On Databricks, navigate to **Account Settings > App connections** in your account console.
-2. Create a new App connection for Prophecy. This process generates Databricks OAuth Application fields on the Prophecy side.
-3. Under Client ID, copy your **OAuth Client ID** for the application, and share it with your Prophecy Cluster Admin.
-4. Under Client secret, select **Generate a client secret**. Share it with your Prophecy Cluster Admin.
-5. Click **Save**.
+1. [Create a new App connection](https://docs.databricks.com/en/integrations/enable-disable-oauth.html#enable-custom-oauth-applications-using-the-databricks-ui) for Prophecy. Ensure that:
+   - Access scopes are set to **ALL APIs**.
+   - The redirect URL contains `<your_prophecy_url>/api/databricks/oauthredirect`.
+1. This process generates Databricks OAuth Application fields on the Prophecy side.
+1. Under Client ID, copy your **OAuth Client ID** for the application, and share it with your Prophecy Cluster Admin.
+1. Under Client secret, select **Generate a client secret**. Share it with your Prophecy Cluster Admin.
+1. Click **Save**.
 
 Then, the Prophecy cluster admin has to add the Databricks credentials to Prophecy:
 
@@ -45,7 +48,7 @@ In Prophecy, you can use Databricks OAuth in two ways. The most common method is
 
 This method is used for **pipeline development** and **job configuration**. In this case, users authenticate individually via Databricks. In this case, users access data based on their individual identity and the permissions already defined within the Databricks Unity Catalog.
 
-To configure a [fabric](docs/get-started/concepts/fabrics/fabrics.md) for this use case:
+To configure a [fabric](docs/getting-started/concepts/fabrics/fabrics.md) for this use case:
 
 1. Create a new Spark or SQL fabric.
 1. Choose **Databricks** as the provider.
@@ -68,7 +71,7 @@ You only need to perform this authentication periodically, depending on the OAut
 
 This method is used for **project deployment**. In this case, authentication is performed using Databricks [service principal](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html) credentials for unattended operations (such as automated deployment). The minimum level of access that your service principal requires (including access to clusters, tables, etc.) will vary per use case.
 
-To configure a [fabric](docs/get-started/concepts/fabrics/fabrics.md) for this use case:
+To configure a [fabric](docs/getting-started/concepts/fabrics/fabrics.md) for this use case:
 
 1. Create a new Spark or SQL fabric.
 1. Choose **Databricks** as the provider.

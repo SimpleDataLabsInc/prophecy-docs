@@ -1,11 +1,9 @@
 ---
 title: Getting started
-id: get-started
+id: getting-started
 description: Getting started with Prophecy
 tags: []
 ---
-
-If you want to get started with Prophecy,
 
 ## Prophecy Enterprise SaaS
 
@@ -26,4 +24,13 @@ For more permanent deployment options, visit our page on [Prophecy deployment](d
 
 :::
 
-## Try it yourself
+### Next steps
+
+Try it yourself to get up and running with Prophecy!
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```

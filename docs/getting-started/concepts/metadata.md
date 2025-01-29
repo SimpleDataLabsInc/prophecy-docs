@@ -8,7 +8,7 @@ tags:
   - Project
 ---
 
-The [Metadata](https://app.prophecy.io/metadata/entity/user) page in Prophecy provides a searchable directory of projects and project components including pipelines, models, and jobs. We can also see Teams and importantly [fabrics](/docs/get-started/concepts/fabrics/fabrics.md).
+The [Metadata](https://app.prophecy.io/metadata/entity/user) page in Prophecy provides a searchable directory of projects and project components including pipelines, models, and jobs. We can also see Teams and importantly [fabrics](/docs/getting-started/concepts/fabrics/fabrics.md).
 
 ![Project Metadata](./img/project_metadata_1.png)
 
@@ -32,7 +32,7 @@ Each project can re-use logic from other projects and avoid code duplication. Th
 
 ### Project Commits
 
-The `Commits` tab on the [Project Metadata](#project-metadata) page shows the current Git state of the project and allows you to step through the process of committing, merging, and releasing your chanages. For a walkthrough of the different phases of comitting a project, see [this page](/docs/get-started/concepts/project/project.md#3-integrate-changes).
+The `Commits` tab on the [Project Metadata](#project-metadata) page shows the current Git state of the project and allows you to step through the process of committing, merging, and releasing your chanages. For a walkthrough of the different phases of comitting a project, see [this page](/docs/getting-started/concepts/project/project.md#3-integrate-changes).
 
 ### Project Releases and Deployments
 

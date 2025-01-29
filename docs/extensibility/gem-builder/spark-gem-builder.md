@@ -9,7 +9,7 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-[Gems](docs/get-started/concepts/project/gems.md) are visually-packaged parcels of code that perform specific operations on data. While Prophecy provides many gems out of the box, Prophecy also lets you create your own gems! Not only can you create new gems, but you can also share them in the [Package Hub](/docs/extensibility/package-hub/package-hub.md) or with selected teams.
+[Gems](docs/getting-started/concepts/project/gems.md) are visually-packaged parcels of code that perform specific operations on data. While Prophecy provides many gems out of the box, Prophecy also lets you create your own gems! Not only can you create new gems, but you can also share them in the [Package Hub](/docs/extensibility/package-hub/package-hub.md) or with selected teams.
 
 ## Overview
 

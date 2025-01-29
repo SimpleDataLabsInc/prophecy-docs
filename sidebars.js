@@ -23,42 +23,49 @@ const sidebars = {
     {
       type: "category",
       label: "Getting started",
-      link: {
-        type: "doc",
-        id: "get-started/get-started",
-      },
+      link: { type: "doc", id: "getting-started/getting-started" },
       items: [
         {
           type: "category",
           label: "Concepts",
-          link: { type: "doc", id: "get-started/concepts/key-concepts" },
+          link: { type: "doc", id: "getting-started/concepts/key-concepts" },
           items: [
             {
               type: "category",
               label: "Projects",
-              link: { type: "doc", id: "get-started/concepts/project/project" },
+              link: {
+                type: "doc",
+                id: "getting-started/concepts/project/project",
+              },
               items: [
-                "get-started/concepts/project/pipeline",
-                "get-started/concepts/project/Model",
-                "get-started/concepts/project/gems",
-                "get-started/concepts/project/dataset",
+                "getting-started/concepts/project/pipeline",
+                "getting-started/concepts/project/Model",
+                "getting-started/concepts/project/gems",
+                "getting-started/concepts/project/dataset",
               ],
             },
             {
               type: "category",
               label: "Fabrics",
-              link: { type: "doc", id: "get-started/concepts/fabrics/Fabric" },
-              items: ["get-started/concepts/fabrics/metadata-connections"],
+              link: {
+                type: "doc",
+                id: "getting-started/concepts/fabrics/Fabric",
+              },
+              items: ["getting-started/concepts/fabrics/metadata-connections"],
             },
-            "get-started/concepts/metadata",
+            "getting-started/concepts/metadata",
           ],
         },
         {
           type: "category",
           label: "Quick starts",
+          link: {
+            type: "doc",
+            id: "getting-started/quick-starts/quick-starts",
+          },
           items: [
-            "get-started/quick-starts/sql-onboarding",
-            "get-started/quick-starts/spark-onboarding",
+            "getting-started/quick-starts/sql-onboarding",
+            "getting-started/quick-starts/spark-onboarding",
           ],
         },
         {
@@ -66,12 +73,12 @@ const sidebars = {
           label: "Tutorials",
           link: {
             type: "doc",
-            id: "get-started/tutorials/tutorials",
+            id: "getting-started/tutorials/tutorials",
           },
           items: [
-            "get-started/tutorials/sql-with-snowflake",
-            "get-started/tutorials/spark-with-databricks",
-            "get-started/tutorials/sql-with-databricks",
+            "getting-started/tutorials/spark-with-databricks",
+            "getting-started/tutorials/sql-with-snowflake",
+            "getting-started/tutorials/sql-with-databricks",
           ],
         },
       ],

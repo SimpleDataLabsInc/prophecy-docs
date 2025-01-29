@@ -43,13 +43,13 @@ The Kubernetes cluster on which you will install Prophecy must meet a set of req
    kubectl version
    ```
 
-2. Your Kubernetes cluster must have [persistant storage with dynamic provisioning](https://kubernetes.io/docs/get-started/concepts/storage/persistent-volumes/). To make sure you have at least one [StorageClass](https://kubernetes.io/docs/get-started/concepts/storage/storage-classes/) that has a provisioner and reclaimPolicy set, run:
+2. Your Kubernetes cluster must have [persistant storage with dynamic provisioning](https://kubernetes.io/docs/getting-started/concepts/storage/persistent-volumes/). To make sure you have at least one [StorageClass](https://kubernetes.io/docs/getting-started/concepts/storage/storage-classes/) that has a provisioner and reclaimPolicy set, run:
 
    ```
    kubectl get storageclass
    ```
 
-3. You must have permission to install [custom resources](https://kubernetes.io/docs/get-started/concepts/extend-kubernetes/api-extension/custom-resources/), or CRDs, to your Kubernetes cluster. CRDs will be installed during installation with the Helm command. You can check if you have this permission with the following command.
+3. You must have permission to install [custom resources](https://kubernetes.io/docs/getting-started/concepts/extend-kubernetes/api-extension/custom-resources/), or CRDs, to your Kubernetes cluster. CRDs will be installed during installation with the Helm command. You can check if you have this permission with the following command.
 
    ```
    kubectl auth can-i create customresourcedefinitions --all-namespaces

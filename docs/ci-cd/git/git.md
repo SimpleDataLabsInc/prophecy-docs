@@ -8,33 +8,42 @@ tags:
   - Git
 ---
 
-Prophecy utilizes Git to align with DevOps practices. Git lets you:
+Prophecy utilizes [Git](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control) to align with DevOps practices. Git lets you:
 
 - Store your visual pipelines as code.
 - Track your project metadata, including workflows, schedules, datasets, and computed metadata.
 - Collaborate on your projects and perform code reviews.
 - Track changes across time.
 
-## Connect a Git repository
+## Projects and Git repositories
 
-When you create a project in Prophecy, you must choose an empty Git repository or a path in a repository to host the project code. You can either choose a Prophecy-managed repository, or connect an external repository.
+When you create a project in Prophecy, you must choose an empty Git repository or a path in a repository to host the underlying project code. This way, Prophecy can keep track of any changes to the project (including pipelines, models, datasets, and jobs) in a systematic way.
 
-To add a Git account to your Prohecy environment:
+If you're unfamiliar with Git, or you don't need to connect to an external Git repository, you can connect your projects to **Prophecy-managed** repositories. To leverage the full functionality of Git, however, you need to connect your projects to external Git repositories. To do so, you need to add external Git credentials to Prophecy.
 
-1. Open **Settings** from the more options menu in the left sidebar.
-1. Select the **Git** tab. You will see any existing Git credentials here, including the Prophecy Managed Git Credentials.
+## Add Git credentials to Prophecy {#Git-credentials}
+
+When you create a project in Prophecy, You can either choose a Prophecy-managed repository, or connect an external repository.
+
+To add an external Git account to your Prophecy environment:
+
+1. Open **Settings** from the ellipses menu in the left sidebar.
+1. Select the **Git** tab. You will see any existing Git credentials here.
 1. Click **Add new**.
-1. Choose the relevant Git Provider and provide your login details.
+1. Choose the relevant **Git Provider** and provide the following details:
+   - An alias for your Git credentials.
+   - Your Git email.
+   - Your Git username.
+   - Your Git personal access token (PAT). You should be able to find instructions on accessing your personal access token in each external provider's documentation.
+1. Click **Connect** to save the credentials.
 
-You can also enter new Git credentials directly in the project creation page.
+You can also enter new Git credentials directly when creating a new project.
 
-:::info
+### GitHub Oath
 
-If you are a member of a GitHub Organization, you may need to [authorize our application](https://docs.github.com/en/apps/oauth-apps/using-oauth-apps/authorizing-oauth-apps) to access your organization. This authorization step is necessary to ensure that our application can authenticate the APIs required to access the repositories. Follow the [approval steps](https://docs.github.com/en/organizations/managing-oauth-access-to-your-organizations-data/approving-oauth-apps-for-your-organization) to do so.
+If you choose GitHub as your external Git provider, you can add your Git credentials using GitHub Oauth.
 
-If you encounter any issues during the authorization process or have any questions regarding organization access, please reach out to us at [contact us](mailto:success@Prophecy.io) for assistance.
-
-:::
+To use GitHub Oauth, a GitHub admin will need to [authorize Prophecy](https://docs.github.com/en/apps/oauth-apps/using-oauth-apps/authorizing-oauth-apps) to access the APIs required to access your organization's repositories. Follow the [approval steps](https://docs.github.com/en/organizations/managing-oauth-access-to-your-organizations-data/approving-oauth-apps-for-your-organization) to set this up.
 
 ## Git workflow
 
