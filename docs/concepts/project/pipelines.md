@@ -50,4 +50,4 @@ When editing a pipeline, you'll be using the editor shown below.
 
 ## What's next
 
-Visit the [Spark](/Spark) documentation to learn more, or view how to use [Spark with Databricks](docs/getting-started/spark-with-databricks.md).
+Visit the [Spark](/Spark) documentation to learn more, or view how to use [Spark with Databricks](docs/getting-started/tutorials/spark-with-databricks.md).

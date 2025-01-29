@@ -202,7 +202,7 @@ Here we create a `customers_nations` model that’s going to enrich our customer
 
 The `customers_nations` model is stored as a `.sql` file on Git. The table or view defined by the model is stored on the SQL warehouse, database, and schema defined in the attached fabric.
 
-Suggestions are provided each step of the way. If Copilot's suggestions aren't exactly what you need, just select and configure the gems as desired. Click [here](../SQL/gems/joins.md) for details on configuring joins or [here](../SQL/gems/transform/aggregate.md) for aggregations.
+Suggestions are provided each step of the way. If Copilot's suggestions aren't exactly what you need, just select and configure the gems as desired. Click [here](docs/SQL/gems/joins.md) for details on configuring joins or [here](docs/SQL/gems/transform/aggregate.md) for aggregations.
 
 ### Interactively Test
 
@@ -234,7 +234,7 @@ You may wish to edit the code view - give it a try! Add a SQL statement in the c
 
 ## Commit and Release with Git
 
-It's a good thing you've been working on your "development branch" for this guide, because now you'll step through the process of integrating your hard work with the rest of your team on the "main branch." Integration with Git is easier than it sounds. Commit early and commit often! You will commit, pull, merge, and release by following the steps [here](docs/getting-started/sql-with-databricks.md#commit-your-changes).
+It's a good thing you've been working on your "development branch" for this guide, because now you'll step through the process of integrating your hard work with the rest of your team on the "main branch." Integration with Git is easier than it sounds. Commit early and commit often! You will commit, pull, merge, and release by following the steps [here](docs/getting-started/tutorials/sql-with-databricks.md#commit-your-changes).
 
 Prophecy guides your team's code management - with version control, tagged releases, and lets multiple individuals contribute to the same project - so you can focus on solving your business problems.
 
