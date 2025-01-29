@@ -25,7 +25,7 @@ First, a Databricks [account admin](https://docs.databricks.com/en/admin/index.h
 1. On Databricks, navigate to **Account Settings > App connections** in your account console.
 1. [Create a new App connection](https://docs.databricks.com/en/integrations/enable-disable-oauth.html#enable-custom-oauth-applications-using-the-databricks-ui) for Prophecy. Ensure that:
    - Access scopes are set to **ALL APIs**.
-   - The redirect URL contains your **Prophecy URL**.
+   - The redirect URL contains `<your_prophecy_url>/api/databricks/oauthredirect`.
 1. This process generates Databricks OAuth Application fields on the Prophecy side.
 1. Under Client ID, copy your **OAuth Client ID** for the application, and share it with your Prophecy Cluster Admin.
 1. Under Client secret, select **Generate a client secret**. Share it with your Prophecy Cluster Admin.
