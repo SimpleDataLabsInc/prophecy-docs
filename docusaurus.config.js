@@ -497,6 +497,22 @@ const config = {
             to: "/api/active-users-api/",
             from: "/settings/active-users-api/",
           },
+          {
+            to: "/getting-started/tutorials/spark-with-databricks",
+            from: "/getting-started/spark-with-databricks",
+          },
+          {
+            to: "/getting-started/tutorials/sql-with-snowflake",
+            from: "/getting-started/sql-with-snowflake",
+          },
+          {
+            to: "/getting-started/tutorials/sql-with-databricks",
+            from: "/getting-started/sql-with-databricks",
+          },
+          {
+            to: "/Spark/gems/machine-learning/gen-ai-chatbot",
+            from: "/getting-started/gen-ai-chatbot",
+          },
         ],
         /*
 
