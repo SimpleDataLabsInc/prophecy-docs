@@ -11,8 +11,6 @@ tags:
 
 The Normalize gem performs a standardization on the input DataFrame, given various expressions, conditions, and column selections.
 
-## Requirements
-
 ## Parameters
 
 ### Expand Condition

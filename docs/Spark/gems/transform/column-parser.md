@@ -12,8 +12,6 @@ tags:
 
 The ColumnParser lets you parse XML or JSON that is included in a column of your table.
 
-## Requirements
-
 ## Parameters
 
 | Parameter          | Description                                                             |
@@ -30,4 +28,6 @@ When you select a parsing method, you have three options:
 
 ## Output
 
-You will see your new columns generated from the parsed records in the gem output.
+The schema of the ColumnParser gem output includes the parsed content as a **struct** data type, in addition to all of the input columns.
+
+![New output struct](img/new-output-struct.png)

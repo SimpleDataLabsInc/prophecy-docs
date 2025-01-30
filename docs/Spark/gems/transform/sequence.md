@@ -11,8 +11,6 @@ tags:
 
 The Sequence gem creates a new column that includes incremental values for each record in the input table. This is useful for generating unique IDs or tracking the order of records.
 
-## Requirements
-
 ## Parameters
 
 | Parameter    | Description                                 |
@@ -20,3 +18,7 @@ The Sequence gem creates a new column that includes incremental values for each 
 | Start Value  | The initial value of the output column.     |
 | Increment By | The interval to increment the output value. |
 | Column Name  | The name of the output column.              |
+
+## Output
+
+The output of the Sequence gem will include the new sequence column and all of the input columns.

@@ -11,4 +11,4 @@ tags:
 
 This subgraph recursively processes rows until the result set becomes empty or a maximum number of iterations are reached.
 
-## Requirements
+## Parameters
