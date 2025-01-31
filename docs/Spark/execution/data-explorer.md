@@ -11,9 +11,9 @@ tags:
   - data
 ---
 
-The Data Explorer can help you navigate your interim datasets and understand your data better. Use it to confirm the structure of each column, review data entries, and make sure the data types are correct.
+The Data Explorer can help you navigate your [interim data samples](docs/Spark/execution/interactive-execution.md#interims) and understand your data better. Use it to confirm the structure of each column, review data entries, and make sure the data types are correct.
 
-When you open the Data Explorer for an interim dataset, you can:
+When you open the Data Explorer for an interim, you can:
 
 1. Filter the data.
 1. Sort the data.
@@ -38,14 +38,16 @@ After analyzing the data, you can retain the filter and sort options in the pipe
 
 ## Large sample interims
 
-If you want to see larger samples in the Data Explorer, you can enable the **Selective** data sampling setting.
+If you want to see larger samples in the Data Explorer, you can enable the **Selective** data sampling setting. When you enable this option, you will be able to see up to 10,000 rows in the data sample by default. You'll also see all columns by default.
 
-<!-- ![Selective data sampling](img/selective-sampling.png) -->
+:::note
 
-When you enable this option, you will be able to see up to 10,000 rows in the Data Explorer. You'll also see all of the columns in the preview.
+You can still load more records into the preview when using selective data sampling.
+
+:::
 
 ### Disable per gem
 
-If you disable the large data preview on an individual gem, you'll see a pale-color interim on its output after running the data pipeline. If you want to load the data preview, open the pale interim and it will load the preview. After it loads, the interim will look like a normal interim.
+If you disable the large data preview on an individual gem, you'll see a pale-color interim on its output after running the data pipeline. This means that no data sample was generated.
 
-<!-- ![Disable data preview](img/data-preview-checkbox.png) -->
+If you want to generate the data preview, open the pale interim and it will load the data. After it loads, the interim will look like a normal interim.

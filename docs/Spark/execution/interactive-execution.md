@@ -10,7 +10,7 @@ tags:
 
 When developing pipelines in Prophecy, you can run the pipeline interactively in the pipeline canvas. In other words, you can preview the output of your data transformations at every step in your pipeline.
 
-## Interim data sampling
+## Interim data samples {#interims}
 
 When you run a pipeline in the pipeline canvas, Prophecy generates **interim** data samples that let you preview the output of your data transformations.
 
@@ -21,7 +21,7 @@ There are two ways to run a pipeline interactively:
 
 ![Interactive run options](img/interactive-execution-play-options.png)
 
-After you run your pipeline, you will see the interims appear between gems. These previews are temporarily cached. Learn more about how to navigate the interim data samples in [Data explorer](docs/Spark/execution/data-explorer.md).
+After you run your pipeline, you will see the interims appear between gems. These previews are temporarily cached. Learn more about how to navigate the interim data samples in [Data Explorer](docs/Spark/execution/data-explorer.md).
 
 ## Enable data sampling
 

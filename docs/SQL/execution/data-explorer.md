@@ -11,9 +11,9 @@ tags:
   - data
 ---
 
-The Data Explorer can help you navigate your interim datasets and understand your data better. Use it to confirm the structure of each column, review data entries, and make sure the data types are correct.
+The Data Explorer can help you navigate your [interim data samples](docs/SQL/execution/execution.md#interims) and understand your data better. Use it to confirm the structure of each column, review data entries, and make sure the data types are correct.
 
-When you open the Data Explorer for an interim dataset, you can:
+When you open the Data Explorer for an interim, you can:
 
 1. Filter the data.
 1. Sort the data.
