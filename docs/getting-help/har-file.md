@@ -16,7 +16,7 @@ To capture the HAR file:
 1. Open the page in Prophecy where the problem persists.
 1. Right click on the webpage and select **Inspect** (or equivalent).
 1. Open the **Network** tab.
-1. Refresh the page. You should see websockets created in Network tab.
+1. Refresh the page. You should see websockets created in the Network tab.
 1. Perform the action(s) that you want to capture.
 1. Export the HAR file.
 1. Upload the HAR file to your support ticket on Zendesk.
