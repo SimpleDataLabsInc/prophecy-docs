@@ -14,6 +14,9 @@ import Requirements from "../../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
 
+Generate synthetic data with this special kind of Source gem.
+
+:::note
 <Requirements
   packagename="ProphecySparkBasicsPython"
   packageversion="0.2.36"
@@ -23,8 +26,9 @@ import Requirements from "../../\_gem-requirements.mdx";
   packageversion143="Not Supported"
   packageversion154="Supported 0.2.36+"
 />
+:::
 
-Generate synthetic data with this special kind of Source gem.
+## Use cases
 
 Generating mock data is crucial when building data pipelines to simulate real-world scenarios for testing, validating, and optimizing pipeline performance before using actual production data. It helps ensure the pipeline handles various data formats, structures, and edge cases effectively, minimizing potential issues in a live environment.
 
@@ -126,7 +130,3 @@ Be sure to configure the write mode for the Target gem. This is **very important
 The Data Generator only generates the data. If you want to store the data just connect the output to a target gem and configure the location, write properties etc. The data generated is new for each run (execution). The target write mode can be error, overwrite, append, or ignore as desired.
 :::
 
-:::info
-Using Unity Catalog Shared Spark Clusters?
-Check [here](docs/administration/Spark-fabrics/databricks/UCShared.md) to see if this gem is supported.
-:::
