@@ -361,6 +361,7 @@ const sidebars = {
             "SQL/visual-expression-builder/variant-schema",
           ],
         },
+        "SQL/configuration",
       ],
     },
     /// LINEAGE
