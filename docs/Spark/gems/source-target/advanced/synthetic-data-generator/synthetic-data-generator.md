@@ -37,7 +37,7 @@ Follow the steps below to generate your own mock data using the Data Generator G
 
 ## Cluster requirements
 
-Create a Fabric and configure the [Job Size](/docs/Spark/fabrics/databricks/databricks.md) as below, or log into an existing Spark cluster UI. Here we use Databricks as an example.
+Create a Fabric and configure the [Job Size](/docs/administration/Spark-fabrics/databricks/databricks.md#job-sizes) as below, or log into an existing Spark cluster UI. Here we use Databricks as an example.
 
 1. Verify the Databricks Runtime uses Python version >= 3.8.
    For example, [Databricks Runtime 12.2 LTS](https://docs.databricks.com/en/release-notes/runtime/12.2lts.html) uses Python 3.9.19. If you are using Databricks Runtime 12.2+, the Python version meets this requirement.
@@ -66,7 +66,7 @@ Create a new Dataset and select the Type as Data Generator. Note we are not spec
 
 ### Properties: Specify Data Structure
 
-What type of data do you need to generate? Specify the data structure using Random Data Providers. Prophecy offers a selection of [Random Data Providers](./providers) including integers, booleans, and elements from a list.
+What type of data do you need to generate? Specify the data structure using Random Data Providers. Prophecy offers a selection of providers including integers, booleans, and elements from a list.
 
 ![img](../../../img/synth_3_properties.png)
 
@@ -100,5 +100,5 @@ The Data Generator only generates the data. If you want to store the data just c
 
 :::info
 Using Unity Catalog Shared Spark Clusters?
-Check [here](../../../../fabrics/databricks/ucshared) to see if this Gem is supported.
+Check [here](/docs/administration/Spark-fabrics/databricks/UCShared.md) to see if this Gem is supported.
 :::
