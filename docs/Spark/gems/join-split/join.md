@@ -13,9 +13,23 @@ tags:
   - merge
 ---
 
+import Requirements from "../\_gem-requirements.mdx";
+
 <h3><span class="badge">Spark Gem</span></h3>
 
-Joins 2 or more DataFrames based on the given configuration.
+Joins two or more DataFrames based on the given configuration.
+
+## Requirements
+
+<Requirements
+  packagename="ProphecySparkBasicsPython"
+  packageversion="0.0.1"
+  scalalib=""
+  pythonlib=""
+  packageversion143="Supported"
+  packageversion154="Supported"
+  additional_requirements=""
+/>
 
 ## Parameters
 

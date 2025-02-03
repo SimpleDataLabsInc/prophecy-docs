@@ -9,6 +9,8 @@ tags:
   - longformat
 ---
 
+import Requirements from "../\_gem-requirements.mdx";
+
 <h3><span class="badge">Spark Gem</span></h3>
 
 Use the Unpivot gem to transform your data from a wide format to a long format.
@@ -18,6 +20,18 @@ Use the Unpivot gem to transform your data from a wide format to a long format.
 If you want to pivot the data, rather than unpivot, use the [Aggregate](aggregate.md) gem.
 
 :::
+
+## Requirements
+
+<Requirements
+  packagename="ProphecySparkBasicsPython"
+  packageversion="0.2.36"
+  scalalib=""
+  pythonlib=""
+  packageversion143="Supported"
+  packageversion154="Supported"
+  additional_requirements=""
+/>
 
 ## Parameters
 

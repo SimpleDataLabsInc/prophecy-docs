@@ -8,7 +8,23 @@ tags:
   - iceberg
 ---
 
+import Requirements from "../../\_gem-requirements.mdx";
+
+<h3><span class="badge">Spark Gem</span></h3>
+
 Reads and writes Iceberg tables, including Iceberg Merge operations and Time travel.
+
+## Requirements
+
+<Requirements
+  packagename="ProphecySparkBasicsPython"
+  packageversion="0.2.15"
+  scalalib=""
+  pythonlib=""
+  packageversion143="TBD"
+  packageversion154="TBD"
+  additional_requirements="See below"
+/>
 
 ## Required Settings
 

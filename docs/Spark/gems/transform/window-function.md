@@ -8,11 +8,25 @@ tags:
   - aggregate
 ---
 
+import Requirements from "../\_gem-requirements.mdx";
+
 <h3><span class="badge">Spark Gem</span></h3>
 
 The WindowFunction lets you define a **WindowSpec** and apply window functions on a DataFrame.
 
-### Parameters
+## Requirements
+
+<Requirements
+  packagename="ProphecySparkBasicsPython"
+  packageversion="0.0.1"
+  scalalib=""
+  pythonlib=""
+  packageversion143="Supported"
+  packageversion154="Supported"
+  additional_requirements=""
+/>
+
+## Parameters
 
 | Parameter         | Description                                                                                 | Required                                                                                                  |
 | ----------------- | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
@@ -31,11 +45,9 @@ When `Order Columns` are not defined, an unbounded window frame `(rowFrame, unbo
 When `Order Columns` are defined, a growing window frame `(rangeFrame, unboundedPreceding, currentRow)` is used by default.
 :::
 
-### Examples
+## Examples
 
----
-
-#### Ranking Functions with Window
+### Ranking Functions with Window
 
 Examples of ranking functions are: `row_number()`, `rank()`, `dense_rank()` and `ntile()`
 :::info
@@ -101,7 +113,7 @@ object rank_cust_orders {
 
 ---
 
-#### Analytical Functions with Window
+### Analytical Functions with Window
 
 Examples of analytical functions are: `lead()`, `lag()`, `cume_dist()`, etc.
 :::info
@@ -164,7 +176,7 @@ object analyse_orders {
 
 ````
 
-#### Aggregate Functions with Window
+### Aggregate Functions with Window
 
 Examples of analytical functions are: `min()`, `max()`, `avg()`, etc.
 ![Example usage of Window - Aggregate](./img/window_eg_agg.png)

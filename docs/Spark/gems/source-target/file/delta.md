@@ -8,7 +8,23 @@ tags:
   - delta
 ---
 
+import Requirements from "../../\_gem-requirements.mdx";
+
+<h3><span class="badge">Spark Gem</span></h3>
+
 Reads and writes Delta tables, including Delta Merge operations and Time travel.
+
+## Requirements
+
+<Requirements
+  packagename="ProphecySparkBasicsPython"
+  packageversion="0.0.1"
+  scalalib=""
+  pythonlib=""
+  packageversion143="Supported"
+  packageversion154="Supported"
+  additional_requirements="Delta-Spark (PyPI) and Delta-Core (Maven) are needed for non Databricks envorinments"
+/>
 
 ## Source
 

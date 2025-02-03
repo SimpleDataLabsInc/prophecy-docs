@@ -7,9 +7,23 @@ tags:
   - code
 ---
 
+import Requirements from "../\_gem-requirements.mdx";
+
 <h3><span class="badge">Spark Gem</span></h3>
 
 Provides a `SparkSession` and allows you to run custom code.
+
+## Requirements
+
+<Requirements
+  packagename="None"
+  packageversion=""
+  scalalib=""
+  pythonlib=""
+  packageversion143="Supported"
+  packageversion154="Supported"
+  additional_requirements=""
+/>
 
 ## Parameters
 

@@ -8,13 +8,29 @@ tags:
   - fixed-format
 ---
 
+import Requirements from "../../\_gem-requirements.mdx";
+
+<h3><span class="badge">Spark Gem</span></h3>
+
+Read and write fixed format files with an expected schema.
+
+## Requirements
+
+<Requirements
+  packagename="ProphecySparkBasicsPython"
+  packageversion="0.0.1"
+  scalalib=""
+  pythonlib=""
+  packageversion143="Not Supported"
+  packageversion154="Not Supported"
+  additional_requirements=""
+/>
+
 :::caution Enterprise Only
 
 Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about the Enterprise offering.
 
 :::
-
-Read and write fixed format files with an expected schema.
 
 ## Source
 

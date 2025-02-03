@@ -8,11 +8,27 @@ tags:
   - avro
 ---
 
+import Requirements from "../../\_gem-requirements.mdx";
+
+<h3><span class="badge">Spark Gem</span></h3>
+
 Avro format is a row-based storage format for Hadoop, which is widely used as a serialization platform.
 Avro format stores the schema in JSON format, making it easy to read and interpret by any program.
 The data itself is stored in a binary format making it compact and efficient.
 
 This gem allows you to read from or write to an Avro file.
+
+## Requirements
+
+<Requirements
+  packagename="ProphecySparkBasicsPython"
+  packageversion="0.0.1"
+  scalalib=""
+  pythonlib=""
+  packageversion143="Supported"
+  packageversion154="Supported"
+  additional_requirements=""
+/>
 
 ## Source
 

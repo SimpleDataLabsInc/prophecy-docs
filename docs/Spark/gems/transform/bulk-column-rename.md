@@ -9,9 +9,23 @@ tags:
   - columns
 ---
 
+import Requirements from "../\_gem-requirements.mdx";
+
 <h3><span class="badge">Spark Gem</span></h3>
 
 Use the BulkColumnRename gem to rename multiple columns in your dataset in a systematic way.
+
+## Requirements
+
+<Requirements
+  packagename="ProphecySparkBasicsPython"
+  packageversion="0.2.11"
+  scalalib="7.1.97"
+  pythonlib="1.8.19"
+  packageversion143="Not Supported"
+  packageversion154="Not Supported"
+  additional_requirements=""
+/>
 
 ## Parameters
 

@@ -1,0 +1,10 @@
+
+<Requirements
+  packagename="None"
+  packageversion=""
+  scalalib=""
+  pythonlib=""
+  packageversion143="Supported"
+  packageversion154="Supported"
+  additional_requirements=""
+/>

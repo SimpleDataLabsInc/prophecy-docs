@@ -9,6 +9,8 @@ tags:
   - schema
 ---
 
+import Requirements from "../\_gem-requirements.mdx";
+
 <h3><span class="badge">Spark Gem</span></h3>
 
 SchemaTransform is used to add, edit, rename or drop columns from the incoming DataFrame.
@@ -17,6 +19,18 @@ SchemaTransform is used to add, edit, rename or drop columns from the incoming D
 Unlike Reformat which is a set operation where all the transforms are applied in parallel, transformations here are applied _in order_.
 Reformat is a SQL `select` and is preferable when making many changes.
 :::
+
+## Requirements
+
+<Requirements
+  packagename="ProphecySparkBasicsPython"
+  packageversion="0.0.1"
+  scalalib=""
+  pythonlib=""
+  packageversion143="Supported"
+  packageversion154="Supported"
+  additional_requirements=""
+/>
 
 ## Parameters
 

@@ -1,42 +1,23 @@
 export default function Requirements(props) {
   return (
     <div>
-      <table style={{ width: "auto", tableLayout: "auto" }}>
-        <thead>
-          <tr>
-            <th>Required dependencies</th>
-            <th>
-              <a href="./release_notes/version_chart/">Minimum version</a>
-            </th>
-            <th>12.2 Shared</th>
-            <th>14.3 UC Shared</th>
-            <th>15.4 UC Shared</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{props.packagename}</td>
-            <td>{props.packageversion}</td>
-            <td>{props.packageversion122}</td>
-            <td>{props.packageversion143}</td>
-            <td>{props.packageversion154}</td>
-          </tr>
-          <tr>
-            <td>ProphecyLibsScala</td>
-            <td>{props.scalalib}</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-          </tr>
-          <tr>
-            <td>ProphecyLibsPython</td>
-            <td>{props.pythonlib}</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-          </tr>
-        </tbody>
-      </table>
+      <p>Dependencies</p>
+      <ul>
+        {props.packageversion && (
+          <li>
+            {props.packagename}: {props.packageversion}+
+          </li>
+        )}
+        {props.scalalib && <li>ProphecyLibsScala: {props.scalalib}+</li>}
+        {props.pythonlib && <li>ProphecyLibsPython: {props.pythonlib}+</li>}
+      </ul>
+      <p>Spark Compatibility</p>
+      <ul>
+        <li>Databricks UC Shared: {props.packageversion143}</li>
+        {props.additional_requirements && (
+          <li>Additional Requirements: {props.additional_requirements}</li>
+        )}
+      </ul>
     </div>
   );
 }

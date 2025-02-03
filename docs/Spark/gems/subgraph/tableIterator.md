@@ -8,11 +8,26 @@ tags:
   - iterator
 ---
 
+import Requirements from "../\_gem-requirements.mdx";
+
 <h3><span class="badge">Spark Gem</span></h3>
 
 TableIterator allows you to iterate over one or more gems for each row of the first input DataFrame.
 Let's see how to create a Basic Loop which loops over a Metadata Table, and for each row of the table will run the gems inside the Subgraph.
 
+## Requirements
+
+<Requirements
+  packagename="ProphecySparkBasicsPython"
+  packageversion="0.1.4"
+  scalalib="7.1.66"
+  pythonlib="1.8.4"
+  packageversion143="Supported"
+  packageversion154="Supported"
+  additional_requirements=""
+/>
+
+## Creating a TableIterator Gem
 ## Creating a TableIterator gem
 
 First add the Input gem on which you want to Iterate over. For this, simply use an existing dataset or create a new [Source gem](/docs/Spark/gems/source-target/source-target.md) pointing to your Metadata table.

@@ -8,6 +8,8 @@ tags:
   - devops
 ---
 
+import Requirements from "../\_gem-requirements.mdx";
+
 <h3><span class="badge">Spark Gem</span></h3>
 
 Helps perform the following operations on Delta tables.
@@ -19,6 +21,18 @@ Helps perform the following operations on Delta tables.
 5. Delete from table
 6. Drop table
 7. FSCK Repair table
+
+## Requirements
+
+<Requirements
+  packagename="ProphecySparkBasicsPython"
+  packageversion="0.0.1"
+  scalalib=""
+  pythonlib=""
+  packageversion143="Supported"
+  packageversion154="Supported"
+  additional_requirements=""
+/>
 
 ## Parameters
 

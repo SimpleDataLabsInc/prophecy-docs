@@ -9,9 +9,23 @@ tags:
   - dynamic
 ---
 
+import Requirements from "../\_gem-requirements.mdx";
+
 <h3><span class="badge">Spark Gem</span></h3>
 
 Use the DynamicSelect gem to dynamically filter columns of your dataset based on a set of conditions.
+
+## Requirements
+
+<Requirements
+  packagename="ProphecySparkBasicsPython"
+  packageversion="0.2.27"
+  scalalib="8.2.1"
+  pythonlib="1.9.16"
+  packageversion143="Not Supported"
+  packageversion154="Not Supported"
+  additional_requirements=""
+/>
 
 ## Configuration
 
