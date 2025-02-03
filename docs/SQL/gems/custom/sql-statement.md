@@ -1,8 +1,7 @@
 ---
-sidebar_position: 1
 title: SQLStatement
 id: sql-statement
-description: Create Models based on custom SQL queries
+description: Create models based on custom SQL queries
 tags:
   - gems
   - sql
@@ -11,7 +10,7 @@ tags:
 
 <h3><span class="badge">SQL Gem</span></h3>
 
-Create one or more Models based on provided SQL queries to run against one or more input sources.
+Create one or more models based on provided SQL queries to run against one or more input sources.
 
 ### Parameters
 

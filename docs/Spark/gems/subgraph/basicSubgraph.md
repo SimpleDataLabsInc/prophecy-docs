@@ -1,5 +1,4 @@
 ---
-sidebar_position: 1
 title: Basic subgraph
 id: basic-subgraph
 description: Basic Subgraph, Group your Gems in reusable Parent Gems.
@@ -13,9 +12,9 @@ import Requirements from "../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
 
-In a **Basic Subgraph**, you have the capability to encapsulate multiple distinct Gems within a single, reusable parent Gem. This organizational approach enhances the visual clarity of your Pipeline by grouping various sections together under a common parent Gem. Additionally, it empowers you to break down intricate logic into modular components, thereby streamlining the Data Engineering processes.
+In a **Basic Subgraph**, you have the capability to encapsulate multiple distinct gems within a single, reusable parent gem. This organizational approach enhances the visual clarity of your pipeline by grouping various sections together under a common parent gem. Additionally, it empowers you to break down intricate logic into modular components, thereby streamlining the Data Engineering processes.
 
-Furthermore, the ability to [Publish a Subgraph](/docs/package-hub/package-builder/ShareableSubgraphs.md) extends the utility beyond a singular Pipeline. By doing so, you can reuse the encapsulated logic in other Pipelines or Projects, promoting code re-usability and simplifying the overall development workflow.
+Furthermore, the ability to [Publish a Subgraph](docs/extensibility/package-hub/ShareableSubgraphs.md) extends the utility beyond a singular pipeline. By doing so, you can reuse the encapsulated logic in other pipelines or projects, promoting code re-usability and simplifying the overall development workflow.
 
 ## Requirements
 
@@ -31,13 +30,13 @@ Furthermore, the ability to [Publish a Subgraph](/docs/package-hub/package-build
 
 ## Create a Basic Subgraph
 
-To create a Basic Subgraph, drag and drop the **(1) Basic** Subgraph Gem from the Subgraph menu, and connect it to any previously created Gem on your canvas.
+To create a Basic Subgraph, drag and drop the **(1) Basic** Subgraph gem from the Subgraph menu, and connect it to any previously created gem on your canvas.
 
-Once you've added the Gem, click **(2) Open**, to open the subgraph canvas.
+Once you've added the gem, click **(2) Open**, to open the subgraph canvas.
 
 ![create_basic_subgraph](img/Create_basic_subgraph.png)
 
-Once you are on the canvas, you can start adding Gems to your subgraph by dragging and dropping from the Gems menu.
+Once you are on the canvas, you can start adding gems to your subgraph by dragging and dropping from the gems menu.
 
 ## Add/Remove Port
 
@@ -54,7 +53,7 @@ As you connect the input and output ports to gems Outside the subgraph, you woul
 
 ## Subgraph Configurations
 
-Subgraphs are configurable just like [Pipelines are configurable](../../configuration/configuration.md). For Subgraphs, the configurations can apply in one of two ways: (1) Pipeline level Configurations apply to the Subgraph or (2) Specify Configurations only for the Subgraph
+Subgraphs are configurable just like [pipelines are configurable](../../configuration.md). For Subgraphs, the configurations can apply in one of two ways: (1) Pipeline level Configurations apply to the Subgraph or (2) Specify Configurations only for the Subgraph
 
 ### Pipeline Level Configurations can apply to the Subgraph
 
@@ -68,4 +67,4 @@ Pipeline configs are accessible inside Subgraphs by **copying** the config to th
 
 ### Specify configurations only for the Subgraph
 
-In Subgraph Configs, you can define values that can be set at the Subgraph level and then be accessed inside any component in the Subgraph. These will also reflect under Configurations of Pipelines using these Subgraphs, but they can only be edited from Subgraph configs.
+In Subgraph Configs, you can define values that can be set at the Subgraph level and then be accessed inside any component in the Subgraph. These will also reflect under Configurations of pipelines using these Subgraphs, but they can only be edited from Subgraph configs.

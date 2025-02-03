@@ -2,7 +2,6 @@
 title: Salesforce
 id: salesforce
 description: Salesforce
-sidebar_position: 8
 tags:
   - gems
   - warehouse
@@ -14,9 +13,10 @@ import Requirements from "../../\_gem-requirements.mdx";
 <h3><span class="badge">Spark Gem</span></h3>
 
 This Gem has below features:
+This gem has below features:
 
-1. Dataset Creation - Create Dataset in Salesforce Wave from Spark DataFrame.
-2. Read Salesforce Wave Dataset - User has to provide SAQL to read data from Salesforce Wave. The query result will be constructed as DataFrame.
+1. Dataset Creation - Create dataset in Salesforce Wave from Spark DataFrame.
+2. Read Salesforce Wave dataset - User has to provide SAQL to read data from Salesforce Wave. The query result will be constructed as DataFrame.
 3. Read Salesforce Object - User has to provide SOQL to read data from Salesforce object. The query result will be constructed as DataFrame.
 4. Update Salesforce Object - Salesforce object will be updated with the details present in DataFrame.
 
@@ -35,26 +35,26 @@ This Gem has below features:
 :::note
 This connector is built on top of the already available [`spark-salesforce connector`](https://github.com/springml/spark-salesforce/).
 
-To use this Gem in Prophecy, `com.springml:spark-salesforce_2.12:1.1.4` Maven external dependency needs to be installed on cluster.
-For installing dependencies from Prophecy UI. Please check [dependency management docs](https://docs.prophecy.io/Spark/extensibility/dependencies).
+To use this gem in Prophecy, `com.springml:spark-salesforce_2.12:1.1.4` Maven external dependency needs to be installed on cluster.
+For installing dependencies from Prophecy UI. Please check [dependency management docs](docs/extensibility/dependencies/spark-dependencies.md).
 :::
 
 ## Source
 
-Reads data from Salesforce object and wave Datasets.
+Reads data from Salesforce object and wave datasets.
 
 ### Source Parameters
 
 | Parameter            | Description                                                                                                                                                                                                                                                                                                | Required                                               |
 | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| Dataset Name         | Name of the Dataset                                                                                                                                                                                                                                                                                        | True                                                   |
+| Dataset Name         | Name of the dataset                                                                                                                                                                                                                                                                                        | True                                                   |
 | Credential Type      | Credential Type: `Databricks Secrets` or `Username & Password`                                                                                                                                                                                                                                             | True                                                   |
 | Credentials          | Databricks credential name, else username and password for the snowflake account                                                                                                                                                                                                                           | Required if `Credential Type` is `Databricks Secrets`  |
-| Username             | Salesforce Wave Username. This user should have privilege to upload Datasets or execute SAQL or execute SOQL.                                                                                                                                                                                              | Required if `Credential Type` is `Username & Password` |
+| Username             | Salesforce Wave Username. This user should have privilege to upload datasets or execute SAQL or execute SOQL.                                                                                                                                                                                              | Required if `Credential Type` is `Username & Password` |
 | Password             | Salesforce Wave Password. Please append security token along with password. For example, if a user’s password is mypassword, and the security token is XXXXXXXXXX, the user must provide mypasswordXXXXXXXXXX                                                                                              | Required if `Credential Type` is `Username & Password` |
 | Login Url            | (Optional) Salesforce Login URL. Default value https://login.salesforce.com.                                                                                                                                                                                                                               | True                                                   |
 | Read from source     | Strategy to read data: `SAQL` or `SOQL`.                                                                                                                                                                                                                                                                   | True                                                   |
-| SAQL Query           | (Optional) SAQL query to used to query Salesforce Wave. Mandatory for reading Salesforce Wave Dataset                                                                                                                                                                                                      |                                                        |
+| SAQL Query           | (Optional) SAQL query to used to query Salesforce Wave. Mandatory for reading Salesforce Wave dataset                                                                                                                                                                                                      |                                                        |
 | SOQL Query           | (Optional) SOQL query to used to query Salesforce Object. Mandatory for reading Salesforce Object like Opportunity                                                                                                                                                                                         |                                                        |
 | Version              | (Optional) Salesforce API Version. Default 35.0                                                                                                                                                                                                                                                            |                                                        |
 | Infer Schema         | (Optional) Infer schema from the query results. Sample rows will be taken to find the datatype.                                                                                                                                                                                                            |                                                        |
@@ -62,9 +62,9 @@ Reads data from Salesforce object and wave Datasets.
 | Result Variable      | (Optional) result variable used in SAQL query. To paginate SAQL queries this package will add the required offset and limit.<br/> For example, in this SAQL query q = load `\"<Dataset_id>/<Dataset_version_id>\"`; q = foreach q generate 'Name' as 'Name', 'Email' as 'Email'; q is the result variable. |                                                        |
 | Page Size            | (Optional) Page size for each query to be executed against Salesforce Wave. Default value is 2000.<br/> This option can only be used if resultVariable is set.                                                                                                                                             |                                                        |
 | Bulk                 | (Optional) Flag to enable bulk query. This is the preferred method when loading large sets of data. Salesforce will process batches in the background. Default value is false.                                                                                                                             |                                                        |
-| PK Chunking          | (Optional) Flag to enable automatic primary key chunking for bulk query Job. This splits bulk queries into separate batches that of the size defined by chunkSize option. By default false and the default chunk size is 100,000.                                                                          |                                                        |
+| PK Chunking          | (Optional) Flag to enable automatic primary key chunking for bulk query job. This splits bulk queries into separate batches that of the size defined by chunkSize option. By default false and the default chunk size is 100,000.                                                                          |                                                        |
 | Chunk size           | (Optional) The size of the number of records to include in each batch. Default value is 100,000. This option can only be used when pkChunking is true. Maximum size is 250,000.                                                                                                                            |                                                        |
-| Timeout              | (Optional) The maximum time spent polling for the completion of bulk query Job.<br/> This option can only be used when bulk is true.                                                                                                                                                                       |                                                        |
+| Timeout              | (Optional) The maximum time spent polling for the completion of bulk query job.<br/> This option can only be used when bulk is true.                                                                                                                                                                       |                                                        |
 | Max chars per column | (Optional) The maximum length of a column. This option can only be used when bulk is true. Default value is 4096.                                                                                                                                                                                          |                                                        |
 | Query All            | (Optional) Toggle to retrieve deleted and archived records for SOQL queries. Default value is false.                                                                                                                                                                                                       |                                                        |
 
@@ -75,7 +75,7 @@ Steps to reset your Salesforce security token can be found at this [link.](https
 ## Example
 
 Below is an example of fetching all leads from sales cloud using Prophecy IDE.
-We will be using `SOQL` query to query our leads Dataset on sales cloud.
+We will be using `SOQL` query to query our leads dataset on sales cloud.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -113,19 +113,19 @@ def read_salesforce(spark: SparkSession) -> DataFrame:
 
 ## Target
 
-Create/update Datasets and Salesforce objects.
+Create/update datasets and Salesforce objects.
 
 ### Target Parameters
 
 | Parameter               | Description                                                                                                                                                                                                                                             | Required                                               |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| Dataset Name            | Name of the Dataset                                                                                                                                                                                                                                     | True                                                   |
+| Dataset Name            | Name of the dataset                                                                                                                                                                                                                                     | True                                                   |
 | Credential Type         | Credential Type: `Databricks Secrets` or `Username & Password`                                                                                                                                                                                          | True                                                   |
 | Credentials             | Databricks credential name, else username and password for the snowflake account                                                                                                                                                                        | Required if `Credential Type` is `Databricks Secrets`  |
-| Username                | Salesforce Wave Username. This user should have privilege to upload Datasets or execute SAQL or execute SOQL.                                                                                                                                           | Required if `Credential Type` is `Username & Password` |
+| Username                | Salesforce Wave Username. This user should have privilege to upload datasets or execute SAQL or execute SOQL.                                                                                                                                           | Required if `Credential Type` is `Username & Password` |
 | Password                | Salesforce Wave Password. Please append security token along with password.For example, if a user’s password is mypassword, and the security token is XXXXXXXXXX, the user must provide mypasswordXXXXXXXXXX                                            | Required if `Credential Type` is `Username & Password` |
 | Login Url               | (Optional) Salesforce Login URL. Default value https://login.salesforce.com.                                                                                                                                                                            | True                                                   |
-| Salesforce Dataset name | (Optional) Name of the Dataset to be created in Salesforce Wave. Required for Dataset Creation.                                                                                                                                                         |                                                        |
+| Salesforce dataset name | (Optional) Name of the Dataset to be created in Salesforce Wave. Required for Dataset Creation.                                                                                                                                                         |                                                        |
 | Salesforce object name  | (Optional) Salesforce Object to be updated. (e.g.) Contact. Mandatory if bulk is true.                                                                                                                                                                  |                                                        |
 | Metadata Config in JSON | (Optional) Metadata configuration which will be used to construct [Salesforce Wave Dataset Metadata] <br/> (https://resources.docs.salesforce.com/sfdc/pdf/bi_dev_guide_ext_data_format.pdf). Metadata configuration has to be provided in JSON format. |                                                        |
 | Upsert                  | (Optional) Flag to upsert data to Salesforce. This performs an insert or update operation using the "externalIdFieldName" as the primary ID. Existing fields that are not in the DataFrame being pushed will not be updated. Default "false".           |                                                        |

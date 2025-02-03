@@ -1,5 +1,4 @@
 ---
-sidebar_position: 8
 title: SetOperation
 id: set-operation
 description: Union, Intersect and Difference
@@ -15,7 +14,7 @@ import Requirements from "../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
 
-Use the SetOperation Gem to perform addition or subtraction of rows from DataFrames with identical schemas and different data.
+Use the SetOperation gem to perform addition or subtraction of rows from DataFrames with identical schemas and different data.
 
 ## Requirements
 

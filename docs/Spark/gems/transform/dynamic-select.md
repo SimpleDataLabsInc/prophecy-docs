@@ -13,7 +13,7 @@ import Requirements from "../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
 
-Use the DynamicSelect Gem to dynamically filter columns of your Dataset based on a set of conditions.
+Use the DynamicSelect gem to dynamically filter columns of your dataset based on a set of conditions.
 
 ## Requirements
 
@@ -33,16 +33,16 @@ There are two ways to configure the DynamicSelect.
 
 | Configuration         | Description                                                                                   |
 | --------------------- | --------------------------------------------------------------------------------------------- |
-| Select field types    | Choose one or more types of columns to keep in the Dataset, such as string, decimal, or date. |
-| Select via expression | Create an expression that limits the type of columns to keep in the Dataset.                  |
+| Select field types    | Choose one or more types of columns to keep in the dataset, such as string, decimal, or date. |
+| Select via expression | Create an expression that limits the type of columns to keep in the dataset.                  |
 
 ## Examples
 
-You’ll use DynamicSelect when you want to avoid hard-coding your choice of columns. In other words, rather than define each column to keep in your Pipeline, you let the system automatically choose the columns based on certain conditions or rules.
+You’ll use DynamicSelect when you want to avoid hard-coding your choice of columns. In other words, rather than define each column to keep in your pipeline, you let the system automatically choose the columns based on certain conditions or rules.
 
 ### Remove date columns using field type
 
-Assume you would like to remove irrelevant date and timestamp columns from your Dataset. You can do so with the **Select field types** method by selecting all field types to maintain, except for date and timestamp.
+Assume you would like to remove irrelevant date and timestamp columns from your dataset. You can do so with the **Select field types** method by selecting all field types to maintain, except for date and timestamp.
 
 ![Keep all columns except Date and Timestamp column using the visual interface](./img/remove-date-timestamp.png)
 

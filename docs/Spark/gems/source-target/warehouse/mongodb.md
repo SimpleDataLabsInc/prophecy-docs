@@ -2,7 +2,6 @@
 title: MongoDB
 id: mongodb
 description: MongoDB
-sidebar_position: 5
 tags:
   - gems
   - warehouse
@@ -11,7 +10,7 @@ tags:
 
 :::info Built on
 Built on [MongoDB Spark Connector](https://www.mongodb.com/docs/spark-connector/v10.0/#mongodb-connector-for-spark) v10.0. <br/>
-Add `mongodb-spark-connector` jar as dependency [for more](https://docs.prophecy.io/Spark/extensibility/dependencies/#add-dependency).
+Add `mongodb-spark-connector` jar as dependency [for more](docs/extensibility/dependencies/spark-dependencies.md#add-dependency).
 :::
 Allows read and write operations on `MongoDB`.
 
@@ -43,7 +42,7 @@ Allows read and write operations on `MongoDB`.
 ### Example {#source-example}
 
 Below is an example of configuring MongoDB Source using Prophecy IDE.
-We will be reading Airbnb public `listingReviews` dataset using in-built `MongoDB` Source Gem.<br/>
+We will be reading Airbnb public `listingReviews` dataset using in-built `MongoDB` Source gem.<br/>
 After configuration you can view schema by clicking `Infer Schema` in properties tab and also view data by clicking `Load` inside Preview tab.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
@@ -118,7 +117,7 @@ object input_mongodb {
 ### Example {#target-example}
 
 Below is an example of configuring MongoDB Target using Prophecy IDE.
-We will be writing back Airbnb public `listingReviews` data into a collection in `MongoDB` using our in-built Target Gem.
+We will be writing back Airbnb public `listingReviews` data into a collection in `MongoDB` using our in-built Target gem.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>

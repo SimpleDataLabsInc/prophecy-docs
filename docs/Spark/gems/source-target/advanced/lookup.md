@@ -2,7 +2,6 @@
 title: Lookup
 id: lookup
 description: Lookup
-sidebar_position: 2
 tags:
   - gems
   - lookup
@@ -12,7 +11,7 @@ import Requirements from "../../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
 
-Lookups are a special kind of Gem that allow you to mark a particular DataFrame as a _Broadcast_ DataFrame. Spark will ensure that this data is available on every computation node so that these lookups can be done without shuffling data. This is useful for looking up values in tables.
+Lookups are a special kind of gem that allow you to mark a particular DataFrame as a _Broadcast_ DataFrame. Spark will ensure that this data is available on every computation node so that these lookups can be done without shuffling data. This is useful for looking up values in tables, hence the name.
 
 ## Requirements
 
@@ -26,14 +25,14 @@ Lookups are a special kind of Gem that allow you to mark a particular DataFrame 
   additional_requirements=""
 />
 
+![Lookup gem](../../img/lookup.png)
+
 ## Parameters
 
 |     | Name          | Description                                                                  |
 | :-: | ------------- | ---------------------------------------------------------------------------- |
 |  1  | Key Columns   | Specify one or more columns to use as the lookup key in the source DataFrame |
 |  2  | Value Columns | Pick which columns can be referenced wherever this Lookup is used            |
-
-![Lookup UI](../../img/lookup_ui.png)
 
 ## Using Lookups
 

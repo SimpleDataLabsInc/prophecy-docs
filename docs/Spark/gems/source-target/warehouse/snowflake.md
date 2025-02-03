@@ -2,7 +2,6 @@
 title: Snowflake
 id: snowflake
 description: Snowflake
-sidebar_position: 9
 tags:
   - gems
   - warehouse
@@ -21,7 +20,7 @@ Please refer the snowflake official documentation to attach private key to user 
 
 | Parameter              | Description                                                                                                                                                 | Required                                               |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| Dataset Name           | Name of the Dataset                                                                                                                                         | True                                                   |
+| Dataset Name           | Name of the dataset                                                                                                                                         | True                                                   |
 | Credential Type        | Credential Type: `Databricks Secrets` or `Username & Password`                                                                                              | True                                                   |
 | Credentials            | Databricks credential name, else username and password for the snowflake account                                                                            | Required if `Credential Type` is `Databricks Secrets`  |
 | Username               | Login name for the Snowflake user                                                                                                                           | Required if `Credential Type` is `Username & Password` |
@@ -113,7 +112,7 @@ object customer_snow_src {
 
 | Parameter              | Description                                                                                                                                                                                                                                                                                                                | Required                                               |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| Dataset Name           | Name of the Dataset                                                                                                                                                                                                                                                                                                        | True                                                   |
+| Dataset Name           | Name of the dataset                                                                                                                                                                                                                                                                                                        | True                                                   |
 | Credential Type        | Credential Type: `Databricks Secrets` or `Username & Password`                                                                                                                                                                                                                                                             | True                                                   |
 | Credentials            | Databricks credential name, else username and password for the snowflake account                                                                                                                                                                                                                                           | Required if `Credential Type` is `Databricks Secrets`  |
 | Username               | Login name for the snowflake user                                                                                                                                                                                                                                                                                          | Required if `Credential Type` is `Username & Password` |

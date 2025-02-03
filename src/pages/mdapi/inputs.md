@@ -2,7 +2,6 @@
 title: Prophecy Metadata API Inputs
 id: mdapi-inputs
 description: Metadata API Inputs
-sidebar_position: 2
 tags: []
 ---
 

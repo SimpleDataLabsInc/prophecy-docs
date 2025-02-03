@@ -18,13 +18,6 @@ There are two ways to resolve merge conflicts when they arise:
 - Merge using the Prophecy interface
 - Use the external Git interface
 
-Let's see in the video below on how to resolve conflicts using the merge function in Prophecy:
-
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.Githubusercontent.com/103921419/174733075-b878a77d-97df-4bc9-8baf-5fcc72e268db.mp4" title="How to resolve conflicts" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
-
 ## Resolve conflicts using manual merge
 
 You can use manual merge to resolve conflicts. This provides you with simple, yet effective ways to resolve merge conflicts for granular changes.
@@ -36,8 +29,8 @@ The Left or Right merge strategy gives you a the option to resolve the conflict 
 ![Choose a Git conflict manual merge](img/git-conflict-manual-merge.png)
 
 - **(A)** **Strategy** - You must choose a preferred strategy to resolve the conflict. Here the Left strategy keeps the version on branch `master`, while the Right strategy keeps the version on branch `dev`.
-- **(B)** **Open on master** - Clicking this opens the Model on branch `master` for you to view.
-- **(C)** **Open on dev** - Clicking this opens the Model on branch `dev` for you to view.
+- **(B)** **Open on master** - Clicking this opens the model on branch `master` for you to view.
+- **(C)** **Open on dev** - Clicking this opens the model on branch `dev` for you to view.
 
 Here are the read-only views on branch `master` on the left and branch `dev` on the right:
 

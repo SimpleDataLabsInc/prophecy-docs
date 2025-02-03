@@ -1,5 +1,4 @@
 ---
-sidebar_position: 1
 title: Reformat
 id: reformat
 description: Select one or more columns or values using expressions and functions.
@@ -46,7 +45,7 @@ If no columns are selected, then all columns are passed through to the output
 
 ## Spark Code
 
-Reformat converts to a SQL `Select` or in relational terms into a projection, unlike `SchemaTransform` Gem which uses underlying `withColumn` construct
+Reformat converts to a SQL `Select` or in relational terms into a projection, unlike `SchemaTransform` gem which uses underlying `withColumn` construct
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -93,7 +92,7 @@ object Reformat {
 
 ## Advanced Import
 
-The Advanced Import feature allows you to bulk import statements that are structured similarly to CSV/TSV files. This can be useful if you have your expressions/transformation logic in another format and just want to quickly configure a `Reformat` Gem based on this logic.
+The Advanced Import feature allows you to bulk import statements that are structured similarly to CSV/TSV files. This can be useful if you have your expressions/transformation logic in another format and just want to quickly configure a `Reformat` gem based on this logic.
 
 ### Using Advanced Import
 

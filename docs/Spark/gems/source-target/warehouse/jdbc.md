@@ -2,7 +2,6 @@
 title: JDBC
 id: jdbc
 description: JDBC
-sidebar_position: 4
 tags:
   - gems
   - warehouse
@@ -49,7 +48,7 @@ Reads and writes data from other databases using JDBC.
 
 :::caution
 If you get `class not found` error during running of pipeline then your dependency might be missing in the cluster.
-To read more about how to add dependencies for specific jdbc jar [**click here**](../../../extensibility/dependencies.md).
+To read more about how to add dependencies for specific jdbc jar [**click here**](docs/extensibility/dependencies/spark-dependencies.md).
 :::
 
 ### Source Table

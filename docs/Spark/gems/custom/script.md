@@ -1,5 +1,4 @@
 ---
-sidebar_position: 2
 title: Script
 id: script
 description: Provide a place to use a SparkSession and whatever code you wish to use
@@ -42,13 +41,13 @@ To remove input/output DataFrame(s), simply click <svg width="24" height="24" vi
 
 ## Schema
 
-When executing a custom script Gem, the output schema is not known by Prophecy so it must be inferred from a sample computation result. Click the `Custom Schema` button and `Infer from cluster` as shown in the **Gems --> Outputs** description [here.](/docs/concepts/project/gems.md#inputs-outputs) The schema will be inferred according to the script and the Spark version running on the connected cluster.
+When executing a custom script gem, the output schema is not known by Prophecy so it must be inferred from a sample computation result. Click the `Custom Schema` button and `Infer from cluster` as shown in the **Gems --> Outputs** description [here.](/docs/concepts/project/gems.md#inputs-outputs) The schema will be inferred according to the script and the Spark version running on the connected cluster.
 
 ## Examples
 
 ---
 
-### Script Gem with Input and Output: Un-pivoting a DataFrame
+### Script gem with Input and Output: Un-pivoting a DataFrame
 
 We'll perform the `unpivot` operation using our custom code
 
@@ -56,7 +55,7 @@ We'll perform the `unpivot` operation using our custom code
 
 ---
 
-### Script Gem with only Output: Generating a DataFrame
+### Script gem with only Output: Generating a DataFrame
 
 We'll use the provided `SparkSession` to create and return a DataFrame
 

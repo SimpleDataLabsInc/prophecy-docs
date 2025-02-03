@@ -1,7 +1,7 @@
 ---
 title: Unpivot
 id: unpivot
-description: Use the Unpivot Gem to transform your data from a wide format to a long format.
+description: Use the Unpivot gem to transform your data from a wide format to a long format.
 tags:
   - gems
   - unpivot
@@ -13,11 +13,11 @@ import Requirements from "../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
 
-Use the Unpivot Gem to transform your data from a wide format to a long format.
+Use the Unpivot gem to transform your data from a wide format to a long format.
 
 :::note
 
-If you want to pivot the data, rather than unpivot, use the [Aggregate](aggregate.md) Gem.
+If you want to pivot the data, rather than unpivot, use the [Aggregate](aggregate.md) gem.
 
 :::
 

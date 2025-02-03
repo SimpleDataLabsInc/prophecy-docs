@@ -1,5 +1,4 @@
 ---
-sidebar_position: 4
 title: Filter
 id: filter
 description: Filter your data based on a custom filter condition
@@ -11,7 +10,7 @@ tags:
 
 <h3><span class="badge">SQL Gem</span></h3>
 
-Filters Models based on the provided filter condition
+Filters models based on the provided filter condition.
 
 ### Parameters
 

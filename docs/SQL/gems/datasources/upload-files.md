@@ -2,14 +2,13 @@
 title: Upload files
 id: upload-files
 description: Upload files to the Visual canvas
-sidebar_position: 7
 tags:
   - how-to
   - upload
   - sql
 ---
 
-You can add a source table to your SQL Environment by uploading a file directly onto the Visual canvas. This effectively uploads your file as a table. As a business user, this gives you more control over your data and how you choose to incorporate them into your Model transformation.
+You can add a source table to your SQL Environment by uploading a file directly onto the Visual canvas. This effectively uploads your file as a table. As a business user, this gives you more control over your data and how you choose to incorporate them into your model transformation.
 
 The file can be one of the following file types:
 
@@ -22,7 +21,7 @@ When you upload your file through Prophecy, it's added directly to your Databric
 
 ## Upload a file
 
-To upload your file, start by opening a Model within a project and following one of these steps:
+To upload your file, start by opening a model within a project and following one of these steps:
 
 :::note
 
@@ -99,4 +98,4 @@ Preview the table:
 
   If you selected a table to write your uploaded file to, you'll need to confirm the upload in the pop-up window by clicking **Proceed**.
 
-The uploaded file's table is now available in the Source/Target node. The table is created in your environment and a source is created within your Model. You can upload another file or start working with your new source Gem.
+The uploaded file's table is now available in the Source/Target node. The table is created in your environment and a source is created within your model. You can upload another file or start working with your new source gem.

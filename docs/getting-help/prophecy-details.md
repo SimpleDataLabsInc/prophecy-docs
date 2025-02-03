@@ -1,9 +1,9 @@
 ---
 title: Send Prophecy details to Support
 id: prophecy-details
-sidebar_position: 1
 description: How to download logs and send for support
 sidebar_label: Send info from Prophecy
+sidebar_position: 1
 tags: []
 ---
 
@@ -42,7 +42,7 @@ Gather logs from your Prophecy environment and send them to the support team via
       </td>
     </tr>
     <tr>
-      <td>Connection logs from Prophecy with error <a href="../../Spark/fabrics/fabric-diagnostics/">code</a></td>
+      <td>Connection logs from Prophecy with error <a href="../../administration/Spark-fabrics/fabric-diagnostics/">code</a></td>
       <td>
         <br />
         <img

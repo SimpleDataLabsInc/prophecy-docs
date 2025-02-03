@@ -32,7 +32,7 @@ If you've ever done anything with numbers in your line of work odds are you've w
 :::caution
 If you receive an error about the `excel` format not being available you must add `spark-excel` library as a dependency.
 
-Follow the instructions on [this page](../../../extensibility/dependencies.md) to add the Maven coordinate `com.crealytics:spark-excel_2.12:3.5.1_0.20.4` to your Pipeline.
+Follow the instructions on [this page](docs/extensibility/dependencies/spark-dependencies.md) to add the Maven coordinate `com.crealytics:spark-excel_2.12:3.5.1_0.20.4` to your pipeline.
 :::
 
 ## Parameters
@@ -94,11 +94,11 @@ For example, if you write to a location like **dbfs:/FileStore/Users/test/custom
 
 Each partition is a separate valid XLSX file with a segment of the overall output data. If you want to output only a single file, you'll need to:
 
-1. Add a Repartition Gem in **Coalesce** mode with the **Partition Count** set to `1`.
+1. Add a Repartition gem in **Coalesce** mode with the **Partition Count** set to `1`.
 
    ![Coalesce using Repartition](img/xlsx_tgt_5.5.png)
 
-2. Connect it between your second-to-last transformation and the `Target` Gem.
+2. Connect it between your second-to-last transformation and the `Target` gem.
 
    ![Attach coalesce before desired target](img/xlsx_tgt_6.png)
 

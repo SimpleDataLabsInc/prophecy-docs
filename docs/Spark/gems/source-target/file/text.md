@@ -104,7 +104,7 @@ Write data as text files at the specified path.
 
 :::info
 The Text data source supports only a single column apart from the partition columns. An `AnalysisException` will be thrown if the DataFrame has more than 1 column
-apart from parition columns as the input DataFrame to the `Target` Gem.
+apart from parition columns as the input DataFrame to the `Target` gem.
 :::
 
 ### Supported Write Modes

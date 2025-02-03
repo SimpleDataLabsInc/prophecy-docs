@@ -2,7 +2,6 @@
 title: Delta
 id: delta
 description: Delta
-sidebar_position: 3
 tags:
   - gems
   - file

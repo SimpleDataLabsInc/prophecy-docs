@@ -13,7 +13,7 @@ import Requirements from "../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
 
-The BulkColumnExpressions Gem primarily lets you cast or change the data type of multiple columns at once. It provides additional functionality, including:
+The BulkColumnExpressions gem primarily lets you cast or change the data type of multiple columns at once. It provides additional functionality, including:
 
 - Adding a prefix or suffix to selected columns.
 - Applying a custom expression to selected columns.
@@ -44,7 +44,7 @@ The BulkColumnExpressions Gem primarily lets you cast or change the data type of
 
 Assume you have some columns in a table that represent zero-based indices and are stored as long data types. You want them to represent one-based indices and be stored as integers to optimize memory use.
 
-Using the BulkColumnExpressions Gem, you can:
+Using the BulkColumnExpressions gem, you can:
 
 - Filter your columns by long data types.
 - Select the columns you wish to transform.

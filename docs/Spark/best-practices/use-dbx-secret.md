@@ -1,8 +1,7 @@
 ---
 title: Use Databricks Secrets for Username Password fields in Gems
 id: use-dbx-secrets
-description: using Databricks secrets in UserName Passwords fields in Gems
-sidebar_position: 1
+description: Databricks secrets for username and passwords
 tags:
   - spark
   - databricks
@@ -11,13 +10,13 @@ tags:
   - passwords
 ---
 
-Using hardcoded usernames and passwords is not recommended when working with Gems. This approach can result in unsafe code, as the credentials may be exposed in your configured Git repository for the Project.
+Using hardcoded usernames and passwords is not recommended when working with gems. This approach can result in unsafe code, as the credentials may be exposed in your configured Git repository for the project.
 
-For users who are not using Databricks or have private Git repositories, or for those who simply need to quickly test some Gems, plain-text username/password may be used. However, it is strongly advised to utilize the Databricks secrets option when committing the code.
+For users who are not using Databricks or have private Git repositories, or for those who simply need to quickly test some gems, plain-text username/password may be used. However, it is strongly advised to utilize the Databricks secrets option when committing the code.
 
-To ensure the security of your credentials and streamline the process, we recommend following this step-by-step guide on how to create secrets in Databricks and effectively utilize them in Prophecy Gems. By doing so, you can safeguard sensitive information while maintaining the efficiency and integrity of your project.
+To ensure the security of your credentials and streamline the process, we recommend following this step-by-step guide on how to create secrets in Databricks and effectively utilize them in Prophecy gems. By doing so, you can safeguard sensitive information while maintaining the efficiency and integrity of your project.
 
-In this example, we demonstrate the use of Databricks secrets to configure Snowflake credentials for establishing a connection to Snowflake within a Gem.
+In this example, we demonstrate the use of Databricks secrets to configure Snowflake credentials for establishing a connection to Snowflake within a gem.
 
 ### Step1: Create Your secrets in Databricks
 
@@ -25,7 +24,7 @@ Please follow this [Secrets Documentation](https://docs.databricks.com/security/
 
 ### Step2: Create Config in Pipeline to map to Created Databricks Secrets
 
-Add configs of Type `databricks_secret` in [Pipeline Configs](https://docs.prophecy.io/Spark/configuration#pipeline-configuration). Let's say we call it `snowflake_user` and `snowflake_pass`.
+Add configs of Type `databricks_secret` in [Pipeline Configs](/docs/Spark/configuration.md#pipeline-configuration). Let's say we call it `snowflake_user` and `snowflake_pass`.
 
 ![img.png](img/databricks_secrets_config.png)
 
@@ -36,14 +35,14 @@ For value, add the scope and key you created for your secret in the first step a
 
 ![img2.png](img/databricks_secrets_value.png)
 
-It's now ready to be used in your Gems.
+It's now ready to be used in your gems.
 
-### Step4: Add a Snowflake Gem to your Pipeline and refer the above created Configs in the username and password field
+### Step4: Add a Snowflake gem to your pipeline and refer the above created Configs in the username and password field
 
-Now that we have a Pipeline config to refer our password stored in Databricks secrets securely, We can go ahead and add a snowflake Gem.
-Use the Config with syntax as `${snowflake_user}` and `${snowflake_pass}` in the username and password field respectively and define all other required fields in the Gem as is.
-Your Gem is now ready to Used and tested.
+Now that we have a pipeline config to refer our password stored in Databricks secrets securely, We can go ahead and add a Snowflake gem.
+Use the Config with syntax as `${snowflake_user}` and `${snowflake_pass}` in the username and password field respectively and define all other required fields in the gem as is.
+Your gem is now ready to Used and tested.
 
 ![img3.png](img/snowflake_gem.png)
 
-If users still use plain-text, they would also see a Warning Diagnostics in their Gems.
+If users still use plain-text, they would also see a Warning Diagnostics in their gems.

@@ -1,5 +1,4 @@
 ---
-sidebar_position: 5
 title: FlattenSchema
 id: flatten-schema
 description: Flatten nested data
@@ -46,7 +45,7 @@ We want to extract `count` from _result_ and all of the columns from _events_ in
 
 ## The Expressions
 
-Having added a FlattenSchema Gem to your Pipeline, all you need to do is click the column names you wish to extract and they'll be added to the **Expressions** section. Then, you can change the values in the **Target Column** to change the name of output columns.
+Having added a FlattenSchema gem to your pipeline, all you need to do is click the column names you wish to extract and they'll be added to the **Expressions** section. Then, you can change the values in the **Target Column** to change the name of output columns.
 
 ![Adding Expressions](./img/flatten_add_exp.gif)
 
@@ -54,7 +53,7 @@ The **Columns Delimiter** dropdown allows you to control how the names of the ne
 
 ## The Output
 
-If we check the **Output** tab in the Gem, you'll see the schema that we've created using the selected columns.
+If we check the **Output** tab in the gem, you'll see the schema that we've created using the selected columns.
 
 ![Output schema](./img/flatten_output.png)
 
@@ -65,5 +64,5 @@ And here's what the output data looks like:
 No more nested structures!
 
 :::info
-For more advanced use cases, the Spark `explode` function is available to use in the [Reformat](./reformat.md) Gem, [Custom SQL](../custom/sql-statement.md) Gem, or anywhere else that accepts Spark expressions.
+For more advanced use cases, the Spark `explode` function is available to use in the [Reformat](./reformat.md) gem, [Custom SQL](../custom/sql-statement.md) gem, or anywhere else that accepts Spark expressions.
 :::

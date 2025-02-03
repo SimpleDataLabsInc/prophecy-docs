@@ -5,7 +5,7 @@ description: Collection of gems that do not fit into the other available categor
 tags: []
 ---
 
-Includes a set of Gems that do not fall into the other available categories of Gems.
+Includes a set of gems that do not fall into the other available categories of gems.
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

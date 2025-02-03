@@ -2,7 +2,6 @@
 title: Event-based
 id: streaming-event-apps
 description: Event-based Source and Target Gems for Streaming Data Applications
-sidebar_position: 1
 tags:
   - spark
   - streaming
@@ -13,11 +12,11 @@ tags:
 
 Prophecy supports **Kafka Streaming** Source and Target. More information on supported Kafka Source and Target options are available [here](https://spark.apache.org/docs/latest/structured-streaming-kafka-integration.html).
 
-The Kafka Gem allows inferring the schema of the events by automatically populating the `value` column. Schema inference works with both JSON and AVRO file formats. A user is required to provide an example event for schema inference.
+The Kafka gem allows inferring the schema of the events by automatically populating the `value` column. Schema inference works with both JSON and AVRO file formats. A user is required to provide an example event for schema inference.
 
-## Create a Kafka Source Gem
+## Create a Kafka Source gem
 
-A Kafka Source Gem allows the Streaming Pipeline continuously pull data from a Kafka topic. The following options are supported:
+A Kafka Source gem allows the Streaming pipeline continuously pull data from a Kafka topic. The following options are supported:
 
 | **Property**          | Optional | **Default Value** | **Comment**                                                                                                                                                 |
 | --------------------- | -------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |

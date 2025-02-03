@@ -2,7 +2,6 @@
 title: Iceberg
 id: iceberg
 description: Iceberg
-sidebar_position: 6
 tags:
   - gems
   - file
@@ -29,11 +28,11 @@ Reads and writes Iceberg tables, including Iceberg Merge operations and Time tra
 
 ## Required Settings
 
-Before you can use Iceberg source Gems, you must configure some required settings at the environment, initialization, and runtime stages.
+Before you can use Iceberg source gems, you must configure some required settings at the environment, initialization, and runtime stages.
 
 ### Environment Setting
 
-You must configure a required Spark JAR dependency in your Fabric environment.
+You must configure a required Spark JAR dependency in your fabric environment.
 
 - JAR dependency
 

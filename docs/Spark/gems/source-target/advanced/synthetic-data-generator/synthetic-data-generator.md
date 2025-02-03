@@ -15,21 +15,17 @@ import Requirements from "../../../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
 
-Generate synthetic data with this special kind of Source Gem.
-
-## Requirements
-
 <Requirements
   packagename="ProphecySparkBasicsPython"
-  packageversion="0.2.32"
-  scalalib=""
+  packageversion="0.2.36"
+  scalalib="8.5.0"
   pythonlib="1.9.24"
+  packageversion122="Not Supported"
   packageversion143="Not Supported"
-  packageversion154="Supported"
-  additional_requirements=""
+  packageversion154="Supported 0.2.36+"
 />
 
-## Use cases
+Generate synthetic data with this special kind of Source Gem.
 
 Generating mock data is crucial when building data Pipelines to simulate real-world scenarios for testing, validating, and optimizing Pipeline performance before using actual production data. It helps ensure the Pipeline handles various data formats, structures, and edge cases effectively, minimizing potential issues in a live environment.
 

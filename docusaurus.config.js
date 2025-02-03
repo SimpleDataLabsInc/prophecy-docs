@@ -4,6 +4,20 @@
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
+// Reverse the sidebar items ordering
+function reverseSidebarItems(items) {
+  // Reverse items in categories
+  const result = items.map((item) => {
+    if (item.type === "category") {
+      return { ...item, items: reverseSidebarItems(item.items) };
+    }
+    return item;
+  });
+  // Reverse items at current level
+  result.reverse();
+  return result;
+}
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Prophecy",
@@ -12,7 +26,7 @@ const config = {
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.png",
+  favicon: "img/favicon2.png",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -35,6 +49,20 @@ const config = {
         docs: {
           routeBasePath: "/",
           sidebarPath: require.resolve("./sidebars.js"),
+          async sidebarItemsGenerator({
+            defaultSidebarItemsGenerator,
+            ...args
+          }) {
+            // console.log("Arguments passed:", args);
+            // Check if the current item is from the 'release_notes' directory
+            if (args.item && args.item.dirName === "release_notes") {
+              const sidebarItems = await defaultSidebarItemsGenerator(args);
+              return reverseSidebarItems(sidebarItems);
+            }
+            // Otherwise, return the sidebar items without applying reversal
+            const sidebarItems = await defaultSidebarItemsGenerator(args);
+            return sidebarItems;
+          },
         },
         blog: false,
         theme: {
@@ -78,8 +106,13 @@ const config = {
             label: "Transpiler",
           },
           {
-            to: "/getting-started/getting-help",
+            to: "/getting-help",
             label: "Help",
+            position: "right",
+          },
+          {
+            to: "mailto:docs@prophecy.io",
+            label: "Feedback",
             position: "right",
           },
           { to: "http://app.prophecy.io/", label: "Login", position: "right" },
@@ -113,6 +146,10 @@ const config = {
           {
             title: "More",
             items: [
+              {
+                label: "Documentation feedback",
+                href: "mailto:docs@prophecy.io",
+              },
               {
                 label: "Login",
                 href: "https://app.prophecy.io/",
@@ -173,19 +210,19 @@ const config = {
             from: "/architecture/authentication/active_directory",
           },
           {
-            to: "/Spark/fabrics/emr",
+            to: "/administration/Spark-fabrics/emr",
             from: "/architecture/deployment/EMR-livy-installation-guide",
           },
           {
-            to: "/Spark/fabrics/emr",
+            to: "/administration/Spark-fabrics/emr",
             from: "/Spark/fabrics/EMR-serverless-fabric-configuration",
           },
           {
-            to: "/Spark/fabrics/emr",
+            to: "/administration/Spark-fabrics/emr",
             from: "/Spark/fabrics/EMR-fabric-configuration",
           },
           {
-            to: "/Spark/fabrics/databricks/",
+            to: "/administration/Spark-fabrics/databricks/",
             from: "/Spark/fabrics/databricks-fabric",
           },
           {
@@ -249,7 +286,7 @@ const config = {
             from: "/tutorials/Orchestration/multi-jobs-trigger",
           },
           {
-            to: "/Orchestration/reliable-ci-cd",
+            to: "/ci-cd/reliable-ci-cd",
             from: "/tutorials/Orchestration/reliable-ci-cd",
           },
           {
@@ -289,8 +326,12 @@ const config = {
             from: "/concepts/dataset",
           },
           {
-            to: "/administration/feature-matrix",
+            to: "/administration/",
             from: "/feature-matrix",
+          },
+          {
+            to: "/administration/",
+            from: "/administration/feature-matrix",
           },
           {
             to: "/Orchestration/airflow/airflow-tutorial",
@@ -337,7 +378,7 @@ const config = {
             from: "/settings/audit-logging",
           },
           {
-            to: "/settings/teamuser",
+            to: "/administration/settings/teamuser",
             from: "/concepts/teamuser",
           },
           {
@@ -353,7 +394,7 @@ const config = {
             from: "/administration/deployment",
           },
           {
-            to: "/administration",
+            to: "/administration/",
             from: "/architecture",
           },
           {
@@ -381,8 +422,96 @@ const config = {
             from: "/administration/authentication/saml-okta",
           },
           {
-            to: "/Spark/prophecy-libraries",
+            to: "/extensibility/dependencies/prophecy-libraries",
             from: "/concepts/fabrics/prophecy-libraries",
+          },
+          {
+            to: "/Spark/execution/conditional-execution",
+            from: "/Spark/configuration/conditional-execution",
+          },
+          {
+            to: "/ci-cd/tests",
+            from: "/Spark/tests",
+          },
+          {
+            to: "/ci-cd/reliable-ci-cd",
+            from: "/Orchestration/reliable-ci-cd",
+          },
+          {
+            to: "/extensibility/dependencies/spark-dependencies",
+            from: "/Spark/extensibility/dependencies",
+          },
+          {
+            to: "/extensibility/dependencies/sql-dependencies",
+            from: "/SQL/extensibility/dependencies",
+          },
+          {
+            to: "/extensibility/gem-builder/sql-gem-builder",
+            from: "/SQL/extensibility/gem-builder/",
+          },
+          {
+            to: "/extensibility/gem-builder/spark-gem-builder",
+            from: "/Spark/extensibility/gem-builder/",
+          },
+          {
+            to: "/extensibility/gem-builder/optimization-functions",
+            from: "/Spark/extensibility/gem-builder/optimization-functions",
+          },
+          {
+            to: "/Spark/functions/udfs",
+            from: "/Spark/extensibility/udfs",
+          },
+          {
+            to: "/Spark/functions/business-rules-engine/",
+            from: "/Spark/business-rules-engine/",
+          },
+          {
+            to: "/SQL/",
+            from: "/SQL/development/",
+          },
+          {
+            to: "/extensibility/package-hub/",
+            from: "/package-hub/package-builder/",
+          },
+          {
+            to: "/SQL/visual-expression-builder/variant-schema",
+            from: "/SQL/development/visual-editor/variant-schema",
+          },
+          {
+            to: "/SQL/",
+            from: "/SQL/development/visual-editor/",
+          },
+          {
+            to: "/SQL/",
+            from: "/SQL/development/code-editor",
+          },
+          {
+            to: "/extensibility/gem-builder/spark-gem-builder",
+            from: "/package-hub/package-builder/Gem-builder",
+          },
+          {
+            to: "/extensibility/gem-builder/spark-gem-builder",
+            from: "/extensibility/package-hub/Gem-builder",
+          },
+          {
+            to: "/api/active-users-api/",
+            from: "/settings/active-users-api/",
+          },
+          {
+            to: "/getting-started/tutorials/spark-with-databricks",
+            from: "/getting-started/spark-with-databricks",
+          },
+          {
+            to: "/getting-started/tutorials/sql-with-snowflake",
+            from: "/getting-started/sql-with-snowflake",
+          },
+          {
+            to: "/getting-started/tutorials/sql-with-databricks",
+            from: "/getting-started/sql-with-databricks",
+          },
+          {
+            to: "/Spark/gems/machine-learning/gen-ai-chatbot",
+            from: "/getting-started/gen-ai-chatbot",
           },
         ],
         /*
@@ -411,31 +540,68 @@ const config = {
         /SQL/data-tests/use-project-tests.html
         /low-code-sql/data-tests/use-project-tests.html => /SQL/data-tests/use-project-tests.html
 
+        ENSURE that more specific paths are evaluated first so that they match before broader conditions like /SQL or /Spark, which could otherwise override them.
+        By ordering conditions based on specificity, you can prevent unintended matches and ensure the correct redirect logic is applied.
 
          */
         createRedirects(existingPath) {
-          if (existingPath.includes("/SQL")) {
-            return [existingPath.replace("/SQL", "/low-code-sql")];
-          }
-          if (existingPath.includes("/Spark")) {
-            return [existingPath.replace("/Spark", "/low-code-spark")];
-          }
-          if (existingPath.includes("/Orchestration")) {
-            return [existingPath.replace("/Orchestration", "/low-code-jobs")];
-          }
-          if (existingPath.includes("/getting-help")) {
+          if (
+            existingPath.includes("/Orchestration/airflow/prophecy-managed")
+          ) {
             return [
               existingPath.replace(
-                "/getting-help",
-                "/getting-started/getting-help",
+                "/Orchestration/airflow/prophecy-managed",
+                "/Orchestration/airflow/setup/prophecy-managed",
               ),
             ];
           }
-          if (existingPath.includes("/copilot")) {
-            return [existingPath.replace("/copilot", "/concepts/copilot")];
+          if (existingPath.includes("/Orchestration/pipeline-monitoring")) {
+            return [
+              existingPath.replace(
+                "/Orchestration/pipeline-monitoring",
+                "/Spark/pipeline-monitoring",
+              ),
+            ];
           }
-          if (existingPath.includes("/lineage")) {
-            return [existingPath.replace("/lineage", "/metadata/lineage")];
+          if (existingPath.includes("/SQL/gems/target-models/")) {
+            return [
+              existingPath.replace(
+                "/SQL/gems/target-models/",
+                "/SQL/development/target-models/",
+              ),
+            ];
+          }
+          if (existingPath.includes("/SQL/visual-expression-builder")) {
+            return [
+              existingPath.replace(
+                "/SQL/visual-expression-builder",
+                "/SQL/development/visual-editor/visual-expression-builder",
+              ),
+            ];
+          }
+          if (existingPath.includes("/administration/Spark-fabrics/")) {
+            return [
+              existingPath.replace(
+                "/administration/Spark-fabrics/",
+                "/Spark/fabrics/",
+              ),
+            ];
+          }
+          if (existingPath.includes("/administration/sql-fabrics")) {
+            return [
+              existingPath.replace(
+                "/administration/sql-fabrics",
+                "/SQL/fabrics/",
+              ),
+            ];
+          }
+          if (existingPath.includes("/administration/secret-management")) {
+            return [
+              existingPath.replace(
+                "/administration/secret-management",
+                "/Spark/secret-management",
+              ),
+            ];
           }
           if (existingPath.includes("/administration/authentication")) {
             return [
@@ -452,6 +618,58 @@ const config = {
                 "/architecture/self-hosted/",
               ),
             ];
+          }
+          if (existingPath.includes("/administration/settings")) {
+            return [
+              existingPath.replace("/administration/settings", "/settings"),
+            ];
+          }
+          if (existingPath.includes("/ci-cd/deployment")) {
+            return [existingPath.replace("/ci-cd/deployment", "/deployment")];
+          }
+          if (existingPath.includes("/ci-cd/prophecy-build-tool")) {
+            return [
+              existingPath.replace(
+                "/ci-cd/prophecy-build-tool",
+                "/deployment/prophecy-build-tool",
+              ),
+            ];
+          }
+          if (existingPath.includes("/ci-cd/data-tests")) {
+            return [
+              existingPath.replace("/ci-cd/data-tests", "/SQL/data-tests"),
+            ];
+          }
+          if (existingPath.includes("/extensibility/package-hub")) {
+            return [
+              existingPath.replace(
+                "/extensibility/package-hub",
+                "/package-hub",
+              ),
+            ];
+          }
+          if (existingPath.includes("/getting-help")) {
+            return [
+              existingPath.replace(
+                "/getting-help",
+                "/getting-started/getting-help",
+              ),
+            ];
+          }
+          if (existingPath.includes("/copilot")) {
+            return [existingPath.replace("/copilot", "/concepts/copilot")];
+          }
+          if (existingPath.includes("/lineage")) {
+            return [existingPath.replace("/lineage", "/metadata/lineage")];
+          }
+          if (existingPath.includes("/Orchestration")) {
+            return [existingPath.replace("/Orchestration", "/low-code-jobs")];
+          }
+          if (existingPath.includes("/SQL")) {
+            return [existingPath.replace("/SQL", "/low-code-sql")];
+          }
+          if (existingPath.includes("/Spark")) {
+            return [existingPath.replace("/Spark", "/low-code-spark")];
           }
           return undefined;
         },

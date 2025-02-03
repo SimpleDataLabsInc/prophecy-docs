@@ -2,7 +2,7 @@
 sidebar_position: 10
 title: BulkColumnRename
 id: bulk-column-rename
-description: Rename multiple columns in your Dataset in a systematic way.
+description: Rename multiple columns in your dataset in a systematic way.
 tags:
   - gems
   - rename
@@ -13,7 +13,7 @@ import Requirements from "../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
 
-Use the BulkColumnRename Gem to rename multiple columns in your Dataset in a systematic way.
+Use the BulkColumnRename gem to rename multiple columns in your dataset in a systematic way.
 
 ## Requirements
 

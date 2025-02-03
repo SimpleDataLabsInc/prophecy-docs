@@ -2,7 +2,6 @@
 title: CosmosDB
 id: cosmos
 description: CosmosDB
-sidebar_position: 2
 tags:
   - gems
   - warehouse
@@ -30,7 +29,7 @@ The `azure-cosmos-spark` connector is an integration between Azure CosmosDB and 
 
 ## Installation
 
-On your Execution Cluster (Databricks or OnPrem), [connect a dependency](../../../extensibility/dependencies.md) that has the following Maven coordinates (for Spark 3.3; For others please check [this](https://github.com/Azure/azure-sdk-for-java/tree/main/sdk/cosmos/azure-cosmos-spark_3-3_2-12) link):
+On your Execution Cluster (Databricks or OnPrem), [connect a dependency](docs/extensibility/dependencies/spark-dependencies.md) that has the following Maven coordinates (for Spark 3.3; For others please check [this](https://github.com/Azure/azure-sdk-for-java/tree/main/sdk/cosmos/azure-cosmos-spark_3-3_2-12) link):
 
 ```json
 com.azure.cosmos.spark:azure-cosmos-spark_3-3_2-12:4.18.1
@@ -96,7 +95,7 @@ These properties are specific to read operations.
 | Property                                 | Required | Default Value     | Description                                                                                                                                                                                                                                                                                                                                                                                             |
 | ---------------------------------------- | -------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Enable Infer Schema                      | `True`   | `true`            | Whether all data in the container should be loaded or should data be returned using a custom query                                                                                                                                                                                                                                                                                                      |
-| Enable Custom Query for Inferring Schema | `False`  | `None`            | Checkbox, which if marked, will open up an Editor for writing Custom SQL Query                                                                                                                                                                                                                                                                                                                          |
+| Enable Custom Query for Inferring Schema | `False`  | `None`            | Checkbox, which if marked, will open up an editor for writing Custom SQL Query                                                                                                                                                                                                                                                                                                                          |
 | Make all Columns Nullable                | `False`  | `true`            | When schema inference is enabled, whether the resulting schema will make all columns nullable. By default, all columns (except cosmos system properties) will be treated as nullable even if all rows within the sample set have non-null values. When disabled, the inferred columns are treated as nullable or not depending on whether any record in the sample set has null-values within a column. |
 | Record Sample Size for Schema Inference  | `False`  | `1000`            | Sampling size to use when inferring schema and not using a query.                                                                                                                                                                                                                                                                                                                                       |
 | Include all System Properties            | `False`  | `false`           | When schema inference is enabled, whether the resulting schema will include all CosmosDB system properties.                                                                                                                                                                                                                                                                                             |

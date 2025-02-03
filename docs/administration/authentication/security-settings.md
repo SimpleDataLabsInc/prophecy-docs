@@ -11,7 +11,7 @@ tags:
 ---
 
 The **Security** page of the Admin settings in Prophecy lets you configure Keytab files and Proxy User settings.
-These connect to Kerberised Livy Setup while setting up Kerberos Auth in the [Livy Fabric](/docs/Spark/fabrics/livy.md).
+These connect to Kerberised Livy Setup while setting up Kerberos Auth in the [Livy fabric](/docs/administration/Spark-fabrics/livy.md).
 
 ![admin_settings](img/Admin_Settings.png)
 
@@ -21,7 +21,7 @@ This is only available for admin users on [self-hosted](../prophecy-deployment#s
 
 ### Keytabs for Kerberos Authentication
 
-Here, the Admins can upload Keytab files for secure Authentication to Livy Fabrics. These Keytabs are stored in Prophecy's metadata storage in encrypted format.
+Here, the Admins can upload Keytab files for secure Authentication to Livy fabrics. These Keytabs are stored in Prophecy's metadata storage in encrypted format.
 Simply click on the `Add Keytab` button and provide the Livy URL, Kerberos Principal, and Keytab File for the given Livy URL.
 
 :::info

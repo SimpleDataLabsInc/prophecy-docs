@@ -1,5 +1,4 @@
 ---
-sidebar_position: 2
 title: TableIterator
 id: table-iterator
 description: Loop over each row of an input Dataframe
@@ -13,8 +12,8 @@ import Requirements from "../\_gem-requirements.mdx";
 
 <h3><span class="badge">Spark Gem</span></h3>
 
-TableIterator allows you to iterate over one or more Gems for each row of the first input DataFrame.
-Let's see how to create a Basic Loop which loops over a Metadata Table, and for each row of the table will run the Gems inside the Subgraph.
+TableIterator allows you to iterate over one or more gems for each row of the first input DataFrame.
+Let's see how to create a Basic Loop which loops over a Metadata Table, and for each row of the table will run the gems inside the Subgraph.
 
 ## Requirements
 
@@ -29,18 +28,19 @@ Let's see how to create a Basic Loop which loops over a Metadata Table, and for 
 />
 
 ## Creating a TableIterator Gem
+## Creating a TableIterator gem
 
-First add the Input Gem on which you want to Iterate over. For this, simply use an existing Dataset or create a new [Source Gem](/docs/Spark/gems/source-target/source-target.md) pointing to your Metadata table.
-You can run this Source Gem to see the data your loop would be running for.
+First add the Input gem on which you want to Iterate over. For this, simply use an existing dataset or create a new [Source gem](/docs/Spark/gems/source-target/source-target.md) pointing to your Metadata table.
+You can run this Source gem to see the data your loop would be running for.
 
-Now, Drag and Drop the **(1) TableIterator** Gem from the Subgraph menu, and connect it to the above created Source Gem.
+Now, Drag and Drop the **(1) TableIterator** gem from the Subgraph menu, and connect it to the above created Source gem.
 
 ![Create_table_iterator](img/Create_table_iterator.png)
 
 ## Configure the TableIterator
 
-Open the TableIterator Gem, and click on **(1) Configure** to open the Settings dialog.
-Here, on the left side panel you can edit the **(2) Name ** of your Gem, check the **(3) Input Schema** for your DataFrame on which the loop will iterate.
+Open the TableIterator gem, and click on **(1) Configure** to open the Settings dialog.
+Here, on the left side panel you can edit the **(2) Name ** of your gem, check the **(3) Input Schema** for your DataFrame on which the loop will iterate.
 
 On the right side, you can define your Iterator Settings, and any other Subgraph Configs you want to use in the Subgraph.
 In the **(4) Max Iterations** field, you can control the maximum number of Iterations this loop can have. This is to safeguard that nobody runs the loop on a very large DataFrame by mistake. The default value is set to 1000.
@@ -69,12 +69,12 @@ The configs which are not mapped to a source column, will have a fixed value for
 
 Once done, click on **(2) Save**, to save the Iterator configurations.
 
-Now you can add the Gems to your Subgraph on which you want to loop on. To do this simply Drag and Drop any Gem onto the Subgraph Canvas.
-You can add any Source, Target or any other transformation Gem and use the configs inside these Gems to change the values for each Iteration.
+Now you can add the gems to your Subgraph on which you want to loop on. To do this simply Drag and Drop any gem onto the Subgraph Canvas.
+You can add any Source, Target or any other transformation gem and use the configs inside these gems to change the values for each Iteration.
 
 ## Running the Loop
 
-Once you have added the Gems to your Subgraph, Click on the **(1) Run button** to start execution.
+Once you have added the gems to your Subgraph, Click on the **(1) Run button** to start execution.
 As the execution starts, you will see a new **(2) Iteration** button. This will show for which Iteration you are seeing the current interims.
 You can click on the **(3) Interim** to check values for that Iteration.
 
@@ -86,7 +86,7 @@ Click on the **(2) Iteration** button, and it will open up the Iterations table 
 
 ## Adding Inputs and Outputs to TableIterator
 
-For a TableIterator Gem, the first input port is for your DataFrame on which you want to Iterate Over.
+For a TableIterator gem, the first input port is for your DataFrame on which you want to Iterate Over.
 You can **(1)Add** more Inputs or Switch to **(2) Output** tab to add more Outputs as needed. These extra inputs would not change for every iteration.
 Also, the output will be a Union of output of all Iterations. You can **(3) Delete** any port by hovering over it.
 

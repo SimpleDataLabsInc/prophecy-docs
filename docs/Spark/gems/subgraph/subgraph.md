@@ -6,7 +6,7 @@ tags: []
 todo: true
 ---
 
-Subgraph Gems let you take multiple different Gems and wrap them under a single reusable parent Gem. In other words, they allow you to decompose complex logic into reusable components. See how to **create** and **publish** a Subgraph in the video below.
+Subgraph gems let you take multiple different gems and wrap them under a single reusable parent gem. In other words, they allow you to decompose complex logic into reusable components. See how to **create** and **publish** a Subgraph in the video below.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -20,25 +20,25 @@ There are three types of Subgraph available by default. The [Basic](./basic-subg
 
 | Name                                                         | Description                                                                                                                     |
 | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
-| [Basic](./basic-subgraph)                                    | Captures one or more Gems within a Pipeline to reuse across other Pipelines and Projects.                                       |
-| [Table Iterator](./table-iterator)                           | Iterates over one or more Gems for each row of the first input DataFrame. Table iterator is available for Python Projects only. |
-| [Novel Type](./subgraph.md#create-your-own-type-of-subgraph) | Apply any custom logic to the group of Gems present inside the Subgraph.                                                        |
+| [Basic](./basic-subgraph)                                    | Captures one or more gems within a pipeline to reuse across other pipelines and projects.                                       |
+| [Table Iterator](./table-iterator)                           | Iterates over one or more gems for each row of the first input DataFrame. Table iterator is available for Python projects only. |
+| [Novel Type](./subgraph.md#create-your-own-type-of-subgraph) | Apply any custom logic to the group of gems present inside the Subgraph.                                                        |
 
 ## Create your own type of Subgraph
 
-You can also create your own Subgraph to apply any custom logic on the group of Gems present inside it. For example Try Catch, other kinds of Iterators, etc.
+You can also create your own Subgraph to apply any custom logic on the group of gems present inside it. For example Try Catch, other kinds of Iterators, etc.
 
-To create your own Subgraph type, Go to the project you want to create the Gem in.
-Click on the **(1) Create Gem** button. This will open up the **Create Gem** Form. Provide a **(2) Name** for the Gem, and select the mode as **Control Flow Gem**.
+To create your own Subgraph type, Go to the project you want to create the gem in.
+Click on the **(1) Create Gem** button. This will open up the **Create Gem** Form. Provide a **(2) Name** for the gem, and select the mode as **Control Flow Gem**.
 
 ![Create_subgraph_gem](img/create_subgraph_type.png)
 
-This takes to you the Gem Code Editor with a basic structure of the code generated. Here you can start modifying your dialog, validation and the actual logic of the Gem.
-Read [here](/docs/package-hub/package-builder/gem-builder.md) for more details of the Gem code. More detailed docs on writing Subgraph Gems to follow soon.
+This takes to you the gem code editor with a basic structure of the code generated. Here you can start modifying your dialog, validation and the actual logic of the gem.
+Read [here](/docs/extensibility/gem-builder/spark-gem-builder.md) for more details of the gem code.
 
-The newly constructed Subgraph Gem can be utilized within any Pipeline of this Project, accessible through the Subgraph menu as demonstrated below.
-Furthermore, you have the option to Release this project, enabling its use as a dependency in other projects, thus incorporating the created Gem into various projects.
-Read [here](/docs/package-hub/package-hub.md) for more details on project as a dependency.
+The newly constructed Subgraph gem can be utilized within any pipeline of this project, accessible through the Subgraph menu as demonstrated below.
+Furthermore, you have the option to Release this project, enabling its use as a dependency in other projects, thus incorporating the created gem into various projects.
+Read [here](/docs/extensibility/package-hub/package-hub.md) for more details on project as a dependency.
 
 ![Use_subgraph](img/Use_new_subgraph.png)
 

@@ -2,7 +2,6 @@
 title: Hive Table
 id: hive
 description: Read from or write to Tables managed by a Hive metastore
-sidebar_position: 2
 tags:
   - gems
   - catalog
