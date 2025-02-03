@@ -3,6 +3,7 @@ title: Send Spark cluster details
 id: spark-cluster-details
 description: Helpful Spark cluster configurations to send to Support
 sidebar_label: Send info from the Spark cluster
+sidebar_position: 2
 tags: [help, connectivity]
 ---
 
