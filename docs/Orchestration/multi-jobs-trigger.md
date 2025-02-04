@@ -33,13 +33,13 @@ jobs completely. Recoverability and maintenance also becomes more difficult.
 This is where, it might be worth to explore the trigger-based approach. Using this approach, we place additional
 triggers in our upstream jobs that trigger the jobs that should be executed after those finished.
 
-To achieve that we can leverage the `Script` Gem
+To achieve that we can leverage the `Script` gem
 and [Databricks Jobs API](https://docs.databricks.com/dev-tools/api/latest/jobs.html#operation/JobsRunNow).
 
 To be able to trigger a job from within another job, we need to:
 
 1. Deploy the job we want to trigger and find it's Databricks `job_id`
-2. Add a `Script` Gem to the scheduled job that triggers the other one
+2. Add a `Script` gem to the scheduled job that triggers the other one
 
 ### Deploying Jobs
 
@@ -56,7 +56,7 @@ trigger.
 
 ### Job trigger
 
-Once we have the ID of the job that we'd like to trigger, we can go ahead and create a `Script` Gem in our upstream job
+Once we have the ID of the job that we'd like to trigger, we can go ahead and create a `Script` gem in our upstream job
 that's going to run it.
 
 Insert the following script to trigger a job:
