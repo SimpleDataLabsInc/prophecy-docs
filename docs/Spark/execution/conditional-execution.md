@@ -1,7 +1,7 @@
 ---
-title: Conditional Execution in Spark
+title: Conditional execution
 id: conditional-execution
-description: Guide on conditional execution of a gem
+description: Conditionally run or skip transformations within Spark gems
 tags:
   - Conditional
   - Execution

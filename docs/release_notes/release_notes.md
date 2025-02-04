@@ -6,7 +6,7 @@ description: Changelog for all features, behavior changes, and updates
 tags: []
 ---
 
-import { Release } from '@site/src/components/releases';
+import CustomTOCInline from '@site/src/components/releases';
 
 Review our release notes to see features, enhancements, changes, and fixes that have been introduced with a release. If you have any questions, please [contact Prophecy](mailto:contact.us@Prophecy.io).
 
@@ -17,8 +17,8 @@ To ensure these updates do not impact your usage, we recommend refreshing the we
 
 ## 2025
 
-<Release item={require('./2025/2025.md')} path="./2025" />
+<CustomTOCInline item={require('./2025/2025.md')} path="./2025" />
 
 ## 2024
 
-<Release item={require('./2024/2024.md')} path="./2024" />
+<CustomTOCInline item={require('./2024/2024.md')} path="./2024" />

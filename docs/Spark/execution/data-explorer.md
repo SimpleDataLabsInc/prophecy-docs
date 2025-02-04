@@ -11,34 +11,43 @@ tags:
   - data
 ---
 
-The Data Explorer feature empowers users to seamlessly explore and analyze their data samples directly within the user interface (UI). This feature provides a range of capabilities to help users gain insights, verify data accuracy, and make informed decisions.
+The Data Explorer can help you navigate your [interim data samples](docs/Spark/execution/interactive-execution.md#interims) and understand your data better. Use it to confirm the structure of each column, review data entries, and make sure the data types are correct.
+
+When you open the Data Explorer for an interim, you can:
+
+1. Filter the data.
+1. Sort the data.
+1. Search through the data.
+1. Show or hide columns.
+1. Load more rows into the preview sample.
+1. Download data in CSV or JSON format.
+1. Create a new gem.
 
 ![Data_explorer](img/Data_Explorer.png)
 
-### Filter and Sort Options
+## Data sample
 
-Users can apply filters and sort rows based on any column, enhancing visibility and improving data analysis.
+When you filter, sort, or search through the data, you are only working with the **visible sample** of the data. To apply these to the whole dataset in the preview, you must either:
 
-:::info
-After applying or modifying any filter or sort criteria, you need to click the **Run** button to update the displayed data.
+- Load the whole dataset into the preview by clicking **Load More** after the last record in the preview until all records are shown.
+- Click **Run** in the top right corner of the data preview. This will filter and sort based on all of the data in the backend (rather than a sample).
+
+## Create gems
+
+After analyzing the data, you can retain the filter and sort options in the pipeline by clicking on the **Create Gems** option. This action saves the applied filter and sort as a `Filter` and `OrderBy` gem in the pipeline.
+
+## Large sample interims
+
+If you want to see larger samples in the Data Explorer, you can enable the **Selective** data sampling setting. When you enable this option, you will be able to see up to 10,000 rows in the data sample by default. You'll also see all columns by default.
+
+:::note
+
+You can still load more records into the preview when using selective data sampling.
+
 :::
 
-### Reset Applied Filters and Sort
+### Disable per gem
 
-Easily reset any applied filters and sorting settings by clicking on the `reset` button.
+If you disable the large data preview on an individual gem, you'll see a pale-color interim on its output after running the data pipeline. This means that no data sample was generated.
 
-### Column Visibility Filtering
-
-Conveniently filter columns visible in the UI by clicking on the ellipsis `...` icon. No need to rerun the process to reflect these changes in the UI.
-
-### Load More Rows and Total Count
-
-View and assess a larger dataset by loading more rows. The total count of rows and columns is visible, providing a comprehensive overview of the data.
-
-### Download Data
-
-Download the visible data in the UI in CSV and JSON format using the dedicated download button.
-
-### Create Gems
-
-After analyzing the data, users can retain the filter and sort options in the pipeline by clicking on the **Create gems** option. This action saves the applied filter and sort as a `Filter` and `OrderBy` gem in the pipeline.
+If you want to generate the data preview, open the pale interim and it will load the data. After it loads, the interim will look like a normal interim.

@@ -18,50 +18,34 @@ Our SQL Gem builder supports Databricks and Snowflake SQL. It's built on dbt Cor
 
 You can create a gem that writes a reference to either of the following options:
 
-- a new user-defined macro
-- an existing macro present in a dependency (such as `dbt-utils`)
+- A new user-defined macro
+- An existing macro present in a dependency (such as `dbt-utils`)
 
 ## Getting Started
 
 You can get started with creating your own gem by completing the following steps:
 
 1. Open a SQL project, and the click **Add Gem**.
+1. Enter a **Gem Name**.
+1. Choose a **Category**.
+1. Verify the **Directory Path** where your gem SQL query will be stored.
+1. Click **Create**. This will open the files you will need to edit to define your custom gem.
 
-   ![Gem builder new gem](img/gem-builder-new.png)
+![Gem builder new gem](img/gem-builder-new.png)
 
-2. Enter a Gem Name, choose a Category, and verify the Directory Path. Then click **Create**. The gem is automatically set to save in `macros/` as `gem_name.py` and `gem_name.sql` files.
+## Steps
 
-Now you can customize the gem using the split-screen code editor. See the following [Creating a gem](#creating-a-gem) section to learn how to define your gem.
-
-## Creating a gem
-
-A gem is made up of multiple components that determine the UI and logic of the gem. The Gem builder breaks up these components into steps for you while you create your gem.
-
-### Gem components
-
-There are two types of gems that you can create while using the Gem builder:
-
-- **DataSource gems**: These gems enable the reading and writing of data from or to various data sources.
-- **Transform gems**: These gems apply transformations/joins/any other custom logic onto any source that is passed into them.
-
-Programmatically, a gem is a component with the following parts:
-
-- The **Gem UI Component** defines the user experience of using the gem on the visual canvas. This code is rendered on the Prophecy UI.
-- The **Gem Code Logic** which is how the gem acts within the context of a model.
-
-Gem code can be written using either Python or Scala.
-
-### Steps to follow
+A gem is made up of multiple components that determine the UI and logic of the gem. The Gem Builder breaks these components into steps for you while you create your gem.
 
 There are three parts to creating a gem:
 
-1. [Create SQL Query](#1-create-sql-query)
-2. [Customize Interface](#2-customize-interface)
-3. [Preview](#3-preview)
+1. [Create SQL Query](#create-a-sql-query)
+2. [Customize Interface](#customize-the-interface)
+3. [Preview](#preview-your-gem)
 
-In the first part, you'll define the SQL query using a new or existing macro. You'll then need to customize the UI and logic of your gem. Finally, you can preview your gem.
+First, you'll define the SQL query using a new or existing macro. You'll then need to customize the UI and logic of your gem. Finally, you can preview your gem.
 
-## 1. Create SQL Query
+## Create a SQL query
 
 Prophecy gems are powered by macros. Therefore, you can either define a new macro or leverage an existing one for your custom gem.
 
@@ -69,7 +53,7 @@ Prophecy gems are powered by macros. Therefore, you can either define a new macr
 
 Existing dbt macros can help define table-to-table transformations. Consider using them to complete your SQL Query. See the [dbt utils source code](https://github.com/dbt-labs/dbt-utils/tree/main/macros/sql) for macro definitions.
 
-## 2. Customize Interface
+## Customize the interface
 
 Customizing your gem involves editing the code for specific classes, functions, and methods.
 
@@ -265,7 +249,7 @@ This object now has to be converted into the gem state defined by the user. This
 
 Similarly the opposite case where this enhanced UX is not available due to some reason, Prophecy needs to be able to render the default macro UI. For this purpose you must define the logic to convert the gem properties back to the default macro properties object which Prophecy understands.
 
-## 3. Preview
+## Preview your gem
 
 You can preview the component in the gem builder to see how it looks. You can modify the properties and then save it to preview the generated code which will eventually run on your cluster.
 

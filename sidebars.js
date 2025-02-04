@@ -381,13 +381,16 @@ const sidebars = {
         {
           type: "category",
           label: "Execution",
+          link: {
+            type: "doc",
+            id: "Spark/execution/interactive-execution",
+          },
           items: [
-            "Spark/execution/interactive-execution",
+            "Spark/execution/data-explorer",
+            "Spark/execution/conditional-execution",
             "Spark/execution/execution-metrics",
             "Spark/execution/executions_on_databricks_clusters",
             "Spark/execution/executions_on_livy_clusters",
-            "Spark/execution/data-explorer",
-            "Spark/execution/conditional-execution",
           ],
         },
         {
@@ -444,6 +447,12 @@ const sidebars = {
           items: [
             {
               type: "category",
+              label: "Data sources",
+              link: { type: "doc", id: "SQL/gems/datasources/datasources-sql" },
+              items: ["SQL/gems/datasources/upload-files"],
+            },
+            {
+              type: "category",
               label: "Target models",
               link: { type: "doc", id: "SQL/gems/target-models/target-models" },
               items: [
@@ -453,12 +462,6 @@ const sidebars = {
                 "SQL/gems/target-models/type-and-format",
                 "SQL/gems/target-models/write-options",
               ],
-            },
-            {
-              type: "category",
-              label: "Data sources",
-              link: { type: "doc", id: "SQL/gems/datasources/datasources-sql" },
-              items: ["SQL/gems/datasources/upload-files"],
             },
             {
               type: "category",
@@ -660,6 +663,7 @@ const sidebars = {
           items: [
             "extensibility/gem-builder/sql-gem-builder",
             "extensibility/gem-builder/spark-gem-builder",
+            "extensibility/gem-builder/gem-builder-reference",
             "extensibility/gem-builder/optimization-functions",
           ],
         },
