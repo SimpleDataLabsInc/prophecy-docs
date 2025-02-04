@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[97629],{87938:i=>{i.exports=JSON.parse('{"label":"cluster admin","permalink":"/tags/cluster-admin","allTagsPath":"/tags","count":1,"items":[{"id":"administration/index","title":"Administration","description":"Find common administration tasks","permalink":"/administration/"}]}')}}]);

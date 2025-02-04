@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[75869],{28214:e=>{e.exports=JSON.parse('{"label":"infer schema","permalink":"/tags/infer-schema","allTagsPath":"/tags","count":1,"items":[{"id":"concepts/project/gems","title":"Gems","description":"Transform your data with Prophecy gems","permalink":"/concepts/project/gems"}]}')}}]);

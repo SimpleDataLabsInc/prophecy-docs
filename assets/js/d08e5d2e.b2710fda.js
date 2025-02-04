@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[4326],{90123:s=>{s.exports=JSON.parse('{"label":"users","permalink":"/tags/users","allTagsPath":"/tags","count":1,"items":[{"id":"administration/teamuser","title":"Teams and users","description":"Teams represent a group of users who work together","permalink":"/administration/teamuser"}]}')}}]);
