@@ -12,12 +12,11 @@ Pipelines are groups of data transformations that you can build from a **visual*
 
 Under the hood, pipelines are based on Spark-native code. pipelines are ideal for Spark environments like Databricks or EMR, particularly for tasks such as complex data ingestion (e.g., loading data from Salesforce or JDBC), handling advanced data transformations (e.g., working with complex data types), and supporting machine learning workflows.
 
-## Actions
+## Pipeline creation
 
-- To view a list of pipelines in Prophecy, navigate to the **Metadata** page from the left sidebar.
-- To create a new pipeline, navigate to the **Create Entity** page from the left sidebar.
+If you want to create a new pipeline, you can do so from the **Create Entity** page in the left sidebar. You can also create pipelines directly within the [Project Editor](/concepts/project/#project-editor).
 
-## Parameters
+The following table describes the parameters for pipeline creation.
 
 | Field       | Description                                                                                                                                       |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -27,26 +26,33 @@ Under the hood, pipelines are based on Spark-native code. pipelines are ideal fo
 | Mode        | Whether the pipeline will be Batch mode or Streaming.                                                                                             |
 | Description | A field to describe the purpose of the pipeline.                                                                                                  |
 
-## Edit a pipeline
+## Pipeline canvas
 
-When editing a pipeline, you'll be using the editor shown below.
+When you develop a pipeline, you do so from from the [Project Editor](/concepts/project/#project-editor). More specifically, you work inside the **Pipeline canvas**.
 
-![Editing a pipeline](img/pipelines/edit_pipeline.png)
+The pipeline canvas includes:
 
-1. **Pipeline Config**: Buttons that bring up views related to the configuration of your pipeline:
-   1. [Config](/docs/Spark/configuration.md)
-   2. Scheduling
-   3. Unit Tests
-   4. UDFs/UDAFs
-   5. Dependencies
-   6. Spark Version
-   7. Visual Language
-2. **View switch**: Switch between the Visual view and Code view. The generated code will only update if there are no errors detected in the Visual view.
-3. **Fabric switch**: Select the [fabric](/docs/concepts/fabrics/fabrics.md) to use during development; start a new cluster or connect to an existing one.
-4. **Gem drawer**: Click to select a category, then click on the gem you wish to insert into the editor. See [here](./gems.md) for more information on the gems.
-5. **Workspace**: Everything in the middle of the view is the _Workspace_. This is where you'll create and manipulate the gems that make up this pipeline.
-6. **Git status**: In Prophecy almost everything is stored in Git, and this is where you can interact with the version control for your pipeline. See [Projects & Git](/docs/concepts/project/project.md) for more information.
-7. **Run**: If you just want to run your pipeline from start to finish, click this button.
+- A space to add and connect gems.
+- The **gem drawer** from which you select your gems.
+- A **run** button to begin interactive execution.
+- **Copilot** to help you build your pipeline.
+
+![Pipeline canvas](img/pipelines/pipeline-canvas.png)
+
+## Pipeline metadata
+
+To view a list of pipelines in Prophecy, navigate to the **Metadata** page from the left sidebar. For more granular metadata, click into a pipeline. Pipeline metadata can also be accessed from the header of the [Project Editor](/concepts/project/#project-editor).
+
+![Pipeline metadata](img/pipelines/pipeline-metadata.png)
+
+The table below describes the different tabs inside an individual pipeline's metadata.
+
+| Tab       | Description                                                                                                        |
+| --------- | ------------------------------------------------------------------------------------------------------------------ |
+| Info      | A list of the input and output datasets of the pipeline. You can also edit the pipeline name and description here. |
+| Relations | A list of jobs and subgraphs that include the pipeline.                                                            |
+| Code      | The code that is stored in the Git repository for the pipeline.                                                    |
+| Runs      | A history of pipeline runs per fabric.                                                                             |
 
 ## What's next
 

@@ -21,6 +21,8 @@ Prophecy provides a Prophecy-managed fabric that can get you started with buildi
 
 A team admin typically sets up fabrics. Details steps for fabric creation can be found in the [Set up Spark fabrics](/administration/Spark-fabrics/Fabrics) and [Set up SQL fabrics](/administration/sql-fabrics/Fabrics) sections of the documentation.
 
+Even though teams share fabrics, **each user must add in their individual credentials** to be able to use the fabric in their projects.
+
 ## Use case
 
 Here is one way you might set up your fabrics. First, the team admin creates:

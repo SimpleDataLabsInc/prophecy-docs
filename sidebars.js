@@ -535,6 +535,7 @@ const sidebars = {
       value: "Team Admins",
       defaultStyle: true,
     },
+    "administration/teamuser",
     {
       type: "category",
       label: "Set up Spark fabrics",
@@ -572,7 +573,6 @@ const sidebars = {
       ],
     },
     "administration/metadata-connections",
-    "administration/teamuser",
     "administration/settings/settings",
     {
       type: "html",
