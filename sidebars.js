@@ -583,6 +583,7 @@ const sidebars = {
       value: "Prophecy Admins",
       defaultStyle: true,
     },
+    "administration/architecture",
     "administration/prophecy-deployment",
     {
       type: "category",

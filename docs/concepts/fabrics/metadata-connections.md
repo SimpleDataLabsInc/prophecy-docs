@@ -1,5 +1,5 @@
 ---
-title: Metadata Connections
+title: Metadata connections
 id: metadata-connections
 description: Sync catalogs, tables, schemas, etc into Prophecy's project viewer
 sidebar_position: 3
@@ -11,35 +11,23 @@ tags:
   - data
 ---
 
-At Prophecy we're always looking to make your development faster. For teams that manage hundreds or thousands of tables, listing data catalogs, tables, and schemas can take precious minutes. In order to make this easier, Prophecy introduced Metadata Connections in release 3.2. The major benefit to Metadata Connections: you can list and view your data directly in the [Prophecy UI](/docs/concepts/project/project.md#Environment-tab).
+When you create a metadata connections in a fabric, you can view and import your data directly in the [Project Editor](/docs/concepts/project/project.md#project-editor) in Prophecy. A default metadata connection is created by Prophecy for Spark [fabrics](docs/concepts/fabrics/fabrics.md).
 
-Let's get down to basics by [defining](#definition-of-entities) the relevant entities in Prophecy, setup the relevant data resource, then we'll walk through how to [setup](/#setup-resources) Metadata Connections in Prophecy.
+## What is a metadata connection?
 
-## Definition of entities
+A metadata connection is a user-defined link between Prophecy and a data provider. Its purpose is to establish communication between Prophecy and external systems. For instance, a metadata connection can be established between Prophecy and platforms like Databricks (Catalog or JDBC).
 
-### Metadata Connection
-
-A Metadata Connection is a user-defined link between Prophecy and a data provider. Its purpose is to establish communication between Prophecy and external systems. For instance, a Metadata Connection can be established between Prophecy and platforms like Databricks (Catalog or JDBC). Different from Metadata Connections, Prophecy also supports Airflow Connections which perform a similar function for Airflow jobs.
-
-### Fabric
-
-A fabric represents a logical grouping of Connections. For Prophecy 3.2, each fabric will enable only one Metadata Connection. Fabrics contain the user credentials for a data provider, whereas Metadata Connections have the added benefit of syncing metadata from the data provider at a defined interval.
-:::info
-The fabric token should provide the user's personal permissions to read / write data.
-The Metadata Connection token, optionally provided to enhance performance, should be a service principal with read-only permissions on the appropriate catalog and JDBC tables.
+:::note
+Different from metadata connections, Prophecy also supports Airflow connections which perform a similar function for Airflow jobs.
 :::
 
-### Cluster/Warehouse
+## Metadata connection setup
 
-A Cluster, also referred to as a Warehouse, represents a collection of resources that a Metadata Connection can utilize. Clusters are specific to certain data platforms or systems. For instance, a Snowflake Metadata Connection can access different warehouses that are available to the user. By associating a Metadata Connection with a workspace or warehouse, users can leverage the resources defined by the data providers.
+### Provider tokens
 
-## Setup Resources
+Prophecy metadata connections will use APIs to make calls to your data provider accounts. For this access, a service principal is recommended. For Databricks providers, follow these [instructions](https://docs.databricks.com/en/dev-tools/service-principals.html#provision-a-service-principal-for-databricks-automation---databricks-ui) to create a service principal and associated token. If you are unable to setup a service principal, use a standard Personal Access Token.
 
-### Setup Provider Tokens
-
-Prophecy Metadata Connections will use APIs to make calls to your data provider accounts. For this access, a Service Principal is recommended. For Databricks providers, follow these [instructions](https://docs.databricks.com/en/dev-tools/service-principals.html#provision-a-service-principal-for-databricks-automation---databricks-ui) to create a service principal and associated token. If you are unable to setup a Service Principal, use a standard Personal Access Token.
-
-The Service Principal will need access to the [Workspace](https://docs.databricks.com/en/security/auth-authz/access-control/enable-access-control.html#enable-access-control-for-workspace-objects) and, if you're using a cluster for the metadata connection, the Service Principal will need access to create clusters. If you're not using Unity Catalog for the Metadata Connection, the Service Principal will need access to [Databricks SQL.](https://docs.databricks.com/en/sql/admin/index.html#grant-user-access-to-databricks-sql)
+The service principal will need access to the [Workspace](https://docs.databricks.com/en/security/auth-authz/access-control/enable-access-control.html#enable-access-control-for-workspace-objects) and, if you're using a cluster for the metadata connection, the service principal will need access to create clusters. If you're not using Unity Catalog for the Metadata Connection, the service principal will need access to [Databricks SQL.](https://docs.databricks.com/en/sql/admin/index.html#grant-user-access-to-databricks-sql)
 
 ### Grant permissions
 
@@ -75,7 +63,7 @@ Once a [fabric](/docs/administration/Spark-fabrics/databricks/databricks.md) is 
 
 ![CreateConnection](./img/1-create-connection.png)
 
-Define a **(3)Connection Name**, and add an optional **(4)Description** for your team's understanding. Define the **(5)Workspace URL**, which could be a Databricks workspace. Within that Workspace, all the accessible Data Catalogs will be included in the syncing. If you choose to define a **(6)JDBC URL** different than that defined in the fabric, the Metadata Connection JDBC will be the only JDBC included in the syncing. Now define the **(7)Access Token** for the Metadata Connection. Like the JDBC URL, the Access Token is only required if different from that defined in the fabric. The Access Token created for the workspace must have read permission for the Catalogs or JDBC databases, tables, and schemas of interest. The access token should be a [service principle token](https://docs.databricks.com/en/administration-guide/users-groups/service-principals.html#manage-service-principals-in-your-account) (recommended) or a personal access token.
+Define a **(3)Connection Name**, and add an optional **(4)Description** for your team's understanding. Define the **(5)Workspace URL**, which could be a Databricks workspace. Within that Workspace, all the accessible Data Catalogs will be included in the syncing. If you choose to define a **(6)JDBC URL** different than that defined in the fabric, the Metadata Connection JDBC will be the only JDBC included in the syncing. Now define the **(7)Access Token** for the Metadata Connection. Like the JDBC URL, the Access Token is only required if different from that defined in the fabric. The Access Token created for the workspace must have read permission for the Catalogs or JDBC databases, tables, and schemas of interest. The access token should be a [service principal token](https://docs.databricks.com/en/administration-guide/users-groups/service-principals.html#manage-service-principals-in-your-account) (recommended) or a personal access token.
 
 Define the **(8)Refresh Frequency** for Prophecy to sync the metadata from the workspace catalogs and JDBC warehouses accessible to the access token. **(9)Enable** the Metadata Connection to proceed with the sync and **(10)Add** the Metadata Connection.
 
