@@ -535,8 +535,6 @@ const sidebars = {
       value: "Team Admins",
       defaultStyle: true,
     },
-    "administration/teamuser",
-    "administration/settings/settings",
     {
       type: "category",
       label: "Set up Spark fabrics",
@@ -573,6 +571,9 @@ const sidebars = {
         },
       ],
     },
+    "administration/metadata-connections",
+    "administration/teamuser",
+    "administration/settings/settings",
     {
       type: "html",
       value: '<span class="sidebar-divider" />',
@@ -580,7 +581,7 @@ const sidebars = {
     {
       type: "html",
       className: "sidebar-title",
-      value: "Prophecy Admins",
+      value: "Prophecy Cluster Admins",
       defaultStyle: true,
     },
     "administration/architecture",

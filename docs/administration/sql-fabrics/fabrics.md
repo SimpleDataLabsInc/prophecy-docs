@@ -1,6 +1,6 @@
 ---
-title: Fabrics
-description: Fabrics define execution engines
+title: Set up SQL fabrics
+description: Connect Prophecy to an external execution engine
 id: Fabrics
 sidebar_class_name: hidden
 tags: [Fabric, SQL, Execution, Snowflake, Databricks]

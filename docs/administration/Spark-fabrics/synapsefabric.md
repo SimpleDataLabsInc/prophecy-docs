@@ -2,7 +2,7 @@
 title: "Azure Synapse Analytics"
 id: azure-synapse-fabric-guide
 description: Configuring Synapse Fabric
-sidebar_position: 7
+sidebar_position: 6
 tags:
   - deployment
   - configuration

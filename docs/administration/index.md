@@ -23,4 +23,4 @@ For more information about infrastructure, visit [Architecture](docs/administrat
 
 ### Troubleshooting
 
-For support or help troubleshooting, visit our [Getting help](docs/getting-help) section.
+For support or help troubleshooting, visit our [Getting help](/getting-help) section.

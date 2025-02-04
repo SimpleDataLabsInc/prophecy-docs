@@ -338,8 +338,12 @@ const config = {
             from: "/getting-started/airflow",
           },
           {
-            to: "/concepts/metadata",
+            to: "/administration/metadata-connections",
             from: "/metadata/metadata-connections",
+          },
+          {
+            to: "/administration/metadata-connections",
+            from: "/concepts/metadata",
           },
           {
             to: "/concepts/git",
