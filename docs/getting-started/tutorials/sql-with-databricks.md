@@ -282,15 +282,15 @@ Clicking on any of the gems shows these options.
 
 ![Join definition](img/4-6-join-definition.png)
 
-Let’s start by building the **Join** transformation. Upon opening the gem, you can see a drawer pop-up which provides several helpful features. For transparency, you can always see the **(1) Input schema** on the left-hand side, **(4) Errors** in the footer, and have the ability to **(5) Run** the Gem on the top right.
+Let’s start by building the **Join** transformation. Upon opening the gem, you can see a drawer pop-up which provides several helpful features. For transparency, you can always see the **(1) Input schema** on the left-hand side, **(4) Errors** in the footer, and have the ability to **(5) Run** the gem on the top right.
 
 To fill-in our **(3) Join condition** within the **(2) Conditions** section, type `nation.n_nationkey = customers.c_nationkey`. The following condition, for every single customer, finds a nation based on the c_nationkey field.
 
 When you’re writing your expressions, you’ll be able to see expression builder, which shows you available functions and columns to speed up your development. Whenever the autocomplete appears, press ↑, ↓ to navigate between the suggestions and press tab to accept the suggestion.
 
-The **(6) Expressions** tab allows you to define a set of output columns that are going to be returned from the Gem. We leave it here empty, which by default, passes through all the input columns, from both of the joined sources, without any modifications.
+The **(6) Expressions** tab allows you to define a set of output columns that are going to be returned from the gem. We leave it here empty, which by default, passes through all the input columns, from both of the joined sources, without any modifications.
 
-To rename our Gem to describe its functionality, click on it’s **(7) Name** and modify it to e.g. `by_nation_key`. Note, that Gem names are going to be used as query names, which means that they should be concise and composed of alphanumeric characters with no spaces.
+To rename our gem to describe its functionality, click on it’s **(7) Name** and modify it to e.g. `by_nation_key`. Note, that gem names are going to be used as query names, which means that they should be concise and composed of alphanumeric characters with no spaces.
 
 Once done, press **(8) Save.**
 
@@ -298,13 +298,13 @@ Once done, press **(8) Save.**
 
 ![Aggregate definition](img/4-8-aggregate-definition.png)
 
-Next, let’s define the transformation logic for our **Aggregate** Gem, which will sum up the number of customers within each of the geographical locations and return a clean set of columns.
+Next, let’s define the transformation logic for our **Aggregate** gem, which will sum up the number of customers within each of the geographical locations and return a clean set of columns.
 
 Within the **(1) Aggregate** tab define the following expressions on the **(2) Expressions** List. Most importantly, we create the `customers` column by counting customers using the `count(c_custkey)` expression. We also add two columns `name` and `nation_key`, that describe the selected location. Note, that to easily add columns you can simply click on them in the schema browser on the left side.
 
 Once the aggregation expressions are specified, we can consider grouping by a particular column. Switch to the Group By tab, and type in n_nationkey .
 
-Finally, we **(3) Rename** our Gem to `count_customers` and **(4) Save** it.
+Finally, we **(3) Rename** our gem to `count_customers` and **(4) Save** it.
 
 #### Interactively test
 
@@ -312,7 +312,7 @@ Now that our model is fully defined, with all the logic specified, it’s time t
 
 ![Interactively run](img/4-9-interactively-run.png)
 
-Prophecy makes interactively testing the models incredibly easy! Simply click on the **(1) Play** button on any of the Gems and the model with all of it’s upstream dependencies will be executed. Once the model runs, the **(2) Result** icon appears. Click the Result icon to view a **(3) Sample** set of records.
+Prophecy makes interactively testing the models incredibly easy! Simply click on the **(1) Play** button on any of the gems and the model with all of it’s upstream dependencies will be executed. Once the model runs, the **(2) Result** icon appears. Click the Result icon to view a **(3) Sample** set of records.
 
 ## Orchestrate and Deploy
 
@@ -342,7 +342,7 @@ Finally, we create our job by clicking on **(6) Create New.**
 
 Once your job is created, you are redirected to the job editing canvas. You will notice that it looks very similar to the model editor with some subtle differences.
 
-The **(1) Gem drawer** has been restricted to only a few basic Gems relevant to Databricks jobs. For SQL projects, it’s **DBT** and **Script** tasks only.
+The **(1) Gem drawer** has been restricted to only a few basic gems relevant to Databricks jobs. For SQL projects, it’s **DBT** and **Script** tasks only.
 
 Let’s start by dragging and dropping the the **(2) DBT Gem.** Once it’s on the canvas, we open and configure it. Within the **(3) Property** tab, there’s three basic fields we fill:
 

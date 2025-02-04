@@ -4,44 +4,66 @@ id: schema-transform
 description: Add, Edit, Rename or Drop Columns
 tags:
   - gems
-  - withColumn
   - transform
   - schema
 ---
 
 <h3><span class="badge">Spark Gem</span></h3>
 
-SchemaTransform is used to add, edit, rename or drop columns from the incoming DataFrame.
+Use the SchemaTransform gem to apply transformations to columns from the incoming DataFrame. This page describes the different transformations—or _operations_—that you can use in this gem.
+
+![Example usage of SchemaTransform](./img/schemaTransform_eg_1.png)
 
 :::info
 Unlike Reformat which is a set operation where all the transforms are applied in parallel, transformations here are applied _in order_.
 Reformat is a SQL `select` and is preferable when making many changes.
 :::
 
-## Parameters
+## Operations
 
-| Parameter       | Description                                                                | Required                                     |
-| :-------------- | :------------------------------------------------------------------------- | :------------------------------------------- |
-| DataFrame       | Input DataFrame                                                            | True                                         |
-| Operation       | `Add/Replace Column`, `Rename Column` and `Drop Column`                    | Required if a transformation is added        |
-| New Column      | Output column name (when Add/Replace operation is selected)                | Required if `Add/Replace Column` is selected |
-| Expression      | Expression to generate new column (when Add/Replace operation is selected) | Required if `Add/Replace Column` is selected |
-| Old Column Name | Column to be renamed (when Rename operation is selected)                   | Required if `Rename Column` is selected      |
-| New Column Name | Output column name (when Rename operation is selected)                     | Required if `Rename Column` is selected      |
-| Column to drop  | Column to be dropped (when Drop operation is selected)                     | Required if `Drop Column` is selected        |
+### Add/Replace Expression
 
-## Operation types
+Add a new column or replace an existing one based on an expression.
 
-| Operation Type | Description                                                                                                                                                                                                       |
-| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Add/Replace    | Add a new column or replace an existing one based on an expression                                                                                                                                                |
-| Drop           | Removes a single column from the next stages of the pipeline. This is useful if you need 9 out of 10 columns, for example.                                                                                        |
-| Rename         | Renames an existing column                                                                                                                                                                                        |
-| Add if Missing | Provide a default value for a column if it's missing from the source. For example, if reading from a CSV file daily and want to ensure a column has a value even if it's not in the source files use this option. |
+| Parameter  | Description                                         |
+| ---------- | --------------------------------------------------- |
+| New Column | Output column name                                  |
+| Expression | SQL expression to generate values in the new column |
 
-## Example
+### Drop Column
 
-![Example usage of SchemaTransform](./img/schemaTransform_eg_1.png)
+Remove a column from next stage of the Pipeline.
+
+| Parameter      | Description          |
+| -------------- | -------------------- |
+| Column to drop | Column to be dropped |
+
+### Rename Column
+
+Rename an existing column downstream in the Pipeline.
+
+| Parameter       | Description          |
+| --------------- | -------------------- |
+| Old Column Name | Column to be renamed |
+| New Column Name | Output column name   |
+
+### Add If Missing
+
+Provide a default value for a column if it is missing from the source.
+
+| Parameter                  | Description                                |
+| -------------------------- | ------------------------------------------ |
+| Source Column Name         | Column that contains missing values        |
+| Default Value (if missing) | The value that will replace missing values |
+
+### Add Rule
+
+Use a business rule in your Pipeline. Visit the [Business rules engine](docs/Spark/functions/business-rules-engine/business-rules-engine.md) page to learn about business rules.
+
+| Parameter  | Description                                                                        |
+| ---------- | ---------------------------------------------------------------------------------- |
+| New Column | The column that the business rule will apply to                                    |
+| Rule       | The business rule that contains the logic that will populate the new column values |
 
 ## Spark Code
 
@@ -85,15 +107,10 @@ The Advanced Import feature allows you to bulk import statements that are struct
 
 ### Using Advanced Import
 
-1. Click the **Advanced** button in the SchemaTransform gem UI
-
-![Advanced import toggle](./img/schematransform_advanced_1.png)
-
-2. Enter the expressions into the text area using the format as described below:
+1. Click the **Advanced** tab in the SchemaTransform gem.
+2. Enter the expressions into the text area.
 
 ![Advanced import mode](./img/schematransform_advanced_2.png)
-
-3. Use the button at the top (labeled **Expressions**) to switch back to the expressions view. This will translate the expressions from the CSV format to the table format and will show any errors detected.
 
 ### Format
 
@@ -118,3 +135,4 @@ addrep,full_name,``concat(first_name, ' ', last_name)``
 | Drop           | `drop`               | 1           | `drop bar`                        |
 | Rename         | `rename`             | 2           | `rename,foo,bar`                  |
 | Add if missing | `missing`            | 2           | `missing,foo,current_timestamp()` |
+| Add rule       | `addrule`            | 1           | `addrule, PromoCodeRule()`        |
