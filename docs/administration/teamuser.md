@@ -23,16 +23,16 @@ Team admins manage teams in Prophecy. They usually create teams and fabrics. Tea
 
 ## Team metadata
 
-Manage the entities within a team by accessing the team's metadata page. Click **(1) Metadata**, **(2) Teams**, and select the **(3) team of interest**. Now you can see all the metadata for that team, including which projects, pipelines, jobs, etc. are owned by that team.
+Manage the entities within a team by accessing the team's metadata page. Click **(1) Metadata**, **(2) Teams**, and select the **(3) team of interest**. Now you can see all the metadata for that team, including which projects, pipelines, and jobs are owned by that team.
 
 In a team's metadata page, only the team admin can view and manage the **(4) Settings** for the team.
 
 ![Team metadata](./img/team_metadata.png)
 
-This table describes each tab in within the team settings.
+This table describes each tab within the team settings.
 
-| Tab                                                             | Description                                                                        |
-| --------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| [Execution Metrics](/docs/Spark/execution/execution-metrics.md) | Displays metrics and data samples for each execution.                              |
-| Code Generation                                                 | Enables multi-file code generation in the case of code payload size limitations.   |
-| Advanced                                                        | Lets you update the artifactid, generative AI settings, etc for a team's projects. |
+| Tab                                                             | Description                                                                         |
+| --------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| [Execution Metrics](/docs/Spark/execution/execution-metrics.md) | Displays metrics and data samples for each execution.                               |
+| Code Generation                                                 | Enables multi-file code generation in the case of code payload size limitations.    |
+| Advanced                                                        | Lets you update the artifactid, generative AI settings, etc. for a team's projects. |

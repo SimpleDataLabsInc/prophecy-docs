@@ -102,7 +102,7 @@ The cluster may take some time to start up. Once the cluster is up and running, 
 
 The first thing we need in the pipeline is a data source.
 
-When you are connected to a Databricks fabric, you can browse the Databricks catalogs in the **Environment** tab of the left sidebar. From here, you can drag and drop tables on to the pipeline canvas. To make things easy, we'll use one of Databricks' sample tables.
+When you are connected to a Databricks fabric, you can browse the Databricks catalogs in the **Environment** tab of the left sidebar. From here, you can drag and drop tables onto the pipeline canvas. To make things easy, we'll use one of Databricks' sample tables.
 
 1. Open the **Environment** tab of the left sidebar.
 1. Select the **samples** catalog.
@@ -219,7 +219,7 @@ To enable this job, you **must** complete the following two steps:
 
 ![Enable job](img/spark-databricks-job.png)
 
-## What's next?
+## What's next
 
 Great work! You've successfully set up, developed, run, and deployed your first Spark project using a Databricks execution environment. Take a moment to appreciate your accomplishment!
 

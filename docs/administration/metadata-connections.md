@@ -11,7 +11,7 @@ tags:
   - data
 ---
 
-When you create a metadata connections in a [fabric](docs/concepts/fabrics/fabrics.md), you can view and import your data directly from the Environment tab of the [Project Editor](/docs/concepts/project/project.md#project-editor) in Prophecy.
+When you create metadata connections in a [fabric](docs/concepts/fabrics/fabrics.md), you can view and import your data directly from the Environment tab of the [Project Editor](/docs/concepts/project/project.md#project-editor) in Prophecy.
 
 ## What is a metadata connection?
 
@@ -46,7 +46,7 @@ While you can create multiple metadata connections per fabric, only one connecti
 
 To use a metadata connection in a project:
 
-1. Attach to a fabric which has a metadata connection.
+1. Attach to a fabric that has a metadata connection.
 1. Open the Environment tab to access the data.
 1. Note the workspace that is synced at the frequency defined in the metadata connection.
 1. Add a table to the canvas as a dataset.
@@ -59,11 +59,11 @@ To use a metadata connection in a project:
 
 ### SQL warehouses or clusters
 
-Prophecy supports metadata collection through SQL warehouses and clusters on Databricks and Snowflake. In general, we recommend to create a [SQL warehouse](https://docs.databricks.com/en/sql/admin/create-sql-warehouse.html#create-a-sql-warehouse) or cluster dedicated to the metadata connection. Using this approach, the recurring metadata syncs can have a cluster defined with appropriate resources, whereas execution clusters defined in the [fabric](/docs/concepts/fabrics/fabrics.md) would have a separate resource profile.
+Prophecy supports metadata collection through SQL warehouses and clusters on Databricks and Snowflake. In general, we recommend creating a [SQL warehouse](https://docs.databricks.com/en/sql/admin/create-sql-warehouse.html#create-a-sql-warehouse) or cluster dedicated to the metadata connection. Using this approach, the recurring metadata syncs can have a cluster defined with appropriate resources, whereas execution clusters defined in the [fabric](/docs/concepts/fabrics/fabrics.md) would have a separate resource profile.
 
 ### Provider tokens
 
-Prophecy metadata connections use APIs to make calls to your data provider accounts. For this access, a service principal is recommended. For Databricks providers, follow these [instructions](https://docs.databricks.com/en/dev-tools/service-principals.html#provision-a-service-principal-for-databricks-automation---databricks-ui) to create a service principal and associated token. If you are unable to setup a service principal, use a standard Personal Access Token.
+Prophecy metadata connections use APIs to make calls to your data provider accounts. For this access, a service principal is recommended. For Databricks providers, follow these [instructions](https://docs.databricks.com/en/dev-tools/service-principals.html#provision-a-service-principal-for-databricks-automation---databricks-ui) to create a service principal and associated token. If you are unable to set up a service principal, use a standard Personal Access Token.
 
 ### Permissions
 

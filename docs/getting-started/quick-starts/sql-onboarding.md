@@ -35,7 +35,7 @@ At a high level, this walkthrough helps you:
 1. Explore both the visual and code editor views.
 1. Run the model and view interim datasets.
 
-## What's next?
+## What's next
 
 The in-product walkthrough has helped familiarize you with the visual canvas. Next, you can create your own project and do more with your data!
 

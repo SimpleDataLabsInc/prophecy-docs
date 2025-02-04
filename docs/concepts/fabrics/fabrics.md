@@ -11,7 +11,7 @@ tags:
   - datasets
 ---
 
-Prophecy helps you develop data pipelines in high-quality Spark or SQL code—but what does Prophecy use to compute these pipelines? The first thing you need to understand before building any pipeline is that your pipeline must be connected to an **execution environment**.
+Prophecy helps you develop data pipelines in high-quality Spark or SQL code—but what does Prophecy use to compute these pipelines? The first thing to understand before building any pipeline is that your pipeline must be connected to an **execution environment**.
 
 This is why **fabrics** exist in Prophecy. Fabrics let Prophecy connect to specific execution environments.
 
@@ -19,9 +19,9 @@ Prophecy provides a Prophecy-managed fabric that can get you started with buildi
 
 ## Fabric creation
 
-A team admin typically sets up fabrics. Details steps for fabric creation can be found in the [Set up Spark fabrics](/administration/Spark-fabrics/Fabrics) and [Set up SQL fabrics](/administration/sql-fabrics/Fabrics) sections of the documentation.
+A team admin typically sets up fabrics. Detailed steps for fabric creation can be found in the [Set up Spark fabrics](/administration/Spark-fabrics/Fabrics) and [Set up SQL fabrics](/administration/sql-fabrics/Fabrics) sections of the documentation.
 
-Even though teams share fabrics, **each user must add in their individual credentials** to be able to use the fabric in their projects.
+Even though teams share fabrics, **each user must add their individual credentials** to be able to use the fabric in their projects.
 
 ## Use case
 
@@ -55,21 +55,10 @@ A list of all fabrics available to you can be found in the **Fabrics** tab of th
 
 You can click into each fabric to access the fabric settings. These will resemble the settings that appear during fabric creation.
 
-## Hands on
+## Hands-on
 
 Get started with hands-on guides. Learn step by step how to connect to your execution engine by creating a fabric:
 
 1. Create a SQL fabric with a JDBC or Unity Catalog connection following [this guide](docs/getting-started/tutorials/sql-with-databricks.md#setup-prophecys-Fabric).
 2. Create a Databricks fabric following [these steps](/docs/administration/Spark-fabrics/databricks/databricks.md).
 3. Create an EMR fabric with Livy step by step [here](/docs/administration/Spark-fabrics/emr.mdx).
-
-## What's next
-
-To learn more about fabrics and the Prophecy Libraries, see the following page:
-
-```mdx-code-block
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
-<DocCardList items={useCurrentSidebarCategory().items}/>
-```

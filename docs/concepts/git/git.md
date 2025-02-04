@@ -23,7 +23,7 @@ If you're unfamiliar with Git, or you don't need to connect to an external Git r
 
 ## Add Git credentials to Prophecy {#Git-credentials}
 
-When you create a project in Prophecy, You can either choose a Prophecy-managed repository, or connect an external repository.
+When you create a project in Prophecy, You can either choose a Prophecy-managed repository or connect an external repository.
 
 To add an external Git account to your Prophecy environment:
 
@@ -111,7 +111,7 @@ When you fork a repository, you must already have both the upstream repository a
 
 :::note
 
-1. Changes made in forked repository do not effect the upstream repository.
+1. Changes made in forked repository do not affect the upstream repository.
 2. Please follow the normal Git flow for raising pull requests to the original repository from the forked repository.
 
 :::

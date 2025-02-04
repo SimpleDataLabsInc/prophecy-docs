@@ -35,7 +35,7 @@ At a high level, this walkthrough helps you:
 1. Understand the underlying Python code that is used when running the pipeline.
 1. Run a pipeline and review interim datasets.
 
-## What's next?
+## What's next
 
 The in-product walkthrough has helped familiarize you with the visual canvas. Next, you can create your own project and do more with your data!
 

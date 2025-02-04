@@ -10,7 +10,7 @@ tags:
 
 Pipelines are groups of data transformations that you can build from a **visual** or **code** interface. When using the visual interface, each component of a pipeline is automatically compiled into code that you can reuse and customize.
 
-Under the hood, pipelines are based on Spark-native code. pipelines are ideal for Spark environments like Databricks or EMR, particularly for tasks such as complex data ingestion (e.g., loading data from Salesforce or JDBC), handling advanced data transformations (e.g., working with complex data types), and supporting machine learning workflows.
+Under the hood, pipelines are based on Spark-native code. Pipelines are ideal for Spark environments like Databricks or EMR, particularly for tasks such as complex data ingestion (e.g., loading data from Salesforce or JDBC), handling advanced data transformations (e.g., working with complex data types), and supporting machine learning workflows.
 
 ## Pipeline creation
 
@@ -28,7 +28,7 @@ The following table describes the parameters for pipeline creation.
 
 ## Pipeline canvas
 
-When you develop a pipeline, you do so from from the [Project Editor](/concepts/project/#project-editor). More specifically, you work inside the **Pipeline canvas**.
+When you develop a pipeline, you do so from the [Project Editor](/concepts/project/#project-editor). More specifically, you work inside the **Pipeline canvas**.
 
 The pipeline canvas includes:
 
