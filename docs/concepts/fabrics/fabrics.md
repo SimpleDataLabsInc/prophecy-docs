@@ -15,9 +15,13 @@ Prophecy helps you develop data pipelines in high-quality Spark or SQL code—bu
 
 This is why **fabrics** exist in Prophecy. Fabrics let Prophecy connect to specific execution environments.
 
-Prophecy provides a Prophecy-managed fabric that can get you started with building your pipelines. However, you can also create your own fabrics to connect to other execution environments, such as a Databricks workspace.
+Prophecy provides a Prophecy-managed fabric that can get you started with building your pipelines. However, you can also create your own fabrics to connect to other execution environments, such as a Databricks workspace. When you attach to an external execution environment, you can access the data sources available to you in that environment.
 
-## Example
+## Set up
+
+A Team Admin typically sets up fabrics, including [Spark fabrics](/docs/administration/Spark-fabrics/fabrics.md), SQL fabrics, or [Airflow fabrics](/Orchestration/airflow/setup/setup.md). SQL projects can utilize SQL and Airflow fabrics, while Python and Scala projects can work with Spark and Airflow fabrics.
+
+## Use case
 
 Here is one way you might set up your fabrics. First, the Admin creates:
 
@@ -58,6 +62,10 @@ Optionally, you can enhance your fabric by creating a **Metadata Connection**. T
 Prophecy enables you to securely store credentials in the Databricks environment. When connecting to Databricks, you can either use a Personal Access Token (PAT) or leverage [Databricks OAuth](/docs/administration/authentication/databricks-oauth.md).
 
 Key-value pairs can be stored as secrets, which are accessible to running workflows. After a secret is created, it can only be read by running jobs, and Prophecy does not have access to its value.
+
+## Fabric metadata
+
+![Fabric Metadata](./img/fabric_metadata_1.png)
 
 ## Hands on
 

@@ -378,8 +378,12 @@ const config = {
             from: "/settings/audit-logging",
           },
           {
-            to: "/administration/settings/teamuser",
+            to: "/administration/teamuser",
             from: "/concepts/teamuser",
+          },
+          {
+            to: "/administration/teamuser",
+            from: "/administration/settings/teamuser",
           },
           {
             to: "/administration/self-hosted/enable-data-copilot",
