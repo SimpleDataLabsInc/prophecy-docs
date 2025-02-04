@@ -13,7 +13,7 @@ You can use the Location tab to overwrite the database, schema, or alias of your
 
 The full location of a table, view, and other objects consists of a database, schema, and alias. dbt allows its users to overwrite any of those parts of the location, with a combination of macros and additional project, folder, and model-level configurations. This tab simplifies those dbt object location parts.
 
-The **Location** section shows you where your model will be stored **by default**. This is inferred from the configuration of your connected [fabric](docs/concepts/fabrics/fabrics.md).
+The **Location** section shows you where your model will be stored **by default**. This is inferred from the configuration of your connected [fabric](docs/getting-started/concepts/fabrics/fabrics.md).
 
 ## Overwrite location
 
