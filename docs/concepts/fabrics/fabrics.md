@@ -17,13 +17,13 @@ This is why **fabrics** exist in Prophecy. Fabrics let Prophecy connect to speci
 
 Prophecy provides a Prophecy-managed fabric that can get you started with building your pipelines. However, you can also create your own fabrics to connect to other execution environments, such as a Databricks workspace. When you attach to an external execution environment, you can access the data sources available to you in that environment.
 
-## Set up
+## Fabric creation
 
-A Team Admin typically sets up fabrics, including [Spark fabrics](/docs/administration/Spark-fabrics/fabrics.md), SQL fabrics, or [Airflow fabrics](/Orchestration/airflow/setup/setup.md). SQL projects can utilize SQL and Airflow fabrics, while Python and Scala projects can work with Spark and Airflow fabrics.
+A team admin typically sets up fabrics. Details steps for fabric creation can be found in the [Set up Spark fabrics](/administration/Spark-fabrics/Fabrics) and [Set up SQL fabrics](/administration/sql-fabrics/Fabrics) sections of the documentation.
 
 ## Use case
 
-Here is one way you might set up your fabrics. First, the Admin creates:
+Here is one way you might set up your fabrics. First, the team admin creates:
 
 - A team named Marketing_DSS for the Marketing Decision Support System users.
 - A `dev` fabric for development activities that specifies the Marketing_DSS team.
@@ -33,39 +33,25 @@ In this example, all users in the Marketing_DSS Team will have access to the `de
 
 ## Components
 
-Fabrics include everything required to run a data pipeline.
+Fabrics include everything required to run a data pipeline. As an example, the following table describes the components of a Spark Databricks fabric.
 
-![Data pipeline](img/fabric.png)
-
-### Spark Environment
-
-A **Spark Environment** is a named environment owned by one team but can be shared among multiple teams. It includes the following components:
-
-- **Connection Credentials**: For Databricks, these include the _Workspace URL_ and the _Access Token_.
-- **Cluster Configuration**: For Databricks, this specifies the _Databricks Runtime Version_, _Machine Type_, and _Idle Timeout_.
-- **Job Sizes**: Prophecy allows you to define commonly used cluster sizes and assign them names for easy reference. For example, an "XL" cluster might consist of 10 servers using the `i3.xlarge` instance type, providing 40 CPUs and 70GB of memory.
-
-### Scheduler
-
-The **Scheduler** executes one or more Spark data pipelines on a defined schedule, such as every weekday at 9 a.m. Databricks workspaces include a default scheduler that is always available. For enterprise environments, an Airflow Scheduler option is also provided.
-
-### Database Connections
-
-Data pipelines often require connections to operational databases, such as MySQL or Postgres, or to data warehouses, such as Snowflake. These connections, using JDBC or other protocols, can be securely stored on the fabric for convenient reuse.
-
-### Metadata Connection
-
-Optionally, you can enhance your fabric by creating a **Metadata Connection**. This is especially useful for users managing hundreds or thousands of tables in their data providers. For more details, see the [Metadata Connections documentation](/docs/concepts/fabrics/metadata-connections.md).
-
-### Credentials and Secrets
-
-Prophecy enables you to securely store credentials in the Databricks environment. When connecting to Databricks, you can either use a Personal Access Token (PAT) or leverage [Databricks OAuth](/docs/administration/authentication/databricks-oauth.md).
-
-Key-value pairs can be stored as secrets, which are accessible to running workflows. After a secret is created, it can only be read by running jobs, and Prophecy does not have access to its value.
+| Component              | Description                                                                                                                                                                                                                               |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Connection Credentials | Includes details like _Workspace URL_ and _Access Token_ for Databricks.                                                                                                                                                                  |
+| Cluster Configuration  | Defines settings such as _Databricks Runtime Version_, _Machine Type_, and _Idle Timeout_.                                                                                                                                                |
+| Job Sizes              | Lets you define reusable cluster sizes (e.g., an XL cluster with 10 i3.xlarge servers, 40 CPUs, and 70GB memory).                                                                                                                         |
+| Scheduler              | Executes Spark data pipelines on a defined schedule, such as weekdays at 9:00 AM. Databricks provides a default scheduler, and an Airflow Scheduler is available for enterprise users.                                                    |
+| Database Connections   | Supports connections to databases (MySQL, Postgres) and data warehouses (Snowflake) via JDBC or other protocols. Credentials are securely stored on the fabric for reuse.                                                                 |
+| Metadata Connection    | Enhances fabric management for large datasets, useful for users handling hundreds or thousands of tables. [Learn more](/docs/concepts/fabrics/metadata-connections.md).                                                                   |
+| Credentials & Secrets  | Securely stores credentials in Databricks using Personal Access Tokens (PAT) or [Databricks OAuth](/docs/administration/authentication/databricks-oauth.md). Secrets are stored as key-value pairs, accessible only to running workflows. |
 
 ## Fabric metadata
 
+A list of all fabrics available to you can be found in the **Fabrics** tab of the **Metadata** page.
+
 ![Fabric Metadata](./img/fabric_metadata_1.png)
+
+You can click into each fabric to access the fabric settings. These will resemble the settings that appear during fabric creation.
 
 ## Hands on
 

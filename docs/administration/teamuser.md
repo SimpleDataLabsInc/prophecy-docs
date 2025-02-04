@@ -12,10 +12,14 @@ Teams represent groups of users who collaborate on projects and share access to 
 
 There are two types of teams:
 
-- **Personal teams.** When you start using Prophecy, you are automatically assigned to your own one-person team. If you want a project or fabric to be accessible only to yourself, you can assign it to your personal team and keep it private.
+- **Personal teams.** When you start using Prophecy, you are automatically assigned to your own one-person team. You are also the team admin of this team. If you want a project or fabric to be accessible only to yourself, you can assign it to your personal team and keep it private.
 - **Shared teams.** Your team administrator typically creates additional team groupings. Team structures will vary across organizations.
 
 Team, user, and Git [settings](docs/administration/settings/settings.md) can be accessed by clicking the **...** ellipses menu and the **gear** icon at the bottom of the left navigation bar.
+
+## Team admins
+
+Team admins manage teams in Prophecy. They usually create teams and fabrics. Team admins are different from Prophecy cluster admins who manage Prophecy installation and deployment.
 
 ## Team metadata
 
