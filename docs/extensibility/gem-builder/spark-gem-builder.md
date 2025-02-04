@@ -579,6 +579,6 @@ If there is a **(1) typo / error** in a required method (e.g. dialog1 instead of
 
 :::
 
-## What's next?
+## What's next
 
 Now that you know how to create Spark gems, have a look at how to [create custom SQL gems](docs/extensibility/gem-builder/sql-gem-builder.md).

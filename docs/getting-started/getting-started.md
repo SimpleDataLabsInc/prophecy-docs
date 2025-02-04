@@ -5,7 +5,7 @@ description: Getting started with Prophecy
 tags: []
 ---
 
-To quickly get started wih Prophecy, you can begin with a free trial.
+To quickly get started with Prophecy, you can begin with a free trial.
 
 ## Prophecy Enterprise SaaS
 

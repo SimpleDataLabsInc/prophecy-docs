@@ -1,8 +1,8 @@
 ---
-title: "Datasets"
+title: Datasets
 id: dataset
-description: Schema, meet Data.
-sidebar_position: 3
+description: Create datasets using Source and Target gems
+sidebar_position: 4
 tags:
   - concepts
   - datasets

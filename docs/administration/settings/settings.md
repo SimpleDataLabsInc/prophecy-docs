@@ -51,6 +51,6 @@ This page displays the current version and state of all services in Prophecy dep
 
 ![About](img/About.png)
 
-## What's next?
+## What's next
 
 Learn more about our [settings for self-managed Prophecy administration](docs/administration/self-hosted/self-hosted.md).
