@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[34914],{37051:e=>{e.exports=JSON.parse('{"label":"january","permalink":"/tags/january","allTagsPath":"/tags","count":1,"items":[{"id":"release_notes/2025/3-4-3","title":"Prophecy 3.4.3.x","description":"Release notes for version 3.4.3","permalink":"/release_notes/2025/3-4-3"}]}')}}]);
