@@ -20,17 +20,17 @@ Prophecy’s visual interface supports SQL models only. If you’d like to defin
 
 ## Data modeling
 
-**Data modeling** refers to shaping your data from its raw state to its transformed final state. In Prophecy and dbt, data models are SQL statements that build a single table or view and enable better management. Data models incorporate step-by-step logic, compatible with Prophecy [gems](docs/concepts/project/gems.md). Each model is stored as a SQL file on Git as open-source code. Models can also be reused through Prophecy [packages](docs/extensibility/package-hub/package-hub.md).
+**Data modeling** refers to shaping your data from its raw state to its transformed final state. In Prophecy and dbt, data models are SQL statements that build a single table or view and enable better management. Data models incorporate step-by-step logic, compatible with Prophecy [gems](docs/getting-started/concepts/project/gems.md). Each model is stored as a SQL file on Git as open-source code. Models can also be reused through Prophecy [packages](docs/extensibility/package-hub/package-hub.md).
 
 ## Model development
 
-In the [Project Editor](docs/concepts/project/project.md#project-editor) of a SQL project, Prophecy displays models using a lineage view, a visual view, and a code view. As you develop your models, you can commit and release your changes via [Git](/docs/concepts/git/git.md).
+In the [Project Editor](docs/getting-started/concepts/project/project.md#project-editor) of a SQL project, Prophecy displays models using a lineage view, a visual view, and a code view. As you develop your models, you can commit and release your changes via [Git](/docs/ci-cd/git/git.md).
 
 - **Lineage view**. When you open a SQL project, you first see the **lineage** view. The lineage provides a high-level view of the project's models with dependencies displayed from left to right.
 
 ![lineage-view](./img/models/lineage-view.png)
 
-- **Visual view**. If you open a specific model, you are taken to the model visual canvas. The visual canvas shows each step needed to move from the referenced tables/seeds/models to the final model. [Gems](docs/concepts/project/gems.md) drive data transformations in Prophecy.
+- **Visual view**. If you open a specific model, you are taken to the model visual canvas. The visual canvas shows each step needed to move from the referenced tables/seeds/models to the final model. [Gems](docs/getting-started/concepts/project/gems.md) drive data transformations in Prophecy.
 
 - **Code view**. Any changes that you make in the visual view are automatically compiled into code (and vice-versa).
 

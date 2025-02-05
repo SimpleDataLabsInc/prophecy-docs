@@ -63,7 +63,7 @@ Once, the token is generated copy and save it from **(5) Token** and you’re go
 
 ### Set up a fabric in Prophecy
 
-A [fabric](docs/concepts/fabrics/fabrics.md) in Prophecy is an execution environment. In this case, you already know you want to use Databricks for your computation, so we'll make a Databricks fabric!
+A [fabric](docs/getting-started/concepts/fabrics/fabrics.md) in Prophecy is an execution environment. In this case, you already know you want to use Databricks for your computation, so we'll make a Databricks fabric!
 
 ![Create Fabric](img/2-4-create-fabric.png)
 
@@ -83,7 +83,7 @@ Note, fabrics are owned by Teams. Every Member present within the Team will be a
 
 ## Create a new project
 
-Prophecy’s project is a Git repository or a directory on Git that contains all of your transformation logic. Each Prophecy project contains a dbt Core™️ project. Learn more about projects [here.](/docs/concepts/project/project.md)
+Prophecy’s project is a Git repository or a directory on Git that contains all of your transformation logic. Each Prophecy project contains a dbt Core™️ project. Learn more about projects [here.](/docs/getting-started/concepts/project/project.md)
 
 After fabric creation you can see one project initialized for you by default called HelloWorld_SQL. If you just want to play around with Prophecy, you can start there. However, for the purpose of this tutorial we’re going to build a brand new project from scratch.
 
@@ -105,7 +105,7 @@ If you’re new to Git, we recommend starting by connecting to Prophecy Managed 
 
 When choosing Prophecy Managed Git as your default Git repository, there are no further steps required! Prophecy automatically takes care of repository creation, connection, and initialization. You can just click **(3) Continue** to finalize the project setup.
 
-Using Prophecy Managed Git is very easy, but has some major downsides and therefore not recommended for production use-cases. Primarily, you will not be able to access the repository externally from Prophecy programmatically (which is a common enterprise requirement) or create [Pull Requests](/docs/concepts/git/pull-request-templates.md/#raising-pull-requests) (which is also recommended as a part of standard [Git flow](https://docs.github.com/en/get-started/quickstart/github-flow)).
+Using Prophecy Managed Git is very easy, but has some major downsides and therefore not recommended for production use-cases. Primarily, you will not be able to access the repository externally from Prophecy programmatically (which is a common enterprise requirement) or create [Pull Requests](/docs/ci-cd/git/pull-request-templates.md/#raising-pull-requests) (which is also recommended as a part of standard [Git flow](https://docs.github.com/en/get-started/quickstart/github-flow)).
 
 If you decide to choose this option, you can always migrate the project to an external Git Repository by cloning it.
 

@@ -17,7 +17,7 @@ To get started with Prophecy, you can use the in-product walkthrough for a SQL m
 1. Click **Onboarding**.
 1. Select **Low-code Spark**.
 
-This opens up the visual pipeline canvas! As you begin, notice that Prophecy automatically attaches to a Spark cluster. We provide a default [fabric](docs/concepts/fabrics/fabrics.md) (execution environment) for this onboarding project.
+This opens up the visual pipeline canvas! As you begin, notice that Prophecy automatically attaches to a Spark cluster. We provide a default [fabric](docs/getting-started/concepts/fabrics/fabrics.md) (execution environment) for this onboarding project.
 
 ## Follow the steps
 

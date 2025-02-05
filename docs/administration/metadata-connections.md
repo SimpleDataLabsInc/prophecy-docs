@@ -11,7 +11,7 @@ tags:
   - data
 ---
 
-When you create metadata connections in a [fabric](docs/concepts/fabrics/fabrics.md), you can view and import your data directly from the Environment tab of the [Project Editor](/docs/concepts/project/project.md#project-editor) in Prophecy.
+When you create metadata connections in a [fabric](docs/getting-started/concepts/fabrics/fabrics.md), you can view and import your data directly from the Environment tab of the [Project Editor](/docs/getting-started/concepts/project/project.md#project-editor) in Prophecy.
 
 ## What is a metadata connection?
 
@@ -59,7 +59,7 @@ To use a metadata connection in a project:
 
 ### SQL warehouses or clusters
 
-Prophecy supports metadata collection through SQL warehouses and clusters on Databricks and Snowflake. In general, we recommend creating a [SQL warehouse](https://docs.databricks.com/en/sql/admin/create-sql-warehouse.html#create-a-sql-warehouse) or cluster dedicated to the metadata connection. Using this approach, the recurring metadata syncs can have a cluster defined with appropriate resources, whereas execution clusters defined in the [fabric](/docs/concepts/fabrics/fabrics.md) would have a separate resource profile.
+Prophecy supports metadata collection through SQL warehouses and clusters on Databricks and Snowflake. In general, we recommend creating a [SQL warehouse](https://docs.databricks.com/en/sql/admin/create-sql-warehouse.html#create-a-sql-warehouse) or cluster dedicated to the metadata connection. Using this approach, the recurring metadata syncs can have a cluster defined with appropriate resources, whereas execution clusters defined in the [fabric](/docs/getting-started/concepts/fabrics/fabrics.md) would have a separate resource profile.
 
 ### Provider tokens
 

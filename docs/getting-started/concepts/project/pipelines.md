@@ -14,7 +14,7 @@ Under the hood, pipelines are based on Spark-native code. Pipelines are ideal fo
 
 ## Pipeline creation
 
-If you want to create a new pipeline, you can do so from the **Create Entity** page in the left sidebar. You can also create pipelines directly within the [Project Editor](/concepts/project/#project-editor).
+If you want to create a new pipeline, you can do so from the **Create Entity** page in the left sidebar. You can also create pipelines directly within the [Project Editor](/getting-started/concepts/project/#project-editor).
 
 The following table describes the parameters for pipeline creation.
 
@@ -28,7 +28,7 @@ The following table describes the parameters for pipeline creation.
 
 ## Pipeline canvas
 
-When you develop a pipeline, you do so from the [Project Editor](/concepts/project/#project-editor). More specifically, you work inside the **Pipeline canvas**.
+When you develop a pipeline, you do so from the [Project Editor](/getting-started/concepts/project/#project-editor). More specifically, you work inside the **Pipeline canvas**.
 
 The pipeline canvas includes:
 
@@ -41,7 +41,7 @@ The pipeline canvas includes:
 
 ## Pipeline metadata
 
-To view a list of pipelines in Prophecy, navigate to the **Metadata** page from the left sidebar. For more granular metadata, click into a pipeline. Pipeline metadata can also be accessed from the header of the [Project Editor](/concepts/project/#project-editor).
+To view a list of pipelines in Prophecy, navigate to the **Metadata** page from the left sidebar. For more granular metadata, click into a pipeline. Pipeline metadata can also be accessed from the header of the [Project Editor](/getting-started/concepts/project/#project-editor).
 
 ![Pipeline metadata](img/pipelines/pipeline-metadata.png)
 
