@@ -1,5 +1,5 @@
 ---
-title: Execution Metrics
+title: Execution metrics
 id: execution-metrics
 description: Execution Metrics
 tags:
@@ -8,20 +8,18 @@ tags:
   - spark
 ---
 
-When running pipelines and jobs, you may be interested to know few metrics related to execution like records
-read/written, bytes read/written, total time taken, and Data samples between components. These dataset, pipeline-run, and
-job-run related metrics are accumulated and stored on your data plane and can be viewed later from Prophecy UI.
+When running pipelines and jobs, you may want to review metrics related to execution like records read/written, bytes read/written, total time taken, and data samples generated between components. These dataset, pipeline-run, and job-run related metrics are accumulated and stored on your data plane and can be viewed later from the Prophecy user interface.
 
 ## Data storage behavior
 
-Depending on the flags setting, the storage behavior for execution metrics changes. For example, certain data may be written depending on whether a pipeline flag is turned on or off. See the following table to learn how the behavior changes.
+Depending on flags settings, the storage behavior for execution metrics changes. For example, certain data may be written depending on whether a pipeline flag is turned on or off. See the following table to learn how the behavior changes.
 
 |                             | On                                                                                                                                                                        | Off                                                                                                                                                              |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Execution metrics flag      | Available data will be stored.                                                                                                                                            | Nothing will be stored. Interactive runs will show data depending on what other flags were enabled.                                                              |
 | Pipeline data sampling flag | Available data will be stored based on the execution metrics flag. Interims for interactive run will be visible in the UI and stored based on the execution metrics flag. | Available data will be stored based on the execution metrics flag. Interims from interactive run will neither be visible in the UI nor will they be stored.      |
 | Job data sampling flag      | Available data will be stored based on the execution metrics flag. Interims for job run will get generated but stored based on the execution metrics flag.                | Available data will be stored based on the execution metrics flag. Interims from job run will neither be visible in the (historical) UI nor will they be stored. |
-| Pipeline monitoring flag    | Available data will be stored based on the execution metrics flag. Individual gem level data will be visible in the UI but stored based on the execution metrics flag.    | Available data with be stored based on the execution metrics flag. Individual gem level data will neither be visible in the UI nor will it be stored.            |
+| Pipeline monitoring flag    | Available data will be stored based on the execution metrics flag. Individual Gem level data will be visible in the UI but stored based on the execution metrics flag.    | Available data with be stored based on the execution metrics flag. Individual Gem level data will neither be visible in the UI nor will it be stored.            |
 
 ## Team level access-control
 
@@ -32,7 +30,7 @@ the tables from Team view in the Prophecy UI.
 There are three execution metrics tables that store data for pipelines, individual components, and the generated data samples, also known as interims. You have the option to choose the following at the time of team creation:
 
 - **Pipeline runs table** - The pipeline metrics table that contains metrics and code for pipeline runs
-- **Component runs table** - The component (Dataset) metrics table that contains metrics for individual component runs
+- **Component runs table** - The component (dataset) metrics table that contains metrics for individual component runs
 - **Interims table** - The interims table that contains samples of data, depending on the interim mode selected
 
 ![ExecutionMetricsConfig.png](img/ExecutionMetricsConfig.png)

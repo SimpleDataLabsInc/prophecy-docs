@@ -28,16 +28,6 @@ If you plan to share these gems in a package, be aware that everything in the pr
 
 Next, we will review these steps in greater detail.
 
-## Gem mode
-
-There are a few different types of gems that you can create. The table below describes each mode you can choose.
-
-| Mode                              | Description                                                                                                | Additional settings                                   |
-| --------------------------------- | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
-| Transformation                    | Edits intermediate data in the pipeline that is in-memory.                                                 | Choose the **category** of the transformation gem     |
-| Dataset Format                    | Reads and writes data between storage and memory.                                                          | Choose whether the type is **batch** or **streaming** |
-| Custom Subgraph (**Python only**) | Controls the flow of gems. Visit the [Subgraph](docs/Spark/gems/subgraph/subgraph.md) page for an example. | None                                                  |
-
 ## Gem template
 
 Each type of gem will have a different code template that Prophecy provides. Let's review the template of a **transformation** gem.
@@ -163,9 +153,9 @@ The template consists of the following components:
 ### Create a gem
 
 1. Create a Spark project in Python. The gem will inherit the project-level language.
-1. Click on the **+** in the Gems section of the project sidebar. This will appear on hover.
+1. Click on the **+** in the gems section of the project sidebar. This will appear on hover.
 1. In the **Gem Name** field, write `CustomLimit`.
-1. Choose **Transformation Gem** mode.
+1. Choose **Transformation Gem** [mode](/extensibility/gem-builder/gem-builder-reference#mode).
 1. Select the **Transform** category.
 1. Click **Create Gem**.
 
@@ -217,9 +207,9 @@ import play.api.libs.json.{Format, Json}
 
 ### Extend parent class
 
-Every Gem class needs to extend a parent class from which it inherits the representation of the overall Gem. This includes the UI and the logic. For transform Gems, you need to extend ComponentSpec .
+Every gem class needs to extend a parent class from which it inherits the representation of the overall gem. This includes the UI and the logic. For transform gems, you need to extend ComponentSpec .
 
-Next provide the name and category of your Gem, "Limit" and "Transform" in this example.
+Next provide the name and category of your gem, "Limit" and "Transform" in this example.
 
 Another thing to note here is optimizeCode. This flag can be set to True or False value depending on whether we want the Prophecy Optimizer to run on this code to simplify it. In most cases, it's best to leave this value as True.
 
@@ -300,13 +290,13 @@ These properties are available in validate, onChange and apply and can be set fr
 </TabItem>
 </Tabs>
 
-For our CustomLimit Gem, we can take the same case class as the Limit Gem, maybe changing the default limit value.
+For our CustomLimit gem, we can take the same case class as the Limit gem, maybe changing the default limit value.
 
-Now let’s take a look at the methods for the UI Gem component.
+Now let’s take a look at the methods for the UI gem component.
 
 ### Create UI components
 
-The dialog function contains code specific to how the Gem UI should look to the user.
+The dialog function contains code specific to how the gem UI should look to the user.
 
 <Tabs>
 <TabItem value="py" label="Python">
@@ -350,16 +340,16 @@ The dialog function contains code specific to how the Gem UI should look to the 
 </TabItem>
 </Tabs>
 
-The above Dialog function in the limit Gem is rendered on the UI like this:
+The above Dialog function in the limit gem is rendered on the UI like this:
 ![UI](img/UI.png)
 
-There are various UI components that can be defined for custom Gems such as scroll boxes, tabs, buttons, etc.
+There are various UI components that can be defined for custom gems such as scroll boxes, tabs, buttons, etc.
 
-These UI components can be grouped together in various types of panels to create a custom user experience when using the Gem. After the Dialog object is defined, it's serialized as JSON, sent to the UI, and rendered there.
+These UI components can be grouped together in various types of panels to create a custom user experience when using the gem. After the Dialog object is defined, it's serialized as JSON, sent to the UI, and rendered there.
 
-Depending on what kind of Gem is being created, either a Dialog or a DatasetDialog needs to be defined. See Transformation vs DatasetFormat Gems for details.
+Depending on what kind of gem is being created, either a Dialog or a DatasetDialog needs to be defined. See Transformation vs DatasetFormat gems for details.
 
-Take a look through the Gems inside SparkBasicsScala and SparkBasicsPython projects to for more example dialog methods.
+Take a look through the gems inside SparkBasicsScala and SparkBasicsPython projects to for more example dialog methods.
 
 ### Validate user input
 
@@ -412,7 +402,7 @@ The validate method performs validation checks so that in the case where there's
 
 ### Define state changes
 
-The onChange method is given for the UI State transformations. You are given both the previous and the new incoming state and can merge or modify the state as needed. The properties of the Gem are also accessible to this function, so functions like selecting columns, etc. are possible to add from here.
+The onChange method is given for the UI State transformations. You are given both the previous and the new incoming state and can merge or modify the state as needed. The properties of the gem are also accessible to this function, so functions like selecting columns, etc. are possible to add from here.
 
 <Tabs>
 <TabItem value="py" label="Python">
@@ -468,7 +458,7 @@ For Scala, this snippet binds the UI Properties to the case class:
 
 ### Define Spark logic
 
-The last class used here is LimitCode which is inherited from ComponentCode class. This class contains the actual Spark code that needs to run on your Spark cluster. The Spark code for the Gem logic is defined in the apply function. Input/Output of apply method can only be DataFrame or list of DataFrames or empty. For example, we are calling the .limit() method in this example in the apply function.
+The last class used here is LimitCode which is inherited from ComponentCode class. This class contains the actual Spark code that needs to run on your Spark cluster. The Spark code for the gem logic is defined in the apply function. Input/Output of apply method can only be DataFrame or list of DataFrames or empty. For example, we are calling the .limit() method in this example in the apply function.
 
 <Tabs>
 <TabItem value="py" label="Python">
@@ -502,32 +492,32 @@ class LimitCode(props: PropertiesType) extends ComponentCode {
 </TabItem>
 </Tabs>
 
-You can go ahead and preview the component to see how it looks. Note some Gem examples have functions defined within the apply method.
+You can go ahead and preview the component to see how it looks. Note some gem examples have functions defined within the apply method.
 
-That’s all the code for our example Transformation, the Limit Gem. We walked through the package and import statements, parent class, and properties class. We explored the required methods dialog, validation, onChange, (de)serializeProperty. Finally we saw the Limit Gem’s component code. Now we have a basic understanding of the components needed for any Transformation Gem.
+That’s all the code for our example Transformation, the Limit gem. We walked through the package and import statements, parent class, and properties class. We explored the required methods dialog, validation, onChange, (de)serializeProperty. Finally we saw the Limit gem’s component code. Now we have a basic understanding of the components needed for any Transformation gem.
 
 :::info
-If you are using an existing Gem as a guide to creating your new Gem, you will need to change the following at a minimum: ComponentSpec, ComponentProperties, and ComponentCode.
+If you are using an existing gem as a guide to creating your new gem, you will need to change the following at a minimum: ComponentSpec, ComponentProperties, and ComponentCode.
 :::
 
 ## Extend functionality
 
-Now for the fun part! We understand a Transform example, and now we want to explore extending to our custom Gem needs. There are several ways to extend your custom Gem.
+Now for the fun part! We understand a Transform example, and now we want to explore extending to our custom gem needs. There are several ways to extend your custom gem.
 
-Looking to craft or adjust a UI element for your custom Gem? Get inspiration from the existing Gems. Find a Gem that has a UI element you want to use - like ColumnsLayout - and use that Gem’s code.
+Looking to craft or adjust a UI element for your custom gem? Get inspiration from the existing gems. Find a gem that has a UI element you want to use - like ColumnsLayout - and use that gem’s code.
 
-Looking to supply your own function for your custom Gem? Add your function in the ComponentCode’s apply method.
+Looking to supply your own function for your custom gem? Add your function in the ComponentCode’s apply method.
 
-Looking to read or write to a data format beyond the (filetypes, warehouses, and catalog) provided out of the box? GemBuilder is not just for Transformations. Design a new DatasetFormat with GemBuilder using some modifications from the Transformation example.
+Looking to read or write to a data format beyond the (filetypes, warehouses, and catalog) provided out of the box? GemBuilder is not just for Transformations. Design a new DatasetFormat with Gem Builder using some modifications from the Transformation example.
 
 ### Extend UI
 
 Let’s see how to use the ColumnsLayout UI element in detail:
 
 ![8](img/8-gm.png)
-Open the **(1) SparkBasics** package dependency for Python or Scala. Explore and scroll to find a Gem, e.g. **(2) OrderBy** with the desired visual component, in this case ColumnsLayout. Find the **(3) relevant code** for the visual element and click **(4) Preview** to see how this visual element is rendered. Try it out! Click on the **(5)customer_id and email** columns, and note these columns now **(6) appear** in the Order Columns list.
+Open the **(1) SparkBasics** package dependency for Python or Scala. Explore and scroll to find a gem, e.g. **(2) OrderBy** with the desired visual component, in this case ColumnsLayout. Find the **(3) relevant code** for the visual element and click **(4) Preview** to see how this visual element is rendered. Try it out! Click on the **(5)customer_id and email** columns, and note these columns now **(6) appear** in the Order Columns list.
 
-If you like the column layout, then add the ColumnsLayout element to your custom Gem. Each time you edit the code, you can click “Preview” to test the change in the UI.
+If you like the column layout, then add the ColumnsLayout element to your custom gem. Each time you edit the code, you can click “Preview” to test the change in the UI.
 
 ### Extend the Component Code with functions
 
@@ -535,7 +525,7 @@ The ComponentCode contains the actual Spark code that needs to run on your Spark
 
 For example, the existing Filter ComponentCode can be **(1) edited** by adding the withColumn function:
 ![9](img/9-gm.png)
-Clicking **(2) Preview** will allow you to view the Gem’s **(3) UI**. Clicking **(4) Preview Code** will allow you to view the Gem’s **(5) code** together with the **(3) UI**, facilitating iteration. See the code samples below in Scala.
+Clicking **(2) Preview** will allow you to view the gem’s **(3) UI**. Clicking **(4) Preview Code** will allow you to view the gem’s **(5) code** together with the **(3) UI**, facilitating iteration. See the code samples below in Scala.
 
 filter ComponentCode:
 
@@ -570,18 +560,6 @@ filter ComponentCode with the added withColumn function:
   }
 ```
 
-### Extend the read/write capabilities with Dataset Format Gems
-
-You may also wish to create a source or target Dataset format beyond the [provided formats](/docs/Spark/gems/source-target/source-target.md). With GemBuilder, it’s possible to create custom Dataset formats! You’ll need to know how the source Gems differ from transformation Gems.
-
-The DatasetFormat Gem:
-
-1. class extends DatasetSpec
-2. has two Dialog functions: sourceDialog and targetDialog . They both return a DatasetDialog object, whereas for any Transform Gem, the dialog function returns a Dialog object.
-3. The ComponentCode class has two apply functions: sourceApply and targetApply for Source and Target modes respectively.
-
-There is no distinction between Transformation and DatasetFormat Gem onChange and validate functions.
-
 ## Troubleshoot errors
 
 If there is an error in your code, your gem preview might not render correctly.
@@ -591,8 +569,8 @@ If there is a **(1) typo / error** in a required method (e.g. dialog1 instead of
 
 - Click the **(2) underlined code**.
 - Notice a **(3) detailed error message**.
-- Click **(4) Preview** to see how the Gem will look as rendered in the UI.
-- If a value is incorrect, the Gem will not be able to be parsed, and a very clear error will appear **(5) here** as well.
+- Click **(4) Preview** to see how the gem will look as rendered in the UI.
+- If a value is incorrect, the gem will not be able to be parsed, and a very clear error will appear **(5) here** as well.
 - Click the **(6) Errors** button to see the **(7) full error message**.
 
 :::caution
@@ -601,6 +579,6 @@ If there is a **(1) typo / error** in a required method (e.g. dialog1 instead of
 
 :::
 
-## What's next?
+## What's next
 
 Now that you know how to create Spark gems, have a look at how to [create custom SQL gems](docs/extensibility/gem-builder/sql-gem-builder.md).

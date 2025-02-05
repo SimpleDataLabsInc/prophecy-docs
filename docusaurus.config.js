@@ -338,8 +338,12 @@ const config = {
             from: "/getting-started/airflow",
           },
           {
-            to: "/concepts/metadata",
+            to: "/administration/metadata-connections",
             from: "/metadata/metadata-connections",
+          },
+          {
+            to: "/administration/metadata-connections",
+            from: "/concepts/metadata",
           },
           {
             to: "/concepts/git",
@@ -378,8 +382,12 @@ const config = {
             from: "/settings/audit-logging",
           },
           {
-            to: "/administration/settings/teamuser",
+            to: "/administration/teamuser",
             from: "/concepts/teamuser",
+          },
+          {
+            to: "/administration/teamuser",
+            from: "/administration/settings/teamuser",
           },
           {
             to: "/administration/self-hosted/enable-data-copilot",
