@@ -53,7 +53,7 @@ Prophecy supports Databricks Volumes. When you run a Python or Scala pipeline vi
 
 ### Connections
 
-(Optional) Browsing data catalogs, tables, and schemas can be a time-intensive operation especially for Warehouses with hundreds or thousands of tables. To address this challenge, Prophecy offers a [Metadata Connection](/docs/concepts/fabrics/metadata-connections.md) to sync metadata from the data provider at regular intervals. These [steps](/docs/concepts/fabrics/metadata-connections.md#add-a-metadata-connection) describe how to setup a metadata connection once a Databricks SQL fabric is created.
+(Optional) Browsing data catalogs, tables, and schemas can be a time-intensive operation especially for Warehouses with hundreds or thousands of tables. To address this challenge, Prophecy offers a [Metadata Connection](/docs/administration/metadata-connections.md) to sync metadata from the data provider at regular intervals.
 
 ## Using fabrics
 
@@ -76,4 +76,4 @@ Each team member can attach completed fabrics to their projects and models.
 Remember, each user will be prompted to update the fabric with their own credentials. Prophecy respects these credentials when accessing Databricks catalogs, tables, databases, etc.
 :::
 
-Once a project is attached to a fabric, and the project is released, the project can be scheduled to run on a regular frequency using [Databricks jobs](/docs/getting-started/getting-started-with-low-code-sql.md#5-orchestrate-and-deploy)
+Once a project is attached to a fabric, and the project is released, the project can be scheduled to run on a regular frequency using [Databricks jobs](docs/getting-started/tutorials/sql-with-databricks.md#orchestrate-and-deploy)

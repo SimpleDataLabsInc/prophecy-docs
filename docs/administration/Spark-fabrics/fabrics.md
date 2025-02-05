@@ -1,6 +1,6 @@
 ---
-title: Prophecy Fabrics
-description: Fabrics define execution engines
+title: Set up Spark fabrics
+description: Connect Prophecy to an external execution engine
 id: Fabrics
 sidebar_class_name: hidden
 tags: [Livy, Fabrics, Execution]

@@ -1,8 +1,8 @@
 ---
-title: "Prophecy Managed"
+title: Prophecy-managed
 id: prophecy-managed-databricks
 description: Configuring Prophecy Managed Databricks Fabric
-sidebar_position: 1
+sidebar_position: 2
 tags:
   - deployment
   - configuration

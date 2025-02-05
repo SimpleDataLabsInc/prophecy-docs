@@ -48,11 +48,11 @@ Whenever, creating a new job you're asked for the following details:
 
 ![Example Databricks job](img/databricks-job-example.png)
 
-Now that you've created your first job, you can start adding Gems to the canvas to define which pipelines will
+Now that you've created your first job, you can start adding gems to the canvas to define which pipelines will
 be run during the job. To define dependencies between the pipelines within the job you can simply connect them
-by dragging-and-dropping the edges between Gems.
+by dragging-and-dropping the edges between gems.
 
-Two Gem types are available when defining Databricks jobs:
+Two gem types are available when defining Databricks jobs:
 
 #### Pipeline Gem
 
@@ -64,7 +64,7 @@ Settings for pipeline component can be inherited from overall job configuration 
 
 #### Script Gem
 
-Script Gem can be used to write any ad-hoc code.
+Script gem can be used to write any ad-hoc code.
 
 ![Script Component](img/databricks-jobs-script-config.png)
 
@@ -87,13 +87,13 @@ The visual graph created on the jobs page is automatically converted to code (JS
 | Scheduler                 | The underlying engine that's going to execute your job. Databricks is recommended.                                                                                                                                                            |
 | Fabric                    | The [execution fabric](/concepts/fabrics) to which the job is going to be deployed.                                                                                                                                                           |
 | Cluster Size              | The [default size](/concepts/fabrics#whats-in-a-fabric) of the cluster that's going to be created for the job to run.                                                                                                                         |
-| Cluster Mode              | Can be selected as `Single` (all Gems within the job re-use the same Cluster) or `Multi` (all Gems within the job run on a separate new cluster)                                                                                              |
+| Cluster Mode              | Can be selected as `Single` (all gems within the job re-use the same Cluster) or `Multi` (all gems within the job run on a separate new cluster)                                                                                              |
 | Schedule Interval         | Defines how often your job is going to run. The interval is defined using the [Quartz format](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html). You can click on the clock icon to select the interval. |
 | Pipeline level Timeout    | Timeout at pipeline level                                                                                                                                                                                                                     |
 | Alerts Email for pipeline | Comma separated list of emails, that are going to receive notifications on specific job status events (job start, failure, or success) for entire pipeline.                                                                                   |
-| Per Gem Timeout           | Timeout for each Gem in job pipeline                                                                                                                                                                                                          |
-| Number of retries per Gem | Number of retries for each Gem in job pipeline                                                                                                                                                                                                |
-| Alerts Email per Gem      | Comma separated list of emails that are going to receive notifications on specific job status events (start, failure, or success) for each Gem in job pipeline.                                                                               |
+| Per Gem Timeout           | Timeout for each gem in job pipeline                                                                                                                                                                                                          |
+| Number of retries per gem | Number of retries for each gem in job pipeline                                                                                                                                                                                                |
+| Alerts Email per gem      | Comma separated list of emails that are going to receive notifications on specific job status events (start, failure, or success) for each gem in job pipeline.                                                                               |
 
 To change the job name itself, go to Prophecy's metadata page. Locate the job within a project, and click the pencil icon.
 

@@ -338,8 +338,12 @@ const config = {
             from: "/getting-started/airflow",
           },
           {
-            to: "/concepts/metadata",
+            to: "/administration/metadata-connections",
             from: "/metadata/metadata-connections",
+          },
+          {
+            to: "/administration/metadata-connections",
+            from: "/concepts/metadata",
           },
           {
             to: "/concepts/git",
@@ -378,8 +382,12 @@ const config = {
             from: "/settings/audit-logging",
           },
           {
-            to: "/administration/settings/teamuser",
+            to: "/administration/teamuser",
             from: "/concepts/teamuser",
+          },
+          {
+            to: "/administration/teamuser",
+            from: "/administration/settings/teamuser",
           },
           {
             to: "/administration/self-hosted/enable-data-copilot",
@@ -496,6 +504,22 @@ const config = {
           {
             to: "/api/active-users-api/",
             from: "/settings/active-users-api/",
+          },
+          {
+            to: "/getting-started/tutorials/spark-with-databricks",
+            from: "/getting-started/spark-with-databricks",
+          },
+          {
+            to: "/getting-started/tutorials/sql-with-snowflake",
+            from: "/getting-started/sql-with-snowflake",
+          },
+          {
+            to: "/getting-started/tutorials/sql-with-databricks",
+            from: "/getting-started/sql-with-databricks",
+          },
+          {
+            to: "/Spark/gems/machine-learning/gen-ai-chatbot",
+            from: "/getting-started/gen-ai-chatbot",
           },
         ],
         /*

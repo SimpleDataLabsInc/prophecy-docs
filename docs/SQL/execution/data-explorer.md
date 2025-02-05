@@ -2,7 +2,6 @@
 title: Data Explorer
 id: data-explorer
 description: Data Explorer for SQL
-sidebar_position: 12
 tags:
   - execution
   - explorer
@@ -12,30 +11,27 @@ tags:
   - data
 ---
 
-The Data Explorer feature empowers users to explore and analyze their data samples directly within the user interface (UI). With this feature, users can gain insights, verify data accuracy, and make informed decisions.
+The Data Explorer can help you navigate your [interim data samples](docs/SQL/execution/execution.md#interims) and understand your data better. Use it to confirm the structure of each column, review data entries, and make sure the data types are correct.
 
-## Interims are Data Samples
+When you open the Data Explorer for an interim, you can:
 
-Within any **(1) SQL Model**, interactively **(2) Run** upto one of the gems. Notice the **(3) Data Interim** appears. Open the interim (data sample) to inspect the data.
+1. Filter the data.
+1. Sort the data.
+1. Search through the data.
+1. Show or hide columns.
+1. Load more rows into the preview sample.
+1. Download data in CSV or JSON format.
+1. Create a new gem.
 
 ![DataExplorationSQL](./img/DataExplorationSQL.png)
 
-The interim reveals the sample data after the Join in this example. This is a great way to confirm the structure for each column, review data entries in the first few rows, and make sure the datatypes are correct.
+## Data sample
 
-### Filter and Sort Options
+When you filter, sort, or search through the data, you are only working with the **visible sample** of the data. To apply these to the whole dataset in the preview, you must either:
 
-Users can now apply filters and sort rows based on any column, providing enhanced visibility and improved data analysis.
+- Load the whole dataset into the preview by clicking **Load More** after the last record in the preview until all records are shown.
+- Click **Run** in the top right corner of the data preview. This will filter and sort based on all of the data in the backend (rather than a sample).
 
-:::info
-After applying or modifying any filter or sort criteria, you need to click the Run button to update the displayed data.
-:::
+## Create gems
 
-### Column Visibility Filtering
-
-By clicking on the ellipsis `...` icon, users can conveniently filter the columns visible in the UI. No need to rerun the process to reflect these changes in the UI.
-
-### Download Data
-
-Users can now download the data visible in the UI in CSV format using the dedicated download button.
-
-Experience seamless data exploration and analysis with the Data Explorer feature, enabling users to effortlessly navigate and understand their data directly from the user interface.
+After analyzing the data, you can retain the filter and sort options in the pipeline by clicking on the **Create Gems** option. This action saves the applied filter and sort as a `Filter` and `OrderBy` gem in the pipeline.

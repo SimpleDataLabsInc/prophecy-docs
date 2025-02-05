@@ -1,12 +1,11 @@
 ---
-title: Quick starts
+title: Getting started
 id: getting-started
-sidebar_class_name: hidden
 description: Getting started with Prophecy
 tags: []
 ---
 
-To quickly get started wih Prophecy, you can begin with a free trial.
+To quickly get started with Prophecy, you can begin with a free trial.
 
 ## Prophecy Enterprise SaaS
 
@@ -29,7 +28,7 @@ For more permanent deployment options, visit our page on [Prophecy deployment](d
 
 ### Next steps
 
-Try out these quick starts to get yourself up and running with Prophecy!
+Try it yourself to get up and running with Prophecy!
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
