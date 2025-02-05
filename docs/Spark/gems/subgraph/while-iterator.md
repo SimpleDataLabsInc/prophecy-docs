@@ -15,17 +15,23 @@ The WhileIterator allows you to group a set of gems together, and then run them 
 
 ## Input
 
-The input of the WhileIterator can be any dataset. Importantly, the output schema of the WhileIterator **must** match or be a subset of the input schema.
+The input of the WhileIterator can be any dataset. Importantly, the output schema of the WhileIterator **must** match or be a subset of the input schema. This is because the output feeds back into the input as the subgraph is iterating (looping).
 
 ## Configuration
 
-Once you have a WhileIterator on your canvas, you need to open it and define the following configurations.
+:::info
+Before setting the WhileIterator configuration, make sure you are familiar with [pipeline configurations](docs/Spark/configuration.md).
+:::
 
-| Configuration                                            | Description                                                                                                                |
-| -------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| Max iterations                                           | Maximum number of loops performed.                                                                                         |
-| Populate iteration number in config variable             | Checkbox to enable if you want to keep track of iteration numbers.                                                         |
-| Select config variable name to populate iteration number | Name of the config variable. This must be added to the schema in the configuration tab. It also must have a default value. |
+Once you have a WhileIterator subgraph on your canvas, set configurations by opening the subgraph and clicking on **Configuration**. The following table describes the parameters you need to set.
+
+| Parameter                                                | Tab           | Description                                                                                                                                                                                                                          |
+| -------------------------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Max iterations                                           | Settings      | The maximum number of loops that will be performed.                                                                                                                                                                                  |
+| Populate iteration number in config variable             | Settings      | A checkbox to enable if you want to keep track of iteration numbers in a variable.                                                                                                                                                   |
+| Select config variable name to populate iteration number | Settings      | The name of the config variable that will store the iteration number.                                                                                                                                                                |
+| Schema                                                   | Configuration | A table where you define configuration variables. You can **Copy Pipeline Configs** to inherit these from your pipeline. If you want to populate the iteration number in a config variable, make sure to include that variable here. |
+| Config                                                   | Configuration | An area where you can define default values for variables in one or more configurations.                                                                                                                                             |
 
 ## Subgraph
 
