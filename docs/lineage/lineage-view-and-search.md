@@ -44,7 +44,7 @@ More information can be found when you select a column, such as upstream and dow
 
 The **Zoom In** tab looks different depending on whether you are inspecting a pipeline or a dataset.
 
-- **For pipelines,** you can see code-level information about each components present in the pipeline. Select a component to view its:
+- **For pipelines,** you can see code-level information about each component present in the pipeline. Select a component to view its:
 
   - Transformation code
   - Input columns
