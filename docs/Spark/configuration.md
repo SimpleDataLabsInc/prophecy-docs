@@ -1,7 +1,7 @@
 ---
 title: Configurations
 id: configuration
-description: Configuring Prophecy's interface for Spark
+description: Control how a pipeline behaves during execution
 tags:
   - spark
   - development
@@ -9,7 +9,7 @@ tags:
   - variable
 ---
 
-There are multiple pipeline-level configurations that you can set in Prophecy. Let's explore the different ways that you can set configurations.
+A configuration is a set of predefined variables and values that control how a data pipeline behaves during execution. By using configurations, you can dynamically adapt a pipeline to different environments (e.g., development, testing, production) without modifying the pipeline itself.
 
 ## Pipeline configurations
 
@@ -62,8 +62,8 @@ Regardless of the visual language, you also can use Jinja config syntax for conf
 
 You can use the following syntax examples for accessing elements of array and record fields:
 
-- For array: `{{ config1.array_config[23] }}`
-- For record: `{{ record1.record2.field1 }}`
+- For an array: `{{ config1.array_config[23] }}`
+- For a record: `{{ record1.record2.field1 }}`
 
 :::note
 
@@ -71,19 +71,24 @@ Jinja configurations are enabled by default in new pipelines. To disable this se
 
 :::
 
-## Spark and Hadoop configurations
+## Subgraph configurations
 
-When you open the Pipeline Settings of a project, you have the option to set up Spark and Hadoop configurations:
+Configurations can also be set inside [subgraphs](docs/Spark/gems/subgraph/subgraph.md). These configurations will apply to execution that happens inside of the subgraph. While each type of subgraph might look different, the configuration settings should include:
 
-- For Spark, name-value pairs will be set inside the Spark runtime configurations as `spark.conf.set(name, value)`.
-- For Hadoop, name-value pairs will be set inside the Hadoop configuration as `spark.sparkContext.hadoopConfiguration.set(name, value)`.
+1. An area to define configurations. It should have a similar appearance to the pipeline configuration UI.
+1. An option to copy pipeline configurations.
 
-![Spark and Hadoop configurations](./img/configuration/config-spark-hadoop.png)
+Upon creation, subgraph configurations will also be included in the pipeline configurations.
+
+![Subgraph configuration](img/configuration/config-subgraph.png)
 
 ## Code
 
-All configuration instances and values are automatically converted to code. Default configurations are stored as code and
-specific instance overrides are stored as JSON files as shown in image below.
+All configuration instances and values are automatically converted to code.
+
+1. Open the Config file in the pipeline's **config** folder.
+1. View the **default** configuration code.
+1. Find the additional configurations as JSON files in the **resources/config** folder.
 
 - **Scala configuration code**
 
