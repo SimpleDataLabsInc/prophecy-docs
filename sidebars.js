@@ -105,7 +105,6 @@ const sidebars = {
                     "Spark/gems/source-target/file/csv",
                     "Spark/gems/source-target/file/delta",
                     "Spark/gems/source-target/file/fixed-format",
-                    "Spark/gems/source-target/file/ftp",
                     "Spark/gems/source-target/file/iceberg",
                     "Spark/gems/source-target/file/json",
                     "Spark/gems/source-target/file/kafka",
