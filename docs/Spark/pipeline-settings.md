@@ -26,7 +26,7 @@ In the Spark section, you can view the Spark version and mode for this pipeline.
 In the Code section, you can view the pipeline language, code mode, and build system. Other settings are listed below.
 
 - **Package Name:** The name of the package if the project is published to the [Package Hub](docs/extensibility/package-hub/package-hub.md).
-- **Config Package Name:** The name of the config package.
+- **Config Package Name:** The name of the config package. Use this if you need to run multiple pipelines simultaneously that use the [same configuration names](docs/Spark/configuration.md#code).
 - **Custom Application Name:** The name of the custom application.
 - **Allow Configuration Updates (Scala only):** When enabled, you can override configuration values using a script. For example, if you add a Script gem to the pipeline, you can write something like `Config.current_date_var = "2024"` to set the value of that variable.
 - **Enable pipeline monitoring:** The option to turn pipeline monitoring on or off.

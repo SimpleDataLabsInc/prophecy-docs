@@ -34,16 +34,6 @@ The Config tab lets you set default values for your variables. You can create mu
 
 ![Multiple configurations](img/configuration/config-new-instance.png)
 
-You can select which configuration to use when you:
-
-- **Run the pipeline interactively.** To choose the configuration for interactive runs, open the Pipeline Settings and scroll to the Run Settings section. There, you can change the selected configuration.
-
-  ![Choose config for interactive run](img/configuration/configuration-interactive-run.png)
-
-- **Create a job.** When you add a pipeline to your job, you can choose the configuration to use during the job. The configuration defaults can also be overridden here.
-
-  ![Choose config for job execution](img/configuration/configuration-job.png)
-
 ### Syntax
 
 When you want to use the pipeline configuration variables inside your project, you need to know how to reference them. You can choose the syntax for this using the **Visual Language** field in the Development section of Pipeline Settings.
@@ -71,6 +61,22 @@ Jinja configurations are enabled by default in new pipelines. To disable this se
 
 :::
 
+## Runtime configuration
+
+Once you have set up your configurations, you have to choose which configuration to use at runtime.
+
+### Interactive execution
+
+To choose the configuration for interactive runs, open the Pipeline Settings and scroll to the Run Settings section. There, you can change the selected configuration.
+
+![Choose config for interactive run](img/configuration/configuration-interactive-run.png)
+
+### Jobs
+
+When you add a pipeline to your job, you can choose the configuration to use during the job. The configuration defaults can also be overridden here.
+
+![Choose config for job execution](img/configuration/configuration-job.png)
+
 ## Subgraph configurations
 
 Configurations can also be set inside [subgraphs](docs/Spark/gems/subgraph/subgraph.md). These configurations will apply to execution that happens inside of the subgraph. While each type of subgraph might look different, the configuration settings should include:
@@ -86,14 +92,36 @@ Upon creation, subgraph configurations will also be included in the pipeline con
 
 All configuration instances and values are automatically converted to code.
 
-1. Open the Config file in the pipeline's **config** folder.
-1. View the **default** configuration code.
-1. Find the additional configurations as JSON files in the **resources/config** folder.
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-- **Scala configuration code**
+<Tabs>
 
-  ![Config scala code](img/configuration/config-scala-code.png)
+<TabItem value="scala" label="Scala configuration code">
 
-- **Python configuration code**
+1. Open `Config.scala` in the `<pipeline-path>/config` folder.
+1. View the default configuration code.
+1. Find additional configurations that are packaged as JSON files in the `resources/config` folder.
 
-  ![Config python code](img/configuration/config-python-code.png)
+![Config scala code](img/configuration/config-scala-code.png)
+
+</TabItem>
+
+<TabItem value="py" label="Python configuration code">
+
+1. Open `Config.py` in the `<pipeline>/config` folder.
+1. View the default configuration code.
+1. Find additional configurations that are packaged as JSON files in the `configs/resources/config` folder.
+
+![Config python code](img/configuration/config-python-code.png)
+
+</TabItem>
+
+</Tabs>
+
+```
+
+:::caution
+If you create multiple configurations using the same name across different pipelines in Prophecy, you will have multiple JSON files with the same name. This might cause conflicts if those pipelines run simultaneously on the same cluster. To prevent this, define a unique name in the **Config Package Name** field of your [pipeline settings](docs/Spark/pipeline-settings.md#code). This will change the name of the package directory (for example, `resources/unique-config` instead of the default `resources/config`).
+:::
