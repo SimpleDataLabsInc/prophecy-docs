@@ -5,7 +5,7 @@ import {
   useFilteredAndTreeifiedTOC,
   type TOCHighlightConfig,
 } from "@docusaurus/theme-common/internal";
-import CustomTOCItemTree from "./toc-tree";
+import CustomTOCItemTree from "@site/src/components/CustomTOCItems/Tree";
 import type { Props } from "@theme/TOCItems";
 
 // Extend Props to include the path variable
