@@ -1,5 +1,5 @@
 import React, { type ReactNode } from "react";
-import CustomTOCItems from "./toc-index";
+import CustomTOCItems from "@site/src/components/CustomTOCItems";
 import type { Props } from "@theme/TOCInline";
 import styles from "./styles.module.css";
 
