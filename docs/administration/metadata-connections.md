@@ -11,11 +11,7 @@ tags:
   - data
 ---
 
-When you create metadata connections in a [fabric](docs/concepts/fabrics/fabrics.md), you can view and import your data directly from the Environment tab of the [Project Editor](/docs/concepts/project/project.md#project-editor) in Prophecy.
-
-## What is a metadata connection?
-
-A metadata connection is a user-defined link between Prophecy and a data provider. Its purpose is to establish communication between Prophecy and external systems. For instance, a metadata connection can be established between Prophecy and platforms like Databricks (Catalog or JDBC). Using a metadata connection, thousands of tables should be visible more quickly as the data is synced regularly.
+When you create a metadata connection in a [fabric](docs/concepts/fabrics/fabrics.md), Prophecy can connect to the data provider (like Databricks) and **cache metadata on a regular basis**. If you have thousands of objects, such as tables or views, this continuous sync can make fetching objects much faster in Prophecy—particularly in the Environment tab of the [Project Editor](/docs/concepts/project/project.md#project-editor).
 
 :::note
 Different from metadata connections, Prophecy also supports Airflow connections which perform a similar function for Airflow jobs.
@@ -23,7 +19,7 @@ Different from metadata connections, Prophecy also supports Airflow connections 
 
 ## Metadata connection setup
 
-Metadata connections are set up inside individual fabrics. This means that anyone with access to the fabric will also be able to use the metadata connection.
+Metadata connections are set up inside individual fabrics. This means that anyone with access to the fabric can take advantage of the metadata connection.
 
 1. Initiate the creation of a new fabric.
 1. In the **Connections** tab, add a new connection.

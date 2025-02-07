@@ -270,6 +270,7 @@ const sidebars = {
         },
         "Spark/expression-builder",
         "Spark/configuration",
+        "Spark/pipeline-settings",
         {
           type: "category",
           label: "Spark streaming",
@@ -369,6 +370,7 @@ const sidebars = {
             "SQL/visual-expression-builder/variant-schema",
           ],
         },
+        "SQL/configuration",
       ],
     },
     /// LINEAGE
