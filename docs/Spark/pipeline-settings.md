@@ -61,7 +61,7 @@ Review the various settings available for each pipeline, including Spark setting
     <tr>
       <td>Package Name</td>
       <td>
-        The name of the package if the project is published to the <a href="docs/extensibility/package-hub/package-hub.md">Package Hub</a>.
+        The name of the package if the project is published to the <a href="../extensibility/package-hub/">Package Hub</a>.
       </td>
     </tr>
     <tr>
@@ -88,7 +88,7 @@ Review the various settings available for each pipeline, including Spark setting
     <tr>
       <td>Enable jinja based configuration</td>
       <td>
-        The option to turn <a href="docs/Spark/configuration.md#syntax">jinja-based</a> configuration on or off.
+        The option to turn <a href="../Spark/configuration#syntax">jinja-based</a> configuration on or off.
       </td>
     </tr>
   </tbody>
@@ -111,7 +111,7 @@ Review the various settings available for each pipeline, including Spark setting
       <td>
         The programming language (SQL, Scala, or Python) used for expressions inside of gems. If you change the visual
         language while developing your pipeline, Prophecy will automatically convert expressions into the chosen language.
-        The <a href="docs/Spark/expression-builder.md">Expression Builder</a> will adapt to the language as well.
+        The <a href="../Spark/expression-builder">Expression Builder</a> will adapt to the language as well.
       </td>
     </tr>
   </tbody>
@@ -174,7 +174,7 @@ In the Job section, you can choose how data is sampled during job runs. If you e
     </tr>
     <tr>
       <td>Configuration</td>
-      <td>This setting determines which <a href="docs/Spark/configuration.md">configuration</a> will be used during a pipeline run.</td>
+      <td>This setting determines which <a href="../Spark/configuration">configuration</a> will be used during a pipeline run.</td>
     </tr>
   </tbody>
 </table>
