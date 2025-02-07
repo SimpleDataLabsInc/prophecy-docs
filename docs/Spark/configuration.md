@@ -121,7 +121,3 @@ import TabItem from '@theme/TabItem';
 </Tabs>
 
 ```
-
-:::caution
-If you create multiple configurations using the same name across different pipelines in Prophecy, you will have multiple JSON files with the same name. This might cause conflicts if those pipelines run simultaneously on the same cluster. To prevent this, define a unique name in the **Config Package Name** field of your [pipeline settings](docs/Spark/pipeline-settings.md#code). This will change the name of the package directory (for example, `resources/unique-config` instead of the default `resources/config`).
-:::

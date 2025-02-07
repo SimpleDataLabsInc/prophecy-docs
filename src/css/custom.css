@@ -185,6 +185,7 @@ Gems table page
 }
 
 /* Sidebar styles from https://github.com/facebook/docusaurus/pull/6519 */
+
 .sidebar-title {
   font-size: 0.8rem;
   letter-spacing: 0.05rem;
@@ -254,4 +255,16 @@ Gems table page
   .card-container {
     gap: 12px; /* Adjust gap for smaller screens if needed */
   }
+}
+
+/* Fixed column width tables */
+
+.fixed-table th:nth-child(1),
+.fixed-table td:nth-child(1) {
+  width: 20%;
+}
+
+.fixed-table th:nth-child(2),
+.fixed-table td:nth-child(2) {
+  width: 80%;
 }
