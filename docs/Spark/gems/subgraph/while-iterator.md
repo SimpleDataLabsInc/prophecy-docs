@@ -37,7 +37,7 @@ Once you have a WhileIterator subgraph on your canvas, set configurations by ope
 
 Within the WhileIterator, you can design a flow with multiple gems to create your desired output.
 
-Importantly, you also need to understand the two inputs of the WhileIterator_Output. The order of your inputs are important:
+Importantly, you also need to understand the two inputs of the WhileIterator_Output. The order of your inputs is important:
 
 - The **in0** dataset contains the DataFrame for the **following** iteration. If this dataset becomes empty, the loop is terminated.
 - The **in1** dataset passes on an individual iteration. You'll see the entire list of iterations as the output of the WhileIterator gem.
