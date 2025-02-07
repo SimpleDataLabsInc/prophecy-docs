@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[19461],{76933:e=>{e.exports=JSON.parse('{"label":"pipeline","permalink":"/tags/pipeline","allTagsPath":"/tags","count":1,"items":[{"id":"Spark/pipeline-settings","title":"Pipeline settings","description":"Control how your pipeline runs","permalink":"/Spark/pipeline-settings"}]}')}}]);
