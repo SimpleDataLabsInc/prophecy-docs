@@ -34,7 +34,7 @@ Click [here](docs/SQL/visual-expression-builder/visual-expression-builder.md) fo
 <iframe src="https://fast.wistia.net/embed/iframe/kzbl48iux2?seo=false?videoFoam=true" title="DataGenerator" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-Click [here](/docs/Spark/gems/source-target/advanced/synthetic-data-generator.md) for further details.
+Click [here](docs/Spark/gems/source-target/file/synthetic-data-generator.md) for further details.
 
 ### Bulk actions Gems for cleaning messy data
 
