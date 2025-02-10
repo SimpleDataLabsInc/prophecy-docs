@@ -113,8 +113,7 @@ const sidebars = {
                     "Spark/gems/source-target/file/parquet",
                     "Spark/gems/source-target/file/text",
                     "Spark/gems/source-target/file/xlsx",
-                    "Spark/gems/source-target/file/binary",
-                    "Spark/gems/source-target/file/hudi",
+                    "Spark/gems/source-target/file/xml",
                   ],
                 },
                 {
