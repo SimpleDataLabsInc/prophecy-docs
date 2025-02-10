@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[99193],{8236:e=>{e.exports=JSON.parse('{"label":"iceberg","permalink":"/tags/iceberg","allTagsPath":"/tags","count":1,"items":[{"id":"Spark/gems/source-target/file/iceberg","title":"Iceberg","description":"Iceberg","permalink":"/Spark/gems/source-target/file/iceberg"}]}')}}]);
