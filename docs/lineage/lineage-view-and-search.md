@@ -1,5 +1,5 @@
 ---
-title: Lineage view and search
+title: Lineage view
 id: lineage-view-and-search
 description: Project lineage view and search
 tags:
@@ -9,43 +9,49 @@ tags:
   - search
 ---
 
-This page shows the different parts of the Lineage view and the option to search by column, dataset, or pipeline.
-
-## Lineage view
-
-![Lineage View](img/lineage-column-level-view.png)
-
-`Browse Datasets` option from right-hand side can be used to search/select the column/entity for which lineage needs to be computed.
-
-![Browse Datasets](img/lineage-browse-dataset.png)
-
-Zoom-in toggle for a particular pipeline/dataset can be used to better understand pipeline/dataset.
-
-### Pipeline zoom-in view
-
-This shows code-level info around all the components present in the pipeline.
-
-:::info
-Select a particular component aas shown below to get the code-level view.
-:::
-
-![pipeline zoom-in](img/lineage-pipeline-zoom-in.png)
-
-### Dataset zoom-in view
-
-This view gives info around all the upstream and downstream transformations if any for all the columns of the selected dataset.
-
-![Dataset zoom-in](img/lineage-dataset-zoom-in.png)
+Learn how to navigate through Lineage to better understand your data.
 
 ## Lineage search
 
-This option can be used to Search Lineage by column, dataset or pipeline.
+When you open Lineage from the left navigation bar, you are brought to the lineage search page. Once you enter a search query, you can see a list of matching **entities** and a list of **columns**. You can filter these lists by:
+
+- Entity type
+- Project
+- Author
+- Last modified time period
+
+Once you click an entity or column, the lineage view opens.
 
 ![Lineage Search](img/lineage-search-high-level-view.png)
 
-Below filters are available to narrow down the search results:
+## Lineage view
 
-- `Type` - Filter by datasets, pipelines, or columns
-- `Project` - Filter by Project Name
-- `Author` - Filter by Project Author
-- `Last Modfified` - Filter by Last Modified Time
+The lineage view always includes **Summary** and **Zoom In** tabs, though these look different for different entities.
+
+### Summary
+
+The **Summary** tab demonstrates the flow of data through pipelines, models, and datasets (depending on your project type).
+
+Use the **Browse Datasets** panel to search for and select the column or entity that you want to inspect.
+
+![Browse Datasets](img/lineage-browse-dataset.png)
+
+More information can be found when you select a column, such as upstream and downstream transformations.
+
+![Lineage View](img/lineage-column-level-view.png)
+
+### Zoom In
+
+The **Zoom In** tab looks different depending on whether you are inspecting a pipeline or a dataset.
+
+- **For pipelines,** you can see code-level information about each component present in the pipeline. Select a component to view its:
+
+  - Transformation code
+  - Input columns
+  - Output columns
+
+  ![pipeline zoom-in](img/lineage-pipeline-zoom-in.png)
+
+- **For datasets,** you can find information around all the upstream and downstream transformations (if any) for all the columns of the selected dataset.
+
+  ![Dataset zoom-in](img/lineage-dataset-zoom-in.png)

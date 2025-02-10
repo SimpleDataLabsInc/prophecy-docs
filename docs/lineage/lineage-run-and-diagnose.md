@@ -9,11 +9,11 @@ tags:
   - diagnose
 ---
 
-You can run and diagnose your project from the lineage view.
+When you open a SQL project, the canvas shows the lineage view of your project. On this page, you can run the different flows and inspect the lineage.
 
 ## Lineage run
 
-From the lineage view, you can use the play button to run your project.
+You can interactively run your project from the lineage page using the following steps.
 
 1. Click the up arrow next to the play button to select which entities you'd like to include in your run. You can choose to run all seeds, all models, and all tests.
 
@@ -31,9 +31,17 @@ The run order is determined by the topological sort of the entities and their de
 
 :::
 
-From the Runtime Logs panel, you can see logs of the current run, including those that have failed. You can filter or sort the logs, and adjust the view.
+## Runtime logs
 
-The logs are grouped for easy viewing. You can click a grouping to expand it.
+After a lineage run, runtime logs will be generated that include information about successful and failed runs. In the Runtime Logs panel, you can:
+
+- Search
+- Filter
+- Sort
+- Download logs
+- Clear logs
+
+Logs are grouped for easy viewing. You can click a grouping to expand it.
 
 ![Lineage Search](img/lineage-group-and-expand.png)
 
