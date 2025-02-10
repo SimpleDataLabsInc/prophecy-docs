@@ -1,5 +1,4 @@
 ---
-sidebar_position: 13
 title: DynamicSelect
 id: dynamic-select
 description: Dynamically filter columns of your dataset based on a set of conditions.

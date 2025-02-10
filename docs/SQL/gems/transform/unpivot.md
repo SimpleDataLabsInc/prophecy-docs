@@ -6,8 +6,8 @@ description: Use the Unpivot gem to transform your data from a wide format to a 
 tags:
   - gems
   - unpivot
-  - wideformat
-  - longformat
+  - wide format
+  - long format
 ---
 
 <h3><span class="badge">SQL Gem</span></h3>
