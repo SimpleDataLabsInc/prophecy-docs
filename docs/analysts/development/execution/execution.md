@@ -5,7 +5,7 @@ description: Run a set of defined operations in a pipeline
 tags: []
 ---
 
-In Prophecy, execution refers to running a set of defined operations in a data pipeline. 
+In Prophecy, execution refers to running a set of defined operations in a data pipeline.
 
 ## Fabrics
 
@@ -17,4 +17,4 @@ Prophecy lets you run your pipeline interactively during development
 
 ## Job execution
 
-When you schedule a job, you must define where that job will run. 
+When you schedule a job, you must define where that job will run.
