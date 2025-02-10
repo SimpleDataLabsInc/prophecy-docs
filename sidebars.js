@@ -101,17 +101,20 @@ const sidebars = {
                   label: "File",
                   items: [
                     "Spark/gems/source-target/file/upload-file",
-                    "Spark/gems/source-target/file/avro",
+                    "Spark/gems/source-target/file/data-generator",
+                    "Spark/gems/source-target/file/seed",
                     "Spark/gems/source-target/file/csv",
+                    "Spark/gems/source-target/file/avro",
                     "Spark/gems/source-target/file/delta",
                     "Spark/gems/source-target/file/fixed-format",
-                    "Spark/gems/source-target/file/iceberg",
                     "Spark/gems/source-target/file/json",
                     "Spark/gems/source-target/file/kafka",
                     "Spark/gems/source-target/file/orc",
                     "Spark/gems/source-target/file/parquet",
                     "Spark/gems/source-target/file/text",
                     "Spark/gems/source-target/file/xlsx",
+                    "Spark/gems/source-target/file/binary",
+                    "Spark/gems/source-target/file/hudi",
                   ],
                 },
                 {
@@ -136,16 +139,10 @@ const sidebars = {
                   items: [
                     "Spark/gems/source-target/catalog-table/delta",
                     "Spark/gems/source-target/catalog-table/hive",
+                    "Spark/gems/source-target/catalog-table/iceberg",
                   ],
                 },
-                {
-                  type: "category",
-                  label: "Advanced",
-                  items: [
-                    "Spark/gems/source-target/advanced/data-generator",
-                    "Spark/gems/source-target/advanced/lookup",
-                  ],
-                },
+                "Spark/gems/source-target/lookup",
               ],
             },
             {
