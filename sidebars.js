@@ -108,51 +108,83 @@ const sidebars = {
           items: [
             {
               type: "category",
-              label: "Models",
-              items: ["analysts/development/gems/models/model"],
-            },
-            {
-              type: "category",
-              label: "Sources",
+              label: "Source/Target",
               items: [
                 {
                   type: "category",
                   label: "File",
-                  items: ["analysts/development/gems/sources/file/excel"],
+                  items: ["analysts/development/gems/source-target/file/excel"],
                 },
                 {
                   type: "category",
                   label: "Catalog table",
                   items: [
-                    "analysts/development/gems/sources/catalog-table/catalog-table",
+                    "analysts/development/gems/source-target/catalog-table/catalog-table",
                   ],
                 },
               ],
             },
             {
               type: "category",
-              label: "Join/Split",
-              items: ["analysts/development/gems/join-split/join"],
-            },
-            {
-              type: "category",
               label: "Transform",
               items: [
                 "analysts/development/gems/transform/aggregate",
-                "analysts/development/gems/transform/filter",
-                "analysts/development/gems/transform/reformat",
-                "analysts/development/gems/transform/set-operation",
+                "analysts/development/gems/transform/pivot",
+                "analysts/development/gems/transform/unpivot",
+                "analysts/development/gems/transform/window",
               ],
             },
             {
               type: "category",
-              label: "Orchestration",
-              items: ["analysts/development/gems/orchestration/email"],
+              label: "Prepare",
+              items: [
+                "analysts/development/gems/prepare/data-cleansing",
+                "analysts/development/gems/prepare/deduplicate",
+                "analysts/development/gems/prepare/bulk-column-rename",
+                "analysts/development/gems/prepare/bulk-column-expressions",
+                "analysts/development/gems/prepare/filter",
+                "analysts/development/gems/prepare/flatten-schema",
+                "analysts/development/gems/prepare/limit",
+                "analysts/development/gems/prepare/order-by",
+                "analysts/development/gems/prepare/reformat",
+              ],
             },
             {
               type: "category",
+              label: "Join",
+              items: [
+                "analysts/development/gems/join-split/join",
+                "analysts/development/gems/join-split/fuzzy-match",
+                "analysts/development/gems/join-split/set-operation",
+                "analysts/development/gems/join-split/dynamic-replace",
+              ],
+            },
+            {
+              type: "category",
+              label: "Parse",
+              items: [
+                "analysts/development/gems/parse/json-parse",
+                "analysts/development/gems/parse/xml-parse",
+                "analysts/development/gems/parse/text-to-column",
+              ],
+            },
+            {
+              type: "category",
+              label: "Report",
+              items: [
+                "analysts/development/gems/report/email",
+                "analysts/development/gems/report/tableau",
+              ],
+            },
+            "analysts/development/gems/subgraph/subgraph",
+            {
+              type: "category",
               label: "Custom",
-              items: ["analysts/development/gems/custom/sql-statement"],
+              items: [
+                "analysts/development/gems/custom/sql-statement",
+                "analysts/development/gems/custom/rest-api",
+                "analysts/development/gems/custom/macro",
+              ],
             },
           ],
         },
@@ -162,6 +194,7 @@ const sidebars = {
           link: { type: "doc", id: "analysts/development/execution/execution" },
           items: [],
         },
+        "analysts/development/data-samples",
         {
           type: "category",
           label: "Testing",
