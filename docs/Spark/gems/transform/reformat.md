@@ -1,7 +1,7 @@
 ---
 title: Reformat
 id: reformat
-description: Select one or more columns or values using expressions and functions.
+description: Select one or more columns or values using expressions and functions
 tags:
   - gems
   - select

@@ -174,6 +174,8 @@ const sidebars = {
                 "Spark/gems/transform/bulk-column-expressions",
                 "Spark/gems/transform/bulk-column-rename",
                 "Spark/gems/transform/flatten-schema",
+                "Spark/gems/transform/data-quality-check",
+                "Spark/gems/transform/fuzzy-match",
               ],
             },
             {
