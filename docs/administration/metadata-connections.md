@@ -11,7 +11,7 @@ tags:
   - data
 ---
 
-When you create a metadata connection in a [fabric](docs/getting-started/concepts/fabrics/fabrics.md), Prophecy can connect to the data provider (like Databricks) and **cache metadata on a regular basis**. If you have thousands of objects, such as tables or views, this continuous sync can make fetching objects much faster in Prophecy—particularly in the Environment tab of the [Project Editor](/docs/getting-started/concepts/project/project.md#project-editor).
+When you create a metadata connection in a [fabric](docs/getting-started/concepts/fabrics.md), Prophecy can connect to the data provider (like Databricks) and **cache metadata on a regular basis**. If you have thousands of objects, such as tables or views, this continuous sync can make fetching objects much faster in Prophecy—particularly in the Environment tab of the [Project Editor](/docs/getting-started/concepts/project.md#project-editor).
 
 :::note
 Different from metadata connections, Prophecy also supports Airflow connections which perform a similar function for Airflow jobs.
@@ -55,7 +55,7 @@ To use a metadata connection in a project:
 
 ### SQL warehouses or clusters
 
-Prophecy supports metadata collection through SQL warehouses and clusters on Databricks and Snowflake. In general, we recommend creating a [SQL warehouse](https://docs.databricks.com/en/sql/admin/create-sql-warehouse.html#create-a-sql-warehouse) or cluster dedicated to the metadata connection. Using this approach, the recurring metadata syncs can have a cluster defined with appropriate resources, whereas execution clusters defined in the [fabric](/docs/getting-started/concepts/fabrics/fabrics.md) would have a separate resource profile.
+Prophecy supports metadata collection through SQL warehouses and clusters on Databricks and Snowflake. In general, we recommend creating a [SQL warehouse](https://docs.databricks.com/en/sql/admin/create-sql-warehouse.html#create-a-sql-warehouse) or cluster dedicated to the metadata connection. Using this approach, the recurring metadata syncs can have a cluster defined with appropriate resources, whereas execution clusters defined in the [fabric](/docs/getting-started/concepts/fabrics.md) would have a separate resource profile.
 
 ### Provider tokens
 

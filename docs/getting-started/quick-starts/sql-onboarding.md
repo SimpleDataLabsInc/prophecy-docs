@@ -17,7 +17,7 @@ To get started with Prophecy, you can use the in-product walkthrough for a SQL m
 1. Click **Onboarding**.
 1. Select **Low-code SQL**.
 
-This opens up the visual model canvas! As you begin, notice that Prophecy automatically attaches to a SQL cluster. We provide a default [fabric](docs/getting-started/concepts/fabrics/fabrics.md) (execution environment) for this onboarding project.
+This opens up the visual model canvas! As you begin, notice that Prophecy automatically attaches to a SQL cluster. We provide a default [fabric](docs/getting-started/concepts/fabrics.md) (execution environment) for this onboarding project.
 
 ## Follow the steps
 

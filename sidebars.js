@@ -29,21 +29,12 @@ const sidebars = {
           label: "Concepts",
           link: { type: "doc", id: "getting-started/concepts/key-concepts" },
           items: [
-            {
-              type: "category",
-              label: "Projects",
-              link: {
-                type: "doc",
-                id: "getting-started/concepts/project/project",
-              },
-              items: [
-                "getting-started/concepts/project/pipeline",
-                "getting-started/concepts/project/Model",
-                "getting-started/concepts/project/gems",
-                "getting-started/concepts/project/dataset",
-              ],
-            },
-            "getting-started/concepts/fabrics/Fabric",
+            "getting-started/concepts/Fabric",
+            "getting-started/concepts/project",
+            "getting-started/concepts/pipeline",
+            "getting-started/concepts/Model",
+            "getting-started/concepts/gems",
+            "getting-started/concepts/dataset",
           ],
         },
         {

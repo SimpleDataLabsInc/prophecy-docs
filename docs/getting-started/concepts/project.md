@@ -10,7 +10,7 @@ tags:
 
 A **Project** in Prophecy is the core unit for developing, organizing, and deploying data workflows to production. It encompasses all the components needed for building and running data processes.
 
-Spark projects contain [pipelines](docs/getting-started/concepts/project/pipelines.md), [datasets](docs/getting-started/concepts/project/dataset.md), and [jobs](docs/Orchestration/Orchestration.md). SQL projects contain [models](docs/getting-started/concepts/project/models.md), [datasets](docs/getting-started/concepts/project/dataset.md), and [jobs](docs/Orchestration/Orchestration.md).
+Spark projects contain [pipelines](docs/getting-started/concepts/pipelines.md), [datasets](docs/getting-started/concepts/dataset.md), and [jobs](docs/Orchestration/Orchestration.md). SQL projects contain [models](docs/getting-started/concepts/models.md), [datasets](docs/getting-started/concepts/dataset.md), and [jobs](docs/Orchestration/Orchestration.md).
 
 ## Project creation
 
@@ -46,7 +46,7 @@ See these components marked in the image below.
 
 ## Project metadata
 
-The [Metadata](https://app.prophecy.io/metadata/entity/user) page in Prophecy provides a searchable directory of projects and project components including pipelines, models, and jobs. Here, you can also find the metadata for teams and [fabrics](/docs/getting-started/concepts/fabrics/fabrics.md).
+The [Metadata](https://app.prophecy.io/metadata/entity/user) page in Prophecy provides a searchable directory of projects and project components including pipelines, models, and jobs. Here, you can also find the metadata for teams and [fabrics](/docs/getting-started/concepts/fabrics.md).
 
 ![Project Metadata SQL](./img/project_metadata_2.png)
 

@@ -46,7 +46,7 @@ To allow for SQL query execution Prophecy can connect to Snowflake and Databrick
 
 To connect with data stored in a SQL Warehouse, or to allow for interactive SQL execution, Prophecy can connect to an existing Snowflake execution environment through secure and performant [Snowpark](https://docs.snowflake.com/en/developer-guide/snowpark/index) or [Snowflake](https://docs.snowflake.com/en/developer-guide/sql-api/reference) APIs.
 
-Each [fabric](docs/getting-started//concepts/fabrics/fabrics.md) defined in Prophecy connects to a single Snowflake Warehouse and each user is required to provide credentials to authenticate to it.
+Each [fabric](docs/getting-started/concepts/fabrics.md) defined in Prophecy connects to a single Snowflake Warehouse and each user is required to provide credentials to authenticate to it.
 
 ![Arch_Diagram](./img/arch_snowflake.png)
 
@@ -60,7 +60,7 @@ To allow for interactive code execution Prophecy can connect to either [Databric
 
 ![Prophecy to Databricks Connectivity](./img/arch_databricks.png)
 
-Prophecy connects to Databricks using [Rest API](https://docs.databricks.com/dev-tools/api/latest/index.html). Each [fabric](docs/getting-started//concepts/fabrics/fabrics.md) defined in Prophecy connects to a single [Databricks workspace](https://docs.databricks.com/workspace/index.html). You can connect a Databricks workspace to your fabric using a [personal access token (PAT)](https://docs.databricks.com/dev-tools/api/latest/authentication.html) or [Databricks OAuth](docs/administration/authentication/databricks-oauth.md).
+Prophecy connects to Databricks using [Rest API](https://docs.databricks.com/dev-tools/api/latest/index.html). Each [fabric](docs/getting-started/concepts/fabrics.md) defined in Prophecy connects to a single [Databricks workspace](https://docs.databricks.com/workspace/index.html). You can connect a Databricks workspace to your fabric using a [personal access token (PAT)](https://docs.databricks.com/dev-tools/api/latest/authentication.html) or [Databricks OAuth](docs/administration/authentication/databricks-oauth.md).
 
 :::note
 When using **Active Directory**, Prophecy takes care of the auto-generation and refreshing of the Databricks personal access tokens. Read more about it [here](https://docs.microsoft.com/en-us/azure/databricks/dev-tools/api/latest/aad/).

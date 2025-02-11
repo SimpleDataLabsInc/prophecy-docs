@@ -5,34 +5,69 @@ description: Getting started with Prophecy
 tags: []
 ---
 
-To quickly get started with Prophecy, you can begin with a free trial.
+import { Card, CardContainer } from "@site/src/components/card";
 
-## Prophecy Enterprise SaaS
+To get started with Prophecy, you must first understand _how_ you are going to use Prophecy. Will you try to extract business insights from the data, or are you more focused on ensuring that data is available and reliable? Are you identifying data trends, or are you monitoring data quality? Do you want to optimize the computation of data pipelines, or do you want to build pipelines that prepare data for reporting?
 
-Begin a free 21-day trial by [signing up](https://app.prophecy.io/metadata/auth/signup). You'll be able to use your own data, or you can opt to use Prophecy-managed Databricks.
+Based on these answers, you may choose to get started with data analysis, or instead get started with data engineering.
 
-## Prophecy via Databricks Partner Connect
-
-You can also try out Prophecy's SaaS offering via an existing Databricks account. The following video shows how to get started with Prophecy using _Partner Connect_ from your Databricks interface.
-
-<div class="video-container">
-<iframe src="https://www.youtube.com/embed/mh-6lpYJcqs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-<br />
-
-:::info
-
-For more permanent deployment options, visit our page on [Prophecy deployment](docs/administration/prophecy-deployment.md).
-
-:::
-
-### Next steps
-
-Try it yourself to get up and running with Prophecy!
+## Quick starts
 
 ```mdx-code-block
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+<CardContainer>
+  <Card title="Data Analysis Quick Start" to="./getting-started/">
+    Try building a pipeline that leverages SQL to
+    prepare some data for analysis—no coding necessary.
+  </Card>
+  <Card title="Engineering Quick Start | Spark" to="./getting-started/">
+    Develop your first data pipeline and review the generated Spark code.
+  </Card>
+    <Card title="Engineering Quick Start | SQL" to="./getting-started/">
+    Develop your first data pipeline and review the generated SQL code.
+  </Card>
+</CardContainer>
+<br />
+```
 
-<DocCardList items={useCurrentSidebarCategory().items}/>
+## Tutorials
+
+```mdx-code-block
+<CardContainer>
+  <Card
+    title="Spark with Databricks"
+    to="./getting-started/quick-starts/spark-onboarding"
+  >
+    Learn about and try developing pipelines in Spark.
+  </Card>
+  <Card
+    title="SQL with Databricks"
+    to="./getting-started/quick-starts/spark-onboarding"
+  >
+    Learn about and try developing models with Databricks SQL.
+  </Card>
+  <Card
+    title="SQL with Snowflake"
+    to="./getting-started/quick-starts/spark-onboarding"
+  >
+    Learn about and try developing models with Snowflake.
+  </Card>
+</CardContainer>
+<br />
+```
+
+## Deep dive
+
+```mdx-code-block
+<CardContainer>
+  <Card title="Project Development" to="./getting-started/">
+    Ingest data from common sources, prepare data using visual transformations, and schedule with the click of a button.
+  </Card>
+  <Card title="Pipeline Development" to="./getting-started/">
+    Create pipelines using Git workflows for CI/CD, external orchestration for scheduling, and Spark execution engines for processing power.
+  </Card>
+  <Card title="Model Development" to="./getting-started/">
+    Develop models using Git workflows for CI/CD, external orchestration for scheduling, and SQL with dbt for data processing.
+  </Card>
+</CardContainer>
+<br />
 ```

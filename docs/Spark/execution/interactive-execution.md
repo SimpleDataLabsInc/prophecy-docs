@@ -41,7 +41,7 @@ Data sampling is enabled by default for interactive execution. To change data sa
 
 ### Advanced settings
 
-There is also a global-level **Development Settings** flag admins can use to disable data sampling for a given [fabric](docs/getting-started/concepts/fabrics/fabrics.md). This flag overrides pipeline-level data sampling settings. You can find these settings in the **Advanced** tab of a fabric.
+There is also a global-level **Development Settings** flag admins can use to disable data sampling for a given [fabric](docs/getting-started/concepts/fabrics.md). This flag overrides pipeline-level data sampling settings. You can find these settings in the **Advanced** tab of a fabric.
 
 ![Create a new model test](./img/limit-data-preview-interims.png)
 

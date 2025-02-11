@@ -318,19 +318,19 @@ const config = {
             from: "/tutorials/videos/",
           },
           {
-            to: "/getting-started/concepts/project/gems",
+            to: "/getting-started/concepts/gems",
             from: "/concepts/gems/",
           },
           {
-            to: "/getting-started/concepts/project/dataset",
+            to: "/getting-started/concepts/dataset",
             from: "/concepts/dataset",
           },
           {
-            to: "/getting-started/concepts/project/gems",
+            to: "/getting-started/concepts/gems",
             from: "/concepts/project/gems/",
           },
           {
-            to: "/getting-started/concepts/project/dataset",
+            to: "/getting-started/concepts/dataset",
             from: "/concepts/project/dataset",
           },
           {

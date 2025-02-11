@@ -20,7 +20,7 @@ For this tutorial, you will need:
 
 ## Create a Databricks Spark fabric
 
-A [fabric](docs/getting-started/concepts/fabrics/fabrics.md) in Prophecy is an execution environment. In this tutorial, you'll see how to use Databricks as your execution environment in Prophecy. Let's begin!
+A [fabric](docs/getting-started/concepts/fabrics.md) in Prophecy is an execution environment. In this tutorial, you'll see how to use Databricks as your execution environment in Prophecy. Let's begin!
 
 1. Open Prophecy.
 1. Click on the **Create Entity** button in the left navigation bar.
@@ -50,7 +50,7 @@ You are almost done setting up your Databricks fabric!
 
 ## Create a Prophecy project
 
-After you create your first Spark fabric, you'll see a [project](/docs/getting-started/concepts/project/project.md) in Prophecy called HelloWorld. If you just want to play around with Prophecy, you can start there. However, for the purpose of this tutorial, let's build a new project from scratch.
+After you create your first Spark fabric, you'll see a [project](/docs/getting-started/concepts/project.md) in Prophecy called HelloWorld. If you just want to play around with Prophecy, you can start there. However, for the purpose of this tutorial, let's build a new project from scratch.
 
 1. Once again, click on the **Create Entity** button in the left navigation bar.
 1. Hover over the **Project** tile and select **Create**.

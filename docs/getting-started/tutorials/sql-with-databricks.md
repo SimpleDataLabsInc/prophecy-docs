@@ -63,7 +63,7 @@ Once, the token is generated copy and save it from **(5) Token** and you’re go
 
 ### Set up a fabric in Prophecy
 
-A [fabric](docs/getting-started/concepts/fabrics/fabrics.md) in Prophecy is an execution environment. In this case, you already know you want to use Databricks for your computation, so we'll make a Databricks fabric!
+A [fabric](docs/getting-started/concepts/fabrics.md) in Prophecy is an execution environment. In this case, you already know you want to use Databricks for your computation, so we'll make a Databricks fabric!
 
 ![Create Fabric](img/2-4-create-fabric.png)
 
@@ -83,7 +83,7 @@ Note, fabrics are owned by Teams. Every Member present within the Team will be a
 
 ## Create a new project
 
-Prophecy’s project is a Git repository or a directory on Git that contains all of your transformation logic. Each Prophecy project contains a dbt Core™️ project. Learn more about projects [here.](/docs/getting-started/concepts/project/project.md)
+Prophecy’s project is a Git repository or a directory on Git that contains all of your transformation logic. Each Prophecy project contains a dbt Core™️ project. Learn more about projects [here.](/docs/getting-started/concepts/project.md)
 
 After fabric creation you can see one project initialized for you by default called HelloWorld_SQL. If you just want to play around with Prophecy, you can start there. However, for the purpose of this tutorial we’re going to build a brand new project from scratch.
 
