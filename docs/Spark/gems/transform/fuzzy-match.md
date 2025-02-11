@@ -7,6 +7,8 @@ tags:
   - fuzzy match
 ---
 
+<h3><span class="badge">Spark Gem</span></h3>
+
 Use the FuzzyMatch gem to identify non-identical duplicates in your data.
 
 ## Input and Output
