@@ -8,4 +8,4 @@ tags:
   - parse
 ---
 
-The ColumnParser lets you parse JSON that is included in a column of your table.
+The JSONParser lets you parse JSON that is included in a column of your table.

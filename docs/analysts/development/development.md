@@ -1,9 +1,10 @@
 ---
-title: Project development
+title: Pipeline development
 id: development
-description: Introduction to project development for analysts
+description: Introduction to pipeline development for analysts
 tags:
   - project
+  - pipeline
   - analyst
   - development
 ---

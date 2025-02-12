@@ -85,12 +85,12 @@ const sidebars = {
     {
       type: "html",
       className: "sidebar-title",
-      value: "Analysts <span class='badge'>Preview</span>",
+      value: "Data Analysis <span class='badge'>Preview</span>",
       defaultStyle: true,
     },
     {
       type: "category",
-      label: "Project development",
+      label: "Pipeline development",
       link: { type: "doc", id: "analysts/development/development" },
       items: [
         {
@@ -99,7 +99,11 @@ const sidebars = {
           items: [
             {
               type: "category",
-              label: "Source/Target",
+              label: "Source and Target",
+              link: {
+                type: "doc",
+                id: "analysts/development/gems/source-target/source-target",
+              },
               items: [
                 {
                   type: "category",
@@ -183,9 +187,8 @@ const sidebars = {
           type: "category",
           label: "Execution",
           link: { type: "doc", id: "analysts/development/execution/execution" },
-          items: [],
+          items: ["analysts/development/execution/data-samples"],
         },
-        "analysts/development/data-samples",
         {
           type: "category",
           label: "Testing",
@@ -203,12 +206,8 @@ const sidebars = {
         },
       ],
     },
-    {
-      type: "category",
-      label: "Scheduling and monitoring",
-      link: { type: "doc", id: "analysts/scheduling/scheduling" },
-      items: [],
-    },
+    "analysts/scheduling",
+    "analysts/observability",
     {
       type: "category",
       label: "Extensibility",
@@ -230,7 +229,7 @@ const sidebars = {
     {
       type: "html",
       className: "sidebar-title",
-      value: "Engineers",
+      value: "Data Engineering",
       defaultStyle: true,
     },
     {

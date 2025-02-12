@@ -1,7 +1,7 @@
 ---
 title: Business applications
 id: business-apps
-description:
+description: Package complex pipelines into easy-to-use applications
 tags: []
 ---
 

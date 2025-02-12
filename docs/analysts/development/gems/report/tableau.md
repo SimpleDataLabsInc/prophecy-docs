@@ -1,11 +1,11 @@
 ---
 title: Tableau
 id: tableau
-description: Tableau
+description: Send data to automatically update your Tableau dashboards
 tags:
   - gems
   - analyst
   - report
 ---
 
-This gem lets you send data to Tableau.
+This gem lets you send data that automatically updates your Tableau dashboards.

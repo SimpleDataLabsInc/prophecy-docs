@@ -8,4 +8,4 @@ tags:
   - parse
 ---
 
-The ColumnParser lets you parse XML that is included in a column of your table.
+The XMLParser lets you parse XML that is included in a column of your table.

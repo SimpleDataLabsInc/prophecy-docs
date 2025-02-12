@@ -8,4 +8,4 @@ tags:
   - parse
 ---
 
-Convert text into a column in your table.
+The TextToColumn gem lets you parse a text string and convert it to a column by specifying a delimiter.

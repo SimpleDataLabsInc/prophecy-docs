@@ -1,8 +1,12 @@
 ---
-title: Scheduling and monitoring
+title: Scheduling
 id: scheduling
-description: Schedule and monitor project builds
+description: Schedule pipeline runs
 tags: []
 ---
 
 If you want to schedule pipeline runs, you can do so right in your project canvas.
+
+## Schedule pipeline
+
+## Publish project
