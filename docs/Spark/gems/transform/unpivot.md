@@ -1,7 +1,7 @@
 ---
 title: Unpivot
 id: unpivot
-description: Use the Unpivot gem to transform your data from a wide format to a long format.
+description: Use the Unpivot gem to transform your data from a wide format to a long format
 tags:
   - gems
   - unpivot
