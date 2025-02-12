@@ -2,7 +2,6 @@
 title: XLSX (Excel)
 id: xlsx
 description: XLSX (Excel)
-sidebar_position: 12
 tags:
   - gems
   - file
