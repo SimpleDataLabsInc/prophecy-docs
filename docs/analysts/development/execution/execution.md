@@ -9,7 +9,7 @@ In Prophecy, execution refers to running a set of defined operations in a model 
 
 ## Fabrics
 
-[Fabrics](docs/getting-started/concepts/fabrics.md) define the execution environment of your pipeline. This refers to where the computation happens. Projects for data analysts utilize [Prophecy fabrics](docs/administration/prophecy-fabrics) that combine the Prophecy engine and a SQL engine to run pipelines.
+[Fabrics](docs/getting-started/concepts/fabrics.md) define the execution environment of your pipeline. This refers to where the computation happens. Projects for data analysts utilize [Prophecy fabrics](docs/administration/prophecy-fabrics.md) that combine the Prophecy engine and a SQL engine to run pipelines.
 
 ## Interactive execution
 

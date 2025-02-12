@@ -3,9 +3,9 @@ title: Set up Prophecy fabrics
 description: Use Prophecy and SQL engines to run pipelines
 id: prophecy-fabrics
 tags:
-- fabric
-- SQL
-- analyst
+  - fabric
+  - SQL
+  - analyst
 ---
 
 Prophecy fabrics are leveraged by **data analyst pipelines** for execution. A Prophecy fabric includes:
