@@ -65,4 +65,4 @@ The DataQualityCheck gem includes a variety of checks that are built on the open
 
 ## Code
 
-Each check is compiled into highly-decipherable code. When you switch the the code view and open the DataQualityCheck file, you can see that every check includes a **hint** that populates the **out1** _constraint_message_ column if you do not define a custom failure message.
+Each check is compiled into highly decipherable code. When you switch to the code view and open the DataQualityCheck file, you can see that every check includes a **hint** that populates the **out1** _constraint_message_ column if you do not define a custom failure message.
