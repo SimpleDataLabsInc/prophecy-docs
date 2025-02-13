@@ -8,7 +8,7 @@ tags:
   - schema
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+<span class="badge">SPARK GEM</span><br /><br />
 
 Use the SchemaTransform gem to apply transformations to columns from the incoming DataFrame. This page describes the different transformations—or _operations_—that you can use in this gem.
 

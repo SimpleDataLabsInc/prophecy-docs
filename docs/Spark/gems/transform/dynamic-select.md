@@ -8,7 +8,7 @@ tags:
   - dynamic
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+<span class="badge">SPARK GEM</span><br /><br />
 
 Use the DynamicSelect gem to dynamically filter columns of your dataset based on a set of conditions.
 

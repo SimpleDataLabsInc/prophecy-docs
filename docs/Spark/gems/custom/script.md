@@ -7,7 +7,7 @@ tags:
   - code
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+<span class="badge">SPARK GEM</span><br /><br />
 
 Provides a `SparkSession` and allows you to run custom code.
 

@@ -10,7 +10,7 @@ tags:
   - difference
 ---
 
-<h3><span class="badge">SQL Gem</span></h3>
+<span class="badge">SQL GEM</span><br /><br />
 
 Use the SetOperation gem to perform addition or subtraction of rows from models with identical schemas and different data.
 

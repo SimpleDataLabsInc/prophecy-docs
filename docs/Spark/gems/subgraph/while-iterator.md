@@ -7,7 +7,7 @@ tags:
   - subgraph
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+<span class="badge">SPARK GEM</span><br /><br />
 
 The WhileIterator allows you to group a set of gems together, and then run them one after another repeatedly in a loop.
 

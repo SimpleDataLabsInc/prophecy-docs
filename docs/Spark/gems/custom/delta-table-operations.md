@@ -8,7 +8,7 @@ tags:
   - devops
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+<span class="badge">SPARK GEM</span><br /><br />
 
 Helps perform the following operations on Delta tables.
 

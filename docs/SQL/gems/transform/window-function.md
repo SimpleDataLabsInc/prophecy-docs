@@ -8,7 +8,7 @@ tags:
   - aggregate
 ---
 
-<h3><span class="badge">SQL Gem</span></h3>
+<span class="badge">SQL GEM</span><br /><br />
 
 The WindowFunction lets you define a **WindowSpec** and apply window functions on a model.
 

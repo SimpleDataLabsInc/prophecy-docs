@@ -13,7 +13,7 @@ tags:
   - merge
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+<span class="badge">SPARK GEM</span><br /><br />
 
 Joins 2 or more DataFrames based on the given configuration.
 
@@ -85,7 +85,7 @@ Join hints allow users to suggest the join strategy that Spark should use. For a
 ![Example usage of Join - Join with hints](./img/join_with_hints.png)
 
 ````mdx-code-block
-<Tabs1>
+<Tabs>
 <TabItem value="py" label="Python">
 
 ```py
@@ -115,7 +115,7 @@ object Join_1 {
 ```
 
 </TabItem>
-</Tabs1>
+</Tabs>
 
 ````
 
@@ -147,7 +147,7 @@ export const ImageData = [
 ```
 
 ````mdx-code-block
-<Tabs2>
+<Tabs>
 <TabItem value="py" label="Python">
 
 ```py
@@ -175,7 +175,7 @@ object Join_1 {
 ```
 
 </TabItem>
-</Tabs2>
+</Tabs>
 
 ````
 

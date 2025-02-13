@@ -9,7 +9,7 @@ tags:
   - row distributor
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+<span class="badge">SPARK GEM</span><br /><br />
 
 Use the RowDistributor gem to create multiple DataFrames based on provided filter conditions from an input DataFrame.
 

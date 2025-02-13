@@ -7,7 +7,7 @@ tags:
   - directory
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+<span class="badge">SPARK GEM</span><br /><br />
 
 The Directory gem returns a listing of all the files in a specified directory including file metadata such as file creation time, type, size, path, and more.
 

@@ -8,7 +8,7 @@ tags:
   - columns
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+<span class="badge">SPARK GEM</span><br /><br />
 
 The BulkColumnExpressions gem primarily lets you cast or change the data type of multiple columns at once. It provides additional functionality, including:
 

@@ -8,7 +8,7 @@ tags:
   - parse
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+<span class="badge">SPARK GEM</span><br /><br />
 
 The ColumnParser lets you parse XML or JSON that is included in a column of your table.
 

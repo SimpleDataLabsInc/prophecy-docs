@@ -7,7 +7,7 @@ tags:
   - limit
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+<span class="badge">SPARK GEM</span><br /><br />
 
 Limits the number of rows in the output.
 

@@ -8,7 +8,7 @@ tags:
   - format
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+<span class="badge">SPARK GEM</span><br /><br />
 
 Use the DataCleansing gem to standardize data formats and address missing or null values in the data.
 

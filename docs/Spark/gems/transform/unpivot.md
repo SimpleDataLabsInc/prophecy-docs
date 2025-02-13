@@ -9,7 +9,7 @@ tags:
   - longformat
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+<span class="badge">SPARK GEM</span><br /><br />
 
 Use the Unpivot gem to transform your data from a wide format to a long format.
 
