@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 4
 title: HashiCorp Vault
 id: hashicorp-vault
 description: Working with Hashicorp Vault secrets

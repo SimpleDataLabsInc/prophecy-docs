@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 6
 title: Using secrets in pipelines
 id: using-secrets
 description: Working with secrets in pipelines and gems

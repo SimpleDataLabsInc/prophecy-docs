@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 title: Databricks Secrets
 id: databricks-secrets
 description: Working with Databricks Secrets

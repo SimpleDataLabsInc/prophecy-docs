@@ -2,6 +2,7 @@
 title: Secret Management For Spark Fabrics
 id: secret-management-spark
 description: Secret Management for Spark Fabrics
+sidebar_position: 1
 sidebar_class_name: hidden
 tags:
   [spark, secrets, vault, environment, variable, databricks, secret-provider]

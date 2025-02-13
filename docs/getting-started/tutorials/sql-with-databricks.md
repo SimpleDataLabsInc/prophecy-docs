@@ -77,7 +77,7 @@ Since we’re setting up a fabric connected to Databrick’s JDBC SQL endpoint, 
 
 Enter the **(3) JDBC Url** and **(4) Personal Access Token** gathered from the previous steps. Finally, select your **(5) Catalog** and **(6) Schema** of choice. This step is recommended, however, optional. When using Databricks Unity Catalog, the default Catalog is main and the default Schema is default. Make sure you connect to a catalog and schema for which your user has write access. The tables resulting from the model will be written here.
 
-Click **(7) Complete** when finished. Prophecy checks the credentials and details for network and catalog accesses. If either fails, the fabric won’t be created and you will receive an Exception error. Optionally, enhance metadata viewing by creating a [Metadata Connection](/docs/administration/metadata-connections.md), recommended for users with hundreds or thousands of tables housed in their data provider(s).
+Click **(7) Complete** when finished. Prophecy checks the credentials and details for network and catalog accesses. If either fails, the fabric won’t be created and you will receive an Exception error. Optionally, enhance metadata viewing by creating a [Metadata Connection](/docs/administration/connections-and-secrets/metadata-connections.md), recommended for users with hundreds or thousands of tables housed in their data provider(s).
 
 Note, fabrics are owned by Teams. Every Member present within the Team will be able to access the fabric, however, each individual has to provide their own Personal Access Token.
 

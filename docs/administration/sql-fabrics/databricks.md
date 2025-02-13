@@ -53,7 +53,7 @@ Prophecy supports Databricks Volumes. When you run a Python or Scala pipeline vi
 
 ### Connections
 
-(Optional) Browsing data catalogs, tables, and schemas can be a time-intensive operation especially for Warehouses with hundreds or thousands of tables. To address this challenge, Prophecy offers a [Metadata Connection](/docs/administration/metadata-connections.md) to sync metadata from the data provider at regular intervals.
+(Optional) Browsing data catalogs, tables, and schemas can be a time-intensive operation especially for Warehouses with hundreds or thousands of tables. To address this challenge, Prophecy offers a [Metadata Connection](/docs/administration/connections-and-secrets/metadata-connections.md) to sync metadata from the data provider at regular intervals.
 
 ## Using fabrics
 

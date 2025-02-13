@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 5
 title: Environment Variables
 id: env-variable
 description: Working with Environment Variables

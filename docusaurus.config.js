@@ -346,11 +346,11 @@ const config = {
             from: "/getting-started/airflow",
           },
           {
-            to: "/administration/metadata-connections",
+            to: "/administration/connections-and-secrets/metadata-connections",
             from: "/metadata/metadata-connections",
           },
           {
-            to: "/administration/metadata-connections",
+            to: "/administration/connections-and-secrets/metadata-connections",
             from: "/concepts/metadata",
           },
           {
