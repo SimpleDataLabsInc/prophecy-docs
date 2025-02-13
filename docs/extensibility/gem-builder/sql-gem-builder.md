@@ -146,7 +146,7 @@ The `dialog` function contains code specific to how the gem UI should look to th
 
 ```
 
-After defining a gem in the code editor, you can preview and test it. See [Preview](#3-preview). This feature directly renders the interface for the selected gem using a dummy schema, enabling you to configure and experiment with the gem’s UI components. You can then finalize them by previewing the generated SQL code.
+After defining a gem in the code editor, you can preview and test it. This feature directly renders the interface for the selected gem using a dummy schema, enabling you to configure and experiment with the gem’s UI components. You can then finalize them by previewing the generated SQL code.
 
 ![Gem builder preview](img/gem-builder-preview.png)
 

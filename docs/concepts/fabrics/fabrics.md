@@ -59,6 +59,6 @@ You can click into each fabric to access the fabric settings. These will resembl
 
 Get started with hands-on guides. Learn step by step how to connect to your execution engine by creating a fabric:
 
-1. Create a SQL fabric with a JDBC or Unity Catalog connection following [this guide](docs/getting-started/tutorials/sql-with-databricks.md#setup-prophecys-Fabric).
+1. Create a SQL fabric with a JDBC or Unity Catalog connection following [this guide](docs/getting-started/tutorials/sql-with-databricks.md).
 2. Create a Databricks fabric following [these steps](/docs/administration/Spark-fabrics/databricks/databricks.md).
 3. Create an EMR fabric with Livy step by step [here](/docs/administration/Spark-fabrics/emr.mdx).

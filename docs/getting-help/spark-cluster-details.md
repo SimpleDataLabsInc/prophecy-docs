@@ -103,8 +103,8 @@ For those who prefer to use code, create a notebook (example below) and send the
 Replace the workspace URL, personal access token, clusterID, and API token as appropriate.
 :::
 
-<details><summary>Python</summary>
-<p>
+<details>
+<summary>Python</summary>
 
 ```
 # Databricks notebook source
@@ -153,7 +153,6 @@ cluster_access_info=response.json()
 print(f"Cluster Access Mode: {cluster_access_info['data_security_mode']}")
 ```
 
-</p>
 </details>
 
 ## Connectivity Check

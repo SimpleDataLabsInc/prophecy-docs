@@ -150,7 +150,7 @@ pbt deploy --path /path/to/your/prophecy_project/ --release-version 1.0 --projec
 
 The `deploy` command also supports an advanced option `--fabric-ids` ( comma separated if more than one ) if there is a
 need to only deploy jobs associated with certain Fabric IDs. This option is often used in a multi-workspace environment.
-[Find the Fabric ID](pbt-jenkins.md#fabricid) for your fabric by navigating to the Metadata page of that fabric and observing the URL.
+[Find the Fabric ID](pbt-jenkins.md) for your fabric by navigating to the Metadata page of that fabric and observing the URL.
 
 The following command will filter out and only deploy the jobs associated with given Fabric IDs.
 Example deploy:
