@@ -103,7 +103,8 @@ For those who prefer to use code, create a notebook (example below) and send the
 Replace the workspace URL, personal access token, clusterID, and API token as appropriate.
 :::
 
-<details><summary>Python</summary>
+<details>
+<summary>Python</summary>
 <p>
 
 ```

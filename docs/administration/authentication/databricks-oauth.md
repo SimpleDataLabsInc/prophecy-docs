@@ -63,8 +63,10 @@ Now, anyone who uses this fabric can use their individual Databricks credentials
 
 ![Databricks login prompt](./img/databricks-fabric-login.png)
 
+When you try to sign in, a new browser tab will automatically open. If the tab does not open, you may need to bypass or disable pop-up blockers.
+
 :::note
-You only need to perform this authentication periodically, depending on the OAuth timeout settings within Databricks. SaaS deployments automatically use the default time period. If you have a Dedicated SaaS or self-hosted deployment, your Databricks Account Administrator can adjust the timeout setting.
+You only need to sign in periodically depending on the OAuth timeout settings within Databricks. SaaS deployments automatically use the default time period. If you have a Dedicated SaaS or self-hosted deployment, your Databricks Account Administrator can adjust the timeout setting.
 :::
 
 ### [Machine-to-Machine (M2M)](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html)
