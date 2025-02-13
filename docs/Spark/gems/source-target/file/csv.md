@@ -22,7 +22,7 @@ The below list contains the additional parameters to read a CSV file:
 | ------------ | ---------------------------------------------------------------------------------------------------------------------- |
 | Dataset Name | Name of the dataset.                                                                                                   |
 | Location     | Location of the file to be loaded. You can read from a file location, Sharepoint (Python only), or SFTP (Python only). |
-| Schema       | Schema to applied on the loaded data. Schema can be defined/edited as JSON or inferred using `Infer Schema` button.    |
+| Schema       | Schema applied to the loaded data. Schema can be defined/edited as JSON or inferred using `Infer Schema` button.       |
 
 ## Target
 

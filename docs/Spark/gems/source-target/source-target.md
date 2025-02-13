@@ -17,7 +17,6 @@ A collection of gems related to working with various file-based formats.
 | [CSV](./file/csv)                   | Allows you to read or write a delimited file (often called Comma Separated File, CSV).                            |
 | [Delta](./file/delta)               | Reads data from Delta files present at a path and writes Delta files to a path based on configuration.            |
 | [Fixed Format](./file/fixed-format) | Read data from fixed format files with expected schema, or write data to fixed format files with expected schema. |
-| [Iceberg](./file/iceberg)           | Reads data from Iceberg files present at a path and writes Iceberg files to a path based on configuration.        |
 | [JSON](./file/json)                 | Allows you to read or write a delimited file (often called Comma Separated File, CSV).                            |
 | [Kafka](./file/kafka)               | This source currently connects with Kafka Brokers in Batch mode.                                                  |
 | [ORC](./file/orc)                   | ORC (Optimized Row Columnar) is a columnar file format designed for Spark/Hadoop workloads.                       |
@@ -46,15 +45,16 @@ A collection of gems specializing in connecting to warehouse-style data sources.
 
 A collection of gems related to working with various table-based formats.
 
-| Name                           | Description                                                                                                 |
-| ------------------------------ | ----------------------------------------------------------------------------------------------------------- |
-| [Delta](./catalog-table/delta) | Reads data from Delta tables saved in data catalog and writes data into Delta table in a managed Metastore. |
-| [Hive](./catalog-table/hive)   | Read from or write to Tables managed by a Hive metastore.                                                   |
+| Name                               | Description                                                                                                 |
+| ---------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| [Delta](./catalog-table/delta)     | Reads data from Delta tables saved in data catalog and writes data into Delta table in a managed Metastore. |
+| [Hive](./catalog-table/hive)       | Read from or write to Tables managed by a Hive metastore.                                                   |
+| [Iceberg](./catalog-table/iceberg) | Reads data from Iceberg files present at a path and writes Iceberg files to a path based on configuration.  |
 
 ## Lookup
 
-[Lookup](/docs/Spark/gems/source-target/advanced/lookup.md) is a special component that allows you to broadcast any data, to later be used anywhere in your pipeline.
+[Lookup](/docs/Spark/gems/source-target/lookup.md) is a special component that allows you to broadcast any data, to later be used anywhere in your pipeline.
 
 ## Synthetic Data Generator
 
-If you don't have the data you need, try generating fake data. Using the [Synthetic Data Generator gem](/docs/Spark/gems/source-target/advanced/synthetic-data-generator.md), you can specify columns with various datatypes and populate fields with randomly generated data. Specify the boundaries for each row, the percentage of rows which should have null values, etc. It's not real data but it's the next best thing!
+If you don't have the data you need, try generating fake data. Using the [Synthetic Data Generator gem](/docs/Spark/gems/source-target/file/synthetic-data-generator.md), you can specify columns with various data types and populate fields with randomly generated data. Specify the boundaries for each row, the percentage of rows which should have null values, etc. It's not real data but it's the next best thing!

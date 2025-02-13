@@ -1,7 +1,7 @@
 ---
 title: OrderBy
 id: order-by
-description: Sort your data based on one or more Columns
+description: Sort your data based on one or more columns
 tags:
   - gems
   - order by

@@ -1,7 +1,7 @@
 ---
 title: DataCleansing
 id: data-cleansing
-description: Standardize data formats and address missing or null values in the data.
+description: Standardize data formats and address missing or null values in the data
 tags:
   - gems
   - clean
