@@ -1,3 +1,6 @@
+import React from "react";
+import "../css/custom.css";
+
 export default function Requirements(props) {
   return (
     <div>
