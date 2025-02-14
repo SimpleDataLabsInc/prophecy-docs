@@ -589,6 +589,7 @@ const sidebars = {
     },
     "administration/architecture",
     "administration/prophecy-deployment",
+    "administration/security",
     {
       type: "category",
       label: "Authentication",
