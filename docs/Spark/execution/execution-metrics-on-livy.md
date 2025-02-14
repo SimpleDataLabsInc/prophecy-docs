@@ -19,7 +19,7 @@ tags:
 Execution metrics is supported for all types of clusters having Livy enabled and have a Hive metastore (HMS).
 we can just provide the table names in [execution metric setup page](./execution-metrics#team-level-access-control).
 
-- Prophecy **automatically creates** table if they do not exist, Or users can also create their own table with [required table schema](./execution-metrics#creating-tables-for-livy).
+- Prophecy **automatically creates** table if they do not exist, Or users can also create their own table with [required table schema](./execution-metrics).
 - Creating tables can be specially useful if user want to use **External tables** or want to change the default storage format (**parquet**).
 
 ## Interims on Livy

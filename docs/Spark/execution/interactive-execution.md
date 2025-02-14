@@ -29,7 +29,7 @@ Data sampling is enabled by default for interactive execution. To change data sa
 
 1. Select the **...** (ellipses) dropdown.
 2. Open the **Pipeline Settings**.
-3. Toggle **Job Sampling** to enable or disable generating interim samples for scheduled jobs. For job sampling, interim metrics are stored in the compute cluster (such as a Databricks workspace) and are visible in [execution metrics](#execution-metrics).
+3. Toggle **Job Sampling** to enable or disable generating interim samples for scheduled jobs. For job sampling, interim metrics are stored in the compute cluster (such as a Databricks workspace) and are visible in [execution metrics](docs/Spark/execution/execution-metrics.md).
 4. Select **Sampling Mode** to chose the level of data sampling.
 5. Toggle **Data Sampling** to enable or disable generating interim samples during interactive runs.
 

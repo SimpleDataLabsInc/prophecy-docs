@@ -74,7 +74,7 @@ In the Project Dependencies section, you have the option to include [additional 
 
 ### Project metadata and editor
 
-You should see the [project metadata](/concepts/metadata) page. Project metadata includes information about the contents, dependencies, settings, and more related to your project. We want to start editing the project, so click **Open in Editor**.
+You should see the project metadata page. Project metadata includes information about the contents, dependencies, settings, and more related to your project. We want to start editing the project, so click **Open in Editor**.
 
 ## Develop a pipeline
 

@@ -105,7 +105,7 @@ If you’re new to Git, we recommend starting by connecting to Prophecy Managed 
 
 When choosing Prophecy Managed Git as your default Git repository, there are no further steps required! Prophecy automatically takes care of repository creation, connection, and initialization. You can just click **(3) Continue** to finalize the project setup.
 
-Using Prophecy Managed Git is very easy, but has some major downsides and therefore not recommended for production use-cases. Primarily, you will not be able to access the repository externally from Prophecy programmatically (which is a common enterprise requirement) or create [Pull Requests](/docs/ci-cd/git/pull-request-templates.md/#raising-pull-requests) (which is also recommended as a part of standard [Git flow](https://docs.github.com/en/get-started/quickstart/github-flow)).
+Using Prophecy Managed Git is very easy, but has some major downsides and therefore not recommended for production use-cases. Primarily, you will not be able to access the repository externally from Prophecy programmatically (which is a common enterprise requirement) or create [Pull Requests](docs/ci-cd/git/pull-request-templates.md) (which is also recommended as a part of standard [Git flow](https://docs.github.com/en/get-started/quickstart/github-flow)).
 
 If you decide to choose this option, you can always migrate the project to an external Git Repository by cloning it.
 

@@ -120,7 +120,7 @@ databricks secrets list --scope slack
 ### 1c. Load the Git repository
 
 1.  **Login** to [Prophecy](https://app.prophecy.io/metadata/auth/signup)
-2.  **Import** a new Prophecy [Project](/docs/getting-started/concepts/project.md#1-create-new-project)
+2.  **Import** a new Prophecy [Project](/docs/getting-started/concepts/project.md)
 3.  **Load the forked Git repository** to the Prophecy project as shown in this 30-second [video.](https://github.com/prophecy-samples/gen-ai-chatbot-template/assets/3248329/dcdfabaf-4870-421d-9f92-4ab028c5db5a), pointing to your fork at `https://github.com/<your_username>/gen-ai-chatbot-template`
 4.  **Connect** to your Spark cluster by creating a fabric following [these steps.](docs/administration/Spark-fabrics/databricks/databricks.md)
 

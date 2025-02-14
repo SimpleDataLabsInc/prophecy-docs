@@ -86,9 +86,10 @@ The below list contains the additional parameters to write a JSON file:
 ### Generated Code {#target-code}
 
 ````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <Tabs>
-
 <TabItem value="py" label="Python">
 
 ```py
@@ -114,7 +115,6 @@ object write_json {
 
 </TabItem>
 </Tabs>
-
 
 ````
 
