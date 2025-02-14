@@ -88,7 +88,7 @@ Let's say you want to create a PromoCodeRule that will be used in various other 
 1. Add the business rule to the project.
 1. Commit your changes to the project.
 1. Merge the changes to the main branch.
-1. [Release and deploy](docs/ci-cd/deployment/deployment.md##how-to-release-a-project) the project.
+1. [Release and deploy](docs/ci-cd/deployment/deployment.md#how-to-release-a-project) the project.
 
 Then, you must give other users access to your project.
 

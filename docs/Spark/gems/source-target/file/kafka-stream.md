@@ -191,7 +191,7 @@ Taking this approach gives us the following benefits:
 3. We can replay old messages by modifying the Metadata table
 
 :::note
-For production workflows the [Phase](../../../../concepts/project/gems.md#phase) for the `Script` gem that updates the offsets should be greater than the Phase of the Target gem.
+For production workflows the [phase](../../../../concepts/project/gems.md#gem-phase) for the `Script` gem that updates the offsets should be greater than the Phase of the Target gem.
 This is to ensure that offsets are only updated in the table after data is safely persisted to the Target.
 :::
 

@@ -137,9 +137,9 @@ object Source {
 :::note
 Among these write modes `overwrite`, `append`, `ignore`, and `error` work the same way as with other native Spark-supported formats such as Parquet.
 
-To read more about using `merge` write mode [**click here**](../file/delta.md#merge-write-mode-with-delta).
+To read more about using `merge` write mode [click here](../file/delta.md).
 
-To read more about using `SCD2` merge write mode [**click here**](../file/delta.md#scd2-merge-write-mode-with-delta).
+To read more about using `SCD2` merge write mode [click here](../file/delta.md).
 :::
 
 ### Target Example

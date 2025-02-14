@@ -24,7 +24,7 @@ Please follow this [Secrets Documentation](https://docs.databricks.com/security/
 
 ### Step2: Create Config in Pipeline to map to Created Databricks Secrets
 
-Add configs of Type `databricks_secret` in [Pipeline Configs](/docs/Spark/configuration.md#pipeline-configuration). Let's say we call it `snowflake_user` and `snowflake_pass`.
+Add configs of Type `databricks_secret` in [Pipeline Configs](/docs/Spark/configuration.md). Let's say we call it `snowflake_user` and `snowflake_pass`.
 
 ![img.png](img/databricks_secrets_config.png)
 

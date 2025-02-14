@@ -10,7 +10,7 @@ tags:
 
 :::info Built on
 Built on [MongoDB Spark Connector](https://www.mongodb.com/docs/spark-connector/v10.0/#mongodb-connector-for-spark) v10.0. <br/>
-Add `mongodb-spark-connector` jar as dependency [for more](docs/extensibility/dependencies/spark-dependencies.md#add-dependency).
+Add `mongodb-spark-connector` jar as dependency [for more](docs/extensibility/dependencies/spark-dependencies.md).
 :::
 Allows read and write operations on `MongoDB`.
 
