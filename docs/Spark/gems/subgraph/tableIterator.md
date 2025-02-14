@@ -8,7 +8,7 @@ tags:
   - iterator
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+<span class="badge">SPARK GEM</span><br /><br />
 
 TableIterator allows you to iterate over one or more gems for each row of the first input DataFrame.
 Let's see how to create a Basic Loop which loops over a Metadata Table, and for each row of the table will run the gems inside the Subgraph.

@@ -10,7 +10,7 @@ tags:
   - descending
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+<span class="badge">SPARK GEM</span><br /><br />
 
 Sorts a DataFrame on one or more columns in ascending or descending order.
 

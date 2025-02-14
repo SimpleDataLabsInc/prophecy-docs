@@ -13,7 +13,7 @@ tags:
   - merge
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+<span class="badge">SPARK GEM</span><br /><br />
 
 Joins 2 or more DataFrames based on the given configuration.
 
