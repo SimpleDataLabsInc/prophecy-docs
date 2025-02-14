@@ -92,7 +92,7 @@ Click **Continue**.
 
 ### Secrets
 
-Here, you can configure any Secret Provider and secrets for your Livy fabric. Read more about Secret Management [here](/docs/administration/connections-and-secrets/secret-management.md)
+Here, you can configure any [Secret Provider](docs/administration/connections-and-secrets/secret-providers.md) and secrets for your Livy fabric.
 
 Click on **Complete** to complete the fabric setup.
 

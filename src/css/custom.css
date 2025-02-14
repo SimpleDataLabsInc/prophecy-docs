@@ -266,3 +266,10 @@ Gems table page
 .fixed-table td:nth-child(2) {
   width: 80%;
 }
+
+/* Remove margin from lists in tables */
+
+.table-list {
+  margin: 0 !important;
+  padding-left: 1rem !important;
+}

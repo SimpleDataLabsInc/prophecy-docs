@@ -1,23 +1,49 @@
 ---
-title: Metadata connections
+title: Connections
 id: metadata-connections
-description: Sync catalogs, tables, schemas, etc into Prophecy's project viewer
+description: Browse catalogs, tables, schemas, etc. in Prophecy
 sidebar_position: 1
 tags:
   - metadata
-  - datasets
   - tables
   - connections
   - data
 ---
 
-When you create a metadata connection in a [fabric](docs/getting-started/concepts/fabrics.md), Prophecy can connect to the data provider (like Databricks) and **cache metadata on a regular basis**. If you have thousands of objects, such as tables or views, this continuous sync can make fetching objects much faster in Prophecy—particularly in the Environment tab of the [Project Editor](/docs/getting-started/concepts/project.md#project-editor).
+Prophecy lets you work with various data providers when building your pipelines and models. To make this easier, you can create **connections** between Prophecy and a data provider. Connections enable functionality such as:
 
-:::note
-Different from metadata connections, Prophecy also supports Airflow connections which perform a similar function for Airflow jobs.
+- Reusing credentials that are established in the connection.
+- Browsing data from the data provider in the [Environment tab](docs/getting-started/concepts/project.md#project-editor) of your Prophecy project.
+- Auto-indexing data for search in the Prophecy interface.
+- Syncing metadata on a regular basis for faster object fetching.
+
+Connections are stored in [fabrics](docs/getting-started/concepts/fabrics.md).
+
+:::info
+
+Connection functionality will vary across data providers.
+
 :::
 
-## Metadata connection setup
+## Add connection in a project
+
+There are two ways to add connections inside of a project:
+
+- Inside a gem
+- In the Environment tab
+
+### Browse data
+
+1. Attach to a fabric that has a metadata connection.
+1. Open the Environment tab to access the data.
+1. Note the workspace that is synced at the frequency defined in the metadata connection.
+1. Add a table to the canvas as a dataset.
+1. Define whether your dataset should be added as a [Source or Target](docs/Spark/gems/source-target/source-target.md) gem.
+1. Now the dataset appears on the canvas, ready for transformations.
+
+![AddGem](./img/2-add-gem.png)
+
+## Add connection in a fabric
 
 Metadata connections are set up inside individual fabrics. This means that anyone with access to the fabric can take advantage of the metadata connection.
 
@@ -33,23 +59,6 @@ Metadata connections are set up inside individual fabrics. This means that anyon
 1. **Add** the metadata connection to save it.
 
 ![CreateConnection](./img/1-create-connection.png)
-
-:::info
-While you can create multiple metadata connections per fabric, only one connection can be enabled at a time.
-:::
-
-## Metadata connection usage
-
-To use a metadata connection in a project:
-
-1. Attach to a fabric that has a metadata connection.
-1. Open the Environment tab to access the data.
-1. Note the workspace that is synced at the frequency defined in the metadata connection.
-1. Add a table to the canvas as a dataset.
-1. Define whether your dataset should be added as a [Source or Target](docs/Spark/gems/source-target/source-target.md) gem.
-1. Now the dataset appears on the canvas, ready for transformations.
-
-![AddGem](./img/2-add-gem.png)
 
 ## Execution environment requirements
 

@@ -32,7 +32,7 @@ If you add new secrets in Databricks, you can refresh secrets in Prophecy to fet
 
 :::info Free trials
 
-If you are using a free trial, you can use [Databricks Secrets](./databricks-secrets.md#managing-secrets-for-prophecy-managed-databricks). These will be automatically cleaned up after the trial expires. While Prophecy assigns a separate scope to each Prophecy-managed fabric, it is not recommended to use your production data tools for trials.
+If you are using a free trial, you can use Databricks as the secret provider. Your secrets will be automatically cleaned up after the trial expires. While Prophecy assigns a separate scope to each Prophecy-managed fabric, it is not recommended to use your production data tools for trials.
 
 :::
 

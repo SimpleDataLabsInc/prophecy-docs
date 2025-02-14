@@ -216,9 +216,9 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Business applications",
+      label: "Apps",
       link: { type: "doc", id: "analysts/business-apps/business-apps" },
-      items: [],
+      items: ["analysts/business-apps/app-creation"],
     },
 
     ///------------------ ENGINEERS ------------------------///
