@@ -1,6 +1,5 @@
 ---
-sidebar_position: 6
-title: Using secrets in pipelines
+title: Secrets in pipelines
 id: using-secrets
 description: Working with secrets in pipelines and gems
 tags: [env-var, environment, variable, secrets]

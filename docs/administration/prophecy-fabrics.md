@@ -2,6 +2,7 @@
 title: Set up Prophecy fabrics
 description: Use Prophecy and SQL engines to run pipelines
 id: prophecy-fabrics
+sidebar_label: Prophecy fabrics
 tags:
   - fabric
   - SQL
