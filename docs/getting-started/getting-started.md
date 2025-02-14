@@ -15,14 +15,14 @@ Based on these answers, you may choose to get started with data analysis, or ins
 
 ```mdx-code-block
 <CardContainer>
-  <Card title="Data Analysis Quick Start" to="./getting-started/">
+  <Card title="Data Analysis Quick Start" to="./quick-starts">
     Try building a pipeline that leverages SQL to
     prepare some data for analysis—no coding necessary.
   </Card>
-  <Card title="Engineering Quick Start | Spark" to="./getting-started/">
+  <Card title="Engineering Quick Start | Spark" to="./quick-starts">
     Develop your first data pipeline and review the generated Spark code.
   </Card>
-    <Card title="Engineering Quick Start | SQL" to="./getting-started/">
+    <Card title="Engineering Quick Start | SQL" to="./quick-starts">
     Develop your first data pipeline and review the generated SQL code.
   </Card>
 </CardContainer>
@@ -35,19 +35,19 @@ Based on these answers, you may choose to get started with data analysis, or ins
 <CardContainer>
   <Card
     title="Spark with Databricks"
-    to="./getting-started/quick-starts/spark-onboarding"
+    to="./tutorials/spark-with-databricks"
   >
     Learn about and try developing pipelines in Spark.
   </Card>
   <Card
     title="SQL with Databricks"
-    to="./getting-started/quick-starts/spark-onboarding"
+    to="./tutorials/sql-with-databricks"
   >
     Learn about and try developing models with Databricks SQL.
   </Card>
   <Card
     title="SQL with Snowflake"
-    to="./getting-started/quick-starts/spark-onboarding"
+    to="./tutorials/sql-with-snowflake"
   >
     Learn about and try developing models with Snowflake.
   </Card>
@@ -59,13 +59,13 @@ Based on these answers, you may choose to get started with data analysis, or ins
 
 ```mdx-code-block
 <CardContainer>
-  <Card title="Project Development" to="./getting-started/">
+  <Card title="Analyst Pipeline Development" to="../analysts/development/">
     Ingest data from common sources, prepare data using visual transformations, and schedule with the click of a button.
   </Card>
-  <Card title="Pipeline Development" to="./getting-started/">
+  <Card title="Engineering Pipeline Development" to="../Spark/">
     Create pipelines using Git workflows for CI/CD, external orchestration for scheduling, and Spark execution engines for processing power.
   </Card>
-  <Card title="Model Development" to="./getting-started/">
+  <Card title="Model Development" to="../SQL/">
     Develop models using Git workflows for CI/CD, external orchestration for scheduling, and SQL with dbt for data processing.
   </Card>
 </CardContainer>
