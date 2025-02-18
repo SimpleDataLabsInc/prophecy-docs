@@ -24,76 +24,13 @@ You can access your Spark cluster configurations directly from the Spark UI.
 Please send screenshots of each configuration if possible.
 :::
 
-<table>
-  <thead>
-    <tr>
-      <th>Configuration to Send</th>
-      <th>Example</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Overall cluster configuration (e.g., Spark version, Databricks runtime version, UC single or UC shared)</td>
-      <td>
-        <br />
-        <img
-          src={require("./img/cluster_1.png").default}
-          alt="Cluster configuration example"
-          width="75%"
-        />
-        <br />
-      </td>
-    </tr>
-    <tr>
-      <td>Cluster JSON (edited to remove any private or sensitive information)</td>
-      <td>
-        <br />
-        <img
-          src={require("./img/cluster_2.png").default}
-          alt="Cluster JSON example"
-          width="75%"
-        />
-        <br />
-      </td>
-    </tr>
-    <tr>
-      <td>Libraries installed on the cluster</td>
-      <td>
-        <br />
-        <img
-          src={require("./img/cluster_3.png").default}
-          alt="Cluster libraries example"
-          width="75%"
-        />
-        <br />
-      </td>
-    </tr>
-    <tr>
-      <td>Init scripts run on the cluster. Include the script itself if possible.</td>
-      <td>
-        <br />
-        <img
-          src={require("./img/cluster_4.png").default}
-          alt="Cluster init scripts example"
-          width="75%"
-        />
-        <br />
-      </td>
-    </tr>
-    <tr>
-      <td>Output of attaching cluster in a notebook. You may need to duplicate the tab and try attaching the same cluster in the duplicate tab.</td>
-      <td>
-        <br />
-        <img
-          src={require("./img/cluster_5.png").default}
-          alt="Notebook attach to cluster example"
-          width="75%"
-        />
-        <br />
-      </td>
-    </tr>
-  </tbody>
-</table>
+| Configuration to Send                                                                                                                 | Example                                                                                                               |
+| ------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| Overall cluster configuration (e.g., Spark version, Databricks runtime version, UC single or UC shared)                               | <br /><img src={require("./img/cluster_1.png").default} alt="Cluster configuration example" width="75%" /><br />      |
+| Cluster JSON (edited to remove any private or sensitive information)                                                                  | <br /><img src={require("./img/cluster_2.png").default} alt="Cluster JSON example" width="75%" /><br />               |
+| Libraries installed on the cluster                                                                                                    | <br /><img src={require("./img/cluster_3.png").default} alt="Cluster libraries example" width="75%" /><br />          |
+| Init scripts run on the cluster. Include the script itself if possible.                                                               | <br /><img src={require("./img/cluster_4.png").default} alt="Cluster init scripts example" width="75%" /><br />       |
+| Output of attaching cluster in a notebook. You may need to duplicate the tab and try attaching the same cluster in the duplicate tab. | <br /><img src={require("./img/cluster_5.png").default} alt="Notebook attach to cluster example" width="75%" /><br /> |
 
 ### Run a notebook {#configNB}
 
