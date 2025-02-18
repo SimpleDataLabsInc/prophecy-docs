@@ -187,7 +187,7 @@ const sidebars = {
           type: "category",
           label: "Execution",
           link: { type: "doc", id: "analysts/development/execution/execution" },
-          items: ["analysts/development/execution/data-samples"],
+          items: [],
         },
         {
           type: "category",
@@ -396,6 +396,7 @@ const sidebars = {
           },
           items: [
             "Spark/execution/data-explorer",
+            "Spark/execution/data-diff",
             "Spark/execution/conditional-execution",
             "Spark/execution/execution-metrics",
             "Spark/execution/executions_on_databricks_clusters",

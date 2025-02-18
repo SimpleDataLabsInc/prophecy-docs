@@ -18,11 +18,7 @@ Running your pipeline during development can help you understand how your data i
 - Click the **play** button on the pipeline canvas to run the entire pipeline.
 - Click the **play** button on a particular gem to run the pipeline **up to and including** that gem. This is useful for testing and debugging when you don't want to run the entire pipeline.
 
-When you click on an interim data sample, you open the [Data Explorer](docs/analysts/development/execution/data-samples.md). The Data Explorer displays the data preview, the data profile, and the data diff of the sample.
-
-:::note
-By default, each gem that runs will produce an output data sample. To change this behavior, update the sampling settings in the pipeline settings.
-:::
+When you click on an interim data sample, you open the Data Explorer. The Data Explorer lets you sort, filter, and search through the gem output.
 
 ## Job execution
 

@@ -21,7 +21,7 @@ There are two ways to run a pipeline interactively:
 
 ![Interactive run options](img/interactive-execution-play-options.png)
 
-After you run your pipeline, you will see the interims appear between gems. These previews are temporarily cached. Learn more about how to navigate the interim data samples in [Data Explorer](docs/Spark/execution/data-explorer.md).
+After you run your pipeline, the interims will appear between gems. These previews are temporarily cached. Learn more about how to navigate the interim data samples in [Data Explorer](docs/Spark/execution/data-explorer.md).
 
 ## Enable data sampling
 
@@ -30,13 +30,13 @@ Data sampling is enabled by default for interactive execution. To change data sa
 1. Select the **...** (ellipses) dropdown.
 2. Open the **Pipeline Settings**.
 3. Toggle **Job Sampling** to enable or disable generating interim samples for scheduled jobs. For job sampling, interim metrics are stored in the compute cluster (such as a Databricks workspace) and are visible in [execution metrics](docs/Spark/execution/execution-metrics.md).
-4. Select **Sampling Mode** to chose the level of data sampling.
-5. Toggle **Data Sampling** to enable or disable generating interim samples during interactive runs.
+4. Select **Sampling Mode** to choose how and when your data will be sampled.
+5. Toggle **Data Sampling** to enable or disable generation of interim samples during interactive runs.
 
 ![Data and Job Sampling](img/interactive-execution-job-data-sampling.png)
 
 :::note
-[Vanilla](docs/Spark/execution/databricks-clusters-behaviors.md#vanilla-interims) is an interim sampling mode reserved for Shared Databricks clusters.
+To learn more about different data sampling modes, explore the documentation on [pipeline settings](docs/Spark/pipeline-settings.md#run-settings).
 :::
 
 ### Advanced settings
