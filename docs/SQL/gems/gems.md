@@ -16,14 +16,14 @@ Each gem corresponds to a SQL statement, which users can construct through an in
 
 The table below outlines the different SQL gem categories.
 
-<div class="gems-table">
+<div class="fixed-table">
 
-| <div style={{'width':'100px'}}>Gem</div>      | Category                                                  | Description                                                                                                   |
-| --------------------------------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| ![Model](img/Model.png)                       | [**Model**](docs/SQL/gems/target-models/target-models.md) | Each model is a DAG that defines a single table or view. A model can also serve as an input for other models. |
-| ![Source](img/Source%20and%20Target.png)      | [**Datasource**](./datasources/)                          | Gems related to loading data: seeds, sources, or models can be used as datasources.                           |
-| ![Transform](img/Transform.png)               | [**Transform**](./transform/)                             | Gems related to the transformation of data.                                                                   |
-| ![Join and Split](img/Join%20and%20Split.png) | [**Join**](./joins.md)                                    | Gems related to splitting or joining tables together.                                                         |
-| ![Custom](img/Custom.png)                     | [**Custom**](./custom/custom.md)                          | The set of Gems built to extend Prophecy's capabilities.                                                      |
+| Category                                                  | Description                                                                                                   |
+| --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| [**Model**](docs/SQL/gems/target-models/target-models.md) | Each model is a DAG that defines a single table or view. A model can also serve as an input for other models. |
+| [**Datasource**](./datasources/)                          | Gems related to loading data: seeds, sources, or models can be used as datasources.                           |
+| [**Transform**](./transform/)                             | Gems related to the transformation of data.                                                                   |
+| [**Join**](./joins.md)                                    | Gems related to splitting or joining tables together.                                                         |
+| [**Custom**](./custom/custom.md)                          | The set of Gems built to extend Prophecy's capabilities.                                                      |
 
 </div>
