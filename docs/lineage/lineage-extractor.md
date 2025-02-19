@@ -77,7 +77,7 @@ You only need to provide SMTP credentials if you plan to pass the `--send-email`
 :::
 
 ```
-export PROPHECY_URL=https://<myUrl>.prophecy.io
+export PROPHECY_URL=https://<custom>.prophecy.io
 export PROPHECY_PAT=${{ secrets.PROPHECY_PAT }}
 
 export SMTP_HOST=smtp.gmail.com
@@ -136,14 +136,14 @@ python -m prophecy_lineage_extractor --project-id 36587 --pipeline-id 36587/pipe
 
         - name: Extract and Send Prophecy Lineage
           env:
-            PROPHECY_URL: "https://app.prophecy.io"
+            PROPHECY_URL: "https://<custom>.prophecy.io"
             MONITOR_TIME_ENV: ${{ vars.MONITOR_TIME_ENV }}
             PROPHECY_PAT: ${{ secrets.PROPHECY_PAT }}
             SMTP_HOST: "smtp.gmail.com"
             SMTP_PORT: "587"
             SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
             SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-            RECEIVER_EMAIL: "ashish@prophecy.io"
+            RECEIVER_EMAIL: "<myRecipient@company.com>"
           run: |
             python -m prophecy_lineage_extractor --project-id 36587 --pipeline-id 36587/pipelines/customer_orders_demo  --send-email --output-dir $OUTPUT_DIR
 
@@ -208,14 +208,14 @@ python -m prophecy_lineage_extractor --project-id 36587 --pipeline-id 36587/pipe
 
         - name: Extract and Send Prophecy Lineage
           env:
-            PROPHECY_URL: "https://app.prophecy.io"
+            PROPHECY_URL: "https://<custom>.prophecy.io"
             MONITOR_TIME_ENV: ${{ vars.MONITOR_TIME_ENV }}
             PROPHECY_PAT: ${{ secrets.PROPHECY_PAT }}
             SMTP_HOST: "smtp.gmail.com"
             SMTP_PORT: "587"
             SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
             SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-            RECEIVER_EMAIL: "ashish@prophecy.io"
+            RECEIVER_EMAIL: "<myRecipient@company.com>"
           run: |
             python -m prophecy_lineage_extractor --project-id 36587 --pipeline-id 36587/pipelines/customer_orders_demo  --send-email --output-dir $OUTPUT_DIR --branch dev
 
@@ -272,7 +272,7 @@ python -m prophecy_lineage_extractor --project-id 36587 --pipeline-id 36587/pipe
         export SMTP_PASSWORD="$SMTP_PASSWORD"
         export SMTP_HOST="smtp.gmail.com"
         export SMTP_PORT="587"
-        export RECEIVER_EMAIL="ashish@prophecy.io"
+        export RECEIVER_EMAIL="<myRecipient@company.com>"
         # value in seconds for monitoring, this might be increased depending on pipeline size
         export MONITOR_TIME_ENV="50"
       - |
