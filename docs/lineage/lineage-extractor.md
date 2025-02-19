@@ -151,11 +151,11 @@ python -m prophecy_lineage_extractor --project-id 36587 --pipeline-id 36587/pipe
           env:
              GIT_COMMIT: ${{ vars.GIT_COMMIT }} # whether to commit output file to github
           run: |
-            # set this in secret to enable git commits
+            # set this in secret to enable git commits with appropriate git credentials
             echo "Output Directory: '$OUTPUT_DIR'"
             if [[ $GIT_COMMIT == "1" ]]; then
-                git config --global user.name 'pateash'
-                git config --global user.email 'ashishpatel0720@gmail.com'
+                git config --global user.name 'gituser'
+                git config --global user.email 'my.git.email@gmail.com'
                 echo "Commiting enabled, adding output file"
                 git add $OUTPUT_DIR/*
                 echo "========================================"
@@ -223,11 +223,11 @@ python -m prophecy_lineage_extractor --project-id 36587 --pipeline-id 36587/pipe
           env:
              GIT_COMMIT: ${{ vars.GIT_COMMIT }}  # Reference the GitHub variable here
           run: |
-            # set this in secret to enable git commits
+            # set this in secret to enable git commits with appropriate git credentials
             echo "output dir '$OUTPUT_DIR'"
             if [[ $GIT_COMMIT == "1" ]]; then
-                git config --global user.name 'pateash'
-                git config --global user.email 'ashishpatel0720@gmail.com'
+                git config --global user.name 'gituser'
+                git config --global user.email 'my.git.email@gmail.com'
                 echo "Commiting enabled, adding output file"
                 git add $OUTPUT_DIR/*
                 echo "========================================"
@@ -286,8 +286,8 @@ python -m prophecy_lineage_extractor --project-id 36587 --pipeline-id 36587/pipe
       - |
         if [ "$GIT_COMMIT" == "1" ]; then
           echo "Git commit is enabled, output directory '$OUTPUT_DIR'"
-          git config --global user.name 'pateash'
-          git config --global user.email 'ashishpatel0720@gmail.com'
+          git config --global user.name 'gituser'
+          git config --global user.email 'my.git.email@gmail.com'
           git add $OUTPUT_DIR/*
           git commit -m "[GitLab CI - $BRANCH] Adding excel lineage report"
           git remote add gitlab_origin https://oauth2:$ACCESS_TOKEN@gitlab.com/pateash/ProphecyHelloWorld.git
