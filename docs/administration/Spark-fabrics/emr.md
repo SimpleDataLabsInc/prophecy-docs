@@ -27,9 +27,9 @@ In your Amazon EMR service, create a cluster. When doing so:
 2. When selecting applications, make sure **Livy** and **Spark** are included in the install.
 
 <img
-  src={require("./img/livy.png").default}
-  alt="EMR create cluster"
-  width="75%"
+src={require("./img/livy.png").default}
+alt="EMR create cluster"
+width="75%"
 />
 
 ## Configure network settings
@@ -43,6 +43,7 @@ To make sure that EMR can communicate with Prophecy, you need to configure speci
 
 To connect EMR and Prophecy, you must create a fabric. You can either create an EMR fabric (suggested), or a [Livy fabric](livy.md).
 
+```mdx-code-block
 <Tabs>
   <TabItem value="emr" label="EMR" default>
     <p>To create an EMR fabric:</p>
@@ -240,5 +241,6 @@ To connect EMR and Prophecy, you must create a fabric. You can either create an 
     </p>
   </TabItem>
 </Tabs>
+```
 
 At this point, you can test your fabric. Open a project, connect to a cluster, and try to run a pipeline!
