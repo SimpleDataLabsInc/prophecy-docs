@@ -20,7 +20,7 @@ tags:
 
 PBT can be integrated with your own CI/CD solution to build, test, and deploy Prophecy code. The steps for setting up PBT with GitHub Actions on your repository containing a Prophecy project are mentioned below.
 
-### Pre-requisite
+### Prerequisites
 
 - A Prophecy project that is currently hosted in a GitHub repository
 
