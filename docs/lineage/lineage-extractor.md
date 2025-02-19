@@ -77,14 +77,14 @@ You only need to provide SMTP credentials if you plan to pass the `--send-email`
 :::
 
 ```
-export PROPHECY_URL=https://app.prophecy.io
+export PROPHECY_URL=https://<myUrl>.prophecy.io
 export PROPHECY_PAT=${{ secrets.PROPHECY_PAT }}
 
 export SMTP_HOST=smtp.gmail.com
 export SMTP_PORT=587
 export SMTP_USERNAME=${{ secrets.SMTP_USERNAME }}
 export SMTP_PASSWORD=${{ secrets.SMTP_PASSWORD }}
-export RECEIVER_EMAIL=ashish@prophecy.io
+export RECEIVER_EMAIL=<myRecipient@company.com>
 
 python -m prophecy_lineage_extractor --project-id 36587 --pipeline-id 36587/pipelines/customer_orders_demo --send-email --branch dev
 ```
