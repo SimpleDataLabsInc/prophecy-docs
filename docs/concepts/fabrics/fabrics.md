@@ -61,4 +61,4 @@ Get started with hands-on guides. Learn step by step how to connect to your exec
 
 1. Create a SQL fabric with a JDBC or Unity Catalog connection following [this guide](docs/getting-started/tutorials/sql-with-databricks.md).
 2. Create a Databricks fabric following [these steps](/docs/administration/Spark-fabrics/databricks/databricks.md).
-3. Create an EMR fabric with Livy step by step [here](/docs/administration/Spark-fabrics/emr.mdx).
+3. Create an EMR fabric with Livy step by step [here](/docs/administration/Spark-fabrics/emr.md).

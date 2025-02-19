@@ -15,18 +15,16 @@ Removes rows with duplicate values of specified columns.
 
 ## Parameters
 
-| Parameter           | Description                                                                                                                                                                                                                                                                                                                                                                                                  | Required |
-| :------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------- |
-| Dataframe           | Input dataframe                                                                                                                                                                                                                                                                                                                                                                                              | True     |
-| Row to keep         | - `Any`: Keeps any one row among duplicates. Uses underlying `dropDuplicates` construct<br/>- `First`: Keeps first occurrence of the duplicate row <br/>- `Last`: Keeps last occurrence of the duplicate row <br/>- `Unique Only`: Keeps rows that don't have duplicates <br/>- `Distinct Rows`: Keeps all distinct rows. This is equivalent to performing a `df.distinct()` operation <br/>Default is `Any` | True     |
-| Deduplicate columns | Columns to consider while removing duplicate rows (not required for `Distinct Rows`)                                                                                                                                                                                                                                                                                                                         | True     |
-| Order columns       | Columns to sort Dataframe on before de-duping in case of `First` and `Last` rows to keep                                                                                                                                                                                                                                                                                                                     | False    |
+| Parameter           | Description                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| DataFrame           | Input DataFrame                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Row to keep         | <ul style={{margin:0, padding:"0 1rem"}}><li>Any (Default): Keeps any one row among duplicates. Uses underlying `dropDuplicates` construct. </li><li>First: Keeps first occurrence of the duplicate row. </li><li>Last: Keeps last occurrence of the duplicate row.</li><li>Unique Only: Keeps rows that don't have duplicates. </li><li>Distinct Rows: Keeps all distinct rows. This is equivalent to performing a `df.distinct()` operation.</li></ul> |
+| Deduplicate columns | Columns to consider while removing duplicate rows (not required for `Distinct Rows`)                                                                                                                                                                                                                                                                                                                                                                     |
+| Order columns       | Columns to sort DataFrame on before de-duping in case of `First` and `Last` rows to keep                                                                                                                                                                                                                                                                                                                                                                 |
 
 ## Examples
 
----
-
-### Rows to keep - `Any`
+### Rows to keep: `Any`
 
 ![Example usage of Deduplicate](./img/deduplicate_eg_1.png)
 
@@ -61,7 +59,7 @@ object dedup {
 
 ---
 
-### Rows to keep - `First`
+### Rows to keep: `First`
 
 ![Example usage of Deduplicate - First](./img/dedup_eg_first.png)
 
@@ -114,7 +112,7 @@ object earliest_cust_order {
 
 ---
 
-### Rows to keep - `Last`
+### Rows to keep: `Last`
 
 ![Example usage of Deduplicate - Last](./img/dedup_eg_last.png)
 
@@ -180,7 +178,7 @@ object latest_cust_order {
 
 ````
 
-### Rows to keep - `Unique Only`
+### Rows to keep: `Unique Only`
 
 ![Example usage of Deduplicate - Unique](./img/dedup_eg_unique.png)
 
@@ -230,7 +228,7 @@ object single_order_customers {
 
 ````
 
-### Rows to keep - `Distinct Rows`
+### Rows to keep: `Distinct Rows`
 
 ![Example usage of Deduplicate - Distinct](./img/dedup_eg_distinct.png)
 
