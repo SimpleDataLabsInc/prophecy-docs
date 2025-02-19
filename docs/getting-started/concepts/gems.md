@@ -15,23 +15,11 @@ A gem is a reusable component or transformation step in a data pipeline that per
 
 ## Gem categories
 
-Gems are grouped by their category. The table below will help you understand this grouping.
-
-| Category      | Definition                                                                                           |
-| ------------- | ---------------------------------------------------------------------------------------------------- |
-| Source/Target | Gems related to [sources, targets,](/docs/Spark/gems/source-target/source-target.md) and lookups.    |
-| Transform     | Gems related to the [transformation](/docs/Spark/gems/transform/transform.md) of your data.          |
-| Custom        | [Custom](/docs/Spark/gems/custom/custom.md) gems and gems that don't fit into the other categories.  |
-| Join/Split    | Gems related to [splitting or joining](/docs/Spark/gems/join-split/join-split.md) datasets together. |
-| Subgraph      | Types of [subgraphs](/docs/Spark/gems/subgraph/subgraph.md) to use in your pipeline.                 |
-
-When you open a pipeline, you will find that the **gem drawer** is organized by these categories. The gems in these categories are available to you depending on your project language, project dependencies, and Prophecy version.
+When you open a pipeline, you will find that gems are grouped by categories in the gem drawer. The available gems and categories will depend on your project language, project dependencies, and Prophecy version.
 
 ## Gem instance
 
-When you click on a gem from the gem drawer, an instance of that gem gets added to your pipeline canvas.
-
-Use the image and the table below to understand the UI of a gem.
+When you click on a gem from the gem drawer, an instance of that gem gets added to your pipeline canvas. Use the image and the table below to understand the UI of a gem.
 
 ![Gem Instance](img/gems/instance.png)
 

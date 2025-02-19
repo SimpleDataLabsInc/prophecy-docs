@@ -1,8 +1,7 @@
 ---
-title: Pipelines
-id: pipeline
+title: Pipelines (Spark)
+id: spark-pipelines
 description: Flows that represent the data journey
-sidebar_position: 1
 tags:
   - concepts
   - pipelines

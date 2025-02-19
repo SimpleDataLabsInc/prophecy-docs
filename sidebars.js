@@ -31,9 +31,10 @@ const sidebars = {
           items: [
             "getting-started/concepts/Fabric",
             "getting-started/concepts/project",
-            "getting-started/concepts/pipeline",
-            "getting-started/concepts/Model",
+            "getting-started/concepts/spark-pipelines",
+            "getting-started/concepts/sql-pipelines",
             "getting-started/concepts/gems",
+            "getting-started/concepts/Model",
             "getting-started/concepts/dataset",
           ],
         },

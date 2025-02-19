@@ -70,12 +70,3 @@ The following table describes the information that you can find in each tab of a
 ## What's next
 
 To learn about the project lifecycle, visit [Develop and deploy a project](docs/ci-cd/deployment/deploy-project.md).
-
-To explore different project components, view the following pages:
-
-```mdx-code-block
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
-<DocCardList items={useCurrentSidebarCategory().items}/>
-```
