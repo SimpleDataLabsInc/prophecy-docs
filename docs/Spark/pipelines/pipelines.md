@@ -36,13 +36,13 @@ The pipeline canvas includes:
 - A **run** button to begin interactive execution.
 - **Copilot** to help you build your pipeline.
 
-![Pipeline canvas](img/pipelines/pipeline-canvas.png)
+![Pipeline canvas](img/pipeline-canvas.png)
 
 ## Pipeline metadata
 
 To view a list of pipelines in Prophecy, navigate to the **Metadata** page from the left sidebar. For more granular metadata, click into a pipeline. Pipeline metadata can also be accessed from the header of the [Project Editor](/getting-started/concepts/project/#project-editor).
 
-![Pipeline metadata](img/pipelines/pipeline-metadata.png)
+![Pipeline metadata](img/pipeline-metadata.png)
 
 The table below describes the different tabs inside an individual pipeline's metadata.
 
