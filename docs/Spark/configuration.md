@@ -36,28 +36,24 @@ The Config tab lets you set default values for your variables. You can create mu
 
 ### Syntax
 
-When you want to use the pipeline configuration variables inside your project, you need to know how to reference them. You can choose the syntax for this using the **Visual Language** field in the Development section of Pipeline Settings.
-
-| Visual Language | Syntax               | Expression usage           |
-| --------------- | -------------------- | -------------------------- |
-| SQL             | `'$config_name'`     | `expr('$config_name')`     |
-| Scala           | `Config.config_name` | `expr(Config.config_name)` |
-| Python          | `Config.config_name` | `expr(Config.config_name)` |
-
-For example, you can use a configuration in a path definition like so: `dbfs:/Prophecy/'$path_helper'/CustomersOrders.csv` (SQL syntax). This is useful when you want to configure a target location based on which environment you are running the pipeline in.
-
-#### Jinja
-
-Regardless of the visual language, you also can use Jinja config syntax for configurations inside of your Spark gems. Jinja variable syntax looks like: `{{config_name}}`.
+When you want to call configuration variables in your pipeline, you can reference them using Jinja syntax. Jinja variable syntax looks like: `{{config_name}}`.
 
 You can use the following syntax examples for accessing elements of array and record fields:
 
 - For an array: `{{ config1.array_config[23] }}`
 - For a record: `{{ record1.record2.field1 }}`
 
-:::note
+Jinja is enabled by default in new pipelines. To disable this setting, open the Pipeline Settings and turn off the **Enable jinja based configuration** toggle.
 
-Jinja configurations are enabled by default in new pipelines. To disable this setting, open the Pipeline Settings and turn off the **Enable jinja based configuration** toggle.
+:::info
+
+Depending on the Visual Language configured in your [Pipeline Settings](docs/Spark/pipeline-settings.md), you can also use that language's syntax to call variables.
+
+| Visual Language | Syntax               | Expression usage           |
+| --------------- | -------------------- | -------------------------- |
+| SQL             | `'$config_name'`     | `expr('$config_name')`     |
+| Scala           | `Config.config_name` | `expr(Config.config_name)` |
+| Python          | `Config.config_name` | `expr(Config.config_name)` |
 
 :::
 
