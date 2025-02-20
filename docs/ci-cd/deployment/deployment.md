@@ -61,7 +61,7 @@ Deployment modes dictate how the release and deploy steps will be controlled.
 
 ### Unit tests
 
-Writing good [unit tests](/ci-cd/tests) is key for data pipeline quality and management. When you enable unit tests for deployment, you enables running unit tests as part of pipeline builds. This might lead to a slight increase the build time.
+Writing good [unit tests](/ci-cd/tests) is key for data pipeline quality and management. When you enable unit tests for deployment, unit tests will run as part of pipeline builds. This might lead to a slight increase in the build time.
 
 ## History
 
@@ -71,7 +71,7 @@ You can view the release and deployment history in the **Releases & Deployments*
 
 The page includes the following subtabs.
 
-- **Releases**: Find a history of releases including information about author, creation time, and the latest tag. You can also view the logs of the latest deployment associated with that tag.
+- **Releases**: Find a history of releases including information about the author, creation time, and latest tag. You can also view the logs of the latest deployment associated with that tag.
 - **Current Version**: View the current state of all deployed jobs per environment. Select the fabric to view the list of all jobs deployed in that environment, along with their versions and deployment logs.
 - **Deployment History**: See the history of all past deployments, along with the time that it was deployed and related logs.
 
