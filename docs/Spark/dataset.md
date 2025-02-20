@@ -1,8 +1,7 @@
 ---
 title: Datasets
 id: dataset
-description: Create datasets using Source and Target gems
-sidebar_position: 4
+description: Use datasets in your Spark project
 tags:
   - concepts
   - datasets

@@ -36,7 +36,7 @@ Data sampling is enabled by default for interactive execution. To change data sa
 ![Data and Job Sampling](img/interactive-execution-job-data-sampling.png)
 
 :::note
-To learn more about different data sampling modes, explore the documentation on [pipeline settings](docs/Spark/pipeline-settings.md#run-settings).
+To learn more about different data sampling modes, explore the documentation on [pipeline settings](docs/Spark/pipelines/pipeline-settings.md#run-settings).
 :::
 
 ### Advanced settings

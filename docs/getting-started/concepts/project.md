@@ -2,7 +2,6 @@
 title: Projects
 id: project
 description: Keeping your pipelines, datasets and jobs under (source) control
-sidebar_position: 1
 tags:
   - concepts
   - project
@@ -10,23 +9,31 @@ tags:
 
 A **Project** in Prophecy is the core unit for developing, organizing, and deploying data workflows to production. It encompasses all the components needed for building and running data processes.
 
-Spark projects contain [pipelines](docs/getting-started/concepts/pipelines.md), [datasets](docs/getting-started/concepts/dataset.md), and [jobs](docs/Orchestration/Orchestration.md). SQL projects contain [models](docs/getting-started/concepts/models.md), [datasets](docs/getting-started/concepts/dataset.md), and [jobs](docs/Orchestration/Orchestration.md).
+## Project types
 
-## Project creation
+A project must be written in PySpark, Scala, or SQL. This language choice determines how your visual pipelines will be compiled into code. You initial choice of **project type** fundamentally determines your project's capabilities and workflow structure, so it's important to choose correctly at the start since it cannot be changed later.
 
-There are a few things to keep in mind when you create a project.
+The following table can help you understand the difference between the project types.
 
-- **Project type.** A project must be written in Spark/Python, Spark/Scala, or SQL. Visually designed pipelines will generate code in the selected project output language. Note that you cannot change the language after the project has been created.
+| Project type | Execution             | Components                                                                                                                                                                                               |
+| ------------ | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| PySpark      | Spark                 | [Pipelines](docs/Spark/pipelines/pipelines.md), [Datasets](docs/Spark/dataset.md), and [Jobs](docs/Orchestration/Orchestration.md)                                                                       |
+| Scala        | Spark                 | [Pipelines](docs/Spark/pipelines/pipelines.md), [Datasets](docs/Spark/dataset.md), and [Jobs](docs/Orchestration/Orchestration.md)                                                                       |
+| SQL          | Depends on the fabric | [Pipelines](docs/analysts/development/pipelines.md), [Tables](docs/analysts/development/gems/source-target/source-target.md), [Models](docs/SQL/models.md), and [Schedules](docs/analysts/scheduling.md) |
 
-- **Git repository**. Because all projects are compiled into code, Prophecy leverages Git to version and host that code. You can either choose to host your project on a Prophecy-managed repository, or you can connect your own external repository, like one on GitHub. This lets users and teams collaborate on projects, contribute simultaneously, and reuse code. The image below shows the underlying code of two example projects.
+## Git repository
 
-  ![Visual To Code](img/code-to-visual.png)
+Because all projects are compiled into code, Prophecy leverages Git to version and host that code. You can either choose to host your project on a Prophecy-managed repository, or you can connect your own external repository, like one on GitHub. This lets users and teams collaborate on projects, contribute simultaneously, and reuse code. The image below shows the underlying code of two example projects.
 
-- **Project team.** Projects are always assigned a certain [team](docs/administration/teamuser.md). This means that the project will be shared among all users in that team.
+![Visual To Code](img/code-to-visual.png)
 
-  :::note
-  When you begin using Prophecy, you are added to your own one-person team. Your team administrator will typically create other team groupings.
-  :::
+## Project team
+
+Projects are always assigned a certain [team](docs/administration/teamuser.md). This means that the project will be shared among all users in that team.
+
+:::note
+When you begin using Prophecy, you are added to your own one-person team. Your team administrator will typically create other team groupings.
+:::
 
 ## Project Editor
 

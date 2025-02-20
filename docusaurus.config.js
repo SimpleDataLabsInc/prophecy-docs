@@ -322,7 +322,7 @@ const config = {
             from: "/concepts/gems/",
           },
           {
-            to: "/getting-started/concepts/dataset",
+            to: "/Spark/dataset",
             from: "/concepts/dataset",
           },
           {
@@ -330,7 +330,7 @@ const config = {
             from: "/concepts/project/gems/",
           },
           {
-            to: "/getting-started/concepts/dataset",
+            to: "/Spark/dataset",
             from: "/concepts/project/dataset",
           },
           {

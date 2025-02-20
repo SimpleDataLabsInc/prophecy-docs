@@ -13,15 +13,24 @@ tags:
 
 Prophecy helps you develop data pipelines in high-quality Spark or SQL code—but what does Prophecy use to compute these pipelines? The first thing to understand before building any pipeline is that your pipeline must be connected to an **execution environment**.
 
-This is why **fabrics** exist in Prophecy. Fabrics let Prophecy connect to specific execution environments.
+This is why **fabrics** exist in Prophecy. Fabrics let Prophecy connect to specific execution environments. When you do so, you can access the data sources available to you in that environment.
 
-Prophecy provides a Prophecy-managed fabric that can get you started with building your pipelines. However, you can also create your own fabrics to connect to other execution environments, such as a Databricks workspace. When you attach to an external execution environment, you can access the data sources available to you in that environment.
+## Fabric types
 
-## Fabric creation
+Certain fabrics will be compatible with certain project types. Review the table below to understand the different fabric types.
 
-A team admin typically sets up fabrics. Detailed steps for fabric creation can be found in the [Set up Spark fabrics](/administration/Spark-fabrics/Fabrics) and [Set up SQL fabrics](/administration/sql-fabrics/Fabrics) sections of the documentation.
+| Fabric type                                         | Description                                            | Usage                                                       |
+| --------------------------------------------------- | ------------------------------------------------------ | ----------------------------------------------------------- |
+| [Prophecy](docs/administration/prophecy-fabrics.md) | Computation using the Prophecy engine and a SQL engine | Run pipelines in SQL projects                               |
+| [Spark](/administration/Spark-fabrics/Fabrics)      | Computation using a Spark engine                       | Run pipelines in PySpark/Scala projects and Databricks jobs |
+| [SQL](/administration/sql-fabrics/Fabrics)          | Computation using Spark SQL engines or SQL warehouses  | Run models in SQL projects                                  |
+| [Airflow](/Orchestration/airflow/)                  | Computation using Airflow-compatible engines           | Run Airflow jobs                                            |
 
-Even though teams share fabrics, **each user must add their individual credentials** to be able to use the fabric in their projects.
+## Share fabrics
+
+When you create a fabric, you assign it to a [team](docs/administration/teamuser.md). The fabric then becomes available to all users in the team.
+
+Even though teams share fabrics, users will be prompted to add their individual credentials to be able to use the fabric in their projects.
 
 ## Use case
 
@@ -54,11 +63,3 @@ A list of all fabrics available to you can be found in the **Fabrics** tab of th
 ![Fabric Metadata](./img/fabric_metadata_1.png)
 
 You can click into each fabric to access the fabric settings. These will resemble the settings that appear during fabric creation.
-
-## Hands-on
-
-Get started with hands-on guides. Learn step by step how to connect to your execution engine by creating a fabric:
-
-1. Create a SQL fabric with a JDBC or Unity Catalog connection following [this guide](docs/getting-started/tutorials/sql-with-databricks.md).
-2. Create a Databricks fabric following [these steps](/docs/administration/Spark-fabrics/databricks/databricks.md).
-3. Create an EMR fabric with Livy step by step [here](/docs/administration/Spark-fabrics/emr.mdx).

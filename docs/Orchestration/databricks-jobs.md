@@ -8,7 +8,7 @@ tags:
   - scheduling
 ---
 
-Once you have developed a [Spark pipeline](/docs/getting-started/concepts/pipelines.md) using Prophecy, you will want to schedule it to run at
+Once you have developed a [Spark pipeline](docs/Spark/pipelines/pipelines.md) using Prophecy, you will want to schedule it to run at
 some frequency. To support this, Prophecy provides a visual layer on top of Databricks jobs for an easy orchestration.
 
 ## Development

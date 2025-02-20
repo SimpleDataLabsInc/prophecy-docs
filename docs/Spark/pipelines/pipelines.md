@@ -1,6 +1,6 @@
 ---
-title: Pipelines (Spark)
-id: spark-pipelines
+title: Pipelines
+id: pipelines
 description: Flows that represent the data journey
 tags:
   - concepts
@@ -52,7 +52,3 @@ The table below describes the different tabs inside an individual pipeline's met
 | Relations | A list of jobs and subgraphs that include the pipeline.                                                            |
 | Code      | The code that is stored in the Git repository for the pipeline.                                                    |
 | Runs      | A history of pipeline runs per fabric.                                                                             |
-
-## What's next
-
-Visit the [Spark](/Spark) documentation to learn more, or view how to use [Spark with Databricks](docs/getting-started/tutorials/spark-with-databricks.md).

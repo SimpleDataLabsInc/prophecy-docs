@@ -7,7 +7,7 @@ tags:
   - gem
 ---
 
-[Gems](/docs/getting-started/concepts/gems.md) are functional units in a [pipeline](/docs/getting-started/concepts/pipelines.md) that perform tasks such as reading, transforming, writing, or handling other data operations.
+[Gems](/docs/getting-started/concepts/gems.md) are functional units in a [pipeline](docs/Spark/pipelines/pipelines.md) that perform tasks such as reading, transforming, writing, or handling other data operations.
 
 The table below outlines the different Spark Gem categories.
 

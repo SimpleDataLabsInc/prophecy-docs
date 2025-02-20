@@ -27,15 +27,10 @@ const sidebars = {
         {
           type: "category",
           label: "Concepts",
-          link: { type: "doc", id: "getting-started/concepts/key-concepts" },
           items: [
             "getting-started/concepts/Fabric",
             "getting-started/concepts/project",
-            "getting-started/concepts/spark-pipelines",
-            "getting-started/concepts/sql-pipelines",
             "getting-started/concepts/gems",
-            "getting-started/concepts/Model",
-            "getting-started/concepts/dataset",
           ],
         },
         {
@@ -94,6 +89,7 @@ const sidebars = {
       label: "Pipeline development",
       link: { type: "doc", id: "analysts/development/development" },
       items: [
+        "analysts/development/pipelines",
         {
           type: "category",
           label: "Gems",
@@ -196,16 +192,16 @@ const sidebars = {
           link: { type: "doc", id: "analysts/development/testing/testing" },
           items: [],
         },
-        {
-          type: "category",
-          label: "Versioning",
-          link: {
-            type: "doc",
-            id: "analysts/development/version-control/version-control",
-          },
-          items: [],
-        },
       ],
+    },
+    {
+      type: "category",
+      label: "Versioning",
+      link: {
+        type: "doc",
+        id: "analysts/version-control/version-control",
+      },
+      items: [],
     },
     "analysts/scheduling",
     "analysts/observability",
@@ -238,6 +234,16 @@ const sidebars = {
       label: "Pipeline development",
       link: { type: "doc", id: "Spark/copilot-for-spark-users" },
       items: [
+        {
+          type: "category",
+          label: "Pipelines",
+          link: { type: "doc", id: "Spark/pipelines/pipelines" },
+          items: [
+            "Spark/pipelines/configuration",
+            "Spark/pipelines/pipeline-settings",
+          ],
+        },
+        "Spark/dataset",
         {
           type: "category",
           label: "Gems",
@@ -421,8 +427,6 @@ const sidebars = {
           ],
         },
         "Spark/expression-builder",
-        "Spark/configuration",
-        "Spark/pipeline-settings",
         {
           type: "category",
           label: "Spark streaming",
@@ -444,7 +448,6 @@ const sidebars = {
             "Spark/spark-streaming/transformations-streaming",
           ],
         },
-        { "Best practices": ["Spark/best-practices/use-dbx-secrets"] },
       ],
     },
     /// MODEL DEVELOPMENT
@@ -453,6 +456,7 @@ const sidebars = {
       label: "Model development",
       link: { type: "doc", id: "SQL/copilot-for-sql-users" },
       items: [
+        "SQL/Model",
         {
           type: "category",
           label: "Gems",
@@ -742,6 +746,7 @@ const sidebars = {
         "administration/connections-and-secrets/metadata-connections",
         "administration/connections-and-secrets/secret-providers",
         "administration/connections-and-secrets/using-secrets",
+        "administration/connections-and-secrets/use-dbx-secrets",
       ],
     },
     {

@@ -5,7 +5,7 @@ description: Source and target gems
 tags: []
 ---
 
-Source and target gems define how data is read and written in your pipeline.
+Source and Target gems define how data is read and written in your pipeline.
 
 ## Tables
 

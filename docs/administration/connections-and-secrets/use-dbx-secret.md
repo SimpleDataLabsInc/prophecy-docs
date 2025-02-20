@@ -1,7 +1,7 @@
 ---
-title: Use Databricks Secrets for Username Password fields in Gems
+title: Secrets for sensitive fields
 id: use-dbx-secrets
-description: Databricks secrets for username and passwords
+description: Walkthrough using Databricks secrets for username and passwords
 tags:
   - spark
   - databricks
@@ -24,7 +24,7 @@ Please follow this [Secrets Documentation](https://docs.databricks.com/security/
 
 ### Step2: Create Config in Pipeline to map to Created Databricks Secrets
 
-Add configs of Type `databricks_secret` in [Pipeline Configs](/docs/Spark/configuration.md). Let's say we call it `snowflake_user` and `snowflake_pass`.
+Add configs of Type `databricks_secret` in [Pipeline Configs](/docs/Spark/pipelines/configuration.md). Let's say we call it `snowflake_user` and `snowflake_pass`.
 
 ![img.png](img/databricks_secrets_config.png)
 
