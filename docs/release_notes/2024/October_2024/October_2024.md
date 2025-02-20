@@ -56,13 +56,13 @@ tags:
 
   FlattenSchema works on Snowflake sources that have nested columns that you'd like to extract into a flat schema.
 
-  For more information, see [FlattenSchema](/docs/SQL/gems/transform/flattenschema.md).
+  For more information, see [FlattenSchema](docs/analysts/development/gems/prepare/flatten-schema.md).
 
 - **Deduplicate gem**: You can use the deduplicate gem to remove rows with duplicate values of specified columns. There are four **Row to keep** options that you can use in your deduplicate gem.
 
   ![Deduplicate Row to keep](./../img/oct-deduplicate_row_to_keep.png)
 
-  For more information, see [Deduplicate](/docs/SQL/gems/transform/deduplicate.md).
+  For more information, see [Deduplicate](docs/analysts/development/gems/prepare/deduplicate.md).
 
 - **Gem builder**: You can add custom gems to your SQL projects using the gem builder. You can create custom source, target, and transformation gems, and then publish them for your team to use.
 

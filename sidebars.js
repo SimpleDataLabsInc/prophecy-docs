@@ -186,6 +186,7 @@ const sidebars = {
           link: { type: "doc", id: "analysts/development/execution/execution" },
           items: [],
         },
+        "analysts/development/data-explorer",
         {
           type: "category",
           label: "Testing",
@@ -465,8 +466,8 @@ const sidebars = {
             {
               type: "category",
               label: "Data sources",
-              link: { type: "doc", id: "SQL/gems/datasources/datasources-sql" },
-              items: ["SQL/gems/datasources/upload-files"],
+              link: { type: "doc", id: "SQL/gems/datasources/datasources" },
+              items: [],
             },
             {
               type: "category",
@@ -480,38 +481,13 @@ const sidebars = {
                 "SQL/gems/target-models/write-options",
               ],
             },
-            {
-              type: "category",
-              label: "Transform",
-              link: { type: "doc", id: "SQL/gems/transform/transform" },
-              items: [
-                "SQL/gems/transform/sql-aggregate",
-                "SQL/gems/transform/deduplicate",
-                "SQL/gems/transform/filter",
-                "SQL/gems/transform/flattenschema",
-                "SQL/gems/transform/limit",
-                "SQL/gems/transform/order-by",
-                "SQL/gems/transform/reformat",
-                "SQL/gems/transform/set-operation",
-                "SQL/gems/transform/unpivot",
-                "SQL/gems/transform/window-function",
-              ],
-            },
-            "SQL/gems/data-joins",
-            "SQL/gems/subgraph/subgraph",
-            {
-              type: "category",
-              label: "Custom",
-              link: { type: "doc", id: "SQL/gems/custom/custom-sql-gems" },
-              items: ["SQL/gems/custom/sql-statement"],
-            },
           ],
         },
         {
           type: "category",
           label: "Execution",
           link: { type: "doc", id: "SQL/execution/execution" },
-          items: ["SQL/execution/data-explorer"],
+          items: [],
         },
         {
           type: "category",

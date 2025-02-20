@@ -186,7 +186,7 @@ NATIONKEY,NAME,REGIONKEY,COMMENT
 
 #### Define datasets
 
-Importing datasets is really easy. [Upload a file](/docs/SQL/gems/datasources/upload-files.md) or drag-and-drop existing tables directly into a model. We’re going to demonstrate that in the next step.
+Importing datasets is easy. [Upload a file](docs/analysts/development/gems/source-target/file/upload-files.md) or drag-and-drop existing tables directly into a model. We’re going to demonstrate that in the next step.
 
 ### Develop your first model
 
@@ -202,7 +202,7 @@ Here we create a `customers_nations` model that’s going to enrich our customer
 
 The `customers_nations` model is stored as a `.sql` file on Git. The table or view defined by the model is stored on the SQL warehouse, database, and schema defined in the attached fabric.
 
-Suggestions are provided each step of the way. If Copilot's suggestions aren't exactly what you need, just select and configure the gems as desired. Click [here](docs/SQL/gems/joins.md) for details on configuring joins or [here](docs/SQL/gems/transform/aggregate.md) for aggregations.
+Suggestions are provided each step of the way. If Copilot's suggestions aren't exactly what you need, just select and configure the gems as desired.
 
 ### Interactively Test
 
