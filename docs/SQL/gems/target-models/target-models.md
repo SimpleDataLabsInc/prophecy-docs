@@ -1,5 +1,5 @@
 ---
-title: Target Models
+title: Target models
 id: target-models
 description: Target Models are a sequence of data transformation steps which define a single table or view
 tags:

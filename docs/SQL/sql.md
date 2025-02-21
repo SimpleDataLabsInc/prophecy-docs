@@ -56,7 +56,7 @@ The vast majority of dbt and SQL constructs are supported within the Prophecy Vi
 
 At any step of the process, data users can interactively run their models to make sure they're going in the right direction. Models can be additionally tested to ensure robustness over time. Power users can also extend the visual canvas through custom gems; making even the most complex logic easily accessible in the visual view.
 
-As you're building your model by adding [individual gems](/docs/SQL/gems/gems.md), see how the process is going by interactively running the model. To learn more, see [Data Explorer](docs/SQL/execution/data-explorer.md).
+As you're building your model by adding [individual gems](/docs/SQL/gems/gems.md), see how the process is going by interactively running the model. To learn more, see [Data Explorer](docs/analysts/development/data-explorer.md).
 
 ## Share Projects as Packages
 

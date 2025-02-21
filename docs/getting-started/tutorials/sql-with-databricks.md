@@ -63,7 +63,7 @@ Once, the token is generated copy and save it from **(5) Token** and you’re go
 
 ### Set up a fabric in Prophecy
 
-A [fabric](docs/concepts/fabrics/fabrics.md) in Prophecy is an execution environment. In this case, you already know you want to use Databricks for your computation, so we'll make a Databricks fabric!
+A [fabric](docs/getting-started/concepts/fabrics.md) in Prophecy is an execution environment. In this case, you already know you want to use Databricks for your computation, so we'll make a Databricks fabric!
 
 ![Create Fabric](img/2-4-create-fabric.png)
 
@@ -77,13 +77,13 @@ Since we’re setting up a fabric connected to Databrick’s JDBC SQL endpoint, 
 
 Enter the **(3) JDBC Url** and **(4) Personal Access Token** gathered from the previous steps. Finally, select your **(5) Catalog** and **(6) Schema** of choice. This step is recommended, however, optional. When using Databricks Unity Catalog, the default Catalog is main and the default Schema is default. Make sure you connect to a catalog and schema for which your user has write access. The tables resulting from the model will be written here.
 
-Click **(7) Complete** when finished. Prophecy checks the credentials and details for network and catalog accesses. If either fails, the fabric won’t be created and you will receive an Exception error. Optionally, enhance metadata viewing by creating a [Metadata Connection](/docs/administration/metadata-connections.md), recommended for users with hundreds or thousands of tables housed in their data provider(s).
+Click **(7) Complete** when finished. Prophecy checks the credentials and details for network and catalog accesses. If either fails, the fabric won’t be created and you will receive an Exception error. Optionally, enhance metadata viewing by creating a [Metadata Connection](/docs/administration/connections-and-secrets/metadata-connections.md), recommended for users with hundreds or thousands of tables housed in their data provider(s).
 
 Note, fabrics are owned by Teams. Every Member present within the Team will be able to access the fabric, however, each individual has to provide their own Personal Access Token.
 
 ## Create a new project
 
-Prophecy’s project is a Git repository or a directory on Git that contains all of your transformation logic. Each Prophecy project contains a dbt Core™️ project. Learn more about projects [here.](/docs/concepts/project/project.md)
+Prophecy’s project is a Git repository or a directory on Git that contains all of your transformation logic. Each Prophecy project contains a dbt Core™️ project. Learn more about projects [here.](/docs/getting-started/concepts/project.md)
 
 After fabric creation you can see one project initialized for you by default called HelloWorld_SQL. If you just want to play around with Prophecy, you can start there. However, for the purpose of this tutorial we’re going to build a brand new project from scratch.
 
@@ -105,7 +105,7 @@ If you’re new to Git, we recommend starting by connecting to Prophecy Managed 
 
 When choosing Prophecy Managed Git as your default Git repository, there are no further steps required! Prophecy automatically takes care of repository creation, connection, and initialization. You can just click **(3) Continue** to finalize the project setup.
 
-Using Prophecy Managed Git is very easy, but has some major downsides and therefore not recommended for production use-cases. Primarily, you will not be able to access the repository externally from Prophecy programmatically (which is a common enterprise requirement) or create [Pull Requests](docs/concepts/git/pull-request-templates.md) (which is also recommended as a part of standard [Git flow](https://docs.github.com/en/get-started/quickstart/github-flow)).
+Using Prophecy Managed Git is very easy, but has some major downsides and therefore not recommended for production use-cases. Primarily, you will not be able to access the repository externally from Prophecy programmatically (which is a common enterprise requirement) or create [Pull Requests](docs/ci-cd/git/pull-request-templates.md) (which is also recommended as a part of standard [Git flow](https://docs.github.com/en/get-started/quickstart/github-flow)).
 
 If you decide to choose this option, you can always migrate the project to an external Git Repository by cloning it.
 

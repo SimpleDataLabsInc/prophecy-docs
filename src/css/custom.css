@@ -146,23 +146,6 @@ img {
   height: 100%;
 }
 
-/**
-Gems table page
- */
-
-.gems-table table {
-  display: table;
-  width: 100%;
-}
-
-.gems-table table th:nth-of-type(1) {
-  width: 150px;
-}
-
-.gems-table table th:nth-of-type(2) {
-  width: 150px;
-}
-
 /* Summary or details style*/
 
 .alert--info {
@@ -265,4 +248,11 @@ Gems table page
 .fixed-table th:nth-child(2),
 .fixed-table td:nth-child(2) {
   width: 80%;
+}
+
+/* Remove margin from lists in tables */
+
+.table-list {
+  margin: 0 !important;
+  padding-left: 1rem !important;
 }

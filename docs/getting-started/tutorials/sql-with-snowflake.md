@@ -43,7 +43,7 @@ You'll first have to retrieve the following information from Snowflake to pass t
 
 ### Set up a fabric in Prophecy
 
-A [fabric](docs/concepts/fabrics/fabrics.md) in Prophecy is an execution environment. In this case, you already know you want to use Snowflake for your computation, so we'll make a Snowflake fabric!
+A [fabric](docs/getting-started/concepts/fabrics.md) in Prophecy is an execution environment. In this case, you already know you want to use Snowflake for your computation, so we'll make a Snowflake fabric!
 
 :::note
 Typically you should setup at least one fabric each for development and production environments. Use the development fabric for quick development with sample data, and use the production environment for daily runs with your production Snowflake warehouse data. Many Snowflake users will setup daily scheduled runs using Airflow as detailed below.
@@ -78,7 +78,7 @@ Each user can read tables from any database and schema for which they have acces
 
 ## Create a new project
 
-After you create your first SQL fabric, you'll see a [project](/docs/concepts/project/project.md) in Prophecy called HelloWorld_SQL. If you just want to play around with Prophecy, you can start there. However, for the purpose of this tutorial, let's build a new project from scratch.
+After you create your first SQL fabric, you'll see a [project](/docs/getting-started/concepts/project.md) in Prophecy called HelloWorld_SQL. If you just want to play around with Prophecy, you can start there. However, for the purpose of this tutorial, let's build a new project from scratch.
 
 To create a new project:
 
@@ -186,11 +186,11 @@ NATIONKEY,NAME,REGIONKEY,COMMENT
 
 #### Define datasets
 
-Importing datasets is really easy. [Upload a file](/docs/SQL/gems/datasources/upload-files.md) or drag-and-drop existing tables directly into a model. We’re going to demonstrate that in the next step.
+Importing datasets is easy. [Upload a file](docs/analysts/development/gems/source-target/file/upload-files.md) or drag-and-drop existing tables directly into a model. We’re going to demonstrate that in the next step.
 
 ### Develop your first model
 
-A model is an entity [like a pipeline](/docs/concepts/project/models.md#models-vs-pipelines) that contains a set of data transformations. However, a model defines a single output - a view or a table that will be created on the warehouse of choice. Each model is stored as a select statement in a SQL file within a project. Prophecy models are based on dbt Core [models](https://docs.getdbt.com/docs/build/models).
+A model is an entity [like a pipeline](docs/SQL/models.md#models-vs-pipelines) that contains a set of data transformations. However, a model defines a single output - a view or a table that will be created on the warehouse of choice. Each model is stored as a select statement in a SQL file within a project. Prophecy models are based on dbt Core [models](https://docs.getdbt.com/docs/build/models).
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -202,7 +202,7 @@ Here we create a `customers_nations` model that’s going to enrich our customer
 
 The `customers_nations` model is stored as a `.sql` file on Git. The table or view defined by the model is stored on the SQL warehouse, database, and schema defined in the attached fabric.
 
-Suggestions are provided each step of the way. If Copilot's suggestions aren't exactly what you need, just select and configure the gems as desired. Click [here](docs/SQL/gems/joins.md) for details on configuring joins or [here](docs/SQL/gems/transform/aggregate.md) for aggregations.
+Suggestions are provided each step of the way. If Copilot's suggestions aren't exactly what you need, just select and configure the gems as desired.
 
 ### Interactively Test
 
