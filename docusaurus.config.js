@@ -234,7 +234,7 @@ const config = {
             from: "/architecture/deployment/private-saas/",
           },
           {
-            to: "/administration/authentication/security-settings",
+            to: "/administration/Spark-fabrics/livy",
             from: "/architecture/authentication/admin-settings",
           },
           {
@@ -528,6 +528,10 @@ const config = {
           {
             to: "/Spark/gems/machine-learning/gen-ai-chatbot",
             from: "/getting-started/gen-ai-chatbot",
+          },
+          {
+            to: "/administration/Spark-fabrics/livy",
+            from: "/administration/authentication/security-settings",
           },
         ],
         /*

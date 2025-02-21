@@ -12,7 +12,7 @@ tags:
 
 The WindowFunction lets you define a **WindowSpec** and apply window functions on a DataFrame.
 
-### Parameters
+## Parameters
 
 | Parameter         | Description                                                                                 | Required                                                                                                  |
 | ----------------- | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
@@ -24,18 +24,12 @@ The WindowFunction lets you define a **WindowSpec** and apply window functions o
 | Row frame         | Row based frame boundary to apply on Window                                                 | False                                                                                                     |
 | Range frame       | Range based frame boundary to apply on Window                                               | False                                                                                                     |
 
-:::info
-When `Order Columns` are not defined, an unbounded window frame `(rowFrame, unboundedPreceding, unboundedFollowing)` is used by default.
-:::
-:::info
-When `Order Columns` are defined, a growing window frame `(rangeFrame, unboundedPreceding, currentRow)` is used by default.
-:::
+When **Order Columns** are not defined, an unbound window frame `(rowFrame, unboundedPreceding, unboundedFollowing)` is used by default.
+When **Order Columns** are defined, a growing window frame `(rangeFrame, unboundedPreceding, currentRow)` is used by default.
 
-### Examples
+## Examples
 
----
-
-#### Ranking Functions with Window
+### Ranking Functions with Window
 
 Examples of ranking functions are: `row_number()`, `rank()`, `dense_rank()` and `ntile()`
 :::info
@@ -99,17 +93,15 @@ object rank_cust_orders {
 
 ````
 
----
-
-#### Analytical Functions with Window
+### Analytical Functions with Window
 
 Examples of analytical functions are: `lead()`, `lag()`, `cume_dist()`, etc.
-:::info
-Window frame for `lead()` and `lag()` can not be specified.
-:::
-:::info
-Only the default window frame `(rangeFrame, unboundedPreceding, currentRow)` can be used with `cume_dist()`
-:::
+
+- Window frame for `lead()` and `lag()` can not be specified.
+- Only the default window frame `(rangeFrame, unboundedPreceding, currentRow)` can be used with `cume_dist()`
+
+<br />
+
 ![Example usage of Window - Analytical](./img/window_eg_analytical.png)
 
 ````mdx-code-block
@@ -164,9 +156,10 @@ object analyse_orders {
 
 ````
 
-#### Aggregate Functions with Window
+### Aggregate Functions with Window
 
-Examples of analytical functions are: `min()`, `max()`, `avg()`, etc.
+Examples of aggregate functions are: `min()`, `max()`, `avg()`, etc.
+
 ![Example usage of Window - Aggregate](./img/window_eg_agg.png)
 
 ````mdx-code-block

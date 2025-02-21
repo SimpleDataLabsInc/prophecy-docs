@@ -12,18 +12,18 @@ tags:
 
 Filters DataFrame based on the provided filter condition
 
-### Parameters
+## Parameters
 
 | Parameter        | Description                                                                           | Required |
 | :--------------- | :------------------------------------------------------------------------------------ | :------- |
 | DataFrame        | Input DataFrame on which the filter condition will be applied.                        | True     |
 | Filter Condition | BooleanType column or boolean expression. Supports SQL, Python and Scala expressions. | True     |
 
-### Example
+## Example
 
 ![Example usage of Filter](./img/filter_eg_1.png)
 
-### Spark Code
+## Spark Code
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
