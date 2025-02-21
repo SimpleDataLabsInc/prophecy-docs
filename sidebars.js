@@ -526,7 +526,11 @@ const sidebars = {
           type: "category",
           label: "Git",
           link: { type: "doc", id: "ci-cd/git/Git" },
-          items: ["ci-cd/git/git-resolve", "ci-cd/git/pr-templates"],
+          items: [
+            "ci-cd/git/git-workflow",
+            "ci-cd/git/git-resolve",
+            "ci-cd/git/pr-templates",
+          ],
         },
         "ci-cd/tests",
         {

@@ -1,28 +1,23 @@
 ---
-title: Merge conflicts
+title: Resolve conflicts
 id: git-resolve
-description: Source Control
-sidebar_position: 4
+description: Resolve conflicts that you may run into while merging your changes
 tags:
   - metadata
   - Git
   - resolve
 ---
 
-This page describes how to resolve conflicts that you may run into while merging your changes.
-
-## Resolve conflicts during merging
-
-There are two ways to resolve merge conflicts when they arise:
+This page describes how to resolve conflicts that you may run into while merging your changes. There are two ways to resolve merge conflicts when they arise:
 
 - Merge using the Prophecy interface
-- Use the external Git interface
+- Merge in your external Git interface
 
-## Resolve conflicts using manual merge
+## Merge in Prophecy
 
-You can use manual merge to resolve conflicts. This provides you with simple, yet effective ways to resolve merge conflicts for granular changes.
+There are a couple of ways to manually resolve merge conflicts in Prophecy.
 
-### Use Left or Right merge strategy
+### Left or right merge strategy
 
 The Left or Right merge strategy gives you a the option to resolve the conflict by choosing one version of your code to keep. After choosing, you can click **Next** to continue the merge process.
 
@@ -36,7 +31,7 @@ Here are the read-only views on branch `master` on the left and branch `dev` on 
 
 ![View Git conflict merge strategies](img/git-conflict-merge-strategy.png)
 
-### Use Code Changes strategy
+### Code changes merge strategy
 
 For SQL, you can also toggle on **Code Changes** to view and edit the code before validating. You can resolve conflicts by making code changes directly on the files.
 
@@ -49,3 +44,19 @@ In rare cases, your merge attempt may result in an error after the compile compl
 
 If you're confident that the errors are fine to leave as is, click **Ignore Errors**.
 :::
+
+## Remote and local branch conflicts
+
+If your commit history differs between a remote and local branch (due to actions like rebasing and reverting), one way to resolve this is to delete one of the branches.
+
+To delete the local branch:
+
+1. Open the **Git** menu from the project footer.
+1. Choose **Delete branch**.
+1. Select the branch you wish to delete.
+1. Click the **Delete local branch** button.
+1. Click **Delete** to confirm deletion.
+
+![Delete a Git branch](img/git-delete-branch.png)
+
+To delete the remote branch, do so from your external Git provider.

@@ -47,7 +47,7 @@ Jinja is enabled by default in new pipelines. To disable this setting, open the 
 
 :::info
 
-Depending on the Visual Language configured in your [Pipeline Settings](docs/Spark/pipeline-settings.md), you can also use that language's syntax to call variables.
+Depending on the Visual Language configured in your [Pipeline Settings](docs/Spark/pipelines/pipeline-settings.md), you can also use that language's syntax to call variables.
 
 | Visual Language | Syntax               | Expression usage           |
 | --------------- | -------------------- | -------------------------- |
