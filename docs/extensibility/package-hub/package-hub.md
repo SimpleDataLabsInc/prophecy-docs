@@ -9,26 +9,29 @@ To extend the functionality of a project, you can download **packages** from the
 
 The Package Hub includes both Prophecy-provided packages, as well as packages that you can publish yourself!
 
+![Package Hub landing page](img/package-hub.png)
+
 ## Add to the Package Hub
 
 If you want to create reuseable components for yourself and others:
 
 1. Create a project.
 1. Build the component(s).
-1. Publish the project.
-1. Add the project to the Package Hub from the project metadata.
+1. [Release and deploy](docs/ci-cd/deployment/deployment.md) the project.
+1. Share your project with other teams in the Access tab of the [project metadata](docs/getting-started/concepts/project.md) page.
+1. Publish the project to the Package Hub.
 
 ![Publish to Package Hub](img/package-hub-publish.png)
 
 Importantly, if you add a project to the Package Hub, **all of its components will be available for reuse**.
 
-:::note
-You can also share your project as read-only when you send an invitation to another team.
+:::info
+Packages in the Package Hub are only available to users in teams that you have shared the project with.
 :::
 
 ## Update package
 
-When you update a project that is published as a package, the changes will only be available in the Package Hub when you [Release and Deploy](docs/ci-cd/deployment/deployment.md) the project as a new version.
+When you update a project that is published as a package, the changes will only be available in the Package Hub when you [release and deploy](docs/ci-cd/deployment/deployment.md) the project as a new version.
 
 :::note
 The release must be made from the branch specified on project creation (usually `main` or `master`). This ensures that teams will review code before releasing the project.
@@ -55,7 +58,7 @@ A: The share “invitation” is not sent via email. Rather, the team would be a
 A: Be sure the new project and dependent project are using the same language, like Scala or Python. If the new project is a Scala project, only Scala Packages can be added as dependencies.
 
 **Q: How do I use subgraphs from a dependency?**
-A: Like pipelines, Subgraphs can be used by dependent projects via [configurable variables](docs/extensibility/package-hub/ShareableSubgraphs.md).
+A: Like pipelines, subgraphs can be used by dependent projects via [configurable variables](docs/extensibility/package-hub/ShareableSubgraphs.md).
 
 **Q: How can I change how the package works for only my project?** A: If you want to tweak the functionality of a package for your own needs without affecting others, you can **clone** the packaged project and make your changes. This way, you will not change the original package.
 
