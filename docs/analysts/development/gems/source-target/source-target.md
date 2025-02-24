@@ -9,11 +9,11 @@ Source and Target gems define how data is read and written in your pipeline.
 
 ## Tables
 
-| Name  | Description                                                                        |
-| ----- | ---------------------------------------------------------------------------------- |
-| Table | Table in your pipeline that can be generated from models or external sources.      |
-| View  | SQL query that performs a transformation on a dataset. It itself contains no data. |
-| Seed  | Small CSV files that you can write directly in Prophecy.                           |
+| Name  | Description                                                                             |
+| ----- | --------------------------------------------------------------------------------------- |
+| Table | Tables generated from models or external sources that are stored in your SQL warehouse. |
+| View  | SQL query that performs a transformation on a dataset. It itself contains no data.      |
+| Seed  | Small CSV files that you can write directly in Prophecy.                                |
 
 ## External Sources and Targets
 

@@ -81,7 +81,7 @@ const sidebars = {
     {
       type: "html",
       className: "sidebar-title",
-      value: "Data Analysis <span class='badge'>Preview</span>",
+      value: "Analysts <span class='badge'>Preview</span>",
       defaultStyle: true,
     },
     {
@@ -227,7 +227,7 @@ const sidebars = {
     {
       type: "html",
       className: "sidebar-title",
-      value: "Data Engineering",
+      value: "Engineers",
       defaultStyle: true,
     },
     {

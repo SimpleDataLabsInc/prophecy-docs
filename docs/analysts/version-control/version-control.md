@@ -25,7 +25,7 @@ Each time you publish a project, you create a **new deployed project version**. 
 
 ## Show version history
 
-The version history in Prophecy tracks different versions of your project that you save and publish. From here, you can view modifications in each version and, if you want, revert to previous versions.
+The version history in Prophecy tracks different versions of your project that you save and publish. From here, you can view modifications in each version and, if you want, revert to previous versions. You can also view the version history within the [project metadata](getting-started/concepts/project#project-metadata).
 
 ## Git in the backend
 

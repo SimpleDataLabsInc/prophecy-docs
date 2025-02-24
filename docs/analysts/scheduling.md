@@ -5,11 +5,11 @@ description: Schedule pipeline runs
 tags: []
 ---
 
-If you want to schedule pipeline runs, you can do so right in your project canvas.
+Prophecy lets you schedule and automate your data pipeline runs. Once you have developed a pipeline, you can run it at specific frequencies using Prophecy's native scheduler. Schedules define when the pipeline will run and whether to send alerts about the pipeline run.
 
 ## Schedule pipeline
 
-A schedule requires the following parameters.
+If you want to schedule pipeline runs, click **Schedule** in your project canvas. A schedule requires the following parameters:
 
 | Parameter              | Description                                                                       |
 | ---------------------- | --------------------------------------------------------------------------------- |
@@ -22,4 +22,4 @@ Once the schedule is created, you'll be able to view the frequency at the top ri
 
 ## Publish project
 
-Your schedule will not be enacted until you publish your project.
+Your schedule will not be enabled until you publish your project.

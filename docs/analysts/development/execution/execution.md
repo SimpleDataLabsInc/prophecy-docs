@@ -5,11 +5,12 @@ description: Run a set of defined operations in a pipeline
 tags: []
 ---
 
-In Prophecy, execution refers to running a set of defined operations in a model or pipeline.
+In Prophecy, execution refers to running a set of defined operations in a model or pipeline. Pipelines in SQL projects can utilize a few resources for computation:
 
-## Fabrics
+- **Prophecy Runtime**: handles the flow of data in and out of the pipeline.
+- **SQL Warehouse**: executes the data transformations.
 
-[Fabrics](docs/getting-started/concepts/fabrics.md) define the execution environment of your pipeline. This refers to where the computation happens. Projects for data analysts utilize [Prophecy fabrics](docs/administration/prophecy-fabrics.md) that combine the Prophecy engine and a SQL engine to run pipelines.
+When you create a [Prophecy fabric](docs/administration/prophecy-fabrics.md), you can choose which SQL warehouse to use for pipeline execution.
 
 ## Interactive execution
 
@@ -18,8 +19,10 @@ Running your pipeline during development can help you understand how your data i
 - Click the **play** button on the pipeline canvas to run the entire pipeline.
 - Click the **play** button on a particular gem to run the pipeline **up to and including** that gem. This is useful for testing and debugging when you don't want to run the entire pipeline.
 
-When you click on an interim data sample, you open the Data Explorer. The Data Explorer lets you sort, filter, and search through the gem output.
+When you click on an interim data sample, you load the data and open the [Data Explorer](docs/analysts/development/data-explorer.md). The Data Explorer lets you sort, filter, and search through the gem output.
 
-## Job execution
+## External sources
 
-When you schedule a job, you must define where that job will run.
+When you read from and write to external sources, certain steps happen in the backend during pipeline runs to make the data compatible with SQL. Because SQL requires [tables](/analysts/development/gems/source-target/#tables) to perform transformations, the Prophecy runtime will automatically create temporary tables in your SQL warehouse throughout the pipeline when necessary. These tables allow SQL to process external data and transform it.
+
+**You will not see these tables appear in the canvas during pipeline runs, and the tables will be deleted from the SQL warehouse after the pipeline run completes.**

@@ -11,7 +11,13 @@ tags:
   - data
 ---
 
-The Data Explorer can help you navigate your [interim data samples](docs/SQL/execution/execution.md#interims) and understand your data better. Use it to confirm the structure of each column, review data entries, and make sure the data types are correct.
+The Data Explorer can help you navigate your interim data samples and understand your data better. Use it to confirm the structure of each column, review data entries, and make sure the data types are correct.
+
+## Generate samples
+
+To use the Data Explorer, you need to [interactively run](/analysts/development/execution/#interactive-execution) your pipelines to generate data samples. This lets you view a sample output of each gem. To load the Data Explorer, simply click on the table icon in between gems after a pipeline run.
+
+## Explore the data
 
 When you open the Data Explorer for an interim, you can:
 
@@ -25,7 +31,7 @@ When you open the Data Explorer for an interim, you can:
 
 ![DataExplorationSQL](./img/DataExplorationSQL.png)
 
-## Data sample
+## Apply to all data
 
 When you filter, sort, or search through the data, you are only working with the **visible sample** of the data. To apply these to the whole dataset in the preview, you must either:
 
