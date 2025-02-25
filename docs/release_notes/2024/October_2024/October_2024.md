@@ -34,7 +34,7 @@ tags:
 
   ![Create a new model test](./../img/oct-model-test-new-test.png)
 
-  For more information, see [Use model and column tests](/docs/ci-cd/data-tests/use-model-tests.md).
+  For more information, see [Use model and column tests](/docs/analysts/development/data-tests/use-model-tests.md).
 
 - **Variant type support**: You can use Prophecy to convert your variant schemas into flat, structured formats to make them easier to understand and use for analytics.
 

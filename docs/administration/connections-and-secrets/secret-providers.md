@@ -16,11 +16,12 @@ tags:
 
 You can configure multiple secret providers per fabric in the **Providers** tab of the fabric configuration. Providers and secrets can be added, edited, and deleted from Prophecy. We support the following providers.
 
-| Secret Provider       | Details                                   |
-| --------------------- | ----------------------------------------- |
-| Databricks Secrets    | Available for **Databricks fabrics only** |
-| HashiCorp Vault       | Available for all Spark fabrics           |
-| Environment Variables | Available for all Spark fabrics           |
+| Secret Provider       | Details                                              |
+| --------------------- | ---------------------------------------------------- |
+| Prophecy              | Available for Prophecy runtime                       |
+| Databricks Secrets    | Available for **Databricks Spark engine only**       |
+| HashiCorp Vault       | Available for all Spark engines and Prophecy runtime |
+| Environment Variables | Available for all Spark engines and Prophecy runtime |
 
 ### Databricks
 

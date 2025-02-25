@@ -189,9 +189,15 @@ const sidebars = {
         "analysts/development/data-explorer",
         {
           type: "category",
-          label: "Testing",
-          link: { type: "doc", id: "analysts/development/testing/testing" },
-          items: [],
+          label: "Data tests",
+          link: {
+            type: "doc",
+            id: "analysts/development/data-tests/data-tests",
+          },
+          items: [
+            "analysts/development/data-tests/use-model-tests",
+            "analysts/development/data-tests/use-project-tests",
+          ],
         },
       ],
     },
@@ -533,15 +539,6 @@ const sidebars = {
           ],
         },
         "ci-cd/tests",
-        {
-          type: "category",
-          label: "Data tests for SQL",
-          link: { type: "doc", id: "ci-cd/data-tests/data-tests" },
-          items: [
-            "ci-cd/data-tests/use-model-tests",
-            "ci-cd/data-tests/use-project-tests",
-          ],
-        },
         {
           type: "category",
           label: "Release and Deploy",
