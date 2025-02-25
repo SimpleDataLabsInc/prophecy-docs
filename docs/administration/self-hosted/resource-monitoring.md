@@ -13,9 +13,24 @@ This page provides an overview of resource monitoring, alert configuration, and 
 
 ## Monitoring
 
-To have a better understanding of how Prophecy is using resources, you can find an overview in **Settings > Admin > Monitoring**.
+To better understand how Prophecy is using resources, you can find an overview in **Settings > Admin > Monitoring**. The different components correspond to the microservices that run on the Kubernetes cluster.
 
 ![Monitoring settings](./img/monitoring.png)
+
+When usage levels reach yellow (warning) or red (critical), you can choose whether to allocate additional resources. In most cases, warning levels do not require action. Similarly, temporary spikes in CPU and memory usage typically do not necessitate action.
+
+| Resource           | Usage                                          | Action                                                                                                              |
+| ------------------ | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| CPU                | Critical usage persists for more than one hour | Resources allocated to the service are under-provisioned. Increase by 10%.                                          |
+| Memory             | Critical usage persists for more than one hour | Resources allocated to the service are under-provisioned. Increase by 10%.                                          |
+| Storage GBytes     | Critical usage is reached                      | Find the PVC in Kubernetes deployment that corresponds to the service. Increase the storage capacity of the volume. |
+| Storage File Count | Critical usage is reached                      | Find the PVC in Kubernetes deployment that corresponds to the service. Increase the storage capacity of the volume. |
+
+<br />
+
+:::note Getting help
+If you need help increasing resources for a service in your Kubernetes deployment, reach out to [Prophecy support](/getting-help/).
+:::
 
 ## Alerts
 
