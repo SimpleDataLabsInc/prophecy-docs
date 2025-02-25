@@ -1,7 +1,6 @@
 ---
 title: Snowflake SQL
 id: snowflake
-sidebar_position: 2
 description: Run Models on a Snowflake Warehouse
 tags:
   - snowflake

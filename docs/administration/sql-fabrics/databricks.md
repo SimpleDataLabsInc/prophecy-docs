@@ -2,7 +2,6 @@
 title: Databricks SQL
 id: databricks
 description: Run Models on a Databricks Warehouse
-sidebar_position: 1
 tags:
   - databricks
   - sql
