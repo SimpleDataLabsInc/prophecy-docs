@@ -1,7 +1,7 @@
 ---
 title: Amazon EMR
 id: emr
-description: This page outlines how to use Amazon EMR via Livy as your Spark execution engine in Prophecy.
+description: Use Amazon EMR via Livy as your Spark execution engine
 sidebar_position: 5
 tags:
   - deployment

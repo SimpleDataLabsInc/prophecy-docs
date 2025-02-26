@@ -9,6 +9,8 @@ tags:
   - development
 ---
 
+<h3><span class="badge">SQL</span></h3>
+
 Prophecy makes it easy to extract insights from data to support decision-making. It does so by bridging the gap between data engineering and analysis—all in one platform.
 
 ## Generate pipelines with Copilot
@@ -19,7 +21,7 @@ Whether you create a pipeline through the intuitive visual interface or use Copi
 
 ## Prepare and transform data
 
-Once you have reliable and structured data, you can start preparing and transforming that data for analysis. Begin with a Prophecy project, where you can build and schedule your own data pipelines using components like gems, datasets, and jobs.
+Once you have reliable and structured data, you can start preparing and transforming that data for analysis. Begin with a Prophecy project, where you can build and schedule your own data pipelines using components like gems, tables, and functions.
 
 ## Leverage business applications
 
@@ -27,4 +29,6 @@ To further improve collaboration between data engineers and analysts, business a
 
 ## Powered by SQL
 
-Data analysis projects are powered by SQL and dbt. Prophecy compiles visually-developed pipelines into SQL code that (while already optimized by Prophecy) can be further refined by engineers who understand specific warehouse specifications.
+Pipelines developed in SQL projects use the Prophecy runtime and a SQL warehouse connection for computation.
+
+Within a pipeline, data transformations are powered by SQL and dbt. These transformations are compiled into SQL code that (while already optimized by Prophecy) can be further refined by engineers who understand SQL model optimization.

@@ -15,11 +15,11 @@ A project must be written in PySpark, Scala, or SQL. This language choice determ
 
 The following table can help you understand the difference between the project types.
 
-| Project type | Execution     | Components                                                                                                                                                                                               |
-| ------------ | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| PySpark      | Spark         | [Pipelines](docs/Spark/pipelines/pipelines.md), [Datasets](docs/Spark/dataset.md), and [Jobs](docs/Orchestration/Orchestration.md)                                                                       |
-| Scala        | Spark         | [Pipelines](docs/Spark/pipelines/pipelines.md), [Datasets](docs/Spark/dataset.md), and [Jobs](docs/Orchestration/Orchestration.md)                                                                       |
-| SQL          | SQL Warehouse | [Pipelines](docs/analysts/development/pipelines.md), [Tables](docs/analysts/development/gems/source-target/source-target.md), [Models](docs/SQL/models.md), and [Schedules](docs/analysts/scheduling.md) |
+| Project type | Execution     | Components                                                                                                                                                                                                         |
+| ------------ | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| PySpark      | Spark         | [Pipelines](docs/Spark/pipelines/pipelines.md), [Datasets](docs/Spark/dataset.md), and [Jobs](docs/Orchestration/Orchestration.md)                                                                                 |
+| Scala        | Spark         | [Pipelines](docs/Spark/pipelines/pipelines.md), [Datasets](docs/Spark/dataset.md), and [Jobs](docs/Orchestration/Orchestration.md)                                                                                 |
+| SQL          | SQL Warehouse | [Pipelines](docs/analysts/development/pipelines.md), [Tables](docs/analysts/development/gems/source-target/source-target.md), [Models](docs/data-modeling/models.md), and [Schedules](docs/analysts/scheduling.md) |
 
 ## Git repository
 

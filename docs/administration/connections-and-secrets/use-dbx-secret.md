@@ -1,5 +1,5 @@
 ---
-title: Secrets for sensitive fields
+title: Secrets walkthrough
 id: use-dbx-secrets
 description: Walkthrough using Databricks secrets for username and passwords
 tags:

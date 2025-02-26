@@ -1,5 +1,5 @@
 ---
-title: Set up Prophecy fabrics
+title: Prophecy fabrics
 description: Use Prophecy and SQL to run pipelines
 id: prophecy-fabrics
 sidebar_label: Prophecy fabrics

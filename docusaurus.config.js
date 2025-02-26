@@ -482,7 +482,7 @@ const config = {
             from: "/Spark/business-rules-engine/",
           },
           {
-            to: "/SQL/",
+            to: "/data-modeling/",
             from: "/SQL/development/",
           },
           {
@@ -490,15 +490,15 @@ const config = {
             from: "/package-hub/package-builder/",
           },
           {
-            to: "/SQL/visual-expression-builder/variant-schema",
+            to: "/data-modeling/visual-expression-builder/variant-schema",
             from: "/SQL/development/visual-editor/variant-schema",
           },
           {
-            to: "/SQL/",
+            to: "/data-modeling/",
             from: "/SQL/development/visual-editor/",
           },
           {
-            to: "/SQL/",
+            to: "/data-modeling/",
             from: "/SQL/development/code-editor",
           },
           {
@@ -583,18 +583,20 @@ const config = {
               ),
             ];
           }
-          if (existingPath.includes("/SQL/gems/target-models/")) {
+          if (existingPath.includes("/data-modeling/gems/target-models/")) {
             return [
               existingPath.replace(
-                "/SQL/gems/target-models/",
+                "/data-modeling/gems/target-models/",
                 "/SQL/development/target-models/",
               ),
             ];
           }
-          if (existingPath.includes("/SQL/visual-expression-builder")) {
+          if (
+            existingPath.includes("/data-modeling/visual-expression-builder")
+          ) {
             return [
               existingPath.replace(
-                "/SQL/visual-expression-builder",
+                "/data-modeling/visual-expression-builder",
                 "/SQL/development/visual-editor/visual-expression-builder",
               ),
             ];
@@ -685,8 +687,11 @@ const config = {
           if (existingPath.includes("/Orchestration")) {
             return [existingPath.replace("/Orchestration", "/low-code-jobs")];
           }
-          if (existingPath.includes("/SQL")) {
-            return [existingPath.replace("/SQL", "/low-code-sql")];
+          if (existingPath.includes("/data-modeling")) {
+            return [existingPath.replace("/data-modeling", "/low-code-sql")];
+          }
+          if (existingPath.includes("/data-modeling")) {
+            return [existingPath.replace("/data-modeling", "/SQL")];
           }
           if (existingPath.includes("/Spark")) {
             return [existingPath.replace("/Spark", "/low-code-spark")];

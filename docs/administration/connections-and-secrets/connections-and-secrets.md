@@ -1,11 +1,10 @@
 ---
 title: Connections and secrets
 id: connections-and-secrets
-description: Secret Management for Spark Fabrics
+description: Connect to external data providers using secrets
 sidebar_position: 1
 sidebar_class_name: hidden
-tags:
-  [spark, secrets, vault, environment, variable, databricks, secret-provider]
+tags: [connections, secrets, vault]
 ---
 
 Connections let you integrate your data from external data providers right in the Prophecy platform. This way, you can browse and search for your data natively while developing a project.

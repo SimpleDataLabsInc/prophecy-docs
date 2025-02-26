@@ -1,33 +1,35 @@
 ---
-title: Set up SQL fabrics
-description: Connect Prophecy to an external execution engine
+title: SQL fabrics
+description: Perform SQL computations on a SQL warehouse
 id: Fabrics
 sidebar_class_name: hidden
-tags: [Fabric, SQL, Execution, Snowflake, Databricks]
+tags: [fabric, SQL, execution, snowflake, databricks]
 ---
 
-A fabric is a logical execution environment. Teams can organize their data engineering into multiple environments such as development, staging, and production. SQL fabrics define the credentials for Prophecy to connect to the SQL Warehouse or Lakehouse. Importantly, each user must update the relevant fabric with their own credentials. Once a SQL fabric is created, Prophecy can access data, execute data models and generate target tables.
+SQL [fabrics](docs/getting-started/concepts/fabrics.md) let Prophecy connect to SQL warehouses for storage and compute engine capabilities. Prophecy supports connections to Databricks and Snowflake SQL warehouses.
 
-Prophecy supports Databricks and Snowflake SQL Warehouses.
-![Providers](./img/Providers.png)
+## When to use SQL fabrics
 
-1. **[Snowflake SQL fabrics](./snowflake.md)** - Provide Prophecy access to use the Snowflake warehouse data storage and compute engine capabilities.
+When working with SQL projects in Prophecy, you have the option to use either a [Prophecy fabric](docs/administration/prophecy-fabrics.md) or a SQL fabric. The choice depends on whether your project requires external data integration or is confined to computations within a SQL warehouse. Use the following table to determine which fabric you should use.
 
-2. **[Databricks SQL fabrics](./databricks.md)** - Provide Prophecy access to use the Databricks' Warehouse storage and compute engine capabilities.
+| Feature                                            | Prophecy fabric | SQL fabric |
+| -------------------------------------------------- | --------------- | ---------- |
+| Compute models in your project                     | Yes             | Yes        |
+| Ingest data from external sources                  | Yes             | No         |
+| Send data to external destinations                 | Yes             | No         |
+| Operates entirely within a connected SQL warehouse | No              | Yes        |
+| Requires Prophecy runtime                          | Yes             | No         |
 
-## Job Scheduling
+## Job scheduling
 
-In addition to secure, ad-hoc model runs on Snowflake and Databricks, job scheduling is done with a visual, easy-to-use interface.
+If you do not want to use Prophecy-managed orchestration, you can set up jobs on a regular basis using:
 
-1. Snowflake users schedule jobs with Airflow. Prophecy's [Airflow fabric](/docs/Orchestration/airflow/setup/setup.md) facilitates a [Connection](/docs/Orchestration/airflow/setup/mwaa.md#setting-up-snowflake-connection) to the Snowflake fabric.
-
-2. Databricks users schedule jobs with [Databricks jobs](/docs/Orchestration/databricks-jobs.md) in Prophecy.
-
-Once a Snowflake or Databricks SQL fabric is setup, Prophecy's interface makes it easy to run models on a daily, weekly, or monthly basis using Airflow or Databricks jobs.
+- [Airflow](docs/Orchestration/airflow/setup/setup.md) (Snowflake users).
+- [Databricks jobs](docs/Orchestration/databricks-jobs.md) (Databricks users).
 
 ## What's next
 
-To continue creating fabrics, see the following pages:
+Click on a tile below to learn how to create a fabric for a certain provider.
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

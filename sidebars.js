@@ -461,30 +461,36 @@ const sidebars = {
     {
       type: "category",
       label: "Model development",
-      link: { type: "doc", id: "SQL/copilot-for-sql-users" },
+      link: { type: "doc", id: "data-modeling/data-modeling" },
       items: [
-        "SQL/Model",
+        "data-modeling/Model",
         {
           type: "category",
           label: "Gems",
-          link: { type: "doc", id: "SQL/gems/sql-gems" },
+          link: { type: "doc", id: "data-modeling/gems/sql-gems" },
           items: [
             {
               type: "category",
               label: "Data sources",
-              link: { type: "doc", id: "SQL/gems/datasources/datasources" },
+              link: {
+                type: "doc",
+                id: "data-modeling/gems/datasources/datasources",
+              },
               items: [],
             },
             {
               type: "category",
               label: "Target models",
-              link: { type: "doc", id: "SQL/gems/target-models/target-models" },
+              link: {
+                type: "doc",
+                id: "data-modeling/gems/target-models/target-models",
+              },
               items: [
-                "SQL/gems/target-models/location",
-                "SQL/gems/target-models/schema",
-                "SQL/gems/target-models/sql-query",
-                "SQL/gems/target-models/type-and-format",
-                "SQL/gems/target-models/write-options",
+                "data-modeling/gems/target-models/location",
+                "data-modeling/gems/target-models/schema",
+                "data-modeling/gems/target-models/sql-query",
+                "data-modeling/gems/target-models/type-and-format",
+                "data-modeling/gems/target-models/write-options",
               ],
             },
           ],
@@ -492,7 +498,7 @@ const sidebars = {
         {
           type: "category",
           label: "Execution",
-          link: { type: "doc", id: "SQL/execution/execution" },
+          link: { type: "doc", id: "data-modeling/execution/execution" },
           items: [],
         },
         {
@@ -500,15 +506,15 @@ const sidebars = {
           label: "Visual expressions",
           link: {
             type: "doc",
-            id: "SQL/visual-expression-builder/visual-expression-builder",
+            id: "data-modeling/visual-expression-builder/visual-expression-builder",
           },
           items: [
-            "SQL/visual-expression-builder/visual-expression-builder-reference",
-            "SQL/visual-expression-builder/use-the-expression-builder",
-            "SQL/visual-expression-builder/variant-schema",
+            "data-modeling/visual-expression-builder/visual-expression-builder-reference",
+            "data-modeling/visual-expression-builder/use-the-expression-builder",
+            "data-modeling/visual-expression-builder/variant-schema",
           ],
         },
-        "SQL/configuration",
+        "data-modeling/configuration",
       ],
     },
     /// LINEAGE
@@ -702,12 +708,11 @@ const sidebars = {
               },
               items: ["administration/Spark-fabrics/databricks/ucshared"],
             },
-            "administration/Spark-fabrics/gcp-dataproc-fabric-guide",
-            "administration/Spark-fabrics/emr",
-            "administration/Spark-fabrics/livy",
             "administration/Spark-fabrics/prophecy-managed-databricks",
+            "administration/Spark-fabrics/livy",
+            "administration/Spark-fabrics/emr",
+            "administration/Spark-fabrics/gcp-dataproc-fabric-guide",
             "administration/Spark-fabrics/azure-synapse-fabric-guide",
-            "administration/Spark-fabrics/fabric-diagnostics",
           ],
         },
         {

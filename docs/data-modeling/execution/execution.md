@@ -4,11 +4,8 @@ id: execution
 description: Execution
 tags:
   - execution
-  - explorer
-  - sort
-  - filter
+  - data explorer
   - interim
-  - data
   - sql
 ---
 

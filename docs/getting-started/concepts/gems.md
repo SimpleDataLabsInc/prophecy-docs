@@ -94,4 +94,4 @@ It's important to note that when you run downstream gems, **their upstream gems 
 
 ## What's next
 
-Prophecy provides specific Spark gems and SQL gems for your pipelines and models. Not only does Prophecy add new gems for your use, but you can also create gems yourself. To learn more, visit our documentation on [Spark gems](/Spark/gems) and [SQL gems](/SQL/gems).
+Prophecy provides specific Spark gems and SQL gems for your pipelines and models. Not only does Prophecy add new gems for your use, but you can also create gems yourself. To learn more, visit our documentation on [Spark gems](/Spark/gems) and [SQL gems](docs/analysts/development/gems/gems.md).

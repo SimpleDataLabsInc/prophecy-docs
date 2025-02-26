@@ -1,7 +1,7 @@
 ---
 title: "Livy"
 id: livy
-description: Configuring Livy fabrics
+description: Configure a Livy fabric
 sidebar_position: 4
 tags:
   - fabric

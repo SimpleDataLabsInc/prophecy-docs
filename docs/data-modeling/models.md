@@ -15,7 +15,7 @@ Models are based on SQL-native code and use the [dbt Core™️](https://docs.ge
 You can build models from a **visual** or **code** interface. When using the visual interface, model components are automatically compiled into SQL select statements that you can reuse and customize.
 
 :::note
-Prophecy’s visual interface supports SQL models only. If you’d like to define Python models you can still use them within the code interface.
+Prophecy’s visual interface supports SQL models only. If you’d like to define Python models, you can still use them within the code interface.
 :::
 
 ## Data modeling
@@ -38,8 +38,4 @@ In the [Project Editor](docs/getting-started/concepts/project.md#project-editor)
 
 ## Models vs pipelines
 
-If you’re already familiar with Prophecy pipelines, models are very similar. The major difference is that each pipeline can create an arbitrary number of outputs, whereas a model only defines one output. Where pipelines can exist only within Spark-based projects, models can exist within SQL-based ones.
-
-## What's next
-
-Visit the [SQL](/SQL) documentation to learn more. You can also get started with [SQL on Databricks](docs/getting-started/tutorials/sql-with-databricks.md) or [Snowflake](docs/getting-started/tutorials/sql-with-snowflake.md).
+Models are data transformations that run exclusively on a SQL warehouse using dbt. Because of this, models follow dbt limitations like each model can only define one output. Pipelines, on the other hand, can use a Spark engine (for Python or Scala projects) or the Prophecy runtime (for SQL projects) for computation. Because of this, pipelines are more flexible in their capabilities.

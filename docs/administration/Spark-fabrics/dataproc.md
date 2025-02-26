@@ -1,7 +1,7 @@
 ---
 title: "Google Cloud Dataproc"
 id: gcp-dataproc-fabric-guide
-description: Configuring GCP Dataproc Fabric
+description: Configure a GCP Dataproc fabric
 sidebar_position: 8
 tags:
   - deployment

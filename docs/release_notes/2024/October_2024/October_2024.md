@@ -48,7 +48,7 @@ tags:
   - Configure the parsing limit for inferring the column structure
   - Use a nested column inside of the Visual Expression Builder
 
-  For more information, see [Variant schema](docs/SQL/visual-expression-builder/variant-schema.md).
+  For more information, see [Variant schema](docs/data-modeling/visual-expression-builder/variant-schema.md).
 
 - **Flatten Schema gem**: When processing raw data it can be useful to flatten complex data types like `Struct`s and `Array`s into simpler, flatter schemas. This gem builds upon the variant type support by allowing you to preserve all schemas, and not just the first one.
 

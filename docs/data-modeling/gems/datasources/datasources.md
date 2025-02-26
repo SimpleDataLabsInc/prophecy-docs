@@ -55,7 +55,7 @@ To create a new model:
 
 1. Click the **plus** sign next to Models.
 1. Provide a name for the new model and define the desired storage path in Git to store the new model SQL file.
-1. Click **Create**. This opens the model canvas. A [Target Model](docs/SQL/gems/target-models/target-models.md) gem automatically appears on the canvas.
+1. Click **Create**. This opens the model canvas. A [Target Model](docs/data-modeling/gems/target-models/target-models.md) gem automatically appears on the canvas.
 
 ![Model1](img/Model1.png)
 

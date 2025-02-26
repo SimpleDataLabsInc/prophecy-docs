@@ -1,17 +1,13 @@
 ---
-title: "Diagnostics"
+title: Fabric diagnostics
 id: fabric-diagnostics
-description: Troubleshooting fabrics using diagnostics
-sidebar_position: 8
+description: Troubleshoot fabric issues using diagnostics
 tags:
   - diagnostics
   - fabric
-  - emr
-  - synase
-  - dataproc
 ---
 
-Troubleshooting Prophecy fabrics is much easier with built-in diagnostics. The descriptions are designed to help users to independently identify and resolve issues. When creating or connecting to a fabric, Prophecy automatically tests for connectivity. This feature helps users to determine whether the issue lies within Prophecy itself or in other components of the data ecosystem.
+Troubleshooting Prophecy fabrics is easy with built-in diagnostics. The descriptions are designed to help users to independently identify and resolve issues. When creating or connecting to a fabric, Prophecy automatically tests for connectivity. This feature helps users to determine whether the issue lies within Prophecy itself or in other components of the data ecosystem.
 
 ## Diagnostics error codes
 

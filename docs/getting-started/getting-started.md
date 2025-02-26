@@ -65,7 +65,7 @@ Based on these answers, you may choose to get started with data analysis, or ins
   <Card title="Engineering Pipeline Development" to="../Spark/">
     Create pipelines using Git workflows for CI/CD, external orchestration for scheduling, and Spark execution engines for processing power.
   </Card>
-  <Card title="Model Development" to="../SQL/">
+  <Card title="Model Development" to="../data-modeling/">
     Develop models using Git workflows for CI/CD, external orchestration for scheduling, and SQL with dbt for data processing.
   </Card>
 </CardContainer>

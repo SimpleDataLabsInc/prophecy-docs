@@ -11,7 +11,7 @@ Pipelines are groups of data transformations that you can build from a **visual*
 
 Under the hood, pipelines are based on Spark-native code. Pipelines are ideal for Spark environments like Databricks or EMR, particularly for tasks such as complex data ingestion (e.g., loading data from Salesforce or JDBC), handling advanced data transformations (e.g., working with complex data types), and supporting machine learning workflows.
 
-## Pipeline creation
+## Creation
 
 If you want to create a new pipeline, you can do so from the **Create Entity** page in the left sidebar. You can also create pipelines directly within the [Project Editor](/getting-started/concepts/project/#project-editor).
 
@@ -25,20 +25,20 @@ The following table describes the parameters for pipeline creation.
 | Mode        | Whether the pipeline will be Batch mode or Streaming.                                                                                             |
 | Description | A field to describe the purpose of the pipeline.                                                                                                  |
 
-## Pipeline canvas
+## Canvas
 
 When you develop a pipeline, you do so from the [Project Editor](/getting-started/concepts/project/#project-editor). More specifically, you work inside the **Pipeline canvas**.
 
 The pipeline canvas includes:
 
-- A space to add and connect gems.
-- The **gem drawer** from which you select your gems.
-- A **run** button to begin interactive execution.
-- **Copilot** to help you build your pipeline.
+- **Canvas**: space to add and connect gems.
+- **Gem drawer**: toolbox that contains all available gems.
+- **Run button**: click to [execute the pipeline interactively](docs/Spark/execution/interactive-execution.md).
+- **Copilot**: AI assistant to help build your pipeline.
 
 ![Pipeline canvas](img/pipeline-canvas.png)
 
-## Pipeline metadata
+## Metadata
 
 To view a list of pipelines in Prophecy, navigate to the **Metadata** page from the left sidebar. For more granular metadata, click into a pipeline. Pipeline metadata can also be accessed from the header of the [Project Editor](/getting-started/concepts/project/#project-editor).
 
