@@ -17,14 +17,14 @@ To better understand how Prophecy is using resources, you can find an overview i
 
 ![Monitoring settings](./img/monitoring.png)
 
-When usage levels reach yellow (warning) or red (critical), you can choose whether to allocate additional resources. In most cases, warning levels do not require action. Similarly, temporary spikes in CPU and memory usage typically do not necessitate action.
+When usage levels reach yellow or red zones, you can choose whether to allocate additional resources. In most cases, temporary spikes in CPU and memory usage type do not necessitate action.
 
-| Resource           | Usage                                          | Action                                                                                                              |
-| ------------------ | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| CPU                | Critical usage persists for more than one hour | Resources allocated to the service are under-provisioned. Increase by 10%.                                          |
-| Memory             | Critical usage persists for more than one hour | Resources allocated to the service are under-provisioned. Increase by 10%.                                          |
-| Storage GBytes     | Critical usage is reached                      | Find the PVC in Kubernetes deployment that corresponds to the service. Increase the storage capacity of the volume. |
-| Storage File Count | Critical usage is reached                      | Find the PVC in Kubernetes deployment that corresponds to the service. Increase the storage capacity of the volume. |
+| Resource           | Usage                                  | Suggested action                                                                                        |
+| ------------------ | -------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| CPU                | Red zone persists for more than 1 hour | CPU allocated to the service is under-provisioned. Increase by 10%.                                     |
+| Memory             | Red zone persists for more than 1 hour | Memory allocated to the service is under-provisioned. Increase by 10%.                                  |
+| Storage GBytes     | Yellow zone is reached                 | Increase the storage capacity of the PVC in your Kubernetes deployment that corresponds to the service. |
+| Storage File Count | Yellow zone is reached                 | Increase the storage capacity of the PVC in your Kubernetes deployment that corresponds to the service. |
 
 <br />
 
