@@ -7,7 +7,7 @@ tags:
   - data quality
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+<span class="badge">SPARK GEM</span><br /><br />
 
 The DataQualityCheck gem includes a variety of checks that are built on the open source tool [Deequ](https://github.com/awslabs/deequ). Use this gem to make sure your data adheres to predefined constraints.
 

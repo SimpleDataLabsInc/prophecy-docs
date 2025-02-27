@@ -15,7 +15,7 @@ tags:
   ]
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+<span class="badge">SPARK GEM</span><br /><br />
 
 The OpenAI gem allows the Prophecy user to interact with the OpenAI API using two different requests:
 

@@ -9,7 +9,7 @@ tags:
   - compare-columns
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+<span class="badge">SPARK GEM</span><br /><br />
 
 The CompareColumns gem lets you compare columns between two DataFrames based on the key id columns defined.
 

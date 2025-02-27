@@ -8,7 +8,7 @@ tags:
   - custom
 ---
 
-<h3><span class="badge">SQL Gem</span></h3>
+<span class="badge">SQL GEM</span><br /><br />
 
 Create one or more models based on provided SQL queries to run against one or more input sources.
 
