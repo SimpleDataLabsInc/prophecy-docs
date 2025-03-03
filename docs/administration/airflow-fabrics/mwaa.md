@@ -159,4 +159,4 @@ Once done, hit **(4) Save**.
 
 ## Create an Airflow Job
 
-Once the MWAA Airflow fabric is setup with the relevant connections, Airflow job scheduling is done with an easy-to-use interface. Follow this guide to [Create an Airflow job](/docs/Orchestration/airflow/getting-started-with-low-code-airflow.md#2-create-an-airflow-job).
+Once the MWAA Airflow fabric is setup with the relevant connections, Airflow job scheduling is done with an easy-to-use interface. Follow this guide to [Create an Airflow job](docs/Orchestration/airflow/airflow-tutorial-spark.md).

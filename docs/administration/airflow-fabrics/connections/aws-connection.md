@@ -1,6 +1,6 @@
 ---
-title: AWS Connection
-id: prophecy_managed_airflow_fabric_aws_connections
+title: AWS connection
+id: aws-connection
 description: How to create AWS connection in Prophecy Managed Airflow fabric
 tags:
   - scheduling
@@ -20,8 +20,8 @@ To create an AWS connection for Prophecy Managed Airflow, you need to provide th
 
 To add an AWS connection, click on **+ Add Connection**. This Opens up the Connection form as shown.
 
-![Add_connection](../img/Add_Connection.png)
+![Add_connection](img/Add_Connection.png)
 
 Select AWS in **(1) Connection Type**. Provide a **(2) Connection Name** to identify your connection, add a **(3) Description** of your choice, and provide the **(4) AWS Access Key ID** and **(5) AWS Secret Access Key**. Once done, hit **(6) Save**.
 
-![AWS_connection](../img/AWS_Connection.png)
+![AWS_connection](img/AWS_Connection.png)

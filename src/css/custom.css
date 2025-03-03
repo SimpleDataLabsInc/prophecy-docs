@@ -242,12 +242,12 @@ img {
 
 .fixed-table th:nth-child(1),
 .fixed-table td:nth-child(1) {
-  width: 20%;
+  width: 25%;
 }
 
 .fixed-table th:nth-child(2),
 .fixed-table td:nth-child(2) {
-  width: 80%;
+  width: 75%;
 }
 
 /* Remove margin from lists in tables */

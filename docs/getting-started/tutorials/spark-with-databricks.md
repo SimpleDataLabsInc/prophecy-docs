@@ -1,5 +1,5 @@
 ---
-title: Spark with Databricks
+title: Engineering | Spark
 id: spark-with-databricks
 description: Getting started with Spark on Databricks
 tags:

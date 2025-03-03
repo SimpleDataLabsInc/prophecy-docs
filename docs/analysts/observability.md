@@ -9,7 +9,7 @@ The **Observability** page in Prophecy lets you monitor your deployed projects, 
 
 ## Deployed Projects
 
-Data analysis projects that have been [published](docs/analysts/version-control/version-control.md) will appear in the **Deployed Projects** tab of the Observability page.
+Data analysis projects that have been [published](/analysts/development/version-control/) will appear in the **Deployed Projects** tab of the Observability page.
 
 - **Project:** The name of the deployed project.
 - **Fabric:** The fabric associated with the deployed project.

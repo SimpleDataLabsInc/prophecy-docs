@@ -1,5 +1,5 @@
 ---
-title: SQL with Databricks
+title: Engineering | Databricks SQL
 id: sql-with-databricks
 description: A tutorial on using SQL with the help of Data Transformation Copilot
 tags:

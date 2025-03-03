@@ -1,5 +1,5 @@
 ---
-title: SQL with Snowflake
+title: Engineering | Snowflake SQL
 id: sql-with-snowflake
 description: Use this tutorial to create a project with data in Snowflake
 tags:
@@ -240,7 +240,7 @@ Prophecy guides your team's code management - with version control, tagged relea
 
 ## Schedule Jobs with Airflow
 
-Most Snowflake users want to schedule jobs using Airflow. Prophecy integrates with MWAA and Composer Airflows. Don't have an Airflow account? Prophecy also provides a managed Airflow option. [Setup](/docs/Orchestration/airflow/setup/setup.md) your favorite Airflow option and use this [guide](docs/Orchestration/airflow/getting-started-with-low-code-airflow.md) to schedule Airflow jobs. Now you can schedule SQL models integrated with your Spark pipelines, S3 file sensors, etc.
+Most Snowflake users want to schedule jobs using Airflow. Prophecy integrates with MWAA and Composer Airflows. Don't have an Airflow account? Prophecy also provides a managed Airflow option. [Set up](docs/administration/airflow-fabrics/airflow-fabrics.md) your favorite Airflow option and use this [guide](docs/Orchestration/airflow/airflow-tutorial-spark.md) to schedule Airflow jobs. Now you can schedule SQL models integrated with your Spark pipelines, S3 file sensors, etc.
 
 ## What's next
 

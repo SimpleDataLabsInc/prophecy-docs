@@ -24,7 +24,7 @@ When working with SQL projects in Prophecy, you have the option to use either a 
 
 If you do not want to use Prophecy-managed orchestration, you can set up jobs on a regular basis using:
 
-- [Airflow](docs/Orchestration/airflow/setup/setup.md) (Snowflake users).
+- [Airflow](docs/Orchestration/airflow/airflow.md) (Snowflake users).
 - [Databricks jobs](docs/Orchestration/databricks-jobs.md) (Databricks users).
 
 ## What's next

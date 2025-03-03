@@ -1,6 +1,6 @@
 ---
 title: Connections
-id: prophecy_managed_airflow_fabric_connections
+id: airflow_fabric_connections
 description: How to create connections in Prophecy Managed Airflow fabric
 tags:
   - scheduling

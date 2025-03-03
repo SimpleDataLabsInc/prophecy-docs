@@ -342,7 +342,7 @@ const config = {
             from: "/administration/feature-matrix",
           },
           {
-            to: "/Orchestration/airflow/airflow-tutorial",
+            to: "/Orchestration/airflow/airflow-tutorial-spark",
             from: "/getting-started/airflow",
           },
           {

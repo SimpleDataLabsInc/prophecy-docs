@@ -199,16 +199,17 @@ const sidebars = {
             "analysts/development/data-tests/use-project-tests",
           ],
         },
+        {
+          type: "category",
+          label: "Versioning",
+          link: {
+            type: "doc",
+            id: "analysts/development/version-control/version-control",
+          },
+          items: [],
+        },
+        "analysts/development/collaboration",
       ],
-    },
-    {
-      type: "category",
-      label: "Versioning",
-      link: {
-        type: "doc",
-        id: "analysts/version-control/version-control",
-      },
-      items: [],
     },
     "analysts/scheduling",
     "analysts/observability",
@@ -590,47 +591,7 @@ const sidebars = {
           type: "category",
           label: "Airflow",
           link: { type: "doc", id: "Orchestration/airflow/airflow" },
-          items: [
-            {
-              type: "category",
-              label: "Setup",
-              link: {
-                type: "doc",
-                id: "Orchestration/airflow/setup/setup_airflow",
-              },
-              items: [
-                "Orchestration/airflow/setup/composer_fabric",
-                "Orchestration/airflow/setup/MWAA_fabric",
-              ],
-            },
-            {
-              type: "category",
-              label: "Prophecy managed",
-              link: {
-                type: "doc",
-                id: "Orchestration/airflow/prophecy-managed/prophecy_managed_airflow_fabric",
-              },
-              items: [
-                {
-                  type: "category",
-                  label: "Connections",
-                  link: {
-                    type: "doc",
-                    id: "Orchestration/airflow/prophecy-managed/connections/prophecy_managed_airflow_fabric_connections",
-                  },
-                  items: [
-                    "Orchestration/airflow/prophecy-managed/connections/prophecy_managed_airflow_fabric_aws_connections",
-                    "Orchestration/airflow/prophecy-managed/connections/prophecy_managed_airflow_fabric_dbx_spark_connections",
-                    "Orchestration/airflow/prophecy-managed/connections/prophecy_managed_airflow_fabric_dbx_sql_connections",
-                    "Orchestration/airflow/prophecy-managed/connections/prophecy_managed_airflow_fabric_email_connections",
-                    "Orchestration/airflow/prophecy-managed/connections/prophecy_managed_airflow_fabric_snowflake_connections",
-                  ],
-                },
-                "Orchestration/airflow/prophecy-managed/prophecy_managed_airflow_fabric_limits",
-              ],
-            },
-            "Orchestration/airflow/airflow-tutorial",
-          ],
+          items: ["Orchestration/airflow/airflow-tutorial-spark"],
         },
         "Orchestration/databricks-jobs",
         "Orchestration/multi-jobs-trigger",
@@ -722,6 +683,35 @@ const sidebars = {
           items: [
             "administration/sql-fabrics/databricks",
             "administration/sql-fabrics/snowflake",
+          ],
+        },
+        {
+          type: "category",
+          label: "Airflow fabrics",
+          link: {
+            type: "doc",
+            id: "administration/airflow-fabrics/airflow-fabrics",
+          },
+          items: [
+            {
+              type: "category",
+              label: "Airflow connections",
+              link: {
+                type: "doc",
+                id: "administration/airflow-fabrics/connections/airflow_fabric_connections",
+              },
+              items: [
+                "administration/airflow-fabrics/connections/dbx_spark_connections",
+                "administration/airflow-fabrics/connections/dbx_sql_connections",
+                "administration/airflow-fabrics/connections/airflow_snowflake_connections",
+                "administration/airflow-fabrics/connections/aws-connection",
+                "administration/airflow-fabrics/connections/airflow_email_connections",
+              ],
+            },
+            "administration/airflow-fabrics/prophecy_managed_airflow_fabric",
+            "administration/airflow-fabrics/composer_fabric",
+            "administration/airflow-fabrics/MWAA_fabric",
+            "administration/airflow-fabrics/open-source-airflow",
           ],
         },
       ],
