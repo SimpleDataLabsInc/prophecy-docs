@@ -23,6 +23,11 @@ Each time you publish a project, you create a **new deployed project version**. 
 - Package Hub packages
 - App Directory applications
 
+Publish parameters
+
+- select a fabric -- deploy (you cannot undeploy anything)
+- select an older version & publish in a diff fabric -- release and deploy on new fabric
+
 ## Show version history
 
 The version history in Prophecy tracks different versions of your project that you save and publish. From here, you can view modifications in each version and, if you want, revert to previous versions. You can also view the version history within the [project metadata](getting-started/concepts/project#project-metadata).
@@ -31,7 +36,7 @@ The version history in Prophecy tracks different versions of your project that y
 
 Versioning in Prophecy is built on top of [Git](docs/ci-cd/git/git.md) in the backend. This means that your project is hosted on and tracked in a Git repository. If you want to connect your external Git provider for project hosting, you can do so. That way, you can also view your version history in Git and follow your organization's Git workflow requirements.
 
-| Prophecy action | Git backend                                                                                                                     |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| Save to draft   | <ul class="table-list"><li>Commit changes to a development branch</li></ul>                                                     |
-| Publish         | <ul class="table-list"><li>Merge changes into the main branch</li><li>Add a Git tag with the published version number</li></ul> |
+| Prophecy action | Git backend                                                                                                                                                                                                              |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Save to draft   | <ul class="table-list"><li>Pull changes from the main branch (normally will not do anything)</li><li>Commit changes to a development branch</li></ul>                                                                    |
+| Publish         | <ul class="table-list"><li>Merge changes into the main branch</li><li>Add a Git tag with the published version number</li><li>If you select a fabric to publish the version, this will also deploy the project</li></ul> |
