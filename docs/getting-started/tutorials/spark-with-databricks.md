@@ -1,5 +1,5 @@
 ---
-title: Engineering | Spark
+title: Create pipelines with Spark
 id: spark-with-databricks
 description: Getting started with Spark on Databricks
 tags:

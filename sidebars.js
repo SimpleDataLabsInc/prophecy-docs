@@ -55,7 +55,6 @@ const sidebars = {
           items: [
             "getting-started/tutorials/spark-with-databricks",
             "getting-started/tutorials/sql-with-snowflake",
-            "getting-started/tutorials/sql-with-databricks",
           ],
         },
       ],

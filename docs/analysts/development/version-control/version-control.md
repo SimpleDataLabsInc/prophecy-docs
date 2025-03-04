@@ -13,20 +13,27 @@ When you build projects in Prophecy, you can save and publish your work with the
 
 As you develop your project, Prophecy automatically preserves your changes. However, you should periodically save your changes in logical stages. To do so, you can click **Save to draft** on the project canvas.
 
+| Parameters               | Description                                                                                          |
+| ------------------------ | ---------------------------------------------------------------------------------------------------- |
+| Version description      | A short summery of the changes made since the last draft was saved.                                  |
+| Changes since last saved | Lists all of the entities that have been added, removed, or modified since the last draft was saved. |
+
 ## Publish new version
 
-If you want to publish the current state of your project, you can click **Publish new version** on the project canvas.
+If you want to publish the current state of your project, you can click **Publish** on the project canvas.
+
+| Parameters                                 | Description                                                                                                              |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| Version details                            | The version details are automatically populated by Copilot. You can edit the version number or description if necessary. |
+| Changes that will be published             | A list of commits that will be published in the new version.                                                             |
+| Select the fabric(s) to publish (Optional) | The fabric that will be used to build and deploy the project.                                                            |
+| Select version                             | Publish an older version to deploy on a new fabric.                                                                      |
 
 Each time you publish a project, you create a **new deployed project version**. This new version will update the projects used for:
 
 - Scheduled pipeline runs
 - Package Hub packages
 - App Directory applications
-
-Publish parameters
-
-- select a fabric -- deploy (you cannot undeploy anything)
-- select an older version & publish in a diff fabric -- release and deploy on new fabric
 
 ## Show version history
 
