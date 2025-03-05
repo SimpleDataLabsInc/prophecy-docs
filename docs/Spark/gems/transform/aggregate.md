@@ -10,7 +10,17 @@ tags:
   - count
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  package_name=""
+  package_version=""
+  scala_lib="0.1+"
+  python_lib="0.1+"
+  uc_single="14.3+"
+  uc_shared="Not Supported"
+  livy=""
+/>
 
 Allows you to group the data and apply aggregation methods and pivot operation.
 

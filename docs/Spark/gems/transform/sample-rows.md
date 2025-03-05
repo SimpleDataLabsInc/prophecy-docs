@@ -8,7 +8,7 @@ tags:
   - sample
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+<span class="badge">SPARK GEM</span><br /><br />
 
 Use the SampleRows gem to sample records by choosing a specific number or percentage of records.
 

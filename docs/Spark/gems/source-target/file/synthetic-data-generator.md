@@ -10,18 +10,16 @@ tags:
   - generator
 ---
 
-import Requirements from "../../\_gem-requirements.mdx";
-
-<h3><span class="badge">Spark Gem</span></h3>
+import Requirements from '@site/src/components/gem-requirements';
 
 <Requirements
-  packagename="ProphecySparkBasicsPython"
-  packageversion="0.2.36"
-  scalalib="8.5.0"
-  pythonlib="1.9.24"
-  packageversion122="Not Supported"
-  packageversion143="Not Supported"
-  packageversion154="Supported 0.2.36+"
+  package_name="ProphecySparkBasicsPython"
+  package_version="0.2.36+"
+  scala_lib="8.5.0+"
+  python_lib="1.9.24+"
+  uc_single="14.3+"
+  uc_shared="Not Supported"
+  livy=""
 />
 
 Generate synthetic data with this special kind of Source gem.
