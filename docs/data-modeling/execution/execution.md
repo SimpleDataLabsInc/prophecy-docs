@@ -13,12 +13,10 @@ You can leverage Data Copilot for SQL by building your model and adding individu
 
 ## Interim data samples {#interims}
 
-When you run a model in the model canvas, Prophecy generates **interim** data samples that let you preview the output of your data transformations.
+When you run a model in the model canvas, Prophecy generates **interim** data samples that let you preview the output of your data transformations. There are two ways to run a model interactively:
 
-There are two ways to run a model interactively:
-
-- Click the **play** button on the model canvas to run the entire model.
-- Click the **play** button on a particular gem to execute the flow **up to and including that gem**. This is useful for testing and debugging when you don't want to run the entire model.
+- Run the entire model using the **play** button on the pipeline canvas.
+- Execute the model up to and including a particular gem using the **play** button on that gem.
 
 ![Interactive run options](img/interactive-execution-sql.png)
 

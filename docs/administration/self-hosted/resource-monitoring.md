@@ -13,9 +13,24 @@ This page provides an overview of resource monitoring, alert configuration, and 
 
 ## Monitoring
 
-To have a better understanding of how Prophecy is using resources, you can find an overview in **Settings > Admin > Monitoring**.
+To better understand how Prophecy is using resources, you can find an overview in **Settings > Admin > Monitoring**. The different components correspond to the microservices that run on the Kubernetes cluster.
 
 ![Monitoring settings](./img/monitoring.png)
+
+When usage levels reach yellow or red zones, you can choose whether to allocate additional resources. In most cases, temporary spikes in CPU and memory usage type do not necessitate action.
+
+| Resource           | Usage                                  | Suggested action                                                                                        |
+| ------------------ | -------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| CPU                | Red zone persists for more than 1 hour | CPU allocated to the service is under-provisioned. Increase by 10%.                                     |
+| Memory             | Red zone persists for more than 1 hour | Memory allocated to the service is under-provisioned. Increase by 10%.                                  |
+| Storage GBytes     | Yellow zone is reached                 | Increase the storage capacity of the PVC in your Kubernetes deployment that corresponds to the service. |
+| Storage File Count | Yellow zone is reached                 | Increase the storage capacity of the PVC in your Kubernetes deployment that corresponds to the service. |
+
+<br />
+
+:::note Getting help
+If you need help increasing resources for a service in your Kubernetes deployment, reach out to [Prophecy support](/getting-help/).
+:::
 
 ## Alerts
 
