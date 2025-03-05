@@ -1,5 +1,5 @@
 ---
-title: Modeling with Snowflake
+title: Modeling with SQL
 id: sql-with-snowflake
 description: Use this tutorial to create a project with data in Snowflake
 tags:
@@ -23,7 +23,9 @@ For this tutorial, you will need:
 
 - A Prophecy account. You can use a 21 day [free trial](https://app.Prophecy.io/metadata/auth/signup) for this tutorial.
 - A Snowflake account.
-- A GitHub account. If you don't have one, create one by following [these instructions](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github).
+- A GitHub account.
+
+If you want to use a different SQL provider such as Databricks, you can [set up the fabric](docs/administration/sql-fabrics/databricks.md) and still complete the development section of this tutorial.
 
 ## Connect to Snowflake
 
@@ -61,12 +63,7 @@ In the Provider tab, complete the following steps:
 1. Open the Providers dropdown and select Snowflake.
 1. Add the Snowflake Account URL, which looks like this: `https://<org>-<account>.snowflakecomputing.com`.
 1. Add the username of a Snowflake user that Prophecy will use to connect to the Snowflake Warehouse.
-1. Add the password of the same Snowflake user that Prophecy will use to connect to the Snowflake Warehouse.
-
-   :::note
-   These credentials are encrypted for secure storage.
-   :::
-
+1. Add the password of the same Snowflake user that Prophecy will use to connect to the Snowflake Warehouse. These credentials are encrypted for secure storage.
 1. Add the Snowflake [role](https://docs.snowflake.com/en/user-guide/security-access-control-overview#roles) that Prophecy will use to read data and execute queries on the Snowflake Warehouse. The role must be already granted to the Snowflake user provided above and should be scoped according to the permission set desired for Prophecy.
 1. Specify the Snowflake warehouse for default writes for this execution environment.
 1. Specify the Snowflake database for default writes for this execution environment.
@@ -118,9 +115,7 @@ You cannot make changes directly on the main branch. Therefore, you must start b
 1. Click on **Checkout Branch** and type `dev/model-tutorial` in the **Branch** field.
 1. Click **Checkout**. The new branch will be displayed in the **footer**.
 
-::note
 Branches are clones from the current branch. In most cases, you will want to branch from the main branch.
-:::
 
 ### Connect to a fabric
 

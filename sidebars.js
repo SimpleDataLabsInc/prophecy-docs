@@ -53,6 +53,7 @@ const sidebars = {
             id: "getting-started/tutorials/tutorials",
           },
           items: [
+            "getting-started/tutorials/sql-with-prophecy",
             "getting-started/tutorials/spark-with-databricks",
             "getting-started/tutorials/sql-with-snowflake",
           ],
@@ -648,7 +649,7 @@ const sidebars = {
       defaultStyle: true,
     },
     "administration/teamuser",
-    "administration/settings/settings",
+    "administration/project-creation-template",
     {
       type: "category",
       label: "Fabric setup",
@@ -729,6 +730,7 @@ const sidebars = {
         "administration/connections-and-secrets/use-dbx-secrets",
       ],
     },
+    "administration/settings/settings",
     {
       type: "html",
       value: '<span class="sidebar-divider" />',
