@@ -2,7 +2,6 @@
 title: Databricks SQL
 id: databricks
 description: Run Models on a Databricks Warehouse
-sidebar_position: 1
 tags:
   - databricks
   - sql
@@ -42,7 +41,7 @@ The SQL **provider** is both the storage warehouse and the execution environment
 
 | **Provider details**                                                                                                                                                                                                                                                                                                            |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **1 - Provider Type** - Select SQL as the Provider type. (Alternatively, create a Spark type fabric using instructions [here](/docs/administration/Spark-fabrics/fabrics.md) or an Airflow type fabric following these [instructions](/docs/Orchestration/airflow/setup/setup.md).)                                             |
+| **1 - Provider Type** - Select SQL as the Provider type. (Alternatively, create a Spark type fabric using instructions [here](/docs/administration/Spark-fabrics/fabrics.md) or an Airflow type fabric following these [instructions](docs/administration/airflow-fabrics/airflow-fabrics.md).)                                 |
 | **2 - Provider** - Click the dropdown menu for the list of supported Provider types. Select Databricks.                                                                                                                                                                                                                         |
 | **3 - JDBC URL** - Copy the JDBC URL from the Databricks UI as shown. This is the URL that Prophecy will connect for SQL Warehouse data storage and execution.                                                                                                                                                                  |
 | **4 - Personal Databricks Access Token ** - This is the token Prophecy will use to connect to Databricks. Each user will need to apply their own token. To generate a Databricks PAT follow [these instructions](https://docs.databricks.com/en/dev-tools/auth/pat.html#databricks-personal-access-tokens-for-workspace-users). |
@@ -53,7 +52,7 @@ Prophecy supports Databricks Volumes. When you run a Python or Scala pipeline vi
 
 ### Connections
 
-(Optional) Browsing data catalogs, tables, and schemas can be a time-intensive operation especially for Warehouses with hundreds or thousands of tables. To address this challenge, Prophecy offers a [Metadata Connection](/docs/administration/metadata-connections.md) to sync metadata from the data provider at regular intervals.
+(Optional) Browsing data catalogs, tables, and schemas can be a time-intensive operation especially for Warehouses with hundreds or thousands of tables. To address this challenge, Prophecy offers a [Metadata Connection](/docs/administration/connections-and-secrets/metadata-connections.md) to sync metadata from the data provider at regular intervals.
 
 ## Using fabrics
 
@@ -75,5 +74,3 @@ Each team member can attach completed fabrics to their projects and models.
 :::info
 Remember, each user will be prompted to update the fabric with their own credentials. Prophecy respects these credentials when accessing Databricks catalogs, tables, databases, etc.
 :::
-
-Once a project is attached to a fabric, and the project is released, the project can be scheduled to run on a regular frequency using [Databricks jobs](docs/getting-started/tutorials/sql-with-databricks.md#orchestrate-and-deploy)

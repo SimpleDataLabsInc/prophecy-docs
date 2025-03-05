@@ -1,5 +1,5 @@
 ---
-title: Settings
+title: User settings
 id: settings
 sidebar_class_name: hidden
 description: This page describes the Settings pages of Prophecy

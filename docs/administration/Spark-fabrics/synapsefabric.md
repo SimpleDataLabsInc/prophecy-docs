@@ -1,7 +1,7 @@
 ---
-title: "Azure Synapse Analytics"
+title: Azure Synapse
 id: azure-synapse-fabric-guide
-description: Configuring Synapse Fabric
+description: Configure an Azure Synapse fabric
 sidebar_position: 6
 tags:
   - deployment
@@ -10,7 +10,7 @@ tags:
   - livy
 ---
 
-In the context of Spark execution engines, users have the flexibility to opt for Azure Synapse Analytics while utilizing Prophecy. This comprehensive documentation aims to provide users with a clear understanding of the configuration process for Azure Synapse Analytics. Additionally, it offers step-by-step guidance on creating a fabric that enables seamless connectivity to the Azure Synapse Workspace via Livy.
+In the context of Spark execution engines, users have the flexibility to opt for Azure Synapse Analytics while utilizing Prophecy. Use this step-by-step guide on creating a fabric to connect to the Azure Synapse Workspace via Livy.
 
 Feel free to explore the following sections to gain insights into the integration of Azure Synapse Analytics with Prophecy.
 

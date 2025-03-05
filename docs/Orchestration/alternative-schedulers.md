@@ -100,7 +100,7 @@ Sample Configuration Schema for below examples:
 
 #### `-i` set the pipeline Configuration instance
 
-A pipeline may be run with a different pipeline Configuration instance by using the `-i` option and providing the name of the configuration profile instance. For more information on configuration instances and overrides, see [Pipeline Configuration instances](../../Spark/configuration).
+A pipeline may be run with a different pipeline Configuration instance by using the `-i` option and providing the name of the configuration profile instance. For more information on configuration instances and overrides, see [Pipeline configuration](docs/Spark/pipelines/configuration.md).
 
 ##### `-i` examples
 

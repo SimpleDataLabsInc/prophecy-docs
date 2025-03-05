@@ -49,7 +49,7 @@ These are some Scala and Python libraries written by Prophecy to provide additio
 
 ### Metadata connection
 
-Optionally, enhance your fabric by creating a [Metadata Connection](/docs/administration/metadata-connections.md), recommended for users with hundreds or thousands of tables housed in their data provider(s).
+Optionally, enhance your fabric by creating a [Metadata Connection](/docs/administration/connections-and-secrets/metadata-connections.md), recommended for users with hundreds or thousands of tables housed in their data provider(s).
 
 ### Artifacts
 
