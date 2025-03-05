@@ -62,7 +62,7 @@ A word from Prophecy's co-Founder, Maciej! See how Prophecy allows every team, w
 
 ## What's next
 
-To get started developing SQL models, check out the pages below or try this guide for [Databricks](docs/getting-started/tutorials/sql-with-databricks.md) or [Snowflake](docs/getting-started/tutorials/sql-with-snowflake.md).
+To get started developing SQL models, check out the pages below or try this [modeling](docs/getting-started/tutorials/sql-with-snowflake.md) tutorial.
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

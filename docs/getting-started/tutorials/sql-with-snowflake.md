@@ -46,7 +46,7 @@ You'll first have to retrieve the following information from Snowflake to pass t
 
 ### Create a SQL fabric in Prophecy
 
-Since you will only compute models in this tutorial (rather than perform any orchestration), you can create a SQL [fabric](<(docs/getting-started/concepts/fabrics.md)>) to use as your execution environment. Let's use the information you gathered in the previous section to create the fabric.
+Since you will only compute models in this tutorial (rather than perform any orchestration), you can create a SQL [fabric](docs/getting-started/concepts/fabrics.md) to use as your execution environment. Let's use the information you gathered in the previous section to create the fabric.
 
 1. Click to add a new entity.
 1. Create a new fabric.

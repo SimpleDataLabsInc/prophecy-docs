@@ -73,4 +73,4 @@ The advanced settings of a model let you define whether the model should be mate
 
 ## What's next
 
-For more details on dbt concepts including [sources](https://docs.getdbt.com/docs/build/sources), [seeds](https://docs.getdbt.com/docs/build/seeds), and [models](https://docs.getdbt.com/docs/build/models), explore the dbt documentation or check out the [SQL with Databricks](docs/getting-started/tutorials/sql-with-databricks.md) tutorial.
+For more details on dbt concepts including [sources](https://docs.getdbt.com/docs/build/sources), [seeds](https://docs.getdbt.com/docs/build/seeds), and [models](https://docs.getdbt.com/docs/build/models), explore the dbt documentation.

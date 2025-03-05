@@ -522,7 +522,7 @@ const config = {
             from: "/getting-started/sql-with-snowflake",
           },
           {
-            to: "/getting-started/tutorials/sql-with-databricks",
+            to: "/getting-started/tutorials/sql-with-snowflake",
             from: "/getting-started/sql-with-databricks",
           },
           {

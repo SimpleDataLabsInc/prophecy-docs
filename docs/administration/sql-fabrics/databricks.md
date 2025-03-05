@@ -74,5 +74,3 @@ Each team member can attach completed fabrics to their projects and models.
 :::info
 Remember, each user will be prompted to update the fabric with their own credentials. Prophecy respects these credentials when accessing Databricks catalogs, tables, databases, etc.
 :::
-
-Once a project is attached to a fabric, and the project is released, the project can be scheduled to run on a regular frequency using [Databricks jobs](docs/getting-started/tutorials/sql-with-databricks.md#orchestrate-and-deploy)

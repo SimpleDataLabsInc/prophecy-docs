@@ -27,7 +27,7 @@ Data sampling is enabled by default for interactive execution. However, you can 
 
 ### Pipeline settings
 
-For each pipeline, you can enable, disable, or change interactive data sampling and job data sampling modes. For more information, visit our [pipeline settings](docs/Spark/pipeline-settings.md) documentation.
+For each pipeline, you can enable, disable, or change interactive data sampling and job data sampling modes. For more information, visit our [pipeline settings](docs/Spark/pipelines/pipeline-settings.md) documentation.
 
 ![Data and Job Sampling](img/interactive-execution-job-data-sampling.png)
 

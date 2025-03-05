@@ -34,22 +34,22 @@ Based on these answers, you may choose to get started with data analysis, or ins
 ```mdx-code-block
 <CardContainer>
   <Card
-    title="Spark with Databricks"
+    title="Create pipelines with Spark"
     to="./tutorials/spark-with-databricks"
   >
     Learn about and try developing pipelines in Spark.
   </Card>
   <Card
-    title="SQL with Databricks"
-    to="./tutorials/sql-with-databricks"
+    title="Create pipelines with SQL"
+    to="./tutorials/sql-with-prophecy"
   >
-    Learn about and try developing models with Databricks SQL.
+    Learn about and try developing pipelines with SQL.
   </Card>
   <Card
-    title="SQL with Snowflake"
+    title="Modeling with SQL"
     to="./tutorials/sql-with-snowflake"
   >
-    Learn about and try developing models with Snowflake.
+    Learn about and try developing models with SQL.
   </Card>
 </CardContainer>
 <br />
