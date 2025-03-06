@@ -346,11 +346,11 @@ const config = {
             from: "/getting-started/airflow",
           },
           {
-            to: "/administration/connections-and-secrets/metadata-connections",
+            to: "/administration/connections/",
             from: "/metadata/metadata-connections",
           },
           {
-            to: "/administration/connections-and-secrets/metadata-connections",
+            to: "/administration/connections/",
             from: "/concepts/metadata",
           },
           {
@@ -490,7 +490,7 @@ const config = {
             from: "/package-hub/package-builder/",
           },
           {
-            to: "/data-modeling/visual-expression-builder/variant-schema",
+            to: "/analysts/development/gems/visual-expression-builder/variant-schema",
             from: "/SQL/development/visual-editor/variant-schema",
           },
           {
@@ -617,10 +617,10 @@ const config = {
               ),
             ];
           }
-          if (existingPath.includes("/administration/secret-management")) {
+          if (existingPath.includes("/administration/secrets")) {
             return [
               existingPath.replace(
-                "/administration/secret-management",
+                "/administration/secrets",
                 "/Spark/secret-management",
               ),
             ];

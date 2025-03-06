@@ -19,7 +19,7 @@ When you run a pipeline in the pipeline canvas, Prophecy generates **interim** d
 
 ![Interactive run options](img/interactive-execution-play-options.png)
 
-After you run your pipeline, the interims will appear between gems. These previews are temporarily cached. Learn more about how to navigate the interim data samples in [Data Explorer](docs/Spark/execution/data-explorer.md).
+After you run your pipeline, the interims will appear between gems. These previews are temporarily cached. Learn more about how to navigate the interim data samples in [Data Explorer](docs/Spark/data-explorer/data-explorer.md).
 
 ## Data sampling settings
 

@@ -44,9 +44,9 @@ Review the various settings available for each pipeline, including Spark setting
 
 <div className="fixed-table">
 
-| Setting         | Description                                                                                                                                                                                                                                                                                                                      |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Visual Language | The programming language (SQL, Scala, or Python) used for expressions inside of gems. If you change the visual language while developing your pipeline, Prophecy will automatically convert expressions into the chosen language. The <a href="../expression-builder">Expression Builder</a> will adapt to the language as well. |
+| Setting         | Description                                                                                                                                                                                                                                                                                                                           |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Visual Language | The programming language (SQL, Scala, or Python) used for expressions inside of gems. If you change the visual language while developing your pipeline, Prophecy will automatically convert expressions into the chosen language. The <a href="../gems/expression-builder">Expression Builder</a> will adapt to the language as well. |
 
 </div>
 

@@ -1,5 +1,5 @@
 ---
-title: Data explorer
+title: Data exploration
 id: data-explorer
 description: Data explorer for Spark
 tags:
@@ -43,31 +43,13 @@ You can still load more records into the preview when using selective data sampl
 
 If you disable the large data preview on an individual gem, you'll see a pale-color interim on its output after running the data pipeline. This means that no data sample was generated. If you want to generate the data preview, open the pale interim and it will load the data. After it loads, the interim will look like a normal interim.
 
-### Data profile
+## What's next
 
-The data preview also include data profiles for your interim data. You'll be able too see a high-level analysis for each column, including:
+Learn about the different Data Explorer tabs in the following pages.
 
-- Percent of non-blank values
-- Percent of null values
-- Percent of blank values
-- Most common values
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-When you open the data explorer, you'll only see the data profile of the data **sample**. When you load the full data profile, Prophecy generates a more in-depth analysis on **all of the records** in the interim dataset. The full profile displays the following information:
-
-- **Data type**: The data type of the column.
-- **Unique values**: The number of unique values in the column.
-- **Longest value**: The longest value in the column and its length.
-- **Shortest value**: The shortest value in the column and its length.
-- **Most frequent value**: The most frequent value in the column and its number of occurrences.
-- **Least frequent value**: The least frequent value in the column and its number of occurrences.
-- **Minimum value**: The minimum value in the column.
-- **Maximum value**: The maximum value in the column.
-- **Average value length**: The average length of each value in the column.
-- **Null values**: The percent and number of null values in the column.
-- **Blank values**: The percent and number of blank values in the column.
-- **Non-blank values**: The percent and number of non-blank values in the column.
-- **Data summary**: An overview of the most common values in the column.
-
-## Data diff
-
-The **Data Diff** tab of the data explorer can help you understand the difference between target tables and your predefined expectations. Learn more in [Data Diff](docs/Spark/execution/data-diff.md).
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```

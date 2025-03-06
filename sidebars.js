@@ -178,6 +178,19 @@ const sidebars = {
                 "analysts/development/gems/custom/macro",
               ],
             },
+            {
+              type: "category",
+              label: "Visual expressions",
+              link: {
+                type: "doc",
+                id: "analysts/development/gems/visual-expression-builder/visual-expression-builder",
+              },
+              items: [
+                "analysts/development/gems/visual-expression-builder/visual-expression-builder-reference",
+                "analysts/development/gems/visual-expression-builder/use-the-expression-builder",
+                "analysts/development/gems/visual-expression-builder/variant-schema",
+              ],
+            },
           ],
         },
         {
@@ -400,6 +413,7 @@ const sidebars = {
                 "Spark/gems/custom/directory",
               ],
             },
+            "Spark/gems/expression-builder",
           ],
         },
         {
@@ -410,12 +424,22 @@ const sidebars = {
             id: "Spark/execution/interactive-execution",
           },
           items: [
-            "Spark/execution/data-explorer",
-            "Spark/execution/data-diff",
             "Spark/execution/conditional-execution",
             "Spark/execution/execution-metrics",
             "Spark/execution/executions_on_databricks_clusters",
             "Spark/execution/executions_on_livy_clusters",
+          ],
+        },
+        {
+          type: "category",
+          label: "Data exploration",
+          link: {
+            type: "doc",
+            id: "Spark/data-explorer/data-explorer",
+          },
+          items: [
+            "Spark/data-explorer/data-profile",
+            "Spark/data-explorer/data-diff",
           ],
         },
         {
@@ -434,7 +458,6 @@ const sidebars = {
             "Spark/functions/udfs",
           ],
         },
-        "Spark/expression-builder",
         {
           type: "category",
           label: "Spark streaming",
@@ -472,7 +495,7 @@ const sidebars = {
           items: [
             {
               type: "category",
-              label: "Data sources",
+              label: "Model sources",
               link: {
                 type: "doc",
                 id: "data-modeling/gems/datasources/datasources",
@@ -501,19 +524,6 @@ const sidebars = {
           label: "Execution",
           link: { type: "doc", id: "data-modeling/execution/execution" },
           items: [],
-        },
-        {
-          type: "category",
-          label: "Visual expressions",
-          link: {
-            type: "doc",
-            id: "data-modeling/visual-expression-builder/visual-expression-builder",
-          },
-          items: [
-            "data-modeling/visual-expression-builder/visual-expression-builder-reference",
-            "data-modeling/visual-expression-builder/use-the-expression-builder",
-            "data-modeling/visual-expression-builder/variant-schema",
-          ],
         },
         "data-modeling/configuration",
       ],
@@ -648,8 +658,18 @@ const sidebars = {
       value: "Team Admins",
       defaultStyle: true,
     },
-    "administration/teamuser",
-    "administration/project-creation-template",
+    {
+      type: "category",
+      label: "Teams and users",
+      link: {
+        type: "doc",
+        id: "administration/teamuser",
+      },
+      items: [
+        "administration/settings/settings",
+        "administration/project-creation-template",
+      ],
+    },
     {
       type: "category",
       label: "Fabric setup",
@@ -718,19 +738,28 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Connections and secrets",
+      label: "Connections",
       link: {
         type: "doc",
-        id: "administration/connections-and-secrets/connections-and-secrets",
+        id: "administration/connections/connections",
       },
       items: [
-        "administration/connections-and-secrets/metadata-connections",
-        "administration/connections-and-secrets/secret-providers",
-        "administration/connections-and-secrets/using-secrets",
-        "administration/connections-and-secrets/use-dbx-secrets",
+        "administration/connections/sql-supported",
+        "administration/connections/spark-supported",
       ],
     },
-    "administration/settings/settings",
+    {
+      type: "category",
+      label: "Secrets",
+      link: {
+        type: "doc",
+        id: "administration/secrets/secrets",
+      },
+      items: [
+        "administration/secrets/secret-providers",
+        "administration/secrets/secrets-configs",
+      ],
+    },
     {
       type: "html",
       value: '<span class="sidebar-divider" />',

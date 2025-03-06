@@ -1,5 +1,5 @@
 ---
-title: Data explorer
+title: Data exploration
 id: data-explorer
 description: Data Explorer for SQL
 tags:

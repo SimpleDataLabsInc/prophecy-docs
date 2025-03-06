@@ -25,7 +25,7 @@ Click [here](docs/analysts/development/gems/source-target/file/upload-files.md) 
 <iframe src="https://fast.wistia.net/embed/iframe/tujsa14cjj?seo=false?videoFoam=true" title="VisualExpressionBuilder" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-Click [here](docs/data-modeling/visual-expression-builder/visual-expression-builder.md) for further details.
+Click [here](docs/analysts/development/gems/visual-expression-builder/visual-expression-builder.md) for further details.
 
 ### Data Generator Gem
 

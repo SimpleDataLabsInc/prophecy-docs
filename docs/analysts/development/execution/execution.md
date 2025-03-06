@@ -16,8 +16,8 @@ When you create a [Prophecy fabric](docs/administration/prophecy-fabrics.md), yo
 
 Running your pipeline during development can help you understand how your data is being transformed. For instance, when you configure a new gem in the pipeline, you might want to inspect its output. You can produce this data sample in two ways:
 
-- Click the **play** button on the pipeline canvas to run the entire pipeline.
-- Click the **play** button on a particular gem to run the pipeline **up to and including** that gem. This is useful for testing and debugging when you don't want to run the entire pipeline.
+- Run the entire pipeline using the **play** button on the pipeline canvas.
+- Execute the pipeline up to and including a particular gem using the **play** button on that gem.
 
 When you click on an interim data sample, you load the data and open the [Data Explorer](docs/analysts/development/data-explorer.md). The Data Explorer lets you sort, filter, and search through the gem output.
 

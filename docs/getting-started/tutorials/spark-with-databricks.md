@@ -144,7 +144,7 @@ To preview the output of the gem:
 :::note
 
 - To learn more about running pipelines, visit [Interactive Execution](docs/Spark/execution/interactive-execution.md).
-- To learn more about Spark SQL expressions in gems, visit [Expression Builder](docs/Spark/expression-builder.md).
+- To learn more about Spark SQL expressions in gems, visit [Expression Builder](docs/Spark/gems/expression-builder.md).
 
 :::
 

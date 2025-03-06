@@ -8,7 +8,7 @@ tags:
   - fabrics
 ---
 
-**Secrets** help you safeguard sensitive information such as API keys, passwords, and encryption keys. When you create a fabric, you can add one or more secret providers to manage your secrets for that fabric. Then, you can create secrets for [use in your pipelines](./using-secrets.md).
+**Secrets** help you safeguard sensitive information such as API keys, passwords, and encryption keys. When you create a fabric, you can add one or more secret providers to manage your secrets for that fabric. Then, you can create secrets for use in your pipelines.
 
 ![secret_screen](img/Secret_provider_Screen.png)
 

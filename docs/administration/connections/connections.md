@@ -1,13 +1,9 @@
 ---
 title: Connections
-id: metadata-connections
+id: connections
 description: Browse catalogs, tables, schemas, etc. in Prophecy
-sidebar_position: 1
 tags:
-  - metadata
-  - tables
   - connections
-  - data
 ---
 
 Prophecy lets you work with various data providers when building your pipelines and models. To make this easier, you can create **connections** between Prophecy and a data provider. Connections enable functionality such as:

@@ -63,5 +63,5 @@ Versioning in Prophecy is built on top of [Git](docs/ci-cd/git/git.md) in the ba
 | Restore previous version | <ul class="table-list"><li>Runs `git reset --soft`</li><li>Commits the changes</li><li>Pushes the changes</li></ul>                                                                                                                                |
 
 :::note
-If there are changes to the project on a remote Git repository, you will be prompted to save your changes and pull the remote changes. If there is a merge conflict, you will be taken to the [merge resolution dialogue](docs/ci-cd/git/git-resolve.md).
+If there are changes to the project on an external remote Git repository, you will be prompted in Prophecy to save your changes and pull the remote changes. If there is a merge conflict, you will be taken to the [merge resolution dialogue](docs/ci-cd/git/git-resolve.md). **This situation is uncommon.**
 :::

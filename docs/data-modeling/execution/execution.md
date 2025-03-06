@@ -21,10 +21,3 @@ When you run a model in the model canvas, Prophecy generates **interim** data sa
 ![Interactive run options](img/interactive-execution-sql.png)
 
 After you run your model, you will see the interims appear between gems. These previews are temporarily cached. Learn more about how to navigate the interim data samples in [Data Explorer](docs/analysts/development/data-explorer.md).
-
-```mdx-code-block
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
-<DocCardList items={useCurrentSidebarCategory().items}/>
-```

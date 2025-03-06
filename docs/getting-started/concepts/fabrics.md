@@ -53,7 +53,7 @@ Fabrics include everything required to run a data pipeline. As an example, the f
 | Job Sizes              | Lets you define reusable cluster sizes (e.g., an XL cluster with 10 i3.xlarge servers, 40 CPUs, and 70GB memory).                                                                                                                         |
 | Scheduler              | Executes Spark data pipelines on a defined schedule, such as weekdays at 9:00 AM. Databricks provides a default scheduler, and an Airflow Scheduler is available for enterprise users.                                                    |
 | Database Connections   | Supports connections to databases (MySQL, Postgres) and data warehouses (Snowflake) via JDBC or other protocols. Credentials are securely stored on the fabric for reuse.                                                                 |
-| Metadata Connection    | Enhances fabric management for large datasets, useful for users handling hundreds or thousands of tables. [Learn more](/docs/administration/connections-and-secrets/metadata-connections.md).                                             |
+| Metadata Connection    | Enhances fabric management for large datasets, useful for users handling hundreds or thousands of tables. [Learn more](/docs/administration/connections/connections.md).                                                                  |
 | Credentials & Secrets  | Securely stores credentials in Databricks using Personal Access Tokens (PAT) or [Databricks OAuth](/docs/administration/authentication/databricks-oauth.md). Secrets are stored as key-value pairs, accessible only to running workflows. |
 
 ## Fabric metadata

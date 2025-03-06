@@ -8,7 +8,7 @@ tags:
   - seeds
 ---
 
-To load data into a SQL project, use [seed](#seeds), [source](#sources), or [model](#models) gems. These are all based on [dbt](https://docs.getdbt.com/docs/build/projects) concepts.
+To load data into a SQL model, use [Seed](#seeds), [Source](#sources), or [Model](#models) gems. These are all based on [dbt](https://docs.getdbt.com/docs/build/projects) concepts.
 
 ## Sources
 

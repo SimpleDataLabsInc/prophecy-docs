@@ -83,7 +83,7 @@ As we continue development within gems, Data Copilot can suggest expressions wit
 
 ![Suggest expressions](img/copilot_next_suggestion_expression.png)
 
-Within our [advanced Expression Builder](/Spark/expression-builder) you can:
+Within our [advanced Expression Builder](/Spark/gems/expression-builder) you can:
 
 1. Type an English text prompt.
 2. Data Copilot generates a code expression for a particular column.
