@@ -38,6 +38,10 @@ These interims will come Just before Target gems, and if there is no Target gem,
 
 ![Vanilla Interims](img/vanillaInterims2.png)
 
+### Selective Interims
+
+Enable the Selective data sampling setting to see [larger samples](/docs/Spark/execution/data-explorer.md#large-sample-interims) in the Data Explorer.  
+
 ## Execution Metrics
 
 When running pipelines and jobs, you may be interested to know few metrics related to execution like records
