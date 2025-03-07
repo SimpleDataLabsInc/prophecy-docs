@@ -8,11 +8,13 @@ tags:
   - avro
 ---
 
-Avro format is a row-based storage format for Hadoop, which is widely used as a serialization platform.
-Avro format stores the schema in JSON format, making it easy to read and interpret by any program.
-The data itself is stored in a binary format making it compact and efficient.
+The Avro data format:
 
-This gem allows you to read from or write to an Avro file.
+- Is a row-based storage format for Hadoop, which is widely used as a serialization platform.
+- Stores the schema in JSON format, which makes the data easier to read and interpret by any program.
+- Stores the data in a binary format, which makes the data compact and efficient.
+
+The Target and Source gem allows you to read from or write to an Avro file.
 
 ## Source
 
@@ -20,22 +22,22 @@ This gem allows you to read from or write to an Avro file.
 
 | Parameter             | Description                                                                                                                                                                                                                                              | Required | Default |
 | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
-| Location              | File path where avro files are present                                                                                                                                                                                                                   | True     | None    |
-| Schema                | Schema to be applied on the loaded data. Can be defined/edited as JSON or inferred using `Infer Schema` button.                                                                                                                                          | True     | None    |
-| Recursive File Lookup | This is used to recursively load files and it disables partition inferring. If data source explicitly specifies the partitionSpec when recursiveFileLookup is true, an exception will be thrown.                                                         | False    | False   |
-| Path Global Filter    | An optional glob pattern to only include files with paths matching the pattern. The syntax follows [GlobFilter](https://hadoop.apache.org/docs/stable/api/org/apache/hadoop/fs/GlobFilter.html). It does not change the behavior of partition discovery. | False    | None    |
-| Modified Before       | An optional timestamp to only include files with modification times occurring before the specified Time. The provided timestamp must be in the following form: YYYY-MM-DDTHH:mm:ss (e.g. 2020-06-01T13:00:00)                                            | False    | None    |
-| Modified After        | An optional timestamp to only include files with modification times occurring after the specified Time. The provided timestamp must be in the following form: YYYY-MM-DDTHH:mm:ss (e.g. 2020-06-01T13:00:00)                                             | False    | None    |
-| Avro Schema           | Optional schema in JSON format. See [here](#schema-evolution) for more details.                                                                                                                                                                          | False    | None    |
-| ignoreExtension       | **_DEPRECATED_**. Enable to load files without the `.avro` extension. See caveats [here](#ignoring-the-file-extension).                                                                                                                                  | False    | True    |
+| Location              | File path to the Avro files.                                                                                                                                                                                                                   | True     | None    |
+| Schema                | Schema to apply on the loaded data. You can define or edit the scema as JSON or inferred using the `Infer Schema` button.                                                                                                                                          | True     | None    |
+| Recursive File Lookup | Recursively load files and disable partition inferring. If the data source explicitly specifies the `partitionSpec` when the`recursiveFileLookup` is `true`, Prophecy throws an exception.                                                         | False    | False   |
+| Path Global Filter    | Optional glob pattern to only include files with paths matching the pattern. The syntax follows [GlobFilter](https://hadoop.apache.org/docs/stable/api/org/apache/hadoop/fs/GlobFilter.html) and does not change the behavior of partition discovery. | False    | None    |
+| Modified Before       | Optional timestamp to only include files with modification times occurring before the specified time. The provided timestamp must be in the following form: YYYY-MM-DDTHH:mm:ss (e.g. 2020-06-01T13:00:00)                                            | False    | None    |
+| Modified After        | Optional timestamp to only include files with modification times occurring after the specified time. The provided timestamp must be in the following form: YYYY-MM-DDTHH:mm:ss (e.g. 2020-06-01T13:00:00)                                             | False    | None    |
+| Avro Schema           | Optional schema in JSON format. To learn more, see [Schema Evolution](#schema-evolution).                                                                                                                                                                          | False    | None    |
+| ignoreExtension       | **_DEPRECATED_**. Enable to load files without the `.avro` extension. To learn more, see [Ignoring the File Extension](#ignoring-the-file-extension).                                                                                                                                  | False    | True    |
 
 #### Schema Evolution
 
-When reading Avro, the `Avro Schema` option can be set to a newer evolved schema which is compatible but different from the schema written to storage. The resulting DataFrame will follow the newer, evolved schema. For example, if we set an evolved schema containing one additional column with a default value, the resulting DataFrame will contain the new column too.
+When reading an Avro data format, you can set the `Avro Schema` parameter to a newer, evolved schema, which is compatible but different from the schema written to storage. The resulting `DataFrame` follows the newer, evolved schema. For example, if we set an evolved schema containing one additional column with a default value, the resulting `DataFrame` contains the new column too.
 
 #### Ignoring the File Extension
 
-If the `ignoreExtension` option is enabled, all files (with and without .avro extension) are loaded. The option has been deprecated, and it will be removed in the future releases. Please [pathGlobFilter](https://spark.apache.org/docs/latest/sql-data-sources-generic-options.html#path-global-filter) for filtering file names.
+If you enable the `ignoreExtension` parameter, Prophecy loads all files (with and without .avro extension). This parameter is deprecated, and will be removed in the future releases. Please use [pathGlobFilter](https://spark.apache.org/docs/latest/sql-data-sources-generic-options.html#path-global-filter) for filtering file names.
 
 ### Example {#source}
 
@@ -101,26 +103,26 @@ object read_avro {
 
 ### Target Parameters
 
-Write data as avro files at the specified path.
+You can write data as Avro files at the specified path.
 
 | Parameter         | Description                                                                                                                                                                                                                                                                           | Required | Default        |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------------- |
-| Location          | Locaiton to write the Avro files to present                                                                                                                                                                                                                                           | True     | None           |
-| Avro Schema       | Optional schema provided by a user in JSON format. This option can be set if the expected output Avro schema doesn't match the schema converted by Spark. For example, the expected schema of one column is of `enum` type, instead of `string` type in the default converted schema. | False    | None           |
-| Record Name       | Top level record name in write result, which is required in Avro spec.                                                                                                                                                                                                                | False    | topLevelRecord |
+| Location          | File path to write the Avro file to.                                                                                                                                                                                                                                           | True     | None           |
+| Avro Schema       | Optional schema a user provides in JSON format. You can set this parameter if the expected output Avro schema doesn't match the schema Spark converts. <br/> For example, the expected schema of one column is of `enum` type, instead of `string` type in the default converted schema. | False    | None           |
+| Record Name       | Top level record name in write result, which is required in the Avro spec.                                                                                                                                                                                                                | False    | topLevelRecord |
 | Record Namespace  | Record namespace in write result.                                                                                                                                                                                                                                                     | False    | ""             |
-| Compression       | Compression codec used when writing.<br/> Currently supported codecs are `uncompressed`, `snappy`, `deflate`, `bzip2`, `xz` and `zstandard`. Defaults to whatever `spark.sql.avro.compression.codec` is set to.                                                                       | False    | `snappy`       |
-| Write Mode        | How to handle existing data. See [this table](#supported-write-modes) for a list of available options.                                                                                                                                                                                | True     | `error`        |
-| Partition Columns | List of columns to partition the avro files by                                                                                                                                                                                                                                        | False    | None           |
+| Compression       | Compression codec used when writing. <br/>Prophecy supports the following codecs: `uncompressed`, `snappy`, `deflate`, `bzip2`, `xz` and `zstandard`. This defaults to the value of the `spark.sql.avro.compression.codec` parameter.                                                                       | False    | `snappy`       |
+| Write Mode        | How to handle existing data. To see a list of possible values, see [the Supported Write Modes table](#supported-write-modes).                                                                                                                                                                                | True     | `error`        |
+| Partition Columns | List of columns to partition the Avro files by.                                                                                                                                                                                                                                        | False    | None           |
 
 ### Supported Write Modes
 
-| Write Mode | Description                                                                                                                      |
-| ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| overwrite  | If data already exists, overwrite with the contents of the DataFrame.                                                            |
-| append     | If data already exists, append the contents of the DataFrame.                                                                    |
-| ignore     | If data already exists, do nothing with the contents of the DataFrame. This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
-| error      | If data already exists, throw an exception.                                                                                      |
+| Write Mode | Description                                                                                                                             |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| error      | If data already exists, throw an exception.                                                                                             |
+| overwrite  | If data already exists, overwrite the data with the contents of the `DataFrame`.                                                        |
+| append     | If data already exists, append the contents of the `DataFrame`.                                                                         |
+| ignore     | If data already exists, do nothing with the contents of the `DataFrame`. <br/>This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
 
 ### Example {#target}
 
@@ -167,5 +169,6 @@ object write_avro {
 ````
 
 :::info
-To know more about tweaking Avro related properties in Spark config [click here](https://spark.apache.org/docs/latest/sql-data-sources-avro.html).
+To learn more about tweaking Avro related properties in your Spark configuration, see [the Apache Avro Data Source Guide
+](https://spark.apache.org/docs/latest/sql-data-sources-avro.html).
 :::

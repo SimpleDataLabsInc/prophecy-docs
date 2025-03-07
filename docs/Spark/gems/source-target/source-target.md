@@ -1,15 +1,15 @@
 ---
 title: Source & Target
 id: source-target
-description: Set of gems related to the input and output of data
+description: Set of gems related to the input and output of data.
 tags: []
 ---
 
-Constitutes the set of gems that help with loading and saving data.
+The following data types contain sets of gems to help you work with various file-based formats, connect to a warehouse-style data source, and work with various table-based formats.
 
 ## File
 
-A collection of gems related to working with various file-based formats.
+The file data type contains a collection of gems related to how you work with various file-based formats.
 
 | Name                                | Description                                                                                                       |
 | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
@@ -23,10 +23,17 @@ A collection of gems related to working with various file-based formats.
 | [Parquet](./file/parquet)           | Parquet is an open source file format built to handle flat columnar storage data formats.                         |
 | [Text](./file/text)                 | This gem allows you to read from or write to text file.                                                           |
 | [XLSX (Excel)](./file/xlsx)         | Allows you to read or write Excel-compatible files.                                                               |
+| [XML](./file/xml)                   | Allows you to read or write Excel-compatible files.                                                               |
+
+<!--- 
+| [Binary](./file/binary)             | Allows you to read or write Excel-compatible files.                                                               |
+| [Hudi](./file/hudi)                 | Allows you to read or write Excel-compatible files.                                                               |
+
+-->
 
 ## Warehouse
 
-A collection of gems specializing in connecting to warehouse-style data sources.
+The warehouse data type contains a collection of gems that specialize in connecting to warehouse-style data sources.
 
 | Name                                 | Description                                                                                                       |
 | ------------------------------------ | ----------------------------------------------------------------------------------------------------------------- |
@@ -43,7 +50,7 @@ A collection of gems specializing in connecting to warehouse-style data sources.
 
 ## Catalog
 
-A collection of gems related to working with various table-based formats.
+The catalog data type contains a collection of gems related to how you work with various table-based formats.
 
 | Name                               | Description                                                                                                 |
 | ---------------------------------- | ----------------------------------------------------------------------------------------------------------- |
