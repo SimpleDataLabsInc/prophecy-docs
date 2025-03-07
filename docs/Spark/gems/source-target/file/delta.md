@@ -8,7 +8,7 @@ tags:
   - delta
 ---
 
-Reads and writes Delta tables, including Delta Merge operations and Time travel.
+The Delta data format reads and writes Delta tables, including Delta Merge operations and Time travel.
 
 ## Source
 
@@ -16,22 +16,16 @@ Reads and writes Delta tables, including Delta Merge operations and Time travel.
 
 | Parameter      | Description                                | Required |
 | -------------- | ------------------------------------------ | -------- |
-| Location       | File path for the Delta table              | True     |
-| Read Timestamp | Time travel to a specific timestamp        | False    |
-| Read Version   | Time travel to a specific version of table | False    |
+| Location       | File path for the Delta table.             | True     |
+| Read Timestamp | Time travel to a specific timestamp. <\br>This value should be between the first commit timestamp and the latest commit timestamp in the table.      | False    |
+| Read Version   | Time travel to a specific version of table. <\br>This value must be an interger and it's value must be between the minimum and maximum version of the table. By default, Prophecy fetches the most recent version of each row if you don't use a time travel option.| False    |
 
 :::note
-For time travel on Delta tables:
-
-1. Only `Read Timestamp` **_OR_** `Read Version` can be selected, not both.
-2. Timestamp should be between the first commit timestamp and the latest commit timestamp in the table.
-3. Version needs to be an integer. Its value has to be between min and max version of table.
-
-By default most recent version of each row is fetched if no time travel option is used.
+You can only select `Read Timestamp` **_OR_** `Read Version`, not both.
 :::
 
 :::info
-To read more about Delta time travel and its use cases [click here](https://databricks.com/blog/2019/02/04/introducing-delta-time-travel-for-large-scale-data-lakes.html).
+To learn more about Delta time travel and its use cases, see [Introducing Delta Time Travel for Large Scale Data Lakes](https://databricks.com/blog/2019/02/04/introducing-delta-time-travel-for-large-scale-data-lakes.html).
 :::
 
 ### Example {#source-example}
@@ -150,27 +144,27 @@ object readDelta {
 
 | Parameter                     | Description                                                                                                                                                                | Required |
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| Location                      | File path to write the Delta table to                                                                                                                                      | True     |
-| Write mode                    | Write mode for DataFrame                                                                                                                                                   | True     |
-| Optimise write                | If true, it optimizes Spark partition sizes based on the actual data                                                                                                       | False    |
-| Overwrite table schema        | If true, overwrites the schema of the Delta table with the schema of the incoming DataFrame                                                                                | False    |
-| Merge schema                  | If true, then any columns that are present in the DataFrame but not in the target table are automatically added on to the end of the schema as part of a write transaction | False    |
-| Partition Columns             | List of columns to partition the Delta table by                                                                                                                            | False    |
-| Overwrite partition predicate | If specified, then it selectively overwrites only the data that satisfies the given where clause expression.                                                               | False    |
+| Location                      | File path to write the Delta table to.                                                                                                                                     | True     |
+| Write mode                    | Write mode for the `DataFrame`. To see a list of possible values, see [the Supported Write Modes table](#supported-write-modes).                                                                                                                                                                                                                  | True     |
+| Optimize write                | If `true`, Prophecy optimizes the Spark partition sizes based on the actual data.                                                                                                       | False    |
+| Overwrite table schema        | If `true`, Prophecy overwrites the schema of the Delta table with the schema of the incoming `DataFrame`.                                                                                | False    |
+| Merge dataframe schema into table schema                  | If `true`, Prophecy automatically adds any columns present in the `DataFrame` but not in the target table to the end of the schema as part of a write transaction. | False    |
+| Partition Columns             | List of columns to partition the Delta table by.                                                                                                                            | False    |
+| Overwrite partition predicate | If specified, Prophecy selectively overwrites the data that satisfies the given where clause expression.                                                               | False    |
 
 #### Supported Write Modes
 
-| Write Mode | Description                                                                                                                      |
-| ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| overwrite  | If data already exists, overwrite with the contents of the DataFrame                                                             |
-| append     | If data already exists, append the contents of the DataFrame                                                                     |
-| ignore     | If data already exists, do nothing with the contents of the DataFrame. This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
-| error      | If data already exists, throw an exception.                                                                                      |
-| merge      | Insert, delete and update data using the Delta `merge` command.                                                                  |
-| SCD2 merge | It is a Delta merge operation that stores and manages both current and historical data over time.                                |
+| Write Mode | Description                                                                                                                             |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| overwrite  | If data already exists, overwrite with the contents of the `DataFrame`.                                                                 |
+| error      | If data already exists, throw an exception.                                                                                             |
+| append     | If data already exists, append the contents of the `DataFrame`.                                                                         |
+| ignore     | If data already exists, do nothing with the contents of the `DataFrame`. <br/>This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
+| merge      | Use the Delta `merge` command to insert, delete and update data.                                                                        |
+| scd2 merge | A Delta merge operation that stores and manages both current and historical data over time.                                             |
 
-Among these write modes overwrite, append, ignore and error works the same way as in case of parquet file writes.
-Merge will be explained with several examples in the following sections.
+Among the overwrite, append, ignore and error write modes, they work the same way as the Parquet file writes.
+The [Delta MERGE section](#delta-merge) section explain and show several examples of the merge write mode.
 
 ### Target Example
 
@@ -227,7 +221,7 @@ object writeDelta {
 
 ## Delta MERGE
 
-You can upsert data from a source DataFrame into a target Delta table by using the [MERGE](https://docs.delta.io/latest/delta-update.html#upsert-into-a-table-using-merge) operation. Delta MERGE supports `Insert`s, `Update`s, and `Delete`s in a variety of use cases, and Delta is particularly suited to examine data with individual records that slowly change over time. Here we consider the most common types of slowly changing dimension (SCD) cases: SCD1, SCD2, and SCD3. Records are modified in one of the following ways: history is not retained (SCD1), history is retained at the row level (SCD2), or history is retained at the column level (SCD3).
+You can upsert data from a source `DataFrame` into a target Delta table by using the [MERGE](https://docs.delta.io/latest/delta-update.html#upsert-into-a-table-using-merge) operation. Delta MERGE supports `Insert`s, `Update`s, and `Delete`s in a variety of use cases, and Delta is particularly suited to examine data with individual records that slowly change over time. Here we consider the most common types of slowly changing dimension (SCD) cases: SCD1, SCD2, and SCD3. Records are modified in one of the following ways: history is not retained (SCD1), history is retained at the row level (SCD2), or history is retained at the column level (SCD3).
 
 ### SCD1
 
