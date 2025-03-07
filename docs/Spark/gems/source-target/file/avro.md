@@ -14,8 +14,6 @@ The Avro data format:
 - Stores the schema in JSON format, which makes the data easier to read and interpret by any program.
 - Stores the data in a binary format, which makes the data compact and efficient.
 
-The Target and Source gem allows you to read from or write to an Avro file.
-
 ## Source
 
 ### Source Parameters
