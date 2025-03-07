@@ -14,11 +14,11 @@ The Delta data format reads and writes Delta tables, including Delta Merge opera
 
 ### Source Parameters
 
-| Parameter      | Description                                | Required |
-| -------------- | ------------------------------------------ | -------- |
-| Location       | File path for the Delta table.             | True     |
-| Read Timestamp | Time travel to a specific timestamp. <\br>This value should be between the first commit timestamp and the latest commit timestamp in the table.      | False    |
-| Read Version   | Time travel to a specific version of table. <\br>This value must be an interger and it's value must be between the minimum and maximum version of the table. By default, Prophecy fetches the most recent version of each row if you don't use a time travel option.| False    |
+| Parameter      | Description                                                                                                                                                                                                                                                          | Required |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| Location       | File path for the Delta table.                                                                                                                                                                                                                                       | True     |
+| Read Timestamp | Time travel to a specific timestamp. <\br>This value should be between the first commit timestamp and the latest commit timestamp in the table.                                                                                                                      | False    |
+| Read Version   | Time travel to a specific version of table. <\br>This value must be an interger and it's value must be between the minimum and maximum version of the table. By default, Prophecy fetches the most recent version of each row if you don't use a time travel option. | False    |
 
 :::note
 You can only select `Read Timestamp` **_OR_** `Read Version`, not both.
@@ -142,15 +142,15 @@ object readDelta {
 
 ### Target Parameters
 
-| Parameter                     | Description                                                                                                                                                                | Required |
-| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| Location                      | File path to write the Delta table to.                                                                                                                                     | True     |
-| Write mode                    | Write mode for the `DataFrame`. To see a list of possible values, see [the Supported Write Modes table](#supported-write-modes).                                                                                                                                                                                                                  | True     |
-| Optimize write                | If `true`, Prophecy optimizes the Spark partition sizes based on the actual data.                                                                                                       | False    |
-| Overwrite table schema        | If `true`, Prophecy overwrites the schema of the Delta table with the schema of the incoming `DataFrame`.                                                                                | False    |
-| Merge dataframe schema into table schema                  | If `true`, Prophecy automatically adds any columns present in the `DataFrame` but not in the target table to the end of the schema as part of a write transaction. | False    |
-| Partition Columns             | List of columns to partition the Delta table by.                                                                                                                            | False    |
-| Overwrite partition predicate | If specified, Prophecy selectively overwrites the data that satisfies the given where clause expression.                                                               | False    |
+| Parameter                                  | Description                                                                                                                                                        | Required |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- |
+| Location                                   | File path to write the Delta table to.                                                                                                                             | True     |
+| Write mode                                 | Write mode for the `DataFrame`. To see a list of possible values, see [the Supported Write Modes table](#supported-write-modes).                                   | True     |
+| Optimize write                             | If `true`, Prophecy optimizes the Spark partition sizes based on the actual data.                                                                                  | False    |
+| Overwrite table schema                     | If `true`, Prophecy overwrites the schema of the Delta table with the schema of the incoming `DataFrame`.                                                          | False    |
+| Merge `DataFrame` schema into table schema | If `true`, Prophecy automatically adds any columns present in the `DataFrame` but not in the target table to the end of the schema as part of a write transaction. | False    |
+| Partition Columns                          | List of columns to partition the Delta table by.                                                                                                                   | False    |
+| Overwrite partition predicate              | If specified, Prophecy selectively overwrites the data that satisfies the given where clause expression.                                                           | False    |
 
 #### Supported Write Modes
 
@@ -221,11 +221,17 @@ object writeDelta {
 
 ## Delta MERGE
 
-You can upsert data from a source `DataFrame` into a target Delta table by using the [MERGE](https://docs.delta.io/latest/delta-update.html#upsert-into-a-table-using-merge) operation. Delta MERGE supports `Insert`s, `Update`s, and `Delete`s in a variety of use cases, and Delta is particularly suited to examine data with individual records that slowly change over time. Here we consider the most common types of slowly changing dimension (SCD) cases: SCD1, SCD2, and SCD3. Records are modified in one of the following ways: history is not retained (SCD1), history is retained at the row level (SCD2), or history is retained at the column level (SCD3).
+You can upsert data from a source `DataFrame` into a target Delta table by using the [MERGE](https://docs.delta.io/latest/delta-update.html#upsert-into-a-table-using-merge) operation. Delta MERGE supports `Insert`, `Update`, and `Delete` operations in a variety of use cases such as examining data with individual records that slowly change over time. Here, we consider the most common types of slowly changing dimension (SCD) cases: SCD1, SCD2, and SCD3.
+
+Delta modifies records in one of the following ways:
+
+- Delta does not retain History (SCD1).
+- Delta retians history at the row level (SCD2).
+- Delta retains history at the column level (SCD3).
 
 ### SCD1
 
-Let's take the simplest case to illustrate a MERGE condition.
+The following illustrates an SCD1 MERGE condition.
 
 #### Parameters {#upsert-parameters}
 
