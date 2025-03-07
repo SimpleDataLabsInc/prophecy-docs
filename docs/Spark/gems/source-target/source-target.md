@@ -24,12 +24,8 @@ The file data type contains a collection of gems related to how you work with va
 | [Text](./file/text)                 | This gem allows you to read from or write to text file.                                                           |
 | [XLSX (Excel)](./file/xlsx)         | Allows you to read or write Excel-compatible files.                                                               |
 | [XML](./file/xml)                   | Allows you to read or write Excel-compatible files.                                                               |
-
-<!--- 
 | [Binary](./file/binary)             | Allows you to read or write Excel-compatible files.                                                               |
 | [Hudi](./file/hudi)                 | Allows you to read or write Excel-compatible files.                                                               |
-
--->
 
 ## Warehouse
 
