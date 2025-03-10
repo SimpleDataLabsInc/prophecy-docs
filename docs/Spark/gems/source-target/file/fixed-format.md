@@ -22,12 +22,12 @@ The Source gem reads data from fixed format files.
 
 ### Source Parameters
 
-| Parameter           | Description                                                                      | Required |
-| :------------------ | :------------------------------------------------------------------------------- | :------- |
-| Location            | File path of the fixed format files.                                             | True     |
-| Skip Header Lines   | Number of lines to skip in the header.                                           | False    |
-| Skip Footer Lines   | Number of lines to skip in the footer.                                           | False    |
-| Fixed Format Schema | Schema string for the fixed format file, supports either EBCDIC or ASCII formats.| True     |
+| Parameter           | Description                                                                       | Required |
+| :------------------ | :-------------------------------------------------------------------------------- | :------- |
+| Location            | File path of the fixed format files.                                              | True     |
+| Skip Header Lines   | Number of lines to skip in the header.                                            | False    |
+| Skip Footer Lines   | Number of lines to skip in the footer.                                            | False    |
+| Fixed Format Schema | Schema string for the fixed format file, supports either EBCDIC or ASCII formats. | True     |
 
 ### Example {#source-example}
 
