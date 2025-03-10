@@ -11,21 +11,21 @@ Prophecy supports a number of gems to help you work with various file-based form
 
 The following gems allow you work with various file-based formats.
 
-| Name                                | Description                                                                                                       |
-| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| [Avro](./file/avro)                 | A row-based storage format for Hadoop, which is widely used as a serialization platform.                          |
-| [CSV](./file/csv)                   | Allows you to read from or write to a delimited file (often called Comma Separated File, CSV).                    |
-| [Delta](./file/delta)               | Reads data from Delta files present at a path and writes Delta files to a path based on configuration.            |
-| [Fixed Format](./file/fixed-format) | Read data from, or write data to a fixed format file type with expected schema.                                   |
-| [JSON](./file/json)                 | Allows you to read or write a delimited file (often called Comma Separated File, CSV).                            |
-| [Kafka](./file/kafka)               | This source currently connects with Kafka Brokers in Batch mode.                                                  |
-| [ORC](./file/orc)                   | ORC (Optimized Row Columnar) is a columnar file format designed for Spark/Hadoop workloads.                       |
-| [Parquet](./file/parquet)           | Parquet is an open source file format built to handle flat columnar storage data formats.                         |
-| [Text](./file/text)                 | This gem allows you to read from or write to text file.                                                           |
-| [XLSX (Excel)](./file/xlsx)         | Allows you to read or write Excel-compatible files.                                                               |
-| [XML](./file/xml)                   | Allows you to read or write Excel-compatible files.                                                               |
-| [Binary](./file/binary)             | Allows you to read or write Excel-compatible files.                                                               |
-| [Hudi](./file/hudi)                 | Allows you to read or write Excel-compatible files.                                                               |
+| Name                                | Description                                                                                            |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| [Avro](./file/avro)                 | A row-based storage format for Hadoop, which is widely used as a serialization platform.               |
+| [CSV](./file/csv)                   | Allows you to read from or write to a delimited file (often called Comma Separated File, CSV).         |
+| [Delta](./file/delta)               | Reads data from Delta files present at a path and writes Delta files to a path based on configuration. |
+| [Fixed Format](./file/fixed-format) | Read data from, or write data to a fixed format file type with expected schema.                        |
+| [JSON](./file/json)                 | Allows you to read or write a delimited file (often called Comma Separated File, CSV).                 |
+| [Kafka](./file/kafka)               | This source currently connects with Kafka Brokers in Batch mode.                                       |
+| [ORC](./file/orc)                   | ORC (Optimized Row Columnar) is a columnar file format designed for Spark/Hadoop workloads.            |
+| [Parquet](./file/parquet)           | Parquet is an open source file format built to handle flat columnar storage data formats.              |
+| [Text](./file/text)                 | This gem allows you to read from or write to text file.                                                |
+| [XLSX (Excel)](./file/xlsx)         | Allows you to read or write Excel-compatible files.                                                    |
+| [XML](./file/xml)                   | Allows you to read or write Excel-compatible files.                                                    |
+| [Binary](./file/binary)             | Allows you to read or write Excel-compatible files.                                                    |
+| [Hudi](./file/hudi)                 | Allows you to read or write Excel-compatible files.                                                    |
 
 ## Warehouse
 
