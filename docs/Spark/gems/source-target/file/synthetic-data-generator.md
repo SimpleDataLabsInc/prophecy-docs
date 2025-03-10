@@ -13,12 +13,14 @@ tags:
 import Requirements from '@site/src/components/gem-requirements';
 
 <Requirements
-  package_name="ProphecySparkBasicsPython"
-  package_version="0.2.36+"
-  scala_lib="8.5.0+"
-  python_lib="1.9.24+"
+  python_package_name="ProphecySparkBasicsPython"
+  python_package_version="0.2.32+"
+  scala_package_name=""
+  scala_package_version=""
+  scala_lib=""
+  python_lib=""
   uc_single="14.3+"
-  uc_shared="Not Supported"
+  uc_shared="15.4+"
   livy=""
 />
 

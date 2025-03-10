@@ -4,11 +4,20 @@ import "../css/custom.css";
 export default function Requirements(props) {
   return (
     <div>
-      {props.package_name && props.package_version && (
+      {props.python_package_name && props.python_package_version && (
         <a href="https://docs.prophecy.io/extensibility/package-hub/">
           <span className="badge-dependency">
-            <span className="left">{props.package_name}</span>
-            <span className="right">{props.package_version}</span>
+            <span className="left">{props.python_package_name}</span>
+            <span className="right">{props.python_package_version}</span>
+          </span>
+        </a>
+      )}
+
+      {props.scala_package_name && props.scala_package_version && (
+        <a href="https://docs.prophecy.io/extensibility/package-hub/">
+          <span className="badge-dependency">
+            <span className="left">{props.scala_package_name}</span>
+            <span className="right">{props.scala_package_version}</span>
           </span>
         </a>
       )}
