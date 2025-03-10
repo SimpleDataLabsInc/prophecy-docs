@@ -9,7 +9,7 @@ tags:
   - rest
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+<span class="badge">SPARK GEM</span><br /><br />
 
 Enriches the DataFrame by adding column(s) with content from REST API output based on the given configuration.
 

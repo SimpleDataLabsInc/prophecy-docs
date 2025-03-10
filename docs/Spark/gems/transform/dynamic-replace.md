@@ -7,7 +7,7 @@ tags:
   - transform
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+<span class="badge">SPARK GEM</span><br /><br />
 
 Use the DynamicReplace gem to replace a set of values with dynamically generated values depending on certain conditions.
 

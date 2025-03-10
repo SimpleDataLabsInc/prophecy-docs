@@ -14,7 +14,7 @@ tags:
   ]
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+<span class="badge">SPARK GEM</span><br /><br />
 
 The TextProcessing gem enables text data preparation for machine learning in two different ways:
 
