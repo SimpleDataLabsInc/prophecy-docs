@@ -1,22 +1,22 @@
 ---
 title: Source & Target
 id: source-target
-description: Set of gems related to the input and output of data.
+description: Set of gems related to the input and output of data
 tags: []
 ---
 
-The following data types contain sets of gems to help you work with various file-based formats, connect to a warehouse-style data source, and work with various table-based formats.
+Prophecy supports a number of gems to help you work with various file-based formats, connect to a warehouse-style data source, and work with various table-based formats.
 
 ## File
 
-The file data type contains a collection of gems related to how you work with various file-based formats.
+The following gems allow you work with various file-based formats.
 
 | Name                                | Description                                                                                                       |
 | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| [Avro](./file/avro)                 | Avro format is a row-based storage format for Hadoop, which is widely used as a serialization platform.           |
-| [CSV](./file/csv)                   | Allows you to read or write a delimited file (often called Comma Separated File, CSV).                            |
+| [Avro](./file/avro)                 | A row-based storage format for Hadoop, which is widely used as a serialization platform.                          |
+| [CSV](./file/csv)                   | Allows you to read from or write to a delimited file (often called Comma Separated File, CSV).                    |
 | [Delta](./file/delta)               | Reads data from Delta files present at a path and writes Delta files to a path based on configuration.            |
-| [Fixed Format](./file/fixed-format) | Read data from fixed format files with expected schema, or write data to fixed format files with expected schema. |
+| [Fixed Format](./file/fixed-format) | Read data from, or write data to a fixed format file type with expected schema.                                   |
 | [JSON](./file/json)                 | Allows you to read or write a delimited file (often called Comma Separated File, CSV).                            |
 | [Kafka](./file/kafka)               | This source currently connects with Kafka Brokers in Batch mode.                                                  |
 | [ORC](./file/orc)                   | ORC (Optimized Row Columnar) is a columnar file format designed for Spark/Hadoop workloads.                       |
@@ -29,7 +29,7 @@ The file data type contains a collection of gems related to how you work with va
 
 ## Warehouse
 
-The warehouse data type contains a collection of gems that specialize in connecting to warehouse-style data sources.
+The following gems allow you connect to warehouse-style data sources.
 
 | Name                                 | Description                                                                                                       |
 | ------------------------------------ | ----------------------------------------------------------------------------------------------------------------- |
@@ -46,7 +46,7 @@ The warehouse data type contains a collection of gems that specialize in connect
 
 ## Catalog
 
-The catalog data type contains a collection of gems related to how you work with various table-based formats.
+The following gems assist in how you work with various table-based formats.
 
 | Name                               | Description                                                                                                 |
 | ---------------------------------- | ----------------------------------------------------------------------------------------------------------- |

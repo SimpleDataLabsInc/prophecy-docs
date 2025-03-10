@@ -10,28 +10,28 @@ tags:
 
 :::caution Enterprise Only
 
-Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about the Enterprise offering.
+To learn more about our Enterprise offering, please [contact us](https://www.prophecy.io/request-a-demo).
 
 :::
 
-Read and write fixed format files with an expected schema.
+The fixed format file type allows you to read and write with an expected schema.
 
 ## Source
 
-Reads data from fixed format files.
+The Source gem reads data from fixed format files.
 
 ### Source Parameters
 
 | Parameter           | Description                                                                      | Required |
 | :------------------ | :------------------------------------------------------------------------------- | :------- |
-| Location            | File path where fixed format files are present                                   | True     |
-| Fixed Format Schema | Schema string for the fixed format file, supports either EBCDIC or ASCII formats | True     |
+| Location            | File path of the fixed format files.                                             | True     |
+| Skip Header Lines   | Number of lines to skip in the header.                                           | False    |
+| Skip Footer Lines   | Number of lines to skip in the footer.                                           | False    |
+| Fixed Format Schema | Schema string for the fixed format file, supports either EBCDIC or ASCII formats.| True     |
 
 ### Example {#source-example}
 
 ![Delta source example](./img/fixed-format/ff-source-small.gif)
-
-:::
 
 ### Generated Code {#source-code}
 
@@ -97,24 +97,24 @@ def read_ebcdic(spark: SparkSession) -> DataFrame:
 
 ## Target
 
-Writes data in fixed file format according to the specified schema string.
+The Target gem writes data to a fixed format file type according to the schema string you specify.
 
 ### Target Parameters
 
-| Parameter           | Description                                                                                            | Required |
-| ------------------- | ------------------------------------------------------------------------------------------------------ | -------- |
-| Location            | File path where fixed format files will be written                                                     | True     |
-| Write mode          | How to handle existing data. See [this table](#supported-write-modes) for a list of available options. | False    |
-| Fixed Format Schema | Schema string for the fixed format file, supports either EBCDIC or ASCII formats                       | True     |
+| Parameter           | Description                                                                                                         | Required |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------- | -------- |
+| Location            | File path of where to write the fixed format files.                                                                 | True     |
+| Write Mode          | How to handle existing data. To see a list of possible values, see [Supported Write Modes](#supported-write-modes). | False    |
+| Fixed Format Schema | Schema string for the fixed format file, supports either `EBCDIC` or `ASCII` formats                                | True     |
 
 ### Supported Write Modes
 
-| Write Mode | Description                                                                                                                      |
-| ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| overwrite  | If data already exists, overwrite with the contents of the DataFrame                                                             |
-| append     | If data already exists, append the contents of the DataFrame                                                                     |
-| ignore     | If data already exists, do nothing with the contents of the DataFrame. This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
-| error      | If data already exists, throw an exception.                                                                                      |
+| Write Mode | Description                                                                                                                             |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| error      | If data already exists, throw an exception.                                                                                             |
+| overwrite  | If data already exists, overwrite the data with the contents of the `DataFrame`.                                                        |
+| append     | If data already exists, append the contents of the `DataFrame`.                                                                         |
+| ignore     | If data already exists, do nothing with the contents of the `DataFrame`. <br/>This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
 
 ### Example {#target-example}
 

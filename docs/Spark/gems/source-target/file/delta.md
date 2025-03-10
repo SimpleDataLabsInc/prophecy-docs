@@ -237,17 +237,17 @@ The following illustrates an SCD1 MERGE condition.
 
 | Parameter                       | Description                                                                                                                                   | Required |
 | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| Source alias                    | Alias to use for the source `DataFrame`,                                                                                                         | True     |
+| Source alias                    | Alias to use for the source `DataFrame`,                                                                                                      | True     |
 | Target alias                    | Alias to use for existing target Delta table                                                                                                  | True     |
-| Merge Condition                 | Condition to merge data from source `DataFrame` to target table, which Delta can perform an update, delete, or insert action. | True     |
-| When Matched Update Action      | Update the row from `Source` that already exists in `Target` (based on your `Merge Condition`).                                                     | False    |
-| When Matched Update Condition   | Optional additional condition for updating a row. If you specify a condition, then it must evaluate to `true` for Prophecy to update the row.                         | False    |
-| When Matched Update Expressions | Optional expressions for setting the values of columns that Prophecy needs to update.                                                               | False    |
-| When Matched Delete Action      | Delete rows if `Merge Condition` and the optional additional condition evaluates to `true`                                                  | False    |
-| When Matched Delete Condition   | Optional additional condition for deleting a row. If you specify a condition, then it must evaluate to `true` for Prophecy to delete the row.          | False    |
-| When Not Matched Action         | Action to perform if the row from `Source` is not present in `Target` (based on `Merge Condition`).                                        | False    |
-| When Not Matched Condition      | Optional condition for inserting a row. If you specify a condition, then it must evaluate to `true` for Prophecy to update the row.                    | False    |
-| When Not Matched Expressions    | Optional expressions for setting the values of columns that Prophecy needs to update.                                                               | False    |
+| Merge Condition                 | Condition to merge data from source `DataFrame` to target table, which Delta can perform an update, delete, or insert action.                 | True     |
+| When Matched Update Action      | Update the row from `Source` that already exists in `Target` (based on your `Merge Condition`).                                               | False    |
+| When Matched Update Condition   | Optional additional condition for updating a row. If you specify a condition, then it must evaluate to `true` for Prophecy to update the row. | False    |
+| When Matched Update Expressions | Optional expressions for setting the values of columns that Prophecy needs to update.                                                         | False    |
+| When Matched Delete Action      | Delete rows if `Merge Condition` and the optional additional condition evaluates to `true`                                                    | False    |
+| When Matched Delete Condition   | Optional additional condition for deleting a row. If you specify a condition, then it must evaluate to `true` for Prophecy to delete the row. | False    |
+| When Not Matched Action         | Action to perform if the row from `Source` is not present in `Target` (based on `Merge Condition`).                                           | False    |
+| When Not Matched Condition      | Optional condition for inserting a row. If you specify a condition, then it must evaluate to `true` for Prophecy to update the row.           | False    |
+| When Not Matched Expressions    | Optional expressions for setting the values of columns that Prophecy needs to update.                                                         | False    |
 
 :::note
 
@@ -346,15 +346,15 @@ The following illustrates an SCD2 MERGE condition.
 
 #### Parameters {#scd2-parameters}
 
-| Parameter          | Description                                                                            | Required |
-| :----------------- | :------------------------------------------------------------------------------------- | :------- |
-| Key Columns        | List of key columns which remain constant.                                             | True     |
-| Historic Columns   | List of columns which change over time, and we want to maintain its history.           | True     |
-| From time column   | Time from which a particular row becomes valid.                                        | True     |
-| To time column     | Time till which a particular row is no longer valid.                                   | True     |
-| Min/old-value flag | Column placeholder to store the flag as `true` for the first entry of a particular key.| True     |
-| Max/latest flag    | Column placeholder to store the flag as `true` for the last entry of a particular key. | True     |
-| Flag values        | Option to choose the min or max flag to be `true/false`, or `0/1`.                     | True     |
+| Parameter          | Description                                                                             | Required |
+| :----------------- | :-------------------------------------------------------------------------------------- | :------- |
+| Key Columns        | List of key columns which remain constant.                                              | True     |
+| Historic Columns   | List of columns which change over time, and we want to maintain its history.            | True     |
+| From time column   | Time from which a particular row becomes valid.                                         | True     |
+| To time column     | Time till which a particular row is no longer valid.                                    | True     |
+| Min/old-value flag | Column placeholder to store the flag as `true` for the first entry of a particular key. | True     |
+| Max/latest flag    | Column placeholder to store the flag as `true` for the last entry of a particular key.  | True     |
+| Flag values        | Option to choose the min or max flag to be `true/false`, or `0/1`.                      | True     |
 
 #### Example {#scd2-example}
 

@@ -31,7 +31,7 @@ The Avro data format:
 
 #### Schema Evolution
 
-When reading an Avro data format, you can set the `Avro Schema` parameter to a newer, evolved schema, which is compatible but different from the schema written to storage. The resulting `DataFrame` follows the newer, evolved schema. For example, if we set an evolved schema containing one additional column with a default value, the resulting `DataFrame` contains the new column too.
+When reading an Avro file, you can set the `Avro Schema` parameter to a newer, evolved schema, which is compatible but different from the schema written to storage. The resulting `DataFrame` follows the newer, evolved schema. For example, if we set an evolved schema containing one additional column with a default value, the resulting `DataFrame` contains the new column too.
 
 #### Ignoring the File Extension
 
