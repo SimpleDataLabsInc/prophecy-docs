@@ -17,19 +17,19 @@ The JSON file format allows you to read and write JSON formatted files.
 | Parameter                     | Description                                                                                                                                                                                | Required |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- |
 | Dataset Name                  | Name of the dataset.                                                                                                                                                                       | True     |
-| Location                      | Location of the file(s) to be loaded <br/> E.g.: `dbfs:/data/test.json`.                                                                                                                   | True     |
-| Schema                        | Schema to applied on the loaded data. Can be defined/edited as JSON or inferred using `Infer Schema` button.                                                                               | True     |
-| Multi-Line                    | Whether to parse one record, which may span multiple lines, per file. JSON built-in functions ignore this option.                                                                          | False    |
-| Line Separator                | Defines the line separator that should be used for parsing. JSON built-in functions ignore this option.                                                                                    | False    |
+| Location                      | File path of the JSON file.                                                                                                                                                                | True     |
+| Schema                        | Schema to applied on the data you load. <br/>You can define or edit schema as JSON or infer it using `Infer Schema` button.                                                                | True     |
+| Multi-Line                    | Whether to parse one record, which may span multiple lines, per file. <br/>JSON built-in functions ignore this option.                                                                     | False    |
+| Line Separator                | Defines the line separator that should be used for parsing. <br/>JSON built-in functions ignore this option.                                                                               | False    |
 | Primitive Values              | Whether to infer all primitive values as a `String` type.                                                                                                                                  | False    |
-| Floating-Point Values         | Infers all floating-point values as a `Decimal` type. If the value does not fit in `Decimal`, then it infers them as a `Double`.                                                           | False    |
-| Ignore Comments               | Ignores Java/C++ style comment in JSON records.                                                                                                                                            | False    |
+| Floating-Point Values         | Infers all floating-point values as a `Decimal` type. <br/>If the value does not fit in `Decimal`, then it infers them as a `Double`.                                                      | False    |
+| Ignore Comments               | Ignores Java and C++ style comments in JSON records.                                                                                                                                       | False    |
 | Unquoted Field Names          | Whether to allow unquoted JSON field names.                                                                                                                                                | False    |
 | Single Quotes                 | Whether to allow single quotes in addition to double quotes.                                                                                                                               | False    |
 | Leading Zero                  | Whether to allow leading zeros in numbers.                                                                                                                                                 | False    |
 | Backslash Escaping            | Whether to accept quotes on all characters using the backslash quoting mechanism.                                                                                                          | False    |
-| Mode                          | How to deal with corrupt records. To learn about the available modes, see [Supported Corrupt Record Modes](#supported-corrupt-record-modes).                                               | False    |
-| Column Name of Corrupt Record | Name of the column to create for corrupt records.                                                                                                                                          | False    |
+| Mode                          | How to deal with corrupt records. <br/>To learn about the available modes, see [Supported Corrupt Record Modes](#supported-corrupt-record-modes).                                          | False    |
+| Column Name of Corrupt Record | Name of the column to create for corrupt records. By default, the column name is `_corrupt_records`.                                                                                       | False    |
 | Date Format                   | String that indicates a date format.                                                                                                                                                       | False    |
 | Timestamp Format              | String that indicates a timestamp format.                                                                                                                                                  | False    |
 | Sampling Ratio                | Defines fraction of input JSON objects used for schema inferring.                                                                                                                          | False    |
@@ -38,11 +38,11 @@ The JSON file format allows you to read and write JSON formatted files.
 
 ### Supported Corrupt Record Modes
 
-| Mode          | Description                                                                      |
-| ------------- | -------------------------------------------------------------------------------- |
-| PERMISSIVE    | If data already exists, throw an exception.                                      |
-| DROPMALFORMED | If data already exists, overwrite the data with the contents of the `DataFrame`. |
-| FAILFAST      | If data already exists, append the contents of the `DataFrame`.                  |
+| Mode          | Description                                                                                                |
+| ------------- | ---------------------------------------------------------------------------------------------------------- |
+| PERMISSIVE    | Load and process all records. Prophecy puts corrupted records go in a new field called `_corrupt_records`. |
+| DROPMALFORMED | Drop all corrupted records, and only keep the uncorrupted records.                                         |
+| FAILFAST      | Throw an exception and stop trying to process data when Prophecy encounters a corrupt record.              |
 
 ### Example {#source-example}
 
@@ -87,18 +87,18 @@ spark.read
 
 ### Target Parameters
 
-| Parameter          | Description                                                                                                                                                                        | Required |
-| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| Dataset Name       | Name of the dataset.                                                                                                                                                               | True     |
-| Location           | File path of the JSON files.                                                                                                                                                       | True     |
-| Write Mode         | How to handle existing data. To see a list of possible values, see [the Supported Write Modes table](#supported-write-modes).                                                      | False    |
-| Compression        | Compression codec to use when you write. <br/>Prophecy supports the following codecs: `bzip2`, `gzip`, `lz4`, `snappy`, and `deflate`. JSON built-in functions ignore this option. | False    |
-| Date Format        | String that indicates a date format.                                                                                                                                               | False    |
-| Timestamp Format   | String that indicates a timestamp format.                                                                                                                                          | False    |
-| Encoding           | Specifies to encode (charset) saved json files. JSON built-in functions ignore this option.                                                                                        | False    |
-| Line Separator     | Defines the line separator that should be used for parsing. JSON built-in functions ignore this option.                                                                            | False    |
-| Ignore Null Fields | Whether to ignore null fields when generating JSON objects.                                                                                                                        | False    |
-| Partition Columns  | List of columns to partition the JSON file by.                                                                                                                                     | False    |
+| Parameter          | Description                                                                                                                                                                             | Required |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| Dataset Name       | Name of the dataset.                                                                                                                                                                    | True     |
+| Location           | File path of the JSON file.                                                                                                                                                             | True     |
+| Write Mode         | How to handle existing data. To see a list of possible values, see [the Supported Write Modes table](#supported-write-modes).                                                           | False    |
+| Compression        | Compression codec to use when you write. <br/>Prophecy supports the following codecs: `bzip2`, `gzip`, `lz4`, `snappy`, and `deflate`. <br/>JSON built-in functions ignore this option. | False    |
+| Date Format        | String that indicates a date format.                                                                                                                                                    | False    |
+| Timestamp Format   | String that indicates a timestamp format.                                                                                                                                               | False    |
+| Encoding           | Specifies to encode (charset) saved json files. <br/>JSON built-in functions ignore this option.                                                                                        | False    |
+| Line Separator     | Defines the line separator that should be used for parsing. <br/>JSON built-in functions ignore this option.                                                                            | False    |
+| Ignore Null Fields | Whether to ignore null fields when generating JSON objects.                                                                                                                             | False    |
+| Partition Columns  | List of columns to partition the JSON file by.                                                                                                                                          | False    |
 
 ### Supported Write Modes
 
