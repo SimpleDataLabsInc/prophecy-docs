@@ -10,7 +10,7 @@ In Prophecy, execution refers to running a set of defined operations in a model 
 - **Prophecy Runtime**: handles the flow of data in and out of the pipeline.
 - **SQL Warehouse**: executes the data transformations.
 
-When you create a [Prophecy fabric](docs/administration/prophecy-fabrics.md), you can choose which SQL warehouse to use for pipeline execution.
+When you create a [Prophecy fabric](/administration/prophecy-fabrics/), you can choose which SQL warehouse to use for pipeline execution.
 
 ## Interactive execution
 

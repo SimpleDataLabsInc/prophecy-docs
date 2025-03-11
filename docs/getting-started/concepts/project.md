@@ -7,6 +7,9 @@ tags:
   - project
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 A **project** in Prophecy is the core unit for developing, organizing, and deploying data workflows to production. It encompasses all the components needed for building and running data processes.
 
 ## Project types
@@ -21,23 +24,47 @@ The following table can help you understand the difference between the project t
 | Scala        | Spark         | [Pipelines](docs/Spark/pipelines/pipelines.md), [Datasets](docs/Spark/dataset.md), and [Jobs](docs/Orchestration/Orchestration.md)                                                                                 |
 | SQL          | SQL Warehouse | [Pipelines](docs/analysts/development/pipelines.md), [Tables](docs/analysts/development/gems/source-target/source-target.md), [Models](docs/data-modeling/models.md), and [Schedules](docs/analysts/scheduling.md) |
 
-## Git repository
-
-Because all projects are compiled into code, Prophecy leverages Git to version and host that code. You can either choose to host your project on a Prophecy-managed repository, or you can connect your own external repository, like one on GitHub. This lets users and teams collaborate on projects, contribute simultaneously, and reuse code. The image below shows the underlying code of two example projects.
-
-![Visual To Code](img/code-to-visual.png)
-
 ## Project team
 
-Projects are always assigned a certain [team](docs/administration/teamuser.md). This means that the project will be shared among all users in that team.
+Projects are always assigned a certain [team](docs/administration/teams-users/teamuser.md). This means that the project will be shared among all users in that team.
 
 :::note
 When you begin using Prophecy, you are added to your own one-person team. Your team administrator will typically create other team groupings.
 :::
 
-## Project Editor
+## Project entities
 
-Once you have created a project, you should get familiar with the Project Editor interface. The following table describes different areas of the Project Editor.
+As you work on a project, you might want to create various entities to use throughout a pipeline.
+
+<Tabs>
+
+<TabItem value="Spark" label="Spark">
+
+| Entity   | Description                                                   |
+| -------- | ------------------------------------------------------------- |
+| Pipeline | Sequence of steps that run on Spark-native code               |
+| Dataset  | Pointer to data in your data provider                         |
+| Job      | Schedule for pipeline execution                               |
+| Gem      | Representation of each data transformation step in a pipeline |
+
+</TabItem>
+<TabItem value="SQL" label="SQL">
+
+| Entity   | Description                                                                              |
+| -------- | ---------------------------------------------------------------------------------------- |
+| Pipeline | Sequence of steps that run on Prophecy runtime and SQL                                   |
+| Model    | SQL transformations that define a single table or view                                   |
+| Gem      | Representation of each data transformation step in a pipeline or model                   |
+| Table    | SQL table, view, or seed                                                                 |
+| Function | SQL macro that can be invoked using a Macro gem                                          |
+| Test     | Validate data automatically by testing for referential integrity, data consistency, etc. |
+
+</TabItem>
+</Tabs>
+
+## Project editor
+
+Once you have created a project, you should get familiar with the project editor interface. The following table describes different areas of the project editor.
 
 | Callout | Component       | Description                                                                                                                                                                                                       |
 | ------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -74,6 +101,12 @@ The following table describes the information that you can find in each tab of a
 | Code                   | Links to the external Git if present.                                                                                                                                              |
 | Access                 | Lets you invite teams to use your project via the [Package Hub](docs/extensibility/package-hub/package-hub.md).                                                                    |
 | Settings               | Provides different configuration options for building, changing, and deploying your project.                                                                                       |
+
+## Project versioning
+
+Projects can use either simple versioning or advanced Git versioning. Either way, the automatically compiled project code is hosted on Git in the backend.
+
+You can either choose to host your project on a Prophecy-managed repository, or you can connect your own external repository (like GitHub). This lets users and teams collaborate on projects, contribute simultaneously, and reuse code.
 
 ## What's next
 

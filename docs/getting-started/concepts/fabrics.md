@@ -19,16 +19,16 @@ This is why **fabrics** exist in Prophecy. Fabrics let Prophecy connect to speci
 
 Certain fabrics will be compatible with certain project types. Review the table below to understand the different fabric types.
 
-| Fabric type                                         | Description                                            | Usage                                                       |
-| --------------------------------------------------- | ------------------------------------------------------ | ----------------------------------------------------------- |
-| [Prophecy](docs/administration/prophecy-fabrics.md) | Computation using the Prophecy engine and a SQL engine | Run pipelines in SQL projects                               |
-| [Spark](/administration/Spark-fabrics/Fabrics)      | Computation using a Spark engine                       | Run pipelines in PySpark/Scala projects and Databricks jobs |
-| [SQL](/administration/sql-fabrics/Fabrics)          | Computation using Spark SQL engines or SQL warehouses  | Run models in SQL projects                                  |
-| [Airflow](/Orchestration/airflow/)                  | Computation using Airflow-compatible engines           | Run Airflow jobs                                            |
+| Fabric type                                    | Description                                            | Usage                                                       |
+| ---------------------------------------------- | ------------------------------------------------------ | ----------------------------------------------------------- |
+| [Prophecy](/administration/prophecy-fabrics/)  | Computation using the Prophecy engine and a SQL engine | Run pipelines in SQL projects                               |
+| [Spark](/administration/Spark-fabrics/Fabrics) | Computation using a Spark engine                       | Run pipelines in PySpark/Scala projects and Databricks jobs |
+| [SQL](/administration/sql-fabrics/Fabrics)     | Computation using Spark SQL engines or SQL warehouses  | Run models in SQL projects                                  |
+| [Airflow](/Orchestration/airflow/)             | Computation using Airflow-compatible engines           | Run Airflow jobs                                            |
 
 ## Share fabrics
 
-When you create a fabric, you assign it to a [team](docs/administration/teamuser.md). The fabric then becomes available to all users in the team.
+When you create a fabric, you assign it to a [team](docs/administration/teams-users/teamuser.md). The fabric then becomes available to all users in the team.
 
 Even though teams share fabrics, users will be prompted to add their individual credentials to be able to use the fabric in their projects.
 
@@ -53,7 +53,6 @@ Fabrics include everything required to run a data pipeline. As an example, the f
 | Job Sizes              | Lets you define reusable cluster sizes (e.g., an XL cluster with 10 i3.xlarge servers, 40 CPUs, and 70GB memory).                                                                                                                         |
 | Scheduler              | Executes Spark data pipelines on a defined schedule, such as weekdays at 9:00 AM. Databricks provides a default scheduler, and an Airflow Scheduler is available for enterprise users.                                                    |
 | Database Connections   | Supports connections to databases (MySQL, Postgres) and data warehouses (Snowflake) via JDBC or other protocols. Credentials are securely stored on the fabric for reuse.                                                                 |
-| Metadata Connection    | Enhances fabric management for large datasets, useful for users handling hundreds or thousands of tables. [Learn more](/docs/administration/connections/connections.md).                                                                  |
 | Credentials & Secrets  | Securely stores credentials in Databricks using Personal Access Tokens (PAT) or [Databricks OAuth](/docs/administration/authentication/databricks-oauth.md). Secrets are stored as key-value pairs, accessible only to running workflows. |
 
 ## Fabric metadata

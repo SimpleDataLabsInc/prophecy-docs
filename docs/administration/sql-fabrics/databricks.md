@@ -50,10 +50,6 @@ The SQL **provider** is both the storage warehouse and the execution environment
 
 Prophecy supports Databricks Volumes. When you run a Python or Scala pipeline via a job, you must bundle them as whl/jar artifacts. These artifacts must then be made accessible to the Databricks job in order to use them as a library installed on the cluster. You can designate a path to a Volume for uploading the whl/jar files under Artifacts.
 
-### Connections
-
-(Optional) Browsing data catalogs, tables, and schemas can be a time-intensive operation especially for Warehouses with hundreds or thousands of tables. To address this challenge, Prophecy offers a [Metadata Connection](/docs/administration/connections/connections.md) to sync metadata from the data provider at regular intervals.
-
 ## Using fabrics
 
 Completed fabrics will appear on the Metadata page and can be managed by Team admins.

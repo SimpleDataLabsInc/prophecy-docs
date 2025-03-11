@@ -1,15 +1,29 @@
 ---
-title: Connections for SQL
-id: sql-supported
+title: Connections
+id: connections
 description: A list of connections that you can configure for SQL projects
 tags:
   - connections
   - sql
 ---
 
-You can connect to a variety of data providers for use in your SQL projects. If you are using a Prophecy fabric, you can add the following connections.
+Prophecy lets you work with various data providers when building your pipelines and models. To make this easier, you can create **connections** between Prophecy and a data provider. Once you add connections a fabric and use that fabric in a project, you can:
 
-## Cloud data platforms
+- Reuse credentials that are established in the connection.
+- Browse data from the data provider in the [Environment tab](docs/getting-started/concepts/project.md#project-editor) of your Prophecy project.
+- Auto-index data for search in the Prophecy interface.
+
+:::info
+Connection functionality and setup will vary across data providers.
+:::
+
+Connections are stored per [fabric](docs/getting-started/concepts/fabrics.md).
+
+## Supported connections
+
+If you are using a Prophecy fabric, you can add the following connections. You will have to be attached to a fabric to utilize connections.
+
+### Cloud data platforms
 
 Read and write to different data warehouses.
 
@@ -18,7 +32,7 @@ Read and write to different data warehouses.
 | Databricks |            |
 | Snowflake  |            |
 
-## File stores
+### File stores
 
 These connections let you read various file types, such as CSV, JSON, Excel, XML, and text files.
 
@@ -31,7 +45,7 @@ These connections let you read various file types, such as CSV, JSON, Excel, XML
 | SFTP               |            |
 | Sharepoint         |            |
 
-## Web applications
+### Web applications
 
 Read and write from web applications that expose their data in a tabular format.
 
@@ -39,7 +53,7 @@ Read and write from web applications that expose their data in a tabular format.
 | ---------- | ---------- |
 | Smartsheet |            |
 
-## Databases
+### Databases
 
 Access data from SQL databases.
 
@@ -47,7 +61,7 @@ Access data from SQL databases.
 | ---------- | ---------- |
 | SQL server |            |
 
-## BI tools
+### BI tools
 
 Receive and send data pertaining to BI reporting.
 

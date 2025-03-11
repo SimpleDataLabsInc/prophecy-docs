@@ -12,10 +12,9 @@ Use a custom SQL statement in your pipeline.
 
 ### Parameters
 
-| Parameter   | Meaning                       | Required |
-| :---------- | :---------------------------- | :------- |
-| Models      | Input Source(s)               | True     |
-| SQL Queries | SQL Query for each output tab | True     |
+| Parameter | Meaning                       |
+| :-------- | :---------------------------- |
+| Out       | SQL Query for each output tab |
 
 ### Example
 

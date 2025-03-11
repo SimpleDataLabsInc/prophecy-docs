@@ -1,6 +1,6 @@
 ---
 title: Teams and users
-id: teamuser
+id: teams-users
 description: Teams represent a group of users who work together
 tags:
   - concepts
@@ -15,7 +15,7 @@ There are two types of teams:
 - **Personal teams.** When you start using Prophecy, you are automatically assigned to your own one-person team. You are also the team admin of this team. If you want a project or fabric to be accessible only to yourself, you can assign it to your personal team and keep it private.
 - **Shared teams.** Your team administrator typically creates additional team groupings. Team structures will vary across organizations.
 
-Team, user, and Git [settings](docs/administration/settings/settings.md) can be accessed by clicking the **...** ellipses menu and the **gear** icon at the bottom of the left navigation bar.
+Team, user, and Git [settings](./settings) can be accessed by clicking the **...** ellipses menu and the **gear** icon at the bottom of the left navigation bar.
 
 ## Team admins
 
@@ -29,10 +29,13 @@ In a team's metadata page, only the team admin can view and manage the **(4) Set
 
 ![Team metadata](./img/team_metadata.png)
 
+## Team settings
+
 This table describes each tab within the team settings.
 
-| Tab                                                             | Description                                                                         |
-| --------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| [Execution Metrics](/docs/Spark/execution/execution-metrics.md) | Displays metrics and data samples for each execution.                               |
-| Code Generation                                                 | Enables multi-file code generation in the case of code payload size limitations.    |
-| Advanced                                                        | Lets you update the artifactid, generative AI settings, etc. for a team's projects. |
+| Tab                                                                               | Description                                                                      |
+| --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| [Execution Metrics](/docs/Spark/execution/execution-metrics.md)                   | Displays metrics and data samples for each execution.                            |
+| Code Generation                                                                   | Enables multi-file code generation in the case of code payload size limitations. |
+| Advanced                                                                          | Update the artifactid, generative AI settings, etc. for a team's projects.       |
+| [Default Project Settings](/administration/teams-users/project-creation-template) | Configure project creation templates for the team.                               |

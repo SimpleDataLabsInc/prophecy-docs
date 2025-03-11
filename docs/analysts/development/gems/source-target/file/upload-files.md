@@ -12,10 +12,10 @@ You can add a source table to your SQL Environment by uploading a file directly 
 
 The file can be one of the following file types:
 
-- CSV - The default format is comma-separated. You have the option to change this during upload.
-- Excel - The upload supports both XLS and XLSX.
-- JSON - The upload supports single JSON per line with a consistent set of keys.
-- Parquet - The upload supports single file upload.
+- CSV: The default format is comma-separated. You have the option to change this during upload.
+- Excel: The upload supports both XLS and XLSX.
+- JSON: The upload supports single JSON per line with a consistent set of keys.
+- Parquet: The upload supports single file upload.
 
 When you upload your file through Prophecy, it's added directly to your Databricks or Snowflake SQL warehouse as a table. This eliminates the need to use other tools to upload your files. Once you've uploaded your file, you can join the data in the file's table with existing big data tables that already exist in your SQL warehouse.
 

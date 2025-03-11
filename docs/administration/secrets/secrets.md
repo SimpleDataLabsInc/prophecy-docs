@@ -24,14 +24,3 @@ If any gem requires a authentication field like **username** or **password**, yo
 :::info
 If you use plain text for username and password fields, you will see a warning diagnostic in your gem.
 :::
-
-## What's next
-
-To learn more about how to set up secrets, explore the following pages.
-
-```mdx-code-block
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
-<DocCardList items={useCurrentSidebarCategory().items}/>
-```

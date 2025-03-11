@@ -90,6 +90,7 @@ const sidebars = {
       link: { type: "doc", id: "analysts/development/development" },
       items: [
         "analysts/development/pipelines",
+        "analysts/development/connections",
         {
           type: "category",
           label: "Gems",
@@ -105,13 +106,17 @@ const sidebars = {
                 {
                   type: "category",
                   label: "File",
-                  items: ["analysts/development/gems/source-target/file/excel"],
+                  items: [
+                    "analysts/development/gems/source-target/file/upload-files",
+                    "analysts/development/gems/source-target/file/excel",
+                    "analysts/development/gems/source-target/file/csv",
+                  ],
                 },
                 {
                   type: "category",
                   label: "Catalog table",
                   items: [
-                    "analysts/development/gems/source-target/catalog-table/catalog-table",
+                    "analysts/development/gems/source-target/catalog-table/databricks",
                   ],
                 },
               ],
@@ -221,7 +226,15 @@ const sidebars = {
           },
           items: [],
         },
-        "analysts/development/collaboration",
+        {
+          type: "category",
+          label: "Collaboration",
+          link: {
+            type: "doc",
+            id: "analysts/development/collaboration/collaboration",
+          },
+          items: ["analysts/development/collaboration/canvas-annotations"],
+        },
       ],
     },
     "analysts/scheduling",
@@ -261,6 +274,7 @@ const sidebars = {
           link: { type: "doc", id: "Spark/pipelines/pipelines" },
           items: [
             "Spark/pipelines/configuration",
+            "Spark/pipelines/secrets-configs",
             "Spark/pipelines/pipeline-settings",
           ],
         },
@@ -663,18 +677,26 @@ const sidebars = {
       label: "Teams and users",
       link: {
         type: "doc",
-        id: "administration/teamuser",
+        id: "administration/teams-users/teams-users",
       },
       items: [
-        "administration/settings/settings",
-        "administration/project-creation-template",
+        "administration/teams-users/settings",
+        "administration/teams-users/project-creation-template",
       ],
     },
     {
       type: "category",
       label: "Fabric setup",
       items: [
-        "administration/prophecy-fabrics",
+        {
+          type: "category",
+          label: "Prophecy fabrics",
+          link: {
+            type: "doc",
+            id: "administration/prophecy-fabrics/prophecy-fabrics",
+          },
+          items: ["administration/prophecy-fabrics/connections"],
+        },
         {
           type: "category",
           label: "Spark fabrics",
@@ -734,30 +756,15 @@ const sidebars = {
             "administration/airflow-fabrics/open-source-airflow",
           ],
         },
-      ],
-    },
-    {
-      type: "category",
-      label: "Connections",
-      link: {
-        type: "doc",
-        id: "administration/connections/connections",
-      },
-      items: [
-        "administration/connections/sql-supported",
-        "administration/connections/spark-supported",
-      ],
-    },
-    {
-      type: "category",
-      label: "Secrets",
-      link: {
-        type: "doc",
-        id: "administration/secrets/secrets",
-      },
-      items: [
-        "administration/secrets/secret-providers",
-        "administration/secrets/secrets-configs",
+        {
+          type: "category",
+          label: "Secrets",
+          link: {
+            type: "doc",
+            id: "administration/secrets/secrets",
+          },
+          items: ["administration/secrets/secret-providers"],
+        },
       ],
     },
     {

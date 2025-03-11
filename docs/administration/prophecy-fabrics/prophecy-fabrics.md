@@ -43,4 +43,4 @@ Use the following instructions to create a Prophecy fabric.
    - Choose your authentication method.
 1. Once these steps are complete, Prophecy will test the connection for you.
 1. If the connection succeeds, you can **Save** the connection. Otherwise, Prophecy will provide an error to help you troubleshoot the connection.
-1. You can also add additional [connections](/administration/connections/) here if you want to configure access to other external data sources.
+1. You can also add additional [connections](./connections) here if you want to configure access to other external data sources.

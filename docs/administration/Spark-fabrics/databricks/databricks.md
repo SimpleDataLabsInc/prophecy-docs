@@ -47,10 +47,6 @@ In Json you can just copy-paste your compute Json from Databricks.
 
 These are some Scala and Python libraries written by Prophecy to provide additional functionalities on top of Spark. These would get automatically installed in your Spark execution environment when you attach to a cluster/create new cluster. These libraries are also publicly available on Maven central and Pypi respectively.
 
-### Metadata connection
-
-Optionally, enhance your fabric by creating a [Metadata Connection](/docs/administration/connections/connections.md), recommended for users with hundreds or thousands of tables housed in their data provider(s).
-
 ### Artifacts
 
 Prophecy supports Databricks Volumes. When you run a Python or Scala pipeline via a job, you must bundle them as whl/jar artifacts. These artifacts must then be made accessible to the Databricks job in order to use them as a library installed on the cluster. You can designate a path to a Volume for uploading the whl/jar files under Artifacts.

@@ -346,11 +346,11 @@ const config = {
             from: "/getting-started/airflow",
           },
           {
-            to: "/administration/connections/",
+            to: "/administration/",
             from: "/metadata/metadata-connections",
           },
           {
-            to: "/administration/connections/",
+            to: "/administration/",
             from: "/concepts/metadata",
           },
           {
@@ -390,11 +390,11 @@ const config = {
             from: "/settings/audit-logging",
           },
           {
-            to: "/administration/teamuser",
+            to: "/administration/teams-users/teams-users",
             from: "/concepts/teamuser",
           },
           {
-            to: "/administration/teamuser",
+            to: "/administration/teams-users/teams-users",
             from: "/administration/settings/teamuser",
           },
           {
