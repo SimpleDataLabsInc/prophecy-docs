@@ -8,15 +8,15 @@ tags:
   - seed
 ---
 
-Seeds let you manually write small CSV files into your Prophecy pipelines. They can only be used via Source gems.
+The Seed file format allows you to manually write small CSV files into your Prophecy pipelines. You can only use this file format in a Source gem.
 
 ## Source Parameters
 
-| Parameter                            | Tab        | Description                                                                                                      |
-| ------------------------------------ | ---------- | ---------------------------------------------------------------------------------------------------------------- |
-| Data                                 | Data       | Data provided in CSV format                                                                                      |
-| Schema                               | Properties | Schema applied to the loaded data. Schema can be defined/edited as JSON or inferred using `Infer Schema` button. |
-| Delimiter                            | Properties | Character used to separate entered data.                                                                         |
-| First row is header                  | Properties | Checkbox to enable when the first row is the table header.                                                       |
-| Enforce specified or inferred schema | Properties | Checkbox to enable when the output schema must match what has been defined in this tab.                          |
-| Auto-infer schema from the data      | Properties | Checkbox to enable when you do not want to manually enter the schema.                                            |
+| Parameter                            | Tab        | Description                                                                                                          |
+| ------------------------------------ | ---------- | -------------------------------------------------------------------------------------------------------------------- |
+| Data                                 | Data       | Data you provide in CSV format.                                                                                      |
+| Schema                               | Properties | Schema to apply to the data. You can define or edit the schema as a JSON or infer it with the `Infer Schema` button. |
+| Delimiter                            | Properties | Character to separate data you enter.                                                                                |
+| First row is header                  | Properties | Whether the first row is the table header.                                                                           |
+| Enforce specified or inferred schema | Properties | Whether the output schema must match what you define in this tab.                                                    |
+| Auto-infer schema from the data      | Properties | Whether you want to automatically enter the schema.                                                                  |

@@ -24,9 +24,9 @@ import Requirements from "../../\_gem-requirements.mdx";
   packageversion154="Supported 0.2.36+"
 />
 
-It is crucial to generate mock data when you build data pipelines to simulate real-world scenarios for testing, validating, and optimizing pipeline performance before you use production data. This helps ensure that the pipeline handles various data formats, structures, and edge cases effectively, which minimizes potential issues in a live environment.
+Mock data helps you test, validate, and optimize your pipelines performance before you use production data. This ensures that your pipeline can handle various data formats, structures, and edge cases effectively, which minimizes potential issues in a live environment.
 
-You can create a wide range of synthetic data using any column name and an array of data types. For example, you can generate the following browser history data.
+You can create a wide range of mock data using any column name and an array of data types. For example, you can generate the following browser history data:
 
 ![img](../../img/synth_0_datasample.png)
 
@@ -39,12 +39,12 @@ Create a fabric and configure the [Job Size](/docs/administration/Spark-fabrics/
 To create a fabric and configure the job size in the Spark Cluster UI:
 
 1. Login to your Databricks account.
-1. Verify the Databricks Runtime uses Python version >= 3.8.
+1. Verify your Databricks Runtime uses Python version >= 3.8.
 
    For example, [Databricks Runtime 12.2 LTS](https://docs.databricks.com/en/release-notes/runtime/12.2lts.html) uses Python 3.9.19. If you are using Databricks Runtime 12.2+, the Python version meets this requirement.
 
 1. Create a new environment variable called `SPARK_VERSION` with value `3.3`.
-1. Confirm and restart the Spark cluster.
+1. Confirm and restart your Spark cluster.
    ![requirements](../../img/synth_0_1_requirements.png)
 
 ## Prophecy Requirements
@@ -95,24 +95,21 @@ Prophecy offers a selection of providers including integers, booleans, and eleme
 | Random Elements From List | Generates random values from the list of values you specify.                                                                                                                                                                                                                 |
 | Random Date               | Generates random dates within the range you specify.                                                                                                                                                                                                                         |
 | Random DateTime           | Generates random datetime values within the range you specify.                                                                                                                                                                                                               |
-| Random Foreign Key Values | Randomly picks values from the foreign key column you specify. Select another table to act as the reference table and provide the location (e.g., `catalog`,`database`, or `table`). Select any column from the reference table to designate as the `Reference Column Name`. |
+| Random Foreign Key Values | Randomly picks values from the foreign key column you specify. <br/>Select another table to act as the reference table and provide the location (e.g. `catalog` or `database`). <br/>Select any column from the reference table to designate as the `Reference Column Name`. |
 
 ## Common properties
 
-| Name                       | Description                                                                               |
-| -------------------------- | ----------------------------------------------------------------------------------------- |
-| Column Name                | Custom name for the output column.                                                        |
-| Data Type                  | Data type of the output column.                                                           |
-| Null Percentage (Optional) | The percent of values to populate as null in the generated column based on the row count. |
+| Name                       | Description                                                                           |
+| -------------------------- | ------------------------------------------------------------------------------------- |
+| Column Name                | Custom name for the output column.                                                    |
+| Data Type                  | Data type of the output column.                                                       |
+| Null Percentage (Optional) | Percent of values to populate as null in the generated column based on the row count. |
 
 ![img](../../img/synth_3_properties.png)
 
-Generate column using a sequence of integers (left). Generate another column by referencing an existing catalog table (right). Randomly select elements of the foreign key from that table.  
-![img](../../img/synth_7_seq_or_foreign.png)
-
 ### Infer the Schema
 
-To see the changes to the columns based on your Properties tab configuration, infer the schema in the Schema tab.
+To see your data based on the Properties tab configuration, infer the schema in the Schema tab.
 
 ### Preview the data
 
@@ -120,7 +117,7 @@ This gem returns a `DataFrame` with randomly generated values. Preview the first
 
 ## Store the data
 
-By default, the Data Generator gem does not save the newly generated data. To save the data, store the data in a Target gem.
+By default, the Data Generator gem does not save the newly generated data. To save the data, store the data in a Target gem:
 
 1. Create a Target gem.
 
@@ -132,13 +129,10 @@ By default, the Data Generator gem does not save the newly generated data. To sa
 
 1. Configure the write mode for the Target gem.
 
+   The Data Generator only generates the data. If you want to store the data, connect the output to a Target gem and configure the write mode.
    This is **very important** because there is a **new random seed** each time you run the Data Generator gem.
 
    ![img](../../img/synth_6_write_mode.png)
-
-:::caution
-The Data Generator only generates the data. If you want to store the data, connect the output to a target gem and configure its properties. The generated data is new for each execution.
-:::
 
 :::info
 To see if Prophecy supports this gem in the Unity Catalog Shared Spark Clusters, see [UC Shared Cluster Support](docs/administration/Spark-fabrics/databricks/UCShared.md).

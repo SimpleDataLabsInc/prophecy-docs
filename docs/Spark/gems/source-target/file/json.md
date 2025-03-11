@@ -30,8 +30,8 @@ The JSON file format allows you to read and write JSON formatted files.
 | Backslash Escaping            | Whether to accept quotes on all characters using the backslash quoting mechanism.                                                                                                          | False    |
 | Mode                          | How to deal with corrupt records. <br/>To learn about the available modes, see [Supported Corrupt Record Modes](#supported-corrupt-record-modes).                                          | False    |
 | Column Name of Corrupt Record | Name of the column to create for corrupt records. By default, the column name is `_corrupt_records`.                                                                                       | False    |
-| Date Format                   | String that indicates a date format.                                                                                                                                                       | False    |
-| Timestamp Format              | String that indicates a timestamp format.                                                                                                                                                  | False    |
+| Date Format                   | Sets the string that indicates a date format.                                                                                                                                              | False    |
+| Timestamp Format              | Sets the string that indicates a timestamp format.                                                                                                                                         | False    |
 | Sampling Ratio                | Defines fraction of input JSON objects used for schema inferring.                                                                                                                          | False    |
 | Ignore column with all null   | Whether to ignore column of all `null` values or empty arrays during schema inference.                                                                                                     | False    |
 | Recursive File Lookup         | Recursively load files and disable partition inferring. If the data source explicitly specifies the `partitionSpec` when the`recursiveFileLookup` is `true`, Prophecy throws an exception. | False    |
@@ -40,9 +40,9 @@ The JSON file format allows you to read and write JSON formatted files.
 
 | Mode          | Description                                                                                                |
 | ------------- | ---------------------------------------------------------------------------------------------------------- |
-| PERMISSIVE    | Load and process all records. Prophecy puts corrupted records go in a new field called `_corrupt_records`. |
-| DROPMALFORMED | Drop all corrupted records, and only keep the uncorrupted records.                                         |
-| FAILFAST      | Throw an exception and stop trying to process data when Prophecy encounters a corrupt record.              |
+| PERMISSIVE    | Put the malformed string into a new field called `_corrupt_records`, and set the malformed fields to null. |
+| DROPMALFORMED | Ignore the entire corrupted record. This mode is not supported in the CSV built-in functions.              |
+| FAILFAST      | Throw an exception when it meets a corrupted record.                                                       |
 
 ### Example {#source-example}
 

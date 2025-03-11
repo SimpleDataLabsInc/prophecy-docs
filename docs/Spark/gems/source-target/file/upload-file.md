@@ -22,11 +22,11 @@ To upload a file and incorporate it into your Spark pipeline, use a Source gem.
 
 1. Choose one of the following methods to upload your file:
 
-   - Drag and drop the file directly to the pipeline canvas.
+   - Drag and drop the file directly to your pipeline canvas.
 
      ![Drag and drop file](./img/drag-drop-file.png)
 
-   - Open the Source or Target gem drawer and click **Upload file**.
+   - Open the `Source/Target` gem drawer and click **Upload file**.
 
      ![Source/Target gem drawer](./img/upload-file-gem-drawer.png)
 
@@ -34,7 +34,7 @@ To upload a file and incorporate it into your Spark pipeline, use a Source gem.
 
      ![Source gem](./img/upload-file-source-gem.png)
 
-1. You should see the **Type & Format** page for your file.
+1. You see the **Type & Format** page for your file.
 
    ![Type & Format](./img/upload-type-and-format.png)
 

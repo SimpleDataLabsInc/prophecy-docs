@@ -1,11 +1,11 @@
 ---
-title: Source & Target
+title: Source And Target
 id: source-target
 description: Set of gems related to the input and output of data
 tags: []
 ---
 
-Prophecy supports a number of gems to help you work with various file-based formats, connect to a warehouse-style data source, and work with various table-based formats.
+The Source and Target gems to help you work with various file-based formats, connect to a warehouse-style data source, and work with various table-based formats.
 
 ## File
 
