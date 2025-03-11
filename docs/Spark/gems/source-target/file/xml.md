@@ -8,7 +8,7 @@ tags:
   - xml
 ---
 
-You can read and write data in XML file types.
+You can read data from and write data to XML files.
 
 ## Source Parameters
 

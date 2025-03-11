@@ -8,16 +8,18 @@ tags:
   - csv
 ---
 
-The CSV file type allows you to read or write delimited files such as CSV (Comma-separated Values) or TSV (Tab-separated Values).
+You can read from or write to delimited files such as CSV (Comma-separated Values) or TSV (Tab-separated Values) files.
 
 ## Source
+
+The Source gem reads data from CSV files.
 
 ### Source Parameters
 
 | Parameter                                  | Description                                                                                                                                                                                                                                  |
 | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
 | Dataset Name                               | Name of the dataset.                                                                                                                                                                                                                         |
-| Location                                   | File path to the CSV file. You can read from a file location, Sharepoint (Python only), or SFTP (Python only).                                                                                                                               |
+| Location                                   | File path to write the CSV file to. You can read from a file location, Sharepoint (Python only), or SFTP (Python only).                                                                                                                      |
 | User-Defined Schema                        | Whether to use the schema you defined.                                                                                                                                                                                                       |
 | Column Delimeter                           | Character to separate column names from your CSV file.                                                                                                                                                                                       |
 | First Row Header                           | Whether to use the first line as names of columns.                                                                                                                                                                                           |
@@ -70,6 +72,8 @@ The CSV file type allows you to read or write delimited files such as CSV (Comma
 | RAISE_ERROR           | Throw a `TextParsingException`.                                                                                                                                                                                                                                                                      |
 
 ## Target
+
+The Target gem writes data to CSV files.
 
 ### Target Parameters
 

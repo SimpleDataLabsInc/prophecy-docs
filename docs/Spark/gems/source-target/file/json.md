@@ -8,9 +8,11 @@ tags:
   - json
 ---
 
-The JSON file format allows you to read and write JSON formatted files.
+You can read data from and write data to JSON files.
 
 ## Source
+
+The Source gem reads data from JSON files.
 
 ### Source Parameters
 
@@ -84,6 +86,8 @@ spark.read
 ````
 
 ## Target
+
+The Target gem writes data to JSON files.
 
 ### Target Parameters
 

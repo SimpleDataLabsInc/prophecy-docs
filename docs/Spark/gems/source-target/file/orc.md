@@ -8,21 +8,23 @@ tags:
   - orc
 ---
 
-ORC (Optimized Row Columnar) is a columnar file format designed for Spark/Hadoop workloads. It is optimized for large streaming reads, but with integrated support for finding required rows quickly. Because ORC files are type-aware, the writer chooses the most appropriate encoding for the type and builds an internal index as the file is written.
+The ORC (Optimized Row Columnar) data format:
 
-This gem allows you to read from or write to ORC files.
+- Is a columnar file format designed for Spark/Hadoop workloads.
+- Optimizes for large streaming reads, but with integrated support for finding required rows quickly.
+- Is type-aware. You can choose an encoding for the type and builds an internal index while you write to the file.
 
 ## Source
 
-Reads data from ORC files present at a path.
+The Source gem reads data from ORC files.
 
 ### Source Parameters
 
-| Parameter             | Description                                                                                                                                                                                                                        | Required | Default |
-| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
-| Location              | File path where ORC files are present                                                                                                                                                                                              | True     | None    |
-| Schema                | Schema to be applied on the loaded data. Can be defined/edited as JSON or inferred using `Infer Schema` button.                                                                                                                    | True     | None    |
-| Recursive File Lookup | This is used to recursively load files and it disables partition inferring. Its default value is `false`. If data source explicitly specifies the `partitionSpec` when `recursiveFileLookup` is true, an exception will be thrown. | False    | False   |
+| Parameter             | Description                                                                                                                                                                                | Required | Default |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- | ------- |
+| Location              | File path where ORC files are present                                                                                                                                                      | True     | None    |
+| Schema                | Schema to apply on the loaded data. You can define or edit the scema as JSON or inferred using the `Infer Schema` button.                                                                  | True     | None    |
+| Recursive File Lookup | Recursively load files and disable partition inferring. If the data source explicitly specifies the `partitionSpec` when the`recursiveFileLookup` is `true`, Prophecy throws an exception. | False    | False   |
 
 ### Example {#source-example}
 
@@ -69,16 +71,25 @@ object read_orc {
 
 ## Target
 
+The Target gem writes data to ORC files.
+
 ### Target Parameters
 
-Write data as ORC files at the specified path.
+| Parameter         | Description                                                                                                                   | Required | Default |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
+| Location          | File path to write the ORC file to.                                                                                           | True     | None    |
+| Compression       | Compression codec to use when you write. <br/>Prophecy supports the following codecs: `none`, `snappy`, `zlib`, and `lzo`.    | False    | snappy  |
+| Write Mode        | How to handle existing data. To see a list of possible values, see [the Supported Write Modes table](#supported-write-modes). | True     | error   |
+| Partition Columns | List of columns to partition the ORC files by.                                                                                | False    | None    |
 
-| Parameter         | Description                                                                                                                                                                                                                  | Required | Default |
-| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
-| Location          | File path where ORC files will be written                                                                                                                                                                                    | True     | None    |
-| Compression       | Compression codec to use when saving to file. This can be one of the known case-insensitive shorten names (`none`, `uncompressed`, `snappy`, `gzip`, `lzo`, `brotli`, `lz4`, and `zstd`). This will override `orc.compress`. | False    | snappy  |
-| Write Mode        | Write mode for DataFrame                                                                                                                                                                                                     | True     | error   |
-| Partition Columns | List of columns to partition the ORC files by                                                                                                                                                                                | False    | None    |
+### Supported Write Modes
+
+| Write Mode | Description                                                                                                                             |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| error      | If data already exists, throw an exception.                                                                                             |
+| overwrite  | If data already exists, overwrite the data with the contents of the `DataFrame`.                                                        |
+| append     | If data already exists, append the contents of the `DataFrame`.                                                                         |
+| ignore     | If data already exists, do nothing with the contents of the `DataFrame`. <br/>This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
 
 ### Example {#example-target}
 
@@ -120,5 +131,5 @@ object write_orc {
 ````
 
 :::info
-To know more about tweaking orc related properties in Spark config [**click here**](https://orc.apache.org/docs/spark-config.html).
+To learn more about tweaking ORC properties in a Spark configuration, see [Spark Configuration](https://orc.apache.org/docs/spark-config.html).
 :::

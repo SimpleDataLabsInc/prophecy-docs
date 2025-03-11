@@ -8,9 +8,11 @@ tags:
   - delta
 ---
 
-The Delta data format reads and writes Delta tables, including Delta Merge operations and Time travel.
+You can read and write Delta tables, including Delta Merge operations and Time travel, with Delta files.
 
 ## Source
+
+The Source gem reads data from Delta files.
 
 ### Source Parameters
 
@@ -139,6 +141,8 @@ object readDelta {
 ---
 
 ## Target
+
+The Target gem writes data to Delta files.
 
 ### Target Parameters
 

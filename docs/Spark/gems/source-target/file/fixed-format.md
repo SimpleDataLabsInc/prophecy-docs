@@ -14,7 +14,7 @@ To learn more about our Enterprise offering, please [contact us](https://www.pro
 
 :::
 
-The fixed format file type allows you to read and write with an expected schema.
+You can read and write to fixed format files with an expected schema.
 
 ## Source
 
@@ -97,7 +97,7 @@ def read_ebcdic(spark: SparkSession) -> DataFrame:
 
 ## Target
 
-The Target gem writes data to a fixed format file type according to the schema string you specify.
+The Target gem writes data to fixed format files.
 
 ### Target Parameters
 

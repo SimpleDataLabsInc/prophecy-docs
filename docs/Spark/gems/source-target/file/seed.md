@@ -8,9 +8,13 @@ tags:
   - seed
 ---
 
-The Seed file format allows you to manually write small CSV files into your Prophecy pipelines. You can only use this file format in a Source gem.
+You to manually write small CSV files into your Prophecy pipelines with the Seed files.
 
-## Source Parameters
+## Source
+
+The Source gem reads data from Seed files.
+
+### Source Parameters
 
 | Parameter                            | Tab        | Description                                                                                                          |
 | ------------------------------------ | ---------- | -------------------------------------------------------------------------------------------------------------------- |
@@ -20,3 +24,7 @@ The Seed file format allows you to manually write small CSV files into your Prop
 | First row is header                  | Properties | Whether the first row is the table header.                                                                           |
 | Enforce specified or inferred schema | Properties | Whether the output schema must match what you define in this tab.                                                    |
 | Auto-infer schema from the data      | Properties | Whether you want to automatically enter the schema.                                                                  |
+
+## Target
+
+Prophecy does not support writing to Seed files.

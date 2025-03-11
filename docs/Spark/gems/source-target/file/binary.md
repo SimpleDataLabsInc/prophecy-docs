@@ -7,9 +7,11 @@ tags:
   - file
 ---
 
-You can read and write data in Binary file types.
+You can read data from and write data to Binary files.
 
 ## Source
+
+The Source gem reads data from Binary files.
 
 ### Source Parameters
 
@@ -22,6 +24,8 @@ You can read and write data in Binary file types.
 | Recursive File Lookup   | Recursively load files and disable partition inferring. If the data source explicitly specifies the `partitionSpec` when the`recursiveFileLookup` is `true`, Prophecy throws an exception. |
 
 ## Target
+
+The Target gem writes data to Binary files.
 
 ### Target Parameters
 

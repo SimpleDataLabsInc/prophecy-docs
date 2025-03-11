@@ -8,13 +8,15 @@ tags:
   - avro
 ---
 
-The Avro data format:
+The Avro file type:
 
 - Is a row-based storage format for Hadoop, which is widely used as a serialization platform.
 - Stores the schema in JSON format, which makes the data easier to read and interpret by any program.
 - Stores the data in a binary format, which makes the data compact and efficient.
 
 ## Source
+
+The Source gem reads data from Avro files.
 
 ### Source Parameters
 
@@ -99,9 +101,9 @@ object read_avro {
 
 ## Target
 
-### Target Parameters
+The Target gem writes data to Avro files.
 
-You can write data as Avro files at the specified path.
+### Target Parameters
 
 | Parameter         | Description                                                                                                                                                                                                                                                                              | Required | Default        |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------------- |
