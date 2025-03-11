@@ -159,7 +159,7 @@ Note: We do not recommended this for extremely large data sets because it may ov
 
 :::
 
-Due to Spark's distributed nature, Prophecy writes output files as multiple separate partition files. If you need a single output file, such as reporting or exporting to an external system, use a `Repartition` gem in `Coalesce` mode with 1 output partition:
+Due to Spark's distributed nature, Prophecy writes output files as multiple separate partition files. If you want a single output file, such as reporting or exporting to an external system, use a `Repartition` gem in `Coalesce` mode with 1 output partition:
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
