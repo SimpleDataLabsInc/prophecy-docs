@@ -8,7 +8,7 @@ tags:
   - Spark
 ---
 
-You can upload files of the following types to your file store:
+You can upload the following file types to your file store:
 
 - CSV, and other character separated types like TSV.
 - JSON, with a single row per line, objects spanning many lines, or arrays with objects.
@@ -16,43 +16,47 @@ You can upload files of the following types to your file store:
 - XLSX, and the older XLS format.
 - XML, using a row tag selector.
 
-## Steps to upload
+## Upload A File
 
-To upload a file and incorporate it into your Spark pipeline, you can use a Source gem. There are a few ways to get started:
+To upload a file and incorporate it into your Spark pipeline, use a Source gem.
 
-- Drag and drop the file directly to the pipeline canvas.
+1. Choose one of the following methods to upload your file:
 
-  ![Drag and drop file](./img/drag-drop-file.png)
+   - Drag and drop the file directly to the pipeline canvas.
 
-- Open the Source/Target gem drawer and click **Upload file**.
+     ![Drag and drop file](./img/drag-drop-file.png)
 
-  ![Source/Target gem drawer](./img/upload-file-gem-drawer.png)
+   - Open the Source or Target gem drawer and click **Upload file**.
 
-- Create a new Source gem, click **+ New Dataset**, and select **Upload file**.
+     ![Source/Target gem drawer](./img/upload-file-gem-drawer.png)
 
-  ![Source gem](./img/upload-file-source-gem.png)
+   - Create a new Source gem, click **+ New Dataset**, and select **Upload file**.
 
-After following any of the above steps, you will see the **Type & Format** settings for your file.
+     ![Source gem](./img/upload-file-source-gem.png)
 
-![Type & Format](./img/upload-type-and-format.png)
+1. You should see the **Type & Format** page for your file.
 
-## File configuration
+   ![Type & Format](./img/upload-type-and-format.png)
 
-Follow these steps to complete the file configuration:
+## File Configuration
 
-1. Make sure the file type is correct, and click **Next**.
-1. Either upload the file to a known file store location, or create a new table in your file store using the **Upload and create a table** option. Then, click **Next**.
+To configure your file:
+
+1. Confirm or update the file type, and click **Next**.
+1. Upload the file to a known file store location, or create a new table in your file store using the **Upload and create a table** option. Then, click **Next**.
 
    ![Upload and create a table](./img/upload-create-table.png)
 
    :::note
-   Once you define the target location and click Next, the file is uploaded to the file path, regardless of whether you complete the gem configuration.
+   After you define the target location and click **Next**, Prophecy uploads the file to the file path, regardless if you complete the gem configuration.
    :::
 
-1. Fill in any properties depending on your requirements.
-1. Click **Infer Schema**. _This step is required._
-1. Validate or update the schema and click **Next**.
-1. **Load** the data if you want to preview the table.
-1. Click **Create Dataset**. This action creates the dataset and also creates the table if using the **Upload and create a table** option.
+1. Add each property you want to configure.
+1. Click **Infer Schema**.
+1. Confirm or update the schema and click **Next**.
+1. If you want to preview the table, click **Load**.
+1. Click **Create Dataset**.
 
-Now, your data is ready for use in your pipeline via the Source gem!
+   This action creates the dataset and also creates the table if using the **Upload and create a table** option.
+
+   Now, you can use your Source gem that contains all your data in your pipeline.

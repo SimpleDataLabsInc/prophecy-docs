@@ -9,7 +9,7 @@ Prophecy supports a number of gems to help you work with various file-based form
 
 ## File
 
-The following gems allow you work with various file-based formats.
+The following file types allow you work with various file-based formats.
 
 | Name                                | Description                                                                                            |
 | ----------------------------------- | ------------------------------------------------------------------------------------------------------ |
@@ -29,7 +29,7 @@ The following gems allow you work with various file-based formats.
 
 ## Warehouse
 
-The following gems allow you connect to warehouse-style data sources.
+The following warehouses allow you connect to warehouse-style data sources.
 
 | Name                                 | Description                                                                                                       |
 | ------------------------------------ | ----------------------------------------------------------------------------------------------------------------- |
@@ -46,7 +46,7 @@ The following gems allow you connect to warehouse-style data sources.
 
 ## Catalog
 
-The following gems assist in how you work with various table-based formats.
+The following catalogs assist in how you work with various table-based formats.
 
 | Name                               | Description                                                                                                 |
 | ---------------------------------- | ----------------------------------------------------------------------------------------------------------- |
