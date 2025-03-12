@@ -9,12 +9,21 @@ tags:
 ---
 
 :::caution Enterprise Only
-
 To learn more about our Enterprise offering, please [contact us](https://www.prophecy.io/request-a-demo).
-
 :::
 
-You can read and write to fixed format files with an expected schema.
+A Fixed Format (Fixed-Length Format) file type:
+
+- Is a text file where each field or column occupies a predetermined, constant number of characters in each record.
+- Can parse and process quickly because the software knows exactly where to find each field.
+- Is often used in legacy systems, data exchange, and performance-critical applications
+
+## Parameters
+
+| Parameter | Tab        | Description                                                                                                                                                                                                   |
+| --------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Location  | Location   | File path to read from or write to the fixed format file.                                                                                                                                                     |
+| Schema    | Properties | Schema to apply on the loaded data. <br/>In the Source gem, you can define or edit the schema as a JSON or infer it with the `Infer Schema` button.<br/>In the Target gem, you can view the schema as a JSON. |
 
 ## Source
 
@@ -22,78 +31,20 @@ The Source gem reads data from fixed format files.
 
 ### Source Parameters
 
-| Parameter           | Description                                                                       | Required |
-| :------------------ | :-------------------------------------------------------------------------------- | :------- |
-| Location            | File path of the fixed format files.                                              | True     |
-| Skip Header Lines   | Number of lines to skip in the header.                                            | False    |
-| Skip Footer Lines   | Number of lines to skip in the footer.                                            | False    |
-| Fixed Format Schema | Schema string for the fixed format file, supports either EBCDIC or ASCII formats. | True     |
+| Parameter           | Description                                                                           | Default |
+| :------------------ | :------------------------------------------------------------------------------------ | :------ |
+| Description         | Description of your dataset.                                                          | None    |
+| Skip header lines   | Number of lines to skip at the beginning of the file.                                 | None    |
+| Skip footer lines   | Number of lines to skip at the end of the file.                                       | None    |
+| Fixed Format Schema | Schema string for the fixed format file. <br>Supports either EBCDIC or ASCII formats. | None    |
 
 ### Example {#source-example}
 
-![Delta source example](./img/fixed-format/ff-source-small.gif)
+![Fixed format source example](./img/fixed-format/ff-source-small.gif)
 
-### Generated Code {#source-code}
-
-````mdx-code-block
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs>
-
-<TabItem value="scala" label="Scala">
-
-```scala
-
-object ReadEbcdic {
-
-  def apply(spark: SparkSession): DataFrame = {
-    import _root_.io.prophecy.abinitio.dml.DMLSchema.parse
-    import _root_.io.prophecy.libs.{FFSchemaRecord, _}
-    import play.api.libs.json.Json
-    import _root_.io.prophecy.libs.FixedFormatSchemaImplicits._
-    spark.read
-      .option(
-        "schema",
-        Some("""ebcdic record
-                string(6) service ;
-                string(2) person ;
-                decimal(2, 0) data ;
-                string(1) format ;
-                string(1) working ;
-                end""").map(s => parse(s).asInstanceOf[FFSchemaRecord])
-                          .map(s => Json.stringify(Json.toJson(s)))
-                          .getOrElse("")
-      )
-      .format("io.prophecy.libs.FixedFileFormat")
-      .load("/FileStore/tables/fixed_format/test/write_ebcdic")
-      .cache()
-  }
-
-}
-```
-
-</TabItem>
-<TabItem value="py" label="Python">
-
-```py
-def read_ebcdic(spark: SparkSession) -> DataFrame:
-    from prophecy.utils.transpiler import parse
-
-    return spark.read\
-        .option("schema", parse("ebcdic record\nstring(18) c_name;\ndecimal(10, 0) c_custkey ;\nend"))\
-        .format("io.prophecy.libs.FixedFileFormat")\
-        .load("/FileStore/tables/fixed_format/test/read_ebcdic")
-
-```
-
-</TabItem>
-
-</Tabs>
-
-````
-
----
+:::tip
+To see the generated source code, toggle to the **< > Code** view at the top of the page.
+:::
 
 ## Target
 
@@ -101,11 +52,11 @@ The Target gem writes data to fixed format files.
 
 ### Target Parameters
 
-| Parameter           | Description                                                                                                         | Required |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------- | -------- |
-| Location            | File path of where to write the fixed format files.                                                                 | True     |
-| Write Mode          | How to handle existing data. To see a list of possible values, see [Supported Write Modes](#supported-write-modes). | False    |
-| Fixed Format Schema | Schema string for the fixed format file, supports either `EBCDIC` or `ASCII` formats                                | True     |
+| Parameter           | Description                                                                                                          | Default |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------- | ------- |
+| Write Mode          | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes). | `error` |
+| Description         | Description of your dataset.                                                                                         | None    |
+| Fixed Format Schema | Schema string for the fixed format file. <br>Supports either EBCDIC or ASCII formats.                                | None    |
 
 ### Supported Write Modes
 
@@ -118,57 +69,8 @@ The Target gem writes data to fixed format files.
 
 ### Example {#target-example}
 
-![Delta Target Example](./img/fixed-format/ff-target-small.gif)
+![Fixed format target Example](./img/fixed-format/ff-target-small.gif)
 
-### Generated Code {#target-code}
-
-````mdx-code-block
-
-<Tabs>
-
-<TabItem value="scala" label="Scala">
-
-```scala
-object write_ebcdic {
-
-  def apply(spark: SparkSession, in: DataFrame): Unit = {
-    import _root_.io.prophecy.abinitio.dml.DMLSchema.parse
-    import _root_.io.prophecy.libs.{FFSchemaRecord, _}
-    import play.api.libs.json.Json
-    import _root_.io.prophecy.libs.FixedFormatSchemaImplicits._
-    val schema = Some("""ebcdic record
-                            string(6) service ;
-                            string(2) person ;
-                            decimal(2, 0) data ;
-                            string(1) format ;
-                            string(1) working ;
-                            end""").map(s => parse(s).asInstanceOf[FFSchemaRecord])
-    var writer = in.write.format("io.prophecy.libs.FixedFileFormat")
-    writer = writer.mode("overwrite")
-    schema
-      .map(s => Json.stringify(Json.toJson(s)))
-      .foreach(schema => writer = writer.option("schema", schema))
-    writer.save("/FileStore/tables/fixed_format/test/write_ebcdic_alt")
-  }
-
-}
-```
-
-</TabItem>
-
-<TabItem value="py" label="Python">
-
-```py
-def write_ebcdic(spark: SparkSession, in0: DataFrame):
-    from prophecy.utils.transpiler import parse
-    in0.write\
-        .mode("overwrite")\
-        .option("schema", parse("ebcdic record\nstring(18) c_name ;\ndecimal(10, 0) c_custkey ;\nend"))\
-        .format("io.prophecy.libs.FixedFileFormat")\
-        .save("/FileStore/tables/fixed_format/test/write_ebcdic_alt")
-```
-
-</TabItem>
-</Tabs>
-
-````
+:::tip
+To see the generated source code, toggle to the **< > Code** view at the top of the page.
+:::
