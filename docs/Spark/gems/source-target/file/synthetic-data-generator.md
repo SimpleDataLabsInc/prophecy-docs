@@ -83,7 +83,16 @@ _Solution:_ Upgrade all your Prophecy projects to the same `ProphecySparkBasicsP
 
 Prophecy offers a selection of providers including integers, booleans, and elements from a list. You can also provide the same information as a JSON schema.
 
-### Providers
+| Property name              | Description                                                                                      | Default       |
+| -------------------------- | ------------------------------------------------------------------------------------------------ | ------------- |
+| Provider                   | Type of random data to generate. For a list of the possible values, see [Providers](#providers). | `Random Name` |
+| Column Name                | Name for the output column.                                                                      | None          |
+| Data Type                  | Data type of the output column.                                                                  | `String`      |
+| Null Percentage (Optional) | Percent of values to populate as null in the generated column based on the row count.            | None          |
+
+![img](../../img/synth_3_properties.png)
+
+## Providers
 
 | Data Provider             | Description                                                                                                                                                                                                                                                                  |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -98,16 +107,6 @@ Prophecy offers a selection of providers including integers, booleans, and eleme
 | Random Date               | Generates random dates within the range you specify.                                                                                                                                                                                                                         |
 | Random DateTime           | Generates random datetime values within the range you specify.                                                                                                                                                                                                               |
 | Random Foreign Key Values | Randomly picks values from the foreign key column you specify. <br/>Select another table to act as the reference table and provide the location (e.g. `catalog` or `database`). <br/>Select any column from the reference table to designate as the `Reference Column Name`. |
-
-## Common properties
-
-| Name                       | Description                                                                           |
-| -------------------------- | ------------------------------------------------------------------------------------- |
-| Column Name                | Custom name for the output column.                                                    |
-| Data Type                  | Data type of the output column.                                                       |
-| Null Percentage (Optional) | Percent of values to populate as null in the generated column based on the row count. |
-
-![img](../../img/synth_3_properties.png)
 
 ### Infer the schema
 

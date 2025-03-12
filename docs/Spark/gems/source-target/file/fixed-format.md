@@ -31,12 +31,12 @@ The Source gem reads data from fixed format files.
 
 ### Source Parameters
 
-| Parameter           | Description                                                                           | Default |
-| :------------------ | :------------------------------------------------------------------------------------ | :------ |
-| Description         | Description of your dataset.                                                          | None    |
-| Skip header lines   | Number of lines to skip at the beginning of the file.                                 | None    |
-| Skip footer lines   | Number of lines to skip at the end of the file.                                       | None    |
-| Fixed Format Schema | Schema string for the fixed format file. <br>Supports either EBCDIC or ASCII formats. | None    |
+| Parameter           | Description                                                                            | Default |
+| :------------------ | :------------------------------------------------------------------------------------- | :------ |
+| Description         | Description of your dataset.                                                           | None    |
+| Skip header lines   | Number of lines to skip at the beginning of the file.                                  | None    |
+| Skip footer lines   | Number of lines to skip at the end of the file.                                        | None    |
+| Fixed Format Schema | Schema string for the fixed format file. <br/>Supports either EBCDIC or ASCII formats. | None    |
 
 ### Example {#source-example}
 
@@ -56,7 +56,7 @@ The Target gem writes data to fixed format files.
 | ------------------- | -------------------------------------------------------------------------------------------------------------------- | ------- |
 | Write Mode          | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes). | `error` |
 | Description         | Description of your dataset.                                                                                         | None    |
-| Fixed Format Schema | Schema string for the fixed format file. <br>Supports either EBCDIC or ASCII formats.                                | None    |
+| Fixed Format Schema | Schema string for the fixed format file. <br/>Supports either EBCDIC or ASCII formats.                               | None    |
 
 ### Supported Write Modes
 
