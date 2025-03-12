@@ -10,9 +10,10 @@ tags:
 
 The Avro file type:
 
-- Is a row-based storage format for Hadoop, which is widely used as a serialization platform.
+- Is a row-based, open-source data serialization system.
 - Stores the schema in JSON format, which makes the data easier to read and interpret by any program.
 - Stores the data in a binary format, which makes the data compact and efficient.
+- Usually appears in big data environments, data streaming applications, and scenarios where data serialization and storage are important.
 
 ## Parameters
 
@@ -36,7 +37,7 @@ The Source gem reads data from Avro files and allows you to optionally specify a
 | Path Global Filter                                 | Glob pattern to only include files with paths matching the pattern. The syntax follows [GlobFilter](https://hadoop.apache.org/docs/stable/api/org/apache/hadoop/fs/GlobFilter.html) and does not change the behavior of partition discovery. | None    |
 | Modified Before                                    | Timestamp to only include files with modification times occurring before the specified time. The provided timestamp must be in the following format: `YYYY-MM-DDTHH:mm:ss` (e.g. 2020-06-01T13:00:00)                                        | None    |
 | Modified After                                     | Timestamp to only include files with modification times occurring after the specified time. The provided timestamp must be in the following format: `YYYY-MM-DDTHH:mm:ss` (e.g. 2020-06-01T13:00:00)                                         | None    |
-| Avro Schema                                        | Additional schema a user provides in JSON format. To learn more, see [Schema evolution](#schema-evolution).                                                                                                                                  | None    |
+| Avro Schema                                        | Additional schema a user provides in JSON format. To learn more, see [Schema evolution](#schema-evolution).                                                                                                                                  | false   |
 
 #### Schema evolution
 
@@ -73,7 +74,7 @@ The Target gem writes data to Avro files and allows you to optionally specify ad
 | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
 | Description       | Description of your dataset.                                                                                                                                                                                                                                                              | None             |
 | Avro Schema       | Additional schema a user provides in JSON format. You can set this parameter if the expected output Avro schema doesn't match the schema Spark converts. <br/>For example, the expected schema of one column is of `enum` type, instead of `string` type in the default converted schema. | None             |
-| Write Mode        | How to handle existing data. To see a list of possible values, see [the Supported write modes table](#supported-write-modes).                                                                                                                                                             | `error`          |
+| Write Mode        | How to handle existing data. For a list of the possible values, see [the Supported write modes table](#supported-write-modes).                                                                                                                                                            | `error`          |
 | Compression       | Compression codec when writing to the Avro file. <br/>The Avro file supports the following codecs: `uncompressed`, `snappy`, `deflate`, `bzip2`, and `xz`. <br/>This defaults to the value of the `spark.sql.avro.compression.codec` parameter.                                           | `snappy`         |
 | Partition Columns | List of columns to partition the Avro files by.                                                                                                                                                                                                                                           | None             |
 | Record Name       | Top level record name in the result, which is required in the Avro spec.                                                                                                                                                                                                                  | `topLevelRecord` |
