@@ -8,14 +8,17 @@ tags:
   - csv
 ---
 
-You can read from or write to delimited files such as CSV (Comma-separated Values) or TSV (Tab-separated Values) files.
+The CSV (Comma-separated Values) file type is:
+
+- Easy to read from, write to, and share.
+- Compatible with many programs, and easy to exchange data.
 
 ## Parameters
 
 | Parameter | Tab        | Description                                                                                                                                                                                                   |
 | --------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Read From | Location   | What plaform to read the file from. <br/>Possible values are: `File Location`, `Sharepoint` (Python only), or `SFTP` (Python only).                                                                           |
-| Write To  | Location   | What plaform to write the file to. <br/>You can only select `File Location`.                                                                                                                                  |
+| Read From | Location   | Which platform to read the file from. <br/>Possible values are: `File Location`, `Sharepoint` (Python only), or `SFTP` (Python only).                                                                         |
+| Write To  | Location   | Which platform to write the file to. <br/>You can only select `File Location`.                                                                                                                                |
 | Location  | Location   | File path to read from or write to the CSV file.                                                                                                                                                              |
 | Schema    | Properties | Schema to apply on the loaded data. <br/>In the Source gem, you can define or edit the schema as a JSON or infer it with the `Infer Schema` button.<br/>In the Target gem, you can view the schema as a JSON. |
 
@@ -92,7 +95,7 @@ The Target gem writes data to CSV files and allows you to optionally specify add
 | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
 | Dataset Name                             | Name of the dataset.                                                                                                                                                                                     | True                               |
 | Description                              | Description of your dataset.                                                                                                                                                                             | None                               |
-| Write Mode                               | How to handle existing data. For a list of the possible values, see [the Supported write modes table](#supported-write-modes).                                                                           | `error`                            |
+| Write Mode                               | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                                                                                     | `error`                            |
 | Column delimeter                         | Character to separate column names from your CSV file.                                                                                                                                                   | `,`                                |
 | First row is header                      | Whether to use the first line as names of columns.                                                                                                                                                       | true                               |
 | Partition Columns                        | List of columns to partition the CSV files by.                                                                                                                                                           | None                               |
