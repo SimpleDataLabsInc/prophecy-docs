@@ -43,7 +43,7 @@ The Target gem writes data to Binary files and allows you to optionally specify 
 | Property name     | Description                                                                                                                                                     | Default |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
 | Description       | Description of your dataset.                                                                                                                                    | None    |
-| Write Mode        | How to handle existing data. For a list of the possible values, see [the Supported write modes table](#supported-write-modes).                                  | None    |
+| Write Mode        | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                                            | None    |
 | Partition Columns | List of columns to partition the Binary file by.                                                                                                                | None    |
 | Compression Codec | Compression codec when writing to the Binary file. <br/>The Binary file supports the following codecs: `none`, `bzip2`, `gzip`, `lz4`, `snappy`, and `deflate`. | None    |
 | Line Separator    | Defines the line separator that Prophecy should use for parsing.                                                                                                | None    |
