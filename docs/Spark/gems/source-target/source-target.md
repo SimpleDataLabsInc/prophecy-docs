@@ -23,9 +23,9 @@ The following file types allow you work with various file-based formats.
 | [Parquet](./file/parquet)           | Parquet is an open source file format built to handle flat columnar storage data formats.              |
 | [Text](./file/text)                 | This gem allows you to read from or write to text file.                                                |
 | [XLSX (Excel)](./file/xlsx)         | Allows you to read or write Excel-compatible files.                                                    |
-| [XML](./file/xml)                   | Allows you to read or write Excel-compatible files.                                                    |
-| [Binary](./file/binary)             | Allows you to read or write Excel-compatible files.                                                    |
-| [Hudi](./file/hudi)                 | Allows you to read or write Excel-compatible files.                                                    |
+| [XML](./file/xml)                   | Allows you to read or write XML files.                                                                 |
+| [Binary](./file/binary)             | Allows you to read or write Binary files.                                                              |
+| [Hudi](./file/hudi)                 | Allows you to write Hudi files.                                                                        |
 
 ## Warehouse
 
@@ -58,6 +58,6 @@ The following catalogs assist in how you work with various table-based formats.
 
 [Lookup](/docs/Spark/gems/source-target/lookup.md) is a special component that allows you to broadcast any data, to later be used anywhere in your pipeline.
 
-## Synthetic Data Generator
+## Synthetic data generator
 
 If you don't have the data you need, try generating fake data. Using the [Synthetic Data Generator gem](/docs/Spark/gems/source-target/file/synthetic-data-generator.md), you can specify columns with various data types and populate fields with randomly generated data. Specify the boundaries for each row, the percentage of rows which should have null values, etc. It's not real data but it's the next best thing!

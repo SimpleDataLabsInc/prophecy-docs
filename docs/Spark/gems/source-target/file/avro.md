@@ -14,30 +14,39 @@ The Avro file type:
 - Stores the schema in JSON format, which makes the data easier to read and interpret by any program.
 - Stores the data in a binary format, which makes the data compact and efficient.
 
+## Parameters
+
+| Parameter | Tab        | Description                                                                                                                                                                                                   |
+| --------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Location  | Location   | File path to read from or write to the Avro file.                                                                                                                                                             |
+| Schema    | Properties | Schema to apply on the loaded data. <br/>In the Source gem, you can define or edit the schema as a JSON or infer it with the `Infer Schema` button.<br/>In the Target gem, you can view the schema as a JSON. |
+
 ## Source
 
-The Source gem reads data from Avro files.
+The Source gem reads data from Avro files and allows you to optionally specify additional properties.
 
-### Source Parameters
+### Source properties
 
-| Parameter             | Description                                                                                                                                                                                                                                  | Required | Default |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
-| Location              | File path to read the Avro file.                                                                                                                                                                                                             | True     | None    |
-| Schema                | Whether to apply the schema on the loaded data. You can define or edit the scema as JSON or inferred using the `Infer Schema` button.                                                                                                        | True     | None    |
-| Recursive File Lookup | Recursively load files and disable partition inferring. If the data source explicitly specifies the `partitionSpec` when the`recursiveFileLookup` is `true`, Prophecy throws an exception.                                                   | False    | False   |
-| Path Global Filter    | Glob pattern to only include files with paths matching the pattern. The syntax follows [GlobFilter](https://hadoop.apache.org/docs/stable/api/org/apache/hadoop/fs/GlobFilter.html) and does not change the behavior of partition discovery. | False    | None    |
-| Modified Before       | Timestamp to only include files with modification times occurring before the specified time. The provided timestamp must be in the following form: YYYY-MM-DDTHH:mm:ss (e.g. 2020-06-01T13:00:00)                                            | False    | None    |
-| Modified After        | Timestamp to only include files with modification times occurring after the specified time. The provided timestamp must be in the following form: YYYY-MM-DDTHH:mm:ss (e.g. 2020-06-01T13:00:00)                                             | False    | None    |
-| Avro Schema           | Schema in JSON format. To learn more, see [Schema Evolution](#schema-evolution).                                                                                                                                                             | False    | None    |
-| ignoreExtension       | **_DEPRECATED_**. Enable to load files without the `.avro` extension. To learn more, see [Ignoring the File Extension](#ignoring-the-file-extension).                                                                                        | False    | True    |
+| Property name                                      | Description                                                                                                                                                                                                                                  | Default |
+| -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| Description                                        | Description of your dataset.                                                                                                                                                                                                                 | None    |
+| Use user-defined schema                            | Whether to use the schema you define.                                                                                                                                                                                                        | false   |
+| Ignore files without .avro extension while reading | **_DEPRECATED_**. Whether to load files without the `.avro` extension. <br/>To learn more, see [Ignore the file extension](#ignoring-the-file-extension).                                                                                    | true    |
+| Recursive File Lookup                              | Whether to recursively load files and disable partition inferring. If the data source explicitly specifies the `partitionSpec` when the`recursiveFileLookup` is `true`, Prophecy throws an exception.                                        | false   |
+| Path Global Filter                                 | Glob pattern to only include files with paths matching the pattern. The syntax follows [GlobFilter](https://hadoop.apache.org/docs/stable/api/org/apache/hadoop/fs/GlobFilter.html) and does not change the behavior of partition discovery. | None    |
+| Modified Before                                    | Timestamp to only include files with modification times occurring before the specified time. The provided timestamp must be in the following format: `YYYY-MM-DDTHH:mm:ss` (e.g. 2020-06-01T13:00:00)                                        | None    |
+| Modified After                                     | Timestamp to only include files with modification times occurring after the specified time. The provided timestamp must be in the following format: `YYYY-MM-DDTHH:mm:ss` (e.g. 2020-06-01T13:00:00)                                         | None    |
+| Avro Schema                                        | Additional schema a user provides in JSON format. To learn more, see [Schema evolution](#schema-evolution).                                                                                                                                  | None    |
 
-#### Schema Evolution
+#### Schema evolution
 
-When reading an Avro file, you can set the `Avro Schema` parameter to a newer, evolved schema, which is compatible but different from the schema written to storage. The resulting `DataFrame` follows the newer, evolved schema. For example, if we set an evolved schema containing one additional column with a default value, the resulting `DataFrame` contains the new column too.
+When reading an Avro file, you can set the `Avro Schema` parameter to a newer, evolved schema, which is compatible but different from the schema written to storage. The resulting `DataFrame` follows the newer, evolved schema.
 
-#### Ignoring the File Extension
+For example, if we you an evolved schema containing one additional column with a default value, the resulting `DataFrame` contains the new column too.
 
-If you enable the `ignoreExtension` parameter, Prophecy loads all files (with and without .avro extension). This parameter is deprecated, and will be removed in the future releases. Please use [pathGlobFilter](https://spark.apache.org/docs/latest/sql-data-sources-generic-options.html#path-global-filter) for filtering file names.
+#### Ignore the file extension
+
+If you enable the `ignoreExtension` parameter, Prophecy loads all files (with and without .avro extension). This parameter is deprecated, and will be removed in a future release. Please use the `Path Glob Filter` property for filtering file names.
 
 ### Example {#source}
 
@@ -50,72 +59,27 @@ If you enable the `ignoreExtension` parameter, Prophecy loads all files (with an
 
 ![Avro schema used](./img/avro/avro_schema_eg1.png)
 
-### Generated Code {#source-code}
-
-````mdx-code-block
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs>
-
-<TabItem value="py" label="Python">
-
-```py
-def read_avro(spark: SparkSession) -> DataFrame:
-    return spark.read\
-        .format("avro")\
-        .option("ignoreExtension", True)\
-        .option(
-          "avroSchema",
-          "{\"type\":\"record\",\"name\":\"Person\",\"fields\":[{\"name\":\"firstname\",\"type\":\"string\"},{\"name\":\"middlename\",\"type\":\"string\"},{\"name\":\"lastname\",\"type\":\"string\"},{\"name\":\"dob_year\",\"type\":\"int\"},{\"name\":\"dob_month\",\"type\":\"int\"},{\"name\":\"gender\",\"type\":\"string\"},{\"name\":\"salary\",\"type\":\"int\"}]}"
-        )\
-        .load("dbfs:/FileStore/Users/abhinav/avro/test.avro")
-
-```
-
-</TabItem>
-<TabItem value="scala" label="Scala">
-
-```scala
-object read_avro {
-
-  def apply(spark: SparkSession): DataFrame =
-    spark.read
-        .format("avro")
-        .option("ignoreExtension", true)
-        .option(
-          "avroSchema",
-          "{\"type\":\"record\",\"name\":\"Person\",\"fields\":[{\"name\":\"firstname\",\"type\":\"string\"},{\"name\":\"middlename\",\"type\":\"string\"},{\"name\":\"lastname\",\"type\":\"string\"},{\"name\":\"dob_year\",\"type\":\"int\"},{\"name\":\"dob_month\",\"type\":\"int\"},{\"name\":\"gender\",\"type\":\"string\"},{\"name\":\"salary\",\"type\":\"int\"}]}"
-        )
-        .load("dbfs:/FileStore/Users/abhinav/avro/test.avro")
-
-}
-```
-
-</TabItem>
-</Tabs>
-
-````
-
----
+:::tip
+To see the generated source code, toggle to the **< > Code** view at the top of the page.
+:::
 
 ## Target
 
-The Target gem writes data to Avro files.
+The Target gem writes data to Avro files and allows you to optionally specify additional properties.
 
-### Target Parameters
+### Target properties
 
-| Parameter         | Description                                                                                                                                                                                                                                                                              | Required | Default        |
-| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------------- |
-| Location          | File path to write the Avro file to.                                                                                                                                                                                                                                                     | True     | None           |
-| Avro Schema       | Optional schema a user provides in JSON format. You can set this parameter if the expected output Avro schema doesn't match the schema Spark converts. <br/> For example, the expected schema of one column is of `enum` type, instead of `string` type in the default converted schema. | False    | None           |
-| Record Name       | Top level record name in write result, which is required in the Avro spec.                                                                                                                                                                                                               | False    | topLevelRecord |
-| Record Namespace  | Record namespace in write result.                                                                                                                                                                                                                                                        | False    | ""             |
-| Compression       | Compression codec used when writing. <br/>Prophecy supports the following codecs: `uncompressed`, `snappy`, `deflate`, `bzip2`, `xz` and `zstandard`. This defaults to the value of the `spark.sql.avro.compression.codec` parameter.                                                    | False    | `snappy`       |
-| Write Mode        | How to handle existing data. To see a list of possible values, see [the Supported Write Modes table](#supported-write-modes).                                                                                                                                                            | True     | `error`        |
-| Partition Columns | List of columns to partition the Avro files by.                                                                                                                                                                                                                                          | False    | None           |
+| Property name     | Description                                                                                                                                                                                                                                                                               | Default          |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
+| Description       | Description of your dataset.                                                                                                                                                                                                                                                              | None             |
+| Avro Schema       | Additional schema a user provides in JSON format. You can set this parameter if the expected output Avro schema doesn't match the schema Spark converts. <br/>For example, the expected schema of one column is of `enum` type, instead of `string` type in the default converted schema. | None             |
+| Write Mode        | How to handle existing data. To see a list of possible values, see [the Supported write modes table](#supported-write-modes).                                                                                                                                                             | `error`          |
+| Compression       | Compression codec when writing to the Avro file. <br/>The Avro file supports the following codecs: `uncompressed`, `snappy`, `deflate`, `bzip2`, and `xz`. <br/>This defaults to the value of the `spark.sql.avro.compression.codec` parameter.                                           | `snappy`         |
+| Partition Columns | List of columns to partition the Avro files by.                                                                                                                                                                                                                                           | None             |
+| Record Name       | Top level record name in the result, which is required in the Avro spec.                                                                                                                                                                                                                  | `topLevelRecord` |
+| Record Namespace  | Record namespace in the result.                                                                                                                                                                                                                                                           | ""               |
 
-### Supported Write Modes
+### Supported write modes
 
 | Write Mode | Description                                                                                                                             |
 | ---------- | --------------------------------------------------------------------------------------------------------------------------------------- |
@@ -131,44 +95,8 @@ The Target gem writes data to Avro files.
 <iframe src="https://user-images.githubusercontent.com/103921419/174399603-07080a2f-a52b-4feb-a029-733f947fad6c.mp4" title="Avro Target" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-### Generated Code {#target-code}
+<br/>
 
-````mdx-code-block
-
-<Tabs>
-
-<TabItem value="py" label="Python">
-
-```py
-def write_avro(spark: SparkSession, in0: DataFrame):
-    in0.write\
-        .format("avro")\
-        .mode("overwrite")\
-        .partitionBy("dob_year","dob_month")\
-        .save("dbfs:/data/test_output.avro")
-```
-
-</TabItem>
-<TabItem value="scala" label="Scala">
-
-```scala
-object write_avro {
-  def apply(spark: SparkSession, in: DataFrame): Unit =
-    in.write
-        .format("avro")
-        .mode("overwrite")
-        .partitionBy("dob_year","dob_month")
-        .save("dbfs:/data/test_output.avro")
-}
-```
-
-</TabItem>
-</Tabs>
-
-
-````
-
-:::info
-To learn more about tweaking Avro related properties in your Spark configuration, see [the Apache Avro Data Source Guide
-](https://spark.apache.org/docs/latest/sql-data-sources-avro.html).
+:::tip
+To see the generated source code, toggle to the **< > Code** view at the top of the page.
 :::

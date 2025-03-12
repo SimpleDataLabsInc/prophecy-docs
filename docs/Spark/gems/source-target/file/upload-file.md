@@ -16,34 +16,34 @@ You can upload the following file types to your file store:
 - XLSX, and the older XLS format.
 - XML, using a row tag selector.
 
-## Upload A File
+## Upload a file
 
 To upload a file and incorporate it into your Spark pipeline, use a Source gem.
 
-1. Choose one of the following methods to upload your file:
+Choose one of the following methods to upload your file:
 
-   - Drag and drop the file directly to your pipeline canvas.
+- Drag and drop the file directly to your pipeline canvas.
 
-     ![Drag and drop file](./img/drag-drop-file.png)
+  ![Drag and drop file](./img/drag-drop-file.png)
 
-   - Open the `Source/Target` gem drawer and click **Upload file**.
+- Open the `Source/Target` gem drawer and click **Upload file**.
 
-     ![Source/Target gem drawer](./img/upload-file-gem-drawer.png)
+  ![Source/Target gem drawer](./img/upload-file-gem-drawer.png)
 
-   - Create a new Source gem, click **+ New Dataset**, and select **Upload file**.
+- Create a new Source gem, click **+ New Dataset**, and select **Upload file**.
 
-     ![Source gem](./img/upload-file-source-gem.png)
+  ![Source gem](./img/upload-file-source-gem.png)
 
-1. You see the **Type & Format** page for your file.
+If your file successfully uploads, you see the **Type & Format** page for your file.
 
-   ![Type & Format](./img/upload-type-and-format.png)
+![Type & Format](./img/upload-type-and-format.png)
 
-## File Configuration
+## File configuration
 
 To configure your file:
 
 1. Confirm or update the file type, and click **Next**.
-1. Upload the file to a known file store location, or create a new table in your file store using the **Upload and create a table** option. Then, click **Next**.
+1. Upload the file to a known file store location, or create a new table in your file store with the **Upload and create a table** option. Then, click **Next**.
 
    ![Upload and create a table](./img/upload-create-table.png)
 

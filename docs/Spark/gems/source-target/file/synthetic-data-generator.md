@@ -21,7 +21,7 @@ import Requirements from "../../\_gem-requirements.mdx";
   pythonlib="1.9.24"
   packageversion122="Not Supported"
   packageversion143="Not Supported"
-  packageversion154="Supported 0.2.36+"
+  packageversion154="Supports 0.2.36+"
 />
 
 Mock data helps you test, validate, and optimize your pipelines performance before you use production data. This ensures that your pipeline can handle various data formats, structures, and edge cases effectively, which minimizes potential issues in a live environment.
@@ -30,11 +30,13 @@ You can create a wide range of mock data using any column name and an array of d
 
 ![img](../../img/synth_0_datasample.png)
 
-The following sections teach you how to generate your own mock data using the Data Generator gem.
+The following sections teach you how to generate your own mock data using the Source gem.
 
-## Cluster Requirements
+## Cluster requirements
 
 Create a fabric and configure the [Job Size](/docs/administration/Spark-fabrics/databricks/databricks.md), or login to an existing Spark cluster UI.
+
+### Spark cluster UI
 
 To create a fabric and configure the job size in the Spark Cluster UI:
 
@@ -47,12 +49,12 @@ To create a fabric and configure the job size in the Spark Cluster UI:
 1. Confirm and restart your Spark cluster.
    ![requirements](../../img/synth_0_1_requirements.png)
 
-## Prophecy Requirements
+## Prophecy requirements
 
 Open a Prophecy project and upgrade the `ProphecySparkBasicsPython` Dependency to `0.2.34` or later.
 
 :::note
-Connecting a Prophecy project to a Spark cluster with a different dependency version will prompt a cluster restart.
+Connecting a Prophecy project to a Spark cluster with a different dependency version prompts the Spark cluster to restart.
 :::
 
 ![img](../../img/synth_0_2_proph_reqiuirements.png)
@@ -60,10 +62,10 @@ Connecting a Prophecy project to a Spark cluster with a different dependency ver
 :::caution Caution
 If you use two Prophecy projects with the same Spark cluster, Spark restarts the cluster when each project attaches to the cluster, unless the `ProphecySparkBasicsPython` and `ProphecyLibsPython` versions match across both projects.
 
-_The Fix:_ Upgrade all your Prophecy projects to the same `ProphecySparkBasicsPython` and `ProphecyLibsPython` versions, or use separate Spark clusters.
+_Solution:_ Upgrade all your Prophecy projects to the same `ProphecySparkBasicsPython` and `ProphecyLibsPython` versions, or use separate Spark clusters.
 :::
 
-## Create The Gem
+## Create the gem
 
 1. Create a new dataset.
 
@@ -77,18 +79,18 @@ _The Fix:_ Upgrade all your Prophecy projects to the same `ProphecySparkBasicsPy
    We will [specify the storage location](#store-the-data) in a separate gem.  
    :::
 
-### Properties: Specify The Data Structure
+### Properties: Specify the data structure
 
 Prophecy offers a selection of providers including integers, booleans, and elements from a list. You can also provide the same information as a JSON schema.
 
-## Providers
+### Providers
 
 | Data Provider             | Description                                                                                                                                                                                                                                                                  |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Random Name               | Generates random names. Select `Full Name`, `First Name`, or `Last Name` as the sub-types.                                                                                                                                                                                   |
 | Random Address            | Generates random addresses.                                                                                                                                                                                                                                                  |
 | Random Email              | Generates random emails.                                                                                                                                                                                                                                                     |
-| Random Phone Number       | Generates random phone numbers based on specified or default pattern. <br/>For example, you can specify the pattern for a phone number as (###) ###-####.                                                                                                                    |
+| Random Phone Number       | Generates random phone numbers based on the pattern you specify or the default pattern. <br/>For example, you can specify the pattern for a phone number as (###) ###-####.                                                                                                  |
 | Random String UUID        | Generates random UUID values as a string.                                                                                                                                                                                                                                    |
 | Random Boolean Values     | Generates random boolean values.                                                                                                                                                                                                                                             |
 | Random Integer Numbers    | Generates random integers within the range from the `Start Value` to the`End Value` you specify.                                                                                                                                                                             |
@@ -107,30 +109,29 @@ Prophecy offers a selection of providers including integers, booleans, and eleme
 
 ![img](../../img/synth_3_properties.png)
 
-### Infer the Schema
+### Infer the schema
 
 To see your data based on the Properties tab configuration, infer the schema in the Schema tab.
 
 ### Preview the data
 
-This gem returns a `DataFrame` with randomly generated values. Preview the first few records to confirm the schema is correct. Then, save the gem.
+The Source gem returns a `DataFrame` with randomly generated values. Preview the first few records to confirm the schema is correct. Then, save the gem.
 
 ## Store the data
 
-By default, the Data Generator gem does not save the newly generated data. To save the data, store the data in a Target gem:
+By default, the Source gem does not save the newly generated data. To save the data, store the data in a Target gem:
 
 1. Create a Target gem.
 
    ![img](../../img/synth_4_new_target.png)
 
-1. Connect your Data Generator Source gem to your Target gem.
+1. Connect your Source gem to your Target gem.
 
    ![img](../../img/synth_5_connect_target.png)
 
 1. Configure the write mode for the Target gem.
 
-   The Data Generator only generates the data. If you want to store the data, connect the output to a Target gem and configure the write mode.
-   This is **very important** because there is a **new random seed** each time you run the Data Generator gem.
+   This is **very important** because there is a **new random seed** each time you run the Source gem.
 
    ![img](../../img/synth_6_write_mode.png)
 
