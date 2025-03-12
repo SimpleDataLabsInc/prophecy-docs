@@ -1,79 +1,59 @@
 ---
 title: Databricks SQL
 id: databricks
-description: Run Models on a Databricks Warehouse
+description: Run models on a Databricks SQL warehouse
 sidebar_position: 1
 tags:
   - databricks
   - sql
-  - connect
-  - warehouse
   - fabric
 ---
 
-Databricks SQL Warehouse offers seamless integration into the Databricks ecosystem. Follow the steps below to create a fabric in Prophecy so that you can execute data transformations on your Databricks Warehouse.
+To use your Databricks SQL warehouse for execution in Prophecy, you need to create a SQL [fabric](docs/concepts/fabrics/fabrics.md) with a Databricks connection.
 
 ## Create a fabric
 
-Create an entity by clicking the **plus** icon. Click to **Create a Fabric**.
-There are three steps to creating a fabric:
+Fabrics define your Prophecy project execution environment. To create a new fabric:
 
-1. [Basic info](./databricks.md#basic-info)
-2. [Providers](./databricks.md#provider)
-3. [Connections](./databricks.md#connections) (optional)
+1. Click on the **Create Entity** button from the left navigation bar.
+1. Click on the **Fabric** tile.
 
-### Basic Info
+## Basic Info
 
-Each fabric requires some **Basic information**
+Next, complete the fields in the **Basic Info** page.
+
+1. Provide a fabric title and description. It can be helpful to include descriptors like `dev` or `prod` in your title.
+1. Select a team to own this fabric. Click the dropdown to list the teams your user is a member. If you don’t see the desired team, ask a Prophecy Administrator to add you to a team.
+1. Click **Continue**.
 
 ![DBInfo](./img/DatabricksFabric1.png)
 
-| **Basic Info**                                                                                                                                                                                     |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **1 - Title** - Specify a title, like devDatabricks, for your fabric. “dev” or “prod” are helpful descriptors for this environment setup. Also specify a description (optional).                   |
-| **2 - Team** - Select a team to own this fabric. Click the dropdown to list the teams your user is a member. If you don’t see the desired team, ask a Prophecy Administrator to add you to a team. |
-| **3 - Continue** to the Provider step.                                                                                                                                                             |
-
 ### Provider
 
-The SQL **provider** is both the storage warehouse and the execution environment where your SQL code will run. Be sure to **Start** the Databricks Warehouse before trying to setup the fabric.
+The SQL provider is both the storage warehouse and the execution environment where your SQL code will run. To configure the provider:
+
+1. Select **SQL** as the Provider type.
+1. Click the dropdown menu for the list of supported Provider types, and select **Databricks**.
+1. Copy the **JDBC URL** from the Databricks UI as shown. This is the URL that Prophecy will connect for SQL Warehouse data storage and execution. <br/><br/>
+   :::note
+   If using self-signed certificates, add `AllowSelfSignedCerts=1` to your JDBC URL.
+   :::
+1. Add a **personal access token** (PAT) that will let Prophecy connect to Databricks. Each user supplies their own token when using the fabric. To generate a PAT, follow [the Databricks documentation](https://docs.databricks.com/en/dev-tools/auth/pat.html#databricks-personal-access-tokens-for-workspace-users).
+1. Optional: Enter the Catalog name if you are using Unity Catalog.
+1. Click **Continue**.
 
 ![SFProvider](./img/DatabricksFabric2.png)
 
-| **Provider details**                                                                                                                                                                                                                                                                                                            |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **1 - Provider Type** - Select SQL as the Provider type. (Alternatively, create a Spark type fabric using instructions [here](/docs/administration/Spark-fabrics/fabrics.md) or an Airflow type fabric following these [instructions](/docs/Orchestration/airflow/setup/setup.md).)                                             |
-| **2 - Provider** - Click the dropdown menu for the list of supported Provider types. Select Databricks.                                                                                                                                                                                                                         |
-| **3 - JDBC URL** - Copy the JDBC URL from the Databricks UI as shown. This is the URL that Prophecy will connect for SQL Warehouse data storage and execution.                                                                                                                                                                  |
-| **4 - Personal Databricks Access Token ** - This is the token Prophecy will use to connect to Databricks. Each user will need to apply their own token. To generate a Databricks PAT follow [these instructions](https://docs.databricks.com/en/dev-tools/auth/pat.html#databricks-personal-access-tokens-for-workspace-users). |
-| **5 - Catalog** - (Optional) Enter the Catalog name if you are using Unity Catalog                                                                                                                                                                                                                                              |
-| **6 - Continue** to the optional Connections step.                                                                                                                                                                                                                                                                              |
+Prophecy respects **individual user credentials** when accessing Databricks catalogs, tables, databases, etc.
 
+:::note
 Prophecy supports Databricks Volumes. When you run a Python or Scala pipeline via a job, you must bundle them as whl/jar artifacts. These artifacts must then be made accessible to the Databricks job in order to use them as a library installed on the cluster. You can designate a path to a Volume for uploading the whl/jar files under Artifacts.
-
-### Connections
-
-(Optional) Browsing data catalogs, tables, and schemas can be a time-intensive operation especially for Warehouses with hundreds or thousands of tables. To address this challenge, Prophecy offers a [Metadata Connection](/docs/administration/metadata-connections.md) to sync metadata from the data provider at regular intervals.
-
-## Using fabrics
-
-Completed fabrics will appear on the Metadata page and can be managed by Team admins.
-![FabricMetadata](./img/FabricMetadata.png)
-
-Each team member can attach completed fabrics to their projects and models.
-![SFAttachCluster](./img/DatabricksAttachCluster.png)
-
-| **Attach a fabric to a model**                                                                                                            |
-| ----------------------------------------------------------------------------------------------------------------------------------------- |
-| **1 Metadata** - Click the Prophecy Metadata and search for a SQL project or model of interest. Open the model.                           |
-| **2 Model** - Here we have opened a model called "Customers."                                                                             |
-| **3 Attach Cluster Menu** - This dropdown menu lists the fabrics and execution clusters available to this project, according to the Team. |
-| **4 Databricks Fabric** - The available fabrics appear here. Only SQL fabrics are available to attach to SQL projects.                    |
-| **5 Attach Cluster** - The Databricks Warehouse can be attached to the model for execution.                                               |
-| **6 Run model** - Once a fabric and cluster are attached to the project, the model can be run interactively using the play button.        |
-
-:::info
-Remember, each user will be prompted to update the fabric with their own credentials. Prophecy respects these credentials when accessing Databricks catalogs, tables, databases, etc.
 :::
 
-Once a project is attached to a fabric, and the project is released, the project can be scheduled to run on a regular frequency using [Databricks jobs](docs/getting-started/tutorials/sql-with-databricks.md#orchestrate-and-deploy)
+### Optional: Connections
+
+If you want to crawl your warehouse metadata on a regular basis, you can set a connection here.
+
+## What's next
+
+Attach a fabric to your SQL project and begin [data modeling](docs/SQL/sql.md)!
