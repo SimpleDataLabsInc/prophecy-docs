@@ -22,7 +22,7 @@ The Source gem reads data from JSON files.
 | Location                      | File path of the JSON file.                                                                                                                                                                | True     |
 | Schema                        | Schema to applied on the data you load. <br/>You can define or edit schema as JSON or infer it using `Infer Schema` button.                                                                | True     |
 | Multi-Line                    | Whether to parse one record, which may span multiple lines, per file. <br/>JSON built-in functions ignore this option.                                                                     | False    |
-| Line Separator                | Defines the line separator that should be used for parsing. <br/>JSON built-in functions ignore this option.                                                                               | False    |
+| Line Separator                | Defines the line separator that Prophecy should use for parsing. <br/>JSON built-in functions ignore this option.                                                                          | False    |
 | Primitive Values              | Whether to infer all primitive values as a `String` type.                                                                                                                                  | False    |
 | Floating-Point Values         | Infers all floating-point values as a `Decimal` type. <br/>If the value does not fit in `Decimal`, then it infers them as a `Double`.                                                      | False    |
 | Ignore Comments               | Ignores Java and C++ style comments in JSON records.                                                                                                                                       | False    |
@@ -100,7 +100,7 @@ The Target gem writes data to JSON files.
 | Date Format        | String that indicates a date format.                                                                                                                                                    | False    |
 | Timestamp Format   | String that indicates a timestamp format.                                                                                                                                               | False    |
 | Encoding           | Specifies to encode (charset) saved json files. <br/>JSON built-in functions ignore this option.                                                                                        | False    |
-| Line Separator     | Defines the line separator that should be used for parsing. <br/>JSON built-in functions ignore this option.                                                                            | False    |
+| Line Separator     | Defines the line separator that Prophecy should use for parsing. <br/>JSON built-in functions ignore this option.                                                                       | False    |
 | Ignore Null Fields | Whether to ignore null fields when generating JSON objects.                                                                                                                             | False    |
 | Partition Columns  | List of columns to partition the JSON file by.                                                                                                                                          | False    |
 

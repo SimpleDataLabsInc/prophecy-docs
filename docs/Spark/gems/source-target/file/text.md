@@ -9,21 +9,21 @@ tags:
   - text
 ---
 
-Allows you to read or write plain Text files.
+You can read data from or write data to Text files.
 
 ## Source
 
-Reads data from Text files at the given Location.
+The Source gem reads data from Text files.
 
 ### Source Parameters
 
-| Parameter             | Description                                                                                                                                                                   | Required | Default            |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------ |
-| Location              | File path where the Text files are located                                                                                                                                    | True     | None               |
-| Schema                | Schema to be applied on the loaded data. Can be defined/edited as JSON or inferred using `Infer Schema` button.                                                               | True     | None               |
-| Recursive File Lookup | This is used to recursively load files from the given Location. Disables partition discovery. An exception will be thrown if this option and a `partitionSpec` are specified. | False    | False              |
-| Line Separator        | Defines the line separator that should be used for reading or writing.                                                                                                        | False    | `\r`, `\r\n`, `\n` |
-| Read as a single row  | If true, read each file from input path(s) as a single row.                                                                                                                   | False    | False              |
+| Parameter               | Description                                                                                                                                                                                          | Required | Default            |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------ |
+| Location                | File path to read the Text file.                                                                                                                                                                     | True     | None               |
+| Enforce Schema          | Whether to apply the schema on the loaded data. You can define or edit the scema as JSON or inferred using the `Infer Schema` button.                                                                | True     | None               |
+| Recursive File Lookup   | Whether to recursively load files and disable partition inferring. If the data source explicitly specifies the `partitionSpec` when the`recursiveFileLookup` is `true`, Prophecy throws an exception | False    | False              |
+| Line Separator          | Defines the line separator that Prophecy should use for parsing.                                                                                                                                     | False    | `\r`, `\r\n`, `\n` |
+| Read file as single row | Whether to read each file from input path as a single row.                                                                                                                                           | False    | False              |
 
 ### Example {#source}
 
@@ -74,31 +74,31 @@ object read_avro {
 
 ## Target
 
+The Target gem writes data to Text files.
+
 ### Target Parameters
 
-Write data as text files at the specified path.
-
-| Parameter         | Description                                                                                                                                                         | Required | Default |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
-| Location          | File path where text files will be written to                                                                                                                       | True     | None    |
-| Compression       | Compression codec to use when saving to file. This can be one of the known case-insensitive shorten names (`none`, `bzip2`, `gzip`, `lz4`, `snappy` and `deflate`). | False    | None    |
-| Write Mode        | How to handle existing data. See [this table](#supported-write-modes) for a list of available options.                                                              | True     | `error` |
-| Partition Columns | List of columns to partition the Text files by                                                                                                                      | False    | None    |
-| Line Separator    | Defines the line separator that should be used for writing                                                                                                          | False    | `\n`    |
+| Parameter         | Description                                                                                                                               | Required | Default |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
+| Location          | File path to write the Text file to.                                                                                                      | True     | None    |
+| Compression       | Compression codec used when writing. <br/>Prophecy supports the following codecs: `none`, `bzip2`, `gzip`, `lz4`, `snappy` and `deflate`. | False    | None    |
+| Write Mode        | How to handle existing data. To see a list of possible values, see [the Supported Write Modes table](#supported-write-modes).             | True     | `error` |
+| Partition Columns | List of columns to partition the Text files by.                                                                                           | False    | None    |
+| Line Separator    | Defines the line separator that Prophecy should use for parsing.                                                                          | False    | `\n`    |
 
 :::info
-The Text data source supports only a single column apart from the partition columns. An `AnalysisException` will be thrown if the DataFrame has more than 1 column
-apart from parition columns as the input DataFrame to the `Target` gem.
+The Text data source supports only a single column apart from the partition columns. If the `DataFrame` contains more than one column
+apart from parition columns as the input `DataFrame` to the Target gem, Prophecy throws an `AnalysisException`.
 :::
 
 ### Supported Write Modes
 
-| Write Mode | Description                                                                                                                      |
-| ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| overwrite  | If data already exists, overwrite with the contents of the DataFrame.                                                            |
-| append     | If data already exists, append the contents of the DataFrame.                                                                    |
-| ignore     | If data already exists, do nothing with the contents of the DataFrame. This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
-| error      | If data already exists, throw an exception.                                                                                      |
+| Write Mode | Description                                                                                                                             |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| error      | If data already exists, throw an exception.                                                                                             |
+| overwrite  | If data already exists, overwrite the data with the contents of the `DataFrame`.                                                        |
+| append     | If data already exists, append the contents of the `DataFrame`.                                                                         |
+| ignore     | If data already exists, do nothing with the contents of the `DataFrame`. <br/>This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
 
 ### Example {#target-example}
 

@@ -5,6 +5,7 @@ description: binary
 tags:
   - gems
   - file
+  - binary
 ---
 
 You can read data from and write data to Binary files.
@@ -20,7 +21,7 @@ The Source gem reads data from Binary files.
 | Location                | File path to read the Binary file.                                                                                                                                                         |
 | Enforce Schema          |                                                                                                                                                                                            |
 | Read file as single row | Whether to read each file from input path as a single row.                                                                                                                                 |
-| Line Separator          | Defines the line separator that should be used for parsing.                                                                                                                                |
+| Line Separator          | Defines the line separator that Prophecy should use for parsing.                                                                                                                           |
 | Recursive File Lookup   | Recursively load files and disable partition inferring. If the data source explicitly specifies the `partitionSpec` when the`recursiveFileLookup` is `true`, Prophecy throws an exception. |
 
 ## Target
@@ -32,7 +33,7 @@ The Target gem writes data to Binary files.
 | Parameter         | Description                                                                                                                            |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | Location          | File path to write the Binary file to.                                                                                                 |
-| Line Separator    | Defines the line separator that should be used for parsing.                                                                            |
+| Line Separator    | Defines the line separator that Prophecy should use for parsing.                                                                       |
 | Write Mode        | How to handle existing data. To see a list of possible values, see [the Supported Write Modes table](#supported-write-modes).          |
 | Compression Codec | Compression codec to use when you write. <br/>Prophecy supports the following codecs: `bzip2`, `gzip`, `lz4`, `snappy`, and `deflate`. |
 | Partition Columns | List of columns to partition the Binary file by.                                                                                       |
