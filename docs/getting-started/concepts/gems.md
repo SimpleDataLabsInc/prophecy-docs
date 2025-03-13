@@ -2,13 +2,9 @@
 title: Gems
 id: gems
 description: Transform your data with Prophecy gems
-sidebar_position: 3
 tags:
   - gems
-  - source
-  - target
-  - search
-  - infer schema
+  - transformations
 ---
 
 Prophecy gems are reusable building blocks designed to accelerate the development of your Spark and SQL workflows. These building blocks let you ingest, transform, and store your data in a modular way. Each gem is visually configurable and produces its own block of code.
