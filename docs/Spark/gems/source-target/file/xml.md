@@ -1,7 +1,7 @@
 ---
 title: XML
 id: xml
-description: XML
+description: Paramters and properties to read from and write to XML files
 tags:
   - gems
   - file
@@ -15,14 +15,14 @@ The XML (Extensible Markup Language) file type:
 
 ## Parameters
 
-| Parameter | Tab        | Description                                                                                                                                                                                                   |
-| --------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Location  | Location   | File path to read from or write to the XML file.                                                                                                                                                              |
-| Schema    | Properties | Schema to apply on the loaded data. <br/>In the Source gem, you can define or edit the schema as a JSON or infer it with the `Infer Schema` button.<br/>In the Target gem, you can view the schema as a JSON. |
+| Parameter | Tab        | Description                                                                                                                                                                                                    |
+| --------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Location  | Location   | File path to read from or write to the XML file.                                                                                                                                                               |
+| Schema    | Properties | Schema to apply on the loaded data. <br/>In the Source gem, you can define or edit the schema as a JSON, or infer it with the `Infer Schema` button.<br/>In the Target gem, you can view the schema as a JSON. |
 
 ## Source
 
-The Source gem reads data from XML files and allows you to optionally specify additional properties.
+The Source gem reads data from XML files and allows you to optionally specify the following additional properties.
 
 ### Source properties
 
@@ -37,8 +37,8 @@ The Source gem reads data from XML files and allows you to optionally specify ad
 | Value Tag                 | Tag to use for the value when there are attributes in the element with no child.                                    | `_VALUE`                           |
 | Ignore Surrounding Spaces | Whether to skip surrounding whitespaces.                                                                            | false                              |
 | Ignore Namespace          | Whether to skip namespace prefixes on XML elements and attributes.                                                  | false                              |
-| Timestamp format string   | Sets the string that indicates a timestamp format.                                                                  | `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]` |
-| Date format string        | String that indicates a date format.                                                                                | `yyyy-MM-dd`                       |
+| Timestamp Format          | Sets the string that indicates a timestamp format.                                                                  | `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]` |
+| Date Format               | String that indicates a date format.                                                                                | `yyyy-MM-dd`                       |
 
 ### Supported parser modes
 
@@ -50,7 +50,7 @@ The Source gem reads data from XML files and allows you to optionally specify ad
 
 ## Target
 
-The Target gem writes data to XML files and allows you to optionally specify additional properties.
+The Target gem writes data to XML files and allows you to optionally specify the following additional properties.
 
 ### Target properties
 
@@ -72,9 +72,9 @@ The Target gem writes data to XML files and allows you to optionally specify add
 
 ### Supported write modes
 
-| Write mode | Description                                                                                                                             |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| error      | If data already exists, throw an exception.                                                                                             |
-| overwrite  | If data already exists, overwrite the data with the contents of the `DataFrame`.                                                        |
-| append     | If data already exists, append the contents of the `DataFrame`.                                                                         |
-| ignore     | If data already exists, do nothing with the contents of the `DataFrame`. <br/>This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
+| Write mode | Description                                                                                                                                          |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| error      | If the data already exists, throw an exception.                                                                                                      |
+| overwrite  | If the data already exists, overwrite the data with the contents of the `DataFrame`.                                                                 |
+| append     | If the data already exists, append the contents of the `DataFrame`.                                                                                  |
+| ignore     | If the data already exists, do nothing with the contents of the `DataFrame`. <br/>This is similar to the `CREATE TABLE IF NOT EXISTS` clause in SQL. |

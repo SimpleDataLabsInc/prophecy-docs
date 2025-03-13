@@ -1,7 +1,7 @@
 ---
 title: Hudi
 id: hudi
-description: hudi
+description: Paramters and properties to read from and write to Hudi files
 tags:
   - gems
   - file
@@ -27,7 +27,7 @@ The Source gem does not support reading from Hudi files.
 
 ## Target
 
-The Target gem writes data to Hudi files and allows you to optionally specify additional properties.
+The Target gem writes data to Hudi files and allows you to optionally specify the following additional properties.
 
 ### Target Properties
 
@@ -51,9 +51,9 @@ The Target gem writes data to Hudi files and allows you to optionally specify ad
 
 ### Supported write modes
 
-| Write mode | Description                                                                                                                             |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| error      | If data already exists, throw an exception.                                                                                             |
-| overwrite  | If data already exists, overwrite the data with the contents of the `DataFrame`.                                                        |
-| append     | If data already exists, append the contents of the `DataFrame`.                                                                         |
-| ignore     | If data already exists, do nothing with the contents of the `DataFrame`. <br/>This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
+| Write mode | Description                                                                                                                                          |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| error      | If the data already exists, throw an exception.                                                                                                      |
+| overwrite  | If the data already exists, overwrite the data with the contents of the `DataFrame`.                                                                 |
+| append     | If the data already exists, append the contents of the `DataFrame`.                                                                                  |
+| ignore     | If the data already exists, do nothing with the contents of the `DataFrame`. <br/>This is similar to the `CREATE TABLE IF NOT EXISTS` clause in SQL. |

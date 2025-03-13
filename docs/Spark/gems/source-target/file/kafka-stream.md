@@ -1,7 +1,7 @@
 ---
 title: Kafka
 id: kafka
-description: Reading and writing data from Apache Kafka in batch mode
+description: Paramters and properties to read from and write to Kafka files
 tags:
   - gems
   - file
@@ -26,7 +26,7 @@ tags:
 
 ## Source
 
-The Source gem reads data from Kafka stream in batch mode and allows you to optionally specify additional properties. This means that Kafka only reads data incrementally from the last offset stored in the specified Metadata table. If the Metadata table is not present, then Kafka reads data from the `earliest` offset.
+The Source gem reads data from Kafka stream in batch mode and allows you to optionally specify the following additional properties. This means that Kafka only reads data incrementally from the last offset stored in the specified Metadata table. If the Metadata table is not present, then Kafka reads data from the `earliest` offset.
 
 ### Source properties
 
@@ -48,7 +48,7 @@ To see the generated source code, toggle to the **< > Code** view at the top of 
 
 ## Target
 
-The Target gem writes data to each row from the `Dataframe` to a Kafka topic as JSON messages and allows you to optionally specify additional properties.
+The Target gem writes data to each row from the `Dataframe` to a Kafka topic as JSON messages and allows you to optionally specify the following additional properties.
 
 ### Target properties
 

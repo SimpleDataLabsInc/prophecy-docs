@@ -1,7 +1,7 @@
 ---
 title: Fixed Format
 id: fixed-format
-description: Fixed Format
+description: Paramters and properties to read from and write to Fixed Format files
 tags:
   - gems
   - file
@@ -20,14 +20,14 @@ A Fixed Format (Fixed-Length Format) file type:
 
 ## Parameters
 
-| Parameter | Tab        | Description                                                                                                                                                                                                   |
-| --------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Location  | Location   | File path to read from or write to the fixed format file.                                                                                                                                                     |
-| Schema    | Properties | Schema to apply on the loaded data. <br/>In the Source gem, you can define or edit the schema as a JSON or infer it with the `Infer Schema` button.<br/>In the Target gem, you can view the schema as a JSON. |
+| Parameter | Tab        | Description                                                                                                                                                                                                    |
+| --------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Location  | Location   | File path to read from or write to the fixed format file.                                                                                                                                                      |
+| Schema    | Properties | Schema to apply on the loaded data. <br/>In the Source gem, you can define or edit the schema as a JSON, or infer it with the `Infer Schema` button.<br/>In the Target gem, you can view the schema as a JSON. |
 
 ## Source
 
-The Source gem reads data from Fixed Format files and allows you to optionally specify additional properties.
+The Source gem reads data from Fixed Format files and allows you to optionally specify the following additional properties.
 
 ### Source Properties
 
@@ -48,7 +48,7 @@ To see the generated source code, toggle to the **< > Code** view at the top of 
 
 ## Target
 
-The Target gem writes data to Fixed Format files and allows you to optionally specify additional properties.
+The Target gem writes data to Fixed Format files and allows you to optionally specify the following additional properties.
 
 ### Target Properties
 
@@ -60,12 +60,12 @@ The Target gem writes data to Fixed Format files and allows you to optionally sp
 
 ### Supported write modes
 
-| Write mode | Description                                                                                                                             |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| error      | If data already exists, throw an exception.                                                                                             |
-| overwrite  | If data already exists, overwrite the data with the contents of the `DataFrame`.                                                        |
-| append     | If data already exists, append the contents of the `DataFrame`.                                                                         |
-| ignore     | If data already exists, do nothing with the contents of the `DataFrame`. <br/>This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
+| Write mode | Description                                                                                                                                          |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| error      | If the data already exists, throw an exception.                                                                                                      |
+| overwrite  | If the data already exists, overwrite the data with the contents of the `DataFrame`.                                                                 |
+| append     | If the data already exists, append the contents of the `DataFrame`.                                                                                  |
+| ignore     | If the data already exists, do nothing with the contents of the `DataFrame`. <br/>This is similar to the `CREATE TABLE IF NOT EXISTS` clause in SQL. |
 
 ### Example {#target-example}
 

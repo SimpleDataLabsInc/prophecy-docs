@@ -1,7 +1,7 @@
 ---
 title: Data Generator
 id: data-generator
-description: Don't have the right data? Create some!
+description: Learn how to create synthetic data
 tags:
   - synthetic
   - random

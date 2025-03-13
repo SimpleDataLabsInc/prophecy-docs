@@ -1,7 +1,7 @@
 ---
 title: Upload files
 id: upload-file
-description: Upload files to your Spark pipeline
+description: Learn how to upload files to your Spark pipeline
 tags:
   - gems
   - file
@@ -10,17 +10,17 @@ tags:
 
 You can upload the following file types to your file store:
 
-- CSV, and other character separated types like TSV.
+- CSV, and other character separated types such as TSV.
 - JSON, with a single row per line, objects spanning many lines, or arrays with objects.
 - Text, formatted with one line per row.
 - XLSX, and the older XLS format.
-- XML, using a row tag selector.
+- XML, with a row tag selector.
 
 ## Upload a file
 
 To upload a file and incorporate it into your Spark pipeline, use a Source gem.
 
-Choose one of the following methods to upload your file:
+Use one of the following methods to upload your file:
 
 - Drag and drop the file directly to your pipeline canvas.
 
@@ -52,6 +52,9 @@ To configure your file:
    :::
 
 1. Add each property you want to configure.
+
+   To see a full list of properties of each file type, click the page corresponding to your file type in the left hand navigation.
+
 1. Click **Infer Schema**.
 1. Confirm or update the schema and click **Next**.
 1. If you want to preview the table, click **Load**.

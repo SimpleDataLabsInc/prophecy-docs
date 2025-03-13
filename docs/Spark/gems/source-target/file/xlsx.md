@@ -1,7 +1,7 @@
 ---
 title: XLSX (Excel)
 id: xlsx
-description: XLSX (Excel)
+description: Paramters and properties to read from and write too XLSX (Excel) files
 tags:
   - gems
   - file
@@ -23,14 +23,14 @@ To add the Maven coordinate `com.crealytics:spark-excel_2.12:3.5.1_0.20.4` to yo
 
 ## Parameters
 
-| Parameter | Tab        | Description                                                                                                                                                                                                   |
-| --------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Location  | Location   | File path to read from or write to the XLSX file.                                                                                                                                                             |
-| Schema    | Properties | Schema to apply on the loaded data. <br/>In the Source gem, you can define or edit the schema as a JSON or infer it with the `Infer Schema` button.<br/>In the Target gem, you can view the schema as a JSON. |
+| Parameter | Tab        | Description                                                                                                                                                                                                    |
+| --------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Location  | Location   | File path to read from or write to the XLSX file.                                                                                                                                                              |
+| Schema    | Properties | Schema to apply on the loaded data. <br/>In the Source gem, you can define or edit the schema as a JSON, or infer it with the `Infer Schema` button.<br/>In the Target gem, you can view the schema as a JSON. |
 
 ## Source
 
-The Source gem reads data from XLSX files and allows you to optionally specify additional properties.
+The Source gem reads data from XLSX files and allows you to optionally specify the following additional properties.
 
 ### Source properties
 
@@ -74,7 +74,7 @@ The Source gem reads data from XLSX files and allows you to optionally specify a
 
 ## Target
 
-The Target gem writes data to XLSX files and allows you to optionally specify additional properties.
+The Target gem writes data to XLSX files and allows you to optionally specify the following additional properties.
 
 ### Target properties
 
@@ -93,12 +93,12 @@ The Target gem writes data to XLSX files and allows you to optionally specify ad
 
 ### Supported write modes
 
-| Write mode | Description                                                                                                                             |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| error      | If data already exists, throw an exception.                                                                                             |
-| overwrite  | If data already exists, overwrite the data with the contents of the `DataFrame`.                                                        |
-| append     | If data already exists, append the contents of the `DataFrame`.                                                                         |
-| ignore     | If data already exists, do nothing with the contents of the `DataFrame`. <br/>This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
+| Write mode | Description                                                                                                                                          |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| error      | If the data already exists, throw an exception.                                                                                                      |
+| overwrite  | If the data already exists, overwrite the data with the contents of the `DataFrame`.                                                                 |
+| append     | If the data already exists, append the contents of the `DataFrame`.                                                                                  |
+| ignore     | If the data already exists, do nothing with the contents of the `DataFrame`. <br/>This is similar to the `CREATE TABLE IF NOT EXISTS` clause in SQL. |
 
 ## Writing a single output file
 

@@ -1,38 +1,38 @@
 ---
 title: Text
 id: text
-description: Text
+description: Paramters and properties to read from and write to Text file
 tags:
   - gems
   - file
   - text
 ---
 
-Like the CSV data type, the Text file type is also:
+Like the CSV file type, the Text file type is also:
 
 - Easy to read from, write to, and share.
 - Compatible with many programs, and easy to exchange data.
 
 ## Parameters
 
-| Parameter | Tab        | Description                                                                                                                                                                                                   |
-| --------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Location  | Location   | File path to read from or write to the Text file.                                                                                                                                                             |
-| Schema    | Properties | Schema to apply on the loaded data. <br/>In the Source gem, you can define or edit the schema as a JSON or infer it with the `Infer Schema` button.<br/>In the Target gem, you can view the schema as a JSON. |
+| Parameter | Tab        | Description                                                                                                                                                                                                    |
+| --------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Location  | Location   | File path to read from or write to the Text file.                                                                                                                                                              |
+| Schema    | Properties | Schema to apply on the loaded data. <br/>In the Source gem, you can define or edit the schema as a JSON, or infer it with the `Infer Schema` button.<br/>In the Target gem, you can view the schema as a JSON. |
 
 ## Source
 
-The Source gem reads data from Text files and allows you to optionally specify additional properties.
+The Source gem reads data from Text files and allows you to optionally specify the following additional properties.
 
 ### Source properties
 
-| Property name           | Description                                                                                                                                                                                           | Default                |
-| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
-| Description             | Description of your dataset.                                                                                                                                                                          | None                   |
-| Enforce schema          | Whether to apply the schema on the loaded data. You can define or edit the scema as JSON or inferred using the `Infer Schema` button.                                                                 | true                   |
-| Read file as single row | Whether to read each file from input path as a single row.                                                                                                                                            | false                  |
-| Line Separator          | Sets a separator for each field and value. The separator can be one or more characters.                                                                                                               | `\r`, `\r\n`, and `\n` |
-| Recursive File Lookup   | Whether to recursively load files and disable partition inferring. If the data source explicitly specifies the `partitionSpec` when the`recursiveFileLookup` is `true`, Prophecy throws an exception. | false                  |
+| Property name           | Description                                                                                                                                                                                                 | Default                |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
+| Description             | Description of your dataset.                                                                                                                                                                                | None                   |
+| Enforce schema          | Whether to apply the schema on the loaded data. You can define or edit the scema as JSON or inferred using the `Infer Schema` button.                                                                       | true                   |
+| Read file as single row | Whether to read each file from input path as a single row.                                                                                                                                                  | false                  |
+| Line Separator          | Sets a separator for each field and value. The separator can be one or more characters.                                                                                                                     | `\r`, `\r\n`, and `\n` |
+| Recursive File Lookup   | Whether to recursively load files and disable partition inferring. If the data source explicitly specifies the `partitionSpec` when the`recursiveFileLookup` is `true`, the Source gem throws an exception. | false                  |
 
 ### Example {#source}
 
@@ -49,7 +49,7 @@ To see the generated source code, toggle to the **< > Code** view at the top of 
 
 ## Target
 
-The Target gem writes data to Text files and allows you to optionally specify additional properties.
+The Target gem writes data to Text files and allows you to optionally specify the following additional properties.
 
 ### Target properties
 
@@ -64,12 +64,12 @@ The Target gem writes data to Text files and allows you to optionally specify ad
 
 ### Supported write modes
 
-| Write mode | Description                                                                                                                             |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| error      | If data already exists, throw an exception.                                                                                             |
-| overwrite  | If data already exists, overwrite the data with the contents of the `DataFrame`.                                                        |
-| append     | If data already exists, append the contents of the `DataFrame`.                                                                         |
-| ignore     | If data already exists, do nothing with the contents of the `DataFrame`. <br/>This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
+| Write mode | Description                                                                                                                                          |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| error      | If the data already exists, throw an exception.                                                                                                      |
+| overwrite  | If the data already exists, overwrite the data with the contents of the `DataFrame`.                                                                 |
+| append     | If the data already exists, append the contents of the `DataFrame`.                                                                                  |
+| ignore     | If the data already exists, do nothing with the contents of the `DataFrame`. <br/>This is similar to the `CREATE TABLE IF NOT EXISTS` clause in SQL. |
 
 ### Example {#target-example}
 

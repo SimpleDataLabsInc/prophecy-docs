@@ -1,7 +1,7 @@
 ---
 title: Parquet
 id: parquet
-description: Parquet
+description: Paramters and properties to read from and write to Parquet files
 tags:
   - gems
   - file
@@ -15,14 +15,14 @@ The Parquet file type:
 
 ## Parameters
 
-| Parameter | Tab        | Description                                                                                                                                                                                                   |
-| --------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Location  | Location   | File path to read from or write to the Parquet file.                                                                                                                                                          |
-| Schema    | Properties | Schema to apply on the loaded data. <br/>In the Source gem, you can define or edit the schema as a JSON or infer it with the `Infer Schema` button.<br/>In the Target gem, you can view the schema as a JSON. |
+| Parameter | Tab        | Description                                                                                                                                                                                                    |
+| --------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Location  | Location   | File path to read from or write to the Parquet file.                                                                                                                                                           |
+| Schema    | Properties | Schema to apply on the loaded data. <br/>In the Source gem, you can define or edit the schema as a JSON, or infer it with the `Infer Schema` button.<br/>In the Target gem, you can view the schema as a JSON. |
 
 ## Source
 
-The Source gem reads data from Parquet files and allows you to optionally specify additional properties.
+The Source gem reads data from Parquet files and allows you to optionally specify the following additional properties.
 
 ### Source properties
 
@@ -33,10 +33,10 @@ The Source gem reads data from Parquet files and allows you to optionally specif
 | Merge schema            | Whether the Target gem should merge schemas from all the collected Parquet part-files. This overrides `spark.sql.`<br/>`parquet.`<br/>`mergeSchema`.                                                                                                                                                          | (value of `spark.sql.`<br/>`parquet.`<br/>`mergeSchema`)              |     |
 | Datetime Rebase Mode    | The `datetimeRebaseMode` option allows to specify the rebasing mode for the values of the DATE, TIMESTAMP_MILLIS, TIMESTAMP_MICROS logical types from the Julian to Proleptic Gregorian calendar. For a list of the possible values, see [Supported Datetime rebase modes](#supported-datetime-rebase-modes). | (value of `spark.sql.`<br/>`parquet`<br/>`.datetimeRebaseModeInRead`) |
 | Int96 Rebase Mode       | Specify the rebasing mode for INT96 timestamps from the Julian to Proleptic Gregorian calendar. calendar. For a list of the possible values, see [Supported Int96 rebase modes](#supported-int96-rebase-modes).                                                                                               | (value of `spark.sql.`<br/>`parquet`<br/>`.int96RebaseModeInRead`)    |
-| Recursive File Lookup   | Whether to recursively load files and disable partition inferring. If the data source explicitly specifies the `partitionSpec` when the`recursiveFileLookup` is `true`, Prophecy throws an exception.                                                                                                         | false                                                                 |
+| Recursive File Lookup   | Whether to recursively load files and disable partition inferring. If the data source explicitly specifies the `partitionSpec` when the`recursiveFileLookup` is `true`, the Source gem throws an exception.                                                                                                   | false                                                                 |
 | Path Global Filter      | Glob pattern to only include files with paths matching the pattern. The syntax follows [GlobFilter](https://hadoop.apache.org/docs/stable/api/org/apache/hadoop/fs/GlobFilter.html) and does not change the behavior of partition discovery.                                                                  | None                                                                  |
-| Modified Before         | Timestamp to only include files with modification times occurring before the specified time. The provided timestamp must be in the following form: YYYY-MM-DDTHH:mm:ss (e.g. 2020-06-01T13:00:00).                                                                                                            | None                                                                  |
-| Modified After          | Timestamp to only include files with modification times occurring after the specified time. The provided timestamp must be in the following form: YYYY-MM-DDTHH:mm:ss (e.g. 2020-06-01T13:00:00).                                                                                                             | None                                                                  |
+| Modified Before         | Timestamp to only include files with modification times occurring before the time you specify. The timestamp must be in the following form: YYYY-MM-DDTHH:mm:ss (e.g. 2020-06-01T13:00:00).                                                                                                                   | None                                                                  |
+| Modified After          | Timestamp to only include files with modification times occurring after the time you specify. The timestamp must be in the following form: YYYY-MM-DDTHH:mm:ss (e.g. 2020-06-01T13:00:00).                                                                                                                    | None                                                                  |
 
 ### Supported Int96 rebase modes
 
@@ -69,7 +69,7 @@ To see the generated source code, toggle to the **< > Code** view at the top of 
 
 ## Target
 
-The Target gem writes data to Parquet files and allows you to optionally specify additional properties.
+The Target gem writes data to Parquet files and allows you to optionally specify the following additional properties.
 
 ### Target properties
 
@@ -82,12 +82,12 @@ The Target gem writes data to Parquet files and allows you to optionally specify
 
 ### Supported write modes
 
-| Write mode | Description                                                                                                                             |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| error      | If data already exists, throw an exception.                                                                                             |
-| overwrite  | If data already exists, overwrite the data with the contents of the `DataFrame`.                                                        |
-| append     | If data already exists, append the contents of the `DataFrame`.                                                                         |
-| ignore     | If data already exists, do nothing with the contents of the `DataFrame`. <br/>This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
+| Write mode | Description                                                                                                                                          |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| error      | If the data already exists, throw an exception.                                                                                                      |
+| overwrite  | If the data already exists, overwrite the data with the contents of the `DataFrame`.                                                                 |
+| append     | If the data already exists, append the contents of the `DataFrame`.                                                                                  |
+| ignore     | If the data already exists, do nothing with the contents of the `DataFrame`. <br/>This is similar to the `CREATE TABLE IF NOT EXISTS` clause in SQL. |
 
 ### Example {#target}
 

@@ -1,7 +1,7 @@
 ---
 title: Avro
 id: avro
-description: Avro
+description: Paramters and properties to read from and write to Avro files
 tags:
   - gems
   - file
@@ -17,14 +17,14 @@ The Avro file type:
 
 ## Parameters
 
-| Parameter | Tab        | Description                                                                                                                                                                                                   |
-| --------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Location  | Location   | File path to read from or write to the Avro file.                                                                                                                                                             |
-| Schema    | Properties | Schema to apply on the loaded data. <br/>In the Source gem, you can define or edit the schema as a JSON or infer it with the `Infer Schema` button.<br/>In the Target gem, you can view the schema as a JSON. |
+| Parameter | Tab        | Description                                                                                                                                                                                                    |
+| --------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Location  | Location   | File path to read from or write to the Avro file.                                                                                                                                                              |
+| Schema    | Properties | Schema to apply on the loaded data. <br/>In the Source gem, you can define or edit the schema as a JSON, or infer it with the `Infer Schema` button.<br/>In the Target gem, you can view the schema as a JSON. |
 
 ## Source
 
-The Source gem reads data from Avro files and allows you to optionally specify additional properties.
+The Source gem reads data from Avro files and allows you to optionally specify the following additional properties.
 
 ### Source properties
 
@@ -32,22 +32,18 @@ The Source gem reads data from Avro files and allows you to optionally specify a
 | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
 | Description                                        | Description of your dataset.                                                                                                                                                                                                                 | None    |
 | Use user-defined schema                            | Whether to use the schema you define.                                                                                                                                                                                                        | false   |
-| Ignore files without .avro extension while reading | **_DEPRECATED_**. Whether to load files without the `.avro` extension. <br/>To learn more, see [Ignore the file extension](#ignoring-the-file-extension).                                                                                    | true    |
-| Recursive File Lookup                              | Whether to recursively load files and disable partition inferring. If the data source explicitly specifies the `partitionSpec` when the`recursiveFileLookup` is `true`, Prophecy throws an exception.                                        | false   |
+| Ignore files without .avro extension while reading | **_DEPRECATED_**. Whether to load files without the `.avro` extension. <br/>**This parameter will be removed in a future release.** <br/>To filter file names, use the `Path Glob Filter` property.                                          | true    |
+| Recursive File Lookup                              | Whether to recursively load files and disable partition inferring. If the data source explicitly specifies the `partitionSpec` when the`recursiveFileLookup` is `true`, the Source gem throws an exception.                                  | false   |
 | Path Global Filter                                 | Glob pattern to only include files with paths matching the pattern. The syntax follows [GlobFilter](https://hadoop.apache.org/docs/stable/api/org/apache/hadoop/fs/GlobFilter.html) and does not change the behavior of partition discovery. | None    |
-| Modified Before                                    | Timestamp to only include files with modification times occurring before the specified time. The provided timestamp must be in the following format: `YYYY-MM-DDTHH:mm:ss` (e.g. 2020-06-01T13:00:00)                                        | None    |
-| Modified After                                     | Timestamp to only include files with modification times occurring after the specified time. The provided timestamp must be in the following format: `YYYY-MM-DDTHH:mm:ss` (e.g. 2020-06-01T13:00:00)                                         | None    |
-| Avro Schema                                        | Additional schema a user provides in JSON format. To learn more, see [Schema evolution](#schema-evolution).                                                                                                                                  | false   |
+| Modified Before                                    | Timestamp to only include files with modification times occurring before the time you specify. The timestamp must be in the following format: `YYYY-MM-DDTHH:mm:ss` (e.g. 2020-06-01T13:00:00)                                               | None    |
+| Modified After                                     | Timestamp to only include files with modification times occurring after the time you specify. The timestamp must be in the following format: `YYYY-MM-DDTHH:mm:ss` (e.g. 2020-06-01T13:00:00)                                                | None    |
+| Avro Schema                                        | Additional schema a user provides in JSON format. To learn more, see [Schema evolution](#schema-evolution).                                                                                                                                  | None    |
 
 #### Schema evolution
 
-When reading an Avro file, you can set the `Avro Schema` parameter to a newer, evolved schema, which is compatible but different from the schema written to storage. The resulting `DataFrame` follows the newer, evolved schema.
+When reading an Avro file, you can set the `Avro Schema` parameter to a newer evolved schema, which is compatible but different from the schema written to storage. The resulting `DataFrame` follows the newer evolved schema.
 
-For example, if we you an evolved schema containing one additional column with a default value, the resulting `DataFrame` contains the new column too.
-
-#### Ignore the file extension
-
-If you enable the `ignoreExtension` parameter, Prophecy loads all files (with and without .avro extension). This parameter is deprecated, and will be removed in a future release. Please use the `Path Glob Filter` property for filtering file names.
+For example, if you set an evolved schema to contain one additional column with a default value, the resulting `DataFrame` contains the new column too.
 
 ### Example {#source}
 
@@ -66,28 +62,28 @@ To see the generated source code, toggle to the **< > Code** view at the top of 
 
 ## Target
 
-The Target gem writes data to Avro files and allows you to optionally specify additional properties.
+The Target gem writes data to Avro files and allows you to optionally specify the following additional properties.
 
 ### Target properties
 
 | Property name     | Description                                                                                                                                                                                                                                                                               | Default          |
 | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
 | Description       | Description of your dataset.                                                                                                                                                                                                                                                              | None             |
-| Avro Schema       | Additional schema a user provides in JSON format. You can set this parameter if the expected output Avro schema doesn't match the schema Spark converts. <br/>For example, the expected schema of one column is of `enum` type, instead of `string` type in the default converted schema. | None             |
+| Avro Schema       | Additional schema a user provides in JSON format. You can set this parameter if the expected output Avro schema doesn't match the schema Spark converts. <br/>For example, the expected schema of a column is an `enum` type, instead of a `string` type in the default converted schema. | None             |
 | Write Mode        | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                                                                                                                                                                      | `error`          |
-| Compression       | Compression codec when writing to the Avro file. <br/>The Avro file supports the following codecs: `uncompressed`, `snappy`, `deflate`, `bzip2`, and `xz`. <br/>This defaults to the value of the `spark.sql.`<br/>`avro.`<br/>`compression.`<br/>`codec` parameter.                      | `snappy`         |
+| Compression       | Compression codec when writing to the Avro file. <br/>The Avro file supports the following codecs: `uncompressed`, `snappy`, `deflate`, `bzip2`, and `xz`. <br/>This defaults to the value of the `spark.sql.avro.compression.codec` parameter.                                           | `snappy`         |
 | Partition Columns | List of columns to partition the Avro files by.                                                                                                                                                                                                                                           | None             |
-| Record Name       | Top level record name in the result, which is required in the Avro spec.                                                                                                                                                                                                                  | `topLevelRecord` |
+| Record Name       | Top level record name in the result.                                                                                                                                                                                                                                                      | `topLevelRecord` |
 | Record Namespace  | Record namespace in the result.                                                                                                                                                                                                                                                           | ""               |
 
 ### Supported write modes
 
-| Write mode | Description                                                                                                                             |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| error      | If data already exists, throw an exception.                                                                                             |
-| overwrite  | If data already exists, overwrite the data with the contents of the `DataFrame`.                                                        |
-| append     | If data already exists, append the contents of the `DataFrame`.                                                                         |
-| ignore     | If data already exists, do nothing with the contents of the `DataFrame`. <br/>This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
+| Write mode | Description                                                                                                                                          |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| error      | If the data already exists, throw an exception.                                                                                                      |
+| overwrite  | If the data already exists, overwrite the data with the contents of the `DataFrame`.                                                                 |
+| append     | If the data already exists, append the contents of the `DataFrame`.                                                                                  |
+| ignore     | If the data already exists, do nothing with the contents of the `DataFrame`. <br/>This is similar to the `CREATE TABLE IF NOT EXISTS` clause in SQL. |
 
 ### Example {#target}
 

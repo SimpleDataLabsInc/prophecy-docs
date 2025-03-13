@@ -1,7 +1,7 @@
 ---
 title: Seed
 id: seed
-description: Seed
+description: Paramters and properties to read from Seed files
 tags:
   - gems
   - file
@@ -12,14 +12,14 @@ The Seed file type helps you standardize all new designs. This means that each n
 
 ## Parameters
 
-| Parameter | Tab        | Description                                                                                                          |
-| --------- | ---------- | -------------------------------------------------------------------------------------------------------------------- |
-| Data      | Data       | Data you provide in the Seed format.                                                                                 |
-| Schema    | Properties | Schema to apply on the data. You can define or edit the schema as a JSON or infer it with the `Infer Schema` button. |
+| Parameter | Tab        | Description                                                                                                           |
+| --------- | ---------- | --------------------------------------------------------------------------------------------------------------------- |
+| Data      | Data       | Data you provide in the Seed format.                                                                                  |
+| Schema    | Properties | Schema to apply on the data. you can define or edit the schema as a JSON, or infer it with the `Infer Schema` button. |
 
 ## Source
 
-The Source gem reads data from Seed files and allows you to optionally specify additional properties.
+The Source gem reads data from Seed files and allows you to optionally specify the following additional properties.
 
 ### Source properties
 
