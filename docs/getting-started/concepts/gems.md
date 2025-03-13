@@ -11,87 +11,37 @@ tags:
   - infer schema
 ---
 
-A gem is a reusable component or transformation step in a data pipeline that performs a certain operation on the data. Each gem has its own configuration and produces its own block of output code.
+Prophecy gems are reusable building blocks designed to accelerate the development of your Spark and SQL workflows. These building blocks let you ingest, transform, and store your data in a modular way. Each gem is visually configurable and produces its own block of code.
 
-## Gem categories
+## Why use gems?
 
-When you open a pipeline, you will find that gems are grouped by categories in the gem drawer. The available gems and categories will depend on your project language, project dependencies, and Prophecy version.
+Gems are the core components of a pipeline. The intuitive visual interface enables:
 
-## Gem instance
+- **Efficiency**: Reduce time spent writing repetitive code by leveraging prebuilt transformations.
+- **Consistency**: Enforce coding and data processing standards across your team.
+- **Scalability**: Let Prophecy optimize your Spark code and SQL queries for you so you can easily scale your pipelines.
 
-When you click on a gem from the gem drawer, an instance of that gem gets added to your pipeline canvas. Use the image and the table below to understand the UI of a gem.
+## Gem execution
 
-![Gem Instance](img/gems/instance.png)
+Gems run on the execution engine defined in your attached [fabric](docs/getting-started/concepts/fabrics.md). If you want to see the underlying code per gem, you can switch to the **Code** view of your project and open the gem file. This code is automatically compiled and optimized by Prophecy.
 
-| Callout | UI element        | Description                                                                                                 |
-| :-----: | ----------------- | ----------------------------------------------------------------------------------------------------------- |
-|    1    | Gem instance name | The name of this particular gem instance. It must be unique within a given pipeline.                        |
-|    2    | Gem type name     | The type of gem.                                                                                            |
-|    3    | Input ports       | One or more ports that accept connections from upstream gems.                                               |
-|    4    | Output ports      | One or more ports that connect to downstream gems.                                                          |
-|    5    | Gem phase         | The [phase](#gem-phase) for this gem instance, which defines the order in which gem instances are executed. |
-|    6    | Open              | The button that lets you open the gem configuration.                                                        |
-|    7    | Run button        | A button that runs the pipeline up to and including the gem.                                                |
-|    8    | Action menu       | A menu that includes options to change the phase of the gem, add run conditions, delete the gem, and more.  |
+## Gem functionality
 
-## Gem configuration
+Depending on your project type, you will see different kinds of gems. This makes sense, as gems are written in different languages (Python, Scala, or SQL) that ultimately need to match the language of your project. At a high level, gems let you:
 
-When you open a gem, you can configure how the gem will work.
+- **Ingest** data from various sources.
+- **Transform** data from its raw state
+- **Parse** data to restructure it.
+- **Clean** data that is inconsistent.
+- **Write** data to your desired output, whether it's a database, a warehouse, or another system.
 
-![Gem instance configuration](img/gems/instance_open.png)
+## What's next​
 
-|     | UI element         | Description                                                                                                                      |
-| :-: | ------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
-|  1  | Gem instance name  | The name of this particular gem instance.                                                                                        |
-|  2  | Inputs and outputs | The inputs and outputs for this gem instance.                                                                                    |
-|  3  | Gem configuration  | The configuration for this instance. Each gem will be different. See the documentation for individual gems for more information. |
-|  4  | Run button         | A button that runs the pipeline up to and including the gem.                                                                     |
-|  5  | Diagnostics        | A diagnostics window that will show a list of configuration errors if they exist.                                                |
-|  6  | Data               | A preview of the output table that is available if you run the gem.                                                              |
-|  7  | Unit tests         | A set of unit tests. See [here](/ci-cd/tests) for more details.                                                                  |
+To start using gems in your Spark or SQL pipelines:
 
-## Input ports
+- Explore available gems in your pipelines.
+- Add and connect various gems in your pipeline canvas.
+- Browse the [Package Hub](docs/extensibility/package-hub/package-hub.md) to find additional gems and components that you can use.
+- Take a peek at our [Gem Builder](docs/extensibility/extensibility.md) for an introduction to custom gems.
 
-The Input tab defines the incoming connections accepted by the gem. Most gem types only accept one connection, but some (such as [Join](/docs/Spark/gems/join-split/join.md)) allow for multiple inputs.
-
-![Input UI](img/gems/inputs.png)
-
-|     | UI element  | Description                                                                                                   |
-| :-: | ----------- | ------------------------------------------------------------------------------------------------------------- |
-|  1  | Search      | A field that will filter your input columns.                                                                  |
-|  2  | Add Input   | If the gem supports multiple inputs, you can click this button to add more input ports to this instance.      |
-|  3  | Input       | The name of the input port and the name of the input gem instance.                                            |
-|  4  | Port schema | The schema of the port (columns and column types). The schema will only appear when an input port is present. |
-|  5  | Edit ports  | A button that lets you edit or delete ports.                                                                  |
-
-## Output ports
-
-The Output tab defines the outgoing schemas that will be available to downstream gems. In some cases, the Prophecy compiler can't infer the output schema automatically, so you have the option to infer the schema using your connected fabric or specify it manually.
-
-|     | UI element         | Description                                                                                                     |
-| :-: | ------------------ | --------------------------------------------------------------------------------------------------------------- |
-|  1  | Output schema      | Output schema for this gem instance. This will be the schema of the data that downstream gem instances will use |
-|  2  | Custom schema      | Toggle this to enable custom output schema editing                                                              |
-|  3  | Infer from cluster | Run the gem code on the connected cluster and infer the schema from the result                                  |
-|  4  | Edit schema        | Edit the output schema manually                                                                                 |
-
-## Gem phase
-
-A gem's phase in a pipeline controls the order in which a gem will run. This is achieved by reordering the code generated for the pipeline:
-
-```scala
-def apply(spark: SparkSession): Unit = {
-  val df_my_orders     = my_orders(spark).cache()
-  val df_Repartition_1 = Repartition_1(spark, df_my_orders)
-  Write_CSV(spark, df_Repartition_1)
-  val df_SchemaTransform_1 = SchemaTransform_1(spark, df_my_orders)
-}
-```
-
-A gem with phase `0` will be put before a gem with phase `1`. The phase can be any integer (positive or negative).
-
-It's important to note that when you run downstream gems, **their upstream gems also must run**. Therefore, if a downstream gem is assigned phase `0` and an upstream gem is assigned phase `1`, the upstream gem will be grouped with phase `0`. Because of this, you might have to pay extra attention when assigning phases to intermediate gems.
-
-## What's next
-
-Prophecy provides specific Spark gems and SQL gems for your pipelines and models. Not only does Prophecy add new gems for your use, but you can also create gems yourself. To learn more, visit our documentation on [Spark gems](/Spark/gems) and [SQL gems](docs/analysts/development/gems/gems.md).
+For more information on available gems and how to configure them according to your specific use case, check out our documentation on [SQL gems](docs/analysts/development/gems/gems.md) and [Spark gems](/Spark/gems).

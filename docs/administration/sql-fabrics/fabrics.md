@@ -10,7 +10,7 @@ SQL [fabrics](docs/getting-started/concepts/fabrics.md) let Prophecy connect to 
 
 ## When to use SQL fabrics
 
-When working with SQL projects in Prophecy, you have the option to use either a [Prophecy fabric](/administration/prophecy-fabrics) or a SQL fabric. The choice depends on whether your project requires external data integration or is confined to computations within a SQL warehouse. Use the following table to determine which fabric you should use.
+When working with SQL projects in Prophecy, you have the option to use either a [Prophecy fabric](/administration/prophecy-fabrics) or a SQL fabric. The choice depends on whether your project requires external data integration or is confined to computations within a SQL warehouse. Use the following table to determine the appropriate fabric.
 
 | Feature                                            | Prophecy fabric | SQL fabric |
 | -------------------------------------------------- | --------------- | ---------- |
@@ -26,14 +26,3 @@ If you do not want to use Prophecy-managed orchestration, you can set up jobs on
 
 - [Airflow](docs/Orchestration/airflow/airflow.md) (Snowflake users).
 - [Databricks jobs](docs/Orchestration/databricks-jobs.md) (Databricks users).
-
-## What's next
-
-Click on a tile below to learn how to create a fabric for a certain provider.
-
-```mdx-code-block
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
-<DocCardList items={useCurrentSidebarCategory().items}/>
-```

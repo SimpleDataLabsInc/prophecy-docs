@@ -8,51 +8,56 @@ tags:
   - join
 ---
 
-Combine data from two or more tables based on a shared column value.
+Use the Join gem to combine data from two or more tables based on a shared column value. This helps you link related information, such as customer details and purchase history, or user activity logs and account records.
 
-Upon opening the Join gem, you can see a pop-up which provides several helpful features.
+## Input and Output
 
-![Join definition](img/JoinCondition.png)
+| Port    | Description                                             |
+| ------- | ------------------------------------------------------- |
+| **in0** | The first input table in the join.                      |
+| **in1** | The second input table in the join.                     |
+| **inN** | Optional: Additional input table for the join.          |
+| **out** | A single table that results from the join operation(s). |
 
-For transparency, you can always see the **(1) Input schema** on the left hand-side, **(2) Errors** in the footer, and have the ability to **(3) Run** the gem on the top right.
+To add additional input ports, click `+` next to **Ports**.
 
-To fill-in our **(5) Join condition** within the **(4) Conditions** section, start typing the input table name and key. For example, if we have two input tables, `nation` and `customer`, type `nation.nationkey = customers.nationkey`. This condition finds a nation based on the nationkey feild for every single customer.
+## Parameters
 
-When you’re writing your join conditions, you’ll see available functions and columns to speed up your development. When the autocomplete appears, press ↑, ↓ to navigate between the suggestions and press tab to accept the suggestion.
+To configure the Join gem, you need to define join conditions and select the columns that will appear in the output table.
 
-Select the **(6)Join Type** according to the provider, e.g. [Databricks](https://docs.databricks.com/en/sql/language-manual/sql-ref-syntax-qry-select-join.html) or [Snowflake.](https://docs.snowflake.com/en/user-guide/querying-joins)
+### Join conditions
 
-The **(7) Expressions** tab allows you to define the set of output columns that are going to be returned from the gem. Here we leave it empty, which by default passes through all the input columns, from both of the joined sources, without any modifications.
+You can add one or more join conditions to the gem depending on the number of input tables added.
 
-To rename our gem to describe its functionality, click on it’s **(8) Name** or try the **Auto-label** option. Gem names are going to be used as query names, which means that they should be concise and composed of alphanumeric characters with no spaces.
+| Parameters     | Description                                                                                                           |
+| -------------- | --------------------------------------------------------------------------------------------------------------------- |
+| Join type      | The different join types you can choose from. These may vary by SQL provider. Learn about different join types below. |
+| Join condition | The condition that matches rows between tables.                                                                       |
 
-Once done, press **(9) Save.**
-
-:::info
-To learn more about the Join gem UI, see [this page](/docs/getting-started/concepts/gems.md) which illustrates features common to all gems.
+:::info Custom Join
+If you want to use a type of join that is available in your SQL warehouse, you can type the name of that join directly in Prophecy.
 :::
 
-## Add a port
+### Expressions
 
-It's easy to add an extra source to a Join gem. Just connect and configure.
+| Parameters  | Description                                                                                                                                          |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Expressions | Defines the output columns that will be returned by the gem. If left empty, Prophecy passes through all the input columns without any modifications. |
 
-![JoinPort](img/JoinAddPort.png)
+### Example
 
-Once the source is **(1) connected**, click to **(2) edit** the ports.
+Assume you have two tables: _orders_ and _customers_. You want the orders table to include customer information, so you need to join the tables based on customer ID. You only want to preserve records in the output that have a match. To do so:
 
-Update the **(3) port name** from the default input `in2` to a more descriptive name such as the table name, in this case `NATIONS`.
+1. Connect **orders** to **in0** and **customers** to **in1**.
+1. Choose **Inner Join** as the join type.
+1. If using a visual expression, use the following join condition: **in0.CustomerID _equals_ in1.customer_id**
+1. If using the code expression, use the following SQL join condition: **in0.CustomerID = in1.customer_id**
+1. Leave the **Expressions** tile empty.
+1. Save and run the gem.
 
-Fill in the **(4) Join condition** for the new table and specify the **(5) Join type**.
+## Join types
 
-Click **(6) Save**.
-
-## Run
-
-When your Join gem has the desired inputs, conditions and expressions, **(7) run** interactively to view **(8)[sample data](docs/analysts/development/data-explorer.md).**
-
-## Types of Join
-
-Suppose there are two tables Employees and Departments with the following contents:
+Suppose there are two tables, _Employees_ and _Departments_, with the following contents:
 
 ### Employees
 

@@ -24,3 +24,7 @@ If any gem requires a authentication field like **username** or **password**, yo
 :::info
 If you use plain text for username and password fields, you will see a warning diagnostic in your gem.
 :::
+
+### Pipeline configurations
+
+If you want to populate secrets dynamically in your pipeline, you can set up secrets in [pipeline configurations](docs/Spark/pipelines/secrets-configs.md).

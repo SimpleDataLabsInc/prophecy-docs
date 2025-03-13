@@ -26,11 +26,13 @@ Certain fabrics will be compatible with certain project types. Review the table 
 | [SQL](/administration/sql-fabrics/Fabrics)     | Computation using Spark SQL engines or SQL warehouses  | Run models in SQL projects                                  |
 | [Airflow](/Orchestration/airflow/)             | Computation using Airflow-compatible engines           | Run Airflow jobs                                            |
 
-## Share fabrics
+## Fabric team
 
 When you create a fabric, you assign it to a [team](docs/administration/teams-users/teamuser.md). The fabric then becomes available to all users in the team.
 
+:::info
 Even though teams share fabrics, users will be prompted to add their individual credentials to be able to use the fabric in their projects.
+:::
 
 ## Use case
 
@@ -44,16 +46,14 @@ In this example, all users in the Marketing_DSS Team will have access to the `de
 
 ## Components
 
-Fabrics include everything required to run a data pipeline. As an example, the following table describes the components of a Spark Databricks fabric.
+Fabrics include everything required to run a data pipeline. Because different execution environments are built differently, each fabric will require a unique configuration. You can find these requirements in the [administration](docs/administration/index.md) section of the documentation. Usually a team admin will create and configure fabrics for their team.
 
-| Component              | Description                                                                                                                                                                                                                               |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Connection Credentials | Includes details like _Workspace URL_ and _Access Token_ for Databricks.                                                                                                                                                                  |
-| Cluster Configuration  | Defines settings such as _Databricks Runtime Version_, _Machine Type_, and _Idle Timeout_.                                                                                                                                                |
-| Job Sizes              | Lets you define reusable cluster sizes (e.g., an XL cluster with 10 i3.xlarge servers, 40 CPUs, and 70GB memory).                                                                                                                         |
-| Scheduler              | Executes Spark data pipelines on a defined schedule, such as weekdays at 9:00 AM. Databricks provides a default scheduler, and an Airflow Scheduler is available for enterprise users.                                                    |
-| Database Connections   | Supports connections to databases (MySQL, Postgres) and data warehouses (Snowflake) via JDBC or other protocols. Credentials are securely stored on the fabric for reuse.                                                                 |
-| Credentials & Secrets  | Securely stores credentials in Databricks using Personal Access Tokens (PAT) or [Databricks OAuth](/docs/administration/authentication/databricks-oauth.md). Secrets are stored as key-value pairs, accessible only to running workflows. |
+Fabrics generally include:
+
+- **Credentials**. Prophecy securely encrypts your credentials and uses them to connect to your external environments.
+- **Cluster configuration**. This will determine the computation resources allocated to you.
+- **Connections**. To connect to multiple data providers for use in your pipelines, you can add additional connections to your fabric.
+- **Secrets**. Fabrics can store secrets from different secret providers such as HashiCorp Vault.
 
 ## Fabric metadata
 

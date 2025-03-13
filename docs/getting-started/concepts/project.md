@@ -10,104 +10,73 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-A **project** in Prophecy is the core unit for developing, organizing, and deploying data workflows to production. It encompasses all the components needed for building and running data processes.
+A **project** in Prophecy is the core unit for developing, organizing, and deploying data workflows to production. It encompasses all the components needed for building and running data processes. Each project is automatically compiled into code and is hosted on Git in the backend.
 
-## Project types
+## Project components
 
-A project must be written in PySpark, Scala, or SQL. This language choice determines how your visual pipelines will be compiled into code. You initial choice of **project type** fundamentally determines your project's capabilities and workflow structure, so it's important to choose correctly at the start since it cannot be changed later.
+Project components depend on your project type. A project must be written in Python, Scala, or SQL. This language choice determines how your visual pipelines will be compiled into code. You initial choice of **project type** fundamentally determines your project's capabilities and workflow structure, so it's important to choose correctly at the start since it cannot be changed later.
 
-The following table can help you understand the difference between the project types.
+<Tabs>
 
-| Project type | Execution     | Components                                                                                                                                                                                                         |
-| ------------ | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| PySpark      | Spark         | [Pipelines](docs/Spark/pipelines/pipelines.md), [Datasets](docs/Spark/dataset.md), and [Jobs](docs/Orchestration/Orchestration.md)                                                                                 |
-| Scala        | Spark         | [Pipelines](docs/Spark/pipelines/pipelines.md), [Datasets](docs/Spark/dataset.md), and [Jobs](docs/Orchestration/Orchestration.md)                                                                                 |
-| SQL          | SQL Warehouse | [Pipelines](docs/analysts/development/pipelines.md), [Tables](docs/analysts/development/gems/source-target/source-target.md), [Models](docs/data-modeling/models.md), and [Schedules](docs/analysts/scheduling.md) |
+<TabItem value="Spark" label="Python and Scala (Spark)">
+
+| Component                                      | Description                                                   |
+| ---------------------------------------------- | ------------------------------------------------------------- |
+| [Pipelines](docs/Spark/pipelines/pipelines.md) | Sequence of steps that run on Spark-native code               |
+| [Datasets](docs/Spark/dataset.md)              | Pointer to data in your data provider                         |
+| [Jobs](docs/Orchestration/Orchestration.md)    | Schedule for pipeline execution                               |
+| [Gems](docs/Spark/gems/gems.md)                | Representation of each data transformation step in a pipeline |
+
+</TabItem>
+<TabItem value="SQL" label="SQL">
+
+| Component                                                               | Description                                                                              |
+| ----------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| [Pipelines](docs/analysts/development/pipelines/pipelines.md)           | Sequence of steps that run on Prophecy runtime and SQL warehouse                         |
+| [Models](docs/data-modeling/models.md)                                  | SQL transformations that define a single table or view                                   |
+| [Gems](docs/analysts/development/gems/gems.md)                          | Representation of each data transformation step in a pipeline or model                   |
+| [Tables](docs/analysts/development/gems/source-target/source-target.md) | SQL table, view, or seed                                                                 |
+| Functions                                                               | SQL macro that can be invoked using a Macro gem                                          |
+| [Tests](docs/analysts/development/data-tests/data-tests.md)             | Validate data automatically by testing for referential integrity, data consistency, etc. |
+| [Schedules](docs/analysts/scheduling.md)                                | Schedule for pipeline execution                                                          |
+
+</TabItem>
+</Tabs>
 
 ## Project team
 
-Projects are always assigned a certain [team](docs/administration/teams-users/teamuser.md). This means that the project will be shared among all users in that team.
+Projects are always assigned to a certain [team](docs/administration/teams-users/teamuser.md). This means that the project will be shared among all users in that team.
 
 :::note
 When you begin using Prophecy, you are added to your own one-person team. Your team administrator will typically create other team groupings.
 :::
 
-## Project entities
+## Project metadata
 
-As you work on a project, you might want to create various entities to use throughout a pipeline.
+The **Metadata** page in Prophecy provides a searchable directory of projects and project components including pipelines, models, and jobs. All projects that are shared with your teams are visible in the **Projects** tab of the Metadata page. You can click into each project to access more granular metadata about that project.
 
-<Tabs>
+You can view and edit the following metadata for you projects:
 
-<TabItem value="Spark" label="Spark">
-
-| Entity   | Description                                                   |
-| -------- | ------------------------------------------------------------- |
-| Pipeline | Sequence of steps that run on Spark-native code               |
-| Dataset  | Pointer to data in your data provider                         |
-| Job      | Schedule for pipeline execution                               |
-| Gem      | Representation of each data transformation step in a pipeline |
-
-</TabItem>
-<TabItem value="SQL" label="SQL">
-
-| Entity   | Description                                                                              |
-| -------- | ---------------------------------------------------------------------------------------- |
-| Pipeline | Sequence of steps that run on Prophecy runtime and SQL                                   |
-| Model    | SQL transformations that define a single table or view                                   |
-| Gem      | Representation of each data transformation step in a pipeline or model                   |
-| Table    | SQL table, view, or seed                                                                 |
-| Function | SQL macro that can be invoked using a Macro gem                                          |
-| Test     | Validate data automatically by testing for referential integrity, data consistency, etc. |
-
-</TabItem>
-</Tabs>
+- **About**: An overview of your project and space for an in-depth description of the project.
+- **Content**: A list of entities within the project like pipelines and jobs depending on your project type.
+- **Dependencies**: The dependencies that exist in the project, including packages and Prophecy libraries.
+- **Version control**: Either the Git workflow of the project, or the version history of the project, depending on your project type.
+- **Deployments**: A list of project versions that you have released and/or deployed (published).
+- **Access**: The teams that can view your project via the Package Hub.
+- **Settings**: Different configuration options for building and deploying your project.
 
 ## Project editor
 
-Once you have created a project, you should get familiar with the project editor interface. The following table describes different areas of the project editor.
+To begin pipeline development, open your project from the **IDE** tab in the sidebar. This opens the **project editor**, where you can configure transformation gems and interactively run pipelines. To learn more about pipeline development, visit [SQL pipeline development](docs/analysts/development/development.md) and [Spark pipeline development](docs/Spark/Spark.md).
 
-| Callout | Component       | Description                                                                                                                                                                                                       |
-| ------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1       | Project tab     | A list in the left sidebar that shows all of the project components. When in code view, this project tab shows the file directory with the code components.                                                       |
-| 2       | Environment tab | A list in the left sidebar that lets you browse different assets in your connected execution environment. For example, you can browse the Unity Catalog if you are attached to a Databricks fabric.               |
-| 3       | Search          | A search that lets you find different components like gems in your project and pipelines.                                                                                                                         |
-| 4       | Canvas          | The area in the center of the project where you build your pipelines visually.                                                                                                                                    |
-| 5       | Header          | A menu that includes various configurations such as project settings, dependency management, cluster attachment, scheduling, and more. It also provides a toggle to switch between the Visual view and Code view. |
-| 6       | Footer          | A menu that includes diagnostic information, execution metrics, execution code, and the Git workflow.                                                                                                             |
-
-See these components marked in the image below.
-
-![Project Editor](img/project-editor.png)
-
-## Project metadata
-
-The [Metadata](https://app.prophecy.io/metadata/entity/user) page in Prophecy provides a searchable directory of projects and project components including pipelines, models, and jobs. Here, you can also find the metadata for teams and [fabrics](/docs/getting-started/concepts/fabrics.md).
-
-![Project Metadata SQL](./img/project_metadata_2.png)
-
-All projects that are shared with you are visible in the **Projects** tab of the Metadata page. You can click into each project to access more granular metadata about that project. If you want to change the name of your project, you must do so in the project metadata (not the Project Editor).
-
-![Project Metadata Python](./img/project_metadata_4.png)
-
-The following table describes the information that you can find in each tab of an individual project's metadata.
-
-| Tab                    | Description                                                                                                                                                                        |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| About                  | Provides an overview of your project and space for an in-depth description of the project.                                                                                         |
-| Content                | Lets you search for entities within the project like pipelines and jobs depending on your project type.                                                                            |
-| Dependencies           | Displays the [dependencies](docs/extensibility/dependencies/spark-dependencies.md) that exist in the project, including [packages](docs/extensibility/package-hub/package-hub.md). |
-| Commits                | Shows the current Git state of the project and provides the option for you to commit, merge, and release changes.                                                                  |
-| Releases & Deployments | Includes the history of [released projects and deployed jobs](docs/ci-cd/deployment/deployment.md).                                                                                |
-| Code                   | Links to the external Git if present.                                                                                                                                              |
-| Access                 | Lets you invite teams to use your project via the [Package Hub](docs/extensibility/package-hub/package-hub.md).                                                                    |
-| Settings               | Provides different configuration options for building, changing, and deploying your project.                                                                                       |
-
-## Project versioning
-
-Projects can use either simple versioning or advanced Git versioning. Either way, the automatically compiled project code is hosted on Git in the backend.
-
-You can either choose to host your project on a Prophecy-managed repository, or you can connect your own external repository (like GitHub). This lets users and teams collaborate on projects, contribute simultaneously, and reuse code.
+:::info
+If you want to change the name of your project, you must do so in the project metadata (not the project editor).
+:::
 
 ## What's next
 
-To learn about the project lifecycle, visit [Develop and deploy a project](docs/ci-cd/deployment/deploy-project.md).
+To continue learning about projects:
+
+- Create multiple projects and compare different project types.
+- Follow one of our [tutorials](docs/getting-started/tutorials/tutorials.md) to build a project from end-to-end.
+- Play with different project components to understand how they interact.

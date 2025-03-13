@@ -89,11 +89,19 @@ const sidebars = {
       label: "Pipeline development",
       link: { type: "doc", id: "analysts/development/development" },
       items: [
-        "analysts/development/pipelines",
-        "analysts/development/connections",
+        {
+          type: "category",
+          label: "Pipelines",
+          link: { type: "doc", id: "analysts/development/pipelines/pipelines" },
+          items: [
+            "analysts/development/pipelines/execution",
+            "analysts/development/pipelines/pipeline-params",
+          ],
+        },
         {
           type: "category",
           label: "Gems",
+          link: { type: "doc", id: "analysts/development/gems/gems" },
           items: [
             {
               type: "category",
@@ -152,7 +160,7 @@ const sidebars = {
               items: [
                 "analysts/development/gems/join-split/join",
                 "analysts/development/gems/join-split/fuzzy-match",
-                "analysts/development/gems/join-split/set-operation",
+                "analysts/development/gems/join-split/union",
                 "analysts/development/gems/join-split/dynamic-replace",
               ],
             },
@@ -198,25 +206,8 @@ const sidebars = {
             },
           ],
         },
-        {
-          type: "category",
-          label: "Execution",
-          link: { type: "doc", id: "analysts/development/execution/execution" },
-          items: [],
-        },
+        "analysts/development/connections",
         "analysts/development/data-explorer",
-        {
-          type: "category",
-          label: "Data tests",
-          link: {
-            type: "doc",
-            id: "analysts/development/data-tests/data-tests",
-          },
-          items: [
-            "analysts/development/data-tests/use-model-tests",
-            "analysts/development/data-tests/use-project-tests",
-          ],
-        },
         {
           type: "category",
           label: "Versioning",
@@ -234,6 +225,18 @@ const sidebars = {
             id: "analysts/development/collaboration/collaboration",
           },
           items: ["analysts/development/collaboration/canvas-annotations"],
+        },
+        {
+          type: "category",
+          label: "Data tests",
+          link: {
+            type: "doc",
+            id: "analysts/development/data-tests/data-tests",
+          },
+          items: [
+            "analysts/development/data-tests/use-model-tests",
+            "analysts/development/data-tests/use-project-tests",
+          ],
         },
       ],
     },
@@ -695,7 +698,17 @@ const sidebars = {
             type: "doc",
             id: "administration/prophecy-fabrics/prophecy-fabrics",
           },
-          items: ["administration/prophecy-fabrics/connections"],
+          items: [
+            {
+              type: "category",
+              label: "Connections",
+              link: {
+                type: "doc",
+                id: "administration/prophecy-fabrics/connections/connections",
+              },
+              items: [],
+            },
+          ],
         },
         {
           type: "category",

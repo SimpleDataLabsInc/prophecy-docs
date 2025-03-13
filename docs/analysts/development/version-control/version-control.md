@@ -38,6 +38,10 @@ Each time you publish a project, you create a **new deployed project version**. 
 You can publish different versions of a project to different fabrics if you wish. This might be useful if you want `Version 1` published on a development fabric and `Version 2` published on a production fabric. (You cannot publish two different versions to the same fabric.)
 :::
 
+### Request to publish
+
+Prophecy lets multiple users work on the same project simultaneously. If you try to publish the project while multiple people are working on it, you can **request to publish** the project. This way, all collaborators can approve the action.
+
 ## Show version history
 
 The version history in Prophecy tracks different versions of your project that you save and publish. From here, you can view modifications in each version and, if you want, revert to previous versions. You can also view the version history within the [project metadata](getting-started/concepts/project#project-metadata).

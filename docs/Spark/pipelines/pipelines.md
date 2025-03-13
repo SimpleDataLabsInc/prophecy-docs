@@ -25,11 +25,26 @@ The following table describes the parameters for pipeline creation.
 | Mode        | Whether the pipeline will be Batch mode or Streaming.                                                                                             |
 | Description | A field to describe the purpose of the pipeline.                                                                                                  |
 
-## Canvas
+## Project editor
 
-When you develop a pipeline, you do so from the [Project Editor](/getting-started/concepts/project/#project-editor). More specifically, you work inside the **Pipeline canvas**.
+When building your pipelines, it helps to be familiar with the project editor interface. The following table describes different areas of the project editor.
 
-The pipeline canvas includes:
+| Callout | Component       | Description                                                                                                                                                                                                       |
+| ------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1       | Project tab     | A list in the left sidebar that shows all of the project components. When in code view, this project tab shows the file directory with the code components.                                                       |
+| 2       | Environment tab | A list in the left sidebar that lets you browse different assets in your connected execution environment. For example, you can browse the Unity Catalog if you are attached to a Databricks fabric.               |
+| 3       | Search          | A search that lets you find different components like gems in your project and pipelines.                                                                                                                         |
+| 4       | Canvas          | The area in the center of the project where you build your pipelines visually.                                                                                                                                    |
+| 5       | Header          | A menu that includes various configurations such as project settings, dependency management, cluster attachment, scheduling, and more. It also provides a toggle to switch between the Visual view and Code view. |
+| 6       | Footer          | A menu that includes diagnostic information, execution metrics, execution code, and the Git workflow.                                                                                                             |
+
+See these components marked in the image below.
+
+![Project Editor](img/project-editor.png)
+
+### Canvas
+
+Let's take a closer look at the pipeline canvas. The canvas includes:
 
 - **Canvas**: space to add and connect gems.
 - **Gem drawer**: toolbox that contains all available gems.

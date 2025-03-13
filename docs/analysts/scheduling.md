@@ -9,7 +9,7 @@ Prophecy lets you schedule and automate your data pipeline runs. Once you have d
 
 ## Schedule pipeline
 
-If you want to schedule pipeline runs, click **Schedule** in your project canvas. A schedule requires the following parameters:
+If you want to schedule pipeline runs, expand the options menu in the header and click **Schedule**. A schedule requires the following parameters:
 
 | Parameter              | Description                                                                       |
 | ---------------------- | --------------------------------------------------------------------------------- |
@@ -20,6 +20,6 @@ If you want to schedule pipeline runs, click **Schedule** in your project canvas
 
 Once the schedule is created, you'll be able to view the frequency at the top right corner of the pipeline canvas.
 
-## Publish project
+## Enable a schedule
 
-Your schedule will not be enabled until you publish your project.
+Your schedule will not be enabled until you [publish](docs/analysts/development/version-control/version-control.md) your project.

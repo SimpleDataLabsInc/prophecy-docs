@@ -21,4 +21,4 @@ All projects that utilize the **Prophecy for Analysts** [project creation templa
 
 When you create a project that uses [Advanced Git](docs/ci-cd/git/git.md) mode, you will use Git for collaboration instead.
 
-For example, you cannot make edits directly on the main branch of the project. Instead, each team member creates their own development branch to work on new features or fixes independently without affecting others' work. The best practice is to give branches representative names so colleagues can quickly identify which changes are on which branch. Prophecy does not explicitly limit the number of collaborators on a pipeline in this case.
+For example, you cannot make edits directly on the main branch of the project. Instead, each team member creates their own local development branch to work on new features or fixes independently without affecting others' work. The best practice is to give branches representative names so colleagues can quickly identify which changes are on which branch.

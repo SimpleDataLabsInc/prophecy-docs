@@ -8,7 +8,7 @@ tags:
   - custom
 ---
 
-The Macro gem lets you use a macro that you have defined in your SQL project. Macros are defined as a [function](docs/getting-started/concepts/project.md#project-entities) using the Jinja templating language.
+The Macro gem lets you use a macro that you have defined in your SQL project. Macros are defined as a function using the Jinja templating language.
 
 ## Parameters
 

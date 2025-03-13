@@ -1,14 +1,14 @@
 ---
 title: SQL Gems
-id: sql-gems
-description: Gems are data seeds, sources, transformations, and targets
+id: gems
+description: Power your pipelines with SQL gems
 tags:
   - gems
   - sql
   - analyst
 ---
 
-<div class="fixed-table">
+## Categories
 
 | Category          | Description                                                |
 | ----------------- | ---------------------------------------------------------- |
@@ -21,4 +21,8 @@ tags:
 | **Subgraph**      | Group gems into reusable components.                       |
 | **Custom**        | Enhance and extend Prophecy’s functionality.               |
 
-</div>
+## Interactive examples
+
+To test a gem hands-on, you can try the **interactive example** of the gem. If you search for a gem in the project sidebar, you can open the associated **example** and run the pre-configured pipeline!
+
+## Gem menu

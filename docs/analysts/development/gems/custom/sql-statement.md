@@ -13,8 +13,8 @@ Use a custom SQL statement in your pipeline.
 ### Parameters
 
 | Parameter | Meaning                       |
-| :-------- | :---------------------------- |
-| Out       | SQL Query for each output tab |
+| --------- | ----------------------------- |
+| Out       | SQL query for each output tab |
 
 ### Example
 

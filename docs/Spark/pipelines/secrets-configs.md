@@ -1,5 +1,6 @@
 ---
 title: Secrets in pipeline configurations
+sidebar_label: Secrets in configurations
 id: secrets-configs
 description: Store secrets in pipeline config
 tags:
