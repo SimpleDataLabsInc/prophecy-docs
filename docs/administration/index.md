@@ -13,7 +13,7 @@ This documentation is designed to help administrators effectively manage users, 
 
 Team admins manage teams and create resources for their teams.
 
-For more information about teams, visit [Teams and users](docs/administration/teamuser.md).
+For more information about teams, visit [Teams and users](docs/administration/teams-users/teamuser.md).
 
 ### Prophecy cluster admins
 

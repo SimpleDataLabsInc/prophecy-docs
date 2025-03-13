@@ -2,14 +2,13 @@
 title: Databricks SQL
 id: databricks
 description: Run models on a Databricks SQL warehouse
-sidebar_position: 1
 tags:
   - databricks
   - sql
   - fabric
 ---
 
-To use your Databricks SQL warehouse for execution in Prophecy, you need to create a SQL [fabric](docs/concepts/fabrics/fabrics.md) with a Databricks connection.
+To use your Databricks SQL warehouse for execution in Prophecy, you need to create a SQL [fabric](docs/getting-started/concepts/fabrics.md) with a Databricks connection.
 
 ## Create a fabric
 
@@ -56,4 +55,4 @@ If you want to crawl your warehouse metadata on a regular basis, you can set a c
 
 ## What's next
 
-Attach a fabric to your SQL project and begin [data modeling](docs/SQL/sql.md)!
+Attach a fabric to your SQL project and begin [data modeling](docs/data-modeling/data-modeling.md)!

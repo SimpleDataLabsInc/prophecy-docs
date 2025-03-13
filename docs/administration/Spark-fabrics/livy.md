@@ -1,7 +1,7 @@
 ---
 title: "Livy"
 id: livy
-description: Configuring Livy fabrics
+description: Configure a Livy fabric
 sidebar_position: 4
 tags:
   - fabric
@@ -62,7 +62,7 @@ You can provide advanced options like Yarn queue, extra jars, and Spark configs 
 
 ## Connections and secrets
 
-Connections are not supported for Livy fabrics. However, you can still add secrets to your fabric. Team admins can learn how to set up and use secrets [here](/docs/administration/secret-management/secret-management.md).
+Connections are not supported for Livy fabrics. However, you can still add secrets to your fabric. Team admins can learn how to set up and use secrets [here](docs/administration/secrets/secret-providers.md).
 
 ## What's next
 

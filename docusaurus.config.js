@@ -318,12 +318,20 @@ const config = {
             from: "/tutorials/videos/",
           },
           {
-            to: "/concepts/project/gems/",
+            to: "/getting-started/concepts/gems",
             from: "/concepts/gems/",
           },
           {
-            to: "/concepts/project/dataset",
+            to: "/Spark/dataset",
             from: "/concepts/dataset",
+          },
+          {
+            to: "/getting-started/concepts/gems",
+            from: "/concepts/project/gems/",
+          },
+          {
+            to: "/Spark/dataset",
+            from: "/concepts/project/dataset",
           },
           {
             to: "/administration/",
@@ -334,39 +342,39 @@ const config = {
             from: "/administration/feature-matrix",
           },
           {
-            to: "/Orchestration/airflow/airflow-tutorial",
+            to: "/Orchestration/airflow/airflow-tutorial-spark",
             from: "/getting-started/airflow",
           },
           {
-            to: "/administration/metadata-connections",
+            to: "/administration/",
             from: "/metadata/metadata-connections",
           },
           {
-            to: "/administration/metadata-connections",
+            to: "/administration/",
             from: "/concepts/metadata",
           },
           {
-            to: "/concepts/git",
+            to: "/ci-cd/git",
             from: "/metadata/git",
           },
           {
-            to: "/concepts/git",
+            to: "/ci-cd/git",
             from: "/metadata/git/git-commit",
           },
           {
-            to: "/concepts/git",
+            to: "/ci-cd/git",
             from: "/metadata/git/git-merge",
           },
           {
-            to: "/concepts/git/pr-templates",
+            to: "/ci-cd/git/pr-templates",
             from: "/metadata/pr-templates",
           },
           {
-            to: "/concepts/git",
+            to: "/ci-cd/git",
             from: "/metadata/git/git-fork",
           },
           {
-            to: "/concepts/git/git-resolve",
+            to: "/ci-cd/git/git-resolve",
             from: "/metadata/git/git-resolve",
           },
           {
@@ -382,11 +390,11 @@ const config = {
             from: "/settings/audit-logging",
           },
           {
-            to: "/administration/teamuser",
+            to: "/administration/teams-users/teams-users",
             from: "/concepts/teamuser",
           },
           {
-            to: "/administration/teamuser",
+            to: "/administration/teams-users/teams-users",
             from: "/administration/settings/teamuser",
           },
           {
@@ -474,7 +482,7 @@ const config = {
             from: "/Spark/business-rules-engine/",
           },
           {
-            to: "/SQL/",
+            to: "/data-modeling/",
             from: "/SQL/development/",
           },
           {
@@ -482,15 +490,15 @@ const config = {
             from: "/package-hub/package-builder/",
           },
           {
-            to: "/SQL/visual-expression-builder/variant-schema",
+            to: "/analysts/development/gems/visual-expression-builder/variant-schema",
             from: "/SQL/development/visual-editor/variant-schema",
           },
           {
-            to: "/SQL/",
+            to: "/data-modeling/",
             from: "/SQL/development/visual-editor/",
           },
           {
-            to: "/SQL/",
+            to: "/data-modeling/",
             from: "/SQL/development/code-editor",
           },
           {
@@ -514,7 +522,7 @@ const config = {
             from: "/getting-started/sql-with-snowflake",
           },
           {
-            to: "/getting-started/tutorials/sql-with-databricks",
+            to: "/getting-started/tutorials/sql-with-snowflake",
             from: "/getting-started/sql-with-databricks",
           },
           {
@@ -575,18 +583,20 @@ const config = {
               ),
             ];
           }
-          if (existingPath.includes("/SQL/gems/target-models/")) {
+          if (existingPath.includes("/data-modeling/gems/target-models/")) {
             return [
               existingPath.replace(
-                "/SQL/gems/target-models/",
+                "/data-modeling/gems/target-models/",
                 "/SQL/development/target-models/",
               ),
             ];
           }
-          if (existingPath.includes("/SQL/visual-expression-builder")) {
+          if (
+            existingPath.includes("/data-modeling/visual-expression-builder")
+          ) {
             return [
               existingPath.replace(
-                "/SQL/visual-expression-builder",
+                "/data-modeling/visual-expression-builder",
                 "/SQL/development/visual-editor/visual-expression-builder",
               ),
             ];
@@ -607,10 +617,10 @@ const config = {
               ),
             ];
           }
-          if (existingPath.includes("/administration/secret-management")) {
+          if (existingPath.includes("/administration/secrets")) {
             return [
               existingPath.replace(
-                "/administration/secret-management",
+                "/administration/secrets",
                 "/Spark/secret-management",
               ),
             ];
@@ -677,8 +687,11 @@ const config = {
           if (existingPath.includes("/Orchestration")) {
             return [existingPath.replace("/Orchestration", "/low-code-jobs")];
           }
-          if (existingPath.includes("/SQL")) {
-            return [existingPath.replace("/SQL", "/low-code-sql")];
+          if (existingPath.includes("/data-modeling")) {
+            return [existingPath.replace("/data-modeling", "/low-code-sql")];
+          }
+          if (existingPath.includes("/data-modeling")) {
+            return [existingPath.replace("/data-modeling", "/SQL")];
           }
           if (existingPath.includes("/Spark")) {
             return [existingPath.replace("/Spark", "/low-code-spark")];

@@ -1,7 +1,6 @@
 ---
 title: Snowflake SQL
 id: snowflake
-sidebar_position: 2
 description: Run models on a Snowflake warehouse
 tags:
   - snowflake
@@ -9,7 +8,7 @@ tags:
   - fabric
 ---
 
-To use your Snowflake warehouse for execution in Prophecy, you need to create a SQL [fabric](docs/concepts/fabrics/fabrics.md) with a Snowflake connection.
+To use your Snowflake warehouse for execution in Prophecy, you need to create a SQL [fabric](docs/getting-started/concepts/fabrics.md) with a Snowflake connection.
 
 ## Create a fabric
 
@@ -49,8 +48,8 @@ The SQL provider is both the storage warehouse and the execution environment whe
 
 ## Schedule jobs
 
-SQL models can be scheduled using Airflow to run on Snowflake. Create an [Airflow fabric](/docs/Orchestration/airflow/setup/setup.md), and set up a Snowflake Connection that references the Snowflake fabric created above. Prophecy supports Snowflake Connections from these three Airflow flavors: [Composer](docs/Orchestration/airflow/setup/composer.md), [MWAA](docs/Orchestration/airflow/setup/mwaa.md), and [Prophecy Managed Airflow](docs/Orchestration/airflow/prophecy-managed/prophecy-managed.md).
+SQL models can be scheduled using Airflow to run on Snowflake. Create an [Airflow fabric](docs/administration/airflow-fabrics/airflow-fabrics.md), and set up a Snowflake connection that references the Snowflake fabric created above.
 
 ## What's next
 
-Attach a fabric to your SQL project and begin [data modeling](docs/SQL/sql.md)!
+Attach a fabric to your SQL project and begin [data modeling](docs/data-modeling/data-modeling.md)!

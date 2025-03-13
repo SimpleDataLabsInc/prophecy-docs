@@ -1,0 +1,32 @@
+---
+title: Pipeline execution
+id: execution
+description: Run a set of defined operations in a pipeline
+tags: []
+---
+
+To run a SQL project pipeline, you need to define **where** it will be executed (computed) via a [Prophecy fabric](/administration/prophecy-fabrics/), which encompasses:
+
+- **Prophecy runtime**: Handles the flow of data in and out of the pipeline.
+- **SQL warehouse**: Executes the data transformations.
+
+## Interactive execution
+
+Interactive execution in Prophecy allows you to run your pipeline in the pipeline canvas and preview data transformations at every step. This helps you understand and validate your data transformations during development.
+
+When you run your pipeline interactively, **data samples** are generated to let you view the outputs of your gems. You can produce this data sample in two ways:
+
+- Run the entire pipeline using the **play** button on the pipeline canvas.
+- Execute the pipeline up to and including a particular gem using the **play** button on that gem.
+
+When you click on a data sample, you load the data and open the [Data Explorer](docs/analysts/development/data-explorer.md). The Data Explorer lets you sort, filter, and search through the gem output.
+
+## Scheduled execution
+
+When you schedule pipelines to be run, you need to define the fabric that will be used for pipeline execution.
+
+## External sources
+
+When you read from and write to external sources, your pipeline runs steps behind the scenes to make the data compatible with SQL. Because SQL requires [tables](/analysts/development/gems/source-target/#tables) to perform transformations, the Prophecy runtime will automatically create temporary tables in your SQL warehouse throughout the pipeline when necessary. These tables allow SQL to process external data and transform it.
+
+**You will not see these tables appear in the canvas during pipeline runs, and the tables will be deleted from the SQL warehouse after the pipeline run completes.**

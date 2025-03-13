@@ -20,7 +20,7 @@ You must be a [team admin](docs/administration/index.md) to release and deploy a
 
 ## Overview
 
-What happens when you click **Release and Deploy** in the [Git workflow](docs/concepts/git/git.md) of your project?
+What happens when you click **Release and Deploy** in the [Git workflow](docs/ci-cd/git/git-workflow.md) of your project?
 
 ### Release
 

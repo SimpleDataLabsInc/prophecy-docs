@@ -27,6 +27,10 @@ Please refer to the video below for a step-by-step example.
 
 Here you will provide your Databricks Workspace URL and [Personal Access Token](https://docs.databricks.com/dev-tools/api/latest/authentication.html#generate-a-personal-access-token) (PAT). The PAT must have permission to attach clusters. If you'd like to create clusters or read/write data from Prophecy, then these permissions should be enabled for the PAT as well. Keep in mind each user will need to use their own PAT in the fabric. Prophecy respects the permissions scoped to each user.
 
+:::note
+When using **Active Directory**, Prophecy takes care of the auto-generation and refreshing of the Databricks personal access tokens. Read more about it [here](https://docs.microsoft.com/en-us/azure/databricks/dev-tools/api/latest/aad/).
+:::
+
 ### Cluster details
 
 Here you would need to provide the [Databricks Runtime version](https://docs.databricks.com/runtime/dbr.html#databricks-runtime), Executor and Drive Machine Types and Termination Timeout if any. These cluster details will be used when creating a cluster via Prophecy during Interactive development and for job clusters during Scheduled Databricks job runs.
@@ -46,10 +50,6 @@ In Json you can just copy-paste your compute Json from Databricks.
 ### Prophecy Library
 
 These are some Scala and Python libraries written by Prophecy to provide additional functionalities on top of Spark. These would get automatically installed in your Spark execution environment when you attach to a cluster/create new cluster. These libraries are also publicly available on Maven central and Pypi respectively.
-
-### Metadata connection
-
-Optionally, enhance your fabric by creating a [Metadata Connection](/docs/administration/metadata-connections.md), recommended for users with hundreds or thousands of tables housed in their data provider(s).
 
 ### Artifacts
 

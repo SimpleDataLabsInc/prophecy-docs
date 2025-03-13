@@ -40,7 +40,7 @@ These interims will come Just before Target gems, and if there is no Target gem,
 
 ### Selective Interims
 
-Enable the Selective [data sampling setting](docs/Spark/pipeline-settings.md#run-settings) to speed up interim generation and see [larger samples](/docs/Spark/execution/data-explorer.md#large-sample-interims) in the Data Explorer.
+Enable the Selective [data sampling setting](docs/Spark/pipelines/pipeline-settings.md#run-settings) to speed up interim generation and see [larger samples](docs/Spark/data-explorer/data-explorer.md#large-sample-interims) in the Data Explorer.
 
 ## Execution Metrics
 
