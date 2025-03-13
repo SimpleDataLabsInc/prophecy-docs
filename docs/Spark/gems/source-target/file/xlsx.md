@@ -53,13 +53,13 @@ The Source gem reads data from XLSX files and allows you to optionally specify t
 | NaN Value                                | Sets the string representation of a non-number value.                                                                                                                                                                                                                                    | `NaN`                              |
 | Negative Infinite value                  | Sets the string representation of a negative infinity value.                                                                                                                                                                                                                             | `-Inf`                             |
 | Null Value                               | Sets the string representation of a null value.                                                                                                                                                                                                                                          | None                               |
-| Parse Mode                               | How to handle corrupt data. For a list of the possible values, see [Supported parse modes](#supported-parse-modes).                                                                                                                                                                      | `Permissive`                       |
+| Parse Mode                               | How to handle corrupt data. <br/>For a list of the possible values, see [Supported parse modes](#supported-parse-modes).                                                                                                                                                                 | `Permissive`                       |
 | Positive Infinite value                  | Sets the string representation of a positive infinity value.                                                                                                                                                                                                                             | `Inf`                              |     |
 | Sampling Ratio                           | Defines a fraction of rows to use for schema inferring                                                                                                                                                                                                                                   | `1.0`                              |
 | Timestamp Format                         | Sets the string that indicates a timestamp format.                                                                                                                                                                                                                                       | `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]` |
 | Use Null for Error Cells                 | Whether to use null for cells with errors.                                                                                                                                                                                                                                               | false                              |
 | Workbook Password                        | Password to secure your workbook.                                                                                                                                                                                                                                                        | None                               |
-| Time Zone ID                             | Timezone ID for `Date`s/`Timestamp`s taken from the IANA Time Zone Database.<br /><br /> **Note:** For a list of valid values, see [Class ZoneId](https://docs.oracle.com/javase/8/docs/api/java/time/ZoneId.html).                                                                      | None                               |
+| Time Zone ID                             | Timezone ID for the `Date` and `Timestamp` from the IANA Time Zone Database.<br/>**Note:** For a list of valid values, see [Class ZoneId](https://docs.oracle.com/javase/8/docs/api/java/time/ZoneId.html).                                                                              | None                               |
 | Temporary file threshold                 | When the Source gem should start writing data to temporary files on disk instead of keeping it in memory.                                                                                                                                                                                | None                               |
 | Maximum rows in memory                   | Maximum amount of rows to have in memory.                                                                                                                                                                                                                                                | None                               |
 | Maximum byte array size                  | Maximum size of your array.                                                                                                                                                                                                                                                              | None                               |
@@ -102,7 +102,7 @@ The Target gem writes data to XLSX files and allows you to optionally specify th
 
 ## Writing a single output file
 
-When you work with text-based files in Spark, your output is a directory containing multiple partitioned files due to Spark's distributed nature.
+Due to Spark's distributed nature, when you work with text-based files, your output is a directory containing multiple partitioned files.
 
 For example, if you write to the following location: **dbfs:/FileStore/Users/test/customers.xlsx**, you see the following in the DBFS:
 
@@ -111,7 +111,7 @@ For example, if you write to the following location: **dbfs:/FileStore/Users/tes
 
 Each partition is a separate valid XLSX file with a segment of the overall output data.
 
-If you want to output only a single file:
+If you want the Target gem to output a single file:
 
 1. Add a Repartition gem in **Coalesce** mode with the **Partition Count** set to `1`.
 

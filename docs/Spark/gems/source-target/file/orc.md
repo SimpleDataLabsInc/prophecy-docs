@@ -8,7 +8,7 @@ tags:
   - orc
 ---
 
-The ORC (Optimized Row Columnar) fily type:
+The ORC (Optimized Row Columnar) file type:
 
 - Is a columnar file format designed for Spark and Hadoop workloads.
 - Offers high compression ratios, which helps reduce storage costs.
@@ -31,7 +31,7 @@ The Source gem reads data from ORC files and allows you to optionally specify th
 | Property name           | Description                                                                                                                                                                                                 | Default |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
 | Description             | Description of your dataset.                                                                                                                                                                                | None    |
-| Use user-defined schema | Schema to apply on the loaded data. You can define or edit the scema as JSON or inferred using the `Infer Schema` button.                                                                                   | None    |
+| Use user-defined schema | Whether to use the schema you define.                                                                                                                                                                       | false   |
 | Recursive File Lookup   | Whether to recursively load files and disable partition inferring. If the data source explicitly specifies the `partitionSpec` when the`recursiveFileLookup` is `true`, the Source gem throws an exception. | false   |
 
 ### Example {#source-example}
@@ -48,12 +48,12 @@ The Target gem writes data to ORC files and allows you to optionally specify the
 
 ### Target properties
 
-| Property name     | Description                                                                                                                           | Default |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------- | -------- |
-| Description       | Description of your dataset.                                                                                                          | None    |
-| Write Mode        | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                  | `error` |
-| Partition Columns | List of columns to partition the ORC files by.                                                                                        | None    |
-| Compression Codec | Compression codec when writing to the ORC file. <br/>The ORC file supports the following codecs: `none`, `snappy`, `zlib`, and `lzo`. | None    | `snappy` |
+| Property name     | Description                                                                                                                           | Default  |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| Description       | Description of your dataset.                                                                                                          | None     |
+| Write Mode        | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                  | `error`  |
+| Partition Columns | List of columns to partition the ORC files by.                                                                                        | None     |
+| Compression Codec | Compression codec when writing to the ORC file. <br/>The ORC file supports the following codecs: `none`, `snappy`, `zlib`, and `lzo`. | `snappy` |
 
 ### Supported write modes
 

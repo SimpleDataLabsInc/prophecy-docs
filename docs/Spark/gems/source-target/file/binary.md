@@ -47,7 +47,7 @@ The Target gem writes data to Binary files and allows you to optionally specify 
 | Write Mode        | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                                            | `error` |
 | Partition Columns | List of columns to partition the Binary file by.                                                                                                                | None    |
 | Compression Codec | Compression codec when writing to the Binary file. <br/>The Binary file supports the following codecs: `none`, `bzip2`, `gzip`, `lz4`, `snappy`, and `deflate`. | None    |
-| Line Separator    | Defines the line separator that the Target gem should use for parsing.                                                                                          | None    |
+| Line Separator    | Defines the line separator to use for parsing.                                                                                                                  | None    |
 
 ### Supported write modes
 

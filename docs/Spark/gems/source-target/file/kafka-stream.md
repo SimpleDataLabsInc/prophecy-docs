@@ -8,21 +8,21 @@ tags:
   - kafka
 ---
 
-[Apache Kafka](https://kafka.apache.org/) is:
+[Apache Kafka](https://kafka.apache.org/):
 
-- An open-source distributed event streaming platform.
+- Is an open-source distributed event streaming platform.
 - Handles high volumes of data and delivers messages with low latency.
 - Supports real-time analytics, stream processing, fault tolerance, scalability, data integration, and event-driven architectures.
 
 ## Parameters
 
-| Parameter                    | Tab      | Description                                                                       |
-| ---------------------------- | -------- | --------------------------------------------------------------------------------- |
-| Bootstrap Server/Broker List | Location | Comma separated list of Kafka brokers .                                           |
-| Security Protocol            | Location | Security protocol for Kafka. (Default value set to SASL_SSL.)                     |
-| SASL Mechanisms              | Location | Default SASL Mechanism for SASL_SSL. (Default value set to SCRAM-SHA-256.)        |
-| Credentials                  | Location | How to provide your credentials. (`Databricks Secrets` or `Username & Password`.) |
-| Kafka topic                  | Location | Comma separated list of Kafka topics.                                             |
+| Parameter                    | Tab      | Description                                                                                         |
+| ---------------------------- | -------- | --------------------------------------------------------------------------------------------------- |
+| Bootstrap Server/Broker List | Location | Comma separated list of Kafka brokers.                                                              |
+| Security Protocol            | Location | Security protocol for Kafka. (Default value is `SASL_SSL`.)                                         |
+| SASL Mechanisms              | Location | Default SASL Mechanism for `SASL_SSL`. (Default value is `SCRAM-SHA-256`.)                          |
+| Credentials                  | Location | How to provide your credentials. <br/>You can select: `Databricks Secrets` or `Username & Password` |
+| Kafka topic                  | Location | Comma separated list of Kafka topics.                                                               |
 
 ## Source
 
@@ -73,6 +73,10 @@ In this example, you read JSON messages from Kafka, parse them, remove any null 
 
 ![Example usage of Filter](./img/kafka_pipeline_eg.gif)
 
+:::tip
+To see the generated source code, toggle to the **< > Code** view at the top of the page.
+:::
+
 #### Metadata Table
 
 To avoid reprocessing messages on subsequent pipeline runs, update a table with the last processed offsets for each Kafka partition and topic. When you run the pipeline, the table only gets a batch of messages that arrived since the previously-processed offset.
@@ -94,8 +98,4 @@ Taking this approach provides you the with following benefits:
 
 :::note
 For production workflows the [phase](../../../../concepts/project/gems.md#gem-phase) for the `Script` gem that updates the offsets should be greater than the phase of the Target gem. This ensures that offsets only update in the table after Prophecy safely persists the data to the Target.
-:::
-
-:::tip
-To see the generated source code, toggle to the **< > Code** view at the top of the page.
 :::

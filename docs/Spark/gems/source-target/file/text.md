@@ -29,7 +29,7 @@ The Source gem reads data from Text files and allows you to optionally specify t
 | Property name           | Description                                                                                                                                                                                                 | Default                |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
 | Description             | Description of your dataset.                                                                                                                                                                                | None                   |
-| Enforce schema          | Whether to apply the schema on the loaded data. You can define or edit the scema as JSON or inferred using the `Infer Schema` button.                                                                       | true                   |
+| Enforce schema          | Whether to use the schema you define.                                                                                                                                                                       | true                   |
 | Read file as single row | Whether to read each file from input path as a single row.                                                                                                                                                  | false                  |
 | Line Separator          | Sets a separator for each field and value. The separator can be one or more characters.                                                                                                                     | `\r`, `\r\n`, and `\n` |
 | Recursive File Lookup   | Whether to recursively load files and disable partition inferring. If the data source explicitly specifies the `partitionSpec` when the`recursiveFileLookup` is `true`, the Source gem throws an exception. | false                  |
@@ -53,14 +53,13 @@ The Target gem writes data to Text files and allows you to optionally specify th
 
 ### Target properties
 
-| Property name                                                                                                   | Description                                                                                                                                                                               | Default |
-| --------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| Description                                                                                                     | Description of your dataset.                                                                                                                                                              | None    |
-| Write Mode                                                                                                      | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                                                                      | `error` |
-| Partition Columns                                                                                               | List of columns to partition the Text files by. <br/> The Text file type only supports a single column apart from the partition columns. If the `DataFrame` contains more than one column |
-| apart from parition columns as the input `DataFrame` to the Target gem, Prophecy throws an `AnalysisException`. | None                                                                                                                                                                                      |
-| Compression Codec                                                                                               | Compression codec when writing to the Text file. <br/>The Text file supports the following codecs: `none`, `bzip2`, `gzip`, `lz4`, `snappy` and `deflate`.                                | None    |
-| Line Separator                                                                                                  | Defines the line separator that the Target gem should use for parsing.                                                                                                                    | `\n`    |
+| Property name     | Description                                                                                                                                                                                                                                                                                         | Default |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| Description       | Description of your dataset.                                                                                                                                                                                                                                                                        | None    |
+| Write Mode        | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                                                                                                                                                                                | `error` |
+| Partition Columns | List of columns to partition the Text files by. <br/> The Text file type only supports a single column apart from the partition columns. If the `DataFrame` contains more than one column apart from parition columns as the input `DataFrame`, the Target gem throws an `AnalysisException` error. | None    |
+| Compression Codec | Compression codec when writing to the Text file. <br/>The Text file supports the following codecs: `none`, `bzip2`, `gzip`, `lz4`, `snappy` and `deflate`.                                                                                                                                          | None    |
+| Line Separator    | Defines the line separator to use for parsing.                                                                                                                                                                                                                                                      | `\n`    |
 
 ### Supported write modes
 
@@ -82,8 +81,4 @@ The Target gem writes data to Text files and allows you to optionally specify th
 
 :::tip
 To see the generated source code, toggle to the **< > Code** view at the top of the page.
-:::
-
-:::info
-To know more about tweaking Text file related properties in Spark config [**click here**](https://spark.apache.org/docs/latest/sql-data-sources-text.html).
 :::
