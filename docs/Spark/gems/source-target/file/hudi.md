@@ -35,13 +35,13 @@ The Target gem writes data to Hudi files and allows you to optionally specify th
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
 | Description                | Description of your dataset.                                                                                                                  | None            |
 | Table Name                 | Name of the table to read from.                                                                                                               | None            |
-| Write Table Type           | Type of table to write to. You can only select `COPY_ON_WRITE`.                                                                               | None            |
-| Write Operation            | Write operation you want to perform. You can select `insert` or `upsert`.                                                                     | None            |
-| Hoodie Clean Automatic     | Whether to reclaim space older versions of data occupy.                                                                                       | None            |
+| Write Table Type           | Type of table to write to. <br/>You can only select `COPY_ON_WRITE`.                                                                          | None            |
+| Write Operation            | Write operation you want to perform. <br/>You can select `insert` or `upsert`.                                                                | None            |
+| Hoodie Clean Automatic     | Whether to reclaim space older versions of data occupy.                                                                                       | false           |
 | Write Mode                 | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                          | `error`         |
 | Cleaner Policy             | How to automatically clean up temporary files and logs after Spark applications complete. <br/>You can only select `KEEP_LATEST_COMMIT`.      | None            |
 | Parquet Compression Codec  | Compression codec when writing to the Hudi file. <br/>The Hudi file only supports `snappy`.                                                   | None            |
-| Write Record Key           | Key to identify a record/row within each partition.                                                                                           | `uuid`          |
+| Write Record Key           | Key to identify a record and row within each partition.                                                                                       | `uuid`          |
 | Write Partition Path Field | Columns to use for partitioning the table.                                                                                                    | `partitionpath` |
 | Write Precombine Field     | When two records in the same batch have the same key value, the Taret gem chooses the record with the largest value from the field specified. | `ts`            |
 | Write Key Generator Class  | Which key generator to use.                                                                                                                   | `None`          |

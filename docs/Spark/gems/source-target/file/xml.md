@@ -26,19 +26,19 @@ The Source gem reads data from XML files and allows you to optionally specify th
 
 ### Source properties
 
-| Property name             | Description                                                                                                         | Default                            |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
-| Enforce Schema            | Whether to use the schema you define.                                                                               | true                               |
-| Row Tag                   | Row tag of your XML file to treat as a row.                                                                         | `_`                                |
-| Exclude Attributes        | Whether to exclude attributes in elements.                                                                          | false                              |
-| Null Value                | Sets the string representation of a null value.                                                                     | `null`                             |
-| Parser Mode               | How to handle corrupt data. For a list of the possible values, see [Supported parse modes](#supported-parse-modes). | `Permissive`                       |
-| Attribute Prefix          | Prefix for attributes to differentiate them from elements.                                                          | None                               |
-| Value Tag                 | Tag to use for the value when there are attributes in the element with no child.                                    | `_VALUE`                           |
-| Ignore Surrounding Spaces | Whether to skip surrounding whitespaces.                                                                            | false                              |
-| Ignore Namespace          | Whether to skip namespace prefixes on XML elements and attributes.                                                  | false                              |
-| Timestamp Format          | Sets the string that indicates a timestamp format.                                                                  | `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]` |
-| Date Format               | String that indicates a date format.                                                                                | `yyyy-MM-dd`                       |
+| Property name             | Description                                                                                                                | Default                            |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| Enforce Schema            | Whether to use the schema you define.                                                                                      | true                               |
+| Row Tag                   | Row tag of your XML file to treat as a row.                                                                                | `_`                                |
+| Exclude Attributes        | Whether to exclude attributes in elements.                                                                                 | false                              |
+| Null Value                | Sets the string representation of a null value.                                                                            | `null`                             |
+| Parser Mode               | How to handle corrupt data. <br/>For a list of the possible values, see [Supported parser modes](#supported-parser-modes). | `Permissive`                       |
+| Attribute Prefix          | Prefix for attributes to differentiate them from elements.                                                                 | None                               |
+| Value Tag                 | Tag to use for the value when there are attributes in the element with no child.                                           | `_VALUE`                           |
+| Ignore Surrounding Spaces | Whether to skip surrounding whitespaces.                                                                                   | false                              |
+| Ignore Namespace          | Whether to skip namespace prefixes on XML elements and attributes.                                                         | false                              |
+| Timestamp Format          | Sets the string that indicates a timestamp format.                                                                         | `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]` |
+| Date Format               | String that indicates a date format.                                                                                       | `yyyy-MM-dd`                       |
 
 ### Supported parser modes
 
@@ -54,21 +54,19 @@ The Target gem writes data to XML files and allows you to optionally specify the
 
 ### Target properties
 
-| Property name
-
-| Parameter         | Description                                                                                                                               |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- | ---------------------------------- |
-| Row Tag           | Row tag of your XML file to treat as a row.                                                                                               | `_`                                                |
-| Root Tag          | Root tag of your XML file.                                                                                                                | `ROWS`                                             |
-| Null Value        | Sets the string representation of a null value.                                                                                           | `null`                                             |
-| Attribute Prefix  | Prefix for attributes to differentiate them from elements.                                                                                | None                                               |
-| Value Tag         | Tag to use for the value when there are attributes in the element with no child.                                                          | `_VALUE`                                           |
-| Timestamp Format  |                                                                                                                                           | Sets the string that indicates a timestamp format. | `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]` |
-| Date Format       | String that indicates a date format.                                                                                                      | `yyyy-MM-dd`                                       |
-| Write Mode        | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                      |                                                    |
-| Partition Column  | List of columns to partition the XML file by.                                                                                             |
-| Compression Codec | Compression codec used when writing. <br/>Prophecy supports the following codecs: `none`, `bzip2`, `gzip`, `lz4`, `snappy` and `deflate`. | None                                               |
-| XML Declaration   | XML declaration content to write at the beginning of the XML file, before the root tag.                                                   | `version="1.0" encoding="UTF-8" standalone="yes"`  |
+| Property name     | Description                                                                                                                                              | Default                                           |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| Row Tag           | Row tag of your XML file to treat as a row.                                                                                                              | `_`                                               |
+| Root Tag          | Root tag of your XML file.                                                                                                                               | `ROWS`                                            |
+| Null Value        | Sets the string representation of a null value.                                                                                                          | `null`                                            |
+| Attribute Prefix  | Prefix for attributes to differentiate them from elements.                                                                                               | None                                              |
+| Value Tag         | Tag to use for the value when there are attributes in the element with no child.                                                                         | `_VALUE`                                          |
+| Timestamp Format  | Sets the string that indicates a timestamp format.                                                                                                       | `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]`                |
+| Date Format       | String that indicates a date format.                                                                                                                     | `yyyy-MM-dd`                                      |
+| Write Mode        | How to handle existing data. <br/>For a list of the possible values, see [Supported write modes](#supported-write-modes).                                | None                                              |
+| Partition Column  | List of columns to partition the XML file by.                                                                                                            | None                                              |
+| Compression Codec | Compression codec when writing to the XML file. <br/>The XML file supports the following codecs: `none`, `bzip2`, `gzip`, `lz4`, `snappy` and `deflate`. | None                                              |
+| XML Declaration   | XML declaration content to write at the beginning of the XML file, before the root tag.                                                                  | `version="1.0" encoding="UTF-8" standalone="yes"` |
 
 ### Supported write modes
 

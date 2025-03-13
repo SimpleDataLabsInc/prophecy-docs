@@ -15,7 +15,7 @@ The Seed file type helps you standardize all new designs. This means that each n
 | Parameter | Tab        | Description                                                                                                           |
 | --------- | ---------- | --------------------------------------------------------------------------------------------------------------------- |
 | Data      | Data       | Data you provide in the Seed format.                                                                                  |
-| Schema    | Properties | Schema to apply on the data. you can define or edit the schema as a JSON, or infer it with the `Infer Schema` button. |
+| Schema    | Properties | Schema to apply on the data. You can define or edit the schema as a JSON, or infer it with the `Infer Schema` button. |
 
 ## Source
 
@@ -25,10 +25,10 @@ The Source gem reads data from Seed files and allows you to optionally specify t
 
 | Property name                                    | Description                                                       | Default |
 | ------------------------------------------------ | ----------------------------------------------------------------- | ------- |
-| Select an appropriate delimiter for entered data | Character to separate data you enter.                             | Comma   |
-| First row is header                              | Whether the first row is the table header.                        | True    |
-| Enforce specified or inferred schema             | Whether the output schema must match what you define in this tab. | False   |
-| Auto Infer schema from the data                  | Whether you want to automatically enter the schema.               | False   |
+| Select an appropriate delimiter for entered data | Character to separate data you enter.                             | `,`     |
+| First row is header                              | Whether the first row is the table header.                        | true    |
+| Enforce specified or inferred schema             | Whether the output schema must match what you define in this tab. | false   |
+| Auto Infer schema from the data                  | Whether you want to automatically enter the schema.               | false   |
 
 ## Target
 
