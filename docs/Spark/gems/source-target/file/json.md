@@ -8,7 +8,10 @@ tags:
   - json
 ---
 
-The JSON (JavaScript Object Notation) file type is a simple format that allows for easy data interchange between different programming languages and software systems.
+The JSON (JavaScript Object Notation) file type:
+
+- Is human-readable, which makes simplifies debugging and interacting with data.
+- Has a flexible schema, which makes it easy to add or modify fields without changing the file format.
 
 ## Parameters
 
@@ -72,17 +75,17 @@ The Target gem writes data to JSON files and allows you to optionally specify ad
 
 ### Target properties
 
-| Property name           | Description                                                                                                                                                                                            | Default                            |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------- |
-| Description             | Description of your dataset.                                                                                                                                                                           | None                               |
-| Line Separator          | Defines the line separator that the Target gem should use for parsing.                                                                                                                                 | `\n`                               |
-| Write Mode              | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                                                                                   | `error`                            |
-| Partition Columns       | List of columns to partition the JSON file by.                                                                                                                                                         | None                               |
-| Compression Codec       | Compression codec when writing to the Binary file. <br/>The JSON file supports the following codecs: `bzip2`, `gzip`, `lz4`, `snappy`, and `deflate`. <br/>JSON built-in functions ignore this option. | None                               |
-| Date Format String      | String that indicates a date format.                                                                                                                                                                   | `yyyy-MM-dd`                       |
-| Timestamp Format String | String that indicates a timestamp format.                                                                                                                                                              | `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]` |
-| Encoding                | Specifies to encode (charset) saved json files. <br/>JSON built-in functions ignore this option.                                                                                                       | `UTF-8`                            |
-| Ignore null fields      | Whether to ignore null fields when generating JSON objects.                                                                                                                                            | false                              |
+| Property name           | Description                                                                                                                                                                                          | Default                            |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| Description             | Description of your dataset.                                                                                                                                                                         | None                               |
+| Line Separator          | Defines the line separator that the Target gem should use for parsing.                                                                                                                               | `\n`                               |
+| Write Mode              | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                                                                                 | `error`                            |
+| Partition Columns       | List of columns to partition the JSON file by.                                                                                                                                                       | None                               |
+| Compression Codec       | Compression codec when writing to the JSON file. <br/>The JSON file supports the following codecs: `bzip2`, `gzip`, `lz4`, `snappy`, and `deflate`. <br/>JSON built-in functions ignore this option. | None                               |
+| Date Format String      | String that indicates a date format.                                                                                                                                                                 | `yyyy-MM-dd`                       |
+| Timestamp Format String | String that indicates a timestamp format.                                                                                                                                                            | `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]` |
+| Encoding                | Specifies to encode (charset) saved json files. <br/>JSON built-in functions ignore this option.                                                                                                     | `UTF-8`                            |
+| Ignore null fields      | Whether to ignore null fields when generating JSON objects.                                                                                                                                          | false                              |
 
 ### Supported write modes
 

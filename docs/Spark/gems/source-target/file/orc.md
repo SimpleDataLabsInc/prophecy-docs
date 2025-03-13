@@ -8,11 +8,12 @@ tags:
   - orc
 ---
 
-The ORC (Optimized Row Columnar) data format:
+The ORC (Optimized Row Columnar) fily type:
 
-- Is a columnar file format designed for Spark/Hadoop workloads.
+- Is a columnar file format designed for Spark and Hadoop workloads.
+- Offers high compression ratios, which helps reduce storage costs.
 - Optimizes for large streaming reads, but with integrated support for finding required rows quickly.
-- Is type-aware. You can choose an encoding for the type and builds an internal index while you write to the file.
+- Is type-aware, which means it can choose an encoding for the type and builds an internal index while you write to the file.
 
 ## Parameters
 
@@ -50,7 +51,7 @@ The Target gem writes data to ORC files and allows you to optionally specify add
 | Property name     | Description                                                                                                                           | Default |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------- | -------- |
 | Description       | Description of your dataset.                                                                                                          | None    |
-| Write Mode        | How to handle existing data. To see a list of possible values, see [the Supported Write Modes table](#supported-write-modes).         | `error` |
+| Write Mode        | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                  | `error` |
 | Partition Columns | List of columns to partition the ORC files by.                                                                                        | None    |
 | Compression Codec | Compression codec when writing to the ORC file. <br/>The ORC file supports the following codecs: `none`, `snappy`, `zlib`, and `lzo`. | None    | `snappy` |
 
@@ -66,8 +67,6 @@ The Target gem writes data to ORC files and allows you to optionally specify add
 ### Example {#example-target}
 
 ![ORC target example](./img/orc/orc-target.gif)
-
-<br/>
 
 :::tip
 To see the generated source code, toggle to the **< > Code** view at the top of the page.

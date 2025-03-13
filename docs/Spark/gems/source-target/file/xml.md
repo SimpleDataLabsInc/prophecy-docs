@@ -50,7 +50,7 @@ The XML file type:
 | Value Tag               |                                                                                                                                           |
 | Timestamp format string | Sets the string that indicates a timestamp format.                                                                                        |
 | Date format string      | Sets the string that indicates a date format.                                                                                             |
-| Write Mode              | How to handle existing data. To see a list of possible values, see [the Supported Write Modes table](#supported-write-modes).             |
+| Write Mode              | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                      |
 | Compression Codec       | Compression codec used when writing. <br/>Prophecy supports the following codecs: `none`, `bzip2`, `gzip`, `lz4`, `snappy` and `deflate`. |
 | XML Declaration         |                                                                                                                                           |
 | Partition Column        | List of columns to partition the XML file by.                                                                                             |

@@ -71,7 +71,7 @@ The following is a list of options that are available while using XLSX as a **_T
 | Date Format             | String that indicates a date format.                                                                                                | Spark default |
 | Use Plain Number Format | Whether to format the cells without rounding and scientific notations.                                                              | `False`       |
 | Workbook Password       | Password to secure workbook.                                                                                                        | (empty)       |
-| Write Mode              | How to handle existing data. To see a list of possible values, see [the Supported Write Modes table](#supported-write-modes).       | `"append"`    |
+| Write Mode              | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                | `append`      |
 | Parition Columns        | List of columns to partition the XLSX files by.                                                                                     | (empty)       |
 
 ### Supported write modes

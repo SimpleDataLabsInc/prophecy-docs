@@ -8,26 +8,29 @@ tags:
   - kafka
 ---
 
-[Apache Kafka](https://kafka.apache.org/) is an open-source distributed event streaming platform, and supports a number of streaming paradigms.
+[Apache Kafka](https://kafka.apache.org/) is:
+
+- An open-source distributed event streaming platform.
+- Handles high volumes of data and delivers messages with low latency.
+- Supports real-time analytics, stream processing, fault tolerance, scalability, data integration, and event-driven architectures.
 
 ## Parameters
 
-| Parameter                    | Tab        | Description                                                                                                                                                                                                   |
-| ---------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Bootstrap Server/Broker List | Location   | Comma separated list of Kafka brokers .                                                                                                                                                                       |
-| Security Protocol            | Location   | Security protocol for Kafka. (Default value set to SASL_SSL.)                                                                                                                                                 |
-| SASL Mechanisms              | Location   | Default SASL Mechanism for SASL_SSL. (Default value set to SCRAM-SHA-256.)                                                                                                                                    |
-| Credentials                  | Location   | How to provide your credentials. (`Databricks Secrets` or `Username & Password`.)                                                                                                                             |
-| Kafka topic                  | Location   | Comma separated list of Kafka topics.                                                                                                                                                                         |
-| Schema                       | Properties | Schema to apply on the loaded data. <br/>In the Source gem, you can define or edit the schema as a JSON or infer it with the `Infer Schema` button.<br/>In the Target gem, you can view the schema as a JSON. |
+| Parameter                    | Tab      | Description                                                                       |
+| ---------------------------- | -------- | --------------------------------------------------------------------------------- |
+| Bootstrap Server/Broker List | Location | Comma separated list of Kafka brokers .                                           |
+| Security Protocol            | Location | Security protocol for Kafka. (Default value set to SASL_SSL.)                     |
+| SASL Mechanisms              | Location | Default SASL Mechanism for SASL_SSL. (Default value set to SCRAM-SHA-256.)        |
+| Credentials                  | Location | How to provide your credentials. (`Databricks Secrets` or `Username & Password`.) |
+| Kafka topic                  | Location | Comma separated list of Kafka topics.                                             |
 
 ## Source
 
 The Source gem reads data from Kafka stream in batch mode and allows you to optionally specify additional properties. This means that Kafka only reads data incrementally from the last offset stored in the specified Metadata table. If the Metadata table is not present, then Kafka reads data from the `earliest` offset.
 
-### Source Parameters
+### Source properties
 
-| Parameter                                       | Description                                                 | Default |
+| Property name                                   | Description                                                 | Default |
 | ----------------------------------------------- | ----------------------------------------------------------- | ------- |
 | Group Id                                        | Kafka consumer group ID.                                    | None    |
 | Session Timeout                                 | Session timeout for Kafka.                                  | `6000`  |
@@ -49,10 +52,10 @@ The Target gem writes data to each row from the `Dataframe` to a Kafka topic as 
 
 ### Target properties
 
-| Property name                        | Description                                    | Default |
-| ------------------------------------ | ---------------------------------------------- | ------- |
-| Message Unique Key                   |                                                | None    |
-| Kerberos service name for Kafka SASL | Name of your Kerberos service to use in Kafka. | None    |
+| Property name                        | Description                                                 | Default |
+| ------------------------------------ | ----------------------------------------------------------- | ------- |
+| Message Unique Key                   | Key to help determine which partition to write the data to. | None    |
+| Kerberos service name for Kafka SASL | Name of your Kerberos service to use in Kafka.              | None    |
 
 ### Example {#target-example}
 
