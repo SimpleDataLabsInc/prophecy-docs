@@ -2,7 +2,6 @@
 title: Parquet
 id: parquet
 description: Parquet
-sidebar_position: 10
 tags:
   - gems
   - file

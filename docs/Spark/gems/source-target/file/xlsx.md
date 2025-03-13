@@ -10,69 +10,86 @@ tags:
 
 The XLSX (Excel) file type:
 
--
+- Is in XML format, which is easier for data access, manipulation, and compatibility with various software applications.
+- Offers password protection options, which allow users to secure sensitive data.
 
 ## Prerequisites
 
 :::caution
 If you receive an error about the `excel` format not being available you must add `spark-excel` library as a dependency.
 
-Follow the instructions on [this page](docs/extensibility/dependencies/spark-dependencies.md) to add the Maven coordinate `com.crealytics:spark-excel_2.12:3.5.1_0.20.4` to your pipeline.
+To add the Maven coordinate `com.crealytics:spark-excel_2.12:3.5.1_0.20.4` to your pipeline, see [Spark dependencies](docs/extensibility/dependencies/spark-dependencies.md).
 :::
 
 ## Parameters
 
-### Source parameters
+| Parameter | Tab        | Description                                                                                                                                                                                                   |
+| --------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Location  | Location   | File path to read from or write to the XLSX file.                                                                                                                                                             |
+| Schema    | Properties | Schema to apply on the loaded data. <br/>In the Source gem, you can define or edit the schema as a JSON or infer it with the `Infer Schema` button.<br/>In the Target gem, you can view the schema as a JSON. |
 
-The following is a list of options that are available while using XLSX as a **_Source_**:
+## Source
 
-| Parameter                     | Description                                                                                                                                                                                                                              | Default            |
-| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
-| Data Address                  | Location to read data addresses from. To learn more, see [Data Addresses](https://github.com/crealytics/spark-excel#data-addresses).                                                                                                     | `A1` (Everything)  |
-| Column Name of Corrupt Record | Name of the column to create for corrupt records.                                                                                                                                                                                        | `_corrupt_records` |
-| Column Name of Row Number     | Name of the column to create using the original row number.                                                                                                                                                                              | None               |
-| Date Format                   | String that indicates a date format.                                                                                                                                                                                                     | Spark default      |
-| Excerpt Size                  | Except Size                                                                                                                                                                                                                              |                    |
-| File Extension                | File extension of the file to read in.                                                                                                                                                                                                   | `xlsx`             |
-| Ignore After Header           | Number of rows to ignore after the header.                                                                                                                                                                                               | `0`                |
-| Ignore Leading Whitespace     | Whether to skip the leading whitespaces from values the Target gem reads.                                                                                                                                                                | `False`            |
-| Ignore Trailing Whitespace    | Whether to skip the trailing whitespaces from values the Target gem reads.                                                                                                                                                               | `False`            |
-| Infer Schema                  | Whether to infer the schema of the input. <br /><br />**Note:** This setting is provided directly by the `spark-excel` library and is different than the `Infer Schema` button in the Prophecy UI. Both should provide the same results. | `False`            |
-| Locale                        | Sets a locale as language tag in IETF BCP 47 format.                                                                                                                                                                                     | `"US"`             |
-| NaN Value                     | Sets the string representation of a non-number value.                                                                                                                                                                                    | `"NaN"`            |
-| Negative Infinite value       | Sets the string representation of a negative infinity value.                                                                                                                                                                             | `"Inf"`            |
-| Null value                    | Sets the string representation of a null value.                                                                                                                                                                                          | (empty)            |
-| Parse Mode                    | How to handle corrupt data. For a list of the possible values, see [Supported parse modes](#supported-parse-modes).                                                                                                                      | `Permissive`       |
-| Positive Infinite value       | Sets the string representation of a positive infinity value.                                                                                                                                                                             | `"Inf"`            |
-| Sampling Ratio                | Defines a fraction of rows to use for schema inferring. <br/>CSV built-in functions ignore this option.                                                                                                                                  | `1.0`              |
-| Timestamp Format              | Sets the string that indicates a timestamp format.                                                                                                                                                                                       | Spark default      |
-| Use Null for Error Cells      | Whether to use null for cells with errors.                                                                                                                                                                                               | `True`             |
-| Workbook Password             | Password to secure workbook.                                                                                                                                                                                                             | (empty)            |
-| Time Zone ID                  | Timezone ID for `Date`s/`Timestamp`s taken from the IANA Time Zone Database.<br /><br /> **Note:** See [here](https://docs.oracle.com/javase/8/docs/api/java/time/ZoneId.html) for valid values.                                         | (empty)            |
+The Source gem reads data from XLSX files and allows you to optionally specify additional properties.
+
+### Source properties
+
+| Property name                            | Description                                                                                                                                                                                                                                                                              | Default                            |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- | --- |
+| Enforce Schema                           | Whether to use the schema you define.                                                                                                                                                                                                                                                    | false                              |
+| Header                                   | Whether to read the first line as a header.                                                                                                                                                                                                                                              | true                               |
+| Description                              | Description of your dataset.                                                                                                                                                                                                                                                             | None                               |
+| Data Address                             | Location to read data addresses from. To learn more, see [Data Addresses](https://github.com/crealytics/spark-excel#data-addresses).                                                                                                                                                     | `A1` (Everything)                  |
+| Column Name of Corrupt Record            | Rename the field the PERMISSIVE mode creates to store malformed data.                                                                                                                                                                                                                    | `_corrupt_records`                 |
+| Column Name of Row Number                | Name of the column to create using the original row number.                                                                                                                                                                                                                              | None                               |
+| Date Format                              | String that indicates a date format.                                                                                                                                                                                                                                                     | `yyyy-MM-dd`                       |
+| Excerpt Size                             | Excerpt Size.                                                                                                                                                                                                                                                                            | None                               |
+| File Extension                           | Extension of the file to read in.                                                                                                                                                                                                                                                        | `xlsx`                             |
+| Ignore After Header                      | Number of rows to ignore after the header.                                                                                                                                                                                                                                               | None                               |
+| Ignore leading white spaces from values  | Whether to skip the leading whitespaces from values the Source gem reads.                                                                                                                                                                                                                | false                              |
+| Ignore trailing white spaces from values | Whether to skip the trailing whitespaces from values the Source gem reads.                                                                                                                                                                                                               | false                              |
+| Infer Schema                             | Whether to automatically infer the input schema from the data. This requires one extra pass over the data. <br/><br/>**Note:** The `spark-excel` library provides this setting and is different than the `Infer Schema` button in the Prophecy UI. Both should provide the same results. | false                              |
+| Locale                                   | Sets a locale as language tag in IETF BCP 47 format.                                                                                                                                                                                                                                     | `en-US`                            |
+| NaN Value                                | Sets the string representation of a non-number value.                                                                                                                                                                                                                                    | `NaN`                              |
+| Negative Infinite value                  | Sets the string representation of a negative infinity value.                                                                                                                                                                                                                             | `-Inf`                             |
+| Null Value                               | Sets the string representation of a null value.                                                                                                                                                                                                                                          | None                               |
+| Parse Mode                               | How to handle corrupt data. For a list of the possible values, see [Supported parse modes](#supported-parse-modes).                                                                                                                                                                      | `Permissive`                       |
+| Positive Infinite value                  | Sets the string representation of a positive infinity value.                                                                                                                                                                                                                             | `Inf`                              |     |
+| Sampling Ratio                           | Defines a fraction of rows to use for schema inferring                                                                                                                                                                                                                                   | `1.0`                              |
+| Timestamp Format                         | Sets the string that indicates a timestamp format.                                                                                                                                                                                                                                       | `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]` |
+| Use Null for Error Cells                 | Whether to use null for cells with errors.                                                                                                                                                                                                                                               | false                              |
+| Workbook Password                        | Password to secure your workbook.                                                                                                                                                                                                                                                        | None                               |
+| Time Zone ID                             | Timezone ID for `Date`s/`Timestamp`s taken from the IANA Time Zone Database.<br /><br /> **Note:** For a list of valid values, see [Class ZoneId](https://docs.oracle.com/javase/8/docs/api/java/time/ZoneId.html).                                                                      | None                               |
+| Temporary file threshold                 | When the Source gem should start writing data to temporary files on disk instead of keeping it in memory.                                                                                                                                                                                | None                               |
+| Maximum rows in memory                   | Maximum amount of rows to have in memory.                                                                                                                                                                                                                                                | None                               |
+| Maximum byte array size                  | Maximum size of your array.                                                                                                                                                                                                                                                              | None                               |
 
 ### Supported parse modes
 
-| Mode          | Description                                                                                     |
-| ------------- | ----------------------------------------------------------------------------------------------- |
-| PERMISSIVE    | Put the malformed string into the corrupt records column, and set the malformed fields to null. |
-| DROPMALFORMED | Ignore the entire corrupted record. This mode is not supported in the CSV built-in functions.   |
-| FAILFAST      | Throw an exception when it meets a corrupted record.                                            |
+| Mode           | Description                                                                                     |
+| -------------- | ----------------------------------------------------------------------------------------------- |
+| Permissive     | Put the malformed string into the corrupt records column, and set the malformed fields to null. |
+| Drop Malformed | Ignore the entire corrupted record. This mode is not supported in the CSV built-in functions.   |
+| Fail Fast      | Throw an exception when it meets a corrupted record.                                            |
 
-### Target parameters
+## Target
 
-The following is a list of options that are available while using XLSX as a **_Target_**:
+The Target gem writes data to XLSX files and allows you to optionally specify additional properties.
 
-| Parameter               | Description                                                                                                                         | Default       |
-| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| Data Address            | Location to write data addresses to. To learn more, see [Data Addresses](https://github.com/crealytics/spark-excel#data-addresses). | `A1`          |
-| File Extension          | File extension of the file to write to.                                                                                             | `"xlsx"`      |
-| Header                  | Whether to write a header to the file.                                                                                              | `True`        |
-| Locale                  | Sets a locale as language tag in IETF BCP 47 format.                                                                                | `"US"`        |
-| Date Format             | String that indicates a date format.                                                                                                | Spark default |
-| Use Plain Number Format | Whether to format the cells without rounding and scientific notations.                                                              | `False`       |
-| Workbook Password       | Password to secure workbook.                                                                                                        | (empty)       |
-| Write Mode              | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                | `append`      |
-| Parition Columns        | List of columns to partition the XLSX files by.                                                                                     | (empty)       |
+### Target properties
+
+| Property name                 | Description                                                                                                                         | Default      |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| Data Address                  | Location to write data addresses to. To learn more, see [Data Addresses](https://github.com/crealytics/spark-excel#data-addresses). | `A1`         |
+| File Extension                | File extension of the file to write to.                                                                                             | `xlsx`       |
+| Header                        | Whether to write a header to the file.                                                                                              | true         |
+| Locale                        | Sets a locale as language tag in IETF BCP 47 format.                                                                                | `en-US`      |
+| Date Format                   | String that indicates a date format.                                                                                                | `yyyy-MM-dd` |
+| Use Plain Number Format       | Whether to format the cells without rounding and scientific notations.                                                              | false        |
+| Workbook Password             | Password to secure your workbook.                                                                                                   | None         |
+| Write Mode                    | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                | `append`     |
+| Parition Columns              | List of columns to partition the XLSX files by.                                                                                     | None         |
+| Create single named XLSX file | Whether to create a single XLSX file.                                                                                               | false        |
 
 ### Supported write modes
 
@@ -108,32 +125,6 @@ If you want to output only a single file:
 
    After you run your pipeline, your output is still a directory, but this time it only contains a single output file.
 
-## Example code
-
-Below is a snippet of the optimized code that is generated when using the XLSX source.
-
-````mdx-code-block
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs>
-
-<TabItem value="py" label="Python">
-
-```py
-def Demo_XLSX_Source(spark: SparkSession) -> DataFrame:
-    if Config.fabricName == "dev":
-        return spark.read\
-            .format("excel")\
-            .option("header", True)\
-            .option("dataAddress", "A1")\
-            .option("inferSchema", True)\
-            .load("dbfs:/FileStore/Users/scott/plain_number.xlsx")
-    else:
-        raise Exception("No valid dataset present to read fabric")
-```
-
-</TabItem>
-</Tabs>
-
-````
+:::tip
+To see the generated source code, toggle to the **< > Code** view at the top of the page.
+:::

@@ -2,7 +2,6 @@
 title: Text
 id: text
 description: Text
-sidebar_position: 11
 tags:
   - gems
   - file
