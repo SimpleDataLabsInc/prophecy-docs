@@ -9,7 +9,7 @@ tags:
   - parquet
 ---
 
-The Parquet data format:
+The Parquet file type:
 
 - Is an open-source columnar storage.
 - Handles large volumes of data by supporting complex pushdown predicates, nested schemas and a wide variety of column encoding types.
@@ -110,9 +110,9 @@ The Target gem writes data to Parquet files.
 | Write Mode        | How to handle existing data. To see a list of possible values, see [the Supported Write Modes table](#supported-write-modes).                                                                                   | True     | `error`  |
 | Partition Columns | List of columns to partition the Parquet files by.                                                                                                                                                              | False    | None     |
 
-### Supported Write Modes
+### Supported write modes
 
-| Write Mode | Description                                                                                                                             |
+| Write mode | Description                                                                                                                             |
 | ---------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | error      | If data already exists, throw an exception.                                                                                             |
 | overwrite  | If data already exists, overwrite the data with the contents of the `DataFrame`.                                                        |

@@ -84,9 +84,9 @@ The Target gem writes data to JSON files and allows you to optionally specify ad
 | Encoding                | Specifies to encode (charset) saved json files. <br/>JSON built-in functions ignore this option.                                                                                                       | `UTF-8`                            |
 | Ignore null fields      | Whether to ignore null fields when generating JSON objects.                                                                                                                                            | false                              |
 
-### Supported Write Modes
+### Supported write modes
 
-| Write Mode | Description                                                                                                                             |
+| Write mode | Description                                                                                                                             |
 | ---------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | error      | If data already exists, throw an exception.                                                                                             |
 | overwrite  | If data already exists, overwrite the data with the contents of the `DataFrame`.                                                        |

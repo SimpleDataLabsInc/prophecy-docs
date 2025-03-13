@@ -62,12 +62,12 @@ The Target gem writes data to Delta files and allows you to optionally specify a
 | Overwrite partition predicate              | Selectively overwrite the data that satisfies the given where clause expression.                                                                         | None    |
 | Optimize write                             | Whether to optimize the Spark partition sizes based on the actual data.                                                                                  | false   |
 
-#### Supported Write Modes
+### Supported write modes
 
-| Write Mode | Description                                                                                                                             |
+| Write mode | Description                                                                                                                             |
 | ---------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| overwrite  | If data already exists, overwrite with the contents of the `DataFrame`.                                                                 |
 | error      | If data already exists, throw an exception.                                                                                             |
+| overwrite  | If data already exists, overwrite the data with the contents of the `DataFrame`.                                                        |
 | append     | If data already exists, append the contents of the `DataFrame`.                                                                         |
 | ignore     | If data already exists, do nothing with the contents of the `DataFrame`. <br/>This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
 | merge      | Use the Delta `merge` command to insert, delete and update data.                                                                        |

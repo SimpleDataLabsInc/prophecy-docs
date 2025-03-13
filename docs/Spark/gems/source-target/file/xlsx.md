@@ -8,7 +8,9 @@ tags:
   - xlsx
 ---
 
-If you've ever done anything with numbers in your line of work odds are you've worked with Excel at one point or another. Prophecy supports the format as both a data source and data target, so if you're migrating from a legacy system or you need to produce an Excel-compatible file for a report, we've got you covered.
+The XLSX (Excel) file type:
+
+-
 
 ## Prerequisites
 
@@ -72,9 +74,9 @@ The following is a list of options that are available while using XLSX as a **_T
 | Write Mode              | How to handle existing data. To see a list of possible values, see [the Supported Write Modes table](#supported-write-modes).       | `"append"`    |
 | Parition Columns        | List of columns to partition the XLSX files by.                                                                                     | (empty)       |
 
-### Supported Write Modes
+### Supported write modes
 
-| Write Mode | Description                                                                                                                             |
+| Write mode | Description                                                                                                                             |
 | ---------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | error      | If data already exists, throw an exception.                                                                                             |
 | overwrite  | If data already exists, overwrite the data with the contents of the `DataFrame`.                                                        |

@@ -9,7 +9,9 @@ tags:
   - text
 ---
 
-You can read data from or write data to Text files.
+The Text file type:
+
+-
 
 ## Source
 
@@ -91,9 +93,9 @@ The Text data source supports only a single column apart from the partition colu
 apart from parition columns as the input `DataFrame` to the Target gem, Prophecy throws an `AnalysisException`.
 :::
 
-### Supported Write Modes
+### Supported write modes
 
-| Write Mode | Description                                                                                                                             |
+| Write mode | Description                                                                                                                             |
 | ---------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | error      | If data already exists, throw an exception.                                                                                             |
 | overwrite  | If data already exists, overwrite the data with the contents of the `DataFrame`.                                                        |

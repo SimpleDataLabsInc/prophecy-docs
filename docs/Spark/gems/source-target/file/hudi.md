@@ -51,7 +51,7 @@ The Target gem writes data to Hudi files and allows you to optionally specify ad
 
 ### Supported write modes
 
-| Write Mode | Description                                                                                                                             |
+| Write mode | Description                                                                                                                             |
 | ---------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | error      | If data already exists, throw an exception.                                                                                             |
 | overwrite  | If data already exists, overwrite the data with the contents of the `DataFrame`.                                                        |
