@@ -27,12 +27,12 @@ A Fixed Format (Fixed-Length Format) file type:
 
 ## Source
 
-The Source gem reads data from fixed format files.
+The Source gem reads data from Fixed Format files and allows you to optionally specify additional properties.
 
-### Source Parameters
+### Source Properties
 
-| Parameter           | Description                                                                            | Default |
-| :------------------ | :------------------------------------------------------------------------------------- | :------ |
+| Property name       | Description                                                                            | Default |
+| ------------------- | -------------------------------------------------------------------------------------- | ------- |
 | Description         | Description of your dataset.                                                           | None    |
 | Skip header lines   | Number of lines to skip at the beginning of the file.                                  | None    |
 | Skip footer lines   | Number of lines to skip at the end of the file.                                        | None    |
@@ -48,17 +48,17 @@ To see the generated source code, toggle to the **< > Code** view at the top of 
 
 ## Target
 
-The Target gem writes data to fixed format files.
+The Target gem writes data to Fixed Format files and allows you to optionally specify additional properties.
 
-### Target Parameters
+### Target Properties
 
-| Parameter           | Description                                                                                                          | Default |
+| Property name       | Description                                                                                                          | Default |
 | ------------------- | -------------------------------------------------------------------------------------------------------------------- | ------- |
 | Write Mode          | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes). | `error` |
 | Description         | Description of your dataset.                                                                                         | None    |
 | Fixed Format Schema | Schema string for the fixed format file. <br/>Supports either EBCDIC or ASCII formats.                               | None    |
 
-### Supported Write Modes
+### Supported write modes
 
 | Write Mode | Description                                                                                                                             |
 | ---------- | --------------------------------------------------------------------------------------------------------------------------------------- |

@@ -40,7 +40,7 @@ The following is a list of options that are available while using XLSX as a **_S
 | NaN Value                     | Sets the string representation of a non-number value.                                                                                                                                                                                    | `"NaN"`            |
 | Negative Infinite value       | Sets the string representation of a negative infinity value.                                                                                                                                                                             | `"Inf"`            |
 | Null value                    | Sets the string representation of a null value.                                                                                                                                                                                          | (empty)            |
-| Parse Mode                    | How to deal with corrupt records. <br/>To learn about the available modes, see [Supported Parse Modes](#supported-parse-modes).                                                                                                          | `Permissive`       |
+| Parse Mode                    | How to handle corrupt data. For a list of the possible values, see [Supported parse modes](#supported-parse-modes).                                                                                                                      | `Permissive`       |
 | Positive Infinite value       | Sets the string representation of a positive infinity value.                                                                                                                                                                             | `"Inf"`            |
 | Sampling Ratio                | Defines a fraction of rows to use for schema inferring. <br/>CSV built-in functions ignore this option.                                                                                                                                  | `1.0`              |
 | Timestamp Format              | Sets the string that indicates a timestamp format.                                                                                                                                                                                       | Spark default      |
@@ -50,11 +50,11 @@ The following is a list of options that are available while using XLSX as a **_S
 
 ### Supported parse modes
 
-| Mode          | Description                                                                                                |
-| ------------- | ---------------------------------------------------------------------------------------------------------- |
-| PERMISSIVE    | Put the malformed string into a new field called `_corrupt_records`, and set the malformed fields to null. |
-| DROPMALFORMED | Ignore the entire corrupted record. This mode is not supported in the CSV built-in functions.              |
-| FAILFAST      | Throw an exception when it meets a corrupted record.                                                       |
+| Mode          | Description                                                                                     |
+| ------------- | ----------------------------------------------------------------------------------------------- |
+| PERMISSIVE    | Put the malformed string into the corrupt records column, and set the malformed fields to null. |
+| DROPMALFORMED | Ignore the entire corrupted record. This mode is not supported in the CSV built-in functions.   |
+| FAILFAST      | Throw an exception when it meets a corrupted record.                                            |
 
 ### Target parameters
 

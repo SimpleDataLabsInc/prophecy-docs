@@ -12,28 +12,28 @@ You can read data from and write data to XML files.
 
 ## Source Parameters
 
-| Parameter                 | Description                                                                                                                                      |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | --- |
-| Location                  | File path to the XML file.                                                                                                                       |
-| Schema                    | Schema applied to the loaded data. Schema can be defined/edited as JSON or inferred using `Infer Schema` button.                                 |
-| Row Tag                   | Value of the XML element that identifies a row of data.                                                                                          |
-| Exclude Attributes        |                                                                                                                                                  |
-| Null Value                | Sets the string representation of a null value.                                                                                                  |     |
-| Parser Mode               | How to deal with corrupt records. <br/>To learn about the available modes, see [Supported Corrupt Record Modes](#supported-corrupt-record-modes) |
-| Attribute Prefix          |                                                                                                                                                  |
-| Value Tag                 |                                                                                                                                                  |
-| Ignore Surrounding Spaces |                                                                                                                                                  |
-| Ignore Namespace          |                                                                                                                                                  |
-| Timestamp format string   | Sets the string that indicates a timestamp format.                                                                                               |
-| Date format string        | Sets the string that indicates a date format.                                                                                                    |
+| Parameter                 | Description                                                                                                           |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------ |
+| Location                  | File path to the XML file.                                                                                            |
+| Schema                    | Schema applied to the loaded data. Schema can be defined/edited as JSON or inferred using `Infer Schema` button.      |
+| Row Tag                   | Value of the XML element that identifies a row of data.                                                               |
+| Exclude Attributes        |                                                                                                                       |
+| Null Value                | Sets the string representation of a null value.                                                                       |              |
+| Parser Mode               | How to handle corrupt data. For a list of the possible values, see [Supported parser modes](#supported-parser-modes). | `PERMISSIVE` |
+| Attribute Prefix          |                                                                                                                       |
+| Value Tag                 |                                                                                                                       |
+| Ignore Surrounding Spaces |                                                                                                                       |
+| Ignore Namespace          |                                                                                                                       |
+| Timestamp format string   | Sets the string that indicates a timestamp format.                                                                    |
+| Date format string        | Sets the string that indicates a date format.                                                                         |
 
-### Supported Corrupt Record Modes
+### Supported parser modes
 
-| Mode           | Description                                                                                                |
-| -------------- | ---------------------------------------------------------------------------------------------------------- |
-| Permissive     | Put the malformed string into a new field called `_corrupt_records`, and set the malformed fields to null. |
-| Drop Malformed | Ignore the entire corrupted record. This mode is not supported in the CSV built-in functions.              |
-| Fail Fast      | Throw an exception when it meets a corrupted record.                                                       |
+| Mode          | Description                                                                                     |
+| ------------- | ----------------------------------------------------------------------------------------------- |
+| PERMISSIVE    | Put the malformed string into the corrupt records column, and set the malformed fields to null. |
+| DROPMALFORMED | Ignore the entire corrupted record. This mode is not supported in the CSV built-in functions.   |
+| FAILFAST      | Throw an exception when it meets a corrupted record.                                            |
 
 ## Target Parameters
 

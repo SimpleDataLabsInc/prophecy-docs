@@ -78,13 +78,13 @@ The Target gem writes data to Text files.
 
 ### Target Parameters
 
-| Parameter         | Description                                                                                                                               | Required | Default |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
-| Location          | File path to write the Text file to.                                                                                                      | True     | None    |
-| Compression       | Compression codec used when writing. <br/>Prophecy supports the following codecs: `none`, `bzip2`, `gzip`, `lz4`, `snappy` and `deflate`. | False    | None    |
-| Write Mode        | How to handle existing data. To see a list of possible values, see [the Supported Write Modes table](#supported-write-modes).             | True     | `error` |
-| Partition Columns | List of columns to partition the Text files by.                                                                                           | False    | None    |
-| Line Separator    | Defines the line separator that Prophecy should use for parsing.                                                                          | False    | `\n`    |
+| Parameter         | Description                                                                                                                               | Default |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------- |
+| Location          | File path to write the Text file to.                                                                                                      | True    | None    |
+| Compression       | Compression codec used when writing. <br/>Prophecy supports the following codecs: `none`, `bzip2`, `gzip`, `lz4`, `snappy` and `deflate`. | False   | None    |
+| Write Mode        | How to handle existing data. To see a list of possible values, see [the Supported Write Modes table](#supported-write-modes).             | True    | `error` |
+| Partition Columns | List of columns to partition the Text files by.                                                                                           | False   | None    |
+| Line Separator    | Defines the line separator that the Target gem should use for parsing.                                                                    | `\n`    |
 
 :::info
 The Text data source supports only a single column apart from the partition columns. If the `DataFrame` contains more than one column

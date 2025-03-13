@@ -32,4 +32,4 @@ The Source gem reads data from Seed files.
 
 ## Target
 
-Prophecy does not support writing to Seed files.
+The Target gem does not support writing to Seed files.
