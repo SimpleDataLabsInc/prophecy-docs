@@ -60,6 +60,8 @@ The Source gem reads data from JSON files and allows you to optionally specify a
 <iframe src="https://user-images.githubusercontent.com/130362885/234556861-d5b82f1a-883e-4b49-bebe-0ac47511583e.mp4" title="Json Source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
+<br/>
+
 :::tip
 To see the generated source code, toggle to the **< > Code** view at the top of the page.
 :::
@@ -70,18 +72,17 @@ The Target gem writes data to JSON files and allows you to optionally specify ad
 
 ### Target properties
 
-| Property name | Description | Default |
-| ------------- | ----------- | ------- |
-
-| Description | Description of your dataset. | None |
-| Line Separator | Defines the line separator that the Target gem should use for parsing. | `\n` |
-| Write Mode | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes). | `error` |
-| Partition Columns | List of columns to partition the JSON file by. | None |
-| Compression Codec | Compression codec when writing to the Binary file. <br/>The JSON file supports the following codecs: `bzip2`, `gzip`, `lz4`, `snappy`, and `deflate`. <br/>JSON built-in functions ignore this option. | None |
-| Date Format String | String that indicates a date format. | `yyyy-MM-dd` |
-| Timestamp Format String | String that indicates a timestamp format. | `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]` |
-| Encoding | Specifies to encode (charset) saved json files. <br/>JSON built-in functions ignore this option. | `UTF-8` |
-| Ignore null fields | Whether to ignore null fields when generating JSON objects. | false |
+| Property name           | Description                                                                                                                                                                                            | Default                            |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------- |
+| Description             | Description of your dataset.                                                                                                                                                                           | None                               |
+| Line Separator          | Defines the line separator that the Target gem should use for parsing.                                                                                                                                 | `\n`                               |
+| Write Mode              | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                                                                                   | `error`                            |
+| Partition Columns       | List of columns to partition the JSON file by.                                                                                                                                                         | None                               |
+| Compression Codec       | Compression codec when writing to the Binary file. <br/>The JSON file supports the following codecs: `bzip2`, `gzip`, `lz4`, `snappy`, and `deflate`. <br/>JSON built-in functions ignore this option. | None                               |
+| Date Format String      | String that indicates a date format.                                                                                                                                                                   | `yyyy-MM-dd`                       |
+| Timestamp Format String | String that indicates a timestamp format.                                                                                                                                                              | `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]` |
+| Encoding                | Specifies to encode (charset) saved json files. <br/>JSON built-in functions ignore this option.                                                                                                       | `UTF-8`                            |
+| Ignore null fields      | Whether to ignore null fields when generating JSON objects.                                                                                                                                            | false                              |
 
 ### Supported Write Modes
 
@@ -98,6 +99,8 @@ The Target gem writes data to JSON files and allows you to optionally specify ad
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://user-images.githubusercontent.com/130362885/234556999-72c22d9b-c99e-4e6c-8887-b54b8d5d94f1.mp4" title="Json Target" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
+
+<br/>
 
 :::tip
 To see the generated source code, toggle to the **< > Code** view at the top of the page.

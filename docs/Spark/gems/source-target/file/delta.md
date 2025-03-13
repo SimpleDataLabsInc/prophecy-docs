@@ -118,6 +118,7 @@ The following illustrates an SCD1 MERGE condition.
 
 1. You must set at least one action out of update, delete or insert.
 1. A merge operation fails if multiple rows of the source `DataFrame` matches and the merge attempts to update the same rows of the target Delta table. You can place deduplicate gems before target if you expect duplicate rows at source.
+   :::
 
 :::tip
 When possible, provide predicates on the partition columns for a partitioned Delta table because predicates can significantly speed up the operations.
@@ -139,6 +140,8 @@ The following shows our output and configurations for SCD1 merge:
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://user-images.githubusercontent.com/103921419/173252757-0a1165f0-68e2-41ca-b6eb-58da51cb76d1.mp4" title="SCD3" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
+
+<br/>
 
 :::tip
 To see the generated source code, toggle to the **< > Code** view at the top of the page.
@@ -170,6 +173,8 @@ The following shows the output and configurations for an SCD2 merge:
 <iframe src="https://user-images.githubusercontent.com/103921419/173252742-00930084-b3b3-4b8a-b5bb-59f39b74792b.mp4" title="SCD3" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
+<br/>
+
 :::tip
 To see the generated source code, toggle to the **< > Code** view at the top of the page.
 :::
@@ -183,6 +188,8 @@ The following shows the output and configurations for an SCD3 merge:
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://user-images.githubusercontent.com/103921419/173252728-8924f0fb-6e81-44b7-9c39-17ba1d8f4d4c.mp4" title="SCD3" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
+
+<br/>
 
 :::tip
 To see the generated source code, toggle to the **< > Code** view at the top of the page.

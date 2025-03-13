@@ -8,7 +8,7 @@ tags:
   - seed
 ---
 
-You can use Seed files to standardize all new designs. This means that each new design (\*.dgn) file contains the same work units, color table, views as the seed file. You can only read data from Seed files in Prophecy.
+The Seed file type helps you standardize all new designs. This means that each new design (\*.dgn) file contains the same work units, color table, views as the seed file. You can only read data from Seed files in Prophecy.
 
 ## Parameters
 
@@ -19,7 +19,7 @@ You can use Seed files to standardize all new designs. This means that each new 
 
 ## Source
 
-The Source gem reads data from Seed files.
+The Source gem reads data from Seed files and allows you to optionally specify additional properties.
 
 ### Source properties
 
