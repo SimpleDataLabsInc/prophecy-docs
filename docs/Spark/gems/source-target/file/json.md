@@ -10,7 +10,7 @@ tags:
 
 The JSON (JavaScript Object Notation) file type:
 
-- Is human-readable, which makes simplifies debugging and interacting with data.
+- Is human-readable, which simplifies how you debug and interact with data.
 - Has a flexible schema, which makes it easy to add or modify fields without changing the file format.
 
 ## Parameters
@@ -33,7 +33,7 @@ The Source gem reads data from JSON files and allows you to optionally specify t
 | Parse Multi-line records                                   | Whether to parse one record, which may span multiple lines, per file. <br/>JSON built-in functions ignore this option.                                                                                      | false                              |
 | New line separator                                         | Sets a separator for each line. The separator can be one or more characters. <br/>JSON built-in functions ignore this option.                                                                               | `\r`, `\r\n` and `\n`              |
 | Infer primitive values as string type                      | Whether to infer all primitive values as a `String` type.                                                                                                                                                   | false                              |
-| Infer floating-point values as decimal or double type      | Whether to infer all floating-point values as a `Decimal` type. <br/>If the value does not fit in `Decimal`, then it infers them as a `Double`.                                                             | false                              |
+| Infer floating-point values as decimal or double type      | Whether to infer all floating-point values as a `Decimal` type. <br/>If the value does not fit in `Decimal`, then the Source gem infers them as a `Double`.                                                 | false                              |
 | Ignore Java/C++ style comment in Json records              | Whether to ignore Java and C++ style comments in JSON records.                                                                                                                                              | false                              |
 | Allow unquoted field names                                 | Whether to allow unquoted JSON field names.                                                                                                                                                                 | false                              |
 | Allow single quotes                                        | Whether to allow single quotes in addition to double quotes.                                                                                                                                                | true                               |
@@ -45,7 +45,7 @@ The Source gem reads data from JSON files and allows you to optionally specify t
 | Date Format String                                         | Sets the string that indicates a date format.                                                                                                                                                               | `yyyy-MM-dd`                       |
 | Timestamp Format String                                    | Sets the string that indicates a timestamp format.                                                                                                                                                          | `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]` |
 | Sampling ratio for schema inferring                        | Defines a fraction of rows to use for schema inferring. <br/>CSV built-in functions ignore this option.                                                                                                     | `1.0`                              |
-| Ignore column with all null values during schema inferring | Whether to ignore column of all `null` values or empty arrays during schema inference.                                                                                                                      | false                              |
+| Ignore column with all null values during schema inferring | Whether to ignore column of all null values or empty arrays during schema inference.                                                                                                                        | false                              |
 | Recursive File Lookup                                      | Whether to recursively load files and disable partition inferring. If the data source explicitly specifies the `partitionSpec` when the`recursiveFileLookup` is `true`, the Source gem throws an exception. | false                              |
 
 ### Supported corrupt record modes

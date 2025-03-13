@@ -24,13 +24,13 @@ import Requirements from "../../\_gem-requirements.mdx";
   packageversion154="Supports 0.2.36+"
 />
 
-Mock data helps you test, validate, and optimize your pipelines performance before you use production data. This ensures that your pipeline can handle various data formats, structures, and edge cases effectively, which minimizes potential issues in a live environment.
+Synthetic data helps you test, validate, and optimize your pipelines performance before you use production data. This ensures that your pipeline can handle various data formats, structures, and edge cases effectively, which minimizes potential issues in a live environment.
 
 You can create a wide range of mock data using any column name and an array of data types. For example, you can generate the following browser history data:
 
 ![img](../../img/synth_0_datasample.png)
 
-The following sections teach you how to generate your own mock data using the Source gem.
+The following sections teach you how to generate your own synthetic data using the Source gem.
 
 ## Cluster requirements
 
@@ -81,18 +81,20 @@ _Solution:_ Upgrade all your Prophecy projects to the same `ProphecySparkBasicsP
 
 ### Properties: Specify the data structure
 
-Prophecy offers a selection of providers including integers, booleans, and elements from a list. You can also provide the same information as a JSON schema.
+The Source gem requires the following properties.
 
-| Property name              | Description                                                                                      | Default       |
-| -------------------------- | ------------------------------------------------------------------------------------------------ | ------------- |
-| Provider                   | Type of random data to generate. For a list of the possible values, see [Providers](#providers). | `Random Name` |
-| Column Name                | Name for the output column.                                                                      | None          |
-| Data Type                  | Data type of the output column.                                                                  | `String`      |
-| Null Percentage (Optional) | Percent of values to populate as null in the generated column based on the row count.            | None          |
+| Property name              | Description                                                                                              | Default       |
+| -------------------------- | -------------------------------------------------------------------------------------------------------- | ------------- |
+| Provider                   | Type of random data to generate. For a list of the possible data providers, see [Providers](#providers). | `Random Name` |
+| Column Name                | Name for the output column.                                                                              | None          |
+| Data Type                  | Data type of the output column.                                                                          | `String`      |
+| Null Percentage (Optional) | Percent of values to populate as null in the generated column based on the row count.                    | None          |
 
 ![img](../../img/synth_3_properties.png)
 
 ## Providers
+
+Prophecy offers the following data providers.
 
 | Data Provider             | Description                                                                                                                                                                                                                                                                  |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -110,7 +112,7 @@ Prophecy offers a selection of providers including integers, booleans, and eleme
 
 ### Infer the schema
 
-To see your data based on the Properties tab configuration, infer the schema in the Schema tab.
+To see your data based on the Properties tab configuration, click `Infer Schema` in the **Schema** tab.
 
 ### Preview the data
 
@@ -128,7 +130,7 @@ By default, the Source gem does not save the newly generated data. To save the d
 
    ![img](../../img/synth_5_connect_target.png)
 
-1. Configure the write mode for the Target gem.
+1. Configure the `Write Mode` property for the Target gem.
 
    This is **very important** because there is a **new random seed** each time you run the Source gem.
 

@@ -16,13 +16,13 @@ A Fixed Format (Fixed-Length Format) file type:
 
 - Is a text file where each field or column occupies a predetermined, constant number of characters in each record.
 - Can parse and process quickly because the software knows exactly where to find each field.
-- Is often used in legacy systems, data exchange, and performance-critical applications
+- Is often used in legacy systems, data exchange, and performance-critical applications.
 
 ## Parameters
 
 | Parameter | Tab        | Description                                                                                                                                                                                                    |
 | --------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Location  | Location   | File path to read from or write to the fixed format file.                                                                                                                                                      |
+| Location  | Location   | File path to read from or write to the Fixed Format file.                                                                                                                                                      |
 | Schema    | Properties | Schema to apply on the loaded data. <br/>In the Source gem, you can define or edit the schema as a JSON, or infer it with the `Infer Schema` button.<br/>In the Target gem, you can view the schema as a JSON. |
 
 ## Source
