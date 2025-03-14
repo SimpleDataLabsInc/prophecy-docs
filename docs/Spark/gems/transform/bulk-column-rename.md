@@ -8,7 +8,7 @@ tags:
   - columns
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+<span class="badge">SPARK GEM</span><br /><br />
 
 Use the BulkColumnRename gem to rename multiple columns in your dataset in a systematic way.
 

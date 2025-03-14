@@ -10,7 +10,7 @@ tags:
   - long format
 ---
 
-<h3><span class="badge">SQL Gem</span></h3>
+<span class="badge">SQL GEM</span><br /><br />
 
 Use the Unpivot gem to transform your data from a wide format to a long format.
 
