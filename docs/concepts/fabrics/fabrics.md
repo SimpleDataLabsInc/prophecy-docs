@@ -13,15 +13,7 @@ tags:
 
 Prophecy helps you develop data pipelines in high-quality Spark or SQL code—but what does Prophecy use to compute these pipelines? The first thing to understand before building any pipeline is that your pipeline must be connected to an **execution environment**.
 
-This is why **fabrics** exist in Prophecy. Fabrics let Prophecy connect to specific execution environments.
-
-Prophecy provides a Prophecy-managed fabric that can get you started with building your pipelines. However, you can also create your own fabrics to connect to other execution environments, such as a Databricks workspace. When you attach to an external execution environment, you can access the data sources available to you in that environment.
-
-## Fabric creation
-
-A team admin typically sets up fabrics. Detailed steps for fabric creation can be found in the [Set up Spark fabrics](/administration/Spark-fabrics/Fabrics) and [Set up SQL fabrics](/administration/sql-fabrics/Fabrics) sections of the documentation.
-
-Even though teams share fabrics, **each user must add their individual credentials** to be able to use the fabric in their projects.
+This is why **fabrics** exist in Prophecy. Fabrics let Prophecy connect to specific execution environments and data storage.
 
 ## Use case
 
@@ -35,7 +27,7 @@ In this example, all users in the Marketing_DSS Team will have access to the `de
 
 ## Components
 
-Fabrics include everything required to run a data pipeline. As an example, the following table describes the components of a Spark Databricks fabric.
+Fabrics include everything required to run a data pipeline. As an example, the following table describes the components of a Databricks Spark fabric.
 
 | Component              | Description                                                                                                                                                                                                                               |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -46,6 +38,29 @@ Fabrics include everything required to run a data pipeline. As an example, the f
 | Database Connections   | Supports connections to databases (MySQL, Postgres) and data warehouses (Snowflake) via JDBC or other protocols. Credentials are securely stored on the fabric for reuse.                                                                 |
 | Metadata Connection    | Enhances fabric management for large datasets, useful for users handling hundreds or thousands of tables. [Learn more](/docs/administration/metadata-connections.md).                                                                     |
 | Credentials & Secrets  | Securely stores credentials in Databricks using Personal Access Tokens (PAT) or [Databricks OAuth](/docs/administration/authentication/databricks-oauth.md). Secrets are stored as key-value pairs, accessible only to running workflows. |
+
+## Fabric creation
+
+A team admin typically sets up fabrics. Detailed steps for fabric creation can be found in the [Set up Spark fabrics](/administration/Spark-fabrics/Fabrics) and [Set up SQL fabrics](/administration/sql-fabrics/Fabrics) sections of the documentation.
+
+Even though teams share fabrics, **each user must add their individual credentials** to be able to use the fabric in their projects.
+
+:::info
+Prophecy provides a trial Prophecy-managed fabric that can get you started with building your pipelines. However, you will need to connect to external execution environments for your production workflows.
+:::
+
+## Fabric usage
+
+When you create a fabric, you define the team that owns the fabric. If you are a member of that team, you will be able to use the fabric. To attach a fabric to a project:
+
+1. Open a project from the Prophecy metadata page.
+1. Open a pipeline or model that you want to work on.
+1. Expand the **Attach Cluster** menu. This menu will differ slightly between Spark and SQL projects.
+1. Select a fabric. You will be shown fabrics that have the same data provider as your project (e.g., Databricks).
+1. Attach to a cluster or create a new cluster.
+1. Run your pipeline or model. This executes the data transformation on the environment defined in the fabric!
+
+![AttachCluster](./img/DatabricksAttachCluster.png)
 
 ## Fabric metadata
 
@@ -59,6 +74,6 @@ You can click into each fabric to access the fabric settings. These will resembl
 
 Get started with hands-on guides. Learn step by step how to connect to your execution engine by creating a fabric:
 
-1. Create a SQL fabric with a JDBC or Unity Catalog connection following [this guide](docs/getting-started/tutorials/sql-with-databricks.md#setup-prophecys-Fabric).
+1. Create a SQL fabric with a JDBC or Unity Catalog connection following [this guide](docs/getting-started/tutorials/sql-with-databricks.md).
 2. Create a Databricks fabric following [these steps](/docs/administration/Spark-fabrics/databricks/databricks.md).
-3. Create an EMR fabric with Livy step by step [here](/docs/administration/Spark-fabrics/emr.mdx).
+3. Create an EMR fabric with Livy step by step [here](/docs/administration/Spark-fabrics/emr.md).

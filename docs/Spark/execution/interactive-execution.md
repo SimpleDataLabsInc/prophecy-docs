@@ -12,38 +12,35 @@ When developing pipelines in Prophecy, you can run the pipeline interactively in
 
 ## Interim data samples {#interims}
 
-When you run a pipeline in the pipeline canvas, Prophecy generates **interim** data samples that let you preview the output of your data transformations.
+When you run a pipeline in the pipeline canvas, Prophecy generates **interim** data samples that let you preview the output of your data transformations. There are two ways to run a pipeline interactively:
 
-There are two ways to run a pipeline interactively:
-
-- Click the **play** button on the pipeline canvas to run the entire pipeline.
-- Click the **play** button on a particular gem to execute the flow of the pipeline **up to and including that gem**. This is useful for testing and debugging when you don't want to run the entire pipeline.
+- Run the entire pipeline using the **play** button on the pipeline canvas.
+- Execute the pipeline up to and including a particular gem using the **play** button on that gem.
 
 ![Interactive run options](img/interactive-execution-play-options.png)
 
 After you run your pipeline, you will see the interims appear between gems. These previews are temporarily cached. Learn more about how to navigate the interim data samples in [Data Explorer](docs/Spark/execution/data-explorer.md).
 
-## Enable data sampling
+## Data sampling settings
 
-Data sampling is enabled by default for interactive execution. To change data sampling settings:
+Data sampling is enabled by default for interactive execution. However, you can change how data sampling works at the pipeline or fabric level.
 
-1. Select the **...** (ellipses) dropdown.
-2. Open the **Pipeline Settings**.
-3. Toggle **Job Sampling** to enable or disable generating interim samples for scheduled jobs. For job sampling, interim metrics are stored in the compute cluster (such as a Databricks workspace) and are visible in [execution metrics](#execution-metrics).
-4. Select **Sampling Mode** to chose the level of data sampling.
-5. Toggle **Data Sampling** to enable or disable generating interim samples during interactive runs.
+### Pipeline settings
+
+For each pipeline, you can enable, disable, or change interactive data sampling and job data sampling modes. For more information, visit our [pipeline settings](docs/Spark/pipeline-settings.md) documentation.
 
 ![Data and Job Sampling](img/interactive-execution-job-data-sampling.png)
 
-:::note
-[Vanilla](docs/Spark/execution/databricks-clusters-behaviors.md#vanilla-interims) is an interim sampling mode reserved for Shared Databricks clusters.
-:::
+### Fabric settings
 
-### Advanced settings
-
-There is also a global-level **Development Settings** flag admins can use to disable data sampling for a given [fabric](docs/concepts/fabrics/fabrics.md). This flag overrides pipeline-level data sampling settings. You can find these settings in the **Advanced** tab of a fabric.
+In a fabric, you can enable or disable data sampling and override pipeline-level settings when a pipeline runs on that fabric. This option is available in the **Advanced** tab of a fabric. A common use case is preventing interim data generation in production pipelines.
 
 ![Create a new model test](./img/limit-data-preview-interims.png)
+
+By default, only team admins can access the Advanced tab in a fabric. However, there are two flags you can set in your deployment to change this behavior:
+
+- `ALLOW_FABRIC_ACCESS_CLUSTER_ADMIN`: Grants cluster admins full access to fabrics, even if they are not team admins.
+- `DISALLOW_FABRIC_CODEDEPS_UPDATE_TEAM_ADMIN`: Prevents team admins from modifying the data sampling settings within a fabric.
 
 ## Execution information
 

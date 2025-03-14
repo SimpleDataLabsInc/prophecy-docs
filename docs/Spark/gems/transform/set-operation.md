@@ -14,25 +14,22 @@ tags:
 
 Use the SetOperation gem to perform addition or subtraction of rows from DataFrames with identical schemas and different data.
 
-### Parameters
+## Parameters
 
-| Parameter      | Description                                                                                                                                                                                                                                                                                                                                                                                                      | Required |
-| :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------- |
-| DataFrame 1    | First input DataFrame                                                                                                                                                                                                                                                                                                                                                                                            | True     |
-| DataFrame 2    | Second input DataFrame                                                                                                                                                                                                                                                                                                                                                                                           | True     |
-| DataFrame N    | Nth input DataFrame                                                                                                                                                                                                                                                                                                                                                                                              | False    |
-| Operation type | Operation to perform<br/>- `Union`: Returns a DataFrame containing rows in any one of the input DataFrames, while preserving duplicates.<br/>- `Intersect All`: Returns a DataFrame containing rows in all of the input DataFrames, while preserving duplicates. <br/>- `Except All`: Returns a DataFrames containing rows in the first DataFrame, but not in the other DataFrames, while preserving duplicates. | True     |
+| Parameter      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| DataFrame 1    | First input DataFrame                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| DataFrame 2    | Second input DataFrame                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| DataFrame N    | Nth input DataFrame                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| Operation type | <ul style={{margin:0, padding:"0 1rem"}}><li> Union: Returns a DataFrame containing rows in any one of the input DataFrames, while preserving duplicates.</li><li>Intersect All: Returns a DataFrame containing rows in all of the input DataFrames, while preserving duplicates.</li><li>Except All: Returns a DataFrames containing rows in the first DataFrame, but not in the other DataFrames, while preserving duplicates.</li></ul> |
 
-:::info
-To add more input DataFrames, simply click `+` icon on the left sidebar
+To add more input DataFrames, you can click the `+` icon on the left sidebar.
+
 ![Set Operation - Add input dataframe](./img/set_add_inputs.png)
-:::
 
-### Examples
+## Examples
 
----
-
-#### Operation Type - `Union`
+### Operation Type: `Union`
 
 ![Example usage of Set Operation - Union](./img/set_eg_1.png)
 
@@ -64,9 +61,7 @@ object union {
 
 ````
 
----
-
-#### Operation Type - `Intersect All`
+### Operation Type: `Intersect All`
 
 ![Example usage of Set Operation - Intersect All](./img/set_eg_2.png)
 
@@ -97,9 +92,7 @@ object intersectAll {
 
 ````
 
----
-
-#### Operation Type - `Except All`
+### Operation Type: `Except All`
 
 ![Example usage of Set Operation - Except All](./img/set_eg_3.png)
 

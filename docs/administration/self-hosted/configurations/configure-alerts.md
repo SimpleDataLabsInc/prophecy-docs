@@ -11,9 +11,9 @@ tags:
 
 One way to monitor resource usage in Prophecy-managed microservices is to configure alerts. Some configurations include:
 
-- Alerting when resource utilization approaches defined thresholds
-- Suspending critical services in the event of resource overflows
-- Resending email alerts at certain time intervals
+- Alerting when resource utilization approaches defined thresholds.
+- Email setup for alerts (**strongly recommended**).
+- Critical service suspension in the event of resource overflows.
 
 Resource monitoring is enabled by default, providing insights into CPU, memory, and disk usage for critical services. This feature reports current usage levels alongside defined limits, ensuring admins have a clear view of resource consumption. This feature can be disabled if not necessary.
 
@@ -25,17 +25,17 @@ Alerting is supported for Prophecy version 3.4.1 and above.
 
 Alerts are of two levels:
 
-- `WARNING`: Nearing configured limits
-- `CRITICAL`: At or above configured limits
+- **WARNING**: Nearing configured limits
+- **CRITICAL**: At or above configured limits
 
 Different thresholds are tracked:
 
-| Parameter    | Alerts generated on     |
-| ------------ | ----------------------- |
-| CPU_USAGE    | `CRITICAL`              |
-| DISK_USAGE   | `WARNING` or `CRITICAL` |
-| FILE_COUN    | `WARNING` or `CRITICAL` |
-| MEMORY_USAGE | `CRITICAL`              |
+| Parameter    | Alerts generated on        | Suggested action                                                                                                |
+| ------------ | -------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| CPU_USAGE    | **CRITICAL**               | Evaluate whether the CPU usage persists or is temporary. Increase CPU provisioned if high usage persists.       |
+| DISK_USAGE   | **WARNING** & **CRITICAL** | Take preventative steps upon **WARNING** alert to increase PVC storage capacity.                                |
+| FILE_COUNT   | **WARNING** & **CRITICAL** | Take preventative steps upon **WARNING** alert to increase PVC storage capacity.                                |
+| MEMORY_USAGE | **CRITICAL**               | Evaluate whether the memory usage persists or is temporary. Increase memory provisioned if high usage persists. |
 
 To prevent data corruption, certain critical services, such as Metagraph and Gitserver, are automatically suspended when disk usage limits are reached. This feature is enabled by default but can be disabled if needed.
 

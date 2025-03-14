@@ -35,7 +35,7 @@ There are three execution metrics tables that store data for pipelines, individu
 
 ![ExecutionMetricsConfig.png](img/ExecutionMetricsConfig.png)
 
-## Pre-requisite
+## Prerequisites
 
 As a Workspace / Catalog Admin, you must create tables and grant appropriate permissions to your users for them to choose
 to mention tables of their choice. It's recommended that this should be done at the time of team creation itself, to ensure the best experience for your users.

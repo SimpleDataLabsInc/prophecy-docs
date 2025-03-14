@@ -15,14 +15,14 @@ Use the RowDistributor gem to create multiple DataFrames based on provided filte
 
 This is useful for cases where rows from the input DataFrame needs to be distributed into multiple DataFrames in different ways for downstream gems.
 
-### Parameters
+## Parameters
 
 | Parameter         | Description                                                                                               | Required |
 | ----------------- | --------------------------------------------------------------------------------------------------------- | -------- |
 | DataFrame         | Input DataFrame for which rows needs to be distributed into multiple DataFrames                           | True     |
 | Filter Conditions | Boolean Type column or boolean expression for each output tab. Supports SQL, Python and Scala expressions | True     |
 
-### Example
+## Example
 
 ![Row distributor 1](./img/rowdistributor_eg_1.png)
 
@@ -30,7 +30,7 @@ This is useful for cases where rows from the input DataFrame needs to be distrib
 Number of outputs can be changed as needed by clicking the `+` button.
 :::
 
-### Generated Code
+## Generated Code
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';

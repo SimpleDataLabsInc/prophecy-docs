@@ -14,7 +14,7 @@ tags:
 
 Sorts a DataFrame on one or more columns in ascending or descending order.
 
-### Parameters
+## Parameters
 
 | Parameter     | Description                                | Required |
 | ------------- | ------------------------------------------ | -------- |
@@ -22,11 +22,11 @@ Sorts a DataFrame on one or more columns in ascending or descending order.
 | Order columns | Columns to sort DataFrame by               | True     |
 | Sort          | Order of sorting - ascending or descending | True     |
 
-### Example
+## Example
 
 ![Example usage of OrderBy](./img/orderby_eg_0.png)
 
-### Spark Code
+## Spark Code
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
