@@ -9,7 +9,19 @@ tags:
   - rest
 ---
 
-<span class="badge">SPARK GEM</span><br /><br />
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name="ProphecySparkBasicsPython"
+  python_package_version="0.0.1+"
+  scala_package_name=""
+  scala_package_version=""
+  scala_lib=""
+  python_lib=""
+  uc_single="14.3+"
+  uc_shared="15.4+"
+  livy=""
+/>
 
 Enriches the DataFrame by adding column(s) with content from REST API output based on the given configuration.
 

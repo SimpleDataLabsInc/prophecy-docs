@@ -8,7 +8,19 @@ tags:
   - group
 ---
 
-<span class="badge">SPARK GEM</span><br /><br />
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name=""
+  python_package_version=""
+  scala_package_name=""
+  scala_package_version=""
+  scala_lib=""
+  python_lib=""
+  uc_single="14.3+"
+  uc_shared="14.3+"
+  livy="3.0.1"
+/>
 
 In a **Basic Subgraph**, you have the capability to encapsulate multiple distinct gems within a single, reusable parent gem. This organizational approach enhances the visual clarity of your pipeline by grouping various sections together under a common parent gem. Additionally, it empowers you to break down intricate logic into modular components, thereby streamlining the Data Engineering processes.
 

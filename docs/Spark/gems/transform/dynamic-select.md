@@ -8,7 +8,19 @@ tags:
   - dynamic
 ---
 
-<span class="badge">SPARK GEM</span><br /><br />
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name="ProphecySparkBasicsPython"
+  python_package_version="0.2.27+"
+  scala_package_name=""
+  scala_package_version=""
+  scala_lib="8.2.1"
+  python_lib="1.9.16"
+  uc_single="14.3+"
+  uc_shared=""
+  livy="3.0.1"
+/>
 
 Use the DynamicSelect gem to dynamically filter columns of your dataset based on a set of conditions.
 

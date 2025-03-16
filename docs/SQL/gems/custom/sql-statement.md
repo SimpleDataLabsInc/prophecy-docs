@@ -8,7 +8,19 @@ tags:
   - custom
 ---
 
-<span class="badge">SQL GEM</span><br /><br />
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name=""
+  python_package_version=""
+  scala_package_name=""
+  scala_package_version=""
+  scala_lib=""
+  python_lib=""
+  uc_single="14.3+"
+  uc_shared="14.3+"
+  livy="3.0.1"
+/>
 
 Create one or more models based on provided SQL queries to run against one or more input sources.
 

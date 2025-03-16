@@ -7,7 +7,19 @@ tags:
   - subgraph
 ---
 
-<span class="badge">SPARK GEM</span><br /><br />
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name=""
+  python_package_version=""
+  scala_package_name=""
+  scala_package_version=""
+  scala_lib=""
+  python_lib=""
+  uc_single="14.3+"
+  uc_shared="14.3+"
+  livy=""
+/>
 
 The WhileIterator allows you to group a set of gems together, and then run them one after another repeatedly in a loop.
 
