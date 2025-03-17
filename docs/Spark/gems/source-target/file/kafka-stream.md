@@ -125,8 +125,6 @@ def KafkaSource(spark: SparkSession) -> DataFrame:
 
 ## Target
 
-import Requirements from '@site/src/components/gem-requirements';
-
 <Requirements
   python_package_name="ProphecySparkBasicsPython"
   python_package_version="0.0.1+"
