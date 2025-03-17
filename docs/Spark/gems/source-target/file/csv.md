@@ -1,7 +1,7 @@
 ---
 title: CSV
 id: csv
-description: Paramters and properties to read from and write to CSV files
+description: Parameters and properties to read from and write to CSV files
 tags:
   - gems
   - file

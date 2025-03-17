@@ -1,7 +1,7 @@
 ---
 title: XLSX (Excel)
 id: xlsx
-description: Paramters and properties to read from and write too XLSX (Excel) files
+description: Parameters and properties to read from and write too XLSX (Excel) files
 tags:
   - gems
   - file

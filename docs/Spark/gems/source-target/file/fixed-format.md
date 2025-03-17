@@ -1,7 +1,7 @@
 ---
 title: Fixed Format
 id: fixed-format
-description: Paramters and properties to read from and write to Fixed Format files
+description: Parameters and properties to read from and write to Fixed Format files
 tags:
   - gems
   - file

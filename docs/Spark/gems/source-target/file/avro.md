@@ -1,7 +1,7 @@
 ---
 title: Avro
 id: avro
-description: Paramters and properties to read from and write to Avro files
+description: Parameters and properties to read from and write to Avro files
 tags:
   - gems
   - file

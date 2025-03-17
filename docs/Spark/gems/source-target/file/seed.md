@@ -1,7 +1,7 @@
 ---
 title: Seed
 id: seed
-description: Paramters and properties to read from Seed files
+description: Parameters and properties to read from Seed files
 tags:
   - gems
   - file

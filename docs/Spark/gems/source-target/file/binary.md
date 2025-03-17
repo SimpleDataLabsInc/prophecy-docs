@@ -1,7 +1,7 @@
 ---
 title: Binary
 id: binary
-description: Paramters and properties to read from and write to Binary files
+description: Parameters and properties to read from and write to Binary files
 draft: true
 tags:
   - gems

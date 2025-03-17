@@ -1,7 +1,7 @@
 ---
 title: XML
 id: xml
-description: Paramters and properties to read from and write to XML files
+description: Parameters and properties to read from and write to XML files
 tags:
   - gems
   - file

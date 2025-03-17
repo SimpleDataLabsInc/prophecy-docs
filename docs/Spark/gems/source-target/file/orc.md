@@ -1,7 +1,7 @@
 ---
 title: ORC
 id: orc
-description: Paramters and properties to read from and write to ORC files
+description: Parameters and properties to read from and write to ORC files
 tags:
   - gems
   - file

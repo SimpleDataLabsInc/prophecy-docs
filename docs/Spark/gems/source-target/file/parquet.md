@@ -1,7 +1,7 @@
 ---
 title: Parquet
 id: parquet
-description: Paramters and properties to read from and write to Parquet files
+description: Parameters and properties to read from and write to Parquet files
 tags:
   - gems
   - file

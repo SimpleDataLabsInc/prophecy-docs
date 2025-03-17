@@ -1,7 +1,7 @@
 ---
 title: Text
 id: text
-description: Paramters and properties to read from and write to Text file
+description: Parameters and properties to read from and write to Text file
 tags:
   - gems
   - file

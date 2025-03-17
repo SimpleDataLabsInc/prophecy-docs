@@ -1,7 +1,7 @@
 ---
 title: Delta
 id: delta
-description: Paramters and properties to read from and write to Delta files
+description: Parameters and properties to read from and write to Delta files
 tags:
   - gems
   - file

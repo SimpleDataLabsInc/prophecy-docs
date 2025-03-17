@@ -1,7 +1,7 @@
 ---
 title: Kafka
 id: kafka
-description: Paramters and properties to read from and write to Kafka files
+description: Parameters and properties to read from and write to Kafka files
 tags:
   - gems
   - file

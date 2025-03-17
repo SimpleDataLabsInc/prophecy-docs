@@ -1,7 +1,7 @@
 ---
 title: Hudi
 id: hudi
-description: Paramters and properties to read from and write to Hudi files
+description: Parameters and properties to read from and write to Hudi files
 draft: true
 tags:
   - gems

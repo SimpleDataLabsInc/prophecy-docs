@@ -1,7 +1,7 @@
 ---
 title: JSON
 id: json
-description: Paramters and properties to read from and write to JSON files
+description: Parameters and properties to read from and write to JSON files
 tags:
   - gems
   - file
