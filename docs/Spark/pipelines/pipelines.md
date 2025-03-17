@@ -48,7 +48,7 @@ Let's take a closer look at the pipeline canvas. The canvas includes:
 
 - **Canvas**: space to add and connect gems.
 - **Gem drawer**: toolbox that contains all available gems.
-- **Run button**: click to [execute the pipeline interactively](docs/Spark/execution/interactive-execution.md).
+- **Run button**: click to [execute the pipeline interactively](docs/Spark/execution/execution.md).
 - **Copilot**: AI assistant to help build your pipeline.
 
 ![Pipeline canvas](img/pipeline-canvas.png)

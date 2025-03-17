@@ -25,7 +25,7 @@ If you want to limit your output to 10 rows, you can input `10` in the Limit gem
 ![Example usage of Limit](./img/limit_eg_1.png)
 
 :::note
-[Data samples](docs/Spark/execution/interactive-execution.md) generated before the Limit gem might also be limited. This is because Spark tries to push the limit down to earlier stages of execution to minimize data processing. This means Spark may reduce the number of rows fetched from the source or processed in earlier transformations.
+[Data samples](docs/Spark/execution/execution.md) generated before the Limit gem might also be limited. This is because Spark tries to push the limit down to earlier stages of execution to minimize data processing. This means Spark may reduce the number of rows fetched from the source or processed in earlier transformations.
 :::
 
 ## Code

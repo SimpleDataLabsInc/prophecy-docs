@@ -63,7 +63,3 @@ You can provide advanced options like Yarn queue, extra jars, and Spark configs 
 ## Connections and secrets
 
 Connections are not supported for Livy fabrics. However, you can still add secrets to your fabric. Team admins can learn how to set up and use secrets [here](docs/administration/secrets/secret-providers.md).
-
-## What's next
-
-Once you are using your Livy fabric in Prophecy, you might want to learn more about [Livy execution metrics](/docs/Spark/execution/execution-metrics-on-livy.md).

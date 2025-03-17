@@ -13,7 +13,7 @@ Prophecy executes pipelines based on the type of Spark cluster and the operation
 
 ## Interactive execution
 
-When you run a pipeline in the pipeline canvas, Prophecy generates **interim** data samples that let you preview the output of your data transformations. There are two ways to run a pipeline interactively:
+When you run a pipeline in the pipeline canvas, Prophecy generates interim **data samples** that let you preview the output of your data transformations. There are two ways to run a pipeline interactively:
 
 - Run the entire pipeline using the **play** button on the pipeline canvas.
 - Execute the pipeline up to and including a particular gem using the **play** button on that gem. This is also know as a **partial run**.

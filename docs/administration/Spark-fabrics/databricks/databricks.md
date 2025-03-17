@@ -59,6 +59,5 @@ Prophecy supports Databricks Volumes. When you run a Python or Scala pipeline vi
 
 To learn about Databricks execution, visit:
 
-- [Execution on Databricks](/docs/Spark/execution/databricks-clusters-behaviors.md)
-- [Interactive Execution](/docs/Spark/execution/interactive-execution.md)
+- [Interactive Execution](/docs/Spark/execution/execution.md)
 - [Execution Metrics](/docs/Spark/execution/execution-metrics.md)

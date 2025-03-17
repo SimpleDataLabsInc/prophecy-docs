@@ -24,7 +24,7 @@ tags:
 
   Data sampling is enabled on by default. When left enabled, Data sampling uses the pipeline's data sampling settings. Prophecy samples data during the interactive run experience to provide the best debugging experience for users.
 
-  For more information, see [Interims](/docs/Spark/execution/interactive-execution.md#interims).
+  For more information, see [Interims](docs/Spark/execution/execution.md#interactive-execution).
 
 #### SQL Copilot Enhancements {#SQL34}
 

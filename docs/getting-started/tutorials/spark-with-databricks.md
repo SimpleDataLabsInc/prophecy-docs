@@ -137,13 +137,13 @@ To preview the output of the gem:
 
 1. Click **Run** in the top right corner. This will execute the pipeline up to and including the gem.
 1. You'll be able to see a sample output dataset under **Data** in the gem footer.
-1. If you **Save** and close the gem, you will also be able to see a new small icon in the output of the Reformat gem. You can click on this to open the [interim data sample](docs/Spark/execution/interactive-execution.md).
+1. If you **Save** and close the gem, you will also be able to see a new small icon in the output of the Reformat gem. You can click on this to open the [interim data sample](docs/Spark/execution/execution.md).
 
 ![Reformat preview](img/spark-databricks-reformat-data.png)
 
 :::note
 
-- To learn more about running pipelines, visit [Interactive Execution](docs/Spark/execution/interactive-execution.md).
+- To learn more about running pipelines, visit [Execution](docs/Spark/execution/execution.md).
 - To learn more about Spark SQL expressions in gems, visit [Expression Builder](docs/Spark/gems/expression-builder.md).
 
 :::

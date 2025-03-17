@@ -11,7 +11,7 @@ tags:
   - data
 ---
 
-During project development, you can interactively run your pipelines and analyze the [interim data samples](docs/Spark/execution/interactive-execution.md#interims) that result in the **data explorer**. Use the data explorer to confirm the structure of each column, review data entries, and make sure the data types are correct.
+During project development, you can interactively run your pipelines and analyze the [data samples](docs/Spark/execution/execution.md#interactive-execution) that result in the **data explorer**. Use the data explorer to confirm the structure of each column, review data entries, and make sure the data types are correct.
 
 ## Data preview
 
