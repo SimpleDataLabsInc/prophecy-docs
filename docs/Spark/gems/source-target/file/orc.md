@@ -38,9 +38,43 @@ The Source gem reads data from ORC files and allows you to optionally specify th
 
 ![ORC source example](./img/orc/orc-source.gif)
 
+### Generated Code {#source-code}
+
 :::tip
-To see the generated source code, toggle to the **< > Code** view at the top of the page.
+To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
 :::
+
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+def read_orc(spark: SparkSession) -> DataFrame:
+    return spark.read\
+        .format("orc")\
+        .load("dbfs:/FileStore/Users/orc/test.orc")
+```
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+object read_orc {
+
+  def apply(spark: SparkSession): DataFrame =
+    spark.read
+      .format("orc")
+      .load("dbfs:/FileStore/Users/orc/test.orc")
+
+}
+```
+</TabItem>
+</Tabs>
+````
+
+---
 
 ## Target
 
@@ -68,6 +102,36 @@ The Target gem writes data to ORC files and allows you to optionally specify the
 
 ![ORC target example](./img/orc/orc-target.gif)
 
+### Generated Code {#target-code}
+
 :::tip
-To see the generated source code, toggle to the **< > Code** view at the top of the page.
+To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
 :::
+
+````mdx-code-block
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+def write_orc(spark: SparkSession, in0: DataFrame):
+    in0.write\
+        .format("orc")\
+        .mode("overwrite")\
+        .save("dbfs:/data/test_output.orc")
+```
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+object write_orc {
+  def apply(spark: SparkSession, in: DataFrame): Unit =
+    in.write
+        .format("orc")
+        .mode("overwrite")
+        .save("dbfs:/data/test_output.orc")
+}
+```
+</TabItem>
+</Tabs>
+````

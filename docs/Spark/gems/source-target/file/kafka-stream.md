@@ -42,9 +42,80 @@ The Source gem reads data from Kafka stream in batch mode and allows you to opti
 
 ![Example usage of Filter](./img/kafka_source_eg_1.png)
 
+### Generated Code {#source-code}
+
 :::tip
-To see the generated source code, toggle to the **< > Code** view at the top of the page.
+To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
 :::
+
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+def KafkaSource(spark: SparkSession) -> DataFrame:
+    from delta.tables import DeltaTable
+    import json
+    from pyspark.dbutils import DBUtils
+
+    if spark.catalog._jcatalog.tableExists(f"metadata.kafka_offsets"):
+        offset_dict = {}
+
+        for row in DeltaTable.forName(spark, f"metadata.kafka_offsets").toDF().collect():
+            if row["topic"] in offset_dict.keys():
+                offset_dict[row["topic"]].update({row["partition"] : row["max_offset"] + 1})
+            else:
+                offset_dict[row["topic"]] = {row["partition"] : row["max_offset"] + 1}
+
+        return (spark.read\
+            .format("kafka")\
+            .options(
+              **{
+                "kafka.sasl.jaas.config": (
+                  f"kafkashaded.org.apache.kafka.common.security.scram.ScramLoginModule"
+                  + f' required username="{DBUtils(spark).secrets.get(scope = "test", key = "username")}" password="{DBUtils(spark).secrets.get(scope = "test", key = "password")}";'
+                ),
+                "kafka.sasl.mechanism": "SCRAM-SHA-256",
+                "kafka.security.protocol": "SASL_SSL",
+                "kafka.bootstrap.servers": "broker1.aws.com:9094,broker2.aws.com:9094",
+                "kafka.session.timeout.ms": "6000",
+                "group.id": "group_id_1",
+                "subscribe": "my_first_topic,my_second_topic",
+                "startingOffsets": json.dumps(offset_dict),
+              }
+            )\
+            .load()\
+            .withColumn("value", col("value").cast("string"))\
+            .withColumn("key", col("key").cast("string")))
+    else:
+        return (spark.read\
+            .format("kafka")\
+            .options(
+              **{
+                "kafka.sasl.jaas.config": (
+                  f"kafkashaded.org.apache.kafka.common.security.scram.ScramLoginModule"
+                  + f' required username="{DBUtils(spark).secrets.get(scope = "test", key = "username")}" password="{DBUtils(spark).secrets.get(scope = "test", key = "password")}";'
+                ),
+                "kafka.sasl.mechanism": "SCRAM-SHA-256",
+                "kafka.security.protocol": "SASL_SSL",
+                "kafka.bootstrap.servers": "broker1.aws.com:9094,broker2.aws.com:9094",
+                "kafka.session.timeout.ms": "6000",
+                "group.id": "group_id_1",
+                "subscribe": "my_first_topic,my_second_topic"
+              }
+            )\
+            .load()\
+            .withColumn("value", col("value").cast("string"))\
+            .withColumn("key", col("key").cast("string")))
+```
+</TabItem>
+</Tabs>
+````
+
+---
 
 ## Target
 
@@ -61,9 +132,42 @@ The Target gem writes data to each row from the `Dataframe` to a Kafka topic as 
 
 ![Example usage of Filter](./img/kafka_target_eg_1.png)
 
+### Generated Code {#target-code}
+
 :::tip
-To see the generated source code, toggle to the **< > Code** view at the top of the page.
+To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
 :::
+
+````mdx-code-block
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+def KafkaTarget(spark: SparkSession, in0: DataFrame):
+    df1 = in0.select(to_json(struct("*")).alias("value"))
+    df2 = df1.selectExpr("CAST(value AS STRING)")
+    df2.write\
+        .format("kafka")\
+        .options(
+          **{
+            "kafka.sasl.jaas.config": (
+              f"kafkashaded.org.apache.kafka.common.security.scram.ScramLoginModule"
+              + f' required username="{DBUtils(spark).secrets.get(scope = "test", key = "username")}" password="{DBUtils(spark).secrets.get(scope = "test", key = "password")}";'
+            ),
+            "kafka.sasl.mechanism": "SCRAM-SHA-256",
+            "kafka.security.protocol": "SASL_SSL",
+            "kafka.bootstrap.servers": "broker1.aws.com:9094,broker2.aws.com:9094",
+            "topic": "my_first_topic,my_second_topic",
+          }
+        )\
+        .save()
+```
+</TabItem>
+</Tabs>
+````
+
+---
 
 ## Example Pipeline
 
@@ -74,7 +178,7 @@ In this example, you read JSON messages from Kafka, parse them, remove any null 
 ![Example usage of Filter](./img/kafka_pipeline_eg.gif)
 
 :::tip
-To see the generated source code, toggle to the **< > Code** view at the top of the page.
+To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
 :::
 
 #### Metadata Table
@@ -99,3 +203,44 @@ Taking this approach provides you the with following benefits:
 :::note
 For production workflows the [phase](../../../../concepts/project/gems.md#gem-phase) for the `Script` gem that updates the offsets should be greater than the phase of the Target gem. This ensures that offsets only update in the table after Prophecy safely persists the data to the Target.
 :::
+
+#### Spark Code used for script component
+
+:::tip
+To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
+:::
+
+````mdx-code-block
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+def UpdateOffsets(spark: SparkSession, in0: DataFrame):
+
+    if not ("SColumnExpression" in locals()):
+        from delta.tables import DeltaTable
+        import pyspark.sql.functions as f
+        metadataTable = "metadata.kafka_offsets"
+        metaDataDf = in0.groupBy("partition", "topic").agg(f.max(f.col("`offset`").cast("int")).alias("max_offset"))
+
+        if not spark.catalog._jcatalog.tableExists(metadataTable):
+            metaDataDf.write.format("delta").mode("overwrite").saveAsTable(metadataTable)
+        else:
+            DeltaTable\
+                .forName(spark, metadataTable)\
+                .alias("target")\
+                .merge(
+                  metaDataDf.alias("source"),
+                  (
+                    (col("source.`partition`") == col("target.`partition`"))
+                    & (col("source.`topic`") == col("target.`topic`"))
+                  )
+                )\
+                .whenMatchedUpdateAll()\
+                .whenNotMatchedInsertAll()\
+                .execute()
+```
+</TabItem>
+</Tabs>
+````

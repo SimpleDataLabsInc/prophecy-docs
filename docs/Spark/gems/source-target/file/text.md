@@ -41,11 +41,45 @@ The Source gem reads data from Text files and allows you to optionally specify t
 <iframe src="https://user-images.githubusercontent.com/103921419/175029278-70a93cc5-a212-464b-8aad-61ab278f0bbf.mp4" title="Text Source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-<br/>
+### Generated Code {#source-code}
 
 :::tip
-To see the generated source code, toggle to the **< > Code** view at the top of the page.
+To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
 :::
+
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+def read_avro(spark: SparkSession) -> DataFrame:
+    return spark.read\
+        .format("text")\
+        .text("dbfs:/FileStore/customers.txt", wholetext = False, lineSep = "\n")
+
+```
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+object read_avro {
+
+  def apply(spark: SparkSession): DataFrame =
+    spark.read
+        .format("text")
+        .option("lineSep", "\n")
+        .save("dbfs:/FileStore/customers.txt")
+
+}
+```
+</TabItem>
+</Tabs>
+````
+
+---
 
 ## Target
 
@@ -77,8 +111,38 @@ The Target gem writes data to Text files and allows you to optionally specify th
 <iframe src="https://user-images.githubusercontent.com/103921419/175029303-461687fe-a6e0-419e-85c6-229c17645746.mp4" title="Text Target" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-<br/>
+### Generated Code {#target-code}
 
 :::tip
-To see the generated source code, toggle to the **< > Code** view at the top of the page.
+To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
 :::
+
+````mdx-code-block
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+def write_text(spark: SparkSession, in0: DataFrame):
+    in0.write\
+        .format("text")\
+        .mode("overwrite")\
+        .text("dbfs:/FileStore/customers.txt", compression = "gzip", lineSep = "\n")
+```
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+object write_text {
+  def apply(spark: SparkSession, in: DataFrame): Unit =
+    in.write
+      .format("text")
+      .mode("overwrite")
+      .option("compression", "gzip")
+      .option("lineSep", "\n")
+      .save("dbfs:/FileStore/customers.txt")
+}
+```
+</TabItem>
+</Tabs>
+````

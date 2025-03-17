@@ -56,9 +56,53 @@ For example, if you set an evolved schema to contain one additional column with 
 
 ![Avro schema used](./img/avro/avro_schema_eg1.png)
 
+### Generated Code {#source-code}
+
 :::tip
-To see the generated source code, toggle to the **< > Code** view at the top of the page.
+To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
 :::
+
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+def read_avro(spark: SparkSession) -> DataFrame:
+    return spark.read\
+        .format("avro")\
+        .option("ignoreExtension", True)\
+        .option(
+          "avroSchema",
+          "{\"type\":\"record\",\"name\":\"Person\",\"fields\":[{\"name\":\"firstname\",\"type\":\"string\"},{\"name\":\"middlename\",\"type\":\"string\"},{\"name\":\"lastname\",\"type\":\"string\"},{\"name\":\"dob_year\",\"type\":\"int\"},{\"name\":\"dob_month\",\"type\":\"int\"},{\"name\":\"gender\",\"type\":\"string\"},{\"name\":\"salary\",\"type\":\"int\"}]}"
+        )\
+        .load("dbfs:/FileStore/Users/abhinav/avro/test.avro")
+```
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+object read_avro {
+
+  def apply(spark: SparkSession): DataFrame =
+    spark.read
+        .format("avro")
+        .option("ignoreExtension", true)
+        .option(
+          "avroSchema",
+          "{\"type\":\"record\",\"name\":\"Person\",\"fields\":[{\"name\":\"firstname\",\"type\":\"string\"},{\"name\":\"middlename\",\"type\":\"string\"},{\"name\":\"lastname\",\"type\":\"string\"},{\"name\":\"dob_year\",\"type\":\"int\"},{\"name\":\"dob_month\",\"type\":\"int\"},{\"name\":\"gender\",\"type\":\"string\"},{\"name\":\"salary\",\"type\":\"int\"}]}"
+        )
+        .load("dbfs:/FileStore/Users/abhinav/avro/test.avro")
+
+}
+```
+</TabItem>
+</Tabs>
+````
+
+---
 
 ## Target
 
@@ -92,8 +136,38 @@ The Target gem writes data to Avro files and allows you to optionally specify th
 <iframe src="https://user-images.githubusercontent.com/103921419/174399603-07080a2f-a52b-4feb-a029-733f947fad6c.mp4" title="Avro Target" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-<br/>
+### Generated Code {#target-code}
 
 :::tip
-To see the generated source code, toggle to the **< > Code** view at the top of the page.
+To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
 :::
+
+````mdx-code-block
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+def write_avro(spark: SparkSession, in0: DataFrame):
+    in0.write\
+        .format("avro")\
+        .mode("overwrite")\
+        .partitionBy("dob_year","dob_month")\
+        .save("dbfs:/data/test_output.avro")
+```
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+object write_avro {
+  def apply(spark: SparkSession, in: DataFrame): Unit =
+    in.write
+        .format("avro")
+        .mode("overwrite")
+        .partitionBy("dob_year","dob_month")
+        .save("dbfs:/data/test_output.avro")
+}
+```
+</TabItem>
+</Tabs>
+````

@@ -10,8 +10,8 @@ tags:
 
 A Delta (Delta Lake) file type:
 
-- Is an optimized storage layer that allows you to store data and tables in the Databricks lakehouse.
-- Extends Parquet data files with a file-based transaction log for ACID transactions and scalable metadata handling.
+- Is what we recommend you to write to since it's an optimized storage layer that allows you to store data and tables in the Databricks lakehouse.
+- Extends Parquet data files with a file-based transaction log for ACID transactions and scalable metadata handsling.
 - Has a tight integration with structured streaming, which allows you to use a single copy of data for both batch and streaming operations and provides incremental processing at scale.
 
 ## Parameters
@@ -41,9 +41,101 @@ You can only select `Read Timestamp` or `Read Version`, not both.
 
 ![Delta source example](./img/delta/delta_source_eg.gif)
 
+### Generated Code {#source-code}
+
 :::tip
-To see the generated source code, toggle to the **< > Code** view at the top of the page.
+To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
 :::
+
+#### Without time travel
+
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+def ReadDelta(spark: SparkSession) -> DataFrame:
+    return spark.read.format("delta").load("dbfs:/FileStore/data_engg/delta_demo/silver/orders")
+```
+
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+object ReadDelta {
+
+  def apply(spark: SparkSession): DataFrame = {
+    spark.read.format("delta").load("dbfs:/FileStore/data_engg/delta_demo/silver/orders")
+  }
+
+}
+```
+</TabItem>
+</Tabs>
+````
+
+#### Timestamp-based time travel
+
+````mdx-code-block
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+def ReadDelta(spark: SparkSession) -> DataFrame:
+    return spark.read.format("delta").option("timestampAsOf", "2022-05-05")\
+        .load("dbfs:/FileStore/data_engg/delta_demo/silver/orders")
+```
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+object ReadDelta {
+
+  def apply(spark: SparkSession): DataFrame = {
+    spark.read.format("delta").option("timestampAsOf", "2022-05-05")
+        .load("dbfs:/FileStore/data_engg/delta_demo/silver/orders")
+  }
+
+}
+```
+</TabItem>
+</Tabs>
+````
+
+#### Version-based time travel
+
+````mdx-code-block
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+def readDelta(spark: SparkSession) -> DataFrame:
+    return spark.read.format("delta").option("versionAsOf", "0")\
+        .load("dbfs:/FileStore/data_engg/delta_demo/silver/orders")
+```
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+object readDelta {
+
+  def apply(spark: SparkSession): DataFrame = {
+    spark.read.format("delta").option("versionAsOf", "0")
+        .load("dbfs:/FileStore/data_engg/delta_demo/silver/orders")
+  }
+
+}
+```
+</TabItem>
+</Tabs>
+````
+
+---
 
 ## Target
 
@@ -76,9 +168,54 @@ The Target gem writes data to Delta files and allows you to optionally specify t
 
 ![Delta Target Example](./img/delta/delta_target_eg.gif)
 
+### Generated Code {#target-code}
+
 :::tip
-To see the generated source code, toggle to the **< > Code** view at the top of the page.
+To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
 :::
+
+````mdx-code-block
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+def writeDelta(spark: SparkSession, in0: DataFrame):
+    return in0.write\
+            .format("delta")\
+            .option("optimizeWrite", True)\
+            .option("mergeSchema", True)\
+            .option("replaceWhere", "order_dt > '2022-01-01'")\
+            .option("overwriteSchema", True)\
+            .mode("overwrite")\
+            .partitionBy("order_dt")\
+            .save("dbfs:/FileStore/data_engg/delta_demo/silver/orders")
+```
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+object writeDelta {
+
+  def apply(spark: SparkSession, in: DataFrame): Unit = {
+    in0.write
+        .format("delta")
+        .option("optimizeWrite", True)
+        .option("mergeSchema", True)
+        .option("replaceWhere", "order_dt > '2022-01-01'")
+        .option("overwriteSchema", True)
+        .mode("overwrite")
+        .partitionBy("order_dt")
+        .save("dbfs:/FileStore/data_engg/delta_demo/silver/orders")
+  }
+
+}
+```
+</TabItem>
+</Tabs>
+````
+
+---
 
 ## Delta MERGE
 
@@ -137,9 +274,69 @@ The following shows the output and configurations for an SCD1 merge:
 
 <br/>
 
+#### Generated Code {#upsert-code}
+
 :::tip
-To see the generated source code, toggle to the **< > Code** view at the top of the page.
+To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
 :::
+
+````mdx-code-block
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+def writeDeltaMerge(spark: SparkSession, in0: DataFrame):
+    from delta.tables import DeltaTable, DeltaMergeBuilder
+
+    if DeltaTable.isDeltaTable(spark, "dbfs:/FileStore/data_engg/delta_demo/silver/customers_scd1"):
+        DeltaTable\
+            .forPath(spark, "dbfs:/FileStore/data_engg/delta_demo/silver/customers_scd1")\
+            .alias("target")\
+            .merge(in0.alias("source"), (col("source.customer_id") == col("target.customer_id")))\
+            .whenMatchedUpdateAll()\
+            .whenNotMatchedInsertAll()\
+            .execute()
+    else:
+        in0.write\
+            .format("delta")\
+            .mode("overwrite")\
+            .save("dbfs:/FileStore/data_engg/delta_demo/silver/customers_scd1")
+```
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+object writeDeltaMerge {
+
+  def apply(spark: SparkSession, in: DataFrame): Unit = {
+    import _root_.io.delta.tables._
+    if (DeltaTable.isDeltaTable(spark, "dbfs:/FileStore/data_engg/delta_demo/silver/customers_scd1")) {
+        DeltaTable
+            .forPath(spark, "dbfs:/FileStore/data_engg/delta_demo/silver/customers_scd1")
+            .as("target")
+            .merge(in0.as("source"), (col("source.customer_id") === col("target.customer_id")))
+            .whenMatched()
+            .updateAll()
+            .whenNotMatched()
+            .insertAll()
+            .execute()
+    }
+    else {
+        in0.write
+            .format("delta")
+            .mode("overwrite")
+            .save("dbfs:/FileStore/data_engg/delta_demo/silver/customers_scd1")
+    }
+  }
+
+}
+```
+</TabItem>
+</Tabs>
+````
+
+---
 
 ### SCD2
 
@@ -169,9 +366,167 @@ The following shows the output and configurations for an SCD2 merge:
 
 <br/>
 
+#### Generated Code {#scd2-code}
+
 :::tip
-To see the generated source code, toggle to the **< > Code** view at the top of the page.
+To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
 :::
+
+````mdx-code-block
+
+<Tabs>
+
+<TabItem value="py" label="Python">
+
+```py
+def writeDeltaSCD2(spark: SparkSession, in0: DataFrame):
+    from delta.tables import DeltaTable, DeltaMergeBuilder
+
+    if DeltaTable.isDeltaTable(spark, "dbfs:/FileStore/data_engg/delta_demo/silver/customers_scd2"):
+        existingTable = DeltaTable.forPath(
+            spark, "dbfs:/FileStore/data_engg/delta_demo/silver/customers_scd2"
+        )
+        updatesDF = in0.withColumn("minFlag", lit("true")).withColumn(
+            "maxFlag", lit("true")
+        )
+        existingDF = existingTable.toDF()
+        updateColumns = updatesDF.columns
+        stagedUpdatesDF = (
+            updatesDF.join(existingDF, ["customer_id"])
+            .where(
+                (
+                    (existingDF["maxFlag"] == lit("true"))
+                    & (
+                        (
+                            (
+                                existingDF["customer_zip_code"]
+                                != updatesDF["customer_zip_code"]
+                            )
+                            | (
+                                existingDF["customer_city"]
+                                != updatesDF["customer_city"]
+                            )
+                        )
+                        | (existingDF["customer_state"] != updatesDF["customer_state"])
+                    )
+                )
+            )
+            .select(*[updatesDF[val] for val in updateColumns])
+            .withColumn("minFlag", lit("false"))
+            .withColumn("mergeKey", lit(None))
+            .union(updatesDF.withColumn("mergeKey", concat("customer_id")))
+        )
+        existingTable.alias("existingTable").merge(
+            stagedUpdatesDF.alias("staged_updates"),
+            concat(existingDF["customer_id"]) == stagedUpdatesDF["mergeKey"],
+        ).whenMatchedUpdate(
+            condition=(
+                (existingDF["maxFlag"] == lit("true"))
+                & (
+                    (
+                        (
+                            existingDF["customer_zip_code"]
+                            != stagedUpdatesDF["customer_zip_code"]
+                        )
+                        | (
+                            existingDF["customer_city"]
+                            != stagedUpdatesDF["customer_city"]
+                        )
+                    )
+                    | (
+                        existingDF["customer_state"]
+                        != stagedUpdatesDF["customer_state"]
+                    )
+                )
+            ),
+            set={"maxFlag": "false", "end_date": "staged_updates.updated_dt"},
+        )\
+        .whenNotMatchedInsertAll()\
+        .execute()
+    else:
+        in0.write\
+            .format("delta")\
+            .mode("overwrite")\
+            .save("dbfs:/FileStore/data_engg/delta_demo/silver/customers_scd2")
+```
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+object writeDeltaSCD2 {
+
+  def apply(spark: SparkSession, in: DataFrame): Unit = {
+    import _root_.io.delta.tables._
+    if (
+      DeltaTable.isDeltaTable(
+        spark,
+        "dbfs:/FileStore/data_engg/delta_demo/silver/customers_scd2"
+      )
+    ) {
+      val updatesDF = in
+        .withColumn("minFlag", lit("true"))
+        .withColumn("maxFlag", lit("true"))
+      val existingTable: DeltaTable = DeltaTable.forPath(
+        spark,
+        "dbfs:/FileStore/data_engg/delta_demo/silver/customers_scd2"
+      )
+      val existingDF: DataFrame = existingTable.toDF
+      val stagedUpdatesDF = updatesDF
+        .join(existingDF, List("customer_id"))
+        .where(
+          existingDF.col("maxFlag") === lit("true") && List(
+            existingDF.col("customer_zip_code") =!= updatesDF
+              .col("customer_zip_code"),
+            existingDF.col("customer_city") =!= updatesDF
+              .col("customer_city"),
+            existingDF.col("customer_state") =!= updatesDF
+              .col("customer_state")
+          ).reduce((c1, c2) => c1 || c2)
+        )
+        .select(updatesDF.columns.map(x => updatesDF.col(x)): _*)
+        .withColumn("minFlag", lit("false"))
+        .withColumn("mergeKey", lit(null))
+        .union(updatesDF.withColumn("mergeKey", concat(col("customer_id"))))
+      existingTable
+        .as("existingTable")
+        .merge(
+          stagedUpdatesDF.as("staged_updates"),
+          concat(existingDF.col("customer_id")) === stagedUpdatesDF(
+            "mergeKey"
+          )
+        )
+        .whenMatched(
+          existingDF.col("maxFlag") === lit("true") && List(
+            existingDF.col("customer_zip_code") =!= stagedUpdatesDF
+              .col("customer_zip_code"),
+            existingDF.col("customer_city") =!= stagedUpdatesDF
+              .col("customer_city"),
+            existingDF.col("customer_state") =!= stagedUpdatesDF
+              .col("customer_state")
+          ).reduce((c1, c2) => c1 || c2)
+        )
+        .updateExpr(
+          Map("maxFlag" → "false", "end_date" → "staged_updates.updated_dt")
+        )
+        .whenNotMatched()
+        .insertAll()
+        .execute()
+    } else {
+      in0.write
+        .format("delta")
+        .mode("overwrite")
+        .save("dbfs:/FileStore/data_engg/delta_demo/silver/orders")
+    }
+
+  }
+
+}
+```
+</TabItem>
+</Tabs>
+````
+
+---
 
 ### SCD3
 
@@ -186,7 +541,7 @@ The following shows the output and configurations for an SCD3 merge:
 <br/>
 
 :::tip
-To see the generated source code, toggle to the **< > Code** view at the top of the page.
+To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
 :::
 
 :::info

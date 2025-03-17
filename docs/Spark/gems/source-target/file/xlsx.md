@@ -125,6 +125,31 @@ If you want the Target gem to output a single file:
 
    After you run your pipeline, your output is still a directory, but this time it only contains a single output file.
 
+## Example code
+
 :::tip
-To see the generated source code, toggle to the **< > Code** view at the top of the page.
+To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
 :::
+
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+def Demo_XLSX_Source(spark: SparkSession) -> DataFrame:
+    if Config.fabricName == "dev":
+        return spark.read\
+            .format("excel")\
+            .option("header", True)\
+            .option("dataAddress", "A1")\
+            .option("inferSchema", True)\
+            .load("dbfs:/FileStore/Users/scott/plain_number.xlsx")
+    else:
+        raise Exception("No valid dataset present to read fabric")
+```
+</TabItem>
+</Tabs>
+````

@@ -16,20 +16,12 @@ The Source and Target gems to help you work with various file-based formats, con
 
 You can use the Source and Target gems to help you work with following file-based formats:
 
-- [Avro](./file/avro)
-- [CSV](./file/csv)
-- [Delta](./file/delta)
-- [Fixed Format](./file/fixed-format)
-- [JSON](./file/json)
-- [Kafka](./file/kafka)
-- [ORC](./file/orc)
-- [Parquet](./file/parquet)
-- [Text](./file/text)
-- [XLSX (Excel)](./file/xlsx)
-- [XML](./file/xml)
-- [Seed](./file/seed)
-- [Binary](./file/binary)
-- [Hudi](./file/hudi)
+| Formats                             |                           |                             |
+| ----------------------------------- | ------------------------- | --------------------------- |
+| [Avro](./file/avro)                 | [JSON](./file/json)       | [Seed](./file/seed)         |
+| [CSV](./file/csv)                   | [Kafka](./file/kafka)     | [Text](./file/text)         |
+| [Delta](./file/delta)               | [ORC](./file/orc)         | [XLSX (Excel)](./file/xlsx) |
+| [Fixed Format](./file/fixed-format) | [Parquet](./file/parquet) | [XML](./file/xml)           |
 
 ### Synthetic data generator
 
@@ -39,24 +31,20 @@ You can generate synthetic data with [the data generator file type](/docs/Spark/
 
 You can use the Source and Target gems to help you connect to the following warehouse-style data sources:
 
-- [BigQuery](./warehouse/bigquery)
-- [CosmosDB](./warehouse/cosmos)
-- [DB2](./warehouse/db2)
-- [JDBC](./warehouse/jdbc)
-- [MongoDB](./warehouse/mongodb)
-- [Oracle](./warehouse/oracle)
-- [Redshift](./warehouse/redshift)
-- [Salesforce](./warehouse/salesforce)
-- [Snowflake](./warehouse/snowflake)
-- [Teradata](./warehouse/teradata)
+| Data Sources                     |                                      |                                    |
+| -------------------------------- | ------------------------------------ | ---------------------------------- |
+| [BigQuery](./warehouse/bigquery) | [MongoDB](./warehouse/mongodb)       | [Snowflake](./warehouse/snowflake) |
+| [CosmosDB](./warehouse/cosmos)   | [Oracle](./warehouse/oracle)         | [Teradata](./warehouse/teradata)   |
+| [DB2](./warehouse/db2)           | [Redshift](./warehouse/redshift)     |                                    |
+| [JDBC](./warehouse/jdbc)         | [Salesforce](./warehouse/salesforce) |                                    |
 
 ## Catalog
 
 You can use the Source and Target gems to help you work with the following table-based formats:
 
-- [Delta](./catalog-table/delta)
-- [Hive](./catalog-table/hive)
-- [Iceberg](./catalog-table/iceberg)
+| Formats                        |                              |                                    |
+| ------------------------------ | ---------------------------- | ---------------------------------- |
+| [Delta](./catalog-table/delta) | [Hive](./catalog-table/hive) | [Iceberg](./catalog-table/iceberg) |
 
 ## Lookup
 

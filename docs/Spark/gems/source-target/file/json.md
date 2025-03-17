@@ -63,11 +63,41 @@ The Source gem reads data from JSON files and allows you to optionally specify t
 <iframe src="https://user-images.githubusercontent.com/130362885/234556861-d5b82f1a-883e-4b49-bebe-0ac47511583e.mp4" title="Json Source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-<br/>
+### Generated Code {#source-code}
 
 :::tip
-To see the generated source code, toggle to the **< > Code** view at the top of the page.
+To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
 :::
+
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+def ReadDelta(spark: SparkSession) -> DataFrame:
+    return spark.read.format("json").load("dbfs:/FileStore/data/example.json")
+```
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+object ReadJson {
+
+    def apply(spark: SparkSession): DataFrame =
+        spark.read
+            .format("json")
+            .load("dbfs:/FileStore/data/example.json")
+
+}
+```
+</TabItem>
+</Tabs>
+````
+
+---
 
 ## Target
 
@@ -103,11 +133,39 @@ The Target gem writes data to JSON files and allows you to optionally specify th
 <iframe src="https://user-images.githubusercontent.com/130362885/234556999-72c22d9b-c99e-4e6c-8887-b54b8d5d94f1.mp4" title="Json Target" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-<br/>
+### Generated Code {#target-code}
 
 :::tip
-To see the generated source code, toggle to the **< > Code** view at the top of the page.
+To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
 :::
+
+````mdx-code-block
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+def write_json(spark: SparkSession, in0: DataFrame):
+    in0.write\
+        .format("json")\
+        .mode("overwrite")\
+        .save("dbfs:/data/test_output.json")
+```
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+object write_json {
+  def apply(spark: SparkSession, in: DataFrame): Unit =
+    in.write
+        .format("json")
+        .mode("overwrite")
+        .save("dbfs:/data/test_output.json")
+}
+```
+</TabItem>
+</Tabs>
+````
 
 ### Producing A Single Output File
 

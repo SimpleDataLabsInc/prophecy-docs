@@ -61,11 +61,45 @@ The Source gem reads data from Parquet files and allows you to optionally specif
 <iframe src="https://user-images.githubusercontent.com/103921419/175030738-4c53b5c9-73e7-46c7-9fdc-c49048f78572.mp4" title="Parquet Source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-<br/>
+### Generated Code {#source-code}
 
 :::tip
-To see the generated source code, toggle to the **< > Code** view at the top of the page.
+To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
 :::
+
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+def read_parquet(spark: SparkSession) -> DataFrame:
+    return spark.read\
+        .format("parquet")\
+        .option("mergeSchema", True)\
+        .load("dbfs:/FileStore/Users/parquet/test.parquet")
+```
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+object read_parquet {
+
+  def apply(spark: SparkSession): DataFrame =
+    spark.read
+        .format("parquet")
+        .option("mergeSchema", true)
+        .load("dbfs:/FileStore/Users/parquet/test.parquet")
+
+}
+```
+</TabItem>
+</Tabs>
+````
+
+---
 
 ## Target
 
@@ -96,8 +130,36 @@ The Target gem writes data to Parquet files and allows you to optionally specify
 <iframe src="https://user-images.githubusercontent.com/103921419/175030713-9de9d38a-c145-42e9-8411-baa44a70d0d0.mp4" title="Parquet Target" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-<br/>
+### Generated Code {#target-code}
 
 :::tip
-To see the generated source code, toggle to the **< > Code** view at the top of the page.
+To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
 :::
+
+````mdx-code-block
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+def write_parquet(spark: SparkSession, in0: DataFrame):
+    in0.write\
+        .format("parquet")\
+        .mode("overwrite")\
+        .save("dbfs:/data/test_output.parquet")
+```
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+object write_parquet {
+  def apply(spark: SparkSession, in: DataFrame): Unit =
+    in.write
+        .format("parquet")
+        .mode("overwrite")
+        .save("dbfs:/data/test_output.parquet")
+}
+```
+</TabItem>
+</Tabs>
+````

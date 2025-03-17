@@ -45,13 +45,9 @@ To create a fabric and configure the job size in the Spark Cluster UI:
 
    For example, [Databricks Runtime 12.2 LTS](https://docs.databricks.com/en/release-notes/runtime/12.2lts.html) uses Python 3.9.19. If you are using Databricks Runtime 12.2+, the Python version meets this requirement.
 
-1. Create a new environment variable called `SPARK_VERSION` with value `3.3`.
-1. Confirm and restart your Spark cluster.
-   ![requirements](../../img/synth_0_1_requirements.png)
-
 ## Prophecy requirements
 
-Open a Prophecy project and upgrade the `ProphecySparkBasicsPython` Dependency to `0.2.34` or later.
+Open a Prophecy project and upgrade the `ProphecySparkBasicsPython` Dependency to `0.2.32` or later.
 
 :::note
 Connecting a Prophecy project to a Spark cluster with a different dependency version prompts the Spark cluster to restart.
