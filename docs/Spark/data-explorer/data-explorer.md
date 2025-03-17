@@ -33,12 +33,8 @@ When you filter, sort, or search through the data, you are only working with the
 
 ### Large sample interims
 
-If you want to see larger samples in the data explorer, you can enable the **Selective** data sampling setting. When you enable this option, you will be able to see up to 10,000 rows in the data sample by default. You'll also see all columns by default.
+If you want to see larger samples in the data explorer, you can enable the [Selective](docs/Spark/execution/data-sampling.md#selective-recommended) data sampling setting. When you enable this option, you will be able to see up to 10,000 rows in the data sample by default. You'll also see all columns by default.
 
 :::note
-
 You can still load more records into the preview when using selective data sampling.
-
 :::
-
-If you disable the large data preview on an individual gem, you'll see a pale-color interim on its output after running the data pipeline. This means that no data sample was generated. If you want to generate the data preview, open the pale interim and it will load the data. After it loads, the interim will look like a normal interim.

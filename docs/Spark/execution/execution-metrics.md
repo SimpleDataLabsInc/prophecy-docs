@@ -10,6 +10,37 @@ tags:
 
 When running pipelines and jobs, you may want to review metrics related to execution like records read/written, bytes read/written, total time taken, and data samples generated between components. These dataset, pipeline-run, and job-run related metrics are accumulated and stored on your data plane and can be viewed later from the Prophecy user interface.
 
+## Requirements
+
+To store and view execution metrics, admins must configure the execution metrics settings for their teams.
+
+- Enable execution metrics for the team.
+- Create tables to store historical execution data (or leave the Prophecy default). Tables can be any format like Avro, Parquet, ORC, or Delta.
+- Set the data storage behavior.
+- Give team members access to these tables.
+
+:::info
+Reading execution metrics from High-Concurrency Clusters with Table-ACL enabled is supported in Databricks runtimes 11.0 or below. Execution metrics are **not available** for `Shared mode` clusters (both normal workspaces and Unity catalog workspaces). You should see an error when trying to get historical runs of pipelines/jobs executed on `Shared mode` clusters.
+:::
+
+## Historical runs
+
+You can find historical runs in pipeline and dataset metadata.
+
+![Pipeline_Execution_Metrics](img/execution-metrics-pipeline.png)
+
+Each row here is one run of the pipeline. You can click and go to a particular run and see the interims for that run or metrics like Rows read/written, time taken, etc.
+
+![Execution_Metrics](img/ExecutionMetrics.png)
+
+You can also see Execution Metrics for each dataset in the pipeline.
+
+![Dataset_metrcis](img/execution-metrcis-dataset1.png)
+
+Each row here is one run where this dataset was used. You can click and go to a particular run and see more detailed insights on your data along with preview.
+
+![Dataset_stats](img/dataset-statistics.png)
+
 ## Data storage behavior
 
 Depending on flags settings, the storage behavior for execution metrics changes. For example, certain data may be written depending on whether a pipeline flag is turned on or off. See the following table to learn how the behavior changes.
@@ -34,15 +65,6 @@ There are three execution metrics tables that store data for pipelines, individu
 - **Interims table**: The interims table that contains samples of data, depending on the interim mode selected
 
 ![ExecutionMetricsConfig.png](img/ExecutionMetricsConfig.png)
-
-## Prerequisites
-
-As a Workspace / Catalog Admin, you must create tables and grant appropriate permissions to your users for them to choose
-to mention tables of their choice. It's recommended that this should be done at the time of team creation itself, to ensure the best experience for your users.
-
-You can store these tables using any format like Avro, Parquet, ORC, or Delta.
-
-DDLs and Grant accesses are in the following sections.
 
 ## Create tables using Delta (for Databricks)
 
@@ -167,12 +189,6 @@ The following are sample Create table commands for tables using Delta. These are
   GRANT MODIFY ON <database.interims-table> TO group1;
   GRANT MODIFY ON <database.interims-table> TO group2;
 ```
-
-### Restrictions
-
-- Reading execution metrics from High-Concurrency Clusters with Table-ACL enabled is supported in Databricks
-  Runtimes 11.0 or below.
-- Shared Access mode in Unity Catalog enabled workspaces is not supported.
 
 ## Creating Tables using Parquet (for Livy)
 

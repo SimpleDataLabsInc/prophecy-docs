@@ -82,10 +82,22 @@ The Output tab defines the outgoing schemas that will be available to downstream
 
 ## Action menu
 
-- Change phase:
-- Add condition: build conditional execution
-- Cache:
-- Data preview: enable selective sampling
+The action menu gives you more granular control over individual gems. When you expand the action menu, you see the following options:
+
+| **Action**        | **Description**                                                                                                                                                                                                               |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Explain**       | Copilot adds a comment to the gem that explains what it does.                                                                                                                                                                 |
+| **Fix**           | Copilot resolves an error in the gem configuration.                                                                                                                                                                           |
+| **Label**         | Copilot renames the gem.                                                                                                                                                                                                      |
+| **Add Comment**   | Manually write a comment that explains the gem.                                                                                                                                                                               |
+| **Add Condition** | Write a [condition](docs/Spark/execution/conditional-execution.md) that will restrict gem execution during pipeline runs.                                                                                                     |
+| **Delete**        | Remove the gem from the pipeline.                                                                                                                                                                                             |
+| **Cache**         | Cache the entire gem output dataset. This is useful if you have multiple pipeline branches from one gem. If you cache the dataset from that gem, Spark will not have to compute upstream gems multiple times for each branch. |
+| **Data Preview**  | If [selective data sampling](docs/Spark/execution/data-sampling.md) is enabled, use this checkbox to enable or disable the generation of the data sample for the gem.                                                         |
+| **Data Profile**  | Enable or disable [data profiling](docs/Spark/data-explorer/data-profile.md) for the gem output.                                                                                                                              |
+| **Data Diff**     | If [Data Diff](docs/ci-cd/data-diff.md) is configured for a Target gem, use this checkbox to enable or disable the data diff output.                                                                                          |
+
+![Gem action menu](img/gem-action-menu.png)
 
 ### Gem phase
 
