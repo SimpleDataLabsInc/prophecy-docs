@@ -10,17 +10,11 @@ tags:
 
 import Requirements from '@site/src/components/gem-requirements';
 
-<Requirements
-  python_package_name="ProphecySparkBasicsPython"
-  python_package_version="0.0.1+"
-  scala_package_name="ProphecySparkBasicsScala"
-  scala_package_version="0.0.1+"
-  scala_lib=""
-  python_lib=""
-  uc_single="14.3+"
-  uc_shared="14.3+"
-  livy="3.0.1"
-/>
+| Location Type            | Compatability                                                                                                                                                                                                                                            |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| File Location            | <Requirements python_package_name="ProphecySparkBasicsPython" python_package_version="0.0.1+" scala_package_name="ProphecySparkBasicsScala" scala_package_version="0.0.1+" scala_lib="" python_lib="" uc_single="14.3+" uc_shared="14.3+" livy="3.0.1"/> |
+| Sharepoint (Python only) | <Requirements python_package_name="ProphecySparkBasicsPython" python_package_version="0.2.35+" scala_package_name="" scala_package_version="" scala_lib="" python_lib="" uc_single="" uc_shared="" livy=""/>                                             |
+| SFTP (Python only)       | <Requirements python_package_name="ProphecySparkBasicsPython" python_package_version="0.2.35+" scala_package_name="" scala_package_version="" scala_lib="" python_lib="" uc_single="14.3+" uc_shared="" livy=""/>                                        |
 
 Read or write delimited files such as CSV (Comma-separated Values) or TSV (Tab-separated Values) in Prophecy.
 
