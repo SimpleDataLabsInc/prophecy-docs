@@ -14,11 +14,25 @@ To view a list of pipelines in Prophecy, navigate to the **Metadata** page from 
 
 ## Creation
 
-If you want to create a new pipeline, you can do so from the **Create Entity** page in the left sidebar. You can also create pipelines directly within the [Project Editor](/getting-started/concepts/project/#project-editor). The following table describes the parameters for pipeline creation.
+If you want to create a new pipeline, you can do so from the **Create Entity** page in the left sidebar. You can also create pipelines directly within the project editor. The following table describes the parameters for pipeline creation.
 
 ## Project editor
 
 When building your pipelines, it helps to be familiar with the project editor interface. The following table describes different areas of the project editor.
+
+### Sidebar
+
+- Project tab: browse your pipelines and manage project components
+- Environment browser: browse data from the different connections configured if your fabric.
+
+### Canvas
+
+Let's take a closer look at the pipeline canvas. The canvas includes:
+
+- **Canvas**: space to add and connect gems.
+- **Gem drawer**: toolbox that contains all available gems.
+- **Run button**: click to [execute the pipeline interactively](/analysts/development/pipelines/execution/#interactive-execution).
+- **Copilot**: AI assistant to help build your pipeline.
 
 ### Header
 
@@ -31,17 +45,3 @@ When building your pipelines, it helps to be familiar with the project editor in
 
 - Diagnostics
 - Runtime logs
-
-### Sidebar
-
-- Project tab: browse your pipelines and project components
-- Environment tab: browse data from the different connections configured if your fabric.
-
-### Canvas
-
-Let's take a closer look at the pipeline canvas. The canvas includes:
-
-- **Canvas**: space to add and connect gems.
-- **Gem drawer**: toolbox that contains all available gems.
-- **Run button**: click to [execute the pipeline interactively](/analysts/development/pipelines/execution/#interactive-execution).
-- **Copilot**: AI assistant to help build your pipeline.

@@ -21,15 +21,21 @@ When you run a pipeline in the pipeline canvas, Prophecy generates **interim** d
 
 After you run your pipeline, the interims will appear between gems. These previews are temporarily cached. Learn more about how to navigate the interim data samples in [Data Explorer](docs/Spark/data-explorer/data-explorer.md).
 
-## Data sampling settings
+## Settings
 
 Data sampling is enabled by default for interactive execution. However, you can change how data sampling works at the pipeline or fabric level.
 
 ### Pipeline settings
 
-For each pipeline, you can enable, disable, or change interactive data sampling and job data sampling modes. For more information, visit our [pipeline settings](docs/Spark/pipelines/pipeline-settings.md) documentation.
+For each pipeline, you can enable, disable, or change interactive data sampling and job data sampling modes. To quickly update the interactive execution settings:
 
-![Data and Job Sampling](img/interactive-execution-job-data-sampling.png)
+1. Hover the large **play** button.
+1. Click on the **ellipses** that appears on hover.
+1. Change your data sampling settings. This will update your pipeline settings.
+
+![Interactive run configuration](img/interactive-run-config.png)
+
+For more information, visit our [pipeline settings](docs/Spark/pipelines/pipeline-settings.md#run-settings) documentation.
 
 ### Fabric settings
 

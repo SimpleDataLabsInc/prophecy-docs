@@ -1,5 +1,5 @@
 ---
-title: Spark Gems
+title: Gems for Spark projects
 id: spark-gems
 description: Prophecy Spark Gems
 tags:
@@ -80,7 +80,7 @@ The Output tab defines the outgoing schemas that will be available to downstream
 |  3  | Infer from cluster | Run the gem code on the connected cluster and infer the schema from the result                                  |
 |  4  | Edit schema        | Edit the output schema manually                                                                                 |
 
-## Gem menu
+## Action menu
 
 - Change phase:
 - Add condition: build conditional execution

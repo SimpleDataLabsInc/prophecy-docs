@@ -17,8 +17,8 @@ Tables are natively read from and written to the SQL warehouse that is configure
 | View  | SQL query that performs a transformation on a dataset. It itself contains no data. |
 | Seed  | Small CSV files that you can write directly in Prophecy.                           |
 
-:::info
-When deciding between tables and external sources, consider your primary SQL connection in your Prophecy fabric. Processing tables in the SQL warehouse will be fast. Conversely, if you configure an external source—like a Databricks source gem—while already connected to a Databricks SQL warehouse, processing will be slower.
+:::caution
+When deciding between tables and external sources, consider the primary SQL connection in your Prophecy fabric. Processing tables natively in the SQL warehouse will be fast. Processing external data is slower. **Do not create an external connection that duplicates your primary SQL warehouse connection.**
 :::
 
 ## External Sources and Targets

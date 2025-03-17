@@ -19,15 +19,14 @@ To use the Data Explorer, you need to [interactively run](/analysts/development/
 
 ## Explore the data
 
-When you open the Data Explorer for an interim, you can:
+The **Data Preview** tab of the data explorer enables the following functionality.
 
-1. Filter the data.
-1. Sort the data.
-1. Search through the data.
-1. Show or hide columns.
-1. Load more rows into the preview sample.
-1. Download data in CSV or JSON format.
-1. Create a new gem.
+- Sort the data
+- Filter the data
+- Search through the data
+- Show or hide columns in the preview
+- Export the data sample in CSV or JSON format
+- Save the data transformation as a new gem
 
 ![DataExplorationSQL](./img/DataExplorationSQL.png)
 

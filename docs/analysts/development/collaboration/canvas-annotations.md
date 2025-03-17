@@ -16,4 +16,9 @@ To add an annotation to a pipeline:
 1. Open a pipeline in a project.
 1. Click on the annotate button in the bottom left corner of the canvas.
 1. Drag the text box to your desired location in the canvas.
-1. Add your own text to the annotation.
+1. Add your own text or image to the annotation.
+1. Format the text using the formatting toolbar.
+
+## Example
+
+Exposing important code blocks of certain gems.

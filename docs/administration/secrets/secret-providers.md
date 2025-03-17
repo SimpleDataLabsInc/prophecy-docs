@@ -43,9 +43,9 @@ If you are using a free trial, you can use Databricks as the secret provider. Yo
 
 Prophecy supports [HashiCorp Vault](https://developer.hashicorp.com/vault/docs/what-is-vault) as a secret provider. When you set up HashiCorp Vault, you'll see a few additional configuration fields.
 
-- **Namespace** - An optional field to specify the namespace within a multi-tenant Vault.
-- **Address** - Auto-filled from Spark cluster. You must first set up a `VAULT_ADDR` environment variable in the Spark cluster.
-- **Token** - Auto-filled from Spark cluster. You must first set up a `VAULT_TOKEN` environment variable in the Spark cluster.
+- **Namespace**: An optional field to specify the namespace within a multi-tenant Vault.
+- **Address**: Auto-filled from Spark cluster. You must first set up a `VAULT_ADDR` environment variable in the Spark cluster.
+- **Token**: Auto-filled from Spark cluster. You must first set up a `VAULT_TOKEN` environment variable in the Spark cluster.
 
 If you add new secrets to your vault, you can refresh secrets in Prophecy to fetch them. You can also add new secrets directly in Prophecy. To refresh or add secrets, you must be attached to a cluster. You can only access secrets that you also have access to in your Spark cluster.
 
@@ -65,8 +65,8 @@ This method does not support refreshing or fetching secrets.
 
 Secrets have the following parameters:
 
-- **Provider** - The secret provider.
-- **Name** - The name of the secret.
-- **Scope** - The scope of the secret.
-- **Description** - A description of the secret.
-- **Value** - The value of the secret.
+- **Provider**: The secret provider.
+- **Name**: The name of the secret.
+- **Scope**: The scope of the secret.
+- **Description**: A description of the secret.
+- **Value**: The value of the secret.

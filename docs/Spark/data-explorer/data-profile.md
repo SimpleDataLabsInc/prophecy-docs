@@ -7,16 +7,18 @@ tags:
   - data quality
 ---
 
-To quickly find a high-level summary of your data quality, view data profiles of sample tables.
+To quickly find a summary of your data quality, view data profiles of your interim tables.
 
-## Data preview
+## Quick profile
 
-The data preview includes data profiles for your interim data. You'll be able too see a high-level analysis for each column, including:
+The data explorer includes data profiles that are generated on your sample data. You'll be able to see a high-level statistics for each column, including:
 
 - Percent of non-blank values
 - Percent of null values
 - Percent of blank values
 - Most common values
+
+## Full profile
 
 When you open the data explorer, you'll only see the data profile of the data **sample**. When you load the full data profile, Prophecy generates a more in-depth analysis on **all of the records** in the interim dataset. The full profile displays the following information:
 

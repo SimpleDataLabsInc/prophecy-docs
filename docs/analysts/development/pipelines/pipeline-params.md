@@ -10,6 +10,14 @@ tags:
 
 If you want to create variables to use throughout your pipeline, you can configure **Pipeline Parameters**. Parameters let you define values or expressions that can be used to dynamically populate values during pipeline runs.
 
+## Configure parameters
+
+1. Open **Parameters** in the pipeline header.
+1. Click **+ Add Parameter**.
+1. Name the parameter. This is the name you will use when you call the parameter.
+1. Define the data type of the parameter.
+1. Add a function or custom code that can determine the value of the parameter.
+
 :::note
 When you define parameters, variables will be automatically created in the SQL configuration.
 :::

@@ -5,38 +5,36 @@ description: Save and view project history
 tags: []
 ---
 
-When you build projects in Prophecy, you can save and publish your work with the click of a button. Prophecy will maintain a linear version history for you, from which you can audit changes, see collaborator activity, and revert to previous versions.
+When you build projects in Prophecy, you can save and publish your work with the click of a button. Prophecy creates a linear version history per project where you can audit changes, see collaborator activity, and revert to previous versions.
 
 <!-- insert image of simple version control menu in top-right corner -->
 
 ## Save to draft
 
-As you develop your project, Prophecy automatically preserves your changes. However, you should periodically save your changes in logical stages. To do so, you can click **Save to draft** on the project canvas.
+As you develop your project, Prophecy automatically preserves your changes. In addition, we recommend periodically saving your changes as drafts. Click **Save to draft** on the project canvas to do so.
 
-| Parameters               | Description                                                                                       |
-| ------------------------ | ------------------------------------------------------------------------------------------------- |
-| Version description      | A short summary of the changes made since the last draft was saved.                               |
-| Changes since last saved | Lists all the entities that have been added, removed, or modified since the last draft was saved. |
+| Parameters               | Description                                                                                 |
+| ------------------------ | ------------------------------------------------------------------------------------------- |
+| Version description      | Summarizes the changes made since the last saved version.                                   |
+| Changes since last saved | Lists all the entities that anyone adds, removes, or modifies since the last saved version. |
 
 ## Publish new version
 
-If you want to publish the current state of your project, you can click **Publish** on the project canvas.
+When you publish a project, the new version is used for:
 
-| Parameters                      | Description                                                                                                                                                                        |
-| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Version details                 | The version details are automatically populated by Copilot. You can edit the version number or description if necessary.                                                           |
-| Changes that will be published  | A list of saved versions that include changes that will be reflected in the new published version.                                                                                 |
-| Select the fabric(s) to publish | The pipeline will be published to all selected fabrics. Scheduled runs will use the updated project only if the fabric used for the scheduled run was selected during publication. |
-
-Each time you publish a project, you create a **new deployed project version**. This new version will update the projects used for:
-
-- Scheduled pipeline runs
+- Scheduled pipeline runs (depending on the fabric)
 - Package Hub packages
 - App Directory applications
 
-:::info
-You can publish different versions of a project to different fabrics if you wish. This might be useful if you want `Version 1` published on a development fabric and `Version 2` published on a production fabric. (You cannot publish two different versions to the same fabric.)
-:::
+If you want to publish the current state of your project, click **Publish** on the project canvas.
+
+| Parameters                      | Description                                                                                                                                                                                      |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Version details                 | Copilot automatically populates the version details, but you can edit the version number or description if necessary.                                                                            |
+| Changes that will be published  | Prophecy lists the saved drafts that include changes to be reflected in the new published version.                                                                                               |
+| Select the fabric(s) to publish | Prophecy creates a new project deployment for each fabric. If a deployment already exists, it is updated. To see your deployments, review the [Monitoring](docs/analysts/observability.md) page. |
+
+Prophecy lets you publish different versions of a project to different fabrics. This might be useful if you want `Version 1` published on a development fabric and `Version 2` published on a production fabric. (You cannot publish two different versions to the same fabric.)
 
 ### Request to publish
 
@@ -44,7 +42,7 @@ Prophecy lets multiple users work on the same project simultaneously. If you try
 
 ## Show version history
 
-The version history in Prophecy tracks different versions of your project that you save and publish. From here, you can view modifications in each version and, if you want, revert to previous versions. You can also view the version history within the [project metadata](getting-started/concepts/project#project-metadata).
+The version history in Prophecy tracks different versions of your project that you save and publish. From the version history, you can view modifications in each version and revert to previous versions. You can access the version history from the project editor or within the [project metadata](getting-started/concepts/project#project-metadata).
 
 ## Restore previous version
 
@@ -58,7 +56,7 @@ To restore a previous version:
 
 ## Git in the backend
 
-Versioning in Prophecy is built on top of [Git](docs/ci-cd/git/git.md) in the backend. This means that your project is hosted on and tracked in a Git repository. If you want to connect your external Git provider for project hosting, you can do so. That way, you can also view your version history in Git and follow your organization's Git workflow requirements.
+Versioning in Prophecy is built on [Git](docs/ci-cd/git/git.md) in the backend. This means that Prophecy stores your project in a managed or external repository. If you connect to an external Git provider, you can view how each action in Prophecy is reflected in Git.
 
 | Prophecy action          | Git backend                                                                                                                                                                                                                                        |
 | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

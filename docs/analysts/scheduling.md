@@ -18,7 +18,9 @@ If you want to schedule pipeline runs, expand the options menu in the header and
 | Timezone               | The timezone of **Repeat at** time                                                |
 | Alerts on the full job | Enable to send an email on the start, success, and/or failure of the pipeline run |
 
-Once the schedule is created, you'll be able to view the frequency at the top right corner of the pipeline canvas.
+:::info
+A schedule is applied to each pipeline in the project. In other words, when you create a schedule and publish a project, all pipelines in the project will run on that schedule.
+:::
 
 ## Enable a schedule
 

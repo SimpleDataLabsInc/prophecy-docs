@@ -228,6 +228,15 @@ const sidebars = {
         },
         {
           type: "category",
+          label: "Functions",
+          link: {
+            type: "doc",
+            id: "analysts/development/functions/functions",
+          },
+          items: [],
+        },
+        {
+          type: "category",
           label: "Data tests",
           link: {
             type: "doc",
@@ -454,10 +463,7 @@ const sidebars = {
             type: "doc",
             id: "Spark/data-explorer/data-explorer",
           },
-          items: [
-            "Spark/data-explorer/data-profile",
-            "Spark/data-explorer/data-diff",
-          ],
+          items: ["Spark/data-explorer/data-profile"],
         },
         {
           type: "category",
@@ -573,6 +579,7 @@ const sidebars = {
           ],
         },
         "ci-cd/tests",
+        "ci-cd/data-diff",
         {
           type: "category",
           label: "Release and Deploy",

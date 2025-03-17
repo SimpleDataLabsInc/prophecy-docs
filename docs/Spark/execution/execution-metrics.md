@@ -29,9 +29,9 @@ the tables from Team view in the Prophecy UI.
 
 There are three execution metrics tables that store data for pipelines, individual components, and the generated data samples, also known as interims. You have the option to choose the following at the time of team creation:
 
-- **Pipeline runs table** - The pipeline metrics table that contains metrics and code for pipeline runs
-- **Component runs table** - The component (dataset) metrics table that contains metrics for individual component runs
-- **Interims table** - The interims table that contains samples of data, depending on the interim mode selected
+- **Pipeline runs table**: The pipeline metrics table that contains metrics and code for pipeline runs
+- **Component runs table**: The component (dataset) metrics table that contains metrics for individual component runs
+- **Interims table**: The interims table that contains samples of data, depending on the interim mode selected
 
 ![ExecutionMetricsConfig.png](img/ExecutionMetricsConfig.png)
 

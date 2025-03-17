@@ -42,14 +42,3 @@ You can still load more records into the preview when using selective data sampl
 :::
 
 If you disable the large data preview on an individual gem, you'll see a pale-color interim on its output after running the data pipeline. This means that no data sample was generated. If you want to generate the data preview, open the pale interim and it will load the data. After it loads, the interim will look like a normal interim.
-
-## What's next
-
-Learn about the different Data Explorer tabs in the following pages.
-
-```mdx-code-block
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
-<DocCardList items={useCurrentSidebarCategory().items}/>
-```

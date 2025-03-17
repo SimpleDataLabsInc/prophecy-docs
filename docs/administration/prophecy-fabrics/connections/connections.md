@@ -1,16 +1,16 @@
 ---
 title: Connections
 id: connections
-description: A list of connections that you can configure for SQL projects
+description: A list of connections that you can configure for projects
 tags:
   - connections
   - sql
 ---
 
-Prophecy lets you work with various data providers when building your pipelines and models. To make this easier, you can create **connections** between Prophecy and a data provider. Once you add connections a fabric and use that fabric in a project, you can:
+Prophecy lets you work with various data providers when building your pipelines. To make this easier, you can create **connections** between Prophecy and a data provider. Once you add connections a fabric and use that fabric in a project, you can:
 
 - Reuse credentials that are established in the connection.
-- Browse data from the data provider in the [Environment tab](docs/getting-started/concepts/project.md#project-editor) of your Prophecy project.
+- Browse data from the data provider in the [Environment browser](docs/getting-started/concepts/project.md#project-editor) of your Prophecy project.
 - Auto-index data for search in the Prophecy interface.
 
 :::info

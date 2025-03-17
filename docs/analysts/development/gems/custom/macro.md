@@ -8,7 +8,11 @@ tags:
   - custom
 ---
 
-The Macro gem lets you use a macro that you have defined in your SQL project. Macros are defined as a function using the Jinja templating language.
+The Macro gem lets you use a macro that you have defined in your SQL project.
+
+:::note
+The Macro gem can only reference table-to-table macros. They cannot reference macros defined as functions in your project.
+:::
 
 ## Parameters
 

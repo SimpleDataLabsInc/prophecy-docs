@@ -23,9 +23,9 @@ The Left or Right merge strategy gives you a the option to resolve the conflict 
 
 ![Choose a Git conflict manual merge](img/git-conflict-manual-merge.png)
 
-- **(A)** **Strategy** - You must choose a preferred strategy to resolve the conflict. Here the Left strategy keeps the version on branch `master`, while the Right strategy keeps the version on branch `dev`.
-- **(B)** **Open on master** - Clicking this opens the model on branch `master` for you to view.
-- **(C)** **Open on dev** - Clicking this opens the model on branch `dev` for you to view.
+- **(A)** **Strategy**: You must choose a preferred strategy to resolve the conflict. Here the Left strategy keeps the version on branch `master`, while the Right strategy keeps the version on branch `dev`.
+- **(B)** **Open on master**: Clicking this opens the model on branch `master` for you to view.
+- **(C)** **Open on dev**: Clicking this opens the model on branch `dev` for you to view.
 
 Here are the read-only views on branch `master` on the left and branch `dev` on the right:
 
