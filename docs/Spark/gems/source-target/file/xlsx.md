@@ -8,6 +8,20 @@ tags:
   - xlsx
 ---
 
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name="ProphecySparkBasicsPython"
+  python_package_version="0.0.1+"
+  scala_package_name="ProphecySparkBasicsScala"
+  scala_package_version="0.0.1+"
+  scala_lib=""
+  python_lib=""
+  uc_single="14.3+"
+  uc_shared=""
+  livy=""
+/>
+
 If you've ever done anything with numbers in your line of work odds are you've worked with Excel at one point or another. Prophecy supports the format as both a data source and data target, so if you're migrating from a legacy system or you need to produce an Excel-compatible file for a report, we've got you covered.
 
 ## Prerequisites

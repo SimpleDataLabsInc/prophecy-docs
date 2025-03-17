@@ -8,6 +8,20 @@ tags:
   - seed
 ---
 
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name="ProphecySparkBasicsPython"
+  python_package_version="0.2.31+"
+  scala_package_name="ProphecySparkBasicsScala"
+  scala_package_version="0.2.5.6"
+  scala_lib=""
+  python_lib=""
+  uc_single="14.3+"
+  uc_shared=""
+  livy="3.2.0"
+/>
+
 Seeds let you manually write small CSV files into your Prophecy pipelines. They can only be used via Source gems.
 
 ## Source Parameters

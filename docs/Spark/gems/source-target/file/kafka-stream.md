@@ -14,6 +14,20 @@ This source currently connects with Kafka Brokers in **Batch** mode.
 
 ## Source
 
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name="ProphecySparkBasicsPython"
+  python_package_version="0.0.1+"
+  scala_package_name="ProphecySparkBasicsScala"
+  scala_package_version="0.0.1+"
+  scala_lib=""
+  python_lib="1.9.24"
+  uc_single=""
+  uc_shared="14.3+"
+  livy=""
+/>
+
 Reads data from Kafka stream in batch mode. Data is read only incrementally from the last offset stored in the specified Metadata table. If the Metadata table is not present, then data will be read from the `earliest` offset.
 
 ### Source Parameters
@@ -110,6 +124,20 @@ def KafkaSource(spark: SparkSession) -> DataFrame:
 ---
 
 ## Target
+
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name="ProphecySparkBasicsPython"
+  python_package_version="0.0.1+"
+  scala_package_name="ProphecySparkBasicsScala"
+  scala_package_version="0.0.1+"
+  scala_lib=""
+  python_lib=""
+  uc_single=""
+  uc_shared="14.3+"
+  livy=""
+/>
 
 Writes each row from the Dataframe to Kafka topic(s) as JSON messages.
 

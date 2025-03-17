@@ -8,6 +8,20 @@ tags:
   - orc
 ---
 
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name="ProphecySparkBasicsPython"
+  python_package_version="0.0.1+"
+  scala_package_name="ProphecySparkBasicsScala"
+  scala_package_version="0.0.1+"
+  scala_lib=""
+  python_lib=""
+  uc_single="14.3+"
+  uc_shared="14.3+"
+  livy="3.2.0"
+/>
+
 ORC (Optimized Row Columnar) is a columnar file format designed for Spark/Hadoop workloads. It is optimized for large streaming reads, but with integrated support for finding required rows quickly. Because ORC files are type-aware, the writer chooses the most appropriate encoding for the type and builds an internal index as the file is written.
 
 This gem allows you to read from or write to ORC files.

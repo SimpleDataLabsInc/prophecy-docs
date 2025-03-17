@@ -8,6 +8,20 @@ tags:
   - avro
 ---
 
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name="ProphecySparkBasicsPython"
+  python_package_version="0.0.1+"
+  scala_package_name="ProphecySparkBasicsScala"
+  scala_package_version="0.0.1+"
+  scala_lib=""
+  python_lib=""
+  uc_single="14.3+"
+  uc_shared="14.3+"
+  livy=""
+/>
+
 Avro format is a row-based storage format for Hadoop, which is widely used as a serialization platform.
 Avro format stores the schema in JSON format, making it easy to read and interpret by any program.
 The data itself is stored in a binary format making it compact and efficient.

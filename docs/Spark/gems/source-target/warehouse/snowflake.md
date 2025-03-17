@@ -8,6 +8,20 @@ tags:
   - snowflake
 ---
 
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name="ProphecyWebAppPython"
+  python_package_version="0.0.1+"
+  scala_package_name=""
+  scala_package_version=""
+  scala_lib=""
+  python_lib=""
+  uc_single=""
+  uc_shared=""
+  livy=""
+/>
+
 Allows read and write operations on `Snowflake`.
 
 :::info How to configure Key Pair Authentication on Snowflake?
