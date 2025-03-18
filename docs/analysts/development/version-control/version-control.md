@@ -20,11 +20,11 @@ As you develop your project, Prophecy automatically preserves your changes. In a
 
 ## Publish new version
 
-When you publish a project, the new version is used for:
+When you publish a project, the new version becomes available for:
 
-- Scheduled pipeline runs (depending on the fabric)
-- Package Hub packages
-- App Directory applications
+- [Scheduled pipeline runs](docs/analysts/scheduling.md) (depending on the fabric)
+- [Package Hub](docs/analysts/extensibility/extensibility.md#package-hub) packages
+- [App Directory](docs/analysts/business-apps/business-apps.md) applications
 
 If you want to publish the current state of your project, click **Publish** on the project canvas.
 

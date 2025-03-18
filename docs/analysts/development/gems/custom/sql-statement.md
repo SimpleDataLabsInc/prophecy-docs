@@ -8,7 +8,7 @@ tags:
   - custom
 ---
 
-Use a custom SQL statement in your pipeline.
+Use a custom SQL statement in your pipeline. This gem supports SELECT statements.
 
 ### Parameters
 

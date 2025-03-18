@@ -7,11 +7,26 @@ tags:
   - data quality
 ---
 
-To quickly find a summary of your data quality, view data profiles of your interim tables.
+To quickly find a summary of your data quality, view data profiles of your data samples in the Data Explorer. Use data profiling to:
+
+- Find instant data insights
+- Detect anomalies and inconsistencies early
+- Visualize value distributions and data completeness
+
+## Enable data profile
+
+Data profiling is most important **early** in your pipeline. To enable or disable data profiling per gem in the pipeline:
+
+1. Open the gem action menu.
+1. Select or deselect the Data Profile checkbox.
+
+:::info
+Be conscious of how often you enable data profiling throughout the pipeline. This can add unnecessary computation time to your pipeline execution.
+:::
 
 ## Quick profile
 
-The data explorer includes data profiles that are generated on your sample data. You'll be able to see a high-level statistics for each column, including:
+The data explorer includes data profiles that are generated on your sample data. You'll be able to see high-level statistics for each column, including:
 
 - Percent of non-blank values
 - Percent of null values

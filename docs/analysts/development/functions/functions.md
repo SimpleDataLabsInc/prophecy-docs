@@ -8,9 +8,9 @@ tags:
   - function
 ---
 
-In SQL projects, functions are SQL macros that transform data at the column level. Unlike gems, which operate at the table level, functions apply transformations to individual columns, making them useful for data cleansing, formatting, and complex calculations.
+In SQL projects, functions are SQL macros that transform data at the column level. Unlike gems, which operate at the table level, functions apply transformations to individual columns, making them useful for data cleansing, formatting, and complex calculations. Functions are compiled into code using the Jinja templating language (standard for dbt macros).
 
-Functions will be used as expressions in gems.
+You will use functions as [expressions](docs/analysts/development/gems/visual-expression-builder/visual-expression-builder.md) in gems.
 
 ## Create a function
 
@@ -27,35 +27,40 @@ This opens the function configuration screen.
 
 You can build functions visually by populating the following fields.
 
-| Field       | Description                                                     |
-| ----------- | --------------------------------------------------------------- |
-| Description | A summary of what the function will do.                         |
-| Parameters  | The parameters (variables) that will be passed to the function. |
-| Definition  | SQL code that will be executed by the function.                 |
+| Field       | Description                                                                                              |
+| ----------- | -------------------------------------------------------------------------------------------------------- |
+| Description | A summary of what the function will do.                                                                  |
+| Parameters  | The parameters (arguments) that will be passed to the function. Parameters can be values or table names. |
+| Definition  | SQL code that will be executed by the function.                                                          |
 
-### Example
+## Example: Concatenate columns
 
-Assume you are building a function according to the following description: `Concatenates customer first and last names in a new column`.
+Use the following example to learn how to build a function and use it in your pipeline.
 
-## Add function to pipeline
-
-To add the function to a pipeline, you can either:
-
-1. Add it from the project sidebar.
-1. Add a Macro gem and call the function.
-
-## Code syntax
-
-Functions are compiled into code using the Jinja templating language (standard for dbt macros).
+1. Click **+Add Entity** in the project sidebar.
+1. Select **Function**.
+1. Name the function `concat_name`.
+1. Click **Create**.
+1. Add the following description: `Concatenates customer first and last names in a new column`.
+1. Add two parameters to the function: `first_name` and `last_name`.
+1. Add the following to the macro body
 
 ```jinja
 {% macro concat_name(first_name, last_name) %}
-  CONCAT(
+CONCAT(
     UPPER(LEFT({{ first_name }}, 1)),
     LOWER(SUBSTRING({{ first_name }}, 2)),
     ' ',
     UPPER(LEFT({{ last_name }}, 1)),
     LOWER(SUBSTRING({{ last_name }}, 2))
-  )
+)
 {% endmacro %}
 ```
+
+To use this function in your pipeline:
+
+1. Add a Reformat gem to the pipeline canvas.
+1. For the target column, create a new column named `concat_column`.
+1. For the expression, select **Function > concat_name**.
+1. For the function parameters, choose a first name columns and a last name column.
+1. Save and run the gem.
