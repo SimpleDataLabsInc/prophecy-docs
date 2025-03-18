@@ -17,10 +17,10 @@ The Avro file type:
 
 ## Parameters
 
-| Parameter | Tab        | Description                                                                                                                                                                                                    |
-| --------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Location  | Location   | File path to read from or write to the Avro file.                                                                                                                                                              |
-| Schema    | Properties | Schema to apply on the loaded data. <br/>In the Source gem, you can define or edit the schema as a JSON, or infer it with the `Infer Schema` button.<br/>In the Target gem, you can view the schema as a JSON. |
+| Parameter | Tab        | Description                                                                                                                                                                                     |
+| --------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Location  | Location   | File path to read from or write to the Avro file.                                                                                                                                               |
+| Schema    | Properties | Schema to apply on the loaded data.<br/>In the Source gem, you can define or edit the schema visually or in JSON code.<br/>In the Target gem, you can view the schema visually or as JSON code. |
 
 ## Source
 
@@ -110,15 +110,15 @@ The Target gem writes data to Avro files and allows you to optionally specify th
 
 ### Target properties
 
-| Property name     | Description                                                                                                                                                                                                                                                                               | Default          |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
-| Description       | Description of your dataset.                                                                                                                                                                                                                                                              | None             |
-| Avro Schema       | Additional schema a user provides in JSON format. You can set this parameter if the expected output Avro schema doesn't match the schema Spark converts. <br/>For example, the expected schema of a column is an `enum` type, instead of a `string` type in the default converted schema. | None             |
-| Write Mode        | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                                                                                                                                                                      | `error`          |
-| Compression       | Compression codec when writing to the Avro file. <br/>The Avro file supports the following codecs: `uncompressed`, `snappy`, `deflate`, `bzip2`, and `xz`. <br/>This defaults to the value of the `spark.sql.avro.compression.codec` parameter.                                           | `snappy`         |
-| Partition Columns | List of columns to partition the Avro files by.                                                                                                                                                                                                                                           | None             |
-| Record Name       | Top level record name in the result.                                                                                                                                                                                                                                                      | `topLevelRecord` |
-| Record Namespace  | Record namespace in the result.                                                                                                                                                                                                                                                           | ""               |
+| Property name     | Description                                                                                                                                                                                                                                                                               | Default           |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| Description       | Description of your dataset.                                                                                                                                                                                                                                                              | None              |
+| Avro Schema       | Additional schema a user provides in JSON format. You can set this parameter if the expected output Avro schema doesn't match the schema Spark converts. <br/>For example, the expected schema of a column is an `enum` type, instead of a `string` type in the default converted schema. | None              |
+| Write Mode        | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                                                                                                                                                                      | `error`           |
+| Compression       | Compression codec when writing to the Avro file. <br/>The Avro file supports the following codecs: `uncompressed`, `snappy`, `deflate`, `bzip2`, and `xz`. <br/>This defaults to the value of the `spark.sql.avro.compression.codec` parameter.                                           | `snappy`          |
+| Partition Columns | List of columns to partition the Avro files by.                                                                                                                                                                                                                                           | None              |
+| Record Name       | Top level record name in the result.                                                                                                                                                                                                                                                      | `topLevelRecord`  |
+| Record Namespace  | Record namespace in the result.                                                                                                                                                                                                                                                           | "" (empty string) |
 
 ### Supported write modes
 

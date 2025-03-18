@@ -15,18 +15,16 @@ The XLSX (Excel) file type:
 
 ## Prerequisites
 
-:::caution
-If you receive an error about the `excel` format not being available you must add `spark-excel` library as a dependency.
+- If you receive an error about the `excel` format not being available you must add `spark-excel` library as a dependency.
 
-To add the Maven coordinate `com.crealytics:spark-excel_2.12:3.5.1_0.20.4` to your pipeline, see [Spark dependencies](docs/extensibility/dependencies/spark-dependencies.md).
-:::
+- To add the Maven coordinate `com.crealytics:spark-excel_2.12:3.5.1_0.20.4` to your pipeline, see [Spark dependencies](docs/extensibility/dependencies/spark-dependencies.md).
 
 ## Parameters
 
-| Parameter | Tab        | Description                                                                                                                                                                                                    |
-| --------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Location  | Location   | File path to read from or write to the XLSX file.                                                                                                                                                              |
-| Schema    | Properties | Schema to apply on the loaded data. <br/>In the Source gem, you can define or edit the schema as a JSON, or infer it with the `Infer Schema` button.<br/>In the Target gem, you can view the schema as a JSON. |
+| Parameter | Tab        | Description                                                                                                                                                                                     |
+| --------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Location  | Location   | File path to read from or write to the XLSX file.                                                                                                                                               |
+| Schema    | Properties | Schema to apply on the loaded data.<br/>In the Source gem, you can define or edit the schema visually or in JSON code.<br/>In the Target gem, you can view the schema visually or as JSON code. |
 
 ## Source
 
@@ -88,7 +86,7 @@ The Target gem writes data to XLSX files and allows you to optionally specify th
 | Use Plain Number Format       | Whether to format the cells without rounding and scientific notations.                                                              | false        |
 | Workbook Password             | Password to secure your workbook.                                                                                                   | None         |
 | Write Mode                    | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                | `append`     |
-| Parition Columns              | List of columns to partition the XLSX files by.                                                                                     | None         |
+| Partition Columns             | List of columns to partition the XLSX files by.                                                                                     | None         |
 | Create single named XLSX file | Whether to create a single XLSX file.                                                                                               | false        |
 
 ### Supported write modes

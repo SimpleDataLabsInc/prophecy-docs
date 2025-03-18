@@ -15,12 +15,12 @@ The CSV (Comma-separated Values) file type is:
 
 ## Parameters
 
-| Parameter | Tab        | Description                                                                                                                                                                                                    |
-| --------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Read From | Location   | Which platform to read the file from. <br/>Possible values are: `File Location`, `Sharepoint` (Python only), or `SFTP` (Python only).                                                                          |
-| Write To  | Location   | Which platform to write the file to. <br/>You can only select `File Location`.                                                                                                                                 |
-| Location  | Location   | File path to read from or write to the CSV file.                                                                                                                                                               |
-| Schema    | Properties | Schema to apply on the loaded data. <br/>In the Source gem, you can define or edit the schema as a JSON, or infer it with the `Infer Schema` button.<br/>In the Target gem, you can view the schema as a JSON. |
+| Parameter | Tab        | Description                                                                                                                                                                                     |
+| --------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Read From | Location   | Which platform to read the file from. <br/>Possible values are: `File Location`, `Sharepoint` (Python only), or `SFTP` (Python only).                                                           |
+| Write To  | Location   | Which platform to write the file to. <br/>You can only select `File Location`.                                                                                                                  |
+| Location  | Location   | File path to read from or write to the CSV file.                                                                                                                                                |
+| Schema    | Properties | Schema to apply on the loaded data.<br/>In the Source gem, you can define or edit the schema visually or in JSON code.<br/>In the Target gem, you can view the schema visually or as JSON code. |
 
 ## Source
 
@@ -103,7 +103,7 @@ The Target gem writes data to CSV files and allows you to optionally specify the
 | Escape character                         | Sets a single character to escape quotes inside a quoted value.                                                                                                                                          | `\`                                |
 | Escape char for quote escaping char      | Sets a single character to escape the escape for the quote character.                                                                                                                                    | `\0`                               |
 | Null Value                               | Sets the string representation of a null value.                                                                                                                                                          | None                               |
-| Empty Value                              | Sets the string representation of an empty value.                                                                                                                                                        | ""                                 |
+| Empty Value                              | Sets the string representation of an empty value.                                                                                                                                                        | "" (empty string)                  |
 | Compression                              | Compression codec when writing to the CSV file. <br/>The CSV file supports the following codecs: `none`, `bzip2`, `gzip`, `lz4`, `snappy` and `deflate`. <br/>CSV built-in functions ignore this option. | None                               |
 | Escape quotes                            | Whether values containing quotes should always be enclosed in quotes.                                                                                                                                    | false                              |
 | Quote All                                | Whether all values should always be enclosed in quotes.                                                                                                                                                  | false                              |

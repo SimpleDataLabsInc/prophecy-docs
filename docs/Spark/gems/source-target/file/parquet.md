@@ -11,14 +11,14 @@ tags:
 The Parquet file type:
 
 - Is an open-source columnar file format designed for efficient data storage and retrieval.
-- Handles large volumes of data by supporting complex predicate pushdoen, nested schemas and a wide variety of column encoding types.
+- Handles large volumes of data by supporting complex predicate pushdown, nested schemas, and a wide variety of column encoding types.
 
 ## Parameters
 
-| Parameter | Tab        | Description                                                                                                                                                                                                    |
-| --------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Location  | Location   | File path to read from or write to the Parquet file.                                                                                                                                                           |
-| Schema    | Properties | Schema to apply on the loaded data. <br/>In the Source gem, you can define or edit the schema as a JSON, or infer it with the `Infer Schema` button.<br/>In the Target gem, you can view the schema as a JSON. |
+| Parameter | Tab        | Description                                                                                                                                                                                     |
+| --------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Location  | Location   | File path to read from or write to the Parquet file.                                                                                                                                            |
+| Schema    | Properties | Schema to apply on the loaded data.<br/>In the Source gem, you can define or edit the schema visually or in JSON code.<br/>In the Target gem, you can view the schema visually or as JSON code. |
 
 ## Source
 

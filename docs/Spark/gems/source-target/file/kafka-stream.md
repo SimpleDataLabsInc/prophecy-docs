@@ -8,7 +8,7 @@ tags:
   - kafka
 ---
 
-[Apache Kafka](https://kafka.apache.org/):
+The Kafka file type is used in [Apache Kafka](https://kafka.apache.org/), which:
 
 - Is an open-source distributed event streaming platform.
 - Handles high volumes of data and delivers messages with low latency.
@@ -16,13 +16,13 @@ tags:
 
 ## Parameters
 
-| Parameter                    | Tab      | Description                                                                                         |
-| ---------------------------- | -------- | --------------------------------------------------------------------------------------------------- |
-| Bootstrap Server/Broker List | Location | Comma separated list of Kafka brokers.                                                              |
-| Security Protocol            | Location | Security protocol for Kafka. (Default value is `SASL_SSL`.)                                         |
-| SASL Mechanisms              | Location | Default SASL Mechanism for `SASL_SSL`. (Default value is `SCRAM-SHA-256`.)                          |
-| Credentials                  | Location | How to provide your credentials. <br/>You can select: `Databricks Secrets` or `Username & Password` |
-| Kafka topic                  | Location | Comma separated list of Kafka topics.                                                               |
+| Parameter                    | Tab      | Description                                                                                                                   |
+| ---------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| Bootstrap Server/Broker List | Location | Comma separated list of Kafka brokers.                                                                                        |
+| Security Protocol            | Location | Security protocol for Kafka. (Default value is `SASL_SSL`.)                                                                   |
+| SASL Mechanisms              | Location | Default SASL Mechanism for `SASL_SSL`. (Default value is `SCRAM-SHA-256`.)                                                    |
+| Credentials                  | Location | How to provide your credentials. <br/>You can select: `Databricks Secrets`, `Username & Password`, or `Environment variables` |
+| Kafka topic                  | Location | Comma separated list of Kafka topics.                                                                                         |
 
 ## Source
 

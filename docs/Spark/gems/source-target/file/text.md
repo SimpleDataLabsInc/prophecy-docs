@@ -8,17 +8,17 @@ tags:
   - text
 ---
 
-Like the CSV file type, the Text file type is also:
+The Text file type is:
 
 - Easy to read from, write to, and share.
 - Compatible with many programs, and easy to exchange data.
 
 ## Parameters
 
-| Parameter | Tab        | Description                                                                                                                                                                                                    |
-| --------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Location  | Location   | File path to read from or write to the Text file.                                                                                                                                                              |
-| Schema    | Properties | Schema to apply on the loaded data. <br/>In the Source gem, you can define or edit the schema as a JSON, or infer it with the `Infer Schema` button.<br/>In the Target gem, you can view the schema as a JSON. |
+| Parameter | Tab        | Description                                                                                                                                                                                     |
+| --------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Location  | Location   | File path to read from or write to the Text file.                                                                                                                                               |
+| Schema    | Properties | Schema to apply on the loaded data.<br/>In the Source gem, you can define or edit the schema visually or in JSON code.<br/>In the Target gem, you can view the schema visually or as JSON code. |
 
 ## Source
 
@@ -87,13 +87,13 @@ The Target gem writes data to Text files and allows you to optionally specify th
 
 ### Target properties
 
-| Property name     | Description                                                                                                                                                                                                                                                                                         | Default |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| Description       | Description of your dataset.                                                                                                                                                                                                                                                                        | None    |
-| Write Mode        | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                                                                                                                                                                                | `error` |
-| Partition Columns | List of columns to partition the Text files by. <br/> The Text file type only supports a single column apart from the partition columns. If the `DataFrame` contains more than one column apart from parition columns as the input `DataFrame`, the Target gem throws an `AnalysisException` error. | None    |
-| Compression Codec | Compression codec when writing to the Text file. <br/>The Text file supports the following codecs: `none`, `bzip2`, `gzip`, `lz4`, `snappy` and `deflate`.                                                                                                                                          | None    |
-| Line Separator    | Defines the line separator to use for parsing.                                                                                                                                                                                                                                                      | `\n`    |
+| Property name     | Description                                                                                                                                                                                                                                                                                          | Default |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| Description       | Description of your dataset.                                                                                                                                                                                                                                                                         | None    |
+| Write Mode        | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                                                                                                                                                                                 | `error` |
+| Partition Columns | List of columns to partition the Text files by. <br/> The Text file type only supports a single column apart from the partition columns. If the `DataFrame` contains more than one column apart from partition columns as the input `DataFrame`, the Target gem throws an `AnalysisException` error. | None    |
+| Compression Codec | Compression codec when writing to the Text file. <br/>The Text file supports the following codecs: `none`, `bzip2`, `gzip`, `lz4`, `snappy` and `deflate`.                                                                                                                                           | None    |
+| Line Separator    | Defines the line separator to use for parsing.                                                                                                                                                                                                                                                       | `\n`    |
 
 ### Supported write modes
 

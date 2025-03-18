@@ -8,7 +8,12 @@ tags:
   - seed
 ---
 
-The Seed file type helps you standardize all new designs. This means that each new design (\*.dgn) file contains the same work units, color table, views as the seed file. You can only read data from Seed files in Prophecy.
+The Seed file type:
+
+- Is a configuration file that provides initial data or settings for an application.
+- Allows you to manually write small CSV files into your Prophecy pipelines.
+
+You can only read data from Seed files in Prophecy.
 
 ## Parameters
 

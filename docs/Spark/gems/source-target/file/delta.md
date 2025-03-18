@@ -10,16 +10,16 @@ tags:
 
 A Delta (Delta Lake) file type:
 
-- Is what we recommend you to write to since it's an optimized storage layer that allows you to store data and tables in the Databricks lakehouse.
-- Extends Parquet data files with a file-based transaction log for ACID transactions and scalable metadata handsling.
+- Is an optimized storage layer that allows you to store data and tables in the Databricks lakehouse.
+- Extends Parquet data files with a file-based transaction log for ACID transactions and scalable metadata handling.
 - Has a tight integration with structured streaming, which allows you to use a single copy of data for both batch and streaming operations and provides incremental processing at scale.
 
 ## Parameters
 
-| Parameter | Tab        | Description                                                                                                                                                                                                    |
-| --------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Location  | Location   | File path to read from or write to the Delta file.                                                                                                                                                             |
-| Schema    | Properties | Schema to apply on the loaded data. <br/>In the Source gem, you can define or edit the schema as a JSON, or infer it with the `Infer Schema` button.<br/>In the Target gem, you can view the schema as a JSON. |
+| Parameter | Tab        | Description                                                                                                                                                                                     |
+| --------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Location  | Location   | File path to read from or write to the Delta file.                                                                                                                                              |
+| Schema    | Properties | Schema to apply on the loaded data.<br/>In the Source gem, you can define or edit the schema visually or in JSON code.<br/>In the Target gem, you can view the schema visually or as JSON code. |
 
 ## Source
 
@@ -31,7 +31,7 @@ The Source gem reads data from Delta files and allows you to optionally specify 
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- |
 | Description    | Description of your dataset.                                                                                                                                                                                                                           | None    |
 | Read timestamp | Time travel to a specific timestamp.<br/>This value is between the first commit timestamp and the latest commit timestamp in the table.                                                                                                                | None    |
-| Read version   | Time travel to a specific version of the table.<br/>This value is an interger between the minimum and maximum version of the table. <br/>By default, the Soruce gem fetches the most recent version of each row if you don't use a time travel option. | None    |
+| Read version   | Time travel to a specific version of the table.<br/>This value is an interger between the minimum and maximum version of the table. <br/>By default, the Source gem fetches the most recent version of each row if you don't use a time travel option. | None    |
 
 :::note
 You can only select `Read Timestamp` or `Read Version`, not both.
