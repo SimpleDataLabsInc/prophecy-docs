@@ -7,6 +7,8 @@ tags:
   - limit
 ---
 
+<h3><span class="badge">SQL Gem</span></h3>
+
 Limits the number of rows in the output.
 
 ### Parameters

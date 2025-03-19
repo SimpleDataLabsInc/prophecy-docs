@@ -10,6 +10,8 @@ tags:
   - descending
 ---
 
+<h3><span class="badge">SQL Gem</span></h3>
+
 Sorts a model on one or more columns in ascending or descending order.
 
 ### Parameters

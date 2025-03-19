@@ -9,6 +9,8 @@ tags:
   - transformation
 ---
 
+<h3><span class="badge">SQL Gem</span></h3>
+
 Upon opening the Join gem, you can see a pop-up which provides several helpful features.
 
 ![Join definition](img/JoinCondition.png)
