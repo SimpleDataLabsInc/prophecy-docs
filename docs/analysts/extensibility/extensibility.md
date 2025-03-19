@@ -11,7 +11,7 @@ Prophecy projects are highly extensible, meaning you can add additional capabili
 
 Projects can import various types of dependencies that add functionality to your project. There are three types of dependencies for SQL projects:
 
-- Prophecy Project. When you import a project as a dependency, you gain access to all its components, including pipelines, gems, and functions, for use in your own project. If a new version of the project is [published](docs/analysts/development/version-control/version-control.md), you can update your dependency version to take advantage of the latest changes.
+- Prophecy Project. When you import a project as a dependency, you gain access to all its components, including pipelines, gems, and functions, for use in your own project. If a new version of the project is [published](docs/analysts/version-control/version-control.md), you can update your dependency version to take advantage of the latest changes.
 - GitHub. Dependencies can be saved in GitHub repositories and imported from there.
 - [DBT Hub](https://hub.getdbt.com/). Packages in the DBT hub can be used to extend typical SQL functionality. If the package contains macros, you can use them via the [Macro](docs/analysts/development/gems/custom/macro.md) gem.
 

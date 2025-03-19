@@ -21,4 +21,11 @@ To add an annotation to a pipeline:
 
 ## Example
 
-Exposing important code blocks of certain gems.
+Let’s say you have a pipeline that ingests customer data, cleans it, and then applies transformations before loading it into a database. To help your team understand the different stages, you can add annotations like this:
+
+- Add an annotation near the input source stating: `Ingesting raw CSV files from S3 bucket`
+- Annotate above the transformation gems with: `Removing duplicates and normalizing column names`
+- Mark next to a Macro gem: `Using imported dbt Pivot macro`
+- Add an annotation near the last node saying: `Writing transformed data to Databricks catalog`
+
+This helps your team quickly grasp what each part of the pipeline does without digging into the details of every transformation.

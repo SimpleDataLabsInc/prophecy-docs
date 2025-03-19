@@ -23,7 +23,9 @@ When you click on a data sample, you load the data and open the [Data Explorer](
 
 ## Scheduled execution
 
-When you schedule pipelines to be run, you need to define the fabric that will be used for pipeline execution.
+Prophecy lets you automate your data pipelines by scheduling executions at predefined intervals. For each pipeline in a project, you can configure independent schedules that specify how often a pipeline runs and whether alerts should be sent during the automated runs. The execution environment of the scheduled run is determined during project publication.
+
+To learn more about deploying projects to specific execution environments, visit [Versioning](docs/analysts/version-control/version-control.md) and [Scheduling](docs/analysts/scheduling.md).
 
 ## External sources
 

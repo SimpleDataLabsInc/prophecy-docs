@@ -14,7 +14,7 @@ The collaboration mode will depend on the Git mode (Simple or Normal) you select
 
 ## Simple
 
-When you create a project that uses [Simple versioning](docs/analysts/development/version-control/version-control.md), Prophecy restricts pipeline editing to a single user at a time.
+When you create a project that uses [Simple versioning](docs/analysts/version-control/version-control.md), Prophecy restricts pipeline editing to a single user at a time.
 
 Assume your colleague is actively editing a pipeline. What happens when you open and try to edit the same pipeline? You'll see that someone else is working on the pipeline. It will be read-only until the other user closes the pipeline. This way, you will not be able to produce conflicting edits.
 

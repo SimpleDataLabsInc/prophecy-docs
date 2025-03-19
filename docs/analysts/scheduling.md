@@ -29,12 +29,17 @@ Schedules are created per pipeline. In other words, scheduled pipeline runs are 
 
 ## Enable a schedule
 
-Your schedule will not be enabled until you [publish](docs/analysts/development/version-control/version-control.md) your project. This activates a project deployment for the specific version you publish per fabric you publish to.
+A pipeline will not execute on a schedule until its parent project is published. This is because project [publication](/analysts/version-control/publication) determines:
 
-:::caution
-Prophecy will not run schedules for pipelines in projects that have not been published.
-:::
+- **The execution environment (fabric):** The pipeline runs on the fabric selected during publication. If multiple fabrics are chosen, separate schedules are created, and the pipeline will execute once per fabric for each scheduled run.
+- **The pipeline version:** Scheduled executions always run the version of the pipeline associated with the most recent project version published to the fabric. If a new project version is published to a fabric, the schedule for that fabric will automatically use the updated pipeline version.
+
+If a project is not published or deployed, **scheduled execution will not occur** even if a schedule has been configured.
 
 ## Monitor scheduled pipelines
 
 You and you team members might have many scheduled pipelines in your Prophecy environment. To see a list of deployed projects, scheduled pipelines, and pipeline run history, open the [Monitoring](docs/analysts/observability.md) page in Prophecy.
+
+## External schedulers
+
+By default, SQL projects leverage a Prophecy-native scheduler to automate pipeline runs. While we recommend using the Prophecy scheduler, you can also use external schedulers like Databricks Jobs or Apache Airflow if preferred. To learn more about external schedulers, visit [Orchestration](docs/Orchestration/Orchestration.md).

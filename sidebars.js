@@ -210,10 +210,10 @@ const sidebars = {
         "analysts/development/data-explorer",
         {
           type: "category",
-          label: "Versioning",
+          label: "Functions",
           link: {
             type: "doc",
-            id: "analysts/development/version-control/version-control",
+            id: "analysts/development/functions/functions",
           },
           items: [],
         },
@@ -228,15 +228,6 @@ const sidebars = {
         },
         {
           type: "category",
-          label: "Functions",
-          link: {
-            type: "doc",
-            id: "analysts/development/functions/functions",
-          },
-          items: [],
-        },
-        {
-          type: "category",
           label: "Data tests",
           link: {
             type: "doc",
@@ -248,6 +239,15 @@ const sidebars = {
           ],
         },
       ],
+    },
+    {
+      type: "category",
+      label: "Versioning",
+      link: {
+        type: "doc",
+        id: "analysts/version-control/version-control",
+      },
+      items: ["analysts/version-control/publication"],
     },
     "analysts/scheduling",
     "analysts/observability",
