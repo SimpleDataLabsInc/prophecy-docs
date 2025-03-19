@@ -1,35 +1,58 @@
 ---
 title: Parquet
 id: parquet
-description: Parquet
-sidebar_position: 10
+description: Parameters and properties to read from and write to Parquet files
 tags:
   - gems
   - file
   - parquet
 ---
 
-Parquet is an open-source Columnar storage data format. It handles large volumes of data by supporting complex pushdown predicates, nested schemas and a wide variety of column encoding types.
+The Parquet file type:
 
-This gem allows you to read from or write to Parquet files.
+- Is an open-source columnar file format designed for efficient data storage and retrieval.
+- Handles large volumes of data by supporting complex predicate pushdown, nested schemas, and a wide variety of column encoding types.
+
+## Parameters
+
+| Parameter | Tab        | Description                                                                                                                                                                                     |
+| --------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Location  | Location   | File path to read from or write to the Parquet file.                                                                                                                                            |
+| Schema    | Properties | Schema to apply on the loaded data.<br/>In the Source gem, you can define or edit the schema visually or in JSON code.<br/>In the Target gem, you can view the schema visually or as JSON code. |
 
 ## Source
 
-Reads data from Parquet files at the given path.
+The Source gem reads data from Parquet files and allows you to optionally specify the following additional properties.
 
-### Source Parameters
+### Source properties
 
-| Parameter             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Required | Default                                                        |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- | -------------------------------------------------------------- |
-| Location              | File path where parquet files are present                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | True     | None                                                           |
-| Schema                | Schema to be applied on the loaded data. Can be defined/edited as json or inferred using `Infer Schema` button.                                                                                                                                                                                                                                                                                                                                                                                                                      | True     | None                                                           |
-| Recursive File Lookup | This is used to recursively load files from the given Location. Disables partition discovery. An exception will be thrown if this option and a `partitionSpec` are specified.                                                                                                                                                                                                                                                                                                                                                        | False    | False                                                          |
-| Path Global Filter    | An optional glob pattern to only include files with paths matching the pattern. The syntax follows [GlobFilter](https://hadoop.apache.org/docs/stable/api/org/apache/hadoop/fs/GlobFilter.html). It does not change the behavior of partition discovery.                                                                                                                                                                                                                                                                             | False    | None                                                           |
-| Modified Before       | An optional Timestamp to only include files with modification times occurring before the specified Time. The provided timestamp must be in `YYYY-MM-DDTHH:mm:ss` form (e.g. `2020-06-01T13:00:00`)                                                                                                                                                                                                                                                                                                                                   | False    | None                                                           |
-| Modified After        | An optional timestamp to only include files with modification times occurring after the specified Time. The provided timestamp must be in `YYYY-MM-DDTHH:mm:ss` form (e.g. `2020-06-01T13:00:00`)                                                                                                                                                                                                                                                                                                                                    | False    | None                                                           |
-| Merge Schema          | Sets whether schemas should be merged from all collected Parquet part-files. This will override `spark.sql.parquet.mergeSchema`.                                                                                                                                                                                                                                                                                                                                                                                                     | False    | (value of `spark.sql.parquet.`<br/>`mergeSchema`)              |
-| Int96 Rebase mode     | The `int96RebaseMode` option allows to specify the rebasing mode for INT96 timestamps from the Julian to Proleptic Gregorian calendar. <br/><br/> Currently supported modes are: <br/><br/>`EXCEPTION`: fails in reads of ancient INT96 timestamps that are ambiguous between the two calendars.<br/><br/>`CORRECTED`: loads INT96 timestamps without rebasing.<br/><br/>`LEGACY`: performs rebasing of ancient timestamps from the Julian to Proleptic Gregorian calendar.                                                          | False    | (value of `spark.sql.parquet`<br/>`.int96RebaseModeInRead`)    |
-| Datetime Rebase mode  | The `datetimeRebaseMode` option allows to specify the rebasing mode for the values of the DATE, TIMESTAMP_MILLIS, TIMESTAMP_MICROS logical types from the Julian to Proleptic Gregorian calendar.<br/>Currently supported modes are:<br/><br/>`EXCEPTION`: fails in reads of ancient dates/timestamps that are ambiguous between the two calendars.<br/><br/>`CORRECTED`: loads dates/timestamps without rebasing.<br/><br/>`LEGACY`: performs rebasing of ancient dates/timestamps from the Julian to Proleptic Gregorian calendar. | False    | (value of `spark.sql.parquet`<br/>`.datetimeRebaseModeInRead`) |
+| Property name           | Description                                                                                                                                                                                                                                                              | Default                                                               |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------- | --- |
+| Description             | Description of your dataset.                                                                                                                                                                                                                                             | None                                                                  |
+| Use user-defined schema | Whether to use the schema you define.                                                                                                                                                                                                                                    | false                                                                 |
+| Merge schema            | Whether the Target gem should merge schemas from all the Parquet part-files collected. This overrides `spark.sql.parquet.mergeSchema`.                                                                                                                                   | (value of `spark.sql.`<br/>`parquet.`<br/>`mergeSchema`)              |     |
+| Datetime Rebase Mode    | Specify the rebasing mode for the values of the DATE, TIMESTAMP_MILLIS, TIMESTAMP_MICROS logical types from the Julian to Proleptic Gregorian calendar. <br/>For a list of the possible values, see [Supported Datetime rebase modes](#supported-datetime-rebase-modes). | (value of `spark.sql.`<br/>`parquet`<br/>`.datetimeRebaseModeInRead`) |
+| Int96 Rebase Mode       | Specify the rebasing mode for INT96 timestamps from the Julian to Proleptic Gregorian calendar. For a list of the possible values, see [Supported Int96 rebase modes](#supported-int96-rebase-modes).                                                                    | (value of `spark.sql.`<br/>`parquet`<br/>`.int96RebaseModeInRead`)    |
+| Recursive File Lookup   | Whether to recursively load files and disable partition inferring. If the data source explicitly specifies the `partitionSpec` when the`recursiveFileLookup` is `true`, the Source gem throws an exception.                                                              | false                                                                 |
+| Path Global Filter      | Glob pattern to only include files with paths matching the pattern. The syntax follows [GlobFilter](https://hadoop.apache.org/docs/stable/api/org/apache/hadoop/fs/GlobFilter.html) and does not change the behavior of partition discovery.                             | None                                                                  |
+| Modified Before         | Timestamp to only include files with modification times occurring before the time you specify. The timestamp must be in the following form: YYYY-MM-DDTHH:mm:ss (e.g. 2020-06-01T13:00:00).                                                                              | None                                                                  |
+| Modified After          | Timestamp to only include files with modification times occurring after the time you specify. The timestamp must be in the following form: YYYY-MM-DDTHH:mm:ss (e.g. 2020-06-01T13:00:00).                                                                               | None                                                                  |
+
+### Supported Int96 rebase modes
+
+| Int96 rebase mode | Description                                                                          |
+| ----------------- | ------------------------------------------------------------------------------------ |
+| EXCEPTION         | Fails in reads of ancient INT96 timestamps that are ambiguous between two calendars. |
+| CORRECTED         | Loads INT96 timestamps without rebasing.                                             |
+| LEGACY            | Rebases ancient INT96 timestamps from the Julian to Proleptic Gregorian.             |
+
+### Supported Datetime rebase modes
+
+| Datetime rebase mode | Description                                                                              |
+| -------------------- | ---------------------------------------------------------------------------------------- |
+| EXCEPTION            | Fails in reads of ancient dates and timestamps that are ambiguous between two calendars. |
+| CORRECTED            | Loads dates and timestamps without rebasing.                                             |
+| LEGACY               | Rebases ancient dates and timestamps from the Julian to Proleptic Gregorian.             |
 
 ### Example {#source-example}
 
@@ -40,12 +63,15 @@ Reads data from Parquet files at the given path.
 
 ### Generated Code {#source-code}
 
+:::tip
+To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
+:::
+
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-
 <TabItem value="py" label="Python">
 
 ```py
@@ -54,9 +80,7 @@ def read_parquet(spark: SparkSession) -> DataFrame:
         .format("parquet")\
         .option("mergeSchema", True)\
         .load("dbfs:/FileStore/Users/parquet/test.parquet")
-
 ```
-
 </TabItem>
 <TabItem value="scala" label="Scala">
 
@@ -71,35 +95,33 @@ object read_parquet {
 
 }
 ```
-
 </TabItem>
 </Tabs>
-
 ````
 
 ---
 
 ## Target
 
-### Target Parameters
+The Target gem writes data to Parquet files and allows you to optionally specify the following additional properties.
 
-Write data as Parquet files at the specified path.
+### Target properties
 
-| Parameter         | Description                                                                                                                                                                                                                                         | Required | Default |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
-| Location          | File path where the Parquet files will be written                                                                                                                                                                                                   | True     | None    |
-| Compression       | Compression codec to use when saving to file. This can be one of the known case-insensitive shorten names (`none`, `uncompressed`, `snappy`, `gzip`, `lzo`, `brotli`, `lz4`, and `zstd`). This will override `spark.sql.parquet.compression.codec`. | False    | `snappy |
-| Write Mode        | How to handle existing data. See [this table](#supported-write-modes) for a list of available options.                                                                                                                                              | True     | `error` |
-| Partition Columns | List of columns to partition the Parquet files by                                                                                                                                                                                                   | False    | None    |
+| Property name     | Description                                                                                                                                                                                                                                                | Default  |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ---- |
+| Description       | Description of your dataset.                                                                                                                                                                                                                               | None     |
+| Partition Columns | List of columns to partition the Parquet file by.                                                                                                                                                                                                          |          | None |
+| Compression Codec | Compression codec when writing to the Parquet file. <br/>The Parquet file supports the following codecs: `none`, `uncompressed`, `gzip`, `lz4`, `snappy`, `lzo`, `brotli`, and `zstd`. This overrides the `spark.sql.parquet.compression.codec` parameter. | `snappy` |
+| Write Mode        | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                                                                                                                                       | `error`  |
 
-### Supported Write Modes
+### Supported write modes
 
-| Write Mode | Description                                                                                                                      |
-| ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| overwrite  | If data already exists, overwrite with the contents of the Dataframe.                                                            |
-| append     | If data already exists, append the contents of the Dataframe.                                                                    |
-| ignore     | If data already exists, do nothing with the contents of the Dataframe. This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
-| error      | If data already exists, throw an exception.                                                                                      |
+| Write mode | Description                                                                                                                                          |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| error      | If the data already exists, throw an exception.                                                                                                      |
+| overwrite  | If the data already exists, overwrite the data with the contents of the `DataFrame`.                                                                 |
+| append     | If the data already exists, append the contents of the `DataFrame`.                                                                                  |
+| ignore     | If the data already exists, do nothing with the contents of the `DataFrame`. <br/>This is similar to the `CREATE TABLE IF NOT EXISTS` clause in SQL. |
 
 ### Example {#target}
 
@@ -110,10 +132,13 @@ Write data as Parquet files at the specified path.
 
 ### Generated Code {#target-code}
 
+:::tip
+To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
+:::
+
 ````mdx-code-block
 
 <Tabs>
-
 <TabItem value="py" label="Python">
 
 ```py
@@ -123,7 +148,6 @@ def write_parquet(spark: SparkSession, in0: DataFrame):
         .mode("overwrite")\
         .save("dbfs:/data/test_output.parquet")
 ```
-
 </TabItem>
 <TabItem value="scala" label="Scala">
 
@@ -136,13 +160,6 @@ object write_parquet {
         .save("dbfs:/data/test_output.parquet")
 }
 ```
-
 </TabItem>
 </Tabs>
-
-
 ````
-
-:::info
-To know more about tweaking Parquet related properties in Spark config [**click here**](https://spark.apache.org/docs/latest/sql-data-sources-parquet.html).
-:::

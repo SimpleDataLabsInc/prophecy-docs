@@ -1,22 +1,40 @@
 ---
 title: Seed
 id: seed
-description: Seed
+description: Parameters and properties to read from Seed files
 tags:
   - gems
   - file
   - seed
 ---
 
-Seeds let you manually write small CSV files into your Prophecy pipelines. They can only be used via Source gems.
+The Seed file type:
 
-## Source Parameters
+- Is a configuration file that provides initial data or settings for an application.
+- Allows you to manually write small CSV files into your Prophecy pipelines.
 
-| Parameter                            | Tab        | Description                                                                                                      |
-| ------------------------------------ | ---------- | ---------------------------------------------------------------------------------------------------------------- |
-| Data                                 | Data       | Data provided in CSV format                                                                                      |
-| Schema                               | Properties | Schema applied to the loaded data. Schema can be defined/edited as JSON or inferred using `Infer Schema` button. |
-| Delimiter                            | Properties | Character used to separate entered data.                                                                         |
-| First row is header                  | Properties | Checkbox to enable when the first row is the table header.                                                       |
-| Enforce specified or inferred schema | Properties | Checkbox to enable when the output schema must match what has been defined in this tab.                          |
-| Auto-infer schema from the data      | Properties | Checkbox to enable when you do not want to manually enter the schema.                                            |
+You can only read data from Seed files in Prophecy.
+
+## Parameters
+
+| Parameter | Tab        | Description                                                                                                           |
+| --------- | ---------- | --------------------------------------------------------------------------------------------------------------------- |
+| Data      | Data       | Data you provide in the Seed format.                                                                                  |
+| Schema    | Properties | Schema to apply on the data. You can define or edit the schema as a JSON, or infer it with the `Infer Schema` button. |
+
+## Source
+
+The Source gem reads data from Seed files and allows you to optionally specify the following additional properties.
+
+### Source properties
+
+| Property name                                    | Description                                                       | Default |
+| ------------------------------------------------ | ----------------------------------------------------------------- | ------- |
+| Select an appropriate delimiter for entered data | Character to separate data you enter.                             | `,`     |
+| First row is header                              | Whether the first row is the table header.                        | true    |
+| Enforce specified or inferred schema             | Whether the output schema must match what you define in this tab. | false   |
+| Auto Infer schema from the data                  | Whether you want to automatically enter the schema.               | false   |
+
+## Target
+
+The Target gem does not support writing to Seed files.

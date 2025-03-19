@@ -1,34 +1,42 @@
 ---
 title: Kafka
 id: kafka
-description: Reading and writing data from Apache Kafka in batch mode
+description: Parameters and properties to read from and write to Kafka files
 tags:
   - gems
   - file
   - kafka
 ---
 
-[Apache Kafka](https://kafka.apache.org/) is an open-source distributed event streaming platform. Supporting a number of streaming paradigms it's used by thousands of companies and organizations in scenarios including Data Ingestion, Analytics and more.
+The Kafka file type is used in [Apache Kafka](https://kafka.apache.org/), which:
 
-This source currently connects with Kafka Brokers in **Batch** mode.
+- Is an open-source distributed event streaming platform.
+- Handles high volumes of data and delivers messages with low latency.
+- Supports real-time analytics, stream processing, fault tolerance, scalability, data integration, and event-driven architectures.
+
+## Parameters
+
+| Parameter                    | Tab      | Description                                                                                                                   |
+| ---------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| Bootstrap Server/Broker List | Location | Comma separated list of Kafka brokers.                                                                                        |
+| Security Protocol            | Location | Security protocol for Kafka. (Default value is `SASL_SSL`.)                                                                   |
+| SASL Mechanisms              | Location | Default SASL Mechanism for `SASL_SSL`. (Default value is `SCRAM-SHA-256`.)                                                    |
+| Credentials                  | Location | How to provide your credentials. <br/>You can select: `Databricks Secrets`, `Username & Password`, or `Environment variables` |
+| Kafka topic                  | Location | Comma separated list of Kafka topics.                                                                                         |
 
 ## Source
 
-Reads data from Kafka stream in batch mode. Data is read only incrementally from the last offset stored in the specified Metadata table. If the Metadata table is not present, then data will be read from the `earliest` offset.
+The Source gem reads data from Kafka stream in batch mode and allows you to optionally specify the following additional properties. This means that Kafka only reads data incrementally from the last offset stored in the specified Metadata table. If the Metadata table is not present, then Kafka reads data from the `earliest` offset.
 
-### Source Parameters
+### Source properties
 
-| Parameter         | Description                                                               | Required |
-| :---------------- | :------------------------------------------------------------------------ | :------- |
-| Broker List       | Comma separated list of Kafka brokers                                     | True     |
-| Group Id          | Kafka consumer group ID                                                   | True     |
-| Session Timeout   | Session timeout for Kafka. (Default value set to 6000s)                   | False    |
-| Security Protocol | Security protocol for Kafka (Default value set to SASL_SSL)               | True     |
-| SASL Mechanism    | Default SASL Mechanism for SASL_SSL (Default value set to SCRAM-SHA-256)  | True     |
-| Credential Type   | Credential Type provider (Databricks Secrets or Username/Password)        | True     |
-| Credential Scope  | Scope to use for Databricks secrets                                       | True     |
-| Kafka Topic       | Comma separated list of Kafka topics                                      | True     |
-| Metadata Table    | Table name which would be used to store offsets for each topic, partition | True     |
+| Property name                                   | Description                                                 | Default |
+| ----------------------------------------------- | ----------------------------------------------------------- | ------- |
+| Group Id                                        | Kafka consumer group ID.                                    | None    |
+| Session Timeout                                 | Session timeout for Kafka.                                  | `6000`  |
+| Store offsets read per partition in Delta table | Whether to store offsets read per partition in Delta table. | false   |
+| Metadata Table                                  | Delta table to store offsets for each topic and partition.  | None    |
+| Kerberos service name for Kafka SASL            | Name of your Kerberos service to use in Kafka.              | None    |
 
 ### Example {#source-example}
 
@@ -36,12 +44,15 @@ Reads data from Kafka stream in batch mode. Data is read only incrementally from
 
 ### Generated Code {#source-code}
 
+:::tip
+To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
+:::
+
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-
 <TabItem value="py" label="Python">
 
 ```py
@@ -99,30 +110,23 @@ def KafkaSource(spark: SparkSession) -> DataFrame:
             .load()\
             .withColumn("value", col("value").cast("string"))\
             .withColumn("key", col("key").cast("string")))
-
 ```
-
 </TabItem>
 </Tabs>
-
 ````
 
 ---
 
 ## Target
 
-Writes each row from the Dataframe to Kafka topic(s) as JSON messages.
+The Target gem writes data to each row from the `Dataframe` to a Kafka topic as JSON messages and allows you to optionally specify the following additional properties.
 
-### Target Parameters
+### Target properties
 
-| Parameter         | Description                                                              | Required |
-| :---------------- | :----------------------------------------------------------------------- | :------- |
-| Broker List       | Comma separated list of Kafka brokers                                    | True     |
-| Security Protocol | Security protocol for Kafka (Default value set to SASL_SSL)              | True     |
-| SASL Mechanism    | Default SASL Mechanism for SASL_SSL (Default value set to SCRAM-SHA-256) | True     |
-| Credential Type   | Credential Type provider (Databricks Secrets or Username/Password)       | True     |
-| Credential Scope  | Scope to use for Databricks secrets                                      | True     |
-| Kafka Topic       | Comma separated list of Kafka topics                                     | True     |
+| Property name                        | Description                                                 | Default |
+| ------------------------------------ | ----------------------------------------------------------- | ------- |
+| Message Unique Key                   | Key to help determine which partition to write the data to. | None    |
+| Kerberos service name for Kafka SASL | Name of your Kerberos service to use in Kafka.              | None    |
 
 ### Example {#target-example}
 
@@ -130,10 +134,13 @@ Writes each row from the Dataframe to Kafka topic(s) as JSON messages.
 
 ### Generated Code {#target-code}
 
+:::tip
+To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
+:::
+
 ````mdx-code-block
 
 <Tabs>
-
 <TabItem value="py" label="Python">
 
 ```py
@@ -155,27 +162,30 @@ def KafkaTarget(spark: SparkSession, in0: DataFrame):
           }
         )\
         .save()
-
 ```
-
 </TabItem>
 </Tabs>
-
 ````
 
-## Example pipelines
+---
 
-### Source pipeline example
+## Example Pipeline
 
-In this example we'll read JSON messages from Kafka, parse them, remove any null messagesand then finally persist it to a Delta table.
+### Source Pipeline Example
+
+In this example, you read JSON messages from Kafka, parse them, remove any null messages, and persist the data to a Delta table.
 
 ![Example usage of Filter](./img/kafka_pipeline_eg.gif)
 
+:::tip
+To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
+:::
+
 #### Metadata Table
 
-In order to avoid reprocessing messages on subsequent pipeline runs, we're going to update a certain table with the last processed offsets for each Kafka partition and topic. The next time the pipeline runs this table will be used to only get a batch of messages that have arrived since the previously-processed offset.
+To avoid reprocessing messages on subsequent pipeline runs, update a table with the last processed offsets for each Kafka partition and topic. When you run the pipeline, the table only gets a batch of messages that arrived since the previously-processed offset.
 
-For this example, we're going to update `metadata.kafka_offsets`, which has the following structure:
+In this example, you update `metadata.kafka_offsets`, which has the following structure:
 
 | topic           | partition | max_offset |
 | :-------------- | :-------- | :--------- |
@@ -184,23 +194,25 @@ For this example, we're going to update `metadata.kafka_offsets`, which has the 
 | my_second_topic | 0         | 10         |
 | my_second_topic | 1         | 5          |
 
-Taking this approach gives us the following benefits:
+Taking this approach provides you the with following benefits:
 
-1. Build the pipeline interactively without committing any offsets
-2. Production workflows will only consume messages that have arrived since the previously-processed offset
-3. We can replay old messages by modifying the Metadata table
+1. Builds the pipeline interactively without committing any offsets.
+2. Production workflows only consume messages that arrived since the previously-processed offset.
+3. You can replay old messages by modifying the Metadata table.
 
 :::note
-For production workflows the [phase](../../../../concepts/project/gems.md#gem-phase) for the `Script` gem that updates the offsets should be greater than the Phase of the Target gem.
-This is to ensure that offsets are only updated in the table after data is safely persisted to the Target.
+For production workflows the [phase](../../../../concepts/project/gems.md#gem-phase) for the `Script` gem that updates the offsets should be greater than the phase of the Target gem. This ensures that offsets only update in the table after Prophecy safely persists the data to the Target.
 :::
 
 #### Spark Code used for script component
 
+:::tip
+To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
+:::
+
 ````mdx-code-block
 
 <Tabs>
-
 <TabItem value="py" label="Python">
 
 ```py
@@ -228,10 +240,7 @@ def UpdateOffsets(spark: SparkSession, in0: DataFrame):
                 .whenMatchedUpdateAll()\
                 .whenNotMatchedInsertAll()\
                 .execute()
-
 ```
-
 </TabItem>
 </Tabs>
-
 ````
