@@ -18,8 +18,8 @@ import Requirements from '@site/src/components/gem-requirements';
   scala_lib="7.1.97"
   python_lib="1.8.19"
   uc_single="14.3+"
-  uc_shared=""
-  livy="3.0.1"
+  uc_shared="Not Supported"
+  livy="3.0.1+"
 />
 
 Use the BulkColumnRename gem to rename multiple columns in your dataset in a systematic way.

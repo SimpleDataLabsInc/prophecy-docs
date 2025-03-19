@@ -17,9 +17,9 @@ import Requirements from '@site/src/components/gem-requirements';
   scala_package_version="0.0.1+"
   scala_lib=""
   python_lib=""
-  uc_single=""
+  uc_single="Not Supported"
   uc_shared="14.3+"
-  livy="3.0.1"
+  livy="3.0.1+"
 />
 
 Use the SampleRows gem to sample records by choosing a specific number or percentage of records.

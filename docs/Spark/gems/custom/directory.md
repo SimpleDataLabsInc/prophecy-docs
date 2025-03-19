@@ -17,8 +17,8 @@ import Requirements from '@site/src/components/gem-requirements';
   scala_lib="8.2.1+"
   python_lib="1.9.16+"
   uc_single="14.3+"
-  uc_shared=""
-  livy=""
+  uc_shared="Not Supported"
+  livy="Not Supported"
 />
 
 The Directory gem returns a listing of all the files in a specified directory including file metadata such as file creation time, type, size, path, and more.

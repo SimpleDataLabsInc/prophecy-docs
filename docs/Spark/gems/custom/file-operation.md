@@ -16,9 +16,9 @@ import Requirements from '@site/src/components/gem-requirements';
   scala_package_version=""
   scala_lib=""
   python_lib=""
-  uc_single=""
-  uc_shared=""
-  livy=""
+  uc_single="Not Supported"
+  uc_shared="Not Supported"
+  livy="Not Supported"
 />
 
 Helps perform file operations like `copy` and `move` on different file systems.

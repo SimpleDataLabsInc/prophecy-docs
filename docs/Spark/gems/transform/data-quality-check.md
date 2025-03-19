@@ -17,8 +17,8 @@ import Requirements from '@site/src/components/gem-requirements';
   scala_lib="8.2.1"
   python_lib="1.9.16"
   uc_single="14.3+"
-  uc_shared=""
-  livy=""
+  uc_shared="Not Supported"
+  livy="Not Supported"
 />
 
 The DataQualityCheck gem includes a variety of checks that are built on the open source tool [Deequ](https://github.com/awslabs/deequ). Use this gem to make sure your data adheres to predefined constraints.

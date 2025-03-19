@@ -8,6 +8,20 @@ tags:
   - salesforce
 ---
 
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name="ProphecyWebAppPython"
+  python_package_version="0.0.1+"
+  scala_package_name=""
+  scala_package_version=""
+  scala_lib=""
+  python_lib=""
+  uc_single="Not Supported"
+  uc_shared="Not Supported"
+  livy="Not Supported"
+/>
+
 This gem has below features:
 
 1. Dataset Creation - Create dataset in Salesforce Wave from Spark DataFrame.

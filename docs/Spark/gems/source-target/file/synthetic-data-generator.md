@@ -21,7 +21,7 @@ import Requirements from '@site/src/components/gem-requirements';
   python_lib=""
   uc_single="14.3+"
   uc_shared="15.4+"
-  livy=""
+  livy="Not Supported"
 />
 
 Synthetic data helps you test, validate, and optimize your pipelines performance before you use production data. This ensures that your pipeline can handle various data formats, structures, and edge cases effectively, which minimizes potential issues in a live environment.

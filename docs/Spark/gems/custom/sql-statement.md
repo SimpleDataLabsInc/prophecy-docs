@@ -19,7 +19,7 @@ import Requirements from '@site/src/components/gem-requirements';
   python_lib=""
   uc_single="14.3+"
   uc_shared="14.3+"
-  livy="3.0.1"
+  livy="3.0.1+"
 />
 
 Create one or more DataFrame(s) based on provided SQL queries to run against one or more input DataFrames.

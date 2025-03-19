@@ -20,7 +20,7 @@ import Requirements from '@site/src/components/gem-requirements';
   python_lib=""
   uc_single="14.3+"
   uc_shared="15.4+"
-  livy=""
+  livy="Not Supported"
 />
 
 Enriches the DataFrame by adding column(s) with content from REST API output based on the given configuration.

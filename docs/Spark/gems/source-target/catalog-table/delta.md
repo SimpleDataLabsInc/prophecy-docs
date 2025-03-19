@@ -19,7 +19,7 @@ import Requirements from '@site/src/components/gem-requirements';
   python_lib=""
   uc_single="14.3+"
   uc_shared="14.3+"
-  livy=""
+  livy="Not Supported"
 />
 
 Reads and writes Delta tables that are managed by the execution environment's Metadata catalog (Metastore).
