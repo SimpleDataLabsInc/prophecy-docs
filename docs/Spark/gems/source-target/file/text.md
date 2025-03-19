@@ -1,8 +1,7 @@
 ---
 title: Text
 id: text
-description: Text
-sidebar_position: 11
+description: Parameters and properties to read from and write to Text file
 tags:
   - gems
   - file
@@ -23,21 +22,31 @@ import Requirements from '@site/src/components/gem-requirements';
   livy="3.2.0"
 />
 
-Allows you to read or write plain Text files.
+The Text file type is:
+
+- Easy to read from, write to, and share.
+- Compatible with many programs, and easy to exchange data.
+
+## Parameters
+
+| Parameter | Tab        | Description                                                                                                                                                                                     |
+| --------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Location  | Location   | File path to read from or write to the Text file.                                                                                                                                               |
+| Schema    | Properties | Schema to apply on the loaded data.<br/>In the Source gem, you can define or edit the schema visually or in JSON code.<br/>In the Target gem, you can view the schema visually or as JSON code. |
 
 ## Source
 
-Reads data from Text files at the given Location.
+The Source gem reads data from Text files and allows you to optionally specify the following additional properties.
 
-### Source Parameters
+### Source properties
 
-| Parameter             | Description                                                                                                                                                                   | Required | Default            |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------------------ |
-| Location              | File path where the Text files are located                                                                                                                                    | True     | None               |
-| Schema                | Schema to be applied on the loaded data. Can be defined/edited as JSON or inferred using `Infer Schema` button.                                                               | True     | None               |
-| Recursive File Lookup | This is used to recursively load files from the given Location. Disables partition discovery. An exception will be thrown if this option and a `partitionSpec` are specified. | False    | False              |
-| Line Separator        | Defines the line separator that should be used for reading or writing.                                                                                                        | False    | `\r`, `\r\n`, `\n` |
-| Read as a single row  | If true, read each file from input path(s) as a single row.                                                                                                                   | False    | False              |
+| Property name           | Description                                                                                                                                                                                                 | Default                |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
+| Description             | Description of your dataset.                                                                                                                                                                                | None                   |
+| Enforce schema          | Whether to use the schema you define.                                                                                                                                                                       | true                   |
+| Read file as single row | Whether to read each file from input path as a single row.                                                                                                                                                  | false                  |
+| Line Separator          | Sets a separator for each field and value. The separator can be one or more characters.                                                                                                                     | `\r`, `\r\n`, and `\n` |
+| Recursive File Lookup   | Whether to recursively load files and disable partition inferring. If the data source explicitly specifies the `partitionSpec` when the`recursiveFileLookup` is `true`, the Source gem throws an exception. | false                  |
 
 ### Example {#source}
 
@@ -48,12 +57,15 @@ Reads data from Text files at the given Location.
 
 ### Generated Code {#source-code}
 
+:::tip
+To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
+:::
+
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-
 <TabItem value="py" label="Python">
 
 ```py
@@ -63,7 +75,6 @@ def read_avro(spark: SparkSession) -> DataFrame:
         .text("dbfs:/FileStore/customers.txt", wholetext = False, lineSep = "\n")
 
 ```
-
 </TabItem>
 <TabItem value="scala" label="Scala">
 
@@ -78,41 +89,34 @@ object read_avro {
 
 }
 ```
-
 </TabItem>
 </Tabs>
-
 ````
 
 ---
 
 ## Target
 
-### Target Parameters
+The Target gem writes data to Text files and allows you to optionally specify the following additional properties.
 
-Write data as text files at the specified path.
+### Target properties
 
-| Parameter         | Description                                                                                                                                                         | Required | Default |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
-| Location          | File path where text files will be written to                                                                                                                       | True     | None    |
-| Compression       | Compression codec to use when saving to file. This can be one of the known case-insensitive shorten names (`none`, `bzip2`, `gzip`, `lz4`, `snappy` and `deflate`). | False    | None    |
-| Write Mode        | How to handle existing data. See [this table](#supported-write-modes) for a list of available options.                                                              | True     | `error` |
-| Partition Columns | List of columns to partition the Text files by                                                                                                                      | False    | None    |
-| Line Separator    | Defines the line separator that should be used for writing                                                                                                          | False    | `\n`    |
+| Property name     | Description                                                                                                                                                                                                                                                                                          | Default |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| Description       | Description of your dataset.                                                                                                                                                                                                                                                                         | None    |
+| Write Mode        | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                                                                                                                                                                                 | `error` |
+| Partition Columns | List of columns to partition the Text files by. <br/> The Text file type only supports a single column apart from the partition columns. If the `DataFrame` contains more than one column apart from partition columns as the input `DataFrame`, the Target gem throws an `AnalysisException` error. | None    |
+| Compression Codec | Compression codec when writing to the Text file. <br/>The Text file supports the following codecs: `none`, `bzip2`, `gzip`, `lz4`, `snappy` and `deflate`.                                                                                                                                           | None    |
+| Line Separator    | Defines the line separator to use for parsing.                                                                                                                                                                                                                                                       | `\n`    |
 
-:::info
-The Text data source supports only a single column apart from the partition columns. An `AnalysisException` will be thrown if the DataFrame has more than 1 column
-apart from parition columns as the input DataFrame to the `Target` gem.
-:::
+### Supported write modes
 
-### Supported Write Modes
-
-| Write Mode | Description                                                                                                                      |
-| ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| overwrite  | If data already exists, overwrite with the contents of the DataFrame.                                                            |
-| append     | If data already exists, append the contents of the DataFrame.                                                                    |
-| ignore     | If data already exists, do nothing with the contents of the DataFrame. This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
-| error      | If data already exists, throw an exception.                                                                                      |
+| Write mode | Description                                                                                                                                          |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| error      | If the data already exists, throw an exception.                                                                                                      |
+| overwrite  | If the data already exists, overwrite the data with the contents of the `DataFrame`.                                                                 |
+| append     | If the data already exists, append the contents of the `DataFrame`.                                                                                  |
+| ignore     | If the data already exists, do nothing with the contents of the `DataFrame`. <br/>This is similar to the `CREATE TABLE IF NOT EXISTS` clause in SQL. |
 
 ### Example {#target-example}
 
@@ -123,10 +127,13 @@ apart from parition columns as the input DataFrame to the `Target` gem.
 
 ### Generated Code {#target-code}
 
+:::tip
+To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
+:::
+
 ````mdx-code-block
 
 <Tabs>
-
 <TabItem value="py" label="Python">
 
 ```py
@@ -136,7 +143,6 @@ def write_text(spark: SparkSession, in0: DataFrame):
         .mode("overwrite")\
         .text("dbfs:/FileStore/customers.txt", compression = "gzip", lineSep = "\n")
 ```
-
 </TabItem>
 <TabItem value="scala" label="Scala">
 
@@ -151,13 +157,6 @@ object write_text {
       .save("dbfs:/FileStore/customers.txt")
 }
 ```
-
 </TabItem>
 </Tabs>
-
-
 ````
-
-:::info
-To know more about tweaking Text file related properties in Spark config [**click here**](https://spark.apache.org/docs/latest/sql-data-sources-text.html).
-:::
