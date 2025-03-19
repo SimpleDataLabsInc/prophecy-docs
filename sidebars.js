@@ -712,7 +712,12 @@ const sidebars = {
                 type: "doc",
                 id: "administration/prophecy-fabrics/connections/connections",
               },
-              items: [],
+              items: [
+                "administration/prophecy-fabrics/connections/databricks",
+                "administration/prophecy-fabrics/connections/mongodb",
+                "administration/prophecy-fabrics/connections/mssql",
+                "administration/prophecy-fabrics/connections/snowflake",
+              ],
             },
           ],
         },
