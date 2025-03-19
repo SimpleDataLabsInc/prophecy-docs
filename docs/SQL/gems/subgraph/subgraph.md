@@ -8,20 +8,6 @@ tags:
   - SQL
 ---
 
-import Requirements from '@site/src/components/gem-requirements';
-
-<Requirements
-  python_package_name=""
-  python_package_version=""
-  scala_package_name=""
-  scala_package_version=""
-  scala_lib=""
-  python_lib=""
-  uc_single="14.3+"
-  uc_shared="14.3+"
-  livy="3.0.1"
-/>
-
 Subgraph gems let you take multiple different gems and wrap them under a single reusable parent gem. In other words, they allow you to decompose complex logic into reusable components and simplify the visual view of your data model.
 
 ## Basic Subgraph
