@@ -7,7 +7,19 @@ tags:
   - data quality
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name="ProphecySparkDataQualityPython"
+  python_package_version="0.0.1+"
+  scala_package_name=""
+  scala_package_version=""
+  scala_lib="8.2.1"
+  python_lib="1.9.16"
+  uc_single="14.3+"
+  uc_shared="Not Supported"
+  livy="Not Supported"
+/>
 
 The DataQualityCheck gem includes a variety of checks that are built on the open source tool [Deequ](https://github.com/awslabs/deequ). Use this gem to make sure your data adheres to predefined constraints.
 

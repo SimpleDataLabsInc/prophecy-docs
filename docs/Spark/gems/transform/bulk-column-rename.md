@@ -8,7 +8,19 @@ tags:
   - columns
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name="ProphecySparkBasicsPython"
+  python_package_version="0.2.11+"
+  scala_package_name="ProphecySparkBasicsScala"
+  scala_package_version="0.1.9+"
+  scala_lib="7.1.97"
+  python_lib="1.8.19"
+  uc_single="14.3+"
+  uc_shared="Not Supported"
+  livy="3.0.1+"
+/>
 
 Use the BulkColumnRename gem to rename multiple columns in your dataset in a systematic way.
 
