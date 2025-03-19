@@ -29,20 +29,14 @@ To use data from outside of your SQL warehouse, you can use the following extern
 These sources and targets are closely related to the types of [connections](docs/analysts/development/connections.md) you can set up for your project.
 :::
 
-### Files
-
-| File | Description | Compatible connections |
-| ---- | ----------- | ---------------------- |
-| CSV  |             |                        |
-| JSON |             |                        |
-| Text |             |                        |
-| XLSX |             |                        |
-| XML  |             |                        |
-
-### External Tables
-
-| Table      | Description |
-| ---------- | ----------- |
-| Databricks |             |
-| Snowflake  |             |
-| MSSQL      |             |
+| File       | Connection types                             |
+| ---------- | -------------------------------------------- |
+| CSV        | S3, SFTP, Sharepoint, Databricks             |
+| JSON       | S3, SFTP, Sharepoint, Databricks             |
+| Text       | None                                         |
+| XLSX       | S3, SFTP, Sharepoint, Databricks, Smartsheet |
+| XML        | S3, SFTP, Sharepoint, Databricks             |
+| Databricks | Databricks                                   |
+| Snowflake  | Snowflake                                    |
+| MSSQL      | MSSQL                                        |
+| MongoDB    | MongoDB                                      |

@@ -31,11 +31,15 @@ All gems (excluding Target gems) generate data samples.
 
 ### Selective (recommended)
 
-When you choose selective data samplings, you gain the ability to enable or disable data samples for individual gems. You can find the **Data Preview** option in the gem action menu. Selectively-generated samples load up to 10,000 rows by default.
+When you choose selective data sampling, you gain the ability to enable or disable data samples for individual gems. To do so, use the **Data Preview** checkbox in the gem [action menu](docs/Spark/gems/gems.md). Selectively-generated samples load up to 10,000 rows by default.
 
 ![Selective](img/selective-interims.png)
 
 If the **Data Preview** option is not selected for a gem, you'll see a pale-color gem output after running the data pipeline. This means that no data sample was generated. To generate it, open the pale interim and it will load the data. After it loads, the data sample will display the normal bold color.
+
+:::note
+Normally on Databricks UC shared clusters, data samples are only generated on edge nodes. With selective interims, you can select to generate samples from any gem.
+:::
 
 ### Sources
 
