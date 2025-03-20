@@ -21,16 +21,6 @@ Tables are natively read from and written to the SQL warehouse that is configure
 When deciding between tables and external sources, consider the primary SQL connection in your Prophecy fabric. Processing tables natively in the SQL warehouse will be fast. Processing external data is slower. **Do not create an external connection that duplicates your primary SQL warehouse connection.**
 :::
 
-## Parameters
-
-| Parameter                   | Description                                                       |
-| --------------------------- | ----------------------------------------------------------------- |
-| Location type               | Location you want to connect from.                                |
-| Select or create connection | Whether to select an existing connection, or to create a new one. |
-| Database                    | Database to use for the session after you connect.                |
-| Schema                      | Schema to use for the session after you connect.                  |
-| Name                        | Name to to identify your connection.                              |
-
 ## External Sources and Targets
 
 To use data from outside of your SQL warehouse, you can use the following external sources and targets. This data is not persisted in Prophecy, but rather read through Prophecy and written into your warehouse.
