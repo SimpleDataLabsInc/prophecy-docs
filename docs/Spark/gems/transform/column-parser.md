@@ -43,3 +43,29 @@ When you select a parsing method, you have three options:
 The schema of the ColumnParser gem output includes the parsed content as a **struct** data type, in addition to all of the input columns.
 
 ![New output struct](img/new-output-struct.png)
+
+## Example code
+
+:::tip
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+:::
+
+This example shows the code to parse XML.
+
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+def xml_column_parser(spark: SparkSession, in0: DataFrame) -> DataFrame:
+    from prophecy.libs.utils import xml_parse
+
+    return xml_parse(in0, "XML", "parseAuto", None, None)
+```
+
+</TabItem>
+</Tabs>
+````
