@@ -92,9 +92,18 @@ For this example, you would configure the gem using the following values:
 | Output Value Field       | output_value    |
 | Values are Expressions   | enabled         |
 
-## Generated code
+## Example code
 
-### Python
+:::tip
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+:::
+
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="py" label="Python">
 
 ```py
 def dynamic_replace_expression(spark: SparkSession, in0: DataFrame, in1: DataFrame) -> DataFrame:
@@ -102,5 +111,8 @@ def dynamic_replace_expression(spark: SparkSession, in0: DataFrame, in1: DataFra
 
     return ProphecyDataFrame(in0, spark)\
         .dynamicReplaceExpr(in1.withColumn("__rowId", monotonically_increasing_id().cast("integer"))._jdf, "__rowId", "source_column", "condition", "output_value", spark)
-
 ```
+
+</TabItem>
+</Tabs>
+````

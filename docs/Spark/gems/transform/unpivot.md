@@ -59,11 +59,24 @@ This table describes how this transformation was achieved:
 | Variable column name            | The variable column is named _Quarter_ because it identifies the sales period.                    |
 | Value column name               | The value column is named _UnitsSold_ because it contains information about number of units sold. |
 
-## Generated code
+## Example code
 
-### Python
+:::tip
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+:::
+
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="py" label="Python">
 
 ```py
 def unpivot_products_by_quarter(spark: SparkSession, in0: DataFrame) -> DataFrame:
     return in0.unpivot(["Product"], [col for col in in0.columns if col not in ["Product"]], "Quarter", "UnitsSold")
 ```
+
+</TabItem>
+</Tabs>
+````

@@ -58,9 +58,18 @@ One common use case for the FuzzyMatch gem is to match similarly spelled names. 
 
    ![FuzzyMatch joined](img/fuzzy-match-join.png)
 
-## Generated code
+## Example code
 
-### Python
+:::tip
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+:::
+
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="py" label="Python">
 
 ```py
 def fuzzy_match_customers(spark: SparkSession, in0: DataFrame) -> DataFrame:
@@ -75,3 +84,7 @@ def fuzzy_match_customers(spark: SparkSession, in0: DataFrame) -> DataFrame:
         includeSimilarityScore = True
     )
 ```
+
+</TabItem>
+</Tabs>
+````

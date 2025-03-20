@@ -39,9 +39,18 @@ Assume you have a table that includes customer feedback on individual orders. In
 
 ![Replace null with string](./img/replace-null-with-string.png)
 
-## Generated code
+## Example code
 
-### Python
+:::tip
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+:::
+
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="py" label="Python">
 
 ```py
 def data_cleansing_customer_id(spark: SparkSession, df: DataFrame) -> DataFrame:
@@ -69,3 +78,7 @@ def data_cleansing_customer_id(spark: SparkSession, df: DataFrame) -> DataFrame:
 
     return df
 ```
+
+</TabItem>
+</Tabs>
+````

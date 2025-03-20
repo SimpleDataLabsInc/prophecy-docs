@@ -48,7 +48,7 @@ Using the BulkColumnExpressions gem, you can:
 - Cast the output column(s) to be integers.
 - Include `column_value + 1` in the expression field to shift the indices.
 
-## Generated code
+## Example code
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';

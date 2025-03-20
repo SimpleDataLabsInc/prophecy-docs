@@ -75,11 +75,16 @@ The DataQualityCheck gem includes a variety of checks that are built on the open
 | Continue execution  | Continue pipeline execution regardless of data quality success or failure.                                                                                                                                      |
 | Terminate execution | Stop pipeline execution after the DataQualityCheck gem runs based on a maximum number of failed checks. Review [gem phases](docs/concepts/project/gems.md#gem-phase) to understand the order in which gems run. |
 
-## Generated code
+## Example code
 
 Each check is compiled into highly decipherable code. When you switch to the code view and open the DataQualityCheck file, you can see that every check includes a **hint** that populates the **out1** _constraint_message_ column if you do not define a custom failure message. Below is an example of the generated code with a few checks configured.
 
-### Python
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="py" label="Python">
 
 ```py
 def data_quality_check(spark: SparkSession, in0: DataFrame) -> (DataFrame, DataFrame):
@@ -116,3 +121,7 @@ def data_quality_check(spark: SparkSession, in0: DataFrame) -> (DataFrame, DataF
               .selectExpr("constraint_status", "constraint_message", "udf_extract_check_and_column(constraint) as parsed")\
               .selectExpr("parsed._1 as check_type", "parsed._2 as column", "constraint_status", "constraint_message"))
 ```
+
+</TabItem>
+</Tabs>
+````

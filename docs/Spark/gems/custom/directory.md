@@ -45,9 +45,18 @@ Below is an example output of a Directory gem. It includes seven columns:
 
 ![Directory output](img/directory-output.png)
 
-## Generated code
+## Example code
 
-### Python
+:::tip
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+:::
+
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="py" label="Python">
 
 ```py
 def directory_listing(spark: SparkSession) -> DataFrame:
@@ -55,3 +64,7 @@ def directory_listing(spark: SparkSession) -> DataFrame:
 
     return directory_listing(spark, "dbfs:/source_file.txt", False, "*.*")
 ```
+
+</TabItem>
+</Tabs>
+````

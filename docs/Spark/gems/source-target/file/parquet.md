@@ -78,7 +78,7 @@ The Source gem reads data from Parquet files and allows you to optionally specif
 ### Generated Code {#source-code}
 
 :::tip
-To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
 :::
 
 ````mdx-code-block
@@ -147,7 +147,7 @@ The Target gem writes data to Parquet files and allows you to optionally specify
 ### Generated Code {#target-code}
 
 :::tip
-To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
 :::
 
 ````mdx-code-block

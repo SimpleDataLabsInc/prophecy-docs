@@ -45,7 +45,7 @@ One example is to add the prefix `meta_` to tag columns that contain metadata.
 
 You can accomplish the same or more complex changes using a custom expression like `concat('meta_', column_name)`.
 
-## Generated code
+## Example code
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';

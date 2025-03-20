@@ -33,7 +33,7 @@ Use the SampleRows gem to sample records by choosing a specific number or percen
 | Random seed       | A number that lets you reproduce the random sample                                  |
 | With replacement  | When enabled, this allows records to be returned to the sample pool after selection |
 
-## Generated code
+## Example code
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';

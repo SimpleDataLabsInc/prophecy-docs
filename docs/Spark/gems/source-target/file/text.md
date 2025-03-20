@@ -58,7 +58,7 @@ The Source gem reads data from Text files and allows you to optionally specify t
 ### Generated Code {#source-code}
 
 :::tip
-To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
 :::
 
 ````mdx-code-block
@@ -128,7 +128,7 @@ The Target gem writes data to Text files and allows you to optionally specify th
 ### Generated Code {#target-code}
 
 :::tip
-To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
 :::
 
 ````mdx-code-block
