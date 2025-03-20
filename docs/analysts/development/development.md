@@ -9,8 +9,6 @@ tags:
   - development
 ---
 
-<h3><span class="badge">SQL</span></h3>
-
 Prophecy makes it easy to extract insights from data to support decision-making. It does so by bridging the gap between data engineering and analysis—all in one platform.
 
 ## Generate pipelines with Copilot

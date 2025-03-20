@@ -22,25 +22,25 @@ The following are the main components of a successful Prophecy deployment.
 
 - **Authentication**: Prophecy supports multiple authentication methods, including Prophecy-managed authentication and integration with other identity providers.
 
-## Prophecy for Analysts (SQL)
+## Prophecy for Analysts
 
-This diagram demonstrates the various components in their respective VPCs.
+Prophecy for Analysts leverages the Prophecy runtime and a SQL warehouse to let users build, run, and schedule their pipelines. This architecture diagram demonstrates one example of the various components involved in a Prophecy deployment in their respective virtual networks.
 
-![Arch_Diagram](./img/arch_snowflake.png)
+![Prophecy for Analysts](img/arch-prophecy-sql.png)
 
-Adjustments:
+Prophecy can accommodate a wide variety of architectures beyond this diagram. For example:
 
-- Though we demonstrate the architecture using a Snowflake computation engine, we support different SQL warehouses as well.
-- Though we display the Prophecy-managed Git inside Prophecy, you can also connect to external Git repositories.
-- Though we display the Prophecy runtime inside Prophecy, it is possible for the Prophecy runtime to run in a customer VPC instead.
+- The diagram shows Databricks as the data provider and SQL warehouse. Prophecy also supports Snowflake SQL warehouse.
+- The diagram displays a connection to an external Git repository. You can also use Prophecy-managed Git for version control.
+- The diagrams places the Prophecy runtime inside Prophecy. If necessary, the Prophecy runtime can run in a customer network instead.
 
-## Prophecy for Engineers (Spark)
+## Prophecy for Engineers
 
-This diagram demonstrates the various components in their respective VPCs.
+Prophecy for Engineers privileges Spark to execute pipelines in a scalable and optimized way. This architecture diagram demonstrates one example of the various components involved in a Prophecy deployment in their respective virtual networks.
 
-![Prophecy to Databricks Connectivity](./img/arch_databricks.png)
+![Prophecy for Engineers](img/arch-prophecy-spark.png)
 
-Adjustments:
+Prophecy can accommodate a wide variety of architectures beyond this diagram. For example:
 
-- Though we demonstrate the architecture using a Databricks execution engine, you can use any other Spark engine through [Apache Livy](https://livy.apache.org/) (e.g. MapR, CDP, HDP, Spark on Kubernetes).
-- Though we demonstrate a connection to an external Git repository, you can use Prophecy-managed Git instead.
+- The diagram demonstrates Databricks as the execution engine. You can use any other Spark engine through [Apache Livy](https://livy.apache.org/) (e.g. MapR, CDP, HDP, Spark on Kubernetes).
+- The diagram displays a connection to an external Git repository. You can connect to a variety of providers such as GitHub, Bitbucket, GitLab, and more.
