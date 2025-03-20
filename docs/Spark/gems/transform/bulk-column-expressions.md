@@ -47,3 +47,49 @@ Using the BulkColumnExpressions gem, you can:
 - Select the columns you wish to transform.
 - Cast the output column(s) to be integers.
 - Include `column_value + 1` in the expression field to shift the indices.
+
+## Generated code
+
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+
+<TabItem value="py" label="Python">
+
+```py
+def bulk_column_casting(spark: SparkSession, in0: DataFrame) -> DataFrame:
+    return in0.select(
+        *(
+          [expr("`customer_id`").alias("str_customer_id").cast(StringType())]
+          + [col("`" + colName + "`") for colName in sorted(set(in0.columns) - {"customer_id"})]
+          + []
+        )
+    )
+```
+
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+object bulk_column_expressions {
+  def apply(context: Context, in: DataFrame): DataFrame = {
+    var allExpressions = List(
+      expr(
+        "column_value"
+          .replace("column_value", "`status`")
+          .replace("column_name",  "'status'")
+      ).as("status").cast(StringType)
+    ) ++ (in.columns.toSet -- List("status").toSet).map(columnName =>
+      col("`" + columnName + "`")
+    )
+    in.select(allExpressions: _*)
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+````

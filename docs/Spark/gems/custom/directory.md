@@ -44,3 +44,14 @@ Below is an example output of a Directory gem. It includes seven columns:
 - file_type
 
 ![Directory output](img/directory-output.png)
+
+## Generated code
+
+### Python
+
+```py
+def directory_listing(spark: SparkSession) -> DataFrame:
+    from prophecy.libs.utils import directory_listing
+
+    return directory_listing(spark, "dbfs:/source_file.txt", False, "*.*")
+```

@@ -91,3 +91,16 @@ For this example, you would configure the gem using the following values:
 | Boolean Expression Field | condition       |
 | Output Value Field       | output_value    |
 | Values are Expressions   | enabled         |
+
+## Generated code
+
+### Python
+
+```py
+def dynamic_replace_expression(spark: SparkSession, in0: DataFrame, in1: DataFrame) -> DataFrame:
+    from prophecy.utils import ProphecyDataFrame
+
+    return ProphecyDataFrame(in0, spark)\
+        .dynamicReplaceExpr(in1.withColumn("__rowId", monotonically_increasing_id().cast("integer"))._jdf, "__rowId", "source_column", "condition", "output_value", spark)
+
+```

@@ -32,3 +32,33 @@ Use the SampleRows gem to sample records by choosing a specific number or percen
 | Sampling ratio    | The ratio of records that you wish to sample                                        |
 | Random seed       | A number that lets you reproduce the random sample                                  |
 | With replacement  | When enabled, this allows records to be returned to the sample pool after selection |
+
+## Generated code
+
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+
+<TabItem value="py" label="Python">
+
+```py
+def SampleRows_1(spark: SparkSession, in0: DataFrame) -> DataFrame:
+    return in0.sample(withReplacement = False, fraction = 0.5)
+```
+
+</TabItem>
+<TabItem value="scala" label="Scala">
+
+```scala
+object SampleRows_1 {
+  def apply(context: Context, in: DataFrame): DataFrame =
+    in.sample(false, "0.5".toDouble)
+}
+```
+
+</TabItem>
+</Tabs>
+
+````

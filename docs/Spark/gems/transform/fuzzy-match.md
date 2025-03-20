@@ -57,3 +57,21 @@ One common use case for the FuzzyMatch gem is to match similarly spelled names. 
 3. Join the output with the original dataset to view the matched names.
 
    ![FuzzyMatch joined](img/fuzzy-match-join.png)
+
+## Generated code
+
+### Python
+
+```py
+def fuzzy_match_customers(spark: SparkSession, in0: DataFrame) -> DataFrame:
+    from prophecy.utils.transpiler.dataframe_fcns import fuzzyPurgeMode
+
+    return fuzzyPurgeMode(
+        in0,
+        spark,
+        recordId = "customer_id",
+        matchFields = {"first_name" : "name"},
+        threshold = 0.8,
+        includeSimilarityScore = True
+    )
+```
