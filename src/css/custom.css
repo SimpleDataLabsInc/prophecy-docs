@@ -157,14 +157,76 @@ img {
 /* Badge styles */
 
 .badge {
-  color: #000;
-  background-color: rgb(248, 249, 250);
+  color: #fcfcfd;
+  background-color: #30317c;
   border: var(--ifm-badge-border-width) solid var(--ifm-badge-border-color);
   border-radius: 50rem;
   font-size: 75%;
   font-weight: var(--ifm-font-weight-bold);
   line-height: 1;
   padding: var(--ifm-badge-padding-vertical) var(--ifm-badge-padding-horizontal);
+}
+
+.badge-dependency,
+.badge-spark {
+  display: inline-flex;
+  align-items: center;
+  border: var(--ifm-badge-border-width) solid var(--ifm-badge-border-color);
+  border-radius: 50rem;
+  font-size: 75%;
+  font-weight: var(--ifm-font-weight-bold);
+  line-height: 1;
+  overflow: hidden;
+  color: #fcfcfd;
+  margin-right: 5px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease;
+  cursor: pointer;
+}
+
+/* Split badge */
+.badge-dependency span,
+.badge-spark span {
+  padding: var(--ifm-badge-padding-vertical) var(--ifm-badge-padding-horizontal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Hover effect */
+.badge-dependency:hover,
+.badge-spark:hover {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
+}
+
+.badge-dependency .left {
+  background-color: #1d2939; /* Left section color */
+  border-top-left-radius: 50rem;
+  border-bottom-left-radius: 50rem;
+  flex: 1; /* Dynamically adjusts based on text size */
+}
+
+.badge-dependency .right {
+  background-color: #667085; /* Right section color */
+  border-top-right-radius: 50rem;
+  border-bottom-right-radius: 50rem;
+  flex: 1; /* Dynamically adjusts based on text size */
+}
+
+.badge-spark .left {
+  background-color: #293056; /* Left section color */
+  border-top-left-radius: 50rem;
+  border-bottom-left-radius: 50rem;
+  flex: 1; /* Dynamically adjusts based on text size */
+}
+
+.badge-spark .right {
+  background-color: #4e5ba6; /* Right section color */
+  border-top-right-radius: 50rem;
+  border-bottom-right-radius: 50rem;
+  flex: 1; /* Dynamically adjusts based on text size */
 }
 
 /* Sidebar styles from https://github.com/facebook/docusaurus/pull/6519 */

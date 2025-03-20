@@ -8,6 +8,20 @@ tags:
   - kafka
 ---
 
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name="ProphecySparkBasicsPython"
+  python_package_version="0.0.1+"
+  scala_package_name="ProphecySparkBasicsScala"
+  scala_package_version="0.0.1+"
+  scala_lib=""
+  python_lib="1.9.24"
+  uc_single="Not Supported"
+  uc_shared="14.3+"
+  livy="Not Supported"
+/>
+
 The Kafka file type is used in [Apache Kafka](https://kafka.apache.org/), which:
 
 - Is an open-source distributed event streaming platform.
@@ -118,6 +132,18 @@ def KafkaSource(spark: SparkSession) -> DataFrame:
 ---
 
 ## Target
+
+<Requirements
+  python_package_name="ProphecySparkBasicsPython"
+  python_package_version="0.0.1+"
+  scala_package_name="ProphecySparkBasicsScala"
+  scala_package_version="0.0.1+"
+  scala_lib=""
+  python_lib=""
+  uc_single="Not Supported"
+  uc_shared="14.3+"
+  livy="Not Supported"
+/>
 
 The Target gem writes data to each row from the `Dataframe` to a Kafka topic as JSON messages and allows you to optionally specify the following additional properties.
 

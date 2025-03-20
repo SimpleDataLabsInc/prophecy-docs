@@ -8,6 +8,20 @@ tags:
   - xlsx
 ---
 
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name="ProphecySparkBasicsPython"
+  python_package_version="0.0.1+"
+  scala_package_name="ProphecySparkBasicsScala"
+  scala_package_version="0.0.1+"
+  scala_lib=""
+  python_lib=""
+  uc_single="14.3+"
+  uc_shared="Not Supported"
+  livy="Not Supported"
+/>
+
 The XLSX (Excel) file type:
 
 - Is in XML format, which is easier for data access, manipulation, and compatibility with various software applications.

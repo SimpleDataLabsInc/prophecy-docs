@@ -8,6 +8,20 @@ tags:
   - fixed-format
 ---
 
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name="ProphecySparkBasicsPython"
+  python_package_version="0.0.1+"
+  scala_package_name="ProphecySparkBasicsScala"
+  scala_package_version="0.0.1+"
+  scala_lib=""
+  python_lib=""
+  uc_single="14.3+"
+  uc_shared="Not Supported"
+  livy="Not Supported"
+/>
+
 :::caution Enterprise Only
 To learn more about our Enterprise offering, please [contact us](https://www.prophecy.io/request-a-demo).
 :::

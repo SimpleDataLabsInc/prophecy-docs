@@ -10,18 +10,18 @@ tags:
   - generator
 ---
 
-import Requirements from "../../\_gem-requirements.mdx";
-
-<h3><span class="badge">Spark Gem</span></h3>
+import Requirements from '@site/src/components/gem-requirements';
 
 <Requirements
-  packagename="ProphecySparkBasicsPython"
-  packageversion="0.2.36"
-  scalalib="8.5.0"
-  pythonlib="1.9.24"
-  packageversion122="Not Supported"
-  packageversion143="Not Supported"
-  packageversion154="Supports 0.2.36+"
+  python_package_name="ProphecySparkBasicsPython"
+  python_package_version="0.2.32+"
+  scala_package_name=""
+  scala_package_version=""
+  scala_lib=""
+  python_lib=""
+  uc_single="14.3+"
+  uc_shared="15.4+"
+  livy="Not Supported"
 />
 
 Synthetic data helps you test, validate, and optimize your pipelines performance before you use production data. This ensures that your pipeline can handle various data formats, structures, and edge cases effectively, which minimizes potential issues in a live environment.
