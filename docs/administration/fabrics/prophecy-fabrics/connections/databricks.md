@@ -8,17 +8,7 @@ tags:
   - databricks
 ---
 
-## Parameters
-
-| Parameter                   | Description                                                                                                                                            |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Location type               | Location you want to connect from. The value is `databricks`.                                                                                          |
-| Select or create connection | Whether to select an existing connection, or to create a new one. For a list of properties for a new one, see [Create connection](#create-connection). |
-| Database                    | Database to use for the session after you connect.                                                                                                     |
-| Schema                      | Schema to use for the session after you connect.                                                                                                       |
-| Name                        | Name to to identify your connection.                                                                                                                   |
-
-### Create connection
+To create a connection with Databricks, enter the following properties:
 
 | Property name         | Description                                                                                                                         |
 | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
