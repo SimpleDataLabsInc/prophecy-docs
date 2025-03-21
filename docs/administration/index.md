@@ -11,9 +11,9 @@ This documentation is designed to help administrators effectively manage users, 
 
 ### Team admins
 
-Team admins manage teams and create resources for their teams.
+Team admins manage teams and create resources for their teams. There can be multiple team admins per team.
 
-For more information about teams, visit [Teams and users](docs/administration/teamuser.md).
+For more information about teams, visit [Teams and users](docs/administration/teams-users/teamuser.md).
 
 ### Prophecy cluster admins
 

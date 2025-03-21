@@ -227,7 +227,7 @@ Taking this approach provides you the with following benefits:
 3. You can replay old messages by modifying the Metadata table.
 
 :::note
-For production workflows the [phase](../../../../concepts/project/gems.md#gem-phase) for the `Script` gem that updates the offsets should be greater than the phase of the Target gem. This ensures that offsets only update in the table after Prophecy safely persists the data to the Target.
+For production workflows the [phase](docs/getting-started/concepts/gems.md#gem-phase) for the `Script` gem that updates the offsets should be greater than the phase of the Target gem. This ensures that offsets only update in the table after Prophecy safely persists the data to the Target.
 :::
 
 #### Spark Code used for script component

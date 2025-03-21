@@ -7,7 +7,7 @@ tags: [streaming, gems, source, target]
 
 Prophecy provides native support for streaming data running on Spark Structured Streaming. This documentation assumes you are already familiar with how Structured Streaming works. For more information, you can consult the Structured Streaming documentation [here](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html).
 
-Streaming pipelines work differently from batch pipelines:
+Streaming [pipelines](docs/Spark/pipelines/pipelines.md) work differently from batch pipelines:
 
 1. Streaming applications are always running, continuously processing incoming data.
 2. Data is processed in micro-batches, with the notable exception of [Continuous Triggers](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#continuous-processing) (an experimental feature available in Spark3.3). Continuous triggers are not supported by Prophecy.
@@ -27,9 +27,9 @@ The streaming capability is available for `Python` projects that do not use UC S
 ![How to Create a Streaming pipeline](./img/create-streaming-pipeline.png)
 Within a Prophecy `Python` project, a user can create a Structured Streaming pipeline using the Streaming(beta) mode.
 
-### Working with a Streaming pipeline
+### Working with a streaming pipeline
 
-To create a Streaming pipeline, users can follow a process similar to creating a Batch pipeline in a `Python` project. For more on pipeline creation and understanding Prophecy pipelines, please check [this](/docs/concepts/project/pipelines.md) link. Streaming pipelines work differently from Batch pipelines in the following ways:
+To create a streaming pipeline, users can follow a process similar to creating a Batch pipeline in a `Python` project. Streaming pipelines work differently from Batch pipelines in the following ways:
 
 1. Partial runs are not supported for streaming applications. A partial run is only allowed on a `Streaming Target` gem.
 2. Streaming pipelines are long-running tasks and process data at intervals. Currently, they do not capture cumulative statistics.

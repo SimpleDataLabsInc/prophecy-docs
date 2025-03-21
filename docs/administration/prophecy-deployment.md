@@ -1,6 +1,5 @@
 ---
 title: Prophecy deployment
-sidebar_label: Deployment
 id: prophecy-deployment
 description: Prophecy deployment is flexible and supports multiple mechanisms
 tags:

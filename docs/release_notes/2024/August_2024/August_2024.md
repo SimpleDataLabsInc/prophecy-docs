@@ -22,7 +22,7 @@ tags:
 
 - **Support for config resolution inside call_func()**: Config variables inside of the `call_function()` and `call_func()` are now supported. The new syntax is `call_function("{{catalogName}}.{{database}}.{{funcName}}", "{{firstArg}}")`.
 
-- **Support for proxy-user impersonation in Kerberos Livy Fabric Auth**: As an admin user, you can configure multiple Keytab accounts in the [security settings](docs/administration/Spark-fabrics/livy.md). You can upload the Keytab files and set up proxy-user impersonation in Kerberos for secure authentication to Livy fabrics.
+- **Support for proxy-user impersonation in Kerberos Livy Fabric Auth**: As an admin user, you can configure multiple Keytab accounts in the [security settings](docs/administration/fabrics/Spark-fabrics/livy.md). You can upload the Keytab files and set up proxy-user impersonation in Kerberos for secure authentication to Livy fabrics.
 
 #### SQL Copilot Enhancements {#SQL339}
 
