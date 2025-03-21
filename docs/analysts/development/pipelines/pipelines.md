@@ -56,4 +56,4 @@ The project footer includes:
 
 - **Diagnostics:** Highlights any issues or errors in your pipeline that need attention. It provides detailed feedback on what needs to be fixed to ensure that your pipeline runs successfully.
 - **Runtime Logs:** Offers detailed insights into the status and progress of your pipeline executions. They show real-time information, errors, and other diagnostic messages, helping you monitor and troubleshoot the pipeline's performance.
-- **Git workflow**. If you create your project using the [normal Git storage model](docs/analysts/version-control/version-control.md), you will see the Git workflow in the project footer.
+- **Git Workflow:** If you create your project using the [normal Git storage model](docs/analysts/version-control/version-control.md), you will see the Git workflow in the project footer.

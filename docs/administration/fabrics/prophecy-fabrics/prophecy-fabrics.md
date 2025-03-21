@@ -21,7 +21,7 @@ Use the following instructions to create a Prophecy fabric.
 
 1. From the left sidebar, click the **+** sign.
 1. On the Create Entity page, select **Fabric**.
-1. Enter a name for the fabric and choose a [team](/getting-started/concepts/Fabric#share-fabrics) for the fabric.
+1. Enter a name for the fabric and choose a [team](docs/administration/teams-users/teamuser.md) for the fabric.
 1. Click **Continue**.
 
 ## Providers

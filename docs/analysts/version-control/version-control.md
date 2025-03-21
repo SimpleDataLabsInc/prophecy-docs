@@ -47,7 +47,7 @@ To learn more, visit our page on [project publication](/analysts/version-control
 
 ### Show version history
 
-The version history in Prophecy tracks different versions of your project that you save and publish. From the version history, you can view modifications in each version and revert to previous versions. You can access the version history from the project editor or within the [project metadata](getting-started/concepts/project#project-metadata).
+The version history in Prophecy tracks different versions of your project that you save and publish. From the version history, you can view modifications in each version and revert to previous versions. You can access the version history from the project editor or within the [project metadata](docs/getting-started/concepts/project.md#project-metadata).
 
 ### Restore previous version
 

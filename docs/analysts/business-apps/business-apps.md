@@ -16,7 +16,7 @@ Business applications package complex pipelines into easy-to-use applications fo
 Business apps resemble forms that are easy to understand and fill out. They offer the following capabilities.
 
 - Upload data to overwrite pipeline sources.
-- Assign values to [pipeline parameters](/analysts/development/pipelines#parameters).
+- Assign values to [pipeline parameters](/analysts/development/pipelines/pipeline-params).
 - See live data previews.
 - Download data outputs.
 - Schedule app execution.

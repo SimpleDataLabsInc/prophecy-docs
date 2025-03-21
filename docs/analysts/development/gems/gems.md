@@ -1,5 +1,5 @@
 ---
-title: Gems for SQL projects
+title: Gems
 id: gems
 description: Power your pipelines with gems
 tags:

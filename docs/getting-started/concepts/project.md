@@ -44,15 +44,15 @@ The project components will differ depending on the project type.
 </TabItem>
 <TabItem value="SQL" label="SQL">
 
-| Component                                                               | Description                                                                              |
-| ----------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| [Pipelines](docs/analysts/development/pipelines/pipelines.md)           | Sequence of steps that run on Prophecy runtime and SQL warehouse                         |
-| [Models](docs/data-modeling/models.md)                                  | SQL transformations that define a single table or view                                   |
-| [Gems](docs/analysts/development/gems/gems.md)                          | Representation of each data transformation step in a pipeline or model                   |
-| [Tables](docs/analysts/development/gems/source-target/source-target.md) | SQL table, view, or seed                                                                 |
-| Functions                                                               | SQL macro that can be invoked using a Macro gem                                          |
-| [Tests](docs/analysts/development/data-tests/data-tests.md)             | Validate data automatically by testing for referential integrity, data consistency, etc. |
-| [Schedules](docs/analysts/scheduling.md)                                | Schedule for pipeline execution                                                          |
+| Component                                                               | Description                                                                                 |
+| ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| [Pipelines](docs/analysts/development/pipelines/pipelines.md)           | Sequence of steps that run on Prophecy runtime and SQL warehouse                            |
+| [Gems](docs/analysts/development/gems/gems.md)                          | Representation of each data transformation step in a pipeline or model                      |
+| [Tables](docs/analysts/development/gems/source-target/source-target.md) | SQL table, view, or seed                                                                    |
+| Functions                                                               | SQL macro that can be invoked using a Macro gem                                             |
+| [Tests](docs/analysts/development/data-tests/data-tests.md)             | Validate data automatically by testing for referential integrity, data consistency, etc.    |
+| [Schedules](docs/analysts/scheduling.md)                                | Schedule for pipeline execution                                                             |
+| [Models](docs/data-modeling/models.md)                                  | (Only applicable for data engineers) SQL transformations that define a single table or view |
 
 </TabItem>
 </Tabs>

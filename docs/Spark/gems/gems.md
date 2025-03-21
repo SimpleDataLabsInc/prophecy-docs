@@ -1,5 +1,5 @@
 ---
-title: Gems for Spark projects
+title: Gems
 id: spark-gems
 description: Prophecy Spark Gems
 tags:

@@ -21,3 +21,14 @@ Review the pipeline development section of the docs to learn about:
 - **Writing functions.** Extend your project functionality by building functions that can be used in gems.
 - **Data tests.** Ensure that your business data is generated reliably over time.
 - **Collaboration.** Understand how to best work with teammates on your projects and pipelines.
+
+## What's next
+
+Explore the following categories and pages for a closer look into pipeline development.
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```

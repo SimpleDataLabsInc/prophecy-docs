@@ -30,6 +30,7 @@ const sidebars = {
           items: [
             "getting-started/concepts/Fabric",
             "getting-started/concepts/project",
+            "getting-started/concepts/pipelines",
             "getting-started/concepts/gems",
           ],
         },
