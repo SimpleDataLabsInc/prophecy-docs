@@ -7,7 +7,19 @@ tags:
   - transform
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name=""
+  python_package_version=""
+  scala_package_name=""
+  scala_package_version=""
+  scala_lib=""
+  python_lib=""
+  uc_single="Not Supported"
+  uc_shared="Not Supported"
+  livy="Not Supported"
+/>
 
 Use the DynamicReplace gem to replace a set of values with dynamically generated values depending on certain conditions.
 
@@ -79,3 +91,28 @@ For this example, you would configure the gem using the following values:
 | Boolean Expression Field | condition       |
 | Output Value Field       | output_value    |
 | Values are Expressions   | enabled         |
+
+## Example code
+
+:::tip
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+:::
+
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+def dynamic_replace_expression(spark: SparkSession, in0: DataFrame, in1: DataFrame) -> DataFrame:
+    from prophecy.utils import ProphecyDataFrame
+
+    return ProphecyDataFrame(in0, spark)\
+        .dynamicReplaceExpr(in1.withColumn("__rowId", monotonically_increasing_id().cast("integer"))._jdf, "__rowId", "source_column", "condition", "output_value", spark)
+```
+
+</TabItem>
+</Tabs>
+````

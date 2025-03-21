@@ -8,6 +8,20 @@ tags:
   - xlsx
 ---
 
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name="ProphecySparkBasicsPython"
+  python_package_version="0.0.1+"
+  scala_package_name="ProphecySparkBasicsScala"
+  scala_package_version="0.0.1+"
+  scala_lib=""
+  python_lib=""
+  uc_single="14.3+"
+  uc_shared="Not Supported"
+  livy="Not Supported"
+/>
+
 The XLSX (Excel) file type:
 
 - Is in XML format, which is easier for data access, manipulation, and compatibility with various software applications.
@@ -126,7 +140,7 @@ If you want the Target gem to output a single file:
 ## Example code
 
 :::tip
-To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
 :::
 
 ````mdx-code-block

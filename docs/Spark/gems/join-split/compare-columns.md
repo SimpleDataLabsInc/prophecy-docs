@@ -9,7 +9,19 @@ tags:
   - compare-columns
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name="ProphecySparkBasicsPython"
+  python_package_version="0.0.1+"
+  scala_package_name="ProphecySparkBasicsScala"
+  scala_package_version="0.0.1+"
+  scala_lib=""
+  python_lib=""
+  uc_single="14.3+"
+  uc_shared="14.3+"
+  livy="3.0.1+"
+/>
 
 The CompareColumns gem lets you compare columns between two DataFrames based on the key id columns defined.
 
@@ -34,7 +46,7 @@ The CompareColumns gem lets you compare columns between two DataFrames based on 
 <iframe src="https://github.com/SimpleDataLabsInc/prophecy-docs/assets/130362885/23c23ea9-e98b-4624-91a8-597cfaf0e647" title="Compare columns" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"/>
 </div></div>
 
-### Generated code
+### Example code
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';

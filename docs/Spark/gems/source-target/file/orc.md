@@ -8,6 +8,20 @@ tags:
   - orc
 ---
 
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name="ProphecySparkBasicsPython"
+  python_package_version="0.0.1+"
+  scala_package_name="ProphecySparkBasicsScala"
+  scala_package_version="0.0.1+"
+  scala_lib=""
+  python_lib=""
+  uc_single="14.3+"
+  uc_shared="14.3+"
+  livy="3.2.0+"
+/>
+
 The ORC (Optimized Row Columnar) file type:
 
 - Is a columnar file format designed for Spark and Hadoop workloads.
@@ -41,7 +55,7 @@ The Source gem reads data from ORC files and allows you to optionally specify th
 ### Generated Code {#source-code}
 
 :::tip
-To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
 :::
 
 ````mdx-code-block
@@ -105,7 +119,7 @@ The Target gem writes data to ORC files and allows you to optionally specify the
 ### Generated Code {#target-code}
 
 :::tip
-To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
 :::
 
 ````mdx-code-block

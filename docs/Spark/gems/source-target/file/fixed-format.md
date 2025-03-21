@@ -8,6 +8,20 @@ tags:
   - fixed-format
 ---
 
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name="ProphecySparkBasicsPython"
+  python_package_version="0.0.1+"
+  scala_package_name="ProphecySparkBasicsScala"
+  scala_package_version="0.0.1+"
+  scala_lib=""
+  python_lib=""
+  uc_single="14.3+"
+  uc_shared="Not Supported"
+  livy="Not Supported"
+/>
+
 :::caution Enterprise Only
 To learn more about our Enterprise offering, please [contact us](https://www.prophecy.io/request-a-demo).
 :::
@@ -45,7 +59,7 @@ The Source gem reads data from Fixed Format files and allows you to optionally s
 ### Generated Code {#source-code}
 
 :::tip
-To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
 :::
 
 ````mdx-code-block
@@ -130,7 +144,7 @@ The Target gem writes data to Fixed Format files and allows you to optionally sp
 ### Generated Code {#target-code}
 
 :::tip
-To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
 :::
 
 ````mdx-code-block

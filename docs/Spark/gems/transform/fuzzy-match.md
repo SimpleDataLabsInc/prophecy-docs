@@ -7,7 +7,19 @@ tags:
   - fuzzy match
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name=""
+  python_package_version=""
+  scala_package_name=""
+  scala_package_version=""
+  scala_lib=""
+  python_lib=""
+  uc_single="14.3+"
+  uc_shared="Not Supported"
+  livy="Not Supported"
+/>
 
 Use the FuzzyMatch gem to identify non-identical duplicates in your data.
 
@@ -45,3 +57,34 @@ One common use case for the FuzzyMatch gem is to match similarly spelled names. 
 3. Join the output with the original dataset to view the matched names.
 
    ![FuzzyMatch joined](img/fuzzy-match-join.png)
+
+## Example code
+
+:::tip
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+:::
+
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+def fuzzy_match_customers(spark: SparkSession, in0: DataFrame) -> DataFrame:
+    from prophecy.utils.transpiler.dataframe_fcns import fuzzyPurgeMode
+
+    return fuzzyPurgeMode(
+        in0,
+        spark,
+        recordId = "customer_id",
+        matchFields = {"first_name" : "name"},
+        threshold = 0.8,
+        includeSimilarityScore = True
+    )
+```
+
+</TabItem>
+</Tabs>
+````

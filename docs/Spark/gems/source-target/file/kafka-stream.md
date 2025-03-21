@@ -8,6 +8,20 @@ tags:
   - kafka
 ---
 
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name="ProphecySparkBasicsPython"
+  python_package_version="0.0.1+"
+  scala_package_name="ProphecySparkBasicsScala"
+  scala_package_version="0.0.1+"
+  scala_lib=""
+  python_lib="1.9.24"
+  uc_single="Not Supported"
+  uc_shared="14.3+"
+  livy="Not Supported"
+/>
+
 The Kafka file type is used in [Apache Kafka](https://kafka.apache.org/), which:
 
 - Is an open-source distributed event streaming platform.
@@ -45,7 +59,7 @@ The Source gem reads data from Kafka stream in batch mode and allows you to opti
 ### Generated Code {#source-code}
 
 :::tip
-To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
 :::
 
 ````mdx-code-block
@@ -119,6 +133,18 @@ def KafkaSource(spark: SparkSession) -> DataFrame:
 
 ## Target
 
+<Requirements
+  python_package_name="ProphecySparkBasicsPython"
+  python_package_version="0.0.1+"
+  scala_package_name="ProphecySparkBasicsScala"
+  scala_package_version="0.0.1+"
+  scala_lib=""
+  python_lib=""
+  uc_single="Not Supported"
+  uc_shared="14.3+"
+  livy="Not Supported"
+/>
+
 The Target gem writes data to each row from the `Dataframe` to a Kafka topic as JSON messages and allows you to optionally specify the following additional properties.
 
 ### Target properties
@@ -135,7 +161,7 @@ The Target gem writes data to each row from the `Dataframe` to a Kafka topic as 
 ### Generated Code {#target-code}
 
 :::tip
-To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
 :::
 
 ````mdx-code-block
@@ -178,7 +204,7 @@ In this example, you read JSON messages from Kafka, parse them, remove any null 
 ![Example usage of Filter](./img/kafka_pipeline_eg.gif)
 
 :::tip
-To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
 :::
 
 #### Metadata Table
@@ -207,7 +233,7 @@ For production workflows the [phase](../../../../concepts/project/gems.md#gem-ph
 #### Spark Code used for script component
 
 :::tip
-To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
 :::
 
 ````mdx-code-block

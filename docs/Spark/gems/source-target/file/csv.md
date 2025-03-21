@@ -13,6 +13,18 @@ The CSV (Comma-separated Values) file type is:
 - Easy to read from, write to, and share.
 - Compatible with many programs, and easy to exchange data.
 
+## Requirements
+
+The CSV file type requires different package and Spark versions depeding on the location type you select.
+
+import Requirements from '@site/src/components/gem-requirements';
+
+| Location Type            | Dependency versions                                                                                                                                                                  | Spark compatibility                                                                      |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
+| File Location            | <Requirements python_package_name="ProphecySparkBasicsPython" python_package_version="0.0.1+" scala_package_name="ProphecySparkBasicsScala" scala_package_version="0.0.1+"/>         | <Requirements uc_single="14.3+" uc_shared="14.3+" livy="3.0.1+"/>                        |
+| Sharepoint (Python only) | <Requirements python_package_name="ProphecySparkBasicsPython" python_package_version="0.2.35+" scala_package_name="ProphecySparkBasicsScala" scala_package_version="Not Available"/> | <Requirements uc_single="Not Supported" uc_shared="Not Supported" livy="Not Supported"/> |
+| SFTP (Python only)       | <Requirements python_package_name="ProphecySparkBasicsPython" python_package_version="0.2.35+" scala_package_name="ProphecySparkBasicsScala" scala_package_version="Not Available"/> | <Requirements uc_single="14.3+" uc_shared="Not Supported" livy="Not Supported"/>         |
+
 ## Parameters
 
 | Parameter | Tab        | Description                                                                                                                                                                                     |

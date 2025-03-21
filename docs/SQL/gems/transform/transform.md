@@ -8,6 +8,8 @@ tags:
   - cte
 ---
 
+<h3><span class="badge">SQL Gem</span></h3>
+
 Constitutes the set of gems that help with transforming data.
 
 <div class="transformations-gems-table">
