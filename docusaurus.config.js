@@ -178,6 +178,23 @@ const config = {
   plugins: [
     "docusaurus-plugin-image-zoom",
     [
+      "@inkeep/cxkit-docusaurus",
+      {
+        SearchBar: {
+          baseSettings: {
+            // see https://docusaurus.io/docs/deployment#using-environment-variables to use docusaurus environment variables
+            apiKey: "8aae03727307fcd83685a01100ad25b7cfd34d2beab5b7ce", // required
+            primaryBrandColor: "#30317C", // required -- your brand color, the widget color scheme is derived from this
+            organizationDisplayName: "Prophecy",
+          },
+          aiChatSettings: {
+            // optional settings
+            aiAssistantAvatar: "/static/img/favicon.png", // optional -- use your own ai assistant avatar
+          },
+        },
+      },
+    ],
+    [
       "@docusaurus/plugin-client-redirects",
       {
         redirects: [
