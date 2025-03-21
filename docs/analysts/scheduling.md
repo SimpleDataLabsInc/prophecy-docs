@@ -9,6 +9,17 @@ Prophecy lets you schedule and automate your data pipeline runs. Once you have d
 
 Schedules define when the pipeline will run and whether to send alerts about the pipeline run.
 
+## Parameters
+
+The following table describes schedule parameters for a pipeline.
+
+| Parameter              | Description                                                                       | Default                            |
+| ---------------------- | --------------------------------------------------------------------------------- | ---------------------------------- |
+| Frequency              | How often the pipeline will run                                                   | Daily                              |
+| Repeat at              | The time that the pipeline will run                                               | 2:00 AM                            |
+| Timezone               | The timezone of **Repeat at** time                                                | The timezone where you are located |
+| Alerts on the full job | Enable to send an email on the start, success, and/or failure of the pipeline run | Disabled                           |
+
 ## Schedule pipeline
 
 To schedule a pipeline to automatically run at a certain frequency:

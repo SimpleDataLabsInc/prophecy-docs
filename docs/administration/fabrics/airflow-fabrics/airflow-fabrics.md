@@ -11,7 +11,7 @@ tags:
 To connect to a running Airflow Instance, you would need to create a [fabric](/docs/getting-started/concepts/fabrics.md) of type Airflow.
 Prophecy provides you with three different types of fabrics depending upon where your Airflow Instance is running.
 
-- **[Prophecy Managed Airflow](docs/administration/airflow-fabrics/prophecy-managed.md)**: Use this if you do not have an Airflow instance and want to test Airflow out.
+- **[Prophecy Managed Airflow](docs/administration/fabrics/airflow-fabrics/prophecy-managed.md)**: Use this if you do not have an Airflow instance and want to test Airflow out.
 - **[MWAA](./mwaa.md)**: Use MWAA if you have an Amazon Managed Workflows for Apache Airflow instance running.
 - **[Composer](./composer.md)**: Use Composer if you have a GCP Cloud Composer Airflow instance running.
 

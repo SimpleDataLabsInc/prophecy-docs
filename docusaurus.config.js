@@ -210,19 +210,19 @@ const config = {
             from: "/architecture/authentication/active_directory",
           },
           {
-            to: "/administration/Spark-fabrics/emr",
+            to: "/administration/fabrics/Spark-fabrics/emr",
             from: "/architecture/deployment/EMR-livy-installation-guide",
           },
           {
-            to: "/administration/Spark-fabrics/emr",
+            to: "/administration/fabrics/Spark-fabrics/emr",
             from: "/Spark/fabrics/EMR-serverless-fabric-configuration",
           },
           {
-            to: "/administration/Spark-fabrics/emr",
+            to: "/administration/fabrics/Spark-fabrics/emr",
             from: "/Spark/fabrics/EMR-fabric-configuration",
           },
           {
-            to: "/administration/Spark-fabrics/databricks/",
+            to: "/administration/fabrics/Spark-fabrics/databricks/",
             from: "/Spark/fabrics/databricks-fabric",
           },
           {
@@ -234,7 +234,7 @@ const config = {
             from: "/architecture/deployment/private-saas/",
           },
           {
-            to: "/administration/Spark-fabrics/livy",
+            to: "/administration/fabrics/Spark-fabrics/livy",
             from: "/architecture/authentication/admin-settings",
           },
           {
@@ -530,7 +530,7 @@ const config = {
             from: "/getting-started/gen-ai-chatbot",
           },
           {
-            to: "/administration/Spark-fabrics/livy",
+            to: "/administration/fabrics/Spark-fabrics/livy",
             from: "/administration/authentication/security-settings",
           },
         ],
@@ -601,18 +601,18 @@ const config = {
               ),
             ];
           }
-          if (existingPath.includes("/administration/Spark-fabrics/")) {
+          if (existingPath.includes("/administration/fabrics/Spark-fabrics/")) {
             return [
               existingPath.replace(
-                "/administration/Spark-fabrics/",
+                "/administration/fabrics/Spark-fabrics/",
                 "/Spark/fabrics/",
               ),
             ];
           }
-          if (existingPath.includes("/administration/sql-fabrics")) {
+          if (existingPath.includes("/administration/fabrics/sql-fabrics")) {
             return [
               existingPath.replace(
-                "/administration/sql-fabrics",
+                "/administration/fabrics/sql-fabrics",
                 "/SQL/fabrics/",
               ),
             ];

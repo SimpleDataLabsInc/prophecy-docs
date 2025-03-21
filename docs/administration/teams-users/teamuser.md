@@ -19,7 +19,9 @@ Team, user, and Git [settings](./settings) can be accessed by clicking the **...
 
 ## Team admins
 
-Team admins manage teams in Prophecy. They usually create teams and fabrics. Team admins are different from Prophecy cluster admins who manage Prophecy installation and deployment.
+Team admins manage teams in Prophecy. They usually create teams and fabrics. There can be multiple team admins per team.
+
+Team admins are different from Prophecy cluster admins who manage Prophecy installation and deployment.
 
 ## Team metadata
 

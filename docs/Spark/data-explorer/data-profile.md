@@ -28,10 +28,10 @@ Be conscious of how often you enable data profiling throughout the pipeline. Thi
 
 The data explorer includes data profiles that are generated on your sample data. You'll be able to see high-level statistics for each column, including:
 
-- Percent of non-blank values
-- Percent of null values
-- Percent of blank values
-- Most common values
+- **Percent of non-blank values:** The percentage of values in the column that are not blank.
+- **Percent of null values:** The percentage of values in the column that are null.
+- **Percent of blank values:** The percentage of values in the column that are blank.
+- **Most common values:** Displays the top four most frequent values in the column, along with the percentage of occurrences for each.
 
 ## Full profile
 

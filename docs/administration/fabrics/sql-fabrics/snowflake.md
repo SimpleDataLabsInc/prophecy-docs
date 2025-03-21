@@ -48,7 +48,7 @@ The SQL provider is both the storage warehouse and the execution environment whe
 
 ## Schedule jobs
 
-SQL models can be scheduled using Airflow to run on Snowflake. Create an [Airflow fabric](docs/administration/airflow-fabrics/airflow-fabrics.md), and set up a Snowflake connection that references the Snowflake fabric created above.
+SQL models can be scheduled using Airflow to run on Snowflake. Create an [Airflow fabric](docs/administration/fabrics/airflow-fabrics/airflow-fabrics.md), and set up a Snowflake connection that references the Snowflake fabric created above.
 
 ## What's next
 

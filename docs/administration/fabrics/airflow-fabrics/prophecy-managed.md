@@ -32,7 +32,7 @@ To perform actions like running a pipeline in your Airflow job, you need add var
 
 In the **Connections** tab, click **+ Add Connection** to set up a new connection. You can add multiple connections in the fabric.
 
-To view a list of connection types with configuration details, visit our page on [Airflow connections](docs/administration/airflow-fabrics/connections/connections.md).
+To view a list of connection types with configuration details, visit our page on [Airflow connections](docs/administration/fabrics/airflow-fabrics/connections/connections.md).
 
 :::info
 To let Prophecy Managed Airflow connect to applications like Snowflake, you may need to Whitelist the NAT IP `34.28.21.243` in your applications.

@@ -1,12 +1,19 @@
 ---
-title: Connections and secrets
+title: Connections
 id: connections
 sidebar_label: Connections
 description: Utilize external data providers with connections
 tags: []
 ---
 
-Connections make it easy to use data from external sources directly in your Prophecy projects. You can set up connections as you build your pipelines, and connections will be stored in your attached [fabric](docs/administration/prophecy-fabrics/prophecy-fabrics.md).
+Connections make it easy to use data from external sources directly in your Prophecy projects. You can set up connections as you build your pipelines, and connections will be stored in your attached [fabric](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md).
+
+As you build your pipelines, you'll be able to:
+
+- Create connections from the Environment browser or from external Source and Target gems.
+- Configure [secrets](#secrets-in-connections) for your connections that will encrypt your connection credentials.
+- Browse data from established connections in the Environment browser.
+- Add data to your pipeline directly from the Environment browser.
 
 ## Connections in the Environment browser
 
@@ -14,7 +21,7 @@ When you create a connection, Prophecy accesses specific data from the external 
 
 <!-- ![Environment browser](img/environment-tab-connections.png) -->
 
-When you attach a fabric to your project, you will by default see the data from the SQL warehouse in the Environment browser. If you want to see more connections in your project, you can click **+ Connect more data** at the bottom of the Environment browser. Once you configure a connection, Prophecy will automatically save it to your attached fabric. To understand how to configure individual connection types, visit the [list of connections](docs/administration/prophecy-fabrics/connections/connections.md).
+When you attach a fabric to your project, you will by default see the data from the SQL warehouse in the Environment browser. If you want to see more connections in your project, you can click **+ Connect more data** at the bottom of the Environment browser. Once you configure a connection, Prophecy will automatically save it to your attached fabric. To understand how to configure individual connection types, visit the [list of connections](docs/administration/fabrics/prophecy-fabrics/connections/connections.md).
 
 To use data from the environment browser:
 
@@ -32,7 +39,7 @@ If you add an external Source or Target gem from the gem drawer to your pipeline
 1. Open the gem to view the configuration dialogue.
 1. Select the correct **Type and Format**.
 1. Open the **Location** tab.
-1. Select an existing connection for your gem, or [create a new one](docs/administration/prophecy-fabrics/connections/connections.md).
+1. Select an existing connection for your gem, or [create a new one](docs/administration/fabrics/prophecy-fabrics/connections/connections.md).
 1. Open the **Properties** tab and verify the schema of your table.
 1. Save the gem.
 
@@ -48,6 +55,6 @@ As you create connections, you will notice that credentials must be populated wi
 
 Now that you understand how to use connections in your pipelines, check out the following resources.
 
-- To see a complete list of connections, view the [connections](docs/administration/prophecy-fabrics/connections/connections.md) that are available for Prophecy fabrics.
-- To understand how to configure individual connection types, visit the [list of connections](docs/administration/prophecy-fabrics/connections/connections.md).
+- To see a complete list of connections, view the [connections](docs/administration/fabrics/prophecy-fabrics/connections/connections.md) that are available for Prophecy fabrics.
+- To understand how to configure individual connection types, visit the [list of connections](docs/administration/fabrics/prophecy-fabrics/connections/connections.md).
 - All connections require **secrets** to keep your credentials safe. View the documentation on [secrets](docs/administration/secrets/secrets.md) to learn more.

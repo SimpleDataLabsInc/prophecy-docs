@@ -14,6 +14,8 @@ You will use functions as [expressions](docs/analysts/development/gems/visual-ex
 
 ## Create a function
 
+To add a new function to your project, perform the following steps.
+
 1. Open a SQL project.
 1. Click **Add Entity** in the project sidebar.
 1. Select **Function**.
@@ -35,7 +37,7 @@ You can build functions visually by populating the following fields.
 
 ## Example: Concatenate columns
 
-Use the following example to learn how to build a function and use it in your pipeline.
+Use the following example to learn how to build a function and use it in your pipeline. This example demonstrates a function that concatenates values from a `first_name` and `last_name` column in a customer table.
 
 1. Click **+Add Entity** in the project sidebar.
 1. Select **Function**.
@@ -60,7 +62,9 @@ CONCAT(
 To use this function in your pipeline:
 
 1. Add a Reformat gem to the pipeline canvas.
-1. For the target column, create a new column named `concat_column`.
+1. For the target column, create a new column named `full_name`.
 1. For the expression, select **Function > concat_name**.
 1. For the function parameters, choose a first name columns and a last name column.
 1. Save and run the gem.
+
+In summary, this function inside of the Reformat gem let us combine customer first and last names into a new column: `full_name`.

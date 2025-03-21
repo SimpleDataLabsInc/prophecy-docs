@@ -36,7 +36,7 @@ The Data Generator gem can only be a **Source** gem. It cannot be a Target gem.
 
 ## Cluster requirements
 
-Create a fabric and configure the [Job Size](/docs/administration/Spark-fabrics/databricks/databricks.md), or login to an existing Spark cluster UI. To create a fabric and configure the job size in the Spark Cluster UI:
+Create a fabric and configure the [Job Size](/docs/administration/fabrics/Spark-fabrics/databricks/databricks.md), or login to an existing Spark cluster UI. To create a fabric and configure the job size in the Spark Cluster UI:
 
 1. Login to your Databricks account.
 1. Verify your Databricks Runtime uses Python version >= 3.8.
@@ -109,5 +109,5 @@ By default, the Source gem does not save the newly generated data. To save the d
    ![img](img/data-gen/synth_6_write_mode.png)
 
 :::info
-To see if Prophecy supports this gem in the Unity Catalog Shared Spark Clusters, see [UC Shared Cluster Support](docs/administration/Spark-fabrics/databricks/UCShared.md).
+To see if Prophecy supports this gem in the Unity Catalog Shared Spark Clusters, see [UC Shared Cluster Support](docs/administration/fabrics/Spark-fabrics/databricks/UCShared.md).
 :::

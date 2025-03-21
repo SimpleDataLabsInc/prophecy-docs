@@ -206,6 +206,15 @@ const sidebars = {
             },
           ],
         },
+        {
+          type: "category",
+          label: "Copilot",
+          link: {
+            type: "doc",
+            id: "analysts/development/copilot/pipeline-generation",
+          },
+          items: [],
+        },
         "analysts/development/connections",
         "analysts/development/data-explorer",
         {
@@ -224,7 +233,10 @@ const sidebars = {
             type: "doc",
             id: "analysts/development/collaboration/collaboration",
           },
-          items: ["analysts/development/collaboration/canvas-annotations"],
+          items: [
+            "analysts/development/collaboration/collaboration-modes",
+            "analysts/development/collaboration/canvas-annotations",
+          ],
         },
         {
           type: "category",
@@ -261,7 +273,10 @@ const sidebars = {
       type: "category",
       label: "Apps",
       link: { type: "doc", id: "analysts/business-apps/business-apps" },
-      items: ["analysts/business-apps/app-creation"],
+      items: [
+        "analysts/business-apps/app-creation",
+        "analysts/business-apps/app-components",
+      ],
     },
 
     ///------------------ ENGINEERS ------------------------///
@@ -696,13 +711,17 @@ const sidebars = {
     {
       type: "category",
       label: "Fabric setup",
+      link: {
+        type: "doc",
+        id: "administration/fabrics",
+      },
       items: [
         {
           type: "category",
           label: "Prophecy fabrics",
           link: {
             type: "doc",
-            id: "administration/prophecy-fabrics/prophecy-fabrics",
+            id: "administration/fabrics/prophecy-fabrics/prophecy-fabrics",
           },
           items: [
             {
@@ -710,13 +729,13 @@ const sidebars = {
               label: "Connections",
               link: {
                 type: "doc",
-                id: "administration/prophecy-fabrics/connections/connections",
+                id: "administration/fabrics/prophecy-fabrics/connections/connections",
               },
               items: [
-                "administration/prophecy-fabrics/connections/databricks",
-                "administration/prophecy-fabrics/connections/mongodb",
-                "administration/prophecy-fabrics/connections/mssql",
-                "administration/prophecy-fabrics/connections/snowflake",
+                "administration/fabrics/prophecy-fabrics/connections/databricks",
+                "administration/fabrics/prophecy-fabrics/connections/mongodb",
+                "administration/fabrics/prophecy-fabrics/connections/mssql",
+                "administration/fabrics/prophecy-fabrics/connections/snowflake",
               ],
             },
           ],
@@ -724,31 +743,39 @@ const sidebars = {
         {
           type: "category",
           label: "Spark fabrics",
-          link: { type: "doc", id: "administration/Spark-fabrics/Fabrics" },
+          link: {
+            type: "doc",
+            id: "administration/fabrics/Spark-fabrics/Fabrics",
+          },
           items: [
             {
               type: "category",
               label: "Databricks",
               link: {
                 type: "doc",
-                id: "administration/Spark-fabrics/databricks/databricks",
+                id: "administration/fabrics/Spark-fabrics/databricks/databricks",
               },
-              items: ["administration/Spark-fabrics/databricks/ucshared"],
+              items: [
+                "administration/fabrics/Spark-fabrics/databricks/ucshared",
+              ],
             },
-            "administration/Spark-fabrics/prophecy-managed-databricks",
-            "administration/Spark-fabrics/livy",
-            "administration/Spark-fabrics/emr",
-            "administration/Spark-fabrics/gcp-dataproc-fabric-guide",
-            "administration/Spark-fabrics/azure-synapse-fabric-guide",
+            "administration/fabrics/Spark-fabrics/prophecy-managed-databricks",
+            "administration/fabrics/Spark-fabrics/livy",
+            "administration/fabrics/Spark-fabrics/emr",
+            "administration/fabrics/Spark-fabrics/gcp-dataproc-fabric-guide",
+            "administration/fabrics/Spark-fabrics/azure-synapse-fabric-guide",
           ],
         },
         {
           type: "category",
           label: "SQL fabrics",
-          link: { type: "doc", id: "administration/sql-fabrics/Fabrics" },
+          link: {
+            type: "doc",
+            id: "administration/fabrics/sql-fabrics/Fabrics",
+          },
           items: [
-            "administration/sql-fabrics/databricks",
-            "administration/sql-fabrics/snowflake",
+            "administration/fabrics/sql-fabrics/databricks",
+            "administration/fabrics/sql-fabrics/snowflake",
           ],
         },
         {
@@ -756,7 +783,7 @@ const sidebars = {
           label: "Airflow fabrics",
           link: {
             type: "doc",
-            id: "administration/airflow-fabrics/airflow-fabrics",
+            id: "administration/fabrics/airflow-fabrics/airflow-fabrics",
           },
           items: [
             {
@@ -764,32 +791,32 @@ const sidebars = {
               label: "Airflow connections",
               link: {
                 type: "doc",
-                id: "administration/airflow-fabrics/connections/airflow_fabric_connections",
+                id: "administration/fabrics/airflow-fabrics/connections/airflow_fabric_connections",
               },
               items: [
-                "administration/airflow-fabrics/connections/dbx_spark_connections",
-                "administration/airflow-fabrics/connections/dbx_sql_connections",
-                "administration/airflow-fabrics/connections/airflow_snowflake_connections",
-                "administration/airflow-fabrics/connections/aws-connection",
-                "administration/airflow-fabrics/connections/airflow_email_connections",
+                "administration/fabrics/airflow-fabrics/connections/dbx_spark_connections",
+                "administration/fabrics/airflow-fabrics/connections/dbx_sql_connections",
+                "administration/fabrics/airflow-fabrics/connections/airflow_snowflake_connections",
+                "administration/fabrics/airflow-fabrics/connections/aws-connection",
+                "administration/fabrics/airflow-fabrics/connections/airflow_email_connections",
               ],
             },
-            "administration/airflow-fabrics/prophecy_managed_airflow_fabric",
-            "administration/airflow-fabrics/composer_fabric",
-            "administration/airflow-fabrics/MWAA_fabric",
-            "administration/airflow-fabrics/open-source-airflow",
+            "administration/fabrics/airflow-fabrics/prophecy_managed_airflow_fabric",
+            "administration/fabrics/airflow-fabrics/composer_fabric",
+            "administration/fabrics/airflow-fabrics/MWAA_fabric",
+            "administration/fabrics/airflow-fabrics/open-source-airflow",
           ],
         },
-        {
-          type: "category",
-          label: "Secrets",
-          link: {
-            type: "doc",
-            id: "administration/secrets/secrets",
-          },
-          items: ["administration/secrets/secret-providers"],
-        },
       ],
+    },
+    {
+      type: "category",
+      label: "Secrets",
+      link: {
+        type: "doc",
+        id: "administration/secrets/secrets",
+      },
+      items: ["administration/secrets/secret-providers"],
     },
     {
       type: "html",

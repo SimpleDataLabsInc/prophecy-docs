@@ -5,16 +5,18 @@ description: Run a set of defined operations in a pipeline
 tags: []
 ---
 
-To run a SQL project pipeline, you need to define **where** it will be executed (computed) via a [Prophecy fabric](/administration/prophecy-fabrics/), which encompasses:
+To run a SQL project pipeline, you need to define **where** it will be executed (computed) via a [Prophecy fabric](/administration/fabrics/prophecy-fabrics/), which encompasses:
 
-- **Prophecy runtime**: Handles the flow of data in and out of the pipeline.
-- **SQL warehouse**: Executes the data transformations.
+- **Prophecy runtime**: Handles the flow of data in and out of the pipeline. To learn more, jump to [external sources](#external-sources).
+- **SQL warehouse**: Executes the data transformations using dbt framework.
+
+In other words, Prophecy will use both of these runtimes to perform execution. There are different scenarios where execution occurs: during interactive or scheduled executions.
 
 ## Interactive execution
 
 Interactive execution in Prophecy allows you to run your pipeline in the pipeline canvas and preview data transformations at every step. This helps you understand and validate your data transformations during development.
 
-When you run your pipeline interactively, **data samples** are generated to let you view the outputs of your gems. You can produce this data sample in two ways:
+When you run your pipeline interactively, **data samples** are generated to let you preview the outputs of your gems. This can be helpful during development and debugging. You can produce this data sample in two ways:
 
 - Run the entire pipeline using the **play** button on the pipeline canvas.
 - Execute the pipeline up to and including a particular gem using the **play** button on that gem.

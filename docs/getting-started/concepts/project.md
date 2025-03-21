@@ -12,9 +12,23 @@ import TabItem from '@theme/TabItem';
 
 A **project** in Prophecy is the core unit for developing, organizing, and deploying data workflows to production. It encompasses all the components needed for building and running data processes. Each project is automatically compiled into code and is hosted on Git in the backend.
 
-## Project components
+## Project types
 
 Project components depend on your project type. A project must be written in Python, Scala, or SQL. This language choice determines how your visual pipelines will be compiled into code. You initial choice of **project type** fundamentally determines your project's capabilities and workflow structure, so it's important to choose correctly at the start since it cannot be changed later.
+
+Prophecy supports both SQL and Spark for data engineering, and the choice depends on your data needs. Many organizations use both types of projects, leveraging SQL for analytics and Spark for heavy-duty transformations. Prophecy provides a platform where this can happen all in one place.
+
+### SQL
+
+SQL is ideal when working with structured data in warehouses like Snowflake or Databricks SQL, offering simplicity, speed, and efficiency for moderate data volumes and interactive queries. It’s best for teams with SQL expertise who need straightforward transformations without managing distributed infrastructure.
+
+### Spark
+
+Spark is better for large-scale data processing, like handling terabytes or petabytes across distributed clusters. It excels in executing complex pipelines, processing semi-structured data, and integrating with big data ecosystems like Databricks. Spark prioritizes performance and scalability are key, and required more data engineering knowledge. Depending on what your data engineers are comfortable with, they can either choose Python or Scala as the backend code of Spark projects.
+
+## Project components
+
+The project components will differ depending on the project type.
 
 <Tabs>
 

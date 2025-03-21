@@ -5,11 +5,11 @@ description: Package complex pipelines into easy-to-use applications
 tags: []
 ---
 
-Business applications package complex pipelines into easy-to-use applications for non-technical users. Leverage business apps to:
+Business applications package complex pipelines into easy-to-use applications for non-technical users. This can help you in a variety of ways.
 
-- Let users independently generate and access data insights.
-- Simplify the process of building intricate data analysis pipelines from scratch through pre-built templates.
-- Minimize repetitive efforts by using pre-set workflows instead of recreating them.
+- Templated pipelines let you quickly run pipelines and generate reports, without having to engineer pipelines from scratch.
+- Reusable apps help teams collaborate more effectively, as everyone can reuse apps without duplicating effort.
+- Running pipelines through business apps reduces the risk of errors by providing pre-defined paths and operations that have been tested and vetted.
 
 ## Capabilities
 
