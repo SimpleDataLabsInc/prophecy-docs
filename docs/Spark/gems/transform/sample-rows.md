@@ -35,6 +35,10 @@ Use the SampleRows gem to sample records by choosing a specific number or percen
 
 ## Example code
 
+:::tip
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+:::
+
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

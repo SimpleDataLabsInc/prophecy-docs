@@ -11,59 +11,80 @@ tags:
 
 <h3><span class="badge">SQL Gem</span></h3>
 
-When processing raw data it can be useful to flatten complex data types like `Struct`s and `Array`s into simpler, flatter schemas. This allows you to preserve all schemas, and not just the first one. You can use FlattenSchema with Snowflake models.
+The FlattenScema gem helps you flatten complex data types, such as `Struct` and `Array`, to preserve all schemas when you process raw data.
 
-![The FlattenSchema gem](./img/flatten_gem.png)
+You can use the FlattenSchema gem on sources that have nested columns that you'd like to extract into a flat schema.
 
-## The Input
+## Example
 
-FlattenSchema works on Snowflake sources that have nested columns that you'd like to extract into a flat schema.
+Assume you have the following [variant schema](docs/SQL/visual-expression-builder/variant-schema.md), and you want to extract the `contact` field:
 
-For example, with an input schema like so:
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-![Input schema](./img/flatten_input.png)
+```json
+[{
+  "first_name":"Remmington", "last_name":"Smith", "age":"68",
+  "business":[{
+    "address":[{
+      "manager":"Liara Andrew", "name":"RS Enterprises",
+      "contact":[{"content":"rsmith@example.com","type":"email"},{"content":"1234-345-56","type":"phone"}],
+      "is_still_active":false}]}]}, {
+  "first_name":"Penny", "last_name":"John", "age":"57",
+  "business":[{
+    "address":[{
+      "manager":"Bobby Frank","name":"PJ Enterprises",
+      "contact":[{"content":"pjohn@example.com","type":"email"},{"content":"8203-512-49","type":"phone"}],
+      "is_still_active":true}]}]}]
+```
+````
 
-And the data looks like so:
+### Expressions
 
-![Input data](./img/flatten_input_interim.png)
+The FlattenSchema gem allows you to extract nested fields into a flattened schema.
 
-We want to extract the `contact`, and all of the columns from the `struct`s in `content` into a flattened schema.
+For example, to extract the `contact` field:
 
-## The Expressions
+1. In the **Input** tab, navigate to the `contact` field.
+1. Hover over the `contact` field and click the **Add Column** button.
 
-Having added a `FlattenSchema` gem to your model, all you need to do is click the column names you wish to extract and they'll be added to the `Expressions` section.
+   Now, the `contact` field is in the `Expressions` section.
 
-:::tip
+   :::tip
+   You can click to add all columns, which would make all nested lowest-level values of an object visible as columns.
+   :::
 
-You can click to add all columns, which would make all nested leaf level values of an object visible as columns.
+   ![Adding expressions](./img/flatten_add_exp.png)
 
-:::
+1. (Optional) To change the name of the column in the output, change the value in the `Output Column` for the `contact` row.
 
-Once added you can change the `Output Column` for a given row to change the name of the Column in the output.
+1. Click **Run**.
 
-![Adding expressions](./img/flatten_add_exp.png)
+### Output
 
-## The Output
-
-If we check the `Output` tab in the gem, you'll see the schema that we've created using the selected columns.
-
-And here's what the output data looks like:
+After you run the FlattenSchema gem, click the **Data** button to see your schema based on the selected columns:
 
 ![Output interim](./img/flatten_output_interim.png)
 
-The nested contact information has been flatten so that you have individual rows for each content type.
+The FlattenSchema gem flattened the `contact` field, which gives you individual rows for each `content` type.
 
-## Advanced settings
+## Snowflake advanced settings
 
-If you're familiar with Snowflake's `FLATTEN` table function, you can use the advanced settings to customize the optional column arguments.
+You can use advanced settings with your Snowflake source to customize the optional column arguments.
 
-To use the advanced settings, hover over a column, and click the dropdown arrow.
+To use the advanced settings:
 
-![Advanced settings](./img/flatten_advanced_settings.png)
+1. Hover over the column you want to flatten.
+1. Click the dropdown arrow.
 
-You can customize the following options:
+   ![Advanced settings](./img/flatten_advanced_settings.png)
 
-- Path to the element: The path to the element within the variant data structure that you want to flatten.
-- Flatten all elements recursively: If set to `false`, only the element mentioned in the path is expanded. If set to `true`, all sub-elements are expanded recursively. This is set to false by default.
-- Preserve rows with missing fields: If set to `false`, rows with missing fields are omitted from the output. If set to `true`, rows with missing fields are generated with `null` in the key, index, and value columns. This is set to false by default.
-- Datatype that needs to be flattened: The data type that you want to flatten. You can choose `Object`, `Array`, or `Both`. This is set to `Both` by default.
+   You can customize the following options:
+
+   | Option                              | Description                                                                                 | Default |
+   | ----------------------------------- | ------------------------------------------------------------------------------------------- | ------- |
+   | Path to the element                 | Path to the element within the variant data structure that you want to flatten.             | None    |
+   | Flatten all elements recursively    | Whether to expand all sub-elements recursively.                                             | `false` |
+   | Preserve rows with missing field    | Whether to include rows with missing fields as `null` in the key, index, and value columns. | `false` |
+   | Datatype that needs to be flattened | Data type that you want to flatten. Possible values are: `Object`, `Array`, or `Both`.      | `Both`  |
