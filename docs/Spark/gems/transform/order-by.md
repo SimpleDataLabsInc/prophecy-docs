@@ -10,11 +10,23 @@ tags:
   - descending
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name="ProphecySparkBasicsPython"
+  python_package_version="0.0.1+"
+  scala_package_name="ProphecySparkBasicsScala"
+  scala_package_version="0.0.1+"
+  scala_lib=""
+  python_lib=""
+  uc_single="14.3+"
+  uc_shared="14.3+"
+  livy="3.0.1+"
+/>
 
 Sorts a DataFrame on one or more columns in ascending or descending order.
 
-### Parameters
+## Parameters
 
 | Parameter     | Description                                | Required |
 | ------------- | ------------------------------------------ | -------- |
@@ -22,11 +34,11 @@ Sorts a DataFrame on one or more columns in ascending or descending order.
 | Order columns | Columns to sort DataFrame by               | True     |
 | Sort          | Order of sorting - ascending or descending | True     |
 
-### Example
+## Example
 
 ![Example usage of OrderBy](./img/orderby_eg_0.png)
 
-### Spark Code
+## Spark Code
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';

@@ -8,6 +8,20 @@ tags:
   - delta
 ---
 
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name="ProphecySparkBasicsPython"
+  python_package_version="0.0.1+"
+  scala_package_name="ProphecySparkBasicsScala"
+  scala_package_version="0.0.1+"
+  scala_lib=""
+  python_lib=""
+  uc_single="14.3+"
+  uc_shared="14.3+"
+  livy="Not Supported"
+/>
+
 Reads and writes Delta tables that are managed by the execution environment's Metadata catalog (Metastore).
 
 :::note
@@ -137,9 +151,9 @@ object Source {
 :::note
 Among these write modes `overwrite`, `append`, `ignore`, and `error` work the same way as with other native Spark-supported formats such as Parquet.
 
-To read more about using `merge` write mode [**click here**](../file/delta.md#merge-write-mode-with-delta).
+To read more about using `merge` write mode [click here](../file/delta.md).
 
-To read more about using `SCD2` merge write mode [**click here**](../file/delta.md#scd2-merge-write-mode-with-delta).
+To read more about using `SCD2` merge write mode [click here](../file/delta.md).
 :::
 
 ### Target Example

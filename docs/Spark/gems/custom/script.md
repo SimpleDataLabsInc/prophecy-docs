@@ -7,7 +7,19 @@ tags:
   - code
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name=""
+  python_package_version=""
+  scala_package_name=""
+  scala_package_version=""
+  scala_lib=""
+  python_lib=""
+  uc_single="14.3+"
+  uc_shared="14.3+"
+  livy="3.0.1+"
+/>
 
 Provides a `SparkSession` and allows you to run custom code.
 
@@ -27,7 +39,7 @@ To remove input/output DataFrame(s), simply click <svg width="24" height="24" vi
 
 ## Schema
 
-When executing a custom script gem, the output schema is not known by Prophecy so it must be inferred from a sample computation result. Click the `Custom Schema` button and `Infer from cluster` as shown in the **Gems --> Outputs** description [here.](/docs/concepts/project/gems.md#inputs-outputs) The schema will be inferred according to the script and the Spark version running on the connected cluster.
+When executing a custom script gem, the output schema is not known by Prophecy so it must be inferred from a sample computation result. Click the `Custom Schema` button and `Infer from cluster` as shown in the **Gems --> Outputs** description [here](/docs/concepts/project/gems.md). The schema will be inferred according to the script and the Spark version running on the connected cluster.
 
 ## Examples
 

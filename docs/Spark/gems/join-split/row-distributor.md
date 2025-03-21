@@ -9,20 +9,32 @@ tags:
   - row distributor
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name="ProphecySparkBasicsPython"
+  python_package_version="0.0.1+"
+  scala_package_name="ProphecySparkBasicsScala"
+  scala_package_version="0.0.1+"
+  scala_lib=""
+  python_lib=""
+  uc_single="14.3+"
+  uc_shared="14.3+"
+  livy="3.0.1+"
+/>
 
 Use the RowDistributor gem to create multiple DataFrames based on provided filter conditions from an input DataFrame.
 
 This is useful for cases where rows from the input DataFrame needs to be distributed into multiple DataFrames in different ways for downstream gems.
 
-### Parameters
+## Parameters
 
 | Parameter         | Description                                                                                               | Required |
 | ----------------- | --------------------------------------------------------------------------------------------------------- | -------- |
 | DataFrame         | Input DataFrame for which rows needs to be distributed into multiple DataFrames                           | True     |
 | Filter Conditions | Boolean Type column or boolean expression for each output tab. Supports SQL, Python and Scala expressions | True     |
 
-### Example
+## Example
 
 ![Row distributor 1](./img/rowdistributor_eg_1.png)
 
@@ -30,7 +42,7 @@ This is useful for cases where rows from the input DataFrame needs to be distrib
 Number of outputs can be changed as needed by clicking the `+` button.
 :::
 
-### Generated Code
+## Generated Code
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';

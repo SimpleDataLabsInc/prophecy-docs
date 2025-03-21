@@ -35,16 +35,16 @@ Use the image and the table below to understand the UI of a gem.
 
 ![Gem Instance](img/gems/instance.png)
 
-| Callout | UI element        | Description                                                                                                              |
-| :-----: | ----------------- | ------------------------------------------------------------------------------------------------------------------------ |
-|    1    | Gem instance name | The name of this particular gem instance. It must be unique within a given pipeline.                                     |
-|    2    | Gem type name     | The type of gem.                                                                                                         |
-|    3    | Input ports       | One or more [ports](#inputs) that accept connections from upstream gems.                                                 |
-|    4    | Output ports      | One or more [ports](#outputs) that connect to downstream gems.                                                           |
-|    5    | Gem phase         | The [phase](#gem-phase) for this gem instance, which defines the order in which gem instances are executed.              |
-|    6    | Open              | The button that lets you open the gem configuration.                                                                     |
-|    7    | Run button        | A button that runs the pipeline up to and including the gem.                                                             |
-|    8    | Action menu       | A menu that includes options to change the [phase](#gem-phase) of the gem, add run conditions, delete the gem, and more. |
+| Callout | UI element        | Description                                                                                                 |
+| :-----: | ----------------- | ----------------------------------------------------------------------------------------------------------- |
+|    1    | Gem instance name | The name of this particular gem instance. It must be unique within a given pipeline.                        |
+|    2    | Gem type name     | The type of gem.                                                                                            |
+|    3    | Input ports       | One or more ports that accept connections from upstream gems.                                               |
+|    4    | Output ports      | One or more ports that connect to downstream gems.                                                          |
+|    5    | Gem phase         | The [phase](#gem-phase) for this gem instance, which defines the order in which gem instances are executed. |
+|    6    | Open              | The button that lets you open the gem configuration.                                                        |
+|    7    | Run button        | A button that runs the pipeline up to and including the gem.                                                |
+|    8    | Action menu       | A menu that includes options to change the phase of the gem, add run conditions, delete the gem, and more.  |
 
 ## Gem configuration
 

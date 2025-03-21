@@ -77,14 +77,14 @@ You only need to provide SMTP credentials if you plan to pass the `--send-email`
 :::
 
 ```
-export PROPHECY_URL=https://app.prophecy.io
+export PROPHECY_URL=https://<custom>.prophecy.io
 export PROPHECY_PAT=${{ secrets.PROPHECY_PAT }}
 
 export SMTP_HOST=smtp.gmail.com
 export SMTP_PORT=587
 export SMTP_USERNAME=${{ secrets.SMTP_USERNAME }}
 export SMTP_PASSWORD=${{ secrets.SMTP_PASSWORD }}
-export RECEIVER_EMAIL=ashish@prophecy.io
+export RECEIVER_EMAIL=<myRecipient@company.com>
 
 python -m prophecy_lineage_extractor --project-id 36587 --pipeline-id 36587/pipelines/customer_orders_demo --send-email --branch dev
 ```
@@ -136,14 +136,14 @@ python -m prophecy_lineage_extractor --project-id 36587 --pipeline-id 36587/pipe
 
         - name: Extract and Send Prophecy Lineage
           env:
-            PROPHECY_URL: "https://app.prophecy.io"
+            PROPHECY_URL: "https://<custom>.prophecy.io"
             MONITOR_TIME_ENV: ${{ vars.MONITOR_TIME_ENV }}
             PROPHECY_PAT: ${{ secrets.PROPHECY_PAT }}
             SMTP_HOST: "smtp.gmail.com"
             SMTP_PORT: "587"
             SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
             SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-            RECEIVER_EMAIL: "ashish@prophecy.io"
+            RECEIVER_EMAIL: "<myRecipient@company.com>"
           run: |
             python -m prophecy_lineage_extractor --project-id 36587 --pipeline-id 36587/pipelines/customer_orders_demo  --send-email --output-dir $OUTPUT_DIR
 
@@ -151,11 +151,11 @@ python -m prophecy_lineage_extractor --project-id 36587 --pipeline-id 36587/pipe
           env:
              GIT_COMMIT: ${{ vars.GIT_COMMIT }} # whether to commit output file to github
           run: |
-            # set this in secret to enable git commits
+            # set this in secret to enable git commits with appropriate git credentials
             echo "Output Directory: '$OUTPUT_DIR'"
             if [[ $GIT_COMMIT == "1" ]]; then
-                git config --global user.name 'pateash'
-                git config --global user.email 'ashishpatel0720@gmail.com'
+                git config --global user.name 'gituser'
+                git config --global user.email 'my.git.email@gmail.com'
                 echo "Commiting enabled, adding output file"
                 git add $OUTPUT_DIR/*
                 echo "========================================"
@@ -208,14 +208,14 @@ python -m prophecy_lineage_extractor --project-id 36587 --pipeline-id 36587/pipe
 
         - name: Extract and Send Prophecy Lineage
           env:
-            PROPHECY_URL: "https://app.prophecy.io"
+            PROPHECY_URL: "https://<custom>.prophecy.io"
             MONITOR_TIME_ENV: ${{ vars.MONITOR_TIME_ENV }}
             PROPHECY_PAT: ${{ secrets.PROPHECY_PAT }}
             SMTP_HOST: "smtp.gmail.com"
             SMTP_PORT: "587"
             SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
             SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-            RECEIVER_EMAIL: "ashish@prophecy.io"
+            RECEIVER_EMAIL: "<myRecipient@company.com>"
           run: |
             python -m prophecy_lineage_extractor --project-id 36587 --pipeline-id 36587/pipelines/customer_orders_demo  --send-email --output-dir $OUTPUT_DIR --branch dev
 
@@ -223,11 +223,11 @@ python -m prophecy_lineage_extractor --project-id 36587 --pipeline-id 36587/pipe
           env:
              GIT_COMMIT: ${{ vars.GIT_COMMIT }}  # Reference the GitHub variable here
           run: |
-            # set this in secret to enable git commits
+            # set this in secret to enable git commits with appropriate git credentials
             echo "output dir '$OUTPUT_DIR'"
             if [[ $GIT_COMMIT == "1" ]]; then
-                git config --global user.name 'pateash'
-                git config --global user.email 'ashishpatel0720@gmail.com'
+                git config --global user.name 'gituser'
+                git config --global user.email 'my.git.email@gmail.com'
                 echo "Commiting enabled, adding output file"
                 git add $OUTPUT_DIR/*
                 echo "========================================"
@@ -272,7 +272,7 @@ python -m prophecy_lineage_extractor --project-id 36587 --pipeline-id 36587/pipe
         export SMTP_PASSWORD="$SMTP_PASSWORD"
         export SMTP_HOST="smtp.gmail.com"
         export SMTP_PORT="587"
-        export RECEIVER_EMAIL="ashish@prophecy.io"
+        export RECEIVER_EMAIL="<myRecipient@company.com>"
         # value in seconds for monitoring, this might be increased depending on pipeline size
         export MONITOR_TIME_ENV="50"
       - |
@@ -286,8 +286,8 @@ python -m prophecy_lineage_extractor --project-id 36587 --pipeline-id 36587/pipe
       - |
         if [ "$GIT_COMMIT" == "1" ]; then
           echo "Git commit is enabled, output directory '$OUTPUT_DIR'"
-          git config --global user.name 'pateash'
-          git config --global user.email 'ashishpatel0720@gmail.com'
+          git config --global user.name 'gituser'
+          git config --global user.email 'my.git.email@gmail.com'
           git add $OUTPUT_DIR/*
           git commit -m "[GitLab CI - $BRANCH] Adding excel lineage report"
           git remote add gitlab_origin https://oauth2:$ACCESS_TOKEN@gitlab.com/pateash/ProphecyHelloWorld.git

@@ -8,7 +8,19 @@ tags:
   - parse
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name="ProphecySparkBasicsPython"
+  python_package_version="0.2.27+"
+  scala_package_name=""
+  scala_package_version=""
+  scala_lib="8.2.1"
+  python_lib="1.9.16"
+  uc_single="14.3+"
+  uc_shared="14.3+"
+  livy="Not Supported"
+/>
 
 The ColumnParser lets you parse XML or JSON that is included in a column of your table.
 
@@ -31,3 +43,29 @@ When you select a parsing method, you have three options:
 The schema of the ColumnParser gem output includes the parsed content as a **struct** data type, in addition to all of the input columns.
 
 ![New output struct](img/new-output-struct.png)
+
+## Example code
+
+:::tip
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+:::
+
+This example shows the code to parse XML.
+
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="py" label="Python">
+
+```py
+def xml_column_parser(spark: SparkSession, in0: DataFrame) -> DataFrame:
+    from prophecy.libs.utils import xml_parse
+
+    return xml_parse(in0, "XML", "parseAuto", None, None)
+```
+
+</TabItem>
+</Tabs>
+````

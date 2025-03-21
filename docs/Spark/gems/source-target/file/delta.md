@@ -1,37 +1,54 @@
 ---
 title: Delta
 id: delta
-description: Delta
+description: Parameters and properties to read from and write to Delta files
 tags:
   - gems
   - file
   - delta
 ---
 
-Reads and writes Delta tables, including Delta Merge operations and Time travel.
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name="ProphecySparkBasicsPython"
+  python_package_version="0.0.1+"
+  scala_package_name="ProphecySparkBasicsScala"
+  scala_package_version="0.0.1+"
+  scala_lib=""
+  python_lib=""
+  uc_single="14.3+"
+  uc_shared="14.3+"
+  livy="Not Supported"
+/>
+
+A Delta (Delta Lake) file type:
+
+- Is an optimized storage layer that allows you to store data and tables in the Databricks lakehouse.
+- Extends Parquet data files with a file-based transaction log for ACID transactions and scalable metadata handling.
+- Has a tight integration with structured streaming, which allows you to use a single copy of data for both batch and streaming operations and provides incremental processing at scale.
+
+## Parameters
+
+| Parameter | Tab        | Description                                                                                                                                                                                     |
+| --------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Location  | Location   | File path to read from or write to the Delta file.                                                                                                                                              |
+| Schema    | Properties | Schema to apply on the loaded data.<br/>In the Source gem, you can define or edit the schema visually or in JSON code.<br/>In the Target gem, you can view the schema visually or as JSON code. |
 
 ## Source
 
-### Source Parameters
+The Source gem reads data from Delta files and allows you to optionally specify the following additional properties.
 
-| Parameter      | Description                                | Required |
-| -------------- | ------------------------------------------ | -------- |
-| Location       | File path for the Delta table              | True     |
-| Read Timestamp | Time travel to a specific timestamp        | False    |
-| Read Version   | Time travel to a specific version of table | False    |
+### Source properties
+
+| Property name  | Description                                                                                                                                                                                                                                            | Default |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- |
+| Description    | Description of your dataset.                                                                                                                                                                                                                           | None    |
+| Read timestamp | Time travel to a specific timestamp.<br/>This value is between the first commit timestamp and the latest commit timestamp in the table.                                                                                                                | None    |
+| Read version   | Time travel to a specific version of the table.<br/>This value is an interger between the minimum and maximum version of the table. <br/>By default, the Source gem fetches the most recent version of each row if you don't use a time travel option. | None    |
 
 :::note
-For time travel on Delta tables:
-
-1. Only `Read Timestamp` **_OR_** `Read Version` can be selected, not both.
-2. Timestamp should be between the first commit timestamp and the latest commit timestamp in the table.
-3. Version needs to be an integer. Its value has to be between min and max version of table.
-
-By default most recent version of each row is fetched if no time travel option is used.
-:::
-
-:::info
-To read more about Delta time travel and its use cases [click here](https://databricks.com/blog/2019/02/04/introducing-delta-time-travel-for-large-scale-data-lakes.html).
+You can only select `Read Timestamp` or `Read Version`, not both.
 :::
 
 ### Example {#source-example}
@@ -40,18 +57,22 @@ To read more about Delta time travel and its use cases [click here](https://data
 
 ### Generated Code {#source-code}
 
+:::tip
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+:::
+
 #### Without time travel
 
 ````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <Tabs>
-
 <TabItem value="py" label="Python">
 
 ```py
 def ReadDelta(spark: SparkSession) -> DataFrame:
     return spark.read.format("delta").load("dbfs:/FileStore/data_engg/delta_demo/silver/orders")
-
 ```
 
 </TabItem>
@@ -66,10 +87,8 @@ object ReadDelta {
 
 }
 ```
-
 </TabItem>
 </Tabs>
-
 ````
 
 #### Timestamp-based time travel
@@ -77,16 +96,13 @@ object ReadDelta {
 ````mdx-code-block
 
 <Tabs>
-
 <TabItem value="py" label="Python">
 
 ```py
 def ReadDelta(spark: SparkSession) -> DataFrame:
     return spark.read.format("delta").option("timestampAsOf", "2022-05-05")\
         .load("dbfs:/FileStore/data_engg/delta_demo/silver/orders")
-
 ```
-
 </TabItem>
 <TabItem value="scala" label="Scala">
 
@@ -100,29 +116,22 @@ object ReadDelta {
 
 }
 ```
-
 </TabItem>
 </Tabs>
-
 ````
 
 #### Version-based time travel
 
 ````mdx-code-block
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 <Tabs>
-
 <TabItem value="py" label="Python">
 
 ```py
 def readDelta(spark: SparkSession) -> DataFrame:
     return spark.read.format("delta").option("versionAsOf", "0")\
         .load("dbfs:/FileStore/data_engg/delta_demo/silver/orders")
-
 ```
-
 </TabItem>
 <TabItem value="scala" label="Scala">
 
@@ -136,41 +145,38 @@ object readDelta {
 
 }
 ```
-
 </TabItem>
 </Tabs>
-
 ````
 
 ---
 
 ## Target
 
-### Target Parameters
+The Target gem writes data to Delta files and allows you to optionally specify the following additional properties.
 
-| Parameter                     | Description                                                                                                                                                                | Required |
-| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| Location                      | File path to write the Delta table to                                                                                                                                      | True     |
-| Write mode                    | Write mode for DataFrame                                                                                                                                                   | True     |
-| Optimise write                | If true, it optimizes Spark partition sizes based on the actual data                                                                                                       | False    |
-| Overwrite table schema        | If true, overwrites the schema of the Delta table with the schema of the incoming DataFrame                                                                                | False    |
-| Merge schema                  | If true, then any columns that are present in the DataFrame but not in the target table are automatically added on to the end of the schema as part of a write transaction | False    |
-| Partition Columns             | List of columns to partition the Delta table by                                                                                                                            | False    |
-| Overwrite partition predicate | If specified, then it selectively overwrites only the data that satisfies the given where clause expression.                                                               | False    |
+### Target properties
 
-#### Supported Write Modes
+| Property name                              | Description                                                                                                                                              | Default |
+| ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| Description                                | Description of your dataset.                                                                                                                             | None    |
+| Write Mode                                 | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                                     | `error` |
+| Overwrite table schema                     | Whether to overwrite the schema of the Delta table with the schema of the incoming `DataFrame`.                                                          | false   |
+| Merge `DataFrame` schema into table schema | Whether to automatically add any columns present in the `DataFrame` but not in the target table to the end of the schema as part of a write transaction. | false   |
+| Partition Columns                          | List of columns to partition the Delta table by.                                                                                                         | None    |
+| Overwrite partition predicate              | Selectively overwrite the data that satisfies the given where clause expression.                                                                         | None    |
+| Optimize write                             | Whether to optimize the Spark partition sizes based on the actual data.                                                                                  | false   |
 
-| Write Mode | Description                                                                                                                      |
-| ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| overwrite  | If data already exists, overwrite with the contents of the DataFrame                                                             |
-| append     | If data already exists, append the contents of the DataFrame                                                                     |
-| ignore     | If data already exists, do nothing with the contents of the DataFrame. This is similar to a `CREATE TABLE IF NOT EXISTS` in SQL. |
-| error      | If data already exists, throw an exception.                                                                                      |
-| merge      | Insert, delete and update data using the Delta `merge` command.                                                                  |
-| SCD2 merge | It is a Delta merge operation that stores and manages both current and historical data over time.                                |
+### Supported write modes
 
-Among these write modes overwrite, append, ignore and error works the same way as in case of parquet file writes.
-Merge will be explained with several examples in the following sections.
+| Write mode | Description                                                                                                                                          |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| error      | If the data already exists, throw an exception.                                                                                                      |
+| overwrite  | If the data already exists, overwrite the data with the contents of the `DataFrame`.                                                                 |
+| append     | If the data already exists, append the contents of the `DataFrame`.                                                                                  |
+| ignore     | If the data already exists, do nothing with the contents of the `DataFrame`. <br/>This is similar to the `CREATE TABLE IF NOT EXISTS` clause in SQL. |
+| merge      | Use the Delta `merge` command to insert, delete and update data. For more information, see [Delta MERGE](#delta-merge).                              |
+| scd2 merge | Store and manage the current and historical data over time. For more information, see [Delta MERGE](#delta-merge).                                   |
 
 ### Target Example
 
@@ -178,10 +184,13 @@ Merge will be explained with several examples in the following sections.
 
 ### Generated Code {#target-code}
 
+:::tip
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+:::
+
 ````mdx-code-block
 
 <Tabs>
-
 <TabItem value="py" label="Python">
 
 ```py
@@ -195,9 +204,7 @@ def writeDelta(spark: SparkSession, in0: DataFrame):
             .mode("overwrite")\
             .partitionBy("order_dt")\
             .save("dbfs:/FileStore/data_engg/delta_demo/silver/orders")
-
 ```
-
 </TabItem>
 <TabItem value="scala" label="Scala">
 
@@ -217,70 +224,79 @@ object writeDelta {
   }
 
 }
-
 ```
-
 </TabItem>
 </Tabs>
-
 ````
+
+---
 
 ## Delta MERGE
 
-You can upsert data from a source DataFrame into a target Delta table by using the [MERGE](https://docs.delta.io/latest/delta-update.html#upsert-into-a-table-using-merge) operation. Delta MERGE supports `Insert`s, `Update`s, and `Delete`s in a variety of use cases, and Delta is particularly suited to examine data with individual records that slowly change over time. Here we consider the most common types of slowly changing dimension (SCD) cases: SCD1, SCD2, and SCD3. Records are modified in one of the following ways: history is not retained (SCD1), history is retained at the row level (SCD2), or history is retained at the column level (SCD3).
+You can upsert data from a source `DataFrame` into a target Delta table by using the [MERGE](https://docs.delta.io/latest/delta-update.html#upsert-into-a-table-using-merge) operation. Delta MERGE supports `Insert`, `Update`, and `Delete` operations and modifies records of the most common slowly changing dimension (SCD) cases in one of the following ways:
+
+- [SCD1](#scd1): Delta tables do not retain history.
+- [SCD2](#scd2): Delta tables retain history at the row level.
+- [SCD3](#scd3): Delta tables retain history at the column level.
 
 ### SCD1
 
-Let's take the simplest case to illustrate a MERGE condition.
+The following lists the properties in an SCD1 MERGE condition where Delta tables do not retain its history.
 
-#### Parameters {#upsert-parameters}
+#### Properties {#upsert-properties}
 
-| Parameter                       | Description                                                                                                                                   | Required |
-| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| Source alias                    | Alias to use for the source DataFrame                                                                                                         | True     |
-| Target alias                    | Alias to use for existing target Delta table                                                                                                  | True     |
-| Merge Condition                 | Condition to merge data from source DataFrame to target table, which would be used to perform update, delete, or insert actions as specified. | True     |
-| When Matched Update Action      | Update the row from `Source` that already exists in `Target` (based on `Merge Condition`)                                                     | False    |
-| When Matched Update Condition   | Optional additional condition for updating row. If specified then it must evaluate to true for the row to be updated.                         | False    |
-| When Matched Update Expressions | Optional expressions for setting the values of columns that need to be updated.                                                               | False    |
-| When Matched Delete Action      | Delete rows if `Merge Condition` (and the optional additional condition) evaluates to `true`                                                  | False    |
-| When Matched Delete Condition   | Optional additional condition for deleting row. If a condition is specified then it must evaluate to true for the row to be deleted.          | False    |
-| When Not Matched Action         | The action to perform if the row from `Source` is not present in `Target` (based on `Merge Condition`)                                        | False    |
-| When Not Matched Condition      | Optional condition for inserting row. If a condition is specified then it must evaluate to true for the row to be updated.                    | False    |
-| When Not Matched Expressions    | Optional expressions for setting the values of columns that need to be updated.                                                               | False    |
+| Property name                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                            | Default  |
+| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| Source Alias                    | Alias to use for the source `DataFrame`.                                                                                                                                                                                                                                                                                                                                                                                               | `source` |
+| Target Alias                    | Alias to use for existing target Delta table.                                                                                                                                                                                                                                                                                                                                                                                          | `taret`  |
+| Merge condition                 | Condition to merge data from source `DataFrame` to target table. <br/>Delta can perform an update, delete, or insert action.                                                                                                                                                                                                                                                                                                           | None     |
+| When Matched Update Action      | Update the row from your Source gem that exists in your Target gem based on your `When Matched Update Condition` property.                                                                                                                                                                                                                                                                                                             | `update` |
+| When Matched Update Condition   | Additional condition for updating a row. If you specify a condition, it must evaluate to `true` for the Target gem to update the row.                                                                                                                                                                                                                                                                                                  | None     |
+| When Matched Update Expressions | Expressions for setting the values of columns that the Target gem needs to update.                                                                                                                                                                                                                                                                                                                                                     | None     |
+| When Matched Delete Action      | Delete rows if your `When Matched Delete Condition` property and the optional additional condition evaluates to `true`. <br/>Delete removes the data from the latest version of the Delta table but does not remove it from the physical storage until you explicitily vacuum the old versions. To learn more, see [Remove files no longer referenced by a Delta table](https://docs.delta.io/latest/delta-utility.html#-delta-vacuum) | `ignore` |
+| When Matched Delete Condition   | Additional condition for deleting a row. If you specify a condition, it must evaluate to `true` for the Target gem to delete the row.                                                                                                                                                                                                                                                                                                  | False    |
+| When Not Matched Action         | Action to perform if the row from your Source gem is not present in your Target gem based on your `When Not Matched Condition` property.                                                                                                                                                                                                                                                                                               | `insert` |
+| When Not Matched Condition      | Condition for inserting a row. If you specify a condition, it must evaluate to `true` for the Target gem to insert a new row.                                                                                                                                                                                                                                                                                                          | None     |
+| When Not Matched Expressions    | Expressions for setting the values of columns that the Target gem needs to update.                                                                                                                                                                                                                                                                                                                                                     | None     |
 
 :::note
 
-1. At least one action out of update, delete or insert needs to be set.
-2. Delete removes the data from the latest version of the Delta table but does not remove it from the physical storage until the old versions are explicitly vacuumed. See [vacuum](https://docs.delta.io/latest/delta-utility.html#-delta-vacuum) for details.
-3. A merge operation can fail if multiple rows of the source DataFrame match and the merge attempts to update the same rows of the target Delta table. Deduplicate gem can be placed before target if duplicate rows at source are expected.
+1. You must set at least one action out of update, delete or insert.
+1. A merge operation fails if multiple rows of the source `DataFrame` matches and the merge attempts to update the same rows of the target Delta table. You can place deduplicate gems before your Target gem if you expect duplicate rows in your Source gem.
+   :::
 
 :::tip
-When possible, provide predicates on the partition columns for a partitioned Delta table as such predicates can significantly speed up the operations.
+When possible, provide predicates on the partition columns for a partitioned Delta table because predicates can significantly speed up the operations.
+:::
 
 #### Example {#upsert-example}
 
-Let's assume our initial customers table is as below:
+Assume you have the following customers table:
 
 ![Initial customer table](./img/delta/delta_customers_initial_eg1.png)
 
-And we have the below updates coming into customers table:
+And, you want to make the following updates to the table:
 
 ![Customer table updates](./img/delta/delta_customers_updates_eg1.png)
 
-Our output and configurations for SCD1 merge will look like below:
+The following shows the output and configurations for an SCD1 merge:
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://user-images.githubusercontent.com/103921419/173252757-0a1165f0-68e2-41ca-b6eb-58da51cb76d1.mp4" title="SCD3" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
+<br/>
+
 #### Generated Code {#upsert-code}
+
+:::tip
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+:::
 
 ````mdx-code-block
 
 <Tabs>
-
 <TabItem value="py" label="Python">
 
 ```py
@@ -300,9 +316,7 @@ def writeDeltaMerge(spark: SparkSession, in0: DataFrame):
             .format("delta")\
             .mode("overwrite")\
             .save("dbfs:/FileStore/data_engg/delta_demo/silver/customers_scd1")
-
 ```
-
 </TabItem>
 <TabItem value="scala" label="Scala">
 
@@ -331,40 +345,46 @@ object writeDeltaMerge {
   }
 
 }
-
 ```
-
 </TabItem>
 </Tabs>
-
 ````
+
+---
 
 ### SCD2
 
-Let's use the Delta log to capture the historical `customer_zip_code` at the row-level.
+The following lists the properties in an SCD2 MERGE condition where Delta tables retain history at the row level.
 
-#### Parameters {#scd2-parameters}
+#### Parameters {#scd2-properties}
 
-| Parameter          | Description                                                                           | Required |
-| :----------------- | :------------------------------------------------------------------------------------ | :------- |
-| Key columns        | List of key columns which would remain constant                                       | True     |
-| Historic columns   | List of columns which would change over time for which history needs to be maintained | True     |
-| From time column   | Time from which a particular row became valid                                         | True     |
-| To time column     | Time till which a particular row was valid                                            | True     |
-| Min/old-value flag | Column placeholder to store the flag as true for the first entry of a particular key  | True     |
-| Max/latest flag    | Column placeholder to store the flag as true for the last entry of a particular key   | True     |
-| Flag values        | Option to choose the min/max flag to be true/false or 0/1                             | True     |
+| Property name                                 | Description                                                                        | Default |
+| --------------------------------------------- | ---------------------------------------------------------------------------------- | ------- |
+| Key Columns                                   | List of key columns to remain constant.                                            | None    |
+| Historic Columns                              | List of columns to change over time and maintain its history.                      | None    |
+| From time column                              | Time from which a particular row is valid.                                         | None    |
+| To time column                                | Time till which a particular row is not valid anymore.                             | None    |
+| Name of the column used as min/old-value flag | Column to store the flag as `true` for the first entry of a particular key.        | None    |
+| Name of the column used as max/latest flag    | Column to store the flag as `true` for the last entry of a particular key.         | None    |
+| Flag values                                   | Format of the min and max flag. <br/> Possible values are: `true/false`, or `0/1`. | None    |
 
 #### Example {#scd2-example}
 
-Using the same customer tables as in our merge example above, output and configurations for SCD2 merge will look like below:
+Continuing from [the SCD1 example](#upsert-example), you can use the Delta log to capture the historical `customer_zip_code` at the row-level.
+The following shows the output and configurations for an SCD2 merge:
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://user-images.githubusercontent.com/103921419/173252742-00930084-b3b3-4b8a-b5bb-59f39b74792b.mp4" title="SCD3" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
+<br/>
+
 #### Generated Code {#scd2-code}
+
+:::tip
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+:::
 
 ````mdx-code-block
 
@@ -442,10 +462,7 @@ def writeDeltaSCD2(spark: SparkSession, in0: DataFrame):
             .format("delta")\
             .mode("overwrite")\
             .save("dbfs:/FileStore/data_engg/delta_demo/silver/customers_scd2")
-
-
 ```
-
 </TabItem>
 <TabItem value="scala" label="Scala">
 
@@ -518,26 +535,29 @@ object writeDeltaSCD2 {
   }
 
 }
-
-
 ```
-
 </TabItem>
 </Tabs>
-
 ````
+
+---
 
 ### SCD3
 
-Using the same customer tables as in our merge example above, output and configurations for SCD3 merge will look like below. Let's track change for `customer_zip_code` by adding a column to show the previous value.
+Continuing from [the SCD2 example](#scd2-example), you use the Delta log to capture the historical `customer_zip_code` at the column-level.
+The following shows the output and configurations for an SCD3 merge:
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://user-images.githubusercontent.com/103921419/173252728-8924f0fb-6e81-44b7-9c39-17ba1d8f4d4c.mp4" title="SCD3" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
----
+<br/>
+
+:::tip
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+:::
 
 :::info
-To check out our blogpost on making data lakehouse easier using Delta with Prophecy [click here](https://www.prophecy.io/blogs/prophecy-with-delta).
+To learn more about how Prophecy uses the Delta file type, see [Prophecy with Delta — making data lakehouses easier](https://www.prophecy.io/blog/prophecy-with-delta-making-data-lakehouse-easier).
 :::

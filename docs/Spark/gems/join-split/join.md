@@ -13,7 +13,19 @@ tags:
   - merge
 ---
 
-<h3><span class="badge">Spark Gem</span></h3>
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name="ProphecySparkBasicsPython"
+  python_package_version="0.0.1+"
+  scala_package_name="ProphecySparkBasicsScala"
+  scala_package_version="0.0.1+"
+  scala_lib=""
+  python_lib=""
+  uc_single="14.3+"
+  uc_shared="14.3+"
+  livy="3.0.1+"
+/>
 
 Joins 2 or more DataFrames based on the given configuration.
 
@@ -85,7 +97,7 @@ Join hints allow users to suggest the join strategy that Spark should use. For a
 ![Example usage of Join - Join with hints](./img/join_with_hints.png)
 
 ````mdx-code-block
-<Tabs1>
+<Tabs>
 <TabItem value="py" label="Python">
 
 ```py
@@ -115,7 +127,7 @@ object Join_1 {
 ```
 
 </TabItem>
-</Tabs1>
+</Tabs>
 
 ````
 
@@ -147,7 +159,7 @@ export const ImageData = [
 ```
 
 ````mdx-code-block
-<Tabs2>
+<Tabs>
 <TabItem value="py" label="Python">
 
 ```py
@@ -175,7 +187,7 @@ object Join_1 {
 ```
 
 </TabItem>
-</Tabs2>
+</Tabs>
 
 ````
 

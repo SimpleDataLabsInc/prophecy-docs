@@ -1,22 +1,54 @@
 ---
 title: Seed
 id: seed
-description: Seed
+description: Parameters and properties to read from Seed files
 tags:
   - gems
   - file
   - seed
 ---
 
-Seeds let you manually write small CSV files into your Prophecy pipelines. They can only be used via Source gems.
+import Requirements from '@site/src/components/gem-requirements';
 
-## Source Parameters
+<Requirements
+  python_package_name="ProphecySparkBasicsPython"
+  python_package_version="0.2.31+"
+  scala_package_name="ProphecySparkBasicsScala"
+  scala_package_version="0.2.5.6"
+  scala_lib=""
+  python_lib=""
+  uc_single="14.3+"
+  uc_shared="Not Supported"
+  livy="3.2.0+"
+/>
 
-| Parameter                            | Tab        | Description                                                                                                      |
-| ------------------------------------ | ---------- | ---------------------------------------------------------------------------------------------------------------- |
-| Data                                 | Data       | Data provided in CSV format                                                                                      |
-| Schema                               | Properties | Schema applied to the loaded data. Schema can be defined/edited as JSON or inferred using `Infer Schema` button. |
-| Delimiter                            | Properties | Character used to separate entered data.                                                                         |
-| First row is header                  | Properties | Checkbox to enable when the first row is the table header.                                                       |
-| Enforce specified or inferred schema | Properties | Checkbox to enable when the output schema must match what has been defined in this tab.                          |
-| Auto-infer schema from the data      | Properties | Checkbox to enable when you do not want to manually enter the schema.                                            |
+The Seed file type:
+
+- Is a configuration file that provides initial data or settings for an application.
+- Allows you to manually write small CSV files into your Prophecy pipelines.
+
+You can only read data from Seed files in Prophecy.
+
+## Parameters
+
+| Parameter | Tab        | Description                                                                                                           |
+| --------- | ---------- | --------------------------------------------------------------------------------------------------------------------- |
+| Data      | Data       | Data you provide in the Seed format.                                                                                  |
+| Schema    | Properties | Schema to apply on the data. You can define or edit the schema as a JSON, or infer it with the `Infer Schema` button. |
+
+## Source
+
+The Source gem reads data from Seed files and allows you to optionally specify the following additional properties.
+
+### Source properties
+
+| Property name                                    | Description                                                       | Default |
+| ------------------------------------------------ | ----------------------------------------------------------------- | ------- |
+| Select an appropriate delimiter for entered data | Character to separate data you enter.                             | `,`     |
+| First row is header                              | Whether the first row is the table header.                        | true    |
+| Enforce specified or inferred schema             | Whether the output schema must match what you define in this tab. | false   |
+| Auto Infer schema from the data                  | Whether you want to automatically enter the schema.               | false   |
+
+## Target
+
+The Target gem does not support writing to Seed files.

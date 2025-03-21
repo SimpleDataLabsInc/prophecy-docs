@@ -8,9 +8,23 @@ tags:
   - mongodb
 ---
 
+import Requirements from '@site/src/components/gem-requirements';
+
+<Requirements
+  python_package_name="ProphecyWarehousePython"
+  python_package_version="0.0.1+"
+  scala_package_name="ProphecyWarehouseScala"
+  scala_package_version="0.0.1+"
+  scala_lib=""
+  python_lib=""
+  uc_single="Not Supported"
+  uc_shared="Not Supported"
+  livy="Not Supported"
+/>
+
 :::info Built on
 Built on [MongoDB Spark Connector](https://www.mongodb.com/docs/spark-connector/v10.0/#mongodb-connector-for-spark) v10.0. <br/>
-Add `mongodb-spark-connector` jar as dependency [for more](docs/extensibility/dependencies/spark-dependencies.md#add-dependency).
+Add `mongodb-spark-connector` jar as dependency [for more](docs/extensibility/dependencies/spark-dependencies.md).
 :::
 Allows read and write operations on `MongoDB`.
 
