@@ -25,7 +25,7 @@ You can configure multiple secret providers per fabric in the **Providers** tab 
 
 ### Prophecy
 
-Prophecy provides its own secret manager for Prophecy fabrics.
+Prophecy provides its own secret manager for Prophecy fabrics to securely store both text-based secrets and binary data.
 
 ### Databricks
 
