@@ -43,7 +43,7 @@ We've added the powerful functionality to configure variables directly in a [SQL
 
 ### Building SCD2 Tables
 
-Slowly changing dimensions (SCD) doesn't have to be so challenging. With this release, you can take advantage of Prophecy's visual interface to configure [SCD type 2 writes](/SQL/gems/target-models/write-options#scd-2) and retain data history. Open the Target Model gem, select Table format. For the merge write option, select SCD2 and choose a unique key and relevant timestamp column for your data. Now any data practitioner can capture updated records without deleting the previous records.
+Slowly changing dimensions (SCD) doesn't have to be so challenging. With this release, you can take advantage of Prophecy's visual interface to configure [SCD type 2 writes](/SQL/gems/target-models/write-options#scd2) and retain data history. Open the Target Model gem, select Table format. For the merge write option, select SCD2 and choose a unique key and relevant timestamp column for your data. Now any data practitioner can capture updated records without deleting the previous records.
 
 ![SCD2](./img/scd2.png)
 
