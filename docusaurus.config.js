@@ -6,8 +6,6 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 require("dotenv").config();
 
-console.log("INKEEP_API_KEY:", process.env.INKEEP_API_KEY);
-
 export default {
   customFields: {
     inkeepApiKey: process.env.INKEEP_API_KEY,
