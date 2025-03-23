@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[25301],{72572:i=>{i.exports=JSON.parse('{"label":"team admin","permalink":"/tags/team-admin","allTagsPath":"/tags","count":1,"items":[{"id":"administration/index","title":"Administration","description":"Find common administration tasks","permalink":"/administration/"}]}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[29149],{48159:e=>{e.exports=JSON.parse('{"tag":{"label":"resolve","permalink":"/tags/resolve","allTagsPath":"/tags","count":1,"items":[{"id":"concepts/git/git-resolve","title":"Merge conflicts","description":"Source Control","permalink":"/concepts/git/git-resolve"}],"unlisted":false}}')}}]);

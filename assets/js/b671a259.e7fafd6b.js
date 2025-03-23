@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[1248],{47108:e=>{e.exports=JSON.parse('{"label":"july","permalink":"/tags/july","allTagsPath":"/tags","count":1,"items":[{"id":"release_notes/2024/July_2024","title":"July 2024","description":"Release notes for July","permalink":"/release_notes/2024/July_2024"}]}')}}]);

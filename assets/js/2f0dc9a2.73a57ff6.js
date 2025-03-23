@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[33290],{11697:a=>{a.exports=JSON.parse('{"label":"loop","permalink":"/tags/loop","allTagsPath":"/tags","count":1,"items":[{"id":"Spark/gems/subgraph/table-iterator","title":"TableIterator","description":"Loop over each row of an input Dataframe","permalink":"/Spark/gems/subgraph/table-iterator"}]}')}}]);

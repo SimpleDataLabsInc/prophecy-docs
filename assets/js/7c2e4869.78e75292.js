@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[41861],{64839:t=>{t.exports=JSON.parse('{"label":"unit tests","permalink":"/tags/unit-tests","allTagsPath":"/tags","count":1,"items":[{"id":"ci-cd/tests","title":"Unit tests for Spark","description":"Implementing unit tests in Prophecy","permalink":"/ci-cd/tests"}]}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[35780],{86517:t=>{t.exports=JSON.parse('{"label":"network","permalink":"/tags/network","allTagsPath":"/tags","count":1,"items":[{"id":"administration/security","title":"Security","description":"Learn about Prophecy\'s security practices","permalink":"/administration/security"}]}')}}]);

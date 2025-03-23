@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[13255],{16448:e=>{e.exports=JSON.parse('{"label":"cdp","permalink":"/tags/cdp","allTagsPath":"/tags","count":1,"items":[{"id":"Spark/execution/executions_on_livy_clusters","title":"Execution on Livy","description":"Execution on Livy","permalink":"/Spark/execution/executions_on_livy_clusters"}]}')}}]);

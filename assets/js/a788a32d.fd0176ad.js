@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[46597],{91566:e=>{e.exports=JSON.parse('{"label":"query","permalink":"/tags/query","allTagsPath":"/tags","count":1,"items":[{"id":"SQL/gems/target-models/sql-query","title":"SQL Query","description":"SQL Query of Target Models","permalink":"/SQL/gems/target-models/sql-query"}]}')}}]);

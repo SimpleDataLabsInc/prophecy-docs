@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[8902],{93693:s=>{s.exports=JSON.parse('{"label":"parse","permalink":"/tags/parse","allTagsPath":"/tags","count":1,"items":[{"id":"Spark/gems/transform/column-parser","title":"ColumnParser","description":"Parse XML or JSON inside a table","permalink":"/Spark/gems/transform/column-parser"}]}')}}]);
