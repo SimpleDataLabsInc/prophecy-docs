@@ -59,7 +59,7 @@ The Source gem reads data from Kafka stream in batch mode and allows you to opti
 ### Generated Code {#source-code}
 
 :::tip
-To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
 :::
 
 ````mdx-code-block
@@ -161,7 +161,7 @@ The Target gem writes data to each row from the `Dataframe` to a Kafka topic as 
 ### Generated Code {#target-code}
 
 :::tip
-To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
 :::
 
 ````mdx-code-block
@@ -204,7 +204,7 @@ In this example, you read JSON messages from Kafka, parse them, remove any null 
 ![Example usage of Filter](./img/kafka_pipeline_eg.gif)
 
 :::tip
-To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
 :::
 
 #### Metadata Table
@@ -227,13 +227,13 @@ Taking this approach provides you the with following benefits:
 3. You can replay old messages by modifying the Metadata table.
 
 :::note
-For production workflows the [phase](docs/getting-started/concepts/gems.md#gem-phase) for the `Script` gem that updates the offsets should be greater than the phase of the Target gem. This ensures that offsets only update in the table after Prophecy safely persists the data to the Target.
+For production workflows the [phase](docs/Spark/gems/gems.md#gem-phase) for the `Script` gem that updates the offsets should be greater than the phase of the Target gem. This ensures that offsets only update in the table after Prophecy safely persists the data to the Target.
 :::
 
 #### Spark Code used for script component
 
 :::tip
-To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
 :::
 
 ````mdx-code-block

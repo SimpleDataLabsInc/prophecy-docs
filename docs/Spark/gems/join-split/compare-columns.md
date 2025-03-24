@@ -46,7 +46,7 @@ The CompareColumns gem lets you compare columns between two DataFrames based on 
 <iframe src="https://github.com/SimpleDataLabsInc/prophecy-docs/assets/130362885/23c23ea9-e98b-4624-91a8-597cfaf0e647" title="Compare columns" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"/>
 </div></div>
 
-### Generated code
+### Example code
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';

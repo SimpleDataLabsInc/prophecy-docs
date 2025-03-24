@@ -4,6 +4,14 @@
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
+require("dotenv").config();
+
+export default {
+  customFields: {
+    inkeepApiKey: process.env.INKEEP_API_KEY,
+  },
+};
+
 // Reverse the sidebar items ordering
 function reverseSidebarItems(items) {
   // Reverse items in categories
@@ -177,6 +185,23 @@ const config = {
 
   plugins: [
     "docusaurus-plugin-image-zoom",
+    [
+      "@inkeep/cxkit-docusaurus",
+      {
+        SearchBar: {
+          baseSettings: {
+            // see https://docusaurus.io/docs/deployment#using-environment-variables to use docusaurus environment variables
+            apiKey: process.env.INKEEP_API_KEY, // required
+            primaryBrandColor: "#403FC2", // required -- your brand color, the widget color scheme is derived from this
+            organizationDisplayName: "Prophecy",
+          },
+          aiChatSettings: {
+            // optional settings
+            aiAssistantAvatar: "img/icon.png", // optional -- use your own ai assistant avatar
+          },
+        },
+      },
+    ],
     [
       "@docusaurus/plugin-client-redirects",
       {

@@ -140,7 +140,7 @@ If you want the Target gem to output a single file:
 ## Example code
 
 :::tip
-To see the generated source code, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) at the top of the page.
+To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
 :::
 
 ````mdx-code-block
