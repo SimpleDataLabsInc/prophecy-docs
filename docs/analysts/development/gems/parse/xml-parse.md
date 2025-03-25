@@ -8,4 +8,6 @@ tags:
   - parse
 ---
 
+<span class="badge">SQL</span><br/><br/>
+
 The XMLParser lets you parse XML that is included in a column of your table.

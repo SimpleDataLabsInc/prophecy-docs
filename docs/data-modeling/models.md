@@ -38,4 +38,4 @@ In the [Project Editor](docs/getting-started/concepts/project.md#project-editor)
 
 ## Models vs pipelines
 
-Models are data transformations that run exclusively on a SQL warehouse using dbt. Because of this, models follow dbt limitations like each model can only define one output. Pipelines, on the other hand, can use a Spark engine (for Python or Scala projects) or the Prophecy runtime (for SQL projects) for computation. Because of this, pipelines are more flexible in their capabilities.
+Models are data transformations that run exclusively on a SQL warehouse using dbt. Because of this, models follow dbt limitations like each model can only define one output. Pipelines, on the other hand, can use a Spark engine (for Python or Scala projects) or Prophecy Automate (for SQL projects) for computation. Because of this, pipelines are more flexible in their capabilities.

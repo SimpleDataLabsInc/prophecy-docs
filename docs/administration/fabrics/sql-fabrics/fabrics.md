@@ -18,7 +18,7 @@ When working with SQL projects in Prophecy, you have the option to use either a 
 | Ingest data from external sources                  | Yes             | No         |
 | Send data to external destinations                 | Yes             | No         |
 | Operates entirely within a connected SQL warehouse | No              | Yes        |
-| Requires Prophecy runtime                          | Yes             | No         |
+| Requires Prophecy Automate                         | Yes             | No         |
 
 ## Job scheduling
 

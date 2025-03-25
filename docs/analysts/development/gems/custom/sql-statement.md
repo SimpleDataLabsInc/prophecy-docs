@@ -8,6 +8,8 @@ tags:
   - custom
 ---
 
+<span class="badge">SQL</span><br/><br/>
+
 Use a custom SQL statement in your pipeline. This gem supports SELECT statements.
 
 ### Parameters

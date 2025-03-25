@@ -114,18 +114,34 @@ const sidebars = {
               items: [
                 {
                   type: "category",
-                  label: "File",
+                  label: "Table",
+                  link: {
+                    type: "doc",
+                    id: "analysts/development/gems/source-target/table/table",
+                  },
                   items: [
-                    "analysts/development/gems/source-target/file/upload-files",
-                    "analysts/development/gems/source-target/file/excel",
-                    "analysts/development/gems/source-target/file/csv",
+                    "analysts/development/gems/source-target/table/upload-files",
                   ],
                 },
                 {
                   type: "category",
-                  label: "Catalog table",
+                  label: "File",
                   items: [
-                    "analysts/development/gems/source-target/catalog-table/databricks",
+                    "analysts/development/gems/source-target/file/csv",
+                    "analysts/development/gems/source-target/file/excel",
+                    "analysts/development/gems/source-target/file/json",
+                    "analysts/development/gems/source-target/file/xml",
+                    "analysts/development/gems/source-target/file/text",
+                  ],
+                },
+                {
+                  type: "category",
+                  label: "External Table",
+                  items: [
+                    "analysts/development/gems/source-target/external-table/databricks",
+                    "analysts/development/gems/source-target/external-table/snowflake",
+                    "analysts/development/gems/source-target/external-table/mssql",
+                    "analysts/development/gems/source-target/external-table/mongodb",
                   ],
                 },
               ],

@@ -1,17 +1,13 @@
 ---
-title: Excel
-id: excel
-description: Read and write excel files
+title: MSSQL
+id: mssql
+description: Read and write from MSSQL database
 tags: []
 ---
 
 <span class="badge">Prophecy Automate</span><br/><br/>
 
-Read or write an Excel (XLSX) file from an S3, SFTP, Sharepoint, Smartsheet, or Databricks connection.
-
-:::info
-You can also use the [upload file](docs/analysts/development/gems/source-target/table/upload-files.md) feature to use Excel files. These will be stored in the SQL warehouse configured in your fabric.
-:::
+Use a table from MSSQL as an external source or target.
 
 ## Parameters
 
@@ -19,4 +15,6 @@ You can also use the [upload file](docs/analysts/development/gems/source-target/
 | --------------------------- | ----------------------------------------------------------------- |
 | Location type               | Location you want to connect from.                                |
 | Select or create connection | Whether to select an existing connection, or to create a new one. |
-| Filepath                    | The file path according to the connection type.                   |
+| Database                    | Database where the table is or will be located.                   |
+| Schema                      | Schema where the table is or will be located.                     |
+| Name                        | The name of the external table.                                   |

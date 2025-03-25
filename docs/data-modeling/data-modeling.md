@@ -5,7 +5,7 @@ description: Using SQL with Prophecy's Data Transformation Copilot
 tags: [sql, snowflake, databricks, warehouse]
 ---
 
-<h3><span class="badge">SQL</span></h3>
+<span class="badge">SQL</span><br/><br/>
 
 Data [models](docs/data-modeling/models.md) are transformations that are compiled into SQL code and executed on SQL warehouses. Use the **model canvas** to visually develop your models, and switch to the code view to see your transformations in SQL.
 

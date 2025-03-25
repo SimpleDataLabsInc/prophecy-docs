@@ -8,6 +8,8 @@ tags:
   - prepare
 ---
 
+<span class="badge">SQL</span><br/><br/>
+
 Removes rows with duplicate values of specified columns.
 
 ## Mode

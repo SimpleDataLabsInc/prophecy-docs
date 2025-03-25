@@ -28,16 +28,16 @@ When you click on a gem from the gem drawer, an instance of that gem gets added 
 
 ![Gem Instance](img/gems/instance.png)
 
-| Callout | UI element        | Description                                                                                                 |
-| :-----: | ----------------- | ----------------------------------------------------------------------------------------------------------- |
-|    1    | Gem instance name | The name of this particular gem instance. It must be unique within a given pipeline.                        |
-|    2    | Gem type name     | The type of gem.                                                                                            |
-|    3    | Input ports       | One or more ports that accept connections from upstream gems.                                               |
-|    4    | Output ports      | One or more ports that connect to downstream gems.                                                          |
-|    5    | Gem phase         | The [phase](#gem-phase) for this gem instance, which defines the order in which gem instances are executed. |
-|    6    | Open              | The button that lets you open the gem configuration.                                                        |
-|    7    | Run button        | A button that runs the pipeline up to and including the gem.                                                |
-|    8    | Action menu       | A menu that includes options to change the phase of the gem, add run conditions, delete the gem, and more.  |
+| Callout | UI element    | Description                                                                                                 |
+| :-----: | ------------- | ----------------------------------------------------------------------------------------------------------- |
+|    1    | Gem label     | The name of this particular gem instance. It must be unique within a given pipeline.                        |
+|    2    | Gem type name | The type of gem.                                                                                            |
+|    3    | Input ports   | One or more ports that accept connections from upstream gems.                                               |
+|    4    | Output ports  | One or more ports that connect to downstream gems.                                                          |
+|    5    | Gem phase     | The [phase](#gem-phase) for this gem instance, which defines the order in which gem instances are executed. |
+|    6    | Open          | The button that lets you open the gem configuration.                                                        |
+|    7    | Run button    | A button that runs the pipeline up to and including the gem.                                                |
+|    8    | Action menu   | A menu that includes options to change the phase of the gem, add run conditions, delete the gem, and more.  |
 
 ## Gem configuration
 
@@ -102,7 +102,7 @@ The action menu gives you more granular control over individual gems. When you e
 
 ### Gem phase
 
-A gem's phase in a pipeline controls the order in which a gem will run. This is achieved by reordering the code generated for the pipeline:
+In a data pipeline, the phase of a gem determines the sequence in which it runs. This sequencing is managed by adjusting the order of the generated pipeline code.
 
 ```scala
 def apply(spark: SparkSession): Unit = {
@@ -113,8 +113,8 @@ def apply(spark: SparkSession): Unit = {
 }
 ```
 
-A gem with phase `0` will be put before a gem with phase `1`. The phase can be any integer (positive or negative).
+Here’s how it works:
 
-It's important to note that when you run downstream gems, **their upstream gems also must run**. Therefore, if a downstream gem is assigned phase `0` and an upstream gem is assigned phase `1`, the upstream gem will be grouped with phase `0`.
-
-Because of this, the phase of the last gem in a pipeline branch will determine the phase of the whole branch. In other words, **only the phases of leaf nodes** matter when you are configuring gem phases.
+- Gems are assigned a numerical phase (e.g., `0`, `1`, `-1`), where lower values run first. For example, a gem with phase `0` will execute before a gem with phase `1`.
+- When a gem runs, all its upstream gems must also run. This means that if a downstream gem has phase `0` and an upstream gem has phase `1`, the upstream gem will be grouped into phase `0` to ensure proper execution.
+- Because of this dependency, the phase assigned to the last gem in a branch determines the phase of the entire branch. This means that when configuring gem phases, you only need to focus on the _leaf nodes_—the final gems in each branch of the pipeline.

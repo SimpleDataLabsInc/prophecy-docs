@@ -8,6 +8,8 @@ tags:
   - transform
 ---
 
+<span class="badge">SQL</span><br/><br/>
+
 Use the Unpivot gem to transform your data from a wide format to a long format.
 
 ## Parameters

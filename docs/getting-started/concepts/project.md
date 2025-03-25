@@ -26,12 +26,25 @@ SQL is ideal when working with structured data in warehouses like Snowflake or D
 
 Spark is better for large-scale data processing, like handling terabytes or petabytes across distributed clusters. It excels in executing complex pipelines, processing semi-structured data, and integrating with big data ecosystems like Databricks. Spark prioritizes performance and scalability are key, and required more data engineering knowledge. Depending on what your data engineers are comfortable with, they can either choose Python or Scala as the backend code of Spark projects.
 
-## Project components
+## Components
 
 The project components will differ depending on the project type.
 
 <Tabs>
 
+<TabItem value="SQL" label="SQL">
+
+| Component                                                               | Description                                                                                                                                                                                  |
+| ----------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Pipelines](docs/analysts/development/pipelines/pipelines.md)           | Sequence of steps that run on Prophecy Automate and SQL warehouses                                                                                                                           |
+| [Gems](docs/analysts/development/gems/gems.md)                          | Representation of each data transformation step in a pipeline or models                                                                                                                      |
+| [Tables](docs/analysts/development/gems/source-target/source-target.md) | SQL table, view, or seed.                                                                                                                                                                    |
+| [Functions](docs/analysts/development/functions/functions.md)           | SQL macro that can used in gem expressions.                                                                                                                                                  |
+| [Tests](docs/analysts/development/data-tests/data-tests.md)             | Validate data automatically by testing for referential integrity, data consistency, etc.                                                                                                     |
+| [Schedules](docs/analysts/scheduling.md)                                | Schedule for pipeline execution.                                                                                                                                                             |
+| [Models](docs/data-modeling/models.md)                                  | SQL transformations that define a single table or view. Models only appear in projects that enable **Normal** or **Fork per User** Git storage models. (Only applicable for data engineers.) |
+
+</TabItem>
 <TabItem value="Spark" label="Python and Scala (Spark)">
 
 | Component                                      | Description                                                   |
@@ -42,22 +55,35 @@ The project components will differ depending on the project type.
 | [Gems](docs/Spark/gems/gems.md)                | Representation of each data transformation step in a pipeline |
 
 </TabItem>
-<TabItem value="SQL" label="SQL">
 
-| Component                                                               | Description                                                                                 |
-| ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| [Pipelines](docs/analysts/development/pipelines/pipelines.md)           | Sequence of steps that run on Prophecy runtime and SQL warehouse                            |
-| [Gems](docs/analysts/development/gems/gems.md)                          | Representation of each data transformation step in a pipeline or model                      |
-| [Tables](docs/analysts/development/gems/source-target/source-target.md) | SQL table, view, or seed                                                                    |
-| Functions                                                               | SQL macro that can be invoked using a Macro gem                                             |
-| [Tests](docs/analysts/development/data-tests/data-tests.md)             | Validate data automatically by testing for referential integrity, data consistency, etc.    |
-| [Schedules](docs/analysts/scheduling.md)                                | Schedule for pipeline execution                                                             |
-| [Models](docs/data-modeling/models.md)                                  | (Only applicable for data engineers) SQL transformations that define a single table or view |
-
-</TabItem>
 </Tabs>
 
-## Project team
+## Versioning
+
+Prophecy provides a few different version control options that you set up during project creation. The options depend on the project type.
+
+<Tabs>
+
+<TabItem value="SQL" label="SQL">
+
+| Parameter         | Options                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Git Account       | <ul class="table-list"><li>Prophecy-managed: Prophecy hosts and manages the Git repository for your project. No external Git setup is required.</li><li>External Git: You connect your project to an external Git provider (e.g., GitHub, GitLab, Bitbucket) and manage repositories independently.</li></ul>                                                                                                                                                             |
+| Git Storage Model | <ul class="table-list"><li>Simple: A minimal save and publish workflow that it built on Git. All work happens on the same development branch and is merged to main upon project publication.</li><li>Normal: All users work within a shared Git repository with standard branching and merging practices.</li><li>Fork per User (External Git only): Each user works on their own fork of the repository, enabling independent changes before merging upstream.</li></ul> |
+
+</TabItem>
+<TabItem value="Spark" label="Python and Scala (Spark)">
+
+| Parameter         | Options                                                                                                                                                                                                                                                                                                                                 |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Git Account       | <ul class="table-list"><li>Prophecy-managed: Prophecy hosts and manages the Git repository for your project. This is not recommended for projects deployed to production.</li><li>External Git: You connect your project to an external Git provider (e.g., GitHub, GitLab, Bitbucket) and manage repositories independently.</li></ul> |
+| Git Storage Model | <ul class="table-list"><li>Normal: All users work within a shared Git repository with standard branching and merging practices.</li><li>Fork per User (External Git only): Each user works on their own fork of the repository, enabling independent changes before merging upstream.</li></ul>                                         |
+
+</TabItem>
+
+</Tabs>
+
+## Team
 
 Projects are always assigned to a certain [team](docs/administration/teams-users/teamuser.md). This means that the project will be shared among all users in that team.
 
@@ -65,7 +91,7 @@ Projects are always assigned to a certain [team](docs/administration/teams-users
 When you begin using Prophecy, you are added to your own one-person team. Your team administrator will typically create other team groupings.
 :::
 
-## Project metadata
+## Metadata
 
 The **Metadata** page in Prophecy provides a searchable directory of projects and project components including pipelines, models, and jobs. All projects that are shared with your teams are visible in the **Projects** tab of the Metadata page. You can click into each project to access more granular metadata about that project.
 

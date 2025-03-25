@@ -8,4 +8,6 @@ tags:
   - parse
 ---
 
+<span class="badge">SQL</span><br/><br/>
+
 The TextToColumn gem lets you parse a text string and convert it to a column by specifying a delimiter.

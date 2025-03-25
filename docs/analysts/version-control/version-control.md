@@ -11,12 +11,13 @@ When you build projects in Prophecy, you can save and publish your work with the
 
 ## Version control options
 
-When you create a SQL project in Prophecy, you will have the option to select the Git storage model for the project. There are two models to choose from.
+When you create a SQL project in Prophecy, you will have the option to select the Git storage model for the project. There are a few models to choose from.
 
-| Git Storage Model | Description                                                                                                                             |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| Simple            | Provides an intuitive visual workflow for project drafting and publication. Users all work on the same `dev` branch in the Git backend. |
-| Normal (no forks) | Enables the typical Git workflow aligned with DevOps best practices. Users all work in the same repository on different branches.       |
+| Git Storage Model | Description                                                                                                                              |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Simple            | Provides an intuitive visual workflow for project drafting and publication. Users all work on the same `dev` branch in the Git backend.  |
+| Normal (no forks) | Enables the typical Git workflow aligned with DevOps best practices. Users all work in the same repository on different branches.        |
+| Fork per user     | (External Git only) Enables the typical Git workflow aligned with DevOps best practices. Users work on their own copy of the repository. |
 
 The following sections demonstrate the **visual workflow** for projects that use the Simple Git storage model. To view the workflow for normal Git, visit the section on [Git](docs/ci-cd/git/git.md) in the documentation.
 
@@ -47,7 +48,7 @@ To learn more, visit our page on [project publication](/analysts/version-control
 
 ### Show version history
 
-The version history in Prophecy tracks different versions of your project that you save and publish. From the version history, you can view modifications in each version and revert to previous versions. You can access the version history from the project editor or within the [project metadata](docs/getting-started/concepts/project.md#project-metadata).
+The version history in Prophecy tracks different versions of your project that you save and publish. From the version history, you can view modifications in each version and revert to previous versions. You can access the version history from the project editor or within the [project metadata](docs/getting-started/concepts/project.md#metadata).
 
 ### Restore previous version
 

@@ -8,6 +8,8 @@ tags:
   - prepare
 ---
 
+<span class="badge">SQL</span><br/><br/>
+
 Limits the number of rows in the output.
 
 ### Parameters

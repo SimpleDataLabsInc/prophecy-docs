@@ -8,6 +8,8 @@ tags:
   - prepare
 ---
 
+<span class="badge">SQL</span><br/><br/>
+
 The BulkColumnRename gem can be used to systematically rename multiple columns at once.
 
 ## Parameters

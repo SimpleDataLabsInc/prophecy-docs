@@ -8,7 +8,7 @@ tags:
   - analyst
 ---
 
-SQL project pipelines utilize the Prophecy runtime and a connected SQL warehouse to perform data ingestion, transformation, and output. You can read and write data directly in your SQL warehouse, or you can read and write to external sources such as Tableau or Salesforce.
+SQL project pipelines utilize Prophecy Automate and a connected SQL warehouse to perform data ingestion, transformation, and output. You can read and write data directly in your SQL warehouse, or you can read and write to external sources such as Tableau or Salesforce.
 
 To view a list of pipelines in Prophecy, navigate to the **Metadata** page from the left sidebar.
 

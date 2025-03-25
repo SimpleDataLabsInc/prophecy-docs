@@ -8,6 +8,8 @@ tags:
   - prepare
 ---
 
+<span class="badge">SQL</span><br/><br/>
+
 Use the DynamicSelect gem to dynamically filter columns of your dataset based on a set of conditions.
 
 ## Configuration

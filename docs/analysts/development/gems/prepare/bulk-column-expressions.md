@@ -8,6 +8,8 @@ tags:
   - prepare
 ---
 
+<span class="badge">SQL</span><br/><br/>
+
 The BulkColumnExpressions Gem primarily lets you cast or change the data type of multiple columns at once. It provides additional functionality, including:
 
 - Adding a prefix or suffix to selected columns.

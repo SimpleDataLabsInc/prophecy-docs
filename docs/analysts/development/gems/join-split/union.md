@@ -5,6 +5,8 @@ description: Perform addition or subtraction of rows
 tags: []
 ---
 
+<span class="badge">SQL</span><br/><br/>
+
 Use the Union gem to perform set operations on tables with **identical schemas** and different data. This gem simplifies working with multiple datasets by letting you merge, compare, and filter data efficiently.
 
 - **Merge data** (Union): Combine records from different sources, such as merging customer databases or aggregating logs from multiple servers.

@@ -8,6 +8,8 @@ tags:
   - custom
 ---
 
+<span class="badge">SQL</span><br/><br/>
+
 The Macro gem lets you use a macro that you have defined or imported in your SQL project. Macros provide a simple interface where you can define the values of your macro parameters (arguments). Use the Macro gem when you:
 
 - Import macros via DBT Hub dependency.

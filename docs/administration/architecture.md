@@ -12,9 +12,9 @@ Prophecy is written as a set of microservices that run on Kubernetes in various 
 
 The following are the main components of a successful Prophecy deployment.
 
-- **Integrated development environment (IDE)**: The Prophecy IDE includes Prophecy microservices and cloud infrastructure. Users that log in to Prophecy access the IDE to transform raw data into analytics-ready data using visual data pipelines.
+- **Spark and SQL Studio**: Users that log in to Prophecy access the Spark and SQL studios to transform raw data into analytics-ready data using visual data pipelines.
 
-- **Execution engine**: Prophecy pipelines and models run on external environments like Snowflake or Databricks. When using Prophecy orchestration, computation occurs within the Prophecy runtime. [Fabrics](docs/getting-started/concepts/fabrics.md) let users execute pipelines on these engines. Your data is not persisted in Prophecy.
+- **Execution engine**: Prophecy pipelines and models run on external environments like Snowflake or Databricks. When using Prophecy orchestration, computation occurs within Prophecy Automate. [Fabrics](docs/getting-started/concepts/fabrics.md) let users execute pipelines on these engines. Your data is not persisted in Prophecy.
 
 - **Source control**: Prophecy integrates with Git for version control and supports both native and external Git options.
 
@@ -24,7 +24,7 @@ The following are the main components of a successful Prophecy deployment.
 
 ## Prophecy for Analysts
 
-Prophecy for Analysts leverages the Prophecy runtime and a SQL warehouse to let users build, run, and schedule their pipelines. This architecture diagram demonstrates one example of the various components involved in a Prophecy deployment in their respective virtual networks.
+Prophecy for Analysts leverages Prophecy Automate and a SQL warehouse to let users build, run, and schedule their pipelines. This architecture diagram demonstrates one example of the various components involved in a Prophecy deployment in their respective virtual networks.
 
 ![Prophecy for Analysts](img/arch-prophecy-sql.png)
 
@@ -32,7 +32,7 @@ Prophecy can accommodate a wide variety of architectures beyond this diagram. Fo
 
 - The diagram shows Databricks as the data provider and SQL warehouse. Prophecy also supports Snowflake SQL warehouse.
 - The diagram displays a connection to an external Git repository. You can also use Prophecy-managed Git for version control.
-- The diagrams places the Prophecy runtime inside Prophecy. If necessary, the Prophecy runtime can run in a customer network instead.
+- The diagrams places Prophecy Automate inside Prophecy. If necessary, Prophecy Automate can run in a customer network instead. If you opt to run Prophecy Automate in your customer network, then you must specify this in the Prophecy [fabric](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md).
 
 ## Prophecy for Engineers
 

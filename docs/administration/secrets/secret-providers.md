@@ -18,7 +18,7 @@ You can configure multiple secret providers per fabric in the **Providers** tab 
 
 | Secret Provider       | Details                                                           | Platform   |
 | --------------------- | ----------------------------------------------------------------- | ---------- |
-| Prophecy              | Recommended if you use Prophecy runtime                           | Prophecy   |
+| Prophecy              | Recommended if you use Prophecy Automate                          | Prophecy   |
 | Databricks Secrets    | Recommended if you are a Databricks user                          | Databricks |
 | HashiCorp Vault       | Recommended if your organization privileges HashiCorp Vault       | Any Spark  |
 | Environment Variables | Recommended if your organization privileges environment variables | Any Spark  |

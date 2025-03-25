@@ -33,7 +33,7 @@ To become more familiar with the end-to-end workflow for data analysts in Prophe
 
 Next, you'll configure the Provider type.
 
-1. Choose **Prophecy** as the Provider Type. This will enable the use of the Prophecy runtime.
+1. Choose **Prophecy** as the Provider Type. This will enable the use of Prophecy Automate.
 1. Select your SQL provider (either Snowflake or Databricks).
 1. Click **Continue**.
 

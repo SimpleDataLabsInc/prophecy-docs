@@ -8,6 +8,8 @@ tags:
   - report
 ---
 
+<span class="badge">Prophecy Automate</span><br/><br/>
+
 ## Email attachments
 
 Each row of the input will correspond to one email sent.

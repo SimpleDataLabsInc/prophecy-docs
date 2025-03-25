@@ -161,7 +161,7 @@ img {
   background-color: var(--ifm-code-background);
   border: var(--ifm-badge-border-width) solid var(--ifm-badge-border-color);
   border-radius: 50rem;
-  font-size: 75%;
+  font-size: inherit;
   font-weight: var(--ifm-font-weight-bold);
   line-height: 1;
   padding: var(--ifm-badge-padding-vertical) var(--ifm-badge-padding-horizontal);

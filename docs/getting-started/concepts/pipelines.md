@@ -38,5 +38,5 @@ Transformations:
 
 Learn about different forms of pipeline development:
 
-- Pipeline development for analysts using Prophecy runtime and SQL warehouse
+- Pipeline development for analysts using Prophecy Automate and SQL warehouse
 - Pipeline development for engineers using Spark engines

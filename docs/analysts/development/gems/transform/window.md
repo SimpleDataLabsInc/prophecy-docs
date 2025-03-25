@@ -8,6 +8,8 @@ tags:
   - transform
 ---
 
+<span class="badge">SQL</span><br/><br/>
+
 The WindowFunction lets you define a **WindowSpec** and apply window functions on a model.
 
 ### Parameters

@@ -8,6 +8,8 @@ tags:
   - prepare
 ---
 
+<span class="badge">SQL</span><br/><br/>
+
 Filters models based on the provided filter condition.
 
 ### Parameters

@@ -7,3 +7,5 @@ tags:
   - analyst
   - transform
 ---
+
+<span class="badge">SQL</span><br/><br/>

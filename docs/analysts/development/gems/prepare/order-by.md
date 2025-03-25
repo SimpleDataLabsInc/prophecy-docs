@@ -8,6 +8,8 @@ tags:
   - prepare
 ---
 
+<span class="badge">SQL</span><br/><br/>
+
 Sorts a model on one or more columns in ascending or descending order.
 
 ### Parameters

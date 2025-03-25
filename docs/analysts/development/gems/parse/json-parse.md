@@ -8,4 +8,6 @@ tags:
   - parse
 ---
 
+<span class="badge">SQL</span><br/><br/>
+
 The JSONParser lets you parse JSON that is included in a column of your table.

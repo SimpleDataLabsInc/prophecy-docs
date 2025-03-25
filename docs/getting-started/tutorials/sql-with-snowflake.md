@@ -13,7 +13,7 @@ This tutorial will teach you how to use Prophecy for data modeling. You will lea
 
 :::note
 
-This tutorial will not cover pipeline development in SQL projects, which requires the Prophecy runtime. It will only cover data transformations that can be executed on a SQL warehouse.
+This tutorial will not cover pipeline development in SQL projects, which requires Prophecy Automate. It will only cover data transformations that can be executed on a SQL warehouse.
 
 :::
 

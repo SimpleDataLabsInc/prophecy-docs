@@ -1,16 +1,16 @@
 ---
-title: Excel
-id: excel
-description: Read and write excel files
+title: JSON
+id: json
+description: Read and write JSON files
 tags: []
 ---
 
 <span class="badge">Prophecy Automate</span><br/><br/>
 
-Read or write an Excel (XLSX) file from an S3, SFTP, Sharepoint, Smartsheet, or Databricks connection.
+Read or write a JSON file from an S3, SFTP, Sharepoint, or Databricks connection.
 
 :::info
-You can also use the [upload file](docs/analysts/development/gems/source-target/table/upload-files.md) feature to use Excel files. These will be stored in the SQL warehouse configured in your fabric.
+You can also use the [upload file](docs/analysts/development/gems/source-target/table/upload-files.md) feature to use JSON files. These will be stored in the SQL warehouse configured in your fabric.
 :::
 
 ## Parameters

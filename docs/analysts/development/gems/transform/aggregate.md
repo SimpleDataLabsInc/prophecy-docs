@@ -8,6 +8,8 @@ tags:
   - transform
 ---
 
+<span class="badge">SQL</span><br/><br/>
+
 Use the Aggregate gem to group data and perform aggregations on each group.
 
 ## Parameters

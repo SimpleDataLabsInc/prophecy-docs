@@ -8,4 +8,6 @@ tags:
   - join
 ---
 
+<span class="badge">SQL</span><br/><br/>
+
 Use fuzzy match to join datasets based on similar (rather than strict) matches.

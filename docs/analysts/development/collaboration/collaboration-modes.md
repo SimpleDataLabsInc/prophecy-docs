@@ -13,7 +13,7 @@ The way you collaborate on a project depends on the Git mode of the project. Thi
 | ----------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------ |
 | Simple            | Prophecy-managed | Users who want a simple versioning and publication workflow that operates entirely in Prophecy.                          |
 | Simple            | External Git     | Users who want a simple versioning and publication workflow, who may also need to maintain a CI/CD workflow through Git. |
-| Normal            | External Git     | Users who are comfortable with typical Git branching and merging strategies who can manage CI/CD in Git.                 |
+| Normal or Fork    | External Git     | Users who are comfortable with typical Git branching and merging strategies who can manage CI/CD in Git.                 |
 
 :::info
 All projects that utilize the **Prophecy for Analysts** [project creation template](docs/administration/teams-users/project-creation-template.md) operate with Simple, Prophecy-managed Git.

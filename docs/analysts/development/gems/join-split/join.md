@@ -8,6 +8,8 @@ tags:
   - join
 ---
 
+<span class="badge">SQL</span><br/><br/>
+
 Use the Join gem to combine data from two or more tables based on a shared column value. This helps you link related information, such as customer details and purchase history, or user activity logs and account records.
 
 ## Input and Output

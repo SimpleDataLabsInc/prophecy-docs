@@ -8,6 +8,8 @@ tags:
   - custom
 ---
 
+<span class="badge">Prophecy Automate</span><br/><br/>
+
 Use the RestAPI gem to make API calls from your pipeline.
 
 ## Use cases

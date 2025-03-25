@@ -8,6 +8,8 @@ tags:
   - prepare
 ---
 
+<span class="badge">SQL</span><br/><br/>
+
 Use the DataCleansing gem to standardize data formats and address missing or null values in the data.
 
 ## Parameters
