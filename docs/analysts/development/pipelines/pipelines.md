@@ -8,13 +8,15 @@ tags:
   - analyst
 ---
 
-SQL project pipelines utilize Prophecy Automate and a connected SQL warehouse to perform data ingestion, transformation, and output. You can read and write data directly in your SQL warehouse, or you can read and write to external sources such as Tableau or Salesforce.
+SQL project pipelines utilize Prophecy Automate and a connected SQL warehouse of your choice to perform data ingestion, transformation, and output. You can read and write data directly in your SQL warehouse, or you can read and write to external sources such as Tableau or Salesforce.
 
 To view a list of pipelines in Prophecy, navigate to the **Metadata** page from the left sidebar.
 
 ## Pipeline creation
 
-If you want to create a new pipeline, you can do so from the **Create Entity** page in the left sidebar. You can also create pipelines directly within the project editor. The following table describes the parameters for pipeline creation.
+If you want to create a new pipeline, you can do so from the **Create Entity** page in the left sidebar. You can also create pipelines directly within the project editor. Before creating pipeline, you must first set up a [Prophecy fabric](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md) for pipeline execution and a [SQL project](docs/getting-started/concepts/project.md) where the pipeline will live.
+
+The following table describes the parameters for pipeline creation.
 
 | Parameter      | Description                                                                                                                                    |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -23,7 +25,7 @@ If you want to create a new pipeline, you can do so from the **Create Entity** p
 
 ## Project editor
 
-When building your pipelines, it helps to be familiar with the project editor interface. The following table describes different areas of the project editor.
+When building your pipelines, it helps to be familiar with the project editor interface.
 
 ### Sidebar
 

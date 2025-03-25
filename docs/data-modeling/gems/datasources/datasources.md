@@ -15,7 +15,7 @@ To load data into a SQL model, use [Seed](#seeds), [Source](#sources), or [Model
 Sources are pointers to tables in the SQL warehouse(s) specified in the SQL fabric.
 
 1. You can browse available tables in the **Environment** tab of the Project Editor. Tables can be dragged onto the model canvas.
-2. To upload a file to the warehouse directly from Prophecy, use the [Upload File](docs/analysts/development/gems/source-target/file/upload-files.md) option.
+2. To upload a file to the warehouse directly from Prophecy, use the [Upload File](docs/analysts/development/gems/source-target/table/upload-files.md) option.
 
 ![Source1](img/Source1.png)
 

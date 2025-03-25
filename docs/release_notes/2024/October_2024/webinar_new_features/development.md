@@ -16,7 +16,7 @@ Recently released features to make pipeline development faster and more efficien
 <iframe src="https://fast.wistia.net/embed/iframe/vp7kmq7afq?seo=false?videoFoam=true" title="UploadFiles" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-Click [here](docs/analysts/development/gems/source-target/file/upload-files.md) for further details.
+Click [here](docs/analysts/development/gems/source-target/table/upload-files.md) for further details.
 
 ### Visual Expression Builder
 

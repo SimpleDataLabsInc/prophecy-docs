@@ -1,6 +1,7 @@
 ---
 title: App creation
 id: app-creation
+draft: true
 description: Build applications make pipelines accessible
 tags: []
 ---

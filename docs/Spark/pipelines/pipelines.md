@@ -22,7 +22,7 @@ The following table describes the parameters for pipeline creation.
 | Project     | The project to create the pipeline in. This controls access to the pipeline, groups pipelines together, and lets you use datasets in the project. |
 | Branch      | The Git branch to use for pipeline development.                                                                                                   |
 | Name        | The name of the pipeline.                                                                                                                         |
-| Mode        | Whether the pipeline will be Batch mode or Streaming.                                                                                             |
+| Mode        | Whether the pipeline will be batch mode (collect and process data in scheduled intervals) or streaming (ingest and transmit data in real-time).   |
 | Description | A field to describe the purpose of the pipeline.                                                                                                  |
 
 ## Project editor

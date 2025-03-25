@@ -1,5 +1,5 @@
 ---
-title: Modeling with SQL
+title: Data Modeling for Engineers
 id: sql-with-snowflake
 description: Use this tutorial to create a project with data in Snowflake
 tags:

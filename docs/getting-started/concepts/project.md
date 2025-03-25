@@ -10,25 +10,38 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-A **project** in Prophecy is the core unit for developing, organizing, and deploying data workflows to production. It encompasses all the components needed for building and running data processes. Each project is automatically compiled into code and is hosted on Git in the backend.
+A **project** in Prophecy is the core unit for developing, organizing, and deploying data pipelines to production. It includes all the components required to build and execute data processes. Continue reading to learn about:
+
+- Different project types for various use cases
+- Key components that support pipeline development within a project
+- Versioning and publishing of projects
+- Sharing projects across teams
+- Navigating and editing projects
 
 ## Project types
 
-Project components depend on your project type. A project must be written in Python, Scala, or SQL. This language choice determines how your visual pipelines will be compiled into code. You initial choice of **project type** fundamentally determines your project's capabilities and workflow structure, so it's important to choose correctly at the start since it cannot be changed later.
+Project components depend on your project type. A project must be written in Python, Scala, or SQL. This language choice determines how your visual pipelines will be compiled into code. You initial choice of project type fundamentally determines your project's capabilities and workflow structure, so _it's important to choose correctly at the start since it cannot be changed later_.
 
-Prophecy supports both SQL and Spark for data engineering, and the choice depends on your data needs. Many organizations use both types of projects, leveraging SQL for analytics and Spark for heavy-duty transformations. Prophecy provides a platform where this can happen all in one place.
+Prophecy supports both **SQL** and **Spark** projects, and the choice depends on your data needs. Many organizations use both types of projects, leveraging SQL for **data analytics** and Spark for **data engineering**. Prophecy provides a platform where this can happen all in one place.
 
-### SQL
+<Tabs>
 
-SQL is ideal when working with structured data in warehouses like Snowflake or Databricks SQL, offering simplicity, speed, and efficiency for moderate data volumes and interactive queries. It’s best for teams with SQL expertise who need straightforward transformations without managing distributed infrastructure.
+<TabItem value="SQL" label="SQL">
 
-### Spark
+SQL is ideal when working with structured data in warehouses like Snowflake or Databricks SQL, offering simplicity, speed, and efficiency for moderate data volumes and interactive queries. It’s best for teams who need straightforward transformations without managing distributed infrastructure.
 
-Spark is better for large-scale data processing, like handling terabytes or petabytes across distributed clusters. It excels in executing complex pipelines, processing semi-structured data, and integrating with big data ecosystems like Databricks. Spark prioritizes performance and scalability are key, and required more data engineering knowledge. Depending on what your data engineers are comfortable with, they can either choose Python or Scala as the backend code of Spark projects.
+</TabItem>
+<TabItem value="Spark" label="Python and Scala (Spark)">
+
+Spark excels in executing complex pipelines and processing semi-structured data. Spark prioritizes performance and scalability are key, and requires more data engineering knowledge. Depending on what your data engineers are comfortable with, they can either choose Python or Scala as the backend code of Spark projects.
+
+</TabItem>
+
+</Tabs>
 
 ## Components
 
-The project components will differ depending on the project type.
+Project components vary based on project type. While SQL and Spark projects share common elements like pipelines and gems, their functionality differs significantly. Each is documented separately: [Pipeline development for Analysts](docs/analysts/development/development.md) covers SQL projects, while [Pipeline development for Engineers](docs/Spark/Spark.md) focuses on Spark projects.
 
 <Tabs>
 
@@ -36,23 +49,23 @@ The project components will differ depending on the project type.
 
 | Component                                                               | Description                                                                                                                                                                                  |
 | ----------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Pipelines](docs/analysts/development/pipelines/pipelines.md)           | Sequence of steps that run on Prophecy Automate and SQL warehouses                                                                                                                           |
-| [Gems](docs/analysts/development/gems/gems.md)                          | Representation of each data transformation step in a pipeline or models                                                                                                                      |
-| [Tables](docs/analysts/development/gems/source-target/source-target.md) | SQL table, view, or seed.                                                                                                                                                                    |
-| [Functions](docs/analysts/development/functions/functions.md)           | SQL macro that can used in gem expressions.                                                                                                                                                  |
-| [Tests](docs/analysts/development/data-tests/data-tests.md)             | Validate data automatically by testing for referential integrity, data consistency, etc.                                                                                                     |
-| [Schedules](docs/analysts/scheduling.md)                                | Schedule for pipeline execution.                                                                                                                                                             |
+| [Pipelines](docs/analysts/development/pipelines/pipelines.md)           | Sequences of steps that run on Prophecy Automate and SQL warehouses.                                                                                                                         |
+| [Gems](docs/analysts/development/gems/gems.md)                          | Representations of individual data transformation steps in a pipeline or model.                                                                                                              |
+| [Tables](docs/analysts/development/gems/source-target/source-target.md) | SQL tables, views, or seeds.                                                                                                                                                                 |
+| [Functions](docs/analysts/development/functions/functions.md)           | SQL macros used in gem expressions.                                                                                                                                                          |
+| [Tests](docs/analysts/development/data-tests/data-tests.md)             | Automated validations ensuring referential integrity, data consistency, and other quality checks.                                                                                            |
+| [Schedules](docs/analysts/scheduling.md)                                | Schedules for periodic pipeline execution managed by Prophecy Automate.                                                                                                                      |
 | [Models](docs/data-modeling/models.md)                                  | SQL transformations that define a single table or view. Models only appear in projects that enable **Normal** or **Fork per User** Git storage models. (Only applicable for data engineers.) |
 
 </TabItem>
 <TabItem value="Spark" label="Python and Scala (Spark)">
 
-| Component                                      | Description                                                   |
-| ---------------------------------------------- | ------------------------------------------------------------- |
-| [Pipelines](docs/Spark/pipelines/pipelines.md) | Sequence of steps that run on Spark-native code               |
-| [Datasets](docs/Spark/dataset.md)              | Pointer to data in your data provider                         |
-| [Jobs](docs/Orchestration/Orchestration.md)    | Schedule for pipeline execution                               |
-| [Gems](docs/Spark/gems/gems.md)                | Representation of each data transformation step in a pipeline |
+| Component                                      | Description                                                                                                |
+| ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| [Pipelines](docs/Spark/pipelines/pipelines.md) | Sequences of steps that run on Spark-native code.                                                          |
+| [Datasets](docs/Spark/dataset.md)              | Pointers to tables that are stored in the external data provider defined in a fabric.                      |
+| [Jobs](docs/Orchestration/Orchestration.md)    | Schedules for pipeline execution managed by external orchestration tools like Databricks Jobs and Airflow. |
+| [Gems](docs/Spark/gems/gems.md)                | Representations of individual data transformation steps in a pipeline.                                     |
 
 </TabItem>
 
@@ -60,7 +73,7 @@ The project components will differ depending on the project type.
 
 ## Versioning
 
-Prophecy provides a few different version control options that you set up during project creation. The options depend on the project type.
+All projects are automatically compiled into code and hosted on Git for powerful version control. Prophecy offers several version control options, which you can configure during project creation. The available options vary depending on the project type.
 
 <Tabs>
 
@@ -85,7 +98,7 @@ Prophecy provides a few different version control options that you set up during
 
 ## Team
 
-Projects are always assigned to a certain [team](docs/administration/teams-users/teamuser.md). This means that the project will be shared among all users in that team.
+Projects are always assigned to a certain [team](docs/administration/teams-users/teamuser.md). This means that the project will be shared among all users in that team. If you want to share projects and project components with other teams, you can do so via the [Package Hub](docs/extensibility/package-hub/package-hub.md).
 
 :::note
 When you begin using Prophecy, you are added to your own one-person team. Your team administrator will typically create other team groupings.

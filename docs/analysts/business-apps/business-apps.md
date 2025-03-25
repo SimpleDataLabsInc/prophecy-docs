@@ -25,10 +25,8 @@ Business apps resemble forms that are easy to understand and fill out. They offe
 
 All business apps can be accessed from the App Directory. Each business app is associated with one pipeline (one-to-one relationship).
 
-You'll be able to view and use business apps that have been shared with your team.
+You'll be able to view and use business apps generated from projects that have been shared with your teams. Apps will run on the last published version of the associated data pipeline.
 
-Apps will always run on the last published version of the associated data pipeline.
+<!-- ## Creation
 
-## Creation
-
-Business apps are created inside projects. Visit our guide on [app creation](docs/analysts/business-apps/app-creation.md) for more details.
+Business apps are created inside projects. Visit our guide on [app creation](docs/analysts/business-apps/app-creation.md) for more details. -->

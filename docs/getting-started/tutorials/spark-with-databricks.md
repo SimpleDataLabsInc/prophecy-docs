@@ -1,5 +1,5 @@
 ---
-title: Create pipelines with Spark
+title: Project Lifecycle for Engineers
 id: spark-with-databricks
 description: Getting started with Spark on Databricks
 tags:

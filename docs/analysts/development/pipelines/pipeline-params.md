@@ -8,7 +8,11 @@ tags:
   - analyst
 ---
 
-If you want to create variables to use throughout your pipeline, you can configure **Pipeline Parameters**. Parameters let you define values or expressions that can be used to dynamically populate values during pipeline runs.
+If you want to create variables to use throughout your pipeline, you can configure **Pipeline Parameters**. Parameters let you define values or expressions that can be used to dynamically populate values during pipeline runs. These can be useful when you want to:
+
+- Control parameter configurations from business applications.
+- Set different values in the pipeline depending on the execution environment (for example, development vs production).
+- Reuse the same values throughout the pipeline, ensuring consistency and maintainability.
 
 ## Configure parameters
 

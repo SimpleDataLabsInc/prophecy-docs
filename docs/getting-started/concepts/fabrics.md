@@ -8,9 +8,9 @@ tags:
   - execution
 ---
 
-Prophecy helps you develop data pipelines in high-quality Spark or SQL code—but what does Prophecy use to compute these pipelines? The first thing to understand before building any pipeline is that your pipeline must be connected to an **execution environment**.
+Prophecy enables you to develop high-quality Spark or SQL data pipelines, but where do these pipelines actually run? Before building a pipeline, it's essential to understand that it must be executed within an **execution environment**.
 
-This is why **fabrics** exist in Prophecy. Fabrics let Prophecy connect to specific execution environments and data storage.
+While Prophecy offers some built-in execution capabilities through Prophecy Automate, the majority of computation and all data storage occur in **external** environments like Databricks or Snowflake. This is where **fabrics** come in—they serve as the bridge between Prophecy and these execution environments for seamless connectivity and integration.
 
 ## Fabric types
 
@@ -71,8 +71,8 @@ Even though teams share fabrics, **each user must add their individual credentia
 
 ## Fabric metadata
 
-A list of all fabrics available to you can be found in the **Fabrics** tab of the **Metadata** page.
+A list of all fabrics available to you can be found in the **Fabrics** tab of the **Metadata** page. You can click into each fabric to access the fabric settings. These will resemble the settings that appear during fabric creation.
 
-![Fabric Metadata](./img/fabric_metadata_1.png)
+## What's next
 
-You can click into each fabric to access the fabric settings. These will resemble the settings that appear during fabric creation.
+Fabrics are often configured by team admins. Learn more about different types of fabrics in our Administration documentation on [Fabric setup](/administration/fabrics).

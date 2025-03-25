@@ -1,5 +1,5 @@
 ---
-title: Creating pipelines with SQL
+title: Project Lifecycle for Analysts
 id: sql-with-prophecy
 description: Getting started with a SQL project
 tags:

@@ -1,5 +1,5 @@
 ---
-title: Spark onboarding
+title: Engineer Quick Start
 id: spark-onboarding
 description: Follow along in the product to make your first Spark pipeline
 tags:

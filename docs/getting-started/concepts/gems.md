@@ -14,7 +14,7 @@ Prophecy gems are reusable building blocks designed to accelerate the developmen
 
 Gems are the core components of a pipeline. The intuitive visual interface enables:
 
-- **Efficiency**: Reduce time spent writing repetitive code by leveraging prebuilt transformations.
+- **Reusability**: Reduce time spent writing repetitive code by leveraging prebuilt transformations.
 - **Consistency**: Enforce coding and data processing standards across your team.
 - **Scalability**: Let Prophecy optimize your Spark code and SQL queries for you so you can easily scale your pipelines.
 
@@ -26,11 +26,11 @@ Gems run on the execution engine defined in your attached [fabric](docs/getting-
 
 Depending on your project type, you will see different kinds of gems. This makes sense, as gems are written in different languages (Python, Scala, or SQL) that ultimately need to match the language of your project. At a high level, gems let you:
 
-- **Ingest** data from various sources.
-- **Transform** data from its raw state
-- **Parse** data to restructure it.
-- **Clean** data that is inconsistent.
-- **Write** data to your desired output, whether it's a database, a warehouse, or another system.
+- **Ingest** data from various sources, such as databases or APIs to bring data into your system for processing.
+- **Transform** at different stages, starting with raw data, then cleaning and structuring it for analysis, and finally optimizing it for reporting and business insights.
+- **Parse** data to restructure it, extract relevant fields, convert formats, or reorganize data to ensure consistency and compatibility with downstream processes.
+- **Clean** data by identifying and correcting inconsistencies, missing values, duplicates, and errors, ensuring high-quality data for reliable analysis and decision-making.
+- **Write** data to your desired output, whether it's a database, data warehouse, or another storage system, so it's ready for uses like analytics or machine learning.
 
 ## What's next​
 
