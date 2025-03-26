@@ -58,7 +58,7 @@ You can only select `Read Timestamp` or `Read Version`, not both.
 ### Generated Code {#source-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](https://docs.prophecy.io/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
 :::
 
 #### Without time travel
@@ -185,7 +185,7 @@ The Target gem writes data to Delta files and allows you to optionally specify t
 ### Generated Code {#target-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](https://docs.prophecy.io/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
 :::
 
 ````mdx-code-block
@@ -291,7 +291,7 @@ The following shows the output and configurations for an SCD1 merge:
 #### Generated Code {#upsert-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](https://docs.prophecy.io/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
 :::
 
 ````mdx-code-block
@@ -383,7 +383,7 @@ The following shows the output and configurations for an SCD2 merge:
 #### Generated Code {#scd2-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](https://docs.prophecy.io/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
 :::
 
 ````mdx-code-block
@@ -555,7 +555,7 @@ The following shows the output and configurations for an SCD3 merge:
 <br/>
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](https://docs.prophecy.io/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
 :::
 
 :::info

@@ -59,7 +59,7 @@ The Source gem reads data from Kafka stream in batch mode and allows you to opti
 ### Generated Code {#source-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](https://docs.prophecy.io/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
 :::
 
 ````mdx-code-block
@@ -161,7 +161,7 @@ The Target gem writes data to each row from the `Dataframe` to a Kafka topic as 
 ### Generated Code {#target-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](https://docs.prophecy.io/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
 :::
 
 ````mdx-code-block
@@ -204,7 +204,7 @@ In this example, you read JSON messages from Kafka, parse them, remove any null 
 ![Example usage of Filter](./img/kafka_pipeline_eg.gif)
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](https://docs.prophecy.io/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
 :::
 
 #### Metadata Table
@@ -233,7 +233,7 @@ For production workflows the [phase](docs/Spark/gems/gems.md#gem-phase) for the 
 #### Spark Code used for script component
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](https://docs.prophecy.io/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
 :::
 
 ````mdx-code-block

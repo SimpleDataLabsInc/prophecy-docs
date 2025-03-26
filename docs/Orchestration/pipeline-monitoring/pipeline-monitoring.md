@@ -41,4 +41,4 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 <DocCardList items={useCurrentSidebarCategory().items}/>
 ```
 
-For information on the stored execution metrics, see [Execution Metrics](https://docs.prophecy.io/engineers/execution-metrics).
+For information on the stored execution metrics, see [Execution Metrics](/engineers/execution-metrics).

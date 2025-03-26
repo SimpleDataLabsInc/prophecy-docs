@@ -140,7 +140,7 @@ If you want the Target gem to output a single file:
 ## Example code
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](https://docs.prophecy.io/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
 :::
 
 ````mdx-code-block

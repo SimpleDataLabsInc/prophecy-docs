@@ -58,7 +58,7 @@ The Source gem reads data from Text files and allows you to optionally specify t
 ### Generated Code {#source-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](https://docs.prophecy.io/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
 :::
 
 ````mdx-code-block
@@ -128,7 +128,7 @@ The Target gem writes data to Text files and allows you to optionally specify th
 ### Generated Code {#target-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](https://docs.prophecy.io/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
 :::
 
 ````mdx-code-block

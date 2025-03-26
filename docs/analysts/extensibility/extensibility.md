@@ -47,4 +47,4 @@ Importantly, if you add a project to the Package Hub, **all of its components wi
 
 ## Gem Builder
 
-The Gem Builder can help you build custom gems for individual or shared use. SQL gems are dbt macros that have a visual (UI) layer. To learn more, visit [Gem Builder for SQL](https://docs.prophecy.io/sql/gem-builder).
+The Gem Builder can help you build custom gems for individual or shared use. SQL gems are dbt macros that have a visual (UI) layer. To learn more, visit [Gem Builder for SQL](/sql/gem-builder).
