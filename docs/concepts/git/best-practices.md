@@ -7,9 +7,9 @@ tags:
   - best practices
 ---
 
-## Conflicts
+## Overview
 
-To minimize, and ideally avoid conflicts in your pull requests:
+To minimize and ideally avoid conflicts in your pull requests:
 
 1. Have each user create their own feature branches.
 1. Keep feature branches modular, which means to:
@@ -17,9 +17,9 @@ To minimize, and ideally avoid conflicts in your pull requests:
    - Only modify assets as needed on your feature branch
    - Avoid modifying assets that other users are modifying in parallel feature branches
 
-## Branching Strategy
+## Deep dive: Branching Strategy
 
-Use a proper Git branching strategy to avoid merge conflicts.
+Use a proper Git branching strategy that aligns with your team's goals.
 
 ### Small teams
 

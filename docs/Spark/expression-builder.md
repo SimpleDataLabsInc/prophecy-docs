@@ -74,6 +74,6 @@ This data is same as what you see in [interims](./execution/executions_on_databr
 
 ## Best Practice
 
-When possible, use the `set()` operation, and avoid for loops.
+When possible, use the `set()` operation, and avoid `for` loops. `set()` operations typically have a better average computational complexity than a `list`, which makes them more efficient.
 
-`set()` operations typically have a better average computational complexity than a `list`, which makes them more efficient. This is helpful when you operate on wide tables that contain many columns of input schemas that can slow down the Prophecy UI.
+This is especially helpful when you operate on the _columns_ of wide tables, as this scenario can slow down the Prophecy UI.

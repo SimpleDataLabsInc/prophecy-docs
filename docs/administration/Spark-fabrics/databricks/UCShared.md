@@ -94,6 +94,10 @@ Minimum Prophecy Package version required to support Databricks Unity Catalog Sh
 | ------ | ------- | ------------- | ---------------- | ---------------- |
 | Lookup | N/A     | Not Supported | Not Supported    | Not Supported    |
 
+:::tip
+Instead of `Lookup`, use `Left join` for working on UC Shared clusters.
+:::
+
 ### Transform
 
 Minimum Prophecy Package version required to support Databricks Unity Catalog Shared Clusters:

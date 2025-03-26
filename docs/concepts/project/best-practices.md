@@ -9,19 +9,27 @@ tags:
 
 ## Projects
 
-Limit the total number of pipelines per project to keep your project modular.
+1. Limit the total number of pipelines per project to keep your project modular.
 
-This helps you have:
+   This helps you have:
 
-- Better Git version control and Git tagging
-- A faster code generation and compilation as common entities are compiled across all pipelines when change is done
-- More control during deployment
-- Shared resources across teams and in [Package Hub](docs/extensibility/package-hub/package-hub.md)
+   - Better Git version control and Git tagging
+   - A faster code generation and compilation as common entities are compiled across all pipelines when changes are made
+   - More control during deployment
+   - Shared resources across teams and in [Package Hub](docs/extensibility/package-hub/package-hub.md)
 
 ## Re-usable entities
 
-Have common entities such as datasets, user defined functions, reusable-subgraphs, gems, and any fully configurable pipelines in a common project.
-This allows you to share the project in a read-only and version controlled manner with other teams when you publish it as a package.
+1. Keep common entities in a common project.
+
+   Common entities can include:
+
+   - User defined functions
+   - Reusable-subgraphs
+   - Gems
+   - Fully configurable pipelines.
+
+   This allows you to share the project in a read-only and version controlled manner with other teams when you publish it as a [package](docs/extensibility/package-hub/package-hub.md#build-a-package).
 
 ## Pipelines
 
@@ -29,25 +37,25 @@ This allows you to share the project in a read-only and version controlled manne
 
    This helps you have:
 
-   - A shorter recovery time and retry all failed tasks in the Spark engine
+   - Shorter recover/retry times for failed Spark tasks (in Spark pipelines)
    - More control during orchestration
    - Shorter recovery times for failed jobs
 
-1. Use [Job Sampling](#interims) mode for debugging purposes, and for smaller pipelines.
-
-   This incurs a large computational penalty in Spark to collect and show interims.
+1. Use [Job Sampling mode](docs/Spark/execution/interactive-execution.md#interims) only for debugging purposes, and for smaller pipelines, as sampling incurs a large computational penalty in Spark to collect and show interims.
 
 ## Configurations
 
-1. You can configure Prophecy gems to use [configuration](/docs/Spark/configuration.md) variables such as path or a subset of path variables in Source and Target gems.
-1. Dynamic Runtime Configuration
-   Typically, configuration variables are static. However, if you want to assign a dynamic value to a configuration variable at runtime, you may overwrite the `Config` variable using a Script component.
+You can configure Prophecy gems to use [configuration](/docs/Spark/configuration.md) variables such as path or a subset of path variables in Source and Target gems.
 
-   Run the following syntax at a low phase value (-1) before the rest of your pipeline:
+Typically, configuration variables are static. However, if you want to assign a dynamic value to a configuration variable at runtime, you may overwrite the `Config` variable using a Script component.
 
-   ```shell
-   Config.var_name =new_value
-   ```
+Run the following syntax at a low phase value (-1) before the rest of your pipeline:
+
+```shell
+Config.var_name =new_value
+```
+
+This lets you achieve **dynamic runtime configuration.**
 
 ## Datasets
 
@@ -57,9 +65,11 @@ Don’t duplicate your dataset in the a pipeline. Your dataset contains a unique
 
 To optimize your pipeline:
 
-1. Use the [Reformat gem](docs/Spark/gems/transform/reformat.md) instead of the [SchemaTransform gem](docs/Spark/gems/transform/schema-transform.md).
+1. For most cases, use the [Reformat gem](docs/Spark/gems/transform/reformat.md) instead of the [SchemaTransform gem](docs/Spark/gems/transform/schema-transform.md).
 
-   The SchemaTransform gem uses the Spark `withColumn()` function, which is very expensive to run multiple times compared to the Reformat gem, which uses the Spark `select()` function.
+   Reformat calls the Spark `select()` function once, which is not very computationally expensive. The SchemaTransform gem uses the Spark `withColumn()` function, which is applied to each column one-by-one (more computationally intensive).
+
+   When to use SchemaTransform? Consider SchemaTransform if you are creating a small number of columns that will be specifically used for downstream calculations in subsequent gem(s).
 
 1. If your data isn't large, try to cache the data in the gem from where you connect multiple branches to the output.
 
@@ -69,10 +79,10 @@ To optimize your pipeline:
 
    Control the broadcast threshold based on your cluster size by setting the `spark.sql.autoBroadcastJoinThreshold` property to a value greater than 10MB. To learn more, see [Performance Tuning](https://spark.apache.org/docs/latest/sql-performance-tuning.html).
 
-1. Remove **Order By** and deduplicate components wherever you don't need it, and choose the `Row to keep` carefully in the [Deduplicate gem](docs/Spark/gems/transform/deduplicate.md).
+1. Remove OrderBy and [Deduplicate](docs/Spark/gems/transform/deduplicate.md) gems wherever you don't need them.
 
-   The `First` or `Last` values for the `Row to keep` parameter is more expensive compared to `Any`.
+If you need the Deduplicate gem, choose the `Row to keep` carefully; the `first` and `last` options are more expensive than `any`.
 
 1. Set an appropriate value for the `spark.sql.shuffle.partitions` property.
 
-   Use the [Repartition gem](docs/Spark/gems/join-split/repartition.md) to repartition your Source gem to an appropriate value.
+   For skewed, overparititioned, or underpartitioned Source datasets, consider using the [Repartition](docs/Spark/gems/join-split/repartition.md) gem to repartition your dataset to an appropriate number of partitions.
