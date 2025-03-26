@@ -1,6 +1,7 @@
 ---
 title: Tableau
 id: tableau
+slug: /analysts/sql/tableau
 description: Send data to automatically update your Tableau dashboards
 tags:
   - gems

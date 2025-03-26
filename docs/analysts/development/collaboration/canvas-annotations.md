@@ -1,6 +1,7 @@
 ---
 title: Canvas annotations
 id: canvas-annotations
+slug: /analysts/canvas-annotations
 description: Leave comments on your project canvas to annotate pipelines
 tags:
   - pipeline

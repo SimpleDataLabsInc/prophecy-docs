@@ -1,6 +1,7 @@
 ---
 title: Variant schema
 id: variant-schema
+slug: /analysts/sql/variant-scema
 description: About variant schema
 tags:
   - concept

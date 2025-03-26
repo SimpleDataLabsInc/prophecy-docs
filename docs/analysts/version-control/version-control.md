@@ -1,6 +1,7 @@
 ---
 title: Versioning
 id: version-control
+slug: /analysts/versioning
 description: Save and view project history
 tags: []
 ---

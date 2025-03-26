@@ -1,6 +1,7 @@
 ---
 title: Subgraph
 id: subgraph
+slug: /analysts/sql/subgraph
 description: Group your gems for reuse
 tags:
   - subgraph

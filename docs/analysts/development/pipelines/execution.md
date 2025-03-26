@@ -1,6 +1,7 @@
 ---
 title: Pipeline execution
 id: execution
+slug: /analysts/pipeline-execution
 description: Run a set of defined operations in a pipeline
 tags: []
 ---

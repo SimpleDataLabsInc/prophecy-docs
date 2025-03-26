@@ -1,6 +1,7 @@
 ---
 title: FuzzyMatch
 id: fuzzy-match
+slug: /analysts/sql/fuzzy-match
 description: Match records that are not exactly identical
 tags:
   - gems

@@ -1,6 +1,7 @@
 ---
 title: DataCleansing
 id: data-cleansing
+slug: /analysts/sql/data-cleansing
 description: Standardize data formats
 tags:
   - gems

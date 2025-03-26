@@ -1,6 +1,7 @@
 ---
 title: Gems
 id: gems
+slug: /gems
 description: Transform your data with Prophecy gems
 tags:
   - gems

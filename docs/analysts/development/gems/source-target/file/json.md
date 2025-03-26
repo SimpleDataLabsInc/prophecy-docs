@@ -1,6 +1,7 @@
 ---
 title: JSON
 id: json
+slug: /analysts/sql/json
 description: Read and write JSON files
 tags: []
 ---

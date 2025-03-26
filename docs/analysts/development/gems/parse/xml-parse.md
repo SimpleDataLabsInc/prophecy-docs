@@ -1,6 +1,7 @@
 ---
 title: XMLParser
 id: xml-parse
+slug: /analysts/sql/xml-parse
 description: Parse XML inside a table
 tags:
   - gems

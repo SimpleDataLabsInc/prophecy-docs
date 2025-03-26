@@ -1,6 +1,7 @@
 ---
 title: Table
 id: table
+slug: /analysts/sql/table
 description: Tables in the SQL warehouse
 tags: []
 ---

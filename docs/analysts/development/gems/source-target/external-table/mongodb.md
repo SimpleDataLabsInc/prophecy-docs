@@ -1,6 +1,7 @@
 ---
 title: MongoDB
 id: mongodb
+slug: /analysts/sql/mongodb
 description: Read and write from MongoDB
 tags: []
 ---

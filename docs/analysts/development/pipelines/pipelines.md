@@ -1,6 +1,7 @@
 ---
 title: Pipelines
 id: pipelines
+slug: /analysts/pipelines
 description: Use pipelines in SQL projects
 tags:
   - SQL

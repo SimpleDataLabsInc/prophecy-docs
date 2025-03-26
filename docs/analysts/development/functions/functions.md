@@ -1,6 +1,7 @@
 ---
 title: Functions
 id: functions
+slug: /analysts/functions
 description: Use dbt macros in your pipelines
 tags:
   - gems

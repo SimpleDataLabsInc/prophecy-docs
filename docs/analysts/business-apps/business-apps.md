@@ -1,6 +1,7 @@
 ---
 title: Apps
 id: business-apps
+slug: /analysts/business-applications
 description: Package complex pipelines into easy-to-use applications
 tags: []
 ---

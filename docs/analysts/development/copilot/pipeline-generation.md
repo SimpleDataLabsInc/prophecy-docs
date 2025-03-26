@@ -1,6 +1,7 @@
 ---
 title: Pipeline generation
 id: pipeline-generation
+slug: /analysts/pipeline-generation
 draft: true
 description: Automatically generate pipelines from business specifications
 tags:

@@ -1,6 +1,7 @@
 ---
 title: Data tests for SQL
 id: data-tests
+slug: /analysts/data-tests
 description: Data tests check the validity of your SQL
 tags:
   - concept

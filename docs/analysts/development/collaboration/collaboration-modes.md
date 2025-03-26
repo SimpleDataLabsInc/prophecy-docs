@@ -1,6 +1,7 @@
 ---
 title: Real-time collaboration
 id: collaboration-modes
+slug: /analysts/collaboration-modes
 description: Work together on projects simultaneously
 tags: []
 ---

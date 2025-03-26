@@ -1,6 +1,7 @@
 ---
 title: Window
 id: window
+slug: /analysts/sql/window
 description: Create moving aggregations and transformation
 tags:
   - gems

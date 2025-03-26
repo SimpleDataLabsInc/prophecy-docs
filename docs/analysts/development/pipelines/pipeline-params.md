@@ -1,6 +1,7 @@
 ---
 title: Pipeline parameters
 id: pipeline-params
+slug: /analysts/pipeline-parameters
 description: Add variables to your pipelines
 tags:
   - SQL

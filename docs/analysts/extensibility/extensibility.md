@@ -1,6 +1,7 @@
 ---
 title: Extensibility
 id: extensibility
+slug: /analysts/extensibility
 description: Add custom functionality to your projects
 tags: []
 ---

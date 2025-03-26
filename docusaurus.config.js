@@ -231,6 +231,18 @@ const config = {
             from: "/copilot/enable-data-copilot",
           },
           {
+            to: "/data-copilot",
+            from: "/copilot",
+          },
+          {
+            to: "/data-copilot-ai-capabilities",
+            from: "/copilot/copilot-ai-capabilities",
+          },
+          {
+            to: "//data-copilot-data-privacy",
+            from: "/copilot/copilot-data-privacy",
+          },
+          {
             to: "/administration/authentication/active_directory",
             from: "/architecture/authentication/active_directory",
           },
@@ -351,8 +363,20 @@ const config = {
             from: "/concepts/dataset",
           },
           {
-            to: "/getting-started/concepts/gems",
-            from: "/concepts/project/gems/",
+            to: "/gems",
+            from: "/concepts/project/gems",
+          },
+          {
+            to: "/pipelines",
+            from: "/concepts/project/pipeline",
+          },
+          {
+            to: "/projects",
+            from: "/concepts/project",
+          },
+          {
+            to: "/fabrics",
+            from: "/concepts/fabrics",
           },
           {
             to: "/Spark/dataset",
@@ -539,15 +563,15 @@ const config = {
             from: "/settings/active-users-api/",
           },
           {
-            to: "/getting-started/tutorials/spark-with-databricks",
+            to: "/engineers/project-lifecycle",
             from: "/getting-started/spark-with-databricks",
           },
           {
-            to: "/getting-started/tutorials/sql-with-snowflake",
+            to: "/engineers/data-modeling",
             from: "/getting-started/sql-with-snowflake",
           },
           {
-            to: "/getting-started/tutorials/sql-with-snowflake",
+            to: "/engineers/data-modeling",
             from: "/getting-started/sql-with-databricks",
           },
           {

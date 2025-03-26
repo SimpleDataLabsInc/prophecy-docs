@@ -1,6 +1,7 @@
 ---
 title: Data Copilot AI capabilities
 id: copilot-ai-capabilities
+slug: /data-copilot-ai-capabilities
 description: The AI assistant capabilities for data pipelines and models
 sidebar_label: AI capabilities
 tags:

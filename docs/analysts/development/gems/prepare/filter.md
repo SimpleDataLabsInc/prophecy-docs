@@ -1,6 +1,7 @@
 ---
 title: Filter
 id: filter
+slug: /analysts/sql/filter
 description: Filter the data
 tags:
   - gems

@@ -1,6 +1,7 @@
 ---
 title: Analyst Quick Start
 id: sql-onboarding
+slug: /analysts/quick-start
 description: Follow along in the product to make your first SQL model
 tags:
   - SQL

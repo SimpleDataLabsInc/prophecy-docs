@@ -1,6 +1,7 @@
 ---
 title: Aggregate
 id: aggregate
+slug: /analysts/sql/aggregate
 description: Group and pivot your data
 tags:
   - gems

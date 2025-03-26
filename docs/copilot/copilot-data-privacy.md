@@ -1,6 +1,7 @@
 ---
 title: Data privacy with Data Copilot
 id: copilot-data-privacy
+slug: /data-copilot-data-privacy
 sidebar_label: Data privacy
 description: The AI assistant data privacy for data pipelines and models
 tags:

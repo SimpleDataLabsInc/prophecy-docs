@@ -1,6 +1,7 @@
 ---
 title: Scheduling
 id: scheduling
+slug: /analysts/scheduling
 description: Schedule pipeline runs
 tags: []
 ---

@@ -1,6 +1,7 @@
 ---
 title: Reformat
 id: reformat
+slug: /analysts/sql/reformat
 description: Use expressions to reformat column names and values
 tags:
   - gems

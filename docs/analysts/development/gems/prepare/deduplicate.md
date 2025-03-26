@@ -1,6 +1,7 @@
 ---
 title: Deduplicate
 id: deduplicate
+slug: /analysts/sql/deduplicate
 description: Remove duplicates from your data
 tags:
   - gems

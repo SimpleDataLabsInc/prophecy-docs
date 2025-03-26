@@ -2,6 +2,7 @@
 title: Project publication
 sidebar_label: Publication
 id: publication
+slug: /analysts/project-publication
 description: Publish your projects to create new deployments
 tags: []
 ---

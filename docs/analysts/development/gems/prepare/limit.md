@@ -1,6 +1,7 @@
 ---
 title: Limit
 id: limit
+slug: /analysts/sql/limit
 description: Limit the number of columns processed
 tags:
   - gems

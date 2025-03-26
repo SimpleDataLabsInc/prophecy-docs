@@ -1,6 +1,7 @@
 ---
 title: Pipelines
 id: pipelines
+slug: /pipelines
 description: Build pipelines in projects to execute data ingestion, transformation, and egress
 tags:
   - pipeline

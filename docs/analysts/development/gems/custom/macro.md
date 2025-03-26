@@ -1,6 +1,7 @@
 ---
 title: Macro
 id: macro
+slug: /analysts/sql/macro
 description: Use dbt macros in your pipelines
 tags:
   - gems

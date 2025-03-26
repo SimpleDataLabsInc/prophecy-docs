@@ -1,6 +1,7 @@
 ---
 title: Upload files
 id: upload-files
+slug: /analysts/sql/upload-file
 description: Upload files to the visual canvas
 tags:
   - how-to

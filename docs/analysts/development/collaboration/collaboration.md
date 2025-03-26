@@ -1,6 +1,7 @@
 ---
 title: Collaboration
 id: collaboration
+slug: /analysts/collaboration
 description: Work together on projects simultaneously
 tags: []
 ---

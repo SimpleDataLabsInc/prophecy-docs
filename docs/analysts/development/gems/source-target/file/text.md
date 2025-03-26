@@ -1,6 +1,7 @@
 ---
 title: Text
 id: text
+slug: /analysts/sql/text
 draft: true
 description: Read and write text files
 tags: []

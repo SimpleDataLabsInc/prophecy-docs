@@ -1,6 +1,7 @@
 ---
 title: Use model and column tests
 id: use-model-tests
+slug: /analysts/model-column-tests
 description: Reusable SQL query tests
 tags:
   - how-to

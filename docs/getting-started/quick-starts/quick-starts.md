@@ -1,6 +1,7 @@
 ---
 title: Quick starts
 id: quick-starts
+slug: /quick-start
 description: Explore the visual canvas
 tags: []
 ---

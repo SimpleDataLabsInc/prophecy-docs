@@ -1,6 +1,7 @@
 ---
 title: Snowflake
 id: snowflake
+slug: /analysts/sql/snowflake
 description: Read and write from Snowflake
 tags: []
 ---

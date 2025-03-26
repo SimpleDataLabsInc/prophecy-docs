@@ -1,6 +1,7 @@
 ---
 title: MSSQL
 id: mssql
+slug: /analysts/sql/mssql
 description: Read and write from MSSQL database
 tags: []
 ---

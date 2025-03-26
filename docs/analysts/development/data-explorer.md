@@ -1,6 +1,7 @@
 ---
 title: Data exploration
 id: data-explorer
+slug: /analysts/data-explorer
 description: Data Explorer for SQL
 tags:
   - execution

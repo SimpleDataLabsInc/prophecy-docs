@@ -1,6 +1,7 @@
 ---
 title: SQL statement
 id: sql-statement
+slug: /analysts/sql/sql-statement
 description: Use a custom SQL statement
 tags:
   - gems

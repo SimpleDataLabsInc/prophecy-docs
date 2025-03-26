@@ -1,6 +1,7 @@
 ---
 title: Connections
 id: connections
+slug: /analysts/connections
 sidebar_label: Connections
 description: Utilize external data providers with connections
 tags: []
