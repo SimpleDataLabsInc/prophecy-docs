@@ -16,3 +16,5 @@ To create a connection with Tableau, enter the following parameters:
 | Tableau Token Name                                                        | Name of your Tableau personal access token                       |
 | Tableau Token ([Secret required](docs/administration/secrets/secrets.md)) | Your Tableau personal access token                               |
 | Tableau Site Name                                                         | Name of the Tableau site you're connecting to                    |
+
+<!-- You can leverage your Tableau connection with the [TableauWrite](docs/analysts/development/gems/report/tableau.md) gem. -->

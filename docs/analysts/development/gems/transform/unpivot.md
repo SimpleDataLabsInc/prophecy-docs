@@ -2,6 +2,7 @@
 title: Unpivot
 id: unpivot
 description: Convert your table from wide to long format
+draft: true
 tags:
   - gems
   - analyst

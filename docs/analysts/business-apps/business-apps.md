@@ -19,6 +19,7 @@ Business apps resemble forms that are easy to understand and fill out. They offe
 - Assign values to [pipeline parameters](/analysts/development/pipelines/pipeline-params).
 - See live data previews.
 - Download data outputs.
+- Create reusable app configurations.
 - Schedule app execution.
 
 ## Directory

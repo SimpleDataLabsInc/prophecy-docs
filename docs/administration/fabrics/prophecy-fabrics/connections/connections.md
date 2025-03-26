@@ -28,11 +28,9 @@ If you are using a Prophecy fabric, you can add the following connections. You w
 | Databricks volumes                   | File store           |
 | Snowflake stage                      | File store           |
 | [Amazon S3](./s3)                    | File store           |
-| Azure blob storage                   | File store           |
 | [SFTP](./sftp)                       | File store           |
 | [Microsoft Sharepoint](./sharepoint) | File store           |
 | [Smartsheet](./smartsheet)           | Web application      |
 | [MSSQL](./mssql)                     | Database             |
 | [MongoDB](./mongodb)                 | Database             |
 | [Tableau](./tableau)                 | BI tool              |
-| Power BI                             | BI tool              |

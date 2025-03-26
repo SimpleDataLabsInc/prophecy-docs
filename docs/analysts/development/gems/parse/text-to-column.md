@@ -2,6 +2,7 @@
 title: TextToColumn
 id: text-to-column
 description: Convert text into a column in your table
+draft: true
 tags:
   - gems
   - analyst

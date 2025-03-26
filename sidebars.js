@@ -291,8 +291,9 @@ const sidebars = {
       label: "Apps",
       link: { type: "doc", id: "analysts/business-apps/business-apps" },
       items: [
-        "analysts/business-apps/app-creation",
         "analysts/business-apps/app-components",
+        "analysts/business-apps/app-usage",
+        "analysts/business-apps/app-creation",
       ],
     },
 

@@ -2,6 +2,7 @@
 title: XMLParser
 id: xml-parse
 description: Parse XML inside a table
+draft: true
 tags:
   - gems
   - analyst
