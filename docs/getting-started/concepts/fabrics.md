@@ -1,7 +1,7 @@
 ---
 title: Fabrics
 id: Fabric
-slug: /farbics
+slug: /fabrics
 description: Run pipelines in execution environments
 tags:
   - concepts

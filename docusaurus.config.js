@@ -239,7 +239,7 @@ const config = {
             from: "/copilot/copilot-ai-capabilities",
           },
           {
-            to: "//data-copilot-data-privacy",
+            to: "/data-copilot-data-privacy",
             from: "/copilot/copilot-data-privacy",
           },
           {
@@ -320,7 +320,7 @@ const config = {
           },
           {
             to: "/self-hosted-helm-installation",
-            from: "/administration/self-hosted/installation-helm/e",
+            from: "/administration/self-hosted/installation-helm/",
           },
           {
             to: "/administration/self-hosted/installation-helm/",
@@ -507,11 +507,15 @@ const config = {
             from: "/Spark/configuration/conditional-execution",
           },
           {
-            to: "/execution-metrics",
+            to: "/engineers/configurations",
+            from: "/Spark/configuration",
+          },
+          {
+            to: "/engineers/execution-metrics",
             from: "/Spark/execution/execution-metrics",
           },
           {
-            to: "/spark/execution",
+            to: "/engineers/execution",
             from: "/Spark/execution/interactive-execution",
           },
           {
@@ -611,7 +615,7 @@ const config = {
             from: "/administration/authentication/security-settings",
           },
           {
-            to: "/spark/prophecy-managed-fabric",
+            to: "/engineers/prophecy-managed-fabric",
             from: "/administration/fabrics/Spark-fabrics/prophecy-managed-databricks",
           },
         ],

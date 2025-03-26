@@ -1,7 +1,7 @@
 ---
 title: Prophecy-managed
 id: prophecy-managed-databricks
-slug: /spark/prophecy-managed-fabric
+slug: /engineers/prophecy-managed-fabric
 description: Use a Prophecy-managed free trial fabric
 sidebar_position: 2
 tags:
