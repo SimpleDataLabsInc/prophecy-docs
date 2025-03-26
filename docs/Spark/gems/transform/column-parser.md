@@ -47,7 +47,7 @@ The schema of the ColumnParser gem output includes the parsed content as a **str
 ## Example code
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+To see the generated source code of your project, [switch to the Code view](https://docs.prophecy.io/engineers/project-lifecycle/#review-the-code) in the project header.
 :::
 
 This example shows the code to parse XML.

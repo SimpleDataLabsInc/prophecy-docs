@@ -320,10 +320,6 @@ const config = {
           },
           {
             to: "/self-hosted-helm-installation",
-            from: "/administration/self-hosted/installation-helm/",
-          },
-          {
-            to: "/administration/self-hosted/installation-helm/",
             from: "/architecture/deployment/installation-guide",
           },
           {
@@ -367,16 +363,12 @@ const config = {
             from: "/tutorials/videos/",
           },
           {
-            to: "/getting-started/concepts/gems",
+            to: "/gems",
             from: "/concepts/gems/",
           },
           {
             to: "/Spark/dataset",
             from: "/concepts/dataset",
-          },
-          {
-            to: "/gems",
-            from: "/concepts/project/gems",
           },
           {
             to: "/pipelines",
@@ -475,7 +467,7 @@ const config = {
             from: "/architecture",
           },
           {
-            to: "/administration/self-hosted/installation-helm/",
+            to: "/self-hosted-helm-installation",
             from: "/architecture/self-hosted/install-prophecy/installation-helm",
           },
           {
@@ -528,10 +520,6 @@ const config = {
           },
           {
             to: "/spark/dependencies",
-            from: "/extensibility/dependencies/spark-dependencies",
-          },
-          {
-            to: "/extensibility/dependencies/spark-dependencies",
             from: "/Spark/extensibility/dependencies",
           },
           {
@@ -567,7 +555,7 @@ const config = {
             from: "/package-hub/package-builder/",
           },
           {
-            to: "/analysts/sql/variant-scema",
+            to: "/analysts/variant-schema",
             from: "/SQL/development/visual-editor/variant-schema",
           },
           {

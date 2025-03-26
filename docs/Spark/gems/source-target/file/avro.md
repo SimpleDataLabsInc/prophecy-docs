@@ -73,7 +73,7 @@ For example, if you set an evolved schema to contain one additional column with 
 ### Generated Code {#source-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+To see the generated source code of your project, [switch to the Code view](https://docs.prophecy.io/engineers/project-lifecycle/#review-the-code) in the project header.
 :::
 
 ````mdx-code-block
@@ -153,7 +153,7 @@ The Target gem writes data to Avro files and allows you to optionally specify th
 ### Generated Code {#target-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+To see the generated source code of your project, [switch to the Code view](https://docs.prophecy.io/engineers/project-lifecycle/#review-the-code) in the project header.
 :::
 
 ````mdx-code-block

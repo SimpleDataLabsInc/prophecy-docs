@@ -41,7 +41,7 @@ The canvas includes:
 
 - **Canvas:** A workspace where you can add and connect various gems to build your pipeline. It provides a drag-and-drop interface for designing your data flow.
 - **Gem Drawer:** A toolbox that contains all the available gems you can use in your pipeline organized by gem category.
-- **Run Button:** A button to trigger interactive pipeline execution. This allows you to test and run the pipeline in real-time, making it easier to troubleshoot and verify the pipeline's performance before deployment. To learn more, visit [Execution](/analysts/development/pipelines/execution/#interactive-execution).
+- **Run Button:** A button to trigger interactive pipeline execution. This allows you to test and run the pipeline in real-time, making it easier to troubleshoot and verify the pipeline's performance before deployment. To learn more, visit [Execution](https://docs.prophecy.io/analysts/pipeline-execution/#interactive-execution).
 - **Copilot:** An AI-powered assistant that helps build your pipeline. Copilot can generate gems for you or fix diagnostic errors, making it easier to create complex workflows.
 
 ### Header
