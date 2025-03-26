@@ -1,5 +1,5 @@
 ---
-title: Git Best Practices
+title: Best Practices
 id: git-best-practices
 description: Learn about what we recommend to do if you are working with Git.
 tags:

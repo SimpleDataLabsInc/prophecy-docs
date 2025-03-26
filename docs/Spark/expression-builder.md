@@ -71,9 +71,3 @@ To run your code:
 :::note
 This data is same as what you see in [interims](./execution/executions_on_databricks_clusters#interims) view.
 :::
-
-## Best Practice
-
-When possible, use the `set()` operation, and avoid `for` loops. `set()` operations typically have a better average computational complexity than a `list`, which makes them more efficient.
-
-This is especially helpful when you operate on the _columns_ of wide tables, as this scenario can slow down the Prophecy UI.
