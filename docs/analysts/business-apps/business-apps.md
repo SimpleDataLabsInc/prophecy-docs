@@ -20,6 +20,7 @@ Business apps resemble forms that are easy to understand and fill out. They offe
 - Assign values to [pipeline parameters](https://docs.prophecy.io/analysts/pipeline-parameters).
 - See live data previews.
 - Download data outputs.
+- Create reusable app configurations.
 - Schedule app execution.
 
 ## Directory
