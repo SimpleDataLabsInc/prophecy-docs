@@ -1,7 +1,7 @@
 ---
 title: Unpivot
 id: unpivot
-slug: /analysts/sql/unpivot
+slug: /analysts/unpivot
 description: Convert your table from wide to long format
 tags:
   - gems

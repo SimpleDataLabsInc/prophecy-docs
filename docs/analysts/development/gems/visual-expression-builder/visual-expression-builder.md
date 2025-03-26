@@ -1,7 +1,7 @@
 ---
 title: Visual expression builder
 id: visual-expression-builder
-slug: /analysts/sql/visual-expression-builder
+slug: /analysts/visual-expression-builder
 description: About the Visual Expression Builder
 tags:
   - development

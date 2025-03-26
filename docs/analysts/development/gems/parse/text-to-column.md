@@ -1,7 +1,7 @@
 ---
 title: TextToColumn
 id: text-to-column
-slug: /analysts/sql/text-to-column
+slug: /analysts/text-to-column
 description: Convert text into a column in your table
 tags:
   - gems

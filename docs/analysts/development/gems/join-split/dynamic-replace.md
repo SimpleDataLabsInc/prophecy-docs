@@ -1,7 +1,7 @@
 ---
 title: DynamicReplace
 id: dynamic-replace
-slug: /analysts/sql/dynamic-replace
+slug: /analysts/dynamic-replace
 description: Dynamically generate values depending on certain conditions
 tags:
   - gems

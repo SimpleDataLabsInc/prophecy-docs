@@ -1,6 +1,7 @@
 ---
 title: Subgraph
 id: subgraph
+slug: /engineers/subgraph
 description: Working with Subgraphs
 tags: []
 todo: true

@@ -1,7 +1,7 @@
 ---
 title: Databricks
 id: databricks
-slug: /analysts/sql/databricks
+slug: /analysts/databricks
 description: Read and write catalog tables in Databricks
 tags: []
 ---

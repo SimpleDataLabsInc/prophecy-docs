@@ -1,7 +1,7 @@
 ---
 title: Email
 id: email
-slug: /analysts/sql/email
+slug: /analysts/email
 description: Email
 tags:
   - gems

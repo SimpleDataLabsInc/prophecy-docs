@@ -1,7 +1,7 @@
 ---
 title: JSONParser
 id: json-parse
-slug: /analysts/sql/json-parse
+slug: /analysts/json-parse
 description: Parse JSON inside a table
 tags:
   - gems

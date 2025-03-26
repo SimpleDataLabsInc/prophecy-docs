@@ -1,7 +1,7 @@
 ---
 title: Union
 id: union
-slug: /analysts/sql/union
+slug: /analysts/union
 description: Perform addition or subtraction of rows
 tags: []
 ---

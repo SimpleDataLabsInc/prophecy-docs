@@ -1,7 +1,7 @@
 ---
 title: RestAPI
 id: rest-api
-slug: /analysts/sql/rest-api
+slug: /analysts/rest-api
 description: Call APIs from your pipeline.
 tags:
   - gems

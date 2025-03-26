@@ -1,7 +1,7 @@
 ---
 title: Use visual expressions
 id: use-the-expression-builder
-slug: /analysts/sql/use-visual-expression-builder
+slug: /analysts/use-visual-expression-builder
 description: Use the Expression Builder
 tags:
   - how-to

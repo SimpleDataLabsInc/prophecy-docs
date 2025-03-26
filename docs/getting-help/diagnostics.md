@@ -1,6 +1,7 @@
 ---
 title: Fabric diagnostics
 id: fabric-diagnostics
+slug: /fabric-diagnostics
 description: Troubleshoot fabric issues using diagnostics
 tags:
   - diagnostics

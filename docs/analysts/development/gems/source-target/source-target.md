@@ -1,7 +1,7 @@
 ---
 title: Source and Target
 id: source-target
-slug: /analysts/sql/source-target
+slug: /analysts/source-target
 description: Source and target gems
 tags: []
 ---

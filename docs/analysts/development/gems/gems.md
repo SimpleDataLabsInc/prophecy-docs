@@ -1,7 +1,7 @@
 ---
 title: Gems
 id: gems
-slug: /analysts/sql/gems
+slug: /analysts/gems
 description: Power your pipelines with gems
 tags:
   - gems

@@ -275,6 +275,10 @@ const config = {
             from: "/architecture/authentication/admin-settings",
           },
           {
+            to: "/databricks-oauth-authentication",
+            from: "/administration/authentication/databricks_oauth",
+          },
+          {
             to: "/administration/authentication/",
             from: "/architecture/authentication",
           },
@@ -315,8 +319,16 @@ const config = {
             from: "/architecture/deployment/private-saas/generate-api-key",
           },
           {
+            to: "/self-hosted-helm-installation",
+            from: "/administration/self-hosted/installation-helm/e",
+          },
+          {
             to: "/administration/self-hosted/installation-helm/",
             from: "/architecture/deployment/installation-guide",
+          },
+          {
+            to: "/fabric-diagnostics",
+            from: "/administration/Spark-fabrics/fabric-diagnostics",
           },
           {
             to: "/Orchestration/multi-jobs-trigger",
@@ -495,12 +507,24 @@ const config = {
             from: "/Spark/configuration/conditional-execution",
           },
           {
+            to: "/execution-metrics",
+            from: "/Spark/execution/execution-metrics",
+          },
+          {
+            to: "/spark/execution",
+            from: "/Spark/execution/interactive-execution",
+          },
+          {
             to: "/ci-cd/tests",
             from: "/Spark/tests",
           },
           {
             to: "/ci-cd/reliable-ci-cd",
             from: "/Orchestration/reliable-ci-cd",
+          },
+          {
+            to: "/spark/dependencies",
+            from: "/extensibility/dependencies/spark-dependencies",
           },
           {
             to: "/extensibility/dependencies/spark-dependencies",
@@ -511,7 +535,7 @@ const config = {
             from: "/SQL/extensibility/dependencies",
           },
           {
-            to: "/extensibility/gem-builder/sql-gem-builder",
+            to: "/sql/gem-builder",
             from: "/SQL/extensibility/gem-builder/",
           },
           {
@@ -539,7 +563,7 @@ const config = {
             from: "/package-hub/package-builder/",
           },
           {
-            to: "/analysts/development/gems/visual-expression-builder/variant-schema",
+            to: "/analysts/sql/variant-scema",
             from: "/SQL/development/visual-editor/variant-schema",
           },
           {
@@ -579,8 +603,16 @@ const config = {
             from: "/getting-started/gen-ai-chatbot",
           },
           {
+            to: "/engineers/subgraph",
+            from: "/Spark/gems/subgraph",
+          },
+          {
             to: "/administration/fabrics/Spark-fabrics/livy",
             from: "/administration/authentication/security-settings",
+          },
+          {
+            to: "/spark/prophecy-managed-fabric",
+            from: "/administration/fabrics/Spark-fabrics/prophecy-managed-databricks",
           },
         ],
         /*

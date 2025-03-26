@@ -1,7 +1,7 @@
 ---
 title: DynamicSelect
 id: dynamic-select
-slug: /analysts/sql/dynamic-select
+slug: /analysts/dynamic-select
 description: Dynamically filter columns of your dataset based on a set of conditions
 tags:
   - gems

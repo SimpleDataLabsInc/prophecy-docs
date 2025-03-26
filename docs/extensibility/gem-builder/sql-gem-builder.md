@@ -1,6 +1,7 @@
 ---
 title: Gem Builder for SQL
 id: sql-gem-builder
+slug: /sql/gem-builder
 description: Build gems using SQL
 tags:
   - gem builder

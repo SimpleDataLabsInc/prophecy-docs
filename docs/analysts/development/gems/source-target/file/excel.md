@@ -1,7 +1,7 @@
 ---
 title: Excel
 id: excel
-slug: /analysts/sql/excel
+slug: /analysts/excel
 description: Read and write excel files
 tags: []
 ---

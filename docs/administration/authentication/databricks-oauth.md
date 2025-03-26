@@ -1,6 +1,7 @@
 ---
-title: "Databricks OAuth"
-id: databricks_oauth
+title: Databricks OAuth
+id: databricks-oauth
+slug: /databricks-oauth-authentication
 description: Prophecy Databricks OAuth integration
 sidebar_position: 6
 tags:

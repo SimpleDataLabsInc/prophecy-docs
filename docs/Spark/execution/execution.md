@@ -1,6 +1,7 @@
 ---
 title: Execution
 id: execution
+slug: /spark/execution
 description: How Prophecy computes pipelines
 tags:
   - execution

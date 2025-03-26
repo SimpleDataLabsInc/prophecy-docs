@@ -1,6 +1,7 @@
 ---
 title: Getting help with Prophecy
 id: getting-help
+slug: /getting-help
 sidebar_class_name: hidden
 description: Getting help with Prophecy
 tags: []
