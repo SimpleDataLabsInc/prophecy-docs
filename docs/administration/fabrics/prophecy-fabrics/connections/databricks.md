@@ -8,13 +8,20 @@ tags:
   - databricks
 ---
 
-To create a connection with Databricks, enter the following properties:
+To create a connection with Databricks, enter the following parameters:
 
-| Property name         | Description                                                                                                                         |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| Connection Name       | Name to to identify your connection.                                                                                                |
-| JDBC URL              | URL to connect to your SQL warehouse.                                                                                               |
-| Catalog               | Catalog to use for the session after you connect.                                                                                   |
-| Schema                | Schema to use for the session after you connect.                                                                                    |
-| Authentication method | How you want to authenticate your Databricks account. Possible ways are: `OAuth`, `Personal Access Token`, or `Client Credentials`. |
-| Token                 | Token to use to authenticate REST API calls.                                                                                        |
+| Parameter             | Description                                          |
+| --------------------- | ---------------------------------------------------- |
+| Connection Name       | Name to to identify your connection                  |
+| JDBC URL              | URL to connect to your SQL warehouse                 |
+| Catalog               | Default catalog for reading and writing data         |
+| Schema                | Default schema for reading and writing data          |
+| Authentication method | How you want to authenticate your Databricks account |
+
+## Authentication methods
+
+You can configure your Databricks connection with one of three authentication methods:
+
+- **Databricks [OAuth](docs/administration/authentication/databricks-oauth.md).** Prophecy prompts you to sign in with Databricks.
+- **Personal Access Token (PAT).** Use a [secret](docs/administration/secrets/secrets.md) to enter your PAT.
+- **Client Credentials.** Enter your Client ID and Client Secret (secret required) for authentication.

@@ -21,18 +21,18 @@ Connections are stored per [fabric](docs/getting-started/concepts/fabrics.md).
 
 If you are using a Prophecy fabric, you can add the following connections. You will have to be attached to a fabric to utilize its connections.
 
-| Connection                 | Type                 |
-| -------------------------- | -------------------- |
-| [Databricks](./databricks) | Cloud data warehouse |
-| [Snowflake](./snowflake)   | Cloud data warehouse |
-| Databricks volumes         | File store           |
-| Snowflake stage            | File store           |
-| Amazon S3                  | File store           |
-| Azure blob storage         | File store           |
-| SFTP                       | File store           |
-| Microsoft Sharepoint       | File store           |
-| Smartsheet                 | Web application      |
-| [SQL server](./mssql)      | Database             |
-| [MongoDB](./mongodb)       | Database             |
-| Tableau                    | BI tool              |
-| Power BI                   | BI tool              |
+| Connection                           | Type                 |
+| ------------------------------------ | -------------------- |
+| [Databricks](./databricks)           | Cloud data warehouse |
+| [Snowflake](./snowflake)             | Cloud data warehouse |
+| Databricks volumes                   | File store           |
+| Snowflake stage                      | File store           |
+| [Amazon S3](./s3)                    | File store           |
+| Azure blob storage                   | File store           |
+| [SFTP](./sftp)                       | File store           |
+| [Microsoft Sharepoint](./sharepoint) | File store           |
+| [Smartsheet](./smartsheet)           | Web application      |
+| [MSSQL](./mssql)                     | Database             |
+| [MongoDB](./mongodb)                 | Database             |
+| [Tableau](./tableau)                 | BI tool              |
+| Power BI                             | BI tool              |
