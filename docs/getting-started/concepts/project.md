@@ -13,17 +13,17 @@ import TabItem from '@theme/TabItem';
 
 A **project** in Prophecy is the core unit for developing, organizing, and deploying data pipelines to production. It includes all the components required to build and execute data processes. Continue reading to learn about:
 
-- Different project types for various use cases
-- Key components that support pipeline development within a project
-- Versioning and publishing of projects
-- Sharing projects across teams
-- Navigating and editing projects
+- [Different project types](#project-types) for various use cases
+- [Key components](#components) that support pipeline development within a project
+- [Versioning](#versioning) and publishing of projects
+- [Sharing projects across teams](#teams)
+- [Navigating and editing projects](#project-editor)
 
 ## Project types
 
-Project components depend on your project type. A project must be written in Python, Scala, or SQL. This language choice determines how your visual pipelines will be compiled into code. You initial choice of project type fundamentally determines your project's capabilities and workflow structure, so _it's important to choose correctly at the start since it cannot be changed later_.
+Project components depend on your project type. You must write a project in Python, Scala, or SQL. This language choice determines how your visual pipelines will be compiled into code. Your initial choice of project type determines your project's capabilities and workflow structure, so _it's important to choose correctly at the start since it cannot be changed later_.
 
-Prophecy supports both **SQL** and **Spark** projects, and the choice depends on your data needs. Many organizations use both types of projects, leveraging SQL for **data analytics** and Spark for **data engineering**. Prophecy provides a platform where this can happen all in one place.
+Prophecy supports both **SQL** and **Spark** projects, and the choice depends on your data needs. Many organizations use both types of projects, leveraging SQL for **data analytics** and Spark for **data engineering**, but Prophecy provides a platform where this can happen all in one place.
 
 <Tabs>
 
@@ -42,7 +42,7 @@ Spark excels in executing complex pipelines and processing semi-structured data.
 
 ## Components
 
-Project components vary based on project type. While SQL and Spark projects share common elements like pipelines and gems, their functionality differs significantly. Each is documented separately: [Pipeline development for Analysts](docs/analysts/development/development.md) covers SQL projects, while [Pipeline development for Engineers](docs/Spark/Spark.md) focuses on Spark projects.
+Project components vary based on project type. While SQL and Spark projects share common elements like pipelines and gems, their functionality differs significantly. Each is documented separately: [Pipeline development for Analysts](docs/analysts/development/development.md) focuses on SQL projects, while [Pipeline development for Engineers](docs/Spark/Spark.md) focuses on Spark projects.
 
 <Tabs>
 
@@ -99,7 +99,7 @@ All projects are automatically compiled into code and hosted on Git for powerful
 
 ## Team
 
-Projects are always assigned to a certain [team](docs/administration/teams-users/teamuser.md). This means that the project will be shared among all users in that team. If you want to share projects and project components with other teams, you can do so via the [Package Hub](docs/extensibility/package-hub/package-hub.md).
+Projects are always assigned to a certain [team](docs/administration/teams-users/teamuser.md). This means that the project will be shared among all users in that team. If you want to share projects and project components with other teams, use the [Package Hub](docs/extensibility/package-hub/package-hub.md).
 
 :::note
 When you begin using Prophecy, you are added to your own one-person team. Your team administrator will typically create other team groupings.
@@ -109,15 +109,17 @@ When you begin using Prophecy, you are added to your own one-person team. Your t
 
 The **Metadata** page in Prophecy provides a searchable directory of projects and project components including pipelines, models, and jobs. All projects that are shared with your teams are visible in the **Projects** tab of the Metadata page. You can click into each project to access more granular metadata about that project.
 
-You can view and edit the following metadata for you projects:
+You can view and edit the following metadata for your projects:
 
-- **About**: An overview of your project and space for an in-depth description of the project.
-- **Content**: A list of entities within the project like pipelines and jobs depending on your project type.
-- **Dependencies**: The dependencies that exist in the project, including packages and Prophecy libraries.
-- **Version control**: Either the Git workflow of the project, or the version history of the project, depending on your project type.
-- **Deployments**: A list of project versions that you have released and/or deployed (published).
-- **Access**: The teams that can view your project via the Package Hub.
-- **Settings**: Different configuration options for building and deploying your project.
+| Metadata            | Description                                                                                                    |
+| ------------------- | -------------------------------------------------------------------------------------------------------------- |
+| **About**           | An overview of your project and space for an in-depth description of the project.                              |
+| **Content**         | A list of entities within the project like pipelines and jobs depending on your project type.                  |
+| **Dependencies**    | The dependencies that exist in the project, including packages and Prophecy libraries.                         |
+| **Version control** | Either the Git workflow of the project, or the version history of the project, depending on your project type. |
+| **Deployments**     | A list of project versions that you have released and/or deployed (published).                                 |
+| **Access**          | The teams that can view your project via the Package Hub.                                                      |
+| **Settings**        | Different configuration options for building and deploying your project.                                       |
 
 ## Project editor
 

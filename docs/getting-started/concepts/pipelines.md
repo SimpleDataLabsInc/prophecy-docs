@@ -22,13 +22,15 @@ You define how data comes in and out of your pipeline during pipeline developmen
 
 Once data is ingested, it often needs to be cleaned, enriched, and structured to make it useful. Data transformation involves modifying data formats, aggregating values, filtering records, and applying business logic. Some common transformations include:
 
-- **Normalization & Standardization:** Ensuring consistency across datasets.
-- **Aggregation:** Summarizing large datasets for analysis.
-- **Filtering & Enrichment:** Removing irrelevant data and enhancing it with additional attributes.
+| Transformations                     | Description                                                         |
+| ----------------------------------- | ------------------------------------------------------------------- |
+| **Normalization & Standardization** | Ensures consistency across datasets.                                |
+| **Aggregation**                     | Summarizes large datasets for analysis.                             |
+| **Filtering & Enrichment**          | Removes irrelevant data and enhances it with additional attributes. |
 
 ## Pipeline deployment
 
-A key goal of pipeline development is making the pipeline ready for deployment in production. Once a pipeline is developed, tested, and validated, it can be deployed to an execution environment where it will run automatically according to the defined schedule or trigger. The deployment process ensures that the pipeline is set up to handle real-time (Spark only) or batch processing with minimal manual intervention.
+A key goal of pipeline development is to make the pipeline ready for deployment in production. Once a pipeline is developed, tested, and validated, it can be deployed to an execution environment where it will run automatically according to the defined schedule or trigger. The deployment process ensures that the pipeline is set up to handle real-time (Spark only) or batch processing with minimal manual intervention.
 
 During deployment, you configure the environment, such as selecting the appropriate compute resources, scheduling execution times, and ensuring the pipeline is connected to the necessary data sources and destinations. You also choose which version of the pipeline will be deployed.
 
