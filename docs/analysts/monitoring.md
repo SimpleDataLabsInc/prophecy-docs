@@ -1,6 +1,6 @@
 ---
 title: Monitoring
-id: observability
+id: monitoring
 slug: /analysts/monitoring
 description: View deployed projects, scheduled pipelines, run history, and cost and performance
 tags: []

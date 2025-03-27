@@ -491,11 +491,11 @@ const config = {
             from: "/administration/authentication/saml-okta",
           },
           {
-            to: "/extensibility/dependencies/prophecy-libraries",
+            to: "/engineers/prophecy-libraries",
             from: "/concepts/fabrics/prophecy-libraries",
           },
           {
-            to: "/Spark/execution/conditional-execution",
+            to: "/engineers/conditional-execution",
             from: "/Spark/configuration/conditional-execution",
           },
           {
@@ -519,19 +519,15 @@ const config = {
             from: "/Orchestration/reliable-ci-cd",
           },
           {
-            to: "/spark/dependencies",
-            from: "/Spark/extensibility/dependencies",
-          },
-          {
-            to: "/extensibility/dependencies/sql-dependencies",
+            to: "/analysts/dependencies",
             from: "/SQL/extensibility/dependencies",
           },
           {
-            to: "/sql/gem-builder",
+            to: "/analysts/gem-builder",
             from: "/SQL/extensibility/gem-builder/",
           },
           {
-            to: "/extensibility/gem-builder/spark-gem-builder",
+            to: "/engineers/gem-builder",
             from: "/Spark/extensibility/gem-builder/",
           },
           {
@@ -567,11 +563,11 @@ const config = {
             from: "/SQL/development/code-editor",
           },
           {
-            to: "/extensibility/gem-builder/spark-gem-builder",
+            to: "/engineers/gem-builder",
             from: "/package-hub/package-builder/Gem-builder",
           },
           {
-            to: "/extensibility/gem-builder/spark-gem-builder",
+            to: "/engineers/gem-builder",
             from: "/extensibility/package-hub/Gem-builder",
           },
           {
@@ -629,6 +625,22 @@ const config = {
           {
             to: "/engineers/data-sampling",
             from: "/low-code-spark/execution/executions_on_databricks_clusters",
+          },
+          {
+            to: "/analysts/gem-builder",
+            from: "/extensibility/gem-builder/sql-gem-builder",
+          },
+          {
+            to: "/engineers/gem-builder",
+            from: "/extensibility/gem-builder/spark-gem-builder",
+          },
+          {
+            to: "/engineers/dependencies",
+            from: "/extensibility/dependencies/spark-dependencies",
+          },
+          {
+            to: "/engineers/prophecy-libraries",
+            from: "/extensibility/dependencies/prophecy-libraries",
           },
         ],
         /*

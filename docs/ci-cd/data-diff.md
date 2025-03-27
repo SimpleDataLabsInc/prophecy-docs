@@ -89,7 +89,7 @@ If you try to compute the data diff **John Smith**, how will you know which row 
 Data diffs are configured in **Target** gems.
 
 1. Open a Target gem in your pipeline.
-1. In the top right of the gem dialogue, click the **Options** (ellipses) menu.
+1. In the top right of the gem dialog, click the **Options** (ellipses) menu.
 1. Select **Data Diff**. This adds the Data Diff step to your Target gem configuration.
 1. Open the **Data Diff** step.
 1. Fill in the required parameters and **Save** the gem.

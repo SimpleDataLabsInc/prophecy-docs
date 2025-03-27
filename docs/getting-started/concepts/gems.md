@@ -42,4 +42,4 @@ To start using gems in your Spark or SQL pipelines:
 - Browse the [Package Hub](docs/extensibility/package-hub/package-hub.md) to find additional gems and components that you can use.
 - Take a peek at our [Gem Builder](docs/extensibility/extensibility.md) for an introduction to custom gems.
 
-For more information on available gems and how to configure them according to your specific use case, check out our documentation on [SQL gems](docs/analysts/development/gems/gems.md) and [Spark gems](/Spark/gems).
+For more information on available gems and how to configure them according to your specific use case, check out our documentation on [Analyst gems](docs/analysts/development/gems/gems.md) and [Engineering (Spark) gems](/Spark/gems).

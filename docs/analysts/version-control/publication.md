@@ -21,11 +21,11 @@ Next, the project is deployed, configuring it for execution in different environ
 
 Once you save your project as a draft, you have the option to Publish that version of the project. Review the following table to understand the publication parameters.
 
-| Parameters                      | Description                                                                                                                                                                                      |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Version details                 | Copilot automatically populates the version details, but you can edit the version number or description if necessary.                                                                            |
-| Changes that will be published  | Prophecy lists the saved drafts that include changes to be reflected in the new published version.                                                                                               |
-| Select the fabric(s) to publish | Prophecy creates a new project deployment for each fabric. If a deployment already exists, it is updated. To see your deployments, review the [Monitoring](docs/analysts/observability.md) page. |
+| Parameters                      | Description                                                                                                                                                                            |
+| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Version details                 | Copilot automatically populates the version details, but you can edit the version number or description if necessary.                                                                  |
+| Changes that will be published  | Prophecy lists the saved drafts that include changes to be reflected in the new published version.                                                                                     |
+| Select the fabric(s) to publish | Prophecy creates a new project deployment for each fabric. If a deployment already exists, it is updated. To see your deployments, review the [Monitoring](/analysts/monitoring) page. |
 
 Prophecy lets you publish different versions of a project to different fabrics. This might be useful if you want `Version 1` published on a development fabric and `Version 2` published on a production fabric. (You cannot publish two different versions to the same fabric.)
 
@@ -48,4 +48,4 @@ Prophecy lets multiple users work on the same project [simultaneously](docs/anal
 
 ## Monitor deployed projects
 
-All of your teams' published projects will appear in the [Monitoring](docs/analysts/observability.md) page in Prophecy. This lets you see information like build results, deployment versions, publication dates, and more.
+All of your teams' published projects will appear in the [Monitoring](/analysts/monitoring) page in Prophecy. This lets you see information like build results, deployment versions, publication dates, and more.

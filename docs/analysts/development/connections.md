@@ -37,7 +37,7 @@ To use data from the environment browser:
 If you add an external Source or Target gem from the gem drawer to your pipeline canvas, you will need to configure the gem:
 
 1. Add an external Source or Target gem to your canvas.
-1. Open the gem to view the configuration dialogue.
+1. Open the gem to view the configuration dialog.
 1. Select the correct **Type and Format**.
 1. Open the **Location** tab.
 1. Select an existing connection for your gem, or [create a new one](docs/administration/fabrics/prophecy-fabrics/connections/connections.md).

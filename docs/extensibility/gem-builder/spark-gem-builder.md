@@ -1,6 +1,7 @@
 ---
 title: Gem Builder for Spark
 id: spark-gem-builder
+slug: /engineers/gem-builder
 description: Build Spark gems in Python or Scala
 tags:
   - gem builder

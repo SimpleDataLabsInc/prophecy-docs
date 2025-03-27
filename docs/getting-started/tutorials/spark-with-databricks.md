@@ -1,5 +1,5 @@
 ---
-title: Project Lifecycle for Engineers
+title: Project lifecycle for Engineers
 id: spark-with-databricks
 slug: /engineers/project-lifecycle
 description: Getting started with Spark on Databricks

@@ -42,8 +42,9 @@ const sidebars = {
             id: "getting-started/quick-starts/quick-starts",
           },
           items: [
-            "getting-started/quick-starts/sql-onboarding",
-            "getting-started/quick-starts/spark-onboarding",
+            "getting-started/quick-starts/analysts-qs",
+            "getting-started/quick-starts/engineers-qs",
+            "getting-started/quick-starts/databricks-partner-connect",
           ],
         },
         {
@@ -279,7 +280,7 @@ const sidebars = {
       items: ["analysts/version-control/publication"],
     },
     "analysts/scheduling",
-    "analysts/observability",
+    "analysts/monitoring",
     {
       type: "category",
       label: "Extensibility",

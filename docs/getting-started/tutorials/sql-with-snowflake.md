@@ -1,5 +1,5 @@
 ---
-title: Data Modeling for Engineers
+title: Data modeling for Engineers
 id: sql-with-snowflake
 slug: /engineers/data-modeling
 description: Use this tutorial to create a project with data in Snowflake

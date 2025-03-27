@@ -33,7 +33,7 @@ To schedule a pipeline to automatically run at a certain frequency:
    - **Repeat at:** The time that the pipeline will run
    - **Timezone:** The timezone of **Repeat at** time
    - **Alerts on the full job:** Enable to send an email on the start, success, and/or failure of the pipeline run
-1. **Save** the schedule.
+1. Click **Schedule** to save the schedule.
 
 :::info
 Schedules are created per pipeline. In other words, scheduled pipeline runs are independently configured.
@@ -50,7 +50,7 @@ If a project is not published or deployed, **scheduled execution will not occur*
 
 ## Monitor scheduled pipelines
 
-You and you team members might have many scheduled pipelines in your Prophecy environment. To see a list of deployed projects, scheduled pipelines, and pipeline run history, open the [Monitoring](docs/analysts/observability.md) page in Prophecy.
+You and you team members might have many scheduled pipelines in your Prophecy environment. To see a list of deployed projects, scheduled pipelines, and pipeline run history, open the [Monitoring](/analysts/monitoring) page in Prophecy.
 
 ## External schedulers
 

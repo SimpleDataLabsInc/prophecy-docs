@@ -1,7 +1,7 @@
 ---
 title: Gem Builder for SQL
 id: sql-gem-builder
-slug: /sql/gem-builder
+slug: /analysts/gem-builder
 description: Build gems using SQL
 tags:
   - gem builder
@@ -161,7 +161,7 @@ Depending on what kind of gem is being created, a `Dialog` needs to be defined.
 
 You can use the column selector property if you want to select the columns from UI and then highlight the used columns using the `onChange` function. The function defines the changes that you want to apply to the gem properties once changes have been made from the UI. For example, in the reformat component provided by Prophecy, based on the columns used on the expression table `onChange` highlights the columns used on the input schema.
 
-It is recommended to try out this dialogue code in gem builder UI and see how each of these elements looks in UI.
+It is recommended to try out this dialog code in gem builder UI and see how each of these elements looks in UI.
 
 ### Validation
 

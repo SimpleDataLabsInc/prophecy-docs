@@ -8,7 +8,7 @@ tags:
   - concepts
 ---
 
-Pipelines are essential components in data processing workflows, enabling the automated movement and transformation of data. They define a sequence of steps that extract data from a source, process or transform it, and load it into a destination system. Pipelines ensure data flows efficiently and consistently, which can be tracked using built-in [pipeline monitoring](docs/analysts/observability.md).
+Pipelines are essential components in data processing workflows, enabling the automated movement and transformation of data. They define a sequence of steps that extract data from a source, process or transform it, and load it into a destination system. Pipelines ensure data flows efficiently and consistently, which can be tracked using built-in [pipeline monitoring](/analysts/monitoring).
 
 Let's explore the core concepts of pipelines, including ingestion, egress, transformation, and deployment.
 
@@ -32,7 +32,7 @@ A key goal of pipeline development is making the pipeline ready for deployment i
 
 During deployment, you configure the environment, such as selecting the appropriate compute resources, scheduling execution times, and ensuring the pipeline is connected to the necessary data sources and destinations. You also choose which version of the pipeline will be deployed.
 
-When your pipelines are deployed, you can make sure they run as expected using our built-in [monitoring](docs/analysts/observability.md) feature.
+When your pipelines are deployed, you can make sure they run as expected using our built-in [monitoring](/analysts/monitoring) feature.
 
 ## What's next
 
