@@ -1,6 +1,7 @@
 ---
 title: Data sampling settings
 id: data-sampling
+slug: /engineers/data-sampling
 description: Choose when to sample data during interactive execution
 tags:
   - interactive execution

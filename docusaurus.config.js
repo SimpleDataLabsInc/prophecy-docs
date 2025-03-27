@@ -606,6 +606,30 @@ const config = {
             to: "/engineers/prophecy-managed-fabric",
             from: "/administration/fabrics/Spark-fabrics/prophecy-managed-databricks",
           },
+          {
+            to: "/engineers/prophecy-managed-fabric",
+            from: "/Spark/fabrics/prophecy-managed-databricks",
+          },
+          {
+            to: "/engineers/configurations",
+            from: "/low-code-spark/parameterized-gems",
+          },
+          {
+            to: "/engineers/subgraph",
+            from: "/low-code-spark/gems/subgraph/",
+          },
+          {
+            to: "/extensibility/",
+            from: "/low-code-spark/extensibility/dependencies",
+          },
+          {
+            to: "/engineers/execution-metrics",
+            from: "/low-code-spark/execution/execution-metrics",
+          },
+          {
+            to: "/engineers/data-sampling",
+            from: "/low-code-spark/execution/executions_on_databricks_clusters",
+          },
         ],
         /*
 
