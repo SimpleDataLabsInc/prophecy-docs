@@ -6,9 +6,11 @@ description: Source and target gems
 tags: []
 ---
 
-Source and Target gems define how data is read and written in your pipeline.
+Source and Target gems define how Prophecy reads and writes data in your pipeline.
 
 ## Tables
+
+<span class="badge">SQL</span><br/><br/>
 
 Tables are natively read from and written to the SQL warehouse that is configured as your primary SQL connection in a Prophecy fabric.
 
@@ -19,10 +21,12 @@ Tables are natively read from and written to the SQL warehouse that is configure
 | Seed  | Small CSV-format files that you can write directly in Prophecy.                                               |
 
 :::caution
-When deciding between tables and external sources, consider the primary SQL connection in your Prophecy fabric. Processing tables natively in the SQL warehouse will be fast. Processing external data is slower. **Do not create an external connection that duplicates your primary SQL warehouse connection.**
+When deciding between tables and external sources, consider the primary SQL connection in your Prophecy fabric. Processing tables natively in the SQL warehouse will be fast, but processing external data is slower.<br/>**Do not create an external connection that duplicates your primary SQL warehouse connection.**
 :::
 
 ## External Sources and Targets
+
+<span class="badge">Prophecy Automate</span><br/><br/>
 
 To use data from outside of your SQL warehouse, you can use the following external sources and targets. This data is not persisted in Prophecy, but rather read through Prophecy.
 
