@@ -64,9 +64,13 @@ To optimize your pipeline:
 
    You should use the SchemaTransform gem if you are creating a small number of columns that will be specifically used for downstream calculations in subsequent gems.
 
-1. If your data isn't large, try to cache the data in the gem from where you connect multiple branches to the output.
+1. If you have a gem that has multiple output ports, try caching the data in that gem.
 
-   Spark lazily evaluates action calls, which means it reevaluates the same part of the flow unless you cache it in case of branching out.
+   Spark lazily evaluates action calls, which means it reevaluates the same part of the flow unless you cache it. This is helpful before you branch to multiple output ports.
+
+   :::note
+   Larger datasets may be too large to cache.
+   :::
 
 1. Broadcast smaller tables in your [Join gem](docs/Spark/gems/join-split/join.md) to increase your performance.
 
@@ -74,7 +78,7 @@ To optimize your pipeline:
 
 1. Remove the [OrderBy](docs/Spark/gems/transform/order-by.md) and [Deduplicate](docs/Spark/gems/transform/deduplicate.md) gems wherever you don't need them.
 
-If you need the Deduplicate gem, choose the `Row to keep` carefully; the `first` and `last` options are more expensive than `any`.
+   If you need the Deduplicate gem, be mindful on which `Row to keep` to select.<br/>The `first` and `last` options are more expensive than `any`.
 
 1. Set an appropriate value for the `spark.sql.shuffle.partitions` property.
 
