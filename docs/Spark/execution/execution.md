@@ -1,6 +1,7 @@
 ---
 title: Execution
 id: execution
+slug: /engineers/execution
 description: How Prophecy computes pipelines
 tags:
   - execution

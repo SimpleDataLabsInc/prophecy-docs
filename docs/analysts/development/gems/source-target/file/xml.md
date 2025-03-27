@@ -1,6 +1,7 @@
 ---
 title: XML
 id: xml
+slug: /analysts/xml
 description: Read and write XML files
 tags: []
 ---

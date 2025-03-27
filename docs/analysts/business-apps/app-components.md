@@ -1,6 +1,7 @@
 ---
 title: App components
 id: app-components
+slug: /analysts/business-application-components
 description: Learn about the different components to configure in an app
 tags: []
 ---

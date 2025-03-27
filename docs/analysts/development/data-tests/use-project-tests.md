@@ -1,6 +1,7 @@
 ---
 title: Use project tests
 id: use-project-tests
+slug: /analysts/project-tests
 description: Custom SQL query tests
 tags:
   - how-to

@@ -1,6 +1,7 @@
 ---
 title: Flatten schema
 id: flatten-schema
+slug: /analysts/flatten-schema
 description: Flatten nested columns
 tags:
   - gems

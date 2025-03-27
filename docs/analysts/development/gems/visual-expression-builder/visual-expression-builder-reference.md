@@ -1,6 +1,7 @@
 ---
 title: Visual expressions reference
 id: visual-expression-builder-reference
+slug: /analysts/visual-expression-builder-reference
 description: Visual Expression Builder reference
 tags:
   - reference

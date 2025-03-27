@@ -1,6 +1,7 @@
 ---
 title: Extensibility
 id: extensibility
+slug: /analysts/extensibility
 description: Add custom functionality to your projects
 tags: []
 ---
@@ -46,4 +47,4 @@ Importantly, if you add a project to the Package Hub, **all of its components wi
 
 ## Gem Builder
 
-The Gem Builder can help you build custom gems for individual or shared use. SQL gems are dbt macros that have a visual (UI) layer. To learn more, visit [Gem Builder for SQL](/extensibility/gem-builder/sql-gem-builder).
+The Gem Builder can help you build custom gems for individual or shared use. SQL gems are dbt macros that have a visual (UI) layer. To learn more, visit [Gem Builder for SQL](/sql/gem-builder).

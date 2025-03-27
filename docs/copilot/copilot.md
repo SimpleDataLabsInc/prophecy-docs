@@ -1,6 +1,7 @@
 ---
 title: Data Copilot
 id: copilot
+slug: /data-copilot
 sidebar_class_name: hidden
 description: The AI assistant for data pipelines and models
 tags:

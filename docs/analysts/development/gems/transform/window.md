@@ -1,6 +1,7 @@
 ---
 title: Window
 id: window
+slug: /analysts/window
 description: Create moving aggregations and transformation
 tags:
   - gems

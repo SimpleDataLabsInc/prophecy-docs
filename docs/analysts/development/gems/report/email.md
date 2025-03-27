@@ -1,6 +1,7 @@
 ---
 title: Email
 id: email
+slug: /analysts/email
 description: Email
 draft: true
 tags:

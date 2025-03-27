@@ -1,6 +1,7 @@
 ---
 title: Projects
-id: project
+id: projects
+slug: /projects
 description: Keeping your pipelines, datasets and jobs under (source) control
 tags:
   - concepts

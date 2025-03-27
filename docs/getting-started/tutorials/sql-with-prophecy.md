@@ -1,6 +1,7 @@
 ---
 title: Project Lifecycle for Analysts
 id: sql-with-prophecy
+slug: /analysts/project-lifecycle
 description: Getting started with a SQL project
 tags:
   - SQL

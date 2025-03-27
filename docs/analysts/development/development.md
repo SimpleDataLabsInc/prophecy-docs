@@ -1,6 +1,7 @@
 ---
 title: Pipeline development
 id: development
+slug: /analysts/pipeline-development
 description: Introduction to pipeline development for analysts
 tags:
   - project

@@ -1,6 +1,7 @@
 ---
 title: Excel
 id: excel
+slug: /analysts/excel
 description: Read and write excel files
 tags: []
 ---

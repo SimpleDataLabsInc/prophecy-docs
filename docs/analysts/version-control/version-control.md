@@ -1,6 +1,7 @@
 ---
 title: Versioning
 id: version-control
+slug: /analysts/versioning
 description: Save and view project history
 tags: []
 ---
@@ -44,7 +45,7 @@ When you publish a project, the new version becomes available for:
 - [Package Hub](docs/analysts/extensibility/extensibility.md#package-hub) packages
 - [App Directory](docs/analysts/business-apps/business-apps.md) applications
 
-To learn more, visit our page on [project publication](/analysts/version-control/publication).
+To learn more, visit our page on [project publication](/analysts/project-publication).
 
 ### Show version history
 

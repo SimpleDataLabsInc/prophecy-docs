@@ -1,6 +1,7 @@
 ---
 title: Union
 id: union
+slug: /analysts/union
 description: Perform addition or subtraction of rows
 draft: true
 tags: []

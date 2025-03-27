@@ -1,6 +1,7 @@
 ---
 title: Engineer Quick Start
 id: spark-onboarding
+slug: /engineers/quick-start
 description: Follow along in the product to make your first Spark pipeline
 tags:
   - Spark

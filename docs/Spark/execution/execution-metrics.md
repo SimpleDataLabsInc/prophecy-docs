@@ -1,6 +1,7 @@
 ---
 title: Execution metrics
 id: execution-metrics
+slug: /engineers/execution-metrics
 description: Execution Metrics
 tags:
   - execution

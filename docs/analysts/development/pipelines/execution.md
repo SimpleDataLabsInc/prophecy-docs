@@ -1,6 +1,7 @@
 ---
 title: Pipeline execution
 id: execution
+slug: /analysts/pipeline-execution
 description: Run a set of defined operations in a pipeline
 tags: []
 ---
@@ -31,6 +32,6 @@ To learn more about deploying projects to specific execution environments, visit
 
 ## External sources
 
-When you read from and write to external sources, your pipeline runs steps behind the scenes to make the data compatible with SQL. Because SQL requires [tables](/analysts/development/gems/source-target/#tables) to perform transformations, Prophecy Automate will create temporary tables in your SQL warehouse throughout the pipeline when necessary. These tables allow SQL to process external data and transform it.
+When you read from and write to external sources, your pipeline runs steps behind the scenes to make the data compatible with SQL. Because SQL requires [tables](/analysts/source-target/#tables) to perform transformations, Prophecy Automate will create temporary tables in your SQL warehouse throughout the pipeline when necessary. These tables allow SQL to process external data and transform it.
 
 **You will not see these tables appear in the canvas during pipeline runs, and the tables will be deleted from the SQL warehouse after the pipeline run completes.**

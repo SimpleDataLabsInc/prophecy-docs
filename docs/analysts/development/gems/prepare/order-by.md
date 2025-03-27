@@ -1,6 +1,7 @@
 ---
 title: OrderBy
 id: order-by
+slug: /analysts/order-by
 description: Sort the data
 tags:
   - gems

@@ -1,6 +1,7 @@
 ---
 title: TableauWrite
 id: tableau
+slug: /analysts/tableau
 description: Send data to automatically update your Tableau dashboards
 draft: true
 tags:

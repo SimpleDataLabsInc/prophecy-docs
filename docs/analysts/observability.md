@@ -1,6 +1,7 @@
 ---
 title: Monitoring
 id: observability
+slug: /analysts/monitoring
 description: View deployed projects, scheduled pipelines, run history, and cost and performance
 tags: []
 ---
@@ -13,7 +14,7 @@ Only projects deployed on Prophecy fabrics will appear in Monitoring.
 
 ## Deployed Projects
 
-Projects that have been [published](/analysts/version-control/) to Prophecy fabrics will appear in the **Deployed Projects** tab of the page. Each row represents a different project deployment and displays the following information.
+Projects that have been [published](/analysts/versioning) to Prophecy fabrics will appear in the **Deployed Projects** tab of the page. Each row represents a different project deployment and displays the following information.
 
 - **Project:** Name of the deployed project. To open the project metadata page, click the project name.
 - **Fabric:** Fabric associated with the project deployment.

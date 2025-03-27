@@ -1,6 +1,7 @@
 ---
 title: Data exploration
 id: data-explorer
+slug: /analysts/data-explorer
 description: Data Explorer for SQL
 tags:
   - execution
@@ -15,7 +16,7 @@ The Data Explorer can help you navigate your interim data samples and understand
 
 ## Generate samples
 
-To use the Data Explorer, you need to [interactively run](/analysts/development/pipelines/execution/#interactive-execution) your pipelines to generate data samples. This lets you view a sample output of each gem. To load the Data Explorer, simply click on the table icon in between gems after a pipeline run.
+To use the Data Explorer, you need to [interactively run](/analysts/pipeline-execution/#interactive-execution) your pipelines to generate data samples. This lets you view a sample output of each gem. To load the Data Explorer, simply click on the table icon in between gems after a pipeline run.
 
 ## Explore the data
 

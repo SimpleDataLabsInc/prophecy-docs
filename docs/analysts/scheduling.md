@@ -1,6 +1,7 @@
 ---
 title: Scheduling
 id: scheduling
+slug: /analysts/scheduling
 description: Schedule pipeline runs
 tags: []
 ---
@@ -40,7 +41,7 @@ Schedules are created per pipeline. In other words, scheduled pipeline runs are 
 
 ## Enable a schedule
 
-A pipeline will not execute on a schedule until its parent project is published. This is because project [publication](/analysts/version-control/publication) determines:
+A pipeline will not execute on a schedule until its parent project is published. This is because project [publication](/analysts/project-publication) determines:
 
 - **The execution environment (fabric):** The pipeline runs on the fabric selected during publication. If multiple fabrics are chosen, separate schedules are created, and the pipeline will execute once per fabric for each scheduled run.
 - **The pipeline version:** Scheduled executions always run the version of the pipeline associated with the most recent project version published to the fabric. If a new project version is published to a fabric, the schedule for that fabric will automatically use the updated pipeline version.

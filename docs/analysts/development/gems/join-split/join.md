@@ -1,6 +1,7 @@
 ---
 title: Join
 id: join
+slug: /analysts/join
 description: Join two or more datasets
 tags:
   - gems

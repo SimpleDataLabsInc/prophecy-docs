@@ -1,6 +1,7 @@
 ---
 title: Configurations
 id: configuration
+slug: /engineers/configurations
 description: Control how a pipeline behaves during execution
 tags:
   - spark

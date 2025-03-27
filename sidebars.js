@@ -29,7 +29,7 @@ const sidebars = {
           label: "Concepts",
           items: [
             "getting-started/concepts/Fabric",
-            "getting-started/concepts/project",
+            "getting-started/concepts/projects",
             "getting-started/concepts/pipelines",
             "getting-started/concepts/gems",
           ],
