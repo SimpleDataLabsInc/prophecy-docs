@@ -9,10 +9,12 @@ tags:
   - analyst
 ---
 
-If you want to create variables to use throughout your pipeline, you can configure **pipeline parameters**. Parameters let you define values or expressions that can be used to dynamically populate values during pipeline runs. These can be useful when you want to:
+If you want to create variables to use throughout your pipeline, you can configure pipeline parameters. Pipeline parameters let you define values or expressions that can be used to dynamically populate values during pipeline runs.
+
+These can be useful when you want to:
 
 - Control parameter configurations from business applications.
-- Set different values in the pipeline depending on the execution environment (for example, development vs production).
+- Set different values in the pipeline depending on the execution environment (such as development and production).
 - Reuse the same values throughout the pipeline, ensuring consistency and maintainability.
 
 :::info
@@ -35,10 +37,12 @@ When you define parameters, variables will be automatically created in the SQL c
 
 ## Example: Dynamic target location
 
-When configuring a Target gem, you need to define the location where a new table will be written. Often, this location varies depending on whether the pipeline is running in a development or production environment. You can handle this using pipeline parameters:
+When configuring a Target gem, you need to define the location where a new table will be written. Often, this location varies depending on whether the pipeline is running in a development or production environment.
+
+You can handle this by using pipeline parameters:
 
 1. Create a pipeline parameter called `target_location`.
-1. Give it a default value that points to your development folder in your file system: `/dev/data/target_folder/`.
+1. Provide a default value that points to your development folder in your file system: `/dev/data/target_folder/`.
 1. Create a [business application](docs/analysts/business-apps/business-apps.md) that includes the parameter as a field.
 1. Assign the parameter in the business application a default value that points to the production folder in your file system: `/prod/data/target_folder/`.
 1. Schedule the business application to run in your production environment on a regular schedule.
@@ -47,7 +51,7 @@ This ensures that the scheduled pipeline run in production uses the correct targ
 
 ## Best Practices
 
-To make the most out of pipeline parameters:
+To make the most out of pipeline parameters, we suggest you to:
 
 - Use meaningful parameter names that indicate their purpose.
 - Validate inputs to prevent unexpected errors during execution.
