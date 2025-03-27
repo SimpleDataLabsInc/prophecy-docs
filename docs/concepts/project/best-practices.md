@@ -1,6 +1,7 @@
 ---
 title: Best Practices
 id: project-best-practices
+slug: /project-best-practices
 description: Learn about what we recommend to do if you are working in a project.
 tags:
   - project
