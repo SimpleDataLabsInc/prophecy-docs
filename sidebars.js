@@ -535,6 +535,7 @@ const sidebars = {
             "Spark/spark-streaming/transformations-streaming",
           ],
         },
+        "Spark/project-best-practices",
       ],
     },
     /// MODEL DEVELOPMENT
@@ -609,6 +610,7 @@ const sidebars = {
             "ci-cd/git/git-workflow",
             "ci-cd/git/git-resolve",
             "ci-cd/git/pr-templates",
+            "ci-cd/git/git-best-practices",
           ],
         },
         "ci-cd/tests",

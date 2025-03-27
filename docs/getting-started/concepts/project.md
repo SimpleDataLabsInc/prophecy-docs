@@ -16,7 +16,7 @@ A **project** in Prophecy is the core unit for developing, organizing, and deplo
 - [Different project types](#project-types) for various use cases
 - [Key components](#components) that support pipeline development within a project
 - [Versioning](#versioning) and publishing of projects
-- [Sharing projects across teams](#teams)
+- [Sharing projects across teams](#team)
 - [Navigating and editing projects](#project-editor)
 
 ## Project types

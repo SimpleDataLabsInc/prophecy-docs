@@ -580,6 +580,12 @@ If there is a **(1) typo / error** in a required method (e.g. dialog1 instead of
 
 :::
 
+## Best Practice
+
+When possible, use the `set()` operation, and avoid `for` loops. `set()` operations typically have a better average computational complexity than a `list`, which makes them more efficient.
+
+This is especially helpful when you operate on the _columns_ of wide tables, as this scenario can slow down the Prophecy UI.
+
 ## What's next
 
 Now that you know how to create Spark gems, have a look at how to [create custom SQL gems](docs/extensibility/gem-builder/sql-gem-builder.md).
