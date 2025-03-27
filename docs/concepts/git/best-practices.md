@@ -38,6 +38,8 @@ For small teams:
 
    This encourages teams to perform code reviews and collaborate, which ensures higher code quality and fewer bugs.
 
+To learn more about this branching strategy, see [this blog](https://www.alexhyett.com/git-flow-github-flow/#what-is-github-flow).
+
 ### Large teams
 
 For large teams with rigid and separate execution environments, and promotion processes:
@@ -52,3 +54,5 @@ For large teams with rigid and separate execution environments, and promotion pr
    | `main`, or `hotfix`     | `prod`                 |
    | `release`               | `uat`, `test`, or `qa` |
    | `develop`, or `feature` | `dev`                  |
+
+To learn more about this branching strategy, see [this blog](https://www.alexhyett.com/git-flow-github-flow/#what-is-github-flow).
