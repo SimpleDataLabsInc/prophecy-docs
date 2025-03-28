@@ -13,17 +13,21 @@ import TabItem from '@theme/TabItem';
 
 A **project** in Prophecy is the core unit for developing, organizing, and deploying data pipelines to production. It includes all the components required to build and execute data processes. Continue reading to learn about:
 
-- [Different project types](#project-types) for various use cases
+- [Project types](#project-types) for various use cases
 - [Key components](#components) that support pipeline development within a project
 - [Versioning](#versioning) and publishing of projects
-- [Sharing projects across teams](#team)
-- [Navigating and editing projects](#project-editor)
+- [Sharing](#access-and-sharing) projects across teams
+- [Navigating](#project-editor) and editing projects
 
 ## Project types
 
 Project components depend on your project type. Prophecy supports Python, Scala, and SQL projects. This language choice determines how your visual pipelines will be compiled into code. Your initial choice of project type determines your project's capabilities and workflow structure, so _it's important to choose correctly at the start since it cannot be changed later_.
 
-Prophecy supports both **SQL** and **Spark** projects, and the choice depends on your data needs. Many organizations use both types of projects, leveraging SQL for **data analytics** and Spark for **data engineering**. Prophecy provides a platform where this can happen all in one place.
+Prophecy supports both SQL and Spark projects, and the choice depends on your data needs. Many organizations use both types of projects, leveraging SQL for **data analytics** and Spark for **data engineering**. Prophecy provides a platform where this can happen all in one place.
+
+:::info Prophecy for Analysts
+To make project creation easier, Prophecy provides [project creation templates](docs/getting-started/concepts/templates.md) that can cater to different needs. We suggest using the **Prophecy for Analysts** template when creating SQL projects for data analytics.
+:::
 
 <Tabs>
 
@@ -97,13 +101,25 @@ All projects are automatically compiled into code and hosted on Git for powerful
 
 </Tabs>
 
-## Team
+## Access and sharing
 
-Projects are always assigned to a certain [team](docs/administration/teams-users/teamuser.md). This means that the project will be shared among all users in that team. If you want to share projects and project components with other teams, publish your project to the [Package Hub](docs/extensibility/package-hub/package-hub.md).
+In Prophecy, projects are tied to a specific [team](docs/administration/teams-users/teamuser.md). This assignment dictates the project's ownership and edit permissions.
 
 :::note
-When you begin using Prophecy, you are added to your own one-person team. Your team administrator will typically create other team groupings.
+When you begin using Prophecy, you are added to your own one-person team. Personal teams are ideal when you want to keep projects private and accessible only to yourself. Your team administrator will typically create shared teams.
 :::
+
+### Team ownership
+
+Only members of the team assigned to a project have permission to modify its components (pipelines, gems, etc.).
+
+### Sharing with other teams (read-only)
+
+To extend the reach of your project, you can share it with other teams.
+
+- **Read-only access:** Users from other teams cannot directly edit the original project's components.
+- **Reuse components:** If you share the project with other teams and publish it to the [Package Hub](docs/extensibility/package-hub/package-hub.md), users can import the projects as packages in their own projects. While they can't edit the original components, they can use copies of them in their own projects.
+- **Run pipelines:** If you share projects that contain [business apps](docs/analysts/business-apps/business-apps.md) with other teams, users can execute business apps that rely on the pipelines within the shared project.
 
 ## Metadata
 

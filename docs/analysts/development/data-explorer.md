@@ -2,7 +2,7 @@
 title: Data exploration
 id: data-explorer
 slug: /analysts/data-explorer
-description: Data Explorer for SQL
+description: Generate data samples through the pipeline during development
 tags:
   - execution
   - explorer
@@ -20,7 +20,7 @@ To use the Data Explorer, you need to [interactively run](/analysts/pipeline-exe
 
 ## Explore the data
 
-The **Data Preview** tab of the data explorer enables the following functionality.
+The Data Explorer enables the following functionality.
 
 - Sort the data
 - Filter the data

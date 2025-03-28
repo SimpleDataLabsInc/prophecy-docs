@@ -6,15 +6,17 @@ tags:
   - architecture
 ---
 
-Prophecy is written as a set of microservices that run on Kubernetes in various cloud platforms.
+Prophecy is deployed as microservices orchestrated by Kubernetes in various cloud platforms.
 
 ## Components
 
 The following are the main components of a successful Prophecy deployment.
 
-- **Spark and SQL Studio**: Users that log in to Prophecy access the Spark and SQL studios to transform raw data into analytics-ready data using visual data pipelines.
+- **Prophecy Studio**: Users that log in to Prophecy access the Prophecy Studio to transform raw data into analytics-ready data using visual data pipelines.
 
-- **Execution engine**: Prophecy pipelines and models run on external environments like Snowflake or Databricks. When using Prophecy orchestration, computation occurs within Prophecy Automate. [Fabrics](docs/getting-started/concepts/fabrics.md) let users execute pipelines on these engines. Your data is not persisted in Prophecy.
+- **Prophecy Automate**: A built-in Prophecy runtime designed for ingestion, egress, and orchestration. It is available exclusively for Prophecy fabrics with SQL connections and is not applicable to Spark-based projects.
+
+- **External execution engine**: Prophecy runs data transformations on your own execution environment, such as Snowflake or Databricks. [Fabrics](docs/getting-started/concepts/fabrics.md) enable users to execute pipelines on these platforms. Prophecy does not persist your data.
 
 - **Source control**: Prophecy integrates with Git for version control and supports both native and external Git options.
 
@@ -24,7 +26,7 @@ The following are the main components of a successful Prophecy deployment.
 
 ## Prophecy for Analysts
 
-Prophecy for Analysts leverages Prophecy Automate and a SQL warehouse to let users build, run, and schedule their pipelines. This architecture diagram demonstrates one example of the various components involved in a Prophecy deployment in their respective virtual networks.
+Prophecy for Analysts leverages Prophecy Automate and an external SQL warehouse of your choice to build, run, and schedule pipelines. This architecture diagram demonstrates one example of the various components involved in a Prophecy deployment in their respective virtual networks.
 
 ![Prophecy for Analysts](img/arch-prophecy-sql.png)
 
@@ -42,5 +44,5 @@ Prophecy for Engineers privileges Spark to execute pipelines in a scalable and o
 
 Prophecy can accommodate a wide variety of architectures beyond this diagram. For example:
 
-- The diagram demonstrates Databricks as the execution engine. You can use any other Spark engine through [Apache Livy](https://livy.apache.org/) (e.g. MapR, CDP, HDP, Spark on Kubernetes).
+- The diagram demonstrates Databricks as the execution engine. You can use any other Spark engine through [Apache Livy](https://livy.apache.org/).
 - The diagram displays a connection to an external Git repository. You can connect to a variety of providers such as GitHub, Bitbucket, GitLab, and more.

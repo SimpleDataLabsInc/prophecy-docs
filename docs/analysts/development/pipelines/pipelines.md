@@ -9,16 +9,17 @@ tags:
   - analyst
 ---
 
-Create pipelines inside [SQL projects](docs/getting-started/concepts/project.md), and use [Prophecy fabrics](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md) to run them. Prophecy fabrics utilize Prophecy Automate and a SQL warehouse of your choice to perform data ingestion, transformation, and output. You can read and write data directly in your SQL warehouse, or you can read and write to external sources such as Tableau or Salesforce.
+In Prophecy, data pipelines are designed to facilitate efficient data movement and transformation. In SQL projects, these pipelines execute within a [Prophecy fabric](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md) that orchestrates operations using [Prophecy Automate](/analysts/pipeline-execution) in conjunction with your chosen SQL warehouse.
 
 ## Pipeline creation
 
-To create a new pipeline, navigate to the **Create Entity** page in the left sidebar. You can also create pipelines directly within the project editor.
+To create a new pipeline, navigate to the **Create Entity** page in the left sidebar. You can also create pipelines directly within an open project.
 
 The following table describes the parameters you must provide when you create a pipeline.
 
 | Parameter      | Description                                                                                                                                        |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Project        | The project where the pipeline will live.                                                                                                          |
 | Pipeline name  | The name that identifies the pipeline.                                                                                                             |
 | Directory path | The file path where this pipeline information will be stored in the project Git repository.<br/>The default location is the `pipelines` directory. |
 
@@ -28,7 +29,7 @@ When you build a pipeline, it helps to be familiar with the project editor inter
 
 ### Sidebar
 
-The project sidebar includes the following fields:
+The project sidebar includes the following elements:
 
 | Field                   | Description                                                                                                                                       |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -37,7 +38,7 @@ The project sidebar includes the following fields:
 
 ### Canvas
 
-The canvas includes the following fields:
+The canvas includes the following elements:
 
 | Field          | Description                                                                                                                                                                                                                                                                                              |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -48,7 +49,7 @@ The canvas includes the following fields:
 
 ### Header
 
-The project header includes the following fields:
+The project header includes the following elements:
 
 | Field                     | Description                                                                                                                                                                                                                                                         |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -59,7 +60,7 @@ The project header includes the following fields:
 
 ### Footer
 
-The project footer includes the following fields:
+The project footer includes the following elements:
 
 | Field            | Description                                                                                                                                                                                                                         |
 | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

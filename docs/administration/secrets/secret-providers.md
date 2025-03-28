@@ -12,22 +12,20 @@ tags:
 
 ![secret_screen](img/Secret_provider_Screen.png)
 
-## Providers
-
 You can configure multiple secret providers per fabric in the **Providers** tab of the fabric configuration. Providers and secrets can be added, edited, and deleted from Prophecy. We support the following providers.
 
-| Secret Provider       | Details                                                           | Platform   |
-| --------------------- | ----------------------------------------------------------------- | ---------- |
-| Prophecy              | Recommended if you use Prophecy Automate                          | Prophecy   |
-| Databricks Secrets    | Recommended if you are a Databricks user                          | Databricks |
-| HashiCorp Vault       | Recommended if your organization privileges HashiCorp Vault       | Any Spark  |
-| Environment Variables | Recommended if your organization privileges environment variables | Any Spark  |
+| Secret Provider       | Details                                                                         | Platform   |
+| --------------------- | ------------------------------------------------------------------------------- | ---------- |
+| Prophecy              | Recommended if you use [Prophecy Automate](docs/administration/architecture.md) | Prophecy   |
+| Databricks Secrets    | Recommended if you are a Databricks user                                        | Databricks |
+| HashiCorp Vault       | Recommended if your organization privileges HashiCorp Vault                     | Any Spark  |
+| Environment Variables | Recommended if your organization privileges environment variables               | Any Spark  |
 
-### Prophecy
+## Prophecy
 
-Prophecy provides its own secret manager for Prophecy fabrics to securely store both text-based secrets and binary data.
+Prophecy provides its own secret manager for Prophecy fabrics to securely store both text-based secrets (like passwords) and binary data (such as uploaded certificates). We prioritize the security of your data with advanced encryption techniques designed to protect against unauthorized access. [Contact us](/getting-help) to learn more about our native secret management.
 
-### Databricks
+## Databricks
 
 [Databricks](https://docs.databricks.com/en/security/secrets/index.html) is the most commonly used secret provider in Prophecy. By default, a Databricks secret provider is added to all Databricks fabrics. You can remove this if required.
 
@@ -39,7 +37,7 @@ If you are using a free trial, you can use Databricks as the secret provider. Yo
 
 :::
 
-### HashiCorp Vault
+## HashiCorp Vault
 
 Prophecy supports [HashiCorp Vault](https://developer.hashicorp.com/vault/docs/what-is-vault) as a secret provider. When you set up HashiCorp Vault, you'll see a few additional configuration fields.
 
@@ -49,7 +47,7 @@ Prophecy supports [HashiCorp Vault](https://developer.hashicorp.com/vault/docs/w
 
 If you add new secrets to your vault, you can refresh secrets in Prophecy to fetch them. You can also add new secrets directly in Prophecy. To refresh or add secrets, you must be attached to a cluster. You can only access secrets that you also have access to in your Spark cluster.
 
-### Environment Variables
+## Environment Variables
 
 If you prefer a simple way to manage secrets, you can use environment variables available in your Spark cluster. To do so:
 
@@ -60,13 +58,3 @@ If you prefer a simple way to manage secrets, you can use environment variables 
 :::note
 This method does not support refreshing or fetching secrets.
 :::
-
-## Secrets
-
-Secrets have the following parameters:
-
-- **Provider**: The secret provider.
-- **Name**: The name of the secret.
-- **Scope**: The scope of the secret.
-- **Description**: A description of the secret.
-- **Value**: The value of the secret.

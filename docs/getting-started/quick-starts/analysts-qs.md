@@ -9,7 +9,7 @@ tags:
   - onboarding
 ---
 
-Follow this 15 minute quick start to learn how to create a pipeline in a Prophecy for Analysts project.
+Follow this 15 minute quick start to learn how to create a pipeline in a [Prophecy for Analysts](/templates) project.
 
 ## Objectives
 

@@ -9,7 +9,14 @@ tags:
   - analyst
 ---
 
-Prophecy fabrics are leveraged by pipelines in SQL projects for execution. To learn more about pipelines and pipeline execution, visit [Pipeline development](docs/analysts/development/development.md).
+To build SQL project, connect to Prophecy fabrics for pipeline execution. Prophecy fabrics leverage multiple engines for execution:
+
+- **Primary SQL warehouse**: This is your external SQL environment, serving as the default data storage and query execution engine. A primary SQL warehouse connection is mandatory when configuring a Prophecy fabric. All SQL queries within your pipelines are executed in the primary warehouse.
+- **Prophecy Automate**: This is Prophecy's runtime environment, responsible for pipeline orchestration and data flow management. It facilitates data movement between external systems (e.g., Salesforce, Tableau) and the SQL warehouse.
+
+:::info Primary SQL warehouse
+Prophecy executes SQL queries exclusively in the primary SQL warehouse. If you configure additional SQL connections in your fabric, Prophecy will use only use them for explicit data read and write operations within specific pipeline components.
+:::
 
 ## Create a Prophecy fabric
 

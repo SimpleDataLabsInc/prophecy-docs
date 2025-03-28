@@ -2,7 +2,7 @@
 title: Functions
 id: functions
 slug: /analysts/functions
-description: Use dbt macros in your pipelines
+description: Build functions with SQL macros to be used in gem expressions
 tags:
   - gems
   - analyst

@@ -6,12 +6,14 @@ description: Run a set of defined operations in a pipeline
 tags: []
 ---
 
-To run a SQL project pipeline, you must define **where** it will be executed (computed) via a [Prophecy fabric](/administration/fabrics/prophecy-fabrics/), which encompasses:
+While SQL projects leverage SQL for core data transformations, pipeline execution is a hybrid process. [Prophecy fabrics](/administration/fabrics/prophecy-fabrics/) make it possible for [Prophecy Automate](docs/administration/architecture.md) to manage the overall pipeline flow and utilize the SQL warehouse for data processing tasks. This page describes how Prophecy runs pipelines in different execution scenarios.
 
-- **Prophecy Automate**: Handles the flow of data in and out of the pipeline. To learn more, jump to [external sources](#external-sources).
-- **SQL warehouse**: Executes the data transformations using dbt framework.
+## Converged execution
 
-In other words, Prophecy will use both of these runtimes to perform execution. There are different scenarios where execution occurs: during [interactive](#interactive-execution) or [scheduled](#scheduled-execution) executions.
+Prophecy uses different engines to perform execution.
+
+- **SQL warehouse**: Your own external SQL environment used to store tables, create tables, and execute queries.
+- **Prophecy Automate**: Runtime that handles orchestration and the flow of external data from systems like Salesforce and Tableau in and out of the pipeline. To learn more, jump to [external sources](#external-sources).
 
 ## Interactive execution
 

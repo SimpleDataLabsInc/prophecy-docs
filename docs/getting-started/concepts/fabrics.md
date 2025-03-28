@@ -9,9 +9,9 @@ tags:
   - execution
 ---
 
-Prophecy enables you to develop high-quality Spark or SQL data pipelines, but where do these pipelines actually run? Before building a pipeline, it's essential to understand that it must be executed within an **execution environment**.
+Prophecy enables you to develop high-quality data pipelines, but where do these pipelines actually run? Before building a pipeline, it's essential to understand that it must be executed within an **execution environment**.
 
-While Prophecy offers some built-in execution capabilities through Prophecy Automate, the majority of computation and all data storage occur in **external** environments like Databricks or Snowflake. This is where **fabrics** come in—they serve as the bridge between Prophecy and these execution environments for seamless connectivity and integration.
+While Prophecy offers some built-in execution capabilities through [Prophecy Automate](docs/administration/architecture.md) (the Prophecy-native runtime), the majority of computation and all data storage occur in **external** environments like Databricks or Snowflake. This is where **fabrics** come in—they serve as the bridge between Prophecy and these execution environments for seamless connectivity and integration.
 
 ## Fabric types
 
@@ -24,19 +24,20 @@ Different fabrics are designed to support specific project types. Use the table 
 | [SQL](/administration/fabrics/sql-fabrics/Fabrics)     | Compute with a SQL warehouse                       | Run [models](docs/data-modeling/data-modeling.md) in SQL projects. You cannot run pipelines.      |
 | [Airflow](/Orchestration/airflow/)                     | Compute with an Airflow-compatible engine          | Run [Airflow](docs/Orchestration/airflow/airflow.md) jobs.                                        |
 
-## Use case
+## Separate environments and access
 
-Here is one way you might set up your fabrics. First, the team admin creates:
+Fabrics provide a structured way to separate working environments with team-based access. At minimum, you might have a development and production environment, but you may also have fabrics for QA, Staging, etc.
 
-- A team named Marketing_DSS for the Marketing Decision Support System users.
-- A `dev` fabric for development activities that specifies the Marketing_DSS team.
-- A `prod` fabric for production pipelines that specifies the Marketing_DSS team.
+- **Development fabric:** Environment used for testing and experimentation, where pipelines can be iterated on without impacting live data or processes.
+- **Production fabric:** Environment hosts stable, validated pipelines that process live data for business operations.
 
-In this example, all users in the Marketing_DSS Team will have access to the `dev` and `prod` fabrics.
+When you create a fabric, you assign it to a team. Only users in that team can access the fabric. To control access in your production environment, create a team with only those users who can execute and deploy pipelines in production.
 
 ## Components
 
-Fabrics include everything required to run a data pipeline. Because different execution environments are built differently, each fabric will require a unique configuration. You can find these requirements in the [administration](docs/administration/index.md) section of the documentation. Usually a team admin will create and configure fabrics for their team. The table below describes components at a high level.
+Fabrics define all the necessary components that Prophecy needs to communicate with a specific execution environment. Each execution environment will require its own unique fabric configuration. Fabric creation, outlined in the [administration](docs/administration/index.md) section of the documentation, is typically handled by team administrators.
+
+Find the key components below that correspond to distinct sections within the fabric's settings.
 
 | Component             | Description                                                                                                         | Required                                                                                                                                                            |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -44,8 +45,6 @@ Fabrics include everything required to run a data pipeline. Because different ex
 | Cluster configuration | This will determine the computation resources allocated to you.                                                     | Cluster configurations are required. Defaults are pre-configured based on your credentials.                                                                         |
 | Connections           | To connect to multiple data providers for use in your pipelines, you can add additional connections to your fabric. | One connection to a primary execution environment is required. Additional connections are optional.                                                                 |
 | Secrets               | Fabrics can store secrets from different secret providers such as HashiCorp Vault.                                  | Secrets are not required for fabric creation. However, sometimes secrets are required for connections. If a secret is required, you will be prompted to create one. |
-
-[Team admins](docs/administration/teams-users/teamuser.md) typically set up fabrics. Detailed steps for fabric creation can be found in the [fabrics](docs/administration/fabrics.md) section of the documentation.
 
 :::info
 Prophecy provides a trial Prophecy-managed fabric that can get you started with building your pipelines. However, you will need to connect to external execution environments for your production workflows.

@@ -18,11 +18,11 @@ As you build your pipelines, you'll be able to:
 
 ## Connections in the Environment browser
 
-When you create a connection, Prophecy accesses specific data from the external provider using your credentials and inherits the same permissions as your user account. The data will appear in the [Environment browser](docs/analysts/development/pipelines/pipelines.md#sidebar) of the project sidebar, allowing you to easily locate data, explore data, and add data to your pipeline canvas.
+Connections allow Prophecy to access specific data from external providers using your credentials. The data will appear in the [Environment browser](docs/analysts/development/pipelines/pipelines.md#sidebar) of the project sidebar, allowing you to easily locate data, explore data, and add data to your pipeline canvas. Data access permissions are inherited from your external user account.
 
 <!-- ![Environment browser](img/environment-tab-connections.png) -->
 
-When you attach a fabric to your project, you will by default see the data from the SQL warehouse in the Environment browser. If you want to see more connections in your project, you can click **+ Connect more data** at the bottom of the Environment browser. Once you configure a connection, Prophecy will automatically save it to your attached fabric. To understand how to configure individual connection types, visit the [list of connections](docs/administration/fabrics/prophecy-fabrics/connections/connections.md).
+When you attach a Prophecy fabric to your project, you will by default see the data from your [primary SQL warehouse](/administration/fabrics/prophecy-fabrics/) in the Environment browser. If you want to see more connections in your project, you can click **+ Connect more data** at the bottom of the Environment browser. Once you configure a connection, Prophecy will automatically save it to your attached fabric. To understand how to configure individual connection types, visit the [list of connections](docs/administration/fabrics/prophecy-fabrics/connections/connections.md).
 
 To use data from the environment browser:
 

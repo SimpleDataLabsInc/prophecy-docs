@@ -6,9 +6,11 @@ description: Work together on projects simultaneously
 tags: []
 ---
 
-When multiple users are working on the same project, it's important to prevent conflicting changes from being made. There are two ways that Prophecy handles multiple users working on the same project at the same time.
+Prophecy provides mechanisms to manage concurrent edits and prevent conflicts when multiple users work on the same project. The specific collaboration workflow is dictated by the project's Git mode, a setting established when the project is initially created.
 
-The way you collaborate on a project depends on the Git mode of the project. This is configured during project creation.
+## Collaboration workflows
+
+The following project settings dictate a project's collaboration workflow.
 
 | Git Storage Model | Git Account      | Audience                                                                                                                 |
 | ----------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------ |
@@ -17,24 +19,20 @@ The way you collaborate on a project depends on the Git mode of the project. Thi
 | Normal or Fork    | External Git     | Users who are comfortable with typical Git branching and merging strategies who can manage CI/CD in Git.                 |
 
 :::info
-All projects that utilize the **Prophecy for Analysts** [project creation template](docs/administration/teams-users/project-creation-template.md) operate with Simple, Prophecy-managed Git.
+All projects that utilize the **Prophecy for Analysts** [project creation template](/templates) operate with Simple, Prophecy-managed Git.
 :::
 
-## Simple
+## Simple/Prophecy-managed
 
 When you create a project that uses [Simple](docs/analysts/version-control/version-control.md) Git, Prophecy restricts pipeline editing to a single user at a time.
 
 Assume your colleague is actively editing a pipeline. What happens when you open and try to edit the same pipeline? You'll see that someone else is working on the pipeline. It will be read-only until the other user closes the pipeline. This way, you will not be able to produce conflicting edits.
 
-SCREENSHOT
-
-At a more granular level, you cannot make edits to **any project component** while someone else is working on it. This includes functions, tests, schedules, etc.
+At a more granular level, you cannot edit **any project component** while someone else is working on it. This includes functions, tests, schedules, etc.
 
 ### Override
 
-If you are locked from editing a pipeline or other project component, you can take override this and take control from the other user. If you know that your teammate is idle on the project, and you need to make changes, click **Override** to take editing control of the project.
-
-SCREENSHOT
+If you are locked from editing a pipeline or other project component, you can override this and take control from the other user. If you know that your teammate is idle on the project, and you need to make changes, click **Override** to take editing control of the project.
 
 ## Simple/External Git
 
@@ -43,12 +41,7 @@ A project that uses Simple Git with an external Git repository will have an addi
 Because users developing in Simple Git mode are automatically working on a generated `dev` branch in Git, remote changes to the project files in that `dev` branch will also be incorporated into the project. This means two things:
 
 - **Synchronize changes.** You will have to pull (integrate) these changes from the external Git into your project in Prophecy.
-
-  SCREENSHOT
-
 - **Resolve conflicts.** These external changes may conflict with changes made in your project in Prophecy.
-
-  SCREENSHOT
 
 To learn how to resolve merge conflicts from the Prophecy interface, visit [Resolve conflicts](docs/ci-cd/git/git-resolve.md).
 

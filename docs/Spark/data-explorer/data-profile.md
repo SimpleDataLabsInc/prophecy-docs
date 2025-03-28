@@ -7,7 +7,7 @@ tags:
   - data quality
 ---
 
-To quickly find a summary of your data quality, view data profiles of your data samples in the Data Explorer. Use data profiling to:
+To quickly find a summary of your data statistics, view data profiles of your data samples in the Data Explorer. Use data profiling to:
 
 - Find instant data insights
 - Detect anomalies and inconsistencies early
