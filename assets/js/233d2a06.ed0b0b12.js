@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[19138],{65902:s=>{s.exports=JSON.parse('{"tag":{"label":"transformations","permalink":"/tags/transformations","allTagsPath":"/tags","count":1,"items":[{"id":"getting-started/concepts/gems","title":"Gems","description":"Transform your data with Prophecy gems","permalink":"/gems"}],"unlisted":false}}')}}]);

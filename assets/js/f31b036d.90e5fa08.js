@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[30778],{50525:e=>{e.exports=JSON.parse('{"tag":{"label":"interactive","permalink":"/tags/interactive","allTagsPath":"/tags","count":1,"items":[{"id":"Spark/execution/execution","title":"Execution","description":"How Prophecy computes pipelines","permalink":"/engineers/execution"}],"unlisted":false}}')}}]);
