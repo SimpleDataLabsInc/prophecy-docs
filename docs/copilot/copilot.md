@@ -1,6 +1,7 @@
 ---
 title: Data Copilot
 id: copilot
+slug: /data-copilot
 sidebar_class_name: hidden
 description: The AI assistant for data pipelines and models
 tags:
@@ -57,9 +58,9 @@ GitHub Copilot and Prophecy Data Copilot are both excellent tools to boost produ
 
 #### Which datasets are accessible to Prophecy Data Copilot?
 
-Any dataset, source, or seed that is part of the linked (Databricks, Snowflake, etc.) catalog is accessible. That is, if you can access the datasets with your personal access token, then the datasets should appear in the Environment tab and Copilot can access them.
+Any dataset, source, or seed that is part of the linked (Databricks, Snowflake, etc.) catalog is accessible. That is, if you can access the datasets with your personal access token, then the datasets should appear in the Environment browser and Copilot can access them.
 
-Add any of these datasets from the Environment tab into your project canvas. Once the dataset is defined in the project, Copilot's AI capabilities will start making recommendations including that data source.
+Add any of these datasets from the Environment browser into your project canvas. Once the dataset is defined in the project, Copilot's AI capabilities will start making recommendations including that data source.
 
 #### How much will I pay for Prophecy Copilot?
 

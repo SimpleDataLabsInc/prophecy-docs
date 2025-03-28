@@ -1,6 +1,7 @@
 ---
 title: SQL dependencies
 id: sql-dependencies
+slug: /analysts/dependencies
 description: Dependency management
 tags:
   - dependencies

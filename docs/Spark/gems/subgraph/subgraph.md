@@ -1,6 +1,7 @@
 ---
 title: Subgraph
 id: subgraph
+slug: /engineers/subgraph
 description: Working with Subgraphs
 tags: []
 todo: true
@@ -30,13 +31,13 @@ Subgraph gems let you take multiple different gems and wrap them under a single 
 
 ## Types of Subgraphs
 
-There are three types of Subgraph available by default. The [Basic](./basic-subgraph) Subgraph is a great introduction to using Subgraphs.
+There are three types of Subgraph available by default. The [Basic](/Spark/gems/subgraph/basic-subgraph) Subgraph is a great introduction to using Subgraphs.
 
-| Name                                                         | Description                                                                                                                     |
-| ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
-| [Basic](./basic-subgraph)                                    | Captures one or more gems within a pipeline to reuse across other pipelines and projects.                                       |
-| [Table Iterator](./table-iterator)                           | Iterates over one or more gems for each row of the first input DataFrame. Table iterator is available for Python projects only. |
-| [Novel Type](./subgraph.md#create-your-own-type-of-subgraph) | Apply any custom logic to the group of gems present inside the Subgraph.                                                        |
+| Name                                                                | Description                                                                                                                     |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| [Basic](/Spark/gems/subgraph/basic-subgraph)                        | Captures one or more gems within a pipeline to reuse across other pipelines and projects.                                       |
+| [Table Iterator](/Spark/gems/subgraph/table-iterator)               | Iterates over one or more gems for each row of the first input DataFrame. Table iterator is available for Python projects only. |
+| [Novel Type](/engineers/subgraph/#create-your-own-type-of-subgraph) | Apply any custom logic to the group of gems present inside the Subgraph.                                                        |
 
 ## Create your own type of Subgraph
 

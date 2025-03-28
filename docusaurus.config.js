@@ -231,23 +231,35 @@ const config = {
             from: "/copilot/enable-data-copilot",
           },
           {
+            to: "/data-copilot",
+            from: "/copilot",
+          },
+          {
+            to: "/data-copilot-ai-capabilities",
+            from: "/copilot/copilot-ai-capabilities",
+          },
+          {
+            to: "/data-copilot-data-privacy",
+            from: "/copilot/copilot-data-privacy",
+          },
+          {
             to: "/administration/authentication/active_directory",
             from: "/architecture/authentication/active_directory",
           },
           {
-            to: "/administration/Spark-fabrics/emr",
+            to: "/administration/fabrics/Spark-fabrics/emr",
             from: "/architecture/deployment/EMR-livy-installation-guide",
           },
           {
-            to: "/administration/Spark-fabrics/emr",
+            to: "/administration/fabrics/Spark-fabrics/emr",
             from: "/Spark/fabrics/EMR-serverless-fabric-configuration",
           },
           {
-            to: "/administration/Spark-fabrics/emr",
+            to: "/administration/fabrics/Spark-fabrics/emr",
             from: "/Spark/fabrics/EMR-fabric-configuration",
           },
           {
-            to: "/administration/Spark-fabrics/databricks/",
+            to: "/administration/fabrics/Spark-fabrics/databricks/",
             from: "/Spark/fabrics/databricks-fabric",
           },
           {
@@ -259,8 +271,12 @@ const config = {
             from: "/architecture/deployment/private-saas/",
           },
           {
-            to: "/administration/Spark-fabrics/livy",
+            to: "/administration/fabrics/Spark-fabrics/livy",
             from: "/architecture/authentication/admin-settings",
+          },
+          {
+            to: "/databricks-oauth-authentication",
+            from: "/administration/authentication/databricks_oauth",
           },
           {
             to: "/administration/authentication/",
@@ -303,8 +319,12 @@ const config = {
             from: "/architecture/deployment/private-saas/generate-api-key",
           },
           {
-            to: "/administration/self-hosted/installation-helm/",
+            to: "/self-hosted-helm-installation",
             from: "/architecture/deployment/installation-guide",
+          },
+          {
+            to: "/fabric-diagnostics",
+            from: "/administration/Spark-fabrics/fabric-diagnostics",
           },
           {
             to: "/Orchestration/multi-jobs-trigger",
@@ -343,12 +363,28 @@ const config = {
             from: "/tutorials/videos/",
           },
           {
-            to: "/concepts/project/gems/",
+            to: "/gems",
             from: "/concepts/gems/",
           },
           {
-            to: "/concepts/project/dataset",
+            to: "/Spark/dataset",
             from: "/concepts/dataset",
+          },
+          {
+            to: "/pipelines",
+            from: "/concepts/project/pipeline",
+          },
+          {
+            to: "/projects",
+            from: "/concepts/project",
+          },
+          {
+            to: "/fabrics",
+            from: "/concepts/fabrics",
+          },
+          {
+            to: "/Spark/dataset",
+            from: "/concepts/project/dataset",
           },
           {
             to: "/administration/",
@@ -359,39 +395,39 @@ const config = {
             from: "/administration/feature-matrix",
           },
           {
-            to: "/Orchestration/airflow/airflow-tutorial",
+            to: "/Orchestration/airflow/airflow-tutorial-spark",
             from: "/getting-started/airflow",
           },
           {
-            to: "/administration/metadata-connections",
+            to: "/administration/",
             from: "/metadata/metadata-connections",
           },
           {
-            to: "/administration/metadata-connections",
+            to: "/administration/",
             from: "/concepts/metadata",
           },
           {
-            to: "/concepts/git",
+            to: "/ci-cd/git",
             from: "/metadata/git",
           },
           {
-            to: "/concepts/git",
+            to: "/ci-cd/git",
             from: "/metadata/git/git-commit",
           },
           {
-            to: "/concepts/git",
+            to: "/ci-cd/git",
             from: "/metadata/git/git-merge",
           },
           {
-            to: "/concepts/git/pr-templates",
+            to: "/ci-cd/git/pr-templates",
             from: "/metadata/pr-templates",
           },
           {
-            to: "/concepts/git",
+            to: "/ci-cd/git",
             from: "/metadata/git/git-fork",
           },
           {
-            to: "/concepts/git/git-resolve",
+            to: "/ci-cd/git/git-resolve",
             from: "/metadata/git/git-resolve",
           },
           {
@@ -407,11 +443,11 @@ const config = {
             from: "/settings/audit-logging",
           },
           {
-            to: "/administration/teamuser",
+            to: "/administration/teams-users/teams-users",
             from: "/concepts/teamuser",
           },
           {
-            to: "/administration/teamuser",
+            to: "/administration/teams-users/teams-users",
             from: "/administration/settings/teamuser",
           },
           {
@@ -431,7 +467,7 @@ const config = {
             from: "/architecture",
           },
           {
-            to: "/administration/self-hosted/installation-helm/",
+            to: "/self-hosted-helm-installation",
             from: "/architecture/self-hosted/install-prophecy/installation-helm",
           },
           {
@@ -455,12 +491,24 @@ const config = {
             from: "/administration/authentication/saml-okta",
           },
           {
-            to: "/extensibility/dependencies/prophecy-libraries",
+            to: "/engineers/prophecy-libraries",
             from: "/concepts/fabrics/prophecy-libraries",
           },
           {
-            to: "/Spark/execution/conditional-execution",
+            to: "/engineers/conditional-execution",
             from: "/Spark/configuration/conditional-execution",
+          },
+          {
+            to: "/engineers/configurations",
+            from: "/Spark/configuration",
+          },
+          {
+            to: "/engineers/execution-metrics",
+            from: "/Spark/execution/execution-metrics",
+          },
+          {
+            to: "/engineers/execution",
+            from: "/Spark/execution/interactive-execution",
           },
           {
             to: "/ci-cd/tests",
@@ -471,19 +519,15 @@ const config = {
             from: "/Orchestration/reliable-ci-cd",
           },
           {
-            to: "/extensibility/dependencies/spark-dependencies",
-            from: "/Spark/extensibility/dependencies",
-          },
-          {
-            to: "/extensibility/dependencies/sql-dependencies",
+            to: "/analysts/dependencies",
             from: "/SQL/extensibility/dependencies",
           },
           {
-            to: "/extensibility/gem-builder/sql-gem-builder",
+            to: "/analysts/gem-builder",
             from: "/SQL/extensibility/gem-builder/",
           },
           {
-            to: "/extensibility/gem-builder/spark-gem-builder",
+            to: "/engineers/gem-builder",
             from: "/Spark/extensibility/gem-builder/",
           },
           {
@@ -499,7 +543,7 @@ const config = {
             from: "/Spark/business-rules-engine/",
           },
           {
-            to: "/SQL/",
+            to: "/data-modeling/",
             from: "/SQL/development/",
           },
           {
@@ -507,23 +551,23 @@ const config = {
             from: "/package-hub/package-builder/",
           },
           {
-            to: "/SQL/visual-expression-builder/variant-schema",
+            to: "/analysts/variant-schema",
             from: "/SQL/development/visual-editor/variant-schema",
           },
           {
-            to: "/SQL/",
+            to: "/data-modeling/",
             from: "/SQL/development/visual-editor/",
           },
           {
-            to: "/SQL/",
+            to: "/data-modeling/",
             from: "/SQL/development/code-editor",
           },
           {
-            to: "/extensibility/gem-builder/spark-gem-builder",
+            to: "/engineers/gem-builder",
             from: "/package-hub/package-builder/Gem-builder",
           },
           {
-            to: "/extensibility/gem-builder/spark-gem-builder",
+            to: "/engineers/gem-builder",
             from: "/extensibility/package-hub/Gem-builder",
           },
           {
@@ -531,15 +575,15 @@ const config = {
             from: "/settings/active-users-api/",
           },
           {
-            to: "/getting-started/tutorials/spark-with-databricks",
+            to: "/engineers/project-lifecycle",
             from: "/getting-started/spark-with-databricks",
           },
           {
-            to: "/getting-started/tutorials/sql-with-snowflake",
+            to: "/engineers/data-modeling",
             from: "/getting-started/sql-with-snowflake",
           },
           {
-            to: "/getting-started/tutorials/sql-with-databricks",
+            to: "/engineers/data-modeling",
             from: "/getting-started/sql-with-databricks",
           },
           {
@@ -547,8 +591,56 @@ const config = {
             from: "/getting-started/gen-ai-chatbot",
           },
           {
-            to: "/administration/Spark-fabrics/livy",
+            to: "/engineers/subgraph",
+            from: "/Spark/gems/subgraph",
+          },
+          {
+            to: "/administration/fabrics/Spark-fabrics/livy",
             from: "/administration/authentication/security-settings",
+          },
+          {
+            to: "/engineers/prophecy-managed-fabric",
+            from: "/administration/fabrics/Spark-fabrics/prophecy-managed-databricks",
+          },
+          {
+            to: "/engineers/prophecy-managed-fabric",
+            from: "/Spark/fabrics/prophecy-managed-databricks",
+          },
+          {
+            to: "/engineers/configurations",
+            from: "/low-code-spark/parameterized-gems",
+          },
+          {
+            to: "/engineers/subgraph",
+            from: "/low-code-spark/gems/subgraph/",
+          },
+          {
+            to: "/extensibility/",
+            from: "/low-code-spark/extensibility/dependencies",
+          },
+          {
+            to: "/engineers/execution-metrics",
+            from: "/low-code-spark/execution/execution-metrics",
+          },
+          {
+            to: "/engineers/data-sampling",
+            from: "/low-code-spark/execution/executions_on_databricks_clusters",
+          },
+          {
+            to: "/analysts/gem-builder",
+            from: "/extensibility/gem-builder/sql-gem-builder",
+          },
+          {
+            to: "/engineers/gem-builder",
+            from: "/extensibility/gem-builder/spark-gem-builder",
+          },
+          {
+            to: "/engineers/dependencies",
+            from: "/extensibility/dependencies/spark-dependencies",
+          },
+          {
+            to: "/engineers/prophecy-libraries",
+            from: "/extensibility/dependencies/prophecy-libraries",
           },
         ],
         /*
@@ -600,42 +692,44 @@ const config = {
               ),
             ];
           }
-          if (existingPath.includes("/SQL/gems/target-models/")) {
+          if (existingPath.includes("/data-modeling/gems/target-models/")) {
             return [
               existingPath.replace(
-                "/SQL/gems/target-models/",
+                "/data-modeling/gems/target-models/",
                 "/SQL/development/target-models/",
               ),
             ];
           }
-          if (existingPath.includes("/SQL/visual-expression-builder")) {
+          if (
+            existingPath.includes("/data-modeling/visual-expression-builder")
+          ) {
             return [
               existingPath.replace(
-                "/SQL/visual-expression-builder",
+                "/data-modeling/visual-expression-builder",
                 "/SQL/development/visual-editor/visual-expression-builder",
               ),
             ];
           }
-          if (existingPath.includes("/administration/Spark-fabrics/")) {
+          if (existingPath.includes("/administration/fabrics/Spark-fabrics/")) {
             return [
               existingPath.replace(
-                "/administration/Spark-fabrics/",
+                "/administration/fabrics/Spark-fabrics/",
                 "/Spark/fabrics/",
               ),
             ];
           }
-          if (existingPath.includes("/administration/sql-fabrics")) {
+          if (existingPath.includes("/administration/fabrics/sql-fabrics")) {
             return [
               existingPath.replace(
-                "/administration/sql-fabrics",
+                "/administration/fabrics/sql-fabrics",
                 "/SQL/fabrics/",
               ),
             ];
           }
-          if (existingPath.includes("/administration/secret-management")) {
+          if (existingPath.includes("/administration/secrets")) {
             return [
               existingPath.replace(
-                "/administration/secret-management",
+                "/administration/secrets",
                 "/Spark/secret-management",
               ),
             ];
@@ -702,8 +796,11 @@ const config = {
           if (existingPath.includes("/Orchestration")) {
             return [existingPath.replace("/Orchestration", "/low-code-jobs")];
           }
-          if (existingPath.includes("/SQL")) {
-            return [existingPath.replace("/SQL", "/low-code-sql")];
+          if (existingPath.includes("/data-modeling")) {
+            return [existingPath.replace("/data-modeling", "/low-code-sql")];
+          }
+          if (existingPath.includes("/data-modeling")) {
+            return [existingPath.replace("/data-modeling", "/SQL")];
           }
           if (existingPath.includes("/Spark")) {
             return [existingPath.replace("/Spark", "/low-code-spark")];

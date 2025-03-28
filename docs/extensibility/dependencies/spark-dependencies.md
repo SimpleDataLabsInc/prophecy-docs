@@ -1,6 +1,7 @@
 ---
 title: Spark dependencies
 id: spark-dependencies
+slug: /engineers/dependencies
 description: Dependency management
 tags:
   - dependencies

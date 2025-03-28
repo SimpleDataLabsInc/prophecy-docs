@@ -1,6 +1,7 @@
 ---
 title: Tutorials
 id: tutorials
+slug: /tutorials
 description: Walk through the project development lifecycle
 tags: []
 ---

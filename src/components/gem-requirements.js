@@ -41,7 +41,7 @@ export default function Requirements(props) {
       )}
 
       {props.uc_single && (
-        <a href="https://docs.prophecy.io/administration/Spark-fabrics/databricks/">
+        <a href="https://docs.prophecy.io/administration/fabrics/Spark-fabrics/databricks/">
           <span className="badge-spark">
             <span className="left">Databricks UC Single Cluster</span>
             <span className="right">{props.uc_single}</span>
@@ -50,7 +50,7 @@ export default function Requirements(props) {
       )}
 
       {props.uc_shared && (
-        <a href="https://docs.prophecy.io/administration/Spark-fabrics/databricks/ucshared">
+        <a href="https://docs.prophecy.io/administration/fabrics/Spark-fabrics/databricks/ucshared">
           <span className="badge-spark">
             <span className="left">Databricks UC Shared</span>
             <span className="right">{props.uc_shared}</span>
@@ -59,7 +59,7 @@ export default function Requirements(props) {
       )}
 
       {props.livy && (
-        <a href="https://docs.prophecy.io/administration/Spark-fabrics/livy">
+        <a href="https://docs.prophecy.io/administration/fabrics/Spark-fabrics/livy">
           <span className="badge-spark">
             <span className="left">Livy</span>
             <span className="right">{props.livy}</span>

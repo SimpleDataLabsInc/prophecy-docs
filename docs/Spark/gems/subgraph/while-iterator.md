@@ -32,7 +32,7 @@ The input of the WhileIterator can be any dataset. Importantly, the output schem
 ## Configuration
 
 :::info
-Before setting the WhileIterator configuration, make sure you are familiar with [pipeline configurations](docs/Spark/configuration.md).
+Before setting the WhileIterator configuration, make sure you are familiar with [pipeline configurations](docs/Spark/pipelines/configuration.md).
 :::
 
 Once you have a WhileIterator subgraph on your canvas, set configurations by opening the subgraph and clicking on **Configuration**. The following table describes the parameters you need to set.

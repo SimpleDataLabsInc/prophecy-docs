@@ -1,6 +1,7 @@
 ---
 title: Gem Builder for Spark
 id: spark-gem-builder
+slug: /engineers/gem-builder
 description: Build Spark gems in Python or Scala
 tags:
   - gem builder
@@ -9,7 +10,7 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-[Gems](docs/concepts/project/gems.md) are visually-packaged parcels of code that perform specific operations on data. While Prophecy provides many gems out of the box, Prophecy also lets you create your own gems! Not only can you create new gems, but you can also share them in the [Package Hub](/docs/extensibility/package-hub/package-hub.md) or with selected teams.
+[Gems](docs/getting-started/concepts/gems.md) are visually-packaged parcels of code that perform specific operations on data. While Prophecy provides many gems out of the box, Prophecy also lets you create your own gems! Not only can you create new gems, but you can also share them in the [Package Hub](/docs/extensibility/package-hub/package-hub.md) or with selected teams.
 
 ## Overview
 

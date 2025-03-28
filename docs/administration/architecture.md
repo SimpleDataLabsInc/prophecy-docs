@@ -6,52 +6,43 @@ tags:
   - architecture
 ---
 
-Prophecy is written as a set of microservices that run on Kubernetes and can run on various cloud platforms. There are four components of a successful Prophecy deployment.
+Prophecy is deployed as microservices orchestrated by Kubernetes in various cloud platforms.
 
-| Component          | Description                                                                                                                                                                                                  |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Prophecy IDE**   | The development environment, including Prophecy microservices and cloud infrastructure, that is deployed.                                                                                                    |
-| **Data engine**    | The [SQL](#sql) or [Spark](#spark) execution environment, like Snowflake or Databricks. You'll set this up through our secure interface. None of your data is stored on Prophecy’s environment.              |
-| **Source control** | Prophecy natively integrates with Git and platforms like Bitbucket. An encrypted copy of your code is stored within Prophecy’s environment for fast access, while the source-of-truth code is stored on Git. |
-| **Authentication** | For simple user authentication and permission control, Prophecy can utilize your identity provider of choice.                                                                                                |
+## Components
 
-### Prophecy IDE
+The following are the main components of a successful Prophecy deployment.
 
-A user who logs into Prophecy has access to the integrated development environment (IDE). This includes everything needed to enable all data users to transform raw data into reliable, analytics-ready data using visual data pipelines.
+- **Prophecy Studio**: Users that log in to Prophecy access the Prophecy Studio to transform raw data into analytics-ready data using visual data pipelines.
 
-![Prophecy IDE](./img/arch_ide.png)
+- **Prophecy Automate**: A built-in Prophecy runtime designed for ingestion, egress, and orchestration. It is available exclusively for Prophecy fabrics with SQL connections and is not applicable to Spark-based projects.
 
-Teams are the primary mechanism of ownership. Teams own projects where pipelines, datasets, and jobs live. Teams also own execution fabrics that provide the execution and storage resources for execution including on SQL Warehouses and Spark clusters.
+- **External execution engine**: Prophecy runs data transformations on your own execution environment, such as Snowflake or Databricks. [Fabrics](docs/getting-started/concepts/fabrics.md) enable users to execute pipelines on these platforms. Prophecy does not persist your data.
 
-### SQL
+- **Source control**: Prophecy integrates with Git for version control and supports both native and external Git options.
 
-Prophecy can connect to Snowflake and Databricks warehouses for SQL query execution.
+- **Copilot**: Our Copilot is an AI assistant powered by a knowledge graph of datasets, schemas, models, and pipelines. It sends enhanced prompts to an LLM, receives SQL or Spark code, verifies it, and generates visual components.
 
-#### Snowflake
+- **Authentication**: Prophecy supports multiple authentication methods, including Prophecy-managed authentication and integration with other identity providers.
 
-To connect with data stored in a SQL Warehouse, or to allow for interactive SQL execution, Prophecy can connect to an existing Snowflake execution environment through secure and performant [Snowpark](https://docs.snowflake.com/en/developer-guide/snowpark/index) or [Snowflake](https://docs.snowflake.com/en/developer-guide/sql-api/reference) APIs.
+## Prophecy for Analysts
 
-Each [fabric](../../concepts/fabrics) defined in Prophecy connects to a single Snowflake Warehouse and each user is required to provide credentials to authenticate to it.
+Prophecy for Analysts leverages Prophecy Automate and an external SQL warehouse of your choice to build, run, and schedule pipelines. This architecture diagram demonstrates one example of the various components involved in a Prophecy deployment in their respective virtual networks.
 
-![Arch_Diagram](./img/arch_snowflake.png)
+![Prophecy for Analysts](img/arch-prophecy-sql.png)
 
-Notice the data provider (e.g. Snowflake) matches up to a fabric. For another scenario, consider the same architecture diagram where the fabric connects to a Databricks SQL warehouse instead of Snowflake.
+Prophecy can accommodate a wide variety of architectures beyond this diagram. For example:
 
-### Spark
+- The diagram shows Databricks as the data provider and SQL warehouse. Prophecy also supports Snowflake SQL warehouse.
+- The diagram displays a connection to an external Git repository. You can also use Prophecy-managed Git for version control.
+- The diagrams places Prophecy Automate inside Prophecy. If necessary, Prophecy Automate can run in a customer network instead. If you opt to run Prophecy Automate in your customer network, then you must specify this in the Prophecy [fabric](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md).
 
-To allow for interactive code execution Prophecy can connect to either [Databricks](#databricks) or any other Spark through [Apache Livy](https://livy.apache.org/) (e.g. MapR, CDP, HDP, Spark on Kubernetes).
+## Prophecy for Engineers
 
-#### Databricks
+Prophecy for Engineers privileges Spark to execute pipelines in a scalable and optimized way. This architecture diagram demonstrates one example of the various components involved in a Prophecy deployment in their respective virtual networks.
 
-Prophecy connects to Databricks using [Rest API](https://docs.databricks.com/dev-tools/api/latest/index.html). Each [fabric](../../concepts/fabrics) defined in Prophecy connects to a single [Databricks workspace](https://docs.databricks.com/workspace/index.html). You can connect a Databricks workspace to your fabric using a [personal access token (PAT)](https://docs.databricks.com/dev-tools/api/latest/authentication.html) or [Databricks OAuth](docs/administration/authentication/databricks-oauth.md).
+![Prophecy for Engineers](img/arch-prophecy-spark.png)
 
-:::note
-When using **Active Directory**, Prophecy takes care of the auto-generation and refreshing of the Databricks personal access tokens. Read more about it [here](https://docs.microsoft.com/en-us/azure/databricks/dev-tools/api/latest/aad/).
-:::
+Prophecy can accommodate a wide variety of architectures beyond this diagram. For example:
 
-Prophecy primarily uses Databricks for the following functionalities:
-
-- **Interactive Execution**: Prophecy allows its users to spin up new clusters or connect to existing clusters. When a cluster connection exists, Prophecy allows the user to run their code in the interactive mode. Interactive code queries are sent to Databricks using the [Databricks Command API 1.2](https://docs.databricks.com/dev-tools/api/1.2/index.html).
-- **Scheduling**: Prophecy allows the user to build and orchestrate Databricks jobs. This works through the [Databricks Jobs API 2.1](https://docs.databricks.com/dev-tools/api/latest/jobs.html).
-
-![Prophecy to Databricks Connectivity](./img/arch_databricks.png)
+- The diagram demonstrates Databricks as the execution engine. You can use any other Spark engine through [Apache Livy](https://livy.apache.org/).
+- The diagram displays a connection to an external Git repository. You can connect to a variety of providers such as GitHub, Bitbucket, GitLab, and more.

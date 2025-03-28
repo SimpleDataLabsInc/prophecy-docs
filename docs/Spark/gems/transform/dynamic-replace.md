@@ -95,7 +95,7 @@ For this example, you would configure the gem using the following values:
 ## Example code
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
 :::
 
 ````mdx-code-block

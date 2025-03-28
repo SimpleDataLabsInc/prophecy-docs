@@ -15,7 +15,7 @@ The CSV (Comma-separated Values) file type is:
 
 ## Requirements
 
-The CSV file type requires different package and Spark versions depeding on the location type you select.
+The CSV file type requires different package and Spark versions depending on the location type you select.
 
 import Requirements from '@site/src/components/gem-requirements';
 
@@ -53,7 +53,7 @@ The Source gem reads data from CSV files and allows you to optionally specify th
 | Escape character                           | Sets a single character to escape quotes inside a quoted value.                                                                                                                                                                              | `\`                                |
 | Escape char for quote escaping char        | Sets a single character to escape the escape for the quote character.                                                                                                                                                                        | `\0`                               |
 | Skip line beginning with character         | If the line begins with the character you specify, skip the entire line.                                                                                                                                                                     | None                               |
-| Enforce specified or inferred schema       | Whether to forcibly apply the specified or inferred schema to datasource files, and headers in CSV files. <br/>CSV built-in functions ignore this option.                                                                                    | false                              |
+| Enforce specified or inferred schema       | Whether to forcibly apply the specified or inferred schema to data source files, and headers in CSV files. <br/>CSV built-in functions ignore this option.                                                                                   | false                              |
 | Sampling Ratio                             | Defines a fraction of rows to use for schema inferring. <br/>CSV built-in functions ignore this option.                                                                                                                                      | `1.0`                              |
 | Ignore leading white spaces from values    | Whether to skip the leading whitespaces from values the Source gem reads.                                                                                                                                                                    | false                              |
 | Ignore trailing white spaces from values   | Whether to skip the trailing whitespaces from values the Source gem reads.                                                                                                                                                                   | false                              |
