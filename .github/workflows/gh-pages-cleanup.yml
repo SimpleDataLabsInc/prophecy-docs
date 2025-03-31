@@ -15,6 +15,12 @@ jobs:
           repository: SimpleDataLabsInc/prophecy-docs-staging
           ref: gh-pages
           ssh-key: ${{ secrets.STAGING_DEPLOY_KEY }}
+          persist-credentials: true
+
+      - name: Configure Git user
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
 
       - name: Delete preview files
         run: |
@@ -23,15 +29,5 @@ jobs:
             git push origin gh-pages
           else
             echo "Preview directory preview/pr-${{ github.event.pull_request.number }} not found. Skipping cleanup."
-          fi
-        shell: bash
-
-      - name: Report Cleanup Result
-        if: always()
-        run: |
-          if [[ $? -eq 0 ]]; then
-            echo "Successfully cleaned up preview for PR #${{ github.event.pull_request.number }}"
-          else
-            echo "Cleanup for PR #${{ github.event.pull_request.number }} failed or was skipped."
           fi
         shell: bash
