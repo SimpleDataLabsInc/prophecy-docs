@@ -29,7 +29,7 @@ jobs:
         run: yarn install --frozen-lockfile && yarn build
 
       - name: Verify built config
-        run: cat build/docusaurus.config.json || echo "No config file found"
+        run: cat docusaurus.config.json || echo "No config file found"
 
       - name: Deploy PR Preview to Staging GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
