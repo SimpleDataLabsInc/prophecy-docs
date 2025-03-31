@@ -31,7 +31,7 @@ const config = {
   title: "Prophecy",
   tagline: "Low Code Data Engineering",
   url: "https://docs.prophecy.io/",
-  baseUrl: "/",
+  baseUrl: process.env.BASE_URL || "/", // Defaults to root
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon2.png",
