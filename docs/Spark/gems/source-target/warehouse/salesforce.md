@@ -1,6 +1,7 @@
 ---
 title: Salesforce
 id: salesforce
+slug: /engineers/salesforce
 description: Salesforce
 tags:
   - gems

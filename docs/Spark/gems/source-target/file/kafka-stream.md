@@ -1,6 +1,7 @@
 ---
 title: Kafka
 id: kafka
+slug: /engineers/kafka
 description: Parameters and properties to read from and write to Kafka files
 tags:
   - gems
@@ -227,7 +228,7 @@ Taking this approach provides you the with following benefits:
 3. You can replay old messages by modifying the Metadata table.
 
 :::note
-For production workflows the [phase](docs/Spark/gems/gems.md#gem-phase) for the `Script` gem that updates the offsets should be greater than the phase of the Target gem. This ensures that offsets only update in the table after Prophecy safely persists the data to the Target.
+For production workflows the [phase](/engineers/gems#gem-phase) for the `Script` gem that updates the offsets should be greater than the phase of the Target gem. This ensures that offsets only update in the table after Prophecy safely persists the data to the Target.
 :::
 
 #### Spark Code used for script component

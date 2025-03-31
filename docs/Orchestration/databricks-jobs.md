@@ -2,13 +2,14 @@
 title: Databricks Jobs
 description: Databricks jobs
 id: databricks-jobs
+slug: /engineers/databricks-jobs
 tags:
   - jobs
   - deployment
   - scheduling
 ---
 
-Once you have developed a [Spark pipeline](docs/Spark/pipelines/pipelines.md) using Prophecy, you will want to schedule it to run at
+Once you have developed a [Spark pipeline](/engineers/pipelines) using Prophecy, you will want to schedule it to run at
 some frequency. To support this, Prophecy provides a visual layer on top of Databricks jobs for an easy orchestration.
 
 ## Development
@@ -23,7 +24,7 @@ with the pipeline you create it from.
 
 To do that, simply navigate to your pipeline, and click on the Schedule button (1). That opens a modal that shows all
 the jobs that refer to this job or allow you to create a completely new job from scratch. Upon clicking
-Create New (2) you are redirected to the [job building page](/Orchestration/databricks-jobs#building-the-job).
+Create New (2) you are redirected to the [job building page](/engineers/databricks-jobs/#building-the-job).
 
 ![Databricks Job Creation](img/databricks-job-creation.png)
 
@@ -165,4 +166,4 @@ status of historic/current runs (success/failure/in-progress) for quick referenc
 ## Guides
 
 1. [How to trigger a job from another job?](multi-jobs-trigger)
-2. [How to design a reliable CI/CD process?](docs/ci-cd/reliable-ci-cd.md)
+2. [How to design a reliable CI/CD process?](/engineers/ci-cd)

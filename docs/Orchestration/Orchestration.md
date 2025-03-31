@@ -1,6 +1,7 @@
 ---
 title: Orchestration
 id: Orchestration
+slug: /engineers/orchestration
 description: Airflow and Databricks Jobs
 tags:
   - jobs
@@ -17,7 +18,7 @@ schedulers:
    Databricks Native.
 
 2. **[Airflow](airflow/airflow.md)**: for more complex use-cases, where you have to use various operators, or need
-   any additional data pre-and-post-processing, you can interface from Prophecy with your production-ready Airflow deployment. To get started with your first Airflow jobs, try Prophecy Managed Airflow using this [guide](docs/Orchestration/airflow/airflow-tutorial-spark.md).
+   any additional data pre-and-post-processing, you can interface from Prophecy with your production-ready Airflow deployment. To get started with your first Airflow jobs, try Prophecy Managed Airflow using this [guide](/engineers/spark-airflow-tutorial).
 
 3. **[Custom](alternative-schedulers.md)**: Alternatively, since Prophecy provides you native Spark code on Git, you can easily integrate with any other scheduler or custom solution.
 

@@ -1,6 +1,7 @@
 ---
 title: Lookup
 id: lookup
+slug: /engineers/lookup
 description: Lookup
 tags:
   - gems
@@ -98,7 +99,7 @@ MyLookup(customer_id)['order_category']
 </Tabs>
 ````
 
-For example, let's look at a [Reformat](docs/Spark/gems/transform/reformat.md) component:
+For example, let's look at a [Reformat](/engineers/reformat) component:
 
 ![Reformat example](./img/lookup_use.png)
 

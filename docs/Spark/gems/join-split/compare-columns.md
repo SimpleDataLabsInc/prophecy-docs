@@ -1,6 +1,7 @@
 ---
 title: CompareColumns
 id: compare-columns
+slug: /engineers/compare-columns
 description: Compare columns between two dataframes
 tags:
   - gems

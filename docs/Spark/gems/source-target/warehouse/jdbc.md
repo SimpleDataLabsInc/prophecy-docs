@@ -1,6 +1,7 @@
 ---
 title: JDBC
 id: jdbc
+slug: /engineers/jdbc
 description: JDBC
 tags:
   - gems

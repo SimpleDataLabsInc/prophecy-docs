@@ -1,6 +1,7 @@
 ---
 title: RestAPIEnrich
 id: rest-api-enrich
+slug: /engineers/rest-api-enrich
 description: Enrich DataFrame with content from rest API response based on configuration
 tags:
   - gems

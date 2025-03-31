@@ -68,7 +68,7 @@ If you have trouble attaching a cluster, you might not have the right permission
 
 ### Add a source
 
-For this quick start, you'll create a [Seed](docs/Spark/gems/source-target/file/seed.md) as the data source.
+For this quick start, you'll create a [Seed](/engineers/seed) as the data source.
 
 1. Open the **Source/Target** gem category.
 1. Click **Source**. This adds a new Source gem to the canvas.
@@ -108,7 +108,7 @@ Now, let's make sure the data is properly loaded. Because the copy-pasted data i
 
 ### Add a reformat transformation
 
-Now, you'll configure your first data transformation using the [Reformat](docs/Spark/gems/transform/reformat.md) gem.
+Now, you'll configure your first data transformation using the [Reformat](/engineers/reformat) gem.
 
 1. From the **Transform** gem category, add a **Reformat** gem to your canvas.
 1. Drag the Reformat gem near your Table gem to auto-connect them.
@@ -129,7 +129,7 @@ By default, gem expressions expect Spark SQL code.
 
 ## Generate data previews
 
-At this point, you may be curious to know what your data looks like. Generate [data previews](docs/Spark/data-explorer/data-explorer.md) with the following steps:
+At this point, you may be curious to know what your data looks like. Generate [data previews](/engineers/data-explorer) with the following steps:
 
 1. Click the play button in the bottom right corner of the canvas.
 1. As the pipeline runs, preview icons should appear as gem outputs.
@@ -152,5 +152,5 @@ Now, you'll be able to view this commit in the branch history. Feel free to cont
 Continue your Prophecy learning journey:
 
 - Try our [end-to-end tutorial](docs/getting-started/tutorials/spark-with-databricks.md) on the project lifecycle in Prophecy
-- Discover the different [Spark gems](docs/Spark/gems/gems.md) that you can use for data transformation
+- Discover the different [Spark gems](/engineers/gems) that you can use for data transformation
 - [Reach out to us](docs/getting-help/getting-help.md) if you need additional help or guidance

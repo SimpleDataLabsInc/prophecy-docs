@@ -1,6 +1,7 @@
 ---
 title: Configurations
 id: configuration
+slug: /engineers/data-model-configurations
 description: Configure SQL project and model variables
 tags:
   - SQL

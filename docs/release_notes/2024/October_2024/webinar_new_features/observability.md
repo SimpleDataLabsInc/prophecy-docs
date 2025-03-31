@@ -11,7 +11,7 @@ Highlighted improvements for pipeline Observability
 
 ### Lineage Run
 
-Click [here](/docs/lineage/lineage-run-and-diagnose.md) for further details
+Click [here](/engineers/lineage-run-and-diagnose) for further details
 
 ### Pipeline Monitoring and Debugging
 

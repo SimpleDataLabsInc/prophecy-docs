@@ -1,6 +1,7 @@
 ---
 title: Join & Split
 id: join-split
+slug: /engineers/join-split
 description: The set of gems that can split or join one or more DataFrames
 tags: []
 ---

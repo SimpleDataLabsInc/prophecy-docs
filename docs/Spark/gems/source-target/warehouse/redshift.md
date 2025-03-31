@@ -1,6 +1,7 @@
 ---
 title: Redshift
 id: redshift
+slug: /engineers/redshift
 description: Redshift
 tags:
   - gems

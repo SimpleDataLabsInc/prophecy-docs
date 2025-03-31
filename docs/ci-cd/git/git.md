@@ -1,6 +1,7 @@
 ---
 title: Git
 id: Git
+slug: /engineers/git
 description: Understand how Prophecy uses Git for version control
 tags:
   - metadata
@@ -59,4 +60,4 @@ When you fork a repository, you must already have both the upstream repository a
 
 ## What's next
 
-Learn more about the [Git workflow](docs/ci-cd/git/git-workflow.md) or try it yourself in [Develop and deploy a project](docs/ci-cd/deployment/deployment.md).
+Learn more about the [Git workflow](/engineers/git-workflow) or try it yourself in [Develop and deploy a project](/engineers/deployment).

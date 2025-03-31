@@ -1,6 +1,7 @@
 ---
 title: Delta
 id: delta
+slug: /engineers/delta
 description: Parameters and properties to read from and write to Delta files
 tags:
   - gems

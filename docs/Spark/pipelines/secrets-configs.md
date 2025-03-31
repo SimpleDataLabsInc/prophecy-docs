@@ -2,6 +2,7 @@
 title: Secrets in pipeline configurations
 sidebar_label: Secrets in configurations
 id: secrets-configs
+slug: /engineers/pipeline-configuration-secrets
 description: Store secrets in pipeline config
 tags:
   - spark
@@ -26,7 +27,7 @@ In this example, we demonstrate using Databricks secrets to configure Snowflake 
 
 1. **Create secrets in Databricks.** [Create your secret scope and keys in Databricks](https://docs.databricks.com/security/secrets/index.html). For this example, create a secret for your Snowflake username and a secret for the password. Assume we created scope `demo-scope` and added two secrets with key `snowflake-username` and `snowflake-password`.
 
-2. **Create pipeline config to map to secrets.** Add configs of Type `databricks_secret` in [Pipeline Configs](/docs/Spark/pipelines/configuration.md). Let's say we call it `snowflake_user` and `snowflake_pass`.
+2. **Create pipeline config to map to secrets.** Add configs of Type `databricks_secret` in [Pipeline Configs](/engineers/configurations). Let's say we call it `snowflake_user` and `snowflake_pass`.
 
    ![img.png](img/databricks_secrets_config.png)
 

@@ -24,7 +24,7 @@ tags:
 
   Data sampling is enabled on by default. When left enabled, Data sampling uses the pipeline's data sampling settings. Prophecy samples data during the interactive run experience to provide the best debugging experience for users.
 
-  For more information, see [Interims](docs/Spark/execution/execution.md#interactive-execution).
+  For more information, see [Interims](/engineers/execution/#interactive-execution).
 
 #### SQL Copilot Enhancements {#SQL34}
 
@@ -111,7 +111,7 @@ Added/updated gems are highlighted in yellow.
 
   You can also use manual merge to resolve conflicts. This provides you with simple, yet effective ways to resolve merge conflicts for granular changes. For SQL, you can also toggle on **Code Changes** to view and edit the code directly on the files.
 
-  For more information, see the [Git docs](/docs/ci-cd/git/git.md).
+  For more information, see the [Git docs](/engineers/git).
 
 - **Databricks Volumes support**: Prophecy now supports Databricks Volumes. When you run a Python or Scala pipeline via a job, you must bundle them as whl/jar artifacts. These artifacts must then be made accessible to the Databricks job in order to use them as a library installed on the cluster.
 

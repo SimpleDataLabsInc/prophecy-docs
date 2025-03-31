@@ -1,6 +1,7 @@
 ---
 title: Avro
 id: avro
+slug: /engineers/avro
 description: Parameters and properties to read from and write to Avro files
 tags:
   - gems

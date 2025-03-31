@@ -1,6 +1,7 @@
 ---
 title: XLSX (Excel)
 id: xlsx
+slug: /engineers/xlsx
 description: Parameters and properties to read from and write too XLSX (Excel) files
 tags:
   - gems

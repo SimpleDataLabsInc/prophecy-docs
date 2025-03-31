@@ -27,4 +27,4 @@ If you use plain text for username and password fields, you will see a warning d
 
 ### Pipeline configurations
 
-If you want to populate secrets dynamically in your pipeline, you can set up secrets in [pipeline configurations](docs/Spark/pipelines/secrets-configs.md).
+If you want to populate secrets dynamically in your pipeline, you can set up secrets in [pipeline configurations](/engineers/pipeline-configuration-secrets).

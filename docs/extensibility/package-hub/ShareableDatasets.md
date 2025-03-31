@@ -1,11 +1,12 @@
 ---
 title: Build Shareable Datasets
 id: shareable-datasets
+slug: /engineers/shareable-datasets
 description: Shareable Datasets within the project
 tags: []
 ---
 
-Users can share a [Dataset](docs/Spark/dataset.md) across their pipelines, but use caution when sharing across projects.
+Users can share a [Dataset](/engineers/dataset) across their pipelines, but use caution when sharing across projects.
 
 ## Across pipelines
 

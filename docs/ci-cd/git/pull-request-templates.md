@@ -1,6 +1,7 @@
 ---
 title: Pull request templates
 id: pr-templates
+slug: /engineers/git-pull-requests
 description: Open Pull Requests from within Prophecy
 tags:
   - metadata

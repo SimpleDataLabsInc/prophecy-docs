@@ -1,6 +1,7 @@
 ---
 title: Write Options
 id: write-options
+slug: /engineers/write-options-target-model
 description: Write Options of Target Models
 tags:
   - concept

@@ -1,6 +1,7 @@
 ---
 title: PBT on Jenkins
 id: prophecy-build-tool-jenkins
+slug: /engineers/jenkins-prophecy-build-tool
 description: Example Usage of Prophecy Build Tool on Jenkins
 tags:
   - metadata

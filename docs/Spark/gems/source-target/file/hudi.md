@@ -1,6 +1,7 @@
 ---
 title: Hudi
 id: hudi
+slug: /engineers/hudi
 description: Parameters and properties to read from and write to Hudi files
 draft: true
 tags:

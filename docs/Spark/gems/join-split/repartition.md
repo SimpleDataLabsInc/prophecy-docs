@@ -1,6 +1,7 @@
 ---
 title: Repartition
 id: Repartition
+slug: /engineers/repartition
 description: Repartition or coalesce a DataFrame
 tags:
   - gems

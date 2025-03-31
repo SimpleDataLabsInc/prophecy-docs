@@ -1,6 +1,7 @@
 ---
 title: Fixed Format
 id: fixed-format
+slug: /engineers/fixed-format
 description: Parameters and properties to read from and write to Fixed Format files
 tags:
   - gems

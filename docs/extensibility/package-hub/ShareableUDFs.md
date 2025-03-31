@@ -1,6 +1,7 @@
 ---
 title: Build Shareable UDFs
 id: sharable-udfs
+slug: /engineers/shareable-udfs
 description: Sharable UDFs within the project and to other projects
 tags: []
 ---

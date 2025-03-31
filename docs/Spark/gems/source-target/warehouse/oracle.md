@@ -1,6 +1,7 @@
 ---
 title: Oracle
 id: oracle
+slug: /engineers/oracle
 description: Oracle
 tags:
   - gems

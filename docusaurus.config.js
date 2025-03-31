@@ -327,47 +327,571 @@ const config = {
             from: "/administration/Spark-fabrics/fabric-diagnostics",
           },
           {
-            to: "/Orchestration/multi-jobs-trigger",
+            to: "/engineers/multi-jobs-trigger",
             from: "/tutorials/Orchestration/multi-jobs-trigger",
           },
           {
-            to: "/ci-cd/reliable-ci-cd",
+            to: "/engineers/ci-cd",
             from: "/tutorials/Orchestration/reliable-ci-cd",
           },
           {
-            to: "/Orchestration/",
-            from: "/tutorials/Orchestration/",
+            to: "/engineers/orchestration",
+            from: "/tutorials/Orchestration",
           },
           {
-            to: "/Spark/gems/source-target/file/xlsx",
+            to: "/engineers/xlsx",
             from: "/tutorials/Spark/excel",
           },
           {
-            to: "/Spark/",
+            to: "/engineers/pipeline-development",
+            from: "/Spark",
+          },
+          {
+            to: "/engineers/pipeline-development",
             from: "/tutorials/Spark/",
           },
           {
-            to: "/Spark/",
+            to: "/engineers/pipeline-development",
             from: "/tutorials/videos/design-pipeline",
           },
           {
-            to: "/Spark/",
+            to: "/engineers/pipeline-development",
             from: "/tutorials/videos/schedule-pipeline",
           },
           {
-            to: "/Spark/",
+            to: "/engineers/pipeline-development",
             from: "/tutorials/videos/test-pipeline",
           },
           {
-            to: "/Spark/",
+            to: "/engineers/pipeline-development",
             from: "/tutorials/videos/",
+          },
+          {
+            to: "/engineers/pipelines",
+            from: "/Spark/pipelines",
+          },
+          {
+            to: "/engineers/configurations",
+            from: "/Spark/pipelines/configuration",
+          },
+          {
+            to: "/engineers/pipeline-configuration-secrets",
+            from: "/Spark/pipelines/secrets-configs",
+          },
+          {
+            to: "/engineers/pipeline-settings",
+            from: "/Spark/pipelines/pipeline-settings",
+          },
+          {
+            to: "/engineers/dataset",
+            from: "/Spark/dataset",
+          },
+          {
+            to: "/engineers/gems",
+            from: "/Spark/gems",
+          },
+          {
+            to: "/engineers/source-target",
+            from: "/Spark/gems/source-target",
+          },
+          {
+            to: "/engineers/avro",
+            from: "/Spark/gems/source-target/file/avro",
+          },
+          {
+            to: "/engineers/csv",
+            from: "/Spark/gems/source-target/file/csv",
+          },
+          {
+            to: "/engineers/data-generator",
+            from: "/Spark/gems/source-target/file/data-generator",
+          },
+          {
+            to: "/engineers/delta",
+            from: "/Spark/gems/source-target/file/delta",
+          },
+          {
+            to: "/engineers/fixed-format",
+            from: "/Spark/gems/source-target/file/fixed-format",
+          },
+          {
+            to: "/engineers/json",
+            from: "/Spark/gems/source-target/file/json",
+          },
+          {
+            to: "/engineers/kafka",
+            from: "/Spark/gems/source-target/file/kafka",
+          },
+          {
+            to: "/engineers/orc",
+            from: "/Spark/gems/source-target/file/orc",
+          },
+          {
+            to: "/engineers/parquet",
+            from: "/Spark/gems/source-target/file/parquet",
+          },
+          {
+            to: "/engineers/seed",
+            from: "/Spark/gems/source-target/file/seed",
+          },
+          {
+            to: "/engineers/text",
+            from: "/Spark/gems/source-target/file/text",
+          },
+          {
+            to: "/engineers/upload-file",
+            from: "/Spark/gems/source-target/file/upload-file",
+          },
+          {
+            to: "/engineers/xlsx",
+            from: "/Spark/gems/source-target/file/xlsx",
+          },
+          {
+            to: "/engineers/xml",
+            from: "/Spark/gems/source-target/file/xml",
+          },
+          {
+            to: "/engineers/bigquery",
+            from: "/Spark/gems/source-target/warehouse/bigquery",
+          },
+          {
+            to: "/engineers/cosmosdb",
+            from: "/Spark/gems/source-target/warehouse/cosmos",
+          },
+          {
+            to: "/engineers/db2",
+            from: "/Spark/gems/source-target/warehouse/db2",
+          },
+          {
+            to: "/engineers/jdbc",
+            from: "/Spark/gems/source-target/warehouse/jdbc",
+          },
+          {
+            to: "/engineers/mongodb",
+            from: "/Spark/gems/source-target/warehouse/mongodb",
+          },
+          {
+            to: "/engineers/oracle",
+            from: "/Spark/gems/source-target/warehouse/oracle",
+          },
+          {
+            to: "/engineers/redshift",
+            from: "/Spark/gems/source-target/warehouse/redshift",
+          },
+          {
+            to: "/engineers/salesforce",
+            from: "/Spark/gems/source-target/warehouse/salesforce",
+          },
+          {
+            to: "/engineers/snowflake",
+            from: "/Spark/gems/source-target/warehouse/snowflake",
+          },
+          {
+            to: "/engineers/teradata",
+            from: "/Spark/gems/source-target/warehouse/teradata",
+          },
+          {
+            to: "/engineers/delta-table",
+            from: "/Spark/gems/source-target/catalog-table/delta",
+          },
+          {
+            to: "/engineers/hive-table",
+            from: "/Spark/gems/source-target/catalog-table/hive",
+          },
+          {
+            to: "/engineers/iceberg",
+            from: "/Spark/gems/source-target/catalog-table/iceberg",
+          },
+          {
+            to: "/engineers/lookup",
+            from: "/Spark/gems/source-target/lookup",
+          },
+          {
+            to: "/engineers/aggregate",
+            from: "/Spark/gems/transform/aggregate",
+          },
+          {
+            to: "/engineers/bulk-column-expressions",
+            from: "/Spark/gems/transform/bulk-column-expressions",
+          },
+          {
+            to: "/engineers/bulk-column-rename",
+            from: "/Spark/gems/transform/bulk-column-rename",
+          },
+          {
+            to: "/engineers/column-parser",
+            from: "/Spark/gems/transform/column-parser",
+          },
+          {
+            to: "/engineers/data-cleansing",
+            from: "/Spark/gems/transform/data-cleansing",
+          },
+          {
+            to: "/engineers/data-quality-check",
+            from: "/Spark/gems/transform/data-quality-check",
+          },
+          {
+            to: "/engineers/deduplicate",
+            from: "/Spark/gems/transform/deduplicate",
+          },
+          {
+            to: "/engineers/dynamic-replace",
+            from: "/Spark/gems/transform/dynamic-replace",
+          },
+          {
+            to: "/engineers/dynamic-select",
+            from: "/Spark/gems/transform/dynamic-select",
+          },
+          {
+            to: "/engineers/filter",
+            from: "/Spark/gems/transform/filter",
+          },
+          {
+            to: "/engineers/flatten-schema",
+            from: "/Spark/gems/transform/flatten-schema",
+          },
+          {
+            to: "/engineers/fuzzy-match",
+            from: "/Spark/gems/transform/fuzzy-match",
+          },
+          {
+            to: "/engineers/limit",
+            from: "/Spark/gems/transform/limit",
+          },
+          {
+            to: "/engineers/order-by",
+            from: "/Spark/gems/transform/order-by",
+          },
+          {
+            to: "/engineers/reformat",
+            from: "/Spark/gems/transform/reformat",
+          },
+          {
+            to: "/engineers/sample-rows",
+            from: "/Spark/gems/transform/sample-rows",
+          },
+          {
+            to: "/engineers/schema-transform",
+            from: "/Spark/gems/transform/schema-transform",
+          },
+          {
+            to: "/engineers/set-operation",
+            from: "/Spark/gems/transform/set-operation",
+          },
+          {
+            to: "/engineers/unpivot",
+            from: "/Spark/gems/transform/unpivot",
+          },
+          {
+            to: "/engineers/window-function",
+            from: "/Spark/gems/transform/window-function",
+          },
+          {
+            to: "/engineers/join-split",
+            from: "/Spark/gems/join-split/join-split",
+          },
+          {
+            to: "/engineers/compare-columns",
+            from: "/Spark/gems/join-split/compare-columns",
+          },
+          {
+            to: "/engineers/join",
+            from: "/Spark/gems/join-split/join",
+          },
+          {
+            to: "/engineers/repartition",
+            from: "/Spark/gems/join-split/Repartition",
+          },
+          {
+            to: "/engineers/row-distributor",
+            from: "/Spark/gems/join-split/row-distributor",
+          },
+          {
+            to: "/engineers/basic-subgraph",
+            from: "/Spark/gems/subgraph/basic-subgraph",
+          },
+          {
+            to: "/engineers/table-iterator",
+            from: "/Spark/gems/subgraph/table-iterator",
+          },
+          {
+            to: "/engineers/while-iterator",
+            from: "/Spark/gems/subgraph/while-iterator",
+          },
+          {
+            to: "/engineers/machine-learning",
+            from: "/Spark/gems/machine-learning",
+          },
+          {
+            to: "/engineers/openai",
+            from: "/Spark/gems/machine-learning/ml-openai",
+          },
+          {
+            to: "/engineers/pinecone-lookup",
+            from: "/Spark/gems/machine-learning/ml-pinecone-lookup",
+          },
+          {
+            to: "/engineers/text-processing",
+            from: "/Spark/gems/machine-learning/ml-text-processing",
+          },
+          {
+            to: "/engineers/generative-ai-chatbot",
+            from: "/Spark/gems/machine-learning/gen-ai-chatbot",
+          },
+          {
+            to: "/engineers/custom",
+            from: "/Spark/gems/custom",
+          },
+          {
+            to: "/engineers/script",
+            from: "/Spark/gems/custom/script",
+          },
+          {
+            to: "/engineers/sql-statement",
+            from: "/Spark/gems/custom/sql-statement",
+          },
+          {
+            to: "/engineers/delta-table-operations",
+            from: "/Spark/gems/custom/delta-ops",
+          },
+          {
+            to: "/engineers/file-operation",
+            from: "/Spark/gems/custom/file-operations",
+          },
+          {
+            to: "/engineers/rest-api-enrich",
+            from: "/Spark/gems/custom/rest-api-enrich",
+          },
+          {
+            to: "/engineers/directory",
+            from: "/Spark/gems/custom/directory",
+          },
+          {
+            to: "/engineers/expression-builder",
+            from: "/Spark/gems/expression-builder",
+          },
+          {
+            to: "/engineers/data-explorer",
+            from: "/Spark/data-explorer",
+          },
+          {
+            to: "/engineers/data-profile",
+            from: "/Spark/data-explorer/data-profile",
+          },
+          {
+            to: "/engineers/business-rules",
+            from: "/Spark/data-explorer/functions/business-rules-engine",
+          },
+          {
+            to: "/engineers/user-defined-functions",
+            from: "/Spark/functions/udfs",
+          },
+          {
+            to: "/engineers/spark-streaming",
+            from: "/Spark/spark-streaming",
+          },
+          {
+            to: "/engineers/spark-streaming",
+            from: "/Spark/spark-streaming/streaming-sources-and-targets",
+          },
+          {
+            to: "/engineers/file-based-streaming-source-and-targets",
+            from: "/Spark/spark-streaming/streaming-sources-and-targets/streaming-file-apps",
+          },
+          {
+            to: "/engineers/event-based-streaming-source-and-targets",
+            from: "/Spark/spark-streaming/streaming-sources-and-targets/streaming-event-apps",
+          },
+          {
+            to: "/engineers/warehouse-based-streaming-source-and-targets",
+            from: "/Spark/spark-streaming/streaming-sources-and-targets/streaming-warehouse-apps",
+          },
+          {
+            to: "/engineers/spark-streaming-transformations",
+            from: "/Spark/spark-streaming/transformations-streaming",
+          },
+          {
+            to: "/engineers/data-models",
+            from: "/data-modeling",
+          },
+          {
+            to: "/engineers/models",
+            from: "/data-modeling/Model",
+          },
+          {
+            to: "/engineers/data-modeling-gems",
+            from: "/data-modeling/gems",
+          },
+          {
+            to: "/engineers/model-sources",
+            from: "/data-modeling/gems/datasources",
+          },
+          {
+            to: "/engineers/target-models",
+            from: "/data-modeling/gems/target-models",
+          },
+          {
+            to: "/engineers/location-target-model",
+            from: "/data-modeling/gems/target-models/location",
+          },
+          {
+            to: "/engineers/schema-target-model",
+            from: "/data-modeling/gems/target-models/schema",
+          },
+          {
+            to: "/engineers/sql-query-target-model",
+            from: "/data-modeling/gems/target-models/sql-query",
+          },
+          {
+            to: "/engineers/type-and-format-target-model",
+            from: "/data-modeling/gems/target-models/type-and-format",
+          },
+          {
+            to: "/engineers/write-options-target-model",
+            from: "/data-modeling/gems/target-models/write-options",
+          },
+          {
+            to: "/engineers/data-model-execution",
+            from: "/data-modeling/execution",
+          },
+          {
+            to: "/engineers/data-model-configurations",
+            from: "/data-modeling/configuration",
+          },
+          {
+            to: "/engineers/lineage",
+            from: "/lineage",
+          },
+          {
+            to: "/engineers/lineage-extractor",
+            from: "/lineage/lineage-extractor",
+          },
+          {
+            to: "/engineers/lineage-run-and-diagnose",
+            from: "/lineage/lineage-run-and-diagnose",
+          },
+          {
+            to: "/engineers/lineage-view-and-search",
+            from: "/lineage/lineage-view-and-search",
+          },
+          {
+            to: "/engineers/git",
+            from: "/ci-cd/git",
+          },
+          {
+            to: "/engineers/git-workflow",
+            from: "/ci-cd/git/git-workflow",
+          },
+          {
+            to: "/engineers/resolve-git-conflicts",
+            from: "/ci-cd/git/git-resolve",
+          },
+          {
+            to: "/engineers/git-pull-requests",
+            from: "/ci-cd/git/pr-templates",
+          },
+          {
+            to: "/engineers/unit-tests",
+            from: "/ci-cd/tests/",
+          },
+          {
+            to: "/engineers/data-diff",
+            from: "/ci-cd/data-diff",
+          },
+          {
+            to: "/engineers/deployment",
+            from: "/ci-cd/deployment",
+          },
+          {
+            to: "/engineers/develop-and-deploy",
+            from: "/ci-cd/deployment/deploy-project",
+          },
+          {
+            to: "/engineers/external-release-tags",
+            from: "/ci-cd/deployment/use-external-release-tags",
+          },
+          {
+            to: "/engineers/prophecy-build-tool",
+            from: "/ci-cd/prophecy-build-tool",
+          },
+          {
+            to: "/engineers/github-actions-prophecy-build-tool",
+            from: "/ci-cd/prophecy-build-tool/prophecy-build-tool-github-actions",
+          },
+          {
+            to: "/engineers/jenkins-prophecy-build-tool",
+            from: "/ci-cd/prophecy-build-tool/prophecy-build-tool-jenkins",
+          },
+          {
+            to: "/engineers/orchestration",
+            from: "/Orchestration",
+          },
+          {
+            to: "/engineers/pipeline-monitoring",
+            from: "/Orchestration/pipeline-monitoring",
+          },
+          {
+            to: "/engineers/enable-pipeline-monitoring",
+            from: "/Orchestration/pipeline-monitoring/enable-pipeline-monitoring",
+          },
+          {
+            to: "/engineers/use-pipeline-monitoring",
+            from: "/Orchestration/pipeline-monitoring/use-pipeline-monitoring",
+          },
+          {
+            to: "/engineers/airflow",
+            from: "/Orchestration/airflow",
+          },
+          {
+            to: "/engineers/spark-airflow-tutorial",
+            from: "/Orchestration/airflow/airflow-tutorial-spark",
+          },
+          {
+            to: "/engineers/databricks-jobs",
+            from: "/Orchestration/databricks-jobs",
+          },
+          {
+            to: "/engineers/multi-jobs-trigger",
+            from: "/Orchestration/multi-jobs-trigger",
+          },
+          {
+            to: "/engineers/extensibility",
+            from: "/extensibility",
+          },
+          {
+            to: "/engineers/package-hub",
+            from: "/extensibility/package-hub",
+          },
+          {
+            to: "/engineers/shareable-pipelines",
+            from: "/extensibility/package-hub/shareable-pipelines",
+          },
+          {
+            to: "/engineers/shareable-datasets",
+            from: "/extensibility/package-hub/shareable-datasets",
+          },
+          {
+            to: "/engineers/shareable-subgraphs",
+            from: "/extensibility/package-hub/shareable-subgraphs",
+          },
+          {
+            to: "/engineers/shareable-udfs",
+            from: "/extensibility/package-hub/sharable-udfs",
+          },
+          {
+            to: "/engineers/gem-builder-reference",
+            from: "/extensibility/gem-builder/gem-builder-reference",
+          },
+          {
+            to: "/engineers/optimization-functions",
+            from: "/extensibility/gem-builder/optimization-functions",
           },
           {
             to: "/gems",
             from: "/concepts/gems/",
           },
           {
-            to: "/Spark/dataset",
+            to: "/engineers/dataset",
             from: "/concepts/dataset",
           },
           {
@@ -383,7 +907,7 @@ const config = {
             from: "/concepts/fabrics",
           },
           {
-            to: "/Spark/dataset",
+            to: "/engineers/dataset",
             from: "/concepts/project/dataset",
           },
           {
@@ -395,7 +919,7 @@ const config = {
             from: "/administration/feature-matrix",
           },
           {
-            to: "/Orchestration/airflow/airflow-tutorial-spark",
+            to: "/engineers/spark-airflow-tutorial",
             from: "/getting-started/airflow",
           },
           {
@@ -407,27 +931,27 @@ const config = {
             from: "/concepts/metadata",
           },
           {
-            to: "/ci-cd/git",
+            to: "/engineers/git",
             from: "/metadata/git",
           },
           {
-            to: "/ci-cd/git",
+            to: "/engineers/git",
             from: "/metadata/git/git-commit",
           },
           {
-            to: "/ci-cd/git",
+            to: "/engineers/git",
             from: "/metadata/git/git-merge",
           },
           {
-            to: "/ci-cd/git/pr-templates",
+            to: "/engineers/git-pull-requests",
             from: "/metadata/pr-templates",
           },
           {
-            to: "/ci-cd/git",
+            to: "/engineers/git",
             from: "/metadata/git/git-fork",
           },
           {
-            to: "/ci-cd/git/git-resolve",
+            to: "/engineers/resolve-git-conflicts",
             from: "/metadata/git/git-resolve",
           },
           {
@@ -511,11 +1035,11 @@ const config = {
             from: "/Spark/execution/interactive-execution",
           },
           {
-            to: "/ci-cd/tests",
+            to: "/engineers/unit-tests",
             from: "/Spark/tests",
           },
           {
-            to: "/ci-cd/reliable-ci-cd",
+            to: "/engineers/ci-cd",
             from: "/Orchestration/reliable-ci-cd",
           },
           {
@@ -531,23 +1055,23 @@ const config = {
             from: "/Spark/extensibility/gem-builder/",
           },
           {
-            to: "/extensibility/gem-builder/optimization-functions",
+            to: "/engineers/optimization-functions",
             from: "/Spark/extensibility/gem-builder/optimization-functions",
           },
           {
-            to: "/Spark/functions/udfs",
+            to: "/engineers/user-defined-functions",
             from: "/Spark/extensibility/udfs",
           },
           {
-            to: "/Spark/functions/business-rules-engine/",
+            to: "/engineers/business-rules",
             from: "/Spark/business-rules-engine/",
           },
           {
-            to: "/data-modeling/",
+            to: "/engineers/data-modeling",
             from: "/SQL/development/",
           },
           {
-            to: "/extensibility/package-hub/",
+            to: "/engineers/package-hub",
             from: "/package-hub/package-builder/",
           },
           {
@@ -555,11 +1079,11 @@ const config = {
             from: "/SQL/development/visual-editor/variant-schema",
           },
           {
-            to: "/data-modeling/",
+            to: "/engineers/data-modeling",
             from: "/SQL/development/visual-editor/",
           },
           {
-            to: "/data-modeling/",
+            to: "/engineers/data-modeling",
             from: "/SQL/development/code-editor",
           },
           {
@@ -587,7 +1111,7 @@ const config = {
             from: "/getting-started/sql-with-databricks",
           },
           {
-            to: "/Spark/gems/machine-learning/gen-ai-chatbot",
+            to: "/engineers/generative-ai-chatbot",
             from: "/getting-started/gen-ai-chatbot",
           },
           {
@@ -615,7 +1139,7 @@ const config = {
             from: "/low-code-spark/gems/subgraph/",
           },
           {
-            to: "/extensibility/",
+            to: "/engineers/extensibility",
             from: "/low-code-spark/extensibility/dependencies",
           },
           {

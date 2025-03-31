@@ -17,12 +17,12 @@ While Prophecy offers some built-in execution capabilities through [Prophecy Aut
 
 Different fabrics are designed to support specific project types. Use the table below to identify which fabric best aligns with your project's execution requirements.
 
-| Fabric type                                            | Description                                        | Usage                                                                                             |
-| ------------------------------------------------------ | -------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| [Prophecy](/administration/fabrics/prophecy-fabrics/)  | Compute with Prophecy Automate and a SQL warehouse | Run [pipelines](docs/analysts/development/pipelines/pipelines.md) in SQL projects.                |
-| [Spark](/administration/fabrics/Spark-fabrics/Fabrics) | Compute with a Spark engine                        | Run [pipelines](docs/Spark/pipelines/pipelines.md) in PySpark/Scala projects and Databricks jobs. |
-| [SQL](/administration/fabrics/sql-fabrics/Fabrics)     | Compute with a SQL warehouse                       | Run [models](docs/data-modeling/data-modeling.md) in SQL projects. You cannot run pipelines.      |
-| [Airflow](/Orchestration/airflow/)                     | Compute with an Airflow-compatible engine          | Run [Airflow](docs/Orchestration/airflow/airflow.md) jobs.                                        |
+| Fabric type                                            | Description                                        | Usage                                                                                |
+| ------------------------------------------------------ | -------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| [Prophecy](/administration/fabrics/prophecy-fabrics/)  | Compute with Prophecy Automate and a SQL warehouse | Run [pipelines](docs/analysts/development/pipelines/pipelines.md) in SQL projects.   |
+| [Spark](/administration/fabrics/Spark-fabrics/Fabrics) | Compute with a Spark engine                        | Run [pipelines](/engineers/pipelines) in PySpark/Scala projects and Databricks jobs. |
+| [SQL](/administration/fabrics/sql-fabrics/Fabrics)     | Compute with a SQL warehouse                       | Run [models](/engineers/data-models) in SQL projects. You cannot run pipelines.      |
+| [Airflow](/engineers/airflow) jobs.                    |
 
 ## Separate environments and access
 

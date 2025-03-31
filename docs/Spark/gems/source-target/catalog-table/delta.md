@@ -1,6 +1,7 @@
 ---
 title: Delta Table
 id: delta
+slug: /engineers/delta-table
 description: Delta Table
 tags:
   - gems
@@ -140,7 +141,7 @@ object Source {
 | Table name                    | Name of the table                                                                                                                                                           | True     |
 | Custom file path              | Use custom file path to store underlying files.                                                                                                                             | False    |
 | Provider                      | Must be set to `Delta`                                                                                                                                                      | True     |
-| Write Mode                    | How to handle existing data. See [this table](../file/delta.md#supported-write-modes) for a list of available options. (Default is set to `error`.)                         | True     |
+| Write Mode                    | How to handle existing data. See [this table](/engineers/delta#supported-write-modes) for a list of available options. (Default is set to `error`.)                         | True     |
 | Use insert into               | Flag to use `insertInto` method to write instead of `save`                                                                                                                  | False    |
 | Optimize write                | If true, it optimizes Spark partition sizes based on the actual data.                                                                                                       | False    |
 | Overwrite table schema        | If true, overwrites the schema of the Delta table.                                                                                                                          | False    |
@@ -151,9 +152,9 @@ object Source {
 :::note
 Among these write modes `overwrite`, `append`, `ignore`, and `error` work the same way as with other native Spark-supported formats such as Parquet.
 
-To read more about using `merge` write mode [click here](../file/delta.md).
+To read more about using `merge` or `SCD2` merge write mode [click here](/engineers/delta).
 
-To read more about using `SCD2` merge write mode [click here](../file/delta.md).
+To read more about using `SCD2` merge write mode [click here](/engineers/delta).
 :::
 
 ### Target Example

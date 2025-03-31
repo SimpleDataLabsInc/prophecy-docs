@@ -1,6 +1,7 @@
 ---
 title: Basic subgraph
 id: basic-subgraph
+slug: /engineers/basic-subgraph
 description: Basic Subgraph, Group your Gems in reusable Parent Gems.
 tags:
   - subgraph
@@ -24,7 +25,7 @@ import Requirements from '@site/src/components/gem-requirements';
 
 In a **Basic Subgraph**, you have the capability to encapsulate multiple distinct gems within a single, reusable parent gem. This organizational approach enhances the visual clarity of your pipeline by grouping various sections together under a common parent gem. Additionally, it empowers you to break down intricate logic into modular components, thereby streamlining the Data Engineering processes.
 
-Furthermore, the ability to [Publish a Subgraph](docs/extensibility/package-hub/ShareableSubgraphs.md) extends the utility beyond a singular pipeline. By doing so, you can reuse the encapsulated logic in other pipelines or projects, promoting code re-usability and simplifying the overall development workflow.
+Furthermore, the ability to [Publish a Subgraph](/engineers/shareable-subgraphs) extends the utility beyond a singular pipeline. By doing so, you can reuse the encapsulated logic in other pipelines or projects, promoting code re-usability and simplifying the overall development workflow.
 
 ## Create a Basic Subgraph
 
@@ -51,7 +52,7 @@ As you connect the input and output ports to gems Outside the subgraph, you woul
 
 ## Subgraph Configurations
 
-Subgraphs are configurable just like pipelines are [configurable](docs/Spark/pipelines/configuration.md). For Subgraphs, the configurations can apply in one of two ways: (1) Pipeline level Configurations apply to the Subgraph or (2) Specify Configurations only for the Subgraph
+Subgraphs are configurable just like pipelines are [configurable](/engineers/configurations). For Subgraphs, the configurations can apply in one of two ways: (1) Pipeline level Configurations apply to the Subgraph or (2) Specify Configurations only for the Subgraph
 
 ### Pipeline Level Configurations can apply to the Subgraph
 

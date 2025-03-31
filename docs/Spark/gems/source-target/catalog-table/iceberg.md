@@ -1,6 +1,7 @@
 ---
 title: Iceberg
 id: iceberg
+slug: /engineers/iceberg
 description: Iceberg
 tags:
   - gems

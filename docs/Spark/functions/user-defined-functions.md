@@ -1,6 +1,7 @@
 ---
 title: User-defined functions
 id: udfs
+slug: /engineers/user-defined-functions
 description: User-defined functions
 tags:
   - extensibility

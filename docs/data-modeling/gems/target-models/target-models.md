@@ -1,6 +1,7 @@
 ---
 title: Target models
 id: target-models
+slug: /engineers/target-models
 description: Target Models are a sequence of data transformation steps which define a single table or view
 tags:
   - concept

@@ -17,13 +17,13 @@ This helps you have:
 - Better Git version control and Git tagging
 - A faster code generation and compilation as common entities are compiled across all pipelines when changes are made
 - More control during deployment
-- Shared resources across teams and in [Package Hub](docs/extensibility/package-hub/package-hub.md)
+- Shared resources across teams and in [Package Hub](/engineers/package-hub)
 
 ## Re-usable entities
 
 Keep common entities in a common project.
 
-Common entities can include user defined functions, reusable-subgraphs, gems, and fully configurable pipelines. This allows you to share the project in a read-only and version controlled manner with other teams when you publish it as a [package](docs/extensibility/package-hub/package-hub.md).
+Common entities can include user defined functions, reusable-subgraphs, gems, and fully configurable pipelines. This allows you to share the project in a read-only and version controlled manner with other teams when you publish it as a [package](/engineers/package-hub).
 
 ## Pipelines
 
@@ -35,7 +35,7 @@ Common entities can include user defined functions, reusable-subgraphs, gems, an
    - More control during orchestration
    - Shorter recovery times for failed jobs
 
-1. Use [Job Sampling](/Spark/pipelines/pipeline-settings#job) only for debugging purposes and for smaller pipelines because sampling incurs a large computational penalty in Spark.
+1. Use [Job Sampling](/engineers/pipeline-settings#job) only for debugging purposes and for smaller pipelines because sampling incurs a large computational penalty in Spark.
 
 ## Configurations
 
@@ -59,7 +59,7 @@ Don’t duplicate your dataset in the a pipeline. Your dataset contains a unique
 
 To optimize your pipeline:
 
-1. For most cases, use the [Reformat gem](docs/Spark/gems/transform/reformat.md) instead of the [SchemaTransform gem](docs/Spark/gems/transform/schema-transform.md).
+1. For most cases, use the [Reformat gem](/engineers/reformat) instead of the [SchemaTransform gem](/engineers/schema-transform).
 
    The Reformat gem calls the Spark `select()` function once, which is not very computationally expensive. The SchemaTransform gem uses the Spark `withColumn()` function, which is applied to each column one-by-one (more computationally intensive).
 
@@ -73,14 +73,14 @@ To optimize your pipeline:
    Larger datasets may be too large to cache.
    :::
 
-1. Broadcast smaller tables in your [Join gem](docs/Spark/gems/join-split/join.md) to increase your performance.
+1. Broadcast smaller tables in your [Join gem](/engineers/join) to increase your performance.
 
    Control the broadcast threshold based on your cluster size by setting the `spark.sql.autoBroadcastJoinThreshold` property to a value greater than 10MB. To learn more, see [Performance Tuning](https://spark.apache.org/docs/latest/sql-performance-tuning.html).
 
-1. Remove the [OrderBy](docs/Spark/gems/transform/order-by.md) and [Deduplicate](docs/Spark/gems/transform/deduplicate.md) gems wherever you don't need them.
+1. Remove the [OrderBy](/engineers/order-by) and [Deduplicate](/engineers/deduplicate) gems wherever you don't need them.
 
    If you need the Deduplicate gem, be mindful on which `Row to keep` to select.<br/>The `first` and `last` options are more expensive than `any`.
 
 1. Set an appropriate value for the `spark.sql.shuffle.partitions` property.
 
-   For skewed, overparititioned, or underpartitioned Source datasets, consider using the [Repartition](docs/Spark/gems/join-split/repartition.md) gem to repartition your dataset to an appropriate number of partitions.
+   For skewed, overparititioned, or underpartitioned Source datasets, consider using the [Repartition](/engineers/repartition) gem to repartition your dataset to an appropriate number of partitions.

@@ -1,6 +1,7 @@
 ---
 title: Hive Table
 id: hive
+slug: /engineers/hive-table
 description: Read from or write to Tables managed by a Hive metastore
 tags:
   - gems

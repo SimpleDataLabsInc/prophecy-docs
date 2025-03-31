@@ -1,6 +1,7 @@
 ---
 title: Seed
 id: seed
+slug: /engineers/seed
 description: Parameters and properties to read from Seed files
 tags:
   - gems

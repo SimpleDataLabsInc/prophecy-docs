@@ -1,6 +1,7 @@
 ---
 title: Script
 id: script
+slug: /engineers/script
 description: Provide a place to use a SparkSession and whatever code you wish to use
 tags:
   - custom
@@ -39,7 +40,7 @@ To remove input/output DataFrame(s), simply click <svg width="24" height="24" vi
 
 ## Schema
 
-When executing a custom script gem, the output schema is not known by Prophecy so it must be inferred from a sample computation result. Click the `Custom Schema` button and `Infer from cluster` as shown in the **Gems --> Outputs** [description](docs/Spark/gems/gems.md#output-ports). The schema will be inferred according to the script and the Spark version running on the connected cluster.
+When executing a custom script gem, the output schema is not known by Prophecy so it must be inferred from a sample computation result. Click the `Custom Schema` button and `Infer from cluster` as shown in the **Gems --> Outputs** [description](/engineers/gems#output-ports). The schema will be inferred according to the script and the Spark version running on the connected cluster.
 
 ## Examples
 

@@ -1,6 +1,7 @@
 ---
 title: ORC
 id: orc
+slug: /engineers/orc
 description: Parameters and properties to read from and write to ORC files
 tags:
   - gems

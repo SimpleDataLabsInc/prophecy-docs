@@ -1,6 +1,7 @@
 ---
 title: DataQualityCheck
 id: data-quality-check
+slug: /engineers/data-quality-check
 description: Ensure your data adhere to predefined constraints
 tags:
   - gems
@@ -70,10 +71,10 @@ The DataQualityCheck gem includes a variety of checks that are built on the open
 
 ## Post Actions
 
-| Action              | Description                                                                                                                                                                                               |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Continue execution  | Continue pipeline execution regardless of data quality success or failure.                                                                                                                                |
-| Terminate execution | Stop pipeline execution after the DataQualityCheck gem runs based on a maximum number of failed checks. Review [gem phases](docs/Spark/gems/gems.md#gem-phase) to understand the order in which gems run. |
+| Action              | Description                                                                                                                                                                                       |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Continue execution  | Continue pipeline execution regardless of data quality success or failure.                                                                                                                        |
+| Terminate execution | Stop pipeline execution after the DataQualityCheck gem runs based on a maximum number of failed checks. Review [gem phases](/engineers/gems#gem-phase) to understand the order in which gems run. |
 
 ## Example code
 

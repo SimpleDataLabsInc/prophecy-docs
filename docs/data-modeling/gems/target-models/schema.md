@@ -1,6 +1,7 @@
 ---
 title: Schema
 id: schema
+slug: /engineers/schema-target-model
 description: Schema of Target Models
 tags:
   - concept
