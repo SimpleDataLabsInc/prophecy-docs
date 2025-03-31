@@ -194,6 +194,36 @@ const config = {
             apiKey: process.env.INKEEP_API_KEY, // required
             primaryBrandColor: "#403FC2", // required -- your brand color, the widget color scheme is derived from this
             organizationDisplayName: "Prophecy",
+            theme: {
+              styles: [
+                {
+                  key: "1",
+                  type: "style",
+                  value: `
+                    @media (max-width: 33em) {
+                      .ikp-search-bar__button {
+                        padding-inline: 7px;
+                      }
+                      .ikp-search-bar__text {
+                        display: none;
+                      }
+                      .ikp-search-bar__kbd-wrapper {
+                        display: none;
+                      }
+                    }
+                  `,
+                },
+                {
+                  key: "2",
+                  type: "style",
+                  value: `
+                    .ikp-ai-ask-ai-trigger__icon {
+                      height: auto !important;
+                    }
+                  `,
+                },
+              ],
+            },
           },
           aiChatSettings: {
             // optional settings
