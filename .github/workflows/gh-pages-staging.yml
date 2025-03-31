@@ -21,15 +21,8 @@ jobs:
           echo "INKEEP_API_KEY=${{ secrets.INKEEP_API_KEY }}" >> $GITHUB_ENV
           echo "BASE_URL="/prophecy-docs-staging/preview/pr-${{ github.event.number }}/"" >> $GITHUB_ENV
 
-      - name: Debug environment variables
-        run: |
-          echo "🔍 BASE_URL is: $BASE_URL"
-
       - name: Build website
         run: yarn install --frozen-lockfile && yarn build
-
-      - name: Verify built config
-        run: cat docusaurus.config.json || echo "No config file found"
 
       - name: Deploy PR Preview to Staging GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
