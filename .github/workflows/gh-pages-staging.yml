@@ -17,7 +17,10 @@ jobs:
           cache-dependency-path: yarn.lock
 
       - name: Set environment variables
-        run: echo "INKEEP_API_KEY=${{ secrets.INKEEP_API_KEY }}" >> $GITHUB_ENV
+        run: |
+          echo "INKEEP_API_KEY=${{ secrets.INKEEP_API_KEY }}" >> $GITHUB_ENV
+          echo "DOCS_URL=https://simpledatalabsinc.github.io/" >> $GITHUB_ENV
+          echo "BASE_URL="/prophecy-docs-staging/preview/pr-${{ github.event.number }}/"" >> $GITHUB_ENV
 
       - name: Build website
         run: yarn install --frozen-lockfile && yarn build
