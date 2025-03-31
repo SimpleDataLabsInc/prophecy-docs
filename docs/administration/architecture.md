@@ -12,9 +12,9 @@ Prophecy is deployed as microservices orchestrated by Kubernetes in various clou
 
 The following are the main components of a successful Prophecy deployment.
 
-- **Prophecy Studio**: Users that log in to Prophecy access the Prophecy Studio to transform raw data into analytics-ready data using visual data pipelines.
+- **Prophecy Studio**: The studio user interface lets you access and develop visual data pipelines in your various projects.
 
-- **Prophecy Automate**: A built-in Prophecy runtime designed for ingestion, egress, and orchestration. It is available exclusively for Prophecy fabrics with SQL connections and is not applicable to Spark-based projects.
+- **Prophecy Automate**: This is our built-in Prophecy runtime designed for ingestion, egress, and orchestration. It is available exclusively for Prophecy fabrics with SQL connections and does not apply to Spark-based projects.
 
 - **External execution engine**: Prophecy runs data transformations on your own execution environment, such as Snowflake or Databricks. [Fabrics](docs/getting-started/concepts/fabrics.md) enable users to execute pipelines on these platforms. Prophecy does not persist your data.
 
@@ -34,7 +34,7 @@ Prophecy can accommodate a wide variety of architectures beyond this diagram. Fo
 
 - The diagram shows Databricks as the data provider and SQL warehouse. Prophecy also supports Snowflake SQL warehouse.
 - The diagram displays a connection to an external Git repository. You can also use Prophecy-managed Git for version control.
-- The diagrams places Prophecy Automate inside Prophecy. If necessary, Prophecy Automate can run in a customer network instead. If you opt to run Prophecy Automate in your customer network, then you must specify this in the Prophecy [fabric](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md).
+- The diagram places Prophecy Automate inside Prophecy. If necessary, Prophecy Automate can run in a customer network instead. If you opt to run Prophecy Automate in your customer network, then you must specify this in the Prophecy [fabric](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md).
 
 ## Prophecy for Engineers
 
@@ -44,5 +44,5 @@ Prophecy for Engineers privileges Spark to execute pipelines in a scalable and o
 
 Prophecy can accommodate a wide variety of architectures beyond this diagram. For example:
 
-- The diagram demonstrates Databricks as the execution engine. You can use any other Spark engine through [Apache Livy](https://livy.apache.org/).
+- The diagram demonstrates Databricks as the execution engine. You can connect to other platforms like Amazon EMR and Google Cloud Dataproc, or use any Spark engine through [Apache Livy](https://livy.apache.org/).
 - The diagram displays a connection to an external Git repository. You can connect to a variety of providers such as GitHub, Bitbucket, GitLab, and more.
