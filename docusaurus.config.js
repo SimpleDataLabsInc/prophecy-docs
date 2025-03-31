@@ -7,7 +7,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 require("dotenv").config();
 
 export default {
-  baseUrl: process.env.BASE_URL || "/", // Defaults to root
+  baseUrl: process.env.BASE_URL,
   customFields: {
     inkeepApiKey: process.env.INKEEP_API_KEY,
   },
@@ -32,6 +32,7 @@ const config = {
   title: "Prophecy",
   tagline: "Low Code Data Engineering",
   url: "https://docs.prophecy.io/",
+  baseUrl: process.env.BASE_URL,
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon2.png",
