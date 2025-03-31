@@ -28,9 +28,6 @@ jobs:
           deploy_key: ${{ secrets.STAGING_DEPLOY_KEY }}
           publish_dir: ./build
           destination_dir: preview/pr-${{ github.event.pull_request.number }}
-          keep_files: true
-          user_name: github-actions
-          user_email: github-actions@github.com
           publish_branch: gh-pages
           external_repository: SimpleDataLabsInc/prophecy-docs-staging
 
@@ -39,7 +36,7 @@ jobs:
         with:
           script: |
             const prNumber = context.payload.pull_request.number;
-            const previewUrl = `https://your-github-organization.github.io/your-docusaurus-site-staging/preview/pr-${prNumber}/`;
+            const previewUrl = `https://SimpleDataLabsInc.github.io/prophecy-docs-staging/preview/pr-${prNumber}/`;
             github.rest.issues.createComment({
               issue_number: prNumber,
               owner: context.repo.owner,
