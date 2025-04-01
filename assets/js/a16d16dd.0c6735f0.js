@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[4746],{13775:t=>{t.exports=JSON.parse('{"tag":{"label":"unit tests","permalink":"/tags/unit-tests","allTagsPath":"/tags","count":1,"items":[{"id":"ci-cd/tests","title":"Unit tests","description":"Implementing unit tests in Prophecy","permalink":"/ci-cd/tests"}],"unlisted":false}}')}}]);

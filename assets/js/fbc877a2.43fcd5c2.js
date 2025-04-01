@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[56729],{51093:e=>{e.exports=JSON.parse('{"tag":{"label":"gem","permalink":"/tags/gem","allTagsPath":"/tags","count":1,"items":[{"id":"Spark/gems/spark-gems","title":"Gems","description":"Prophecy Spark Gems","permalink":"/Spark/gems/"}],"unlisted":false}}')}}]);

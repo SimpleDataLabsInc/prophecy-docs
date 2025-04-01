@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[36332],{9753:e=>{e.exports=JSON.parse('{"tag":{"label":"oracle","permalink":"/tags/oracle","allTagsPath":"/tags","count":1,"items":[{"id":"Spark/gems/source-target/warehouse/oracle","title":"Oracle","description":"Oracle","permalink":"/Spark/gems/source-target/warehouse/oracle"}],"unlisted":false}}')}}]);

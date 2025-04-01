@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[98273],{11151:t=>{t.exports=JSON.parse('{"tag":{"label":"limit","permalink":"/tags/limit","allTagsPath":"/tags","count":1,"items":[{"id":"Spark/gems/transform/limit","title":"Limit","description":"Limit the number of rows","permalink":"/Spark/gems/transform/limit"}],"unlisted":false}}')}}]);

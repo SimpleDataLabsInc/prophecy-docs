@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[24566],{89731:s=>{s.exports=JSON.parse('{"tag":{"label":"datasets","permalink":"/tags/datasets","allTagsPath":"/tags","count":1,"items":[{"id":"Spark/dataset","title":"Datasets","description":"Use datasets in your Spark project","permalink":"/engineers/dataset"}],"unlisted":false}}')}}]);
