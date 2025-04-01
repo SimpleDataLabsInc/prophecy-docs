@@ -1,0 +1,33 @@
+name: Cleanup PR Previews in Staging
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  cleanup:
+    name: Cleanup Staging PR Preview
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout staging repository
+        uses: actions/checkout@v3
+        with:
+          repository: SimpleDataLabsInc/prophecy-docs-staging
+          ref: gh-pages
+          ssh-key: ${{ secrets.STAGING_DEPLOY_KEY }}
+          persist-credentials: true
+
+      - name: Configure Git user
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+      - name: Delete preview files
+        run: |
+          if git rm -r --ignore-unmatch preview/pr-${{ github.event.pull_request.number }}; then
+            git commit -m "Remove preview for PR #${{ github.event.pull_request.number }}"
+            git push origin gh-pages
+          else
+            echo "Preview directory preview/pr-${{ github.event.pull_request.number }} not found. Skipping cleanup."
+          fi
+        shell: bash
