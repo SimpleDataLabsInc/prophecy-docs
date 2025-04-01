@@ -1,6 +1,7 @@
 ---
 title: DB2
 id: db2
+slug: /engineers/db2
 description: DB2
 tags:
   - gems

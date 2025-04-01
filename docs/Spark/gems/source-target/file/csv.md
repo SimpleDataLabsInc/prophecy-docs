@@ -1,6 +1,7 @@
 ---
 title: CSV
 id: csv
+slug: /engineers/csv
 description: Parameters and properties to read from and write to CSV files
 tags:
   - gems

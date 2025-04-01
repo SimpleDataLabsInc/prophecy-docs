@@ -1,6 +1,7 @@
 ---
 title: Resolve conflicts
 id: git-resolve
+slug: /engineers/resolve-git-conflicts
 description: Resolve conflicts that you may run into while merging your changes
 tags:
   - metadata

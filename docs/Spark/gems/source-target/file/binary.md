@@ -1,6 +1,7 @@
 ---
 title: Binary
 id: binary
+slug: /engineers/binary
 description: Parameters and properties to read from and write to Binary files
 draft: true
 tags:

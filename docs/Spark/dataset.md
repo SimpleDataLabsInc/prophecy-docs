@@ -1,6 +1,7 @@
 ---
 title: Datasets
 id: dataset
+slug: /engineers/dataset
 description: Use datasets in your Spark project
 tags:
   - concepts
@@ -16,7 +17,7 @@ In Prophecy, datasets are grouped by [Projects](docs/getting-started/concepts/pr
 
 ## Create datasets
 
-Datasets are created where they are first used in a [Source or Target gems](docs/Spark/gems/source-target/source-target.md). A dataset definition includes its:
+Datasets are created where they are first used in a [Source or Target gems](/engineers/source-target). A dataset definition includes its:
 
 - **Type**: The type of data you are reading/writing like CSV, Parquet files or catalog tables.
 - **Location**: The location of your data. It could be a file path for CSV or a table name.
@@ -45,12 +46,12 @@ If you open the metadata page for one of the datasets, you'll find the following
 
 In the **Relations** tab, there is additional information about where and how this dataset is used.
 
-| Name                | Description                                                                                                                      |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| Physical Datasets   | Location of the dataset in relation to a fabric.                                                                                 |
-| Pipelines           | A list of pipelines that use this dataset, with the `Relation` column indicating if it is for `Read` or `Write` purposes.        |
-| Jobs                | A list of jobs that use this dataset, with the `Relation` column indicating if it is for `Read` or `Write` purposes.             |
-| Open Lineage Viewer | The option to open this dataset in the [Lineage](docs/lineage/lineage.md) viewer, showing column-level lineage for this dataset. |
+| Name                | Description                                                                                                                 |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| Physical Datasets   | Location of the dataset in relation to a fabric.                                                                            |
+| Pipelines           | A list of pipelines that use this dataset, with the `Relation` column indicating if it is for `Read` or `Write` purposes.   |
+| Jobs                | A list of jobs that use this dataset, with the `Relation` column indicating if it is for `Read` or `Write` purposes.        |
+| Open Lineage Viewer | The option to open this dataset in the [Lineage](/engineers/lineage) viewer, showing column-level lineage for this dataset. |
 
 ## Publishing and sharing datasets
 

@@ -1,6 +1,7 @@
 ---
 title: Airflow
 id: airflow
+slug: /engineers/airflow
 description: How Prophecy integrates with Airflow
 tags:
   - scheduling
@@ -17,7 +18,7 @@ It is a popular choice for organizations of all sizes to handle data pipelines, 
 | ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Directed acyclic graphs (DAGs)     | Each job in Prophecy represents an Airflow [DAG](https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html), and contains gems that represent various tasks. |
 | Dynamic workflow scheduling        | In the job settings, you can configure complex dependencies, retries, and time-based triggers for tasks.                                                                         |
-| Extensibility                      | Custom gems can be written and used within Airflow jobs. These gems can be shared via the [Package Hub](docs/extensibility/package-hub/package-hub.md).                          |
+| Extensibility                      | Custom gems can be written and used within Airflow jobs. These gems can be shared via the [Package Hub](/engineers/package-hub).                                                 |
 | Monitoring and logging             | Task progress, logging, and alerting can be monitored from the Airflow environment or the Prophecy UI.                                                                           |
 | Parallel execution and scalability | Airflow can execute multiple tasks in parallel and scale horizontally to accommodate high workloads.                                                                             |
 | Visual and code views              | Visually-developed Airflow jobs are automatically compiled into high-quality and open-source Airflow code.                                                                       |

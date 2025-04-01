@@ -1,6 +1,7 @@
 ---
 title: FuzzyMatch
 id: fuzzy-match
+slug: /engineers/fuzzy-match
 description: Identify non-identical duplicates in your data
 tags:
   - gems

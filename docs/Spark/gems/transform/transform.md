@@ -1,6 +1,7 @@
 ---
 title: Transform
 id: transform
+slug: /engineers/transform
 description: Set of gems related to the transformation of data
 tags: []
 ---

@@ -1,6 +1,7 @@
 ---
 title: XML
 id: xml
+slug: /engineers/xml
 description: Parameters and properties to read from and write to XML files
 tags:
   - gems

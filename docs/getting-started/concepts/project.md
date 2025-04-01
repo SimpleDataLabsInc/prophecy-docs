@@ -46,7 +46,7 @@ Spark excels in executing complex pipelines and processing semi-structured data.
 
 ## Components
 
-Project components vary based on project type. While SQL and Spark projects share common elements like pipelines and gems, their functionality differs significantly. Each is documented separately: [Pipeline development for Analysts](docs/analysts/development/development.md) focuses on SQL projects, while [Pipeline development for Engineers](docs/Spark/Spark.md) focuses on Spark projects.
+Project components vary based on project type. While SQL and Spark projects share common elements like pipelines and gems, their functionality differs significantly. Each is documented separately: [Pipeline development for Analysts](docs/analysts/development/development.md) focuses on SQL projects, while [Pipeline development for Engineers](/engineers/pipeline-development) focuses on Spark projects.
 
 <Tabs>
 
@@ -60,17 +60,17 @@ Project components vary based on project type. While SQL and Spark projects shar
 | [Functions](docs/analysts/development/functions/functions.md)           | SQL macros used in gem expressions.                                                                                                                                                          |
 | [Tests](docs/analysts/development/data-tests/data-tests.md)             | Automated validations ensuring referential integrity, data consistency, and other quality checks.                                                                                            |
 | [Schedules](docs/analysts/scheduling.md)                                | Schedules for periodic pipeline execution managed by Prophecy Automate.                                                                                                                      |
-| [Models](docs/data-modeling/models.md)                                  | SQL transformations that define a single table or view. Models only appear in projects that enable **Normal** or **Fork per User** Git storage models. (Only applicable for data engineers.) |
+| [Models](/engineers/models)                                             | SQL transformations that define a single table or view. Models only appear in projects that enable **Normal** or **Fork per User** Git storage models. (Only applicable for data engineers.) |
 
 </TabItem>
 <TabItem value="Spark" label="Python and Scala (Spark)">
 
-| Component                                      | Description                                                                                                |
-| ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| [Pipelines](docs/Spark/pipelines/pipelines.md) | Sequences of steps that run on Spark-native code.                                                          |
-| [Datasets](docs/Spark/dataset.md)              | Pointers to tables that are stored in the external data provider defined in a fabric.                      |
-| [Jobs](docs/Orchestration/Orchestration.md)    | Schedules for pipeline execution managed by external orchestration tools like Databricks Jobs and Airflow. |
-| [Gems](docs/Spark/gems/gems.md)                | Representations of individual data transformation steps in a pipeline.                                     |
+| Component                                   | Description                                                                                                |
+| ------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| [Pipelines](/engineers/pipelines)           | Sequences of steps that run on Spark-native code.                                                          |
+| [Datasets](/engineers/dataset)              | Pointers to tables that are stored in the external data provider defined in a fabric.                      |
+| [Jobs](docs/Orchestration/Orchestration.md) | Schedules for pipeline execution managed by external orchestration tools like Databricks Jobs and Airflow. |
+| [Gems](/engineers/gems)                     | Representations of individual data transformation steps in a pipeline.                                     |
 
 </TabItem>
 
@@ -118,7 +118,7 @@ Only members of the team assigned to a project have permission to modify its com
 To extend the reach of your project, you can share it with other teams.
 
 - **Read-only access:** Users from other teams cannot directly edit the original project's components.
-- **Reuse components:** If you share the project with other teams and publish it to the [Package Hub](docs/extensibility/package-hub/package-hub.md), users can import the projects as packages in their own projects. While they can't edit the original components, they can use copies of them in their own projects.
+- **Reuse components:** If you share the project with other teams and publish it to the [Package Hub](/engineers/package-hub), users can import the projects as packages in their own projects. While they can't edit the original components, they can use copies of them in their own projects.
 - **Run pipelines:** If you share projects that contain [business apps](docs/analysts/business-apps/business-apps.md) with other teams, users can execute business apps that rely on the pipelines within the shared project.
 
 ## Metadata
@@ -139,7 +139,7 @@ You can view and edit the following metadata for your projects:
 
 ## Project editor
 
-To begin pipeline development, open your project from the **IDE** tab in the sidebar. This opens the **project editor**, where you can configure transformation gems and interactively run pipelines. To learn more about pipeline development, visit [SQL pipeline development](docs/analysts/development/development.md) and [Spark pipeline development](docs/Spark/Spark.md).
+To begin pipeline development, open your project from the **IDE** tab in the sidebar. This opens the **project editor**, where you can configure transformation gems and interactively run pipelines. To learn more about pipeline development, visit [SQL pipeline development](docs/analysts/development/development.md) and [Spark pipeline development](/engineers/pipeline-development).
 
 :::info
 If you want to change the name of your project, you must do so in the project metadata (not the project editor).

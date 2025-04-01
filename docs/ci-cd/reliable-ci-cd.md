@@ -2,6 +2,7 @@
 title: CI/CD in Prophecy
 image: img/reliable-ci-cd/dev-qa-prod.png
 id: reliable-ci-cd
+slug: /engineers/ci-cd
 description: Continuous integration and continuous delivery in Prophecy
 tags:
   - cicd
@@ -95,7 +96,7 @@ duplicate your job on the production fabric, set appropriate pipeline configurat
 
 That's it! Now you can commit any remaining changes and release your pipeline. Prophecy automatically takes care of the release process, by building your pipelines, running unit tests, and finally deploying the pipeline JARs/wheels alongside the job definition directly to Databricks (or AirFlow).
 
-If you're new to this process, check out, our [Git](docs/ci-cd/git/git.md) and jobs deployment documentation.
+If you're new to this process, check out, our [Git](/engineers/git) and jobs deployment documentation.
 
 <div style={{position: 'relative', 'padding-bottom': '56.25%', height: 0}}>
    <iframe src="https://www.loom.com/embed/28153636876f409184e6ba2dcbc8f273" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
@@ -110,4 +111,4 @@ As we know, Prophecy publishes all the entities (pipelines, jobs, metadata, etc)
 
 ### Deploy with Prophecy Build Tool
 
-[Prophecy Build Tool (PBT)](/docs/ci-cd/prophecy-build-tool/prophecy-build-tool.md) is a cli tool that can be used to build, test, and deploy projects created by Prophecy. PBT integrates with either [github actions](/docs/ci-cd/prophecy-build-tool/pbt-github-actions.md) or [Jenkins](/docs/ci-cd/prophecy-build-tool/pbt-jenkins.md) to facilitate deploying your code from your Git repository. Make use of the `--fabric-ids` option to deploy using the Multi-fabric approach.
+[Prophecy Build Tool (PBT)](/engineers/prophecy-build-tool) is a cli tool that can be used to build, test, and deploy projects created by Prophecy. PBT integrates with either [github actions](/engineers/github-actions-prophecy-build-tool) or [Jenkins](/engineers/jenkins-prophecy-build-tool) to facilitate deploying your code from your Git repository. Make use of the `--fabric-ids` option to deploy using the Multi-fabric approach.

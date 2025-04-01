@@ -1,6 +1,7 @@
 ---
 title: Location
 id: location
+slug: /engineers/location-target-model
 description: Location of Target Models
 tags:
   - concept

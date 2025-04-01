@@ -1,6 +1,7 @@
 ---
 title: SQL Query
 id: sql-query
+slug: /engineers/sql-query-target-model
 description: SQL Query of Target Models
 tags:
   - concept

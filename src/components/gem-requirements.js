@@ -5,7 +5,7 @@ export default function Requirements(props) {
   return (
     <div>
       {props.python_package_name && props.python_package_version && (
-        <a href="https://docs.prophecy.io/extensibility/package-hub/">
+        <a href="https://docs.prophecy.io/engineers/package-hub/">
           <span className="badge-dependency">
             <span className="left">{props.python_package_name}</span>
             <span className="right">{props.python_package_version}</span>
@@ -14,7 +14,7 @@ export default function Requirements(props) {
       )}
 
       {props.scala_package_name && props.scala_package_version && (
-        <a href="https://docs.prophecy.io/extensibility/package-hub/">
+        <a href="https://docs.prophecy.io/engineers/package-hub">
           <span className="badge-dependency">
             <span className="left">{props.scala_package_name}</span>
             <span className="right">{props.scala_package_version}</span>

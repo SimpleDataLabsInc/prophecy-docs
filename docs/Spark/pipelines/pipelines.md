@@ -1,6 +1,7 @@
 ---
 title: Pipelines
 id: pipelines
+slug: /engineers/pipelines
 description: Flows that represent the data journey
 tags:
   - concepts
@@ -48,7 +49,7 @@ Let's take a closer look at the pipeline canvas. The canvas includes:
 
 - **Canvas**: space to add and connect gems.
 - **Gem drawer**: toolbox that contains all available gems.
-- **Run button**: click to [execute the pipeline interactively](docs/Spark/execution/execution.md).
+- **Run button**: click to [execute the pipeline interactively](/engineers/execution).
 - **Copilot**: AI assistant to help build your pipeline.
 
 ![Pipeline canvas](img/pipeline-canvas.png)

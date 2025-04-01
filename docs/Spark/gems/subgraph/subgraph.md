@@ -31,12 +31,12 @@ Subgraph gems let you take multiple different gems and wrap them under a single 
 
 ## Types of Subgraphs
 
-There are three types of Subgraph available by default. The [Basic](/Spark/gems/subgraph/basic-subgraph) Subgraph is a great introduction to using Subgraphs.
+There are three types of Subgraph available by default. The [Basic](/engineers/basic-subgraph) Subgraph is a great introduction to using Subgraphs.
 
 | Name                                                                | Description                                                                                                                     |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| [Basic](/Spark/gems/subgraph/basic-subgraph)                        | Captures one or more gems within a pipeline to reuse across other pipelines and projects.                                       |
-| [Table Iterator](/Spark/gems/subgraph/table-iterator)               | Iterates over one or more gems for each row of the first input DataFrame. Table iterator is available for Python projects only. |
+| [Basic](/engineers/basic-subgraph)                                  | Captures one or more gems within a pipeline to reuse across other pipelines and projects.                                       |
+| [Table Iterator](/engineers/table-iterator)                         | Iterates over one or more gems for each row of the first input DataFrame. Table iterator is available for Python projects only. |
 | [Novel Type](/engineers/subgraph/#create-your-own-type-of-subgraph) | Apply any custom logic to the group of gems present inside the Subgraph.                                                        |
 
 ## Create your own type of Subgraph
@@ -53,7 +53,7 @@ Read [here](/docs/extensibility/gem-builder/spark-gem-builder.md) for more detai
 
 The newly constructed Subgraph gem can be utilized within any pipeline of this project, accessible through the Subgraph menu as demonstrated below.
 Furthermore, you have the option to Release this project, enabling its use as a dependency in other projects, thus incorporating the created gem into various projects.
-Read [here](/docs/extensibility/package-hub/package-hub.md) for more details on project as a dependency.
+Read [here](/engineers/package-hub) for more details on project as a dependency.
 
 ![Use_subgraph](img/Use_new_subgraph.png)
 

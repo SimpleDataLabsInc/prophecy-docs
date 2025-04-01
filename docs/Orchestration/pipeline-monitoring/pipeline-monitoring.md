@@ -1,6 +1,7 @@
 ---
 title: Pipeline Monitoring
 id: pipeline-monitoring
+slug: /engineers/pipeline-monitoring
 description: About Pipeline Monitoring for Spark
 tags:
   - concept

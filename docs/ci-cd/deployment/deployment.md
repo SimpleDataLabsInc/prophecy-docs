@@ -1,6 +1,7 @@
 ---
 title: Deployment
 id: Deployment
+slug: /engineers/deployment
 description: Release projects and deploy jobs
 tags:
   - metadata
@@ -12,7 +13,7 @@ tags:
 
 Once you have developed and tested your custom components like gems, pipelines, models, or jobs in Prophecy, the next step is to make them available for use. This involves Releasing and Deploying them to the respective environments.
 
-You can Release and Deploy via Prophecy UI or you can use [Prophecy Build Tool](/docs/ci-cd/prophecy-build-tool/prophecy-build-tool.md) CLI to integrate with any other CI-CD tools. Lets see how you can do it via the Prophecy UI below.
+You can Release and Deploy via Prophecy UI or you can use [Prophecy Build Tool](/engineers/prophecy-build-tool) CLI to integrate with any other CI-CD tools. Lets see how you can do it via the Prophecy UI below.
 
 ## Requirements
 
@@ -20,7 +21,7 @@ You must be a [team admin](docs/administration/index.md) to release and deploy a
 
 ## Overview
 
-What happens when you click **Release and Deploy** in the [Git workflow](docs/ci-cd/git/git-workflow.md) of your project?
+What happens when you click **Release and Deploy** in the [Git workflow](/engineers/git-workflow) of your project?
 
 ### Release
 
@@ -61,7 +62,7 @@ Deployment modes dictate how the release and deploy steps will be controlled.
 
 ### Unit tests
 
-Writing good [unit tests](/ci-cd/tests) is key for data pipeline quality and management. When you enable unit tests for deployment, unit tests will run as part of pipeline builds. This might lead to a slight increase in the build time.
+Writing good [unit tests](/engineers/unit-tests) is key for data pipeline quality and management. When you enable unit tests for deployment, unit tests will run as part of pipeline builds. This might lead to a slight increase in the build time.
 
 ## History
 
@@ -77,4 +78,4 @@ The page includes the following subtabs.
 
 ## What's next
 
-Follow the tutorial [Develop and deploy a project](docs/ci-cd/deployment/deploy-project.md) to try to deploy a project yourself!
+Follow the tutorial [Develop and deploy a project](/engineers/develop-and-deploy) to try to deploy a project yourself!

@@ -1,6 +1,7 @@
 ---
 title: Parquet
 id: parquet
+slug: /engineers/parquet
 description: Parameters and properties to read from and write to Parquet files
 tags:
   - gems

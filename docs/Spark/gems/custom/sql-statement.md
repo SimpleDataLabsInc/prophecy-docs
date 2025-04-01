@@ -1,6 +1,7 @@
 ---
 title: SQLStatement
 id: sql-statement
+slug: /engineers/sql-statement
 description: Create DataFrames based on custom SQL queries
 tags:
   - gems

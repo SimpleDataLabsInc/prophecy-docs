@@ -1,6 +1,7 @@
 ---
 title: CSV
 id: csv
+slug: /analysts/csv
 description: Read and write CSV files
 tags: []
 ---

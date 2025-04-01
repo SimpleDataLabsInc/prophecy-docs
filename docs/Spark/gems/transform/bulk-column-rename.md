@@ -1,6 +1,7 @@
 ---
 title: BulkColumnRename
 id: bulk-column-rename
+slug: /engineers/bulk-column-rename
 description: Rename multiple columns in your dataset in a systematic way
 tags:
   - gems

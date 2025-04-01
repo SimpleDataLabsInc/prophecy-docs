@@ -1,26 +1,27 @@
 ---
 title: Gems
 id: spark-gems
+slug: /engineers/gems
 description: Prophecy Spark Gems
 tags:
   - spark
   - gem
 ---
 
-[Gems](/docs/getting-started/concepts/gems.md) are functional units in a [pipeline](docs/Spark/pipelines/pipelines.md) that perform tasks such as reading, transforming, writing, or handling other data operations.
+[Gems](/docs/getting-started/concepts/gems.md) are functional units in a [pipeline](/engineers/pipelines) that perform tasks such as reading, transforming, writing, or handling other data operations.
 
 ## Categories
 
 The table below outlines the different Spark gem categories.
 
-| Category                                              | Description                                                                                                 |
-| ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| [**Source and Target**](/Spark/gems/source-target/)   | The set of gems that help with loading and saving data.                                                     |
-| [**Transform**](/Spark/gems/transform/)               | The set of gems that help with transforming data.                                                           |
-| [**Join and Split**](/Spark/gems/join-split/)         | The set of gems that help with the process of merging or splitting DataFrame(s) to create new DataFrame(s). |
-| [**Custom**](/Spark/gems/custom/)                     | The set of gems that our creative teams build using Expression Builder to extend the Prophecy capabilities. |
-| [**Machine Learning**](/Spark/gems/machine-learning/) | The set of gems that prepare data or use data for Machine Learning.                                         |
-| [**Subgraph**](/engineers/subgraph)                   | A gem that can contain many other gems within it.                                                           |
+| Category                                             | Description                                                                                                 |
+| ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| [**Source and Target**](/engineers/source-target)    | The set of gems that help with loading and saving data.                                                     |
+| [**Transform**](/engineers/transform)                | The set of gems that help with transforming data.                                                           |
+| [**Join and Split**](/engineers/join-split)          | The set of gems that help with the process of merging or splitting DataFrame(s) to create new DataFrame(s). |
+| [**Custom**](/engineers/custom/)                     | The set of gems that our creative teams build using Expression Builder to extend the Prophecy capabilities. |
+| [**Machine Learning**](/engineers/machine-learning/) | The set of gems that prepare data or use data for Machine Learning.                                         |
+| [**Subgraph**](/engineers/subgraph)                  | A gem that can contain many other gems within it.                                                           |
 
 ## Gem instance
 
@@ -53,11 +54,11 @@ When you open a gem, you can configure how the gem will work.
 |  4  | Run button         | A button that runs the pipeline up to and including the gem.                                                                     |
 |  5  | Diagnostics        | A diagnostics window that will show a list of configuration errors if they exist.                                                |
 |  6  | Data               | A preview of the output table that is available if you run the gem.                                                              |
-|  7  | Unit tests         | A set of unit tests. See [here](/ci-cd/tests) for more details.                                                                  |
+|  7  | Unit tests         | A set of unit tests. See [here](/engineers/unit-tests) for more details.                                                         |
 
 ## Input ports
 
-The Input tab defines the incoming connections accepted by the gem. Most gem types only accept one connection, but some (such as [Join](/docs/Spark/gems/join-split/join.md)) allow for multiple inputs.
+The Input tab defines the incoming connections accepted by the gem. Most gem types only accept one connection, but some (such as [Join](/engineers/join)) allow for multiple inputs.
 
 ![Input UI](img/gems/inputs.png)
 
@@ -95,8 +96,8 @@ The action menu gives you more granular control over individual gems. When you e
 | **Delete**        | Remove the gem from the pipeline.                                                                                                                                                                                             |
 | **Cache**         | Cache the entire gem output dataset. This is useful if you have multiple pipeline branches from one gem. If you cache the dataset from that gem, Spark will not have to compute upstream gems multiple times for each branch. |
 | **Data Preview**  | If [selective data sampling](docs/Spark/execution/data-sampling.md) is enabled, use this checkbox to enable or disable the generation of the data sample for the gem.                                                         |
-| **Data Profile**  | Enable or disable [data profiling](docs/Spark/data-explorer/data-profile.md) for the gem output.                                                                                                                              |
-| **Data Diff**     | If [Data Diff](docs/ci-cd/data-diff.md) is configured for a Target gem, use this checkbox to enable or disable the data diff output.                                                                                          |
+| **Data Profile**  | Enable or disable [data profiling](/engineers/data-profile) for the gem output.                                                                                                                                               |
+| **Data Diff**     | If [Data Diff](/engineers/data-diff) is configured for a Target gem, use this checkbox to enable or disable the data diff output.                                                                                             |
 
 ![Gem action menu](img/gem-action-menu.png)
 

@@ -1,6 +1,7 @@
 ---
 title: JSON
 id: json
+slug: /engineers/json
 description: Parameters and properties to read from and write to JSON files
 tags:
   - gems

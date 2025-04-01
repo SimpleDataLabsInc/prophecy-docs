@@ -1,6 +1,7 @@
 ---
 title: Type and Format
 id: type-and-format
+slug: /engineers/type-and-format-target-model
 description: Type and Format of Target Models
 tags:
   - concept

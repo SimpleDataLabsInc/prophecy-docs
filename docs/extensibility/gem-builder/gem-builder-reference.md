@@ -1,6 +1,7 @@
 ---
 title: Gem Builder reference for Spark
 id: gem-builder-reference
+slug: /engineers/gem-builder-reference
 description: Detailed explanation of custom gem code structure
 sidebar_label: Reference for Spark
 tags:
@@ -20,11 +21,11 @@ Some options require a specific **gemLibsVersion**. To update this, you must man
 
 There are a few different types of gems that you can create. The table below describes each mode you can choose.
 
-| Mode                              | Description                                                                                                | Additional settings                                   |
-| --------------------------------- | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
-| Transformation                    | Edits intermediate data in the pipeline that is in-memory.                                                 | Choose the **category** of the transformation gem     |
-| Dataset Format                    | Reads and writes data between storage and memory.                                                          | Choose whether the type is **batch** or **streaming** |
-| Custom Subgraph (**Python only**) | Controls the flow of gems. Visit the [Subgraph](docs/Spark/gems/subgraph/subgraph.md) page for an example. | None                                                  |
+| Mode                              | Description                                                                               | Additional settings                                   |
+| --------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| Transformation                    | Edits intermediate data in the pipeline that is in-memory.                                | Choose the **category** of the transformation gem     |
+| Dataset Format                    | Reads and writes data between storage and memory.                                         | Choose whether the type is **batch** or **streaming** |
+| Custom Subgraph (**Python only**) | Controls the flow of gems. Visit the [Subgraph](/engineers/subgraph) page for an example. | None                                                  |
 
 ## Classes
 
@@ -44,20 +45,20 @@ The following classes must be included in all Spark gems. Each class extends a b
 
 The following functions can be used to customize Spark gems.
 
-| Function                    | Purpose                                                                                                                                    | Return                                 | Gem Mode                    |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------- | --------------------------- |
-| `optimizeCode`              | Enables the Prophecy optimizer to simplify the gem code when it runs.                                                                      | Boolean                                | All                         |
-| `customOutputSchemaEnabled` | Enables the [custom schema](docs/Spark/gems/gems.md#output-ports) option by default in the gem. Requires gemLibsVersion 1.1.47+ for Scala. | Boolean                                | Transformation              |
-| `dialog`                    | Defines how you want the gem to look like in the visual interface.                                                                         | `Dialog` object                        | Transformation and Subgraph |
-| `sourceDialog`              | Defines how you want the source gem to look like in the visual interface.                                                                  | `DatasetDialog` object                 | Dataset and Subgraph        |
-| `targetDialog`              | Defines how you want the target gem to look like in the visual interface.                                                                  | `DatasetDialog` object                 | Dataset and Subgraph        |
-| `validate`                  | Defines how to detect user errors when using the gem.                                                                                      | `Diagnostics` array                    | All                         |
-| `onChange`                  | Define UI state transformations.                                                                                                           | `Properties` object                    | All                         |
-| `serializeProperty`         | (**Scala only**) Takes a Properties object and converts it into JSON format.                                                               | String                                 | All                         |
-| `deserializeProperty`       | (**Scala only**) Parses a JSON string and converts it into a Properties object.                                                            | `Properties` object                    | All                         |
-| `apply`                     | Included in the class that extends [component code](#component-code) to define Spark logic.                                                | None, DataFrame, or list of DataFrames | Transformation and Subgraph |
-| `sourceApply`               | Included in the class that extends [component code](#component-code) to define Spark logic.                                                | DataFrame                              | Dataset                     |
-| `targetApply`               | Included in the class that extends [component code](#component-code) to define Spark logic.                                                | None                                   | Dataset                     |
+| Function                    | Purpose                                                                                                                            | Return                                 | Gem Mode                    |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- | --------------------------- |
+| `optimizeCode`              | Enables the Prophecy optimizer to simplify the gem code when it runs.                                                              | Boolean                                | All                         |
+| `customOutputSchemaEnabled` | Enables the [custom schema](/engineers/gems#output-ports) option by default in the gem. Requires gemLibsVersion 1.1.47+ for Scala. | Boolean                                | Transformation              |
+| `dialog`                    | Defines how you want the gem to look like in the visual interface.                                                                 | `Dialog` object                        | Transformation and Subgraph |
+| `sourceDialog`              | Defines how you want the source gem to look like in the visual interface.                                                          | `DatasetDialog` object                 | Dataset and Subgraph        |
+| `targetDialog`              | Defines how you want the target gem to look like in the visual interface.                                                          | `DatasetDialog` object                 | Dataset and Subgraph        |
+| `validate`                  | Defines how to detect user errors when using the gem.                                                                              | `Diagnostics` array                    | All                         |
+| `onChange`                  | Define UI state transformations.                                                                                                   | `Properties` object                    | All                         |
+| `serializeProperty`         | (**Scala only**) Takes a Properties object and converts it into JSON format.                                                       | String                                 | All                         |
+| `deserializeProperty`       | (**Scala only**) Parses a JSON string and converts it into a Properties object.                                                    | `Properties` object                    | All                         |
+| `apply`                     | Included in the class that extends [component code](#component-code) to define Spark logic.                                        | None, DataFrame, or list of DataFrames | Transformation and Subgraph |
+| `sourceApply`               | Included in the class that extends [component code](#component-code) to define Spark logic.                                        | DataFrame                              | Dataset                     |
+| `targetApply`               | Included in the class that extends [component code](#component-code) to define Spark logic.                                        | None                                   | Dataset                     |
 
 ## Examples
 

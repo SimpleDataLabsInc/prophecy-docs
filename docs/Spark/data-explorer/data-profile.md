@@ -1,6 +1,7 @@
 ---
 title: Data profiling
 id: data-profile
+slug: /engineers/data-profile
 description: Review a summary of data quality
 tags:
   - data profile

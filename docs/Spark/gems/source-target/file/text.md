@@ -1,6 +1,7 @@
 ---
 title: Text
 id: text
+slug: /engineers/text
 description: Parameters and properties to read from and write to Text file
 tags:
   - gems

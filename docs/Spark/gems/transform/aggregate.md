@@ -1,6 +1,7 @@
 ---
 title: Aggregate
 id: aggregate
+slug: /engineers/aggregate
 description: Group data and apply aggregation methods or pivot operations
 tags:
   - gems

@@ -1,6 +1,7 @@
 ---
 title: Prophecy Build Tool (PBT)
 id: prophecy-build-tool
+slug: /engineers/prophecy-build-tool
 description: Prophecy Build tool
 tags:
   - metadata

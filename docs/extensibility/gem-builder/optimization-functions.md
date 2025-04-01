@@ -1,6 +1,7 @@
 ---
 title: Optimization functions
 id: optimization-functions
+slug: /engineers/optimization-functions
 description: Optimization functions
 tags:
   - gem builder

@@ -1,6 +1,7 @@
 ---
 title: Custom
 id: custom
+slug: /engineers/custom
 description: Collection of gems that do not fit into the other available categories
 tags: []
 ---

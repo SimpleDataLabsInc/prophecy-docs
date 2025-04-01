@@ -1,6 +1,7 @@
 ---
 title: Expression builder
 id: expression-builder
+slug: /engineers/expression-builder
 description: Expression Builder
 tags:
   - spark

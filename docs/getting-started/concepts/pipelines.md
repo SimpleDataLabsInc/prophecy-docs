@@ -39,4 +39,4 @@ When your pipelines are deployed, you can make sure they run as expected using o
 Learn about different forms of pipeline development:
 
 - [Pipeline development for Analysts](docs/analysts/development/development.md) using Prophecy Automate and SQL warehouse.
-- [Pipeline development for Engineers](docs/Spark/Spark.md) using Spark execution environments.
+- [Pipeline development for Engineers](/engineers/pipeline-development) using Spark execution environments.

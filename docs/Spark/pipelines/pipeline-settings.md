@@ -1,6 +1,7 @@
 ---
 title: Pipeline settings
 id: pipeline-settings
+slug: /engineers/pipeline-settings
 description: Control how your pipeline runs
 tags:
   - spark
@@ -31,7 +32,7 @@ Review the various settings available for each pipeline, including Spark setting
 
 | Setting                                  | Description                                                                                                                                                                                                                       |
 | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Package Name                             | The name of the package if the project is published to the <a href="../../extensibility/package-hub/">Package Hub</a>.                                                                                                            |
+| Package Name                             | The name of the package if the project is published to the [Package Hub](/engineers/package-hub).                                                                                                                                 |
 | Config Package Name                      | A unique name for the pipeline's configuration package.<br />Only pipelines made before Prophecy 3.4.5.0 may need to have a custom config package name.                                                                           |
 | Custom Application Name                  | The name of the Spark job that appears in the Spark interface.                                                                                                                                                                    |
 | Allow Configuration Updates (Scala only) | When enabled, you can override configuration values using a script.<br />For example, if you add a Script gem to the pipeline, you can write something like `Config.current_date_var = "2024"` to set the value of that variable. |

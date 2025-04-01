@@ -1,6 +1,7 @@
 ---
 title: BigQuery
 id: bigquery
+slug: /engineers/bigquery
 description: BigQuery
 tags:
   - gems

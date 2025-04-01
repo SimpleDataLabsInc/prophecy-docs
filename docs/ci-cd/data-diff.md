@@ -1,6 +1,7 @@
 ---
 title: Data diff
 id: data-diff
+slug: /engineers/data-diff
 description: View the difference between a target dataset and an expected dataset
 tags:
   - data diff
@@ -27,7 +28,7 @@ To compute a data diff, you need:
 
 ## What is data diff?
 
-Data diffs are outputs of Target gems that show you differences between your target table and an expected table. Similar to a data sample, you can explore the data diff after [interactively running](docs/Spark/execution/execution.md) a pipeline.
+Data diffs are outputs of Target gems that show you differences between your target table and an expected table. Similar to a data sample, you can explore the data diff after [interactively running](/engineers/execution) a pipeline.
 
 <!-- ![Data diff output](img/data-diff-output.png) -->
 

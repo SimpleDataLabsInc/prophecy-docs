@@ -48,7 +48,7 @@ Jinja is enabled by default in new pipelines. To disable this setting, open the 
 
 :::info
 
-Depending on the Visual Language configured in your [Pipeline Settings](docs/Spark/pipelines/pipeline-settings.md), you can also use that language's syntax to call variables.
+Depending on the Visual Language configured in your [Pipeline Settings](/engineers/pipeline-settings), you can also use that language's syntax to call variables.
 
 | Visual Language | Syntax               | Expression usage           |
 | --------------- | -------------------- | -------------------------- |
@@ -76,7 +76,7 @@ When you add a pipeline to your job, you can choose the configuration to use dur
 
 ## Subgraph configurations
 
-Configurations can also be set inside [subgraphs](docs/Spark/gems/subgraph/subgraph.md). These configurations will apply to execution that happens inside of the subgraph. While each type of subgraph might look different, the configuration settings should include:
+Configurations can also be set inside [subgraphs](/engineers/subgraph). These configurations will apply to execution that happens inside of the subgraph. While each type of subgraph might look different, the configuration settings should include:
 
 1. An area to define configurations. It should have a similar appearance to the pipeline configuration UI.
 1. An option to copy pipeline configurations.

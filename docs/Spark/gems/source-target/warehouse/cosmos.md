@@ -1,6 +1,7 @@
 ---
 title: CosmosDB
 id: cosmos
+slug: /engineers/cosmosdb
 description: CosmosDB
 tags:
   - gems

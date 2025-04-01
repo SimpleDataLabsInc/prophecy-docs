@@ -1,6 +1,7 @@
 ---
 title: Git workflow
 id: git-workflow
+slug: /engineers/git-workflow
 description: Follow the Git workflow in your Prophecy project
 tags:
   - Git
@@ -47,7 +48,7 @@ Sometimes, you will be able to go straight from committing your changes to mergi
 
 ![Git pull](img/git-pull.png)
 
-Once you complete these steps, you might run into merge conflicts. If that happens, you can [use the Prophecy interface](git-resolve) to resolve them.
+Once you complete these steps, you might run into merge conflicts. If that happens, you can [use the Prophecy interface](/engineers/resolve-git-conflicts) to resolve them.
 
 :::note
 Before you pull remote changes into local branches, you will have to commit (or discard) your local changes.
@@ -61,7 +62,7 @@ Once you have committed your changes, you have the ability to **merge** them to 
 
 ## Release and Deploy
 
-Once the changes are merged, you can [release and deploy](/ci-cd/deployment/) a branch from the Prophecy user interface.
+Once the changes are merged, you can [release and deploy](/engineers/deployment) a branch from the Prophecy user interface.
 
 ## Rollback or restore
 

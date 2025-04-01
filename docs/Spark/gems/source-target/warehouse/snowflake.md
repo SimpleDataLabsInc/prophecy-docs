@@ -1,6 +1,7 @@
 ---
 title: Snowflake
 id: snowflake
+slug: /engineers/snowflake
 description: Snowflake
 tags:
   - gems

@@ -43,8 +43,8 @@ Because users developing in Simple Git mode are automatically working on a gener
 - **Synchronize changes.** You will have to pull (integrate) these changes from the external Git into your project in Prophecy.
 - **Resolve conflicts.** These external changes may conflict with changes made in your project in Prophecy.
 
-To learn how to resolve merge conflicts from the Prophecy interface, visit [Resolve conflicts](docs/ci-cd/git/git-resolve.md).
+To learn how to resolve merge conflicts from the Prophecy interface, visit [Resolve conflicts](/engineers/resolve-git-conflicts).
 
 ## Normal/External Git
 
-When you create a project that uses Normal Git mode, you will use a normal Git workflow for collaboration instead. In a normal Git workflow, you cannot make edits directly on the main branch of the project. Instead, each team member creates their own local development branch to work on new features or fixes independently without affecting others' work. The best practice is to give branches representative names so colleagues can quickly identify which changes are on which branch. To learn more about using the Git workflow, visit the [Git](docs/ci-cd/git/git.md) section of the documentation.
+When you create a project that uses Normal Git mode, you will use a normal Git workflow for collaboration instead. In a normal Git workflow, you cannot make edits directly on the main branch of the project. Instead, each team member creates their own local development branch to work on new features or fixes independently without affecting others' work. The best practice is to give branches representative names so colleagues can quickly identify which changes are on which branch. To learn more about using the Git workflow, visit the [Git](/engineers/git) section of the documentation.

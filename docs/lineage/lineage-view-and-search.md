@@ -1,6 +1,7 @@
 ---
 title: Lineage view
 id: lineage-view-and-search
+slug: /engineers/lineage-view-and-search
 description: Project lineage view and search
 tags:
   - metadata

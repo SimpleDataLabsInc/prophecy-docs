@@ -1,6 +1,7 @@
 ---
 title: Use Pipeline Monitoring
 id: use-pipeline-monitoring
+slug: /engineers/use-pipeline-monitoring
 description: How to use Pipeline Monitoring for Spark
 tags:
   - how-to

@@ -1,6 +1,7 @@
 ---
 title: Data exploration
 id: data-explorer
+slug: /engineers/data-explorer
 description: Data explorer for Spark
 tags:
   - execution
@@ -11,7 +12,7 @@ tags:
   - data
 ---
 
-During project development, you can interactively run your pipelines and analyze the [data samples](docs/Spark/execution/execution.md#interactive-execution) that result in the **data explorer**. Use the data explorer to confirm the structure of each column, review data entries, and make sure the data types are correct.
+During project development, you can interactively run your pipelines and analyze the [data samples](/engineers/execution/#interactive-execution) that result in the **data explorer**. Use the data explorer to confirm the structure of each column, review data entries, and make sure the data types are correct.
 
 ## Data preview
 

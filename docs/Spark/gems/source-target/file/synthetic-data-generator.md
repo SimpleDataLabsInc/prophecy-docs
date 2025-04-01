@@ -1,6 +1,7 @@
 ---
 title: Data Generator
 id: data-generator
+slug: /engineers/data-generator
 description: Learn how to create synthetic data
 tags:
   - synthetic

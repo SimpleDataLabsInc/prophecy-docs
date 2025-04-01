@@ -2,6 +2,7 @@
 title: Extensibility
 description: Extensibility
 id: extensibility
+slug: /engineers/extensibility
 tags: []
 ---
 

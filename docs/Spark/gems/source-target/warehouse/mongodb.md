@@ -1,6 +1,7 @@
 ---
 title: MongoDB
 id: mongodb
+slug: /engineers/mongodb
 description: MongoDB
 tags:
   - gems

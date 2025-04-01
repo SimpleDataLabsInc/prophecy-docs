@@ -1,6 +1,7 @@
 ---
 title: Build an Airflow job
 id: airflow-tutorial-spark
+slug: /engineers/spark-airflow-tutorial
 description: A tutorial on orchestrating Spark and SQL jobs with Airflow
 tags:
   - airflow

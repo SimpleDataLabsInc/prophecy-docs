@@ -1,6 +1,7 @@
 ---
 title: Models
 id: Model
+slug: /engineers/models
 description: SQL models define a single target table or view
 sidebar_position: 2
 tags:
@@ -20,11 +21,11 @@ Prophecy’s visual interface supports SQL models only. If you’d like to defin
 
 ## Data modeling
 
-**Data modeling** refers to shaping your data from its raw state to its transformed final state. In Prophecy and dbt, data models are SQL statements that build a single table or view and enable better management. Data models incorporate step-by-step logic, compatible with Prophecy [gems](docs/getting-started/concepts/gems.md). Each model is stored as a SQL file on Git as open-source code. Models can also be reused through Prophecy [packages](docs/extensibility/package-hub/package-hub.md).
+**Data modeling** refers to shaping your data from its raw state to its transformed final state. In Prophecy and dbt, data models are SQL statements that build a single table or view and enable better management. Data models incorporate step-by-step logic, compatible with Prophecy [gems](docs/getting-started/concepts/gems.md). Each model is stored as a SQL file on Git as open-source code. Models can also be reused through Prophecy [packages](/engineers/package-hub).
 
 ## Model development
 
-In the [Project Editor](docs/getting-started/concepts/project.md#project-editor) of a SQL project, Prophecy displays models using a lineage view, a visual view, and a code view. As you develop your models, you can commit and release your changes via [Git](/docs/ci-cd/git/git.md).
+In the [Project Editor](docs/getting-started/concepts/project.md#project-editor) of a SQL project, Prophecy displays models using a lineage view, a visual view, and a code view. As you develop your models, you can commit and release your changes via [Git](/engineers/git).
 
 - **Lineage view**. When you open a SQL project, you first see the **lineage** view. The lineage provides a high-level view of the project's models with dependencies displayed from left to right.
 

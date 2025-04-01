@@ -112,7 +112,7 @@ section will help track those Scala dependencies.
 
 When manually deploying pipelines using WHL format, you need to account for dependencies in both Python and Scala.
 WHL files inherently record Python dependencies, which ensures Python-related packages are handled during deployment.
-You can use the following option in [Prophecy Build Tool (PBT)](docs/ci-cd/prophecy-build-tool/prophecy-build-tool.md) to
+You can use the following option in [Prophecy Build Tool (PBT)](/engineers/prophecy-build-tool) to
 generate and include Scala dependency metadata in your deployment.
 
 #### Run the PBT command

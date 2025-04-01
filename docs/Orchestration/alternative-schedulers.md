@@ -20,7 +20,7 @@ Prerequisites:
 
 - Optional: Modify `ivysettings.xml` to point to a custom Maven mirror.
 
-Given a Scala pipeline named "demo_pipeline" with a JAR artifact from [PBT](docs/ci-cd/prophecy-build-tool/prophecy-build-tool.md)
+Given a Scala pipeline named "demo_pipeline" with a JAR artifact from [PBT](/engineers/prophecy-build-tool)
 called `demo_pipeline-1.0.jar` you could call the following commands to invoke the Main class from the JAR
 file and run the pipeline on a local Spark cluster.
 
@@ -54,7 +54,7 @@ Prerequisites:
   - PBT will have a command to generate dependencies or pom.xml for PySpark projects.
 - Optional: Modify ivysettings.xml to point to a custom Maven mirror or PyPi mirror.
 
-Given a PySpark pipeline named "demo_pipeline" with a WHL artifact from [PBT](docs/ci-cd/prophecy-build-tool/prophecy-build-tool.md)
+Given a PySpark pipeline named "demo_pipeline" with a WHL artifact from [PBT](/engineers/prophecy-build-tool)
 called `demo_pipeline-1.0-py3-none-any.whl` you could call the following commands to invoke the `main()` method from the WHL
 file using a customized launcher script.
 
@@ -100,7 +100,7 @@ Sample Configuration Schema for below examples:
 
 #### `-i` set the pipeline Configuration instance
 
-A pipeline may be run with a different pipeline Configuration instance by using the `-i` option and providing the name of the configuration profile instance. For more information on configuration instances and overrides, see [Pipeline configuration](docs/Spark/pipelines/configuration.md).
+A pipeline may be run with a different pipeline Configuration instance by using the `-i` option and providing the name of the configuration profile instance. For more information on configuration instances and overrides, see [Pipeline configuration](/engineers/configurations).
 
 ##### `-i` examples
 

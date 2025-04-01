@@ -1,6 +1,7 @@
 ---
 title: Teradata
 id: teradata
+slug: /engineers/teradata
 description: Teradata
 sidebar_position: 10
 tags:

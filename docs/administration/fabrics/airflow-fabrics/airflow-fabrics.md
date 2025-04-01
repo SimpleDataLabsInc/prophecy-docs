@@ -15,7 +15,7 @@ Prophecy provides you with three different types of fabrics depending upon where
 - **[MWAA](./mwaa.md)**: Use MWAA if you have an Amazon Managed Workflows for Apache Airflow instance running.
 - **[Composer](./composer.md)**: Use Composer if you have a GCP Cloud Composer Airflow instance running.
 
-Once you have set up an Airflow, you can schedule an Airflow job using our easy-to-use interface. Follow this guide to [create an Airflow job](docs/Orchestration/airflow/airflow-tutorial-spark.md).
+Once you have set up an Airflow, you can schedule an Airflow job using our easy-to-use interface. Follow this guide to [create an Airflow job](/engineers/spark-airflow-tutorial).
 
 ## What's next
 

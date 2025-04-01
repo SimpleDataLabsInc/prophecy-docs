@@ -1,6 +1,7 @@
 ---
 title: Build Shareable Pipelines
 id: shareable-pipelines
+slug: /engineers/shareable-pipelines
 description: Shareable Pipelines within the project and to other projects
 tags: []
 ---

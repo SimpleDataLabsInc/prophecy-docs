@@ -81,7 +81,7 @@ In this step, you'll add your first pipeline to this project!
 
 ### Add source data
 
-At this point, the pipeline canvas is empty. Let's add some gems! To begin, you'll create a [Seed](docs/Spark/gems/source-target/file/seed.md) as the data source.
+At this point, the pipeline canvas is empty. Let's add some gems! To begin, you'll create a [Seed](/engineers/seed) as the data source.
 
 1. Open the **Source/Target** gem category.
 1. Click **Table**. This adds a new Table gem to the canvas.

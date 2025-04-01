@@ -1,13 +1,14 @@
 ---
 title: Data modeling
 id: data-modeling
+slug: /engineers/data-models
 description: Using SQL with Prophecy's Data Transformation Copilot
 tags: [sql, snowflake, databricks, warehouse]
 ---
 
 <span class="badge">SQL</span><br/><br/>
 
-Data [models](docs/data-modeling/models.md) are transformations that are compiled into SQL code and executed on SQL warehouses. Use the **model canvas** to visually develop your models, and switch to the code view to see your transformations in SQL.
+Data [models](/engineers/models) are transformations that are compiled into SQL code and executed on SQL warehouses. Use the **model canvas** to visually develop your models, and switch to the code view to see your transformations in SQL.
 
 ![CodeEqualsVisual](img/CodeEqualsVisual.png)
 
@@ -23,7 +24,7 @@ The model canvas is your main workspace to develop data models. To begin, you ca
 
 ![AddModel](img/AddModel.png)
 
-Once a model is open, the model-editing canvas appears. In the following image, we can see the `customers` model starts with three existing models. The data is transformed according to Aggregate, SQLStatement, and Join [gems](docs/data-modeling/gems/gems.md). The transformation gems are accessible via the gem drawer. As you develop the model, you can [iteratively run](docs/data-modeling/execution/execution.md) and see [sample data](docs/analysts/development/data-explorer.md) as well as the relevant logs.
+Once a model is open, the model-editing canvas appears. In the following image, we can see the `customers` model starts with three existing models. The data is transformed according to Aggregate, SQLStatement, and Join [gems](/engineers/data-modeling-gems). The transformation gems are accessible via the gem drawer. As you develop the model, you can [iteratively run](/engineers/execution) and see [sample data](docs/analysts/development/data-explorer.md) as well as the relevant logs.
 
 ![Canvas](img/Canvas.png)
 
@@ -50,7 +51,7 @@ Even if dbt and SQL constructs are not supported in the visual editor, it is sti
 
 ## Share models
 
-If you want, you can import an existing dbt Core project or start from scratch. Then, you can publish projects to the [Package Hub](docs/extensibility/package-hub/package-hub.md) and share your models with other teams.
+If you want, you can import an existing dbt Core project or start from scratch. Then, you can publish projects to the [Package Hub](/engineers/package-hub) and share your models with other teams.
 
 ## Learn more
 

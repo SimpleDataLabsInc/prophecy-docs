@@ -16,7 +16,7 @@ For each pipeline, you can enable, disable, or change interactive data sampling 
 
 1. Hover the large **play** button.
 1. Click on the **ellipses** that appears on hover.
-1. Change your data sampling settings. This will update your [pipeline settings](docs/Spark/pipelines/pipeline-settings.md#run-settings).
+1. Change your data sampling settings. This will update your [pipeline settings](/engineers/pipeline-settings#run-settings).
 
 ![Interactive run configuration](img/interactive-run-config.png)
 
@@ -32,7 +32,7 @@ All gems (excluding Target gems) generate data samples.
 
 ### Selective (recommended)
 
-When you choose selective data sampling, you gain the ability to enable or disable data samples for individual gems. To do so, use the **Data Preview** checkbox in the gem [action menu](docs/Spark/gems/gems.md). Selectively-generated samples load up to 10,000 rows by default.
+When you choose selective data sampling, you gain the ability to enable or disable data samples for individual gems. To do so, use the **Data Preview** checkbox in the gem [action menu](/engineers/gems). Selectively-generated samples load up to 10,000 rows by default.
 
 ![Selective](img/selective-interims.png)
 

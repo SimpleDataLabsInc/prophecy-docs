@@ -1,6 +1,7 @@
 ---
 title: SampleRows
 id: sample-rows
+slug: /engineers/sample-rows
 description: Sample records by choosing a specific number or percentage of records
 tags:
   - gems

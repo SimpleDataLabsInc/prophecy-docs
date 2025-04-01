@@ -20,7 +20,7 @@ When you create a SQL project in Prophecy, you will have the option to select th
 | Normal (no forks) | Enables the typical Git workflow aligned with DevOps best practices. Users all work in the same repository on different branches.        |
 | Fork per user     | (External Git only) Enables the typical Git workflow aligned with DevOps best practices. Users work on their own copy of the repository. |
 
-The following sections demonstrate the **visual workflow** for projects that use the Simple Git storage model. To view the workflow for normal Git, visit the section on [Git](docs/ci-cd/git/git.md) in the documentation.
+The following sections demonstrate the **visual workflow** for projects that use the Simple Git storage model. To view the workflow for normal Git, visit the section on [Git](/engineers/git) in the documentation.
 
 :::note
 The way you use Git will also influence how you collaborate in Prophecy. To learn more, visit [Real-time collaboration](docs/analysts/development/collaboration/collaboration-modes.md).
