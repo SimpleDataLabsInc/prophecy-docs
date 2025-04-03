@@ -1,5 +1,6 @@
 ---
-title: Pipeline development
+title: Pipeline development for Analysts
+sidebar_label: Pipeline development
 id: development
 slug: /analysts/pipeline-development
 description: Introduction to pipeline development for analysts
