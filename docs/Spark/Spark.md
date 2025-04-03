@@ -1,6 +1,7 @@
 ---
-title: Pipeline development
+title: Pipeline development for Engineers
 id: copilot-for-spark-users
+sidebar_label: Pipeline development
 slug: /engineers/pipeline-development
 description: Using Spark with Prophecy's Data Transformation Copilot
 tags: [spark, warehouse]
