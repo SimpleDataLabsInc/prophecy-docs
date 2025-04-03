@@ -23,71 +23,80 @@ import Requirements from '@site/src/components/gem-requirements';
   livy="Not Supported"
 />
 
-This gem has below features:
+:::info Built on
+This connector is built on top of the already available [Spark Salesforce Library](https://github.com/springml/spark-salesforce/).
 
-1. Dataset Creation - Create dataset in Salesforce Wave from Spark DataFrame.
-2. Read Salesforce Wave dataset - User has to provide SAQL to read data from Salesforce Wave. The query result will be constructed as DataFrame.
-3. Read Salesforce Object - User has to provide SOQL to read data from Salesforce object. The query result will be constructed as DataFrame.
-4. Update Salesforce Object - Salesforce object will be updated with the details present in DataFrame.
-
-:::note
-This connector is built on top of the already available [`spark-salesforce connector`](https://github.com/springml/spark-salesforce/).
-
-To use this gem in Prophecy, `com.springml:spark-salesforce_2.12:1.1.4` Maven external dependency needs to be installed on cluster.
-For installing dependencies from Prophecy UI. Please check [dependency management docs](docs/extensibility/dependencies/spark-dependencies.md).
+Install the `com.springml:spark-salesforce_2.12:1.1.4` Maven external dependency on your cluster.
+To learn about installing dependencies in Prophecy UI, see [Spark dependencies](/engineers/dependencies).
 :::
+
+With the Source and Target gem, you can perform the following with Salesforce:
+
+- Create datasets in Salesforce Wave from Spark `DataFrame`.
+- Read a Salesforce Wave dataset where the user provides a SAQL to read data from Salesforce Wave. The Source gem constructs the query result as a `DataFrame`.
+- Read a Salesforce object where the user provides a SOQL to read data from Salesforce object. The Source gem constructs a query result as a `DataFrame`.
+- Update a Salesforce object where the Target gem updates the Salesforce object with the details present in `DataFrame`.
+
+## Prerequisites
+
+Before you specify parameters and properties, select the Salesforce application:
+
+1. Open the gem configuration.
+1. On the **Type & Format** page, navigate to the **Applications** tab.
+1. Select **Salesforce**.
+
+## Parameters
+
+| Parameter   | Tab      | Description                                                                                                                                                                                                                                                          |
+| ----------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Credentials | Location | How to provide your credentials. <br/>You can select: `Databricks Secrets`, `Username & Password`, or `Environment variables`                                                                                                                                        |
+| User Name   | Location | Salesforce Wave username. <br/>This user must have privledges to upload datasets or execute SAQL or execute SOQL.                                                                                                                                                    |
+| Password    | Location | Salesforce Wave Password. <br/>**Append your security token along with password.** <br/>To reset your Salesforce security token, see [Reset Your Security Token](https://help.salesforce.com/s/articleView?id=xcloud.user_security_token.htm&language=en_US&type=5). |
+| Login URL   | Location | Salesforce Login URL. <br/>Default: `https://login.salesforce.com.`                                                                                                                                                                                                  |
+| Data Source | Location | Strategy to read data in the Source gem. <br/>Possible values are: `SAQL`, or `SOQL`.                                                                                                                                                                                |
+| SAQL Query  | Location | If you select `SAQL` as the **Data Source**, SAQL query to use to query Salesforce Wave.                                                                                                                                                                             |
+| SOQL Query  | Location | If you select `SOQL` as the **Data Source**, SOQL query to used to query Salesforce Object.                                                                                                                                                                          |
 
 ## Source
 
-Reads data from Salesforce object and wave datasets.
+The Source gem reads data from Salesforce objects and allows you to optionally specify the following additional properties.
 
-### Source Parameters
+### Source properties
 
-| Parameter            | Description                                                                                                                                                                                                                                                                                                | Required                                               |
-| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| Dataset Name         | Name of the dataset                                                                                                                                                                                                                                                                                        | True                                                   |
-| Credential Type      | Credential Type: `Databricks Secrets` or `Username & Password`                                                                                                                                                                                                                                             | True                                                   |
-| Credentials          | Databricks credential name, else username and password for the snowflake account                                                                                                                                                                                                                           | Required if `Credential Type` is `Databricks Secrets`  |
-| Username             | Salesforce Wave Username. This user should have privilege to upload datasets or execute SAQL or execute SOQL.                                                                                                                                                                                              | Required if `Credential Type` is `Username & Password` |
-| Password             | Salesforce Wave Password. Please append security token along with password. For example, if a user’s password is mypassword, and the security token is XXXXXXXXXX, the user must provide mypasswordXXXXXXXXXX                                                                                              | Required if `Credential Type` is `Username & Password` |
-| Login Url            | (Optional) Salesforce Login URL. Default value https://login.salesforce.com.                                                                                                                                                                                                                               | True                                                   |
-| Read from source     | Strategy to read data: `SAQL` or `SOQL`.                                                                                                                                                                                                                                                                   | True                                                   |
-| SAQL Query           | (Optional) SAQL query to used to query Salesforce Wave. Mandatory for reading Salesforce Wave dataset                                                                                                                                                                                                      |                                                        |
-| SOQL Query           | (Optional) SOQL query to used to query Salesforce Object. Mandatory for reading Salesforce Object like Opportunity                                                                                                                                                                                         |                                                        |
-| Version              | (Optional) Salesforce API Version. Default 35.0                                                                                                                                                                                                                                                            |                                                        |
-| Infer Schema         | (Optional) Infer schema from the query results. Sample rows will be taken to find the datatype.                                                                                                                                                                                                            |                                                        |
-| Date Format          | (Optional) A string that indicates the format that follow java.text.SimpleDateFormat to use when reading timestamps. <br/> This applies to TimestampType. By default, it is null which means trying to parse timestamp by `java.sql.Timestamp.valueOf()`.                                                  |                                                        |
-| Result Variable      | (Optional) result variable used in SAQL query. To paginate SAQL queries this package will add the required offset and limit.<br/> For example, in this SAQL query q = load `\"<Dataset_id>/<Dataset_version_id>\"`; q = foreach q generate 'Name' as 'Name', 'Email' as 'Email'; q is the result variable. |                                                        |
-| Page Size            | (Optional) Page size for each query to be executed against Salesforce Wave. Default value is 2000.<br/> This option can only be used if resultVariable is set.                                                                                                                                             |                                                        |
-| Bulk                 | (Optional) Flag to enable bulk query. This is the preferred method when loading large sets of data. Salesforce will process batches in the background. Default value is false.                                                                                                                             |                                                        |
-| PK Chunking          | (Optional) Flag to enable automatic primary key chunking for bulk query job. This splits bulk queries into separate batches that of the size defined by chunkSize option. By default false and the default chunk size is 100,000.                                                                          |                                                        |
-| Chunk size           | (Optional) The size of the number of records to include in each batch. Default value is 100,000. This option can only be used when pkChunking is true. Maximum size is 250,000.                                                                                                                            |                                                        |
-| Timeout              | (Optional) The maximum time spent polling for the completion of bulk query job.<br/> This option can only be used when bulk is true.                                                                                                                                                                       |                                                        |
-| Max chars per column | (Optional) The maximum length of a column. This option can only be used when bulk is true. Default value is 4096.                                                                                                                                                                                          |                                                        |
-| Query All            | (Optional) Toggle to retrieve deleted and archived records for SOQL queries. Default value is false.                                                                                                                                                                                                       |                                                        |
-
-:::info
-Steps to reset your Salesforce security token can be found at this [link.](https://www.mcafee.com/blogs/enterprise/cloud-security/what-is-salesforce-security-token-and-how-do-i-find-it/)
-:::
+| Properties                                              | Description                                                                                                                                                                   | Default  |
+| ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| Description                                             | Description of your dataset.                                                                                                                                                  | None     |
+| Primary key chunking (Optional)                         | Whether to enable automatic primary key chunking for bulk query job. <br/>This splits bulk queries into separate batches that of the size defined by **Chunk size** property. | `100000` |
+| Chunk size                                              | Number of records to include in each batch. <br/>You can only use this property when you enable **Primary key chunking**. Maximum size is `250000`.                           | `100000` |
+| Timeout                                                 | Maximum time spent polling for the completion of bulk query job.<br/>You can only use this property when you **enable bulk query**.                                           | false    |
+| Max Length of column (Optional)                         | Maximum length of a column. <br/>You can only use this property when you **enable bulk query**.                                                                               | `4096`   |
+| External ID field name for Salesforce Object (Optional) | Name of the exteral ID field in a Salesforce object.                                                                                                                          | `Id`     |
+| Enable bulk query (Optional)                            | Whether to enable bulk query. <br/>This is the preferred method when loading large sets of data. Salesforce processes batches in the background.                              | false    |
+| Retrieve deleted and archived records (Optional)        | Whether to retrieve deleted and archived records for SOQL queries.                                                                                                            | false    |
+| Infer Schema                                            | Whether to infer schema from the query results. <br/>The Source gem takes sample rows to find the datatype.                                                                   | false    |
+| Date Format                                             | String that indicates the format for `java.text.SimpleDateFormat` to follow when reading timestamps. <br/>This applies to `TimestampType`.                                    | null     |
+| Salesforce API Version (Optional)                       | Version of the Salesforce API to use.                                                                                                                                         | `35.0`   |
 
 ## Example
 
-Below is an example of fetching all leads from sales cloud using Prophecy IDE.
-We will be using `SOQL` query to query our leads dataset on sales cloud.
+The following example uses a `SOQL` query to query our leads dataset on sales cloud.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
 <iframe src="https://user-images.githubusercontent.com/103921419/193517497-54c5544d-3b98-45ae-95e1-cb036bad6e4c.mp4" title="Salesforce Source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-### Generated Code {#source-code}
+### Generated code {#source-code}
+
+:::tip
+To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
+:::
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-
 <TabItem value="py" label="Python">
 
 ```py
@@ -98,43 +107,37 @@ def read_salesforce(spark: SparkSession) -> DataFrame:
         .option("password", "your_salesforce_password_with_secutiry_token")\
         .option("soql", "select id, name, email from lead")\
         .load()
-
 ```
-
 </TabItem>
 </Tabs>
-
-
 ````
 
 ---
 
 ## Target
 
-Create/update datasets and Salesforce objects.
+The Target gem writes data to Salesforce objects and allows you to optionally specify the following additional properties.
 
-### Target Parameters
+### Target properties
 
-| Parameter               | Description                                                                                                                                                                                                                                             | Required                                               |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| Dataset Name            | Name of the dataset                                                                                                                                                                                                                                     | True                                                   |
-| Credential Type         | Credential Type: `Databricks Secrets` or `Username & Password`                                                                                                                                                                                          | True                                                   |
-| Credentials             | Databricks credential name, else username and password for the snowflake account                                                                                                                                                                        | Required if `Credential Type` is `Databricks Secrets`  |
-| Username                | Salesforce Wave Username. This user should have privilege to upload datasets or execute SAQL or execute SOQL.                                                                                                                                           | Required if `Credential Type` is `Username & Password` |
-| Password                | Salesforce Wave Password. Please append security token along with password.For example, if a user’s password is mypassword, and the security token is XXXXXXXXXX, the user must provide mypasswordXXXXXXXXXX                                            | Required if `Credential Type` is `Username & Password` |
-| Login Url               | (Optional) Salesforce Login URL. Default value https://login.salesforce.com.                                                                                                                                                                            | True                                                   |
-| Salesforce dataset name | (Optional) Name of the Dataset to be created in Salesforce Wave. Required for Dataset Creation.                                                                                                                                                         |                                                        |
-| Salesforce object name  | (Optional) Salesforce Object to be updated. (e.g.) Contact. Mandatory if bulk is true.                                                                                                                                                                  |                                                        |
-| Metadata Config in JSON | (Optional) Metadata configuration which will be used to construct [Salesforce Wave Dataset Metadata] <br/> (https://resources.docs.salesforce.com/sfdc/pdf/bi_dev_guide_ext_data_format.pdf). Metadata configuration has to be provided in JSON format. |                                                        |
-| Upsert                  | (Optional) Flag to upsert data to Salesforce. This performs an insert or update operation using the "externalIdFieldName" as the primary ID. Existing fields that are not in the DataFrame being pushed will not be updated. Default "false".           |                                                        |
-| External Id Field Name  | (Optional) The name of the field used as the external ID for Salesforce Object. This value is only used when doing an update or upsert. Default "Id".                                                                                                   |                                                        |
+| Property                                                | Description                                                                                                                                                                                                                                     | Default |
+| ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| Description                                             | Description of your dataset.                                                                                                                                                                                                                    | None    |
+| SF object to be updated (Optional)                      | Salesforce object to update when you enable **bulk query**.                                                                                                                                                                                     | false   |
+| Name of the dataset to be created in Salesforce Wave    | Name of the Dataset to create in Salesforce Wave.                                                                                                                                                                                               | None    |
+| Metadata configuration in json (Optional)               | JSON formatted metadata configuration to construct a [Salesforce Wave Dataset Metadata](https://resources.docs.salesforce.com/sfdc/pdf/bi_dev_guide_ext_data_format.pdf).                                                                       | None    |
+| External ID field name for Salesforce Object (Optional) | Name of the exteral ID field in a Salesforce object when the Target gem updates or upserts into Salesforce.                                                                                                                                     | `Id`    |
+| Flag to upsert data to Salesforce (Optional)            | Whether to upsert data to Salesforce. <br/>This property performs an insert or update operation using the `externalIdFieldName` as the primary ID. The Target gem does not update existing fields that are not in the `DataFrame` being pushed. | false   |
 
-### Generated Code {#target-code}
+### Generated code {#target-code}
+
+:::tip
+To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
+:::
 
 ````mdx-code-block
 
 <Tabs>
-
 <TabItem value="py" label="Python">
 
 ```py
@@ -145,7 +148,6 @@ def write_salesforce(spark: SparkSession, in0: DataFrame):
 		  .option("DatasetName", "your_Dataset_name")
 		  .save()
 ```
-
 </TabItem>
 </Tabs>
 ````
