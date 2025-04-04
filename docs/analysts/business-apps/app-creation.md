@@ -2,18 +2,15 @@
 title: Create apps
 id: app-creation
 slug: /analysts/create-business-applications
-draft: true
 description: Build applications make pipelines accessible
 tags: []
 ---
 
 Business applications in Prophecy enable teams to create interactive and reusable workflows that simplify data processing. More specifically, these applications allow users to parameterize pipelines, interact with data, and schedule pipeline runs without modifying the underlying pipeline logic.
 
-When creating a business application, it is essential to structure it using [pipeline parameters](docs/analysts/development/pipelines/pipeline-params.md). Pipeline parameters allow applications to dynamically adjust values during execution. When you add interactive components to your business apps, users can define the values of these parameters while keeping the rest of the pipeline unchanged.
+When creating a business application, it is essential to structure it using [pipeline parameters](docs/analysts/development/pipelines/pipeline-params.md). Pipeline parameters allow applications to dynamically adjust values during execution. When you add [interactive components](analysts/business-application-components) to your business apps, users can define the values of these parameters while keeping the rest of the pipeline unchanged.
 
 This guide walks you through the process of creating, configuring, and publishing an app to the App Directory.
-
----
 
 ## Example: Filter web traffic data
 

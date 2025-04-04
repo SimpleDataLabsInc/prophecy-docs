@@ -1,29 +1,20 @@
 ---
 title: Run apps
 id: run-apps
-draft: true
+slug: /analysts/run-apps
 description: Learn how to use applications that have been shared with you
 tags: []
 ---
 
-A **business app** is a visual application built on top of a Prophecy pipeline. When you run a business app, you execute the underlying pipeline using your own parameters.
+A business app is a visual application built on top of a Prophecy pipeline. When you run a business app, you execute the underlying pipeline using your own parameters.
 
-## Access
+## Access and sharing
 
 Access to business apps is controlled by Prophecy’s team-based permission model.
 
-**Teams own projects.** If your team owns a project, you have full edit access. You can:
+**Teams own projects.** If your team owns a project, you have full edit access. This means that you can build, edit, and delete business apps in the App Builder.
 
-- Modify pipelines and components.
-- Create, edit, and delete business apps and their configs.
-
-**Projects can be shared with other teams.** If a project is shared with your team:
-
-- You **cannot** edit pipelines or business app structure.
-- You **can** run business apps from the shared project.
-- You **can** import components from the share project into your own project.
-
-This ensures that your data engineering team can safely share pipelines they developed with analysts or business users.
+**Projects can be shared with other teams.** If a project is shared with your team, you **cannot** edit pipelines or business app structure. However, you can **run** business apps from the shared project. This ensures that your data engineering team can safely share pipelines they developed with analysts or business users.
 
 ## Configs
 
@@ -56,7 +47,7 @@ Follow the steps below to create a new config for an app.
 
 You can set each app config to periodically run using a **schedule**.
 
-### Schedule a Config
+### Schedule a config
 
 To create and enable an app schedule:
 
