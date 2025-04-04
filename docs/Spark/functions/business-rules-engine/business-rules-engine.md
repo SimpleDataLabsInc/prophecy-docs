@@ -33,7 +33,7 @@ Business rules require the following parameters.
 
 To create a new business rule:
 
-1. In the project browser, click the **plus** icon next to **Functions**.
+1. In the project browser, click the **+** icon next to **Functions**.
 1. Name the Rule and choose **Business Rule** as the **Function Type**. Then, click **OK**.
 
 ![Create business rule](./img/create-bre.png)

@@ -74,7 +74,7 @@ Now that you have a fabric, create a new project.
 In this step, you'll add your first pipeline to this project!
 
 1. Hover **Pipelines** in the left sidebar.
-1. Click on the **plus** sign.
+1. Click on the **+** icon.
 1. Name your pipeline.
 1. Keep the default directory path.
 1. Click **Create**.

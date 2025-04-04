@@ -293,9 +293,13 @@ const sidebars = {
       label: "Apps",
       link: { type: "doc", id: "analysts/business-apps/business-apps" },
       items: [
-        "analysts/business-apps/app-components",
-        "analysts/business-apps/app-usage",
-        "analysts/business-apps/app-creation",
+        "analysts/business-apps/run-apps",
+        {
+          type: "category",
+          label: "Create apps",
+          link: { type: "doc", id: "analysts/business-apps/app-creation" },
+          items: ["analysts/business-apps/app-components"],
+        },
       ],
     },
 
