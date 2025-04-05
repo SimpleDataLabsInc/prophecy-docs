@@ -155,7 +155,6 @@ To see the generated source code of your project, [switch to the Code view](/eng
 
 ```scala
 object output_mongodb {
-
   def apply(context: Context, df: DataFrame): Unit = {
     df.write
       .format("mongodb")
@@ -170,7 +169,6 @@ object output_mongodb {
       .option("operationType", "replace")
       .save()
   }
-
 }
 ```
 </TabItem>

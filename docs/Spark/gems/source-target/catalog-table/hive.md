@@ -168,10 +168,10 @@ object Target {
 
   def apply(spark: SparkSession, in: DataFrame): DataFrame = {
     in.write
-      .format("hive")
-      .option("fileFormat", "parquet")
-      .mode("overwrite")
-      .saveAsTable("test_db.test_table")
+        .format("hive")
+        .option("fileFormat", "parquet")
+        .mode("overwrite")
+        .saveAsTable("test_db.test_table")
   }
 
 }
