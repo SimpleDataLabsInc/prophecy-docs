@@ -19,7 +19,7 @@ Prophecy lets you [create](#create-udfs) or [import](#import-udfs) user-defined 
 | Scala        | Python/Scala | Not supported |
 
 :::info
-In Databricks Runtime 15.2 and above, you can run UDFs and UDAFs on Graviton clusters that are configured with standard access mode and Unity Catalog.
+Learn about UDF support in Databricks on our documentation on cluster [access modes](/administration/fabrics/Spark-fabrics/databricks/ucshared).
 :::
 
 ## Create UDFs

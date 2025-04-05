@@ -24,14 +24,20 @@ import Requirements from '@site/src/components/gem-requirements';
 
 Lookups are a special kind of gem that allow you to mark a particular DataFrame as a _Broadcast_ DataFrame. Spark will ensure that this data is available on every computation node so that these lookups can be done without shuffling data. This is useful for looking up values in tables, hence the name.
 
-![Lookup gem](./img/lookup.png)
+:::info
+Lookups are implemented as user-defined functions under the hood in Prophecy. Learn about UDF support in Databricks on our documentation on cluster [access modes](/administration/fabrics/Spark-fabrics/databricks/ucshared).
+:::
 
-![Lookup UI](./img/lookup_ui.png)
+## Parameters
+
+The following table describes the parameters to configure a Lookup gem.
 
 |     | Name          | Description                                                                  |
 | :-: | ------------- | ---------------------------------------------------------------------------- |
 |  1  | Key Columns   | Specify one or more columns to use as the lookup key in the source DataFrame |
 |  2  | Value Columns | Pick which columns can be referenced wherever this Lookup is used            |
+
+![Lookup UI](./img/lookup_ui.png)
 
 ## Using Lookups
 
