@@ -11,13 +11,16 @@ tags:
   - python
 ---
 
-Prophecy lets you [create](#create-udfs) or [import](#import-udfs) user-defined functions (UDFs) which can be used anywhere in the pipeline. Prophecy supports creating UDFs written in Python/Scala, and importing UDFs written in SQL.
+Prophecy lets you [create](#create-udfs) or [import](#import-udfs) user-defined functions (UDFs) which can be used anywhere in the pipeline. Prophecy supports creating UDFs written in Python/Scala and importing UDFs written in SQL.
 
-| Project Type | Create UDFs   | Import UDFs   |
-| :----------- | :------------ | :------------ |
-| Python       | Python/Scala  | SQL           |
-| Scala        | Python/Scala  | Not supported |
-| SQL          | Not supported | Not supported |
+| Project Type | Create UDFs  | Import UDFs   |
+| :----------- | :----------- | :------------ |
+| Python       | Python/Scala | SQL           |
+| Scala        | Python/Scala | Not supported |
+
+:::info
+Learn about UDF support in Databricks on our documentation on cluster [access modes](/administration/fabrics/Spark-fabrics/databricks/ucshared).
+:::
 
 ## Create UDFs
 
