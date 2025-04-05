@@ -25,7 +25,7 @@ import Requirements from '@site/src/components/gem-requirements';
 
 :::info Built on
 Built on [MongoDB Spark Connector](https://www.mongodb.com/docs/spark-connector/v10.0/#mongodb-connector-for-spark) v10.0. <br/>
-To add `mongodb-spark-connector` jar as dependency, see [Spark dependencies](/engineers/dependencies).
+To add `mongodb-spark-connector` jar as a dependency, see [Spark dependencies](/engineers/dependencies).
 :::
 
 You can read from and write to MongoDB.
@@ -47,24 +47,24 @@ The Source gem reads data from MongoDB and allows you to optionally specify the 
 
 ### Source properties
 
-| Properties                                        | Description                                                                                                                                                                                                                                                                                                                                                                                                       | Default                                                                              |
-| ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| Description                                       | Description of your dataset.                                                                                                                                                                                                                                                                                                                                                                                      | None                                                                                 |
-| Mongo client factory                              | MongoClientFactory configuration key. <br/>To specify a custom implementation, implement the `com.mongodb.spark.sql.connector.connection.MongoClientFactory` interface.                                                                                                                                                                                                                                           | `com.mongodb.spark.sql`<br/>`.connector.connection.`<br/>`DefaultMongoClientFactory` |
-| partitioner class name                            | Partitioner full class name. <br/>To specify a custom implementation, implement the `com.mongodb.spark.sql.connector.read.partitioner.Partitioner` interface.                                                                                                                                                                                                                                                     | `com.mongodb.spark.sql.`<br/>`.connector.read.partitioner.`<br/>`SamplePartitioner`  |
-| Partition field                                   | Unique field to use for partitioning.                                                                                                                                                                                                                                                                                                                                                                             | `_id`                                                                                |
-| Partition size                                    | Size in MB for each partition. <br/>Smaller partition sizes create more partitions that contain fewer documents.                                                                                                                                                                                                                                                                                                  | `64`                                                                                 |
-| Number of samples per partition                   | Number of samples to take per partition. <br/>The total number of samples taken is: <br/>`samples per partiion * ( count / number of documents per partition)`                                                                                                                                                                                                                                                    | `10`                                                                                 |
-| Minimum no. of Docs for Schema inference          | Number of documents to sample from the collection when inferring the schema.                                                                                                                                                                                                                                                                                                                                      | `1000`                                                                               |
-| Enable Map types when inferring schema            | Whether to enable Map types when inferring the schema. <br/>If you enable this, the Source gem infers large compatible `struct` types to a `MapType` instead.                                                                                                                                                                                                                                                     | `true`                                                                               |
-| Minimum no. of a StructType for MapType inference | Minimum size of a `StructType` before inferring it as a `MapType`.                                                                                                                                                                                                                                                                                                                                                | `250`                                                                                |
-| Pipeline aggregation                              | Custom aggregation pipeline to apply to the collection before sending the data to Spark. <br/>The value must be an extended JSON single document, or list of documents.<br/> A single document should resemble the following: `{"$match": {"closed": false}}` <br/>A list of documents should resemble the following: `[{"$match": {"closed": false}}, {"$project": {"status": 1, "name": 1, "description": 1}}]` | `{"$match": {"closed": false}}`                                                      |
-| Enable AllowDiskUse aggregation                   | Whether to enable `AllowDiskUse` aggregation.                                                                                                                                                                                                                                                                                                                                                                     | false                                                                                |
+| Properties                                        | Description                                                                                                                                                                                                                                                                                                                                                                                                      | Default                                                                              |
+| ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Description                                       | Description of your dataset.                                                                                                                                                                                                                                                                                                                                                                                     | None                                                                                 |
+| Mongo client factory                              | MongoClientFactory configuration key. <br/>To specify a custom implementation, implement the `com.mongodb.spark.sql.connector.connection.MongoClientFactory` interface.                                                                                                                                                                                                                                          | `com.mongodb.spark.sql`<br/>`.connector.connection.`<br/>`DefaultMongoClientFactory` |
+| partitioner class name                            | Partitioner full class name. <br/>To specify a custom implementation, implement the `com.mongodb.spark.sql.connector.read.partitioner.Partitioner` interface.                                                                                                                                                                                                                                                    | `com.mongodb.spark.sql.`<br/>`.connector.read.partitioner.`<br/>`SamplePartitioner`  |
+| Partition field                                   | Unique field to use for partitioning.                                                                                                                                                                                                                                                                                                                                                                            | `_id`                                                                                |
+| Partition size                                    | Size in MB for each partition. <br/>Smaller partition sizes create more partitions that contain fewer documents.                                                                                                                                                                                                                                                                                                 | `64`                                                                                 |
+| Number of samples per partition                   | Number of samples to take per partition. <br/>The total number of samples taken is: <br/>`samples per partition * ( count / number of documents per partition)`                                                                                                                                                                                                                                                  | `10`                                                                                 |
+| Minimum no. of Docs for Schema inference          | Number of documents to sample from the collection when inferring the schema.                                                                                                                                                                                                                                                                                                                                     | `1000`                                                                               |
+| Enable Map types when inferring schema            | Whether to enable Map types when inferring the schema. <br/>If you enable this, the Source gem infers large compatible `struct` types to a `MapType` instead.                                                                                                                                                                                                                                                    | `true`                                                                               |
+| Minimum no. of a StructType for MapType inference | Minimum size of a `StructType` before inferring it as a `MapType`.                                                                                                                                                                                                                                                                                                                                               | `250`                                                                                |
+| Pipeline aggregation                              | Custom aggregation pipeline to apply to the collection before sending the data to Spark. <br/>The value must be an extended JSON single document or list of documents.<br/> A single document should resemble the following: `{"$match": {"closed": false}}` <br/>A list of documents should resemble the following: `[{"$match": {"closed": false}}, {"$project": {"status": 1, "name": 1, "description": 1}}]` | `{"$match": {"closed": false}}`                                                      |
+| Enable AllowDiskUse aggregation                   | Whether to enable `AllowDiskUse` aggregation.                                                                                                                                                                                                                                                                                                                                                                    | false                                                                                |
 
 ### Example {#source-example}
 
 The following example configures a Source gem to read from the `sample_airbnb.listingsAndReviews` collection in MongoDB.
-After you configure the Source gem, view schema by clicking `Infer Schema` in Properties tab and view data by clicking `Load` inside Preview tab.
+After you configure the Source gem, view schema by clicking `Infer Schema` in the Properties tab and view data by clicking `Load` inside the Preview tab.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -87,7 +87,7 @@ import TabItem from '@theme/TabItem';
 ```scala
 object input_mongodb {
 
-  def apply(context: Context): DataFrame = {
+def apply(context: Context): DataFrame = {
     context.spark.read
       .format("mongodb")
       .option(
@@ -98,6 +98,7 @@ object input_mongodb {
       .option("collection", "listAndReviews")
       .load()
   }
+
 }
 ```
 </TabItem>
@@ -108,7 +109,7 @@ object input_mongodb {
 
 ## Target
 
-The Target gem writes data to CosmosDB and allows you to optionally specify the following additional properties.
+The Target gem writes data to MongoDB and allows you to optionally specify the following additional properties.
 
 ### Target properties
 
@@ -122,8 +123,8 @@ The Target gem writes data to CosmosDB and allows you to optionally specify the 
 | operationType         | Type of write operation to perform. <br/>Possible values are: `insert`, `replace` or `update`                                                                                              | `replace`                                                                            |
 | List of id fields     | Field or list of fields to organize the data. <br/>To specify more than one field, separate them using a comma. <br/>For example: `"fieldName1,fieldName2"`                                | `_id`                                                                                |
 | writeConcern.w        | Write concern option to acknowledge the level the change propagated in the MongoDB replica set. <br/>Possible values are: `MAJORITY`, `W1`, `W2`, `W3`, `ACKNOWLEDGED` or `UNACKNOWLEDGED` | `ACKNOWLEDGED`                                                                       |
-| Enable Write journal  | Whether to enable request for acknowledgment that the data is confirmed on on-disk journal for the criteria specified in the w option.                                                     | false                                                                                |
-| Write timeout in MSec | Non-negative number of milliseconds to wait before reutrning an error when a write operation.                                                                                              | `0`                                                                                  |
+| Enable Write journal  | Whether to enable request for acknowledgment that the data is confirmed on the on-disk journal for the criteria specified in the w option.                                                 | false                                                                                |
+| Write timeout in MSec | Non-negative number of milliseconds to wait before returning an error when a write operation.                                                                                              | `0`                                                                                  |
 
 ### Supported write modes
 
@@ -154,6 +155,7 @@ To see the generated source code of your project, [switch to the Code view](/eng
 
 ```scala
 object output_mongodb {
+
   def apply(context: Context, df: DataFrame): Unit = {
     df.write
       .format("mongodb")
@@ -168,6 +170,7 @@ object output_mongodb {
       .option("operationType", "replace")
       .save()
   }
+
 }
 ```
 </TabItem>

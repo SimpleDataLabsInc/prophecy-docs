@@ -23,10 +23,10 @@ Before you specify parameters and properties, select the Hive table type:
 
 | Parameter         | Tab        | Description                                                                                                                                                                                     |
 | ----------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Use Unity Catalog | Location   | Whether to use a unity catalog.                                                                                                                                                                 |
+| Use Unity Catalog | Location   | Whether to use a Unity catalog.                                                                                                                                                                 |
 | Catalog           | Location   | If you use a unity catalog, specify which catalog to use.                                                                                                                                       |
-| Database          | Location   | Name of the database to conenct to                                                                                                                                                              |
-| Table             | Location   | Name of the table to conenct to.                                                                                                                                                                |
+| Database          | Location   | Name of the database to connect to                                                                                                                                                              |
+| Table             | Location   | Name of the table to connect to.                                                                                                                                                                |
 | Use file path     | Location   | Whether to use a custom file path to store underlying files in the Target gem.                                                                                                                  |
 | Schema            | Properties | Schema to apply on the loaded data.<br/>In the Source gem, you can define or edit the schema visually or in JSON code.<br/>In the Target gem, you can view the schema visually or as JSON code. |
 
@@ -116,14 +116,14 @@ The Target gem writes data to Delta tables and allows you to optionally specify 
 
 ### Target properties
 
-| Property          | Description                                                                                                                               | Default |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------- | --------- |
-| Description       | Description of your dataset.                                                                                                              | None    |
-| Provider          | Provider to use. **You must set this to `hive`**.                                                                                         | `delta` |
-| Write Mode        | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                      | `error` |
-| File Format       | File format to use when saving data. <br/>Supported file formats are: `sequencefile`, `rcfile`, `orc`, `parquet`, `textfile`, and `avro`. | True    | `parquet` |
-| Partition Columns | List of columns to partition the Hive table table by.                                                                                     | None    |
-| Use insert into   | Whether to use the `insertInto()` method to write instead of the `save()` method.                                                         | false   |
+| Property          | Description                                                                                                                               | Default   |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| Description       | Description of your dataset.                                                                                                              | None      |
+| Provider          | Provider to use. **You must set this to `hive`**.                                                                                         | `delta`   |
+| Write Mode        | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                      | `error`   |
+| File Format       | File format to use when saving data. <br/>Supported file formats are: `sequencefile`, `rcfile`, `orc`, `parquet`, `textfile`, and `avro`. | `parquet` |
+| Partition Columns | List of columns to partition the Hive table table by.                                                                                     | None      |
+| Use insert into   | Whether to use the `insertInto()` method to write instead of the `save()` method.                                                         | false     |
 
 ### Supported write modes
 
@@ -168,10 +168,10 @@ object Target {
 
   def apply(spark: SparkSession, in: DataFrame): DataFrame = {
     in.write
-        .format("hive")
-        .option("fileFormat", "parquet")
-        .mode("overwrite")
-        .saveAsTable("test_db.test_table")
+      .format("hive")
+      .option("fileFormat", "parquet")
+      .mode("overwrite")
+      .saveAsTable("test_db.test_table")
   }
 
 }

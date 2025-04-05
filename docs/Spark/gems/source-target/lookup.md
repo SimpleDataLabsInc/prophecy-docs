@@ -26,51 +26,28 @@ Lookup gems allow you to mark a particular DataFrame as a _Broadcast_ DataFrame.
 
 ## Parameters
 
-| Parameter     | Description                                                                |
-| ------------- | -------------------------------------------------------------------------- |
-| Range Lookup  | Whether to perform a lookup with a minimum and maximum value in a coloumn. |
-| Key Columns   | One or more columns to use as the lookup key in the source `DataFrame`.    |
-| Value Columns | Columns to reference wherever you use this Lookup gem.                     |
+| Parameter     | Description                                                               |
+| ------------- | ------------------------------------------------------------------------- |
+| Range Lookup  | Whether to perform a lookup with a minimum and maximum value in a column. |
+| Key Columns   | One or more columns to use as the lookup key in the source `DataFrame`.   |
+| Value Columns | Columns to reference wherever you use this Lookup gem.                    |
 
 ## Use a Lookup gem
 
-You can use a Lookup gem wherever you can use an expression. Lookup gems contain the following pattern:
+You can use a Lookup gem wherever you can use an expression.
+
+### Column-based lookups
+
+Assume you created this Lookup gem with the following configurations:
+
+![Lookup UI](./img/lookup_ui.png)
+
+To perform a column-based lookup, use:
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs>
-<TabItem value="py" label="Python">
-
-```py
-lookup("<LOOKUP NAME>", <KEY COLUMN>).getField(<VALUE COLUMN>)
-```
-</TabItem>
-<TabItem value="scala" label="Scala">
-
-```scala
-lookup("<LOOKUP NAME>", <KEY COLUMN>).getField(<VALUE COLUMN>)
-```
-</TabItem>
-<TabItem value="sql" label="SQL">
-
-```sql
-<LOOKUP NAME>(<KEY COLUMN>)['<VALUE COLUMN>']
-```
-</TabItem>
-</Tabs>
-````
-
-### Column-based lookups
-
-Assume you have the following example:
-
-![Lookup UI](./img/lookup_ui.png)
-
-To perform a coloumn based lookup, use:
-
-````mdx-code-block
 <Tabs>
 <TabItem value="py" label="Python">
 
@@ -101,7 +78,7 @@ Here, you have a column named `category` that is set to the value of `MyLookup(c
 
 ### Literal lookups
 
-You can use any column reference a in Lookup expression. This means that you can use Lookups with static keys:
+You can use any column reference in a Lookup expression. This means that you can use Lookups with static keys:
 
 ````mdx-code-block
 <Tabs>

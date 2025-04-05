@@ -37,10 +37,10 @@ Before you specify parameters and properties, select the Delta table type:
 
 | Parameter         | Tab        | Description                                                                                                                                                                                     |
 | ----------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Use Unity Catalog | Location   | Whether to use a unity catalog.                                                                                                                                                                 |
+| Use Unity Catalog | Location   | Whether to use a Unity catalog.                                                                                                                                                                 |
 | Catalog           | Location   | If you use a unity catalog, specify which catalog to use.                                                                                                                                       |
-| Database          | Location   | Name of the database to conenct to.                                                                                                                                                             |
-| Table             | Location   | Name of the table to conenct to.                                                                                                                                                                |
+| Database          | Location   | Name of the database to connect to.                                                                                                                                                             |
+| Table             | Location   | Name of the table to connect to.                                                                                                                                                                |
 | Use file path     | Location   | Whether to use a custom file path to store underlying files in the Target gem.                                                                                                                  |
 | Schema            | Properties | Schema to apply on the loaded data.<br/>In the Source gem, you can define or edit the schema visually or in JSON code.<br/>In the Target gem, you can view the schema visually or as JSON code. |
 
@@ -61,7 +61,7 @@ The Source gem reads data from Delta tables and allows you to optionally specify
 :::note
 You can only select `Read Timestamp` or `Read Version`, not both.
 
-By default, the Source gem fetches the most recent version of each row if you don't use a time travel option.
+If you don't use a time travel option, the Source gem fetches the most recent version of each row by default.
 :::
 
 To learn more about Delta time travel and its use cases, see [Introducing Delta Time Travel for Large Scale Data Lakes](https://databricks.com/blog/2019/02/04/introducing-delta-time-travel-for-large-scale-data-lakes.html).
@@ -143,14 +143,14 @@ The Target gem writes data to Delta tables and allows you to optionally specify 
 | Property                                 | Description                                                                                                                                                   | Default |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
 | Description                              | Description of your dataset.                                                                                                                                  | None    |
-| Provider                                 | Provider to use. Y**ou must set this to `delta`.**                                                                                                            | `delta` |
+| Provider                                 | Provider to use. **You must set this to `delta`.**                                                                                                            | `delta` |
 | Write Mode                               | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                                          | `error` |
 | Use insert into                          | Whether to use the `insertInto()` method to write instead of the `save()` method.                                                                             | false   |
 | Overwrite table schema                   | Whether to overwrite the schema of the Delta table.                                                                                                           | false   |
 | Merge DataFrame schema into table schema | Whether to automatically add columns that are present in the `DataFrame` but not in the Target table to the end of the schema as part of a write transaction. | false   |
 | Partition Columns                        | List of columns to partition the Delta table table by.                                                                                                        | None    |
 | Overwrite partition predicate            | Selectively overwrite only the data that satisfies the given where clause expression.                                                                         | None    |
-| Optimize write                           | Whether to optimizes Spark partition sizes based on the actual data.                                                                                          | false   |
+| Optimize write                           | Whether to optimize Spark partition sizes based on the actual data.                                                                                           | false   |
 
 ### Supported write modes
 
@@ -200,9 +200,9 @@ object Target {
 
   def apply(spark: SparkSession, in: DataFrame): DataFrame = {
     in.write
-        .format("delta")
-        .mode("overwrite")
-        .saveAsTable("test_db.test_table")
+      .format("delta")
+      .mode("overwrite")
+      .saveAsTable("test_db.test_table")
   }
 
 }

@@ -56,32 +56,32 @@ To configure Spark conf properties:
 
 1. Navigate to **Pipeline Settings**.
 
-   a. Click **...** at the top of the Prophecy canvas.<br/>
-   b. Under **Manage**, click **Pipeline Settings**.
+a. Click **...** at the top of the Prophecy canvas.<br/>
+b. Under **Manage**, click **Pipeline Settings**.
 
-   ![Open Pipeline Settings](./img/iceberg/open-pipeline-settings.png)
+![Open Pipeline Settings](./img/iceberg/open-pipeline-settings.png)
 
 2. In your **Spark** tab, under **Spark Configuration**, add your Spark conf properties.
 
-   ![Spark Pipeline Settings](./img/iceberg/spark-pipeline-settings.png)
+![Spark Pipeline Settings](./img/iceberg/spark-pipeline-settings.png)
 
-   To configure Hadoop as a catalog, add the following Spark conf properties:
+To configure Hadoop as a catalog, add the following Spark conf properties:
 
-   - `spark.sql.catalog.<catalog_name>=org.apache.iceberg.spark.SparkCatalog`
-   - `spark.sql.catalog.<catalog_name>.type=hadoop`
-   - `spark.sql.catalog.<catalog_name>.warehouse=gs://<bucket>/<folder_1>/<folder_1>/`
+- `spark.sql.catalog.<catalog_name>=org.apache.iceberg.spark.SparkCatalog`
+- `spark.sql.catalog.<catalog_name>.type=hadoop`
+- `spark.sql.catalog.<catalog_name>.warehouse=gs://<bucket>/<folder_1>/<folder_1>/`
 
-   To configure Hive as a catalog, add the following Spark conf properties:
+To configure Hive as a catalog, add the following Spark conf properties:
 
-   - `spark.sql.catalog.<catalog_name>=org.apache.iceberg.spark.SparkCatalog`
-   - `spark.sql.catalog.<catalog_name>.type=hive`
-   - `spark.sql.catalog.<catalog_name>.warehouse=gs://<bucket>/<folder_1>/<folder_1>/`
-   - `spark.sql.catalog.<catalog_name>.uri=thrift://10.91.64.30:9083`
+- `spark.sql.catalog.<catalog_name>=org.apache.iceberg.spark.SparkCatalog`
+- `spark.sql.catalog.<catalog_name>.type=hive`
+- `spark.sql.catalog.<catalog_name>.warehouse=gs://<bucket>/<folder_1>/<folder_1>/`
+- `spark.sql.catalog.<catalog_name>.uri=thrift://10.91.64.30:9083`
 
-   <br/>
-   :::tip
-   You can set the default catalog by using `spark.default.catalog=<catalog_name>`.
-   :::
+<br/>
+ :::tip
+ You can set the default catalog by using `spark.default.catalog=<catalog_name>`.
+ :::
 
 ## Parameters
 
@@ -91,7 +91,7 @@ The Source and Target gems require the following parameters to read from and wri
 | --------------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Use Catalog                 | Location   | Whether to use a configured Hadoop or Hive catalog name.                                                                                                                                        |
 | Catalog Name                | Location   | Name of your catalog if you enable **Use Catalog**.                                                                                                                                             |
-| Schema Name (Database Name) | Location   | Name of the database to conenct to.                                                                                                                                                             |
+| Schema Name (Database Name) | Location   | Name of the database to connect to.                                                                                                                                                             |
 | Table Name                  | Location   | Name of the table to connect to.                                                                                                                                                                |
 | Catalog Type                | Location   | File path to write the Iceberg table in the Target gem. <br/>Possible values are: `hive`, `hadoop`, or `other`                                                                                  |
 | File location               | Location   | Location of your file if you select `hive` or `other` for the **Catalog Type**.                                                                                                                 |
@@ -107,12 +107,12 @@ The Source gem reads data from Iceberg and allows you to optionally specify the 
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
 | Description    | Description of your dataset.                                                                                                                                    | None    |
 | Read timestamp | Time travel in milliseconds to a specific timestamp. <br/>This value should be between the first commit timestamp and the latest commit timestamp in the table. | None    |
-| Read snapshot  | Snapshot ID to time travel to a specific version of the table.                                                                                                  | None    |
+| Read snapshot  | Snapshot ID to time travel to a specific table version.                                                                                                         | None    |
 
 :::note
 You can only select `Read timestamp` or `Read snapshot`, not both.
 
-By default, the Source gem fetches the most recent version of each row if you don't use a time travel option.
+If you don't use a time travel option, the Source gem fetches the most recent version of each row by default.
 :::
 
 To learn more about Iceberg time travel and its use cases, see [Apache Iceberg TIMETRAVEL](https://iceberg.apache.org/docs/nightly/hive/?h=time#timetravel).
@@ -154,24 +154,24 @@ The Target gem writes data to Iceberg and allows you to optionally specify the f
 
 ### Target properties
 
-| Property          | Description                                                                                                                                                           | Default |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| Description       | Description of your dataset.                                                                                                                                          | None    |
-| Write Mode        | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                                                  | None    |
-| Merge schema      | Whether to automatically add columns that are present in the `DataFrame` but not in the Target table to the end of the schema as part of a write transaction.         | false   |
-| Partition Columns | List of columns to partition the Iceberg table by. <br/>Provide this during a `createOrReplace` write mode to leverage the`overwritePartitions` write mode in future. | None    |
+| Property          | Description                                                                                                                                                               | Default |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| Description       | Description of your dataset.                                                                                                                                              | None    |
+| Write Mode        | How to handle existing data. For a list of the possible values, see [Supported write modes](#supported-write-modes).                                                      | None    |
+| Merge schema      | Whether to automatically add columns present in the `DataFrame` but not in the Target table to the end of the schema as part of a write transaction.                      | false   |
+| Partition Columns | List of columns to partition the Iceberg table by. <br/>Provide this during a `createOrReplace` write mode to leverage the`overwritePartitions` write mode in the future. | None    |
 
 ### Supported write modes
 
 | Write Mode          | Description                                                                                             |
 | ------------------- | ------------------------------------------------------------------------------------------------------- |
-| createOrReplace     | Create, or replace the Iceberg table.                                                                   |
+| createOrReplace     | Create or replace the Iceberg table.                                                                    |
 | append              | If data already exists, append the contents of the DataFrame to the Iceberg table.                      |
 | overwritePartitions | Dynamically overwrite partitions in the Iceberg table.                                                  |
 | overwrite           | If data already exists, explicitly overwrite the partitions with the `Overwrite Condition` you specify. |
 
 :::tip
-Among these write modes overwrite and append works the same way as in case of parquet file writes.
+Among these write modes, overwrite and append work the same way for parquet file writes.
 :::
 
 ### Target Example

@@ -69,12 +69,12 @@ The Source gem reads data from Redshift and allows you to optionally specify the
 
 ### Source properties
 
-| Property                                    | Description                                                              | Default |
-| ------------------------------------------- | ------------------------------------------------------------------------ | ------- |
-| Forward S3 access credentials to Databricks | Whether to forward S3 access credentials to Databricks.                  | false   |
-| Driver                                      | Class name of the Redshift driver to connect to this URL.                | None    |
-| AWS IAM Role                                | Identity that grants permissions to access other AWS services            | None    |
-| Temporary AWS access key id                 | Whether to allow a temporary credentials for authenticating to Redshift. | false   |
+| Property                                    | Description                                                            | Default |
+| ------------------------------------------- | ---------------------------------------------------------------------- | ------- |
+| Forward S3 access credentials to Databricks | Whether to forward S3 access credentials to Databricks.                | false   |
+| Driver                                      | Class name of the Redshift driver to connect to this URL.              | None    |
+| AWS IAM Role                                | Identity that grants permissions to access other AWS services          | None    |
+| Temporary AWS access key id                 | Whether to allow temporary credentials for authenticating to Redshift. | false   |
 
 ## Target
 
