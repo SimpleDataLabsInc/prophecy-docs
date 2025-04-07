@@ -7,13 +7,15 @@ tags:
   - sftp
 ---
 
-Prophecy supports reading and writing files using an SFTP connection. Data is read using `io.Reader`. The impact of network latency depends on server proximity. If the SFTP server is close to our server, network latency is minimal and does not significantly affect performance. However, when the server is far away, latency increases.
+Prophecy supports reading and writing files using an SFTP connection. Data is read using `io.Reader`.
 
 | Features    | Supported |
 | ----------- | --------- |
 | Read data   | ✔         |
 | Write data  | ✔         |
 | Browse data | ✔         |
+
+## SFTP Permissions
 
 ## Parameters
 
@@ -46,3 +48,5 @@ Data from connection are synced whenever:
 - The environment browser is refreshed
 
 ## Limitations
+
+The impact of network latency depends on server proximity. If the SFTP server is close to our server, network latency is minimal and does not significantly affect performance. However, when the server is far away, latency increases.
