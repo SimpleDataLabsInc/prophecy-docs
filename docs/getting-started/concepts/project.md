@@ -105,9 +105,9 @@ All projects are automatically compiled into code and hosted on Git for powerful
 
 In Prophecy, each project is associated with a specific [team](docs/administration/teams-users/teamuser.md), which determines ownership and access permissions.
 
-The user who creates a project becomes its owner (or admin). During project creation, assigning it to a team gives all team members permission to edit the project's components—such as pipelines, gems, and more. However, project owners retain special privileges: for example, only project owners and team admins can release and deploy Spark projects.
+The user who creates a project becomes its owner (or admin). During project creation, the project owner assigns the project to a team, which lets all team members edit project components like pipelines and gems. However, project owners retain special privileges: for example, only project owners and team admins can release and deploy Spark projects.
 
-When you first start using Prophecy, you’re placed in your own personal, one-member team. This setup is ideal for private projects that only you can access. For collaborative work, your team administrator will usually create shared teams.
+When you first start using Prophecy, you are placed in your own personal, one-member team. This setup is ideal for private projects that only you can access. For collaborative work, your team admin will usually create shared teams.
 
 ### Sharing with other teams (read-only)
 
