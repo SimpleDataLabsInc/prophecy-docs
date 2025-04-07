@@ -26,5 +26,5 @@ You can also use the [upload file](docs/analysts/development/gems/source-target/
 
 | Property                    | Description                                                                         | Default  |
 | --------------------------- | ----------------------------------------------------------------------------------- | -------- |
-| Description                 | A description of the table.                                                         | None     |
+| Description                 | Description of the table.                                                           | None     |
 | Multiple documents per file | Checkbox to enable if there are multiple documents to be parsed from the JSON file. | Disabled |
