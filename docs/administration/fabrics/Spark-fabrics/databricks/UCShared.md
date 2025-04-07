@@ -15,7 +15,7 @@ tags:
 
 ## Cluster Types
 
-Databricks clusters come with various [Access Modes](https://docs.databricks.com/clusters/create-cluster.html#what-is-cluster-access-mode).
+Databricks clusters come with various [Access Modes](https://docs.databricks.com/aws/en/compute/configure#access-modes).
 
 To implement features including interactive pipeline runs, Prophecy has written some libraries in Python and Scala. These libraries need to be installed on the cluster.
 
@@ -29,8 +29,13 @@ As a result, some Prophecy features are not supported on all cluster access mode
 | [Run history](docs/Orchestration/pipeline-monitoring/use-pipeline-monitoring.md#view-historical-runs) | Supported                                                                                                       | Not Supported                                 | Supported             | Supported                 | **Not Supported**     |
 | [Interactive run](/engineers/execution) progress                                                      | Supported                                                                                                       | Not Supported                                 | Supported             | Supported                 | **Not Supported**     |
 | Interactive runs on pre-existing clusters                                                             | Supported                                                                                                       | Not Supported                                 | Supported             | Supported                 | **Not Supported**     |
+| [User-defined functions](/engineers/user-defined-functions)                                           | Supported                                                                                                       | Not supported                                 | Supported             | Supported                 | Supported\*           |
 
 When using Databricks with a `Shared` access mode, you must also connect to `Shared Mode` clusters.
+
+:::info \*UDF support
+Graviton instance support for [UDFs on Unity Catalog-enabled clusters](https://docs.databricks.com/aws/en/udf/) is available in Databricks Runtime 15.2 and above. Clusters must have shared access mode for Python UDFs.
+:::
 
 ## Gem Support
 
@@ -88,14 +93,14 @@ Minimum Prophecy Package version required to support Databricks Unity Catalog Sh
 
 ### Lookup
 
-Minimum Prophecy Package version required to support Databricks Unity Catalog Shared Clusters:
+The following table defines Lookup support Databricks Unity Catalog Shared Clusters. If `Lookup` is not supported, use a `Left join` instead.
 
 | Gem    | Package | 12.2 - Shared | 14.3 - UC shared | 15.4 - UC shared |
 | ------ | ------- | ------------- | ---------------- | ---------------- |
-| Lookup | N/A     | Not Supported | Not Supported    | Not Supported    |
+| Lookup | N/A     | Not Supported | Not Supported    | Supported\*      |
 
-:::tip
-Instead of `Lookup`, use `Left join` when working on UC Shared clusters.
+:::info \*Lookup support
+Lookups are implemented as user-defined functions under the hood in Prophecy. Graviton instance support for [UDFs on Unity Catalog-enabled clusters](https://docs.databricks.com/aws/en/udf/) is available in Databricks Runtime 15.2 and above.
 :::
 
 ### Transform
