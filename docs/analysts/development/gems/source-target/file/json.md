@@ -21,3 +21,10 @@ You can also use the [upload file](docs/analysts/development/gems/source-target/
 | Location type               | Location you want to connect from.                                |
 | Select or create connection | Whether to select an existing connection, or to create a new one. |
 | Filepath                    | The file path according to the connection type.                   |
+
+## Source Properties
+
+| Property                    | Description                                                                         | Default  |
+| --------------------------- | ----------------------------------------------------------------------------------- | -------- |
+| Description                 | A description of the table.                                                         | None     |
+| Multiple documents per file | Checkbox to enable if there are multiple documents to be parsed from the JSON file. | Disabled |
