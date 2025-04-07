@@ -8,7 +8,7 @@
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/assets/css/styles.16451571.css">
-<script src="/assets/js/runtime~main.e1ebac74.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.3aaad6c4.js" defer="defer"></script>
 <script src="/assets/js/main.66bcdbab.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -25,7 +25,7 @@
 </ul>
 <p>When you create a fabric, you assign it to a team. Only users in that team can access the fabric. To control access in your production environment, create a team with only those users who can execute and deploy pipelines in production.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="components">Components<a href="#components" class="hash-link" aria-label="Direct link to Components" title="Direct link to Components">​</a></h2>
-<p>Fabrics define all the necessary components that Prophecy needs to communicate with a specific execution environment. Each execution environment will require its own unique fabric configuration. Fabric creation, outlined in the <a href="/administration/">administration</a> section of the documentation, is typically handled by team administrators.</p>
+<p>Fabrics define all the necessary components that Prophecy needs to communicate with a specific execution environment. Each execution environment will require its own unique fabric configuration. Fabric creation, outlined in the <a href="/administration/">administration</a> section of the documentation, is typically handled by team admins.</p>
 <p>Find the key components below that correspond to distinct sections within the fabric&#x27;s settings.</p>
 <table><thead><tr><th>Component</th><th>Description</th><th>Required</th></tr></thead><tbody><tr><td>Credentials</td><td>Prophecy securely encrypts your credentials and uses them to connect to your external environments.</td><td>Credentials are required to establish connections to external execution environments.</td></tr><tr><td>Cluster configuration</td><td>This will determine the computation resources allocated to you.</td><td>Cluster configurations are required. Defaults are pre-configured based on your credentials.</td></tr><tr><td>Connections</td><td>To connect to multiple data providers for use in your pipelines, you can add additional connections to your fabric.</td><td>One connection to a primary execution environment is required. Additional connections are optional.</td></tr><tr><td>Secrets</td><td>Fabrics can store secrets from different secret providers such as HashiCorp Vault.</td><td>Secrets are not required for fabric creation. However, sometimes secrets are required for connections. If a secret is required, you will be prompted to create one.</td></tr></tbody></table>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Prophecy provides a trial Prophecy-managed fabric that can get you started with building your pipelines. However, you will need to connect to external execution environments for your production workflows.</p></div></div>
