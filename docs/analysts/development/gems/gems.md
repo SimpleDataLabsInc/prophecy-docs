@@ -9,7 +9,7 @@ tags:
   - analyst
 ---
 
-[Gems](/docs/getting-started/concepts/gems.md) are functional units in a pipeline that perform tasks such as reading, transforming, writing, or handling other data operations. When you build pipelines in a SQL project, some gems will be powered by Prophecy Automate, and some gems will be powered by SQL dbt.
+[Gems](/docs/getting-started/concepts/gems.md) are functional units in a pipeline that perform tasks such as reading, transforming, writing, or handling other data operations. When you build pipelines in a SQL project, some gems will be powered by [Prophecy Automate](/administration/architecture), and some gems will be powered by SQL dbt.
 
 ## Categories
 
@@ -21,16 +21,21 @@ tags:
 | **Join**          | Merge, split, or link datasets.                            | SQL warehouse     |
 | **Parse**         | Interpret structured formats in columns like XML and JSON. | SQL warehouse     |
 | **Report**        | Share results through channels such as email or Tableau.   | Prophecy Automate |
-| **Subgraph**      | Group gems into reusable components.                       | Depends           |
 | **Custom**        | Enhance and extend Prophecy’s functionality.               | Depends           |
 
-## Interactive examples
+<!-- | **Subgraph**      | Group gems into reusable components.                       | Depends           | -->
 
-To test a gem hands-on, you can try the **interactive example** of the gem. If you search for a gem in the project sidebar, you can open the associated **example** and run the pre-configured pipeline!
+## Interactive gem examples
+
+To test a gem hands-on, you can try the **interactive example** of the gem. If you search for a gem in the project sidebar, you can open the associated example and run the pre-configured pipeline!
+
+![Gem example](img/interactive-example.png)
 
 ## Gem instance
 
 When you click on a gem from the gem drawer, an instance of that gem gets added to your pipeline canvas. Use the image and the table below to understand the UI of a gem.
+
+![Gem instance](img/gem-instance.png)
 
 | Callout | UI element    | Description                                                                                                 |
 | :-----: | ------------- | ----------------------------------------------------------------------------------------------------------- |
@@ -42,10 +47,11 @@ When you click on a gem from the gem drawer, an instance of that gem gets added 
 |    6    | Open          | The button that lets you open the gem configuration.                                                        |
 |    7    | Run button    | A button that runs the pipeline up to and including the gem.                                                |
 |    8    | Action menu   | A menu that includes options to change the phase of the gem, add run conditions, delete the gem, and more.  |
+|    9    | Warning       | Indicator that the gem contains errors to be fixed.                                                         |
 
 ## Gem configuration
 
-When you open a gem, you can configure how the gem will work.
+When you open a gem, you can configure how the gem will work. Explore our individual gem documentation to understand each gem's parameters.
 
 ### Visual and code view
 

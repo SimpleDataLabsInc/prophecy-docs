@@ -228,7 +228,7 @@ const config = {
           },
           aiChatSettings: {
             // optional settings
-            aiAssistantAvatar: "img/icon.png", // optional -- use your own ai assistant avatar
+            aiAssistantAvatar: "/img/icon.png", // optional -- use your own ai assistant avatar
           },
         },
       },
