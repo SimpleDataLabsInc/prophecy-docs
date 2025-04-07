@@ -37,12 +37,21 @@ Schedules are created per pipeline. In other words, scheduled pipeline runs are 
 
 ## Enable a schedule
 
-A pipeline _will not execute on a schedule_ until its parent project is published. This is because project [publication](/analysts/project-publication) determines:
+To enable scheduled execution of a pipeline, the pipeline's parent project must be [published](/analysts/project-publication). Configuring a schedule alone is not sufficient—scheduled runs will not occur unless the project is published and deployed to a fabric.
 
-- **The execution environment (fabric):** The pipeline runs on the fabric selected during publication. If multiple fabrics are chosen, separate schedules are created, and the pipeline will execute once per fabric for each scheduled run.
-- **The pipeline version:** Scheduled executions always run the version of the pipeline associated with the most recent project version published to the fabric. If a new project version is published to a fabric, the schedule for that fabric will automatically use the updated pipeline version.
+Project publication performs the following key functions that directly impact scheduling.
 
-If a project is not published or deployed, **scheduled execution will not occur** even if a schedule has been configured.
+- **Defines the execution environment (fabric)**
+
+  When you publish a project, you select one or more fabrics that serve as the execution environments for deployed projects. For each selected fabric, a separate deployment is created. Pipeline schedules are only enabled for deployed projects.
+
+  :::caution
+  If you do not select any fabrics during project publication, no deployments will be created. As a result, no scheduled executions will occur, even if a schedule has been configured.
+  :::
+
+- **Determines the pipeline version for execution**
+
+  Publication determines what version of the pipeline will run during a scheduled execution. When a new project version is published, scheduled executions for the associated fabric(s) automatically begin using the updated pipeline version. Each deployment is isolated per fabric—publishing a new version to one fabric does not update deployments on other fabrics.
 
 ## Monitor scheduled pipelines
 
@@ -50,4 +59,4 @@ You and you team members might have many scheduled pipelines in your Prophecy en
 
 ## External schedulers
 
-By default, SQL projects leverage a Prophecy-native scheduler to automate pipeline runs. While we recommend using the Prophecy scheduler, you can also use external schedulers like Databricks Jobs or Apache Airflow if preferred. To learn more about external schedulers, visit [Orchestration](docs/Orchestration/Orchestration.md).
+By default, SQL projects leverage a Prophecy-native scheduler to automate pipeline runs. While we recommend using the Prophecy scheduler, you can also use external schedulers like Databricks Jobs or Apache Airflow if preferred. Projects that leverage the [Simple Git Storage Model](/analysts/versioning) are not compatible with external schedulers. To learn more about external schedulers, visit [Orchestration](docs/Orchestration/Orchestration.md).
