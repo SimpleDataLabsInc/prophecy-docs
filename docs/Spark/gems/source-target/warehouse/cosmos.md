@@ -104,15 +104,15 @@ Several advanced scenarios benefit from client-side throughput control:
 
 - **Different operations and tasks have different priorities**
 
-You can prevent normal transactions from throttling due to data ingestion or copy activities. Some operations or tasks aren't sensitive to latency and are more tolerant to being throttled than others.
+  You can prevent normal transactions from throttling due to data ingestion or copy activities. Some operations or tasks aren't sensitive to latency and are more tolerant to being throttled than others.
 
 - **Provide fairness and isolation to different end users**
 
-Applications usually have many end users, where some may send too many requests. This consumes all available throughput and causes others to throttle.
+  Applications usually have many end users, where some may send too many requests. This consumes all available throughput and causes others to throttle.
 
 - **Load balancing of throughput between different Azure Cosmos DB clients**
 
-Assure all the clients get an equal share of the throughput.
+  Assure all the clients get an equal share of the throughput.
 
 | Property                                                   | Description                                                                                                                                                                                                                                                                                                                                                                                          | Default |
 | ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
@@ -173,7 +173,7 @@ The Target gem writes data to CosmosDB and allows you to optionally specify the 
 
 ### ItemPatch properties
 
-These Configurations are valid only when you select `ItemPatch` as your `Write Strategy`.
+These configurations are valid only when you select `ItemPatch` as your `Write Strategy`.
 
 | Property                     | Description                                                                                                                                                                                                                                                                                                                                     | Default Value |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |

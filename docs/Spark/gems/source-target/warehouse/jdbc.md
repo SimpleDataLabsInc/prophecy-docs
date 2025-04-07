@@ -39,7 +39,7 @@ You can read from and write to other databases using JDBC.
 
 The `DB Table` option dictates which table to use as the source to read from. You can use anything valid in a `FROM` clause of a SQL query. For example, instead of a table name, use a subquery in parentheses.
 
-:::danger
+:::caution
 The `DB Table` option and the `query` parameter are mutually exclusive, which means that you cannot specify both at the same time.
 :::
 

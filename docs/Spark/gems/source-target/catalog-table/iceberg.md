@@ -56,8 +56,8 @@ To configure Spark conf properties:
 
 1. Navigate to **Pipeline Settings**.
 
-a. Click **...** at the top of the Prophecy canvas.<br/>
-b. Under **Manage**, click **Pipeline Settings**.
+   a. Click **...** at the top of the Prophecy canvas.<br/>
+   b. Under **Manage**, click **Pipeline Settings**.
 
 ![Open Pipeline Settings](./img/iceberg/open-pipeline-settings.png)
 

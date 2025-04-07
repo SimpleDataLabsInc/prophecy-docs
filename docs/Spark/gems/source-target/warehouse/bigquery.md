@@ -56,18 +56,18 @@ To get your JSON Credentials from BigQuery:
 1. Select `Service account`.
 1. If you don't have a Service account, create a service account.
 
-a. If you don't have a Service account, enter your **Service account name**, **Service account ID**, and **Service account description**.
-Then click `Create and continue`. <br/>
-b. Click `Done`.
+   a. If you don't have a Service account, enter your **Service account name**, **Service account ID**, and **Service account description**.
+   Then click `Create and continue`. <br/>
+   b. Click `Done`.
 
 1. Under the `Service Accounts` section, click on your service account email.
 1. Navigate to the `Keys` tab.
 1. Create a new key.
 
-a. Click `Add key`.<br/>
-b. Click `Create new key` <br/>
-c. Select the `JSON key type`. <br/>
-d. Click `Create`.
+   a. Click `Add key`.<br/>
+   b. Click `Create new key` <br/>
+   c. Select the `JSON key type`. <br/>
+   d. Click `Create`.
 
 ## Source
 
