@@ -1,6 +1,7 @@
 ---
 title: Upload files
 id: upload-file
+slug: /engineers/upload-file
 description: Learn how to upload files to your Spark pipeline
 tags:
   - gems

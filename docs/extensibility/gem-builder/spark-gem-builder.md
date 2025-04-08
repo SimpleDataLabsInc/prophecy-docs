@@ -1,6 +1,7 @@
 ---
 title: Gem Builder for Spark
 id: spark-gem-builder
+slug: /engineers/gem-builder
 description: Build Spark gems in Python or Scala
 tags:
   - gem builder
@@ -9,7 +10,7 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-[Gems](docs/concepts/project/gems.md) are visually-packaged parcels of code that perform specific operations on data. While Prophecy provides many gems out of the box, Prophecy also lets you create your own gems! Not only can you create new gems, but you can also share them in the [Package Hub](/docs/extensibility/package-hub/package-hub.md) or with selected teams.
+[Gems](docs/getting-started/concepts/gems.md) are visually-packaged parcels of code that perform specific operations on data. While Prophecy provides many gems out of the box, Prophecy also lets you create your own gems! Not only can you create new gems, but you can also share them in the [Package Hub](/engineers/package-hub) or with selected teams.
 
 ## Overview
 
@@ -137,16 +138,16 @@ class CustomLimit extends ComponentSpec {
 
 The template consists of the following components:
 
-| Component                                       | Description                                                                                      |
-| ----------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| Parent class                                    | Extends a parent class from which it inherits the representation of the overall gem.             |
-| Optimize function                               | Enable or disable [code optimization](docs/extensibility/gem-builder/optimization-functions.md). |
-| Properties class                                | Contains a list of the properties to be made available to the user for this particular gem.      |
-| Dialog function                                 | Contains code specific to how the gem UI should look to the user.                                |
-| Serialize/deserialize function (**Scala only**) | Persists objects or exchanges data between different parts of a system                           |
-| Validate function                               | Recognizes errors with any inputs provided by the user.                                          |
-| State change function                           | Defines UI state transformations.                                                                |
-| Component code class                            | Contains the Spark code that needs to run on your Spark cluster.                                 |
+| Component                                       | Description                                                                                 |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Parent class                                    | Extends a parent class from which it inherits the representation of the overall gem.        |
+| Optimize function                               | Enable or disable [code optimization](/engineers/optimization-functions).                   |
+| Properties class                                | Contains a list of the properties to be made available to the user for this particular gem. |
+| Dialog function                                 | Contains code specific to how the gem UI should look to the user.                           |
+| Serialize/deserialize function (**Scala only**) | Persists objects or exchanges data between different parts of a system                      |
+| Validate function                               | Recognizes errors with any inputs provided by the user.                                     |
+| State change function                           | Defines UI state transformations.                                                           |
+| Component code class                            | Contains the Spark code that needs to run on your Spark cluster.                            |
 
 ## Tutorial
 
@@ -155,7 +156,7 @@ The template consists of the following components:
 1. Create a Spark project in Python. The gem will inherit the project-level language.
 1. Click on the **+** in the gems section of the project sidebar. This will appear on hover.
 1. In the **Gem Name** field, write `CustomLimit`.
-1. Choose **Transformation Gem** [mode](/extensibility/gem-builder/gem-builder-reference#mode).
+1. Choose **Transformation Gem** [mode](/engineers/gem-builder-reference/#mode).
 1. Select the **Transform** category.
 1. Click **Create Gem**.
 
@@ -578,6 +579,12 @@ If there is a **(1) typo / error** in a required method (e.g. dialog1 instead of
 “The gem specification could not be parsed” means that there’s an error in one or more required methods, classes, or properties. These components could not be analyzed and/or converted into the gem UI.
 
 :::
+
+## Best Practice
+
+When possible, use the `set()` operation, and avoid `for` loops. `set()` operations typically have a better average computational complexity than a `list`, which makes them more efficient.
+
+This is especially helpful when you operate on the _columns_ of wide tables, as this scenario can slow down the Prophecy UI.
 
 ## What's next
 

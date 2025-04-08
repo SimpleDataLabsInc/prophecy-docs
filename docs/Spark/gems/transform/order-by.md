@@ -1,6 +1,7 @@
 ---
 title: OrderBy
 id: order-by
+slug: /engineers/order-by
 description: Sort your data based on one or more columns
 tags:
   - gems

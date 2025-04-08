@@ -1,6 +1,7 @@
 ---
 title: BulkColumnRename
 id: bulk-column-rename
+slug: /engineers/bulk-column-rename
 description: Rename multiple columns in your dataset in a systematic way
 tags:
   - gems
@@ -48,7 +49,7 @@ You can accomplish the same or more complex changes using a custom expression li
 ## Example code
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block

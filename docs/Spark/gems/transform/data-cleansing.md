@@ -1,6 +1,7 @@
 ---
 title: DataCleansing
 id: data-cleansing
+slug: /engineers/data-cleansing
 description: Standardize data formats and address missing or null values in the data
 tags:
   - gems
@@ -42,7 +43,7 @@ Assume you have a table that includes customer feedback on individual orders. In
 ## Example code
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block

@@ -1,6 +1,7 @@
 ---
 title: Fixed Format
 id: fixed-format
+slug: /engineers/fixed-format
 description: Parameters and properties to read from and write to Fixed Format files
 tags:
   - gems
@@ -56,10 +57,10 @@ The Source gem reads data from Fixed Format files and allows you to optionally s
 
 ![Fixed format source example](./img/fixed-format/ff-source-small.gif)
 
-### Generated Code {#source-code}
+### Compiled code {#source-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block
@@ -141,10 +142,10 @@ The Target gem writes data to Fixed Format files and allows you to optionally sp
 
 ![Fixed format target Example](./img/fixed-format/ff-target-small.gif)
 
-### Generated Code {#target-code}
+### Compiled code {#target-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block

@@ -146,23 +146,6 @@ img {
   height: 100%;
 }
 
-/**
-Gems table page
- */
-
-.gems-table table {
-  display: table;
-  width: 100%;
-}
-
-.gems-table table th:nth-of-type(1) {
-  width: 150px;
-}
-
-.gems-table table th:nth-of-type(2) {
-  width: 150px;
-}
-
 /* Summary or details style*/
 
 .alert--info {
@@ -174,11 +157,11 @@ Gems table page
 /* Badge styles */
 
 .badge {
-  color: #fcfcfd;
-  background-color: #30317c;
+  color: var(--ifm-font-color-base);
+  background-color: var(--ifm-code-background);
   border: var(--ifm-badge-border-width) solid var(--ifm-badge-border-color);
   border-radius: 50rem;
-  font-size: 75%;
+  font-size: inherit;
   font-weight: var(--ifm-font-weight-bold);
   line-height: 1;
   padding: var(--ifm-badge-padding-vertical) var(--ifm-badge-padding-horizontal);
@@ -321,10 +304,17 @@ Gems table page
 
 .fixed-table th:nth-child(1),
 .fixed-table td:nth-child(1) {
-  width: 20%;
+  width: 25%;
 }
 
 .fixed-table th:nth-child(2),
 .fixed-table td:nth-child(2) {
-  width: 80%;
+  width: 75%;
+}
+
+/* Remove margin from lists in tables */
+
+.table-list {
+  margin: 0 !important;
+  padding-left: 1rem !important;
 }

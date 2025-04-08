@@ -1,6 +1,7 @@
 ---
 title: Streaming Transformations
 id: transformations-streaming
+slug: /engineers/spark-streaming-transformations
 description: Spark Streaming with Prophecy's easy-to-use interface
 tags:
   - spark
@@ -22,7 +23,7 @@ We have added a Watermarking gem in the Transform Section that allows a user to 
 In this example, we add Watermarking to the `timestamp` column. A user may enter the column name or select one from the Schema Table on the left. The text box is editable. Finally, define the Watermark Duration.
 It is recommended to use Watermarking on a Streaming DataFrame in case you're planning to use any of the following operations on it:
 
-- [Aggregate](/Spark/gems/transform/aggregate.md)
-- [Deduplicate](/Spark/gems/transform/deduplicate.md)
-- [SQL Statement](/Spark/gems/custom/sql-statement.md)
-- [Join](/Spark/gems/join-split/join.md)
+- [Aggregate](/engineers/aggregate)
+- [Deduplicate](/engineers/deduplicate)
+- [SQL Statement](/engineers/sql-statement)
+- [Join](/engineers/join)

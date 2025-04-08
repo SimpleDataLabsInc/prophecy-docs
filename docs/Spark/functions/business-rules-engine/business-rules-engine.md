@@ -1,6 +1,7 @@
 ---
 title: Business rules
 id: business-rules-engine
+slug: /engineers/business-rules
 description: Create business rules as functions
 tags:
   - business rules
@@ -13,8 +14,8 @@ Business rules empower organizations to model, manage, and automate repeatable b
 The business rules engine in Prophecy lets you incorporate business logic in your Pipelines. Often, different users will interact with business rules at various stages of Pipeline development. One common workflow is as follows:
 
 1. Business users create business rules using predefined enterprise logic.
-1. These business rules are deployed and become available as [dependencies](docs/extensibility/dependencies/spark-dependencies.md) in the [Package Hub](docs/extensibility/package-hub/package-hub.md).
-1. Data engineers and others working on Pipelines can incorporate these rules using the [SchemaTransform gem](docs/Spark/gems/transform/schema-transform.md).
+1. These business rules are deployed and become available as [dependencies](docs/extensibility/dependencies/spark-dependencies.md) in the [Package Hub](/engineers/package-hub).
+1. Data engineers and others working on Pipelines can incorporate these rules using the [SchemaTransform gem](/engineers/schema-transform).
 
 These stages are explained in more detail below.
 
@@ -88,7 +89,7 @@ Let's say you want to create a PromoCodeRule that will be used in various other 
 1. Add the business rule to the project.
 1. Commit your changes to the project.
 1. Merge the changes to the main branch.
-1. [Release and deploy](docs/ci-cd/deployment/deployment.md#how-to-release-a-project) the project.
+1. [Release and deploy](/engineers/deployment) the project.
 
 Then, you must give other users access to your project.
 
@@ -103,7 +104,7 @@ This example rule includes a set of conditions to determine the type of promotio
 
 ## Use business rules in your Pipeline
 
-To use a business rule in your Pipeline, you can use the [SchemaTransform gem](docs/Spark/gems/transform/schema-transform.md).
+To use a business rule in your Pipeline, you can use the [SchemaTransform gem](/engineers/schema-transform).
 
 1. Add a SchemaTransform gem to the Pipeline.
 1. Open the gem and add the appropriate input.

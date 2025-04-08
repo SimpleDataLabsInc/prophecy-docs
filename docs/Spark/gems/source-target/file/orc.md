@@ -1,6 +1,7 @@
 ---
 title: ORC
 id: orc
+slug: /engineers/orc
 description: Parameters and properties to read from and write to ORC files
 tags:
   - gems
@@ -52,10 +53,10 @@ The Source gem reads data from ORC files and allows you to optionally specify th
 
 ![ORC source example](./img/orc/orc-source.gif)
 
-### Generated Code {#source-code}
+### Compiled code {#source-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block
@@ -116,10 +117,10 @@ The Target gem writes data to ORC files and allows you to optionally specify the
 
 ![ORC target example](./img/orc/orc-target.gif)
 
-### Generated Code {#target-code}
+### Compiled code {#target-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block

@@ -1,6 +1,7 @@
 ---
 title: BulkColumnExpressions
 id: bulk-column-expressions
+slug: /engineers/bulk-column-expressions
 description: Change the data type of multiple columns at once
 tags:
   - gems
@@ -51,7 +52,7 @@ Using the BulkColumnExpressions gem, you can:
 ## Example code
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block

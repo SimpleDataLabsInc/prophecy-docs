@@ -1,6 +1,7 @@
 ---
 title: Multi Jobs Trigger
 id: multi-jobs-trigger
+slug: /engineers/multi-jobs-trigger
 description: Complex pipeline interactions and timing
 tags:
   - scheduling

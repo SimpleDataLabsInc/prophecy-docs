@@ -1,6 +1,7 @@
 ---
 title: Warehouse-based
 id: streaming-warehouse-apps
+slug: /engineers/warehouse-based-streaming-source-and-targets
 description: Warehouse-based Source gem for Streaming Data Applications
 tags:
   - spark

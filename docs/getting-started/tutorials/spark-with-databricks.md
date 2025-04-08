@@ -1,6 +1,7 @@
 ---
-title: Spark with Databricks
+title: Project lifecycle for Engineers
 id: spark-with-databricks
+slug: /engineers/project-lifecycle
 description: Getting started with Spark on Databricks
 tags:
   - Spark
@@ -20,7 +21,7 @@ For this tutorial, you will need:
 
 ## Create a Databricks Spark fabric
 
-A [fabric](docs/concepts/fabrics/fabrics.md) in Prophecy is an execution environment. In this tutorial, you'll see how to use Databricks as your execution environment in Prophecy. Let's begin!
+A [fabric](docs/getting-started/concepts/fabrics.md) in Prophecy is an execution environment. In this tutorial, you'll see how to use Databricks as your execution environment in Prophecy. Let's begin!
 
 1. Open Prophecy.
 1. Click on the **Create Entity** button in the left navigation bar.
@@ -50,7 +51,7 @@ You are almost done setting up your Databricks fabric!
 
 ## Create a Prophecy project
 
-After you create your first Spark fabric, you'll see a [project](/docs/concepts/project/project.md) in Prophecy called HelloWorld. If you just want to play around with Prophecy, you can start there. However, for the purpose of this tutorial, let's build a new project from scratch.
+After you create your first Spark fabric, you'll see a [project](/docs/getting-started/concepts/project.md) in Prophecy called HelloWorld. If you just want to play around with Prophecy, you can start there. However, for the purpose of this tutorial, let's build a new project from scratch.
 
 1. Once again, click on the **Create Entity** button in the left navigation bar.
 1. Hover over the **Project** tile and select **Create**.
@@ -62,7 +63,7 @@ After you create your first Spark fabric, you'll see a [project](/docs/concepts/
 
 ### Set up Git repository
 
-Prophecy uses [Git](docs/concepts/git/git.md) for version control. Each project in Prophecy is stored as code in its own repository or folder in a repository. For this project, we suggest that you use **Prophecy-managed Git**. When you are ready to use Prophecy for a production use case, [connect to an external Git provider](docs/concepts/git/git.md#Git-credentials). This provides extra functionality for you to work with.
+Prophecy uses [Git](/engineers/git) for version control. Each project in Prophecy is stored as code in its own repository or folder in a repository. For this project, we suggest that you use **Prophecy-managed Git**. When you are ready to use Prophecy for a production use case, [connect to an external Git provider](/engineers/git/#Git-credentials). This provides extra functionality for you to work with.
 
 ![Prophecy project Git connection](img/spark-databricks-git.png)
 
@@ -74,7 +75,7 @@ In the Project Dependencies section, you have the option to include [additional 
 
 ### Project metadata and editor
 
-You should see the [project metadata](/administration/metadata-connections) page. Project metadata includes information about the contents, dependencies, settings, and more related to your project. We want to start editing the project, so click **Open in Editor**.
+You should see the project metadata page. Project metadata includes information about the contents, dependencies, settings, and more related to your project. We want to start editing the project, so click **Open in Editor**.
 
 ## Develop a pipeline
 
@@ -108,13 +109,13 @@ When you are connected to a Databricks fabric, you can browse the Databricks cat
 1. Select the **samples** catalog.
 1. Under **tpch > Tables**, click the **plus** sign next to the **orders** table.
 1. In the dialog, choose **Source** gem and name the gem. Then, click **Add**.
-1. A [Source](docs/Spark/gems/source-target/source-target.md) gem should be added to the pipeline canvas.
+1. A [Source](/engineers/source-target) gem should be added to the pipeline canvas.
 
 ![Attach cluster](img/spark-databricks-source.png)
 
 ### Reformat gem
 
-Next, let's add a new column to the dataset using the [Reformat](docs/Spark/gems/transform/reformat.md) gem to extract the month and year from the order date.
+Next, let's add a new column to the dataset using the [Reformat](/engineers/reformat) gem to extract the month and year from the order date.
 
 1. Click on **Transformations** to see the transformation gems.
 1. Select **Reformat**. This adds the gem to the canvas.
@@ -137,20 +138,20 @@ To preview the output of the gem:
 
 1. Click **Run** in the top right corner. This will execute the pipeline up to and including the gem.
 1. You'll be able to see a sample output dataset under **Data** in the gem footer.
-1. If you **Save** and close the gem, you will also be able to see a new small icon in the output of the Reformat gem. You can click on this to open the [interim data sample](docs/Spark/execution/interactive-execution.md).
+1. If you **Save** and close the gem, you will also be able to see a new small icon in the output of the Reformat gem. You can click on this to open the [interim data sample](/engineers/execution).
 
 ![Reformat preview](img/spark-databricks-reformat-data.png)
 
 :::note
 
-- To learn more about running pipelines, visit [Interactive Execution](docs/Spark/execution/interactive-execution.md).
-- To learn more about Spark SQL expressions in gems, visit [Expression Builder](docs/Spark/expression-builder.md).
+- To learn more about running pipelines, visit [Execution](/engineers/execution).
+- To learn more about Spark SQL expressions in gems, visit [Expression Builder](/engineers/expression-builder).
 
 :::
 
 ### Aggregate gem
 
-Another common gem to use is the [Aggregate](docs/Spark/gems/transform/aggregate.md) gem. Let's use it to find the total sales amount per month each year.
+Another common gem to use is the [Aggregate](/engineers/aggregate) gem. Let's use it to find the total sales amount per month each year.
 
 1. Select **Transformations > Aggregate** to add the Aggregate gem to the canvas.
 1. Connect the output of **Reformat** to the input of **Aggregate**. Then, open the Aggregate gem.
@@ -170,7 +171,7 @@ Once you know how to use a couple of gems, you can experiment with others in the
 1. Click **+ New Dataset** and give the new dataset a name.
 1. Choose the format to save the dataset, then click **Next**.
 1. Choose the location to save the dataset, then click **Next**.
-1. In the Properties tab, under **Write Mode**, select [overwrite](/Spark/gems/source-target/file/delta#supported-write-modes).
+1. In the Properties tab, under **Write Mode**, select [overwrite](/engineers/delta#supported-write-modes).
 1. Confirm the schema, and then click **Create Dataset**.
 
 ![Aggregate gem configuration](img/spark-databricks-target.png)

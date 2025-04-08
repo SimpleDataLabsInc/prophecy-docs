@@ -15,7 +15,7 @@ You'll be able to perform the API call manually or using [Postman](#tips). If yo
 The steps below will work for all the Git providers supported in Prophecy.
 
 1. Login to Prophecy as the Team Admin.
-2. Generate a [Prophecy API token](https://docs.prophecy.io/api/#personal-access-token).
+2. Generate a [Prophecy API token](/api/#personal-access-token).
 3. Craft the API calls as below.
 4. Submit the API call
 
@@ -104,14 +104,14 @@ Response:
 }
 ```
 
-| Parameter               | Description                                                                                                         | Required | Example                                   |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------- | -------- | ----------------------------------------- |
-| projectUID              | Prophecy Project ID, found in the Project URL                                                                       | Required | "11"                                      |
-| externalRepoUri         | Repository target for migration. Use the https url.                                                                 | Required | "https://gitlab.com/****/examplerepo.git" |
-| externalGitProvider     | Possible values (case sensitive): Github, GithubEnterprise, GitLab, GitLabEnterprise, BitBucket, AzureDevOps, Other | Required | GitLab                                    |
-| externalRepoEmail       | If provided, the API call will validate the two repos are the same.                                                 | Optional | "myemail@mycompany.com"                   |
-| externalRepoUsername    | If provided, the API call will validate the two repos are the same.                                                 | Optional | "myGitLabUsername"                        |
-| externalRepoAccessToken | If provided, the API call will validate the two repos are the same.                                                 | Optional | "gitlab-token"                            |
+| Parameter               | Description                                                                                                         | Required | Example                               |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------- |
+| projectUID              | Prophecy Project ID, found in the Project URL                                                                       | Required | "11"                                  |
+| externalRepoUri         | Repository target for migration. Use the https url.                                                                 | Required | "https://gitlab.com/****/examplerepo" |
+| externalGitProvider     | Possible values (case sensitive): Github, GithubEnterprise, GitLab, GitLabEnterprise, BitBucket, AzureDevOps, Other | Required | GitLab                                |
+| externalRepoEmail       | If provided, the API call will validate the two repos are the same.                                                 | Optional | "myemail@mycompany.com"               |
+| externalRepoUsername    | If provided, the API call will validate the two repos are the same.                                                 | Optional | "myGitLabUsername"                    |
+| externalRepoAccessToken | If provided, the API call will validate the two repos are the same.                                                 | Optional | "gitlab-token"                        |
 
 ### Each user needs to update their Git credential
 

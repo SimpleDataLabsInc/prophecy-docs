@@ -1,6 +1,7 @@
 ---
 title: SampleRows
 id: sample-rows
+slug: /engineers/sample-rows
 description: Sample records by choosing a specific number or percentage of records
 tags:
   - gems
@@ -36,7 +37,7 @@ Use the SampleRows gem to sample records by choosing a specific number or percen
 ## Example code
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block

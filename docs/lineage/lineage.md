@@ -1,6 +1,7 @@
 ---
 title: Lineage
 id: lineage
+slug: /engineers/lineage
 description: Project lineage
 tags:
   - metadata

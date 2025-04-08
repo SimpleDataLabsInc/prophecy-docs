@@ -1,6 +1,7 @@
 ---
 title: Develop and deploy a project
 id: deploy-project
+slug: /engineers/develop-and-deploy
 sidebar_label: Deploy a project
 description: Learn how to use Git for deployment
 tags:
@@ -84,4 +85,4 @@ When you **Release and Deploy** your project, a particular commit is tagged in t
 
 ![Release changes](img/release-project.png)
 
-At this point, you have worked through one iteration of your project's lifecycle! To learn more about different deployment options, visit [Deployment](docs/ci-cd/deployment/deployment.md).
+At this point, you have worked through one iteration of your project's lifecycle! To learn more about different deployment options, visit [Deployment](/engineers/deployment).

@@ -1,6 +1,7 @@
 ---
 title: XLSX (Excel)
 id: xlsx
+slug: /engineers/xlsx
 description: Parameters and properties to read from and write too XLSX (Excel) files
 tags:
   - gems
@@ -47,7 +48,7 @@ The Source gem reads data from XLSX files and allows you to optionally specify t
 ### Source properties
 
 | Property name                            | Description                                                                                                                                                                                                                                                                              | Default                            |
-| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- | --- |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
 | Enforce Schema                           | Whether to use the schema you define.                                                                                                                                                                                                                                                    | false                              |
 | Header                                   | Whether to read the first line as a header.                                                                                                                                                                                                                                              | true                               |
 | Description                              | Description of your dataset.                                                                                                                                                                                                                                                             | None                               |
@@ -66,7 +67,7 @@ The Source gem reads data from XLSX files and allows you to optionally specify t
 | Negative Infinite value                  | Sets the string representation of a negative infinity value.                                                                                                                                                                                                                             | `-Inf`                             |
 | Null Value                               | Sets the string representation of a null value.                                                                                                                                                                                                                                          | None                               |
 | Parse Mode                               | How to handle corrupt data. <br/>For a list of the possible values, see [Supported parse modes](#supported-parse-modes).                                                                                                                                                                 | `Permissive`                       |
-| Positive Infinite value                  | Sets the string representation of a positive infinity value.                                                                                                                                                                                                                             | `Inf`                              |     |
+| Positive Infinite value                  | Sets the string representation of a positive infinity value.                                                                                                                                                                                                                             | `Inf`                              |
 | Sampling Ratio                           | Defines a fraction of rows to use for schema inferring                                                                                                                                                                                                                                   | `1.0`                              |
 | Timestamp Format                         | Sets the string that indicates a timestamp format.                                                                                                                                                                                                                                       | `yyyy-MM-dd'T'HH:mm:ss[.SSS][XXX]` |
 | Use Null for Error Cells                 | Whether to use null for cells with errors.                                                                                                                                                                                                                                               | false                              |
@@ -140,7 +141,7 @@ If you want the Target gem to output a single file:
 ## Example code
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block

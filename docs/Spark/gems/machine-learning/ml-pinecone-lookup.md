@@ -1,6 +1,7 @@
 ---
 title: PineconeLookup
 id: ml-pinecone-lookup
+slug: /engineers/pinecone-lookup
 description: Lookup a vector embedding from a Pinecone Database
 tags: [generative-ai, machine-learning, llm, pinecone, openai]
 ---
@@ -9,11 +10,11 @@ tags: [generative-ai, machine-learning, llm, pinecone, openai]
 
 The PineconeLookup gem identifies content that is similar to a provided vector embedding. The gem calls the Pinecone API and returns a set of IDs with highest similarity to the provided embedding.
 
-- [**Parameters:**](/docs/Spark/gems/machine-learning/ml-pinecone-lookup.md#gem-parameters) Configure the parameters needed to call the Pinecone API.
+- [**Parameters:**](/engineers/pinecone-lookup#gem-parameters) Configure the parameters needed to call the Pinecone API.
 
-- [**Input:**](/docs/Spark/gems/machine-learning/ml-pinecone-lookup.md#input) This gem requires an embedding as input. The embedding is provided by a foundational model like [OpenAI](https://platform.openai.com/docs/introduction).
+- [**Input:**](/engineers/pinecone-lookup#input) This gem requires an embedding as input. The embedding is provided by a foundational model like [OpenAI](https://platform.openai.com/docs/introduction).
 
-- [**Output:**](/docs/Spark/gems/machine-learning/ml-pinecone-lookup.md#output) This gem outputs an array of IDs with corresponding similarity scores.
+- [**Output:**](/engineers/pinecone-lookup#output) This gem outputs an array of IDs with corresponding similarity scores.
 
 ![Input and Output](./img/pinecone_lookup_input_output.png)
 
@@ -41,9 +42,9 @@ Hardcoding the Pinecone credential is not recommended. Selecting this option cou
 
 #### Properties
 
-Pinecone DB uses indexing to map the vectors to a data structure that will enable faster searching. The PineconeLookup gem searches through a Pinecone index to identify embeddings with similarity to the input embedding. Enter the Pinecone **[(4) Index name](/docs/Spark/gems/machine-learning/ml-pinecone-lookup.md#faq)** which you’d like to use for looking up embeddings.
+Pinecone DB uses indexing to map the vectors to a data structure that will enable faster searching. The PineconeLookup gem searches through a Pinecone index to identify embeddings with similarity to the input embedding. Enter the Pinecone **[(4) Index name](/engineers/pinecone-lookup#faq)** which you’d like to use for looking up embeddings.
 
-Select one of the gem’s input columns with vector embeddings as the **(5) Vector column** to send to Pinecone’s API. The column [must](/docs/Spark/gems/machine-learning/ml-pinecone-lookup.md#input) be compatible with the Pinecone Index. To change the column’s datatype and properties, [configure](/docs/Spark/gems/machine-learning/ml-pinecone-lookup.md#faq) the gem(s) preceding the PineconeLookup gem.
+Select one of the gem’s input columns with vector embeddings as the **(5) Vector column** to send to Pinecone’s API. The column [must](/engineers/pinecone-lookup#input) be compatible with the Pinecone Index. To change the column’s datatype and properties, [configure](/engineers/pinecone-lookup#faq) the gem(s) preceding the PineconeLookup gem.
 
 Pinecone’s API can return multiple results. Depending on the use case, select the desired **(6) Number of results** sorted by similarity score. The result with highest similarity to the user’s text question will be listed first.
 
@@ -57,7 +58,7 @@ PineconeLookup requires a model_embedding column as input. Use one of Prophecy's
 
 ### Output
 
-The output dataset contains the pinecone_matches and pinecone_error columns. For each input content entry, this gem adds an array to the pinecone_matches column. The output array will have [Number of Results](/docs/Spark/gems/machine-learning/ml-pinecone-lookup.md#properties) entries.
+The output dataset contains the pinecone_matches and pinecone_error columns. For each input content entry, this gem adds an array to the pinecone_matches column. The output array will have [Number of Results](/engineers/pinecone-lookup#properties) entries.
 
 | Column           | Description                                                                                                                                                                          |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -110,4 +111,4 @@ To troubleshoot the gem preceding PineconeLookup, open the data preview output f
 
 #### Creating a Pinecone Index
 
-If you don’t have one yet, [create a Pinecone index](https://docs.pinecone.io/docs/quickstart). Click [here](https://docs.pinecone.io/docs/choosing-index-type-and-size) for pointers on choosing an index type and size. How to populate the index? For example, [this guide](/docs/Spark/gems/machine-learning/genaichatbot.md#step-2-build-a-knowledge-warehouse) shows how to ingest and vectorize web content data to store in a Pinecone Database index.
+If you don’t have one yet, [create a Pinecone index](https://docs.pinecone.io/docs/quickstart). Click [here](https://docs.pinecone.io/docs/choosing-index-type-and-size) for pointers on choosing an index type and size. How to populate the index? For example, [this guide](/engineers/generative-ai-chatbot#step-2-build-a-knowledge-warehouse) shows how to ingest and vectorize web content data to store in a Pinecone Database index.

@@ -13,8 +13,12 @@ jobs:
       - uses: pre-commit/action@v3.0.0
       - uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 23.x
           cache: yarn
           cache-dependency-path: yarn.lock
+      - name: Set environment variables
+        run: |
+          echo "INKEEP_API_KEY=${{ secrets.INKEEP_API_KEY }}" >> $GITHUB_ENV
+          echo "BASE_URL=/" >> $GITHUB_ENV
       - name: Build website
         run: yarn install --frozen-lockfile && yarn build

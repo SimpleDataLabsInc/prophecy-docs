@@ -1,6 +1,7 @@
 ---
 title: SchemaTransform
 id: schema-transform
+slug: /engineers/schema-transform
 description: Add, Edit, Rename or Drop Columns
 tags:
   - gems

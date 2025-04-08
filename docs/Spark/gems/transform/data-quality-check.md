@@ -1,6 +1,7 @@
 ---
 title: DataQualityCheck
 id: data-quality-check
+slug: /engineers/data-quality-check
 description: Ensure your data adhere to predefined constraints
 tags:
   - gems
@@ -70,17 +71,17 @@ The DataQualityCheck gem includes a variety of checks that are built on the open
 
 ## Post Actions
 
-| Action              | Description                                                                                                                                                                                                     |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Continue execution  | Continue pipeline execution regardless of data quality success or failure.                                                                                                                                      |
-| Terminate execution | Stop pipeline execution after the DataQualityCheck gem runs based on a maximum number of failed checks. Review [gem phases](docs/concepts/project/gems.md#gem-phase) to understand the order in which gems run. |
+| Action              | Description                                                                                                                                                                                       |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Continue execution  | Continue pipeline execution regardless of data quality success or failure.                                                                                                                        |
+| Terminate execution | Stop pipeline execution after the DataQualityCheck gem runs based on a maximum number of failed checks. Review [gem phases](/engineers/gems#gem-phase) to understand the order in which gems run. |
 
 ## Example code
 
 Each check is compiled into highly decipherable code. When you switch to the code view and open the DataQualityCheck file, you can see that every check includes a **hint** that populates the **out1** _constraint_message_ column if you do not define a custom failure message. Below is an example of the generated code with a few checks configured.
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block

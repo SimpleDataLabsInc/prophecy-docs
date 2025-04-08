@@ -1,6 +1,7 @@
 ---
 title: Conditional execution
 id: conditional-execution
+slug: /engineers/conditional-execution
 description: Conditionally run or skip transformations within Spark gems
 tags:
   - Conditional

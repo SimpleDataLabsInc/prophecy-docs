@@ -1,6 +1,7 @@
 ---
 title: Streaming Sources and Targets
 id: streaming-sources-and-targets
+slug: /engineers/streaming-source-and-targets
 description: Spark streaming sources and targets
 tags: []
 ---

@@ -1,6 +1,7 @@
 ---
 title: DynamicReplace
 id: dynamic-replace
+slug: /engineers/dynamic-replace
 description: Dynamically generate values depending on certain conditions
 tags:
   - gems
@@ -95,7 +96,7 @@ For this example, you would configure the gem using the following values:
 ## Example code
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block

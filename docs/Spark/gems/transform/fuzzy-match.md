@@ -1,6 +1,7 @@
 ---
 title: FuzzyMatch
 id: fuzzy-match
+slug: /engineers/fuzzy-match
 description: Identify non-identical duplicates in your data
 tags:
   - gems
@@ -61,7 +62,7 @@ One common use case for the FuzzyMatch gem is to match similarly spelled names. 
 ## Example code
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/getting-started/tutorials/spark-with-databricks#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block

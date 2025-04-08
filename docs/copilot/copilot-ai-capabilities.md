@@ -1,6 +1,7 @@
 ---
 title: Data Copilot AI capabilities
 id: copilot-ai-capabilities
+slug: /data-copilot-ai-capabilities
 description: The AI assistant capabilities for data pipelines and models
 sidebar_label: AI capabilities
 tags:
@@ -83,7 +84,7 @@ As we continue development within gems, Data Copilot can suggest expressions wit
 
 ![Suggest expressions](img/copilot_next_suggestion_expression.png)
 
-Within our [advanced Expression Builder](/Spark/expression-builder) you can:
+Within our [advanced Expression Builder](/engineers/expression-builder) you can:
 
 1. Type an English text prompt.
 2. Data Copilot generates a code expression for a particular column.
@@ -173,7 +174,7 @@ Data Copilot auto-documents anywhere you need it - from the granular data source
 
 ## Data Tests and Quality Checks
 
-Unit tests and data quality checks are crucial for pipeline and job productionalization, yet many teams leave little time to develop these tests or worse, don’t build them at all. With Data Copilot, you’ll have one or more suggested [unit tests](docs/ci-cd/tests.md) that can be seamlessly integrated into your CICD process.
+Unit tests and data quality checks are crucial for pipeline and job productionalization, yet many teams leave little time to develop these tests or worse, don’t build them at all. With Data Copilot, you’ll have one or more suggested [unit tests](/engineers/unit-tests) that can be seamlessly integrated into your CICD process.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>

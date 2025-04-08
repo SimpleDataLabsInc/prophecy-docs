@@ -1,6 +1,7 @@
 ---
 title: Pipeline Monitoring
 id: pipeline-monitoring
+slug: /engineers/pipeline-monitoring
 description: About Pipeline Monitoring for Spark
 tags:
   - concept
@@ -41,4 +42,4 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 <DocCardList items={useCurrentSidebarCategory().items}/>
 ```
 
-For information on the stored execution metrics, see [Execution Metrics](/../../Spark/execution/execution-metrics).
+For information on the stored execution metrics, see [Execution Metrics](/engineers/execution-metrics).

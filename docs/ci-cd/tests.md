@@ -1,6 +1,7 @@
 ---
-title: Unit tests for Spark
+title: Unit tests
 id: tests
+slug: /engineers/unit-tests
 description: Implementing unit tests in Prophecy
 tags:
   - spark

@@ -1,6 +1,7 @@
 ---
-title: "Databricks OAuth"
-id: databricks_oauth
+title: Databricks OAuth
+id: databricks-oauth
+slug: /databricks-oauth-authentication
 description: Prophecy Databricks OAuth integration
 sidebar_position: 6
 tags:
@@ -48,7 +49,7 @@ In Prophecy, you can use Databricks OAuth in two ways. The most common method is
 
 This method is used for **pipeline development** and **job configuration**. In this case, users authenticate individually via Databricks. In this case, users access data based on their individual identity and the permissions already defined within the Databricks Unity Catalog.
 
-To configure a [fabric](docs/concepts/fabrics/fabrics.md) for this use case:
+To configure a [fabric](docs/getting-started/concepts/fabrics.md) for this use case:
 
 1. Create a new Spark or SQL fabric.
 1. Choose **Databricks** as the provider.
@@ -73,7 +74,7 @@ You only need to sign in periodically depending on the OAuth timeout settings wi
 
 This method is used for **project deployment**. In this case, authentication is performed using Databricks [service principal](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html) credentials for unattended operations (such as automated deployment). The minimum level of access that your service principal requires (including access to clusters, tables, etc.) will vary per use case.
 
-To configure a [fabric](docs/concepts/fabrics/fabrics.md) for this use case:
+To configure a [fabric](docs/getting-started/concepts/fabrics.md) for this use case:
 
 1. Create a new Spark or SQL fabric.
 1. Choose **Databricks** as the provider.

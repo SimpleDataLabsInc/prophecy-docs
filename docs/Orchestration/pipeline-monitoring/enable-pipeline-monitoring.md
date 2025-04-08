@@ -1,6 +1,7 @@
 ---
 title: Enable Pipeline Monitoring
 id: enable-pipeline-monitoring
+slug: /engineers/enable-pipeline-monitoring
 description: How to enable Pipeline Monitoring for Spark
 tags:
   - how-to

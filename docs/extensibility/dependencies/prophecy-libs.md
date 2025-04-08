@@ -1,6 +1,7 @@
 ---
 title: Prophecy libraries
 id: prophecy-libraries
+slug: /engineers/prophecy-libraries
 description: Learn about these small and lightweight utility libraries
 tags: [functionality, compatibility, version, library, plib, plibs, license]
 ---

@@ -1,6 +1,7 @@
 ---
 title: Repartition
 id: Repartition
+slug: /engineers/repartition
 description: Repartition or coalesce a DataFrame
 tags:
   - gems
@@ -39,7 +40,7 @@ Repartitions the data evenly across various partitions based on the hash value o
 | Number of partitions         | Integer value specifying number of partitions | False    |
 | Repartition expression(s)    | List of expressions to repartition by         | True     |
 
-### Generated Code {#hash-repartitoning}
+### Compiled code{#hash-repartitoning}
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -82,7 +83,7 @@ Repartitions without data distribution defined.
 | DataFrame            | Input DataFrame                               | True     |
 | Number of partitions | Integer value specifying number of partitions | True     |
 
-### Generated Code {#random-repartitioning}
+### Compiled code{#random-repartitioning}
 
 ````mdx-code-block
 <Tabs>
@@ -124,7 +125,7 @@ Repartitions the data with tuples having keys within the same range on the same 
 | Number of partitions                   | Integer value specifying number of partitions                          | False    |
 | Repartition expression(s) with sorting | List of expressions to repartition by with corresponding sorting order | True     |
 
-### Generated Code {#range-repartitoning}
+### Compiled code{#range-repartitoning}
 
 ````mdx-code-block
 <Tabs>
@@ -164,7 +165,7 @@ Reduces the number of partitions without shuffling the dataset.
 | DataFrame            | Input DataFrame                               | True     |
 | Number of partitions | Integer value specifying number of partitions | True     |
 
-### Generated Code {#coalesce}
+### Compiled code{#coalesce}
 
 ````mdx-code-block
 <Tabs>
