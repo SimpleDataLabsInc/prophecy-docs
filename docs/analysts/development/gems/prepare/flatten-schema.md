@@ -1,5 +1,5 @@
 ---
-title: Flatten schema
+title: FlattenSchema
 id: flatten-schema
 slug: /analysts/flatten-schema
 description: Flatten nested columns
@@ -11,7 +11,15 @@ tags:
 
 <span class="badge">SQL</span><br/><br/>
 
-You can use the FlattenSchema gem on sources that have nested columns that you'd like to extract into a flat schema.
+When you load the data with nested columns into Prophecy, they become a [variant data type](/analysts/variant-schema). This means that your data is an array of values with more than one data type. You can use the FlattenSchema gem to automatically detect the nested data types without doing this manually yourself.
+
+## Parameters
+
+| Parameter   | Description                                                    | Required |
+| ----------- | -------------------------------------------------------------- | -------- |
+| Model       | Input Source on which the filter condition will be applied.    | True     |
+| Flatten     | Array **column to flatten** for each **Output Column**.        | True     |
+| Expressions | **Expression** to compute each field in the **Output Column**. | True     |
 
 ## Example
 
@@ -38,18 +46,15 @@ import TabItem from '@theme/TabItem';
 ```
 ````
 
-When you load the data into Prophecy, the nested column will have a [variant schema](/analysts/variant-schema) data type.
-
 ### Expressions
 
 The FlattenSchema gem allows you to extract nested fields into a flattened schema.
 
-For example, to extract the `contact` field:
+For example, to extract all the nested fields:
 
-1. In the **Input** tab, navigate to the `contact` field.
-1. Hover over the `contact` field and click the **Add Column** button.
+1. In the **Input** tab, hover over the `in0` field and click the **Add 12 Columns ->** button.
 
-   Now, the `contact` field is in the `Expressions` section.
+   Now, all the nested fields are in the `Expressions` section.
 
    :::tip
    You can click to add all columns, which would make all nested lowest-level values of an object visible as columns.
@@ -67,7 +72,7 @@ After you run the FlattenSchema gem, click the **Data** button to see your schem
 
 ![Output interim](./img/flatten_output_interim.png)
 
-The FlattenSchema gem flattened the `contact` field, which gives you individual rows for each `content` type.
+The FlattenSchema gem flattened all the nested fields, which gives you individual rows for each one.
 
 ## Snowflake advanced settings
 
@@ -77,8 +82,6 @@ To use the advanced settings:
 
 1. Hover over the column you want to flatten.
 1. Click the dropdown arrow.
-
-   ![Advanced settings](./img/flatten_advanced_settings.png)
 
    You can customize the following options:
 
