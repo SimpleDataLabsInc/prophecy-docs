@@ -24,6 +24,8 @@ Prophecy provides strong support for storing audit events (logs) in cloud object
 
 Events storage depends on [object store configurations](./configure-object-store.md). Make sure to configure these before proceeding below.
 
+Dedicated SaaS users should contact [Prophecy Support](/getting-help) to enable storing audit logs in object stores.
+
 :::
 
 ## Configuration
