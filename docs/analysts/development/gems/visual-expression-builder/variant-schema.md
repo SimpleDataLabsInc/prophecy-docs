@@ -1,5 +1,5 @@
 ---
-title: Variant Data Type
+title: Variant data type
 id: variant-data-type
 slug: /analysts/variant-schema
 description: About variant data types and how to update their schema
