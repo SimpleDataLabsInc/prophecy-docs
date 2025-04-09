@@ -13,7 +13,7 @@ A variant data type is an array of values with more than one data type and provi
 
 You can use Prophecy to convert your variant data into flat, structured formats to make them easier to understand and use for analytics. This helps you determine the data types of each value in your Snowflake array or object.
 
-With a variant data type, you can:
+In Prophecy, you can do the following with variant data:
 
 - Infer the variant schema
 - Configure the parsing limit for inferring the column structure
