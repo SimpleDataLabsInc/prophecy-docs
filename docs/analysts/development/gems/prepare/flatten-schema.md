@@ -11,7 +11,9 @@ tags:
 
 <span class="badge">SQL</span><br/><br/>
 
-When you load the data with nested columns into Prophecy, they become a [variant data type](/analysts/variant-schema). This means that your data is an array of values with more than one data type. You can use the FlattenSchema gem to automatically detect variant data types without doing this manually yourself.
+When you import tables with variant data into Prophecy, they become columns with a [variant data type](/analysts/variant-schema) and nested columns. A variant data type means that your data is an array of values with more than one data type.
+
+You can use the FlattenSchema gem to transform your variant schema into a more consistent and digestible format to allow your team make subsequent steps in the pipeline more efficient and streamlined. This makes it easier to analyze, report, and integrate traditional systems without doing this manually yourself.
 
 ## Parameters
 
@@ -47,11 +49,11 @@ import TabItem from '@theme/TabItem';
 
 ### Expressions
 
-The FlattenSchema gem allows you to extract variant data type into a flattened schema.
+The FlattenSchema gem allows you to extract variant data into a flattened schema.
 
-For example, to flatten your variant data type:
+For example, to flatten your variant data:
 
-1. In the **Input** tab, hover over the `in0` field and click the **Add 12 Columns ->** button.
+1. In the **Input** tab, hover over the `in0` field and click the **Add 12 Columns** button.
 
    Now, all the nested lowest-level values of your object are visible as columns in the `Expressions` section.
 
@@ -67,7 +69,7 @@ After you run the FlattenSchema gem, click the **Data** button to see your schem
 
 ![Output interim](./img/flatten_output_interim.png)
 
-The FlattenSchema gem flattened all your variant data types, which gives you individual rows for each one.
+The FlattenSchema gem flattened all your variant data, which gives you individual rows for each one.
 
 ## Snowflake advanced settings
 

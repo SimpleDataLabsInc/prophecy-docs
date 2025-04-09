@@ -9,7 +9,9 @@ tags:
   - sql
 ---
 
-A variant data type is an array of values with more than one data type. You can use Prophecy to convert your variant data type into flat, structured formats to make them easier to understand and use for analytics. This helps you determine the data types of each value in your Snowflake array or object.
+A variant data type is an array of values with more than one data type, and provides flexibility to handle diverse and unstructured data from multiple sources without enforcing a rigid schema. This adaptability accommodates data that evolves or comes from different environments, enabling seamless integration and storage.
+
+You can use Prophecy to convert your variant data into flat, structured formats to make them easier to understand and use for analytics. This helps you determine the data types of each value in your Snowflake array or object.
 
 With a variant data type, you can:
 
@@ -17,7 +19,7 @@ With a variant data type, you can:
 - Configure the parsing limit for inferring the column structure
 - Use a nested column inside of the Visual Expression Builder
 
-## Infer variant data types
+## Infer and edit variant data types
 
 Prophecy does not store variant data types within the table definition. Each row can vary in data types, which makes them difficult to infer and use. Fortunately, you don't have to infer the schema yourself. You can use the column selector inside of your gems to automatically infer the variant data type, explore the multi-type variant structure, and later select a nested column to use in your transformations.
 
@@ -43,7 +45,9 @@ To automatically infer the variant data type:
 
 ### Edit the variant data type schema
 
-If Prophecy did not cover your schema case while sampling the records, you can make edits yourself by:
+If Prophecy missed certain schema cases while sampling the records, you can make edits yourself.
+
+To edit the variant data type schema:
 
 1. Click the **Variant** dropdown, and click **Edit Schema**.
 1. Use the data type dropdowns to manually choose the data type of each nested schema.
@@ -68,7 +72,7 @@ To update this limit:
 This setting does not rely on the ratio of the data since that would require a complete count of the data records.
 :::
 
-## Add a nested column
+## Use a nested column in an expression
 
 In the column selector, you can add a nested column by clicking **Add Column** when you hover over the input field name.
 
