@@ -11,19 +11,18 @@ tags:
 
 <span class="badge">SQL</span><br/><br/>
 
-When you load the data with nested columns into Prophecy, they become a [variant data type](/analysts/variant-schema). This means that your data is an array of values with more than one data type. You can use the FlattenSchema gem to automatically detect the nested data types without doing this manually yourself.
+When you load the data with nested columns into Prophecy, they become a [variant data type](/analysts/variant-schema). This means that your data is an array of values with more than one data type. You can use the FlattenSchema gem to automatically detect variant data types without doing this manually yourself.
 
 ## Parameters
 
 | Parameter   | Description                                                    | Required |
 | ----------- | -------------------------------------------------------------- | -------- |
-| Model       | Input Source on which the filter condition will be applied.    | True     |
 | Flatten     | Array **column to flatten** for each **Output Column**.        | True     |
 | Expressions | **Expression** to compute each field in the **Output Column**. | True     |
 
 ## Example
 
-Assume you have the following JSON file that includes nested columns that you would like to flatten.
+Assume you have the following JSON file that includes variant data type that you would like to flatten.
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -48,21 +47,17 @@ import TabItem from '@theme/TabItem';
 
 ### Expressions
 
-The FlattenSchema gem allows you to extract nested fields into a flattened schema.
+The FlattenSchema gem allows you to extract variant data type into a flattened schema.
 
-For example, to extract all the nested fields:
+For example, to flatten your variant data type:
 
 1. In the **Input** tab, hover over the `in0` field and click the **Add 12 Columns ->** button.
 
-   Now, all the nested fields are in the `Expressions` section.
-
-   :::tip
-   You can click to add all columns, which would make all nested lowest-level values of an object visible as columns.
-   :::
+   Now, all the nested lowest-level values of your object are visible as columns in the `Expressions` section.
 
    ![Adding expressions](./img/flatten_add_exp.png)
 
-1. (Optional) To change the name of the column in the output, change the value in the `Output Column` for the `contact` row.
+1. (Optional) To change the name of the column in the output, change the value in the `Output Column` for the row.
 
 1. Click **Run**.
 
@@ -72,7 +67,7 @@ After you run the FlattenSchema gem, click the **Data** button to see your schem
 
 ![Output interim](./img/flatten_output_interim.png)
 
-The FlattenSchema gem flattened all the nested fields, which gives you individual rows for each one.
+The FlattenSchema gem flattened all your variant data types, which gives you individual rows for each one.
 
 ## Snowflake advanced settings
 
