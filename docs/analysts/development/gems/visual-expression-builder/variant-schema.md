@@ -9,7 +9,7 @@ tags:
   - sql
 ---
 
-A variant data type is an array of values with more than one data type, and provides flexibility to handle diverse and unstructured data from multiple sources without enforcing a rigid schema. This adaptability accommodates data that evolves or comes from different environments, enabling seamless integration and storage.
+A variant data type is an array of values with more than one data type and provides flexibility to handle diverse and unstructured data from multiple sources without enforcing a rigid schema. This adaptability accommodates data that evolves or comes from different environments, enabling seamless integration and storage.
 
 You can use Prophecy to convert your variant data into flat, structured formats to make them easier to understand and use for analytics. This helps you determine the data types of each value in your Snowflake array or object.
 

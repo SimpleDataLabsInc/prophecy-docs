@@ -13,7 +13,7 @@ tags:
 
 When you import tables with variant data into Prophecy, they become columns with a [variant data type](/analysts/variant-schema) and nested columns. A variant data type means that your data is an array of values with more than one data type.
 
-You can use the FlattenSchema gem to transform your variant schema into a more consistent and digestible format to allow your team make subsequent steps in the pipeline more efficient and streamlined. This makes it easier to analyze, report, and integrate traditional systems without doing this manually yourself.
+You can use the FlattenSchema gem to transform your variant schema into a more consistent and digestible format. This allows your team to make subsequent steps in the pipeline more efficient and streamlined. This also makes your variant data easier to analyze, report, and integrate traditional systems without doing this manually yourself.
 
 ## Parameters
 
