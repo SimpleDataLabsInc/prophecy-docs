@@ -125,10 +125,10 @@ To learn more about Iceberg time travel and its use cases, see [Apache Iceberg T
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-### Generated Code {#source-code}
+### Compiled code {#source-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block
@@ -182,10 +182,10 @@ Among these write modes, overwrite and append work the same way for parquet file
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-### Generated Code {#target-code}
+### Compiled code {#target-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block

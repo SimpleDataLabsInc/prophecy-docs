@@ -220,7 +220,7 @@ const sidebars = {
               items: [
                 "analysts/development/gems/visual-expression-builder/visual-expression-builder-reference",
                 "analysts/development/gems/visual-expression-builder/use-the-expression-builder",
-                "analysts/development/gems/visual-expression-builder/variant-schema",
+                "analysts/development/gems/visual-expression-builder/variant-data-type",
               ],
             },
           ],

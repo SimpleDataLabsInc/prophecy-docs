@@ -62,7 +62,7 @@ One common use case for the FuzzyMatch gem is to match similarly spelled names. 
 ## Example code
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block
