@@ -53,6 +53,10 @@ Project publication performs the following key functions that directly impact sc
 
   Publication determines what version of the pipeline will run during a scheduled execution. When a new project version is published, scheduled executions for the associated fabric(s) automatically begin using the updated pipeline version. Each deployment is isolated per fabric—publishing a new version to one fabric does not update deployments on other fabrics.
 
+For a summary of the pipeline scheduling workflow, review the diagram below.
+
+![Scheduling flow](img/schedule-flow.jpg)
+
 ## Monitor scheduled pipelines
 
 You and you team members might have many scheduled pipelines in your Prophecy environment. To see a list of deployed projects, scheduled pipelines, and pipeline run history, open the [Monitoring](/analysts/monitoring) page in Prophecy.
