@@ -39,6 +39,5 @@ To start using gems in your pipelines:
 
 - Explore the available [Engineering (Spark) gems](/engineers/gems/) and [Analyst gems](/analysts/gems).
 - Add and connect various gems in your pipeline canvas.
-- Browse the [Package Hub]([Gems](docs/getting-started/concepts/gems.md) are visually-packaged parcels of code that perform specific operations on data. While Prophecy provides many gems out of the box, Prophecy also lets you create your own gems! Not only can you create new gems, but you can also share them in the [Package Hub](/engineers/package-hub) or with selected teams.
-  d) to find additional gems and components that you can use.
+- Browse the [Package Hub](/engineers/package-hub) to find additional gems and components that you can use.
 - Take a peek at our [Gem Builder](/engineers/extensibility) for an introduction to custom gems.
