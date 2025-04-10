@@ -1,5 +1,5 @@
 ---
-title: Flatten schema
+title: FlattenSchema
 id: flatten-schema
 slug: /analysts/flatten-schema
 description: Flatten nested columns
@@ -11,43 +11,80 @@ tags:
 
 <span class="badge">SQL</span><br/><br/>
 
-When processing raw data it can be useful to flatten complex data types like `Struct`s and `Array`s into simpler, flatter schemas. This allows you to preserve all schemas, and not just the first one. You can use FlattenSchema with Snowflake models.
+When you import tables with variant data into Prophecy, they become columns with nested columns, and a [variant data type](/analysts/variant-schema), which is an array of values with more than one data type.
 
-## The Input
+You can use the FlattenSchema gem to transform your variant schema into a more consistent and digestible format. This allows your team to make subsequent steps in the pipeline more efficient and streamlined. This also makes your variant data easier to analyze, report, and integrate traditional systems without doing this manually yourself.
 
-FlattenSchema works on Snowflake sources that have nested columns that you'd like to extract into a flat schema.
+## Parameters
 
-We want to extract the `contact`, and all of the columns from the `struct`s in `content` into a flattened schema.
+| Parameter   | Description                                                    | Required |
+| ----------- | -------------------------------------------------------------- | -------- |
+| Flatten     | Array **column to flatten** for each **Output Column**.        | True     |
+| Expressions | **Expression** to compute each field in the **Output Column**. | True     |
 
-## The Expressions
+## Example
 
-Having added a `FlattenSchema` gem to your model, all you need to do is click the column names you wish to extract and they'll be added to the `Expressions` section.
+Assume you have the following JSON file that includes variant data type that you would like to flatten.
 
-:::tip
+````mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-You can click to add all columns, which would make all nested leaf level values of an object visible as columns.
+```json
+[{
+  "first_name":"Remmington", "last_name":"Smith", "age":"68",
+  "business":[{
+    "address":[{
+      "manager":"Liara Andrew", "name":"RS Enterprises",
+      "contact":[{"content":"rsmith@example.com","type":"email"},{"content":"1234-345-56","type":"phone"}],
+      "is_still_active":false}]}]}, {
+  "first_name":"Penny", "last_name":"John", "age":"57",
+  "business":[{
+    "address":[{
+      "manager":"Bobby Frank","name":"PJ Enterprises",
+      "contact":[{"content":"pjohn@example.com","type":"email"},{"content":"8203-512-49","type":"phone"}],
+      "is_still_active":true}]}]}]
+```
+````
 
-:::
+### Expressions
 
-Once added you can change the `Output Column` for a given row to change the name of the Column in the output.
+The FlattenSchema gem allows you to extract variant data into a flattened schema.
 
-## The Output
+For example, to flatten your variant data:
 
-If we check the `Output` tab in the gem, you'll see the schema that we've created using the selected columns.
+1. In the **Input** tab, hover over the `in0` field and click the **Add 12 Columns** button.
 
-And here's what the output data looks like:
+   Now, all the nested lowest-level values of your object are visible as columns in the `Expressions` section.
 
-The nested contact information has been flatten so that you have individual rows for each content type.
+   ![Adding expressions](./img/flatten_add_exp.png)
 
-## Advanced settings
+1. (Optional) To change the name of the column in the output, change the value in the `Output Column` for the row.
 
-If you're familiar with Snowflake's `FLATTEN` table function, you can use the advanced settings to customize the optional column arguments.
+1. Click **Run**.
 
-To use the advanced settings, hover over a column, and click the dropdown arrow.
+### Output
 
-You can customize the following options:
+After you run the FlattenSchema gem, click the **Data** button to see your schema based on the selected columns:
 
-- Path to the element: The path to the element within the variant data structure that you want to flatten.
-- Flatten all elements recursively: If set to `false`, only the element mentioned in the path is expanded. If set to `true`, all sub-elements are expanded recursively. This is set to false by default.
-- Preserve rows with missing fields: If set to `false`, rows with missing fields are omitted from the output. If set to `true`, rows with missing fields are generated with `null` in the key, index, and value columns. This is set to false by default.
-- Datatype that needs to be flattened: The data type that you want to flatten. You can choose `Object`, `Array`, or `Both`. This is set to `Both` by default.
+![Output interim](./img/flatten_output_interim.png)
+
+The FlattenSchema gem flattened all your variant data, which gives you individual rows for each one.
+
+## Snowflake advanced settings
+
+You can use advanced settings with your Snowflake source to customize the optional column arguments.
+
+To use the advanced settings:
+
+1. Hover over the column you want to flatten.
+1. Click the dropdown arrow.
+
+   You can customize the following options:
+
+   | Option                              | Description                                                                                 | Default |
+   | ----------------------------------- | ------------------------------------------------------------------------------------------- | ------- |
+   | Path to the element                 | Path to the element within the variant data structure that you want to flatten.             | None    |
+   | Flatten all elements recursively    | Whether to expand all sub-elements recursively.                                             | `false` |
+   | Preserve rows with missing field    | Whether to include rows with missing fields as `null` in the key, index, and value columns. | `false` |
+   | Datatype that needs to be flattened | Data type that you want to flatten. Possible values are: `Object`, `Array`, or `Both`.      | `Both`  |

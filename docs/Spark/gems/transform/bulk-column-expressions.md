@@ -51,6 +51,10 @@ Using the BulkColumnExpressions gem, you can:
 
 ## Example code
 
+:::tip
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
+:::
+
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

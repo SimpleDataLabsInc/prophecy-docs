@@ -86,10 +86,10 @@ The following example uses a `SOQL` query to query our leads dataset on the sale
 <iframe src="https://user-images.githubusercontent.com/103921419/193517497-54c5544d-3b98-45ae-95e1-cb036bad6e4c.mp4" title="Salesforce Source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-### Generated code {#source-code}
+### Compiled code {#source-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block
@@ -129,10 +129,10 @@ The Target gem writes data to Salesforce objects and allows you to optionally sp
 | External ID field name for Salesforce Object (Optional) | Name of the external ID field in a Salesforce object when the Target gem updates or upserts into Salesforce.                                                                                                                                    | `Id`    |
 | Flag to upsert data to Salesforce (Optional)            | Whether to upsert data to Salesforce. <br/>This property performs an insert or update operation using the `externalIdFieldName` as the primary ID. The Target gem does not update existing fields that are not in the `DataFrame` being pushed. | false   |
 
-### Generated code {#target-code}
+### Compiled code {#target-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block
