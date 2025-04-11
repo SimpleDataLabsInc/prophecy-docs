@@ -31,7 +31,7 @@ To create an SMTP connection, enter the following parameters:
 
 ## Sharing connections within teams
 
-Connections are stored inside fabrics that are assigned to certain teams. Once an SMTP connection is added to a fabric, anyone in the team can use that connection to send emails from a pipeline.
+Connections in Prophecy are stored within [fabrics](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md), which are assigned to specific teams. Once an SMTP connection is added to a fabric, anyone in the team can use that connection to send emails from a pipeline.
 
 ## Limitations
 

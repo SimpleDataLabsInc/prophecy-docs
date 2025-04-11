@@ -7,7 +7,9 @@ tags:
   - tableau
 ---
 
-A Tableau connection allows you to update data sources in Tableau projects. This integration is primarily used to upload data as `Hyper` files (Tableau’s high-performance, in-memory database format).
+A Tableau connection allows you to update data sources in Tableau projects. Use this integration to upload data from your pipeline as `Hyper` files (Tableau’s high-performance, in-memory database format).
+
+Prophecy uses the [Tableau REST API](https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api.htm) to perform actions like sign in, data upload, and data source publication.
 
 | Feature                                                       | Supported |
 | ------------------------------------------------------------- | --------- |
@@ -31,15 +33,12 @@ To create a connection with Tableau, enter the following parameters:
 
 ## Tableau permissions
 
-When you create an Tableau connection in Prophecy, access permissions are tied to the credentials you use. To fully leverage an Tableau connection in Prophecy, you need the following Tableau permissions:
+When you use a Tableau connection in Prophecy, permissions are determined by the credentials you provide. To use the connection to publish data, those credentials must have the **Publish** capability in Tableau for the project containing the target data source.
 
-- Example
-- Example
+For more details on Tableau permissions, see their documentation on [Permission Capabilities](https://help.tableau.com/current/server/en-us/permissions_capabilities.htm).
 
 ## Sharing connections within teams
 
-Connections are stored inside fabrics that are assigned to certain teams. Once an Tableau connection is added to a fabric:
-
-- Anyone in the team can use that connection to send data to Tableau from their pipeline. Everyone who uses the connection will operate with the same access level granted by the stored credentials.
+Tableau connections are stored within [fabrics](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md), which are assigned to specific teams in Prophecy. Once a Tableau connection is added to a fabric, anyone on that team can use it to send data to Tableau from their pipelines. Everyone will inherit the permissions of the user authenticated during connection setup.
 
 ## Limitations
