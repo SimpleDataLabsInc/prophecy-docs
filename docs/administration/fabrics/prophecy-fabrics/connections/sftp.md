@@ -38,12 +38,7 @@ You can configure your SFTP connection with one of the following authentication 
 
 ## SFTP permissions
 
-When you create an SFTP connection in Prophecy, access permissions are tied to the credentials you use. This means you will only see the files and folders your SFTP credentials have permission to access. Any actions you perform—such as reading or writing files—are done using those credentials.
-
-To fully leverage an SFTP connection in Prophecy, you need the following SFTP permissions:
-
-- Example
-- Example
+When you use an SFTP connection in Prophecy, permissions depend on the underlying SSH server and filesystem permissions on the server.
 
 ## Sharing connections within teams
 
@@ -64,8 +59,12 @@ As you start using SFTP connections in Prophecy, it’s important to understand 
 
 - When you browse an SFTP connection in the [Environment browser](/analysts/pipelines), Prophecy fetches data on demand as you expand folders. You can manually refresh the Environment browser to see updated files.
 
-- When a pipeline runs, Source gems will read the latest available version of the data. Keep in mind that schema evolution may or may not be picked up automatically depending on the type of Source gem used.
+- When a pipeline runs, Source gems will read the latest available version of the data. If the schema changes in the external connection, you will need to re-infer the schema in Prophecy.
 
 ## Limitations
 
-The speed and reliability of your SFTP connection can be affected by network latency, which depends on how far the SFTP server is from Prophecy’s infrastructure. If the server is geographically close, data transfers will generally be fast and smooth. If the server is far away, you may notice slower performance due to higher latency. For the best experience, use SFTP servers that are located in the same region as your Prophecy environment whenever possible.
+Keep in mind the following limitations when using an SFTP connection.
+
+- **Simultaneous writes can cause file corruption.** If multiple processes—such as different Prophecy jobs—try to write to the same file at the same time using the same SFTP connection details, it can result in race conditions or corrupted files. This happens because the connector doesn't perform any client-side locking to coordinate access.
+
+- **Network latency affects transfer performance.** The speed and reliability of SFTP transfers depend on the physical distance between the SFTP server and Prophecy’s infrastructure. Servers that are geographically closer to your Prophecy environment will generally provide faster, more stable performance. Servers located farther away may introduce higher latency, leading to slower or less consistent data transfers. For best results, use SFTP servers in the same region as your Prophecy environment.

@@ -7,7 +7,7 @@ tags:
   - smtp
 ---
 
-SMTP (Simple Mail Transfer Protocol) connections are used to send emails over the internet by allowing communication between email clients and servers. When you create an SMTP connection in Prophecy, the user credentials you provide are used to establish the connection. The user you authenticate in Prophecy will always be the sender of an email when you use the Email gem.
+SMTP (Simple Mail Transfer Protocol) connections are used to send emails over the internet by allowing communication between email clients and servers. When you create an SMTP connection in Prophecy, the user credentials you provide are used to establish the connection. This user will always be the sender of an email when you use the Email gem with this connection.
 
 | Feature                                                       | Supported |
 | ------------------------------------------------------------- | --------- |
@@ -29,17 +29,12 @@ To create an SMTP connection, enter the following parameters:
 
 <!-- You can leverage your SMTP connection to send emails with the [Email](docs/analysts/development/gems/report/email.md) gem. -->
 
-## SMTP permissions
-
-When you create an SMTP connection in Prophecy, access permissions are tied to the credentials you use. To fully leverage an SMTP connection in Prophecy, you need the following SMTP permissions:
-
-- Example
-- Example
-
 ## Sharing connections within teams
 
-Connections are stored inside fabrics that are assigned to certain teams. Once an SMTP connection is added to a fabric:
-
-- Anyone in the team can use that connection to send emails from a pipeline. Everyone who uses the connection will operate with the same access level granted by the stored credentials.
+Connections are stored inside fabrics that are assigned to certain teams. Once an SMTP connection is added to a fabric, anyone in the team can use that connection to send emails from a pipeline.
 
 ## Limitations
+
+Keep in mind the following limitations when using an SMTP connection.
+
+- **Only basic authentication is supported.** The SMTP server must support plain username and password authentication. Prophecy does not currently support OAuth or other advanced authentication methods for SMTP connections.

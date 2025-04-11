@@ -49,7 +49,7 @@ As you start using Smartsheet connections in Prophecy, it’s important to under
 
 - When you browse an Smartsheet connection in the [Environment browser](/analysts/pipelines), Prophecy fetches data on demand as you expand folders. You can manually refresh the Environment browser to see updated files.
 
-- When a pipeline runs, Source gems will read the latest available version of the data. If the schema evolves in the external connection, you will need to re-infer the schema in Prophecy.
+- When a pipeline runs, Source gems will read the latest available version of the data. If the schema changes in the external connection, you will need to re-infer the schema in Prophecy.
 
 ## Limitations
 
