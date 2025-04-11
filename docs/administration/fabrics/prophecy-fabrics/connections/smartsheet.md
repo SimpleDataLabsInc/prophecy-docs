@@ -7,7 +7,7 @@ tags:
   - smartsheet
 ---
 
-SmartSheet is used for managing tasks, projects, and workflows using a spreadsheet-like interface, and it stores data in the form of sheets, which can contain rows, columns, and cell data.
+Smartsheet is used for managing tasks, projects, and workflows using a spreadsheet-like interface that can contain rows, columns, and cell data. Prophecy uses the [Smartsheet API](https://developers.smartsheet.com/api/smartsheet/introduction) to establish the connection.
 
 | Feature                                                       | Supported |
 | ------------------------------------------------------------- | --------- |
@@ -19,19 +19,16 @@ SmartSheet is used for managing tasks, projects, and workflows using a spreadshe
 
 To create a connection with Smartsheet, enter the following parameters:
 
-| Parameter                                                                | Description                                                     |
-| ------------------------------------------------------------------------ | --------------------------------------------------------------- |
-| Connection Name                                                          | Unique name for the connection (e.g., `MySmartsheetConnection`) |
-| Access Token ([Secret required](docs/administration/secrets/secrets.md)) | Your Smartsheet API access token                                |
+| Parameter                                                                | Description                                                                                                                                   |
+| ------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| Connection Name                                                          | Unique name for the connection (e.g., `MySmartsheetConnection`)                                                                               |
+| Access Token ([Secret required](docs/administration/secrets/secrets.md)) | Your [Smartsheet API access token](https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication#access-token-best-practices) |
 
 ## Smartsheet permissions
 
-When you create an Smartsheet connection in Prophecy, access permissions are tied to the credentials you use. This means you will only see the data your Smartsheet credentials have permission to access. Any actions you perform—such as reading or writing files—are done using those credentials.
+When you create an Smartsheet connection in Prophecy, access permissions are tied to the credentials you use. This means you will only see the data your Smartsheet credentials have permission to access. Any actions you perform—such as reading or writing files—are done using those credentials. For example, if you are a Viewer on a sheet, you won't be able to write data to that sheet with a Target gem.
 
-To fully leverage an Smartsheet connection in Prophecy, you need the following Smartsheet permissions:
-
-- Example
-- Example
+To learn more about permissions in Smartsheet, visit [Sharing permission levels](https://help.smartsheet.com/articles/1155182-sharing-permission-levels).
 
 ## Sharing connections within teams
 
@@ -52,6 +49,18 @@ As you start using Smartsheet connections in Prophecy, it’s important to under
 
 - When you browse an Smartsheet connection in the [Environment browser](/analysts/pipelines), Prophecy fetches data on demand as you expand folders. You can manually refresh the Environment browser to see updated files.
 
-- When a pipeline runs, Source gems will read the latest available version of the data. Keep in mind that schema evolution may or may not be picked up automatically depending on the type of Source gem used.
+- When a pipeline runs, Source gems will read the latest available version of the data. If the schema evolves in the external connection, you will need to re-infer the schema in Prophecy.
 
 ## Limitations
+
+Keep in mind the following limitations when using the Smartsheet connection.
+
+- Smartsheet defines capacity limits in their [Limitations](https://developers.smartsheet.com/api/smartsheet/guides/basics/limitations) documentation.
+
+- Smartsheet allows users to create sheets with the same name in the same file location. Prophecy handles this situation in the following ways:
+
+  - **Reading from Smartsheet when there are duplicate files.** In this case, Prophecy appends a `(n)` to the duplicate files for differentiation in Prophecy.
+
+    ![Duplicate Smartsheet file in Prophecy file browser](img/smartsheet-duplicates.png)
+
+  - **Writing to Smartsheet when there are duplicate files.** In this case, the pipeline run will fail in Prophecy. Prophecy will not choose which file to overwrite with the Target gem.
