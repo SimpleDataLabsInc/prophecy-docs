@@ -48,6 +48,10 @@ You can accomplish the same or more complex changes using a custom expression li
 
 ## Example code
 
+:::tip
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
+:::
+
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

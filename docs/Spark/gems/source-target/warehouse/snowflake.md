@@ -60,10 +60,10 @@ The Source gem reads data from Snowflake and allows you to optionally specify th
 <iframe src="https://user-images.githubusercontent.com/130362885/235865924-aff354cc-ab30-4ef7-8885-1e66c285d3d7.mp4" title="Snowfalke Source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"/>
 </div></div>
 
-### Generated code {#source-code}
+### Compiled code {#source-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block
@@ -150,10 +150,10 @@ The Target gem writes data to Snowflake and allows you to optionally specify the
 <iframe src="https://user-images.githubusercontent.com/130362885/235865992-6af2ad3b-f98b-46b7-ae09-9bc3cd12e6cc.mp4" title="Snowfalke Target" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"/>
 </div></div>
 
-### Generated code {#target-code}
+### Compiled code {#target-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block

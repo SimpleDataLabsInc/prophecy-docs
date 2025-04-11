@@ -36,6 +36,10 @@ Use the SampleRows gem to sample records by choosing a specific number or percen
 
 ## Example code
 
+:::tip
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
+:::
+
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
