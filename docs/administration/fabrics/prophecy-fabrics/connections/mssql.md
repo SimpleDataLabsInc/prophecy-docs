@@ -29,12 +29,7 @@ To create a connection with Microsoft SQL Server, enter the following parameters
 
 ## MSSQL permissions
 
-When you create an MSSQL connection in Prophecy, access permissions are tied to the credentials you use. This means you will only see the data your MSSQL credentials have permission to access. Any actions you perform—such as reading or writing files—are done using those credentials.
-
-To fully leverage an MSSQL connection in Prophecy, you need the following MSSQL permissions:
-
-- Example
-- Example
+When you create an MSSQL connection in Prophecy, access permissions are tied to the credentials you use. This means you will only see the data your MSSQL credentials have permission to access. Any actions you perform—such as reading or writing files—are done using those credentials. To fully leverage an MSSQL connection in Prophecy, you need read and write access to the tables you use.
 
 ## Sharing connections within teams
 
@@ -52,6 +47,4 @@ Prophecy fetches data from MSSQL connections in the following ways:
 
 - When you browse a MSSQL connection in the [Environment browser](/analysts/pipelines), Prophecy fetches data on demand as you expand folders. You can manually refresh the Environment browser to see updated files.
 
-- When a pipeline runs, Source gems will read the latest available version of the data. Keep in mind that schema evolution may or may not be picked up automatically depending on the type of Source gem used.
-
-## Limitations
+- When a pipeline runs, Source gems will read the latest available version of the data. If the schema of your data in MSSQL changes, Prophecy will automatically use the new schema. Note that this may cause errors downstream in your pipeline.

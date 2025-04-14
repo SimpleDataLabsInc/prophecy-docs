@@ -32,11 +32,11 @@ To use data from outside of your SQL warehouse, you can use the following extern
 
 | File or External Table | [Connection](docs/analysts/development/connections.md) types |
 | ---------------------- | ------------------------------------------------------------ |
-| CSV                    | S3, SFTP, Sharepoint, Databricks                             |
-| JSON                   | S3, SFTP, Sharepoint, Databricks                             |
+| CSV                    | S3, SFTP, SharePoint, Databricks                             |
+| JSON                   | S3, SFTP, SharePoint, Databricks                             |
 | Text                   | None                                                         |
-| XLSX                   | S3, SFTP, Sharepoint, Databricks, Smartsheet                 |
-| XML                    | S3, SFTP, Sharepoint, Databricks                             |
+| XLSX                   | S3, SFTP, SharePoint, Databricks, Smartsheet                 |
+| XML                    | S3, SFTP, SharePoint, Databricks                             |
 | Databricks             | Databricks                                                   |
 | Snowflake              | Snowflake                                                    |
 | MSSQL                  | MSSQL                                                        |

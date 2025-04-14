@@ -55,5 +55,3 @@ Prophecy fetches data from MongoDB connections in the following ways:
 - When you browse an MongoDB connection in the [Environment browser](/analysts/pipelines), Prophecy fetches data on demand as you expand folders. You can manually refresh the Environment browser to see updated files.
 
 - When a pipeline runs, Source gems will read the latest available version of the data. Keep in mind that schema evolution may or may not be picked up automatically depending on the type of Source gem used.
-
-## Limitations

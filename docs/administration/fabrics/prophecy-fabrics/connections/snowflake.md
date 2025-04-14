@@ -8,6 +8,8 @@ tags:
   - snowflake
 ---
 
+Learn how to set up and use a Snowflake connection in Prophecy. With a Snowflake connection, you can read from and write to your Snowflake data warehouse using Source and Target gems, browse data in the Environment browser, and run pipelines that process Snowflake data.
+
 | Feature                                                       | Supported |
 | ------------------------------------------------------------- | --------- |
 | Read data with a [Source gem](/analysts/source-target)        | Yes       |
@@ -38,12 +40,25 @@ You can configure your Snowflake connection with one of the following authentica
 
 ## Snowflake permissions
 
-When you create an Snowflake connection in Prophecy, access permissions are tied to the credentials you use. This means you will only see the data your Snowflake credentials have permission to access. Any actions you perform—such as reading or writing files—are done using those credentials.
+When you create a Snowflake connection in Prophecy, all access is governed by the Snowflake credentials you provide. This means you can only see and work with data that your Snowflake user account has permission to access. Any data operations—such as reading from or writing to tables—are executed using your credentials.
 
-To fully leverage an Snowflake connection in Prophecy, you need the following Snowflake permissions:
+To successfully use a Snowflake connection in Prophecy, make sure your Snowflake user has the following permissions:
 
-- Example
-- Example
+- **Read and write access to target tables**  
+  Your user must be able to `SELECT`, `INSERT`, `UPDATE`, and `DELETE` on the specific tables used in your Prophecy pipelines.
+
+- **Ownership of target tables**  
+  Prophecy may require full control of the table (including altering or replacing it). This means the role should have `OWNERSHIP` on the table.
+
+- **Create and use file formats**  
+  Prophecy writes data to Snowflake by first uploading Parquet files to a stage. You need:
+
+  - Permission to `CREATE FILE FORMAT` in the target schema
+
+  - `USAGE` on any existing file formats used for reading/writing Parquet
+
+- **Write access to a stage**  
+  Typically, Prophecy uses your **user stage** for uploading Parquet files, so your user needs permission to write to that stage.
 
 ## Sharing connections within teams
 
@@ -61,6 +76,11 @@ Prophecy fetches data from Snowflake connections in the following ways:
 
 - When you browse a Snowflake connection in the [Environment browser](/analysts/pipelines), Prophecy fetches data on demand as you expand folders. You can manually refresh the Environment browser to see updated files.
 
-- When a pipeline runs, Source gems will read the latest available version of the data. Keep in mind that schema evolution may or may not be picked up automatically depending on the type of Source gem used.
+- When a pipeline runs, Source gems will read the latest available version of the data. If the schema of your data in Snowflake changes, Prophecy will automatically use the new schema. Note that this may cause errors downstream in your pipeline.
 
 ## Limitations
+
+There are a few limitations on the data types you can read from Snowflake:
+
+- Prophecy reads `Object`, `Array`, and `Variant` types as `String` type.
+- Prophecy does not support writing `Binary` type columns.

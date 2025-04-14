@@ -40,5 +40,3 @@ For more details on Tableau permissions, see their documentation on [Permission 
 ## Sharing connections within teams
 
 Tableau connections are stored within [fabrics](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md), which are assigned to specific teams in Prophecy. Once a Tableau connection is added to a fabric, anyone on that team can use it to send data to Tableau from their pipelines. Everyone will inherit the permissions of the user authenticated during connection setup.
-
-## Limitations

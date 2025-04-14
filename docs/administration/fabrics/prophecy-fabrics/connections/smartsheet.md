@@ -26,9 +26,9 @@ To create a connection with Smartsheet, enter the following parameters:
 
 ## Smartsheet permissions
 
-When you create a Smartsheet connection in Prophecy, access permissions are tied to the credentials you use. This means you will only see the data your Smartsheet credentials have permission to access. Any actions you perform—such as reading or writing files—are done using those credentials. For example, if you are a Viewer on a sheet, you won't be able to write data to that sheet with a Target gem.
+When you create a Smartsheet connection in Prophecy, access permissions are tied to the credentials you use. This means you will only see the data your Smartsheet credentials have permission to access. Any actions you perform—such as reading or writing files—are done using those credentials. For example, if you are a `Viewer` on a sheet, you won't be able to write data to that sheet with a Target gem.
 
-To learn more about permissions in Smartsheet, visit [Sharing permission levels](https://help.smartsheet.com/articles/1155182-sharing-permission-levels).
+To learn more about Smartsheet permissions, visit [Sharing permission levels](https://help.smartsheet.com/articles/1155182-sharing-permission-levels).
 
 ## Sharing connections within teams
 
@@ -46,7 +46,7 @@ Prophecy fetches data from Smartsheet in the following ways:
 
 - When you browse a Smartsheet connection in the [Environment browser](/analysts/pipelines), Prophecy fetches data on demand as you expand folders. You can manually refresh the Environment browser to see updated files.
 
-- When a pipeline runs, Source gems will read the latest available version of the data. If the schema changes in the external connection, you will need to re-infer the schema in Prophecy.
+- When a pipeline runs, Source gems will read the latest available version of the data. If the schema changes in Smartsheet, you will need to re-infer the schema in Prophecy.
 
 ## Limitations
 

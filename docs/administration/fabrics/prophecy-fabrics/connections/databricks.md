@@ -41,8 +41,14 @@ When you create an Databricks connection in Prophecy, access permissions are tie
 
 To fully leverage a Databricks connection in Prophecy, you need the following Databricks permissions:
 
-- Example
-- Example
+- Create Schema
+- Create or Replace Table
+- Drop Table
+- Insert Into
+- Create Volume `PROPHECY_ORCHESTRATOR_VOLUME`
+- Access to `/Volumes/<catalog>/<schema>/PROPHECY_ORCHESTRATOR_VOLUME`
+- Remove File permission inside the volume
+- Copy Into (from the volume)
 
 ## Sharing connections within teams
 
@@ -74,6 +80,4 @@ Prophecy fetches data from Databricks connections in the following ways:
 
 - When you browse an Databricks connection in the [Environment browser](/analysts/pipelines), Prophecy fetches data on demand as you expand folders. You can manually refresh the Environment browser to see updated files.
 
-- When a pipeline runs, Source gems will read the latest available version of the data. Keep in mind that schema evolution may or may not be picked up automatically depending on the type of Source gem used.
-
-## Limitations
+- When a pipeline runs, Source gems will read the latest available version of the data. If the schema of your data in Databricks changes, Prophecy will automatically use the new schema. Note that this may cause errors downstream in your pipeline.
