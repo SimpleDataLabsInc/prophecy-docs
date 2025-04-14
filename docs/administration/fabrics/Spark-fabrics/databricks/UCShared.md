@@ -61,7 +61,7 @@ Minimum Prophecy Package version required to support Databricks Unity Catalog Sh
 | Fixed Format              | ProphecySparkBasicsPython   | Not Supported | Not Supported    | Not Supported    |
 | Xlsx                      | ProphecySparkBasicsPython   | Not Supported | Not Supported    | Not Supported    |
 | Xml                       | ProphecySparkBasicsPython   | Not Supported | 0.2.39           | 0.2.39           |
-| Seed                      | ProphecySparkBasicsPython   | Not Supported | Not Supported    | Not Supported    |
+| Seed                      | ProphecySparkBasicsPython   | Not Supported | 0.2.39           | 0.2.39           |
 | Createdata                | ProphecySparkAbinitioPython | Not Supported | Not Supported    | Not Supported    |
 | Mtime                     | ProphecySparkAbinitioPython | Not Supported | Not Supported    | Not Supported    |
 
@@ -76,8 +76,8 @@ Minimum Prophecy Package version required to support Databricks Unity Catalog Sh
 | Data Generator               | ProphecySparkBasicsPython | Not Supported | Not Supported    | 0.2.39           |
 | Kafka (Source)               | ProphecySparkBasicsPython | 0.2.39        | 0.2.39           | 0.2.39           |
 | Kafka (Target)               | ProphecySparkBasicsPython | 0.2.39        | 0.2.39           | 0.2.39           |
-| Bigquery (Source)            | ProphecyWarehousePython   | Not Supported | Not Supported    | Not Supported    |
-| Bigquery (Target)            | ProphecyWarehousePython   | Not Supported | Not Supported    | Not Supported    |
+| Bigquery (Source)            | ProphecyWarehousePython   | Not Supported | 0.0.9            | 0.0.9            |
+| Bigquery (Target)            | ProphecyWarehousePython   | Not Supported | 0.0.9            | 0.0.9            |
 | Mongodb (Driver Mongodb+srv) | ProphecyWarehousePython   | Not Supported | Not Supported    | Not Supported    |
 | Mongodb (Driver Mongodb)     | ProphecyWarehousePython   | Not Supported | Not Supported    | Not Supported    |
 | Redshift                     | ProphecyWarehousePython   | Not Supported | Not Supported    | Not Supported    |
@@ -162,8 +162,8 @@ Minimum Prophecy Package version required to support Databricks Unity Catalog Sh
 | FileOperation             | ProphecySparkBasicsPython   | Pending       | Pending          | Pending          |
 | Directory                 | ProphecySparkBasicsPython   | Not Supported | Not Supported    | Not Supported    |
 | RestAPlEnrich             | ProphecySparkBasicsPython   | Not Supported | Not Supported    | 0.0.24           |
-| Email                     | ProphecyWebAppPython        | Not Supported | Not Supported    | Not Supported    |
-| EmailData                 | ProphecyWebAppPython        | Not Supported | Not Supported    | Not Supported    |
+| Email                     | ProphecyWebAppPython        | Not Supported | 0.1.2            | 0.1.2            |
+| EmailData                 | ProphecyWebAppPython        | Not Supported | 0.1.2            | 0.1.2            |
 | Tableau                   | ProphecyWebAppPython        | Not Supported | Not Supported    | Not Supported    |
 | ReadMultipleFiles         | ProphecySparkAbinitioPython | Not Supported | Pending          | Pending          |
 | WriteMultipleFiles        | ProphecySparkAbinitioPython | Not Supported | Pending          | Pending          |
