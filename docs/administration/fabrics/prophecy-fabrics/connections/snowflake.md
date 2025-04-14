@@ -70,13 +70,13 @@ Be mindful of the access level granted by the stored credentials. Anyone on the 
 To manage this securely, consider creating a dedicated fabric and team for high-sensitivity connections. This way, only approved users have access to those credentials.
 :::
 
-## Sync connection
+## Fetching data
 
 Prophecy fetches data from Snowflake connections in the following ways:
 
 - When you browse a Snowflake connection in the [Environment browser](/analysts/pipelines), Prophecy fetches data on demand as you expand folders. You can manually refresh the Environment browser to see updated files.
 
-- When a pipeline runs, Source gems will read the latest available version of the data. If the schema of your data in Snowflake changes, Prophecy will automatically use the new schema. Note that this may cause errors downstream in your pipeline.
+- When a pipeline runs, Source gems will read the latest available version of the data. If the schema of your data in Snowflake changes, Prophecy will automatically use the new schema.
 
 ## Limitations
 

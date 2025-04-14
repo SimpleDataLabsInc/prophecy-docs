@@ -26,7 +26,7 @@ To create a connection with Smartsheet, enter the following parameters:
 
 ## Smartsheet permissions
 
-When you create a Smartsheet connection in Prophecy, access permissions are tied to the credentials you use. This means you will only see the data your Smartsheet credentials have permission to access. Any actions you perform—such as reading or writing files—are done using those credentials. For example, if you are a `Viewer` on a sheet, you won't be able to write data to that sheet with a Target gem.
+When you create a Smartsheet connection in Prophecy, access permissions are tied to the credentials you use. This means you will only see the data your Smartsheet credentials have permission to access. Any data operations—such as reading from or writing to tables—are executed using your credentials. For example, if you are a `Viewer` on a sheet, you won't be able to write data to that sheet with a Target gem.
 
 To learn more about Smartsheet permissions, visit [Sharing permission levels](https://help.smartsheet.com/articles/1155182-sharing-permission-levels).
 
@@ -40,7 +40,7 @@ Be mindful of the access level granted by the stored credentials. Anyone on the 
 To manage this securely, consider creating a dedicated fabric and team for high-sensitivity connections. This way, only approved users have access to those credentials.
 :::
 
-## Sync connection
+## Fetching data
 
 Prophecy fetches data from Smartsheet in the following ways:
 

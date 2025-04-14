@@ -50,7 +50,7 @@ Be mindful of the access level granted by the stored credentials. Anyone on the 
 To manage this securely, consider creating a dedicated fabric and team for high-sensitivity connections. This way, only approved users have access to those credentials.
 :::
 
-## Sync connection
+## Fetching data
 
 Prophecy fetches data from SFTP connections in the following ways:
 

@@ -31,12 +31,12 @@ To create a connection with MongoDB, enter the following parameters:
 
 ## MongoDB permissions
 
-When you create an MongoDB connection in Prophecy, access permissions are tied to the credentials you use. This means you will only see the data your MongoDB credentials have permission to access. Any actions you perform—such as reading or writing files—are done using those credentials.
+When you create an MongoDB connection in Prophecy, access permissions are tied to the credentials you use. This means you will only see the data your MongoDB credentials have permission to access. Any data operations—such as reading from or writing to tables—are executed using your credentials.
 
 To fully leverage a MongoDB connection in Prophecy, you need the following MongoDB permissions:
 
-- Example
-- Example
+- `Read` from the collection defined in the connection
+- `Write` to the collection defined in the connection
 
 ## Sharing connections within teams
 
@@ -48,7 +48,7 @@ Be mindful of the access level granted by the stored credentials. Anyone on the 
 To manage this securely, consider creating a dedicated fabric and team for high-sensitivity connections. This way, only approved users have access to those credentials.
 :::
 
-## Sync connection
+## Fetching data
 
 Prophecy fetches data from MongoDB connections in the following ways:
 

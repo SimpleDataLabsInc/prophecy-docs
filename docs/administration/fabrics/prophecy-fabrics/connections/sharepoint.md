@@ -36,7 +36,7 @@ To create a connection with SharePoint, enter the following parameters:
 
 ## SharePoint permissions
 
-When you create a SharePoint connection in Prophecy, access permissions are tied to the credentials you use. This means you will only see the files in the document library your SharePoint credentials have permission to access. Any actions you perform—such as reading or writing files—are done using those credentials. For example, if you are a `Visitor` on a site, you won't be able to edit site content from Prophecy.
+When you create a SharePoint connection in Prophecy, access permissions are tied to the credentials you use. This means you will only see the files in the document library your SharePoint credentials have permission to access. Any data operations—such as reading from or writing to tables—are executed using your credentials. For example, if you are a `Visitor` on a site, you won't be able to edit site content from Prophecy.
 
 To learn more about SharePoint permissions, [click here](https://support.microsoft.com/en-us/office/overview-site-governance-permission-and-sharing-for-site-owners-95e83c3d-e1b0-4aae-9d08-e94dcaa4942e).
 
@@ -50,7 +50,7 @@ Be mindful of the access level granted by the stored credentials. Anyone on the 
 To manage this securely, consider creating a dedicated fabric and team for high-sensitivity connections. This way, only approved users have access to those credentials.
 :::
 
-## Sync connection
+## Fetching data
 
 Prophecy fetches data from SharePoint in the following ways:
 
