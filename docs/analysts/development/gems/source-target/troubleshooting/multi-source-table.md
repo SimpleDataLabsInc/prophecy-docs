@@ -20,7 +20,7 @@ This will result in errors or unexpected behavior.
 
 ## Why this happens
 
-Under the hood, Prophecy executes SQL transformations by generating and running [dbt models](/engineers/models). dbt operates with a model-centric approach where each model is responsible for generating or updating a specific table. dbt expects a **1:1 relationship between models and tables**.
+Prophecy executes SQL transformations by generating and running [dbt models](/engineers/models). dbt operates with a model-centric approach where each model is responsible for generating or updating a specific table. dbt expects a **1:1 relationship between models and tables**.
 
 ## Solution
 
