@@ -13,7 +13,7 @@ tags:
 
 Prophecy provides a recommended mechanism for using Git based development. The four main phases of integrating your changes are **Commit**, **Pull**, **Merge**, and **Release**. A standard development pattern looks like this, though other mechanisms like forking are also supported:
 
-![Project deploy](img/project_deploy.png)
+![Project Git Flow](img/project-git.png)
 
 Let's develop and deploy a project to illustrate these phases.
 
