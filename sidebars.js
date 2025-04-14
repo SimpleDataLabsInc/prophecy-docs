@@ -230,9 +230,9 @@ const sidebars = {
           label: "Copilot",
           link: {
             type: "doc",
-            id: "analysts/development/copilot/pipeline-generation",
+            id: "analysts/development/copilot/copilot-analysts",
           },
-          items: [],
+          items: ["analysts/development/copilot/pipeline-generation"],
         },
         "analysts/development/connections",
         "analysts/development/data-explorer",
