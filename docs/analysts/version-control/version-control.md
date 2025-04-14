@@ -73,12 +73,14 @@ To restore a previous version:
 
 As you move through the versioning workflow in your project, Prophecy actually maps these actions to Git processes in the backend. In other words, actions like saving, publishing, and restoring changes trigger Git commands. This is possible because all Prophecy projects are hosted on Git, regardless of the project's Git storage model (simple or normal).
 
-The following table and diagram explains what each versioning action does in Git. If you connect to an external Git provider (rather than use Prophecy-managed Git), you can view how each action in is reflected in Git as you work on your project.
+The following diagram explains what each versioning action does in Git. If you connect to an external Git provider (rather than use Prophecy-managed Git), you can view how each action in is reflected in Git as you work on your project.
 
-| Prophecy action          | Git backend                                                                                                                                                                      |
-| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Save to draft            | <ul class="table-list"><li>Pulls changes from the remote development branch</li><li>Pulls changes from the main branch</li><li>Commits changes to a development branch</li></ul> |
-| Publish                  | <ul class="table-list"><li>Merges changes into the main branch</li><li>Adds a Git tag with the published version number</li></ul>                                                |
-| Restore previous version | <ul class="table-list"><li>Runs `git reset --soft`</li><li>Commits the changes</li><li>Pushes the changes</li></ul>                                                              |
+![Simple Git](../img/git-flow-simple.png)
 
-![Simple Git](../img/git-flow-simple.jpg)
+The table below reiterates the diagram.
+
+| Action in Prophecy       | Action in Git                                                                                                                                                                                               |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Save to draft            | <ul class="table-list"><li>Pull changes from the remote `dev` branch</li><li>Pull changes from the local `main` branch</li><li>Commit changes to local `dev`</li><li>Push changes to remote `dev`</li></ul> |
+| Publish                  | <ul class="table-list"><li>Merge changes into local `main`</li><li>Add a Git Tag with the published version number</li><li>Push changes to remote `main`</li></ul>                                          |
+| Restore previous version | <ul class="table-list"><li>Run `git reset --soft`</li><li>Commit the changes to revert in `dev`</li><li>Push changes to remote `dev` branch</li></ul> (Publish the project to merge to `main`)              |
