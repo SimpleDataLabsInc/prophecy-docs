@@ -8,7 +8,9 @@ tags: []
 
 Prophecy lets you schedule and automate your data pipeline runs. Once you have developed a pipeline, you can run it at specific frequencies using Prophecy's native scheduler.
 
-Schedules define when the pipeline will run and whether to send alerts about the pipeline run.
+Schedules define when the pipeline will run and whether to send alerts about the pipeline run. For a summary of the pipeline scheduling workflow, review the diagram below.
+
+![Scheduling flow](img/schedule-flow.png)
 
 ## Parameters
 
@@ -52,10 +54,6 @@ Project publication performs the following key functions that directly impact sc
 - **Determines the pipeline version for execution**
 
   Publication determines what version of the pipeline will run during a scheduled execution. When a new project version is published, scheduled executions for the associated fabric(s) automatically begin using the updated pipeline version. Each deployment is isolated per fabric—publishing a new version to one fabric does not update deployments on other fabrics.
-
-For a summary of the pipeline scheduling workflow, review the diagram below.
-
-![Scheduling flow](img/schedule-flow.jpg)
 
 ## Monitor scheduled pipelines
 
