@@ -17,8 +17,22 @@ To ensure these updates do not impact your usage, we recommend refreshing the we
 
 ## 2025
 
-<CustomTOCInline item={require('./2025/2025.md')} path="./2025" />
+- [Prophecy 4.0.0.x](docs/release_notes/2025/4-0-0.md)
+- [Prophecy 3.4.5.x](docs/release_notes/2025/3-4-5.md)
+- [Prophecy 3.4.4.x](docs/release_notes/2025/3-4-4.md)
+- [Prophecy 3.4.3.x](docs/release_notes/2025/3-4-3.md)
 
 ## 2024
 
-<CustomTOCInline item={require('./2024/2024.md')} path="./2024" />
+- [December 2024](docs/release_notes/2024/dec2024.md)
+- [November 2024](docs/release_notes/2024/nov2024.md)
+- [October 2024](docs/release_notes/2024/October_2024/October_2024.md)
+- [September 2024](docs/release_notes/2024/sept2024.md)
+- [August 2024](docs/release_notes/2024/August_2024/August_2024.md)
+- [July 2024](docs/release_notes/2024/july2024.md)
+- [June 2024](docs/release_notes/2024/june2024.md)
+- [May 2024](docs/release_notes/2024/may2024.md)
+- [April 2024](docs/release_notes/2024/april2024.md)
+- [March 2024](docs/release_notes/2024/march2024.md)
+- [February 2024](docs/release_notes/2024/feb2024.md)
+- [January 2024](docs/release_notes/2024/jan2024.md)
