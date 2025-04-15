@@ -1,5 +1,5 @@
 ---
-title: Window
+title: WindowFunction
 id: window
 slug: /analysts/window
 description: Create moving aggregations and transformation
