@@ -7,9 +7,13 @@ tags:
   - tableau
 ---
 
-A Tableau connection allows you to update data sources in Tableau projects. Use this integration to upload data from your pipeline as `Hyper` files (Tableau’s high-performance, in-memory database format).
+Use a Tableau connection to publish and update data sources in your Tableau projects directly from Prophecy pipelines.
 
-Prophecy uses the [Tableau REST API](https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api.htm) to perform actions like sign in, data upload, and data source publication.
+Prophecy uses the [Tableau REST API](https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api.htm) to perform actions like sign in, data upload, and data source publication. Your data is sent to Tableau as `Hyper` files (Tableau’s high-performance, in-memory format).
+
+## Feature support
+
+The table below outlines whether the connection supports certain Prophecy features.
 
 | Feature                                                       | Supported |
 | ------------------------------------------------------------- | --------- |
@@ -40,3 +44,9 @@ For more details on Tableau permissions, see their documentation on [Permission 
 ## Sharing connections within teams
 
 Tableau connections are stored within [fabrics](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md), which are assigned to specific teams in Prophecy. Once a Tableau connection is added to a fabric, anyone on that team can use it to send data to Tableau from their pipelines. Everyone will inherit the permissions of the user authenticated during connection setup.
+
+## Limitations
+
+Using Tableau Hyper files is a legacy approach that Prophecy supports mainly for backward compatibility. It helps users keep existing dashboards running smoothly while migrating from older systems.
+
+For a modern, cloud-native workflow, write pipeline outputs directly to a supported cloud data platform like Databricks, Snowflake, or BigQuery. Then connect Tableau to that platform to visualize the data—no need to set up a separate Tableau connection or perform extra export steps in Prophecy.

@@ -7,7 +7,11 @@ tags:
   - mongodb
 ---
 
-MongoDB is a popular NoSQL database designed to store and retrieve unstructured or semi-structured data using flexible, JSON-like documents. It’s often used in modern applications where data structures can evolve over time.
+MongoDB is a NoSQL database designed to store and retrieve unstructured or semi-structured data using BSON documents.
+
+## Feature support
+
+The table below outlines whether the connection supports certain Prophecy features.
 
 | Feature                                                       | Supported |
 | ------------------------------------------------------------- | --------- |
@@ -31,7 +35,7 @@ To create a connection with MongoDB, enter the following parameters:
 
 ## MongoDB permissions
 
-When you create an MongoDB connection in Prophecy, access permissions are tied to the credentials you use. This means you will only see the data your MongoDB credentials have permission to access. Any data operations—such as reading from or writing to tables—are executed using your credentials.
+When you create an MongoDB connection in Prophecy, access permissions are tied to the credentials you use. This is because Prophecy uses your credentials to execute all data operations, such as reading from or writing to collections.
 
 To fully leverage a MongoDB connection in Prophecy, you need the following MongoDB permissions:
 

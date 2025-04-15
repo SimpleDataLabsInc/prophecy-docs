@@ -9,6 +9,10 @@ tags:
 
 SMTP (Simple Mail Transfer Protocol) connections are used to send emails over the internet by allowing communication between email clients and servers. When you create an SMTP connection in Prophecy, the user credentials you provide are used to establish the connection. This user will always be the sender of an email when you use the Email gem with this connection.
 
+## Feature support
+
+The table below outlines whether the connection supports certain Prophecy features.
+
 | Feature                                                       | Supported |
 | ------------------------------------------------------------- | --------- |
 | Read data with a [Source gem](/analysts/source-target)        | No        |
@@ -35,6 +39,4 @@ Connections in Prophecy are stored within [fabrics](docs/administration/fabrics/
 
 ## Limitations
 
-Keep in mind the following limitations when using an SMTP connection.
-
-- **Only basic authentication is supported.** The SMTP server must support plain username and password authentication. Prophecy does not currently support OAuth or other advanced authentication methods for SMTP connections.
+Only basic authentication is supported. The SMTP server must support plain username and password authentication. Prophecy does not currently support OAuth or other advanced authentication methods for SMTP connections.

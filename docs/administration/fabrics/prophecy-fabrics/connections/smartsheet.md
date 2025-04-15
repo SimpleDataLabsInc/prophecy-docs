@@ -7,7 +7,11 @@ tags:
   - smartsheet
 ---
 
-Smartsheet is used for managing tasks, projects, and workflows using a spreadsheet-like interface that can contain rows, columns, and cell data. Prophecy uses the [Smartsheet API](https://developers.smartsheet.com/api/smartsheet/introduction) to establish the connection.
+Smartsheet manages tasks, projects, and workflows using a spreadsheet-like interface that can contain rows, columns, and cell data. Prophecy uses the [Smartsheet API](https://developers.smartsheet.com/api/smartsheet/introduction) to establish the connection.
+
+## Feature support
+
+The table below outlines whether the connection supports certain Prophecy features.
 
 | Feature                                                       | Supported |
 | ------------------------------------------------------------- | --------- |
@@ -26,7 +30,7 @@ To create a connection with Smartsheet, enter the following parameters:
 
 ## Smartsheet permissions
 
-When you create a Smartsheet connection in Prophecy, access permissions are tied to the credentials you use. This means you will only see the data your Smartsheet credentials have permission to access. Any data operations—such as reading from or writing to tables—are executed using your credentials. For example, if you are a `Viewer` on a sheet, you won't be able to write data to that sheet with a Target gem.
+When you create a Smartsheet connection in Prophecy, access permissions are tied to the credentials you use. This is because Prophecy uses your credentials to execute all data operations, such as reading or writing sheets. For example, if you are a `Viewer` on a sheet, you won't be able to write data to that sheet with a Target gem.
 
 To learn more about Smartsheet permissions, visit [Sharing permission levels](https://help.smartsheet.com/articles/1155182-sharing-permission-levels).
 

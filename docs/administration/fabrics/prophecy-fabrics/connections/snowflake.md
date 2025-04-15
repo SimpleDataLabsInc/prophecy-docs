@@ -10,6 +10,10 @@ tags:
 
 Learn how to set up and use a Snowflake connection in Prophecy. With a Snowflake connection, you can read from and write to your Snowflake data warehouse using Source and Target gems, browse data in the Environment browser, and run pipelines that process Snowflake data.
 
+## Feature support
+
+The table below outlines whether the connection supports certain Prophecy features.
+
 | Feature                                                       | Supported |
 | ------------------------------------------------------------- | --------- |
 | Read data with a [Source gem](/analysts/source-target)        | Yes       |
@@ -28,19 +32,18 @@ To create a connection with Snowflake, enter the following parameters:
 | Schema                | Default schema for reading and writing data                                                                          |
 | Warehouse             | Name of the SQL warehouse to use for the connection                                                                  |
 | Role                  | Snowflake [role](https://docs.snowflake.com/en/user-guide/security-access-control-overview) of the user to connect   |
-| Authentication method | How you want to authenticate your Snowflake account                                                                  |
+| Authentication method | Enter your Snowflake username and use a [secret](docs/administration/secrets/secrets.md) to enter your password.     |
 
-## Authentication methods
+<!-- ## Authentication methods
 
 You can configure your Snowflake connection with one of the following authentication methods:
 
-<!-- - **Snowflake [OAuth](docs/administration/authentication/databricks-oauth.md).** Prophecy prompts you to sign in with Snowflake. -->
-
-- **Password**. Enter your Snowflake username and use a [secret](docs/administration/secrets/secrets.md) to enter your password.
+- **Snowflake [OAuth](docs/administration/authentication/databricks-oauth.md).** Prophecy prompts you to sign in with Snowflake.
+- **Password**. Enter your Snowflake username and use a [secret](docs/administration/secrets/secrets.md) to enter your password. -->
 
 ## Snowflake permissions
 
-When you create a Snowflake connection in Prophecy, all access is governed by the Snowflake credentials you provide. This means you can only see and work with data that your Snowflake user account has permission to access. Any data operations—such as reading from or writing to tables—are executed using your credentials.
+When you create a Snowflake connection in Prophecy, all access is governed by the Snowflake credentials you provide. This is because Prophecy uses your credentials to execute all data operations, such as reading or writing files.
 
 To successfully use a Snowflake connection in Prophecy, make sure your Snowflake user has the following permissions:
 

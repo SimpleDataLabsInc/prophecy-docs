@@ -7,7 +7,11 @@ tags:
   - msssql
 ---
 
-Microsoft SQL Server (MSSQL) is a reliable, enterprise-grade relational database used for storing and querying structured data, with strong support for transactions, security, and complex SQL. It’s a popular choice for organizations already invested in the Microsoft ecosystem or needing a stable on-prem or cloud-compatible data platform.
+Use this connection to integrate with Microsoft SQL Server (MSSQL)—a relational database used for storing and querying structured data, with strong support for transactions, security, and complex SQL.
+
+## Feature support
+
+The table below outlines whether the connection supports certain Prophecy features.
 
 | Feature                                                       | Supported |
 | ------------------------------------------------------------- | --------- |
@@ -29,7 +33,7 @@ To create a connection with Microsoft SQL Server, enter the following parameters
 
 ## MSSQL permissions
 
-When you create an MSSQL connection in Prophecy, access permissions are tied to the credentials you use. This means you will only see the data your MSSQL credentials have permission to access. Any data operations—such as reading from or writing to tables—are executed using your credentials. To fully leverage an MSSQL connection in Prophecy, you need read and write access to the tables you use.
+When you create an MSSQL connection in Prophecy, access permissions are tied to the credentials you use. This is because Prophecy uses your credentials to execute all data operations, such as reading from or writing to tables. To fully leverage an MSSQL connection in Prophecy, you need read and write access to the tables you use.
 
 ## Sharing connections within teams
 

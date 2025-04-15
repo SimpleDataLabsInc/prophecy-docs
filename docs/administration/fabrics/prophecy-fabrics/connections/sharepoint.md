@@ -9,6 +9,10 @@ tags:
 
 The Microsoft SharePoint connection in Prophecy allows you to integrate SharePoint data into your workflows for analysis, transformation, and reporting. SharePoint is widely used for document management, collaboration, and storing structured or unstructured data.
 
+## Feature support
+
+The table below outlines whether the connection supports certain Prophecy features.
+
 | Feature                                                       | Supported |
 | ------------------------------------------------------------- | --------- |
 | Read data with a [Source gem](/analysts/source-target)        | Yes       |
@@ -36,7 +40,7 @@ To create a connection with SharePoint, enter the following parameters:
 
 ## SharePoint permissions
 
-When you create a SharePoint connection in Prophecy, access permissions are tied to the credentials you use. This means you will only see the files in the document library your SharePoint credentials have permission to access. Any data operations—such as reading from or writing to tables—are executed using your credentials. For example, if you are a `Visitor` on a site, you won't be able to edit site content from Prophecy.
+When you create a SharePoint connection in Prophecy, access permissions are tied to the credentials you use. This is because Prophecy uses your credentials to execute all data operations, such as reading from or writing to your document library. For example, if you are a `Visitor` on a site, you won't be able to edit site content from Prophecy.
 
 To learn more about SharePoint permissions, [click here](https://support.microsoft.com/en-us/office/overview-site-governance-permission-and-sharing-for-site-owners-95e83c3d-e1b0-4aae-9d08-e94dcaa4942e).
 

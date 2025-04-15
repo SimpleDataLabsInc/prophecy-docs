@@ -11,6 +11,10 @@ SFTP (Secure File Transfer Protocol) is a secure way to transfer files over the 
 
 In Prophecy, you can use an SFTP connection to read from and write to remote file systems directly in your data pipelines. This is useful when your data is stored outside cloud storage or databases, such as in on-premise servers or partner systems.
 
+## Feature support
+
+The table below outlines whether the connection supports certain Prophecy features.
+
 | Feature                                                       | Supported |
 | ------------------------------------------------------------- | --------- |
 | Read data with a [Source gem](/analysts/source-target)        | Yes       |

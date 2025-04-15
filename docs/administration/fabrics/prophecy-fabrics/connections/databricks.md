@@ -10,6 +10,10 @@ tags:
 
 A Databricks connection lets you access your cloud data warehouse. It’s optimized for analytics and built to support modern data warehousing workloads with high performance and scalability.
 
+## Feature support
+
+The table below outlines whether the connection supports certain Prophecy features.
+
 | Feature                                                       | Supported |
 | ------------------------------------------------------------- | --------- |
 | Read data with a [Source gem](/analysts/source-target)        | Yes       |
@@ -37,7 +41,7 @@ You can configure your Databricks connection with one of three authentication me
 
 ## Databricks permissions
 
-When you create an Databricks connection in Prophecy, access permissions are tied to the credentials you use. This means you will only see data your Databricks credentials have permission to access. Any data operations—such as reading from or writing to tables—are executed using your credentials.
+When you create an Databricks connection in Prophecy, access permissions are tied to the credentials you use. This is because Prophecy uses your credentials to execute all data operations, such as reading from or writing to tables.
 
 To fully leverage a Databricks connection in Prophecy, you need the following Databricks permissions:
 
@@ -52,7 +56,7 @@ To fully leverage a Databricks connection in Prophecy, you need the following Da
 
 ## Sharing connections within teams
 
-Connections are stored inside fabrics, which are assigned to certain teams. The way Databricks connections are shared depends on the authentication method used to configure the connection.
+Connections are stored inside fabrics, which are assigned to certain teams. The way Prophecy manages how Databricks connections are shared within teams depends on the authentication method used to configure the connection.
 
 ### OAuth
 
