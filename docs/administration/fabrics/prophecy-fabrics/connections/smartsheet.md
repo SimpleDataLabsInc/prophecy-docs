@@ -19,6 +19,20 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Write data with a [Target gem](/analysts/source-target)       | Yes       |
 | Browse data in the [Environment browser](/analysts/pipelines) | Yes       |
 
+## Limitations
+
+Keep in mind the following limitations when using the Smartsheet connection.
+
+- Smartsheet defines capacity limits in their [Limitations](https://developers.smartsheet.com/api/smartsheet/guides/basics/limitations) documentation.
+
+- Smartsheet allows users to create sheets with the same name in the same file location. Prophecy handles this situation in the following ways:
+
+  - **Writing to Smartsheet when there are duplicate files.** In this case, the pipeline run will fail in Prophecy. Prophecy will not choose which file to overwrite with the Target gem.
+
+  - **Reading from Smartsheet when there are duplicate files.** In this case, Prophecy appends a `(n)` to the duplicate files for differentiation in Prophecy.
+
+  ![Duplicate Smartsheet file in Prophecy file browser](img/smartsheet-duplicates.png)
+
 ## Parameters
 
 To create a connection with Smartsheet, enter the following parameters:
@@ -51,17 +65,3 @@ Prophecy fetches data from Smartsheet in the following ways:
 - When you browse a Smartsheet connection in the [Environment browser](/analysts/pipelines), Prophecy fetches data on demand as you expand folders. You can manually refresh the Environment browser to see updated files.
 
 - When a pipeline runs, Source gems will read the latest available version of the data. If the schema changes in Smartsheet, you will need to re-infer the schema in Prophecy.
-
-## Limitations
-
-Keep in mind the following limitations when using the Smartsheet connection.
-
-- Smartsheet defines capacity limits in their [Limitations](https://developers.smartsheet.com/api/smartsheet/guides/basics/limitations) documentation.
-
-- Smartsheet allows users to create sheets with the same name in the same file location. Prophecy handles this situation in the following ways:
-
-  - **Writing to Smartsheet when there are duplicate files.** In this case, the pipeline run will fail in Prophecy. Prophecy will not choose which file to overwrite with the Target gem.
-
-  - **Reading from Smartsheet when there are duplicate files.** In this case, Prophecy appends a `(n)` to the duplicate files for differentiation in Prophecy.
-
-  ![Duplicate Smartsheet file in Prophecy file browser](img/smartsheet-duplicates.png)

@@ -19,6 +19,10 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Write data with a [Target gem](/analysts/source-target)       | Yes       |
 | Browse data in the [Environment browser](/analysts/pipelines) | Yes       |
 
+## Limitations
+
+Prophecy can only access files stored in the [document library](https://support.microsoft.com/en-us/office/what-is-a-document-library-3b5976dd-65cf-4c9e-bf5a-713c10ca2872) of your SharePoint site. Make sure any files you want to import are placed there.
+
 ## Prerequisites
 
 To use a SharePoint connection, your Microsoft account admin needs to:
@@ -61,7 +65,3 @@ Prophecy fetches data from SharePoint in the following ways:
 - When you browse a SharePoint connection in the [Environment browser](/analysts/pipelines), Prophecy fetches data on demand as you expand folders. You can manually refresh the Environment browser to see updated files.
 
 - When a pipeline runs, Source gems will read the latest available version of the data. If the schema of the data stored in SharePoint changes, you will need to re-infer the schema in Prophecy.
-
-## Limitations
-
-Prophecy can only access files stored in the [document library](https://support.microsoft.com/en-us/office/what-is-a-document-library-3b5976dd-65cf-4c9e-bf5a-713c10ca2872) of your SharePoint site. Make sure any files you want to import are placed there.

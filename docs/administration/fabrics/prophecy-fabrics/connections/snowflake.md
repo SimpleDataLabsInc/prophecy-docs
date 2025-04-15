@@ -20,6 +20,13 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Write data with a [Target gem](/analysts/source-target)       | Yes       |
 | Browse data in the [Environment browser](/analysts/pipelines) | Yes       |
 
+## Limitations
+
+There are a few limitations on the data types you can read from Snowflake:
+
+- Prophecy reads `Object`, `Array`, and `Variant` types as `String` type.
+- Prophecy does not support writing `Binary` type columns.
+
 ## Parameters
 
 To create a connection with Snowflake, enter the following parameters:
@@ -80,10 +87,3 @@ Prophecy fetches data from Snowflake connections in the following ways:
 - When you browse a Snowflake connection in the [Environment browser](/analysts/pipelines), Prophecy fetches data on demand as you expand folders. You can manually refresh the Environment browser to see updated files.
 
 - When a pipeline runs, Source gems will read the latest available version of the data. If the schema of your data in Snowflake changes, Prophecy will automatically use the new schema.
-
-## Limitations
-
-There are a few limitations on the data types you can read from Snowflake:
-
-- Prophecy reads `Object`, `Array`, and `Variant` types as `String` type.
-- Prophecy does not support writing `Binary` type columns.

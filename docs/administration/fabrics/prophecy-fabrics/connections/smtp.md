@@ -19,6 +19,10 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Write data with a Report gem                                  | Yes       |
 | Browse data in the [Environment browser](/analysts/pipelines) | No        |
 
+## Limitations
+
+Only basic authentication is supported. The SMTP server must support plain username and password authentication. Prophecy does not currently support OAuth or other advanced authentication methods for SMTP connections.
+
 ## Parameters
 
 To create an SMTP connection, enter the following parameters:
@@ -36,7 +40,3 @@ To create an SMTP connection, enter the following parameters:
 ## Sharing connections within teams
 
 Connections in Prophecy are stored within [fabrics](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md), which are assigned to specific teams. Once an SMTP connection is added to a fabric, anyone in the team can use that connection to send emails from a pipeline.
-
-## Limitations
-
-Only basic authentication is supported. The SMTP server must support plain username and password authentication. Prophecy does not currently support OAuth or other advanced authentication methods for SMTP connections.
