@@ -52,7 +52,7 @@ Minimum Prophecy Package version required to support Databricks Unity Catalog Sh
 | Avro                      | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39           | 0.2.39           |
 | Csv (Only File Path)      | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39           | 0.2.39           |
 | Csv (SFTP - Source)       | ProphecySparkBasicsPython   | Not Supported | 0.2.44           | 0.2.44           |
-| Csv (Sharepoint - Source) | ProphecySparkBasicsPython   | Not Supported | 0.2.44           | 0.2.44           |
+| Csv (SharePoint - Source) | ProphecySparkBasicsPython   | Not Supported | 0.2.44           | 0.2.44           |
 | Delta                     | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39           | 0.2.39           |
 | Json                      | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39           | 0.2.39           |
 | ORC                       | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39           | 0.2.39           |

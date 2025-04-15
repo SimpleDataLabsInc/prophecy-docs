@@ -62,6 +62,6 @@ The following connections support file sources and targets.
 | --------------------------------------------------------------------------------------- | ---------------------- |
 | [Amazon S3](/administration/fabrics/prophecy-fabrics/connections/s3)                    | CSV, JSON, XLSX, XML   |
 | [SFTP](/administration/fabrics/prophecy-fabrics/connections/sftp)                       | CSV, JSON, XLSX, XML   |
-| [Microsoft Sharepoint](/administration/fabrics/prophecy-fabrics/connections/sharepoint) | CSV, JSON, XLSX, XML   |
+| [Microsoft SharePoint](/administration/fabrics/prophecy-fabrics/connections/sharepoint) | CSV, JSON, XLSX, XML   |
 | [Databricks](/administration/fabrics/prophecy-fabrics/connections/databricks)           | CSV, JSON, XLSX, XML   |
 | [Smartsheet](/administration/fabrics/prophecy-fabrics/connections/smartsheet)           | XLSX                   |
