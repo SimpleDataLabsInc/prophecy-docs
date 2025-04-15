@@ -8,29 +8,27 @@ tags: []
 
 <span class="badge">SQL</span><br/><br/>
 
-Tables are natively read from and written to the SQL warehouse that is configured as your primary SQL connection in a Prophecy fabric. Prophecy offers the following table types:
+Tables represent persistent storage of structured data in your SQL warehouse.
 
-| Name  | Description                                                                                                   |
-| ----- | ------------------------------------------------------------------------------------------------------------- |
-| Table | Persistent storage of structured data in your SQL warehouse. Faster for frequent queries (indexed).           |
-| View  | A virtual table that derives data dynamically from a query. Slower for complex queries (computed at runtime). |
-| Seed  | Small CSV-format files that you can write directly in Prophecy.                                               |
+## Source parameters
 
-## Create a Table gem
+When you create a Table gem at the beginning of your pipeline, configure it with the following parameters.
 
-To begin using tables, add a Table gem to your pipeline.
+| Parameter       | Description                                                                                                 |
+| --------------- | ----------------------------------------------------------------------------------------------------------- |
+| Type and Format | Select `Table`.                                                                                             |
+| Location        | Choose the location where the table will be stored. You can create a new table by writing a new table name. |
+| Properties      | Define certain properties of the table, including the table schema.                                         |
+| Preview         | Load the data to see a preview before saving.                                                               |
 
-1. Open a pipeline in a project.
-1. Open the **Source/Target** category in the gem drawer.
-1. Click **Table**. This adds a Table gem to your pipeline canvas.
+## Target parameters
 
-## Configure the Table gem
+When you add a Table gem to the end of your pipeline, configure it with the following parameters.
 
-When you open the [gem configuration](docs/analysts/development/gems/gems.md#gem-configuration), you can choose an existing table in your primary SQL warehouse or create a new one.
-
-1. Select an existing table or create a new table. The available tables in the configuration are located in the default database and schema that you defined in your [fabric](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md).
-1. Choose the type and format of the table (table, view, or seed) and click **Next**.
-1. Set the location where the table will be stored in the SQL warehouse, then click **Next**. You can select an existing table location or name a new table.
-1. Define the table's properties and verify the schema and click **Next**.
-1. Load the data to preview the table.
-1. Click **Save**.
+| Parameter       | Description                                                                                                                                                  |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Type and Format | Select `Table`.                                                                                                                                              |
+| Location        | Choose the location where the table will be stored. You can create a new table by writing a new table name.                                                  |
+| Properties      | Define certain properties of the table. The schema cannot be changed for target tables.                                                                      |
+| Write Options   | Select how you want the data to be written each time you run the pipeline. For more information, see [Write Options](/engineers/write-options-target-model). |
+| Preview         | Load the data to see a preview before saving.                                                                                                                |

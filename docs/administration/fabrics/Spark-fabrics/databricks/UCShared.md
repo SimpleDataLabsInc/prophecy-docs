@@ -15,7 +15,7 @@ tags:
 
 ## Cluster Types
 
-Databricks clusters come with various [Access Modes](https://docs.databricks.com/clusters/create-cluster.html#what-is-cluster-access-mode).
+Databricks clusters come with various [Access Modes](https://docs.databricks.com/aws/en/compute/configure#access-modes).
 
 To implement features including interactive pipeline runs, Prophecy has written some libraries in Python and Scala. These libraries need to be installed on the cluster.
 
@@ -29,8 +29,13 @@ As a result, some Prophecy features are not supported on all cluster access mode
 | [Run history](docs/Orchestration/pipeline-monitoring/use-pipeline-monitoring.md#view-historical-runs) | Supported                                                                                                       | Not Supported                                 | Supported             | Supported                 | **Not Supported**     |
 | [Interactive run](/engineers/execution) progress                                                      | Supported                                                                                                       | Not Supported                                 | Supported             | Supported                 | **Not Supported**     |
 | Interactive runs on pre-existing clusters                                                             | Supported                                                                                                       | Not Supported                                 | Supported             | Supported                 | **Not Supported**     |
+| [User-defined functions](/engineers/user-defined-functions)                                           | Supported                                                                                                       | Not supported                                 | Supported             | Supported                 | Supported\*           |
 
 When using Databricks with a `Shared` access mode, you must also connect to `Shared Mode` clusters.
+
+:::info \*UDF support
+Graviton instance support for [UDFs on Unity Catalog-enabled clusters](https://docs.databricks.com/aws/en/udf/) is available in Databricks Runtime 15.2 and above. Clusters must have shared access mode for Python UDFs.
+:::
 
 ## Gem Support
 
@@ -46,17 +51,17 @@ Minimum Prophecy Package version required to support Databricks Unity Catalog Sh
 | ------------------------- | --------------------------- | ------------- | ---------------- | ---------------- |
 | Avro                      | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39           | 0.2.39           |
 | Csv (Only File Path)      | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39           | 0.2.39           |
-| Csv (SFTP - Source)       | ProphecySparkBasicsPython   | Not Supported | Not Supported    | Not Supported    |
-| Csv (Sharepoint - Source) | ProphecySparkBasicsPython   | Not Supported | Not Supported    | Not Supported    |
+| Csv (SFTP - Source)       | ProphecySparkBasicsPython   | Not Supported | 0.2.44           | 0.2.44           |
+| Csv (SharePoint - Source) | ProphecySparkBasicsPython   | Not Supported | 0.2.44           | 0.2.44           |
 | Delta                     | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39           | 0.2.39           |
 | Json                      | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39           | 0.2.39           |
 | ORC                       | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39           | 0.2.39           |
-| Parque                    | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39           | 0.2.39           |
+| Parquet                   | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39           | 0.2.39           |
 | Text                      | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39           | 0.2.39           |
 | Fixed Format              | ProphecySparkBasicsPython   | Not Supported | Not Supported    | Not Supported    |
 | Xlsx                      | ProphecySparkBasicsPython   | Not Supported | Not Supported    | Not Supported    |
 | Xml                       | ProphecySparkBasicsPython   | Not Supported | 0.2.39           | 0.2.39           |
-| Seed                      | ProphecySparkBasicsPython   | Not Supported | Not Supported    | Not Supported    |
+| Seed                      | ProphecySparkBasicsPython   | Not Supported | 0.2.39           | 0.2.39           |
 | Createdata                | ProphecySparkAbinitioPython | Not Supported | Not Supported    | Not Supported    |
 | Mtime                     | ProphecySparkAbinitioPython | Not Supported | Not Supported    | Not Supported    |
 
@@ -71,8 +76,8 @@ Minimum Prophecy Package version required to support Databricks Unity Catalog Sh
 | Data Generator               | ProphecySparkBasicsPython | Not Supported | Not Supported    | 0.2.39           |
 | Kafka (Source)               | ProphecySparkBasicsPython | 0.2.39        | 0.2.39           | 0.2.39           |
 | Kafka (Target)               | ProphecySparkBasicsPython | 0.2.39        | 0.2.39           | 0.2.39           |
-| Bigquery (Source)            | ProphecyWarehousePython   | Not Supported | Not Supported    | Not Supported    |
-| Bigquery (Target)            | ProphecyWarehousePython   | Not Supported | Not Supported    | Not Supported    |
+| Bigquery (Source)            | ProphecyWarehousePython   | Not Supported | 0.0.9            | 0.0.9            |
+| Bigquery (Target)            | ProphecyWarehousePython   | Not Supported | 0.0.9            | 0.0.9            |
 | Mongodb (Driver Mongodb+srv) | ProphecyWarehousePython   | Not Supported | Not Supported    | Not Supported    |
 | Mongodb (Driver Mongodb)     | ProphecyWarehousePython   | Not Supported | Not Supported    | Not Supported    |
 | Redshift                     | ProphecyWarehousePython   | Not Supported | Not Supported    | Not Supported    |
@@ -88,14 +93,14 @@ Minimum Prophecy Package version required to support Databricks Unity Catalog Sh
 
 ### Lookup
 
-Minimum Prophecy Package version required to support Databricks Unity Catalog Shared Clusters:
+The following table defines Lookup support Databricks Unity Catalog Shared Clusters. If `Lookup` is not supported, use a `Left join` instead.
 
 | Gem    | Package | 12.2 - Shared | 14.3 - UC shared | 15.4 - UC shared |
 | ------ | ------- | ------------- | ---------------- | ---------------- |
-| Lookup | N/A     | Not Supported | Not Supported    | Not Supported    |
+| Lookup | N/A     | Not Supported | Not Supported    | Supported\*      |
 
-:::tip
-Instead of `Lookup`, use `Left join` when working on UC Shared clusters.
+:::info \*Lookup support
+Lookups are implemented as user-defined functions under the hood in Prophecy. Graviton instance support for [UDFs on Unity Catalog-enabled clusters](https://docs.databricks.com/aws/en/udf/) is available in Databricks Runtime 15.2 and above.
 :::
 
 ### Transform
@@ -121,7 +126,7 @@ Minimum Prophecy Package version required to support Databricks Unity Catalog Sh
 | SetOperation                   | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39           | 0.2.39           |
 | WindowFunction                 | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39           | 0.2.39           |
 | BulkColumnRename               | ProphecySparkBasicsPython   | Not Supported | Not Supported    | Not Supported    |
-| Not Supportedrmalize           | ProphecySparkAbinitioPython | Not Supported | 0.2.24           | 0.2.24           |
+| Normalize                      | ProphecySparkAbinitioPython | Not Supported | 0.2.24           | 0.2.24           |
 | MetaPivot                      | ProphecySparkAbinitioPython | Not Supported | 0.2.24           | 0.2.24           |
 | ReadRaw                        | ProphecySparkAbinitioPython | Not Supported | Pending          | Pending          |
 | ReadSeparated Values           | ProphecySparkAbinitioPython | Not Supported | 0.2.24           | 0.2.24           |
@@ -157,8 +162,8 @@ Minimum Prophecy Package version required to support Databricks Unity Catalog Sh
 | FileOperation             | ProphecySparkBasicsPython   | Pending       | Pending          | Pending          |
 | Directory                 | ProphecySparkBasicsPython   | Not Supported | Not Supported    | Not Supported    |
 | RestAPlEnrich             | ProphecySparkBasicsPython   | Not Supported | Not Supported    | 0.0.24           |
-| Email                     | ProphecyWebAppPython        | Not Supported | Not Supported    | Not Supported    |
-| EmailData                 | ProphecyWebAppPython        | Not Supported | Not Supported    | Not Supported    |
+| Email                     | ProphecyWebAppPython        | Not Supported | 0.1.2            | 0.1.2            |
+| EmailData                 | ProphecyWebAppPython        | Not Supported | 0.1.2            | 0.1.2            |
 | Tableau                   | ProphecyWebAppPython        | Not Supported | Not Supported    | Not Supported    |
 | ReadMultipleFiles         | ProphecySparkAbinitioPython | Not Supported | Pending          | Pending          |
 | WriteMultipleFiles        | ProphecySparkAbinitioPython | Not Supported | Pending          | Pending          |

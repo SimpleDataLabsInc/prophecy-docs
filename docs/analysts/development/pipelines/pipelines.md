@@ -31,7 +31,7 @@ When you build a pipeline, it helps to be familiar with the project editor inter
 
 The project sidebar includes the following elements:
 
-| Field                   | Description                                                                                                                                       |
+| Element                 | Description                                                                                                                                       |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Project Browser**     | Allows you to browse through all of your existing pipelines and manage different components of your project, such as gems, tables, and functions. |
 | **Environment Browser** | Provides access to the various data sources and connections that have been configured in your fabric.                                             |
@@ -40,7 +40,7 @@ The project sidebar includes the following elements:
 
 The canvas includes the following elements:
 
-| Field          | Description                                                                                                                                                                                                                                                                                              |
+| Element        | Description                                                                                                                                                                                                                                                                                              |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Canvas**     | A workspace where you can add and connect various gems to build your pipeline.<br/>It provides a drag-and-drop interface for designing your data flow.                                                                                                                                                   |
 | **Gem Drawer** | A toolbox that contains all the available gems, organized by gem category, that you can use in your pipeline.                                                                                                                                                                                            |
@@ -51,9 +51,9 @@ The canvas includes the following elements:
 
 The project header includes the following elements:
 
-| Field                     | Description                                                                                                                                                                                                                                                         |
+| Element                   | Description                                                                                                                                                                                                                                                         |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Parameter:**            | Defines dynamic pipeline parameters that control how your pipeline behaves.                                                                                                                                                                                         |
+| **Config**                | Settings where you define dynamic pipeline parameters that control how your pipeline behaves at runtime.                                                                                                                                                            |
 | **Pipeline Options Menu** | Accesses various settings and metadata for your pipeline.<br/>It allows you to configure things like execution frequency, project dependencies, and other project-specific settings.                                                                                |
 | **Visual/Code Toggle**    | Switch to the code view to see your visually-developed pipeline compiled into raw code.<br/>This view helps users who prefer working with code to understand the underlying logic.                                                                                  |
 | **Version Menu**          | If you create your project using the [simple Git storage model](docs/analysts/version-control/version-control.md), you will see the version menu in the project header.<br/>Use this menu to save your project, publish your project, or view your project history. |
@@ -62,7 +62,7 @@ The project header includes the following elements:
 
 The project footer includes the following elements:
 
-| Field            | Description                                                                                                                                                                                                                         |
+| Element          | Description                                                                                                                                                                                                                         |
 | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Diagnostics**  | Highlights any issues or errors in your pipeline that need attention.<br/>It provides detailed feedback on what needs to be fixed to ensure that your pipeline runs successfully.                                                   |
 | **Runtime Logs** | Offers detailed insights into the status and progress of your pipeline executions.<br/>They show real-time information, errors, and other diagnostic messages, which helps you monitor and troubleshoot the pipeline's performance. |

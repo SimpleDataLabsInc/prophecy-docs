@@ -56,10 +56,10 @@ You can only select `Read Timestamp` or `Read Version`, not both.
 
 ![Delta source example](./img/delta/delta_source_eg.gif)
 
-### Generated Code {#source-code}
+### Compiled code {#source-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 #### Without time travel
@@ -183,10 +183,10 @@ The Target gem writes data to Delta files and allows you to optionally specify t
 
 ![Delta Target Example](./img/delta/delta_target_eg.gif)
 
-### Generated Code {#target-code}
+### Compiled code {#target-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block
@@ -289,10 +289,10 @@ The following shows the output and configurations for an SCD1 merge:
 
 <br/>
 
-#### Generated Code {#upsert-code}
+#### Compiled code{#upsert-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block
@@ -381,10 +381,10 @@ The following shows the output and configurations for an SCD2 merge:
 
 <br/>
 
-#### Generated Code {#scd2-code}
+#### Compiled code{#scd2-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block
@@ -556,7 +556,7 @@ The following shows the output and configurations for an SCD3 merge:
 <br/>
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 :::info

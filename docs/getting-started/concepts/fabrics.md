@@ -22,7 +22,7 @@ Different fabrics are designed to support specific project types. Use the table 
 | [Prophecy](/administration/fabrics/prophecy-fabrics/)  | Compute with Prophecy Automate and a SQL warehouse | Run [pipelines](docs/analysts/development/pipelines/pipelines.md) in SQL projects.   |
 | [Spark](/administration/fabrics/Spark-fabrics/Fabrics) | Compute with a Spark engine                        | Run [pipelines](/engineers/pipelines) in PySpark/Scala projects and Databricks jobs. |
 | [SQL](/administration/fabrics/sql-fabrics/Fabrics)     | Compute with a SQL warehouse                       | Run [models](/engineers/data-models) in SQL projects. You cannot run pipelines.      |
-| [Airflow](/engineers/airflow) jobs.                    |
+| [Airflow](/engineers/airflow)                          | Compute with an Airflow-compatible engine          | Run [Airflow](/engineers/airflow) jobs.                                              |
 
 ## Separate environments and access
 
@@ -35,7 +35,7 @@ When you create a fabric, you assign it to a team. Only users in that team can a
 
 ## Components
 
-Fabrics define all the necessary components that Prophecy needs to communicate with a specific execution environment. Each execution environment will require its own unique fabric configuration. Fabric creation, outlined in the [administration](docs/administration/index.md) section of the documentation, is typically handled by team administrators.
+Fabrics define all the necessary components that Prophecy needs to communicate with a specific execution environment. Each execution environment will require its own unique fabric configuration. Fabric creation, outlined in the [administration](docs/administration/index.md) section of the documentation, is typically handled by team admins.
 
 Find the key components below that correspond to distinct sections within the fabric's settings.
 

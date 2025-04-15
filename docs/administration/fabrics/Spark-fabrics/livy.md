@@ -17,18 +17,23 @@ You can create a generic Livy fabric to connect Prophecy to any Spark cluster ac
 Let's get started with creating Livy fabric.
 
 1. Click on the **Create Entity** button from the left navigation bar.
+
 1. Click on the **Fabric** tile.
-1. Fill out the basic information:
-   - **Name**
-   - **Description**
-   - **Team**
-1. Click **Continue**.
+
+1. Fill out the basic information and click **Continue**.
+
 1. Fill in the information about the Spark provider.
+
    - **Provider Type**: Spark
+
    - **Provider**: Livy
+
    - **Livy URL**: The URL to your Livy environment
+
    - **Use mTLS Encryption (optional)**: The Client Certificate and Client Key required for mTLS.
+
    - **Authentication type**: How you will authenticate Livy in Prophecy
+
 1. Test the connection to validate the fabric.
 
 ### Authentication types
@@ -48,13 +53,22 @@ Prophecy supports the following authentication types for Livy.
 Once the connection is validated:
 
 1. Edit or add job sizes. A job size consists of the following.
-   - Name
-   - Drivers: The number of cores and amount of memory of the drivers
-   - Executors: The number of cores and the amount of memory of the executors, and the total number of executors
+
+   - **Name**: The name of the job size.
+
+   - **Drivers**: The number of cores and amount of memory of the drivers
+
+   - **Executors**: The number of cores and the amount of memory of the executors, and the total number of executors
+
+   - **(Optional) Spark Config**: The Spark configuration parameters at the job size level. These settings control cluster behavior when using this job size. If the same config key is also defined at the fabric level, the value set at the job size level will override it.
+
 1. Configure the Prophecy Library settings.
-   - Spark version: Version that is used when a user attaches to a cluster using this fabric
-   - Scala version: Version that is used when a user attaches to a cluster using this fabric
-   - Scala/Python resolution mode: Location of libraries to use for Scala or Python
+
+   - **Spark version**: Version that is used when a user attaches to a cluster using this fabric
+
+   - **Scala version**: Version that is used when a user attaches to a cluster using this fabric
+
+   - **Scala/Python resolution mode**: Location of libraries to use for Scala or Python
 
 ## Advanced settings
 
