@@ -330,6 +330,10 @@ code {
 
 /* Example data table style */
 
+.table-example table {
+  width: auto;
+}
+
 .table-example tbody {
   font-family: monospace;
 }

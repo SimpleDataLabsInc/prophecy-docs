@@ -28,6 +28,8 @@ Next to **Deduplicate On Columns**, choose how to keep certain rows.
 
 Suppose you're deduplicating the following table.
 
+<div class="table-example">
+
 | First_Name | Last_Name | Type  | Contact           |
 | :--------- | :-------- | :---- | :---------------- |
 | John       | Doe       | phone | 123-456-7890      |
@@ -38,11 +40,15 @@ Suppose you're deduplicating the following table.
 | Alice      | Johnson   | email | alice@johnson.com |
 | Alice      | Johnson   | email | alice@johnson.com |
 | Bob        | Smith     | email | bob@smith.com     |
+
+</div>
 
 ## Distinct Rows
 
 If you use **Distinct Rows**, the output would be:
 
+<div class="table-example">
+
 | First_Name | Last_Name | Type  | Contact           |
 | :--------- | :-------- | :---- | :---------------- |
 | John       | Doe       | phone | 123-456-7890      |
@@ -50,7 +56,11 @@ If you use **Distinct Rows**, the output would be:
 | Alice      | Johnson   | email | alice@johnson.com |
 | Bob        | Smith     | email | bob@smith.com     |
 
+</div>
+
 If you want to remove the Alice Johnson duplicates, you can specify a subset of columns to deduplicate. In this case, you want to determine duplication based on `First_Name` and `Last_Name` columns. However, this will remove additional columns. Use First or Last to preserve the other columns in the output.
+
+<div class="table-example">
 
 | First_Name | Last_Name |
 | :--------- | :-------- |
@@ -58,13 +68,19 @@ If you want to remove the Alice Johnson duplicates, you can specify a subset of 
 | Alice      | Johnson   |
 | Bob        | Smith     |
 
+</div>
+
 ## Unique Only
 
 For **Unique Only**, the output would be:
 
+<div class="table-example">
+
 | First_Name | Last_Name | Type  | Contact       |
 | :--------- | :-------- | :---- | :------------ |
 | Bob        | Smith     | email | bob@smith.com |
+
+</div>
 
 This outputs one unique row because the rest were duplicates.
 
