@@ -115,10 +115,10 @@ The following example fetches all customer data from BigQuery table using Prophe
 <iframe src="https://user-images.githubusercontent.com/103921419/233473742-49cb6104-1f4b-4380-b34d-b89dc81d7921.mp4" title="BigQuery Source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"/>
 </div></div>
 
-### Generated code {#source-code}
+### Compiled code {#source-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block
@@ -185,10 +185,10 @@ The Target gem writes data to BigQuery and allows you to optionally specify the 
 | overwrite  | If the data already exists, overwrite the data with the contents of the `DataFrame`. |
 | append     | If the data already exists, append the contents of the `DataFrame`.                  |
 
-### Generated code {#target-code}
+### Compiled code {#target-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block

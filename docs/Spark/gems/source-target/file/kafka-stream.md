@@ -57,10 +57,10 @@ The Source gem reads data from Kafka stream in batch mode and allows you to opti
 
 ![Example usage of Filter](./img/kafka_source_eg_1.png)
 
-### Generated Code {#source-code}
+### Compiled code {#source-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block
@@ -159,10 +159,10 @@ The Target gem writes data to each row from the `Dataframe` to a Kafka topic as 
 
 ![Example usage of Filter](./img/kafka_target_eg_1.png)
 
-### Generated Code {#target-code}
+### Compiled code {#target-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block
@@ -205,7 +205,7 @@ In this example, you read JSON messages from Kafka, parse them, remove any null 
 ![Example usage of Filter](./img/kafka_pipeline_eg.gif)
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 #### Metadata Table
@@ -234,7 +234,7 @@ For production workflows the [phase](/engineers/gems#gem-phase) for the `Script`
 #### Spark Code used for script component
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block

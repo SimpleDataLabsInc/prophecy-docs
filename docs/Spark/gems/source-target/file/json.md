@@ -45,7 +45,7 @@ The Source gem reads data from JSON files and allows you to optionally specify t
 | ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
 | Description                                                | Description of your dataset.                                                                                                                                                                                | None                               |
 | Use user-defined schema                                    | Whether to use the schema you define.                                                                                                                                                                       | true                               |
-| Parse Multi-line records                                   | Whether to parse one record, which may span multiple lines, per file. <br/>JSON built-in functions ignore this option.                                                                                      | false                              |
+| Parse Multi-line records                                   | Whether to parse one record, which may span multiple lines, per file. <br/>**You must enable this if your JSON file is more than one line long.** <br/>JSON built-in functions ignore this option.          | false                              |
 | New line separator                                         | Sets a separator for each line. The separator can be one or more characters. <br/>JSON built-in functions ignore this option.                                                                               | `\r`, `\r\n` and `\n`              |
 | Infer primitive values as string type                      | Whether to infer all primitive values as a `String` type.                                                                                                                                                   | false                              |
 | Infer floating-point values as decimal or double type      | Whether to infer all floating-point values as a `Decimal` type. <br/>If the value does not fit in `Decimal`, then the Source gem infers them as a `Double`.                                                 | false                              |
@@ -78,10 +78,10 @@ The Source gem reads data from JSON files and allows you to optionally specify t
 <iframe src="https://user-images.githubusercontent.com/130362885/234556861-d5b82f1a-883e-4b49-bebe-0ac47511583e.mp4" title="Json Source" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-### Generated Code {#source-code}
+### Compiled code {#source-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block
@@ -148,10 +148,10 @@ The Target gem writes data to JSON files and allows you to optionally specify th
 <iframe src="https://user-images.githubusercontent.com/130362885/234556999-72c22d9b-c99e-4e6c-8887-b54b8d5d94f1.mp4" title="Json Target" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-### Generated Code {#target-code}
+### Compiled code {#target-code}
 
 :::tip
-To see the generated source code of your project, [switch to the Code view](/engineers/project-lifecycle/#review-the-code) in the project header.
+To see the compiled code of your project, [switch to the Code view](/engineers/pipelines#project-editor) in the project header.
 :::
 
 ````mdx-code-block
