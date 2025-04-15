@@ -6,13 +6,13 @@ description: Save and view project history
 tags: []
 ---
 
-When you build projects in Prophecy, you can save and publish your work with the click of a button. Prophecy creates a linear version history per project where you can audit changes, see collaborator activity, and revert to previous versions. Keep reading to learn about the different types of version control in Prophecy, the stages of the visual workflow, and the relationship to [Git](#powered-by-git).
+This page details the different types of version control in Prophecy, the stages of the visual workflow, and the relationship to [Git](#powered-by-git).
 
 <!-- insert image of simple version control menu in top-right corner -->
 
 ## Version control options
 
-When you create a SQL project in Prophecy, you will have the option to select the Git storage model for the project. There are a few models to choose from.
+When you create a SQL project in Prophecy, you will have the option to select the Git Storage Model for the project. There are a few models to choose from.
 
 | Git Storage Model | Description                                                                                                                              |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
@@ -20,13 +20,15 @@ When you create a SQL project in Prophecy, you will have the option to select th
 | Normal (no forks) | Enables the typical Git workflow aligned with DevOps best practices. Users all work in the same repository on different branches.        |
 | Fork per user     | (External Git only) Enables the typical Git workflow aligned with DevOps best practices. Users work on their own copy of the repository. |
 
-The following sections demonstrate the **visual workflow** for projects that use the Simple Git storage model. To view the workflow for normal Git, visit the section on [Git](/engineers/git) in the documentation.
+The following sections demonstrate the **visual workflow** for projects that use the Simple Git Storage Model. To view the workflow for normal Git, visit the section on [Git](/engineers/git) in the documentation.
 
 :::note
 The way you use Git will also influence how you collaborate in Prophecy. To learn more, visit [Real-time collaboration](docs/analysts/development/collaboration/collaboration-modes.md).
 :::
 
-## Versioning workflow
+## Workflow
+
+The following sections describe the versioning workflow for the Simple Git Storage Model. In Simple mode, Prophecy creates a linear version history per project where you can audit changes, see collaborator activity, and revert to previous versions.
 
 ### Save to draft
 
@@ -71,10 +73,14 @@ To restore a previous version:
 
 As you move through the versioning workflow in your project, Prophecy actually maps these actions to Git processes in the backend. In other words, actions like saving, publishing, and restoring changes trigger Git commands. This is possible because all Prophecy projects are hosted on Git, regardless of the project's Git storage model (simple or normal).
 
-The following table explains what each versioning action does in Git. If you connect to an external Git provider (rather than use Prophecy-managed Git), you can view how each action in is reflected in Git as you work on your project.
+The following diagram explains what each versioning action does in Git. If you connect to an external Git provider (rather than use Prophecy-managed Git), you can view how each action in is reflected in Git as you work on your project.
 
-| Prophecy action          | Git backend                                                                                                                                                                      |
-| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Save to draft            | <ul class="table-list"><li>Pulls changes from the remote development branch</li><li>Pulls changes from the main branch</li><li>Commits changes to a development branch</li></ul> |
-| Publish                  | <ul class="table-list"><li>Merges changes into the main branch</li><li>Adds a Git tag with the published version number</li></ul>                                                |
-| Restore previous version | <ul class="table-list"><li>Runs `git reset --soft`</li><li>Commits the changes</li><li>Pushes the changes</li></ul>                                                              |
+![Simple Git](../img/git-flow-simple.png)
+
+The table below reiterates the diagram.
+
+| Action in Prophecy       | Action in Git                                                                                                                                                                                               |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Save to draft            | <ul class="table-list"><li>Pull changes from the remote `dev` branch</li><li>Pull changes from the local `main` branch</li><li>Commit changes to local `dev`</li><li>Push changes to remote `dev`</li></ul> |
+| Publish                  | <ul class="table-list"><li>Merge changes into local `main`</li><li>Add a Git Tag with the published version number</li><li>Push changes to remote `main`</li></ul>                                          |
+| Restore previous version | <ul class="table-list"><li>Run `git reset --soft`</li><li>Commit the changes to revert in `dev`</li><li>Push changes to remote `dev` branch</li></ul> (Publish the project to merge to `main`)              |

@@ -16,6 +16,10 @@ As you build your pipelines, you'll be able to:
 - Browse data from established connections in the Environment browser.
 - Add data to your pipeline directly from the Environment browser.
 
+:::info
+See the [list of connections](docs/administration/fabrics/prophecy-fabrics/connections/connections.md) in the Administration section of the documentation to find all available connections.
+:::
+
 ## Connections in the Environment browser
 
 Connections allow Prophecy to access specific data from external providers using your credentials. The data will appear in the [Environment browser](docs/analysts/development/pipelines/pipelines.md#sidebar) of the project sidebar, allowing you to easily locate data, explore data, and add data to your pipeline canvas. Data access permissions are inherited from your external user account.

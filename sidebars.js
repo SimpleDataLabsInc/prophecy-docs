@@ -117,11 +117,10 @@ const sidebars = {
                 {
                   type: "category",
                   label: "Table",
-                  link: {
-                    type: "doc",
-                    id: "analysts/development/gems/source-target/table/table",
-                  },
                   items: [
+                    "analysts/development/gems/source-target/table/table",
+                    "analysts/development/gems/source-target/table/view",
+                    "analysts/development/gems/source-target/table/seed",
                     "analysts/development/gems/source-target/table/upload-files",
                   ],
                 },
@@ -144,6 +143,13 @@ const sidebars = {
                     "analysts/development/gems/source-target/external-table/snowflake",
                     "analysts/development/gems/source-target/external-table/mssql",
                     "analysts/development/gems/source-target/external-table/mongodb",
+                  ],
+                },
+                {
+                  type: "category",
+                  label: "Troubleshooting",
+                  items: [
+                    "analysts/development/gems/source-target/troubleshooting/multi-source-table",
                   ],
                 },
               ],
