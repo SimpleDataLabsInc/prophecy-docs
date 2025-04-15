@@ -318,3 +318,9 @@ img {
   margin: 0 !important;
   padding-left: 1rem !important;
 }
+
+/** Remove default border from code styles **/
+
+code {
+  border: none !important;
+}
