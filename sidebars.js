@@ -238,7 +238,12 @@ const sidebars = {
             type: "doc",
             id: "analysts/development/copilot/copilot-analysts",
           },
-          items: ["analysts/development/copilot/pipeline-generation"],
+          items: [
+            "analysts/development/copilot/gem-generation",
+            "analysts/development/copilot/expression-generation",
+            "analysts/development/copilot/auto-documentation",
+            "analysts/development/copilot/generate-fix",
+          ],
         },
         "analysts/development/connections",
         "analysts/development/data-explorer",
@@ -482,6 +487,12 @@ const sidebars = {
             },
             "Spark/gems/expression-builder",
           ],
+        },
+        {
+          type: "category",
+          label: "Copilot",
+          link: { type: "doc", id: "Spark/copilot/copilot-for-spark" },
+          items: [],
         },
         {
           type: "category",

@@ -26,7 +26,7 @@ The gem will send email(s) when it runs. No output table will be generated.
 
 | Parameter                   | Description                                                                                                                                                                 |
 | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Select or create connection | Defines which [SMTP connection](docs/administration/fabrics/prophecy-fabrics/connections/smpt.md) to use for the gem. This will also determine the **sender** of the email. |
+| Select or create connection | Defines which [SMTP connection](docs/administration/fabrics/prophecy-fabrics/connections/smtp.md) to use for the gem. This will also determine the **sender** of the email. |
 | To                          | Specifies the recipient(s) of the email. You can add multiple recipients.                                                                                                   |
 | Cc                          | Specifies the recipients to be included in the CC field.                                                                                                                    |
 | Bc                          | Specifies the recipients to be included in the BCC field.                                                                                                                   |
