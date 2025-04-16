@@ -17,7 +17,7 @@ In Prophecy, you can do the following with variant data:
 
 - Infer the variant schema
 - Configure the parsing limit for inferring the column structure
-- Use a nested column inside of the Visual Expression Builder
+- Use a nested column inside of the visual expression builder
 
 ## Infer and edit variant data types
 
