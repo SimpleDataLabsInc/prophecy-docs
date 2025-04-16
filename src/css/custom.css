@@ -324,3 +324,9 @@ img {
 code {
   border: none !important;
 }
+
+/* Add rounded borders to all images */
+
+img {
+  border-radius: 8px; /* Adjust the value to your liking */
+}
