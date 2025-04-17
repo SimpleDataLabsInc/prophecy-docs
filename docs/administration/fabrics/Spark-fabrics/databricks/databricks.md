@@ -37,7 +37,7 @@ Provide the following information to verify your Databricks credentials.
   When using **Active Directory**, Prophecy takes care of the auto-generation and refreshing of the Databricks personal access tokens. Read more about it [here](https://docs.microsoft.com/en-us/azure/databricks/dev-tools/api/latest/aad/).
   :::
 
-- **Service Principal Client Secret** and **Service Principal Client ID**. This is required when you use [OAuth for project deployment](<(/databricks-oauth-authentication/#machine-to-machine-m2m)>).
+- **Service Principal Client Secret** and **Service Principal Client ID**. This is required when you use [OAuth for project deployment](/databricks-oauth-authentication/#machine-to-machine-m2m).
 
 ### Job Sizes
 
