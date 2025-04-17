@@ -52,7 +52,7 @@ export default function Requirements(props) {
       {props.uc_shared && (
         <a href="https://docs.prophecy.io/administration/fabrics/Spark-fabrics/databricks/ucshared">
           <span className="badge-spark">
-            <span className="left">Databricks UC Shared</span>
+            <span className="left">Databricks UC Standard</span>
             <span className="right">{props.uc_shared}</span>
           </span>
         </a>

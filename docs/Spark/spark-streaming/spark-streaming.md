@@ -15,13 +15,13 @@ Streaming [pipelines](/engineers/pipelines) work differently from batch pipeline
 3. Streaming applications handle transient data rather than maintain the entire data. Aggregations and joins require watermarking for maintaining a limited state.
 4. All Streaming datasets can behave similarly to Batch datasets using the Spark [`ForEachBatch`](https://spark.apache.org/docs/latest/api/python/reference/pyspark.ss/api/pyspark.sql.streaming.DataStreamWriter.foreachBatch.html), though `ForEachBatch` is not supported by Prophecy.
 
-The streaming capability is available for `Python` projects that do not use UC Shared clusters.
+The streaming capability is available for `Python` projects that do not use UC standard clusters.
 
-| Project Type | Spark Cluster Access Mode | Spark Cluster Type | Structured Streaming Capability   |
-| ------------ | ------------------------- | ------------------ | --------------------------------- |
-| Python       | Single User               | UC, legacy         | Supported as of Prophecy3.4.x     |
-| Python       | Shared                    | UC                 | Not supported as of Prophecy3.4.x |
-| Scala        | Any Mode                  | Any type           | Not supported as of Prophecy3.4.x |
+| Project Type | Spark Cluster Access Mode        | Spark Cluster Type | Structured Streaming Capability   |
+| ------------ | -------------------------------- | ------------------ | --------------------------------- |
+| Python       | Dedicated (formerly single user) | UC, legacy         | Supported as of Prophecy3.4.x     |
+| Python       | Standard (formerly shared)       | UC                 | Not supported as of Prophecy3.4.x |
+| Scala        | Any Mode                         | Any type           | Not supported as of Prophecy3.4.x |
 
 ## Spark Structured Streaming using Prophecy IDE
 
