@@ -79,9 +79,13 @@ Imagine you are simulating an investment that earns a fixed percentage of intere
 
 For this example, the input of the WhileIterator will be a simple table that describes your starting investment and the fixed interest rate.
 
+<div class="table-example">
+
 | year | principal | interest_rate |
 | ---- | --------- | ------------- |
 | 0    | 1000      | 0.05          |
+
+</div>
 
 ### Add Reformat gem
 
@@ -92,11 +96,11 @@ Now, let's use a Reformat gem in the WhileIterator subgraph to update the **Year
 1. Connect the Reformat gem to the WhileIterator_Output.
 1. Configure the **Expressions** table as it is shown below.
 
-| Target Column | Expression                             |
-| ------------- | -------------------------------------- |
-| year          | year + 1                               |
-| principal     | principal + principal \* interest_rate |
-| interest_rate | interest_rate                          |
+   | Target Column | Expression                             |
+   | ------------- | -------------------------------------- |
+   | year          | year + 1                               |
+   | principal     | principal + principal \* interest_rate |
+   | interest_rate | interest_rate                          |
 
 ### Terminate loop
 
@@ -116,6 +120,8 @@ The **out0** dataset should be empty because we used a Filter gem to return an e
 
 Below is an example **out1** dataset. This lets you project how your principal will grow over the years.
 
+<div class="table-example">
+
 | year | principal      | interest_rate |
 | ---- | -------------- | ------------- |
 | 1    | 1050           | 0.05          |
@@ -133,3 +139,5 @@ Below is an example **out1** dataset. This lets you project how your principal w
 | 13   | 1885.649142323 | 0.05          |
 | 14   | 1979.931599439 | 0.05          |
 | 15   | 2078.928179411 | 0.05          |
+
+</div>

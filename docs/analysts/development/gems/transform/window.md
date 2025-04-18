@@ -1,5 +1,5 @@
 ---
-title: Window
+title: WindowFunction
 id: window
 slug: /analysts/window
 description: Create moving aggregations and transformation
@@ -26,10 +26,9 @@ The WindowFunction lets you define a **WindowSpec** and apply window functions o
 | Range frame       | Range based frame boundary to apply on Window                                               | False                                                                                                     |
 
 :::info
-When `Order Columns` are not defined, an unbounded window frame `(rowFrame, unboundedPreceding, unboundedFollowing)` is used by default.
-:::
-:::info
-When `Order Columns` are defined, a growing window frame `(rangeFrame, unboundedPreceding, currentRow)` is used by default.
+When `Order Columns` **are not** defined, this gem uses an unbounded window frame `(rowFrame, unboundedPreceding, unboundedFollowing)` by default.
+
+When `Order Columns` **are** defined, this gem uses a growing window frame `(rangeFrame, unboundedPreceding, currentRow)` by default.
 :::
 
 ### Examples
@@ -44,11 +43,12 @@ Only the default window frame `(rowFrame, unboundedPreceding, currentRow)` can b
 #### Analytical Functions with Window
 
 Examples of analytical functions are: `lead()`, `lag()`, `cume_dist()`, etc.
+
 :::info
-Window frame for `lead()` and `lag()` can not be specified.
-:::
-:::info
-Only the default window frame `(rangeFrame, unboundedPreceding, currentRow)` can be used with `cume_dist()`
+
+- A window frame for `lead()` and `lag()` can not be specified.
+- Only the default window frame `(rangeFrame, unboundedPreceding, currentRow)` can be used with `cume_dist()`
+
 :::
 
 #### Aggregate Functions with Window

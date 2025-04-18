@@ -15,9 +15,44 @@ Use the DataCleansing gem to standardize data formats and address missing or nul
 
 ## Parameters
 
-| Parameter                        | Description                                                     |
-| -------------------------------- | --------------------------------------------------------------- |
-| Select columns you want to clean | The set of columns on which to perform cleaning transformations |
-| Remove null data                 | The method used to remove null data                             |
-| Replace null values in column    | The method used to replace null values                          |
-| Clean data                       | Different ways to standardize the format of data in columns     |
+| Parameter                        | Description                                                                                                                      |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Remove nulls from entire dataset | Removes any rows that contain null values. <br/>This operates on all columns—not just those you selected to clean.               |
+| Select columns to clean          | Specifies the columns to apply data cleansing transformations to.                                                                |
+| Replace null values in column    | Replaces null values in selected columns with a specified default. <br/> Example: `0` for numeric columns, empty string for text |
+| Remove unwanted characters       | Removes specified characters from all values in the selected columns. <br/>Example: remove whitespaces or punctuation            |
+| Modify case                      | Converts text in selected columns to a specified case format. <br/> Example: lowercase, UPPERCASE, Title Case                    |
+
+## Example
+
+Assume you have a dataset that includes all entries from a feedback survey.
+
+<div class="table-example">
+
+| Name  | Date       | Rating | Feedback                   |
+| ----- | ---------- | ------ | -------------------------- |
+| Ada   | 2025-04-18 | 5      | I really enjoy the product |
+| scott | 2025-04-18 | 5      | NULL                       |
+| emma  | 2025-04-17 | 2      | The product is confusing   |
+| NULL  | 2025-04-17 | 3      | NULL                       |
+
+</div>
+
+The following is one way to configure a DataCleansing gem for this table:
+
+1. Select columns to clean: `Name`
+1. Replace null values in column: `Not provided`
+1. Modify case: `Title Case`
+
+After the transformation, the table will look like:
+
+<div class="table-example">
+
+| Name         | Date       | Rating | Feedback                   |
+| ------------ | ---------- | ------ | -------------------------- |
+| Ada          | 2025-04-18 | 5      | I really enjoy the product |
+| Scott        | 2025-04-18 | 5      | NULL                       |
+| Emma         | 2025-04-17 | 2      | The product is confusing   |
+| Not provided | 2025-04-17 | 3      | NULL                       |
+
+</div>

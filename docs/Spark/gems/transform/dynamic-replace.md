@@ -60,10 +60,14 @@ The DynamicReplace gem requires two inputs. These are:
 
 The parameters dataset must follow a specific format to define how values should be replaced. Below is an example parameters table:
 
+<div class="table-example">
+
 | original_column | condition         | output_value |
 | --------------- | ----------------- | ------------ |
-| sales           | `sales > 200000`  | 200000       |
-| sales           | `sales <= 200000` | sales        |
+| sales           | sales `>` 200000  | 200000       |
+| sales           | sales `<=` 200000 | sales        |
+
+</div>
 
 Each row represents a condition that will be applied to a certain column. In this case, these conditions are:
 
