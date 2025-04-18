@@ -13,13 +13,13 @@ tags:
 
 Use the Email gem to send your pipeline output tables to others via email.
 
-## Input and Output
+## Input
 
-| Port    | Description                                                                                                                                               |
-| ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **in0** | The table that will be sent with the email. You can only configure one input. You do not need to write the input table to storage to send it in an email. |
+| Port    | Description                                                                                                                                                    |
+| ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **in0** | The table that will be sent with the email. You can only configure one input. <br/>You do not need to write the input table to storage to send it in an email. |
 
-The gem will send email(s) when it runs. No output table will be generated.
+The gem will send email(s) when it runs. No output table will be written to your data warehouse.
 
 ## Parameters
 
@@ -31,4 +31,4 @@ The gem will send email(s) when it runs. No output table will be generated.
 | Bc                          | Specifies the recipients to be included in the BCC field.                                                                                                                   |
 | Subject                     | Defines the subject of the email, providing a brief summary of its content.                                                                                                 |
 | Body                        | Contains the main content or body of the email, where you can provide the message.                                                                                          |
-| Include Data as Attachment  | Checkbox that enables sending input data as an attachment in the email.                                                                                                     |
+| Include Data as Attachment  | Checkbox that enables sending input data as an attachment in the email. <br/>You can send the data as an XLSX or CSV file.                                                  |
