@@ -43,8 +43,27 @@ Use the FuzzyMatch gem to identify non-identical duplicates in your data.
 
 One common use case for the FuzzyMatch gem is to match similarly spelled names. This can be useful for identifying accidentally misspelled names.
 
-1. Create a FuzzyMatch gem and use the **customer_id** as the Record ID. Then, add a match field for the **first_name** column.
+Here's a table with two entries for Alex Taylor, whose phone number was updated:
+
+<div class="table-example">
+
+| id  | email                 | phone        | first_name | last_name | date_added |
+| --- | --------------------- | ------------ | ---------- | --------- | ---------- |
+| 1   | `alex.t@example.com`  | 123-456-7890 | Alex       | Taylor    | 2023-01-01 |
+| 2   | `alex.t@example.com`  | 123-456-9542 | Alex       | Ttaylor   | 2023-07-01 |
+| 3   | `sam.p@example.com`   | 987-654-3210 | Sam        | Patel     | 2024-03-15 |
+| 4   | `casey.l@example.com` | 555-111-2222 | Casey      | Lee       | 2024-05-01 |
+
+</div>
+
+You can use the FuzzyMatch gem to find the closely spelled name.
+
+1. Create a FuzzyMatch gem and use the **id** as the Record ID. Then, add a match field for the **last_name** column.
 
 2. Run the gem and see that the output includes the Record IDs of the records with fuzzy matches.
+
+   | id  | id2 | similarityScore    |
+   | --- | --- | ------------------ |
+   | 1   | 2   | 0.9111111111111111 |
 
 3. Join the output with the original dataset to view the matched names.

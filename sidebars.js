@@ -160,7 +160,7 @@ const sidebars = {
               items: [
                 "analysts/development/gems/transform/aggregate",
                 "analysts/development/gems/transform/dynamic-select",
-                "analysts/development/gems/join-split/fuzzy-match",
+                "analysts/development/gems/transform/fuzzy-match",
                 "analysts/development/gems/transform/pivot",
                 "analysts/development/gems/transform/transpose",
                 "analysts/development/gems/transform/window",
@@ -187,6 +187,9 @@ const sidebars = {
               items: [
                 "analysts/development/gems/join-split/join",
                 "analysts/development/gems/join-split/union",
+                "analysts/development/gems/join-split/union-by-name",
+                "analysts/development/gems/join-split/intersect",
+                "analysts/development/gems/join-split/except",
                 "analysts/development/gems/join-split/dynamic-replace",
               ],
             },

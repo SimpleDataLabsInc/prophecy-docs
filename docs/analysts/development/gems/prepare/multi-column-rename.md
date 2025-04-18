@@ -20,7 +20,20 @@ The MultiColumnRename gem can be used to systematically rename multiple columns 
 | Select columns to rename | The set of columns that you will rename.                                                                              |
 | Rename method            | The way you will rename columns. <br/>You can either add a prefix/suffix, or choose advanced rename (SQL expression). |
 
-## Example: Lowercase
+## Example
+
+Assume you have the following table.
+
+<div class="table-example">
+
+| DatePrediction | TemperatureCelsius | HumidityPercent | WindSpeed | Condition |
+| -------------- | ------------------ | --------------- | --------- | --------- |
+| 2025-03-01     | 15                 | 65              | 10        | Sunny     |
+| 2025-03-02     | 17                 | 70              | 12        | Cloudy    |
+| 2025-03-03     | 16                 | 68              | 11        | Rainy     |
+| 2025-03-04     | 14                 | 72              | 9         | Sunny     |
+
+</div>
 
 To standardize column names by converting them to lowercase, use the **Advanced rename** option in the MultiColumnRename gem with a custom SQL expression.
 
@@ -43,3 +56,14 @@ To standardize column names by converting them to lowercase, use the **Advanced 
 1. Click **Done** on the code box, and then click **Save** on your gem.
 
 After saving and running the gem, all selected columns will be renamed using the lower function. In this case, all column names should be lowercase in the output table.
+
+<div class="table-example">
+
+| dateprediction | temperaturecelsius | humiditypercent | windspeed | condition |
+| -------------- | ------------------ | --------------- | --------- | --------- |
+| 2025-03-01     | 15                 | 65              | 10        | Sunny     |
+| 2025-03-02     | 17                 | 70              | 12        | Cloudy    |
+| 2025-03-03     | 16                 | 68              | 11        | Rainy     |
+| 2025-03-04     | 14                 | 72              | 9         | Sunny     |
+
+</div>
