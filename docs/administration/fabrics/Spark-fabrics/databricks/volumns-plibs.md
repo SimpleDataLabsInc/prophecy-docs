@@ -2,7 +2,7 @@
 title: Set up Prophecy libraries in Databricks volumes
 sidebar_label: ProphecyLibs in volumes
 id: volumes-plibs
-slug: /engineers/dbx-volumes-plibs
+slug: /admin/dbx-volumes-plibs
 description: Add ProphecyLibs directly to volumes when Maven/PyPI is blocked on Databricks
 tags: [unity catalog, databricks, plibs]
 ---
@@ -96,4 +96,4 @@ For all relevant Databricks fabrics, you'll need to update the location of the P
 
 ## Whitelist for UC standard clusters
 
-To whitelist the Init Script and the JAR path, follow the instructions to [add Prophecy libraries to your Databricks allowlist](/engineers/dbx-whitelist-plibs).
+To whitelist the Init Script and the JAR path, follow the instructions to [add Prophecy libraries to your Databricks allowlist](/admin/dbx-whitelist-plibs).

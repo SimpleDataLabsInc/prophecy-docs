@@ -2,7 +2,7 @@
 title: Add Prophecy libraries to allowlist for UC standard clusters
 sidebar_label: Allowlist ProphecyLibs
 id: whitelist-plibs
-slug: /engineers/dbx-whitelist-plibs
+slug: /admin/dbx-whitelist-plibs
 description: Make ProphecyLibs available to Databricks UC standard clusters
 tags: [unity catalog, databricks, plibs]
 ---
@@ -92,7 +92,7 @@ curl -v --location --request PUT '<databricks-host>/api/2.1/unity-catalog/artifa
 
 ### Volume path for JARs
 
-Run the following in the command line to whitelist a volume path for JARs. This is relevant if you have [set up Prophecy libraries in a Databricks volume](/engineers/dbx-volumes-plibs).
+Run the following in the command line to whitelist a volume path for JARs. This is relevant if you have [set up Prophecy libraries in a Databricks volume](/admin/dbx-volumes-plibs).
 
 ```bash
 curl -v --location --request PUT '<databricks-host>/api/2.1/unity-catalog/artifact-allowlists/LIBRARY_JAR' \

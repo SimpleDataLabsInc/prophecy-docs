@@ -68,7 +68,7 @@ When using Unity Catalog clusters with standard (formerly shared) access mode, n
 Prophecy libraries are Scala and Python libraries that extend the functionality of Apache Spark. These libraries are automatically installed in your Spark execution environment when you attach to a cluster or create a new one.
 
 :::info Whitelist Prophecy libraries
-To use Prophecy libraries in Databricks environments that have enabled Unity Catalog, you must whitelist the required Maven coordinates or JAR paths. Find instructions [here](/engineers/dbx-whitelist-plibs).
+To use Prophecy libraries in Databricks environments that have enabled Unity Catalog, you must whitelist the required Maven coordinates or JAR paths. Find instructions [here](/admin/dbx-whitelist-plibs).
 :::
 
 #### Public Central (Default)

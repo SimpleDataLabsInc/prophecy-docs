@@ -47,7 +47,7 @@ Prophecy libraries provide several high-performance connectors missing from the 
 
 ## Download Prophecy libraries
 
-If you want to download Prophecy libraries, you can find them publicly from the following cloud providers. For example, if Maven/PyPI is blocked on Databricks, you may want to [add Prophecy libraries to your Databricks volumes](/engineers/dbx-volumes-plibs).
+If you want to download Prophecy libraries, you can find them publicly from the following cloud providers. For example, if Maven/PyPI is blocked on Databricks, you may want to [add Prophecy libraries to your Databricks volumes](/admin/dbx-volumes-plibs).
 
 ### Azure
 
