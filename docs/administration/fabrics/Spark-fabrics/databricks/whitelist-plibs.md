@@ -21,31 +21,27 @@ To whitelist Prophecy libraries in Databricks, you need to be a [Databricks meta
 
 Follow the instructions to whitelist Prophecy libraries through the Databricks UI.
 
-1. **Check your Prophecy Library version**
+1. Check your Prophecy Library version.
 
    Find your project's Prophecy library version by checking the ProphecyLibs dependency in your [project metadata](/projects#metadata).
 
-1. **Check your cluster's Spark version**
+1. Note your Databricks cluster's Spark version.
 
-   Note the Spark version used by your Databricks cluster.
-
-1. **Copy the corresponding Maven coordinate**
+1. Copy the corresponding Maven coordinate.
 
    Format: `io.prophecy:prophecy-libs_2.12:<version>`
 
    Example: `io.prophecy:prophecy-libs_2.12:3.5.0-8.0.31`
 
-   You can look up versions on Maven Repository that are compatible with your Spark version.
+   You can look up versions on [Maven Repository](https://mvnrepository.com/artifact/io.prophecy/prophecy-libs) that are compatible with your Spark version.
 
-1. **Navigate to allowlist in Databricks**
+1. Navigate to allowlist in Databricks.
 
-   Go to **Catalog → Metastore → Allowed JARs/Init Scripts** to add the path/coordinates.
+   Go to **Catalog → Metastore → Allowed JARs/Init Scripts** to add the path or coordinates.
 
    ![Databricks allow list](../img/dbx-allowlist.png)
 
-1. **(Optional) Add initialization script**
-
-   You can also use the **Init Script** option to pre-configure allowlist behavior.
+1. (Optional) Add initialization script to pre-configure allowlist behavior.
 
 ## Option 2: Edit allowlist via Python Notebook
 

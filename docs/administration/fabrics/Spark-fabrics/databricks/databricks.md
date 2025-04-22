@@ -25,31 +25,39 @@ Each fabric is associated with one team. All team members will be able to access
 
 Provide the following information to verify your Databricks credentials.
 
-- **Databricks Workspace URL**. The URL that points to the workspace that the fabric will use as the execution environment.
+#### Databricks Workspace URL
 
-- **Authentication Method**. Prophecy supports authentication via [Personal Access Token](https://docs.databricks.com/dev-tools/api/latest/authentication.html#generate-a-personal-access-token) (PAT) and [OAuth](/databricks-oauth-authentication).
+The URL that points to the workspace that the fabric will use as the execution environment.
 
-  :::caution
-  Each user in the team will have to authenticate individually using the method you select. An individual user's credentials will determine the level of access they have to Databricks from Prophecy. At minimum, you must have permission to attach clusters in Databricks to use the fabric.
-  :::
+#### Authentication Method
 
-  :::note
-  When using **Active Directory**, Prophecy takes care of the auto-generation and refreshing of the Databricks personal access tokens. Read more about it [here](https://docs.microsoft.com/en-us/azure/databricks/dev-tools/api/latest/aad/).
-  :::
+Prophecy supports authentication via [Personal Access Token](https://docs.databricks.com/dev-tools/api/latest/authentication.html#generate-a-personal-access-token) (PAT) and [OAuth](/databricks-oauth-authentication).
 
-- **Service Principal Client Secret** and **Service Principal Client ID**. This is required when you use [OAuth for project deployment](/databricks-oauth-authentication/#machine-to-machine-m2m).
+:::caution
+Each user in the team will have to authenticate individually using the method you select. An individual user's credentials will determine the level of access they have to Databricks from Prophecy. At minimum, you must have permission to attach clusters in Databricks to use the fabric.
+:::
+
+:::note
+When using **Active Directory**, Prophecy takes care of the auto-generation and refreshing of the Databricks personal access tokens. Read more about it [here](https://docs.microsoft.com/en-us/azure/databricks/dev-tools/api/latest/aad/).
+:::
+
+#### Service Principal Configuration
+
+You must provide the Service Principal Client Secret and Service Principal Client ID when you use [OAuth for project deployment](/databricks-oauth-authentication/#machine-to-machine-m2m).
 
 ### Job Sizes
 
-Job sizes determine the type of clusters that can be spawned from Prophecy. We recommend using the smallest machines and smallest number of nodes appropriate for your use case.
+Job sizes define the cluster configurations that Prophecy can spawn to run pipelines. We recommend choosing the smallest machine types and the fewest nodes necessary for your use case to optimize cost and performance.
 
-By default, Prophecy provides one job size that runs on [Databricks Runtime 14.3](https://docs.databricks.com/aws/en/compute#databricks-runtime). You can edit this job size and add new job sizes.
+By default, Prophecy includes a single job size that uses [Databricks Runtime 14.3](https://docs.databricks.com/aws/en/compute#databricks-runtime). You can modify this default configuration or define additional job sizes using the Prophecy UI.
+
+To create or update a job size, use the form view or switch to the JSON editor to paste your existing compute configuration from Databricks.
 
 ![Job Size configuration](../img/dbx-job-size.png)
 
-You can either configure the fields with our form, or toggle on the JSON view and copy-paste your compute JSON from Databricks.
-
+:::note
 The job size configuration mirrors the compute configuration in Databricks. To learn more about compute configuration in Databricks, visit their [reference](https://docs.databricks.com/aws/en/compute/configure) guide.
+:::
 
 :::caution
 When using Unity Catalog clusters with standard (formerly shared) access mode, note their [particular limitations](https://docs.databricks.com/en/compute/access-mode-limitations.html#shared-access-mode-limitations-on-unity-catalog). You can see all supported Prophecy features in our [UC standard cluster support](./ucshared) documentation.
@@ -57,24 +65,31 @@ When using Unity Catalog clusters with standard (formerly shared) access mode, n
 
 ### Prophecy Library
 
-Prophecy libraries are Scala and Python libraries that provide additional functionalities on top of Spark. These libraries are installed in your Spark execution environment when you attach to a cluster/create new cluster. You can select the following **Resolution Modes** to access Prophecy libraries:
-
-- **Public Central**. Retrieve Prophecy libraries from the public artifacts.
-
-  - ProphecyLibsScala: [Maven](https://mvnrepository.com/artifact/io.prophecy/prophecy-libs)
-
-  - ProphecyLibsPython: [PyPI](https://pypi.org/project/prophecy-libs/)
-
-- **Custom Artifactory**. Retrieve Prophecy libraries from an Artifactory URL. You can also download the Prophecy libraries from these links. Note that you can change the version from what the example URL shows.
-
-  - ProphecyLibsScala: `https://prophecy-public-bucket.s3.us-east-2.amazonaws.com/prophecy-libs/prophecy-libs-assembly-3.5.0-8.9.0.jar`
-
-  - ProphecyLibsPython: `https://prophecy-public-bucket.s3.us-east-2.amazonaws.com/python-prophecy-libs/prophecy_libs-1.9.45-py3-none-any.whl`
-
-- **File System**. Retrieve Prophecy libraries from your file system. To learn about setting up Prophecy libraries in your Databricks volumes, [click here](docs/administration/fabrics/Spark-fabrics/databricks/volumns-plibs.md).
+Prophecy libraries are Scala and Python libraries that extend the functionality of Apache Spark. These libraries are automatically installed in your Spark execution environment when you attach to a cluster or create a new one.
 
 :::info Whitelist Prophecy libraries
 To use Prophecy libraries in Databricks environments that have enabled Unity Catalog, you must whitelist the required Maven coordinates or JAR paths. Find instructions [here](/engineers/dbx-whitelist-plibs).
+:::
+
+#### Public Central (Default)
+
+Retrieve Prophecy libraries from the public artifact repository. Repositories are listed below.
+
+- ProphecyLibsScala: [Maven](https://mvnrepository.com/artifact/io.prophecy/prophecy-libs)
+- ProphecyLibsPython: [PyPI](https://pypi.org/project/prophecy-libs/)
+
+#### Custom Artifactory
+
+Retrieve Prophecy libraries from an Artifactory URL.
+
+#### File System
+
+Retrieve Prophecy libraries from a file system.
+
+For example, you can add the public S3 bucket path: `s3://prophecy-public-bucket/prophecy-libs/`
+
+:::note
+A full list of public paths can be found in the documentation on [Prophecy libraries](/engineers/prophecy-libraries#download-prophecy-libraries). You also can set up [Prophecy libraries in your Databricks volumes](docs/administration/fabrics/Spark-fabrics/databricks/volumns-plibs.md).
 :::
 
 ### Artifacts
