@@ -73,10 +73,7 @@ To use Prophecy libraries in Databricks environments that have enabled Unity Cat
 
 #### Public Central (Default)
 
-Retrieve Prophecy libraries from the public artifact repository. Repositories are listed below.
-
-- ProphecyLibsScala: [Maven](https://mvnrepository.com/artifact/io.prophecy/prophecy-libs)
-- ProphecyLibsPython: [PyPI](https://pypi.org/project/prophecy-libs/)
+Retrieve Prophecy libraries from the public artifact repository. Use [Maven](https://mvnrepository.com/artifact/io.prophecy/prophecy-libs) for Scala projects and [PyPI](https://pypi.org/project/prophecy-libs/) for Python projects.
 
 #### Custom Artifactory
 
