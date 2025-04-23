@@ -22,7 +22,7 @@ The MultiColumnRename gem can be used to systematically rename multiple columns 
 
 ## Example
 
-Assume you have the following table.
+Assume you have the following table that includes the weather forecast for the next four days.
 
 <div class="table-example">
 
@@ -54,6 +54,8 @@ To standardize column names by converting them to lowercase, use the **Advanced 
 1. Inside of the code box, write `column_name`. This applies the function to the column name.
 
 1. Click **Done** on the code box, and then click **Save** on your gem.
+
+### Result
 
 After saving and running the gem, all selected columns will be renamed using the lower function. In this case, all column names should be lowercase in the output table.
 

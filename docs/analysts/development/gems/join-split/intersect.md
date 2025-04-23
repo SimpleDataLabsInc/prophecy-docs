@@ -32,6 +32,15 @@ All input tables must have **identical schemas** (matching column names and data
 
 ## Example
 
+Let’s say you’re working with two tables: **Table A** and **Table B**.
+
+- Both tables contain order-related data.
+- **Table A** contains order information from customer `1`, `2`, and `3`.
+- **Table B** contains order information from customer `1`, `2`, `3`, and `4`.
+- These tables contain some identical records (duplicates).
+
+This example helps illustrate how the Intersect gem operates on the tables.
+
 ### Table A
 
 <div class="table-example">
@@ -58,7 +67,9 @@ All input tables must have **identical schemas** (matching column names and data
 
 </div>
 
-### Table A INTERSECT Table B
+### Result
+
+The table that results from the Intersect gem only includes the duplicate records.
 
 <div class="table-example">
 
@@ -68,3 +79,5 @@ All input tables must have **identical schemas** (matching column names and data
 | 104      | 3           | 2025-02-10 | 200.00 |
 
 </div>
+
+The output indicates that order `103` and `104` appear in both **Table A** and **Table B**.

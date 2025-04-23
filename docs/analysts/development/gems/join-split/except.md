@@ -8,7 +8,7 @@ tags: []
 
 <span class="badge">SQL</span><br/><br/>
 
-Use **Except** to extract rows that are present in the **first table** but **absent** from all subsequent tables. This is useful for identifying gaps, such as missing orders, unprocessed records, or customers who haven’t returned.
+Use the Except gem to extract rows that are present in the **first table** but **absent** from all subsequent tables. This is useful for identifying gaps, such as missing orders, unprocessed records, or customers who haven’t returned.
 
 ## Input and Output
 
@@ -31,6 +31,15 @@ All input tables must have **identical schemas** (matching column names and data
 | Preserve duplicate rows | Allow duplicates to appear in the output table |
 
 ## Example
+
+Let’s say you’re working with two tables: **Table A** and **Table B**.
+
+- Both tables contain order-related data.
+- **Table A** contains order information from customer `1`, `2`, and `3`.
+- **Table B** contains order information from customer `1`, `2`, `3`, and `4`.
+- These tables contain some identical records (duplicates).
+
+This example helps illustrate how the Except gem operates on the tables.
 
 ### Table A
 
@@ -58,7 +67,9 @@ All input tables must have **identical schemas** (matching column names and data
 
 </div>
 
-### Table A EXCEPT Table B
+### Result
+
+The table that results from the Except gem only includes records in Table A not in Table B.
 
 <div class="table-example">
 
@@ -68,3 +79,5 @@ All input tables must have **identical schemas** (matching column names and data
 | 102      | 2           | 2024-12-03 | 150.00 |
 
 </div>
+
+The output indicates that order `101` and `102` appear in **Table A**, but not in **Table B**.

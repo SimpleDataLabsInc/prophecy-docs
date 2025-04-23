@@ -35,6 +35,8 @@ Assume you have the following weather prediction table.
 
 </div>
 
+### Result
+
 The follow table results when you use the following filter condition: `DatePrediction > '2025-03-02'`
 
 <div class="table-example">

@@ -42,6 +42,8 @@ To configure a Transpose gem for this table:
 1. Select the data columns to unpivot. In the example above, all of the quarter columns (`Q1`, `Q2`, etc.) are your data columns.
 1. Save and run the gem.
 
+### Result
+
 After the transformation:
 
 - The quarter names (`Q1`, `Q2`, etc.) will move into a new `Name` column.

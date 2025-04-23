@@ -44,6 +44,8 @@ The following is one way to configure a DataCleansing gem for this table:
 1. Replace null values in column: `Not provided`
 1. Modify case: `Title Case`
 
+### Result
+
 After the transformation, the table will look like:
 
 <div class="table-example">

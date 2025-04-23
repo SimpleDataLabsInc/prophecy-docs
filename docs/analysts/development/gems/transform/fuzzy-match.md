@@ -62,8 +62,16 @@ You can use the FuzzyMatch gem to find the closely spelled name.
 
 2. Run the gem and see that the output includes the Record IDs of the records with fuzzy matches.
 
+   <div class="table-example">
+
    | id  | id2 | similarityScore    |
    | --- | --- | ------------------ |
    | 1   | 2   | 0.9111111111111111 |
 
+   </div>
+
 3. Join the output with the original dataset to view the matched names.
+
+:::info
+Depending on your SQL provider, you might see different similarity scores based on the algorithm that runs under the hood.
+:::
