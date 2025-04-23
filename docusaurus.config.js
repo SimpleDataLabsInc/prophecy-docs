@@ -266,7 +266,7 @@ const config = {
             from: "/copilot",
           },
           {
-            to: "/data-copilot-ai-capabilities",
+            to: "/engineers/copilot",
             from: "/copilot/copilot-ai-capabilities",
           },
           {

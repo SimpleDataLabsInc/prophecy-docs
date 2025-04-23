@@ -84,7 +84,7 @@ const sidebars = {
     {
       type: "html",
       className: "sidebar-title",
-      value: "Analysts <span class='badge'>Preview</span>",
+      value: "Analysts",
       defaultStyle: true,
     },
     {
@@ -117,11 +117,10 @@ const sidebars = {
                 {
                   type: "category",
                   label: "Table",
-                  link: {
-                    type: "doc",
-                    id: "analysts/development/gems/source-target/table/table",
-                  },
                   items: [
+                    "analysts/development/gems/source-target/table/table",
+                    "analysts/development/gems/source-target/table/view",
+                    "analysts/development/gems/source-target/table/seed",
                     "analysts/development/gems/source-target/table/upload-files",
                   ],
                 },
@@ -144,6 +143,13 @@ const sidebars = {
                     "analysts/development/gems/source-target/external-table/snowflake",
                     "analysts/development/gems/source-target/external-table/mssql",
                     "analysts/development/gems/source-target/external-table/mongodb",
+                  ],
+                },
+                {
+                  type: "category",
+                  label: "Troubleshooting",
+                  items: [
+                    "analysts/development/gems/source-target/troubleshooting/multi-source-table",
                   ],
                 },
               ],
@@ -220,7 +226,7 @@ const sidebars = {
               items: [
                 "analysts/development/gems/visual-expression-builder/visual-expression-builder-reference",
                 "analysts/development/gems/visual-expression-builder/use-the-expression-builder",
-                "analysts/development/gems/visual-expression-builder/variant-schema",
+                "analysts/development/gems/visual-expression-builder/variant-data-type",
               ],
             },
           ],
@@ -230,9 +236,14 @@ const sidebars = {
           label: "Copilot",
           link: {
             type: "doc",
-            id: "analysts/development/copilot/pipeline-generation",
+            id: "analysts/development/copilot/copilot-analysts",
           },
-          items: [],
+          items: [
+            "analysts/development/copilot/gem-generation",
+            "analysts/development/copilot/expression-generation",
+            "analysts/development/copilot/auto-documentation",
+            "analysts/development/copilot/generate-fix",
+          ],
         },
         "analysts/development/connections",
         "analysts/development/data-explorer",
@@ -476,6 +487,12 @@ const sidebars = {
             },
             "Spark/gems/expression-builder",
           ],
+        },
+        {
+          type: "category",
+          label: "Copilot",
+          link: { type: "doc", id: "Spark/copilot/copilot-for-spark" },
+          items: [],
         },
         {
           type: "category",

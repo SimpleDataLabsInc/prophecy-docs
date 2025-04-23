@@ -318,3 +318,15 @@ img {
   margin: 0 !important;
   padding-left: 1rem !important;
 }
+
+/** Remove default border from code styles **/
+
+code {
+  border: none !important;
+}
+
+/* Add rounded borders to all images */
+
+img {
+  border-radius: 8px; /* Adjust the value to your liking */
+}

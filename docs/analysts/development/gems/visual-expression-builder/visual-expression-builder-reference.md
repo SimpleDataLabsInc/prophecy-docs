@@ -2,7 +2,7 @@
 title: Visual expressions reference
 id: visual-expression-builder-reference
 slug: /analysts/visual-expression-builder-reference
-description: Visual Expression Builder reference
+description: visual expression builder reference
 tags:
   - reference
   - development
@@ -12,11 +12,11 @@ tags:
   - sql
 ---
 
-This page contains a reference of the different Visual Expression Builder components, which include the expression options, operator options, and data types.
+This page contains a reference of the different visual expression builder components, which include the expression options, operator options, and data types.
 
 ## Expression options
 
-The Visual Expression Builder supports the following expression options:
+The visual expression builder supports the following expression options:
 
 - **Column**: Allows you to select an input column from your source tables. You can view all of the available input columns from under the dropdown menu or under **Input** on the left-hand side of the gem dialog.
 - **Value**: Allows you to enter any kind of value.
@@ -39,11 +39,11 @@ The Visual Expression Builder supports the following expression options:
     - These are available only in expressions tables in Aggregate, Join, and Reformat gems.
 - **Configuration Variable**: Consists of **Model Variables** and **Project Variables**. You can see and edit your variables from the canvas settings by navigating to **...** > **Configuration**. When you select a project variable, you can add a default value if no value is set in the Configuration setting.
 - **Incremental**: Allows you to use for advanced dbt configurations.
-- **Custom Code**: Allows you can write your own custom code to create your own expressions that are not yet supported by the Visual Expression Builder. For example, you can use custom code to use mathematical operations, such as addition and subtraction. As you type, you'll be given suggestions.
+- **Custom Code**: Allows you can write your own custom code to create your own expressions that are not yet supported by the visual expression builder. For example, you can use custom code to use mathematical operations, such as addition and subtraction. As you type, you'll be given suggestions.
 
 ## Operator options
 
-The Visual Expression Builder supports the following operator options.
+The visual expression builder supports the following operator options.
 
 ### Comparison operators
 
@@ -68,7 +68,7 @@ Expressions support the following existence checks:
 
 ## Data types
 
-The Visual Expression Builder supports the following data types:
+The visual expression builder supports the following data types:
 
 - **Basic**:
   - Boolean
