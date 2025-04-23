@@ -22,7 +22,7 @@ You can also use the [upload file](docs/analysts/development/gems/source-target/
 | Select or create connection | Whether to select an existing connection, or to create a new one. |
 | Filepath                    | The file path according to the connection type.                   |
 
-## Source Properties
+### Source properties
 
 | Property                      | Description                                                    | Default |
 | ----------------------------- | -------------------------------------------------------------- | ------- |

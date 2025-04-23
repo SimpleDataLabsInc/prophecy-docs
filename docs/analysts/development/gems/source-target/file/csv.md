@@ -22,7 +22,7 @@ You can also use the [upload file](docs/analysts/development/gems/source-target/
 | Select or create connection | Whether to select an existing connection, or to create a new one. |
 | Filepath                    | The file path according to the connection type.                   |
 
-## Source Properties
+### Source properties
 
 | Property                      | Description                                                                    | Default |
 | ----------------------------- | ------------------------------------------------------------------------------ | ------- |
@@ -30,5 +30,15 @@ You can also use the [upload file](docs/analysts/development/gems/source-target/
 | Separator                     | Character used to separate values in the CSV file.                             | `,`     |
 | Header                        | Checkbox to enable if the first row of the CSV is the header row.              | Enabled |
 | Null Value                    | String that represents a null or missing value in the CSV.                     | None    |
-| Comment                       | Character used to denote lines in the file that should be treated as comments. | None    |
+| Comment Character             | Character used to denote lines in the file that should be treated as comments. | None    |
 | Inference Data Sampling Limit | Limit the number of rows sampled to infer the schema                           | `0`     |
+
+### Target properties
+
+| Property                   | Description                                                                 | Default |
+| -------------------------- | --------------------------------------------------------------------------- | ------- |
+| Description                | Description of the table.                                                   | None    |
+| Separator                  | Character used to separate values in the CSV file.                          | `,`     |
+| Header                     | Checkbox to enable if the first row of the CSV is the header row.           | Enabled |
+| Null Value                 | String that represents a null or missing value in the CSV.                  | None    |
+| Use CRLF as line separator | If enabled, lines in the CSV will end with `\r\n` (Windows-style newlines). | None    |

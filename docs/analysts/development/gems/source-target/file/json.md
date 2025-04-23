@@ -22,7 +22,15 @@ You can also use the [upload file](docs/analysts/development/gems/source-target/
 | Select or create connection | Whether to select an existing connection, or to create a new one. |
 | Filepath                    | The file path according to the connection type.                   |
 
-## Source Properties
+### Source properties
+
+| Property                      | Description                                                                         | Default  |
+| ----------------------------- | ----------------------------------------------------------------------------------- | -------- |
+| Description                   | Description of the table.                                                           | None     |
+| Multiple documents per file   | Checkbox to enable if there are multiple documents to be parsed from the JSON file. | Disabled |
+| Inference Data Sampling Limit | Limit the number of rows sampled to infer the schema                                | `0`      |
+
+### Target properties
 
 | Property                    | Description                                                                         | Default  |
 | --------------------------- | ----------------------------------------------------------------------------------- | -------- |
