@@ -12,6 +12,10 @@ In some cases, you'll need to input credentials in Prophecy for authentication t
 
 We provide a Prophecy-hosted secret manager, as well as other [secret providers](docs/administration/secrets/secret-providers.md) such as Databricks.
 
+## Access
+
+Secrets are stored in fabrics. Anyone in the team assigned to the fabric will be able to see and use the secrets in their projects. However, **users will not be able to see the actual value of the secret**.
+
 ## Usage
 
 If any gem requires a authentication field like **username** or **password**, you will have the option to **Insert Secret** as shown below.
