@@ -41,9 +41,7 @@ Use the FuzzyMatch gem to identify non-identical duplicates in your data.
 
 ## Example
 
-One common use case for the FuzzyMatch gem is to match similarly spelled names. This can be useful for identifying accidentally misspelled names.
-
-Here's a table with two entries for Alex Taylor, whose phone number was updated:
+One common use case for the FuzzyMatch gem is to match similarly spelled names. Here's a table with two entries for `Alex Taylor`, whose phone number was updated.
 
 <div class="table-example">
 
@@ -56,22 +54,32 @@ Here's a table with two entries for Alex Taylor, whose phone number was updated:
 
 </div>
 
-You can use the FuzzyMatch gem to find the closely spelled name.
+You can use the FuzzyMatch gem to find the closely spelled name. In the gem configuration:
 
-1. Create a FuzzyMatch gem and use the **id** as the Record ID. Then, add a match field for the **last_name** column.
+1. Set the Merge/Purge Mode to **Purge mode**.
+1. For the Record ID, use the **id** column.
+1. Keep the threshold at `80` percent.
+1. Enable the **Include similarity score column** checkbox.
+1. In the Match Fields tab, add a match field for the **last_name** column.
+1. Set the Match Function to **Name**.
+1. Save and run the gem.
 
-2. Run the gem and see that the output includes the Record IDs of the records with fuzzy matches.
+### Result
 
-   <div class="table-example">
+The output includes the Record IDs of the records with fuzzy matches above the defined threshold.
 
-   | id  | id2 | similarityScore    |
-   | --- | --- | ------------------ |
-   | 1   | 2   | 0.9111111111111111 |
+<div class="table-example">
 
-   </div>
+| id  | id2 | similarityScore    |
+| --- | --- | ------------------ |
+| 1   | 2   | 0.9111111111111111 |
 
-3. [Join](/analysts/join) the output with the original dataset to view the matched names.
+</div>
 
 :::info
 Depending on your SQL provider, you might see different similarity scores based on the algorithm that runs under the hood.
+:::
+
+:::tip
+To view the names per record, [join](/analysts/join) the FuzzyMatch output with the original dataset.
 :::
