@@ -8,7 +8,7 @@
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/assets/css/styles.408ff866.css">
-<script src="/assets/js/runtime~main.bfd70364.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.ed2bc018.js" defer="defer"></script>
 <script src="/assets/js/main.9f58d0f3.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -18,7 +18,7 @@
 <table><thead><tr><th>Feature</th><th>Supported</th></tr></thead><tbody><tr><td>Read data with a <a href="/analysts/source-target">Source gem</a></td><td>Yes</td></tr><tr><td>Write data with a <a href="/analysts/source-target">Target gem</a></td><td>Yes</td></tr><tr><td>Browse data in the <a href="/analysts/pipelines">Environment browser</a></td><td>Yes</td></tr></tbody></table>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="parameters">Parameters<a href="#parameters" class="hash-link" aria-label="Direct link to Parameters" title="Direct link to Parameters">​</a></h2>
 <p>To create a connection with Databricks, enter the following parameters:</p>
-<table><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Connection Name</td><td>Name to to identify your connection</td></tr><tr><td>JDBC URL</td><td>URL to connect to your SQL warehouse</td></tr><tr><td>Catalog</td><td>Default catalog for reading and writing data</td></tr><tr><td>Schema</td><td>Default schema for reading and writing data</td></tr><tr><td>Authentication method</td><td>How you want to authenticate your Databricks account</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Connection Name</td><td>Name to to identify your connection</td></tr><tr><td>JDBC URL</td><td>URL to connect to your SQL warehouse<br>Example: <code>jdbc:databricks://&lt;databricks-instance&gt;:443/default;transportMode=http;ssl=1;AuthMech=3;httpPath=/sql/1.0/warehouses/&lt;warehouse-id&gt;</code></td></tr><tr><td>Catalog</td><td>Default catalog for reading and writing data</td></tr><tr><td>Schema</td><td>Default schema for reading and writing data</td></tr><tr><td>Authentication method</td><td>How you want to authenticate your Databricks account (OAuth or PAT)</td></tr></tbody></table>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="authentication-methods">Authentication methods<a href="#authentication-methods" class="hash-link" aria-label="Direct link to Authentication methods" title="Direct link to Authentication methods">​</a></h2>
 <p>You can configure your Databricks connection with one of three authentication methods:</p>
 <ul>

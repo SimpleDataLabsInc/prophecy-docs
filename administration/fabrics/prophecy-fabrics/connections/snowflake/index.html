@@ -8,7 +8,7 @@
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/assets/css/styles.408ff866.css">
-<script src="/assets/js/runtime~main.bfd70364.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.ed2bc018.js" defer="defer"></script>
 <script src="/assets/js/main.9f58d0f3.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -24,7 +24,7 @@
 </ul>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="parameters">Parameters<a href="#parameters" class="hash-link" aria-label="Direct link to Parameters" title="Direct link to Parameters">​</a></h2>
 <p>To create a connection with Snowflake, enter the following parameters:</p>
-<table><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Connection Name</td><td>Name to to identify your connection</td></tr><tr><td>Account</td><td>URL of your Snowflake account, typically in the format<br><code>https://&lt;orgname&gt;-&lt;account_name&gt;.snowflakecomputing.com</code></td></tr><tr><td>Database</td><td>Default database for reading and writing data</td></tr><tr><td>Schema</td><td>Default schema for reading and writing data</td></tr><tr><td>Warehouse</td><td>Name of the SQL warehouse to use for the connection</td></tr><tr><td>Role</td><td>Snowflake <a href="https://docs.snowflake.com/en/user-guide/security-access-control-overview" target="_blank" rel="noopener noreferrer">role</a> of the user to connect</td></tr><tr><td>Authentication method</td><td>Enter your Snowflake username and use a <a href="/administration/secrets/">secret</a> to enter your password.</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Connection Name</td><td>Name to to identify your connection</td></tr><tr><td>Account</td><td>URL of your Snowflake account<br>Example: <code>https://&lt;orgname&gt;-&lt;account_name&gt;.snowflakecomputing.com</code></td></tr><tr><td>Database</td><td>Default database for reading and writing data</td></tr><tr><td>Schema</td><td>Default schema for reading and writing data</td></tr><tr><td>Warehouse</td><td>Name of the SQL warehouse to use for the connection</td></tr><tr><td>Role</td><td>Snowflake <a href="https://docs.snowflake.com/en/user-guide/security-access-control-overview" target="_blank" rel="noopener noreferrer">role</a> of the user to connect<br>Example: <code>ACCOUNTADMIN</code></td></tr><tr><td>Authentication method</td><td>Enter your Snowflake username and use a <a href="/administration/secrets/">secret</a> to enter your password.</td></tr></tbody></table>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="snowflake-permissions">Snowflake permissions<a href="#snowflake-permissions" class="hash-link" aria-label="Direct link to Snowflake permissions" title="Direct link to Snowflake permissions">​</a></h2>
 <p>When you create a Snowflake connection in Prophecy, all access is governed by the Snowflake credentials you provide. This is because Prophecy uses your credentials to execute all data operations, such as reading or writing files.</p>
 <p>To successfully use a Snowflake connection in Prophecy, make sure your Snowflake user has the following permissions:</p>

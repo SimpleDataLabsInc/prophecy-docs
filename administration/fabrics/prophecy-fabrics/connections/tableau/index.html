@@ -8,7 +8,7 @@
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/assets/css/styles.408ff866.css">
-<script src="/assets/js/runtime~main.bfd70364.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.ed2bc018.js" defer="defer"></script>
 <script src="/assets/js/main.9f58d0f3.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -22,7 +22,7 @@
 <p>For a modern, cloud-native workflow, write pipeline outputs directly to a supported cloud data platform like Databricks, Snowflake, or BigQuery. Then connect Tableau to that platform to visualize the data—no need to set up a separate Tableau connection or perform extra export steps in Prophecy.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="parameters">Parameters<a href="#parameters" class="hash-link" aria-label="Direct link to Parameters" title="Direct link to Parameters">​</a></h2>
 <p>To create a connection with Tableau, enter the following parameters:</p>
-<table><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Connection Name</td><td>Unique name for the connection (e.g., <code>MyTableauConnection</code>)</td></tr><tr><td>Tableau Server URL</td><td>URL of your Tableau Server (e.g., <code>https://tableau.example.com</code>)</td></tr><tr><td>Tableau Token Name</td><td>Name of your Tableau personal access token</td></tr><tr><td>Tableau Token (<a href="/administration/secrets/">Secret required</a>)</td><td>Your Tableau personal access token</td></tr><tr><td>Tableau Site Name</td><td>Name of the Tableau site you&#x27;re connecting to</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Connection Name</td><td>Unique name for the connection</td></tr><tr><td>Tableau Server URL</td><td>URL of your Tableau Server<br>Example: <code>https://tableau.example.com</code></td></tr><tr><td>Tableau Token Name</td><td>Name of your Tableau personal access token</td></tr><tr><td>Tableau Token (<a href="/administration/secrets/">Secret required</a>)</td><td>Your Tableau personal access token</td></tr><tr><td>Tableau Site Name</td><td>Name of the Tableau site you&#x27;re connecting to</td></tr></tbody></table>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="tableau-permissions">Tableau permissions<a href="#tableau-permissions" class="hash-link" aria-label="Direct link to Tableau permissions" title="Direct link to Tableau permissions">​</a></h2>
 <p>When you use a Tableau connection in Prophecy, permissions are determined by the credentials you provide. To use the connection to publish data, those credentials must have the <strong>Publish</strong> capability in Tableau for the project containing the target data source.</p>
 <p>For more details on Tableau permissions, see their documentation on <a href="https://help.tableau.com/current/server/en-us/permissions_capabilities.htm" target="_blank" rel="noopener noreferrer">Permission Capabilities</a>.</p>

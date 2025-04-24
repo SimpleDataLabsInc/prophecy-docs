@@ -8,7 +8,7 @@
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/assets/css/styles.408ff866.css">
-<script src="/assets/js/runtime~main.bfd70364.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.ed2bc018.js" defer="defer"></script>
 <script src="/assets/js/main.9f58d0f3.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -18,7 +18,7 @@
 <table><thead><tr><th>Feature</th><th>Supported</th></tr></thead><tbody><tr><td>Read data with a <a href="/analysts/source-target">Source gem</a></td><td>Yes</td></tr><tr><td>Write data with a <a href="/analysts/source-target">Target gem</a></td><td>Yes</td></tr><tr><td>Browse data in the <a href="/analysts/pipelines">Environment browser</a></td><td>Yes</td></tr></tbody></table>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="parameters">Parameters<a href="#parameters" class="hash-link" aria-label="Direct link to Parameters" title="Direct link to Parameters">​</a></h2>
 <p>To create a connection with MongoDB, enter the following parameters:</p>
-<table><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Connection Name</td><td>Name to to identify your connection</td></tr><tr><td>Protocol</td><td>Protocol to use to communicate to the database</td></tr><tr><td>Host</td><td>Where your MongoDB instance runs</td></tr><tr><td>Username</td><td>Username for your MongoDB instance</td></tr><tr><td>Password (<a href="/administration/secrets/">Secret required</a>)</td><td>Password for your MongoDB instance</td></tr><tr><td>Database</td><td>Default database for reading and writing data</td></tr><tr><td>Collection</td><td>Collection to use for the connection</td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Connection Name</td><td>Name to to identify your connection</td></tr><tr><td>Protocol</td><td>Protocol to use to communicate to the database<br>Example:<code>mongodb+srv</code> for cloud-hosted clusters</td></tr><tr><td>Host</td><td>Where your MongoDB instance runs<br>Example:<code>cluster0.&lt;cluster-name&gt;.mongodb.net</code> for cloud-hosted clusters</td></tr><tr><td>Username</td><td>Username for your MongoDB instance</td></tr><tr><td>Password (<a href="/administration/secrets/">Secret required</a>)</td><td>Password for your MongoDB instance</td></tr><tr><td>Database</td><td>Default database for reading and writing data</td></tr><tr><td>Collection</td><td>Collection to use for the connection</td></tr></tbody></table>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="mongodb-permissions">MongoDB permissions<a href="#mongodb-permissions" class="hash-link" aria-label="Direct link to MongoDB permissions" title="Direct link to MongoDB permissions">​</a></h2>
 <p>When you create an MongoDB connection in Prophecy, access permissions are tied to the credentials you use. This is because Prophecy uses your credentials to execute all data operations, such as reading from or writing to collections.</p>
 <p>To fully leverage a MongoDB connection in Prophecy, you need the following MongoDB permissions:</p>
