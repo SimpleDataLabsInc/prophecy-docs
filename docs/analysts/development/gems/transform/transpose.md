@@ -18,9 +18,9 @@ Use the Transpose gem to reshape your dataset by unpivoting columns—perfect fo
 
 ## Parameters
 
-| Parameter    | Description                                                                                    |
-| ------------ | ---------------------------------------------------------------------------------------------- |
-| Key Columns  | Columns that act as identifiers for each row.                                                  |
+| Parameter    | Description                                                                          |
+| ------------ | ------------------------------------------------------------------------------------ |
+| Key Columns  | Columns that act as identifiers for each row.                                        |
 | Data Columns | Columns (wide format) that you want to transform into a single column (long format). |
 
 ## Example
@@ -38,7 +38,7 @@ Imagine you have sales data for different products, with each quarter's sales st
 
 To configure a Transpose gem for this table:
 
-1. Identify the key columns. In the example above, the `Product` column is the key column.
+1. Identify and enter the key columns. In the example above, the `Product` column is the key column.
 1. Select the data columns to unpivot. In the example above, all of the quarter columns (`Q1`, `Q2`, etc.) are your data columns.
 1. Save and run the gem.
 

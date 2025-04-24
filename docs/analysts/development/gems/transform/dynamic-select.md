@@ -15,9 +15,9 @@ Use the DynamicSelect gem to dynamically filter columns of your dataset based on
 
 ## Parameters
 
-| Parameter     | Description                                                                                                                                                                                                                                                          |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Configuration | <ul class="table-list"><li>Select field types: Use checkboxes to select column types to keep in the dataset, such as string, decimal, or date.</li><li>Select via expression: Create an expression that limits the type of columns to keep in the dataset.</li></ul> |
+| Parameter     | Description                                                                                                                                                                                                                                                                                                              |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Configuration | Whether to filter the columns visually or with code.<ul class="table-list"><li>Select field types: Use checkboxes to select column types to keep in the dataset, such as string, decimal, or date.</li><li>Select via expression: Create an expression that limits the type of columns to keep in the dataset.</li></ul> |
 
 ## Example
 

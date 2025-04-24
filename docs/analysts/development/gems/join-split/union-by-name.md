@@ -23,9 +23,9 @@ To add additional input ports, click `+` next to **Ports**.
 
 ## Parameters
 
-| Parameter      | Description                                                                                                                                                                                                    |
-| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Operation Type | <ul class="table-list"><li>Union By Name (No Missing Columns): All columns must be present in both tables</li><li>Union By Name (Allow Missing Columns): Columns do not have to match between tables</li></ul> |
+| Parameter      | Description                                                                                                                                                                                                                                              |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Operation Type | Choose between two different operations.<ul class="table-list"><li>Union By Name (No Missing Columns): All columns must be present in both tables.</li><li>Union By Name (Allow Missing Columns): Columns do not have to match between tables.</li></ul> |
 
 ## Example
 
@@ -33,9 +33,7 @@ Let’s say you’re working with two tables: **Table A** and **Table B**.
 
 - Both tables contain order-related data.
 - Table B is missing the `amount` column that exists in Table A.
-- The columns that **Table B** does have are arranged in a different order compared to **Table A**.
-
-This example helps illustrate how the UnionByName gem operates on the tables.
+- The columns in **Table B** that match **Table A** are ordered differently.
 
 ### Table A
 

@@ -25,10 +25,10 @@ All input tables must have **identical schemas** (matching column names and data
 
 ## Parameters
 
-| Parameter               | Description                                    |
-| ----------------------- | ---------------------------------------------- |
-| Operation Type          | Union                                          |
-| Preserve duplicate rows | Allow duplicates to appear in the output table |
+| Parameter               | Description                                     |
+| ----------------------- | ----------------------------------------------- |
+| Operation Type          | Shows that the set operation type is `Union`    |
+| Preserve duplicate rows | Checkbox to keep duplicates in the output table |
 
 ## Example
 
@@ -38,8 +38,6 @@ Let’s say you’re working with two tables: **Table A** and **Table B**.
 - **Table A** contains order information from customer `1`, `2`, and `3`.
 - **Table B** contains order information from customer `1`, `2`, `3`, and `4`.
 - These tables contain some identical records (duplicates).
-
-This example helps illustrate how the Union gem operates on the tables.
 
 ### Table A
 
@@ -67,9 +65,26 @@ This example helps illustrate how the Union gem operates on the tables.
 
 </div>
 
+### Result without duplicates
+
+The following is the output table without duplicates.
+
+<div class="table-example">
+
+| order_id | customer_id | order_date | amount |
+| -------- | ----------- | ---------- | ------ |
+| 101      | 1           | 2024-12-01 | 250.00 |
+| 102      | 2           | 2024-12-03 | 150.00 |
+| 103      | 1           | 2025-01-15 | 300.00 |
+| 104      | 3           | 2025-02-10 | 200.00 |
+| 105      | 4           | 2025-03-05 | 400.00 |
+| 106      | 2           | 2025-03-07 | 180.00 |
+
+</div>
+
 ### Result with duplicates
 
-The following is the output table with duplicates.
+The following is the output table when you select **Preserve duplicate rows** in the gem configuration.
 
 <div class="table-example">
 
@@ -89,20 +104,3 @@ The following is the output table with duplicates.
 :::tip
 Order `103` and `104` are duplicate records.
 :::
-
-### Result without duplicates
-
-The following is the output table without duplicates.
-
-<div class="table-example">
-
-| order_id | customer_id | order_date | amount |
-| -------- | ----------- | ---------- | ------ |
-| 101      | 1           | 2024-12-01 | 250.00 |
-| 102      | 2           | 2024-12-03 | 150.00 |
-| 103      | 1           | 2025-01-15 | 300.00 |
-| 104      | 3           | 2025-02-10 | 200.00 |
-| 105      | 4           | 2025-03-05 | 400.00 |
-| 106      | 2           | 2025-03-07 | 180.00 |
-
-</div>

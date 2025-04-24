@@ -15,10 +15,10 @@ Use the FuzzyMatch gem to identify non-identical duplicates in your data.
 
 ## Input and Output
 
-| Table   | Description                                                                               |
-| ------- | ----------------------------------------------------------------------------------------- |
-| **in0** | Includes the table on which duplicates will be checked. FuzzyMatch only allows one input. |
-| **out** | Generates one record per fuzzy match.                                                     |
+| Table   | Description                                                                                              |
+| ------- | -------------------------------------------------------------------------------------------------------- |
+| **in0** | Includes the table on which duplicates will be checked. <br/>**Note: FuzzyMatch only allows one input.** |
+| **out** | Generates one record per fuzzy match.                                                                    |
 
 ## Parameters
 
@@ -70,7 +70,7 @@ You can use the FuzzyMatch gem to find the closely spelled name.
 
    </div>
 
-3. Join the output with the original dataset to view the matched names.
+3. [Join](/analysts/join) the output with the original dataset to view the matched names.
 
 :::info
 Depending on your SQL provider, you might see different similarity scores based on the algorithm that runs under the hood.

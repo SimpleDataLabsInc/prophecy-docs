@@ -25,10 +25,10 @@ All input tables must have **identical schemas** (matching column names and data
 
 ## Parameters
 
-| Parameter               | Description                                    |
-| ----------------------- | ---------------------------------------------- |
-| Operation Type          | Intersect                                      |
-| Preserve duplicate rows | Allow duplicates to appear in the output table |
+| Parameter               | Description                                      |
+| ----------------------- | ------------------------------------------------ |
+| Operation Type          | Shows that the set operation type is `Intersect` |
+| Preserve duplicate rows | Checkbox to keep duplicates in the output table  |
 
 ## Example
 
@@ -38,8 +38,6 @@ Let’s say you’re working with two tables: **Table A** and **Table B**.
 - **Table A** contains order information from customer `1`, `2`, and `3`.
 - **Table B** contains order information from customer `1`, `2`, `3`, and `4`.
 - These tables contain some identical records (duplicates).
-
-This example helps illustrate how the Intersect gem operates on the tables.
 
 ### Table A
 

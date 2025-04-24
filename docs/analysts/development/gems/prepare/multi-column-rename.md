@@ -15,10 +15,10 @@ The MultiColumnRename gem can be used to systematically rename multiple columns 
 
 ## Parameters
 
-| Field                    | Description                                                                                                           |
-| ------------------------ | --------------------------------------------------------------------------------------------------------------------- |
-| Select columns to rename | The set of columns that you will rename.                                                                              |
-| Rename method            | The way you will rename columns. <br/>You can either add a prefix/suffix, or choose advanced rename (SQL expression). |
+| Field                    | Description                                                                                                       |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------- |
+| Select columns to rename | Set of columns that you will rename.                                                                              |
+| Rename method            | How you will rename columns. <br/>You can either add a prefix/suffix, or choose advanced rename (SQL expression). |
 
 ## Example
 
