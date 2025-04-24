@@ -7,12 +7,13 @@ description: Utilize external data providers with connections
 tags: []
 ---
 
-Connections make it easy to use data from external sources directly in your Prophecy projects. You can set up connections as you build your pipelines, and connections will be stored in your attached [fabric](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md).
+When you create a connection in a [fabric](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md), you can use it to access data from sources outside of the primary SQL warehouse defined in your fabric. While pipeline execution still occurs in the primary SQL warehouse, connections let you read and write data in other data providers.
 
-As you build your pipelines, you'll be able to:
+After you attach to a fabric in a project, you'll be able to:
 
 - Create connections from the Environment browser or from external Source and Target gems.
 - Configure [secrets](#secrets-in-connections) for your connections that will encrypt your connection credentials.
+- Reuse connections throughout your pipeline without needing to reconnect.
 - Browse data from established connections in the Environment browser.
 - Add data to your pipeline directly from the Environment browser.
 
