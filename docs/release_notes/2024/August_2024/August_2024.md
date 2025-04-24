@@ -18,7 +18,7 @@ tags:
 
 #### Spark Copilot Enhancements {#Spark339}
 
-- **Support custom artifactory resolve plibs version**: We now support adding custom Pypi or Maven dependencies for pipelines running on all Spark fabrics including EMR, Dataproc, etc.
+- **Support custom artifactory resolve plibs version**: We now support adding custom PyPI or Maven dependencies for pipelines running on all Spark fabrics including EMR, Dataproc, etc.
 
 - **Support for config resolution inside call_func()**: Config variables inside of the `call_function()` and `call_func()` are now supported. The new syntax is `call_function("{{catalogName}}.{{database}}.{{funcName}}", "{{firstArg}}")`.
 
