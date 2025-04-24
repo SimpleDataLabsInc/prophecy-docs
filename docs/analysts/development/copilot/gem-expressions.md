@@ -8,17 +8,34 @@ tags:
   - copilot
 ---
 
-Copilot enhances the expression-building experience within gem configurations by generating context-aware suggestions and expressions based on your input and column metadata.
+Copilot enhances the expression-building experience within gem configurations in two ways:
 
-In many cases, Copilot pre-populates expressions based on semantic cues from your column names. For best results, use descriptive column names.
+- Suggesting context-aware expressions based on your input and column metadata.
+- Accepting natural language prompts to build new expressions.
 
-- `customer_email` → Clear intent, likely to produce accurate suggestions.
+## Copilot suggestions
 
-- `col1` → Ambiguous, may result in less reliable output.
+Copilot suggests expressions based on semantic cues from your column names. To accept Copilot suggestions, click `tab` or click on the expression itself in the gem.
+
+For best results, use descriptive column names.
+
+- **Recommended**: `customer_email`
+
+  Clear intent, likely to produce accurate suggestions.
+
+- **Not recommended**: `col1`
+
+  Ambiguous, may result in less reliable output.
 
 ![Copilot expressions](./img/copilot-expressions.gif)
 
-If you want to change the expression or build one from scratch, you can ask Copilot to help you. In both the visual and code expression builder, Copilot can generate your desired logic.
+## Copilot prompts
+
+If you want to build your own expression, you can ask Copilot to help. Copilot is available for writing expressions in both the visual and code view.
+
+1. Click on an expression field in a gem.
+1. Click **Ask AI** to enter a prompt.
+1. Copilot uses your prompt to generate an expression.
 
 ## Example prompts {#example-prompts-expressions}
 

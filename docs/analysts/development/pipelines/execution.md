@@ -19,16 +19,22 @@ Prophecy uses different engines to perform execution.
 
 Prophecy lets you interactively run your pipeline in the pipeline canvas and preview data transformations at every step. This helps you understand and validate your data transformations during development. There are two ways to start an interactive run:
 
-- Run the entire pipeline using the **play** button on the pipeline canvas.
-- Execute the pipeline up to and including a particular gem using the **play** button on that gem.
+- **Click the large play button on bottom of the pipeline canvas.** The whole pipeline runs.
+- **Click the play button on a gem.** All gems up to and including that gem run. This is a partial pipeline run.
 
-After you run a pipeline, data samples will appear between nodes in your pipeline. When you click on a data sample, Prophecy loads the data and opens the [Data Explorer](docs/analysts/development/data-explorer.md). The Data Explorer lets you sort, filter, and search through the gem output.
+### Data samples
+
+As gems run in your pipeline, sample outputs will appear after those gems. When you click on a data sample, Prophecy loads the data and opens the [Data Explorer](docs/analysts/development/data-explorer.md). The Data Explorer lets you sort, filter, and search through the gem output.
 
 ## Scheduled execution
 
 Scheduling allows you to automate your data pipelines at predefined intervals. For each pipeline in your project, you can configure independent schedules that specify how often a pipeline runs and whether to send alerts during the automated runs. The execution environment of the scheduled run is determined during project publication.
 
 To learn more about deploying projects to specific execution environments, see [Versioning](/analysts/versioning) and [Scheduling](/analysts/scheduling).
+
+## App execution
+
+You can also run pipelines with [business applications](/analysts/business-applications) in Prophecy. These apps make it easy for non-technical users to run data pipelines through intuitive, form-based interfaces. By restricting access to pipelines themselves, you can provide proper guardrails for pipeline execution via business apps.
 
 ## External sources
 

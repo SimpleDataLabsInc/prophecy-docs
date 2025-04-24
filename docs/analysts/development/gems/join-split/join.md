@@ -64,6 +64,8 @@ Suppose there are two tables, _Employees_ and _Departments_, with the following 
 
 ### Employees
 
+<div class="table-example">
+
 | EMPLOYEE_ID | EMPLOYEE_NAME | DEPARTMENT_ID |
 | :---------- | :------------ | :------------ |
 | 1           | Alice         | 10            |
@@ -72,7 +74,11 @@ Suppose there are two tables, _Employees_ and _Departments_, with the following 
 | 4           | David         | NULL          |
 | 5           | Eve           | 20            |
 
+</div>
+
 ### Departments
+
+<div class="table-example">
 
 | DEPARTMENT_ID | DEPARTMENT_NAME |
 | :------------ | :-------------- |
@@ -80,6 +86,8 @@ Suppose there are two tables, _Employees_ and _Departments_, with the following 
 | 20            | Engineering     |
 | 30            | Sales           |
 | 40            | Marketing       |
+
+</div>
 
 ### INNER JOIN
 
@@ -94,12 +102,16 @@ INNER JOIN departments d
 ON e.department_id = d.department_id;
 ```
 
+<div class="table-example">
+
 | EMPLOYEE_ID | EMPLOYEE_NAME | DEPARTMENT_NAME |
 | :---------- | :------------ | :-------------- |
 | 1           | Alice         | HR              |
 | 2           | Bob           | Engineering     |
 | 5           | Eve           | Engineering     |
 | 3           | Charlie       | Sales           |
+
+</div>
 
 ### LEFT JOIN / LEFT OUTER JOIN
 
@@ -114,6 +126,8 @@ LEFT JOIN departments d
 ON e.department_id = d.department_id;
 ```
 
+<div class="table-example">
+
 | EMPLOYEE_ID | EMPLOYEE_NAME | DEPARTMENT_NAME |
 | :---------- | :------------ | :-------------- |
 | 1           | Alice         | HR              |
@@ -121,6 +135,8 @@ ON e.department_id = d.department_id;
 | 3           | Charlie       | Sales           |
 | 4           | David         | NULL            |
 | 5           | Eve           | Engineering     |
+
+</div>
 
 ### RIGHT JOIN / RIGHT OUTER JOIN
 
@@ -135,6 +151,8 @@ OUTER JOIN departments d
 ON e.department_id = d.department_id;
 ```
 
+<div class="table-example">
+
 | EMPLOYEE_ID | EMPLOYEE_NAME | DEPARTMENT_NAME |
 | :---------- | :------------ | :-------------- |
 | 1           | Alice         | HR              |
@@ -142,6 +160,8 @@ ON e.department_id = d.department_id;
 | 5           | Eve           | Engineering     |
 | 3           | Charlie       | Sales           |
 | NULL        | NULL          | Marketing       |
+
+</div>
 
 ### FULL JOIN / FULL OUTER JOIN
 
@@ -156,6 +176,8 @@ FULL OUTER JOIN departments d
 ON e.department_id = d.department_id;
 ```
 
+<div class="table-example">
+
 | EMPLOYEE_ID | EMPLOYEE_NAME | DEPARTMENT_NAME |
 | :---------- | :------------ | :-------------- |
 | 1           | Alice         | HR              |
@@ -164,6 +186,8 @@ ON e.department_id = d.department_id;
 | 4           | David         | NULL            |
 | 5           | Eve           | Engineering     |
 | NULL        | NULL          | Marketing       |
+
+</div>
 
 ### CROSS JOIN
 
@@ -176,6 +200,8 @@ SELECT e.employee_id, e.employee_name, d.department_name
 FROM employees e
 CROSS JOIN departments d;
 ```
+
+<div class="table-example">
 
 | EMPLOYEE_ID | EMPLOYEE_NAME | DEPARTMENT_NAME |
 | :---------- | :------------ | :-------------- |
@@ -200,6 +226,8 @@ CROSS JOIN departments d;
 | 5           | Eve           | Sales           |
 | 5           | Eve           | Marketing       |
 
+</div>
+
 ### NATURAL INNER JOIN
 
 A natural join (or Natural Inner Join) is identical to an explicit Inner Join but it automatically joins columns with the same names in both tables. Natural Join will not have any join conditions specified.
@@ -212,12 +240,16 @@ FROM employees e
 CROSS JOIN departments d;
 ```
 
+<div class="table-example">
+
 | EMPLOYEE_ID | EMPLOYEE_NAME | DEPARTMENT_NAME |
 | :---------- | :------------ | :-------------- |
 | 1           | Alice         | HR              |
 | 2           | Bob           | Engineering     |
 | 5           | Eve           | Engineering     |
 | 3           | Charlie       | Sales           |
+
+</div>
 
 ### NATURAL LEFT OUTER JOIN
 
@@ -231,6 +263,8 @@ FROM employees e
 NATURAL LEFT OUTER JOIN departments d;
 ```
 
+<div class="table-example">
+
 | EMPLOYEE_ID | EMPLOYEE_NAME | DEPARTMENT_NAME |
 | :---------- | :------------ | :-------------- |
 | 1           | Alice         | HR              |
@@ -238,6 +272,8 @@ NATURAL LEFT OUTER JOIN departments d;
 | 3           | Charlie       | Sales           |
 | 4           | David         | NULL            |
 | 5           | Eve           | Engineering     |
+
+</div>
 
 ### NATURAL RIGHT OUTER JOIN
 
@@ -251,6 +287,8 @@ FROM employees e
 NATURAL RIGHT OUTER JOIN departments d;
 ```
 
+<div class="table-example">
+
 | EMPLOYEE_ID | EMPLOYEE_NAME | DEPARTMENT_NAME |
 | :---------- | :------------ | :-------------- |
 | 1           | Alice         | HR              |
@@ -258,6 +296,8 @@ NATURAL RIGHT OUTER JOIN departments d;
 | 5           | Eve           | Engineering     |
 | 3           | Charlie       | Sales           |
 | NULL        | NULL          | Marketing       |
+
+</div>
 
 ### NATURAL FULL OUTER JOIN
 
@@ -271,6 +311,8 @@ FROM employees e
 NATURAL FULL OUTER JOIN departments d;
 ```
 
+<div class="table-example">
+
 | EMPLOYEE_ID | EMPLOYEE_NAME | DEPARTMENT_NAME |
 | :---------- | :------------ | :-------------- |
 | 1           | Alice         | HR              |
@@ -279,3 +321,5 @@ NATURAL FULL OUTER JOIN departments d;
 | 4           | David         | NULL            |
 | 5           | Eve           | Engineering     |
 | NULL        | NULL          | Marketing       |
+
+</div>

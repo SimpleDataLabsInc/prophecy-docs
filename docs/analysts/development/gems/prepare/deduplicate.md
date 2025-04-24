@@ -11,63 +11,122 @@ tags:
 
 <span class="badge">SQL</span><br/><br/>
 
-Removes rows with duplicate values of specified columns.
+When working with data, it’s common to run into duplicate information. Duplicates can come from multiple data sources, system errors, or repeated updates over time.
+
+Leverage the Deduplication gem to remove these duplicates, and pay close attention to the Deduplication mode that you use.
+
+## Parameters
+
+| Parameter           | Description                                                    |
+| ------------------- | -------------------------------------------------------------- |
+| Mode                | Deduplication method                                           |
+| Expression          | Column(s) to check for duplicates                              |
+| Use Custom Order By | Sort rows before deduplicating (First and Last mode **only**). |
 
 ## Mode
 
 Next to **Deduplicate On Columns**, choose how to keep certain rows.
 
-| Mode                        | Description                                      | Additional parameters                                                                                                         | Output                                                                                                      |
-| --------------------------- | ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| **Distinct Rows** (Default) | Keeps all distinct rows.                         | None                                                                                                                          | All columns are passed through unless columns are specified. Specified columns are persisted in the output. |
-| **Unique Only**             | Keeps rows that do not have duplicates.          | <ul class="table-list"><li>Expression: Column that determines uniqueness</li></ul>                                            | All columns are passed through.                                                                             |
-| **First**                   | Keeps the first occurrence of the duplicate row. | <ul class="table-list"><li>Expression: Column that determines uniqueness</li><li>Use Custom Order By: Sort the rows</li></ul> | All columns are passed through.                                                                             |
-| **Last**                    | Keeps the last occurrence of the duplicate row.  | <ul class="table-list"><li>Expression: Column that determines uniqueness</li><li>Use Custom Order By: Sort the rows</li></ul> | All columns are passed through.                                                                             |
+| Mode          | Description                                                                 | Output                                                              |
+| ------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| Distinct Rows | Keeps one version of each duplicated row, removing extra duplicates.        | All columns are passed through unless target columns are specified. |
+| Unique Only   | Keeps only the rows that appear exactly once and removes any duplicate rows | All columns are passed through.                                     |
+| First         | Keeps the first occurrence of the duplicate row.                            | All columns are passed through.                                     |
+| Last          | Keeps the last occurrence of the duplicate row.                             | All columns are passed through.                                     |
 
 ## Example
 
-Suppose you're deduplicating the following table.
+Assume you have a table of contact information where some people appear more than once. This could be due to updates over time or repeated data entry. You want to identify and clean up these duplicates based on fields like email or phone number.
 
-| First_Name | Last_Name | Type  | Contact           |
-| :--------- | :-------- | :---- | :---------------- |
-| John       | Doe       | phone | 123-456-7890      |
-| John       | Doe       | phone | 123-456-7890      |
-| John       | Doe       | phone | 123-456-7890      |
-| Alice      | Johnson   | phone | 246-135-0987      |
-| Alice      | Johnson   | phone | 246-135-0987      |
-| Alice      | Johnson   | email | alice@johnson.com |
-| Alice      | Johnson   | email | alice@johnson.com |
-| Bob        | Smith     | email | bob@smith.com     |
+Here is your original table:
 
-## Distinct Rows
+<div class="table-example">
 
-If you use **Distinct Rows**, the output would be:
+| email                  | phone        | first_name | last_name | date_added |
+| ---------------------- | ------------ | ---------- | --------- | ---------- |
+| `alex.t@example.com`   | 123-456-7890 | Alex       | Taylor    | 2023-01-01 |
+| `alex.t@example.com`   | 123-456-7890 | Alex       | Taylor    | 2023-07-01 |
+| `sam.p@example.com`    | 987-654-3210 | Sam        | Patel     | 2024-03-15 |
+| `casey.l@example.com`  | 555-111-2222 | Casey      | Lee       | 2024-05-01 |
+| `casey.l@example.com`  | 555-111-2222 | Casey      | Lee       | 2025-01-01 |
+| `jordan.k@example.com` | 333-444-5555 | Jordan     | Kelly     | 2023-09-10 |
+| `morgan.s@example.com` | 666-777-8888 | Morgan     | Smith     | 2025-01-01 |
 
-| First_Name | Last_Name | Type  | Contact           |
-| :--------- | :-------- | :---- | :---------------- |
-| John       | Doe       | phone | 123-456-7890      |
-| Alice      | Johnson   | phone | 246-135-0987      |
-| Alice      | Johnson   | email | alice@johnson.com |
-| Bob        | Smith     | email | bob@smith.com     |
+</div>
 
-If you want to remove the Alice Johnson duplicates, you can specify a subset of columns to deduplicate. In this case, you want to determine duplication based on `First_Name` and `Last_Name` columns. However, this will remove additional columns. Use First or Last to preserve the other columns in the output.
+### Distinct Rows
 
-| First_Name | Last_Name |
-| :--------- | :-------- |
-| John       | Doe       |
-| Alice      | Johnson   |
-| Bob        | Smith     |
+Let’s look at what happens with our original table when using **Distinct Rows** without selecting any specific columns. If two rows match exactly—every value in every column—they are considered duplicates, and only one will be kept.
 
-## Unique Only
+<div class="table-example">
 
-For **Unique Only**, the output would be:
+| email                  | phone        | first_name | last_name | date_added |
+| ---------------------- | ------------ | ---------- | --------- | ---------- |
+| `alex.t@example.com`   | 123-456-7890 | Alex       | Taylor    | 2023-01-01 |
+| `alex.t@example.com`   | 123-456-7890 | Alex       | Taylor    | 2023-07-01 |
+| `sam.p@example.com`    | 987-654-3210 | Sam        | Patel     | 2024-03-15 |
+| `casey.l@example.com`  | 555-111-2222 | Casey      | Lee       | 2024-05-01 |
+| `casey.l@example.com`  | 555-111-2222 | Casey      | Lee       | 2025-01-01 |
+| `jordan.k@example.com` | 333-444-5555 | Jordan     | Kelly     | 2023-09-10 |
+| `morgan.s@example.com` | 666-777-8888 | Morgan     | Smith     | 2025-01-01 |
 
-| First_Name | Last_Name | Type  | Contact       |
-| :--------- | :-------- | :---- | :------------ |
-| Bob        | Smith     | email | bob@smith.com |
+</div>
 
-This outputs one unique row because the rest were duplicates.
+The result is identical to the input because no two rows are exact matches across all columns.
 
-## First and Last
+### Distinct Rows with Target Columns
 
-The **First** and **Last** options work similarly to **Distinct Rows**, but they keep the first and last occurrence of the duplicate rows respectively.
+Often, you want to identify duplicates based on just one or a few columns, like `email`. You can do this by selecting the columns to deduplicate on. Here is the result when email is selected as the target column:
+
+<div class="table-example">
+
+| email                  |
+| ---------------------- |
+| `alex.t@example.com`   |
+| `sam.p@example.com`    |
+| `casey.l@example.com`  |
+| `jordan.k@example.com` |
+| `morgan.s@example.com` |
+
+</div>
+
+Only the distinct values from the email column are returned. Other columns are not included, because Prophecy doesn’t assume which corresponding values (like `phone` or `date_added`) to keep. If you want to keep related columns, use the First or Last deduplication methods.
+
+### First and Last
+
+The **First** and **Last** options help you keep just one row for each duplicate based on the order of the data. You’ll typically combine this with sorting to control which version is retained.
+
+For example, if you want to keep the most recent entry for each duplicate email address, you can:
+
+- Choose **First** and sort by `date_added` descending
+- Choose **Last** and sort by `date_added` ascending
+
+Here’s the result when deduplicating by `email`, keeping the most recent record for each:
+
+<div class="table-example">
+
+| email                  | phone        | first_name | last_name | date_added |
+| ---------------------- | ------------ | ---------- | --------- | ---------- |
+| `alex.t@example.com`   | 123-456-8888 | Alex       | Taylor    | 2023-07-01 |
+| `sam.p@example.com`    | 987-654-3210 | Sam        | Patel     | 2024-03-15 |
+| `casey.l@example.com`  | 555-111-2222 | Casey      | Lee       | 2025-01-01 |
+| `jordan.k@example.com` | 333-444-5555 | Jordan     | Kelly     | 2023-09-10 |
+| `morgan.s@example.com` | 666-777-8888 | Morgan     | Smith     | 2025-01-01 |
+
+</div>
+
+### Unique Only
+
+The **Unique Only** option removes all rows with duplicates. It keeps only the rows that appear exactly once, based on the selected columns.
+
+For example, if you choose to deduplicate based on `email`, any row that contains an email address that appears more than once will be removed entirely. Here’s the result when using **Unique Only** on the original table with `email` as the target column:
+
+<div class="table-example">
+
+| email                  | phone        | first_name | last_name | date_added |
+| ---------------------- | ------------ | ---------- | --------- | ---------- |
+| `sam.p@example.com`    | 987-654-3210 | Sam        | Patel     | 2024-03-15 |
+| `jordan.k@example.com` | 333-444-5555 | Jordan     | Kelly     | 2023-09-10 |
+| `morgan.s@example.com` | 666-777-8888 | Morgan     | Smith     | 2025-01-01 |
+
+</div>
