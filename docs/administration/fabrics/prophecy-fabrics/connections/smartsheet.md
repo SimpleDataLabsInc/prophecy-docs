@@ -39,7 +39,7 @@ To create a connection with Smartsheet, enter the following parameters:
 
 | Parameter                                                                | Description                                                                                                                                   |
 | ------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| Connection Name                                                          | Unique name for the connection (e.g., `MySmartsheetConnection`)                                                                               |
+| Connection Name                                                          | Unique name for the connection                                                                                                                |
 | Access Token ([Secret required](docs/administration/secrets/secrets.md)) | Your [Smartsheet API access token](https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication#access-token-best-practices) |
 
 ## Smartsheet permissions
