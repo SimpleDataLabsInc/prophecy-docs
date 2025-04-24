@@ -57,7 +57,7 @@ To standardize column names by converting them to lowercase, use the **Advanced 
 
 ### Result
 
-After saving and running the gem, all selected columns will be renamed using the lower function. In this case, all column names should be lowercase in the output table.
+After saving and running the gem, all selected columns will be renamed using the lower function. In this case, all column names will be lowercase in the output table.
 
 <div class="table-example">
 

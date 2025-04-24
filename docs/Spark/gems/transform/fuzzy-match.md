@@ -28,7 +28,7 @@ Use the FuzzyMatch gem to identify non-identical duplicates in your data.
 
 | DataFrame | Description                                                                                   |
 | --------- | --------------------------------------------------------------------------------------------- |
-| **in0**   | Includes the DataFrame on which duplicates will be checked. FuzzyMatch only allows one input. |
+| **in0**   | Includes the DataFrame on which duplicates will be checked. <br/>**Note: FuzzyMatch only allows one input.** |
 | **out**   | Generates one record per fuzzy match.                                                         |
 
 ## Parameters

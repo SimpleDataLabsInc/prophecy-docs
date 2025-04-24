@@ -21,7 +21,7 @@ Use the Transpose gem to reshape your dataset by unpivoting columns—perfect fo
 | Parameter    | Description                                                                                    |
 | ------------ | ---------------------------------------------------------------------------------------------- |
 | Key Columns  | Columns that act as identifiers for each row.                                                  |
-| Data Columns | The columns (wide format) that you would like to transform into a single column (long format). |
+| Data Columns | Columns (wide format) that you want to transform into a single column (long format). |
 
 ## Example
 

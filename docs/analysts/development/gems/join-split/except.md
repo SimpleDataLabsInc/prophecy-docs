@@ -69,7 +69,7 @@ This example helps illustrate how the Except gem operates on the tables.
 
 ### Result
 
-The table that results from the Except gem only includes records in Table A not in Table B.
+The table that results from the Except gem only includes records in Table A that are not in Table B.
 
 <div class="table-example">
 

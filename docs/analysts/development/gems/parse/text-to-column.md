@@ -11,7 +11,7 @@ tags:
 
 <span class="badge">SQL</span><br/><br/>
 
-When working with certain tables, you might encounter text columns that contain multiple values separated by specific characters (like commas or semicolons).
+When working with certain tables, you might encounter text columns that contain multiple values separated by specific characters such as commas or semicolons.
 
 Use the TextToColumn gem to parse this text and simplify further analysis and processing.
 

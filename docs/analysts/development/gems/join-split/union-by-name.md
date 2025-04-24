@@ -32,7 +32,7 @@ To add additional input ports, click `+` next to **Ports**.
 Let’s say you’re working with two tables: **Table A** and **Table B**.
 
 - Both tables contain order-related data.
-- Table B is missing one of the columns that exists in Table A.
+- Table B is missing the `amount` column that exists in Table A.
 - The columns that **Table B** does have are arranged in a different order compared to **Table A**.
 
 This example helps illustrate how the UnionByName gem operates on the tables.
