@@ -1,8 +1,8 @@
 ---
-title: Unity Catalog standard cluster support
-sidebar_label: UC standard cluster support
+title: Feature compatibility with UC clusters
+sidebar_label: UC cluster compatibility
 id: ucshared
-description: Gem support for Unity Catalog standard access mode
+description: Gem support for Unity Catalog standard and dedicated access mode
 sidebar_position: 1
 tags:
   - unitycatalog
@@ -14,13 +14,11 @@ tags:
   - databricks
 ---
 
-## Cluster Types
+When you configure a Databricks cluster, you must specify the cluster [access mode](https://docs.databricks.com/aws/en/compute/configure#access-modes). This page provides an overview of how different Prophecy features perform across various Unity Catalog cluster types.
 
-Databricks clusters come with various [Access Modes](https://docs.databricks.com/aws/en/compute/configure#access-modes).
+## High-level features
 
-To implement features including interactive pipeline runs, Prophecy has written some libraries in Python and Scala. These libraries need to be installed on the cluster.
-
-As a result, some Prophecy features are not supported on all cluster access modes. See the table below to check if a particular Prophecy feature is supported on a cluster access mode.
+Review the table below to determine which Prophecy features are available based on the cluster access mode you choose.
 
 | Prophecy Feature                                                                                      | Dedicated (formerly single user)                                                                                | Standard (formerly shared)                    | No isolation-shared (legacy) | Unity Catalog Dedicated (formerly single user) | Unity Catalog Standard (formerly shared) |
 | ----------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------- | ---------------------------- | ---------------------------------------------- | ---------------------------------------- |
@@ -33,14 +31,20 @@ As a result, some Prophecy features are not supported on all cluster access mode
 | [User-defined functions](/engineers/user-defined-functions)                                           | Supported                                                                                                       | Not supported                                 | Supported                    | Supported                                      | Supported\*                              |
 
 :::info \*UDF support
-Graviton instance support for [UDFs on Unity Catalog-enabled clusters](https://docs.databricks.com/aws/en/udf/) is available in Databricks Runtime 15.2 and above. Clusters must have shared access mode for Python UDFs.
+Graviton instance support for [UDFs on Unity Catalog-enabled clusters](https://docs.databricks.com/aws/en/udf/) is available in Databricks Runtime 15.2 and above. Clusters must have standard access mode for Python UDFs.
 :::
 
-## Gem Support
+## Gem support
 
 A subset of Prophecy gems are not supported on UC standard clusters according to the UC standard cluster version (12.2, 14.3, or 15.4). Each row indicates the minimum Prophecy Package version required for that gem to be supported on the relevant UC standard cluster version listed.
 
-Legacy Shared clusters 12.2 and below are shown for reference only; the later versions are strongly recommended.
+:::info
+The following tables apply to **Python** gems only. Support for Scala gems may differ.
+:::
+
+:::note
+Legacy Shared clusters 12.2 and below are shown for reference only. Later versions are strongly recommended.
+:::
 
 ### Sources / Targets
 
