@@ -84,7 +84,7 @@ const sidebars = {
     {
       type: "html",
       className: "sidebar-title",
-      value: "Analysts <span class='badge'>Preview</span>",
+      value: "Analysts",
       defaultStyle: true,
     },
     {
