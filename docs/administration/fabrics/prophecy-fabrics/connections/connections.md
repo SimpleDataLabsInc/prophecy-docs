@@ -42,3 +42,7 @@ If you are using a Prophecy fabric, you can add the following connections. You w
 | [MSSQL](./mssql)                     | Database             |
 | [MongoDB](./mongodb)                 | Database             |
 | [Tableau](./tableau)                 | BI tool              |
+
+## What's next
+
+To learn more about fabric components, visit the documentation on [Prophecy fabrics](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md) and [secrets](docs/administration/secrets/secrets.md).
