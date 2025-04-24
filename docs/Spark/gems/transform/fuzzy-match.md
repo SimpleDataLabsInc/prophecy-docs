@@ -26,22 +26,29 @@ Use the FuzzyMatch gem to identify non-identical duplicates in your data.
 
 ## Input and Output
 
-| DataFrame | Description                                                 |
-| --------- | ----------------------------------------------------------- |
-| **in0**   | Includes the DataFrame on which duplicates will be checked. |
-| **out**   | Generates one record per fuzzy match.                       |
+| DataFrame | Description                                                                                                  |
+| --------- | ------------------------------------------------------------------------------------------------------------ |
+| **in0**   | Includes the DataFrame on which duplicates will be checked. <br/>**Note: FuzzyMatch only allows one input.** |
+| **out**   | Generates one record per fuzzy match.                                                                        |
 
 ## Parameters
 
-| Parameter                  | Tab           | Description                                                                                  |
-| -------------------------- | ------------- | -------------------------------------------------------------------------------------------- |
-| Merge/Purge Mode           | Configuration | Records are either compared from a single source (Purge) or across multiple sources (Merge). |
-| Source ID Field            | Configuration | Unique identifier for each source when using **Merge** mode.                                 |
-| Record ID Field            | Configuration | Unique identifier for each record.                                                           |
-| Match threshold percentage | Configuration | If the match score is less than the threshold, the record does not qualify as a match.       |
-| Include similarity score   | Configuration | Checkbox to enable for an additional output column that includes the similarity score.       |
-| Field name                 | Match Fields  | Name of the column that you want to check for duplicates.                                    |
-| Match function             | Match Fields  | The method that generates the similarity score.                                              |
+### Configuration
+
+| Parameter                  | Description                                                                                                                                                                      |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Merge/Purge Mode           | Records are either compared from a single source (Purge) or across multiple sources (Merge). <br/> Merge mode assumes that multiple sources exist in the same DataFrame **in0**. |
+| Source ID Field            | Unique identifier for each source when using **Merge** mode. <br/>This is necessary because the different sources exist in the same DataFrame **in0**.                           |
+| Record ID Field            | Unique identifier for each record.                                                                                                                                               |
+| Match threshold percentage | If the match score is less than the threshold, the record does not qualify as a match.                                                                                           |
+| Include similarity score   | Checkbox to enable for an additional output column that includes the similarity score.                                                                                           |
+
+### Match Fields
+
+| Parameter      | Description                                               |
+| -------------- | --------------------------------------------------------- |
+| Field name     | Name of the column that you want to check for duplicates. |
+| Match function | The method that generates the similarity score.           |
 
 ## Example
 

@@ -16,7 +16,7 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Feature                                                       | Supported |
 | ------------------------------------------------------------- | --------- |
 | Read data with a [Source gem](/analysts/source-target)        | No        |
-| Write data with a Report gem                                  | Yes       |
+| Write data with an [Email gem](/analysts/email)               | Yes       |
 | Browse data in the [Environment browser](/analysts/pipelines) | No        |
 
 ## Limitations
@@ -34,8 +34,6 @@ To create an SMTP connection, enter the following parameters:
 | Port                                                                 | SMTP port.<br/>Port options may vary between SMTP services. |
 | Username                                                             | Your SMTP username                                          |
 | Password ([Secret required](docs/administration/secrets/secrets.md)) | Your SMTP password                                          |
-
-<!-- You can leverage your SMTP connection to send emails with the [Email](docs/analysts/development/gems/report/email.md) gem. -->
 
 ## Sharing connections within teams
 

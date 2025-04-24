@@ -18,7 +18,7 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Feature                                                       | Supported |
 | ------------------------------------------------------------- | --------- |
 | Read data with a [Source gem](/analysts/source-target)        | No        |
-| Write data with a Report gem                                  | Yes       |
+| Write data with a [TableauWrite gem](/analysts/tableau)       | Yes       |
 | Browse data in the [Environment browser](/analysts/pipelines) | No        |
 
 ## Limitations
@@ -38,8 +38,6 @@ To create a connection with Tableau, enter the following parameters:
 | Tableau Token Name                                                        | Name of your Tableau personal access token                            |
 | Tableau Token ([Secret required](docs/administration/secrets/secrets.md)) | Your Tableau personal access token                                    |
 | Tableau Site Name                                                         | Name of the Tableau site you're connecting to                         |
-
-<!-- You can leverage your Tableau connection with the [TableauWrite](docs/analysts/development/gems/report/tableau.md) gem. -->
 
 ## Tableau permissions
 
