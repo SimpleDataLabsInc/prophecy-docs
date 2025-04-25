@@ -748,6 +748,7 @@ const sidebars = {
       },
       items: [
         "administration/teams-users/settings",
+        "administration/teams-users/team-based-access",
         "administration/teams-users/project-creation-template",
       ],
     },
