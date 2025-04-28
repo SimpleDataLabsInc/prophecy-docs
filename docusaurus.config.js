@@ -227,7 +227,14 @@ const config = {
             },
           },
           aiChatSettings: {
-            // optional settings
+            exampleQuestions: [
+              "Do I need a fabric to run my pipeline?",
+              "How can Copilot help me build projects?",
+              "How do I add data to my pipeline?",
+              "Can I monitor my deployed projects?",
+            ],
+            exampleQuestionsLabel: "Example Questions",
+            isFirstExampleQuestionHighlighted: true,
             aiAssistantAvatar: "/img/icon.png", // optional -- use your own ai assistant avatar
           },
         },
