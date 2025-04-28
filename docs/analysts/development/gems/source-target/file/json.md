@@ -24,15 +24,15 @@ You can also use the [upload file](docs/analysts/development/gems/source-target/
 
 ### Source properties
 
-| Property                      | Description                                                                         | Default  |
-| ----------------------------- | ----------------------------------------------------------------------------------- | -------- |
-| Description                   | Description of the table.                                                           | None     |
-| Multiple documents per file   | Checkbox to enable if there are multiple documents to be parsed from the JSON file. | Disabled |
-| Inference Data Sampling Limit | Limit the number of rows sampled to infer the schema                                | `0`      |
+| Property                      | Description                                                           | Default  |
+| ----------------------------- | --------------------------------------------------------------------- | -------- |
+| Description                   | Description of the table.                                             | None     |
+| Multiple documents per file   | Whether the file contains multiple JSON objects separated by newline. | Disabled |
+| Inference Data Sampling Limit | Limit the number of rows sampled to infer the schema.                 | `0`      |
 
 ### Target properties
 
-| Property                    | Description                                                                         | Default  |
-| --------------------------- | ----------------------------------------------------------------------------------- | -------- |
-| Description                 | Description of the table.                                                           | None     |
-| Multiple documents per file | Checkbox to enable if there are multiple documents to be parsed from the JSON file. | Disabled |
+| Property                    | Description                                                               | Default  |
+| --------------------------- | ------------------------------------------------------------------------- | -------- |
+| Description                 | Description of the table.                                                 | None     |
+| Multiple documents per file | Whether the file will contain multiple JSON objects separated by newline. | Disabled |
