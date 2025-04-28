@@ -7,6 +7,8 @@ tags: []
 
 In Prophecy, access control operates through team associations with resources. Projects and fabrics are the fundamental resources to which teams are assigned. Users who belong to a team can access all projects and fabrics assigned to that team.
 
+![Relationship between users, teams, projects, and fabrics](img/project-fabric-team.png)
+
 This guide provides comprehensive best practices for implementing and managing team-based access to optimize collaboration while maintaining appropriate security boundaries.
 
 :::note
@@ -135,9 +137,13 @@ Prophecy projects must be connected to a fabric to run pipelines. This is becaus
 
 A key aspect of this relationship is that project and fabric team assignments operate independently. You can connect a project assigned to one team to a fabric assigned to a different team, provided you are a member of both teams. This independence lets you perform actions such as promoting projects from development to production environments.
 
-For example, a data scientist in the development team can develop and test a project using a development fabric. When ready for production, a platform engineer in both the development team and production team can attach a production fabric to the project.
+For example, a business analyst in the development team can develop and test a project using a development fabric. When ready for production, a platform engineer in both the development team and production team can attach a production fabric to the project.
 
-To accomplish the above scenario, you must ensure that at least one user is a member of both the project's team and the target fabric's team. This way,someone will be able to publish or deploy a project to production environments.
+![Attach different fabrics to a project](img/project-fabric-attachment.png)
+
+:::info
+To accomplish the scenario above, you must ensure that at least one user is a member of both the project's team and the target fabric's team. This way, someone will be able to publish or deploy a project to production environments.
+:::
 
 ### Provider compatibility
 
