@@ -31,15 +31,15 @@ There are a few limitations on the data types you can read from Snowflake:
 
 To create a connection with Snowflake, enter the following parameters:
 
-| Parameter             | Description                                                                                                          |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| Connection Name       | Name to to identify your connection                                                                                  |
-| Account               | URL of your Snowflake account, typically in the format<br/>`https://<orgname>-<account_name>.snowflakecomputing.com` |
-| Database              | Default database for reading and writing data                                                                        |
-| Schema                | Default schema for reading and writing data                                                                          |
-| Warehouse             | Name of the SQL warehouse to use for the connection                                                                  |
-| Role                  | Snowflake [role](https://docs.snowflake.com/en/user-guide/security-access-control-overview) of the user to connect   |
-| Authentication method | Enter your Snowflake username and use a [secret](docs/administration/secrets/secrets.md) to enter your password.     |
+| Parameter             | Description                                                                                                                                    |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Connection Name       | Name to to identify your connection                                                                                                            |
+| Account               | URL of your Snowflake account<br/>Example: `https://<orgname>-<account_name>.snowflakecomputing.com`                                           |
+| Database              | Default database for reading and writing data                                                                                                  |
+| Schema                | Default schema for reading and writing data                                                                                                    |
+| Warehouse             | Name of the SQL warehouse to use for the connection                                                                                            |
+| Role                  | Snowflake [role](https://docs.snowflake.com/en/user-guide/security-access-control-overview) of the user to connect<br/>Example: `ACCOUNTADMIN` |
+| Authentication method | Enter your Snowflake username and use a [secret](docs/administration/secrets/secrets.md) to enter your password.                               |
 
 <!-- ## Authentication methods
 

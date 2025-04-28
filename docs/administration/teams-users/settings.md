@@ -1,8 +1,7 @@
 ---
 title: User settings
 id: settings
-sidebar_class_name: hidden
-description: This page describes the Settings pages of Prophecy
+description: Learn about the different Prophecy settings to configure
 tags:
   - settings
   - admin
@@ -10,46 +9,67 @@ tags:
   - teams
 ---
 
-This page talks about the User's Settings and preferences.
+Prophecy settings are applied at the user level. You can change settings to:
 
-To access Settings, click on the `...` at the bottom of the left-hand menu bar and then click the Settings icon, as shown below.
+- Update your personal user profile.
+- Manage your teams and team members.
+- Add, edit, or delete Git credentials from your environment.
+- Set up authentication.
+- View the current version of your Prophecy environment.
+
+Navigate to settings by clicking `...` in the left navigation menu and the **gear** icon.
 
 ![access-settings](img/Access_Settings_page.png)
 
-## Info
-
-Users can manage their account Name, Email, and Password from the Info Tab. They can also delete their Account if needed.
-
-![user-settings](img/User_Settings.png)
-
-:::caution Deleting an account
-It's important to note that this action is irreversible. Once you delete an account, all associated data will be permanently removed from Prophecy.
-Be aware that all personal teams, projects, and fabrics will be permanently deleted and cannot be recovered.
+:::note
+Prophecy cluster admins will see an additional **Admin** tab in settings.
 :::
 
-## Teams
+## Settings tabs
 
-This page displays all the Teams the current user is a part of. From here, you can Create a new team or invite Users to your existing Teams.
+### Info
 
-![Teams](img/Teams.png)
+In the **Info** tab, you can:
 
-## Git
+- Update your name
+- Update your company
+- Change your password
+- Delete your account
 
-This page displays the Git credentials created by the user. By default, a credential for Prophecy Managed Git is present. These tokens are linked to Prophecy projects each user accesses.
+:::caution
+Deleting an account is irreversible. Once you delete an account, all associated data will be permanently removed from Prophecy, including personal teams, projects, and fabrics.
+:::
 
-![git](img/Git.png)
+### Teams
 
-## Access Token
+In the **Team** tab, you can:
 
-This page displays the Personal Access Tokens created to access Prophecy APIs securely.
+- View teams that you are included in
+- Create new teams
+- View users in your teams
+- Add users to or delete users from your teams
+- Modify user roles (for example, making a user a team admin)
 
-![Access_tokens](img/Access_Tokens.png)
+### Git
 
-## About
+In the **Git** tab, you can:
 
-This page displays the current version and state of all services in Prophecy deployment.
+- Review your existing Git credentials (Prophecy-Managed Git is present by default)
+- Add new Git credentials
+- Edit or delete existing Git credentials
 
-![About](img/About.png)
+These credentials can be used during project creation. Git connections are required to store Prophecy project metadata and code.
+
+### Access Token
+
+In the **Access Token** tab, you can:
+
+- Review active or inactive Personal Access Tokens
+- Create new Personal Access Tokens to access Prophecy APIs securely
+
+### About
+
+The **About** tab displays the current version of the Prophecy deployment.
 
 ## What's next
 

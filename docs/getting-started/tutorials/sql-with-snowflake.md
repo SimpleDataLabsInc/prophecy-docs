@@ -187,7 +187,7 @@ Now that our model is fully defined, with all the logic specified, it’s time t
 2. Once the model runs, the **Result** icon appears.
 3. Click the Result icon to view a **Sample** set of records.
 
-Notice Copilot is offering suggested fixes when errors appear. See how **Fix with AI** works [here](/docs/copilot/copilot-ai-capabilities.md#fix-with-ai). Explore suggested fixes in the canvas, inside each transformation gem, or inside gem expressions.
+Notice Copilot is offering suggested fixes when errors appear. See how **Fix with AI** works [here](/engineers/copilot#fix-with-ai). Explore suggested fixes in the canvas, inside each transformation gem, or inside gem expressions.
 
 ## Code view
 

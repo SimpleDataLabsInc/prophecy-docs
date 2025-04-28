@@ -12,11 +12,11 @@ tags:
   - sql
 ---
 
-Develop your SQL expressions by using the Visual Expression Builder, which shows you available columns and functions that you can use to build your expressions.
+Develop your SQL expressions by using the visual expression builder, which shows you available columns and functions that you can use to build your expressions.
 
-## Navigate to the Visual Expression Builder
+## Navigate to the visual expression builder
 
-The Visual Expression Builder is supported wherever you see Visual and Code views within your transformation gems.
+The visual expression builder is supported wherever you see Visual and Code views within your transformation gems.
 
 - Create or open an existing transformation gem, and select the **Visual** view.
 
@@ -26,13 +26,13 @@ The view you select persists across your gems.
 
 :::
 
-All of the expressions you build using the Visual Expression Builder are converted to code in the gem and model code views. Similarly, edits you make in the Code view, whether it's in an expression or condition editor, will be converted into Visual view.
+All of the expressions you build using the visual expression builder are converted to code in the gem and model code views. Similarly, edits you make in the Code view, whether it's in an expression or condition editor, will be converted into Visual view.
 
 This allows you to take advantage of both Visual and Code views when building your expressions.
 
 ## Build an expression
 
-Using the Visual Expression Builder, you can build an expression using the following modes:
+Using the visual expression builder, you can build an expression using the following modes:
 
 - **Simple Expression**: This mode allows you to choose an expression, like a column, function, or Case statement.
 - **Comparison**: This mode allows you to compare two simple expressions. You have the option of using conditions, such as `IF` and `ELSEIF` statements.
@@ -150,7 +150,7 @@ To set up the grouping expressions, follow these steps:
 
 ## Tips
 
-Here are some additional tips to keep in mind when using the Visual Expression Builder:
+Here are some additional tips to keep in mind when using the visual expression builder:
 
 - The expression dropdowns support search.
 - Each argument of your function is another expression since you have the same expression options to choose from.

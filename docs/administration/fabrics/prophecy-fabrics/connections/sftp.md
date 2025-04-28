@@ -35,7 +35,7 @@ To configure an SFTP connection in Prophecy, enter the following parameters:
 
 | Parameter             | Description                                                   |
 | --------------------- | ------------------------------------------------------------- |
-| Connection Name       | Unique name for the connection (e.g., `MySFTPConnection`)     |
+| Connection Name       | Unique name for the connection                                |
 | Host                  | Hostname or IP address of the SFTP server                     |
 | Port                  | Port number for SFTP (default is `22`)                        |
 | Username              | Your SFTP username                                            |

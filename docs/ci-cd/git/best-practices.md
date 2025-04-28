@@ -24,6 +24,8 @@ Use a proper Git branching strategy that aligns with your team's goals.
 
 ### Small teams
 
+![Small team branching strategy](img/small-teams.png)
+
 For small teams:
 
 1. Have a main branch for developers to merge in their changes.
@@ -39,6 +41,8 @@ For small teams:
    This encourages teams to perform code reviews and collaborate, which ensures higher code quality and fewer bugs.
 
 ### Large teams
+
+![Large team branching strategy](img/large-teams.png)
 
 For large teams with rigid and separate execution environments, and promotion processes:
 

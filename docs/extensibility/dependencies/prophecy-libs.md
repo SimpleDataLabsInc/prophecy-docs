@@ -6,47 +6,79 @@ description: Learn about these small and lightweight utility libraries
 tags: [functionality, compatibility, version, library, plib, plibs, license]
 ---
 
-Prophecy libraries are small and lightweight utility libraries that offer comprehensive sets of Spark functions tailored for Prophecy customers. They address the most common data transformation use cases, including monitoring, auditing, connectors, and other data processing functions.
+Prophecy libraries (ProphecyLibs) are small and lightweight utility libraries that offer comprehensive sets of Spark functions tailored for Prophecy customers. They address the most common data transformation use cases, including monitoring, auditing, connectors, and other data processing functions.
 
 Here are the released artifacts:
 
+- ProphecyLibsPython: [PyPI](https://pypi.org/project/prophecy-libs/)
 - ProphecyLibsScala: [Maven](https://mvnrepository.com/artifact/io.prophecy/prophecy-libs)
-- ProphecyLibsPython: [PyPi](https://pypi.org/project/prophecy-libs/)
 
-Depending on the language you are working in, one of these artifacts will always be be a **system dependency** in your Prophecy project.
+For a list of the latest ProphecyLibs versions, see [Version Chart](/docs/release_notes/version_chart/version_chart.md).
 
-You can see which Prophecy Libs version is running on your Spark cluster by checking the Cluster Attached dropdown in the pipeline.
+## Project dependencies
 
-<img src={require('./img/libs-version-cluster.png').default} alt="Prophecy libs version in the fabric cluster" width="58%" />
+Depending on your project language (Python or Scala), the appropriate Prophecy library will be added as a [dependency](docs/extensibility/dependencies/spark-dependencies.md) in your Prophecy project.
 
-For a list of the latest versions, see [Version Chart](/docs/release_notes/version_chart/version_chart.md).
+Prophecy libraries are installed in your Databricks cluster when you attach a cluster in your project. The version installed will be the same version defined in your project dependency settings. You can easily [update](/engineers/dependencies#update-dependencies) the ProphecyLibs version of your project if necessary.
 
 ## Functionality
 
-This section includes the functionalities offered by Prophecy Libs.
+### Pipeline monitoring
 
-### Pipeline Monitoring
-
-Out of the box, Spark lacks auditing or monitoring capabilities for its pipelines. Prophecy Libs bridges this gap by offering step-by-step transformation monitoring, enabling users to easily comprehend pipeline execution metrics (e.g., times of arrival, amount of data processed), data profiles, and detailed debugging information at every pipeline step.
+Spark lacks auditing or monitoring capabilities for its pipelines out of the box. Prophecy libraries bridge this gap by offering step-by-step transformation monitoring, enabling users to easily comprehend pipeline execution metrics (e.g., times of arrival, amount of data processed), data profiles, and detailed debugging information at every pipeline step.
 
 :::note
 
-Pipeline Monitoring is fully independent of the Prophecy IDE, using standard metadata tables. Reading and leveraging this information for downstream consumption is as simple as reading a table.
+Pipeline monitoring is fully independent of the Prophecy IDE, using standard metadata tables. Reading and leveraging this information for downstream consumption is as simple as reading a table.
 
 :::
 
-To learn more about Prophecy monitoring capabilities, see [Pipeline Monitoring](/docs/Orchestration/pipeline-monitoring/pipeline-monitoring.md). And to learn more about the metrics setup, see [Execution Metrics](/docs/Spark/execution/execution-metrics.md).
+To learn more about Prophecy monitoring capabilities, see [Pipeline Monitoring](/docs/Orchestration/pipeline-monitoring/pipeline-monitoring.md). To learn more about metrics setup, see [Execution Metrics](/docs/Spark/execution/execution-metrics.md).
 
-### Utility Functions
+### Utility functions
 
-The standard Spark function library covers the basics of data transformation but often falls short for enterprise data platforms. Prophecy Libs offers additional utility functions essential for complex data operations, especially during legacy platform migrations.
+The standard Spark function library covers the basics of data transformation but often falls short for enterprise data platforms. Prophecy libraries offer additional utility functions essential for complex data operations, especially during legacy platform migrations.
 
 This includes comprehensive data lookup functionality, configuration management, complex type processing UDFs, secret manager integration, and other high-demand functions.
 
-### Legacy Connectors
+### Legacy connectors
 
-Prophecy-libs provides several high-performance connectors missing from the standard Spark source palette. This includes an EBCDIC fixed format, SFTP, and REST API connectors, ensuring seamless integration with legacy systems.
+Prophecy libraries provide several high-performance connectors missing from the standard Spark source palette. This includes an EBCDIC fixed format, SFTP, and REST API connectors, ensuring seamless integration with legacy systems.
+
+## Download Prophecy libraries
+
+If you want to download Prophecy libraries, you can find them publicly from the following cloud providers. For example, if Maven/PyPI is blocked on Databricks, you may want to [add Prophecy libraries to your Databricks volumes](/admin/dbx-volumes-plibs).
+
+### Azure
+
+- ProphecyScalaLibs
+
+  `https://prophecypublicazure.blob.core.windows.net/prophecy-public-libs/prophecy-scala-libs/`
+
+- ProphecyPythonLibs
+
+  `https://prophecypublicazure.blob.core.windows.net/prophecy-public-libs/prophecy-python-libs/`
+
+### GCP
+
+- ProphecyScalaLibs
+
+  `gs://prophecy-public-gcp/prophecy-scala-libs/`
+
+- ProphecyPythonLibs
+
+  `gs://prophecy-public-gcp/prophecy-python-libs/`
+
+### AWS (S3)
+
+- ProphecyScalaLibs
+
+  `s3://prophecy-public-bucket/prophecy-libs/`
+
+- ProphecyPythonLibs
+
+  `s3://prophecy-public-bucket/python-prophecy-libs/`
 
 ## License
 
-Prophecy Libs is source-available to all Prophecy customers. The built artifacts of Prophecy Libs are published in public repositories. Source code access is available via secure file-sharing per request.
+Prophecy libraries are source-available to all Prophecy customers. The built artifacts of Prophecy libraries are published in public repositories. Source code access is available via secure file-sharing per request.

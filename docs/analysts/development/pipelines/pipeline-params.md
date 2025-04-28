@@ -11,7 +11,7 @@ tags:
 
 Configure pipeline parameters to use variables throughout your pipeline. Parameters define values or expressions that can be used to dynamically populate values during pipeline runs. This can be useful when you want to:
 
-- Control parameter configurations from business applications.
+- Control parameter configurations from [business applications](/analysts/business-applications).
 - Set different values in the pipeline depending on the execution environment (such as development or production).
 - Reuse the same values throughout the pipeline, ensuring consistency and maintainability.
 

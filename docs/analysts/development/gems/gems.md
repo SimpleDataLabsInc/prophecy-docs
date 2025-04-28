@@ -11,6 +11,10 @@ tags:
 
 [Gems](/docs/getting-started/concepts/gems.md) are functional units in a pipeline that perform tasks such as reading, transforming, writing, or handling other data operations. When you build pipelines in a SQL project, some gems will be powered by [Prophecy Automate](/administration/architecture), and some gems will be powered by SQL dbt.
 
+:::tip Copilot
+Copilot can help you build, refine, and explain gems throughout your pipeline. See [Copilot](/analysts/copilot) for more information.
+:::
+
 ## Categories
 
 | Category          | Description                                                | Execution         |
@@ -61,14 +65,14 @@ Some gems can be configured in the **visual** view or the **code** view. Use the
 
 The action menu gives you more granular control over individual gems. When you expand the action menu, you see the following options:
 
-| **Action**       | **Description**                                               |
-| ---------------- | ------------------------------------------------------------- |
-| **Explain**      | Copilot adds a comment to the gem that explains what it does. |
-| **Fix**          | Copilot resolves an error in the gem configuration.           |
-| **Label**        | Copilot renames the gem.                                      |
-| **Add Comment**  | Manually write a comment that explains the gem.               |
-| **Change Phase** | Change the [phase](#gem-phase) of the gem.                    |
-| **Delete**       | Remove the gem from the pipeline.                             |
+| **Action**       | **Description**                                                       |
+| ---------------- | --------------------------------------------------------------------- |
+| **Explain**      | Copilot provides an explanation of what the gem does in the pipeline. |
+| **Fix**          | Copilot resolves an error in the gem configuration.                   |
+| **Label**        | Copilot renames the gem.                                              |
+| **Add Comment**  | Manually write a comment that appears as a tooltip above the gem.     |
+| **Change Phase** | Change the [phase](#gem-phase) of the gem.                            |
+| **Delete**       | Remove the gem from the pipeline.                                     |
 
 ### Gem phase
 

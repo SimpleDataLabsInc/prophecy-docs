@@ -43,22 +43,46 @@ If you want to pivot the data, rather than unpivot, use the [Aggregate](/enginee
 
 ## Example
 
-Transforming your data into a long format can be beneficial when creating visualizations, comparing variables, handling dynamic data, and more.
+Imagine you have sales data for different products, with each quarter's sales stored in its own column—this is known as wide format. Before modeling seasonal trends or doing time series analysis, it's often helpful to convert this into long format, where each row represents a single observation.
 
-Let's think about a time series example. If you have product sales data in a wide format, you may want to transform it into a long format before modeling the time series and analyzing the seasonal patterns in sales.
+<div class="table-example">
 
-The image below shows sample input and output tables for this scenario.
+| Product | Q1  | Q2  | Q3  | Q4  |
+| ------- | --- | --- | --- | --- |
+| A       | 100 | 150 | 130 | 170 |
+| B       | 90  | 120 | 110 | 160 |
 
-![Wide and long formats of time series data](./img/unpivot-time-series.png)
+</div>
 
-This table describes how this transformation was achieved:
+To configure a Unpivot gem for this table:
 
-| Parameter                       | Input                                                                                             |
-| ------------------------------- | ------------------------------------------------------------------------------------------------- |
-| Column(s) to use as identifiers | The _Product_ column is the identifier because it defines which product the sales correspond to.  |
-| Columns to unpivot              | All of the quarterly sales columns will be unpivoted.                                             |
-| Variable column name            | The variable column is named _Quarter_ because it identifies the sales period.                    |
-| Value column name               | The value column is named _UnitsSold_ because it contains information about number of units sold. |
+1. Select the identifier columns. In the example above, the `Product` column is the identifier column.
+1. Select the columns to unpivot. In the example above, all of the quarter columns (`Q1`, `Q2`, etc.) are your columns to unpivot.
+1. Name the variable column `Quarter` because it identifies the sales period.
+1. Name the value column `UnitsSold` because it contains number of units sold per quarter.
+1. Save and run the gem.
+
+After the transformation:
+
+- The quarter names (`Q1`, `Q2`, etc.) will move into a new `Quarter` column.
+- The corresponding sales values will be stored in a `UnitsSold` column.
+
+<div class="table-example">
+
+| Product | Quarter | UnitsSold |
+| ------- | ------- | --------- |
+| A       | Q1      | 100       |
+| A       | Q2      | 150       |
+| A       | Q3      | 130       |
+| A       | Q4      | 170       |
+| B       | Q1      | 90        |
+| B       | Q2      | 120       |
+| B       | Q3      | 110       |
+| B       | Q4      | 160       |
+
+</div>
+
+This makes your data easier to analyze over time, since each row now represents one product's sales for a specific quarter.
 
 ## Example code
 

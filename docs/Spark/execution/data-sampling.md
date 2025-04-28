@@ -39,7 +39,7 @@ When you choose selective data sampling, you gain the ability to enable or disab
 If the **Data Preview** option is not selected for a gem, you'll see a pale-color gem output after running the data pipeline. This means that no data sample was generated. To generate it, open the pale interim and it will load the data. After it loads, the data sample will display the normal bold color.
 
 :::note
-Normally on Databricks UC shared clusters, data samples are only generated on edge nodes. With selective interims, you can select to generate samples from any gem.
+Normally on Databricks UC standard (formerly shared) clusters, data samples are only generated on edge nodes. With selective interims, you can select to generate samples from any gem.
 :::
 
 ### Sources

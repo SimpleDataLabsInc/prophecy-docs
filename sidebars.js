@@ -84,7 +84,7 @@ const sidebars = {
     {
       type: "html",
       className: "sidebar-title",
-      value: "Analysts <span class='badge'>Preview</span>",
+      value: "Analysts",
       defaultStyle: true,
     },
     {
@@ -159,8 +159,10 @@ const sidebars = {
               label: "Transform",
               items: [
                 "analysts/development/gems/transform/aggregate",
+                "analysts/development/gems/transform/dynamic-select",
+                "analysts/development/gems/transform/fuzzy-match",
                 "analysts/development/gems/transform/pivot",
-                "analysts/development/gems/transform/unpivot",
+                "analysts/development/gems/transform/transpose",
                 "analysts/development/gems/transform/window",
               ],
             },
@@ -170,11 +172,11 @@ const sidebars = {
               items: [
                 "analysts/development/gems/prepare/data-cleansing",
                 "analysts/development/gems/prepare/deduplicate",
-                "analysts/development/gems/prepare/bulk-column-rename",
-                "analysts/development/gems/prepare/bulk-column-expressions",
                 "analysts/development/gems/prepare/filter",
                 "analysts/development/gems/prepare/flatten-schema",
                 "analysts/development/gems/prepare/limit",
+                "analysts/development/gems/prepare/multi-column-rename",
+                "analysts/development/gems/prepare/multi-column-edit",
                 "analysts/development/gems/prepare/order-by",
                 "analysts/development/gems/prepare/reformat",
               ],
@@ -184,8 +186,10 @@ const sidebars = {
               label: "Join",
               items: [
                 "analysts/development/gems/join-split/join",
-                "analysts/development/gems/join-split/fuzzy-match",
                 "analysts/development/gems/join-split/union",
+                "analysts/development/gems/join-split/union-by-name",
+                "analysts/development/gems/join-split/intersect",
+                "analysts/development/gems/join-split/except",
                 "analysts/development/gems/join-split/dynamic-replace",
               ],
             },
@@ -236,9 +240,14 @@ const sidebars = {
           label: "Copilot",
           link: {
             type: "doc",
-            id: "analysts/development/copilot/pipeline-generation",
+            id: "analysts/development/copilot/copilot-analysts",
           },
-          items: [],
+          items: [
+            "analysts/development/copilot/gem-generation",
+            "analysts/development/copilot/expression-generation",
+            "analysts/development/copilot/auto-documentation",
+            "analysts/development/copilot/generate-fix",
+          ],
         },
         "analysts/development/connections",
         "analysts/development/data-explorer",
@@ -486,6 +495,12 @@ const sidebars = {
             },
             "Spark/gems/expression-builder",
           ],
+        },
+        {
+          type: "category",
+          label: "Copilot",
+          link: { type: "doc", id: "Spark/copilot/copilot-for-spark" },
+          items: [],
         },
         {
           type: "category",
@@ -737,6 +752,7 @@ const sidebars = {
       },
       items: [
         "administration/teams-users/settings",
+        "administration/teams-users/team-based-access",
         "administration/teams-users/project-creation-template",
       ],
     },
@@ -795,6 +811,8 @@ const sidebars = {
               },
               items: [
                 "administration/fabrics/Spark-fabrics/databricks/ucshared",
+                "administration/fabrics/Spark-fabrics/databricks/whitelist-plibs",
+                "administration/fabrics/Spark-fabrics/databricks/volumes-plibs",
               ],
             },
             "administration/fabrics/Spark-fabrics/prophecy-managed-databricks",

@@ -20,7 +20,7 @@ Prophecy’s end-to-end platform makes data pipeline development faster and acce
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-To learn more about what Data Copilot can do, see [Data Copilot AI capabilities](/docs/copilot/copilot-ai-capabilities.md).
+To learn more about what Data Copilot can do, see [Data Copilot AI capabilities](/engineers/copilot).
 
 ## Knowledge Graph
 
