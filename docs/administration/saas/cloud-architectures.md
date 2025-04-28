@@ -1,6 +1,7 @@
 ---
 title: Cloud architectures
 id: cloud-architectures
+draft: true
 description: View the difference in architecture when Prophecy is deployed in different cloud providers
 tags:
   - architecture
