@@ -51,7 +51,7 @@ The **Run History** tab lets you see a full list of historical pipeline runs fro
 - **Schedule:** Frequency of the pipeline runs.
 - **Pipeline:** Name of the pipeline.
 - **Project:** Project that contains the pipeline.
-- **Run by:** How the run was triggered. This includes by **schedules**, **APIs**, **Business Apps**, or **interactive runs**.
+- **Run by:** How the run was triggered. This includes by **schedules**, **APIs**, **Prophecy Apps**, or **interactive runs**.
 - **Duration:** How long the computation lasted.
 - **Result:** Success or failure of the run.
 

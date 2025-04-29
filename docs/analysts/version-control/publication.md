@@ -13,7 +13,7 @@ Project publication is an essential step in the project lifecycle. Each publishe
 
 When you publish a project, two key processes occur: release and deployment.
 
-First, the project is released, creating a new version and preparing it for distribution. During this process, Prophecy assigns a version label to the project and makes the new version available in packages and business applications.
+First, the project is released, creating a new version and preparing it for distribution. During this process, Prophecy assigns a version label to the project and makes the new version available in packages and Prophecy Apps.
 
 Next, the project is deployed, configuring it for execution in different environments. The deployment process builds the project for each target environment (defined by [fabrics](docs/getting-started/concepts/fabrics.md)) and enables pipeline [schedules](docs/analysts/scheduling.md) for each fabric.
 

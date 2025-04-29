@@ -204,7 +204,7 @@ Now, you will be able to view this version of the pipeline in the project [versi
 
 ## Publish your project
 
-Let's publish this version of the project. When you publish a project, it becomes available for external use in scheduling, business applications, and packages.
+Let's publish this version of the project. When you publish a project, it becomes available for external use in scheduling, Prophecy Apps, and packages.
 
 1. In the project header, select **Publish**.
 1. Review the Copilot-generated description of the project version.

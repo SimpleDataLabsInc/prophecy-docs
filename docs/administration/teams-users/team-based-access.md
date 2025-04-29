@@ -52,14 +52,14 @@ As organizations scale, they often benefit from more granular team structures al
 - Access to environment with web analytics and campaign data
 - Create reporting pipelines
 - Send reports to BI tools to create dashboards
-- Run business applications
+- Run [Prophecy Apps](/analysts/business-applications)
 
 #### Product Analytics Team
 
 - Access to environment with user behavior data and product metrics
 - Create reporting pipelines
 - Send reports to BI tools to create dashboards
-- Run business applications
+- Run [Prophecy Apps](/analysts/business-applications)
 
 ## Fabric creation
 
@@ -116,13 +116,13 @@ Prophecy's sharing model enables teams to reuse project components without compr
 Projects can be shared with other teams to extend access. When a project is shared with your team:
 
 - You can import project components into your own projects through the [Package Hub](/engineers/package-hub).
-- You can run [business applications](/analysts/business-applications) built on top of project pipelines.
+- You can run [Prophecy Apps](/analysts/business-applications) built on top of project pipelines.
 - You **cannot** modify original project components.
 
 This model encourages the creation of reusable components that can be leveraged across teams without duplication. When a team creates a high-quality transformation or dataset definition, other teams can incorporate it into their workflows without risk of breaking the original implementation.
 
 :::note
-Business applications are only available for SQL projects at this time.
+Prophecy Apps are only available for SQL projects at this time.
 :::
 
 ## Project and fabric relationships

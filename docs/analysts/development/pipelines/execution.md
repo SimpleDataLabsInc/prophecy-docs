@@ -34,7 +34,7 @@ To learn more about deploying projects to specific execution environments, see [
 
 ## App execution
 
-You can also run pipelines with [business applications](/analysts/business-applications) in Prophecy. These apps make it easy for non-technical users to run data pipelines through intuitive, form-based interfaces. By restricting access to pipelines themselves, you can provide proper guardrails for pipeline execution via business apps.
+You can also run pipelines with [Prophecy Apps](/analysts/business-applications) in Prophecy. These apps make it easy for non-technical users to run data pipelines through intuitive, form-based interfaces. By restricting access to pipelines themselves, you can provide proper guardrails for pipeline execution via Prophecy Apps.
 
 ## External sources
 

@@ -10,13 +10,13 @@ tags: []
 
 - **Interactive:** Lets users add their own values to the pipeline configuration.
 - **Data Integration:** Allows users to upload data or view data outputs.
-- **Content:** Embed static text and images into your business apps.
+- **Content:** Embed static text and images into your Prophecy Apps.
 
 The **Layers** tab of the App Builder defines the structure of your components. You can drag and drop components within containers to rearrange them in the app. The **Inspect** tab lets you configure component settings. This determines how the components will appear and behave in your application. All component settings are described below.
 
 ## Interactive
 
-Review the interactive components that you can add to your business application. Users will provide their own input to these fields, and you can add default values for them.
+Review the interactive components that you can add to your Prophecy App. Users will provide their own input to these fields, and you can add default values for them.
 
 ### Text Input
 
@@ -159,7 +159,7 @@ Data integration components help users interact with the data that flows into an
 
 ### File Upload
 
-Let the user upload their own file to replace the data of a Source gem in the pipeline. When a user uploads a file to the business app, they will have to configure the file and write it to the primary SQL warehouse of the attached fabric. This is the same mechanism that the [upload file](docs/analysts/development/gems/source-target/table/upload-files.md) feature uses.
+Let the user upload their own file to replace the data of a Source gem in the pipeline. When a user uploads a file to the Prophecy App, they will have to configure the file and write it to the primary SQL warehouse of the attached fabric. This is the same mechanism that the [upload file](docs/analysts/development/gems/source-target/table/upload-files.md) feature uses.
 
 | Setting          | Description                                                                                                                                         |
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -179,11 +179,11 @@ Let the user view the output of their app configuration.
 
 ## Content
 
-Content components let you embed static text and images into your business apps.
+Content components let you embed static text and images into your Prophecy Apps.
 
 ### Text
 
-Add context to your business app. Use the Inspect tab to add formatting to text, such as heading type, bold, italics, links, and more.
+Add context to your Prophecy App. Use the Inspect tab to add formatting to text, such as heading type, bold, italics, links, and more.
 
 | Setting | Description                     |
 | ------- | ------------------------------- |
@@ -191,7 +191,7 @@ Add context to your business app. Use the Inspect tab to add formatting to text,
 
 ### Image
 
-Embed an image into your business app.
+Embed an image into your Prophecy App.
 
 | Setting      | Description                              |
 | ------------ | ---------------------------------------- |
