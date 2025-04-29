@@ -18,7 +18,9 @@ In this tutorial, you'll learn how to create a Prophecy App where users can:
 - Filter the data based on custom input.
 - Preview and download the output data.
 
-To do so, you will create a simple pipeline that:
+![Run Prophecy App results](img/prophecy-app-run.png)
+
+To do so, you will create a pipeline that:
 
 - Ingests bakehouse review data from the SQL warehouse.
 - Filters the data by franchise location.
@@ -79,13 +81,13 @@ Next, add a Filter gem to the pipeline. To make the filter condition dynamic, we
 1. Open the Filter gem configuration.
 1. For the filter condition, build the visual expression to filter the dataset using values from the `franchiseID` column.
 
-![Configure visual expression to use parameter](img/visual-expression-parameter.png)
-
-If you switch to the code view, you can use the following expression as the filter condition `franchiseID = {{ var('franchise_id') }}`.
-
 :::tip
 Find your configured pipeline parameters by clicking on the **Configuration Variable** in the visual expression builder.
 :::
+
+![Configure visual expression to use parameter](img/visual-expression-parameter.png)
+
+If you switch to the code view, you can use the following expression as the filter condition `franchiseID = {{ var('franchise_id') }}`.
 
 ### Add a target table
 
@@ -145,6 +147,10 @@ Finally, add a Data Preview component to display a sample of the result of the p
 1. In the **Inspect** tab, select the pipeline's output table.
 1. For the **Label**, enter `Franchise reviews`.
 
+The following image shows the complete Prophecy App template in the App Builder.
+
+![Prophecy App template](img/prophecy-app-template.png)
+
 ## Run the app
 
 After building the app, execute it to validate its functionality. This process allows you to verify that all app components function according to specifications.
@@ -153,7 +159,9 @@ After building the app, execute it to validate its functionality. This process a
 1. Review the apps associated with projects owned by your teams.
 1. Select your **Review** app.
 1. Create a new app configuration. This configuration represents an instance of the app with a set of custom parameter values.
-1. Test the app by uploading various datasets and initiating execution to observe the results.
+1. Test the app by uploading various datasets and running the app to observe results.
+
+![Run Prophecy App results](img/prophecy-app-run.png)
 
 To explore advanced configuration options and scheduling capabilities, refer to the documentation on [running apps](/analysts/run-apps).
 
