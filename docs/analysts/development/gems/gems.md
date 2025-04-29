@@ -17,17 +17,17 @@ Copilot can help you build, refine, and explain gems throughout your pipeline. S
 
 ## Categories
 
-| Category          | Description                                                | Execution         |
-| ----------------- | ---------------------------------------------------------- | ----------------- |
-| **Source/Target** | Read and write data from various data providers.           | Prophecy Automate |
-| **Transform**     | Modify, enrich, or reshape data during processing.         | SQL warehouse     |
-| **Prepare**       | Clean, structure, and optimize data for analysis.          | SQL warehouse     |
-| **Join**          | Merge, split, or link datasets.                            | SQL warehouse     |
-| **Parse**         | Interpret structured formats in columns like XML and JSON. | SQL warehouse     |
-| **Report**        | Share results through channels such as email or Tableau.   | Prophecy Automate |
-| **Custom**        | Enhance and extend Prophecy’s functionality.               | Depends           |
+| Category          | Description                                                |
+| ----------------- | ---------------------------------------------------------- |
+| **Source/Target** | Read and write data from various data providers.           |
+| **Transform**     | Modify, enrich, or reshape data during processing.         |
+| **Prepare**       | Clean, structure, and optimize data for analysis.          |
+| **Join**          | Merge, split, or link datasets.                            |
+| **Parse**         | Interpret structured formats in columns like XML and JSON. |
+| **Report**        | Share results through channels such as email or Tableau.   |
+| **Custom**        | Enhance and extend Prophecy’s functionality.               |
 
-<!-- | **Subgraph**      | Group gems into reusable components.                       | Depends           | -->
+<!-- | **Subgraph**      | Group gems into reusable components.                       |  -->
 
 ## Interactive gem examples
 
@@ -52,6 +52,10 @@ When you click on a gem from the gem drawer, an instance of that gem gets added 
 |    7    | Run button    | A button that runs the pipeline up to and including the gem.                                                |
 |    8    | Action menu   | A menu that includes options to change the phase of the gem, add run conditions, delete the gem, and more.  |
 |    9    | Warning       | Indicator that the gem contains errors to be fixed.                                                         |
+
+:::tip
+If you select one or more gems, you can copy and paste them within the same pipeline or across pipelines. However, pasting is not supported between projects that use different languages (for example, from SQL to Scala).
+:::
 
 ## Gem configuration
 
