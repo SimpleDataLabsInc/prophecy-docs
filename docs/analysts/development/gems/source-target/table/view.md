@@ -21,6 +21,7 @@ Source and target views have the same following parameters.
 | Properties      | Define certain properties of the table, including the table schema.                                         |
 | Preview         | Load the data to see a preview before saving.                                                               |
 
+<!--
 ### Source properties
 
 | Property                     | Description                                           | Default           |
@@ -62,4 +63,4 @@ Source and target views have the same following parameters.
 | Persist Docs Columns         |                                                       | false             |
 | Persist Docs Relations       |                                                       | false             |
 | Clustered By                 |                                                       | `+`               |
-| Buckets                      |                                                       | `0`               |
+| Buckets                      |                                                       | `0`               | -->

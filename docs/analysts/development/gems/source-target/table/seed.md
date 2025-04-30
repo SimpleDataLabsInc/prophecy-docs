@@ -24,7 +24,7 @@ Seeds can only be sources. The following table describes the required parameters
 The **Location** tab of the seed configuration is grayed out. This is because seeds are stored as CSV files in your project code.
 :::
 
-### Source properties
+<!-- ### Source properties
 
 | Property              | Description                                                       | Default  |
 | --------------------- | ----------------------------------------------------------------- | -------- |
@@ -35,4 +35,4 @@ The **Location** tab of the seed configuration is grayed out. This is because se
 | Full Refresh          |                                                                   | Disabled |
 | Persist Docs Relation |                                                                   | Disabled |
 | Persist Docs Columns  |                                                                   | Disabled |
-| Tags                  |                                                                   | None     |
+| Tags                  |                                                                   | None     | -->

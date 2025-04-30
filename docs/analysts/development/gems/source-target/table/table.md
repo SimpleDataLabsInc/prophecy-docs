@@ -21,6 +21,7 @@ When you create a Table gem at the beginning of your pipeline, configure it with
 | Properties      | Define certain properties of the table, including the table schema.                                         |
 | Preview         | Load the data to see a preview before saving.                                                               |
 
+<!--
 ### Source properties
 
 | Property                     | Description                                           | Default           |
@@ -36,7 +37,7 @@ When you create a Table gem at the beginning of your pipeline, configure it with
 | Freshness Filter             | Optional SQL clause to restrict freshness checks.     |                   |
 | Quoting Database             | Whether to quote database name in SQL                 |                   |
 | Quoting Schema               | Whether to quote schema name in SQL                   |                   |
-| Quoting Identifier           | Whether to quote identifier in SQL                    |                   |
+| Quoting Identifier           | Whether to quote identifier in SQL                    |                   | -->
 
 ## Target parameters
 
@@ -50,6 +51,7 @@ When you add a Table gem to the end of your pipeline, configure it with the foll
 | Write Options   | Select how you want the data to be written each time you run the pipeline. For more information, see [Write Options](/engineers/write-options-target-model). |
 | Preview         | Load the data to see a preview before saving.                                                                                                                |
 
+<!--
 ### Target properties
 
 | Property                     | Description                                           | Default           |
@@ -74,4 +76,4 @@ When you add a Table gem to the end of your pipeline, configure it with the foll
 | Persist Docs Columns         |                                                       | false             |
 | Persist Docs Relations       |                                                       | false             |
 | Clustered By                 |                                                       | `+`               |
-| Buckets                      |                                                       | `0`               |
+| Buckets                      |                                                       | `0`               | -->
