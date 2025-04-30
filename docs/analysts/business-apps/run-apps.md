@@ -55,7 +55,7 @@ To create and enable an app schedule:
 
 1. Open the Prophecy App.
 1. Select the config you want to schedule.
-1. From the app header, click the **...** options meu.
+1. From the app header, click the `...` options menu.
 1. Click **Schedule**.
 1. Define the frequency.
 1. Turn on the **Enable** toggle.

@@ -46,7 +46,7 @@ To build a business app, you first need to build the pipeline that will power it
 
 ### Create a pipeline parameter
 
-[Pipeline parameters](docs/analysts/development/pipelines/pipeline-params.md) enable dynamic behavior in pipelines by allowing values to be set at runtime. In this case, these values can be driven by inputs from external sources, including user input via a Prophecy App.
+[Pipeline parameters](docs/analysts/development/pipelines/pipeline-params.md) enable dynamic behavior in pipelines by allowing values to be set at runtime. In this case, these values can be driven by inputs from external sources, including user input through a Prophecy App.
 
 In this section, you’ll define a pipeline parameter specifically for use in a Prophecy App. The parameter will capture the franchise ID that the user selects, allowing the pipeline to filter reviews based on the franchise they want to see.
 
@@ -61,7 +61,7 @@ In this section, you’ll define a pipeline parameter specifically for use in a 
 
 ![Create pipeline parameter dialog](img/pipeline-parameter.png)
 
-The default parameter value can be overridden as you build and configure the Prophecy App.
+You can choose a new default value when you build the Prophecy App. This overrides the default value assigned in the pipeline parameter settings.
 
 ### Add source data
 
@@ -74,7 +74,7 @@ Add a Source gem to your pipeline. The Prophecy App will use this source by defa
 
 ### Add a filter
 
-Next, add a Filter gem to the pipeline. To make the filter condition dynamic, we'll use the pipeline parameter in the gem.
+Next, add a Filter gem to the pipeline. To make the filter condition dynamic, you'll use the pipeline parameter in the gem.
 
 1. Add a **Filter** gem to the canvas.
 1. Connect the output of the Source gem to the input of the Filter gem.
@@ -95,11 +95,12 @@ To add a Data Preview component to your Prophecy App, you need to have a target 
 
 1. Open the Source/Target gem category.
 1. Click **Table** to add a new table to the canvas.
+1. Connect the output of the Filter gem to the input of the Table gem.
+1. Open the Table gem configuration.
 1. Under **Select Type and Format**, select **Table**.
 1. In the **Location** tab, assign a location where Prophecy will write the table.
 1. Review the remaining tabs and keep the default settings.
 1. **Save** the gem.
-1. Connect the output of the Filter gem to the input of the Table gem.
 
 ## Create a new Prophecy App
 
