@@ -115,7 +115,7 @@ To extend the reach of your project, you can share it with other teams.
 
 - **Read-only access:** Users from other teams cannot directly edit the original project's components.
 - **Reuse components:** If you share the project with other teams and publish it to the [Package Hub](/engineers/package-hub), users can import the projects as packages in their own projects. While they can't edit the original components, they can use copies of them in their own projects.
-- **Run pipelines:** If you share projects that contain [business apps](docs/analysts/business-apps/business-apps.md) with other teams, users can execute business apps that rely on the pipelines within the shared project.
+- **Run pipelines:** If you share projects that contain [Prophecy Apps](docs/analysts/business-apps/business-apps.md) with other teams, users can execute apps that rely on the pipelines within the shared project.
 
 ## Metadata
 

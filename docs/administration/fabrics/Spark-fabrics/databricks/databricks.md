@@ -11,49 +11,87 @@ tags:
   - prophecyManaged
 ---
 
-Create a Databricks fabric to connect Prophecy to your existing Databricks environment. Think of a fabric as connection to your [Databricks workspace](https://docs.databricks.com/workspace/index.html#navigate-the-workspace).
-This fabric enables Prophecy to connect to existing Spark clusters (or create new ones), execute Spark pipelines, read and write data, etc - all according to each user's permissions defined by their personal access token.
-
-Please refer to the video below for a step-by-step example.
-
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/121796483/217735090-41853091-ef2e-4d60-bdf6-62fe31a7ee3b.mp4" title="Databricks Fabric" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
+Create a Databricks fabric to connect Prophecy to your existing Databricks workspace. With a Databricks fabric, you can connect to existing Spark clusters or create new ones, run Spark pipelines, and read or write data, depending on your Databricks permissions.
 
 ## Fields
 
-### Databricks credentials
+Learn about different fields to configure your Databricks Spark fabric.
 
-Here you will provide your Databricks Workspace URL and [Personal Access Token](https://docs.databricks.com/dev-tools/api/latest/authentication.html#generate-a-personal-access-token) (PAT). The PAT must have permission to attach clusters. If you'd like to create clusters or read/write data from Prophecy, then these permissions should be enabled for the PAT as well. Keep in mind each user will need to use their own PAT in the fabric. Prophecy respects the permissions scoped to each user.
+### Team
+
+Each fabric is associated with one team. All team members will be able to access the fabric in their projects.
+
+### Credentials
+
+Provide the following information to verify your Databricks credentials.
+
+#### Databricks Workspace URL
+
+The URL that points to the workspace that the fabric will use as the execution environment.
+
+#### Authentication Method
+
+Prophecy supports authentication via [Personal Access Token](https://docs.databricks.com/dev-tools/api/latest/authentication.html#generate-a-personal-access-token) (PAT) and [OAuth](/databricks-oauth-authentication).
+
+:::caution
+Each user in the team will have to authenticate individually using the method you select. An individual user's credentials will determine the level of access they have to Databricks from Prophecy. At minimum, you must have permission to attach clusters in Databricks to use the fabric.
+:::
 
 :::note
 When using **Active Directory**, Prophecy takes care of the auto-generation and refreshing of the Databricks personal access tokens. Read more about it [here](https://docs.microsoft.com/en-us/azure/databricks/dev-tools/api/latest/aad/).
 :::
 
-### Cluster details
+#### Service Principal Configuration
 
-Here you would need to provide the [Databricks Runtime version](https://docs.databricks.com/runtime/dbr.html#databricks-runtime), Executor and Drive Machine Types and Termination Timeout if any. These cluster details will be used when creating a cluster via Prophecy during Interactive development and for job clusters during Scheduled Databricks job runs.
+You must provide the Service Principal Client Secret and Service Principal Client ID when you use [OAuth for project deployment](/databricks-oauth-authentication/#machine-to-machine-m2m).
 
-:::caution
-If you're interested in the Shared cluster mode, please note: Unity Catalog (UC) clusters in Shared access mode have [particular limitations](https://docs.databricks.com/en/compute/access-mode-limitations.html#shared-access-mode-limitations-on-unity-catalog) that prevent [these](./ucshared) Prophecy features from working as designed.
+### Job Sizes
+
+Job sizes define the cluster configurations that Prophecy can spawn to run pipelines. We recommend choosing the smallest machine types and the fewest nodes necessary for your use case to optimize cost and performance.
+
+By default, Prophecy includes a single job size that uses [Databricks Runtime 14.3](https://docs.databricks.com/aws/en/compute#databricks-runtime). You can modify this default configuration or define additional job sizes using the Prophecy UI.
+
+To create or update a job size, use the form view or switch to the JSON editor to paste your existing compute configuration from Databricks.
+
+![Job Size configuration](../img/dbx-job-size.png)
+
+:::note
+The job size configuration mirrors the compute configuration in Databricks. To learn more about compute configuration in Databricks, visit their [reference](https://docs.databricks.com/aws/en/compute/configure) guide.
 :::
 
-### Job sizes
-
-You can create job sizes here using which clusters can be spawned while testing through the Prophecy UI. Here you can provide Cluster mode, Databricks Runtime version, total number of the Executors, Core and Memory for them, etc. This provides all the options which are available on Databricks while spawning clusters through Databricks. We recommend using the smallest machines and smallest number of nodes appropriate for your use case.
-
-![Editing a Job](./../img/job_size_new.png)
-
-In Json you can just copy-paste your compute Json from Databricks.
+:::caution
+When using Unity Catalog clusters with standard (formerly shared) access mode, note their [particular limitations](https://docs.databricks.com/en/compute/access-mode-limitations.html#shared-access-mode-limitations-on-unity-catalog). You can see all supported Prophecy features in our [UC standard cluster support](./ucshared) documentation.
+:::
 
 ### Prophecy Library
 
-These are some Scala and Python libraries written by Prophecy to provide additional functionalities on top of Spark. These would get automatically installed in your Spark execution environment when you attach to a cluster/create new cluster. These libraries are also publicly available on Maven central and Pypi respectively.
+Prophecy libraries are Scala and Python libraries that extend the functionality of Apache Spark. These libraries are automatically installed in your Spark execution environment when you attach to a cluster or create a new one.
+
+:::info Whitelist Prophecy libraries
+To use Prophecy libraries in Databricks environments that have enabled Unity Catalog, you must whitelist the required Maven coordinates or JAR paths. Find instructions [here](/admin/dbx-whitelist-plibs).
+:::
+
+#### Public Central (Default)
+
+Retrieve Prophecy libraries from the public artifact repository. Use [Maven](https://mvnrepository.com/artifact/io.prophecy/prophecy-libs) for Scala projects and [PyPI](https://pypi.org/project/prophecy-libs/) for Python projects.
+
+#### Custom Artifactory
+
+Retrieve Prophecy libraries from an Artifactory URL.
+
+#### File System
+
+Retrieve Prophecy libraries from a file system.
+
+For example, you can add the public S3 bucket path: `s3://prophecy-public-bucket/prophecy-libs/`
+
+:::note
+A full list of public paths can be found in the documentation on [Prophecy libraries](/engineers/prophecy-libraries#download-prophecy-libraries). You also can set up [Prophecy libraries in your Databricks volumes](docs/administration/fabrics/Spark-fabrics/databricks/volumns-plibs.md).
+:::
 
 ### Artifacts
 
-Prophecy supports Databricks Volumes. When you run a Python or Scala pipeline via a job, you must bundle them as whl/jar artifacts. These artifacts must then be made accessible to the Databricks job in order to use them as a library installed on the cluster. You can designate a path to a Volume for uploading the whl/jar files under Artifacts.
+Prophecy supports Databricks volumes. When you run a Python or Scala pipeline via a job, you must bundle them as whl/jar artifacts. These artifacts must then be made accessible to the Databricks job in order to use them as a library installed on the cluster. You can designate a path to a volume for uploading the whl/jar files under Artifacts.
 
 ## Databricks execution
 

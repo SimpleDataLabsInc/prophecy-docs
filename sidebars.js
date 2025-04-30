@@ -159,8 +159,10 @@ const sidebars = {
               label: "Transform",
               items: [
                 "analysts/development/gems/transform/aggregate",
+                "analysts/development/gems/transform/dynamic-select",
+                "analysts/development/gems/transform/fuzzy-match",
                 "analysts/development/gems/transform/pivot",
-                "analysts/development/gems/transform/unpivot",
+                "analysts/development/gems/transform/transpose",
                 "analysts/development/gems/transform/window",
               ],
             },
@@ -170,11 +172,11 @@ const sidebars = {
               items: [
                 "analysts/development/gems/prepare/data-cleansing",
                 "analysts/development/gems/prepare/deduplicate",
-                "analysts/development/gems/prepare/bulk-column-rename",
-                "analysts/development/gems/prepare/bulk-column-expressions",
                 "analysts/development/gems/prepare/filter",
                 "analysts/development/gems/prepare/flatten-schema",
                 "analysts/development/gems/prepare/limit",
+                "analysts/development/gems/prepare/multi-column-rename",
+                "analysts/development/gems/prepare/multi-column-edit",
                 "analysts/development/gems/prepare/order-by",
                 "analysts/development/gems/prepare/reformat",
               ],
@@ -184,8 +186,10 @@ const sidebars = {
               label: "Join",
               items: [
                 "analysts/development/gems/join-split/join",
-                "analysts/development/gems/join-split/fuzzy-match",
                 "analysts/development/gems/join-split/union",
+                "analysts/development/gems/join-split/union-by-name",
+                "analysts/development/gems/join-split/intersect",
+                "analysts/development/gems/join-split/except",
                 "analysts/development/gems/join-split/dynamic-replace",
               ],
             },
@@ -304,9 +308,13 @@ const sidebars = {
       label: "Apps",
       link: { type: "doc", id: "analysts/business-apps/business-apps" },
       items: [
-        "analysts/business-apps/app-components",
-        "analysts/business-apps/app-usage",
-        "analysts/business-apps/app-creation",
+        "analysts/business-apps/run-apps",
+        {
+          type: "category",
+          label: "Create apps",
+          link: { type: "doc", id: "analysts/business-apps/app-creation" },
+          items: ["analysts/business-apps/app-components"],
+        },
       ],
     },
 
@@ -744,6 +752,7 @@ const sidebars = {
       },
       items: [
         "administration/teams-users/settings",
+        "administration/teams-users/team-based-access",
         "administration/teams-users/project-creation-template",
       ],
     },
@@ -802,6 +811,8 @@ const sidebars = {
               },
               items: [
                 "administration/fabrics/Spark-fabrics/databricks/ucshared",
+                "administration/fabrics/Spark-fabrics/databricks/whitelist-plibs",
+                "administration/fabrics/Spark-fabrics/databricks/volumes-plibs",
               ],
             },
             "administration/fabrics/Spark-fabrics/prophecy-managed-databricks",

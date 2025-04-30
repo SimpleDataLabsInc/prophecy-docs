@@ -110,5 +110,5 @@ By default, the Source gem does not save the newly generated data. To save the d
    ![img](img/data-gen/synth_6_write_mode.png)
 
 :::info
-To see if Prophecy supports this gem in the Unity Catalog Shared Spark Clusters, see [UC Shared Cluster Support](docs/administration/fabrics/Spark-fabrics/databricks/UCShared.md).
+To see if Prophecy supports this gem in the Unity Catalog standard access mode clusters, see [Unity Catalog standard cluster support](docs/administration/fabrics/Spark-fabrics/databricks/UCShared.md).
 :::

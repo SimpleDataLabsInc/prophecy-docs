@@ -6,10 +6,12 @@ description: View deployed projects, scheduled pipelines, run history, and cost 
 tags: []
 ---
 
-The **Monitoring** page in Prophecy lets you monitor your deployed projects, review scheduled pipelines, and audit run history. You'll be able to view all projects and pipelines that your teams own.
+The **Observability** page in Prophecy lets you monitor your deployed projects, review scheduled pipelines, and audit run history. You'll be able to view all projects and pipelines that your teams own.
+
+![Run history](img/run-history.png)
 
 :::note
-Only projects deployed on Prophecy fabrics will appear in Monitoring.
+Only projects deployed on Prophecy fabrics will appear in Observability.
 :::
 
 ## Deployed Projects
@@ -49,7 +51,7 @@ The **Run History** tab lets you see a full list of historical pipeline runs fro
 - **Schedule:** Frequency of the pipeline runs.
 - **Pipeline:** Name of the pipeline.
 - **Project:** Project that contains the pipeline.
-- **Run by:** How the run was triggered. This includes by **schedules**, **APIs**, **Business Apps**, or **interactive runs**.
+- **Run by:** How the run was triggered. This includes by **schedules**, **APIs**, **Prophecy Apps**, or **interactive runs**.
 - **Duration:** How long the computation lasted.
 - **Result:** Success or failure of the run.
 

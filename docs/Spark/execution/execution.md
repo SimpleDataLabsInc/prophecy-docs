@@ -16,10 +16,12 @@ Prophecy executes pipelines based on the type of Spark cluster and the operation
 
 When you run a pipeline in the pipeline canvas, Prophecy generates interim **data samples** that let you preview the output of your data transformations. There are two ways to run a pipeline interactively:
 
-- Run the entire pipeline using the **play** button on the pipeline canvas.
-- Execute the pipeline up to and including a particular gem using the **play** button on that gem. This is also know as a **partial run**.
+- **Click the large play button on bottom of the pipeline canvas.** The whole pipeline runs.
+- **Click the play button on a gem.** All gems up to and including that gem run. This is a partial pipeline run.
 
 ![Interactive run options](img/interactive-execution-play-options.png)
+
+### Data samples
 
 After you run your pipeline, data samples will appear between gems. These previews are temporarily cached. Learn about how these [data samples](docs/Spark/execution/data-sampling.md) are generated or discover the [Data Explorer](/engineers/data-explorer).
 

@@ -166,7 +166,7 @@ const config = {
             ],
           },
         ],
-        copyright: `© 2024 Prophecy Inc All Rights Reserved <a href="https://legal.prophecy.io/privacy" target="_blank">Privacy Policy</a>`,
+        copyright: `© 2025 Prophecy Inc All Rights Reserved <a href="https://legal.prophecy.io/privacy" target="_blank">Privacy Policy</a>`,
       },
       prism: {
         theme: lightCodeTheme,
@@ -227,7 +227,14 @@ const config = {
             },
           },
           aiChatSettings: {
-            // optional settings
+            exampleQuestions: [
+              "Do I need a fabric to run my pipeline?",
+              "How can Copilot help me build projects?",
+              "How do I add data to my pipeline?",
+              "Can I monitor my deployed projects?",
+            ],
+            exampleQuestionsLabel: "Example Questions",
+            isFirstExampleQuestionHighlighted: true,
             aiAssistantAvatar: "/img/icon.png", // optional -- use your own ai assistant avatar
           },
         },

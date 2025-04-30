@@ -1,51 +1,197 @@
 ---
-title: App creation
+title: Create apps
 id: app-creation
 slug: /analysts/create-business-applications
-draft: true
 description: Build applications make pipelines accessible
 tags: []
 ---
 
-Business apps are built inside Prophecy projects and are published to the App Directory.
+Prophecy Apps enable teams to create interactive and reusable workflows that simplify data processing. These applications allow users to parameterize pipelines, interact with data, and schedule pipeline runs without modifying the underlying pipeline logic.
 
-Throughout this guide, we'll configure a business app that runs on the following pipeline:
+When creating a Prophecy App, structure it using [pipeline parameters](docs/analysts/development/pipelines/pipeline-params.md). Pipeline parameters allow applications to dynamically adjust values during execution. By adding [interactive components](/analysts/business-application-components) to your apps, users can define parameter values while keeping the rest of the pipeline unchanged.
 
-<!-- ![App pipeline](img/app-pipeline.png) -->
+## Objectives
 
-This pipeline aggregates daily sales data by default, but users may want to see different aggregations (monthly or yearly). We'll configure the business app to let users:
+In this tutorial, you'll learn how to create a Prophecy App where users can:
 
-- Define the location of their source data
-- Set different aggregations
-- Rename columns with user-defined suffixes
+- Upload their own data as a pipeline source.
+- Filter the data based on custom input.
+- Preview and download the output data.
 
-## Configure the pipeline
+![Run Prophecy App results](img/prophecy-app-run.png)
 
-To build an application with the mentioned functionality, you first need to set up [pipeline parameters](docs/analysts/development/pipelines/pipeline-params.md) for your pipeline. Pipeline parameters are configurations or variables that you can use throughout the pipeline to dynamically populate fields.
+To do so, you will create a pipeline that:
+
+- Ingests bakehouse review data from the SQL warehouse.
+- Filters the data by franchise location.
+- Saves the filtered data to a table.
+
+![App pipeline](img/app-pipeline.png)
+
+## Prerequisites
+
+To complete this tutorial, you will need:
+
+- Prophecy 4.0 or later.
+- A SQL project.
+- A Prophecy fabric with a Databricks connection.
+
+:::note
+This tutorial uses sample data provided by Databricks.
+:::
+
+## Create the pipeline
+
+To build a business app, you first need to build the pipeline that will power it. This pipeline will include parameters that users can modify through the app interface. In the following sections, you will build a simple pipeline and leverage pipeline parameters that will drive the app functionality.
+
+### Create a pipeline parameter
+
+[Pipeline parameters](docs/analysts/development/pipelines/pipeline-params.md) enable dynamic behavior in pipelines by allowing values to be set at runtime. In this case, these values can be driven by inputs from external sources, including user input through a Prophecy App.
+
+In this section, you’ll define a pipeline parameter specifically for use in a Prophecy App. The parameter will capture the franchise ID that the user selects, allowing the pipeline to filter reviews based on the franchise they want to see.
 
 1. Open the pipeline that will be used for the app.
-1. Click **Parameters** from the project header.
+1. Click **Config** in the project header.
 1. Select **+ Add Parameter**.
-1. Name the parameter `SourceLocation`.
-1. Name the parameter `AggregationLevel`.
-1. Make the default value `order-date`. This is the name of the column that records the order date.
-1. Name the parameter `ColSuffix`.
-1.
+1. Name the parameter `franchise_id`.
+1. Set the parameter type to `int`.
+1. Click **Select expression > Value**.
+1. Enter `3000007` as the default value to be used during [interactive pipeline runs](docs/analysts/development/pipelines/execution.md). (This is an arbitrary franchise ID.)
+1. Click **Save**.
 
-## Add app
+![Create pipeline parameter dialog](img/pipeline-parameter.png)
 
-You can create an app directly from a project.
+You can choose a new default value when you build the Prophecy App. This overrides the default value assigned in the pipeline parameter settings.
 
-1. Click **+ Add to Project > App** in the project browser.
-1. Fill in the required fields.
-   - App name: The name of the application.
-   - Description: A description of the application.
-   - Pipeline name: The pipeline that will run according to the application.
-   - Directory path: Where your app code will be stored.
-1. Select **Create App**.
+### Add source data
 
-## Preview
+Add a Source gem to your pipeline. The Prophecy App will use this source by default unless the user overrides it with their own data in the app.
 
-## Publish
+1. Open the Environment browser in the left sidebar.
+1. Expand the Databricks connection to view your catalogs.
+1. Open the **samples > bakehouse** directory.
+1. Add the `media_customer_reviews` table to your canvas.
 
-Once you have built your app, you will want to publish it to the App Directory.
+### Add a filter
+
+Next, add a Filter gem to the pipeline. To make the filter condition dynamic, you'll use the pipeline parameter in the gem.
+
+1. Add a **Filter** gem to the canvas.
+1. Connect the output of the Source gem to the input of the Filter gem.
+1. Open the Filter gem configuration.
+1. For the filter condition, build the visual expression to filter the dataset using values from the `franchiseID` column.
+
+:::tip
+Find your configured pipeline parameters by clicking on the **Configuration Variable** in the visual expression builder.
+:::
+
+![Configure visual expression to use parameter](img/visual-expression-parameter.png)
+
+If you switch to the code view, you can use the following expression as the filter condition `franchiseID = {{ var('franchise_id') }}`.
+
+### Add a target table
+
+To add a Data Preview component to your Prophecy App, you need to have a target table in the pipeline. Let's create a table to store the filtered results that users will generate in the app.
+
+1. Open the Source/Target gem category.
+1. Click **Table** to add a new table to the canvas.
+1. Connect the output of the Filter gem to the input of the Table gem.
+1. Open the Table gem configuration.
+1. Under **Select Type and Format**, select **Table**.
+1. In the **Location** tab, assign a location where Prophecy will write the table.
+1. Review the remaining tabs and keep the default settings.
+1. **Save** the gem.
+
+## Create a new Prophecy App
+
+After you build the pipeline, create a business app to run it. Apps are created directly within projects as project components.
+
+1. In the project browser, hover over **Apps** and click the **+** icon.
+1. Name the app `Reviews`.
+1. Add the description `Filter bakehouse reviews by franchise`.
+1. Select the pipeline you just created for the app to run on.
+1. Define where the app code will be stored. The default `apps` directory is sufficient.
+1. Click **Create App** to open the App Builder.
+
+### Add a Text component
+
+First, add the Text component that serves as the page title and helps users understand the purpose of the app.
+
+1. Open the **Content** dropdown and select **Text**.
+1. In the **Inspect** tab of the right sidebar, enter `Filter Bakehouse Reviews` as the component text.
+1. Choose **Heading 1** as the text format.
+
+### Add a File Upload component
+
+Then, add a File Upload component where users can upload their data. This provides flexibility by allowing users to work with their datasets rather than being limited to the default source.
+
+1. Open the **Data Integration** dropdown and select **File Upload**.
+1. In the **Inspect** tab, for the **Source component**, choose the Source gem that the uploaded data will override.
+
+:::info
+If no file is uploaded, the pipeline uses the default source data configured in the Source gem.
+:::
+
+### Add a Number Input component
+
+Next, add a Number Input component to let the user input how to filter the data. This component will control the value of the pipeline parameter you created earlier.
+
+1. Open the **Interactive** dropdown and select **Number Input**.
+1. In the **Inspect** tab, for the **Configuration field**, select `franchise_id`. This is the pipeline parameter.
+1. For the **Label**, enter `Franchise ID number`.
+
+### Add a Data Preview component
+
+Finally, add a Data Preview component to display a sample of the result of the pipeline execution. This allows users who run the Prophecy App to view and download the output data.
+
+1. Open the **Data Integration** dropdown and select **Data Preview**.
+1. In the **Inspect** tab, select the pipeline's output table.
+1. For the **Label**, enter `Franchise reviews`.
+
+The following image shows the complete Prophecy App template in the App Builder.
+
+![Prophecy App template](img/prophecy-app-template.png)
+
+## Run the app
+
+After building the app, execute it to validate its functionality. This process allows you to verify that all app components function according to specifications.
+
+1. Navigate to the App Browser using the left navigation menu.
+1. Review the apps associated with projects owned by your teams.
+1. Select your **Review** app.
+1. Create a new app configuration. This configuration represents an instance of the app with a set of custom parameter values.
+1. Test the app by uploading various datasets and running the app to observe results.
+
+![Run Prophecy App results](img/prophecy-app-run.png)
+
+To explore advanced configuration options and scheduling capabilities, refer to the documentation on [running apps](/analysts/run-apps).
+
+## What's next
+
+To address your specific business requirements, leverage more complex [components](/analysts/business-application-components) to construct robust Prophecy Apps.
+
+<!-- ## Publish
+
+Once the application is complete, publish it to make it accessible.
+
+1. Open any pipeline within the project.
+1. In the project header, next to **Save to Draft**, click the dropdown arrow.
+1. Select **Publish new version**.
+1. Review Copilot's description of your changes and click **Save**.
+1. Enter a description for the new published version.
+1. Leave the **Select the fabric(s) to publish** field blank, as Prophecy Apps do not require deployment.
+1. Click **Publish**.
+
+The application is now available in the App Browser.
+
+### Share with other teams
+
+To grant other teams access to run the Prophecy App:
+
+1. Open the **Metadata** page in the left navigation bar.
+1. Locate and open the project metadata.
+1. Navigate to the **Access** tab.
+1. In the **Teams** dropdown, select the team to share the project with.
+1. Click **Send Invitation**.
+
+The selected team can now run the Prophecy App but cannot edit the project. -->

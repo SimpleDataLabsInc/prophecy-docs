@@ -13,7 +13,7 @@ import Requirements from '@site/src/components/gem-requirements';
 
 <Requirements
   python_package_name="ProphecyWarehousePython"
-  python_package_version="0.0.1+"
+  python_package_version="0.0.9+"
   scala_package_name=""
   scala_package_version=""
   scala_lib=""

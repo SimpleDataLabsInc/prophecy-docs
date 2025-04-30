@@ -11,7 +11,7 @@ tags:
 
 Configure pipeline parameters to use variables throughout your pipeline. Parameters define values or expressions that can be used to dynamically populate values during pipeline runs. This can be useful when you want to:
 
-- Control parameter configurations from business applications.
+- Control parameter configurations from [Prophecy Apps](/analysts/business-applications).
 - Set different values in the pipeline depending on the execution environment (such as development or production).
 - Reuse the same values throughout the pipeline, ensuring consistency and maintainability.
 
@@ -39,9 +39,9 @@ When configuring a Target gem, you need to define the location where a new table
 
 1. Create a pipeline parameter called `target_location`.
 1. Provide a default value that points to your development folder in your file system: `/dev/data/target_folder/`.
-1. Create a [business application](docs/analysts/business-apps/business-apps.md) that includes the parameter as a field.
-1. Assign the parameter in the business application a default value that points to the production folder in your file system: `/prod/data/target_folder/`.
-1. Schedule the business application to run in your production environment on a regular schedule.
+1. Create a [Prophecy App](docs/analysts/business-apps/business-apps.md) that includes the parameter as a field.
+1. Assign the parameter in the Prophecy App a default value that points to the production folder in your file system: `/prod/data/target_folder/`.
+1. Schedule the app to run in your production environment on a regular schedule.
 
 This ensures that the scheduled pipeline run in production uses the correct target location.
 

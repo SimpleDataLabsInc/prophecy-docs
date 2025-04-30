@@ -24,13 +24,13 @@ The table below outlines whether the connection supports certain Prophecy featur
 
 To create a connection with Databricks, enter the following parameters:
 
-| Parameter             | Description                                          |
-| --------------------- | ---------------------------------------------------- |
-| Connection Name       | Name to to identify your connection                  |
-| JDBC URL              | URL to connect to your SQL warehouse                 |
-| Catalog               | Default catalog for reading and writing data         |
-| Schema                | Default schema for reading and writing data          |
-| Authentication method | How you want to authenticate your Databricks account |
+| Parameter             | Description                                                                                                                                                                             |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Connection Name       | Name to to identify your connection                                                                                                                                                     |
+| JDBC URL              | URL to connect to your SQL warehouse<br/>Example: `jdbc:databricks://<databricks-instance>:443/default;transportMode=http;ssl=1;AuthMech=3;httpPath=/sql/1.0/warehouses/<warehouse-id>` |
+| Catalog               | Default catalog for reading and writing data                                                                                                                                            |
+| Schema                | Default schema for reading and writing data                                                                                                                                             |
+| Authentication method | How you want to authenticate your Databricks account (OAuth or PAT)                                                                                                                     |
 
 ## Authentication methods
 

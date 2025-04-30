@@ -29,18 +29,18 @@ Prophecy enhances pipeline readability and comprehension through several annotat
 
 The Package Hub facilitates efficient team collaboration by enabling the sharing and reuse of pipeline components.
 
-- **Component reuse:** Share and import pre-built pipeline segments, transformations, and business applications, eliminating redundant development.
+- **Component reuse:** Share and import pre-built pipeline segments, transformations, and Prophecy Apps, eliminating redundant development.
 - **Consistency:** Standardized components ensure uniform pipeline design and execution across teams.
 - **Access control:** Leverage shared components without access to change the original project.
 
 Teams can collaborate more effectively by creating and sharing reusable pipeline components through packages. To learn more, visit [Extensibility](docs/analysts/extensibility/extensibility.md).
 
-## Business applications
+## Prophecy Apps
 
-Business applications enable users to generate reports and run data flows without extensive pipeline engineering. This is beneficial for:
+Prophecy Apps enable users to generate reports and run data flows without extensive pipeline engineering. This is beneficial for:
 
 - Quick execution of common data tasks by eliminating the need to build pipelines from scratch.
 - Sharing and reusing standardized pipeline patterns, while preventing duplication of effort.
 - Minimizing the risk of errors for reliable pipeline execution.
 
-To learn more, visit [Business applications](docs/analysts/business-apps/business-apps.md).
+To learn more, visit [Prophecy Apps](docs/analysts/business-apps/business-apps.md).

@@ -6,9 +6,9 @@ description: Save and view project history
 tags: []
 ---
 
-This page details the different types of version control in Prophecy, the stages of the visual workflow, and the relationship to [Git](#powered-by-git).
+Versioning in Prophecy helps teams track changes, collaborate efficiently, and roll back when needed. It also supports auditing and compliance by keeping a clear, versioned history of all updates. This page details the different types of version control in Prophecy, the stages of the visual workflow, and its relationship to [Git](#powered-by-git).
 
-<!-- insert image of simple version control menu in top-right corner -->
+![Simple version menu](img/simple-version.png)
 
 ## Version control options
 
@@ -45,7 +45,7 @@ When you publish a project, the new version becomes available for:
 
 - [Scheduled pipeline runs](docs/analysts/scheduling.md) (depending on the fabric)
 - [Package Hub](docs/analysts/extensibility/extensibility.md#package-hub) packages
-- [App Directory](docs/analysts/business-apps/business-apps.md) applications
+- [App Browser](docs/analysts/business-apps/business-apps.md) applications
 
 To learn more, visit our page on [project publication](/analysts/project-publication).
 

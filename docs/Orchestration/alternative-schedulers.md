@@ -52,7 +52,7 @@ Prerequisites:
   - `pip install ./demo_pipeline-1.0-py3-none-any.whl`
 - Gather necessary Maven dependencies and put into the `--jars` (local) or `--packages` (repo) option.
   - PBT will have a command to generate dependencies or pom.xml for PySpark projects.
-- Optional: Modify ivysettings.xml to point to a custom Maven mirror or PyPi mirror.
+- Optional: Modify ivysettings.xml to point to a custom Maven mirror or PyPI mirror.
 
 Given a PySpark pipeline named "demo_pipeline" with a WHL artifact from [PBT](/engineers/prophecy-build-tool)
 called `demo_pipeline-1.0-py3-none-any.whl` you could call the following commands to invoke the `main()` method from the WHL

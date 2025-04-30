@@ -47,7 +47,7 @@ Joins 2 or more DataFrames based on the given configuration.
 
 ## Adding a new input
 
-1. Click on the plus icon to add a new input.
+1. Click on the **+** icon to add a new input.
 2. Then add your condition expression for the newly added input.
    ![Example usage of Join - Add new input to join gem](./img/add_new_input.png)
 

@@ -42,7 +42,7 @@ The release must be made from the branch specified on project creation (usually 
 
 There are a few different ways to add a package to a project:
 
-- Open the project and click the **plus** sign in the Gem Drawer.
+- Open the project and click **+** in the Gem Drawer.
 - Open the project dependencies and add a dependency.
 - Open the package in Package Hub and select **Use Package**.
 
