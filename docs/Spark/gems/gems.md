@@ -41,7 +41,7 @@ When you click on a gem from the gem drawer, an instance of that gem gets added 
 |    8    | Action menu   | A menu that includes options to change the phase of the gem, add run conditions, delete the gem, and more.  |
 
 :::tip
-If you select one or more gems, you can copy and paste them within the same pipeline or across pipelines. However, pasting is not supported between projects that use different languages (for example, from SQL to Scala).
+If you select one or more gems, you can copy and paste them within the same pipeline or across pipelines. However, you cannot paste across projects that use different languages (for example, from SQL to Scala).
 :::
 
 ## Gem configuration
