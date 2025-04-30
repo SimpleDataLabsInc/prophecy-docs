@@ -165,7 +165,7 @@ Currently, the seed is still empty. To add values:
 
 A model contains a set of data transformations and represents one table. Each model is stored as a select statement in a SQL file within a project.
 
-1. Click the **plus** next to Models to add a model.
+1. Click **+** next to Models to add a model.
 1. Name the model `customers_nations` and keep the default directory path.
 1. Click **Create**.
 1. Open the **Environment** tab and open the **SAMPLE_DATA** that Snowflake provides.
