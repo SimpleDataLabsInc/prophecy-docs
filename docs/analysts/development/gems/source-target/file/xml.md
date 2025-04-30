@@ -28,4 +28,4 @@ You can also use the [upload file](docs/analysts/development/gems/source-target/
 | ----------------------------- | -------------------------------------------------------------- | ------- |
 | Description                   | Description of the table.                                      | None    |
 | Row Tag                       | XML tag that identifies a single row or record in the dataset. | None    |
-| Inference Data Sampling Limit | Number of rows to sample for inferring the schema.             | `0`     |
+| Inference Data Sampling Limit | Maximum number of rows to sample for inferring the schema.     | `0`     |

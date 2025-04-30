@@ -24,26 +24,26 @@ You can also use the [upload file](docs/analysts/development/gems/source-target/
 
 ### Source properties
 
-| Property                      | Description                                                                           | Default  |
-| ----------------------------- | ------------------------------------------------------------------------------------- | -------- |
-| Description                   | Description of the table.                                                             | None     |
-| Header                        | Whether the first row is the column header.                                           | Enabled  |
-| Allow Undefined Rows          | Allows rows with all values undefined (null or empty).                                | Enabled  |
-| Allow Incomplete Rows         | Allows rows with missing values for some columns.                                     | Enabled  |
-| Ignore Cell Formatting        | Specifies whether to apply the number format for the cell value or get the raw value. | Enabled  |
-| Sheet Name                    | Name of the sheet to read from.                                                       | None     |
-| Skip Undefined Rows           | Skip rows where all values are undefined.                                             | Disabled |
-| Date Format Reference         | Date format to use when parsing date values.                                          | None     |
-| Time Format Reference         | Time format to use when parsing time values.                                          | None     |
-| Timestamp Format Reference    | Timestamp format to use when parsing date-time values.                                | None     |
-| Inference Data Sampling Limit | Number of rows to sample for inferring schema.                                        | `0`      |
-| Password                      | Password for password-protected sheets.                                               | None     |
+| Property                      | Description                                                                 | Default |
+| ----------------------------- | --------------------------------------------------------------------------- | ------- |
+| Description                   | Description of the table.                                                   | None    |
+| Header                        | Whether the first row is the column header.                                 | True    |
+| Allow Undefined Rows          | Whether to permit rows with all values undefined (null or empty).           | True    |
+| Allow Incomplete Rows         | Whether to permit rows with missing values for some columns.                | True    |
+| Ignore Cell Formatting        | Whether to apply the number format for the cell value or get the raw value. | True    |
+| Sheet Name                    | Name of the sheet to read from.                                             | None    |
+| Skip Undefined Rows           | Whether to skip rows where all values are undefined.                        | False   |
+| Date Format Reference         | Date format to use when parsing date values.                                | None    |
+| Time Format Reference         | Time format to use when parsing time values.                                | None    |
+| Timestamp Format Reference    | Timestamp format to use when parsing date-time values.                      | None    |
+| Inference Data Sampling Limit | Maximum number of rows to sample for inferring the schema.                  | `0`     |
+| Password                      | Password for password-protected sheets.                                     | None    |
 
 ## Target properties
 
-| Property               | Description                                                                           | Default |
-| ---------------------- | ------------------------------------------------------------------------------------- | ------- |
-| Description            | Description of the table.                                                             | None    |
-| Header                 | Whether to make the first row the column header.                                      | Enabled |
-| Ignore Cell Formatting | Specifies whether to apply the number format for the cell value or get the raw value. | Enabled |
-| Password               | Password for password-protected sheets.                                               | None    |
+| Property               | Description                                                                 | Default |
+| ---------------------- | --------------------------------------------------------------------------- | ------- |
+| Description            | Description of the table.                                                   | None    |
+| Header                 | Whether to make the first row the column header.                            | True    |
+| Ignore Cell Formatting | Whether to apply the number format for the cell value or get the raw value. | True    |
+| Password               | Password for password-protected sheets.                                     | None    |
