@@ -9,12 +9,12 @@ tags: []
 
 <span class="badge">Prophecy Automate</span><br/><br/>
 
-Read or write text files in your SQL warehouse.
+Upload text files to use in your pipeline.
 
 ## Parameters
 
-| Parameter                   | Description                                                       |
-| --------------------------- | ----------------------------------------------------------------- |
-| Location type               | Location you want to connect from.                                |
-| Select or create connection | Whether to select an existing connection, or to create a new one. |
-| Filepath                    | The file path according to the connection type.                   |
+| Parameter     | Description                            |
+| ------------- | -------------------------------------- |
+| Location type | Location where to write the text file. |
+| Properties    |                                        |
+| Filepath      |                                        |

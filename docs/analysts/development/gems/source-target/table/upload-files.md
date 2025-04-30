@@ -19,8 +19,6 @@ Supported file types:
 - JSON
 - Excel (XLS, XLSX)
 - XML
-- Text
-- Parquet
 
 When you upload your file through Prophecy, it's added directly to your Databricks or Snowflake SQL warehouse as a [table](docs/analysts/development/gems/source-target/source-target.md#tables).
 
