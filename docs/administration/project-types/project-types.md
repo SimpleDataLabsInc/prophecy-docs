@@ -23,7 +23,7 @@ Choose the right project type based on your role and requirements. Each project 
 
 ### Project creation
 
-Project type is set when you create the project. Follow the appropriate path in the diagram below:
+Prophecy sets the project type based on the project language, Git storage model, and Git provider you select when creating the project.
 
 ![Project creation per persona](img/project-personas.png)
 
