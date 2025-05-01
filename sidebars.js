@@ -753,8 +753,16 @@ const sidebars = {
       items: [
         "administration/teams-users/settings",
         "administration/teams-users/team-based-access",
-        "administration/teams-users/project-creation-template",
       ],
+    },
+    {
+      type: "category",
+      label: "Project types",
+      link: {
+        type: "doc",
+        id: "administration/project-types/project-types",
+      },
+      items: ["administration/project-types/project-creation-template"],
     },
     {
       type: "category",
