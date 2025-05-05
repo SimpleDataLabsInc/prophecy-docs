@@ -9,7 +9,12 @@ tags:
   - join
 ---
 
-<span class="badge">SQL</span><br/><br/>
+import SQLRequirements from '@site/src/components/sql-gem-requirements';
+
+<SQLRequirements
+  sql_package_name="ProphecyDatabricksSqlBasics"
+  sql_package_version="0.0.4+"
+/>
 
 Use the FuzzyMatch gem to identify non-identical duplicates in your data.
 

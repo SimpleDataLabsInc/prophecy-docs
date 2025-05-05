@@ -9,7 +9,12 @@ tags:
   - parse
 ---
 
-<span class="badge">SQL</span><br/><br/>
+import SQLRequirements from '@site/src/components/sql-gem-requirements';
+
+<SQLRequirements
+  sql_package_name="ProphecyDatabricksSqlBasics"
+  sql_package_version="0.0.4+"
+/>
 
 When working with certain tables, you might encounter text columns that contain multiple values separated by specific characters such as commas or semicolons.
 
