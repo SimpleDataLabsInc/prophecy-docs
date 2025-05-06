@@ -809,7 +809,7 @@ const config = {
             from: "/lineage/lineage-run-and-diagnose",
           },
           {
-            to: "/engineers/lineage-view-and-search",
+            to: "/engineers/lineage",
             from: "/lineage/lineage-view-and-search",
           },
           {
