@@ -58,6 +58,17 @@ The following functions can be used to customize Spark gems.
 | `apply`                     | Included in the class that extends [component code](#component-code) to define Spark logic.                                        | None, DataFrame, or list of DataFrames | Transformation and Subgraph |
 | `sourceApply`               | Included in the class that extends [component code](#component-code) to define Spark logic.                                        | DataFrame                              | Dataset                     |
 | `targetApply`               | Included in the class that extends [component code](#component-code) to define Spark logic.                                        | None                                   | Dataset                     |
+| `optimizeCode`              | Enables the Prophecy optimizer to simplify the gem code when it runs.                                                              | Boolean                                | All                         |
+
+:::note Troubleshooting
+If you run into errors while running your custom gem, try turning the code optimization off.
+
+```
+def optimizeCode(self) -> bool:
+  return False
+```
+
+:::
 
 ## Examples
 
@@ -72,6 +83,8 @@ The following functions can be used to customize Spark gems.
 class Filter(ComponentSpec):
 name: str = "Filter"
     category: str = "Transform"
+    def optimizeCode(self) -> bool:
+        return True
 ```
 </TabItem>
 
