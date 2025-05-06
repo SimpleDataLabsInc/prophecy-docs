@@ -39,15 +39,15 @@ python -m prophecy_lineage_extractor \
 
 ```
 
-| Argument              | Type   | Required | Description                                                                                                                                     |
-| --------------------- | ------ | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--project-id`        | `str`  | Yes      | ID of the Prophecy project. Find this in your project url. <br/> Example: `app.prophecy.io/metadata/ide/lineage/40314` where `40314` is the ID. |
-| `--pipeline-id`       | `str`  | Yes      | ID of the pipeline inside the project. Use the format `ProjectID/Pipeline_Name`.                                                                |
-| `--output-dir`        | `str`  | Yes      | Directory in the repository to save the lineage report.                                                                                         |
-| `--branch`            | `str`  | No       | Branch to extract lineage from. The default branch in Prophecy is generally `main`.                                                             |
-| `--send-email`        | `flag` | No       | Send the report via email. Requires additional variables (see below).                                                                           |
-| `--run_for_all`       | `flag` | No       | Set to `true` to generate a project-level report for all pipelines. Set to `false` to false generate the lineage for a single pipeline only.    |
-| `--recursive-extract` | `flag` | No       | Set to `true` to recursively trace upstream column changes. Set to `false` to disable this behavior.                                            |
+| Argument              | Type   | Required | Description                                                                                                                                    |
+| --------------------- | ------ | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--project-id`        | `str`  | Yes      | ID of the Prophecy project. Find this in your project url.<br/> Example: `app.prophecy.io/metadata/ide/lineage/40314` where `40314` is the ID. |
+| `--pipeline-id`       | `str`  | Yes      | ID(s) of the pipeline inside the project. This can be comma separated list of pipelines.<br/>Use the format `ProjectID/Pipeline_Name`.         |
+| `--output-dir`        | `str`  | Yes      | Directory in the repository to save the lineage report.                                                                                        |
+| `--branch`            | `str`  | No       | Branch to extract lineage from. The default branch in Prophecy is generally `main`.                                                            |
+| `--send-email`        | `flag` | No       | Send the report via email. Requires additional variables (see below).                                                                          |
+| `--run_for_all`       | `flag` | No       | Set to `true` to generate a project-level report for all pipelines. Set to `false` to false generate the lineage for a single pipeline only.   |
+| `--recursive-extract` | `flag` | No       | Set to `true` to recursively trace upstream column changes. Set to `false` to disable this behavior.                                           |
 
 ## Integration with GitHub Actions or GitLab CI
 
