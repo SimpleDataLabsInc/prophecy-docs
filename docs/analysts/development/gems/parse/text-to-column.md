@@ -1,5 +1,5 @@
 ---
-title: TextToColumn
+title: TextToColumns
 id: text-to-column
 slug: /analysts/text-to-column
 description: Convert text into a column in your table
@@ -18,7 +18,7 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 When working with certain tables, you might encounter text columns that contain multiple values separated by specific characters such as commas or semicolons.
 
-Use the TextToColumn gem to parse this text and simplify further analysis and processing.
+Use the TextToColumns gem to parse this text and simplify further analysis and processing.
 
 ## Parameters
 
@@ -44,9 +44,9 @@ Let's say you have the following table that includes bank account information. N
 
 </div>
 
-You can use the TextToColumn gem to automatically split these values into separate rows or columns, making your data cleaner and easier to work with.
+You can use the TextToColumns gem to automatically split these values into separate rows or columns, making your data cleaner and easier to work with.
 
-1. Open the TextToColumn gem.
+1. Open the TextToColumns gem.
 1. Select the `Beneficiaries` column to split.
 1. Under **Delimiter**, input `;` as the delimiting character.
 1. Select the split strategy.
