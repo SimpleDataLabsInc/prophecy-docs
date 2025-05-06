@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[32830],{45794:e=>{e.exports=JSON.parse('{"tag":{"label":"search","permalink":"/tags/search","allTagsPath":"/tags","count":1,"items":[{"id":"lineage/lineage","title":"Lineage","description":"Understand and explore project lineage","permalink":"/engineers/lineage"}],"unlisted":false}}')}}]);
