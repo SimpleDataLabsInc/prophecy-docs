@@ -805,11 +805,11 @@ const config = {
             from: "/lineage/lineage-extractor",
           },
           {
-            to: "/engineers/lineage-run-and-diagnose",
+            to: "/engineers/lineage",
             from: "/lineage/lineage-run-and-diagnose",
           },
           {
-            to: "/engineers/lineage-view-and-search",
+            to: "/engineers/lineage",
             from: "/lineage/lineage-view-and-search",
           },
           {
@@ -921,7 +921,7 @@ const config = {
             from: "/extensibility/gem-builder/gem-builder-reference",
           },
           {
-            to: "/engineers/optimization-functions",
+            to: "/engineers/gem-builder-reference",
             from: "/extensibility/gem-builder/optimization-functions",
           },
           {
@@ -1093,7 +1093,7 @@ const config = {
             from: "/Spark/extensibility/gem-builder/",
           },
           {
-            to: "/engineers/optimization-functions",
+            to: "/engineers/gem-builder-reference",
             from: "/Spark/extensibility/gem-builder/optimization-functions",
           },
           {
