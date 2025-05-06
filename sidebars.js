@@ -616,11 +616,7 @@ const sidebars = {
       type: "category",
       label: "Lineage",
       link: { type: "doc", id: "lineage/lineage" },
-      items: [
-        "lineage/lineage-extractor",
-        "lineage/lineage-run-and-diagnose",
-        "lineage/lineage-view-and-search",
-      ],
+      items: ["lineage/lineage-extractor", "lineage/lineage-run-and-diagnose"],
     },
     /// CI-CD
     {
