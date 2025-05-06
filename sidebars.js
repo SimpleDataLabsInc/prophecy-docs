@@ -308,9 +308,13 @@ const sidebars = {
       label: "Apps",
       link: { type: "doc", id: "analysts/business-apps/business-apps" },
       items: [
-        "analysts/business-apps/app-components",
-        "analysts/business-apps/app-usage",
-        "analysts/business-apps/app-creation",
+        "analysts/business-apps/run-apps",
+        {
+          type: "category",
+          label: "Create apps",
+          link: { type: "doc", id: "analysts/business-apps/app-creation" },
+          items: ["analysts/business-apps/app-components"],
+        },
       ],
     },
 
@@ -612,11 +616,7 @@ const sidebars = {
       type: "category",
       label: "Lineage",
       link: { type: "doc", id: "lineage/lineage" },
-      items: [
-        "lineage/lineage-extractor",
-        "lineage/lineage-run-and-diagnose",
-        "lineage/lineage-view-and-search",
-      ],
+      items: ["lineage/lineage-extractor", "lineage/lineage-run-and-diagnose"],
     },
     /// CI-CD
     {
@@ -747,8 +747,17 @@ const sidebars = {
       },
       items: [
         "administration/teams-users/settings",
-        "administration/teams-users/project-creation-template",
+        "administration/teams-users/team-based-access",
       ],
+    },
+    {
+      type: "category",
+      label: "Project types",
+      link: {
+        type: "doc",
+        id: "administration/project-types/project-types",
+      },
+      items: ["administration/project-types/project-creation-template"],
     },
     {
       type: "category",

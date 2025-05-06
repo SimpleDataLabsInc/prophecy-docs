@@ -74,7 +74,7 @@ Now that you have a fabric, create a new project.
 In this step, you'll add your first pipeline to this project!
 
 1. Hover **Pipelines** in the left sidebar.
-1. Click on the **plus** sign.
+1. Click on the **+** icon.
 1. Name your pipeline.
 1. Keep the default directory path.
 1. Click **Create**.
@@ -204,7 +204,7 @@ Now, you will be able to view this version of the pipeline in the project [versi
 
 ## Publish your project
 
-Let's publish this version of the project. When you publish a project, it becomes available for external use in scheduling, business applications, and packages.
+Let's publish this version of the project. When you publish a project, it becomes available for external use in scheduling, Prophecy Apps, and packages.
 
 1. In the project header, select **Publish**.
 1. Review the Copilot-generated description of the project version.

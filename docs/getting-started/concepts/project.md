@@ -25,10 +25,6 @@ Project components depend on your project type. Prophecy supports Python, Scala,
 
 Prophecy supports both SQL and Spark projects, and the choice depends on your data needs. Many organizations use both types of projects, leveraging SQL for **data analytics** and Spark for **data engineering**. Prophecy provides a platform where this can happen all in one place.
 
-:::info Prophecy for Analysts
-To make project creation easier, Prophecy provides [project creation templates](docs/getting-started/concepts/templates.md) that can cater to different needs. We suggest using the **Prophecy for Analysts** template when creating SQL projects for data analytics.
-:::
-
 <Tabs>
 
 <TabItem value="SQL" label="SQL">
@@ -43,6 +39,10 @@ Spark excels in executing complex pipelines and processing semi-structured data.
 </TabItem>
 
 </Tabs>
+
+:::info
+For more information, see our documentation on [specific capabilities per project type](docs/administration/project-types/project-types.md).
+:::
 
 ## Components
 
@@ -115,7 +115,7 @@ To extend the reach of your project, you can share it with other teams.
 
 - **Read-only access:** Users from other teams cannot directly edit the original project's components.
 - **Reuse components:** If you share the project with other teams and publish it to the [Package Hub](/engineers/package-hub), users can import the projects as packages in their own projects. While they can't edit the original components, they can use copies of them in their own projects.
-- **Run pipelines:** If you share projects that contain [business apps](docs/analysts/business-apps/business-apps.md) with other teams, users can execute business apps that rely on the pipelines within the shared project.
+- **Run pipelines:** If you share projects that contain [Prophecy Apps](docs/analysts/business-apps/business-apps.md) with other teams, users can execute apps that rely on the pipelines within the shared project.
 
 ## Metadata
 

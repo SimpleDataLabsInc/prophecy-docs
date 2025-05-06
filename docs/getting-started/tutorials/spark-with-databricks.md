@@ -107,7 +107,7 @@ When you are connected to a Databricks fabric, you can browse the Databricks cat
 
 1. Open the **Environment** tab of the left sidebar.
 1. Select the **samples** catalog.
-1. Under **tpch > Tables**, click the **plus** sign next to the **orders** table.
+1. Under **tpch > Tables**, click the **+** icon next to the **orders** table.
 1. In the dialog, choose **Source** gem and name the gem. Then, click **Add**.
 1. A [Source](/engineers/source-target) gem should be added to the pipeline canvas.
 
@@ -198,7 +198,7 @@ This far, we've only made changes in the visual editor of the project. If you wa
 
 If you want to schedule your pipeline to run periodically, you can create a job to do so.
 
-1. In the left sidebar, hover over **Jobs** and click the **plus** sign.
+1. In the left sidebar, hover over **Jobs** and click **+**.
 1. Fill in the required fields. For this project, use the **Databricks** scheduler.
 1. Leave the schedule interval blank for now. This is where you define the job run frequency.
 1. Click **Create New**.

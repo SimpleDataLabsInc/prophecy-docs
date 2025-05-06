@@ -45,7 +45,7 @@ When you publish a project, the new version becomes available for:
 
 - [Scheduled pipeline runs](docs/analysts/scheduling.md) (depending on the fabric)
 - [Package Hub](docs/analysts/extensibility/extensibility.md#package-hub) packages
-- [App Directory](docs/analysts/business-apps/business-apps.md) applications
+- [App Browser](docs/analysts/business-apps/business-apps.md) applications
 
 To learn more, visit our page on [project publication](/analysts/project-publication).
 

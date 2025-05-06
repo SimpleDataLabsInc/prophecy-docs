@@ -21,7 +21,7 @@ Sources are pointers to tables in the SQL warehouse(s) specified in the SQL fabr
 ![Source1](img/Source1.png)
 
 :::note
-You can also add a source by clicking the **plus** sign next to Sources. Use this when you want to define your data model without a cluster connection or predefined table.
+You can also add a source by clicking the **+** next to Sources. Use this when you want to define your data model without a cluster connection or predefined table.
 :::
 
 ## Seeds
@@ -54,7 +54,7 @@ A model is similar to a pipeline, as both contain data transformation steps. Unl
 
 To create a new model:
 
-1. Click the **plus** sign next to Models.
+1. Click **+** next to Models.
 1. Provide a name for the new model and define the desired storage path in Git to store the new model SQL file.
 1. Click **Create**. This opens the model canvas. A [Target Model](/engineers/target-models) gem automatically appears on the canvas.
 
