@@ -9,7 +9,12 @@ tags:
   - prepare
 ---
 
-<span class="badge">SQL</span><br/><br/>
+import SQLRequirements from '@site/src/components/sql-gem-requirements';
+
+<SQLRequirements
+  sql_package_name="ProphecyDatabricksSqlBasics"
+  sql_package_version="0.0.4+"
+/>
 
 Use the DynamicSelect gem to dynamically filter columns of your dataset based on a set of conditions to avoid hard-coding your choice of columns.
 
