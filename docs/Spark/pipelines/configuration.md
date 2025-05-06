@@ -33,21 +33,21 @@ The **Schema** tab is where you declare your variables. These variables will be 
 
 The data type that you chose in the Schema tab will determine how you will populate the field in the Config tab.
 
-| Data type          | Description                                                                                                |
-| ------------------ | ---------------------------------------------------------------------------------------------------------- |
-| `string`           | A plain text value, entered via a single-line text input.                                                  |
-| `boolean`          | A true or false value, selected from a dropdown.                                                           |
-| `date`             | A calendar date, chosen using a date picker.                                                               |
-| `timestamp`        | A specific date and time (with time zone), selected via a datetime picker.                                 |
-| `double`           | A 64-bit floating-point number entered in a numeric field.                                                 |
-| `float`            | A 32-bit floating-point number entered in a numeric field.                                                 |
-| `int`              | A 32-bit integer entered in a numeric field.                                                               |
-| `long`             | A 64-bit integer entered in a numeric field.                                                               |
-| `short`            | A 16-bit integer entered in a numeric field.                                                               |
-| `array`            | A list of values of the same type, added one by one in a multi-value input field.                          |
-| `record`           | A structured object with multiple named fields, configured through a nested group of inputs.               |
-| `secret`           | A sensitive string (like a password or token), selected from your fabric's list of pre-configured secrets. |
-| `spark_expression` | A Spark SQL expression, written in a code editor with syntax highlighting.                                 |
+| Data type          | Description                                                                                                     |
+| ------------------ | --------------------------------------------------------------------------------------------------------------- |
+| `string`           | A plain text value, entered via a single-line text input.                                                       |
+| `boolean`          | A true or false value, selected from a dropdown.                                                                |
+| `date`             | A calendar date in `dd-mm-yyyy` format, chosen using a date picker.                                             |
+| `timestamp`        | A specific date and time in `dd-mm-yyyyTHH:MM:SSZ+z` format (with time zone), selected using a datetime picker. |
+| `double`           | A 64-bit floating-point number entered in a numeric field.                                                      |
+| `float`            | A 32-bit floating-point number entered in a numeric field.                                                      |
+| `int`              | A 32-bit integer entered in a numeric field.                                                                    |
+| `long`             | A 64-bit integer entered in a numeric field.                                                                    |
+| `short`            | A 16-bit integer entered in a numeric field.                                                                    |
+| `array`            | A list of values of the same type, added one by one in a multi-value input field.                               |
+| `record`           | A structured object with multiple named fields, configured through a nested group of inputs.                    |
+| `secret`           | A sensitive string (like a password or token), selected from your fabric's list of pre-configured secrets.      |
+| `spark_expression` | A Spark SQL expression, written in a code editor with syntax highlighting.                                      |
 
 ### Config tab
 
