@@ -22,12 +22,36 @@ The **Schema** tab is where you declare your variables. These variables will be 
 
 ![Schema tab](img/configuration/config-schema.png)
 
-| Parameter   | Description                                                                                                                                 |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| Name        | The name of the variable.                                                                                                                   |
-| Type        | The data type of the variable.                                                                                                              |
-| Optional    | A checkbox to define if the variable is optional. When the checkbox is **not** selected, you **must** set a default value for the variable. |
-| Description | An optional field where you can describe your variable.                                                                                     |
+| Parameter   | Description                                                                                                |
+| ----------- | ---------------------------------------------------------------------------------------------------------- |
+| Name        | The unique identifier for the variable.                                                                    |
+| Type        | The data type assigned to the variable. For supported types, see [Data types](#data-types).                |
+| Optional    | Indicates whether the variable is optional. If unchecked, you must provide a default value for the config. |
+| Description | An optional text field to provide additional context or details about the variable.                        |
+
+#### Data types
+
+Prophecy supports the following data types for configs.
+
+| Data type          | Description                                                                                                     |
+| ------------------ | --------------------------------------------------------------------------------------------------------------- |
+| `string`           | A plain text value, entered via a single-line text input.                                                       |
+| `boolean`          | A true or false value, selected from a dropdown.                                                                |
+| `date`             | A calendar date in `dd-mm-yyyy` format, chosen using a date picker.                                             |
+| `timestamp`        | A specific date and time in `dd-mm-yyyyTHH:MM:SSZ+z` format (with time zone), selected using a datetime picker. |
+| `double`           | A 64-bit floating-point number entered in a numeric field.                                                      |
+| `float`            | A 32-bit floating-point number entered in a numeric field.                                                      |
+| `int`              | A 32-bit integer entered in a numeric field.                                                                    |
+| `long`             | A 64-bit integer entered in a numeric field.                                                                    |
+| `short`            | A 16-bit integer entered in a numeric field.                                                                    |
+| `array`            | A list of values of the same type, added one by one in a multi-value input field.                               |
+| `record`           | A structured object with multiple named fields, configured through a nested group of inputs.                    |
+| `secret`           | A sensitive string (like a password or token), selected from your fabric's list of pre-configured secrets.      |
+| `spark_expression` | A Spark SQL expression, written in a code editor with syntax highlighting.                                      |
+
+:::info
+The data type that you chose in the Schema tab will determine how you will populate the field in the Config tab.
+:::
 
 ### Config tab
 
