@@ -9,7 +9,7 @@ tags:
   - sql
 ---
 
-A data test is an assertion you define about a dataset in your project. Use data tests to verify that your business-critical data is consistently generated and meets expectations over time. Instead of manually reviewing datasets after each pipeline run or model execution, you can define tests that automatically validate your data.
+A data test is an assertion you define about a dataset in your project. Use data tests to verify that your business-critical data is consistently generated and meets expectations over time. Instead of manually reviewing datasets after each pipeline run or model execution, you can define tests that automatically validate your data and ensure data quality.
 
 When you create data tests in the visual canvas, Prophecy runs [dbt](https://docs.getdbt.com/docs/build/data-tests) for the underlying test execution and simplifies the test definitions that are normally defined in `.sql` and `.yaml` files.
 
@@ -17,9 +17,10 @@ When you create data tests in the visual canvas, Prophecy runs [dbt](https://doc
 
 To use data tests in your SQL project, you will need:
 
+- A Prophecy project where SQL is the primary language.
 - A Prophecy fabric or SQL fabric.
 
-:::note
+:::info
 Prophecy does not support data tests for fabrics configured with BigQuery and a CMEK.
 :::
 

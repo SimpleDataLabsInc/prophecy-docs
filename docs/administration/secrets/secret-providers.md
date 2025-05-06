@@ -8,7 +8,7 @@ tags:
   - fabrics
 ---
 
-**Secrets** help you safeguard sensitive information such as API keys, passwords, and encryption keys. When you create a fabric, you can add one or more secret providers to manage your secrets for that fabric. Then, you can create secrets for use in your pipelines.
+Secrets help protect sensitive information, such as API keys, passwords, and encryption keys. When you create a fabric, you can add one or more secret providers to manage secrets for that fabric. You can then create and use secrets in your pipelines.
 
 ![secret_screen](img/Secret_provider_Screen.png)
 
@@ -20,6 +20,10 @@ You can configure multiple secret providers per fabric in the **Providers** tab 
 | Databricks Secrets    | Recommended if you are a Databricks user                                        | Databricks |
 | HashiCorp Vault       | Recommended if your organization privileges HashiCorp Vault                     | Any Spark  |
 | Environment Variables | Recommended if your organization privileges environment variables               | Any Spark  |
+
+:::note
+If you use a secret provider that isn't listed here, you can still access secrets in your pipeline by calling the provider's API from a [Script](/engineers/script) gem, which runs PySpark code.
+:::
 
 ## Prophecy
 
