@@ -26,6 +26,10 @@ Understanding data lineage delivers multiple benefits for your engineering team:
 Lineage is computed on-demand directly from Git code. This means you can experiment in branches and immediately see how changes affect overall lineage before committing.
 :::
 
+:::note
+Prophecy supports lineage for Python/PySpark and Scala [projects](/projects).
+:::
+
 ## Accessing lineage
 
 There are two ways to access the lineage view:

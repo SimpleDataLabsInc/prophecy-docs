@@ -9,15 +9,23 @@ tags: []
 
 Project publication is an essential step in the project lifecycle. Each published version marks the project as production-ready and enables its use across different systems.
 
-## Publication steps
+## Release and deployment
 
 When you publish a project, two key processes occur: release and deployment.
 
 First, the project is released, creating a new version and preparing it for distribution. During this process, Prophecy assigns a version label to the project and makes the new version available in packages and Prophecy Apps.
 
-Next, the project is deployed, configuring it for execution in different environments. The deployment process builds the project for each target environment (defined by [fabrics](docs/getting-started/concepts/fabrics.md)) and enables pipeline [schedules](docs/analysts/scheduling.md) for each fabric.
+Next, the project is deployed, configuring it for execution in different environments. The deployment process builds the project in each target environment ([fabric](docs/getting-started/concepts/fabrics.md)) and enables pipeline [schedules](docs/analysts/scheduling.md) for each fabric.
 
-## Publication parameters
+## Permissions
+
+You can publish to a fabric only if that fabric is assigned to one of your teams. This means fabric-level permissions control who can deploy to specific environments. To restrict access to production, assign the production fabric to a limited-access team.
+
+However, publishing a project without selecting a fabric only releases the project—it **does not deploy** it to any environment. Anyone in the project team can do this, regardless of their fabric access.
+
+Learn more in [Team-based access](/administration/teams-users/team-based-access).
+
+## Parameters
 
 Once you save your project as a draft, you have the option to Publish that version of the project. Review the following table to understand the publication parameters.
 
