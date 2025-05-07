@@ -22,7 +22,7 @@ To learn more, reference the documentation on [team-based access](/administratio
 
 Prophecy Apps can be run using different values. These sets of values are stored in **configs** that enable you to save different values for different scenarios or teams.
 
-Each config acts like your personal instance of the Prophecy App. You can:
+A config acts like your personal instance of the Prophecy App. For each config, you can:
 
 - Name your config (e.g., `Q1 Sales Report`, `NY Region Data Pull`).
 - Customize input values based on your use case.
@@ -41,13 +41,17 @@ Follow the steps below to create a new config for an app.
 1. Open the Prophecy App you want to use.
 1. If no configs exist yet, you’ll be prompted to create one. Otherwise:
    1. Hover over the app name in the sidebar.
-   1. Click the **+** icon to add a new config.
+   1. Click the `+` icon to add a new config.
 1. Fill in the required inputs (form fields that map to pipeline parameters).
 1. Click **Run** to execute the app.
 
 ## Schedules
 
-You can set each app config to periodically run using a **schedule**.
+Each config can be scheduled to run automatically on a recurring basis. These app-level schedules are independent from any pipeline-level schedules set within the broader project. This allows you to:
+
+- Automate repeated tasks, such as weekly reports
+- Ensure consistent execution
+- Manage schedules per config
 
 ### Schedule a config
 

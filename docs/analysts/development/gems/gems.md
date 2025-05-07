@@ -85,3 +85,5 @@ In a data pipeline, the **phase** of a gem determines the sequence in which it r
 - Gems are assigned a numerical phase (e.g., `0`, `1`, `-1`), where lower values run first. For example, a gem with phase `0` will execute before a gem with phase `1`.
 - When a gem runs, all its upstream gems must also run. This means that if a downstream gem has phase `0` and an upstream gem has phase `1`, the upstream gem will be grouped into phase `0` to ensure proper execution.
 - Because of this dependency, the phase assigned to the last gem in a branch determines the phase of the entire branch. This means that when configuring gem phases, you only need to focus on the _leaf nodes_—the final gems in each branch of the pipeline.
+
+Normally, pipeline branches run in parallel. Using gem phases, you can develop your pipeline to run in different stages. This can be useful when one part of the pipeline depends on the results of another, allowing you to control the execution order and ensure that data flows correctly from one stage to the next.
