@@ -28,4 +28,4 @@ Prophecy provides one template accessible to all teams:
 
 ## Additional templates
 
-Team admins have permission to create new templates. To learn more, see [Project creation templates](docs/administration/teams-users/project-creation-template.md).
+Team admins have permission to create new templates. To learn more, see [Project creation templates](docs/administration/project-types/project-creation-template.md).

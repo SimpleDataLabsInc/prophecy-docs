@@ -9,10 +9,6 @@ tags:
 
 Highlighted improvements for pipeline Observability
 
-### Lineage Run
-
-Click [here](/engineers/lineage-run-and-diagnose) for further details
-
 ### Pipeline Monitoring and Debugging
 
 Click [here](/docs/Orchestration/pipeline-monitoring/use-pipeline-monitoring.md) for further details.
