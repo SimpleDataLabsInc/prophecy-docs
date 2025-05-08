@@ -58,7 +58,7 @@ Below are JSON configurations within the Prophecy UI that need to be enabled to 
     }
   },
   "PythonSandboxPoolSize": 2,
-  "sandboxImageRegistry": "gcr.io/prophecy-share",
+  "sandboxImageRegistry": "<image-registry>",
   "sandboxImageTag": "<current-prophecy-version>",
   "sandboxMaxTotalPods": 100,
   "sandboxMonitoringInterval": 2,
@@ -106,7 +106,7 @@ These are the generic configurations which are required to be set irrespective o
 | `PythonSandbox.schemaAnalysisPod.memory.limit`   | Configures the Memory limit of the Python schema analysis pod                                                                                                | `2.5Gi`                              |
 | `PythonSandbox.schemaAnalysisPod.memory.request` | Configures the Memory request of the Python schema analysis pod                                                                                              | `2.5Gi`                              |
 | `PythonSandboxPoolSize`                          | number of concurrent Python sessions/tabs startup (reserved) allowed                                                                                         | `2`                                  |
-| `sandboxImageRegistry`                           | image registry to be used for pulling sandbox images from                                                                                                    | `gcr.io/prophecy-share`              |
+| `sandboxImageRegistry`                           | image registry to be used for pulling sandbox images from                                                                                                    | `<image-registry>`                   |
 | `sandboxImageTag`                                | image tag to be used for pulling sandbox images. Defaulted to current Prophecy version                                                                       | `<current-prophecy-version-running>` |
 | `sandboxMaxTotalPods`                            | maximum number of Scala + Python (Gem plugin + schema analysis) pods allowed. This is used to restrict the number of pods spun up in case of surge of users. | `false`                              |
 | `sandboxMonitoringInterval`                      | Monitoring interval used to spin up new sandbox pods as per session requests in seconds (s).                                                                 | `2`                                  |
