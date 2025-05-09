@@ -8,33 +8,37 @@ tags:
   - copilot
 ---
 
-Building data pipelines can be time-consuming, especially when you're starting from scratch or need to apply common transformations. Copilot helps you move faster by translating natural language prompts into gems.
+Building data pipelines can be time-consuming, especially when you're starting from scratch or need to apply many different transformations. Copilot helps you move faster by translating natural language prompts into gems. Use our Copilot Agent to add data or transformations to your pipeline.
 
-Whether you're generating an entirely new pipeline or adding the next transformation step, Copilot suggests relevant gems based on your intent. This page walks you through the different ways to use Copilot to generate pipelines and gems, along with example prompts to get you started.
+You can find the Copilot Agent in the **Chat** tab of the project's left sidebar.
 
-## Start a new pipeline
+## Explore tables
 
-When starting from a blank canvas, you can ask Copilot to suggest an initial pipeline flow based on the tables already defined in your project. This helps you get a head start by quickly scaffolding the overall structure of your pipeline. You can accept or reject Copilot's suggestion.
+When starting from a blank canvas, you can ask Copilot to find relevant tables in your data warehouse to add as sources in your pipeline.
 
-![Generate pipelines](./img/copilot-generate-pipeline.gif)
+### View sample rows
 
-:::info
-Copilot can only use sources that have already been defined as [tables](/analysts/source-target#tables) in your project.
-:::
+You can ask Copilot to provide a sample of the dataset, and Copilot will show a small table directly in the chat.
 
-## Ask for the next gem
+### View data profile
 
-Once you’ve started building, Copilot can help you by suggesting the next gem based on your prompt.
+### View charts
 
-Select a gem, click the Copilot icon in the top-left corner of the canvas, and describe the logic or transformation you want to apply.
+- Line chart
+- Pie chart
+- Bar chart
 
-![Generate gems](./img/copilot-generate-gem.gif)
+## Generate transformations
 
-:::note
-You can also ask Copilot for next gems by hovering a gem’s output branch and clicking the **+** icon.
-:::
+Once you’ve started building, Copilot can help you by suggesting different transformations based on your prompt. These transformations appear in yellow to indicate that they are Copilot suggestions.
 
-## Example prompts {#example-prompts-gems}
+## Review inputs and outputs
+
+To make sure Copilot-generated transformations match your expectations, you can explore the input and result of each gem that Copilot suggested in the pipeline. Click **Inspect** in the chat to open the new or modified gems.
+
+You can click through these gems with the **Previous** and **Next** buttons.
+
+## Example prompts
 
 The following are example prompts you can use to generate gems in your pipeline.
 

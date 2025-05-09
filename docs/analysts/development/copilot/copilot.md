@@ -13,6 +13,7 @@ tags:
 Copilot is your intelligent assistant for building and understanding data pipelines. It helps you:
 
 - Generate gems and pipelines using natural language.
+- Find tables in your data warehouse that match your requirements.
 - Speed up data transformation with smart, context-aware suggestions.
 - Label and explain parts of a pipeline for better documentation and collaboration.
 - Detect and correct errors automatically.
