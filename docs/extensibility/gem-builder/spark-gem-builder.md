@@ -50,9 +50,13 @@ class CustomLimit(ComponentSpec):
     name: str = "CustomLimit"
     category: str = "Transform"
 
+    def optimizeCode(self) -> bool:
+        # Return whether code optimization is enabled for this component
+        return True
+
     @dataclass(frozen=True)
     class CustomLimitProperties(ComponentProperties):
-        # Properties for the component with default values
+        # properties for the component with default values
         my_property: SString = SString("default value of my property")
 
     def dialog(self) -> Dialog:
@@ -101,6 +105,7 @@ class CustomLimit extends ComponentSpec {
   val name: String = "CustomLimit"
   val category: String = "Transform"
   type PropertiesType = CustomLimitProperties
+  override def optimizeCode: Boolean = true
 
   case class CustomLimitProperties(
     @Property("Property1")
@@ -136,6 +141,7 @@ The template consists of the following components:
 | Component                                       | Description                                                                                 |
 | ----------------------------------------------- | ------------------------------------------------------------------------------------------- |
 | Parent class                                    | Extends a parent class from which it inherits the representation of the overall gem.        |
+| Optimize function                               | Enable or disable [code optimization](/engineers/optimization-functions).                   |
 | Properties class                                | Contains a list of the properties to be made available to the user for this particular gem. |
 | Dialog function                                 | Contains code specific to how the gem UI should look to the user.                           |
 | Serialize/deserialize function (**Scala only**) | Persists objects or exchanges data between different parts of a system                      |
@@ -206,6 +212,8 @@ Every gem class needs to extend a parent class from which it inherits the repres
 
 Next provide the name and category of your gem, "Limit" and "Transform" in this example.
 
+Another thing to note here is optimizeCode. This flag can be set to True or False value depending on whether we want the Prophecy Optimizer to run on this code to simplify it. In most cases, it's best to leave this value as True.
+
 <Tabs>
 <TabItem value="py" label="Python">
 
@@ -215,6 +223,9 @@ class Limit(ComponentSpec):
     category: str = "Transform"
     GemDescription: str = "Limits the number of rows in the output"
     docUrl: str = "https://docs.prophecy.io/Spark/Gems/transform/limit/"
+
+    def optimizeCode(self) -> bool:
+        return True
 
     @dataclass(frozen=True)
 
@@ -234,6 +245,7 @@ class Limit extends ComponentSpec {
   val docUrl: String = "https://docs.prophecy.io/Spark/Gems/transform/limit/"
 
   type PropertiesType = LimitProperties
+  override def optimizeCode: Boolean = true
   ...
 ```
 
