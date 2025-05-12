@@ -5,7 +5,7 @@ slug: /engineers/salesforce
 description: Salesforce
 tags:
   - gems
-  - warehouse
+  - webapp
   - salesforce
 ---
 
