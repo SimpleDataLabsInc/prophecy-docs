@@ -21,23 +21,309 @@ By examining `uispec.py`, you can:
 To see an example `dialog()` function, visit [Gem Builder reference](/engineers/gem-builder-reference#dialog-ui).
 :::
 
+:::tip
+To reference the complete code of a certain gem, search for the gem using the left sidebar of the project editor. Click the gem to open its code, then look for the `dialog()` function. This function contains the code that determines how UI components are configured.
+:::
+
 ## Atoms
 
-Atoms are the basic UI components used in the gem dialog configuration. Here are some common Atoms found in `uispec.py`:
+Atoms are basic UI components defined in `uispec.py` that you can use in the gem dialog configuration. Below are the most commonly used atoms, with example code and images for reference.
 
-| Atom Class      | Description                                               |
-| --------------- | --------------------------------------------------------- |
-| `Checkbox`      | Boolean toggle control                                    |
-| `Switch`        | Boolean toggle with a different visual style              |
-| `TextBox`       | Simple one-line text input                                |
-| `ExpressionBox` | Input for code expressions, often with schema suggestions |
-| `ExpTable`      | Table where users can add rows of expressions             |
-| `BasicTable`    | Configurable table with editable cells                    |
-| `TitleElement`  | Static title or heading text                              |
-| `AlertBox`      | Message box for alerts/info/warnings                      |
-| `Button`        | Button element that can trigger actions                   |
-| `FileSelector`  | UI for selecting files or folders                         |
-| `MultiSelect`   | Dropdown with multiple selection support                  |
+---
+
+### Checkbox
+
+Boolean checkbox element that a user can select or unselect.
+
+```py
+Checkbox("First row is header")
+```
+
+<img src={require('./img/uispec/Checkbox.png').default} alt="Checkbox" width="75%" style={{ border: "1px solid var(--ifm-color-gray-200)", borderRadius: "8px" }}/>
+
+---
+
+### Switch
+
+Boolean toggle that a user can enable or disable.
+
+```py
+Switch("")
+```
+
+<img src={require('./img/uispec/Switch.png').default} alt="Switch" width="75%" style={{ border: "1px solid var(--ifm-color-gray-200)", borderRadius: "8px" }}/>
+
+---
+
+### TextBox
+
+Allows the user to type a single line of input.
+
+```py
+TextBox("Column delimiter")
+```
+
+<img src={require('./img/uispec/TextBox.png').default} alt="TextBox" width="75%" style={{ border: "1px solid var(--ifm-color-gray-200)", borderRadius: "8px" }}/>
+
+---
+
+### ExpressionBox
+
+Input for code expressions.
+
+```py
+ExpressionBox("Pivot Column")
+    .makeFieldOptional()
+    .withSchemaSuggestions()
+    .bindPlaceholders(
+    {{
+        "scala": "col(\"col_name\")",
+        "python": "col(\"col_name\")",
+        "sql": "col_name"
+    }}
+    )
+    .bindProperty("pivotColumn")
+```
+
+<img src={require('./img/uispec/ExpressionBox.png').default} alt="ExpressionBox" width="75%" style={{ border: "1px solid var(--ifm-color-gray-200)", borderRadius: "8px" }}/>
+
+---
+
+### ExpTable
+
+Dynamic table with target and expression columns.
+
+```py
+ExpTable("Aggregate Expressions").bindProperty("aggregate").withCopilotEnabledExpressions().allowCopilotExpressionsFix()
+```
+
+<img src={require('./img/uispec/ExpTable.png').default} alt="ExpTable" width="75%" style={{ border: "1px solid var(--ifm-color-gray-200)", borderRadius: "8px" }}/>
+
+---
+
+### BasicTable
+
+Configurable table with editable cells and optional footers.
+
+```py
+BasicTable(
+    "Unique Values",
+    height="400px",
+    columns=[
+        Column(
+            "Unique Values",
+            "colName",
+            (
+                TextBox("").bindPlaceholder(
+                    "Enter value present in pivot column"
+                )
+            ),
+        )
+    ],
+).bindProperty("pivotValues")
+```
+
+<img src={require('./img/uispec/BasicTable.png').default} alt="BasicTable" width="75%" style={{ border: "1px solid var(--ifm-color-gray-200)", borderRadius: "8px" }}/>
+
+---
+
+### TitleElement
+
+Static heading element, rendered as title text with optional heading level.
+
+```py
+TitleElement("Where Clause")
+```
+
+<img src={require('./img/uispec/TitleElement.png').default} alt="TitleElement" width="75%" style={{ border: "1px solid var(--ifm-color-gray-200)", borderRadius: "8px" }}/>
+
+---
+
+### SColumn
+
+A column where the user can write a Spark expression.
+
+_Example._
+
+---
+
+### SColumnExpression
+
+A column where the user can name the target column generated with the `SColumn` expression.
+
+_Example._
+
+---
+
+### TextArea
+
+Multi-line text input area for longer descriptions.
+
+```py
+TextArea("Description", 2, placeholder="Dataset description...")
+```
+
+<img src={require('./img/uispec/TextArea.png').default} alt="TextArea" width="75%" style={{ border: "1px solid var(--ifm-color-gray-200)", borderRadius: "8px" }}/>
+
+---
+
+### SchemaTable
+
+Information about the dataset schema, including column names, data type, and metadata.
+
+```py
+SchemaTable("").bindProperty("schema")
+```
+
+<img src={require('./img/uispec/SchemaTable.png').default} alt="SchemaTable" width="75%" style={{ border: "1px solid var(--ifm-color-gray-200)", borderRadius: "8px" }}/>
+
+---
+
+### Ports
+
+Component for displaying and editing gem input or output ports.
+
+```py
+Ports(minInputPorts=2,
+    selectedFieldsProperty=("columnsSelector"),
+    singleColumnClickCallback=self.onClickFunc,
+    allColumnsSelectionCallback=self.allColumnsSelectionFunc).editableInput(True)
+```
+
+<img src={require('./img/uispec/Ports.png').default} alt="Ports" width="75%" style={{ border: "1px solid var(--ifm-color-gray-200)", borderRadius: "8px" }}/>
+
+---
+
+### SchemaColumnsDropdown
+
+Dropdown that lets the user select columns defined in the dataset schema.
+
+```py
+SchemaColumnsDropdown("Partition Columns")
+    .withMultipleSelection()
+    .bindSchema("schema")
+    .bindProperty("partitionColumns")
+```
+
+<img src={require('./img/uispec/SchemaColumnsDropdown.png').default} alt="SchemaColumnsDropdown" width="75%" style={{ border: "1px solid var(--ifm-color-gray-200)", borderRadius: "8px" }}/>
+
+---
+
+### SelectBox
+
+Dropdown menu with search and other configuration options.
+
+```py
+SelectBox("")
+    .addOption("Inner", "inner")
+    .addOption("Outer", "outer")
+    .addOption("Left Outer", "left_outer")
+    .addOption("Right Outer", "right_outer")
+    .addOption("Left Semi", "left_semi")
+    .addOption("Left Anti", "left_anti")
+    .addOption("Cross Join", "cross")
+```
+
+<img src={require('./img/uispec/SelectBox.png').default} alt="SelectBox" width="75%" style={{ border: "1px solid var(--ifm-color-gray-200)", borderRadius: "8px" }}/>
+
+---
+
+### AlertBox
+
+Message box for alerts/info/warnings.
+
+```py
+AlertBox(
+    variant="success",
+    _children=[
+        Markdown(
+            ...
+        )
+    ]
+)
+```
+
+<img src={require('./img/uispec/AlertBox.png').default} alt="AlertBox" width="75%" style={{ border: "1px solid var(--ifm-color-gray-200)", borderRadius: "8px" }}/>
+
+---
+
+### Markdown
+
+Displays static Markdown-formatted content.
+
+```py
+Markdown(
+    "**Column Split Delimiter Examples:**"
+    "\n"
+    "- **Tab-separated values:**"
+    "\n"
+    "   **Delimiter:** \\t"
+    "\n"
+    "   Example: Value1<tab>Value2<tab>Value3"
+    "\n"
+    "- **Newline-separated values:**"
+    "\n"
+    "   **Delimiter:** \\n"
+    "\n"
+    "   Example: Value1\\nValue2\\nValue3"
+    "\n"
+    "- **Pipe-separated values:**"
+    "\n"
+    "   **Delimiter:** |"
+    "\n"
+    "   Example: Value1|Value2|nValue3"
+)
+```
+
+<img src={require('./img/uispec/Markdown.png').default} alt="Markdown" width="75%" style={{ border: "1px solid var(--ifm-color-gray-200)", borderRadius: "8px" }}/>
+
+---
+
+### RadioGroup
+
+A group of radio buttons that can have labels, values, icons, and descriptions.
+
+```py
+RadioGroup("Operation Type")
+    .addOption(
+        "Union",
+        "unionAll",
+        ("UnionAll"),
+        ("Returns a dataset containing rows in any one of the input Datasets, while preserving duplicates.")
+    )
+```
+
+<img src={require('./img/uispec/RadioGroup.png').default} alt="Editor" width="75%" style={{ border: "1px solid var(--ifm-color-gray-200)", borderRadius: "8px" }}/>
+
+---
+
+### Editor
+
+Code editor with expression builder support and schema suggestions.
+
+```py
+Editor(height=("100%")).withSchemaSuggestions().bindProperty("condition.expression")
+```
+
+<img src={require('./img/uispec/Editor.png').default} alt="Editor" width="75%" style={{ border: "1px solid var(--ifm-color-gray-200)", borderRadius: "8px" }}/>
+
+---
+
+## Layout
+
+The layout components let you organize your gems with columns, tabs, and more.
+
+### StackLayout
+
+This arranges its child elements in a vertical stack to place elements one below the other.
+
+### ColumnLayout
+
+This component arranges its child elements in horizontal columns, allowing for a side-by-side layout.
+
+### FieldPicker
+
+This is a form-like component that contains labeled input fields. Each field you add call adds a new form control (like text box, checkbox, select box) associated with a specific property.
 
 ## Explore `uispec.py`
 
