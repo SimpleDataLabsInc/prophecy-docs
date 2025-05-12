@@ -30,7 +30,7 @@ For an example step-by-step installation, visit [AWS installation guide](/admini
 
 - **[Helm](https://helm.sh/docs/intro/quickstart/)**: Must be installed to deploy Prophecy.
 - **[Custom Domain Hosting](#custom-domain-names)**: Requires SSL certificates and DNS configuration; include during Helm installation.
-- **[Private Container Registry](#private-container-registry)**: Pull images from `gcr.io/prophecy-share` and push to your private registry. Set `global.repository` during Helm installation.
+- **[Private Container Registry](#private-container-registry)**: Pull images from the Prophecy image registry and push to your private registry. Set `global.repository` during Helm installation.
 
 ### Minimum resource requirements
 
@@ -82,7 +82,7 @@ By default, Prophecy will install its own managed Nginx ingress controller durin
 
 #### Private container registry
 
-During the Helm installation, docker images are pulled from Prophecy's public Google Container Registry `gcr.io/prophecy-share`. If you want to use your own private container registry, you can specify it by setting the `global.repository` value during installation. Make sure to push all the images to your private registry first.
+During the Helm installation, docker images are pulled from Prophecy's public Google Container Registry. If you want to use your own private container registry, you can specify it by setting the `global.repository` value during installation. Make sure to push all the images to your private registry first.
 
 #### Custom domain names
 

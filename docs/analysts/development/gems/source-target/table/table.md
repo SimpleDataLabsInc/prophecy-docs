@@ -8,7 +8,7 @@ tags: []
 
 <span class="badge">SQL</span><br/><br/>
 
-Tables represent persistent storage of structured data in your SQL warehouse.
+Tables represent persistent storage of structured data in your SQL warehouse. In a pipeline, tables can serve as sources, targets, or intermediate stages. This is useful for adding checkpoints to long-running jobs, persisting intermediate results for debugging or auditing, and enabling downstream reuse of cleaned or transformed data.
 
 ## Source parameters
 
