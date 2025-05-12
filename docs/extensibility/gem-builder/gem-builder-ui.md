@@ -139,22 +139,6 @@ TitleElement("Where Clause")
 
 ---
 
-### SColumn
-
-A column where the user can write a Spark expression.
-
-_Example._
-
----
-
-### SColumnExpression
-
-A column where the user can name the target column generated with the `SColumn` expression.
-
-_Example._
-
----
-
 ### TextArea
 
 Multi-line text input area for longer descriptions.
