@@ -107,11 +107,11 @@ Imagine that you want to filter an `Orders` dataset based on the region where th
 
 #### Create an array parameter
 
-First, you'll set up a `region` parameter: an array of strings that includes a subset of regions.
+First, you'll set up a `region` parameter, which will be an array of strings that includes a subset of regions.
 
 1. Open your project and select **Parameters** in the header.
 1. Click **+ Add Parameter**.
-1. Name the parameter `regions`.
+1. Name the parameter `region`.
 1. Select the **Type** and choose **Array > String**.
 1. Click **Select expression > Value**.
 1. Type `AMER` and click **Done**.
@@ -119,16 +119,21 @@ First, you'll set up a `region` parameter: an array of strings that includes a s
 1. Type `APAC` and click **Done**.
 1. Now, click **Save**.
 
+![Create string array](img/array-param.png)
+
 #### Use the parameter in an expression
 
 Now, you'll use the parameter in an expression inside a Filter gem.
 
 1. Create and open the Filter gem.
+1. Remove the default `true` expression.
 1. Click **Select expression > Function** and select `array_contains`.
-1. In the array dropdown of the function, click **Configuration Variable** and select the `regions` parameter.
-1. In the value dropdown of the function, click **Column** and select the `order_region` column.
+1. In the **array** dropdown of the function, click **Configuration Variable** and select the `region` parameter.
+1. In the **value** dropdown of the function, click **Column** and select the order region column.
 
-The output of this gem will only include rows where the order region matches at least one value in the `regions` array. When you run the pipeline interactively, it will use the values of the default array that you set up in the previous section.
+![Filter using array](img/filter-array.png)
+
+The output of this gem will only include rows where the order region matches at least one value in the `region` array. When you run the pipeline interactively, it will use the values of the default array that you set up in the previous section.
 
 ## Validate your expressions
 
