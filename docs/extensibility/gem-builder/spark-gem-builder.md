@@ -212,8 +212,6 @@ Every gem class needs to extend a parent class from which it inherits the repres
 
 Next provide the name and category of your gem, "Limit" and "Transform" in this example.
 
-Another thing to note here is optimizeCode. This flag can be set to True or False value depending on whether we want the Prophecy Optimizer to run on this code to simplify it. In most cases, it's best to leave this value as True.
-
 <Tabs>
 <TabItem value="py" label="Python">
 

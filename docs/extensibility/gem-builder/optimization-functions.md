@@ -1,5 +1,5 @@
 ---
-title: Optimization functions
+title: Code optimization
 id: optimization-functions
 slug: /engineers/optimization-functions
 description: Optimization functions
@@ -7,17 +7,17 @@ tags:
   - gem builder
 ---
 
-Custom gems create code by defining functionality in their `def apply()` method.
-By default Prophecy will apply optimizations to this generated code to assist the Spark
-Catalyst optimization engine when it creates the Spark Plan. The optimizations make replacements
-using functionally equivalent code, but in some corner cases this may cause unwanted side effects.
+When you create a custom gem, you define the behavior of the gem in the `apply()` method of the gem code. Once you have written your code, you can enable code optimization to automatically generate a cleaner version of the same logic, without changing its functionality.
 
-In certain corner cases you may want disable some or all optimizations.
+To do so, modify the `optimizeCode()` method in your custom gem:
 
-:::note
+```py
+def optimizeCode(self) -> bool:
+        return True # Set to False to disable optimization
+```
 
-These functions are Python specific.
-
+:::caution
+Enabling optimization may lead to errors in some edge cases.
 :::
 
 ## Turn off loop unrolling
@@ -95,12 +95,3 @@ def testLoopUnRoll():
 - In the first occurrence of `PostSubstituteDisabled` (`cols`), all instances of `cols` could be replaced so the original variable was removed.
 - In the second occurrence of `PostSubstituteDisabled` (`cols1`), the for loop was marked to skip optimization (`skipLoopUnRolling`).
   Since at least one instance of the `cols1` variable was marked to avoid optimization, the variable could not be optimized.
-
-## Disable all optimizations
-
-You can turn off all optimizations by setting the optimize function stub to `False`.
-
-```py
-def optimizeCode(self) -> bool:
-        return False
-```
