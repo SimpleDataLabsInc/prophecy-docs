@@ -37,7 +37,7 @@ Let’s say you’re working with two tables: **Table A** and **Table B**.
 - Both tables contain order-related data.
 - **Table A** contains order information from customer `1`, `2`, and `3`.
 - **Table B** contains order information from customer `1`, `2`, `3`, and `4`.
-- **Tables A and B** each contain some identical records (duplicates).
+- These tables contain some identical records (duplicates).
 
 ### Table A
 
@@ -47,7 +47,7 @@ Let’s say you’re working with two tables: **Table A** and **Table B**.
 | -------- | ----------- | ---------- | ------ |
 | 101      | 1           | 2024-12-01 | 250.00 |
 | 102      | 2           | 2024-12-03 | 150.00 |
-| 101      | 1           | 2024-12-01 | 250.00 |
+| 103      | 1           | 2025-01-15 | 300.00 |
 | 104      | 3           | 2025-02-10 | 200.00 |
 
 </div>
@@ -58,44 +58,24 @@ Let’s say you’re working with two tables: **Table A** and **Table B**.
 
 | order_id | customer_id | order_date | amount |
 | -------- | ----------- | ---------- | ------ |
-| 101      | 1           | 2024-12-01 | 250.00 |
+| 103      | 1           | 2025-01-15 | 300.00 |
 | 104      | 3           | 2025-02-10 | 200.00 |
 | 105      | 4           | 2025-03-05 | 400.00 |
 | 106      | 2           | 2025-03-07 | 180.00 |
-| 101      | 1           | 2024-12-01 | 250.00 |
 
 </div>
 
 ### Result
 
-#### Default
-
-The table that results from the Intersect gem only includes the records present in all the input tables.
+The table that results from the Intersect gem only includes the duplicate records.
 
 <div class="table-example">
 
 | order_id | customer_id | order_date | amount |
 | -------- | ----------- | ---------- | ------ |
-| 101      | 1           | 2024-12-01 | 250.00 |
+| 103      | 1           | 2025-01-15 | 300.00 |
 | 104      | 3           | 2025-02-10 | 200.00 |
 
 </div>
 
-The output indicates that order `101` and `104` appear in both **Table A** and **Table B**.
-By default, the duplicate row for order `101` is removed from the output.
-
-#### Preserve duplicates
-
-If the `preserve duplicates` option is selected, the duplicates from both inputs are preserved.
-
-<div class="table-example">
-
-| order_id | customer_id | order_date | amount |
-| -------- | ----------- | ---------- | ------ |
-| 101      | 1           | 2024-12-01 | 250.00 |
-| 101      | 1           | 2024-12-01 | 250.00 |
-| 104      | 3           | 2025-02-10 | 200.00 |
-
-</div>
-
-The output is the same as above, except the duplicate order `101` is retained.
+The output indicates that order `103` and `104` appear in both **Table A** and **Table B**.
