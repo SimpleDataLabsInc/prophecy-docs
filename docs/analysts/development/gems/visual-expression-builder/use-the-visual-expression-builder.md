@@ -30,7 +30,7 @@ Let's say you want to stratify accounts based on their annual revenues. Each con
 
 #### Create a new conditional column
 
-To set up the comparison expressions to match the image above, follow these steps:
+To set up the comparison expressions to match the image above:
 
 1. In the Reformat gem, under **Target Column**, click **Select Column**.
 1. Give the column the name `stratify_by_revenue`.
@@ -74,7 +74,7 @@ You can have any number of groups and nestings (a group within a group). You can
 
 #### Set up base filter conditions
 
-To set up the grouping expressions to match the image above, follow these steps:
+To set up the grouping expressions to match the image above:
 
 1. After creating the Filer gem, click **Add condition**. An option to Select expression appears.
 1. Click **Select expression > Column**.

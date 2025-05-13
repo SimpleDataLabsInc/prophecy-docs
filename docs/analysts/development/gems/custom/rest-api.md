@@ -36,5 +36,6 @@ You can populate these parameters with hard-coded values, or you can reference c
 
 :::tip
 To reference a column, use curly brackets.<br/>
-Example: `https://example.com/{{AccountID}}`
+For example, if your dataset has a column named `AccountID`, you can call an API like this:<br/>
+`https://api.company.com/users/{{AccountID}}`
 :::
