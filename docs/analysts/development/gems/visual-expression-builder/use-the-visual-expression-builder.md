@@ -137,7 +137,7 @@ The output of this gem will only include rows where the order region matches at 
 
 ## Validate your expressions
 
-Run the pipeline up to and including the gem with your expression, and observe the resulting data sample. To do so, click the **play** button on either the canvas or the gem. Once the code has finished running, you can verify the results to make sure they match your expectations. You can explore the result of your gem in the [Data Explorer](docs/analysts/development/data-explorer.md).
+Run the pipeline up to and including the gem with your expression, and observe the resulting data sample. To do so, click the **play** button on either the canvas or the gem. Once the code has finished running, you can verify the results to make sure they match your expectations. You can explore the result of your gem in the [Data Explorer](/analysts/data-explorer).
 
 ## Tips
 

@@ -24,7 +24,7 @@ Prophecy lets you interactively run your pipeline in the pipeline canvas and pre
 
 ### Data samples
 
-As gems run in your pipeline, sample outputs will appear after those gems. When you click on a data sample, Prophecy loads the data and opens the [Data Explorer](docs/analysts/development/data-explorer.md). The Data Explorer lets you sort, filter, and search through the gem output.
+As gems run in your pipeline, sample outputs will appear after those gems. When you click on a data sample, Prophecy loads the data and opens the [Data Explorer](/analysts/data-explorer). The Data Explorer lets you sort, filter, and search through the gem output.
 
 ## Scheduled execution
 

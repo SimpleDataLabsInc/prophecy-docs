@@ -24,7 +24,7 @@ The model canvas is your main workspace to develop data models. To begin, you ca
 
 ![AddModel](img/AddModel.png)
 
-Once a model is open, the model-editing canvas appears. In the following image, we can see the `customers` model starts with three existing models. The data is transformed according to Aggregate, SQLStatement, and Join [gems](/engineers/data-modeling-gems). The transformation gems are accessible via the gem drawer. As you develop the model, you can [iteratively run](/engineers/execution) and see [sample data](docs/analysts/development/data-explorer.md) as well as the relevant logs.
+Once a model is open, the model-editing canvas appears. In the following image, we can see the `customers` model starts with three existing models. The data is transformed according to Aggregate, SQLStatement, and Join [gems](/engineers/data-modeling-gems). The transformation gems are accessible via the gem drawer. As you develop the model, you can [iteratively run](/engineers/execution) and see [sample data](/analysts/data-explorer) as well as the relevant logs.
 
 ![Canvas](img/Canvas.png)
 
