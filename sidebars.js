@@ -284,6 +284,7 @@ const sidebars = {
             "analysts/development/data-tests/use-project-tests",
           ],
         },
+        "analysts/development/pipelines/logs",
       ],
     },
     {
@@ -731,6 +732,7 @@ const sidebars = {
             "extensibility/gem-builder/sql-gem-builder",
             "extensibility/gem-builder/spark-gem-builder",
             "extensibility/gem-builder/gem-builder-reference",
+            "extensibility/gem-builder/gem-builder-ui",
             "extensibility/gem-builder/optimization-functions",
           ],
         },
