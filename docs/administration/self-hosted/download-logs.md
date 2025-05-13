@@ -47,7 +47,7 @@ See the following requirements for enabling the Prophecy logs:
 - Prophecy collects the logs of all pods and stores it in the Athena Pod.
 - Each pod uses an additional 500 MB ephemeral storage for temporary storage.
 - Athena requires additional storage of around 100 GB to store one week of logs.
-- A new container image fluentbit (`gcr.io/prophecy-share/fluent-bit:2.2.3`) is required for this feature.
+- A new container image fluentbit is required for this feature.
 
 To enable Minio in Athena and provide it a volume, follow these steps:
 

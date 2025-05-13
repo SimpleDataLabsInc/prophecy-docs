@@ -161,7 +161,7 @@ Data Copilot auto-documents anywhere you need it - from the granular data source
 
 ## Data Tests and Quality Checks
 
-Unit tests and data quality checks are crucial for pipeline and job productionalization, yet many teams leave little time to develop these tests or worse, don’t build them at all. With Data Copilot, you’ll have one or more suggested [unit tests](/engineers/unit-tests) that can be seamlessly integrated into your CICD process.
+Unit tests and data quality checks are crucial for pipeline and job productionalization, yet many teams leave little time to develop these tests or worse, don’t build them at all. With Data Copilot, you’ll have one or more suggested [unit tests](/engineers/unit-tests) that can be seamlessly integrated into your CI/CD process.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>

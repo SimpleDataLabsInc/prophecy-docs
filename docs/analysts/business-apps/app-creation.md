@@ -166,6 +166,10 @@ After building the app, execute it to validate its functionality. This process a
 
 To explore advanced configuration options and scheduling capabilities, refer to the documentation on [running apps](/analysts/run-apps).
 
+:::caution
+When you run a Prophecy App, the entire underlying pipeline is executed—not just the components visible in the app. This means any additional transformations, tables, or other components included in the pipeline will also run, even if they’re not exposed in the app interface. Be mindful of how you design the pipeline to ensure app users only trigger the intended logic.
+:::
+
 ## What's next
 
 To address your specific business requirements, leverage more complex [components](/analysts/business-application-components) to construct robust Prophecy Apps.
