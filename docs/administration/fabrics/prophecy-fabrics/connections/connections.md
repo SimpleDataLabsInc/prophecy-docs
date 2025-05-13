@@ -38,6 +38,9 @@ If you are using a Prophecy fabric, you can add the following connections. You w
 | [Amazon S3](./s3)                    | File store           |
 | [SFTP](./sftp)                       | File store           |
 | [Microsoft SharePoint](./sharepoint) | File store           |
+| [OneDrive](./onedrive.md)            |                      |
+| [Redshift](./redshift.md)            |                      |
+| [Oracle](./oracle.md)                |                      |
 | [Smartsheet](./smartsheet)           | Web application      |
 | [MSSQL](./mssql)                     | Database             |
 | [MongoDB](./mongodb)                 | Database             |

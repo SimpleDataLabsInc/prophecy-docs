@@ -195,6 +195,14 @@ const sidebars = {
             },
             {
               type: "category",
+              label: "Spatial",
+              items: [
+                "analysts/development/gems/spatial/create-point",
+                "analysts/development/gems/spatial/distance",
+              ],
+            },
+            {
+              type: "category",
               label: "Parse",
               items: [
                 "analysts/development/gems/parse/json-parse",
@@ -798,6 +806,9 @@ const sidebars = {
                 "administration/fabrics/prophecy-fabrics/connections/snowflake",
                 "administration/fabrics/prophecy-fabrics/connections/mongodb",
                 "administration/fabrics/prophecy-fabrics/connections/mssql",
+                "administration/fabrics/prophecy-fabrics/connections/onedrive",
+                "administration/fabrics/prophecy-fabrics/connections/redshift",
+                "administration/fabrics/prophecy-fabrics/connections/oracle",
                 "administration/fabrics/prophecy-fabrics/connections/s3",
                 "administration/fabrics/prophecy-fabrics/connections/sftp",
                 "administration/fabrics/prophecy-fabrics/connections/smartsheet",
