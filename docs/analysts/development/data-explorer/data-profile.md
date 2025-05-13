@@ -1,12 +1,11 @@
 ---
 title: Data profiling
 id: data-profile
-slug: /engineers/data-profile
-draft: true
+slug: /analysts/data-profile
 description: See high level statistics for data samples in your pipeline
 tags:
   - data profile
-  - data quality
+  - statistics
 ---
 
 To quickly find a summary of your data statistics, view data profiles of your data samples in the Data Explorer. Use data profiling to:
@@ -14,17 +13,6 @@ To quickly find a summary of your data statistics, view data profiles of your da
 - Find instant data insights
 - Detect anomalies and inconsistencies early
 - Visualize value distributions and data completeness
-
-## Enable data profile
-
-Data profiling is most important **early** in your pipeline. To enable or disable data profiling per gem in the pipeline:
-
-1. Open the gem action menu.
-1. Select or deselect the Data Profile checkbox.
-
-:::info
-Be conscious of how often you enable data profiling throughout the pipeline. This can add unnecessary computation time to your pipeline execution.
-:::
 
 ## Quick profile
 
@@ -35,9 +23,17 @@ The data explorer includes data profiles that are generated on your sample data.
 - **Percent of blank values:** The percentage of values in the column that are blank.
 - **Most common values:** Displays the top four most frequent values in the column, along with the percentage of occurrences for each.
 
-## Full profile
+To view these statistics for your sample data, click **Profile** in the Data Explorer.
 
-When you open the data explorer, you'll only see the data profile of the data **sample**. When you load the full data profile, Prophecy generates a more in-depth analysis on **all of the records** in the interim dataset. The full profile displays the following information:
+![Quick profile](img/quick-data-profile.png)
+
+## Expanded profile
+
+When you open the data explorer, you'll only see the data profile of the data sample. When you load the expanded data profile, Prophecy generates a more in-depth analysis on **all of the records** in the interim dataset.
+
+![Expanded profile](img/expanded-profile.png)
+
+The expanded profile displays the following information:
 
 - **Data type**: The data type of the column.
 - **Unique values**: The number of unique values in the column.
@@ -52,3 +48,14 @@ When you open the data explorer, you'll only see the data profile of the data **
 - **Blank values**: The percent and number of blank values in the column.
 - **Non-blank values**: The percent and number of non-blank values in the column.
 - **Data summary**: An overview of the most common values in the column.
+
+To view the expanded profile:
+
+1. Click the dropdown arrow on the column you want to expand.
+1. Select **Show Expanded Profile**.
+
+![Show Expanded Profile](img/open-expanded-profile.png)
+
+:::tip
+You can click between columns in the expanded profile for quick access.
+:::
