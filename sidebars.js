@@ -284,6 +284,7 @@ const sidebars = {
             "analysts/development/data-tests/use-project-tests",
           ],
         },
+        "analysts/development/pipelines/logs",
       ],
     },
     {
