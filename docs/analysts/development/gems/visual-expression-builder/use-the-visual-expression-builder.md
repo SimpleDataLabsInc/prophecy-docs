@@ -1,152 +1,143 @@
 ---
-title: Use visual expressions
+title: Advanced visual expressions
 id: use-the-expression-builder
 slug: /analysts/use-visual-expression-builder
-description: Use the Expression Builder
+description: Create complex visual expressions that include logical operators, comparisons, and parameters
 tags:
-  - how-to
-  - development
-  - visual
-  - functions
-  - expression
+  - expression builder
   - sql
 ---
 
-Develop your SQL expressions by using the visual expression builder, which shows you available columns and functions that you can use to build your expressions.
+In addition to using the [expression options](/analysts/visual-expression-builder-reference) that appear when you open the visual expression builder, you can also create additional configurations that add complexity to your expressions. This page explains the advanced expressions that you can achieve with the visual expression builder.
 
-## Navigate to the visual expression builder
+## Key advanced features
 
-The visual expression builder is supported wherever you see Visual and Code views within your transformation gems.
+The following table describes a few advanced options for the visual expression builder.
 
-- Create or open an existing transformation gem, and select the **Visual** view.
+| Feature    | Description                                                                                                                                                                                                                                                    |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Comparison | Lets you establish relationships between two simple expressions connected by an operator. This mode helps you perform comparisons or existence checks on your data that always evaluate to true or false.                                                      |
+| Grouping   | Combine multiple comparison expressions into groups using logical operators like `AND` and `OR`. This structure enables you to express intricate business logic in a visual format.                                                                            |
+| Parameters | Enables you to include variables in your expressions that may vary at runtime. Parameters only show up in the **Configuration Variables** of the visual expression builder after you have [created them](/analysts/pipeline-parameters) at the pipeline level. |
 
-:::note
+## Examples
 
-The view you select persists across your gems.
+### Use comparisons to stratify accounts
 
-:::
-
-All of the expressions you build using the visual expression builder are converted to code in the gem and model code views. Similarly, edits you make in the Code view, whether it's in an expression or condition editor, will be converted into Visual view.
-
-This allows you to take advantage of both Visual and Code views when building your expressions.
-
-## Build an expression
-
-Using the visual expression builder, you can build an expression using the following modes:
-
-- **Simple Expression**: This mode allows you to choose an expression, like a column, function, or Case statement.
-- **Comparison**: This mode allows you to compare two simple expressions. You have the option of using conditions, such as `IF` and `ELSEIF` statements.
-- **Grouping**: This mode allows you to build complex conditions by allowing the combinations of comparision expressions using logical operators `AND` or `OR`.
-
-See which gems support which modes in the following table:
-
-|           | Simple Expression mode   | Comparison mode          | Grouping mode            |
-| --------- | ------------------------ | ------------------------ | ------------------------ |
-| Aggregate | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg)  | ![Tick](./img/cross.svg) |
-| Filter    | ![Tick](./img/cross.svg) | ![Tick](./img/cross.svg) | ![Tick](./img/tick.svg)  |
-| Join      | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg)  |
-| Reformat  | ![Tick](./img/tick.svg)  | ![Tick](./img/tick.svg)  | ![Tick](./img/cross.svg) |
-
-### Build using the Simple Expression mode
-
-Let's use a Join gem to build simple expressions.
-
-#### Join example
-
-![Join gem using Expression mode](img/join-visual-expression-builder.png)
-
-In our Join example, we want to join the `in0` account table with the `in1` expected revenue table matching the account IDs.
-
-To set up the join condition, follow these steps:
-
-1. After creating the Join gem, in the Join section, click **+Add Condition**. An option to Select expression appears.
-2. Click **Select expression** and select **Column**. Search for or click to select `in0.id` from the populated list. An option to Select operator appears.
-3. Click **Select operator** and select the Comparison operator `equals`. An option to Select expression appears.
-4. Click **Select expression** and select **Column**. Search for or click to select `in1.ACCOUNT_ID` from the populated list.
-
-To set up the simple expressions, follow these steps:
-
-1. In the Expressions section, click **Add Column +**. A new expression row appears.
-2. Click **target_column**, and then search for or click to select `ACCOUNT_ID` from the populated list.
-3. Click **Select expression** and select **Column**. Search for or click to select `in0.ID` from the populated list.
-4. Repeat steps 1 to 3 to set up the rest of the matching columns.
-
-### Build using the Comparison mode
-
-Let's use a Reformat gem and a Aggregate gem to build comparison expressions.
-
-#### Reformat example
+Let's say you want to stratify accounts based on their annual revenues. Each condition we set up is limited to one comparison. This example combines conditional logic with comparison operators.
 
 ![Reformat gem using Comparison mode](img/reformat-visual-expression-builder.png)
 
-In our Reformat example, we want to stratify the accounts based on their annual revenues. Each condition we set up is limited to one comparison.
+#### Create a new conditional column
 
-To set up the comparison expressions, follow these steps:
+To set up the comparison expressions to match the image above:
 
-1. After creating the Reformat gem, click **target_column**, and then search for or click to select `ANNUALREVENUE` from the populated list.
-2. Click **Select expression** and select **Conditional**. A `WHEN` clause appears.
-3. For `WHEN`, click **Select expression** and select **Function**. Search for and click to select `TRY_CAST`, which converts a value of one data type into another data type. An option to select source_string_expr appears.
-4. Click **source_string_expr** and select **Column**. Search for or click to select `ANNUALREVENUE AS FLOAT` from the populated list.
-5. Click **Select operator** and select the Comparison operator `less than`.
-6. Click **Select expression** and select **Value**. Enter `1000000` as the value.
-   :::tip
-   Whenever you enter a numerical or boolean value, a checkbox appears on the value dialog giving you the option to **Check to read value as string**.
-   :::
-7. For `THEN`, click **Select expression** and select **Value**. Enter `Low Revenue` as the value.
-8. Click **+** on the next line and select **Add CASE** to add another `WHEN` clause.
-9. Repeat steps 3 to 8 to set up the rest of the comparison expressions.
-10. Click **+** on the next line and select **Add ELSE** to add an `ELSE` statement.
-    :::note
-    You can add multiple `CASES` of the `WHEN` clause, but you can only have one `ELSE` statement.
-    :::
-11. Click **Select expression** and select **Value**. Enter `Unknown` as the value.
+1. In the Reformat gem, under **Target Column**, click **Select Column**.
+1. Give the column the name `stratify_by_revenue`.
+1. Click **Select expression > Conditional**. A `WHEN` clause appears.
 
-#### Aggregate example
+#### Configure the WHEN clause
 
-![Aggregate gem using Comparison mode](img/aggregate-visual-expression-builder.png)
+1. For `WHEN`, click **Select expression > Function**.
+1. Select **Data type cast**, which converts a value of one data type into another data type.
+1. Select **Throw error on failure** to ensure the pipeline doesn't run if the type cast fails.
+1. Click **Select expression > Column** and select `ANNUALREVENUE`.
+1. Click **Select data type > Float** to convert the column to a Float type.
+1. Click **Select operator** and select `less than`.
+1. Click **Select expression > Value** and enter `1000000` as the value.
 
-In our Aggregate example, we want to use other conditional expressions, such as `IF`, to set a threshold limit for `ACCOUNT_ID` using a configuration variable.
+#### Configure the THEN clause
 
-To set up additional comparison expressions, follow these steps:
+1. For `THEN`, click **Select expression** and select **Value**. Enter `Low Revenue` as the value.
+1. Click `+` on the next line and select **Add CASE** to add another `WHEN` clause.
+1. Repeat steps 3 to 8 to set up the rest of the comparison expressions.
+1. Click `+` on the next line and select **Add ELSE** to add an `ELSE` statement.
+1. Click **Select expression** and select **Value**. Enter `Unknown` as the value.
 
-1. After creating and setting up the initial Aggregate gem, hover your pointer between two expression rows and click **+** to add a condition. You're given the option to insert another column or an `IF` or `FOR` condition.
-2. Select **IF**. An `IF` condition appears.
-3. Click **Select expression** and select **Configuration Variable**. Search for or click to select `id_threshold` from the populated list.
-4. Click **Select operator** and select the Comparison operator `greater than`.
-5. Click **Select expression** and select **Value**. Enter `50` as the value.
-6. Optional: You can hover your pointer below the express row you just created and click **+** to add another condition. You're now given additional options to insert an `ELSEIF` or `ELSE` condition.
+This conditional expression will categorize your accounts based on revenue thresholds, making it easier to perform segment-specific analysis and reporting. When the pipeline runs, each account will be assigned to the appropriate revenue category based on the conditions you've defined.
 
-### Build using the Grouping mode
+### Use groupings to create complex filters
 
-Let's use a Filter gem to build grouping expressions.
+When filtering data, you often want the output data to meet multiple criteria. You can use Grouping for this by creating multiple `AND` and `OR` statements.
 
-#### Filter example
-
-![Filter gem using Grouping mode](img/filter-visual-expression-builder.png)
-
-In our Filter example, we want to filter for the following:
+Assume you have a dataset where you want to filter for the following:
 
 - Total expected revenue that `is not null`
 - Total amounts that are greater than `100000`
 - Latest closed quarters that equals `2023Q2` or `2024Q2`
 
-To set up the grouping expressions, follow these steps:
+![Filter gem using Grouping mode](img/filter-visual-expression-builder.png)
+
+:::tip
+You can have any number of groups and nestings (a group within a group). You can also always change the grouping conditions between `AND` and `OR`.
+:::
+
+#### Set up base filter conditions
+
+To set up the grouping expressions to match the image above:
 
 1. After creating the Filer gem, click **Add condition**. An option to Select expression appears.
-2. Click **Select expression** and select **Column**. Search for or click to select `TOTAL_EXPECTED_REVENUE` from the populated list. An option to Select operator appears.
-3. Click **Select operator** and select the Existence check `is not null`.
-4. Click **+ Add Condition**. A new expression row appears.
-5. Click **Select expression** and select **Column**. Search for or click to select `TOTAL_AMOUNT` from the populated list. An option to Select operator appears.
-6. Click **Select operator** and select the Comparison operator `greater than`. An option to Select expression appears.
-7. Click **Select expression** and select **Value**. Enter `100000` as the value.
-8. Click **Add Group**. A grouped expression row appears.
-9. Click **Select expression** and select **Column**. Search for or click to select `LATEST_CLOSED_QTR` from the populated list. An option to Select operator appears.
-10. Click **Select operator** and select the Comparison operator `equals`. An option to Select expression appears.
-11. Click **Select expression** and select **Value**. Enter `2023Q3` as the value.
-12. Click **+ Add Condition** and repeat steps 9 to 11 to set up the other `OR` condition.
-    :::tip
-    You can have any number of groups and nestings (a group within a group). And you can change the grouping conditions between `AND` and `OR` by clicking on the labels.
-    :::
+1. Click **Select expression > Column**.
+1. Select `TOTAL_EXPECTED_REVENUE` from the list.
+1. Click **Select operator** and select `is not null`.
+1. Click **+ Add Condition** to add another condition expression.
+1. Click **Select expression > Column**.
+1. Select `TOTAL_AMOUNT` from the list.
+1. Click **Select operator** and select `greater than`.
+1. Click **Select expression > Value**.
+1. Enter `100000` as the value.
+
+#### Add grouped `OR` condition
+
+1. Click **Add Group**. A grouped expression row appears.
+1. Click **Select expression > Column**.
+1. Select `LATEST_CLOSED_QTR` from the list.
+1. Click **Select operator** and select `equals`.
+1. Click **Select expression > Value**.
+1. Enter `2023Q3` as the value.
+1. Click **+ Add Condition** and repeat steps 2 to 6 to set up the other `OR` condition.
+
+This complex filter will return only high-value opportunities from specific quarters that have valid expected revenue values. By combining AND and OR conditions in this way, you can create precise data subsets that match your exact business requirements.
+
+### Create dynamic expressions with parameters
+
+When you use a pipeline parameter in a visual expression, you can manipulate the value of that parameter using different configs at runtime. Let's review an example that leverages an array parameter in a Filter gem.
+
+Imagine that you want to filter an `Orders` dataset based on the region where the order was placed. Specifically, you only want to keep rows where the region is included in the array parameter.
+
+#### Create an array parameter
+
+First, you'll set up a `region` parameter, which will be an array of strings that includes a subset of regions.
+
+1. Open your project and select **Parameters** in the header.
+1. Click **+ Add Parameter**.
+1. Name the parameter `region`.
+1. Select the **Type** and choose **Array > String**.
+1. Click **Select expression > Value**.
+1. Type `AMER` and click **Done**.
+1. Select `+` to add another string to the array.
+1. Type `APAC` and click **Done**.
+1. Now, click **Save**.
+
+![Create string array](img/array-param.png)
+
+#### Use the parameter in an expression
+
+Now, you'll use the parameter in an expression inside a Filter gem.
+
+1. Create and open the Filter gem.
+1. Remove the default `true` expression.
+1. Click **Select expression > Function** and select `array_contains`.
+1. In the **array** dropdown of the function, click **Configuration Variable** and select the `region` parameter.
+1. In the **value** dropdown of the function, click **Column** and select the order region column.
+
+![Filter using array](img/filter-array.png)
+
+The output of this gem will only include rows where the order region matches at least one value in the `region` array. When you run the pipeline interactively, it will use the values of the default array that you set up in the previous section.
+
+## Validate your expressions
+
+Run the pipeline up to and including the gem with your expression, and observe the resulting data sample. To do so, click the **play** button on either the canvas or the gem. Once the code has finished running, you can verify the results to make sure they match your expectations. You can explore the result of your gem in the [Data Explorer](docs/analysts/development/data-explorer.md).
 
 ## Tips
 
@@ -154,15 +145,6 @@ Here are some additional tips to keep in mind when using the visual expression b
 
 - The expression dropdowns support search.
 - Each argument of your function is another expression since you have the same expression options to choose from.
-  - You can add optional arguments to your functions.
-- You can drag and drop your comparison expressions.
-- Just as with conditions, you can also drag and drop your grouping expressions.
+- You can drag and drop your comparison expressions to rearrange them.
+- Just as with conditions, you can also drag and drop your grouping expressions to rearrange them.
 - You can delete individual expressions, conditions, and groupings by clicking the trash icon at the end of the rows.
-
-## Run and Verify the output
-
-Run the pipeline up to and including the gem with your expression, and observe the resulting data sample.
-
-- Click the **Play** button on either the canvas or the gem.
-
-Once the code has finished running, you can verify the results to make sure they match your expectations. This data is same as what you see in [interims view](docs/analysts/development/data-explorer.md). By testing and verifying your expressions, you can ensure that your data analysis tasks are accurate and reliable.
