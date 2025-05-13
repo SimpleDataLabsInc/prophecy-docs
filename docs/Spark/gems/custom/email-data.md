@@ -2,7 +2,7 @@
 title: EmailData
 id: email-data
 slug: /engineers/email-data
-description: Send data from your Spark pipeline to others via email
+description: Send data from your Spark pipeline to others by email
 tags:
   - gems
   - webapp
@@ -22,6 +22,8 @@ import Requirements from '@site/src/components/gem-requirements';
   uc_shared=""
   livy=""
 />
+
+Use the EmailData gem to send data from your Spark pipeline by email. You can embed a data table in the email body, attach a file (CSV, Excel, or JSON), or do both. This gem is useful for sharing reports, alerts, or intermediate results with others directly from your pipeline. Configure a few parameters to set up your SMTP connection and customize the email content.
 
 ## Parameters
 

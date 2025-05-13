@@ -23,6 +23,8 @@ import Requirements from '@site/src/components/gem-requirements';
   livy=""
 />
 
+Use the Tableau gem to send data from your Spark pipeline to Tableau Server as an extract. This lets you automate data delivery to Tableau for dashboards or reporting. To connect, provide your server URL, site and project IDs, and a personal access token.
+
 ## Prerequisite
 
 This gem only runs on machines with an x86-64 CPU architecture.

@@ -23,11 +23,13 @@ import Requirements from '@site/src/components/gem-requirements';
   livy=""
 />
 
-This page outlines the requirements and configuration options for using the Smartsheet integration with Spark. Before getting started, ensure your Spark cluster has the necessary dependencies installed. Then, use the parameters below to securely connect to and interact with your Smartsheet data.
+Use the Smartsheet gem to read from or write to Smartsheet directly within your Spark pipeline. This gem connects to Smartsheet using the official API and lets you integrate spreadsheet-style data into your workflows.
+
+Before you start, make sure your Spark cluster has the required Python dependencies installed. Then, configure the parameters below to authenticate and specify the Smartsheet you want to access.
 
 ## Prerequisites
 
-To use this gem, you must install the following directly on your Spark cluster:
+Install the following Python packages on your Spark cluster:
 
 - [Smartsheet Python SDK](https://pypi.org/project/smartsheet-python-sdk/)
 - [pandas](https://pypi.org/project/pandas/)

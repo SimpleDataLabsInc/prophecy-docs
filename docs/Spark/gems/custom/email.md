@@ -23,6 +23,8 @@ import Requirements from '@site/src/components/gem-requirements';
   livy=""
 />
 
+Use the Email gem to send plain emails from your Spark pipeline. This gem supports setting custom recipients, subject lines, and message content, along with optional file attachments. It’s useful for sending notifications, alerts, or status updates directly from your data workflows. Configure your SMTP settings and email fields to start sending messages.
+
 ## Parameters
 
 | Parameter                          | Description                                                      |
