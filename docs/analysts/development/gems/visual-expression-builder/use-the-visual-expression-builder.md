@@ -8,7 +8,7 @@ tags:
   - sql
 ---
 
-In additional to using the [expression options](/analysts/visual-expression-builder-reference) that appear when you open the visual expression builder, you can create additional configurations that add complexity to your expressions. Use this document to learn about advanced expressions that you can achieve with the visual expression builder.
+In addition to using the [expression options](/analysts/visual-expression-builder-reference) that appear when you open the visual expression builder, you can also create additional configurations that add complexity to your expressions. This page explains the advanced expressions that you can achieve with the visual expression builder.
 
 ## Key advanced features
 
