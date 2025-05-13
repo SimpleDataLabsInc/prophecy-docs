@@ -2,8 +2,7 @@
 title: Data profiling
 id: data-profile
 slug: /engineers/data-profile
-draft: true
-description: See high level statistics for data samples in your pipeline
+description: Review a summary of data quality
 tags:
   - data profile
   - data quality

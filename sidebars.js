@@ -250,15 +250,7 @@ const sidebars = {
           ],
         },
         "analysts/development/connections",
-        {
-          type: "category",
-          label: "Data exploration",
-          link: {
-            type: "doc",
-            id: "analysts/development/data-explorer/data-explorer",
-          },
-          items: ["analysts/development/data-explorer/data-profile"],
-        },
+        "analysts/development/data-explorer",
         {
           type: "category",
           label: "Functions",
