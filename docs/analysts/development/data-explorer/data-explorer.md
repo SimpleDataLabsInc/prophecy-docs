@@ -12,31 +12,35 @@ tags:
   - data
 ---
 
-The Data Explorer can help you navigate your interim data samples and understand your data better. Use it to confirm the structure of each column, review data entries, and make sure the data types are correct.
+The Data Explorer helps you inspect interim data samples at each stage of your pipeline. By checking column structure, reviewing sample values, and confirming data types, you can catch issues early and ensure your pipeline is working as expected.
 
-## Generate samples
+## Open the Data Explorer
 
-To use the Data Explorer, you need to [interactively run](/analysts/pipeline-execution/#interactive-execution) your pipelines to generate data samples. This lets you view a sample output of each gem. To load the Data Explorer, simply click on the table icon in between gems after a pipeline run.
+To use the Data Explorer, you need to [run](/analysts/pipeline-execution/#interactive-execution) your pipeline to generate data samples. Click on any data sample in your pipeline to open the Data Explorer.
 
-## Explore the data
+![Data sample in a pipeline](img/data-sample-analysts.png)
 
-The Data Explorer enables the following functionality.
+## Leverage the Data Explorer
 
-- Sort the data
-- Filter the data
-- Search through the data
-- Show or hide columns in the preview
-- Export the data sample in CSV or JSON format
-- Save the data transformation as a new gem
+In the Data Explorer, you can:
+
+- Sort data by columns
+- Filter rows by specific values
+- Search across all values
+- Show or hide columns
+- Export the sample as CSV or JSON file
+- Save the transformation as a new gem
 
 ![DataExplorationSQL](./img/DataExplorationSQL.png)
 
-## Apply to all data
+## View complete dataset
 
-When you filter, sort, or search through the data, you are only working with the **visible sample** of the data. To apply these to the whole dataset in the preview, you must either:
+The Data Explorer loads a sample of your data by default. When you sort, filter, or search, these actions apply only to the visible rows in the sample.
 
-- Load the whole dataset into the preview by clicking **Load More** after the last record in the preview until all records are shown.
-- Click **Run** in the top right corner of the data preview. This will filter and sort based on all of the data in the backend (rather than a sample).
+To work with the full dataset, do one of the following:
+
+- Click **Load More** at the bottom of the table until all rows are visible.
+- Click **Run** in the top-right corner of the preview. This refreshes the view and applies sorting and filtering to the entire dataset.
 
 ## Create gems
 
