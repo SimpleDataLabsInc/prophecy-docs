@@ -8,11 +8,20 @@ tags: []
 
 <span class="badge">Prophecy Automate</span><br/><br/>
 
-Read or write an Excel (XLSX) file from an S3, SFTP, SharePoint, Smartsheet, or Databricks connection.
+Read or write an Excel (XLSX) file from an external connection.
 
 :::info
 You can also use the [upload file](docs/analysts/development/gems/source-target/table/upload-files.md) feature to use Excel files. These will be stored in the SQL warehouse configured in your fabric.
 :::
+
+## Supported connections
+
+- Amazon S3
+- SFTP
+- SharePoint
+- Smartsheet
+- Databricks
+- Microsoft OneDrive
 
 ## Parameters
 
