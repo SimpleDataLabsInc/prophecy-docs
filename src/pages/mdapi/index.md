@@ -1,6 +1,7 @@
 ---
 title: Prophecy Metadata API
 id: mdapi
+draft: true
 description: Metadata API
 tags: []
 ---
