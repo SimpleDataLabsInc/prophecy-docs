@@ -41,9 +41,9 @@ To view these statistics for your sample data, click **Profile** in the Data Exp
 
 ![Quick profile](img/quick-profile.png)
 
-## Full profile
+## Expanded profile
 
-When you open the Data Explorer, you'll only see the data profile of the data **sample**. When you load the full data profile, Prophecy generates a more in-depth analysis on **all of the records** in the interim dataset.
+When you open the Data Explorer, you'll only see the data profile of the data **sample**. When you load the expanded data profile, Prophecy generates a more in-depth analysis on **all of the records** in the interim dataset.
 
 ![Expanded profile](img/expanded-profile.png)
 
