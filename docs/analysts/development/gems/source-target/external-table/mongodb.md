@@ -17,7 +17,7 @@ Use a table from MongoDB as an external source or target.
 | Location type               | Location you want to connect from.                                |
 | Select or create connection | Whether to select an existing connection, or to create a new one. |
 | Database                    | Database where the table is or will be located.                   |
-| Name                        | The name of the external table.                                   |
+| Name                        | Name of the external table.                                       |
 
 ### Source properties
 
