@@ -1,8 +1,8 @@
 ---
 title: Data exploration
 id: data-explorer
-slug: /engineers/data-explorer
-description: Data explorer for Spark
+slug: /analysts/data-explorer
+description: Generate data samples through the pipeline during development
 tags:
   - execution
   - explorer
@@ -16,9 +16,9 @@ The Data Explorer helps you inspect interim data samples at each stage of your p
 
 ## Open the Data Explorer
 
-To use the Data Explorer, you need to [run](/engineers/execution/#interactive-execution) your pipeline to generate data samples. Click on any data sample in your pipeline to open the Data Explorer.
+To use the Data Explorer, you need to [run](/analysts/pipeline-execution/#interactive-execution) your pipeline to generate data samples. Click on any data sample in your pipeline to open the Data Explorer.
 
-![Data sample in a pipeline](img/interim-data-samples.png)
+![Data sample in a pipeline](img/data-sample-analysts.png)
 
 ## Leverage the Data Explorer
 
@@ -31,7 +31,7 @@ In the Data Explorer, you can:
 - Export the sample as CSV or JSON file
 - Save the transformation as a new gem
 
-![Data_explorer](img/Data_Explorer.png)
+![DataExplorationSQL](./img/DataExplorationSQL.png)
 
 ## View complete dataset
 
@@ -42,10 +42,6 @@ To work with the full dataset, do one of the following:
 - Click **Load More** at the bottom of the table until all rows are visible.
 - Click **Run** in the top-right corner of the preview. This refreshes the view and applies sorting and filtering to the entire dataset.
 
-## Large sample interims
+## Create gems
 
-If you want to see larger samples in the Data Explorer, you can enable the [Selective](docs/Spark/execution/data-sampling.md#selective-recommended) data sampling setting. When you enable this option, you will be able to see up to 10,000 rows in the data sample by default. You'll also see all columns by default.
-
-:::note
-You can still load more records into the preview when using selective data sampling.
-:::
+After analyzing the data, you can retain the filter and sort options in the pipeline by clicking on the **Create Gems** option. This action saves the applied filter and sort as a `Filter` and `OrderBy` gem in the pipeline.

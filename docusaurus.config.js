@@ -713,7 +713,7 @@ const config = {
             from: "/Spark/data-explorer",
           },
           {
-            to: "/engineers/data-profile",
+            to: "/engineers/data-explorer",
             from: "/Spark/data-explorer/data-profile",
           },
           {

@@ -1,32 +1,14 @@
 ---
 title: Data profiling
 id: data-profile
-slug: /engineers/data-profile
+slug: /analysts/data-profile
 description: See high level statistics for data samples in your pipeline
 tags:
   - data profile
-  - data quality
+  - statistics
 ---
 
-import Requirements from '@site/src/components/gem-requirements';
-
-<Requirements
-  python_package_name=""
-  python_package_version=""
-  scala_package_name=""
-  scala_package_version=""
-  scala_lib=""
-  python_lib="1.9.40"
-  uc_single=""
-  uc_shared=""
-  livy=""
-/>
-
-Data profiling allows you to view statistics on interim datasets in your pipeline. When you open a dataset's profile in the [Data Explorer](/engineers/data-explorer), you can visualize value distributions and data completeness to ensure your data matches expectations.
-
-:::info
-You must use [selective data sampling mode](/engineers/data-sampling#selective-recommended) to view the data profile in a PySpark project.
-:::
+Data profiling allows you to view statistics on interim datasets in your pipeline. When you open a dataset's profile in the [Data Explorer](/analysts/data-explorer), you can visualize value distributions and data completeness to ensure your data matches expectations.
 
 ## Quick profile
 
@@ -39,15 +21,15 @@ The Data Explorer includes data profiles that are generated on your sample data.
 
 To view these statistics for your sample data, click **Profile** in the Data Explorer.
 
-![Quick profile](img/quick-profile.png)
+![Quick profile](img/quick-data-profile.png)
 
 ## Expanded profile
 
-When you open the Data Explorer, you'll only see the data profile of the data **sample**. When you load the expanded data profile, Prophecy generates a more in-depth analysis on **all of the records** in the interim dataset.
+When you open the Data Explorer, you'll only see the data profile of the data sample. When you load the expanded data profile, Prophecy generates a more in-depth analysis on **all of the records** in the interim dataset.
 
 ![Expanded profile](img/expanded-profile.png)
 
-The full profile displays the following information:
+The expanded profile displays the following information:
 
 - **Data type**: The data type of the column.
 - **Unique values**: The number of unique values in the column.
