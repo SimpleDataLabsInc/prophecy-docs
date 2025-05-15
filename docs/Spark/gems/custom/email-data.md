@@ -6,7 +6,7 @@ description: Send data from your Spark pipeline to others by email
 tags:
   - gems
   - webapp
-  - email
+  - emaildata
 ---
 
 import Requirements from '@site/src/components/gem-requirements';
@@ -39,7 +39,7 @@ Use the EmailData gem to send data from your Spark pipeline by email. You can em
 | Email Cc (Comma separated)       | CC recipient(s)                                                                        |
 | Email Bcc (Comma separated)      | BCC recipient(s)                                                                       |
 | Embed data as table in mail body | Whether to display the table in the email body                                         |
-| Number of rows to add to email   | The maximum number of rows that will be displayed in the email body                    |
+| Number of rows to add to email   | Maximum number of rows that will be displayed in the email body                        |
 | Attach data as email attachment  | Whether to send the data as an attachment in the email                                 |
 | Format                           | Dropdown where you can select whether to attach the file as a CSV, Excel, or JSON file |
 | Attachment File Name             | How the file will be named when sent as an attachment                                  |

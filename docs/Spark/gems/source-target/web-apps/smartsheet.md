@@ -36,7 +36,7 @@ Install the following Python packages on your Spark cluster:
 
 ## Parameters
 
-| Parameter              | Tab      | Description                                                         |
-| ---------------------- | -------- | ------------------------------------------------------------------- |
-| API Token              | Location | Smartsheet API token to authenticate the connection.                |
-| Smartsheet Name (Path) | Location | The path to the sheet that you would like to read from or write to. |
+| Parameter              | Tab      | Description                                                     |
+| ---------------------- | -------- | --------------------------------------------------------------- |
+| API Token              | Location | Smartsheet API token to authenticate the connection.            |
+| Smartsheet Name (Path) | Location | Path to the sheet that you would like to read from or write to. |
