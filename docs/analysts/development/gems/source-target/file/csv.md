@@ -24,11 +24,14 @@ You can also use the [upload file](docs/analysts/development/gems/source-target/
 
 ## Parameters
 
-| Parameter                   | Description                                                       |
-| --------------------------- | ----------------------------------------------------------------- |
-| Location type               | Location you want to connect from.                                |
-| Select or create connection | Whether to select an existing connection, or to create a new one. |
-| Filepath                    | The file path according to the connection type.                   |
+| Parameter                   | Tab             | Description                                                                                                                      |
+| --------------------------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Connection type             | Type            | Location you want to connect from.                                                                                               |
+| Format type                 | Source location | Format of the gem. In this case, `csv`.                                                                                          |
+| Select or create connection | Source location | Whether to select an existing connection, or to create a new one.                                                                |
+| Filepath                    | Source location | File path where you want to read and write files according to the connection type.                                               |
+| Properties                  | Properties      | Optional table properties to apply. [Source](#source-properties) and [target](#target-properties) properties are outlined below. |
+| Schema                      | Properties      | Schema definition of the table (custom or inferred).                                                                             |
 
 ### Source properties
 

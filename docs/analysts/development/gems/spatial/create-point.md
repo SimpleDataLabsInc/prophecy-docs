@@ -9,6 +9,8 @@ tags:
   - spatial
 ---
 
+<span class="badge">SQL</span><br/><br/>
+
 Use the CreatePoint gem to convert longitude and latitude coordinates into geographic points.
 
 ## Parameters

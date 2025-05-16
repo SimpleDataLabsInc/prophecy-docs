@@ -9,6 +9,8 @@ tags:
   - spatial
 ---
 
+<span class="badge">SQL</span><br/><br/>
+
 Use the Distance gem to calculate the distance between two geographic points.
 
 ## Parameters
