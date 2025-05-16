@@ -47,7 +47,7 @@ Let’s say you’re working with two tables: **Table A** and **Table B**.
 | -------- | ----------- | ---------- | ------ |
 | 101      | 1           | 2024-12-01 | 250.00 |
 | 102      | 2           | 2024-12-03 | 150.00 |
-| 103      | 1           | 2025-01-15 | 300.00 |
+| 101      | 1           | 2024-12-01 | 250.00 |
 | 104      | 3           | 2025-02-10 | 200.00 |
 
 </div>
@@ -67,6 +67,8 @@ Let’s say you’re working with two tables: **Table A** and **Table B**.
 
 ### Result
 
+#### Default
+
 The table that results from the Except gem only includes records in Table A that are not in Table B.
 
 <div class="table-example">
@@ -79,3 +81,19 @@ The table that results from the Except gem only includes records in Table A that
 </div>
 
 The output indicates that order `101` and `102` appear in **Table A**, but not in **Table B**.
+
+#### Preserve duplicates
+
+If the `preserve duplicates` option is selected, the duplicates from Table A are preserved.
+
+<div class="table-example">
+
+| order_id | customer_id | order_date | amount |
+| -------- | ----------- | ---------- | ------ |
+| 102      | 2           | 2024-12-03 | 150.00 |
+| 101      | 1           | 2024-12-01 | 250.00 |
+| 101      | 1           | 2024-12-01 | 250.00 |
+
+The output is the same as above, except the duplicate order `101` is retained.
+
+</div>
