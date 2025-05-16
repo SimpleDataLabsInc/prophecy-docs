@@ -1,5 +1,5 @@
 ---
-title: JSONParser
+title: JSONParse
 id: json-parse
 slug: /analysts/json-parse
 description: Parse JSON inside a table
@@ -11,7 +11,7 @@ tags:
 
 <span class="badge">SQL</span><br/><br/>
 
-The JSONParser gem lets you parse JSON that is included in a column of your table.
+The JSONParse gem lets you parse JSON that is included in a column of your table.
 
 ## Parameters
 
@@ -26,3 +26,7 @@ When you select a parsing method, you have two options:
 - **Parse from schema**. Prophecy uses the schema you provide in the form of a schema struct.
 
 ## Output
+
+The output schema of the JSONParse gem includes all of the input columns and the parsed content as a **struct** data type.
+
+![JSONParse Output](img/json-parse.png)

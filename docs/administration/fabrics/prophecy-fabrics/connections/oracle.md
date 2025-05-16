@@ -1,11 +1,13 @@
 ---
-title: Oracle
+title: Oracle DB
 id: oracle
 description: Learn how to connect to Oracle
 tags:
   - connections
   - oracle
 ---
+
+Oracle DB is a relational database management system. In Prophecy, you can connect to Oracle to read from and write to database tables as part of your pipelines. This page explains how to set up the connection, including required parameters, permissions, and how connections are shared within teams.
 
 ## Feature support
 
@@ -14,15 +16,21 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Feature                                                       | Supported |
 | ------------------------------------------------------------- | --------- |
 | Read data with a [Source gem](/analysts/source-target)        | Yes       |
-| Write data with a [Target gem](/analysts/source-target)       | Yes       |
+| Write data with a [Target gem](/analysts/source-target)       | No        |
 | Browse data in the [Environment browser](/analysts/pipelines) | Yes       |
 
 ## Parameters
 
 To create a connection with Oracle, enter the following parameters:
 
-| Parameter | Description |
-| --------- | ----------- |
+| Parameter                                                            | Description                                          |
+| -------------------------------------------------------------------- | ---------------------------------------------------- |
+| Connection name                                                      | A name to identify your connection in Prophecy       |
+| Server                                                               | Hostname of the Oracle database server               |
+| Port                                                                 | Port used by the Oracle database (default is `1521`) |
+| Username                                                             | Username for connecting to the Oracle database       |
+| Database                                                             | Oracle Service Name or SID of the target database    |
+| Password ([Secret required](docs/administration/secrets/secrets.md)) | Password for the specified user                      |
 
 ## Oracle permissions
 

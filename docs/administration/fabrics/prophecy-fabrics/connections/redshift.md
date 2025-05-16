@@ -7,6 +7,8 @@ tags:
   - redshift
 ---
 
+You can connect to Amazon Redshift from Prophecy to read from and write to your Redshift data warehouse as part of your pipelines. This page describes how to set up the connection, including required parameters, permissions, and how connections are shared within teams.
+
 ## Feature support
 
 The table below outlines whether the connection supports certain Prophecy features.

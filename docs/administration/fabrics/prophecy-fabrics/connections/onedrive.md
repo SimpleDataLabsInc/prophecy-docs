@@ -7,6 +7,8 @@ tags:
   - onedrive
 ---
 
+Microsoft OneDrive is a cloud-based file storage service that allows teams to store, access, and share files. In Prophecy, you can connect to OneDrive to read and write data as part of your data pipelines.
+
 ## Feature support
 
 The table below outlines whether the connection supports certain Prophecy features.
@@ -17,21 +19,29 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Write data with a [Target gem](/analysts/source-target)       | Yes       |
 | Browse data in the [Environment browser](/analysts/pipelines) | Yes       |
 
+## Prerequisites
+
+To use a SharePoint connection, your Microsoft account admin needs to:
+
+- [Register Prophecy](https://learn.microsoft.com/en-us/graph/auth/auth-concepts#register-the-application) as an application in Microsoft. This will generate the Client ID and Client Secret that Prophecy will use to connect to Microsoft.
+
 ## Parameters
 
 To create a connection with OneDrive, enter the following parameters:
 
-| Parameter                                                                 | Description                                                 |
-| ------------------------------------------------------------------------- | ----------------------------------------------------------- |
-| Connection Name                                                           | Name to to identify your connection                         |
-| Tenant ID                                                                 | Azure Active Directory tenant ID for your Microsoft account |
-| Client ID                                                                 | Application (client) ID from your Azure app registration    |
-| Client Secret ([Secret required](docs/administration/secrets/secrets.md)) | Client secret generated during Azure app registration       |
-| User Principal Name                                                       | Email you use to sign into Microsoft                        |
+| Parameter                                                                 | Description                                        |
+| ------------------------------------------------------------------------- | -------------------------------------------------- |
+| Connection Name                                                           | Name to to identify your connection                |
+| Tenant ID                                                                 | Microsoft 365 tenant ID                            |
+| Client ID                                                                 | Application (client) ID from your app registration |
+| Client Secret ([Secret required](docs/administration/secrets/secrets.md)) | Client secret generated during app registration    |
+| User Principal Name                                                       | Email you use to sign into Microsoft               |
 
 ## OneDrive permissions
 
 When you create an OneDrive connection in Prophecy, access permissions are tied to the credentials you use. This is because Prophecy uses your credentials to execute all data operations, such as reading or writing files. To fully leverage an OneDrive connection in Prophecy, you need read and write access to the folders you use.
+
+To learn more about OneDrive permissions, [click here](https://support.microsoft.com/en-us/office/share-onedrive-files-and-folders-9fcc2f7d-de0c-4cec-93b0-a82024800c07).
 
 ## Sharing connections within teams
 
