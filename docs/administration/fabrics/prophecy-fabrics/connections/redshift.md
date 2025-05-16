@@ -34,7 +34,7 @@ To create a connection with Redshift, enter the following parameters:
 
 ## Redshift permissions
 
-When you create an Redshift connection in Prophecy, access permissions are tied to the credentials you use. This is because Prophecy uses your credentials to execute all data operations, such as reading from or writing to tables. To fully leverage an Redshift connection in Prophecy, you need read and write access to the tables you use.
+When you create a Redshift connection in Prophecy, access permissions are tied to the credentials you use. This is because Prophecy uses your credentials to execute all data operations, such as reading from or writing to tables. To fully leverage a Redshift connection in Prophecy, you need read and write access to the tables you use.
 
 ## Sharing connections within teams
 
