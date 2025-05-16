@@ -30,15 +30,19 @@ Use these parameters to specify the columns containing the source and destinatio
 
 Use the checkboxes defined below to choose which output columns the Distance gem should generate.
 
-| Parameter                   | Description                                                                                           |
+| Checkbox                    | Description                                                                                           |
 | --------------------------- | ----------------------------------------------------------------------------------------------------- |
 | Output Distance             | Return a column that includes the distance between points in a specified unit of distance             |
 | Output Cardinal Direction   | Return a column that includes the cardinal direction from the source point to the destination point   |
 | Output Direction in Degrees | Return a column that includes the direction in degrees from the source point to the destination point |
 
+:::note
+You can select zero, one, or multiple checkboxes. All checkboxes are disabled by default.
+:::
+
 ## Example
 
-Assume you have the following airline route table.
+Assume you have the following airline route table, and you would like to calculate the distance between start and destination cities.
 
 <div class="table-example">
 
@@ -52,19 +56,31 @@ Assume you have the following airline route table.
 
 </div>
 
+To find the distance and direction between cities, set the following gem configurations.
+
+1. Set source and destination:
+
+   1. Set **Source Type** to **Point**.
+
+   1. Set **Source Column** to `start_city`.
+
+   1. Set **Destination Type** to **Point**.
+
+   1. Set **Destination Column** to `destination_city`.
+
+1. Set output options:
+
+   1. Select the **Output Distance** checkbox.
+
+   1. From the **Units** dropdown, select **Kilometers**.
+
+   1. Select the **Output Cardinal Direction** checkbox.
+
+   1. Select the **Output Direction in Degrees** checkbox.
+
+   1. Run the gem.
+
 ### Result
-
-To find the distance and direction between the start cities and the destination cities:
-
-1. Set **Source Type** to **Point**.
-1. Set **Source Column** to `start_city`.
-1. Set **Destination Type** to **Point**.
-1. Set **Destination Column** to `destination_city`.
-1. Select the **Output Distance** checkbox.
-1. From the **Units** dropdown, select **Kilometers**.
-1. Select the **Output Cardinal Direction** checkbox.
-1. Select the **Output Direction in Degrees** checkbox.
-1. Run the gem.
 
 The resulting table will have three new columns: `distance_kilometers`, `cardinal_direction`, and `direction_degrees`.
 

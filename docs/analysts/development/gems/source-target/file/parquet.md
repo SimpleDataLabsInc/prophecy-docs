@@ -12,8 +12,8 @@ Read or write a Parquet file from an external connection.
 
 ## Supported connections
 
-- Amazon S3
-- SFTP
+- [Amazon S3](/administration/fabrics/prophecy-fabrics/connections/s3)
+- [SFTP](/administration/fabrics/prophecy-fabrics/connections/sftp)
 
 ## Parameters
 

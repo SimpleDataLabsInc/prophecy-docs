@@ -16,12 +16,12 @@ You can also use the [upload file](docs/analysts/development/gems/source-target/
 
 ## Supported connections
 
-- Amazon S3
-- SFTP
-- SharePoint
-- Smartsheet
-- Databricks
-- Microsoft OneDrive
+- [Amazon S3](/administration/fabrics/prophecy-fabrics/connections/s3)
+- [Databricks](/administration/fabrics/prophecy-fabrics/connections/databricks)
+- [Microsoft OneDrive](/administration/fabrics/prophecy-fabrics/connections/onedrive)
+- [SFTP](/administration/fabrics/prophecy-fabrics/connections/sftp)
+- [SharePoint](/administration/fabrics/prophecy-fabrics/connections/sharepoint)
+- [Smartsheet](/administration/fabrics/prophecy-fabrics/connections/smartsheet)
 
 ## Parameters
 

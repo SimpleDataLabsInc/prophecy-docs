@@ -43,18 +43,29 @@ Assume you have the following airline route table.
 
 </div>
 
-### Result
-
 To convert the start and destination coordinates into geographic points:
 
-1. Click **Add a Point**.
-1. For **Longitude Column Name**, select the `start_long` column.
-1. For **Latitude Column Name**, select the `start_lat` column.
-1. For the **Target Column Name**, type `source_point`.
-1. Next, click **Add a Point** again.
-1. For **Longitude Column Name**, select the `destination_long` column.
-1. For **Latitude Column Name**, select the `destination_lat` column.
-1. For the **Target Column Name**, type `dest_point`.
+1. Create the first column pairing:
+
+   1. Click **Add a Point**.
+
+   1. For **Longitude Column Name**, select the `start_long` column.
+
+   1. For **Latitude Column Name**, select the `start_lat` column.
+
+   1. For the **Target Column Name**, type `source_point`.
+
+1. Create another column pairing:
+
+   1. Click **Add a Point**.
+
+   1. For **Longitude Column Name**, select the `destination_long` column.
+
+   1. For **Latitude Column Name**, select the `destination_lat` column.
+
+   1. For the **Target Column Name**, type `dest_point`.
+
+### Result
 
 The CreatePoint gem will produce the following output with two new columns: `source_point` and `dest_point`.
 
