@@ -50,6 +50,6 @@ To manage this securely, consider creating a dedicated fabric and team for high-
 
 Prophecy fetches data from Oracle connections in the following ways:
 
-- When you browse a Oracle connection in the [Environment browser](/analysts/pipelines), Prophecy fetches data on demand as you expand folders. You can manually refresh the Environment browser to see updated files.
+- When you browse an Oracle connection in the [Environment browser](/analysts/pipelines), Prophecy fetches data on demand as you expand folders. You can manually refresh the Environment browser to see updated files.
 
 - When a pipeline runs, Source gems will read the latest available version of the data. If the schema of your data in Oracle changes, Prophecy will automatically use the new schema.
