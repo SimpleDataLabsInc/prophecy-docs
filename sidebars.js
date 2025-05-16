@@ -389,6 +389,15 @@ const sidebars = {
                 },
                 {
                   type: "category",
+                  label: "Catalog Table",
+                  items: [
+                    "Spark/gems/source-target/catalog-table/delta",
+                    "Spark/gems/source-target/catalog-table/hive",
+                    "Spark/gems/source-target/catalog-table/iceberg",
+                  ],
+                },
+                {
+                  type: "category",
                   label: "Warehouse",
                   items: [
                     "Spark/gems/source-target/warehouse/bigquery",
@@ -398,18 +407,16 @@ const sidebars = {
                     "Spark/gems/source-target/warehouse/mongodb",
                     "Spark/gems/source-target/warehouse/oracle",
                     "Spark/gems/source-target/warehouse/redshift",
-                    "Spark/gems/source-target/warehouse/salesforce",
                     "Spark/gems/source-target/warehouse/snowflake",
                     "Spark/gems/source-target/warehouse/teradata",
                   ],
                 },
                 {
                   type: "category",
-                  label: "Catalog Table",
+                  label: "Web Application",
                   items: [
-                    "Spark/gems/source-target/catalog-table/delta",
-                    "Spark/gems/source-target/catalog-table/hive",
-                    "Spark/gems/source-target/catalog-table/iceberg",
+                    "Spark/gems/source-target/web-apps/salesforce",
+                    "Spark/gems/source-target/web-apps/smartsheet",
                   ],
                 },
                 "Spark/gems/source-target/lookup",
@@ -500,6 +507,9 @@ const sidebars = {
                 "Spark/gems/custom/file-operations",
                 "Spark/gems/custom/rest-api-enrich",
                 "Spark/gems/custom/directory",
+                "Spark/gems/custom/email",
+                "Spark/gems/custom/email-data",
+                "Spark/gems/custom/tableau",
               ],
             },
             "Spark/gems/expression-builder",
