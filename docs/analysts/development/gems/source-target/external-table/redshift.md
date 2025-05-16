@@ -6,6 +6,8 @@ description: Read and write from Redshift
 tags: []
 ---
 
+<span class="badge">Prophecy Automate</span><br/><br/>
+
 Use a table from Redshift as an external source or target.
 
 ## Parameters

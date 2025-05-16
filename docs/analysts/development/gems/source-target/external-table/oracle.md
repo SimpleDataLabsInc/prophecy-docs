@@ -6,6 +6,8 @@ description: Read and write from Oracle
 tags: []
 ---
 
+<span class="badge">Prophecy Automate</span><br/><br/>
+
 Use a table from Oracle as an external source.
 
 :::note
