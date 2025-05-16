@@ -41,7 +41,7 @@ To create a connection with OneDrive, enter the following parameters:
 
 When you create an OneDrive connection in Prophecy, access permissions are tied to the credentials you use. This is because Prophecy uses your credentials to execute all data operations, such as reading or writing files. To fully leverage an OneDrive connection in Prophecy, you need read and write access to the folders you use.
 
-To learn more about OneDrive permissions, [click here](https://support.microsoft.com/en-us/office/share-onedrive-files-and-folders-9fcc2f7d-de0c-4cec-93b0-a82024800c07).
+To learn more about OneDrive permissions, see [Share OneDrive files and folders](https://support.microsoft.com/en-us/office/share-onedrive-files-and-folders-9fcc2f7d-de0c-4cec-93b0-a82024800c07).
 
 ## Sharing connections within teams
 
