@@ -8,15 +8,11 @@ tags:
   - statistics
 ---
 
-To quickly find a summary of your data statistics, view data profiles of your data samples in the Data Explorer. Use data profiling to:
-
-- Find instant data insights
-- Detect anomalies and inconsistencies early
-- Visualize value distributions and data completeness
+Data profiling allows you to view statistics on interim datasets in your pipeline. When you open a dataset's profile in the [Data Explorer](/analysts/data-explorer), you can visualize value distributions and data completeness to ensure your data matches expectations.
 
 ## Quick profile
 
-The data explorer includes data profiles that are generated on your sample data. You'll be able to see high-level statistics for each column, including:
+The Data Explorer includes data profiles that are generated on your sample data. You'll be able to see high-level statistics for each column, including:
 
 - **Percent of non-blank values:** The percentage of values in the column that are not blank.
 - **Percent of null values:** The percentage of values in the column that are null.
@@ -29,7 +25,7 @@ To view these statistics for your sample data, click **Profile** in the Data Exp
 
 ## Expanded profile
 
-When you open the data explorer, you'll only see the data profile of the data sample. When you load the expanded data profile, Prophecy generates a more in-depth analysis on **all of the records** in the interim dataset.
+When you open the Data Explorer, you'll only see the data profile of the data sample. When you load the expanded data profile, Prophecy generates a more in-depth analysis on **all of the records** in the interim dataset.
 
 ![Expanded profile](img/expanded-profile.png)
 
@@ -49,13 +45,15 @@ The expanded profile displays the following information:
 - **Non-blank values**: The percent and number of non-blank values in the column.
 - **Data summary**: An overview of the most common values in the column.
 
+:::tip
+You can click between columns in the expanded profile for quick access.
+:::
+
+### Open expanded profile
+
 To view the expanded profile:
 
 1. Click the dropdown arrow on the column you want to expand.
 1. Select **Show Expanded Profile**.
 
 ![Show Expanded Profile](img/open-expanded-profile.png)
-
-:::tip
-You can click between columns in the expanded profile for quick access.
-:::

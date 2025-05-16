@@ -1,6 +1,7 @@
 ---
 title: Prophecy Metadata API Types
 id: mdapi-types
+draft: true
 description: Metadata API Types
 tags: []
 ---
