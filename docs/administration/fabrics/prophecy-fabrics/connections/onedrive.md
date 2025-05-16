@@ -21,7 +21,7 @@ The table below outlines whether the connection supports certain Prophecy featur
 
 ## Prerequisites
 
-To use a SharePoint connection, your Microsoft account admin needs to:
+To use a OneDrive connection, your Microsoft account admin needs to:
 
 - [Register Prophecy](https://learn.microsoft.com/en-us/graph/auth/auth-concepts#register-the-application) as an application in Microsoft. This will generate the Client ID and Client Secret that Prophecy will use to connect to Microsoft.
 
