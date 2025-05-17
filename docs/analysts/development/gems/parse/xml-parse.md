@@ -1,9 +1,8 @@
 ---
-title: XMLParser
+title: XMLParse
 id: xml-parse
 slug: /analysts/xml-parse
 description: Parse XML inside a table
-draft: true
 tags:
   - gems
   - analyst
@@ -12,4 +11,17 @@ tags:
 
 <span class="badge">SQL</span><br/><br/>
 
-The XMLParser lets you parse XML that is included in a column of your table.
+The XMLParse gem lets you parse XML that is included in a column of your table.
+
+## Parameters
+
+| Parameter              | Description                                                                                                                                                                                                                                                                                                    |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Select column to parse | Specifies the input column containing the XML data to be parsed.                                                                                                                                                                                                                                               |
+| Parsing method         | Determines how Prophecy derives the schema used to parse the XML structure.<ul class="table-list"><li>**Parse from sample record**. Prophecy uses the schema from the sample record you provide.</li><li>**Parse from schema**. Prophecy uses the schema you provide in the form of a schema struct.</li></ul> |
+
+## Output
+
+The output schema of the XMLParse gem includes all of the input columns and the parsed content as a **struct** data type.
+
+![XMLParse](img/xml-parse.png)

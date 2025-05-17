@@ -13,6 +13,10 @@ Prophecy lets you work with various data providers when building your pipelines.
 - Browse data from the data provider in the [Environment browser](docs/getting-started/concepts/project.md#project-editor) of your Prophecy project.
 - Auto-index data for search in the Prophecy interface.
 
+## Prerequisites
+
+To leverage connections, you need a [Prophecy fabric](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md) and a [SQL project](/projects#project-types).
+
 ## Connections access
 
 Prophecy controls access to connections through fabric-level permissions.
@@ -27,22 +31,13 @@ Prophecy controls access to connections through fabric-level permissions.
 Most connections are only used to read from and write to data sources. The SQL Warehouse connection is an exception—it also provides the compute environment for pipeline execution.
 :::
 
-## Supported connections
-
-If you are using a Prophecy fabric, you can add the following connections. You will have to be attached to a fabric to utilize its connections.
-
-| Connection                           | Type                 |
-| ------------------------------------ | -------------------- |
-| [Databricks](./databricks)           | Cloud data warehouse |
-| [Snowflake](./snowflake)             | Cloud data warehouse |
-| [Amazon S3](./s3)                    | File store           |
-| [SFTP](./sftp)                       | File store           |
-| [Microsoft SharePoint](./sharepoint) | File store           |
-| [Smartsheet](./smartsheet)           | Web application      |
-| [MSSQL](./mssql)                     | Database             |
-| [MongoDB](./mongodb)                 | Database             |
-| [Tableau](./tableau)                 | BI tool              |
-
 ## What's next
 
-To learn more about fabric components, visit the documentation on [Prophecy fabrics](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md) and [secrets](docs/administration/secrets/secrets.md).
+Visit the following pages to learn more about available connections.
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```
