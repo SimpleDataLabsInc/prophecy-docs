@@ -9,7 +9,12 @@ tags:
   - spatial
 ---
 
-<span class="badge">SQL</span><br/><br/>
+import SQLRequirements from '@site/src/components/sql-gem-requirements';
+
+<SQLRequirements
+  sql_package_name="DatabricksSqlSpatial"
+  sql_package_version="0.0.1+"
+/>
 
 Use the Distance gem to calculate the distance between two geographic points.
 
