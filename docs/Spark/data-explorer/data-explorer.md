@@ -41,11 +41,3 @@ To work with the full dataset, do one of the following:
 
 - Click **Load More** at the bottom of the table until all rows are visible.
 - Click **Run** in the top-right corner of the preview. This refreshes the view and applies sorting and filtering to the entire dataset.
-
-## Large sample interims
-
-If you want to see larger samples in the Data Explorer, you can enable the [Selective](docs/Spark/execution/data-sampling.md#selective-recommended) data sampling setting. When you enable this option, you will be able to see up to 10,000 rows in the data sample by default. You'll also see all columns by default.
-
-:::note
-You can still load more records into the preview when using selective data sampling.
-:::
