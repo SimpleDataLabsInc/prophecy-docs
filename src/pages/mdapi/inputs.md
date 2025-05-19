@@ -1,6 +1,7 @@
 ---
 title: Prophecy Metadata API Inputs
 id: mdapi-inputs
+draft: true
 description: Metadata API Inputs
 tags: []
 ---

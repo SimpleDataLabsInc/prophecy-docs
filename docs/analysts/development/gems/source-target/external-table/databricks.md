@@ -12,10 +12,11 @@ Use a table from Databricks as an external source or target.
 
 ## Parameters
 
-| Parameter                   | Description                                                       |
-| --------------------------- | ----------------------------------------------------------------- |
-| Location type               | Location you want to connect from.                                |
-| Select or create connection | Whether to select an existing connection, or to create a new one. |
-| Database                    | Database where the table is or will be located.                   |
-| Schema                      | Schema where the table is or will be located.                     |
-| Name                        | The name of the external table.                                   |
+| Parameter                   | Tab             | Description                                                       |
+| --------------------------- | --------------- | ----------------------------------------------------------------- |
+| Connection type             | Type            | Location you want to connect from.                                |
+| Format type                 | Source location | Format of the gem. In this case, `databricks`.                    |
+| Select or create connection | Source location | Whether to select an existing connection, or to create a new one. |
+| Database                    | Source location | Database where the table is or will be located.                   |
+| Schema                      | Source location | Schema where the table is or will be located.                     |
+| Name                        | Source location | Name of the external table.                                       |

@@ -100,7 +100,6 @@ The action menu gives you more granular control over individual gems. When you e
 | **Delete**        | Remove the gem from the pipeline.                                                                                                                                                                                             |
 | **Cache**         | Cache the entire gem output dataset. This is useful if you have multiple pipeline branches from one gem. If you cache the dataset from that gem, Spark will not have to compute upstream gems multiple times for each branch. |
 | **Data Preview**  | If [selective data sampling](docs/Spark/execution/data-sampling.md) is enabled, use this checkbox to enable or disable the generation of the data sample for the gem.                                                         |
-| **Data Profile**  | Enable or disable [data profiling](/engineers/data-profile) for the gem output.                                                                                                                                               |
 | **Data Diff**     | If [Data Diff](/engineers/data-diff) is configured for a Target gem, use this checkbox to enable or disable the data diff output.                                                                                             |
 
 ![Gem action menu](img/gem-action-menu.png)

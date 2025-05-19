@@ -18,88 +18,49 @@ This page contains a reference of the different visual expression builder compon
 
 The visual expression builder supports the following expression options:
 
-- **Column**: Allows you to select an input column from your source tables. You can view all of the available input columns from under the dropdown menu or under **Input** on the left-hand side of the gem dialog.
-- **Value**: Allows you to enter any kind of value.
-  - If you enter a string value, it'll be considered as a string within quotes.
-  - If you enter a number, it'll be considered as a numerical value, but you have the option to click to **Check to read value as string**.
-  - The same applies to a boolean value. For example, if you enter `True`, then it'll be considered a boolean value unless you **Check to read value as string**.
-- **Function**: Includes a list of all of the function category groups and functions that are supported. The list displays each function description, including mandatory arguments.
-- **Data type cast**: Allows you to cast a variant column into its appropriate data type. Instead of explicit casting, you can use `TRY_CAST` to avoid errors by setting the data type to `null` on failure.
-  :::note
-  For Snowflake, `TRY_CAST` is only supported on string type of data.
-  :::
-- **Conditional**: Allows you to use a conditional `WHEN` clause.
-  - Within `WHEN`, you use a comparison expression.
-  - Within `THEN` you use a simple expression.
-  - You can add multiple `CASES` of the `WHEN` clause, but you can only have one `ELSE` statement.
-    - `ELSE` also uses a simple expression.
-  - You can also add `IF`, `ELSEIF`, or `FOR` conditions between each of your expressions.
-    - `FOR` conditions take a variable name and an expression value.
-    - `IF` and `ELSEIF` conditions are considered comparisons.
-    - These are available only in expressions tables in Aggregate, Join, and Reformat gems.
-- **Configuration Variable**: Consists of **Model Variables** and **Project Variables**. You can see and edit your variables from the canvas settings by navigating to **...** > **Configuration**. When you select a project variable, you can add a default value if no value is set in the Configuration setting.
-- **Incremental**: Allows you to use for advanced dbt configurations.
-- **Custom Code**: Allows you can write your own custom code to create your own expressions that are not yet supported by the visual expression builder. For example, you can use custom code to use mathematical operations, such as addition and subtraction. As you type, you'll be given suggestions.
-
-## Operator options
-
-The visual expression builder supports the following operator options.
-
-### Comparison operators
-
-Expressions can use the following comparison operators:
-
-- **equals**
-- **not equals**
-- **less than**
-- **less than or equal**
-- **greater than**
-- **greater than or equal**
-- **between**
-
-### Existence checks
-
-Expressions support the following existence checks:
-
-- **is null**
-- **is not null**
-- **in**
-- **not in**
+| Option                 | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Column                 | Select an input column from your source tables.<br/>You can view all of the available input columns from the dropdown menu.                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Value                  | Enter any value. <ul class="table-list"><li>If you enter a string value, it'll be considered as a string within quotes.</li><li>If you enter a number, it'll be considered a numerical value, but you can click <strong>Check to read value as string</strong>.</li><li>The same applies to boolean values. For example, if you enter <code>True</code>, it'll be considered a boolean unless you select <strong>Check to read value as string</strong>.</li></ul>                                                                                                   |
+| Function               | Choose a function from a list of all supported function category groups.<br/>The list displays each function's description, including mandatory arguments. You can optionally add additional arguments if applicable.                                                                                                                                                                                                                                                                                                                                                |
+| Data type cast         | Cast a variant column into its appropriate data type. <ul class="table-list"><li>Use <code>TRY_CAST</code> to avoid errors. On failure, it sets the value to <code>null</code>.</li><li><strong>Note:</strong> For Snowflake, <code>TRY_CAST</code> is only supported on string data types.</li></ul>                                                                                                                                                                                                                                                                |
+| Conditional            | Use a conditional `WHEN` clause. <ul class="table-list"><li>Within <code>WHEN</code>, use a comparison expression.</li><li>Within <code>THEN</code>, use a simple expression.</li><li>You can add multiple <code>CASES</code> but only one <code>ELSE</code>.</li><li><code>ELSE</code> also uses a simple expression.</li><li>You can also add <code>IF</code>, <code>ELSEIF</code>, or <code>FOR</code> conditions.</li><li><code>FOR</code> uses a variable name and expression value.</li><li><code>IF</code> and <code>ELSEIF</code> are comparisons.</li></ul> |
+| Configuration Variable | Use a variable from the list of your [pipeline parameters](/analysts/pipeline-parameters) or project variables.                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| Incremental            | Use advanced dbt configurations.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Custom Code            | Write your own custom code for expressions not supported by the visual expression builder.<br/>As you type, suggestions will be provided.                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
 ## Data types
 
-The visual expression builder supports the following data types:
+| Category | Supported Types                                                                                                                                                                                                                                      |
+| -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Basic    | <ul class="table-list"><li>`Boolean`</li><li>`String` - String / Varchar</li><li>`Date & time` - Date / Datetime / Timestamp / Timestamp NTZ</li><li>`Number` - Integer / Long / Short</li><li>`Decimal number` - Decimal / Double / Float</li></ul> |
+| Other    | <ul class="table-list"><li>`Binary`</li><li>`Byte`</li><li>`Char`</li><li>`Calendar interval` / `Day time interval` / `Year month interval`</li><li>`Null`</li><li>`Variant`</li></ul>                                                               |
 
-- **Basic**:
-  - Boolean
-  - String - String / Varchar
-  - Date & time - Date / Datetime / Timestamp / Timestamp NTZ
-  - Number - Integer / Long / Short
-  - Decimal number - Decimal / Double / Float
-- **Other**:
-  - Binary
-  - Byte
-  - Char
-  - Calendar interval / Day time interval / Year month interval
-  - Null
-  - Variant
+## Comparison operators
 
-### Booleon predicates
+| Operator                | Description                                            |
+| ----------------------- | ------------------------------------------------------ |
+| `equals`                | Checks if two values are equal.                        |
+| `not equals`            | Checks if two values are not equal.                    |
+| `less than`             | Checks if a value is less than another.                |
+| `less than or equal`    | Checks if a value is less than or equal to another.    |
+| `greater than`          | Checks if a value is greater than another.             |
+| `greater than or equal` | Checks if a value is greater than or equal to another. |
+| `between`               | Checks if a value lies between two others.             |
 
-Expressions support the following boolean predicates:
+## Existence checks
 
-- **Unary**:
-  - Exists (in subquery)
-  - In
-  - Is null
-- **Binary**:
-  - Between
-  - Equality
-  - Less than
-  - Then than or equal
-  - Greater than
-  - Greater than or equal
-- **Groups**:
-  - Not
-  - And
-  - Or
+| Operator      | Description                                 |
+| ------------- | ------------------------------------------- |
+| `is null`     | Checks if a value is null.                  |
+| `is not null` | Checks if a value is not null.              |
+| `in`          | Checks if a value exists in a given list.   |
+| `not in`      | Checks if a value does not exist in a list. |
+
+## Boolean predicates
+
+| Type   | Predicates                                                                                                                                                                |
+| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Unary  | <ul class="table-list"><li>`Exists` (in subquery)</li><li>`In`</li><li>`Is null`</li></ul>                                                                                |
+| Binary | <ul class="table-list"><li>`Between`</li><li>`Equality`</li><li>`Less than`</li><li>`Less than or equal`</li><li>`Greater than`</li><li>`Greater than or equal`</li></ul> |
+| Groups | <ul class="table-list"><li>`Not`</li><li>`And`</li><li>`Or`</li></ul>                                                                                                     |

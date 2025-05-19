@@ -9,7 +9,7 @@ tags:
   - custom
 ---
 
-<span class="badge">SQL</span><br/><br/>
+<span class="badge">Prophecy Automate</span><br/><br/>
 
 Use a custom Python script in your pipeline.
 

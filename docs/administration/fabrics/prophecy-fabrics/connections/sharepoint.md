@@ -27,7 +27,7 @@ Prophecy can only access files stored in the [document library](https://support.
 
 To use a SharePoint connection, your Microsoft account admin needs to:
 
-- [Register Prophecy](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app) as an application in Microsoft.
+- [Register Prophecy](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app) as an application in Microsoft. This will generate the Client ID and Client Secret that Prophecy will use to connect to Microsoft.
 - Grant the following application-level permission to the application: `Sites.Manage.All`.
 
 ## Parameters
@@ -37,9 +37,9 @@ To create a connection with SharePoint, enter the following parameters:
 | Parameter                                                                 | Description                                                                                          |
 | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
 | Connection Name                                                           | Unique name for the connection                                                                       |
-| Tenant ID                                                                 | Unique identifier (GUID) of your Microsoft 365 tenant                                                |
-| Client ID                                                                 | Your SharePoint Client ID                                                                            |
-| Client Secret ([Secret required](docs/administration/secrets/secrets.md)) | Your SharePoint Client Secret                                                                        |
+| Tenant ID                                                                 | Microsoft 365 tenant ID                                                                              |
+| Client ID                                                                 | Application (client) ID from your app registration                                                   |
+| Client Secret ([Secret required](docs/administration/secrets/secrets.md)) | Client secret generated during app registration                                                      |
 | Site URL                                                                  | URL of the SharePoint site to connect<br/>Example: `https://yourcompany.sharepoint.com/sites/mysite` |
 
 ## SharePoint permissions

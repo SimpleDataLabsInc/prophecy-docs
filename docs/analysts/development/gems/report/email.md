@@ -2,7 +2,7 @@
 title: Email
 id: email
 slug: /analysts/email
-description: Email
+description: Send your pipeline output tables to others via email
 tags:
   - gems
   - analyst
