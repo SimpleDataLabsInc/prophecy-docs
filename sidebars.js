@@ -99,6 +99,7 @@ const sidebars = {
           items: [
             "analysts/development/pipelines/execution",
             "analysts/development/pipelines/pipeline-params",
+            "analysts/development/pipelines/data-types",
           ],
         },
         {
