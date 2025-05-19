@@ -84,7 +84,7 @@ The output indicates that order `101` and `102` appear in **Table A**, but not i
 
 #### Preserve duplicates
 
-If the `preserve duplicates` option is selected, the duplicates from Table A are preserved.
+If you select the `preserve duplicates` option, the gem preserves the duplicates from Table A.
 
 <div class="table-example">
 
