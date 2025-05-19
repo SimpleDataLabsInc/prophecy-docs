@@ -94,6 +94,6 @@ If you select the `preserve duplicates` option, the gem preserves the duplicates
 | 101      | 1           | 2024-12-01 | 250.00 |
 | 101      | 1           | 2024-12-01 | 250.00 |
 
-The output is the same as above, except the duplicate order `101` is retained.
+The output is the same as above, except the gem also retains the duplicate order `101`.
 
 </div>
