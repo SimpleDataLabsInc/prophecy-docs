@@ -10,13 +10,13 @@ Prophecy is deployed as microservices orchestrated by Kubernetes in various clou
 
 ## Components
 
-The following are the main components of a successful Prophecy deployment.
+A successful Prophecy deployment contains the following components:
 
-- **Prophecy Studio**: The studio user interface lets you access and develop visual data pipelines in your various projects.
+- **Prophecy Studio**: The studio user interface lets you access and develop visual data pipelines in various projects.
 
 - **Prophecy Automate**: This is our built-in Prophecy runtime designed for ingestion, egress, and orchestration. It is available exclusively for Prophecy fabrics with SQL connections and does not apply to Spark-based projects.
 
-- **External execution engine**: Prophecy runs data transformations on your own execution environment, such as Snowflake or Databricks. [Fabrics](docs/getting-started/concepts/fabrics.md) enable users to execute pipelines on these platforms. Prophecy does not persist your data.
+- **External execution engine**: Prophecy runs data transformations on your execution environment, such as Snowflake or Databricks. [Fabrics](docs/getting-started/concepts/fabrics.md) enables users to execute pipelines on these platforms. Prophecy does not persist your data.
 
 - **Source control**: Prophecy integrates with Git for version control and supports both native and external Git options.
 
@@ -26,7 +26,21 @@ The following are the main components of a successful Prophecy deployment.
 
 ## Prophecy for Analysts
 
-Prophecy for Analysts leverages Prophecy Automate and an external SQL warehouse of your choice to build, run, and schedule pipelines. This architecture diagram demonstrates one example of the various components involved in a Prophecy deployment in their respective virtual networks.
+Prophecy for Analysts leverages Prophecy Automate and an external SQL warehouse of your choice to build, run, and schedule pipelines.
+
+Prophecy Automate comes with the following components:
+
+- **Ingest**: Basic data read & write capability into the data warehouse. This is built for business data sources such as Sharepoint, SFTP, and Excel. This is not designed for large volumes, real time, or CDC.
+
+- **Orchestrate**: Time and trigger-based scheduling option with fast interactive experience, and built-in monitoring.
+
+- **Observe**: Quick fix-it of scheduled pipelines, cost, performance, and data monitoring, overlayed on visual canvas.
+
+:::note
+All code is still stored on Git in open formats.
+:::
+
+The following architecture diagram demonstrates an example of the various components involved in a Prophecy deployment in their respective virtual networks.
 
 ![Prophecy for Analysts](img/arch-prophecy-sql.png)
 
