@@ -93,6 +93,8 @@ A full list of public paths can be found in the documentation on [Prophecy libra
 
 Prophecy supports Databricks volumes. When you run a Python or Scala pipeline via a job, you must bundle them as whl/jar artifacts. These artifacts must then be made accessible to the Databricks job in order to use them as a library installed on the cluster. You can designate a path to a volume for uploading the whl/jar files under Artifacts.
 
+![Artifact settings](../img/dbx-fabric-settings.png)
+
 ## Databricks execution
 
 To learn about Databricks execution, visit:
