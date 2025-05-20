@@ -17,15 +17,16 @@ Copilot can help you build, refine, and explain gems throughout your pipeline. S
 
 ## Categories
 
-| Category          | Description                                                |
-| ----------------- | ---------------------------------------------------------- |
-| **Source/Target** | Read and write data from various data providers.           |
-| **Transform**     | Modify, enrich, or reshape data during processing.         |
-| **Prepare**       | Clean, structure, and optimize data for analysis.          |
-| **Join**          | Merge, split, or link datasets.                            |
-| **Parse**         | Interpret structured formats in columns like XML and JSON. |
-| **Report**        | Share results through channels such as email or Tableau.   |
-| **Custom**        | Enhance and extend Prophecy’s functionality.               |
+| Category          | Description                                                         |
+| ----------------- | ------------------------------------------------------------------- |
+| **Source/Target** | Read and write data from various data providers.                    |
+| **Transform**     | Modify, enrich, or reshape data during processing.                  |
+| **Prepare**       | Clean, structure, and optimize data for analysis.                   |
+| **Join**          | Merge, split, or link datasets.                                     |
+| **Parse**         | Parse individual columns that contain formats like XML and JSON.    |
+| **Report**        | Share results through channels such as email or Tableau.            |
+| **Custom**        | Enhance and extend Prophecy’s functionality.                        |
+| **Spatial**       | Work with geographic data, such as locations, distances, and areas. |
 
 <!-- | **Subgraph**      | Group gems into reusable components.                       |  -->
 

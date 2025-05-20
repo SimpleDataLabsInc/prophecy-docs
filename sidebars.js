@@ -230,6 +230,7 @@ const sidebars = {
                 "analysts/development/gems/custom/sql-statement",
                 "analysts/development/gems/custom/rest-api",
                 "analysts/development/gems/custom/macro",
+                "analysts/development/gems/custom/script",
               ],
             },
             {
