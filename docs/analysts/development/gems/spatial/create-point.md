@@ -12,7 +12,7 @@ tags:
 import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 <SQLRequirements
-  sql_package_name="DatabricksSqlSpatial"
+  sql_package_name="ProphecyDatabricksSqlSpatial"
   sql_package_version="0.0.1+"
 />
 
