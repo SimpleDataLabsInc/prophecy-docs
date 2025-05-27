@@ -99,6 +99,7 @@ const sidebars = {
           items: [
             "analysts/development/pipelines/execution",
             "analysts/development/pipelines/pipeline-params",
+            "analysts/development/pipelines/data-types",
           ],
         },
         {
@@ -131,6 +132,7 @@ const sidebars = {
                     "analysts/development/gems/source-target/file/csv",
                     "analysts/development/gems/source-target/file/excel",
                     "analysts/development/gems/source-target/file/json",
+                    "analysts/development/gems/source-target/file/parquet",
                     "analysts/development/gems/source-target/file/xml",
                     "analysts/development/gems/source-target/file/text",
                   ],
@@ -143,6 +145,8 @@ const sidebars = {
                     "analysts/development/gems/source-target/external-table/snowflake",
                     "analysts/development/gems/source-target/external-table/mssql",
                     "analysts/development/gems/source-target/external-table/mongodb",
+                    "analysts/development/gems/source-target/external-table/oracle",
+                    "analysts/development/gems/source-target/external-table/redshift",
                   ],
                 },
                 {
@@ -195,6 +199,14 @@ const sidebars = {
             },
             {
               type: "category",
+              label: "Spatial",
+              items: [
+                "analysts/development/gems/spatial/create-point",
+                "analysts/development/gems/spatial/distance",
+              ],
+            },
+            {
+              type: "category",
               label: "Parse",
               items: [
                 "analysts/development/gems/parse/json-parse",
@@ -218,6 +230,7 @@ const sidebars = {
                 "analysts/development/gems/custom/sql-statement",
                 "analysts/development/gems/custom/rest-api",
                 "analysts/development/gems/custom/macro",
+                "analysts/development/gems/custom/script",
               ],
             },
             {
@@ -250,7 +263,15 @@ const sidebars = {
           ],
         },
         "analysts/development/connections",
-        "analysts/development/data-explorer",
+        {
+          type: "category",
+          label: "Data exploration",
+          link: {
+            type: "doc",
+            id: "analysts/development/data-explorer/data-explorer",
+          },
+          items: ["analysts/development/data-explorer/data-profile"],
+        },
         {
           type: "category",
           label: "Functions",
@@ -284,6 +305,7 @@ const sidebars = {
             "analysts/development/data-tests/use-project-tests",
           ],
         },
+        "analysts/development/pipelines/logs",
       ],
     },
     {
@@ -380,6 +402,15 @@ const sidebars = {
                 },
                 {
                   type: "category",
+                  label: "Catalog Table",
+                  items: [
+                    "Spark/gems/source-target/catalog-table/delta",
+                    "Spark/gems/source-target/catalog-table/hive",
+                    "Spark/gems/source-target/catalog-table/iceberg",
+                  ],
+                },
+                {
+                  type: "category",
                   label: "Warehouse",
                   items: [
                     "Spark/gems/source-target/warehouse/bigquery",
@@ -389,18 +420,16 @@ const sidebars = {
                     "Spark/gems/source-target/warehouse/mongodb",
                     "Spark/gems/source-target/warehouse/oracle",
                     "Spark/gems/source-target/warehouse/redshift",
-                    "Spark/gems/source-target/warehouse/salesforce",
                     "Spark/gems/source-target/warehouse/snowflake",
                     "Spark/gems/source-target/warehouse/teradata",
                   ],
                 },
                 {
                   type: "category",
-                  label: "Catalog Table",
+                  label: "Web Application",
                   items: [
-                    "Spark/gems/source-target/catalog-table/delta",
-                    "Spark/gems/source-target/catalog-table/hive",
-                    "Spark/gems/source-target/catalog-table/iceberg",
+                    "Spark/gems/source-target/web-apps/salesforce",
+                    "Spark/gems/source-target/web-apps/smartsheet",
                   ],
                 },
                 "Spark/gems/source-target/lookup",
@@ -491,6 +520,9 @@ const sidebars = {
                 "Spark/gems/custom/file-operations",
                 "Spark/gems/custom/rest-api-enrich",
                 "Spark/gems/custom/directory",
+                "Spark/gems/custom/email",
+                "Spark/gems/custom/email-data",
+                "Spark/gems/custom/tableau",
               ],
             },
             "Spark/gems/expression-builder",
@@ -721,6 +753,7 @@ const sidebars = {
             "extensibility/gem-builder/sql-gem-builder",
             "extensibility/gem-builder/spark-gem-builder",
             "extensibility/gem-builder/gem-builder-reference",
+            "extensibility/gem-builder/gem-builder-ui",
             "extensibility/gem-builder/optimization-functions",
           ],
         },
@@ -784,14 +817,17 @@ const sidebars = {
                 id: "administration/fabrics/prophecy-fabrics/connections/connections",
               },
               items: [
+                "administration/fabrics/prophecy-fabrics/connections/redshift",
+                "administration/fabrics/prophecy-fabrics/connections/s3",
                 "administration/fabrics/prophecy-fabrics/connections/databricks",
                 "administration/fabrics/prophecy-fabrics/connections/snowflake",
+                "administration/fabrics/prophecy-fabrics/connections/sharepoint",
+                "administration/fabrics/prophecy-fabrics/connections/onedrive",
                 "administration/fabrics/prophecy-fabrics/connections/mongodb",
                 "administration/fabrics/prophecy-fabrics/connections/mssql",
-                "administration/fabrics/prophecy-fabrics/connections/s3",
+                "administration/fabrics/prophecy-fabrics/connections/oracle",
                 "administration/fabrics/prophecy-fabrics/connections/sftp",
                 "administration/fabrics/prophecy-fabrics/connections/smartsheet",
-                "administration/fabrics/prophecy-fabrics/connections/sharepoint",
                 "administration/fabrics/prophecy-fabrics/connections/smtp",
                 "administration/fabrics/prophecy-fabrics/connections/tableau",
               ],

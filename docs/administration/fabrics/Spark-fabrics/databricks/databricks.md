@@ -34,7 +34,7 @@ The URL that points to the workspace that the fabric will use as the execution e
 Prophecy supports authentication via [Personal Access Token](https://docs.databricks.com/dev-tools/api/latest/authentication.html#generate-a-personal-access-token) (PAT) and [OAuth](/databricks-oauth-authentication).
 
 :::caution
-Each user in the team will have to authenticate individually using the method you select. An individual user's credentials will determine the level of access they have to Databricks from Prophecy. At minimum, you must have permission to attach clusters in Databricks to use the fabric.
+Each user in the team will have to authenticate individually using the method you select. An individual user's credentials will determine the level of access they have to Databricks from Prophecy. At minimum, you must have permission to attach clusters in Databricks to use the fabric. Some [policies](https://docs.databricks.com/aws/en/admin/clusters/policy-families) additionally require Databricks Workspace Admin permissions.
 :::
 
 :::note
@@ -92,6 +92,8 @@ A full list of public paths can be found in the documentation on [Prophecy libra
 ### Artifacts
 
 Prophecy supports Databricks volumes. When you run a Python or Scala pipeline via a job, you must bundle them as whl/jar artifacts. These artifacts must then be made accessible to the Databricks job in order to use them as a library installed on the cluster. You can designate a path to a volume for uploading the whl/jar files under Artifacts.
+
+![Artifact settings](../img/dbx-fabric-settings.png)
 
 ## Databricks execution
 

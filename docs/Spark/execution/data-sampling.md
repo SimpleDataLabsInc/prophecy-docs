@@ -32,14 +32,23 @@ All gems (excluding Target gems) generate data samples.
 
 ### Selective (recommended)
 
-When you choose selective data sampling, you gain the ability to enable or disable data samples for individual gems. To do so, use the **Data Preview** checkbox in the gem [action menu](/engineers/gems). Selectively-generated samples load up to 10,000 rows by default.
+When you choose selective data sampling, you gain the ability to enable or disable data samples for individual gems. To do so, use the **Data Preview** checkbox in the gem [action menu](/engineers/gems).
 
 ![Selective](img/selective-interims.png)
 
 If the **Data Preview** option is not selected for a gem, you'll see a pale-color gem output after running the data pipeline. This means that no data sample was generated. To generate it, open the pale interim and it will load the data. After it loads, the data sample will display the normal bold color.
 
 :::note
-Normally on Databricks UC standard (formerly shared) clusters, data samples are only generated on edge nodes. With selective interims, you can select to generate samples from any gem.
+Selectively-generated samples load up to 10,000 rows (or 2 MB payload) by default. Set the following environment variables in Databricks to modify this behavior:
+
+- `EXECUTION_DATA_SAMPLE_LOADER_MAX_ROWS`: Max number of rows (default is 10,000 rows).
+- `EXECUTION_DATA_SAMPLE_LOADER_PAYLOAD_SIZE_LIMIT`: Max payload size (default 2 MB).
+- `EXECUTION_DATA_SAMPLE_LOADER_CHAR_LIMIT`: Per column character limit (default 200 KB). Values exceeding the limit are truncated.
+
+:::
+
+:::tip
+When working on Databricks UC standard clusters, use selective data sampling mode. If you select another data sampling mode, samples will only be generated on edge nodes.
 :::
 
 ### Sources

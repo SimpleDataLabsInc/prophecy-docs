@@ -27,11 +27,11 @@ The ColumnParser lets you parse XML or JSON that is included in a column of your
 
 ## Parameters
 
-| Parameter          | Description                                                             |
-| ------------------ | ----------------------------------------------------------------------- |
-| Source Column Name | The name of the column that contains the XML or JSON records.           |
-| Parser Type        | The format that you want to be parsed (XML or JSON).                    |
-| Parsing Method     | The method that Prophecy will use to generate the schema of the output. |
+| Parameter          | Description                                                              |
+| ------------------ | ------------------------------------------------------------------------ |
+| Source Column Name | Name of the column that contains the XML or JSON records.                |
+| Parser Type        | Format of the column you want to parse (XML or JSON).                    |
+| Parsing Method     | How Prophecy will derive the schema that will be used to parse the data. |
 
 When you select a parsing method, you have three options:
 

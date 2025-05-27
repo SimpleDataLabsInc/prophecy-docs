@@ -5,7 +5,7 @@ slug: /engineers/salesforce
 description: Salesforce
 tags:
   - gems
-  - warehouse
+  - webapp
   - salesforce
 ---
 
@@ -23,27 +23,22 @@ import Requirements from '@site/src/components/gem-requirements';
   livy="Not Supported"
 />
 
-:::info Built on
-This connector is built on top of the already available [Spark Salesforce Library](https://github.com/springml/spark-salesforce/).
+Use Salesforce as a source or target in your pipeline to read from or write to Salesforce Wave datasets and standard Salesforce objects.
 
-Install the `com.springml:spark-salesforce_2.12:1.1.4` Maven external dependency on your cluster.
-To learn about installing dependencies in Prophecy UI, see [Spark dependencies](/engineers/dependencies).
-:::
+## Capabilities
 
-With the Source and Target gem, you can perform the following with Salesforce:
+When you use Salesforce as a source or target, you can:
 
-- Create datasets in Salesforce Wave from Spark `DataFrame`.
-- Read a Salesforce Wave dataset where the user provides a SAQL to read data from Salesforce Wave. The Source gem constructs the query result as a `DataFrame`.
-- Read a Salesforce object where the user provides a SOQL to read data from Salesforce object. The Source gem constructs a query result as a `DataFrame`.
-- Update a Salesforce object where the Target gem updates the Salesforce object with the details present in `DataFrame`.
+- Create datasets in Salesforce Wave from a Spark DataFrame.
+- Read a Salesforce Wave dataset using a SAQL query. The gem returns the result as a DataFrame.
+- Read a Salesforce object using a SOQL query. The gem returns the result as a DataFrame.
+- Update a Salesforce object using data from a DataFrame.
 
 ## Prerequisites
 
-Before you specify parameters and properties, select the Salesforce application:
+This connector uses the [Spark Salesforce Library](https://github.com/springml/spark-salesforce/).
 
-1. Open the gem configuration.
-1. On the **Type & Format** page, navigate to the **Applications** tab.
-1. Select **Salesforce**.
+To run the gem, add the following Maven dependency to your cluster: `com.springml:spark-salesforce_2.12:1.1.4`
 
 ## Parameters
 
@@ -77,7 +72,7 @@ The Source gem reads data from Salesforce objects and allows you to optionally s
 | Date Format                                             | String that indicates the format for `java.text.SimpleDateFormat` to follow when reading timestamps. <br/>This applies to `TimestampType`.                               | null     |
 | Salesforce API Version (Optional)                       | Version of the Salesforce API to use.                                                                                                                                    | `35.0`   |
 
-## Example
+### Example
 
 The following example uses a `SOQL` query to query our leads dataset on the sales cloud.
 
