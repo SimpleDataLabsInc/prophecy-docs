@@ -1,5 +1,5 @@
 ---
-title: Apps
+title: Prophecy Apps
 id: business-apps
 slug: /analysts/business-applications
 description: Package complex pipelines into easy-to-use applications
@@ -10,23 +10,30 @@ Prophecy Apps simplify the process for non-technical users to run data pipelines
 
 These reusable apps help teams collaborate more effectively by eliminating duplicate work and standardizing processes across users. Built-in logic and guardrails further reduce the risk of errors, guiding users through safe, tested execution paths.
 
+![Prophecy App Example](img/prophecy-apps-example.png)
+
 ## App capabilities
 
 Prophecy Apps look and feel like simple forms, but they pack the following powerful capabilities:
 
-- **Upload custom data to overwrite pipeline sources**  
+- **Upload custom data to overwrite pipeline sources**
+
   Swap out input data without modifying pipeline logic. Whether you're running a pipeline with weekly reports or customer-specific datasets, upload your file to replace the default source.
 
-- **Assign values to pipeline parameters**  
+- **Assign values to pipeline parameters**
+
   Set variables such as dates, thresholds, or regions at runtime. Parameters appear as form fields, making it easy to customize each run without writing code.
 
-- **View and download app-generated output data**  
-  Explore and download the outputs produced by the pipeline after the app runs. This lets you verify results before sharing, without digging into external storage systems.
+- **Preview, visualize, and download app-generated output data**
 
-- **Save and reuse app configurations**  
+  Review data samples and charts to understand pipeline outputs. This lets you verify results before sharing, without digging into external storage systems.
+
+- **Save and reuse app configurations**
+
   Save a set of parameter values and inputs as a configuration. Reuse it anytime to run the same job again for recurring tasks or standardized reports.
 
-- **Schedule automated app runs**  
+- **Schedule automated app runs**
+
   Set up your app to run on a regular basis to automate recurring workflows.
 
 :::note See Also
