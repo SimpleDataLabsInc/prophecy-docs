@@ -1,23 +1,23 @@
 ---
-title: "Azure Active Directory"
+title: Microsoft Entra ID (formerly Azure Active Directory)
 id: azure-ad
-description: Authentication using Azure Active Directory
-sidebar_position: 3
+sidebar_label: Microsoft Entra ID
+description: Authentication using Microsoft Entra ID
+sidebar_position: 1
 tags:
   - authentication
-  - active-directory
   - azure
 ---
 
-This document describes how to configure Azure Active Directory for Prophecy authentication.
+Learn how to configure Microsoft Entra ID for Prophecy authentication.
 
-## Register a new Azure App
+## Register a new app
 
 First, you need to log in to the [Azure portal](https://portal.azure.com/) as an administrator and register a new app.
 
 1. In the Azure portal, open the **App registrations** page.
 2. Click **New Registration**.
-3. Name it `ProphecyAzureADApp`.
+3. Name it `ProphecyEntraIDApp`.
 4. Choose the supported account type: **Accounts in this organizational directory only (xxxxx only - Single tenant)**
 5. For the Redirect URI, choose **Web** in the dropdown and use:  
    `https://your-prophecy-ide-url.domain/api/oauth/azureadCallback`
@@ -37,7 +37,7 @@ Then, go to **Certificates and Secrets**, add a new secret, and note down the va
 
 Finally, click on **Overview** on the left-hand side and note down the Application (client) ID.
 
-## Configure Prophecy to connect with Azure Active Directory
+## Configure Prophecy to connect with Microsoft Entra ID
 
 1. Log in to Prophecy as an admin user.
 2. Navigate to the **SSO** tab of the Prophecy **Settings** page.
