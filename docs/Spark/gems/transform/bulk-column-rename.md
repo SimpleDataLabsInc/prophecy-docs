@@ -16,10 +16,10 @@ import Requirements from '@site/src/components/gem-requirements';
   python_package_version="0.2.11+"
   scala_package_name="ProphecySparkBasicsScala"
   scala_package_version="0.1.9+"
-  scala_lib="7.1.97"
-  python_lib="1.8.19"
+  scala_lib="7.1.97+"
+  python_lib="1.9.42+"
   uc_single="14.3+"
-  uc_shared="Not Supported"
+  uc_shared="14.3+"
   livy="3.0.1+"
 />
 
