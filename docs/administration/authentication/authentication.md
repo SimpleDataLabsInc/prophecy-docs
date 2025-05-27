@@ -1,6 +1,5 @@
 ---
 title: "Authentication"
-sidebar_position: 2
 id: authentication
 description: Prophecy support for identity providers for authentication and authorization
 sidebar_class_name: hidden
