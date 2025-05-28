@@ -2,7 +2,6 @@
 title: SAML and SCIM
 id: saml-scim
 description: SAML authentication
-sidebar_position: 5
 tags:
   - authentication
   - saml
@@ -49,10 +48,9 @@ Groups defined in your SCIM protocol are mapped to teams and admins in Prophecy.
 | ---------------- | ----------------------------------------- |
 | `prophecy-admin` | Users will be Cluster Admins in Prophecy. |
 
-## AzureAD
+## Microsoft Entra ID (formerly Azure Active Directory)
 
-<details>
-<summary>Configure SAML for Azure Active Directory and enable SCIM provisioning</summary>
+Configure SAML for Microsoft Entra ID and enable SCIM provisioning
 
 1. Log into AzureAD as an administrator and create a new Enterprise Application like `ProphecyAzureADApp`.
 2. In the home page search bar, search for **Enterprise Applications**.
@@ -67,7 +65,7 @@ Now the form for **Set up Single Sign-On with SAML** will open. You'll have to f
 
 ### Basic SAML Configuration
 
-1. Provide an Identifier (Entity ID) which is a unique ID to identify this application to Azure Active Directory.
+1. Provide an Identifier (Entity ID) which is a unique ID to identify this application to Microsoft Entra ID.
 2. In the same section, configure **Reply URL** and **Sign on URL** as:  
    `https://your-prophecy-ide-url.domain/api/oauth/samlCallback`
 3. Click **Save**.
@@ -89,12 +87,9 @@ In the **Set up ProphecyAzureADApp** section, copy `Login URL` and `Azure AD Ide
 
 ![AzureAD config example](./img/azure_enterpriseapp_sso.png)
 
-</details>
-
 ## Okta
 
-<details>
-<summary>Configure SAML for Okta and enable SCIM provisioning</summary>
+Configure SAML for Okta and enable SCIM provisioning
 
 1. Log in to Okta as an administrator.
 2. On the homepage, navigate to **Applications** > **Applications**.
@@ -141,5 +136,3 @@ In the **Set up ProphecyAzureADApp** section, copy `Login URL` and `Azure AD Ide
 5. Copy the highlighted information from the preview and use it as the **Entity Issuer** and **SSO Issuer** in Prophecy IDE.
 
 ![SAML Assertion](./img/okta_xml.png)
-
-</details>

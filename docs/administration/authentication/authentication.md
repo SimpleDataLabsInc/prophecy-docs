@@ -1,6 +1,5 @@
 ---
 title: "Authentication"
-sidebar_position: 2
 id: authentication
 description: Prophecy support for identity providers for authentication and authorization
 sidebar_class_name: hidden
@@ -15,13 +14,13 @@ When accessing execution infrastructure (including Spark, schedulers, storage, a
 
 We currently support the following options for Prophecy login:
 
-| Method                 | Description                                                                                               |
-| ---------------------- | --------------------------------------------------------------------------------------------------------- |
-| Prophecy Managed       | Use credentials managed directly by Prophecy.                                                             |
-| LDAP                   | Authenticate via LDAP, integrating with your organization's directory services.                           |
-| SAML                   | Leverage SAML to log in with identity providers such as Google, Okta, Azure Active Directory, and others. |
-| Azure Active Directory | Use Microsoft's cloud-based identity and access management service for authentication.                    |
-| Google                 | Log in using your Google account credentials.                                                             |
+| Method             | Description                                                                                           |
+| ------------------ | ----------------------------------------------------------------------------------------------------- |
+| Prophecy Managed   | Use credentials managed directly by Prophecy.                                                         |
+| LDAP               | Authenticate via LDAP, integrating with your organization's directory services.                       |
+| SAML               | Leverage SAML to log in with identity providers such as Google, Okta, Microsoft Entra ID, and others. |
+| Microsoft Entra ID | Use Microsoft's cloud-based identity and access management service. Formerly Azure Active Directory.  |
+| Google             | Log in using your Google account credentials.                                                         |
 
 :::info
 Only cluster admins on self-hosted environments have permission to view and edit SSO settings.
