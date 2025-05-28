@@ -256,7 +256,7 @@ const sidebars = {
             id: "analysts/development/copilot/copilot-analysts",
           },
           items: [
-            "analysts/development/copilot/gem-generation",
+            "analysts/development/copilot/ai-chat",
             "analysts/development/copilot/expression-generation",
             "analysts/development/copilot/auto-documentation",
             "analysts/development/copilot/generate-fix",
