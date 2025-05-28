@@ -16,94 +16,118 @@ As you build out SQL projects, you can leverage the AI agent chat to develop dat
 - Previewing the input and output of suggested transformations
 - Generating data visualizations you can publish to business apps
 
-AI chat is available as a tab in the left sidebar of your project. This way, you can view changes to the pipeline canvas as the agent saves them. Note that development with AI chat works best in the visual canvas, rather than the code view.
+AI chat is available as a tab in the left sidebar of your project. This way, you can view changes to the pipeline canvas as the agent saves them. Note that development with AI chat works best when you have the visual canvas open, rather than the code view.
+
+## Chat modes
+
+When chatting with the AI agent, you may want to prevent it from modifying your existing pipeline. Use the chat mode toggle to control what the agent is allowed to change.
+
+- **Edit**: Allow the agent to rebuild the pipeline and change existing gems.
+- **Extend**: Only allow the agent to add new gems to the pipeline. Existing gems cannot be edited.
 
 ## Search for and explore data
 
+One way to leverage AI chat is to search your SQL warehouse, explore datasets, and generate insights with simple prompts. To get you started, the following sections describe ways you can interact with the AI chat in this context.
+
 ### Find tables in your SQL warehouse
 
-You can ask the AI agent to search the data in your warehouse and return relevant datasets. The AI agent will return a few suggested tables, and you will be able to:
+Ask the AI agent to search for tables in your connected warehouse. Based on your query, it returns a short list of relevant datasets. To find more information, you can:
 
-- Drill down into a specific table to inspect its schema and contents.
-- Ask questions about specific tables, like "Which orders have been placed in the last 30 days?"
-- View a full list of suggested tables for more options.
+- Explore a broader set of suggestions to find the most relevant table.
+- Open and inspect a specific table to view the location, schema, contents, and data profile.
+- Ask additional targeted questions to the **Explore** AI chat inside the table preview.
 
-### View sample rows from a table
+This helps you quickly locate the data you need without manually browsing through your data catalogs.
 
-You can ask the AI agent to return a set of rows from the table directly in the chat. You can either ask to:
-
-- Display a random sample from the table.
-- Retrieve specific rows, such as “the ten most recent purchases over $100.”
+:::tip
+You can add these datasets to the pipeline as [Table gems](/analysts/table) directly from the chat.
+:::
 
 ### Describe a dataset
 
-You can ask the AI agent to summarize details about individual or multiple tables. It can return:
+If you want a summary of dataset information, you can ask for a description of individual or multiple tables. The summary can include details like:
 
 - The database and schema of the table.
 - The name and data type of each column.
 - A comparison between tables to identify similarities or differences.
 
-### Visualize source data
+### View sample rows from a table
 
-Another way to explore source data is to visualize it. You can ask AI agent to generate charts based on prompts such as “visualize sales by region over time.”
+To preview data, ask the AI agent to return sample rows from a table. You can ask to:
 
-The chart will be generated, and the AI chat will also return the steps taken to generate the visualization. More specifically, the chat will return the following steps:
+- Display a random sample from the table.
+- Retrieve specific rows, such as “the ten most recent purchases over $100.”
 
-- The SQL query associated with the visualization.
-- What the SQL execution did (for example, retrieved three rows).
-- The status of the SQL execution and chart generation.
+A small table will appear directly in the chat showing the sample data.
 
-Below the chart, you can click **Preview** for more information. The **Chart** tab shows a larger version of the chart, while the **Data** tab shows a sample of the raw data powering the chart. The Data tab also provides the option to add the visualization to a [Prophecy App](/analysts/business-applications) configuration. You can either choose an existing app in your project, or create a new one.
+### Visualize table data
 
-<!-- Can you add a chart element to an app NOT via chat? -->
+You can also explore data through visualizations. Use prompts like “visualize sales by region over time” to generate charts. The AI chat returns:
+
+- A visual chart embedded in the chat.
+- The SQL query used to generate it.
+- A summary of the SQL execution and output (for example, number of rows retrieved and execution status).
+
+To see a larger version of the chart, click **Preview**. This opens the **Chart** tab of the data visualization dialog.
+
+Switch to the **Data** tab to view the data that powers the chart. From here, you can add the visualization to a [Prophecy App](/analysts/business-applications) configuration if relevant. You can either choose an existing app in your project or create a new one.
 
 ### Upload files to the SQL warehouse
 
-To upload files to your SQL warehouse inside the AI chat, click the paperclip icon. This opens the [file upload](/analysts/upload-file) workflow. Review the file upload documentation to view supported file types.
+To upload data from your local system, click the paperclip icon in the AI chat. This opens the [upload file](/analysts/upload-file) dialog. Uploaded files will be added as tables in your SQL warehouse. Prophecy supports several file types for upload—see the documentation for details.
+
+Once uploaded, you'll be able to use your data as you do any other table in the warehouse.
 
 ### Create output tables
 
-To save pipeline results, you can write in the AI chat to display or save the pipeline output as a table. This table will be saved in your default database and schema defined in the attached fabric.
+After adding various data transformations in your pipeline, you can save the result as a table. Ask the AI agent to save the output, and it will write the data to the default database and schema in your connected fabric.
+
+This allows you to persist results and reuse them in downstream workflows.
 
 ### Sample prompts {#sample-prompts-data}
 
 Here are some sample prompts that you can ask to search, explore, and learn about the data.
 
-| Scenario           | Prompt                                                |
-| ------------------ | ----------------------------------------------------- |
-| Find dataset       | "Filter to only include customers from California"    |
-| View data sample   | "Return the top ten highest sales from @daily_orders" |
-| Describe dataset   | "Remove rows where email is null"                     |
-| Visualize data     | "Plot the sales by country"                           |
-| Save output tables | "Show me the final output of the pipeline"            |
+:::tip
+Use the @ symbol to reference tables in your SQL warehouse. As you type, Prophecy suggests matching datasets to help you find what you need faster.
+:::
 
-The @ symbol lets you reference entities in your project and in your warehouse. When you start typing after the @ symbol, Prophecy will offer suggestions as you type to make it easier to find things.
+| Scenario           | Prompt                                                                |
+| ------------------ | --------------------------------------------------------------------- |
+| Find dataset       | "Find the dataset that shows employee hiring information and history" |
+| View data sample   | "Return the top ten highest sales from @daily_orders"                 |
+| Describe dataset   | "Give me more details about @revenue_opportunities"                   |
+| Visualize data     | "Plot the sales by country"                                           |
+| Save output tables | "Show me and save the final output of the pipeline"                   |
 
 ## Add transformations to the pipeline
 
+You can use the AI agent to generate transformations based on natural language prompts. When you describe a data operation, the AI agent adds the corresponding gems to the pipeline and provides a summary of the changes in the chat interface. This section describes how to add transformations, review modifications, and restore previous versions of the pipeline.
+
 ### Provide a transformation
 
-You can ask the AI agent to generate one or more gems in the pipeline to accomplish a certain goal. After you provide a prompt, you will see the AI agent populate the canvas with newly-generated transformations. You'll also see an explanation in the chat of what happened.
+To generate a transformation, enter a prompt that describes the desired data operation. The AI agent adds one or more gems to the pipeline canvas and displays a description of the applied changes in the chat.
+
+All changes made by the AI agent are saved in the project [version history](/analysts/versioning). Commits will be clearly marked as authored by the AI agent.
 
 :::note
-Each change the AI agent makes will be saved in the project. You can view each version saved in the [version history](/analysts/versioning). If you forget to save your project before using the AI agent, your changes will be automatically saved before the agent makes additional changes.
+If you did not save your project before interacting with the AI agent, Prophecy will automatically save your changes before the agent proceeds.
 :::
 
 ### Inspect pipeline changes
 
-Changes made by the AI agent will appear in the pipeline canvas. When you click **Inspect** on a transformation step in the chat, the inspect workflow opens.
+To review changes, select **Inspect** in the chat next to a transformation. This opens the configuration panel for the first modified gem, which is highlighted in yellow to indicate that it was added or updated.
 
-- This opens the configuration of the first modified gem, which is highlighted in yellow.
-- You can navigate to the previous or next modified gem to track the sequence of changes.
-- You can hover over **Previous** and **Next** at each step to view a mini map of the pipeline. In other words, you can view a small image snapshot of where you are in the pipeline to help you understand which step you are inspecting.
-- As you go, also examine the input and output of each gem to verify data transformations.
+Use the **Previous** and **Next** controls to move through other modified gems in sequence. When hovering over these controls, a minimap of the pipeline is displayed to provide context on the transformation’s location.
+
+While reviewing each gem, examine both the input and output to confirm that the transformation produces the expected result.
 
 ### Restore a previous state of the pipeline
 
-In your chat history, you'll see the **Restore** option. This lets you revert your pipeline changes to a previous version that was provided in the chat.
+To revert changes, select **Restore** from a reply in the chat history. This reverts the pipeline to the selected earlier version.
 
 :::note
-You can also manage version history in the main versioning menu, rather than inside the chat.
+You can also manage versions from the main project [version history](/analysts/versioning).
 :::
 
 ### Sample prompts {#sample-prompts-transformation}
