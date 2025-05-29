@@ -270,7 +270,18 @@ const sidebars = {
             type: "doc",
             id: "analysts/development/data-explorer/data-explorer",
           },
-          items: ["analysts/development/data-explorer/data-profile"],
+          items: [
+            "analysts/development/data-explorer/data-profile",
+            {
+              type: "category",
+              label: "Charts",
+              link: {
+                type: "doc",
+                id: "analysts/development/data-explorer/charts/charts",
+              },
+              items: [],
+            },
+          ],
         },
         {
           type: "category",
