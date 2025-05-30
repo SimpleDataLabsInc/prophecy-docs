@@ -20,6 +20,7 @@ Choose the right project type based on your role and requirements. Each project 
 | [Business Apps](/analysts/business-applications)               | Yes                                            | Yes                                                               | No                                                 | No                                                 |
 | [Execution](/administration/fabrics)                           | Databricks                                     | Databricks                                                        | Databricks, Snowflake                              | Spark clusters                                     |
 | [Executable examples](/analysts/gems#interactive-gem-examples) | Yes                                            | Yes                                                               | Yes                                                | No                                                 |
+| AI Agents                                                      | Yes                                            | Yes                                                               | Yes                                                | No                                                 |
 
 ### Project creation
 
