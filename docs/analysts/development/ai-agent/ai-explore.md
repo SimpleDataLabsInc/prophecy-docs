@@ -2,20 +2,20 @@
 title: Explore data
 id: ai-explore
 slug: /analysts/ai-explore
-description: Find data sources using AI chat
+description: Find data sources using Prophecy's AI agent
 tags:
   - analyst
   - ai
   - agent
 ---
 
-One way to leverage AI chat is to search your SQL warehouse, explore datasets, and generate insights with simple prompts. This way, you can add the appropriate sources to your pipeline that will undergo data processing. You must have source data in your pipeline to start building transformations.
+One way to leverage the Prophecy AI agent is to search your SQL warehouse, explore datasets, and generate insights with simple prompts. This way, you can add the appropriate sources to your pipeline that will undergo data processing. You must have source data in your pipeline to start building transformations.
 
-To get you started, the following sections describe ways you can interact with the AI chat in this context.
+The following sections describe ways you can interact with the agent in this context.
 
 ## Find tables in your SQL warehouse
 
-Ask the AI agent to search for tables in your connected warehouse. Based on your query, it returns a short list of relevant datasets. To find more information, you can:
+Ask the agent to search for tables in your connected warehouse. Based on your query, it returns a short list of relevant datasets. To find more information, you can:
 
 - Explore a broader set of suggestions to find the most relevant table.
 - Open and inspect a specific table to view the location, schema, contents, and data profile.
@@ -37,7 +37,7 @@ If you ask AI chat to compare datasets, you can quickly assess which dataset is 
 
 ## View sample rows from a table
 
-To preview data, ask the AI agent to return sample rows from a table. You can ask to:
+To preview data, ask the agent to return sample rows from a table. You can ask to:
 
 - Display a random sample from the table.
 - Retrieve specific rows, such as “the ten most recent purchases over $100.”

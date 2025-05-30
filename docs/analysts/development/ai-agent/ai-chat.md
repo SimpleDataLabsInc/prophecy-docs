@@ -1,5 +1,5 @@
 ---
-title: AI chat
+title: Agent chat
 id: ai-chat
 slug: /analysts/ai-chat
 description: Chat with our AI agent to generate pipelines
@@ -9,22 +9,22 @@ tags:
   - agent
 ---
 
-As you build out your pipelines in SQL projects, the AI agent is available to help at each step of development. The AI agent helps you work faster by handling common tasks, such as:
+As you build out your pipelines in SQL projects, Prophecy's AI agent is available to help at each step of development. The AI agent helps you work faster by handling common tasks, such as:
 
 - Finding and exploring data in your SQL warehouse to use as sources in the pipeline
 - Adding gems to the canvas to create a data processing flow
 - Providing previews of the input and output of suggested transformations
 - Generating data visualizations you can publish to business apps
 
-## Interact with AI chat
+## Interact with the Prophecy agent
 
-AI chat is available in the left sidebar of your project. While chatting, make sure the **Visual** view is open so you can see changes in the canvas. The agent updates the pipeline in real time as you interact.
+You can interact with the agent in the **Chat** tab of the left sidebar in a project. While chatting, make sure the **Visual** view is open so you can see changes in the canvas. The agent updates the pipeline in real time as you interact.
 
 ![AI agent](img/ai-chat.png)
 
 ### Toggle
 
-Use the toggle to control what the AI agent can change in your pipeline.
+Use the toggle to control what the agent can change in your pipeline.
 
 - **+** mode: The agent can add new gems but won’t change existing ones.
 - ✏️ mode: The agent can rebuild or modify your existing pipeline.

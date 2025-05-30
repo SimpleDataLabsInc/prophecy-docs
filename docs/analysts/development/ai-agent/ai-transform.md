@@ -2,14 +2,14 @@
 title: Transform data
 id: ai-transform
 slug: /analysts/ai-transform
-description: Transform data sources using AI chat
+description: Transform data sources using Prophecy's AI agent
 tags:
   - analyst
   - ai
   - agent
 ---
 
-You can use the AI agent to generate transformations based on natural language prompts. When you describe a data operation, the AI agent adds the corresponding gems to the pipeline and provides a summary of the changes in the chat interface.
+You can use Prophecy's AI agent to generate transformations based on natural language prompts. When you describe a data operation, the agent adds the corresponding gems to the pipeline and provides a summary of the changes in the chat interface.
 
 The following sections describe how to add transformations, review modifications, and restore previous versions of the pipeline.
 
@@ -19,9 +19,9 @@ You need at least one [Source gem](/analysts/source-target) in your pipeline to 
 
 ## Provide a transformation
 
-To generate a transformation, enter a prompt that describes the desired data operation. The AI agent adds one or more gems to the pipeline canvas and displays a description of the applied changes in the chat.
+To generate a transformation, enter a prompt that describes the desired data operation. The agent adds one or more gems to the pipeline canvas and displays a description of the applied changes in the chat.
 
-All changes made by the AI agent are saved in the project [version history](/analysts/versioning). Commits will be clearly marked as authored by the AI agent.
+All changes made by the agent are saved in the project [version history](/analysts/versioning). Commits will be clearly marked as authored by the agent.
 
 :::note
 If you did not save your project before interacting with the AI agent, Prophecy will automatically save your changes before the agent proceeds.
@@ -45,7 +45,7 @@ You can also manage versions from the main project [version history](/analysts/v
 
 ## Create output tables
 
-After adding various data transformations in your pipeline, you can save the result as a table. Ask the AI agent to save the output, and it will write the data to the default database and schema in your connected fabric. This allows you to persist results and reuse them in downstream workflows.
+After adding various data transformations in your pipeline, you can save the result as a table. Ask the agent to save the output, and it will write the data to the default database and schema in your connected fabric. This allows you to persist results and reuse them in downstream workflows.
 
 ## Sample prompts
 
