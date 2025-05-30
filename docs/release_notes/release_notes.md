@@ -17,6 +17,7 @@ To ensure these updates do not impact your usage, we recommend refreshing the we
 
 ## 2025
 
+- [Prophecy 4.1.0.x](docs/release_notes/2025/4-1-0.md)
 - [Prophecy 4.0.1.x](docs/release_notes/2025/4-0-1.md)
 - [Prophecy 4.0.0.x](docs/release_notes/2025/4-0-0.md)
 - [Prophecy 3.4.5.x](docs/release_notes/2025/3-4-5.md)
