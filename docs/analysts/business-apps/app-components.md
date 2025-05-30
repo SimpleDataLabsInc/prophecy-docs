@@ -190,12 +190,12 @@ Let the user view sample data of a table in the pipeline.
 
 Display a visualization of a table from the pipeline. Prophecy provides multiple chart types that you can integrate in your app.
 
-| Setting             | Description                                                                                                   | Required |
-| ------------------- | ------------------------------------------------------------------------------------------------------------- | -------- |
-| Data table          | [Table](docs/analysts/development/gems/source-target/table/table.md) that contains data to visualize.         | True     |
-| Label               | Label to describe the chart.                                                                                  | True     |
-| Chart type          | Type of chart you wish to display (for example, bar chart or line chart).                                     | True     |
-| Chart configuration | Configure how the chart appears. To view information about each chart configuration, visit [Charts](/charts). | True     |
+| Setting             | Description                                                                                                            | Required |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------- | -------- |
+| Data table          | [Table](docs/analysts/development/gems/source-target/table/table.md) that contains data to visualize.                  | True     |
+| Label               | Label to describe the chart.                                                                                           | True     |
+| Chart type          | Type of chart you wish to display (for example, bar chart or line chart).                                              | True     |
+| Chart configuration | Configure how the chart appears. To view information about each chart configuration, visit [Charts](/analysts/charts). | True     |
 
 ## Content
 
