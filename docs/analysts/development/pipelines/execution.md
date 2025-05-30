@@ -40,6 +40,12 @@ You can also run pipelines with [Prophecy Apps](/analysts/business-applications)
 
 When you read from and write to external sources, your pipeline runs steps behind the scenes to make the data compatible with SQL. Because SQL requires [tables](/analysts/source-target/#tables) to perform transformations, Prophecy Automate will create temporary tables in your SQL warehouse throughout the pipeline when necessary. These tables allow SQL to process external data and transform it.
 
+Temporary tables use the following naming convention:
+
+```
+prophecy_tmp__{RUN_ID}__{PIPELINE_NAME}__{GEM/SOURCE_LABEL}[_{SUFFIX}]
+```
+
 :::caution Note
 You will not see these tables appear in the canvas during pipeline runs, and the tables will be deleted from the SQL warehouse after the pipeline run completes.
 :::
