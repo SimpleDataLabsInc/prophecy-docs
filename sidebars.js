@@ -250,13 +250,21 @@ const sidebars = {
         },
         {
           type: "category",
+          label: "AI Agent",
+          link: { type: "doc", id: "analysts/development/ai-agent/ai-chat" },
+          items: [
+            "analysts/development/ai-agent/ai-explore",
+            "analysts/development/ai-agent/ai-transform",
+          ],
+        },
+        {
+          type: "category",
           label: "Copilot",
           link: {
             type: "doc",
             id: "analysts/development/copilot/copilot-analysts",
           },
           items: [
-            "analysts/development/copilot/ai-chat",
             "analysts/development/copilot/expression-generation",
             "analysts/development/copilot/auto-documentation",
             "analysts/development/copilot/generate-fix",
