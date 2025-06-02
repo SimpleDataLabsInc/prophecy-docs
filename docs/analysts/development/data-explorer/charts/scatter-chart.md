@@ -8,7 +8,7 @@ tags:
   - charts
 ---
 
-A scatter chart uses Cartesian coordinates to show the relationship between two variables.
+A scatter chart uses dots to show the relationship between two variables.
 
 ![ScatterChart](./img/scatter-chart.png)
 
