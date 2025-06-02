@@ -7,13 +7,15 @@ tags:
   - charts
 ---
 
-Visualize interim data samples in your pipeline with charts. To view your data in a chart, open a data sample and switch to the **Visualization** tab of the [Data Explorer](/analysts/data-explorer).
+Charts let you visualize your data at different stages of the pipeline.
+
+To view a chart, open a data sample and navigate to the **Visualization** tab of the [Data Explorer](/analysts/data-explorer). Charts are based on the data currently loaded in the sample.
 
 ![VisualizationView](./img/visualization-view.png)
 
 ## Chart types
 
-You can create the following charts in the **Visualization** tab
+You can create the following charts in the **Visualization** tab.
 
 | Chart Type                                 | Description                                                                                                                 |
 | ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------- |
@@ -25,15 +27,13 @@ You can create the following charts in the **Visualization** tab
 | [Map](/analysts/map-chart)                 | Uses a map to show how data is distributed across a geographic region.                                                      |
 | [Scatter](/analysts/scatter-chart)         | Uses dots to show the relationship between two variables.                                                                   |
 
-## Filter fields
+## Filter conditions
 
-You can apply and remove filters to the visualized data. Filtering lets you focus on a specific portion of the dataset to gain further understanding without changing and rerunning your pipeline.
+You can apply or remove filters to focus on specific parts of the visualized data. Filtering helps you explore subsets of the dataset without modifying or rerunning your pipeline. Filters apply only to the data currently loaded in the Data Explorer sample.
 
 ![FilterChart](./img/filter-chart.png)
 
-### Apply a filter
-
-For each filter you want to apply to your data:
+To apply a filter to your data:
 
 1. Click **Filter** at the top of the chart.
 
@@ -45,34 +45,30 @@ For each filter you want to apply to your data:
 
 1. Click **Apply**.
 
-### Remove a filter
+:::info
 
-For each filter you want to remove from your data:
+Click the trashcan icon at the top right corner of the filter to remove it.
 
-1. Click **Filter** at the top of the chart.
+:::
 
-1. Find the filter you want to remove.
+## Add to Prophecy App
 
-1. Click the trash can icon at the top right corner.
+If you create a chart in the Data Explorer that would be useful in a Prophecy App, you can add it to an app template.
 
-## Add to business app
-
-If you create a chart in the Data Explorer that would be useful in a Prophecy App, you can add it to an app template. Then, end users can view your chart to visualize the data generated when they run the app.
+This way, end users can view your chart to visualize the data generated when they run the app.
 
 ![AddChartToApp](./img/add-chart-to-app.png)
 
-To add your chart to a business app:
+To add your chart to a Prophecy App:
 
 1. Click **Add to App** at the top of the chart.
 
-1. Select the business app you want to add it to.
+1. Select the app you want to add it to.
 
-   After you select the app, Prophecy opens your app in a new window.
+1. Prophecy opens the app template in a new window. The chart element is added to the bottom of the app.
 
-   Enter a **Configuration Name**, then click **Save**. This adds the chart to your business app.
-
-To see the chart in your business app, click **Run** at the top right corner.
+When someone creates a new app config, they will see the chart as part of the app.
 
 ![ViewChartInApp](./img/view-chart-in-app.png)
 
-To learn more about business apps, see [Apps](/analysts/business-applications).
+To learn more about Prophecy Apps, see [Apps](/analysts/business-applications).

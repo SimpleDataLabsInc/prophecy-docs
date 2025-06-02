@@ -10,7 +10,11 @@ tags:
 
 A map chart uses a map to show how data is distributed across a geographic region.
 
-There are two types of map charts: [marker map](#marker-map-chart) and [displacement map](#displacement-map-chart).
+Prophecy provides two types of map charts: a [marker map](#marker-map-chart) and a [displacement map](#displacement-map-chart).
+
+:::info
+The option to select a map chart only appears when the dataset contains geo points in WKT format.
+:::
 
 ## Marker map chart
 
