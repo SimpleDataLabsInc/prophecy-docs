@@ -8,15 +8,7 @@ tags: []
 
 A Prophecy App is a visual application built on top of a Prophecy pipeline. When you run a Prophecy App, you execute the underlying pipeline using your own parameters.
 
-## Access and sharing
-
-Access to Prophecy Apps is controlled by Prophecy’s team-based permission model. If your team owns a project, you have full edit access. This means that you can build, edit, and delete Prophecy Apps in the project.
-
-If a project is shared with your team, you **cannot** edit pipelines or Prophecy App structure. However, you can **run** Prophecy Apps from the shared project. This ensures that your data engineering team can safely share pipelines they developed with analysts or business users.
-
-:::info See Also
-To learn more, reference the documentation on [team-based access](/administration/teams-users/team-based-access).
-:::
+![Prophecy Config UI](img/prophecy-app-ui.png)
 
 ## Configs
 
@@ -66,6 +58,16 @@ To create and enable an app schedule:
 1. Click **Schedule**.
 
 After you create the schedule, publish it to the appropriate fabric (the execution environment that the pipeline will run on). This is the same process as [scheduling pipelines](/analysts/scheduling) themselves.
+
+## Access and sharing
+
+Access to Prophecy Apps is controlled by Prophecy’s team-based permission model. If your team owns a project, you have full edit access. This means that you can build, edit, and delete Prophecy Apps in the project.
+
+If a project is shared with your team, you **cannot** edit pipelines or Prophecy App structure. However, you can **run** Prophecy Apps from the shared project. This ensures that your data engineering team can safely share pipelines they developed with analysts or business users.
+
+:::info See Also
+To learn more, reference the documentation on [team-based access](/administration/teams-users/team-based-access).
+:::
 
 ## What's next
 

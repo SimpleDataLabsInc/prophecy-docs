@@ -71,4 +71,4 @@ When someone creates a new app config, they will see the chart as part of the ap
 
 ![ViewChartInApp](./img/view-chart-in-app.png)
 
-To learn more about Prophecy Apps, see [Apps](/analysts/business-applications).
+To learn more, see [Prophecy Apps](/analysts/business-applications).

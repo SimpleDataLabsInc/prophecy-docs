@@ -346,7 +346,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Apps",
+      label: "Prophecy Apps",
       link: { type: "doc", id: "analysts/business-apps/business-apps" },
       items: [
         "analysts/business-apps/run-apps",

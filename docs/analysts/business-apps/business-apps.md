@@ -1,5 +1,5 @@
 ---
-title: Apps
+title: Prophecy Apps
 id: business-apps
 slug: /analysts/business-applications
 description: Package complex pipelines into easy-to-use applications
@@ -9,6 +9,8 @@ tags: []
 Prophecy Apps simplify the process for non-technical users to run data pipelines through intuitive, form-based interfaces—no engineering required. Instead of writing or modifying pipeline code, users can rely on pre-built, templated apps to run pipelines quickly and consistently.
 
 These reusable apps help teams collaborate more effectively by eliminating duplicate work and standardizing processes across users. Built-in logic and guardrails further reduce the risk of errors, guiding users through safe, tested execution paths.
+
+![Prophecy App Example](img/prophecy-apps-example.png)
 
 ## App capabilities
 
