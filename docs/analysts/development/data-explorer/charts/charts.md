@@ -1,115 +1,78 @@
 ---
 title: Charts
 id: charts
-slug: /charts
-description: Charts
+slug: /analysts/charts
+description: Charts you can create with your interim data samples
 tags:
   - charts
 ---
 
-### Bar Chart
+Visualize interim data samples in your pipeline with charts. To view your data in a chart, open a data sample and switch to the **Visualization** tab of the [Data Explorer](/analysts/data-explorer).
 
-| Parameter       | Description                                 |
-| --------------- | ------------------------------------------- |
-| X-axis column   | Column used for the X-axis categories.      |
-| Y-axis column   | Column used for the Y-axis values.          |
-| Min. Value      | Minimum value displayed on the Y-axis.      |
-| Max. Value      | Maximum value displayed on the Y-axis.      |
-| Tick Interval   | Interval between tick marks on the Y-axis.  |
-| Display Legends | Whether to display the legend on the chart. |
-| Enable Tooltips | Whether to display tooltips on hover.       |
-| Show Grid Lines | Whether to display grid lines on the chart. |
+![VisualizationView](./img/visualization-view.png)
 
-### Line Chart
+## Chart types
 
-| Parameter       | Description                                                    |
-| --------------- | -------------------------------------------------------------- |
-| X-axis column   | Column used for the X-axis values, typically time or sequence. |
-| Y-axis column   | Column with aggregated values used for the Y-axis.             |
-| Min. Value      | Minimum value displayed on the Y-axis.                         |
-| Max. Value      | Maximum value displayed on the Y-axis.                         |
-| Tick Interval   | Interval between tick marks on the Y-axis.                     |
-| Display Legends | Whether to display the legend on the chart.                    |
-| Enable Tooltips | Whether to display tooltips on hover.                          |
-| Show Grid Lines | Whether to display grid lines on the chart.                    |
+You can create the following charts in the **Visualization** tab
 
-### Area Chart
+| Chart Type                                 | Description                                                                                                                 |
+| ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------- |
+| [Bar](/analysts/bar-chart)                 | Group your data by categories with rectangular bars with heights or lengths proportional to the values that they represent. |
+| [Line](/analysts/line-chart)               | Visually represent your data over time or along a continuous range.                                                         |
+| [Area](/analysts/area-chart)               | Line chart with filled areas under the lines to represent quantitative data over time or categories.                        |
+| [Pie](/analysts/pie-chart)                 | Circular graph that divides into slices, where the arc length of each slice is proportional to the quantity it represents.  |
+| [Candlestick](/analysts/candlestick-chart) | Financial chart that displays how prices change for an asset over time, such as stocks and currency.                        |
+| [Map](/analysts/map-chart)                 | Uses a map to show how data is distributed across a geographic region.                                                      |
+| [Scatter](/analysts/scatter-chart)         | Uses dots to show the relationship between two variables.                                                                   |
 
-| Parameter            | Description                                                    |
-| -------------------- | -------------------------------------------------------------- |
-| X-axis column        | Column used for the X-axis values, typically time or sequence. |
-| Y-axis column        | Column with aggregated values used for the Y-axis.             |
-| Min. Value           | Minimum value displayed on the Y-axis.                         |
-| Max. Value           | Maximum value displayed on the Y-axis.                         |
-| Tick Interval        | Interval between tick marks on the Y-axis.                     |
-| Enable Gradient Fill | Whether to apply a gradient fill under the area curve.         |
-| Stack Data Series    | Whether to stack multiple data series on top of one another.   |
-| Display Legends      | Whether to display the legend on the chart.                    |
-| Enable Tooltips      | Whether to display tooltips on hover.                          |
-| Show Grid Lines      | Whether to display grid lines on the chart.                    |
+## Filter fields
 
-### Pie Chart
+You can apply and remove filters to the visualized data. Filtering lets you focus on a specific portion of the dataset to gain further understanding without changing and rerunning your pipeline.
 
-| Parameter                                   | Description                                                                                                                 |
-| ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| Category column                             | Column used for pie chart segments.                                                                                         |
-| Y-axis column                               | Column containing values to aggregate into segment sizes.                                                                   |
-| Chart angle                                 | Starting angle in degrees for rendering the chart.                                                                          |
-| Chart style                                 | Style of chart, either pie or donut.                                                                                        |
-| Radius % (Pie style only)                   | Percentage of the chart canvas used for the pie's radius (the overall size of the pie chart).                               |
-| Inner and Outer Radius % (Donut style only) | Size of the inside and outside radius of the donut chart.                                                                   |
-| Horizontal center %                         | Percentage from the left edge of the chart canvas for positioning the pie's center (the horizontal alignment of the chart). |
-| Vertical center %                           | Percentage from the top edge of the chart canvas for positioning the pie's center (the vertical alignment of the chart).    |
-| Display Legends                             | Whether to display the legend on the chart.                                                                                 |
-| Enable Tooltips                             | Whether to display tooltips on hover.                                                                                       |
+![FilterChart](./img/filter-chart.png)
 
-### Candle Chart
+### Apply a filter
 
-| Parameter                       | Description                                                       |
-| ------------------------------- | ----------------------------------------------------------------- |
-| X-axis column                   | Column used for the X-axis values, typically a timestamp or date. |
-| Choose column for open price    | Column containing the opening price.                              |
-| Choose column for close price   | Column containing the closing price.                              |
-| Choose column for lowest price  | Column containing the lowest price.                               |
-| Choose column for highest price | Column containing the highest price.                              |
-| Display Legends                 | Whether to display the legend on the chart.                       |
-| Enable Tooltips                 | Whether to display tooltips on hover.                             |
+For each filter you want to apply to your data:
 
-### Scatter Chart
+1. Click **Filter** at the top of the chart.
 
-| Parameter       | Description                                                                      |
-| --------------- | -------------------------------------------------------------------------------- |
-| X-axis config   | Configuration for the X-axis, including min value, max value, and tick interval. |
-| Y-axis config   | Configuration for the Y-axis, including min value, max value, and tick interval. |
-| Chart style     | Style of chart, either scatter or bubble.                                        |
-| Display Legends | Whether to display the legend on the chart.                                      |
-| Enable Tooltips | Whether to display tooltips on hover.                                            |
+1. Click **Add Filter**.
 
-### Map Chart
+1. Configure your filter.
 
-There are two types of Map charts: Marker and Displacement.
+   Select the **Condition**, **Column**, and **Value** to filter for.
 
-#### Marker Map
+1. Click **Apply**.
 
-The marker map shows pins on a map for each geo point in the column.
+### Remove a filter
 
-| Parameter           | Description                                                                          |
-| ------------------- | ------------------------------------------------------------------------------------ |
-| Column              | Column that contains geo points in WKT format.                                       |
-| Marker Label Column | Column that contains the name of each geo point (for example, a `city_name` column). |
-| Tooltip Columns     | Column that contains information that will show up in the geo point tooltip.         |
-| Fit Bounds          | Whether to fit the map to the bounds in the points.                                  |
+For each filter you want to remove from your data:
 
-#### Displacement Map
+1. Click **Filter** at the top of the chart.
 
-The displacement map shows the paths between points in columns.
+1. Find the filter you want to remove.
 
-| Parameter                | Description                                                                                  |
-| ------------------------ | -------------------------------------------------------------------------------------------- |
-| Source Column            | Column that contains the starting geo points in WKT format for the map.                      |
-| Destination Column       | Column that contains the destination geo points in WKT format for the map.                   |
-| Source Label Column      | Column that contains an identifier for each starting point.                                  |
-| Destination Label Column | Column that contains an identifier for each destination point.                               |
-| Tooltip Columns          | Column that contains information that will show up in the geo point tooltip.                 |
-| Show Direction           | Whether to include an arrow on that map that indicates direction from source to destination. |
-| Fit Bounds               | Whether to fit the map to the bounds in the points.                                          |
+1. Click the trash can icon at the top right corner.
+
+## Add to business app
+
+If you create a chart in the Data Explorer that would be useful in a Prophecy App, you can add it to an app template. Then, end users can view your chart to visualize the data generated when they run the app.
+
+![AddChartToApp](./img/add-chart-to-app.png)
+
+To add your chart to a business app:
+
+1. Click **Add to App** at the top of the chart.
+
+1. Select the business app you want to add it to.
+
+   After you select the app, Prophecy opens your app in a new window.
+
+   Enter a **Configuration Name**, then click **Save**. This adds the chart to your business app.
+
+To see the chart in your business app, click **Run** at the top right corner.
+
+![ViewChartInApp](./img/view-chart-in-app.png)
+
+To learn more about business apps, see [Apps](/analysts/business-applications).
