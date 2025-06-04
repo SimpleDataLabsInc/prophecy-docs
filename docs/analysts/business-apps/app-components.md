@@ -18,9 +18,10 @@ The **Layers** tab of the App Builder defines the structure of your components. 
 
 Review the interactive components that you can add to your Prophecy App. Users will provide their own input to these fields, and you can add default values for them.
 
-:::note
-Optional interactive fields left blank by the user will use the default value defined in pipeline parameter settings if a default value is not defined in the component.
-:::
+If the end user leaves an interactive field blank:
+
+- The app first checks for a default value in the component.
+- If you did not define a default value in the component, the app uses the default value from the [pipeline parameter](/analysts/pipeline-parameters).
 
 ### Text Input
 
@@ -85,14 +86,14 @@ The user can select a value from a predefined list. Array-type parameters are no
 
 The user can select or unselect a checkbox. Only boolean-type configurations are supported.
 
-| Setting             | Description                                                                                                                     | Required |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| Configuration field | Name of the pipeline parameter to reference.                                                                                    | True     |
-| Default value       | Whether the checkbox is selected by default (`True` or `False`). Users can select or unselect the checkbox in their app config. | False    |
-| Label               | Descriptive label for the checkbox itself.                                                                                      | True     |
-| Caption             | Additional guidance displayed below the checkbox.                                                                               | False    |
-| Tooltip             | Tooltip providing extra context when the user hovers over the field.                                                            | False    |
-| Is required         | Whether to make the field mandatory.                                                                                            | False    |
+| Setting             | Description                                                                                                                                           | Required |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| Configuration field | Name of the pipeline parameter to reference.                                                                                                          | True     |
+| Default value       | Either `True` or `False`. This determines whether the checkbox is selected by default. Users can select or unselect the checkbox in their app config. | False    |
+| Label               | Descriptive label for the checkbox itself.                                                                                                            | True     |
+| Caption             | Additional guidance displayed below the checkbox.                                                                                                     | False    |
+| Tooltip             | Tooltip providing extra context when the user hovers over the field.                                                                                  | False    |
+| Is required         | Whether to make the field mandatory.                                                                                                                  | False    |
 
 ### Checkbox Group
 
@@ -138,14 +139,14 @@ For each option that you add to the checkbox group, you can define the:
 
 The user can enable or disable a toggle. Only boolean-type configurations are supported.
 
-| Setting             | Description                                                                                                     | Required |
-| ------------------- | --------------------------------------------------------------------------------------------------------------- | -------- |
-| Configuration field | Name of the pipeline parameter to reference.                                                                    | True     |
-| Default value       | Whether to toggle is on or off by default (`True` or `False`). Users can update this value in their app config. | False    |
-| Label               | Descriptive label for the toggle itself.                                                                        | True     |
-| Caption             | Additional guidance displayed below the toggle.                                                                 | False    |
-| Tooltip             | Tooltip providing extra context when the user hovers over the field.                                            | False    |
-| Is required         | Whether to make the field mandatory.                                                                            | False    |
+| Setting             | Description                                                                                                                           | Required |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| Configuration field | Name of the pipeline parameter to reference.                                                                                          | True     |
+| Default value       | Either `True` or `False`. This determines whether to toggle is on or off by default. Users can update this value in their app config. | False    |
+| Label               | Descriptive label for the toggle itself.                                                                                              | True     |
+| Caption             | Additional guidance displayed below the toggle.                                                                                       | False    |
+| Tooltip             | Tooltip providing extra context when the user hovers over the field.                                                                  | False    |
+| Is required         | Whether to make the field mandatory.                                                                                                  | False    |
 
 ### Date
 
@@ -213,8 +214,8 @@ Add context to your Prophecy App. Use the Inspect tab to add formatting to text,
 
 Embed an image into your Prophecy App.
 
-| Setting      | Description                              | Required |
-| ------------ | ---------------------------------------- | -------- |
-| Image source | How Prophecy retrieves the image.        | True     |
-| Source URL   | The URL of the image.                    | True     |
-| Alt text     | The option to add alt text to the image. | False    |
+| Setting      | Description                          | Required |
+| ------------ | ------------------------------------ | -------- |
+| Image source | How Prophecy retrieves the image.    | True     |
+| Source URL   | URL of the image.                    | True     |
+| Alt text     | Option to add alt text to the image. | False    |
