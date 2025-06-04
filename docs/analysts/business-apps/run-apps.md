@@ -1,5 +1,5 @@
 ---
-title: Run apps
+title: App usage
 id: run-apps
 slug: /analysts/run-apps
 description: Learn how to use applications that have been shared with you

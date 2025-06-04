@@ -1,8 +1,8 @@
 ---
-title: Create apps
+title: Create a Prophecy App
 id: app-creation
 slug: /analysts/create-business-applications
-description: Build applications make pipelines accessible
+description: Follow this tutorial to build your first Prophecy App
 tags: []
 ---
 

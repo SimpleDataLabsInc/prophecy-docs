@@ -6,22 +6,20 @@ description: Learn about the different components to configure in an app
 tags: []
 ---
 
-**Components** are the building blocks of your application. You can add, configure, and preview components in the App Builder. There are three types of components that you can add.
+Components are the building blocks of your Prophecy Apps. You can add, configure, and preview components in the App Builder. There are three types of components that you can add:
 
-- **Interactive:** Lets users add their own values to the pipeline configuration.
-- **Data Integration:** Allows users to upload data or view data outputs.
-- **Content:** Embed static text and images into your Prophecy Apps.
-
-The **Layers** tab of the App Builder defines the structure of your components. You can drag and drop components within containers to rearrange them in the app. The **Inspect** tab lets you configure component settings. This determines how the components will appear and behave in your application. All component settings are described below.
+- [Interactive](#interactive): Lets users assign custom values to pipeline parameters.
+- [Data Integration](#data-integration): Allows users to upload data or view data outputs.
+- [Content](#content): Embed static text and images into your Prophecy Apps.
 
 ## Interactive
 
-Review the interactive components that you can add to your Prophecy App. Users will provide their own input to these fields, and you can add default values for them.
+Interactive components make pipelines dynamic by letting users assign values to [pipeline parameters](/analysts/pipeline-parameters). These values can influence the behavior of each run and change the pipeline output.
 
 If the end user leaves an interactive field blank:
 
 - The app first checks for a default value in the component.
-- If you did not define a default value in the component, the app uses the default value from the [pipeline parameter](/analysts/pipeline-parameters).
+- If you did not define a default value in the component, the app uses the default value from the pipeline parameter.
 
 ### Text Input
 

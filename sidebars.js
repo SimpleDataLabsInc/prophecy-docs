@@ -352,9 +352,12 @@ const sidebars = {
         "analysts/business-apps/run-apps",
         {
           type: "category",
-          label: "Create apps",
-          link: { type: "doc", id: "analysts/business-apps/app-creation" },
-          items: ["analysts/business-apps/app-components"],
+          label: "App Builder",
+          link: { type: "doc", id: "analysts/business-apps/app-builder" },
+          items: [
+            "analysts/business-apps/app-creation",
+            "analysts/business-apps/app-components",
+          ],
         },
       ],
     },

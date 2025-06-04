@@ -65,7 +65,7 @@ To add your chart to a Prophecy App:
 
 1. Select the app you want to add it to.
 
-1. Prophecy opens the app template in a new window. The chart element is added to the bottom of the app.
+1. Prophecy opens the app inside the [App Builder](/analysts/app-builder). The chart element is added to the bottom of the app.
 
 When someone creates a new app config, they will see the chart as part of the app.
 
