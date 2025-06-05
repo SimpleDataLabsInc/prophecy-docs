@@ -35,17 +35,11 @@ Click the **paperclip** icon to upload files from your local system. This opens 
 
 Uploading files this way is useful when:
 
-- **You have data that isn't yet in the warehouse**.
+- **You have data that isn't yet in the warehouse**. For example, ad hoc CSVs or test data exported from another tool.
 
-  For example, ad hoc CSVs or test data exported from another tool.
+- **You're testing transformations**. Use a small, local file to validate logic before applying it to large warehouse datasets.
 
-- **You're testing transformations**.
-
-  Use a small, local file to validate logic before applying it to large warehouse datasets.
-
-- **You need to enrich warehouse data with external data**.
-
-  Upload a file and join with existing tables to accomplish this.
+- **You need to enrich warehouse data with external data**. Upload a file and join with existing tables to accomplish this.
 
 Supported file types include CSV, Excel, and Parquet. See the [file upload](/analysts/upload-file) documentation for more details.
 

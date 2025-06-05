@@ -15,25 +15,38 @@ The following sections describe ways you can interact with the agent in this con
 
 ## Find tables in your SQL warehouse
 
-Ask the agent to search for tables in your connected warehouse. Based on your query, it returns a short list of relevant datasets. To find more information, you can:
+Ask the agent to search for tables in your [primary SQL warehouse](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md). Based on your query, it returns:
 
-- Explore a broader set of suggestions to find the most relevant table.
-- Open and inspect a specific table to view the location, schema, contents, and data profile.
-- Ask additional targeted questions to the **Explore** AI chat inside the table preview. This chat is limited to the context of the specific table.
-
-This helps you quickly locate the data you need without manually browsing through your data catalogs.
+- A short list of relevant datasets and their descriptions.
+- A full list of datasets that match your criteria.
 
 :::tip
-You can add these datasets to the pipeline as [Table gems](/analysts/table) directly from the chat.
+You can add a dataset to the pipeline as a [Table gem](/analysts/table) directly from the chat.
 :::
+
+### Explore datasets
+
+To learn more about a dataset, you can click on it inside the chat. This opens a dialog where you can:
+
+- Preview a sample of the data in the dataset.
+- Review the data profile of the sample.
+- Find the location of the dataset in the warehouse.
+- Look over the schema of the dataset.
+- Open the **Explore** AI agent that limits responses to the context of the dataset.
+
+This helps you quickly locate the correct data without having to manually browse through your data catalogs.
 
 ## Describe a dataset
 
-If you want a summary of dataset information, you can ask AI chat to describe a table. This will provide a quick overview of key metadata, including the database and schema the table belongs to, as well as the names and data types of each column. This helps you understand the structure of the dataset without having to open or query it directly.
+If you want a summary of dataset information, you can ask the AI agent to describe a table.
+
+The agent will provide a quick overview of key metadata, including the database and schema the table belongs to, as well as the names and data types of each column. This helps you understand the structure of the dataset without having to open or query it directly.
 
 ## Compare datasets
 
-If you ask AI chat to compare datasets, you can quickly assess which dataset is more suitable as a source for your pipeline by analyzing differences in schema structure, column names, data types, and size. This way, you can identify which dataset aligns better with your pipeline’s requirements, such as having the right fields, consistent naming conventions, or expected formats, without needing to inspect the full data.
+If you ask the AI agent to compare datasets, you can quickly assess which dataset is more suitable as a source for your pipeline by analyzing differences in schema structure, column names, data types, and size.
+
+This way, you can identify which dataset aligns better with your pipeline’s requirements, such as having the right fields, consistent naming conventions, or expected formats, without needing to inspect the full data.
 
 ## View sample rows from a table
 
@@ -42,19 +55,42 @@ To preview data, ask the agent to return sample rows from a table. You can ask t
 - Display a random sample from the table.
 - Retrieve specific rows, such as “the ten most recent purchases over $100.”
 
-A small table will appear directly in the chat showing the sample data.
+The agent returns:
+
+- A small table showing sample data directly in the chat.
+- An option to add the full dataset as a Table gem in the pipeline canvas.
+- An option to preview the chart more closely.
+
+### Table preview
+
+To inspect the sample data more closely, click **Preview**. Inside the preview, you can:
+
+- Download the data as a JSON, Excel, or CSV file.
+- Show or hide columns.
+- Add the full dataset to the pipeline canvas.
 
 ## Visualize table data
 
-You can also explore data through visualizations. Use prompts like “visualize sales by region over time” to generate charts. The AI chat returns:
+You can also explore data through visualizations. Use prompts like “visualize sales by region over time” to generate charts.
 
-- A visual chart embedded in the chat.
-- The SQL query used to generate it.
-- A summary of the SQL execution and output (for example, number of rows retrieved and execution status).
+The agent returns:
 
-To see a larger version of the chart, click **Preview**. This opens the **Chart** tab of the data visualization dialog.
+- A chart embedded directly in the chat.
+- An option to add the underlying dataset as a Table gem in the pipeline canvas.
+- An option to preview the chart more closely.
 
-Switch to the **Data** tab to view the data that powers the chart. From here, you can add the visualization to a [Prophecy App](/analysts/business-applications) configuration if relevant. You can either choose an existing app in your project or create a new one.
+### Chart preview
+
+To see a larger version of the chart, click **Preview**. This opens the data visualization dialog, which has two tabs.
+
+| Tab           | Available actions                                                                                                                                                                                                            |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Visualization | <ul class="table-list"><li>View a larger version of the chart</li><li>Download the chart as an image</li><li>Copy the chart as an image</li><li>Add the chart to a [Prophecy App](/analysts/business-applications)</li></ul> |
+| Data          | <ul class="table-list"><li>View the underlying data</li><li>Download the data as a JSON, Excel, or CSV file</li><li>Show or hide columns</li></ul>                                                                           |
+
+:::info
+Learn more about data visualization in [Charts](/analysts/charts).
+:::
 
 ## Sample prompts
 
