@@ -16,11 +16,17 @@ As you build out your pipelines in SQL projects, Prophecy's AI agent is availabl
 - Providing previews of the input and output of suggested transformations
 - Generating data visualizations you can publish to business apps
 
+:::note
+The AI agent cannot update pipelines that include [external sources and targets](/analysts/source-target).
+:::
+
 ## Interact with the Prophecy agent
 
-You can interact with the agent in the **Chat** tab of the left sidebar in a project. While chatting, make sure the **Visual** view is open so you can see changes in the canvas. The agent updates the pipeline in real time as you interact.
+You can interact with the AI agent in the **Chat** tab on the left sidebar of your project.
 
 ![AI agent](img/ai-chat.png)
+
+The agent responds to your prompts and applies changes directly to your pipeline. To see these updates as they happen, make sure the **Visual** view is open. This view shows the pipeline canvas, where you can track any gems the agent adds or modifies in real time.
 
 ### Toggle
 
@@ -49,9 +55,17 @@ Use @mentions to refer to specific datasets in your SQL warehouse. As you type, 
 
 For example: `How many records are in the @transactions table?`
 
+![Agent @mentions](img/agent-mentions.png)
+
 :::tip
-You can either type @ or click the @ button in the chat bar to mention a dataset.
+You can type `@` or click the @ button in the chat to mention a dataset.
 :::
+
+### Reset chat
+
+To clear messages from the current conversation, click **... > Reset chat**.
+
+![Agent reset](img/agent-reset.png)
 
 ## What's next
 

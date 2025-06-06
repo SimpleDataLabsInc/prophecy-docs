@@ -19,7 +19,15 @@ You need at least one [Source gem](/analysts/source-target) in your pipeline to 
 
 ## Provide a transformation
 
-To generate a transformation, enter a prompt that describes the desired data operation. The agent adds one or more gems to the pipeline canvas and displays a description of the applied changes in the chat.
+To generate a transformation, enter a prompt that describes the desired data operation. The agent returns:
+
+- One or more gems on the pipeline canvas
+- A description of the applied changes
+- SQL execution logs
+
+![Agent SQL logs](img/agent-sql-logs.png)
+
+### Project history
 
 All changes made by the agent are saved in the project [version history](/analysts/versioning). Commits will be clearly marked as authored by the agent.
 
@@ -29,15 +37,20 @@ If you did not save your project before interacting with the AI agent, Prophecy 
 
 ## Inspect pipeline changes
 
-To review changes, select **Inspect** in the chat next to a transformation. This opens the configuration panel for the first modified gem, which is highlighted in yellow to indicate that it was added or updated.
+To understand the agent changes:
 
-Use the **Previous** and **Next** controls to move through other modified gems in sequence. When hovering over these controls, a minimap of the pipeline is displayed to provide context on the transformation’s location.
-
-While reviewing each gem, examine both the input and output to confirm that the transformation produces the expected result.
+1. Select **Inspect** in the chat next to a transformation.
+1. Review the configuration panel beginning with the first modified gem (highlighted in yellow to indicate modification).
+1. Use the **Previous** and **Next** controls to move through other modified gems in sequence.
+1. Hover over the **Previous** and **Next** button to display a minimap of the pipeline. This shows you the specific gem you are viewing in the context of the pipeline.
+1. Examine both the input and output of each gem to confirm that the transformation produces the expected result.
 
 ## Restore a previous state of the pipeline
 
-To revert changes, select **Restore** from a reply in the chat history. This reverts the pipeline to the selected earlier version.
+To revert changes or try another transformation from a previous state:
+
+1. Select **Restore** from a reply in the chat history
+1. The pipeline will match the earlier version.
 
 :::note
 You can also manage versions from the main project [version history](/analysts/versioning).
@@ -45,7 +58,12 @@ You can also manage versions from the main project [version history](/analysts/v
 
 ## Create output tables
 
-After adding various data transformations in your pipeline, you can save the result as a table. Ask the agent to save the output, and it will write the data to the default database and schema in your connected fabric. This allows you to persist results and reuse them in downstream workflows.
+After adding various data transformations in your pipeline:
+
+1. Ask the agent to save the result as a table.
+1. The agent writes the data to the default database and schema in your connected fabric.
+
+This allows you to persist results and reuse them in downstream workflows.
 
 ## Sample prompts
 

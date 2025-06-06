@@ -13,6 +13,10 @@ One way to leverage the Prophecy AI agent is to search your SQL warehouse, explo
 
 The following sections describe ways you can interact with the agent in this context.
 
+:::note
+Agent responses are generated dynamically and may vary slightly from one request to another.
+:::
+
 ## Find tables in your SQL warehouse
 
 Ask the agent to search for tables in your [primary SQL warehouse](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md). Based on your query, it returns:
@@ -50,43 +54,44 @@ This way, you can identify which dataset aligns better with your pipeline’s re
 
 ## View sample rows from a table
 
-To preview data, ask the agent to return sample rows from a table. You can ask to:
+To preview data from a table, ask the agent to return a sample. You can request a random sample from the table or specific rows, such as “the ten most recent purchases over $100”. The agent returns:
 
-- Display a random sample from the table.
-- Retrieve specific rows, such as “the ten most recent purchases over $100.”
+- A table showing the sample data
+- A **Preview** option for a closer look
+- SQL execution logs for transparency
 
-The agent returns:
+If the dataset isn’t already part of your pipeline, you’ll also see an option to add it as a Table gem on the canvas.
 
-- A small table showing sample data directly in the chat.
-- An option to add the full dataset as a Table gem in the pipeline canvas.
-- An option to preview the chart more closely.
+![Data sample response](img/agent-sql-logs-sample.png)
 
 ### Table preview
 
-To inspect the sample data more closely, click **Preview**. Inside the preview, you can:
+Click **Preview** to open a larger view of the data sample. In this view, you can:
 
-- Download the data as a JSON, Excel, or CSV file.
-- Show or hide columns.
-- Add the full dataset to the pipeline canvas.
+- Download the data as a JSON, Excel, or CSV file
+- Show or hide columns
+- Add the full dataset to the canvas (if not present already)
 
 ## Visualize table data
 
-You can also explore data through visualizations. Use prompts like “visualize sales by region over time” to generate charts.
+You can also ask the agent to generate charts for data visualization. The agent returns:
 
-The agent returns:
+- An embedded chart directly in the chat
+- A Preview button to open a detailed view
+- SQL execution logs showing how the chart was generated
 
-- A chart embedded directly in the chat.
-- An option to add the underlying dataset as a Table gem in the pipeline canvas.
-- An option to preview the chart more closely.
+If the chart is based on a dataset that isn't yet in your pipeline, you'll see an option to add it as a Table gem.
+
+![Chart generation response](img/agent-sql-logs-charts.png)
 
 ### Chart preview
 
 To see a larger version of the chart, click **Preview**. This opens the data visualization dialog, which has two tabs.
 
-| Tab           | Available actions                                                                                                                                                                                                            |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Visualization | <ul class="table-list"><li>View a larger version of the chart</li><li>Download the chart as an image</li><li>Copy the chart as an image</li><li>Add the chart to a [Prophecy App](/analysts/business-applications)</li></ul> |
-| Data          | <ul class="table-list"><li>View the underlying data</li><li>Download the data as a JSON, Excel, or CSV file</li><li>Show or hide columns</li></ul>                                                                           |
+| Tab           | Available actions                                                                                                                                  |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Visualization | <ul class="table-list"><li>View a larger version of the chart</li><li>Download the chart as an image</li><li>Copy the chart as an image</li></ul>  |
+| Data          | <ul class="table-list"><li>View the underlying data</li><li>Download the data as a JSON, Excel, or CSV file</li><li>Show or hide columns</li></ul> |
 
 :::info
 Learn more about data visualization in [Charts](/analysts/charts).
