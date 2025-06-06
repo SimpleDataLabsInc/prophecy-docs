@@ -12,11 +12,12 @@ tags:
   - data
 ---
 
-The Data Explorer helps you inspect interim data samples at each stage of your pipeline. By checking column structure, reviewing sample values, and confirming data types, you can catch issues early and ensure your pipeline is working as expected.
+The Data Explorer helps you inspect interim data samples at each stage of your pipeline. You can catch issues early and ensure your pipeline is working as expected
+by checking the column structure, reviewing the sample values, and confirming the data types.
 
 ## Open the Data Explorer
 
-To use the Data Explorer, you need to [run](/analysts/pipeline-execution/#interactive-execution) your pipeline to generate data samples. Click on any data sample in your pipeline to open the Data Explorer.
+To use the Data Explorer, [run](/analysts/pipeline-execution/#interactive-execution) your pipeline to generate data samples. Click on any data sample in your pipeline to open the Data Explorer.
 
 ![Data sample in a pipeline](img/data-sample-analysts.png)
 
@@ -30,6 +31,7 @@ In the Data Explorer, you can:
 - Show or hide columns
 - Export the sample as CSV or JSON file
 - Save the transformation as a new gem
+- View your data in a chart
 
 ![DataExplorationSQL](./img/DataExplorationSQL.png)
 

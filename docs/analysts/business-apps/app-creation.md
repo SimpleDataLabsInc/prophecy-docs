@@ -1,8 +1,8 @@
 ---
-title: Create apps
+title: Create a Prophecy App
 id: app-creation
 slug: /analysts/create-business-applications
-description: Build applications make pipelines accessible
+description: Follow this tutorial to build your first Prophecy App
 tags: []
 ---
 
@@ -20,14 +20,6 @@ In this tutorial, you'll learn how to create a Prophecy App where users can:
 
 ![Run Prophecy App results](img/prophecy-app-run.png)
 
-To do so, you will create a pipeline that:
-
-- Ingests bakehouse review data from the SQL warehouse.
-- Filters the data by franchise location.
-- Saves the filtered data to a table.
-
-![App pipeline](img/app-pipeline.png)
-
 ## Prerequisites
 
 To complete this tutorial, you will need:
@@ -42,7 +34,15 @@ This tutorial uses sample data provided by Databricks.
 
 ## Create the pipeline
 
-To build a business app, you first need to build the pipeline that will power it. This pipeline will include parameters that users can modify through the app interface. In the following sections, you will build a simple pipeline and leverage pipeline parameters that will drive the app functionality.
+Before building a Prophecy App, start by creating the pipeline it will run. You'll develop a pipeline that:
+
+- Ingests bakehouse review data from the SQL warehouse.
+- Filters the data by franchise location.
+- Saves the filtered data to a table.
+
+This pipeline will include parameters that end users can assign values to through the app interface.
+
+![App pipeline](img/app-pipeline.png)
 
 ### Create a pipeline parameter
 
@@ -104,7 +104,7 @@ To add a Data Preview component to your Prophecy App, you need to have a target 
 
 ## Create a new Prophecy App
 
-After you build the pipeline, create a business app to run it. Apps are created directly within projects as project components.
+After you build the pipeline, create a Prophecy App to run it. Apps are created directly within projects as project components.
 
 1. In the project browser, hover over **Apps** and click the **+** icon.
 1. Name the app `Reviews`.
