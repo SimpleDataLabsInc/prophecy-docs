@@ -53,9 +53,9 @@ Click the trashcan icon at the top right corner of the filter to remove it.
 
 ## Add to Prophecy App
 
-If you create a chart in the Data Explorer that would be useful in a Prophecy App, you can add it to an app template.
+If you’ve created a chart in the Data Explorer that would be useful in a Prophecy App, you can add it directly to an app template. This allows end users to view the chart and explore the data generated when the app runs.
 
-This way, end users can view your chart to visualize the data generated when they run the app.
+Only charts based on the output of a Table gem can be added to Prophecy Apps. This is because the [Chart component](/analysts/business-application-components#charts) in an app must be built on a table as its data source.
 
 ![AddChartToApp](./img/add-chart-to-app.png)
 
