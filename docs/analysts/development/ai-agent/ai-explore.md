@@ -9,12 +9,12 @@ tags:
   - agent
 ---
 
-One way to leverage the Prophecy AI agent is to search your SQL warehouse, explore datasets, and generate insights with simple prompts. This way, you can add the appropriate sources to your pipeline that will undergo data processing. You must have source data in your pipeline to start building transformations.
+One way to leverage the Prophecy AI agent is to search your SQL warehouse, explore datasets, and generate insights with simple prompts. This allows you to add the appropriate sources to your pipeline that will undergo data processing. You must have source data in your pipeline to start building transformations.
 
-The following sections describe ways you can interact with the agent in this context.
+The following sections describe the ways you can interact with the agent.
 
 :::note
-Agent responses are generated dynamically and may vary slightly from one request to another.
+Agent responses are dynamically generated and may vary slightly from one request to another.
 :::
 
 ## Find tables in your SQL warehouse
@@ -50,11 +50,13 @@ The agent will provide a quick overview of key metadata, including the database 
 
 If you ask the AI agent to compare datasets, you can quickly assess which dataset is more suitable as a source for your pipeline by analyzing differences in schema structure, column names, data types, and size.
 
-This way, you can identify which dataset aligns better with your pipeline’s requirements, such as having the right fields, consistent naming conventions, or expected formats, without needing to inspect the full data.
+This allows you to identify which dataset aligns better with your pipeline’s requirements, such as having the right fields, consistent naming conventions, or expected formats, without needing to inspect the full data.
 
 ## View sample rows from a table
 
-To preview data from a table, ask the agent to return a sample. You can request a random sample from the table or specific rows, such as “the ten most recent purchases over $100”. The agent returns:
+To preview data from a table, ask the agent to return a sample. You can request a random sample from the table or specific rows, such as “the ten most recent purchases over $100”. 
+
+The agent returns:
 
 - A table showing the sample data
 - A **Preview** option for a closer look
@@ -94,7 +96,7 @@ To see a larger version of the chart, click **Preview**. This opens the data vis
 | Data          | <ul class="table-list"><li>View the underlying data</li><li>Download the data as a JSON, Excel, or CSV file</li><li>Show or hide columns</li></ul> |
 
 :::info
-Learn more about data visualization in [Charts](/analysts/charts).
+To learn more about data visualization, see [Charts](/analysts/charts).
 :::
 
 ## Sample prompts

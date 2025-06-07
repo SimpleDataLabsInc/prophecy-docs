@@ -16,7 +16,7 @@ As you build out your pipelines in SQL projects, Prophecy's AI agent is availabl
 - Providing previews of the input and output of suggested transformations
 - Generating data visualizations you can publish to business apps
 
-:::note
+:::important
 The AI agent cannot update pipelines that include [external sources and targets](/analysts/source-target).
 :::
 
@@ -51,9 +51,9 @@ Supported file types include CSV, Excel, and Parquet. See the [file upload](/ana
 
 ### Mentions
 
-Use @mentions to refer to specific datasets in your SQL warehouse. As you type, Prophecy suggests matching tables. This helps the agent understand which data you're referring to.
+To refer to a specific dataset in your SQL warehouse, prefix the dataset name with an `@`. As you type, Prophecy suggests table names that match what you enter. This helps the agent understand which data you're referring to.
 
-For example: `How many records are in the @transactions table?`
+For example, to see how many records are in a table named `transactions`, enter `How many records are in the @transactions table?`.
 
 ![Agent @mentions](img/agent-mentions.png)
 

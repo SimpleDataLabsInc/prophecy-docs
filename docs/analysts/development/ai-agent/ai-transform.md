@@ -19,7 +19,9 @@ You need at least one [Source gem](/analysts/source-target) in your pipeline to 
 
 ## Provide a transformation
 
-To generate a transformation, enter a prompt that describes the desired data operation. The agent returns:
+To generate a transformation, enter a prompt that describes the desired data operation.
+
+The agent returns:
 
 - One or more gems on the pipeline canvas
 - A description of the applied changes
@@ -49,7 +51,7 @@ To understand the agent changes:
 
 To revert changes or try another transformation from a previous state:
 
-1. Select **Restore** from a reply in the chat history
+1. Select **Restore** from the reply you want to revert to in the chat history.
 1. The pipeline will match the earlier version.
 
 :::note
