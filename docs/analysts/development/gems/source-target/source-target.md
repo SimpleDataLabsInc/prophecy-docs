@@ -8,20 +8,18 @@ tags: []
 
 Source and Target gems define how Prophecy reads and writes data in your pipeline.
 
-![Source/Target Gem Drawer](img/source-target-analysts.png)
-
 There are two types of sources and targets:
 
 - [Tables in your SQL data warehouse](#tables)
 - [Sources and targets from external systems](#external-sources-and-targets)
 
+![Source/Target Gem Drawer](img/source-target-analysts.png)
+
 :::caution
-When deciding between tables and external sources, consider the primary SQL connection in your Prophecy fabric. Processing tables natively in the SQL warehouse will be fast, and processing external data is slower.<br/>**Do not create an external connection that duplicates the primary SQL warehouse connection in your fabric.**
+When deciding between tables and external sources, consider the primary SQL connection in your Prophecy fabric. Processing tables natively in the SQL warehouse will be fast, while processing external data is slower. **Do not create an external connection that duplicates the primary SQL warehouse connection in your fabric.**
 :::
 
 ## Tables
-
-<span class="badge">SQL</span><br/><br/>
 
 Tables are natively read from and written to the SQL warehouse that is configured as your primary SQL connection in a Prophecy fabric. You can add existing tables from your data warehouse to Prophecy, or you can create new tables directly in Prophecy.
 
@@ -31,37 +29,23 @@ Tables are natively read from and written to the SQL warehouse that is configure
 | View  | A virtual table that derives data dynamically from a query. Slower for complex queries (computed at runtime). | Source or Target |
 | Seed  | Small CSV-format files that you can write directly in Prophecy.                                               | Source only      |
 
+:::tip
 Once you have used a table in a project, you can easily reuse that table as a source. Find you tables in the [project browser](/analysts/pipelines#sidebar) in the left sidebar.
+:::
 
-## External Sources and Targets
+## External sources and targets
 
-<span class="badge">Prophecy Automate</span><br/><br/>
+To use data from outside of your SQL warehouse, you can use external sources and targets. When you connect to an external data source, the data you read and write is not persisted in Prophecy. In other words, all data is transformed in memory—no data gets written to disk.
 
-To use data from outside of your SQL warehouse, you can use the following external sources and targets. This data is not persisted in Prophecy, but rather read through Prophecy.
+To use external sources and targets, you need to set up the corresponding [connections](docs/analysts/development/connections.md).
 
-### External connections
+## What's next
 
-To use external sources and targets, you need to set up the corresponding [connections](docs/analysts/development/connections.md). Review the following connections that Prophecy provides.
+View the complete set of source and target gems in the following sections.
 
-![Source gem connections](img/source-types.png)
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-#### Table connections
-
-The following connections support tabular sources and targets.
-
-- [Databricks](/administration/fabrics/prophecy-fabrics/connections/databricks)
-- [Snowflake](/administration/fabrics/prophecy-fabrics/connections/snowflake)
-- [MSSQL](/administration/fabrics/prophecy-fabrics/connections/mssql)
-- [MongoDB](/administration/fabrics/prophecy-fabrics/connections/mongodb)
-
-#### File connections
-
-The following connections support file sources and targets.
-
-| Connection type                                                                         | Supported file formats |
-| --------------------------------------------------------------------------------------- | ---------------------- |
-| [Amazon S3](/administration/fabrics/prophecy-fabrics/connections/s3)                    | CSV, JSON, XLSX, XML   |
-| [SFTP](/administration/fabrics/prophecy-fabrics/connections/sftp)                       | CSV, JSON, XLSX, XML   |
-| [Microsoft SharePoint](/administration/fabrics/prophecy-fabrics/connections/sharepoint) | CSV, JSON, XLSX, XML   |
-| [Databricks](/administration/fabrics/prophecy-fabrics/connections/databricks)           | CSV, JSON, XLSX, XML   |
-| [Smartsheet](/administration/fabrics/prophecy-fabrics/connections/smartsheet)           | XLSX                   |
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```
