@@ -29,21 +29,23 @@ When you open the Data Explorer, you'll only see the data profile of the data sa
 
 ![Expanded profile](img/expanded-profile.png)
 
-The expanded profile displays the following information:
+The expanded profile displays the following metrics:
 
-- **Data type**: The data type of the column.
-- **Unique values**: The number of unique values in the column.
-- **Longest value**: The longest value in the column and its length.
-- **Shortest value**: The shortest value in the column and its length.
-- **Most frequent value**: The most frequent value in the column and its number of occurrences.
-- **Least frequent value**: The least frequent value in the column and its number of occurrences.
-- **Minimum value**: The minimum value in the column.
-- **Maximum value**: The maximum value in the column.
-- **Average value length**: The average length of each value in the column.
-- **Null values**: The percent and number of null values in the column.
-- **Blank values**: The percent and number of blank values in the column.
-- **Non-blank values**: The percent and number of non-blank values in the column.
-- **Data summary**: An overview of the most common values in the column.
+| Metric                   | Description                                                       |
+| ------------------------ | ----------------------------------------------------------------- |
+| **Data type**            | Data type of the column.                                          |
+| **Unique values**        | Number of unique values in the column.                            |
+| **Longest value**        | Longest value in the column and its length.                       |
+| **Shortest value**       | Shortest value in the column and its length.                      |
+| **Most frequent value**  | Most frequent value in the column and its number of occurrences.  |
+| **Least frequent value** | Least frequent value in the column and its number of occurrences. |
+| **Minimum value**        | Minimum value in the column.                                      |
+| **Maximum value**        | Maximum value in the column.                                      |
+| **Average value length** | Average length of each value in the column.                       |
+| **Null values**          | Percent and number of null values in the column.                  |
+| **Blank values**         | Percent and number of blank values in the column.                 |
+| **Non-blank values**     | Percent and number of non-blank values in the column.             |
+| **Data summary**         | Overview of the most common values in the column.                 |
 
 :::tip
 You can click between columns in the expanded profile for quick access.

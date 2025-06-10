@@ -248,15 +248,27 @@ const sidebars = {
             },
           ],
         },
+
         {
           type: "category",
-          label: "Copilot",
+          label: "Agents and AI",
           link: {
             type: "doc",
-            id: "analysts/development/copilot/copilot-analysts",
+            id: "analysts/development/ai-agent/ai-features",
           },
           items: [
-            "analysts/development/copilot/gem-generation",
+            {
+              type: "category",
+              label: "Agent chat",
+              link: {
+                type: "doc",
+                id: "analysts/development/ai-agent/ai-chat",
+              },
+              items: [
+                "analysts/development/ai-agent/ai-explore",
+                "analysts/development/ai-agent/ai-transform",
+              ],
+            },
             "analysts/development/copilot/expression-generation",
             "analysts/development/copilot/auto-documentation",
             "analysts/development/copilot/generate-fix",
@@ -270,7 +282,26 @@ const sidebars = {
             type: "doc",
             id: "analysts/development/data-explorer/data-explorer",
           },
-          items: ["analysts/development/data-explorer/data-profile"],
+          items: [
+            "analysts/development/data-explorer/data-profile",
+            {
+              type: "category",
+              label: "Charts",
+              link: {
+                type: "doc",
+                id: "analysts/development/data-explorer/charts/charts",
+              },
+              items: [
+                "analysts/development/data-explorer/charts/area-chart",
+                "analysts/development/data-explorer/charts/bar-chart",
+                "analysts/development/data-explorer/charts/candlestick-chart",
+                "analysts/development/data-explorer/charts/line-chart",
+                "analysts/development/data-explorer/charts/map-chart",
+                "analysts/development/data-explorer/charts/pie-chart",
+                "analysts/development/data-explorer/charts/scatter-chart",
+              ],
+            },
+          ],
         },
         {
           type: "category",
@@ -327,15 +358,18 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Apps",
+      label: "Prophecy Apps",
       link: { type: "doc", id: "analysts/business-apps/business-apps" },
       items: [
         "analysts/business-apps/run-apps",
         {
           type: "category",
-          label: "Create apps",
-          link: { type: "doc", id: "analysts/business-apps/app-creation" },
-          items: ["analysts/business-apps/app-components"],
+          label: "App Builder",
+          link: { type: "doc", id: "analysts/business-apps/app-builder" },
+          items: [
+            "analysts/business-apps/app-creation",
+            "analysts/business-apps/app-components",
+          ],
         },
       ],
     },
