@@ -1204,6 +1204,10 @@ const config = {
             to: "/engineers/prophecy-libraries",
             from: "/extensibility/dependencies/prophecy-libraries",
           },
+          {
+            to: "/analysts/ai-chat",
+            from: "/analysts/gem-generation",
+          },
         ],
         /*
 
