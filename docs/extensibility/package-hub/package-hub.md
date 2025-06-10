@@ -60,6 +60,8 @@ You cannot change package components that have been imported in a project. You c
 
 ## Use a pipeline template
 
+You can use a pipeline template if you are a new Prophecy user in version 4.1 and above.
+
 To use a pipeline template:
 
 1. At the top left, select the **Template Hub** tab.
