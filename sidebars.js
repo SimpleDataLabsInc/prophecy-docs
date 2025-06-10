@@ -774,6 +774,7 @@ const sidebars = {
           label: "Package Hub",
           link: { type: "doc", id: "extensibility/package-hub/package-hub" },
           items: [
+            "extensibility/package-hub/template-hub",
             "extensibility/package-hub/shareable-pipelines",
             "extensibility/package-hub/shareable-datasets",
             "extensibility/package-hub/shareable-subgraphs",

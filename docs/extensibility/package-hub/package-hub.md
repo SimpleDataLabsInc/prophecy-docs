@@ -8,18 +8,26 @@ tags: [package-hub]
 
 To extend the functionality of a project, you can download **packages** from the Package Hub. Packages are **versioned projects** that contain shareable components, such as pipelines, gems, business rules, user-defined functions, jobs, macros, models, and more.
 
-The Package Hub includes both Prophecy-provided packages, as well as packages that you can publish yourself!
+The Package Hub includes Prophecy-provided packages and packages that you can publish yourself.
 
 ![Package Hub landing page](img/package-hub.png)
 
+The Template Hub provides pipeline templates you can run to further your understanding of how our gems work. Then, if you want to do the same thing in your project, you can copy it over to your own environment.
+
+![Template Hub landing page](img/template-hub.png)
+
 ## Add to the Package Hub
 
-If you want to create reuseable components for yourself and others:
+To create reuseable components for yourself and others:
 
 1. Create a project.
+
 1. Build the component(s).
+
 1. [Release and deploy](/engineers/deployment) the project.
+
 1. Share your project with other teams in the Access tab of the [project metadata](docs/getting-started/concepts/project.md) page.
+
 1. Publish the project to the Package Hub.
 
 ![Publish to Package Hub](img/package-hub-publish.png)
@@ -49,6 +57,26 @@ There are a few different ways to add a package to a project:
 ![Import from Package Hub](img/package-hub-import.png)
 
 You cannot change package components that have been imported in a project. You can only change the components from the source project.
+
+## Use a pipeline template
+
+You can use a pipeline template if you are a new Prophecy user in version 4.1 and above.
+
+To use a pipeline template:
+
+1. At the top left, select the **Template Hub** tab.
+
+1. Click on a template you would like to run.
+
+   Each template contains several tables, and at least one pipeline.
+
+   To learn about what each sample pipelines does, see [Template Hub](/analysts/template-hub).
+
+1. Select and run a pipeline.
+
+   :::note
+   Prophecy automatically attaches a fabric for you to use.
+   :::
 
 ## FAQ
 
