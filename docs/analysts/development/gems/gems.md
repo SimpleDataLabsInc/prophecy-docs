@@ -12,7 +12,7 @@ tags:
 [Gems](/docs/getting-started/concepts/gems.md) are functional units in a pipeline that perform tasks such as reading, transforming, writing, or handling other data operations. When you build pipelines in a SQL project, some gems will be powered by [Prophecy Automate](/administration/architecture), and some gems will be powered by SQL dbt.
 
 :::tip AI Agent
-Prophecy's AI agent can help you build, refine, and explain gems throughout your pipeline. To learn more, see  [AI & Agents](/analysts/ai-features).
+Prophecy's AI agent can help you build, refine, and explain gems throughout your pipeline. To learn more, see [AI & Agents](/analysts/ai-features).
 :::
 
 ## Categories
