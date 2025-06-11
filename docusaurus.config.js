@@ -1081,7 +1081,7 @@ const config = {
             from: "/Orchestration/reliable-ci-cd",
           },
           {
-            to: "/analysts/dependencies",
+            to: "/engineers/sql-dependencies",
             from: "/SQL/extensibility/dependencies",
           },
           {
