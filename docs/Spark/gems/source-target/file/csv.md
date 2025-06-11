@@ -130,7 +130,7 @@ The Target gem writes data to CSV files and allows you to optionally specify the
 | Ignore leading white spaces from values  | Whether to skip the leading whitespaces for values the Target gem writes.                                                                                                                                | true                               |
 | Ignore trailing white spaces from values | Whether to skip the trailing whitespaces for values the Target gem writes.                                                                                                                               | true                               |
 | Line Sep                                 | Defines the line separator to use when parsing.                                                                                                                                                          | `\n`                               |
-| Create single CSV file                   | Whether to create a single CSV file. <br/>Due to Spark's distributed nature, Prophecy by default writes output files as multiple separate partition files.                                               | false                              |
+| Create single CSV file                   | Whether to create a single CSV file. <br/>If false, Prophecy writes output files as multiple separate partition files. <br/>**This specific property is not compatible with UC standard clusters**.      | false                              |
 
 ### Supported write modes
 
