@@ -1,22 +1,30 @@
 ---
-title: Target models
-id: target-models
-slug: /engineers/target-models
-description: Target Models are a sequence of data transformation steps which define a single table or view
+title: Sources and targets
+id: sources-and-targets
+slug: /analysts/model-sources-and-targets
+description: Use models to read and write data
 tags:
-  - concept
-  - model
   - SQL
-  - table
+  - sources
+  - seeds
 ---
 
-The Target Model Gem has different tabs that help you set advanced options and make it easy for you define how you want to materialize your data using write formats. You can see the UI and capabilities by opening the Target model in your SQL projects.
+Model sources and target vary slightly from pipeline sources and targets. In brief, all models sources and targets must point to tables in the SQL warehouse.
 
-These simplified options allow you to use dbt Core™ properties without the need to have any dbt knowledge.
+## Sources
 
-## Target Model tabs
+When you create a new model, you need to define an input data source. The data source can be:
 
-The tabs within the Target model include the following:
+- [Table gem](/analysts/table). You can browse available tables in the **Environment** tab of the Project Editor.
+- Another model. Drag a model from the left sidebar onto your canvas to use it as a source.
+
+## Targets
+
+Target models let you define how you want to materialize your data using write formats.
+
+### Target model tabs
+
+When you open a Target model configuration, you'll see the following tabs:
 
 - **[Type & Format](type-and-format.md)**: Update the format of the model between different types of materializations
 - **[Location](location.md)**: Update the location by overwriting the Database, Schema, or Alias
@@ -26,17 +34,13 @@ The tabs within the Target model include the following:
 
 ![Target Model tabs](img/type-and-format.png)
 
-## dbt advance settings
+### dbt advanced settings
 
-You can find advance settings are available for defining model write formats and other DBT options. These include all dbt native settings, traditionally accessible from the yaml file.
+You can find advanced settings are available for defining model write formats and other DBT options. These include all dbt native settings, traditionally accessible from the `.yaml` file.
 
-If you're familiar with dbt, then you can navigate to and update the advance settings.
-
-- Click **...** > **Advance Settings**. The advance setting dialog opens.
+To open dbt advanced settings, click **...** > **Advanced Settings**. The object properties describe everything from physical locations, materialization logic, business metadata, and access control definitions.
 
 ![Advance Settings](img/advance-settings.png)
-
-The object properties describe everything from physical locations, materialization logic, business metadata, and access control definitions.
 
 ### dbt properties mapping
 
@@ -74,14 +78,3 @@ The following table maps all of the dbt properties for Databricks and Snowflake 
 | on_schema_change       | All              | Write Options    |
 | merge_exclude_columns  | Snowflake, Spark | Write Options    |
 | merge_update_columns   | Snowflake, Spark | Write Options    |
-
-## What's next
-
-To continue configuring your Target model, see the following pages:
-
-```mdx-code-block
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
-<DocCardList items={useCurrentSidebarCategory().items}/>
-```

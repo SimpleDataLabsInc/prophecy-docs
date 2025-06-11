@@ -43,9 +43,9 @@ As you develop your project, Prophecy automatically preserves your changes. In a
 
 When you publish a project, the new version becomes available for:
 
-- [Scheduled pipeline runs](docs/analysts/scheduling.md) (depending on the fabric)
-- [Package Hub](docs/analysts/extensibility/extensibility.md#package-hub) packages
-- [App Browser](docs/analysts/business-apps/business-apps.md) applications
+- [Scheduled pipeline runs](/analysts/scheduling) (depending on the fabric)
+- [Package Hub](/engineers/package-hub) packages
+- [App Browser](/analysts/business-applications) applications
 
 To learn more, visit our page on [project publication](/analysts/project-publication).
 

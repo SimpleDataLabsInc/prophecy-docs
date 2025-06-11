@@ -26,7 +26,7 @@ The Macro gem lets you use a macro that you have defined or imported in your SQL
 
 ## Example: dbt_utils
 
-For this example, assume you want to use the `dbt_utils` package as a [dependency](docs/analysts/extensibility/extensibility.md#dependencies) in your project.
+For this example, assume you want to use the `dbt_utils` package as a [dependency](/analysts/dependencies) in your project.
 
 1. Open the **Options** (ellipses) menu in the project header.
 1. Select **Dependencies**.

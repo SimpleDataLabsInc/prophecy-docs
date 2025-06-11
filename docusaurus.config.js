@@ -1081,7 +1081,7 @@ const config = {
             from: "/Orchestration/reliable-ci-cd",
           },
           {
-            to: "/engineers/sql-dependencies",
+            to: "/analysts/dependencies",
             from: "/SQL/extensibility/dependencies",
           },
           {
@@ -1197,7 +1197,7 @@ const config = {
             from: "/extensibility/gem-builder/spark-gem-builder",
           },
           {
-            to: "/engineers/dependencies",
+            to: "/engineers/spark-dependencies",
             from: "/extensibility/dependencies/spark-dependencies",
           },
           {
@@ -1207,10 +1207,6 @@ const config = {
           {
             to: "/analysts/ai-chat",
             from: "/analysts/gem-generation",
-          },
-          {
-            to: "/engineers/sql-dependencies",
-            from: "/analysts/dependencies",
           },
         ],
         /*
