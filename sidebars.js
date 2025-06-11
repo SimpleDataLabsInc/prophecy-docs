@@ -763,6 +763,7 @@ const sidebars = {
         {
           type: "category",
           label: "Dependencies",
+          link: { type: "doc", id: "extensibility/dependencies/dependencies" },
           items: [
             "extensibility/dependencies/spark-dependencies",
             "extensibility/dependencies/sql-dependencies",

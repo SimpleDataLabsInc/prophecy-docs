@@ -1208,6 +1208,10 @@ const config = {
             to: "/analysts/ai-chat",
             from: "/analysts/gem-generation",
           },
+          {
+            to: "/engineers/sql-dependencies",
+            from: "/analysts/dependencies",
+          },
         ],
         /*
 

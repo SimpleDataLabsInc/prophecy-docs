@@ -1,8 +1,8 @@
 ---
 title: SQL dependencies
 id: sql-dependencies
-slug: /analysts/dependencies
-description: Dependency management
+slug: /engineers/sql-dependencies
+description: Make use of third-party or custom code in your models and jobs
 tags:
   - dependencies
   - dbt
@@ -35,7 +35,7 @@ When adding dependencies, Prophecy validates that the dependency coordinates are
 
 :::info Invalid coordinates
 
-In rare cases, your dependency might be only accessible to the cluster or the build system but not Prophecy itself. If you're confident that the dependency is correct, but the validation error shows up, it's safe to press **Save Anyways** to ignore that warning.
+In rare cases, your dependency might be only accessible to the cluster or the build system but not Prophecy itself. If you're confident that the dependency is correct, but the validation error shows up, press **Save Anyway** to ignore that warning.
 
 :::
 
