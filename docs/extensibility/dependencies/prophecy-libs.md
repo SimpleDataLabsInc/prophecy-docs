@@ -19,7 +19,7 @@ For a list of the latest ProphecyLibs versions, see [Version Chart](/docs/releas
 
 Depending on your project language (Python or Scala), the appropriate Prophecy library will be added as a [dependency](docs/extensibility/dependencies/spark-dependencies.md) in your Prophecy project.
 
-Prophecy libraries are installed in your Databricks cluster when you attach a cluster in your project. The version installed will be the same version defined in your project dependency settings. You can easily [update](/engineers/dependencies#update-dependencies) the ProphecyLibs version of your project if necessary.
+Prophecy libraries are installed in your Databricks cluster when you attach a cluster in your project. The version installed will be the same version defined in your project dependency settings. You can easily [update](/engineers/spark-dependencies#update-dependencies) the ProphecyLibs version of your project if necessary.
 
 ## Functionality
 

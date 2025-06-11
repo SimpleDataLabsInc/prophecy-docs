@@ -17,7 +17,7 @@ by checking the column structure, reviewing the sample values, and confirming th
 
 ## Open the Data Explorer
 
-To use the Data Explorer, [run](/analysts/pipeline-execution/#interactive-execution) your pipeline to generate data samples. Click on any data sample in your pipeline to open the Data Explorer.
+To use the Data Explorer, run your pipeline to generate data samples. Click on any data sample in your pipeline to open the Data Explorer.
 
 ![Data sample in a pipeline](img/data-sample-analysts.png)
 
