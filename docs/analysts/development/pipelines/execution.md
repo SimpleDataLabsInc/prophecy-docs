@@ -12,15 +12,11 @@ While SQL projects leverage [dbt](https://docs.getdbt.com/docs/build/models) for
 
 The execution environment defined in a [Prophecy fabric](/administration/fabrics/prophecy-fabrics/) consists of multiple compute engines.
 
-- **SQL warehouse**: Your own external SQL environment used to store tables, create tables, and execute queries.
+- **SQL warehouse**: Your own external SQL environment used to store tables, create tables, and execute queries. Transformations that run in the SQL warehouse arer converted to dbt models under the hood. Learn more in [Models](/engineers/models).
 - **Prophecy Automate**: Runtime that handles orchestration and the flow of external data from systems like Salesforce and Tableau in and out of the pipeline. To learn more, jump to [External data handling](#external-data-handling).
 
-To view the underlying dbt models that drive pipeline transformations, select **Show Models** from the options menu in the left sidebar of a project.
-
-![Show Models](img/show-models.png)
-
 :::info
-Learn more about the relationship between these components in [Architecture](docs/administration/architecture.md).
+To find more information about the relationship between these components, visit [Architecture](docs/administration/architecture.md).
 :::
 
 ## Methods of pipeline execution

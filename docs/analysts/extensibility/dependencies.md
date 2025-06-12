@@ -1,5 +1,5 @@
 ---
-title: SQL dependencies
+title: SQL Dependencies
 id: dependencies
 sidebar_label: Dependencies
 slug: /analysts/dependencies
@@ -10,7 +10,7 @@ tags:
   - extensibility
 ---
 
-Dependencies allow you to reuse logic in your SQL projects, so you can build on work that’s already been tested and versioned. Dependencies are scoped at the project level, and can include packaged Prophecy projects, as well as external packages from GitHub or the dbt Hub.
+Dependencies allow you to reuse logic in your SQL projects, so you can build on work that’s already been tested and versioned. Dependencies are scoped at the project level, and can include [packaged Prophecy projects](/engineers/package-hub), as well as external packages from GitHub or the dbt Hub.
 
 Because packages can be improved over time, you can update your project dependencies whenever a new version is published. Updates are never required—your project will continue using the current version until you choose to upgrade.
 
@@ -56,13 +56,8 @@ dbt Hub dependencies have the following parameters:
 
 To manage your project dependencies, there are two options:
 
-- A) Open the **Manage Dependencies** dialog by clicking **... > Dependencies**.
-
-  ![View your dependencies](img/dependencies-view.png)
-
-- B) Open the **Manage Dependencies** dialog from the bottom left of the canvas, under **Dependencies**.
-
-  ![View your dependencies](img/dependencies-list.png)
+- A) Open the **Manage Dependencies** dialog by clicking **... > Dependencies** in the project header.
+- B) Open the **Manage Dependencies** dialog from the bottom left of the canvas, in the **Dependencies** panel.
 
 From here, you can add, edit, update, or remove dependencies from your project.
 
@@ -78,13 +73,17 @@ To add a dependency to your project:
 1. Click **Create**.
 1. Click **Reload and Save** to validate and download the new dependency.
 
-<!-- ![Project dependencies](img/sql-project-dependencies.png) -->
+![dbt Hub dependency](img/dbt-dependency.png)
 
-You can also browse packaged projects in the Package Hub and import them from there. Learn more about the Package Hub in the following section.
+:::tip
+You can also browse packaged projects in the [Package Hub](/engineers/package-hub) and import them from there.
+:::
 
 ## Component usage
 
-Dependencies will appear in the bottom left of your project. Expand a dependency to view the various functions, gems, and other components that it may contain.
+Depending on the dependency type, components may appear in the project differently. For example, if you add a project from the Package Hub as a dependency, new gems may appear automatically in the gem drawer.
+
+However, all of the dependencies and their components should appear in the **Dependencies** panel in the bottom left of the project editor. Expand a dependency to view the various functions, gems, and other components that it may contain. You can drag these components directly onto the visual canvas.
 
 ## Storage
 

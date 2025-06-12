@@ -3,7 +3,6 @@ title: Models
 id: models
 slug: /engineers/models
 description: SQL models define a single target table or view
-sidebar_position: 2
 tags:
   - concepts
   - Models
@@ -11,27 +10,45 @@ tags:
   - target
 ---
 
-Models transform data inside tables or views using SQL. Models follow the dbt build system and are ideal for in-warehouse transformations. You can develop the step-by-step logic of the data model visually with Prophecy gems. Alternatively, you can develop models directly in the code view, which is automatically synced with the visual view.
+In Prophecy, a model comprises a set of gems that processes data into **one** output. Each model corresponds to a **single table** in your database.
 
-In Prophecy, each model is a SQL file stored in Git, allowing you to version, release, and reuse logic through packages.
+Models follow the dbt build system and can run on either SQL fabrics or Prophecy fabrics. To work with the dbt build, each visual model is a SQL file stored in your project repository in Git.
 
-## Prerequisites
+## Model language
 
-To build models visually in Prophecy, you must:
+Prophecy’s visual interface supports SQL models only. If you’d like to define Python models, you can still do so within the code interface.
 
-- Create a SQL project using the [Normal Git Storage Model](/analysts/versioning).
-- Attach to a SQL or Prophecy fabric.
+## Create models
 
-If you are working on a project using a Simple Git Storage Model, you can still view and edit the code of [underlying models](/analysts/pipeline-execution#execution-environment) that drive data transformation. However, you cannot create or edit models visually.
+To add a new model to your project:
 
-:::note
-Prophecy’s visual interface supports SQL models only. If you’d like to define Python models, you can still use them within the code interface.
+1. Click **+ Add Entity**.
+1. Click **Model**.
+1. In the Add Model dialog, add a **Model Name**.
+1. Review the path where the model will be saved in the project repository. In most cases, the default `model` path is sufficient.
+1. Click **Create**.
+
+This opens a new model canvas that is prepopulated with a Target model. Note that the dbt framework restricts models to one target output.
+
+:::tip
+While you can develop models visually using gems, you can also write models directly in the code view, which is automatically synced with the visual view.
 :::
 
 ## Models vs pipelines
 
-Models are data transformations that run exclusively on a SQL warehouse using dbt. Because of this, models follow dbt limitations (for example, each model can only define one output). Pipelines, on the other hand, can use a Spark engine (for Python or Scala projects) or Prophecy Automate (for SQL projects) for computation. Because of this, pipelines are more flexible in their capabilities.
+Models and pipelines are two different SQL project components. The following table describes the differences between models and pipelines.
 
-:::tip
-Models can be dropped into pipelines as data sources.
-:::
+| Feature             | Models                                         | Pipelines                            |
+| ------------------- | ---------------------------------------------- | ------------------------------------ |
+| Execution           | SQL Warehouse                                  | SQL Warehouse + Prophecy Automate    |
+| Sources and Targets | Native Tables/Models                           | Native Tables/Models + External Data |
+| Outputs             | Limited to one output                          | No limitation                        |
+| Orchestration       | External Only (Databricks Jobs, Airflow, etc.) | External OR Prophecy Automate        |
+
+### Show underlying models
+
+Many visual transformations in pipelines are compiled into models under the hood. If you are working on a pipeline, you can view and edit the code of [underlying dbt models](/analysts/pipeline-execution#execution-environment) in a pipeline. However, you cannot visually edit these underlying models.
+
+To view these models, select **Show Models** from the options menu in the left sidebar of a project.
+
+![Show Models](img/show-models.png)
