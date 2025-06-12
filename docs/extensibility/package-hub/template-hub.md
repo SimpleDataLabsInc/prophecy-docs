@@ -6,6 +6,8 @@ description: Learn about the sample pipelines in Template Hub.
 tags: [template-hub]
 ---
 
+Template Hub is available for SQL projects.
+
 The following lists the pipelines available in each category.
 
 ## Transportation

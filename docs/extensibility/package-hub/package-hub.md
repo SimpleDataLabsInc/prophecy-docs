@@ -12,13 +12,13 @@ The Package Hub includes Prophecy-provided packages and packages that you can pu
 
 ![Package Hub landing page](img/package-hub.png)
 
-The Template Hub provides pipeline templates you can run to further your understanding of how our gems work. Then, if you want to do the same thing in your project, you can copy it over to your own environment.
+The Template Hub offers pipeline templates that you can run to deepen your understanding of how our gems work. Then, if you want to do the same thing in your project, you can copy it over to your environment.
 
 ![Template Hub landing page](img/template-hub.png)
 
 ## Add to the Package Hub
 
-To create reuseable components for yourself and others:
+To create reusable components for yourself and others:
 
 1. Create a project.
 
@@ -30,12 +30,16 @@ To create reuseable components for yourself and others:
 
 1. Publish the project to the Package Hub.
 
-![Publish to Package Hub](img/package-hub-publish.png)
+   ![Publish to Package Hub](img/package-hub-publish.png)
 
 Importantly, if you add a project to the Package Hub, **all of its components will be available for reuse**.
 
 :::info
 Packages in the Package Hub are only available to users in teams that you have shared the project with.
+
+After you share your dependency with a team, the team can add your project as a dependency to their new or existing projects. If the team does not see the package listed when they try to add it as a dependency, be sure the new project and dependent project are using the same language, such as Scala or Python.
+
+For example, if the new project is a Scala project, only Scala Packages can be added as dependencies.
 :::
 
 ## Update package
@@ -43,8 +47,10 @@ Packages in the Package Hub are only available to users in teams that you have s
 When you update a project that is published as a package, the changes will only be available in the Package Hub when you [release and deploy](/engineers/deployment) the project as a new version.
 
 :::note
-The release must be made from the branch specified on project creation (usually `main` or `master`). This ensures that teams will review code before releasing the project.
+The release must be made from the branch specified on project creation (usually `main` or `master`). This ensures that teams will review the code before releasing the project.
 :::
+
+If you want to change how the package works for a particular project without changing the original package, clone the packaged project and make your changes.
 
 ## Use package in project
 
@@ -56,7 +62,7 @@ There are a few different ways to add a package to a project:
 
 ![Import from Package Hub](img/package-hub-import.png)
 
-You cannot change package components that have been imported in a project. You can only change the components from the source project.
+You cannot change package components that have been imported into a project. You can only change the components from the source project.
 
 ## Use a pipeline template
 
@@ -70,26 +76,13 @@ To use a pipeline template:
 
    Each template contains several tables, and at least one pipeline.
 
-   To learn about what each sample pipelines does, see [Template Hub](/analysts/template-hub).
+   To learn about what each sample pipeline does, see [Template Hub](/analysts/template-hub).
 
 1. Select and run a pipeline.
 
    :::note
    Prophecy automatically attaches a fabric for you to use.
    :::
-
-## FAQ
-
-**Q: I shared a dependency to a team, but we don’t see any email notification.**
-A: The share “invitation” is not sent via email. Rather, the team would be able to add that project as a dependency to their new or existing projects.
-
-**Q: I shared a dependency to a team, but they don’t see the package listed when they try to add as a dependency.**
-A: Be sure the new project and dependent project are using the same language, like Scala or Python. If the new project is a Scala project, only Scala Packages can be added as dependencies.
-
-**Q: How do I use subgraphs from a dependency?**
-A: Like pipelines, subgraphs can be used by dependent projects via [configurable variables](/engineers/shareable-subgraphs).
-
-**Q: How can I change how the package works for only my project?** A: If you want to tweak the functionality of a package for your own needs without affecting others, you can **clone** the packaged project and make your changes. This way, you will not change the original package.
 
 ## What's next
 
