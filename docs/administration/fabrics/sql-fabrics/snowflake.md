@@ -52,4 +52,4 @@ SQL models can be scheduled using Airflow to run on Snowflake. Create an [Airflo
 
 ## What's next
 
-Attach a fabric to your SQL project and begin [data modeling](/engineers/data-models)!
+Attach a fabric to your SQL project and begin [data modeling](/engineers/models)!

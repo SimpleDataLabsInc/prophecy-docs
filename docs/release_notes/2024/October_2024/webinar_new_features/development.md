@@ -66,4 +66,4 @@ Click [here](/engineers/write-options-target-model) for further details.
 <iframe src="https://fast.wistia.net/embed/iframe/w4i7kf99kz?seo=false?videoFoam=true" title="CustomGemsSQL" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-Click [here](docs/extensibility/gem-builder/sql-gem-builder.md) for further details.
+Click [here](/analysts/gem-builder) for further details.

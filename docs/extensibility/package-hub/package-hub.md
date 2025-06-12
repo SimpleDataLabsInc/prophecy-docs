@@ -80,7 +80,7 @@ To use a pipeline template:
 
 ## Prophecy-provided packages
 
-Explore Prophecy-provided packages in the Package Hub to find extra gems and pipelines that may be helpful for your projects. For example, the `ProphecyDatabricksSqlSpatial` package includes gems like [CreatePoint](/analysts/create-point) and [Distance](/analysts/distance), making it easy to work with spatial data in your pipelines.
+Explore Prophecy-provided packages in the Package Hub to find extra gems and pipelines that may be helpful for your projects. For example, the `ProphecyDatabricksSqlSpatial` package includes gems like [CreatePoint](/analysts/create-point) and [Distance](/analysts/distance) that can help you handle spatial data in your pipelines.
 
 Gems that pertain to certain Prophecy-provided packages are specified in the documentation.
 
