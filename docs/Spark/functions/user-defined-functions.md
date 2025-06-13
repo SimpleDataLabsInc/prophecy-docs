@@ -85,11 +85,8 @@ object UDFs extends Serializable {
 
 }
 ```
-
 </TabItem>
 </Tabs>
-
-
 ````
 
 ## Import UDFs
@@ -107,3 +104,12 @@ SQL UDFs stored in Databricks Unity Catalog can be imported to Python projects a
    ![img](./img/sql-call-function.png)
 
 4. If the Fabric is updated, click the list of functions inside the Environment browser. This will refresh to reflect the functions available according to the new Fabric's credentials.
+
+### UDFs across pipelines
+
+By default, UDFs in a pipeline are defined at the project level. That means that the UDF is accessible to all pipelines in the project immediately.
+As you open a pipeline, Prophecy copies the UDFs to the code of that pipeline. They would also see the same changes reflected in the uncommitted changes for their pipeline.
+
+:::caution
+Prophecy only copies the UDF code to the code view after you open the pipeline. This means that if you edit or add a UDF in a pipeline, you see uncommitted changes for another pipeline whenever you open it.  
+:::
