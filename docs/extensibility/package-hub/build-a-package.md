@@ -6,19 +6,13 @@ description: Learn how to build a package in Package Hub where you can share dat
 tags: []
 ---
 
-Within Package Hub, you can build your package where you can share [datasets](#datasets), [pipelines](#pipelines), [subgraphs](#subgraphs), and [user-defined functions](#user-defined-functions) across projects.
+Within Package Hub, you can build your package where you can share [datasets](#datasets), [pipelines](#pipelines), [subgraphs](#subgraphs), and [user-defined functions (UDFs)](#user-defined-functions) across Spark projects.
+
+This page shows how to build a package with datasets, pipelines, subgraph, and UDFs. You can add additional components in your package such as business rules and gems.
 
 ## Datasets
 
-You can share a [dataset](/engineers/dataset) across your pipelines, but be cautious when you share it across projects.
-
-### Datasets across pipelines
-
-When you add a new dataset as a Source or Target in your pipeline, you can immediately use the dataset in all your pipelines in that project. You can also use that dataset as a Source or Target in other pipelines.
-
-If you modify the dataset in one pipeline, Prophecy automatically modifies the dataset in each pipeline using it.
-
-### Datasets across projects
+You can share a [dataset](/engineers/dataset) across projects.
 
 A dataset in Prophecy points to your actual data in your data storage solution. Prophecy does not store any data, so we recommend not configuring datasets in a package and leaving datasets configurable in the project where you use them.
 
@@ -26,21 +20,75 @@ Importantly, access to the actual data depends on your personal access token or 
 
 ## Pipelines
 
-You can share pipelines from one project to another project and run it with a Config in the dependent projects. This allows data administrators to create deployment templates for the pipelines that use the best practices for authorization, notifications, error handling, and logging information.
+You can share pipelines from one project to another project and run it with a [Config](/engineers/configurations) in the dependent projects. This allows data administrators to create deployment templates for the pipelines that use the best practices for authorization, notifications, error handling, and logging information.
 
-### Example scenario
+:::note
+If you modify anything from an existing or new pipeline, you must publish these updates as a new version for the package to pick up the changes. Then, you must manually update the project dependency to get the updated package version.
+:::
 
-For example, if your data administrator creates a pipeline in a project called `base_project`, they can add Config variables to the pipeline. Then, if you reference `base_project` in another project called `new_project`, you can reference the Config variables in your pipeline from `base_project` in `new_project`.
+### Prepare a pipeline
 
-You can also interactively run pipelines, or schedule them in jobs. If you interactively run a pipeline from `base_project`, you need to create a Config in `new_project`. Then, the pipeline is visible in `new_project`.
+To update a Config for a pipeline:
 
-For jobs, you do not need to import a pipeline. When you create a job in `new_project`, you can select any pipeline from `base_project` in the pipeline operator. All Config values from `base_project` and `new_project` are then available here in the job.
+1. Open the pipeline you want to create a Config for.
 
-If you modify anything from an existing or new pipeline, Prophecy updates `new_project` after you release `base_project`, and updates the dependency in `new_project`.
+1. At the top of the window, click **Config**.
+
+1. Click the **Config** tab.
+
+1. On the top right, select the Config you want to update.
+
+1. Update the values in teh Config.
+
+1. Click **Save**.
+
+### Interactively run a pipeline
+
+If you interactively run a pipeline from your current project, you need to create a Config in your other project. Then, the pipeline is visible in other project.
+
+To interactively run a pipeline:
+
+1. Hover over the play button at the bottom right corner of the screen, and click **...**.
+
+   The **Interactive Run Configuration** modal appears.
+
+1. (Optional) If you want to only use a subset of your data for the input, toggle on **Limit Input records** and enter the amount you want to use.
+
+1. (Optional) If you want to no longer use the pipelines data sampling settings, toggle off **Data Sampling**.
+
+   By default, data sampling is enabled. When left enabled, Data sampling uses the pipeline's data sampling settings. Prophecy samples data during the interactive run experience to provide the best debugging experience for users.
+
+1. Select the configuration you want to run in the **Configuration** drop down.
+
+1. Click the play button to run your pipeline.
+
+### Schedule a pipeline
+
+To schedule a pipeline to run:
+
+1. In the left side bar, hover over **Jobs** and click **+**.
+
+1. Enter your jobs **Name**, and update the **Schedule Interval** to how often you would like it to run.
+
+   To learn more about scheduling, see [Scheduling](/analysts/scheduling).
+
+1. Assure the other fields are accurate.
+
+1. Click **Create New**.
+
+   Notice that your new schedule appears under **Jobs** in teh left side bar.
+
+1. At the top left of the screen, click **Pipeline**.
+
+1. Open the Pipeline gem, and select the pipeline you want to schedule.
+
+1. Select the configuration you want to run with the pipeline.
+
+1. Click **Save**.
 
 ## Subgraphs
 
-You can share published [subgraphs](/engineers/subgraph) across your pipelines and projects. This helps central Data Platform teams to build reusable code to cover a wide variety of business needs, such as encryption, decryption, or identity masking, and have their Data Practitioners depend on that reusable code.
+You can share published [subgraphs](/engineers/subgraph) across your pipelines. This helps central Data Platform teams to build reusable code to cover a wide variety of business needs, such as encryption, decryption, or identity masking, and have their Data Practitioners depend on that reusable code.
 
 ### Configurable subgraphs
 
@@ -54,7 +102,9 @@ You can only edit subgraph Configs in the subgraph. Also, Prophecy shows subgrap
 
 ### Subgraphs across pipelines
 
+:::note
 You can add a subgraph to any pipeline in the same project after you publish it.
+:::
 
 To publish a subgraph:
 
@@ -62,30 +112,15 @@ To publish a subgraph:
 
 1. At the top right corner, click **Publish**.
 
-1. Enter the **Subgrah Name**, **Package Name**, and optinally, the **Description**.
+1. Enter the **Subgraph Name**, **Package Name**, and optionally, the **Description**.
 
 1. Click **Save**.
 
 Notice that the **Publish** button now says **Published (Edit details)**.
 
-### Subgraphs across projects
-
-After you release the subgraph in your current project and add it as a dependency on another project, you can use the subgraph from your current project in your other project.
-
 ## User-defined functions
 
-You can share [user-defined functions (UDF)](docs/Spark/functions/user-defined-functions.md) across your pipelines and projects.
-
-### UDFs across pipelines
-
-By default, UDFs in a pipeline are defined at the project level. That means that the UDF is accessible to all pipelines in the project immediately.
-As you open a pipeline, Prophecy copies the UDFs to the code of that pipeline. They would also see the same changes reflected in the uncommitted changes for their pipeline.
-
-:::caution
-Prophecy only copies the UDF code to the code view after you open the pipeline. This means that if you edit or add a UDF in a pipeline, you see uncommitted changes for another pipeline whenever you open it.  
-:::
-
-### UDFs across projects
+You can share [user-defined functions (UDF)](docs/Spark/functions/user-defined-functions.md) across your projects.
 
 After you add your UDF as a dependency to another project, you can use all UDFs from your current project in your other project.
 

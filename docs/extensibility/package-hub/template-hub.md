@@ -6,9 +6,9 @@ description: Learn about the sample pipelines in Template Hub.
 tags: [template-hub]
 ---
 
-Template Hub is available for SQL projects.
+The Template Hub only provides example SQL pipelines.
 
-The following lists the pipelines available in each category.
+The following lists the SQL pipelines available in each category.
 
 ## Transportation
 

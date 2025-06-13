@@ -57,6 +57,10 @@ Read [here](/engineers/package-hub) for more details on project as a dependency.
 
 ![Use_subgraph](img/Use_new_subgraph.png)
 
+:::note
+After you release the subgraph in your current project and add it as a dependency on another project, you can use the subgraph from your current project in your other project.
+:::
+
 ## What's next
 
 To learn more about Spark Subgraphs, see the following pages:

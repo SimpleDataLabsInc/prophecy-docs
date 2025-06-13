@@ -37,7 +37,7 @@ Importantly, if you add a project to the Package Hub, **all of its components wi
 :::info
 Packages in the Package Hub are only available to users in teams that you have shared the project with.
 
-After you share your dependency with a team, the team can add your project as a dependency to their new or existing projects. If the team does not see the package listed when they try to add it as a dependency, be sure the new project and dependent project are using the same language, such as Scala or Python.
+After you share your dependency with a team, users in the team can add your project as a dependency to their new or existing projects. If the team does not see the package listed when they try to add it as a dependency, be sure the new project and dependent project use the same language, such as Scala or Python.
 
 For example, if the new project is a Scala project, only Scala Packages can be added as dependencies.
 :::
