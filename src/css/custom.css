@@ -157,14 +157,16 @@ img {
 /* Badge styles */
 
 .badge {
-  color: var(--ifm-font-color-base);
-  background-color: var(--ifm-code-background);
-  border: var(--ifm-badge-border-width) solid var(--ifm-badge-border-color);
+  color: #fcfcfd;
+  background-color: #1d2939;
   border-radius: 50rem;
-  font-size: inherit;
+  font-size: 85%;
+  margin-right: 5px;
   font-weight: var(--ifm-font-weight-bold);
   line-height: 1;
   padding: var(--ifm-badge-padding-vertical) var(--ifm-badge-padding-horizontal);
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .badge-dependency,
@@ -173,7 +175,7 @@ img {
   align-items: center;
   border: var(--ifm-badge-border-width) solid var(--ifm-badge-border-color);
   border-radius: 50rem;
-  font-size: 75%;
+  font-size: 85%;
   font-weight: var(--ifm-font-weight-bold);
   line-height: 1;
   overflow: hidden;
@@ -197,6 +199,7 @@ img {
 
 /* Hover effect */
 
+.badge:hover,
 .badge-dependency:hover,
 .badge-spark:hover {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);

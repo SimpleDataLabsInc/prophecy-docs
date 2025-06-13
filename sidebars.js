@@ -348,7 +348,7 @@ const sidebars = {
             "analysts/development/models/configuration",
             {
               type: "category",
-              label: "Modeling Gems",
+              label: "SQL Gems",
               link: {
                 type: "doc",
                 id: "analysts/development/models/gems/sql-gems",

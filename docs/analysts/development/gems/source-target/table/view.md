@@ -6,7 +6,13 @@ description: Views in the SQL warehouse
 tags: []
 ---
 
-<span class="badge">SQL</span><br/><br/>
+import SQLRequirements from '@site/src/components/sql-gem-requirements';
+
+<SQLRequirements
+  execution_engine="SQL Warehouse"
+  sql_package_name=""
+  sql_package_version=""
+/>
 
 Views are virtual tables computed at runtime that derive data dynamically from a query.
 

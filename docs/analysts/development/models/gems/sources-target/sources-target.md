@@ -9,14 +9,22 @@ tags:
   - seeds
 ---
 
-Model sources and target vary slightly from pipeline sources and targets. In brief, all models sources and targets must point to tables in the SQL warehouse.
+import SQLRequirements from '@site/src/components/sql-gem-requirements';
+
+<SQLRequirements
+  execution_engine="SQL Warehouse"
+  sql_package_name=""
+  sql_package_version=""
+/>
+
+Model sources and targets vary slightly from those of the pipeline. The primary difference is that all model sources and targets must point to tables in the SQL warehouse.
 
 ## Sources
 
 When you create a new model, you need to define an input data source. The data source can be:
 
-- [Table gem](/analysts/table). You can browse available tables in the **Environment** tab of the Project Editor.
-- Another model. Drag a model from the left sidebar onto your canvas to use it as a source.
+- Another model. You can drag a model from the Project tab of the left sidebar onto your canvas to use it as a source.
+- A [Table gem](/analysts/table). You can either use pre-configured tables from the Project tab of the left sidebar, or you can browse SQL warehouse tables in the Environment tab of the left sidebar.
 
 ## Targets
 

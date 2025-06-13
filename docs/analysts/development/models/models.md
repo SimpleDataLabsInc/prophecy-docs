@@ -22,7 +22,7 @@ Prophecy’s visual interface supports SQL models only. If you’d like to defin
 
 To add a new model to your project:
 
-1. Click **+ Add Entity**.
+1. Click **+ Add Entity** from the bottom of Project tab of the left sidebar.
 1. Click **Model**.
 1. In the Add Model dialog, add a **Model Name**.
 1. Review the path where the model will be saved in the project repository. In most cases, the default `model` path is sufficient.
@@ -36,7 +36,7 @@ While you can develop models visually using gems, you can also write models dire
 
 ## Models vs pipelines
 
-Models and pipelines are two different SQL project components. The following table describes the differences between models and pipelines.
+Models and pipelines are two different SQL project components. The following table describes the key differences between models and pipelines.
 
 | Feature             | Models                                         | Pipelines                            |
 | ------------------- | ---------------------------------------------- | ------------------------------------ |
@@ -49,6 +49,6 @@ Models and pipelines are two different SQL project components. The following tab
 
 Many visual transformations in pipelines are compiled into models under the hood. If you are working on a pipeline, you can view and edit the code of [underlying dbt models](/analysts/pipeline-execution#execution-environment) in a pipeline. However, you cannot visually edit these underlying models.
 
-To view these models, select **Show Models** from the options menu in the left sidebar of a project.
+To view these models, select **Show Models** from the **...** menu in the left sidebar of a project.
 
 ![Show Models](img/show-models.png)

@@ -9,7 +9,13 @@ tags:
   - parse
 ---
 
-<span class="badge">SQL</span><br/><br/>
+import SQLRequirements from '@site/src/components/sql-gem-requirements';
+
+<SQLRequirements
+  execution_engine="SQL Warehouse"
+  sql_package_name=""
+  sql_package_version=""
+/>
 
 The XMLParse gem lets you parse XML that is included in a column of your table.
 

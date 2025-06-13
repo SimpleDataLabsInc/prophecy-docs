@@ -12,9 +12,9 @@ tags:
 
 Dependencies allow you to reuse logic in your SQL projects, so you can build on work that’s already been tested and versioned. Dependencies are scoped at the project level, and can include [packaged Prophecy projects](/engineers/package-hub), as well as external packages from GitHub or the dbt Hub.
 
-Because packages can be improved over time, you can update your project dependencies whenever a new version is published. Updates are never required—your project will continue using the current version until you choose to upgrade.
+Because packages can be improved over time, you can update your project dependencies whenever a new version is published. Your project will continue to use the current version until you choose to upgrade.
 
-## Types
+## Dependency types
 
 There are three types of dependencies for SQL projects.
 

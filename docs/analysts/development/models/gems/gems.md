@@ -11,27 +11,16 @@ tags:
   - cte
 ---
 
-In Prophecy and dbt, [models](/engineers/models) are groups of SQL statements used to create a single table or view. Prophecy simplifies data modeling by visualizing the model as a series of steps, each represented by a [gem](/docs/getting-started/concepts/gems.md).
+In Prophecy and dbt, [models](/engineers/models) are groups of SQL statements used to create a single table or view. Prophecy simplifies data modeling by visualizing the model as a series of steps, each represented by a [gem](/analysts/gems).
 
-Each gem corresponds to a SQL statement, which users can construct through an intuitive visual interface. Prophecy handles the underlying complexity by deciding whether each gem should generate a CTE or a subquery. Users simply configure the gem's interface, and Prophecy integrates the resulting SQL into the larger data model.
+Each gem maps to a SQL statement. As you configure gems on the visual canvas, Prophecy automatically generates the corresponding SQL, determines whether to use a CTE or subquery for each step, and integrates your changes into the overall model.
 
-The table below lists each gem available for models.
+## Identifying SQL gems
 
-| Gem                                                            | Description                                                                                                           |
-| -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| [Model Source and Target](/analysts/model-sources-and-targets) | Read and write data using dbt models.                                                                                 |
-| [Aggregate](/analysts/aggregate)                               | Performs aggregation operations on datasets, such as computing sums, averages, and counts.                            |
-| [Deduplicate](/analysts/deduplicate)                           | Removes duplicate records from a dataset to ensure data uniqueness and integrity.                                     |
-| [Except](/analysts/except)                                     | Extract rows that are present in the first table but absent from all subsequent tables.                               |
-| [Filter](/analysts/filter)                                     | Filters records in a dataset based on specified conditions, allowing for the selection of relevant data.              |
-| [FlattenSchema](/analysts/flatten-schema)                      | Converts nested or hierarchical data structures into a flat table format.                                             |
-| [Intersect](/analysts/intersect)                               | Return only the rows that appear in all input tables.                                                                 |
-| [Join](/analysts/join)                                         | Combines two or more datasets based on a common key.                                                                  |
-| [Limit](/analysts/limit)                                       | Restricts the number of records in a dataset to a specified number.                                                   |
-| [Macro](/analysts/macro)                                       | Defines reusable code snippets or functions that can be invoked across multiple models.                               |
-| [OrderBy](/analysts/order-by)                                  | Sorts records in a dataset based on specified columns.                                                                |
-| [Reformat](/analysts/reformat)                                 | Changes the format or structure of data within a dataset, such as modifying date formats or string cases.             |
-| [Seed](/analysts/seed)                                         | Provides initial data to a pipeline or model, often used for testing or as reference data.                            |
-| [SQLStatement](/analysts/sql-statement)                        | Executes custom SQL statements within a pipeline or model, offering flexibility for complex transformations.          |
-| [Union](/analysts/union)                                       | Combine records from different sources.                                                                               |
-| [WindowFunction](/analysts/window)                             | Performs calculations across a set of table rows related to the current row (like running totals or moving averages). |
+Models run exclusively in your SQL warehouse and can only use gems supported in that environment.
+
+Gems that can run in SQL are marked with the following badge: <a href="https://docs.prophecy.io/administration/fabrics/prophecy-fabrics/"><span className="badge">SQL Warehouse</span></a>
+
+:::note
+Pipelines run on both a SQL warehouse and Prophecy Automate, making a broader set of gems available compared to models.
+:::
