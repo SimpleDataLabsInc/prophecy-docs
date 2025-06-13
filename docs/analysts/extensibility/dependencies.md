@@ -52,7 +52,7 @@ dbt Hub dependencies have the following parameters:
 | Package   | Package name or path (e.g., `dbt-labs/dbt_utils`). |
 | Version   | Package version or version range.                  |
 
-## Managing dependencies
+## Manage dependencies
 
 To manage your project dependencies, there are two options:
 
@@ -61,7 +61,7 @@ To manage your project dependencies, there are two options:
 
 From here, you can add, edit, update, or remove dependencies from your project.
 
-## Creating a new dependency
+## Create a new dependency
 
 To add a dependency to your project:
 
