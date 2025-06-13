@@ -55,4 +55,4 @@ If you want to crawl your warehouse metadata on a regular basis, you can set a c
 
 ## What's next
 
-Attach a fabric to your SQL project and begin [data modeling](/engineers/data-models)!
+Attach a fabric to your SQL project and begin [data modeling](/engineers/models)!

@@ -6,7 +6,13 @@ description: Perform addition of rows from multiple tables
 tags: []
 ---
 
-<span class="badge">SQL</span><br/><br/>
+import SQLRequirements from '@site/src/components/sql-gem-requirements';
+
+<SQLRequirements
+  execution_engine="SQL Warehouse"
+  sql_package_name=""
+  sql_package_version=""
+/>
 
 The Union gem lets you combine records from different tables for cases such as merging customer databases or aggregating logs from multiple servers.
 

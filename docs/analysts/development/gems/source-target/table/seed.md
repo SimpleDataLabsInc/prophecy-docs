@@ -6,7 +6,13 @@ description: Create small CSV-format source files directly in Prophecy
 tags: []
 ---
 
-<span class="badge">SQL</span><br/><br/>
+import SQLRequirements from '@site/src/components/sql-gem-requirements';
+
+<SQLRequirements
+  execution_engine="SQL Warehouse"
+  sql_package_name=""
+  sql_package_version=""
+/>
 
 Seeds are small CSV-format files that you can create in Prophecy to use as Source gems.
 

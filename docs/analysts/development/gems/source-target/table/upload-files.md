@@ -9,7 +9,13 @@ tags:
   - sql
 ---
 
-<span class="badge">SQL</span><br/><br/>
+import SQLRequirements from '@site/src/components/sql-gem-requirements';
+
+<SQLRequirements
+  execution_engine="SQL Warehouse"
+  sql_package_name=""
+  sql_package_version=""
+/>
 
 You can add a source table to your primary SQL warehouse by uploading a file directly onto the visual canvas. This gives you greater control over your data and how you incorporate it into your model transformation.
 

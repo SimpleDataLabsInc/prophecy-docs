@@ -9,7 +9,13 @@ tags:
   - prepare
 ---
 
-<span class="badge">SQL</span><br/><br/>
+import SQLRequirements from '@site/src/components/sql-gem-requirements';
+
+<SQLRequirements
+  execution_engine="SQL Warehouse"
+  sql_package_name=""
+  sql_package_version=""
+/>
 
 Sorts a model on one or more columns in ascending or descending order.
 

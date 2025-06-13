@@ -9,7 +9,13 @@ tags:
   - report
 ---
 
-<span class="badge">Prophecy Automate</span><br/><br/>
+import SQLRequirements from '@site/src/components/sql-gem-requirements';
+
+<SQLRequirements
+  execution_engine="Prophecy Automate"
+  sql_package_name=""
+  sql_package_version=""
+/>
 
 The TableauWrite gem lets you send data that updates the data sources that are utilized by Tableau dashboards.
 

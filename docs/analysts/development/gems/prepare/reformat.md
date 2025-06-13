@@ -9,7 +9,13 @@ tags:
   - prepare
 ---
 
-<span class="badge">SQL</span><br/><br/>
+import SQLRequirements from '@site/src/components/sql-gem-requirements';
+
+<SQLRequirements
+  execution_engine="SQL Warehouse"
+  sql_package_name=""
+  sql_package_version=""
+/>
 
 Transforms one or more column names or values by using expressions and/or functions. It's useful when we need to extract only the required columns or make changes column-wise.
 
