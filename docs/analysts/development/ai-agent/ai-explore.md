@@ -11,11 +11,13 @@ tags:
 
 One way to leverage the Prophecy AI agent is to search your SQL warehouse, explore datasets, and generate insights with simple prompts. This allows you to add the appropriate sources to your pipeline that will undergo data processing. You must have source data in your pipeline to start building transformations.
 
-The following sections describe the ways you can interact with the agent.
+The following sections describe the ways you can interact with the agent for data exploration.
 
 :::note
 Agent responses are dynamically generated and may vary slightly from one request to another.
 :::
+
+## Prerequisites
 
 ## Find tables in your SQL warehouse
 

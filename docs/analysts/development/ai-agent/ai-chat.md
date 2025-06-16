@@ -20,6 +20,10 @@ As you build out your pipelines in SQL projects, Prophecy's AI agent is availabl
 The AI agent cannot update pipelines that include [external sources and targets](/analysts/source-target).
 :::
 
+:::note
+Agent responses are dynamically generated and may vary slightly from one request to another.
+:::
+
 ## Interact with the Prophecy agent
 
 You can interact with the AI agent in the **Chat** tab on the left sidebar of your project.
