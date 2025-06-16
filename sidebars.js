@@ -337,6 +337,42 @@ const sidebars = {
           ],
         },
         "analysts/development/pipelines/logs",
+        {
+          type: "category",
+          label: "Models",
+          link: {
+            type: "doc",
+            id: "analysts/development/models/models",
+          },
+          items: [
+            "analysts/development/models/configuration",
+            {
+              type: "category",
+              label: "SQL Gems",
+              link: {
+                type: "doc",
+                id: "analysts/development/models/gems/sql-gems",
+              },
+              items: [
+                {
+                  type: "category",
+                  label: "Sources and Targets",
+                  link: {
+                    type: "doc",
+                    id: "analysts/development/models/gems/sources-target/sources-and-targets",
+                  },
+                  items: [
+                    "analysts/development/models/gems/sources-target/location",
+                    "analysts/development/models/gems/sources-target/schema",
+                    "analysts/development/models/gems/sources-target/sql-query",
+                    "analysts/development/models/gems/sources-target/type-and-format",
+                    "analysts/development/models/gems/sources-target/write-options",
+                  ],
+                },
+              ],
+            },
+          ],
+        },
       ],
     },
     {
@@ -354,7 +390,10 @@ const sidebars = {
       type: "category",
       label: "Extensibility",
       link: { type: "doc", id: "analysts/extensibility/extensibility" },
-      items: [],
+      items: [
+        "analysts/extensibility/dependencies",
+        "analysts/extensibility/sql-gem-builder",
+      ],
     },
     {
       type: "category",
@@ -630,53 +669,6 @@ const sidebars = {
         "Spark/project-best-practices",
       ],
     },
-    /// MODEL DEVELOPMENT
-    {
-      type: "category",
-      label: "Model development",
-      link: { type: "doc", id: "data-modeling/data-modeling" },
-      items: [
-        "data-modeling/Model",
-        {
-          type: "category",
-          label: "Gems",
-          link: { type: "doc", id: "data-modeling/gems/sql-gems" },
-          items: [
-            {
-              type: "category",
-              label: "Model sources",
-              link: {
-                type: "doc",
-                id: "data-modeling/gems/datasources/datasources",
-              },
-              items: [],
-            },
-            {
-              type: "category",
-              label: "Target models",
-              link: {
-                type: "doc",
-                id: "data-modeling/gems/target-models/target-models",
-              },
-              items: [
-                "data-modeling/gems/target-models/location",
-                "data-modeling/gems/target-models/schema",
-                "data-modeling/gems/target-models/sql-query",
-                "data-modeling/gems/target-models/type-and-format",
-                "data-modeling/gems/target-models/write-options",
-              ],
-            },
-          ],
-        },
-        {
-          type: "category",
-          label: "Execution",
-          link: { type: "doc", id: "data-modeling/execution/execution" },
-          items: [],
-        },
-        "data-modeling/configuration",
-      ],
-    },
     /// LINEAGE
     {
       type: "category",
@@ -766,7 +758,6 @@ const sidebars = {
           link: { type: "doc", id: "extensibility/dependencies/dependencies" },
           items: [
             "extensibility/dependencies/spark-dependencies",
-            "extensibility/dependencies/sql-dependencies",
             "extensibility/dependencies/prophecy-libraries",
           ],
         },
@@ -783,7 +774,6 @@ const sidebars = {
           type: "category",
           label: "Gem Builder",
           items: [
-            "extensibility/gem-builder/sql-gem-builder",
             "extensibility/gem-builder/spark-gem-builder",
             "extensibility/gem-builder/gem-builder-reference",
             "extensibility/gem-builder/gem-builder-ui",

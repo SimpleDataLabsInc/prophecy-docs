@@ -9,7 +9,13 @@ tags:
   - custom
 ---
 
-<span class="badge">Prophecy Automate</span><br/><br/>
+import SQLRequirements from '@site/src/components/sql-gem-requirements';
+
+<SQLRequirements
+  execution_engine="Prophecy Automate"
+  sql_package_name=""
+  sql_package_version=""
+/>
 
 Use the RestAPI gem to make API calls from your pipeline.
 

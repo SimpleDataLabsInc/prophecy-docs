@@ -588,4 +588,4 @@ This is especially helpful when you operate on the _columns_ of wide tables, as 
 
 ## What's next
 
-Now that you know how to create Spark gems, have a look at how to [create custom SQL gems](docs/extensibility/gem-builder/sql-gem-builder.md).
+Now that you know how to create Spark gems, have a look at how to [create custom SQL gems](/analysts/gem-builder).

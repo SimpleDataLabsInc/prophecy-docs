@@ -9,7 +9,13 @@ tags:
   - prepare
 ---
 
-<span class="badge">SQL</span><br/><br/>
+import SQLRequirements from '@site/src/components/sql-gem-requirements';
+
+<SQLRequirements
+  execution_engine="SQL Warehouse"
+  sql_package_name=""
+  sql_package_version=""
+/>
 
 When you import tables with variant data into Prophecy, they become columns with nested columns, and a [variant data type](/analysts/variant-schema), which is an array of values with more than one data type.
 

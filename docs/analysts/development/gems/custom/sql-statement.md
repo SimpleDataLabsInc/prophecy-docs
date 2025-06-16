@@ -9,7 +9,13 @@ tags:
   - custom
 ---
 
-<span class="badge">SQL</span><br/><br/>
+import SQLRequirements from '@site/src/components/sql-gem-requirements';
+
+<SQLRequirements
+  execution_engine="SQL Warehouse"
+  sql_package_name=""
+  sql_package_version=""
+/>
 
 Use a custom SQL statement in your pipeline. This gem supports SELECT statements.
 

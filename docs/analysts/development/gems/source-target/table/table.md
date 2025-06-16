@@ -6,7 +6,13 @@ description: Tables in the SQL warehouse
 tags: []
 ---
 
-<span class="badge">SQL</span><br/><br/>
+import SQLRequirements from '@site/src/components/sql-gem-requirements';
+
+<SQLRequirements
+  execution_engine="SQL Warehouse"
+  sql_package_name=""
+  sql_package_version=""
+/>
 
 Tables represent persistent storage of structured data in your SQL warehouse. In a pipeline, tables can serve as sources, targets, or intermediate stages. This is useful for adding checkpoints to long-running jobs, persisting intermediate results for debugging or auditing, and enabling downstream reuse of cleaned or transformed data.
 

@@ -6,7 +6,13 @@ description: Return only the rows that are common across all input datasets
 tags: []
 ---
 
-<span class="badge">SQL</span><br/><br/>
+import SQLRequirements from '@site/src/components/sql-gem-requirements';
+
+<SQLRequirements
+  execution_engine="SQL Warehouse"
+  sql_package_name=""
+  sql_package_version=""
+/>
 
 Use the Intersect Gem to return only the rows that appear in **all** input tables. This is useful for identifying overlapping data, such as customers who are active on multiple platforms, or transactions that appear across different systems or logs.
 

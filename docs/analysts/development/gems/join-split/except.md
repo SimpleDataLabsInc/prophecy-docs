@@ -6,7 +6,13 @@ description: Return rows from the first dataset that do not appear in any of the
 tags: []
 ---
 
-<span class="badge">SQL</span><br/><br/>
+import SQLRequirements from '@site/src/components/sql-gem-requirements';
+
+<SQLRequirements
+  execution_engine="SQL Warehouse"
+  sql_package_name=""
+  sql_package_version=""
+/>
 
 Use the Except gem to extract rows that are present in the **first table** but **absent** from all subsequent tables. This is useful for identifying gaps, such as missing orders, unprocessed records, or customers who haven’t returned.
 

@@ -12,6 +12,7 @@ tags:
 import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 <SQLRequirements
+  execution_engine="SQL Warehouse"
   sql_package_name="ProphecyDatabricksSqlBasics"
   sql_package_version="0.0.4+"
 />

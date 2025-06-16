@@ -84,6 +84,12 @@ To use a pipeline template:
    Prophecy automatically attaches a fabric for you to use.
    :::
 
+## Prophecy-provided packages
+
+Explore Prophecy-provided packages in the Package Hub to find extra gems and pipelines that may be helpful for your projects. For example, the `ProphecyDatabricksSqlSpatial` package includes gems like [CreatePoint](/analysts/create-point) and [Distance](/analysts/distance) that can help you handle spatial data in your pipelines.
+
+Gems that pertain to certain Prophecy-provided packages are specified in the documentation.
+
 ## What's next
 
 Check out our in-depth tutorials on creating shareable components!

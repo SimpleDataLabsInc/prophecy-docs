@@ -27,7 +27,7 @@ In this release, we've updated the UX and capabilities of the target model forma
 
 ![ModelWrites](./img/target-model.png)
 
-There are now the following tabs within the [target model](/engineers/target-models):
+There are now the following tabs within the [target model](/engineers/models):
 
 - **[Type & Format](/engineers/type-and-format-target-model)**: Update the format of the model, e.g., table, view, ephemeral, etc.
 - **[Location](/engineers/location-target-model)**: Update the location by overwriting the Database, Schema, or Alias

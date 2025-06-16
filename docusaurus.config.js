@@ -749,8 +749,12 @@ const config = {
             from: "/Spark/spark-streaming/transformations-streaming",
           },
           {
-            to: "/engineers/data-models",
+            to: "/engineers/models",
             from: "/data-modeling",
+          },
+          {
+            to: "/engineers/models",
+            from: "/engineers/data-models",
           },
           {
             to: "/engineers/models",
@@ -761,12 +765,20 @@ const config = {
             from: "/data-modeling/gems",
           },
           {
-            to: "/engineers/model-sources",
+            to: "/analysts/model-sources-and-targets",
             from: "/data-modeling/gems/datasources",
           },
           {
-            to: "/engineers/target-models",
+            to: "/analysts/model-sources-and-targets",
+            from: "/engineers/model-sources",
+          },
+          {
+            to: "/analysts/model-sources-and-targets",
             from: "/data-modeling/gems/target-models",
+          },
+          {
+            to: "/analysts/model-sources-and-targets",
+            from: "/engineers/target-models",
           },
           {
             to: "/engineers/location-target-model",
@@ -789,8 +801,12 @@ const config = {
             from: "/data-modeling/gems/target-models/write-options",
           },
           {
-            to: "/engineers/data-model-execution",
+            to: "/engineers/models",
             from: "/data-modeling/execution",
+          },
+          {
+            to: "/engineers/models",
+            from: "/engineers/data-model-execution",
           },
           {
             to: "/engineers/data-model-configurations",
@@ -1097,7 +1113,7 @@ const config = {
             from: "/Orchestration/reliable-ci-cd",
           },
           {
-            to: "/engineers/sql-dependencies",
+            to: "/analysts/dependencies",
             from: "/SQL/extensibility/dependencies",
           },
           {
@@ -1213,7 +1229,7 @@ const config = {
             from: "/extensibility/gem-builder/spark-gem-builder",
           },
           {
-            to: "/engineers/dependencies",
+            to: "/engineers/spark-dependencies",
             from: "/extensibility/dependencies/spark-dependencies",
           },
           {
@@ -1223,10 +1239,6 @@ const config = {
           {
             to: "/analysts/ai-chat",
             from: "/analysts/gem-generation",
-          },
-          {
-            to: "/engineers/sql-dependencies",
-            from: "/analysts/dependencies",
           },
         ],
         /*

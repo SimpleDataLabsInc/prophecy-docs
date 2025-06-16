@@ -1,30 +1,33 @@
 ---
-title: Gem Builder for SQL
+title: SQL Gem Builder
+sidebar_label: Gem Builder
 id: sql-gem-builder
 slug: /analysts/gem-builder
-description: Build gems using SQL
+description: Build custom gems for SQL models and pipelines
 tags:
   - gem builder
 ---
 
+[Gems](/docs/getting-started/concepts/gems.md) handle individual data processing tasks in a pipeline or model. While Prophecy offers dozens of gems out-of-the-box, you might want to create your own gems.
+
+The SQL Gem Builder lets you create and publish your own custom gems for SQL projects. Be sure to develop your gem code using the SQL dialect of your warehouse.
+
 :::caution Enterprise Only
-
 Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about the Enterprise offering.
-
 :::
 
-Each Prophecy model is composed of individual operations, or [Gems](/docs/getting-started/concepts/gems.md), that perform actions on data. While Prophecy offers dozens of gems out-of-the-box, some data practitioners want to extend this idea and create their own gems. Gem builder allows enterprise users to add custom gems. You can create custom source, target, and transformation gems, and then publish them for your team to use.
+## Gem language
 
-Our SQL Gem builder supports Databricks and Snowflake SQL. It's built on dbt Core™, allowing you to build upon existing dbt libraries to define new macros to use in your custom gem.
+The SQL Gem Builder supports Databricks SQL and Snowflake SQL. It's built on dbt Core™, allowing you to build upon existing dbt libraries to define new macros to use in your custom gem.
 
 You can create a gem that writes a reference to either of the following options:
 
 - A new user-defined macro
 - An existing macro present in a dependency (such as `dbt-utils`)
 
-## Getting Started
+## Getting started
 
-You can get started with creating your own gem by completing the following steps:
+Get started creating your own gem:
 
 1. Open a SQL project, and the click **Add Gem**.
 1. Enter a **Gem Name**.
@@ -76,7 +79,7 @@ from prophecy.cb.ui.uispec import *
 
 The following sections describe how to make edits to your gem's interface.
 
-### Parent Class
+### Parent class
 
 Every gem class needs to extend a parent class from which it inherits the representation of the overall gem. This includes the UI and the logic.
 
@@ -91,7 +94,7 @@ class macro_gem(MacroSpec):
 
 ```
 
-### Properties Classes
+### Properties classes
 
 There is one class that contains a list of the properties to be made available to the user for this particular gem. Think of these as all the values a user fills out within the template of this gem, or any other UI state that you need to maintain.
 
@@ -177,7 +180,7 @@ The `validate` method performs validation checks so that in the case where there
 
 ```
 
-### State Changes
+### State changes
 
 The `onChange` method is given for the UI State transformations. You are given both the previous and the new incoming state and can merge or modify the state as needed. The properties of the gem are also accessible to this function, so functions like selecting columns, etc. are possible to add from here.
 
@@ -203,7 +206,7 @@ The code for invoking the macro with the gem logic is defined in the `apply` fun
 
 ```
 
-### Macro Properties
+### Macro properties
 
 When Prophecy parses a macro invocation, it represents a macro definition in a default state. `MacroProperties` consists of the following:
 

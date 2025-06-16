@@ -6,7 +6,13 @@ description: Read and write from MSSQL database
 tags: []
 ---
 
-<span class="badge">Prophecy Automate</span><br/><br/>
+import SQLRequirements from '@site/src/components/sql-gem-requirements';
+
+<SQLRequirements
+  execution_engine="Prophecy Automate"
+  sql_package_name=""
+  sql_package_version=""
+/>
 
 Use a table from MSSQL as an external source or target.
 

@@ -8,7 +8,7 @@ tags:
   - custom
 ---
 
-<span class="badge">Prophecy Automate</span><br/><br/>
+<span class="badge">Spark Serverless</span><br/><br/>
 
 Use a custom Python script in your pipeline.
 
