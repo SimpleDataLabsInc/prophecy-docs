@@ -13,12 +13,6 @@ One way to leverage the Prophecy AI agent is to search your SQL warehouse, explo
 
 The following sections describe the ways you can interact with the agent for data exploration.
 
-:::note
-Agent responses are dynamically generated and may vary slightly from one request to another.
-:::
-
-## Prerequisites
-
 ## Find tables in your SQL warehouse
 
 Ask the agent to search for tables in your [primary SQL warehouse](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md). Based on your query, it returns:
@@ -113,3 +107,13 @@ Here are some sample prompts that you can ask to search, explore, and learn abou
 | View data sample | "Return the top ten highest sales from @daily_orders"                 |
 | Describe dataset | "Give me more details about @revenue_opportunities"                   |
 | Visualize data   | "Plot the sales by country"                                           |
+
+## Troubleshooting
+
+The AI agent depends on a [knowledge graph](/knowledge-graph) to retrieve metadata about components like datasets. If the agent does not recognize a table that you try to reference, it could be because the knowledge graph has not been indexed recently enough to capture the dataset. While the knowledge graph reindexes data sources once a day, you can manually trigger this action.
+
+There are a few ways to [refresh your tables](/knowledge-graph#refresh-tables):
+
+- When the agent cannot find the table you are looking for, it will suggest that you refresh tables.
+- If you open a list of suggested datasets from the agent and cannot find an existing data, you'll see the option to refresh tables.
+- To reindex a source and view the progress of the refresh, open a [connection's settings](/administration/fabrics/prophecy-fabrics/connections/) and trigger the refresh there.

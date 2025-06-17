@@ -27,7 +27,7 @@ In the following sections, let's explore how you will interact with connections 
 
 ### Environment browser
 
-Connections allow Prophecy to access specific data from external providers using your credentials. The data will appear in the [Environment browser](docs/analysts/development/pipelines/pipelines.md#sidebar) of the project sidebar, allowing you to easily locate data, explore data, and add data to your pipeline canvas. Data access permissions are inherited from your external user account.
+Connections allow Prophecy to access specific data from external providers using your credentials. The data will appear in the [Environment browser](/analysts/project-editor) of the project sidebar, allowing you to easily locate data, explore data, and add data to your pipeline canvas. Data access permissions are inherited from your external user account.
 
 ![Environment browser](img/environment-tab-connections.png)
 

@@ -9,7 +9,7 @@ tags:
   - knowledge graph
 ---
 
-Copilot works by enhancing the user’s prompt using a knowledge graph.
+Copilot works by enhancing prompts using a knowledge graph, or an internal map of your data environment. This gives Copilot the context it needs to generate accurate, relevant answers.
 
 ## Metadata
 
@@ -19,12 +19,20 @@ Knowledge graphs are generated per-team in Prophecy. Each knowledge graph includ
 
 ## Process
 
-Prophecy sends the enhanced prompt to OpenAI. The large language model (LLM) returns SQL or Spark code, and Prophecy verifies whether this code is valid. Once Prophecy fixes the code, Prophecy generates a visual pipeline and displays this pipeline to you for review.
+When you interact with Copilot, Prophecy follows a multi-step process to generate what you need. First, Copilot enriches your prompt using the knowledge graph. This step adds detailed context about your project’s datasets, schemas, and other entities, which helps the agent understand exactly what you're referring to. The enhanced prompt is then sent to OpenAI’s large language model (LLM), which returns SQL or Spark code based on the provided context.
 
-![Architecture](img/copilot_arch.png)
+Once the code is generated, Prophecy validates it and automatically corrects any errors when possible. After validation, Prophecy converts the code into a visual pipeline, which is displayed on the canvas for you to review and customize.
 
-## Which datasets are accessible to Prophecy Data Copilot?
+## Indexing
 
-Any dataset, source, or seed that is part of the linked (Databricks, Snowflake, etc.) catalog is accessible. That is, if you can access the datasets with your personal access token, then the datasets should appear in the Environment browser and Copilot can access them.
+For Spark, any dataset, source, or seed that is part of the linked (Databricks, Snowflake, etc.) catalog is accessible to the knowledge graph. That is, if you can access the datasets with your personal access token, then the datasets should appear in the Environment browser and Copilot can access them.
 
-Add any of these datasets from the Environment browser into your project canvas. Once the dataset is defined in the project, Copilot's AI capabilities will start making recommendations including that data source.
+For SQL projects, only datasets in the SQL warehouse are indexed in the knowledge graph. Prophecy automatically reindexes the SQL warehouse once a day. To make sure that Copilot and AI agent has the most up-to-date information, you can manually refresh tables.
+
+### Refresh tables
+
+If Copilot or the AI agent can't find the tables you reference, or if responses seem outdated, you can manually refresh the table index to pull in the latest metadata. There are a few ways to do this:
+
+- If the [agent](/analysts/ai-explore#troubleshooting) can’t locate a table during your conversation, it will prompt you to refresh the index.
+- In the left sidebar, click on the [Environment](/analysts/connections#environment-browser) tab. Below your connections, you’ll see a Refresh Tables button.
+- Open [connection](/administration/fabrics/prophecy-fabrics/connections/) details in your fabric settings. At the bottom of the connection dialog, you’ll find a Refresh Tables option along with a status indicator showing indexing progress.

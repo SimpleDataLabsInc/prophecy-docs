@@ -29,7 +29,15 @@ const sidebars = {
           label: "Concepts",
           items: [
             "getting-started/concepts/Fabric",
-            "getting-started/concepts/projects",
+            {
+              type: "category",
+              label: "Projects",
+              link: {
+                type: "doc",
+                id: "getting-started/concepts/project/projects",
+              },
+              items: ["getting-started/concepts/project/project-editor"],
+            },
             "getting-started/concepts/templates",
             "getting-started/concepts/pipelines",
             "getting-started/concepts/gems",
