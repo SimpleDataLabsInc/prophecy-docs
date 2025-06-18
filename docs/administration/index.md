@@ -7,19 +7,29 @@ tags:
   - cluster admin
 ---
 
-This documentation is designed to help administrators effectively manage users, resources, and configurations. There are two types of administrators: team admins and prophecy cluster admins. The navigation is divided by admin type to easily find relevant tasks.
+This documentation is designed to help administrators effectively manage users, resources, and configurations. There are two types of administrators: team admins and prophecy cluster admins. The navigation is divided by admin type to help you find relevant tasks.
 
 ### Team admins
 
-Team admins manage teams and create resources for their teams. There can be multiple team admins per team.
+Team admins manage teams and create resources for their [teams](docs/administration/teams-users/teamuser.md). This includes responsibilities like:
 
-For more information about teams, visit [Teams and users](docs/administration/teams-users/teamuser.md).
+- Adding and removing users from teams
+- Creating fabrics that correspond to different execution environments
+- Setting up connections with the appropriate credentials
+- Deploying projects to run scheduled pipelines
+
+There can be multiple team admins per team.
 
 ### Prophecy cluster admins
 
-Prophecy cluster admins manage clusters, infrastructure, compute resources, and Prophecy deployment.
+Prophecy cluster admins manage clusters, infrastructure, compute resources, and Prophecy deployment. This includes responsibilities such as:
 
-For more information about infrastructure, visit [Architecture](docs/administration/architecture.md).
+- Setting up authentication like SSO for the Prophecy environment
+- Managing audit log review and storage
+- Upgrading Prophecy to a newer version
+- Downloading system logs to send to Prophecy's Support team
+
+Prophecy automatically provisions one Prophecy cluster admin per deployment.
 
 ### Troubleshooting
 

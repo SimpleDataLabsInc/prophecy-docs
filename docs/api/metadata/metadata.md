@@ -1,31 +1,13 @@
 ---
-title: Prophecy API
-id: api
+title: Metadata API
+id: metadata
 sidebar_class_name: hidden
-description: Prophecy metadata available through the Prophecy API
-tags:
-  - PAT
-  - token
-  - Personal Access Token
-  - graphqlAPI
+slug: /api-internal/metadata
+description: Retrieve metadata with the GraphQL API
+tags: []
 ---
 
-## Prophecy metadata available through the Prophecy API
-
 Prophecy users can access their metadata using the Prophecy API. To access these APIs, users just create a Personal Access Token (PAT). Try accessing the Prophecy [GraphQL Schema](#get-the-prophecy-graphql-schema). One popular use case is to access Prophecy metadata through automated scripts and integrate this data into an existing data visualization system.
-
-## Personal Access Token
-
-A Personal Access Token (PAT) is the token which customer can use for authentication to our API servers.
-This will enable customers to use PAT in their scripts and integrate Prophecy seamlessly to their data visualization ecosystem.
-
-### Generate a PAT
-
-Create and Manage API tokens from the Access Tokens tab in the Prophecy UI [Settings](https://app.prophecy.io/metadata/settings) page. Also, check token usage and expiration. Copy the token you have generated, as this will not be displayed on Prophecy UI again. You can use this token for accessing any Read/Write APIs to access Metadata, Lineage, etc.
-
-:::note
-These tokens are per user and will inherit all the access from that user.
-:::
 
 ## Get the Prophecy GraphQL Schema
 

@@ -2,6 +2,7 @@
 title: Change External Git Provider API
 id: change-external-git-api
 sidebar_class_name: hidden
+slug: /api-internal/change-external-git
 description: Use this API to manage the Git provider configured for specific Prophecy projects
 tags: [git, api, gitlab, bitbucket, github]
 ---
@@ -15,7 +16,7 @@ You'll be able to perform the API call manually or using [Postman](#tips). If yo
 The steps below will work for all the Git providers supported in Prophecy.
 
 1. Login to Prophecy as the Team Admin.
-2. Generate a [Prophecy API token](/api/#personal-access-token).
+2. Generate a [Prophecy API token](/api).
 3. Craft the API calls as below.
 4. Submit the API call
 
