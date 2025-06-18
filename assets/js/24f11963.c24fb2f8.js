@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[177],{60476:e=>{e.exports=JSON.parse('{"tag":{"label":"PAT","permalink":"/tags/pat","allTagsPath":"/tags","count":1,"items":[{"id":"api/index","title":"Prophecy APIs","description":"Explore reference documentation for various Prophecy APIs","permalink":"/api/"}],"unlisted":false}}')}}]);

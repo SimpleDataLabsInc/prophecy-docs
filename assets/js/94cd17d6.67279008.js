@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[75119],{82324:a=>{a.exports=JSON.parse('{"tag":{"label":"graphqlAPI","permalink":"/tags/graphql-api","allTagsPath":"/tags","count":1,"items":[{"id":"api/api","title":"Prophecy API","description":"Prophecy metadata available through the Prophecy API","permalink":"/api/"}],"unlisted":false}}')}}]);
