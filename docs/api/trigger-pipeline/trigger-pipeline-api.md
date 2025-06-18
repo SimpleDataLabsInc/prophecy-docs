@@ -24,6 +24,10 @@ There are two endpoints:
 https://app.prophecy.io/api/trigger/pipeline
 ```
 
+:::info
+Replace the base URL with your environment URL for dedicated SaaS and self-hosted deployments.
+:::
+
 ### Request Headers {#request-headers-trigger}
 
 The following headers are required for the request.
@@ -96,6 +100,10 @@ This example shows the response to a request with an invalid fabric ID.
 ```
 https://app.prophecy.io/api/trigger/pipeline/{{runId}}
 ```
+
+:::info
+Replace the base URL with your environment URL for dedicated SaaS and self-hosted deployments.
+:::
 
 ### Request Headers {#request-headers-status}
 
