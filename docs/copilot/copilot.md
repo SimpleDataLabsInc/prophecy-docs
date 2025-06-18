@@ -29,7 +29,7 @@ Prophecy only tests prompts in English. Other languages may work, but support de
 
 ## Knowledge graph
 
-Prophecy's approach to AI assistance and agents leverages knowledge graphs of datasets, schemas, models, and pipelines to send enhanced prompts to large language models, receive SQL or Spark code, verify it, and generate visual gem components.
+Prophecy's approach to AI assistance and agents leverages knowledge graphs of datasets, schemas, models, and pipelines to send enhanced prompts to large language models, receive SQL code, verify it, and generate visual gem components.
 
 To learn more, visit [Knowledge graph](/knowledge-graph).
 

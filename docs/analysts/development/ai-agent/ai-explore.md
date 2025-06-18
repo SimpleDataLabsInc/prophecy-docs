@@ -110,9 +110,9 @@ Here are some sample prompts that you can ask to search, explore, and learn abou
 
 ## Troubleshooting
 
-The AI agent depends on a [knowledge graph](/knowledge-graph) to retrieve metadata about components like datasets. If the agent does not recognize a table that you try to reference, it could be because the knowledge graph has not been indexed recently enough to capture the dataset. While the knowledge graph reindexes data sources once a day, you can manually trigger this action.
+The AI agent depends on a [knowledge graph](/knowledge-graph) to retrieve metadata about components like datasets. If the agent does not recognize a table that you try to reference, it could be because the knowledge graph has not been indexed recently enough to capture the dataset.
 
-There are a few ways to [refresh your tables](/knowledge-graph#refresh-tables):
+There are a few ways to [refresh your tables](/knowledge-graph#refresh-tables) and include them in the knowledge graph:
 
 - When the agent cannot find the table you are looking for, it will suggest that you refresh tables.
 - If you open a list of suggested datasets from the agent and cannot find an existing data, you'll see the option to refresh tables.

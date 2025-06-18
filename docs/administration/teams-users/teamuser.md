@@ -8,7 +8,7 @@ tags:
   - users
 ---
 
-Teams represent groups of users who collaborate on projects and share access to resources. When you create a [project](docs/getting-started/concepts/project.md) or a [fabric](docs/getting-started/concepts/fabrics.md), you assign it to a team. All users in that team will have access to the relevant project or fabric.
+Teams represent groups of users who collaborate on projects and share access to resources. When you create a [project](/projects) or a [fabric](docs/getting-started/concepts/fabrics.md), you assign it to a team. All users in that team will have access to the relevant project or fabric.
 
 There are two types of teams:
 

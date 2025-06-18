@@ -51,7 +51,7 @@ To learn more, visit our page on [project publication](/analysts/project-publica
 
 ### Show version history
 
-Prophecy tracks different versions of your project that you save and publish. You can access the version history from the project editor or within the [project metadata](docs/getting-started/concepts/project.md#metadata).
+Prophecy tracks different versions of your project that you save and publish. You can access the version history from the project editor or within the [project metadata](/projects#metadata).
 
 From the version history, you can:
 

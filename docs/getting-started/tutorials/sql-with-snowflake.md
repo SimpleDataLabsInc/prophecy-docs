@@ -74,7 +74,7 @@ In the Provider tab, complete the following steps:
 
 ## Create a new project
 
-Next, let's build a new [project](/docs/getting-started/concepts/project.md) from scratch.
+Next, let's build a new [project](/projects) from scratch.
 
 1. Click the **Create Entity** button on the sidebar and choose **Create** on the project tile. The project creation screen will open.
 1. Fill in the project **Name** and **Description** (optional).
