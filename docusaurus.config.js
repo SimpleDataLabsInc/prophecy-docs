@@ -111,20 +111,15 @@ const config = {
               { type: "doc", docId: "index", label: "Product docs" },
               {
                 type: "doc",
-                docId: "administration/index",
-                label: "Administration docs",
-              },
-              {
-                type: "doc",
                 label: "API docs",
                 docId: "api/index",
               },
-              {
-                type: "doc",
-                label: "Release notes",
-                docId: "release_notes/release_notes",
-              },
             ],
+          },
+          {
+            to: "administration",
+            label: "Administration",
+            position: "left",
           },
           {
             to: "https://transpiler.docs.prophecy.io/",

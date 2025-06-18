@@ -13,10 +13,7 @@ Prophecy provides a set of APIs for interacting with your data engineering proje
 
 To start using Prophecy APIs, understand the following.
 
-- You must use a valid API Key to send requests to the API endpoints.
-
-  Jump to [Access Tokens](#access-tokens) for instructions on retrieving your API key.
-
+- You must use a valid API Key to send requests to the API endpoints. Jump to [Access Tokens](#access-tokens) for instructions.
 - Prophecy has an additional set of APIs that you can request through Prophecy Support. Reach out to [Support](mailto:support@prophecy.io) to learn more.
 
 ## Access Tokens
@@ -31,7 +28,7 @@ Prophecy uses your Personal Access Token (PAT) for authentication with our API s
 Here, you will see any PATs you have previously created. You can also find information such as creation date, expiration status, and time of last use.
 
 :::note
-Access tokens are per user. API permissions will be scoped to your user permissions.
+Access tokens are per user. API permissions are scoped to your user permissions.
 :::
 
 ### Generate an access token
