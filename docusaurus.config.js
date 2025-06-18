@@ -103,7 +103,19 @@ const config = {
           srcDark: "img/Prophecy Logo White.png",
         },
         items: [
-          { type: "doc", docId: "index", position: "left", label: "Docs" },
+          {
+            type: "dropdown",
+            label: "Docs",
+            position: "left",
+            items: [
+              { type: "doc", docId: "index", label: "Product docs" },
+              {
+                type: "doc",
+                label: "API docs",
+                docId: "api/index",
+              },
+            ],
+          },
           {
             to: "administration",
             label: "Administration",
@@ -112,7 +124,7 @@ const config = {
           {
             to: "https://transpiler.docs.prophecy.io/",
             position: "left",
-            label: "Transpiler",
+            label: "Migration guide",
           },
           {
             to: "/getting-help",
@@ -1147,10 +1159,6 @@ const config = {
           {
             to: "/engineers/gem-builder",
             from: "/extensibility/package-hub/Gem-builder",
-          },
-          {
-            to: "/api/active-users-api/",
-            from: "/settings/active-users-api/",
           },
           {
             to: "/engineers/project-lifecycle",

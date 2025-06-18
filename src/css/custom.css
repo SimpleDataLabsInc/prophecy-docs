@@ -351,3 +351,13 @@ img {
   font-family: monospace;
   background-color: var(--ifm-table-head-background);
 }
+
+/* API request formatting */
+
+.request-post {
+  color: #dc6803;
+}
+
+.request-get {
+  color: #40936c;
+}
