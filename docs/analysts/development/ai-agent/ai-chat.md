@@ -16,9 +16,13 @@ As you build out your pipelines in SQL projects, Prophecy's AI agent is availabl
 - Providing previews of the input and output of suggested transformations
 - Generating data visualizations you can publish to business apps
 
-:::important
-The AI agent cannot update pipelines that include [external sources and targets](/analysts/source-target).
+:::note
+Agent responses are dynamically generated and may vary slightly from one request to another.
 :::
+
+## Prerequisites
+
+The AI agent cannot update pipelines that include [external sources and targets](/analysts/source-target). Be sure to use only SQL-native tables in your pipeline to leverage AI agent.
 
 ## Interact with the Prophecy agent
 
@@ -41,11 +45,9 @@ Click the **paperclip** icon in the footer of the chat to upload files from your
 
 Uploading files this way is useful when:
 
-- **You have data that isn't yet in the warehouse**. For example, ad hoc CSVs or test data exported from another tool.
-
-- **You're testing transformations**. Use a small, local file to validate logic before applying it to large warehouse datasets.
-
-- **You need to enrich warehouse data with external data**. Upload a file and join with existing tables to accomplish this.
+- You have data that isn't yet in the warehouse.
+- You're testing transformations.
+- You need to enrich warehouse data with external data.
 
 Supported file types include CSV, Excel, and Parquet. See the [file upload](/analysts/upload-file) documentation for more details.
 

@@ -1,5 +1,5 @@
 ---
-title: Data privacy with Data Copilot
+title: Data privacy with Copilot
 id: copilot-data-privacy
 slug: /data-copilot-data-privacy
 sidebar_label: Data privacy
