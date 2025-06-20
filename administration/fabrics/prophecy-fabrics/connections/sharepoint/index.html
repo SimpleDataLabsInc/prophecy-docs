@@ -8,7 +8,7 @@
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/assets/css/styles.e16aecda.css">
-<script src="/assets/js/runtime~main.24d12c27.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.bf147821.js" defer="defer"></script>
 <script src="/assets/js/main.e40cae91.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -31,7 +31,7 @@
 <p>When you create a SharePoint connection in Prophecy, access permissions are tied to the credentials you use. This is because Prophecy uses your credentials to execute all data operations, such as reading from or writing to your document library. For example, if you are a <code>Visitor</code> on a site, you won&#x27;t be able to edit site content from Prophecy.</p>
 <p>To learn more about SharePoint permissions, <a href="https://support.microsoft.com/en-us/office/overview-site-governance-permission-and-sharing-for-site-owners-95e83c3d-e1b0-4aae-9d08-e94dcaa4942e" target="_blank" rel="noopener noreferrer">click here</a>.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="sharing-connections-within-teams">Sharing connections within teams<a href="#sharing-connections-within-teams" class="hash-link" aria-label="Direct link to Sharing connections within teams" title="Direct link to Sharing connections within teams">​</a></h2>
-<p>Connections in Prophecy are stored within <a href="/administration/fabrics/prophecy-fabrics/">fabrics</a>, which are assigned to specific teams. Once a SharePoint connection is added to a fabric, all team members that have access to the fabric can use the connection in their projects. No additional authentication is required—team members automatically inherit the access and permissions of the original connection.</p>
+<p>Connections in Prophecy are stored within <a href="/administration/fabrics/prophecy-fabrics/">fabrics</a>, which are assigned to specific teams. Once a SharePoint connection is added to a fabric, all team members that have access to the fabric can use the connection in their projects. No additional authentication is required—team members automatically inherit the access and permissions of the stored connection credentials.</p>
 <div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>caution</div><div class="admonitionContent_BuS1"><p>Be mindful of the access level granted by the stored credentials. Anyone on the team will have the same permissions—including access to sensitive data if allowed.</p><p>To manage this securely, consider creating a dedicated fabric and team for high-sensitivity connections. This way, only approved users have access to those credentials.</p></div></div>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="fetching-data">Fetching data<a href="#fetching-data" class="hash-link" aria-label="Direct link to Fetching data" title="Direct link to Fetching data">​</a></h2>
 <p>Prophecy fetches data from SharePoint in the following ways:</p>
