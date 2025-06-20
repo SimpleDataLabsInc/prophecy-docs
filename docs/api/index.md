@@ -7,7 +7,7 @@ tags:
   - api
 ---
 
-Prophecy provides a set of APIs for interacting with your data engineering projects. Use these APIs to trigger pipeline runs, monitor compute resources, fetch metadata, and integrate Prophecy with external systems.
+Prophecy provides a set of APIs for interacting with your Prophecy deployment. Use these APIs to trigger pipeline runs, fetch metadata, integrate Prophecy with external systems, and more.
 
 ## Getting started
 

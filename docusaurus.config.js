@@ -365,7 +365,7 @@ const config = {
             from: "/architecture/deployment/private-saas/download-logs",
           },
           {
-            to: "/administration/self-hosted/generate-api-key",
+            to: "/api",
             from: "/architecture/deployment/private-saas/generate-api-key",
           },
           {
@@ -1021,7 +1021,7 @@ const config = {
             from: "/metadata/git/git-resolve",
           },
           {
-            to: "/getting-help/prophecyAPI",
+            to: "/api",
             from: "/metadata/prophecyAPI",
           },
           {
@@ -1231,6 +1231,14 @@ const config = {
           {
             to: "/analysts/ai-chat",
             from: "/analysts/gem-generation",
+          },
+          {
+            to: "/api",
+            from: "/getting-help/prophecyAPI",
+          },
+          {
+            to: "/api",
+            from: "/administration/self-hosted/generate-api-key",
           },
         ],
         /*
