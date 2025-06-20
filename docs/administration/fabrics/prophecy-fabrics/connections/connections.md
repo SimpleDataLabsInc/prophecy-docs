@@ -7,28 +7,41 @@ tags:
   - sql
 ---
 
-Prophecy lets you work with various data providers when building your pipelines. To make this easier, you can create **connections** between Prophecy and a data provider. Once you add connections a fabric and use that fabric in a project, you can:
+Prophecy lets you work with various data providers when building your pipelines. To read and write data from external sources, create **connections** inside a [Prophecy fabric](/administration/fabrics/prophecy-fabrics/).
+
+When you attach to a fabric with connections, you can:
 
 - Reuse credentials that are established in the connection.
 - Browse data from the data provider in the [Environment browser](/projects#project-editor) of your Prophecy project.
 - Auto-index data for search in the Prophecy interface.
 
-## Prerequisites
-
-To leverage connections, you need a [Prophecy fabric](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md) and a [SQL project](/projects#project-types).
-
 ## Connections access
 
-Prophecy controls access to connections through fabric-level permissions.
-
-- To access a connection, you must have access to the fabric where it was created. You can only access fabrics that are assigned to one of your teams.
-- To use a connection in your project, attach a fabric that includes that connection. You can attach any fabric that belongs to one of your teams.
-- To create a new connection, you can do so inside of a fabric or in the project itself after attaching to a fabric.
+Prophecy controls access to connections through fabric-level permissions. To access a connection, you must have access to the fabric that contains the connection. You can only access fabrics that are assigned to one of your teams.
 
 ![Connections access diagram](img/connections-fabrics-projects.png)
 
 :::info
 Most connections are only used to read from and write to data sources. The SQL Warehouse connection is an exception—it also provides the compute environment for pipeline execution.
+:::
+
+## Add a new connection
+
+To configure a new connection in a Prophecy fabric:
+
+- Open the **Metadata** page from the left sidebar in Prophecy.
+- Navigate to the **Fabric** tab.
+- Open the fabric where you want to add the connection.
+- Navigate to the **Connections** tab.
+- Click **+ Add Connection**. This opens the **Create Connection** dialog.
+- Select a data provider from the list of connection types.
+- Click **Next** to open the connection details.
+- Configure the connection and save your changes.
+
+Learn about individual connection parameters in the connection's respective reference page.
+
+:::note
+You can also create connections inside the [project editor](/analysts/connections).
 :::
 
 ## What's next
