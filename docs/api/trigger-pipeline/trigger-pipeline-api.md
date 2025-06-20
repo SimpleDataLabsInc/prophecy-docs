@@ -5,7 +5,7 @@ description: Trigger the execution of pipelines in deployed projects
 tags: []
 ---
 
-Pipeline trigger APIs allow you to trigger the execution of pipelines in deployed projects. This is useful when you want to automate pipeline runs without relying on Prophecy's built-in scheduling.
+The Trigger Pipeline API allows you to start the execution of a pipeline in a deployed project. This is useful when you want to automate pipeline runs without relying on Prophecy's built-in scheduling.
 
 The API returns request responses in JSON format.
 
