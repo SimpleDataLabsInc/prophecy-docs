@@ -11,19 +11,24 @@ Project publication is an essential step in the project lifecycle. Each publishe
 
 ## Release and deployment
 
-When you publish a project, two key processes occur: release and deployment.
+When you publish a project, two key processes occur: **release** and **deployment**.
 
 First, the project is released, creating a new version and preparing it for distribution. During this process, Prophecy assigns a version label to the project and makes the new version available in packages and Prophecy Apps.
 
-Next, the project is deployed, configuring it for execution in different environments. The deployment process builds the project in each target environment ([fabric](docs/getting-started/concepts/fabrics.md)) and enables pipeline [schedules](docs/analysts/scheduling.md) for each fabric.
+Next, the project is deployed to different environments. The deployment process builds the project in each target environment ([fabric](docs/getting-started/concepts/fabrics.md)) and enables pipeline [schedules](docs/analysts/scheduling.md) for each fabric.
+
+:::info
+If you publish a project without selecting a fabric, it is only **released**. This means a new version is created and made available for use in the Package Hub and Prophecy Apps, but no deployments are created.
+:::
 
 ## Permissions
 
-You can publish to a fabric only if that fabric is assigned to one of your teams. This means fabric-level permissions control who can deploy to specific environments. To restrict access to production, assign the production fabric to a limited-access team.
+To publish a project to a fabric, that fabric must be [assigned to one of your teams](/administration/teams-users/team-based-access). This ensures that only authorized users can deploy projects to specific environments. For example:
 
-However, publishing a project without selecting a fabric only releases the project—it **does not deploy** it to any environment. Anyone in the project team can do this, regardless of their fabric access.
+- **Development fabric**: Assigned to a broader team for testing and iteration. You typically won’t publish to development fabrics, except when testing schedules.
+- **Production fabric**: Assigned to a limited-access team that will be able to publish to production.
 
-Learn more in [Team-based access](/administration/teams-users/team-based-access).
+If your production fabric uses Databricks connections, [consider using a service principal](/administration/fabrics/prophecy-fabrics/connections/databricks#authentication-methods) for authentication. This helps scheduled pipelines in published projects run reliably.
 
 ## Parameters
 

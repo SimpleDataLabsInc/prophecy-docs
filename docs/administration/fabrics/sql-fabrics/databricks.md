@@ -37,7 +37,7 @@ The SQL provider is both the storage warehouse and the execution environment whe
    :::note
    If using self-signed certificates, add `AllowSelfSignedCerts=1` to your JDBC URL.
    :::
-1. Add a **personal access token** (PAT) that will let Prophecy connect to Databricks. Each user supplies their own token when using the fabric. To generate a PAT, follow [the Databricks documentation](https://docs.databricks.com/en/dev-tools/auth/pat.html#databricks-personal-access-tokens-for-workspace-users).
+1. Select [Personal Access Token](https://docs.databricks.com/aws/en/dev-tools/auth/pat) or [OAuth](/databricks-oauth-authentication) (recommended) for authentication with Databricks.
 1. Optional: Enter the Catalog name if you are using Unity Catalog.
 1. Click **Continue**.
 

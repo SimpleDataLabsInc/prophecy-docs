@@ -9,7 +9,7 @@ tags:
   - oauth
 ---
 
-Prophecy provides Databricks OAuth to align with industry-standard authentication flows. This gives you more granular access control, making it a good alternative to Personal Access Tokens (PATs). This integration works with both Spark clusters and SQL warehouses.
+Prophecy provides Databricks OAuth to align with industry-standard authentication flows. This gives you more granular access control and better security, making it a good alternative to Personal Access Tokens (PATs). This integration works with both Spark clusters and SQL warehouses.
 
 ## Requirements
 
@@ -38,56 +38,26 @@ Then, the Prophecy cluster admin has to add the Databricks credentials to Prophe
 
 ![Security settings in Prophecy](./img/databricks-oauth-admin.png)
 
-Finally, the Prophecy Kubernetes cluster must be restarted to enact these changes.
+Finally, **the Prophecy Kubernetes cluster must be restarted** to enact these changes.
 
 ## Use cases supported by Databricks
 
-In Prophecy, you can use Databricks OAuth in two ways. The most common method is U2M, but you can optionally use M2M as well.
+In Prophecy, you can use Databricks OAuth in two ways, either using user identities or a [service principal](https://docs.databricks.com/aws/en/admin/users-groups/service-principals).
 
-### [User-to-Machine (U2M)](https://docs.databricks.com/en/dev-tools/auth/oauth-u2m.html)
-
-This method is used for **pipeline development** and **job configuration**. In this case, users authenticate individually via Databricks. In this case, users access data based on their individual identity and the permissions already defined within the Databricks Unity Catalog.
-
-To configure a [fabric](docs/getting-started/concepts/fabrics.md) for this use case:
-
-1. Create a new Spark or SQL fabric.
-1. Choose **Databricks** as the provider.
-1. Enter the relevant Databricks workspace URL.
-1. Choose **OAuth** as the authentication method.
-1. Click **Test Connection** to test the sign in to Databricks.
-1. Finish the fabric configuration as normal and click **Complete**.
-
-You **do not** have to fill out the Service Principal Client ID and Service Principal Client Secret for this use case.
-
-Now, anyone who uses this fabric can use their individual Databricks credentials for authentication. Prophecy will automatically prompt users to sign in when necessary.
-
-![Databricks login prompt](./img/databricks-fabric-login.png)
-
-When you try to sign in, a new browser tab will automatically open. If the tab does not open, you may need to bypass or disable pop-up blockers.
+| Type                                                                                    | Identity                 | Use Cases                                        | Behavior                                                                                                | Notes                                                                                                                                                                   |
+| --------------------------------------------------------------------------------------- | ------------------------ | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [User-based OAuth](https://docs.databricks.com/en/dev-tools/auth/oauth-u2m.html)        | Individual user accounts | Pipeline development, job development            | Executes actions with the user's Databricks permissions. Users sign in via the Databricks login screen. | Requires periodic login based on Databricks' OAuth timeout settings. Default timeouts are used in SaaS, but are configurable in Dedicated SaaS/self-hosted deployments. |
+| [Service Principal OAuth](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html) | Service principal        | Project deployment, scheduled pipeline execution | Authenticates using service principal credentials. All scheduled jobs run as the service principal.     | Required for automation and CI/CD. You will see a warning if service principal credentials are missing.                                                                 |
 
 :::note
-You only need to sign in periodically depending on the OAuth timeout settings within Databricks. SaaS deployments automatically use the default time period. If you have a Dedicated SaaS or self-hosted deployment, your Databricks Account Administrator can adjust the timeout setting.
+The minimum level of access that your service principal requires (including access to clusters, tables, etc.) will vary per use case.
 :::
 
-### [Machine-to-Machine (M2M)](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html)
+To learn how to configure Databricks OAuth for different fabric types, see:
 
-This method is used for **project deployment**. In this case, authentication is performed using Databricks [service principal](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html) credentials for unattended operations (such as automated deployment). The minimum level of access that your service principal requires (including access to clusters, tables, etc.) will vary per use case.
-
-To configure a [fabric](docs/getting-started/concepts/fabrics.md) for this use case:
-
-1. Create a new Spark or SQL fabric.
-1. Choose **Databricks** as the provider.
-1. Enter the relevant Databricks workspace URL.
-1. Choose **OAuth** as the authentication method.
-1. Enter the **Service Principal Client ID** and **Service Principal Client Secret** into the respective fields. This is different from the Client ID and Client Secret that was used to set up the [app connection](#app-connection).
-1. Click **Test Connection** to test the sign in to Databricks.
-1. Finish the fabric configuration as normal and click **Complete**.
-
-![Databricks fabric configuration](./img/databricks-fabric-config.png)
-
-Now, when this fabric is used, **scheduled jobs will always run as the service principal**. In the Airflow and Databricks Job IDE, a warning will display if the connected fabric does not contain service principal OAuth Credentials.
-
-Additionally, project releases and deployment will be performed by the service principal on behalf of the Prophecy team admin when using this fabric.
+- [Databricks connection in a Prophecy fabric](/administration/fabrics/prophecy-fabrics/connections/databricks)
+- [Databricks connection in a Spark fabric](/administration/fabrics/Spark-fabrics/databricks/#credentials)
+- [Databricks connection in a SQL fabric](/administration/fabrics/sql-fabrics/databricks)
 
 ## Security
 

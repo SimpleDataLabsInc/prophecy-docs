@@ -41,26 +41,31 @@ To create a new schedule:
 
 ![Weekly schedule](img/weekly-schedule.png)
 
-### Enable the schedule
+### Activate the schedule
 
-After configuring the schedule, complete the following steps to ensure the schedule actually runs:
+After configuring the schedule, complete the following steps to ensure the schedule runs:
 
 1. Save your project as a draft.
-1. Publish your project.
+1. [Publish your project](/analysts/project-publication) to one or more fabrics.
 
-Why do you need to publish the project? Publishing the project performs two key actions.
-
-#### Defines the execution environment (fabric)
-
-When you publish a project, you select one or more fabrics that serve as the execution environments for deployed projects. For each selected fabric, a separate deployment is created. Pipeline schedules are only enabled for deployed projects.
-
-:::caution
-If you do not select any fabrics during project publication, no deployments will be created. As a result, no scheduled executions will occur, even if a schedule has been configured.
+:::tip
+If using Databricks connections in your fabric, [consider using a service principal](/administration/fabrics/prophecy-fabrics/connections/databricks#authentication-methods) for authentication. This helps scheduled pipelines run reliably.
 :::
 
-#### Determines the pipeline version for execution
+#### Why publish?
 
-Publication determines what version of the pipeline will run during a scheduled execution. When a new project version is published, scheduled executions for the associated fabric(s) automatically begin using the updated pipeline version. Each deployment is isolated per fabric—publishing a new version to one fabric does not update deployments on other fabrics.
+Publishing is required for scheduled pipelines to run. This is because during project publication, you:
+
+- Define the execution environment (fabric)
+- Determine the pipeline version for execution
+
+When you publish a project, you select one or more fabrics that serve as the execution environments for deployed projects. A separate deployment is created for each fabric. Pipeline schedules only run on deployed projects.
+
+:::caution
+If you do not select any fabrics during project publication, no deployments will be created. As a result, no scheduled executions will occur, even if a schedule has been configured. Project deployments are isolated per fabric—publishing to one fabric does not affect others.
+:::
+
+Publishing also determines which version of the pipeline will run during scheduled executions. Each time you publish a new version, scheduled runs automatically use the updated version on the selected fabric(s).
 
 ### Disabling a schedule
 
@@ -80,4 +85,6 @@ You and your team members might have many scheduled pipelines in your Prophecy e
 
 ## External schedulers
 
-By default, SQL projects leverage a Prophecy-native scheduler to automate pipeline runs. While we recommend using the Prophecy scheduler, you can also use external schedulers like Databricks Jobs or Apache Airflow if preferred. Projects that leverage the [Simple Git Storage Model](/analysts/versioning) are not compatible with external schedulers. To learn more about external schedulers, visit [Orchestration](docs/Orchestration/Orchestration.md).
+By default, SQL projects utilize a Prophecy-native scheduler to automate pipeline runs. While we recommend using the Prophecy scheduler, you can also use external schedulers like Databricks Jobs or Apache Airflow if preferred. Additionally, you can use the [Trigger Pipeline API](/api/trigger-pipeline/trigger-pipeline-api) to leverage other orchestration tools.
+
+To learn more about external schedulers, visit [Orchestration](docs/Orchestration/Orchestration.md).
