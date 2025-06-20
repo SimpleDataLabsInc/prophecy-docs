@@ -12,24 +12,30 @@ tags:
 Copilot works by enhancing prompts using a knowledge graph, or an internal map of your data environment. This gives Copilot the context it needs to generate accurate, relevant answers.
 
 :::note
-Prophecy generates knowledge graphs including SQL projects information only. Spark project metadata is not included in the knowledge graph.
+Prophecy generates knowledge graphs for SQL projects only. Knowledge graphs are not used for Spark projects.
 :::
 
-## Metadata
+## Overview
 
-Knowledge graphs are generated per-team in Prophecy. Each knowledge graph includes metadata for a project’s entities (such as datasets, schemas, seeds, models, and pipelines) and the statistical usages of these entities. The knowledge graph only includes metadata—your data itself is never stored. For more details, see [Data privacy with Data Copilot](/docs/copilot/copilot-data-privacy.md).
+Knowledge graphs are generated per-team in Prophecy. Each knowledge graph contains information from fabrics and project entities, including the statistical usages of these entities. It also contains computed fields that further refine Copilot's capabilities.
 
 ![Knowledge Graph](img/copilot_knowledge_graph.png)
 
+:::info Important
+Your data itself is never stored in the knowledge graph. For more details, see [Data privacy with Data Copilot](/docs/copilot/copilot-data-privacy.md).
+:::
+
 ## Process
 
-When you interact with Copilot, Prophecy follows a multi-step process to generate what you need. First, Copilot enriches your prompt using the knowledge graph. This step adds detailed context about your project’s datasets, schemas, and other entities, which helps the agent understand exactly what you're referring to. The enhanced prompt is then sent to OpenAI’s large language model (LLM), which returns SQL code based on the provided context.
+When you interact with Copilot, Prophecy follows a multi-step process to generate what you need. First, Copilot enriches your prompt using the knowledge graph. This step adds detailed context about your project’s datasets, schemas, and other entities, which helps the agent understand what you're referring to. The enhanced prompt is then sent to OpenAI’s large language model (LLM), which returns SQL code based on the provided context.
 
 Once the code is generated, Prophecy validates it and automatically corrects any errors when possible. After validation, Prophecy converts the code into a visual pipeline, which is displayed on the canvas for you to review and customize.
 
 ## Indexing
 
-Only datasets in the SQL warehouse are indexed in the knowledge graph. To make sure that Copilot and AI agent has the most up-to-date information, you can manually refresh tables to update metadata in the knowledge graph.
+When generating the knowledge graph, Prophecy indexes your SQL warehouse connection. To make sure that Copilot and AI agent has the most up-to-date information, you can manually refresh tables to update the knowledge graph index.
+
+Prophecy only indexes tables from your SQL warehouse. Datasets from external connections are not included in the knowledge graph.
 
 ### Refresh tables
 
