@@ -17,7 +17,11 @@ Below are the current limitations of Databricks Serverless and how they impact P
 
 - Scala is not supported by Databricks Serverless. Therefore, Prophecy projects written in Scala cannot run on Databricks Serverless.
 
-- Databricks Serverless limits data sources to Unity Catalog locations. External sources (Redshift, Snowflake, etc.) are not supported.
+- Databricks Serverless is only compatible with Selective and Vanilla [data sampling modes](/engineers/data-sampling).
+
+- You cannot add [dependencies](/engineers/dependencies) to Databricks Serverless inside Databricks. You must use the Prophecy UI to add dependencies.
+
+- Databricks Serverless limits data sources to [volumes](https://docs.databricks.com/aws/en/sql/language-manual/sql-ref-volumes) in the Unity Catalog. Catalog tables and external sources (Redshift, Snowflake, etc.) are not supported.
 
 - Databricks Serverless does not permit rows larger than 128MB.
 
