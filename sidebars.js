@@ -885,6 +885,7 @@ const sidebars = {
               },
               items: [
                 "administration/fabrics/Spark-fabrics/databricks/ucshared",
+                "administration/fabrics/Spark-fabrics/databricks/databricks-policies",
                 "administration/fabrics/Spark-fabrics/databricks/whitelist-plibs",
                 "administration/fabrics/Spark-fabrics/databricks/volumes-plibs",
               ],
