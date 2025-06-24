@@ -1,14 +1,10 @@
 ---
 title: Databricks
 id: databricks
-description: Configuring Databricks Fabric
-sidebar_position: 2
+description: Connect Prophecy to your existing Databricks workspace
 tags:
-  - concepts
   - fabric
   - databricks
-  - livy
-  - prophecyManaged
 ---
 
 Create a Databricks fabric to connect Prophecy to your existing Databricks workspace. With a Databricks fabric, you can connect to existing Spark clusters or create new ones, run Spark pipelines, and read or write data, depending on your Databricks permissions. The following sections describe the parameters needed to set up a Databricks fabric.
