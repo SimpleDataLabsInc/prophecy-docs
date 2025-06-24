@@ -906,6 +906,7 @@ const sidebars = {
           items: [
             "administration/fabrics/sql-fabrics/databricks",
             "administration/fabrics/sql-fabrics/snowflake",
+            "administration/fabrics/sql-fabrics/bigquery",
           ],
         },
         {
