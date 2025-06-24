@@ -8,7 +8,7 @@
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/assets/css/styles.e16aecda.css">
-<script src="/assets/js/runtime~main.482adba6.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.04e88e46.js" defer="defer"></script>
 <script src="/assets/js/main.e40cae91.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -23,7 +23,7 @@
 <p>You can configure your Databricks connection using the following authentication methods.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="oauth">OAuth<a href="#oauth" class="hash-link" aria-label="Direct link to OAuth" title="Direct link to OAuth">​</a></h3>
 <p>When you choose Databricks <a href="/databricks-oauth-authentication">OAuth</a> for the authentication method, there are two modes.</p>
-<table><thead><tr><th>OAuth Method</th><th>Description</th><th>Use cases</th><th>Access type</th></tr></thead><tbody><tr><td>User</td><td>Each user signs in with their own Databricks account when prompted during interactive sessions.</td><td>Development workflows, testing, or when real-time user interaction is needed.</td><td>Individual</td></tr><tr><td>Service Principal</td><td>Uses a <a href="https://docs.databricks.com/aws/en/admin/users-groups/service-principals" target="_blank" rel="noopener noreferrer">service principal</a> to authenticate without user interaction.</td><td>Automated or scheduled pipelines that require stable, long-term access without re-authentication interruptions.</td><td>Shared</td></tr></tbody></table>
+<table><thead><tr><th>OAuth Method</th><th>Description</th><th>Use cases</th></tr></thead><tbody><tr><td>User</td><td>Each user signs in with their own Databricks account when prompted during interactive sessions.</td><td>Development workflows, testing, or when real-time user interaction is needed.</td></tr><tr><td>Service Principal</td><td>Prophecy uses a <a href="https://docs.databricks.com/aws/en/admin/users-groups/service-principals" target="_blank" rel="noopener noreferrer">service principal</a> to authenticate without user interaction.</td><td>Automated or scheduled pipelines that require stable, long-term access without re-authentication interruptions.</td></tr></tbody></table>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="choose-the-appropriate-oauth-method">Choose the appropriate OAuth method<a href="#choose-the-appropriate-oauth-method" class="hash-link" aria-label="Direct link to Choose the appropriate OAuth method" title="Direct link to Choose the appropriate OAuth method">​</a></h4>
 <p>We <a href="/administration/teams-users/team-based-access">recommend using separate fabrics</a> for development and production environments. Each fabric should use a different OAuth method to align with its purpose.</p>
 <ul>
@@ -36,6 +36,7 @@
 <p>For automated or scheduled pipelines, use a service principal to ensure uninterrupted access. Unlike user identities, service principals don&#x27;t expire or become deactivated, so pipelines continue running reliably. Limit fabric access to trusted users, since all members share the service principal’s credentials.</p>
 </li>
 </ul>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>You can use User OAuth to schedule pipelines without service principal credentials. However, you&#x27;ll need to periodically re-authenticate each Databricks connection in the fabric to keep schedules running.</p><p>Because Prophecy can&#x27;t retrieve the exact token expiration time from Databricks, it estimates when to prompt you for re-authentication. To avoid interruptions, we recommend switching to Service Principal OAuth when deploying projects to production.</p></div></div>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="personal-access-token-pat">Personal Access Token (PAT)<a href="#personal-access-token-pat" class="hash-link" aria-label="Direct link to Personal Access Token (PAT)" title="Direct link to Personal Access Token (PAT)">​</a></h3>
 <p>When you choose <strong>Personal Access Token</strong> (PAT) for the authentication method, you&#x27;ll authenticate using a <a href="https://docs.databricks.com/aws/en/dev-tools/auth/pat" target="_blank" rel="noopener noreferrer">Databricks personal access token</a>. When you set up the connection, you will use a <a href="/administration/secrets/">secret</a> to enter your PAT.</p>
 <p>Using the PAT authentication method:</p>
