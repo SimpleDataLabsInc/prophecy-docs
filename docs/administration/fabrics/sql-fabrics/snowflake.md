@@ -21,13 +21,14 @@ Fabrics define your Prophecy project execution environment. To create a new fabr
 
 Next, complete the fields in the **Basic Info** page.
 
-1. Provide a fabric title and description. It can be helpful to include descriptors like `dev` or `prod` in your title.
-1. Select a team to own this fabric. Click the dropdown to list the teams your user is a member. If you don’t see the desired team, ask a Prophecy Administrator to add you to a team.
+1. Provide a fabric title. It can be helpful to include descriptors like `dev` or `prod` in your title.
+1. (Optional) Provide a fabric description.
+1. Select a [team](/administration/teams-users/team-based-access) to own this fabric. Open the dropdown to see the teams you belong to.
 1. Click **Continue**.
 
 ![SFBasicInfo](./img/SnowflakeFabric1.png)
 
-### Provider
+## Provider
 
 The SQL provider is both the storage warehouse and the execution environment where your SQL code will run. To configure the provider:
 
