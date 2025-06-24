@@ -40,10 +40,10 @@ You can configure your Databricks connection using the following authentication 
 
 When you choose Databricks [OAuth](docs/administration/authentication/databricks-oauth.md) for the authentication method, there are two modes.
 
-| OAuth Method      | Description                                                                                                                                    | Use cases                                                                                                       | Access type |
-| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | ----------- |
-| User              | Each user signs in with their own Databricks account when prompted during interactive sessions.                                                | Development workflows, testing, or when real-time user interaction is needed.                                   | Individual  |
-| Service Principal | Uses a [service principal](https://docs.databricks.com/aws/en/admin/users-groups/service-principals) to authenticate without user interaction. | Automated or scheduled pipelines that require stable, long-term access without re-authentication interruptions. | Shared      |
+| OAuth Method      | Description                                                                                                                                             | Use cases                                                                                                       |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| User              | Each user signs in with their own Databricks account when prompted during interactive sessions.                                                         | Development workflows, testing, or when real-time user interaction is needed.                                   |
+| Service Principal | Prophecy uses a [service principal](https://docs.databricks.com/aws/en/admin/users-groups/service-principals) to authenticate without user interaction. | Automated or scheduled pipelines that require stable, long-term access without re-authentication interruptions. |
 
 #### Choose the appropriate OAuth method
 
@@ -56,6 +56,14 @@ We [recommend using separate fabrics](/administration/teams-users/team-based-acc
 - **Production fabric**: Use service principal-based OAuth.
 
   For automated or scheduled pipelines, use a service principal to ensure uninterrupted access. Unlike user identities, service principals don't expire or become deactivated, so pipelines continue running reliably. Limit fabric access to trusted users, since all members share the service principal’s credentials.
+
+:::info
+
+You can use User OAuth to schedule pipelines without service principal credentials. However, you'll need to periodically re-authenticate each Databricks connection in the fabric to keep schedules running.
+
+Because Prophecy can't retrieve the exact token expiration time from Databricks, it estimates when to prompt you for re-authentication. To avoid interruptions, we recommend switching to Service Principal OAuth when deploying projects to production.
+
+:::
 
 ### Personal Access Token (PAT)
 
