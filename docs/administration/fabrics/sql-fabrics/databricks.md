@@ -21,13 +21,14 @@ Fabrics define your Prophecy project execution environment. To create a new fabr
 
 Next, complete the fields in the **Basic Info** page.
 
-1. Provide a fabric title and description. It can be helpful to include descriptors like `dev` or `prod` in your title.
-1. Select a team to own this fabric. Click the dropdown to list the teams your user is a member. If you don’t see the desired team, ask a Prophecy Administrator to add you to a team.
+1. Provide a fabric title. It can be helpful to include descriptors like `dev` or `prod` in your title.
+1. (Optional) Provide a fabric description.
+1. Select a [team](/administration/teams-users/team-based-access) to own this fabric. Open the dropdown to see the teams you belong to.
 1. Click **Continue**.
 
 ![DBInfo](./img/DatabricksFabric1.png)
 
-### Provider
+## Provider
 
 The SQL provider is both the storage warehouse and the execution environment where your SQL code will run. To configure the provider:
 
@@ -37,7 +38,7 @@ The SQL provider is both the storage warehouse and the execution environment whe
    :::note
    If using self-signed certificates, add `AllowSelfSignedCerts=1` to your JDBC URL.
    :::
-1. Add a **personal access token** (PAT) that will let Prophecy connect to Databricks. Each user supplies their own token when using the fabric. To generate a PAT, follow [the Databricks documentation](https://docs.databricks.com/en/dev-tools/auth/pat.html#databricks-personal-access-tokens-for-workspace-users).
+1. Select [Personal Access Token](https://docs.databricks.com/aws/en/dev-tools/auth/pat) or [OAuth](/databricks-oauth-authentication) (recommended) for authentication with Databricks.
 1. Optional: Enter the Catalog name if you are using Unity Catalog.
 1. Click **Continue**.
 

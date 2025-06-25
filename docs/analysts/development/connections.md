@@ -15,7 +15,6 @@ After you attach to a fabric in a project, you'll be able to:
 - Configure [secrets](#secrets-in-connections) for your connections that will encrypt your connection credentials.
 - Reuse connections throughout your pipeline without needing to reconnect.
 - Browse data from established connections in the Environment browser.
-- Add data to your pipeline directly from the Environment browser.
 
 :::info
 See the [list of connections](docs/administration/fabrics/prophecy-fabrics/connections/connections.md) in the Administration section of the documentation to find all available connections.
@@ -27,7 +26,7 @@ In the following sections, let's explore how you will interact with connections 
 
 ### Environment browser
 
-Connections allow Prophecy to access specific data from external providers using your credentials. The data will appear in the [Environment browser](docs/analysts/development/pipelines/pipelines.md#sidebar) of the project sidebar, allowing you to easily locate data, explore data, and add data to your pipeline canvas. Data access permissions are inherited from your external user account.
+Connections allow Prophecy to access specific data from external providers using your credentials. The data will appear in the [Environment browser](/analysts/project-editor) of the project sidebar, allowing you to easily locate data, explore data, and add data to your pipeline canvas. Data access permissions are inherited from your external user account.
 
 ![Environment browser](img/environment-tab-connections.png)
 
@@ -65,6 +64,5 @@ As you create connections, you will notice that credentials must be populated wi
 
 Now that you understand how to use connections in your pipelines, check out the following resources.
 
-- To see a complete list of connections, view the [connections](docs/administration/fabrics/prophecy-fabrics/connections/connections.md) that are available for Prophecy fabrics.
 - To understand how to configure individual connection types, visit the [list of connections](docs/administration/fabrics/prophecy-fabrics/connections/connections.md).
-- All connections require **secrets** to keep your credentials safe. View the documentation on [secrets](docs/administration/secrets/secrets.md) to learn more.
+- All connections require secrets to keep your credentials safe. View the documentation on [secrets](docs/administration/secrets/secrets.md) to learn more.

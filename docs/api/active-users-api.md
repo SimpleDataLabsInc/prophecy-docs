@@ -2,6 +2,7 @@
 title: Active and Total Users API
 id: active-users-api
 sidebar_class_name: hidden
+slug: /api-internal/active-users
 description: Use this API to get current and total logged in users
 tags: []
 ---

@@ -30,7 +30,7 @@ Tables are natively read from and written to the SQL warehouse that is configure
 | Seed  | Small CSV-format files that you can write directly in Prophecy.                                               | Source only      |
 
 :::tip
-Once you have used a table in a project, you can easily reuse that table as a source. Find you tables in the [project browser](/analysts/pipelines#sidebar) in the left sidebar.
+Once you have used a table in a project, you can easily reuse that table as a source. Find your tables in the [Project](/analysts/project-editor) tab of the left sidebar.
 :::
 
 ## External sources and targets

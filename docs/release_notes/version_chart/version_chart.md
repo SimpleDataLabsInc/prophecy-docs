@@ -14,7 +14,7 @@ Check to make sure the Spark version and Scala version of your Prophecy Scala Li
 of your cluster!
 :::
 
-You can query this table using the following API and your [personal access token](/docs/getting-help/prophecyAPI.md):
+You can query this table using the following API and your [personal access token](/api):
 
 ```bash
 curl  --header 'X-Auth-Token: $PROPHECY_PAT' --location https://app.prophecy.io/api/editor/plibVersions
@@ -26,6 +26,12 @@ Prophecy versions that are labeled with `EM` are Extended Maintenance releases. 
 
 | Prophecy version | [Prophecy Scala libs](https://mvnrepository.com/artifact/io.prophecy/prophecy-libs) | [Prophecy Python libs](https://pypi.org/project/prophecy-libs/) | Release Date | End-of-support Date |
 | ---------------- | ----------------------------------------------------------------------------------- | --------------------------------------------------------------- | ------------ | ------------------- |
+| v4.1.1.1         | 8.10.2                                                                              | 1.9.49                                                          | 2025/06/23   | 2025/12/19          |
+| v3.4.5.16        | 8.8.4                                                                               | 1.9.36                                                          | 2025/06/20   | 2025/09/04          |
+| v4.1.1.0         | 8.10.1                                                                              | 1.9.49                                                          | 2025/06/19   | 2025/12/19          |
+| v4.1.0.4         | 8.10.0                                                                              | 1.9.49                                                          | 2025/06/18   | 2025/12/06          |
+| v4.1.0.3         | 8.10.0                                                                              | 1.9.49                                                          | 2025/06/16   | 2025/12/06          |
+| v3.4.5.15        | 8.8.3                                                                               | 1.9.36                                                          | 2025/06/16   | 2025/09/04          |
 | v4.1.0.2         | 8.10.0                                                                              | 1.9.49                                                          | 2025/06/11   | 2025/12/06          |
 | v3.4.5.14        | 8.8.3                                                                               | 1.9.36                                                          | 2025/06/09   | 2025/09/04          |
 | v4.1.0.1         | 8.10.0                                                                              | 1.9.49                                                          | 2025/06/09   | 2025/12/06          |

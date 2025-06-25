@@ -19,7 +19,7 @@ To create reusable components for yourself and others:
 1. Create a project.
 1. Build the component(s).
 1. [Release and deploy](/engineers/deployment) the project.
-1. Share your project with other teams in the Access tab of the [project metadata](docs/getting-started/concepts/project.md) page.
+1. Share your project with other teams in the Access tab of the [project metadata](/projects#metadata) page.
 1. Publish the project to the Package Hub.
 
 Importantly, if you add a project to the Package Hub, **all of its components will be available for reuse**.

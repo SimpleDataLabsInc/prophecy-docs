@@ -12,9 +12,11 @@ tags:
 
 **Prophecy Data Copilot** is an AI-powered assistant that delivers intelligent suggestions and automates repetitive tasks for visual data transformations. You can read more about it at [Data Copilot](/docs/copilot/copilot.md).
 
-Data Copilot leverages OpenAI's generative AI models to understand user intent, and enriched by the organizations' [knowledge graph](/docs/copilot/copilot.md#knowledge-graph), to automate repetitive data engineering tasks. By default, Data Copilot leverages **Prophecy's managed OpenAI subscription and is entirely free** for existing Prophecy customers. Prophecy uses user queries and metadata when communicating with OpenAI. Prophecy never sends any customer data to OpenAI.
+Data Copilot leverages OpenAI's generative AI models to understand user intent, and enriched by the organizations' [knowledge graph](/knowledge-graph), to automate repetitive data engineering tasks. By default, Data Copilot leverages **Prophecy's managed OpenAI subscription and is entirely free** for existing Prophecy customers. Prophecy uses user queries and metadata when communicating with OpenAI. Prophecy never sends any customer data to OpenAI.
 
 However, for the most security conscious organizations, it is possible to configure Prophecy to use your own OpenAI endpoint. This page describes how to enable Prophecy Data Copilot for private VPC SaaS environments and configure it to use your own OpenAI or Azure OpenAI endpoint.
+
+![Prophecy Data Copilot & OpenAI Flow Architecture](img/data_copilot_open_ai_flow_architecture.png)
 
 :::note
 
@@ -72,16 +74,14 @@ From the Kubernetes cluster where Prophecy services are running:
 
 7. If the app pod, especially `copilot`, doesn't redeploy itself, restart the app pod.
 
-## Architecture
+:::note
+To learn more about how to connect Prophecy Data Copilot to private OpenAI endpoints, speak to your Prophecy account owner.
+:::
 
-![Prophecy Data Copilot & OpenAI Flow Architecture](img/data_copilot_open_ai_flow_architecture.png)
+### How much will I pay for Prophecy Copilot?
 
-## Additional installation options
+Copilot features are included with Prophecy’s Spark and SQL offerings. There would be an additional cost if you chose to use a private subscription LLM service. In this case, the cost depends on the following:
 
-### How to enable Data Copilot on my self-hosted or on-premise installation of Prophecy
-
-Data Copilot is enabled or disabled at deployment time. If you run Prophecy within your [own VPC](../prophecy-deployment.md#self-hosted), set the flag in the deployment or upgrade configuration. To learn more about how to connect Prophecy Data Copilot to private OpenAI endpoints, speak to your Prophecy account owner.
-
-### How to disable Data Copilot for my users
-
-You have the option to disable Data Copilot if you run Prophecy within your [own VPC](../prophecy-deployment.md#self-hosted). You may choose to enable or disable Data Copilot across your Prophecy Platform at deployment time.
+- Number of [word tokens](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them) sent to the LLM provider
+- Size of the datasets
+- Number of iterations Prophecy sends requests to the LLM provider
