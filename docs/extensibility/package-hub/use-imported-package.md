@@ -1,7 +1,7 @@
 ---
 title: Use imported project packages
 id: use-imported-package
-slug: /engineers/build-a-package
+slug: /engineers/use-imported-package
 description: Reuse project components via packages
 tags: []
 ---
