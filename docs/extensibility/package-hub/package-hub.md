@@ -12,37 +12,29 @@ The Package Hub includes Prophecy-provided packages and packages that you can pu
 
 ![Package Hub landing page](img/package-hub.png)
 
-The Template Hub offers pipeline templates that you can run to deepen your understanding of how our gems work. Then, if you want to do the same thing in your project, you can copy it over to your environment.
-
-![Template Hub landing page](img/template-hub.png)
-
-## Add to the Package Hub
+## Publish to the Package Hub
 
 To create reusable components for yourself and others:
 
 1. Create a project.
-
 1. Build the component(s).
-
 1. [Release and deploy](/engineers/deployment) the project.
-
 1. Share your project with other teams in the Access tab of the [project metadata](docs/getting-started/concepts/project.md) page.
-
 1. Publish the project to the Package Hub.
-
-   ![Publish to Package Hub](img/package-hub-publish.png)
 
 Importantly, if you add a project to the Package Hub, **all of its components will be available for reuse**.
 
-:::info
+![Publish to Package Hub](img/package-hub-publish.png)
+
+## Access and permissions
+
 Packages in the Package Hub are only available to users in teams that you have shared the project with.
 
 After you share your dependency with a team, users in the team can add your project as a dependency to their new or existing projects. If the team does not see the package listed when they try to add it as a dependency, be sure the new project and dependent project use the same language, such as Scala or Python.
 
 For example, if the new project is a Scala project, only Scala Packages can be added as dependencies.
-:::
 
-## Update package
+## Create a new package version
 
 When you update a project that is published as a package, the changes will only be available in the Package Hub when you [release and deploy](/engineers/deployment) the project as a new version.
 
@@ -52,7 +44,7 @@ The release must be made from the branch specified on project creation (usually 
 
 If you want to change how the package works for a particular project without changing the original package, clone the packaged project and make your changes.
 
-## Use package in project
+## Import a package as a project dependency
 
 There are a few different ways to add a package to a project:
 
@@ -64,26 +56,6 @@ There are a few different ways to add a package to a project:
 
 You cannot change package components that have been imported into a project. You can only change the components from the source project.
 
-## Use a pipeline template
-
-You can use a pipeline template if you are a new Prophecy user in version 4.1 and above.
-
-To use a pipeline template:
-
-1. At the top left, select the **Template Hub** tab.
-
-1. Click on a template you would like to run.
-
-   Each template contains several tables, and at least one pipeline.
-
-   To learn about what each sample pipeline does, see [Template Hub](/analysts/template-hub).
-
-1. Select and run a pipeline.
-
-   :::note
-   Prophecy automatically attaches a fabric for you to use.
-   :::
-
 ## Prophecy-provided packages
 
 Explore Prophecy-provided packages in the Package Hub to find extra gems and pipelines that may be helpful for your projects. For example, the `ProphecyDatabricksSqlSpatial` package includes gems like [CreatePoint](/analysts/create-point) and [Distance](/analysts/distance) that can help you handle spatial data in your pipelines.
@@ -92,7 +64,7 @@ Gems that pertain to certain Prophecy-provided packages are specified in the doc
 
 ## What's next
 
-Check out our in-depth tutorials on creating shareable components!
+Learn more about packages and the Template Hub in the following pages.
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

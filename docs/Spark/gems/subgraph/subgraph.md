@@ -21,25 +21,25 @@ import Requirements from '@site/src/components/gem-requirements';
   livy="3.0.1+"
 />
 
-Subgraph gems let you take multiple different gems and wrap them under a single reusable parent gem. In other words, they allow you to decompose complex logic into reusable components. See how to **create** and **publish** a Subgraph in the video below.
+Subgraph gems let you take multiple different gems and wrap them under a single reusable parent gem. In other words, they allow you to decompose complex logic into reusable components.
 
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://fast.wistia.net/embed/iframe/e1q56n0gjb?seo=false?videoFoam=true" title="Getting Started With SQL Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
-<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
+## Types of subgraphs
 
-## Types of Subgraphs
-
-There are three types of Subgraph available by default. The [Basic](/engineers/basic-subgraph) Subgraph is a great introduction to using Subgraphs.
+There are three types of subgraph available by default. The [Basic](/engineers/basic-subgraph) subgraph is a great introduction to using Subgraphs. Use the individual subgraph documentation to learn how to build each type of subgraph.
 
 | Name                                                                | Description                                                                                                                     |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | [Basic](/engineers/basic-subgraph)                                  | Captures one or more gems within a pipeline to reuse across other pipelines and projects.                                       |
 | [Table Iterator](/engineers/table-iterator)                         | Iterates over one or more gems for each row of the first input DataFrame. Table iterator is available for Python projects only. |
-| [Novel Type](/engineers/subgraph/#create-your-own-type-of-subgraph) | Apply any custom logic to the group of gems present inside the Subgraph.                                                        |
+| [Novel Type](/engineers/subgraph/#create-your-own-type-of-subgraph) | Apply any custom logic to the group of gems present inside the subgraph.                                                        |
 
-## Create your own type of Subgraph
+## Reuse subgraphs
+
+To make a subgraph reuseable in your project, you must **Publish** the subgraph. This adds it to the **Subgraph** section of the project browser. It also makes the subgraph available when the project is imported as a dependency to another project.
+
+![Published subgraph](img/published-subgraph.png)
+
+## Build a custom subgraph type
 
 You can also create your own Subgraph to apply any custom logic on the group of gems present inside it. For example Try Catch, other kinds of Iterators, etc.
 

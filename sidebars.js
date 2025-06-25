@@ -766,8 +766,8 @@ const sidebars = {
           label: "Package Hub",
           link: { type: "doc", id: "extensibility/package-hub/package-hub" },
           items: [
-            "extensibility/package-hub/build-a-package",
             "extensibility/package-hub/template-hub",
+            "extensibility/package-hub/use-imported-package",
           ],
         },
         {
