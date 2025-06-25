@@ -27,11 +27,11 @@ Subgraph gems let you take multiple different gems and wrap them under a single 
 
 There are three types of subgraph available by default. The [Basic](/engineers/basic-subgraph) subgraph is a great introduction to using Subgraphs. Use the individual subgraph documentation to learn how to build each type of subgraph.
 
-| Name                                                                | Description                                                                                                                     |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| [Basic](/engineers/basic-subgraph)                                  | Captures one or more gems within a pipeline to reuse across other pipelines and projects.                                       |
-| [Table Iterator](/engineers/table-iterator)                         | Iterates over one or more gems for each row of the first input DataFrame. Table iterator is available for Python projects only. |
-| [Novel Type](/engineers/subgraph/#create-your-own-type-of-subgraph) | Apply any custom logic to the group of gems present inside the subgraph.                                                        |
+| Name                                        | Description                                                                                                                     |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| [Basic](/engineers/basic-subgraph)          | Captures one or more gems within a pipeline to reuse across other pipelines and projects.                                       |
+| [Table Iterator](/engineers/table-iterator) | Iterates over one or more gems for each row of the first input DataFrame. Table iterator is available for Python projects only. |
+| [Custom](#build-a-custom-subgraph-type)     | Apply any custom logic to the group of gems present inside the subgraph.                                                        |
 
 ## Reuse subgraphs
 
