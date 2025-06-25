@@ -11,37 +11,27 @@ tags:
   - scd2
 ---
 
-The **Write Options** tab lets you determine how you will store your processed data. These settings are important if your data will change over time. There are three main write modes that you can choose from.
-
-- **Overwrite**: Replace your table with new data.
-- **Append**: Add new data without changing the old data.
-- **Merge**: Update existing data while keeping track of changes over time. There are also additional merge approaches that you can select for this write mode.
-
+The **Write Options** tab lets you determine how you will store your processed data. These settings are important if your data will change over time.
 To select write modes, you must set the Target model [Type & Format](type-and-format.md) to **Table**.
 
-:::info Providers
-The write modes available will depend on which data provider you use (Databricks or Snowflake).
+## Write modes
+
+Choose from the following write modes to update your target model.
+
+- **Overwrite**: Replace the stored data entirely with new data on each run. The new table that overwrites the previous table must have the same schema as the previous table. This is the default write mode.
+
+- **Append**: Add new rows to the table on each run. This works best if your table doesn't require a unique key per record, and you don't mind having duplicate records. If you need to ensure unique keys, use the Merge write mode instead.
+
+- **Merge**: Update existing data while keeping track of changes over time. Choose from a list of merge approaches to make sure new data is merged correctly.
+
+:::info
+Modes will vary across data providers (Databricks, Snowflake, or BigQuery).
 :::
 
-## Overwrite
-
-The **Overwrite** mode will replace the stored data entirely with new data on each run. This is the default write mode for all types and formats. When the write mode overwrites the table, the schema has to match. This is often the right approach for staging and intermediate tables, but it's rarely what you'd want for final tables.
-
-## Append
-
-The **Append** mode will add new rows to the table on each run. This works best if your table doesn't require a unique key per record, and you don't mind having duplicate records. If you need to ensure unique keys, use the **Merge** write mode instead.
-
-## Merge
+## Merge approaches
 
 The **Merge** mode will integrate new data by updating existing rows and inserting new ones. It ensures data consistency and maintains unique keys in the target table.
 If a unique key is specified, it will update old records with values from new records that match on the key column.
-
-There are four merge approaches to choose from:
-
-- Specify columns: Merges specific columns and updates existing records that match on a unique key.
-- SCD2: Preserves historical data changes by tracking record validity and creating new records.
-- Insert and overwrite: Replaces existing records and inserts new ones in one operation.
-- Replace where: Replaces existing records with new records based on certain conditions.
 
 ### Specify columns
 
@@ -110,7 +100,7 @@ If the data doesn't have a date but instead has `null`, then it means that the d
 
 ### Insert and overwrite
 
-The Insert and Overwrite approach allows you to overwrite existing records and insert new ones in a single operation, ensuring data accuracy. This is particularly helpful when using Databricks.
+The Insert and Overwrite approach allows you to overwrite existing records and insert new ones in a single operation, ensuring data accuracy.
 
 <div class="fixed-table">
 
@@ -125,13 +115,13 @@ If **Partition By** is specified, dbt runs an atomic insert overwrite statement 
 
 #### Example C
 
-Consider a scenario where you have a **CUSTOMERS** table and want to replace all partitions based on the _CUSTOMER_ID_ column. Instead of updating individual records, this approach replaces all partitions that match the query conditions with new data. This ensures that only the most current records are retained while outdated partitions are efficiently replaced.
+Consider a scenario where you have a **CUSTOMERS** table and want to replace all partitions based on the _CUSTOMER_ID_ column. Instead of updating individual records, this approach replaces all partitions that match the query conditions with new data. This ensures that only the most current records are retained while outdated partitions are replaced.
 
 ![Insert and overwrite](img/insert-and-overwrite.png)
 
 ### Replace where
 
-The **Replace where** approach lets you update records that match the condition defined in the predicate. This is particularly helpful when using Snowflake.
+The **Replace where** approach lets you update records that match the condition defined in the predicate.
 
 <div class="fixed-table">
 
@@ -146,6 +136,19 @@ The **Replace where** approach lets you update records that match the condition 
 #### Example D
 
 In a **TRANSACTIONS** table, you may want to update the payment status only for transactions made within the last 30 days. By defining a predicate such as `TRANSACTION_DATE >= DATE_SUB(CURRENT_DATE(), 30)`, only records created within the last 30 days should be modified, ensuring efficient updates while preserving historical data.
+
+## Partitioning
+
+You can optionally add a partition column to only overwrite partitions where data has been changed. This applies to the **Overwrite** mode or the **Insert and overwrite** Merge approach.
+
+Use the table below to learn about partition parameters.
+
+| Parameter                | Description                                                                                                                                                                          |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Column Name              | The name of the column used for partitioning the target table.                                                                                                                       |
+| Data Type                | The data type of the partition column. <br/>Supported types: `timestamp`, `date`, `datetime`, and `int64`.                                                                           |
+| Partition By granularity | Applicable only to `timestamp`, `date`, or `datetime` data type. <br/>Defines the time-based partition granularity: `hour`, `day`, `month`, or `year`.                               |
+| Partition Range          | Applicable only to `int64` data type. <br/>Specify a numeric range for partitioning using a **start**, **end**, and **interval** value (e.g., start=`0`, end=`1000`, interval=`10`). |
 
 ## Additional information
 
