@@ -39,7 +39,7 @@ Prophecy doesn't differentiate between model and column tests, and refers to the
 
 ## Set up a test
 
-Depending on the type of test, you can set up a new model or column test from either the Tests section of the project tab or the Data Tests tab of the Target model.
+Depending on the type of test, you can set up a new model or column test from either the Tests section of the project tab or the Data Tests tab of the target model.
 
 ### Develop a test
 
@@ -57,7 +57,7 @@ To develop a model or column test, start by opening a project:
 
 3. On the test definition page, enter the description, parameters, and definition. In the previous image example, we created a test definition that checks that the column value doesn't exceed a certain threshold value.
 
-4. To create a new data test, whether it's one that uses a test definition or one that uses an out-of-the-box Simple data test, navigate to the Data Tests tab in the Target model, and then click **+ New Test**.
+4. To create a new data test, whether it's one that uses a test definition or one that uses an out-of-the-box Simple data test, navigate to the Data Tests tab in the target model, and then click **+ New Test**.
 
    ![Create a new model test](img/model-test-create-new.png)
 
@@ -71,7 +71,7 @@ To develop a model or column test, start by opening a project:
 
 :::caution
 
-If changes are made to the columns or schemas used in your data test, then Prophecy will delete the data test. For example, if you run into a data mismatch error on the Schema tab of your Target model or update the schema, then your data test will be affected.
+If changes are made to the columns or schemas used in your data test, then Prophecy will delete the data test. For example, if you run into a data mismatch error on the Schema tab of your target model or update the schema, then your data test will be affected.
 
 :::
 
@@ -79,7 +79,7 @@ If changes are made to the columns or schemas used in your data test, then Proph
 
 After you’ve developed your model or column test, you can run it.
 
-1. From the Data Tests tab of your Target model, select the data tests that you'd like to run, and then click **Run tests** to execute your tests. The table input to the Target model gem is what’s tested.
+1. From the Data Tests tab of your target model, select the data tests that you'd like to run, and then click **Run tests** to execute your tests. The table input to the target model gem is what’s tested.
 
    ![Run model tests](img/model-test-run.png)
 
@@ -103,7 +103,7 @@ You can configure your model or column test to help decide which cases to focus 
 
 To configure a test, follow these steps:
 
-1. From the Data Tests tab of your Target model, hover over the data test that you'd like to configure, and then click the edit icon.
+1. From the Data Tests tab of your target model, hover over the data test that you'd like to configure, and then click the edit icon.
 
    ![Edit a test](img/model-test-edit.png)
 

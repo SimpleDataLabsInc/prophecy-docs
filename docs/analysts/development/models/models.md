@@ -28,11 +28,17 @@ To add a new model to your project:
 1. Review the path where the model will be saved in the project repository. In most cases, the default `model` path is sufficient.
 1. Click **Create**.
 
-This opens a new model canvas that is prepopulated with a Target model. Note that the dbt framework restricts models to one target output.
+This opens a new model canvas that is prepopulated with a target model. Note that the dbt framework restricts models to one target output.
 
 :::tip
 While you can develop models visually using gems, you can also write models directly in the code view, which is automatically synced with the visual view.
 :::
+
+## Compatible gems
+
+Each gem in a model maps to a SQL statement. As you configure gems on the visual canvas, Prophecy automatically generates the corresponding SQL, determines whether to use a CTE or subquery for each step, and integrates your changes into the overall model.
+
+Models run exclusively in your SQL warehouse and can only use gems supported in that environment.Gems that can run in SQL are marked with the following badge: <a href="https://docs.prophecy.io/administration/fabrics/prophecy-fabrics/"><span className="badge">SQL Warehouse</span></a>
 
 ## Models vs pipelines
 
@@ -44,6 +50,10 @@ Models and pipelines are two different SQL project components. The following tab
 | Sources and Targets | Native Tables/Models                           | Native Tables/Models + External Data |
 | Outputs             | Limited to one output                          | No limitation                        |
 | Orchestration       | External Only (Databricks Jobs, Airflow, etc.) | External OR Prophecy Automate        |
+
+:::note
+Pipelines run on both a SQL warehouse and Prophecy Automate, making a broader set of gems available compared to models.
+:::
 
 ### Show underlying models
 
