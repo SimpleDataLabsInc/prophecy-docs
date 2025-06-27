@@ -353,32 +353,28 @@ const sidebars = {
             id: "analysts/development/models/models",
           },
           items: [
-            "analysts/development/models/configuration",
             {
               type: "category",
-              label: "SQL Gems",
+              label: "Sources and targets",
               link: {
                 type: "doc",
-                id: "analysts/development/models/gems/sql-gems",
+                id: "analysts/development/models/sources-target/sources-and-targets",
               },
               items: [
                 {
                   type: "category",
-                  label: "Sources and Targets",
-                  link: {
-                    type: "doc",
-                    id: "analysts/development/models/gems/sources-target/sources-and-targets",
-                  },
+                  label: "Platform-specific targets",
                   items: [
-                    "analysts/development/models/gems/sources-target/location",
-                    "analysts/development/models/gems/sources-target/schema",
-                    "analysts/development/models/gems/sources-target/sql-query",
-                    "analysts/development/models/gems/sources-target/type-and-format",
-                    "analysts/development/models/gems/sources-target/write-options",
+                    "analysts/development/models/target-platforms/databricks-target",
+                    "analysts/development/models/target-platforms/bigquery-target",
+                    "analysts/development/models/target-platforms/snowflake-target",
                   ],
                 },
+                "analysts/development/models/sources-target/dynamic-target-location",
+                "analysts/development/models/sources-target/merge-approaches",
               ],
             },
+            "analysts/development/models/configuration",
           ],
         },
       ],
@@ -882,6 +878,7 @@ const sidebars = {
               },
               items: [
                 "administration/fabrics/Spark-fabrics/databricks/ucshared",
+                "administration/fabrics/Spark-fabrics/databricks/databricks-policies",
                 "administration/fabrics/Spark-fabrics/databricks/whitelist-plibs",
                 "administration/fabrics/Spark-fabrics/databricks/volumes-plibs",
               ],

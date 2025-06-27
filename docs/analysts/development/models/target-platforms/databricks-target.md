@@ -1,51 +1,86 @@
 ---
-title: Write Options
-id: write-options
-slug: /engineers/write-options-target-model
-description: Write Options of Target Models
+title: Databricks targets
+id: databricks-target
+slug: /engineers/databricks-target
+description: Configure target models for Databricks SQL
 tags:
-  - concept
   - model
-  - write options
-  - SQL
-  - scd2
+  - databricks
 ---
 
-The **Write Options** tab lets you determine how you will store your processed data. These settings are important if your data will change over time. There are three main write modes that you can choose from.
+To configure a target model that will be written to Databricks, reference the following sections.
 
-- **Overwrite**: Replace your table with new data.
-- **Append**: Add new data without changing the old data.
-- **Merge**: Update existing data while keeping track of changes over time. There are also additional merge approaches that you can select for this write mode.
+## Type & Format
 
-To select write modes, you must set the Target model [Type & Format](type-and-format.md) to **Table**.
+Databricks supports the following materialization types for target models. The type determines the underlying physical format of your target model.
 
-:::info Providers
-The write modes available will depend on which data provider you use (Databricks or Snowflake).
+| Materialization type | Description                                                                                                                                                                  |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| View (default)       | Rebuilt as a view on each run. Views always reflect the latest source data but don’t store any data themselves.                                                              |
+| Table                | Rebuilt as a table on each run. Tables are fast to query but can take longer to build. Target tables support multiple write modes.                                           |
+| Ephemeral            | Not built in the database. The model’s logic is inlined into downstream models using a common table expression (CTE). Use for lightweight transformations early in your DAG. |
+| Materialized View    | Acts like a hybrid of a view and a table. Supports use cases similar to incremental models. Creates a materialized view in the target warehouse.                             |
+
+## Location
+
+Review the location where your model will be written. Any changes you make to the **Overwrite location** section will be reflected in the **Location** that Prophecy generates.
+
+| Location Parameter | Description                                                                                | Advanced mode |
+| ------------------ | ------------------------------------------------------------------------------------------ | ------------- |
+| Catalog            | Catalog where the model will be created.                                                   | Yes           |
+| Schema             | Schema inside the catalog where the model will be created.                                 | Yes           |
+| Alias              | Sets the name of the resulting table or view. Defaults to the model name if not specified. | No            |
+
+## Schema
+
+Define the schema of the dataset and optionally configure additional properties.
+
+The schema includes column names, column data types, and optional column metadata. When you expand a row in the Schema table, you can add a column description, apply column tags, and enable/disable quoting for column names.
+
+### Properties
+
+Each property maps to a certain dbt configuration that may be generic to dbt or specific to a platform like Databricks. If you do not add a property explicitly in the Schema tab, Prophecy uses the dbt default for that property.
+
+| Property               | Description                                                                                                                                  | Config type |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| Dataset Tags           | Add tags to the dataset. These tags can be used as part of the resource selection syntax in dbt.                                             | Generic     |
+| Contract Enforced      | Enforce a [contract](https://docs.getdbt.com/docs/mesh/govern/model-contracts) for the model schema, preventing unintended changes.          | Generic     |
+| Show Docs              | Control whether or not nodes are shown in the [auto-generated documentation website](https://docs.getdbt.com/docs/build/view-documentation). | Generic     |
+| Enabled                | Control whether the model is included in builds. When a resource is disabled, dbt will not consider it as part of your project.              | Generic     |
+| Meta                   | Set metadata for the table using key-value pairs.                                                                                            | Generic     |
+| Group                  | Assign a group to the table.                                                                                                                 | Generic     |
+| Persist Docs Columns   | Save column descriptions in the database.                                                                                                    | Generic     |
+| Persist Docs Relations | Save model descriptions in the database.                                                                                                     | Generic     |
+| Clustered By           | Each partition in the created table will be split into a fixed number of buckets by the specified columns.                                   | Databricks  |
+| Buckets                | The number of buckets to create while clustering. Required if **Clustered By** is specified.                                                 | Databricks  |
+
+:::info
+For more detailed information, see the [dbt reference documentation](https://docs.getdbt.com/reference/references-overview).
 :::
 
-## Overwrite
+## SQL Query
 
-The **Overwrite** mode will replace the stored data entirely with new data on each run. This is the default write mode for all types and formats. When the write mode overwrites the table, the schema has to match. This is often the right approach for staging and intermediate tables, but it's rarely what you'd want for final tables.
+Add a custom SQL query at the end of your target model using the Databricks SQL dialect. This allows you to apply a final transformation step, which can be useful if you're importing an existing codebase and need to add conditions or filters to the final output. Custom queries support Jinja, dbt templating, and [variable](/engineers/data-model-configurations) usage for your last-mile data processing.
 
-## Append
+You can reference any column present in the list of input ports beside the SQL query. You can only add additional input ports—the output port cannot be edited.
 
-The **Append** mode will add new rows to the table on each run. This works best if your table doesn't require a unique key per record, and you don't mind having duplicate records. If you need to ensure unique keys, use the **Merge** write mode instead.
+## Write Options
 
-## Merge
+The **Write Options** tab lets you determine how you will store your processed data and handle changes to the data over time.
 
-The **Merge** mode will integrate new data by updating existing rows and inserting new ones. It ensures data consistency and maintains unique keys in the target table.
-If a unique key is specified, it will update old records with values from new records that match on the key column.
+| Write Mode          | Description                                                                                                                                                     |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Overwrite (default) | Replaces all existing data with new data on each run. The incoming table must have the same schema as the existing table.                                       |
+| Append              | Adds new rows to the existing table. Best used when unique keys aren’t required and duplicate records are acceptable. For key-based updates, use Merge instead. |
+| Merge               | Updates existing records and inserts new ones based on defined keys. Supports multiple merge strategies to handle changes accurately over time.                 |
 
-There are four merge approaches to choose from:
+### Merge approaches
 
-- Specify columns: Merges specific columns and updates existing records that match on a unique key.
-- SCD2: Preserves historical data changes by tracking record validity and creating new records.
-- Insert and overwrite: Replaces existing records and inserts new ones in one operation.
-- Replace where: Replaces existing records with new records based on certain conditions.
+When you select the Merge write mode, there are multiple merge approaches to choose from. To find an example use case for each strategy, see [Merge approach examples](/engineers/merge-approaches).
 
-### Specify columns
+#### Specify columns
 
-The **Specify columns** approach lets you customize the columns included in your data queries by selecting, deselecting, and reordering columns.
+Only update specified columns during the merge. All other columns remain unchanged.
 
 <div class="fixed-table">
 
@@ -60,17 +95,9 @@ The **Specify columns** approach lets you customize the columns included in your
 
 </div>
 
-#### Example A
+#### SCD2
 
-Consider a scenario where you have an **ORDERS** table with a column called _ORDER_ID_. In this case, you want to update the shipping status for existing orders without affecting any other fields. When new records are added, if an _ORDER_ID_ already exists in the table, only the _SHIPPING_STATUS_ column should be updated, and all other fields should remain unchanged.
-
-By using the **specify columns** merge approach, the merge operation targets only the _SHIPPING_STATUS_ column, ensuring that it is updated while preserving the values in all other columns based on the matching _ORDER_ID_.
-
-![Specify columns](img/specify-columns.png)
-
-### SCD2
-
-SCD2 (Slowly Changing Dimensions Type 2) is a method for managing historical data changes in data warehouses. It tracks changes in dimension records over time, preserving both current and historical data. SCD2 captures all changes in the target model, with null values representing new, active, and valid rows. Prophecy simplifies SCD2 by offering it as a model write option, using a visual interface to configure writes and retain data history.
+Tracks historical changes by adding new rows instead of updating existing ones. Each record will include additional columns containing start and end timestamps to indicate when a record was valid.
 
 <div class="fixed-table">
 
@@ -78,39 +105,14 @@ SCD2 (Slowly Changing Dimensions Type 2) is a method for managing historical dat
 | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
 | Unique Key                                                        | The key used to match existing records in the target dataset for merging.            |
 | Invalidate deleted rows                                           | When enabled, records that match deleted rows will be marked as no longer valid.     |
-| Determine new records by checking timestamp column                | Recognizes new records by the time from the timestamp column.                        |
+| Determine new records by checking timestamp column                | Recognizes new records by the time from the timestamp column that you define.        |
 | Determine new records by looking for differences in column values | Recognizes new records based on a change of values in one or more specified columns. |
 
 </div>
 
-#### Example B
+#### Insert and overwrite
 
-Imagine you have an ORDERS table with a _SHIPPING_STATUS_ field. As orders are processed, the status may change from "pending" to "shipped". However, simply updating the status field would overwrite the previous value, making it impossible to analyze how long an order stayed in the "pending" state.
-
-To solve this, SCD2 adds a new row each time the status changes, rather than overwriting the existing data. For example, when an order’s status changes, a new row is added with the updated status, and the previous row is preserved with the relevant historical information. Here's how this works:
-
-**Table 1**: When an order is first created, the status is "pending".
-
-| ORDER_ID | SHIPPING_STATUS | UPDATED_AT |
-| -------- | --------------- | ---------- |
-| 1        | pending         | 2024-01-01 |
-| 2        | pending         | 2024-01-02 |
-
-**Table 2**: When the status changes, the previous record remains, and a new row is added with the updated status. Additionally, new columns are added to record the validity of the record. In this case, the order was pending until **2024-01-02**.
-
-| ORDER_ID | SHIPPING_STATUS | UPDATED_AT | valid_from | valid_to   |
-| -------- | --------------- | ---------- | ---------- | ---------- |
-| 1        | pending         | 2024-01-01 | 2024-01-01 | 2024-01-02 |
-| 1        | shipped         | 2024-01-02 | 2024-01-02 | null       |
-| 2        | pending         | 2024-01-02 | 2024-01-02 | null       |
-
-If the data doesn't have a date but instead has `null`, then it means that the data is currently valid.
-
-![SCD2 shipping](img/scd-2-column-values.png)
-
-### Insert and overwrite
-
-The Insert and Overwrite approach allows you to overwrite existing records and insert new ones in a single operation, ensuring data accuracy. This is particularly helpful when using Databricks.
+Replace entire partitions in the target table. Only partitions including updated data will be overwritten. Other partitions will not be rebuilt.
 
 <div class="fixed-table">
 
@@ -123,15 +125,13 @@ The Insert and Overwrite approach allows you to overwrite existing records and i
 
 If **Partition By** is specified, dbt runs an atomic insert overwrite statement that dynamically replaces all partitions included in your query. If no partition is specified, the strategy replaces the entire table, overriding all existing data with only the new records while maintaining the original schema.
 
-#### Example C
+:::info
+To learn more about this merge approach, see the [insert overwrite strategy](https://docs.getdbt.com/reference/resource-configs/databricks-configs#the-insert_overwrite-strategy) in the dbt documentation.
+:::
 
-Consider a scenario where you have a **CUSTOMERS** table and want to replace all partitions based on the _CUSTOMER_ID_ column. Instead of updating individual records, this approach replaces all partitions that match the query conditions with new data. This ensures that only the most current records are retained while outdated partitions are efficiently replaced.
+## Replace where
 
-![Insert and overwrite](img/insert-and-overwrite.png)
-
-### Replace where
-
-The **Replace where** approach lets you update records that match the condition defined in the predicate. This is particularly helpful when using Snowflake.
+The **Replace where** approach lets you update records that match the condition defined in the predicate.
 
 <div class="fixed-table">
 
@@ -143,12 +143,6 @@ The **Replace where** approach lets you update records that match the condition 
 
 </div>
 
-#### Example D
+## Data Tests
 
-In a **TRANSACTIONS** table, you may want to update the payment status only for transactions made within the last 30 days. By defining a predicate such as `TRANSACTION_DATE >= DATE_SUB(CURRENT_DATE(), 30)`, only records created within the last 30 days should be modified, ensuring efficient updates while preserving historical data.
-
-## Additional information
-
-Target models are incremental models. They update data by processing only new or changed records instead of reloading all data. This makes updates faster and reduces resource use. Once you've selected your write mode, you'll see in the code view that the table is stored as a `"materialized": "incremental"` table, with `"incremental_strategy"` set to whichever write mode and merge approach you choose.
-
-Incremental models can be configured to include an optional `on_schema_change` parameter to enable additional control when incremental model columns change. These options enable dbt to continue running incremental models in the presence of schema changes, resulting in fewer `--full-refresh` scenarios and saving query costs.
+A data test is an assertion you define about a dataset in your project. Data tests are run on target models to ensure the quality and integrity of the final data that gets written to the warehouse. Learn how to build tests in [Data tests](/analysts/data-tests).
