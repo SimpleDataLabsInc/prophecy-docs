@@ -257,6 +257,10 @@ const config = {
       {
         redirects: [
           {
+            to: "/administration/settings",
+            from: "/administration/teams-users/settings",
+          },
+          {
             to: "/getting-started",
             from: "/developer/videos/",
           },

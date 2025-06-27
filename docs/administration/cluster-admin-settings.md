@@ -1,5 +1,6 @@
 ---
 title: Cluster admin settings
+sidebar_label: Admin settings
 id: cluster-admin-settings
 description: Settings visible to cluster admins only
 tags:

@@ -796,6 +796,7 @@ const sidebars = {
   ],
   adminSidebar: [
     "administration/index",
+    "administration/settings",
     {
       type: "html",
       value: '<span class="sidebar-divider" />',
@@ -813,10 +814,7 @@ const sidebars = {
         type: "doc",
         id: "administration/teams-users/teams-users",
       },
-      items: [
-        "administration/teams-users/settings",
-        "administration/teams-users/team-based-access",
-      ],
+      items: ["administration/teams-users/team-based-access"],
     },
     {
       type: "category",
