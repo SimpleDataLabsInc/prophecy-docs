@@ -9,7 +9,7 @@ tags:
   - seeds
 ---
 
-Model sources and targets vary slightly from those of the pipeline. The primary difference is that all model sources and targets must point to tables in the SQL warehouse.
+Model sources and targets vary slightly from those of a pipeline. The primary difference is that all model sources and targets must point to tables in the SQL warehouse.
 
 ## Sources
 
@@ -20,11 +20,7 @@ When you create a new model, you need to define an input data source. The data s
 
 ## Targets
 
-Target models let you define how you want to materialize your data using write formats.
-
-### Target model tabs
-
-When you open a target model configuration, you'll see the following tabs:
+Target models let you define how you want to materialize your data using write formats. When you open a target model configuration, you'll see the following tabs:
 
 - **Type & Format**: Update the format of the model between different table materialization types.
 - **Location**: Update the location by overwriting the database, schema, or alias.
@@ -34,14 +30,13 @@ When you open a target model configuration, you'll see the following tabs:
 
 ![Target Model tabs](img/type-and-format.png)
 
-### dbt advanced settings
+## What's next
 
-You can find advanced settings are available for defining model write formats and other dbt options. These include all dbt native settings, traditionally accessible from the `.yaml` file.
+Explore the following pages for a deep dive on model usage and configuration.
 
-To open dbt advanced settings, click **...** > **Advanced Settings**. The object properties describe everything from physical locations, materialization logic, business metadata, and access control definitions.
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-![Advance Settings](img/advance-settings.png)
-
-### dbt properties
-
-To view the dbt properties that Prophecy uses for target models, switch to the code view of the target model.
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```

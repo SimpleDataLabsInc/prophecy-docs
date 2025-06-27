@@ -98,7 +98,7 @@ Only update specified columns during the merge. All other columns remain unchang
 
 #### SCD2
 
-Tracks historical changes by adding new rows instead of updating existing ones. Each record will include additional columns contraining start and end timestamps to indicate when a record was valid.
+Tracks historical changes by adding new rows instead of updating existing ones. Each record will include additional columns containing start and end timestamps to indicate when a record was valid.
 
 <div class="fixed-table">
 
@@ -153,4 +153,4 @@ Learn more about how dbt handles partitioning for BigQuery tables in [Partition 
 
 ## Data Tests
 
-A data test is an assertion you define about a dataset in your project. Data tests are run on target models to ensure the quality and integrity of the final data that gets written to the warehouse. Learn how to build tests in [Data tests for SQL](/analysts/data-tests).
+A data test is an assertion you define about a dataset in your project. Data tests are run on target models to ensure the quality and integrity of the final data that gets written to the warehouse. Learn how to build tests in [Data tests](/analysts/data-tests).

@@ -361,18 +361,17 @@ const sidebars = {
                 id: "analysts/development/models/sources-target/sources-and-targets",
               },
               items: [
+                {
+                  type: "category",
+                  label: "Platform-specific targets",
+                  items: [
+                    "analysts/development/models/target-platforms/databricks-target",
+                    "analysts/development/models/target-platforms/bigquery-target",
+                    "analysts/development/models/target-platforms/snowflake-target",
+                  ],
+                },
                 "analysts/development/models/sources-target/dynamic-target-location",
                 "analysts/development/models/sources-target/merge-approaches",
-              ],
-            },
-
-            {
-              type: "category",
-              label: "Platform-specific targets",
-              items: [
-                "analysts/development/models/target-platforms/databricks-target",
-                "analysts/development/models/target-platforms/bigquery-target",
-                "analysts/development/models/target-platforms/snowflake-target",
               ],
             },
             "analysts/development/models/configuration",

@@ -9,11 +9,11 @@ tags:
   - SQL
 ---
 
-By default, your target model is written to the database and schema defined in the attached fabric. You can update the location of the target model in the **Location** tab of the gem dialog. This page includes an example of how you can make the write location of the table dynamic.
+By default, Prophecy writes your target model to the database and schema defined in the attached fabric. You can update the location of the target model in the **Location** tab of the gem dialog. This page includes an example of how you can make the write location of the table dynamic.
 
 ## Use case
 
-Assume you want to use one database location during development and interactive execution, but you want to write to a different database for schedules jobs running in production. You can use a configuration variable to do so.
+Assume you want to use one database location during development and interactive execution, but you want to write to a different database for schedules running in production. You can use a configuration variable to do so.
 
 ### Create the variable
 
@@ -43,10 +43,6 @@ Then, let's change the variable to save to a **production** database.
 
 1. Create a job that includes your model.
 1. Open the model configuration and add the **Supply variables to project** dbt property.
-1. Add your project variable and assign it the name of the production database. This will override the default value you provided in the Project Configuration.
+1. Add your project variable and assign it the name of the production database. This will override the default value provided when you configured the variable.
 
 Now, when the job runs, your model should be stored in the production database.
-
-:::note
-You can also run a dbt command using the --vars flag to override the default value of the variable.
-:::
