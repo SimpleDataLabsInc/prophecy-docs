@@ -6,9 +6,7 @@ description: Create and Share Reusable Pipeline Components
 tags: [package-hub]
 ---
 
-To extend the functionality of a project, you can download **packages** from the Package Hub. Packages are **versioned projects** that contain shareable components, such as pipelines, gems, business rules, user-defined functions, jobs, macros, models, and more.
-
-The Package Hub includes Prophecy-provided packages and packages that you can publish yourself.
+To extend the functionality of a project, you can download **packages** from the Package Hub. Packages are versioned projects that contain shareable components, such as pipelines, gems, business rules, user-defined functions, jobs, macros, models, and more.
 
 ![Package Hub landing page](img/package-hub.png)
 
@@ -36,13 +34,13 @@ For example, if the new project is a Scala project, only Scala Packages can be a
 
 ## Create a new package version
 
-When you update a project that is published as a package, the changes will only be available in the Package Hub when you [release and deploy](/engineers/deployment) the project as a new version.
+When you update a project that is published as a package, the changes will only be available in the Package Hub when you [release](/engineers/deployment) the project as a new version.
 
-:::note
 The release must be made from the branch specified on project creation (usually `main` or `master`). This ensures that teams will review the code before releasing the project.
-:::
 
+:::tip
 If you want to change how the package works for a particular project without changing the original package, clone the packaged project and make your changes.
+:::
 
 ## Import a package as a project dependency
 
@@ -54,7 +52,9 @@ There are a few different ways to add a package to a project:
 
 ![Import from Package Hub](img/package-hub-import.png)
 
-You cannot change package components that have been imported into a project. You can only change the components from the source project.
+:::info
+You cannot change package components from the target project. You can only change the components from the source project. In other words, imported components are **read-only**. Learn more in [Use imported project packages](/engineers/use-imported-package).
+:::
 
 ## Prophecy-provided packages
 
