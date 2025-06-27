@@ -11,7 +11,7 @@ tags:
   - python
 ---
 
-Prophecy lets you [create](#create-udfs) or [import](#import-udfs) user-defined functions (UDFs) which can be used anywhere in the pipeline. Prophecy supports creating UDFs written in Python/Scala and importing UDFs written in SQL.
+Prophecy lets you create and import user-defined functions (UDFs), which can be used anywhere in the pipeline. Prophecy supports creating UDFs written in Python/Scala and importing UDFs written in SQL.
 
 | Project Type | Create UDFs  | Import UDFs   |
 | :----------- | :----------- | :------------ |
@@ -85,25 +85,22 @@ object UDFs extends Serializable {
 
 }
 ```
-
 </TabItem>
 </Tabs>
-
-
 ````
 
 ## Import UDFs
 
-SQL UDFs stored in Databricks Unity Catalog can be imported to Python projects and reused within any Gem.
+UDFs from the Unity Catalog are automatically available in Python projects when you attach to the relevant Databricks fabric. You can call these UDFs from any gem in the project.
 
-### How to Import UDFs
+![img](./img/sql-call-function.png)
 
-1. From a Python Project, attach to a Databricks Spark cluster using a Fabric. Be sure the Fabric credentials allow access to the Databricks Catalog containing the desired SQL function(s).
+To view a function, open the Environment browser and expand the Catalog and Schema containing the function. Refresh the project editor to access any new functions added in Databricks.
 
-2. Open the Environment browser, and select the appropriate Catalog and Schema. The list of SQL functions appears in the Environment browser.
-   ![img](./img/sql-udf.png)
+![img](./img/sql-udf.png)
 
-3. Call the SQL UDF from any Gem in the Project.
-   ![img](./img/sql-call-function.png)
+## UDFs across pipelines
 
-4. If the Fabric is updated, click the list of functions inside the Environment browser. This will refresh to reflect the functions available according to the new Fabric's credentials.
+User-defined functions (UDFs) are defined at the project level, so they are shared across all pipelines in the project.
+
+However, each pipeline keeps its own local copy of the UDF code. Prophecy updates this copy only when you open the pipeline. So if someone edits or adds a UDF in one pipeline, those changes won’t automatically appear in other pipelines until you open them. At that point, Prophecy copies the latest UDF definitions into the pipeline, and you’ll see them as uncommitted changes in the code view.

@@ -777,7 +777,7 @@ const config = {
             from: "/data-modeling/Model",
           },
           {
-            to: "/engineers/data-modeling-gems",
+            to: "/engineers/models",
             from: "/data-modeling/gems",
           },
           {
@@ -797,23 +797,23 @@ const config = {
             from: "/engineers/target-models",
           },
           {
-            to: "/engineers/location-target-model",
+            to: "/analysts/model-sources-and-targets",
             from: "/data-modeling/gems/target-models/location",
           },
           {
-            to: "/engineers/schema-target-model",
+            to: "/analysts/model-sources-and-targets",
             from: "/data-modeling/gems/target-models/schema",
           },
           {
-            to: "/engineers/sql-query-target-model",
+            to: "/analysts/model-sources-and-targets",
             from: "/data-modeling/gems/target-models/sql-query",
           },
           {
-            to: "/engineers/type-and-format-target-model",
+            to: "/analysts/model-sources-and-targets",
             from: "/data-modeling/gems/target-models/type-and-format",
           },
           {
-            to: "/engineers/write-options-target-model",
+            to: "/analysts/model-sources-and-targets",
             from: "/data-modeling/gems/target-models/write-options",
           },
           {
@@ -933,19 +933,35 @@ const config = {
             from: "/extensibility/package-hub",
           },
           {
-            to: "/engineers/shareable-pipelines",
+            to: "/engineers/use-imported-package",
+            from: "/engineers/shareable-pipelines",
+          },
+          {
+            to: "/engineers/use-imported-package",
+            from: "/engineers/shareable-datasets",
+          },
+          {
+            to: "/engineers/use-imported-package",
+            from: "/engineers/shareable-subgraphs",
+          },
+          {
+            to: "/engineers/use-imported-package",
+            from: "/engineers/shareable-udfs",
+          },
+          {
+            to: "/engineers/use-imported-package",
             from: "/extensibility/package-hub/shareable-pipelines",
           },
           {
-            to: "/engineers/shareable-datasets",
+            to: "/engineers/use-imported-package",
             from: "/extensibility/package-hub/shareable-datasets",
           },
           {
-            to: "/engineers/shareable-subgraphs",
+            to: "/engineers/use-imported-package",
             from: "/extensibility/package-hub/shareable-subgraphs",
           },
           {
-            to: "/engineers/shareable-udfs",
+            to: "/engineers/use-imported-package",
             from: "/extensibility/package-hub/sharable-udfs",
           },
           {
