@@ -929,19 +929,35 @@ const config = {
             from: "/extensibility/package-hub",
           },
           {
-            to: "/engineers/shareable-pipelines",
+            to: "/engineers/use-imported-package",
+            from: "/engineers/shareable-pipelines",
+          },
+          {
+            to: "/engineers/use-imported-package",
+            from: "/engineers/shareable-datasets",
+          },
+          {
+            to: "/engineers/use-imported-package",
+            from: "/engineers/shareable-subgraphs",
+          },
+          {
+            to: "/engineers/use-imported-package",
+            from: "/engineers/shareable-udfs",
+          },
+          {
+            to: "/engineers/use-imported-package",
             from: "/extensibility/package-hub/shareable-pipelines",
           },
           {
-            to: "/engineers/shareable-datasets",
+            to: "/engineers/use-imported-package",
             from: "/extensibility/package-hub/shareable-datasets",
           },
           {
-            to: "/engineers/shareable-subgraphs",
+            to: "/engineers/use-imported-package",
             from: "/extensibility/package-hub/shareable-subgraphs",
           },
           {
-            to: "/engineers/shareable-udfs",
+            to: "/engineers/use-imported-package",
             from: "/extensibility/package-hub/sharable-udfs",
           },
           {

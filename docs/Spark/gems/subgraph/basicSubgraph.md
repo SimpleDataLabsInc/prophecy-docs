@@ -23,40 +23,45 @@ import Requirements from '@site/src/components/gem-requirements';
   livy="3.0.1+"
 />
 
-In a **Basic Subgraph**, you have the capability to encapsulate multiple distinct gems within a single, reusable parent gem. This organizational approach enhances the visual clarity of your pipeline by grouping various sections together under a common parent gem. Additionally, it empowers you to break down intricate logic into modular components, thereby streamlining the Data Engineering processes.
+The basic subgraph lets you group multiple gems into a single reusable parent gem. This improves pipeline clarity and helps modularize complex logic. Subgraph gems can be reused:
 
-Furthermore, the ability to [Publish a Subgraph](/engineers/shareable-subgraphs) extends the utility beyond a singular pipeline. By doing so, you can reuse the encapsulated logic in other pipelines or projects, promoting code re-usability and simplifying the overall development workflow.
+- Multiple times inside one pipeline
+- Across different pipelines in the same project
+- Across different pipelines in different projects
 
-## Create a Basic Subgraph
+## Create a basic subgraph
 
-To create a Basic Subgraph, drag and drop the **(1) Basic** Subgraph gem from the Subgraph menu, and connect it to any previously created gem on your canvas.
+To create a basic subgraph:
 
-Once you've added the gem, click **(2) Open**, to open the subgraph canvas.
+1. Add the Basic Subgraph gem from the Subgraph menu to the canvas. Connect it to another gem on your canvas.
+1. Once you've added the gem, click **Open**. This opens the subgraph canvas, where you can add gems just as you would on the pipeline canvas.
 
 ![create_basic_subgraph](img/Create_basic_subgraph.png)
 
-Once you are on the canvas, you can start adding gems to your subgraph by dragging and dropping from the gems menu.
-
 ## Add/Remove Port
 
-While using a Subgraph, you can control the Input and Output ports as per the requirements. Click on the **(1) Add/Remove Part** Button to open the port settings dialog as shown below.
+While using a subgraph, you can control the input and output ports as per the requirements. Click on the **(1) Add/Remove Part** Button to open the port settings dialog.
+
+In this dialog, you can add or remove the input or output ports.
+
+- To add an input port, click the **(2) +** button.
+- To remove an input port, click the **(3) delete** icon next to the input port you want to delete.
+- To manage output ports, switch to the **(4) Output** tab.
+
+The schema for each input and output is also reflected here.
 
 ![add_remove_port](img/subgraph_additional_ports.png)
 
-In this dialog, you can add or remove the Input or Output ports.
-To Add an input Put click on **(2) +** button. This will add an input Port.
-To remove an Input port, Click the **(3) Delete** icon next to the input port you want to delete.
-
-Similarly, you can control the Output Ports by switching to the **(4) Output** Tab.
-As you connect the input and output ports to gems Outside the subgraph, you would be able to see the schema for the port reflected here.
-
 ## Subgraph Configurations
 
-Subgraphs are configurable just like pipelines are [configurable](/engineers/configurations). For Subgraphs, the configurations can apply in one of two ways: (1) Pipeline level Configurations apply to the Subgraph or (2) Specify Configurations only for the Subgraph
+Subgraphs support configurations just like [pipelines](/engineers/configurations) do. You can apply configurations in two ways:
 
-### Pipeline Level Configurations can apply to the Subgraph
+- Copy pipeline-level configurations
+- Define configurations specific to the subgraph only
 
-Pipeline configs are accessible inside Subgraphs by **copying** the config to the Subgraph. Checkout the video below to see how this works.
+### Copy pipeline-level configurations
+
+You can access pipeline configs from the subgraph by copying the pipeline configs to the subgraph configs. Prophecy provides a button inside a subgraph config that lets you copy all pipeline configs to the subgraph. The video below shows how this can be accomplished.
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
 <div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
@@ -64,6 +69,6 @@ Pipeline configs are accessible inside Subgraphs by **copying** the config to th
 </div></div>
 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>
 
-### Specify configurations only for the Subgraph
+### Define subgraph-specific configurations
 
-In Subgraph Configs, you can define values that can be set at the Subgraph level and then be accessed inside any component in the Subgraph. These will also reflect under Configurations of pipelines using these Subgraphs, but they can only be edited from Subgraph configs.
+In subgraph configs, you can define values that can be set at the subgraph level and then be accessed inside any component in the subgraph. These will also reflect under configurations of pipelines using these subgraphs, but they can only be edited from subgraph configs.
