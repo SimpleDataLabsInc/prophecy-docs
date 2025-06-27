@@ -7,7 +7,7 @@ tags:
   - cluster admin
 ---
 
-This documentation is designed to help administrators effectively manage users, resources, and configurations. There are two types of administrators: team admins and prophecy cluster admins. The navigation is divided by admin type to help you find relevant tasks.
+This documentation is designed to help administrators effectively manage users, resources, and configurations. There are two types of administrators: team admins and Prophecy cluster admins. The navigation is divided by admin type to help you find relevant tasks.
 
 ### Team admins
 

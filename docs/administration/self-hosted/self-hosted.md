@@ -1,5 +1,5 @@
 ---
-title: Self-hosted
+title: Self-hosted deployments
 id: self-hosted
 description: Deploy Prophecy in your own VPC
 sidebar_class_name: hidden
@@ -25,17 +25,6 @@ Once Prophecy is installed, you'll have to manually perform upgrades, backups, r
 :::info
 For personalized help, contact [support](https://prophecy.zendesk.com/). If applicable, send along your [logs](download-logs.md) to help us troubleshoot.
 :::
-
-## Spark
-
-After installation, Prophecy requires the following for interactive development:
-
-- **Databricks API 1.2** for Databricks-based Spark deployments, or
-- **Livy 0.7.x** for any other Spark deployment support (like CDP, HDP, MapR, Spark on Kubernetes).
-
-## Airflow
-
-For interactive and jobs deployment to Airflow, Prophecy requires a customer-managed **Airflow deployment version 2.x.x** (latest recommended). **Astronomer**'s managed Airflow offering is supported.
 
 ## Logging / Metrics
 
