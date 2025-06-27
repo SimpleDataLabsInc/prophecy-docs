@@ -9,7 +9,7 @@ tags:
   - self-hosted
 ---
 
-Prophecy services utilize various Spark libraries, and Prophecy consistently updates these libraries with the latest available versions. However, some organizations prefer to bring their own commercially-supported Spark distribution to their self-hosted Prophecy deployment.
+Prophecy services utilize various Spark libraries, and Prophecy consistently updates these libraries with the latest available versions. However, some organizations prefer to bring their own commercially supported Spark distribution to their self-hosted Prophecy deployment.
 
 :::info
 Bring your own Spark (BYOS) only applies to the various Spark libraries used for **services in the Prophecy deployment**. The Spark you use in a fabric for pipeline execution is separate from BYOS.
@@ -44,7 +44,7 @@ Review the following prerequisites for BYOS.
 
 1. Ensure the package manager is enabled in your environment.
 
-1. Make sure the following image is available in your container registry: `prophecyinit:1.0.0`
+1. Make sure the `prophecyinit` image matching your Prophecy version is available in your container registry. The `prophecyinit` image tag may change across releases. Verify that the image corresponding to your Prophecy version is present in your registry.
 
 ### Update Athena environment variables
 
@@ -66,3 +66,7 @@ app / metagraph / edweb / sparkedge / transpiler / edwed / execution
 ```
 
 This will allow all services to initialize with the custom Spark libraries.
+
+### Update Prophecy deployment
+
+The final step is to upgrade your Prophecy deployment to a version that includes BYOS image support. During the upgrade, ensure **no-rollback** is selected.

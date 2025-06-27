@@ -1025,11 +1025,15 @@ const config = {
             from: "/metadata/prophecyAPI",
           },
           {
-            to: "/administration/saas/audit-logging",
+            to: "/administration/audit-logging",
             from: "/metadata/audit-logging",
           },
           {
-            to: "/administration/saas/audit-logging",
+            to: "/administration/audit-logging",
+            from: "/administration/saas/audit-logging",
+          },
+          {
+            to: "/administration/audit-logging",
             from: "/settings/audit-logging",
           },
           {
