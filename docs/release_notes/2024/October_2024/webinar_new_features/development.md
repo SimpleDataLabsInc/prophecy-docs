@@ -57,8 +57,6 @@ Click [here](/engineers/data-generator) for further details.
 <iframe src="https://fast.wistia.net/embed/iframe/cke2vzw6uy?seo=false?videoFoam=true" title="SophisticatedWriteOptions" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-Click [here](/engineers/write-options-target-model) for further details.
-
 ### Custom Gems for SQL
 
 <div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
