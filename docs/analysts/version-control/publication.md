@@ -15,7 +15,7 @@ When you publish a project, two key processes occur: **release** and **deploymen
 
 First, the project is released, creating a new version and preparing it for distribution. During this process, Prophecy assigns a version label to the project and makes the new version available in packages and Prophecy Apps.
 
-Next, the project is deployed to different environments. The deployment process builds the project in each target environment ([fabric](docs/getting-started/concepts/fabrics.md)) and enables pipeline [schedules](docs/analysts/scheduling.md) for each fabric.
+Next, the project is deployed to different environments. The deployment process builds the project in each target environment ([fabric](docs/getting-started/concepts/fabrics.md)) and enables pipeline [schedules](/analysts/scheduling) for each fabric.
 
 :::info
 If you publish a project without selecting a fabric, it is only **released**. This means a new version is created and made available for use in the Package Hub and Prophecy Apps, but no deployments are created.

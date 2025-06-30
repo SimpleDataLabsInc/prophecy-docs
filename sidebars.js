@@ -388,7 +388,16 @@ const sidebars = {
       },
       items: ["analysts/version-control/publication"],
     },
-    "analysts/scheduling",
+    {
+      type: "category",
+      label: "Scheduling",
+      link: { type: "doc", id: "analysts/scheduling/scheduling" },
+      items: [
+        "analysts/scheduling/schedule-setup",
+        "analysts/scheduling/triggers",
+        "analysts/scheduling/schedule-email-alerts",
+      ],
+    },
     "analysts/monitoring",
     {
       type: "category",
