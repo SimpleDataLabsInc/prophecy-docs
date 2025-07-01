@@ -17,22 +17,24 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
   sql_package_version="0.0.2+"
 />
 
-- Polygon: `POLYGON()` format - create a closed polygon
-- Polyline: `LINESTRING()` format - create an open line
+Build spatial shapes from coordinate data by grouping and ordering points into either polygons (closed shapes) or polylines (open lines). Use this gem to convert raw latitude/longitude values into structured spatial geometries for mapping, analysis, or downstream geospatial operations.
+
+- Polygon: Uses the `POLYGON()` format to create a closed shape.
+- Polyline: Uses the `LINESTRING()` format to create an open path.
 
 ## Input and Output
 
-| Port    | Description                                                                                          |
-| ------- | ---------------------------------------------------------------------------------------------------- |
-| **in0** | Dataset consisting of latitude and longitude coordinates including a group label and sequence label. |
-| **out** | Dataset with one row for each group in the input, representing one polygon or polyline each.         |
+| Port    | Description                                                                                                      |
+| ------- | ---------------------------------------------------------------------------------------------------------------- |
+| **in0** | Input dataset containing latitude and longitude coordinates, along with fields for grouping and ordering points. |
+| **out** | Output dataset with one row per group, each containing a generated polygon or polyline.                          |
 
 ## Parameters
 
-| Parameter             | Description                                                                                             |
-| --------------------- | ------------------------------------------------------------------------------------------------------- |
-| Build Method          | Choose to build a polygon or a polyline.                                                                |
-| Longitude Column Name |                                                                                                         |
-| Latitude Column Name  |                                                                                                         |
-| Group Field           | Column that includes the label grouping the coordinates by a specific shape.                            |
-| Sequence Field        | Column that includes the sequence label, indicating which points should go in which order in the shape. |
+| Parameter             | Description                                                                                        |
+| --------------------- | -------------------------------------------------------------------------------------------------- |
+| Build Method          | Choose whether to create a polygon (closed shape) or polyline (open line).                         |
+| Longitude Column Name | Name of the column containing longitude values.                                                    |
+| Latitude Column Name  | Name of the column containing latitude values.                                                     |
+| Group Field           | Column used to group points into individual shapes. All points with the same value form one shape. |
+| Sequence Field        | Column that defines the order of points within each group. Determines how the shape is drawn.      |

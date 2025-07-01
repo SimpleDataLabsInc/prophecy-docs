@@ -26,7 +26,7 @@ Supported file types:
 - Excel (XLS, XLSX)
 - XML
 
-When you upload your file through Prophecy, it's added directly to your Databricks or Snowflake SQL warehouse as a [table](docs/analysts/development/gems/source-target/source-target.md#tables).
+When you upload your file through Prophecy, it's added directly to your SQL warehouse as a [table](docs/analysts/development/gems/source-target/source-target.md#tables).
 
 :::note
 The recommended maximum file size is 100&nbsp;MB.

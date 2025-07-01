@@ -30,7 +30,7 @@ Each longitude and latitude column pair produces one target column. You can prov
 | Target Column Name    | Column in the gem output that will contain resulting geo points. |
 
 :::info
-The target column(s) will contain points in Well-known text ([WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry)) geometric format.
+The target column(s) will contain points in Well-known Text ([WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry)) geometric format.
 :::
 
 ## Example

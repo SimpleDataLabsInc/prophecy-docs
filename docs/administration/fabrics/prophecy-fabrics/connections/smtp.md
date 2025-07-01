@@ -23,7 +23,7 @@ The table below outlines whether the connection supports certain Prophecy featur
 
 Only basic authentication is supported. The SMTP server must support plain username and password authentication. Prophecy does not currently support OAuth or other advanced authentication methods for SMTP connections.
 
-## Parameters
+## Connection parameters
 
 To create an SMTP connection, enter the following parameters:
 
