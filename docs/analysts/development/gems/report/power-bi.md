@@ -1,6 +1,7 @@
 ---
 title: PowerBIWrite
 id: power-bi
+draft: true
 slug: /analysts/power-bi
 description: Send your pipeline output directly to PowerBI
 tags:

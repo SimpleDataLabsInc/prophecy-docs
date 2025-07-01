@@ -1,6 +1,7 @@
 ---
 title: RecordID
 id: record-id
+draft: true
 slug: /analysts/record-d
 description: Assign each row a unique ID
 tags:
@@ -24,7 +25,7 @@ Review the following gem parameters by method.
 
 ### UUID
 
-The UUID method... assigns random values to columns
+The UUID method assigns a universally unique identifier (UUID) to each row. These values are randomly generated and are ideal when you need non-sequential, non-predictable IDs.
 
 | Parameter                   | Description                                                                        |
 | --------------------------- | ---------------------------------------------------------------------------------- |
@@ -33,7 +34,7 @@ The UUID method... assigns random values to columns
 
 ### Incremental ID
 
-The Incremental ID method... increments by 1...
+The Incremental ID method generates sequential values starting from a specified number and increasing by 1 for each row. You can also group and sort the data to restart numbering within each group and control the order in which IDs are assigned.
 
 | Parameter                   | Description                                                                                                                                                             |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

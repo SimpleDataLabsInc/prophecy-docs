@@ -1,6 +1,7 @@
 ---
 title: Microsoft Power BI
 id: power-bi
+draft: true
 description: Learn how to connect with PowerBI
 tags:
   - connections
