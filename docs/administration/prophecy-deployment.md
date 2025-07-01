@@ -9,26 +9,24 @@ tags:
   - self-hosted
 ---
 
-Learn about the different cloud deployment options for deploying Prophecy.
+Prophecy runs on a Kubernetes cluster in the cloud. The cloud architecture depends on the Prophecy deployment type.
 
-_Note: On rare occasions, Prophecy will deploy on-premise for large customers who will later move to the cloud._
+## Deployment types
 
-## Cloud Deployment
+Prophecy supports SaaS (multi-tenant) and Dedicated SaaS (single-tenant) deployments.
 
-Prophecy in the cloud connects to your existing Spark and Scheduler/Orchestrator. While Prophecy does not store any data, it does store metadata about your pipelines, datasets, and schedules. There are three types of Prophecy deployments: SaaS, Dedicated SaaS, and self-hosted deployments.
-
-| Feature                                                       | SaaS                    | Dedicated SaaS          | Self-hosted             |
-| ------------------------------------------------------------- | ----------------------- | ----------------------- | ----------------------- |
-| Suitable for enterprise                                       | ![Tick](./img/tick.svg) | ![Tick](./img/tick.svg) | ![Tick](./img/tick.svg) |
-| Free trial                                                    | ![Tick](./img/tick.svg) | ![Tick](./img/tick.svg) | ![Tick](./img/tick.svg) |
-| No installation required                                      | ![Tick](./img/tick.svg) | ![Tick](./img/tick.svg) |                         |
-| Automatic upgrades every 2-4 weeks; access to latest features | ![Tick](./img/tick.svg) | ![Tick](./img/tick.svg) |                         |
-| Managed infrastructure costs                                  | ![Tick](./img/tick.svg) | ![Tick](./img/tick.svg) |                         |
-| Isolated data/environment                                     |                         | ![Tick](./img/tick.svg) | ![Tick](./img/tick.svg) |
+| Feature                                          | SaaS                    | Dedicated SaaS          |
+| ------------------------------------------------ | ----------------------- | ----------------------- |
+| Suitable for enterprise                          | ![Tick](./img/tick.svg) | ![Tick](./img/tick.svg) |
+| Free trial                                       | ![Tick](./img/tick.svg) | ![Tick](./img/tick.svg) |
+| No installation required                         | ![Tick](./img/tick.svg) | ![Tick](./img/tick.svg) |
+| Automatic upgrades and access to latest features | ![Tick](./img/tick.svg) | ![Tick](./img/tick.svg) |
+| Managed infrastructure costs                     | ![Tick](./img/tick.svg) | ![Tick](./img/tick.svg) |
+| Isolated data/environment                        |                         | ![Tick](./img/tick.svg) |
 
 ### SaaS
 
-The SaaS deployment option is entirely Prophecy-managed and has a multi-tenant architecture. Try out SaaS by directly going to the [Prophecy application](https://app.prophecy.io/).
+The SaaS deployment option is entirely Prophecy-managed and has a multi-tenant architecture. SaaS provides the fastest access to latest features. Try out Prophecy using our SaaS environment by signing up for a [free trial](https://app.prophecy.io/metadata/auth/signup).
 
 ![SaaS VPC Architecture](img/arch_separate_vpc.png)
 
@@ -40,8 +38,6 @@ You can choose your preferred cloud platform (AWS, Azure, or GCP), and Prophecy 
 
 ![Dedicated SaaS VPC Architecture](img/arch_dedicated_vpc.png)
 
-### Self-hosted (formerly Private SaaS) {#self-hosted}
-
-If you deal with very sensitive data, you may opt to get the self-hosted version of Prophecy. In this case, Prophecy runs within the **Customer VPC**, as well as the execution infrastructure. For more information, read about [installation and settings](./self-hosted) on a self-hosted deployment or [request a demo](https://www.prophecy.io/request-a-demo) from Prophecy.
-
-![Customer VPC Architecture](img/arch_customervpc.png)
+:::info
+While Prophecy continues to support existing customers with self-hosted deployments, new self-hosted installations of Prophecy are **discouraged**.
+:::

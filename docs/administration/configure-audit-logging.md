@@ -1,8 +1,7 @@
 ---
-title: Syncing audit logs from SaaS
+title: Audit logs
 id: audit-logging
-description: Prophecy Audit logs available to be exported in S3
-sidebar_position: 7
+description: List of audit events and sync options
 tags:
   - audit logs
   - s3
@@ -10,13 +9,13 @@ tags:
 ---
 
 Prophecy provides access to audit logs of activities performed by Prophecy users, allowing your enterprise to monitor detailed usage patterns.
-The Prophecy admin can configure a S3 bucket to sync these events from Prophecy to their environment.
+Prophecy cluster admins can configure an S3 bucket to sync these events from Prophecy to their environment. The lifespan of audit logs are configurable upon request.
+
+An empty AWS S3 bucket with read/write permissions is required. Follow the guidelines below to set up the bucket correctly.
 
 :::info
 This is only available for SaaS and requires manual effort. Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about this in detail.
 :::
-
-An empty AWS S3 bucket with read/write permissions is required. Follow the guidelines below to set up the bucket correctly.
 
 ## Configure S3 bucket for logs
 
