@@ -353,32 +353,28 @@ const sidebars = {
             id: "analysts/development/models/models",
           },
           items: [
-            "analysts/development/models/configuration",
             {
               type: "category",
-              label: "SQL Gems",
+              label: "Sources and targets",
               link: {
                 type: "doc",
-                id: "analysts/development/models/gems/sql-gems",
+                id: "analysts/development/models/sources-target/sources-and-targets",
               },
               items: [
                 {
                   type: "category",
-                  label: "Sources and Targets",
-                  link: {
-                    type: "doc",
-                    id: "analysts/development/models/gems/sources-target/sources-and-targets",
-                  },
+                  label: "Platform-specific targets",
                   items: [
-                    "analysts/development/models/gems/sources-target/location",
-                    "analysts/development/models/gems/sources-target/schema",
-                    "analysts/development/models/gems/sources-target/sql-query",
-                    "analysts/development/models/gems/sources-target/type-and-format",
-                    "analysts/development/models/gems/sources-target/write-options",
+                    "analysts/development/models/target-platforms/databricks-target",
+                    "analysts/development/models/target-platforms/bigquery-target",
+                    "analysts/development/models/target-platforms/snowflake-target",
                   ],
                 },
+                "analysts/development/models/sources-target/dynamic-target-location",
+                "analysts/development/models/sources-target/merge-approaches",
               ],
             },
+            "analysts/development/models/configuration",
           ],
         },
       ],
@@ -775,10 +771,7 @@ const sidebars = {
           link: { type: "doc", id: "extensibility/package-hub/package-hub" },
           items: [
             "extensibility/package-hub/template-hub",
-            "extensibility/package-hub/shareable-pipelines",
-            "extensibility/package-hub/shareable-datasets",
-            "extensibility/package-hub/shareable-subgraphs",
-            "extensibility/package-hub/sharable-udfs",
+            "extensibility/package-hub/use-imported-package",
           ],
         },
         {
@@ -854,7 +847,6 @@ const sidebars = {
                 "administration/fabrics/prophecy-fabrics/connections/redshift",
                 "administration/fabrics/prophecy-fabrics/connections/s3",
                 "administration/fabrics/prophecy-fabrics/connections/databricks",
-                "administration/fabrics/prophecy-fabrics/connections/snowflake",
                 "administration/fabrics/prophecy-fabrics/connections/sharepoint",
                 "administration/fabrics/prophecy-fabrics/connections/onedrive",
                 "administration/fabrics/prophecy-fabrics/connections/mongodb",
@@ -863,6 +855,7 @@ const sidebars = {
                 "administration/fabrics/prophecy-fabrics/connections/sftp",
                 "administration/fabrics/prophecy-fabrics/connections/smartsheet",
                 "administration/fabrics/prophecy-fabrics/connections/smtp",
+                "administration/fabrics/prophecy-fabrics/connections/snowflake",
                 "administration/fabrics/prophecy-fabrics/connections/tableau",
               ],
             },
@@ -885,6 +878,7 @@ const sidebars = {
               },
               items: [
                 "administration/fabrics/Spark-fabrics/databricks/ucshared",
+                "administration/fabrics/Spark-fabrics/databricks/databricks-policies",
                 "administration/fabrics/Spark-fabrics/databricks/whitelist-plibs",
                 "administration/fabrics/Spark-fabrics/databricks/volumes-plibs",
               ],
@@ -906,6 +900,7 @@ const sidebars = {
           items: [
             "administration/fabrics/sql-fabrics/databricks",
             "administration/fabrics/sql-fabrics/snowflake",
+            "administration/fabrics/sql-fabrics/bigquery",
           ],
         },
         {

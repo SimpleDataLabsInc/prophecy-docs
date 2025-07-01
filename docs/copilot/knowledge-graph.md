@@ -35,12 +35,34 @@ Once the code is generated, Prophecy validates it and automatically corrects any
 
 When generating the knowledge graph, Prophecy indexes your SQL warehouse connection. To make sure that Copilot and AI agent has the most up-to-date information, you can manually refresh tables to update the knowledge graph index.
 
+:::note
 Prophecy only indexes tables from your SQL warehouse. Datasets from external connections are not included in the knowledge graph.
+:::
 
 ### Refresh tables
 
-If Copilot or the AI agent can't find the tables you reference, or if responses seem outdated, you can manually refresh the table index to pull in the latest metadata. There are a few ways to do this:
+If Copilot or the AI agent can't find the tables you reference, or if responses seem outdated, you can manually refresh the table index to pull in the latest information. There are a few ways to do so.
 
-- If the [agent](/analysts/ai-explore#troubleshooting) can’t locate a table during your conversation, it will prompt you to refresh the index.
-- In the left sidebar, click on the [Environment](/analysts/connections#environment-browser) tab. Below your connections, you’ll see a Refresh Tables button.
-- Open [connection](/administration/fabrics/prophecy-fabrics/connections/) details in your fabric settings. At the bottom of the connection dialog, you’ll find a Refresh Tables option along with a status indicator showing indexing progress.
+#### SQL Warehouse Connection
+
+To refresh tables from the fabric settings:
+
+1. Open the [SQL Warehouse Connection](/administration/fabrics/prophecy-fabrics/connections/) details in your fabric settings.
+1. At the bottom of the connection dialog, you’ll find a **Table Indexing Status**.
+1. Click **Start** to reindex the tables and track its progress.
+
+![Databricks connection reindex](img/fabric-table-index.png)
+
+#### Environment tab
+
+To refresh tables from the [Environment tab](/analysts/connections#environment-browser):
+
+1. Open a project in the project editor.
+1. Attach to the fabric that you wish to reindex.
+1. In the left sidebar, click on the Environment tab.
+1. Below your connections, you’ll see a **Missing Tables?** callout.
+1. On hover, click **Refresh Tables** to reindex the SQL warehouse.
+
+#### Agent suggestion
+
+If the [agent](/analysts/ai-explore#troubleshooting) can’t locate a table during your conversation, it will prompt you to refresh the index.

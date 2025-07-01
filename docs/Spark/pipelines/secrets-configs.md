@@ -18,7 +18,7 @@ Follow this guide to understand how to use configurations for secrets.
 
 There are a few cases in which you might want to add secrets to pipeline configurations, rather than inserting the secrets directly into gems.
 
-- You want different credentials to be used for different pipeline runs (for example, development vs. production runs).
+- You want different credentials to be used for different pipeline runs (for example, development versus production runs).
 - You use the secret in multiple gems in the pipeline. If your secret is in a pipeline config, then you can change the value once in the config and it will apply to all gems.
 
 ## Example

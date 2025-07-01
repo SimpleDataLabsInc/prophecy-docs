@@ -1,5 +1,5 @@
 ---
-title: SQL statement
+title: SQLStatement
 id: sql-statement
 slug: /analysts/sql-statement
 description: Use a custom SQL statement
@@ -17,7 +17,7 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
   sql_package_version=""
 />
 
-Use a custom SQL statement in your pipeline. This gem supports SELECT statements.
+Use a custom SQL statement in your pipeline. The SQLStatement gem supports SELECT statements.
 
 ## Parameters
 
