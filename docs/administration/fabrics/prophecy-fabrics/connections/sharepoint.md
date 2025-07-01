@@ -9,6 +9,13 @@ tags:
 
 The Microsoft SharePoint connection in Prophecy allows you to integrate SharePoint data into your workflows for analysis, transformation, and reporting. SharePoint is widely used for document management, collaboration, and storing structured or unstructured data.
 
+## Prerequisites
+
+To use a SharePoint connection, your Microsoft account admin needs to:
+
+- [Register Prophecy](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app) as a Microsoft Entra app. This will generate the Client ID and Client Secret that Prophecy will use to connect to Microsoft.
+- Grant the following application-level permission to the application: `Sites.Manage.All`.
+
 ## Feature support
 
 The table below outlines whether the connection supports certain Prophecy features.
@@ -23,24 +30,17 @@ The table below outlines whether the connection supports certain Prophecy featur
 
 Prophecy can only access files stored in the [document library](https://support.microsoft.com/en-us/office/what-is-a-document-library-3b5976dd-65cf-4c9e-bf5a-713c10ca2872) of your SharePoint site. Make sure any files you want to import are placed there.
 
-## Prerequisites
+## Connection parameters
 
-To use a SharePoint connection, your Microsoft account admin needs to:
+To create a connection with SharePoint, enter the following parameters. You can find the Tenant ID, Client ID, and Client Secret in your Microsoft Entra app.
 
-- [Register Prophecy](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app) as an application in Microsoft. This will generate the Client ID and Client Secret that Prophecy will use to connect to Microsoft.
-- Grant the following application-level permission to the application: `Sites.Manage.All`.
-
-## Parameters
-
-To create a connection with SharePoint, enter the following parameters:
-
-| Parameter                                                                 | Description                                                                                          |
-| ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| Connection Name                                                           | Unique name for the connection                                                                       |
-| Tenant ID                                                                 | Microsoft 365 tenant ID                                                                              |
-| Client ID                                                                 | Application (client) ID from your app registration                                                   |
-| Client Secret ([Secret required](docs/administration/secrets/secrets.md)) | Client secret generated during app registration                                                      |
-| Site URL                                                                  | URL of the SharePoint site to connect<br/>Example: `https://yourcompany.sharepoint.com/sites/mysite` |
+| Parameter                                                                 | Description                                                                                               |
+| ------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| Connection Name                                                           | Unique name for the connection                                                                            |
+| Tenant ID                                                                 | Your Microsoft Entra [tenant ID](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-find-tenant) |
+| Client ID                                                                 | Your Microsoft Entra app Client ID                                                                        |
+| Client Secret ([Secret required](docs/administration/secrets/secrets.md)) | Your Microsoft Entra app Client Secret                                                                    |
+| Site URL                                                                  | URL of the SharePoint site to connect<br/>Example: `https://yourcompany.sharepoint.com/sites/mysite`      |
 
 ## SharePoint permissions
 

@@ -33,7 +33,7 @@ Keep in mind the following limitations when using the Smartsheet connection.
 
   ![Duplicate Smartsheet file in Prophecy file browser](img/smartsheet-duplicates.png)
 
-## Parameters
+## Connection parameters
 
 To create a connection with Smartsheet, enter the following parameters:
 

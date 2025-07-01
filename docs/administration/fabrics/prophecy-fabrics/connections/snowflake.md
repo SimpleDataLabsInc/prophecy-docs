@@ -27,7 +27,7 @@ There are a few limitations on the data types you can read from Snowflake:
 - Prophecy reads `Object`, `Array`, and `Variant` types as `String` type.
 - Prophecy does not support writing `Binary` type columns.
 
-## Parameters
+## Connection parameters
 
 To create a connection with Snowflake, enter the following parameters:
 
