@@ -8,7 +8,7 @@ tags:
   - databricks
 ---
 
-A Databricks connection lets Prophecy access your Databricks SQL warehouse. This page describes how you can set up and utilize this connection in Prophecy.
+A Databricks connection lets Prophecy access files and tables in your Databricks workspace. You can use the same Databricks connection to work with both files and tables, as long as your workspace has the necessary read or write permissions. This page describes how you can set up and utilize this connection in Prophecy.
 
 ## Connection type
 
@@ -25,7 +25,7 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Write data with a [Target gem](/analysts/source-target)       | Yes                                 |
 | Browse data in the [Environment browser](/analysts/pipelines) | Yes                                 |
 
-## Parameters
+## Connection parameters
 
 To create a connection with Databricks, enter the following parameters.
 

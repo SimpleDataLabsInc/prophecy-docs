@@ -23,19 +23,19 @@ The table below outlines whether the connection supports certain Prophecy featur
 
 To use a OneDrive connection, your Microsoft account admin needs to:
 
-- [Register Prophecy](https://learn.microsoft.com/en-us/graph/auth/auth-concepts#register-the-application) as an application in Microsoft. This will generate the Client ID and Client Secret that Prophecy will use to connect to Microsoft.
+- [Register Prophecy](https://learn.microsoft.com/en-us/graph/auth/auth-concepts#register-the-application) as a Microsoft Entra app. This will generate the Client ID and Client Secret that Prophecy will use to connect to Microsoft.
 
-## Parameters
+## Connection parameters
 
-To create a connection with OneDrive, enter the following parameters:
+To create a connection with OneDrive, enter the following parameters. You can find the Tenant ID, Client ID, and Client Secret in your Microsoft Entra app.
 
-| Parameter                                                                 | Description                                        |
-| ------------------------------------------------------------------------- | -------------------------------------------------- |
-| Connection Name                                                           | Name to to identify your connection                |
-| Tenant ID                                                                 | Microsoft 365 tenant ID                            |
-| Client ID                                                                 | Application (client) ID from your app registration |
-| Client Secret ([Secret required](docs/administration/secrets/secrets.md)) | Client secret generated during app registration    |
-| User Principal Name                                                       | Email you use to sign into Microsoft               |
+| Parameter                                                                 | Description                                                                                               |
+| ------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| Connection Name                                                           | Name to to identify your connection                                                                       |
+| Tenant ID                                                                 | Your Microsoft Entra [tenant ID](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-find-tenant) |
+| Client ID                                                                 | Your Microsoft Entra app Client ID                                                                        |
+| Client Secret ([Secret required](docs/administration/secrets/secrets.md)) | Your Microsoft Entra app Client Secret                                                                    |
+| User Principal Name                                                       | Email you use to sign into Microsoft                                                                      |
 
 ## OneDrive permissions
 

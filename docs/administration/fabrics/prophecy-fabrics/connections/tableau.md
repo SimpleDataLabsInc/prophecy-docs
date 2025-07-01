@@ -27,7 +27,7 @@ Using Tableau Hyper files is a legacy approach that Prophecy supports mainly for
 
 For a modern, cloud-native workflow, write pipeline outputs directly to a supported cloud data platform like Databricks, Snowflake, or BigQuery. Then connect Tableau to that platform to visualize the data—no need to set up a separate Tableau connection or perform extra export steps in Prophecy.
 
-## Parameters
+## Connection parameters
 
 To create a connection with Tableau, enter the following parameters:
 

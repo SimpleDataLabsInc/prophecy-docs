@@ -6,22 +6,18 @@ description: Source and target gems
 tags: []
 ---
 
-Source and Target gems define how Prophecy reads and writes data in your pipeline.
+Source and Target gems define how Prophecy reads and writes data in your pipeline. There are two types of sources and targets.
 
-There are two types of sources and targets:
-
-- [Tables in your SQL data warehouse](#tables)
-- [Sources and targets from external systems](#external-sources-and-targets)
-
-![Source/Target Gem Drawer](img/source-target-analysts.png)
+- [Data Warehouse](#data-warehouse): Tables that are native to the SQL warehouse configured in the fabric.
+- [External Systems](#external-systems): Tables and files that are stored in data platforms external to the SQL warehouse.
 
 :::caution
-When deciding between tables and external sources, consider the primary SQL connection in your Prophecy fabric. Processing tables natively in the SQL warehouse will be fast, while processing external data is slower. **Do not create an external connection that duplicates the primary SQL warehouse connection in your fabric.**
+Pipeline performance depends on how your connections are configured. Processing native tables within the warehouse is more efficient than accessing external sources. Avoid setting up an external connection that points to the same warehouse defined in your fabric. This redundancy can lead to slower performance.
 :::
 
-## Tables
+## Data Warehouse
 
-Tables are natively read from and written to the SQL warehouse that is configured as your primary SQL connection in a Prophecy fabric. You can add existing tables from your data warehouse to Prophecy, or you can create new tables directly in Prophecy.
+In Prophecy, datasets stored in the SQL data warehouse defined in your fabric are called **tables**. Prophecy supports three table types, defined in the following table.
 
 | Name  | Description                                                                                                   | Gem Type         |
 | ----- | ------------------------------------------------------------------------------------------------------------- | ---------------- |
@@ -30,10 +26,10 @@ Tables are natively read from and written to the SQL warehouse that is configure
 | Seed  | Small CSV-format files that you can write directly in Prophecy.                                               | Source only      |
 
 :::tip
-Once you have used a table in a project, you can easily reuse that table as a source. Find your tables in the [Project](/analysts/project-editor) tab of the left sidebar.
+Once you have created a table in Prophecy, you can reuse that table configuration throughout your project. Find your tables in the [Project](/analysts/project-editor) tab of the left sidebar.
 :::
 
-## External sources and targets
+## External Systems
 
 To use data from outside of your SQL warehouse, you can use external sources and targets. When you connect to an external data source, the data you read and write is not persisted in Prophecy. In other words, all data is transformed in memory—no data gets written to disk.
 

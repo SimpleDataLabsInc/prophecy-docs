@@ -21,6 +21,8 @@ Use the Email gem to send your pipeline output tables to others via email.
 
 ## Input
 
+The Email gem accepts the following input.
+
 | Port    | Description                                                                                                                                                    |
 | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **in0** | The table that will be sent with the email. You can only configure one input. <br/>You do not need to write the input table to storage to send it in an email. |

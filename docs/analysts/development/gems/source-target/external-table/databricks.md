@@ -14,23 +14,34 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
   sql_package_version=""
 />
 
-Prophecy supports the use of Databricks tables for both Table gems (when Databricks is configured as the SQL warehouse connection in the fabric) and external Source/Target gems (when Databricks IS NOT configured as the SQL warehouse connection). This page describes the parameters of a Databricks external Source/Target gem.
+You can use Databricks tables in Prophecy through two different methods:
 
-Additionally, you can either read from Databricks files or Databricks tables. You can use the same Databricks connection for both, as long as you have read/write permission for that resource.
+- **Table gems**, when Databricks is configured as the SQL warehouse in your fabric.
+- **External Source and Target gems**, when Databricks is not the configured SQL warehouse.
 
-File types each have the same properties in Prophecy across connections. To learn about accessing different file types with Source/Target gems, visit File types. This page describes Source/Target for catalog tables only.
+This page describes how to use Databricks external Source and Target gems to read from or write to catalog tables.
 
 :::info
-Avoid using a Databricks Source/Target gem if your fabric uses the same Databricks connection for the SQL warehouse in your fabric. Learn more in [Sources and Targets](/analysts/source-target).
+You can use the same Databricks connection to work with both files and tables, as long as your workspace has the necessary read or write permissions. If you’re working with file types like CSV or Parquet from Databricks, see [File types](/analysts/file-types) for guidance. This page focuses only on catalog tables.
 :::
 
-## Source gem parameters
+## Parameters
 
-| Parameter                   | Tab             | Description                                                       |
-| --------------------------- | --------------- | ----------------------------------------------------------------- |
-| Connection type             | Type            | Location you want to connect from.                                |
-| Format type                 | Source location | Format of the gem. In this case, `databricks`.                    |
-| Select or create connection | Source location | Whether to select an existing connection, or to create a new one. |
-| Database                    | Source location | Database where the table is or will be located.                   |
-| Schema                      | Source location | Schema where the table is or will be located.                     |
-| Name                        | Source location | Name of the external table.                                       |
+| Parameter                   | Tab             | Description                                                                                                                                           |
+| --------------------------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Connection type             | Type            | Location you want to connect from.                                                                                                                    |
+| Format type                 | Source location | Format of the gem. In this case, `databricks`.                                                                                                        |
+| Select or create connection | Source location | Select or create a new [Databricks connection](/administration/fabrics/prophecy-fabrics/connections/databricks) in the Prophecy fabric you attach to. |
+| Database                    | Source location | Database where the table is or will be located.                                                                                                       |
+| Schema                      | Source location | Schema where the table is or will be located.                                                                                                         |
+| Name                        | Source location | Name of the external table.                                                                                                                           |
+
+## Cross-workspace access
+
+If your fabric uses Databricks as the SQL warehouse, you can’t select Databricks in an external Source or Target gem. Instead, you must use Table gems, which are limited to the Databricks warehouse defined in the SQL warehouse connection.
+
+To work with tables from a different Databricks workspace, use [Delta sharing](https://docs.databricks.com/aws/en/delta-sharing/). Delta Sharing lets you access data across workspaces without creating additional Databricks connections.
+
+:::info
+Prophecy implements this guardrail to avoid using external connections when the data can be made available in your warehouse. External connections introduce an extra data transfer step, which slows down pipeline execution and adds unnecessary complexity. For best performance, Prophecy always prefers reading and writing directly within the warehouse.
+:::

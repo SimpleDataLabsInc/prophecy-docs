@@ -29,7 +29,7 @@ Keep in mind the following limitations when using an SFTP connection.
 
 - **Network latency affects transfer performance.** The speed and reliability of SFTP transfers depend on the physical distance between the SFTP server and Prophecy’s infrastructure. Servers that are geographically closer to your Prophecy environment will generally provide faster, more stable performance. Servers located farther away may introduce higher latency, leading to slower or less consistent data transfers. For best results, use SFTP servers in the same region as your Prophecy environment.
 
-## Parameters
+## Connection parameters
 
 To configure an SFTP connection in Prophecy, enter the following parameters:
 

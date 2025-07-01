@@ -125,7 +125,7 @@ const sidebars = {
               items: [
                 {
                   type: "category",
-                  label: "Table",
+                  label: "Tables (Warehouse)",
                   link: {
                     type: "doc",
                     id: "analysts/development/gems/source-target/table/table",
@@ -138,7 +138,19 @@ const sidebars = {
                 },
                 {
                   type: "category",
-                  label: "File",
+                  label: "Tables (External systems)",
+                  items: [
+                    "analysts/development/gems/source-target/external-table/databricks",
+                    "analysts/development/gems/source-target/external-table/snowflake",
+                    "analysts/development/gems/source-target/external-table/mssql",
+                    "analysts/development/gems/source-target/external-table/mongodb",
+                    "analysts/development/gems/source-target/external-table/oracle",
+                    "analysts/development/gems/source-target/external-table/redshift",
+                  ],
+                },
+                {
+                  type: "category",
+                  label: "File types",
                   link: {
                     type: "doc",
                     id: "analysts/development/gems/source-target/file/file-types",
@@ -150,18 +162,6 @@ const sidebars = {
                     "analysts/development/gems/source-target/file/parquet",
                     "analysts/development/gems/source-target/file/xml",
                     "analysts/development/gems/source-target/file/text",
-                  ],
-                },
-                {
-                  type: "category",
-                  label: "External Table",
-                  items: [
-                    "analysts/development/gems/source-target/external-table/databricks",
-                    "analysts/development/gems/source-target/external-table/snowflake",
-                    "analysts/development/gems/source-target/external-table/mssql",
-                    "analysts/development/gems/source-target/external-table/mongodb",
-                    "analysts/development/gems/source-target/external-table/oracle",
-                    "analysts/development/gems/source-target/external-table/redshift",
                   ],
                 },
                 {
@@ -197,6 +197,7 @@ const sidebars = {
                 "analysts/development/gems/prepare/multi-column-rename",
                 "analysts/development/gems/prepare/multi-column-edit",
                 "analysts/development/gems/prepare/order-by",
+                "analysts/development/gems/prepare/record-id",
                 "analysts/development/gems/prepare/reformat",
               ],
             },
@@ -234,6 +235,7 @@ const sidebars = {
               label: "Report",
               items: [
                 "analysts/development/gems/report/email",
+                "analysts/development/gems/report/power-bi",
                 "analysts/development/gems/report/tableau",
               ],
             },
@@ -854,8 +856,9 @@ const sidebars = {
                 "administration/fabrics/prophecy-fabrics/connections/redshift",
                 "administration/fabrics/prophecy-fabrics/connections/s3",
                 "administration/fabrics/prophecy-fabrics/connections/databricks",
-                "administration/fabrics/prophecy-fabrics/connections/sharepoint",
                 "administration/fabrics/prophecy-fabrics/connections/onedrive",
+                "administration/fabrics/prophecy-fabrics/connections/power-bi",
+                "administration/fabrics/prophecy-fabrics/connections/sharepoint",
                 "administration/fabrics/prophecy-fabrics/connections/mongodb",
                 "administration/fabrics/prophecy-fabrics/connections/mssql",
                 "administration/fabrics/prophecy-fabrics/connections/oracle",

@@ -19,7 +19,7 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Write data with a [Target gem](/analysts/source-target)       | No        |
 | Browse data in the [Environment browser](/analysts/pipelines) | Yes       |
 
-## Parameters
+## Connection parameters
 
 To create a connection with Oracle, enter the following parameters:
 
