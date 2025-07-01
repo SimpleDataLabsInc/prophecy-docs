@@ -8,29 +8,38 @@ tags:
   - databricks
 ---
 
-A Databricks connection lets you access your cloud data warehouse. It’s optimized for analytics and built to support modern data warehousing workloads with high performance and scalability.
+A Databricks connection lets Prophecy access your Databricks SQL warehouse. This page describes how you can set up and utilize this connection in Prophecy.
+
+## Connection type
+
+Prophecy supports Databricks as both a SQL Warehouse connection and an Ingress/Egress connection. To learn more about these different connection types, visit [Prophecy fabrics](/administration/fabrics/prophecy-fabrics/#connections).
 
 ## Feature support
 
 The table below outlines whether the connection supports certain Prophecy features.
 
-| Feature                                                       | Supported |
-| ------------------------------------------------------------- | --------- |
-| Read data with a [Source gem](/analysts/source-target)        | Yes       |
-| Write data with a [Target gem](/analysts/source-target)       | Yes       |
-| Browse data in the [Environment browser](/analysts/pipelines) | Yes       |
+| Feature                                                       | Supported                           |
+| ------------------------------------------------------------- | ----------------------------------- |
+| Run SQL queries                                               | Yes — SQL Warehouse Connection only |
+| Read data with a [Source gem](/analysts/source-target)        | Yes                                 |
+| Write data with a [Target gem](/analysts/source-target)       | Yes                                 |
+| Browse data in the [Environment browser](/analysts/pipelines) | Yes                                 |
 
 ## Parameters
 
-To create a connection with Databricks, enter the following parameters:
+To create a connection with Databricks, enter the following parameters.
 
 | Parameter             | Description                                                                                                                                                                             |
 | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Connection Name       | Name to to identify your connection                                                                                                                                                     |
+| Connection Name       | Name to to identify your connection.                                                                                                                                                    |
 | JDBC URL              | URL to connect to your SQL warehouse<br/>Example: `jdbc:databricks://<databricks-instance>:443/default;transportMode=http;ssl=1;AuthMech=3;httpPath=/sql/1.0/warehouses/<warehouse-id>` |
-| Catalog               | Default catalog for reading and writing data                                                                                                                                            |
-| Schema                | Default schema for reading and writing data                                                                                                                                             |
-| Authentication method | How you want to authenticate your Databricks account (OAuth or PAT)                                                                                                                     |
+| Catalog               | Default catalog for reading and writing data.                                                                                                                                           |
+| Schema                | Default schema for reading and writing data.                                                                                                                                            |
+| Authentication method | How you want to authenticate your Databricks account. Learn more in [Authentication methods](#authentication-methods).                                                                  |
+
+:::info
+When you use Databricks as your primary SQL warehouse, Prophecy also uses the catalog and schema you define in the connection to store temporary tables during [pipeline execution](/analysts/pipeline-execution#external-data-handling). Therefore, you must have write access to the schema in Databricks. To avoid conflicts, define distinct catalog and schema locations for each fabric.
+:::
 
 ## Authentication methods
 
@@ -38,7 +47,7 @@ You can configure your Databricks connection using the following authentication 
 
 ### OAuth
 
-When you choose Databricks [OAuth](docs/administration/authentication/databricks-oauth.md) for the authentication method, there are two modes.
+When you choose [Databricks OAuth](docs/administration/authentication/databricks-oauth.md) for the authentication method, there are two modes.
 
 | OAuth Method      | Description                                                                                                                                             | Use cases                                                                                                       |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |

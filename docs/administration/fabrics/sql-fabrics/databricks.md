@@ -8,7 +8,11 @@ tags:
   - fabric
 ---
 
-To use your Databricks SQL warehouse for execution in Prophecy, you need to create a SQL [fabric](docs/getting-started/concepts/fabrics.md) with a Databricks connection.
+To run models on Databricks, you need to create a SQL [fabric](docs/getting-started/concepts/fabrics.md) with a Databricks connection.
+
+:::info
+SQL fabrics are not compatible with pipelines.
+:::
 
 ## Create a fabric
 

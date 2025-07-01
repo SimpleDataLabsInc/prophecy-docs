@@ -8,7 +8,11 @@ tags:
   - fabric
 ---
 
-To use your Snowflake warehouse for execution in Prophecy, you need to create a SQL [fabric](docs/getting-started/concepts/fabrics.md) with a Snowflake connection.
+To run models on Snowflake, you need to create a SQL [fabric](docs/getting-started/concepts/fabrics.md) with a Snowflake connection.
+
+:::info
+SQL fabrics are not compatible with pipelines.
+:::
 
 ## Create a fabric
 
