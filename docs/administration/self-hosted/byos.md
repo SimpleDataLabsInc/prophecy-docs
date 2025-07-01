@@ -9,13 +9,23 @@ tags:
   - self-hosted
 ---
 
-Prophecy services utilize various Spark libraries, and Prophecy consistently updates these libraries with the latest available versions. However, some organizations prefer to bring their own commercially supported Spark distribution to their self-hosted Prophecy deployment.
+Prophecy services utilize various Spark libraries, and Prophecy consistently updates these libraries with the latest available versions. However, some organizations prefer to bring their own commercially supported Spark distribution to their self-hosted Prophecy deployment. This page describes why Prophecy uses Spark, and how you can Bring your own Spark (BYOS) to your Prophecy deployment.
 
 :::info
-Bring your own Spark (BYOS) only applies to the various Spark libraries used for **services in the Prophecy deployment**. The Spark you use in a fabric for pipeline execution is separate from BYOS.
+Bring your own Spark only applies to the various Spark libraries used for **services in the Prophecy deployment**. The Spark you use in a fabric for pipeline execution is separate from BYOS.
 :::
 
-## Prerequisites
+## Code Understanding Module
+
+Prophecy uses Spark primarily for the Code Understanding Module in the Prophecy deployment. This module enables:
+
+- Detecting code issues
+- Previewing transformation schemas
+- Computing column-level lineage
+
+These capabilities run instantaneously during pipeline development, so you don't have to wait until Prophecy compiles or executes your project code.
+
+## Prerequisites for BYOS
 
 Review the following prerequisites for BYOS.
 
