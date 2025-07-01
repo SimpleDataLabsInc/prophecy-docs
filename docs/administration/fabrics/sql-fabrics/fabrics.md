@@ -6,10 +6,10 @@ sidebar_class_name: hidden
 tags: [fabric, SQL, execution, snowflake, databricks]
 ---
 
-SQL [fabrics](docs/getting-started/concepts/fabrics.md) let Prophecy connect to SQL warehouses for storage and compute engine capabilities.
+SQL fabrics let Prophecy connect to SQL warehouses for storage and compute engine capabilities.
 
 :::info
-You can only run [models](/engineers/models) on SQL fabrics. You cannot run pipelines on SQL fabrics.
+You can only run [models](/engineers/models) on SQL fabrics. To run pipelines in a SQL project, use a [Prophecy fabric](/administration/fabrics/prophecy-fabrics/).
 :::
 
 ## Job scheduling

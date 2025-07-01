@@ -33,8 +33,8 @@ To create a connection with Databricks, enter the following parameters.
 | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Connection Name       | Name to to identify your connection.                                                                                                                                                    |
 | JDBC URL              | URL to connect to your SQL warehouse<br/>Example: `jdbc:databricks://<databricks-instance>:443/default;transportMode=http;ssl=1;AuthMech=3;httpPath=/sql/1.0/warehouses/<warehouse-id>` |
-| Catalog               | Default catalog for reading and writing data.                                                                                                                                           |
-| Schema                | Default schema for reading and writing data.                                                                                                                                            |
+| Catalog               | Default write location for target tables.                                                                                                                                               |
+| Schema                | Default write location for target tables.                                                                                                                                               |
 | Authentication method | How you want to authenticate your Databricks account. Learn more in [Authentication methods](#authentication-methods).                                                                  |
 
 :::info
