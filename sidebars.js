@@ -126,16 +126,23 @@ const sidebars = {
                 {
                   type: "category",
                   label: "Table",
+                  link: {
+                    type: "doc",
+                    id: "analysts/development/gems/source-target/table/table",
+                  },
                   items: [
-                    "analysts/development/gems/source-target/table/table",
-                    "analysts/development/gems/source-target/table/view",
-                    "analysts/development/gems/source-target/table/seed",
+                    "analysts/development/gems/source-target/table/databricks",
+                    // "analysts/development/gems/source-target/table/bigquery",
                     "analysts/development/gems/source-target/table/upload-files",
                   ],
                 },
                 {
                   type: "category",
                   label: "File",
+                  link: {
+                    type: "doc",
+                    id: "analysts/development/gems/source-target/file/file-types",
+                  },
                   items: [
                     "analysts/development/gems/source-target/file/csv",
                     "analysts/development/gems/source-target/file/excel",

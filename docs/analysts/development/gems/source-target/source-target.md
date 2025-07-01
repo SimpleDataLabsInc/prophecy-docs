@@ -1,5 +1,5 @@
 ---
-title: Source and Target
+title: Sources and Targets
 id: source-target
 slug: /analysts/source-target
 description: Source and target gems

@@ -14,9 +14,17 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
   sql_package_version=""
 />
 
-Use a table from Databricks as an external source or target.
+Prophecy supports the use of Databricks tables for both Table gems (when Databricks is configured as the SQL warehouse connection in the fabric) and external Source/Target gems (when Databricks IS NOT configured as the SQL warehouse connection). This page describes the parameters of a Databricks external Source/Target gem.
 
-## Parameters
+Additionally, you can either read from Databricks files or Databricks tables. You can use the same Databricks connection for both, as long as you have read/write permission for that resource.
+
+File types each have the same properties in Prophecy across connections. To learn about accessing different file types with Source/Target gems, visit File types. This page describes Source/Target for catalog tables only.
+
+:::info
+Avoid using a Databricks Source/Target gem if your fabric uses the same Databricks connection for the SQL warehouse in your fabric. Learn more in [Sources and Targets](/analysts/source-target).
+:::
+
+## Source gem parameters
 
 | Parameter                   | Tab             | Description                                                       |
 | --------------------------- | --------------- | ----------------------------------------------------------------- |

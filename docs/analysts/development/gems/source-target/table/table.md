@@ -14,27 +14,19 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
   sql_package_version=""
 />
 
-Tables represent persistent storage of structured data in your SQL warehouse. In a pipeline, tables can serve as sources, targets, or intermediate stages. This is useful for adding checkpoints to long-running jobs, persisting intermediate results for debugging or auditing, and enabling downstream reuse of cleaned or transformed data.
+Tables represent structured datasets in the SQL warehouse of your fabric. In a pipeline, tables can serve as sources, targets, or intermediate stages. This is useful for adding checkpoints to long-running jobs, persisting intermediate results for debugging or auditing, and enabling downstream reuse of cleaned or transformed data.
 
-## Source parameters
+:::note
+Tables in pipelines do not support dbt properties, which are only applicable to [model sources and targets](/analysts/model-sources-and-targets).
+:::
 
-When you create a Table gem at the beginning of your pipeline, configure it with the following parameters.
+## What's next
 
-| Parameter       | Description                                                                                                 |
-| --------------- | ----------------------------------------------------------------------------------------------------------- |
-| Type and Format | Select `Table`.                                                                                             |
-| Location        | Choose the location where the table will be stored. You can create a new table by writing a new table name. |
-| Properties      | Define certain properties of the table, including the table schema.                                         |
-| Preview         | Load the data to see a preview before saving.                                                               |
+Take a close look at using tables in the following pages.
 
-## Target parameters
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-When you add a Table gem to the end of your pipeline, configure it with the following parameters.
-
-| Parameter       | Description                                                                                                 |
-| --------------- | ----------------------------------------------------------------------------------------------------------- |
-| Type and Format | Select `Table`.                                                                                             |
-| Location        | Choose the location where the table will be stored. You can create a new table by writing a new table name. |
-| Properties      | Define certain properties of the table. The schema cannot be changed for target tables.                     |
-| Write Options   | Select how you want the data to be written each time you run the pipeline.                                  |
-| Preview         | Load the data to see a preview before saving.                                                               |
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```
