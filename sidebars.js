@@ -128,7 +128,6 @@ const sidebars = {
                   label: "Tables (Warehouse)",
                   items: [
                     "analysts/development/gems/source-target/table/databricks",
-                    // "analysts/development/gems/source-target/table/bigquery",
                     "analysts/development/gems/source-target/table/upload-files",
                   ],
                 },
