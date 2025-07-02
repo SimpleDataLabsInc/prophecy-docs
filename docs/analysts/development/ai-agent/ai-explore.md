@@ -21,7 +21,7 @@ Ask the agent to search for tables in your [primary SQL warehouse](docs/administ
 - A full list of datasets that match your criteria.
 
 :::tip
-You can add a dataset to the pipeline as a [Table gem](/analysts/table) directly from the chat.
+You can add a dataset to the pipeline as a [Table gem](/analysts/source-target) directly from the chat.
 :::
 
 ### Explore datasets

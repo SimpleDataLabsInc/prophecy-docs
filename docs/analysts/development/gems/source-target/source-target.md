@@ -1,43 +1,46 @@
 ---
-title: Source and Target
+title: Sources and Targets
 id: source-target
 slug: /analysts/source-target
 description: Source and target gems
 tags: []
 ---
 
-Source and Target gems define how Prophecy reads and writes data in your pipeline. There are two types of sources and targets.
+Table, Source, and Target gems define how Prophecy pipelines read data from a source or writing data to a destination. These gems handle interactions with both external systems and the [SQL Warehouse Connection](/administration/fabrics/prophecy-fabrics/#connections) defined in your Prophecy fabric.
 
-- [Data Warehouse](#data-warehouse): Tables that are native to the SQL warehouse configured in the fabric.
-- [External Systems](#external-systems): Tables and files that are stored in data platforms external to the SQL warehouse.
+Regardless of gem type, none of the data you read and write in a pipeline is persisted in Prophecy. All data is transformed in memory, and no data gets written to disk.
+
+## Gem types
+
+Prophecy supports different gem types for reading from and writing to data sources.
+
+| Gem type   | Data provider   | Description                                                                                                                                                                                                         |
+| ---------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Table gem  | Data warehouse  | Represents datasets in the in the [SQL Warehouse Connection](/administration/fabrics/prophecy-fabrics/#connections) of a Prophecy fabric. Tables can act as sources, targets, or intermediate stages in a pipeline. |
+| Source gem | External system | Represents data (tables or files) stored in external platforms outside the SQL warehouse. Source gems provide input to a pipeline.                                                                                  |
+| Target gem | External system | Represents data (tables or files) stored in external platforms outside the SQL warehouse. Target gems consume output from a pipeline.                                                                               |
+
+:::note
+Source and target gems cannot serve as intermediate steps in a pipeline. Source gems only have output ports, and Target gems only have input ports.
+:::
 
 :::caution
 Pipeline performance depends on how your connections are configured. Processing native tables within the warehouse is more efficient than accessing external sources. Avoid setting up an external connection that points to the same warehouse defined in your fabric. This redundancy can lead to slower performance.
 :::
 
-## Data Warehouse
+## Data formats
 
-In Prophecy, datasets stored in the SQL data warehouse defined in your fabric are called **tables**. Prophecy supports three table types, defined in the following table.
+Prophecy supports the following data formats:
 
-| Name  | Description                                                                                                   | Gem Type         |
-| ----- | ------------------------------------------------------------------------------------------------------------- | ---------------- |
-| Table | Persistent storage of structured data in your SQL warehouse. Faster for frequent queries (indexed).           | Source or Target |
-| View  | A virtual table that derives data dynamically from a query. Slower for complex queries (computed at runtime). | Source or Target |
-| Seed  | Small CSV-format files that you can write directly in Prophecy.                                               | Source only      |
+- Tables from the connected SQL warehouse. These are accessed with Table gems.
+- Tables from external systems. These are accessed with Source and Target gems.
+- Files from external systems. These are accessed with Source and Target gems.
 
-:::tip
-Once you have created a table in Prophecy, you can reuse that table configuration throughout your project. Find your tables in the [Project](/analysts/project-editor) tab of the left sidebar.
-:::
-
-## External Systems
-
-To use data from outside of your SQL warehouse, you can use external sources and targets. When you connect to an external data source, the data you read and write is not persisted in Prophecy. In other words, all data is transformed in memory—no data gets written to disk.
-
-To use external sources and targets, you need to set up the corresponding [connections](docs/analysts/development/connections.md).
+To use external systems, you need to set up corresponding [connections](docs/analysts/development/connections.md).
 
 ## What's next
 
-View the complete set of source and target gems in the following sections.
+View the complete set of sources and targets in the following sections.
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

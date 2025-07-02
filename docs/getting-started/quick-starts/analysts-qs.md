@@ -25,7 +25,7 @@ In this quick start, you will:
 To complete this quick start, you need:
 
 - Prophecy 4.0 or later.
-- A configured [Prophecy fabric](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md) (your execution environment).
+- A [Prophecy fabric](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md) with a Databricks SQL Warehouse Connection (your execution environment).
 
 If you need a fabric, you have a few options:
 
@@ -61,7 +61,7 @@ Let's add a pipeline component to the project.
 
 ### Add a source
 
-For this quick start, you'll create a [Seed](/analysts/table) as the data source.
+For this quick start, you'll create a [Seed](/analysts/databricks-table#seeds) as the data source.
 
 1. Open the **Source/Target** gem category.
 1. Click **Table**. This adds a new Table gem to the canvas.
