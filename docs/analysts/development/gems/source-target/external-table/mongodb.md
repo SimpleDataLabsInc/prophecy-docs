@@ -25,6 +25,8 @@ When you create a new external Source or Target gem, the gem dialog contains the
 - **Properties**: Infer or manually specify the schema, and optionally add properties that influence table behavior.
 - **Preview**: Load a preview of the dataset reflecting your configurations.
 
+The following sections provide a detailed reference for sources and targets.
+
 ## Source configuration
 
 Use these settings to configure a MongoDB Source gem for reading data from a collection.
@@ -33,10 +35,10 @@ Use these settings to configure a MongoDB Source gem for reading data from a col
 
 | Parameter                   | Description                                                                                                                                    |
 | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| Format type                 | Format of the gem. In this case, `mongodb`.                                                                                                    |
+| Format type                 | Table format for the target. For MongoDB, set to `mongodb`.                                                                                    |
 | Select or create connection | Select or create a new [MongoDB connection](/administration/fabrics/prophecy-fabrics/connections/mongodb) in the Prophecy fabric you will use. |
-| Database                    | Database where the table will be read from.                                                                                                    |
-| Name                        | Name of the table that will be read from.                                                                                                      |
+| Database                    | Database containing the table you want to read from.                                                                                           |
+| Name                        | Name of the MongoDB table to read.                                                                                                             |
 
 ### Source properties
 
@@ -53,10 +55,10 @@ Use these settings to configure a MongoDB Target gem for writing data to a colle
 
 | Parameter                   | Description                                                                                                                                    |
 | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| Format type                 | Table format. In this case, `mongodb`.                                                                                                         |
+| Format type                 | Table format for the target. For MongoDB, set to `mongodb`.                                                                                    |
 | Select or create connection | Select or create a new [MongoDB connection](/administration/fabrics/prophecy-fabrics/connections/mongodb) in the Prophecy fabric you will use. |
-| Database                    | Database where the table will be written to.                                                                                                   |
-| Name                        | Name of the table that will be written to.If you write a name that doesn't exists, a new table will be created in MongoDB.                     |
+| Database                    | Database where the target table will be created or updated.                                                                                    |
+| Name                        | Name of the MongoDB table to write data to. If the table doesn’t exist, it will be created automatically.                                      |
 
 ### Target properties
 

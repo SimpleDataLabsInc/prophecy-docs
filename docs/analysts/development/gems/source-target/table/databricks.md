@@ -6,9 +6,21 @@ description: Process Databricks tables in the SQL warehouse
 tags: []
 ---
 
+import SQLRequirements from '@site/src/components/sql-gem-requirements';
+
+<SQLRequirements
+  execution_engine="SQL Warehouse"
+  sql_package_name=""
+  sql_package_version=""
+/>
+
+In Prophecy, datasets stored in the [SQL Warehouse Connection](/administration/fabrics/prophecy-fabrics/#connections) defined in your fabric are accessed using Table gems. Unlike other source and target gems, Table gems run directly within the data warehouse, eliminating extra orchestration steps and improving performance.
+
+Available configurations for Table gems vary based on your SQL warehouse provider. This page explains how to use the Table gem for a Databricks SQL warehouse, including supported table types, configuration options, and guidance for managing Databricks tables in your Prophecy pipelines.
+
 ## Table types
 
-The following table types are supported for Databricks tables.
+The following table types are supported for Databricks connections.
 
 | Name  | Description                                                                                                   | Type             |
 | ----- | ------------------------------------------------------------------------------------------------------------- | ---------------- |
@@ -16,42 +28,69 @@ The following table types are supported for Databricks tables.
 | View  | A virtual table that derives data dynamically from a query. Slower for complex queries (computed at runtime). | Source or Target |
 | Seed  | Small CSV-format files that you can write directly in Prophecy.                                               | **Source only**  |
 
-Table parameters and properties may vary across table types.
+:::info
+For more information, visit the Databricks documentation on [Tables](https://docs.databricks.com/aws/en/tables/table-overview) and [Views](https://docs.databricks.com/aws/en/views/).
+:::
 
-## Source parameters
+## Gem configuration
 
-When you create a Table gem at the beginning of your pipeline, configure it with the following parameters.
+### Tables
 
-| Parameter       | Description                                                                                                                                                                                                                                   |
-| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Type and Format | Select `Table`, `View`, or `Seed`.                                                                                                                                                                                                            |
-| Location        | Choose the location where the table will be stored. You can create a new table by writing a new table name. The **Location** tab of the seed configuration is grayed out. This is because seeds are stored as CSV files in your project code. |
-| Properties      | Define certain properties of the table, including the table schema. If using seed, copy-paste your CSV data and define certain properties of the table.                                                                                       |
-| Preview         | Load the data to see a preview before saving.                                                                                                                                                                                                 |
+Tables are persistent, indexed storage objects optimized for frequent access.
+
+#### Source parameters {#source-tables}
+
+| Parameter  | Description                                                    |
+| ---------- | -------------------------------------------------------------- |
+| Location   | Specify the table’s location using database, schema, and name. |
+| Properties | Define or infer schema. Add a description if needed.           |
+| Preview    | Load a sample of the data before saving.                       |
+
+#### Target parameters {#target-tables}
+
+| Parameter     | Description                                                                                                         |
+| ------------- | ------------------------------------------------------------------------------------------------------------------- |
+| Location      | Choose the location where the table will be stored. You can create a new table by writing a new table name.         |
+| Properties    | Define certain properties of the table. The schema cannot be changed for targets.                                   |
+| Write Options | Select how you want the data to be written each time you run the pipeline (Table only). Either overwrite or append. |
+| Preview       | Load the data to see a preview before saving.                                                                       |
+
+### Views
+
+Views are virtual tables recomputed at runtime from a query.
+
+#### Source parameters {#source-views}
+
+| Parameter  | Description                                          |
+| ---------- | ---------------------------------------------------- |
+| Location   | Enter the database, schema, and table (view) name.   |
+| Properties | Define or infer schema. Add a description if needed. |
+| Preview    | Load data based on the view's underlying query.      |
+
+#### Target parameters {#target-views}
+
+| Parameter  | Description                                                                       |
+| ---------- | --------------------------------------------------------------------------------- |
+| Location   | Define the name of the view to be created or replaced.                            |
+| Properties | Define certain properties of the table. The schema cannot be changed for targets. |
+| Preview    | Load a preview of the resulting view.                                             |
 
 :::note
+Every time the pipeline runs, the target is overwritten. This is because the view is recomputed from scratch based on the underlying logic, and any previously materialized results are discarded. No additional write modes are supported.
+:::
+
+### Seeds
+
+Seeds are lightweight CSV datasets defined in your project. Seeds are source-only.
+
+| Parameter  | Description                                                          |
+| ---------- | -------------------------------------------------------------------- |
+| Properties | Copy-paste your CSV data and define certain properties of the table. |
+| Preview    | Load a preview of your seed in table format.                         |
+
+### Properties
+
 Tables in pipelines do not support dbt properties, which are only applicable to [model sources and targets](/analysts/model-sources-and-targets).
-:::
-
-## Target parameters
-
-When you add a Table gem to the end of your pipeline, configure it with the following parameters.
-
-| Parameter       | Description                                                                                                 |
-| --------------- | ----------------------------------------------------------------------------------------------------------- |
-| Type and Format | Select `Table`, `View`, or `Seed`.                                                                          |
-| Location        | Choose the location where the table will be stored. You can create a new table by writing a new table name. |
-| Properties      | Define certain properties of the table. The schema cannot be changed for target tables.                     |
-| Write Options   | Select how you want the data to be written each time you run the pipeline (Table only).                     |
-| Preview         | Load the data to see a preview before saving.                                                               |
-
-:::note
-Tables in pipelines do not support dbt properties, which are only applicable to [model sources and targets](/analysts/model-sources-and-targets).
-:::
-
-:::note
-When you use a view as a target table, views are always overwritten each run. This means every time the pipeline runs, the view is recomputed from scratch based on the underlying logic, and any previously materialized results are discarded. No additional write modes are supported.
-:::
 
 ## Cross-workspace access
 
@@ -62,3 +101,7 @@ To work with tables from a different Databricks workspace, use [Delta Sharing](h
 :::info
 Prophecy implements this guardrail to avoid using external connections when the data can be made available in your warehouse. External connections introduce an extra data transfer step, which slows down pipeline execution and adds unnecessary complexity. For best performance, Prophecy always prefers reading and writing directly within the warehouse.
 :::
+
+## Reusing and sharing tables
+
+After you create a table in Prophecy, you can reuse its configuration across your entire project. All created tables appear in the [Project](/analysts/project-editor) tab in the left sidebar. To make tables available to other teams, you can share your project as a package in the [Package Hub](/engineers/package-hub). Other users will be able to use the shared table configuration, provided they have the necessary permissions in Databricks to access the underlying data.

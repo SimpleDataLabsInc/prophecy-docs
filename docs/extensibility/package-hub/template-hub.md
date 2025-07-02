@@ -23,7 +23,7 @@ There are two ways to use a pipeline template.
 - **Edit mode**: If you click **Edit** on a pipeline in the Template Hub, a copy of the project is created in your [personal team](/administration/teams-users/teams-users). This project is editable because it is completely separate from the original pipeline template. You can always open the original from the Template Hub to reference a working pipeline.
 
 :::note
-Prophecy provides a compute environment for pipeline templates. This means that you don't need your own fabric to run these pipelines—you'll use the Prophecy-provided fabric. This fabric will be available automatically in the pipeline template project.
+Prophecy provides a Databricks compute environment for pipeline templates. This means that you don't need your own fabric to run these pipelines—you'll use the Prophecy-provided fabric. This fabric will be available automatically in the pipeline template project.
 :::
 
 ## List of pipeline templates
@@ -38,7 +38,7 @@ The following lists the SQL pipelines available in each category.
 
 Computes the airport-level delay metrics using flight data from the past 30 days. It aggregates departure and arrival delays, cancellation rates, and overall on-time performance for both origin and destination airports.
 
-**Gems used**: [Table](/analysts/table), [Join](/analysts/join), [Filter](/analysts/filter), [Aggregate](/analysts/aggregate), [OrderBy](/analysts/order-by)
+**Gems used**: [Table](/analysts/source-target), [Join](/analysts/join), [Filter](/analysts/filter), [Aggregate](/analysts/aggregate), [OrderBy](/analysts/order-by)
 
 ### Healthcare
 
@@ -48,7 +48,7 @@ Computes the airport-level delay metrics using flight data from the past 30 days
 
 Cleans up clinical trial data by filtering out malformed records, transforming nested data into tabular format, and removing leading and trailing whitespaces from column values.
 
-**Gems used**: [Table](/analysts/table), [Filter](/analysts/filter), [FlattenSchema](/analysts/flatten-schema), [DataCleansing](/analysts/data-cleansing)
+**Gems used**: [Table](/analysts/source-target), [Filter](/analysts/filter), [FlattenSchema](/analysts/flatten-schema), [DataCleansing](/analysts/data-cleansing)
 
 ---
 
@@ -56,7 +56,7 @@ Cleans up clinical trial data by filtering out malformed records, transforming n
 
 Makes the patient ID, age, and ZIP code HIPAA compliant.
 
-**Gems used**: [Table](/analysts/table), [Reformat](/analysts/reformat)
+**Gems used**: [Table](/analysts/source-target), [Reformat](/analysts/reformat)
 
 ---
 
@@ -64,7 +64,7 @@ Makes the patient ID, age, and ZIP code HIPAA compliant.
 
 Performs a gap analysis to determine the cost of each diagnosis without clinical trials.
 
-**Gems used**: [Table](/analysts/table), [Filter](/analysts/filter), [Aggregate](/analysts/aggregate), [OrderBy](/analysts/order-by), [DataCleansing](/analysts/data-cleansing), [Join](/analysts/join)
+**Gems used**: [Table](/analysts/source-target), [Filter](/analysts/filter), [Aggregate](/analysts/aggregate), [OrderBy](/analysts/order-by), [DataCleansing](/analysts/data-cleansing), [Join](/analysts/join)
 
 ---
 
@@ -72,7 +72,7 @@ Performs a gap analysis to determine the cost of each diagnosis without clinical
 
 Determines the daily total billing based on patients per provider.
 
-**Gems used**: [Table](/analysts/table), [Reformat](/analysts/reformat), [Filter](/analysts/filter), [Aggregate](/analysts/aggregate)
+**Gems used**: [Table](/analysts/source-target), [Reformat](/analysts/reformat), [Filter](/analysts/filter), [Aggregate](/analysts/aggregate)
 
 ### Manufacturing
 
@@ -82,7 +82,7 @@ Determines the daily total billing based on patients per provider.
 
 Analyzes production job defect rates by calculating the defect rate per job for each production line and month, then ranks these rates into percentiles to identify how jobs compare within the same line and time period.
 
-**Gems used**: [Table](/analysts/table), [Reformat](/analysts/reformat), [WindowFunction](/analysts/window)
+**Gems used**: [Table](/analysts/source-target), [Reformat](/analysts/reformat), [WindowFunction](/analysts/window)
 
 ---
 
@@ -90,7 +90,7 @@ Analyzes production job defect rates by calculating the defect rate per job for 
 
 Calculates the average, median, minimum, and maximum for manufacturing parts by measuring the hours taken to start and complete events for each part number.
 
-**Gems used**: [Table](/analysts/table), [Aggregate](/analysts/aggregate), [Join](/analysts/join), [Reformat](/analysts/reformat)
+**Gems used**: [Table](/analysts/source-target), [Aggregate](/analysts/aggregate), [Join](/analysts/join), [Reformat](/analysts/reformat)
 
 ### Finance
 
@@ -100,7 +100,7 @@ Calculates the average, median, minimum, and maximum for manufacturing parts by 
 
 Creates a detailed customer financial profile while masking sensitive information by combining raw data from various source tables and summarizing each customer’s account activity, loan details, credit score history, and transaction spending.
 
-**Gems used**: [Table](/analysts/table), [Reformat](/analysts/reformat), [OrderBy](/analysts/order-by), [Aggregate](/analysts/aggregate), [Join](/analysts/join)
+**Gems used**: [Table](/analysts/source-target), [Reformat](/analysts/reformat), [OrderBy](/analysts/order-by), [Aggregate](/analysts/aggregate), [Join](/analysts/join)
 
 ### Retail
 
@@ -110,7 +110,7 @@ Creates a detailed customer financial profile while masking sensitive informatio
 
 Calculates campaign-level return on investment (ROI), summarizes total earnings and costs per product, and computes ROI as the percentage gain relative to marketing spend.
 
-**Gems used**: [Table](/analysts/table), [Aggregate](/analysts/aggregate), [Join](/analysts/join), [Filter](/analysts/filter), [FlattenSchema](/analysts/flatten-schema), [Reformat](/analysts/reformat)
+**Gems used**: [Table](/analysts/source-target), [Aggregate](/analysts/aggregate), [Join](/analysts/join), [Filter](/analysts/filter), [FlattenSchema](/analysts/flatten-schema), [Reformat](/analysts/reformat)
 
 ### Energy
 
@@ -120,4 +120,4 @@ Calculates campaign-level return on investment (ROI), summarizes total earnings 
 
 Calculates the percentile rank of each energy asset based on its monthly energy production and benchmarks asset performance across dimensions such as state, region, and asset type.
 
-**Gems used**: [Table](/analysts/table), [Reformat](/analysts/reformat), [Aggregate](/analysts/aggregate), [WindowFunction](/analysts/window), [Join](/analysts/join), [Reformat](/analysts/reformat), [Union](/analysts/union), [OrderBy](/analysts/order-by)
+**Gems used**: [Table](/analysts/source-target), [Reformat](/analysts/reformat), [Aggregate](/analysts/aggregate), [WindowFunction](/analysts/window), [Join](/analysts/join), [Reformat](/analysts/reformat), [Union](/analysts/union), [OrderBy](/analysts/order-by)

@@ -14,7 +14,7 @@ To use a Power BI connection, your Microsoft account admin needs to:
 
 - [Register Prophecy](https://learn.microsoft.com/en-us/power-bi/developer/embedded/register-app) as a Microsoft Entra app. This will generate the Client ID and Client Secret that Prophecy will use to connect to Microsoft.
 
-- Prophecy uses Power BI APIs for the [PowerBIWrite gem](/analysts/tableau). To use this gem with a Power BI connection, you need to assign the following scope to your Microsoft Entra app. A scope defines the permissions your app has that can be used for the API.
+- Prophecy uses Power BI APIs for the [PowerBIWrite gem](/analysts/power-bi). To use this gem with a Power BI connection, you need to assign the following scope to your Microsoft Entra app. A scope defines the permissions your app has that can be used for the API.
 
   `Dataset.ReadWrite.All`
 
@@ -27,7 +27,7 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Feature                                                       | Supported |
 | ------------------------------------------------------------- | --------- |
 | Read data with a [Source gem](/analysts/source-target)        | No        |
-| Write data with a [PowerBIWrite gem](/analysts/tableau)       | Yes       |
+| Write data with a [PowerBIWrite gem](/analysts/power-bi)      | Yes       |
 | Browse data in the [Environment browser](/analysts/pipelines) | No        |
 
 ## Limitations

@@ -28,14 +28,14 @@ If you’re working with file types like CSV or Parquet from Databricks, see [Fi
 
 ## Parameters
 
-| Parameter                   | Tab             | Description                                                                                                                                          |
-| --------------------------- | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Connection type             | Type            | Location you want to connect from.                                                                                                                   |
-| Format type                 | Source location | Table format. In this case, `databricks`.                                                                                                            |
-| Select or create connection | Source location | Select or create a new [Databricks connection](/administration/fabrics/prophecy-fabrics/connections/databricks) in the Prophecy fabric you will use. |
-| Database                    | Source location | Database where the table is or will be located.                                                                                                      |
-| Schema                      | Source location | Schema where the table is or will be located.                                                                                                        |
-| Name                        | Source location | Name of the external table.                                                                                                                          |
+| Parameter                   | Description                                                                                                                                          |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Connection type             | Location you want to connect from.                                                                                                                   |
+| Format type                 | Table format. In this case, `databricks`.                                                                                                            |
+| Select or create connection | Select or create a new [Databricks connection](/administration/fabrics/prophecy-fabrics/connections/databricks) in the Prophecy fabric you will use. |
+| Database                    | Database where the table is or will be located.                                                                                                      |
+| Schema                      | Schema where the table is or will be located.                                                                                                        |
+| Name                        | Name of the external table.                                                                                                                          |
 
 ## Cross-workspace access
 

@@ -25,6 +25,8 @@ When you create a new external Source or Target gem, the gem dialog contains the
 - **Properties**: Infer or manually specify the schema, and optionally add properties that influence table behavior.
 - **Preview**: Load a preview of the dataset reflecting your configurations.
 
+The following sections provide a detailed reference for sources and targets.
+
 ## Source configuration
 
 Use these settings to configure an MSSQL Source gem for reading data.
@@ -33,31 +35,31 @@ Use these settings to configure an MSSQL Source gem for reading data.
 
 | Parameter                   |                                                                                                                                            | Description |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ----------- |
-| Format type                 | Table format. In this case, `mssql`.                                                                                                       |
+| Format type                 | Table format for the source. For MSSQL tables, set to `mssql`.                                                                             |
 | Select or create connection | Select or create a new [MSSQL connection](/administration/fabrics/prophecy-fabrics/connections/mssql) in the Prophecy fabric you will use. |
-| Database                    | Database where the table will be read from.                                                                                                |
-| Schema                      | Schema where the table will be read from.                                                                                                  |
-| Name                        | Name of the table to read.                                                                                                                 |
+| Database                    | Database containing the table you want to read from.                                                                                       |
+| Schema                      | Schema within the database where the table is located.                                                                                     |
+| Name                        | Exact name of the MSSQL table to read data from.                                                                                           |
 
 ### Source properties
 
-Infer or manually configure the schema of your Source gem. Optionally, add a description for your table. No other properties are supported at this time.
+Infer or manually configure the schema of your Source gem. Optionally, add a description for your table. Additional properties are not supported at this time.
 
-## Table configuration
+## Target configuration
 
 Use these settings to configure an MSSQL Target gem for writing data.
 
-### Table location
+### Target location
 
 | Parameter                   |                                                                                                                                            | Description |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ----------- |
-| Format type                 | Table format. In this case, `mssql`.                                                                                                       |
+| Format type                 | Table format for the source. For MSSQL tables, set to `mssql`.                                                                             |
 | Select or create connection | Select or create a new [MSSQL connection](/administration/fabrics/prophecy-fabrics/connections/mssql) in the Prophecy fabric you will use. |
-| Database                    | Database where the table will be written to.                                                                                               |
-| Schema                      | Schema where the table will be written to.                                                                                                 |
-| Name                        | Name of the table to write to. If the table doesn't already exist in the schema, a new table is created.                                   |
+| Database                    | Database where the target table will be created or updated.                                                                                |
+| Schema                      | Schema within the database where the target table resides or will be created.                                                              |
+| Name                        | Name of the MSSQL table to write data to. If the table doesn’t exist, it will be created automatically.                                    |
 
-### Table properties
+### Target properties
 
 | Property    | Description                                                                                          | Default |
 | ----------- | ---------------------------------------------------------------------------------------------------- | ------- |

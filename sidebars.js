@@ -126,10 +126,6 @@ const sidebars = {
                 {
                   type: "category",
                   label: "Tables (Warehouse)",
-                  link: {
-                    type: "doc",
-                    id: "analysts/development/gems/source-target/table/table",
-                  },
                   items: [
                     "analysts/development/gems/source-target/table/databricks",
                     // "analysts/development/gems/source-target/table/bigquery",
