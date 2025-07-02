@@ -1,7 +1,6 @@
 ---
 title: PowerBIWrite
 id: power-bi
-draft: true
 slug: /analysts/power-bi
 description: Send your pipeline output directly to PowerBI
 tags:
@@ -10,7 +9,15 @@ tags:
   - report
 ---
 
-The PowerBIWrite gem lets you publish pipeline results directly to Power BI tables. Fine-grained options like write modes and schema management let you control how tables are written. You can configure the gem to either write tables to new datasets or existing ones in a specified Power BI workspace.
+The PowerBIWrite gem lets you publish pipeline results directly to Power BI tables. This gem supports fine-grained options like write modes and schema management to control how tables are written. You can configure the gem to either write tables to new datasets or existing ones in a specified Power BI workspace.
+
+:::info
+Datasets in the PowerBIWrite gem refer to the _semantic model_ content type in Power BI. For more information, visit [New name for Power BI datasets](https://learn.microsoft.com/en-us/power-bi/connect-data/service-datasets-rename).
+:::
+
+## Prerequisites
+
+The PowerBIWrite gem requires Prophecy 4.1.1.3 or later.
 
 ## Inputs
 
@@ -25,11 +32,11 @@ To add additional input ports, click `+` next to **Ports**.
 
 ## Parameters
 
-| Parameter                          | Description                                                                                                                                                                                                      |
-| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Select or create connection        | Power BI [connection](/administration/fabrics/prophecy-fabrics/connections/power-bi) to use for the gem.                                                                                                         |
-| Workspace Name                     | Power BI [workspace](https://learn.microsoft.com/en-us/power-bi/collaborate-share/service-new-workspaces) that contains or will contain the dataset.                                                             |
-| Create New or Use Existing Dataset | Choose **Dataset Name** to create a new dataset in the workspace. Choose **Dataset ID** to push tables to an existing dataset in the workspace. These options are described in detail in the following sections. |
+| Parameter                          | Description                                                                                                                                                                                                                |
+| ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Select or create connection        | Power BI [connection](/administration/fabrics/prophecy-fabrics/connections/power-bi) to use for the gem.                                                                                                                   |
+| Workspace Name                     | Power BI [workspace](https://learn.microsoft.com/en-us/power-bi/collaborate-share/service-new-workspaces) that contains or will contain the dataset.                                                                       |
+| Create New or Use Existing Dataset | Choose **Dataset Name** to create a new dataset in the workspace. <br/>Choose **Dataset ID** to push tables to an existing dataset in the workspace. <br/>These options are described in detail in the following sections. |
 
 ### Dataset Name
 
@@ -37,7 +44,7 @@ Select this option to create a new dataset in your workspace. You will need to g
 
 #### Table Write Configuration {#table-write-1}
 
-The Table Write Configuration lets you define how your table(s) will be written to the dataset. Each row accepts the following parameters:
+This configuration lets you define how your table(s) will be written to the dataset. Each row accepts the following parameters:
 
 | Parameter   | Description                                                            |
 | ----------- | ---------------------------------------------------------------------- |
@@ -50,7 +57,7 @@ Select this option to update table inside an existing dataset in your workspace.
 
 #### Table Write Configuration {#table-write-2}
 
-The Table Write Configuration lets you define how your table(s) will be written to the dataset. Each row accepts the following parameters:
+This configuration lets you define how your table(s) will be written to the dataset. Each row accepts the following parameters:
 
 | Parameter        | Description                                                                                                                                                                                                                                                                                                                                                            |
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

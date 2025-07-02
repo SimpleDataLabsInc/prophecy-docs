@@ -1,34 +1,33 @@
 ---
 title: Microsoft Power BI
 id: power-bi
-draft: true
 description: Learn how to connect with PowerBI
 tags:
   - connections
   - tableau
 ---
 
+Prophecy supports writing data to Microsoft Power BI using the Power BI REST API. By configuring a connection with the appropriate Microsoft Entra credentials and scopes, you can push data directly from your Prophecy pipelines into tables used in reports and dashboards.
+
 ## Prerequisites
 
-To use a Power BI connection, your Microsoft account admin needs to:
+To connect Prophecy to Power BI, your Microsoft administrator must first [register Prophecy as an application](https://learn.microsoft.com/en-us/graph/auth/auth-concepts#register-the-application) in Microsoft Entra ID. This registration provides the Client ID and Client Secret needed to authenticate Prophecy with Microsoft APIs.
 
-- [Register Prophecy](https://learn.microsoft.com/en-us/power-bi/developer/embedded/register-app) as a Microsoft Entra app. This will generate the Client ID and Client Secret that Prophecy will use to connect to Microsoft.
+As part of the setup, the following scope must be granted to the registered app:
 
-- Prophecy uses Power BI APIs for the [PowerBIWrite gem](/analysts/power-bi). To use this gem with a Power BI connection, you need to assign the following scope to your Microsoft Entra app. A scope defines the permissions your app has that can be used for the API.
+- `Dataset.ReadWrite.All`
 
-  `Dataset.ReadWrite.All`
-
-  For detailed instructions on adding scopes to your app, visit [Using the Power BI REST APIs](https://learn.microsoft.com/en-us/rest/api/power-bi/#scopes) in the Power BI documentation.
+This lets Prophecy update tables in Power BI. For detailed instructions on adding scopes to your app, visit [Using the Power BI REST APIs](https://learn.microsoft.com/en-us/rest/api/power-bi/#scopes) in the Power BI documentation.
 
 ## Feature support
 
 The table below outlines whether the connection supports certain Prophecy features.
 
-| Feature                                                       | Supported |
-| ------------------------------------------------------------- | --------- |
-| Read data with a [Source gem](/analysts/source-target)        | No        |
-| Write data with a [PowerBIWrite gem](/analysts/power-bi)      | Yes       |
-| Browse data in the [Environment browser](/analysts/pipelines) | No        |
+| Feature                                                                | Supported |
+| ---------------------------------------------------------------------- | --------- |
+| Read and write using [Source and Target gems](/analysts/source-target) | No        |
+| Write data with a [PowerBIWrite gem](/analysts/power-bi)               | Yes       |
+| Browse data in the [Environment browser](/analysts/pipelines)          | No        |
 
 ## Limitations
 
@@ -47,4 +46,4 @@ To create a connection with Power BI, enter the following parameters. You can fi
 
 ## Sharing connections within teams
 
-Power BI connections are stored within [fabrics](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md), which are assigned to specific teams in Prophecy. Once a Power BI connection is added to a fabric, anyone on that team can use it to send data to Power BI from their pipelines. Everyone will inherit the permissions of the user authenticated during connection setup.
+Power BI connections are stored within [fabrics](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md), which are assigned to specific teams in Prophecy. Once a Power BI connection is added to a fabric, anyone on that team can use it to send data to Power BI from their pipelines. Everyone will inherit the permissions of the Microsoft Entra app used for connection setup.
