@@ -16,13 +16,22 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 Use a table from Snowflake as an external source or target.
 
-## Parameters
+## Source configuration
 
-| Parameter                   | Tab             | Description                                                       |
-| --------------------------- | --------------- | ----------------------------------------------------------------- |
-| Connection type             | Type            | Location you want to connect from.                                |
-| Format type                 | Source location | Format of the gem. In this case, `snowflake`.                     |
-| Select or create connection | Source location | Whether to select an existing connection, or to create a new one. |
-| Database                    | Source location | Database where the table is or will be located.                   |
-| Schema                      | Source location | Schema where the table is or will be located.                     |
-| Name                        | Source location | Name of the external table.                                       |
+### Source location
+
+| Parameter                   | Description                                                                                                                                        |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Format type                 | Format of the gem. In this case, `snowflake`.                                                                                                      |
+| Select or create connection | Select or create a new [Snowflake connection](/administration/fabrics/prophecy-fabrics/connections/snowflake) in the Prophecy fabric you will use. |
+| Database                    | Database where the table is or will be located.                                                                                                    |
+| Schema                      | Schema where the table is or will be located.                                                                                                      |
+| Name                        | Name of the external table.                                                                                                                        |
+
+### Source properties
+
+## Table configuration
+
+### Table location
+
+### Table properties

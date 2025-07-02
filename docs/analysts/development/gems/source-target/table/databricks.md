@@ -52,3 +52,13 @@ Tables in pipelines do not support dbt properties, which are only applicable to 
 :::note
 When you use a view as a target table, views are always overwritten each run. This means every time the pipeline runs, the view is recomputed from scratch based on the underlying logic, and any previously materialized results are discarded. No additional write modes are supported.
 :::
+
+## Cross-workspace access
+
+If your fabric uses Databricks as the SQL warehouse, you can’t select Databricks in an external Source or Target gem. Instead, you must use Table gems, which are limited to the Databricks warehouse defined in the SQL warehouse connection.
+
+To work with tables from a different Databricks workspace, use [Delta Sharing](https://docs.databricks.com/aws/en/delta-sharing/). Delta Sharing lets you access data across workspaces without creating additional Databricks connections.
+
+:::info
+Prophecy implements this guardrail to avoid using external connections when the data can be made available in your warehouse. External connections introduce an extra data transfer step, which slows down pipeline execution and adds unnecessary complexity. For best performance, Prophecy always prefers reading and writing directly within the warehouse.
+:::
