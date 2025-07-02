@@ -26,7 +26,7 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Feature                                                                | Supported |
 | ---------------------------------------------------------------------- | --------- |
 | Read and write using [Source and Target gems](/analysts/source-target) | No        |
-| Write data with a [PowerBIWrite gem](/analysts/power-bi)               | Yes       |
+| Write data with a [PowerBIWrite gem](/analysts/power-bi-write)         | Yes       |
 | Browse data in the [Environment browser](/analysts/pipelines)          | No        |
 
 ## Limitations

@@ -1,7 +1,7 @@
 ---
 title: PowerBIWrite
 id: power-bi
-slug: /analysts/power-bi
+slug: /analysts/power-bi-write
 description: Send your pipeline output directly to PowerBI
 tags:
   - gems
