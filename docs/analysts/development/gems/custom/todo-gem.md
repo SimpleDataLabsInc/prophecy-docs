@@ -1,13 +1,20 @@
 ---
 title: ToDo
 id: todo
-draft: true
 description: Create a placeholder gem in your pipeline
 tags:
   - gems
   - analyst
   - custom
 ---
+
+import SQLRequirements from '@site/src/components/sql-gem-requirements';
+
+<SQLRequirements
+  execution_engine=""
+  sql_package_name="ProphecyDatabricksSqlBasics"
+  sql_package_version="0.0.10+"
+/>
 
 The ToDo gem lets you create a placeholder in your pipeline for a future gem.
 

@@ -243,6 +243,7 @@ const sidebars = {
                 "analysts/development/gems/custom/rest-api",
                 "analysts/development/gems/custom/macro",
                 "analysts/development/gems/custom/script",
+                "analysts/development/gems/custom/todo",
               ],
             },
             {
