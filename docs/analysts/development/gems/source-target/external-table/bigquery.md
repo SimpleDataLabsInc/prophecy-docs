@@ -14,12 +14,7 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
   sql_package_version=""
 />
 
-You can use BigQuery tables in Prophecy through two different methods:
-
-- **Table gems**, when BigQuery is configured as the SQL warehouse in your fabric.
-- **External Source and Target gems**, when BigQuery is not the configured SQL warehouse.
-
-This page describes how to use BigQuery external Source and Target gems to read from or write to catalog tables.
+This page describes how to use BigQuery external Source and Target gems to read from or write to tables. Only use an external Source and Target gem when BigQuery is not the configured SQL warehouse connection. Otherwise, use the [Table gem](/analysts/bigquery-table).
 
 ## Source configuration
 
