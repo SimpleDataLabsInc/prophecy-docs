@@ -17,7 +17,7 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
   sql_package_version=""
 />
 
-Use a custom SQL statement in your pipeline. The SQLStatement gem supports SELECT statements.
+Use a custom SQL statement in your pipeline. The SQLStatement gem supports SELECT statements. Other statements like DDL statements are not supported.
 
 ## Parameters
 

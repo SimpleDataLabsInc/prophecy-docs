@@ -105,9 +105,9 @@ const sidebars = {
           label: "Pipelines",
           link: { type: "doc", id: "analysts/development/pipelines/pipelines" },
           items: [
+            "analysts/development/pipelines/pipeline-params",
             "analysts/development/pipelines/execution",
             "analysts/development/pipelines/logs",
-            "analysts/development/pipelines/pipeline-params",
             "analysts/development/pipelines/data-types",
           ],
         },
@@ -320,15 +320,6 @@ const sidebars = {
         },
         {
           type: "category",
-          label: "Functions",
-          link: {
-            type: "doc",
-            id: "analysts/development/functions/functions",
-          },
-          items: [],
-        },
-        {
-          type: "category",
           label: "Collaboration",
           link: {
             type: "doc",
@@ -379,6 +370,17 @@ const sidebars = {
       link: { type: "doc", id: "analysts/extensibility/extensibility" },
       items: [
         "analysts/extensibility/dependencies",
+
+        {
+          type: "category",
+          label: "Functions",
+          link: {
+            type: "doc",
+            id: "analysts/development/functions/functions",
+          },
+          items: [],
+        },
+        "analysts/extensibility/stored-procedure",
         "analysts/extensibility/sql-gem-builder",
       ],
     },
