@@ -8,7 +8,11 @@ tags:
   - fabric
 ---
 
-To use your Google BigQuery warehouse for execution in Prophecy, you need to create a SQL [fabric](docs/getting-started/concepts/fabrics.md) with a BigQuery connection.
+To run models projects on Google BigQuery, you need to create a [SQL fabric](/administration/fabrics/sql-fabrics/Fabrics) with a BigQuery connection.
+
+:::info
+SQL fabrics are for **models only**. Create a [Prophecy fabric](/administration/fabrics/prophecy-fabrics/) with a BigQuery warehouse connection to run pipelines.
+:::
 
 ## Create a fabric
 

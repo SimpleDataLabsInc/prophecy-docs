@@ -180,10 +180,10 @@ Let the user upload their own file to replace the data of a Source gem in the pi
 
 Let the user view sample data of a table in the pipeline.
 
-| Setting    | Description                                                                                       | Required |
-| ---------- | ------------------------------------------------------------------------------------------------- | -------- |
-| Data table | [Table](docs/analysts/development/gems/source-target/table/table.md) that will appear in the app. | True     |
-| Label      | Label to describe the data preview.                                                               | True     |
+| Setting    | Description                                                   | Required |
+| ---------- | ------------------------------------------------------------- | -------- |
+| Data table | [Table](/analysts/source-target) that will appear in the app. | True     |
+| Label      | Label to describe the data preview.                           | True     |
 
 ### Charts
 
@@ -191,7 +191,7 @@ Display a visualization of a table from the pipeline. Prophecy provides multiple
 
 | Setting             | Description                                                                                                            | Required |
 | ------------------- | ---------------------------------------------------------------------------------------------------------------------- | -------- |
-| Data table          | [Table](docs/analysts/development/gems/source-target/table/table.md) that contains data to visualize.                  | True     |
+| Data table          | [Table](/analysts/source-target) that contains data to visualize.                                                      | True     |
 | Label               | Label to describe the chart.                                                                                           | True     |
 | Chart type          | Type of chart you wish to display (for example, bar chart or line chart).                                              | True     |
 | Chart configuration | Configure how the chart appears. To view information about each chart configuration, visit [Charts](/analysts/charts). | True     |

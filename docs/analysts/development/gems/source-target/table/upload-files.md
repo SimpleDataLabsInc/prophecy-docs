@@ -2,7 +2,7 @@
 title: Upload files
 id: upload-files
 slug: /analysts/upload-file
-description: Upload files to the visual canvas
+description: Upload files to your data warehouse from the visual canvas
 tags:
   - how-to
   - upload
@@ -26,7 +26,7 @@ Supported file types:
 - Excel (XLS, XLSX)
 - XML
 
-When you upload your file through Prophecy, it's added directly to your Databricks or Snowflake SQL warehouse as a [table](docs/analysts/development/gems/source-target/source-target.md#tables).
+When you upload your file through Prophecy, it's added directly to your SQL warehouse as a [table](/analysts/source-target).
 
 :::note
 The recommended maximum file size is 100&nbsp;MB.

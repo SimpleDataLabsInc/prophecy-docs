@@ -8,29 +8,49 @@ tags:
   - databricks
 ---
 
-A Databricks connection lets you access your cloud data warehouse. It’s optimized for analytics and built to support modern data warehousing workloads with high performance and scalability.
+This page explains how to use and configure a Databricks connection in Prophecy. A Databricks connection allows Prophecy to access files, tables, and compute resources in your Databricks workspace. You can use the same connection to access any of these resources, as long as the authenticated account in the connection has the appropriate permissions.
+
+## Prerequisites
+
+Prophecy connects to Databricks using the credentials you provide. These credentials are used to authenticate your session and authorize all data operations during pipeline execution, including reading from and writing to tables. To use a Databricks connection effectively, your user or service principal must have the following:
+
+- [Basic table permissions](https://docs.databricks.com/aws/en/tables/#basic-table-permissions) defined in the Databricks documentation.
+- Additional [Unity Catalog privileges](https://docs.databricks.com/aws/en/data-governance/unity-catalog/manage-privileges/privileges):
+  - `CREATE VOLUME` for permission to create the `PROPHECY_ORCHESTRATOR_VOLUME`
+  - `READ VOLUME` for the path `/Volumes/<catalog>/<schema>/PROPHECY_ORCHESTRATOR_VOLUME`
+  - `WRITE VOLUME` for permission to delete intermediate files from the volume
+
+## Connection type
+
+Prophecy supports Databricks as both a SQL Warehouse connection and an Ingress/Egress connection. To learn more about these different connection types, visit [Prophecy fabrics](/administration/fabrics/prophecy-fabrics/#connections).
 
 ## Feature support
 
 The table below outlines whether the connection supports certain Prophecy features.
 
-| Feature                                                       | Supported |
-| ------------------------------------------------------------- | --------- |
-| Read data with a [Source gem](/analysts/source-target)        | Yes       |
-| Write data with a [Target gem](/analysts/source-target)       | Yes       |
-| Browse data in the [Environment browser](/analysts/pipelines) | Yes       |
+| Feature                                                         | Supported                           |
+| --------------------------------------------------------------- | ----------------------------------- |
+| Run SQL queries                                                 | Yes — SQL Warehouse Connection only |
+| Read and write data with a [Table gem](/analysts/source-target) | Yes — SQL Warehouse Connection only |
+| Read data with a [Source gem](/analysts/source-target)          | Yes                                 |
+| Write data with a [Target gem](/analysts/source-target)         | Yes                                 |
+| Browse data in the [Environment browser](/analysts/pipelines)   | Yes                                 |
 
-## Parameters
+## Connection parameters
 
-To create a connection with Databricks, enter the following parameters:
+To create a connection with Databricks, enter the following parameters.
 
 | Parameter             | Description                                                                                                                                                                             |
 | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Connection Name       | Name to to identify your connection                                                                                                                                                     |
+| Connection Name       | Name to identify your connection.                                                                                                                                                       |
 | JDBC URL              | URL to connect to your SQL warehouse<br/>Example: `jdbc:databricks://<databricks-instance>:443/default;transportMode=http;ssl=1;AuthMech=3;httpPath=/sql/1.0/warehouses/<warehouse-id>` |
-| Catalog               | Default catalog for reading and writing data                                                                                                                                            |
-| Schema                | Default schema for reading and writing data                                                                                                                                             |
-| Authentication method | How you want to authenticate your Databricks account (OAuth or PAT)                                                                                                                     |
+| Catalog               | Default write location for target tables.                                                                                                                                               |
+| Schema                | Default write location for target tables.                                                                                                                                               |
+| Authentication method | How you want to authenticate your Databricks account. Learn more in [Authentication methods](#authentication-methods).                                                                  |
+
+:::info
+When you use Databricks as your primary SQL warehouse, Prophecy also uses the catalog and schema you define in the connection to store temporary tables during [pipeline execution](/analysts/pipeline-execution#external-data-handling). Therefore, you must have write access to the schema in Databricks. To avoid conflicts, define distinct catalog and schema locations for each fabric.
+:::
 
 ## Authentication methods
 
@@ -38,7 +58,7 @@ You can configure your Databricks connection using the following authentication 
 
 ### OAuth
 
-When you choose Databricks [OAuth](docs/administration/authentication/databricks-oauth.md) for the authentication method, there are two modes.
+When you choose [Databricks OAuth](docs/administration/authentication/databricks-oauth.md) for the authentication method, there are two modes.
 
 | OAuth Method      | Description                                                                                                                                             | Use cases                                                                                                       |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
@@ -71,28 +91,13 @@ When you choose **Personal Access Token** (PAT) for the authentication method, y
 
 Using the PAT authentication method:
 
-- All team members that have access to the fabric can use the connection in their projects.
+- All team members who have access to the fabric can use the connection in their projects.
 - No additional authentication is required. Team members automatically inherit the access and permissions of the stored connection credentials.
-
-## Databricks permissions
-
-When you create an Databricks connection in Prophecy, access permissions are tied to the credentials you use. This is because Prophecy uses your credentials to execute all data operations, such as reading from or writing to tables.
-
-To fully leverage a Databricks connection in Prophecy, you need the following Databricks permissions:
-
-- Create Schema
-- Create or Replace Table
-- Drop Table
-- Insert Into
-- Create Volume `PROPHECY_ORCHESTRATOR_VOLUME`
-- Access to `/Volumes/<catalog>/<schema>/PROPHECY_ORCHESTRATOR_VOLUME`
-- Remove File permission inside the volume
-- Copy Into (from the volume)
 
 ## Fetching data
 
 Prophecy fetches data from Databricks connections in the following ways:
 
-- When you browse an Databricks connection in the [Environment browser](/analysts/pipelines), Prophecy fetches data on demand as you expand folders. You can manually refresh the Environment browser to see updated files.
+- When you browse a Databricks connection in the [Environment browser](/analysts/pipelines), Prophecy fetches data on demand as you expand folders. You can manually refresh the Environment browser to see updated files.
 
 - When a pipeline runs, Source gems will read the latest available version of the data. If the schema of your data in Databricks changes, Prophecy will automatically use the new schema.
