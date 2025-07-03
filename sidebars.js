@@ -106,6 +106,7 @@ const sidebars = {
           link: { type: "doc", id: "analysts/development/pipelines/pipelines" },
           items: [
             "analysts/development/pipelines/execution",
+            "analysts/development/pipelines/logs",
             "analysts/development/pipelines/pipeline-params",
             "analysts/development/pipelines/data-types",
           ],
@@ -239,6 +240,7 @@ const sidebars = {
                 "analysts/development/gems/custom/rest-api",
                 "analysts/development/gems/custom/macro",
                 "analysts/development/gems/custom/script",
+                "analysts/development/gems/custom/stored-procedure",
               ],
             },
             {
@@ -342,39 +344,6 @@ const sidebars = {
           items: [
             "analysts/development/data-tests/use-model-tests",
             "analysts/development/data-tests/use-project-tests",
-          ],
-        },
-        "analysts/development/pipelines/logs",
-        {
-          type: "category",
-          label: "Models",
-          link: {
-            type: "doc",
-            id: "analysts/development/models/models",
-          },
-          items: [
-            {
-              type: "category",
-              label: "Sources and targets",
-              link: {
-                type: "doc",
-                id: "analysts/development/models/sources-target/sources-and-targets",
-              },
-              items: [
-                {
-                  type: "category",
-                  label: "Platform-specific targets",
-                  items: [
-                    "analysts/development/models/target-platforms/databricks-target",
-                    "analysts/development/models/target-platforms/bigquery-target",
-                    "analysts/development/models/target-platforms/snowflake-target",
-                  ],
-                },
-                "analysts/development/models/sources-target/dynamic-target-location",
-                "analysts/development/models/sources-target/merge-approaches",
-              ],
-            },
-            "analysts/development/models/configuration",
           ],
         },
       ],
@@ -680,6 +649,39 @@ const sidebars = {
           ],
         },
         "Spark/project-best-practices",
+      ],
+    },
+    /// MODELING
+    {
+      type: "category",
+      label: "Models",
+      link: {
+        type: "doc",
+        id: "analysts/development/models/models",
+      },
+      items: [
+        {
+          type: "category",
+          label: "Sources and targets",
+          link: {
+            type: "doc",
+            id: "analysts/development/models/sources-target/sources-and-targets",
+          },
+          items: [
+            {
+              type: "category",
+              label: "Platform-specific targets",
+              items: [
+                "analysts/development/models/target-platforms/databricks-target",
+                "analysts/development/models/target-platforms/bigquery-target",
+                "analysts/development/models/target-platforms/snowflake-target",
+              ],
+            },
+            "analysts/development/models/sources-target/dynamic-target-location",
+            "analysts/development/models/sources-target/merge-approaches",
+          ],
+        },
+        "analysts/development/models/configuration",
       ],
     },
     /// LINEAGE

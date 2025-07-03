@@ -88,11 +88,32 @@ You can define multiple trigger configurations. Use AND or OR logic to control w
 
 ### Advanced settings
 
-These advanced settings determine how the poll-based data sensors work.
+These advanced settings determine how the poll-based data sensors work. For additional details, jump to the following sections.
 
 | Parameter                 | Description                                                                                                                                                                                                                   |
 | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Poke Interval             | How often to check the condition in seconds. Defaults to 60 seconds.                                                                                                                                                          |
 | Sensor Timeout (seconds)  | Maximum time in seconds for each sensor run. If not set, the sensor runs indefinitely.                                                                                                                                        |
-| Exponential Backoff Retry | Whether to increase the wait time between retries exponentially. Helps reduce system load when the condition isn’t immediately met.                                                                                           |
+| Exponential Backoff Retry | If enabled, increases the wait time between polling exponentially. This helps reduce system load when the condition isn’t immediately met.                                                                                    |
 | Poll Mode                 | <ul class="table-list"><li>**Poke**: Keeps resources active between checks. Best for short intervals.</li><li> **Reschedule**: Frees resources and reschedules itself after each interval. Best for long intervals.</li></ul> |
+
+| Parameter                 | Description                                                                                        |
+| ------------------------- | -------------------------------------------------------------------------------------------------- |
+| Poke Interval (seconds)   | How often to check the condition. Defaults to 60 seconds.                                          |
+| Sensor Timeout (seconds)  | Maximum duration for the sensor to keep checking. If not set, the sensor runs indefinitely.        |
+| Exponential Backoff Retry | Enables increasing delay with jitter between polling attempts to reduce system load.               |
+| Poll Mode                 | Determines whether to user **Poke** or **Reschedule** mode. Learn more in [Poll mode](#poll-mode). |
+
+#### Poke Interval
+
+Defines how often Prophecy checks whether a new file has appeared or a file has changed. Default is 60 seconds. If the condition is not met (new file or a file changes), the sensor waits for the defined interval before checking again.
+
+#### Sensor Timeout
+
+Specifies how long a sensor instance keeps running and monitoring for file changes. The sensor runs continuously, checking at each poke interval. The sensor will only stop checking if a timeout is set, otherwise, it runs indefinitely.
+
+#### Exponential Backoff Retry
+
+If enabled, the sensor increases the delay between checks using an exponential backoff with jitter.
+
+#### Poll Mode
