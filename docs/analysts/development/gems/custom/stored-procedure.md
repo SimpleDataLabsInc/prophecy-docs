@@ -23,9 +23,13 @@ The StoredProcedure gem can only call stored procedures that have been defined i
 
 ## Input and Output
 
-Stored procedures do not have any input or output ports by default. To add input or output ports, click `+` next to **Ports**.
+Stored procedures do not have any input or output ports by default. To add an input or output port, click `+` next to **Ports**.
 
-The number of input records should match the number of output rows. This is because stored procedures are called once per input row.
+:::note
+The StoredProcedure gem accepts a maximum of **one** input port and returns a maximum of **one** output port.
+:::
+
+The number of input rows should match the number of output rows. This is because stored procedures are called once per input row.
 
 ## Parameters
 
