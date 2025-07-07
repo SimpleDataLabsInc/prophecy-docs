@@ -7,9 +7,13 @@ tags:
   - tableau
 ---
 
-Use a Tableau connection to publish and update data sources in your Tableau projects directly from Prophecy pipelines.
+Prophecy uses the [Tableau REST API](https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api.htm) to send data to Tableau as `.hyper` files (Tableau’s high-performance, in-memory format). This page describes how to set up and use a Tableau connection, so you can publish and update data sources in your Tableau projects directly from Prophecy pipelines.
 
-Prophecy uses the [Tableau REST API](https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api.htm) to perform actions like sign in, data upload, and data source publication. Your data is sent to Tableau as `Hyper` files (Tableau’s high-performance, in-memory format).
+## Prerequisites
+
+To connect Prophecy to Tableau, you need to provide credentials in the form of a personal access token. These credentials are used to authenticate all actions performed via the Tableau REST API. To use a Tableau connection effectively, ensure that the personal access token has the necessary Publish capability for the Tableau project where you will publish data sources.
+
+For more details on Tableau permissions, see the Tableau documentation on [Permission Capabilities](https://help.tableau.com/current/server/en-us/permissions_capabilities.htm).
 
 ## Feature support
 
@@ -27,7 +31,7 @@ Using Tableau Hyper files is a legacy approach that Prophecy supports mainly for
 
 For a modern, cloud-native workflow, write pipeline outputs directly to a supported cloud data platform like Databricks, Snowflake, or BigQuery. Then connect Tableau to that platform to visualize the data—no need to set up a separate Tableau connection or perform extra export steps in Prophecy.
 
-## Parameters
+## Connection parameters
 
 To create a connection with Tableau, enter the following parameters:
 
@@ -38,12 +42,6 @@ To create a connection with Tableau, enter the following parameters:
 | Tableau Token Name                                                        | Name of your Tableau personal access token                            |
 | Tableau Token ([Secret required](docs/administration/secrets/secrets.md)) | Your Tableau personal access token                                    |
 | Tableau Site Name                                                         | Name of the Tableau site you're connecting to                         |
-
-## Tableau permissions
-
-When you use a Tableau connection in Prophecy, permissions are determined by the credentials you provide. To use the connection to publish data, those credentials must have the **Publish** capability in Tableau for the project containing the target data source.
-
-For more details on Tableau permissions, see their documentation on [Permission Capabilities](https://help.tableau.com/current/server/en-us/permissions_capabilities.htm).
 
 ## Sharing connections within teams
 

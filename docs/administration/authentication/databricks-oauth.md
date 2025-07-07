@@ -13,6 +13,8 @@ Prophecy provides Databricks OAuth to align with industry-standard authenticatio
 
 ## Requirements
 
+To leverage Databricks OAuth in your Prophecy deployment, you need:
+
 - Prophecy 3.4.3.1 or later.
 - An app connection between Databricks and Prophecy. This connection is set up by default in SaaS environments and no further action is needed.
 
@@ -34,20 +36,19 @@ First, a Databricks [account admin](https://docs.databricks.com/en/admin/index.h
 Then, the Prophecy cluster admin has to add the Databricks credentials to Prophecy:
 
 1. Navigate to **Admin Settings > Security**.
-2. Under **Databricks OAuth Application (U2M)**, paste the **Client ID** and the **Client Secret** into the respective fields.
+1. Under **Databricks OAuth Application (U2M)**, paste the **Client ID** and the **Client Secret** into the respective fields.
+1. Finally, **the Prophecy Kubernetes cluster must be restarted** to enact these changes.
 
 ![Security settings in Prophecy](./img/databricks-oauth-admin.png)
 
-Finally, **the Prophecy Kubernetes cluster must be restarted** to enact these changes.
-
 ## Use cases supported by Databricks
 
-In Prophecy, you can use Databricks OAuth in two ways, either using user identities or a [service principal](https://docs.databricks.com/aws/en/admin/users-groups/service-principals).
+In Prophecy, you can use Databricks OAuth in two ways: either using user identities or a [service principal](https://docs.databricks.com/aws/en/admin/users-groups/service-principals).
 
-| Type                                                                                    | Identity                 | Use Cases                                        | Behavior                                                                                                | Notes                                                                                                                                                                   |
-| --------------------------------------------------------------------------------------- | ------------------------ | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [User-based OAuth](https://docs.databricks.com/en/dev-tools/auth/oauth-u2m.html)        | Individual user accounts | Pipeline development, job development            | Executes actions with the user's Databricks permissions. Users sign in via the Databricks login screen. | Requires periodic login based on Databricks' OAuth timeout settings. Default timeouts are used in SaaS, but are configurable in Dedicated SaaS/self-hosted deployments. |
-| [Service Principal OAuth](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html) | Service principal        | Project deployment, scheduled pipeline execution | Authenticates using service principal credentials. All scheduled jobs run as the service principal.     | Required for automation and CI/CD. You will see a warning if service principal credentials are missing.                                                                 |
+| Type                                                                                          | Identity                 | Use Cases                                        | Behavior                                                                                                | Notes                                                                                                                                                                  |
+| --------------------------------------------------------------------------------------------- | ------------------------ | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [User-based OAuth](https://docs.databricks.com/en/dev-tools/auth/oauth-u2m.html) (U2M)        | Individual user accounts | Pipeline development, job development            | Executes actions with the user's Databricks permissions. Users sign in via the Databricks login screen. | Requires periodic login based on Databricks OAuth timeout settings. Default timeouts are used in SaaS, but are configurable in Dedicated SaaS/self-hosted deployments. |
+| [Service Principal OAuth](https://docs.databricks.com/en/dev-tools/auth/oauth-m2m.html) (M2M) | Service principal        | Project deployment, scheduled pipeline execution | Authenticates using service principal credentials. All scheduled jobs run as the service principal.     | Required for automation and CI/CD. You will see a warning if service principal credentials are missing.                                                                |
 
 :::note
 The minimum level of access that your service principal requires (including access to clusters, tables, etc.) will vary per use case.
@@ -64,4 +65,4 @@ To learn how to configure Databricks OAuth for different fabric types, see:
 Prophecy ensures robust security measures during the OAuth authentication process, following best practices documented by Databricks. For example:
 
 - The authentication process follows a three-step OAuth flow to generate tokens, leveraging Proof Key for Code Exchange (PKCE) to enhance security. Prophecy uses a Prophecy-hosted callback URL to capture and process authorization codes, issuing and securely storing access tokens.
-- Prophecy securely stores the refresh token, which is used to renew itself and obtain new access tokens, to ensure uninterrupted authenticated connectivity to Databricks. Tokens are encrypted before being stored in the database, following the same stringent encryption standards applied to other credentials managed by Prophecy.
+- Prophecy securely stores the refresh token, which is used to renew itself and obtain new access tokens, to ensure uninterrupted authenticated connectivity to Databricks. Tokens are encrypted before being stored, following the same stringent encryption standards applied to other credentials managed by Prophecy.

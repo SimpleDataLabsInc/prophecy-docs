@@ -1,5 +1,5 @@
 ---
-title: Data tests for SQL
+title: Data tests
 id: data-tests
 slug: /analysts/data-tests
 description: Data tests check the validity of your SQL
@@ -15,14 +15,12 @@ When you create data tests in the visual canvas, Prophecy runs [dbt](https://doc
 
 ## Prerequisites
 
-To use data tests in your SQL project, you will need:
+To use data tests in your SQL project, you will need to use a SQL fabric.
 
-- A Prophecy project where SQL is the primary language.
-- A Prophecy fabric or SQL fabric.
+### Limitations
 
-:::info
-Prophecy does not support data tests for fabrics configured with BigQuery and a CMEK.
-:::
+- [Prophecy fabrics](/administration/fabrics/prophecy-fabrics/) are not compatible.
+- SQL fabrics configured with BigQuery and a CMEK are not compatible.
 
 ## Test types
 

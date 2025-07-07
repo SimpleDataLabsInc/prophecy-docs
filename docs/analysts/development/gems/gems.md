@@ -36,6 +36,14 @@ To test a gem hands-on, you can try the **interactive example** of the gem. If y
 
 ![Gem example](img/interactive-example.png)
 
+## Expressions
+
+Many gems include expression components where you can implement custom or complex logic. You can either [build expressions visually](/analysts/visual-expression-builder), or use SQL syntax to write expression in code. Prophecy will automatically convert visual expressions to code expressions, and vice versa.
+
+:::note
+The SQL dialect for expressions depends on the SQL warehouse connection of the fabric. This is because the project code must be compatible with the execution environment it runs on. Because of this, expressions may look different across projects that run on Databricks versus Snowflake, for example.
+:::
+
 ## Gem instance
 
 When you click on a gem from the gem drawer, an instance of that gem gets added to your pipeline canvas. Use the image and the table below to understand the UI of a gem.

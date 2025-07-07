@@ -9,6 +9,13 @@ tags:
 
 Oracle DB is a relational database management system. In Prophecy, you can connect to Oracle to read from and write to database tables as part of your pipelines. This page explains how to set up the connection, including required parameters, permissions, and how connections are shared within teams.
 
+## Prerequisites
+
+Prophecy connects to Oracle using the database credentials you provide. These credentials are used to authenticate your session and authorize all data operations performed during pipeline execution. To use an Oracle connection effectively, your user account must have:
+
+- Read access to query data from tables
+- Write access to insert, update, or delete data
+
 ## Feature support
 
 The table below outlines whether the connection supports certain Prophecy features.
@@ -19,7 +26,7 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Write data with a [Target gem](/analysts/source-target)       | No        |
 | Browse data in the [Environment browser](/analysts/pipelines) | Yes       |
 
-## Parameters
+## Connection parameters
 
 To create a connection with Oracle, enter the following parameters:
 
@@ -32,13 +39,9 @@ To create a connection with Oracle, enter the following parameters:
 | Database                                                             | Oracle Service Name or SID of the target database    |
 | Password ([Secret required](docs/administration/secrets/secrets.md)) | Password for the specified user                      |
 
-## Oracle permissions
-
-When you create an Oracle connection in Prophecy, access permissions are tied to the credentials you use. This is because Prophecy uses your credentials to execute all data operations, such as reading from or writing to tables. To fully leverage an Oracle connection in Prophecy, you need read and write access to the tables you use.
-
 ## Sharing connections within teams
 
-Connections in Prophecy are stored within [fabrics](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md), which are assigned to specific teams. Once an Oracle connection is added to a fabric, all team members that have access to the fabric can use the connection in their projects. No additional authentication is required—team members automatically inherit the access and permissions of the stored connection credentials.
+Connections in Prophecy are stored within [fabrics](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md), which are assigned to specific teams. Once an Oracle connection is added to a fabric, all team members who have access to the fabric can use the connection in their projects. No additional authentication is required—team members automatically inherit the access and permissions of the stored connection credentials.
 
 :::caution
 Be mindful of the access level granted by the stored credentials. Anyone on the team will have the same permissions—including access to sensitive data if allowed.

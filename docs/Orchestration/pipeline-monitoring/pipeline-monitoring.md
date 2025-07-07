@@ -11,7 +11,7 @@ tags:
 
 Pipeline Monitoring enables you as a Spark Copilot user to monitor and debug your scheduled and interactive pipeline runs through Prophecy. The primary goal of pipeline, model, and job observability is to assist you in quickly pinpointing errors, minimize the cost of fixes, and reduce downtime.
 
-When enabled, Prophecy highlights the gem that causes the failure at runtime. You can view log stack traces in the Prophecy UI in order to to debug runtime issues. Pipeline Monitoring is available for any scheduled job runs and all interactive runs through the Prophecy UI.
+When enabled, Prophecy highlights the gem that causes the failure at runtime. You can view log stack traces in the Prophecy UI in order to debug runtime issues. Pipeline Monitoring is available for any scheduled job runs and all interactive runs through the Prophecy UI.
 
 ## Pipeline Monitoring features
 
