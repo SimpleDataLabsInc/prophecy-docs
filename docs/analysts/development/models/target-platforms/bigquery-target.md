@@ -133,7 +133,9 @@ To learn more about this merge approach, see the [insert overwrite strategy](htt
 
 ### Partitioning
 
-You can choose to partition your target table using the **Partition by** option. This applies to:
+A partitioned table is a database table that has been divided into smaller, more manageable pieces called partitions. Use [partitioned tables](https://cloud.google.com/bigquery/docs/partitioned-tables) to improve query performance and cost. In Prophecy, you can partition your target table using the **Partition by** option.
+
+This option is available for the following write modes:
 
 - **Overwrite** mode
 - **Merge** mode using the **Insert and overwrite** merge approach
@@ -148,7 +150,7 @@ Reference the following table to learn how to set up partitions.
 | Partition Range          | Applicable only to `int64` data type. <br/>Specify a numeric range for partitioning using a **start**, **end**, and **interval** value (e.g., start=`0`, end=`1000`, interval=`10`). |
 
 :::info
-Learn more about how dbt handles partitioning for BigQuery tables in [Partition clause](https://docs.getdbt.com/reference/resource-configs/bigquery-configs#the-insert_overwrite-strategy).
+Learn more about how dbt handles partitioning for BigQuery tables in [Partition clause](https://docs.getdbt.com/reference/resource-configs/bigquery-configs#partition-clause).
 :::
 
 ## Data Tests
