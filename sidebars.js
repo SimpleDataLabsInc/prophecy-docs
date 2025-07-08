@@ -127,8 +127,8 @@ const sidebars = {
                   type: "category",
                   label: "Tables (Warehouse)",
                   items: [
-                    "analysts/development/gems/source-target/table/bigquery",
                     "analysts/development/gems/source-target/table/databricks",
+                    "analysts/development/gems/source-target/table/bigquery",
                     "analysts/development/gems/source-target/table/upload-files",
                   ],
                 },
@@ -136,8 +136,8 @@ const sidebars = {
                   type: "category",
                   label: "Tables (External systems)",
                   items: [
-                    "analysts/development/gems/source-target/external-table/bigquery",
                     "analysts/development/gems/source-target/external-table/databricks",
+                    "analysts/development/gems/source-target/external-table/bigquery",
                     "analysts/development/gems/source-target/external-table/snowflake",
                     "analysts/development/gems/source-target/external-table/mssql",
                     "analysts/development/gems/source-target/external-table/mongodb",
@@ -853,8 +853,8 @@ const sidebars = {
               items: [
                 "administration/fabrics/prophecy-fabrics/connections/redshift",
                 "administration/fabrics/prophecy-fabrics/connections/s3",
-                "administration/fabrics/prophecy-fabrics/connections/bigquery",
                 "administration/fabrics/prophecy-fabrics/connections/databricks",
+                "administration/fabrics/prophecy-fabrics/connections/bigquery",
                 "administration/fabrics/prophecy-fabrics/connections/onedrive",
                 "administration/fabrics/prophecy-fabrics/connections/power-bi",
                 "administration/fabrics/prophecy-fabrics/connections/sharepoint",

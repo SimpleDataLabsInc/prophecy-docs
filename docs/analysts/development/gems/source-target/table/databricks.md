@@ -48,12 +48,12 @@ Tables are persistent, indexed storage objects optimized for frequent access.
 
 #### Target parameters {#target-tables}
 
-| Parameter     | Description                                                                                                         |
-| ------------- | ------------------------------------------------------------------------------------------------------------------- |
-| Location      | Choose the location where the table will be stored. You can create a new table by writing a new table name.         |
-| Properties    | Define certain properties of the table. The schema cannot be changed for targets.                                   |
-| Write Options | Select how you want the data to be written each time you run the pipeline (Table only). Either overwrite or append. |
-| Preview       | Load the data to see a preview before saving.                                                                       |
+| Parameter     | Description                                                                                                                                                                                                                                          |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Location      | Choose the location where the table will be stored. You can create a new table by writing a new table name.                                                                                                                                          |
+| Properties    | Define certain properties of the table. The schema cannot be changed for targets.                                                                                                                                                                    |
+| Write Options | Select how you want the data to be written each time you run the pipeline (Table only). <br/>Supports overwrite and append write modes. <br/>Learn more about these write modes in [Databricks targets](/engineers/databricks-target#write-options). |
+| Preview       | Load the data to see a preview before saving.                                                                                                                                                                                                        |
 
 ### Views
 
