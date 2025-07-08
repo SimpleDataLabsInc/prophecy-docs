@@ -1,5 +1,5 @@
 ---
-title: User settings
+title: Settings
 id: settings
 description: Learn about the different Prophecy settings to configure
 tags:

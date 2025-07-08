@@ -5,14 +5,14 @@ description: Manage access by team
 tags: []
 ---
 
-In Prophecy, access control operates through team associations with resources. Projects and fabrics are the fundamental resources to which teams are assigned. Users who belong to a team can access all projects and fabrics assigned to that team.
+In Prophecy, access to resources is based on team associations with resources. Projects and fabrics are the fundamental resources to which teams are assigned. Users who belong to a team can access all projects and fabrics assigned to that team.
 
 ![Relationship between users, teams, projects, and fabrics](img/project-fabric-team.png)
 
 This guide provides comprehensive best practices for implementing and managing team-based access to optimize collaboration while maintaining appropriate security boundaries.
 
 :::note
-Team admins have special privileges for managing team membership, but the core access model remains focused on the team-to-resource relationship. Each team can be assigned to many projects and fabrics, but importantly, each project and fabric can only be assigned to one team.
+[Team admins](/administration/access/role-based-access#team-admins) have special privileges for managing team membership and team fabric creation, but the core access model remains focused on the team-to-resource relationship. Each team can be assigned to many projects and fabrics, but importantly, each project and fabric can only be assigned to one team.
 :::
 
 ## Team structure

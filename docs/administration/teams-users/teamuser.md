@@ -1,5 +1,5 @@
 ---
-title: Teams and users
+title: Teams
 id: teams-users
 description: Teams represent a group of users who work together
 tags:
