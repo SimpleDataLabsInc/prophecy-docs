@@ -67,7 +67,7 @@ When you choose [Databricks OAuth](docs/administration/authentication/databricks
 
 #### Choose the appropriate OAuth method
 
-We [recommend using separate fabrics](/administration/teams-users/team-based-access) for development and production environments. Each fabric should use a different OAuth method to align with its purpose.
+We [recommend using separate fabrics](/administration/team-based-access) for development and production environments. Each fabric should use a different OAuth method to align with its purpose.
 
 - **Development fabric**: Utilize user-based OAuth.
 
