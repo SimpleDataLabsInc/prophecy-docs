@@ -66,7 +66,7 @@ Access to Prophecy Apps is controlled by Prophecy’s team-based permission mode
 If a project is shared with your team, you **cannot** edit pipelines or Prophecy App structure. However, you can **run** Prophecy Apps from the shared project. This ensures that your data engineering team can safely share pipelines they developed with analysts or business users.
 
 :::info See Also
-To learn more, reference the documentation on [team-based access](/administration/teams-users/team-based-access).
+To learn more, reference the documentation on [team-based access](/administration/team-based-access).
 :::
 
 ## What's next

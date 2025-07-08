@@ -1,6 +1,7 @@
 ---
 title: Team-based access
 id: team-based-access
+slug: /administration/team-based-access
 description: Manage access by team
 tags: []
 ---
@@ -12,7 +13,7 @@ In Prophecy, access to resources is based on team associations with resources. P
 This guide provides comprehensive best practices for implementing and managing team-based access to optimize collaboration while maintaining appropriate security boundaries.
 
 :::note
-[Team admins](/administration/access/role-based-access#team-admins) have special privileges for managing team membership and team fabric creation, but the core access model remains focused on the team-to-resource relationship. Each team can be assigned to many projects and fabrics, but importantly, each project and fabric can only be assigned to one team.
+[Team admins](/administration/rbac#team-admins) have special privileges for managing team membership and team fabric creation, but the core access model remains focused on the team-to-resource relationship. Each team can be assigned to many projects and fabrics, but importantly, each project and fabric can only be assigned to one team.
 :::
 
 ## Team structure

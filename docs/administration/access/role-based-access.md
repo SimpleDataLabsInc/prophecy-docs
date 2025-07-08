@@ -2,6 +2,7 @@
 title: Role-based access control (RBAC)
 sidebar_label: Role-based access
 id: role-based-access
+slug: /administration/rbac
 description: Manage access by role
 tags: []
 ---
@@ -26,7 +27,7 @@ Standard users access resources through team assignments. In other words, permis
 Users cannot create or edit fabrics for a team unless they are also a [team admin](#team-admins).
 
 :::info
-For more information about best practices, visit [Team-based access](/administration/access/team-based-access).
+For more information about best practices, visit [Team-based access](/administration/team-based-access).
 :::
 
 ### Personal team
@@ -45,7 +46,7 @@ Team admins manage teams and create resources for their [teams](docs/administrat
 The user who creates a team is automatically assigned as its team admin. Additional team admins can be added or disabled from the **Teams** tab in [Settings](/administration/teams-users/settings).
 
 :::info
-For recommendations regarding team setup and organization, visit [Team-based access](/administration/access/team-based-access).
+For recommendations regarding team setup and organization, visit [Team-based access](/administration/team-based-access).
 :::
 
 ## Prophecy cluster admins

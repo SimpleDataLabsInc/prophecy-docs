@@ -257,7 +257,7 @@ const config = {
       {
         redirects: [
           {
-            to: "/administration/access/team-based-access",
+            to: "/administration/team-based-access",
             from: "/administration/teams-users/team-based-access",
           },
           {
