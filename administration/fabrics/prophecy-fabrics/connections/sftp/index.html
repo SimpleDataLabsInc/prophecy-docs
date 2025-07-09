@@ -8,7 +8,7 @@
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/assets/css/styles.e16aecda.css">
-<script src="/assets/js/runtime~main.ee64e0ce.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.9bbfb44e.js" defer="defer"></script>
 <script src="/assets/js/main.9e4c399f.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -35,8 +35,17 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="authentication-methods">Authentication methods<a href="#authentication-methods" class="hash-link" aria-label="Direct link to Authentication methods" title="Direct link to Authentication methods">​</a></h2>
 <p>You can configure your SFTP connection with one of the following authentication methods:</p>
 <ul>
-<li><strong>Password.</strong> Use a <a href="/administration/secrets/">secret</a> to enter your SFTP password.</li>
-<li><strong>Private key</strong>. Upload a file that contains your SFTP private key.</li>
+<li>
+<p><strong>Password:</strong> Use a <a href="/administration/secrets/">secret</a> to enter your SFTP password.</p>
+</li>
+<li>
+<p><strong>Private Key:</strong> Upload a file that contains your SFTP private key. The file must be in <a href="https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail" target="_blank" rel="noopener noreferrer">PEM format</a> (<code>.pem</code> file).</p>
+<ul>
+<li>There must be a header and a footer.</li>
+<li>The content between the headers is a valid base64-encoded private key.</li>
+<li>There are no extra spaces or newline characters.</li>
+</ul>
+</li>
 </ul>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="sharing-connections-within-teams">Sharing connections within teams<a href="#sharing-connections-within-teams" class="hash-link" aria-label="Direct link to Sharing connections within teams" title="Direct link to Sharing connections within teams">​</a></h2>
 <p>Connections in Prophecy are stored within <a href="/administration/fabrics/prophecy-fabrics/">fabrics</a>, which are assigned to specific teams. Once an SFTP connection is added to a fabric, all team members who have access to the fabric can use the connection in their projects. No additional authentication is required—team members automatically inherit the access and permissions of the stored connection credentials.</p>
