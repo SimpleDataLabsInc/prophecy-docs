@@ -51,15 +51,11 @@ You can configure your SFTP connection with one of the following authentication 
 
 - **Password:** Use a [secret](docs/administration/secrets/secrets.md) to enter your SFTP password.
 
-- **Private key:** Upload a file that contains your SFTP private key. The file must be in PEM format (`.pem` file).
+- **Private Key:** Upload a file that contains your SFTP private key. The file must be in [PEM format](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) (`.pem` file).
 
-  ```
-  -----BEGIN RSA PRIVATE KEY-----
-  <base64-encoded key content>
-  -----END RSA PRIVATE KEY-----
-  ```
-
-  Ensure that you do not include extra spaces or newline characters. Additionally, verify that the content between the headers is a valid base64-encoded private key.
+  - There must be a header and a footer.
+  - The content between the headers is a valid base64-encoded private key.
+  - There are no extra spaces or newline characters.
 
 ## Sharing connections within teams
 
