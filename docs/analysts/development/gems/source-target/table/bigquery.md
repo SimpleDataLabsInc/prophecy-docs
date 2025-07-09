@@ -79,10 +79,14 @@ Every time the pipeline runs, the target is overwritten. This is because the vie
 
 Seeds are lightweight CSV datasets defined in your project. Seeds are source-only.
 
-| Parameter  | Description                                                          |
-| ---------- | -------------------------------------------------------------------- |
-| Properties | Copy-paste your CSV data and define certain properties of the table. |
-| Preview    | Load a preview of your seed in table format.                         |
+| Parameter  | Description                                                                                                            |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Properties | Copy-paste your CSV data and define certain [properties](https://docs.getdbt.com/reference/seed-configs) of the table. |
+| Preview    | Load a preview of your seed in table format.                                                                           |
+
+:::note
+Seeds are implemented as [dbt seeds](https://docs.getdbt.com/docs/build/seeds) under the hood. The CSV data you define is stored in your Prophecy project files and materialized as a table in your data warehouse. This table is created in the [default target dataset](/administration/fabrics/prophecy-fabrics/connections/bigquery#connection-parameters) specified in your BigQuery connection.
+:::
 
 ## Reusing and sharing tables
 

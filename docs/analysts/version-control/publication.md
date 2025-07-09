@@ -23,7 +23,7 @@ If you publish a project without selecting a fabric, it is only **released**. Th
 
 ## Permissions
 
-To publish a project to a fabric, that fabric must be [assigned to one of your teams](/administration/teams-users/team-based-access). This ensures that only authorized users can deploy projects to specific environments. For example:
+To publish a project to a fabric, that fabric must be [assigned to one of your teams](/administration/team-based-access). This ensures that only authorized users can deploy projects to specific environments. For example:
 
 - **Development fabric**: Assigned to a broader team for testing and iteration. You typically won’t publish to development fabrics, except when testing schedules.
 - **Production fabric**: Assigned to a limited-access team that will be able to publish to production.
