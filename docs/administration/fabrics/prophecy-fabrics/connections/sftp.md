@@ -49,8 +49,13 @@ To configure an SFTP connection in Prophecy, enter the following parameters:
 
 You can configure your SFTP connection with one of the following authentication methods:
 
-- **Password.** Use a [secret](docs/administration/secrets/secrets.md) to enter your SFTP password.
-- **Private key**. Upload a file that contains your SFTP private key.
+- **Password:** Use a [secret](docs/administration/secrets/secrets.md) to enter your SFTP password.
+
+- **Private Key:** Upload a file that contains your SFTP private key. The file must be in [PEM format](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) (`.pem` file).
+
+  - There must be a header and a footer.
+  - The content between the headers is a valid base64-encoded private key.
+  - There are no extra spaces or newline characters.
 
 ## Sharing connections within teams
 
