@@ -8,16 +8,16 @@ tags:
   - trigger
 ---
 
-Prophecy's built in scheduler allows you to orchestrate your pipelines with user-defined automation logic. Schedules support two trigger types:
+Prophecy's built-in scheduler allows you to orchestrate your pipelines with user-defined automation logic. Schedules support two trigger types:
 
-- **Time-based**: The scheduled pipeline runs at defined intervals.
-- **File arrival or change**: The scheduled pipeline runs only if a file arrives or changes.
+- [Time-based](#time-based-trigger): The scheduled pipeline runs at defined intervals.
+- [File arrival or change](#file-arrival-or-change-trigger): The scheduled pipeline runs only if a file arrives or changes.
 
 ## Time-based trigger
 
 ### Frequency
 
-Time-based trigger configuration vary according to the frequency of the trigger. The following sections describe the parameters needed for each frequency.
+Time-based trigger configurations vary according to the frequency of the trigger. The following sections describe the parameters needed for each frequency.
 
 :::info
 When using time-based triggers, the default timezone is the timezone from where you access Prophecy.
@@ -75,11 +75,13 @@ Prophecy supports file change detection (data change sensors) for [S3](/administ
 
 Each trigger configuration defines where and how Prophecy detects file changes. Provide the following:
 
-| Parameter          | Description                                                                                                  |
-| ------------------ | ------------------------------------------------------------------------------------------------------------ |
-| Configuration name | A label to help you identify this trigger configuration.                                                     |
-| Connection         | The **S3** or **SFTP** connection where the system should watch for file changes.                            |
-| File path          | The full path to the **directory** being monitored. The pipeline runs when a file is added or modified here. |
+| Parameter          | Description                                                                                                                                                                                                                                                                                                                                                                            |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Configuration name | A label to help you identify this trigger configuration.                                                                                                                                                                                                                                                                                                                               |
+| Connection         | The **S3** or **SFTP** connection where the system should watch for file changes.                                                                                                                                                                                                                                                                                                      |
+| File path          | The full path to the directory being monitored. The pipeline runs when a file is added or modified in this location. You can use either a fixed directory path, such as `/user/documents/`, or a regular expression to match specific file patterns. <br/><br/>For example, `/user/*/*.{csv,jar}` finds all subdirectories under` /user` and watches files ending in `.csv` or `.jar`. |
+
+#### Add multiple trigger configurations
 
 You can define multiple trigger configurations. Use AND or OR logic to control when the pipeline runs.
 
@@ -90,30 +92,30 @@ You can define multiple trigger configurations. Use AND or OR logic to control w
 
 These advanced settings determine how the poll-based data sensors work. For additional details, jump to the following sections.
 
-| Parameter                 | Description                                                                                                                                                                                                                   |
-| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Poke Interval             | How often to check the condition in seconds. Defaults to 60 seconds.                                                                                                                                                          |
-| Sensor Timeout (seconds)  | Maximum time in seconds for each sensor run. If not set, the sensor runs indefinitely.                                                                                                                                        |
-| Exponential Backoff Retry | If enabled, increases the wait time between polling exponentially. This helps reduce system load when the condition isn’t immediately met.                                                                                    |
-| Poll Mode                 | <ul class="table-list"><li>**Poke**: Keeps resources active between checks. Best for short intervals.</li><li> **Reschedule**: Frees resources and reschedules itself after each interval. Best for long intervals.</li></ul> |
-
-| Parameter                 | Description                                                                                        |
-| ------------------------- | -------------------------------------------------------------------------------------------------- |
-| Poke Interval (seconds)   | How often to check the condition. Defaults to 60 seconds.                                          |
-| Sensor Timeout (seconds)  | Maximum duration for the sensor to keep checking. If not set, the sensor runs indefinitely.        |
-| Exponential Backoff Retry | Enables increasing delay with jitter between polling attempts to reduce system load.               |
-| Poll Mode                 | Determines whether to user **Poke** or **Reschedule** mode. Learn more in [Poll mode](#poll-mode). |
+| Parameter                 | Description                                                                                 |
+| ------------------------- | ------------------------------------------------------------------------------------------- |
+| Poke Interval (seconds)   | How often to check the condition. Defaults to 60 seconds.                                   |
+| Sensor Timeout (seconds)  | Maximum duration for the sensor to keep checking. If not set, the sensor runs indefinitely. |
+| Exponential Backoff Retry | Enables increasing delay between polling attempts to reduce system load.                    |
+| Poll Mode                 | Determines whether to use **Poke** or **Reschedule** mode.                                  |
 
 #### Poke Interval
 
-Defines how often Prophecy checks whether a new file has appeared or a file has changed. Default is 60 seconds. If the condition is not met (new file or a file changes), the sensor waits for the defined interval before checking again.
+The Poke Interval specifies how frequently the sensor checks for file updates, such as new files appearing or existing files changing. The default interval is 60 seconds.
 
 #### Sensor Timeout
 
-Specifies how long a sensor instance keeps running and monitoring for file changes. The sensor runs continuously, checking at each poke interval. The sensor will only stop checking if a timeout is set, otherwise, it runs indefinitely.
+The Sensor Timeout value determines the maximum amount of time the sensor continues to check for file updates. By default, the sensor runs indefinitely. Set a timeout only if there's a point at which you know the check is no longer useful or relevant.
 
 #### Exponential Backoff Retry
 
-If enabled, the sensor increases the delay between checks using an exponential backoff with jitter.
+Sometimes, the sensor does not detect any file updates when it checks the directory. When Exponential Backoff Retry is enabled, the wait time between checks increases every time the sensor must retry the operation after failure (no file updated).
+
+When active, the delay between each polling attempt increases exponentially—e.g., 60 seconds, 2 minutes, 4 minutes, 8 minutes—while adding randomness (jitter) to avoid system-wide contention. This option is enabled by default to reduce system load.
 
 #### Poll Mode
+
+Choose between the following modes:
+
+- **Poke**: Keeps resources active between checks. Best for short intervals when quick response times are needed.
+- **Reschedule**: Frees resources and reschedules itself after each interval. Recommended for long intervals to reduce resource usage.
