@@ -2,7 +2,6 @@
 title: PolyBuild
 id: polybuild
 slug: /analysts/polybuild
-draft: true
 description: Create a polygon or polyline from a set of coordinates
 tags:
   - gems

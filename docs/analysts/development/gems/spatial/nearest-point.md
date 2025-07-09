@@ -2,7 +2,6 @@
 title: NearestPoint
 id: nearest-point
 slug: /analysts/nearest-point
-draft: true
 description: Identify the shortest distance between spatial objects in two datasets
 tags:
   - gems

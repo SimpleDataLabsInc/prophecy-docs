@@ -214,6 +214,8 @@ const sidebars = {
               items: [
                 "analysts/development/gems/spatial/create-point",
                 "analysts/development/gems/spatial/distance",
+                "analysts/development/gems/spatial/nearest-point",
+                "analysts/development/gems/spatial/polybuild",
               ],
             },
             {
