@@ -75,18 +75,28 @@ Prophecy supports file change detection (data change sensors) for [S3](/administ
 
 Each trigger configuration defines where and how Prophecy detects file changes. Provide the following:
 
-| Parameter          | Description                                                                                                                                                                                                                                                                                                                                                                            |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Configuration name | A label to help you identify this trigger configuration.                                                                                                                                                                                                                                                                                                                               |
-| Connection         | The **S3** or **SFTP** connection where the system should watch for file changes.                                                                                                                                                                                                                                                                                                      |
-| File path          | The full path to the directory being monitored. The pipeline runs when a file is added or modified in this location. You can use either a fixed directory path, such as `/user/documents/`, or a regular expression to match specific file patterns. <br/><br/>For example, `/user/*/*.{csv,jar}` finds all subdirectories under` /user` and watches files ending in `.csv` or `.jar`. |
+| Parameter          | Description                                                                                                                                                                                                                                                                                                                                                                        |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Configuration name | A label to help you identify this trigger configuration.                                                                                                                                                                                                                                                                                                                           |
+| Connection         | The **S3** or **SFTP** connection where the system should watch for file changes.                                                                                                                                                                                                                                                                                                  |
+| File path          | The full path to the directory being monitored. The pipeline runs when a file is added or modified in this location. You can use either a fixed directory path, such as `/user/documents/`, or a regular expression to match specific file patterns. <br/><br/>Example: `/user/*/*.{csv,jar}` finds all subdirectories under` /user` and watches files ending in `.csv` or `.jar`. |
 
 #### Add multiple trigger configurations
 
-You can define multiple trigger configurations. Use AND or OR logic to control when the pipeline runs.
+You can define multiple trigger configurations to monitor more than one location for file updates. Use AND or OR logic to control when the pipeline runs.
 
 - **AND**: All conditions must be met before the pipeline runs.
 - **OR**: Any one condition must be met to trigger the pipeline.
+
+For example, you may want to add the following trigger configurations:
+
+| Configuration name | Connection | File path                     |
+| ------------------ | ---------- | ----------------------------- |
+| Transactions       | S3         | `/finance/transactions/*.csv` |
+| Exchange Rates     | SFTP       | `/finance/fx_rates/`          |
+
+- With AND logic, the pipeline runs when a change is detected for **both** Transactions and Exchange Rates.
+- With OR logic, the pipeline runs when a change is detected in **either** Transactions or Exchange Rates.
 
 ### Advanced settings
 
