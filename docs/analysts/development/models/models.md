@@ -55,6 +55,10 @@ To open the Advanced Settings:
 Folder Settings only apply to directories that contain models.
 :::
 
+## Schedule models
+
+To schedule model execution, set up [Databricks Jobs](/engineers/databricks-jobs) or [Apache Airflow DAGs](/engineers/airflow) directly within Prophecy. Models can only be scheduled on [Analytics Engineer](/administration/project-types/) projects.
+
 ## Models vs pipelines
 
 Models and pipelines are two different SQL project components. The following table describes the key differences between models and pipelines.
