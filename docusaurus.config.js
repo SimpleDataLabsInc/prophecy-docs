@@ -261,6 +261,10 @@ const config = {
             from: "/administration/teams-users/team-based-access",
           },
           {
+            to: "/administration/settings",
+            from: "/administration/teams-users/settings",
+          },
+          {
             to: "/getting-started",
             from: "/developer/videos/",
           },
@@ -1045,11 +1049,15 @@ const config = {
             from: "/metadata/prophecyAPI",
           },
           {
-            to: "/administration/saas/audit-logging",
+            to: "/administration/audit-logging",
             from: "/metadata/audit-logging",
           },
           {
-            to: "/administration/saas/audit-logging",
+            to: "/administration/audit-logging",
+            from: "/administration/saas/audit-logging",
+          },
+          {
+            to: "/administration/audit-logging",
             from: "/settings/audit-logging",
           },
           {

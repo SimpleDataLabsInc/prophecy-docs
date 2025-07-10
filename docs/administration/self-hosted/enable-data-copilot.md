@@ -1,5 +1,5 @@
 ---
-title: Enable Data Copilot
+title: Enable Copilot
 id: enable-data-copilot
 description: How to enable Prophecy Data Copilot for private VPC SaaS environments.
 sidebar_position: 10
