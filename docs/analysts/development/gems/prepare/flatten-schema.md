@@ -17,41 +17,146 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
   sql_package_version=""
 />
 
-When you import tables with variant data into Prophecy, they become columns with nested columns, and a [variant data type](/analysts/variant-schema), which is an array of values with more than one data type.
+Flattening a dataset schema helps you simplify complex, hierarchical data. Use the FlattenSchema gem to convert arrays or other nested data types into flat or lateral columns.
 
-You can use the FlattenSchema gem to transform your variant schema into a more consistent and digestible format. This allows your team to make subsequent steps in the pipeline more efficient and streamlined. This also makes your variant data easier to analyze, report, and integrate traditional systems without doing this manually yourself.
+This page describes how to use this gem according to your SQL warehouse provider.
+
+:::info
+When you import tables with variant data into Prophecy, you'll see one or more nested columns in your dataset schema. These will appear as a [variant data type](/analysts/variant-schema), which is an array of values with more than one data type. Variant types can be flattened. This data type is specific to Databricks and Snowflake.
+:::
 
 ## Parameters
 
-| Parameter   | Description                                                    | Required |
-| ----------- | -------------------------------------------------------------- | -------- |
-| Flatten     | Array **column to flatten** for each **Output Column**.        | True     |
-| Expressions | **Expression** to compute each field in the **Output Column**. | True     |
+Configure the following parameters for the FlattenSchema gem:
+
+| Parameter   | Description                                                            | Required |
+| ----------- | ---------------------------------------------------------------------- | -------- |
+| Flatten     | Select the columns that include the arrays you want to flatten.        | True     |
+| Expressions | Define the output columns that you want to appear in the output table. | True     |
 
 ## Example
 
-Assume you have the following JSON file that includes variant data type that you would like to flatten.
+Assume you have the following JSON file that includes data you would like to flatten. The data includes information about multiple businesses with nested contact information for each business.
 
-````mdx-code-block
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+<Tabs>
+
+<TabItem value="databricks" label="Databricks">
+
+Databricks accepts JSON files with a top-level array of JSON objects.
+
 ```json
-[{
-  "first_name":"Remmington", "last_name":"Smith", "age":"68",
-  "business":[{
-    "address":[{
-      "manager":"Liara Andrew", "name":"RS Enterprises",
-      "contact":[{"content":"rsmith@example.com","type":"email"},{"content":"1234-345-56","type":"phone"}],
-      "is_still_active":false}]}]}, {
-  "first_name":"Penny", "last_name":"John", "age":"57",
-  "business":[{
-    "address":[{
-      "manager":"Bobby Frank","name":"PJ Enterprises",
-      "contact":[{"content":"pjohn@example.com","type":"email"},{"content":"8203-512-49","type":"phone"}],
-      "is_still_active":true}]}]}]
+[
+  {
+    "first_name": "Remmington",
+    "last_name": "Smith",
+    "age": "68",
+    "business": [
+      {
+        "address": [
+          {
+            "manager": "Liara Andrew",
+            "name": "RS Enterprises",
+            "contact": [
+              { "content": "rsmith@example.com", "type": "email" },
+              { "content": "1234-345-56", "type": "phone" }
+            ],
+            "is_still_active": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "first_name": "Penny",
+    "last_name": "John",
+    "age": "57",
+    "business": [
+      {
+        "address": [
+          {
+            "manager": "Bobby Frank",
+            "name": "PJ Enterprises",
+            "contact": [
+              { "content": "pjohn@example.com", "type": "email" },
+              { "content": "8203-512-49", "type": "phone" }
+            ],
+            "is_still_active": true
+          }
+        ]
+      }
+    ]
+  }
+]
 ```
-````
+
+</TabItem>
+
+<TabItem value="snowflake" label="Snowflake">
+
+Snowflake accepts JSON files with a top-level array of JSON objects.
+
+```json
+[
+  {
+    "first_name": "Remmington",
+    "last_name": "Smith",
+    "age": "68",
+    "business": [
+      {
+        "address": [
+          {
+            "manager": "Liara Andrew",
+            "name": "RS Enterprises",
+            "contact": [
+              { "content": "rsmith@example.com", "type": "email" },
+              { "content": "1234-345-56", "type": "phone" }
+            ],
+            "is_still_active": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "first_name": "Penny",
+    "last_name": "John",
+    "age": "57",
+    "business": [
+      {
+        "address": [
+          {
+            "manager": "Bobby Frank",
+            "name": "PJ Enterprises",
+            "contact": [
+              { "content": "pjohn@example.com", "type": "email" },
+              { "content": "8203-512-49", "type": "phone" }
+            ],
+            "is_still_active": true
+          }
+        ]
+      }
+    ]
+  }
+]
+```
+
+</TabItem>
+
+<TabItem value="bigquery" label="BigQuery">
+
+BigQuery expects newline-delimited JSON format. This means it expects one JSON object per line, without a surrounding array.
+
+```json
+{"first_name":"Remmington","last_name":"Smith","age":"68","business":[{"address":[{"manager":"Liara Andrew","name":"RS Enterprises","contact":[{"content":"rsmith@example.com","type":"email"},{"content":"1234-345-56","type":"phone"}],"is_still_active":false}]}]}
+{"first_name":"Penny","last_name":"John","age":"57","business":[{"address":[{"manager":"Bobby Frank","name":"PJ Enterprises","contact":[{"content":"pjohn@example.com","type":"email"},{"content":"8203-512-49","type":"phone"}],"is_still_active":true}]}]}
+```
+
+</TabItem>
+
+</Tabs>
 
 ### Expressions
 

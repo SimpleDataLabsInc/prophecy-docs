@@ -179,7 +179,7 @@ const sidebars = {
                 "analysts/development/gems/transform/dynamic-select",
                 "analysts/development/gems/transform/fuzzy-match",
                 "analysts/development/gems/transform/pivot",
-                "analysts/development/gems/transform/transpose",
+                "analysts/development/gems/transform/unpivot",
                 "analysts/development/gems/transform/window",
               ],
             },
