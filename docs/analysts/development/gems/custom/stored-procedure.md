@@ -15,7 +15,9 @@ Stored procedures are built on top of BigQuery stored procedures and follow the 
 
 ## Prerequisites
 
-Stored procedures are supported in SQL projects where Google BigQuery is the SQL provider.
+To use stored procedures, you need:
+
+- Prophecy 4.1.2 or later.
 
 ## Limitations
 

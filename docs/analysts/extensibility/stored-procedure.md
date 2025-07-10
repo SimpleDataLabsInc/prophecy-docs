@@ -22,7 +22,9 @@ This page describes how to create new stored procedures in Prophecy. For informa
 
 ## Prerequisites
 
-Stored procedures are supported in SQL projects where Google BigQuery is the SQL provider.
+To use stored procedures, you need:
+
+- Prophecy 4.1.2 or later.
 
 ## Create stored procedure
 
