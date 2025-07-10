@@ -46,7 +46,7 @@ The team metadata page includes the following information:
 - Users that are members of the team.
 - Settings that are only visible to team admins. See [Team metadata settings](#team-metadata-settings) for more information.
 
-## Team metadata settings
+### Team metadata settings
 
 This table describes each tab within the team's metadata settings.
 
@@ -59,7 +59,7 @@ This table describes each tab within the team's metadata settings.
 
 ## Team management settings
 
-Additional team settings, including team creation and user management, are available in the **Team** tab of the global [Settings](/administration/teams-users/settings) interface in your Prophecy environment.
+Additional team settings, including team creation and user management, are available in the **Team** tab of the global [Settings](/administration/settings) interface in your Prophecy environment.
 
 1. Click the **...** button and the **gear** icon at the bottom of the left navigation bar.
 1. Select the **Teams** tab.
