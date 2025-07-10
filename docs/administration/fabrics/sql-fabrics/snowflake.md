@@ -8,7 +8,11 @@ tags:
   - fabric
 ---
 
-To use your Snowflake warehouse for execution in Prophecy, you need to create a SQL [fabric](docs/getting-started/concepts/fabrics.md) with a Snowflake connection.
+To run models on Snowflake, you need to create a [SQL fabric](/administration/fabrics/sql-fabrics/Fabrics) with a Snowflake connection.
+
+:::info
+Snowflake is only compatible with models. You cannot run pipelines in a SQL project with a Snowflake connection.
+:::
 
 ## Create a fabric
 
@@ -23,7 +27,7 @@ Next, complete the fields in the **Basic Info** page.
 
 1. Provide a fabric title. It can be helpful to include descriptors like `dev` or `prod` in your title.
 1. (Optional) Provide a fabric description.
-1. Select a [team](/administration/teams-users/team-based-access) to own this fabric. Open the dropdown to see the teams you belong to.
+1. Select a [team](/administration/team-based-access) to own this fabric. Open the dropdown to see the teams you belong to.
 1. Click **Continue**.
 
 ![SFBasicInfo](./img/SnowflakeFabric1.png)

@@ -7,7 +7,14 @@ tags:
   - msssql
 ---
 
-Use this connection to integrate with Microsoft SQL Server (MSSQL)—a relational database used for storing and querying structured data, with strong support for transactions, security, and complex SQL.
+This page describes how to use and configure a connection to Microsoft SQL Server (MSSQL) in Prophecy. MSSQL is a relational database used for storing and querying structured data.
+
+## Prerequisites
+
+Prophecy connects to Microsoft SQL Server (MSSQL) using the database credentials you provide. These credentials are used to authenticate your session and authorize all data operations during pipeline execution. To use an MSSQL connection effectively, your user account must have:
+
+- `SELECT`, `INSERT`, `UPDATE`, and `DELETE` on the tables used in your Prophecy pipelines.
+- Access to the database and schema where tables are located.
 
 ## Feature support
 
@@ -19,25 +26,21 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Write data with a [Target gem](/analysts/source-target)       | Yes       |
 | Browse data in the [Environment browser](/analysts/pipelines) | Yes       |
 
-## Parameters
+## Connection parameters
 
 To create a connection with Microsoft SQL Server, enter the following parameters:
 
 | Parameter                                                            | Description                             |
 | -------------------------------------------------------------------- | --------------------------------------- |
-| Connection Name                                                      | Name to to identify your connection     |
+| Connection Name                                                      | Name to identify your connection        |
 | Server                                                               | Address of the server to connect to     |
 | Port                                                                 | Port to use for the connection          |
 | Username                                                             | Username for your MSSQL Server instance |
 | Password ([Secret required](docs/administration/secrets/secrets.md)) | Password for your MSSQL Server instance |
 
-## MSSQL permissions
-
-When you create an MSSQL connection in Prophecy, access permissions are tied to the credentials you use. This is because Prophecy uses your credentials to execute all data operations, such as reading from or writing to tables. To fully leverage an MSSQL connection in Prophecy, you need read and write access to the tables you use.
-
 ## Sharing connections within teams
 
-Connections in Prophecy are stored within [fabrics](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md), which are assigned to specific teams. Once a MSSQL connection is added to a fabric, all team members that have access to the fabric can use the connection in their projects. No additional authentication is required—team members automatically inherit the access and permissions of the stored connection credentials.
+Connections in Prophecy are stored within [fabrics](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md), which are assigned to specific teams. Once a MSSQL connection is added to a fabric, all team members who have access to the fabric can use the connection in their projects. No additional authentication is required—team members automatically inherit the access and permissions of the stored connection credentials.
 
 :::caution
 Be mindful of the access level granted by the stored credentials. Anyone on the team will have the same permissions—including access to sensitive data if allowed.

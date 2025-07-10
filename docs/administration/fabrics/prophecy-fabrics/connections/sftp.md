@@ -7,9 +7,13 @@ tags:
   - sftp
 ---
 
-SFTP (Secure File Transfer Protocol) is a secure way to transfer files over the internet using an encrypted connection between a client and a server. It’s commonly used to exchange data between systems, especially in enterprise environments where security and reliability are critical.
+SFTP (Secure File Transfer Protocol) is a secure way to transfer files over the internet using an encrypted connection between a client and a server. It’s commonly used to exchange data between systems, especially in enterprise environments.
 
-In Prophecy, you can use an SFTP connection to read from and write to remote file systems directly in your data pipelines. This is useful when your data is stored outside cloud storage or databases, such as in on-premise servers or partner systems.
+In Prophecy, you can use an SFTP connection to read from and write to remote file systems directly in your data pipelines. This is useful when your data is stored outside cloud storage or databases.
+
+## Prerequisites
+
+When you use an SFTP connection in Prophecy, permissions depend on the underlying SSH server and filesystem permissions on the server. Ensure you have the correct access to the files you need before setting up and using this connection.
 
 ## Feature support
 
@@ -29,7 +33,7 @@ Keep in mind the following limitations when using an SFTP connection.
 
 - **Network latency affects transfer performance.** The speed and reliability of SFTP transfers depend on the physical distance between the SFTP server and Prophecy’s infrastructure. Servers that are geographically closer to your Prophecy environment will generally provide faster, more stable performance. Servers located farther away may introduce higher latency, leading to slower or less consistent data transfers. For best results, use SFTP servers in the same region as your Prophecy environment.
 
-## Parameters
+## Connection parameters
 
 To configure an SFTP connection in Prophecy, enter the following parameters:
 
@@ -45,16 +49,17 @@ To configure an SFTP connection in Prophecy, enter the following parameters:
 
 You can configure your SFTP connection with one of the following authentication methods:
 
-- **Password.** Use a [secret](docs/administration/secrets/secrets.md) to enter your SFTP password.
-- **Private key**. Upload a file that contains your SFTP private key.
+- **Password:** Use a [secret](docs/administration/secrets/secrets.md) to enter your SFTP password.
 
-## SFTP permissions
+- **Private Key:** Upload a file that contains your SFTP private key. The file must be in [PEM format](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) (`.pem` file).
 
-When you use an SFTP connection in Prophecy, permissions depend on the underlying SSH server and filesystem permissions on the server.
+  - There must be a header and a footer.
+  - The content between the headers is a valid base64-encoded private key.
+  - There are no extra spaces or newline characters.
 
 ## Sharing connections within teams
 
-Connections in Prophecy are stored within [fabrics](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md), which are assigned to specific teams. Once an SFTP connection is added to a fabric, all team members that have access to the fabric can use the connection in their projects. No additional authentication is required—team members automatically inherit the access and permissions of the stored connection credentials.
+Connections in Prophecy are stored within [fabrics](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md), which are assigned to specific teams. Once an SFTP connection is added to a fabric, all team members who have access to the fabric can use the connection in their projects. No additional authentication is required—team members automatically inherit the access and permissions of the stored connection credentials.
 
 :::caution
 Be mindful of the access level granted by the stored credentials. Anyone on the team will have the same permissions—including access to sensitive data if allowed.

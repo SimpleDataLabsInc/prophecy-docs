@@ -8,7 +8,11 @@ tags:
   - fabric
 ---
 
-To use your Databricks SQL warehouse for execution in Prophecy, you need to create a SQL [fabric](docs/getting-started/concepts/fabrics.md) with a Databricks connection.
+To run models on Databricks, you need to create a [SQL fabric](/administration/fabrics/sql-fabrics/Fabrics) with a Databricks connection.
+
+:::info
+SQL fabrics are for **models only**. Create a [Prophecy fabric](/administration/fabrics/prophecy-fabrics/) with a Databricks SQL warehouse connection to run pipelines.
+:::
 
 ## Create a fabric
 
@@ -23,7 +27,7 @@ Next, complete the fields in the **Basic Info** page.
 
 1. Provide a fabric title. It can be helpful to include descriptors like `dev` or `prod` in your title.
 1. (Optional) Provide a fabric description.
-1. Select a [team](/administration/teams-users/team-based-access) to own this fabric. Open the dropdown to see the teams you belong to.
+1. Select a [team](/administration/team-based-access) to own this fabric. Open the dropdown to see the teams you belong to.
 1. Click **Continue**.
 
 ![DBInfo](./img/DatabricksFabric1.png)
@@ -39,7 +43,7 @@ The SQL provider is both the storage warehouse and the execution environment whe
    If using self-signed certificates, add `AllowSelfSignedCerts=1` to your JDBC URL.
    :::
 1. Select [Personal Access Token](https://docs.databricks.com/aws/en/dev-tools/auth/pat) or [OAuth](/databricks-oauth-authentication) (recommended) for authentication with Databricks.
-1. Optional: Enter the Catalog name if you are using Unity Catalog.
+1. Enter the catalog and schema to be used as the default write location for target models.
 1. Click **Continue**.
 
 ![SFProvider](./img/DatabricksFabric2.png)

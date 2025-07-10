@@ -21,6 +21,8 @@ The TableauWrite gem lets you send data that updates the data sources that are u
 
 ## Input
 
+The TableauWrite gem accepts the following inputs.
+
 | Port    | Description                                                                                                         |
 | ------- | ------------------------------------------------------------------------------------------------------------------- |
 | **in0** | The table that will be sent as a `Hyper` file to update your Tableau data source. You can only configure one input. |
