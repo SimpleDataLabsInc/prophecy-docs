@@ -11,7 +11,7 @@ Gather logs from your Prophecy environment and send them to the support team via
 
 | Log to Send                                                                       | Example                                                                                                                        |
 | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| Prophecy [system logs](docs/administration/self-hosted/download-logs.md)          | <br /><img src={require("./img/prophecy_logs.png").default} alt="Download Prophecy logs" width="75%" /><br />                  |
+| Prophecy system logs                                                              | <br /><img src={require("./img/prophecy_logs.png").default} alt="Download Prophecy logs" width="75%" /><br />                  |
 | Pipeline logs                                                                     | <br /><img src={require("./img/pipeline_logs.png").default} alt="Download Pipeline logs" width="75%" /><br />                  |
 | Connection logs from Prophecy with error [code](docs/getting-help/diagnostics.md) | <br /><img src={require("./img/prophecy_connection_log.png").default} alt="Connection logs from Prophecy" width="75%" /><br /> |
 
