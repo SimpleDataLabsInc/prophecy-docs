@@ -904,6 +904,7 @@ const sidebars = {
                 id: "administration/fabrics/Spark-fabrics/databricks/databricks",
               },
               items: [
+                "administration/fabrics/Spark-fabrics/databricks/databricks-serverless",
                 "administration/fabrics/Spark-fabrics/databricks/ucshared",
                 "administration/fabrics/Spark-fabrics/databricks/databricks-policies",
                 "administration/fabrics/Spark-fabrics/databricks/whitelist-plibs",
