@@ -27,10 +27,18 @@ To use serverless compute in Prophecy, you need:
 
 You can run the following sources on Databricks serverless compute:
 
+- [Avro](/engineers/avro)
+- [CSV](/engineers/csv)
+- [Data Generator](/engineers/data-generator)
+- [Delta file](/engineers/delta)
+- [JSON](/engineers/JSON)
+- [Kafka](/engineers/kafka)
+- [ORC](/engineers/orc)
+- [Parquet](/engineers/parquet)
+- [Seed files](/engineers/seed)
 - [Unity Catalog tables](https://docs.databricks.com/aws/en/tables/)
 - [Unity Catalog volumes](https://docs.databricks.com/aws/en/sql/language-manual/sql-ref-volumes)
-- [Seed files](/engineers/seed)
-- [Data Generator](/engineers/data-generator)
+- [XML](/engineers/xml)
 
 ## Supported data sampling modes
 
