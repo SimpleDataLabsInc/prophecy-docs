@@ -146,14 +146,6 @@ img {
   height: 100%;
 }
 
-/* Summary or details style*/
-
-.alert--info {
-  --ifm-alert-background-color: var(--ifm-color-secondary-contrast-background);
-  --ifm-alert-border-color: var(--ifm-color-primary-lightest);
-  --ifm-code-background: inherit;
-}
-
 /* Badge styles */
 
 .badge {
