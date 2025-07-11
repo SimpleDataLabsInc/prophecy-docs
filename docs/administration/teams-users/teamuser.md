@@ -34,15 +34,21 @@ For more information, visit [Role-based access control](/administration/rbac#tea
 
 ## Team metadata
 
-Manage the entities within a team by accessing the team's metadata page. Click **(1) Metadata**, **(2) Teams**, and select the **(3) team of interest**. Now you can see all the metadata for that team, including which projects, pipelines, and jobs are owned by that team.
+Manage the entities within a team by accessing the team's metadata page.
 
-In a team's metadata page, only the team admin can view and manage the **(4) Settings** for the team.
+1. Click on the **Metadata** icon in the left navigation bar.
+1. Select the **Teams** tab in the page header.
+1. Click on the team to open its metadata page.
 
-![Team metadata](./img/team_metadata.png)
+The team metadata page includes the following information:
 
-## Team metadata settings
+- Entities that the team owns, such as projects, pipelines, datasets, and jobs.
+- Users that are members of the team.
+- Settings that are only visible to team admins. See [Team metadata settings](#team-metadata-settings) for more information.
 
-This table describes each tab within the team settings.
+### Team metadata settings
+
+This table describes each tab within the team's metadata settings.
 
 | Tab                                                                                 | Description                                                                      |
 | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
@@ -53,8 +59,9 @@ This table describes each tab within the team settings.
 
 ## Team management settings
 
-Additional team settings, including team creation and user management, are available in the **Team** tab of the global [Settings](/administration/teams-users/settings) interface in your Prophecy environment.
+Additional team settings, including team creation and user management, are available in the **Team** tab of the global [Settings](/administration/settings) interface in your Prophecy environment.
 
-:::tip
-Settings can be accessed by clicking the **...** ellipses menu and the **gear** icon at the bottom of the left navigation bar.
-:::
+1. Click the **...** button and the **gear** icon at the bottom of the left navigation bar.
+1. Select the **Teams** tab.
+1. In the **Teams** section, view, create, or delete teams. Teams can only be deleted by their team admin.
+1. In the **Team Users** section, view, create, or remove users in teams. You can also assign or unassign users to the team admin role.

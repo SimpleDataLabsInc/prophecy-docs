@@ -31,7 +31,7 @@ You can run the following sources on Databricks serverless compute:
 - [CSV](/engineers/csv)
 - [Data Generator](/engineers/data-generator)
 - [Delta file](/engineers/delta)
-- [JSON](/engineers/JSON)
+- [JSON](/engineers/json)
 - [Kafka](/engineers/kafka)
 - [ORC](/engineers/orc)
 - [Parquet](/engineers/parquet)

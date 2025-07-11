@@ -57,7 +57,7 @@ This section walks you through automating the extraction of lineage reports from
 
 - A Prophecy project hosted in an external GitHub or GitLab repository.
 - Access to the repository and permissions to set up CI/CD pipelines.
-- A Prophecy Personal Access Token (PAT). Learn more about access tokens in the [user settings](/administration/teams-users/settings#access-token) documentation.
+- A Prophecy [Personal Access Token](/api) (PAT).
 - (Optional) To enable email reports, you must have SMTP credentials.
 
 ### Set environment variables and secrets
