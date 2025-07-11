@@ -31,6 +31,7 @@ The SQLStatement gem uses the following input and output ports.
 By default, the SQL statement gem does not include an input port. To add a port, click the `+` button next to **Ports**. Alternatively, connect the previous gem to the SQLStatement gem directly to add a new input port.
 
 :::info
+Number of inputs and outputs can be changed as needed by clicking the `+` button on the respective tab.
 To learn more about adding and removing ports, see [Gem ports](/analysts/gems#gem-ports).
 :::
 

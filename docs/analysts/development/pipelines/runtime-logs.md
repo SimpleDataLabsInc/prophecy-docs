@@ -1,21 +1,14 @@
 ---
-title: Logs
+title: Runtime logs
 id: logs
 slug: /analysts/logs
-description: Find more information about the success of failure of different operations
+description: View detailed information about each operation performed during a pipeline run
 tags:
   - logs
   - analyst
 ---
 
-Logs are an essential tool for debugging and optimization. There are two types of logs in Prophecy projects:
-
-- [Runtime logs](#runtime-logs) provide detailed information about each operation performed during a pipeline run.
-- [Publish logs](#publish-logs) present the status of each project publication step, outlined below.
-
-## Runtime logs
-
-Runtime logs are generated in real time during pipeline execution and provide a step-by-step trace of how each transformation or action was performed. These logs help analysts quickly identify which step failed, how long each step took, and whether the execution followed the expected sequence. They're also useful for reviewing pipelines you didn’t build yourself, so you can see what happened during the run.
+Runtime logs are generated in real time during pipeline execution and provide a step-by-step trace of how each transformation or action was performed. These logs help you quickly identify which steps succeeded or failed, how long each step took, and whether the execution followed the expected sequence. They're also useful for reviewing pipelines you didn’t build yourself, so you can see what happened during the run.
 
 Runtime logs are available from the information footer at the bottom of the project editor. When you open the Runtime Logs tab, you'll see the following details for each log entry.
 
@@ -55,20 +48,6 @@ If you have access to your Databricks workspace:
    - Start and end times
    - Error messages
    - Execution plan or profile
-
-## Publish logs
-
-When you publish a project, Prophecy provides logs for each publication step to help you troubleshoot if anything goes wrong during the deployment process. You see a success or failure status for each step in the publish logs, making it easy to identify exactly where issues may have occurred.
-
-The publication process follows these steps.
-
-1. **Fetching fabric info**: Gather information about the currently attached fabric
-1. **Reading project code**: Review code elements
-1. **Packaging project**: Bundle all components together
-1. **Connecting to deployment service**: Establish connection to deployment tool
-1. **Deploying to fabric**: Build project in the target fabric
-
-![Publish logs](img/publish-logs.png)
 
 ## What's next
 

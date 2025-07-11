@@ -19,6 +19,8 @@ Read or write a Parquet file from an external connection.
 ## Supported connections
 
 - [Amazon S3](/administration/fabrics/prophecy-fabrics/connections/s3)
+- [Databricks](/administration/fabrics/prophecy-fabrics/connections/databricks)
+- [Google BigQuery](/administration/fabrics/prophecy-fabrics/connections/bigquery)
 - [SFTP](/administration/fabrics/prophecy-fabrics/connections/sftp)
 
 ## Parameters

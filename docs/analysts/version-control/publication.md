@@ -15,7 +15,7 @@ When you publish a project, two key processes occur: **release** and **deploymen
 
 First, the project is released, creating a new version and preparing it for distribution. During this process, Prophecy assigns a version label to the project and makes the new version available in packages and Prophecy Apps.
 
-Next, the project is deployed to different environments. The deployment process builds the project in each target environment ([fabric](docs/getting-started/concepts/fabrics.md)) and enables pipeline [schedules](docs/analysts/scheduling.md) for each fabric.
+Next, the project is deployed to different environments. The deployment process builds the project in each target environment ([fabric](docs/getting-started/concepts/fabrics.md)) and enables pipeline [schedules](/analysts/scheduling) for each fabric.
 
 :::info
 If you publish a project without selecting a fabric, it is only **released**. This means a new version is created and made available for use in the Package Hub and Prophecy Apps, but no deployments are created.
@@ -61,4 +61,22 @@ Prophecy lets multiple users work on the same project [simultaneously](docs/anal
 
 ## Monitor deployed projects
 
-All of your teams' published projects will appear in the [Monitoring](/analysts/monitoring) page in Prophecy. This lets you see information like build results, deployment versions, publication dates, and more.
+All of your teams' published projects will appear in the [Observability](/analysts/monitoring) interface in Prophecy. This lets you see information like:
+
+- List of deployed projects
+- List of pipeline schedules per fabric
+- History of pipeline runs and run status
+
+## Project publication logs
+
+When you publish a project, Prophecy provides logs for each publication step to help you troubleshoot if anything goes wrong during the deployment process. You see a success or failure status for each step in the publish logs, making it easy to identify exactly where issues may have occurred.
+
+The publication process follows these steps.
+
+1. **Fetching fabric info**: Gather information about the currently attached fabric
+1. **Reading project code**: Review code elements
+1. **Packaging project**: Bundle all components together
+1. **Connecting to deployment service**: Establish connection to deployment tool
+1. **Deploying to fabric**: Build project in the target fabric
+
+![Publish logs](img/publish-logs.png)
