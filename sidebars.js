@@ -212,8 +212,10 @@ const sidebars = {
               type: "category",
               label: "Spatial",
               items: [
+                "analysts/development/gems/spatial/buffer",
                 "analysts/development/gems/spatial/create-point",
                 "analysts/development/gems/spatial/distance",
+                "analysts/development/gems/spatial/spatial-match",
                 "analysts/development/gems/spatial/nearest-point",
                 "analysts/development/gems/spatial/polybuild",
               ],
