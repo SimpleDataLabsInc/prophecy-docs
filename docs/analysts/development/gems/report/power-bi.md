@@ -9,15 +9,19 @@ tags:
   - report
 ---
 
+import SQLRequirements from '@site/src/components/sql-gem-requirements';
+
+<SQLRequirements
+  execution_engine="Prophecy Automate"
+  sql_package_name=""
+  sql_package_version=""
+/>
+
 The PowerBIWrite gem lets you publish pipeline results directly to Power BI tables. This gem supports fine-grained options like write modes and schema management to control how tables are written. You can configure the gem to either write tables to new datasets or existing ones in a specified Power BI workspace.
 
 :::info
 Datasets in the PowerBIWrite gem refer to the _semantic model_ content type in Power BI. For more information, visit [New name for Power BI datasets](https://learn.microsoft.com/en-us/power-bi/connect-data/service-datasets-rename).
 :::
-
-## Prerequisites
-
-The PowerBIWrite gem requires Prophecy 4.1.1.3 or later.
 
 ## Inputs
 
@@ -31,6 +35,8 @@ The PowerBIWrite gem accepts the following inputs.
 To add additional input ports, click `+` next to **Ports**.
 
 ## Parameters
+
+Use the following parameters to configure the PowerBIWrite gem.
 
 | Parameter                          | Description                                                                                                                                                                                                                |
 | ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
