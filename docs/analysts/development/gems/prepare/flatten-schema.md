@@ -27,7 +27,7 @@ When you import tables with variant data into Prophecy, you'll see one or more n
 
 ## Parameters
 
-Configure the following parameters for the FlattenSchema gem:
+Configure the following parameters for the FlattenSchema gem.
 
 | Parameter   | Description                                                            | Required |
 | ----------- | ---------------------------------------------------------------------- | -------- |
@@ -43,7 +43,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs>
 
-<TabItem value="databricks" label="Databricks">
+<TabItem value="Databricks" label="Databricks">
 
 Databricks accepts JSON files with a top-level array of JSON objects.
 
@@ -94,7 +94,7 @@ Databricks accepts JSON files with a top-level array of JSON objects.
 
 </TabItem>
 
-<TabItem value="snowflake" label="Snowflake">
+<TabItem value="Snowflake" label="Snowflake">
 
 Snowflake accepts JSON files with a top-level array of JSON objects.
 
