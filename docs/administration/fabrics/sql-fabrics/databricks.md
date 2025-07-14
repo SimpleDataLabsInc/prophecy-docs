@@ -27,7 +27,7 @@ Next, complete the fields in the **Basic Info** page.
 
 1. Provide a fabric title. It can be helpful to include descriptors like `dev` or `prod` in your title.
 1. (Optional) Provide a fabric description.
-1. Select a [team](/administration/teams-users/team-based-access) to own this fabric. Open the dropdown to see the teams you belong to.
+1. Select a [team](/administration/team-based-access) to own this fabric. Open the dropdown to see the teams you belong to.
 1. Click **Continue**.
 
 ![DBInfo](./img/DatabricksFabric1.png)

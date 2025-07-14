@@ -28,12 +28,13 @@ Prophecy supports Databricks as both a SQL Warehouse connection and an Ingress/E
 
 The table below outlines whether the connection supports certain Prophecy features.
 
-| Feature                                                       | Supported                           |
-| ------------------------------------------------------------- | ----------------------------------- |
-| Run SQL queries                                               | Yes — SQL Warehouse Connection only |
-| Read data with a [Source gem](/analysts/source-target)        | Yes                                 |
-| Write data with a [Target gem](/analysts/source-target)       | Yes                                 |
-| Browse data in the [Environment browser](/analysts/pipelines) | Yes                                 |
+| Feature                                                         | Supported                           |
+| --------------------------------------------------------------- | ----------------------------------- |
+| Run SQL queries                                                 | Yes — SQL Warehouse Connection only |
+| Read and write data with a [Table gem](/analysts/source-target) | Yes — SQL Warehouse Connection only |
+| Read data with a [Source gem](/analysts/source-target)          | Yes                                 |
+| Write data with a [Target gem](/analysts/source-target)         | Yes                                 |
+| Browse data in the [Environment browser](/analysts/pipelines)   | Yes                                 |
 
 ## Connection parameters
 
@@ -66,7 +67,7 @@ When you choose [Databricks OAuth](docs/administration/authentication/databricks
 
 #### Choose the appropriate OAuth method
 
-We [recommend using separate fabrics](/administration/teams-users/team-based-access) for development and production environments. Each fabric should use a different OAuth method to align with its purpose.
+We [recommend using separate fabrics](/administration/team-based-access) for development and production environments. Each fabric should use a different OAuth method to align with its purpose.
 
 - **Development fabric**: Utilize user-based OAuth.
 

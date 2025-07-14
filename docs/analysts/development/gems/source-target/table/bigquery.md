@@ -1,8 +1,8 @@
 ---
-title: Databricks
-id: databricks
-slug: /analysts/databricks-table
-description: Process Databricks tables in the SQL warehouse
+title: Google BigQuery
+id: bigquery
+slug: /analysts/bigquery-table
+description: Process BigQuery tables in the SQL warehouse
 tags: []
 ---
 
@@ -16,21 +16,17 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 In Prophecy, datasets stored in the [SQL Warehouse Connection](/administration/fabrics/prophecy-fabrics/#connections) defined in your fabric are accessed using Table gems. Unlike other source and target gems, Table gems run directly within the data warehouse, eliminating extra orchestration steps and improving performance.
 
-Available configurations for Table gems vary based on your SQL warehouse provider. This page explains how to use the Table gem for a Databricks SQL warehouse, including supported table types, configuration options, and guidance for managing Databricks tables in your Prophecy pipelines.
+Available configurations for Table gems vary based on your SQL warehouse provider. This page explains how to use the Table gem for a BigQuery SQL warehouse, including supported table types, configuration options, and guidance for managing BigQuery tables in your Prophecy pipelines.
 
 ## Table types
 
-The following table types are supported for Databricks connections.
+The following table types are supported for BigQuery connections.
 
 | Name  | Description                                                                                                   | Type             |
 | ----- | ------------------------------------------------------------------------------------------------------------- | ---------------- |
 | Table | Persistent storage of structured data in your SQL warehouse. Faster for frequent queries (indexed).           | Source or Target |
 | View  | A virtual table that derives data dynamically from a query. Slower for complex queries (computed at runtime). | Source or Target |
 | Seed  | Small CSV-format files that you can write directly in Prophecy.                                               | **Source only**  |
-
-:::info
-For more information, visit the Databricks documentation on [Tables](https://docs.databricks.com/aws/en/tables/table-overview) and [Views](https://docs.databricks.com/aws/en/views/).
-:::
 
 ## Gem configuration
 
@@ -89,23 +85,9 @@ Seeds are lightweight CSV datasets defined in your project. Seeds are source-onl
 | Preview    | Load a preview of your seed in table format.                                                                           |
 
 :::note
-Seeds are implemented as [dbt seeds](https://docs.getdbt.com/docs/build/seeds) under the hood. The CSV data you define is stored in your Prophecy project files and materialized as a table in your data warehouse. This table is created in the [default target schema](/administration/fabrics/prophecy-fabrics/connections/databricks#connection-parameters) specified in your Databricks connection.
-:::
-
-### Properties
-
-Tables in pipelines do not support dbt properties, which are only applicable to [model sources and targets](/engineers/model-sources-and-targets).
-
-## Cross-workspace access
-
-If your fabric uses Databricks as the SQL warehouse, you can’t select Databricks in an external Source or Target gem. Instead, you must use Table gems, which are limited to the Databricks warehouse defined in the SQL warehouse connection.
-
-To work with tables from a different Databricks workspace, use [Delta Sharing](https://docs.databricks.com/aws/en/delta-sharing/). Delta Sharing lets you access data across workspaces without creating additional Databricks connections.
-
-:::info
-Prophecy implements this guardrail to avoid using external connections when the data can be made available in your warehouse. External connections introduce an extra data transfer step, which slows down pipeline execution and adds unnecessary complexity. For best performance, Prophecy always prefers reading and writing directly within the warehouse.
+Seeds are implemented as [dbt seeds](https://docs.getdbt.com/docs/build/seeds) under the hood. The CSV data you define is stored in your Prophecy project files and materialized as a table in your data warehouse. This table is created in the [default target dataset](/administration/fabrics/prophecy-fabrics/connections/bigquery#connection-parameters) specified in your BigQuery connection.
 :::
 
 ## Reusing and sharing tables
 
-After you create a table in Prophecy, you can reuse its configuration across your entire project. All created tables appear in the [Project](/analysts/project-editor) tab in the left sidebar. To make tables available to other teams, you can share your project as a package in the [Package Hub](/engineers/package-hub). Other users will be able to use the shared table configuration, provided they have the necessary permissions in Databricks to access the underlying data.
+After you create a table in Prophecy, you can reuse its configuration across your entire project. All created tables appear in the [Project](/analysts/project-editor) tab in the left sidebar. To make tables available to other teams, you can share your project as a package in the [Package Hub](/engineers/package-hub). Other users will be able to use the shared table configuration, provided they have the necessary permissions in BigQuery to access the underlying data.

@@ -70,6 +70,24 @@ If you select one or more gems, you can copy and paste them within the same pipe
 
 When you open a gem, you can configure how the gem will work. Explore our individual gem documentation to understand each gem's parameters.
 
+### Gem ports
+
+Each gem handles ports differently. Some require specific input and output ports. Others allow only one port or none at all. Refer to the documentation for each gem to understand its port requirements.
+
+To add a port:
+
+1. Open the gem to access its configuration.
+1. On the left, choose the **Input** or **Output** tab under **Ports**.
+1. Click the `+` button next to **Ports**. If the `+` button doesn’t appear, the gem does not support adding more ports.
+
+To remove ports from a gem:
+
+1. Open the gem to access its configuration.
+1. On the left, choose the **Input** or **Output** tab under **Ports**.
+1. Click the pencil icon to enter **Edit** mode.
+1. Hover over the port you want to remove and click the trash icon.
+1. Click **Done** to save your changes and exit **Edit** mode.
+
 ### Visual and code view
 
 Some gems can be configured in the **visual** view or the **code** view. Use the visual expression builder to populate fields in the visual view. Prophecy will automatically convert visual expressions into SQL expressions. You can edit these SQL statements or write your own in the code view.
