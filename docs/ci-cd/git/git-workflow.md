@@ -60,6 +60,10 @@ Once you have committed your changes, you have the ability to **merge** them to 
 
 ![Merge branch](img/merge-branch.png)
 
+### Pull Requests
+
+If you need code reviews or use protected branches like main, you can enable pull requests during the merge step. This lets you open a pull request in your external Git provider directly from Prophecy. To enable and configure this workflow, see [Pull requests](/engineers/git-pull-requests/).
+
 ## Release and Deploy
 
 Once the changes are merged, you can [release and deploy](/engineers/deployment) a branch from the Prophecy user interface.
