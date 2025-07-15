@@ -23,38 +23,44 @@ The Pivot gem reshapes your data by transforming unique row values from a select
 
 The Pivot gem uses the following input and output ports.
 
-| Port | Description                                            |
-| ---- | ------------------------------------------------------ |
-| in0  | Includes the table that will be pivoted.               |
-| out  | Generates a new table with pivoted columns and values. |
+| Port    | Description                                                                                                                                                                                                                                                                              |
+| ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **in0** | The source table containing data in long format that needs to be transformed to wide format.                                                                                                                                                                                             |
+| **out** | The output table in wide format containing: <br/>• All original grouping columns preserved as row identifiers <br/>• New columns created from unique values in the pivot column and defined aggregations <br/>The output will typically have fewer rows but more columns than the input. |
 
 ## Parameters
 
 Configure the Pivot gem using the following parameters.
 
-### Column Settings
+### Pivot Column Settings
 
-| Parameter                  | Description                                                                                                     |
-| -------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| Pivot column               | Column whose unique values will become new columns in the output.                                               |
-| Unique Pivot Column Values | Table to explicitly define the unique values from the Pivot column that you want to transform into new columns. |
+Choose a pivot column that contains the unique values that will become new columns in the output table. Each distinct value from this column that you define will be transformed into a separate column header in the wide format result.
 
-### Row Settings
+In the **Unique Pivot Column Values** table, you must explicitly define which unique values from the pivot column you want to transform into new columns. String values must be wrapped in quotes.
 
-| Parameter                   | Description                                   |
-| --------------------------- | --------------------------------------------- |
-| Group data by these columns | Columns to group the data by before pivoting. |
+> Example: If your pivot column contains dates, you can specify `'2025-01-01'`, `'2025-02-01'`, and `'2025-03-01'` to create columns for those dates.
+
+### Row Grouping Settings
+
+The pivot operation will group your data by these columns before applying the aggregation. You can select one or more columns for grouping.
+
+> Example: If you're analyzing sales data and want to see performance by region and product category, you would select both `Region` and `Product_Category` as grouping columns.
 
 ### Values
 
-| Parameter                     | Description                                                                                                                    |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| Values for New Columns        | The column(s) whose values will populate the cells of the new pivot columns.                                                   |
-| Separator                     | The character or string used to separate multiple values when using the CONCAT aggregation method.                             |
-| Method for Aggregating Values | The aggregation function to apply to the grouped "Values for New Columns" (e.g., AVG, SUM, COUNT, MIN, MAX).                   |
-| Column Alias                  | An optional alias for the new columns created by the pivot operation. The alias is appended to the unique pivot column values. |
+Choose a column that contains the data values that will populate the cells of the new pivot columns. The values from this column will be aggregated according to your chosen method(s) and placed at the intersection of each group and pivot column combination.
 
-## Example
+Once you choose a column, a table appears where you can define your aggregations. Under **Method for Aggregating Values**, choose methods such as `AVG`, `SUM`, `COUNT`, `MIN`, and `MAX`.
+
+For each aggregation, you can define an optional **Column Alias** that gets appended to the new columns' names. This helps make your output columns more descriptive and meaningful.
+
+> Example: If your pivot column values are dates and you're calculating averages, you might use `AVG_Sales` as the alias, resulting in column names like `2025-01-01_AVG_Sales` and `2025-02-01_AVG_Sales`.
+
+:::info
+When using the `CONCAT` aggregation method, the **Separator** parameter specifies the character or string used to separate the values that are being concatenated together. Common separators include commas, semicolons, and pipes.
+:::
+
+## Example: Energy consumption
 
 Imagine you have a dataset of energy consumption with `Date`, `City`, and `kWh_Used` for different buildings, and you want to see the average `kWh_Used` per city for a specific date, with dates as columns. You will start with the following information:
 
@@ -101,6 +107,6 @@ The output table shows the average `kWh_Used` for each city on the specified dat
 
 Note that there are some null values in this output table. This is because for certain combinations of `City` and `Date`, there's no corresponding data in the original input table.
 
-The Pivot gem works by taking unique values from the Pivot column (`Date` in this case) and turning them into new columns. It then populates these new columns with aggregated values from the Values for New Columns (`kWh_Used`) based on the Group data by these columns (`City`).
+The Pivot gem works by taking unique values from the **Pivot Column Settings** (`Date` in this case) and turning them into new columns. It then populates these new columns with aggregated values from the **Values for New Columns** (`kWh_Used`) per group (`City`).
 
-If a specific city (e.g., Chicago) does not have any `kWh_Used` data for a particular date (e.g., `2025-07-01`), then when that date becomes a column, the corresponding cell for Chicago will be null. The null indicates the absence of data for that specific intersection of city and date in your original dataset.
+If a specific city does not have any `kWh_Used` data for a particular date, then when that date becomes a column, the corresponding cell will be null. In this example, you can see that Chicago has no data for `2025-07-01`, so the cell is null for that date in the output. In summary, the null indicates the absence of data for that specific intersection of city and date in your original dataset.
