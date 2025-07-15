@@ -43,7 +43,7 @@ Team admins manage teams and create resources for their [teams](docs/administrat
 - Setting up connections with the appropriate credentials
 - Deploying projects to run scheduled pipelines
 
-The user who creates a team is automatically assigned as its team admin. Additional team admins can be added or disabled from the **Teams** tab in [Settings](/administration/teams-users/settings).
+The user who creates a team is automatically assigned as its team admin. Additional team admins can be added or disabled from the **Teams** tab in [Settings](/administration/settings).
 
 :::info
 For recommendations regarding team setup and organization, visit [Team-based access](/administration/team-based-access).

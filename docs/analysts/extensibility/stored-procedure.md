@@ -22,7 +22,9 @@ This page describes how to create new stored procedures in Prophecy. For informa
 
 ## Prerequisites
 
-Stored procedures are supported in SQL projects where Google BigQuery is the SQL provider.
+To use stored procedures, you need:
+
+- Prophecy 4.1.2 or later.
 
 ## Create stored procedure
 
@@ -60,6 +62,6 @@ Prophecy supports additional options that you can find in the top right corner o
 
 Once you have created a stored procedure, you can call it using the [StoredProcedure gem](/analysts/stored-procedure-gem).
 
-## Reusing and sharing stored procedures
+<!-- ## Reusing and sharing stored procedures
 
-After you create a stored procedure in Prophecy, you can call it in any pipeline of your project. To make your stored procedures available to other teams, you can share your project as a package in the [Package Hub](/engineers/package-hub). Other users will be able to call and use the stored procedure, provided they have the necessary permissions in BigQuery to run and perform the actions defined in the procedure.
+After you create a stored procedure in Prophecy, you can call it in any pipeline of your project. To make your stored procedures available to other teams, you can share your project as a package in the [Package Hub](/engineers/package-hub). Other users will be able to call and use the stored procedure, provided they have the necessary permissions in BigQuery to run and perform the actions defined in the procedure. -->

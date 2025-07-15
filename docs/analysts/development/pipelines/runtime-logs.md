@@ -51,7 +51,7 @@ If you have access to your Databricks workspace:
 
 ## What's next
 
-Now that you know about runtime logs, you might want to learn about [audit logs](/administration/saas/audit-logging) and [system logs](/getting-help/prophecy-details), which provide visibility into platform-level and administrative activity.
+Now that you know about runtime and publish logs, you might want to learn about [audit logs](/administration/audit-logging) and [system logs](/getting-help/prophecy-details), which provide visibility into platform-level and administrative activity.
 
 - **Audit logs** track events across entities like projects, pipelines, jobs, and fabrics. These logs help administrators understand who did what and when. For example, these logs can capture who creates a pipeline, releases a project, modifies a dataset, etc.
 

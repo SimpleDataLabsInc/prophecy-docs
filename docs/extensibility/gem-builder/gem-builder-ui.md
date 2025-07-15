@@ -231,6 +231,20 @@ AlertBox(
 
 ---
 
+---
+
+### NumberBox
+
+Allows the user to input an integer. Does not support floats.
+
+```py
+NumberBox("Label for Number Box", placeholder="0")
+```
+
+<img src={require('./img/uispec/NumberBox.png').default} alt="AlertBox" width="75%" style={{ border: "1px solid var(--ifm-color-gray-200)", borderRadius: "8px" }}/>
+
+---
+
 ### Markdown
 
 Displays static Markdown-formatted content.

@@ -94,7 +94,7 @@ Seeds are implemented as [dbt seeds](https://docs.getdbt.com/docs/build/seeds) u
 
 ### Properties
 
-Tables in pipelines do not support dbt properties, which are only applicable to [model sources and targets](/analysts/model-sources-and-targets).
+Tables in pipelines do not support dbt properties, which are only applicable to [model sources and targets](/engineers/model-sources-and-targets).
 
 ## Cross-workspace access
 
