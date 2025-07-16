@@ -329,6 +329,10 @@ img {
   border-radius: 8px;
 }
 
+img.no-border-radius {
+  border-radius: 0 !important;
+}
+
 /* Example data table style */
 
 .table-example table {
