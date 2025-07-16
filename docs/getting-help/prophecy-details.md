@@ -9,10 +9,18 @@ tags: []
 
 Gather logs from your Prophecy environment and send them to the support team via the [Support Portal](https://prophecy.zendesk.com/).
 
-| Log to Send                                                                       | Example                                                                                                                        |
-| --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| Prophecy system logs                                                              | <br /><img src={require("./img/prophecy_logs.png").default} alt="Download Prophecy logs" width="75%" /><br />                  |
-| Pipeline logs                                                                     | <br /><img src={require("./img/pipeline_logs.png").default} alt="Download Pipeline logs" width="75%" /><br />                  |
-| Connection logs from Prophecy with error [code](docs/getting-help/diagnostics.md) | <br /><img src={require("./img/prophecy_connection_log.png").default} alt="Connection logs from Prophecy" width="75%" /><br /> |
+## Send runtime logs
 
-**We look forward to hearing from you!**
+If you are having trouble running a pipeline, you can download the [runtime logs](/analysts/logs).
+
+Our Support team can review these logs to help troubleshoot your issue.
+
+![Runtime logs](img/pipeline_logs.png)
+
+## Send connection logs
+
+If you have trouble connecting to your fabric, send connection logs to Prophecy with the corresponding error [code](docs/getting-help/diagnostics.md).
+
+To retrieve the connection log, open the cluster connection in the top right corner of your project and click the **Copy** button.
+
+![Connection logs](img/prophecy_connection_log.png)
