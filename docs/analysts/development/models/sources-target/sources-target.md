@@ -1,7 +1,7 @@
 ---
 title: Model sources and targets
 id: sources-and-targets
-slug: /analysts/model-sources-and-targets
+slug: /engineers/model-sources-and-targets
 description: Use models to read and write data
 tags:
   - SQL

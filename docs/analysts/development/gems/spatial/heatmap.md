@@ -9,6 +9,14 @@ tags:
   - spatial
 ---
 
+import SQLRequirements from '@site/src/components/sql-gem-requirements';
+
+<SQLRequirements
+  execution_engine="SQL Warehouse"
+  sql_package_name="ProphecyDatabricksSqlSpatial"
+  sql_package_version="0.0.3+"
+/>
+
 The **HeatMap** gem transforms latitude and longitude point data into a spatial heatmap using hexagonal tiling. It's useful for identifying clusters of activity or density within a geographic region.
 
 ## Input and Output
