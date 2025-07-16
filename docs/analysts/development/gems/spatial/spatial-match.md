@@ -26,11 +26,12 @@ Use the SpatialMatch gem to find relationships between geometries from two diffe
 The gem uses spatial joins to compare geometries and returns only the pairs that have the spatial relationship you specify, such as shapes overlapping or shapes touching. It works with points, lines, and polygons in Well-Known Text ([WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry)) format.
 
 :::tip
-Use the following gems to create geometries in a dataset:
+Use the following gems to create correctly formatted geometries in a dataset:
 
 - [CreatePoint](/analysts/create-point) gem for points
 - [PolyBuild](/analysts/polybuild) gem for lines and polygons
-  :::
+
+:::
 
 ## Input and Output
 
@@ -38,9 +39,13 @@ The SpatialMatch gem accepts the following inputs and output.
 
 | Port    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **in0** | Source dataset containing geometries (points, lines, or polygons) in WKT format. This is the "left" dataset in the spatial join operation.                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| **in1** | Target dataset containing geometries (points, lines, or polygons) in WKT format. This is the "right" dataset in the spatial join operation.                                                                                                                                                                                                                                                                                                                                                                                                                |
+| **in0** | Dataset containing geometries (points, lines, or polygons) in WKT format. This is the "left" dataset in the spatial join operation.                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| **in1** | Dataset containing geometries (points, lines, or polygons) in WKT format. This is the "right" dataset in the spatial join operation.                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | **out** | Output dataset containing **matched pairs** of geometries along with all additional columns from both input datasets. Each row represents a source geometry and target geometry that satisfy the selected spatial relationship. Unmatched geometries are excluded from the output. <br/><br/>The output includes the following columns: <ul class="table-list"><li>The source geometry column</li><li>All other `in0` columns</li><li>The target geometry column prefixed with `target_`</li><li>All other `in1` columns prefixed with `target_`</li></ul> |
+
+:::tip
+You can use the same source for both in0 and in1 if you want to operate a self-join.
+:::
 
 ## Parameters
 
@@ -75,36 +80,38 @@ alt="Match types diagram"
 className="no-border-radius"
 />
 
-## Example
+## Example: Find stores within delivery zones
 
-Assume you have two datasets: `store_locations` containing store locations as points, and `delivery_zones` containing delivery zones as polygons.
+Assume you have two datasets:
 
-### store_locations
+- `store_locations` contains store locations as points.
 
-<div class="table-example">
+  <div class="table-example">
 
-| store_id | store_location |
-| -------- | -------------- |
-| 1        | POINT(10 10)   |
-| 2        | POINT(20 20)   |
-| 3        | POINT(30 5)    |
+  | store_id | store_name               | store_location          | store_type  |
+  | -------- | ------------------------ | ----------------------- | ----------- |
+  | 1        | Downtown Electronics     | POINT(-74.0059 40.7128) | electronics |
+  | 2        | Midtown Cafe             | POINT(-73.9857 40.7489) | restaurant  |
+  | 3        | Brooklyn Bookstore       | POINT(-73.9442 40.6782) | bookstore   |
+  | 4        | Queens Pharmacy          | POINT(-73.7949 40.7282) | pharmacy    |
+  | 5        | Upper East Side Boutique | POINT(-73.9626 40.7831) | clothing    |
 
-</div>
+  </div>
 
-### delivery_zones
+- `delivery_zones` contains delivery zones as polygons.
 
-<div class="table-example">
+  <div class="table-example">
 
-| zone_id | zone_polygon                                 |
-| ------- | -------------------------------------------- |
-| A       | POLYGON((0 0, 0 15, 15 15, 15 0, 0 0))       |
-| B       | POLYGON((18 18, 18 25, 25 25, 25 18, 18 18)) |
+  | zone_id         | zone_name        | zone_polygon                                                                                        | delivery_fee |
+  | --------------- | ---------------- | --------------------------------------------------------------------------------------------------- | ------------ |
+  | MANHATTAN_SOUTH | Lower Manhattan  | POLYGON((-74.0200 40.7000, -74.0200 40.7300, -73.9800 40.7300, -73.9800 40.7000, -74.0200 40.7000)) | 5.99         |
+  | MANHATTAN_NORTH | Upper Manhattan  | POLYGON((-73.9800 40.7700, -73.9800 40.8000, -73.9400 40.8000, -73.9400 40.7700, -73.9800 40.7700)) | 7.99         |
+  | BROOKLYN_WEST   | Western Brooklyn | POLYGON((-74.0000 40.6500, -74.0000 40.7000, -73.9200 40.7000, -73.9200 40.6500, -74.0000 40.6500)) | 6.99         |
+  | QUEENS_CENTRAL  | Central Queens   | POLYGON((-73.8500 40.7000, -73.8500 40.7500, -73.7500 40.7500, -73.7500 40.7000, -73.8500 40.7000)) | 8.99         |
 
-</div>
+  </div>
 
-### Find stores within zones
-
-To find all of the stores that are inside delivery zones:
+To find which delivery zones correspond to each store:
 
 1. Add a SpatialMatch gem to your pipeline canvas.
 1. Attach `store_locations` to the **in0** port of the gem.
@@ -115,15 +122,11 @@ To find all of the stores that are inside delivery zones:
 1. Under **Select Match Type**, select **Source Within Target**.
 1. Save and run the gem.
 
-The SpatialMatch gem will return only the pairs of geometries that satisfy the selected match type.
+### Result
 
-<div class="table-example">
+The SpatialMatch gem will return only the pairs of geometries that satisfy the selected match type. As a result:
 
-| store_id | store_location | target_zone_polygon                          | target_zone_id |
-| -------- | -------------- | -------------------------------------------- | -------------- |
-| 1        | POINT(10 10)   | POLYGON((0 0, 0 15, 15 15, 15 0, 0 0))       | A              |
-| 2        | POINT(20 20)   | POLYGON((18 18, 18 25, 25 25, 25 18, 18 18)) | B              |
-
-</div>
-
-Note that `POINT(30 5)` does not appear in the output because **it is not within** any of the delivery zones.
+- Downtown Electronics matches the `MANHATTAN_SOUTH` zone.
+- Queens Pharmacy matches the `QUEENS_CENTRAL` zone.
+- Upper East Side Boutique matches the `MANHATTAN_NORTH` zone.
+- Midtown Cafe does not match any zone. This means that it is not in any delivery zone.

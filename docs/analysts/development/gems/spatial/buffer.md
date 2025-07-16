@@ -14,7 +14,7 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 <SQLRequirements
   execution_engine="SQL Warehouse"
   sql_package_name="ProphecyDatabricksSqlSpatial"
-  sql_package_version=""
+  sql_package_version="0.0.3+"
 />
 
 Use the Buffer gem to take any polygon or line and expand or contract its boundaries. This can be useful for spatial analysis tasks like creating safety zones around hazardous areas, expanding service coverage areas, and analyzing proximity impacts.
@@ -27,10 +27,10 @@ Geometries must be in Well-known Text ([WKT](https://en.wikipedia.org/wiki/Well-
 
 The Buffer gem accepts the following inputs and output.
 
-| Port    | Description                                                                                                  |
-| ------- | ------------------------------------------------------------------------------------------------------------ |
-| **in0** | Input dataset containing the source points for which you want to find the nearest points.                    |
-| **out** | Columns from `in0` including the original geometry, plus an additional column with the transformed geometry. |
+| Port    | Description                                                                                                               |
+| ------- | ------------------------------------------------------------------------------------------------------------------------- |
+| **in0** | Input dataset containing the source points for which you want to find the nearest points.                                 |
+| **out** | Output dataset that contains two columns: `input` with the original geometry, and `output` with the transformed geometry. |
 
 ## Parameters
 
@@ -54,4 +54,6 @@ Let's say you're working with a transportation dataset and need to create safety
 1. For **Units**, select **Meters**.
 1. Save and run the gem.
 
-The output will include a new column that contains your transformed highway routes.
+### Result
+
+The output will contain both the original routes and your transformed highway routes.

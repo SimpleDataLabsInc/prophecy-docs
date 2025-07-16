@@ -215,9 +215,11 @@ const sidebars = {
                 "analysts/development/gems/spatial/buffer",
                 "analysts/development/gems/spatial/create-point",
                 "analysts/development/gems/spatial/distance",
-                "analysts/development/gems/spatial/spatial-match",
-                "analysts/development/gems/spatial/nearest-point",
+                "analysts/development/gems/spatial/find-nearest",
+                "analysts/development/gems/spatial/generalize",
+                "analysts/development/gems/spatial/heatmap",
                 "analysts/development/gems/spatial/polybuild",
+                "analysts/development/gems/spatial/spatial-match",
               ],
             },
             {
