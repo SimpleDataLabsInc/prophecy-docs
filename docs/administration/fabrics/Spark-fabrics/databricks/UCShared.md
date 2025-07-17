@@ -50,23 +50,23 @@ Legacy Shared clusters 12.2 and below are shown for reference only. Later versio
 
 Minimum Prophecy Package version required to support Databricks Unity Catalog Standard Clusters:
 
-| Gem                       | Package                     | 12.2 - Shared | 14.3 - UC standard | 15.4 - UC standard |
-| ------------------------- | --------------------------- | ------------- | ------------------ | ------------------ |
-| Avro                      | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39             | 0.2.39             |
-| Csv (Only File Path)      | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39             | 0.2.39             |
-| Csv (SFTP - Source)       | ProphecySparkBasicsPython   | Not Supported | 0.2.44             | 0.2.44             |
-| Csv (SharePoint - Source) | ProphecySparkBasicsPython   | Not Supported | 0.2.44             | 0.2.44             |
-| Delta                     | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39             | 0.2.39             |
-| Json                      | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39             | 0.2.39             |
-| ORC                       | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39             | 0.2.39             |
-| Parquet                   | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39             | 0.2.39             |
-| Text                      | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39             | 0.2.39             |
-| Fixed Format              | ProphecySparkBasicsPython   | Not Supported | Not Supported      | Not Supported      |
-| Xlsx                      | ProphecySparkBasicsPython   | Not Supported | Not Supported      | Not Supported      |
-| Xml                       | ProphecySparkBasicsPython   | Not Supported | 0.2.39             | 0.2.39             |
-| Seed                      | ProphecySparkBasicsPython   | Not Supported | 0.2.39             | 0.2.39             |
-| Createdata                | ProphecySparkAbinitioPython | Not Supported | 0.0.28             | 0.0.28             |
-| Mtime                     | ProphecySparkAbinitioPython | Not Supported | 0.0.28             | 0.0.28             |
+| Gem                                         | Package                     | 12.2 - Shared | 14.3 - UC standard | 15.4 - UC standard |
+| ------------------------------------------- | --------------------------- | ------------- | ------------------ | ------------------ |
+| [Avro](/engineers/avro)                     | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39             | 0.2.39             |
+| [CSV](/engineers/csv) (Only File Path)      | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39             | 0.2.39             |
+| [CSV](/engineers/csv) (SFTP - Source)       | ProphecySparkBasicsPython   | Not Supported | 0.2.44             | 0.2.44             |
+| [CSV](/engineers/csv) (SharePoint - Source) | ProphecySparkBasicsPython   | Not Supported | 0.2.44             | 0.2.44             |
+| [Delta](/engineers/delta)                   | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39             | 0.2.39             |
+| [JSON](/engineers/json)                     | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39             | 0.2.39             |
+| [ORC](/engineers/orc)                       | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39             | 0.2.39             |
+| [Parquet](/engineers/parquet)               | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39             | 0.2.39             |
+| [Text](/engineers/text)                     | ProphecySparkBasicsPython   | 0.2.39        | 0.2.39             | 0.2.39             |
+| [Fixed Format](/engineers/fixed-format)     | ProphecySparkBasicsPython   | Not Supported | Not Supported      | Not Supported      |
+| [XLSX](/engineers/xlsx)                     | ProphecySparkBasicsPython   | Not Supported | Not Supported      | 0.2.47             |
+| [XML](/engineers/xml)                       | ProphecySparkBasicsPython   | Not Supported | 0.2.39             | 0.2.39             |
+| [Seed](/engineers/seed)                     | ProphecySparkBasicsPython   | Not Supported | 0.2.39             | 0.2.39             |
+| Createdata                                  | ProphecySparkAbinitioPython | Not Supported | 0.0.28             | 0.0.28             |
+| Mtime                                       | ProphecySparkAbinitioPython | Not Supported | 0.0.28             | 0.0.28             |
 
 ### Warehouses
 

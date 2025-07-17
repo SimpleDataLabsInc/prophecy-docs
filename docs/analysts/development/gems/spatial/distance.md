@@ -19,7 +19,13 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 Use the Distance gem to calculate the distance between two geographic points.
 
+:::tip
+Geographic points must be in Well-known Text ([WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry)) format. Use the [CreatePoint](/analysts/create-point) gem to convert longitude and latitude coordinates to WKT format.
+:::
+
 ## Parameters
+
+Configure the Distance gem using the following parameters.
 
 ### Spatial Object Fields
 

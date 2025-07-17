@@ -19,19 +19,26 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 Use the CreatePoint gem to convert longitude and latitude coordinates into geographic points.
 
+## Input and Output
+
+The CreatePoint gem accepts the following input and output.
+
+| Port    | Description                                                                                                                                                                          |
+| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **in0** | Source dataset containing pairs of columns with longitude and latitude coordinates.                                                                                                  |
+| **out** | Output dataset containing one or more new columns with points in Well-known Text ([WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry)) geometric format. |
+
 ## Parameters
 
-Each longitude and latitude column pair produces one target column. You can provide more than one longitude and latitude pairing to produce multiple target columns if necessary.
+The CreatePoint gem accepts longitude and latitude columns as parameters.
+
+In the **Create Spatial Points** section, you need to **Click to Add a Point**. For each point you add, fill in the following information.
 
 | Parameter             | Description                                                      |
 | --------------------- | ---------------------------------------------------------------- |
 | Longitude Column Name | Input column that contains longitude values.                     |
 | Latitude Column Name  | Input column that contains latitude values.                      |
 | Target Column Name    | Column in the gem output that will contain resulting geo points. |
-
-:::info
-The target column(s) will contain points in Well-known Text ([WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry)) geometric format.
-:::
 
 ## Example
 

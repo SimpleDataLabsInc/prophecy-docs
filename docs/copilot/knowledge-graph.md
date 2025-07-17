@@ -61,7 +61,7 @@ To refresh tables from the [Environment tab](/analysts/connections#environment-b
 1. Attach to the fabric that you wish to reindex.
 1. In the left sidebar, click on the Environment tab.
 1. Below your connections, you’ll see a **Missing Tables?** callout.
-1. On hover, click **Refresh Tables** to reindex the SQL warehouse.
+1. Click **Refresh** to reindex the SQL warehouse.
 
 #### Agent suggestion
 

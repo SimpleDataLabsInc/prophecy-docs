@@ -1,8 +1,7 @@
 ---
-title: NearestPoint
-id: nearest-point
-slug: /analysts/nearest-point
-draft: true
+title: FindNearest
+id: find-nearest
+slug: /analysts/find-nearest
 description: Identify the shortest distance between spatial objects in two datasets
 tags:
   - gems
@@ -15,13 +14,13 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 <SQLRequirements
   execution_engine="SQL Warehouse"
   sql_package_name="ProphecyDatabricksSqlSpatial"
-  sql_package_version="0.0.2+"
+  sql_package_version="0.0.3+"
 />
 
 Find the closest spatial point(s) between two datasets based on geographic distance. This gem compares each point in the first dataset to all points in the second dataset and returns the nearest matches.
 
 :::tip
-Spatial points must be in Well-known Text (WKT) format. Use the [CreatePoint](/analysts/create-point) gem to convert longitude and latitude coordinates to WKT format.
+Geographic points must be in Well-known Text ([WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry)) format. Use the [CreatePoint](/analysts/create-point) gem to convert longitude and latitude coordinates to WKT format.
 :::
 
 ## Input and Output
@@ -42,6 +41,8 @@ The output schema of **out** contains:
 
 ## Parameters
 
+Configure the FindNearest gem using the following parameters.
+
 ### Spatial Object Fields
 
 | Parameter              | Description                                                               |
@@ -58,3 +59,61 @@ The output schema of **out** contains:
 | How many nearest points to find? | Number of closest points to return from **in1** for each point in **in0**.                                                                  |
 | Maximum distance                 | Option to limit the search to target points within this distance (specify units). When the maximum distance is `0`, no maximum is enforced. |
 | Ignore 0 distance matches        | Whether to exclude points that have exactly the same coordinates as the source point.                                                       |
+
+## Example: Customer service centers
+
+Assume you have two tables:
+
+- `customer_locations` that contains the location of each customer.
+
+  <div class="table-example">
+
+  | customer_id | customer_point           |
+  | ----------- | ------------------------ |
+  | C001        | POINT(-122.4194 37.7749) |
+  | C002        | POINT(-74.0060 40.7128)  |
+
+  </div>
+
+- `service_centers` that contains the location of each service center.
+
+  <div class="table-example">
+
+  | center_id | center_point             |
+  | --------- | ------------------------ |
+  | S100      | POINT(-122.4192 37.7793) |
+  | S200      | POINT(-73.9352 40.7306)  |
+  | S300      | POINT(-118.2437 34.0522) |
+
+  </div>
+
+You can use the FindNearest gem to find the nearest service centers to each customer.
+
+1. Add the FindNearest gem to your pipeline canvas.
+1. Connect the `customer_locations` table to the FindNearest `in0` input port.
+1. Connect the `service_centers` table to the FindNearest `in1` input port.
+1. Open the FindNearest gem configuration.
+1. For **Source Centroid Type**, select Point.
+1. For **Source Centroid Column**, select the `customer_point` column.
+1. For **Target Centroid Type**, select Point.
+1. For **Target Centroid Column**, select the `center_point` column.
+
+For this example, let's find the **two** nearest service centers in a 1000 km radius.
+
+1. Type `2` in the **How many nearest points to find?** field.
+1. Type `1000` and choose **Kilometers** in the **Maximum distance** field.
+1. Lastly, save and run the gem.
+
+### Result
+
+The output contains the two closest service centers to each customer. Ranks begin at `1`, with `1` being the closest point. Note that customer `C002` only has one service center within 1000 km from their location.
+
+<div class="table-example">
+
+| customer_id | customer_point           | center_id | center_point             | rank_number | distanceKilometers  | cardinal_direction |
+| ----------- | ------------------------ | --------- | ------------------------ | ----------- | ------------------- | ------------------ |
+| C001        | POINT(-122.4194 37.7749) | S100      | POINT(-122.4192 37.7793) | 1           | 0.48957333464416436 | N                  |
+| C001        | POINT(-122.4194 37.7749) | S300      | POINT(-118.2437 34.0522) | 2           | 559.1205770615533   | SE                 |
+| C002        | POINT(-74.0060 40.7128)  | S200      | POINT(-73.9352 40.7306)  | 1           | 6.286267237667312   | E                  |
+
+</div>

@@ -15,8 +15,6 @@ tags:
   ]
 ---
 
-<span class="badge">SPARK GEM</span><br /><br />
-
 The TextProcessing gem enables text data preparation for machine learning in two different ways:
 
 1. [Load](/engineers/text-processing/#1-load-web-urls-and-extract-text) web URLs and extract text.

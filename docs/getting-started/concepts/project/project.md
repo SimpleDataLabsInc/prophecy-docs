@@ -59,7 +59,7 @@ Project components vary based on project type. While SQL and Spark projects shar
 | [Tables](docs/analysts/development/gems/source-target/source-target.md) | SQL tables, views, or seeds.                                                                                                                                                                 |
 | [Functions](docs/analysts/development/functions/functions.md)           | SQL macros used in gem expressions.                                                                                                                                                          |
 | [Tests](docs/analysts/development/data-tests/data-tests.md)             | Automated validations ensuring referential integrity, data consistency, and other quality checks.                                                                                            |
-| [Schedules](docs/analysts/scheduling.md)                                | Schedules for periodic pipeline execution managed by Prophecy Automate.                                                                                                                      |
+| [Schedules](/analysts/scheduling)                                       | Schedules for periodic pipeline execution managed by Prophecy Automate.                                                                                                                      |
 | [Models](/engineers/models)                                             | SQL transformations that define a single table or view. Models only appear in projects that enable **Normal** or **Fork per User** Git storage models. (Only applicable for data engineers.) |
 
 </TabItem>

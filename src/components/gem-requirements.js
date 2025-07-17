@@ -6,64 +6,55 @@ export default function Requirements(props) {
     <div>
       {props.python_package_name && props.python_package_version && (
         <a href="https://docs.prophecy.io/engineers/package-hub/">
-          <span className="badge-dependency">
-            <span className="left">{props.python_package_name}</span>
-            <span className="right">{props.python_package_version}</span>
+          <span className="badge badge-dependency">
+            {props.python_package_name} {props.python_package_version}
           </span>
         </a>
       )}
 
       {props.scala_package_name && props.scala_package_version && (
         <a href="https://docs.prophecy.io/engineers/package-hub">
-          <span className="badge-dependency">
-            <span className="left">{props.scala_package_name}</span>
-            <span className="right">{props.scala_package_version}</span>
+          <span className="badge badge-dependency">
+            {props.scala_package_name} {props.scala_package_version}
           </span>
         </a>
       )}
 
       {props.python_lib && (
         <a href="https://docs.prophecy.io/extensibility/dependencies/prophecy-libraries">
-          <span className="badge-dependency">
-            <span className="left">ProphecyLibsPython</span>
-            <span className="right">{props.python_lib}</span>
+          <span className="badge badge-dependency">
+            ProphecyLibsPython {props.python_lib}
           </span>
         </a>
       )}
 
       {props.scala_lib && (
         <a href="https://docs.prophecy.io/extensibility/dependencies/prophecy-libraries">
-          <span className="badge-dependency">
-            <span className="left">ProphecyLibsScala</span>
-            <span className="right">{props.scala_lib}</span>
+          <span className="badge badge-dependency">
+            ProphecyLibsScala {props.scala_lib}
           </span>
         </a>
       )}
 
       {props.uc_single && (
         <a href="https://docs.prophecy.io/administration/fabrics/Spark-fabrics/databricks/ucshared">
-          <span className="badge-spark">
-            <span className="left">UC Dedicated Cluster</span>
-            <span className="right">{props.uc_single}</span>
+          <span className="badge badge-spark">
+            UC Dedicated Cluster {props.uc_single}
           </span>
         </a>
       )}
 
       {props.uc_shared && (
         <a href="https://docs.prophecy.io/administration/fabrics/Spark-fabrics/databricks/ucshared">
-          <span className="badge-spark">
-            <span className="left">UC Standard Cluster</span>
-            <span className="right">{props.uc_shared}</span>
+          <span className="badge badge-spark">
+            UC Standard Cluster {props.uc_shared}
           </span>
         </a>
       )}
 
       {props.livy && (
         <a href="https://docs.prophecy.io/administration/fabrics/Spark-fabrics/livy">
-          <span className="badge-spark">
-            <span className="left">Livy</span>
-            <span className="right">{props.livy}</span>
-          </span>
+          <span className="badge badge-spark">Livy {props.livy}</span>
         </a>
       )}
 

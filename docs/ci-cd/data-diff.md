@@ -15,9 +15,7 @@ Data diffs can help you identify when pipeline outputs do not meet predefined ex
 - Detecting unintended schema changes in datasets over time.
 - Identifying data mismatches when troubleshooting data transformation issues.
 
-<!-- ![Data diff](img/data-diff.png) -->
-
-## Requirements
+## Prerequisites
 
 To compute a data diff, you need:
 
@@ -25,6 +23,10 @@ To compute a data diff, you need:
 - **A Prophecy Python project.** Data diffs are not supported for Scala or SQL projects.
 - **ProphecyLibsPython 1.9.37 or later** as a dependency for your project. For more information, see [Prophecy libraries](docs/extensibility/dependencies/prophecy-libs.md).
 - **An expected dataset**. It must be in Parquet or Databricks Catalog Table format.
+
+:::note
+Data diff cannot be computed on [Databricks Serverless](docs/administration/fabrics/Spark-fabrics/databricks/databricks-serverless.md).
+:::
 
 ## What is data diff?
 

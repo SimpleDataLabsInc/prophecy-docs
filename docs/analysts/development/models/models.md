@@ -35,7 +35,7 @@ While you can develop models visually using gems, you can also write models dire
 
 Each gem in a model maps to a SQL statement. As you configure gems on the visual canvas, Prophecy automatically generates the corresponding SQL, determines whether to use a CTE or subquery for each step, and integrates your changes into the overall model.
 
-Models run exclusively in your SQL warehouse and can only use gems supported in that environment. Gems that can run in SQL are marked with the following badge: <a href="https://docs.prophecy.io/administration/fabrics/prophecy-fabrics/"><span className="badge">SQL Warehouse</span></a>
+Models run exclusively in your SQL warehouse and can only use gems supported in that environment. Gems that can run in SQL are marked with the following badge: <a href="https://docs.prophecy.io/administration/fabrics/prophecy-fabrics/"><span className="badge badge-runtime">SQL Warehouse</span></a>
 
 ## Advanced settings
 
@@ -54,6 +54,10 @@ To open the Advanced Settings:
 :::note
 Folder Settings only apply to directories that contain models.
 :::
+
+## Schedule models
+
+To schedule model execution, set up [Databricks Jobs](/engineers/databricks-jobs) or [Apache Airflow DAGs](/engineers/airflow) directly within Prophecy. Models can only be scheduled on [Analytics Engineer](/administration/project-types/) projects.
 
 ## Models vs pipelines
 

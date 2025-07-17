@@ -22,8 +22,9 @@ You can add a source table to your primary SQL warehouse by uploading a file dir
 Supported file types:
 
 - CSV
-- JSON
 - Excel (XLS, XLSX)
+- JSON
+- Parquet
 - XML
 
 When you upload your file through Prophecy, it's added directly to your SQL warehouse as a [table](/analysts/source-target).
