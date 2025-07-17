@@ -44,7 +44,7 @@ The SpatialMatch gem accepts the following inputs and output.
 | **out** | Output dataset containing **matched pairs** of geometries along with all additional columns from both input datasets. Each row represents a source geometry and target geometry that satisfy the selected spatial relationship. Unmatched geometries are excluded from the output. <br/><br/>The output includes the following columns: <ul class="table-list"><li>The source geometry column</li><li>All other `in0` columns</li><li>The target geometry column prefixed with `target_`</li><li>All other `in1` columns prefixed with `target_`</li></ul> |
 
 :::tip
-You can use the same source for both in0 and in1 if you want to operate a self-join.
+You can use the same source for both in0 and in1 if you want to match geometries from the same dataset (self-join).
 :::
 
 ## Parameters
@@ -59,16 +59,16 @@ Configure the SpatialMatch gem using the following parameters.
 
 ### Match types
 
-Review the following to understand the criteria to satisfy different match types.
+Review the following to understand the criteria to satisfy different match types. The SpatialMatch gem returns a row for each match condition that is met.
 
-| Match type                               | Description                                                                                                                                                                               |
-| ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Source Intersects Target                 | Returns true if the source and target geometries share any portion of space. This is the most general spatial relationship. Any overlap, touching, or containment satisfies intersection. |
-| Source Contains Target                   | Returns true if the source geometry completely contains the target geometry. The target geometry must be entirely within the source geometry's interior and boundary.                     |
-| Source Within Target                     | Returns true if the source geometry is completely contained within the target geometry. This is the inverse of the **Contains** relationship.                                             |
-| Source Touches Target                    | Returns true if the source and target geometries have at least one point in common, but their interiors do not intersect.                                                                 |
-| Source Touches or Intersects Target      | Returns true if the source and target geometries either touch (share boundary points) or intersect (share any portion of space). This combines the touch and intersect relationships.     |
-| Source Envelope Overlaps Target Envelope | Returns true if the minimum bounding rectangles (envelopes) of the source and target geometries overlap. This is a less precise check than a standard intersection.                       |
+| Match type                               | Description                                                                                                                                                                                   |
+| ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Source Intersects Target                 | Condition is met if the source and target geometries share any portion of space. This is the most general spatial relationship. Any overlap, touching, or containment satisfies intersection. |
+| Source Contains Target                   | Condition is met if the source geometry completely contains the target geometry. The target geometry must be entirely within the source geometry's interior and boundary.                     |
+| Source Within Target                     | Condition is met if the source geometry is completely contained within the target geometry. This is the inverse of the **Contains** relationship.                                             |
+| Source Touches Target                    | Condition is met if the source and target geometries have at least one point in common, but their interiors do not intersect.                                                                 |
+| Source Touches or Intersects Target      | Condition is met if the source and target geometries either touch (share boundary points) or intersect (share any portion of space). This combines the touch and intersect relationships.     |
+| Source Envelope Overlaps Target Envelope | Condition is met if the minimum bounding rectangles (envelopes) of the source and target geometries overlap. This is a less precise check than a standard intersection.                       |
 
 #### Match types diagram
 

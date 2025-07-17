@@ -44,14 +44,14 @@ Configure the Buffer gem using the following parameters.
 
 ## Example
 
-Let's say you're working with a transportation dataset and need to create safety corridors around major highways. You have highway routes as polylines and want to create 500-meter buffer zones on both sides of each road for noise impact analysis.
+Let's say you're working with a transportation dataset and need to create safety corridors around major highways. You have highway routes as polylines and want to create 3 mile buffer zones on both sides of each road for noise impact analysis.
 
 1. Add a Buffer gem to your pipeline canvas.
 1. Attach an input that includes the highway routes as polylines in a `routes` column.
 1. Open the gem configuration interface.
 1. For **Geometry column**, select the `routes` column from the input table.
-1. For **Distance**, input `500`.
-1. For **Units**, select **Meters**.
+1. For **Distance**, input `3`.
+1. For **Units**, select **Miles**.
 1. Save and run the gem.
 
 ### Result
