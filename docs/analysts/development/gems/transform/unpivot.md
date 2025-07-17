@@ -13,8 +13,8 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 <SQLRequirements
   execution_engine="SQL Warehouse"
-  sql_package_name="ProphecyDatabricksSqlBasics"
-  sql_package_version="0.0.4+"
+  sql_package_name=""
+  sql_package_version=""
 />
 
 The Unpivot gem is a data transformation tool designed to reshape datasets from a wide to a long format. This operation consolidates multiple columns containing similar data into two new columns: one representing the original column names, and another holding their corresponding values.
