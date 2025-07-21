@@ -160,8 +160,8 @@ The Target gem writes data to Delta tables and allows you to optionally specify 
 | error      | If the data already exists, throw an exception.                                                                                                      |
 | append     | If the data already exists, append the contents of the `DataFrame`.                                                                                  |
 | ignore     | If the data already exists, do nothing with the contents of the `DataFrame`. <br/>This is similar to the `CREATE TABLE IF NOT EXISTS` clause in SQL. |
-| merge      | Use the Delta `merge` command to insert, delete and update data. For more information, see [DeltaTableOperations](/engineers/delta).                 |
-| scd2 merge | Store and manage the current and historical data over time. For more information, see [DeltaTableOperations](/engineers/delta).                      |
+| merge      | Use the Delta `merge` command to insert, delete and update data. For more information, see [Delta MERGE](/engineers/delta/#delta-merge).             |
+| scd2 merge | Store and manage the current and historical data over time. For more information, see [Delta MERGE](/engineers/delta/#delta-merge).                  |
 
 :::tip
 These `overwrite`, `append`, `ignore`, and `error` write modes operate the same way as with other native Spark-supported formats such as Parquet.
