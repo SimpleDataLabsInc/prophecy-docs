@@ -23,6 +23,13 @@
   --ifm-table-border-width: 1px;
   --ifm-table-border-color: rgb(216, 219, 230);
   --ifm-table-stripe-background: white;
+
+  --primary-50: #e1e7fd;
+  --primary-700: #403fc2;
+  --secondary-50: #d7f9fd;
+  --secondary-700: #0e7490;
+  --amber-50: #fef0c7;
+  --amber-700: #b54708;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -38,6 +45,13 @@
   --ifm-table-head-background: var(--ifm-table-stripe-background);
   --ifm-table-border-width: 1px;
   --ifm-table-border-color: rgb(216, 219, 230);
+
+  --primary-50: #30317c;
+  --primary-700: white;
+  --secondary-50: #164e63;
+  --secondary-700: white;
+  --amber-50: #7a2e0e;
+  --amber-700: white;
 }
 
 .markdown h1:first-child {
@@ -149,81 +163,40 @@ img {
 /* Badge styles */
 
 .badge {
-  color: #fcfcfd;
-  background-color: #1d2939;
+  display: inline-flex;
+  align-items: center;
   border-radius: 50rem;
   font-size: 85%;
-  margin-right: 5px;
   font-weight: var(--ifm-font-weight-bold);
   line-height: 1;
   padding: var(--ifm-badge-padding-vertical) var(--ifm-badge-padding-horizontal);
-  transition: transform 0.2s ease, box-shadow 0.2s ease,
-    background-color 0.2s ease;
-}
-
-.badge-dependency,
-.badge-spark {
-  display: inline-flex;
-  align-items: center;
-  border: var(--ifm-badge-border-width) solid var(--ifm-badge-border-color);
-  border-radius: 50rem;
-  font-size: 85%;
-  font-weight: var(--ifm-font-weight-bold);
-  line-height: 1;
-  overflow: hidden;
-  color: #fcfcfd;
   margin-right: 5px;
   transition: transform 0.2s ease, box-shadow 0.2s ease,
     background-color 0.2s ease;
   cursor: pointer;
+  white-space: nowrap;
 }
 
-/* Split badge */
-
-.badge-dependency span,
-.badge-spark span {
-  padding: var(--ifm-badge-padding-vertical) var(--ifm-badge-padding-horizontal);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap; /* Prevent text from wrapping */
+.badge-runtime {
+  color: var(--amber-700);
+  background-color: var(--amber-50);
 }
 
-/* Hover effect */
+.badge-spark {
+  color: var(--secondary-700);
+  background-color: var(--secondary-50);
+}
 
-.badge:hover,
+.badge-dependency {
+  color: var(--primary-700);
+  background-color: var(--primary-50);
+}
+
+.badge-runtime:hover,
 .badge-dependency:hover,
 .badge-spark:hover {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   opacity: 0.9;
-}
-
-.badge-dependency .left {
-  background-color: #1d2939; /* Left section color */
-  border-top-left-radius: 50rem;
-  border-bottom-left-radius: 50rem;
-  flex: 1; /* Dynamically adjusts based on text size */
-}
-
-.badge-dependency .right {
-  background-color: #667085; /* Right section color */
-  border-top-right-radius: 50rem;
-  border-bottom-right-radius: 50rem;
-  flex: 1; /* Dynamically adjusts based on text size */
-}
-
-.badge-spark .left {
-  background-color: #293056; /* Left section color */
-  border-top-left-radius: 50rem;
-  border-bottom-left-radius: 50rem;
-  flex: 1; /* Dynamically adjusts based on text size */
-}
-
-.badge-spark .right {
-  background-color: #4e5ba6; /* Right section color */
-  border-top-right-radius: 50rem;
-  border-bottom-right-radius: 50rem;
-  flex: 1; /* Dynamically adjusts based on text size */
 }
 
 /* Sidebar styles from https://github.com/facebook/docusaurus/pull/6519 */
@@ -327,6 +300,10 @@ code {
 
 img {
   border-radius: 8px;
+}
+
+img.no-border-radius {
+  border-radius: 0 !important;
 }
 
 /* Example data table style */

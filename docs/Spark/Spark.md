@@ -7,8 +7,6 @@ description: Using Spark with Prophecy's Data Transformation Copilot
 tags: [spark, warehouse]
 ---
 
-<h3><span class="badge">Spark</span></h3>
-
 Pipeline development is foundational to data engineering. Prophecy simplifies the development of Spark-based data pipelines with a visual interface that automatically compiles pipelines into production-ready code.
 
 ![Visual and code editor split screen](img/code-to-visual-spark.png)
