@@ -14,7 +14,7 @@ A successful Prophecy deployment contains the following components:
 
 - **Prophecy Studio**: The studio user interface lets you access and develop visual data pipelines in various projects.
 
-- **Prophecy Automate**: This is our built-in Prophecy runtime designed for ingestion, egress, and orchestration. It is an extension for SQL projects and does not apply to Spark-based projects. To learn more about SQL connections, see the [Prophecy Automate Connection parameters](/administration/fabrics/prophecy-fabrics/#connections).
+- **Prophecy Automate**: This is our built-in Prophecy runtime designed for ingestion, egress, and orchestration (scheduling). Prophecy Automate is only accessible via [Prophecy fabrics](/administration/fabrics/prophecy-fabrics/) for SQL projects and does not apply to Spark-based projects.
 
 - **External execution engine**: Prophecy runs data transformations on your execution environment, such as Snowflake or Databricks. [Fabrics](docs/getting-started/concepts/fabrics.md) enable users to execute pipelines on these platforms. Prophecy does not persist your data.
 
