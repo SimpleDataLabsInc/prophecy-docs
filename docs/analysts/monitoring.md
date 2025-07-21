@@ -48,13 +48,13 @@ Use the following filters to narrow the results.
 
 For each scheduled pipeline, Prophecy provides the following information.
 
-| Column            | Description                                                                                           |
-| ----------------- | ----------------------------------------------------------------------------------------------------- |
-| **Pipeline**      | Name of the pipeline. Click to view the pipeline in the project editor.                               |
-| **Fabric**        | Fabric where the pipeline is deployed.                                                                |
-| **Project**       | Project that contains the pipeline.                                                                   |
-| **Run Frequency** | Frequency indicating how often the pipeline runs.                                                     |
-| **Last 5 Runs**   | Status of the 5 most recent runs. To find the history of all pipeline runs, open the Run History tab. |
+| Column          | Description                                                                                           |
+| --------------- | ----------------------------------------------------------------------------------------------------- |
+| **Pipeline**    | Name of the pipeline. Click to view the pipeline in the project editor.                               |
+| **Fabric**      | Fabric where the pipeline is deployed.                                                                |
+| **Project**     | Project that contains the pipeline.                                                                   |
+| **Triggers**    | Type of trigger for the schedule. Schedules can include multiple triggers.                            |
+| **Last 5 Runs** | Status of the 5 most recent runs. To find the history of all pipeline runs, open the Run History tab. |
 
 :::info
 You may see multiple rows for the same pipeline if the parent project is deployed to multiple fabrics.
@@ -75,17 +75,14 @@ Use the following filters to narrow the results.
 
 For each historical pipeline run, Prophecy provides the following information.
 
-| Column            | Description                                                                                                                                                     |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Fabric**        | Name of the fabric used to execute the pipeline run.                                                                                                            |
-| **Schedule**      | The pipeline run schedule (e.g., "Daily at 01:00 AM"), or `N/A` if not scheduled.                                                                               |
-| **Pipeline**      | Name of the pipeline executed.                                                                                                                                  |
-| **Project**       | Name of the project containing the pipeline.                                                                                                                    |
-| **App Name**      | Name of the [Prophecy App](/analysts/business-applications), if the run was triggered by app execution.                                                         |
-| **Instance Name** | Name of the [Prophecy App config](/analysts/run-apps#configs) used to run the app (only applicable to app runs).                                                |
-| **Run Type**      | How the run was triggered. This includes by interactive runs, pipeline schedules, APIs, Prophecy Apps, and app schedules.                                       |
-| **Run ID**        | Unique ID for the pipeline run. You can reference this value in the [Trigger Pipeline API](/api/trigger-pipeline/trigger-pipeline-api#get-pipeline-run-status). |
-| **Start Time**    | Timestamp when the run started.                                                                                                                                 |
-| **End Time**      | Timestamp when the run completed.                                                                                                                               |
-| **Duration**      | Elapsed time of the run.                                                                                                                                        |
-| **Result**        | Status of the run: `Success` (green) or `Failed` (red).                                                                                                         |
+| Column         | Description                                                                                                                                                                                                                           |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **ID**         | Hover the **#** sign to view the full unique pipeline run ID. <br/>You can reference this value in the [Trigger Pipeline API](/api/trigger-pipeline/trigger-pipeline-api#get-pipeline-run-status).                                    |
+| **Fabric**     | Name of the fabric used to execute the pipeline run.                                                                                                                                                                                  |
+| **Pipeline**   | Name of the pipeline that was executed.                                                                                                                                                                                               |
+| **Project**    | Name of the project containing the pipeline.                                                                                                                                                                                          |
+| **Run Type**   | How the run was triggered. <br/>This includes by interactive runs, pipeline schedules, APIs, Prophecy Apps, and app schedules. <br/>Any scheduled runs will include additional information about the schedule that triggered the run. |
+| **Start Time** | Timestamp when the run started.                                                                                                                                                                                                       |
+| **End Time**   | Timestamp when the run completed.                                                                                                                                                                                                     |
+| **Duration**   | Elapsed time of the run.                                                                                                                                                                                                              |
+| **Result**     | Status of the run: `Success` (green) or `Failed` (red).                                                                                                                                                                               |
