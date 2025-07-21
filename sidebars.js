@@ -141,6 +141,7 @@ const sidebars = {
                     "analysts/development/gems/source-target/external-table/mongodb",
                     "analysts/development/gems/source-target/external-table/oracle",
                     "analysts/development/gems/source-target/external-table/redshift",
+                    "analysts/development/gems/source-target/external-table/salesforce",
                   ],
                 },
                 {
@@ -863,6 +864,7 @@ const sidebars = {
                 "administration/fabrics/prophecy-fabrics/connections/mongodb",
                 "administration/fabrics/prophecy-fabrics/connections/mssql",
                 "administration/fabrics/prophecy-fabrics/connections/oracle",
+                "administration/fabrics/prophecy-fabrics/connections/salesforce",
                 "administration/fabrics/prophecy-fabrics/connections/sftp",
                 "administration/fabrics/prophecy-fabrics/connections/smartsheet",
                 "administration/fabrics/prophecy-fabrics/connections/smtp",
