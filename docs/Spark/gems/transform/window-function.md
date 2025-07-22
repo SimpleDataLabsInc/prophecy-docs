@@ -23,33 +23,82 @@ import Requirements from '@site/src/components/gem-requirements';
   livy="3.0.1+"
 />
 
-The WindowFunction lets you define a **WindowSpec** and apply window functions on a DataFrame.
+The WindowFunction lets you apply window functions on a DataFrame.
 
 ## Parameters
 
-| Parameter         | Description                                                                                 | Required                                                                                                  |
-| ----------------- | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| DataFrame         | Input DataFrame                                                                             | True                                                                                                      |
-| Target column     | Output Column name                                                                          | True                                                                                                      |
-| Source expression | Window function expression to perform over the created Window                               | True                                                                                                      |
-| Order columns     | Columns to order by in Window. Must be a numeric type column if a `Range Frame` is selected | Required when `Source expression` has a Ranking/Analytical function **OR** when `Range Frame` is selected |
-| Partition column  | Column to partition by in Window                                                            | False                                                                                                     |
-| Row frame         | Row based frame boundary to apply on Window                                                 | False                                                                                                     |
-| Range frame       | Range based frame boundary to apply on Window                                               | False                                                                                                     |
+Explore the following sections to understand how to configure the WindowFunction gem.
 
-When **Order Columns** are not defined, an unbound window frame `(rowFrame, unboundedPreceding, unboundedFollowing)` is used by default.
-When **Order Columns** are defined, a growing window frame `(rangeFrame, unboundedPreceding, currentRow)` is used by default.
+### Partition By
+
+| Parameter        | Description                                            | Required |
+| ---------------- | ------------------------------------------------------ | -------- |
+| Partition column | Column to partition the data by in the Window function | False    |
+
+### OrderBy
+
+| Parameter     | Description                                 | Required                            |
+| ------------- | ------------------------------------------- | ----------------------------------- |
+| Order columns | Columns to order the data by in the window. | False                               |
+| Sort          | Sort in ascending or descending order.      | Required if order column is defined |
+
+:::info
+Order columns are required when the source expression in the WindowUse tab uses **ranking** or **analytical** functions. Numeric order columns are required when **range frame** is the selected window frame type.
+:::
+
+### Frame
+
+| Parameter   | Description                                       | Required |
+| ----------- | ------------------------------------------------- | -------- |
+| Row frame   | Row-based frame boundary to apply on the Window   | False    |
+| Range frame | Range-based frame boundary to apply on the Window | False    |
+
+#### Row Frame
+
+The **Row Frame** option defines the window size based on the number of rows before and after the current row.
+
+You configure the frame by setting a **Start** and an **End** boundary. The boundaries can be:
+
+- Unbounded Preceding: Includes all rows before the current row.
+- Unbounded Following: Includes all rows after the current row.
+- Current Row: Starts or ends at the current row.
+- Row Number: A specific number of rows before or after the current row.
+
+#### Range Frame
+
+The Range Frame defines the window using values in the Order By column.
+
+You configure the frame by setting a **Start** and an **End** boundary. The boundaries can be:
+
+- Unbounded Preceding: Includes all rows before the current row.
+- Unbounded Following: Includes all rows after the current row.
+- Current Row: Starts or ends at the current row.
+- Range Value: A numeric or interval value defining how far before or after the current row to look.
+
+Because the Range Frame depends on actual data values (not row positions), the number of rows in the window may vary for each record. For example, some window frames may include only one match within 5 days, while others may include ten.
+
+### WindowUse
+
+| Parameter         | Description                                                                             | Required |
+| ----------------- | --------------------------------------------------------------------------------------- | -------- |
+| Target Column     | Name of the column that will contain the values returned from the source expression(s). | True     |
+| Source expression | Window function expression to apply over the window frame.                              | True     |
 
 ## Examples
 
 ### Ranking Functions with Window
 
-Examples of ranking functions are: `row_number()`, `rank()`, `dense_rank()` and `ntile()`
+Examples of ranking functions are: `row_number()`, `rank()`, `dense_rank()` and `ntile()`.
+
+| Tab         | Parameter          | Value                           |
+| ----------- | ------------------ | ------------------------------- |
+| PartitionBy | PartitionColumn    | `customer_id`                   |
+| OrderBy     | Order Columns      | `order_date` in ascending order |
+| WindowUse   | Source Expressions | `row_number()` and `ntile(2)`   |
+
 :::info
 Only the default window frame `(rowFrame, unboundedPreceding, currentRow)` can be used with Ranking functions
 :::
-
-![Example usage of Window - Ranking](./img/window_eg_ranking.png)
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
