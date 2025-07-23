@@ -1,6 +1,5 @@
 ---
-title: CI/CD in Prophecy
-image: img/reliable-ci-cd/dev-qa-prod.png
+title: CI/CD for Spark pipelines
 id: reliable-ci-cd
 slug: /engineers/ci-cd
 description: Continuous integration and continuous delivery in Prophecy
@@ -12,103 +11,90 @@ tags:
   - testing
 ---
 
-**Continuous Integration and Continuous Delivery (CI/CD)** streamlines software development by automating testing and deployment. With **CI**, code changes are frequently integrated and tested to catch issues early. **CD** ensures that once approved, tested code is automatically deployed to production, enabling fast and reliable releases. Continue reading to learn about how to implement CI/CD in Prophecy.
+Learn how to set up continuous integration and deployment ([CI/CD](https://en.wikipedia.org/wiki/CI/CD)) for your Prophecy data pipelines using environment separation and testing. This page outlines how to:
+
+- Configure multi-environment deployments
+- Set up testing and validation
+- Deploy pipelines using Prophecy's built-in tools or external CI/CD systems
+
+## Prerequisites
+
+To set up CI/CD successfully in Prophecy, ensure that you have:
+
+- Access to target execution environments (Databricks workspaces, for example)
+- Empty Git repositories configured for your projects
+- Understanding of your data pipeline requirements and SLAs
+
+## Environment setup
+
+We recommend setting up separate environments (fabrics) for each stage of deployment. The table below illustrates one example of a multi-fabric setup.
+
+| Fabric      | Purpose                                 | Data                             | Access    | Cluster Size |
+| ----------- | --------------------------------------- | -------------------------------- | --------- | ------------ |
+| Development | Feature development and initial testing | Synthetic or anonymized datasets | Dev team  | Small        |
+| QA/Staging  | Testing and validation                  | Production-like data samples     | QA team   | Medium       |
+| Production  | Live data processing                    | Real production data             | Prod team | Large        |
 
 ![Data pipeline](img/reliable-ci-cd/dev-qa-prod.png)
 
-## Single-fabric development
-
-Consider a simple scenario in which you have a single execution environment (like one Databricks workspace). One team works in this environment for both development and productionization. To accommodate this in Prophecy, you will have:
-
-- **Multiple projects**: your Git repositories which store all the Spark, Airflow, and metadata code
-- **Multiple data pipelines**: various ETL / ELT tasks written in Spark
-- **Multiple jobs**: the orchestration of your data pipelines written in Databricks jobs or Airflow
-- **A single team**: all your teammates in the same place, with the same access
-- **A single fabric**: the connection to your Databricks workspace
-
-![Minimum project setup](img/reliable-ci-cd/min-project-setup.png)
-
-This is great for simple setups and very small teams, but can quickly lead to many problems. In such a setup, it's very easy for you and your teammates to make mistakes and **accidentally affect production** pipelines. There's also **lack of data separation**, so any PII information becomes visible to everyone!
-
-## Multi-fabric Deployment with Prophecy
-
-Let's consider a better alternative to a single environment development. The simplest alternative involves adding just one more execution environment called **production**.
-
-By separating your **development** or QA use-cases from your **production** use-cases, you get:
-
-- PII safety (by using mock or anonymized data)
-- Faster development (by using smaller data samples)
-- Reduced development costs (by using smaller cluster sizes)
-- Increased data quality confidence (by only pushing code after tests and validations pass)
-
-You can push your code to the **production environment** only after you're confident it's going to work well. The production environment has access to your real data, uses large optimal clusters, and has significantly restricted access. In some cases, only the operational support teams should have access to your production environment.
-
-If you'd like to involve more stages, to even further increase the reliability of your development process, you can add a **QA environment**. That environment should have data, hardware, and software that closely simulates the Production environment (e.g. data slices directly taken from production), and should serve as a holding area. Using QA, your engineers make sure that the jobs are going to run smoothly in the production environment, without actually potentially breaking production, if some code is wrong.
-
-### Development and Production
-
-![Prophecy Setup](img/reliable-ci-cd/prophecy-setup.png)
-
-For our example, however, let's focus on a setup with two environments: **Development** and **Production**. Our **Development environment** is accessible to our whole organization (developers, analysts, support) and is connected to our development Databricks workspace, which contains only dummy customer data. Whereas, our **Production environment** is only accessible to our production support team and is connected to our production Databricks workspace, which has real customer data.
-
-#### Entities setup
-
-1. Create two **teams**:
-
-   - `developers` - a superset of all the teams, which contains your developers and members of the `prod_support` team
-   - `prod_support` - team composed of members who have privileged production access permissions
-
-2. Create two **fabrics**:
-
-   - `development` - owned by the `developers` team
-   - `production` - owned by the `prod_support` team
-
-3. Set up your **Projects**: create your projects, as you would before. Projects should be owned by the `developers` _team_.
-
-4. Set up your **jobs**: for every single set of pipelines you'd like to schedule, create two jobs.
-   - **Job_development**: Jobs built by the `developers` for integration and testing purposes
-   - **Job_production**: Jobs built by the `prod_support` team, based on the development jobs - they will run in the production environment
-
-<div style={{position: 'relative', 'padding-bottom': '56.25%', height: 0}}>
-   <iframe src="https://www.loom.com/embed/b9669f374f504e469b2f88374bcf35d3" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
-      style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}></iframe>
-</div>
-
-#### Development and Testing
-
-Phew, that was a lot of work! But the biggest chunk is behind us 💪.
-
-![Run Progress](img/reliable-ci-cd/run-progress.png)
-
-Now that we have set up our fabrics and Teams, built some pipelines, it's time to test the whole data flow on our development environment.
-
-Testing your pipelines and jobs is very simple. Simple click on the play button and watch your code run!
-
-:::info
-Currently, we're spinning up a new cluster for each of the tasks, therefore your job might take a few minutes
-to complete.
+:::info See Also
+To learn more about the relationship between fabrics, projects, and teams, visit [Team-based Access](/administration/team-based-access).
 :::
 
-#### Deployment to Production
+:::note
+While you are not required to have multiple execution environments in Prophecy, it is best practice to keep development and production data and access separate.
+:::
 
-Once we're confident that our job works correctly, and we have tested it well, we can start deploying it to our **production** environment. In our setup, only a production support engineer can do that. Therefore, login as them,
-duplicate your job on the production fabric, set appropriate pipeline configurations and enable it.
+## Pipeline development workflow
 
-That's it! Now you can commit any remaining changes and release your pipeline. Prophecy automatically takes care of the release process, by building your pipelines, running unit tests, and finally deploying the pipeline JARs/wheels alongside the job definition directly to Databricks (or AirFlow).
+Here is an example pipeline development workflow for teams that leverage multiple environments.
 
-If you're new to this process, check out, our [Git](/engineers/git) and jobs deployment documentation.
+### Step 1: Create a project
 
-<div style={{position: 'relative', 'padding-bottom': '56.25%', height: 0}}>
-   <iframe src="https://www.loom.com/embed/28153636876f409184e6ba2dcbc8f273" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
-      style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}></iframe>
-</div>
+Start by creating a new project in Prophecy. The project should have its own dedicated Git repository, which helps maintain a clean version history and enables collaboration across teams. The project should be assigned to a team that includes every user who will need to access this project throughout its lifecycle. This is possible because the project team can differ from the fabric team, which should be more restrictive.
 
-## Multi-fabric Deployment with GitHub
+:::note
+While you can technically use an empty directory to host your Prophecy project instead, this is not recommended.
+:::
 
-So far, we looked at how Prophecy makes it really easy to deploy our jobs to multiple environments, directly using the CI / CD system built into it. However, it is often the case that you want to deploy your pipelines from your Git instead. This enables you to have a more secure production environment, where it doesn't have to connect to directly Prophecy itself.
+### Step 2: Develop and test
 
-As we know, Prophecy publishes all the entities (pipelines, jobs, metadata, etc) directly on your Git. That means you can very easily deploy that code to whatever Databricks environment you'd like - very easily.
+Develop pipelines in the development environment using the `dev` branch. This stage involves building pipelines and configuring pipeline parameters to handle different runtime scenarios or environment-specific values. Execute pipelines interactively during development and inspect runtime logs to debug and validate pipeline behavior. During development, you can also create jobs that will automate pipeline execution after deployment.
 
-### Deploy with Prophecy Build Tool
+### Step 3: Deploy to QA
 
-[Prophecy Build Tool (PBT)](/engineers/prophecy-build-tool) is a cli tool that can be used to build, test, and deploy projects created by Prophecy. PBT integrates with either [github actions](/engineers/github-actions-prophecy-build-tool) or [Jenkins](/engineers/jenkins-prophecy-build-tool) to facilitate deploying your code from your Git repository. Make use of the `--fabric-ids` option to deploy using the Multi-fabric approach.
+Once development and initial validation are complete, the QA team can begin validating the pipelines by running them interactively in the QA environment. Then, changes to the project can be merged to the `main` branch and deployed in the QA environment to test if scheduled pipelines run as expected. This stage ensures that your pipelines and jobs function as expected in a controlled, production-like setting before they are released to live systems.
+
+### Step 4: Deploy to production
+
+After the QA team has validated the project, the project can be deployed to production. Typically, a small, designated platform team is responsible for this step. The project is deployed to the production fabric, where jobs operate on real production data and run at scale. Jobs in production should ideally execute using a service principal rather than a user identity, since it is an unattended operation.
+
+## Project deployment options
+
+You can deploy Prophecy projects using either the built-in Git-based workflow or through an external CI/CD system using the Prophecy Build Tool (PBT). Both approaches support multi-environment pipelines and can integrate automated testing into your release process.
+
+### Option 1: Prophecy-native CI/CD
+
+Prophecy includes a native Git-based CI/CD workflow integrated directly into the project editor. This allows you to manage the entire lifecycle without leaving the Prophecy interface. In Prophecy's Git-based workflow, a release marks a specific version of your project by creating a Git tag, while deployment builds and pushes that version to your chosen environment. These steps usually run together but can also be executed independently. As part of the release process, Prophecy automatically builds the code, runs unit tests, and packages everything needed (such as JARs or wheels) to deploy pipelines and jobs.
+
+:::info See Also
+
+- [Git](/engineers/git) to learn more about the Git workflow
+- [Unit tests](/engineers/unit-tests) for validating pipeline functionality
+- [Deployment](/engineers/deployment) to deep dive into the phases of project deployment
+
+:::
+
+### Option 2: External CI/CD with PBT
+
+If your organization already uses an external CI/CD system, you can integrate Prophecy projects using the Prophecy Build Tool (PBT), a command-line interface designed for automation. PBT works with systems like [GitHub Actions](/engineers/github-actions-prophecy-build-tool) and [Jenkins](/engineers/jenkins-prophecy-build-tool) to build and deploy Prophecy projects from a Git repository.
+
+This approach supports the same multi-environment model as native CI/CD. Use the `--fabric-ids` flag in your CI/CD configuration to target specific fabrics during deployment.
+
+To use PBT in your CI/CD pipeline:
+
+1. Install the Prophecy Build Tool.
+1. Configure secrets to securely store credentials and environment connection details.
+1. Set up your GitHub Actions or Jenkins workflow to include build and deploy steps using PBT.
+
+For detailed instructions and examples, see [Prophecy Build Tool (PBT)](/engineers/prophecy-build-tool).
