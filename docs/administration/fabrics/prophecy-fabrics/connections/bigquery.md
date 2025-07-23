@@ -26,46 +26,51 @@ Prophecy supports BigQuery as both a SQL Warehouse connection and an Ingress/Egr
 
 The table below outlines whether the connection supports certain Prophecy features.
 
-| Feature                                                         | Supported                           |
-| --------------------------------------------------------------- | ----------------------------------- |
-| Run SQL queries                                                 | Yes — SQL Warehouse Connection only |
-| Read and write data with a [Table gem](/analysts/source-target) | Yes — SQL Warehouse Connection only |
-| Read data with a [Source gem](/analysts/source-target)          | Yes                                 |
-| Write data with a [Target gem](/analysts/source-target)         | Yes                                 |
-| Browse data in the [Environment browser](/analysts/pipelines)   | Yes                                 |
+| Feature                                                                        | Supported                           |
+| ------------------------------------------------------------------------------ | ----------------------------------- |
+| Run SQL queries                                                                | Yes — SQL Warehouse Connection only |
+| Read and write data with a [Table gem](/analysts/source-target)                | Yes — SQL Warehouse Connection only |
+| Read data with a [Source gem](/analysts/source-target)                         | Yes                                 |
+| Write data with a [Target gem](/analysts/source-target)                        | Yes                                 |
+| Browse data in the [Environment browser](/analysts/project-editor#environment) | Yes                                 |
 
 ## Connection parameters
 
 To create a connection with BigQuery, enter the following parameters.
 
-| Parameter             | Description                                                                                                                                                                                                                                                                                                                                                  |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Connection Name       | A unique name to identify the connection.                                                                                                                                                                                                                                                                                                                    |
-| Project ID            | The ID of your [Google Cloud project](https://cloud.google.com/resource-manager/docs/creating-managing-projects).                                                                                                                                                                                                                                            |
-| Dataset               | The default location for target tables and [temporary tables](/analysts/pipeline-execution#external-data-handling). Requires write permissions.                                                                                                                                                                                                              |
-| Authentication Method | The method used to authenticate with BigQuery. See [Authentication methods](#authentication-methods) for details.                                                                                                                                                                                                                                            |
-| Bucket Name           | A [Google Cloud Storage bucket](https://cloud.google.com/storage/docs/buckets) used for write optimization (recommended). When specified, Prophecy writes data to the bucket, then loads it into BigQuery. Loading data from a bucket offers better performance than writing with the [BigQuery API](https://cloud.google.com/bigquery/docs/reference/rest). |
+| Parameter             | Description                                                                                                                                                                                                                                                                                                                                                                            |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Connection Name       | A unique name to identify the connection.                                                                                                                                                                                                                                                                                                                                              |
+| Project ID            | The ID of your [Google Cloud project](https://cloud.google.com/resource-manager/docs/creating-managing-projects).                                                                                                                                                                                                                                                                      |
+| Dataset               | The default location for target tables and [temporary tables](/analysts/pipeline-execution#external-data-handling). <br/>Requires write permissions.                                                                                                                                                                                                                                   |
+| Authentication Method | The method used to authenticate with BigQuery. <br/>See [Authentication methods](#authentication-methods) for details.                                                                                                                                                                                                                                                                 |
+| Bucket Name           | A [Google Cloud Storage bucket](https://cloud.google.com/storage/docs/buckets) used for write optimization (recommended). <br/>When specified, Prophecy writes data to the bucket, then loads it into BigQuery. <br/>Note: Loading data from a bucket offers better performance than writing with the [BigQuery API](https://cloud.google.com/bigquery/docs/reference/rest) (default). |
 
 ## Authentication methods
 
-You can authenticate your BigQuery connection using either **OAuth** or a **Private Key**. Each method grants Prophecy the ability to read and write data in your BigQuery environment based on the permissions assigned to the authenticated identity.
+You can authenticate your BigQuery connection using either [OAuth](#oauth-user-to-machine) or a [Private Key](#private-key-machine-to-machine).
 
-### OAuth
+Each method grants Prophecy the ability to read and write data in your BigQuery environment based on the [Identity and Access Management (IAM)](https://cloud.google.com/iam/docs/overview) roles assigned to the authenticated identity.
 
-Use OAuth to authenticate with your Google account. This method is best for interactive sessions or environments where users manage their own credentials.
+### OAuth (User-to-Machine)
 
-- Prophecy will prompt you to sign in with your Google account when using the connection.
-- The connection uses the provided credentials and the associated [IAM](https://cloud.google.com/iam/docs/overview) roles to authorize access.
-- Token refresh is handled by Google. The default [refresh token expiration](https://developers.google.com/identity/protocols/oauth2#expiration) time is 7 days.
+OAuth is a user-based authentication method best suited for interactive pipeline development. It allows each user to sign in with their own Google account, which ensures that data access is governed by their individual IAM roles and permissions.
+
+When your fabric is configured to use OAuth, the following occurs when a user attaches the fabric to their project:
+
+1. The user is prompted to sign in with their Google account.
+1. Prophecy uses the user's credentials to authenticate the connection.
+1. The connection operates with the user's IAM roles and permissions.
+1. Token management, including refresh, is handled automatically by Google. The default [refresh token expiration](https://developers.google.com/identity/protocols/oauth2#expiration) time is 7 days.
 
 For more about OAuth and how it works with Google Cloud, see [Using OAuth 2.0 to Access Google APIs](https://developers.google.com/identity/protocols/oauth2).
 
-### Private Key
+### Private Key (Machine-to-Machine)
 
-Use a Service Account when you want an identity distinct from user accounts for authentication. To use this method:
+Use a Service Account when you want a non-user identity for authentication. This is ideal for automated or shared processes that require stable, long-term access without re-authentication interruptions.
 
 1. Create and download a [Service Account Key](https://developers.google.com/workspace/guides/create-credentials#service-account) from the Google Cloud console.
 1. Paste the full JSON content into a [Prophecy secret](/administration/secrets/secret-providers) as text. Binary upload is not supported.
 1. Use this secret in the **Service Account Key** field of the BigQuery connection setup.
 
-When you use the Private Key authentication method, all team members who have access to the fabric can use the connection in their projects. Team members automatically inherit the access and permissions of the stored connection credentials.
+This method allows all team members with access to the fabric to use the connection in their projects. Those users inherit the access and permissions of the Service Account, as defined in its IAM roles.

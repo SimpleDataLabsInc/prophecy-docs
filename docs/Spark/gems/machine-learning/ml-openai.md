@@ -16,8 +16,6 @@ tags:
   ]
 ---
 
-<span class="badge">SPARK GEM</span><br /><br />
-
 The OpenAI gem allows the Prophecy user to interact with the OpenAI API using two different requests:
 
 1. Compute text embeddings

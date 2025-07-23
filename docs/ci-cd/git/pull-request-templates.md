@@ -1,5 +1,5 @@
 ---
-title: Pull request templates
+title: Pull requests
 id: pr-templates
 slug: /engineers/git-pull-requests
 description: Open Pull Requests from within Prophecy
@@ -11,16 +11,20 @@ tags:
   - ci/cd
 ---
 
-Prophecy supports opening pull requests on your external Git provider to merge
-development branches to a base branch on a remote repository.
+By default, Prophecy lets you merge changes from a development branch directly into the base branch. This is fast and works well for smaller teams or rapid iteration. However, in larger teams or production environments, you may want more control over how code is reviewed, approved, and integrated. Enabling pull requests allows you to:
+
+- Review and approve changes before they are merged
+- Enforce branch protection rules on repositories like GitHub or Bitbucket
+
+When pull requests are enabled for a project, Prophecy generates a merge URL based on your configured template. This lets you open external pull requests directly within Prophecy projects. This page describes how to enable and use pull requests in more detail.
 
 :::note
-You will not see this option if using Prophecy-managed Git for your project.
+Pull request support is only available for projects connected to an external Git provider. It’s not supported for Prophecy-managed Git.
 :::
 
-## Enable Pull Request Template
+## Enable pull request template
 
-To enable pull requests:
+To use pull requests in a project, you need to enable pull request templates for that project.
 
 1. Open your project metadata.
 1. Open the **Settings** tab.
@@ -31,7 +35,7 @@ To enable pull requests:
 
 The PR template URL requires two variables which are used to build a URL string. The `{{source}}` variable represents the active development branch, and the `{{destination}}` variable represents the base branch to which the development branches need to be merged to, like `main`.
 
-## Examples
+### Template examples
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -41,7 +45,7 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="github" label="GitHub">
 
-**GitHub template**
+Using this template:
 
 ```shell
 https://github.com/exampleOrg/exampleRepo/compare/{{destination}}...{{source}}?expand=1
@@ -57,7 +61,7 @@ https://github.com/exampleOrg/exampleRepo/compare/main...feature?expand=1
 </TabItem>
 <TabItem value="bitbucket" label="Bitbucket">
 
-**Bitbucket template**
+Using this template:
 
 ```shell
 https://bitbucket.org/exampleOrg/exampleRepo/pull-requests/new?source={{source}}/1&dest={{destination}}
@@ -75,20 +79,38 @@ https://bitbucket.org/exampleOrg/exampleRepo/pull-requests/new?source=feature/1&
 
 ````
 
-## Open Pull Request
+## Open pull request in Prophecy
 
-If the pull request template is configured correctly and enabled, you can open a pull request during the **Merge** step of the Git process.
+After you have enabled pull requests for a project, you will see the option to create pull requests directly in Prophecy.
 
-![PR creation](img/pr-template-openpr.png)
+When you open the Git dialog of a project:
 
-When you open a pull request from the Prophecy interface, Prophecy will redirect you to your external Git provider based on the template defined in the project **Settings** tab.
+- The **Merge** step will be replaced by an **Open Pull Request** step.
+- The **Open Pull Request** button on this screen will open an external pull request in a new tab.
 
-## Merged Externally
+:::note
+If you run into issues, ensure that your PR [template](#enable-pull-request-template) is configured correctly.
+:::
 
-After you merge any branch remotely:
+Once you merge the branch remotely in the pull request, you need to let Prophecy know that this step is complete.
 
-1. Open your Prophecy project.
-1. Go to the **Merge** step of the Git dialog.
-1. Click **Merged Externally** and **Confirm**.
+1. Return to the **Open Pull Request** step of the Git dialog.
+1. Click **Merged Externally**.
+1. Click **Confirm**.
 
 ![Merged externally](img/merge-externally.png)
+
+## Set Version Before Merge
+
+When your base branch (such as `main`) is protected, direct commits are not allowed. This can interfere with release processes that rely on version bumps made directly on the main branch after merging.
+
+To support these workflows, Prophecy now allows you to set the next version **before** merging your development branch.
+
+When **Pull Request Template** is enabled for a project:
+
+1. In the **Git** dialog, go to the **Open Pull Request** step.
+1. Select the **Incremental Project Version** checkbox.
+1. Select a version or type a new version. This sets the version of your development branch.
+1. Open the pull request and merge your changes. The base branch now has the correct version.
+
+Once merged, Prophecy will auto-fill the release version on the **Release** screen of the Git dialog based on the version you set. You can directly proceed to release and no additional changes will be committed to the base branch.

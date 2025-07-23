@@ -13,11 +13,11 @@ SMTP (Simple Mail Transfer Protocol) connections are used to send emails over th
 
 The table below outlines whether the connection supports certain Prophecy features.
 
-| Feature                                                       | Supported |
-| ------------------------------------------------------------- | --------- |
-| Read data with a [Source gem](/analysts/source-target)        | No        |
-| Write data with an [Email gem](/analysts/email)               | Yes       |
-| Browse data in the [Environment browser](/analysts/pipelines) | No        |
+| Feature                                                                        | Supported |
+| ------------------------------------------------------------------------------ | --------- |
+| Read data with a [Source gem](/analysts/source-target)                         | No        |
+| Write data with an [Email gem](/analysts/email)                                | Yes       |
+| Browse data in the [Environment browser](/analysts/project-editor#environment) | No        |
 
 ## Limitations
 

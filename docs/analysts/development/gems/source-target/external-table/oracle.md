@@ -21,7 +21,7 @@ This page describes how to configure Oracle Source gems, including connection se
 When you create a new external Source gem, the gem dialog contains the following tabs.
 
 - **Type**: Select the Oracle table option.
-- **Source location**: Choose the [connection](/administration/fabrics/prophecy-fabrics/connections/) and define the location where you will read/write tables in Oracle.
+- **Source location**: Choose the [connection](/administration/fabrics/prophecy-fabrics/connections/) and define the location where you will read tables in Oracle.
 - **Properties**: Infer or manually specify the schema, and optionally add properties that influence table behavior.
 - **Preview**: Load a preview of the dataset reflecting your configurations.
 
