@@ -189,6 +189,7 @@ const sidebars = {
               label: "Prepare",
               items: [
                 "analysts/development/gems/prepare/data-cleansing",
+                "analysts/development/gems/prepare/data-masking",
                 "analysts/development/gems/prepare/deduplicate",
                 "analysts/development/gems/prepare/filter",
                 "analysts/development/gems/prepare/flatten-schema",
