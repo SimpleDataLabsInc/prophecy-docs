@@ -7,7 +7,7 @@ tags:
   - tableau
 ---
 
-Prophecy uses the [Tableau REST API](https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api.htm) to send data to Tableau as `.hyper` files (Tableau’s high-performance, in-memory format). This page describes how to set up and use a Tableau connection, so you can publish and update data sources in your Tableau projects directly from Prophecy pipelines.
+Prophecy uses the [Tableau REST API](https://help.tableau.com/current/api/rest_api/en-us/REST/rest_api.htm) to send data to Tableau as `.hyper` files (Tableau’s in-memory format). This page describes how to set up and use a Tableau connection, so you can publish and update data sources in your Tableau projects directly from Prophecy pipelines.
 
 ## Prerequisites
 
@@ -19,11 +19,11 @@ For more details on Tableau permissions, see the Tableau documentation on [Permi
 
 The table below outlines whether the connection supports certain Prophecy features.
 
-| Feature                                                                       | Supported |
-| ----------------------------------------------------------------------------- | --------- |
-| Read data with a [Source gem](/analysts/source-target)                        | No        |
-| Write data with a [TableauWrite gem](/analysts/tableau)                       | Yes       |
-| Browse data in the [Environment browser]/analysts/project-editor#environment) | No        |
+| Feature                                                                        | Supported |
+| ------------------------------------------------------------------------------ | --------- |
+| Read data with a [Source gem](/analysts/source-target)                         | No        |
+| Write data with a [TableauWrite gem](/analysts/tableau)                        | Yes       |
+| Browse data in the [Environment browser](/analysts/project-editor#environment) | No        |
 
 ## Limitations
 
