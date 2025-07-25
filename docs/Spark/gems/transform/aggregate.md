@@ -27,28 +27,57 @@ import Requirements from '@site/src/components/gem-requirements';
 
 Allows you to group the data and apply aggregation methods and pivot operation.
 
+## Input and Output
+
+The Aggregate gem accepts the following input and output
+
+| Port    | Description                                                               |
+| ------- | ------------------------------------------------------------------------- |
+| **in0** | Input DataFrame that contains data to be aggregated.                      |
+| **out** | Output DataFrame that includes the key column and the aggregated columns. |
+
 ## Parameters
 
-| Parameter                     | Description                                                                                                                                                                                                                                     | Required                                           |
-| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
-| DataFrame                     | Input DataFrame                                                                                                                                                                                                                                 | True                                               |
-| Target column (Aggregate Tab) | Output column name of aggregated column                                                                                                                                                                                                         | True                                               |
-| Expression (Aggregate Tab)    | Aggregate function expression<br/> Eg: `sum("amount")`, `count(*)`, `avg("amount")`                                                                                                                                                             | True                                               |
-| Target column (Group By Tab)  | Output column name of grouped column                                                                                                                                                                                                            | Required if `Pivot Column` is present              |
-| Expression (Group By Tab)     | Column expression to group on <br/> Eg: `col("id")`, `month(col("order_date"))`                                                                                                                                                                 | Required if a `Target Column`(Group By) is present |
-| Pivot column                  | Column name to pivot                                                                                                                                                                                                                            | False                                              |
-| Unique values                 | List of values in `Pivot Column` that will be translated to columns in the output DataFrame                                                                                                                                                     | False                                              |
-| Propagate All Input Columns   | If `true`, all columns from the DataFrame would be propagated to output DataFrame. By default all columns apart from ones specified in `group by`, `pivot`, `aggregate` expressions are propagated as `first(col_name)` in the output DataFrame | False                                              |
+Configure the Aggregate gem using the following parameters. Each section describes a different tab of the gem configuration.
 
-:::info
-Providing `Unique values` while performing pivot operation improves the performance of the operation since Spark does not have to first compute the list of distinct values of `Pivot Column` internally.
-:::
+### Aggregate
+
+| Parameter                   | Description                                                                                                                                                                                                                                       | Required |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| Target Column               | Output column name of aggregated column.                                                                                                                                                                                                          | True     |
+| Expression                  | Aggregate function expression that generates the target column values.<br/>Example: `sum(amount)`, `count(*)`, `avg(amount)`                                                                                                                      | True     |
+| Propagate All Input Columns | If `true`, all columns from the DataFrame would be propagated to output DataFrame. By default, all columns apart from ones specified in `group by`, `pivot`, `aggregate` expressions are propagated as `first(col_name)` in the output DataFrame. | False    |
+
+### Group By
+
+| Parameter     | Description                                                                                          | Required                               |
+| ------------- | ---------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| Target Column | Output column name of the key column for grouping.                                                   | Required if [Pivot](#pivot) is present |
+| Expression    | Expression that generates how to group the data. <br/>In many cases, this is simply the column name. | Required for each target column.       |
+
+### Pivot
+
+| Parameter     | Description                                                                                                                                                                                                                                                                | Required |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| Pivot Column  | Name of the column whose unique values become the new column headers.                                                                                                                                                                                                      | False    |
+| Unique values | List of values in the pivot column that will be translated to columns in the output DataFrame. Providing `Unique values` while performing pivot operation improves performance since Spark does not have to first compute the list of distinct values of the pivot column. | False    |
+
+### Advanced
+
+The Advanced tab lets you configure multiple aggregation options using a concise syntax. This is a lightweight alternative to writing full PySpark code.
 
 ## Examples
 
-### Aggregation without Grouping
+These examples demonstrate common use cases of the Aggregate gem, showing how to configure aggregation operations with and without grouping, how to perform pivot operations, and how to propagate all input columns to the output. Each example includes the relevant gem parameter settings and the equivalent generated PySpark and Scala code.
 
-![Example usage of Aggregate - Aggregation without Grouping](./img/agg_eg_1.png)
+### Aggregation without grouping
+
+This example counts the total number of rows in the dataset, producing a single aggregated value without any grouping.
+
+| Tab       | Parameter     | Value              |
+| --------- | ------------- | ------------------ |
+| Aggregate | Target Column | `number_of_orders` |
+| Aggregate | Expression    | `count(*)`         |
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -58,6 +87,9 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="py" label="Python">
 
+This gem configuration is compiled into the following PySpark code:
+
+
 ```py
 def total_orders(spark: SparkSession, in0: DataFrame) -> DataFrame:
     return in0.agg(count(lit(1)).alias("number_of_orders"))
@@ -65,6 +97,9 @@ def total_orders(spark: SparkSession, in0: DataFrame) -> DataFrame:
 
 </TabItem>
 <TabItem value="scala" label="Scala">
+
+This gem configuration is compiled into the following Scala code:
+
 
 ```scala
 object total_orders {
@@ -78,9 +113,16 @@ object total_orders {
 
 ````
 
-### Aggregation with Grouping
+### Aggregation with grouping
 
-![Example usage of Aggregate - Aggregation with Grouping](./img/agg_eg_2.png)
+This example counts orders per month by extracting and grouping on the month and year from the `order_date`.
+
+| Tab       | Parameter     | Value                                                                |
+| --------- | ------------- | -------------------------------------------------------------------- |
+| Aggregate | Target Column | `number_of_orders`                                                   |
+| Aggregate | Expression    | `count(*)`                                                           |
+| Group By  | Target Column | `order_month(MM/YYYY)`                                               |
+| Group By  | Expression    | `concat(month(col("order_date")), lit("/"), year(col("order_date"))` |
 
 ````mdx-code-block
 <Tabs>
@@ -112,9 +154,18 @@ object orders_by_date {
 
 ````
 
-### Pivot Columns
+### Pivot the data
 
-![Example usage of Aggregate - Pivoting](./img/agg_eg_3.png)
+This example shows how to pivot `order_status` values into separate columns while grouping by month and aggregating the number of orders.
+
+| Tab       | Parameter     | Value                                                                |
+| --------- | ------------- | -------------------------------------------------------------------- |
+| Aggregate | Target Column | `number_of_orders`                                                   |
+| Aggregate | Expression    | `count(*)`                                                           |
+| Group By  | Target Column | `order_month(MM/YYYY)`                                               |
+| Group By  | Expression    | `concat(month(col("order_date")), lit("/"), year(col("order_date"))` |
+| Pivot     | Pivot Column  | `order_status`                                                       |
+| Pivot     | Unique Values | `Finished`, `Approved`, `Pending`, `Started`                         |
 
 ````mdx-code-block
 <Tabs>
@@ -149,7 +200,7 @@ object orders_by_date_N_status {
 
 ````
 
-### Propagate all input Columns
+### Propagate all input columns
 
 This option in used to propagate all columns from input DataFrame to output DataFrame.
 By default `first(col_name)` is used as aggregate function for columns not specified in `group by`, `pivot`, `aggregate` expressions.
