@@ -12,14 +12,22 @@ tags:
   - data
 ---
 
-The Data Explorer helps you inspect interim data samples at each stage of your pipeline. You can catch issues early and ensure your pipeline is working as expected
-by checking the column structure, reviewing the sample values, and confirming the data types.
+The **Data Explorer** allows you to inspect data samples at each stage of your pipeline. Use it to identify issues early and verify that your transformations are producing the expected output. You can review column structures, data types, and sample values at each step of your workflow.
 
-## Open the Data Explorer
+## Generate data samples
 
-To use the Data Explorer, run your pipeline to generate data samples. Click on any data sample in your pipeline to open the Data Explorer.
+To explore interim data during development:
+
+- [Run](/analysts/pipeline-execution) the relevant pipeline in the project editor.
+- Interim icons will appear between nodes in your pipeline. These icons represent sample data at that stage.
+
+When you click a data sample that has loaded data, the Data Explorer opens.
 
 ![Data sample in a pipeline](img/data-sample-analysts.png)
+
+:::info
+Data samples fully load only after the last node of SQL transformations. Other data samples appear muted until you click them, then load on-demand.
+:::
 
 ## Leverage the Data Explorer
 
@@ -30,8 +38,7 @@ In the Data Explorer, you can:
 - Search across all values
 - Show or hide columns
 - Export the sample as CSV or JSON file
-- Save the transformation as a new gem
-- View your data in a chart
+- View your data as a chart in the [Visualization](/analysts/charts) tab
 
 ![DataExplorationSQL](./img/DataExplorationSQL.png)
 
@@ -43,7 +50,3 @@ To work with the full dataset, do one of the following:
 
 - Click **Load More** at the bottom of the table until all rows are visible.
 - Click **Run** in the top-right corner of the preview. This refreshes the view and applies sorting and filtering to the entire dataset.
-
-## Create gems
-
-After analyzing the data, you can retain the filter and sort options in the pipeline by clicking on the **Create Gems** option. This action saves the applied filter and sort as a `Filter` and `OrderBy` gem in the pipeline.
