@@ -676,10 +676,25 @@ module.exports = {
       from: "/Spark/gems/source-target",
     },
     {
-      to: "/engineers/spark-airflow-tutorial",
+      to: "/engineers/orchestration",
       from: [
+        "/engineers/airflow",
         "/Orchestration/airflow/airflow-tutorial-spark",
         "/getting-started/airflow",
+        "/engineers/spark-airflow-tutorial",
+        "/Orchestration/airflow/prophecy-managed/",
+        "/Orchestration/airflow/setup/prophecy-managed/",
+        "/administration/fabrics/airflow-fabrics/",
+        "/administration/fabrics/airflow-fabrics/connections/",
+        "/administration/fabrics/airflow-fabrics/connections/dbx_spark_connections",
+        "/administration/fabrics/airflow-fabrics/connections/dbx_sql_connections",
+        "/administration/fabrics/airflow-fabrics/connections/airflow_snowflake_connections",
+        "/administration/fabrics/airflow-fabrics/connections/aws-connection",
+        "/administration/fabrics/airflow-fabrics/connections/airflow_email_connections",
+        "/administration/fabrics/airflow-fabrics/prophecy_managed_airflow_fabric",
+        "/administration/fabrics/airflow-fabrics/composer_fabric",
+        "/administration/fabrics/airflow-fabrics/MWAA_fabric",
+        "/administration/fabrics/airflow-fabrics/open-source-airflow",
       ],
     },
     {
@@ -801,13 +816,7 @@ module.exports = {
       to: "/getting-started",
       from: "/developer/videos/",
     },
-    {
-      to: "/engineers/airflow",
-      from: [
-        "/Orchestration/airflow/prophecy-managed/",
-        "/Orchestration/airflow/setup/prophecy-managed/",
-      ],
-    },
+
     {
       to: "/pipelines",
       from: "/concepts/project/pipeline",

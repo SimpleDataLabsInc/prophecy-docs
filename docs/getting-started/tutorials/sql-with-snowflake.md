@@ -7,7 +7,6 @@ tags:
   - sql
   - tutorial
   - snowflake
-  - airflow
 ---
 
 This tutorial will teach you how to use Prophecy for data modeling. You will learn how to connect Prophecy to a SQL warehouse (in this case, Snowflake) and transform your data in the visual canvas.
