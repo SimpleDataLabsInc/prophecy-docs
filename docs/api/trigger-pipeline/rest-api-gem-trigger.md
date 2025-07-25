@@ -37,7 +37,7 @@ POST
 The body provides all of the information needed to identify the correct pipeline to trigger.
 
 ```
-{ "fabricId": <fabricID>, "pipelineName": "customer_orders", "parameters": {}, "projectId": <projectID> }
+{ "fabricId": <fabricID>, "pipelineName": "customer_orders", "parameters": {}, "projectId": "<projectID>" }
 ```
 
 #### Headers
