@@ -1006,7 +1006,15 @@ const sidebars = {
       ],
     },
   ],
-  apiSidebar: ["api/index", "api/trigger-pipeline/trigger-pipeline-api"],
+  apiSidebar: [
+    "api/index",
+    {
+      type: "category",
+      label: "Trigger Pipeline API",
+      link: { type: "doc", id: "api/trigger-pipeline/trigger-pipeline-api" },
+      items: ["api/trigger-pipeline/rest-api-gem-trigger"],
+    },
+  ],
 };
 
 module.exports = sidebars;

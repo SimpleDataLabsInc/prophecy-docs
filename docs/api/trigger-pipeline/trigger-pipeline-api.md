@@ -52,7 +52,7 @@ The following are valid parameters for the request body.
 
 ### Example cURL {#example-curl-trigger}
 
-This example triggers a pipeline called `bakehouse` that executes on fabric `33290`.
+This example triggers a pipeline called `bakehouse` that executes on fabric `33290` and stops at the `franchise_reviews` gem.
 
 ```cURL
 curl --location 'https://app.prophecy.io/api/trigger/pipeline' \
