@@ -23,7 +23,7 @@ import Requirements from '@site/src/components/gem-requirements';
   livy="3.0.1+"
 />
 
-The WindowFunction lets you apply window functions on a DataFrame.
+The WindowFunction gem lets you apply window functions on a DataFrame.
 
 ## Parameters
 
@@ -43,7 +43,7 @@ Explore the following sections to understand how to configure the WindowFunction
 | Sort          | Sort in ascending or descending order.      | Required if order column is defined |
 
 :::info
-Order columns are required when the source expression in the WindowUse tab uses **ranking** or **analytical** functions. Numeric order columns are required when **range frame** is the selected window frame type.
+Order columns are required when the source expression in the WindowUse tab uses **ranking** or **analytical** functions. Numeric columns are required when **range frame** is the selected window frame type.
 :::
 
 ### Frame
@@ -97,7 +97,7 @@ Examples of ranking functions are: `row_number()`, `rank()`, `dense_rank()` and 
 | WindowUse   | Source Expressions | `row_number()` and `ntile(2)`   |
 
 :::info
-Only the default window frame `(rowFrame, unboundedPreceding, currentRow)` can be used with Ranking functions
+Only the default window frame `(rowFrame, unboundedPreceding, currentRow)` can be used with ranking functions.
 :::
 
 ````mdx-code-block
@@ -160,7 +160,7 @@ object rank_cust_orders {
 Examples of analytical functions are: `lead()`, `lag()`, `cume_dist()`, etc.
 
 - Window frame for `lead()` and `lag()` can not be specified.
-- Only the default window frame `(rangeFrame, unboundedPreceding, currentRow)` can be used with `cume_dist()`
+- Only the default window frame `(rangeFrame, unboundedPreceding, currentRow)` can be used with `cume_dist()`.
 
 <br />
 
