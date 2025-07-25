@@ -14,6 +14,8 @@ Dependencies allow you to reuse logic in your SQL projects, so you can build on 
 
 Because packages can be improved over time, you can update your project dependencies whenever a new version is published. Your project will continue to use the current version until you choose to upgrade.
 
+![SQL Dependencies](img/sql-dependencies.png)
+
 ## Dependency types
 
 There are three types of dependencies for SQL projects.

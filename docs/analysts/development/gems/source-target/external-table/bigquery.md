@@ -14,7 +14,7 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
   sql_package_version=""
 />
 
-This page describes how to use BigQuery external Source and Target gems to read from or write to tables. Only use an external Source and Target gem when BigQuery is not the configured SQL warehouse connection. Otherwise, use the [Table gem](/analysts/bigquery-table).
+This page describes how to use BigQuery external Source and Target gems to read from or write to tables. Only use an external Source and Target gem when BigQuery is not the configured [SQL warehouse connection](/administration/fabrics/prophecy-fabrics/#connections). Otherwise, use the [Table gem](/analysts/bigquery-table).
 
 ## Source configuration
 
