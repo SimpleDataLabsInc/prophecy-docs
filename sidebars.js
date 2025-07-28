@@ -369,6 +369,7 @@ const sidebars = {
       items: [
         "analysts/scheduling/schedule-setup",
         "analysts/scheduling/triggers",
+        "analysts/scheduling/pipeline-trigger-gem",
         "analysts/scheduling/schedule-email-alerts",
       ],
     },

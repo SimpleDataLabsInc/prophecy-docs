@@ -8,12 +8,13 @@ tags:
   - automate
 ---
 
-Prophecy supports two main ways to automate pipeline execution.
+Prophecy supports the following ways to automate pipeline execution.
 
 - **Built-in scheduler**: Use [Prophecy Automate](/administration/architecture/) to orchestrate pipelines directly in the UI.
-- **API-based automation**: Use the [Trigger Pipeline API](/api/trigger-pipeline/trigger-pipeline-api) to start pipelines from external systems.
+- **PipelineTrigger gem**: Configure the [PipelineTrigger gem](/analysts/pipeline-trigger-gem) to start pipeline runs from a gem in the canvas.
+- **API-based automation**: Call the [Trigger Pipeline API](/api/trigger-pipeline/trigger-pipeline-api) to start pipelines from external systems.
 
-This page describes how to use the built-in scheduler in SQL projects.
+This page describes how to use the **built-in scheduler** in SQL projects.
 
 ## Overview
 
