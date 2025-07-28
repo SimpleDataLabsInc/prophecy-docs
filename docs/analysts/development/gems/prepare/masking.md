@@ -13,8 +13,8 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 <SQLRequirements
   execution_engine="SQL Warehouse"
-  sql_package_name=""
-  sql_package_version=""
+  sql_package_name="ProphecyDatabricksSqlBasics"
+  sql_package_version="0.0.12+"
 />
 
 The DataMasking gem allows you to obfuscate sensitive string data in one or more columns. This can be useful for protecting personally identifiable information (PII) or other confidential values. This page describes the available masking methods in the gem and other configuration options.
@@ -40,7 +40,7 @@ Configure the DataMasking gem using the following parameters.
 
 ### Masked column options
 
-- **Substitute the new columns in place**: The new values will appear in the original column
+- **Substitute the new columns in place**: The new values will appear in the original column.
 - **Add new columns with a prefix/suffix attached**: The new values will appear in a new column that will have the original name with a prefix or suffix that you specify.
 - **Apply a single hash to all the selected columns at once**: There will only be one new output column, regardless of the number of columns to apply masking on. This only applies to the `hash` masking method.
 
