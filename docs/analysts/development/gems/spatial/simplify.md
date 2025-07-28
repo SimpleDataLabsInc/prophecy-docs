@@ -43,5 +43,5 @@ Configure the Simplify gem using the following parameters.
 | Parameter       | Description                                                                                                                                    |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | Geometry column | Column containing the WKT geometries to simplify.                                                                                              |
-| Threshold       | Distance threshold for vertex removal. <br/>Vertices closer than this distance to the line segment connecting their neighbors will be removed. |
+| Tolerance       | Distance threshold for vertex removal. <br/>Vertices closer than this distance to the line segment connecting their neighbors will be removed. |
 | Units           | Unit of measurement for the threshold in miles or kilometers.                                                                                  |
