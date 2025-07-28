@@ -329,6 +329,18 @@ const sidebars = {
         },
         {
           type: "category",
+          label: "Data tests",
+          link: {
+            type: "doc",
+            id: "analysts/development/data-tests/data-tests",
+          },
+          items: [
+            "analysts/development/data-tests/use-model-tests",
+            "analysts/development/data-tests/use-project-tests",
+          ],
+        },
+        {
+          type: "category",
           label: "Collaboration",
           link: {
             type: "doc",
@@ -341,14 +353,10 @@ const sidebars = {
         },
         {
           type: "category",
-          label: "Data tests",
-          link: {
-            type: "doc",
-            id: "analysts/development/data-tests/data-tests",
-          },
+          label: "Organization",
           items: [
-            "analysts/development/data-tests/use-model-tests",
-            "analysts/development/data-tests/use-project-tests",
+            "analysts/development/organization/folders",
+            "analysts/development/organization/containers",
           ],
         },
       ],
