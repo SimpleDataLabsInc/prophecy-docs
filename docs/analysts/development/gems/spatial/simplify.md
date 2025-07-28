@@ -1,7 +1,7 @@
 ---
-title: Generalize
-id: generalize
-slug: /analysts/generalize
+title: Simplify
+id: simplify
+slug: /analysts/simplify
 description: Decrease the number of nodes that make up a polygon or polyline
 tags:
   - gems
@@ -14,10 +14,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 <SQLRequirements
   execution_engine="SQL Warehouse"
   sql_package_name="ProphecyDatabricksSqlSpatial"
-  sql_package_version="0.0.3+"
+  sql_package_version="0.0.4+"
 />
 
-The Generalize gem reduces the number of vertices in polygons and polylines while preserving their overall shape. This is useful for reducing file sizes, improving rendering performance, and simplifying complex geometries for analysis or visualization.
+The Simplify gem reduces the number of vertices in polygons and polylines while preserving their overall shape. This is useful for reducing file sizes, improving rendering performance, and simplifying complex geometries for analysis or visualization.
 
 :::tip
 Input geometries must be in [WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) format. Use the [PolyBuild](/analysts/polybuild) gem to convert longitude and latitude coordinates into polygons or polylines in WKT format.
@@ -29,7 +29,7 @@ The gem uses the [Ramer–Douglas–Peucker algorithm](https://en.wikipedia.org/
 
 ## Input and Output
 
-The Generalize gem accepts the following input and output.
+The Simplify gem accepts the following input and output.
 
 | Port    | Description                                                                    |
 | ------- | ------------------------------------------------------------------------------ |
@@ -38,10 +38,10 @@ The Generalize gem accepts the following input and output.
 
 ## Parameters
 
-Configure the Generalize gem using the following parameters.
+Configure the Simplify gem using the following parameters.
 
 | Parameter       | Description                                                                                                                                    |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| Geometry column | Column containing the WKT geometries to generalize.                                                                                            |
+| Geometry column | Column containing the WKT geometries to simplify.                                                                                              |
 | Threshold       | Distance threshold for vertex removal. <br/>Vertices closer than this distance to the line segment connecting their neighbors will be removed. |
 | Units           | Unit of measurement for the threshold in miles or kilometers.                                                                                  |
