@@ -17,7 +17,7 @@ Prophecy generates knowledge graphs for SQL projects only. Knowledge graphs are 
 
 ## Overview
 
-Knowledge graphs are generated per-team in Prophecy. Each knowledge graph contains information from fabrics and project entities, including the statistical usages of these entities. It also contains computed fields that further refine Copilot's capabilities.
+Knowledge graphs are generated per [fabric](/fabrics) in Prophecy. Each knowledge graph contains information from fabrics and other entities, including the statistical usages of these entities. It also contains computed fields that further refine Copilot's capabilities.
 
 ![Knowledge Graph](img/copilot_knowledge_graph.png)
 
@@ -69,10 +69,14 @@ If the [agent](/analysts/ai-explore#troubleshooting) can’t locate a table duri
 
 ## Managing scope
 
-Knowledge graphs are generated per team. To control which tables Prophecy indexes for a knowledge graph, configure access permissions at the warehouse level. In summary:
+Knowledge graphs are generated per fabric. To control which tables Prophecy indexes for a knowledge graph, configure access permissions at the warehouse level. In summary:
 
-- Knowledge graph indexing is determined by the credentials used in your fabric's warehouse connection
-- To limit indexed tables, restrict permissions for the authentication credentials in your warehouse (e.g., Databricks)
-- This ensures that teams only see tables they have access to in their knowledge graphs
+- Knowledge graph indexing is determined by the credentials used in your fabric's warehouse connection.
+- To limit indexed tables, restrict permissions for the authentication credentials in your warehouse (e.g., Databricks).
+- This ensures that teams only see tables they have access to in their knowledge graphs.
 
 For example, if your team uses fabrics connected to Databricks warehouses, you would modify the access permissions of the service account or user credentials configured in the fabric connection settings.
+
+:::note
+When a fabric is configured with OAuth authentication, the knowledge graph indexes data using the credentials provided during fabric setup, not the currently logged-in user's credentials. Be aware that these credentials may differ from the active user's, which can affect access and visibility within the knowledge graph.
+:::
