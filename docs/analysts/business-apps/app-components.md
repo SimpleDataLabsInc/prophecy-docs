@@ -167,14 +167,14 @@ Data integration components help users interact with the data that flows into an
 
 ### File Upload
 
-Let the user upload their own file to replace the data of a Source gem in the pipeline. When a user uploads a file to the Prophecy App, they will have to configure the file and write it to the primary SQL warehouse of the attached fabric. This is the same mechanism that the [upload file](docs/analysts/development/gems/source-target/table/upload-files.md) feature uses.
+Let the user upload their own file to replace the data of a Source gem or Table gem in the pipeline. When a user uploads a file to the Prophecy App, they will have to configure the file and write it to the primary SQL warehouse of the attached fabric. This is the same mechanism that the [upload file](docs/analysts/development/gems/source-target/table/upload-files.md) feature uses.
 
-| Setting          | Description                                                                                                                                         | Required |
-| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| Source component | Choose the source table that users will replace with an uploaded file.                                                                              | True     |
-| File types       | Restrict the type of files that users can upload. If you do not select any checkboxes, the user can upload any type of file that Prophecy supports. | False    |
-| Tooltip          | Add a tooltip to your component to provide help or context.                                                                                         | False    |
-| Is required      | Select the checkbox to make the field mandatory.                                                                                                    | False    |
+| Setting     | Description                                                                                                                                         | Required |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| Source      | Choose the source table that users will replace with an uploaded file.                                                                              | True     |
+| File types  | Restrict the type of files that users can upload. If you do not select any checkboxes, the user can upload any type of file that Prophecy supports. | False    |
+| Tooltip     | Add a tooltip to your component to provide help or context.                                                                                         | False    |
+| Is required | Select the checkbox to make the field mandatory.                                                                                                    | False    |
 
 ### Data Preview
 
