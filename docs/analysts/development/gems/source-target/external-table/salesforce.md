@@ -39,25 +39,39 @@ Use these settings to configure a Salesforce Source gem for reading data.
 | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Format type                 | Table format for the source. For Salesforce tables, set to `salesforce`.                                                                             |
 | Select or create connection | Select or create a new [Salesforce connection](/administration/fabrics/prophecy-fabrics/connections/salesforce) in the Prophecy fabric you will use. |
-| Query Mode                  | Specify the table you would like to read using a query. Learn more in [Query modes](#data-sources).                                                  |
+| Query Mode                  | Specify the table you would like to read using a query. Learn more in [Query modes](#query-modes).                                                   |
 
-#### Query modes
+### Query modes
 
-You have three options for retrieving data from Salesforce:
+You have three options for retrieving data from Salesforce.
 
-| Query mode        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| SAQL              | Use a [SAQL](https://developer.salesforce.com/docs/atlas.en-us.bi_dev_guide_saql.meta/bi_dev_guide_saql/bi_saql_intro.htm) query to access CRM Analytics datasets (formerly known as Wave Analytics).                                                                                                                                                                                                                                               |
-| SOQL              | Use a [SOQL](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm) query to read structured data from Salesforce objects such as `Account` or `Contact` tables. <br/>When using the `FIELDS(ALL)` keyword, the response is [limited to 200 rows per call](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_fields.htm#limiting_result_rows). |
-| Salesforce Object | Retrieve all records from a specific Salesforce object by name, without writing a query. <br/>Use this option when the object exceeds the default 200 row limit of `FIELDS(ALL)`.                                                                                                                                                                                                                                                                   |
+#### SAQL
+
+Use a [SAQL](https://developer.salesforce.com/docs/atlas.en-us.bi_dev_guide_saql.meta/bi_dev_guide_saql/bi_saql_intro.htm) query to access CRM Analytics datasets (formerly known as Wave Analytics). For example:
+
+```
+q = load "Account"; q = foreach q generate 'Id' as 'Id', 'Name' as 'Name'; q = limit q 5;
+```
+
+#### SOQL
+
+Use a [SOQL](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm) query to read structured data from Salesforce objects such as `Account` or `Contact` tables. For example:
+
+```SQL
+SELECT Id, Name, Industry, CreatedDate FROM Account WHERE CreatedDate >= LAST_N_DAYS:30
+```
+
+:::info
+When using the `FIELDS(ALL)` keyword, the response is [limited to 200 rows per call](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_fields.htm#limiting_result_rows).
+:::
+
+#### Salesforce Objects
+
+Retrieve all records from a specific Salesforce object by name, without writing a query. Use this option when the object exceeds the default 200 row limit of `FIELDS(ALL)`.
 
 ### Source properties
 
-The following properties are available for the Salesforce Source gem.
-
-:::info
-These properties only apply to tables retrieved with the SOQL or Salesforce Object query mode.
-:::
+The following properties are available for the Salesforce Source gem. These properties only apply to tables retrieved with the **SOQL** or **Salesforce Object** query mode.
 
 | Property                              | Description                                                                                        |
 | ------------------------------------- | -------------------------------------------------------------------------------------------------- |
