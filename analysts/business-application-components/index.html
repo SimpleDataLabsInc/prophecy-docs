@@ -8,7 +8,7 @@
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/assets/css/styles.d2a19db1.css">
-<script src="/assets/js/runtime~main.0d9453d4.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.f1affdcd.js" defer="defer"></script>
 <script src="/assets/js/main.b62e3915.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -60,8 +60,8 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="data-integration">Data Integration<a href="#data-integration" class="hash-link" aria-label="Direct link to Data Integration" title="Direct link to Data Integration">​</a></h2>
 <p>Data integration components help users interact with the data that flows into and out of the app.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="file-upload">File Upload<a href="#file-upload" class="hash-link" aria-label="Direct link to File Upload" title="Direct link to File Upload">​</a></h3>
-<p>Let the user upload their own file to replace the data of a Source gem in the pipeline. When a user uploads a file to the Prophecy App, they will have to configure the file and write it to the primary SQL warehouse of the attached fabric. This is the same mechanism that the <a href="/analysts/upload-file">upload file</a> feature uses.</p>
-<table><thead><tr><th>Setting</th><th>Description</th><th>Required</th></tr></thead><tbody><tr><td>Source component</td><td>Choose the source table that users will replace with an uploaded file.</td><td>True</td></tr><tr><td>File types</td><td>Restrict the type of files that users can upload. If you do not select any checkboxes, the user can upload any type of file that Prophecy supports.</td><td>False</td></tr><tr><td>Tooltip</td><td>Add a tooltip to your component to provide help or context.</td><td>False</td></tr><tr><td>Is required</td><td>Select the checkbox to make the field mandatory.</td><td>False</td></tr></tbody></table>
+<p>Let the user upload their own file to replace the data of a Source gem or Table gem in the pipeline. When a user uploads a file to the Prophecy App, they will have to configure the file and write it to the primary SQL warehouse of the attached fabric. This is the same mechanism that the <a href="/analysts/upload-file">upload file</a> feature uses.</p>
+<table><thead><tr><th>Setting</th><th>Description</th><th>Required</th></tr></thead><tbody><tr><td>Source</td><td>Choose the source table that users will replace with an uploaded file.</td><td>True</td></tr><tr><td>File types</td><td>Restrict the type of files that users can upload. If you do not select any checkboxes, the user can upload any type of file that Prophecy supports.</td><td>False</td></tr><tr><td>Tooltip</td><td>Add a tooltip to your component to provide help or context.</td><td>False</td></tr><tr><td>Is required</td><td>Select the checkbox to make the field mandatory.</td><td>False</td></tr></tbody></table>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="data-preview">Data Preview<a href="#data-preview" class="hash-link" aria-label="Direct link to Data Preview" title="Direct link to Data Preview">​</a></h3>
 <p>Let the user view sample data of a table in the pipeline.</p>
 <table><thead><tr><th>Setting</th><th>Description</th><th>Required</th></tr></thead><tbody><tr><td>Data table</td><td><a href="/analysts/source-target">Table</a> that will appear in the app.</td><td>True</td></tr><tr><td>Label</td><td>Label to describe the data preview.</td><td>True</td></tr></tbody></table>
