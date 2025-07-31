@@ -19,11 +19,12 @@ When you use an SFTP connection in Prophecy, permissions depend on the underlyin
 
 The table below outlines whether the connection supports certain Prophecy features.
 
-| Feature                                                                        | Supported |
-| ------------------------------------------------------------------------------ | --------- |
-| Read data with a [Source gem](/analysts/source-target)                         | Yes       |
-| Write data with a [Target gem](/analysts/source-target)                        | Yes       |
-| Browse data in the [Environment browser](/analysts/project-editor#environment) | Yes       |
+| Feature                                                                                                     | Supported |
+| ----------------------------------------------------------------------------------------------------------- | --------- |
+| Read data with a [Source gem](/analysts/source-target)                                                      | Yes       |
+| Write data with a [Target gem](/analysts/source-target)                                                     | Yes       |
+| Browse data in the [Environment browser](/analysts/project-editor#environment)                              | Yes       |
+| Trigger scheduled pipeline upon [file arrival or change](/analysts/triggers#file-arrival-or-change-trigger) | Yes       |
 
 ## Limitations
 
@@ -56,6 +57,21 @@ You can configure your SFTP connection with one of the following authentication 
   - There must be a header and a footer.
   - The content between the headers is a valid base64-encoded private key.
   - There are no extra spaces or newline characters.
+
+## Supported ciphers
+
+Prophecy supports multiple encryption ciphers for SFTP connections to ensure both security and compatibility across different server configurations. Our SFTP client prioritizes modern, secure ciphers while maintaining fallback support for legacy systems.
+
+- `aes256-gcm@openssh.com`
+- `aes128-gcm@openssh.com`
+- `chacha20-poly1305@openssh.com`
+- `aes256-ctr`
+- `aes192-ctr`
+- `aes128-ctr`
+
+:::note
+For compatibility with older SFTP servers, Prophecy also supports CBC legacy ciphers as fallbacks. We strongly recommend upgrading your SFTP servers to support GCM or CTR modes for enhanced security.
+:::
 
 ## Sharing connections within teams
 
