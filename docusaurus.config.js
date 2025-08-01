@@ -4,6 +4,56 @@
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const redirectsConfig = require("./redirects");
+const inkeepConfig = {
+  defaultView: "chat",
+  baseSettings: {
+    // see https://docusaurus.io/docs/deployment#using-environment-variables to use docusaurus environment variables
+    apiKey: process.env.INKEEP_API_KEY, // required
+    primaryBrandColor: "#403FC2", // required -- your brand color, the widget color scheme is derived from this
+    organizationDisplayName: "Prophecy",
+    theme: {
+      styles: [
+        {
+          key: "1",
+          type: "style",
+          value: `
+                    @media (max-width: 33em) {
+                      .ikp-search-bar__button {
+                        padding-inline: 7px;
+                      }
+                      .ikp-search-bar__text {
+                        display: none;
+                      }
+                      .ikp-search-bar__kbd-wrapper {
+                        display: none;
+                      }
+                    }
+                  `,
+        },
+        {
+          key: "2",
+          type: "style",
+          value: `
+                    .ikp-ai-ask-ai-trigger__icon {
+                      height: auto !important;
+                    }
+                  `,
+        },
+      ],
+    },
+  },
+  aiChatSettings: {
+    exampleQuestions: [
+      "Do I need a fabric to run my pipeline?",
+      "How can Copilot help me build projects?",
+      "How do I add data to my pipeline?",
+      "Can I monitor my deployed projects?",
+    ],
+    exampleQuestionsLabel: "Example Questions",
+    isFirstExampleQuestionHighlighted: true,
+    aiAssistantAvatar: "/img/icon.png", // optional -- use your own ai assistant avatar
+  },
+};
 
 require("dotenv").config();
 
@@ -202,56 +252,8 @@ const config = {
     [
       "@inkeep/cxkit-docusaurus",
       {
-        SearchBar: {
-          defaultView: "chat",
-          baseSettings: {
-            // see https://docusaurus.io/docs/deployment#using-environment-variables to use docusaurus environment variables
-            apiKey: process.env.INKEEP_API_KEY, // required
-            primaryBrandColor: "#403FC2", // required -- your brand color, the widget color scheme is derived from this
-            organizationDisplayName: "Prophecy",
-            theme: {
-              styles: [
-                {
-                  key: "1",
-                  type: "style",
-                  value: `
-                    @media (max-width: 33em) {
-                      .ikp-search-bar__button {
-                        padding-inline: 7px;
-                      }
-                      .ikp-search-bar__text {
-                        display: none;
-                      }
-                      .ikp-search-bar__kbd-wrapper {
-                        display: none;
-                      }
-                    }
-                  `,
-                },
-                {
-                  key: "2",
-                  type: "style",
-                  value: `
-                    .ikp-ai-ask-ai-trigger__icon {
-                      height: auto !important;
-                    }
-                  `,
-                },
-              ],
-            },
-          },
-          aiChatSettings: {
-            exampleQuestions: [
-              "Do I need a fabric to run my pipeline?",
-              "How can Copilot help me build projects?",
-              "How do I add data to my pipeline?",
-              "Can I monitor my deployed projects?",
-            ],
-            exampleQuestionsLabel: "Example Questions",
-            isFirstExampleQuestionHighlighted: true,
-            aiAssistantAvatar: "/img/icon.png", // optional -- use your own ai assistant avatar
-          },
-        },
+        SearchBar: { ...inkeepConfig },
+        ChatButton: { ...inkeepConfig },
       },
     ],
     ["@docusaurus/plugin-client-redirects", { ...redirectsConfig }],
