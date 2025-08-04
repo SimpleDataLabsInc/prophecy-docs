@@ -10,23 +10,37 @@ tags:
   - best practices
 ---
 
-Containers allow you to divide your pipeline into logical sections. They help you visually organize related gems, making pipelines easier to read and debug. Containers are visual tools that don’t affect how your pipeline runs.
+Containers allow you to divide your pipeline into logical sections. They help you visually organize related gems, making pipelines easier to read and understand.
 
-## Create a visual container
+For example, you can use containers to group transformations by:
 
-1. In the pipeline canvas, click **+ Container** from the toolbar.
-2. Drag the new container onto the canvas.
-3. Give it a clear, descriptive name (e.g., `Staging`, `Filter Invalid`, `Aggregate`).
+- Pipeline stage: Separate input preparation, transformation logic, and output writing into distinct sections.
+- Gem phase: Group transformations that execute together to reflect the sequential flow of the pipeline.
+- Input source: Organize steps that prepare data from different sources before they are joined downstream.
 
-## Move gems to and from containers
+![Pipeline grouped into two visual containers](img/grouped-pipeline.png)
 
-- Drag gems into the container area.
-- You can also select multiple gems, right-click, and choose **Move to container**.
+## Create a container
 
-## Edit and delete container
+To create a container:
 
-- Click the container label to rename it.
-- Drag the edges to resize.
-- Right-click to delete the container (gems remain intact).
+1. Drag to select multiple gems on the canvas.
+1. At the bottom of the canvas, click **Group**.
 
-## Collapse container
+The selected gems are added to a new container.
+
+## Manage containers
+
+To manage your created containers:
+
+- **Rename containers** — Click on the container name and enter a new one to clarify its purpose.
+
+- **Move gems in or out of a container** — Drag the gem in and out across the container boundary.
+
+- **Edit container size** — Drag the container edges or corners to resize.
+
+- **Collapse containers** — Click **⋯ > Collapse** to hide the container's gems and simplify the canvas.
+
+- **Remove a container** — Click **⋯ > Ungroup** to remove the group and keep its gems on the canvas.
+
+![Pipeline with collapsed container](img/collapsed-groups.png)

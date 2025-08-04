@@ -17,6 +17,8 @@ Pipeline folders must be created inside the `pipelines` directory of the project
 
 ## Limitations
 
+Pipeline folders have the following limitations:
+
 - Folders can only be created, not edited or removed
 - You cannot rename folders after creation
 - You cannot move pipelines between folders after they are created
@@ -39,7 +41,7 @@ This is the most straightforward method to create a new folder.
 The folder is created. You can either create a new pipeline inside the folder or exit the new pipeline dialog.
 
 :::tip
-If you exit the dialog, you can add a pipeline to the new folder later in the same place.
+If you exit the dialog, you can add a pipeline to the new folder later.
 :::
 
 ### Method 2: Create the folder and a new pipeline
