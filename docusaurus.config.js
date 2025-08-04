@@ -203,6 +203,7 @@ const config = {
       "@inkeep/cxkit-docusaurus",
       {
         SearchBar: {
+          defaultView: "chat",
           baseSettings: {
             // see https://docusaurus.io/docs/deployment#using-environment-variables to use docusaurus environment variables
             apiKey: process.env.INKEEP_API_KEY, // required
