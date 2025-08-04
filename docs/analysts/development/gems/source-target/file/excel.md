@@ -14,13 +14,15 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
   sql_package_version=""
 />
 
-Read or write an Excel (XLSX) file from an external connection.
+Read or write an Excel (XLSX) file from an external connection using a Source or Target gem.
 
 :::info
 You can also use the [upload file](docs/analysts/development/gems/source-target/table/upload-files.md) feature to use Excel files. These will be stored in the SQL warehouse configured in your fabric.
 :::
 
 ## Supported connections
+
+You can read Excel files from the following connections:
 
 - [Amazon S3](/administration/fabrics/prophecy-fabrics/connections/s3)
 - [Databricks](/administration/fabrics/prophecy-fabrics/connections/databricks)
@@ -29,7 +31,18 @@ You can also use the [upload file](docs/analysts/development/gems/source-target/
 - [SharePoint](/administration/fabrics/prophecy-fabrics/connections/sharepoint)
 - [Smartsheet](/administration/fabrics/prophecy-fabrics/connections/smartsheet)
 
+## Configuration tabs
+
+When you create a new Source or Target gem, the gem dialog contains the following tabs.
+
+- **Type**: Choose the file storage provider you will connect to.
+- **Source/Target location**: Choose the [connection](/administration/fabrics/prophecy-fabrics/connections/) and define the file path where you will read from or write to.
+- **Properties**: Infer or manually specify the schema, and optionally add properties that influence table behavior.
+- **Preview**: Load a preview of the dataset reflecting your configurations.
+
 ## Parameters
+
+Configure a Source/Target gem using the following parameters for Excel files.
 
 | Parameter                   | Tab             | Description                                                                                                                      |
 | --------------------------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------- |
@@ -41,6 +54,8 @@ You can also use the [upload file](docs/analysts/development/gems/source-target/
 | Schema                      | Properties      | Schema definition of the table (custom or inferred).                                                                             |
 
 ### Source properties
+
+The following properties are available for the Excel Source gem.
 
 | Property                      | Description                                                                 | Default |
 | ----------------------------- | --------------------------------------------------------------------------- | ------- |
@@ -58,6 +73,8 @@ You can also use the [upload file](docs/analysts/development/gems/source-target/
 | Password                      | Password for password-protected sheets.                                     | None    |
 
 ## Target properties
+
+The following properties are available for the Excel Target gem.
 
 | Property               | Description                                                                 | Default |
 | ---------------------- | --------------------------------------------------------------------------- | ------- |
