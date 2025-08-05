@@ -14,7 +14,11 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
   sql_package_version=""
 />
 
-The Salesforce gem enables you to read data from Salesforce directly into your Prophecy pipelines. The gem supports both SOQL (Salesforce Object Query Language) for querying standard Salesforce objects and SAQL (Salesforce Analytics Query Language) for accessing analytical datasets. Note that Prophecy does not support Salesforce as a target destination.
+The Salesforce gem enables you to read data from Salesforce directly into your Prophecy pipelines. The gem supports both SOQL (Salesforce Object Query Language) for querying standard Salesforce objects and SAQL (Salesforce Analytics Query Language) for accessing analytical datasets.
+
+:::note
+Prophecy does not support writing data to Salesforce.
+:::
 
 ## Configuration tabs
 
@@ -31,19 +35,45 @@ Use these settings to configure a Salesforce Source gem for reading data.
 
 ### Source location
 
-| Parameter                   | Description                                                                                                                                                                                                                                                                                                                                                                                            |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Format type                 | Table format for the source. For Salesforce tables, set to `salesforce`.                                                                                                                                                                                                                                                                                                                               |
-| Select or create connection | Select or create a new [Salesforce connection](/administration/fabrics/prophecy-fabrics/connections/salesforce) in the Prophecy fabric you will use.                                                                                                                                                                                                                                                   |
-| Data Source                 | Specify the table you would like to read using a query. <br/>Use [SOQL](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm) format to retrieve data from the Salesforce database. <br/>Use [SAQL](https://developer.salesforce.com/docs/atlas.en-us.bi_dev_guide_saql.meta/bi_dev_guide_saql/bi_saql_intro.htm) format to access CRM Analytics data. |
+| Parameter                   | Description                                                                                                                                          |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Format type                 | Table format for the source. For Salesforce tables, set to `salesforce`.                                                                             |
+| Select or create connection | Select or create a new [Salesforce connection](/administration/fabrics/prophecy-fabrics/connections/salesforce) in the Prophecy fabric you will use. |
+| Query Mode                  | Specify the table you would like to read using a query. Learn more in [Query modes](#query-modes).                                                   |
 
-<!-- ### Source properties
+### Query modes
 
-| Property                                     | Description                                                                                                                                                                                                                                                            |
-| -------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Description                                  | Description of the table.                                                                                                                                                                                                                                              |
-| Primary key chunking                         | Enables splitting queries on large tables into chunks based on the record IDs, or primary keys, of the queried records.                                                                                                                                                |
-| Chunk size                                   | Specifies the number of records per chunk when primary key chunking is enabled.                                                                                                                                                                                        |
-| Timeout                                      | Maximum time in seconds to wait for a response from the Salesforce API before the request times out.                                                                                                                                                                   |
-| Max Length of column                         | Sets the maximum character length for columns when inferring the table schema.                                                                                                                                                                                         |
-| External ID field name for Salesforce Object | Assign an External ID attribute to a [custom field](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/custom_fields.htm) for a Salesforce object. This may be used to reference an ID from an external system such as Prophecy. | -->
+You have three options for retrieving data from Salesforce.
+
+#### SAQL
+
+Use a [SAQL](https://developer.salesforce.com/docs/atlas.en-us.bi_dev_guide_saql.meta/bi_dev_guide_saql/bi_saql_intro.htm) query to access CRM Analytics datasets (formerly known as Wave Analytics). For example:
+
+```
+q = load "Account"; q = foreach q generate 'Id' as 'Id', 'Name' as 'Name'; q = limit q 5;
+```
+
+#### SOQL
+
+Use a [SOQL](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm) query to read structured data from Salesforce objects such as `Account` or `Contact` tables. For example:
+
+```SQL
+SELECT Id, Name, Industry, CreatedDate FROM Account WHERE CreatedDate >= LAST_N_DAYS:30
+```
+
+:::info
+When using the `FIELDS(ALL)` keyword, the response is [limited to 200 rows per call](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_fields.htm#limiting_result_rows).
+:::
+
+#### Salesforce Objects
+
+Retrieve all records from a specific Salesforce object by name, without writing a query. Use this option when the object exceeds the default 200 row limit of `FIELDS(ALL)`.
+
+### Source properties
+
+The following properties are available for the Salesforce Source gem. These properties only apply to tables retrieved with the **SOQL** or **Salesforce Object** query mode.
+
+| Property                              | Description                                                                                        |
+| ------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Enable bulk query                     | Enable to run the query as a batch job in the background for better performance on large datasets. |
+| Retrieve deleted and archived records | Enable to include soft-deleted and archived records in the returned table.                         |
