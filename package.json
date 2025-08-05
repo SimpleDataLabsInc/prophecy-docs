@@ -26,6 +26,7 @@
     "@docusaurus/types": "^3.7.0",
     "@docusaurus/utils": "^3.7.0",
     "@inkeep/cxkit-docusaurus": "^0.5.36",
+    "@inkeep/cxkit-react": "^0.5.96",
     "@mdx-js/react": "^3.1.0",
     "@types/react": "^19.0.8",
     "acorn": "^8.14.0",
