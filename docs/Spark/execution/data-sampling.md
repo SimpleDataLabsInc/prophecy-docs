@@ -24,15 +24,14 @@ For each pipeline, you can enable, disable, or change interactive data sampling 
 
 Prophecy provides the following data sampling modes.
 
-### All (default)
+### Selective (default for Databricks) {#selective-sampling}
 
-All gems (excluding Target gems) generate data samples.
+Selective data sampling lets you enable or disable data samples for individual gems.
 
-![All interims](img/all-interims.png)
+To turn data sampling on or off for a gem:
 
-### Selective (recommended)
-
-When you choose selective data sampling, you gain the ability to enable or disable data samples for individual gems. To do so, use the **Data Preview** checkbox in the gem [action menu](/engineers/gems).
+- **Single gem**: Use the **Data Preview** checkbox in the gem [action menu](/engineers/gems).
+- **Bulk gems**: Drag and select multiple gems. Then, click **Data Preview** in the menu that appears to turn data preview on or off.
 
 ![Selective](img/selective-interims.png)
 
@@ -50,6 +49,12 @@ Selectively-generated samples load up to 10,000 rows (or 2 MB payload) by defaul
 :::tip
 When working on Databricks UC standard clusters, use selective data sampling mode. If you select another data sampling mode, samples will only be generated on edge nodes.
 :::
+
+### All (default for other Spark environments)
+
+All gems (excluding Target gems) generate data samples.
+
+![All interims](img/all-interims.png)
 
 ### Sources
 
