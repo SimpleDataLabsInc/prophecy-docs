@@ -69,12 +69,6 @@ Data samples are only generated after Source gems or before Target gems (not bet
 
 ![IO interims](img/io-interims.png)
 
-### Vanilla
-
-This Databricks-specific setting generates data samples on the last node(s) of a pipeline. If the pipeline branch ends with a Target gem, the data sample appears before the Target gem (like the Target mode).
-
-![Vanilla interims](img/vanilla-interims.png)
-
 ## Cached interims
 
 If you change your data samplings settings and re-run your pipeline, you might see some grayed-out data samples. These are the cached data samples from previous runs. They might be outdated.
