@@ -8,7 +8,6 @@ const SearchBar = () => {
   const apiKey = siteConfig.customFields?.inkeepApiKey;
 
   const searchConfig = {
-    defaultView: "chat",
     baseSettings: {
       apiKey: apiKey,
       organizationDisplayName: "Prophecy",
@@ -69,16 +68,12 @@ const SearchBar = () => {
             key: "chat-button-styles",
             type: "style",
             value: `
-                span.ikp-chat-button__avatar-content > img.ikp-chat-button__avatar-image {
-                  height: auto !important;
-                }
                 /* make the chat button not floating */
                 .ikp-chat-button__container {
                   position: relative;
                   bottom: unset;
                   right: unset;
                 }
-
                 .ikp-chat-button__button {
                   background: transparent;
                   border-width: 1px;
@@ -92,7 +87,6 @@ const SearchBar = () => {
                   overflow: hidden;
                   transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
                 }
-
                 .ikp-chat-button__button:hover {
                   transform: none !important;
                   background: var(--ifm-color-emphasis-200);
@@ -102,22 +96,9 @@ const SearchBar = () => {
                   margin-left: 0 !important;
                   flex-shrink: 0;
                 }
-                .ikp-chat-button__avatar-content > svg {
-                  width: 16px;
-                  height: 16px;
-                  --start-color: var(--ikp-color-inkeep-expanded-primary-300) !important;
-                  --end-color: var(--ikp-color-inkeep-expanded-primary-700) !important;
+                span.ikp-chat-button__avatar-content > img.ikp-chat-button__avatar-image {
+                  height: auto !important;
                 }
-
-                [data-theme="dark"] .ikp-chat-button__button {
-                  background: transparent;
-                }
-                [data-theme="dark"] .ikp-chat-button__button:hover {
-                  background: var(--ifm-background-color !important);
-                }
-                [data-theme="dark"] .ikp-chat-button__avatar-content > svg {
-                  --start-color: var(--ikp-color-inkeep-expanded-primary-50) !important;
-                  --end-color: var(--ikp-color-inkeep-expanded-primary-300) !important;
                 }
             `,
           },
