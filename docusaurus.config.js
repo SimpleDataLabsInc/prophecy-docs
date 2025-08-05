@@ -132,11 +132,6 @@ const config = {
             label: "Help",
             position: "right",
           },
-          {
-            to: "mailto:docs@prophecy.io",
-            label: "Feedback",
-            position: "right",
-          },
           { to: "http://app.prophecy.io/", label: "Login", position: "right" },
         ],
       },

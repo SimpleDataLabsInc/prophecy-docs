@@ -78,7 +78,7 @@ const SearchBar = () => {
                   bottom: unset;
                   right: unset;
                 }
-                /* make the button smaller / more subtle */
+
                 .ikp-chat-button__button {
                   background: transparent;
                   border-width: 1px;
@@ -90,15 +90,12 @@ const SearchBar = () => {
                   padding: 5px 12px;
                   white-space: nowrap;
                   overflow: hidden;
+                  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
                 }
 
-                .ikp-chat-button__button.py-3 {
-                  padding-top: 4px !important
-                  padding-bottom: 4px !important
-                }
                 .ikp-chat-button__button:hover {
                   transform: none !important;
-                  background: var(--ikp-color-gray-50);
+                  background: var(--ifm-color-emphasis-200);
                 }
                 .ikp-chat-button__avatar-content {
                   margin-right: 6px !important;
@@ -116,7 +113,7 @@ const SearchBar = () => {
                   background: transparent;
                 }
                 [data-theme="dark"] .ikp-chat-button__button:hover {
-                  background: var(--ikp-color-gray-50);
+                  background: var(--ifm-background-color !important);
                 }
                 [data-theme="dark"] .ikp-chat-button__avatar-content > svg {
                   --start-color: var(--ikp-color-inkeep-expanded-primary-50) !important;
