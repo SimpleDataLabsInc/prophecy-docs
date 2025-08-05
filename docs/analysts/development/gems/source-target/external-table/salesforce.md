@@ -25,8 +25,6 @@ When you create a new external Source gem, the gem dialog contains the following
 - **Properties**: Infer or manually specify the table schema, and optionally add properties that influence table behavior.
 - **Preview**: Load a preview of the dataset reflecting your configurations.
 
-The following sections provide a detailed reference for sources and targets.
-
 ## Source configuration
 
 Use these settings to configure a Salesforce Source gem for reading data.

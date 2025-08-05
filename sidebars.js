@@ -157,6 +157,7 @@ const sidebars = {
                   items: [
                     "analysts/development/gems/source-target/file/csv",
                     "analysts/development/gems/source-target/file/excel",
+                    "analysts/development/gems/source-target/file/fixed-width",
                     "analysts/development/gems/source-target/file/json",
                     "analysts/development/gems/source-target/file/parquet",
                     "analysts/development/gems/source-target/file/xml",
