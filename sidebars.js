@@ -451,6 +451,7 @@ const sidebars = {
           items: [
             "analysts/business-apps/app-creation",
             "analysts/business-apps/app-components",
+            "analysts/business-apps/app-settings",
           ],
         },
       ],
