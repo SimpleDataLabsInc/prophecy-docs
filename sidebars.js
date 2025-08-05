@@ -768,6 +768,7 @@ const sidebars = {
             "ci-cd/git/git-resolve",
             "ci-cd/git/pr-templates",
             "ci-cd/git/git-best-practices",
+            "ci-cd/git/migrate-managed",
           ],
         },
         "ci-cd/tests",
