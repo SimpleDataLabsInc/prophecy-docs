@@ -6,6 +6,10 @@ slug: /engineers/prepare-gems
 tags: []
 ---
 
+Prepare gems clean, standardize, and structure datasets. Use these gems to transform data formats, remove duplicates, filter records, and prepare data for analysis.
+
+## Gems
+
 Access the following gems from the Prepare category in the gem drawer.
 
 ```mdx-code-block
