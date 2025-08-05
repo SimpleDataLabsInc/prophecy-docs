@@ -7,13 +7,6 @@ const redirectsConfig = require("./redirects");
 
 require("dotenv").config();
 
-export default {
-  baseUrl: process.env.BASE_URL || "/",
-  customFields: {
-    inkeepApiKey: process.env.INKEEP_API_KEY,
-  },
-};
-
 // Reverse the sidebar items ordering
 function reverseSidebarItems(items) {
   // Reverse items in categories
@@ -37,6 +30,9 @@ const config = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon2.png",
+  customFields: {
+    inkeepApiKey: process.env.INKEEP_API_KEY,
+  },
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
