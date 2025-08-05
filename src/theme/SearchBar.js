@@ -22,15 +22,14 @@ const SearchBar = () => {
                 /* Responsive search bar - hide text on small screens */
                 @media (max-width: 40em) {
                   .ikp-search-bar__button {
-                        padding-inline: 7px;
-                      }
-                      .ikp-search-bar__text {
-                        display: none;
-                      }
-                      .ikp-search-bar__kbd-wrapper {
-                        display: none;
-                      }
-                }
+                    padding-inline: 7px;
+                  }
+                  .ikp-search-bar__text {
+                    display: none;
+                  }
+                  .ikp-search-bar__kbd-wrapper {
+                    display: none;
+                  }
                 }
             `,
           },
@@ -40,7 +39,6 @@ const SearchBar = () => {
             value: `
                 .ikp-ai-ask-ai-trigger__icon {
                   height: auto !important;
-                }
             `,
           },
         ],
@@ -84,15 +82,19 @@ const SearchBar = () => {
                 .ikp-chat-button__button {
                   background: transparent;
                   border-width: 1px;
-                  color: var(--ikp-color-gray-800);
+                  color: var(--ifm-font-color-base);
                   border-radius: 6px;
                   box-shadow: none;
-                  padding: 4px 8px !important;
-                  font-size: 14px;
+                  font-size: var(--ikp-font-size-md);
                   flex-direction: row-reverse;
-                  height: 30px !important; /* Force height to match search bar */
-                  min-height: 30px !important;
-                  max-height: 30px !important;
+                  padding: 5px 12px;
+                  white-space: nowrap;
+                  overflow: hidden;
+                }
+
+                .ikp-chat-button__button.py-3 {
+                  padding-top: 4px !important
+                  padding-bottom: 4px !important
                 }
                 .ikp-chat-button__button:hover {
                   transform: none !important;
@@ -101,6 +103,7 @@ const SearchBar = () => {
                 .ikp-chat-button__avatar-content {
                   margin-right: 6px !important;
                   margin-left: 0 !important;
+                  flex-shrink: 0;
                 }
                 .ikp-chat-button__avatar-content > svg {
                   width: 16px;
@@ -108,17 +111,16 @@ const SearchBar = () => {
                   --start-color: var(--ikp-color-inkeep-expanded-primary-300) !important;
                   --end-color: var(--ikp-color-inkeep-expanded-primary-700) !important;
                 }
+
                 [data-theme="dark"] .ikp-chat-button__button {
-                  color: var(--ikp-color-gray-dark-50);
                   background: transparent;
                 }
                 [data-theme="dark"] .ikp-chat-button__button:hover {
-                  background: var(--ikp-color-white-alpha-200);
+                  background: var(--ikp-color-gray-50);
                 }
                 [data-theme="dark"] .ikp-chat-button__avatar-content > svg {
                   --start-color: var(--ikp-color-inkeep-expanded-primary-50) !important;
                   --end-color: var(--ikp-color-inkeep-expanded-primary-300) !important;
-                }
                 }
             `,
           },
@@ -147,10 +149,16 @@ const SearchBar = () => {
         alignItems: "center",
         gap: "10px",
         height: "30px",
+        minWidth: 0, // Allow container to shrink
+        flexShrink: 1, // Allow the container to shrink if needed
       }}
     >
-      <InkeepSearchBar {...searchConfig} />
-      <InkeepChatButton {...chatConfig} />
+      <div style={{ flex: "1 1 auto", minWidth: 0 }}>
+        <InkeepSearchBar {...searchConfig} />
+      </div>
+      <div style={{ flex: "0 0 auto" }}>
+        <InkeepChatButton {...chatConfig} />
+      </div>
     </div>
   );
 };
