@@ -21,29 +21,37 @@ Configurations are hierarchical and can be defined at the following levels:
 - **Subgraph**: Local to a subgraph, with options to inherit from parent pipelines.
 - **Job**: Specifies the configuration to use when running pipelines in production.
 
-## Pipeline configurations
+## Project and pipeline configurations
 
-To open pipeline configurations, click the Config button in the pipeline header. This view has two main sections:
+Each pipeline has access to two types of configurations:
 
-- **Pipeline Configuration**: Specific to the current pipeline.
-- **Project Configuration**: Shared variables available to all pipelines.
+- **Project configuration**: Defines global variables that are shared across all pipelines in the project.
+- **Pipeline configuration**: Defines variables specific to the current pipeline and can override project-level values.
 
-Each section contains two tabs, which are described below.
+To view or edit these configurations, click the **Config** button in the pipeline header. Each configuration includes two tabs:
+
+- [Schema](#schema-tab): Define the structure and data types for your configuration variables.
+- [Config](#config-tab): Set the values for each variable and create configuration instances for different environments.
+
+:::note
+You can access the project configuration from any pipeline.
+:::
+
+![Pipeline schema](img/configuration/project-pipeline-config.png)
 
 ### Schema tab
 
-In the Schema tab, you define the variables you want to use. These are your configuration fields.
+In the Schema tab, you define the variables you want to use. The following table lists the information to define each variable.
 
 | Parameter   | Description                                                                                                |
 | ----------- | ---------------------------------------------------------------------------------------------------------- |
 | Name        | The unique identifier for the variable.                                                                    |
-| Type        | The data type assigned to the variable. For supported types, see [Data types](#data-types).                |
+| Type        | The data type assigned to the variable. Supported types are listed below.                                  |
 | Optional    | Indicates whether the variable is optional. If unchecked, you must provide a default value for the config. |
 | Description | An optional text field to provide additional context or details about the variable.                        |
 
-![Schema tab](img/configuration/config-schema.png)
-
-#### Data types
+<details>
+<summary>Expand to see the list of supported data types</summary>
 
 Prophecy supports the following data types for configs.
 
@@ -63,18 +71,15 @@ Prophecy supports the following data types for configs.
 | `secret`           | A sensitive string (like a password or token), selected from your fabric's list of pre-configured secrets.      |
 | `spark_expression` | A Spark SQL expression, written in a code editor with syntax highlighting.                                      |
 
+</details>
+
 ### Config tab
 
 The Config tab allows you to set values for the variables defined in your schema and create multiple configuration instances for different environments or use cases. Each configuration instance maintains its own set of values while inheriting the same schema structure.
 
 #### Configuration instances
 
-At the top of the Config tab, you can select between different configuration instances using the dropdown menu:
-
-- **Default configuration**: The set of values that will be the default throughout the product, like in interactive execution or jobs.
-- **Additional configurations**: Separate instances (like `prod` for production) with a different set of values for the same variables defined in the schema.
-
-![Multiple configurations](img/configuration/config-new-instance.png)
+At the top of the Config tab, use the dropdown menu to switch between configuration instances. Every project and pipeline includes a `default` configuration that provides default values for all defined variables. You can create additional instances (such as `prod` for production) with alternate values, while reusing the same schema.
 
 To create a new configuration instance:
 
@@ -82,10 +87,10 @@ To create a new configuration instance:
 1. Click **New Configuration**.
 1. In the **Instance Name** field, name your instance.
 1. Click **Create**.
-1. Add new values or maintain the default values from the default config.
+1. Add new values or maintain the default values from the `default` config.
 1. Click **Save** to save the new values in the config.
 
-#### Setting configuration values
+#### Set configuration values
 
 In the Config tab, you'll also see a form with all the variables you defined in the Schema tab. Each variable appears as an input field that matches its data type, for example:
 
@@ -96,12 +101,9 @@ In the Config tab, you'll also see a form with all the variables you defined in 
 
 If a variable in the schema is not optional, you must add a default value in the Config tab.
 
-#### Overriding project-level configs
+#### Override project-level configs
 
-You can override project-level configuration values within your pipeline configurations. This hierarchical approach allows you to:
-
-- Set common values at the project level that apply to all pipelines
-- Override specific values at the pipeline level for particular use cases
+Pipelines inherit configuration values from the project-level `default` configuration. To change these values for a specific pipeline, create a new configuration instance for that pipeline. Within this instance, you can override any inherited values as needed. The `default` pipeline configuration always reflects the project-level default values.
 
 ## Use configuration variables
 
