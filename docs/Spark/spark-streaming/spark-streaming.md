@@ -1,6 +1,7 @@
 ---
 title: Spark Structured Streaming
 id: streaming
+draft: true
 slug: /engineers/spark-streaming
 description: Prophecy Streaming Gems
 tags: [streaming, gems, source, target]

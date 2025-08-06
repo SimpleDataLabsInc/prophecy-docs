@@ -679,27 +679,6 @@ const sidebars = {
             "Spark/functions/udfs",
           ],
         },
-        {
-          type: "category",
-          label: "Spark streaming",
-          link: { type: "doc", id: "Spark/spark-streaming/streaming" },
-          items: [
-            {
-              type: "category",
-              label: "Streaming sources and targets",
-              link: {
-                type: "doc",
-                id: "Spark/spark-streaming/streaming-sources-and-targets/streaming-sources-and-targets",
-              },
-              items: [
-                "Spark/spark-streaming/streaming-sources-and-targets/streaming-file-apps",
-                "Spark/spark-streaming/streaming-sources-and-targets/streaming-event-apps",
-                "Spark/spark-streaming/streaming-sources-and-targets/streaming-warehouse-apps",
-              ],
-            },
-            "Spark/spark-streaming/transformations-streaming",
-          ],
-        },
         "Spark/project-best-practices",
       ],
     },

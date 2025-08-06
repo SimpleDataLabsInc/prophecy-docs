@@ -1,6 +1,7 @@
 ---
 title: File-based
 id: streaming-file-apps
+draft: true
 slug: /engineers/file-based-streaming-source-and-targets
 description: File-based Source and Target gems for Streaming Data Applications
 tags:

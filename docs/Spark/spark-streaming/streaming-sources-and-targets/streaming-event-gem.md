@@ -2,6 +2,7 @@
 title: Event-based
 id: streaming-event-apps
 slug: /engineers/event-based-streaming-source-and-targets
+draft: true
 description: Event-based Source and Target Gems for Streaming Data Applications
 tags:
   - spark

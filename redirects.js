@@ -328,10 +328,7 @@ module.exports = {
       to: "/engineers/dynamic-select",
       from: "/Spark/gems/transform/dynamic-select",
     },
-    {
-      to: "/engineers/event-based-streaming-source-and-targets",
-      from: "/Spark/spark-streaming/streaming-sources-and-targets/streaming-event-apps",
-    },
+
     {
       to: "/engineers/execution",
       from: "/Spark/execution/interactive-execution",
@@ -355,10 +352,7 @@ module.exports = {
       to: "/engineers/external-release-tags",
       from: "/ci-cd/deployment/use-external-release-tags",
     },
-    {
-      to: "/engineers/file-based-streaming-source-and-targets",
-      from: "/Spark/spark-streaming/streaming-sources-and-targets/streaming-file-apps",
-    },
+
     {
       to: "/engineers/file-operation",
       from: "/Spark/gems/custom/file-operations",
@@ -576,6 +570,17 @@ module.exports = {
         "/tutorials/videos/test-pipeline",
         "/tutorials/videos/",
         "/low-code-spark/",
+        "/engineers/spark-streaming",
+        "/Spark/spark-streaming",
+        "/Spark/spark-streaming/streaming-sources-and-targets",
+        "/engineers/spark-streaming-transformations",
+        "/Spark/spark-streaming/transformations-streaming",
+        "/engineers/warehouse-based-streaming-source-and-targets",
+        "/Spark/spark-streaming/streaming-sources-and-targets/streaming-warehouse-apps",
+        "/engineers/event-based-streaming-source-and-targets",
+        "/Spark/spark-streaming/streaming-sources-and-targets/streaming-event-apps",
+        "/engineers/file-based-streaming-source-and-targets",
+        "/Spark/spark-streaming/streaming-sources-and-targets/streaming-file-apps",
       ],
     },
     {
@@ -686,17 +691,7 @@ module.exports = {
       to: "/engineers/spark-dependencies",
       from: "/extensibility/dependencies/spark-dependencies",
     },
-    {
-      to: "/engineers/spark-streaming",
-      from: [
-        "/Spark/spark-streaming",
-        "/Spark/spark-streaming/streaming-sources-and-targets",
-      ],
-    },
-    {
-      to: "/engineers/spark-streaming-transformations",
-      from: "/Spark/spark-streaming/transformations-streaming",
-    },
+
     {
       to: "/engineers/sql-statement",
       from: "/Spark/gems/custom/sql-statement",
@@ -749,10 +744,6 @@ module.exports = {
     {
       to: "/engineers/user-defined-functions",
       from: ["/Spark/functions/udfs", "/Spark/extensibility/udfs"],
-    },
-    {
-      to: "/engineers/warehouse-based-streaming-source-and-targets",
-      from: "/Spark/spark-streaming/streaming-sources-and-targets/streaming-warehouse-apps",
     },
     {
       to: "/engineers/while-iterator",
