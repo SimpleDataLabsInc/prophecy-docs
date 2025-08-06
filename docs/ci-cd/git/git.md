@@ -39,6 +39,14 @@ To add an external Git account to your Prophecy environment:
 
 You can also enter new Git credentials directly when creating a new project.
 
+### Share credentials
+
+You can share your Git credentials with teams in Prophecy to let team members access Git repositories without giving them direct access to your Git provider (e.g., GitHub or GitLab). This is useful when you want users to work within Prophecy but not sign in to the Git provider through the browser or CLI, for instance.
+
+To share credentials, select the **Share credentials with teams** checkbox when adding or editing your Git credentials, and choose the teams you want to share them with.
+
+Teams members with access to your shared credentials will be able to connect projects in Prophecy to existing repositories accessible to the account associated with the credentials.
+
 ### GitHub Oauth
 
 If you choose GitHub as your external Git provider, you can add your Git credentials using GitHub Oauth.
