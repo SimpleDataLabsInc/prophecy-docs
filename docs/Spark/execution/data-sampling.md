@@ -24,8 +24,8 @@ Prophecy provides the following data sampling modes.
 
 | Mode                            | Samples generated                                                         | Use case                           |
 | ------------------------------- | ------------------------------------------------------------------------- | ---------------------------------- |
+| **All** (default)               | After every gem, excluding Target gems.                                   | Full visibility                    |
 | **Selective** (Databricks only) | When **Data Preview** enabled per gem. [Learn more](#selective-sampling). | Full control per gem               |
-| **All**                         | After every gem, excluding Target gems.                                   | Full visibility                    |
 | **Sources**                     | Only after Source gems.                                                   | Focus on inputs                    |
 | **Targets**                     | Only before Target gems.                                                  | Focus on outputs                   |
 | **IO**                          | Only after Sources and before Targets (not between intermediate gems).    | High-level input/output inspection |
@@ -42,7 +42,7 @@ When Data Preview is disabled for a gem, its output appears pale after pipeline 
 ![Selective](img/selective-interims.png)
 
 :::tip
-Use Selective sampling when running [Databricks UC standard clusters](/administration/fabrics/Spark-fabrics/databricks/ucshared). Other sampling modes will only generate samples on edge nodes.
+We recommend using Selective sampling mode for all Databricks users. It is faster and more powerful than the default mode. Selective sampling is also important when working with [Databricks UC standard clusters](/administration/fabrics/Spark-fabrics/databricks/ucshared), as other sampling modes only generate data samples on edge nodes for this access mode.
 :::
 
 <details>
