@@ -59,9 +59,9 @@ The Config tab lets you set default values for your variables. You can create mu
 
 ![Multiple configurations](img/configuration/config-new-instance.png)
 
-### Syntax
+### General syntax
 
-When you want to call configuration variables in your pipeline, you can reference them using Jinja syntax. Jinja variable syntax looks like: `{{config_name}}`.
+When you want to call configuration variables in your pipeline, you can reference them using Jinja syntax. Jinja variable syntax looks like: `{{config_variable_name}}`.
 
 You can use the following syntax examples for accessing elements of array and record fields:
 
@@ -81,6 +81,12 @@ Depending on the Visual Language configured in your [Pipeline Settings](/enginee
 | Python          | `Config.config_name` | `expr(Config.config_name)` |
 
 :::
+
+### Source/Target syntax
+
+To use configuration variables for specifying file locations for Source and Target gems, use the following syntax: `${config_variable_name}`.
+
+Jinja syntax is not supported for Source and Target gems.
 
 ## Runtime configuration
 
