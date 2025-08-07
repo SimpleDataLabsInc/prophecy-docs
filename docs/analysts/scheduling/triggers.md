@@ -1,5 +1,5 @@
 ---
-title: Trigger types
+title: Schedule trigger types
 id: triggers
 slug: /analysts/triggers
 description: Learn about different trigger types for schedules
