@@ -28,13 +28,11 @@ Review the following gem parameters by method.
 
 The UUID method assigns a universally unique identifier (UUID) to each row. These values are randomly generated and are ideal when you need non-sequential, non-predictable IDs.
 
-| Parameter          | Description                                                                                                               |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------- |
-| Output Column Name | Name of the new column where the generated UUIDs will be stored.                                                          |
-| Data type          | Select **integer** or **string** as the output type of the record ID values.                                              |
-| Starting Value     | Optional. A numeric value to start from, used if converting UUIDs to a string format with padding.                        |
-| Left-pad length    | Optional. Defines the total string length. Leading zeros will be added if the starting value is shorter than this length. |
-| Column position    | Choose to **add as first column** or **add as last column** in the output dataset.                                        |
+| Parameter          | Description                                                                        |
+| ------------------ | ---------------------------------------------------------------------------------- |
+| Output Column Name | Name of the new column where the generated UUIDs will be stored.                   |
+| Data type          | Select **integer** or **string** as the output type of the record ID values.       |
+| Column position    | Choose to **add as first column** or **add as last column** in the output dataset. |
 
 ### Incremental ID
 

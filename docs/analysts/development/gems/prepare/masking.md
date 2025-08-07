@@ -40,9 +40,17 @@ Configure the DataMasking gem using the following parameters.
 
 ### Masked column options
 
-- **Substitute the new columns in place**: The new values will appear in the original column.
-- **Add new columns with a prefix/suffix attached**: The new values will appear in a new column that will have the original name with a prefix or suffix that you specify.
-- **Apply a single hash to all the selected columns at once**: There will only be one new output column, regardless of the number of columns to apply masking on. This only applies to the `hash` masking method.
+#### Substitute the new columns in place
+
+The new values will appear in the original column.
+
+#### Add new columns with a prefix/suffix attached
+
+The new values will appear in a new column that will have the original name with a prefix or suffix that you specify.
+
+#### Apply a single hash to all the selected columns at once
+
+There will only be one new output column, regardless of the number of columns to apply masking on. This only applies to the `hash` masking method.
 
 ### Masking methods
 

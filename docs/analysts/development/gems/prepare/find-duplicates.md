@@ -17,9 +17,11 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
   sql_package_version="0.0.12+"
 />
 
-The FindDuplicates gem allows you to identify unique or duplicate rows in a dataset based on selected columns. You can return only unique rows, only duplicates, or apply advanced filtering based on how often a group of values appears.
+The FindDuplicates gem filters rows in a dataset based on how frequently they appear. You can configure the gem to return the first occurrence of each unique group, identify groups that have duplicates, or apply custom filters based on group frequency or row position within groups.
 
 ## Input and Output
+
+The FindDuplicates gem accepts the following input and generates one output.
 
 | Port    | Description                                                                                |
 | ------- | ------------------------------------------------------------------------------------------ |
@@ -30,72 +32,90 @@ The FindDuplicates gem allows you to identify unique or duplicate rows in a data
 
 Configure the FindDuplicates gem using the following parameters.
 
-| Parameter                         | Description                                                                                         |
-| --------------------------------- | --------------------------------------------------------------------------------------------------- |
-| Unique rows generation scope      | Defines the criteria for considering rows as unique. See [Uniqueness scope](#uniqueness-scope).     |
-| Output records selection strategy | Determines which rows to include based on group count. See [Output strategies](#output-strategies). |
+### Unique rows generation scope
 
-### Uniqueness scope
+Choose how to identify duplicates in your dataset.
 
-Choose how to define uniqueness in the dataset:
+- **Uniqueness across all columns**: Considers the entire row when checking for uniqueness. Use this option when you want to find rows that are completely identical across every column.
+- **Uniqueness across selected columns**: Considers only specific columns when checking for uniqueness. Use this option when you want to find duplicates based on specific business keys or field combinations.
 
-- **Uniqueness across all columns**: Considers the entire row when checking for uniqueness.
+### Configure Grouping and Sorting
 
-- **Uniqueness across selected columns**: Select specific columns to group by when identifying duplicates.
+Complete this step only if you selected **Uniqueness across selected columns**.
 
-  - **Group by**: Specify the columns to group by and optionally set an order for processing.
+- **Group By Columns**: Select the columns that determine whether rows are considered duplicates. For example, to find duplicate customer accounts, select the `email` column.
+- **Order rows within each group (Optional)**: Select columns to sort by and specify the sort order (ascending or descending). When multiple duplicates exist, this controls which row appears first in the results.
 
-### Output strategies
+### Output records selection strategy
 
-Decide which rows to include in the output based on how frequently they appear:
+Choose what to include in the output results. For each strategy, if you did not define a group, the dataset is grouped by all columns (groups consist of complete row matches).
 
-- **Unique**: Returns the first instance of each row or group.
+#### Unique
 
-- **Duplicate**: Returns the first instance of each row or group that occurs more than once.
+Returns the first occurrence of each row in a group, regardless of frequency. Use this strategy for deduplication when you want to keep one record per group.
 
-- **Custom group count**: Filter rows based on group count using custom logic. You have the following options:
+#### Duplicate
 
-  - **Group count equal to**: Includes rows that appear exactly `n` times.
+Returns the first occurrence of each row that appears more than once in a group. Use this strategy to see which values have duplicates.
 
-  - **Group count less than**: Includes rows that appear fewer than `n` times.
+#### Custom group count
 
-  - **Group count greater than**: Includes rows that appear more than `n` times.
+Filters rows based on how many times each group appears.
 
-  - **Group count not equal to**: Includes rows whose count is different from `n`.
+Select a filter type:
 
-  - **Group count between**: Includes rows with count within a specified range.
+- **Group count equal to**: Returns rows that appear exactly `n` times
+- **Group count less than**: Returns rows that appear fewer than `n` times
+- **Group count greater than**: Returns rows that appear more than `n` times
+- **Group count not equal to**: Returns rows whose count differs from `n`
+- **Group count between**: Returns rows with count within a specified range
 
-- **Custom row number**: Filter rows based row numbers. You have the following options:
+In the **Grouped count** field, specify the count value `n`.
 
-  - **Row number equal to**: Includes only the row with the specified row number.
+#### Custom row number
 
-  - **Row number less than**: Includes rows with a row number less than n.
+Filters rows based on position within each group.
 
-  - **Row number greater than**: Includes rows with a row number greater than n.
+Select a filter type:
 
-  - **Row number not equal to**: Includes all rows except the one with the specified row number.
+- **Row number equal to**: Returns only the row with the specified position
+- **Row number less than**: Returns rows with a position less than `n`
+- **Row number greater than**: Returns rows with a position greater than `n`
+- **Row number not equal to**: Returns all rows except the one with the specified position
+- **Row number between**: Returns rows with a position within a specified range
 
-  - **Row number between**: Includes rows with a row number within a specified range.
+In the **Row number** field, specify the position value.
+
+:::note
+Row numbering starts at 1 for each group.
+:::
 
 ## Example
 
-Given the following dataset:
+Given the following product catalog dataset:
 
 <div class="table-example">
 
-| ID  | Name  | City     |
-| --- | ----- | -------- |
-| 1   | Alice | Boston   |
-| 2   | Bob   | Boston   |
-| 3   | Alice | Boston   |
-| 4   | Alice | New York |
-| 5   | Alice | Boston   |
+| product_id | category | region  | last_updated |
+| ---------- | -------- | ------- | ------------ |
+| 001        | laptop   | us-east | 2024-01-01   |
+| 002        | tablet   | us-east | 2024-01-02   |
+| 003        | laptop   | us-east | 2024-01-15   |
+| 004        | laptop   | us-west | 2024-01-03   |
+| 005        | laptop   | us-east | 2024-01-20   |
 
 </div>
 
-If you select:
+If you configure the gem with the following settings:
 
-- **Group by**: `Name`, `City`
-- **Output strategy**: `Group count equal to 2`
+- **Group by**: `category`, `region`
+- **Order by**: `last_updated` (descending)
+- **Output strategy**: Custom group count equal to 3
 
-The result will return rows 1 and 3 (Alice in Boston), because that group appears exactly twice (even though a third instance exists, it will still group accordingly unless deduplicated).
+The gem creates the following groups:
+
+- laptop + us-east: 3 occurrences
+- tablet + us-east: 1 occurrence
+- laptop + us-west: 1 occurrence
+
+The output returns rows `005`, `003`, and `001` (laptop in us-east group) because this group appears exactly 3 times. The rows are ordered by most recent update date first.
