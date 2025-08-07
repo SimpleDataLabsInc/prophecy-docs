@@ -21,6 +21,8 @@ The DataEncoderDecoder gem allows you to encode or decode data in selected colum
 
 ## Input and Output
 
+The DataEncoderDecoder gem accepts the following input and output.
+
 | Port    | Description                                                                                                                    |
 | ------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | **in0** | Input dataset containing one or more string or binary columns to encode or decode.                                             |
@@ -75,11 +77,11 @@ Encrypts the selected column(s) using AES encryption.
 - **Secret scope**: The name of the Databricks secret scope.
 - **Secret key**: The key name within the scope that stores the encryption key.
 - **Mode**: AES encryption mode to use.
-  - `gcm`
-  - `cbc`
-  - `ecb`
-- **(Optional) AAD scope and key**: For GCM mode, you can specify an Additional Authenticated Data (AAD) scope and key.
-- **(Optional) Initialization vector scope and key**: For CBC mode, specify an IV using a secret scope and key.
+  - `GCM`
+  - `CBC`
+  - `EBC`
+- **(Optional) AAD scope and key**: For GCM mode, you can specify Databricks scope and key for the AAD.
+- **(Optional) Initialization vector scope and key**: For CBC mode, specify a Databricks secret scope and key for the IV.
 
 ### Transformed column options
 
