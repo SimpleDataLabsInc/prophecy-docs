@@ -41,11 +41,11 @@ Configure the CountRecords gem using the following parameters.
 
 Choose one of the following strategies for counting records.
 
-| Strategy                                                           | Description                                                                   |
-| ------------------------------------------------------------------ | ----------------------------------------------------------------------------- |
-| Count number of records in input DataFrame                         | Returns the total number of rows in the input dataset, including null values. |
-| Count non-null records from input DataFrame for selected column(s) | Returns the number of non-null rows for each selected column.                 |
-| Count distinct records from input DataFrame for selected column(s) | Returns the number of distinct, non-null values for each selected column.     |
+| Strategy                                     | Description                                                                   |
+| -------------------------------------------- | ----------------------------------------------------------------------------- |
+| Count number of total records                | Returns the total number of rows in the input dataset, including null values. |
+| Count non-null records in selected column(s) | Returns the number of non-null rows for each selected column.                 |
+| Count distinct records in selected column(s) | Returns the number of distinct, non-null values for each selected column.     |
 
 ## Example
 
