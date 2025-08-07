@@ -49,11 +49,11 @@ Choose how to define uniqueness in the dataset:
 
 Decide which rows to include in the output based on how frequently they appear:
 
-- **Unique**: Returns only the first instance of each unique row or group.
+- **Unique**: Returns the first instance of each row or group.
 
-- **Duplicate**: Returns only the first instance of each row or group that occurs more than once.
+- **Duplicate**: Returns the first instance of each row or group that occurs more than once.
 
-- **Custom**: Filter rows based on group count using custom logic. You have the following options:
+- **Custom group count**: Filter rows based on group count using custom logic. You have the following options:
 
   - **Group count equal to**: Includes rows that appear exactly `n` times.
 
@@ -64,6 +64,18 @@ Decide which rows to include in the output based on how frequently they appear:
   - **Group count not equal to**: Includes rows whose count is different from `n`.
 
   - **Group count between**: Includes rows with count within a specified range.
+
+- **Custom row number**: Filter rows based row numbers. You have the following options:
+
+  - **Row number equal to**: Includes only the row with the specified row number.
+
+  - **Row number less than**: Includes rows with a row number less than n.
+
+  - **Row number greater than**: Includes rows with a row number greater than n.
+
+  - **Row number not equal to**: Includes all rows except the one with the specified row number.
+
+  - **Row number between**: Includes rows with a row number within a specified range.
 
 ## Example
 
