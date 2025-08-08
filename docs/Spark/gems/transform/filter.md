@@ -23,7 +23,7 @@ import Requirements from '@site/src/components/gem-requirements';
   livy="3.0.1+"
 />
 
-Filters DataFrame based on the provided filter condition
+Filters a DataFrame based on the provided filter condition.
 
 ## Parameters
 
@@ -32,11 +32,21 @@ Filters DataFrame based on the provided filter condition
 | DataFrame        | Input DataFrame on which the filter condition will be applied.                        | True     |
 | Filter Condition | BooleanType column or boolean expression. Supports SQL, Python and Scala expressions. | True     |
 
+:::note
+Use the [visual language syntax](/engineers/configurations#general-syntax) to call configuration variables in the Filter gem.
+:::
+
 ## Example
+
+In this example, the Filter gem is used to return only marketing orders that are either finished or approved, while excluding any orders that have been discounted.
 
 ![Example usage of Filter](./img/filter_eg_1.png)
 
-## Spark Code
+:::info
+The Filter gem configuration translates into the Spark code shown below, which applies the same filtering logic.
+:::
+
+## Spark code
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
