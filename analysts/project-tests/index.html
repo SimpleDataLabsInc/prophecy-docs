@@ -7,7 +7,7 @@
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/assets/css/styles.d2a19db1.css">
-<script src="/assets/js/runtime~main.c73e6d71.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.1a9732ba.js" defer="defer"></script>
 <script src="/assets/js/main.a68726ca.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -32,6 +32,36 @@
 <li>
 <p>Create your test model by dragging and dropping gems to your visual canvas. Connect them to your Data Test. You can also write your test on the Code view. You can use as many models and other database objects as you’d like in your test.</p>
 <p><img decoding="async" loading="lazy" alt="Project test canvas" src="/assets/images/project-test-canvas-d783db03c64a98c80b6b42ecccf6dd23.png" width="2620" height="1492" class="img_ev3q"></p>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="configure-a-test">Configure a test<a href="#configure-a-test" class="hash-link" aria-label="Direct link to Configure a test" title="Direct link to Configure a test">​</a></h3>
+<p>You can configure your own passing condition of your project test to help decide which cases to focus on.</p>
+<p>You might need to pay more attention as the number of rows in a table increases. For example, you might have a customer churn use case where many customers have a few comments (represented by rows in a table), but you need to change course when the number of customer comments exceeds a threshold of five comments. Configuring your test can help you identify and take action, such as assigning more resources to assist that customer.</p>
+<p>To configure a test, follow these steps:</p>
+<ol>
+<li>
+<p>Click on the test to open the test details.</p>
+</li>
+<li>
+<p>Enter conditional values for the following options:</p>
+<p><img decoding="async" loading="lazy" alt="Configure a test" src="/assets/images/project-test-config-185139bb932cb14e7c17fb6f8c8f3e43.png" width="2620" height="1509" class="img_ev3q"></p>
+<ul>
+<li>
+<p><strong>(A)</strong> <strong>Failure Calculation</strong>: Sets the failure condition used to run against the test result. You can use the <code>count()</code> function on a column or multiple columns.</p>
+</li>
+<li>
+<p><strong>(B)</strong> <strong>Limit</strong>: Sets the maximum number of failures returned by a test query. You can set the limit to save resources and time by having the test stop its query as soon as it encounters a certain number of failed rows.</p>
+</li>
+<li>
+<p><strong>(C)</strong> <strong>Severity</strong>: Determines whether the failure of the test returns an error or warning. The severity operates from the highest priority selection, error, to the lowest, warning. So if you select error, then the test first checks for errors. If it doesn’t find any, then it then checks for warnings. If you select warning, then the test only checks for warnings. If you don’t select a severity, then error is chosen by default.</p>
+</li>
+<li>
+<p><strong>(D)</strong> <strong>Error If</strong> and <strong>(E)</strong> <strong>Warning If</strong>: Sets the number of failed rows to determine a failed test. Depending on the selected severity, your test only returns a failed test for error checks. Warning won’t return a failed test.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
 </li>
 </ol>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="run-a-test">Run a test<a href="#run-a-test" class="hash-link" aria-label="Direct link to Run a test" title="Direct link to Run a test">​</a></h3>
@@ -73,36 +103,6 @@
 </ul>
 <div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>Make sure you have write permission to create a new table in your data warehouse, otherwise you may run into errors while trying to run your own tests.</p></div></div>
 <p>By default, project tests are configured to fail if the table has one or more rows. You can also modify the passing condition of your test through advanced options.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="configure-a-test">Configure a test<a href="#configure-a-test" class="hash-link" aria-label="Direct link to Configure a test" title="Direct link to Configure a test">​</a></h2>
-<p>You can configure your own passing condition of your project test to help decide which cases to focus on.</p>
-<p>You might need to pay more attention as the number of rows in a table increases. For example, you might have a customer churn use case where many customers have a few comments (represented by rows in a table), but you need to change course when the number of customer comments exceeds a threshold of five comments. Configuring your test can help you identify and take action, such as assigning more resources to assist that customer.</p>
-<p>To configure a test, follow these steps:</p>
-<ol>
-<li>
-<p>Click on the test to open the test details.</p>
-</li>
-<li>
-<p>Enter conditional values for the following options:</p>
-<p><img decoding="async" loading="lazy" alt="Configure a test" src="/assets/images/project-test-config-185139bb932cb14e7c17fb6f8c8f3e43.png" width="2620" height="1509" class="img_ev3q"></p>
-<ul>
-<li>
-<p><strong>(A)</strong> <strong>Failure Calculation</strong>: Sets the failure condition used to run against the test result. You can use the <code>count()</code> function on a column or multiple columns.</p>
-</li>
-<li>
-<p><strong>(B)</strong> <strong>Limit</strong>: Sets the maximum number of failures returned by a test query. You can set the limit to save resources and time by having the test stop its query as soon as it encounters a certain number of failed rows.</p>
-</li>
-<li>
-<p><strong>(C)</strong> <strong>Severity</strong>: Determines whether the failure of the test returns an error or warning. The severity operates from the highest priority selection, error, to the lowest, warning. So if you select error, then the test first checks for errors. If it doesn’t find any, then it then checks for warnings. If you select warning, then the test only checks for warnings. If you don’t select a severity, then error is chosen by default.</p>
-</li>
-<li>
-<p><strong>(D)</strong> <strong>Error If</strong> and <strong>(E)</strong> <strong>Warning If</strong>: Sets the number of failed rows to determine a failed test. Depending on the selected severity, your test only returns a failed test for error checks. Warning won’t return a failed test.</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Click <strong>Save</strong>.</p>
-</li>
-</ol>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="schedule-a-test">Schedule a test<a href="#schedule-a-test" class="hash-link" aria-label="Direct link to Schedule a test" title="Direct link to Schedule a test">​</a></h2>
 <p>When scheduling your project, you can opt in to run a test along with the project or model. Scheduling a test allows you to ensure on a daily basis that your data is correct. You can only schedule a test with a project or model. You cannot schedule one individually.</p>
 <p>To Schedule your project to run with tests, follow these steps:</p>
@@ -130,6 +130,6 @@
 <p>Click <strong>Save</strong>.</p>
 </li>
 </ol>
-<p>The job runs automatically. You can see the job status by clicking <strong>Detail</strong>.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-tags-row"><div class="col"><b>Tags:</b><ul class="tags_jXut padding--none margin-left--sm"><li class="tag_QGVx"><a class="tag_zVej tagRegular_sFm0" href="/tags/how-to">how-to</a></li><li class="tag_QGVx"><a class="tag_zVej tagRegular_sFm0" href="/tags/testing">testing</a></li><li class="tag_QGVx"><a class="tag_zVej tagRegular_sFm0" href="/tags/sql">sql</a></li></ul></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/analysts/model-column-tests"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Use model and column tests</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/analysts/versioning"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Versioning</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#set-up-a-test" class="table-of-contents__link toc-highlight">Set up a test</a><ul><li><a href="#develop-a-test" class="table-of-contents__link toc-highlight">Develop a test</a></li><li><a href="#run-a-test" class="table-of-contents__link toc-highlight">Run a test</a></li></ul></li><li><a href="#fix-a-failed-test" class="table-of-contents__link toc-highlight">Fix a failed test</a></li><li><a href="#configure-a-test" class="table-of-contents__link toc-highlight">Configure a test</a></li><li><a href="#schedule-a-test" class="table-of-contents__link toc-highlight">Schedule a test</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Prophecy</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://www.prophecy.io/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Home<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://www.prophecy.io/blogs" target="_blank" rel="noopener noreferrer" class="footer__link-item">Blog<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://join.slack.com/t/prophecy-io-support/shared_invite/zt-1dwuvkakg-JcavnQuoukyZ3q5jkSkKCg" target="_blank" rel="noopener noreferrer" class="footer__link-item">Slack<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="mailto:docs@prophecy.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">Documentation feedback<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://app.prophecy.io/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Login<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">© 2025 Prophecy Inc All Rights Reserved <a href="https://legal.prophecy.io/privacy" target="_blank">Privacy Policy</a></div></div></div></footer></div>
+<p>The job runs automatically. You can see the job status by clicking <strong>Detail</strong>.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-tags-row"><div class="col"><b>Tags:</b><ul class="tags_jXut padding--none margin-left--sm"><li class="tag_QGVx"><a class="tag_zVej tagRegular_sFm0" href="/tags/how-to">how-to</a></li><li class="tag_QGVx"><a class="tag_zVej tagRegular_sFm0" href="/tags/testing">testing</a></li><li class="tag_QGVx"><a class="tag_zVej tagRegular_sFm0" href="/tags/sql">sql</a></li></ul></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/analysts/model-column-tests"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Use model and column tests</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/analysts/versioning"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Versioning</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#set-up-a-test" class="table-of-contents__link toc-highlight">Set up a test</a><ul><li><a href="#develop-a-test" class="table-of-contents__link toc-highlight">Develop a test</a></li><li><a href="#configure-a-test" class="table-of-contents__link toc-highlight">Configure a test</a></li><li><a href="#run-a-test" class="table-of-contents__link toc-highlight">Run a test</a></li></ul></li><li><a href="#fix-a-failed-test" class="table-of-contents__link toc-highlight">Fix a failed test</a></li><li><a href="#schedule-a-test" class="table-of-contents__link toc-highlight">Schedule a test</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Prophecy</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://www.prophecy.io/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Home<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://www.prophecy.io/blogs" target="_blank" rel="noopener noreferrer" class="footer__link-item">Blog<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://join.slack.com/t/prophecy-io-support/shared_invite/zt-1dwuvkakg-JcavnQuoukyZ3q5jkSkKCg" target="_blank" rel="noopener noreferrer" class="footer__link-item">Slack<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="mailto:docs@prophecy.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">Documentation feedback<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://app.prophecy.io/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Login<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">© 2025 Prophecy Inc All Rights Reserved <a href="https://legal.prophecy.io/privacy" target="_blank">Privacy Policy</a></div></div></div></footer></div>
 </body>
 </html>
