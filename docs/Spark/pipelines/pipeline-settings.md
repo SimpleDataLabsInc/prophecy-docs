@@ -37,7 +37,7 @@ Review the various settings available for each pipeline, including Spark setting
 | Custom Application Name                  | The name of the Spark job that appears in the Spark interface.                                                                                                                                                                    |
 | Allow Configuration Updates (Scala only) | When enabled, you can override configuration values using a script.<br />For example, if you add a Script gem to the pipeline, you can write something like `Config.current_date_var = "2024"` to set the value of that variable. |
 | Enable pipeline monitoring               | The option to turn pipeline monitoring on or off.                                                                                                                                                                                 |
-| Enable jinja based configuration         | The option to turn <a href="../pipelines/configuration#syntax">jinja-based</a> configuration on or off.                                                                                                                           |
+| Enable jinja based configuration         | The option to turn [jinja syntax](/engineers/configurations#syntax) on or off.                                                                                                                                                    |
 
 </div>
 
@@ -45,9 +45,9 @@ Review the various settings available for each pipeline, including Spark setting
 
 <div className="fixed-table">
 
-| Setting         | Description                                                                                                                                                                                                                                                                                                                           |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Visual Language | The programming language (SQL, Scala, or Python) used for expressions inside of gems. If you change the visual language while developing your pipeline, Prophecy will automatically convert expressions into the chosen language. The <a href="../gems/expression-builder">Expression Builder</a> will adapt to the language as well. |
+| Setting         | Description                                                                                                                                                                                                                                                                                                                   |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Visual Language | The programming language (SQL, Scala, or Python) used for expressions inside of gems. If you change the visual language while developing your pipeline, Prophecy will automatically convert expressions into the chosen language. The [Expression Builder](/engineers/expression-builder) will adapt to the language as well. |
 
 </div>
 
@@ -70,7 +70,7 @@ Review the various settings available for each pipeline, including Spark setting
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Limit Input Records | When enabled, this limits the number of rows being operated on, makes development time faster, and reduces computation cost. Depending on how your pipeline is constructed, you might run into some issues when limiting records. If the number of records is too small, you might accidentally exclude records that, for example, match a join condition. This would result in an empty output. |
 | Data Sampling       | Data sampling is enabled by default so you can view interim data samples while developing your pipeline. Learn about different [sampling modes](docs/Spark/execution/data-sampling.md).                                                                                                                                                                                                          |
-| Configuration       | This setting determines which <a href="../pipelines/configuration">configuration</a> will be used during a pipeline run.                                                                                                                                                                                                                                                                         |
+| Configuration       | This setting determines which [configuration](/engineers/configurations) will be used during a pipeline run.                                                                                                                                                                                                                                                                                     |
 
 </div>
 

@@ -17,11 +17,11 @@ Prophecy generates knowledge graphs for SQL projects only. Knowledge graphs are 
 
 ## Overview
 
-Knowledge graphs are generated per-team in Prophecy. Each knowledge graph contains information from fabrics and project entities, including the statistical usages of these entities. It also contains computed fields that further refine Copilot's capabilities.
+Knowledge graphs are generated per [fabric](/fabrics) in Prophecy. Each knowledge graph contains information from fabrics and other entities, including the statistical usages of these entities. It also contains computed fields that further refine Copilot's capabilities.
 
 ![Knowledge Graph](img/copilot_knowledge_graph.png)
 
-:::info Important
+:::info
 Your data itself is never stored in the knowledge graph. For more details, see [Data privacy with Data Copilot](/docs/copilot/copilot-data-privacy.md).
 :::
 
@@ -35,7 +35,7 @@ Once the code is generated, Prophecy validates it and automatically corrects any
 
 When generating the knowledge graph, Prophecy indexes your SQL warehouse connection. To make sure that Copilot and AI agent has the most up-to-date information, you can manually refresh tables to update the knowledge graph index.
 
-:::note
+:::info
 Prophecy only indexes tables from your SQL warehouse. Datasets from external connections are not included in the knowledge graph.
 :::
 
@@ -66,3 +66,17 @@ To refresh tables from the [Environment tab](/analysts/connections#environment-b
 #### Agent suggestion
 
 If the [agent](/analysts/ai-explore#troubleshooting) can’t locate a table during your conversation, it will prompt you to refresh the index.
+
+## Managing scope
+
+Knowledge graphs are generated per fabric. To control which tables Prophecy indexes for a knowledge graph, configure access permissions at the warehouse level. In summary:
+
+- Knowledge graph indexing is determined by the credentials used in your fabric's warehouse connection.
+- To limit indexed tables, restrict permissions for the authentication credentials in your warehouse (e.g., Databricks).
+- This ensures that teams only see tables they have access to in their knowledge graphs.
+
+For example, if your team uses fabrics connected to Databricks warehouses, you would modify the access permissions of the service account or user credentials configured in the fabric connection settings.
+
+:::note
+When a fabric is configured with OAuth authentication, the knowledge graph indexes data using the credentials provided during fabric setup, not the currently logged-in user's credentials. Be aware that these credentials may differ from the active user's, which can affect access and visibility within the knowledge graph.
+:::

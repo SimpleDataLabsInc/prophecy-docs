@@ -16,27 +16,44 @@ Prophecy provides Databricks OAuth to align with industry-standard authenticatio
 To leverage Databricks OAuth in your Prophecy deployment, you need:
 
 - Prophecy 3.4.3.1 or later.
-- An app connection between Databricks and Prophecy. This connection is set up by default in SaaS environments and no further action is needed.
+- An app connection between Databricks and Prophecy. This connection is set up by default in [SaaS](https://app.prophecy.io/).
 
-For Dedicated SaaS and self-hosted deployments, follow the steps below. Prior to performing this one-time registration process, **users will see the OAuth option in fabrics but will be unable to use it.**
+  :::info
+  For Dedicated SaaS and self-hosted deployments, [follow the steps below](#app-connection). Prior to performing this one-time registration process, users will see the OAuth option in fabrics **but will be unable to use it.**
+  :::
 
-### Register Prophecy as an app connection in Databricks {#app-connection}
+## Set up app connection {#app-connection}
+
+Follow these steps to register Prophecy as an app connection in Databricks.
+
+### Create a new app connection in Databricks
 
 First, a Databricks [account admin](https://docs.databricks.com/en/admin/index.html#what-are-account-admins) needs to complete the following steps **once** for your Prophecy deployment:
 
 1. On Databricks, navigate to **Account Settings > App connections** in your account console.
 1. [Create a new App connection](https://docs.databricks.com/en/integrations/enable-disable-oauth.html#enable-custom-oauth-applications-using-the-databricks-ui) for Prophecy. Ensure that:
+
    - Access scopes are set to **ALL APIs**.
-   - The redirect URL contains `<your_prophecy_url>/api/databricks/oauthredirect`.
+   - The redirect URL contains the following URLs:
+
+     ```
+     https://<your_prophecy_url>/api/databricks/oauthredirect
+     https://<your_prophecy_url>/metadata/oauthCallback
+     ```
+
 1. This process generates Databricks OAuth Application fields on the Prophecy side.
 1. Under Client ID, copy your **OAuth Client ID** for the application, and share it with your Prophecy Cluster Admin.
 1. Under Client secret, select **Generate a client secret**. Share it with your Prophecy Cluster Admin.
 1. Click **Save**.
 
+### Add credentials to Prophecy
+
 Then, the Prophecy cluster admin has to add the Databricks credentials to Prophecy:
 
 1. Navigate to **Admin Settings > Security**.
+
 1. Under **Databricks OAuth Application (U2M)**, paste the **Client ID** and the **Client Secret** into the respective fields.
+
 1. Finally, **the Prophecy Kubernetes cluster must be restarted** to enact these changes.
 
 ![Security settings in Prophecy](./img/databricks-oauth-admin.png)
@@ -53,6 +70,8 @@ In Prophecy, you can use Databricks OAuth in two ways: either using user identit
 :::note
 The minimum level of access that your service principal requires (including access to clusters, tables, etc.) will vary per use case.
 :::
+
+## Fabric setup
 
 To learn how to configure Databricks OAuth for different fabric types, see:
 

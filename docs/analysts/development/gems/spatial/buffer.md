@@ -2,7 +2,7 @@
 title: Buffer
 id: buffer
 slug: /analysts/buffer
-description: Buffer
+description: Expand or contracts the boundaries of a polygon or line
 tags:
   - gems
   - analyst

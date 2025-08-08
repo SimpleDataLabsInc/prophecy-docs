@@ -127,6 +127,10 @@ const sidebars = {
                 {
                   type: "category",
                   label: "Tables (Warehouse)",
+                  link: {
+                    type: "doc",
+                    id: "analysts/development/gems/source-target/table/table",
+                  },
                   items: [
                     "analysts/development/gems/source-target/table/databricks",
                     "analysts/development/gems/source-target/table/bigquery",
@@ -136,6 +140,10 @@ const sidebars = {
                 {
                   type: "category",
                   label: "Tables (External systems)",
+                  link: {
+                    type: "doc",
+                    id: "analysts/development/gems/source-target/external-table/table",
+                  },
                   items: [
                     "analysts/development/gems/source-target/external-table/databricks",
                     "analysts/development/gems/source-target/external-table/bigquery",
@@ -175,6 +183,10 @@ const sidebars = {
             {
               type: "category",
               label: "Transform",
+              link: {
+                type: "doc",
+                id: "analysts/development/gems/transform/transform",
+              },
               items: [
                 "analysts/development/gems/transform/aggregate",
                 "analysts/development/gems/transform/dynamic-select",
@@ -187,6 +199,10 @@ const sidebars = {
             {
               type: "category",
               label: "Prepare",
+              link: {
+                type: "doc",
+                id: "analysts/development/gems/prepare/prepare",
+              },
               items: [
                 "analysts/development/gems/prepare/data-cleansing",
                 "analysts/development/gems/prepare/deduplicate",
@@ -203,6 +219,10 @@ const sidebars = {
             {
               type: "category",
               label: "Join",
+              link: {
+                type: "doc",
+                id: "analysts/development/gems/join-split/joins",
+              },
               items: [
                 "analysts/development/gems/join-split/join",
                 "analysts/development/gems/join-split/union",
@@ -215,20 +235,28 @@ const sidebars = {
             {
               type: "category",
               label: "Spatial",
+              link: {
+                type: "doc",
+                id: "analysts/development/gems/spatial/spatial",
+              },
               items: [
                 "analysts/development/gems/spatial/buffer",
                 "analysts/development/gems/spatial/create-point",
                 "analysts/development/gems/spatial/distance",
                 "analysts/development/gems/spatial/find-nearest",
-                "analysts/development/gems/spatial/generalize",
                 "analysts/development/gems/spatial/heatmap",
                 "analysts/development/gems/spatial/polybuild",
+                "analysts/development/gems/spatial/simplify",
                 "analysts/development/gems/spatial/spatial-match",
               ],
             },
             {
               type: "category",
               label: "Parse",
+              link: {
+                type: "doc",
+                id: "analysts/development/gems/parse/parse",
+              },
               items: [
                 "analysts/development/gems/parse/json-parse",
                 "analysts/development/gems/parse/xml-parse",
@@ -238,6 +266,10 @@ const sidebars = {
             {
               type: "category",
               label: "Report",
+              link: {
+                type: "doc",
+                id: "analysts/development/gems/report/report",
+              },
               items: [
                 "analysts/development/gems/report/email",
                 "analysts/development/gems/report/power-bi",
@@ -248,6 +280,10 @@ const sidebars = {
             {
               type: "category",
               label: "Custom",
+              link: {
+                type: "doc",
+                id: "analysts/development/gems/custom/custom",
+              },
               items: [
                 "analysts/development/gems/custom/sql-statement",
                 "analysts/development/gems/custom/rest-api",
@@ -972,7 +1008,15 @@ const sidebars = {
       ],
     },
   ],
-  apiSidebar: ["api/index", "api/trigger-pipeline/trigger-pipeline-api"],
+  apiSidebar: [
+    "api/index",
+    {
+      type: "category",
+      label: "Trigger Pipeline API",
+      link: { type: "doc", id: "api/trigger-pipeline/trigger-pipeline-api" },
+      items: ["api/trigger-pipeline/rest-api-gem-trigger"],
+    },
+  ],
 };
 
 module.exports = sidebars;
