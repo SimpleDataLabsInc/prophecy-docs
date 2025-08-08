@@ -35,6 +35,30 @@ To develop a project test, start by opening a project:
 
    ![Project test canvas](img/project-test-canvas.png)
 
+### Configure a test
+
+You can configure your own passing condition of your project test to help decide which cases to focus on.
+
+You might need to pay more attention as the number of rows in a table increases. For example, you might have a customer churn use case where many customers have a few comments (represented by rows in a table), but you need to change course when the number of customer comments exceeds a threshold of five comments. Configuring your test can help you identify and take action, such as assigning more resources to assist that customer.
+
+To configure a test, follow these steps:
+
+1. Click on the test to open the test details.
+
+2. Enter conditional values for the following options:
+
+   ![Configure a test](img/project-test-config.png)
+
+   - **(A)** **Failure Calculation**: Sets the failure condition used to run against the test result. You can use the `count()` function on a column or multiple columns.
+
+   - **(B)** **Limit**: Sets the maximum number of failures returned by a test query. You can set the limit to save resources and time by having the test stop its query as soon as it encounters a certain number of failed rows.
+
+   - **(C)** **Severity**: Determines whether the failure of the test returns an error or warning. The severity operates from the highest priority selection, error, to the lowest, warning. So if you select error, then the test first checks for errors. If it doesn’t find any, then it then checks for warnings. If you select warning, then the test only checks for warnings. If you don’t select a severity, then error is chosen by default.
+
+   - **(D)** **Error If** and **(E)** **Warning If**: Sets the number of failed rows to determine a failed test. Depending on the selected severity, your test only returns a failed test for error checks. Warning won’t return a failed test.
+
+3. Click **Save**.
+
 ### Run a test
 
 After you’ve developed your project test and executed all of your models, you can run the test.
@@ -77,30 +101,6 @@ Make sure you have write permission to create a new table in your data warehouse
 :::
 
 By default, project tests are configured to fail if the table has one or more rows. You can also modify the passing condition of your test through advanced options.
-
-## Configure a test
-
-You can configure your own passing condition of your project test to help decide which cases to focus on.
-
-You might need to pay more attention as the number of rows in a table increases. For example, you might have a customer churn use case where many customers have a few comments (represented by rows in a table), but you need to change course when the number of customer comments exceeds a threshold of five comments. Configuring your test can help you identify and take action, such as assigning more resources to assist that customer.
-
-To configure a test, follow these steps:
-
-1. Click on the test to open the test details.
-
-2. Enter conditional values for the following options:
-
-   ![Configure a test](img/project-test-config.png)
-
-   - **(A)** **Failure Calculation**: Sets the failure condition used to run against the test result. You can use the `count()` function on a column or multiple columns.
-
-   - **(B)** **Limit**: Sets the maximum number of failures returned by a test query. You can set the limit to save resources and time by having the test stop its query as soon as it encounters a certain number of failed rows.
-
-   - **(C)** **Severity**: Determines whether the failure of the test returns an error or warning. The severity operates from the highest priority selection, error, to the lowest, warning. So if you select error, then the test first checks for errors. If it doesn’t find any, then it then checks for warnings. If you select warning, then the test only checks for warnings. If you don’t select a severity, then error is chosen by default.
-
-   - **(D)** **Error If** and **(E)** **Warning If**: Sets the number of failed rows to determine a failed test. Depending on the selected severity, your test only returns a failed test for error checks. Warning won’t return a failed test.
-
-3. Click **Save**.
 
 ## Schedule a test
 
