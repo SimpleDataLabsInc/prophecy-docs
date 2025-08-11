@@ -6,6 +6,10 @@ description: Spark streaming sources and targets
 tags: []
 ---
 
+:::caution
+Prophecy no longer provides support for streaming pipelines. Please switch to batch pipelines for continued support.
+:::
+
 Spark streaming sources and targets include the following topics:
 
 ```mdx-code-block

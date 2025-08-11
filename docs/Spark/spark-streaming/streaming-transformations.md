@@ -8,6 +8,10 @@ tags:
   - streaming
 ---
 
+:::caution
+Prophecy no longer provides support for streaming pipelines. Please switch to batch pipelines for continued support.
+:::
+
 ## Transformation Gems
 
 Transform gems that generate code but do not work within Streaming Applications include `OrderBy`, `Limit`, and `Window` (partitionBy).

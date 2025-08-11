@@ -9,6 +9,10 @@ tags:
   - kafka
 ---
 
+:::caution
+Prophecy no longer provides support for streaming pipelines. Please switch to batch pipelines for continued support.
+:::
+
 ## Event-based Sources and Targets
 
 Prophecy supports **Kafka Streaming** Source and Target. More information on supported Kafka Source and Target options are available [here](https://spark.apache.org/docs/latest/structured-streaming-kafka-integration.html).
