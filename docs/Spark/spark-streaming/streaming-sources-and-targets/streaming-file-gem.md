@@ -12,6 +12,10 @@ tags:
   - hdfs
 ---
 
+:::caution
+Prophecy no longer provides support for streaming pipelines. Please switch to batch pipelines for continued support.
+:::
+
 ## File-based Streaming Sources and Targets
 
 For file stream sources, incoming data files are incrementally and efficiently processed as they arrive in cloud storage. No additional setup is necessary, and cloud storage only needs to be accessible from the User's fabric.

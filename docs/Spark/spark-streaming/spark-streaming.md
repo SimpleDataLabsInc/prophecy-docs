@@ -6,6 +6,10 @@ description: Prophecy Streaming Gems
 tags: [streaming, gems, source, target]
 ---
 
+:::caution
+Prophecy no longer provides support for streaming pipelines. Please switch to batch pipelines for continued support.
+:::
+
 Prophecy provides native support for streaming data running on Spark Structured Streaming. This documentation assumes you are already familiar with how Structured Streaming works. For more information, you can consult the Structured Streaming documentation [here](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html).
 
 Streaming [pipelines](/engineers/pipelines) work differently from batch pipelines:
