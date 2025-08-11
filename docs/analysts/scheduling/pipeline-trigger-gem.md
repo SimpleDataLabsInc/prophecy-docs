@@ -9,9 +9,9 @@ tags:
   - gem
 ---
 
-The Pipeline gem allows you to launch another pipeline from within your current pipeline. It consumes input data, evaluates trigger conditions, optionally passes parameters to the downstream pipeline, and outputs metadata about the triggered run.
+The Pipeline gem allows you to run another pipeline from within your current pipeline. It supports conditional triggering, parameter passing, and metadata return for each run. Each Pipeline gem execution can trigger the target pipeline multiple times, with each instance running sequentially. The gem completes only after all triggered runs finish.
 
-This is useful for building orchestrated workflows directly in the visual canvas. You’ll find the gem under the **Custom** category in the gem drawer. The gem only completes execution only after the triggered pipeline finishes running.
+This is useful for building orchestrated workflows directly in the visual canvas. You’ll find the gem under the **Custom** category in the gem drawer.
 
 :::tip
 You can create pipelines solely dedicated to pipeline orchestration using multiple instances of this gem. Clearly label your orchestration pipelines to differentiate them from standard data pipelines.
@@ -97,8 +97,10 @@ You can define the pipeline trigger condition by choosing from the following lis
 
 Prophecy supports the following execution behaviors when running a Pipeline gem.
 
-- **Sequential triggering**: Pipeline gems wait for upstream pipelines to finish when multiple Pipeline gems are configured sequentially or are configured with different [gem phases](/analysts/gems/#gem-phase).
+- **Sequential execution**: When one Pipeline gem triggers a target pipeline multiple times, pipeline instances run sequentially. The Pipeline gem does not finish running until all instances of the target pipeline finish running.
+
+- **Sequential triggering**: Pipeline gems wait for upstream pipelines to finish running when multiple Pipeline gems are configured sequentially or are configured with sequential [gem phases](/analysts/gems/#gem-phase).
 
 - **Parallel triggering**: The gem supports parallel execution when separate pipeline branches have the same gem phase.
 
-- **Recursive triggers**: Recursive execution is supported. If a triggered pipeline contains another Pipeline Trigger gem, it will execute as expected.
+- **Recursive triggers**: Recursive execution is supported. If a triggered pipeline contains another Pipeline gem, it will execute as expected.
