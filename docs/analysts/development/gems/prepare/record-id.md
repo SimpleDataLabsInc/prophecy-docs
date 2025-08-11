@@ -31,7 +31,6 @@ The UUID method assigns a universally unique identifier (UUID) to each row. Thes
 | Parameter          | Description                                                                        |
 | ------------------ | ---------------------------------------------------------------------------------- |
 | Output Column Name | Name of the new column where the generated UUIDs will be stored.                   |
-| Data type          | Select **integer** or **string** as the output type of the record ID values.       |
 | Column position    | Choose to **add as first column** or **add as last column** in the output dataset. |
 
 ### Incremental ID
