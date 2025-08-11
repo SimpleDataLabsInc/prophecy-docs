@@ -27,7 +27,7 @@ When you create a project in Prophecy, You can either choose a Prophecy-managed 
 
 To add an external Git account to your Prophecy environment:
 
-1. Open **Settings** from the ellipses menu in the left sidebar.
+1. Open **[Settings](/administration/settings)** from the ellipses menu in the left sidebar.
 1. Select the **Git** tab. You will see any existing Git credentials here.
 1. Click **Add new**.
 1. Choose the relevant **Git Provider** and provide the following details:
@@ -41,11 +41,25 @@ You can also enter new Git credentials directly when creating a new project.
 
 ### Share credentials
 
-You can share your Git credentials with teams in Prophecy to let team members access Git repositories without giving them direct access to your Git provider (e.g., GitHub or GitLab). This is useful when you want users to work within Prophecy but not sign in to the Git provider through the browser or CLI, for instance.
+In Prophecy, you can share your Git credentials with teams so they can access Git repositories without signing in to your Git provider (for example, GitHub or GitLab). This allows them to work with Prophecy projects in external repositories while keeping your Git provider account private.
+
+Team members with shared access can:
+
+- Connect new Prophecy projects to repositories available to the connected Git account.
+- Access existing Prophecy projects already connected to repositories in the connected Git account.
+- Migrate Prophecy projects from Prophecy-managed Git to an external repository in the connected Git account.
+
+In **Settings > Git**, you'll see your credential split into three sections:
+
+- **Personal Git Credentials**: Credentials you own that are available only to you..
+- **Team Credentials (Owned by you)**: Credentials you own and have shared with teams.
+- **Team Credentials (Shared with you)**: Credentials owned by others and shared with you.
 
 To share credentials, select the **Share credentials with teams** checkbox when adding or editing your Git credentials, and choose the teams you want to share them with.
 
-Teams members with access to your shared credentials will be able to connect projects in Prophecy to existing repositories accessible to the account associated with the credentials.
+:::note
+You can only edit the credentials you own. You cannot modify credentials that have been shared with you.
+:::
 
 ### GitHub Oauth
 
