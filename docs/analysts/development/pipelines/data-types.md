@@ -59,5 +59,14 @@ These data types correspond to the [data types in BigQuery](https://cloud.google
 | Bytes      | Represents variable-length binary data.                                                         |
 | String     | Represents variable-length character strings.                                                   |
 
+:::info
+
+Prophecy does not support BigQuery `Interval`, `Geography`, or `JSON` data types directly.
+
+- **Geography / JSON:** Serialized and stored as strings.
+- **Interval:** Converted to a month-day-nano interval type for display and processing.
+
+:::
+
 </TabItem>
 </Tabs>
