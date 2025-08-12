@@ -34,14 +34,14 @@ The DynamicInput gem uses the following input and output ports.
 
 Configure the DynamicInput gem using the following parameters.
 
-| Parameter                   | Description                                                                                                      |
-| --------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| Select Read Options         | The `Modify SQL Query` option denotes that the gem reads data using a dynamically modified SQL query.            |
-| Table Connection Type       | Select type of data source connection.                                                                           |
-| Select or create connection | Choose an existing connection or create a new one for the selected source.                                       |
-| Table or Query              | Write a SQL query template that will be used to retrieve data. Can include placeholders for dynamic replacement. |
-| Pass fields to the Output   | Select specific columns that contain the data you will use to replace strings.                                   |
-| Replace a Specific String   | Reference a static text value to replace in the query, and select the column with replacement values.            |
+| Parameter                   | Description                                                                                                        |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| Select Read Options         | The `Modify SQL Query` option denotes that the gem reads data using a dynamically modified SQL query.              |
+| Table Connection Type       | Select the type of [data ingress/egress connection](/administration/fabrics/prophecy-fabrics/connections/) to use. |
+| Select or create connection | Choose an existing connection or create a new one for the selected source.                                         |
+| Table or Query              | Write a SQL query template that will be used to retrieve data. Can include placeholders for dynamic replacement.   |
+| Pass fields to the Output   | Select specific columns that contain the data you will use to replace strings.                                     |
+| Replace a Specific String   | Reference a static text value to replace in the query, and select the column with replacement values.              |
 
 ## Example
 

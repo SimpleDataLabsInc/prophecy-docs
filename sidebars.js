@@ -290,6 +290,7 @@ const sidebars = {
                 id: "analysts/development/gems/custom/custom",
               },
               items: [
+                "analysts/development/gems/custom/directory",
                 "analysts/development/gems/custom/dynamic-input",
                 "analysts/development/gems/custom/macro",
                 "analysts/development/gems/custom/rest-api",
