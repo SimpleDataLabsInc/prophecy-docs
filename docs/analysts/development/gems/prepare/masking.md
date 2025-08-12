@@ -60,12 +60,12 @@ Choose one of the following techniques to obfuscate string data. Some methods su
 
 Replaces characters in each string with substitute characters based on character type. Applies individually to each selected column. This method lets you optionally define the following additional parameters:
 
-| Name                      | Description                                                                                   |
-| ------------------------- | --------------------------------------------------------------------------------------------- |
-| Upper char substitute key | Character to replace uppercase letters. Default is `'X'`. Use `NULL` to keep the original.    |
-| Lower char substitute key | Character to replace lowercase letters. Default is `'x'`. Use `NULL` to keep the original.    |
-| Digit char substitute key | Character to replace digits. Default is `'n'`. Use `NULL` to keep the original.               |
-| Other char substitute key | Character to replace all other characters. Default is `'*'`. Use `NULL` to keep the original. |
+| Name                      | Description                                                                                                      |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Upper char substitute key | Character to replace uppercase letters. Default is `'X'`. Use `NULL` to keep the original.                       |
+| Lower char substitute key | Character to replace lowercase letters. Default is `'x'`. Use `NULL` to keep the original.                       |
+| Digit char substitute key | Character to replace digits. Default is `'n'`. Use `NULL` to keep the original.                                  |
+| Other char substitute key | Character to replace all other characters. The default is `NULL`, which leaves the original characters unmasked. |
 
 #### `hash`
 
@@ -84,7 +84,9 @@ Applies the SHA-1 hash function to each selected column. This method has no addi
 
 #### `sha2`
 
-Applies the SHA-2 hashing algorithm to each selected column. This method has no additional parameters.
+Applies the SHA-2 hashing algorithm to each selected column. This method lets you select the bit length for masking:
+
+- Bit length can be `224`, `256`, `384`, or `512`.
 
 #### `md5`
 
@@ -92,4 +94,4 @@ Applies the MD5 hash function to each selected column. This method has no additi
 
 ## Example
 
-Assume you have a table that you would like to mask using the `mask` method. Using the default mask parameters, the string `John.Doe123!` will be converted to `Xxxx.Xxxnnn*`.
+Assume you have a table that you would like to mask using the `mask` method. Using the default mask parameters, the string `John.Doe123!` will be converted to `Xxxx.Xxxnnn!`.

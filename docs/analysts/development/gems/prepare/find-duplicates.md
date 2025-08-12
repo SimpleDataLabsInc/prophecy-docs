@@ -52,11 +52,11 @@ Choose what to include in the output results. For each strategy, if you did not 
 
 #### Unique
 
-Returns the first occurrence of each row in a group, regardless of frequency. Use this strategy for deduplication when you want to keep one record per group.
+Returns the first row in each group. All other rows in the group are considered duplicates and are excluded.
 
 #### Duplicate
 
-Returns the first occurrence of each row that appears more than once in a group. Use this strategy to see which values have duplicates.
+Returns all rows in a group except the first one. This is the inverse of Unique.
 
 #### Custom group count
 
@@ -90,7 +90,7 @@ In the **Row number** field, specify the position value.
 Row numbering starts at 1 for each group.
 :::
 
-## Example
+## Example: Custom group count
 
 Given the following product catalog dataset:
 
@@ -114,8 +114,49 @@ If you configure the gem with the following settings:
 
 The gem creates the following groups:
 
-- laptop + us-east: 3 occurrences
-- tablet + us-east: 1 occurrence
-- laptop + us-west: 1 occurrence
+- `laptop` + `us-east`: 3 occurrences
+- `tablet` + `us-east`: 1 occurrence
+- `laptop` + `us-west`: 1 occurrence
 
 The output returns rows `005`, `003`, and `001` (laptop in us-east group) because this group appears exactly 3 times. The rows are ordered by most recent update date first.
+
+## Example: Custom row number
+
+Given the following sales transactions dataset:
+
+<div class="table-example">
+
+| transaction_id | customer_id | date       | amount |
+| -------------- | ----------- | ---------- | ------ |
+| T001           | C101        | 2024-01-05 | 120.00 |
+| T002           | C101        | 2024-02-10 | 250.00 |
+| T003           | C102        | 2024-01-07 | 75.00  |
+| T004           | C101        | 2024-03-15 | 300.00 |
+| T005           | C102        | 2024-02-20 | 150.00 |
+
+</div>
+
+If you configure the gem with the following settings:
+
+- **Group by**: `customer_id`
+- **Order by**: `date` (descending)
+- **Output strategy**: Row number greater than 1
+
+The gem creates the following groups:
+
+- `C101`: 3 occurrences
+- `C102`: 2 occurrences
+
+The output keeps only rows whose position in the sorted order within their group is greater than 1.
+
+<div class="table-example">
+
+| transaction_id | customer_id | date       | amount |
+| -------------- | ----------- | ---------- | ------ |
+| T002           | C101        | 2024-02-10 | 250.00 |
+| T001           | C101        | 2024-01-05 | 120.00 |
+| T003           | C102        | 2024-01-07 | 75.00  |
+
+</div>
+
+This output excludes the first (most recent) transaction from each customer group and returns all remaining transactions. Groups with only one row would not appear in the results.
