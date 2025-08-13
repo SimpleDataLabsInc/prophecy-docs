@@ -147,6 +147,7 @@ const sidebars = {
                   items: [
                     "analysts/development/gems/source-target/external-table/databricks",
                     "analysts/development/gems/source-target/external-table/bigquery",
+                    "analysts/development/gems/source-target/external-table/synapse",
                     "analysts/development/gems/source-target/external-table/snowflake",
                     "analysts/development/gems/source-target/external-table/mssql",
                     "analysts/development/gems/source-target/external-table/mongodb",
@@ -932,6 +933,7 @@ const sidebars = {
               items: [
                 "administration/fabrics/prophecy-fabrics/connections/redshift",
                 "administration/fabrics/prophecy-fabrics/connections/s3",
+                "administration/fabrics/prophecy-fabrics/connections/synapse",
                 "administration/fabrics/prophecy-fabrics/connections/databricks",
                 "administration/fabrics/prophecy-fabrics/connections/bigquery",
                 "administration/fabrics/prophecy-fabrics/connections/onedrive",

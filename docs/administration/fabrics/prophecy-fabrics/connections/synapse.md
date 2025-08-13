@@ -1,5 +1,6 @@
 ---
-title: Azure Synapse
+title: Azure Synapse dedicated SQL pools
+sidebar_label: Azure Synapse
 id: synapse
 description: Learn how to connect with Azure Synapse
 tags:
@@ -7,11 +8,11 @@ tags:
   - synapse
 ---
 
-Azure Synapse Analytics is a comprehensive analytics platform that includes multiple engines. Prophecy's Synapse connector specifically targets the SQL database engine portion of that platform. This page describes how to use and configure a connection to Azure Synapse in Prophecy.
+Prophecy's Azure Synapse connector supports connecting to [dedicated SQL pools](https://learn.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is) that run Microsoft SQL Server (MSSQL). Use this connection instead of the [MSSQL connection](/administration/fabrics/prophecy-fabrics/connections/mssql) when you host MSSQL in Azure Synapse dedicated SQL pool. This page describes how to set up the connection.
 
 ## Prerequisites
 
-Prophecy connects to Azure Synapse using the database credentials you provide. These credentials are used to authenticate your session and authorize all data operations during pipeline execution. To use an Synapse connection effectively, your user account must have:
+Prophecy connects to Azure Synapse using the database credentials you provide. These credentials are used to authenticate your session and authorize all data operations during pipeline execution. To use an Azure Synapse connection effectively, your user account must have:
 
 - `SELECT`, `INSERT`, `UPDATE`, and `DELETE` on the tables used in your Prophecy pipelines.
 - Access to the database and schema where tables are located.
@@ -30,14 +31,14 @@ The table below outlines whether the connection supports certain Prophecy featur
 
 To create a connection with Azure Synapse, enter the following parameters:
 
-| Parameter                                                            | Description                                                     |
-| -------------------------------------------------------------------- | --------------------------------------------------------------- |
-| Connection Name                                                      | Name to identify your connection                                |
-| Server                                                               | Address of the server to connect to                             |
-| Port                                                                 | Port to use for the connection                                  |
-| Username                                                             | Username for Synapse authentication                             |
-| Database                                                             | Name of the specific SQL database within your Synapse SQL pool. |
-| Password ([Secret required](docs/administration/secrets/secrets.md)) | Password for Synapse authentication                             |
+| Parameter                                                            | Description                                                    |
+| -------------------------------------------------------------------- | -------------------------------------------------------------- |
+| Connection Name                                                      | Name to identify your connection                               |
+| Server                                                               | Address of the server to connect to                            |
+| Port                                                                 | Port to use for the connection                                 |
+| Username                                                             | Username for Synapse authentication                            |
+| Database                                                             | Name of the specific SQL database within your Synapse SQL pool |
+| Password ([Secret required](docs/administration/secrets/secrets.md)) | Password for Synapse authentication                            |
 
 ## Sharing connections within teams
 

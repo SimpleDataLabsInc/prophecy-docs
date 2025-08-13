@@ -1,8 +1,9 @@
 ---
-title: Azure Synapse
+title: MSSQL on Azure Synapse dedicated SQL pool
+sidebar_label: Azure Synapse
 id: synapse
 slug: /analysts/synapse
-description: Read and write from Azure Synapse
+description: Read and write from an Azure Synapse dedicated SQL pool
 tags: []
 ---
 
@@ -14,7 +15,7 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
   sql_package_version="4.1.3+"
 />
 
-This page describes how to configure Azure Synapse Source gems to read from your Azure Synapse connection in a Prophecy pipeline.
+This page describes how to configure Source gems to read from Microsoft SQL Server hosted on Azure Synapse dedicated SQL pools.
 
 ## Configuration tabs
 
@@ -27,17 +28,17 @@ When you create a new external Source gem, the gem dialog contains the following
 
 ## Source configuration
 
-Use these settings to configure an Synapse Source gem for reading data.
+Use these settings to configure a Source gem for reading data from Azure Synapse.
 
 ### Source location
 
-| Parameter                   |                                                                                                                                                | Description |
-| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| Format type                 | Table format for the source. For Synapse tables, set to `synapse`.                                                                             |
-| Select or create connection | Select or create a new [Synapse connection](/administration/fabrics/prophecy-fabrics/connections/synapse) in the Prophecy fabric you will use. |
-| Database                    | Database containing the table you want to read from.                                                                                           |
-| Schema                      | Schema within the database where the table is located.                                                                                         |
-| Name                        | Exact name of the table to read data from.                                                                                                     |
+| Parameter                   |                                                                                                                                                      | Description |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| Format type                 | Table format for the source. For Synapse tables, set to `synapse`.                                                                                   |
+| Select or create connection | Select or create a new [Azure Synapse connection](/administration/fabrics/prophecy-fabrics/connections/synapse) in the Prophecy fabric you will use. |
+| Database                    | Database containing the table you want to read from.                                                                                                 |
+| Schema                      | Schema within the database where the table is located.                                                                                               |
+| Name                        | Exact name of the table to read data from.                                                                                                           |
 
 ### Source properties
 
