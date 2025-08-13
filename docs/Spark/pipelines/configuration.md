@@ -117,7 +117,13 @@ You can use the following syntax examples for accessing elements of array and re
 
 Jinja is enabled by default in new pipelines. You can disable Jinja support in **Pipeline Settings > Enable Jinja-based configuration**.
 
-:::note
+### Syntax for Source and Target gems
+
+To use configuration variables for specifying file locations for Source and Target gems, use the following syntax: `${config_variable_name}`.
+
+Jinja syntax is not supported for Source and Target gems.
+
+### Syntax for different languages
 
 Depending on the Visual Language configured in your [Pipeline Settings](/engineers/pipeline-settings), you can also use that language's syntax to call variables.
 
@@ -126,8 +132,6 @@ Depending on the Visual Language configured in your [Pipeline Settings](/enginee
 | SQL             | `'$config_name'`     | `expr('$config_name')`     |
 | Scala           | `Config.config_name` | `expr(Config.config_name)` |
 | Python          | `Config.config_name` | `expr(Config.config_name)` |
-
-:::
 
 ## Runtime configuration
 

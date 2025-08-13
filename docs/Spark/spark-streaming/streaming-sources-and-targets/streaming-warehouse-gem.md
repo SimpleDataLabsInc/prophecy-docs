@@ -11,6 +11,10 @@ tags:
   - splunk
 ---
 
+:::caution
+Prophecy no longer provides support for streaming pipelines. Please switch to batch pipelines for continued support.
+:::
+
 ## Warehouse-based Sources and Targets
 
 Warehouse-based sources and targets are supported. Prophecy also provides Splunk HTTP Event Collector (HEC) Streaming Target.

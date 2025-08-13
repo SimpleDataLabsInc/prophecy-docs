@@ -7,7 +7,24 @@ tags:
   - databricks
 ---
 
-Create a Databricks fabric to connect Prophecy to your existing Databricks workspace. With a Databricks fabric, you can connect to existing Spark clusters or create new ones, run Spark pipelines, and read or write data, depending on your Databricks permissions. The following sections describe the parameters needed to set up a Databricks fabric.
+Create a Databricks fabric to connect Prophecy to your existing Databricks workspace. With a Databricks fabric, you can connect to existing Spark clusters or create new ones, run Spark pipelines, and read or write data, depending on your Databricks permissions.
+
+The following sections describe the parameters needed to set up a Databricks fabric.
+
+:::info
+
+Scala 2.13 is not supported by Prophecy’s Scala libraries.
+
+- Databricks Runtime 16.4 supports both Scala 2.12 and 2.13, but defaults to Scala 2.13.
+- Databricks Runtime 17.0+ only supports Scala 2.13.
+
+If you're using Scala pipelines, make sure to select Scala 2.12 when configuring your cluster with DBR 16.4. You may see the following error in Prophecy if using Scala 2.13:
+
+```
+Library installation attempted on the driver node of cluster 0805-161652-bmq6jitu and failed. Cannot resolve Maven library coordinates. Verify library details, repository access, or Maven repository availability. Error code: ERROR_MAVEN_LIBRARY_RESOLUTION, error message: Library resolution failed because unresolved dependency: io.prophecy:prophecy-libs_2.13:3.5.0-8.11.1: not found
+```
+
+:::
 
 ## Basic Info
 
@@ -82,6 +99,7 @@ To use Prophecy libraries in Databricks environments that have enabled Unity Cat
 :::
 
 :::note
+
 A full list of public paths can be found in the documentation on [Prophecy libraries](/engineers/prophecy-libraries#download-prophecy-libraries). You also can set up [Prophecy libraries in your Databricks volumes](docs/administration/fabrics/Spark-fabrics/databricks/volumns-plibs.md).
 :::
 
