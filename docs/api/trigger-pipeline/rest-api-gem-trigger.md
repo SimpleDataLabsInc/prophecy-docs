@@ -50,6 +50,16 @@ Content-Type: application/json
 X-AUTH-TOKEN: <token-secret>
 ```
 
+:::tip
+
+We recommend that you [store your Prophecy access token as a secret](/administration/fabrics/prophecy-fabrics/#secrets) in your fabric.
+
+You can reference the secret by clicking **+ > Secret** in the value field.
+
+![img](img/restapi-secret.png)
+
+:::
+
 ### Monitoring
 
 When you run the pipeline that includes the RestAPI gem, you will see the following in the [Run History](/analysts/monitoring#run-history) interface:
