@@ -14,6 +14,13 @@ There are two endpoints:
 - [Trigger Deployed Pipeline](#post-trigger-deployed-pipeline) starts the execution of a deployed pipeline.
 - [Pipeline Run Status](#get-pipeline-run-status) gets the status of a triggered pipeline run, including an error message if the pipeline run fails.
 
+## Requirements
+
+To use the Trigger Pipeline API, the pipeline you want to trigger must:
+
+- Run on a [Prophecy fabric](/administration/fabrics/prophecy-fabrics/)
+- Be part of a published project (in other words, the pipeline must be deployed)
+
 ---
 
 ## <span class="request-post">POST</span> Trigger Deployed Pipeline

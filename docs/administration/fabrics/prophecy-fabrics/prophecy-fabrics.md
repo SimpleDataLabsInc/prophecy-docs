@@ -25,6 +25,8 @@ Each of the following sections corresponds to a tab of the fabric settings.
 
 ### Basic Info
 
+The **Basic Info** tab lets you define the key identifiers of the fabric.
+
 | Parameter   | Description                                                                     | Required |
 | ----------- | ------------------------------------------------------------------------------- | -------- |
 | Name        | Name of the fabric.                                                             | Yes      |
@@ -33,6 +35,8 @@ Each of the following sections corresponds to a tab of the fabric settings.
 
 ### Providers
 
+The **Providers** tab allows you to configure what type of execution environment you would like to create.
+
 | Parameter         | Description                                                                                                                                                    | Required |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | Provider Type     | Type of fabric. Choose **Prophecy**.                                                                                                                           | Yes      |
@@ -40,6 +44,8 @@ Each of the following sections corresponds to a tab of the fabric settings.
 | Advanced Settings | Option to use Prophecy Automate from a different networking zone (only applicable if [not deployed in Prophecy network](docs/administration/architecture.md)). | No       |
 
 ### Connections
+
+The **Connections** tab allows you to store your credentials to various external data providers for reuse while attached to the fabric.
 
 | Parameter                  | Description                                                                                                     | Required |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------- | -------- |
@@ -52,9 +58,15 @@ Your SQL warehouse connection gives Prophecy access to both the execution enviro
 
 ### Secrets
 
-| Parameter | Description                                                          | Required                         |
-| --------- | -------------------------------------------------------------------- | -------------------------------- |
-| Secrets   | Encrypted text/binary that can be used by anyone in the fabric team. | Required for certain connections |
+The **Secrets** tab lets you [encrypt your sensitive data](/administration/secrets/), so you can use values without directly exposing them in your projects or pipelines.
+
+| Parameter | Description                                                   | Required                         |
+| --------- | ------------------------------------------------------------- | -------------------------------- |
+| Secrets   | Encrypted data that can be used by anyone in the fabric team. | Required for certain connections |
+
+:::note
+Prophecy fabrics leverage [Prophecy secrets](/administration/secrets/secret-providers#prophecy) to manage both text-based and binary secrets.
+:::
 
 ## Save the fabric
 
