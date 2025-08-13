@@ -147,6 +147,7 @@ const sidebars = {
                   items: [
                     "analysts/development/gems/source-target/external-table/databricks",
                     "analysts/development/gems/source-target/external-table/bigquery",
+                    "analysts/development/gems/source-target/external-table/synapse",
                     "analysts/development/gems/source-target/external-table/snowflake",
                     "analysts/development/gems/source-target/external-table/mssql",
                     "analysts/development/gems/source-target/external-table/mongodb",
@@ -290,11 +291,13 @@ const sidebars = {
                 id: "analysts/development/gems/custom/custom",
               },
               items: [
-                "analysts/development/gems/custom/sql-statement",
-                "analysts/development/gems/custom/rest-api",
+                "analysts/development/gems/custom/directory",
+                "analysts/development/gems/custom/dynamic-input",
                 "analysts/development/gems/custom/macro",
+                "analysts/development/gems/custom/rest-api",
                 "analysts/development/gems/custom/script",
                 "analysts/development/gems/custom/stored-procedure",
+                "analysts/development/gems/custom/sql-statement",
                 "analysts/development/gems/custom/todo",
               ],
             },
@@ -927,6 +930,7 @@ const sidebars = {
               items: [
                 "administration/fabrics/prophecy-fabrics/connections/redshift",
                 "administration/fabrics/prophecy-fabrics/connections/s3",
+                "administration/fabrics/prophecy-fabrics/connections/synapse",
                 "administration/fabrics/prophecy-fabrics/connections/databricks",
                 "administration/fabrics/prophecy-fabrics/connections/bigquery",
                 "administration/fabrics/prophecy-fabrics/connections/onedrive",
