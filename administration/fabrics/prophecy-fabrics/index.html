@@ -7,7 +7,7 @@
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/assets/css/styles.d2a19db1.css">
-<script src="/assets/js/runtime~main.79b7e17f.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.a1b446e8.js" defer="defer"></script>
 <script src="/assets/js/main.cc2bfe39.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -24,14 +24,19 @@
 </ol>
 <p>Each of the following sections corresponds to a tab of the fabric settings.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="basic-info">Basic Info<a href="#basic-info" class="hash-link" aria-label="Direct link to Basic Info" title="Direct link to Basic Info">​</a></h3>
+<p>The <strong>Basic Info</strong> tab lets you define the key identifiers of the fabric.</p>
 <table><thead><tr><th>Parameter</th><th>Description</th><th>Required</th></tr></thead><tbody><tr><td>Name</td><td>Name of the fabric.</td><td>Yes</td></tr><tr><td>Description</td><td>Description of the fabric.</td><td>No</td></tr><tr><td>Team</td><td><a href="/administration/teams-users/teams-users">Team</a> that can access the fabric.</td><td>Yes</td></tr></tbody></table>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="providers">Providers<a href="#providers" class="hash-link" aria-label="Direct link to Providers" title="Direct link to Providers">​</a></h3>
+<p>The <strong>Providers</strong> tab allows you to configure what type of execution environment you would like to create.</p>
 <table><thead><tr><th>Parameter</th><th>Description</th><th>Required</th></tr></thead><tbody><tr><td>Provider Type</td><td>Type of fabric. Choose <strong>Prophecy</strong>.</td><td>Yes</td></tr><tr><td>Provider</td><td>Provider of the primary SQL warehouse. Prophecy supports Databricks, Snowflake, and BigQuery.</td><td>Yes</td></tr><tr><td>Advanced Settings</td><td>Option to use Prophecy Automate from a different networking zone (only applicable if <a href="/administration/architecture">not deployed in Prophecy network</a>).</td><td>No</td></tr></tbody></table>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="connections">Connections<a href="#connections" class="hash-link" aria-label="Direct link to Connections" title="Direct link to Connections">​</a></h3>
+<p>The <strong>Connections</strong> tab allows you to store your credentials to various external data providers for reuse while attached to the fabric.</p>
 <table><thead><tr><th>Parameter</th><th>Description</th><th>Required</th></tr></thead><tbody><tr><td>SQL Warehouse Connection</td><td>Primary SQL warehouse connection. When you use this fabric, all SQL queries will be executed on this warehouse.</td><td>Yes</td></tr><tr><td>Ingress/Egress Connections</td><td>Additional connections to external data providers that can be reused throughout pipelines.</td><td>No</td></tr></tbody></table>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Your SQL warehouse connection gives Prophecy access to both the execution environment and cloud storage of that connection. Additional ingress/egress connections in your fabric are only used for reading and writing data (not pipeline execution).</p></div></div>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="secrets">Secrets<a href="#secrets" class="hash-link" aria-label="Direct link to Secrets" title="Direct link to Secrets">​</a></h3>
-<table><thead><tr><th>Parameter</th><th>Description</th><th>Required</th></tr></thead><tbody><tr><td>Secrets</td><td>Encrypted text/binary that can be used by anyone in the fabric team.</td><td>Required for certain connections</td></tr></tbody></table>
+<p>The <strong>Secrets</strong> tab lets you <a href="/administration/secrets/">encrypt your sensitive data</a>, so you can use values without directly exposing them in your projects or pipelines.</p>
+<table><thead><tr><th>Parameter</th><th>Description</th><th>Required</th></tr></thead><tbody><tr><td>Secrets</td><td>Encrypted data that can be used by anyone in the fabric team.</td><td>Required for certain connections</td></tr></tbody></table>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>Prophecy fabrics leverage <a href="/administration/secrets/secret-providers#prophecy">Prophecy secrets</a> to manage both text-based and binary secrets.</p></div></div>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="save-the-fabric">Save the fabric<a href="#save-the-fabric" class="hash-link" aria-label="Direct link to Save the fabric" title="Direct link to Save the fabric">​</a></h2>
 <p>Once you have configured these parameters:</p>
 <ol>
