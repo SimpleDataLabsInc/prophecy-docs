@@ -8,7 +8,9 @@ tags:
   - synapse
 ---
 
-Prophecy's Azure Synapse connector supports connecting to [dedicated SQL pools](https://learn.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is) that run Microsoft SQL Server (MSSQL). Use this connection instead of the [MSSQL connection](/administration/fabrics/prophecy-fabrics/connections/mssql) when you host MSSQL in Azure Synapse dedicated SQL pool. This page describes how to set up the connection.
+Prophecy's Azure Synapse connector supports connecting to [dedicated SQL pools](https://learn.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is) that run Microsoft SQL Server (MSSQL). Use this connection instead of the [MSSQL connection](/administration/fabrics/prophecy-fabrics/connections/mssql) when you host MSSQL in Azure Synapse dedicated SQL pool.
+
+This page describes how to set up the connection.
 
 ## Prerequisites
 

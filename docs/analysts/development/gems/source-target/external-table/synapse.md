@@ -21,7 +21,7 @@ This page describes how to configure Source gems to read from Microsoft SQL Serv
 
 When you create a new external Source gem, the gem dialog contains the following tabs.
 
-- **Type**: Select the Azure Synapse table option.
+- **Type**: Select the Synapse table option.
 - **Source location**: Choose the [connection](/administration/fabrics/prophecy-fabrics/connections/) and define the location where you will read tables from.
 - **Properties**: Infer or manually specify the schema of the table.
 - **Preview**: Load a preview of the dataset reflecting your configurations.
@@ -32,13 +32,13 @@ Use these settings to configure a Source gem for reading data from Azure Synapse
 
 ### Source location
 
-| Parameter                   |                                                                                                                                                      | Description |
-| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| Format type                 | Table format for the source. For Synapse tables, set to `synapse`.                                                                                   |
-| Select or create connection | Select or create a new [Azure Synapse connection](/administration/fabrics/prophecy-fabrics/connections/synapse) in the Prophecy fabric you will use. |
-| Database                    | Database containing the table you want to read from.                                                                                                 |
-| Schema                      | Schema within the database where the table is located.                                                                                               |
-| Name                        | Exact name of the table to read data from.                                                                                                           |
+| Parameter                   | Description                                                                                                                      |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Format type                 | Table format for the source. For MSSQL tables on Azure Synapse, set to `mssql`.                                                  |
+| Select or create connection | Existing or new [Azure Synapse connection](/administration/fabrics/prophecy-fabrics/connections/synapse) in the Prophecy fabric. |
+| Database                    | Database matching the database defined in the [connection](/administration/fabrics/prophecy-fabrics/connections/synapse).        |
+| Schema                      | Schema within the database where the table is located.                                                                           |
+| Name                        | Name of the table to read data from.                                                                                             |
 
 ### Source properties
 
