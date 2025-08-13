@@ -2,7 +2,7 @@
 title: Migrate project repository from Prophecy-managed Git to external Git
 sidebar_label: Migrate project repository
 id: migrate-managed
-slug: /engineers/migrate-managed-projects
+slug: /analysts/migrate-managed-projects
 description: Move the repository of a project from managed-Git to external Git
 tags:
   - git

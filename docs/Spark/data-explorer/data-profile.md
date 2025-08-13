@@ -25,7 +25,7 @@ import Requirements from '@site/src/components/gem-requirements';
 Data profiling allows you to view statistics on interim datasets in your pipeline. When you open a dataset's profile in the [Data Explorer](/engineers/data-explorer), you can visualize value distributions and data completeness to ensure your data matches expectations.
 
 :::info
-You must use [selective data sampling mode](/engineers/data-sampling#selective-recommended) to view the data profile in a PySpark project.
+You must use [selective data sampling mode](/engineers/data-sampling#selective-sampling) to view the data profile in a PySpark project.
 :::
 
 ## Quick profile

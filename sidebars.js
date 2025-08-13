@@ -409,7 +409,10 @@ const sidebars = {
         type: "doc",
         id: "analysts/version-control/version-control",
       },
-      items: ["analysts/version-control/publication"],
+      items: [
+        "analysts/version-control/publication",
+        "analysts/version-control/migrate-managed",
+      ],
     },
     {
       type: "category",
@@ -773,7 +776,6 @@ const sidebars = {
             "ci-cd/git/git-resolve",
             "ci-cd/git/pr-templates",
             "ci-cd/git/git-best-practices",
-            "ci-cd/git/migrate-managed",
           ],
         },
         "ci-cd/tests",

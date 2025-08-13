@@ -1,7 +1,7 @@
 ---
 title: RecordID
 id: record-id
-slug: /analysts/record-d
+slug: /analysts/record-id
 description: Assign each row a unique ID
 tags:
   - gems
