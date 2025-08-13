@@ -25,8 +25,6 @@ When you create a new external Source gem, the gem dialog contains the following
 - **Properties**: Infer or manually specify the schema, and optionally add properties that influence table behavior.
 - **Preview**: Load a preview of the dataset reflecting your configurations.
 
-The following sections provide a detailed reference for source configuration.
-
 ## Source configuration
 
 Use these settings to configure an Oracle Source gem for reading data.

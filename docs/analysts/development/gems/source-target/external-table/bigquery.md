@@ -16,6 +16,15 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 This page describes how to use BigQuery external Source and Target gems to read from or write to tables. Only use an external Source and Target gem when BigQuery is not the configured [SQL warehouse connection](/administration/fabrics/prophecy-fabrics/#connections). Otherwise, use the [Table gem](/analysts/bigquery-table).
 
+## Configuration tabs
+
+When you create a new external Source or Target gem, the gem dialog contains the following tabs.
+
+- **Type**: Select the BigQuery table option.
+- **Source/Target location**: Choose the [connection](/administration/fabrics/prophecy-fabrics/connections/) and define the location where you will read/write tables in BigQuery.
+- **Properties**: Infer or manually specify the schema, and optionally add properties that influence table behavior.
+- **Preview**: Load a preview of the dataset reflecting your configurations.
+
 ## Source configuration
 
 Use these settings to configure a BigQuery Source gem for reading data.

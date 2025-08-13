@@ -147,6 +147,7 @@ const sidebars = {
                   items: [
                     "analysts/development/gems/source-target/external-table/databricks",
                     "analysts/development/gems/source-target/external-table/bigquery",
+                    "analysts/development/gems/source-target/external-table/synapse",
                     "analysts/development/gems/source-target/external-table/snowflake",
                     "analysts/development/gems/source-target/external-table/mssql",
                     "analysts/development/gems/source-target/external-table/mongodb",
@@ -165,6 +166,7 @@ const sidebars = {
                   items: [
                     "analysts/development/gems/source-target/file/csv",
                     "analysts/development/gems/source-target/file/excel",
+                    "analysts/development/gems/source-target/file/fixed-width",
                     "analysts/development/gems/source-target/file/json",
                     "analysts/development/gems/source-target/file/parquet",
                     "analysts/development/gems/source-target/file/xml",
@@ -189,8 +191,10 @@ const sidebars = {
               },
               items: [
                 "analysts/development/gems/transform/aggregate",
+                "analysts/development/gems/transform/count-records",
                 "analysts/development/gems/transform/dynamic-select",
                 "analysts/development/gems/transform/fuzzy-match",
+                "analysts/development/gems/transform/encode-decode",
                 "analysts/development/gems/transform/pivot",
                 "analysts/development/gems/transform/unpivot",
                 "analysts/development/gems/transform/window",
@@ -205,8 +209,10 @@ const sidebars = {
               },
               items: [
                 "analysts/development/gems/prepare/data-cleansing",
+                "analysts/development/gems/prepare/data-masking",
                 "analysts/development/gems/prepare/deduplicate",
                 "analysts/development/gems/prepare/filter",
+                "analysts/development/gems/prepare/find-duplicates",
                 "analysts/development/gems/prepare/flatten-schema",
                 "analysts/development/gems/prepare/limit",
                 "analysts/development/gems/prepare/multi-column-rename",
@@ -285,11 +291,13 @@ const sidebars = {
                 id: "analysts/development/gems/custom/custom",
               },
               items: [
-                "analysts/development/gems/custom/sql-statement",
-                "analysts/development/gems/custom/rest-api",
+                "analysts/development/gems/custom/directory",
+                "analysts/development/gems/custom/dynamic-input",
                 "analysts/development/gems/custom/macro",
+                "analysts/development/gems/custom/rest-api",
                 "analysts/development/gems/custom/script",
                 "analysts/development/gems/custom/stored-procedure",
+                "analysts/development/gems/custom/sql-statement",
                 "analysts/development/gems/custom/todo",
               ],
             },
@@ -365,6 +373,18 @@ const sidebars = {
         },
         {
           type: "category",
+          label: "Data tests",
+          link: {
+            type: "doc",
+            id: "analysts/development/data-tests/data-tests",
+          },
+          items: [
+            "analysts/development/data-tests/use-model-tests",
+            "analysts/development/data-tests/use-project-tests",
+          ],
+        },
+        {
+          type: "category",
           label: "Collaboration",
           link: {
             type: "doc",
@@ -377,14 +397,10 @@ const sidebars = {
         },
         {
           type: "category",
-          label: "Data tests",
-          link: {
-            type: "doc",
-            id: "analysts/development/data-tests/data-tests",
-          },
+          label: "Organization",
           items: [
-            "analysts/development/data-tests/use-model-tests",
-            "analysts/development/data-tests/use-project-tests",
+            "analysts/development/organization/folders",
+            "analysts/development/organization/containers",
           ],
         },
       ],
@@ -396,7 +412,10 @@ const sidebars = {
         type: "doc",
         id: "analysts/version-control/version-control",
       },
-      items: ["analysts/version-control/publication"],
+      items: [
+        "analysts/version-control/publication",
+        "analysts/version-control/migrate-managed",
+      ],
     },
     {
       type: "category",
@@ -405,6 +424,7 @@ const sidebars = {
       items: [
         "analysts/scheduling/schedule-setup",
         "analysts/scheduling/triggers",
+        "analysts/scheduling/pipeline-trigger-gem",
         "analysts/scheduling/schedule-email-alerts",
       ],
     },
@@ -442,6 +462,7 @@ const sidebars = {
           items: [
             "analysts/business-apps/app-creation",
             "analysts/business-apps/app-components",
+            "analysts/business-apps/app-settings",
           ],
         },
       ],
@@ -909,6 +930,7 @@ const sidebars = {
               items: [
                 "administration/fabrics/prophecy-fabrics/connections/redshift",
                 "administration/fabrics/prophecy-fabrics/connections/s3",
+                "administration/fabrics/prophecy-fabrics/connections/synapse",
                 "administration/fabrics/prophecy-fabrics/connections/databricks",
                 "administration/fabrics/prophecy-fabrics/connections/bigquery",
                 "administration/fabrics/prophecy-fabrics/connections/onedrive",

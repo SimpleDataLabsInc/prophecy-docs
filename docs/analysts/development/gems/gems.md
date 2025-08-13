@@ -88,6 +88,8 @@ To remove ports from a gem:
 1. Hover over the port you want to remove and click the trash icon.
 1. Click **Done** to save your changes and exit **Edit** mode.
 
+To hide ports from the gem configuration, you can collapse the ports panel using the collapse icon next to **Ports**.
+
 ### Visual and code view
 
 Some gems can be configured in the **visual** view or the **code** view. Use the visual expression builder to populate fields in the visual view. Prophecy will automatically convert visual expressions into SQL expressions. You can edit these SQL statements or write your own in the code view.

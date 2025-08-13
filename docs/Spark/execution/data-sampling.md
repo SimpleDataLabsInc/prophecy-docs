@@ -1,5 +1,5 @@
 ---
-title: Data sampling settings
+title: Data sampling
 id: data-sampling
 slug: /engineers/data-sampling
 description: Choose when to sample data during interactive execution
@@ -8,82 +8,77 @@ tags:
   - data sampling
 ---
 
-You can choose different **data sampling settings** to control how Prophecy generates data samples during interactive pipeline execution.
+Prophecy gives you control over when and where data samples are generated during interactive pipeline execution. This helps you optimize for speed, visibility, or compatibility with your fabric setup.
 
-## Interactive run configuration
+You can customize data sampling at three levels:
 
-For each pipeline, you can enable, disable, or change interactive data sampling and job data sampling modes. To quickly update the interactive execution settings:
+- **Gem level**: Turn sampling on or off for individual or multiple gems.
+- **Pipeline level**: Set the sampling mode used during interactive runs.
+- **Fabric level**: Enable or disable data sampling for pipelines running on particular fabrics.
 
-1. Hover the large **play** button.
-1. Click on the **ellipses** that appears on hover.
-1. Change your data sampling settings. This will update your [pipeline settings](/engineers/pipeline-settings#run-settings).
-
-![Interactive run configuration](img/interactive-run-config.png)
+This page describes how to set up and use data samples for your use cases.
 
 ## Data sampling modes
 
 Prophecy provides the following data sampling modes.
 
-### All (default)
+| Mode                            | Samples generated                                                         | Use case                           |
+| ------------------------------- | ------------------------------------------------------------------------- | ---------------------------------- |
+| **All** (default)               | After every gem, excluding Target gems.                                   | Full visibility                    |
+| **Selective** (Databricks only) | When **Data Preview** enabled per gem. [Learn more](#selective-sampling). | Full control per gem               |
+| **Sources**                     | Only after Source gems.                                                   | Focus on inputs                    |
+| **Targets**                     | Only before Target gems.                                                  | Focus on outputs                   |
+| **IO**                          | Only after Sources and before Targets (not between intermediate gems).    | High-level input/output inspection |
 
-All gems (excluding Target gems) generate data samples.
+### Selective sampling
 
-![All interims](img/all-interims.png)
+Selective data sampling gives you granular control by letting you enable or disable data samples for individual gems. To control data sampling for gems:
 
-### Selective (recommended)
+- **Single gem**: Select the Data Preview checkbox in the gem's [action menu](/engineers/gems).
+- **Multiple gems**: Select multiple gems by dragging, then click the Data Preview button in the bottom menu.
 
-When you choose selective data sampling, you gain the ability to enable or disable data samples for individual gems. To do so, use the **Data Preview** checkbox in the gem [action menu](/engineers/gems).
+When Data Preview is disabled for a gem, its output appears pale after pipeline execution, indicating no sample was generated. Click the pale output to load the data sample on demand. The output icon will then display in normal bold colors.
 
 ![Selective](img/selective-interims.png)
 
-If the **Data Preview** option is not selected for a gem, you'll see a pale-color gem output after running the data pipeline. This means that no data sample was generated. To generate it, open the pale interim and it will load the data. After it loads, the data sample will display the normal bold color.
+:::tip
+We recommend using Selective sampling mode for all Databricks users. It is faster and more powerful than the default mode. Selective sampling is also important when working with [Databricks UC standard clusters](/administration/fabrics/Spark-fabrics/databricks/ucshared), as other sampling modes only generate data samples on edge nodes for this access mode.
+:::
 
-:::note
+<details>
+
+<summary>Modify the behavior of selective sampling</summary>
+
 Selectively-generated samples load up to 10,000 rows (or 2 MB payload) by default. Set the following environment variables in Databricks to modify this behavior:
 
 - `EXECUTION_DATA_SAMPLE_LOADER_MAX_ROWS`: Max number of rows (default is 10,000 rows).
 - `EXECUTION_DATA_SAMPLE_LOADER_PAYLOAD_SIZE_LIMIT`: Max payload size (default 2 MB).
 - `EXECUTION_DATA_SAMPLE_LOADER_CHAR_LIMIT`: Per column character limit (default 200 KB). Values exceeding the limit are truncated.
 
-:::
+</details>
 
-:::tip
-When working on Databricks UC standard clusters, use selective data sampling mode. If you select another data sampling mode, samples will only be generated on edge nodes.
-:::
+## Interactive run configuration
 
-### Sources
+You can adjust data sampling settings for each pipeline through the **Interactive Run Configuration** panel. You can also access the same settings in [Pipeline Settings](/engineers/pipeline-settings#run-settings).
 
-Only Source gems generate data samples.
+1. Hover the large **play** button in the canvas.
+1. Click on the **ellipses** that appears on hover.
+1. Toggle data sampling on or off.
+1. When data sampling is on, select your preferred mode from the **Data Sampling** dropdown.
 
-![Source interims](img/source-interims.png)
+This mode will be used when you interactively run the pipeline.
 
-### Targets
-
-Only gems before Target gems generate data samples.
-
-![Target interims](img/target-interims.png)
-
-### IO
-
-Data samples are only generated after Source gems or before Target gems (not between intermediate gems).
-
-![IO interims](img/io-interims.png)
-
-### Vanilla
-
-This Databricks-specific setting generates data samples on the last node(s) of a pipeline. If the pipeline branch ends with a Target gem, the data sample appears before the Target gem (like the Target mode).
-
-![Vanilla interims](img/vanilla-interims.png)
+![Interactive run configuration](img/interactive-run-config.png)
 
 ## Cached interims
 
-If you change your data samplings settings and re-run your pipeline, you might see some grayed-out data samples. These are the cached data samples from previous runs. They might be outdated.
+When you change data sampling settings and re-run a pipeline, some data samples may appear grayed out. These cached samples are from previous runs and may not reflect your current data or pipeline changes.
 
 ![Cached interims](img/cached-interims.png)
 
 ## Fabric settings
 
-In a fabric, you can enable or disable data sampling and override pipeline-level settings when a pipeline runs on that fabric. This option is available in the **Advanced** tab of a fabric. A common use case is preventing sample data generation in **production** pipelines.
+In a fabric, you can enable or disable data sampling and override pipeline-level settings when a pipeline runs on that fabric. You can access this option in the **Advanced** tab of a fabric. A common use case is preventing sample data generation in **production** pipelines.
 
 ![Create a new model test](./img/limit-data-preview-interims.png)
 

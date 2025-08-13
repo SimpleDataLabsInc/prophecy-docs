@@ -44,8 +44,8 @@ You can run the following sources on Databricks serverless compute:
 
 You can use the following data sampling modes when using Databricks serverless compute:
 
-- [Selective](/engineers/data-sampling#selective-recommended)
-- [Vanilla](/engineers/data-sampling#vanilla)
+- [Selective](/engineers/data-sampling#selective-sampling) mode
+- Vanilla mode (deprecated)
 
 ## Limitations
 
