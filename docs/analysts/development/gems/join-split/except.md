@@ -1,5 +1,5 @@
 ---
-title: Except
+title: Except gem
 id: except
 slug: /analysts/except
 description: Return rows from the first dataset that do not appear in any of the others

@@ -1,5 +1,5 @@
 ---
-title: MultiColumnRename
+title: MultiColumnRename gem
 id: multi-column-rename
 slug: /analysts/multi-column-rename
 description: Rename multiple columns in your dataset in a systematic way

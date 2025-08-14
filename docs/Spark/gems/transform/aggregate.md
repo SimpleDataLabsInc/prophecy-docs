@@ -1,5 +1,5 @@
 ---
-title: Aggregate
+title: Aggregate gem
 id: aggregate
 slug: /engineers/aggregate
 description: Group data and apply aggregation methods or pivot operations

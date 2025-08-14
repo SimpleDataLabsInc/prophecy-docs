@@ -1,5 +1,5 @@
 ---
-title: Unpivot
+title: Unpivot gem
 id: unpivot
 slug: /engineers/unpivot
 description: Use the Unpivot gem to transform your data from a wide format to a long format

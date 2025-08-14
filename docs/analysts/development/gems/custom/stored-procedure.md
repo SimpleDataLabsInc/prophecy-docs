@@ -1,5 +1,5 @@
 ---
-title: StoredProcedure
+title: StoredProcedure gem
 id: stored-procedure
 slug: /analysts/stored-procedure-gem
 description: Create and call stored procedures to use in pipelines

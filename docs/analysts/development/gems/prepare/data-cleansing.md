@@ -1,5 +1,5 @@
 ---
-title: DataCleansing
+title: DataCleansing gem
 id: data-cleansing
 slug: /analysts/data-cleansing
 description: Standardize data formats

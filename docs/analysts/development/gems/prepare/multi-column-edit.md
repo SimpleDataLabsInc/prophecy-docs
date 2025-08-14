@@ -1,5 +1,5 @@
 ---
-title: MultiColumnEdit
+title: MultiColumnEdit gem
 id: multi-column-edit
 slug: /analysts/multi-column-edit
 description: Change the data type of multiple columns at once

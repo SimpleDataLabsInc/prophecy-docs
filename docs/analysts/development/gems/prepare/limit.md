@@ -1,5 +1,5 @@
 ---
-title: Limit
+title: Limit gem
 id: limit
 slug: /analysts/limit
 description: Limit the number of columns processed

@@ -1,5 +1,5 @@
 ---
-title: WindowFunction
+title: WindowFunction gem
 id: window
 slug: /analysts/window
 description: Create moving aggregations and transformation

@@ -1,5 +1,5 @@
 ---
-title: PowerBIWrite
+title: PowerBIWrite gem
 id: power-bi
 slug: /analysts/power-bi-write
 description: Send your pipeline output directly to PowerBI

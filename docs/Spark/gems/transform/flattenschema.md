@@ -1,5 +1,5 @@
 ---
-title: FlattenSchema
+title: FlattenSchema gem
 id: flatten-schema
 slug: /engineers/flatten-schema
 description: Flatten nested data

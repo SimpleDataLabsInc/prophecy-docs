@@ -1,5 +1,5 @@
 ---
-title: SetOperation
+title: SetOperation gem
 id: set-operation
 slug: /engineers/set-operation
 description: Union, Intersect and Difference

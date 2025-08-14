@@ -1,5 +1,5 @@
 ---
-title: Tableau
+title: Tableau gem
 id: tableau
 slug: /engineers/tableau
 description: Send data from your Spark pipeline to Tableau

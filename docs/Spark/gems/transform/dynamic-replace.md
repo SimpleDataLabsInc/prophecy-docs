@@ -1,5 +1,5 @@
 ---
-title: DynamicReplace
+title: DynamicReplace gem
 id: dynamic-replace
 slug: /engineers/dynamic-replace
 description: Dynamically generate values depending on certain conditions

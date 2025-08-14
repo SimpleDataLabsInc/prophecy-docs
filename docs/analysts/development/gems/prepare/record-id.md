@@ -1,5 +1,5 @@
 ---
-title: RecordID
+title: RecordID gem
 id: record-id
 draft: true
 slug: /analysts/record-d

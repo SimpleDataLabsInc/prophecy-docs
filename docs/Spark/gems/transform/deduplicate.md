@@ -1,5 +1,5 @@
 ---
-title: Deduplicate
+title: Deduplicate gem
 id: deduplicate
 slug: /engineers/deduplicate
 description: Remove rows with duplicate values of specified columns

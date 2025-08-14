@@ -1,5 +1,5 @@
 ---
-title: OrderBy
+title: OrderBy gem
 id: order-by
 slug: /analysts/order-by
 description: Sort the data

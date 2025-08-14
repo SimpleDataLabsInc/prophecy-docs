@@ -1,5 +1,5 @@
 ---
-title: TableauWrite
+title: TableauWrite gem
 id: tableau
 slug: /analysts/tableau
 description: Send data to automatically update your Tableau dashboards

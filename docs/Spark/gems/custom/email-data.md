@@ -1,5 +1,5 @@
 ---
-title: EmailData
+title: EmailData gem
 id: email-data
 slug: /engineers/email-data
 description: Send data from your Spark pipeline to others by email

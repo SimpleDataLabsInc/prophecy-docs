@@ -1,5 +1,5 @@
 ---
-title: Repartition
+title: Repartition gem
 id: Repartition
 slug: /engineers/repartition
 description: Repartition or coalesce a DataFrame

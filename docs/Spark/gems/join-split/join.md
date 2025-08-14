@@ -1,5 +1,5 @@
 ---
-title: Join
+title: Join gem
 id: join
 slug: /engineers/join
 description: Join one or more DataFrames on conditions
