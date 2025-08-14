@@ -2,7 +2,7 @@
 title: Join gems
 description: Gems in the Join category
 id: joins
-slug: /engineers/join-gems
+slug: /analysts/join-gems
 tags: []
 ---
 

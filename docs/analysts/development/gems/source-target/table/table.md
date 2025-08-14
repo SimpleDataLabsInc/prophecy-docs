@@ -2,7 +2,7 @@
 title: Table gems
 description: Tables supported for the data warehouse
 id: table
-slug: /engineers/table-gems
+slug: /analysts/table-gems
 tags: []
 ---
 

@@ -2,7 +2,7 @@
 title: Custom gems
 description: Gems in the Custom category
 id: custom
-slug: /engineers/custom-gems
+slug: /analysts/custom-gems
 tags: []
 ---
 

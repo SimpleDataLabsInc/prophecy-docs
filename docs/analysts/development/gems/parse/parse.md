@@ -2,7 +2,7 @@
 title: Parse gems
 description: Gems in the Parse category
 id: parse
-slug: /engineers/parse-gems
+slug: /analysts/parse-gems
 tags: []
 ---
 
