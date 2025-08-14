@@ -45,9 +45,9 @@ To begin, create a new Okta SAML application:
 
 1. For **Single Sign-On URL**, use the value from the Prophecy EMR fabric page.
 
-1. Select **Use this for Recipient URL and Destination URL**.
+1. Below the URL, select the **Use this for Recipient URL and Destination URL** checkbox.
 
-1. For **Audience URI (SP Entity ID)**, enter a value to identify the entity issuer (example: `prophecyokta`).
+1. For **Audience URI (SP Entity ID)**, enter a value to identify the entity issuer (for example, `prophecyokta`).
 
 1. Leave **Default Relay State** blank.
 
@@ -78,11 +78,11 @@ Only assigned users will be able to authenticate to AWS and access the Prophecy 
 
 Next, save the metadata from this app to upload to AWS.
 
-1. Copy the **Metadata URL**.
+1. In the Okta application, open the **Sign On** tab.
 
-1. Open it in a new browser tab.
+1. Copy the **Metadata URL** details.
 
-1. Save the file as `metadata.xml`.
+1. Save the copied information as a file called `metadata.xml`.
 
 ## Step 2: Create an AWS Identity Provider
 
