@@ -1,5 +1,5 @@
 ---
-title: Transpose
+title: Transpose gem
 id: transpose
 slug: /analysts/transpose
 description: Convert your table from wide to long format

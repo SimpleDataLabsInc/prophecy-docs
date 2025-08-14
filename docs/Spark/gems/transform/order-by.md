@@ -1,5 +1,5 @@
 ---
-title: OrderBy
+title: OrderBy gem
 id: order-by
 slug: /engineers/order-by
 description: Sort your data based on one or more columns

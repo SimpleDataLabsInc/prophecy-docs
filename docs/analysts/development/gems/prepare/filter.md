@@ -1,5 +1,5 @@
 ---
-title: Filter
+title: Filter gem
 id: filter
 slug: /analysts/filter
 description: Filter the data

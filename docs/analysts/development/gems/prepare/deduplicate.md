@@ -1,5 +1,5 @@
 ---
-title: Deduplicate
+title: Deduplicate gem
 id: deduplicate
 slug: /analysts/deduplicate
 description: Remove duplicates from your data

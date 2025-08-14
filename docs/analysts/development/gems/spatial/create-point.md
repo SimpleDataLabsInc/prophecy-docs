@@ -1,5 +1,5 @@
 ---
-title: CreatePoint
+title: CreatePoint gem
 id: create-point
 slug: /analysts/create-point
 description: Create geographic points with longitude and latitude coordinates

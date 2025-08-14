@@ -1,5 +1,5 @@
 ---
-title: XMLParse
+title: XMLParse gem
 id: xml-parse
 slug: /analysts/xml-parse
 description: Parse XML inside a table

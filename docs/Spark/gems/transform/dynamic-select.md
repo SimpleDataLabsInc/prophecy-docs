@@ -1,5 +1,5 @@
 ---
-title: DynamicSelect
+title: DynamicSelect gem
 id: dynamic-select
 slug: /engineers/dynamic-select
 description: Dynamically filter columns of your dataset based on a set of conditions

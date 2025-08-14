@@ -1,5 +1,5 @@
 ---
-title: RestAPI
+title: RestAPI gem
 id: rest-api
 slug: /analysts/rest-api
 description: Call APIs from your pipeline

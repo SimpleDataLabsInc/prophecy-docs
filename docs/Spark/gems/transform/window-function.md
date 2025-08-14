@@ -1,5 +1,5 @@
 ---
-title: WindowFunction
+title: WindowFunction gem
 id: window-function
 slug: /engineers/window-function
 description: Aggregate and transform Windowed data

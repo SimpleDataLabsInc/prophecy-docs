@@ -1,5 +1,5 @@
 ---
-title: FindNearest
+title: FindNearest gem
 id: find-nearest
 slug: /analysts/find-nearest
 description: Identify the shortest distance between spatial objects

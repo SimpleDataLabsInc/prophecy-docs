@@ -1,5 +1,5 @@
 ---
-title: Email
+title: Email gem
 id: email
 slug: /analysts/email
 description: Send your pipeline output tables to others via email

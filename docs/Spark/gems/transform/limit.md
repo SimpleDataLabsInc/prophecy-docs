@@ -1,5 +1,5 @@
 ---
-title: Limit
+title: Limit gem
 id: limit
 slug: /engineers/limit
 description: Limit the number of rows

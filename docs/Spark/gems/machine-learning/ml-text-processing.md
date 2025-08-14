@@ -1,5 +1,5 @@
 ---
-title: TextProcessing
+title: TextProcessing gem
 id: ml-text-processing
 slug: /engineers/text-processing
 description: Text processing to prepare data to submit to a foundational model API.

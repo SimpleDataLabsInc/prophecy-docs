@@ -1,5 +1,5 @@
 ---
-title: TextToColumns
+title: TextToColumn gem
 id: text-to-column
 slug: /analysts/text-to-column
 description: Convert text into a column in your table

@@ -1,5 +1,5 @@
 ---
-title: Basic subgraph
+title: Subgraph gem
 id: basic-subgraph
 slug: /engineers/basic-subgraph
 description: Basic Subgraph, Group your Gems in reusable Parent Gems.

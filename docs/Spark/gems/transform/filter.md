@@ -1,5 +1,5 @@
 ---
-title: Filter
+title: Filter gem
 id: filter
 slug: /engineers/filter
 description: Filter your data based on a custom filter condition

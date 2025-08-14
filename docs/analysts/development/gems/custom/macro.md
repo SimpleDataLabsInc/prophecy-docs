@@ -1,5 +1,5 @@
 ---
-title: Macro
+title: Macro gem
 id: macro
 slug: /analysts/macro
 description: Use dbt macros in your pipelines

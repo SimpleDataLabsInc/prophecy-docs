@@ -1,5 +1,5 @@
 ---
-title: Simplify
+title: Simplify gem
 id: simplify
 slug: /analysts/simplify
 description: Decrease the number of nodes that make up a polygon or polyline

@@ -1,5 +1,5 @@
 ---
-title: FuzzyMatch
+title: FuzzyMatch gem
 id: fuzzy-match
 slug: /analysts/fuzzy-match
 description: Match records that are not exactly identical

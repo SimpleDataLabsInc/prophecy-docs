@@ -1,5 +1,5 @@
 ---
-title: Directory
+title: Directory gem
 id: directory
 slug: /engineers/directory
 description: Return a listing of all the files in a specified directory
