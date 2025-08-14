@@ -1,5 +1,6 @@
 ---
 title: RowDistributor gem
+sidebar_label: RowDistributor
 id: row-distributor
 slug: /engineers/row-distributor
 description: Create multiple DataFrames based on filter conditions

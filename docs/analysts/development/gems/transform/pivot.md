@@ -1,5 +1,6 @@
 ---
 title: Pivot gem
+sidebar_label: Pivot
 id: pivot
 slug: /analysts/pivot
 description: Convert your table from long to wide format

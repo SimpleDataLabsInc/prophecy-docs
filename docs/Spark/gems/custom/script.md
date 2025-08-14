@@ -1,5 +1,6 @@
 ---
 title: Script gem
+sidebar_label: Script
 id: script
 slug: /engineers/script
 description: Provide a place to use a SparkSession and whatever code you wish to use

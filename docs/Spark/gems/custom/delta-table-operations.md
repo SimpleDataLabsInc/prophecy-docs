@@ -1,5 +1,6 @@
 ---
 title: DeltaTableOperations gem
+sidebar_label: DeltaTableOperations
 id: delta-ops
 slug: /engineers/delta-table-operations
 description: Gem that encompasses some of the import side operations of Delta

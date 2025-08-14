@@ -1,5 +1,6 @@
 ---
 title: SchemaTransform gem
+sidebar_label: SchemaTransform
 id: schema-transform
 slug: /engineers/schema-transform
 description: Add, Edit, Rename or Drop Columns

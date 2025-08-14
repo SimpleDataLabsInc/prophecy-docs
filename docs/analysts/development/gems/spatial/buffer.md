@@ -1,5 +1,6 @@
 ---
 title: Buffer gem
+sidebar_label: Buffer
 id: buffer
 slug: /analysts/buffer
 description: Expand or contracts the boundaries of a polygon or line

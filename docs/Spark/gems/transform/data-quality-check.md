@@ -1,5 +1,6 @@
 ---
 title: DataQualityCheck gem
+sidebar_label: DataQualityCheck
 id: data-quality-check
 slug: /engineers/data-quality-check
 description: Ensure your data adhere to predefined constraints

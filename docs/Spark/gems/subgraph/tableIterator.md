@@ -1,5 +1,6 @@
 ---
 title: TableIterator gem
+sidebar_label: TableIterator
 id: table-iterator
 slug: /engineers/table-iterator
 description: Loop over each row of an input Dataframe

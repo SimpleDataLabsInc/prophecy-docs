@@ -1,5 +1,6 @@
 ---
 title: CompareColumns gem
+sidebar_label: CompareColumns
 id: compare-columns
 slug: /engineers/compare-columns
 description: Compare columns between two dataframes

@@ -1,5 +1,6 @@
 ---
 title: Union gem
+sidebar_label: Union
 id: union
 slug: /analysts/union
 description: Perform addition of rows from multiple tables

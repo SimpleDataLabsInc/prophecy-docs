@@ -1,5 +1,6 @@
 ---
 title: SQLStatement gem
+sidebar_label: SQLStatement
 id: sql-statement
 slug: /engineers/sql-statement
 description: Create DataFrames based on custom SQL queries

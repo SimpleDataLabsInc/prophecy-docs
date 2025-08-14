@@ -1,5 +1,6 @@
 ---
 title: WindowFunction gem
+sidebar_label: WindowFunction
 id: window
 slug: /analysts/window
 description: Create moving aggregations and transformation

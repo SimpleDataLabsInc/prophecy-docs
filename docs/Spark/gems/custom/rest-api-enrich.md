@@ -1,5 +1,6 @@
 ---
 title: RestAPIEnrich gem
+sidebar_label: RestAPIEnrich
 id: rest-api-enrich
 slug: /engineers/rest-api-enrich
 description: Enrich DataFrame with content from rest API response based on configuration
