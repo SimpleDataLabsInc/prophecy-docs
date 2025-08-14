@@ -1,5 +1,6 @@
 ---
 title: Unpivot gem
+sidebar_label: Unpivot
 id: unpivot
 slug: /analysts/unpivot
 description: Convert your table from wide to long format

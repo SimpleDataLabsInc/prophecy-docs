@@ -1,5 +1,6 @@
 ---
 title: UnionByName gem
+sidebar_label: UnionByName
 id: union-by-name
 slug: /analysts/union-by-name
 description: Combine datasets by aligning columns with the same name

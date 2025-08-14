@@ -1,5 +1,6 @@
 ---
 title: RecordID gem
+sidebar_label: RecordID
 id: record-id
 draft: true
 slug: /analysts/record-d

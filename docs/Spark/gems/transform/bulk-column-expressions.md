@@ -1,5 +1,6 @@
 ---
 title: BulkColumnExpressions gem
+sidebar_label: BulkColumnExpressions
 id: bulk-column-expressions
 slug: /engineers/bulk-column-expressions
 description: Change the data type of multiple columns at once

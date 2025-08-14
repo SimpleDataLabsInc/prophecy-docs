@@ -1,5 +1,6 @@
 ---
 title: SpatialMatch gem
+sidebar_label: SpatialMatch
 id: spatial-match
 slug: /analysts/spatial-match
 description: Find relationships between geographic features

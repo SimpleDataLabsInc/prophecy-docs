@@ -1,5 +1,6 @@
 ---
 title: SampleRows gem
+sidebar_label: SampleRows
 id: sample-rows
 slug: /engineers/sample-rows
 description: Sample records by choosing a specific number or percentage of records

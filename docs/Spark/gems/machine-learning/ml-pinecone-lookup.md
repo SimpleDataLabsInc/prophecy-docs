@@ -1,5 +1,6 @@
 ---
 title: PineconeLookup gem
+sidebar_label: PineconeLookup
 id: ml-pinecone-lookup
 slug: /engineers/pinecone-lookup
 description: Lookup a vector embedding from a Pinecone Database

@@ -1,5 +1,6 @@
 ---
 title: Limit gem
+sidebar_label: Limit
 id: limit
 slug: /engineers/limit
 description: Limit the number of rows

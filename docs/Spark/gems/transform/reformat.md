@@ -1,5 +1,6 @@
 ---
 title: Reformat gem
+sidebar_label: Reformat
 id: reformat
 slug: /engineers/reformat
 description: Select one or more columns or values using expressions and functions

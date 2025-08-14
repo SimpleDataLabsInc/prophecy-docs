@@ -1,5 +1,6 @@
 ---
 title: DynamicReplace gem
+sidebar_label: DynamicReplace
 id: dynamic-replace
 slug: /analysts/dynamic-replace
 description: Dynamically generate values depending on certain conditions
