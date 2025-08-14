@@ -139,6 +139,34 @@ module.exports = {
       from: "/SQL/development/visual-editor/variant-schema",
     },
     {
+      to: "/analysts/spatial-gems",
+      from: "/engineers/spatial-gems",
+    },
+    {
+      to: "/analysts/transform-gems",
+      from: "/engineers/transform-gems",
+    },
+    {
+      to: "/analysts/prepare-gems",
+      from: "/engineers/prepare-gems",
+    },
+    {
+      to: "/analysts/join-gems",
+      from: "/engineers/join-gems",
+    },
+    {
+      to: "/analysts/parse-gems",
+      from: "/engineers/parse-gems",
+    },
+    {
+      to: "/analysts/custom-gems",
+      from: "/engineers/custom-gems",
+    },
+    {
+      to: "/analysts/report-gems",
+      from: "/engineers/report-gems",
+    },
+    {
       to: "/api",
       from: [
         "/architecture/deployment/private-saas/generate-api-key",
