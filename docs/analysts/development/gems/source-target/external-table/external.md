@@ -2,7 +2,7 @@
 title: Tables from external systems
 description: Tables supported for sources and targets
 id: table
-slug: /engineers/table-external-gems
+slug: /analysts/table-external-gems
 tags: []
 ---
 

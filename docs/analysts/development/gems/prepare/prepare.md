@@ -2,7 +2,7 @@
 title: Prepare gems
 description: Gems in the Prepare category
 id: prepare
-slug: /engineers/prepare-gems
+slug: /analysts/prepare-gems
 tags: []
 ---
 

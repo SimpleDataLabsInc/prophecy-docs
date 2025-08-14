@@ -2,7 +2,7 @@
 title: Transform gems
 description: Gems in the Transform category
 id: transform
-slug: /engineers/transform-gems
+slug: /analysts/transform-gems
 tags: []
 ---
 
