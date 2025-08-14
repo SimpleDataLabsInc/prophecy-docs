@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_4=self.webpackChunkdocs_4||[]).push([[69919],{59688:e=>{e.exports=JSON.parse('{"tag":{"label":"outer","permalink":"/tags/outer","allTagsPath":"/tags","count":1,"items":[{"id":"Spark/gems/join-split/join","title":"Join gem","description":"Join one or more DataFrames on conditions","permalink":"/engineers/join"}],"unlisted":false}}')}}]);
