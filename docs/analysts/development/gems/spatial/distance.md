@@ -1,5 +1,6 @@
 ---
-title: Distance
+title: Distance gem
+sidebar_label: Distance
 id: distance
 slug: /analysts/distance
 description: Calculate the distance between two points

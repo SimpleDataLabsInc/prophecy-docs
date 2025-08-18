@@ -1,5 +1,6 @@
 ---
-title: Filter
+title: Filter gem
+sidebar_label: Filter
 id: filter
 slug: /analysts/filter
 description: Filter the data

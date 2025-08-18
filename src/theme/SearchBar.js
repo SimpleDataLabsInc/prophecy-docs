@@ -12,6 +12,36 @@ const SearchBar = () => {
       apiKey: apiKey,
       organizationDisplayName: "Prophecy",
       primaryBrandColor: "#403FC2",
+      transformSource: (source, type, opts) => {
+        const tabs = [...(source.tabs || [])];
+
+        console.log("Source debug:", {
+          url: source.url,
+          type: source.type,
+          title: source.title,
+          breadcrumbs: source.breadcrumbs,
+          firstBreadcrumb: source.breadcrumbs?.[0],
+          isBlog: source.breadcrumbs?.[0] === "Blog",
+          finalTabs: tabs,
+        });
+
+        // Categorize sources based on URL slug
+        if (source.url.includes("docs.prophecy.io/analysts/")) {
+          tabs.push("Analysts");
+        } else if (source.url.includes("docs.prophecy.io/engineers/")) {
+          tabs.push("Engineers");
+        }
+
+        // Add Blog tab based on breadcrumbs
+        if (source.breadcrumbs?.includes("Blog")) {
+          tabs.push("Blog");
+        }
+
+        return {
+          ...source,
+          tabs,
+        };
+      },
       theme: {
         styles: [
           {
@@ -42,6 +72,9 @@ const SearchBar = () => {
           },
         ],
       },
+    },
+    searchSettings: {
+      tabs: ["All", "Analysts", "Engineers", "Blog"],
     },
     aiChatSettings: {
       exampleQuestions: [

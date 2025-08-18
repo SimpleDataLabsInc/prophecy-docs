@@ -1,5 +1,6 @@
 ---
-title: Script
+title: Script gem
+sidebar_label: Script
 id: script
 slug: /analysts/script
 description: Leverage a Python script in your pipeline

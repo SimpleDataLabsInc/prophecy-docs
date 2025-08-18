@@ -1,5 +1,6 @@
 ---
-title: ColumnParser
+title: ColumnParser gem
+sidebar_label: ColumnParser
 id: column-parser
 slug: /engineers/column-parser
 description: Parse XML or JSON inside a table

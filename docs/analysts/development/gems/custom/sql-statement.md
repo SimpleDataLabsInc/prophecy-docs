@@ -1,5 +1,6 @@
 ---
-title: SQLStatement
+title: SQLStatement gem
+sidebar_label: SQLStatement
 id: sql-statement
 slug: /analysts/sql-statement
 description: Use a custom SQL statement

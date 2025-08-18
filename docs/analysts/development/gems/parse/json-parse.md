@@ -1,5 +1,6 @@
 ---
-title: JSONParse
+title: JSONParse gem
+sidebar_label: JSONParse
 id: json-parse
 slug: /analysts/json-parse
 description: Parse JSON inside a table

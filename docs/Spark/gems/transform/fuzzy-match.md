@@ -1,5 +1,6 @@
 ---
-title: FuzzyMatch
+title: FuzzyMatch gem
+sidebar_label: FuzzyMatch
 id: fuzzy-match
 slug: /engineers/fuzzy-match
 description: Identify non-identical duplicates in your data

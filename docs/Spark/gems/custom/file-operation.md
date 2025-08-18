@@ -1,5 +1,6 @@
 ---
-title: FileOperation
+title: FileOperation gem
+sidebar_label: FileOperation
 id: file-operations
 slug: /engineers/file-operation
 description: Perform file operations on different file systems

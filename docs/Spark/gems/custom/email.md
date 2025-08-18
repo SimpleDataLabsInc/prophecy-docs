@@ -1,5 +1,6 @@
 ---
-title: Email
+title: Email gem
+sidebar_label: Email
 id: email
 slug: /engineers/email
 description: Send emails via your Spark pipeline

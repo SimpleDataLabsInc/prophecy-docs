@@ -2,7 +2,7 @@
 title: Spatial gems
 description: Gems in the Spatial category
 id: spatial
-slug: /engineers/spatial-gems
+slug: /analysts/spatial-gems
 tags: []
 ---
 

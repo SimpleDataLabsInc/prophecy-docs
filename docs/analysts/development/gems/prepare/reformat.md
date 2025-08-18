@@ -1,5 +1,6 @@
 ---
-title: Reformat
+title: Reformat gem
+sidebar_label: Reformat
 id: reformat
 slug: /analysts/reformat
 description: Use expressions to reformat column names and values

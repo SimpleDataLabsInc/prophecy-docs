@@ -1,5 +1,6 @@
 ---
-title: PolyBuild
+title: PolyBuild gem
+sidebar_label: PolyBuild
 id: polybuild
 slug: /analysts/polybuild
 description: Create a polygon or polyline from a set of coordinates

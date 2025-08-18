@@ -1,5 +1,6 @@
 ---
-title: Deduplicate
+title: Deduplicate gem
+sidebar_label: Deduplicate
 id: deduplicate
 slug: /analysts/deduplicate
 description: Remove duplicates from your data

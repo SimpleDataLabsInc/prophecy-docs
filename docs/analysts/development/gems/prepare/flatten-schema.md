@@ -1,5 +1,6 @@
 ---
-title: FlattenSchema
+title: FlattenSchema gem
+sidebar_label: FlattenSchema
 id: flatten-schema
 slug: /analysts/flatten-schema
 description: Flatten nested columns

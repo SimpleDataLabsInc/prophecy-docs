@@ -1,5 +1,6 @@
 ---
-title: Intersect
+title: Intersect gem
+sidebar_label: Intersect
 id: intersect
 slug: /analysts/intersect
 description: Return only the rows that are common across all input datasets

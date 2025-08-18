@@ -1,5 +1,6 @@
 ---
-title: WhileIterator
+title: WhileIterator gem
+sidebar_label: WhileIterator
 id: while-iterator
 slug: /engineers/while-iterator
 description: Recursively processes rows

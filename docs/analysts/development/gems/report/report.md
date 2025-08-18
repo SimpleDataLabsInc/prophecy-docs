@@ -2,7 +2,7 @@
 title: Report gems
 description: Gems in the Report category
 id: report
-slug: /engineers/report-gems
+slug: /analysts/report-gems
 tags: []
 ---
 

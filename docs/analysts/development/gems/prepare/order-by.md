@@ -1,5 +1,6 @@
 ---
-title: OrderBy
+title: OrderBy gem
+sidebar_label: OrderBy
 id: order-by
 slug: /analysts/order-by
 description: Sort the data

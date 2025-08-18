@@ -1,5 +1,6 @@
 ---
-title: RecordID
+title: RecordID gem
+sidebar_label: RecordID
 id: record-id
 slug: /analysts/record-id
 description: Assign each row a unique ID

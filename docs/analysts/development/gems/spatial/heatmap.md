@@ -1,5 +1,6 @@
 ---
-title: HeatMap
+title: Heatmap gem
+sidebar_label: Heatmap
 id: heatmap
 slug: /analysts/heatmap
 description: Generate spatial heatmaps from geo point data using hexagons

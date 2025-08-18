@@ -1,5 +1,6 @@
 ---
-title: DataCleansing
+title: DataCleansing gem
+sidebar_label: DataCleansing
 id: data-cleansing
 slug: /engineers/data-cleansing
 description: Standardize data formats and address missing or null values in the data

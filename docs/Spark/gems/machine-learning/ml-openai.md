@@ -1,5 +1,6 @@
 ---
-title: OpenAI
+title: OpenAI gem
+sidebar_label: OpenAI
 id: ml-openai
 slug: /engineers/openai
 description: Request OpenAI to generate a vector embedding or request OpenAI to answer a question with an optional context.
