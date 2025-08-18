@@ -37,7 +37,7 @@ Review the various settings available for each pipeline, including Spark setting
 | Custom Application Name                  | The name of the Spark job that appears in the Spark interface.                                                                                                                                                                    |
 | Allow Configuration Updates (Scala only) | When enabled, you can override configuration values using a script.<br />For example, if you add a Script gem to the pipeline, you can write something like `Config.current_date_var = "2024"` to set the value of that variable. |
 | Enable pipeline monitoring               | The option to turn pipeline monitoring on or off.                                                                                                                                                                                 |
-| Enable jinja based configuration         | The option to turn [jinja syntax](/engineers/configurations#general-syntax) on or off.                                                                                                                                            |
+| Enable jinja based configuration         | The option to turn [jinja syntax](/engineers/configurations#use-configuration-variables) on or off.                                                                                                                               |
 
 </div>
 
