@@ -10,7 +10,7 @@ tags:
   - custom
 ---
 
-Use the Script gem to embed custom Python script in your pipeline.
+Use the Script gem to embed a custom Python script in your pipeline.
 
 ## Parameters
 
@@ -45,13 +45,13 @@ Cannot read the python file dbfs:/prophecy_tmp/prophecy_script_gem_[uuid].py
 User does not have permission SELECT on ANY File
 ```
 
-This occurs because the Script gem uploads Python scripts to DBFS for execution. Service principals require explicit permissions to read files from DBFS. To work around this, grant the service principal `SELECT` permission on `ANY FILE`:
+This occurs because the Script gem uploads Python scripts to DBFS for execution. Service principals require explicit permissions to read files from DBFS.
+
+To solve this, contact your Databricks administrator for assistance. One workaround is to grant the service principal `SELECT` permission on `ANY FILE`:
 
 ```sql
-GRANT SELECT ON ANY FILE TO [service_principal_uuid];
+GRANT SELECT ON ANY FILE TO <your_service_principal_uuid>;
 ```
-
-Replace `[service_principal_uuid]` with your actual service principal UUID.
 
 :::caution
 Granting `SELECT ON ANY FILE` provides broad read access to the file system. Consider the security implications for your environment before implementing this workaround.
