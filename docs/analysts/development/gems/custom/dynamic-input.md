@@ -12,7 +12,7 @@ tags:
 import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 <SQLRequirements
-  execution_engine="SQL Warehouse"
+  execution_engine="Prophecy Automate"
   sql_package_name="Prophecy"
   sql_package_version="4.1.3+"
 />
