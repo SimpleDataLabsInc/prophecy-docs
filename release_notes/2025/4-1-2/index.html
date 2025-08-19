@@ -7,7 +7,7 @@
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/assets/css/styles.d2a19db1.css">
-<script src="/assets/js/runtime~main.6292a949.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.2b9260d7.js" defer="defer"></script>
 <script src="/assets/js/main.fb66848f.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -44,7 +44,10 @@
 <p>The following enhancements are available in this release.</p>
 <ul>
 <li>
-<p>We now support uploading <a href="/analysts/parquet">Parquet</a> files to Databricks connections.</p>
+<p>Prophecy now supports uploading <a href="/analysts/parquet">Parquet</a> files to Databricks connections.</p>
+</li>
+<li>
+<p>Prophecy uses temporary tables to process data from external systems in a SQL warehouse. Previously, these tables were written and then removed, which meant you could briefly see them in your warehouse. Now, they use <strong>ephemeral materialization</strong>, so they only exist during execution and no longer appear in your warehouse.</p>
 </li>
 <li>
 <p>You can now overwrite a Table gem using the <a href="/analysts/business-application-components#file-upload">File Upload component</a> in a Prophecy App. Previously, you could only overwrite Source gems. (Added in 4.1.2.2).</p>
