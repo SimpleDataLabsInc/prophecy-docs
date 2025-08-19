@@ -46,8 +46,4 @@ Prophecy supports external sources and targets through [connections](/analysts/c
 
 Temporary tables act as intermediaries that allow external data to be processed using SQL logic. In other words, they enable dbt and SQL to transform external data as if it were native to the warehouse.
 
-Prophecy creates these tables during the pipeline run and removes them from the SQL warehouse after the run finishes. Temporary tables don’t appear in the canvas.
-
-:::info
-Temporary tables use the following naming convention: <br/>`prophecy_tmp__{RUN_ID}__{PIPELINE_NAME}__{GEM/SOURCE_LABEL}[_{SUFFIX}]`
-:::
+These tables use ephemeral materialization, which means they exist only during query execution and do not appear in your warehouse or pipeline canvas.
