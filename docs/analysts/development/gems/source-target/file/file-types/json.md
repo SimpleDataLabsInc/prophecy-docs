@@ -6,14 +6,6 @@ description: Read and write JSON files
 tags: []
 ---
 
-import SQLRequirements from '@site/src/components/sql-gem-requirements';
-
-<SQLRequirements
-  execution_engine="Prophecy Automate"
-  sql_package_name=""
-  sql_package_version=""
-/>
-
 Read or write a JSON file from an external connection using a Source or Target gem.
 
 :::info

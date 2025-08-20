@@ -6,15 +6,8 @@ description: Read and write fixed-width files
 tags: []
 ---
 
-import SQLRequirements from '@site/src/components/sql-gem-requirements';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-<SQLRequirements
-  execution_engine="Prophecy Automate"
-  sql_package_name=""
-  sql_package_version=""
-/>
 
 Read a fixed-width file from an external connection using a Source gem.
 

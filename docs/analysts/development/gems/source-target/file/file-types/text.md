@@ -7,14 +7,6 @@ description: Read and write text files
 tags: []
 ---
 
-import SQLRequirements from '@site/src/components/sql-gem-requirements';
-
-<SQLRequirements
-  execution_engine="Prophecy Automate"
-  sql_package_name=""
-  sql_package_version=""
-/>
-
 Upload text files to use in your pipeline.
 
 ## Parameters

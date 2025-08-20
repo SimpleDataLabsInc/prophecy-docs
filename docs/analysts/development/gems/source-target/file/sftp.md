@@ -7,6 +7,14 @@ description: Use SFTP as a file source or target in a gem
 tags: []
 ---
 
+import SQLRequirements from '@site/src/components/sql-gem-requirements';
+
+<SQLRequirements
+  execution_engine="Prophecy Automate"
+  sql_package_name=""
+  sql_package_version=""
+/>
+
 Read or write files from [SFTP](/administration/fabrics/prophecy-fabrics/connections/sftp) using a Source or Target gem.
 
 :::info
@@ -18,11 +26,11 @@ For authentication and connection setup, visit [SFTP connection](/administration
 You can read and write the following file formats with SFTP:
 
 - [CSV](/analysts/csv)
+- [Fixed width](/analysts/fixed-width) (Source only)
 - [JSON](/analysts/json)
 - [Parquet](/analysts/parquet)
-- [XML](/analysts/xml)
-- [Fixed width](/analysts/fixed-width)
 - [XLSX](/analysts/xlsx)
+- [XML](/analysts/xml)
 
 ## Configuration tabs
 

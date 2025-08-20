@@ -1,11 +1,19 @@
 ---
 title: Microsoft OneDrive gem
-sidebar_label: Microsoft OneDrive
+sidebar_label: OneDrive
 id: onedrive-gem
 slug: /analysts/onedrive-gem
 description: Use OneDrive as a file source or target in a gem
 tags: []
 ---
+
+import SQLRequirements from '@site/src/components/sql-gem-requirements';
+
+<SQLRequirements
+  execution_engine="Prophecy Automate"
+  sql_package_name=""
+  sql_package_version=""
+/>
 
 Read or write files from [Microsoft OneDrive](/administration/fabrics/prophecy-fabrics/connections/onedrive) using a Source or Target gem.
 
@@ -18,11 +26,10 @@ For authentication and connection setup, visit [OneDrive connection](/administra
 You can read and write the following file formats with OneDrive:
 
 - [CSV](/analysts/csv)
+- [Fixed width](/analysts/fixed-width) (Source only)
 - [JSON](/analysts/json)
-- [Parquet](/analysts/parquet)
-- [XML](/analysts/xml)
-- [Fixed width](/analysts/fixed-width)
 - [XLSX](/analysts/xlsx)
+- [XML](/analysts/xml)
 
 ## Configuration tabs
 

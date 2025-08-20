@@ -158,21 +158,38 @@ const sidebars = {
                 },
                 {
                   type: "category",
-                  label: "File types",
+                  label: "File storage systems",
                   link: {
                     type: "doc",
-                    id: "analysts/development/gems/source-target/file/file-types",
+                    id: "analysts/development/gems/source-target/file/file-storage",
                   },
                   items: [
-                    "analysts/development/gems/source-target/file/csv",
-                    "analysts/development/gems/source-target/file/excel",
-                    "analysts/development/gems/source-target/file/fixed-width",
-                    "analysts/development/gems/source-target/file/json",
-                    "analysts/development/gems/source-target/file/parquet",
-                    "analysts/development/gems/source-target/file/xml",
-                    "analysts/development/gems/source-target/file/text",
+                    "analysts/development/gems/source-target/file/s3-gem",
+                    "analysts/development/gems/source-target/file/sftp-gem",
+                    "analysts/development/gems/source-target/file/onedrive-gem",
+                    "analysts/development/gems/source-target/file/sharepoint-gem",
+                    "analysts/development/gems/source-target/file/smartsheet-gem",
+                    "analysts/development/gems/source-target/file/databricks-volumes-gem",
+                    {
+                      type: "category",
+                      label: "File types",
+                      link: {
+                        type: "doc",
+                        id: "analysts/development/gems/source-target/file/file-types/file-types",
+                      },
+                      items: [
+                        "analysts/development/gems/source-target/file/file-types/csv",
+                        "analysts/development/gems/source-target/file/file-types/excel",
+                        "analysts/development/gems/source-target/file/file-types/fixed-width",
+                        "analysts/development/gems/source-target/file/file-types/json",
+                        "analysts/development/gems/source-target/file/file-types/parquet",
+                        "analysts/development/gems/source-target/file/file-types/xml",
+                        "analysts/development/gems/source-target/file/file-types/text",
+                      ],
+                    },
                   ],
                 },
+
                 {
                   type: "category",
                   label: "Troubleshooting",

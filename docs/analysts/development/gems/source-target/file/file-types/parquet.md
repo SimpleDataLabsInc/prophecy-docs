@@ -6,14 +6,6 @@ description: Read and write Parquet files
 tags: []
 ---
 
-import SQLRequirements from '@site/src/components/sql-gem-requirements';
-
-<SQLRequirements
-  execution_engine="Prophecy Automate"
-  sql_package_name=""
-  sql_package_version=""
-/>
-
 Read or write a Parquet file from an external connection using a Source or Target gem.
 
 ## Supported connections
@@ -22,7 +14,6 @@ You can read Parquet files from the following connections:
 
 - [Amazon S3](/administration/fabrics/prophecy-fabrics/connections/s3)
 - [Databricks](/administration/fabrics/prophecy-fabrics/connections/databricks)
-- [Google BigQuery](/administration/fabrics/prophecy-fabrics/connections/bigquery)
 - [SFTP](/administration/fabrics/prophecy-fabrics/connections/sftp)
 
 ## Configuration tabs
