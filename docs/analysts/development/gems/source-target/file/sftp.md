@@ -15,35 +15,42 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
   sql_package_version=""
 />
 
-Read or write files from [SFTP](/administration/fabrics/prophecy-fabrics/connections/sftp) using a Source or Target gem.
+Connect to SFTP servers to read data or write data back to remote locations using a Source or Target gem.
 
-:::info
-For authentication and connection setup, visit [SFTP connection](/administration/fabrics/prophecy-fabrics/connections/sftp).
-:::
+## Supported file formats
 
-## Supported file types
+| Format                               | Read | Write |
+| ------------------------------------ | ---- | ----- |
+| [CSV](/analysts/csv)                 | Yes  | Yes   |
+| [JSON](/analysts/json)               | Yes  | Yes   |
+| [Parquet](/analysts/parquet)         | Yes  | Yes   |
+| [XML](/analysts/xml)                 | Yes  | Yes   |
+| [XLSX](/analysts/xlsx)               | Yes  | Yes   |
+| [Fixed width](/analysts/fixed-width) | Yes  | No    |
 
-You can read and write the following file formats with SFTP:
+## Create an SFTP gem
 
-- [CSV](/analysts/csv)
-- [Fixed width](/analysts/fixed-width) (Source only)
-- [JSON](/analysts/json)
-- [Parquet](/analysts/parquet)
-- [XLSX](/analysts/xlsx)
-- [XML](/analysts/xml)
+To create an SFTP Source or Target gem in your pipeline:
 
-## Configuration tabs
+1. Set up your SFTP connection.
 
-When you create a new Source or Target gem with SFTP, the gem dialog contains the following tabs:
+   Learn more in the [SFTP connection](/administration/fabrics/prophecy-fabrics/connections/sftp) documentation.
 
-- **Type**: Choose **SFTP** as the file storage provider.
-- **Source/Target location**: Select your SFTP connection and specify the path.
-- **Properties**: Configure schema and file-type specific properties.
-- **Preview (Source only)**: Load a preview of the dataset reflecting your configuration.
+1. Add a new Source or Target gem to your pipeline canvas and open the configuration.
+1. In the **Type** tab, select **SFTP**.
+1. In the **Location** tab, choose your [file format](#supported-file-formats) and location.
 
-## Source location tab
+   For more information on how to configure this screen, jump to [Source location](#source-location) and [Target location](#target-location).
 
-When using SFTP in the **Source/Target location** tab:
+1. In the **Properties** tab, set the file properties. These vary based on the file type that you are working with.
+
+   See the list of properties per [file type](/analysts/file-types).
+
+1. In the **Preview** tab, load a sample of the data and verify that it looks correct. Source gems only.
+
+## Source location
+
+Configure the **Source location** tab using the following parameters.
 
 | Parameter                                        | Description                                                                                                                                                                         |
 | ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -56,9 +63,17 @@ When using SFTP in the **Source/Target location** tab:
 | Delete files after successfully processed        | After reading the files, delete them.                                                                                                                                               |
 | Move files after successfully processed          | After reading the files, move them to a defined file path.                                                                                                                          |
 
-During interactive execution, you will get this error: `Failed due to: Unable to detect modified files for provided File Trigger`.
+:::info
+If you select **Configuration**, you will not be able to run the pipeline interactively. You will see the following error:
 
-## Target location tab
+```
+Failed due to: Unable to detect modified files for provided File Trigger
+```
+
+For the same reason, you will encounter an error if you try to infer the schema in the **Properties** tab or load a preview in the **Preview** tab of the Source gem.
+:::
+
+## Target location
 
 | Parameter                   | Description                                                                                                                               |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
