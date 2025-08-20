@@ -6,37 +6,15 @@ description: Read and write Parquet files
 tags: []
 ---
 
-Read or write a Parquet file from an external connection using a Source or Target gem.
+This page describes the **Parquet-specific properties** that appear in the **Properties** tab of Source and Target gems. These settings are the same for Parquet files regardless of which connection type is configured in the gem (for example, S3, SFTP, or Databricks).
 
-## Supported connections
+If you need details on configuring a Source or Target gem end to end (including all tabs such as **Location**), see the documentation for the specific file storage connection:
 
-You can read Parquet files from the following connections:
+- [Amazon S3](/analysts/s3-gem)
+- [Databricks](/analysts/databricks-volumes-gem)
+- [SFTP](/analysts/sftp-gem)
 
-- [Amazon S3](/administration/fabrics/prophecy-fabrics/connections/s3)
-- [Databricks](/administration/fabrics/prophecy-fabrics/connections/databricks)
-- [SFTP](/administration/fabrics/prophecy-fabrics/connections/sftp)
-
-## Configuration tabs
-
-When you create a new Source or Target gem, the gem dialog contains the following tabs.
-
-- **Type**: Choose the file storage provider you will connect to.
-- **Source/Target location**: Choose the [connection](/administration/fabrics/prophecy-fabrics/connections/) and define the file path where you will read from or write to.
-- **Properties**: Infer or manually specify the schema, and optionally add properties that influence table behavior.
-- **Preview**: Load a preview of the dataset reflecting your configurations.
-
-## Parameters
-
-Configure a Source/Target gem using the following parameters for Parquet files.
-
-| Parameter                   | Tab             | Description                                                                                                                      |
-| --------------------------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| Connection type             | Type            | Location you want to connect from.                                                                                               |
-| Format type                 | Source location | Format of the gem. In this case, `parquet`.                                                                                      |
-| Select or create connection | Source location | Whether to select an existing connection, or to create a new one.                                                                |
-| Filepath                    | Source location | File path where you want to read and write files according to the connection type.                                               |
-| Properties                  | Properties      | Optional table properties to apply. [Source](#source-properties) and [target](#target-properties) properties are outlined below. |
-| Schema                      | Properties      | Schema definition of the table (custom or inferred).                                                                             |
+## Properties
 
 ### Source properties
 
