@@ -1,5 +1,6 @@
 ---
-title: MSSQL
+title: MSSQL connection
+sidebar_label: MSSQL
 id: mssql
 description: Learn how to connect with Microsoft SQL Server
 tags:

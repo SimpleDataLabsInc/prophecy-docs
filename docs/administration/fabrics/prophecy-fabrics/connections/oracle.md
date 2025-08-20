@@ -1,5 +1,6 @@
 ---
-title: Oracle DB
+title: Oracle DB connection
+sidebar_label: Oracle DB
 id: oracle
 description: Learn how to connect to Oracle
 tags:

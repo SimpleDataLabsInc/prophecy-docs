@@ -1,5 +1,6 @@
 ---
-title: SFTP
+title: SFTP connection
+sidebar_label: SFTP
 id: sftp
 description: Learn how to set up an SFTP connection in Prophecy
 tags:

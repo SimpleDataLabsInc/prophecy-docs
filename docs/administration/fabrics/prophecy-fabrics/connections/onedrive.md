@@ -1,5 +1,6 @@
 ---
-title: Microsoft OneDrive
+title: Microsoft OneDrive connection
+sidebar_label: Microsoft OneDrive
 id: onedrive
 description: Learn how to connect to OneDrive
 tags:

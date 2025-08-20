@@ -1,5 +1,6 @@
 ---
-title: Databricks
+title: Databricks connection
+sidebar_label: Databricks
 id: databricks
 description: Learn how to connect with Databricks
 tags:

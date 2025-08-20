@@ -1,5 +1,6 @@
 ---
-title: Smartsheet
+title: Smartsheet connection
+sidebar_label: Smartsheet
 id: smartsheet
 description: Learn how to connect with Smartsheet
 tags:

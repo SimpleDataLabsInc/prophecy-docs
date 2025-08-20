@@ -1,5 +1,6 @@
 ---
-title: MongoDB
+title: MongoDB connection
+sidebar_label: MongoDB
 id: mongodb
 description: Learn how to connect with MongoDB
 tags:

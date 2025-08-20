@@ -1,5 +1,6 @@
 ---
-title: Tableau
+title: Tableau connection
+sidebar_label: Tableau
 id: tableau
 description: Learn how to connect with Tableau
 tags:

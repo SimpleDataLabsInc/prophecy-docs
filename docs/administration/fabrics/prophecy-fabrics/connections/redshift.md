@@ -1,5 +1,6 @@
 ---
-title: Amazon Redshift
+title: Amazon Redshift connection
+sidebar_label: Amazon Redshift
 id: redshift
 description: Learn how to connect to Redshift
 tags:

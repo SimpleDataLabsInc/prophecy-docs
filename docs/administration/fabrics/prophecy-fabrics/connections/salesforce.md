@@ -1,5 +1,6 @@
 ---
-title: Salesforce
+title: Salesforce connection
+sidebar_label: Salesforce
 id: salesforce
 description: Learn how to connect with Salesforce
 tags:

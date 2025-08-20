@@ -1,5 +1,6 @@
 ---
-title: Snowflake
+title: Snowflake connection
+sidebar_label: Snowflake
 id: snowflake
 description: Learn how to connect with Snowflake
 tags:

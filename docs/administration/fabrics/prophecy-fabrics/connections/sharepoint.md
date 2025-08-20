@@ -1,5 +1,6 @@
 ---
-title: Microsoft SharePoint
+title: Microsoft SharePoint connection
+sidebar_label: Microsoft SharePoint
 id: sharepoint
 description: Learn how to connect with SharePoint
 tags:
