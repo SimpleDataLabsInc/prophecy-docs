@@ -6,23 +6,21 @@ description: Read and write CSV files
 tags: []
 ---
 
-Read or write a CSV file from an external connection using a Source or Target gem.
+This page describes the **CSV-specific properties** that appear in the **Properties** tab of Source and Target gems. These settings are the same for CSV files regardless of which connection type is configured in the gem (for example, S3, SFTP, or SharePoint).
+
+If you need details on configuring a Source or Target gem end to end (including all tabs such as **Location**), see the documentation for the specific file storage connection:
+
+- [Amazon S3](/analysts/s3-gem)
+- [Databricks](/analysts/databricks-volumes-gem)
+- [Microsoft OneDrive](/analysts/onedrive-gem)
+- [SFTP](/analysts/sftp-gem)
+- [SharePoint](/analysts/sharepoint-gem)
 
 :::info
 You can also use the [upload file](docs/analysts/development/gems/source-target/table/upload-files.md) feature to use CSV files. These will be stored in the SQL warehouse configured in your fabric.
 :::
 
-## Supported connections
-
-You can read CSV files from the following connections:
-
-- [Amazon S3](/administration/fabrics/prophecy-fabrics/connections/s3)
-- [Databricks](/administration/fabrics/prophecy-fabrics/connections/databricks)
-- [Microsoft OneDrive](/administration/fabrics/prophecy-fabrics/connections/onedrive)
-- [SFTP](/administration/fabrics/prophecy-fabrics/connections/sftp)
-- [SharePoint](/administration/fabrics/prophecy-fabrics/connections/sharepoint)
-
-Learn about how to configure Source and Target gems for each connection type in the related file storage documentation.
+## Properties
 
 ### Source properties
 

@@ -32,12 +32,12 @@ Read or write files from [Databricks Volumes](/administration/fabrics/prophecy-f
 
 To create a Databricks Volumes Source or Target gem in your pipeline:
 
-1. Set up your Databricks Volumes connection.
+1. Set up your Databricks connection.
 
-   Learn more in the [Databricks Volumes connection](/administration/fabrics/prophecy-fabrics/connections/databricks-volumes) documentation.
+   Learn more in the [Databricks connection](/administration/fabrics/prophecy-fabrics/connections/databricks-volumes) documentation.
 
 1. Add a new Source or Target gem to your pipeline canvas and open the configuration.
-1. In the **Type** tab, select **Databricks Volumes**.
+1. In the **Type** tab, select **Databricks** under **File**. Do not select Databricks under **Table**.
 1. In the **Location** tab, choose your [file format](#supported-file-formats) and location.
 
    For more information on how to configure this screen, jump to [Location](#location).
