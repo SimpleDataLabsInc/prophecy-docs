@@ -1,5 +1,6 @@
 ---
-title: Google BigQuery
+title: Google BigQuery connection
+sidebar_label: Google BigQuery
 id: bigquery
 description: Learn how to connect with BigQuery
 tags:
