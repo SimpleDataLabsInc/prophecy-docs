@@ -21,9 +21,36 @@ When you run a pipeline in the pipeline canvas, Prophecy generates interim **dat
 
 ![Interactive run options](img/interactive-execution-play-options.png)
 
-### Data samples
+:::info Data Samples
+After you run your pipeline interactively in the canvas, data samples will appear between gems. These previews are temporarily cached. Learn about how these [data samples](docs/Spark/execution/data-sampling.md) are generated or discover the [Data Explorer](/engineers/data-explorer).
+:::
 
-After you run your pipeline, data samples will appear between gems. These previews are temporarily cached. Learn about how these [data samples](docs/Spark/execution/data-sampling.md) are generated or discover the [Data Explorer](/engineers/data-explorer).
+## Gem execution order
+
+When pipelines have multiple branches, gems execute sequentially, rather than running in parallel. You can visualize this sequence by switching to the **Code** view of your pipeline, where operations appear in their exact execution order.
+
+```python
+def pipeline(spark: SparkSession) -> None:
+    df_Orders = Orders(spark)
+    df_Customers = Customers(spark)
+    df_By_CustomerId = By_CustomerId(spark, df_Orders, df_Customers)
+    df_Cleanup = Cleanup(spark, df_By_CustomerId)
+    df_Sum_Amounts = Sum_Amounts(spark, df_Cleanup)
+    Customer_Orders(spark, df_Sum_Amounts)
+```
+
+In this example, each step executes completely before the next one begins:
+
+- Step 1 (Orders) runs and completes entirely
+- Step 2 (Customers) runs only after Orders finishes
+- Step 3 (Join) waits for both previous steps to be complete
+- Steps 4, 5, and 6 continue this sequential pattern
+
+The order that you see in the Code view can be changed by manually setting [gem phases](/engineers/gems#gem-phase).
+
+:::note
+Gems running on Spark are limited to sequential execution. Conversely, when gems run in a SQL warehouse, Prophecy leverages parallel execution when dependencies allow.
+:::
 
 ## Scheduled execution
 
