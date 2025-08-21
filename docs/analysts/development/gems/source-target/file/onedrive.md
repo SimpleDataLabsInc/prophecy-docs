@@ -54,7 +54,3 @@ To create a OneDrive Source or Target gem in your pipeline:
 | Format type                 | Type of file to read, such as `csv` or `json`.                                                                                                        |
 | Select or create connection | Select an existing OneDrive connection or [create a new one](/administration/fabrics/prophecy-fabrics/connections/onedrive). Example: `onedrive-prod` |
 | Filepath                    | Path to the file in OneDrive that you will write to.                                                                                                  |
-
-## Properties tab
-
-Properties are file-type dependent. Review the documentation for each file type to see its specific properties.

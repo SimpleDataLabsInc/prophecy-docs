@@ -164,12 +164,6 @@ const sidebars = {
                     id: "analysts/development/gems/source-target/file/file-storage",
                   },
                   items: [
-                    "analysts/development/gems/source-target/file/s3-gem",
-                    "analysts/development/gems/source-target/file/sftp-gem",
-                    "analysts/development/gems/source-target/file/onedrive-gem",
-                    "analysts/development/gems/source-target/file/sharepoint-gem",
-                    "analysts/development/gems/source-target/file/smartsheet-gem",
-                    "analysts/development/gems/source-target/file/databricks-volumes-gem",
                     {
                       type: "category",
                       label: "File types",
@@ -187,6 +181,12 @@ const sidebars = {
                         "analysts/development/gems/source-target/file/file-types/text",
                       ],
                     },
+                    "analysts/development/gems/source-target/file/s3-gem",
+                    "analysts/development/gems/source-target/file/databricks-volumes-gem",
+                    "analysts/development/gems/source-target/file/onedrive-gem",
+                    "analysts/development/gems/source-target/file/sftp-gem",
+                    "analysts/development/gems/source-target/file/sharepoint-gem",
+                    "analysts/development/gems/source-target/file/smartsheet-gem",
                   ],
                 },
 
