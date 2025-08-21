@@ -1,5 +1,6 @@
 ---
-title: Smartsheet
+title: Smartsheet connection
+sidebar_label: Smartsheet
 id: smartsheet
 description: Learn how to connect with Smartsheet
 tags:
@@ -24,8 +25,8 @@ The table below outlines whether the connection supports certain Prophecy featur
 
 | Feature                                                                        | Supported |
 | ------------------------------------------------------------------------------ | --------- |
-| Read data with a [Source gem](/analysts/source-target)                         | Yes       |
-| Write data with a [Target gem](/analysts/source-target)                        | Yes       |
+| Read data with a [Source gem](/analysts/smartsheet-gem)                        | Yes       |
+| Write data with a [Target gem](/analysts/smartsheet-gem)                       | Yes       |
 | Browse data in the [Environment browser](/analysts/project-editor#environment) | Yes       |
 
 ## Limitations

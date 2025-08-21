@@ -1,5 +1,6 @@
 ---
-title: Microsoft SharePoint
+title: Microsoft SharePoint connection
+sidebar_label: Microsoft SharePoint
 id: sharepoint
 description: Learn how to connect with SharePoint
 tags:
@@ -25,8 +26,8 @@ The table below outlines whether the connection supports certain Prophecy featur
 
 | Feature                                                                        | Supported |
 | ------------------------------------------------------------------------------ | --------- |
-| Read data with a [Source gem](/analysts/source-target)                         | Yes       |
-| Write data with a [Target gem](/analysts/source-target)                        | Yes       |
+| Read data with a [Source gem](/analysts/sharepoint-gem)                        | Yes       |
+| Write data with a [Target gem](/analysts/sharepoint-gem)                       | Yes       |
 | Browse data in the [Environment browser](/analysts/project-editor#environment) | Yes       |
 
 ## Limitations
