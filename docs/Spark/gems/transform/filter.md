@@ -34,7 +34,7 @@ Filters a DataFrame based on the provided filter condition.
 | Filter Condition | BooleanType column or boolean expression. Supports SQL, Python and Scala expressions. | True     |
 
 :::note
-Use the [visual language syntax](/engineers/configurations#general-syntax) to call configuration variables in the Filter gem.
+Use the [visual language syntax](/engineers/configurations#syntax-for-different-languages) to call configuration variables in the Filter gem.
 :::
 
 ## Example

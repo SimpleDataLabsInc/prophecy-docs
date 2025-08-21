@@ -27,10 +27,11 @@ import Requirements from '@site/src/components/gem-requirements';
 
 Enriches the DataFrame by adding column(s) with content from REST API output based on the given configuration.
 
-### Parameters
+## Parameters
 
-Each property can either be set as a static value or a value from an existing column of the input DataFrame. Please refer
-to the examples in the description column of each parameter for reference on how the string value should be formed.
+Each property can either be set as a static value or a value from an existing column of the input DataFrame. All input parameters are expected to be in string format. Other column types such as `array/JSON/struct` can be created using combination of aggregate/window gems along with reformat component and then can be cast as string prior to passing the column in RestAPIEnrich gem as needed.
+
+The following table lists all parameters of the RestAPIEnrich gem.
 
 | Parameter       | Description                                                                                                                                                                                                                     | Required | Default |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
@@ -50,22 +51,24 @@ to the examples in the description column of each parameter for reference on how
 | cert            | if String, path to SSL client cert file (.pem). eg. `dbfs:/path-to-file`. If Tuple, (‘cert’, ‘key’) pair. eg: `cert:key`.                                                                                                       | false    |         |
 | parse content   | Parse content as JSON (to make the schema available, enable `custom schema`, and click `infer from cluster` at the bottom left in the output tab)                                                                               | false    | false   |
 
-:::info
+:::tip
 
-1. To store sensitive information like API key (headers), auth etc., `Databricks secrets` can be used as shown in [Example](#example-1) below.
-2. If the expected number of rows are very large, it's better to provide `await time` in the `advanced tab` so you don't overwhelm the source server or exceed any request limits.
-3. For APIs which takes list of parameters as inputs, window functions like `collect_list` can be used before `RestApiEnrich` gem to reduce the number of API calls.
+Keep the following in mind as you configure the RestAPIEnrich gem:
 
-Please make sure that cluster is connected while using the `parse content` option to `infer the schema from cluster` for the first time.
+- To hide sensitive information like API keys and passwords, `Databricks secrets` can be used [as shown below](#example-1).
+- If the expected number of rows are very large, it's better to provide `await time` in the `advanced tab` so you don't overwhelm the source server or exceed any request limits.
+- For APIs which takes list of parameters as inputs, window functions like `collect_list` can be used before `RestApiEnrich` gem to reduce the number of API calls.
+
 :::
 
-:::note
-All input parameters are expected to be in string format. Other column types such as `array/JSON/struct` can be created
-using combination of aggregate/window gems along with reformat component and then can be cast as string prior to passing the column in `RestAPIEnrich gem`
-as needed.
-:::
+### Reference pipeline configurations
 
-### Example 1 {#example-1}
+To reference variables from your pipeline configs:
+
+- Use the following syntax: `${config_name}`
+- You can also use partial strings, for example: `foo_${config_name}bar`
+
+## Example 1 {#example-1}
 
 Let's try to fetch prices for few cryptocurrencies from [Coin-API](https://www.coinapi.io/).
 
@@ -80,7 +83,7 @@ Also, we would be using Databricks-secrets to pass headers as it requires API-ke
 <iframe src="https://user-images.githubusercontent.com/103921419/184725747-88115fa5-b70b-4caf-b3e0-1f2476e15d6e.mp4" title="Rest API example 1" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-### Example 2
+## Example 2
 
 Let's take a more complex example, where all method, url, headers, params etc are passed as values from DataFrame
 columns.
@@ -90,7 +93,7 @@ columns.
 <iframe src="https://user-images.githubusercontent.com/103921419/184725732-5cafc278-c1cf-4bad-9078-9f810ede008a.mp4" title="Rest API example 2" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
 </div></div>
 
-#### Generated Code
+## Generated Code
 
 ````mdx-code-block
 import Tabs from '@theme/Tabs';
