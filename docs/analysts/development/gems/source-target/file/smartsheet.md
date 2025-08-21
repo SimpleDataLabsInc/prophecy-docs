@@ -19,9 +19,9 @@ Use a Source and Target gem to read from or write to Smartsheet locations in Pro
 
 ## Supported file formats
 
-| Format                 | Read | Write |
-| ---------------------- | ---- | ----- |
-| [XLSX](/analysts/xlsx) | Yes  | Yes   |
+| Format                  | Read | Write |
+| ----------------------- | ---- | ----- |
+| [XLSX](/analysts/excel) | Yes  | Yes   |
 
 ## Create a Smartsheet gem
 

@@ -27,7 +27,7 @@ The SFTP gem supports the following file formats.
 | [JSON](/analysts/json)               | Yes  | Yes    |
 | [Parquet](/analysts/parquet)         | Yes  | Yes    |
 | [XML](/analysts/xml)                 | Yes  | Yes    |
-| [XLSX](/analysts/xlsx)               | Yes  | Yes    |
+| [XLSX](/analysts/excel)              | Yes  | Yes    |
 | [Fixed width](/analysts/fixed-width) | Yes  | **No** |
 
 ## Create an SFTP gem

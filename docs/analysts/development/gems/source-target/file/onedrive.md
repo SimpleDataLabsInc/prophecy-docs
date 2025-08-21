@@ -24,7 +24,7 @@ Use a Source and Target gem to read from or write to OneDrive document locations
 | [CSV](/analysts/csv)                 | Yes  | Yes   |
 | [Fixed width](/analysts/fixed-width) | Yes  | No    |
 | [JSON](/analysts/json)               | Yes  | Yes   |
-| [XLSX](/analysts/xlsx)               | Yes  | Yes   |
+| [XLSX](/analysts/excel)              | Yes  | Yes   |
 | [XML](/analysts/xml)                 | Yes  | Yes   |
 
 ## Create a OneDrive gem
