@@ -30,8 +30,8 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Feature                                                                        | Supported                           |
 | ------------------------------------------------------------------------------ | ----------------------------------- |
 | Run SQL queries                                                                | Yes — SQL Warehouse Connection only |
-| Read and write data with a [Table gem](/analysts/source-target)                | Yes — SQL Warehouse Connection only |
-| Read data with a [Source gem](/analysts/source-target)                         | Yes                                 |
+| Read and write data with a [Table gem](/analysts/bigquery-table)               | Yes — SQL Warehouse Connection only |
+| Read data with a [Source gem](/analysts/bigquery)                              | Yes                                 |
 | Write data with a [Target gem](/analysts/source-target)                        | Yes                                 |
 | Browse data in the [Environment browser](/analysts/project-editor#environment) | Yes                                 |
 
