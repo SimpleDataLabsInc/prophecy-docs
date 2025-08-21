@@ -43,7 +43,11 @@ To begin, create a new Okta SAML application:
 
 1. For **App name**, enter `Prophecy SAML App`, then click **Next**.
 
-1. For **Single Sign-On URL**, use the value from the Prophecy EMR fabric page.
+1. For **Single Sign-On URL**, open the Prophecy EMR fabric where you want to configure SAML.
+
+   Then, copy the provided URL under **Login URL** and paste this into the Okta field.
+
+   ![Prophecy EMR Fabric](img/emr-saml-setup.png)
 
 1. Below the URL, select the **Use this for Recipient URL and Destination URL** checkbox.
 
@@ -82,6 +86,8 @@ Next, save the metadata from this app to upload to AWS.
 
 1. Copy the **Metadata URL** details.
 
+   ![Okta metadata](img/okta-metadata.png)
+
 1. Save the copied information as a file called `metadata.xml`.
 
 ## Step 2: Create an AWS Identity Provider
@@ -99,6 +105,8 @@ Now, create a new Identity Provider in AWS.
 1. For **Provider name**, enter a descriptive name.
 
 1. For **Metadata document**, upload the `metadata.xml` file you downloaded earlier.
+
+   ![AWS provider](img/aws-new-idp.png)
 
 1. Click **Add Provider**.
 
