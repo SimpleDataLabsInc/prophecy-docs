@@ -53,31 +53,41 @@ To create an SFTP Source or Target gem in your pipeline:
 
 ## Source location
 
-| Parameter                                              | Description                                                                                                                                                                                                                                                                |
-| ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Format type                                            | File format to read. Example: `csv`, `json`, `parquet`                                                                                                                                                                                                                     |
-| Select or create connection                            | Choose an existing SFTP connection or [create a new one](/administration/fabrics/prophecy-fabrics/connections/sftp).                                                                                                                                                       |
-| Choose Path or Configuration                           | Choose between the following options.<ul><li>**Filepath**: Read one file from a specified file path.</li><li>**Configuration**: Output the data from all files returned by a file trigger. In this mode, the gem unions all detected files into a single output.</li></ul> |
-| Filepath<br/>_(Filepath option only)_                  | <p>Path to the file on the SFTP server. Supports wildcards but must resolve to a single file.</p><p>Example: <code>/temp/dir/\*.csv</code>.</p>                                                                                                                            |
-| Select Configuration<br/>_(Configuration option only)_ | [File trigger configuration](/analysts/triggers#trigger-configuration) that, when triggered, will provide the files that were added or modified for that triggered run.                                                                                                    |
-| Include filename Column                                | Appends a column containing the source filename for each row in the output table.                                                                                                                                                                                          |
-| Delete files after successfully processed              | Deletes files after they are successfully read.                                                                                                                                                                                                                            |
-| Move files after successfully processed                | Moves files to a specified directory after they are successfully read.                                                                                                                                                                                                     |
+When setting up an SFTP Source gem, you need to decide how Prophecy should locate files at runtime. There are two modes:
 
-:::info
-If you select **Configuration**, you will not be able to run the pipeline interactively. You will see the following error:
+- **Filepath**: Always read from a file path that points to one file. Best for testing or when the file name/location is predictable.
+
+- **Configuration**: Dynamically read files provided by a [file arrival/change trigger](/analysts/triggers) in the pipeline’s schedule. When new or updated files are detected in the monitored directory, the trigger starts the pipeline and passes those files to the SFTP Source gem, which unions them into a single output table.
+
+Use the table below to understand how to configure each option.
+
+| Parameter                                            | Description                                                                                                                                                                                                                       |
+| ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Format type                                          | File format to read. Example: `csv`, `json`, `parquet`                                                                                                                                                                            |
+| Select or create connection                          | Choose an existing SFTP connection or [create a new one](/administration/fabrics/prophecy-fabrics/connections/sftp).                                                                                                              |
+| Choose Path or Configuration                         | Choose between the following options.<ul><li>**Filepath**: Read one file from a specified file path.</li><li>**Configuration**: Dynamically read files provided by a [file arrival/change trigger](/analysts/triggers).</li></ul> |
+| Filepath<br/>_Filepath option only_                  | Path to the file on the SFTP server. Supports wildcards but must resolve to a single file. <br/>Example: `/temp/dir/*.csv`                                                                                                        |
+| Select Configuration<br/>_Configuration option only_ | File arrival/change trigger [configuration](/analysts/triggers#trigger-configuration) that provides the added or modified files for that run.                                                                                     |
+| Include filename Column                              | Appends a column containing the source filename for each row in the output table.                                                                                                                                                 |
+| Delete files after successfully processed            | Deletes files after they are successfully read.                                                                                                                                                                                   |
+| Move files after successfully processed              | Moves files to a specified directory after they are successfully read.                                                                                                                                                            |
+
+### Configuration
+
+If you select **Configuration**, the gem will only run successfully during a **triggered pipeline run**. This is because the gem expects files from the trigger. In other cases, such as an interactive run or an API-triggered run, there will be no files to read. In these situations, you might encounter the following error:
 
 ```
 Failed due to: Unable to detect modified files for provided File Trigger
 ```
 
-For the same reason, you will encounter an error if you try to infer the schema in the **Properties** tab or load a preview in the **Preview** tab of the Source gem.
-:::
+For the same reason, you'll see an error if you try to infer the schema in the **Properties** tab or load a preview in the **Preview** tab of the Source gem.
 
 ## Target location
 
-| Parameter                   | Description                                                                                                                               |
-| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| Format type                 | Type of file to read, such as `csv` or `json`.                                                                                            |
-| Select or create connection | Select an existing SFTP connection or [create a new one](/administration/fabrics/prophecy-fabrics/connections/sftp). Example: `sftp-prod` |
-| Filepath                    | Path to the file in SFTP that you will write to. Example: `/temp/dir/file.csv`                                                            |
+When setting up an SFTP Target gem, you need to set the location and file type to correctly write the file.
+
+| Parameter                   | Description                                                                                                          |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Format type                 | Type of file to read, such as `csv` or `json`.                                                                       |
+| Select or create connection | Select an existing SFTP connection or [create a new one](/administration/fabrics/prophecy-fabrics/connections/sftp). |
+| Filepath                    | Path to the file in SFTP that you will write to. <br/>Example: `/temp/dir/file.csv`                                  |
