@@ -88,19 +88,27 @@ Next, save the metadata from this app to upload to AWS.
 
 Now, create a new Identity Provider in AWS.
 
-1. In AWS, go to **IAM > Identity Providers**.
+1. In AWS, open **Identity and Access Management (IAM)**.
 
-2. Click **Add Provider**.
+1. Navigate to **Identity Providers**.
 
-3. For **Provider type**, select **SAML**.
+1. Click **Add Provider**.
 
-4. For **Provider name**, enter a descriptive name.
+1. For **Provider type**, select **SAML**.
 
-5. For **Metadata document**, upload the `metadata.xml` file you downloaded earlier.
+1. For **Provider name**, enter a descriptive name.
 
-6. Click **Add Provider**.
+1. For **Metadata document**, upload the `metadata.xml` file you downloaded earlier.
 
-7. Note the Identity Provider ARN. For example: `arn:aws:iam::<account_id>:saml-provider/okta-provider`
+1. Click **Add Provider**.
+
+1. Note the Identity Provider ARN, which you will use when updating the Okta SAML application.
+
+   For example: `arn:aws:iam::<account_id>:saml-provider/okta-provider`
+
+1. Note the Issuer URL, which you will use when creating an AWS role.
+
+1. Note the SSO service location, which you will add to Prophecy via environment variables.
 
 ## Step 3: Create an AWS role for SAML authentication
 
@@ -125,9 +133,13 @@ Then, create a role that will be assigned to all users who attach to the EMR fab
 
 1. Enter a role name and description, then click **Create role**.
 
+1. If applicable, ensure that the role has required permissions to interact with the EMR Serverless application.
+
 1. Optionally, edit the role to set the **Maximum session duration**.
 
-1. Note the role ARN. For example: `arn:aws:iam::<account_id>:role/prophecy-emr-okta-login-role`
+1. Note the role ARN, which you will use when updating the Okta SAML application.
+
+   For example: `arn:aws:iam::<account_id>:role/prophecy-emr-okta-login-role`
 
 ## Step 4: Update the Okta SAML application
 
@@ -141,10 +153,11 @@ In this step, add information from AWS into your Okta application.
 
 1. In **Configure SAML**, under **Attribute Statements**, add:
 
-   | Name                                                     | Value                                        |
-   | -------------------------------------------------------- | -------------------------------------------- |
-   | `https://aws.amazon.com/SAML/Attributes/RoleSessionName` | `user.login`                                 |
-   | `https://aws.amazon.com/SAML/Attributes/Role`            | `<AWS Role ARN>,<AWS Identity Provider ARN>` |
+   | Name                                                     | Value                                                                       |
+   | -------------------------------------------------------- | --------------------------------------------------------------------------- |
+   | `https://aws.amazon.com/SAML/Attributes/RoleSessionName` | `user.login`                                                                |
+   | `https://aws.amazon.com/SAML/Attributes/Role`            | `<AWS Role ARN>,<AWS Identity Provider ARN>`                                |
+   | `https://aws.amazon.com/SAML/Attributes/SessionDuration` | Value can be less than or equal to the session duration defined in step 3.8 |
 
 1. Click **Next**, then **Finish**.
 
