@@ -15,7 +15,7 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
   sql_package_version=""
 />
 
-Read or write files from [Microsoft SharePoint](/administration/fabrics/prophecy-fabrics/connections/sharepoint) using a Source or Target gem.
+Use a Source and Target gem to read from or write to SharePoint document locations in Prophecy pipelines. This page covers supported file formats, how to create the gem, and how to configure connection details and paths for both Source and Target gems.
 
 ## Supported file formats
 
