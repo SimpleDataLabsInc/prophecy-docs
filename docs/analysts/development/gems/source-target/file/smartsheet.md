@@ -42,12 +42,12 @@ To create a Smartsheet Source or Target gem in your pipeline:
    See the list of properties per [file type](/analysts/file-types).
    :::
 
-1. In the **Preview** tab, load a sample of the data and verify that it looks correct. Source gems only.
+1. (Source only) In the **Preview** tab, load a sample of the data and verify that it looks correct.
 
 ## Location
 
 | Parameter                   | Description                                                                                                                      |
 | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| Format type                 | Type of file to read, such as `csv` or `json`.                                                                                   |
+| Format type                 | Type of file to read or write, such as `csv` or `json`.                                                                          |
 | Select or create connection | Select an existing Smartsheet connection or [create a new one](/administration/fabrics/prophecy-fabrics/connections/smartsheet). |
-| Filepath                    | Path to the file in Smartsheet that you will read from or write to. <br/>Example: `/Projects/ProjectName/file.csv`               |
+| Filepath                    | Path to the file in Smartsheet. <br/>Example: `/Projects/ProjectName/file.csv`                                                   |

@@ -15,7 +15,7 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
   sql_package_version=""
 />
 
-Use a Source and Target gem to read from or write to SharePoint document locations in Prophecy pipelines. This page covers supported file formats, how to create the gem, and how to configure connection details and paths for both Source and Target gems.
+Use a Source or Target gem to read from or write to SharePoint in Prophecy pipelines. This page covers supported file formats, how to create the gem, and how to configure connection details and paths for both Source and Target gems.
 
 ## Supported file formats
 
@@ -46,12 +46,12 @@ To create a SharePoint Source or Target gem in your pipeline:
    See the list of properties per [file type](/analysts/file-types).
    :::
 
-1. In the **Preview** tab, load a sample of the data and verify that it looks correct. Source gems only.
+1. (Source only) In the **Preview** tab, load a sample of the data and verify that it looks correct.
 
 ## Location
 
 | Parameter                   | Description                                                                                                                      |
 | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| Format type                 | Type of file to read, such as `csv` or `json`.                                                                                   |
+| Format type                 | Type of file to read or write, such as `csv` or `json`.                                                                          |
 | Select or create connection | Select an existing SharePoint connection or [create a new one](/administration/fabrics/prophecy-fabrics/connections/sharepoint). |
-| Filepath                    | Path to the file in SharePoint that you will read from or write to. <br/>Example: `/sites/sitename/SharedDocuments/file.csv`     |
+| Filepath                    | Path to the file in SharePoint. <br/>Example: `/sites/sitename/SharedDocuments/file.csv`                                         |
