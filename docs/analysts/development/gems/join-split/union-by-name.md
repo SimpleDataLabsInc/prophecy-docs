@@ -30,9 +30,9 @@ To add additional input ports, click `+` next to **Ports**.
 
 ## Parameters
 
-| Parameter      | Description                                                                                                                                                                                                                                              |
-| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Operation Type | Choose between two different operations.<ul class="table-list"><li>Union By Name (No Missing Columns): All columns must be present in both tables.</li><li>Union By Name (Allow Missing Columns): Columns do not have to match between tables.</li></ul> |
+| Parameter      | Description                                                                                                                                                                                                                           |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Operation Type | Choose between two different operations.<ul><li>Union By Name (No Missing Columns): All columns must be present in both tables.</li><li>Union By Name (Allow Missing Columns): Columns do not have to match between tables.</li></ul> |
 
 ## Example
 

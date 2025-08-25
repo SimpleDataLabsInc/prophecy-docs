@@ -1,5 +1,6 @@
 ---
-title: Microsoft Power BI
+title: Microsoft Power BI connection
+sidebar_label: Microsoft Power BI
 id: power-bi
 description: Learn how to connect with PowerBI
 tags:

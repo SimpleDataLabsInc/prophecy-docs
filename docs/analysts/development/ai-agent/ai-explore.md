@@ -88,10 +88,10 @@ If the chart is based on a dataset that isn't yet in your pipeline, you'll see a
 
 To see a larger version of the chart, click **Preview**. This opens the data visualization dialog, which has two tabs.
 
-| Tab           | Available actions                                                                                                                                  |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Visualization | <ul class="table-list"><li>View a larger version of the chart</li><li>Download the chart as an image</li><li>Copy the chart as an image</li></ul>  |
-| Data          | <ul class="table-list"><li>View the underlying data</li><li>Download the data as a JSON, Excel, or CSV file</li><li>Show or hide columns</li></ul> |
+| Tab           | Available actions                                                                                                               |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| Visualization | <ul><li>View a larger version of the chart</li><li>Download the chart as an image</li><li>Copy the chart as an image</li></ul>  |
+| Data          | <ul><li>View the underlying data</li><li>Download the data as a JSON, Excel, or CSV file</li><li>Show or hide columns</li></ul> |
 
 :::info
 To learn more about data visualization, see [Charts](/analysts/charts).

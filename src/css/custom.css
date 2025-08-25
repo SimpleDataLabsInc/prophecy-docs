@@ -283,11 +283,30 @@ img {
   width: 75%;
 }
 
-/* Remove margin from lists in tables */
+/* Better spacing for content within table cells */
+table td p,
+table th p {
+  margin: 0 0 10px;
+}
 
-.table-list {
-  margin: 0 !important;
-  padding-left: 1rem !important;
+table td p:last-child,
+table th p:last-child {
+  margin-bottom: 0;
+}
+
+table td ul,
+table td ol,
+table th ul,
+table th ol {
+  margin: 8px 0;
+  padding-left: 1.25rem;
+}
+
+table td ul li + li,
+table td ol li + li,
+table th ul li + li,
+table th ol li + li {
+  margin-top: 6px;
 }
 
 /** Remove default border from code styles **/

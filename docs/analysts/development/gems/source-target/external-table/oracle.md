@@ -31,11 +31,11 @@ Use these settings to configure an Oracle Source gem for reading data.
 
 ### Source location
 
-| Parameter                   | Description                                                                                                                                                                                                  |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Format type                 | Table format for the source. For Oracle tables, set to `oracle`.                                                                                                                                             |
-| Select or create connection | Select or create a new [Oracle connection](/administration/fabrics/prophecy-fabrics/connections/mongodb) in the Prophecy fabric you will use.                                                                |
-| Read using                  | Choose table or query.<ul class="table-list"><li>**Table**: Provide the schema and name of the table you want to read.</li><li>**Query**: Enter a SQL query directly in the gem to select a table.</li></ul> |
+| Parameter                   | Description                                                                                                                                                                               |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Format type                 | Table format for the source. For Oracle tables, set to `oracle`.                                                                                                                          |
+| Select or create connection | Select or create a new [Oracle connection](/administration/fabrics/prophecy-fabrics/connections/oracle) in the Prophecy fabric you will use.                                              |
+| Read using                  | Choose table or query.<ul><li>**Table**: Provide the schema and name of the table you want to read.</li><li>**Query**: Enter a SQL query directly in the gem to select a table.</li></ul> |
 
 ### Source properties
 

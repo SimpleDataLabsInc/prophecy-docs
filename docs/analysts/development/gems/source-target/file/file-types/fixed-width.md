@@ -2,57 +2,28 @@
 title: Fixed-width
 id: fixed-width
 slug: /analysts/fixed-width
-description: Read and write fixed-width files
+description: Read fixed-width files
 tags: []
 ---
 
-import SQLRequirements from '@site/src/components/sql-gem-requirements';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<SQLRequirements
-  execution_engine="Prophecy Automate"
-  sql_package_name=""
-  sql_package_version=""
-/>
-
-Read a fixed-width file from an external connection using a Source gem.
+This page describes the **Fixed-width-specific properties** that appear in the **Properties** tab of Source gems. These settings are the same for fixed-width files regardless of which connection type is configured in the gem (for example, S3, SFTP, or SharePoint).
 
 :::info
 Writing fixed-width files using a Target gem is not supported.
 :::
 
-## Supported connections
+If you need details on configuring a Source gem end to end (including all tabs such as **Location**), see the documentation for the specific file storage connection:
 
-You can read fixed-width files from the following connections:
+- [Amazon S3](/analysts/s3-gem)
+- [Databricks](/analysts/databricks-volumes-gem)
+- [Microsoft OneDrive](/analysts/onedrive-gem)
+- [SFTP](/analysts/sftp-gem)
+- [SharePoint](/analysts/sharepoint-gem)
 
-- [Amazon S3](/administration/fabrics/prophecy-fabrics/connections/s3)
-- [Databricks](/administration/fabrics/prophecy-fabrics/connections/databricks)
-- [Microsoft OneDrive](/administration/fabrics/prophecy-fabrics/connections/onedrive)
-- [SFTP](/administration/fabrics/prophecy-fabrics/connections/sftp)
-- [SharePoint](/administration/fabrics/prophecy-fabrics/connections/sharepoint)
-
-## Configuration tabs
-
-When you create a new Source gem, the gem dialog contains the following tabs.
-
-- **Type**: Choose the file storage provider you will connect to.
-- **Source/Target location**: Choose the [connection](/administration/fabrics/prophecy-fabrics/connections/) and define the file path where you will read from.
-- **Properties**: Infer or manually specify the schema, and optionally add properties that influence table behavior.
-- **Preview**: Load a preview of the dataset reflecting your configurations.
-
-## Parameters
-
-Configure a Source gem using the following parameters to read a fixed-width file.
-
-| Parameter                   | Tab             | Description                                                                                     |
-| --------------------------- | --------------- | ----------------------------------------------------------------------------------------------- |
-| Connection type             | Type            | Location you want to connect from.                                                              |
-| Format type                 | Source location | Format of the gem. In this case, `fixedwidth`.                                                  |
-| Select or create connection | Source location | Whether to select an existing connection, or to create a new one.                               |
-| Filepath                    | Source location | File path where you want to read and write files according to the connection type.              |
-| Properties                  | Properties      | Optional table properties to apply. [Source](#source-properties) properties are outlined below. |
-| Schema                      | Properties      | Schema definition of the table (**custom schema only**).                                        |
+## Properties
 
 ## Source schema
 
