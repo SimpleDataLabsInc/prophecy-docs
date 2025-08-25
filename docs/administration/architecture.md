@@ -36,7 +36,6 @@ Prophecy can accommodate a wide variety of architectures beyond this diagram. Fo
 
 - The diagram shows Databricks as the data provider and SQL warehouse. Prophecy also supports Snowflake SQL warehouse.
 - The diagram displays a connection to an external Git repository. You can also use Prophecy-managed Git for version control.
-- The diagram places Prophecy Automate inside Prophecy. If necessary, Prophecy Automate can run in a customer network instead. If you opt to run Prophecy Automate in your customer network, then you must specify this in the Prophecy [fabric](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md).
 
 Prophecy Automate comes with the following components:
 
