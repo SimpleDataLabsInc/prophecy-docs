@@ -47,6 +47,12 @@ const config = {
     locales: ["en"],
   },
 
+  markdown: {
+    mermaid: true,
+  },
+
+  themes: ["@docusaurus/theme-mermaid"],
+
   presets: [
     [
       "classic",
@@ -171,6 +177,14 @@ const config = {
           },
         ],
         copyright: `© 2025 Prophecy Inc All Rights Reserved <a href="https://legal.prophecy.io/privacy" target="_blank">Privacy Policy</a>`,
+      },
+      mermaid: {
+        theme: { light: "default", dark: "dark" },
+        themeVariables: {
+          fontFamily: "verdana",
+          fontSize: "14px",
+          fontWeight: "400",
+        },
       },
       prism: {
         theme: lightCodeTheme,
