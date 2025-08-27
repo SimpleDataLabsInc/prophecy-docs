@@ -31,7 +31,12 @@ SQL projects are designed for users who work primarily with SQL data warehouses 
 - Work with SQL warehouses such as Databricks SQL or BigQuery.
 - Focus on transforming data for business intelligence and reporting.
 - Prefer visual interfaces over writing code.
-- Benefit from built-in scheduling capabilities and API triggers (Prophecy Automate).
+- Benefit from built-in scheduling capabilities and API triggers.
+
+SQL projects can run on:
+
+- **[Prophecy fabrics](/administration/fabrics/prophecy-fabrics/)**: Environment including a SQL warehouse and Prophecy Automate (Prophecy-native runtime).
+- **[SQL fabrics](/administration/fabrics/sql-fabrics/Fabrics)**: Environment only including SQL warehouse compute. Project capabilities are limited when using SQL fabrics. Use SQL fabrics for data modeling only.
 
 ### Python/Scala projects
 
@@ -41,6 +46,8 @@ Python and Scala projects are designed for users who need more control over data
 - Work with Spark clusters.
 - Need full control over the code and execution environment.
 - Use external orchestration tools like Databricks Jobs.
+
+Python and Scala projects can run on **[Spark fabrics](/administration/fabrics/Spark-fabrics/Fabrics)**.
 
 :::info
 For detailed capabilities and feature comparisons, see [Project types](/administration/project-types/project-types.md).
@@ -58,9 +65,9 @@ Your project contains different components depending on the type you choose. The
 
 SQL projects organize your work around pipelines that combine SQL transformations with external integrations:
 
-- **Pipelines**: Visual workflows that sequence data transformation steps. Pipelines run in your SQL warehouse for data processing and in Prophecy Automate for external integrations like API calls and email notifications.
-- **Gems**: Individual transformation components that you configure visually. Each gem represents a specific data operation like filtering, joining, or aggregating data.
-- **Tables**: References to data sources and targets configured through Source and Target gems. These represent the actual tables in your SQL warehouse or other data storage.
+- **Pipelines**: Visual workflows that sequence data transformation steps.
+- **Gems**: Individual transformation components that you configure visually. Each gem represents a specific data operation like reading, joining, or aggregating data. Gems run in your SQL warehouse for data processing and in Prophecy Automate for external integrations like API calls and email notifications.
+- **Tables**: References to data sources and targets configured through Source and Target gems. No data is stored in Prophecy.
 - **Schedules**: Automated pipeline execution managed by Prophecy Automate. Schedules allow you to run pipelines at specified intervals without manual intervention.
 
 :::note
@@ -75,7 +82,7 @@ Python/Scala projects organize your work around pipelines that execute on Spark 
 
 - **Pipelines**: Visual workflows that sequence data transformation steps. Pipelines run on Spark clusters.
 - **Gems**: Individual transformation components that you configure visually. Each gem represents a specific data operation that corresponds to Python or Scala code.
-- **Datasets**: References to data sources and targets configured through Source and Target gems. These represent the tables or files that you define.
+- **Datasets**: References to data sources and targets configured through Source and Target gems. No data is stored in Prophecy.
 - **Jobs**: Automated pipeline execution managed by external orchestration tools like Databricks Jobs.
 
 ## Version control
@@ -86,7 +93,7 @@ All projects in Prophecy are automatically compiled into code and hosted on Git 
 
 Projects can be hosted on two types of Git repositories:
 
-| Git Repository Type      | Description                                                                                | Use Case                                                        |
+| Git Repository           | Description                                                                                | Use Case                                                        |
 | ------------------------ | ------------------------------------------------------------------------------------------ | --------------------------------------------------------------- |
 | **Prophecy-managed Git** | Prophecy hosts and manages everything for you. No external Git setup required.             | Teams new to Git or preferring simplified workflows             |
 | **External Git**         | Connect to GitHub, GitLab, or Bitbucket. You have full control over repository management. | Teams with existing Git workflows or complex CI/CD requirements |

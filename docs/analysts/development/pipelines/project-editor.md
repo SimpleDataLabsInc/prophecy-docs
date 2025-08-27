@@ -38,6 +38,10 @@ The Environment tab lets you access data directly in Prophecy from connections d
 - Add new connections to the attached fabric
 - Refresh tables to sync table metadata to the [knowledge graph](/knowledge-graph)
 
+![Project sidebar](img/project-sidebar.png)
+
+---
+
 ## Visual canvas
 
 The visual canvas is the workspace where you can add and connect various gems to build your pipeline. It provides a drag-and-drop interface for designing your data flow.
@@ -49,6 +53,10 @@ At the top of the visual canvas, you see different gem categories such as Transf
 ### Run button
 
 The canvas also includes Run button that triggers interactive pipeline execution. This allows you to test and run the pipeline in real-time, which makes it easier to troubleshoot and verify the pipeline's performance before deployment. To learn more, visit [Pipeline execution](/analysts/pipeline-execution).
+
+![Project canvas](img/project-canvas.png)
+
+---
 
 ## Header
 
@@ -62,13 +70,13 @@ Click on Parameters to open settings that dynamically define how your pipeline b
 
 Access various settings and metadata for your pipeline. Options include:
 
-- Project Configuration: Define key-value pairs for model configs
-- Development Settings: Choose the maximum number of records that will be parsed to understand nested data schema
-- Advanced Settings: Edit dbt project settings
-- Dependencies: Manage project dependencies such as Prophecy packages or dbt Hub packages
-- Schedule: Add a schedule for the pipeline to run on a regular basis after project deployment
-- Metadata: Open project metadata for more details
-- Delete project: Delete your project from your environment
+- **Project Configuration**: Define key-value pairs for model configs
+- **Development Settings**: Choose the maximum number of records that will be parsed to understand nested data schema
+- **Advanced Settings**: Edit dbt project settings
+- **Dependencies**: Manage project dependencies such as Prophecy packages or dbt Hub packages
+- **Schedule**: Add a schedule for the pipeline to run on a regular basis after project deployment
+- **Metadata**: Open project metadata for more details
+- **Delete project**: Delete your project from your environment
 
 ### Visual-Code toggle
 
@@ -81,6 +89,10 @@ Use the fabric dropdown to select the fabric to attach to. This is the fabric th
 ### Version menu
 
 If you create your project using the [simple Git storage model](docs/analysts/version-control/version-control.md), you will see the version menu in the project header. Use this menu to save your project, publish your project, or view your project history.
+
+![Project header](img/project-header.png)
+
+---
 
 ## Footer
 
@@ -97,3 +109,5 @@ Runtime [logs](/analysts/logs) offer detailed insights into the status and progr
 ### Git workflow
 
 If you create your project using the [normal Git storage model](docs/analysts/version-control/version-control.md), you will see the Git workflow in the project footer. Open the Git workflow to perform actions like committing, merging, or deploying the project.
+
+![Project footer](img/project-footer.png)

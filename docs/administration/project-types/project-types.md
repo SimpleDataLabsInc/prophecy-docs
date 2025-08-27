@@ -87,7 +87,8 @@ The feature matrices below show **Analytics Engineer projects** using models as 
 
 ### Execution & Data
 
-| Feature                  | Data Analyst  | Data Analyst + Platform Engineer | Analytics Engineer      | Platform Engineer |
-| ------------------------ | ------------- | -------------------------------- | ----------------------- | ----------------- |
-| Primary execution engine | SQL Warehouse | SQL Warehouse                    | SQL Warehouse           | Spark cluster     |
-| Data connections         | Fabric-level  | Fabric-level                     | None (in-database only) | Gem-level         |
+| Feature          | Data Analyst                                          | Data Analyst + Platform Engineer                      | Analytics Engineer                                 | Platform Engineer                                      |
+| ---------------- | ----------------------------------------------------- | ----------------------------------------------------- | -------------------------------------------------- | ------------------------------------------------------ |
+| Fabric type      | [Prophecy](/administration/fabrics/prophecy-fabrics/) | [Prophecy](/administration/fabrics/prophecy-fabrics/) | [SQL](/administration/fabrics/sql-fabrics/Fabrics) | [Spark](/administration/fabrics/Spark-fabrics/Fabrics) |
+| Execution engine | SQL Warehouse + <br/>Prophecy Automate                | SQL Warehouse + <br/>Prophecy Automate                | SQL Warehouse                                      | Spark cluster                                          |
+| Data connections | Fabric-level                                          | Fabric-level                                          | None (in-database only)                            | Gem-level                                              |
