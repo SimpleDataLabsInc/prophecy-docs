@@ -180,11 +180,6 @@ const config = {
       },
       mermaid: {
         theme: { light: "default", dark: "dark" },
-        themeVariables: {
-          fontFamily: "verdana",
-          fontSize: "14px",
-          fontWeight: "400",
-        },
       },
       prism: {
         theme: lightCodeTheme,

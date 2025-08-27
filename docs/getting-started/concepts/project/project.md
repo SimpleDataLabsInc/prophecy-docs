@@ -8,12 +8,12 @@ tags:
   - project
 ---
 
-Projects serve as your primary workspace in Prophecy for building data pipelines. Think of a project as a container that organizes related data transformations, tests, and schedules in one place. Projects provide four core capabilities that support your data pipeline development:
+Projects serve as your primary workspace in Prophecy for building data pipelines. They are containers that organize related data transformations, tests, and schedules in one place. Projects provide some core capabilities that support your data pipeline development:
 
-- **Organization**: Keep related pipelines, data sources, and schedules together in a logical structure
-- **Collaboration**: Share your work with team members and other teams through controlled access
-- **Version Control**: Track changes and manage versions of your data transformations over time
-- **Deployment**: Move your work from development to production environments
+- **Organization**: Keep related pipelines, data sources, and schedules together in a logical structure.
+- **Collaboration**: Share your work with team members and other teams through controlled access.
+- **Version Control**: Track changes and manage versions of your data transformations over time.
+- **Deployment**: Move your work from development to production environments.
 
 ## Project types
 
@@ -27,28 +27,28 @@ You cannot change your project type after creation. This decision affects the un
 
 SQL projects are designed for users who work primarily with SQL data warehouses and focus on business analytics. Choose SQL if you:
 
-- Are a **business analyst** or **data analyst**
-- Use existing SQL warehouses like Databricks SQL or BigQuery
-- Focus on transforming data for business intelligence and reporting
-- Prefer visual interfaces over writing code
-- Benefit from built-in scheduling capabilities and API triggers (Prophecy Automate)
+- Are a **business analyst** or **data analyst**.
+- Work with SQL warehouses such as Databricks SQL or BigQuery.
+- Focus on transforming data for business intelligence and reporting.
+- Prefer visual interfaces over writing code.
+- Benefit from built-in scheduling capabilities and API triggers (Prophecy Automate).
 
 ### Python/Scala projects
 
 Python and Scala projects are designed for users who need more control over data processing and work with distributed computing environments. Choose Python or Scala if you:
 
-- Are a **data engineer** or **platform engineer** building complex data processing systems
-- Work with Spark clusters
-- Need full control over the code and execution environment
-- Use external orchestration tools like Databricks Jobs
+- Are a **data engineer** or **platform engineer** building complex data processing systems.
+- Work with Spark clusters.
+- Need full control over the code and execution environment.
+- Use external orchestration tools like Databricks Jobs.
 
 :::info
-For detailed capabilities and feature comparisons, see [Project Types by Persona](/administration/project-types/project-types.md).
+For detailed capabilities and feature comparisons, see [Project types](/administration/project-types/project-types.md).
 :::
 
-:::note
-SQL projects are tied to SQL warehouse providers. For example, you must choose a provider upon project creation, like Databricks. Python/Scala projects, on the other hand, are agnostic and can be run on any Spark cluster (Databricks or Livy for example). However, outcomes may vary -- for example, some gems are only supported on certain Spark versions.
-:::
+### Compute differences
+
+SQL projects are tied to a specific SQL warehouse provider (for example, Databricks), which you select when creating the project. Python/Scala projects, by contrast, are provider-agnostic and can run on any Spark cluster (such as Databricks or Livy). Keep in mind that results may vary—Prophecy supports different capabilities based on the requirements and limitations of each different compute (both SQL and Spark-based compute).
 
 ## Project components
 
@@ -66,7 +66,7 @@ SQL projects organize your work around pipelines that combine SQL transformation
 :::note
 In Prophecy 4.0 and later, SQL projects use **pipelines** as the main transformation entity, which can include both SQL warehouse operations and Prophecy Automate functions like email notifications and API calls.
 
-Before Prophecy 4.0, SQL projects used **models** (dbt-based) that only supported SQL warehouse operations. If you're working with an older version, models will be your primary transformation entity.
+In Prophecy versions prior to 4.0, SQL projects used **models** (dbt-based) that only supported SQL warehouse operations. If you're working with an older version, models will be your primary transformation entity.
 :::
 
 ### Python/Scala project components
@@ -80,7 +80,7 @@ Python/Scala projects organize your work around pipelines that execute on Spark 
 
 ## Version control
 
-All projects in Prophecy are automatically compiled into code and hosted on Git for version control. This ensures that every change to your data transformations is tracked, versioned, and can be audited. The version control options available depend on your project type and team requirements.
+All projects in Prophecy are automatically compiled into code and hosted on Git for version control. This ensures every change is tracked, versioned, and auditable. Version control options available depend on your project type and team requirements.
 
 ### Git repository options
 
@@ -168,18 +168,18 @@ To continue your journey with Prophecy projects, follow these recommended paths 
 
 **For SQL projects:**
 
-- [Create your first pipeline](/analysts/development/pipelines/pipelines.md) to build visual data transformation workflows
-- [Set up Prophecy Automate scheduling](/analysts/scheduling) to automate your pipeline execution
-- [Build a Prophecy App](/analysts/business-apps/business-apps.md) to create user-friendly interfaces for your data pipelines
+- [Create your first pipeline](/analysts/development/pipelines/pipelines.md) to build visual data transformation workflows.
+- [Set up Prophecy Automate scheduling](/analysts/scheduling) to automate your pipeline execution.
+- [Build a Prophecy App](/analysts/business-apps/business-apps.md) to create user-friendly interfaces for your data pipelines.
 
 **For Python/Scala projects:**
 
-- [Create your first pipeline](/engineers/pipelines) to build Spark-based data processing workflows
-- [Set up external orchestration](/engineers/orchestration) to schedule your pipelines with tools like Databricks Jobs
-- [Configure Spark fabrics](/administration/fabrics/Spark-fabrics/Fabrics) to connect to your execution environments
+- [Create your first pipeline](/engineers/pipelines) to build Spark-based data processing workflows.
+- [Set up external orchestration](/engineers/orchestration) to schedule your pipelines with tools like Databricks Jobs.
+- [Configure Spark fabrics](/administration/fabrics/Spark-fabrics/Fabrics) to connect to your execution environments.
 
 **For all projects:**
 
-- [Understand version control](/analysts/version-control/version-control.md) for SQL projects or [Git workflows](/engineers/git) for Python/Scala projects
-- [Explore the Package Hub](/engineers/package-hub) to discover reusable components and share your work
-- [Follow tutorials](/getting-started/tutorials/tutorials.md) to build complete projects from start to finish
+- [Understand version control](/analysts/version-control/version-control.md) for SQL projects or [Git workflows](/engineers/git) for Python/Scala projects.
+- [Explore the Package Hub](/engineers/package-hub) to discover reusable components and share your work.
+- [Follow tutorials](/getting-started/tutorials/tutorials.md) to build complete projects from start to finish.
