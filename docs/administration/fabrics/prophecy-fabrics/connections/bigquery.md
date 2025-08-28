@@ -34,6 +34,32 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Write data with a [Target gem](/analysts/source-target)                    | Yes                                 |
 | Browse data in the [Environment browser](/analysts/project-editor#sidebar) | Yes                                 |
 
+## Data type mapping
+
+When Prophecy processes data from Google BigQuery using an external SQL warehouse, it converts BigQuery data types to a compatible type.
+
+| BigQuery     | Databricks         |
+| ------------ | ------------------ |
+| `STRING`     | `STRING`           |
+| `BYTES`      | `BINARY`           |
+| `NUMERIC`    | `DECIMAL128(38,9)` |
+| `BIGNUMERIC` | `Decimal256(38,9)` |
+| `FLOAT`      | `DOUBLE`           |
+| `BOOLEAN`    | `BOOLEAN`          |
+| `DATE`       | `DATE`             |
+| `DATETIME`   | `TIMESTAMP`        |
+| `TIME`       | `NA`               |
+| `GEOGRAPHY`  | `GEOGRAPHY`        |
+| `INTERVAL`   | `INTERVAL`         |
+| `JSON`       | `STRING`           |
+| `RECORD`     | `STRUCT`           |
+| `ARRAY`      | `ARRAY`            |
+| `INTEGER`    | `INT/BIGINT`       |
+
+::::info
+Learn more in [Supported data types](/analysts/data-types).
+::::
+
 ## Connection parameters
 
 To create a connection with BigQuery, enter the following parameters.

@@ -26,6 +26,51 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Write data with a [Target gem](/analysts/source-target)                    | Yes       |
 | Browse data in the [Environment browser](/analysts/project-editor#sidebar) | Yes       |
 
+## Data type mapping
+
+When Prophecy processes data from Microsoft SQL Server (MSSQL) using SQL warehouses, it converts MSSQL-specific data types to formats compatible with your target warehouse. This table shows how [MSSQL data types](https://learn.microsoft.com/en-us/sql/t-sql/data-types/data-types-transact-sql?view=sql-server-ver17) are transformed for Databricks and BigQuery.
+
+| MSSQL              | Databricks  | BigQuery    |
+| ------------------ | ----------- | ----------- |
+| `TINYINT`          | `INT`       | `INT64`     |
+| `SMALLINT`         | `INT`       | `INT64`     |
+| `INT`, `INTEGER`   | `INT`       | `INT64`     |
+| `BIGINT`           | `BIGINT`    | `INT64`     |
+| `FLOAT`, `REAL`    | `DOUBLE`    | `FLOAT64`   |
+| `REAL`             | `DOUBLE`    | `FLOAT64`   |
+| `DECIMAL`          | `DOUBLE`    | `FLOAT64`   |
+| `NUMERIC`          | `DOUBLE`    | `FLOAT64`   |
+| `MONEY`            | `DOUBLE`    | `FLOAT64`   |
+| `SMALLMONEY`       | `DOUBLE`    | `FLOAT64`   |
+| `BIT`              | `BOOLEAN`   | `BOOL`      |
+| `BOOLEAN`          | `BOOLEAN`   | `BOOL`      |
+| `CHAR`             | `STRING`    | `STRING`    |
+| `VARCHAR`          | `STRING`    | `STRING`    |
+| `TEXT`             | `STRING`    | `STRING`    |
+| `NCHAR`            | `STRING`    | `STRING`    |
+| `NVARCHAR`         | `STRING`    | `STRING`    |
+| `NTEXT`            | `STRING`    | `STRING`    |
+| `XML`              | `STRING`    | `STRING`    |
+| `DATE`             | `TIMESTAMP` | `TIMESTAMP` |
+| `TIME`             | `TIMESTAMP` | `TIMESTAMP` |
+| `DATETIME`         | `TIMESTAMP` | `TIMESTAMP` |
+| `DATETIME2`        | `TIMESTAMP` | `TIMESTAMP` |
+| `SMALLDATETIME`    | `TIMESTAMP` | `TIMESTAMP` |
+| `DATETIMEOFFSET`   | `TIMESTAMP` | `TIMESTAMP` |
+| `TIMESTAMP`        | `TIMESTAMP` | `TIMESTAMP` |
+| `BINARY`           | `BINARY`    | `BYTES`     |
+| `VARBINARY`        | `BINARY`    | `BYTES`     |
+| `IMAGE`            | `BINARY`    | `BYTES`     |
+| `UNIQUEIDENTIFIER` | `BINARY`    | `BYTES`     |
+| `SQL_VARIANT`      | `BINARY`    | `BYTES`     |
+| `GEOMETRY`         | `BINARY`    | `BYTES`     |
+| `GEOGRAPHY`        | `BINARY`    | `BYTES`     |
+| `HIERARCHYID`      | `BINARY`    | `BYTES`     |
+
+::::info
+Learn more in [Supported data types](/analysts/data-types).
+::::
+
 ## Connection parameters
 
 To create a connection with Microsoft SQL Server, enter the following parameters:

@@ -28,6 +28,38 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Write data with a [Target gem](/analysts/source-target)                    | Yes       |
 | Browse data in the [Environment browser](/analysts/project-editor#sidebar) | Yes       |
 
+## Data type mapping
+
+When Prophecy processes data from MongoDB using SQL warehouses, it converts MongoDB-specific data types to formats compatible with your target warehouse. This table shows how [MongoDB data types](https://www.mongodb.com/docs/mongodb-shell/reference/data-types/) are transformed for Databricks and BigQuery.
+
+| MongoDB                    | Databricks      | BigQuery            |
+| -------------------------- | --------------- | ------------------- |
+| `null`, `undefined`        | `STRING`        | `STRING`            |
+| `int32`                    | `INT`           | `INT64`             |
+| `int64`, `int`             | `BIGINT`        | `INT64`             |
+| `double (float64)`         | `DOUBLE`        | `FLOAT64`           |
+| `bool`                     | `BOOLEAN`       | `BOOL`              |
+| `string`                   | `STRING`        | `STRING`            |
+| `Date`                     | `TIMESTAMP`     | `TIMESTAMP`         |
+| `Timestamp`                | `TIMESTAMP`     | `TIMESTAMP`         |
+| `Binary`                   | `BINARY`        | `BYTES`             |
+| `ObjectId`                 | `STRING`        | `STRING`            |
+| `Decimal128`               | `DECIMAL(34,2)` | `BIGNUMERIC(34, 2)` |
+| `MinKey`                   | `STRING`        | `STRING`            |
+| `MaxKey`                   | `STRING`        | `STRING`            |
+| `Regex`                    | `STRING`        | `STRING`            |
+| `DBPointer`                | `STRING`        | `STRING`            |
+| `JavaScript`               | `STRING`        | `STRING`            |
+| `CodeWithScope`            | `STRING`        | `STRING`            |
+| `Symbol`                   | `STRING`        | `STRING`            |
+| `Document (bson.M/bson.D)` | `STRUCT<...>`   | `STRUCT<...>`       |
+| `Array (bson.A)`           | `ARRAY<...>`    | `ARRAY<...>`        |
+| `Empty Array`              | `ARRAY`         | `ARRAY`             |
+
+::::info
+Learn more in [Supported data types](/analysts/data-types).
+::::
+
 ## Connection parameters
 
 To create a connection with MongoDB, enter the following parameters:

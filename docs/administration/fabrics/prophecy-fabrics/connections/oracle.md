@@ -26,6 +26,75 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Write data with a [Target gem](/analysts/source-target)                    | No        |
 | Browse data in the [Environment browser](/analysts/project-editor#sidebar) | Yes       |
 
+## Data type mapping
+
+When Prophecy processes data from Oracle using SQL warehouses, it converts Oracle-specific data types to formats compatible with your target warehouse. This table shows how [Oracle data types](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/Data-Types.html#GUID-7B72E154-677A-4342-A1EA-C74C1EA928E6) are transformed for Databricks and BigQuery.
+
+| Oracle                           | Databricks      | BigQuery            |
+| -------------------------------- | --------------- | ------------------- |
+| `NUMBER`                         | `DECIMAL(38,5)` | `BIGNUMERIC(38, 5)` |
+| `NUMBER(p,s)`                    | `DECIMAL(38,5)` | `BIGNUMERIC(38, 5)` |
+| `INTEGER`                        | `BIGINT`        | `INT64`             |
+| `SMALLINT`                       | `INT`           | `INT64`             |
+| `FLOAT`                          | `DOUBLE`        | `FLOAT64`           |
+| `REAL`                           | `DOUBLE`        | `FLOAT64`           |
+| `DOUBLE PRECISION`               | `DOUBLE`        | `FLOAT64`           |
+| `BINARY_FLOAT`                   | `DOUBLE`        | `FLOAT64`           |
+| `BINARY_DOUBLE`                  | `DOUBLE`        | `FLOAT64`           |
+| `DECIMAL`                        | `DECIMAL(38,5)` | `BIGNUMERIC(38, 5)` |
+| `NUMERIC`                        | `DECIMAL(38,5)` | `BIGNUMERIC(38, 5)` |
+| `CHAR`                           | `STRING`        | `STRING`            |
+| `CHAR(n)`                        | `STRING`        | `STRING`            |
+| `VARCHAR`                        | `STRING`        | `STRING`            |
+| `VARCHAR2`                       | `STRING`        | `STRING`            |
+| `NCHAR`                          | `STRING`        | `STRING`            |
+| `NCHAR(n)`                       | `STRING`        | `STRING`            |
+| `NVARCHAR`                       | `STRING`        | `STRING`            |
+| `NVARCHAR2`                      | `STRING`        | `STRING`            |
+| `LONG`                           | `STRING`        | `STRING`            |
+| `CLOB`                           | `STRING`        | `STRING`            |
+| `NCLOB`                          | `STRING`        | `STRING`            |
+| `BLOB`                           | `BINARY`        | `BYTES`             |
+| `DATE`                           | `TIMESTAMP`     | `TIMESTAMP`         |
+| `TIMESTAMP`                      | `TIMESTAMP`     | `TIMESTAMP`         |
+| `TIMESTAMP(n)`                   | `TIMESTAMP`     | `TIMESTAMP`         |
+| `TIMESTAMP WITH TIME ZONE`       | `TIMESTAMP`     | `TIMESTAMP`         |
+| `TIMESTAMP WITH LOCAL TIME ZONE` | `TIMESTAMP`     | `TIMESTAMP`         |
+| `INTERVAL YEAR TO MONTH`         | `STRING`        | `STRING`            |
+| `INTERVAL DAY TO SECOND`         | `STRING`        | `STRING`            |
+| `INTERVAL DAY TO SECOND(n)`      | `STRING`        | `STRING`            |
+| `RAW`                            | `BINARY`        | `BYTES`             |
+| `RAW(n)`                         | `BINARY`        | `BYTES`             |
+| `LONG RAW`                       | `BINARY`        | `BYTES`             |
+| `BINARY`                         | `BINARY`        | `BYTES`             |
+| `VARBINARY`                      | `BINARY`        | `BYTES`             |
+| `IMAGE`                          | `BINARY`        | `BYTES`             |
+| `UNIQUEIDENTIFIER`               | `BINARY`        | `BYTES`             |
+| `GEOMETRY`                       | `BINARY`        | `BYTES`             |
+| `GEOGRAPHY`                      | `BINARY`        | `BYTES`             |
+| `SQL_VARIANT`                    | `BINARY`        | `BYTES`             |
+| `HIERARCHYID`                    | `BINARY`        | `BYTES`             |
+| `XMLType`                        | `STRING`        | `STRING`            |
+| `BOOLEAN`                        | `BOOLEAN`       | `BOOL`              |
+| `BIT`                            | `BOOLEAN`       | `BOOL`              |
+| `URIType`                        | `STRING`        | `STRING`            |
+| `DBURIType`                      | `STRING`        | `STRING`            |
+| `XDBURIType`                     | `STRING`        | `STRING`            |
+| `HTTPURIType`                    | `STRING`        | `STRING`            |
+| `TimeStampDTY`                   | `TIMESTAMP`     | `TIMESTAMP`         |
+| `TimeStampLTZ_DTY`               | `TIMESTAMP`     | `TIMESTAMP`         |
+| `TimeStampTZ_DTY`                | `TIMESTAMP`     | `TIMESTAMP`         |
+| `IntervalDS_DTY`                 | `STRING`        | `STRING`            |
+| `IntervalYM_DTY`                 | `STRING`        | `STRING`            |
+| `LongVarChar`                    | `STRING`        | `STRING`            |
+| `LongRaw`                        | `BINARY`        | `BYTES`             |
+| `IBDouble`                       | `DOUBLE`        | `FLOAT64`           |
+| `IBFloat`                        | `DOUBLE`        | `FLOAT64`           |
+
+::::info
+Learn more in [Supported data types](/analysts/data-types).
+::::
+
 ## Connection parameters
 
 To create a connection with Oracle, enter the following parameters:

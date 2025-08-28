@@ -33,6 +33,49 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Write data with a [Target gem](/analysts/source-target)                    | Yes       |
 | Browse data in the [Environment browser](/analysts/project-editor#sidebar) | Yes       |
 
+## Data type mapping
+
+When Prophecy processes data from Snowflake using SQL warehouses, it converts Snowflake-specific data types to formats compatible with your target warehouse. This table shows how [Snowflake data types](https://docs.snowflake.com/en/sql-reference/intro-summary-data-types) are transformed for Databricks and BigQuery.
+
+| Snowflake        | Databricks  | BigQuery    |
+| ---------------- | ----------- | ----------- |
+| `NUMBER`         | `BIGINT`    | `INT64`     |
+| `NUMBER(p,s)`    | `BIGINT`    | `INT64`     |
+| `INTEGER`, `INT` | `BIGINT`    | `INT64`     |
+| `BIGINT`         | `BIGINT`    | `INT64`     |
+| `SMALLINT`       | `BIGINT`    | `INT64`     |
+| `TINYINT`        | `BIGINT`    | `INT64`     |
+| `FLOAT`          | `DOUBLE`    | `FLOAT64`   |
+| `DOUBLE`         | `DOUBLE`    | `FLOAT64`   |
+| `REAL`           | `DOUBLE`    | `FLOAT64`   |
+| `DECIMAL`        | `DOUBLE`    | `FLOAT64`   |
+| `NUMERIC`        | `DOUBLE`    | `FLOAT64`   |
+| `BOOLEAN`        | `BOOLEAN`   | `BOOL`      |
+| `VARCHAR`        | `STRING`    | `STRING`    |
+| `VARCHAR(n)`     | `STRING`    | `STRING`    |
+| `CHAR`           | `STRING`    | `STRING`    |
+| `CHAR(n)`        | `STRING`    | `STRING`    |
+| `STRING`         | `STRING`    | `STRING`    |
+| `TEXT`           | `STRING`    | `STRING`    |
+| `FIXED`          | `STRING`    | `STRING`    |
+| `DATE`           | `DATE`      | `DATE`      |
+| `TIME`           |             | `TIME`      |
+| `DATETIME`       | `TIMESTAMP` | `TIMESTAMP` |
+| `TIMESTAMP_NTZ`  | `TIMESTAMP` | `TIMESTAMP` |
+| `TIMESTAMP_LTZ`  | `TIMESTAMP` | `TIMESTAMP` |
+| `TIMESTAMP_TZ`   | `TIMESTAMP` | `TIMESTAMP` |
+| `BINARY`         | `BINARY`    | `BYTES`     |
+| `BINARY(n)`      | `BINARY`    | `BYTES`     |
+| `VARBINARY`      | `BINARY`    | `BYTES`     |
+| `VARIANT`        | `STRING`    | `STRING`    |
+| `OBJECT`         | `STRING`    | `STRING`    |
+| `ARRAY`          | `STRING`    | `STRING`    |
+| `NULL`           | `STRING`    | `STRING`    |
+
+::::info
+Learn more in [Supported data types](/analysts/data-types).
+::::
+
 ## Limitations
 
 There are a few limitations on the data types you can read from Snowflake:

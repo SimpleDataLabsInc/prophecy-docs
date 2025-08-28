@@ -36,6 +36,34 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Write data with a [Target gem](/analysts/source-target)                    | Yes                                 |
 | Browse data in the [Environment browser](/analysts/project-editor#sidebar) | Yes                                 |
 
+## Data type mapping
+
+When Prophecy processes data from Databricks using an external SQL warehouse, it converts Databricks data types to compatible types.
+
+| Databricks  | BigQuery    |
+| ----------- | ----------- |
+| `INT`       | `INT64`     |
+| `TINYINT`   | `INT64`     |
+| `SMALLINT`  | `INT64`     |
+| `BIGINT`    | `INT64`     |
+| `STRING`    | `STRING`    |
+| `BOOLEAN`   | `BOOL`      |
+| `DECIMAL`   | `NUMERIC`   |
+| `FLOAT`     | `FLOAT64`   |
+| `DOUBLE`    | `FLOAT64`   |
+| `BINARY`    | `BYTES`     |
+| `TIMESTAMP` | `TIMESTAMP` |
+| `DATE`      | `DATE`      |
+| `MAP`       | `JSON`      |
+| `ARRAY`     | `ARRAY`     |
+| `STRUCT`    | `STRUCT`    |
+| `VOID`      | `BYTES`     |
+| `VARIANT`   | `STRUCT`    |
+
+::::info
+Learn more in [Supported data types](/analysts/data-types).
+::::
+
 ## Connection parameters
 
 To create a connection with Databricks, enter the following parameters.
