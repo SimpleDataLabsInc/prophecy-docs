@@ -23,7 +23,7 @@ Follow the instructions to whitelist Prophecy libraries through the Databricks U
 
 1. Check your Prophecy Library version.
 
-   Find your project's Prophecy library version by checking the ProphecyLibs dependency in your [project metadata](/projects#metadata).
+   Find your project's Prophecy library version by checking the ProphecyLibs dependency in your [project metadata](/projects#project-metadata).
 
 1. Note your Databricks cluster's Spark version.
 
