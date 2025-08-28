@@ -43,6 +43,7 @@ const sidebars = {
             id: "getting-started/quick-starts/quick-starts",
           },
           items: [
+            "getting-started/prophecy-express-guide",
             "getting-started/quick-starts/analysts-qs",
             "getting-started/quick-starts/engineers-qs",
             "getting-started/quick-starts/databricks-partner-connect",
