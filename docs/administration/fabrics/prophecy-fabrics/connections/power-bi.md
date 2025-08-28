@@ -23,11 +23,11 @@ This lets Prophecy update tables in Power BI. For detailed instructions on addin
 
 The table below outlines whether the connection supports certain Prophecy features.
 
-| Feature                                                                        | Supported |
-| ------------------------------------------------------------------------------ | --------- |
-| Read and write using [Source and Target gems](/analysts/source-target)         | No        |
-| Write data with a [PowerBIWrite gem](/analysts/power-bi-write)                 | Yes       |
-| Browse data in the [Environment browser](/analysts/project-editor#environment) | No        |
+| Feature                                                                    | Supported |
+| -------------------------------------------------------------------------- | --------- |
+| Read and write using [Source and Target gems](/analysts/source-target)     | No        |
+| Write data with a [PowerBIWrite gem](/analysts/power-bi-write)             | Yes       |
+| Browse data in the [Environment browser](/analysts/project-editor#sidebar) | No        |
 
 ## Limitations
 
