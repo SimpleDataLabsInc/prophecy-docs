@@ -8,7 +8,7 @@
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/assets/css/styles.9d74870c.css">
-<script src="/assets/js/runtime~main.2c97ec2c.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.b3f89293.js" defer="defer"></script>
 <script src="/assets/js/main.55da2825.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -32,7 +32,7 @@
 <p>Prophecy supports Databricks as both a SQL Warehouse connection and an Ingress/Egress connection. To learn more about these different connection types, visit <a href="/administration/fabrics/prophecy-fabrics/#connections">Prophecy fabrics</a>.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="feature-support">Feature support<a href="#feature-support" class="hash-link" aria-label="Direct link to Feature support" title="Direct link to Feature support">​</a></h2>
 <p>The table below outlines whether the connection supports certain Prophecy features.</p>
-<table><thead><tr><th>Feature</th><th>Supported</th></tr></thead><tbody><tr><td>Run SQL queries</td><td>Yes — SQL Warehouse Connection only</td></tr><tr><td>Read and write data with a <a href="/analysts/source-target">Table gem</a></td><td>Yes — SQL Warehouse Connection only</td></tr><tr><td>Read data with a <a href="/analysts/source-target">Source gem</a></td><td>Yes</td></tr><tr><td>Write data with a <a href="/analysts/source-target">Target gem</a></td><td>Yes</td></tr><tr><td>Browse data in the <a href="/analysts/project-editor#environment">Environment browser</a></td><td>Yes</td></tr></tbody></table>
+<table><thead><tr><th>Feature</th><th>Supported</th></tr></thead><tbody><tr><td>Run SQL queries</td><td>Yes — SQL Warehouse Connection only</td></tr><tr><td>Read and write data with a <a href="/analysts/source-target">Table gem</a></td><td>Yes — SQL Warehouse Connection only</td></tr><tr><td>Read data with a <a href="/analysts/source-target">Source gem</a></td><td>Yes</td></tr><tr><td>Write data with a <a href="/analysts/source-target">Target gem</a></td><td>Yes</td></tr><tr><td>Browse data in the <a href="/analysts/project-editor#sidebar">Environment browser</a></td><td>Yes</td></tr></tbody></table>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="connection-parameters">Connection parameters<a href="#connection-parameters" class="hash-link" aria-label="Direct link to Connection parameters" title="Direct link to Connection parameters">​</a></h2>
 <p>To create a connection with Databricks, enter the following parameters.</p>
 <table><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Connection Name</td><td>Name to identify your connection.</td></tr><tr><td>JDBC URL</td><td>URL to connect to your SQL warehouse<br>Example: <code>jdbc:databricks://&lt;databricks-instance&gt;:443/default;transportMode=http;ssl=1;AuthMech=3;httpPath=/sql/1.0/warehouses/&lt;warehouse-id&gt;</code></td></tr><tr><td>Catalog</td><td>Default write location for target tables.</td></tr><tr><td>Schema</td><td>Default write location for target tables.</td></tr><tr><td>Authentication method</td><td>How you want to authenticate your Databricks account. Learn more in <a href="#authentication-methods">Authentication methods</a>.</td></tr></tbody></table>
