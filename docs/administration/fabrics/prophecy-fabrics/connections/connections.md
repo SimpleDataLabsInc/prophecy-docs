@@ -12,7 +12,7 @@ Prophecy lets you work with various data providers when building your pipelines.
 When you attach to a fabric with connections, you can:
 
 - Reuse credentials that are established in the connection.
-- Browse data from the data provider in the [Environment browser](/projects#project-editor) of your Prophecy project.
+- Browse data from the data provider in the [Environment browser](/analysts/project-editor#sidebar) of your Prophecy project.
 - Auto-index data for search in the Prophecy interface.
 
 ## Connections access

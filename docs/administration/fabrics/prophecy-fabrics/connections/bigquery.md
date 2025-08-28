@@ -26,13 +26,13 @@ Prophecy supports BigQuery as both a SQL Warehouse connection and an Ingress/Egr
 
 The table below outlines whether the connection supports certain Prophecy features.
 
-| Feature                                                                        | Supported                           |
-| ------------------------------------------------------------------------------ | ----------------------------------- |
-| Run SQL queries                                                                | Yes — SQL Warehouse Connection only |
-| Read and write data with a [Table gem](/analysts/source-target)                | Yes — SQL Warehouse Connection only |
-| Read data with a [Source gem](/analysts/source-target)                         | Yes                                 |
-| Write data with a [Target gem](/analysts/source-target)                        | Yes                                 |
-| Browse data in the [Environment browser](/analysts/project-editor#environment) | Yes                                 |
+| Feature                                                                    | Supported                           |
+| -------------------------------------------------------------------------- | ----------------------------------- |
+| Run SQL queries                                                            | Yes — SQL Warehouse Connection only |
+| Read and write data with a [Table gem](/analysts/source-target)            | Yes — SQL Warehouse Connection only |
+| Read data with a [Source gem](/analysts/source-target)                     | Yes                                 |
+| Write data with a [Target gem](/analysts/source-target)                    | Yes                                 |
+| Browse data in the [Environment browser](/analysts/project-editor#sidebar) | Yes                                 |
 
 ## Connection parameters
 

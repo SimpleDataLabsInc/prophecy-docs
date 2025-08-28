@@ -22,11 +22,11 @@ Before setting up the connection, ensure your account has the necessary access t
 
 The table below outlines whether the connection supports certain Prophecy features.
 
-| Feature                                                                        | Supported |
-| ------------------------------------------------------------------------------ | --------- |
-| Read data with a [Source gem](/analysts/source-target)                         | Yes       |
-| Write data with a [Target gem](/analysts/source-target)                        | Yes       |
-| Browse data in the [Environment browser](/analysts/project-editor#environment) | Yes       |
+| Feature                                                                    | Supported |
+| -------------------------------------------------------------------------- | --------- |
+| Read data with a [Source gem](/analysts/source-target)                     | Yes       |
+| Write data with a [Target gem](/analysts/source-target)                    | Yes       |
+| Browse data in the [Environment browser](/analysts/project-editor#sidebar) | Yes       |
 
 ## Limitations
 

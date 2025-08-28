@@ -19,11 +19,11 @@ For more details, visit [Dataset Security](https://help.salesforce.com/s/article
 
 The table below outlines whether the connection supports certain Prophecy features.
 
-| Feature                                                                        | Supported |
-| ------------------------------------------------------------------------------ | --------- |
-| Read data with a [Source gem](/analysts/source-target)                         | Yes       |
-| Write data with a [Target gem](/analysts/source-target)                        | No        |
-| Browse data in the [Environment browser](/analysts/project-editor#environment) | No        |
+| Feature                                                                    | Supported |
+| -------------------------------------------------------------------------- | --------- |
+| Read data with a [Source gem](/analysts/source-target)                     | Yes       |
+| Write data with a [Target gem](/analysts/source-target)                    | No        |
+| Browse data in the [Environment browser](/analysts/project-editor#sidebar) | No        |
 
 ## Limitations
 
