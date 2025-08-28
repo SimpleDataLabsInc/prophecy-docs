@@ -34,32 +34,6 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Write data with a [Target gem](/analysts/source-target)                    | Yes                                 |
 | Browse data in the [Environment browser](/analysts/project-editor#sidebar) | Yes                                 |
 
-## Data type mapping
-
-When Prophecy processes data from Google BigQuery using an external SQL warehouse, it converts BigQuery data types to a compatible type.
-
-| BigQuery     | Databricks         |
-| ------------ | ------------------ |
-| `STRING`     | `STRING`           |
-| `BYTES`      | `BINARY`           |
-| `NUMERIC`    | `DECIMAL128(38,9)` |
-| `BIGNUMERIC` | `Decimal256(38,9)` |
-| `FLOAT`      | `DOUBLE`           |
-| `BOOLEAN`    | `BOOLEAN`          |
-| `DATE`       | `DATE`             |
-| `DATETIME`   | `TIMESTAMP`        |
-| `TIME`       | `NA`               |
-| `GEOGRAPHY`  | `GEOGRAPHY`        |
-| `INTERVAL`   | `INTERVAL`         |
-| `JSON`       | `STRING`           |
-| `RECORD`     | `STRUCT`           |
-| `ARRAY`      | `ARRAY`            |
-| `INTEGER`    | `INT/BIGINT`       |
-
-::::info
-Learn more in [Supported data types](/analysts/data-types).
-::::
-
 ## Connection parameters
 
 To create a connection with BigQuery, enter the following parameters.
@@ -71,6 +45,32 @@ To create a connection with BigQuery, enter the following parameters.
 | Dataset               | The default location for target tables and [temporary tables](/analysts/pipeline-execution#external-data-handling). <br/>Requires write permissions.                                                                                                                                                                                                                                   |
 | Authentication Method | The method used to authenticate with BigQuery. <br/>See [Authentication methods](#authentication-methods) for details.                                                                                                                                                                                                                                                                 |
 | Bucket Name           | A [Google Cloud Storage bucket](https://cloud.google.com/storage/docs/buckets) used for write optimization (recommended). <br/>When specified, Prophecy writes data to the bucket, then loads it into BigQuery. <br/>Note: Loading data from a bucket offers better performance than writing with the [BigQuery API](https://cloud.google.com/bigquery/docs/reference/rest) (default). |
+
+## Data type mapping
+
+When Prophecy processes data from Google BigQuery using an external SQL warehouse, it converts BigQuery data types to a compatible type.
+
+| BigQuery   | Databricks                         |
+| ---------- | ---------------------------------- |
+| STRING     | STRING<br/>Alias: String           |
+| BYTES      | BINARY<br/>Alias: Binary           |
+| NUMERIC    | DECIMAL128(38,9)<br/>Alias: Bigint |
+| BIGNUMERIC | DECIMAL256(38,9)<br/>Alias: Bigint |
+| FLOAT      | DOUBLE<br/>Alias: Double           |
+| RECORD     | STRUCT<br/>Alias: Struct           |
+| ARRAY      | ARRAY<br/>Alias: Array             |
+| INTEGER    | INT<br/>Alias: Integer             |
+| BOOLEAN    | BOOLEAN<br/>Alias: Boolean         |
+| DATE       | DATE<br/>Alias: Date               |
+| DATETIME   | TIMESTAMP<br/>Alias: Timestamp     |
+| TIME       | STRING<br/>Alias: String           |
+| GEOGRAPHY  | STRING<br/>Alias: String           |
+| INTERVAL   | STRING<br/>Alias: String           |
+| JSON       | STRING<br/>Alias: String           |
+
+::::info
+Learn more in [Supported data types](/analysts/data-types).
+::::
 
 ## Authentication methods
 

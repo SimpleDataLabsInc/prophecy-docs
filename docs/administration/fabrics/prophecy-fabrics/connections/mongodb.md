@@ -28,38 +28,6 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Write data with a [Target gem](/analysts/source-target)                    | Yes       |
 | Browse data in the [Environment browser](/analysts/project-editor#sidebar) | Yes       |
 
-## Data type mapping
-
-When Prophecy processes data from MongoDB using SQL warehouses, it converts MongoDB-specific data types to formats compatible with your target warehouse. This table shows how [MongoDB data types](https://www.mongodb.com/docs/mongodb-shell/reference/data-types/) are transformed for Databricks and BigQuery.
-
-| MongoDB                    | Databricks      | BigQuery            |
-| -------------------------- | --------------- | ------------------- |
-| `null`, `undefined`        | `STRING`        | `STRING`            |
-| `int32`                    | `INT`           | `INT64`             |
-| `int64`, `int`             | `BIGINT`        | `INT64`             |
-| `double (float64)`         | `DOUBLE`        | `FLOAT64`           |
-| `bool`                     | `BOOLEAN`       | `BOOL`              |
-| `string`                   | `STRING`        | `STRING`            |
-| `Date`                     | `TIMESTAMP`     | `TIMESTAMP`         |
-| `Timestamp`                | `TIMESTAMP`     | `TIMESTAMP`         |
-| `Binary`                   | `BINARY`        | `BYTES`             |
-| `ObjectId`                 | `STRING`        | `STRING`            |
-| `Decimal128`               | `DECIMAL(34,2)` | `BIGNUMERIC(34, 2)` |
-| `MinKey`                   | `STRING`        | `STRING`            |
-| `MaxKey`                   | `STRING`        | `STRING`            |
-| `Regex`                    | `STRING`        | `STRING`            |
-| `DBPointer`                | `STRING`        | `STRING`            |
-| `JavaScript`               | `STRING`        | `STRING`            |
-| `CodeWithScope`            | `STRING`        | `STRING`            |
-| `Symbol`                   | `STRING`        | `STRING`            |
-| `Document (bson.M/bson.D)` | `STRUCT<...>`   | `STRUCT<...>`       |
-| `Array (bson.A)`           | `ARRAY<...>`    | `ARRAY<...>`        |
-| `Empty Array`              | `ARRAY`         | `ARRAY`             |
-
-::::info
-Learn more in [Supported data types](/analysts/data-types).
-::::
-
 ## Connection parameters
 
 To create a connection with MongoDB, enter the following parameters:
@@ -73,6 +41,39 @@ To create a connection with MongoDB, enter the following parameters:
 | Password ([Secret required](docs/administration/secrets/secrets.md)) | Password for your MongoDB instance                                                                           |
 | Database                                                             | Default database for reading and writing data                                                                |
 | Collection                                                           | Collection to use for the connection                                                                         |
+
+## Data type mapping
+
+When Prophecy processes data from MongoDB using SQL warehouses, it converts MongoDB-specific data types to formats compatible with your target warehouse. This table shows how [MongoDB data types](https://www.mongodb.com/docs/manual/reference/bson-types/) are transformed for Databricks and BigQuery.
+
+| MongoDB                                                                                     | Databricks                       | BigQuery                             |
+| ------------------------------------------------------------------------------------------- | -------------------------------- | ------------------------------------ |
+| 32-bit integer                                                                              | INT<br/>Alias: Integer           | INT64<br/>Alias: Integer             |
+| 64-bit integer                                                                              | BIGINT<br/>Alias: Bigint         | INT64<br/>Alias: Integer             |
+| Double                                                                                      | DOUBLE<br/>Alias: Double         | FLOAT64<br/>Alias: Float             |
+| Boolean                                                                                     | BOOLEAN<br/>Alias: Boolean       | BOOL<br/>Alias: Boolean              |
+| String                                                                                      | STRING<br/>Alias: String         | STRING<br/>Alias: String             |
+| Date                                                                                        | TIMESTAMP<br/>Alias: Timestamp   | TIMESTAMP<br/>Alias: Timestamp       |
+| Timestamp                                                                                   | TIMESTAMP<br/>Alias: Timestamp   | TIMESTAMP<br/>Alias: Timestamp       |
+| Binary                                                                                      | BINARY<br/>Alias: Binary         | BYTES<br/>Alias: Bytes               |
+| ObjectId                                                                                    | STRING<br/>Alias: String         | STRING<br/>Alias: String             |
+| Decimal128                                                                                  | DECIMAL(34,2)<br/>Alias: Decimal | BIGNUMERIC(34, 2)<br/>Alias: Numeric |
+| Min key                                                                                     | STRING<br/>Alias: String         | STRING<br/>Alias: String             |
+| Max key                                                                                     | STRING<br/>Alias: String         | STRING<br/>Alias: String             |
+| Regular Expression                                                                          | STRING<br/>Alias: String         | STRING<br/>Alias: String             |
+| DBPointer                                                                                   | STRING<br/>Alias: String         | STRING<br/>Alias: String             |
+| JavaScript                                                                                  | STRING<br/>Alias: String         | STRING<br/>Alias: String             |
+| JavaScript with scope                                                                       | STRING<br/>Alias: String         | STRING<br/>Alias: String             |
+| Symbol                                                                                      | STRING<br/>Alias: String         | STRING<br/>Alias: String             |
+| [Embedded Document](https://www.mongodb.com/docs/manual/tutorial/query-embedded-documents/) | STRUCT<br/>Alias: Struct         | STRUCT<br/>Alias: Struct             |
+| Array                                                                                       | ARRAY<br/>Alias: Array           | ARRAY<br/>Alias: Array               |
+| Empty Array                                                                                 | ARRAY<br/>Alias: Array           | ARRAY<br/>Alias: Array               |
+| Null                                                                                        | STRING<br/>Alias: String         | STRING<br/>Alias: String             |
+| Unidentified                                                                                | STRING<br/>Alias: String         | STRING<br/>Alias: String             |
+
+::::info
+Learn more in [Supported data types](/analysts/data-types).
+::::
 
 ## Sharing connections within teams
 

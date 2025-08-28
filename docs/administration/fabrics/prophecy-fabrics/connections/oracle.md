@@ -26,75 +26,6 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Write data with a [Target gem](/analysts/source-target)                    | No        |
 | Browse data in the [Environment browser](/analysts/project-editor#sidebar) | Yes       |
 
-## Data type mapping
-
-When Prophecy processes data from Oracle using SQL warehouses, it converts Oracle-specific data types to formats compatible with your target warehouse. This table shows how [Oracle data types](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/Data-Types.html#GUID-7B72E154-677A-4342-A1EA-C74C1EA928E6) are transformed for Databricks and BigQuery.
-
-| Oracle                           | Databricks      | BigQuery            |
-| -------------------------------- | --------------- | ------------------- |
-| `NUMBER`                         | `DECIMAL(38,5)` | `BIGNUMERIC(38, 5)` |
-| `NUMBER(p,s)`                    | `DECIMAL(38,5)` | `BIGNUMERIC(38, 5)` |
-| `INTEGER`                        | `BIGINT`        | `INT64`             |
-| `SMALLINT`                       | `INT`           | `INT64`             |
-| `FLOAT`                          | `DOUBLE`        | `FLOAT64`           |
-| `REAL`                           | `DOUBLE`        | `FLOAT64`           |
-| `DOUBLE PRECISION`               | `DOUBLE`        | `FLOAT64`           |
-| `BINARY_FLOAT`                   | `DOUBLE`        | `FLOAT64`           |
-| `BINARY_DOUBLE`                  | `DOUBLE`        | `FLOAT64`           |
-| `DECIMAL`                        | `DECIMAL(38,5)` | `BIGNUMERIC(38, 5)` |
-| `NUMERIC`                        | `DECIMAL(38,5)` | `BIGNUMERIC(38, 5)` |
-| `CHAR`                           | `STRING`        | `STRING`            |
-| `CHAR(n)`                        | `STRING`        | `STRING`            |
-| `VARCHAR`                        | `STRING`        | `STRING`            |
-| `VARCHAR2`                       | `STRING`        | `STRING`            |
-| `NCHAR`                          | `STRING`        | `STRING`            |
-| `NCHAR(n)`                       | `STRING`        | `STRING`            |
-| `NVARCHAR`                       | `STRING`        | `STRING`            |
-| `NVARCHAR2`                      | `STRING`        | `STRING`            |
-| `LONG`                           | `STRING`        | `STRING`            |
-| `CLOB`                           | `STRING`        | `STRING`            |
-| `NCLOB`                          | `STRING`        | `STRING`            |
-| `BLOB`                           | `BINARY`        | `BYTES`             |
-| `DATE`                           | `TIMESTAMP`     | `TIMESTAMP`         |
-| `TIMESTAMP`                      | `TIMESTAMP`     | `TIMESTAMP`         |
-| `TIMESTAMP(n)`                   | `TIMESTAMP`     | `TIMESTAMP`         |
-| `TIMESTAMP WITH TIME ZONE`       | `TIMESTAMP`     | `TIMESTAMP`         |
-| `TIMESTAMP WITH LOCAL TIME ZONE` | `TIMESTAMP`     | `TIMESTAMP`         |
-| `INTERVAL YEAR TO MONTH`         | `STRING`        | `STRING`            |
-| `INTERVAL DAY TO SECOND`         | `STRING`        | `STRING`            |
-| `INTERVAL DAY TO SECOND(n)`      | `STRING`        | `STRING`            |
-| `RAW`                            | `BINARY`        | `BYTES`             |
-| `RAW(n)`                         | `BINARY`        | `BYTES`             |
-| `LONG RAW`                       | `BINARY`        | `BYTES`             |
-| `BINARY`                         | `BINARY`        | `BYTES`             |
-| `VARBINARY`                      | `BINARY`        | `BYTES`             |
-| `IMAGE`                          | `BINARY`        | `BYTES`             |
-| `UNIQUEIDENTIFIER`               | `BINARY`        | `BYTES`             |
-| `GEOMETRY`                       | `BINARY`        | `BYTES`             |
-| `GEOGRAPHY`                      | `BINARY`        | `BYTES`             |
-| `SQL_VARIANT`                    | `BINARY`        | `BYTES`             |
-| `HIERARCHYID`                    | `BINARY`        | `BYTES`             |
-| `XMLType`                        | `STRING`        | `STRING`            |
-| `BOOLEAN`                        | `BOOLEAN`       | `BOOL`              |
-| `BIT`                            | `BOOLEAN`       | `BOOL`              |
-| `URIType`                        | `STRING`        | `STRING`            |
-| `DBURIType`                      | `STRING`        | `STRING`            |
-| `XDBURIType`                     | `STRING`        | `STRING`            |
-| `HTTPURIType`                    | `STRING`        | `STRING`            |
-| `TimeStampDTY`                   | `TIMESTAMP`     | `TIMESTAMP`         |
-| `TimeStampLTZ_DTY`               | `TIMESTAMP`     | `TIMESTAMP`         |
-| `TimeStampTZ_DTY`                | `TIMESTAMP`     | `TIMESTAMP`         |
-| `IntervalDS_DTY`                 | `STRING`        | `STRING`            |
-| `IntervalYM_DTY`                 | `STRING`        | `STRING`            |
-| `LongVarChar`                    | `STRING`        | `STRING`            |
-| `LongRaw`                        | `BINARY`        | `BYTES`             |
-| `IBDouble`                       | `DOUBLE`        | `FLOAT64`           |
-| `IBFloat`                        | `DOUBLE`        | `FLOAT64`           |
-
-::::info
-Learn more in [Supported data types](/analysts/data-types).
-::::
-
 ## Connection parameters
 
 To create a connection with Oracle, enter the following parameters:
@@ -107,6 +38,51 @@ To create a connection with Oracle, enter the following parameters:
 | Username                                                             | Username for connecting to the Oracle database       |
 | Database                                                             | Oracle Service Name or SID of the target database    |
 | Password ([Secret required](docs/administration/secrets/secrets.md)) | Password for the specified user                      |
+
+## Data type mapping
+
+When Prophecy processes data from Oracle using SQL warehouses, it converts Oracle-specific data types to formats compatible with your target warehouse. This table shows how [Oracle data types](https://docs.oracle.com/en/database/oracle/oracle-database/23/sqlrf/Data-Types.html) are transformed for Databricks and BigQuery.
+
+| Oracle                          | Databricks                       | BigQuery                                |
+| ------------------------------- | -------------------------------- | --------------------------------------- |
+| NUMBER                          | DECIMAL(38,5)<br/>Alias: Decimal | BIGNUMERIC(38, 5)<br/>Alias: BigNumeric |
+| SMALLINT / INTEGER / NUMBER(38) | BIGINT<br/>Alias: Bigint         | INT64<br/>Alias: Integer                |
+| FLOAT                           | DOUBLE<br/>Alias: Double         | FLOAT64<br/>Alias: Float                |
+| REAL / FLOAT(63)                | DOUBLE<br/>Alias: Double         | FLOAT64<br/>Alias: Float                |
+| DOUBLE PRECISION / FLOAT(126)   | DOUBLE<br/>Alias: Double         | FLOAT64<br/>Alias: Float                |
+| BINARY_FLOAT                    | DOUBLE<br/>Alias: Double         | FLOAT64<br/>Alias: Float                |
+| BINARY_DOUBLE                   | DOUBLE<br/>Alias: Double         | FLOAT64<br/>Alias: Float                |
+| DECIMAL                         | DECIMAL(38,5)<br/>Alias: Decimal | BIGNUMERIC(38, 5)<br/>Alias: BigNumeric |
+| NUMERIC                         | DECIMAL(38,5)<br/>Alias: Decimal | BIGNUMERIC(38, 5)<br/>Alias: BigNumeric |
+| CHAR                            | STRING<br/>Alias: String         | STRING<br/>Alias: String                |
+| VARCHAR                         | STRING<br/>Alias: String         | STRING<br/>Alias: String                |
+| VARCHAR2                        | STRING<br/>Alias: String         | STRING<br/>Alias: String                |
+| NCHAR                           | STRING<br/>Alias: String         | STRING<br/>Alias: String                |
+| NVARCHAR2                       | STRING<br/>Alias: String         | STRING<br/>Alias: String                |
+| LONG                            | STRING<br/>Alias: String         | STRING<br/>Alias: String                |
+| CLOB                            | STRING<br/>Alias: String         | STRING<br/>Alias: String                |
+| NCLOB                           | STRING<br/>Alias: String         | STRING<br/>Alias: String                |
+| BLOB                            | BINARY<br/>Alias: Binary         | BYTES<br/>Alias: Bytes                  |
+| DATE                            | TIMESTAMP<br/>Alias: Timestamp   | TIMESTAMP<br/>Alias: Timestamp          |
+| TIMESTAMP                       | TIMESTAMP<br/>Alias: Timestamp   | TIMESTAMP<br/>Alias: Timestamp          |
+| TIMESTAMP WITH TIME ZONE        | TIMESTAMP<br/>Alias: Timestamp   | TIMESTAMP<br/>Alias: Timestamp          |
+| TIMESTAMP WITH LOCAL TIME ZONE  | TIMESTAMP<br/>Alias: Timestamp   | TIMESTAMP<br/>Alias: Timestamp          |
+| INTERVAL YEAR TO MONTH          | STRING<br/>Alias: String         | STRING<br/>Alias: String                |
+| INTERVAL DAY TO SECOND          | STRING<br/>Alias: String         | STRING<br/>Alias: String                |
+| RAW                             | BINARY<br/>Alias: Binary         | BYTES<br/>Alias: Bytes                  |
+| LONG RAW                        | BINARY<br/>Alias: Binary         | BYTES<br/>Alias: Bytes                  |
+| XMLType                         | STRING<br/>Alias: String         | STRING<br/>Alias: String                |
+| BOOLEAN                         | BOOLEAN<br/>Alias: Boolean       | BOOL<br/>Alias: Boolean                 |
+| URIType                         | STRING<br/>Alias: String         | STRING<br/>Alias: String                |
+| DBURIType                       | STRING<br/>Alias: String         | STRING<br/>Alias: String                |
+| XDBURIType                      | STRING<br/>Alias: String         | STRING<br/>Alias: String                |
+| HTTPURIType                     | STRING<br/>Alias: String         | STRING<br/>Alias: String                |
+| LongVarChar                     | STRING<br/>Alias: String         | STRING<br/>Alias: String                |
+| LongRaw                         | BINARY<br/>Alias: Binary         | BYTES<br/>Alias: Bytes                  |
+
+::::info
+Learn more in [Supported data types](/analysts/data-types).
+::::
 
 ## Sharing connections within teams
 

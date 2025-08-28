@@ -33,28 +33,28 @@ The table below outlines whether the connection supports certain Prophecy featur
 
 When Prophecy processes data from Amazon Redshift using SQL warehouses, it converts Redshift-specific data types to formats compatible with your target warehouse. This table shows how [Amazon Redshift data types](https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html) are transformed for Databricks and BigQuery.
 
-| Redshift           | Databricks      | BigQuery    |
-| ------------------ | --------------- | ----------- |
-| `SMALLINT`         | `INT`           | `INT64`     |
-| `INTEGER`          | `BIGINT`        | `INT64`     |
-| `BIGINT`           | `BIGINT`        | `INT64`     |
-| `REAL`             | `DOUBLE`        | `FLOAT64`   |
-| `DOUBLE PRECISION` | `DOUBLE`        | `FLOAT64`   |
-| `DECIMAL`          | `DECIMAL(38,5)` | `NUMERIC`   |
-| `BOOLEAN`          | `BOOLEAN`       | `BOOL`      |
-| `CHAR`             | `STRING`        | `STRING`    |
-| `VARCHAR`          | `STRING`        | `STRING`    |
-| `DATE`             | `DATE`          | `DATE`      |
-| `TIME`             | `TIMESTAMP`     | `TIME`      |
-| `TIMETZ`           | `TIMESTAMP`     | `TIME`      |
-| `TIMESTAMP`        | `TIMESTAMP`     | `TIMESTAMP` |
-| `TIMESTAMPTZ`      | `TIMESTAMP`     | `TIMESTAMP` |
-| `VARBYTE`          | `BINARY`        | `BYTES`     |
-| `GEOMETRY`         | `STRING`        | `STRING`    |
-| `GEOGRAPHY`        | `STRING`        | `STRING`    |
-| `SUPER`            | `STRING`        | `STRING`    |
-| `HLLSKETCH`        | `STRING`        | `STRING`    |
-| `INTERVAL`         | `STRING`        | `STRING`    |
+| Redshift         | Databricks                       | BigQuery                       |
+| ---------------- | -------------------------------- | ------------------------------ |
+| SMALLINT         | INT<br/>Alias: Integer           | INT64<br/>Alias: Integer       |
+| INTEGER          | BIGINT<br/>Alias: Bigint         | INT64<br/>Alias: Integer       |
+| BIGINT           | BIGINT<br/>Alias: Bigint         | INT64<br/>Alias: Integer       |
+| REAL             | DOUBLE<br/>Alias: Double         | FLOAT64<br/>Alias: Float       |
+| DOUBLE PRECISION | DOUBLE<br/>Alias: Double         | FLOAT64<br/>Alias: Float       |
+| DECIMAL          | DECIMAL(38,5)<br/>Alias: Decimal | NUMERIC<br/>Alias: Numeric     |
+| BOOLEAN          | BOOLEAN<br/>Alias: Boolean       | BOOL<br/>Alias: Boolean        |
+| CHAR             | STRING<br/>Alias: String         | STRING<br/>Alias: String       |
+| VARCHAR          | STRING<br/>Alias: String         | STRING<br/>Alias: String       |
+| DATE             | DATE<br/>Alias: Date             | DATE<br/>Alias: Date           |
+| TIME             | TIMESTAMP<br/>Alias: Timestamp   | TIME<br/>Alias: Time           |
+| TIMETZ           | TIMESTAMP<br/>Alias: Timestamp   | TIME<br/>Alias: Time           |
+| TIMESTAMP        | TIMESTAMP<br/>Alias: Timestamp   | TIMESTAMP<br/>Alias: Timestamp |
+| TIMESTAMPTZ      | TIMESTAMP<br/>Alias: Timestamp   | TIMESTAMP<br/>Alias: Timestamp |
+| VARBYTE          | BINARY<br/>Alias: Binary         | BYTES<br/>Alias: Bytes         |
+| GEOMETRY         | STRING<br/>Alias: String         | STRING<br/>Alias: String       |
+| GEOGRAPHY        | STRING<br/>Alias: String         | STRING<br/>Alias: String       |
+| SUPER            | STRING<br/>Alias: String         | STRING<br/>Alias: String       |
+| HLLSKETCH        | STRING<br/>Alias: String         | STRING<br/>Alias: String       |
+| INTERVAL         | STRING<br/>Alias: String         | STRING<br/>Alias: String       |
 
 :::info
 Learn more in [Supported data types](/analysts/data-types).
