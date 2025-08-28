@@ -9,69 +9,58 @@ tags:
   - spark
 ---
 
-When running pipelines and jobs, you may want to review metrics related to execution like records read/written, bytes read/written, total time taken, and data samples generated between components. These dataset, pipeline-run, and job-run related metrics are accumulated and stored on your data plane and can be viewed later from the Prophecy user interface.
+Execution metrics help you monitor and analyze your pipeline performance by tracking data including records and bytes processed, pipeline execution time, and data samples (interims) between pipeline components.
 
-## Requirements
+When enabled, these metrics are automatically collected during pipeline runs and stored in your data environment, where you can review them later through the Prophecy interface.
 
-To store and view execution metrics, admins must configure the execution metrics settings for their teams.
-
-- Enable execution metrics for the team.
-- Create tables to store historical execution data (or leave the Prophecy default). Tables can be any format like Avro, Parquet, ORC, or Delta.
-- Set the data storage behavior.
-- Give team members access to these tables.
-
-:::info
-Reading execution metrics from High-Concurrency Clusters with Table-ACL enabled is supported in Databricks runtimes 11.0 or below. Execution metrics are **not available** for `Shared mode` clusters (both normal workspaces and Unity catalog workspaces). You should see an error when trying to get historical runs of pipelines/jobs executed on `Shared mode` clusters.
+:::note
+Execution metrics are available for Spark pipelines only.
 :::
 
-## Historical runs
+## Access control
 
-You can find historical runs in pipeline and dataset metadata.
+Execution metrics are controlled at the team level. This means:
 
-![Pipeline_Execution_Metrics](img/execution-metrics-pipeline.png)
+- Team admins can enable or disable execution metrics for their team
+- Metrics are only captured for pipelines running on fabrics assigned to teams with execution metrics enabled
+- All team members can view execution metrics for pipelines they have access to
 
-Each row here is one run of the pipeline. You can click and go to a particular run and see the interims for that run or metrics like Rows read/written, time taken, etc.
+If execution metrics are disabled for a team, data will not be collected for any pipelines running on that team's fabrics.
 
-![Execution_Metrics](img/ExecutionMetrics.png)
+## Storage architecture
 
-You can also see Execution Metrics for each dataset in the pipeline.
+Execution metrics storage varies by execution environment, with different capabilities for automatic table creation and storage options.
 
-![Dataset_metrcis](img/execution-metrcis-dataset1.png)
+### What execution metrics are stored?
 
-Each row here is one run where this dataset was used. You can click and go to a particular run and see more detailed insights on your data along with preview.
-
-![Dataset_stats](img/dataset-statistics.png)
-
-## Data storage behavior
-
-Depending on flags settings, the storage behavior for execution metrics changes. For example, certain data may be written depending on whether a pipeline flag is turned on or off. See the following table to learn how the behavior changes.
-
-|                             | On                                                                                                                                                                        | Off                                                                                                                                                              |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Execution metrics flag      | Available data will be stored.                                                                                                                                            | Nothing will be stored. Interactive runs will show data depending on what other flags were enabled.                                                              |
-| Pipeline data sampling flag | Available data will be stored based on the execution metrics flag. Interims for interactive run will be visible in the UI and stored based on the execution metrics flag. | Available data will be stored based on the execution metrics flag. Interims from interactive run will neither be visible in the UI nor will they be stored.      |
-| Job data sampling flag      | Available data will be stored based on the execution metrics flag. Interims for job run will get generated but stored based on the execution metrics flag.                | Available data will be stored based on the execution metrics flag. Interims from job run will neither be visible in the (historical) UI nor will they be stored. |
-| Pipeline monitoring flag    | Available data will be stored based on the execution metrics flag. Individual Gem level data will be visible in the UI but stored based on the execution metrics flag.    | Available data with be stored based on the execution metrics flag. Individual Gem level data will neither be visible in the UI nor will it be stored.            |
-
-## Team level access-control
-
-For clusters with table ACL enabled, you may have limited access on catalogs, schemas, and tables. Here we advise
-you to setup the execution metrics tables beforehand. Data is stored in the workspace storage itself, and you can choose
-the tables from Team view in the Prophecy UI.
-
-There are three execution metrics tables that store data for pipelines, individual components, and the generated data samples, also known as interims. You have the option to choose the following at the time of team creation:
+There are three execution metrics tables that store data for pipelines, individual components, and the generated data samples, also known as interims.
 
 - **Pipeline runs table**: The pipeline metrics table that contains metrics and code for pipeline runs
 - **Component runs table**: The component (dataset) metrics table that contains metrics for individual component runs
 - **Interims table**: The interims table that contains samples of data, depending on the interim mode selected
 
-![ExecutionMetricsConfig.png](img/ExecutionMetricsConfig.png)
+Prophecy can automatically create these tables for you when execution metrics are enabled for certain execution environments. Alternatively, you can define your own tables in any supported format (Delta, Parquet, ORC, Avro) and point Prophecy to them. Learn how to configure the storage location for execution metrics in the [Enable execution metrics](#enable-execution-metrics) section.
 
-## Create tables using Delta (for Databricks)
+### Databricks
 
-The following are sample Create table commands for tables using Delta. These are suitable for Databricks or if your metastore supports Delta tables.
+By default, Prophecy automatically creates and stores execution metrics in Delta tables within your Databricks workspace. These are created in the workspace's default storage and uses configured metastore (Unity Catalog, Hive metastore, etc.).
 
-- **Pipeline metrics table**
+If preferred, you can specify custom database and table names where you want to store the data.
+
+:::note
+Reading execution metrics from High-Concurrency Clusters with Table-ACL enabled is supported in Databricks runtimes 11.0 or below. Execution metrics are **not available** for `Shared mode` clusters (both normal workspaces and Unity Catalog workspaces). You should see an error when trying to get historical runs of pipelines/jobs executed on `Shared mode` clusters.
+
+Additionally, for clusters with table ACL enabled, you may have limited access on catalogs, schemas, and tables. For this case, we recommend you set up your execution metrics tables manually and point to them in Prophecy.
+:::
+
+#### Store as Delta tables
+
+The following are sample `CREATE TABLE` commands for tables using Delta.
+
+These are suitable for Databricks or if your metastore supports Delta tables.
+
+<details>
+<summary>Create pipeline metrics table</summary>
 
 ```sql
   CREATE TABLE IF NOT EXISTS <database>.<pipeline_runs_table_name>
@@ -106,7 +95,10 @@ The following are sample Create table commands for tables using Delta. These are
   TBLPROPERTIES (delta.autoOptimize.optimizeWrite = true, delta.autoOptimize.autoCompact = true)
 ```
 
-- **Component metrics table**
+</details>
+
+<details>
+<summary>Create component metrics table</summary>
 
 ```sql
   CREATE TABLE IF NOT EXISTS <database>.<component_runs_table_name>
@@ -152,7 +144,10 @@ The following are sample Create table commands for tables using Delta. These are
   TBLPROPERTIES (delta.autoOptimize.optimizeWrite = true, delta.autoOptimize.autoCompact = true)
 ```
 
-- **Interims table**
+</details>
+
+<details>
+<summary>Create interims table</summary>
 
 ```sql
   CREATE TABLE IF NOT EXISTS <database>.<interims_table_name>
@@ -169,7 +164,10 @@ The following are sample Create table commands for tables using Delta. These are
   TBLPROPERTIES (delta.autoOptimize.optimizeWrite = true, delta.autoOptimize.autoCompact = true)
 ```
 
-### Grant permissions
+</details>
+
+<details>
+<summary>Grant permissions on these tables</summary>
 
 ```sql
   GRANT USAGE ON SCHEMA <database> TO group1;
@@ -191,11 +189,23 @@ The following are sample Create table commands for tables using Delta. These are
   GRANT MODIFY ON <database.interims-table> TO group2;
 ```
 
-## Creating Tables using Parquet (for Livy)
+</details>
 
-The following are sample Create table commands for tables using Parquet. These are suitable for Livy or for your Hive metastore in Hadoop setups.
+### Amazon EMR
 
-- **Pipeline metrics table**
+Prophecy cannot automatically create tables in AWS. You must create the required tables before enabling execution metrics.
+
+- **Hive Metastore**: Default storage location for execution metrics.
+- **AWS Glue**: Tables can be stored in Glue Data Catalog with S3 as the underlying storage. When using Glue databases with S3 storage, EMR or EMR Serverless instances must be in the same AWS region as your Glue tables.
+
+#### Store tables as Parquet
+
+The following are sample `CREATE TABLE` commands for tables using Parquet.
+
+These are suitable for Livy or for your Hive metastore in Hadoop setups.
+
+<details>
+<summary>Create pipeline metrics table</summary>
 
 ```sql
   CREATE TABLE IF NOT EXISTS <database>.<pipeline_runs_table_name>
@@ -227,7 +237,10 @@ The following are sample Create table commands for tables using Parquet. These a
   PARTITIONED BY (fabric_uid, pipeline_uri, created_by)
 ```
 
-- **Component metrics table**
+</details>
+
+<details>
+<summary>Create components metrics table</summary>
 
 ```sql
   CREATE TABLE IF NOT EXISTS <database>.<component_runs_table_name>
@@ -270,7 +283,10 @@ The following are sample Create table commands for tables using Parquet. These a
   PARTITIONED BY (fabric_uid, component_uri, created_by)
 ```
 
-- **Interims table**
+</details>
+
+<details>
+<summary>Create interims table</summary>
 
 ```sql
   CREATE TABLE IF NOT EXISTS <database>.<interims_table_name>
@@ -283,3 +299,55 @@ The following are sample Create table commands for tables using Parquet. These a
   ) stored as parquet
   PARTITIONED BY (created_by, fabric_uid)
 ```
+
+</details>
+
+## View execution metrics
+
+You can find execution metrics in the historical runs of pipelines and datasets.
+
+### Pipeline execution metrics
+
+1. From the **Metadata** page in Prophecy, open your project.
+1. Click on **Content**.
+1. Open a pipeline that you want to inspect.
+1. Navigate to the **Runs** tab. Each row corresponds to one run of the pipeline.
+1. Click on a particular run and see the interims for that run, as well as metrics like rows read, rows written, time taken, etc.
+
+![Pipeline_Execution_Metrics](img/execution-metrics-pipeline.png)
+
+### Dataset execution metrics
+
+1. From the **Metadata** page in Prophecy, open your project.
+1. Click on **Content**.
+1. Open a dataset that you want to inspect.
+1. Navigate to the **Statistics** tab. Each row corresponds to one pipeline run where this dataset was used.
+1. Click on a particular run and see more detailed insights on your data, along with a preview.
+
+![Dataset_metrics](img/execution-metrcis-dataset1.png)
+
+## Enable execution metrics
+
+### Prerequisites
+
+Before enabling execution metrics for a team, ensure the following requirements are met:
+
+- **Team access**: You must be a team admin for the team where execution metrics will be enabled.
+- **Execution environment**: Execution metrics are only available for pipelines running on Spark.
+- **For EMR environments**: Prophecy cannot automatically create tables in AWS. You must create the required tables in advance to store execution metrics.
+
+### Procedure
+
+Use the following steps to configure execution metrics for a team.
+
+1. Open the **Metadata** page of the Prophecy UI.
+1. Navigate to the **Teams** tab.
+1. Open the team for which you would like to enable execution metrics.
+1. Navigate to the **Settings > Execution Metrics** subtab.
+1. Turn on the **Enable Execution Metrics** toggle.
+1. If applicable, add your table to the **Pipeline runs table**: `<database>.<pipeline-table>`
+1. If applicable, add your table to the **Component runs table**: `<database>.<component-table>`
+1. If applicable, add your table to the **Interims table**: `<database>.<interim-table>`
+1. Click **Update** to save your changes.
+
+![ExecutionMetricsConfig.png](img/ExecutionMetricsConfig.png)
