@@ -29,15 +29,7 @@ const sidebars = {
           label: "Concepts",
           items: [
             "getting-started/concepts/Fabric",
-            {
-              type: "category",
-              label: "Projects",
-              link: {
-                type: "doc",
-                id: "getting-started/concepts/project/projects",
-              },
-              items: ["getting-started/concepts/project/project-editor"],
-            },
+            "getting-started/concepts/project/projects",
             "getting-started/concepts/templates",
             "getting-started/concepts/pipelines",
             "getting-started/concepts/gems",
@@ -105,6 +97,7 @@ const sidebars = {
           label: "Pipelines",
           link: { type: "doc", id: "analysts/development/pipelines/pipelines" },
           items: [
+            "analysts/development/pipelines/project-editor",
             "analysts/development/pipelines/pipeline-params",
             "analysts/development/pipelines/execution",
             "analysts/development/pipelines/logs",

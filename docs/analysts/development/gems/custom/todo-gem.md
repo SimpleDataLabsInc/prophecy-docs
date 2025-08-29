@@ -35,6 +35,6 @@ Though the ToDo gem does not pass any data, you can pre-configure the output sch
 
 | Parameter         | Description                                                                                                                             |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| Highlight message | A custom message you write. It appears in [Diagnostics](/analysts/project-editor#diagnostics) to describe why this placeholder exists.  |
+| Highlight message | A custom message you write. It appears in [Diagnostics](/analysts/project-editor#footer) to describe why this placeholder exists.       |
 | Error message     | A system-generated message added during migration. It explains why a process couldn’t be migrated so you have context for resolving it. |
 | Helper code/text  | Notes, code snippets, or context you provide to guide the development of a functional gem later on.                                     |

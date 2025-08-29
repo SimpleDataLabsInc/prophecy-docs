@@ -58,6 +58,40 @@
   --ifm-h1-font-size: 40px;
 }
 
+/* Consistent spacing for all list items (with or without paragraphs) */
+.markdown ol li,
+.markdown ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Remove default paragraph margins within list items to prevent double spacing */
+.markdown ol li p,
+.markdown ul li p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Add spacing between paragraphs and tables within list items */
+.markdown ol li p + table,
+.markdown ul li p + table {
+  margin-top: 1rem;
+}
+
+/* Add spacing between consecutive paragraphs within list items */
+.markdown ol li p + p,
+.markdown ul li p + p {
+  margin-top: 0.75rem;
+}
+
+/* Tighten up nested lists */
+.markdown ol ol,
+.markdown ol ul,
+.markdown ul ol,
+.markdown ul ul {
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
 table {
   display: table;
   width: 100%;

@@ -28,11 +28,11 @@ Additionally, Prophecy writes data to Snowflake by uploading Parquet files to a 
 
 The table below outlines whether the connection supports certain Prophecy features.
 
-| Feature                                                                        | Supported |
-| ------------------------------------------------------------------------------ | --------- |
-| Read data with a [Source gem](/analysts/snowflake)                             | Yes       |
-| Write data with a [Target gem](/analysts/snowflake)                            | Yes       |
-| Browse data in the [Environment browser](/analysts/project-editor#environment) | Yes       |
+| Feature                                                                    | Supported |
+| -------------------------------------------------------------------------- | --------- |
+| Read data with a [Source gem](/analysts/snowflake)                         | Yes       |
+| Write data with a [Target gem](/analysts/snowflake)                        | Yes       |
+| Browse data in the [Environment browser](/analysts/project-editor#sidebar) | Yes       |
 
 ## Limitations
 

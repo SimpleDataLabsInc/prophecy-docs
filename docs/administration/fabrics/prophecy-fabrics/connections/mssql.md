@@ -21,11 +21,11 @@ Prophecy connects to Microsoft SQL Server (MSSQL) using the database credentials
 
 The table below outlines whether the connection supports certain Prophecy features.
 
-| Feature                                                                        | Supported |
-| ------------------------------------------------------------------------------ | --------- |
-| Read data with a [Source gem](/analysts/mssql)                                 | Yes       |
-| Write data with a [Target gem](/analysts/mssql)                                | Yes       |
-| Browse data in the [Environment browser](/analysts/project-editor#environment) | Yes       |
+| Feature                                                                    | Supported |
+| -------------------------------------------------------------------------- | --------- |
+| Read data with a [Source gem](/analysts/mssql)                             | Yes       |
+| Write data with a [Target gem](/analysts/mssql)                            | Yes       |
+| Browse data in the [Environment browser](/analysts/project-editor#sidebar) | Yes       |
 
 ## Connection parameters
 
