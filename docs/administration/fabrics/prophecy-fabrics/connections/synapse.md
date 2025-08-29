@@ -25,8 +25,8 @@ The table below outlines whether the connection supports certain Prophecy featur
 
 | Feature                                                                    | Supported |
 | -------------------------------------------------------------------------- | --------- |
-| Read data with a [Source gem](/analysts/source-target)                     | Yes       |
-| Write data with a [Target gem](/analysts/source-target)                    | No        |
+| Read data with a [Source gem](/analysts/synapse)                           | Yes       |
+| Write data with a Target gem                                               | No        |
 | Browse data in the [Environment browser](/analysts/project-editor#sidebar) | Yes       |
 
 ## Connection parameters

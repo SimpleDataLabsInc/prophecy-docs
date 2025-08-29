@@ -79,8 +79,8 @@ The following diagram explains what each versioning action does in Git. If you c
 
 The table below reiterates the diagram.
 
-| Action in Prophecy       | Action in Git                                                                                                                                                                                               |
-| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Save to draft            | <ul class="table-list"><li>Pull changes from the remote `dev` branch</li><li>Pull changes from the local `main` branch</li><li>Commit changes to local `dev`</li><li>Push changes to remote `dev`</li></ul> |
-| Publish                  | <ul class="table-list"><li>Merge changes into local `main`</li><li>Add a Git Tag with the published version number</li><li>Push changes to remote `main`</li></ul>                                          |
-| Restore previous version | <ul class="table-list"><li>Run `git reset --soft`</li><li>Commit the changes to revert in `dev`</li><li>Push changes to remote `dev` branch</li></ul> (Publish the project to merge to `main`)              |
+| Action in Prophecy       | Action in Git                                                                                                                                                                            |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Save to draft            | <ul><li>Pull changes from the remote `dev` branch</li><li>Pull changes from the local `main` branch</li><li>Commit changes to local `dev`</li><li>Push changes to remote `dev`</li></ul> |
+| Publish                  | <ul><li>Merge changes into local `main`</li><li>Add a Git Tag with the published version number</li><li>Push changes to remote `main`</li></ul>                                          |
+| Restore previous version | <ul><li>Run `git reset --soft`</li><li>Commit the changes to revert in `dev`</li><li>Push changes to remote `dev` branch</li></ul> (Publish the project to merge to `main`)              |
