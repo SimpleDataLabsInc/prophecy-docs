@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-administration/authentication/emr-saml" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.8.1">
+<title data-rh="true">Configure EMR SAML authentication with Okta | Prophecy</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://docs.prophecy.io/administration/authentication/emr-saml"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Configure EMR SAML authentication with Okta | Prophecy"><meta data-rh="true" name="description" content="Learn how to set up AWS EMR authentication using Okta"><meta data-rh="true" property="og:description" content="Learn how to set up AWS EMR authentication using Okta"><link data-rh="true" rel="icon" href="/img/favicon2.png"><link data-rh="true" rel="canonical" href="https://docs.prophecy.io/administration/authentication/emr-saml"><link data-rh="true" rel="alternate" href="https://docs.prophecy.io/administration/authentication/emr-saml" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.prophecy.io/administration/authentication/emr-saml" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Authentication","item":"https://docs.prophecy.io/administration/authentication/"},{"@type":"ListItem","position":2,"name":"EMR SAML with Okta","item":"https://docs.prophecy.io/administration/authentication/emr-saml"}]}</script><link rel="search" type="application/opensearchdescription+xml" title="Prophecy" href="/opensearch.xml">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/assets/css/styles.d653e9cf.css">
+<script src="/assets/js/runtime~main.8388f90e.js" defer="defer"></script>
+<script src="/assets/js/main.f1d809e9.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t="light";var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",e||t),document.documentElement.setAttribute("data-theme-choice",e||t)}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/Prophecy Logo.png" alt="Prophecy Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/Prophecy Logo White.png" alt="Prophecy Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate"></b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">Docs</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/">Product docs</a></li><li><a class="dropdown__link" href="/api/">API docs</a></li></ul></div><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/administration">Administration</a><a href="https://transpiler.docs.prophecy.io/" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Migration guide</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/getting-help">Help</a><a href="http://app.prophecy.io/" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Login</a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="custom-search-container" style="display:flex;align-items:center;gap:10px;height:30px;min-width:0;flex-shrink:1"><div style="flex:1 1 auto;min-width:0"><div id="inkeep-shadowradix-:R5spah:" style="display:contents"></div><span></span></div><div style="flex:0 0 auto"><div id="inkeep-shadowradix-:R6spah:" style="display:contents"></div><span></span></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/administration/">Administration</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/administration/settings">Settings</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/administration/rbac">Access</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/getting-help">Getting help</a><button aria-label="Expand sidebar category &#x27;Getting help&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1"><span class="sidebar-divider"></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menuHtmlItem_M9Kj menu__list-item sidebar-title">Team Admins</li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/administration/teams-users/teams-users">Teams</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/administration/project-types/">Project types</a><button aria-label="Expand sidebar category &#x27;Project types&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/administration/fabrics">Fabric setup</a><button aria-label="Expand sidebar category &#x27;Fabric setup&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/administration/secrets/">Secrets</a><button aria-label="Expand sidebar category &#x27;Secrets&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1"><span class="sidebar-divider"></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menuHtmlItem_M9Kj menu__list-item sidebar-title">Prophecy Cluster Admins</li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/administration/architecture">Architecture</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/administration/prophecy-deployment">Prophecy deployment</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/administration/cluster-admin-settings">Admin settings</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/administration/security">Security</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/administration/audit-logging">Audit logs</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/administration/authentication/">Authentication</a><button aria-label="Collapse sidebar category &#x27;Authentication&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/administration/authentication/azure-ad">Microsoft Entra ID</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/administration/authentication/active_directory">Microsoft Entra ID with LDAP</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item hidden"><a class="menu__link" tabindex="0" href="/administration/authentication/">Authentication</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/databricks-oauth-authentication">Databricks OAuth</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/administration/authentication/emr-saml">EMR SAML with Okta</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/administration/authentication/saml-scim">SAML and SCIM</a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/administration/authentication/"><span>Authentication</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">EMR SAML with Okta</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Configure EMR SAML authentication with Okta</h1></header><p>This guide describes how to configure AWS EMR Serverless authentication using Okta as the identity provider (IdP) with SAML 2.0. After setup, users in the configured Okta application can sign in to Prophecy EMR fabrics using their Okta credentials.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview">​</a></h2>
+<p>When you configure SAML for EMR fabrics:</p>
+<ul>
+<li>Any user assigned to the Okta app can use the EMR fabric configured with SAML using their own credentials.</li>
+<li>All signed-in users are granted the AWS role defined in the fabric settings.</li>
+<li>Users remain signed in as long as their token is valid.</li>
+<li>Users must sign in again when the token expires.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="prerequisites">Prerequisites<a href="#prerequisites" class="hash-link" aria-label="Direct link to Prerequisites" title="Direct link to Prerequisites">​</a></h2>
+<p>To configure an EMR fabric that authenticates users with SAML, you need:</p>
+<ul>
+<li>Access to EMR or EMR Serverless compute</li>
+<li>Administrator access to AWS and Okta</li>
+<li>Permission to set environment variables in your Prophecy deployment, usually associated with the <a href="/administration/rbac">Prophecy cluster admin</a> role.</li>
+<li>Ability to create or edit an EMR fabric in Prophecy.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-1-create-an-okta-saml-application">Step 1: Create an Okta SAML application<a href="#step-1-create-an-okta-saml-application" class="hash-link" aria-label="Direct link to Step 1: Create an Okta SAML application" title="Direct link to Step 1: Create an Okta SAML application">​</a></h2>
+<p>To begin, create a new Okta SAML application:</p>
+<ol>
+<li>
+<p>Sign in to Okta as an administrator.</p>
+</li>
+<li>
+<p>Go to <strong>Applications &gt; Applications</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Create App Integration</strong>.</p>
+</li>
+<li>
+<p>Select <strong>SAML 2.0</strong> and click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>For <strong>App name</strong>, enter <code>Prophecy SAML App</code>, then click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>For <strong>Single Sign-On URL</strong>, open the Prophecy EMR fabric where you want to configure SAML.</p>
+<p>Then, copy the provided URL under <strong>Login URL</strong> and paste this into the Okta field.</p>
+<p><img decoding="async" loading="lazy" alt="Prophecy EMR Fabric" src="/assets/images/emr-saml-setup-f6df4205aae1922bfda86b0c18488a38.png" width="3024" height="1726" class="img_ev3q"></p>
+</li>
+<li>
+<p>Below the URL, select the <strong>Use this for Recipient URL and Destination URL</strong> checkbox.</p>
+</li>
+<li>
+<p>For <strong>Audience URI (SP Entity ID)</strong>, enter a value to identify the entity issuer (for example, <code>prophecyokta</code>).</p>
+</li>
+<li>
+<p>Leave <strong>Default Relay State</strong> blank.</p>
+</li>
+<li>
+<p>Keep the rest of the settings as-is and click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Select <strong>This is an internal app that we have created</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Finish</strong>. The <code>Prophecy SAML App</code> appears in your application list.</p>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="assign-users-and-groups-in-okta">Assign users and groups in Okta<a href="#assign-users-and-groups-in-okta" class="hash-link" aria-label="Direct link to Assign users and groups in Okta" title="Direct link to Assign users and groups in Okta">​</a></h3>
+<p>When you assign users/groups in the Okta application, you determine who is allowed to sign in.</p>
+<ol>
+<li>
+<p>In Okta, navigate to your application: <strong>Applications &gt; Applications</strong>, then select the <code>Prophecy SAML App</code>.</p>
+</li>
+<li>
+<p>Go to the <strong>Assignments</strong> tab.</p>
+</li>
+<li>
+<p>Click <strong>Assign</strong> to see the following options:</p>
+<ul>
+<li>
+<p><strong>Assign to People</strong>: Select individual users who should have access.</p>
+</li>
+<li>
+<p><strong>Assign to Groups</strong>: Select entire Okta groups to simplify management for multiple users.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>For each user or group, click <strong>Assign</strong>.</p>
+</li>
+<li>
+<p>Confirm assignments.</p>
+</li>
+</ol>
+<p>Only assigned users will be able to authenticate to AWS and access the Prophecy EMR fabric.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="save-the-metadataxml-file">Save the <code>metadata.xml</code> file<a href="#save-the-metadataxml-file" class="hash-link" aria-label="Direct link to save-the-metadataxml-file" title="Direct link to save-the-metadataxml-file">​</a></h3>
+<p>Next, save the metadata from this app to upload to AWS.</p>
+<ol>
+<li>
+<p>In the Okta application, open the <strong>Sign On</strong> tab.</p>
+</li>
+<li>
+<p>Copy the <strong>Metadata URL</strong> details.</p>
+<p><img decoding="async" loading="lazy" alt="Okta metadata" src="/assets/images/okta-metadata-d521516a71c84a7544553cd9bb039543.png" width="1474" height="1448" class="img_ev3q"></p>
+</li>
+<li>
+<p>Save the copied information as a file called <code>metadata.xml</code>.</p>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-2-create-an-aws-identity-provider">Step 2: Create an AWS Identity Provider<a href="#step-2-create-an-aws-identity-provider" class="hash-link" aria-label="Direct link to Step 2: Create an AWS Identity Provider" title="Direct link to Step 2: Create an AWS Identity Provider">​</a></h2>
+<p>Now, create a new Identity Provider in AWS.</p>
+<ol>
+<li>
+<p>In AWS, open <strong>Identity and Access Management (IAM)</strong>.</p>
+</li>
+<li>
+<p>Navigate to <strong>Identity Providers</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Add Provider</strong>.</p>
+</li>
+<li>
+<p>For <strong>Provider type</strong>, select <strong>SAML</strong>.</p>
+</li>
+<li>
+<p>For <strong>Provider name</strong>, enter a descriptive name.</p>
+</li>
+<li>
+<p>For <strong>Metadata document</strong>, upload the <code>metadata.xml</code> file you downloaded earlier.</p>
+<p><img decoding="async" loading="lazy" alt="AWS provider" src="/assets/images/aws-new-idp-204b42aea0be0d0861662227676e4a28.png" width="3024" height="1286" class="img_ev3q"></p>
+</li>
+<li>
+<p>Click <strong>Add Provider</strong>.</p>
+</li>
+<li>
+<p>Note the Identity Provider ARN, which you will use when updating the Okta SAML application.</p>
+<p>For example: <code>arn:aws:iam::&lt;account_id&gt;:saml-provider/okta-provider</code></p>
+</li>
+<li>
+<p>Note the Issuer URL, which you will use when creating an AWS role.</p>
+</li>
+<li>
+<p>Note the SSO service location, which you will add to Prophecy via environment variables.</p>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-3-create-an-aws-role-for-saml-authentication">Step 3: Create an AWS role for SAML authentication<a href="#step-3-create-an-aws-role-for-saml-authentication" class="hash-link" aria-label="Direct link to Step 3: Create an AWS role for SAML authentication" title="Direct link to Step 3: Create an AWS role for SAML authentication">​</a></h2>
+<p>Then, create a role that will be assigned to all users who attach to the EMR fabric.</p>
+<ol>
+<li>
+<p>In AWS, go to <strong>IAM &gt; Roles &gt; Create role</strong>.</p>
+</li>
+<li>
+<p>For <strong>Trusted entity type</strong>, select <strong>SAML 2.0 federation</strong>.</p>
+</li>
+<li>
+<p>For <strong>SAML 2.0–based provider</strong>, choose the provider created in the previous section.</p>
+</li>
+<li>
+<p>For <strong>Access to be allowed</strong>, select <strong>Allow programmatic access only</strong>.</p>
+</li>
+<li>
+<p>Set attribute conditions in the AWS role to perform validations before allowing a user to assume the role.</p>
+<table><thead><tr><th>Attribute condition</th><th>Value</th><th>Purpose</th></tr></thead><tbody><tr><td><code>SAML:iss</code></td><td>Your Okta Issuer URL</td><td>The issuer verifies the SAML assertion was generated by your Okta tenant and not another IdP.</td></tr><tr><td><code>SAML:aud</code></td><td><code>https://*.prophecy.io/*</code></td><td>The audience ensures the SAML assertion was issued for Prophecy and not for some other service.</td></tr></tbody></table>
+</li>
+<li>
+<p>Click <strong>Next &gt; Next</strong> (you will add policies later).</p>
+</li>
+<li>
+<p>Enter a role name and description, then click <strong>Create role</strong>.</p>
+</li>
+<li>
+<p>If applicable, ensure that the role has required permissions to interact with the EMR Serverless application.</p>
+</li>
+<li>
+<p>Optionally, edit the role to set the <strong>Maximum session duration</strong>.</p>
+</li>
+<li>
+<p>Note the role ARN, which you will use when updating the Okta SAML application.</p>
+<p>For example: <code>arn:aws:iam::&lt;account_id&gt;:role/prophecy-emr-okta-login-role</code></p>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-4-update-the-okta-saml-application">Step 4: Update the Okta SAML application<a href="#step-4-update-the-okta-saml-application" class="hash-link" aria-label="Direct link to Step 4: Update the Okta SAML application" title="Direct link to Step 4: Update the Okta SAML application">​</a></h2>
+<p>In this step, add information from AWS into your Okta application.</p>
+<ol>
+<li>
+<p>In Okta, go to <strong>Applications &gt; Applications</strong>.</p>
+</li>
+<li>
+<p>Select the application created previously.</p>
+</li>
+<li>
+<p>Go to <strong>General &gt; SAML Settings &gt; Edit</strong>.</p>
+</li>
+<li>
+<p>In <strong>Configure SAML</strong>, under <strong>Attribute Statements</strong>, add:</p>
+<table><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td><code>https://aws.amazon.com/SAML/Attributes/RoleSessionName</code></td><td><code>user.login</code></td></tr><tr><td><code>https://aws.amazon.com/SAML/Attributes/Role</code></td><td><code>&lt;AWS Role ARN&gt;,&lt;AWS Identity Provider ARN&gt;</code></td></tr><tr><td><code>https://aws.amazon.com/SAML/Attributes/SessionDuration</code></td><td>Value can be less than or equal to the session duration defined in step 3.8</td></tr></tbody></table>
+</li>
+<li>
+<p>Click <strong>Next</strong>, then <strong>Finish</strong>.</p>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="step-5-configure-prophecy-to-enable-saml-for-emr">Step 5: Configure Prophecy to enable SAML for EMR<a href="#step-5-configure-prophecy-to-enable-saml-for-emr" class="hash-link" aria-label="Direct link to Step 5: Configure Prophecy to enable SAML for EMR" title="Direct link to Step 5: Configure Prophecy to enable SAML for EMR">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="set-environment-variables">Set environment variables<a href="#set-environment-variables" class="hash-link" aria-label="Direct link to Set environment variables" title="Direct link to Set environment variables">​</a></h3>
+<p>In your Prophecy deployment, set the following environment variables:</p>
+<table><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td><code>AWS_SAML_APP_LOGIN_URLS</code></td><td><code>&lt;Okta App Sign-On URL&gt;</code></td></tr><tr><td><code>AWS_SAML_ASSUMED_ROLES</code></td><td><code>&lt;AWS Role ARN&gt;</code></td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="configure-an-emr-fabric">Configure an EMR fabric<a href="#configure-an-emr-fabric" class="hash-link" aria-label="Direct link to Configure an EMR fabric" title="Direct link to Configure an EMR fabric">​</a></h3>
+<p>Finally, you can configure a fabric to authenticate using SAML.</p>
+<ol>
+<li>
+<p>In Prophecy, create or open an EMR fabric.</p>
+</li>
+<li>
+<p>Switch the authentication method to <strong>SAML</strong>.</p>
+</li>
+<li>
+<p>Under <strong>Login URL</strong>, select the value from the <code>AWS_SAML_APP_LOGIN_URLS</code> environment variable.</p>
+</li>
+<li>
+<p>Under <strong>Role</strong>, select the value from the <code>AWS_SAML_ASSUMED_ROLES</code> environment variable.</p>
+</li>
+<li>
+<p>Select the appropriate AWS region.</p>
+</li>
+<li>
+<p>Click <strong>Fetch Environments</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Connect to Okta</strong> dialog, click <strong>Continue</strong>. This opens the Okta sign-in page in a new tab.</p>
+</li>
+<li>
+<p>Sign in with your Okta credentials.</p>
+</li>
+<li>
+<p>In Prophecy, <a href="/administration/fabrics/Spark-fabrics/emr">complete the fabric configuration</a> and save it.</p>
+</li>
+</ol>
+<p>After this, users will be able to attach to the EMR fabric and sign in with Okta.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-tags-row"><div class="col"><b>Tags:</b><ul class="tags_jXut padding--none margin-left--sm"><li class="tag_QGVx"><a rel="tag" class="tag_zVej tagRegular_sFm0" href="/tags/authentication">authentication</a></li><li class="tag_QGVx"><a rel="tag" class="tag_zVej tagRegular_sFm0" href="/tags/saml">saml</a></li><li class="tag_QGVx"><a rel="tag" class="tag_zVej tagRegular_sFm0" href="/tags/emr">emr</a></li></ul></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/databricks-oauth-authentication"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Databricks OAuth</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/administration/authentication/saml-scim"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">SAML and SCIM</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#prerequisites" class="table-of-contents__link toc-highlight">Prerequisites</a></li><li><a href="#step-1-create-an-okta-saml-application" class="table-of-contents__link toc-highlight">Step 1: Create an Okta SAML application</a><ul><li><a href="#assign-users-and-groups-in-okta" class="table-of-contents__link toc-highlight">Assign users and groups in Okta</a></li><li><a href="#save-the-metadataxml-file" class="table-of-contents__link toc-highlight">Save the <code>metadata.xml</code> file</a></li></ul></li><li><a href="#step-2-create-an-aws-identity-provider" class="table-of-contents__link toc-highlight">Step 2: Create an AWS Identity Provider</a></li><li><a href="#step-3-create-an-aws-role-for-saml-authentication" class="table-of-contents__link toc-highlight">Step 3: Create an AWS role for SAML authentication</a></li><li><a href="#step-4-update-the-okta-saml-application" class="table-of-contents__link toc-highlight">Step 4: Update the Okta SAML application</a></li><li><a href="#step-5-configure-prophecy-to-enable-saml-for-emr" class="table-of-contents__link toc-highlight">Step 5: Configure Prophecy to enable SAML for EMR</a><ul><li><a href="#set-environment-variables" class="table-of-contents__link toc-highlight">Set environment variables</a></li><li><a href="#configure-an-emr-fabric" class="table-of-contents__link toc-highlight">Configure an EMR fabric</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Prophecy</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://www.prophecy.io/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Home<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.prophecy.io/blogs" target="_blank" rel="noopener noreferrer" class="footer__link-item">Blog<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://join.slack.com/t/prophecy-io-support/shared_invite/zt-1dwuvkakg-JcavnQuoukyZ3q5jkSkKCg" target="_blank" rel="noopener noreferrer" class="footer__link-item">Slack<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="mailto:docs@prophecy.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">Documentation feedback<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://app.prophecy.io/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Login<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">© 2025 Prophecy Inc All Rights Reserved <a href="https://legal.prophecy.io/privacy" target="_blank">Privacy Policy</a></div></div></div></footer></div>
+</body>
+</html>

@@ -7,9 +7,9 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/assets/css/styles.9d74870c.css">
-<script src="/assets/js/runtime~main.7a9992c6.js" defer="defer"></script>
-<script src="/assets/js/main.55da2825.js" defer="defer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/assets/css/styles.d653e9cf.css">
+<script src="/assets/js/runtime~main.8388f90e.js" defer="defer"></script>
+<script src="/assets/js/main.f1d809e9.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
@@ -19,7 +19,7 @@
 <p>When working with certain tables, you might encounter text columns that contain multiple values separated by specific characters such as commas or semicolons.</p>
 <p>Use the TextToColumns gem to parse this text and simplify further analysis and processing.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="parameters">Parameters<a href="#parameters" class="hash-link" aria-label="Direct link to Parameters" title="Direct link to Parameters">​</a></h2>
-<table><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Select Column to Split</td><td>The column that contains the text you would like to split.</td></tr><tr><td>Delimiter</td><td>The character that delimits the separate values.</td></tr><tr><td>Select Split Strategy</td><td><ul class="table-list"><li>Split to columns: Values will be split into individual rows in one or more columns.</li><li>Split to rows: Values will be split into individual rows in one column.</li></ul></td></tr></tbody></table>
+<table><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Select Column to Split</td><td>The column that contains the text you would like to split.</td></tr><tr><td>Delimiter</td><td>The character that delimits the separate values.</td></tr><tr><td>Select Split Strategy</td><td><ul><li>Split to columns: Values will be split into individual rows in one or more columns.</li><li>Split to rows: Values will be split into individual rows in one column.</li></ul></td></tr></tbody></table>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="example">Example<a href="#example" class="hash-link" aria-label="Direct link to Example" title="Direct link to Example">​</a></h2>
 <p>Let&#x27;s say you have the following table that includes bank account information. Note that some values in the <code>Beneficiaries</code> column contain multiple names separated by semicolons.</p>
 <div class="table-example"><table><thead><tr><th>Account_Number</th><th>Account_Type</th><th>Balance</th><th>Beneficiaries</th></tr></thead><tbody><tr><td>123456789</td><td>Checking</td><td>75000.50</td><td>Amina Yusuf; Juan Pérez</td></tr><tr><td>987654321</td><td>Savings</td><td>12000.00</td><td>Chen Wei</td></tr><tr><td>456789123</td><td>Checking</td><td>3400.50</td><td>Yuki Tanaka; Leila Haddad; Ivan Petrov</td></tr><tr><td>789123456</td><td>Checking</td><td>800.00</td><td>NULL</td></tr><tr><td>321654987</td><td>Savings</td><td>2200.95</td><td>Mei Lin; Noah Schmidt</td></tr></tbody></table></div>
