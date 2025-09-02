@@ -45,27 +45,27 @@ To create a connection with Tableau, enter the following parameters:
 
 ## Data type mapping
 
-Prophecy processes data using a SQL warehouse. When you are ready to write your transformed data to Tableau, data types are converted to [Tableau data types](https://help.tableau.com/current/pro/desktop/en-us/datafields_typesandroles_datatypes.htm) using the following mapping.
+Prophecy processes data using a SQL warehouse like Databricks SQL or BigQuery. When you are ready to write your transformed data to Tableau, data types are converted to [Tableau data types](https://help.tableau.com/current/pro/desktop/en-us/datafields_typesandroles_datatypes.htm) using the following mapping.
 
-| Databricks    | BigQuery           | Tableau          |
-| ------------- | ------------------ | ---------------- |
-| BOOLEAN       | BOOL               | Boolean          |
-| TINYINT       | INT64              | Number (whole)   |
-| SMALLINT      | INT64              | Number (whole)   |
-| INT           | INT64              | Number (whole)   |
-| BIGINT        | INT64              | Number (whole)   |
-| FLOAT         | FLOAT64            | Number (decimal) |
-| DOUBLE        | FLOAT64            | Number (decimal) |
-| DECIMAL(p,s)  | NUMERIC/BIGNUMERIC | Number (decimal) |
-| STRING        | STRING             | String           |
-| BINARY        | BYTES              | String           |
-| DATE          | DATE               | Date             |
-| TIMESTAMP     | TIMESTAMP          | Date & Time      |
-| TIMESTAMP_NTZ | DATETIME           | Date & Time      |
-| INTERVAL      | INTERVAL           | String           |
-| ARRAY         | ARRAY              | String           |
-| STRUCT        | STRUCT             | String           |
-| VOID          | NULL               | Null             |
+| Databricks                         | BigQuery                                         | Tableau          |
+| ---------------------------------- | ------------------------------------------------ | ---------------- |
+| BOOLEAN<br/>Alias: Boolean         | BOOL<br/>Alias: Boolean                          | Boolean          |
+| TINYINT<br/>Alias: Tinyint         | INT64<br/>Alias: Integer                         | Number (whole)   |
+| SMALLINT<br/>Alias: Smallint       | INT64<br/>Alias: Integer                         | Number (whole)   |
+| INT<br/>Alias: Integer             | INT64<br/>Alias: Integer                         | Number (whole)   |
+| BIGINT<br/>Alias: Bigint           | INT64<br/>Alias: Integer                         | Number (whole)   |
+| FLOAT<br/>Alias: Float             | FLOAT64<br/>Alias: Float                         | Number (decimal) |
+| DOUBLE<br/>Alias: Double           | FLOAT64<br/>Alias: Float                         | Number (decimal) |
+| DECIMAL(p,s)<br/>Alias: Decimal    | NUMERIC/BIGNUMERIC<br/>Alias: Numeric/BigNumeric | Number (decimal) |
+| STRING<br/>Alias: String           | STRING<br/>Alias: String                         | String           |
+| BINARY<br/>Alias: Binary           | BYTES<br/>Alias: Bytes                           | String           |
+| DATE<br/>Alias: Date               | DATE<br/>Alias: Date                             | Date             |
+| TIMESTAMP<br/>Alias: Timestamp     | TIMESTAMP<br/>Alias: Timestamp                   | Date & Time      |
+| TIMESTAMP_NTZ<br/>Alias: Timestamp | DATETIME<br/>Alias: Datetime                     | Date & Time      |
+| INTERVAL<br/>Alias: Interval       | INTERVAL<br/>Alias: Interval                     | String           |
+| ARRAY<br/>Alias: Array             | ARRAY<br/>Alias: Array                           | String           |
+| STRUCT<br/>Alias: Struct           | STRUCT<br/>Alias: Struct                         | String           |
+| VOID<br/>Alias: Void               | NULL<br/>Alias: Null                             | Null             |
 
 ## Sharing connections within teams
 
