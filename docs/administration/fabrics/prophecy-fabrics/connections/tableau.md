@@ -43,6 +43,30 @@ To create a connection with Tableau, enter the following parameters:
 | Tableau Token ([Secret required](docs/administration/secrets/secrets.md)) | Your Tableau personal access token                                    |
 | Tableau Site Name                                                         | Name of the Tableau site you're connecting to                         |
 
+## Data type mapping
+
+Prophecy processes data using a SQL warehouse. When you are ready to write your transformed data to Tableau, data types are converted to [Tableau data types](https://help.tableau.com/current/pro/desktop/en-us/datafields_typesandroles_datatypes.htm) using the following mapping.
+
+| Databricks    | BigQuery           | Tableau          |
+| ------------- | ------------------ | ---------------- |
+| BOOLEAN       | BOOL               | Boolean          |
+| TINYINT       | INT64              | Number (whole)   |
+| SMALLINT      | INT64              | Number (whole)   |
+| INT           | INT64              | Number (whole)   |
+| BIGINT        | INT64              | Number (whole)   |
+| FLOAT         | FLOAT64            | Number (decimal) |
+| DOUBLE        | FLOAT64            | Number (decimal) |
+| DECIMAL(p,s)  | NUMERIC/BIGNUMERIC | Number (decimal) |
+| STRING        | STRING             | String           |
+| BINARY        | BYTES              | String           |
+| DATE          | DATE               | Date             |
+| TIMESTAMP     | TIMESTAMP          | Date & Time      |
+| TIMESTAMP_NTZ | DATETIME           | Date & Time      |
+| INTERVAL      | INTERVAL           | String           |
+| ARRAY         | ARRAY              | String           |
+| STRUCT        | STRUCT             | String           |
+| VOID          | NULL               | Null             |
+
 ## Sharing connections within teams
 
 Tableau connections are stored within [fabrics](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md), which are assigned to specific teams in Prophecy. Once a Tableau connection is added to a fabric, anyone on that team can use it to send data to Tableau from their pipelines. Everyone will inherit the permissions of the user authenticated during connection setup.
