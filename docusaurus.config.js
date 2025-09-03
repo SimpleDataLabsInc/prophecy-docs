@@ -107,34 +107,40 @@ const config = {
         },
         items: [
           {
-            type: "dropdown",
-            label: "Docs",
+            to: "/",
+            label: "Get started",
             position: "left",
-            items: [
-              { type: "doc", docId: "index", label: "Product docs" },
-              {
-                type: "doc",
-                label: "API docs",
-                docId: "api/index",
-              },
-            ],
           },
           {
-            to: "administration",
-            label: "Administration",
+            to: "/analysts/pipeline-development",
+            label: "Analysts",
+            position: "left",
+          },
+          {
+            to: "/engineers/pipeline-development",
+            label: "Engineers",
+            position: "left",
+          },
+          {
+            to: "/api/",
+            label: "API",
+            position: "left",
+          },
+          {
+            to: "/analysts/gem-builder",
+            label: "Reference",
             position: "left",
           },
           {
             to: "https://transpiler.docs.prophecy.io/",
             position: "left",
-            label: "Migration guide",
+            label: "Migration",
           },
           {
             to: "/getting-help",
             label: "Help",
             position: "right",
           },
-          { to: "http://app.prophecy.io/", label: "Login", position: "right" },
         ],
       },
       footer: {
