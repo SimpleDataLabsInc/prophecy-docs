@@ -82,6 +82,8 @@ The job size configuration mirrors the compute configuration in Databricks. To l
 
 :::caution
 When using Unity Catalog clusters with standard (formerly shared) access mode, note their [particular limitations](https://docs.databricks.com/en/compute/access-mode-limitations.html#shared-access-mode-limitations-on-unity-catalog). You can see all supported Prophecy features in our [UC standard cluster support](./ucshared) documentation.
+
+If using **Auto** for the cluster access mode, you may encounter different pipeline behavior in Prophecy depending on the cluster Databricks allocates to you.
 :::
 
 ### Prophecy Library
