@@ -2,6 +2,7 @@
 title: Enterprise Edition
 id: index
 description: Overview
+sidebar_label: Overview
 tags:
   - enterprise
 ---

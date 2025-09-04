@@ -2,6 +2,7 @@
 title: Prophecy APIs
 id: index
 description: Explore reference documentation for various Prophecy APIs
+sidebar_label: Overview
 tags:
   - PAT
   - api

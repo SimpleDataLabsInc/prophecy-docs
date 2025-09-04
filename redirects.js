@@ -841,7 +841,7 @@ module.exports = {
       ],
     },
     {
-      to: "/getting-started",
+      to: "/",
       from: "/developer/videos/",
     },
 

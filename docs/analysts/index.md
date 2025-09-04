@@ -1,7 +1,8 @@
 ---
-title: Core Documentation
+title: Core
 id: index
 description: Overview
+sidebar_label: Overview
 tags:
   - core
 ---

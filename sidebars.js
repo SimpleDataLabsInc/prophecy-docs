@@ -18,7 +18,7 @@ const sidebars = {
 
   // But you can create a sidebar manually
   gettingStartedSidebar: [
-    "getting-started/index",
+    "index",
     {
       type: "html",
       value: '<span class="sidebar-divider" />',
@@ -54,6 +54,7 @@ const sidebars = {
         "getting-started/quick-starts/databricks-partner-connect",
       ],
     },
+    "analysts/extensibility/template-hub",
     {
       type: "category",
       label: "Tutorials",
@@ -67,7 +68,18 @@ const sidebars = {
         "getting-started/tutorials/sql-with-snowflake",
       ],
     },
-
+    {
+      type: "html",
+      value: '<span class="sidebar-divider" />',
+    },
+    {
+      type: "html",
+      className: "sidebar-title",
+      value: "Editions",
+      defaultStyle: true,
+    },
+    "getting-started/editions/prophecy-editions",
+    "getting-started/editions/architecture",
     {
       type: "html",
       value: '<span class="sidebar-divider" />',
@@ -98,6 +110,10 @@ const sidebars = {
   /*---------------------------------- CORE ----------------------------------*/
   coreSidebar: [
     "analysts/index",
+    {
+      type: "html",
+      value: '<span class="sidebar-divider" />',
+    },
     {
       type: "category",
       label: "Pipeline development",
@@ -436,6 +452,17 @@ const sidebars = {
       items: [
         "analysts/version-control/publication",
         "analysts/version-control/migrate-managed",
+        {
+          type: "category",
+          label: "Git",
+          link: { type: "doc", id: "analysts/version-control/git/Git" },
+          items: [
+            "analysts/version-control/git/git-workflow",
+            "analysts/version-control/git/git-resolve",
+            "analysts/version-control/git/pr-templates",
+            "analysts/version-control/git/git-best-practices",
+          ],
+        },
       ],
     },
     {
@@ -450,6 +477,10 @@ const sidebars = {
       ],
     },
     "analysts/monitoring",
+    {
+      type: "html",
+      value: '<span class="sidebar-divider" />',
+    },
     {
       type: "category",
       label: "Extensibility",
@@ -480,6 +511,11 @@ const sidebars = {
         },
       ],
     },
+    "analysts/extensibility/package-hub",
+    {
+      type: "html",
+      value: '<span class="sidebar-divider" />',
+    },
     {
       type: "category",
       label: "Prophecy Apps",
@@ -504,10 +540,10 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Prophecy fabric",
+      label: "Fabric setup",
       link: {
         type: "doc",
-        id: "administration/fabrics/prophecy-fabrics/prophecy-fabrics",
+        id: "analysts/prophecy-fabrics/prophecy-fabrics",
       },
       items: [
         {
@@ -515,26 +551,26 @@ const sidebars = {
           label: "Connections",
           link: {
             type: "doc",
-            id: "administration/fabrics/prophecy-fabrics/connections/connections",
+            id: "analysts/prophecy-fabrics/connections/connections",
           },
           items: [
-            "administration/fabrics/prophecy-fabrics/connections/redshift",
-            "administration/fabrics/prophecy-fabrics/connections/s3",
-            "administration/fabrics/prophecy-fabrics/connections/synapse",
-            "administration/fabrics/prophecy-fabrics/connections/databricks",
-            "administration/fabrics/prophecy-fabrics/connections/bigquery",
-            "administration/fabrics/prophecy-fabrics/connections/onedrive",
-            "administration/fabrics/prophecy-fabrics/connections/power-bi",
-            "administration/fabrics/prophecy-fabrics/connections/sharepoint",
-            "administration/fabrics/prophecy-fabrics/connections/mongodb",
-            "administration/fabrics/prophecy-fabrics/connections/mssql",
-            "administration/fabrics/prophecy-fabrics/connections/oracle",
-            "administration/fabrics/prophecy-fabrics/connections/salesforce",
-            "administration/fabrics/prophecy-fabrics/connections/sftp",
-            "administration/fabrics/prophecy-fabrics/connections/smartsheet",
-            "administration/fabrics/prophecy-fabrics/connections/smtp",
-            "administration/fabrics/prophecy-fabrics/connections/snowflake",
-            "administration/fabrics/prophecy-fabrics/connections/tableau",
+            "analysts/prophecy-fabrics/connections/redshift",
+            "analysts/prophecy-fabrics/connections/s3",
+            "analysts/prophecy-fabrics/connections/synapse",
+            "analysts/prophecy-fabrics/connections/databricks",
+            "analysts/prophecy-fabrics/connections/bigquery",
+            "analysts/prophecy-fabrics/connections/onedrive",
+            "analysts/prophecy-fabrics/connections/power-bi",
+            "analysts/prophecy-fabrics/connections/sharepoint",
+            "analysts/prophecy-fabrics/connections/mongodb",
+            "analysts/prophecy-fabrics/connections/mssql",
+            "analysts/prophecy-fabrics/connections/oracle",
+            "analysts/prophecy-fabrics/connections/salesforce",
+            "analysts/prophecy-fabrics/connections/sftp",
+            "analysts/prophecy-fabrics/connections/smartsheet",
+            "analysts/prophecy-fabrics/connections/smtp",
+            "analysts/prophecy-fabrics/connections/snowflake",
+            "analysts/prophecy-fabrics/connections/tableau",
           ],
         },
       ],
@@ -543,6 +579,10 @@ const sidebars = {
   ],
   enterpriseSidebar: [
     "enterprise/index",
+    {
+      type: "html",
+      value: '<span class="sidebar-divider" />',
+    },
     {
       type: "category",
       label: "Pipeline development",
@@ -843,17 +883,6 @@ const sidebars = {
       label: "CI/CD",
       link: { type: "doc", id: "enterprise/ci-cd/reliable-ci-cd" },
       items: [
-        {
-          type: "category",
-          label: "Git",
-          link: { type: "doc", id: "enterprise/ci-cd/git/Git" },
-          items: [
-            "enterprise/ci-cd/git/git-workflow",
-            "enterprise/ci-cd/git/git-resolve",
-            "enterprise/ci-cd/git/pr-templates",
-            "enterprise/ci-cd/git/git-best-practices",
-          ],
-        },
         "enterprise/ci-cd/tests",
         "enterprise/ci-cd/data-diff",
         {
@@ -902,30 +931,14 @@ const sidebars = {
         "enterprise/Orchestration/multi-jobs-trigger",
       ],
     },
-    /// EXTENSIBILITY
     {
       type: "category",
-      label: "Extensibility",
-      link: { type: "doc", id: "analysts/extensibility/extensibility" },
+      label: "Dependencies",
+      link: { type: "doc", id: "enterprise/dependencies/dependencies" },
       items: [
-        {
-          type: "category",
-          label: "Dependencies",
-          link: { type: "doc", id: "enterprise/dependencies/dependencies" },
-          items: [
-            "enterprise/dependencies/spark-dependencies",
-            "enterprise/dependencies/prophecy-libraries",
-          ],
-        },
-        {
-          type: "category",
-          label: "Package Hub",
-          link: { type: "doc", id: "analysts/extensibility/package-hub" },
-          items: [
-            "analysts/extensibility/template-hub",
-            "enterprise/package-hub/use-imported-package",
-          ],
-        },
+        "enterprise/dependencies/spark-dependencies",
+        "enterprise/dependencies/prophecy-libraries",
+        "enterprise/package-hub/use-imported-package",
       ],
     },
     {
@@ -946,7 +959,7 @@ const sidebars = {
       label: "Fabric setup",
       link: {
         type: "doc",
-        id: "administration/fabrics",
+        id: "enterprise/fabrics/fabrics",
       },
       items: [
         {
@@ -954,7 +967,7 @@ const sidebars = {
           label: "Spark fabrics",
           link: {
             type: "doc",
-            id: "administration/fabrics/Spark-fabrics/Fabrics",
+            id: "enterprise/fabrics/Spark-fabrics/Fabrics",
           },
           items: [
             {
@@ -962,21 +975,21 @@ const sidebars = {
               label: "Databricks",
               link: {
                 type: "doc",
-                id: "administration/fabrics/Spark-fabrics/databricks/databricks",
+                id: "enterprise/fabrics/Spark-fabrics/databricks/databricks",
               },
               items: [
-                "administration/fabrics/Spark-fabrics/databricks/databricks-serverless",
-                "administration/fabrics/Spark-fabrics/databricks/ucshared",
-                "administration/fabrics/Spark-fabrics/databricks/databricks-policies",
-                "administration/fabrics/Spark-fabrics/databricks/whitelist-plibs",
-                "administration/fabrics/Spark-fabrics/databricks/volumes-plibs",
+                "enterprise/fabrics/Spark-fabrics/databricks/databricks-serverless",
+                "enterprise/fabrics/Spark-fabrics/databricks/ucshared",
+                "enterprise/fabrics/Spark-fabrics/databricks/databricks-policies",
+                "enterprise/fabrics/Spark-fabrics/databricks/whitelist-plibs",
+                "enterprise/fabrics/Spark-fabrics/databricks/volumes-plibs",
               ],
             },
-            "administration/fabrics/Spark-fabrics/prophecy-managed-databricks",
-            "administration/fabrics/Spark-fabrics/livy",
-            "administration/fabrics/Spark-fabrics/emr",
-            "administration/fabrics/Spark-fabrics/gcp-dataproc-fabric-guide",
-            "administration/fabrics/Spark-fabrics/azure-synapse-fabric-guide",
+            "enterprise/fabrics/Spark-fabrics/prophecy-managed-databricks",
+            "enterprise/fabrics/Spark-fabrics/livy",
+            "enterprise/fabrics/Spark-fabrics/emr",
+            "enterprise/fabrics/Spark-fabrics/gcp-dataproc-fabric-guide",
+            "enterprise/fabrics/Spark-fabrics/azure-synapse-fabric-guide",
           ],
         },
         {
@@ -984,12 +997,12 @@ const sidebars = {
           label: "SQL fabrics",
           link: {
             type: "doc",
-            id: "administration/fabrics/sql-fabrics/Fabrics",
+            id: "enterprise/fabrics/sql-fabrics/Fabrics",
           },
           items: [
-            "administration/fabrics/sql-fabrics/databricks",
-            "administration/fabrics/sql-fabrics/snowflake",
-            "administration/fabrics/sql-fabrics/bigquery",
+            "enterprise/fabrics/sql-fabrics/databricks",
+            "enterprise/fabrics/sql-fabrics/snowflake",
+            "enterprise/fabrics/sql-fabrics/bigquery",
           ],
         },
       ],
@@ -999,15 +1012,15 @@ const sidebars = {
       label: "Secrets",
       link: {
         type: "doc",
-        id: "administration/secrets/secrets",
+        id: "enterprise/fabrics/secrets/secrets",
       },
-      items: ["administration/secrets/secret-providers"],
+      items: ["enterprise/fabrics/secrets/secret-providers"],
     },
     {
       type: "html",
       value: '<span class="sidebar-divider" />',
     },
-    "administration/architecture",
+
     "administration/prophecy-deployment",
     "administration/cluster-admin-settings",
     "administration/security",
@@ -1026,6 +1039,10 @@ const sidebars = {
   ],
   apiSidebar: [
     "api/index",
+    {
+      type: "html",
+      value: '<span class="sidebar-divider" />',
+    },
     {
       type: "category",
       label: "Trigger Pipeline API",
