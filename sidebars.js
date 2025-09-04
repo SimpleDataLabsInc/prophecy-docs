@@ -18,7 +18,7 @@ const sidebars = {
 
   // But you can create a sidebar manually
   gettingStartedSidebar: [
-    "index",
+    "getting-started/index",
     {
       type: "html",
       value: '<span class="sidebar-divider" />',
@@ -97,6 +97,7 @@ const sidebars = {
   ],
   /*---------------------------------- CORE ----------------------------------*/
   coreSidebar: [
+    "analysts/index",
     {
       type: "category",
       label: "Pipeline development",
@@ -541,12 +542,7 @@ const sidebars = {
     /* ---------------------- ENTERPRISE ------------------------*/
   ],
   enterpriseSidebar: [
-    {
-      type: "html",
-      className: "sidebar-title",
-      value: "Engineers",
-      defaultStyle: true,
-    },
+    "enterprise/index",
     {
       type: "category",
       label: "Pipeline development",

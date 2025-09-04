@@ -107,24 +107,28 @@ const config = {
         },
         items: [
           {
-            to: "/",
+            type: "doc",
+            position: "left",
+            docId: "getting-started/index",
             label: "Get started",
-            position: "left",
           },
           {
-            to: "/analysts/pipeline-development",
+            type: "doc",
+            position: "left",
+            docId: "analysts/index",
             label: "Core",
-            position: "left",
           },
           {
-            to: "/engineers/pipeline-development",
+            type: "doc",
+            position: "left",
+            docId: "enterprise/index",
             label: "Enterprise",
-            position: "left",
           },
           {
-            to: "/api/",
-            label: "API",
+            type: "doc",
             position: "left",
+            docId: "api/index",
+            label: "API",
           },
           {
             to: "https://transpiler.docs.prophecy.io/",
