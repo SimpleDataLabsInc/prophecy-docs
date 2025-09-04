@@ -113,22 +113,17 @@ const config = {
           },
           {
             to: "/analysts/pipeline-development",
-            label: "Analysts",
+            label: "Core",
             position: "left",
           },
           {
             to: "/engineers/pipeline-development",
-            label: "Engineers",
+            label: "Enterprise",
             position: "left",
           },
           {
             to: "/api/",
             label: "API",
-            position: "left",
-          },
-          {
-            to: "/analysts/gem-builder",
-            label: "Reference",
             position: "left",
           },
           {

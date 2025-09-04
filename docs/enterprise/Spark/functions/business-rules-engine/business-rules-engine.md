@@ -14,7 +14,7 @@ Business rules empower organizations to model, manage, and automate repeatable b
 The business rules engine in Prophecy lets you incorporate business logic in your Pipelines. Often, different users will interact with business rules at various stages of Pipeline development. One common workflow is as follows:
 
 1. Business users create business rules using predefined enterprise logic.
-1. These business rules are deployed and become available as [dependencies](docs/extensibility/dependencies/spark-dependencies.md) in the [Package Hub](/engineers/package-hub).
+1. These business rules are deployed and become available as [dependencies](/engineers/spark-dependencies) in the [Package Hub](/engineers/package-hub).
 1. Data engineers and others working on Pipelines can incorporate these rules using the [SchemaTransform gem](/engineers/schema-transform).
 
 These stages are explained in more detail below.
@@ -96,7 +96,7 @@ Then, you must give other users access to your project.
 1. In your project metadata, open the **Access** tab.
 1. Toggle-on the option to **Publish to Package Hub**. This will make the Package available to others.
 
-When someone adds the Package as a [dependency](docs/extensibility/dependencies/spark-dependencies.md) in their project, they will be able to see the rule definition. However, they will not be able to edit the fields.
+When someone adds the Package as a [dependency](/engineers/spark-dependencies) in their project, they will be able to see the rule definition. However, they will not be able to edit the fields.
 
 ![PromoCodeRule](./img/promo-code-rule.png)
 

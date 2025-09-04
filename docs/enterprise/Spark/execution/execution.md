@@ -22,7 +22,7 @@ When you run a pipeline in the pipeline canvas, Prophecy generates interim **dat
 ![Interactive run options](img/interactive-execution-play-options.png)
 
 :::info Data Samples
-After you run your pipeline interactively in the canvas, data samples will appear between gems. These previews are temporarily cached. Learn about how these [data samples](docs/Spark/execution/data-sampling.md) are generated or discover the [Data Explorer](/engineers/data-explorer).
+After you run your pipeline interactively in the canvas, data samples will appear between gems. These previews are temporarily cached. Learn about how these [data samples](/engineers/data-sampling) are generated or discover the [Data Explorer](/engineers/data-explorer).
 :::
 
 ## Gem execution order
@@ -54,7 +54,7 @@ Gems running on Spark are limited to sequential execution. Conversely, when gems
 
 ## Scheduled execution
 
-When you create [jobs](docs/Orchestration/Orchestration.md) in Prophecy, you schedule when certain pipelines will run. Prophecy executes pipelines based on the [fabric](docs/getting-started/concepts/fabrics.md) defined in the pipeline's job settings. Prophecy will automatically run jobs once relevant projects are released and deployed.
+When you create [jobs](/engineers/orchestration) in Prophecy, you schedule when certain pipelines will run. Prophecy executes pipelines based on the [fabric](docs/getting-started/concepts/fabrics.md) defined in the pipeline's job settings. Prophecy will automatically run jobs once relevant projects are released and deployed.
 
 ## Shell execution
 
@@ -66,13 +66,13 @@ Prophecy comes with an built-in interactive Spark shell that supports both Pytho
 
 Once you run a pipeline, there are several ways for you to better understand the execution.
 
-| Callout | Information                                                    | Description                                                                                                             |
-| ------- | -------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| **1**   | Problems                                                       | Errors from your pipeline execution that will be shown in a dialog window, as well as in the canvas footer.             |
-| **2**   | Runtime logs                                                   | The progress with timestamps of your pipeline runs and any errors.                                                      |
-| **3**   | Execution code                                                 | The code Prophecy runs to execute your pipeline. You can copy and paste this code elsewhere for debugging.              |
-| **4**   | Runtime metrics                                                | Various Spark metrics collected during runtime.                                                                         |
-| **5**   | [Execution metrics](docs/Spark/execution/execution-metrics.md) | Metrics that can be found in the **Metadata** of a pipeline, or from the **Run History** button under the **...** menu. |
+| Callout | Information                                       | Description                                                                                                             |
+| ------- | ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| **1**   | Problems                                          | Errors from your pipeline execution that will be shown in a dialog window, as well as in the canvas footer.             |
+| **2**   | Runtime logs                                      | The progress with timestamps of your pipeline runs and any errors.                                                      |
+| **3**   | Execution code                                    | The code Prophecy runs to execute your pipeline. You can copy and paste this code elsewhere for debugging.              |
+| **4**   | Runtime metrics                                   | Various Spark metrics collected during runtime.                                                                         |
+| **5**   | [Execution metrics](/engineers/execution-metrics) | Metrics that can be found in the **Metadata** of a pipeline, or from the **Run History** button under the **...** menu. |
 
 Use the image below to help you find the relevant information.
 

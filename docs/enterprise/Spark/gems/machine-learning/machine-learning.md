@@ -21,6 +21,6 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 - Option a. Import a project with the spark-ai dependency preconfigured, as in this [guide.](/engineers/generative-ai-chatbot#1c-load-the-git-repository)
 
-- Option b. Alternatively, add `prophecy-spark-ai==0.1.8` as a Python library, and `io.prophecy:spark-ai_2.12:0.1.8` as a Maven library to the pipeline [dependencies.](/docs/extensibility/dependencies/spark-dependencies.md)
+- Option b. Alternatively, add `prophecy-spark-ai==0.1.8` as a Python library, and `io.prophecy:spark-ai_2.12:0.1.8` as a Maven library to the pipeline [dependencies.](/engineers/spark-dependencies)
 
 Click [here](https://github.com/prophecy-io/spark-ai/tree/main#roadmap) to see the roadmap for what's coming in the future with the Spark-AI toolbox.

@@ -25,7 +25,7 @@ Prophecy supports CI/CD by managing all project version control on Git and provi
 
 ## Extensibility
 
-In Prophecy, [extensibility](/engineers/extensibility) enables data practitioners to create and share pipeline components through the Package Hub, which allows teams to build reusable elements rather than rebuilding them for each project.
+In Prophecy, [extensibility](/analysts/extensibility) enables data practitioners to create and share pipeline components through the Package Hub, which allows teams to build reusable elements rather than rebuilding them for each project.
 
 ## What's next
 

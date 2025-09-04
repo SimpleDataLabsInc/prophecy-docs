@@ -376,7 +376,7 @@ module.exports = {
       from: "/Spark/gems/expression-builder",
     },
     {
-      to: "/engineers/extensibility",
+      to: "/analysts/extensibility",
       from: ["/extensibility", "/low-code-spark/extensibility/dependencies"],
     },
     {

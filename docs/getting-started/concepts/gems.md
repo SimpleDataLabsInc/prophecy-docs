@@ -40,4 +40,4 @@ To start using gems in your pipelines:
 - Explore the available [Engineering (Spark) gems](/engineers/gems/) and [Analyst gems](/analysts/gems).
 - Add and connect various gems in your pipeline canvas.
 - Browse the [Package Hub](/engineers/package-hub) to find additional gems and components that you can use.
-- Take a peek at our [Gem Builder](/engineers/extensibility) for an introduction to custom gems.
+- Take a peek at our [Gem Builder](/analysts/extensibility) for an introduction to custom gems.

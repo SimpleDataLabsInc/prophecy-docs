@@ -47,7 +47,7 @@ Spark Structured Streaming applications have a variety of source and target comp
 
 Streaming source gems render to `spark.readStream()` on the Spark side. Currently, we support file stream-based sources and targets, warehouse-based targets, and event stream-based sources and targets. For more information on Streaming Source and Target gems, click [here](streaming-sources-and-targets/streaming-sources-and-targets.md).
 
-Additionally, any batch data sources can be used in a streaming application. Batch data sources are read using the `spark.read()` function at every processing trigger (due to Spark evaluating lazily). More on triggers [here](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#triggers). For more information on Batch Source and Target gems, click [here](//engineers/source-target).
+Additionally, any batch data sources can be used in a streaming application. Batch data sources are read using the `spark.read()` function at every processing trigger (due to Spark evaluating lazily). More on triggers [here](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#triggers). For more information on Batch Source and Target gems, click [here](/engineers/source-target).
 
 ### Streaming Transformations
 

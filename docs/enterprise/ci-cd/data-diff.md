@@ -21,7 +21,7 @@ To compute a data diff, you need:
 
 - **Prophecy 4.0 or later.**
 - **A Prophecy Python project.** Data diffs are not supported for Scala or SQL projects.
-- **ProphecyLibsPython 1.9.37 or later** as a dependency for your project. For more information, see [Prophecy libraries](docs/extensibility/dependencies/prophecy-libs.md).
+- **ProphecyLibsPython 1.9.37 or later** as a dependency for your project. For more information, see [Prophecy libraries](/engineers/prophecy-libraries).
 - **An expected dataset**. It must be in Parquet or Databricks Catalog Table format.
 
 :::note

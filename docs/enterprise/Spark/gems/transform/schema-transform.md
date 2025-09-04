@@ -72,7 +72,7 @@ Provide a default value for a column if it is missing from the source.
 
 ### Add Rule
 
-Use a business rule in your Pipeline. Visit the [Business rules engine](docs/Spark/functions/business-rules-engine/business-rules-engine.md) page to learn about business rules.
+Use a business rule in your Pipeline. Visit the [Business rules engine](/engineers/business-rules) page to learn about business rules.
 
 | Parameter  | Description                                                                        |
 | ---------- | ---------------------------------------------------------------------------------- |

@@ -17,7 +17,7 @@ For a list of the latest ProphecyLibs versions, see [Version Chart](/docs/releas
 
 ## Project dependencies
 
-Depending on your project language (Python or Scala), the appropriate Prophecy library will be added as a [dependency](docs/extensibility/dependencies/spark-dependencies.md) in your Prophecy project.
+Depending on your project language (Python or Scala), the appropriate Prophecy library will be added as a [dependency](/engineers/spark-dependencies) in your Prophecy project.
 
 Prophecy libraries are installed in your Databricks cluster when you attach a cluster in your project. The version installed will be the same version defined in your project dependency settings. You can easily [update](/engineers/spark-dependencies#update-dependencies) the ProphecyLibs version of your project if necessary.
 
@@ -33,7 +33,7 @@ Pipeline monitoring is fully independent of the Prophecy IDE, using standard met
 
 :::
 
-To learn more about Prophecy monitoring capabilities, see [Pipeline Monitoring](/docs/Orchestration/pipeline-monitoring/pipeline-monitoring.md). To learn more about metrics setup, see [Execution Metrics](/docs/Spark/execution/execution-metrics.md).
+To learn more about Prophecy monitoring capabilities, see [Pipeline Monitoring](/engineers/pipeline-monitoring). To learn more about metrics setup, see [Execution Metrics](/engineers/execution-metrics).
 
 ### Utility functions
 

@@ -27,7 +27,7 @@ Use the DynamicReplace gem to replace a set of values with dynamically generated
 
 :::note
 
-If you want to create new columns based on a set of conditions (rather than perform in-place replacement), you can use [business rules](docs/Spark/functions/business-rules-engine/business-rules-engine.md).
+If you want to create new columns based on a set of conditions (rather than perform in-place replacement), you can use [business rules](/engineers/business-rules).
 
 :::
 

@@ -71,7 +71,7 @@ Once you have set up your Git repository, click **Continue**.
 
 ### Select project dependencies
 
-In the Project Dependencies section, you have the option to include [additional functionality](docs/extensibility/dependencies/spark-dependencies.md) in your project. A few dependencies are added by default, and these are all we will need to get started. Click **Complete**, and then **View Project**.
+In the Project Dependencies section, you have the option to include [additional functionality](/engineers/spark-dependencies) in your project. A few dependencies are added by default, and these are all we will need to get started. Click **Complete**, and then **View Project**.
 
 ### Project metadata and editor
 

@@ -32,7 +32,7 @@ The XLSX (Excel) file type:
 
 - If you receive an error about the `excel` format not being available you must add `spark-excel` library as a dependency.
 
-- To add the Maven coordinate `com.crealytics:spark-excel_2.12:3.5.1_0.20.4` to your pipeline, see [Spark dependencies](docs/extensibility/dependencies/spark-dependencies.md).
+- To add the Maven coordinate `com.crealytics:spark-excel_2.12:3.5.1_0.20.4` to your pipeline, see [Spark dependencies](/engineers/spark-dependencies).
 
 ## Parameters
 
