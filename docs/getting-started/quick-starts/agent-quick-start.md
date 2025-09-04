@@ -49,6 +49,8 @@ The agent will return:
 - A full list of matching datasets
 - The option to add datasets directly to your pipeline
 
+![Search your data](img/search_data1.gif)
+
 ### Examine dataset details
 
 Click on any dataset in the chat to open a detailed preview dialog where you can:
@@ -58,6 +60,8 @@ Click on any dataset in the chat to open a detailed preview dialog where you can
 - Preview sample data
 - Review data profiles
 - Open an Explore session for dataset-specific queries
+
+![Explore your data](img/explore_chat.gif)
 
 ### Get data samples
 
@@ -74,6 +78,8 @@ In this example, `patients_raw_data` is a table in Databricks. The agent returns
 - An option to add the dataset to your pipeline
 - SQL execution logs showing the query used
 
+![See a data sample](img/sample_data.gif)
+
 ## Step 3: Create visualizations
 
 Generate charts and insights from your data:
@@ -88,6 +94,8 @@ The agent returns:
 - An option to preview the table for detailed examination
 - An option to add the dataset to your pipeline
 - SQL execution logs showing the query used
+
+![Visualize your data](img/visualize_data.gif)
 
 ### Chart preview options
 
@@ -114,6 +122,8 @@ The agent will:
 - Show options to inspect, preview, or restore changes
 - Display SQL execution logs
 
+![Aggregate your data](img/aggregate.gif)
+
 ### Inspect pipeline changes
 
 To understand what the agent built:
@@ -122,6 +132,8 @@ To understand what the agent built:
 - Review the configuration panel starting with the first modified gem (highlighted in yellow)
 - Use the Previous and Next buttons to navigate through modified gems
 - Examine input and output data to verify the transformation produces expected results
+
+![Inspect pipeline changes](img/inspect_data.gif)
 
 ### Restore previous versions
 
