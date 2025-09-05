@@ -1,5 +1,5 @@
 ---
-title: Copilot
+title: Prophecy AI
 id: copilot
 slug: /data-copilot
 sidebar_class_name: hidden

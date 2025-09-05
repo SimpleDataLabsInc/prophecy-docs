@@ -3,6 +3,21 @@
 module.exports = {
   redirects: [
     {
+      to: "/analysts/pipelines",
+      from: "/pipelines",
+    },
+    {
+      to: "/analysts/gems",
+      from: "/gems",
+    },
+    {
+      to: "/project-creation-template",
+      from: [
+        "/administration/project-types/project-creation-template",
+        "/templates",
+      ],
+    },
+    {
       to: "/data-copilot",
       from: "/data-copilot-data-privacy",
     },

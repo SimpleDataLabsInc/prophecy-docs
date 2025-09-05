@@ -9,29 +9,17 @@ tags:
   - execution
 ---
 
-Before you can run a pipeline, you need to define an execution environment where the pipelines will run. In Prophecy, you do this by creating **fabrics**.
-
-A fabric specifies everything required for execution. Depending on the fabric type, it may include:
-
-- **External compute**: This requires manual effort to connect an external environment, such as Databricks or Snowflake.
-- **Prophecy Automate**: This is the built-in Prophecy runtime included in [Prophecy fabrics](/core/prophecy-fabrics/).
-- **Connections**: These are optional configurations that let you integrate with additional data providers for ingestion and egress.
-
-When you open a project and attach a fabric, you'll have access to all of the fabric's resources to run your pipelines.
+Before you can run a pipeline, you need to define an execution environment where the pipelines will run. In Prophecy, you do this by creating **fabrics**. When you open a project and attach a fabric, you'll have access to all of the fabric's resources to run your pipelines.
 
 ## Fabric types
 
 Different fabrics are designed to support specific project types. Use the table below to identify which fabric best aligns with your project's execution requirements.
 
-| Fabric type                                        | Description                                        | Usage                                                                                |
-| -------------------------------------------------- | -------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| [Prophecy](/core/prophecy-fabrics/)                | Compute with Prophecy Automate and a SQL warehouse | Run [pipelines](docs/core/development/pipelines/pipelines.md) in SQL projects.       |
-| [Spark](/enterprise/fabrics/Spark-fabrics/Fabrics) | Compute with a Spark engine                        | Run [pipelines](/engineers/pipelines) in PySpark/Scala projects and Databricks jobs. |
-| [SQL](/enterprise/fabrics/sql-fabrics/Fabrics)     | Compute with a SQL warehouse                       | Run [models](/engineers/models) in SQL projects. You cannot run pipelines.           |
-
-:::info
-Fabrics are configured by team admins. To learn how to create each type of fabric listed here, see [Fabric setup](/enterprise/fabrics) in the Administration documentation.
-:::
+| Fabric type                                                               | Description                                        | Usage                                                                                |
+| ------------------------------------------------------------------------- | -------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| [Prophecy](/core/prophecy-fabrics/)                                       | Compute with Prophecy Automate and a SQL warehouse | Run [pipelines](docs/core/development/pipelines/pipelines.md) in SQL projects.       |
+| [Spark](/enterprise/fabrics/Spark-fabrics/Fabrics) <br/>(Enterprise only) | Compute with a Spark engine                        | Run [pipelines](/engineers/pipelines) in PySpark/Scala projects and Databricks jobs. |
+| [SQL](/enterprise/fabrics/sql-fabrics/Fabrics) <br/>(Enterprise only)     | Compute with a SQL warehouse                       | Run [models](/engineers/models) in SQL projects. You cannot run pipelines.           |
 
 ## Separate environments and access
 
@@ -40,24 +28,11 @@ Fabrics provide a structured way to separate working environments with team-base
 - **Development fabric:** Environment used for testing and experimentation, where pipelines can be iterated on without impacting live data or processes.
 - **Production fabric:** Environment hosts stable, validated pipelines that process live data for business operations.
 
-When you create a fabric, you assign it to a team. Only users in that team can access the fabric. To control access in your production environment, create a team with only those users who can execute and deploy pipelines in production.
+When you create a fabric, you assign it to a team. Only users in that team can access the fabric, and only team admins may edit the fabric itself. To control access in your production environment, create a team with only those users who can execute and deploy pipelines in production.
 
 :::note See Also
 To learn more about the relationship between fabrics, projects, and teams, visit [Team-based access](/administration/team-based-access).
 :::
-
-## Components
-
-Fabrics define all the necessary components that Prophecy needs to communicate with a specific execution environment. Each execution environment will require its own unique fabric configuration. Fabric creation, outlined in the [administration](docs/administration/index.md) section of the documentation, is typically handled by team admins.
-
-Find the key components below that correspond to distinct sections within the fabric's settings.
-
-| Component             | Description                                                                                                         | Required                                                                                                                                                            |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Credentials           | Prophecy securely encrypts your credentials and uses them to connect to your external environments.                 | Credentials are required to establish connections to external execution environments.                                                                               |
-| Cluster configuration | This will determine the computation resources allocated to you.                                                     | Cluster configurations are required. Defaults are pre-configured based on your credentials.                                                                         |
-| Connections           | To connect to multiple data providers for use in your pipelines, you can add additional connections to your fabric. | One connection to a primary execution environment is required. Additional connections are optional.                                                                 |
-| Secrets               | Fabrics can store secrets from different secret providers such as HashiCorp Vault.                                  | Secrets are not required for fabric creation. However, sometimes secrets are required for connections. If a secret is required, you will be prompted to create one. |
 
 ## Fabric usage
 

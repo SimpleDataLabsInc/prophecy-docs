@@ -40,6 +40,10 @@ SQL projects can run on:
 
 ### Python/Scala projects
 
+:::edition Enterprise Only
+Python and Scala projects require the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
+
 Python and Scala projects are designed for users who need more control over data processing and work with distributed computing environments. Choose Python or Scala if you:
 
 - Are a **data engineer** or **platform engineer** building complex data processing systems.
@@ -47,7 +51,7 @@ Python and Scala projects are designed for users who need more control over data
 - Need full control over the code and execution environment.
 - Use external orchestration tools like Databricks Jobs.
 
-Python and Scala projects can run on **[Spark fabrics](/enterprise/fabrics/Spark-fabrics/Fabrics)**.
+Python and Scala projects run on **[Spark fabrics](/enterprise/fabrics/Spark-fabrics/Fabrics)**.
 
 :::info
 For detailed capabilities and feature comparisons, see [Project types](/administration/project-types/project-types.md).
