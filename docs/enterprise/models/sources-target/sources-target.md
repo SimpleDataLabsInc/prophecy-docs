@@ -9,6 +9,10 @@ tags:
   - seeds
 ---
 
+:::edition Enterprise Only
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
+
 Model sources and targets vary slightly from those of a pipeline. The primary difference is that all model sources and targets must point to tables in the SQL warehouse.
 
 ## Sources

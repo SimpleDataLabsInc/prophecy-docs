@@ -79,7 +79,7 @@ The SaaS deployment option is entirely Prophecy-managed and has a multi-tenant a
 
 ### Dedicated SaaS
 
-:::edition Enterprise
+:::edition Enterprise Only Only
 This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
 :::
 

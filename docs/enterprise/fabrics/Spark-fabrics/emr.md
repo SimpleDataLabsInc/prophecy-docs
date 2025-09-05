@@ -2,13 +2,16 @@
 title: Amazon EMR
 id: emr
 description: Use Amazon EMR via Livy as your Spark execution engine
-sidebar_position: 5
 tags:
   - emr
   - livy
   - fabric
   - serverless
 ---
+
+:::edition Enterprise Only
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";

@@ -7,6 +7,10 @@ description: Add ProphecyLibs directly to volumes when Maven/PyPI is blocked on 
 tags: [unity catalog, databricks, plibs]
 ---
 
+:::edition Enterprise Only
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
+
 If Maven or PyPI is blocked in your Databricks environment, you can add Prophecy libraries directly to Databricks volumes.
 
 ## Prerequisites

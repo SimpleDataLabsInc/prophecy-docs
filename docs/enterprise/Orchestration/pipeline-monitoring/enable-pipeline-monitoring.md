@@ -10,6 +10,10 @@ tags:
   - spark
 ---
 
+:::edition Enterprise Only
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
+
 To use Pipeline Monitoring, you must enable it by updating the Prophecy Library version in your project dependencies, and turn on the Pipeline Monitoring flag in Pipeline Settings.
 
 ## Update Prophecy Library version
@@ -27,7 +31,7 @@ You can check your **ProphecyLibsPython** version under **Dependencies**.
 
 If you have uncommitted changes in your pipelines, you may be prompted to either **Commit & Save** or **Save Without Committing**. The update will affect all pipelines in your project.
 
-For an up-to-date list of Prophecy versions and libraries, see [Version Chart](/release_notes/version_chart/version_chart).
+For an up-to-date list of Prophecy versions and libraries, see [Version Chart](/release_notes/version_chart/).
 
 ## Turn on the Pipeline Monitoring flag
 

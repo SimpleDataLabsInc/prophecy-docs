@@ -2,13 +2,16 @@
 title: Azure Synapse
 id: azure-synapse-fabric-guide
 description: Configure an Azure Synapse fabric
-sidebar_position: 6
 tags:
   - deployment
   - configuration
   - open-source-spark
   - livy
 ---
+
+:::edition Enterprise Only
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
 
 In the context of Spark execution engines, users have the flexibility to opt for Azure Synapse Analytics while utilizing Prophecy. Use this step-by-step guide on creating a fabric to connect to the Azure Synapse Workspace via Livy.
 

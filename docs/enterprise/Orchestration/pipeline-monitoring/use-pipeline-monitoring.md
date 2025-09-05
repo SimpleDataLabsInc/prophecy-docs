@@ -10,6 +10,10 @@ tags:
   - spark
 ---
 
+:::edition Enterprise Only
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
+
 You can use Pipeline Monitoring to help identify errors and failures at runtime. You can identify the cause of the failures, fix them with recommended solutions, and rerun failed or skipped tasks.
 
 ## Detect and monitor failures

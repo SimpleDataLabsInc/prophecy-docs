@@ -29,7 +29,7 @@ To complete this quick start, you need:
 If you need a fabric, you have a few options:
 
 - Create a fabric that connects to [Prophecy-managed Databricks](docs/enterprise/fabrics/Spark-fabrics/prophecy-managed.md). Free trial users will automatically have this fabric.
-- Ask a [team admin](docs/administration/teams-users/teamuser.md) to create a fabric for you that connects to an existing external Spark engine.
+- Ask a [team admin](/teams) to create a fabric for you that connects to an existing external Spark engine.
 
 ## Create a project
 
@@ -153,4 +153,4 @@ Continue your Prophecy learning journey:
 
 - Try our [end-to-end tutorial](docs/getting-started/tutorials/spark-with-databricks.md) on the project lifecycle in Prophecy
 - Discover the different [Spark gems](/engineers/gems) that you can use for data transformation
-- [Reach out to us](docs/getting-help/getting-help.md) if you need additional help or guidance
+- [Reach out to us](docs/getting-started/getting-help/getting-help.md) if you need additional help or guidance

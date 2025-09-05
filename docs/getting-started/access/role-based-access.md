@@ -13,7 +13,7 @@ There are three key roles in Prophecy:
 
 - **Standard users**: Can access and work within the teams they belong to
 - **Team admins**: Manage team membership and team-level resources like fabrics and connections
-- **Prophecy cluster admins**: Administer the overall Prophecy deployment and infrastructure
+- **Prophecy cluster admins** (Enterprise only): Administer the overall Prophecy deployment and infrastructure
 
 All users start as standard users by default, with the exception of being their [personal team](#personal-team) admin. They can be granted the team admin role for specific teams, and automatically become the team admin for any team they create. In contrast, Prophecy cluster admin roles are managed by Prophecy and assigned at the deployment level.
 
@@ -36,14 +36,14 @@ Every user is automatically given a personal team, named after their login email
 
 ## Team admins
 
-Team admins manage teams and create resources for their [teams](docs/administration/teams-users/teamuser.md). This includes responsibilities like:
+Team admins manage teams and create resources for their [teams](/teams). This includes responsibilities like:
 
 - Adding and removing users from teams
 - Creating fabrics that correspond to different execution environments
 - Setting up connections with the appropriate credentials
 - Deploying projects to run scheduled pipelines
 
-The user who creates a team is automatically assigned as its team admin. Additional team admins can be added or disabled from the **Teams** tab in [Settings](/administration/settings).
+The user who creates a team is automatically assigned as its team admin. Additional team admins can be added or disabled from the **Teams** tab in [Settings](/settings).
 
 :::info
 For recommendations regarding team setup and organization, visit [Team-based access](/administration/team-based-access).

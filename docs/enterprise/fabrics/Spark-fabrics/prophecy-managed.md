@@ -3,7 +3,6 @@ title: Prophecy-managed
 id: prophecy-managed-databricks
 slug: /engineers/prophecy-managed-fabric
 description: Use a Prophecy-managed free trial fabric
-sidebar_position: 2
 tags:
   - deployment
   - configuration
@@ -12,6 +11,10 @@ tags:
   - dataproc
   - livy
 ---
+
+:::edition Enterprise Only
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
 
 If you don't have a Spark environment to connect to, you can use the Prophecy-managed Databricks fabric to get started with building your pipelines.
 

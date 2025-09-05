@@ -6,6 +6,10 @@ sidebar_class_name: hidden
 tags: [fabric, SQL, execution, snowflake, databricks]
 ---
 
+:::edition Enterprise Only
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
+
 SQL fabrics let Prophecy connect to SQL warehouses for storage and compute engine capabilities.
 
 :::info

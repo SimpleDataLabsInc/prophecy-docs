@@ -20,7 +20,7 @@ There are two ways to use a pipeline template.
 
 - **Read-only mode**: If you click on a pipeline from the Template Hub, this opens the pipeline in read-only mode. You can explore all project configurations and run any pipeline in the project, but no changes you make will be saved.
 
-- **Edit mode**: If you click **Edit** on a pipeline in the Template Hub, a copy of the project is created in your [personal team](/administration/teams-users/teams-users). This project is editable because it is completely separate from the original pipeline template. You can always open the original from the Template Hub to reference a working pipeline.
+- **Edit mode**: If you click **Edit** on a pipeline in the Template Hub, a copy of the project is created in your [personal team](/teams). This project is editable because it is completely separate from the original pipeline template. You can always open the original from the Template Hub to reference a working pipeline.
 
 :::note
 Prophecy provides a Databricks compute environment for pipeline templates. This means that you don't need your own fabric to run these pipelines—you'll use the Prophecy-provided fabric. This fabric will be available automatically in the pipeline template project.

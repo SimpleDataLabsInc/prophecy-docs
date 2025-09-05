@@ -8,6 +8,10 @@ tags:
   - target
 ---
 
+:::edition Enterprise Only
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
+
 Data diffs can help you identify when pipeline outputs do not meet predefined expectations. This can be useful for:
 
 - Understanding the success of your pipeline migrations.

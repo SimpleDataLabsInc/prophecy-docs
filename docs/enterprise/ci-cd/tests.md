@@ -11,6 +11,10 @@ tags:
   - unit tests
 ---
 
+:::edition Enterprise Only
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
+
 Writing good unit tests is one of the key stages of the CI/CD process. It ensures that the changes made by developers to projects will be verified and all the functionality will work correctly after deployment.
 
 Prophecy makes the process of writing unit cases easier by giving an interactive environment via which unit test cases can be configured across each component.

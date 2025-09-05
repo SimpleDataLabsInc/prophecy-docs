@@ -3,6 +3,14 @@
 module.exports = {
   redirects: [
     {
+      to: "/data-copilot",
+      from: "/data-copilot-data-privacy",
+    },
+    {
+      to: "/getting-started/editions/security",
+      from: "/administration/security",
+    },
+    {
       to: "/core/prophecy-fabrics/connections/",
       from: ["/analysts/connections"],
     },
@@ -125,16 +133,23 @@ module.exports = {
       from: ["/Spark/secret-management/", "/administration/secrets/"],
     },
     {
-      to: "/administration/settings",
-      from: "/administration/teams-users/settings",
+      to: "/settings",
+      from: [
+        "/administration/teams-users/settings",
+        "/administration/settings",
+      ],
     },
     {
       to: "/administration/team-based-access",
       from: "/administration/teams-users/team-based-access",
     },
     {
-      to: "/administration/teams-users/teams-users",
-      from: ["/concepts/teamuser", "/administration/settings/teamuser"],
+      to: "/teams",
+      from: [
+        "/concepts/teamuser",
+        "/administration/settings/teamuser",
+        "/administration/teams-users/teams-users",
+      ],
     },
     {
       to: "/analysts/ai-chat",
@@ -847,14 +862,18 @@ module.exports = {
       from: ["/getting-started/getting-help/"],
     },
     {
-      to: "/getting-help/prophecy-details",
-      from: "/getting-started/getting-help/logs/",
+      to: "/getting-started/getting-help/prophecy-details",
+      from: [
+        "/getting-started/getting-help/logs/",
+        "/getting-help/prophecy-details",
+      ],
     },
     {
-      to: "/getting-help/spark-cluster-details",
+      to: "/getting-started/getting-help/spark-cluster-details",
       from: [
         "/getting-started/getting-help/logs/config-sparkui",
         "/getting-started/getting-help/logs/config-sparknotebook",
+        "/getting-help/spark-cluster-details",
       ],
     },
     {

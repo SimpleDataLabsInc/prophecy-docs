@@ -8,6 +8,10 @@ tags:
   - snowflake
 ---
 
+:::edition Enterprise Only
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
+
 To configure a target model that will be written to Snowflake, reference the following sections.
 
 ## Type & Format

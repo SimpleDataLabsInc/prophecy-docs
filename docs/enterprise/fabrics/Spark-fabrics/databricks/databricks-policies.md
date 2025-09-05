@@ -6,6 +6,10 @@ tags:
   - databricks
 ---
 
+:::edition Enterprise Only
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
+
 Review the following guidelines regarding [compute policies in Databricks](https://docs.databricks.com/aws/en/admin/clusters/policy-families) and their compatibility with Prophecy functionality.
 
 :::info

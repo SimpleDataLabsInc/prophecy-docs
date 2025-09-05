@@ -27,11 +27,11 @@ Each of the following sections corresponds to a tab of the fabric settings.
 
 The **Basic Info** tab lets you define the key identifiers of the fabric.
 
-| Parameter   | Description                                                                     | Required |
-| ----------- | ------------------------------------------------------------------------------- | -------- |
-| Name        | Name of the fabric.                                                             | Yes      |
-| Description | Description of the fabric.                                                      | No       |
-| Team        | [Team](docs/administration/teams-users/teamuser.md) that can access the fabric. | Yes      |
+| Parameter   | Description                                | Required |
+| ----------- | ------------------------------------------ | -------- |
+| Name        | Name of the fabric.                        | Yes      |
+| Description | Description of the fabric.                 | No       |
+| Team        | [Team](/teams) that can access the fabric. | Yes      |
 
 ### Providers
 

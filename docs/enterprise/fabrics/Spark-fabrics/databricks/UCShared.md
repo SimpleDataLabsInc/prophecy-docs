@@ -14,6 +14,10 @@ tags:
   - databricks
 ---
 
+:::edition Enterprise Only
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
+
 When you configure a Databricks cluster, you must specify the cluster [access mode](https://docs.databricks.com/aws/en/compute/configure#access-modes). This page provides an overview of how different Prophecy features perform across various Unity Catalog cluster types.
 
 ## High-level features

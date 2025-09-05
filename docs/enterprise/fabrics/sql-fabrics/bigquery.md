@@ -8,6 +8,10 @@ tags:
   - fabric
 ---
 
+:::edition Enterprise Only
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
+
 To run models projects on Google BigQuery, you need to create a [SQL fabric](/enterprise/fabrics/sql-fabrics/Fabrics) with a BigQuery connection.
 
 :::info

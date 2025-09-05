@@ -10,6 +10,10 @@ tags:
   - target
 ---
 
+:::edition Enterprise Only
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
+
 In Prophecy, a model comprises a set of gems that process data into one output. In other words, each model corresponds to a **single table** in your database.
 
 Models leverage the dbt build system and can run on either SQL fabrics or Prophecy fabrics. To work with the dbt build, Prophecy saves each visual model as a SQL file in your project repository in Git. Prophecy’s visual interface supports SQL models only; if you’d like to define Python models, you must do so using the code interface.

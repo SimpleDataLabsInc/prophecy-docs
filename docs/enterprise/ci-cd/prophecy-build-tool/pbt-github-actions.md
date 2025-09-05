@@ -15,6 +15,10 @@ tags:
   - cicd
 ---
 
+:::edition Enterprise Only
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
+
 ## [Example GitHub Repo](https://github.com/prophecy-samples/external-cicd-template)
 
 ## Integrate with GitHub Actions

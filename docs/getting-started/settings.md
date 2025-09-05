@@ -2,6 +2,7 @@
 title: Settings
 id: settings
 description: Review and update Prophecy settings
+slug: /settings
 tags:
   - settings
 ---

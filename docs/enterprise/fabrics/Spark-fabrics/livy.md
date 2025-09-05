@@ -2,12 +2,15 @@
 title: "Livy"
 id: livy
 description: Configure a Livy fabric
-sidebar_position: 4
 tags:
   - fabric
   - configuration
   - livy
 ---
+
+:::edition Enterprise Only
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
 
 [Apache Livy](https://livy.apache.org/) is a service that enables easy interaction with a Spark cluster over a REST interface. If you're running Hadoop, most Hadoop distributions (CDP/MapR) come with Livy bundled. For Spark-on-k8s, you can put a Livy in the K8s cluster, which exposes Spark over a REST API.
 You can create a generic Livy fabric to connect Prophecy to any Spark cluster accessible via Apache Livy.

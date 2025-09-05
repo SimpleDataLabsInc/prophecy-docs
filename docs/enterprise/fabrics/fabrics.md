@@ -5,7 +5,7 @@ id: fabrics
 tags: []
 ---
 
-A fabrics defines the execution environment of your project. Prophecy provides the following fabric types for your different use cases.
+A fabric defines the execution environment of your project. Prophecy provides the following fabric types for your different use cases.
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

@@ -13,7 +13,7 @@ Here are the released artifacts:
 - ProphecyLibsPython: [PyPI](https://pypi.org/project/prophecy-libs/)
 - ProphecyLibsScala: [Maven](https://mvnrepository.com/artifact/io.prophecy/prophecy-libs)
 
-For a list of the latest ProphecyLibs versions, see [Version Chart](/release_notes/version_chart/version_chart).
+For a list of the latest ProphecyLibs versions, see [Version Chart](/release_notes/version_chart/).
 
 ## Project dependencies
 

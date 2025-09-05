@@ -10,6 +10,10 @@ tags:
   - variable
 ---
 
+:::edition Enterprise Only
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
+
 Model configurations are settings that define how a model should be built and behave within your data warehouse.
 
 When you open a SQL project, you can find **Configuration** under the **...** ellipses menu in the project header. If you use a configuration in your model, you can switch to the code view to see the configuration encoded in the `dbt_project.yml` or `schema.yml/properties.yml` file.

@@ -19,7 +19,7 @@ Our Support team can review these logs to help troubleshoot your issue.
 
 ## Send connection logs
 
-If you have trouble connecting to your fabric, send connection logs to Prophecy with the corresponding error [code](docs/getting-help/diagnostics.md).
+If you have trouble connecting to your fabric, send connection logs to Prophecy with the corresponding error [code](docs/getting-started/getting-help/diagnostics.md).
 
 To retrieve the connection log, open the cluster connection in the top right corner of your project and click the **Copy** button.
 

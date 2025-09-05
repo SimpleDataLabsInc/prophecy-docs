@@ -33,6 +33,10 @@ To set up SSO using SAML:
 
 ## Group Naming Conventions for SCIM
 
+:::edition Enterprise Only Only
+SCIM requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
+
 Groups defined in your SCIM protocol are mapped to teams and admins in Prophecy. Follow the naming convention below to assign the correct roles to users.
 
 ### Team Role Mapping

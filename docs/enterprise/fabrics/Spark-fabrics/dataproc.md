@@ -2,7 +2,6 @@
 title: "Google Cloud Dataproc"
 id: gcp-dataproc-fabric-guide
 description: Configure a GCP Dataproc fabric
-sidebar_position: 8
 tags:
   - deployment
   - configuration
@@ -11,6 +10,10 @@ tags:
   - dataproc
   - livy
 ---
+
+:::edition Enterprise Only
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
 
 In the context of Spark execution engines, users have the flexibility to opt for Google Cloud Dataproc. This guide offers step-by-step instructions on creating a fabric that enables seamless connectivity to the Dataproc environment.
 

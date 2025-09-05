@@ -15,6 +15,10 @@ tags:
   - jenkins
 ---
 
+:::edition Enterprise Only
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
+
 ## [Example GitHub Repo](https://github.com/prophecy-samples/external-cicd-template)
 
 ## Context of the Jenkins CI/CD Example

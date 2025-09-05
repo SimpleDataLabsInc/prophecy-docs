@@ -30,7 +30,7 @@ To complete this quick start, you need:
 If you need a fabric, you have a few options:
 
 - Sign up for Prophecy via [Databricks Partner Connect](/databricks-partner-connect).
-- Ask a [team admin](docs/administration/teams-users/teamuser.md) to create a fabric for you that connects to an existing external SQL warehouse.
+- Ask a [team admin](/teams) to create a fabric for you that connects to an existing external SQL warehouse.
 
 ## Create a project
 
@@ -138,4 +138,4 @@ Continue your Prophecy learning journey:
 
 - Try our [end-to-end tutorial](/analysts/project-lifecycle) on the project lifecycle in Prophecy
 - Discover the different [gems](/analysts/gems) that you can use for data transformation
-- [Reach out to us](docs/getting-help/getting-help.md) if you need additional help or guidance
+- [Reach out to us](docs/getting-started/getting-help/getting-help.md) if you need additional help or guidance

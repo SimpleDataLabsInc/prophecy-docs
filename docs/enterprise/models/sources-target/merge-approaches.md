@@ -9,6 +9,10 @@ tags:
   - scd2
 ---
 
+:::edition Enterprise Only
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
+
 When you select the **Merge** write mode for target tables, you also need to choose the **merge approach** to leverage for your use case. Review the following examples for each merge approach to better understand how each strategy works.
 
 ## Example: Specify columns

@@ -7,6 +7,10 @@ description: Make ProphecyLibs available to Databricks UC standard clusters
 tags: [unity catalog, databricks, plibs]
 ---
 
+:::edition Enterprise Only
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
+
 To use [Prophecy libraries](/engineers/prophecy-libraries) in Databricks environments that have enabled Unity Catalog, you must whitelist the required Maven coordinates or JAR paths. This page outlines different ways to do so.
 
 :::info

@@ -27,7 +27,7 @@ When you create a project in Prophecy, You can either choose a Prophecy-managed 
 
 To add an external Git account to your Prophecy environment:
 
-1. Open **[Settings](/administration/settings)** from the ellipses menu in the left sidebar.
+1. Open **[Settings](/settings)** from the ellipses menu in the left sidebar.
 1. Select the **Git** tab. You will see any existing Git credentials here.
 1. Click **Add new**.
 1. Choose the relevant **Git Provider** and provide the following details:

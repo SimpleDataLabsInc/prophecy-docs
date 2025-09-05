@@ -2,7 +2,6 @@
 title: Knowledge graph
 id: knowledge-graph
 slug: /knowledge-graph
-sidebar_position: 1
 description: Learn how Prophecy uses knowledge graphs to enhance prompts
 tags:
   - copilot
@@ -22,7 +21,7 @@ Knowledge graphs are generated per [fabric](/fabrics) in Prophecy. Each knowledg
 ![Knowledge Graph](img/copilot_knowledge_graph.png)
 
 :::info
-Your data itself is never stored in the knowledge graph. For more details, see [Data privacy with Data Copilot](/docs/copilot/copilot-data-privacy.md).
+Your data itself is never stored in the knowledge graph. For more details, see [Security](/getting-started/editions/security).
 :::
 
 ## Process

@@ -6,6 +6,10 @@ description: Reuse project components via packages
 tags: []
 ---
 
+:::edition Enterprise Only
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
+
 You can reuse components from other projects by importing them as dependencies from the Package Hub. These components can include functions, datasets, pipelines, and subgraphs. This page outlines how to use imported package components for Spark projects and packages.
 
 Keep in mind that imported components are read-only. You can configure and run them in your project, but changes to components can only be made in the original source project.

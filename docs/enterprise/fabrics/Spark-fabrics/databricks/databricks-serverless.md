@@ -8,6 +8,10 @@ tags:
   - databricks
 ---
 
+:::edition Enterprise Only
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
+
 [Databricks serverless compute](https://docs.databricks.com/aws/en/compute/serverless/) allows you to run workloads without manually provisioning a Spark cluster. With serverless compute, Databricks takes care of the infrastructure in the background, so your jobs start up quickly and scale as needed. Prophecy supports serverless compute for running pipelines in PySpark projects on Databricks.
 
 This page explains how to use serverless compute with Prophecy, including supported data sources, data sampling modes, and current limitations.

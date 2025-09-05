@@ -43,7 +43,7 @@ After upgrading to 3.4.1, you must enable SQL Sandbox Config in the UI by naviga
 
 ## Prophecy support lifecycles
 
-The following table describes the support stages for Prophecy versions. Prophecy supports GA versions for six months, unless the version is an Extended Maintenance (EM) release, which Prophecy supports for one year. For information on supported Prophecy versions, see [Version Chart](/release_notes/version_chart/version_chart).
+The following table describes the support stages for Prophecy versions. Prophecy supports GA versions for six months, unless the version is an Extended Maintenance (EM) release, which Prophecy supports for one year. For information on supported Prophecy versions, see [Version Chart](/release_notes/version_chart/).
 
 Workloads on unsupported Prophecy versions may continue to run, but Prophecy doesn't provide support or fixes.
 

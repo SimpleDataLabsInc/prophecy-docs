@@ -1,7 +1,8 @@
 ---
 title: Teams
-id: teams-users
+id: teams
 description: Teams represent a group of users who work together
+slug: /teams
 tags:
   - concepts
   - teams
@@ -59,7 +60,7 @@ This table describes each tab within the team's metadata settings.
 
 ## Team management settings
 
-Additional team settings, including team creation and user management, are available in the **Team** tab of the global [Settings](/administration/settings) interface in your Prophecy environment.
+Additional team settings, including team creation and user management, are available in the **Team** tab of the global [Settings](/settings) interface in your Prophecy environment.
 
 1. Click the **...** button and the **gear** icon at the bottom of the left navigation bar.
 1. Select the **Teams** tab.

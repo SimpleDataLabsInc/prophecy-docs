@@ -10,6 +10,10 @@ tags:
   - runtime config
 ---
 
+:::edition Enterprise Only
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
+
 ## Basic Spark Submit
 
 The following sections contain Scala, PySpark and runtime configuration variables to use with custom orchestration solutions.

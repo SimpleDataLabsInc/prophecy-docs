@@ -9,7 +9,11 @@ tags:
   - extensibility
 ---
 
-Dependencies allow you to make use of a variety of packages in your data pipelines and jobs. There are three types of dependencies for Spark projects:
+:::edition Enterprise Only
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
+
+Spark dependencies allow you to make use of a variety of packages in your data pipelines and jobs. There are three types of dependencies for Spark projects:
 
 - **Package Hub Dependencies.** When you import a project from the Package Hub as a dependency, you gain access to all its components, including pipelines, gems, and business rules for use in your own project. If a new version of the project is published, you can update your dependency to take advantage of the latest changes.
 - **Python ([PyPI](https://pypi.org/)) Dependencies.** Python packages hosted on PyPI can be imported in your project using standard PyPI coordinates. This is useful for including popular libraries or your own published packages in PySpark pipelines.

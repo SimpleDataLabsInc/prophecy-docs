@@ -8,6 +8,10 @@ tags:
   - cluster admin
 ---
 
+:::edition Enterprise Only
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
+
 Cluster admins have access to additional settings in the **Settings** UI of their Prophecy environment. Not all of these settings will be applicable for SaaS and Dedicated SaaS deployments.
 
 ![Cluster admin settings page](img/cluster-admin-settings.png)
