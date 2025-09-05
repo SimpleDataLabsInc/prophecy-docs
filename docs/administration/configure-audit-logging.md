@@ -8,6 +8,10 @@ tags:
   - reference
 ---
 
+:::edition Enterprise Only
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
+:::
+
 Prophecy provides access to audit logs of activities performed by Prophecy users, allowing your enterprise to monitor detailed usage patterns.
 Prophecy cluster admins can configure an S3 bucket to sync these events from Prophecy to their environment. The lifespan of audit logs are configurable upon request.
 

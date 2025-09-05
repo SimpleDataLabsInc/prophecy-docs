@@ -18,7 +18,7 @@ There are two endpoints:
 
 To use the Trigger Pipeline API, the pipeline you want to trigger must:
 
-- Run on a [Prophecy fabric](/administration/fabrics/prophecy-fabrics/)
+- Run on a [Prophecy fabric](/core/prophecy-fabrics/)
 - Be part of a published project (in other words, the pipeline must be deployed)
 
 ---

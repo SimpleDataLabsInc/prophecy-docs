@@ -63,7 +63,7 @@ def get_versions_for_tag(repo, tag_name):
 
 
 def update_version_chart_file(docs_repo_path):
-    version_chart_file = os.path.join(docs_repo_path, "docs/release_notes/version_chart/version_chart.md")
+    version_chart_file = os.path.join(docs_repo_path, "docs/release_notes/version_chart/.md")
     header_lines = []
     delimiter = ""
     delimiter_regex = "-------------"

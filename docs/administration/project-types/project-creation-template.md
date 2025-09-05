@@ -1,6 +1,7 @@
 ---
 title: Project creation templates
 id: project-creation-template
+slug: /project-creation-template
 description: Create templates that include predefined project creation settings
 tags:
   - templates

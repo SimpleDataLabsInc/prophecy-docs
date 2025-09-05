@@ -5,7 +5,7 @@ export default function SQLRequirements(props) {
   return (
     <div>
       {props.execution_engine && (
-        <a href="https://docs.prophecy.io/administration/fabrics/prophecy-fabrics/">
+        <a href="https://docs.prophecy.io/core/prophecy-fabrics/">
           <span className="badge badge-runtime">{props.execution_engine}</span>
         </a>
       )}

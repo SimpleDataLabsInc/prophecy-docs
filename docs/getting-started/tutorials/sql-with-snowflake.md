@@ -25,7 +25,7 @@ For this tutorial, you will need:
 - A Snowflake account.
 - A GitHub account.
 
-If you want to use a different SQL provider such as Databricks, you can [set up the fabric](docs/administration/fabrics/sql-fabrics/databricks.md) and still complete the development section of this tutorial.
+If you want to use a different SQL provider such as Databricks, you can [set up the fabric](docs/enterprise/fabrics/sql-fabrics/databricks.md) and still complete the development section of this tutorial.
 
 ## Connect to Snowflake
 
@@ -52,7 +52,7 @@ Since you will only compute models in this tutorial (rather than perform any orc
 1. Create a new fabric.
 1. Specify a name, like devSnowflake, for your fabric.
 1. Provide a description (optional).
-1. Select the team that will own this fabric. For this tutorial, you can use your [personal team](docs/administration/teams-users/teamuser.md).
+1. Select the team that will own this fabric. For this tutorial, you can use your [personal team](/teams).
 1. Continue to the next step.
 
 ![CreateFabric](img/Snow2.5_createFabric.png)

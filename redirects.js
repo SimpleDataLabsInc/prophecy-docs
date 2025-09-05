@@ -3,7 +3,7 @@
 module.exports = {
   redirects: [
     {
-      to: "/administration/",
+      to: "/",
       from: [
         "/architecture/deployment/enable-data-copilot",
         "/copilot/enable-data-copilot",
@@ -41,8 +41,37 @@ module.exports = {
         "/administration/self-hosted/enable-data-copilot/",
         "/administration/self-hosted/resource-monitoring/",
         "/administration/self-hosted/upgrade-backup-restore/",
+        "/administration",
       ],
     },
+    {
+      to: "/analysts/pipelines",
+      from: ["/concepts/project/pipeline", "/pipelines"],
+    },
+    {
+      to: "/analysts/gems",
+      from: ["/concepts/gems/", "/gems"],
+    },
+    {
+      to: "/project-creation-template",
+      from: [
+        "/administration/project-types/project-creation-template",
+        "/templates",
+      ],
+    },
+    {
+      to: "/data-copilot",
+      from: "/data-copilot-data-privacy",
+    },
+    {
+      to: "/getting-started/editions/security",
+      from: "/administration/security",
+    },
+    {
+      to: "/core/prophecy-fabrics/connections/",
+      from: ["/analysts/connections"],
+    },
+
     {
       to: "/administration/audit-logging",
       from: [
@@ -73,51 +102,71 @@ module.exports = {
       ],
     },
     {
-      to: "/administration/fabrics/Spark-fabrics/Fabrics",
-      from: ["/Spark/fabrics/"],
-    },
-    {
-      to: "/administration/fabrics/Spark-fabrics/databricks/",
-      from: "/Spark/fabrics/databricks-fabric",
-    },
-    {
-      to: "/administration/fabrics/Spark-fabrics/emr",
+      to: "/enterprise/fabrics/Spark-fabrics/Fabrics",
       from: [
-        "/architecture/deployment/EMR-livy-installation-guide",
-        "/Spark/fabrics/EMR-serverless-fabric-configuration",
-        "/Spark/fabrics/EMR-fabric-configuration",
+        "/Spark/fabrics/",
+        "/administration/fabrics/Spark-fabrics/Fabrics",
       ],
     },
     {
-      to: "/administration/fabrics/Spark-fabrics/livy",
+      to: "/enterprise/fabrics/Spark-fabrics/databricks/",
       from: [
+        "/Spark/fabrics/databricks-fabric",
+        "/administration/fabrics/Spark-fabrics/databricks/",
+      ],
+    },
+    {
+      to: "/enterprise/fabrics/Spark-fabrics/emr",
+      from: [
+        "/Spark/fabrics/EMR-serverless-fabric-configuration",
+        "/Spark/fabrics/EMR-fabric-configuration",
+        "/administration/fabrics/Spark-fabrics/emr",
+        "/architecture/deployment/EMR-livy-installation-guide",
+      ],
+    },
+    {
+      to: "/enterprise/fabrics/Spark-fabrics/livy",
+      from: [
+        "/Spark/fabrics/livy-fabric",
+        "/administration/fabrics/Spark-fabrics/livy",
         "/architecture/authentication/admin-settings",
         "/administration/authentication/security-settings",
       ],
     },
     {
-      to: "/administration/fabrics/sql-fabrics/Fabrics",
-      from: ["/SQL/fabrics/"],
+      to: "/enterprise/fabrics/sql-fabrics/Fabrics",
+      from: ["/SQL/fabrics/", "/administration/fabrics/sql-fabrics/Fabrics"],
     },
     {
-      to: "/administration/prophecy-deployment",
-      from: ["/architecture/deployment", "/administration/deployment"],
+      to: "/getting-started/editions/architecture",
+      from: [
+        "/administration/prophecy-deployment",
+        "/architecture/deployment",
+        "/administration/deployment",
+      ],
     },
     {
-      to: "/administration/secrets/",
-      from: ["/Spark/secret-management/"],
+      to: "/enterprise/fabrics/secrets/",
+      from: ["/Spark/secret-management/", "/administration/secrets/"],
     },
     {
-      to: "/administration/settings",
-      from: "/administration/teams-users/settings",
+      to: "/settings",
+      from: [
+        "/administration/teams-users/settings",
+        "/administration/settings",
+      ],
     },
     {
       to: "/administration/team-based-access",
       from: "/administration/teams-users/team-based-access",
     },
     {
-      to: "/administration/teams-users/teams-users",
-      from: ["/concepts/teamuser", "/administration/settings/teamuser"],
+      to: "/teams",
+      from: [
+        "/concepts/teamuser",
+        "/administration/settings/teamuser",
+        "/administration/teams-users/teams-users",
+      ],
     },
     {
       to: "/analysts/ai-chat",
@@ -376,7 +425,7 @@ module.exports = {
       from: "/Spark/gems/expression-builder",
     },
     {
-      to: "/engineers/extensibility",
+      to: "/analysts/extensibility",
       from: ["/extensibility", "/low-code-spark/extensibility/dependencies"],
     },
     {
@@ -822,32 +871,27 @@ module.exports = {
       from: "/concepts/fabrics",
     },
     {
-      to: "/gems",
-      from: "/concepts/gems/",
-    },
-    {
       to: "/getting-help/",
       from: ["/getting-started/getting-help/"],
     },
     {
-      to: "/getting-help/prophecy-details",
-      from: "/getting-started/getting-help/logs/",
-    },
-    {
-      to: "/getting-help/spark-cluster-details",
+      to: "/getting-started/getting-help/prophecy-details",
       from: [
-        "/getting-started/getting-help/logs/config-sparkui",
-        "/getting-started/getting-help/logs/config-sparknotebook",
+        "/getting-started/getting-help/logs/",
+        "/getting-help/prophecy-details",
       ],
     },
     {
-      to: "/getting-started",
-      from: "/developer/videos/",
+      to: "/getting-started/getting-help/spark-cluster-details",
+      from: [
+        "/getting-started/getting-help/logs/config-sparkui",
+        "/getting-started/getting-help/logs/config-sparknotebook",
+        "/getting-help/spark-cluster-details",
+      ],
     },
-
     {
-      to: "/pipelines",
-      from: "/concepts/project/pipeline",
+      to: "/",
+      from: "/developer/videos/",
     },
     {
       to: "/projects",

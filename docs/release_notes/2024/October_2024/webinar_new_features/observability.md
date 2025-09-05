@@ -11,7 +11,7 @@ Highlighted improvements for pipeline Observability
 
 ### Pipeline Monitoring and Debugging
 
-Click [here](/docs/Orchestration/pipeline-monitoring/use-pipeline-monitoring.md) for further details.
+Click [here](/engineers/pipeline-monitoring) for further details.
 
 ### Data Quality gem for Spark
 
@@ -19,4 +19,4 @@ Detailed documentation coming soon.
 
 ### Data Quality Tests for SQL
 
-Click [here](/docs/analysts/development/data-tests/data-tests.md) for further details.
+Click [here](/docs/core/development/data-tests/data-tests.md) for further details.

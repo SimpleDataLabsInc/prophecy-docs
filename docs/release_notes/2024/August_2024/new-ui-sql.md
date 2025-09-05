@@ -41,6 +41,6 @@ Slowly changing dimensions (SCD) doesn't have to be so challenging. With this re
 
 ### Visual Expression Builder
 
-You can use a simplified expression builder within your data transformation gems, Data Explorer, and Data Tests. The [Visual Expression Builder](docs/analysts/development/gems/visual-expression-builder/visual-expression-builder.md) takes you through building your expressions, following a step-by-step visual guide. It suggests expressions and functions to you, including nested and conditional functions. All the while, you don't have to worry about writing the expression syntax since it takes care of that for you.
+You can use a simplified expression builder within your data transformation gems, Data Explorer, and Data Tests. The [Visual Expression Builder](docs/core/development/gems/visual-expression-builder/visual-expression-builder.md) takes you through building your expressions, following a step-by-step visual guide. It suggests expressions and functions to you, including nested and conditional functions. All the while, you don't have to worry about writing the expression syntax since it takes care of that for you.
 
 ![expressionBuilder](./img/expression-builder.png)

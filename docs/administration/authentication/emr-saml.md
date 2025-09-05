@@ -200,6 +200,6 @@ Finally, you can configure a fabric to authenticate using SAML.
 
 1. Sign in with your Okta credentials.
 
-1. In Prophecy, [complete the fabric configuration](/administration/fabrics/Spark-fabrics/emr) and save it.
+1. In Prophecy, [complete the fabric configuration](/enterprise/fabrics/Spark-fabrics/emr) and save it.
 
 After this, users will be able to attach to the EMR fabric and sign in with Okta.

@@ -233,4 +233,4 @@ To disable a pipeline schedule, you must do so in the schedule settings AND repu
 
 ## What's next
 
-To make pipeline development even easier, add [connections](/analysts/connections) to browse through your different external data sources. To create more complex pipelines, review the list of gems(/analysts/gems) that are available to you and try them out!
+To make pipeline development even easier, add [connections](/core/prophecy-fabrics/connections/) to browse through your different external data sources. To create more complex pipelines, review the list of gems(/analysts/gems) that are available to you and try them out!
