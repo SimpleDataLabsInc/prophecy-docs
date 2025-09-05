@@ -73,39 +73,48 @@ module.exports = {
       ],
     },
     {
-      to: "/administration/fabrics/Spark-fabrics/Fabrics",
-      from: ["/Spark/fabrics/"],
-    },
-    {
-      to: "/administration/fabrics/Spark-fabrics/databricks/",
-      from: "/Spark/fabrics/databricks-fabric",
-    },
-    {
-      to: "/administration/fabrics/Spark-fabrics/emr",
+      to: "/enterprise/fabrics/Spark-fabrics/Fabrics",
       from: [
-        "/architecture/deployment/EMR-livy-installation-guide",
-        "/Spark/fabrics/EMR-serverless-fabric-configuration",
-        "/Spark/fabrics/EMR-fabric-configuration",
+        "/Spark/fabrics/",
+        "/administration/fabrics/Spark-fabrics/Fabrics",
       ],
     },
     {
-      to: "/administration/fabrics/Spark-fabrics/livy",
+      to: "/enterprise/fabrics/Spark-fabrics/databricks/",
       from: [
+        "/Spark/fabrics/databricks-fabric",
+        "/administration/fabrics/Spark-fabrics/databricks/",
+      ],
+    },
+    {
+      to: "/enterprise/fabrics/Spark-fabrics/emr",
+      from: [
+        "/Spark/fabrics/EMR-serverless-fabric-configuration",
+        "/Spark/fabrics/EMR-fabric-configuration",
+        "/administration/fabrics/Spark-fabrics/emr",
+        "/architecture/deployment/EMR-livy-installation-guide",
+      ],
+    },
+    {
+      to: "/enterprise/fabrics/Spark-fabrics/livy",
+      from: [
+        "/Spark/fabrics/livy-fabric",
+        "/administration/fabrics/Spark-fabrics/livy",
         "/architecture/authentication/admin-settings",
         "/administration/authentication/security-settings",
       ],
     },
     {
-      to: "/administration/fabrics/sql-fabrics/Fabrics",
-      from: ["/SQL/fabrics/"],
+      to: "/enterprise/fabrics/sql-fabrics/Fabrics",
+      from: ["/SQL/fabrics/", "/administration/fabrics/sql-fabrics/Fabrics"],
     },
     {
       to: "/administration/prophecy-deployment",
       from: ["/architecture/deployment", "/administration/deployment"],
     },
     {
-      to: "/administration/secrets/",
-      from: ["/Spark/secret-management/"],
+      to: "/enterprise/fabrics/secrets/",
+      from: ["/Spark/secret-management/", "/administration/secrets/"],
     },
     {
       to: "/administration/settings",

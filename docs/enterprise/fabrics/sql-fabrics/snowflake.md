@@ -8,7 +8,7 @@ tags:
   - fabric
 ---
 
-To run models on Snowflake, you need to create a [SQL fabric](/administration/fabrics/sql-fabrics/Fabrics) with a Snowflake connection.
+To run models on Snowflake, you need to create a [SQL fabric](/enterprise/fabrics/sql-fabrics/Fabrics) with a Snowflake connection.
 
 :::info
 Snowflake is only compatible with models. You cannot run pipelines in a SQL project with a Snowflake connection.

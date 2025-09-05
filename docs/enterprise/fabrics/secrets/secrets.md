@@ -10,7 +10,7 @@ tags:
 
 In some cases, you'll need to input credentials in Prophecy for authentication to external systems. This is why Prophecy lets you create **secrets** that securely encrypt your sensitive information. These secrets can be used in your connections or throughout your pipelines (in Source gems, for example).
 
-We provide a Prophecy-hosted secret manager, as well as other [secret providers](docs/administration/secrets/secret-providers.md) such as Databricks.
+We provide a Prophecy-hosted secret manager, as well as other [secret providers](docs/enterprise/fabrics/secrets/secret-providers.md) such as Databricks.
 
 ## Access
 

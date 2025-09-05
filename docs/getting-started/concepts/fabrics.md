@@ -14,7 +14,7 @@ Before you can run a pipeline, you need to define an execution environment where
 A fabric specifies everything required for execution. Depending on the fabric type, it may include:
 
 - **External compute**: This requires manual effort to connect an external environment, such as Databricks or Snowflake.
-- **Prophecy Automate**: This is the built-in Prophecy runtime included in [Prophecy fabrics](/administration/fabrics/prophecy-fabrics/).
+- **Prophecy Automate**: This is the built-in Prophecy runtime included in [Prophecy fabrics](/core/prophecy-fabrics/).
 - **Connections**: These are optional configurations that let you integrate with additional data providers for ingestion and egress.
 
 When you open a project and attach a fabric, you'll have access to all of the fabric's resources to run your pipelines.
@@ -23,14 +23,14 @@ When you open a project and attach a fabric, you'll have access to all of the fa
 
 Different fabrics are designed to support specific project types. Use the table below to identify which fabric best aligns with your project's execution requirements.
 
-| Fabric type                                            | Description                                        | Usage                                                                                |
-| ------------------------------------------------------ | -------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| [Prophecy](/administration/fabrics/prophecy-fabrics/)  | Compute with Prophecy Automate and a SQL warehouse | Run [pipelines](docs/analysts/development/pipelines/pipelines.md) in SQL projects.   |
-| [Spark](/administration/fabrics/Spark-fabrics/Fabrics) | Compute with a Spark engine                        | Run [pipelines](/engineers/pipelines) in PySpark/Scala projects and Databricks jobs. |
-| [SQL](/administration/fabrics/sql-fabrics/Fabrics)     | Compute with a SQL warehouse                       | Run [models](/engineers/models) in SQL projects. You cannot run pipelines.           |
+| Fabric type                                        | Description                                        | Usage                                                                                |
+| -------------------------------------------------- | -------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| [Prophecy](/core/prophecy-fabrics/)                | Compute with Prophecy Automate and a SQL warehouse | Run [pipelines](docs/core/development/pipelines/pipelines.md) in SQL projects.       |
+| [Spark](/enterprise/fabrics/Spark-fabrics/Fabrics) | Compute with a Spark engine                        | Run [pipelines](/engineers/pipelines) in PySpark/Scala projects and Databricks jobs. |
+| [SQL](/enterprise/fabrics/sql-fabrics/Fabrics)     | Compute with a SQL warehouse                       | Run [models](/engineers/models) in SQL projects. You cannot run pipelines.           |
 
 :::info
-Fabrics are configured by team admins. To learn how to create each type of fabric listed here, see [Fabric setup](/administration/fabrics) in the Administration documentation.
+Fabrics are configured by team admins. To learn how to create each type of fabric listed here, see [Fabric setup](/enterprise/fabrics) in the Administration documentation.
 :::
 
 ## Separate environments and access

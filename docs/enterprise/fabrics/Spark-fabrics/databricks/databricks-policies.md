@@ -9,7 +9,7 @@ tags:
 Review the following guidelines regarding [compute policies in Databricks](https://docs.databricks.com/aws/en/admin/clusters/policy-families) and their compatibility with Prophecy functionality.
 
 :::info
-Databricks policies differ from cluster access modes. View [UC cluster compatibility](docs/administration/fabrics/Spark-fabrics/databricks/UCShared.md) for more information on standard vs. dedicated cluster capabilities.
+Databricks policies differ from cluster access modes. View [UC cluster compatibility](docs/enterprise/fabrics/Spark-fabrics/databricks/UCShared.md) for more information on standard vs. dedicated cluster capabilities.
 :::
 
 ## Overview

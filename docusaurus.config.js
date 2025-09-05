@@ -115,7 +115,7 @@ const config = {
           {
             type: "doc",
             position: "left",
-            docId: "analysts/index",
+            docId: "core/index",
             label: "Core",
           },
           {

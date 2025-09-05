@@ -79,7 +79,7 @@ Development fabrics should be configured to facilitate collaborative work and al
 - **Benefits**: Maintains accountability with each run linked to an individual identity
 - **Usage**: For projects in development phase only
 
-Here is one example of how you may configure a [Prophecy fabric](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md) for development.
+Here is one example of how you may configure a [Prophecy fabric](docs/core/prophecy-fabrics/prophecy-fabrics.md) for development.
 
 ![Development fabric](img/fabric-dev.png)
 
@@ -94,7 +94,7 @@ Production fabrics require a different approach focused on stability and reliabi
 
 Using service principals for production fabrics ensures that scheduled jobs continue to run even when individual team members are unavailable or their credentials change.
 
-Here is one example of how you may configure a [Prophecy fabric](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md) for production.
+Here is one example of how you may configure a [Prophecy fabric](docs/core/prophecy-fabrics/prophecy-fabrics.md) for production.
 
 ![Production fabric](img/fabric-prod.png)
 

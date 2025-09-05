@@ -47,7 +47,7 @@ If Copilot or the AI agent can't find the tables you reference, or if responses 
 
 To refresh tables from the fabric settings:
 
-1. Open the [SQL Warehouse Connection](/administration/fabrics/prophecy-fabrics/connections/) details in your fabric settings.
+1. Open the [SQL Warehouse Connection](/core/prophecy-fabrics/connections/) details in your fabric settings.
 1. At the bottom of the connection dialog, you’ll find a **Table Indexing Status**.
 1. Click **Start** to reindex the tables and track its progress.
 

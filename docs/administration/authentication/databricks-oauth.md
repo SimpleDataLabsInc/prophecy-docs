@@ -75,9 +75,9 @@ The minimum level of access that your service principal requires (including acce
 
 To learn how to configure Databricks OAuth for different fabric types, see:
 
-- [Databricks connection in a Prophecy fabric](/administration/fabrics/prophecy-fabrics/connections/databricks)
-- [Databricks connection in a Spark fabric](/administration/fabrics/Spark-fabrics/databricks/#credentials)
-- [Databricks connection in a SQL fabric](/administration/fabrics/sql-fabrics/databricks)
+- [Databricks connection in a Prophecy fabric](/core/prophecy-fabrics/connections/databricks)
+- [Databricks connection in a Spark fabric](/enterprise/fabrics/Spark-fabrics/databricks/#credentials)
+- [Databricks connection in a SQL fabric](/enterprise/fabrics/sql-fabrics/databricks)
 
 ## Security
 

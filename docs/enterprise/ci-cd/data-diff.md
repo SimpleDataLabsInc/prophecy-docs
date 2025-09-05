@@ -25,7 +25,7 @@ To compute a data diff, you need:
 - **An expected dataset**. It must be in Parquet or Databricks Catalog Table format.
 
 :::note
-Data diff cannot be computed on [Databricks Serverless](docs/administration/fabrics/Spark-fabrics/databricks/databricks-serverless.md).
+Data diff cannot be computed on [Databricks Serverless](docs/enterprise/fabrics/Spark-fabrics/databricks/databricks-serverless.md).
 :::
 
 ## What is data diff?

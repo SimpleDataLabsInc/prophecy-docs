@@ -25,7 +25,7 @@ For this tutorial, you will need:
 - A Snowflake account.
 - A GitHub account.
 
-If you want to use a different SQL provider such as Databricks, you can [set up the fabric](docs/administration/fabrics/sql-fabrics/databricks.md) and still complete the development section of this tutorial.
+If you want to use a different SQL provider such as Databricks, you can [set up the fabric](docs/enterprise/fabrics/sql-fabrics/databricks.md) and still complete the development section of this tutorial.
 
 ## Connect to Snowflake
 

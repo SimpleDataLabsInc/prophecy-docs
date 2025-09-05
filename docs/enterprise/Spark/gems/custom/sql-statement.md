@@ -38,7 +38,7 @@ One notable difference involves `createOrReplaceTempView` operations. In Spark C
 Always test your SQL queries on your target cluster type to ensure they behave as expected.
 
 :::note
-To learn more about how Databricks clusters impact Prophecy development, see [Feature compatibility with UC clusters](/administration/fabrics/Spark-fabrics/databricks/ucshared).
+To learn more about how Databricks clusters impact Prophecy development, see [Feature compatibility with UC clusters](/enterprise/fabrics/Spark-fabrics/databricks/ucshared).
 :::
 
 ## Parameters

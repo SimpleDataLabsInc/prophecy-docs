@@ -19,7 +19,7 @@ Prophecy lets you create and import user-defined functions (UDFs), which can be 
 | Scala        | Python/Scala | Not supported |
 
 :::info
-Learn about UDF support in Databricks on our documentation on cluster [access modes](/administration/fabrics/Spark-fabrics/databricks/ucshared).
+Learn about UDF support in Databricks on our documentation on cluster [access modes](/enterprise/fabrics/Spark-fabrics/databricks/ucshared).
 :::
 
 ## Create UDFs

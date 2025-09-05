@@ -28,7 +28,7 @@ To complete this quick start, you need:
 
 If you need a fabric, you have a few options:
 
-- Create a fabric that connects to [Prophecy-managed Databricks](docs/administration/fabrics/Spark-fabrics/prophecy-managed.md). Free trial users will automatically have this fabric.
+- Create a fabric that connects to [Prophecy-managed Databricks](docs/enterprise/fabrics/Spark-fabrics/prophecy-managed.md). Free trial users will automatically have this fabric.
 - Ask a [team admin](docs/administration/teams-users/teamuser.md) to create a fabric for you that connects to an existing external Spark engine.
 
 ## Create a project

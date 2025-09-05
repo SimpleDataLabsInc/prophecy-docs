@@ -35,8 +35,8 @@ SQL projects are designed for users who work primarily with SQL data warehouses 
 
 SQL projects can run on:
 
-- **[Prophecy fabrics](/administration/fabrics/prophecy-fabrics/)**: Environment including a SQL warehouse and Prophecy Automate (Prophecy-native runtime).
-- **[SQL fabrics](/administration/fabrics/sql-fabrics/Fabrics)**: Environment only including SQL warehouse compute. Project capabilities are limited when using SQL fabrics. Use SQL fabrics for data modeling only.
+- **[Prophecy fabrics](/core/prophecy-fabrics/)**: Environment including a SQL warehouse and Prophecy Automate (Prophecy-native runtime).
+- **[SQL fabrics](/enterprise/fabrics/sql-fabrics/Fabrics)**: Environment only including SQL warehouse compute. Project capabilities are limited when using SQL fabrics. Use SQL fabrics for data modeling only.
 
 ### Python/Scala projects
 
@@ -47,7 +47,7 @@ Python and Scala projects are designed for users who need more control over data
 - Need full control over the code and execution environment.
 - Use external orchestration tools like Databricks Jobs.
 
-Python and Scala projects can run on **[Spark fabrics](/administration/fabrics/Spark-fabrics/Fabrics)**.
+Python and Scala projects can run on **[Spark fabrics](/enterprise/fabrics/Spark-fabrics/Fabrics)**.
 
 :::info
 For detailed capabilities and feature comparisons, see [Project types](/administration/project-types/project-types.md).
@@ -175,18 +175,18 @@ To continue your journey with Prophecy projects, follow these recommended paths 
 
 **For SQL projects:**
 
-- [Create your first pipeline](/analysts/development/pipelines/pipelines.md) to build visual data transformation workflows.
+- [Create your first pipeline](/analysts/pipelines) to build visual data transformation workflows.
 - [Set up Prophecy Automate scheduling](/analysts/scheduling) to automate your pipeline execution.
-- [Build a Prophecy App](/analysts/business-apps/business-apps.md) to create user-friendly interfaces for your data pipelines.
+- [Build a Prophecy App](/analysts/business-applications) to create user-friendly interfaces for your data pipelines.
 
 **For Python/Scala projects:**
 
 - [Create your first pipeline](/engineers/pipelines) to build Spark-based data processing workflows.
 - [Set up external orchestration](/engineers/orchestration) to schedule your pipelines with tools like Databricks Jobs.
-- [Configure Spark fabrics](/administration/fabrics/Spark-fabrics/Fabrics) to connect to your execution environments.
+- [Configure Spark fabrics](/enterprise/fabrics/Spark-fabrics/Fabrics) to connect to your execution environments.
 
 **For all projects:**
 
-- [Understand version control](/analysts/version-control/version-control.md) for SQL projects or [Git workflows](/engineers/git) for Python/Scala projects.
+- [Understand version control](/analysts/versioning) for SQL projects or [Git workflows](/engineers/git) for Python/Scala projects.
 - [Explore the Package Hub](/engineers/package-hub) to discover reusable components and share your work.
-- [Follow tutorials](/getting-started/tutorials/tutorials.md) to build complete projects from start to finish.
+- [Follow tutorials](/tutorials) to build complete projects from start to finish.

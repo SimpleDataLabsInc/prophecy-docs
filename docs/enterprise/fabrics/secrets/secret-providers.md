@@ -14,12 +14,12 @@ Secrets help protect sensitive information, such as API keys, passwords, and enc
 
 You can configure multiple secret providers per fabric in the **Providers** tab of the fabric configuration. Providers and secrets can be added, edited, and deleted from Prophecy. We support the following providers.
 
-| Secret Provider       | Details                                                                         | Platform   |
-| --------------------- | ------------------------------------------------------------------------------- | ---------- |
-| Prophecy              | Recommended if you use [Prophecy Automate](docs/administration/architecture.md) | Prophecy   |
-| Databricks Secrets    | Recommended if you are a Databricks user                                        | Databricks |
-| HashiCorp Vault       | Recommended if your organization privileges HashiCorp Vault                     | Any Spark  |
-| Environment Variables | Recommended if your organization privileges environment variables               | Any Spark  |
+| Secret Provider       | Details                                                                                   | Platform   |
+| --------------------- | ----------------------------------------------------------------------------------------- | ---------- |
+| Prophecy              | Recommended if you use [Prophecy Automate](docs/getting-started/editions/architecture.md) | Prophecy   |
+| Databricks Secrets    | Recommended if you are a Databricks user                                                  | Databricks |
+| HashiCorp Vault       | Recommended if your organization privileges HashiCorp Vault                               | Any Spark  |
+| Environment Variables | Recommended if your organization privileges environment variables                         | Any Spark  |
 
 :::note
 If you use a secret provider that isn't listed here, you can still access secrets in your pipeline by calling the provider's API from a [Script](/engineers/script) gem, which runs PySpark code.

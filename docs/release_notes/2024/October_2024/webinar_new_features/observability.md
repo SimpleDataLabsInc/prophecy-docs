@@ -19,4 +19,4 @@ Detailed documentation coming soon.
 
 ### Data Quality Tests for SQL
 
-Click [here](/docs/analysts/development/data-tests/data-tests.md) for further details.
+Click [here](/docs/core/development/data-tests/data-tests.md) for further details.

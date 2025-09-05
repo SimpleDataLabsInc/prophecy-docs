@@ -42,7 +42,7 @@ When Data Preview is disabled for a gem, its output appears pale after pipeline 
 ![Selective](img/selective-interims.png)
 
 :::tip
-We recommend using Selective sampling mode for all Databricks users. It is faster and more powerful than the default mode. Selective sampling is also important when working with [Databricks UC standard clusters](/administration/fabrics/Spark-fabrics/databricks/ucshared), as other sampling modes only generate data samples on edge nodes for this access mode.
+We recommend using Selective sampling mode for all Databricks users. It is faster and more powerful than the default mode. Selective sampling is also important when working with [Databricks UC standard clusters](/enterprise/fabrics/Spark-fabrics/databricks/ucshared), as other sampling modes only generate data samples on edge nodes for this access mode.
 :::
 
 <details>

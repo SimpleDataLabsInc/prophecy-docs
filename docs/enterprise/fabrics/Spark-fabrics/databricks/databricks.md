@@ -102,7 +102,7 @@ To use Prophecy libraries in Databricks environments that have enabled Unity Cat
 
 :::note
 
-A full list of public paths can be found in the documentation on [Prophecy libraries](/engineers/prophecy-libraries#download-prophecy-libraries). You also can set up [Prophecy libraries in your Databricks volumes](docs/administration/fabrics/Spark-fabrics/databricks/volumns-plibs.md).
+A full list of public paths can be found in the documentation on [Prophecy libraries](/engineers/prophecy-libraries#download-prophecy-libraries). You also can set up [Prophecy libraries in your Databricks volumes](docs/enterprise/fabrics/Spark-fabrics/databricks/volumns-plibs.md).
 :::
 
 ### Artifacts

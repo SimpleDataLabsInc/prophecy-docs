@@ -9,7 +9,7 @@ tags: [fabric, SQL, execution, snowflake, databricks]
 SQL fabrics let Prophecy connect to SQL warehouses for storage and compute engine capabilities.
 
 :::info
-You can only run [models](/engineers/models) on SQL fabrics. To run pipelines in a SQL project, use a [Prophecy fabric](/administration/fabrics/prophecy-fabrics/).
+You can only run [models](/engineers/models) on SQL fabrics. To run pipelines in a SQL project, use a [Prophecy fabric](/core/prophecy-fabrics/).
 :::
 
 ## Job scheduling

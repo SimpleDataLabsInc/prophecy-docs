@@ -8,10 +8,10 @@ tags:
   - fabric
 ---
 
-To run models on Databricks, you need to create a [SQL fabric](/administration/fabrics/sql-fabrics/Fabrics) with a Databricks connection.
+To run models on Databricks, you need to create a [SQL fabric](/enterprise/fabrics/sql-fabrics/Fabrics) with a Databricks connection.
 
 :::info
-SQL fabrics are for **models only**. Create a [Prophecy fabric](/administration/fabrics/prophecy-fabrics/) with a Databricks SQL warehouse connection to run pipelines.
+SQL fabrics are for **models only**. Create a [Prophecy fabric](/core/prophecy-fabrics/) with a Databricks SQL warehouse connection to run pipelines.
 :::
 
 ## Create a fabric

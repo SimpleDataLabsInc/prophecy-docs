@@ -25,7 +25,7 @@ In this quick start, you will:
 To complete this quick start, you need:
 
 - Prophecy 4.0 or later.
-- A [Prophecy fabric](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md) with a Databricks SQL Warehouse Connection (your execution environment).
+- A [Prophecy fabric](docs/core/prophecy-fabrics/prophecy-fabrics.md) with a Databricks SQL Warehouse Connection (your execution environment).
 
 If you need a fabric, you have a few options:
 
