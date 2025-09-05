@@ -6,55 +6,73 @@ tags:
   - architecture
 ---
 
-Prophecy is deployed as microservices orchestrated by Kubernetes in various cloud platforms.
+Prophecy operates as a distributed system built on microservices architecture, orchestrated by Kubernetes across multiple cloud platforms. The platform consists of several core components that work together to provide data transformation, orchestration, and management capabilities.
 
 ## Free and Professional Edition
 
-- Prophecy Studio: Control plane
-- Prophecy Automate: Prophecy runtime - This is our built-in Prophecy runtime designed for ingestion, egress, and orchestration (scheduling).
-- Prophecy Warehouse: Execution engine for transformations
-- AI: LLM Endpoint
-- Source control: Managed or native Git
+The Free and Professional editions provide a complete data platform with managed components:
 
-SaaS
+| Component          | Description                                                                                                   |
+| ------------------ | ------------------------------------------------------------------------------------------------------------- |
+| Prophecy Studio    | The control plane that provides the user interface for developing visual data pipelines and managing projects |
+| Prophecy Automate  | The native runtime designed for data ingestion, egress, and built-in scheduling capabilities                  |
+| Prophecy Warehouse | The execution engine that processes data transformations using Prophecy-managed compute resources             |
+| AI                 | Prophecy-managed LLM subscription and endpoint                                                                |
+| Source control     | Git integration supporting both Prophecy-managed and external Git repositories                                |
+
+:::info
+**Deployment**: SaaS only. Learn more in [Deployment models](#deployment-models).
+:::
 
 ## Express Edition
 
-- Prophecy Studio: Control plane
-- Prophecy Automate: Prophecy runtime
-- External Warehouse: Your own Databricks SQL engine for transformations
-- AI: LLM Endpoint
-- Source control: Managed or native Git
+The Express edition combines Prophecy's control plane with your existing data warehouse infrastructure:
 
-Dedicated SaaS
+| Component          | Description                                                                                                            |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| Prophecy Studio    | The control plane that provides the user interface for developing visual data pipelines and managing projects          |
+| Prophecy Automate  | The native runtime designed for data ingestion, egress, and built-in scheduling capabilities                           |
+| External Warehouse | Your own Databricks SQL engine that executes data transformations, allowing you to leverage existing compute resources |
+| AI                 | Customer-managed LLM subscription and endpoint                                                                         |
+| Source control     | Git integration supporting both Prophecy-managed and external Git repositories                                         |
+
+:::info
+**Deployment**: Dedicated SaaS only. Learn more in [Deployment models](#deployment-models).
+:::
 
 ![Express edition architecture diagram](img/arch-prophecy-sql.png)
 
 ## Enterprise Edition
 
-- Prophecy Studio: Control plane - The studio user interface lets you access and develop visual data pipelines in various projects.
-- Execution engine: Available compute options are Spark cluster OR external SQL warehouse + Prophecy Automate - Prophecy runs data transformations on your execution environment, such as Snowflake or Databricks. [Fabrics](docs/getting-started/concepts/fabrics.md) enable users to execute pipelines on these platforms. Prophecy does not persist your data.
-- AI: LLM Endpoint
-- Source control: Managed or native Git
+The Enterprise edition offers maximum flexibility with multiple execution engine options and deployment models:
 
-Dedicated SaaS; Self-hosted; SaaS
+| Component        | Description                                                                                                                                                                                                                                                                                                                        |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Prophecy Studio  | The control plane that provides the user interface for developing visual data pipelines and managing projects across various data platforms                                                                                                                                                                                        |
+| Execution engine | Flexible compute options including Spark clusters or external SQL warehouses combined with Prophecy Automate. Prophecy executes data transformations on your chosen execution environment. [Fabrics](/getting-started/concepts/fabrics) enable users to execute pipelines on these platforms. Prophecy does not persist your data. |
+| AI               | Customer-managed LLM subscription and endpoint                                                                                                                                                                                                                                                                                     |
+| Source control   | Git integration supporting both Prophecy-managed and external Git repositories                                                                                                                                                                                                                                                     |
+
+:::info
+**Deployment**: Dedicated SaaS preferred, Self-hosted supported, and SaaS available. Learn more in [Deployment models](#deployment-models).
+:::
 
 ![Prophecy for Engineers](img/arch-prophecy-spark.png)
 
-Prophecy can accommodate a wide variety of architectures beyond this diagram. For example:
+Prophecy supports flexible architecture configurations beyond the illustrated examples:
 
-- The diagram demonstrates Databricks as the execution engine. You can connect to other platforms like Amazon EMR and Google Cloud Dataproc, or use any Spark engine through [Apache Livy](https://livy.apache.org/).
-- The diagram displays a connection to an external Git repository. You can connect to a variety of providers such as GitHub, Bitbucket, GitLab, and more.
+- **Execution engines**: While the diagram shows Databricks as the execution engine, you can connect to other platforms including Amazon EMR, Google Cloud Dataproc, or any Spark engine through [Apache Livy](https://livy.apache.org/)
+- **Source control providers**: The diagram displays a connection to an external Git repository, but you can integrate with various providers including GitHub, Bitbucket, GitLab, and other Git-compatible systems
 
 ## What is Prophecy Automate?
 
-Each Prophecy Edition can leverage Prophecy Automate, our native runtime. Prophecy Automate enables you to do the following:
+Prophecy Automate is the native runtime available across all Prophecy editions. This integrated platform provides three core capabilities:
 
-- **Ingest**: Basic data read & write capability into the data warehouse. This is built for business data sources such as Sharepoint, SFTP, and Excel. This is not designed for large volumes, real time, or CDC.
+- **Ingest**: Data ingestion capabilities that support reading from and writing to data warehouses. Designed for business data sources including SharePoint, SFTP, and Excel files.
 
-- **Orchestrate**: Time and trigger-based scheduling option with fast interactive experience, and built-in monitoring.
+- **Orchestrate**: Scheduling and workflow management with time-based and trigger-based execution options. Provides intuitive interactive experiences with comprehensive built-in monitoring capabilities.
 
-- **Observe**: Quick fix-it of scheduled pipelines, cost, performance, and data monitoring, overlayed on Prophecy Studio.
+- **Observe**: Integrated monitoring and observability features that enable quick troubleshooting of scheduled pipelines, cost analysis, performance monitoring, and data quality oversight, all accessible through the Prophecy Studio interface.
 
 :::note
 Prophecy Automate is only accessible via [Prophecy fabrics](/core/prophecy-fabrics/) for SQL projects and does not apply to Spark-based projects at this time.
@@ -62,7 +80,7 @@ Prophecy Automate is only accessible via [Prophecy fabrics](/core/prophecy-fabri
 
 ## Deployment models
 
-Prophecy supports SaaS (multi-tenant) and Dedicated SaaS (single-tenant) deployments.
+Prophecy offers multiple deployment options to meet different organizational requirements for security, isolation, and management preferences.
 
 | Feature                                          | SaaS | Dedicated SaaS |
 | ------------------------------------------------ | ---- | -------------- |
@@ -73,22 +91,21 @@ Prophecy supports SaaS (multi-tenant) and Dedicated SaaS (single-tenant) deploym
 
 ### SaaS
 
-The SaaS deployment option is entirely Prophecy-managed and has a multi-tenant architecture. SaaS provides the fastest access to latest features. Try out Prophecy using our SaaS environment by signing up for a [free trial](https://app.prophecy.io/metadata/auth/signup).
-
+The SaaS deployment option is entirely Prophecy-managed and operates on a multi-tenant architecture. This deployment model provides the fastest access to the latest features and updates. Organizations can quickly evaluate Prophecy using our SaaS environment by signing up for a [free trial](https://app.prophecy.io/metadata/auth/signup).
 ![SaaS VPC Architecture](img/arch_separate_vpc.png)
 
 ### Dedicated SaaS
 
-:::edition Enterprise Only Only
+:::edition Enterprise Only
 This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
 :::
 
-Like our SaaS deployment, the Dedicated SaaS deployment is Prophecy-managed. However, Dedicated SaaS provides the convenience of a Prophecy-managed environment, but also the privacy of an isolated space on Prophecy’s Virtual Private Cloud. This is also known as a single-tenant architecture.
+The Dedicated SaaS deployment combines the convenience of Prophecy-managed infrastructure with the privacy and isolation of a single-tenant architecture. This deployment model operates on Prophecy's Virtual Private Cloud, providing dedicated resources and enhanced security.
 
-You can choose your preferred cloud platform (AWS, Azure, or GCP), and Prophecy will manage installation, maintenance, resource allocation, and more.
+Organizations can select their preferred cloud platform (AWS, Azure, or GCP), while Prophecy handles installation, maintenance, resource allocation, and ongoing management tasks.
 
 ![Dedicated SaaS VPC Architecture](img/arch_dedicated_vpc.png)
 
 :::info
-While Prophecy continues to support existing customers with self-hosted deployments, new self-hosted installations of Prophecy are **discouraged**.
+While Prophecy continues to support existing customers with self-hosted deployments, new self-hosted installations are **discouraged** in favor of managed deployment options.
 :::

@@ -3,6 +3,10 @@
 module.exports = {
   redirects: [
     {
+      to: "/",
+      from: ["/administration"],
+    },
+    {
       to: "/analysts/pipelines",
       from: ["/concepts/project/pipeline", "/pipelines"],
     },
