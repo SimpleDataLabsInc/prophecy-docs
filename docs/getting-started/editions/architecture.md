@@ -79,8 +79,8 @@ The SaaS deployment option is entirely Prophecy-managed and has a multi-tenant a
 
 ### Dedicated SaaS
 
-:::info
-Dedicated SaaS is available for the Enterprise Edition only.
+:::edition Enterprise
+This feature requires the [Enterprise Edition](/getting-started/editions/prophecy-editions) of Prophecy.
 :::
 
 Like our SaaS deployment, the Dedicated SaaS deployment is Prophecy-managed. However, Dedicated SaaS provides the convenience of a Prophecy-managed environment, but also the privacy of an isolated space on Prophecy’s Virtual Private Cloud. This is also known as a single-tenant architecture.

@@ -30,6 +30,8 @@
   --secondary-700: #0e7490;
   --amber-50: #fef0c7;
   --amber-700: #b54708;
+
+  --edition-background-color: rgb(208, 208, 208);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -52,6 +54,8 @@
   --secondary-700: white;
   --amber-50: #7a2e0e;
   --amber-700: white;
+
+  --edition-background-color: rgb(30, 30, 30);
 }
 
 .markdown h1:first-child {

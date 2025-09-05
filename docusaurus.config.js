@@ -75,6 +75,10 @@ const config = {
             const sidebarItems = await defaultSidebarItemsGenerator(args);
             return sidebarItems;
           },
+          admonitions: {
+            keywords: ["edition"],
+            extendDefaults: true,
+          },
         },
         blog: false,
         theme: {
