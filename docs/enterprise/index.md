@@ -1,5 +1,5 @@
 ---
-title: Enterprise Edition
+title: Enterprise
 id: index
 description: Overview
 sidebar_label: Overview

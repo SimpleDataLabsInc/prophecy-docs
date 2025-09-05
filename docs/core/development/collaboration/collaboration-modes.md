@@ -19,7 +19,7 @@ The following project settings dictate a project's collaboration workflow.
 | Normal or Fork    | External Git     | Users who are comfortable with typical Git branching and merging strategies who can manage CI/CD in Git.                 |
 
 :::info
-All projects that utilize the **Prophecy for Analysts** [project creation template](/templates) operate with Simple, Prophecy-managed Git.
+All projects that utilize the **Prophecy for Analysts** [project creation template](/project-creation-template) operate with Simple, Prophecy-managed Git.
 :::
 
 ## Simple/Prophecy-managed

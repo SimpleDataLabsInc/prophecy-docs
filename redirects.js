@@ -4,11 +4,11 @@ module.exports = {
   redirects: [
     {
       to: "/analysts/pipelines",
-      from: "/pipelines",
+      from: ["/concepts/project/pipeline", "/pipelines"],
     },
     {
       to: "/analysts/gems",
-      from: "/gems",
+      from: ["/concepts/gems/", "/gems"],
     },
     {
       to: "/project-creation-template",
@@ -869,10 +869,6 @@ module.exports = {
       from: "/concepts/fabrics",
     },
     {
-      to: "/gems",
-      from: "/concepts/gems/",
-    },
-    {
       to: "/getting-help/",
       from: ["/getting-started/getting-help/"],
     },
@@ -894,11 +890,6 @@ module.exports = {
     {
       to: "/",
       from: "/developer/videos/",
-    },
-
-    {
-      to: "/pipelines",
-      from: "/concepts/project/pipeline",
     },
     {
       to: "/projects",

@@ -51,12 +51,12 @@ The team metadata page includes the following information:
 
 This table describes each tab within the team's metadata settings.
 
-| Tab                                                                                 | Description                                                                      |
-| ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| [Execution Metrics](/engineers/execution-metrics)                                   | Displays metrics and data samples for each execution.                            |
-| Code Generation                                                                     | Enables multi-file code generation in the case of code payload size limitations. |
-| Advanced                                                                            | Update the artifactid, generative AI settings, etc. for a team's projects.       |
-| [Default Project Settings](/administration/project-types/project-creation-template) | Configure project creation templates for the team.                               |
+| Tab                                                    | Description                                                                      |
+| ------------------------------------------------------ | -------------------------------------------------------------------------------- |
+| [Execution Metrics](/engineers/execution-metrics)      | Displays metrics and data samples for each execution.                            |
+| Code Generation                                        | Enables multi-file code generation in the case of code payload size limitations. |
+| Advanced                                               | Update the artifactid, generative AI settings, etc. for a team's projects.       |
+| [Default Project Settings](/project-creation-template) | Configure project creation templates for the team.                               |
 
 ## Team management settings
 

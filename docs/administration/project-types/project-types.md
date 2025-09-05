@@ -45,7 +45,7 @@ A@{ shape: stadium, label: "Create Project" } --> B@{ shape: diamond, label: "La
 />
 
 :::tip
-Create [templates](docs/administration/project-types/project-creation-template.md) to standardize project configurations for your team.
+Create [templates](/project-creation-template) to standardize project configurations for your team.
 :::
 
 ## Feature matrix
