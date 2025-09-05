@@ -4,37 +4,6 @@ module.exports = {
   redirects: [
     {
       to: "/",
-      from: ["/administration"],
-    },
-    {
-      to: "/analysts/pipelines",
-      from: ["/concepts/project/pipeline", "/pipelines"],
-    },
-    {
-      to: "/analysts/gems",
-      from: ["/concepts/gems/", "/gems"],
-    },
-    {
-      to: "/project-creation-template",
-      from: [
-        "/administration/project-types/project-creation-template",
-        "/templates",
-      ],
-    },
-    {
-      to: "/data-copilot",
-      from: "/data-copilot-data-privacy",
-    },
-    {
-      to: "/getting-started/editions/security",
-      from: "/administration/security",
-    },
-    {
-      to: "/core/prophecy-fabrics/connections/",
-      from: ["/analysts/connections"],
-    },
-    {
-      to: "/administration/",
       from: [
         "/architecture/deployment/enable-data-copilot",
         "/copilot/enable-data-copilot",
@@ -72,8 +41,37 @@ module.exports = {
         "/administration/self-hosted/enable-data-copilot/",
         "/administration/self-hosted/resource-monitoring/",
         "/administration/self-hosted/upgrade-backup-restore/",
+        "/administration",
       ],
     },
+    {
+      to: "/analysts/pipelines",
+      from: ["/concepts/project/pipeline", "/pipelines"],
+    },
+    {
+      to: "/analysts/gems",
+      from: ["/concepts/gems/", "/gems"],
+    },
+    {
+      to: "/project-creation-template",
+      from: [
+        "/administration/project-types/project-creation-template",
+        "/templates",
+      ],
+    },
+    {
+      to: "/data-copilot",
+      from: "/data-copilot-data-privacy",
+    },
+    {
+      to: "/getting-started/editions/security",
+      from: "/administration/security",
+    },
+    {
+      to: "/core/prophecy-fabrics/connections/",
+      from: ["/analysts/connections"],
+    },
+
     {
       to: "/administration/audit-logging",
       from: [
