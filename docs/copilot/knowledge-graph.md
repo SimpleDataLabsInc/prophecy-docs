@@ -55,7 +55,7 @@ To refresh tables from the fabric settings:
 
 #### Environment tab
 
-To refresh tables from the [Environment tab](/analysts/connections#environment-browser):
+To refresh tables from the Environment tab:
 
 1. Open a project in the project editor.
 1. Attach to the fabric that you wish to reindex.

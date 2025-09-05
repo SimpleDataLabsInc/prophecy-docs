@@ -42,7 +42,7 @@ You can also run pipelines with [Prophecy Apps](/analysts/business-applications)
 
 ## External data handling
 
-Prophecy supports external sources and targets through [connections](/analysts/connections). Because SQL transformations require [tables](/analysts/source-target), Prophecy Automate dynamically creates temporary tables in your SQL warehouse to process this data.
+Prophecy supports external sources and targets through [connections](/core/prophecy-fabrics/connections/). Because SQL transformations require [tables](/analysts/source-target), Prophecy Automate dynamically creates temporary tables in your SQL warehouse to process this data.
 
 Temporary tables act as intermediaries that allow external data to be processed using SQL logic. In other words, they enable dbt and SQL to transform external data as if it were native to the warehouse.
 

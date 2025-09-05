@@ -31,14 +31,14 @@ The table below outlines whether the connection supports certain Prophecy featur
 
 To create a connection with Oracle, enter the following parameters:
 
-| Parameter                                                                | Description                                          |
-| ------------------------------------------------------------------------ | ---------------------------------------------------- |
-| Connection name                                                          | A name to identify your connection in Prophecy       |
-| Server                                                                   | Hostname of the Oracle database server               |
-| Port                                                                     | Port used by the Oracle database (default is `1521`) |
-| Username                                                                 | Username for connecting to the Oracle database       |
-| Database                                                                 | Oracle Service Name or SID of the target database    |
-| Password ([Secret required](docs/enterprise/fabrics/secrets/secrets.md)) | Password for the specified user                      |
+| Parameter                                                           | Description                                          |
+| ------------------------------------------------------------------- | ---------------------------------------------------- |
+| Connection name                                                     | A name to identify your connection in Prophecy       |
+| Server                                                              | Hostname of the Oracle database server               |
+| Port                                                                | Port used by the Oracle database (default is `1521`) |
+| Username                                                            | Username for connecting to the Oracle database       |
+| Database                                                            | Oracle Service Name or SID of the target database    |
+| Password ([Secret required](docs/core/prophecy-fabrics/secrets.md)) | Password for the specified user                      |
 
 ## Sharing connections within teams
 

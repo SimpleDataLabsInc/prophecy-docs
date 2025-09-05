@@ -34,14 +34,14 @@ The table below outlines whether the connection supports certain Prophecy featur
 
 To create a connection with Redshift, enter the following parameters:
 
-| Parameter                                                                | Description                                                                                             |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------- |
-| Connection Name                                                          | Name to identify your connection                                                                        |
-| Server                                                                   | Redshift cluster server<br/>Example: `redshift-cluster-1.abc123xyz789.us-west-2.redshift.amazonaws.com` |
-| Port                                                                     | Port used by Redshift (default is `5439`)                                                               |
-| Username                                                                 | Your Redshift username                                                                                  |
-| Database                                                                 | Name of the Redshift database you want to connect to<br/>Example: `analytics_db`                        |
-| Password ([Secret required](docs/enterprise/fabrics/secrets/secrets.md)) | Your Redshift password                                                                                  |
+| Parameter                                                           | Description                                                                                             |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| Connection Name                                                     | Name to identify your connection                                                                        |
+| Server                                                              | Redshift cluster server<br/>Example: `redshift-cluster-1.abc123xyz789.us-west-2.redshift.amazonaws.com` |
+| Port                                                                | Port used by Redshift (default is `5439`)                                                               |
+| Username                                                            | Your Redshift username                                                                                  |
+| Database                                                            | Name of the Redshift database you want to connect to<br/>Example: `analytics_db`                        |
+| Password ([Secret required](docs/core/prophecy-fabrics/secrets.md)) | Your Redshift password                                                                                  |
 
 ## Sharing connections within teams
 

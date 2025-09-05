@@ -28,13 +28,13 @@ Only basic authentication is supported. The SMTP server must support plain usern
 
 To create an SMTP connection, enter the following parameters:
 
-| Parameter                                                                | Description                                                 |
-| ------------------------------------------------------------------------ | ----------------------------------------------------------- |
-| Connection Name                                                          | Unique name for the connection                              |
-| URL                                                                      | SMTP server URL<br/>Example: `smtp.gmail.com`               |
-| Port                                                                     | SMTP port.<br/>Port options may vary between SMTP services. |
-| Username                                                                 | Your SMTP username                                          |
-| Password ([Secret required](docs/enterprise/fabrics/secrets/secrets.md)) | Your SMTP password                                          |
+| Parameter                                                           | Description                                                 |
+| ------------------------------------------------------------------- | ----------------------------------------------------------- |
+| Connection Name                                                     | Unique name for the connection                              |
+| URL                                                                 | SMTP server URL<br/>Example: `smtp.gmail.com`               |
+| Port                                                                | SMTP port.<br/>Port options may vary between SMTP services. |
+| Username                                                            | Your SMTP username                                          |
+| Password ([Secret required](docs/core/prophecy-fabrics/secrets.md)) | Your SMTP password                                          |
 
 ## Sharing connections within teams
 

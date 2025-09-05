@@ -27,7 +27,7 @@ You can check your **ProphecyLibsPython** version under **Dependencies**.
 
 If you have uncommitted changes in your pipelines, you may be prompted to either **Commit & Save** or **Save Without Committing**. The update will affect all pipelines in your project.
 
-For an up-to-date list of Prophecy versions and libraries, see [Version Chart](//release_notes/version_chart/version_chart).
+For an up-to-date list of Prophecy versions and libraries, see [Version Chart](/release_notes/version_chart/version_chart).
 
 ## Turn on the Pipeline Monitoring flag
 

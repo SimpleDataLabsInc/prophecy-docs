@@ -36,13 +36,13 @@ For a modern, cloud-native workflow, write pipeline outputs directly to a suppor
 
 To create a connection with Tableau, enter the following parameters:
 
-| Parameter                                                                     | Description                                                           |
-| ----------------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| Connection Name                                                               | Unique name for the connection                                        |
-| Tableau Server URL                                                            | URL of your Tableau Server<br/>Example: `https://tableau.example.com` |
-| Tableau Token Name                                                            | Name of your Tableau personal access token                            |
-| Tableau Token ([Secret required](docs/enterprise/fabrics/secrets/secrets.md)) | Your Tableau personal access token                                    |
-| Tableau Site Name                                                             | Name of the Tableau site you're connecting to                         |
+| Parameter                                                                | Description                                                           |
+| ------------------------------------------------------------------------ | --------------------------------------------------------------------- |
+| Connection Name                                                          | Unique name for the connection                                        |
+| Tableau Server URL                                                       | URL of your Tableau Server<br/>Example: `https://tableau.example.com` |
+| Tableau Token Name                                                       | Name of your Tableau personal access token                            |
+| Tableau Token ([Secret required](docs/core/prophecy-fabrics/secrets.md)) | Your Tableau personal access token                                    |
+| Tableau Site Name                                                        | Name of the Tableau site you're connecting to                         |
 
 ## Sharing connections within teams
 

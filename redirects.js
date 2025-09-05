@@ -3,6 +3,10 @@
 module.exports = {
   redirects: [
     {
+      to: "/core/prophecy-fabrics/connections/",
+      from: ["/analysts/connections"],
+    },
+    {
       to: "/administration/",
       from: [
         "/architecture/deployment/enable-data-copilot",
@@ -109,8 +113,12 @@ module.exports = {
       from: ["/SQL/fabrics/", "/administration/fabrics/sql-fabrics/Fabrics"],
     },
     {
-      to: "/administration/prophecy-deployment",
-      from: ["/architecture/deployment", "/administration/deployment"],
+      to: "/getting-started/editions/architecture",
+      from: [
+        "/administration/prophecy-deployment",
+        "/architecture/deployment",
+        "/administration/deployment",
+      ],
     },
     {
       to: "/enterprise/fabrics/secrets/",

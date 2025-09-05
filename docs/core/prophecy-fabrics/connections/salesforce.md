@@ -34,14 +34,14 @@ You cannot browse your Salesforce datasets and objects in the Environment browse
 
 To create a connection with Salesforce, enter the following parameters:
 
-| Parameter                                                                    | Description                                                                                                                                               |
-| ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Connection Name                                                              | Unique name for the connection                                                                                                                            |
-| Salesforce URL                                                               | The base URL for your Salesforce instance. <br/>Example: `https://yourcompany.my.salesforce.com`                                                          |
-| Username ([Secret required](docs/enterprise/fabrics/secrets/secrets.md))     | Your Salesforce username used for authentication                                                                                                          |
-| Password ([Secret required](docs/enterprise/fabrics/secrets/secrets.md))     | Your Salesforce password used for authentication                                                                                                          |
-| Access Token ([Secret required](docs/enterprise/fabrics/secrets/secrets.md)) | The [Salesforce API access token](https://help.salesforce.com/s/articleView?id=xcloud.remoteaccess_access_tokens.htm&type=5) associated with your account |
-| Salesforce API Version                                                       | The version of the Salesforce API to use                                                                                                                  |
+| Parameter                                                               | Description                                                                                                                                               |
+| ----------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Connection Name                                                         | Unique name for the connection                                                                                                                            |
+| Salesforce URL                                                          | The base URL for your Salesforce instance. <br/>Example: `https://yourcompany.my.salesforce.com`                                                          |
+| Username ([Secret required](docs/core/prophecy-fabrics/secrets.md))     | Your Salesforce username used for authentication                                                                                                          |
+| Password ([Secret required](docs/core/prophecy-fabrics/secrets.md))     | Your Salesforce password used for authentication                                                                                                          |
+| Access Token ([Secret required](docs/core/prophecy-fabrics/secrets.md)) | The [Salesforce API access token](https://help.salesforce.com/s/articleView?id=xcloud.remoteaccess_access_tokens.htm&type=5) associated with your account |
+| Salesforce API Version                                                  | The version of the Salesforce API to use                                                                                                                  |
 
 ## Sharing connections within teams
 

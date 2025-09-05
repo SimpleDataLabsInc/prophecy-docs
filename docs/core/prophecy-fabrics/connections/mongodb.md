@@ -33,15 +33,15 @@ The table below outlines whether the connection supports certain Prophecy featur
 
 To create a connection with MongoDB, enter the following parameters:
 
-| Parameter                                                                | Description                                                                                                  |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| Connection Name                                                          | Name to identify your connection                                                                             |
-| Protocol                                                                 | Protocol to use to communicate to the database<br/>Example:`mongodb+srv` for cloud-hosted clusters           |
-| Host                                                                     | Where your MongoDB instance runs<br/>Example:`cluster0.<cluster-name>.mongodb.net` for cloud-hosted clusters |
-| Username                                                                 | Username for your MongoDB instance                                                                           |
-| Password ([Secret required](docs/enterprise/fabrics/secrets/secrets.md)) | Password for your MongoDB instance                                                                           |
-| Database                                                                 | Default database for reading and writing data                                                                |
-| Collection                                                               | Collection to use for the connection                                                                         |
+| Parameter                                                           | Description                                                                                                  |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Connection Name                                                     | Name to identify your connection                                                                             |
+| Protocol                                                            | Protocol to use to communicate to the database<br/>Example:`mongodb+srv` for cloud-hosted clusters           |
+| Host                                                                | Where your MongoDB instance runs<br/>Example:`cluster0.<cluster-name>.mongodb.net` for cloud-hosted clusters |
+| Username                                                            | Username for your MongoDB instance                                                                           |
+| Password ([Secret required](docs/core/prophecy-fabrics/secrets.md)) | Password for your MongoDB instance                                                                           |
+| Database                                                            | Default database for reading and writing data                                                                |
+| Collection                                                          | Collection to use for the connection                                                                         |
 
 ## Sharing connections within teams
 

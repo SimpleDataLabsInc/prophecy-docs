@@ -116,6 +116,44 @@ const sidebars = {
     },
     {
       type: "category",
+      label: "Fabric setup",
+      link: {
+        type: "doc",
+        id: "core/prophecy-fabrics/prophecy-fabrics",
+      },
+      items: [
+        {
+          type: "category",
+          label: "Connections",
+          link: {
+            type: "doc",
+            id: "core/prophecy-fabrics/connections/connections",
+          },
+          items: [
+            "core/prophecy-fabrics/connections/redshift",
+            "core/prophecy-fabrics/connections/s3",
+            "core/prophecy-fabrics/connections/synapse",
+            "core/prophecy-fabrics/connections/databricks",
+            "core/prophecy-fabrics/connections/bigquery",
+            "core/prophecy-fabrics/connections/onedrive",
+            "core/prophecy-fabrics/connections/power-bi",
+            "core/prophecy-fabrics/connections/sharepoint",
+            "core/prophecy-fabrics/connections/mongodb",
+            "core/prophecy-fabrics/connections/mssql",
+            "core/prophecy-fabrics/connections/oracle",
+            "core/prophecy-fabrics/connections/salesforce",
+            "core/prophecy-fabrics/connections/sftp",
+            "core/prophecy-fabrics/connections/smartsheet",
+            "core/prophecy-fabrics/connections/smtp",
+            "core/prophecy-fabrics/connections/snowflake",
+            "core/prophecy-fabrics/connections/tableau",
+          ],
+        },
+        "core/prophecy-fabrics/secrets",
+      ],
+    },
+    {
+      type: "category",
       label: "Pipeline development",
       link: { type: "doc", id: "core/development/development" },
       items: [
@@ -379,7 +417,6 @@ const sidebars = {
             "core/development/copilot/generate-fix",
           ],
         },
-        "core/development/connections",
         {
           type: "category",
           label: "Data exploration",
@@ -513,10 +550,6 @@ const sidebars = {
     },
     "core/extensibility/package-hub",
     {
-      type: "html",
-      value: '<span class="sidebar-divider" />',
-    },
-    {
       type: "category",
       label: "Prophecy Apps",
       link: { type: "doc", id: "core/business-apps/business-apps" },
@@ -534,48 +567,7 @@ const sidebars = {
         },
       ],
     },
-    {
-      type: "html",
-      value: '<span class="sidebar-divider" />',
-    },
-    {
-      type: "category",
-      label: "Fabric setup",
-      link: {
-        type: "doc",
-        id: "core/prophecy-fabrics/prophecy-fabrics",
-      },
-      items: [
-        {
-          type: "category",
-          label: "Connections",
-          link: {
-            type: "doc",
-            id: "core/prophecy-fabrics/connections/connections",
-          },
-          items: [
-            "core/prophecy-fabrics/connections/redshift",
-            "core/prophecy-fabrics/connections/s3",
-            "core/prophecy-fabrics/connections/synapse",
-            "core/prophecy-fabrics/connections/databricks",
-            "core/prophecy-fabrics/connections/bigquery",
-            "core/prophecy-fabrics/connections/onedrive",
-            "core/prophecy-fabrics/connections/power-bi",
-            "core/prophecy-fabrics/connections/sharepoint",
-            "core/prophecy-fabrics/connections/mongodb",
-            "core/prophecy-fabrics/connections/mssql",
-            "core/prophecy-fabrics/connections/oracle",
-            "core/prophecy-fabrics/connections/salesforce",
-            "core/prophecy-fabrics/connections/sftp",
-            "core/prophecy-fabrics/connections/smartsheet",
-            "core/prophecy-fabrics/connections/smtp",
-            "core/prophecy-fabrics/connections/snowflake",
-            "core/prophecy-fabrics/connections/tableau",
-          ],
-        },
-        "core/prophecy-fabrics/secrets",
-      ],
-    },
+
     /* ---------------------- ENTERPRISE ------------------------*/
   ],
   enterpriseSidebar: [
@@ -1022,8 +1014,6 @@ const sidebars = {
       type: "html",
       value: '<span class="sidebar-divider" />',
     },
-
-    "administration/prophecy-deployment",
     "administration/cluster-admin-settings",
     "administration/security",
     "administration/audit-logging",

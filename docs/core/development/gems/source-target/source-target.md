@@ -36,7 +36,7 @@ Prophecy supports the following data formats:
 - Tables from external systems. These are accessed with Source and Target gems.
 - Files from external systems. These are accessed with Source and Target gems.
 
-To use external systems, you need to set up corresponding [connections](docs/core/development/connections.md).
+To use external systems, you need to set up corresponding [connections](docs/core/prophecy-fabrics/connections/connections.md).
 
 ## What's next
 

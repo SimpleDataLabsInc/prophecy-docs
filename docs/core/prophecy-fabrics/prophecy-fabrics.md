@@ -58,14 +58,14 @@ Your SQL warehouse connection gives Prophecy access to both the execution enviro
 
 ### Secrets
 
-The **Secrets** tab lets you [encrypt your sensitive data](/enterprise/fabrics/secrets/), so you can use values without directly exposing them in your projects or pipelines.
+The **Secrets** tab lets you encrypt your sensitive data, so you can use values without directly exposing them in your projects or pipelines.
 
 | Parameter | Description                                                   | Required                         |
 | --------- | ------------------------------------------------------------- | -------------------------------- |
 | Secrets   | Encrypted data that can be used by anyone in the fabric team. | Required for certain connections |
 
 :::note
-Prophecy fabrics leverage [Prophecy secrets](/enterprise/fabrics/secrets/) to manage both text-based and binary secrets.
+Prophecy fabrics leverage [Prophecy secrets](docs/core/prophecy-fabrics/secrets.md) to manage both text-based and binary secrets.
 :::
 
 ## Save the fabric
