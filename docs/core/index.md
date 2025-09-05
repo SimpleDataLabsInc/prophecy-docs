@@ -6,4 +6,8 @@ sidebar_label: Overview
 tags: []
 ---
 
+import SidebarCards from "@site/src/components/SidebarCards";
+
 This section of the docs contains all the core Prophecy features.
+
+<SidebarCards />
