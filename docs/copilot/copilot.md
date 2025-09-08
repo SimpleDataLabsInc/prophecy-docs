@@ -34,4 +34,4 @@ To learn more, see [Copilot for SQL projects](/analysts/ai-features) and [Copilo
 
 ## Enable Copilot
 
-Copilot is enabled by default for all users on [Prophecy SaaS](https://docs.prophecy.io/administration/prophecy-deployment). Prophecy SaaS uses the SaaS version of OpenAI's language model. Self-hosted deployments must set the Copilot flag in the deployment configuration to use Copilot.
+Copilot is enabled by default for all users on [Prophecy SaaS](/administration/architecture). Prophecy SaaS uses the SaaS version of OpenAI's language model. Self-hosted deployments must set the Copilot flag in the deployment configuration to use Copilot.

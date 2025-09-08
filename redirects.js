@@ -3,6 +3,30 @@
 module.exports = {
   redirects: [
     {
+      to: "/",
+      from: "/getting-started/",
+    },
+    {
+      to: "/administration/project-types/project-creation-template",
+      from: "/templates",
+    },
+    {
+      to: "/analysts/pipelines",
+      from: "/pipelines",
+    },
+    {
+      to: "/analysts/gems",
+      from: ["/concepts/gems/", "/gems"],
+    },
+    {
+      to: "/administration/architecture",
+      from: [
+        "/architecture/deployment",
+        "/administration/deployment",
+        "/administration/prophecy-deployment",
+      ],
+    },
+    {
       to: "/administration/",
       from: [
         "/architecture/deployment/enable-data-copilot",
@@ -98,10 +122,6 @@ module.exports = {
     {
       to: "/administration/fabrics/sql-fabrics/Fabrics",
       from: ["/SQL/fabrics/"],
-    },
-    {
-      to: "/administration/prophecy-deployment",
-      from: ["/architecture/deployment", "/administration/deployment"],
     },
     {
       to: "/administration/secrets/",
@@ -604,6 +624,8 @@ module.exports = {
         "/tutorials/videos/test-pipeline",
         "/tutorials/videos/",
         "/low-code-spark/",
+        "/developer/videos/",
+        "/concepts/project/pipeline",
       ],
     },
     {
@@ -822,10 +844,6 @@ module.exports = {
       from: "/concepts/fabrics",
     },
     {
-      to: "/gems",
-      from: "/concepts/gems/",
-    },
-    {
       to: "/getting-help/",
       from: ["/getting-started/getting-help/"],
     },
@@ -839,15 +857,6 @@ module.exports = {
         "/getting-started/getting-help/logs/config-sparkui",
         "/getting-started/getting-help/logs/config-sparknotebook",
       ],
-    },
-    {
-      to: "/getting-started",
-      from: "/developer/videos/",
-    },
-
-    {
-      to: "/pipelines",
-      from: "/concepts/project/pipeline",
     },
     {
       to: "/projects",

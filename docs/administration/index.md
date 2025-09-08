@@ -36,7 +36,7 @@ Review the following resources to learn about Prophecy deployments.
   <Card title="Architecture" to="/administration/architecture">
     Understand the underlying infrastructure of a Prophecy deployment.
   </Card>
-  <Card title="Prophecy deployment" to="/administration/prophecy-deployment">
+  <Card title="Editions" to="/getting-started/prophecy-editions">
     Explore different Prophecy deployment types, including multi-tenant and single-tenant architectures.
   </Card>
   <Card title="Security" to="/administration/security">
