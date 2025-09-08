@@ -853,5 +853,9 @@ module.exports = {
       to: "/projects",
       from: "/concepts/project",
     },
+    {
+      to: "/table-write-options",
+      from: "/engineers/merge-approaches",
+    },
   ],
 };
