@@ -13,21 +13,68 @@ Take a few minutes to try out Prophecy’s AI agent for pipeline development. In
 
 Make sure you have:
 
-- A Prophecy account with access to Databricks SQL projects
-- A Prophecy fabric with a configured Databricks SQL warehouse connection
+- A Prophecy account with access to Databricks SQL projects.
+- A Prophecy fabric with a configured Databricks SQL warehouse connection.
 - Source data available. You may have to reindex your connection so the [knowledge graph](/knowledge-graph) (used by the agent) includes up-to-date information about your data.
 
 :::note
 Prophecy’s AI agent can only read and transform Databricks Unity Catalog tables. It cannot read, write, or process data from other sources.
 :::
 
+## Step 0: Become familiar with the chat
+
+### Toggle agent modes
+
+Control what the agent can modify in your pipeline using the toggle in the chat footer.
+
+**Extend mode**: Agent adds new gems to the end of pipeline branches without modifying existing gems. This mode assumes you've approved existing gems and want to build upon them without retesting the pipeline.
+
+- For pipelines with multiple branches, the agent uses logic to determine which branch to extend based on your prompt.
+- Use `@` mentions to explicitly specify which gem should be the starting point for new transformations.
+
+  Example: `Add a filter after @last_aggregation_gem to show only records from 2024`
+
+**Edit mode**: Agent can rebuild parts of or the entire pipeline, modifying existing gems when necessary.
+
+- Use this mode when you need to change details of existing gems in the flow.
+- The agent will highlight all changes for you to review.
+
+![Edit and extend mode](img/ai-edit-extend.png)
+
+You can build an entire pipeline with one prompt, but we suggest building incrementally to reason through changes and inspect inputs and outputs along the way. In most cases, extend mode will be sufficient, but edit mode helps when you need to modify existing elements in the canvas.
+
+### Reference specific datasets and gems
+
+Use `@` mentions to refer to specific tables in Databricks or gems in the canvas:
+
+```
+// Example 1
+How many records are in the @transactions table?
+
+// Example 2
+Aggregate the @orders_cleaned gem to show sum of order quantity per month
+```
+
+As you type `@`, Prophecy suggests matching table names and gem instances to choose from.
+
+- You can reference tables to find more details about the data or visualize the data
+- You can reference gems to specify where in the pipeline you would like to add transformations
+
+:::info
+When referencing gems, you refer to the gem label that identifies the instance of the gem, rather than the gem type (Aggregate, Join, etc).
+:::
+
+### Upload files
+
+Click the paperclip icon to upload CSV, Excel, or Parquet files from your local system. These files are added to your SQL warehouse and can be used like any other table in your pipeline.
+
 ## Step 1: Access the AI Agent
 
 To access the AI agent:
 
-1. Open your SQL project in Prophecy.
-1. Open the pipeline you wish to build or update.
-1. Locate the Chat tab on the left sidebar. This is where you'll interact with the AI agent.
+1. Open your [project](/projects) in Prophecy. Ensure the the project uses SQL as the primary language.
+1. Open or create a [pipeline](/analysts/pipelines) you wish to build or update.
+1. Locate the **Chat** tab on the left sidebar. This is where you'll interact with the AI agent.
 
 The agent responds to your prompts and applies changes directly to your pipeline. Keep the **Visual** view open (rather than the Code view) to see updates in real-time as the agent adds or modifies gems on the canvas.
 
@@ -45,9 +92,9 @@ Find datasets with information pertaining to hospital patients
 
 The agent will return:
 
-- A short list of relevant datasets with descriptions
-- A full list of matching datasets
-- The option to add datasets directly to your pipeline
+- A short list of relevant datasets with descriptions.
+- A full list of matching datasets.
+- The option to add datasets directly to your pipeline on hover.
 
 ![Search your data](img/search_data1.gif)
 
@@ -55,11 +102,11 @@ The agent will return:
 
 Click on any dataset in the chat to open a detailed preview dialog where you can:
 
-- View the dataset location (where the data is actually persisted)
-- Examine the schema and column structure
-- Preview sample data
-- Review data profiles
-- Open an Explore session for dataset-specific queries
+- View the dataset location (where the data is actually persisted).
+- Examine the schema and column structure.
+- Preview sample data.
+- Review data profiles.
+- Open an Explore session for dataset-specific queries.
 
 ![Explore your data](img/explore_chat.gif)
 
@@ -73,10 +120,10 @@ Provide sample data from @patients_raw_data showing only patients from Boston
 
 In this example, `patients_raw_data` is a table in Databricks. The agent returns:
 
-- A table with the requested data
-- An option to preview the table for detailed examination
-- An option to add the dataset to your pipeline
-- SQL execution logs showing the query used
+- A table with the requested data.
+- An option to preview the table for detailed examination.
+- An option to add the dataset to your pipeline.
+- SQL execution logs showing the query used.
 
 ![See a data sample](img/sample_data.gif)
 
@@ -90,10 +137,10 @@ Visualize number of patients per city in @patients_raw_data
 
 The agent returns:
 
-- An embedded chart in the chat
-- An option to preview the table for detailed examination
-- An option to add the dataset to your pipeline
-- SQL execution logs showing the query used
+- An embedded chart in the chat.
+- An option to preview the table for detailed examination.
+- An option to add the dataset to your pipeline.
+- SQL execution logs showing the query used.
 
 ![Visualize your data](img/visualize_data.gif)
 
@@ -116,11 +163,11 @@ In this example, `l0_raw_patients` is the gem label for a source gem on the canv
 
 The agent will:
 
-- Add the appropriate gem(s) to your pipeline canvas
-- Execute the pipeline, generating data samples that you can review
-- Provide a description of the changes made
-- Show options to inspect, preview, or restore changes
-- Display SQL execution logs
+- Add the appropriate gem(s) to your pipeline canvas.
+- Execute the pipeline, generating data samples that you can review.
+- Provide a description of the changes made.
+- Show options to inspect, preview, or restore changes.
+- Display SQL execution logs.
 
 ![Aggregate your data](img/aggregate.gif)
 
@@ -128,10 +175,10 @@ The agent will:
 
 To understand what the agent built:
 
-- Click Inspect on the transformation response
-- Review the configuration panel starting with the first modified gem (highlighted in yellow)
-- Use the Previous and Next buttons to navigate through modified gems
-- Examine input and output data to verify the transformation produces expected results
+- Click Inspect on the transformation response.
+- Review the configuration panel starting with the first modified gem (highlighted in yellow).
+- Use the Previous and Next buttons to navigate through modified gems.
+- Examine input and output data to verify the transformation produces expected results.
 
 ![Inspect pipeline changes](img/inspect_data.gif)
 
@@ -139,9 +186,9 @@ To understand what the agent built:
 
 To revert changes or try different transformations:
 
-- Select Restore from any chat response
-- The pipeline returns to that previous state
-- All changes are saved in project version history
+- Select **Restore** from any chat response.
+- The pipeline returns to that previous state.
+- All changes are saved in project version history.
 
 ## Step 5: Save your results
 
@@ -183,8 +230,8 @@ If you have multiple pipelines or pipeline branches that do not terminate with t
 
 ## Troubleshooting
 
-| Symptom                                | Probable cause                                                      | How to fix                                                                   | Notes                                                 |
-| -------------------------------------- | ------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ----------------------------------------------------- |
-| Agent can’t find tables                | Knowledge graph is out of date, or the table isn’t in Unity Catalog | Reindex your Databricks connection so the knowledge graph includes the table | The agent may prompt you to refresh when this occurs. |
-| Conversation feels “stuck” or off      | Chat context isn’t relevant anymore                                 | Click `… > Reset` in the chat interface to start a fresh session             | Useful before trying a different approach.            |
-| Need to report a bad or great response | You want to provide feedback to improve results                     | Click the thumbs-up or thumbs-down on the agent’s message                    | Helps us improve the agent’s behavior.                |
+| Symptom                                | Probable cause                                                                          | How to fix                                                                                             |
+| -------------------------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| Agent can’t find tables                | [Knowledge graph](/knowledge-graph) is out of date, or the table isn’t in Unity Catalog | Reindex your Databricks connection so the knowledge graph includes the table                           |
+| Conversation feels “stuck” or off      | Chat context isn’t relevant anymore                                                     | Click `… > Reset` in the chat interface to start a fresh session                                       |
+| Need to report a bad or great response | You want to provide feedback to improve results                                         | Click the thumbs-up or thumbs-down on the agent’s message. This helps us improve the agent’s behavior. |
