@@ -17,7 +17,7 @@ Pipeline parameters are useful for:
 - Configuring pipelines for multiple execution environments (such as development or production).
 - Keeping values consistent throughout the pipeline.
 
-Once you create pipeline parameters, they are available as *configuration variables* in [gems](/analysts/gems/) wherever you can select an expression.
+Once you create pipeline parameters, they are available as _configuration variables_*_ in [gems](/analysts/gems/) wherever you can select an expression.
 
 :::info
 Pipeline parameters are scoped to individual pipelines. They cannot be used in a project's other pipelines.
@@ -29,7 +29,7 @@ To add pipeline parameters:
 
 1. Open **Parameters** in the pipeline header.
 1. Click **+ Add Parameter**.
-1. Enter a name (use _snake\_case_ for readability).  This is the name you use when you call the parameter.
+1. Enter a name (use _snake_case_ for readability).  This is the name you use when you call the parameter.
 1. Choose a data type (such as array, date, string, int, float) that matches the parameter's use.
 1. Enter a value, or use a function or expression that computes the parameter's value.
 
