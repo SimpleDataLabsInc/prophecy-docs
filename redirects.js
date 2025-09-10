@@ -208,14 +208,6 @@ module.exports = {
       from: ["/deployment/prophecy-build-tool/"],
     },
     {
-      to: "/data-copilot",
-      from: [
-        "/copilot/",
-        "/concepts/copilot/",
-        "/copilot/copilot-data-privacy",
-      ],
-    },
-    {
       to: "/analysts/visual-expression-builder",
       from: [
         "/SQL/development/visual-editor/visual-expression-builder/",
@@ -861,6 +853,16 @@ module.exports = {
     {
       to: "/projects",
       from: "/concepts/project",
+    },
+    {
+      to: "/prophecy-ai",
+      from: [
+        "/data-copilot-data-privacy",
+        "/data-copilot",
+        "/copilot/",
+        "/concepts/copilot/",
+        "/copilot/copilot-data-privacy",
+      ],
     },
   ],
 };
