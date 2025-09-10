@@ -1,5 +1,6 @@
 ---
-title: Amazon Redshift
+title: Amazon Redshift connection
+sidebar_label: Amazon Redshift
 id: redshift
 description: Learn how to connect to Redshift
 tags:
@@ -25,8 +26,8 @@ The table below outlines whether the connection supports certain Prophecy featur
 
 | Feature                                                                    | Supported |
 | -------------------------------------------------------------------------- | --------- |
-| Read data with a [Source gem](/analysts/source-target)                     | Yes       |
-| Write data with a [Target gem](/analysts/source-target)                    | Yes       |
+| Read data with a [Source gem](/analysts/redshift)                          | Yes       |
+| Write data with a [Target gem](/analysts/redshift)                         | Yes       |
 | Browse data in the [Environment browser](/analysts/project-editor#sidebar) | Yes       |
 
 ## Data type mapping

@@ -12,8 +12,8 @@ tags:
 import Requirements from '@site/src/components/gem-requirements';
 
 <Requirements
-  python_package_name=""
-  python_package_version=""
+  python_package_name="ProphecySparkAlteryxPython"
+  python_package_version="0.0.7"
   scala_package_name=""
   scala_package_version=""
   scala_lib=""

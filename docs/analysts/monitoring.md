@@ -66,12 +66,12 @@ Use the **Run History** tab in the Observability interface to view and analyze r
 
 Use the following filters to narrow the results.
 
-| Field          | Description                                                                                                                                                                                              |
-| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Date Range** | Select a date range to limit results to runs that started in that window.                                                                                                                                |
-| **Fabric**     | Filter by fabric used to run the pipeline.                                                                                                                                                               |
-| **Project**    | Filter by the name of the project that contains the pipeline.                                                                                                                                            |
-| **Run Type**   | Select one or more run types to include. Supported values include:<ul class="table-list"><li>Scheduled</li><li>Pipeline Run</li><li>App Run</li><li>Scheduled App Run</li><li>API Pipeline Run</li></ul> |
+| Field          | Description                                                                                                                                                                           |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Date Range** | Select a date range to limit results to runs that started in that window.                                                                                                             |
+| **Fabric**     | Filter by fabric used to run the pipeline.                                                                                                                                            |
+| **Project**    | Filter by the name of the project that contains the pipeline.                                                                                                                         |
+| **Run Type**   | Select one or more run types to include. Supported values include:<ul><li>Scheduled</li><li>Pipeline Run</li><li>App Run</li><li>Scheduled App Run</li><li>API Pipeline Run</li></ul> |
 
 For each historical pipeline run, Prophecy provides the following information.
 

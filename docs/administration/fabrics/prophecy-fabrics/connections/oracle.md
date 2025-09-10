@@ -1,5 +1,6 @@
 ---
-title: Oracle DB
+title: Oracle DB connection
+sidebar_label: Oracle DB
 id: oracle
 description: Learn how to connect to Oracle
 tags:
@@ -22,8 +23,8 @@ The table below outlines whether the connection supports certain Prophecy featur
 
 | Feature                                                                    | Supported |
 | -------------------------------------------------------------------------- | --------- |
-| Read data with a [Source gem](/analysts/source-target)                     | Yes       |
-| Write data with a [Target gem](/analysts/source-target)                    | No        |
+| Read data with a [Source gem](/analysts/oracle)                            | Yes       |
+| Write data with a Target gem                                               | No        |
 | Browse data in the [Environment browser](/analysts/project-editor#sidebar) | Yes       |
 
 ## Connection parameters

@@ -1,5 +1,6 @@
 ---
-title: MSSQL
+title: MSSQL connection
+sidebar_label: MSSQL
 id: mssql
 description: Learn how to connect with Microsoft SQL Server
 tags:
@@ -22,8 +23,8 @@ The table below outlines whether the connection supports certain Prophecy featur
 
 | Feature                                                                    | Supported |
 | -------------------------------------------------------------------------- | --------- |
-| Read data with a [Source gem](/analysts/source-target)                     | Yes       |
-| Write data with a [Target gem](/analysts/source-target)                    | Yes       |
+| Read data with a [Source gem](/analysts/mssql)                             | Yes       |
+| Write data with a [Target gem](/analysts/mssql)                            | Yes       |
 | Browse data in the [Environment browser](/analysts/project-editor#sidebar) | Yes       |
 
 ## Connection parameters

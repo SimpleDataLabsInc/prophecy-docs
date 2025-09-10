@@ -24,11 +24,11 @@ Use the TextToColumns gem to parse this text and simplify further analysis and p
 
 ## Parameters
 
-| Parameter              | Description                                                                                                                                                                                              |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Select Column to Split | The column that contains the text you would like to split.                                                                                                                                               |
-| Delimiter              | The character that delimits the separate values.                                                                                                                                                         |
-| Select Split Strategy  | <ul class="table-list"><li>Split to columns: Values will be split into individual rows in one or more columns.</li><li>Split to rows: Values will be split into individual rows in one column.</li></ul> |
+| Parameter              | Description                                                                                                                                                                           |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Select Column to Split | The column that contains the text you would like to split.                                                                                                                            |
+| Delimiter              | The character that delimits the separate values.                                                                                                                                      |
+| Select Split Strategy  | <ul><li>Split to columns: Values will be split into individual rows in one or more columns.</li><li>Split to rows: Values will be split into individual rows in one column.</li></ul> |
 
 ## Example
 
