@@ -53,6 +53,34 @@ To create a connection with Databricks, enter the following parameters.
 When you use Databricks as your primary SQL warehouse, Prophecy also uses the catalog and schema you define in the connection to store temporary tables during [pipeline execution](/analysts/pipeline-execution#external-data-handling). Therefore, you must have write access to the schema in Databricks. To avoid conflicts, define distinct catalog and schema locations for each fabric.
 :::
 
+## Data type mapping
+
+When Prophecy processes data from Databricks using an external SQL warehouse, it converts Databricks data types to compatible types.
+
+| Databricks | BigQuery                       |
+| ---------- | ------------------------------ |
+| INT        | INT64<br/>Alias: Integer       |
+| TINYINT    | INT64<br/>Alias: Integer       |
+| SMALLINT   | INT64<br/>Alias: Integer       |
+| BIGINT     | INT64<br/>Alias: Integer       |
+| STRING     | STRING<br/>Alias: String       |
+| BOOLEAN    | BOOL<br/>Alias: Boolean        |
+| DECIMAL    | NUMERIC<br/>Alias: Numeric     |
+| FLOAT      | FLOAT64<br/>Alias: Float       |
+| DOUBLE     | FLOAT64<br/>Alias: Float       |
+| BINARY     | BYTES<br/>Alias: Bytes         |
+| TIMESTAMP  | TIMESTAMP<br/>Alias: Timestamp |
+| DATE       | DATE<br/>Alias: Date           |
+| MAP        | JSON<br/>Alias: JSON           |
+| ARRAY      | ARRAY<br/>Alias: Array         |
+| STRUCT     | STRUCT<br/>Alias: Struct       |
+| VOID       | BYTES<br/>Alias: Bytes         |
+| VARIANT    | STRUCT<br/>Alias: Struct       |
+
+::::info
+Learn more in [Supported data types](/analysts/data-types).
+::::
+
 ## Authentication methods
 
 You can configure your Databricks connection using the following authentication methods.
