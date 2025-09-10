@@ -1,5 +1,6 @@
 ---
-title: Amazon Redshift
+title: Amazon Redshift connection
+sidebar_label: Amazon Redshift
 id: redshift
 description: Learn how to connect to Redshift
 tags:
@@ -14,7 +15,7 @@ Connect Prophecy to your Amazon Redshift data warehouse to read from and write t
 Prophecy connects to Amazon Redshift using the database credentials you provide. These credentials are used to authenticate your session and authorize all data operations performed during pipeline execution. To use a Redshift connection effectively, your user must have the following permissions:
 
 - `SELECT`, `INSERT`, `UPDATE`, and `DELETE` on the tables used in your Prophecy pipelines.
-- `CREATE TABLE`, `DROP TABLE`, or `ALTER TABLE ` if your pipelines create or replace tables.
+- `CREATE TABLE`, `DROP TABLE`, or `ALTER TABLE` if your pipelines create or replace tables.
 - Access to specific schemas or databases where your tables reside.
 
 To learn more about user permissions, visit [Default database user permissions](https://docs.aws.amazon.com/redshift/latest/dg/r_Privileges.html) in the Amazon Redshift documentation.
@@ -25,9 +26,40 @@ The table below outlines whether the connection supports certain Prophecy featur
 
 | Feature                                                                    | Supported |
 | -------------------------------------------------------------------------- | --------- |
-| Read data with a [Source gem](/analysts/source-target)                     | Yes       |
-| Write data with a [Target gem](/analysts/source-target)                    | Yes       |
+| Read data with a [Source gem](/analysts/redshift)                          | Yes       |
+| Write data with a [Target gem](/analysts/redshift)                         | Yes       |
 | Browse data in the [Environment browser](/analysts/project-editor#sidebar) | Yes       |
+
+## Data type mapping
+
+When Prophecy processes data from Amazon Redshift using SQL warehouses, it converts Redshift-specific data types to formats compatible with your target warehouse. This table shows how [Amazon Redshift data types](https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html) are transformed for Databricks and BigQuery.
+
+| Redshift         | Databricks                       | BigQuery                       |
+| ---------------- | -------------------------------- | ------------------------------ |
+| SMALLINT         | INT<br/>Alias: Integer           | INT64<br/>Alias: Integer       |
+| INTEGER          | BIGINT<br/>Alias: Bigint         | INT64<br/>Alias: Integer       |
+| BIGINT           | BIGINT<br/>Alias: Bigint         | INT64<br/>Alias: Integer       |
+| REAL             | DOUBLE<br/>Alias: Double         | FLOAT64<br/>Alias: Float       |
+| DOUBLE PRECISION | DOUBLE<br/>Alias: Double         | FLOAT64<br/>Alias: Float       |
+| DECIMAL          | DECIMAL(38,5)<br/>Alias: Decimal | NUMERIC<br/>Alias: Numeric     |
+| BOOLEAN          | BOOLEAN<br/>Alias: Boolean       | BOOL<br/>Alias: Boolean        |
+| CHAR             | STRING<br/>Alias: String         | STRING<br/>Alias: String       |
+| VARCHAR          | STRING<br/>Alias: String         | STRING<br/>Alias: String       |
+| DATE             | DATE<br/>Alias: Date             | DATE<br/>Alias: Date           |
+| TIME             | TIMESTAMP<br/>Alias: Timestamp   | TIME<br/>Alias: Time           |
+| TIMETZ           | TIMESTAMP<br/>Alias: Timestamp   | TIME<br/>Alias: Time           |
+| TIMESTAMP        | TIMESTAMP<br/>Alias: Timestamp   | TIMESTAMP<br/>Alias: Timestamp |
+| TIMESTAMPTZ      | TIMESTAMP<br/>Alias: Timestamp   | TIMESTAMP<br/>Alias: Timestamp |
+| VARBYTE          | BINARY<br/>Alias: Binary         | BYTES<br/>Alias: Bytes         |
+| GEOMETRY         | STRING<br/>Alias: String         | STRING<br/>Alias: String       |
+| GEOGRAPHY        | STRING<br/>Alias: String         | STRING<br/>Alias: String       |
+| SUPER            | STRING<br/>Alias: String         | STRING<br/>Alias: String       |
+| HLLSKETCH        | STRING<br/>Alias: String         | STRING<br/>Alias: String       |
+| INTERVAL         | STRING<br/>Alias: String         | STRING<br/>Alias: String       |
+
+:::info
+Learn more in [Supported data types](/analysts/data-types).
+:::
 
 ## Connection parameters
 

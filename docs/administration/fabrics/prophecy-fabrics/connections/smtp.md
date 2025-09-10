@@ -1,5 +1,6 @@
 ---
-title: SMTP
+title: SMTP connection
+sidebar_label: SMTP
 id: smtp
 description: Learn how to configure an SMTP connection
 tags:

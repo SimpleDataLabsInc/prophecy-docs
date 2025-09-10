@@ -1,5 +1,6 @@
 ---
-title: Snowflake
+title: Snowflake connection
+sidebar_label: Snowflake
 id: snowflake
 description: Learn how to connect with Snowflake
 tags:
@@ -29,16 +30,9 @@ The table below outlines whether the connection supports certain Prophecy featur
 
 | Feature                                                                    | Supported |
 | -------------------------------------------------------------------------- | --------- |
-| Read data with a [Source gem](/analysts/source-target)                     | Yes       |
-| Write data with a [Target gem](/analysts/source-target)                    | Yes       |
+| Read data with a [Source gem](/analysts/snowflake)                         | Yes       |
+| Write data with a [Target gem](/analysts/snowflake)                        | Yes       |
 | Browse data in the [Environment browser](/analysts/project-editor#sidebar) | Yes       |
-
-## Limitations
-
-There are a few limitations on the data types you can read from Snowflake:
-
-- Prophecy reads `Object`, `Array`, and `Variant` types as `String` type.
-- Prophecy does not support writing `Binary` type columns.
 
 ## Connection parameters
 
@@ -54,12 +48,50 @@ To create a connection with Snowflake, enter the following parameters:
 | Role                  | Snowflake [role](https://docs.snowflake.com/en/user-guide/security-access-control-overview) of the user to connect<br/>Example: `ACCOUNTADMIN` |
 | Authentication method | Enter your Snowflake username and use a [secret](docs/administration/secrets/secrets.md) to enter your password.                               |
 
-<!-- ## Authentication methods
+## Data type mapping
 
-You can configure your Snowflake connection with one of the following authentication methods:
+When Prophecy processes data from Snowflake using SQL warehouses, it converts Snowflake-specific data types to formats compatible with your target warehouse. This table shows how [Snowflake data types](https://docs.snowflake.com/en/sql-reference/intro-summary-data-types) are transformed for Databricks and BigQuery.
 
-- **Snowflake [OAuth](docs/administration/authentication/databricks-oauth.md).** Prophecy prompts you to sign in with Snowflake.
-- **Password**. Enter your Snowflake username and use a [secret](docs/administration/secrets/secrets.md) to enter your password. -->
+| Snowflake     | Databricks                     | BigQuery                       |
+| ------------- | ------------------------------ | ------------------------------ |
+| NUMBER        | BIGINT<br/>Alias: Bigint       | INT64<br/>Alias: Integer       |
+| INTEGER       | BIGINT<br/>Alias: Bigint       | INT64<br/>Alias: Integer       |
+| BIGINT        | BIGINT<br/>Alias: Bigint       | INT64<br/>Alias: Integer       |
+| SMALLINT      | BIGINT<br/>Alias: Bigint       | INT64<br/>Alias: Integer       |
+| TINYINT       | BIGINT<br/>Alias: Bigint       | INT64<br/>Alias: Integer       |
+| FLOAT         | DOUBLE<br/>Alias: Double       | FLOAT64<br/>Alias: Float       |
+| DOUBLE        | DOUBLE<br/>Alias: Double       | FLOAT64<br/>Alias: Float       |
+| REAL          | DOUBLE<br/>Alias: Double       | FLOAT64<br/>Alias: Float       |
+| DECIMAL       | DOUBLE<br/>Alias: Double       | FLOAT64<br/>Alias: Float       |
+| NUMERIC       | DOUBLE<br/>Alias: Double       | FLOAT64<br/>Alias: Float       |
+| BOOLEAN       | BOOLEAN<br/>Alias: Boolean     | BOOL<br/>Alias: Boolean        |
+| VARCHAR       | STRING<br/>Alias: String       | STRING<br/>Alias: String       |
+| CHAR          | STRING<br/>Alias: String       | STRING<br/>Alias: String       |
+| STRING        | STRING<br/>Alias: String       | STRING<br/>Alias: String       |
+| TEXT          | STRING<br/>Alias: String       | STRING<br/>Alias: String       |
+| DATE          | DATE<br/>Alias: Date           | DATE<br/>Alias: Date           |
+| TIME          | STRING<br/>Alias: String       | TIME<br/>Alias: Time           |
+| DATETIME      | TIMESTAMP<br/>Alias: Timestamp | TIMESTAMP<br/>Alias: Timestamp |
+| TIMESTAMP_NTZ | TIMESTAMP<br/>Alias: Timestamp | TIMESTAMP<br/>Alias: Timestamp |
+| TIMESTAMP_LTZ | TIMESTAMP<br/>Alias: Timestamp | TIMESTAMP<br/>Alias: Timestamp |
+| TIMESTAMP_TZ  | TIMESTAMP<br/>Alias: Timestamp | TIMESTAMP<br/>Alias: Timestamp |
+| BINARY        | BINARY<br/>Alias: Binary       | BYTES<br/>Alias: Bytes         |
+| VARBINARY     | BINARY<br/>Alias: Binary       | BYTES<br/>Alias: Bytes         |
+| VARIANT       | STRING<br/>Alias: String       | STRING<br/>Alias: String       |
+| OBJECT        | STRING<br/>Alias: String       | STRING<br/>Alias: String       |
+| ARRAY         | STRING<br/>Alias: String       | STRING<br/>Alias: String       |
+| NULL          | STRING<br/>Alias: String       | STRING<br/>Alias: String       |
+
+::::info
+Learn more in [Supported data types](/analysts/data-types).
+::::
+
+## Limitations
+
+There are a few limitations on the data types you can read from Snowflake:
+
+- Prophecy reads `Object`, `Array`, and `Variant` types as `String` type.
+- Prophecy does not support writing `Binary` type columns.
 
 ## Sharing connections within teams
 

@@ -18,7 +18,7 @@ import Requirements from '@site/src/components/gem-requirements';
   scala_lib=""
   python_lib=""
   uc_single="14.3+"
-  uc_shared="Not Supported"
+  uc_shared="15.4+"
   livy="3.0.1"
 />
 

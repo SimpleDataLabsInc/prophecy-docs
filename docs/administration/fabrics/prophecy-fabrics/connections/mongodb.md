@@ -1,5 +1,6 @@
 ---
-title: MongoDB
+title: MongoDB connection
+sidebar_label: MongoDB
 id: mongodb
 description: Learn how to connect with MongoDB
 tags:
@@ -24,8 +25,8 @@ The table below outlines whether the connection supports certain Prophecy featur
 
 | Feature                                                                    | Supported |
 | -------------------------------------------------------------------------- | --------- |
-| Read data with a [Source gem](/analysts/source-target)                     | Yes       |
-| Write data with a [Target gem](/analysts/source-target)                    | Yes       |
+| Read data with a [Source gem](/analysts/mongodb)                           | Yes       |
+| Write data with a [Target gem](/analysts/mongodb)                          | Yes       |
 | Browse data in the [Environment browser](/analysts/project-editor#sidebar) | Yes       |
 
 ## Connection parameters
@@ -41,6 +42,39 @@ To create a connection with MongoDB, enter the following parameters:
 | Password ([Secret required](docs/administration/secrets/secrets.md)) | Password for your MongoDB instance                                                                           |
 | Database                                                             | Default database for reading and writing data                                                                |
 | Collection                                                           | Collection to use for the connection                                                                         |
+
+## Data type mapping
+
+When Prophecy processes data from MongoDB using SQL warehouses, it converts MongoDB-specific data types to formats compatible with your target warehouse. This table shows how [MongoDB data types](https://www.mongodb.com/docs/manual/reference/bson-types/) are transformed for Databricks and BigQuery.
+
+| MongoDB                                                                                     | Databricks                       | BigQuery                             |
+| ------------------------------------------------------------------------------------------- | -------------------------------- | ------------------------------------ |
+| 32-bit integer                                                                              | INT<br/>Alias: Integer           | INT64<br/>Alias: Integer             |
+| 64-bit integer                                                                              | BIGINT<br/>Alias: Bigint         | INT64<br/>Alias: Integer             |
+| Double                                                                                      | DOUBLE<br/>Alias: Double         | FLOAT64<br/>Alias: Float             |
+| Boolean                                                                                     | BOOLEAN<br/>Alias: Boolean       | BOOL<br/>Alias: Boolean              |
+| String                                                                                      | STRING<br/>Alias: String         | STRING<br/>Alias: String             |
+| Date                                                                                        | TIMESTAMP<br/>Alias: Timestamp   | TIMESTAMP<br/>Alias: Timestamp       |
+| Timestamp                                                                                   | TIMESTAMP<br/>Alias: Timestamp   | TIMESTAMP<br/>Alias: Timestamp       |
+| Binary                                                                                      | BINARY<br/>Alias: Binary         | BYTES<br/>Alias: Bytes               |
+| ObjectId                                                                                    | STRING<br/>Alias: String         | STRING<br/>Alias: String             |
+| Decimal128                                                                                  | DECIMAL(34,2)<br/>Alias: Decimal | BIGNUMERIC(34, 2)<br/>Alias: Numeric |
+| Min key                                                                                     | STRING<br/>Alias: String         | STRING<br/>Alias: String             |
+| Max key                                                                                     | STRING<br/>Alias: String         | STRING<br/>Alias: String             |
+| Regular Expression                                                                          | STRING<br/>Alias: String         | STRING<br/>Alias: String             |
+| DBPointer                                                                                   | STRING<br/>Alias: String         | STRING<br/>Alias: String             |
+| JavaScript                                                                                  | STRING<br/>Alias: String         | STRING<br/>Alias: String             |
+| JavaScript with scope                                                                       | STRING<br/>Alias: String         | STRING<br/>Alias: String             |
+| Symbol                                                                                      | STRING<br/>Alias: String         | STRING<br/>Alias: String             |
+| [Embedded Document](https://www.mongodb.com/docs/manual/tutorial/query-embedded-documents/) | STRUCT<br/>Alias: Struct         | STRUCT<br/>Alias: Struct             |
+| Array                                                                                       | ARRAY<br/>Alias: Array           | ARRAY<br/>Alias: Array               |
+| Empty Array                                                                                 | ARRAY<br/>Alias: Array           | ARRAY<br/>Alias: Array               |
+| Null                                                                                        | STRING<br/>Alias: String         | STRING<br/>Alias: String             |
+| Unidentified                                                                                | STRING<br/>Alias: String         | STRING<br/>Alias: String             |
+
+::::info
+Learn more in [Supported data types](/analysts/data-types).
+::::
 
 ## Sharing connections within teams
 
