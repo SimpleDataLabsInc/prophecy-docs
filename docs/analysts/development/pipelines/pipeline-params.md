@@ -23,14 +23,14 @@ Once you create pipeline parameters, they are available as _configuration variab
 Pipeline parameters are scoped to individual pipelines. They cannot be used in a project's other pipelines.
 :::
 
-## Configure parameters
+## Add pipeline parameters
 
 To add pipeline parameters:
 
 1. Open **Parameters** in the pipeline header.
 1. Click **+ Add Parameter**.
 1. Enter a name (use `snake_case` for readability). This is the name you use when you call the parameter.
-1. Choose a data type (such as array, date, string, int, float) that matches the parameter's use.
+1. Choose a data type (such as `array`, `date`, `string`, `int`, or `float`) that matches the parameter's use.
 1. Enter a value, or use a function or expression that computes the parameter's value.
 
 :::note
@@ -48,11 +48,11 @@ The pipeline parameter's value will be used for the expression.
 
 Example: If you create a parameter called `start_date` with a value of _2025-09-01_, you can use it in a Filter gem to include only rows where `order_date` >= `start_date`. When the pipeline runs, it injects the parameter’s value into the filter expression.
 
-## Use parameters as part of Prophecy Apps
+## Use parameters in Prophecy Apps
 
 Once you have included a pipeline parameter in a gem, you can use the parameter as an input field in a Prophecy App. When you run the app, users can enter their own value, which will override the value you set for the pipeline parameter. (The pipeline parameter serves as a default for the value.)
 
-For example, you might have a Prophecy app that incorporates start dates and end dates for a weekly (or monthly) sales snapshot. After creating `start_date` and `end_date` pipeline parameters with values of _09/01/2025_ and _09/07/2025_, add `start_date` and `end_date` as input fields in the app. When the app runs, users enter their own dates and Prophecy returns data filtered for these dates.
+For example, you might create a Prophecy app that incorporates start dates and end dates for a weekly (or monthly) sales snapshot. After creating `start_date` and `end_date` pipeline parameters with values of _09/01/2025_ and _09/07/2025_, add `start_date` and `end_date` as input fields in the app. When the app runs, users enter their own dates and Prophecy returns data filtered for these dates.
 
 ## Example: Dynamic target location
 
