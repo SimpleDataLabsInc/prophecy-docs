@@ -17,7 +17,7 @@ Pipeline parameters are useful for:
 - Configuring pipelines for multiple execution environments (such as development or production).
 - Keeping values consistent throughout the pipeline.
 
-Once you create pipeline parameters, they are available as _configuration variables_*_ in [gems](/analysts/gems/) wherever you can select an expression.
+Once you create pipeline parameters, they are available as _configuration variables_ in [gems](/analysts/gems/) wherever you can select an expression.
 
 :::info
 Pipeline parameters are scoped to individual pipelines. They cannot be used in a project's other pipelines.
