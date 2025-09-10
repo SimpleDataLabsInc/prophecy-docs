@@ -321,7 +321,7 @@ This component arranges its child elements in horizontal columns, allowing for a
 
 ### FieldPicker
 
-This is a form-like component that contains labeled input fields. Each field you add call adds a new form control (like text box, checkbox, select box) associated with a specific property.
+This is a form-like component that contains labeled input fields. Each field you add calls a new form control (like text box, checkbox, select box) associated with a specific property.
 
 ## Explore `uispec.py`
 
