@@ -12,7 +12,7 @@ tags:
 
 import Mermaid from '@theme/Mermaid';
 
-This page provides an introduction to Prophecy's AI capabilities, including descriptions of its task-oriented and agentic features.
+This page introduces Prophecy's AI capabilities, including descriptions of its task-oriented and agentic features.
 
 :::info
 While Prophecy's AI features are enabled by default, they can be disabled upon request for Dedicated SaaS and self-hosted deployments.
@@ -109,10 +109,10 @@ While Prophecy can connect to all providers shown in the diagram, the following 
 
 Prophecy employs rigorous industry practices to safeguard the security of the Prophecy application and maintain the privacy of customer data. Below are just a few components of our comprehensive security strategy and system structure:
 
-- Prophecy **does not** store or send anything from your data plane to any third-party large language model (LLM) providers. Instead, Prophecy makes use of rich metadata to construct the knowledge graph. As a result, Prophecy can interface with LLM providers while maintaining the privacy of the data itself.
+- Prophecy **does not** store or send your data to any third-party large language model (LLM) providers. Instead, Prophecy uses rich metadata to construct its knowledge graph. As a result, Prophecy can interface with LLM providers while keeping your data private.
 - The Prophecy IDE is hosted on secure servers on AWS. All storage systems are encrypted, and all servers are tightly access controlled and audited. Metadata is encrypted in transit at all times..
 - The Prophecy IDE accesses your environment through a single IP address dedicated to you, allowing you to protect access to your data resources at the network level. The credentials are stored per user, and only a fully authenticated user can access their environment.
-- An annual penetration test is performed to validate Prophecy’s posture and identify vulnerabilities. For our latest penetration test report, see the [Pentest Report](https://security.prophecy.io/?itemUid=722b9671-c0d5-4a19-a5f7-0ad8fd81307c&source=click).
+- Prophecy conducts annual penetration tests to test its posture and identify vulnerabilities. For our latest penetration test report, see the [Pentest Report](https://security.prophecy.io/?itemUid=722b9671-c0d5-4a19-a5f7-0ad8fd81307c&source=click).
 - Prophecy maintains SOC-2 compliance as audited by PrescientAssurance.
 
 Read more details on Prophecy’s security and compliance posture at our [Security Portal](https://security.Prophecy.io/).
