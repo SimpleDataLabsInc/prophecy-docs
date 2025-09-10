@@ -41,7 +41,7 @@ When you define parameters, variables will be automatically created in the SQL c
 
 To use pipeline parameters:
 
-1. Add any [gem](/analysts/gems/) that uses expressions, such as a [Filter](/analysts/filter/) gem.
+1. Add any [gem](/analysts/gems/) that uses expressions, such as a [Filter](/analysts/filter) gem.
 1. Select **Configuration Variables** from an Expression dropdown menu.
 
 The pipeline parameter's value will be used for the expression.
@@ -62,7 +62,7 @@ To do so:
 
 1. Create a pipeline parameter called `target_location`.
 1. Provide a default value that points to the file system or table path in the execution environment: `/dev/data/target_folder/`.
-1. Create a [Prophecy App](/analysts/business-apps/) that includes the parameter as a field.
+1. Create a [Prophecy App](/analysts/business-applications) that includes the parameter as a field.
 1. Assign the parameter in the Prophecy App a default value that points to the production folder in your file system: `/prod/data/target_folder/`.
 1. Schedule the app to run in your production environment on a regular schedule.
 
@@ -74,5 +74,5 @@ To make the most out of pipeline parameters, we suggest you:
 
 - Use meaningful parameter names that indicate their purpose.
 - Validate inputs to prevent unexpected errors during execution.
-- Keep sensitive values (such as API keys) in [secrets](docs/administration/secrets/secrets.md) rather than passing them as plain parameters.
+- Keep sensitive values (such as API keys) in [secrets](/administration/secrets/secrets.md) rather than passing them as plain parameters.
 - You may want to roup related values into arrays or JSON objects rather than creating many single-use parameters.
