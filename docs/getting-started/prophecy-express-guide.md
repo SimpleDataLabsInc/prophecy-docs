@@ -101,7 +101,7 @@ When you create a new project, you'll be able to select any empty Git repository
 
 ### LLM backend configuration
 
-Prophecy Express Edition requires a customer-provided endpoint for an LLM to power Prophecy AI. Contact Support to configure the model and model provider you will use. For more information, visit [Prophecy AI](/data-copilot).
+Prophecy Express Edition requires a customer-provided endpoint for an LLM to power Prophecy AI. Contact Support to configure the model and model provider you will use. For more information, visit [Prophecy AI](/prophecy-ai).
 
 ## Project lifecycle
 
