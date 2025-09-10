@@ -1,5 +1,6 @@
 ---
 title: Prophecy Express onboarding
+sidebar_label: Prophecy Express
 id: prophecy-express-guide
 slug: /express-edition-onboarding
 description: Complete setup guide for Prophecy Express Edition
@@ -11,13 +12,15 @@ Prophecy Express Edition is a streamlined version of Prophecy designed for busin
 
 ## Key features
 
-| Feature                   | Description                                                          |
+These key features differentiate the Express Edition from other Prophecy editions.
+
+| Feature                   | Implementation in the Express Edition                                |
 | ------------------------- | -------------------------------------------------------------------- |
 | Execution                 | Prophecy Automate and SQL warehouse                                  |
-| SQL warehouse provider    | Databricks SQL                                                       |
+| SQL warehouse provider    | Your own Databricks SQL warehouse                                    |
 | Git-based version control | Project code hosted on Prophecy-managed or external Git repositories |
 | Orchestration             | Prophecy-native scheduler automates pipeline execution               |
-| Transpiler                | Migrate pipelines from Alteryx                                       |
+| Transpiler                | Alteryx migration tool enabled                                       |
 
 ## Initial setup
 
@@ -72,9 +75,16 @@ A fabric in Prophecy defines the execution environment for your pipelines. To se
 
 You can create additional fabrics for different execution environments (for example, `dev` and `prod`).
 
-:::info
-Prophecy Express Edition requires connectivity from Prophecy to Databricks REST API endpoints. Connections originate from Prophecy to Databricks, so you may need to configure **Private Link** or **IP allowlist/firewall exception** to ensure network connectivity. Other connection types may have different networking requirements depending on your setup.
-:::
+#### Optional: Set up Private Link
+
+Prophecy Express Edition requires connectivity from Prophecy to Databricks REST API endpoints. Connections originate from Prophecy to Databricks, so you may need to configure **Private Link** or **IP allowlist/firewall exception** to ensure network connectivity. Other connection types may have different networking requirements depending on your setup. If any connections fail, make sure that your networking configuration allows communication to and from Prophecy.
+
+To learn how to set up Private Link for Databricks, visit:
+
+- [Enable private connectivity using AWS PrivateLink](https://docs.databricks.com/aws/en/security/network/classic/privatelink)
+- [Enable Azure Private Link back-end and front-end connections](https://learn.microsoft.com/en-us/azure/databricks/security/network/classic/private-link)
+
+Once you have set up Private Link, send our Support team your endpoint so we can set up connectivity to Prophecy's VPC.
 
 ### Set up Git credentials
 
@@ -91,13 +101,7 @@ When you create a new project, you'll be able to select any empty Git repository
 
 ### LLM backend configuration
 
-To change which LLM you use for Prophecy's Copilot and AI Agent, contact our Support team. The default is OpenAI.
-
-### Network requirements
-
-Prophecy Express Edition needs to be able to communicate with the connections that you set up. If any connections fail, make sure that your networking configuration allows communication to and from Prophecy.
-
-For example, connections originate from Prophecy to Databricks, so you may need to configure **Private Link** or **IP allowlist/firewall exception** to ensure network connectivity. Other connection types may have different networking requirements depending on your setup.
+Prophecy Express Edition requires a customer-provided endpoint for an LLM to power Prophecy AI. Contact Support to configure the model and model provider you will use. For more information, visit [Prophecy AI](/data-copilot).
 
 ## Project lifecycle
 
