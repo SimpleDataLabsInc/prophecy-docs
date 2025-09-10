@@ -9,14 +9,18 @@ tags: []
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Pipelines in SQL projects can process and transform a variety of data types. Understand the supported data types to help you design pipelines and ensure compatibility with external systems.
+When processing data in Prophecy, the available data types depend on which SQL warehouse your organization uses. This guide outlines which data types are supported in Prophecy for each platform. You'll work with data types when reading data sources and defining their schemas.
+
+![Infer schema](img/data-types.png)
+
+## Data types
 
 The tables below list the data types Prophecy supports depending on the [SQL warehouse](/administration/fabrics/prophecy-fabrics/) you use for processing.
 
 <Tabs>
 <TabItem value="Databricks" label="Databricks">
 
-These data types correspond to [data types in Databricks SQL](https://docs.databricks.com/aws/en/sql/).
+The data types you see in Prophecy correspond to [data types in Databricks SQL](https://docs.databricks.com/aws/en/sql/language-manual/sql-ref-datatypes).
 
 | Data type | Description                                                                               |
 | --------- | ----------------------------------------------------------------------------------------- |
@@ -41,23 +45,23 @@ These data types correspond to [data types in Databricks SQL](https://docs.datab
 
 <TabItem value="BigQuery" label="BigQuery">
 
-These data types correspond to the [data types in BigQuery](https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types).
+These data types you see in Prophecy correspond to the [data types in BigQuery](https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types).
 
-| Data type  | Description                                                                                     |
-| ---------- | ----------------------------------------------------------------------------------------------- |
-| Record     | Represents a column with [nested data](https://cloud.google.com/bigquery/docs/nested-repeated). |
-| Array      | Represents a list of non-array values of the same data type.                                    |
-| BigNumeric | Represents a decimal value with precision of 76.76 digits.                                      |
-| Numeric    | Represents a decimal value with precision of 38 digits.                                         |
-| Datetime   | Represents a Gregorian date and a time, independent of time zone.                               |
-| Time       | Represents a time of day, independent of a specific date and time zone.                         |
-| Date       | Represents a Gregorian calendar date, independent of time zone.                                 |
-| Timestamp  | Represents an absolute point in time, with microsecond precision and no timezone context.       |
-| Boolean    | Represents true and false values.                                                               |
-| Float      | Represents an approximate double-precision numeric value.                                       |
-| Integer    | Represents a 64-bit integer.                                                                    |
-| Bytes      | Represents variable-length binary data.                                                         |
-| String     | Represents variable-length character strings.                                                   |
+| Data type  | Description                                                                                                                                         |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Record     | Represents a column with [nested data](https://cloud.google.com/bigquery/docs/nested-repeated).<br/>SQL type name: **STRUCT**                       |
+| Array      | Represents a list of non-array values of the same data type.<br/>SQL type name: **ARRAY**                                                           |
+| BigNumeric | Represents a decimal value with precision of 76.76 digits. <br/>SQL type name: **BIGNUMERIC**<br/>SQL aliases: **BIGDECIMAL**                       |
+| Numeric    | Represents a decimal value with precision of 38 digits.<br/>SQL type name: **NUMERIC**<br/>SQL aliases: **DECIMAL**                                 |
+| Datetime   | Represents a Gregorian date and a time, independent of time zone. <br/>SQL type name: **DATETIME**                                                  |
+| Time       | Represents a time of day, independent of a specific date and time zone. <br/>SQL type name: **TIME**                                                |
+| Date       | Represents a Gregorian calendar date, independent of time zone. <br/>SQL type name: **DATE**                                                        |
+| Timestamp  | Represents an absolute point in time, with microsecond precision and no timezone context. <br/>SQL type name: **TIMESTAMP**                         |
+| Boolean    | Represents true and false values.<br/>SQL type name: **BOOL**<br/>SQL aliases: **BOOLEAN**                                                          |
+| Float      | Represents an approximate double-precision numeric value.<br/>SQL type name: **FLOAT64**                                                            |
+| Integer    | Represents a 64-bit integer.<br/>SQL type name: **INT64**<br/>SQL aliases: **INT**, **SMALLINT**, **INTEGER**, **BIGINT**, **TINYINT**, **BYTEINT** |
+| Bytes      | Represents variable-length binary data.<br/>SQL type name: **BYTES**                                                                                |
+| String     | Represents variable-length character strings. <br/>SQL type name: **STRING**                                                                        |
 
 :::info
 
