@@ -1,5 +1,5 @@
 ---
-title: AI Agent Quick Start
+title: AI agent quick start
 id: agent-quick-start
 slug: /agent-quick-start
 description: Use the Agent to build a pipeline
@@ -14,14 +14,26 @@ Take a few minutes to try out Prophecy’s AI agent for pipeline development. In
 Make sure you have:
 
 - A Prophecy account with access to Databricks SQL projects.
-- A Prophecy fabric with a configured Databricks SQL warehouse connection.
+- A Prophecy fabric with a configured[ Databricks SQL warehouse connection](/administration/fabrics/prophecy-fabrics/connections/databricks).
 - Source data available. You may have to reindex your connection so the [knowledge graph](/knowledge-graph) (used by the agent) includes up-to-date information about your data.
 
 :::note
 Prophecy’s AI agent can only read and transform Databricks Unity Catalog tables. It cannot read, write, or process data from other sources.
 :::
 
-## Step 0: Become familiar with the chat
+## Step 1: Access the AI agent
+
+To access the AI agent:
+
+1. Open your [project](/projects) in Prophecy. Ensure the the project uses SQL as the primary language.
+1. Open or create a [pipeline](/analysts/pipelines) you wish to build or update.
+1. Locate the **Chat** tab on the left sidebar. This is where you'll interact with the AI agent.
+
+The agent responds to your prompts and applies changes directly to your pipeline. Keep the **Visual** view open (rather than the Code view) to see updates in real-time as the agent adds or modifies gems on the canvas.
+
+:::note
+Each change that the AI agent makes can be viewed in the [project version history](/analysts/versioning/#show-version-history). You can revert the changes at any time.
+:::
 
 ### Toggle agent modes
 
@@ -43,7 +55,7 @@ Control what the agent can modify in your pipeline using the toggle in the chat 
 
 You can build an entire pipeline with one prompt, but we suggest building incrementally to reason through changes and inspect inputs and outputs along the way. In most cases, extend mode will be sufficient, but edit mode helps when you need to modify existing elements in the canvas.
 
-### Reference specific datasets and gems
+### Reference specific tables and gems
 
 Use `@` mentions to refer to specific tables in Databricks or gems in the canvas:
 
@@ -68,18 +80,8 @@ When referencing gems, you refer to the gem label that identifies the instance o
 
 Click the paperclip icon to upload CSV, Excel, or Parquet files from your local system. These files are added to your SQL warehouse and can be used like any other table in your pipeline.
 
-## Step 1: Access the AI Agent
-
-To access the AI agent:
-
-1. Open your [project](/projects) in Prophecy. Ensure the the project uses SQL as the primary language.
-1. Open or create a [pipeline](/analysts/pipelines) you wish to build or update.
-1. Locate the **Chat** tab on the left sidebar. This is where you'll interact with the AI agent.
-
-The agent responds to your prompts and applies changes directly to your pipeline. Keep the **Visual** view open (rather than the Code view) to see updates in real-time as the agent adds or modifies gems on the canvas.
-
-:::note
-Each change that the AI Agent makes can be viewed in the [project version history](/analysts/versioning/#show-version-history). You can revert the changes at any time.
+:::tip
+You can also drag and drop local files directly onto the pipeline canvas.
 :::
 
 ## Step 2: Explore your data
@@ -106,7 +108,7 @@ Click on any dataset in the chat to open a detailed preview dialog where you can
 - Examine the schema and column structure.
 - Preview sample data.
 - Review data profiles.
-- Open an Explore session for dataset-specific queries.
+- Open an **Explore** session for dataset-specific queries.
 
 ![Explore your data](img/explore_chat.gif)
 
@@ -156,7 +158,7 @@ Click Preview to access:
 Once you or the agent has added source data in your pipeline, describe the transformations you want to perform:
 
 ```
-Aggregate @l0_raw_patients to show total number of patients per county
+Transform @l0_raw_patients to show total number of patients per county
 ```
 
 In this example, `l0_raw_patients` is the gem label for a source gem on the canvas. You can reference any gem on the canvas using @ mentions.
@@ -206,18 +208,18 @@ If you have multiple pipelines or pipeline branches that do not terminate with t
 
 ## Sample prompts
 
-| Task           | Prompt Example                                                                                                                 |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| Find data      | `Find datasets containing customer information`                                                                                |
-| Sample data    | `Show me 5 random records from @sales_data`                                                                                    |
-| Filter data    | `Filter to only include orders from 2024`                                                                                      |
-| Transform data | `Calculate total revenue as quantity * price`                                                                                  |
-| Join data      | `Join the orders and customers tables` <br/>**Note**: AI Agent will infer join keys, but you can also specify them explicitly. |
-| Parse data     | `Extract the fields from json_data as columns` <br/>**Note**: Works best if you provide a sample JSON object.                  |
-| Clean data     | `Remove rows where email is null`                                                                                              |
-| Aggregate data | `Group by region and calculate average sales`                                                                                  |
-| Visualize data | `Create a bar chart of monthly sales`                                                                                          |
-| Save results   | `Save the final output as a table`                                                                                             |
+| Task           | Prompt Example                                                                                                                     |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Find data      | `Find datasets containing customer information`                                                                                    |
+| Sample data    | `Show me 5 random records from @sales_data`                                                                                        |
+| Filter data    | `Filter to only include orders from 2024`                                                                                          |
+| Transform data | `Calculate total revenue as quantity * price`                                                                                      |
+| Join data      | `Join the orders and customers tables` <br/>**Note**: The AI agent will infer join keys, but you can also specify them explicitly. |
+| Parse data     | `Extract the fields from json_data as columns` <br/>**Note**: Works best if you provide a sample JSON object.                      |
+| Clean data     | `Remove rows where email is null`                                                                                                  |
+| Aggregate data | `Group by region and calculate average sales`                                                                                      |
+| Visualize data | `Create a bar chart of monthly sales`                                                                                              |
+| Save results   | `Save the final output as a table`                                                                                                 |
 
 ## Tips
 
