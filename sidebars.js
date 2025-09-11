@@ -890,10 +890,18 @@ const sidebars = {
     "administration/settings",
     {
       type: "category",
-      label: "Access",
+      label: "User management",
       items: [
-        "administration/access/role-based-access",
-        "administration/access/team-based-access",
+        "administration/user-management/account-settings",
+        "administration/user-management/team-user-provisioning",
+        {
+          type: "category",
+          label: "Access",
+          items: [
+            "administration/user-management/access/role-based-access",
+            "administration/user-management/access/team-based-access",
+          ],
+        },
       ],
     },
     {
