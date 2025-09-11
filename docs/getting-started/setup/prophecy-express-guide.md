@@ -1,6 +1,5 @@
 ---
-title: Prophecy Express onboarding
-sidebar_label: Prophecy Express
+title: Configure Express Edition
 id: prophecy-express-guide
 slug: /express-edition-onboarding
 description: Complete setup guide for Prophecy Express Edition
@@ -16,15 +15,18 @@ These key features differentiate the Express Edition from other Prophecy edition
 
 | Feature                   | Implementation in the Express Edition                                |
 | ------------------------- | -------------------------------------------------------------------- |
+| Deployment model          | Dedicated SaaS only                                                  |
 | Execution                 | Prophecy Automate and SQL warehouse                                  |
 | SQL warehouse provider    | Your own Databricks SQL warehouse                                    |
 | Git-based version control | Project code hosted on Prophecy-managed or external Git repositories |
 | Orchestration             | Prophecy-native scheduler automates pipeline execution               |
 | Transpiler                | Alteryx migration tool enabled                                       |
 
-## Initial setup
+## LLM backend configuration
 
-You need the [cluster admin role](/administration/rbac) to complete the initial setup.
+Prophecy Express Edition requires a customer-provided endpoint for an LLM to power Prophecy AI. Contact Support to configure the model and model provider you will use. For more information, visit [Prophecy AI](/prophecy-ai).
+
+## User administration
 
 ### Create teams
 
@@ -53,6 +55,17 @@ After you define the teams, invite new users to those teams.
 Express Edition supports up to 20 users maximum with a cap of five simultaneous users.
 :::
 
+### Set up Git credentials
+
+Projects are stored as code hosted on Git repositories. You can use a Prophecy-managed Git repository an external Git repository.
+
+If using external Git repositories, users need to store their Git credentials in Prophecy.
+
+- [Learn how to add new Git credentials to Prophecy](/engineers/git#Git-credentials).
+- [Share saved Git credentials with Prophecy team members](/engineers/git#shared-credentials).
+
+If you want to give multiple users access to a certain shared Git account, following the linked instructions on how to share Git credentials with a team. When a user creates a new project, they'll be able to select any empty Git repository this account has access to to store their project code. They'll also be able to clone existing project repositories to this account.
+
 ### Optional: Configure SSO with Okta
 
 Express Edition supports Single Sign-On (SSO) integration with Okta. Learn more about setting up Okta in our [SAML documentation](/administration/authentication/saml-scim#saml-configuration).
@@ -63,9 +76,7 @@ If you're not using SSO, users must use the exact same email addresses for their
 Express Edition **does not** support SCIM.
 :::
 
-## Connect external platforms
-
-### Create fabrics
+## Create fabrics
 
 A fabric in Prophecy defines the execution environment for your pipelines. To set up your execution environment:
 
@@ -75,9 +86,9 @@ A fabric in Prophecy defines the execution environment for your pipelines. To se
 
 You can create additional fabrics for different execution environments (for example, `dev` and `prod`).
 
-#### Optional: Set up Private Link
+### Optional: Set up Private Link
 
-Prophecy Express Edition requires connectivity from Prophecy to Databricks REST API endpoints. Connections originate from Prophecy to Databricks, so you may need to configure **Private Link** or **IP allowlist/firewall exception** to ensure network connectivity. Other connection types may have different networking requirements depending on your setup. If any connections fail, make sure that your networking configuration allows communication to and from Prophecy.
+Prophecy Express Edition requires connectivity from Prophecy to Databricks REST API endpoints. Connections originate from Prophecy to Databricks, so you may need to configure **Private Link** or **IP allowlist/firewall exception** to ensure network connectivity.
 
 To learn how to set up Private Link for Databricks, visit:
 
@@ -86,57 +97,17 @@ To learn how to set up Private Link for Databricks, visit:
 
 Once you have set up Private Link, send our Support team your endpoint so we can set up connectivity to Prophecy's VPC.
 
-### Set up Git credentials
+:::info
+Other connection types may have different networking requirements depending on your setup. If any connections fail, make sure that your networking configuration allows communication to and from Prophecy.
+:::
 
-Projects are stored as code hosted on Git repositories. You can use a Prophecy-managed Git repository an external Git repository. To add a connection to an external Git provider:
-
-1. Navigate to **Settings → Git**.
-1. Click **Add New**.
-1. Select the appropriate Git Provider from the dropdown.
-1. Provide an alias to identify your connection.
-1. Provide the credentials to authenticate the connection.
-1. Click **Connect** to save.
-
-When you create a new project, you'll be able to select any empty Git repository this account has access to to store your project code.
-
-### LLM backend configuration
-
-Prophecy Express Edition requires a customer-provided endpoint for an LLM to power Prophecy AI. Contact Support to configure the model and model provider you will use. For more information, visit [Prophecy AI](/prophecy-ai).
-
-## Project lifecycle
-
-Learn about the project lifecycle with this example of a development to production workflow.
-
-1. Create a new project.
-1. Add new [pipelines](/analysts/pipelines) inside of the project.
-1. Develop pipelines using relevant [tables](/analysts/source-target), [transformation gems](/analysts/gems), [functions](/analysts/functions), and other components.
-1. Test pipelines to ensure that they achieve the expected outcome.
-1. Define [schedules](/analysts/scheduling) for each pipeline to productionalize.
-1. [Publish](/analysts/project-publication) the project to production fabrics to enable the automated schedules.
-
-## Collaboration and sharing
-
-Projects enable capabilities beyond the standard development to production flow. They can also be shared and templated.
-
-1. Publish projects to the [Package Hub](/engineers/package-hub) so other users can reuse your project components.
-1. Create form-like templates that trigger pipeline runs using [Prophecy Apps](/analysts/business-applications).
-
-## Choose your path
-
-### Modernizing existing workflows
+## Modernize existing workflows
 
 If you're migrating from Alteryx, Prophecy Express Edition includes a transpiler to convert your existing workflows.
 
-1. Use the **Alteryx Transpiler** to import your existing workflows
-2. Review and refine the converted pipelines
-3. Test the pipelines in the Prophecy environment
-4. Deploy the modernized workflows
+1. Use the **Alteryx Transpiler** to import your existing workflows.
+2. Review and refine the converted pipelines.
+3. Test the pipelines in the Prophecy environment.
+4. Deploy the modernized workflows.
 
-### Building new pipelines
-
-For new data transformation needs, start with Prophecy's visual pipeline builder.
-
-1. Create a new project with the appropriate template
-2. Design your pipeline using the available gems
-3. Test your transformations with sample data
-4. Schedule and deploy your pipeline
+For more information, visit our [Transpiler documentation](https://transpiler.docs.prophecy.io/).

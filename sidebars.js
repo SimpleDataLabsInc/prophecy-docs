@@ -37,16 +37,23 @@ const sidebars = {
         },
         {
           type: "category",
+          label: "Setup guides",
+          items: [
+            "getting-started/setup/prophecy-express-guide",
+            "getting-started/setup/prophecy-enterprise-guide",
+            "getting-started/setup/databricks-partner-connect",
+          ],
+        },
+        {
+          type: "category",
           label: "Quick starts",
           link: {
             type: "doc",
             id: "getting-started/quick-starts/quick-starts",
           },
           items: [
-            "getting-started/prophecy-express-guide",
             "getting-started/quick-starts/analysts-qs",
             "getting-started/quick-starts/engineers-qs",
-            "getting-started/quick-starts/databricks-partner-connect",
           ],
         },
         {
