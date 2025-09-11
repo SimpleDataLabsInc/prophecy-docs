@@ -61,6 +61,10 @@ const config = {
         docs: {
           routeBasePath: "/",
           sidebarPath: require.resolve("./sidebars.js"),
+          admonitions: {
+            keywords: ["edition"],
+            extendDefaults: true,
+          },
           async sidebarItemsGenerator({
             defaultSidebarItemsGenerator,
             ...args
