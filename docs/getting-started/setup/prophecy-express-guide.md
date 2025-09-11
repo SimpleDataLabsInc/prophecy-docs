@@ -15,58 +15,28 @@ These key features differentiate the Express Edition from other Prophecy edition
 
 | Feature                   | Implementation in the Express Edition                                |
 | ------------------------- | -------------------------------------------------------------------- |
-| Deployment model          | Dedicated SaaS only                                                  |
+| Deployment model          | Dedicated SaaS only. Prophecy is installed in Prophecy's VPC.        |
 | Execution                 | Prophecy Automate and SQL warehouse                                  |
 | SQL warehouse provider    | Your own Databricks SQL warehouse                                    |
 | Git-based version control | Project code hosted on Prophecy-managed or external Git repositories |
 | Orchestration             | Prophecy-native scheduler automates pipeline execution               |
 | Transpiler                | Alteryx migration tool enabled                                       |
 
+<!-- To be replace by comprehensive feature matrix when future editions are released -->
+
 ## LLM backend configuration
 
-Prophecy Express Edition requires a customer-provided endpoint for an LLM to power Prophecy AI. Contact Support to configure the model and model provider you will use. For more information, visit [Prophecy AI](/prophecy-ai).
+Prophecy Express Edition requires a customer-provided endpoint for an LLM to power Prophecy AI. Contact Support to configure the model provider and LLM you will use, or request to disable AI features for your environment.
 
-## User administration
+For more information about AI features and model support, visit [Prophecy AI](/prophecy-ai).
 
-### Create teams
+## Users and sign-on
 
-Before you can invite users to Prophecy, you need to define the [teams](/administration/teams-users/teams-users) they will be invited to.
-
-1. Navigate to your Prophecy Express Edition instance URL.
-1. Use the admin credentials provided during your initial setup.
-1. Navigate to **Settings → Teams**.
-1. Click **Create Team**.
-1. Fill in the team details and click **Complete**.
-
-How you configure teams will depend on your individual use case.
-
-### Create users
-
-After you define the teams, invite new users to those teams.
-
-1. On the Teams page in Settings, click **Add Users**.
-1. Fill out the user details and click **Invite**.
-
-   This creates a new user account and sends an invitation link to the user.
-
-1. In the confirmation dialog, copy the invitation link if needed, and click **Done**.
-
-:::note
 Express Edition supports up to 20 users maximum with a cap of five simultaneous users.
-:::
 
-### Set up Git credentials
+Learn how to add teams and users in [Team and user provisioning](/administration/user-management/team-user-provisioning).
 
-Projects are stored as code hosted on Git repositories. You can use a Prophecy-managed Git repository an external Git repository.
-
-If using external Git repositories, users need to store their Git credentials in Prophecy.
-
-- [Learn how to add new Git credentials to Prophecy](/engineers/git#Git-credentials).
-- [Share saved Git credentials with Prophecy team members](/engineers/git#shared-credentials).
-
-If you want to give multiple users access to a certain shared Git account, following the linked instructions on how to share Git credentials with a team. When a user creates a new project, they'll be able to select any empty Git repository this account has access to to store their project code. They'll also be able to clone existing project repositories to this account.
-
-### Optional: Configure SSO with Okta
+### Optional: Authentication
 
 Express Edition supports Single Sign-On (SSO) integration with Okta. Learn more about setting up Okta in our [SAML documentation](/administration/authentication/saml-scim#saml-configuration).
 
@@ -76,32 +46,46 @@ If you're not using SSO, users must use the exact same email addresses for their
 Express Edition **does not** support SCIM.
 :::
 
-## Create fabrics
+## Git credentials
 
-A fabric in Prophecy defines the execution environment for your pipelines. To set up your execution environment:
+Prophecy projects are stored as code in Git repositories. You can use either:
+
+- A Prophecy-managed Git repository
+- An external Git repository
+
+To access external repositories, the corresponding Git credentials must be stored in Prophecy.
+
+- Learn how to [add new Git credentials](/engineers/git#Git-credentials).
+- Learn how to [share Git credentials](/engineers/git#share-credentials) with your team.
+
+When creating a new project, users can select to connect to the Prophecy-managed Git repository or any Git account they have access to in Prophecy. If a user selects a Git account, they can select any empty repository to store the project.
+
+## Fabric configuration
+
+A fabric in Prophecy defines the execution environment for your pipelines. To set up an execution environment:
 
 - Create a [Prophecy fabric](/administration/fabrics/prophecy-fabrics/). You can only create fabrics for teams where you are the [team admin](/administration/rbac).
 - To add SQL warehouse connection in the fabric, set up a [Databricks connection](/administration/fabrics/prophecy-fabrics/connections/databricks).
 - To add data ingress/egress connections in the fabric, [follow the instructions](/administration/fabrics/prophecy-fabrics/connections/) for each type of connection.
 
-You can create additional fabrics for different execution environments (for example, `dev` and `prod`).
+You can create individual fabrics for different execution environments (for example, `dev` and `prod`).
 
-### Optional: Set up Private Link
+### Optional: Networking
 
-Prophecy Express Edition requires connectivity from Prophecy to Databricks REST API endpoints. Connections originate from Prophecy to Databricks, so you may need to configure **Private Link** or **IP allowlist/firewall exception** to ensure network connectivity.
+Dedicated SaaS deployments run in Prophecy’s VPC. You may need to configure networking to allow Prophecy to communicate with your external services.
 
-To learn how to set up Private Link for Databricks, visit:
+For example, to connect to Databricks, you might need to configure **Private Link** or set up **IP allowlists**. To learn how to set up Private Link for Databricks, visit:
 
 - [Enable private connectivity using AWS PrivateLink](https://docs.databricks.com/aws/en/security/network/classic/privatelink)
 - [Enable Azure Private Link back-end and front-end connections](https://learn.microsoft.com/en-us/azure/databricks/security/network/classic/private-link)
 
-Once you have set up Private Link, send our Support team your endpoint so we can set up connectivity to Prophecy's VPC.
+After you set up Private Link, send your endpoint details to Prophecy Support so we can configure connectivity to our VPC.
 
 :::info
-Other connection types may have different networking requirements depending on your setup. If any connections fail, make sure that your networking configuration allows communication to and from Prophecy.
+Different connection types may have different networking requirements. If a connection fails, check that your networking configuration allows traffic between Prophecy and your external services.
 :::
 
-## Modernize existing workflows
+## Workflow migration
 
 If you're migrating from Alteryx, Prophecy Express Edition includes a transpiler to convert your existing workflows.
 

@@ -92,6 +92,15 @@
   margin-bottom: 0.25rem;
 }
 
+/* Admonitions inside list items only */
+.markdown ol li > div.theme-admonition,
+.markdown ul li > div.theme-admonition,
+.markdown ol li > div.admonition,
+.markdown ul li > div.admonition {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
 table {
   display: table;
   width: 100%;

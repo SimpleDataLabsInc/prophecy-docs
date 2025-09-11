@@ -26,22 +26,13 @@ const sidebars = {
       items: [
         {
           type: "category",
-          label: "Concepts",
+          label: "Core concepts",
           items: [
             "getting-started/concepts/Fabric",
             "getting-started/concepts/project/projects",
             "getting-started/concepts/templates",
             "getting-started/concepts/pipelines",
             "getting-started/concepts/gems",
-          ],
-        },
-        {
-          type: "category",
-          label: "Setup guides",
-          items: [
-            "getting-started/setup/prophecy-express-guide",
-            "getting-started/setup/prophecy-enterprise-guide",
-            "getting-started/setup/databricks-partner-connect",
           ],
         },
         {
@@ -67,6 +58,15 @@ const sidebars = {
             "getting-started/tutorials/sql-with-prophecy",
             "getting-started/tutorials/spark-with-databricks",
             "getting-started/tutorials/sql-with-snowflake",
+          ],
+        },
+        {
+          type: "category",
+          label: "Platform setup",
+          items: [
+            "getting-started/setup/prophecy-express-guide",
+            "getting-started/setup/prophecy-enterprise-guide",
+            "getting-started/setup/databricks-partner-connect",
           ],
         },
       ],
