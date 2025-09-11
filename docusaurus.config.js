@@ -75,6 +75,10 @@ const config = {
             const sidebarItems = await defaultSidebarItemsGenerator(args);
             return sidebarItems;
           },
+          admonitions: {
+            keywords: ["edition"],
+            extendDefaults: true,
+          },
         },
         blog: false,
         theme: {
@@ -107,34 +111,39 @@ const config = {
         },
         items: [
           {
-            type: "dropdown",
-            label: "Docs",
+            type: "doc",
             position: "left",
-            items: [
-              { type: "doc", docId: "index", label: "Product docs" },
-              {
-                type: "doc",
-                label: "API docs",
-                docId: "api/index",
-              },
-            ],
+            docId: "index",
+            label: "Get started",
           },
           {
-            to: "administration",
-            label: "Administration",
+            type: "doc",
             position: "left",
+            docId: "base/index",
+            label: "Platform",
+          },
+          {
+            type: "doc",
+            position: "left",
+            docId: "enterprise/index",
+            label: "Enterprise",
+          },
+          {
+            type: "doc",
+            position: "left",
+            docId: "api/index",
+            label: "API",
           },
           {
             to: "https://transpiler.docs.prophecy.io/",
             position: "left",
-            label: "Migration guide",
+            label: "Migration",
           },
           {
             to: "/getting-help",
             label: "Help",
             position: "right",
           },
-          { to: "http://app.prophecy.io/", label: "Login", position: "right" },
         ],
       },
       footer: {

@@ -8,7 +8,7 @@ tags:
   - gem builder
 ---
 
-[Gems](/docs/getting-started/concepts/gems.md) handle individual data processing tasks in a pipeline or model. While Prophecy offers dozens of gems out-of-the-box, you might want to create your own gems.
+[Gems](/analysts/gems) handle individual data processing tasks in a pipeline or model. While Prophecy offers dozens of gems out-of-the-box, you might want to create your own gems.
 
 The SQL Gem Builder lets you create and publish your own custom gems for SQL projects. Be sure to develop your gem code using the SQL dialect of your warehouse.
 

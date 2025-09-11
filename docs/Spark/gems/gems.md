@@ -8,7 +8,7 @@ tags:
   - gem
 ---
 
-[Gems](/docs/getting-started/concepts/gems.md) are functional units in a [pipeline](/engineers/pipelines) that perform tasks such as reading, transforming, writing, or handling other data operations.
+Gems are functional units in a [pipeline](/engineers/pipelines) that perform tasks such as reading, transforming, writing, or handling other data operations.
 
 ## Categories
 
