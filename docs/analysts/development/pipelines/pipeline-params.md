@@ -37,7 +37,7 @@ To add pipeline parameters:
 When you define parameters, variables will be automatically created in the SQL configuration.
 :::
 
-## Use parameters
+## Use parameters in pipelines
 
 To use pipeline parameters:
 
