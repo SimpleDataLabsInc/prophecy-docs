@@ -75,4 +75,3 @@ To make the most out of pipeline parameters, we suggest you:
 - Use meaningful parameter names that indicate their purpose.
 - Validate inputs to prevent unexpected errors during execution.
 - Keep sensitive values (such as API keys) in [secrets](/administration/secrets/secrets.md) rather than passing them as plain parameters.
-- Group related values into arrays or JSON objects rather than creating many single-use parameters.
