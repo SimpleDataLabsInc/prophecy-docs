@@ -111,27 +111,16 @@ const config = {
         },
         items: [
           {
-            type: "dropdown",
-            label: "Docs",
-            position: "left",
-            items: [
-              { type: "doc", docId: "index", label: "Product docs" },
-              {
-                type: "doc",
-                label: "API docs",
-                docId: "api/index",
-              },
-            ],
+            type: "doc",
+            docId: "getting-started/index",
+            label: "Getting started",
           },
-          {
-            to: "administration",
-            label: "Administration",
-            position: "left",
-          },
+          { type: "doc", docId: "index", label: "Platform" },
+          { type: "doc", docId: "api/index", label: "API" },
           {
             to: "https://transpiler.docs.prophecy.io/",
             position: "left",
-            label: "Migration guide",
+            label: "Migration",
           },
           {
             to: "/getting-help",
