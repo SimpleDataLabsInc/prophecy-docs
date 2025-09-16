@@ -31,7 +31,7 @@ To add pipeline parameters:
 1. Click **+ Add Parameter**.
 1. Enter a name. This is the name you use when you call the parameter.
 1. Choose a data type (such as `array`, `date`, `string`, `int`, or `float`) that matches the parameter's use.
-1. Enter a value, or use a function or expression that computes the parameter's value.
+1. Enter a value, or use a function or expression that computes the parameter's value. By default, these values are used during interactive execution. However, you can override the default values in certain areas like prophecy app configs and pipeline gems.
 
 :::note
 When you define parameters, variables will be automatically created in the SQL configuration.
@@ -44,15 +44,19 @@ To use pipeline parameters:
 1. Add any [gem](/analysts/gems/) that uses expressions, such as a [Filter](/analysts/filter) gem.
 1. Select **Configuration Variables** from an Expression dropdown menu.
 
-The pipeline parameter's value will be used for the expression.
+By default, the pipeline parameter's value will be used for the expression, though this value can be overwritten in both Prophecy gems and Prophecy apps.
 
-Example: If you create a parameter called `start_date` with a value of _2025-09-01_, you can use it in a Filter gem to include only rows where `order_date` >= `start_date`. When the pipeline runs, it injects the parameter’s value into the filter expression.
+> Example: If you create a parameter called `start_date` with a value of _2025-09-01_, you can use it in a Filter gem to include only rows where `order_date` >= `start_date`. When the pipeline runs, it injects the parameter’s value into the filter expression.
 
 ## Use parameters in Prophecy Apps
 
-Once you have included a pipeline parameter in a gem, you can use the parameter as an input field in a Prophecy App. When you run the app, users can enter their own value, which will override the value you set for the pipeline parameter. (The pipeline parameter serves as a default for the value.)
+Parameters are useful in both [creating](/analysts/create-business-applications) and [consuming](/analysts/run-apps) Prophecy applications.
 
-For example, you might create a Prophecy app that incorporates start dates and end dates for a weekly (or monthly) sales snapshot. After creating `start_date` and `end_date` pipeline parameters with values of _09/01/2025_ and _09/07/2025_, add `start_date` and `end_date` as input fields in the app. When the app runs, users enter their own dates and Prophecy returns data filtered for these dates.
+For example, to create an application that incorporates start dates and end dates for a weekly (or monthly) sales snapshot, you'd begin by adding a Filter gem to the pipeline that uses pipeline parameters for `start_date` and `end_date` pipeline parameters with values of _09/01/2025_ and _09/07/2025_. (These values will serve as defaults for the application.)
+
+Next, use `start_date` and `end_date` as [date fields](/analysts/business-application-components#date) in a Prophecy App. When you run the app, users can enter their own values, which will override the values you set for the pipeline parameter. See [Add a filter](/analysts/create-business-applications#add-a-filter) in the [Create a Prophecy App topic](/analysts/create-business-applications) for more details.
+
+When the app runs, users enter their own values for `start_date` and `end_date` and Prophecy will return data filtered for these dates.
 
 ## Example: Dynamic target location
 
