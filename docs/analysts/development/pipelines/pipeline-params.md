@@ -68,7 +68,7 @@ To do so:
 1. Provide a default value that points to the file system or table path in the execution environment: `/dev/data/target_folder/`.
 1. Create a [Prophecy App](/analysts/business-applications) that includes the parameter as a field.
 1. Assign the parameter in the Prophecy App a default value that points to the production folder in your file system: `/prod/data/target_folder/`.
-1. Schedule the app to run in your production environment on a regular schedule.
+1. [Schedule the app](/analysts/run-apps#schedules) to run in your production environment on a regular schedule.
 
 This ensures that when a scheduled pipeline runs in production, it uses the correct target location.
 
@@ -78,4 +78,4 @@ To make the most out of pipeline parameters, we suggest you:
 
 - Use meaningful parameter names that indicate their purpose.
 - Validate inputs to prevent unexpected errors during execution.
-- Keep sensitive values (such as API keys) in [secrets](/administration/secrets/secrets.md) rather than passing them as plain parameters.
+- Keep sensitive values (such as API keys) in [secrets](/administration/secrets) rather than passing them as plain parameters.
