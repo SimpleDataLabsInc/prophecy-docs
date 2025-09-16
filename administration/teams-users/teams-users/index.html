@@ -8,7 +8,7 @@
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/assets/css/styles.d653e9cf.css">
-<script src="/assets/js/runtime~main.0e3c0892.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.a87bda6f.js" defer="defer"></script>
 <script src="/assets/js/main.bf86c499.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -25,10 +25,10 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="team-admins">Team admins<a href="#team-admins" class="hash-link" aria-label="Direct link to Team admins" title="Direct link to Team admins">​</a></h2>
 <p>Team admins are responsible for managing the structure and resources of a team. They can:</p>
 <ul>
-<li>Create and manage teams and team members</li>
-<li>Create and configure fabrics for the team</li>
-<li>Set up connections and secrets</li>
-<li>Manage additional team-level settings</li>
+<li>Create and manage teams and team members.</li>
+<li>Create and configure fabrics for the team.</li>
+<li>Set up connections and secrets.</li>
+<li>Manage additional team-level settings.</li>
 </ul>
 <p>There can be multiple team admins per team, and any existing team admin can promote another user to this role.</p>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>For more information, visit <a href="/administration/rbac#team-admins">Role-based access control</a>. Note that team admins are different from Prophecy cluster admins, who manage infrastructure, authentication, and deployment-wide settings.</p></div></div>
@@ -46,15 +46,46 @@
 <li>Settings that are only visible to team admins. See <a href="#team-metadata-settings">Team metadata settings</a> for more information.</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="team-metadata-settings">Team metadata settings<a href="#team-metadata-settings" class="hash-link" aria-label="Direct link to Team metadata settings" title="Direct link to Team metadata settings">​</a></h3>
-<p>This table describes each tab within the team&#x27;s metadata settings.</p>
-<table><thead><tr><th>Tab</th><th>Description</th></tr></thead><tbody><tr><td><a href="/engineers/execution-metrics">Execution Metrics</a></td><td>Displays metrics and data samples for each execution.</td></tr><tr><td>Code Generation</td><td>Enables multi-file code generation in the case of code payload size limitations.</td></tr><tr><td>Advanced</td><td>Update the artifactid, generative AI settings, etc. for a team&#x27;s projects.</td></tr><tr><td><a href="/administration/project-types/project-creation-template">Default Project Settings</a></td><td>Configure project creation templates for the team.</td></tr></tbody></table>
+<p>The following sections describe each tab within the team&#x27;s metadata settings.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="execution-metrics-spark-only">Execution Metrics (Spark only)<a href="#execution-metrics-spark-only" class="hash-link" aria-label="Direct link to Execution Metrics (Spark only)" title="Direct link to Execution Metrics (Spark only)">​</a></h4>
+<p>In the Execution Metrics tab, you can enable or disable <a href="/engineers/execution-metrics">execution metrics</a> at the team level. You can also specify in which tables to store execution metrics for each pipeline run.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="code-generation-spark-only">Code Generation (Spark only)<a href="#code-generation-spark-only" class="hash-link" aria-label="Direct link to Code Generation (Spark only)" title="Direct link to Code Generation (Spark only)">​</a></h4>
+<p>When the <strong>Enable multi file code generation</strong> setting is enabled, Prophecy splits interactive execution code into multiple files instead of generating a single large file. Interactive execution code (generated when clicking the play button) differs from the project code committed to Git - it&#x27;s optimized for running in Spark shell environments. This optimization reduces code recompilation by only updating changed portions of the pipeline during interactive runs, improving execution performance.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="advanced">Advanced<a href="#advanced" class="hash-link" aria-label="Direct link to Advanced" title="Direct link to Advanced">​</a></h4>
+<p>Configure the following settings in the Advanced tab of the team settings.</p>
+<ul>
+<li><strong>Artifact ID (Spark only):</strong> Sets the parent artifact identifier for project JAR and wheel packages. This identifier is used when packaging your Spark project dependencies and becomes part of the artifact metadata for deployment and distribution.</li>
+<li><strong>Data context in copilot:</strong> When enabled, sample data from interim runs will be used to improve Copilot suggestion quality. Note that this data is not used to improve the AI Agent.</li>
+<li><strong>Default projects:</strong> Manage default project dependencies that are automatically imported into new projects. You can select any project from the Package Hub to include here.</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="default-project-settings">Default Project Settings<a href="#default-project-settings" class="hash-link" aria-label="Direct link to Default Project Settings" title="Direct link to Default Project Settings">​</a></h4>
+<p>In the Default Project Settings tab, you can create new project templates that users can select while creating a new project. The project template determines settings such as project language, Git provider, default transformation entity, and more. To learn how to configure new templates or change the default template for your team, visit <a href="/administration/project-types/project-creation-template">Project creation templates</a>.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="team-management-settings">Team management settings<a href="#team-management-settings" class="hash-link" aria-label="Direct link to Team management settings" title="Direct link to Team management settings">​</a></h2>
 <p>Additional team settings, including team creation and user management, are available in the <strong>Team</strong> tab of the global <a href="/administration/settings">Settings</a> interface in your Prophecy environment.</p>
 <ol>
-<li>Click the <strong>...</strong> button and the <strong>gear</strong> icon at the bottom of the left navigation bar.</li>
-<li>Select the <strong>Teams</strong> tab.</li>
-<li>In the <strong>Teams</strong> section, view, create, or delete teams. Teams can only be deleted by their team admin.</li>
-<li>In the <strong>Team Users</strong> section, view, create, or remove users in teams. You can also assign or unassign users to the team admin role.</li>
+<li>
+<p>Click the <strong>...</strong> button and the <strong>gear</strong> icon at the bottom of the left navigation bar.</p>
+</li>
+<li>
+<p>Select the <strong>Teams</strong> tab.</p>
+</li>
+<li>
+<p>In the <strong>Teams</strong> section, you can:</p>
+<ul>
+<li>See the list of teams you belong to.</li>
+<li>Create and manage teams you own.</li>
+<li>Delete teams (if you are a team admin).</li>
+</ul>
+</li>
+<li>
+<p>In the <strong>Team Users</strong> section, you can:</p>
+<ul>
+<li>See all users in your shared teams and their team assignments.</li>
+<li>Create new users and invite them to Prophecy.</li>
+<li>Add or remove users from teams (if you are a team admin).</li>
+<li>Assign or remove team admin roles from users (if you are a team admin).</li>
+</ul>
+</li>
 </ol></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-tags-row"><div class="col"><b>Tags:</b><ul class="tags_jXut padding--none margin-left--sm"><li class="tag_QGVx"><a rel="tag" class="tag_zVej tagRegular_sFm0" href="/tags/concepts">concepts</a></li><li class="tag_QGVx"><a rel="tag" class="tag_zVej tagRegular_sFm0" href="/tags/teams">teams</a></li><li class="tag_QGVx"><a rel="tag" class="tag_zVej tagRegular_sFm0" href="/tags/users">users</a></li></ul></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/getting-help/troubleshooting"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Troubleshooting</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/administration/project-types/"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Project types</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#team-types" class="table-of-contents__link toc-highlight">Team types</a></li><li><a href="#team-admins" class="table-of-contents__link toc-highlight">Team admins</a></li><li><a href="#team-metadata" class="table-of-contents__link toc-highlight">Team metadata</a><ul><li><a href="#team-metadata-settings" class="table-of-contents__link toc-highlight">Team metadata settings</a></li></ul></li><li><a href="#team-management-settings" class="table-of-contents__link toc-highlight">Team management settings</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Prophecy</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://www.prophecy.io/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Home<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.prophecy.io/blogs" target="_blank" rel="noopener noreferrer" class="footer__link-item">Blog<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://join.slack.com/t/prophecy-io-support/shared_invite/zt-1dwuvkakg-JcavnQuoukyZ3q5jkSkKCg" target="_blank" rel="noopener noreferrer" class="footer__link-item">Slack<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="mailto:docs@prophecy.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">Documentation feedback<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://app.prophecy.io/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Login<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">© 2025 Prophecy Inc All Rights Reserved <a href="https://legal.prophecy.io/privacy" target="_blank">Privacy Policy</a></div></div></div></footer></div>
 </body>
 </html>
