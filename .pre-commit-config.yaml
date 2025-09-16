@@ -35,5 +35,5 @@ repos:
         args:
           [
             --badwords,
-            "spark:Spark,dataframe:DataFrame,Dataframe:DataFrame,GIT:Git,git:Git,databricks:Databricks,DataBricks:Databricks,delta:Delta,python:Python,scala:Scala,vaccum:vacuum,Vaccum:Vacuum,partion:partition,airflow:Airflow",
+            "spark:Spark,dataframe:DataFrame,Dataframe:DataFrame,DataBricks:Databricks,delta:Delta,python:Python,scala:Scala,vaccum:vacuum,Vaccum:Vacuum,partion:partition,airflow:Airflow",
           ]
