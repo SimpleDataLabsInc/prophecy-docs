@@ -6,12 +6,7 @@ description: Determine how to store processed data and handle changes over time
 tags: []
 ---
 
-When writing data to a table, there are multiple ways to determine how the data will be written. When you configure a target table or target model, the **Write Options** tab lets you determine how you will store your processed data and handle changes to the data over time. The choice of write mode depends on your specific use case:
-
-- How often does your data need to be updated?
-- Are you processing large datasets that benefit from incremental updates?
-- Do you need to maintain a history of changes?
-- How do you handle duplicates and conflicts?
+When writing data to a table, there are multiple ways to determine how the data will be written. When you configure a target table or target model, the **Write Options** tab lets you determine how you will store your processed data and handle changes to the data over time. The choice of write mode depends on your specific use case.
 
 ## Write modes
 
@@ -297,11 +292,10 @@ Only trips within the last 30 days are updated, leaving older ones unchanged.
 
 ### Merge - Delete and Insert
 
-Deletes existing rows that match the unique key from the target table, then inserts the corresponding rows from the incoming dataset.
-This ensures that updated records are fully replaced instead of partially updated.
+Deletes existing rows that match the unique key from the target table, then reinserts the corresponding rows and inserts new rows from the incoming dataset. This ensures that updated records are fully replaced instead of partially updated.
 
 :::note
-This strategy helps when your unique_key is not truly unique (multiple rows per key need to be fully refreshed).
+This strategy helps when your unique key is not truly unique (multiple rows per key need to be fully refreshed).
 :::
 
 <div class="fixed-table">
@@ -347,7 +341,7 @@ If a vehicle already exists in the fleet, its old record is deleted and replaced
 
 ## Support matrix
 
-| Write option                        | Databricks table | Databricks model | BigQuery table | BigQuery model | Snowflake model |
+| Write mode                          | Databricks table | Databricks model | BigQuery table | BigQuery model | Snowflake model |
 | ----------------------------------- | ---------------- | ---------------- | -------------- | -------------- | --------------- |
 | Wipe and Replace Table              | ✔                | ✔                | ✔              | ✔              | ✔               |
 | Append Row                          | ✔                | ✔                | ✔              |                | ✔               |
@@ -364,7 +358,7 @@ If a vehicle already exists in the fleet, its old record is deleted and replaced
 
 **Problem**: Incoming and existing schemas don't align.
 
-**Solution**: Use the "On Schema Change" setting or ensure schema compatibility.
+**Solution**: Use the "On Schema Change" setting to set behavior or ensure schema compatibility.
 
 </details>
 
