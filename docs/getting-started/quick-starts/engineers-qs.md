@@ -1,5 +1,5 @@
 ---
-title: Quick start for Engineers
+title: Engineering quick start
 id: engineers-qs
 slug: /engineers/quick-start
 description: Create a Spark pipeline with Prophecy's visual interface
