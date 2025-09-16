@@ -19,11 +19,25 @@ When writing data to a table, there are multiple ways to determine how the data 
 
 Replaces all existing data with new data on each run. This is the simplest approach and ensures your target table always reflects the latest state of your source data.
 
-- The incoming table must have the same schema as the existing table
-- No additional parameters are needed
+:::info
+The incoming table must have the same schema as the existing table.
+:::
+
+#### Partition the target table (BigQuery only)
+
+A partitioned table is a database table that has been divided into smaller, more manageable pieces called partitions. Use [partitioned tables](https://cloud.google.com/bigquery/docs/partitioned-tables) to improve query performance and cost. In Prophecy, you can partition your target table using the **Partition by** option.
+
+Reference the following table to learn how to set up partitions.
+
+| Parameter                | Description                                                                                                                                                                          |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Column Name              | The name of the column used for partitioning the target table.                                                                                                                       |
+| Data Type                | The data type of the partition column. <br/>Supported types: `timestamp`, `date`, `datetime`, and `int64`.                                                                           |
+| Partition By granularity | Applicable only to `timestamp`, `date`, or `datetime` data type. <br/>Defines the time-based partition granularity: `hour`, `day`, `month`, or `year`.                               |
+| Partition Range          | Applicable only to `int64` data type. <br/>Specify a numeric range for partitioning using a **start**, **end**, and **interval** value (e.g., start=`0`, end=`1000`, interval=`10`). |
 
 :::note
-See [Partitioning](#partitioning) for information about adding partitions to your target table (BigQuery only).
+Only **BigQuery** target tables can be partitioned.
 :::
 
 #### Example: Replace vehicle registry
@@ -59,12 +73,11 @@ A full vehicle registry is refreshed each day, replacing all prior records with 
 
 ### Append Row
 
-Adds new rows to the existing table without modifying existing data.
+Adds new rows to the existing table without modifying existing data. No deduplication is performed, so you may end up with duplicate records.
 
-- No deduplication is performed
-- Best used when unique keys aren't required
-- For key-based updates, use a merge strategy instead
-- No additional parameters are needed
+:::info
+This strategy is best used when unique keys aren't required. For key-based updates, use a merge strategy instead.
+:::
 
 #### Example: Add daily trips
 
@@ -99,9 +112,9 @@ Daily trips are appended so that historical trips remain intact.
 
 ---
 
-### Merge - Specify Columns
+### Merge - Upsert Row
 
-Only updates specified columns during the merge operation. All other columns in existing records remain unchanged.
+If a row with the same key exists, it is updated. Otherwise, a new row is inserted. You can also limit updates to specific columns, so only selected values are changed in matching rows.
 
 <div class="fixed-table">
 
@@ -144,9 +157,9 @@ Vehicle type information is updated while registration dates remain unchanged.
 
 ---
 
-### Merge - Upsert Row
+### Merge - Wipe and Replace Partitions
 
-Replaces entire partitions in the target table. Only partitions containing updated data will be overwritten; other partitions remain untouched.
+Replaces entire partitions in the target table. Only partitions containing updated data will be overwritten; other partitions will not be modified.
 
 <div class="fixed-table">
 
@@ -163,7 +176,7 @@ Only trips for the given date partition are replaced, leaving other days unchang
 
 <div class="table-example">
 
-**Incoming table** (partition = 2024-01-15)
+**Incoming table**
 
 | TRIP_ID | VEHICLE_ID | DATE       |
 | ------- | ---------- | ---------- |
@@ -194,9 +207,9 @@ Only trips for the given date partition are replaced, leaving other days unchang
 
 Tracks historical changes by adding new rows instead of updating existing ones. This approach maintains a complete audit trail of all changes over time.
 
-- Each record includes start and end timestamps indicating validity periods
-- Historical records are never modified
-- Current records have null end timestamps
+- Each record includes start and end timestamps indicating validity periods.
+- Historical records are never modified.
+- Current records have null end timestamps.
 
 <div class="fixed-table">
 
@@ -282,7 +295,14 @@ Only trips within the last 30 days are updated, leaving older ones unchanged.
 
 ---
 
-### Merge - Delete Row If Exists; Otherwise Insert
+### Merge - Delete and Insert
+
+Deletes existing rows that match the unique key from the target table, then inserts the corresponding rows from the incoming dataset.
+This ensures that updated records are fully replaced instead of partially updated.
+
+:::note
+This strategy helps when your unique_key is not truly unique (multiple rows per key need to be fully refreshed).
+:::
 
 <div class="fixed-table">
 
@@ -295,9 +315,9 @@ Only trips within the last 30 days are updated, leaving older ones unchanged.
 
 </div>
 
-#### Example: Maintain new vehicle entries
+#### Example: Refresh vehicle registry entries
 
-You want to ensure that vehicles already present in the fleet are removed if they appear in the incoming data, while new vehicles are inserted. This way, the target table only contains information on vehicles that have never been updated.
+If a vehicle already exists in the fleet, its old record is deleted and replaced with the incoming row. New vehicles are simply inserted.
 
 <div class="table-example">
 
@@ -317,51 +337,25 @@ You want to ensure that vehicles already present in the fleet are removed if the
 
 **Updated table**
 
-| VEHICLE_ID | TYPE | REGISTERED_AT |
-| ---------- | ---- | ------------- |
-| 202        | Tram | 2023-12-02    |
-| 203        | Bus  | 2024-01-16    |
+| VEHICLE_ID | TYPE  | REGISTERED_AT |
+| ---------- | ----- | ------------- |
+| 201        | Train | 2024-01-15    |
+| 202        | Tram  | 2023-12-02    |
+| 203        | Bus   | 2024-01-16    |
 
 </div>
 
----
-
-### Partitioning
-
-:::info
-Partitioned tables apply to **BigQuery** tables only.
-
-Learn about how dbt handles partitioning for BigQuery tables in [Partition clause](https://docs.getdbt.com/reference/resource-configs/bigquery-configs#partition-clause).
-:::
-
-A partitioned table is a database table that has been divided into smaller, more manageable pieces called partitions. Use [partitioned tables](https://cloud.google.com/bigquery/docs/partitioned-tables) to improve query performance and cost. In Prophecy, you can partition your target table using the **Partition by** option.
-
-This option is available for:
-
-- [Wipe and Replace Tables](#wipe-and-replace-table-default) mode
-- [Merge - Upsert](#merge---upsert-row) mode.
-
-Reference the following table to learn how to set up partitions.
-
-| Parameter                | Description                                                                                                                                                                          |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Column Name              | The name of the column used for partitioning the target table.                                                                                                                       |
-| Data Type                | The data type of the partition column. <br/>Supported types: `timestamp`, `date`, `datetime`, and `int64`.                                                                           |
-| Partition By granularity | Applicable only to `timestamp`, `date`, or `datetime` data type. <br/>Defines the time-based partition granularity: `hour`, `day`, `month`, or `year`.                               |
-| Partition Range          | Applicable only to `int64` data type. <br/>Specify a numeric range for partitioning using a **start**, **end**, and **interval** value (e.g., start=`0`, end=`1000`, interval=`10`). |
-
 ## Support matrix
 
-| Write option                                   | Databricks table | Databricks model | BigQuery table | BigQuery model | Snowflake model |
-| ---------------------------------------------- | ---------------- | ---------------- | -------------- | -------------- | --------------- |
-| Wipe and Replace Table                         | ✔                | ✔                | ✔              | ✔              | ✔               |
-| Append Row                                     | ✔                | ✔                | ✔              |                | ✔               |
-| Merge - Specify Columns                        | ✔                | ✔                | ✔              | ✔              | ✔               |
-| Merge - Upsert Row                             | ✔                | ✔                | ✔              | ✔              |                 |
-| Merge - SCD2                                   | ✔                | ✔                | ✔              | ✔              | ✔               |
-| Merge - Update Row                             | ✔                | ✔                |                |                |                 |
-| Merge - Delete Row If Exists, Otherwise Insert |                  |                  |                |                | ✔               |
-| Partitioning                                   |                  |                  | ✔              | ✔              |                 |
+| Write option                        | Databricks table | Databricks model | BigQuery table | BigQuery model | Snowflake model |
+| ----------------------------------- | ---------------- | ---------------- | -------------- | -------------- | --------------- |
+| Wipe and Replace Table              | ✔                | ✔                | ✔              | ✔              | ✔               |
+| Append Row                          | ✔                | ✔                | ✔              |                | ✔               |
+| Merge - Upsert Row                  | ✔                | ✔                | ✔              | ✔              | ✔               |
+| Merge - Wipe and Replace Partitions | ✔                | ✔                | ✔              | ✔              |                 |
+| Merge - SCD2                        | ✔                | ✔                | ✔              | ✔              | ✔               |
+| Merge - Update Row                  | ✔                | ✔                |                |                |                 |
+| Merge - Delete and Insert           |                  |                  |                |                | ✔               |
 
 ## Troubleshooting
 
