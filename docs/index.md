@@ -13,7 +13,7 @@ Prophecy supports multiple personas on the platform. Search our documentation ba
 
 <CardContainer>
   <Card title="Pipeline Development" to="/analysts/pipeline-development" icon="/img/icons/pipeline.svg">
-    Build pipelines using gems, functions, tests, and more.
+    Build pipelines using gems, functions, tests, visual expressions, and more.
   </Card>
   <Card title="Scheduling" to="/analysts/scheduling" icon="/img/icons/calendar.svg">
     Configure pipelines to run on an automated schedule.
@@ -37,7 +37,7 @@ These guides apply to users on the Enterprise Edition of Prophecy only.
     Create Spark fabrics or data modeling fabrics to run pipelines and models.
   </Card>
   <Card title="Pipeline Development" to="/analysts/pipeline-development" icon="/img/icons/pipeline.svg">
-    Build Spark pipelines using gems, functions, business rules, and more.
+    Build Spark pipelines using gems, UDFs, business rules, and more.
   </Card>
   <Card title="CI/CD" to="/engineers/ci-cd" icon="/img/icons/GIT-PULL-REQUEST.svg">
     Learn how to set up continuous integration and deployment using environment separation and testing.
