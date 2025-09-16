@@ -67,7 +67,8 @@ To do so:
 1. Create a pipeline parameter called `target_location`.
 1. Provide a default value that points to the file system or table path in the execution environment: `/dev/data/target_folder/`.
 1. Create a [Prophecy App](/analysts/business-applications) that includes the parameter as a field.
-1. Assign the parameter in the Prophecy App a default value that points to the production folder in your file system: `/prod/data/target_folder/`.
+1. Incorporate the parameter into the Prophecy App. The value you assigned above--`/dev/data/target_folder/` is used as a default.
+1. Add a [config](/analysts/run-apps#create-config) to the app that uses the a production location, such as `/prod/data/target_folder/`.
 1. [Schedule the app](/analysts/run-apps#schedules) to run in your production environment on a regular schedule.
 
 This ensures that when a scheduled pipeline runs in production, it uses the correct target location.
