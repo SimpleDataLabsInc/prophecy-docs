@@ -72,6 +72,7 @@ const sidebars = {
       type: "category",
       label: "Editions",
       items: [
+        "getting-started/editions/editions",
         "administration/architecture",
         "administration/prophecy-deployment",
         "administration/security",
