@@ -1,5 +1,5 @@
 ---
-title: Quick start for Analysts
+title: Analyst quick start
 id: analysts-qs
 slug: /analysts/quick-start
 description: Create a pipeline with Prophecy for Analysts
