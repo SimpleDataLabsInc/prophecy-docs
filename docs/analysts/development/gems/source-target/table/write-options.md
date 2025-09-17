@@ -18,23 +18,6 @@ Replaces all existing data with new data on each run. This is the simplest appro
 The incoming table must have the same schema as the existing table.
 :::
 
-#### Partition the target table (BigQuery only)
-
-A partitioned table is a database table that has been divided into smaller, more manageable pieces called partitions. Use [partitioned tables](https://cloud.google.com/bigquery/docs/partitioned-tables) to improve query performance and cost. In Prophecy, you can partition your target table using the **Partition by** option.
-
-Reference the following table to learn how to set up partitions.
-
-| Parameter                | Description                                                                                                                                                                          |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Column Name              | The name of the column used for partitioning the target table.                                                                                                                       |
-| Data Type                | The data type of the partition column. <br/>Supported types: `timestamp`, `date`, `datetime`, and `int64`.                                                                           |
-| Partition By granularity | Applicable only to `timestamp`, `date`, or `datetime` data type. <br/>Defines the time-based partition granularity: `hour`, `day`, `month`, or `year`.                               |
-| Partition Range          | Applicable only to `int64` data type. <br/>Specify a numeric range for partitioning using a **start**, **end**, and **interval** value (e.g., start=`0`, end=`1000`, interval=`10`). |
-
-:::note
-Only **BigQuery** target tables can be partitioned.
-:::
-
 #### Example: Replace vehicle registry
 
 A full vehicle registry is refreshed each day, replacing all prior records with the latest list.
@@ -63,6 +46,21 @@ A full vehicle registry is refreshed each day, replacing all prior records with 
 | 202        | Train | 2024-01-16    |
 
 </div>
+
+#### Partition the target table (BigQuery only)
+
+The following partitioning parameters are available for the **Wipe and Replace Table** write mode on BigQuery.
+
+| Parameter                | Description                                                                                                                                                                                                                                                                                   |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Column Name              | The name of the column used for partitioning the target table.                                                                                                                                                                                                                                |
+| Data Type                | The data type of the partition column. <br/>Supported types: `timestamp`, `date`, `datetime`, and `int64`.                                                                                                                                                                                    |
+| Partition By granularity | Applicable only to `timestamp`, `date`, or `datetime` data type. <br/>Defines the time-based partition granularity: `hour`, `day`, `month`, or `year`.                                                                                                                                        |
+| Partition Range          | Applicable only to `int64` data type. <br/>Specify a numeric range for partitioning using a **start**, **end**, and **interval** value (e.g., start=`0`, end=`1000`, interval=`10`).<br/>You must define an interval value so that Prophecy knows at what intervals to create the partitions. |
+
+:::info
+Only BigQuery tables can be partitioned. To learn more about partitioning, jump to [Partitioning](#partitioning).
+:::
 
 ---
 
@@ -160,7 +158,7 @@ Replaces entire partitions in the target table. Only partitions containing updat
 
 | Parameter                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Partition by                | Defines the partitions of the target table.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| Partition by                | Defines the partitions of the target table.<ul><li><strong>Databricks</strong>: Each unique value of the partition column corresponds to a partition. You cannot change the granularity of the partitions.</li><li><strong>BigQuery</strong>: You must [manually define the granularity](#define-partition-granularity-bigquery-only) of your partitions. BigQuery does not automatically infer how to write the partitions.</li></ul>                                                                                                                                                                             |
 | (Advanced) On Schema Change | Specifies how schema changes should be handled during the merge process.<ul><li><strong>ignore</strong>: Newly added columns will not be written to the model. This is the default option.</li><li><strong>fail</strong>: Triggers an error message when the source and target schemas diverge.</li><li><strong>append_new_columns</strong>: Append new columns to the existing table.</li><li><strong>sync_all_columns</strong>: Adds any new columns to the existing table, and removes any columns that are now missing. Includes data type changes. This option uses the output of the previous gem.</li></ul> |
 
 </div>
@@ -195,6 +193,17 @@ Only trips for the given date partition are replaced, leaving other days unchang
 | 402     | 202        | 2024-01-15 |
 
 </div>
+
+#### Define partition granularity (BigQuery only)
+
+The following partitioning parameters allow you to define the partition granularity for this operation.
+
+| Parameter                | Description                                                                                                                                                                                                                                                                                   |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Column Name              | The name of the column used for partitioning the target table.                                                                                                                                                                                                                                |
+| Data Type                | The data type of the partition column. <br/>Supported types: `timestamp`, `date`, `datetime`, and `int64`.                                                                                                                                                                                    |
+| Partition By granularity | Applicable only to `timestamp`, `date`, or `datetime` data type. <br/>Defines the time-based partition granularity: `hour`, `day`, `month`, or `year`.                                                                                                                                        |
+| Partition Range          | Applicable only to `int64` data type. <br/>Specify a numeric range for partitioning using a **start**, **end**, and **interval** value (e.g., start=`0`, end=`1000`, interval=`10`).<br/>You must define an interval value so that Prophecy knows at what intervals to create the partitions. |
 
 ---
 
@@ -339,7 +348,47 @@ If a vehicle already exists in the fleet, its old record is deleted and replaced
 
 </div>
 
-## Support matrix
+## How write modes work
+
+Prophecy simplifies data transformation by providing intuitive write mode options that abstract away the complexity of underlying SQL operations. Behind the scenes, Prophecy generates dbt models that implement these write strategies using SQL warehouse-specific commands.
+
+| Write mode              | Concept in dbt                                                                                                                                                                                                        |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Wipe and Replace Tables | Maps to dbt's `materialized: 'table'` strategy, which creates a new table on each run.                                                                                                                                |
+| Append Rows             | Maps to dbt's `materialized: 'table'` with append-only logic, adding new rows without modifying existing data.                                                                                                        |
+| Merge options           | Maps to dbt's `materialized: 'incremental'` [strategy](https://docs.getdbt.com/docs/build/incremental-models-overview), which updates tables by only transforming and loading new or changed data since the last run. |
+
+When you select a write mode in a Table gem, Prophecy automatically generates the appropriate dbt configuration and SQL logic. This means you can focus on your data transformation logic rather than learning dbt's materialization strategies or writing complex SQL merge statements.
+
+:::note
+
+To understand exactly what happens when Prophecy runs these write operations, switch to the **Code** view of your project and inspect the generated dbt model files. These files contain the SQL statements and dbt configuration (like `materialized: 'incremental'`) that dbt uses to execute the write operation. To learn more about the specific configuration options available for each SQL warehouse, visit the dbt documentation links below.
+
+- [BigQuery configurations](https://docs.getdbt.com/reference/resource-configs/bigquery-configs)
+- [Databricks configurations](https://docs.getdbt.com/reference/resource-configs/databricks-configs)
+- [Snowflake configurations](https://docs.getdbt.com/reference/resource-configs/snowflake-configs)
+
+:::
+
+## Partitioning
+
+Depending on the SQL warehouse you use to write tables, partitioning can have different behavior. Let's look at the difference between partitioning in Google BigQuery versus in Databricks.
+
+1. **BigQuery**: Partitioning is a table property.
+
+   In BigQuery, partitioning is defined at the table schema level (time, integer range, or column value). Because it is a part of the table architecture, the physical storage in BigQuery is optimized by partitioning automatically.
+
+   Once a table is partitioned, every write to that table, full or incremental, respects the partitioning. That means even when you drop and create an entirely new table, BigQuery creates the table with partitions in an optimized way.
+
+2. **Databricks**: Partitioning is a write strategy.
+
+   Databricks organizes data in folders by column values. Partitioning only makes sense when you’re using the **Wipe and Replace Partitions** write mode because it allows you to overwrite specific directories (partitions) without rewriting the whole table.
+
+   For the **Wipe and Replace Table** option, the table is dropped and completely recreated. Partitioning doesn’t add any runtime benefit here, so this is not an option for Databricks.
+
+## Write modes matrix
+
+The following table describes the write modes that Prophecy supports by SQL warehouse and gem type.
 
 | Write mode                          | Databricks table | Databricks model | BigQuery table | BigQuery model | Snowflake model |
 | ----------------------------------- | ---------------- | ---------------- | -------------- | -------------- | --------------- |
