@@ -45,6 +45,8 @@ A full vehicle registry is refreshed each day, replacing all prior records with 
 | 201        | Bus   | 2024-01-15    |
 | 202        | Train | 2024-01-16    |
 
+Notice that all previous records (vehicles `101` and `102`) have been completely removed and replaced with the new incoming data.
+
 </div>
 
 #### Partition the target table (BigQuery only)
@@ -59,7 +61,7 @@ The following partitioning parameters are available for the **Wipe and Replace T
 | Partition Range          | Applicable only to `int64` data type. <br/>Specify a numeric range for partitioning using a **start**, **end**, and **interval** value (e.g., start=`0`, end=`1000`, interval=`10`).<br/>You must define an interval value so that Prophecy knows at what intervals to create the partitions. |
 
 :::info
-Only BigQuery tables can be partitioned. To learn more about partitioning, jump to [Partitioning](#partitioning).
+Only BigQuery tables can be partitioned at the table level. To learn more about partitioning, jump to [Partitioning](#partitioning).
 :::
 
 ---
@@ -69,7 +71,7 @@ Only BigQuery tables can be partitioned. To learn more about partitioning, jump 
 Adds new rows to the existing table without modifying existing data. No deduplication is performed, so you may end up with duplicate records.
 
 :::info
-This strategy is best used when unique keys aren't required. For key-based updates, use a merge strategy instead.
+This strategy is best used when unique keys aren't required. For key-based updates, use one of the Merge options instead.
 :::
 
 #### Example: Add daily trips
@@ -101,6 +103,8 @@ Daily trips are appended so that historical trips remain intact.
 | 301     | 201        | 2024-01-15 |
 | 302     | 202        | 2024-01-15 |
 
+Notice that the new trips (`301` and `302`) are added to the existing table without modifying the original records (`101` and `102`).
+
 </div>
 
 ---
@@ -113,7 +117,7 @@ If a row with the same key exists, it is updated. Otherwise, a new row is insert
 
 | Parameter                                          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Unique Key                                         | Column(s) used to match existing records in the target dataset.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| Unique Key                                         | Column(s) used to match existing records in the target dataset. In many cases, the unique key will be equivalent to your table's primary key, if applicable.                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | Use Predicate                                      | Lets you add conditions that specify when to apply the merge.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | Use a condition to filter data or incremental runs | Enables applying conditions for filtering the incoming data into the table.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | Merge Columns                                      | Specifies which columns to update during the merge. If empty, the merge includes all columns.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
@@ -124,7 +128,7 @@ If a row with the same key exists, it is updated. Otherwise, a new row is insert
 
 #### Example: Update vehicle type only
 
-Vehicle type information is updated while registration dates remain unchanged.
+When an incoming `VEHICLE_ID` matches an existing one, vehicle type information is updated while registration dates remain unchanged. The merge column is explicitly set to `TYPE`.
 
 <div class="table-example">
 
@@ -133,18 +137,27 @@ Vehicle type information is updated while registration dates remain unchanged.
 | VEHICLE_ID | TYPE |
 | ---------- | ---- |
 | 101        | Tram |
+| 102        | Bus  |
+| 104        | Bus  |
 
 **Existing table**
 
-| VEHICLE_ID | TYPE | REGISTERED_AT |
-| ---------- | ---- | ------------- |
-| 101        | Bus  | 2023-12-01    |
+| VEHICLE_ID | TYPE  | REGISTERED_AT |
+| ---------- | ----- | ------------- |
+| 101        | Bus   | 2023-12-01    |
+| 102        | Train | 2023-12-02    |
+| 103        | Bus   | 2023-12-03    |
 
 **Updated table**
 
 | VEHICLE_ID | TYPE | REGISTERED_AT |
 | ---------- | ---- | ------------- |
 | 101        | Tram | 2023-12-01    |
+| 102        | Bus  | 2023-12-02    |
+| 103        | Bus  | 2023-12-03    |
+| 104        | Bus  | null          |
+
+Notice that only the `TYPE` column was updated for vehicles `101` and `102` while the `REGISTERED_AT` values remained unchanged. Additionally, note that vehicle `103` remained unchanged since it didn't match a vehicle in the incoming data. Finally, vehicle `104` was inserted, and no data was added to the `REGISTERED_AT` column.
 
 </div>
 
@@ -165,7 +178,7 @@ Replaces entire partitions in the target table. Only partitions containing updat
 
 #### Example: Update trips for a specific day
 
-Only trips for the given date partition are replaced, leaving other days unchanged.
+In this case, the partition column is the `DATE` column, where each partition corresponds to a single day. Since the incoming data includes records from `2024-01-15`, all of the records from that date are dropped from the existing table and replaced with the new data.
 
 <div class="table-example">
 
@@ -192,6 +205,8 @@ Only trips for the given date partition are replaced, leaving other days unchang
 | 401     | 201        | 2024-01-15 |
 | 402     | 202        | 2024-01-15 |
 
+Notice that only the `2024-01-15` partition was replaced with new data, while the `2024-01-14` partition remained untouched.
+
 </div>
 
 #### Define partition granularity (BigQuery only)
@@ -209,26 +224,28 @@ The following partitioning parameters allow you to define the partition granular
 
 ### Merge - SCD2
 
-Tracks historical changes by adding new rows instead of updating existing ones. This approach maintains a complete audit trail of all changes over time.
+Tracks historical changes by adding new rows instead of updating existing ones. This lets you preserve a complete history, since every change generates a new entry rather than erasing old information. To be specific:
 
-- Each record includes start and end timestamps indicating validity periods.
-- Historical records are never modified.
-- Current records have null end timestamps.
+- New rows are added for incoming records with unique keys that don't exist in the target table.
+- For records matching existing unique keys, a new row is added only when the incoming data differs from the existing record.
+- New rows are assigned a start date and a `null` end date (indicating it's currently valid).
+- If the unique key of the new record matched an existing record, the existing row is assigned an end date to mark when it stopped being valid.
+- This creates a complete timeline showing how data evolved over time.
 
 <div class="fixed-table">
 
-| Parameter                                                         | Description                                                                          |
-| ----------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| Unique Key                                                        | Column(s) used to match existing records in the target dataset.                      |
-| Invalidate deleted rows                                           | When enabled, records that match deleted rows will be marked as no longer valid.     |
-| Determine new records by checking timestamp column                | Recognizes new records by the time from the **Updated at** column that you define.   |
-| Determine new records by looking for differences in column values | Recognizes new records based on a change of values in one or more specified columns. |
+| Parameter                                                         | Description                                                                                                                                                  |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Unique Key                                                        | Column(s) used to match existing records in the target dataset. In many cases, the unique key will be equivalent to your table's primary key, if applicable. |
+| Invalidate deleted rows                                           | When enabled, records that match deleted rows will be marked as no longer valid.                                                                             |
+| Determine new records by checking timestamp column                | Recognizes new records by the time from the **Updated at** column that you define.                                                                           |
+| Determine new records by looking for differences in column values | Recognizes new records based on a change of values in one or more specified columns.                                                                         |
 
 </div>
 
 #### Example: Route assignment history
 
-Each time a vehicle changes routes, a new row is added to preserve history.
+Each time a vehicle changes routes, a new row is added to preserve history. In this case, **Determine new records by checking timestamp column** is enabled, and `ASSIGNED_AT` is the timestamp column.
 
 <div class="table-example">
 
@@ -251,13 +268,15 @@ Each time a vehicle changes routes, a new row is added to preserve history.
 | 101        | Route A | 2024-01-01  | 2024-01-01 | 2024-01-15 |
 | 101        | Route B | 2024-01-15  | 2024-01-15 | NULL       |
 
+Notice that the original Route A record now has an end date (`2024-01-15` taken from the `ASSIGNED_AT` column) and a new Route B record was added with a null end date, preserving the complete history of route assignments.
+
 </div>
 
 ---
 
 ### Merge - Update Row
 
-Update records that match conditions defined in the predicate. This is useful for targeted updates based on complex business logic.
+Update records that match conditions defined in the **Use Predicate** parameter. Instead of updating individual rows, it replaces the entire partition of the table that matches the given predicate. The predicate defines which rows in the target table should be fully replaced with the incoming data.
 
 <div class="fixed-table">
 
@@ -269,17 +288,20 @@ Update records that match conditions defined in the predicate. This is useful fo
 
 </div>
 
-#### Example: Update trips in the last 30 days
+#### Example: Update trips from January 5th onwards
 
-Only trips within the last 30 days are updated, leaving older ones unchanged.
+When any record from January 5th onwards needs updating, ALL records from that date forward are dropped and replaced with the incoming data. Records from before January 5th remain unchanged.
+
+**Predicate**: `DATE >= '2024-01-05'`
 
 <div class="table-example">
 
 **Incoming table**
 
-| TRIP_ID | STATUS |
-| ------- | ------ |
-| 201     | Closed |
+| TRIP_ID | STATUS | DATE       |
+| ------- | ------ | ---------- |
+| 201     | Closed | 2024-01-05 |
+| 203     | Closed | 2024-01-10 |
 
 **Existing table**
 
@@ -287,13 +309,18 @@ Only trips within the last 30 days are updated, leaving older ones unchanged.
 | ------- | ---------- | ---------- | ------ |
 | 201     | 101        | 2024-01-05 | Open   |
 | 202     | 102        | 2023-12-20 | Open   |
+| 203     | 103        | 2024-01-10 | Open   |
+| 204     | 104        | 2024-01-15 | Open   |
 
 **Updated table**
 
 | TRIP_ID | VEHICLE_ID | DATE       | STATUS |
 | ------- | ---------- | ---------- | ------ |
 | 201     | 101        | 2024-01-05 | Closed |
+| 203     | 103        | 2024-01-10 | Closed |
 | 202     | 102        | 2023-12-20 | Open   |
+
+Notice that ALL trips from January 5th onwards (`201`, `203`, and `204`) were dropped and replaced with only the incoming records (`201` and `203`), while trip `202` (from December 20th) remained unchanged.
 
 </div>
 
@@ -301,7 +328,7 @@ Only trips within the last 30 days are updated, leaving older ones unchanged.
 
 ### Merge - Delete and Insert
 
-Deletes existing rows that match the unique key from the target table, then reinserts the corresponding rows and inserts new rows from the incoming dataset. This ensures that updated records are fully replaced instead of partially updated.
+For rows in the target table that have keys that match rows in the incoming dataset, deletes matching rows from the existing table and replaces them. For incoming rows with new keys, inserts these normally. This ensures that updated records are fully replaced instead of partially updated.
 
 :::note
 This strategy helps when your unique key is not truly unique (multiple rows per key need to be fully refreshed).
@@ -346,7 +373,11 @@ If a vehicle already exists in the fleet, its old record is deleted and replaced
 | 202        | Tram  | 2023-12-02    |
 | 203        | Bus   | 2024-01-16    |
 
+Notice that vehicle `201`'s old record was completely replaced with the new data, vehicle `202` remained unchanged, and vehicle `203` was added as a new entry.
+
 </div>
+
+---
 
 ## How write modes work
 
@@ -372,7 +403,7 @@ To understand exactly what happens when Prophecy runs these write operations, sw
 
 ## Partitioning
 
-Depending on the SQL warehouse you use to write tables, partitioning can have different behavior. Let's look at the difference between partitioning in Google BigQuery versus in Databricks.
+Depending on the SQL warehouse you use to write tables, partitioning can have different behavior. Let's examine the differences between partitioning in Google BigQuery and Databricks.
 
 1. **BigQuery**: Partitioning is a table property.
 
