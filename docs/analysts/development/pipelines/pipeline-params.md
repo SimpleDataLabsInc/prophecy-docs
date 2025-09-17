@@ -55,7 +55,7 @@ Parameters are useful in both [creating](/analysts/create-business-applications)
 ### Array example
 
 You might, for example, create an Array parameter called `region_list` with a value of `['US-East','US-West','Europe']`.  
-In the pipeline, you can use this parameter in a Filter gem as the value for a `region` expression, in order to return only rows where `region` equates to a value in the array.  
+In the pipeline, you can use this parameter in a Filter gem as the value for a `region` expression, in order to return only rows where `region` equates to a value in the array.
 
 When the pipeline runs, users can substitute an array for the `region_list` parameter to change which regions are included in the output. For example, a sales team focused on Latin America might use `['Mexico','LAC','Brazil','Andean']` for `region_list`.
 
@@ -77,11 +77,12 @@ When the pipeline runs, you can set the `customer_type` parameter to `Standard`.
 ### Boolean example
 
 For Boolean values, you could create a pipeline parameter called `include_archived` with a value of `false`.  
-In a Filter gem, you include code that uses the `include_archived` parameter to determine whether to include archived rows:  
+In a Filter gem, you include code that uses the `include_archived` parameter to determine whether to include archived rows:
 
 ```sql
 WHERE archived = include_archived
 ```
+
 Users running the Prophecy app can set `include_archived = true` to include historical records.
 
 ### Double example
