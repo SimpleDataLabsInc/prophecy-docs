@@ -74,12 +74,21 @@ You can create individual fabrics for different execution environments (for exam
 
 Dedicated SaaS deployments run in Prophecy’s VPC. You may need to configure networking to allow Prophecy to communicate with your external services.
 
-For example, to connect to Databricks, you might need to configure **Private Link** or set up **IP allowlists**. To learn how to set up Private Link for Databricks, visit:
+For example, to connect to Databricks, you might need to configure **Private Link** or set up **IP allowlists**. To do so:
 
-- [Enable private connectivity using AWS PrivateLink](https://docs.databricks.com/aws/en/security/network/classic/privatelink)
-- [Enable Azure Private Link back-end and front-end connections](https://learn.microsoft.com/en-us/azure/databricks/security/network/classic/private-link)
+1. Follow the instructions to set up PrivateLink depending on the cloud platform where Databricks is hosted. During this process, Databricks creates VPC endpoints for the secure cluster connectivity relay and for the workspace.
 
-After you set up Private Link, send your endpoint details to Prophecy Support so we can configure connectivity to our VPC.
+   - [Enable private connectivity using AWS PrivateLink](https://docs.databricks.com/aws/en/security/network/classic/privatelink)
+   - [Enable Azure Private Link back-end and front-end connections](https://learn.microsoft.com/en-us/azure/databricks/security/network/classic/private-link)
+
+1. Share the following with Prophecy:
+
+   - Your Databricks workspace region.
+   - The VPC endpoint service names. Provide both the relay and workspace endpoints.
+
+1. Prophecy creates VPC endpoints in the Prophecy VPC that connect to those service names.
+1. Prophecy shares the Prophecy VPC endpoints with you.
+1. Whitelist the Prophecy endpoints in your Databricks configuration.
 
 :::info
 Different connection types may have different networking requirements. If a connection fails, check that your networking configuration allows traffic between Prophecy and your external services.

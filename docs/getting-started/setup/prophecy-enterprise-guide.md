@@ -60,13 +60,6 @@ To learn how to create different types of fabrics, visit [Fabric setup](/adminis
 
 Dedicated SaaS deployments run in Prophecy’s VPC. You may need to configure networking to allow Prophecy to communicate with your external services.
 
-For example, to connect to Databricks, you might need to configure **Private Link** or set up **IP allowlists**/**firewall exceptions**. To learn how to set up Private Link for Databricks, visit:
-
-- [Enable private connectivity using AWS PrivateLink](https://docs.databricks.com/aws/en/security/network/classic/privatelink)
-- [Enable Azure Private Link back-end and front-end connections](https://learn.microsoft.com/en-us/azure/databricks/security/network/classic/private-link)
-
-After you set up Private Link, send your endpoint details to Prophecy Support so we can configure connectivity to our VPC.
-
 :::info
 Different connection types may have different networking requirements. If a connection fails, check that your networking configuration allows traffic between Prophecy and your external services.
 :::
