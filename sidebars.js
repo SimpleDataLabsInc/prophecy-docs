@@ -30,7 +30,6 @@ const sidebars = {
         "administration/teams-users/teams-users",
         "getting-started/concepts/Fabric",
         "getting-started/concepts/project/projects",
-        "getting-started/concepts/templates",
         "getting-started/concepts/pipelines",
         "getting-started/concepts/gems",
         {

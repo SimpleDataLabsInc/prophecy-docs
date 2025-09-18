@@ -17,7 +17,7 @@ You can Release and Deploy via Prophecy UI or you can use [Prophecy Build Tool](
 
 ## Requirements
 
-You must be a [team admin](docs/administration/index.md) to release and deploy a project.
+You must be a [team admin](/administration/rbac) to release and deploy a project.
 
 ## Overview
 
