@@ -85,6 +85,24 @@ WHERE archived = include_archived
 
 Users running the Prophecy app can set `include_archived = true` to include historical records.
 
+First, you'll set up an `include_archived` parameter, which will be a Boolean value.
+
+1. Open your project and select **Parameters** in the header.
+1. Click **+ Add Parameter**.
+1. Name the parameter `include_archived`.
+1. Select the **Type** and choose **Boolean**.
+1. Click **Select expression > Value**.
+1. Click **True** and click **Done**.
+1. Click **Save**.
+
+#### Use the Boolean parameter in an expression
+
+Now, you'll use the Boolean parameter in an expression inside a Filter gem.
+
+1. Create and open a Filter gem.
+1. Remove the default `true` expression.
+<!--start here need to configure Boolean filter-->
+
 ### Double example
 
 For doubles, you could create a pipeline parameter called `discount_rate` with a value of `0.15`. In a Formula gem, you apply it as `price * (1 - discount_rate)` to calculate discounted prices.
