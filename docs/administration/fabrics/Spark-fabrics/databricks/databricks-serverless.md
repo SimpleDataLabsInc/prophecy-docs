@@ -38,6 +38,7 @@ You can run the following sources on Databricks serverless compute:
 - [Seed files](/engineers/seed)
 - [Unity Catalog tables](https://docs.databricks.com/aws/en/tables/)
 - [Unity Catalog volumes](https://docs.databricks.com/aws/en/sql/language-manual/sql-ref-volumes)
+- [XLSX](/engineers/xlsx/)
 - [XML](/engineers/xml)
 
 ## Supported data sampling modes
