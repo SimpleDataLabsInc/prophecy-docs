@@ -48,7 +48,7 @@ To learn more about the relationship between fabrics, projects, and teams, visit
 
 ## Components
 
-Fabrics define all the necessary components that Prophecy needs to communicate with a specific execution environment. Each execution environment will require its own unique fabric configuration. Fabric creation, outlined in the [administration](docs/administration/index.md) section of the documentation, is typically handled by team admins.
+Fabrics define all the necessary components that Prophecy needs to communicate with a specific execution environment. Each execution environment will require its own unique fabric configuration. Fabric creation is typically handled by team admins.
 
 Find the key components below that correspond to distinct sections within the fabric's settings.
 

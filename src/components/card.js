@@ -8,8 +8,13 @@ export const CardContainer = ({ children }) => (
 );
 
 /* Card Component: Represents an individual card with a link */
-export const Card = ({ title, to, children }) => (
+export const Card = ({ title, to, children, icon }) => (
   <Link to={to} className="card">
+    {icon && (
+      <div className="card-icon">
+        <img src={icon} alt="" />
+      </div>
+    )}
     <div className="card-title">{title}</div>
     <div className="card-content">{children}</div>
   </Link>

@@ -3,7 +3,6 @@ dataframe:DataFrame
 Dataframe:DataFrame
 GIT:Git
 git:Git
-databricks:Databricks
 DataBricks:Databricks
 delta:Delta
 python:Python
