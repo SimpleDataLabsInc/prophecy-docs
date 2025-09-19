@@ -1057,6 +1057,7 @@ const sidebars = {
       link: { type: "doc", id: "api/trigger-pipeline/trigger-pipeline-api" },
       items: ["api/trigger-pipeline/rest-api-gem-trigger"],
     },
+    "api/deploy-project/deploy-project",
   ],
 };
 
