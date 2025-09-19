@@ -851,6 +851,10 @@ module.exports = {
       from: "/concepts/project",
     },
     {
+      to: "/table-write-options",
+      from: "/engineers/merge-approaches",
+    },
+    {
       to: "/prophecy-ai",
       from: [
         "/data-copilot-data-privacy",
