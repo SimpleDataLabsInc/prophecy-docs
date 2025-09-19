@@ -34,6 +34,76 @@ During deployment, you configure the environment, such as selecting the appropri
 
 When your pipelines are deployed, you can make sure they run as expected using our built-in [monitoring](/analysts/monitoring) feature.
 
+## Atomicity, transactionality, and idempotency
+
+When designing pipelines, three principles ensure the reliable transfer of data: **atomicity**, **transactionality**, and **idempotency**.
+
+### Atomicity
+
+**Atomicity** means an operation either succeeds completely or makes no changes. This prevents pipelines from producing partial or inconsistent outputs.
+
+### Transactionality
+
+**Transactionality** groups multiple operations into a single unit. All transactions succeed together, or all fail and roll back together. This ensures that target tables are never left half-updated.
+
+> Example: If a pipeline updates three target tables, transactionality guarantees that either all three are updated or none of them are.
+
+### Idempotency
+
+**Idempotency** means re-running an operation with the same inputs leaves the warehouse in the same end state. Impdepotency is critical in distributed systems, where retries and re-runs are common. Without it, duplicate rows or inconsistent states can silently creep in.
+
+### Idempotency quick rules
+
+| Write Pattern                            | Idempotent?                     | Notes                                                              |
+| ---------------------------------------- | ------------------------------- | ------------------------------------------------------------------ |
+| **Append / Insert** (to a table or file) | Never                           | Re-runs add duplicate rows.                                        |
+| **Merge / Upsert**                       | If keys & predicate are correct | Use a stable `unique_key`. Equivalent to Prophecy’s _Merge_ write. |
+
+<!-- check/add In dbt: materialized: incremental with incremental_strategy: merge and a valid unique_key. -->
+
+| **Destructive Load** (truncate+insert / create-or-replace / swap) | If SELECT is deterministic | Safe as long as the SELECT doesn’t use random or time-based functions. |
+
+<!-- check/add In dbt: materialized: table (adapter does a replace/swap); also insert_overwrite by partition (see below).
+-->
+
+| **Incremental Insert Overwrite** (+ `partition_by`) | Per partition, if your WHERE/partition filtering is deterministic and only rewrites the intended partitions.
+| Only the targeted partitions are rewritten. |
+
+### What breaks idempotency
+
+Watch for operations that appear safe but are not:
+
+- **Non-deterministic functions** persisted to columns (`current_timestamp`, `random()`, `uuid_generate_v4()`), unless part of the key.
+- **Sequence / identity values** in destructive loads (values can change each run).
+- **ORDER BY … LIMIT** used to persist a subset without a stable tie-breaker.
+
+### Practical Guidance
+
+:::info
+If you must append, add a deduplication step. Treat append models as **non-idempotent by design**.
+:::
+
+#### Append
+
+Use a unique index or `MERGE` into a canonical table to remove duplicates.
+
+#### Merge / Upsert
+
+Ensure `unique_key` is truly unique and stable. Prefer natural/business keys or durable surrogate keys. Avoid run-time values in UPDATE/INSERT sets unless explicitly required. Use **data-driven filters** (e.g., `updated_at > (select max(updated_at) from {{ this }})`), not “time of run.”
+
+#### Destructive Loads\*\*
+
+- Avoid persisting run timestamps or sequence values in target tables.
+- If you need lineage, capture it separately in an **audit table**.
+
+### Why This Matters in Prophecy
+
+- **Atomicity** prevents half-finished results.
+- **Transactionality** ensures related steps succeed or fail together.
+- **Idempotency** makes retries and re-runs safe.
+
+Together, these principles help you build Prophecy pipelines that are robust, repeatable, and trustworthy.
+
 ## What's next
 
 Learn about different forms of pipeline development:
