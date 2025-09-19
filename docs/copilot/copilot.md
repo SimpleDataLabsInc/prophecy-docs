@@ -1,7 +1,7 @@
 ---
-title: Copilot
+title: Prophecy AI
 id: copilot
-slug: /data-copilot
+slug: /prophecy-ai
 sidebar_class_name: hidden
 description: The AI assistant for data pipelines and models
 tags:
@@ -10,7 +10,13 @@ tags:
   - generativeai
 ---
 
-This page provides an introduction to Prophecy's Copilot, including descriptions of its task-oriented and agential capabilities.
+import Mermaid from '@theme/Mermaid';
+
+This page introduces Prophecy's AI capabilities, including descriptions of its task-oriented and agentic features.
+
+:::info
+While Prophecy's AI features are enabled by default, they can be disabled upon request for Dedicated SaaS and self-hosted deployments.
+:::
 
 ## Introduction
 
@@ -32,6 +38,79 @@ To learn more, see [Copilot for SQL projects](/analysts/ai-features) and [Copilo
 
 ![AI Example](img/agent-chat.gif)
 
-## Enable Copilot
+## LLM providers and model families
 
-Copilot is enabled by default for all users on [Prophecy SaaS](https://docs.prophecy.io/administration/prophecy-deployment). Prophecy SaaS uses the SaaS version of OpenAI's language model. Self-hosted deployments must set the Copilot flag in the deployment configuration to use Copilot.
+Prophecy integrates with multiple LLM providers and model families. This gives you flexibility in choosing the right models depending on your deployment type and performance needs.
+
+SaaS uses a Prophecy-managed OpenAI subscription with GPT-4o and GPT-4o mini. Meanwhile, Dedicated SaaS and self-hosted deployments are expected to connect to customer-managed endpoints.
+
+Each AI endpoint configuration requires two models:
+
+- Smart LLM for complex tasks, such as `gpt-4o`.
+- Fast LLM for lightweight tasks, such as `gpt-4o-mini`.
+
+:::info
+For Dedicated SaaS deployments, contact Prophecy to configure a custom endpoint.
+:::
+
+### Supported providers
+
+<Mermaid
+value={`flowchart LR
+subgraph L1["Layer 1 — Application"]
+P["Prophecy"]
+end
+
+subgraph L2["Layer 2 — Model Providers"]
+DOA["Direct OpenAI API"]
+EOA["Enterprise OpenAI API"]
+AOA["Azure OpenAI"]
+DGA["Direct Gemini API"]
+VA["Vertex AI"]
+DAA["Direct Anthropic API"]
+end
+
+subgraph L3["Layer 3 — Model Families"]
+GPT["OpenAI GPT models"]
+GEM["Google Gemini models"]
+CLAUDE["Anthropic Claude models"]
+end
+
+P --> DOA
+P --> EOA
+P --> AOA
+P --> DGA
+P --> VA
+P --> DAA
+
+DOA --> GPT
+EOA --> GPT
+AOA --> GPT
+DGA --> GEM
+VA --> GEM
+DAA --> CLAUDE
+
+%% Remove background styling from subgraphs
+classDef subgraphStyle fill:transparent,stroke:#333,stroke-width:1px
+class L1,L2,L3 subgraphStyle
+`}
+/>
+
+### Supported models
+
+While Prophecy can connect to all providers shown in the diagram, the following models are officially tested and supported:
+
+- `gpt-4o`
+- `gpt-4o-mini`
+- `gemini-2.5-flash`
+- `gemini-2.5-flash-lite`
+
+## Security
+
+Prophecy employs rigorous industry practices to safeguard the security of the Prophecy application and maintain the privacy of customer data. Below are just a few components of our comprehensive security strategy and system structure:
+
+- Prophecy **does not** store or send your data to any third-party large language model (LLM) providers. Instead, Prophecy uses rich metadata to construct its knowledge graph. As a result, Prophecy can interface with LLM providers while keeping your data private.
+- Prophecy conducts annual penetration tests to test its posture and identify vulnerabilities. For our latest penetration test report, see the [Pentest Report](https://security.prophecy.io/?itemUid=722b9671-c0d5-4a19-a5f7-0ad8fd81307c&source=click).
+- Prophecy maintains SOC-2 compliance as audited by PrescientAssurance.
+
+Read more details on Prophecy’s security and compliance posture at our [Security Portal](https://security.prophecy.io/).
