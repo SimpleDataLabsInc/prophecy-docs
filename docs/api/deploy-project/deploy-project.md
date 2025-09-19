@@ -16,8 +16,8 @@ The API returns request responses in JSON format.
 
 To use the Deploy Project API, the project you want to deploy must:
 
-- Have at least one Git tag that defines the project version.
 - Target a fabric that exists in your environment.
+- Have at least one Git tag that defines the project version.
 
 :::info Important
 Unlike in the Prophecy UI where Git tags are created automatically during publish, when using this API you must create the Git tag externally. The tag must follow the exact format `{projectName}/{version}`.
@@ -49,17 +49,17 @@ The following headers are required for the request.
 
 The following are valid parameters for the request body.
 
-| Field Name               | Type   | Required | Description                                                                                                                                                                                          | Example                                 |
-| ------------------------ | ------ | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
-| `projectName`            | String | Yes      | Name of the project to be deployed.                                                                                                                                                                  | `CheckHotfixProject`                    |
-| `fabricName`             | String | Yes      | Name of the fabric where the project will be deployed.                                                                                                                                               | `dev_orchestration_databricks`          |
-| `gitTag`                 | String | Yes      | Git tag identifying the specific version of the project to deploy. Must follow the format `{projectName}/{version}`.                                                                                 | `CheckHotfixProject/8`                  |
-| `pipelineConfigurations` | JSON   | No       | Override default values for specific pipeline parameters. Each pipeline can have multiple parameter overrides. The parameter must exist in the pipeline definition, or the override will be skipped. | `{"pip1": {"config_1_name": "value1"}}` |
-| `projectConfiguration`   | JSON   | No       | Override default values for project-level configuration parameters that apply to all pipelines in the project.                                                                                       | `{"projectConfig1": "c_smallint_2"}`    |
+| Field Name               | Type   | Required | Description                                                                                                                                                                                          | Example                                          |
+| ------------------------ | ------ | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
+| `projectName`            | String | Yes      | Name of the project to be deployed.                                                                                                                                                                  | `CustomerAnalytics`                              |
+| `fabricName`             | String | Yes      | Name of the fabric where the project will be deployed.                                                                                                                                               | `production-databricks`                          |
+| `gitTag`                 | String | Yes      | Git tag identifying the specific version of the project to deploy. Must follow the format `{projectName}/{version}`.                                                                                 | `CustomerAnalytics/2.1`                          |
+| `pipelineConfigurations` | JSON   | No       | Override default values for specific pipeline parameters. Each pipeline can have multiple parameter overrides. The parameter must exist in the pipeline definition, or the override will be skipped. | `{"sales_report": {"report_period": "monthly"}}` |
+| `projectConfiguration`   | JSON   | No       | Override default values for project-level configuration parameters that apply to all pipelines in the project.                                                                                       | `{"environment": "production"}`                  |
 
 ### Pipeline Configurations Structure {#pipeline-configurations-structure}
 
-The `pipelineConfigurations` parameter allows you to specify configuration values for individual pipelines within the project. The structure is:
+The `pipelineConfigurations` parameter allows you to specify pipeline parameter values for individual pipelines within the project. The structure is:
 
 ```json
 {
@@ -104,38 +104,40 @@ Project configuration parameters serve as global values for all pipelines in the
 
 Configuration parameters follow this precedence order:
 
-1. **Pipeline-specific overrides** (highest priority)
-2. **Project configuration overrides**
-3. **Default project configuration**
-4. **Default pipeline parameters** (lowest priority)
+1. Pipeline parameter overrides (highest priority)
+2. Project configuration overrides
+3. Default project configuration
+4. Default pipeline parameters (lowest priority)
 
 ### Example cURL {#example-curl-deploy}
 
-This example deploys a project called `CheckHotfixProject` to the `dev_orchestration_databricks` fabric with specific pipeline and project configurations.
+This example deploys a project called `CustomerAnalytics` to the `production-databricks` fabric with specific pipeline and project configurations.
 
 ```cURL
 curl --location 'https://app.prophecy.io/api/deploy/project' \
 --header 'X-AUTH-TOKEN: <prophecy-pat>' \
 --header 'Content-Type: application/json' \
 --data '{
-  "projectName": "CheckHotfixProject",
-  "fabricName": "dev_orchestration_databricks",
-  "gitTag": "CheckHotfixProject/8",
+  "projectName": "CustomerAnalytics",
+  "fabricName": "production-databricks",
+  "gitTag": "CustomerAnalytics/2.1",
   "pipelineConfigurations": {
-    "pip1": {
-      "config_1_name": "Pipeline 1 Config 1 Updated",
-      "config_2_name": "Pipeline 1 Config 2 Updated"
+    "sales_report": {
+      "report_period": "monthly",
+      "include_forecasts": "true"
     },
-    "pip2": {
-      "config_1_name": "Pipeline 2 Config 1 Updated",
-      "config_2_name": "Pipeline 2 Config 2 Updated"
+    "customer_segmentation": {
+      "segment_count": "5",
+      "min_customers_per_segment": "100"
     },
-    "pip3": {
-      "projectConfig1": "c_smallint"
+    "revenue_analysis": {
+      "currency": "USD",
+      "include_tax": "false"
     }
   },
   "projectConfiguration": {
-    "projectConfig1": "c_smallint_2"
+    "environment": "production",
+    "data_refresh_frequency": "daily"
   }
 }'
 ```
@@ -144,13 +146,13 @@ curl --location 'https://app.prophecy.io/api/deploy/project' \
 
 The following fields may appear in the response body of your request.
 
-| Field          | Description                                                                                                                       |
-| -------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `success`      | Indicates whether the request to deploy the project was successful.                                                               |
-| `message`      | Message that explains the outcome of the request.                                                                                 |
-| `deploymentId` | Unique identifier of the deployment generated by this request.                                                                    |
-| `details`      | Object containing detailed information about the deployment.                                                                      |
-| `error`        | Detailed error information provided when the request fails. This field contains specific technical details about what went wrong. |
+| Field          | Description                                                         |
+| -------------- | ------------------------------------------------------------------- |
+| `success`      | Indicates whether the request to deploy the project was successful. |
+| `message`      | Message that explains the outcome of the request.                   |
+| `deploymentId` | Unique identifier of the deployment generated by this request.      |
+| `details`      | Object containing detailed information about the deployment.        |
+| `error`        | Detailed error information provided when the request fails.         |
 
 #### Deployment Details Structure {#deployment-details-structure}
 
@@ -172,25 +174,29 @@ This example shows the response to a successful deployment request.
 {
   "success": true,
   "message": "Project scheduled successfully",
-  "deploymentId": "48",
+  "deploymentId": "212",
   "details": {
-    "projectId": "118",
-    "fabricId": "101",
-    "version": "100",
-    "pipelinesDeployed": ["pp002"],
-    "configurationsApplied": 1
+    "projectId": "67890",
+    "fabricId": "09123",
+    "version": "2.1",
+    "pipelinesDeployed": [
+      "sales_report",
+      "customer_segmentation",
+      "revenue_analysis"
+    ],
+    "configurationsApplied": 5
   }
 }
 ```
 
 #### Error Response Example {#error-response-example}
 
-This example shows the response to a request with an invalid git tag.
+This example shows the response to a request with an invalid Git tag.
 
 ```json
 {
   "success": false,
   "message": "Deployment failed",
-  "error": "Failed to fetch project files: Clone failed because revision Some(test_simp_personl/100) was not found"
+  "error": "Failed to fetch project files: Clone failed because revision Some(CustomerAnalytics/2.1) was not found"
 }
 ```
