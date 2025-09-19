@@ -52,7 +52,7 @@ By default, the pipeline parameter's value will be used for the expression, thou
 
 ## Use parameters in Prophecy Apps
 
-Parameters are useful in both [creating](/analysts/create-business-applications) and [consuming](/analysts/run-apps) Prophecy applications.
+Parameters are useful in both [creating](/analysts/create-business-applications) and [consuming](/analysts/run-apps) Prophecy applications. To use pipeline parameters in a Prophecy app, add an input field and select the pipeline parameter for **Configuration field**.
 
 ### Array example
 
@@ -187,7 +187,7 @@ Add `customer_reviews` and `archived_reviews` as Table gems.
 
 #### Use the Boolean parameter in an expression
 
-Next, you'll create a Filter gem that uses the `include_archived` pipeline paramter in an expression.
+Next, you'll create a Filter gem that uses the `include_archived` pipeline parameter in an expression.
 
 1. Create and open the Filter gem.
 1. Remove the default `true` expression.
@@ -289,13 +289,13 @@ Add a Target table gem called `products_limited` and connect it to the Reformat 
 
 #### Create a Prophecy app to adjust record limits
 
-1. Add a Prophecy app called `products_limited`.
+1. Add a Prophecy app called `products`.
 1. Add a title for the app.
 1. Select **Interactive > Number Input**.
 1. Select `max_records` for **Configuration field**.
 1. Give the field a label, such as **Maximum Rows**.
 1. Open the **Data Integration** dropdown and select **Data Preview**.
-1. In the **Inspect** tab, choose `product_limited` for **Data table**.
+1. In the **Inspect** tab, choose `products_limited` for **Data table**.
 1. Select columns to display.
 
 When the app runs, users can increase or decrease the `max_records` value depending on their performance needs.
