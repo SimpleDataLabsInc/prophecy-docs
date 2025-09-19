@@ -19,6 +19,8 @@ Pipeline parameters are useful for:
 
 Once you create pipeline parameters, they are available as _configuration variables_ in [gems](/analysts/gems/) wherever you can select a visual expression.
 
+You can also configure pipeline parameters using the [Deploy Project API](/api/deploy-project/#pipeline-configurations-structure)
+
 :::info
 Pipeline parameters are scoped to individual pipelines. They cannot be used in a project's other pipelines.
 :::
@@ -122,7 +124,6 @@ Suppose you want to create an application that shows sales data for a specific d
 1. Select **Interactive > Date Field**.
 1. For **Configuration field**, choose `start_date`.
 1. Add another **Date Field** and select `end_date`.
-1. See [date fields]()
 
 ### String example
 
@@ -167,7 +168,7 @@ When the app runs, users can switch the `customer_type` parameter from `Premium`
 
 Suppose you have two datasets, one with current reviews called `customer_reviews` and one with archived reviews called `archived_reviews`. You can use a Boolean pipeline parameter to create a Prophecy app that lets users choose whether to include archived reviews.
 
-For Boolean values, you could create a pipeline parameter called `include_archived` with a value of `false`. 
+For Boolean values, you could create a pipeline parameter called `include_archived` with a value of `false`.
 In a Filter gem, you include code that uses the `include_archived` parameter to determine whether to include archived rows:
 
 Users running the Prophecy app can set `include_archived = true` to include historical records.
@@ -204,9 +205,9 @@ The output of this gem will only include rows where `include_archived` is false.
 1. Select **Union By Name (Allow Missing Columns)** (it should be selected by default).
 1. Connect the `customer_reviews` table and the Filter gem to the UnionByName gem.
 
-This step combines filtered rows from `archived_reviews` with rows from `customer_reviews`. 
+This step combines filtered rows from `archived_reviews` with rows from `customer_reviews`.
 
-Add a Table gem called `filtered_reviews` and connect it to the UnionByName gem.
+Add a Target table gem called `filtered_reviews` and connect it to the UnionByName gem.
 
 #### Create a Prophecy app to show archived data
 
@@ -244,17 +245,17 @@ Next, you'll create a Reformat gem that uses the `discount_rate` pipeline parame
 1. Select **Column > price**
 1. Click **Select expression > Configuration Variable**.
 1. Select `discount_rate`.
-1. Click **Save**. 
+1. Click **Save**.
 
-Add a Table gem called `products_discounted` and connect it to the UnionByName gem.
+Add a Target table gem called `products_discounted` and connect it to the Reformat gem.
 
 #### Create a Prophecy app to show discounted products
 
-1. Add a Prophecy app called produccts_with_reviews.
+1. Add a Prophecy app called `products_with_reviews`.
 1. Add a title for the app.
 1. Select **Interactive > Number Input**.
 1. Select `discount_rate` for **Configuration field**.
-1. Give the field a label. 
+1. Give the field a label.
 1. Open the **Data Integration** dropdown and select **Data Preview**.
 1. In the Inspect tab, select `products_discounted` for **Data table**.
 1. Select columns to display.
@@ -284,6 +285,8 @@ Next, you’ll create or edit a gem that uses the `max_records` parameter to cap
 1. Select `max_records`. Prophecy fills in the **Limit Condition** field with `{{ var('max_records') }}`.
 1. Click **Save**.
 
+Add a Target table gem called `products_limited` and connect it to the Reformat gem
+
 #### Create a Prophecy app to adjust record limits
 
 1. Add a Prophecy app called `products_limited`.
@@ -292,8 +295,8 @@ Next, you’ll create or edit a gem that uses the `max_records` parameter to cap
 1. Select `max_records` for **Configuration field**.
 1. Give the field a label, such as **Maximum Rows**.
 1. Open the **Data Integration** dropdown and select **Data Preview**.
-1. In the **Inspect** tab, choose your limited dataset table.
-1. Select the columns to display.
+1. In the **Inspect** tab, choose `product_limited` for **Data table**.
+1. Select columns to display.
 
 When the app runs, users can increase or decrease the `max_records` value depending on their performance needs.
 
@@ -308,7 +311,7 @@ Suppose you have a dataset with a column called `sensor_temp`. You can use a **F
 1. Name the parameter `temperature_threshold`.
 1. Select the **Type** and choose **Float**.
 1. Click **Select expression > Value**.
-1. Enter `98.6` and click **Done**.
+1. Enter `72.1` and click **Done**.
 1. Click **Save**.
 
 #### Use the Float parameter in a Filter gem
@@ -323,6 +326,8 @@ Next, you’ll use the `temperature_threshold` parameter to filter your data.
 1. Select `temperature_threshold`.
 1. Click **Save**.
 
+Add a Table gem called `filtered_temperature` and connect it to the Filter gem.
+
 #### Create a Prophecy app to adjust sensitivity
 
 1. Add a Prophecy app called `temperature_monitor`.
@@ -331,24 +336,10 @@ Next, you’ll use the `temperature_threshold` parameter to filter your data.
 1. Select `temperature_threshold` for **Configuration field**.
 1. Give the field a label, such as **Temperature Threshold**.
 1. Open the **Data Integration** dropdown and select **Data Preview**.
-1. In the **Inspect** tab, choose your filtered dataset table.
-1. Select the columns to display.
+1. In the **Inspect** tab, choose `filtered_temperature`.
+1. Select columns to display.
 
-When the app runs, users can adjust the `temperature_threshold` to make filtering more or less sensitive.
-
-## Example: Dynamic target location
-
-When configuring a Target gem, you define the location where a new table will be written. Often, this location varies, depending on whether the pipeline runs in a development or production environment. You can handle this use case by adding a pipeline parameter and using it in the Target gem.
-
-To do so:
-
-1. Create a pipeline parameter called `target_location`.
-1. Provide a default value that points to the file system or table path in the execution environment: `/dev/data/target_folder/`.
-1. Create a [Prophecy App](/analysts/business-applications) that includes the parameter as a field.
-1. Assign the parameter in the Prophecy App a default value that points to the production folder in your file system: `/prod/data/target_folder/`.
-1. [Schedule the app](/analysts/run-apps#schedules) to run in your production environment on a regular schedule.
-
-This ensures that when a scheduled pipeline runs in production, it uses the correct target location.
+When the app runs, users can adjust `temperature_threshold` to make filtering more or less sensitive.
 
 ## Best Practices
 
