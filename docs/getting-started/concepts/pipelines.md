@@ -67,8 +67,7 @@ If a Prophecy pipeline updates multiple target tables, transactionality guarante
 | **Append / Insert** (to a table or file)                          | Never                                                                                                        | Re-runs add duplicate rows.                                            |
 | **Merge / Upsert**                                                | If keys & predicate are correct                                                                              | Use a stable `unique_key`. Equivalent to Prophecy’s _Merge_ write.     |
 | **Destructive Load** (truncate+insert / create-or-replace / swap) | If SELECT is deterministic                                                                                   | Safe as long as the SELECT doesn’t use random or time-based functions. |
-| **Incremental Insert Overwrite** (+ `partition_by`)               | Per partition, if your WHERE/partition filtering is deterministic and only rewrites the intended partitions. |
-| Only the targeted partitions are rewritten.                       |
+| **Incremental Insert Overwrite** (+ `partition_by`)               | Per partition, if your WHERE/partition filtering is deterministic and only rewrites the intended partitions. | Only the targeted partitions are rewritten.                            |
 
 <!-- check/add In dbt: materialized: incremental with incremental_strategy: merge and a valid unique_key. -->
 <!-- check/add In dbt: materialized: table (adapter does a replace/swap); also insert_overwrite by partition (see below).
@@ -96,7 +95,7 @@ Use a unique index or `MERGE` into a canonical table to remove duplicates.
 
 Ensure `unique_key` is truly unique and stable. Prefer natural/business keys or durable surrogate keys. Avoid run-time values in UPDATE/INSERT sets unless explicitly required. Use **data-driven filters** (e.g., `updated_at > (select max(updated_at) from {{ this }})`), not “time of run.”
 
-#### Destructive Loads\*\*
+#### Destructive Loads
 
 - Avoid persisting run timestamps or sequence values in target tables.
 - If you need lineage, capture it separately in an **audit table**.
