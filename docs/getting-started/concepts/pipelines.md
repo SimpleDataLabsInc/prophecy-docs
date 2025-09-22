@@ -36,40 +36,45 @@ When your pipelines are deployed, you can make sure they run as expected using o
 
 ## Atomicity, transactionality, and idempotency
 
-When designing pipelines, three principles ensure the reliable transfer of data: **atomicity**, **transactionality**, and **idempotency**.
+When designing pipelines, three principles ensure the reliable transfer of data: atomicity, transactionality, and idempotency.
+
+- **Atomicity** prevents half-finished results.
+- **Transactionality** ensures grouped steps succeed or fail together.
+- **Idempotency** makes retries and re-runs safe.
+
+Together, these principles let you build Prophecy pipelines that are robust, repeatable, and trustworthy.
 
 ### Atomicity
 
-**Atomicity** means an operation either succeeds completely or makes no changes. This prevents pipelines from producing partial or inconsistent outputs.
+Atomicity means that each operation either succeeds completely or makes no changes. This prevents pipelines from producing partial or inconsistent outputs.
+
+If a Prophecy pipeline updates a target table, atomicity guarantees that either all rows are processed or none of them are.
 
 ### Transactionality
 
-**Transactionality** groups multiple operations into a single unit. All transactions succeed together, or all fail and roll back together. This ensures that target tables are never left half-updated.
+Transactionality extends atomicity to a group of transactions, such that multiple operations are grouped into a single unit. Just as atomicity mandates that each _operation_ either succeeds completely or makes no changes, transactionality mandates that an entire _group of transactions_ either succeed completely or make no changes. That is, the group of transactions either all succeed or all fail and roll back together. Atomicity is a prerequisite for transactionality, in that individual transactions must function atomically in order for a group of operations to be considered transactional.
 
-> Example: If a pipeline updates three target tables, transactionality guarantees that either all three are updated or none of them are.
+If a Prophecy pipeline updates multiple target tables, transactionality guarantees that either all are updated or none of them are.
 
 ### Idempotency
 
 **Idempotency** means re-running an operation with the same inputs leaves the warehouse in the same end state. Impdepotency is critical in distributed systems, where retries and re-runs are common. Without it, duplicate rows or inconsistent states can silently creep in.
 
-### Idempotency quick rules
+#### Idempotency quick rules
 
-| Write Pattern                            | Idempotent?                     | Notes                                                              |
-| ---------------------------------------- | ------------------------------- | ------------------------------------------------------------------ |
-| **Append / Insert** (to a table or file) | Never                           | Re-runs add duplicate rows.                                        |
-| **Merge / Upsert**                       | If keys & predicate are correct | Use a stable `unique_key`. Equivalent to Prophecy’s _Merge_ write. |
+| Write Pattern                                                     | Idempotent?                                                                                                  | Notes                                                                  |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------- |
+| **Append / Insert** (to a table or file)                          | Never                                                                                                        | Re-runs add duplicate rows.                                            |
+| **Merge / Upsert**                                                | If keys & predicate are correct                                                                              | Use a stable `unique_key`. Equivalent to Prophecy’s _Merge_ write.     |
+| **Destructive Load** (truncate+insert / create-or-replace / swap) | If SELECT is deterministic                                                                                   | Safe as long as the SELECT doesn’t use random or time-based functions. |
+| **Incremental Insert Overwrite** (+ `partition_by`)               | Per partition, if your WHERE/partition filtering is deterministic and only rewrites the intended partitions. |
+| Only the targeted partitions are rewritten.                       |
 
 <!-- check/add In dbt: materialized: incremental with incremental_strategy: merge and a valid unique_key. -->
-
-| **Destructive Load** (truncate+insert / create-or-replace / swap) | If SELECT is deterministic | Safe as long as the SELECT doesn’t use random or time-based functions. |
-
 <!-- check/add In dbt: materialized: table (adapter does a replace/swap); also insert_overwrite by partition (see below).
 -->
 
-| **Incremental Insert Overwrite** (+ `partition_by`) | Per partition, if your WHERE/partition filtering is deterministic and only rewrites the intended partitions.
-| Only the targeted partitions are rewritten. |
-
-### What breaks idempotency
+#### What breaks idempotency
 
 Watch for operations that appear safe but are not:
 
@@ -77,7 +82,7 @@ Watch for operations that appear safe but are not:
 - **Sequence / identity values** in destructive loads (values can change each run).
 - **ORDER BY … LIMIT** used to persist a subset without a stable tie-breaker.
 
-### Practical Guidance
+#### Practical Guidance
 
 :::info
 If you must append, add a deduplication step. Treat append models as **non-idempotent by design**.
@@ -95,14 +100,6 @@ Ensure `unique_key` is truly unique and stable. Prefer natural/business keys or 
 
 - Avoid persisting run timestamps or sequence values in target tables.
 - If you need lineage, capture it separately in an **audit table**.
-
-### Why This Matters in Prophecy
-
-- **Atomicity** prevents half-finished results.
-- **Transactionality** ensures related steps succeed or fail together.
-- **Idempotency** makes retries and re-runs safe.
-
-Together, these principles help you build Prophecy pipelines that are robust, repeatable, and trustworthy.
 
 ## What's next
 
