@@ -264,41 +264,45 @@ When the app runs, users can enter their own rate in `discount_rate`.
 
 ### Long example
 
-Suppose you have a dataset where you want to control how many rows are returned. You can create a **Long** pipeline parameter called `max_records` to set this limit.
+Use a **Long** pipeline parameter to set a monthly data cap (in MB) and flag or filter subscribers who exceed it.
 
 #### Create the Long parameter
 
 1. Open your project and select **Parameters** in the header.
 1. Click **+ Add Parameter**.
-1. Name the parameter `max_records`.
+1. Name the parameter `usage_cap_mb`.
 1. Select the **Type** and choose **Long**.
 1. Click **Select expression > Value**.
-1. Enter `1000000` and click **Done**.
+1. Enter `50000` (≈ 50 GB) and click **Done**.
 1. Click **Save**.
 
-#### Use the Long parameter in a gem
+#### Compute total usage per subscriber, then filter with the Long parameter
 
-Next, you’ll create or edit a gem that uses the `max_records` parameter to cap the number of rows.
-
-1. Add a **Limit** gem.
-1. In **Limit Condition**, start typing `max_records`.
-1. Select `max_records`. Prophecy fills in the **Limit Condition** field with `{{ var('max_records') }}`.
+1. Add an **Aggregate** gem after your events table (e.g., `telecom_usage`).
+1. Apply **Group By** to `subscriber_id`.
+1. Add **Aggregations**, that applies `SUM(usage_mb)` as `total_usage_mb`
 1. Click **Save**.
+1. Add a **Filter** gem after the **Aggregate**.
+1. Remove the default `true` expression.
+1. Select **Column > total_usage_mb**.
+1. Choose **Greater than ( > )**.
+1. Click **Select expression > Configuration Variable** and select `usage_cap_mb`.
+1. Click **Save**.
+1. Add a **Table** gem called `usage_over_cap` and connect it to the **Filter** gem.
 
-Add a Target table gem called `products_limited` and connect it to the Reformat gem
+This uses a **Long** parameter in a comparison (no Limit gem) to produce a dynamic list of subscribers over the cap.
 
-#### Create a Prophecy app to adjust record limits
+#### Create a Prophecy app to adjust the cap
 
-1. Add a Prophecy app called `products`.
+1. Add a Prophecy app called `usage_cap_monitor`.
 1. Add a title for the app.
 1. Select **Interactive > Number Input**.
-1. Select `max_records` for **Configuration field**.
-1. Give the field a label, such as **Maximum Rows**.
-1. Open the **Data Integration** dropdown and select **Data Preview**.
-1. In the **Inspect** tab, choose `products_limited` for **Data table**.
-1. Select columns to display.
+1. Select `usage_cap_mb` for **Configuration field** and label it **Monthly Cap (MB)**.
+1. Open **Data Integration > Data Preview**.
+1. In the **Inspect** tab, choose `usage_over_cap` for **Data table**.
+1. Select columns to display (e.g., `subscriber_id`, `total_usage_mb`, `billing_period`).
 
-When the app runs, users can increase or decrease the `max_records` value depending on their performance needs.
+When the app runs, users can raise or lower the cap by changing `usage_cap_mb` to see which subscribers are affected.
 
 ### Float example
 
