@@ -56,7 +56,7 @@ Parameters are useful in both [creating](/analysts/create-business-applications)
 
 ### Array example
 
-Suppose you have a dataset with a column called `region`. You can use an **Array** pipeline parameter called `region_list` to filter rows that match one of several regions.
+This example uses a dataset with a column called `region`. You can use an **Array** pipeline parameter called `region_list` to filter rows that match one of several regions.
 
 #### Create the Array parameter
 
@@ -89,20 +89,20 @@ Next, you’ll filter your dataset to only include rows where the `region` colum
 1. Add options such as `US-East`, `US-West`, `Europe`, `Mexico`, `Brazil`, `LAC`, and `Andean`.
 1. Open the **Data Integration** dropdown and select **Data Preview**.
 1. In the **Inspect** tab, choose your filtered dataset table.
-1. Select the columns to display.
+1. Select columns to display.
 
-When the app runs, users can substitute values for `region_list`. For example, a sales team in Latin America might set `['Mexico','LAC','Brazil','Andean']` to view their focus regions.
+When the app runs, users can substitute values for `region_list`. For example, a sales team in Latin America might enter `['Mexico','LAC','Brazil','Andean']` to view their focus regions.
 
 ### Date example
 
-Suppose you want to create an application that shows sales data for a specific date range, such as a weekly or monthly snapshot. You can use two **Date** pipeline parameters: `start_date` and `end_date`.
+This example uses a dataset with timestamped sales data. You can use two **Date** pipeline parameters, `start_date` and `end_date` to configure a snapshot of sales data by a time period such as week or month.
 
 #### Create the Date parameters
 
-1. Open your project and select **Parameters** in the header.
+1. Open your pipeline and select **Parameters** in the header.
 1. Click **+ Add Parameter**.
 1. Name the parameter `start_date`.
-1. Select the **Type** and choose **Date**.
+1. Select **Type** and choose **Date**.
 1. Click **Select expression > Value**.
 1. Enter `09/01/2025` (or another default start date) and click **Done**.
 1. Click **Save**.
@@ -112,22 +112,28 @@ Suppose you want to create an application that shows sales data for a specific d
 
 1. Add a **Filter** gem to your pipeline.
 1. Remove the default `true` expression.
-1. Select **Column > sales_date** (or your dataset’s date column).
+1. Select **Column** and select `sales_date` (or your dataset’s date column).
 1. Add an expression such as `sales_date >= start_date AND sales_date <= end_date`.
 1. For both `start_date` and `end_date`, click **Select expression > Configuration Variable** and select the corresponding parameter.
+1. Add a Target table gem called `snapshot_by_date` and connect it to the Filter gem.
 1. Click **Save**.
 
 #### Create a Prophecy app with date fields
 
 1. Add a Prophecy app called `sales_snapshot`.
-1. Add a title for the app.
+1. Add a title.
 1. Select **Interactive > Date Field**.
 1. For **Configuration field**, choose `start_date`.
 1. Add another **Date Field** and select `end_date`.
+1. Open the **Data Integration** dropdown and select **Data Preview**.
+1. In the **Inspect** tab, choose `snapshot_by_date`.
+1. Select columns to display.
+
+When the app runs, users can enter their own values for `start_date` and `end_date`.
 
 ### String example
 
-Suppose you have a dataset with a column called `customer_category`. You can use a **String** pipeline parameter called `customer_type` to filter rows for a specific group of customers.
+This example uses a dataset with a column called `customer_category` with values such as `Premium`, `Basic`, and `Standard`. You can use a **String** pipeline parameter called `customer_type` to filter rows for a specific group of customers.
 
 #### Create the String parameter
 
@@ -149,6 +155,7 @@ Next, you’ll filter your dataset based on the `customer_type` parameter.
 1. Choose the **Equals ( = )** operator.
 1. Click **Select expression > Configuration Variable**.
 1. Select `customer_type`.
+1. Add a Target table gem called `filtered_customers` and connect it to the Reformat gem.
 1. Click **Save**.
 
 #### Create a Prophecy app to select customer groups
@@ -159,19 +166,14 @@ Next, you’ll filter your dataset based on the `customer_type` parameter.
 1. Give the dropdown a label.
 1. Select `customer_type` for **Configuration field**.
 1. Open the **Data Integration** dropdown and select **Data Preview**.
-1. In the **Inspect** tab, choose your filtered dataset table.
+1. In the **Inspect** tab, choose `filtered_customers`.
 1. Select the columns to display.
 
 When the app runs, users can switch the `customer_type` parameter from `Premium` to `Standard` (or another category) to explore different customer groups.
 
 ### Boolean example
 
-Suppose you have two datasets, one with current reviews called `customer_reviews` and one with archived reviews called `archived_reviews`. You can use a Boolean pipeline parameter to create a Prophecy app that lets users choose whether to include archived reviews.
-
-For Boolean values, you could create a pipeline parameter called `include_archived` with a value of `false`.
-In a Filter gem, you include code that uses the `include_archived` parameter to determine whether to include archived rows:
-
-Users running the Prophecy app can set `include_archived = true` to include historical records.
+This example uses a dataset of customer reviews, in which reviews older than 5 years are designated as `archived`, using a column called `archived_reviews` with Boolean values. You can use a Boolean pipeline parameter to create a Prophecy app that lets users choose whether to include archived reviews.
 
 First, you'll set up an `include_archived` parameter, which will be a Boolean value.
 
@@ -183,50 +185,38 @@ First, you'll set up an `include_archived` parameter, which will be a Boolean va
 1. Click **False** and click **Done**.
 1. Click **Save**.
 
-Add `customer_reviews` and `archived_reviews` as Table gems.
-
 #### Use the Boolean parameter in an expression
 
 Next, you'll create a Filter gem that uses the `include_archived` pipeline parameter in an expression.
 
-1. Create and open the Filter gem.
+1. Create and open the **Filter** gem.
 1. Remove the default `true` expression.
 1. Click **Select expression > Column** and select `archived`.
 1. In the **Select operator** dropdown, select **equals**.
 1. In the **Select expression** dropdown of the Filter condition, select **Configuration variable** and select `include_archived`.
+1. Add a Target table gem called `prod_filtered_archived` and connect it to the Filter gem.
 1. Click **Save**.
-1. Connect the Filter gem to `archived_reviews`.
 
 The output of this gem will only include rows where `include_archived` is false. In the steps below, you'll create a Prophecy app that lets users change `include_archived` to true.
-
-#### Add a UnionByName gem
-
-1. Create and open the UnionByName gem.
-1. Select **Union By Name (Allow Missing Columns)** (it should be selected by default).
-1. Connect the `customer_reviews` table and the Filter gem to the UnionByName gem.
-
-This step combines filtered rows from `archived_reviews` with rows from `customer_reviews`.
-
-Add a Target table gem called `filtered_reviews` and connect it to the UnionByName gem.
 
 #### Create a Prophecy app to show archived data
 
 1. Add a Prophecy app called Reviews.
-1. Add a Title for the app.
-1. Add a Toggle that uses `include_archived` as a Configuration field, with a label reading `Include archived reviews?`.
+1. Add a **Title** for the app.
+1. Add a **Toggle** that uses `include_archived` as a **Configuration** field, with a label reading `Include archived reviews?`.
 1. Open the **Data Integration** dropdown and select **Data Preview**.
-1. In the Inspect tab, select `filtered_reviews` for **Data table**.
+1. In the **Inspect** tab, chooses `prod_filtered_archived` for **Data table**.
 1. Select columns to display.
 
 When the app runs, users can toggle `Include archived reviews?` to include archived reviews in results.
 
 ### Double example
 
-Suppose you have a dataset that includes a column called `discount_rate` that applies a discount for customers in certain cases.
+This example uses a dataset that includes a column called `discount_rate` that applies a discount for customers in certain cases.
 
 You can use a Double pipeline parameter to create a Prophecy app that lets users adjust this rate.
 
-First, you'll set up a `discount_rate` parameter, which will be a Double value.
+First, you'll set up a `discount_rate` parameter, which will be a `Double` value.
 
 1. Open your project and select **Parameters** in the header.
 1. Click **+ Add Parameter**.
@@ -240,14 +230,13 @@ First, you'll set up a `discount_rate` parameter, which will be a Double value.
 
 Next, you'll create a Reformat gem that uses the `discount_rate` pipeline parameter in an expression.
 
-1. Create and open the Reformat gem.
+1. Create and open the [Reformat gem](/analysts/reformat).
 1. Remove the default `true` expression.
 1. Select **Column > price**
 1. Click **Select expression > Configuration Variable**.
 1. Select `discount_rate`.
+1. Add a Target table gem called `products_discounted` and connect it to the Reformat gem.
 1. Click **Save**.
-
-Add a Target table gem called `products_discounted` and connect it to the Reformat gem.
 
 #### Create a Prophecy app to show discounted products
 
@@ -260,11 +249,11 @@ Add a Target table gem called `products_discounted` and connect it to the Reform
 1. In the Inspect tab, select `products_discounted` for **Data table**.
 1. Select columns to display.
 
-When the app runs, users can enter their own rate in `discount_rate`.
+When the app runs, users can enter their own rate for `discount_rate`.
 
 ### Long example
 
-Use a **Long** pipeline parameter to set a monthly data cap (in MB) and flag or filter subscribers who exceed it.
+This example uses a dataset for a telecom company that includes aggregated usage data by month. You can use a `Long` pipeline parameter to set a monthly data cap in MB and flag or filter subscribers who exceed it.
 
 #### Create the Long parameter
 
@@ -273,24 +262,18 @@ Use a **Long** pipeline parameter to set a monthly data cap (in MB) and flag or 
 1. Name the parameter `usage_cap_mb`.
 1. Select the **Type** and choose **Long**.
 1. Click **Select expression > Value**.
-1. Enter `50000` (≈ 50 GB) and click **Done**.
+1. Enter `50000` and click **Done**.
 1. Click **Save**.
 
 #### Compute total usage per subscriber, then filter with the Long parameter
 
-1. Add an **Aggregate** gem after your events table (e.g., `telecom_usage`).
-1. Apply **Group By** to `subscriber_id`.
-1. Add **Aggregations**, that applies `SUM(usage_mb)` as `total_usage_mb`
-1. Click **Save**.
-1. Add a **Filter** gem after the **Aggregate**.
+1. Add a **Filter** gem.
 1. Remove the default `true` expression.
 1. Select **Column > total_usage_mb**.
 1. Choose **Greater than ( > )**.
 1. Click **Select expression > Configuration Variable** and select `usage_cap_mb`.
-1. Click **Save**.
 1. Add a **Table** gem called `usage_over_cap` and connect it to the **Filter** gem.
-
-This uses a **Long** parameter in a comparison (no Limit gem) to produce a dynamic list of subscribers over the cap.
+1. Click **Save**.
 
 #### Create a Prophecy app to adjust the cap
 
@@ -306,7 +289,7 @@ When the app runs, users can raise or lower the cap by changing `usage_cap_mb` t
 
 ### Float example
 
-Suppose you have a dataset with a column called `sensor_temp`. You can use a **Float** pipeline parameter called `temperature_threshold` to filter out rows below a certain temperature.
+This example uses dataset of sensor data with a column called `sensor_temp`. You can use a **Float** pipeline parameter called `temperature_threshold` to filter out rows below a certain temperature.
 
 #### Create the Float parameter
 
@@ -328,9 +311,8 @@ Next, you’ll use the `temperature_threshold` parameter to filter your data.
 1. Choose the **Greater than ( > )** operator.
 1. Click **Select expression > Configuration Variable**.
 1. Select `temperature_threshold`.
+1. Add a Table gem called `filtered_temperature` and connect it to the Filter gem.
 1. Click **Save**.
-
-Add a Table gem called `filtered_temperature` and connect it to the Filter gem.
 
 #### Create a Prophecy app to adjust sensitivity
 
