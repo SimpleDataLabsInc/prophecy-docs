@@ -18,7 +18,7 @@ const sidebars = {
 
   // But you can create a sidebar manually
   gettingStartedSidebar: [
-    "getting-started/index",
+    "index",
     {
       type: "html",
       value: '<span class="sidebar-divider" />',
@@ -91,7 +91,7 @@ const sidebars = {
     },
   ],
   platformSidebar: [
-    "index",
+    "analysts/index",
     ///------------------ ANALYSTS -------------------------///
     {
       type: "html",

@@ -1,6 +1,7 @@
 ---
 title: Overview
 id: index
+slug: /guides/index
 description: Navigate through our Platform guides to learn about the project lifecycle
 tags: []
 ---
@@ -28,7 +29,7 @@ Prophecy supports multiple personas on the platform. Search our documentation ba
 
 :::edition Enterprise Only
 
-These guides apply to users on the Enterprise Edition of Prophecy only.
+These guides apply to users on the [Enterprise Edition](/getting-started/editions/) of Prophecy only.
 
 :::
 
