@@ -112,10 +112,10 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "getting-started/index",
+            docId: "index",
             label: "Getting started",
           },
-          { type: "doc", docId: "index", label: "Platform" },
+          { type: "doc", docId: "analysts/index", label: "Guides" },
           { type: "doc", docId: "api/index", label: "API" },
           {
             to: "https://transpiler.docs.prophecy.io/",
