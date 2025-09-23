@@ -51,4 +51,4 @@ To make the most out of pipeline parameters, we suggest you:
 
 - Use meaningful parameter names that indicate their purpose.
 - Validate inputs to prevent unexpected errors during execution.
-- Keep sensitive values (e.g., API keys) in [secrets](docs/administration/secrets/secrets.md) rather than passing them as plain parameters.
+- Keep sensitive values (e.g., API keys) in [secrets](docs/administration/fabrics/prophecy-fabrics/secrets/secrets.md) rather than passing them as plain parameters.

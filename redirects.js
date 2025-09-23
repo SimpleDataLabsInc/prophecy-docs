@@ -42,6 +42,7 @@ module.exports = {
         "/administration/self-hosted/resource-monitoring/",
         "/administration/self-hosted/upgrade-backup-restore/",
         "/administration/teams-users/settings",
+        "/developer/videos/",
       ],
     },
     {
@@ -111,10 +112,6 @@ module.exports = {
     {
       to: "/administration/prophecy-deployment",
       from: ["/architecture/deployment", "/administration/deployment"],
-    },
-    {
-      to: "/administration/secrets/",
-      from: ["/Spark/secret-management/"],
     },
     {
       to: "/administration/team-based-access",
@@ -838,11 +835,6 @@ module.exports = {
       ],
     },
     {
-      to: "/getting-started",
-      from: "/developer/videos/",
-    },
-
-    {
       to: "/pipelines",
       from: "/concepts/project/pipeline",
     },
@@ -863,6 +855,10 @@ module.exports = {
         "/concepts/copilot/",
         "/copilot/copilot-data-privacy",
       ],
+    },
+    {
+      to: "/engineers/secrets",
+      from: ["/Spark/secret-management/", "/administration/secrets/"],
     },
   ],
 };

@@ -116,7 +116,7 @@ Because Prophecy can't retrieve the exact token expiration time from Databricks,
 
 ### Personal Access Token (PAT)
 
-When you choose **Personal Access Token** (PAT) for the authentication method, you'll authenticate using a [Databricks personal access token](https://docs.databricks.com/aws/en/dev-tools/auth/pat). When you set up the connection, you will use a [secret](docs/administration/secrets/secrets.md) to enter your PAT.
+When you choose **Personal Access Token** (PAT) for the authentication method, you'll authenticate using a [Databricks personal access token](https://docs.databricks.com/aws/en/dev-tools/auth/pat). When you set up the connection, you will use a [secret](docs/administration/fabrics/prophecy-fabrics/secrets/secrets.md) to enter your PAT.
 
 Using the PAT authentication method:
 
