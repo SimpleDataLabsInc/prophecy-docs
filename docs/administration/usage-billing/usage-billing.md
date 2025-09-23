@@ -20,8 +20,8 @@ Prophecy billing is determined by edition. Self-serve billing is available for F
 
 Free and Professional Editions use a credit-based billing model managed through Stripe.
 
-- **Free Edition**: 5 credits/month.
-- **Professional Edition**: base credits included; extra usage pay-as-you-go.
+- **Free Edition**: 5 credits per month.
+- **Professional Edition**: includes a fixed number of base credits per month; extra usage is pay-as-you-go.
 
 ### Plan management
 
@@ -32,19 +32,20 @@ The diagram below demonstrates what happens when a user on the Professional Edit
 <Mermaid
 value={`graph TD
 %% Users and their teams
-UserA[👤 User A] --> |becomes team admin|TeamA[Team A<br/>Professional Edition Plan<br/>2 users]
+
+UserA[User A] --> |becomes team admin|TeamA[Professional Edition Plan<br/>Team A<br/>2 users]
 UserA -->|invites| UserB
 UserB[User B] --> |becomes standard user|TeamA
-UserB --> |becomes team admin|TeamB[Team B<br/>Free Edition Plan<br/>1 user]
+UserB --> |becomes team admin|TeamB[Free Edition Plan<br/>Team B<br/>1 user]
 
     %% Each team has a fabric
     TeamA -->|auto-provisions| FabricA[Fabric A]
     TeamB -->|auto-provisions| FabricB[Fabric B]
 
     %% Styling
-    classDef user fill:#e1f5fe,stroke:#bdbdbd,stroke-width:1px
-    classDef team fill:#f3e5f5,stroke:#bdbdbd,stroke-width:1px
-    classDef other fill:#f5f5f5,stroke:#bdbdbd,stroke-width:1px
+    classDef user fill:#e1f5fe,stroke:#bdbdbd,stroke-width:1px,color:#1c1e21
+    classDef team fill:#f3e5f5,stroke:#bdbdbd,stroke-width:1px,color:#1c1e21
+    classDef other fill:#f5f5f5,stroke:#bdbdbd,stroke-width:1px,color:#1c1e21
 
     class UserA,UserB user
     class TeamA,TeamB team
@@ -99,7 +100,7 @@ To update your payment method:
 1. Under **Payment method**, click **Manage**.
 1. Follow the instructions in Stripe to update your payment method.
 
-### Upgrade plans
+### Upgrade plan
 
 To upgrade from the Free Edition to the Professional Edition:
 
