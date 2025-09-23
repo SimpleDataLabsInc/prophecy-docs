@@ -25,7 +25,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Concepts",
+      label: "Core concepts",
       items: [
         "administration/teams-users/teams-users",
         "getting-started/concepts/Fabric",
@@ -51,7 +51,6 @@ const sidebars = {
         "getting-started/quick-starts/agent-quick-start",
         "getting-started/quick-starts/analysts-qs",
         "getting-started/quick-starts/engineers-qs",
-        "getting-started/quick-starts/databricks-partner-connect",
       ],
     },
     {
@@ -65,6 +64,15 @@ const sidebars = {
         "getting-started/tutorials/sql-with-prophecy",
         "getting-started/tutorials/spark-with-databricks",
         "getting-started/tutorials/sql-with-snowflake",
+      ],
+    },
+    {
+      type: "category",
+      label: "Platform setup",
+      items: [
+        "getting-started/setup/prophecy-express-guide",
+        "getting-started/setup/prophecy-enterprise-guide",
+        "getting-started/setup/databricks-partner-connect",
       ],
     },
     {
@@ -1048,6 +1056,7 @@ const sidebars = {
       link: { type: "doc", id: "api/trigger-pipeline/trigger-pipeline-api" },
       items: ["api/trigger-pipeline/rest-api-gem-trigger"],
     },
+    "api/deploy-project/deploy-project",
   ],
 };
 
