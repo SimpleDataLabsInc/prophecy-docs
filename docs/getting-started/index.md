@@ -1,37 +1,46 @@
 ---
-title: Getting started
+title: Overview
 id: index
-sidebar_label: Overview
-description: Getting started with Prophecy
+description: Navigate through our Platform guides to learn about the project lifecycle
 tags: []
 ---
 
 import { Card, CardContainer } from "@site/src/components/card";
 
-Prophecy provides a unified platform to meet your data requirements. Through low-code and no-code approaches, Prophecy enhances productivity with AI-powered development, native orchestration, and straightforward collaboration between engineers and analysts.
+Prophecy supports multiple personas on the platform. Search our documentation based on your role and use case.
 
-### Fundamentals
-
-Explore the fundamentals as you get started with Prophecy.
+### Business Analysts
 
 <CardContainer>
-  <Card title="Teams" to="/administration/teams-users/teams-users" icon="/img/icons/team.svg">
-    Collaborate with team members to develop and deploy pipelines.
+  <Card title="Pipeline Development" to="/analysts/pipeline-development" icon="/img/icons/pipeline.svg">
+    Build pipelines using gems, functions, tests, visual expressions, and more.
   </Card>
-  <Card title="Projects" to="/projects" icon="/img/icons/project.svg">
-    Learn about your primary workspace in Prophecy for building pipelines.
+  <Card title="Scheduling" to="/analysts/scheduling" icon="/img/icons/calendar.svg">
+    Configure pipelines to run on an automated schedule.
   </Card>
-  <Card title="Fabrics" to="/fabrics" icon="/img/icons/environment.svg">
-    Configure and manage execution environments for your data processing workloads.
+  <Card title="Prophecy Apps" to="/analysts/business-applications" icon="/img/icons/publish-to-app.svg">
+    Run data pipelines through intuitive, form-based interfaces.
   </Card>
-  <Card title="Editions" to="/administration/architecture" icon="/img/icons/auto-layout.svg">
-    Explore different Prophecy platform versions and their feature capabilities.
+</CardContainer>
+<br />
+
+### Data Engineering
+
+:::edition Enterprise Only
+
+These guides apply to users on the Enterprise Edition of Prophecy only.
+
+:::
+
+<CardContainer>
+  <Card title="Fabric Setup" to="/administration/fabrics/prophecy-fabrics/" icon="/img/icons/environment.svg">
+    Create Spark fabrics or data modeling fabrics to run pipelines and models.
   </Card>
-  <Card title="Release Notes" to="/release_notes/" icon="/img/icons/target-d.svg">
-    Stay updated with the latest features, improvements, and bug fixes in Prophecy.
+  <Card title="Pipeline Development" to="/analysts/pipeline-development" icon="/img/icons/pipeline.svg">
+    Build Spark pipelines using gems, UDFs, business rules, and more.
   </Card>
-  <Card title="Try Prophecy" to="/quick-start" icon="/img/icons/log-in-a.svg">
-    Sign up for Prophecy and start developing your first pipelines.
+  <Card title="CI/CD" to="/engineers/ci-cd" icon="/img/icons/GIT-PULL-REQUEST.svg">
+    Learn how to set up continuous integration and deployment using environment separation and testing.
   </Card>
 </CardContainer>
 <br />

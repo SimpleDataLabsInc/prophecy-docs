@@ -30,7 +30,6 @@ const sidebars = {
         "administration/teams-users/teams-users",
         "getting-started/concepts/Fabric",
         "getting-started/concepts/project/projects",
-        "getting-started/concepts/templates",
         "getting-started/concepts/pipelines",
         "getting-started/concepts/gems",
         {
@@ -182,6 +181,7 @@ const sidebars = {
                     "analysts/development/gems/source-target/table/databricks",
                     "analysts/development/gems/source-target/table/bigquery",
                     "analysts/development/gems/source-target/table/upload-files",
+                    "analysts/development/gems/source-target/table/write-options",
                   ],
                 },
                 {
@@ -877,7 +877,6 @@ const sidebars = {
               ],
             },
             "analysts/development/models/sources-target/dynamic-target-location",
-            "analysts/development/models/sources-target/merge-approaches",
           ],
         },
         "analysts/development/models/configuration",
