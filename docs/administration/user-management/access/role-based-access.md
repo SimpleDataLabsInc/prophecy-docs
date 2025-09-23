@@ -13,7 +13,7 @@ There are three key roles in Prophecy:
 
 - **Standard users**: Can access and work within the teams they belong to
 - **Team admins**: Manage team membership and team-level resources like fabrics and connections
-- **Prophecy cluster admins**: Administer the overall Prophecy deployment and infrastructure
+- **Prophecy cluster admins ([Enterprise](/getting-started/editions/) only)**: Administer the overall Prophecy deployment and infrastructure
 
 All users start as standard users by default, with the exception of being their [personal team](#personal-team) admin. They can be granted the team admin role for specific teams, and automatically become the team admin for any team they create. In contrast, Prophecy cluster admin roles are managed by Prophecy and assigned at the deployment level.
 
@@ -42,10 +42,11 @@ Team admins manage teams and create resources for their [teams](docs/administrat
 - Creating fabrics that correspond to different execution environments
 - Setting up connections with the appropriate credentials
 - Deploying projects to run scheduled pipelines
+- **([Professional Edition](/getting-started/editions/) only)** Managing usage and billing for the team
 
-The user who creates a team is automatically assigned as its team admin. Additional team admins can be added or disabled from the **Teams** tab in **Settings**.
+The user who creates a team is automatically assigned as its team admin. Additional team admins can be added or disabled for each team.
 
-:::info
+:::note
 For recommendations regarding team setup and organization, visit [Team-based access](/administration/team-based-access).
 :::
 
@@ -58,4 +59,4 @@ Prophecy cluster admins manage clusters, infrastructure, compute resources, and 
 - Upgrading Prophecy to a newer version
 - Downloading system logs to send to Prophecy's Support team
 
-Prophecy automatically provisions one Prophecy cluster admin per deployment. Additional cluster admins can be created if required.
+Prophecy automatically provisions one Prophecy cluster admin per Enterprise Edition deployment. Additional cluster admins can be created if required.
