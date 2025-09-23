@@ -58,7 +58,7 @@ Prophecy supports the following data types for configs.
 | Data type          | Description                                                                                                     |
 | ------------------ | --------------------------------------------------------------------------------------------------------------- |
 | `string`           | A plain text value, entered via a single-line text input.                                                       |
-| `boolean`          | A true or false value, selected from a dropdown.                                                                |
+| `boolean`          | A `true` or `false` value, selected from a dropdown.                                                            |
 | `date`             | A calendar date in `dd-mm-yyyy` format, chosen using a date picker.                                             |
 | `timestamp`        | A specific date and time in `dd-mm-yyyyTHH:MM:SSZ+z` format (with time zone), selected using a datetime picker. |
 | `double`           | A 64-bit floating-point number entered in a numeric field.                                                      |
