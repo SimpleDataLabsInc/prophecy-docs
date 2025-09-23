@@ -1039,6 +1039,12 @@ const sidebars = {
         },
       ],
     },
+    {
+      type: "category",
+      label: "Usage and billing",
+      link: { type: "doc", id: "administration/usage-billing/usage-billing" },
+      items: ["administration/usage-billing/credits"],
+    },
   ],
   apiSidebar: [
     "api/index",
