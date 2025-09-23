@@ -42,6 +42,7 @@ module.exports = {
         "/administration/self-hosted/resource-monitoring/",
         "/administration/self-hosted/upgrade-backup-restore/",
         "/administration/teams-users/settings",
+        "/developer/videos/",
       ],
     },
     {
@@ -837,11 +838,6 @@ module.exports = {
         "/getting-started/getting-help/logs/config-sparknotebook",
       ],
     },
-    {
-      to: "/getting-started",
-      from: "/developer/videos/",
-    },
-
     {
       to: "/pipelines",
       from: "/concepts/project/pipeline",

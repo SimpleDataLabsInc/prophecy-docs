@@ -9,7 +9,7 @@ tags:
   - onboarding
 ---
 
-If you have access to a Databricks workspace, you can get started with Prophecy via [Databricks Partner Connect](https://docs.databricks.com/aws/en/partner-connect/). This integration lets you configure a Prophecy free trial directly from Databricks.
+If you have access to a Databricks workspace, you can get started with Prophecy via [Databricks Partner Connect](https://docs.databricks.com/aws/en/partner-connect/). This integration lets you setup a Prophecy Enterprise Edition SaaS account directly from Databricks.
 
 ## Open the Prophecy integration
 
