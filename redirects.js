@@ -114,10 +114,6 @@ module.exports = {
       from: ["/architecture/deployment", "/administration/deployment"],
     },
     {
-      to: "/administration/secrets/",
-      from: ["/Spark/secret-management/"],
-    },
-    {
       to: "/administration/team-based-access",
       from: "/administration/teams-users/team-based-access",
     },
@@ -859,6 +855,10 @@ module.exports = {
         "/concepts/copilot/",
         "/copilot/copilot-data-privacy",
       ],
+    },
+    {
+      to: "/engineers/secrets",
+      from: ["/Spark/secret-management/", "/administration/secrets/"],
     },
   ],
 };

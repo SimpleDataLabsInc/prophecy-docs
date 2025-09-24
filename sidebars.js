@@ -146,6 +146,7 @@ const sidebars = {
             "administration/fabrics/prophecy-fabrics/connections/tableau",
           ],
         },
+        "administration/fabrics/prophecy-fabrics/secrets/secrets",
       ],
     },
     {
@@ -602,15 +603,7 @@ const sidebars = {
             "administration/fabrics/sql-fabrics/bigquery",
           ],
         },
-        {
-          type: "category",
-          label: "Secrets",
-          link: {
-            type: "doc",
-            id: "administration/secrets/secrets",
-          },
-          items: ["administration/secrets/secret-providers"],
-        },
+        "administration/secrets/secret-providers",
       ],
     },
     {
