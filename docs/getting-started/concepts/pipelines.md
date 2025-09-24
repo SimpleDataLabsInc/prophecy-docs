@@ -14,9 +14,9 @@ Let's explore the core concepts of pipelines, including ingestion, egress, trans
 
 ## Ingestion and egress
 
-Ingestion refers to the process of collecting raw data from various sources, such as databases, APIs, web applications, etc. This step ensures that data is captured and stored for further processing. Egress, on the other hand, is the final step where processed data is delivered to its destination. This could be a data warehouse, a dashboard, or another external system.
+Ingestion refers to the process of collecting raw data from various sources, such as databases, APIs, web applications, and so on. This step ensures that data is captured and stored for further processing. Egress, on the other hand, is the final step where processed data is delivered to its destination. This could be a data warehouse, a dashboard, or another external system.
 
-You define how data comes in and out of your pipeline during pipeline development. Data ingestion and egress may differ depending on whether the pipelines are executed in development or production environment. The way Prophecy performs ingestion and egress will also vary between [project types](/projects).
+You define ingestion and egress during pipeline development. These may differ depending on whether the pipelines are executed in a development or production environment. The way Prophecy performs ingestion and egress will also vary between [project types](/projects).
 
 ## Data transformation
 
@@ -34,15 +34,13 @@ During deployment, you configure the environment, such as selecting the appropri
 
 When your pipelines are deployed, you can make sure they run as expected using our built-in [monitoring](/analysts/monitoring) feature.
 
-## Atomicity, transactionality, and idempotency
+## Ensuring data is consistently written in egress
 
-When designing pipelines, three principles ensure the reliable transfer of data: atomicity, transactionality, and idempotency.
+Egress may involve writing to external systems or writing to Prophecy fabrics. Because of the nature of distributed systems, it's important to understand key principles of writing data consistently: atomicity, transactionality, and idempotency.
 
 - **Atomicity** prevents half-finished results.
 - **Transactionality** ensures grouped steps succeed or fail together.
 - **Idempotency** makes retries and re-runs safe.
-
-Together, these principles let you build Prophecy pipelines that are robust, repeatable, and trustworthy.
 
 ### Atomicity and transactionality
 
@@ -57,7 +55,7 @@ In order for Prophecy Pipelines to be fully transactional, you must
 
 ### Idempotency
 
-Idempotency means re-running a pipeline with the same inputs leaves the target table or warehouse in the same end state. Impdepotency is critical in distributed systems, where retries and re-runs are common. Without it, duplicate rows or inconsistent states can silently creep in.
+Idempotency means re-running a pipeline with the same inputs leaves the target table or warehouse in the same end state. Without idempotency, you may produce, duplicate rows or inconsistent states.
 
 #### Idempotency quick rules for Prophecy pipelines
 
@@ -74,21 +72,15 @@ Idempotency means re-running a pipeline with the same inputs leaves the target t
 
 #### What breaks idempotency
 
-Watch for operations that appear safe but are not:
+Watch for operations that appear to be safe but are not:
 
 - **Non-deterministic functions** persisted to columns (`current_timestamp`, `random()`, `uuid_generate_v4()`), unless part of the key.
 - **Sequence / identity values** in destructive loads (values can change each run).
 - **ORDER BY … LIMIT** used to persist a subset without a stable tie-breaker.
 
-#### Practical Guidance
-
-:::info
-If you must append, add a deduplication step. Treat append models as **non-idempotent by design**.
-:::
-
 #### Append
 
-Use a unique index or `MERGE` into a canonical table to remove duplicates.
+If you must append, add a deduplication step. Treat append models as non-idempotent by design. Use a unique index or `MERGE` into a canonical table to remove duplicates.
 
 #### Merge / Upsert
 
@@ -96,12 +88,11 @@ Ensure that the `unique_key` is truly unique and stable. Prefer natural/business
 
 #### Destructive Loads
 
-- Avoid persisting run timestamps or sequence values in target tables.
-- If you need lineage, capture it separately in an **audit table**.
+Avoid persisting run timestamps or sequence values in target tables. If you need lineage, capture it separately in an **audit table**.
 
 ## What's next
 
-Learn about different forms of pipeline development:
+Learn about different types of pipeline development:
 
 - [Pipeline development for Analysts](docs/analysts/development/development.md) using Prophecy Automate and SQL warehouse.
 - [Pipeline development for Engineers](/engineers/pipeline-development) using Spark execution environments.
