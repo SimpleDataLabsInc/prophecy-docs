@@ -15,11 +15,11 @@ Once you have developed a [Spark pipeline](/engineers/pipelines) using Prophecy,
 
 ### Your first job
 
-You can create a job from two places. If you're going to schedule only a single pipeline, the easiest way to build a job for the pipeline is to do it directly from the pipeline editor screen. This way your job is automatically initialized with the pipeline you create it from.
+You can create a job from two places. If you're going to schedule only a single pipeline, the easiest way to build a job for the pipeline is to do it directly from the pipeline editor screen. This way your job is automatically initialized with the pipeline.
 
 ![Databricks job Creation From pipeline](img/databricks-job-creation-from-pipeline.png)
 
-To build a job from a pipeline, navigate to your pipeline, and click on the Schedule button (1). That opens a modal that shows all the jobs that refer to this job or allow you to create a completely new job from scratch. Upon clicking Create New (2) you are redirected to the [job building page](/engineers/databricks-jobs/#building-the-job).
+To build a job from a pipeline, navigate to your pipeline, and click the Schedule button (1). That opens a modal that shows all the jobs that refer to this job or allow you to create a completely new job from scratch. Upon clicking Create New (2) you are redirected to the [job building page](/engineers/databricks-jobs/#building-the-job).
 
 ![Databricks Job Creation](img/databricks-job-creation.png)
 
@@ -27,17 +27,17 @@ Alternatively, if you'd like to create a new job completely from scratch, you ca
 
 When you create a new job, you're asked for the following details:
 
-| Field Name        | Description                                                  |
-| ----------------- | ------------------------------------------------------------ |
-| Project           | Which [Project](/projects) to create the job in. This controls who has access to the job, groups jobs together for lineage, and allows you to use pipelines already published within that project. |
-| Branch            | Which Git branch to use when developing this job.            |
-| Name              | Unique job name.                                             |
-| Tags              | Any custom tags added to the job. See https://docs.databricks.com/aws/en/admin/account-settings/usage-detail-tags. |
-| Scheduler         | The underlying engine that's going to execute your job. Databricks is recommended. |
-| Fabric            | The [execution fabric](docs/getting-started/concepts/fabrics.md) to which the job is going to be deployed. |
-| Job Size          | The [default size](docs/getting-started/concepts/fabrics.md) of the cluster that's going to be created for the job to run. |
+| Field Name        | Description                                                                                                                                                                                                                                   |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Project           | Which [Project](/projects) to create the job in. This controls who has access to the job, groups jobs together for lineage, and allows you to use pipelines already published within that project.                                            |
+| Branch            | Which Git branch to use when developing this job.                                                                                                                                                                                             |
+| Name              | Unique job name.                                                                                                                                                                                                                              |
+| Tags              | Any custom tags added to the job. See https://docs.databricks.com/aws/en/admin/account-settings/usage-detail-tags.                                                                                                                            |
+| Scheduler         | The underlying engine that's going to execute your job. Databricks is recommended.                                                                                                                                                            |
+| Fabric            | The [execution fabric](docs/getting-started/concepts/fabrics.md) to which the job is going to be deployed.                                                                                                                                    |
+| Job Size          | The [default size](docs/getting-started/concepts/fabrics.md) of the cluster that's going to be created for the job to run.                                                                                                                    |
 | Schedule Interval | Defines how often your job is going to run. The interval is defined using the [Quartz format](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html). You can click on the clock icon to select the interval. |
-| Alerts email      | Comma separated list of emails that are going to receive notifications on specific job status events (start, failure, or success). |
+| Alerts email      | Comma separated list of emails that are going to receive notifications on specific job status events (start, failure, or success).                                                                                                            |
 
 ### Building the job
 
@@ -47,9 +47,9 @@ Now that you've created your first job, you can start adding gems to the canvas 
 
 #### Conditional execution (Run-if)
 
-Draft: *Run-if can reference upstream task statuses/outputs and is persisted in the job JSON (ties to Visual == Code).* Run if lets you set conditional logic for whether a downstream task should execute depending on the outcomes of upstream  tasks. See
+**Draft: _Run-if can reference upstream task statuses/outputs and is persisted in the job JSON (ties to Visual == Code)._ Run if lets you set conditional logic for whether a downstream task should execute depending on the outcomes of upstream tasks. See**
 
-https://docs.databricks.com/aws/en/jobs/run-if
+**https://docs.databricks.com/aws/en/jobs/run-if**
 
 Two gem types are available when defining Databricks jobs:
 
@@ -80,25 +80,26 @@ The visual graph created on the jobs page is automatically converted to code (JS
 ![Example Configuration](img/databricks-job-config-example.png)
 
 ---
+
 <!-- check new fields below -->
 
-| Field Name                       | Description                                                  |
-| -------------------------------- | ------------------------------------------------------------ |
-| Scheduler                        | The underlying engine that's going to execute your job. Databricks is recommended. |
-| Fabric                           | The [execution fabric](docs/getting-started/concepts/fabrics.md) to which the job is going to be deployed. |
-| Cluster Size                     | The [default size](docs/getting-started/concepts/fabrics.md) of the cluster that's going to be created for the job to run. |
-| Cluster Mode                     | Can be selected as `Single` (all gems within the job re-use the same Cluster) or `Multi` (all gems within the job run on a separate new cluster). |
-| Tags                             | Any custom tags added to the job. See https://docs.databricks.com/aws/en/admin/account-settings/usage-detail-tags. |
+| Field Name                       | Description                                                                                                                                                                                                                                   |
+| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Scheduler                        | The underlying engine that's going to execute your job. Databricks is recommended.                                                                                                                                                            |
+| Fabric                           | The [execution fabric](docs/getting-started/concepts/fabrics.md) to which the job is going to be deployed.                                                                                                                                    |
+| Cluster Size                     | The [default size](docs/getting-started/concepts/fabrics.md) of the cluster that's going to be created for the job to run.                                                                                                                    |
+| Cluster Mode                     | Can be selected as `Single` (all gems within the job re-use the same Cluster) or `Multi` (all gems within the job run on a separate new cluster).                                                                                             |
+| Tags                             | Any custom tags added to the job. See https://docs.databricks.com/aws/en/admin/account-settings/usage-detail-tags.                                                                                                                            |
 | Schedule Interval                | Defines how often your job is going to run. The interval is defined using the [Quartz format](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html). You can click on the clock icon to select the interval. |
-| Concurrent runs                  | Maximum concurrent runs for job.  |
-| Queue mode                       | `true` or `false`. `true` enables queuing for the job.       |
-| Metric thresholds (jobs per gem) | Configure optional threshold alerts for jobs per gem.        |
-| Job Configuration                | Concurrent runs: “Maximum parallel active runs for this job.”<br />Queue (serialize excess runs). |
-| Pipeline level Timeout           | Timeout at pipeline level                                    |
-| Alerts Email for pipeline        | Comma separated list of emails, that are going to receive notifications on specific job status events (job start, failure, or success) for entire pipeline. |
-| Per Gem Timeout                  | Timeout for each gem in job pipeline                         |
-| Number of retries per gem        | Number of retries for each gem in job pipeline               |
-| Alerts Email per gem             | Comma separated list of emails that are going to receive notifications on specific job status events (start, failure, or success) for each gem in job pipeline. |
+| Concurrent runs                  | Maximum concurrent runs for job.                                                                                                                                                                                                              |
+| Queue mode                       | `true` or `false`. `true` enables queuing for the job.                                                                                                                                                                                        |
+| Metric thresholds (jobs per gem) | Configure optional threshold alerts for jobs per gem.                                                                                                                                                                                         |
+| Job Configuration                | Concurrent runs: “Maximum parallel active runs for this job.”<br />Queue (serialize excess runs).                                                                                                                                             |
+| Pipeline level Timeout           | Timeout at pipeline level                                                                                                                                                                                                                     |
+| Alerts Email for pipeline        | Comma separated list of emails, that are going to receive notifications on specific job status events (job start, failure, or success) for entire pipeline.                                                                                   |
+| Per Gem Timeout                  | Timeout for each gem in job pipeline                                                                                                                                                                                                          |
+| Number of retries per gem        | Number of retries for each gem in job pipeline                                                                                                                                                                                                |
+| Alerts Email per gem             | Comma separated list of emails that are going to receive notifications on specific job status events (start, failure, or success) for each gem in job pipeline.                                                                               |
 
 To change the job name itself, go to Prophecy's metadata page. Locate the job within a project, and click the pencil icon.
 
