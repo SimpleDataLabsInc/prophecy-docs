@@ -1,15 +1,17 @@
 ---
-title: Microsoft Entra ID (formerly Azure Active Directory) with LDAP
-sidebar_label: Microsoft Entra ID with LDAP
+title: Microsoft Entra ID with LDAP
 id: active_directory
 description: Authentication using Microsoft Entra ID with LDAP
-sidebar_position: 2
 tags:
   - authentication
   - azure
 ---
 
-Learn how to configure Active Directory with LDAP as an identity provider for Prophecy.
+:::edition Enterprise
+Available for Enterprise Edition only.
+:::
+
+Learn how to configure Microsoft Entra ID (formerly Azure Active Directory) with LDAP as an identity provider for Prophecy.
 
 ## Overview
 

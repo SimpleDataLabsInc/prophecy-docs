@@ -1,36 +1,22 @@
 ---
-title: "Authentication"
+title: Prophecy authentication
 id: authentication
-description: Prophecy support for identity providers for authentication and authorization
-sidebar_class_name: hidden
+description: Use your identity provider to sign in to Prophecy
 tags:
   - SSO
   - authentication
   - admin
 ---
 
-Prophecy integrates with identity providers to let you log in using your external credentials.
-When accessing execution infrastructure (including Spark, schedulers, storage, and other cloud resources), Prophecy securely passes your identity in compliance with your existing authorization mechanisms.
-
-We currently support the following options for Prophecy login:
-
-| Method             | Description                                                                                           |
-| ------------------ | ----------------------------------------------------------------------------------------------------- |
-| Prophecy Managed   | Use credentials managed directly by Prophecy.                                                         |
-| LDAP               | Authenticate via LDAP, integrating with your organization's directory services.                       |
-| SAML               | Leverage SAML to log in with identity providers such as Google, Okta, Microsoft Entra ID, and others. |
-| Microsoft Entra ID | Use Microsoft's cloud-based identity and access management service. Formerly Azure Active Directory.  |
-| Google             | Log in using your Google account credentials.                                                         |
+When logging in to Prophecy, you can either credentials managed directly by Prophecy, or set up SSO. Prophecy integrates with multiple identity providers to let you log in using your external credentials.
 
 :::info
-Only cluster admins on self-hosted environments have permission to view and edit SSO settings.
+Only cluster admins on self-hosted and Dedicated SaaS environments have permission to view and edit SSO settings.
 :::
-
-If you require some other authentication mechanism, please reach out to our team.
 
 ## What's next
 
-To learn more about with authentication with Prophecy, see the following pages:
+Learn how to set up different authentication methods in the following pages.
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';

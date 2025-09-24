@@ -1,15 +1,17 @@
 ---
-title: Microsoft Entra ID (formerly Azure Active Directory)
+title: Microsoft Entra ID
 id: azure-ad
-sidebar_label: Microsoft Entra ID
 description: Authentication using Microsoft Entra ID
-sidebar_position: 1
 tags:
   - authentication
   - azure
 ---
 
-Learn how to configure Microsoft Entra ID for Prophecy authentication.
+:::edition Express and Enterprise
+Available for Express and Enterprise Editions only.
+:::
+
+Learn how to configure Microsoft Entra ID (formerly Azure Active Directory) for Prophecy authentication.
 
 ## Register a new app
 

@@ -1,13 +1,17 @@
 ---
-title: SAML and SCIM
+title: Automate teams with SCIM
 id: saml-scim
-description: SAML authentication
+description: Assign users to teams and create new teams using SCIM
 tags:
   - authentication
   - saml
   - okta
   - azureAD
 ---
+
+:::edition Enterprise
+Available for Enterprise Edition only.
+:::
 
 Use this page to understand how to set up SAML authentication and SCIM provisioning in Prophecy.
 
