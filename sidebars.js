@@ -1048,9 +1048,11 @@ const sidebars = {
             id: "administration/authentication/authentication",
           },
           items: [
+            "administration/authentication/ldap",
             "administration/authentication/saml-scim",
             "administration/authentication/azure-ad",
-            "administration/authentication/active_directory",
+            "administration/authentication/google-sso",
+            "administration/authentication/group-team-mapping",
           ],
         },
         {

@@ -1,28 +1,29 @@
 ---
-title: Microsoft Entra ID with LDAP
-id: active_directory
-description: Authentication using Microsoft Entra ID with LDAP
-tags:
-  - authentication
-  - azure
+title: LDAP authentication
+description: Connect to your organization’s LDAP directory for authentication
+id: ldap
+tags: [ldap, authentication]
 ---
 
-:::edition Enterprise
-Available for Enterprise Edition only.
+:::edition Express and Enterprise
+Available for Express and Enterprise Editions only.
 :::
 
-Learn how to configure Microsoft Entra ID (formerly Azure Active Directory) with LDAP as an identity provider for Prophecy.
+Prophecy can connect to your organization’s LDAP directory for authentication.
 
-## Overview
+- You can integrate Microsoft Entra ID over LDAP by using the same configuration fields.
+- Group mapping can be enabled using [group-to-team mapping](docs/administration/authentication/group-team-mapping.md).
 
-Here are the basics steps to follow connect Prophecy with your LDAP:
+## Configuration
+
+Here are the basics steps to connect Prophecy with your LDAP directory:
 
 1. Log in to Prophecy as an admin user.
 2. Navigate to the **SSO** tab of the Prophecy **Settings** page.
 3. Under **Authentication Provider**, select LDAP.
 4. Fill out the rest of the information and click **Save**. More information about the available fields can be found below.
 
-## Host and Certs
+### Host and Certs
 
 | Parameter                     | Description                                                                                                                                                      |
 | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -31,7 +32,7 @@ Here are the basics steps to follow connect Prophecy with your LDAP:
 | Skip Certificate Verification | If a custom certificate isn't provided, this option can be used to turn on TLS certificate checks.                                                               |
 | Certificates                  | Upload trusted Root certs, client certs, and client keys.                                                                                                        |
 
-## Binds
+### Binds
 
 | Parameter               | Description                                                                                                                         |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
@@ -39,7 +40,7 @@ Here are the basics steps to follow connect Prophecy with your LDAP:
 | Bind Password           | The distinguished password for an application service account. The connector uses these credentials to search for users and groups. |
 | Username Prompt         | The attribute to display in the provided password prompt.                                                                           |
 
-## User Search
+### User Search
 
 | Parameter               | Description                                            |
 | ----------------------- | ------------------------------------------------------ |
@@ -50,7 +51,7 @@ Here are the basics steps to follow connect Prophecy with your LDAP:
 | Email Attribute         | Attribute to map to Email.                             |
 | Name Attribute          | Maps to display name of users.                         |
 
-## Group Search
+### Group Search
 
 | Parameter               | Description                                            |
 | ----------------------- | ------------------------------------------------------ |

@@ -860,5 +860,9 @@ module.exports = {
         "/copilot/copilot-data-privacy",
       ],
     },
+    {
+      to: "/administration/authentication/ldap",
+      from: "/administration/authentication/active_directory",
+    },
   ],
 };
