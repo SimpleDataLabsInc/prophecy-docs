@@ -44,30 +44,29 @@ When designing pipelines, three principles ensure the reliable transfer of data:
 
 Together, these principles let you build Prophecy pipelines that are robust, repeatable, and trustworthy.
 
-### Atomicity
+### Atomicity and transactionality
 
 Atomicity means that each operation either succeeds completely or makes no changes. This prevents pipelines from producing partial or inconsistent outputs.
 
-If a Prophecy pipeline updates a target table, atomicity guarantees that either all rows are processed or none of them are.
-
-### Transactionality
-
 Transactionality extends atomicity to a group of transactions, such that multiple operations are grouped into a single unit. Just as atomicity mandates that each _operation_ either succeeds completely or makes no changes, transactionality mandates that an entire _group of transactions_ either succeed completely or make no changes. That is, the group of transactions either all succeed or all fail and roll back together. Atomicity is a prerequisite for transactionality, in that individual transactions must function atomically in order for a group of operations to be considered transactional.
 
-If a Prophecy pipeline updates multiple target tables, transactionality guarantees that either all are updated or none of them are.
+In order for Prophecy Pipelines to be fully transactional, you must
+
+1. Write only to [Prophecy fabric](/administration/fabrics/prophecy-fabrics/) target tables.
+2. Avoid incorporating [FTP](/administration/fabrics/prophecy-fabrics/connections/sftp) delete or move.
 
 ### Idempotency
 
-**Idempotency** means re-running an operation with the same inputs leaves the warehouse in the same end state. Impdepotency is critical in distributed systems, where retries and re-runs are common. Without it, duplicate rows or inconsistent states can silently creep in.
+Idempotency means re-running a pipeline with the same inputs leaves the target table or warehouse in the same end state. Impdepotency is critical in distributed systems, where retries and re-runs are common. Without it, duplicate rows or inconsistent states can silently creep in.
 
-#### Idempotency quick rules
+#### Idempotency quick rules for Prophecy pipelines
 
 | Write Pattern                                                     | Idempotent?                                                                                                  | Notes                                                                  |
 | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------- |
 | **Append / Insert** (to a table or file)                          | Never                                                                                                        | Re-runs add duplicate rows.                                            |
-| **Merge / Upsert**                                                | If keys & predicate are correct                                                                              | Use a stable `unique_key`. Equivalent to Prophecy’s _Merge_ write.     |
+| **Merge / Upsert**                                                | If keys and predicate are correct                                                                            | Use a stable `unique_key`. Equivalent to Prophecy’s _Merge_ write.     |
 | **Destructive Load** (truncate+insert / create-or-replace / swap) | If SELECT is deterministic                                                                                   | Safe as long as the SELECT doesn’t use random or time-based functions. |
-| **Incremental Insert Overwrite** (+ `partition_by`)               | Per partition, if your WHERE/partition filtering is deterministic and only rewrites the intended partitions. | Only the targeted partitions are rewritten.                            |
+| **Incremental Insert Overwrite** (+ `partition_by`)               | Per partition, if your WHERE/partition filtering is deterministic and only rewrites the intended partitions. | Only targeted partitions are rewritten.                                |
 
 <!-- check/add In dbt: materialized: incremental with incremental_strategy: merge and a valid unique_key. -->
 <!-- check/add In dbt: materialized: table (adapter does a replace/swap); also insert_overwrite by partition (see below).
@@ -93,7 +92,7 @@ Use a unique index or `MERGE` into a canonical table to remove duplicates.
 
 #### Merge / Upsert
 
-Ensure `unique_key` is truly unique and stable. Prefer natural/business keys or durable surrogate keys. Avoid run-time values in UPDATE/INSERT sets unless explicitly required. Use **data-driven filters** (e.g., `updated_at > (select max(updated_at) from {{ this }})`), not “time of run.”
+Ensure that the `unique_key` is truly unique and stable. Prefer natural/business keys or durable surrogate keys. Avoid run-time values in UPDATE/INSERT sets unless explicitly required. Use **data-driven filters** (such as `updated_at > (select max(updated_at) from {{ this }})`), not “time of run.”
 
 #### Destructive Loads
 
