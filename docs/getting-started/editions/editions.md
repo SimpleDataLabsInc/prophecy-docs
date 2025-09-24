@@ -12,7 +12,7 @@ The sections below outline differences across deployment, security, compute, AI,
 
 ## Free and Professional Edition
 
-Free and Professional Editions are designed for data analyst teams that want to collaborate in real time without managing infrastructure. Both editions provide Prophecy-managed resources that are metered by credits. The Free Edition is functionally identical to the Professional Edition, but is limited to a single user per plan.
+Free and Professional Editions are designed for data analyst teams that want to collaborate in real time without managing infrastructure. Both editions provide Prophecy-managed resources that are metered by credits. The Free Edition is functionally identical to the Professional Edition, but is limited to 5 credits per month and a single user per plan.
 
 To get started with the Free Edition, [sign up](https://app.prophecy.ai/) and start exploring. You'll be able to upgrade to the Professional Edition after you sign in for the first time.
 
