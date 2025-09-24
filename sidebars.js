@@ -18,19 +18,18 @@ const sidebars = {
 
   // But you can create a sidebar manually
   gettingStartedSidebar: [
-    "getting-started/index",
+    "index",
     {
       type: "html",
       value: '<span class="sidebar-divider" />',
     },
     {
       type: "category",
-      label: "Concepts",
+      label: "Core concepts",
       items: [
         "administration/teams-users/teams-users",
         "getting-started/concepts/Fabric",
         "getting-started/concepts/project/projects",
-        "getting-started/concepts/templates",
         "getting-started/concepts/pipelines",
         "getting-started/concepts/gems",
         {
@@ -52,7 +51,6 @@ const sidebars = {
         "getting-started/quick-starts/agent-quick-start",
         "getting-started/quick-starts/analysts-qs",
         "getting-started/quick-starts/engineers-qs",
-        "getting-started/quick-starts/databricks-partner-connect",
       ],
     },
     {
@@ -70,8 +68,18 @@ const sidebars = {
     },
     {
       type: "category",
+      label: "Platform setup",
+      items: [
+        "getting-started/setup/prophecy-express-guide",
+        "getting-started/setup/prophecy-enterprise-guide",
+        "getting-started/setup/databricks-partner-connect",
+      ],
+    },
+    {
+      type: "category",
       label: "Editions",
       items: [
+        "getting-started/editions/editions",
         "administration/architecture",
         "administration/prophecy-deployment",
         "administration/security",
@@ -91,7 +99,7 @@ const sidebars = {
     },
   ],
   platformSidebar: [
-    "index",
+    "analysts/index",
     ///------------------ ANALYSTS -------------------------///
     {
       type: "html",
@@ -138,6 +146,7 @@ const sidebars = {
             "administration/fabrics/prophecy-fabrics/connections/tableau",
           ],
         },
+        "administration/fabrics/prophecy-fabrics/secrets/secrets",
       ],
     },
     {
@@ -181,6 +190,7 @@ const sidebars = {
                     "analysts/development/gems/source-target/table/databricks",
                     "analysts/development/gems/source-target/table/bigquery",
                     "analysts/development/gems/source-target/table/upload-files",
+                    "analysts/development/gems/source-target/table/write-options",
                   ],
                 },
                 {
@@ -593,15 +603,7 @@ const sidebars = {
             "administration/fabrics/sql-fabrics/bigquery",
           ],
         },
-        {
-          type: "category",
-          label: "Secrets",
-          link: {
-            type: "doc",
-            id: "administration/secrets/secrets",
-          },
-          items: ["administration/secrets/secret-providers"],
-        },
+        "administration/secrets/secret-providers",
       ],
     },
     {
@@ -876,7 +878,6 @@ const sidebars = {
               ],
             },
             "analysts/development/models/sources-target/dynamic-target-location",
-            "analysts/development/models/sources-target/merge-approaches",
           ],
         },
         "analysts/development/models/configuration",
@@ -1039,6 +1040,12 @@ const sidebars = {
         },
       ],
     },
+    {
+      type: "category",
+      label: "Usage and billing",
+      link: { type: "doc", id: "administration/usage-billing/usage-billing" },
+      items: ["administration/usage-billing/credits"],
+    },
   ],
   apiSidebar: [
     "api/index",
@@ -1048,6 +1055,7 @@ const sidebars = {
       link: { type: "doc", id: "api/trigger-pipeline/trigger-pipeline-api" },
       items: ["api/trigger-pipeline/rest-api-gem-trigger"],
     },
+    "api/deploy-project/deploy-project",
   ],
 };
 

@@ -97,7 +97,7 @@ For more about OAuth and how it works with Google Cloud, see [Using OAuth 2.0 to
 Use a Service Account when you want a non-user identity for authentication. This is ideal for automated or shared processes that require stable, long-term access without re-authentication interruptions.
 
 1. Create and download a [Service Account Key](https://developers.google.com/workspace/guides/create-credentials#service-account) from the Google Cloud console.
-1. Paste the full JSON content into a [Prophecy secret](/administration/secrets/secret-providers) as text. Binary upload is not supported.
+1. Paste the full JSON content into a [Prophecy secret](/analysts/secrets) as text. Binary upload is not supported.
 1. Use this secret in the **Service Account Key** field of the BigQuery connection setup.
 
 This method allows all team members with access to the fabric to use the connection in their projects. Those users inherit the access and permissions of the Service Account, as defined in its IAM roles.

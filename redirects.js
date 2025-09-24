@@ -3,8 +3,9 @@
 module.exports = {
   redirects: [
     {
-      to: "/administration/",
+      to: "/",
       from: [
+        "/administration/settings",
         "/architecture/deployment/enable-data-copilot",
         "/copilot/enable-data-copilot",
         "/architecture/deployment/private-saas/backup-restore",
@@ -20,7 +21,6 @@ module.exports = {
         "/metadata/metadata-connections",
         "/concepts/metadata",
         "/concepts/copilot/enable-data-copilot",
-        "/architecture",
         "/architecture/self-hosted/install-prophecy/installation-helm",
         "/architecture/self-hosted/install-prophecy/installation-helm/install-on-aws",
         "/architecture/self-hosted/install-prophecy/installation-marketplaces",
@@ -41,7 +41,17 @@ module.exports = {
         "/administration/self-hosted/enable-data-copilot/",
         "/administration/self-hosted/resource-monitoring/",
         "/administration/self-hosted/upgrade-backup-restore/",
+        "/administration/teams-users/settings",
+        "/developer/videos/",
       ],
+    },
+    {
+      to: "/administration/project-types/project-creation-template",
+      from: "/templates",
+    },
+    {
+      to: "/administration/architecture",
+      from: "/architecture",
     },
     {
       to: "/administration/audit-logging",
@@ -102,14 +112,6 @@ module.exports = {
     {
       to: "/administration/prophecy-deployment",
       from: ["/architecture/deployment", "/administration/deployment"],
-    },
-    {
-      to: "/administration/secrets/",
-      from: ["/Spark/secret-management/"],
-    },
-    {
-      to: "/administration/settings",
-      from: "/administration/teams-users/settings",
     },
     {
       to: "/administration/team-based-access",
@@ -833,17 +835,16 @@ module.exports = {
       ],
     },
     {
-      to: "/getting-started",
-      from: "/developer/videos/",
-    },
-
-    {
       to: "/pipelines",
       from: "/concepts/project/pipeline",
     },
     {
       to: "/projects",
       from: "/concepts/project",
+    },
+    {
+      to: "/table-write-options",
+      from: "/engineers/merge-approaches",
     },
     {
       to: "/prophecy-ai",
@@ -854,6 +855,10 @@ module.exports = {
         "/concepts/copilot/",
         "/copilot/copilot-data-privacy",
       ],
+    },
+    {
+      to: "/engineers/secrets",
+      from: ["/Spark/secret-management/", "/administration/secrets/"],
     },
   ],
 };
