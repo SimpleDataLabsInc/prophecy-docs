@@ -82,9 +82,9 @@ const sidebars = {
         "getting-started/editions/editions",
         "administration/architecture",
         "administration/prophecy-deployment",
-        "administration/security",
       ],
     },
+    "administration/security",
     {
       type: "category",
       label: "Release notes",
