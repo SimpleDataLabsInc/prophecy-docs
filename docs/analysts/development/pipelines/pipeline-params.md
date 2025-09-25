@@ -22,9 +22,28 @@ Once you create pipeline parameters, they are available as _configuration variab
 You can also configure pipeline parameters using the [Deploy Project API](/api/deploy-project/#pipeline-configurations-structure)
 
 :::info
-Pipeline parameters are scoped to individual pipelines. They cannot be used in a project's other pipelines.
+Pipeline parameters are scoped to individual pipelines. They cannot be used in a project's other pipelines. To configure parameters that can be used across pipelines, you can use project parameters.
 :::
 
+<details>
+<summary>Expand to see the list of supported data types</summary>
+
+Prophecy supports the following data types for pipeline parameters:
+
+| Data type      | Description                                                  |
+| -------------- | ------------------------------------------------------------ |
+| Array          | A list of values of the same type, added one by one in a multi-value input field. |
+| Date           | A calendar date in `dd-mm-yyyy` format, chosen using a date picker. |
+| String         | A plain text value, entered via a single-line text input.    |
+| Boolean        | A true or false value, selected from a dropdown.             |
+| Int            | A 32-bit integer entered in a numeric field.                 |
+| Double         | A 64-bit floating-point number entered in a numeric field.   |
+| Long           | A 64-bit integer entered in a numeric field.                 |
+| Float          | A 32-bit floating-point number entered in a numeric field.   |
+| SQL Expression | A SQL expression, either configured through dropdown menus or entered as custom code. |
+
+
+</details>
 ## Add pipeline parameters
 
 To add pipeline parameters:
