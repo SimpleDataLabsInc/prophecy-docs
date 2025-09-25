@@ -119,6 +119,7 @@ const sidebars = {
         id: "administration/fabrics/prophecy-fabrics/prophecy-fabrics",
       },
       items: [
+        "administration/fabrics/prophecy-fabrics/create-fabric",
         {
           type: "category",
           label: "Connections",
@@ -134,6 +135,7 @@ const sidebars = {
             "administration/fabrics/prophecy-fabrics/connections/bigquery",
             "administration/fabrics/prophecy-fabrics/connections/onedrive",
             "administration/fabrics/prophecy-fabrics/connections/power-bi",
+            "administration/fabrics/prophecy-fabrics/connections/prophecy-managed",
             "administration/fabrics/prophecy-fabrics/connections/sharepoint",
             "administration/fabrics/prophecy-fabrics/connections/mongodb",
             "administration/fabrics/prophecy-fabrics/connections/mssql",
@@ -187,6 +189,7 @@ const sidebars = {
                     id: "analysts/development/gems/source-target/table/table",
                   },
                   items: [
+                    "analysts/development/gems/source-target/table/prophecy-managed",
                     "analysts/development/gems/source-target/table/databricks",
                     "analysts/development/gems/source-target/table/bigquery",
                     "analysts/development/gems/source-target/table/upload-files",

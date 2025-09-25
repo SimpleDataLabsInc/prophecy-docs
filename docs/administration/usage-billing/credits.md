@@ -59,3 +59,7 @@ class A,B,C entity
 class E,F,G,H,I metric
 `}
 />
+
+:::note
+The Prophecy warehouse is powered by DuckDB. Advanced users can update the DuckDB SQL queries in the **Code** view of their project to optimize computation and reduce credit consumption.
+:::
