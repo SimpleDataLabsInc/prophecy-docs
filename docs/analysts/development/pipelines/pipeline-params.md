@@ -64,7 +64,7 @@ To use pipeline parameters:
 1. Open the gem configuration. Ensure you are in the Visual tab.
 1. Select **Configuration Variables** from an Expression dropdown menu.
 
-You can use Jinja syntax to add pipeline parameters as configuration variables in the Code tab. To do so, use the following syntax: `{{ var('disc_rate') }})`. You can also use Jinja syntax in the Visual tab using the Custom code expression.
+You can use Jinja syntax to add pipeline parameters as configuration variables in the Code tab. To do so, use the following syntax: `{{ var('disc_rate') }})`. You can also use Jinja syntax in the Visual tab by using the Custom code expression.
 
 By default, the pipeline parameter's value will be used for the expression, though this value can be overwritten in both Prophecy gems and Prophecy apps.
 
@@ -256,7 +256,7 @@ First, you'll set up a `discount_rate` parameter, which will be a `Double` value
 
 #### Use the Double parameter in an expression
 
-Next, you'll create a Reformat gem that uses the `discount_rate` pipeline parameter in an expression.
+Next, you'll create a Reformat gem that uses the `discount_rate` pipeline parameter in an expression that uses Jinja syntax.
 
 1. Add a [Reformat gem](/analysts/reformat).
 1. Under **Target Column**, add `price`, `product`, and `quantity`
