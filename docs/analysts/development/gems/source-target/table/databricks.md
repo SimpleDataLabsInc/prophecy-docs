@@ -14,7 +14,7 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
   sql_package_version=""
 />
 
-In Prophecy, datasets stored in the [SQL Warehouse Connection](/administration/fabrics/prophecy-fabrics/#connections) defined in your fabric are accessed using Table gems. Unlike Source and Target gems, Table gems run directly within the data warehouse, eliminating extra orchestration steps and improving performance.
+In Prophecy, datasets stored in the [SQL Warehouse Connection](docs/administration/fabrics/prophecy-fabrics/create-fabric.md#connections) defined in your fabric are accessed using Table gems. Unlike Source and Target gems, Table gems run directly within the data warehouse, eliminating extra orchestration steps and improving performance.
 
 Available configurations for Table gems vary based on your SQL warehouse provider. This page explains how to use the Table gem for a Databricks SQL warehouse, including supported table types, configuration options, and guidance for managing Databricks tables in your Prophecy pipelines.
 

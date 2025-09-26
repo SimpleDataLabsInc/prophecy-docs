@@ -189,7 +189,7 @@ const sidebars = {
                     id: "analysts/development/gems/source-target/table/table",
                   },
                   items: [
-                    "analysts/development/gems/source-target/table/prophecy-managed",
+                    "analysts/development/gems/source-target/table/prophecy-in-memory",
                     "analysts/development/gems/source-target/table/databricks",
                     "analysts/development/gems/source-target/table/bigquery",
                     "analysts/development/gems/source-target/table/upload-files",

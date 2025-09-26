@@ -19,7 +19,7 @@ You can open runtime logs from the information footer at the bottom of the proje
 - **Timestamp**: The start time of each step.
 - **Duration**: How long each step took.
 
-When an error occurs, the message usually comes directly from the execution engine. For example, if your pipeline is running on a Databricks SQL warehouse, errors will originate from Databricks. If you’re using a Prophecy-managed warehouse, errors will come from DuckDB (the underlying warehouse). For deeper troubleshooting, consult the corresponding warehouse’s documentation to interpret the error details.
+When an error occurs, the message usually comes directly from the execution engine. For example, if your pipeline is running on a Databricks SQL warehouse, errors will originate from Databricks. If you’re using [Prophecy In Memory](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md), errors will come from DuckDB (the underlying warehouse). For deeper troubleshooting, consult the corresponding warehouse’s documentation to interpret the error details.
 
 :::note
 You can also see runtime log information by hovering over each gem in the pipeline canvas. This shows the duration and success/failure status of that step in the most recent run. Use this to quickly spot bottlenecks, failed operations, or unusually slow steps without opening the full log view.

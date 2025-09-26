@@ -13,7 +13,7 @@ Before you can run a pipeline, you need to define an execution environment where
 
 A fabric specifies everything required for execution. Depending on the fabric type, it may include:
 
-- **External compute**: This requires manual effort to connect an external environment, such as Databricks or Snowflake.
+- **Transformation compute**: This is the compute engine that will execute pipeline transformations (in a Spark cluster or a SQL warehouse).
 - **Prophecy Automate**: This is the built-in Prophecy runtime included in [Prophecy fabrics](/administration/fabrics/prophecy-fabrics/).
 - **Connections**: These are optional configurations that let you integrate with additional data providers for ingestion and egress.
 

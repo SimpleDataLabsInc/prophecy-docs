@@ -12,7 +12,7 @@ tags:
 Available for the Free and Professional Editions only.
 :::
 
-When you first sign in to Prophecy (Free or Professional Edition), you get access to automatically-provisioned [Prophecy fabrics](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md). Each fabric includes a default SQL warehouse connection called **ProphecyManaged**.
+When you first sign in to Prophecy (Free or Professional Edition), you get access to automatically-provisioned [Prophecy fabrics](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md). Each fabric includes a default SQL warehouse connection called **ProphecyManaged**. This connects you to [Prophecy In Memory](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md).
 
 This connection provides a ready-to-use environment for running SQL pipelines without additional configuration.
 

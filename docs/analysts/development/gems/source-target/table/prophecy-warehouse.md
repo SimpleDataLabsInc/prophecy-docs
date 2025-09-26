@@ -1,8 +1,8 @@
 ---
-title: Prophecy-managed
-id: prophecy-managed
-slug: /analysts/prophecy-managed
-description: Read and write tables in the Prophecy-managed warehouse
+title: Prophecy In Memory
+id: prophecy-in-memory
+slug: /analysts/prophecy-in-memory
+description: Read and write tables to Prophecy In Memory
 tags: []
 ---
 
@@ -14,13 +14,13 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
   sql_package_version=""
 />
 
-In Prophecy, datasets stored in the [SQL Warehouse Connection](/administration/fabrics/prophecy-fabrics/#connections) defined in your fabric are accessed using Table gems. Unlike Source and Target gems, Table gems run directly within the data warehouse, eliminating extra orchestration steps and improving performance.
+In Prophecy, datasets stored in the [SQL Warehouse Connection](docs/administration/fabrics/prophecy-fabrics/create-fabric.md#connections) defined in your fabric are accessed using Table gems. Unlike Source and Target gems, Table gems run directly within the data warehouse, eliminating extra orchestration steps and improving performance.
 
-Available configurations for Table gems vary based on your SQL warehouse provider. This page explains how to use the Table gem for a Prophecy-managed fabric.
+Available configurations for Table gems vary based on your SQL warehouse provider. This page explains how to use the Table gem for a [Prophecy In Memory](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md) fabric.
 
 ## Table types
 
-The following table types are supported for Prophecy-managed fabrics.
+The following table types are supported.
 
 | Name  | Description                                                                                                   | Type             |
 | ----- | ------------------------------------------------------------------------------------------------------------- | ---------------- |

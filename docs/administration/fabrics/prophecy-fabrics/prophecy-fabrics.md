@@ -20,7 +20,7 @@ Prophecy fabrics consist of two main components:
 
 - **Prophecy Automate**
 
-  Prophecy’s orchestration layer. Handles pipeline execution triggering, scheduling, and movement of data between external systems (for example, Salesforce or Tableau) and the SQL warehouse.
+  Prophecy’s orchestration layer. Handles pipeline execution triggering, scheduling, and movement of data between external systems and the SQL warehouse. External systems include Salesforce, Tableau, SFTP, S3, Oracle, and more. For the full list, visit [Connections](docs/administration/fabrics/prophecy-fabrics/connections/connections.md).
 
 ## Fabric provisioning
 
@@ -28,7 +28,7 @@ Prophecy fabrics are provisioned differently depending on your edition:
 
 | Edition                      | Description                                                                                                                                                                                                                             |
 | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Free & Professional Editions | Each user automatically receives a personal fabric that is linked to their team. These fabrics run on Prophecy’s In-Memory SQL warehouse, and all execution is fully managed by Prophecy. Usage is billed in credits.                   |
+| Free & Professional Editions | Each user automatically receives a personal fabric that is linked to their team. These fabrics run on **Prophecy In Memory**, and all execution is fully managed by Prophecy. Usage is billed in credits.                               |
 | Express Edition              | Users create fabrics manually and connect them to their own Databricks SQL warehouse. Prophecy Automate is included, while Databricks costs are managed separately by the user.                                                         |
 | Enterprise Edition           | Users create fabrics manually and can connect to any external SQL engine supported by Prophecy, including Databricks SQL warehouse and BigQuery. Prophecy Automate is included, and warehouse costs are managed separately by the user. |
 
@@ -36,7 +36,7 @@ Prophecy fabrics are provisioned differently depending on your edition:
 
 Prophecy fabrics can be connected to one of several primary SQL warehouses. The warehouse you choose provides the compute and determines the SQL dialect for all pipelines in the fabric.
 
-- **Prophecy-managed / Prophecy In-Memory**
+- **Prophecy In Memory**
 
   Exclusive to Free and Professional Editions. This warehouse is fully managed by Prophecy and powered by DuckDB. All pipeline transformations execute using the DuckDB SQL dialect.
 
