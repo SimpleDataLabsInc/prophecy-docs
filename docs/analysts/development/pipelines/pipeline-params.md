@@ -14,15 +14,27 @@ Pipeline parameters let you define reusable variables that are injected into you
 Pipeline parameters are useful for:
 
 - Customizing values when using [Prophecy Apps](/analysts/business-applications).
-- Configuring pipelines for multiple execution environments (such as development or production).
+- Configuring pipelines for multiple execution environments (such as development or production). You can also configure pipeline parameters using the [Deploy Project API](/api/deploy-project/#pipeline-configurations-structure).
 - Keeping values consistent throughout the pipeline.
 
 Once you create pipeline parameters, they are available as _configuration variables_ in [gems](/analysts/gems/) wherever you can select a visual expression.
 
-You can also configure pipeline parameters using the [Deploy Project API](/api/deploy-project/#pipeline-configurations-structure)
-
 :::info
 Pipeline parameters are scoped to individual pipelines. They cannot be used in a project's other pipelines. To configure parameters that can be used across pipelines, you can use project parameters.
+:::
+
+## Add pipeline parameters
+
+To add pipeline parameters:
+
+1. Open **Parameters** in the pipeline header.
+1. Click **+ Add Parameter**.
+1. Enter a name. This is the name you use when you call the parameter.
+1. Choose a data type (such as `array`, `date`, `string`, `int`, or `float`) that matches the parameter's use.
+1. Enter a value, or use a function or expression that computes the parameter's value. By default, these values are used during interactive execution. However, you can override the default values in certain areas like [Prophecy App configs](/analysts/business-applications) and [Pipeline gems](/analysts/pipeline-trigger-gem).
+
+:::note
+When you define parameters, variables will be automatically created in the SQL configuration.
 :::
 
 <details>
@@ -43,19 +55,6 @@ Prophecy supports the following data types for pipeline parameters:
 | SQL Expression | A SQL expression, either configured through dropdown menus or entered as custom code. |
 
 </details>
-## Add pipeline parameters
-
-To add pipeline parameters:
-
-1. Open **Parameters** in the pipeline header.
-1. Click **+ Add Parameter**.
-1. Enter a name. This is the name you use when you call the parameter.
-1. Choose a data type (such as `array`, `date`, `string`, `int`, or `float`) that matches the parameter's use.
-1. Enter a value, or use a function or expression that computes the parameter's value. These values are used by default during interactive execution. However, you can override the default values in certain areas like Prophecy app configs and pipeline gems.
-
-:::note
-When you define parameters, variables will be automatically created in the SQL configuration.
-:::
 
 ## Use parameters in pipelines
 
