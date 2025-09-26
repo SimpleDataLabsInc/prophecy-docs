@@ -261,7 +261,7 @@ Next, you'll create a Reformat gem that uses the `discount_rate` pipeline parame
 1. Add a [Reformat gem](/analysts/reformat).
 1. Under **Target Column**, add `price`, `product`, and `quantity`
 1. Under **Target Column**, add a new column called `discounted_price`.
-1. Click **Select expression > Custom code ** and enter `price * (1 - {{ var('discout_rate') }})`.
+1. Click **Select expression > Custom code** and enter `price * (1 - {{ var('discount_rate') }})`.
 1. Add a Target table gem called `products_discounted` and connect it to the Reformat gem.
 1. Click **Save**.
 
