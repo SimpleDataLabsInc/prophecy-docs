@@ -216,7 +216,6 @@ const sidebars = {
                 "analysts/development/gems/transform/fuzzy-match",
                 "analysts/development/gems/transform/encode-decode",
                 "analysts/development/gems/transform/pivot",
-                "analysts/development/gems/transform/regex",
                 "analysts/development/gems/transform/unpivot",
                 "analysts/development/gems/transform/window",
               ],
@@ -288,6 +287,7 @@ const sidebars = {
                 "analysts/development/gems/parse/json-parse",
                 "analysts/development/gems/parse/xml-parse",
                 "analysts/development/gems/parse/text-to-column",
+                "analysts/development/gems/parse/regex",
               ],
             },
             {
