@@ -59,7 +59,7 @@ Use this method to standardize phone number formats from `555-123-4567` to `(555
 
 - **Select Column to Split**: `phone_number`
 - **Regex**: `(\d{3})-(\d{3})-(\d{4})`
-- **Replacement text**: `($1) $2-$3`
+- **Replacement text**: `($1)$2-$3`
 
   This inserts capture groups `1`, `2`, and `3` into the replacement pattern to create the new formatted string. The result is written to a new output column, while the original value is preserved.
 
@@ -80,8 +80,8 @@ Use this method to standardize phone number formats from `555-123-4567` to `(555
 
 | id  | phone_number | phone_number_replaced |
 | --- | ------------ | --------------------- |
-| 1   | 555-332-1234 | (555) 332-1234        |
-| 2   | 555-034-9876 | (555) 034-9876        |
+| 1   | 555-332-1234 | (555)332-1234         |
+| 2   | 555-034-9876 | (555)034-9876         |
 
 </div>
 
@@ -89,13 +89,13 @@ Use this method to standardize phone number formats from `555-123-4567` to `(555
 
 The **Tokenize** method splits text into tokens based on regex patterns and capture groups. Each capture group becomes a token. This method creates either new columns or rows depending on your configuration.
 
-| Parameter                                  | Description                                                                                                                                                                                                                                                                                                                                                                                       |
-| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Select Split Strategy                      | Choose how to split the data: <ul><li>**Split to columns**: Breaks text into tokens and places each token into a new column in the same row. Requires a fixed number of columns.</li><li>**Split to rows**: Breaks text into tokens and outputs each token as a new row in a single column. Rows are generated dynamically, making this option useful when the number of tokens varies.</li></ul> |
-| Allow Blank Tokens (Split to columns only) | If there are fewer tokens than the defined number of columns, allow empty strings to fill the extra columns. Otherwise, those columns are set to `NULL`.                                                                                                                                                                                                                                          |
-| Number of columns (Split to columns only)  | Specify the number of output columns to create for tokenized data.                                                                                                                                                                                                                                                                                                                                |
-| For Extra Columns (Split to columns only)  | Define how to handle cases where there are more tokens than columns: ignore, warn, or raise an error.                                                                                                                                                                                                                                                                                             |
-| Output Root Name                           | Base name for the new column(s) containing the tokens.                                                                                                                                                                                                                                                                                                                                            |
+| Parameter                                  | Description                                                                                                                                                                                                                                                                                                                                                                                                                |
+| ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Select Split Strategy                      | Choose how to split the data: <ul><li>**Split to columns**: Breaks text into tokens and places each token into a new column in the same row. Requires a fixed number of columns.</li><li>**Split to rows**: Breaks text into tokens and outputs each token as a new row in a single column. Rows are generated dynamically, making this option useful when the number of tokens varies.</li></ul>                          |
+| Allow Blank Tokens (Split to columns only) | If there are fewer tokens than the defined number of columns, allow empty strings to fill the extra columns. Otherwise, those columns are set to `NULL`.                                                                                                                                                                                                                                                                   |
+| Number of columns (Split to columns only)  | Specify the number of output columns to create for tokenized data.                                                                                                                                                                                                                                                                                                                                                         |
+| For Extra Columns (Split to columns only)  | Define how to handle cases where there are more tokens than columns. <ul><li>**Drop Extra with Warning**: Skip writing excess tokens and log a warning message to indicate this.</li><li>**Drop Extra without Warning**: Skip writing excess tokens silently without generating warnings.</li><li>**Error**: Stop processing and raise an error when the number of tokens exceeds the defined number of columns.</li></ul> |
+| Output Root Name                           | Base name for the new column(s) containing the tokens.                                                                                                                                                                                                                                                                                                                                                                     |
 
 #### Example {#example-tokenize}
 
@@ -133,14 +133,14 @@ Use this method to parse email addresses into username and domain components.
 
 The **Parse** method extracts capture groups from regex matches and outputs each group as a separate column. Prophecy automatically generates one output column for every capture group in the regex.
 
-| Parameter        | Description                                                                             |
-| ---------------- | --------------------------------------------------------------------------------------- |
-| New Column Name  | Specify the name for the new column.                                                    |
-| Select Data Type | Choose the data type.                                                                   |
-| Regex Expression | View the capture group that will populate the column. **This value cannot be changed.** |
+| Parameter        | Description                                                                                                                                    |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| New Column Name  | Specify the name for the new column.                                                                                                           |
+| Select Data Type | Choose the data type.                                                                                                                          |
+| Regex Expression | View the capture group that will populate the column.<br/>If you edit this value, Prophecy will automatically revert it to the original value. |
 
 :::info
-The number of rows in the **Parse Configuration** table is fixed and corresponds directly to the number of capture groups in the **Regex** field. This cannot be changed.
+Rows in the **Parse Configuration** table are determined by the number of capture groups in the **Regex** field. You cannot add additional rows to or remove rows from this table.
 :::
 
 #### Example {#example-parse}
