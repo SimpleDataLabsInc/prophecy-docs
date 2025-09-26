@@ -354,7 +354,7 @@ Next, you’ll use the `temperature_threshold` parameter to filter your data.
 
 When the app runs, users can adjust `temperature_threshold` to make filtering more or less sensitive.
 
-## Best Practices
+## Best practices
 
 To make the most out of pipeline parameters, we suggest you:
 
