@@ -94,6 +94,7 @@ Next, you’ll filter your dataset to only include rows where the `region` colum
 
 1. Add a **Filter** gem.
 1. Remove the default `true` expression.
+1. Click **Select expression**.
 1. Select **Function > Array > array_contains**.
 1. Choose **value > Configuration Variable**
 1. Select `region_list`.
@@ -135,6 +136,7 @@ This example uses a dataset with timestamped sales data. You can use two **Date*
 
 1. Add a **Filter** gem to your pipeline.
 1. Remove the default `true` expression.
+1. Click **Select expression**.
 1. Select **Column** and select `sales_date` (or your dataset’s date column).
 1. Choose the **between** operator.
 1. For both `start_date` and `end_date`, click **Select expression > Configuration Variable** and select corresponding pipeline parameters.
@@ -174,7 +176,7 @@ Next, you’ll filter your dataset based on the `customer_type` parameter.
 
 1. Add a **Filter** gem.
 1. Remove the default `true` expression.
-1. Select **Column > customer_category**.
+1. Click **Select expression > Column** and select `customer_category`.
 1. Choose the **Equals ( = )** operator.
 1. Click **Select expression > Configuration Variable**.
 1. Select `customer_type`.
@@ -246,18 +248,17 @@ First, you'll set up a `discount_rate` parameter, which will be a `Double` value
 1. Name the parameter `discount_rate`.
 1. Select the **Type** and choose Double.
 1. Click **Select expression > Value**.
-1. Enter `1.5` and click **Done**.
+1. Enter `.15` and click **Done**.
 1. Click **Save**.
 
 #### Use the Double parameter in an expression
 
 Next, you'll create a Reformat gem that uses the `discount_rate` pipeline parameter in an expression.
 
-1. Create and open the [Reformat gem](/analysts/reformat).
-1. Remove the default `true` expression.
-1. Select **Column > price**
-1. Click **Select expression > Configuration Variable**.
-1. Select `discount_rate`.
+1. Add a [Reformat gem](/analysts/reformat).
+1. Under **Target Column**, add `price`, `product`, and `quantity`
+1. Under **Target Column**, add a new column called `discounted_price`.
+1. Click **Select expression > Custom code ** and enter `price * (1 - {{ var('discout_rate') }})`.
 1. Add a Target table gem called `products_discounted` and connect it to the Reformat gem.
 1. Click **Save**.
 
