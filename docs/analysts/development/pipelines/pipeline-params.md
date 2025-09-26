@@ -30,18 +30,17 @@ Pipeline parameters are scoped to individual pipelines. They cannot be used in a
 
 Prophecy supports the following data types for pipeline parameters:
 
-| Data type      | Description                                                  |
-| -------------- | ------------------------------------------------------------ |
-| Array          | A list of values of the same type, added one by one in a multi-value input field. |
-| Date           | A calendar date in `dd-mm-yyyy` format, chosen using a date picker. |
-| String         | A plain text value, entered via a single-line text input.    |
-| Boolean        | A true or false value, selected from a dropdown.             |
-| Int            | A 32-bit integer entered in a numeric field.                 |
-| Double         | A 64-bit floating-point number entered in a numeric field.   |
-| Long           | A 64-bit integer entered in a numeric field.                 |
-| Float          | A 32-bit floating-point number entered in a numeric field.   |
+| Data type      | Description                                                                           |
+| -------------- | ------------------------------------------------------------------------------------- |
+| Array          | A list of values of the same type, added one by one in a multi-value input field.     |
+| Date           | A calendar date in `dd-mm-yyyy` format, chosen using a date picker.                   |
+| String         | A plain text value, entered via a single-line text input.                             |
+| Boolean        | A true or false value, selected from a dropdown.                                      |
+| Int            | A 32-bit integer entered in a numeric field.                                          |
+| Double         | A 64-bit floating-point number entered in a numeric field.                            |
+| Long           | A 64-bit integer entered in a numeric field.                                          |
+| Float          | A 32-bit floating-point number entered in a numeric field.                            |
 | SQL Expression | A SQL expression, either configured through dropdown menus or entered as custom code. |
-
 
 </details>
 ## Add pipeline parameters
@@ -52,7 +51,7 @@ To add pipeline parameters:
 1. Click **+ Add Parameter**.
 1. Enter a name. This is the name you use when you call the parameter.
 1. Choose a data type (such as `array`, `date`, `string`, `int`, or `float`) that matches the parameter's use.
-1. Enter a value, or use a function or expression that computes the parameter's value. By default, these values are used during interactive execution. However, you can override the default values in certain areas like prophecy app configs and pipeline gems.
+1. Enter a value, or use a function or expression that computes the parameter's value. These values are used by default during interactive execution. However, you can override the default values in certain areas like Prophecy app configs and pipeline gems.
 
 :::note
 When you define parameters, variables will be automatically created in the SQL configuration.
@@ -62,7 +61,7 @@ When you define parameters, variables will be automatically created in the SQL c
 
 To use pipeline parameters:
 
-1. Add any [gem](/analysts/gems/) that uses expressions, such as a [Filter](/analysts/filter) gem.
+1. Add any [gem](/analysts/gems/) that uses expressions, such as a [Filter](/analysts/filter) or [Reformat](/analysts/reformat) gem.
 1. Select **Configuration Variables** from an Expression dropdown menu.
 
 By default, the pipeline parameter's value will be used for the expression, though this value can be overwritten in both Prophecy gems and Prophecy apps.
