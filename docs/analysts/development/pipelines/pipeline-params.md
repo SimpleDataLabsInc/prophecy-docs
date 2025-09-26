@@ -72,7 +72,7 @@ By default, the pipeline parameter's value will be used for the expression, thou
 
 ## Use parameters in Prophecy Apps
 
-Parameters are useful in both [creating](/analysts/create-business-applications) and [consuming](/analysts/run-apps) Prophecy applications. To use pipeline parameters in a Prophecy app, add an input field and select the pipeline parameter for **Configuration field**.
+Parameters are useful in both [creating](/analysts/create-business-applications) and [consuming](/analysts/run-apps) Prophecy applications. To use pipeline parameters in a Prophecy App, add an input field and select the pipeline parameter for **Configuration field**.
 
 ### Array example
 
