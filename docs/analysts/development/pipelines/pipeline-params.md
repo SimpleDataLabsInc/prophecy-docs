@@ -233,7 +233,7 @@ The output of this gem will only include rows where `include_archived` is false.
 1. Add a **Title** for the app.
 1. Add a **Toggle** that uses `include_archived` as a **Configuration** field, with a label reading `Include archived reviews?`.
 1. Open the **Data Integration** dropdown and select **Data Preview**.
-1. In the **Inspect** tab, chooses `prod_filtered_archived` for **Data table**.
+1. In the **Inspect** tab, choose `prod_filtered_archived` for **Data table**.
 1. Select columns to display.
 
 When the app runs, users can toggle `Include archived reviews?` to include archived reviews in results.
