@@ -61,7 +61,10 @@ Prophecy supports the following data types for pipeline parameters:
 To use pipeline parameters:
 
 1. Add any [gem](/analysts/gems/) that uses expressions, such as a [Filter](/analysts/filter) or [Reformat](/analysts/reformat) gem.
+1. Open the gem configuration. Ensure you are in the Visual tab.
 1. Select **Configuration Variables** from an Expression dropdown menu.
+
+You can also use [Jinja syntax](https://jinja.palletsprojects.com/en/stable/templates/#variables) to add pipeline parameters as configuration variable in the Code tab.
 
 By default, the pipeline parameter's value will be used for the expression, though this value can be overwritten in both Prophecy gems and Prophecy apps.
 
