@@ -64,7 +64,7 @@ To use pipeline parameters:
 1. Open the gem configuration. Ensure you are in the Visual tab.
 1. Select **Configuration Variables** from an Expression dropdown menu.
 
-You can also use [Jinja syntax](https://jinja.palletsprojects.com/en/stable/templates/#variables) to add pipeline parameters as configuration variable in the Code tab.
+You can use Jinja syntax to add pipeline parameters as configuration variables in the Code tab. To do so, use the following syntax: `{{ var('disc_rate') }})`. You can also use Jinja syntax in the Visual tab using the Custom code expression.
 
 By default, the pipeline parameter's value will be used for the expression, though this value can be overwritten in both Prophecy gems and Prophecy apps.
 
