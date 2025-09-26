@@ -95,7 +95,7 @@ Next, you’ll filter your dataset to only include rows where the `region` colum
 1. Select **Function > Array > array_contains**.
 1. Choose **value > Configuration Variable**
 1. Select `region_list`.
-1. Click **+** to add an argument for `array_contains` > choose `Region`.
+1. Click **+** to add an argument for `array_contains` and choose `Region`.
 1. Click **Save**.
 1. Add a Target table gem called `sales_transactions_by_region` and connect it to the Filter gem.
 1. Click **Save**.
