@@ -114,7 +114,7 @@ Next, you’ll filter your dataset to only include rows where the `region` colum
 1. In the **Inspect** tab, choose `sales_transactions_by_region`.
 1. Select columns to display.
 
-When the app runs, users can check boxes for their desired regions. For example, a sales team in Latin America might select `['Mexico','LAC','Brazil','Andean']` to view their focus regions.
+When the app runs, users can check boxes to select their desired regions. For example, a sales team in Latin America might select `Mexico`, `LAC`,`Brazil`, and `Andean` to view their focus regions.
 
 ### Date example
 
