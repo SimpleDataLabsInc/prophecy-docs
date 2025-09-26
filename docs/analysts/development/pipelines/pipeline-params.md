@@ -83,7 +83,7 @@ This example uses a dataset with a column called `region`. You can use an **Arra
 1. Select the **Type** and choose **Array**.
 1. Select **String** for **Array** type.
 1. Click **+** to add items to the array.
-1. Click **Value** and enter `US-East`.
+1. Click **Value** and enter `US-East` (or another region code).
 1. Click **Done**.
 1. Repeat steps 6-8 to add `US-West` and `Europe` to the **Array** parameter.
 1. Click **Save**.
@@ -136,8 +136,8 @@ This example uses a dataset with timestamped sales data. You can use two **Date*
 1. Add a **Filter** gem to your pipeline.
 1. Remove the default `true` expression.
 1. Select **Column** and select `sales_date` (or your dataset’s date column).
-1. Add an expression such as `sales_date >= start_date AND sales_date <= end_date`.
-1. For both `start_date` and `end_date`, click **Select expression > Configuration Variable** and select the corresponding parameter.
+1. Choose the **between** operator.
+1. For both `start_date` and `end_date`, click **Select expression > Configuration Variable** and select corresponding pipeline parameters.
 1. Add a Target table gem called `snapshot_by_date` and connect it to the Filter gem.
 1. Click **Save**.
 
@@ -152,7 +152,7 @@ This example uses a dataset with timestamped sales data. You can use two **Date*
 1. In the **Inspect** tab, choose `snapshot_by_date`.
 1. Select columns to display.
 
-When the app runs, users can enter their own values for `start_date` and `end_date`.
+When the app runs, users can select their own values for `start_date` and `end_date`.
 
 ### String example
 
