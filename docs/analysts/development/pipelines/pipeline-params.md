@@ -83,7 +83,9 @@ This example uses a dataset with a column called `region`. You can use an **Arra
 1. Select the **Type** and choose **Array**.
 1. Select **String** for **Array** type.
 1. Click **+** to add items to the array.
-1. Click **Value**, enter `US-East`, and click **Done**. Repeat this and previous step to add `US-West` and `Europe` to the **Array** parameter.
+1. Click **Value** and enter `US-East`.
+1. Click **Done**.
+1. Repeat steps 6-8 to add `US-West` and `Europe` to the **Array** parameter.
 1. Click **Save**.
 
 #### Use the Array parameter in a Filter gem
