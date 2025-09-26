@@ -21,7 +21,7 @@ To learn more, visit [Basic roles and permissions](https://cloud.google.com/bigq
 
 ## Connection type
 
-Prophecy supports BigQuery as both a SQL Warehouse connection and an Ingress/Egress connection. To learn more about these different connection types, visit [Prophecy fabrics](/administration/fabrics/prophecy-fabrics/#connections).
+Prophecy supports BigQuery as both a SQL Warehouse connection and an Ingress/Egress connection. To learn more about these different connection types, visit [Prophecy fabrics](docs/administration/fabrics/prophecy-fabrics/create-fabric.md#connections).
 
 ## Feature support
 

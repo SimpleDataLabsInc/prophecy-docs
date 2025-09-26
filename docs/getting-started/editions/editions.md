@@ -58,14 +58,14 @@ To try out Enterprise features, sign up for our [multi-tenant SaaS Enterprise en
 
 ### Compute
 
-| Feature                        | Free | Professional | Express | Enterprise |
-| ------------------------------ | ---- | ------------ | ------- | ---------- |
-| Prophecy Automate              | ✔    | ✔            | ✔       | ✔          |
-| Prophecy-managed SQL warehouse | ✔    | ✔            |         |            |
-| Self-managed SQL warehouse     |      |              | ✔       | ✔          |
-| Self-managed Spark             |      |              |         | ✔          |
-| Automatic fabric provisioning  | ✔    | ✔            |         |            |
-| Manual fabric setup            |      |              | ✔       | ✔          |
+| Feature                                                                                                                | Free | Professional | Express | Enterprise |
+| ---------------------------------------------------------------------------------------------------------------------- | ---- | ------------ | ------- | ---------- |
+| [Prophecy Automate](docs/administration/architecture.md)                                                               | ✔    | ✔            | ✔       | ✔          |
+| [Prophecy In Memory](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md)(Prophecy-managed SQL warehouse) | ✔    | ✔            |         |            |
+| Self-managed SQL warehouse                                                                                             |      |              | ✔       | ✔          |
+| Self-managed Spark                                                                                                     |      |              |         | ✔          |
+| Automatic fabric provisioning                                                                                          | ✔    | ✔            |         |            |
+| Manual fabric setup                                                                                                    |      |              | ✔       | ✔          |
 
 :::note
 Usage of the Prophecy-managed SQL warehouse is metered by credits.

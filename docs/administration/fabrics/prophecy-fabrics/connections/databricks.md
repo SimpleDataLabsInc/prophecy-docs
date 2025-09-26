@@ -23,7 +23,7 @@ Prophecy connects to Databricks using the credentials you provide. These credent
 
 ## Connection type
 
-Prophecy supports Databricks as both a SQL Warehouse connection and an Ingress/Egress connection. To learn more about these different connection types, visit [Prophecy fabrics](/administration/fabrics/prophecy-fabrics/#connections).
+Prophecy supports Databricks as both a SQL Warehouse connection and an Ingress/Egress connection. To learn more about these different connection types, visit [Prophecy fabrics](docs/administration/fabrics/prophecy-fabrics/create-fabric.md#connections).
 
 ## Feature support
 
