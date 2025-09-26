@@ -242,7 +242,7 @@ When the app runs, users can toggle `Include archived reviews?` to include archi
 
 This example uses a dataset that includes a column called `discount_rate` that applies a discount for customers in certain cases.
 
-You can use a Double pipeline parameter to create a Prophecy app that lets users adjust this rate.
+You can use a Double pipeline parameter inside a Prophecy App that lets users adjust this rate.
 
 First, you'll set up a `discount_rate` parameter of type `Double`.
 
