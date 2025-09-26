@@ -244,7 +244,7 @@ This example uses a dataset that includes a column called `discount_rate` that a
 
 You can use a Double pipeline parameter to create a Prophecy app that lets users adjust this rate.
 
-First, you'll set up a `discount_rate` parameter, which will be a `Double` value.
+First, you'll set up a `discount_rate` parameter of type `Double`.
 
 1. Open your project and select **Parameters** in the header.
 1. Click **+ Add Parameter**.
