@@ -81,8 +81,9 @@ This example uses a dataset with a column called `region`. You can use an **Arra
 1. Click **+ Add Parameter**.
 1. Name the parameter `region_list`.
 1. Select the **Type** and choose **Array**.
-1. Click **Select expression > Value**.
-1. Enter `['US-East','US-West','Europe']` and click **Done**.
+1. Select **String** for **Array** type.
+1. Click **+** to add items to the array.
+1. Click **Value**, enter `US-East`, and click **Done**. Repeat this and previous step to add `US-West` and `Europe` to the **Array** parameter.
 1. Click **Save**.
 
 #### Use the Array parameter in a Filter gem
@@ -91,24 +92,27 @@ Next, you’ll filter your dataset to only include rows where the `region` colum
 
 1. Add a **Filter** gem.
 1. Remove the default `true` expression.
-1. Select **Column > region**.
-1. Choose the **In ( ∈ )** operator.
-1. Click **Select expression > Configuration Variable**.
+1. Select **Function > Array > array_contains**.
+1. Choose **value > Configuration Variable**
 1. Select `region_list`.
+1. Click **+** to add an argument for `array_contains` > choose `Region`.
+1. Click **Save**.
+1. Add a Target table gem called `sales_transactions_by_region` and connect it to the Filter gem.
 1. Click **Save**.
 
 #### Create a Prophecy app to adjust region filters
 
 1. Add a Prophecy app called `regional_sales`.
 1. Add a title for the app.
-1. Select **Interactive > Multi-Select Dropdown**.
+1. Select **Interactive > Checkbox Group**.
 1. Select `region_list` for **Configuration field**.
+1. Add a region in **Default value**, such as `US-East`.
 1. Add options such as `US-East`, `US-West`, `Europe`, `Mexico`, `Brazil`, `LAC`, and `Andean`.
 1. Open the **Data Integration** dropdown and select **Data Preview**.
-1. In the **Inspect** tab, choose your filtered dataset table.
+1. In the **Inspect** tab, choose `sales_transactions_by_region`.
 1. Select columns to display.
 
-When the app runs, users can substitute values for `region_list`. For example, a sales team in Latin America might enter `['Mexico','LAC','Brazil','Andean']` to view their focus regions.
+When the app runs, users can check boxes for their desired regions. For example, a sales team in Latin America might select `['Mexico','LAC','Brazil','Andean']` to view their focus regions.
 
 ### Date example
 
