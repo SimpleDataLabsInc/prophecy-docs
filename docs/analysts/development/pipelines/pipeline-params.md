@@ -34,7 +34,7 @@ To add pipeline parameters:
 1. Enter a value, or use a function or expression that computes the parameter's value. By default, these values are used during interactive execution. However, you can override the default values in certain areas like [Prophecy App configs](/analysts/business-applications) and [Pipeline gems](/analysts/pipeline-trigger-gem).
 
 :::note
-When you define parameters, variables will be automatically created in the SQL configuration.
+When you define parameters, variables are automatically created in the SQL configuration.
 :::
 
 <details>
