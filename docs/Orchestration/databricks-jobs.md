@@ -25,19 +25,21 @@ To build a job from a pipeline, navigate to your pipeline, and click the Schedul
 
 Alternatively, if you'd like to create a new job completely from scratch, you can do that directly from the entity creation page (1). There you can choose the job tile (2) and that opens a similar modal where you can define your job details (3).
 
+<!--note confusion here--if you start from a pipeline, fields are different-->
+
 When you create a new job, you're asked for the following details:
 
-| Field Name        | Description                                                                                                                                                                                                                                   |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Project           | Which [Project](/projects) to create the job in. This controls who has access to the job, groups jobs together for lineage, and allows you to use pipelines already published within that project.                                            |
-| Branch            | Which Git branch to use when developing this job.                                                                                                                                                                                             |
-| Name              | Unique job name.                                                                                                                                                                                                                              |
-| Tags              | Any custom tags added to the job. See https://docs.databricks.com/aws/en/admin/account-settings/usage-detail-tags.                                                                                                                            |
-| Scheduler         | The underlying engine that's going to execute your job. Databricks is recommended.                                                                                                                                                            |
-| Fabric            | The [execution fabric](docs/getting-started/concepts/fabrics.md) to which the job is going to be deployed.                                                                                                                                    |
-| Job Size          | The [default size](docs/getting-started/concepts/fabrics.md) of the cluster that's going to be created for the job to run.                                                                                                                    |
+| Field Name        | Description                                                  |
+| ----------------- | ------------------------------------------------------------ |
+| Project           | Which [Project](/projects) to create the job in. This controls who has access to the job, groups jobs together for lineage, and allows you to use pipelines already published within that project. |
+| Branch            | Which Git branch to use when developing this job.            |
+| Name              | Unique job name.                                             |
+| Tags              | Any custom tags added to the job. See https://docs.databricks.com/aws/en/admin/account-settings/usage-detail-tags. |
+| Scheduler         | The underlying engine that's going to execute your job. Databricks is recommended. |
+| Fabric            | The [execution fabric](docs/getting-started/concepts/fabrics.md) to which the job is going to be deployed. |
+| Job Size          | The [default size](docs/getting-started/concepts/fabrics.md) of the cluster that's going to be created for the job to run. |
 | Schedule Interval | Defines how often your job is going to run. The interval is defined using the [Quartz format](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html). You can click on the clock icon to select the interval. |
-| Alerts email      | Comma separated list of emails that are going to receive notifications on specific job status events (start, failure, or success).                                                                                                            |
+| Alerts email      | Comma separated list of emails that are going to receive notifications on specific job status events (start, failure, or success). <!--note that there are buttons for the latter--> |
 
 ### Building the job
 
