@@ -1,15 +1,17 @@
 ---
-title: Microsoft Entra ID (formerly Azure Active Directory)
+title: Microsoft Entra ID SSO
 id: azure-ad
-sidebar_label: Microsoft Entra ID
-description: Authentication using Microsoft Entra ID
-sidebar_position: 1
+description: Sign-in to Prophecy using your Microsoft Entra ID credentials
 tags:
   - authentication
   - azure
 ---
 
-Learn how to configure Microsoft Entra ID for Prophecy authentication.
+:::edition Express and Enterprise
+Available for Express and Enterprise Editions only.
+:::
+
+Prophecy supports **direct OAuth integration** with Microsoft Entra ID (formerly Azure Active Directory).
 
 ## Register a new app
 

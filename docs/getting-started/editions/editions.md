@@ -47,14 +47,15 @@ To try out Enterprise features, sign up for our [multi-tenant SaaS Enterprise en
 
 ### Security
 
-| Feature                   | Free | Professional | Express | Enterprise |
-| ------------------------- | ---- | ------------ | ------- | ---------- |
-| IP Whitelisting           | ✔    | ✔            | ✔       | ✔          |
-| PrivateLink               |      |              | ✔       | ✔          |
-| SSO                       | ✔    | ✔            | ✔       | ✔          |
-| SCIM                      |      |              |         | ✔          |
-| Bring Your Own Key (BYOK) |      |              |         | ✔          |
-| Audit log access          |      |              |         | ✔          |
+| Feature                                                                        | Free | Professional | Express | Enterprise |
+| ------------------------------------------------------------------------------ | ---- | ------------ | ------- | ---------- |
+| IP Whitelisting                                                                | ✔    | ✔            | ✔       | ✔          |
+| PrivateLink                                                                    |      |              | ✔       | ✔          |
+| Google SSO                                                                     | ✔    | ✔            | ✔       | ✔          |
+| Additional [authentication](/administration/authentication/) providers for SSO |      |              | ✔       | ✔          |
+| Automatic team creation using [SCIM](/administration/authentication/saml-scim) |      |              |         | ✔          |
+| Bring Your Own Key (BYOK)                                                      |      |              |         | ✔          |
+| Audit log access                                                               |      |              |         | ✔          |
 
 ### Compute
 

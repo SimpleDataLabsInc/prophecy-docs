@@ -66,10 +66,6 @@ module.exports = {
       from: "/architecture/authentication",
     },
     {
-      to: "/administration/authentication/active_directory",
-      from: "/architecture/authentication/active_directory",
-    },
-    {
       to: "/administration/authentication/azure-ad",
       from: "/architecture/authentication/azure_ad",
     },
@@ -854,6 +850,13 @@ module.exports = {
         "/copilot/",
         "/concepts/copilot/",
         "/copilot/copilot-data-privacy",
+      ],
+    },
+    {
+      to: "/administration/authentication/ldap",
+      from: [
+        "/architecture/authentication/active_directory",
+        "/administration/authentication/active_directory",
       ],
     },
     {
