@@ -64,15 +64,15 @@ To use pipeline parameters:
 1. Open the gem configuration. Ensure you are in the Visual tab.
 1. Select **Configuration Variables** from an Expression dropdown menu.
 
-You can use Jinja syntax to add pipeline parameters as configuration variables in the Code tab. To do so, use the following syntax: `{{ var('disc_rate') }})`. You can also use Jinja syntax in the Visual tab by using the Custom code expression.
+You can use Jinja syntax to add pipeline parameters as configuration variables in the Code tab. To do so, use the following syntax: `{{ var('disc_rate') }})`. You can also use Jinja syntax in the Visual tab by using the Custom code expression. For more information on Jinja variables, see [dbt's documentation on Jinja](https://docs.getdbt.com/reference/dbt-jinja-functions/var).
 
-By default, the pipeline parameter's value will be used for the expression, though this value can be overwritten in both Prophecy gems and Prophecy apps.
+By default, the pipeline parameter's value will be used for the expression, though this value can be overwritten in both pipeline gems and Prophecy Apps.
 
 > Example: If you create a parameter called `start_date` with a value of _2025-09-01_, you can use it in a Filter gem to include only rows where `order_date` >= `start_date`. When the pipeline runs, it injects the parameter’s value into the filter expression.
 
 ## Use parameters in Prophecy Apps
 
-Parameters are useful in both [creating](/analysts/create-business-applications) and [consuming](/analysts/run-apps) Prophecy applications. To use pipeline parameters in a Prophecy app, add an input field and select the pipeline parameter for **Configuration field**.
+Parameters are useful in both [creating](/analysts/create-business-applications) and [consuming](/analysts/run-apps) Prophecy applications. To use pipeline parameters in a Prophecy App, add an input field and select the pipeline parameter for **Configuration field**.
 
 ### Array example
 
@@ -106,9 +106,9 @@ Next, you’ll filter your dataset to only include rows where the `region` colum
 1. Add a Target table gem called `sales_transactions_by_region` and connect it to the Filter gem.
 1. Click **Save**.
 
-#### Create a Prophecy app to adjust region filters
+#### Create a Prophecy App to adjust region filters
 
-1. Add a Prophecy app called `regional_sales`.
+1. Add a Prophecy App called `regional_sales`.
 1. Add a title for the app.
 1. Select **Interactive > Checkbox Group**.
 1. Select `region_list` for **Configuration field**.
@@ -146,9 +146,9 @@ This example uses a dataset with timestamped sales data. You can use two **Date*
 1. Add a Target table gem called `snapshot_by_date` and connect it to the Filter gem.
 1. Click **Save**.
 
-#### Create a Prophecy app with date fields
+#### Create a Prophecy App with date fields
 
-1. Add a Prophecy app called `sales_snapshot`.
+1. Add a Prophecy App called `sales_snapshot`.
 1. Add a title.
 1. Select **Interactive > Date Field**.
 1. For **Configuration field**, choose `start_date`.
@@ -186,9 +186,9 @@ Next, you’ll filter your dataset based on the `customer_type` parameter.
 1. Add a Target table gem called `filtered_customers` and connect it to the Reformat gem.
 1. Click **Save**.
 
-#### Create a Prophecy app to select customer groups
+#### Create a Prophecy App to select customer groups
 
-1. Add a Prophecy app called `customer_segment`.
+1. Add a Prophecy App called `customer_segment`.
 1. Add a title for the app.
 1. Select **Interactive > Dropdown**.
 1. Give the dropdown a label.
@@ -201,7 +201,7 @@ When the app runs, users can switch the `customer_type` parameter from `Premium`
 
 ### Boolean example
 
-This example uses a dataset of customer reviews, in which reviews older than 5 years are designated as `archived`, using a column called `archived_reviews` with Boolean values. You can use a Boolean pipeline parameter to create a Prophecy app that lets users choose whether to include archived reviews.
+This example uses a dataset of customer reviews, in which reviews older than 5 years are designated as `archived`, using a column called `archived_reviews` with Boolean values. You can use a Boolean pipeline parameter to create a Prophecy App that lets users choose whether to include archived reviews.
 
 First, you'll set up an `include_archived` parameter, which will be a Boolean value.
 
@@ -225,11 +225,11 @@ Next, you'll create a Filter gem that uses the `include_archived` pipeline param
 1. Add a Target table gem called `prod_filtered_archived` and connect it to the Filter gem.
 1. Click **Save**.
 
-The output of this gem will only include rows where `include_archived` is false. In the steps below, you'll create a Prophecy app that lets users change `include_archived` to true.
+The output of this gem will only include rows where `include_archived` is false. In the steps below, you'll create a Prophecy App that lets users change `include_archived` to true.
 
-#### Create a Prophecy app to show archived data
+#### Create a Prophecy App to show archived data
 
-1. Add a Prophecy app called Reviews.
+1. Add a Prophecy App called Reviews.
 1. Add a **Title** for the app.
 1. Add a **Toggle** that uses `include_archived` as a **Configuration** field, with a label reading `Include archived reviews?`.
 1. Open the **Data Integration** dropdown and select **Data Preview**.
@@ -242,7 +242,7 @@ When the app runs, users can toggle `Include archived reviews?` to include archi
 
 This example uses a dataset that includes a column called `discount_rate` that applies a discount for customers in certain cases.
 
-You can use a Double pipeline parameter to create a Prophecy app that lets users adjust this rate.
+You can use a Double pipeline parameter to create a Prophecy App that lets users adjust this rate.
 
 First, you'll set up a `discount_rate` parameter, which will be a `Double` value.
 
@@ -265,9 +265,9 @@ Next, you'll create a Reformat gem that uses the `discount_rate` pipeline parame
 1. Add a Target table gem called `products_discounted` and connect it to the Reformat gem.
 1. Click **Save**.
 
-#### Create a Prophecy app to show discounted products
+#### Create a Prophecy App to show discounted products
 
-1. Add a Prophecy app called `products_with_reviews`.
+1. Add a Prophecy App called `products_with_reviews`.
 1. Add a title for the app.
 1. Select **Interactive > Number Input**.
 1. Select `discount_rate` for **Configuration field**.
@@ -302,9 +302,9 @@ This example uses a dataset for a telecom company that includes aggregated usage
 1. Add a **Table** gem called `usage_over_cap` and connect it to the **Filter** gem.
 1. Click **Save**.
 
-#### Create a Prophecy app to adjust the cap
+#### Create a Prophecy App to adjust the cap
 
-1. Add a Prophecy app called `usage_cap_monitor`.
+1. Add a Prophecy App called `usage_cap_monitor`.
 1. Add a title for the app.
 1. Select **Interactive > Number Input**.
 1. Select `usage_cap_mb` for **Configuration field** and label it **Monthly Cap (MB)**.
@@ -341,9 +341,9 @@ Next, you’ll use the `temperature_threshold` parameter to filter your data.
 1. Add a Table gem called `filtered_temperature` and connect it to the Filter gem.
 1. Click **Save**.
 
-#### Create a Prophecy app to adjust sensitivity
+#### Create a Prophecy App to adjust sensitivity
 
-1. Add a Prophecy app called `temperature_monitor`.
+1. Add a Prophecy App called `temperature_monitor`.
 1. Add a title for the app.
 1. Select **Interactive > Number Input**.
 1. Select `temperature_threshold` for **Configuration field**.
