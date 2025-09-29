@@ -469,6 +469,8 @@ const sidebars = {
           items: [
             "analysts/development/collaboration/collaboration-modes",
             "analysts/development/collaboration/canvas-annotations",
+            "analysts/development/collaboration/project-replays",
+            "analysts/development/collaboration/project-sharing",
           ],
         },
         {

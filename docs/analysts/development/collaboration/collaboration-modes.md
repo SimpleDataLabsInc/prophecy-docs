@@ -6,7 +6,12 @@ description: Work together on projects simultaneously
 tags: []
 ---
 
-Prophecy provides mechanisms to manage concurrent edits and prevent conflicts when multiple users work on the same project. The specific collaboration workflow is dictated by the project's Git mode, a setting established when the project is initially created.
+Prophecy provides mechanisms to manage concurrent edits and prevent conflicts when multiple users work on the same project. The specific collaboration workflow is dictated by the project's Git mode, a setting established when the project is initially created. Depending on the chosen mode, Prophecy employs either:
+
+- **Branch-based isolation:** Where each user works on their own Git branch, merging changes when ready.
+- **Locking mechanisms:** Where Prophecy prevents simultaneous edits of critical components.
+
+This ensures project integrity and avoids overwriting edits.
 
 ## Collaboration workflows
 
