@@ -99,7 +99,7 @@ Next, you’ll filter your dataset to only include rows where the `region` colum
 1. Remove the default `true` expression.
 1. Click **Select expression**.
 1. Select **Function > Array > array_contains**.
-1. Choose **value > Configuration Variable**
+1. Choose **value > Configuration Variable**.
 1. Select `region_list`.
 1. Click **+** to add an argument for `array_contains` and choose `Region`.
 1. Click **Save**.
@@ -233,7 +233,7 @@ The output of this gem will only include rows where `include_archived` is false.
 1. Add a **Title** for the app.
 1. Add a **Toggle** that uses `include_archived` as a **Configuration** field, with a label reading `Include archived reviews?`.
 1. Open the **Data Integration** dropdown and select **Data Preview**.
-1. In the **Inspect** tab, chooses `prod_filtered_archived` for **Data table**.
+1. In the **Inspect** tab, choose `prod_filtered_archived` for **Data table**.
 1. Select columns to display.
 
 When the app runs, users can toggle `Include archived reviews?` to include archived reviews in results.
@@ -242,9 +242,9 @@ When the app runs, users can toggle `Include archived reviews?` to include archi
 
 This example uses a dataset that includes a column called `discount_rate` that applies a discount for customers in certain cases.
 
-You can use a Double pipeline parameter to create a Prophecy App that lets users adjust this rate.
+You can use a Double pipeline parameter inside a Prophecy App that lets users adjust this rate.
 
-First, you'll set up a `discount_rate` parameter, which will be a `Double` value.
+First, you'll set up a `discount_rate` parameter of type `Double`.
 
 1. Open your project and select **Parameters** in the header.
 1. Click **+ Add Parameter**.
@@ -259,9 +259,9 @@ First, you'll set up a `discount_rate` parameter, which will be a `Double` value
 Next, you'll create a Reformat gem that uses the `discount_rate` pipeline parameter in an expression that uses Jinja syntax.
 
 1. Add a [Reformat gem](/analysts/reformat).
-1. Under **Target Column**, add `price`, `product`, and `quantity`
+1. Under **Target Column**, add `price`, `product`, and `quantity`.
 1. Under **Target Column**, add a new column called `discounted_price`.
-1. Click **Select expression > Custom code ** and enter `price * (1 - {{ var('discout_rate') }})`.
+1. Click **Select expression > Custom code** and enter `price * (1 - {{ var('discount_rate') }})`.
 1. Add a Target table gem called `products_discounted` and connect it to the Reformat gem.
 1. Click **Save**.
 
@@ -354,7 +354,7 @@ Next, you’ll use the `temperature_threshold` parameter to filter your data.
 
 When the app runs, users can adjust `temperature_threshold` to make filtering more or less sensitive.
 
-## Best Practices
+## Best practices
 
 To make the most out of pipeline parameters, we suggest you:
 
