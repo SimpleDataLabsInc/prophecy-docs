@@ -119,6 +119,7 @@ const sidebars = {
         id: "administration/fabrics/prophecy-fabrics/prophecy-fabrics",
       },
       items: [
+        "administration/fabrics/prophecy-fabrics/create-fabric",
         {
           type: "category",
           label: "Connections",
@@ -134,6 +135,7 @@ const sidebars = {
             "administration/fabrics/prophecy-fabrics/connections/bigquery",
             "administration/fabrics/prophecy-fabrics/connections/onedrive",
             "administration/fabrics/prophecy-fabrics/connections/power-bi",
+            "administration/fabrics/prophecy-fabrics/connections/prophecy-managed",
             "administration/fabrics/prophecy-fabrics/connections/sharepoint",
             "administration/fabrics/prophecy-fabrics/connections/mongodb",
             "administration/fabrics/prophecy-fabrics/connections/mssql",
@@ -146,6 +148,7 @@ const sidebars = {
             "administration/fabrics/prophecy-fabrics/connections/tableau",
           ],
         },
+        "administration/fabrics/prophecy-fabrics/secrets/secrets",
       ],
     },
     {
@@ -186,6 +189,7 @@ const sidebars = {
                     id: "analysts/development/gems/source-target/table/table",
                   },
                   items: [
+                    "analysts/development/gems/source-target/table/prophecy-in-memory",
                     "analysts/development/gems/source-target/table/databricks",
                     "analysts/development/gems/source-target/table/bigquery",
                     "analysts/development/gems/source-target/table/upload-files",
@@ -602,15 +606,7 @@ const sidebars = {
             "administration/fabrics/sql-fabrics/bigquery",
           ],
         },
-        {
-          type: "category",
-          label: "Secrets",
-          link: {
-            type: "doc",
-            id: "administration/secrets/secrets",
-          },
-          items: ["administration/secrets/secret-providers"],
-        },
+        "administration/secrets/secret-providers",
       ],
     },
     {
@@ -1064,6 +1060,12 @@ const sidebars = {
           ],
         },
       ],
+    },
+    {
+      type: "category",
+      label: "Usage and billing",
+      link: { type: "doc", id: "administration/usage-billing/usage-billing" },
+      items: ["administration/usage-billing/credits"],
     },
   ],
   apiSidebar: [

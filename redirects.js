@@ -110,10 +110,6 @@ module.exports = {
       from: ["/architecture/deployment", "/administration/deployment"],
     },
     {
-      to: "/administration/secrets/",
-      from: ["/Spark/secret-management/"],
-    },
-    {
       to: "/administration/team-based-access",
       from: "/administration/teams-users/team-based-access",
     },
@@ -862,6 +858,10 @@ module.exports = {
         "/architecture/authentication/active_directory",
         "/administration/authentication/active_directory",
       ],
+    },
+    {
+      to: "/engineers/secrets",
+      from: ["/Spark/secret-management/", "/administration/secrets/"],
     },
   ],
 };
