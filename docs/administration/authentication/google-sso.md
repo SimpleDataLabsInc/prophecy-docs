@@ -5,6 +5,12 @@ description: Sign-in to Prophecy using your Google account credentials
 tags: [authentication, sso]
 ---
 
+:::edition Express and Enterprise
+This setup is applicable to Express and Enterprise Editions only. 
+
+Google SSO is automatically configured for Free and Professional Editions.
+:::
+
 Prophecy supports direct OAuth integration with **Google Identity**.
 
 ## Configuration steps

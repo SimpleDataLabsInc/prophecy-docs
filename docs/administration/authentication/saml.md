@@ -13,11 +13,15 @@ Prophecy supports SAML for authentication.
 
 ## Prerequisites
 
+Review the following prerequisites.
+
 - To access SSO settings, you must be a cluster admin for your deployment.
 - SAML is available for Express and Enterprise Editions.
 - SCIM is only available for the Enterprise Edition. To enable SCIM in your environment, update the `config` in your Prophecy deployment.
 
 ## Supported identity providers
+
+Prophecy supports the following identity providers (IdP):
 
 - Google
 - Okta
