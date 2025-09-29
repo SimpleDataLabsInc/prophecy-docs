@@ -14,7 +14,7 @@ Let's explore the core concepts of pipelines, including ingestion, egress, trans
 
 ## Ingestion and egress
 
-Ingestion refers to the process of collecting raw data from various sources, such as databases, APIs, web applications, and so on. This step ensures that data is captured and stored for further processing. 
+Ingestion refers to the process of collecting raw data from various sources, such as databases, APIs, web applications, and so on. This step ensures that data is captured and stored for further processing.
 
 Egress, on the other hand, is the final step where processed data is delivered to its destination. This could be a data warehouse, a dashboard, or another external system.
 
@@ -36,40 +36,40 @@ During deployment, you configure the environment, such as selecting the appropri
 
 When your pipelines are deployed, you can make sure they run as expected using our built-in [monitoring](/analysts/monitoring) feature.
 
-## Ensuring data is consistently written in egress
+## Ensure data is consistently written in egress
 
 Egress may involve writing to warehouse tables within a Prophecy fabric or to external systems. When you write to a warehouse table, data transfer is _transactional_, meaning that transactions are guaranteed to succeed. When you write to external systems, you should implement practices to ensure that data is written consistently, or _idempotently_.
 
 <!--keep working on this section-->
 
-### Writing data to data warehouse tables
+### Back up data in a data warehous table
 
-After you ingest data from any source other than a Table gem, it is best practice to set up a target table gem in order to write data to a Data warehouse table. That way, your data is safely stored within the fabric that you've set up.
+After you ingest data from any source other than a Table gem, it is best practice to set up a target table gem in order to [write data to a Data warehouse table](/analysts/source-target). That way, your data is safely backed up with a transactional write, and you can safely restart pipelines without fear of losing data.
 
-In order to perform a transactional write in Prophecy, you must
+```md
+:::note
+To ensure that all data is safely backed up, it is best practice to avoid incorporating [FTP](/administration/fabrics/prophecy-fabrics/connections/sftp) delete or move into your pipeline.
+:::
+```
 
-1. Write only to [Data warehouse tables using a Table gem](/analysts/source-target).
-2. Avoid incorporating [FTP](/administration/fabrics/prophecy-fabrics/connections/sftp) delete or move.
+### Write data to external systems
 
-### Writing data to external systems
+When you write data to exernal systems, it's not possible to write transactionally; there's no way to guarantee that all data has been written. The next best thing, though, is to ensure that this data is written consistently, or _idempotently_.
 
-When you write data to exernal systems, you should take steps to ensure that this data is written consistently, or _idempotently_.
-
-Idempotency means re-running a pipeline with the same inputs leaves the target table or warehouse in the same end state. Without idempotency, you may produce duplicate rows or inconsistent states. Following the practice described below will ensure that data is written idempotently.
+When you write data imdepotently, re-running a pipeline with the same inputs leaves the target table or warehouse in the same end state. Without idempotency, you may produce duplicate rows or inconsistent states. Following the practices described below will ensure that data is written idempotently.
 
 #### Idempotency quick rules for Prophecy pipelines
 
-| Write Pattern                                                | Idempotent?                                                  | Notes                                                        |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| **Append / Insert**                                          | Never                                                        | Re-runs add duplicate rows. If you must append, add a deduplication step to your pipeline. Treat append models as non-idempotent by design. Use a unique index or `MERGE` into a canonical table to remove duplicates. |
-| **Merge / Upsert**                                           | If keys and predicate are correct                            | Use a stable `unique_key` with Prophecy’s _Merge_ write. Ensure that the `unique_key` is truly unique and stable. Prefer natural/business keys or durable surrogate keys. Avoid run-time values in UPDATE/INSERT sets unless explicitly required. Use **data-driven filters** (such as `updated_at > (select max(updated_at) from {{ this }})`), not “time of run.” |
-| **Destructive Load** (truncate+insert / create-or-replace / swap) | If `SELECT` is deterministic                                 | Safe as long as the `SELECT` doesn’t use random or time-based functions. Avoid persisting run timestamps or sequence/identity values in target tables. If you need lineage, capture it separately in an audit table. |
-| **Incremental Insert Overwrite** (+ `partition_by`)          | Per partition, if your WHERE/partition filtering is deterministic and only rewrites the intended partitions. | Only targeted partitions are rewritten.                      |
+| Write Pattern                                                     | Idempotent?                                                                                                  | Notes                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Append / Insert**                                               | Never                                                                                                        | Re-runs add duplicate rows. If you must append, add a deduplication step to your pipeline. Treat append models as non-idempotent by design. Use a unique index or `MERGE` into a canonical table to remove duplicates.                                                                                                                                                                                                    |
+| **Merge / Upsert**                                                | If keys and predicate are correct                                                                            | Use a stable `unique_key` with Prophecy’s _Merge_ write. Ensure that the `unique_key` is truly unique and stable. Prefer natural/business keys or durable surrogate keys. Avoid run-time values in `UPDATE`/`INSERT` sets unless explicitly required. (That is, do not parameterize `UPDATE`/`INSERT`.) Use **data-driven filters** (such as `updated_at > (select max(updated_at) from {{ this }})`), not “time of run.” |
+| **Destructive Load** (truncate+insert / create-or-replace / swap) | If `SELECT` is deterministic. That is, if `SELECT` consistently returns the same result set.                 | Safe as long as the `SELECT` doesn’t use random or time-based functions such as `current_timestamp` or `random()`. Avoid persisting run timestamps or sequence/identity values in target tables. If you need lineage, capture it separately in an audit table.                                                                                                                                                            |
+| **Incremental Insert Overwrite** (+ `partition_by`)               | Per partition, if your WHERE/partition filtering is deterministic and only rewrites the intended partitions. | Only targeted partitions are rewritten.                                                                                                                                                                                                                                                                                                                                                                                   |
 
 Watch for operations that appear to be safe but are not:
 
 - **Non-deterministic functions** persisted to columns (`current_timestamp`, `random()`, `uuid_generate_v4()`), unless part of the key
--  
 - **ORDER BY … LIMIT** used to persist a subset without a stable tie-breaker.
 
 ## What's next
