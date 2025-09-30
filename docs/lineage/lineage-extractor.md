@@ -25,31 +25,50 @@ This page covers how to run the extractor via command line and how to automate i
 
 ## Command
 
-Use the following Python command to export the lineage of a specific pipeline.
+Use the lineage extractor Python command to export the lineage of a specific pipeline.
+
+| Argument        | Type   | Required | Description                                                                                                                                                               |
+| --------------- | ------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--project-id`  | String | Yes      | Prophecy project ID. You can find it in the project URL. Example: `https://app.prophecy.io/metadata/entity/projects/57040` where 57040 is the project ID.                 |
+| `--pipeline-id` | String | Depends  | One or more pipeline IDs in `ProjectID/PipelineName` format, comma-separated. <br/>Required for the `lineage` reader; optional for the `knowledge-graph` reader.          |
+| `--output-dir`  | String | Yes      | Directory path where the extractor writes the lineage report.                                                                                                             |
+| `--reader`      | String | No       | Reader to use. Set to `lineage` for Spark projects or `knowledge-graph` for SQL projects.                                                                                 |
+| `--fmt`         | String | No       | Output format. Use `excel` (default) or `openlineage` (JSON in OpenLineage format).                                                                                       |
+| `--branch`      | String | No       | Branch to extract lineage from. Defaults to `main`.                                                                                                                       |
+| `--send-email`  | Flag   | No       | Sends the report by email. Requires SMTP configuration. <br/>Learn more in [Integration with GitHub Actions or GitLab CI](#integration-with-github-actions-or-gitlab-ci). |
+| `--run-for-all` | Flag   | No       | Generates lineage for all pipelines in the project, rather than just one pipeline.                                                                                        |
+
+<!-- | `--recursive-extract` | `flag` | No       | Set to `true` to recursively trace upstream column changes. Set to `false` to disable this behavior.                                                                                         | -->
+
+<Tabs>
+  <TabItem value="Spark" label="Spark example">
 
 ```
 python -m prophecy_lineage_extractor \
-  --project-id <PROJECT_ID> \
-  --pipeline-id <PIPELINE_ID> \
-  --output-dir <OUTPUT_DIRECTORY> \
-  [--branch <BRANCH_NAME>] \
-  [--send-email] \
-  [--recursive-extract true|false] \
-  [--run-for-all true|false]
-
+  --project-id 9900 \
+  --reader lineage \
+  --pipeline-id 9900/my_pipeline \
+  --output-dir ./test \
+  --branch test1234 \
+  --send-email \
+  --run-for-all
 ```
 
-| Argument              | Type   | Required | Description                                                                                                                                                                                  |
-| --------------------- | ------ | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--project-id`        | `str`  | Yes      | ID of the Prophecy project. Find this in your project url.<br/> Example: `app.prophecy.io/metadata/ide/lineage/40314` where `40314` is the project ID.                                       |
-| `--pipeline-id`       | `str`  | Yes\*    | ID(s) of the pipeline inside the project. This can be comma separated list of pipelines.<br/>Use the format `ProjectID/PipelineName`.<br/>\*Optional if using `knowledge-graph` type reader. |
-| `--output-dir`        | `str`  | Yes      | Directory in the repository to save the lineage report.                                                                                                                                      |
-| `--reader`            | `str`  | No       | Reading adapter to use. Use `lineage` for Spark projects and `knowledge-graph` for SQL projects.                                                                                             |
-| `--writer`            | `str`  | No       | Data format to write. Either Excel files or JSON files in OpenLineage format.                                                                                                                |
-| `--branch`            | `str`  | No       | Branch to extract lineage from. The default branch in Prophecy is generally `main`.                                                                                                          |
-| `--send-email`        | `flag` | No       | Send the report via email. Requires additional variables (see below).                                                                                                                        |
-| `--run-for-all`       | `flag` | No       | Set to `true` to generate a project-level report for all pipelines. Set to `false` to generate the lineage for a single pipeline only.                                                       |
-| `--recursive-extract` | `flag` | No       | Set to `true` to recursively trace upstream column changes. Set to `false` to disable this behavior.                                                                                         |
+  </TabItem>
+  <TabItem value="SQL" label="SQL example">
+
+```
+python -m prophecy_lineage_extractor \
+  --project-id 6493 \
+  --reader knowledge-graph \
+  --branch test1234 \
+  --output-dir ./test \
+  --run-for-all \
+  --fmt openlineage
+```
+
+  </TabItem>
+</Tabs>
 
 ## Integration with GitHub Actions or GitLab CI
 
