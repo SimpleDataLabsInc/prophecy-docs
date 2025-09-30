@@ -6,7 +6,7 @@ tags: [authentication, sso]
 ---
 
 :::edition Express and Enterprise
-This setup is applicable to Express and Enterprise Editions only. 
+This setup is applicable to Express and Enterprise Editions only.
 
 Google SSO is automatically configured for Free and Professional Editions.
 :::
