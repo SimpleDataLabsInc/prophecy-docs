@@ -435,6 +435,8 @@ const sidebars = {
       items: [
         "analysts/version-control/publication",
         "analysts/version-control/migrate-managed",
+        "analysts/version-control/clone-projects",
+        "analysts/version-control/import-projects",
       ],
     },
     {
