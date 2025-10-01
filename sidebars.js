@@ -1059,6 +1059,7 @@ const sidebars = {
           type: "category",
           label: "Fabric authentication",
           items: [
+            "administration/authentication/oauth-setup",
             "administration/authentication/databricks-oauth",
             "administration/authentication/emr-saml",
           ],
