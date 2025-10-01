@@ -12,7 +12,7 @@ Available for Express and Enterprise Editions only.
 Prophecy can connect to your organization’s LDAP directory for authentication.
 
 - You can integrate Microsoft Entra ID over LDAP by using the same configuration fields.
-- Group mapping can be enabled using [group-to-team mapping](docs/administration/authentication/group-team-mapping.md).
+- Group mapping can be enabled using [group-to-team mapping](docs/administration/authentication/group-team-mapping.md). To automatically create new teams in Prophecy via [group mappings](docs/administration/authentication/group-team-mapping.md), set the `ENABLE_AUTO_TEAM_CREATION` flag to `true` in your Prophecy deployment.
 
 ## Configuration
 
