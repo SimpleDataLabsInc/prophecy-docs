@@ -100,14 +100,15 @@ To configure lineage extraction behavior related to authentication, email delive
   </TabItem>
 </Tabs>
 
-| Variable/Secret    | Purpose                                                      |
-| ------------------ | ------------------------------------------------------------ |
-| `PROPHECY_PAT`     | Prophecy Personal Access Token                               |
-| `SMTP_USERNAME`    | Email username for sending reports                           |
-| `SMTP_PASSWORD`    | Email password or app token                                  |
-| `MONITOR_TIME_ENV` | Time window to monitor in minutes (default is `150` minutes) |
-| `GIT_COMMIT`       | Set to `1` to enable committing output                       |
-| `OUTPUT_DIR`       | Output directory for lineage files                           |
+| Variable/Secret    | Description                                                                                                                                  |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `PROPHECY_PAT`     | [Personal Access Token](/api/#access-tokens) used to authenticate with Prophecy.                                                             |
+| `SMTP_USERNAME`    | Username for the email account used to send reports.                                                                                         |
+| `SMTP_PASSWORD`    | Password needed for the email account.                                                                                                       |
+| `MONITOR_TIME_ENV` | Duration of the monitoring window in minutes (default: `150`).                                                                               |
+| `GIT_COMMIT`       | Set to `1` to enable committing generated output to Git.                                                                                     |
+| `OUTPUT_DIR`       | Directory path where lineage files are stored.                                                                                               |
+| `OPENLINEAGE_URL`  | URL for sending OpenLineage events. If not set, and format is `openlineage`, events are written as JSON files in `OUTPUT_DIR/<PROJECT-ID>/`. |
 
 ### Set up workflow configuration
 
