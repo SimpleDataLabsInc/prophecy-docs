@@ -3,6 +3,8 @@ title: Document pipelines
 id: ai-documentation
 description: Automatically create comprehensive documentation for your data pipelines using Prophecy's AI agent
 slug: /analysts/ai-documentation
+tags:
+  - agent
 ---
 
 Pipeline documentation helps team members understand data flows, transformations, and outputs. Instead of writing documentation manually, you can use Prophecy's AI agent to generate detailed specifications automatically.
