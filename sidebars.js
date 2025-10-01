@@ -411,6 +411,7 @@ const sidebars = {
               items: [
                 "analysts/development/ai-agent/ai-explore",
                 "analysts/development/ai-agent/ai-transform",
+                "analysts/development/ai-agent/ai-documentation",
               ],
             },
             "analysts/development/copilot/expression-generation",
