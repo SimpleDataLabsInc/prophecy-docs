@@ -24,7 +24,7 @@ Number of inputs and outputs can be changed as needed by clicking the `+` button
 
 ## Where the script runs
 
-The execution environment for the Script gem depends on the [SQL Warehouse Connection](/administration/fabrics/prophecy-fabrics/#connections) configured in your Prophecy fabric.
+The execution environment for the Script gem depends on the [SQL Warehouse Connection](docs/administration/fabrics/prophecy-fabrics/create-fabric.md#connections) configured in your Prophecy fabric.
 
 | SQL warehouse provider | Execution environment |
 | ---------------------- | --------------------- |

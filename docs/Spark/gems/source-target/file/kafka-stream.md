@@ -13,7 +13,7 @@ import Requirements from '@site/src/components/gem-requirements';
 
 <Requirements
   python_package_name="ProphecySparkBasicsPython"
-  python_package_version="0.0.1+"
+  python_package_version="0.2.49+"
   scala_package_name="ProphecySparkBasicsScala"
   scala_package_version="0.0.1+"
   scala_lib=""
@@ -23,35 +23,34 @@ import Requirements from '@site/src/components/gem-requirements';
   livy="Not Supported"
 />
 
-The Kafka file type is used in [Apache Kafka](https://kafka.apache.org/), which:
-
-- Is an open-source distributed event streaming platform.
-- Handles high volumes of data and delivers messages with low latency.
-- Supports real-time analytics, stream processing, fault tolerance, scalability, data integration, and event-driven architectures.
-
-## Parameters
-
-| Parameter                    | Tab      | Description                                                                                                                   |
-| ---------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| Bootstrap Server/Broker List | Location | Comma separated list of Kafka brokers.                                                                                        |
-| Security Protocol            | Location | Security protocol for Kafka. (Default value is `SASL_SSL`.)                                                                   |
-| SASL Mechanisms              | Location | Default SASL Mechanism for `SASL_SSL`. (Default value is `SCRAM-SHA-256`.)                                                    |
-| Credentials                  | Location | How to provide your credentials. <br/>You can select: `Databricks Secrets`, `Username & Password`, or `Environment variables` |
-| Kafka topic                  | Location | Comma separated list of Kafka topics.                                                                                         |
+The Kafka file type is used in [Apache Kafka](https://kafka.apache.org/). Read and write Kafka files using a Source or Target gem.
 
 ## Source
 
 The Source gem reads data from Kafka stream in batch mode and allows you to optionally specify the following additional properties. This means that Kafka only reads data incrementally from the last offset stored in the specified Metadata table. If the Metadata table is not present, then Kafka reads data from the `earliest` offset.
 
+### Source location
+
+| Parameter                                       | Description                                                                                                                           |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Bootstrap Server/Broker List                    | Comma separated list of Kafka brokers.                                                                                                |
+| Group Id (Optional)                             | Kafka consumer group ID. Used to identify the consumer group for offset management.                                                   |
+| Session timeout (in ms)                         | Session timeout for Kafka consumer. Default: `6000`                                                                                   |
+| Security Protocol                               | Security protocol for Kafka. Default value is `NO_AUTH`.                                                                              |
+| SASL Mechanisms                                 | SASL Mechanism for authentication. Default value is `NO_AUTH`.                                                                        |
+| Credentials                                     | How to provide your credentials. <br/>You can select: `Databricks Secrets`, `Username & Password`, `Environment variables`, or `None` |
+| Kafka topic                                     | Comma separated list of Kafka topics.                                                                                                 |
+| Store offsets read per partition in Delta table | Whether to store offsets read per partition in Delta table. Default: false                                                            |
+| Metadata Table                                  | Delta table to store offsets for each topic and partition.                                                                            |
+| Use SSL Trust Store                             | Enable SSL trust store configuration.                                                                                                 |
+| Trust Store Location                            | Path to the SSL trust store file. Required when SSL Trust Store is enabled.                                                           |
+| Trust Store Password                            | Password for the SSL trust store file. Required when SSL Trust Store is enabled.                                                      |
+
 ### Source properties
 
-| Property name                                   | Description                                                 | Default |
-| ----------------------------------------------- | ----------------------------------------------------------- | ------- |
-| Group Id                                        | Kafka consumer group ID.                                    | None    |
-| Session Timeout                                 | Session timeout for Kafka.                                  | `6000`  |
-| Store offsets read per partition in Delta table | Whether to store offsets read per partition in Delta table. | false   |
-| Metadata Table                                  | Delta table to store offsets for each topic and partition.  | None    |
-| Kerberos service name for Kafka SASL            | Name of your Kerberos service to use in Kafka.              | None    |
+| Property name                        | Description                                    | Default |
+| ------------------------------------ | ---------------------------------------------- | ------- |
+| Kerberos service name for Kafka SASL | Name of your Kerberos service to use in Kafka. | None    |
 
 ### Example {#source-example}
 
@@ -89,17 +88,15 @@ def KafkaSource(spark: SparkSession) -> DataFrame:
             .format("kafka")\
             .options(
               **{
-                "kafka.sasl.jaas.config": (
-                  f"kafkashaded.org.apache.kafka.common.security.scram.ScramLoginModule"
-                  + f' required username="{DBUtils(spark).secrets.get(scope = "test", key = "username")}" password="{DBUtils(spark).secrets.get(scope = "test", key = "password")}";'
-                ),
-                "kafka.sasl.mechanism": "SCRAM-SHA-256",
-                "kafka.security.protocol": "SASL_SSL",
+                "kafka.security.protocol": "NO_AUTH",
+                "kafka.sasl.mechanism": "NO_AUTH",
                 "kafka.bootstrap.servers": "broker1.aws.com:9094,broker2.aws.com:9094",
                 "kafka.session.timeout.ms": "6000",
                 "group.id": "group_id_1",
                 "subscribe": "my_first_topic,my_second_topic",
                 "startingOffsets": json.dumps(offset_dict),
+                "kafka.ssl.truststore.location": "dbfs:/Volumes/tmp/kafka.client.truststore.jks",
+                "kafka.ssl.truststore.password": "password",
               }
             )\
             .load()\
@@ -110,16 +107,14 @@ def KafkaSource(spark: SparkSession) -> DataFrame:
             .format("kafka")\
             .options(
               **{
-                "kafka.sasl.jaas.config": (
-                  f"kafkashaded.org.apache.kafka.common.security.scram.ScramLoginModule"
-                  + f' required username="{DBUtils(spark).secrets.get(scope = "test", key = "username")}" password="{DBUtils(spark).secrets.get(scope = "test", key = "password")}";'
-                ),
-                "kafka.sasl.mechanism": "SCRAM-SHA-256",
-                "kafka.security.protocol": "SASL_SSL",
+                "kafka.security.protocol": "NO_AUTH",
+                "kafka.sasl.mechanism": "NO_AUTH",
                 "kafka.bootstrap.servers": "broker1.aws.com:9094,broker2.aws.com:9094",
                 "kafka.session.timeout.ms": "6000",
                 "group.id": "group_id_1",
-                "subscribe": "my_first_topic,my_second_topic"
+                "subscribe": "my_first_topic,my_second_topic",
+                "kafka.ssl.truststore.location": "dbfs:/Volumes/tmp/kafka.client.truststore.jks",
+                "kafka.ssl.truststore.password": "password",
               }
             )\
             .load()\
@@ -134,26 +129,27 @@ def KafkaSource(spark: SparkSession) -> DataFrame:
 
 ## Target
 
-<Requirements
-  python_package_name="ProphecySparkBasicsPython"
-  python_package_version="0.0.1+"
-  scala_package_name="ProphecySparkBasicsScala"
-  scala_package_version="0.0.1+"
-  scala_lib=""
-  python_lib=""
-  uc_single="Not Supported"
-  uc_shared="14.3+"
-  livy="Not Supported"
-/>
-
 The Target gem writes data to each row from the `Dataframe` to a Kafka topic as JSON messages and allows you to optionally specify the following additional properties.
+
+### Target location
+
+| Parameter                     | Description                                                                                                                           |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Bootstrap Server/Broker List  | Comma separated list of Kafka brokers.                                                                                                |
+| Security Protocol             | Security protocol for Kafka. Default value is `NO_AUTH`.                                                                              |
+| SASL Mechanisms               | SASL Mechanism for authentication. Default value is `NO_AUTH`.                                                                        |
+| Credentials                   | How to provide your credentials. <br/>You can select: `Databricks Secrets`, `Username & Password`, `Environment variables`, or `None` |
+| Kafka topic                   | Comma separated list of Kafka topics.                                                                                                 |
+| Message Unique Key (Optional) | Key to help determine which partition to write the data to. Used for message partitioning.                                            |
+| Use SSL Trust Store           | Enable SSL trust store configuration. When enabled, requires Trust Store Location and Trust Store Password.                           |
+| Trust Store Location          | Path to the SSL trust store file. Required when SSL Trust Store is enabled.                                                           |
+| Trust Store Password          | Password for the SSL trust store file. Required when SSL Trust Store is enabled.                                                      |
 
 ### Target properties
 
-| Property name                        | Description                                                 | Default |
-| ------------------------------------ | ----------------------------------------------------------- | ------- |
-| Message Unique Key                   | Key to help determine which partition to write the data to. | None    |
-| Kerberos service name for Kafka SASL | Name of your Kerberos service to use in Kafka.              | None    |
+| Property name                        | Description                                    | Default |
+| ------------------------------------ | ---------------------------------------------- | ------- |
+| Kerberos service name for Kafka SASL | Name of your Kerberos service to use in Kafka. | None    |
 
 ### Example {#target-example}
 
@@ -178,14 +174,12 @@ def KafkaTarget(spark: SparkSession, in0: DataFrame):
         .format("kafka")\
         .options(
           **{
-            "kafka.sasl.jaas.config": (
-              f"kafkashaded.org.apache.kafka.common.security.scram.ScramLoginModule"
-              + f' required username="{DBUtils(spark).secrets.get(scope = "test", key = "username")}" password="{DBUtils(spark).secrets.get(scope = "test", key = "password")}";'
-            ),
-            "kafka.sasl.mechanism": "SCRAM-SHA-256",
-            "kafka.security.protocol": "SASL_SSL",
+            "kafka.security.protocol": "NO_AUTH",
+            "kafka.sasl.mechanism": "NO_AUTH",
             "kafka.bootstrap.servers": "broker1.aws.com:9094,broker2.aws.com:9094",
             "topic": "my_first_topic,my_second_topic",
+            "kafka.ssl.truststore.location": "dbfs:/Volumes/tmp/kafka.client.truststore.jks",
+            "kafka.ssl.truststore.password": "password",
           }
         )\
         .save()

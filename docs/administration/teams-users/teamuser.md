@@ -72,7 +72,7 @@ In the Default Project Settings tab, you can create new project templates that u
 
 ## Team management settings
 
-Additional team settings, including team creation and user management, are available in the **Team** tab of the global [Settings](/administration/settings) interface in your Prophecy environment.
+Additional team settings, including team creation and user management, are available in the **Team** tab of the global Settings interface in your Prophecy environment.
 
 1. Click the **...** button and the **gear** icon at the bottom of the left navigation bar.
 1. Select the **Teams** tab.
