@@ -2,7 +2,7 @@
 title: XLSX (Excel)
 id: xlsx
 slug: /engineers/xlsx
-description: Parameters and properties to read from and write too XLSX (Excel) files
+description: Parameters and properties to read from and write to XLSX (Excel) files using Spark
 tags:
   - gems
   - file
@@ -23,23 +23,47 @@ import Requirements from '@site/src/components/gem-requirements';
   livy="Not Supported"
 />
 
-The XLSX (Excel) file type:
-
-- Is in XML format, which is easier for data access, manipulation, and compatibility with various software applications.
-- Offers password protection options, which allow users to secure sensitive data.
+The XLSX (Excel) file gem can read from or write to the file storage (Databricks Volumes or DBFS) of your fabric connection or from a SharePoint or SFTP connection.
 
 ## Prerequisites
 
-- If you receive an error about the `excel` format not being available you must add `spark-excel` library as a dependency.
+The XLSX gem has various requirements depending on its configuration.
 
-- To add the Maven coordinate `com.crealytics:spark-excel_2.12:3.5.1_0.20.4` to your pipeline, see [Spark dependencies](docs/extensibility/dependencies/spark-dependencies.md).
+:::info
+See [Spark dependencies](docs/extensibility/dependencies/spark-dependencies.md) for information on adding pipeline dependencies.
+:::
+
+### Read with Pandas
+
+To read/write XLSX files using the Pandas Library Type, you need to:
+
+- Update ProphecySparkBasicsPython 0.2.5+
+- Update ProphecyLibsPython 2.1.5+
+- Add the following Python dependencies to your pipeline:
+
+  - [pandas](https://pypi.org/project/pandas/)
+  - [glob2](https://pypi.org/project/glob2/)
+  - [openpyxl](https://pypi.org/project/openpyxl/)
+
+  You will need to restart or reattach your cluster for these libraries to be installed.
+
+- Read from Databricks (SFTP and SharePoint not supported)
+
+Use this method when running on UC standard clusters or Databricks Serverless.
+
+### Read with Crealytics
+
+To read/write XLSX files using the Crealytics Library Type:
+
+- Add `spark-excel` library as a pipeline dependency using the Maven coordinate `com.crealytics:spark-excel_2.12:3.5.1_0.20.4`
 
 ## Parameters
 
-| Parameter | Tab        | Description                                                                                                                                                                                     |
-| --------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Location  | Location   | File path to read from or write to the XLSX file.                                                                                                                                               |
-| Schema    | Properties | Schema to apply on the loaded data.<br/>In the Source gem, you can define or edit the schema visually or in JSON code.<br/>In the Target gem, you can view the schema visually or as JSON code. |
+| Parameter    | Tab        | Description                                                                                                                                                                                                                                                                                                             |
+| ------------ | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Location     | Location   | Where to read from or write to the XLSX file. You can read XLSX files from the following locations:<ul><li>File Location: Provide the Databricks Volume or DBFS path to the file.</li><li>SharePoint: Provide the SharePoint path to the file.</li><li>SFTP: Provide the path in the SFTP server to the file.</li></ul> |
+| Schema       | Properties | Schema to apply on the loaded data.<br/>In the Source gem, you can define or edit the schema visually or in JSON code.<br/>In the Target gem, you can view the schema visually or as JSON code.                                                                                                                         |
+| Library Type | Properties | (File Location only) Choose whether to read/write files using Pandas or Crealytics.                                                                                                                                                                                                                                     |
 
 ## Source
 
