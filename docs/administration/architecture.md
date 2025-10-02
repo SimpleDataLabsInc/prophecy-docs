@@ -22,9 +22,11 @@ The Free and Professional Editions provide a complete data platform with managed
 | Version control    | Git integration supporting both Prophecy-managed and external Git repositories.                                |
 | Deployment model   | SaaS only. Learn more in [Deployment models](docs/administration/prophecy-deployment.md).                      |
 
-### Architecture diagram {#diagram-1}
-
-![Free and Professional Edition Architecture](img/arch-free-pro.png)
+<img
+src={require('./img/arch-free-pro.png').default}
+alt="Free and Professional Edition Architecture"
+className="light-border"
+/>
 
 ## Express Edition
 
@@ -40,9 +42,11 @@ The Express Edition provides enterprise-grade features scoped to leverage your e
 | Version control        | Git integration supporting both Prophecy-managed and external Git repositories.                                |
 | Deployment model       | Dedicated SaaS only. Learn more in [Deployment models](docs/administration/prophecy-deployment.md).            |
 
-### Architecture diagram {#diagram-2}
-
-![Enterprise and Express Edition Architecture](img/arch-enterprise-sql.png)
+<img
+src={require('./img/arch-enterprise-sql.png').default}
+alt="Enterprise and Express Edition Architecture"
+className="light-border"
+/>
 
 :::info
 This diagram shows the architecture for the Express Edition. **Users on the Enterprise Edition can also leverage this architecture.** However, Enterprise users can also connect to additional SQL warehouses, like BigQuery.
@@ -61,9 +65,11 @@ The Enterprise edition offers maximum flexibility with multiple execution engine
 | Version control  | Git integration supporting both Prophecy-managed and external Git repositories.                                                                                                                                                                                                                           |
 | Deployment model | Dedicated SaaS preferred, Self-hosted supported, and SaaS available. Learn more in [Deployment models](#deployment-models).                                                                                                                                                                               |
 
-### Architecture diagram {#diagram-3}
-
-![Enterprise Edition Spark Architecture](img/arch-enterprise-spark.png)
+<img
+src={require('./img/arch-enterprise-spark.png').default}
+alt="Enterprise Edition Spark Architecture"
+className="light-border"
+/>
 
 The Enterprise Edition supports both SQL-based and Spark-based architectures. The diagram above shows the architecture for a deployment using Spark.
 
@@ -74,15 +80,21 @@ Prophecy can accommodate a wide variety of architectures beyond this diagram. Fo
 
 ## What is Prophecy Automate?
 
-Prophecy Automate is the native runtime available across all Prophecy editions. This integrated platform provides three core capabilities:
+Prophecy Automate is the native runtime available across all Prophecy editions. This runtime provides the following core capabilities:
 
-- **Ingest**: Data ingestion capabilities that support reading from and writing to data warehouses. Designed for business data sources including SharePoint, SFTP, and Excel files.
+- **Ingress/Egress**: Supports reading from and writing to databases (Snowflake, Oracle, etc.) and other data providers (SharePoint, Tableau, etc.).
 
-- **Transform**: Prophecy Automate lets us provide transformation capabilities beyond what's possible in dbt core. For example, you can using the DynamicInput gem, which runs on Prophecy Automate, to ...
+- **Transform**: Provides transformation capabilities beyond what's possible in dbt core. For example, you can using the DynamicInput gem, which runs on Prophecy Automate, to run SQL queries that update automatically based on your incoming data.
 
-- **Orchestrate**: Scheduling and workflow management with time-based and trigger-based execution options. Provides intuitive interactive experiences with comprehensive built-in monitoring capabilities.
+- **Scheduling**: Lets you to automate pipeline runs with time-based and trigger-based execution options. Also enables use of APIs to trigger orchestration functionality.
 
-- **Observe**: Integrated monitoring and observability features that enable quick troubleshooting of scheduled pipelines, cost analysis, performance monitoring, and data quality oversight, all accessible through the Prophecy Studio interface.
+- **Observe**: Integrates monitoring and observability features that allow you to view pipeline run history, track project deployments, and view active pipeline schedules.
+
+<img
+src={require('./img/arch-prophecy-automate.png').default}
+alt="Prophecy Automate connections diagram"
+className="light-border"
+/>
 
 :::info
 Prophecy Automate is only accessible via [Prophecy fabrics](/administration/fabrics/prophecy-fabrics/) for SQL projects and does not integrate with Spark-based projects.
