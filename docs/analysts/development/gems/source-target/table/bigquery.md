@@ -44,12 +44,12 @@ Tables are persistent, indexed storage objects optimized for frequent access.
 
 #### Target parameters {#target-tables}
 
-| Parameter     | Description                                                                                                                                                                                                                                       |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Location      | Choose the location where the table will be stored. You can create a new table by writing a new table name.                                                                                                                                       |
-| Properties    | Define certain properties of the table. The schema cannot be changed for targets.                                                                                                                                                                 |
-| Write Options | Select how you want the data to be written each time you run the pipeline (Table only). <br/>Supports overwrite, append, and SCD2 merge. <br/>Learn more about these write modes in [BigQuery targets](/engineers/bigquery-target#write-options). |
-| Preview       | Load the data to see a preview before saving.                                                                                                                                                                                                     |
+| Parameter     | Description                                                                                                                                  |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Location      | Choose the location where the table will be stored. You can create a new table by writing a new table name.                                  |
+| Properties    | Define certain properties of the table. The schema cannot be changed for targets.                                                            |
+| Write Options | Select how you want the data to be written each time you run the pipeline (Table only). Learn more in [Write Options](/table-write-options). |
+| Preview       | Load the data to see a preview before saving.                                                                                                |
 
 ### Views
 
