@@ -18,19 +18,18 @@ const sidebars = {
 
   // But you can create a sidebar manually
   gettingStartedSidebar: [
-    "getting-started/index",
+    "index",
     {
       type: "html",
       value: '<span class="sidebar-divider" />',
     },
     {
       type: "category",
-      label: "Concepts",
+      label: "Core concepts",
       items: [
         "administration/teams-users/teams-users",
         "getting-started/concepts/Fabric",
         "getting-started/concepts/project/projects",
-        "getting-started/concepts/templates",
         "getting-started/concepts/pipelines",
         "getting-started/concepts/gems",
         {
@@ -52,7 +51,6 @@ const sidebars = {
         "getting-started/quick-starts/agent-quick-start",
         "getting-started/quick-starts/analysts-qs",
         "getting-started/quick-starts/engineers-qs",
-        "getting-started/quick-starts/databricks-partner-connect",
       ],
     },
     {
@@ -70,11 +68,83 @@ const sidebars = {
     },
     {
       type: "category",
+      label: "Platform setup",
+      items: [
+        "getting-started/setup/prophecy-express-guide",
+        "getting-started/setup/prophecy-enterprise-guide",
+        "getting-started/setup/databricks-partner-connect",
+      ],
+    },
+    {
+      type: "category",
       label: "Editions",
       items: [
+        "getting-started/editions/editions",
         "administration/architecture",
         "administration/prophecy-deployment",
         "administration/security",
+      ],
+    },
+    {
+      type: "category",
+      label: "Administration",
+      items: [
+        {
+          type: "category",
+          label: "User management",
+          items: [
+            "administration/user-management/account-settings",
+            "administration/user-management/team-user-provisioning",
+            {
+              type: "category",
+              label: "Access",
+              items: [
+                "administration/user-management/access/role-based-access",
+                "administration/user-management/access/team-based-access",
+              ],
+            },
+          ],
+        },
+        "administration/cluster-admin-settings",
+        "administration/audit-logging",
+        {
+          type: "category",
+          label: "Authentication",
+          items: [
+            {
+              type: "category",
+              label: "Prophecy authentication",
+              link: {
+                type: "doc",
+                id: "administration/authentication/authentication",
+              },
+              items: [
+                "administration/authentication/ldap",
+                "administration/authentication/saml-scim",
+                "administration/authentication/azure-ad",
+                "administration/authentication/google-sso",
+                "administration/authentication/group-team-mapping",
+              ],
+            },
+            {
+              type: "category",
+              label: "Fabric authentication",
+              items: [
+                "administration/authentication/databricks-oauth",
+                "administration/authentication/emr-saml",
+              ],
+            },
+          ],
+        },
+        {
+          type: "category",
+          label: "Usage and billing",
+          link: {
+            type: "doc",
+            id: "administration/usage-billing/usage-billing",
+          },
+          items: ["administration/usage-billing/credits"],
+        },
       ],
     },
     {
@@ -91,7 +161,7 @@ const sidebars = {
     },
   ],
   platformSidebar: [
-    "index",
+    "analysts/index",
     ///------------------ ANALYSTS -------------------------///
     {
       type: "html",
@@ -111,6 +181,7 @@ const sidebars = {
         id: "administration/fabrics/prophecy-fabrics/prophecy-fabrics",
       },
       items: [
+        "administration/fabrics/prophecy-fabrics/create-fabric",
         {
           type: "category",
           label: "Connections",
@@ -126,6 +197,7 @@ const sidebars = {
             "administration/fabrics/prophecy-fabrics/connections/bigquery",
             "administration/fabrics/prophecy-fabrics/connections/onedrive",
             "administration/fabrics/prophecy-fabrics/connections/power-bi",
+            "administration/fabrics/prophecy-fabrics/connections/prophecy-managed",
             "administration/fabrics/prophecy-fabrics/connections/sharepoint",
             "administration/fabrics/prophecy-fabrics/connections/mongodb",
             "administration/fabrics/prophecy-fabrics/connections/mssql",
@@ -138,6 +210,7 @@ const sidebars = {
             "administration/fabrics/prophecy-fabrics/connections/tableau",
           ],
         },
+        "administration/fabrics/prophecy-fabrics/secrets/secrets",
       ],
     },
     {
@@ -178,9 +251,11 @@ const sidebars = {
                     id: "analysts/development/gems/source-target/table/table",
                   },
                   items: [
+                    "analysts/development/gems/source-target/table/prophecy-in-memory",
                     "analysts/development/gems/source-target/table/databricks",
                     "analysts/development/gems/source-target/table/bigquery",
                     "analysts/development/gems/source-target/table/upload-files",
+                    "analysts/development/gems/source-target/table/write-options",
                   ],
                 },
                 {
@@ -456,6 +531,8 @@ const sidebars = {
           items: [
             "analysts/development/collaboration/collaboration-modes",
             "analysts/development/collaboration/canvas-annotations",
+            "analysts/development/collaboration/project-replays",
+            "analysts/development/collaboration/project-sharing",
           ],
         },
         {
@@ -478,6 +555,8 @@ const sidebars = {
       items: [
         "analysts/version-control/publication",
         "analysts/version-control/migrate-managed",
+        "analysts/version-control/clone-projects",
+        "analysts/version-control/import-projects",
       ],
     },
     {
@@ -593,15 +672,7 @@ const sidebars = {
             "administration/fabrics/sql-fabrics/bigquery",
           ],
         },
-        {
-          type: "category",
-          label: "Secrets",
-          link: {
-            type: "doc",
-            id: "administration/secrets/secrets",
-          },
-          items: ["administration/secrets/secret-providers"],
-        },
+        "administration/secrets/secret-providers",
       ],
     },
     {
@@ -876,7 +947,6 @@ const sidebars = {
               ],
             },
             "analysts/development/models/sources-target/dynamic-target-location",
-            "analysts/development/models/sources-target/merge-approaches",
           ],
         },
         "analysts/development/models/configuration",
@@ -999,46 +1069,6 @@ const sidebars = {
       },
       items: ["administration/project-types/project-creation-template"],
     },
-    ///------------------ ADMINISTRATION ------------------------///
-    {
-      type: "html",
-      value: '<span class="sidebar-divider" />',
-    },
-    {
-      type: "html",
-      className: "sidebar-title",
-      value: "Administration",
-      defaultStyle: true,
-    },
-    {
-      type: "category",
-      label: "User management",
-      items: [
-        "administration/user-management/account-settings",
-        "administration/user-management/team-user-provisioning",
-        {
-          type: "category",
-          label: "Access",
-          items: [
-            "administration/user-management/access/role-based-access",
-            "administration/user-management/access/team-based-access",
-          ],
-        },
-      ],
-    },
-    "administration/cluster-admin-settings",
-    "administration/audit-logging",
-    {
-      type: "category",
-      label: "Authentication",
-      link: { type: "doc", id: "administration/authentication/authentication" },
-      items: [
-        {
-          type: "autogenerated",
-          dirName: "administration/authentication",
-        },
-      ],
-    },
   ],
   apiSidebar: [
     "api/index",
@@ -1048,6 +1078,7 @@ const sidebars = {
       link: { type: "doc", id: "api/trigger-pipeline/trigger-pipeline-api" },
       items: ["api/trigger-pipeline/rest-api-gem-trigger"],
     },
+    "api/deploy-project/deploy-project",
   ],
 };
 

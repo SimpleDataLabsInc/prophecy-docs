@@ -9,6 +9,10 @@ tags:
   - oauth
 ---
 
+:::edition Express and Enterprise
+Available for Express and Enterprise Editions only.
+:::
+
 Prophecy provides Databricks OAuth to align with industry-standard authentication flows. This gives you more granular access control and better security, making it a good alternative to Personal Access Tokens (PATs). This integration works with both Spark clusters and SQL warehouses.
 
 ## Requirements
