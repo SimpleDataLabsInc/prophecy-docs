@@ -34,7 +34,7 @@ Prophecy only tests prompts in English. Other languages may work, but support de
 
 Copilot helps you with one-click tasks such as automated documentation generation, error fixing with one-click solutions, and the ability to generate unit tests and data quality checks. Additionally, Prophecy's AI agent can help you build SQL pipelines through natural language. You can ask the agent to help with tasks such as adding gems, exploring datasets in your SQL warehouse, and visualizing data.
 
-To learn more, see [Copilot for SQL projects](/analysts/ai-features) and [Copilot for Spark projects](/engineers/copilot).
+To learn more, see [AI for SQL projects](/analysts/ai-features) and [AI for Spark projects](/engineers/copilot).
 
 ![AI Example](img/agent-chat.gif)
 
