@@ -156,7 +156,17 @@ const sidebars = {
                     "analysts/development/gems/source-target/external-table/oracle",
                     "analysts/development/gems/source-target/external-table/redshift",
                     "analysts/development/gems/source-target/external-table/salesforce",
-                    "analysts/development/gems/source-target/external-table/hana",
+                    {
+                      type: "category",
+                      label: "SAP HANA",
+                      link: {
+                        type: "doc",
+                        id: "analysts/development/gems/source-target/external-table/hana/hana",
+                      },
+                      items: [
+                        "analysts/development/gems/source-target/external-table/hana/generated-columns",
+                      ],
+                    },
                     "analysts/development/gems/source-target/external-table/snowflake",
                   ],
                 },

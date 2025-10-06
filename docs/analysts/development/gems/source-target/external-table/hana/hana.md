@@ -42,7 +42,7 @@ Use these settings to configure a Hana Source gem for reading data.
 
 ### Source properties
 
-Infer or manually configure the schema of your Source gem. Optionally, add a description for your table. Additional properties are not supported.
+Infer or manually configure the schema of your Source gem. Optionally, add a description for your table.
 
 ## Target configuration
 
@@ -59,32 +59,11 @@ Use these settings to configure a Hana Target gem for writing data.
 
 ### Target properties
 
-Review schema of your Target gem and optionally update the metadata of columns in the schema. You can also add a description for your table. Additional properties are not supported.
+Review schema of your Target gem and optionally update the metadata of columns in the schema. You can also add a description for your table.
 
-#### GENERATED ALWAYS AS IDENTITY columns
+#### Generated columns
 
-GENERATED ALWAYS AS IDENTITY columns enable the functionality of sequences in SAP HANA. They auto-generate unique, incrementing values for each new row, often used as primary keys. For technical details, see the [SAP HANA documentation](https://help.sap.com/docs/SAP_HANA_PLATFORM/52715f71adba4aaeb480d946c742d1f6/301d1ef633974273ad44d2f38e4f4460.html).
-
-If you write to a HANA table that contains a GENERATED ALWAYS AS IDENTITY column, the HANA Gem:
-
-- Automatically detects the column in your target table
-- Lets SAP HANA handle the auto-increment process
-- Ignores incoming values for those columns from your pipeline data to prevent errors that would occur if manual values conflicted with HANA's sequence generation
-
-To create a new table that has a GENERATED ALWAYS AS IDENTITY column:
-
-1. Add a new Target gem to your pipeline canvas.
-1. In the **Type** tab, select HANA as the target type.
-1. In the **Location** tab, configure the location where the new table is written.
-1. In the **Properties** tab, review the schema of the target table.
-1. To add a GENERATED ALWAYS AS IDENTITY column, add the type GENERATED ALWAYS AS IDENTITY as a metadata field in the column.
-1. SAP HANA recognizes this column as auto-incrementing and handle the updates.
-
-![Hana table schema](img/hana-properties.png)
-
-:::note
-Prophecy does not label the auto-incrementing column in the metadata field when the column originates from SAP HANA.
-:::
+Generated columns are specific to SAP HANA and auto-generate values for new rows. You can define generated columns in the Properties tab via column-level metadata. Learn more in [Generated columns](/analysts/hana-generated-columns).
 
 ### Write options
 
