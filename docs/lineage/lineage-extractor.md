@@ -15,13 +15,17 @@ import TabItem from '@theme/TabItem';
 
 The Prophecy lineage extractor is a Python tool that retrieves and exports lineage information from Prophecy projects and pipelines. It supports project, pipeline, and branch-level lineage extraction, with optional features like emailing reports.
 
-You can run the extractor manually or integrate it into a CI workflow to automate report generation. Automating lineage extraction helps teams:
+You can run the lineage extractor manually or integrate it into a CI workflow to automate report generation. This page covers how to run the extractor via command line and how to automate it using GitHub Actions or GitLab CI.
 
-- Keep lineage reports up to date with every commit or scheduled run.
-- Share lineage insights across teams through version control or email.
-- Monitor upstream column changes using recursive lineage extraction.
+:::info
+The lineage extractor only supports extraction from Spark pipelines and SQL pipelines. It does not support SQL models.
+:::
 
-This page covers how to run the extractor via command line and how to automate it using GitHub Actions or GitLab CI.
+## Prerequisites
+
+To use the lineage extractor for SQL pipelines:
+
+- `knowledge-graph` must be enabled in your Prophecy deployment.
 
 ## Command
 
@@ -41,6 +45,19 @@ Use the lineage extractor Python command to export the lineage of a specific pip
 <!-- | `--recursive-extract` | `flag` | No       | Set to `true` to recursively trace upstream column changes. Set to `false` to disable this behavior.                                                                                         | -->
 
 <Tabs>
+  <TabItem value="SQL" label="SQL example">
+
+```
+python -m prophecy_lineage_extractor \
+  --project-id 6493 \
+  --reader knowledge-graph \
+  --branch test1234 \
+  --output-dir ./test \
+  --run-for-all \
+  --fmt openlineage
+```
+
+  </TabItem>
   <TabItem value="Spark" label="Spark example">
 
 ```
@@ -55,26 +72,14 @@ python -m prophecy_lineage_extractor \
 ```
 
   </TabItem>
-  <TabItem value="SQL" label="SQL example">
 
-```
-python -m prophecy_lineage_extractor \
-  --project-id 6493 \
-  --reader knowledge-graph \
-  --branch test1234 \
-  --output-dir ./test \
-  --run-for-all \
-  --fmt openlineage
-```
-
-  </TabItem>
 </Tabs>
 
 ## Integration with GitHub Actions or GitLab CI
 
 This section walks you through automating the extraction of lineage reports from your Prophecy pipelines using a CI workflow in GitHub Actions or GitLab CI. You'll set up a script that pulls lineage data, generates an Excel report, and optionally sends it by email or commits it back to your repository.
 
-### Prerequisites
+### Prerequisites {#prerequisites-integration}
 
 - A Prophecy project hosted in an external GitHub or GitLab repository.
 - Access to the repository and permissions to set up CI/CD pipelines.
