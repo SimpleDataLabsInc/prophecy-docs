@@ -10,7 +10,7 @@ tags:
 ---
 
 Once you have developed a [Spark pipeline](/engineers/pipelines) using Prophecy, you will want to schedule it to run at
-some frequency. To support this, Prophecy provides a visual layer on top of Databricks jobs for an easy orchestration.
+some frequency. To support this, Prophecy provides a visual layer on top of Databricks jobs for job orchestration.
 
 ## Development
 
@@ -44,39 +44,68 @@ When you create a new job, you're asked for the following details:
 
 ![Example Databricks job](img/databricks-job-example.png)
 
-Now that you've created your first job, you can start adding gems to the canvas to define which pipelines will be run during the job. To define dependencies between the pipelines within the job you can simply connect them by dragging-and-dropping the edges between gems.
+Now that you've created your first job, you can start adding gems to the canvas to define which pipelines will be run during the job. To define dependencies between the pipelines within the job, connect them by dragging-and-dropping the edges between gems.
 
-Two gem types are available when defining Databricks jobs:
+Five gem types are available when defining Databricks jobs:
 
 #### Pipeline Gem
 
 The Pipeline gem triggers a Spark pipeline developed in Prophecy.
 
-<!--also model, notebook, DLT pipeline-->
+To configure a Pipeline gem:
 
-![Pipeline Component](img/databricks-jobs-pipeline-config.png)
+1. Add and open the gem.
+2. Give the pipeline a name.
+3. If desired, add a **run condition** for the pipeline:
+   - All succeeded
+   - At least one succeeded
+   - None failed
+   - All done
+   - At least one failed
+4. Select **Pipeline Config** or use default. If you select a custom pipeline config, you can set values in the **Config** tab.
+5. Click **Save**.
 
-Settings for pipeline component can be inherited from overall job configuration or can be set inside the component itself.
+![Pipeline configuration](img/databricks-jobs-pipeline-config.png)
+
+Settings for the pipeline component can be inherited from overall job configuration or can be set inside the component itself.
 
 #### Script Gem
 
-You can use the Script gemto write any ad-hoc code.
-
-![Script Component](img/databricks-jobs-script-config.png)
+You can use the Script gem to write any ad-hoc code.
 
 The settings for the script component can be inherited from overall job configuration or can be set inside the component itself.
+
+#### Notebook gem
+
+You can include notebooks that you have created in Databricks in a job. (Prophecy does not support creating notebooks directly in Prophecy).
+
+1. Add gem.
+
+1. Enter **Notebook Path** in gem. Make sure the user running the pipeline has Databricks permissions for this location.
+
+## Run the job
+
+When you are satisfied with the job's configuration, you can run the job
+
+To run the job
+
+1. Make sure you are connected to a fabric.
+
+2. Click the run button in the lower right-hand corner of the job configuration page.
+
+If the job fails, Prophecy displays an error message indicating what went wrong. If the job succeeds, Prophecy displays a page indicating that all stages have succeeded.
+
+<!--there's more than this--have to figure out if gems need to be chained together, figure out single vs. multicluster-->
 
 ## Visual == Code
 
 The visual graph created on the jobs page is automatically converted to code (JSON) in the backend which gets committed to Git.
 
-![Code View](img/databricks-jobs-code-view.png)
+<!--there was also a screenshot here--outdated--and I don't think this point needs to be emphasized-->
 
 ## Job Configuration
 
 ![Example Configuration](img/databricks-job-config-example.png)
-
----
 
 | Field Name                | Description                                                                                                                                                                                                                                   |
 | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -93,10 +122,7 @@ The visual graph created on the jobs page is automatically converted to code (JS
 
 To change the job name itself, go to Prophecy's metadata page. Locate the job within a project, and click the pencil icon.
 
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://fast.wistia.net/embed/iframe/hlqqxqyq87?seo=false?videoFoam=true" title="Getting Started With SQL Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
+<!--note: we had a video showing how to rename a job. This really doesn't seem necessary, and it is taking up a lot of screen real estate-->
 
 ## Deployment Modes
 
@@ -112,6 +138,8 @@ To deploy a job on Databricks, we need to release the project from Prophecy UI a
 :::info
 
 Make sure to enable the job before creating a Release. If not enabled, the job will not run.
+
+<!--need to figure this out too--I don't think this is necessary-->
 
 If a job's selected fabric is changed it will create a separate Databricks job definition. The previous job (with the previous fabric) will be paused automatically and the new version will be scheduled.
 :::
@@ -160,4 +188,5 @@ status of historic/current runs (success/failure/in-progress) for quick referenc
 ## Guides
 
 1. [How to trigger a job from another job?](multi-jobs-trigger)
+<!--I think we can do this now without code?-->
 2. [How to design a reliable CI/CD process?](/engineers/ci-cd)
