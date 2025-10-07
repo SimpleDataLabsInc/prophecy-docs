@@ -67,7 +67,7 @@ Generated columns are specific to SAP HANA and auto-generate values for new rows
 
 ### Write options
 
-Control how data is written into the target table during each run of the pipeline. Choose a mode based on whether you want to overwrite, append, or merge rows.
+Control how data is written into the target table during each run of the pipeline. Choose whether to overwrite, append, or merge rows.
 
 | Mode                                           | Description                                                                      |
 | ---------------------------------------------- | -------------------------------------------------------------------------------- |
@@ -90,7 +90,7 @@ Configure the following for **Wipe & Replace Table**, **Write Fresh Table; Error
 
 #### Merge parameters
 
-Configure the following after selecting a **Merge** mode.
+Configure the following for any **Merge**.
 
 | Parameter       | Required For                                                   | Description                                                                                                                                            |
 | --------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
