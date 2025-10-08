@@ -84,11 +84,9 @@ Prophecy Automate is the native runtime available across all Prophecy editions. 
 
 - **Ingress/Egress**: Supports reading from and writing to databases (Snowflake, Oracle, etc.) and other data providers (SharePoint, Tableau, etc.).
 
-- **Transform**: Provides transformation capabilities beyond what's possible in dbt core. For example, you can using the DynamicInput gem, which runs on Prophecy Automate, to run SQL queries that update automatically based on your incoming data.
+- **Orchestration**: Coordinates pipeline logic beyond what's possible in dbt core. Orchestration includes pipeline scheduling with time-based and trigger-based execution, orchestration APIs for programmatic control, and dynamic operations like the DynamicInput gem (which runs SQL queries that update automatically based on incoming data) and the Directory gem (which lists files and folders in a specified location).
 
-- **Scheduling**: Lets you to automate pipeline runs with time-based and trigger-based execution options. Also enables use of APIs to trigger orchestration functionality.
-
-- **Observe**: Integrates monitoring and observability features that allow you to view pipeline run history, track project deployments, and view active pipeline schedules.
+- **Observe**: Integrates monitoring and observability features that allow you to view preserve pipeline run history, track project deployments, and view active pipeline schedules.
 
 <img
 src={require('./img/arch-prophecy-automate.png').default}
