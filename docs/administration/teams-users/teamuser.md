@@ -63,6 +63,7 @@ When the **Enable multi file code generation** setting is enabled, Prophecy spli
 Configure the following settings in the Advanced tab of the team settings.
 
 - **Artifact ID (Spark only):** Sets the parent artifact identifier for project JAR and wheel packages. This identifier is used when packaging your Spark project dependencies and becomes part of the artifact metadata for deployment and distribution.
+- **Enable Copilot**: Use this toggle to enable or disable AI features for specific teams.
 - **Data context in copilot:** When enabled, sample data from interim runs will be used to improve Copilot suggestion quality. Note that this data is not used to improve the AI Agent.
 - **Default projects:** Manage default project dependencies that are automatically imported into new projects. You can select any project from the Package Hub to include here.
 
