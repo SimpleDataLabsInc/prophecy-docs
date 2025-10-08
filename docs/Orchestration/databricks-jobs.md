@@ -12,9 +12,7 @@ tags:
 Once you have developed a [Spark pipeline](/engineers/pipelines) using Prophecy, you will want to schedule it to run at
 some frequency. To support this, Prophecy provides a visual layer on top of Databricks jobs for job orchestration.
 
-## Development
-
-### Schedule a Databricks job
+## Schedule a Databricks job
 
 You can create a job from three places:
 
@@ -40,13 +38,13 @@ When you create a new job, you're asked for the following details:
 
 ![Example Configuration](img/databricks-job-config-example.png)
 
-### Build the job
+## Build the job
 
 Once you add a job, Prophecy opens a visual canvas that lets you add and connect gems for the job.
 
 Five gem types are available when defining Databricks jobs:
 
-#### Pipeline Gem
+### Pipeline Gem
 
 The Pipeline gem triggers a Spark pipeline developed in Prophecy.
 
@@ -67,13 +65,13 @@ To configure a Pipeline gem:
 
 Settings for the pipeline component can be inherited from overall job configuration or can be set inside the component itself.
 
-#### Script Gem
+### Script Gem
 
 You can use the Script gem to write any ad-hoc code.
 
 The settings for the script component can be inherited from overall job configuration or can be set inside the component itself.
 
-#### Notebook gem
+### Notebook gem
 
 You can include notebooks that you have created in Databricks in a job. (Prophecy does not support creating notebooks directly in Prophecy).
 
