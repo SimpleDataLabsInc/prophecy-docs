@@ -63,7 +63,7 @@ The Enterprise edition offers maximum flexibility with multiple execution engine
 | Data storage     | Data outside of the execution environment that will flow in and out of the pipeline.                                                                                                                                                                                                                      |
 | AI               | Customer-managed LLM subscription and endpoint.                                                                                                                                                                                                                                                           |
 | Version control  | Git integration supporting both Prophecy-managed and external Git repositories.                                                                                                                                                                                                                           |
-| Deployment model | Dedicated SaaS preferred, Self-hosted supported, and SaaS available. Learn more in [Deployment models](#deployment-models).                                                                                                                                                                               |
+| Deployment model | Dedicated SaaS preferred, Self-hosted supported, and SaaS available. Learn more in [Deployment models](docs/administration/prophecy-deployment.md).                                                                                                                                                       |
 
 <img
 src={require('./img/arch-enterprise-spark.png').default}

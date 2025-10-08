@@ -7,7 +7,7 @@ tags:
   - agent
 ---
 
-Pipeline documentation helps team members understand data flows, transformations, and outputs. Instead of writing documentation manually, you can use Prophecy's AI agent to generate detailed specifications automatically.
+Instead of writing documentation manually, you can use Prophecy's AI agent to generate detailed specifications automatically. Pipeline documentation helps team members understand how input fields are transformed to produce the final output.
 
 ## Generate documentation
 
@@ -15,9 +15,13 @@ To create documentation for your pipeline:
 
 1. Open your pipeline in Prophecy.
 1. Click the **Chat** tab in the left sidebar.
-1. Ask the AI agent to document your pipeline.
+1. Ask the AI agent to document your pipeline using a prompt like:
 
-The agent analyzes your pipeline and generates a markdown document.
+```
+Create documentation for the current pipeline
+```
+
+The agent analyzes your pipeline and generates a Markdown document.
 
 ![Ask agent to generate documentation](img/agent-generate-docs.png)
 
@@ -28,7 +32,7 @@ The AI agent:
 1. Displays a preparation checklist showing progress.
 1. Analyzes your pipeline components.
 1. Generates structured documentation.
-1. Saves the markdown file to the `documents` directory in your project.
+1. Saves the Markdown file to the `documents` directory in your project.
 
 You can find the generated document under **Documents** in the project sidebar.
 
@@ -39,7 +43,7 @@ You can find the generated document under **Documents** in the project sidebar.
 Generated documentation follows a consistent structure to make information easy to find.
 
 - **Introduction**: High-level overview of the pipeline's purpose, business context, and strategy.
-- **Input sources**: Each data source listed with its full name, description, and fields used in the pipeline.
+- **Input sources**: Each data source listed with its full name, description, and fields used in the pipeline (rather than the entire set of input fields).
 - **Output targets**: Each output table with its description, dependencies, complete column schema, and transformation logic.
 - **Transformation steps**: Ordered list of data processing steps with logic mapped to gems.
 
