@@ -37,8 +37,6 @@ See [Spark dependencies](docs/extensibility/dependencies/spark-dependencies.md) 
 
 To read/write XLSX files using the Pandas Library Type, you need to:
 
-- Update ProphecySparkBasicsPython 0.2.5+
-- Update ProphecyLibsPython 2.1.5+
 - Add the following Python dependencies to your pipeline:
 
   - [pandas](https://pypi.org/project/pandas/)
@@ -47,9 +45,10 @@ To read/write XLSX files using the Pandas Library Type, you need to:
 
   You will need to restart or reattach your cluster for these libraries to be installed.
 
-- Read from Databricks (SFTP and SharePoint not supported)
+- For Databricks Serverless:
 
-Use this method when running on UC standard clusters or Databricks Serverless.
+  - Update ProphecySparkBasicsPython 0.2.5+
+  - Update ProphecyLibsPython 2.1.5+
 
 ### Read with Crealytics
 
