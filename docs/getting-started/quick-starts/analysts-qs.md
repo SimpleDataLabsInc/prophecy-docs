@@ -1,5 +1,5 @@
 ---
-title: Quick start for Analysts
+title: Analyst quick start
 id: analysts-qs
 slug: /analysts/quick-start
 description: Create a pipeline with Prophecy for Analysts
@@ -9,7 +9,7 @@ tags:
   - onboarding
 ---
 
-Follow this 15 minute quick start to learn how to create a pipeline in a [Prophecy for Analysts](/templates) project.
+Follow this 15 minute quick start to learn how to create a pipeline in a SQL project.
 
 ## Objectives
 

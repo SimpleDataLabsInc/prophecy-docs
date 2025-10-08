@@ -38,13 +38,13 @@ Prophecy can only access files stored in the [document library](https://support.
 
 To create a connection with SharePoint, enter the following parameters. You can find the Tenant ID, Client ID, and Client Secret in your Microsoft Entra app.
 
-| Parameter                                                                 | Description                                                                                               |
-| ------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| Connection Name                                                           | Unique name for the connection                                                                            |
-| Tenant ID                                                                 | Your Microsoft Entra [tenant ID](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-find-tenant) |
-| Client ID                                                                 | Your Microsoft Entra app Client ID                                                                        |
-| Client Secret ([Secret required](docs/administration/secrets/secrets.md)) | Your Microsoft Entra app Client Secret                                                                    |
-| Site URL                                                                  | URL of the SharePoint site to connect<br/>Example: `https://yourcompany.sharepoint.com/sites/mysite`      |
+| Parameter                                                                                          | Description                                                                                               |
+| -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| Connection Name                                                                                    | Unique name for the connection                                                                            |
+| Tenant ID                                                                                          | Your Microsoft Entra [tenant ID](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-find-tenant) |
+| Client ID                                                                                          | Your Microsoft Entra app Client ID                                                                        |
+| Client Secret ([Secret required](docs/administration/fabrics/prophecy-fabrics/secrets/secrets.md)) | Your Microsoft Entra app Client Secret                                                                    |
+| Site URL                                                                                           | URL of the SharePoint site to connect<br/>Example: `https://yourcompany.sharepoint.com/sites/mysite`      |
 
 ## Sharing connections within teams
 

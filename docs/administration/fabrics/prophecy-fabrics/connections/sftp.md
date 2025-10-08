@@ -51,7 +51,7 @@ To configure an SFTP connection in Prophecy, enter the following parameters:
 
 You can configure your SFTP connection with one of the following authentication methods:
 
-- **Password:** Use a [secret](docs/administration/secrets/secrets.md) to enter your SFTP password.
+- **Password:** Use a [secret](docs/administration/fabrics/prophecy-fabrics/secrets/secrets.md) to enter your SFTP password.
 
 - **Private Key:** Upload a file that contains your SFTP private key. The file must be in [PEM format](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) (`.pem` file).
 

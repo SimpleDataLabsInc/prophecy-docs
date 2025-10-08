@@ -71,66 +71,7 @@ You can reference any column present in the list of input ports beside the SQL q
 
 ## Write Options
 
-The **Write Options** tab lets you determine how you will store your processed data and handle changes to the data over time.
-
-| Write Mode          | Description                                                                                                                                                     |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Overwrite (default) | Replaces all existing data with new data on each run. The incoming table must have the same schema as the existing table.                                       |
-| Append              | Adds new rows to the existing table. Best used when unique keys aren’t required and duplicate records are acceptable. For key-based updates, use Merge instead. |
-| Merge               | Updates existing records and inserts new ones based on defined keys. Supports multiple merge strategies to handle changes accurately over time.                 |
-
-### Merge approaches
-
-When you select the Merge write mode, there are multiple merge approaches to choose from. To find an example use case for each strategy, see [Merge approach examples](/engineers/merge-approaches).
-
-:::info
-For more detailed information about merge approaches in the backend, see [Merge behavior](https://docs.getdbt.com/reference/resource-configs/snowflake-configs#merge-behavior-incremental-models) in the dbt documentation.
-:::
-
-#### Specify columns
-
-Only update specified columns during the merge. All other columns remain unchanged.
-
-<div class="fixed-table">
-
-| Parameter                                          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Unique Key                                         | The key used to match existing records in the target dataset for merging.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| Use Predicate                                      | Lets you add conditions that specify when to apply the merge.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| Use a condition to filter data or incremental runs | Enables applying conditions for filtering the incoming data into the table.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| On Schema Change                                   | Specifies how schema changes should be handled during the merge process.<ul style={{margin:0}}><li><strong>ignore</strong>: Newly added columns will not be written to the model. This is the default option.</li><li><strong>fail</strong>: Triggers an error message when the source and target schemas diverge.</li><li><strong>append_new_columns</strong>: Append new columns to the existing table.</li><li><strong>sync_all_columns</strong>: Adds any new columns to the existing table, and removes any columns that are now missing. Includes data type changes. This option uses the output of the previous gem.</li></ul> |
-
-</div>
-
-#### SCD2
-
-Tracks historical changes by adding new rows instead of updating existing ones. Each record will include additional columns containing start and end timestamps to indicate when a record was valid.
-
-<div class="fixed-table">
-
-| Parameter                                                         | Description                                                                          |
-| ----------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| Unique Key                                                        | The key used to match existing records in the target dataset for merging.            |
-| Invalidate deleted rows                                           | When enabled, records that match deleted rows will be marked as no longer valid.     |
-| Determine new records by checking timestamp column                | Recognizes new records by the time from the timestamp column that you define.        |
-| Determine new records by looking for differences in column values | Recognizes new records based on a change of values in one or more specified columns. |
-
-</div>
-
-#### Use delete and insert
-
-Update existing data in two steps. First, this process removes rows from the target table that match the unique key values present in the new (incremental) data. Then, it inserts the new rows into the table.
-
-<div class="fixed-table">
-
-| Parameter                                          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Unique Key                                         | The key used to match existing records in the target dataset for merging.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| Use Predicate                                      | Lets you add conditions that specify when to apply the merge.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| Use a condition to filter data or incremental runs | Enables applying conditions for filtering the incoming data into the table.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| On Schema Change                                   | Specifies how schema changes should be handled during the merge process.<ul style={{margin:0}}><li><strong>ignore</strong>: Newly added columns will not be written to the model. This is the default option.</li><li><strong>fail</strong>: Triggers an error message when the source and target schemas diverge.</li><li><strong>append_new_columns</strong>: Append new columns to the existing table.</li><li><strong>sync_all_columns</strong>: Adds any new columns to the existing table, and removes any columns that are now missing. Includes data type changes. This option uses the output of the previous gem.</li></ul> |
-
-</div>
+For a complete guide to defining how to write target tables, visit [Write Options](/table-write-options).
 
 ## Data Tests
 

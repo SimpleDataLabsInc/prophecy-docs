@@ -1,7 +1,7 @@
 exclude: "docs/sql.md|README.md"
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.3.0
+    rev: v6.0.0
     hooks:
       - id: check-json
       - id: check-merge-conflict
@@ -32,8 +32,4 @@ repos:
         args: ["-rtitle", "-rid", "-rdescription", "-rtags"]
       - id: commit-message-reuse
       - id: word-veto
-        args:
-          [
-            --badwords,
-            "spark:Spark,dataframe:DataFrame,Dataframe:DataFrame,GIT:Git,git:Git,databricks:Databricks,DataBricks:Databricks,delta:Delta,python:Python,scala:Scala,vaccum:vacuum,Vaccum:Vacuum,partion:partition,airflow:Airflow",
-          ]
+        args: ["--badwords", "wordlist.txt"]
