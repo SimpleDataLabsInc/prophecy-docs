@@ -84,15 +84,21 @@ The Salesforce Target gem only supports writing to Salesforce Objects. You canno
 
 ### Target location
 
+Use the following parameters to define the write location.
+
 | Parameter                   | Description                                                                                                                                          |
 | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Format type                 | Table format for the source. For Salesforce tables, set to `salesforce`.                                                                             |
 | Select or create connection | Select or create a new [Salesforce connection](/administration/fabrics/prophecy-fabrics/connections/salesforce) in the Prophecy fabric you will use. |
+| Object Name                 | Name of the Salesforce Object to write to. If the object doesn’t exist, it will be created automatically.                                            |
 
 ### Target properties
 
 The following properties are available for the Salesforce Target gem.
 
-Bulk API - https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/bulk_api_2_0.htm (Default is to use the regular API)
-
-Write modes - Overwrite, Insert, Delete, Upsert
+| Property          | Description                                                                                                                                                                                                                                                                                                                                    | Default  |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| Description       | Text description of the target table. Use this field to document the purpose or content of the data being written.                                                                                                                                                                                                                             | None     |
+| Write Mode        | Defines how records are written to Salesforce.<ul><li>Upsert: Update existing records if a match is found; otherwise, insert new records.</li><li>Insert: Add new records without modifying existing ones.</li><li>Update: Update existing records if a match is found.</li><li>Delete: Remove existing records if a match is found.</li></ul> | Upsert   |
+| External ID Field | Specifies the Salesforce field used as the unique key when performing Upsert or Update operations. The field must be defined as an External ID in Salesforce.                                                                                                                                                                                  | None     |
+| Use Bulk API      | Enable to run write operations using the Salesforce [Bulk API](https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/bulk_api_2_0.htm).                                                                                                                                                                                 | Disabled |
