@@ -9,29 +9,26 @@ tags:
   - concepts
 ---
 
-Prophecy gems are reusable building blocks designed to accelerate the development of your pipelines. These building blocks let you ingest, transform, and store your data in a modular way. Each gem is visually configurable and produces its own block of code.
+Gems are visual, modular components that represent data transformation logic in Prophecy. Each gem encapsulates a specific operation—such as reading data, filtering rows, or aggregating values—and automatically generates the corresponding code in your project's language (SQL, PySpark, or Scala). Gems are designed to connect together in a [pipeline](docs/getting-started/concepts/pipelines.md) where data flows from one gem to the next.
 
-## Why use gems?
+## Code generation
 
-Gems are the core components of a pipeline. The intuitive visual interface enables:
+Gems are compiled into executable code in your project's target language:
 
-- **Reusability**: Reduces time spent writing repetitive code by leveraging prebuilt transformations.
-- **Consistency**: Enforces coding and data processing standards across your team.
-- **Scalability**: Lets Prophecy optimize your Spark code and SQL queries for you so you can easily scale your pipelines.
+- SQL gems generate SQL queries compatible with your warehouse dialect (Databricks SQL, BigQuery, etc).
+- PySpark gems generate Python code using Apache Spark APIs
+- Scala gems generate Scala code using Apache Spark APIs
 
-## Gem execution
+:::info
+Gems that run in Prophecy Automate do not produce visible code. This is because they can only run in Prophecy's native runtime.
+:::
 
-Gems run on the execution engine defined in your attached [fabric](docs/getting-started/concepts/fabrics.md). If you want to see the underlying code per gem, you can switch to the **Code** view of your project and open the gem file. This code is automatically compiled and optimized by Prophecy.
+## Packages
 
-## Gem functionality
+[Packages](/engineers/package-hub) let you share custom project components with others through the Package Hub. One of the most common uses for the Package Hub is to share custom gems.
 
-Gems will vary based on project type because they are written in different languages (Python, Scala, or SQL) to match the project language. Gems let you:
-
-- **Ingest** data from various sources, such as databases or APIs to bring data into your system for processing.
-- **Transform** at different stages, starting with raw data, then cleaning and structuring it for analysis, and finally optimizing it for reporting and business insights.
-- **Parse** data to restructure it, extract relevant fields, convert formats, or reorganize data to ensure consistency and compatibility with downstream processes.
-- **Clean** data by identifying and correcting inconsistencies, missing values, duplicates, and errors, ensuring high-quality data for reliable analysis and decision-making.
-- **Write** data to your desired output, whether it's a database, data warehouse, or another storage system, so it's ready to use in analytics or machine learning.
+- Prophecy provides a set of Prophecy-managed packages that are maintained and updated with new gems.
+- You can build new gems yourself using the Gem Builder and package them for reuse.
 
 ## What's next​
 
