@@ -36,7 +36,7 @@ The RestAPI gem uses the following input and output ports.
 
 | Port    | Description                                                                    |
 | ------- | ------------------------------------------------------------------------------ |
-| **in0** | (Optional) Input table. Prophecy will generate one API call per row.           |
+| **in0** | (Optional) Input table. Prophecy will make one API call per row.               |
 | **out** | Output table that includes input columns (if applicable) and the API response. |
 
 By default, the RestAPI gem does not include an input port. To add a port, click the `+` button next to **Ports**. Alternatively, connect a previous gem to the RestAPI gem directly to add a new input port.
@@ -81,7 +81,7 @@ When JSON parsing is enabled:
 - The **Target Column Name** parameter is hidden since column names come from the JSON field names.
 - If your input has multiple rows, each row triggers a separate API call, and the results are unioned into a single output table.
 
-This feature is enabled by default for new gems.
+This feature is enabled by default for new gems using the `GET` method. Changing the method will disable it, but you can always re-enable the checkbox.
 
 :::note
 JSON parsing requires the API to return valid JSON responses. If the response format is inconsistent or not JSON, disable this option and parse the response manually in subsequent gems.
