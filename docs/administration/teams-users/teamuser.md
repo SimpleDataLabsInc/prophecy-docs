@@ -21,7 +21,7 @@ There are two types of teams in Prophecy.
 
 Team admins are responsible for managing the structure and resources of a team. They can:
 
-- Create and manage teams and team members.
+- [Create and manage](/administration/user-management/team-user-provisioning) teams and team members.
 - Create and configure fabrics for the team.
 - Set up connections and secrets.
 - Manage additional team-level settings.
@@ -63,28 +63,10 @@ When the **Enable multi file code generation** setting is enabled, Prophecy spli
 Configure the following settings in the Advanced tab of the team settings.
 
 - **Artifact ID (Spark only):** Sets the parent artifact identifier for project JAR and wheel packages. This identifier is used when packaging your Spark project dependencies and becomes part of the artifact metadata for deployment and distribution.
+- **Enable Copilot**: Use this toggle to enable or disable AI features for specific teams.
 - **Data context in copilot:** When enabled, sample data from interim runs will be used to improve Copilot suggestion quality. Note that this data is not used to improve the AI Agent.
 - **Default projects:** Manage default project dependencies that are automatically imported into new projects. You can select any project from the Package Hub to include here.
 
 #### Default Project Settings
 
 In the Default Project Settings tab, you can create new project templates that users can select while creating a new project. The project template determines settings such as project language, Git provider, default transformation entity, and more. To learn how to configure new templates or change the default template for your team, visit [Project creation templates](/administration/project-types/project-creation-template).
-
-## Team management settings
-
-Additional team settings, including team creation and user management, are available in the **Team** tab of the global Settings interface in your Prophecy environment.
-
-1. Click the **...** button and the **gear** icon at the bottom of the left navigation bar.
-1. Select the **Teams** tab.
-1. In the **Teams** section, you can:
-
-   - See the list of teams you belong to.
-   - Create and manage teams you own.
-   - Delete teams (if you are a team admin).
-
-1. In the **Team Users** section, you can:
-
-   - See all users in your shared teams and their team assignments.
-   - Create new users and invite them to Prophecy.
-   - Add or remove users from teams (if you are a team admin).
-   - Assign or remove team admin roles from users (if you are a team admin).

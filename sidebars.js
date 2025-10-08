@@ -82,7 +82,69 @@ const sidebars = {
         "getting-started/editions/editions",
         "administration/architecture",
         "administration/prophecy-deployment",
-        "administration/security",
+      ],
+    },
+    "administration/security",
+    {
+      type: "category",
+      label: "Administration",
+      items: [
+        {
+          type: "category",
+          label: "User management",
+          items: [
+            "administration/user-management/account-settings",
+            "administration/user-management/team-user-provisioning",
+            {
+              type: "category",
+              label: "Access",
+              items: [
+                "administration/user-management/access/role-based-access",
+                "administration/user-management/access/team-based-access",
+              ],
+            },
+          ],
+        },
+        "administration/cluster-admin-settings",
+        "administration/audit-logging",
+        {
+          type: "category",
+          label: "Authentication",
+          items: [
+            {
+              type: "category",
+              label: "Prophecy authentication",
+              link: {
+                type: "doc",
+                id: "administration/authentication/authentication",
+              },
+              items: [
+                "administration/authentication/ldap",
+                "administration/authentication/saml-scim",
+                "administration/authentication/azure-ad",
+                "administration/authentication/google-sso",
+                "administration/authentication/group-team-mapping",
+              ],
+            },
+            {
+              type: "category",
+              label: "Fabric authentication",
+              items: [
+                "administration/authentication/databricks-oauth",
+                "administration/authentication/emr-saml",
+              ],
+            },
+          ],
+        },
+        {
+          type: "category",
+          label: "Usage and billing",
+          link: {
+            type: "doc",
+            id: "administration/usage-billing/usage-billing",
+          },
+          items: ["administration/usage-billing/credits"],
+        },
       ],
     },
     {
@@ -1007,70 +1069,6 @@ const sidebars = {
         id: "administration/project-types/project-types",
       },
       items: ["administration/project-types/project-creation-template"],
-    },
-    ///------------------ ADMINISTRATION ------------------------///
-    {
-      type: "html",
-      value: '<span class="sidebar-divider" />',
-    },
-    {
-      type: "html",
-      className: "sidebar-title",
-      value: "Administration",
-      defaultStyle: true,
-    },
-    {
-      type: "category",
-      label: "User management",
-      items: [
-        "administration/user-management/account-settings",
-        "administration/user-management/team-user-provisioning",
-        {
-          type: "category",
-          label: "Access",
-          items: [
-            "administration/user-management/access/role-based-access",
-            "administration/user-management/access/team-based-access",
-          ],
-        },
-      ],
-    },
-    "administration/cluster-admin-settings",
-    "administration/audit-logging",
-    {
-      type: "category",
-      label: "Authentication",
-      items: [
-        {
-          type: "category",
-          label: "Prophecy authentication",
-          link: {
-            type: "doc",
-            id: "administration/authentication/authentication",
-          },
-          items: [
-            "administration/authentication/ldap",
-            "administration/authentication/saml-scim",
-            "administration/authentication/azure-ad",
-            "administration/authentication/google-sso",
-            "administration/authentication/group-team-mapping",
-          ],
-        },
-        {
-          type: "category",
-          label: "Fabric authentication",
-          items: [
-            "administration/authentication/databricks-oauth",
-            "administration/authentication/emr-saml",
-          ],
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Usage and billing",
-      link: { type: "doc", id: "administration/usage-billing/usage-billing" },
-      items: ["administration/usage-billing/credits"],
     },
   ],
   apiSidebar: [
