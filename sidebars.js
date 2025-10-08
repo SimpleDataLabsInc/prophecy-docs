@@ -457,7 +457,7 @@ const sidebars = {
 
         {
           type: "category",
-          label: "Agents and AI",
+          label: "Prophecy AI",
           link: {
             type: "doc",
             id: "analysts/development/ai-agent/ai-features",
@@ -473,6 +473,7 @@ const sidebars = {
               items: [
                 "analysts/development/ai-agent/ai-explore",
                 "analysts/development/ai-agent/ai-transform",
+                "analysts/development/ai-agent/ai-documentation",
               ],
             },
             "analysts/development/copilot/expression-generation",
