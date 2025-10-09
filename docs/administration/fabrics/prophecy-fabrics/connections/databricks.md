@@ -53,6 +53,37 @@ To create a connection with Databricks, enter the following parameters.
 When you use Databricks as your primary SQL warehouse, Prophecy also uses the catalog and schema you define in the connection to store temporary tables during [pipeline execution](/analysts/pipeline-execution#external-data-handling). Therefore, you must have write access to the schema in Databricks. To avoid conflicts, define distinct catalog and schema locations for each fabric.
 :::
 
+## Authentication methods
+
+You can configure your Databricks connection using the following authentication methods.
+
+### OAuth
+
+When you select OAuth as your authentication method for the connection, Prophecy can authenticate using either user-based (U2M) or service principal-based (M2M) OAuth. A single fabric cannot use both methods for the same connection. To use both U2M and M2M, create separate fabrics.
+
+| OAuth Type                  | Authentication                | Requirements                                                          | Token Expiry                        | Best For                   |
+| --------------------------- | ----------------------------- | --------------------------------------------------------------------- | ----------------------------------- | -------------------------- |
+| **User-based (U2M)**        | Individual user accounts      | [App Registration](docs/administration/authentication/oauth-setup.md) | Periodic re-authentication required | Interactive development    |
+| **Service Principal (M2M)** | Service principal credentials | Service Principal Client ID and Service Principal Client Secret       | No expiration                       | Scheduled jobs, automation |
+
+You can schedule pipelines with user-based OAuth, but you’ll need to re-authenticate periodically. Prophecy estimates token expiry based on Databricks’ response and prompts you when re-authentication is needed. To avoid interruptions, switch to service principal-based OAuth for production workloads.
+
+Use different fabrics for development and production to align authentication with your environment’s needs.
+
+| Environment     | OAuth Type              | Description                                                                                                                                                     |
+| --------------- | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Development** | User-based (U2M)        | Developers log in with personal Databricks accounts. Reflects individual permissions and enhances security through regular re-authentication.                   |
+| **Production**  | Service Principal (M2M) | Pipelines run under a shared service principal for continuous, unattended operation. Access should be restricted to trusted users since credentials are shared. |
+
+### Personal Access Token (PAT)
+
+When you choose **Personal Access Token** (PAT) for the authentication method, you'll authenticate using a [Databricks personal access token](https://docs.databricks.com/aws/en/dev-tools/auth/pat). When you set up the connection, you will use a [secret](docs/administration/fabrics/prophecy-fabrics/secrets/secrets.md) to enter your PAT.
+
+Using the PAT authentication method:
+
+- All team members who have access to the fabric can use the connection in their projects.
+- No additional authentication is required. Team members automatically inherit the access and permissions of the stored connection credentials.
+
 ## Data type mapping
 
 When Prophecy processes data from Databricks using an external SQL warehouse, it converts Databricks data types to compatible types.
@@ -80,48 +111,6 @@ When Prophecy processes data from Databricks using an external SQL warehouse, it
 ::::info
 Learn more in [Supported data types](/analysts/data-types).
 ::::
-
-## Authentication methods
-
-You can configure your Databricks connection using the following authentication methods.
-
-### OAuth
-
-When you choose [Databricks OAuth](docs/administration/authentication/databricks-oauth.md) for the authentication method, there are two modes.
-
-| OAuth Method      | Description                                                                                                                                             | Use cases                                                                                                       |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| User              | Each user signs in with their own Databricks account when prompted during interactive sessions.                                                         | Development workflows, testing, or when real-time user interaction is needed.                                   |
-| Service Principal | Prophecy uses a [service principal](https://docs.databricks.com/aws/en/admin/users-groups/service-principals) to authenticate without user interaction. | Automated or scheduled pipelines that require stable, long-term access without re-authentication interruptions. |
-
-#### Choose the appropriate OAuth method
-
-We [recommend using separate fabrics](/administration/team-based-access) for development and production environments. Each fabric should use a different OAuth method to align with its purpose.
-
-- **Development fabric**: Utilize user-based OAuth.
-
-  Developers authenticate using their own Databricks accounts so they only have access to the correct set of resources. Regular re-authentication enforces better security and reflects changes in individual user permissions.
-
-- **Production fabric**: Use service principal-based OAuth.
-
-  For automated or scheduled pipelines, use a service principal to ensure uninterrupted access. Unlike user identities, service principals don't expire or become deactivated, so pipelines continue running reliably. Limit fabric access to trusted users, since all members share the service principal’s credentials.
-
-:::info
-
-You can use User OAuth to schedule pipelines without service principal credentials. However, you'll need to periodically re-authenticate each Databricks connection in the fabric to keep schedules running.
-
-Because Prophecy can't retrieve the exact token expiration time from Databricks, it estimates when to prompt you for re-authentication. To avoid interruptions, we recommend switching to Service Principal OAuth when deploying projects to production.
-
-:::
-
-### Personal Access Token (PAT)
-
-When you choose **Personal Access Token** (PAT) for the authentication method, you'll authenticate using a [Databricks personal access token](https://docs.databricks.com/aws/en/dev-tools/auth/pat). When you set up the connection, you will use a [secret](docs/administration/fabrics/prophecy-fabrics/secrets/secrets.md) to enter your PAT.
-
-Using the PAT authentication method:
-
-- All team members who have access to the fabric can use the connection in their projects.
-- No additional authentication is required. Team members automatically inherit the access and permissions of the stored connection credentials.
 
 ## Fetching data
 

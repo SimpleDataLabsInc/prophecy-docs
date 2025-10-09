@@ -11,7 +11,7 @@ tags:
 When logging in to Prophecy, you can either credentials managed directly by Prophecy, or set up SSO. Prophecy integrates with multiple identity providers to let you log in using your external credentials. You can configure SSO under **Settings > SSO**.
 
 :::info
-Only cluster admins on self-hosted and Dedicated SaaS environments have permission to view and edit SSO settings.
+Only cluster admins have permission to view and edit SSO settings.
 :::
 
 ## Prophecy-managed authentication

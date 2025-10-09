@@ -14,9 +14,9 @@ Configure OAuth authentication for Prophecy by creating app registrations for su
 
 Before you configure OAuth in Prophecy, ensure you have:
 
-- Cluster admin access to Prophecy
+- Cluster admin access to Prophecy.
 - An OAuth application created with your identity provider. See [Create provider-side OAuth applications](#create-provider-side-oauth-applications).
-- The client ID and client secret from your provider's OAuth application
+- The client ID from your provider's OAuth application.
 
 ## Supported providers
 
@@ -46,22 +46,38 @@ To add a new OAuth app registration:
    | Default for Provider   | When enabled, this registration becomes the default OAuth configuration for fabrics for the selected provider. The default is always used for Spark fabrics and cannot be changed at the fabric level. | No               |
    | Name                   | A descriptive name to identify this registration. Useful when managing multiple registrations for the same provider.                                                                                   | Yes              |
    | App Client ID          | The client ID from your OAuth application.                                                                                                                                                             | Yes              |
-   | App Client Secret      | The client secret from your OAuth application.                                                                                                                                                         | Yes              |
+   | App Client Secret      | The client secret from your OAuth application.                                                                                                                                                         | No               |
    | Token Lifetime         | Override the default token lifetime set by your provider.                                                                                                                                              | No               |
    | Authorization Endpoint | The authorization URL for your identity provider.                                                                                                                                                      | ID Anywhere only |
-   | Scopes                 | Space-separated list of OAuth scopes. Required for ID Anywhere. Optional for Databricks and Google to override default scopes.                                                                         | Depends          |
+   | Scopes                 | Space-separated list of OAuth scopes. Required for ID Anywhere. Optional for Databricks and Google to override [default scopes](#default-and-custom-scopes).                                           | Depends          |
 
 6. Click **Save**.
 
-:::info
+### Default and custom scopes
 
 Each provider requires specific OAuth scopes:
 
-- **Databricks**: See [Custom app integration scopes](https://docs.databricks.com/api/account/customappintegration/create) in the Databricks documentation
-- **Google**: See [OAuth 2.0 Scopes for Google APIs](https://developers.google.com/identity/protocols/oauth2/scopes) in the Google documentation
-- **ID Anywhere**: You must specify the required scopes manually, as Prophecy cannot add default scopes for custom providers
+| Provider    | Default scopes                                             | Custom scopes documentation                                                                          |
+| ----------- | ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| Databricks  | `all-apis`, `offline_access`, `profile`, `email`, `openid` | [Custom app integration scopes](https://docs.databricks.com/api/account/customappintegration/create) |
+| Google      | `https://www.googleapis.com/auth/bigquery`                 | [OAuth 2.0 Scopes for Google APIs](https://developers.google.com/identity/protocols/oauth2/scopes)   |
+| ID Anywhere | None (must specify manually)                               | Consult your provider's documentation                                                                |
 
-:::
+### App registration selection
+
+When you select OAuth for fabric authentication, you may or may not have the option to select an app registration depending on the fabric type.
+
+- [Prophecy fabrics](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md)
+
+  You can select which app registration to use from a dropdown in the fabric connection settings. If multiple app registrations exist, you can easily toggle between them.
+
+  Example: If you create a Prophecy fabric and configure a Databricks connection, and you have multiple Databricks app registrations, you can select which one to use.
+
+- [Spark fabrics](docs/administration/fabrics/Spark-fabrics/fabrics.md)
+
+  The default app registration for the provider is always used automatically. You cannot change which app registration is used at the fabric level.
+
+  Example: If you create a Spark fabric and select Databricks as the provider, the fabric will always use the default Databricks app registration.
 
 ## Create provider-side OAuth applications
 

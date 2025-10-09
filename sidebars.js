@@ -105,36 +105,19 @@ const sidebars = {
             },
           ],
         },
-        "administration/cluster-admin-settings",
-        "administration/audit-logging",
         {
           type: "category",
           label: "Authentication",
+          link: {
+            type: "doc",
+            id: "administration/authentication/authentication",
+          },
           items: [
-            {
-              type: "category",
-              label: "Prophecy authentication",
-              link: {
-                type: "doc",
-                id: "administration/authentication/authentication",
-              },
-              items: [
-                "administration/authentication/ldap",
-                "administration/authentication/saml-scim",
-                "administration/authentication/azure-ad",
-                "administration/authentication/google-sso",
-                "administration/authentication/group-team-mapping",
-              ],
-            },
-            {
-              type: "category",
-              label: "Fabric authentication",
-              items: [
-                "administration/authentication/oauth-setup",
-                "administration/authentication/databricks-oauth",
-                "administration/authentication/emr-saml",
-              ],
-            },
+            "administration/authentication/ldap",
+            "administration/authentication/saml-scim",
+            "administration/authentication/azure-ad",
+            "administration/authentication/google-sso",
+            "administration/authentication/group-team-mapping",
           ],
         },
         {
@@ -146,6 +129,16 @@ const sidebars = {
           },
           items: ["administration/usage-billing/credits"],
         },
+        {
+          type: "category",
+          label: "Cluster admin settings",
+          link: {
+            type: "doc",
+            id: "administration/cluster-admin-settings",
+          },
+          items: ["administration/authentication/oauth-setup"],
+        },
+        "administration/audit-logging",
       ],
     },
     {
@@ -657,7 +650,15 @@ const sidebars = {
             },
             "administration/fabrics/Spark-fabrics/prophecy-managed-databricks",
             "administration/fabrics/Spark-fabrics/livy",
-            "administration/fabrics/Spark-fabrics/emr",
+            {
+              type: "category",
+              label: "EMR",
+              link: {
+                type: "doc",
+                id: "administration/fabrics/Spark-fabrics/emr",
+              },
+              items: ["administration/authentication/emr-saml"],
+            },
             "administration/fabrics/Spark-fabrics/gcp-dataproc-fabric-guide",
             "administration/fabrics/Spark-fabrics/azure-synapse-fabric-guide",
           ],
