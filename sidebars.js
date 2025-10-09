@@ -405,6 +405,7 @@ const sidebars = {
                 "analysts/development/gems/parse/json-parse",
                 "analysts/development/gems/parse/xml-parse",
                 "analysts/development/gems/parse/text-to-column",
+                "analysts/development/gems/parse/regex",
               ],
             },
             {
