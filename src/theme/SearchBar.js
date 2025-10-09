@@ -106,6 +106,7 @@ const SearchBar = () => {
                   position: relative;
                   bottom: unset;
                   right: unset;
+                  z-index: 0; /* ensure it sits behind navbar sidebar panel */
                 }
                 .ikp-chat-button__button {
                   background: transparent;
