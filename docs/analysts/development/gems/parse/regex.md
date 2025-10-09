@@ -15,7 +15,7 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 <SQLRequirements
   execution_engine="SQL Warehouse"
   sql_package_name="ProphecyDatabricksSqlBasics"
-  sql_package_version="0.0.5+"
+  sql_package_version="0.0.13+"
 />
 
 The Regex gem enables pattern matching and text extraction using regular expressions. This gem provides four distinct output methods for processing text data: **Replace**, **Tokenize**, **Parse**, and **Match**.
