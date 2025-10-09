@@ -42,7 +42,7 @@ The SQL provider is both the storage warehouse and the execution environment whe
    :::note
    If using self-signed certificates, add `AllowSelfSignedCerts=1` to your JDBC URL.
    :::
-1. Select [Personal Access Token](https://docs.databricks.com/aws/en/dev-tools/auth/pat) or [OAuth](/databricks-oauth-authentication) (recommended) for authentication with Databricks.
+1. Select [Personal Access Token](https://docs.databricks.com/aws/en/dev-tools/auth/pat) or OAuth (recommended) for authentication with Databricks.
 1. Enter the catalog and schema to be used as the default write location for target models.
 1. Click **Continue**.
 
