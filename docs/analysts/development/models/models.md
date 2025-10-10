@@ -2,13 +2,17 @@
 title: Models
 id: models
 slug: /engineers/models
-description: SQL models define a single target table or view
+description: Define a single target table or view using SQL models
 tags:
   - concepts
   - Models
   - sql
   - target
 ---
+
+:::edition Enterprise
+Available for Enterprise Edition only.
+:::
 
 In Prophecy, a model comprises a set of gems that process data into one output. In other words, each model corresponds to a **single table** in your database.
 

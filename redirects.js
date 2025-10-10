@@ -193,10 +193,6 @@ module.exports = {
       ],
     },
     {
-      to: "/databricks-oauth-authentication",
-      from: "/administration/authentication/databricks_oauth",
-    },
-    {
       to: "/engineers/aggregate",
       from: ["/Spark/gems/transform/aggregate"],
     },
@@ -862,6 +858,13 @@ module.exports = {
     {
       to: "/engineers/secrets",
       from: ["/Spark/secret-management/", "/administration/secrets/"],
+    },
+    {
+      to: "/oauth-setup",
+      from: [
+        "/databricks-oauth-authentication",
+        "/administration/authentication/databricks_oauth",
+      ],
     },
   ],
 };

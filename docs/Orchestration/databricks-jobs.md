@@ -9,8 +9,14 @@ tags:
   - scheduling
 ---
 
-Prophecy provides a visual orchestration layer over [Databricks jobs](https://docs.databricks.com/en/jobs/index.html).
+
+Once you have developed a [Spark pipeline](/engineers/pipelines) using Prophecy, you will want to schedule it to run at
+some frequency. To support this, Prophecy provides a visual layer on top of Databricks jobs [Databricks jobs](https://docs.databricks.com/en/jobs/index.html).
 A Prophecy Databricks job corresponds to a Databricks job definition under the hood, enabling you to add and link pipelines, scripts, Databricks notebooks, conditional logic, and other components to a job. Jobs run in Databricks.
+:::edition Enterprise
+Available for Enterprise Edition only.
+:::
+
 
 ## Schedule a Databricks Job
 

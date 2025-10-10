@@ -9,6 +9,10 @@ tags:
   - copilot
 ---
 
+:::edition Enterprise
+Applicable to the Enterprise Edition only.
+:::
+
 Prophecy's Copilot provides suggestions from an AI model as you develop your data pipelines and models. You can view and incorporate suggestions directly within the Prophecy visual editor and code editor.
 
 - [Start a new pipeline](#text-to-pipelines)

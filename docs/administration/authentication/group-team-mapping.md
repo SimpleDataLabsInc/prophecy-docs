@@ -50,7 +50,7 @@ Prophecy will automatically strip the `<prefix>` and `<suffix>` from group names
 To enable automatic team creation using custom naming schemes, you must configure the following environment variables for your deployment.
 
 :::info
-Self-hosted customers can implement these configurations themselves. Dedicated SaaS customers need to reach out to us to set up these configurations.
+Please reach out to us to set up these configurations.
 :::
 
 ### For LDAP

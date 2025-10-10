@@ -1,5 +1,5 @@
 ---
-title: Deployment
+title: Project release and deployment
 id: Deployment
 slug: /engineers/deployment
 description: Release projects and deploy jobs
@@ -10,6 +10,10 @@ tags:
   - build
   - deploy
 ---
+
+:::edition Enterprise
+Available for Enterprise Edition only.
+:::
 
 Once you have developed and tested your custom components like gems, pipelines, models, or jobs in Prophecy, the next step is to make them available for use. This involves Releasing and Deploying them to the respective environments.
 

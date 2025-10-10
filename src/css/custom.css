@@ -396,6 +396,12 @@ img.no-border-radius {
   border-radius: 0 !important;
 }
 
+img.light-border {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 0 !important;
+  margin-bottom: var(--ifm-spacing-vertical);
+}
+
 /* Example data table style */
 
 .table-example table {
