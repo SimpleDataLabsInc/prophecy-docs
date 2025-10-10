@@ -15,9 +15,9 @@ Gems are visual, modular components that represent data transformation logic in 
 
 Gems are compiled into executable code in your project's target language:
 
-- SQL gems generate SQL queries compatible with your warehouse dialect (Databricks SQL, BigQuery, etc).
-- PySpark gems generate Python code using Apache Spark APIs
-- Scala gems generate Scala code using Apache Spark APIs
+- SQL gems become SQL queries compatible with your warehouse dialect (Databricks SQL, BigQuery, etc)
+- PySpark gems are compiled into Python code
+- Scala gems are compiled into Scala code
 
 :::info
 Gems that run in Prophecy Automate do not produce visible code. This is because they can only run in Prophecy's native runtime.
@@ -34,7 +34,7 @@ Gems that run in Prophecy Automate do not produce visible code. This is because 
 
 To start using gems in your pipelines:
 
-- Explore the available [Engineering (Spark) gems](/engineers/gems/) and [Analyst gems](/analysts/gems).
+- Explore the available [Analyst gems](/analysts/gems) and [Engineering (Spark) gems](/engineers/gems/).
 - Add and connect various gems in your pipeline canvas.
 - Browse the [Package Hub](/engineers/package-hub) to find additional gems and components that you can use.
 - Take a peek at our [Gem Builder](/engineers/extensibility) for an introduction to custom gems.

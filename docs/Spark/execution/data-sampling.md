@@ -8,6 +8,10 @@ tags:
   - data sampling
 ---
 
+:::edition Enterprise
+Available for Enterprise Edition only.
+:::
+
 Prophecy gives you control over when and where data samples are generated during interactive pipeline execution. This helps you optimize for speed, visibility, or compatibility with your fabric setup.
 
 You can customize data sampling at three levels:

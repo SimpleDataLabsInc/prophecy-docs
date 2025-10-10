@@ -78,8 +78,11 @@ const sidebars = {
     {
       type: "category",
       label: "Editions",
+      link: {
+        type: "doc",
+        id: "getting-started/editions/editions",
+      },
       items: [
-        "getting-started/editions/editions",
         "administration/architecture",
         "administration/prophecy-deployment",
       ],

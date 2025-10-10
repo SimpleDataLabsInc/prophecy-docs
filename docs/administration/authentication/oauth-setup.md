@@ -8,6 +8,10 @@ tags:
   - oauth
 ---
 
+:::edition Enterprise
+Available on the Enterprise Edition only.
+:::
+
 Configure OAuth authentication for Prophecy by creating app registrations for supported identity providers.
 
 ## Prerequisites

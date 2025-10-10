@@ -52,6 +52,10 @@ For recommendations regarding team setup and organization, visit [Team-based acc
 
 ## Prophecy cluster admins
 
+:::edition Enterprise
+You can assign this role to users in the Enterprise Edition only.
+:::
+
 Prophecy cluster admins manage clusters, infrastructure, compute resources, and Prophecy deployment. This includes responsibilities such as:
 
 - Setting up authentication like SSO for the Prophecy environment

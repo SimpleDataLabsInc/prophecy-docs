@@ -10,6 +10,10 @@ tags:
   - runtime config
 ---
 
+:::edition Enterprise
+Available for Enterprise Edition only.
+:::
+
 ## Basic Spark Submit
 
 The following sections contain Scala, PySpark and runtime configuration variables to use with custom orchestration solutions.

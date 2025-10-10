@@ -1,5 +1,5 @@
 ---
-title: Configurations
+title: Model configurations
 id: configuration
 slug: /engineers/data-model-configurations
 description: Configure SQL project and model variables
@@ -9,6 +9,10 @@ tags:
   - config
   - variable
 ---
+
+:::edition Enterprise
+Available for Enterprise Edition only.
+:::
 
 Model configurations are settings that define how a model should be built and behave within your data warehouse.
 

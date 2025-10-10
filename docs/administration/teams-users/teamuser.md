@@ -48,6 +48,10 @@ The team metadata page includes the following information:
 
 ### Team metadata settings
 
+:::edition Enterprise
+These team settings are available for Enterprise Edition only.
+:::
+
 The following sections describe each tab within the team's metadata settings.
 
 #### Execution Metrics (Spark only)

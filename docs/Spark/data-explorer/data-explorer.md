@@ -2,7 +2,7 @@
 title: Data exploration
 id: data-explorer
 slug: /engineers/data-explorer
-description: Data explorer for Spark
+description: Inspect interim data samples at each stage of your pipeline
 tags:
   - execution
   - explorer

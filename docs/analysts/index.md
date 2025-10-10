@@ -34,10 +34,10 @@ These guides apply to users on the [Enterprise Edition](/getting-started/edition
 :::
 
 <CardContainer>
-  <Card title="Fabric Setup" to="/administration/fabrics/prophecy-fabrics/" icon="/img/icons/environment.svg">
+  <Card title="Fabric Setup" to="/administration/fabrics" icon="/img/icons/environment.svg">
     Create Spark fabrics or data modeling fabrics to run pipelines and models.
   </Card>
-  <Card title="Pipeline Development" to="/analysts/pipeline-development" icon="/img/icons/pipeline.svg">
+  <Card title="Pipeline Development" to="/engineers/pipeline-development" icon="/img/icons/pipeline.svg">
     Build Spark pipelines using gems, UDFs, business rules, and more.
   </Card>
   <Card title="CI/CD" to="/engineers/ci-cd" icon="/img/icons/GIT-PULL-REQUEST.svg">
