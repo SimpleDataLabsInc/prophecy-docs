@@ -74,6 +74,14 @@ python -m prophecy_lineage_extractor \
   --send-email \
   --run-for-all
 ```
+python -m prophecy_lineage_extractor \
+  --project-id 6493 \
+  --reader knowledge-graph \
+  --branch test1234 \
+  --output-dir ./test \
+  --run-for-all \
+  --fmt openlineage
+```
 
   </TabItem>
 
