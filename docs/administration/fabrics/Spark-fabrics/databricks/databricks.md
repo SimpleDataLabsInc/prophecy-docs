@@ -13,16 +13,15 @@ The following sections describe the parameters needed to set up a Databricks fab
 
 :::info
 
-Scala 2.13 is not supported by Prophecy’s Scala libraries.
+Databricks Runtime 16.4 supports both Scala 2.12 and 2.13, but defaults to Scala 2.13. Databricks Runtime 17.0 and later only support Scala 2.13.
 
-- Databricks Runtime 16.4 supports both Scala 2.12 and 2.13, but defaults to Scala 2.13.
-- Databricks Runtime 17.0+ only supports Scala 2.13.
-
-If you're using Scala pipelines, make sure to select Scala 2.12 when configuring your cluster with DBR 16.4. You may see the following error in Prophecy if using Scala 2.13:
+If your cluster defaults to Scala 2.13 but your Prophecy installation uses libraries built for Scala 2.12, you might see the following error:
 
 ```
 Library installation attempted on the driver node of cluster 0805-161652-bmq6jitu and failed. Cannot resolve Maven library coordinates. Verify library details, repository access, or Maven repository availability. Error code: ERROR_MAVEN_LIBRARY_RESOLUTION, error message: Library resolution failed because unresolved dependency: io.prophecy:prophecy-libs_2.13:3.5.0-8.11.1: not found
 ```
+
+To fix this, update Prophecy to version 4.2.0.1 or later, which adds support for Scala 2.13.
 
 :::
 
