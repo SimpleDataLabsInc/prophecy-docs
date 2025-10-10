@@ -10,7 +10,7 @@ tags:
 ---
 
 Prophecy provides a visual orchestration layer over [Databricks jobs](https://docs.databricks.com/en/jobs/index.html).
-A Prophecy Databricks job corresponds to a Databricks job definition under the hood, enabling you to add and link pipelines, scripts, and conditional logic to a job. Jobs run in Databricks.
+A Prophecy Databricks job corresponds to a Databricks job definition under the hood, enabling you to add and link pipelines, scripts, Databricks notebooks, conditional logic, and other components to a job. Jobs run in Databricks.
 
 ## Schedule a Databricks Job
 
@@ -58,7 +58,7 @@ Seven gem types are available when defining Databricks jobs. Each gem represents
 
 The **Pipeline Gem** triggers a Spark pipeline that was developed and published in Prophecy. Use this gem when you want to include an existing Prophecy pipeline as a stage within a Databricks job.
 
-#### Configuration
+To add a pipeline gem:
 
 1. Drag the **Pipeline** gem onto the job canvas and click it to open its settings.
 1. Enter a descriptive name for the gem.
@@ -81,7 +81,7 @@ Settings for the gem can be inherited from overall job configuration or can be s
 
 Use the **Conditional** tab to control when and how the gem runs within the job. You can define **run conditions** or configure the gem to run multiple iterations with **For Each**.
 
-#### Run Conditions
+#### Run Conditions for Pipeline Gem
 
 Run conditions determine when the gem executes based on the status of preceding gems.
 
@@ -91,7 +91,7 @@ Run conditions determine when the gem executes based on the status of preceding 
 - **All done** – Runs after all upstream gems finish, regardless of success or failure.
 - **At least one failed** – Runs if at least one upstream gem fails.
 
-#### For Each
+#### Use For Each for Pipeline Gem
 
 Use **For Each** to run the gem multiple times with different parameter values.
 
@@ -105,7 +105,7 @@ Use **For Each** to run the gem multiple times with different parameter values.
 
 You can use the **Script** gem to add ad-hoc Python code to the job. This gem corresponds to a [Databricks Python script task](https://docs.databricks.com/aws/en/jobs/python-script), which is a `.py` file that executes within the Databricks runtime on the cluster associated with the job.
 
-#### Configuration
+To add a Script gem:
 
 1. Drag the **Script** gem onto the job canvas and click it to open its settings.
 1. Enter a descriptive name for the gem.
@@ -118,7 +118,7 @@ Settings for the gem can be inherited from overall job configuration or can be s
 
 Use the **Conditional** tab to control when and how the gem runs within the job. You can define **run conditions** or configure the gem to run multiple iterations with **For Each**.
 
-#### Run Conditions
+#### Run Conditions for Script Gem
 
 Run conditions determine when the gem executes based on the status of preceding gems.
 
@@ -128,7 +128,7 @@ Run conditions determine when the gem executes based on the status of preceding 
 - **All done** – Runs after all upstream gems finish, regardless of success or failure.
 - **At least one failed** – Runs if at least one upstream gem fails.
 
-#### For Each
+#### Use For Each with Script Gem
 
 Use **For Each** to run the gem multiple times with different parameter values.
 
@@ -143,7 +143,7 @@ Use **For Each** to run the gem multiple times with different parameter values.
 The **Notebook** gem lets you include Databricks notebooks as part of a Prophecy job.  
 Use this gem when you want to orchestrate a notebook that already exists in Databricks as one stage within your job.
 
-#### Configuration
+To add a Notebook gem:
 
 1. Drag the **Notebook** gem onto the job canvas and click it to open its settings.
 1. Enter **notebook path** for the Databricks notebook you want to run.
@@ -162,7 +162,7 @@ Settings for the gem can be inherited from overall job configuration or can be s
 
 Use the **Conditional** tab to control when and how the gem runs within the job. You can define **run conditions** or configure the gem to run multiple iterations with **For Each**.
 
-#### Run Conditions
+#### Run Conditions for Notebook Gem
 
 Run conditions determine when the gem executes based on the status of preceding gems.
 
@@ -172,7 +172,7 @@ Run conditions determine when the gem executes based on the status of preceding 
 - **All done** – Runs after all upstream gems finish, regardless of success or failure.
 - **At least one failed** – Runs if at least one upstream gem fails.
 
-#### For Each
+#### Use For Each with Notebook Gem
 
 Use **For Each** to run the gem multiple times with different parameter values.
 
@@ -187,7 +187,7 @@ Use **For Each** to run the gem multiple times with different parameter values.
 The **If Else** gem lets you branch a job’s execution path based on a logical condition.  
 Use this gem when you want the job to continue along one branch if a condition is met, and along another branch if it is not.
 
-#### Configuration
+To add an If Else gem:
 
 1. Drag the **If Else** gem onto the job canvas and click it to open its settings.
 1. Enter a **left operand**, **operator**, and **right operand** to create a logical comparison.
@@ -199,7 +199,7 @@ Use this gem when you want the job to continue along one branch if a condition i
      - less than or equal to
      - greater than or equal to
 
-#### Branch behavior
+#### Branch Behavior
 
 - If the condition evaluates to **true**, the job continues along the **upper branch**.
 - If the condition evaluates to **false**, the job continues along the **lower branch**.
@@ -212,7 +212,7 @@ Settings for the gem can be inherited from overall job configuration or can be s
 The **Conditional** tab in the If Else Gem lets you control when the gem itself runs within the overall job flow.  
 Unlike other gems, the If Else Gem supports **run conditions** only and does **not** support _For Each_ iterations.
 
-#### Run Conditions
+#### Run Conditions for If Else Gem
 
 Run conditions determine when the gem executes based on the status of preceding gems.
 
@@ -221,6 +221,7 @@ Run conditions determine when the gem executes based on the status of preceding 
 - **None failed** – Runs if all upstream gems complete without failure.
 - **All done** – Runs after all upstream gems finish, regardless of success or failure.
 - **At least one failed** – Runs if at least one upstream gem fails.
+
 </details>
 
 ### RunJob Gem
@@ -228,7 +229,7 @@ Run conditions determine when the gem executes based on the status of preceding 
 The **RunJob** gem lets you trigger another job that has been configured in your workspace.  
 Use this gem to chain jobs together or orchestrate dependent workflows as part of a larger process.
 
-#### Configuration
+To add a RunJob gem:
 
 1. Drag the **RunJob** gem onto the job canvas and click it to open its settings.
 1. Choose a **job** from the dropdown menu, or manually enter the **Job ID** of the job you want to trigger.
@@ -241,7 +242,7 @@ Settings for the gem can be inherited from overall job configuration or can be s
 
 Use the **Conditional** tab to control when and how the gem runs within the job. You can define **run conditions** or configure the gem to run multiple iterations with **For Each**.
 
-#### Run Conditions
+#### Run Conditions for RunJob Gem
 
 Run conditions determine when the gem executes based on the status of preceding gems.
 
@@ -251,7 +252,7 @@ Run conditions determine when the gem executes based on the status of preceding 
 - **All done** – Runs after all upstream gems finish, regardless of success or failure.
 - **At least one failed** – Runs if at least one upstream gem fails.
 
-#### For Each
+#### Use For Each with RunJob Gem
 
 Use **For Each** to run the gem multiple times with different parameter values.
 
@@ -309,7 +310,7 @@ These options control dbt-style behavior when running a project or SQL model:
 
 The **Delta Live Tables Pipeline** gem lets you run data pipelines that have already been created and deployed in Databricks. Use this gem when you want to orchestrate an existing Delta Live Tables (DLT) pipeline as part of a Prophecy job.
 
-#### Configuration
+To add a Delta Live Tables Pipeline gem:
 
 1. Drag the **Delta Live Tables Pipeline** gem onto the job canvas and click it to open its settings.
 1. Choose from available DLT pipelines for the current fabric.
@@ -322,7 +323,7 @@ Settings for the gem can be inherited from overall job configuration or can be s
 
 Use the **Conditional** tab to control when and how the gem runs within the job. You can define **run conditions** or configure the gem to run multiple iterations with **For Each**.
 
-#### Run Conditions
+#### Run Conditions for Delta Live Tables Pipeline Gem
 
 Run conditions determine when the gem executes based on the status of preceding gems.
 
@@ -332,7 +333,7 @@ Run conditions determine when the gem executes based on the status of preceding 
 - **All done** – Runs after all upstream gems finish, regardless of success or failure.
 - **At least one failed** – Runs if at least one upstream gem fails.
 
-#### For Each
+#### Use For Each with Delta Live Tables Pipeline Gem
 
 Use **For Each** to run the gem multiple times with different parameter values.
 
