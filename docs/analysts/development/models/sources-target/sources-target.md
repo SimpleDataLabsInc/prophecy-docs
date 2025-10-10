@@ -9,6 +9,10 @@ tags:
   - seeds
 ---
 
+:::edition Enterprise
+Available for Enterprise Edition only.
+:::
+
 Model sources and targets vary slightly from those of a pipeline. The primary difference is that all model sources and targets must point to tables in the SQL warehouse.
 
 ## Sources

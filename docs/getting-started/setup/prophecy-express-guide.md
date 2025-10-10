@@ -7,22 +7,7 @@ tags:
   - express
 ---
 
-Prophecy Express Edition is a streamlined version of Prophecy designed for business analysts who need to build and deploy data pipelines quickly. This edition provides essential data transformation capabilities with simplified administration and deployment options.
-
-## Key features
-
-These key features differentiate the Express Edition from other Prophecy editions.
-
-| Feature                   | Implementation in the Express Edition                                |
-| ------------------------- | -------------------------------------------------------------------- |
-| Deployment model          | Dedicated SaaS only. Prophecy is installed in Prophecy's VPC.        |
-| Execution                 | Prophecy Automate and SQL warehouse                                  |
-| SQL warehouse provider    | Your own Databricks SQL warehouse                                    |
-| Git-based version control | Project code hosted on Prophecy-managed or external Git repositories |
-| Orchestration             | Prophecy-native scheduler automates pipeline execution               |
-| Transpiler                | Alteryx migration tool enabled                                       |
-
-<!-- To be replace by comprehensive feature matrix when future editions are released -->
+Prophecy [Express Edition](docs/getting-started/editions/editions.md) is a streamlined version of Prophecy designed for business analysts who need to build and deploy data pipelines quickly. This edition provides essential data transformation capabilities with simplified administration and deployment options.
 
 ## LLM backend configuration
 

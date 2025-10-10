@@ -1,5 +1,5 @@
 ---
-title: Databricks targets
+title: Databricks target models
 id: databricks-target
 slug: /engineers/databricks-target
 description: Configure target models for Databricks SQL
@@ -7,6 +7,10 @@ tags:
   - model
   - databricks
 ---
+
+:::edition Enterprise
+Available for Enterprise Edition only.
+:::
 
 To configure a target model that will be written to Databricks, reference the following sections.
 

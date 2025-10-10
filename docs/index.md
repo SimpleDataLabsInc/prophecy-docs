@@ -24,13 +24,13 @@ Explore the fundamentals as you get started with Prophecy.
   <Card title="Fabrics" to="/fabrics" icon="/img/icons/environment.svg">
     Configure and manage execution environments for your data processing workloads.
   </Card>
-  <Card title="Editions" to="/administration/architecture" icon="/img/icons/auto-layout.svg">
+  <Card title="Editions" to="/getting-started/editions/" icon="/img/icons/auto-layout.svg">
     Explore different Prophecy platform versions and their feature capabilities.
   </Card>
   <Card title="Release Notes" to="/release_notes/" icon="/img/icons/target-d.svg">
     Stay updated with the latest features, improvements, and bug fixes in Prophecy.
   </Card>
-  <Card title="Try Prophecy" to="/quick-start" icon="/img/icons/log-in-a.svg">
+  <Card title="Try Prophecy" to="https://app.prophecy.io/metadata/auth/signup" icon="/img/icons/log-in-a.svg">
     Sign up for Prophecy and start developing your first pipelines.
   </Card>
 </CardContainer>

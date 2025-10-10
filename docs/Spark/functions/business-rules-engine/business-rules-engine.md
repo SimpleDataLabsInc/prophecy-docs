@@ -7,6 +7,10 @@ tags:
   - business rules
 ---
 
+:::edition Enterprise
+Available for Enterprise Edition only.
+:::
+
 Business rules empower organizations to model, manage, and automate repeatable business decisions throughout the enterprise.
 
 ## Overview

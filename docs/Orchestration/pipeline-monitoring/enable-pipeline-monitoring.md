@@ -10,6 +10,10 @@ tags:
   - spark
 ---
 
+:::edition Enterprise
+Available for Enterprise Edition only.
+:::
+
 To use Pipeline Monitoring, you must enable it by updating the Prophecy Library version in your project dependencies, and turn on the Pipeline Monitoring flag in Pipeline Settings.
 
 ## Update Prophecy Library version

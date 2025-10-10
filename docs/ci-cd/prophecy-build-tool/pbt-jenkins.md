@@ -15,7 +15,9 @@ tags:
   - jenkins
 ---
 
-## [Example GitHub Repo](https://github.com/prophecy-samples/external-cicd-template)
+:::edition Enterprise
+Available for Enterprise Edition only.
+:::
 
 ## Context of the Jenkins CI/CD Example
 
@@ -41,6 +43,10 @@ server.
 This example is currently designed for Pyspark pipelines. To use the same recipe
 for Scala pipelines, just make sure `JDK 11` is installed on your Jenkins nodes.
 
+:::
+
+:::note
+View an [Example GitHub repository](https://github.com/prophecy-samples/external-cicd-template).
 :::
 
 ## Preparation
