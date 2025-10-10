@@ -15,7 +15,7 @@ import Mermaid from '@theme/Mermaid';
 This page introduces Prophecy's AI capabilities, including descriptions of its task-oriented and agentic features.
 
 :::info
-While Prophecy's AI features are enabled by default, they can be disabled upon request for Dedicated SaaS and self-hosted deployments.
+While Prophecy's AI features are enabled by default, they can be disabled upon request for Dedicated SaaS deployments.
 :::
 
 ## Introduction
@@ -42,7 +42,7 @@ To learn more, see [AI for SQL projects](/analysts/ai-features) and [AI for Spar
 
 Prophecy integrates with multiple LLM providers and model families. This gives you flexibility in choosing the right models depending on your deployment type and performance needs.
 
-SaaS uses a Prophecy-managed OpenAI subscription with GPT-4o and GPT-4o mini. Meanwhile, Dedicated SaaS and self-hosted deployments are expected to connect to customer-managed endpoints.
+SaaS uses a Prophecy-managed OpenAI subscription with GPT-4o and GPT-4o mini. Meanwhile, Dedicated SaaS deployments are expected to connect to customer-managed endpoints.
 
 Each AI endpoint configuration requires two models:
 

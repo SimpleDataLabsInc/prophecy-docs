@@ -6,7 +6,6 @@ tags:
   - deployment
   - saas
   - dedicated saas
-  - self-hosted
 ---
 
 Prophecy offers multiple deployment options to meet different organizational requirements for security, isolation, and management preferences. The following table outlines the key differences between the two main deployment models.
@@ -32,7 +31,3 @@ This deployment model requires the Enterprise Edition of Prophecy.
 The Dedicated SaaS deployment combines the convenience of Prophecy-managed infrastructure with the privacy and isolation of a single-tenant architecture. This deployment model operates on Prophecy's Virtual Private Cloud, providing dedicated resources and enhanced security.
 
 Organizations can select their preferred cloud platform (AWS, Azure, or GCP), while Prophecy handles installation, maintenance, resource allocation, and ongoing management tasks.
-
-:::info
-While Prophecy continues to support existing customers with self-hosted deployments, new self-hosted installations of Prophecy are **discouraged**.
-:::

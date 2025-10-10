@@ -34,7 +34,7 @@ https://app.prophecy.io/api/deploy/project
 ```
 
 :::info
-Replace the base URL with your environment URL for dedicated SaaS and self-hosted deployments.
+Replace the base URL with your environment URL for Dedicated SaaS deployments.
 :::
 
 ### Request Headers {#request-headers-deploy}
