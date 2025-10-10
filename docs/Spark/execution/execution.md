@@ -11,7 +11,7 @@ tags:
 ---
 
 :::edition Enterprise
-Applicable to the Enterprise Edition only.
+Applicable to the [Enterprise Edition](/getting-started/editions/) only.
 :::
 
 Prophecy executes pipelines based on the type of Spark cluster and the operation being performed. You can run pipelines interactively, schedule them, or execute them using the built-in Spark shell. Each execution provides information through logs and metrics to help you manage and monitor data transformations.

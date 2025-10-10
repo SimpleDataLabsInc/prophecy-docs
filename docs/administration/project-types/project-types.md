@@ -10,7 +10,7 @@ tags:
 import Mermaid from '@theme/Mermaid';
 
 :::edition Enterprise
-Applicable to the Enterprise Edition only.
+Applicable to the [Enterprise Edition](/getting-started/editions/) only.
 :::
 
 Choose the right project type for your role and workflow requirements. Your project type determines available features, collaboration models, and integration capabilities.

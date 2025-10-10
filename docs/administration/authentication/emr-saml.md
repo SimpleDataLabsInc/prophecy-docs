@@ -10,7 +10,7 @@ tags:
 ---
 
 :::edition Enterprise
-Available for Enterprise Edition only.
+Available for [Enterprise Edition](/getting-started/editions/) only.
 :::
 
 This guide describes how to configure AWS EMR Serverless authentication using Okta as the identity provider (IdP) with SAML 2.0. After setup, users in the configured Okta application can sign in to Prophecy EMR fabrics using their Okta credentials.

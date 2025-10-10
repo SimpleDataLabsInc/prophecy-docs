@@ -9,7 +9,7 @@ tags:
 ---
 
 :::edition Enterprise Only
-Available only in Enterprise Edition.
+Available only in [Enterprise Edition](/getting-started/editions/).
 :::
 
 A _secret_ is sensitive information—such as an API key, password, or encryption key—that you want to use in a pipeline without exposing its value. A [secret provider](#secret-providers) is a storage system that manages those secrets securely (for example, Databricks Secrets, HashiCorp Vault, or environment variables).

@@ -7,7 +7,7 @@ tags: []
 ---
 
 :::edition Free and Professional
-Replays are available in Free and Professional Editions only.
+Replays are available in [Free and Professional Editions](/getting-started/editions/) only.
 :::
 
 Replays transform your pipeline development history into interactive tutorials. By breaking down the build process into step-by-step walkthroughs, replays help viewers understand not just what your pipeline does, but how and why you built it.

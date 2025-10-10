@@ -6,7 +6,7 @@ tags: [authentication, roles]
 ---
 
 :::edition Express and Enterprise
-Available for Express and Enterprise Editions only.
+Available for [Express and Enterprise Editions](/getting-started/editions/) only.
 :::
 
 Prophecy supports automatic team creation and user role assignment based on identity provider groups using either SCIM or LDAP. To learn about roles in Prophecy, visit [Role-based access](/administration/rbac).

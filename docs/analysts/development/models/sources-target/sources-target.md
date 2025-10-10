@@ -10,7 +10,7 @@ tags:
 ---
 
 :::edition Enterprise
-Available for Enterprise Edition only.
+Available for [Enterprise Edition](/getting-started/editions/) only.
 :::
 
 Model sources and targets vary slightly from those of a pipeline. The primary difference is that all model sources and targets must point to tables in the SQL warehouse.

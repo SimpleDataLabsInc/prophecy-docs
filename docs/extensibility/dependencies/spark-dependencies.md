@@ -10,7 +10,7 @@ tags:
 ---
 
 :::edition Enterprise
-Available for Enterprise Edition only.
+Available for [Enterprise Edition](/getting-started/editions/) only.
 :::
 
 Dependencies allow you to make use of a variety of packages in your data pipelines and jobs. There are three types of dependencies for Spark projects:

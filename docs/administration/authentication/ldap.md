@@ -6,7 +6,7 @@ tags: [ldap, authentication]
 ---
 
 :::edition Express and Enterprise
-Available for Express and Enterprise Editions only.
+Available for [Express and Enterprise Editions](/getting-started/editions/) only.
 :::
 
 Prophecy can connect to your organization’s LDAP directory for authentication.

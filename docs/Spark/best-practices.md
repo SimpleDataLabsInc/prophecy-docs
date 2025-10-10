@@ -9,7 +9,7 @@ tags:
 ---
 
 :::edition Enterprise
-Applicable to the Enterprise Edition only.
+Applicable to the [Enterprise Edition](/getting-started/editions/) only.
 :::
 
 ## Projects

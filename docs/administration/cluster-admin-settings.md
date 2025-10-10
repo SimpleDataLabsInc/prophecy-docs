@@ -9,7 +9,7 @@ tags:
 ---
 
 :::edition Enterprise
-Available on the Enterprise Edition only.
+Available on the [Enterprise Edition](/getting-started/editions/) only.
 :::
 
 [Prophecy cluster admins](docs/administration/user-management/access/role-based-access.md) have access to additional settings in the **Settings** UI of their Prophecy environment.

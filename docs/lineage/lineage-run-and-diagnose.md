@@ -12,7 +12,7 @@ tags:
 ---
 
 :::edition Enterprise
-Available for Enterprise Edition only.
+Available for [Enterprise Edition](/getting-started/editions/) only.
 :::
 
 When you open a SQL project, the canvas shows the lineage view of your project. On this page, you can run the different flows and inspect the lineage.

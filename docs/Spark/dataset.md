@@ -11,7 +11,7 @@ tags:
 ---
 
 :::edition Enterprise
-Available for Enterprise Edition only.
+Available for [Enterprise Edition](/getting-started/editions/) only.
 :::
 
 In Prophecy, datasets are grouped by [projects](/projects) and rely on the following:

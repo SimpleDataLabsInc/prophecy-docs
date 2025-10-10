@@ -12,7 +12,7 @@ tags:
 ---
 
 :::edition Enterprise
-Available for Enterprise Edition only.
+Available for [Enterprise Edition](/getting-started/editions/) only.
 :::
 
 To better structure your projects, sometimes you would like to create multiple different jobs that trigger only a specific set of pipelines. E.g. when using the [Bronze, Silver, Gold](https://www.prophecy.io/blogs/prophecy-with-delta#bronze-silver-gold-layers) architecture, one might want to have a project for each one of the stages and run each stage sequentially - run _Gold_ after _Silver_ is finished and _Silver_ and after _Bronze_.

@@ -14,7 +14,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 :::edition Enterprise
-Available for Enterprise Edition only.
+Available for [Enterprise Edition](/getting-started/editions/) only.
 :::
 
 The Prophecy lineage extractor is a Python tool that retrieves and exports lineage information from Prophecy projects and pipelines. It supports project, pipeline, and branch-level lineage extraction, with optional features like emailing reports.

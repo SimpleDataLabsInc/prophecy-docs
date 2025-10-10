@@ -11,7 +11,7 @@ tags:
 ---
 
 :::edition Enterprise
-Available for Enterprise Edition only.
+Available for [Enterprise Edition](/getting-started/editions/) only.
 :::
 
 You can use Pipeline Monitoring to help identify errors and failures at runtime. You can identify the cause of the failures, fix them with recommended solutions, and rerun failed or skipped tasks.

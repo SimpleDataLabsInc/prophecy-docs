@@ -15,7 +15,7 @@ Grant project access by adding users to the team that owns the project. Team mem
 ### Add users from the project
 
 :::edition Free and Professional
-You can add users from a project in Free and Professional Editions only.
+You can add users from a project in [Free and Professional Editions](/getting-started/editions/) only.
 :::
 
 To invite team members directly from your project:
@@ -45,7 +45,7 @@ Prophecy sends an invitation link that adds the recipient(s) to the selected tea
 ## Share publicly
 
 :::edition Free and Professional
-Public sharing is available in Free and Professional Editions only.
+Public sharing is available in [Free and Professional Editions](/getting-started/editions/) only.
 :::
 
 Share your project with anyone using a public link. This provides read-only access without requiring authentication, making it ideal for demos, documentation, or stakeholder reviews.

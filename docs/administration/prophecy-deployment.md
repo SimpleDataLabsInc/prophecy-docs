@@ -25,7 +25,7 @@ The SaaS deployment option is entirely Prophecy-managed and operates on a multi-
 ### Dedicated SaaS
 
 :::edition Enterprise Only
-This deployment model requires the Enterprise Edition of Prophecy.
+This deployment model requires the [Enterprise Edition](/getting-started/editions/) of Prophecy.
 :::
 
 The Dedicated SaaS deployment combines the convenience of Prophecy-managed infrastructure with the privacy and isolation of a single-tenant architecture. This deployment model operates on Prophecy's Virtual Private Cloud, providing dedicated resources and enhanced security.

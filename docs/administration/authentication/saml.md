@@ -6,7 +6,7 @@ tags: [saml, scim]
 ---
 
 :::edition Express and Enterprise
-Available for Express and Enterprise Editions only.
+Available for [Express and Enterprise Editions](/getting-started/editions/) only.
 :::
 
 Prophecy supports SAML for authentication.

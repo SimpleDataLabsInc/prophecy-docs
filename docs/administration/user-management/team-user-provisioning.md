@@ -19,7 +19,7 @@ Before you can invite users to Prophecy, you need to define the [teams](/adminis
 1. Click **+ Create Team**.
 1. In the **Basic Info** tab, define the team name.
 1. Click **Continue**.
-1. **[Enterprise Edition only]** Enable or disable Spark execution metrics for the team.
+1. **([Enterprise Edition](/getting-started/editions/) only)** Enable or disable Spark execution metrics for the team.
 1. Click **Complete** to save the new team.
 
 ## Create users
