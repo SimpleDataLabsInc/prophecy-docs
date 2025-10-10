@@ -9,6 +9,10 @@ tags:
   - settings
 ---
 
+:::edition Enterprise
+Available for Enterprise Edition only.
+:::
+
 Review the various settings available for each pipeline, including Spark settings, code customization, development preferences, job sampling, run settings, and initialization code.
 
 ![Pipeline settings](img/pipeline-settings.png)

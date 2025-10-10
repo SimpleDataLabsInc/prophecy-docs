@@ -9,6 +9,10 @@ tags:
   - spark
 ---
 
+:::edition Enterprise
+Available for Enterprise Edition only.
+:::
+
 Execution metrics help you monitor and analyze your pipeline performance by tracking data including records and bytes processed, pipeline execution time, and data samples (interims) between pipeline components.
 
 When enabled, these metrics are automatically collected during pipeline runs and stored in your data environment, where you can review them later through the Prophecy interface.

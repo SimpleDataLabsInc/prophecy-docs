@@ -24,7 +24,7 @@ Number of inputs and outputs can be changed as needed by clicking the `+` button
 
 ## Where the script runs
 
-The execution environment for the Script gem depends on the [SQL Warehouse Connection](/administration/fabrics/prophecy-fabrics/#connections) configured in your Prophecy fabric.
+The execution environment for the Script gem depends on the [SQL Warehouse Connection](docs/administration/fabrics/prophecy-fabrics/create-fabric.md#connections) configured in your Prophecy fabric.
 
 | SQL warehouse provider | Execution environment |
 | ---------------------- | --------------------- |
@@ -37,7 +37,7 @@ This ensures your Python logic runs in an environment optimized for your data pl
 
 ### Permission error with service principals
 
-When using a fabric with [service principal authentication for Databricks](/databricks-oauth-authentication#use-cases-supported-by-databricks), you may encounter the following error:
+When using a fabric with [service principal authentication for Databricks](docs/administration/fabrics/prophecy-fabrics/connections/databricks.md#oauth), you may encounter the following error:
 
 ```
 Failed due to: Unable to get run status for job id: INTERNAL_ERROR

@@ -6,6 +6,10 @@ tags:
   - templates
 ---
 
+:::edition Enterprise
+Applicable to the Enterprise Edition only.
+:::
+
 At the team level, you can create multiple templates that include predefined project creation parameters. This is useful if your team creates many projects that use the same settings when they are created. **Only team admins can access the template settings for their team.**
 
 ## Template settings

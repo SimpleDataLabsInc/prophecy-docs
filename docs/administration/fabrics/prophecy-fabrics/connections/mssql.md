@@ -31,13 +31,13 @@ The table below outlines whether the connection supports certain Prophecy featur
 
 To create a connection with Microsoft SQL Server, enter the following parameters:
 
-| Parameter                                                            | Description                             |
-| -------------------------------------------------------------------- | --------------------------------------- |
-| Connection Name                                                      | Name to identify your connection        |
-| Server                                                               | Address of the server to connect to     |
-| Port                                                                 | Port to use for the connection          |
-| Username                                                             | Username for your MSSQL Server instance |
-| Password ([Secret required](docs/administration/secrets/secrets.md)) | Password for your MSSQL Server instance |
+| Parameter                                                                                     | Description                             |
+| --------------------------------------------------------------------------------------------- | --------------------------------------- |
+| Connection Name                                                                               | Name to identify your connection        |
+| Server                                                                                        | Address of the server to connect to     |
+| Port                                                                                          | Port to use for the connection          |
+| Username                                                                                      | Username for your MSSQL Server instance |
+| Password ([Secret required](docs/administration/fabrics/prophecy-fabrics/secrets/secrets.md)) | Password for your MSSQL Server instance |
 
 ## Data type mapping
 

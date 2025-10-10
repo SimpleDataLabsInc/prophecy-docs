@@ -38,12 +38,12 @@ Prophecy uses the Power BI connection for the [Push Datasets](https://learn.micr
 
 To create a connection with Power BI, enter the following parameters. You can find the Tenant ID, Client ID, and Client Secret in your Microsoft Entra app.
 
-| Parameter                                                                 | Description                            |
-| ------------------------------------------------------------------------- | -------------------------------------- |
-| Connection Name                                                           | Unique name for the connection         |
-| Tenant ID                                                                 | Your Microsoft Entra tenant ID         |
-| Client ID                                                                 | Your Microsoft Entra app Client ID     |
-| Client Secret ([Secret required](docs/administration/secrets/secrets.md)) | Your Microsoft Entra app Client Secret |
+| Parameter                                                                                          | Description                            |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| Connection Name                                                                                    | Unique name for the connection         |
+| Tenant ID                                                                                          | Your Microsoft Entra tenant ID         |
+| Client ID                                                                                          | Your Microsoft Entra app Client ID     |
+| Client Secret ([Secret required](docs/administration/fabrics/prophecy-fabrics/secrets/secrets.md)) | Your Microsoft Entra app Client Secret |
 
 ## Sharing connections within teams
 

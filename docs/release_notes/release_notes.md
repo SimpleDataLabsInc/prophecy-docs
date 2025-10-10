@@ -15,8 +15,13 @@ Each release may include updates that require the web interface to be refreshed.
 To ensure these updates do not impact your usage, we recommend refreshing the web interface regularly.
 :::
 
+:::tip
+To find the Prophecy version of your deployment, open **Settings → About**.
+:::
+
 ## 2025
 
+- [Prophecy 4.2.0.x](/release_notes/2025/4-2-0)
 - [Prophecy 4.1.3.x](/release_notes/2025/4-1-3)
 - [Prophecy 4.1.2.x](/release_notes/2025/4-1-2)
 - [Prophecy 4.1.1 EM](docs/release_notes/2025/4-1-1.md)

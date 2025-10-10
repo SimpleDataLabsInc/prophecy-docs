@@ -10,6 +10,10 @@ tags:
   - target
 ---
 
+:::edition Enterprise
+Available for Enterprise Edition only.
+:::
+
 In Prophecy, datasets are grouped by [projects](/projects) and rely on the following:
 
 - **Schema**: The structure or shape of the data, including column names, data types, and the method for reading and writing the data in this format.

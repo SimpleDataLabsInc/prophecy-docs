@@ -7,7 +7,7 @@ tags:
   - enterprise
 ---
 
-Prophecy's Enterprise Edition is designed for organizations that need robust security, scalability, and customization. It provides advanced features such as SCIM-based user management, additional compute options, and secure networking configuration.
+Prophecy [Enterprise Edition](docs/getting-started/editions/editions.md) is designed for organizations that need robust security, scalability, and customization. It provides advanced features such as SCIM-based user management, additional compute options, and secure networking configuration.
 
 **Dedicated SaaS** is the preferred deployment model for the Enterprise Edition. In this model, Prophecy runs in a secure, Prophecy-managed VPC that is isolated for your organization. This page describes how to configure a Dedicated SaaS deployment.
 

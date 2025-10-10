@@ -32,7 +32,7 @@ https://app.prophecy.io/api/trigger/pipeline
 ```
 
 :::info
-Replace the base URL with your environment URL for dedicated SaaS and self-hosted deployments.
+Replace the base URL with your environment URL for Dedicated SaaS deployments.
 :::
 
 ### Request Headers {#request-headers-trigger}
@@ -109,7 +109,7 @@ https://app.prophecy.io/api/trigger/pipeline/{{runId}}
 ```
 
 :::info
-Replace the base URL with your environment URL for dedicated SaaS and self-hosted deployments.
+Replace the base URL with your environment URL for Dedicated SaaS deployments.
 :::
 
 ### Request Headers {#request-headers-status}

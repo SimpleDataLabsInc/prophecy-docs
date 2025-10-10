@@ -33,14 +33,14 @@ The table below outlines whether the connection supports certain Prophecy featur
 
 To create a connection with Azure Synapse, enter the following parameters:
 
-| Parameter                                                            | Description                                                    |
-| -------------------------------------------------------------------- | -------------------------------------------------------------- |
-| Connection Name                                                      | Name to identify your connection                               |
-| Server                                                               | Address of the server to connect to                            |
-| Port                                                                 | Port to use for the connection                                 |
-| Username                                                             | Username for Synapse authentication                            |
-| Database                                                             | Name of the specific SQL database within your Synapse SQL pool |
-| Password ([Secret required](docs/administration/secrets/secrets.md)) | Password for Synapse authentication                            |
+| Parameter                                                                                     | Description                                                    |
+| --------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| Connection Name                                                                               | Name to identify your connection                               |
+| Server                                                                                        | Address of the server to connect to                            |
+| Port                                                                                          | Port to use for the connection                                 |
+| Username                                                                                      | Username for Synapse authentication                            |
+| Database                                                                                      | Name of the specific SQL database within your Synapse SQL pool |
+| Password ([Secret required](docs/administration/fabrics/prophecy-fabrics/secrets/secrets.md)) | Password for Synapse authentication                            |
 
 ## Sharing connections within teams
 

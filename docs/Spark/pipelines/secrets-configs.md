@@ -10,6 +10,10 @@ tags:
   - credentials
 ---
 
+:::edition Enterprise
+Applicable to the Enterprise Edition only.
+:::
+
 Secrets provide secure authentication for connecting to various data tools like Salesforce, REST APIs, and Snowflake by storing sensitive credentials in centralized secret providers rather than exposing them in code. Any time you need to enter credentials in a Prophecy pipeline, you will be prompted to insert a secret or insert a configuration.
 
 Follow this guide to understand how to use configurations for secrets.

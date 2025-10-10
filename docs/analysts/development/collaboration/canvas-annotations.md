@@ -8,7 +8,13 @@ tags:
   - annotation
 ---
 
-In many cases, pipelines can become quite large to accommodate complex transformation requirements. Because of this, Prophecy lets you **annotate** your pipelines in the canvas to contextualize them.
+Prophecy enhances pipeline readability and comprehension through several annotation features:
+
+- **Gem comments:** Copilot generates comments and documentation for individual pipeline components (gems), providing context and explaining complex transformations. You can also create and update gem comments yourself.
+- **Canvas annotations:** Add free-form text annotations directly on the pipeline canvas, highlighting key steps, providing explanations, or documenting assumptions.
+- **Gem labels and icons:** Labels and icons on each gem allow users to visually categorize and identify pipeline components, improving overall pipeline clarity and organization.
+
+In many cases, pipelines can become quite large to accommodate complex transformation requirements. Learn how to add canvas annotations in the following sections.
 
 ## Add an annotation
 

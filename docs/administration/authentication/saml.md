@@ -1,56 +1,65 @@
 ---
-title: SAML and SCIM
+title: SAML authentication (SCIM optional)
 id: saml-scim
-description: SAML authentication
-tags:
-  - authentication
-  - saml
-  - okta
-  - azureAD
+description: Leverage SAML for authentication for Prophecy users
+tags: [saml, scim]
 ---
 
-Use this page to understand how to set up SAML authentication and SCIM provisioning in Prophecy.
+:::edition Express and Enterprise
+Available for Express and Enterprise Editions only.
+:::
 
-## Requirements
+Prophecy supports SAML for authentication.
 
-- Organization admin role in Prophecy.
-- SCIM enabled in Prophecy deployment `config` (Dedicated SaaS and self-hosted deployments only).
+## Prerequisites
+
+Review the following prerequisites.
+
+- To access SSO settings, you must be a cluster admin for your deployment.
+- SAML is available for Express and Enterprise Editions.
+- SCIM is only available for the Enterprise Edition. To enable SCIM in your environment, update the `config` in your Prophecy deployment.
+
+## Supported identity providers
+
+Prophecy supports the following identity providers (IdP):
+
+- Google
+- Okta
+- Azure Active Directory (Microsoft Entra ID)
+- Others (custom)
 
 ## SAML configuration
 
-To set up SSO using SAML:
+1. Log in to Prophecy as a cluster admin user.
+1. Navigate to the **SSO** tab of the Prophecy **Settings** page.
+1. Under **Authentication Provider**, select SAML.
+1. Under IDP, select the appropriate identity provider.
+1. Fill out the remaining parameters:
 
-1. Navigate to **Settings > SSO**.
-1. Choose **SAML** as the Authentication Provider.
-1. Click **Generate SCIM Token**.
-1. Choose the relevant **IDP**. This can be Okta, AzureAD, Google, or others.
-1. Input your **SSO URL**.
-1. Add your **Certificate** or skip certificate verification.
-1. Fill in your **Entity issuer** and **SSO issuer**.
-1. Click **Save**.
+   | Parameter                     | Description                                                                                                                                        |
+   | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | Generate SCIM Token           | If SCIM is enabled in your environment, click to create/rotate the SCIM bearer token used by your IdP/SCIM client to provision users and groups.   |
+   | SSO URL                       | The Identity Provider Single Sign-On endpoint. Paste the SSO URL (Location) from your IdP metadata. Prophecy redirects users here to authenticate. |
+   | Certificate                   | The IdP SAML signing certificate. Prophecy uses this to verify SAML response signatures.                                                           |
+   | Skip certificate verification | Disable TLS certificate/host verification when calling the IdP SSO endpoint.                                                                       |
+   | Entity issuer                 | The entity issuer you configured in the IdP. Usually, this is the label for your SAML configuration.                                               |
+   | SSO issuer                    | The SSO issuer. For Azure AD this is the Azure AD Identifier; for Okta, it is the issuer link in the XML.                                          |
+
+1. Click **Save** at the bottom of the page to save your changes.
 
 ![SSO settings for SAML and SCIM configurations](./img/sso-scim.png)
 
-## Group Naming Conventions for SCIM
+## SCIM provisioning
 
-Groups defined in your SCIM protocol are mapped to teams and admins in Prophecy. Follow the naming convention below to assign the correct roles to users.
+Enable SCIM if you want Prophecy to automatically provision and deprovision users and teams.
 
-### Team Role Mapping
+See [Group-to-team mapping](docs/administration/authentication/group-team-mapping.md) for handling groups.
 
-| **Group Name**     | **Role in Prophecy**                                                          |
-| ------------------ | ----------------------------------------------------------------------------- |
-| `<teamname>`       | Users will be assigned to the team with the same name in Prophecy.            |
-| `<teamname>-admin` | Users will be assigned as Team Admins for the corresponding team in Prophecy. |
+## IDP-specific steps
 
-### Self-hosted Deployments Only
+### Azure Active Directory
 
-| **Group Name**   | **Role in Prophecy**                      |
-| ---------------- | ----------------------------------------- |
-| `prophecy-admin` | Users will be Cluster Admins in Prophecy. |
-
-## Microsoft Entra ID (formerly Azure Active Directory)
-
-Configure SAML for Microsoft Entra ID and enable SCIM provisioning
+Configure SAML for Azure Active Directory (Microsoft Entra ID) and enable SCIM provisioning
 
 1. Log into AzureAD as an administrator and create a new Enterprise Application like `ProphecyAzureADApp`.
 2. In the home page search bar, search for **Enterprise Applications**.
@@ -63,31 +72,31 @@ Configure SAML for Microsoft Entra ID and enable SCIM provisioning
 
 Now the form for **Set up Single Sign-On with SAML** will open. You'll have to fill out different sections of the form.
 
-### Basic SAML Configuration
+#### Basic SAML Configuration
 
-1. Provide an Identifier (Entity ID) which is a unique ID to identify this application to Microsoft Entra ID.
+1. Provide an Identifier (Entity ID) which is a unique ID to identify this application to Microsoft Entra ID. This will be added to the Entity issuer field in Prophecy.
 2. In the same section, configure **Reply URL** and **Sign on URL** as:  
    `https://your-prophecy-ide-url.domain/api/oauth/samlCallback`
 3. Click **Save**.
 
-### Attributes & Claims
+#### Attributes & Claims
 
 1. Click **Edit** button and then **Add new claim**.
 2. Give **Name** as `email` and **Source Attribute** as `user.userprincipalname`, and click **Save**.
 3. Add one more claim by clicking on **Add new claim**.
 4. Give **Name** as `name` and **Source Attribute** as `user.givenname`, and click **Save**.
 
-### SAML certificates
+#### SAML certificates
 
 In the **SAML certificates** section, download `Certificate (Base64)` file to be used while configuring SSO in Prophecy UI.
 
-### Set up ProphecyAzureADApp
+#### Set up ProphecyAzureADApp
 
 In the **Set up ProphecyAzureADApp** section, copy `Login URL` and `Azure AD Identifier` to be used while configuring SSO in Prophecy UI.
 
 ![AzureAD config example](./img/azure_enterpriseapp_sso.png)
 
-## Okta
+### Okta
 
 Configure SAML for Okta and enable SCIM provisioning
 
@@ -109,9 +118,9 @@ Configure SAML for Okta and enable SCIM provisioning
 13. Choose **I’m an Okta customer adding an internal app**.
 14. Click **Finish**. The _Prophecy SAML App_ is now displayed.
 
-### Information required from Okta
+#### Information required from Okta
 
-#### Download SAML Signing Certificate
+##### Download SAML Signing Certificate
 
 1. Navigate to the **Sign On** tab of _Prophecy SAML App_ in Okta.
 2. Locate the **SAML Signing Certificates** section.
@@ -119,7 +128,7 @@ Configure SAML for Okta and enable SCIM provisioning
 
 ![Download Okta Cert](./img/okta_dl_cert.png)
 
-#### SSO URL
+##### SSO URL
 
 1. In the same **Sign On** tab under **SAML Signing Certificates**, click **View IdP metadata**.
 2. This action opens an XML file in a new browser tab.
@@ -127,7 +136,7 @@ Configure SAML for Okta and enable SCIM provisioning
 
 ![IDP Metadata](./img/okta_idp_metadata_xml.png)
 
-#### Entity and SSO Issuer
+##### Entity and SSO Issuer
 
 1. Go to the **General** tab, then navigate to the **SAML Settings** section and click **Edit**.
 2. Click **Next** to reach the **Configure SAML** section.

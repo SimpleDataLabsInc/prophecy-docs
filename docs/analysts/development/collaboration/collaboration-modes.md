@@ -6,7 +6,12 @@ description: Work together on projects simultaneously
 tags: []
 ---
 
-Prophecy provides mechanisms to manage concurrent edits and prevent conflicts when multiple users work on the same project. The specific collaboration workflow is dictated by the project's Git mode, a setting established when the project is initially created.
+Prophecy provides mechanisms to manage concurrent edits and prevent conflicts when multiple users work on the same project. The specific collaboration workflow is dictated by the project's Git mode, a setting established when the project is initially created. Depending on the chosen mode, Prophecy employs either:
+
+- **Branch-based isolation:** Where each user works on their own Git branch, merging changes when ready.
+- **Locking mechanisms:** Where Prophecy prevents simultaneous edits of critical components.
+
+This ensures project integrity and avoids overwriting edits.
 
 ## Collaboration workflows
 
@@ -19,7 +24,7 @@ The following project settings dictate a project's collaboration workflow.
 | Normal or Fork    | External Git     | Users who are comfortable with typical Git branching and merging strategies who can manage CI/CD in Git.                 |
 
 :::info
-All projects that utilize the **Prophecy for Analysts** [project creation template](/templates) operate with Simple, Prophecy-managed Git.
+All projects that utilize the **Prophecy for Analysts** [project creation template](/administration/project-types/project-creation-template) operate with Simple, Prophecy-managed Git.
 :::
 
 ## Simple/Prophecy-managed

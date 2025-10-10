@@ -7,7 +7,7 @@ tags:
   - network
 ---
 
-Prophecy is SOC 2 compliant and safeguards data at every level across the product stack. Whether you use our multi-tenant, cloud-native SaaS platform or a self-hosted deployment, Prophecy is designed to meet the rigorous security requirements that are standard for enterprises.
+Prophecy is SOC 2 compliant and safeguards data at every level across the product stack. Whether you use our multi-tenant SaaS platform or a Dedicated SaaS deployment, Prophecy is designed to meet the rigorous security requirements that are standard for enterprises.
 
 ## Framework
 
@@ -36,7 +36,6 @@ Here’s the full range of deployment options:
 
 - **SaaS**. Our highly secure and scalable default offering that employs multi-tenant architecture with multiple layers of logical isolation. Runs on Prophecy’s AWS VPC.
 - **Dedicated SaaS**. A single-tenant deployment option for organizations that prefer more isolated infrastructure deployed on a dedicated Prophecy AWS or Azure VPC.
-- **Self-hosted**. Deployed in the customer’s own network or Virtual Private Cloud (VPC). Not generally recommended. Contact Prophecy for more information.
 
 With these flexible options, Prophecy ensures every organization can adopt the deployment model that best suits their security and operational requirements.
 

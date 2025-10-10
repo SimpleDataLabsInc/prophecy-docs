@@ -8,6 +8,10 @@ tags:
   - target
 ---
 
+:::edition Enterprise
+Available for Enterprise Edition only.
+:::
+
 Data diffs can help you identify when pipeline outputs do not meet predefined expectations. This can be useful for:
 
 - Understanding the success of your pipeline migrations.

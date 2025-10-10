@@ -8,9 +8,16 @@ tags:
   - cluster admin
 ---
 
-Cluster admins have access to additional settings in the **Settings** UI of their Prophecy environment. Not all of these settings will be applicable for SaaS and Dedicated SaaS deployments.
+:::edition Enterprise
+Available on the Enterprise Edition only.
+:::
 
-![Cluster admin settings page](img/cluster-admin-settings.png)
+[Prophecy cluster admins](docs/administration/user-management/access/role-based-access.md) have access to additional settings in the **Settings** UI of their Prophecy environment.
+
+To access these settings:
+
+1. Click **... > Settings**.
+1. Open the **Admin** tab.
 
 ## Admin tabs
 
@@ -26,3 +33,5 @@ The Admin settings contains various tabs that serve different purposes.
 | Monitoring | Review the resource usage of various services in the Prophecy deployment.                                     |
 | Security   | Global authentication settings like Databricks OAuth U2M setup, Kerberos Authentication, etc.                 |
 | Logs       | Download system logs from a specific time range. Helpful for support cases.                                   |
+
+![Cluster admin settings page](img/cluster-admin-settings.png)

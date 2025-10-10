@@ -9,6 +9,10 @@ tags:
   - extensibility
 ---
 
+:::edition Enterprise
+Available for Enterprise Edition only.
+:::
+
 Dependencies allow you to make use of a variety of packages in your data pipelines and jobs. There are three types of dependencies for Spark projects:
 
 - **Package Hub Dependencies.** When you import a project from the Package Hub as a dependency, you gain access to all its components, including pipelines, gems, and business rules for use in your own project. If a new version of the project is published, you can update your dependency to take advantage of the latest changes.

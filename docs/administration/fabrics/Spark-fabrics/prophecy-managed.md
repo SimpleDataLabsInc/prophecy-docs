@@ -1,5 +1,5 @@
 ---
-title: Prophecy-managed
+title: Prophecy-managed Spark fabric
 id: prophecy-managed-databricks
 slug: /engineers/prophecy-managed-fabric
 description: Use a Prophecy-managed free trial fabric

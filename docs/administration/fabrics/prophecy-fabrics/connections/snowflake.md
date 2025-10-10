@@ -46,7 +46,7 @@ To create a connection with Snowflake, enter the following parameters:
 | Schema                | Default schema for reading and writing data                                                                                                    |
 | Warehouse             | Name of the SQL warehouse to use for the connection                                                                                            |
 | Role                  | Snowflake [role](https://docs.snowflake.com/en/user-guide/security-access-control-overview) of the user to connect<br/>Example: `ACCOUNTADMIN` |
-| Authentication method | Enter your Snowflake username and use a [secret](docs/administration/secrets/secrets.md) to enter your password.                               |
+| Authentication method | Enter your Snowflake username and use a [secret](docs/administration/fabrics/prophecy-fabrics/secrets/secrets.md) to enter your password.      |
 
 ## Data type mapping
 
