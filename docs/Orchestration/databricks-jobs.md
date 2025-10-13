@@ -351,7 +351,7 @@ Use **For Each** to run the gem multiple times with different parameter values.
 
 ## Run the Job
 
-When you are satisfied with the job's configuration, you can run the job.
+When you are satisfied with the job's configuration, you can run it interactively to test it on demand. This lets you validate that the job works correctly before you deploy it.
 
 1. Make sure you are connected to a fabric.
 1. Click the run button in the lower right-hand corner of the job configuration page.
