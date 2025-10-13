@@ -9,7 +9,6 @@ tags:
   - scheduling
 ---
 
-
 Once you have developed a [Spark pipeline](/engineers/pipelines) using Prophecy, you will want to schedule it to run at
 some frequency. To support this, Prophecy provides a visual layer on top of [Databricks jobs](https://docs.databricks.com/en/jobs/index.html).
 A Prophecy Databricks job corresponds to a Databricks job definition under the hood, enabling you to add and link pipelines, scripts, Databricks notebooks, conditional logic, and other components to a job. Jobs run in Databricks.
@@ -17,21 +16,24 @@ A Prophecy Databricks job corresponds to a Databricks job definition under the h
 Available for Enterprise Edition only.
 :::
 
-
 ## Schedule a Databricks Job
 
-You can create a job from three places:
+- You can create a job either for a specific project or generically for any project.
 
-- To schedule from a pipeline, click the **Schedule** button at the top of the visual canvas. (You can still add other pipelines to the job.)
-- To schedule a job from within a project, click **+** to the right of **Jobs** in the left sidebar.
-- To schedule a job for any project, click the **Create Entity** button in the left navigation bar. Hover over the **Job** tile and select **Create**.
+  - To schedule a job for a specific project, either:
 
-When you create a new job, you're asked for the following details. Some fields are set automatically when you schedule from a pipeline or project.
+    - Click the **Schedule** button at the top of a pipeline's visual canvas, then click **New Job** in the modal that opens. (You can still add other pipelines to the job.)
+
+    - Click **+** to the right of **Jobs** in the left sidebar.
+
+  - To schedule a job for any project, click the **Create Entity** button in the left navigation bar. Hover over the **Job** tile and select **Create**.
+
+When you create a new job, you're asked for the following details. Some fields are automatically populated when you schedule from a pipeline or the left sidebar.
 
 | Field Name                | Description                                                                                                                                                                                                                                                                                                                                                    |
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Project                   | Which [project](/projects) to create the job in. This controls who has access to the job, groups jobs together for lineage, and allows you to use pipelines already published within that project. Populated automatically when you schedule a job from a pipeline or from within a project.                                                                       |
-| Branch                    | Which Git branch to use when developing this job. When you schedule a job from a pipeline or project, the job uses the current branch.                                                                                                                                                                                                                         |
+| Project                   | Which [project](/projects) to create the job in. This controls who has access to the job, groups jobs together for lineage, and allows you to use pipelines already published within that project. Populated automatically when you schedule a job from a pipeline or from within a project.                                                                   |
+| Branch                    | Which Git branch to use when developing this job. Populated automatically when you schedule a job from a pipeline.                                                                                                                                                                                                                                             |
 | Name                      | Unique name for job.                                                                                                                                                                                                                                                                                                                                           |
 | Scheduler                 | The underlying engine that will execute your job. We recommend using Databricks.                                                                                                                                                                                                                                                                               |
 | Fabric                    | The [execution fabric](/administration/fabrics/prophecy-fabrics/) to which the job will be deployed.                                                                                                                                                                                                                                                           |
