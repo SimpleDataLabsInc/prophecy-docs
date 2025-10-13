@@ -24,11 +24,12 @@ Number of inputs and outputs can be changed as needed by clicking the `+` button
 
 ## Where the script runs
 
-The execution environment for the Script gem depends on the [SQL Warehouse Connection](docs/administration/fabrics/prophecy-fabrics/create-fabric.md#connections) configured in your Prophecy fabric.
+The execution environment for the Script gem depends on the [SQL warehouse](/administration/fabrics/prophecy-fabrics/#supported-primary-sql-warehouses) configured in your Prophecy fabric.
 
 | SQL warehouse provider | Execution environment |
 | ---------------------- | --------------------- |
 | Databricks             | Databricks Serverless |
+| Prophecy In Memory     | Prophecy Automate     |
 | BigQuery               | Prophecy Automate     |
 
 This ensures your Python logic runs in an environment optimized for your data platform.
