@@ -44,8 +44,6 @@ When you create a new job, you're asked for the following details. Some fields a
 | Per Gem Timeout           | Timeout for each gem in job pipeline.                                                                                                                                                                                                                                                        |
 | Number of retries per gem | Number of retries for each gem in job pipeline.                                                                                                                                                                                                                                              |
 
-![Example Configuration](img/databricks-job-config-example.png)
-
 ## Build the job
 
 Once you add a job, Prophecy opens a visual canvas that lets you add and connect gems for the job.
