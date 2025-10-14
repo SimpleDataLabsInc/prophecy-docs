@@ -9,7 +9,7 @@ tags:
 ---
 
 :::edition Enterprise
-Available for Enterprise Edition only.
+Available for [Enterprise Edition](/getting-started/editions/) only.
 :::
 
 To configure a target model that will be written to Snowflake, reference the following sections.

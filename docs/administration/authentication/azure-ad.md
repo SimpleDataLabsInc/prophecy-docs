@@ -8,7 +8,7 @@ tags:
 ---
 
 :::edition Express and Enterprise
-Available for Express and Enterprise Editions only.
+Available for [Express and Enterprise Editions](/getting-started/editions/) only.
 :::
 
 Prophecy supports **direct OAuth integration** with Microsoft Entra ID (formerly Azure Active Directory).

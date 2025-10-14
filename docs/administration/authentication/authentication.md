@@ -9,7 +9,7 @@ tags:
 ---
 
 :::edition Enterprise and Express
-Custom authentication is available for the Enterprise and Express Editions only.
+Custom authentication is available for the [Enterprise and Express Editions](/getting-started/editions/) only.
 :::
 
 When logging in to Prophecy, you can either credentials managed directly by Prophecy, or set up SSO. Prophecy integrates with multiple identity providers to let you log in using your external credentials. You can configure SSO under **Settings > SSO**.

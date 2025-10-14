@@ -10,7 +10,7 @@ tags:
 ---
 
 :::edition Enterprise
-Available for Enterprise Edition only.
+Available for [Enterprise Edition](/getting-started/editions/) only.
 :::
 
 By default, Prophecy writes your target model to the database and schema defined in the attached fabric. You can update the location of the target model in the **Location** tab of the gem dialog. This page includes an example of how you can make the write location of the table dynamic.

@@ -24,7 +24,7 @@ Prophecy fabrics consist of two main components:
 
 ## Fabric provisioning
 
-Prophecy fabrics are provisioned differently depending on your edition:
+Prophecy fabrics are provisioned differently depending on your [Prophecy edition](/getting-started/editions/):
 
 | Edition                      | Description                                                                                                                                                                                                                             |
 | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

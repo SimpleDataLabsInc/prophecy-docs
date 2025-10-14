@@ -10,7 +10,7 @@ tags:
 ---
 
 :::edition Enterprise
-Available for Enterprise Edition only.
+Available for [Enterprise Edition](/getting-started/editions/) only.
 :::
 
 Execution metrics help you monitor and analyze your pipeline performance by tracking data including records and bytes processed, pipeline execution time, and data samples (interims) between pipeline components.

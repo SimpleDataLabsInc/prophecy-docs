@@ -9,7 +9,7 @@ tags:
 ---
 
 :::edition Enterprise
-Available for Enterprise Edition only.
+Available for [Enterprise Edition](/getting-started/editions/) only.
 :::
 
 Data diffs can help you identify when pipeline outputs do not meet predefined expectations. This can be useful for:

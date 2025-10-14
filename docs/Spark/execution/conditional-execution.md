@@ -9,7 +9,7 @@ tags:
 ---
 
 :::edition Enterprise
-Available for Enterprise Edition only.
+Available for [Enterprise Edition](/getting-started/editions/) only.
 :::
 
 For granular data processing control, you can conditionally run or skip transformations within gems in your pipeline.

@@ -11,7 +11,7 @@ tags:
 ---
 
 :::edition Enterprise
-Available for Enterprise Edition only.
+Available for [Enterprise Edition](/getting-started/editions/) only.
 :::
 
 Model configurations are settings that define how a model should be built and behave within your data warehouse.

@@ -9,7 +9,7 @@ tags:
 ---
 
 :::edition Enterprise
-Applicable to the Enterprise Edition only.
+Applicable to the [Enterprise Edition](/getting-started/editions/) only.
 :::
 
 Pipelines are groups of data transformations that you can build from a **visual** or **code** interface. When using the visual interface, each component of a pipeline is automatically compiled into code that you can reuse and customize.

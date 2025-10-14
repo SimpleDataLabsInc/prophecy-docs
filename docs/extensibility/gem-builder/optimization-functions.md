@@ -8,7 +8,7 @@ tags:
 ---
 
 :::edition Enterprise
-Available for Enterprise Edition only.
+Available for [Enterprise Edition](/getting-started/editions/) only.
 :::
 
 Custom gems create code by defining functionality in their `def apply()` method.

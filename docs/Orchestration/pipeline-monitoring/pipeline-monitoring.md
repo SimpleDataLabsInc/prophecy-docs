@@ -10,7 +10,7 @@ tags:
 ---
 
 :::edition Enterprise
-Available for Enterprise Edition only.
+Available for [Enterprise Edition](/getting-started/editions/) only.
 :::
 
 Pipeline Monitoring enables you as a Spark Copilot user to monitor and debug your scheduled and interactive pipeline runs through Prophecy. The primary goal of pipeline, model, and job observability is to assist you in quickly pinpointing errors, minimize the cost of fixes, and reduce downtime.

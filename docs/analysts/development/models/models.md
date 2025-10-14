@@ -11,7 +11,7 @@ tags:
 ---
 
 :::edition Enterprise
-Available for Enterprise Edition only.
+Available for [Enterprise Edition](/getting-started/editions/) only.
 :::
 
 In Prophecy, a model comprises a set of gems that process data into one output. In other words, each model corresponds to a **single table** in your database.

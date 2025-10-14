@@ -9,7 +9,7 @@ tags:
 ---
 
 :::edition Enterprise
-Available on the Enterprise Edition only.
+Available on the [Enterprise Edition](/getting-started/editions/) only.
 :::
 
 Configure OAuth authentication for Prophecy by creating app registrations for supported identity providers.

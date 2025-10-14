@@ -12,7 +12,7 @@ tags:
 ---
 
 :::edition Enterprise
-Available for Enterprise Edition only.
+Available for [Enterprise Edition](/getting-started/editions/) only.
 :::
 
 Prophecy provides a recommended mechanism for using Git based development. The four main phases of integrating your changes are **Commit**, **Pull**, **Merge**, and **Release**. A standard development pattern looks like this, though other mechanisms like forking are also supported:

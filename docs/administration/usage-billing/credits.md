@@ -8,7 +8,7 @@ tags: []
 import Mermaid from '@theme/Mermaid';
 
 :::edition Free and Professional
-Credits apply to the Free and Professional Editions only.
+Credits apply to the [Free and Professional Editions](/getting-started/editions/) only.
 :::
 
 In Prophecy, credits represent a unified measure of usage across the platform. Actions such as adding team members, submitting AI requests, or storing data, consume credits. Understanding credit consumption helps you manage costs and optimize usage effectively.
