@@ -151,12 +151,23 @@ const sidebars = {
                     "analysts/development/gems/source-target/external-table/databricks",
                     "analysts/development/gems/source-target/external-table/bigquery",
                     "analysts/development/gems/source-target/external-table/synapse",
-                    "analysts/development/gems/source-target/external-table/snowflake",
                     "analysts/development/gems/source-target/external-table/mssql",
                     "analysts/development/gems/source-target/external-table/mongodb",
                     "analysts/development/gems/source-target/external-table/oracle",
                     "analysts/development/gems/source-target/external-table/redshift",
                     "analysts/development/gems/source-target/external-table/salesforce",
+                    {
+                      type: "category",
+                      label: "SAP HANA",
+                      link: {
+                        type: "doc",
+                        id: "analysts/development/gems/source-target/external-table/hana/hana",
+                      },
+                      items: [
+                        "analysts/development/gems/source-target/external-table/hana/generated-columns",
+                      ],
+                    },
+                    "analysts/development/gems/source-target/external-table/snowflake",
                   ],
                 },
                 {
@@ -969,6 +980,7 @@ const sidebars = {
                 "administration/fabrics/prophecy-fabrics/connections/mssql",
                 "administration/fabrics/prophecy-fabrics/connections/oracle",
                 "administration/fabrics/prophecy-fabrics/connections/salesforce",
+                "administration/fabrics/prophecy-fabrics/connections/hana",
                 "administration/fabrics/prophecy-fabrics/connections/sftp",
                 "administration/fabrics/prophecy-fabrics/connections/smartsheet",
                 "administration/fabrics/prophecy-fabrics/connections/smtp",
