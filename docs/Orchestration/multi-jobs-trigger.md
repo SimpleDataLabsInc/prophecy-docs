@@ -15,7 +15,7 @@ tags:
 Available for [Enterprise Edition](/getting-started/editions/) only.
 :::
 
-To better structure your projects, sometimes you will want to create multiple different jobs that trigger only a specific set of pipelines, as when using the [Bronze, Silver, Gold](https://www.prophecy.io/blogs/prophecy-with-delta#bronze-silver-gold-layers) architecture, one might want to have a project for each one of the stages and run each stage sequentially: run _Gold_ after _Silver_ is finished and run _Silver_ after _Bronze_ is finished.
+To better structure your projects, sometimes you will want to create multiple different jobs that trigger only a specific set of pipelines. For example, when using the [Bronze, Silver, Gold](https://www.prophecy.io/blogs/prophecy-with-delta#bronze-silver-gold-layers) architecture, one might want to have a project for each one of the stages and run each stage sequentially: run _Gold_ after _Silver_ is finished and run _Silver_ after _Bronze_ is finished.
 
 However, this poses a question: How to schedule multiple jobs together?
 
