@@ -13,10 +13,6 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-:::edition Enterprise
-Available for Enterprise Edition only.
-:::
-
 The Prophecy lineage extractor is a Python tool that retrieves and exports lineage information from Prophecy projects and pipelines. It supports project, pipeline, and branch-level lineage extraction, with optional features like emailing reports.
 
 You can run the lineage extractor manually or integrate it into a CI workflow to automate report generation. This page covers how to run the extractor via command line and how to automate it using GitHub Actions or GitLab CI.
@@ -73,14 +69,6 @@ python -m prophecy_lineage_extractor \
   --branch test1234 \
   --send-email \
   --run-for-all
-```
-python -m prophecy_lineage_extractor \
-  --project-id 6493 \
-  --reader knowledge-graph \
-  --branch test1234 \
-  --output-dir ./test \
-  --run-for-all \
-  --fmt openlineage
 ```
 
   </TabItem>
