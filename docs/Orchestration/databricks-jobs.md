@@ -35,9 +35,9 @@ When you create a new job, you're asked for the following details. Some fields a
 | Project                   | Which [project](/projects) to create the job in. This controls who has access to the job, groups jobs together for lineage, and allows you to use pipelines already published within that project. Populated automatically when you schedule a job from a pipeline or from within a project.                                                                   |
 | Branch                    | Which Git branch to use when developing this job. Populated automatically when you schedule a job from a pipeline.                                                                                                                                                                                                                                             |
 | Name                      | Unique name for job.                                                                                                                                                                                                                                                                                                                                           |
-| Scheduler                 | The underlying engine that will execute your job. We recommend using Databricks.                                                                                                                                                                                                                                                                               |
+| Scheduler                 | The underlying engine that will execute your job. Select **Databricks**.                                                                                                                                                                                                                                                                                       |
 | Fabric                    | The [execution fabric](/administration/fabrics/prophecy-fabrics/) to which the job will be deployed.                                                                                                                                                                                                                                                           |
-| Job Size                  | The [default size](/administration/fabrics/prophecy-fabrics/) of the cluster that will be created for the job.                                                                                                                                                                                                                                                 |
+| Job Size                  | The [default size](/administration/fabrics/prophecy-fabrics/databricks/#job-sizes) of the cluster that will be created for the job.                                                                                                                                                                                                                            |
 | Schedule Interval         | Defines how often your job is going to run. The interval is defined using the [Quartz format](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html). For example: `0 0/5 * * * ?` means "runs every 5 minutes," while `0 0 12 * * ?` means "runs daily at noon UTC." You can click on the clock icon to select the interval. |
 | Description               | Optional description of job.                                                                                                                                                                                                                                                                                                                                   |
 | Alerts email              | Comma separated list of emails that are going to receive notifications on specific job status events (start, failure, or success).                                                                                                                                                                                                                             |
@@ -50,7 +50,7 @@ When you create a new job, you're asked for the following details. Some fields a
 
 Once you add a job, Prophecy opens a visual canvas that lets you add and connect gems for the job.
 
-Seven gem types are available when defining Databricks jobs. Each gem represents a discrete task, such as running a pipeline, executing a notebook, or triggering another job, within the Databricks job.
+Seven gem types are available when defining Databricks jobs. Each gem represents a discrete task, such as running a pipeline, executing a notebook, or triggering another job.
 
 | Gem Type          | Purpose                                                                           |
 | ----------------- | --------------------------------------------------------------------------------- |
@@ -379,7 +379,16 @@ To do so:
 
 ## Deploy Job
 
-To deploy the job on Databricks, you need to release the project from the Prophecy UI. As soon as the project is released, the job will appear in Databricks Jobs.
+In order to deploy the job on Databricks, you need to release and deploy the job from Prophecy. See [Deployment](/engineers/deployment) for more details.
+
+To release and deploy the job:
+
+1. Click **Enable** in the upper right corner of the visual canvas.
+1. Click **Release** in the upper right corner of the visual canvas.
+1. In the modal that opens, follow the steps to create a git tag for the version, commiting, pulling, and merging changes.
+1. On the **Release and Deploy** page of the modal, assign the job a **Release Version** (such as `0.3.0`), and click **Release and Deploy**.
+
+The job will now be active in Databricks jobs and the schedule will run.
 
 :::info
 
