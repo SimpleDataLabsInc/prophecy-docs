@@ -22,16 +22,16 @@ You can create pipelines solely dedicated to pipeline orchestration using multip
 The Pipeline gem has the following limitations:
 
 - It can trigger only pipelines within the same project.
-- The Monitoring page doesn't show the parent pipeline that triggered a run using the Pipeline gem.
+- The [Monitoring](/analysts/monitoring) page doesn't show the parent pipeline that triggered a run using the Pipeline gem.
 
 ## Input and Output
 
-The following table describes what the Pipeline gem expects as input, and what it will produce as output.
+The following table describes what the Pipeline gem expects as input and what it will produce as output.
 
-| Port    | Description                                                                                                                                                               |
-| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **in0** | Optional input dataset that may include a `status` column and additional columns. <br/>Each row of the input triggers a separate pipeline run per Pipeline gem execution. |
-| **out** | One output dataset that contains the metadata for each triggered pipeline run. <br/>The Pipeline gem returns one row per triggered run.                                   |
+| Port    | Description                                                                                                                                                                                                                             |
+| ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **in0** | Optional input dataset that may include a `status` column and additional columns.<br/>Valid statuses include `success`, `failure`, or `skipped`.<br/>Each row of the input triggers a separate pipeline run per Pipeline gem execution. |
+| **out** | One output dataset that contains the metadata for each triggered pipeline run. <br/>The Pipeline gem returns one row per triggered run.                                                                                                 |
 
 When no input is connected:
 
@@ -40,14 +40,21 @@ When no input is connected:
 
 When an input dataset is connected:
 
-- The `status` column, if present, is used to evaluate trigger conditions.
-- If the trigger condition is met, the Pipeline gem triggers the child pipeline once per each input row.
+- If a `status` column is present, it is used to evaluate [trigger conditions](#trigger-conditions).
+
+  If the trigger condition is met, the Pipeline gem triggers the child pipeline once for each input row.
+
+- If a `status` column is **not** present, the Pipeline gem always triggers the child pipeline once for each input row.
 - Additional columns can be used to pass parameter values into each run.
 - The output contains one row of metadata per input row.
 
+:::note
+The input dataset can be any dataset (including the output of an upstream Pipeline gem).
+:::
+
 ### Output schema
 
-Each row in the output table represents a pipeline run triggered from the Pipeline gem. The output schema provides you will the following information for each pipeline run.
+Each row in the output table represents a pipeline run triggered from the Pipeline gem. The output schema provides you with the following information for each pipeline run.
 
 | Column          | Type         | Description                                                                 |
 | --------------- | ------------ | --------------------------------------------------------------------------- |
@@ -66,12 +73,12 @@ Pipelines are `skipped` when the input does not meet the trigger condition set i
 
 The Pipeline gem accepts the following parameters.
 
-| Parameter                           | Description                                                                                                                                                                                                                                                                                |
-| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Pipeline to run                     | Select a pipeline to trigger in the list of pipelines from the same project.                                                                                                                                                                                                               |
-| Trigger only if                     | Choose a [condition](#trigger-conditions) to control when the trigger fires based on the `status` column of the input dataset (if present). If the condition is not met, the Pipeline gem runs but no pipelines are triggered. The output will show that all pipeline runs were `skipped`. |
-| Maximum number of pipeline triggers | Set a maximum number of time the child pipeline runs per Pipeline gem execution. Maximum is `10,000`.                                                                                                                                                                                      |
-| Set pipeline parameters             | Pass constants, expressions, or column values as parameters to the child pipeline. If a parameter is not specified, the triggered pipeline uses the default parameter value.                                                                                                               |
+| Parameter                           | Description                                                                                                                                                                                                                                                                                 |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Pipeline to run                     | Select a pipeline to trigger in the list of pipelines from the same project.                                                                                                                                                                                                                |
+| Trigger only if                     | Choose a [condition](#trigger-conditions) to control when the trigger fires based on the `status` column of the input dataset (if present). If the condition is not met, the Pipeline gem runs, but no pipelines are triggered. The output will show that all pipeline runs were `skipped`. |
+| Maximum number of pipeline triggers | Set a maximum number of times the child pipeline runs per Pipeline gem execution. Maximum is `10,000`.                                                                                                                                                                                      |
+| Set pipeline parameters             | Set values for the [pipeline parameters](/analysts/pipeline-parameters) defined in the child pipeline. You can specify constants, expressions, or column values for each parameter. If you don’t specify a value, the child pipeline uses its default parameter value.                      |
 
 :::tip
 Use multiple input rows to launch runs of the same pipeline with different sets of parameter values.
@@ -87,7 +94,7 @@ You can define the pipeline trigger condition by choosing from the following lis
 
 - **All pipelines failed**: Executes only when every input row has a `failure` status.
 
-- **All pipelines finished**: Executes after all input pipelines complete, regardless of their success or failure.
+- **All pipelines finished**: Executes after all input pipeline runs have completed, regardless of their success or failure.
 
 - **Any pipeline succeeded**: Executes if at least one input row has a `success` status.
 
