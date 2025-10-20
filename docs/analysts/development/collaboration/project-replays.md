@@ -18,7 +18,7 @@ A replay exposes fabric metadata including schemas, tables, connections, and dat
 
 ## Prophecy onboarding
 
-Prophecy's onboarding experience uses replays to introduce new users to the platform. To revisit these replays after your initial setup, click **Onboarding** from the homepage.
+Prophecy's onboarding experience uses replays to introduce new users to the platform. To view these replays after your initial setup, click **Onboarding** from the homepage.
 
 Reviewing the onboarding replays can help you become familiar with the tool before using it yourself.
 

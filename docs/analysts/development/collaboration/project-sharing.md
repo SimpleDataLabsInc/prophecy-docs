@@ -10,7 +10,7 @@ Share your Prophecy projects with team members or external stakeholders. You can
 
 ## Share with your team
 
-Grant project access by adding users to the team that owns the project. Team members can view and edit all projects owned by their team.
+Give users project access by adding them to the team that owns the project. Team members can view and edit all projects owned by their team.
 
 ### Add users from the project
 
@@ -30,7 +30,7 @@ Prophecy sends an invitation link to each email address. When clicked, Prophecy 
 
 ### Add users from team settings
 
-To invite team members from the Metadata page:
+To invite team members from a team's Metadata page:
 
 1. Navigate to **Metadata** > **Teams**.
 1. Select the team that owns your project.
@@ -48,7 +48,7 @@ Prophecy sends an invitation link to each email address. When clicked, Prophecy 
 Public sharing is available in [Free and Professional Editions](/getting-started/editions/) only.
 :::
 
-Share your project with anyone using a public link. This provides read-only access without requiring authentication, making it ideal for demos, documentation, or stakeholder reviews.
+Share your project with anyone using a public link. This provides read-only access without requiring authentication, making it ideal for demos, training, or stakeholder reviews.
 
 :::caution Data visibility
 Public links expose metadata from your fabric, including schema names, table lists, connection details, and data previews. Only share projects publicly when this information can be safely disclosed.
@@ -56,7 +56,7 @@ Public links expose metadata from your fabric, including schema names, table lis
 
 ### Enable public sharing
 
-To create a public share link:
+To create a public share link to a Prophecy project:
 
 1. Open the version control menu in the top right corner of the project editor.
 1. Select **Share Project & Replays**. This opens the sharing dialog.
