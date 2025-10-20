@@ -56,7 +56,7 @@ UserB --> |becomes team admin|TeamB[Free Edition Plan<br/>Team B<br/>1 user]
 
 ### Usage & Billing dashboard
 
-The **Usage & Billing** dashboard displays plan information, usage, and credit consumption. Because each plan is scoped to a team, switching teams updates the view to show billing details for that team.
+The **Usage & Billing** dashboard displays plan information, usage, and credit consumption. Because each plan maps to an individual team, select a specific team to view its corresponding billing information.
 
 To access the dashboard:
 

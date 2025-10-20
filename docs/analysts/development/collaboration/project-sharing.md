@@ -26,7 +26,7 @@ To invite team members directly from your project:
 1. Enter one or more email addresses.
 1. Click **Send Invitation**.
 
-Prophecy sends an invitation link that adds the recipient(s) to the project's team.
+Prophecy sends an invitation link to each email address. When clicked, Prophecy adds the recipient to the project's team.
 
 ### Add users from team settings
 
@@ -40,7 +40,7 @@ To invite team members from the Metadata page:
 1. Choose a role: **User** or **Admin**.
 1. Click **Send Invitation**.
 
-Prophecy sends an invitation link that adds the recipient(s) to the selected team.
+Prophecy sends an invitation link to each email address. When clicked, Prophecy adds the recipient to the project's team.
 
 ## Share publicly
 
@@ -72,21 +72,24 @@ To revoke public access, change the **Anyone on the internet with the link** dro
 
 Users with the public link can:
 
-- View pipeline structure and gem configurations
-- Run pipelines and see execution results
-- Inspect interim data samples between pipeline steps
-- Use the AI agent to ask questions about data and logic
+- View pipeline structure and gem configurations.
+- Run pipelines and see execution results.
+- Inspect interim data samples between pipeline steps.
+- Use the AI agent to ask questions about data and logic.
 
 Users cannot:
 
-- Edit pipeline components or configurations
-- Use the AI agent to modify the pipeline
+- Edit pipeline components or configurations.
+- Use the AI agent to modify the pipeline.
 
 ### Cloning shared projects
 
-If a viewer clicks **Edit** while in read-only mode:
+When you click **Edit** while in read-only mode:
 
-1. They're prompted to log in (if not authenticated).
-2. A **Clone Project to Edit** dialog appears.
-3. Clicking **Clone Now** creates a copy of the project in their personal team.
-4. They must reconfigure all Source, Target, and Table gems to point to their own fabric resources (unless they have access to the original fabric through team membership).
+1. You are prompted to log in (if not authenticated).
+1. When logged in, you will see the **Clone Project to Edit** dialog.
+1. You can click **Clone Now** to create a copy of the project in your personal team.
+
+When you clone a project, the data ingress/egress gems (Source, Target, and Table) retain their original [connection](/analysts/connections) configurations from the original team's fabric. If you don't have access to that fabric, you'll need to update these gems to use connections available in your personal team's fabric instead.
+
+For example, if the original pipeline has a gem that reads from Snowflake using a connection called `Snowflake_Prod_Data`, you can either replace this connection with one from your personal fabric or request access to the original fabric.
