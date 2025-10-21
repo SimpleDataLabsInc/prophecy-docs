@@ -9,165 +9,289 @@ tags:
   - scheduling
 ---
 
+Once you have developed a [Spark pipeline](/engineers/pipelines) using Prophecy, you will want to schedule it to run at
+some frequency. To support this, Prophecy provides a visual layer on top of [Databricks jobs](https://docs.databricks.com/en/jobs/index.html).
+A Prophecy Databricks job corresponds to a Databricks job definition under the hood, enabling you to add and link pipelines, scripts, Databricks notebooks, conditional logic, and other components to a job. Jobs run in Databricks.
 :::edition Enterprise
 Available for [Enterprise Edition](/getting-started/editions/) only.
 :::
 
-Once you have developed a [Spark pipeline](/engineers/pipelines) using Prophecy, you will want to schedule it to run at
-some frequency. To support this, Prophecy provides a visual layer on top of Databricks jobs for an easy orchestration.
+## Schedule a Databricks job
 
-## Development
+- You can create a job either for a specific project or generically for any project.
 
-### Your first job
+  - To schedule a job for a specific project, either:
 
-You can create a job from two places. If you're going to schedule only a single pipeline, the easiest way to
-build a job for it is to do it directly from the pipeline editor screen. This way your job is automatically initialized
-with the pipeline you create it from.
+    - Click the **Schedule** button at the top of a pipeline's visual canvas, then click **New Job** in the modal that opens. (You can still add other pipelines to the job.)
 
-![Databricks job Creation From pipeline](img/databricks-job-creation-from-pipeline.png)
+    - Click **+** to the right of **Jobs** in the left sidebar.
 
-To do that, simply navigate to your pipeline, and click on the Schedule button (1). That opens a modal that shows all
-the jobs that refer to this job or allow you to create a completely new job from scratch. Upon clicking
-Create New (2) you are redirected to the [job building page](/engineers/databricks-jobs/#building-the-job).
+  - To schedule a job for any project, click the **Create Entity** button in the left navigation bar. Hover over the **Job** tile and select **Create**.
 
-![Databricks Job Creation](img/databricks-job-creation.png)
+When you create a new job, you're asked for the following details. Some fields are automatically populated when you schedule from a pipeline or the left sidebar.
 
-Alternatively, if you'd like to create a new job completely from scratch, you can do that directly from the entity
-creation page (1). There you can choose the job tile (2) and that opens a similar modal where you can define your
-job details (3).
+| Field Name                | Description                                                                                                                                                                                                                                                                                  |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Project                   | Which [project](/projects) to create the job in. This controls who has access to the job, groups jobs together for lineage, and allows you to use pipelines already published within that project. Populated automatically when you schedule a job from a pipeline or from within a project. |
+| Branch                    | Which Git branch to use when developing this job. Populated automatically when you schedule a job from a pipeline.                                                                                                                                                                           |
+| Name                      | Unique name for job.                                                                                                                                                                                                                                                                         |
+| Scheduler                 | The underlying engine that will execute your job. Select **Databricks**.                                                                                                                                                                                                                     |
+| Fabric                    | The [execution fabric](/fabrics) to which the job will be deployed.                                                                                                                                                                                                                          |
+| Job Size                  | The [default size](/administration/fabrics/prophecy-fabrics/connections/databricks) of the cluster that will be created for the job.                                                                                                                                                         |
+| Schedule Interval         | Defines how often your job is going to run. The interval is defined using _cron format_. For example: `0 0/5 * * * ?` means "runs every 5 minutes," while `0 0 12 * * ?` means "runs daily at noon UTC." You can click on the clock icon to select the interval.                             |
+| Description               | Optional description of job.                                                                                                                                                                                                                                                                 |
+| Alerts email              | Comma separated list of emails that are going to receive notifications on specific job status events (start, failure, or success).                                                                                                                                                           |
+| Per Gem Timeout           | Timeout for each gem in job pipeline.                                                                                                                                                                                                                                                        |
+| Number of retries per gem | Number of retries for each gem in job pipeline.                                                                                                                                                                                                                                              |
 
-Whenever, creating a new job you're asked for the following details:
+## Build the job
 
-| Field Name        | Description                                                                                                                                                                                                                                   |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Project           | Which [Project](/projects) to create the job in. This controls who has access to the job, groups jobs together for lineage, and allows you to use pipelines already published within that project.                                            |
-| Branch            | Which Git branch to use when developing this job.                                                                                                                                                                                             |
-| Name              | Unique job name.                                                                                                                                                                                                                              |
-| Scheduler         | The underlying engine that's going to execute your job. Databricks is recommended.                                                                                                                                                            |
-| Fabric            | The [execution fabric](docs/getting-started/concepts/fabrics.md) to which the job is going to be deployed.                                                                                                                                    |
-| Job Size          | The [default size](docs/getting-started/concepts/fabrics.md) of the cluster that's going to be created for the job to run.                                                                                                                    |
-| Schedule Interval | Defines how often your job is going to run. The interval is defined using the [Quartz format](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html). You can click on the clock icon to select the interval. |
-| Alerts email      | Comma separated list of emails that are going to receive notifications on specific job status events (start, failure, or success).                                                                                                            |
+Once you add a job, Prophecy opens a visual canvas that lets you add and connect gems for the job.
 
-### Building the job
+Seven gem types are available when defining Databricks jobs. Each gem represents a discrete task, such as running a pipeline, executing a notebook, or triggering another job.
 
-![Example Databricks job](img/databricks-job-example.png)
+| Gem Type          | Purpose                                                                            |
+| ----------------- | ---------------------------------------------------------------------------------- |
+| Pipeline          | Runs a Prophecy pipeline. Pipeline must be in the same project as the job.         |
+| Script            | Runs a custom Python script.                                                       |
+| Notebook          | Runs a Databricks notebook.                                                        |
+| If Else           | Branches job execution conditionally.                                              |
+| RunJob            | Runs another Prophecy job.                                                         |
+| Model             | Runs a dbt-style data project or a specific SQL model as part of a Databricks job. |
+| Delta Live Tables | Runs a Databricks Delta Live Tables pipeline.                                      |
 
-Now that you've created your first job, you can start adding gems to the canvas to define which pipelines will
-be run during the job. To define dependencies between the pipelines within the job you can simply connect them
-by dragging-and-dropping the edges between gems.
+### Pipeline gem
 
-Two gem types are available when defining Databricks jobs:
+The **Pipeline gem** triggers a Spark pipeline that was developed and published in Prophecy. Use this gem when you want to include an existing Prophecy pipeline as a stage within a Databricks job.
 
-#### Pipeline Gem
+To add a pipeline gem:
 
-The Pipeline gem triggers a Spark pipeline developed in Prophecy.
+1. Drag the **Pipeline** gem onto the job canvas and click it to open its settings.
+1. Enter a descriptive name for the gem.
+1. Select **pipeline** from dropdown menu.
+1. Either confirm or configure **Pipeline Configurations**:
 
-![Pipeline Component](img/databricks-jobs-pipeline-config.png)
+   - To confirm, view input parameters in the **Schema** tab (visible by default when you open the gem).
 
-Settings for pipeline component can be inherited from overall job configuration or can be set inside the component itself.
+   | Field           | Type     | Description                |
+   | --------------- | -------- | -------------------------- |
+   | input_path      | `string` | Source file path.          |
+   | processing_date | `string` | Date to use for filtering. |
 
-#### Script Gem
+   - To change configuration, click the **Config** tab. This tab allows you to override values in the **Schema** tab: **input_path** and **processing_date**.
 
-Script gem can be used to write any ad-hoc code.
+You can [apply conditions for the gem in the **Conditions** tab](#apply-conditions-to-gems-in-the-conditions-tab), including run conditions (whether or not this gem runs based on upstream gems' success or failure) and For Each (which lets you run the gem multiple times with different parameter values.)
 
-![Script Component](img/databricks-jobs-script-config.png)
+Settings for the gem can be inherited from overall job configuration or can be set in the **Settings** tab.
 
-Settings for script component can be inherited from overall job configuration or can be set inside the component itself.
+### Script gem
 
-## Visual == Code
+You can use the **Script** gem to add ad-hoc Python code to the job. This gem corresponds to a [Databricks Python script task](https://docs.databricks.com/aws/en/jobs/python-script), which is a `.py` file that executes within the Databricks runtime on the cluster associated with the job.
 
-The visual graph created on the jobs page is automatically converted to code (JSON) in the backend which gets committed to Git.
+To add a Script gem:
 
-![Code View](img/databricks-jobs-code-view.png)
+1. Drag the **Script** gem onto the job canvas and click it to open its settings.
+1. Enter a descriptive name for the gem.
+1. Enter the Python code you want to execute.
 
-## Job Configuration
+You can [apply conditions for the gem in the **Conditions** tab](#apply-conditions-to-gems-in-the-conditions-tab), including run conditions (whether or not this gem runs based on upstream gems' success or failure) and For Each (which lets you run the gem multiple times with different parameter values.)
 
-![Example Configuration](img/databricks-job-config-example.png)
+Settings for the gem can be inherited from overall job configuration or can be set in the **Settings** tab.
 
----
+### Notebook gem
 
-| Field Name                | Description                                                                                                                                                                                                                                   |
-| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Scheduler                 | The underlying engine that's going to execute your job. Databricks is recommended.                                                                                                                                                            |
-| Fabric                    | The [execution fabric](docs/getting-started/concepts/fabrics.md) to which the job is going to be deployed.                                                                                                                                    |
-| Cluster Size              | The [default size](docs/getting-started/concepts/fabrics.md) of the cluster that's going to be created for the job to run.                                                                                                                    |
-| Cluster Mode              | Can be selected as `Single` (all gems within the job re-use the same Cluster) or `Multi` (all gems within the job run on a separate new cluster)                                                                                              |
-| Schedule Interval         | Defines how often your job is going to run. The interval is defined using the [Quartz format](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html). You can click on the clock icon to select the interval. |
-| Pipeline level Timeout    | Timeout at pipeline level                                                                                                                                                                                                                     |
-| Alerts Email for pipeline | Comma separated list of emails, that are going to receive notifications on specific job status events (job start, failure, or success) for entire pipeline.                                                                                   |
-| Per Gem Timeout           | Timeout for each gem in job pipeline                                                                                                                                                                                                          |
-| Number of retries per gem | Number of retries for each gem in job pipeline                                                                                                                                                                                                |
-| Alerts Email per gem      | Comma separated list of emails that are going to receive notifications on specific job status events (start, failure, or success) for each gem in job pipeline.                                                                               |
+The **Notebook** gem lets you include Databricks notebooks as part of a Prophecy job.  
+Use this gem when you want to orchestrate a notebook that already exists in Databricks as one stage within your job.
 
-To change the job name itself, go to Prophecy's metadata page. Locate the job within a project, and click the pencil icon.
+To add a Notebook gem:
 
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://fast.wistia.net/embed/iframe/hlqqxqyq87?seo=false?videoFoam=true" title="Getting Started With SQL Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
+1. Drag the **Notebook** gem onto the job canvas and click it to open its settings.
+1. Enter **notebook path** for the Databricks notebook you want to run.
+   - The path must reference a notebook that already exists in Databricks.
+   - Ensure that the user running the job has Databricks permissions to access this path.
 
-## Deployment Modes
+:::note
+Prophecy does not support creating or editing notebooks directly in Prophecy.  
+All notebooks must be created and maintained within Databricks.
+:::
 
-To deploy a job on Databricks, we need to release the project from Prophecy UI as shown in example below. As soon as the project is
-released, the job would start appearing on Databricks jobs page as well.
+You can [apply conditions for the gem in the **Conditions** tab](#apply-conditions-to-gems-in-the-conditions-tab), including run conditions (whether or not this gem runs based on upstream gems' success or failure) and For Each (which lets you run the gem multiple times with different parameter values.)
 
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/103921419/184726064-67e3df01-ba4c-431e-92e9-8bda92a19530.mp4" title="Job Deployment" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
+Settings for the gem can be inherited from overall job configuration or can be set in the **Settings** tab.
 
----
+### If Else gem
+
+The **If Else** gem lets you branch a job’s execution path based on a logical condition.  
+Use this gem when you want the job to continue along one branch if a condition is met, and along another branch if it is not.
+
+To add an If Else gem:
+
+1. Drag the **If Else** gem onto the job canvas and click it to open its settings.
+1. Enter a **left operand**, **operator**, and **right operand** to create a logical comparison.
+   - Supported operators:
+     - equals
+     - not equals
+     - less than
+     - greater than
+     - less than or equal to
+     - greater than or equal to
+
+#### Branch behavior
+
+- If the condition evaluates to **true**, the job continues along the **upper branch**.
+- If the condition evaluates to **false**, the job continues along the **lower branch**.
+
+You can apply [run conditions for the gem in the **Conditions** tab](#apply-conditions-to-gems-in-the-conditions-tab). These whether or not the gem runs based on upstream gems' success or failure.
+
+Settings for the gem can be inherited from overall job configuration or can be set in the **Settings** tab. Settings for the gem can be inherited from overall job configuration or can be set in the **Settings** tab.
+
+### RunJob gem
+
+The **RunJob** gem lets you trigger another job that has been configured in your workspace.  
+Use this gem to chain jobs together or orchestrate dependent workflows as part of a larger process.
+
+To add a RunJob gem:
+
+1. Drag the **RunJob** gem onto the job canvas and click it to open its settings.
+1. Choose a **job** from the dropdown menu, or manually enter the **Job ID** of the job you want to trigger.
+1. (Optional) Check **Wait for job completion before proceeding** if you want the current job to pause until the triggered job finishes running.
+
+You can [apply conditions for the gem in the **Conditions** tab](#apply-conditions-to-gems-in-the-conditions-tab), including run conditions (whether or not this gem runs based on upstream gems' success or failure) and For Each (which lets you run the gem multiple times with different parameter values.)
+
+Settings for the gem can be inherited from overall job configuration or can be set in the **Settings** tab.
+
+### Model gem
+
+The **Model** gem lets you run either an entire Prophecy (dbt-style) project or a specific SQL model within one. Use it when you want to include data modeling or transformation logic as part of a Databricks job.
+
+You can configure the Model Gem in two modes:
+
+#### Run Entire Project
+
+Use this mode to execute all SQL models, tests, and seeds within a selected project.
+
+| Field           | Description                                               |
+| --------------- | --------------------------------------------------------- |
+| Project         | Select the project to run.                                |
+| Fabric          | Select the execution fabric where the project should run. |
+| Git Target      | Choose the Git target (branch or tag).                    |
+| Reference Value | Specify the reference commit or version to use.           |
+
+#### Run a SQL model
+
+Use this mode when you want to run a single SQL model from within a project.
+
+| Field           | Description                                                 |
+| --------------- | ----------------------------------------------------------- |
+| Project         | Select the project containing the SQL model.                |
+| SQL Model       | Select the SQL model to run.                                |
+| Fabric          | Select the execution fabric where the SQL model should run. |
+| Git Target      | Choose the Git target (branch or tag).                      |
+| Reference Value | Specify the reference commit or version to use.             |
+
+#### DBT properties
+
+These options control dbt-style behavior when running a project or SQL model:
+
+| Property                                         | Description                                                                       |
+| ------------------------------------------------ | --------------------------------------------------------------------------------- |
+| Run tests                                        | Runs dbt tests (`dbt test`) after the model executes.                             |
+| Run seeds                                        | Runs dbt seeds (`dbt seed`) before model execution.                               |
+| Pull most recent version of dependencies         | Refreshes dbt dependencies (`dbt deps`) before execution.                         |
+| Compile and execute against current target (run) | Compiles and executes the selected models (`dbt run`) against the current target. |
+
+:::note
+**Note:** The Model Gem refers to _data models_ (SQL/dbt) rather than machine learning models. It lets you compile and run Prophecy or dbt projects as part of a Databricks job orchestration.
+:::
+
+You can [apply conditions for the gem in the **Conditions** tab](#apply-conditions-to-gems-in-the-conditions-tab), including run conditions (whether or not this gem runs based on upstream gems' success or failure) and For Each (which lets you run the gem multiple times with different parameter values.)
+
+Settings for the gem can be inherited from overall job configuration or can be set in the **Settings** tab.
+
+### Delta Live Tables Pipeline gem
+
+The **Delta Live Tables Pipeline** gem lets you run data pipelines that have already been created and deployed in Databricks. Use this gem when you want to orchestrate an existing Delta Live Tables (DLT) pipeline as part of a Prophecy job.
+
+To add a Delta Live Tables Pipeline gem:
+
+1. Drag the **Delta Live Tables Pipeline** gem onto the job canvas and click it to open its settings.
+1. Choose from available DLT pipelines for the current fabric.
+1. (Optional) Enable the **Trigger full refresh** checkbox to force a full refresh when the pipeline runs.
+
+Settings for the gem can be inherited from overall job configuration or can be set in the **Settings** tab.
+
+You can [apply conditions for the gem in the **Conditions** tab](#apply-conditions-to-gems-in-the-conditions-tab), including run conditions (whether or not this gem runs based on upstream gems' success or failure) and For Each (which lets you run the gem multiple times with different parameter values.)
+
+Settings for the gem can be inherited from overall job configuration or can be set in the **Settings** tab.
+
+### Apply conditions to gems in the Conditions tab
+
+Use the **Conditional** tab to control when and how the gem runs within the job. You can define **run conditions** or configure the gem to run multiple iterations with **For Each**.
+
+#### Apply Run conditions
+
+Run conditions determine when the gem executes based on the status of preceding gems.
+
+- **All succeeded** – Runs if all upstream gems succeed.
+- **At least one succeeded** – Runs if at least one upstream gem succeeds.
+- **None failed** – Runs if all upstream gems complete without failure.
+- **All done** – Runs after all upstream gems finish, regardless of success or failure.
+- **At least one failed** – Runs if at least one upstream gem fails.
+
+#### Use For Each
+
+Use **For Each** to run the gem multiple times with different parameter values. You can use For Each for all job gems except for the **If Else** gem.
+
+1. Click **Run multiple iterations [For Each]**.
+1. Enter a **parameter name** and a **variable name** to define the iteration context.
+1. Set the **number of concurrent runs** to control parallel execution.
+
+## Run the job
+
+When you are satisfied with the job's configuration, you can run it interactively to test it on demand. This lets you validate that the job works correctly before you deploy it.
+
+1. Make sure you are connected to a fabric.
+1. Click the run button in the lower right-hand corner of the job configuration page.
+
+If the job fails, Prophecy displays an error message indicating what went wrong. If the job succeeds, Prophecy displays a page indicating that all stages have succeeded.
+
+While the job runs, Prophecy displays a **Job Status: Running** message with a **Detail** button. To view a job's progress, click the **Detail** button. A modal opens showing the job as a series of stages. You can view details on a stage by clicking **+** to the right of the stage. If the job fails, Prophecy displays an error message for the stage at which the job failed.
+
+![Jobs Monitoring Modal](img/databricks-job-monitoring.png)
+
+## Configure clusters for job gems
+
+By default, all Jobs gems run in the same cluster. You can configure clusters for individual gems. This option is especially useful for heavy-duty and production pipelines.
+
+To do so:
+
+1. Select the gem by clicking its border.
+1. Click **Configure a Cluster**.
+1. Once the cluster is created, select cluster from dropdown menu.
+1. Choose **Multi** at the top of the visual canvas.
+
+   When the job runs, each gem runs in its own independent cluster. All clusters are the same size as the cluster selected for the job.
+
+## Deploy job
+
+In order to deploy the job on Databricks, you need to release and deploy the job from Prophecy. See [Deployment](/engineers/deployment) for more details.
+
+To release and deploy the job:
+
+1. Click **Enable** in the upper right corner of the visual canvas.
+1. Click **Release** in the upper right corner of the visual canvas.
+1. In the modal that opens, follow the steps to create a git tag for the version, commiting, pulling, and merging changes.
+1. On the **Release and Deploy** page of the modal, assign the job a **Release Version** (such as `0.3.0`), and click **Release and Deploy**.
+
+The job will now be active in Databricks jobs and the schedule will run.
 
 :::info
 
-Make sure to enable the job before creating a Release. If it is not enabled the job will not run on the specified schedule.
+Make sure to enable the job before creating a Release. If not enabled, the job will not run.
 
-If a job's selected fabric is changed it will create a separate Databricks job definition. The previous job (with the previous fabric) will be paused automatically and the new version will be scheduled.
+If a job's selected fabric is changed, it will create a separate Databricks job definition. The previous job (with the previous fabric) will be paused automatically and the new version will be scheduled.
 :::
-
-Prophecy supports two different job deployment models. Each has different impacts on job cost and parallelism.
-
-### Multi Job Cluster Mode
-
-In this mode, each component of job will spawn a separate cluster of its own.
-
-Here's how the Databricks UI looks for Prophecy's Multi Cluster Mode.
-
-![Multi Job Cluster](img/databricks-jobs-multi-cluster-eg.png)
-
-### Single Job Cluster Mode
-
-In this mode, each component of job will run on the same cluster.
-
-:::info
-To use single cluster mode the package name across each pipeline in job should be unique.
-This is done to ensure that the folder structure for one pipeline does not overwrite another.
-Please refer to the steps below in continuation to our earlier [Example](databricks-jobs#deployment-modes) on how to configure package name in pipeline.
-:::
-
----
-
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/103921419/184726133-51bf76ec-31d7-4976-8d7d-68230c28e233.mp4" title="Single Cluster Mode" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
-
-Here's how the Databricks UI looks for Prophecy's Single Cluster Mode.
-
-![Single Job Cluster](img/databricks-jobs-single-cluster-eg.png)
-
-## Job Monitoring
-
-Prophecy provides monitoring page which shows the status (enable/disable) of all the jobs deployed via Prophecy and
-status of historic/current runs (success/failure/in-progress) for quick reference.
-
-<div class="wistia_responsive_padding" style={{padding:'56.25% 0 0 0', position:'relative'}}>
-<div class="wistia_responsive_wrapper" style={{height:'100%',left:0,position:'absolute',top:0,width:'100%'}}>
-<iframe src="https://user-images.githubusercontent.com/103921419/184726121-d2b7c5c7-ec01-48b1-9764-781292940f53.mp4" title="Monitoring" allow="autoplay;fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe>
-</div></div>
 
 ## Guides
 
-1. [How to trigger a job from another job?](multi-jobs-trigger)
-2. [How to design a reliable CI/CD process?](/engineers/ci-cd)
+1. [How to design a reliable CI/CD process?](/engineers/ci-cd)
