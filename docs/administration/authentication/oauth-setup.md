@@ -12,7 +12,7 @@ tags:
 Available on the [Enterprise Edition](/getting-started/editions/) only.
 :::
 
-Configure OAuth authentication for Prophecy by creating app registrations for supported identity providers.
+Configure OAuth for Prophecy fabric connections by creating app registrations for supported identity providers.
 
 ## Prerequisites
 
@@ -29,6 +29,15 @@ Prophecy supports OAuth authentication with the following providers:
 - **Databricks**: Authenticate with Databricks workspaces
 - **Google**: Authenticate with Google Cloud services
 - **ID Anywhere**: Authenticate with custom identity providers
+
+## App registration selection
+
+If you create multiple app registrations for a certain provider, the selection behavior varies based on the fabric type.
+
+| Fabric type                                                                          | Description                                                                                                                                                       | Example                                                                                                                                                     |
+| ------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Prophecy fabrics](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md) | You can select which app registration to use from a dropdown in the fabric connection settings. If multiple app registrations exist, you can toggle between them. | If you create a Prophecy fabric and configure a Databricks connection, and you have multiple Databricks app registrations, you can select which one to use. |
+| [Spark fabrics](docs/administration/fabrics/Spark-fabrics/fabrics.md)                | The default app registration for the provider is **always** used automatically. You cannot change which app registration is used at the fabric level.             | If you create a Spark fabric and select Databricks as the provider, the fabric will always use the default Databricks app registration.                     |
 
 ## Create an app registration
 
@@ -66,22 +75,6 @@ Each provider requires specific OAuth scopes:
 | Databricks  | `all-apis`, `offline_access`, `profile`, `email`, `openid` | [Custom app integration scopes](https://docs.databricks.com/api/account/customappintegration/create) |
 | Google      | `https://www.googleapis.com/auth/bigquery`                 | [OAuth 2.0 Scopes for Google APIs](https://developers.google.com/identity/protocols/oauth2/scopes)   |
 | ID Anywhere | None (must specify manually)                               | Consult your provider's documentation                                                                |
-
-### App registration selection
-
-When you select OAuth for fabric authentication, you may or may not have the option to select an app registration depending on the fabric type.
-
-- [Prophecy fabrics](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md)
-
-  You can select which app registration to use from a dropdown in the fabric connection settings. If multiple app registrations exist, you can easily toggle between them.
-
-  Example: If you create a Prophecy fabric and configure a Databricks connection, and you have multiple Databricks app registrations, you can select which one to use.
-
-- [Spark fabrics](docs/administration/fabrics/Spark-fabrics/fabrics.md)
-
-  The default app registration for the provider is always used automatically. You cannot change which app registration is used at the fabric level.
-
-  Example: If you create a Spark fabric and select Databricks as the provider, the fabric will always use the default Databricks app registration.
 
 ## Create provider-side OAuth applications
 

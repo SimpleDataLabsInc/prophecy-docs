@@ -11,9 +11,21 @@ import Mermaid from '@theme/Mermaid';
 Credits apply to the [Free and Professional Editions](/getting-started/editions/) only.
 :::
 
-In Prophecy, credits represent a unified measure of usage across the platform. Actions such as adding team members, submitting AI requests, or storing data, consume credits. Understanding credit consumption helps you manage costs and optimize usage effectively.
+In Prophecy, **credits** represent a unified measure of usage across the platform.
 
-Credit consumption and payment is aggregated per **plan**, which always corresponds to a Prophecy team.
+Plans, teams, and fabrics define how billing and credit consumption are organized.
+
+- A plan is the top-level billing unit. Each plan includes exactly one team.
+- A [team](//administration/teams-users/teams-users) represents a group of users who share access to resources through one fabric.
+- A [fabric](/administration/fabrics/prophecy-fabrics/) points to a dedicated Prophecy warehouse database and compute resources.
+
+:::info
+To learn about monitoring credit usage and buying additional credits, see [Usage and billing](/administration/usage-billing/).
+:::
+
+## How credits are charged
+
+The following actions consume the corresponding number of credits.
 
 | Action            | Description                                                 | Credits Consumed |
 | ----------------- | ----------------------------------------------------------- | ---------------- |
@@ -23,15 +35,13 @@ Credit consumption and payment is aggregated per **plan**, which always correspo
 | **Data Egressed** | Data sent outside the Prophecy warehouse                    | 0.045 / GB       |
 | **Data Storage**  | Data stored in the Prophecy warehouse                       | 0.02 / GB        |
 
-:::info
-To learn more about credit allocation between plans, visit [Usage and billing](/administration/usage-billing/).
+:::note
+The Prophecy warehouse is powered by DuckDB. Advanced users can update the DuckDB SQL queries in the **Code** view of their project to optimize computation and reduce credit consumption.
 :::
 
-## Relationship between credits and Prophecy entities
+## Relationship diagram
 
-In Prophecy, each subscription plan corresponds to a single team, and each team is associated with one fabric. Credits are conceptually related to both teams and fabrics.
-
-A fabric represents a dedicated instance of the Prophecy warehouse, which handles all compute and data storage operations. Usage of AI requests, compute, data storage, and data egress is related to actions handled by the fabric, which in turn is associated with the team corresponding to the billing plan.
+The following diagram shows how credit consumption actions relate to plans, teams, and fabrics.
 
 <Mermaid
 value={`
@@ -63,7 +73,3 @@ class A,B,C entity
 class E,F,G,H,I metric
 `}
 />
-
-:::note
-The Prophecy warehouse is powered by DuckDB. Advanced users can update the DuckDB SQL queries in the **Code** view of their project to optimize computation and reduce credit consumption.
-:::

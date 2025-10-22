@@ -23,20 +23,34 @@ Free and Professional Editions use a credit-based billing model managed through 
 - **Free Edition**: 5 credits per month.
 - **Professional Edition**: includes a fixed number of base credits per month; extra usage is pay-as-you-go.
 
-### Plan management
+### Plan-team relationship
 
-Each plan is tied to a specific team in Prophecy. A single user may belong to multiple teams, and teams can contain multiple users. Team admins can manage billing for their teams.
+Each Prophecy plan is associated with a single team. [Team admins](/administration/teams-users/teams-users#team-admins) manage billing for their team.
 
-The diagram below demonstrates what happens when a user on the Professional Edition invites a new user to their team.
+Review the following example:
+
+1. An existing team admin (User A) invites a new user (User B) to their team.
+
+1. User B signs up for Prophecy and joins the existing team as a standard user.
+
+   Team admins can later promote them to admin if needed.
+
+1. User B automatically receives their own personal team under the Free Edition plan, where they are the team admin.
+
+   They can choose to upgrade this team to the Professional Edition.
+
+This model ensures that users can have separate personal teams with independent plans.
+
+The flow is illustrated below:
 
 <Mermaid
 value={`graph TD
 %% Users and their teams
 
-UserA[User A] --> |becomes team admin|TeamA[Professional Edition Plan<br/>Team A<br/>2 users]
+UserA[User A] --> TeamA[Professional Edition Plan<br/>Team A<br/>2 users]
 UserA -->|invites| UserB
-UserB[User B] --> |becomes standard user|TeamA
-UserB --> |becomes team admin|TeamB[Free Edition Plan<br/>Team B<br/>1 user]
+UserB[User B] --> TeamA
+UserB --> TeamB[Free Edition Plan<br/>Team B<br/>1 user]
 
     %% Each team has a fabric
     TeamA -->|auto-provisions| FabricA[Fabric A]

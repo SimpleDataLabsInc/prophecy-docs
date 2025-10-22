@@ -26,6 +26,10 @@ By default, Prophecy uses **Prophecy Managed** authentication. This option requi
 
 If you set up SSO after creating users in Prophecy, sign-ins will map to existing users if the sign-in email matches the user email in Prophecy.
 
+## Fabric OAuth
+
+To set up OAuth for fabric connection authentication, see [OAuth app registrations](docs/administration/authentication/oauth-setup.md).
+
 ## What's next
 
 Learn how to set up different authentication methods in the following pages.
