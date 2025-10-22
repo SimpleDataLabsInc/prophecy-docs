@@ -29,6 +29,7 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Read data with a [Source gem](/analysts/redshift)                          | Yes       |
 | Write data with a [Target gem](/analysts/redshift)                         | Yes       |
 | Browse data in the [Environment browser](/analysts/project-editor#sidebar) | Yes       |
+| Index tables in the [Knowledge Graph](/knowledge-graph)                    | No        |
 
 ## Data type mapping
 

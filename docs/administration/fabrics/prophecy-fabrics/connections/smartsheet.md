@@ -28,6 +28,7 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Read data with a [Source gem](/analysts/smartsheet-gem)                    | Yes       |
 | Write data with a [Target gem](/analysts/smartsheet-gem)                   | Yes       |
 | Browse data in the [Environment browser](/analysts/project-editor#sidebar) | Yes       |
+| Index files in the [Knowledge Graph](/knowledge-graph)                     | No        |
 
 ## Limitations
 
