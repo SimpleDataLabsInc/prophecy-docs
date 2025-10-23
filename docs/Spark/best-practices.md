@@ -8,6 +8,10 @@ tags:
   - best practices
 ---
 
+:::edition Enterprise
+Applicable to the [Enterprise Edition](/getting-started/editions/) only.
+:::
+
 ## Projects
 
 Limit the total number of pipelines per project to keep your project modular.

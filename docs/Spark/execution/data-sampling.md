@@ -8,6 +8,10 @@ tags:
   - data sampling
 ---
 
+:::edition Enterprise
+Available for [Enterprise Edition](/getting-started/editions/) only.
+:::
+
 Prophecy gives you control over when and where data samples are generated during interactive pipeline execution. This helps you optimize for speed, visibility, or compatibility with your fabric setup.
 
 You can customize data sampling at three levels:
@@ -22,13 +26,13 @@ This page describes how to set up and use data samples for your use cases.
 
 Prophecy provides the following data sampling modes.
 
-| Mode                            | Samples generated                                                         | Use case                           |
-| ------------------------------- | ------------------------------------------------------------------------- | ---------------------------------- |
-| **All** (default)               | After every gem, excluding Target gems.                                   | Full visibility                    |
-| **Selective** (Databricks only) | When **Data Preview** enabled per gem. [Learn more](#selective-sampling). | Full control per gem               |
-| **Sources**                     | Only after Source gems.                                                   | Focus on inputs                    |
-| **Targets**                     | Only before Target gems.                                                  | Focus on outputs                   |
-| **IO**                          | Only after Sources and before Targets (not between intermediate gems).    | High-level input/output inspection |
+| Mode              | Samples generated                                                         | Use case                           |
+| ----------------- | ------------------------------------------------------------------------- | ---------------------------------- |
+| **All** (default) | After every gem, excluding Target gems.                                   | Full visibility                    |
+| **Selective**     | When **Data Preview** enabled per gem. [Learn more](#selective-sampling). | Full control per gem               |
+| **Sources**       | Only after Source gems.                                                   | Focus on inputs                    |
+| **Targets**       | Only before Target gems.                                                  | Focus on outputs                   |
+| **IO**            | Only after Sources and before Targets (not between intermediate gems).    | High-level input/output inspection |
 
 ### Selective sampling
 

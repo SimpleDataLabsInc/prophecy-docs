@@ -30,14 +30,15 @@ You can run the following sources on Databricks serverless compute:
 - [Avro](/engineers/avro)
 - [CSV](/engineers/csv)
 - [Data Generator](/engineers/data-generator)
-- [Delta file](/engineers/delta)
+- [Delta files](/engineers/delta)
 - [JSON](/engineers/json)
 - [Kafka](/engineers/kafka)
 - [ORC](/engineers/orc)
 - [Parquet](/engineers/parquet)
 - [Seed files](/engineers/seed)
+- [Text files](/engineers/text)
 - [Unity Catalog tables](https://docs.databricks.com/aws/en/tables/)
-- [Unity Catalog volumes](https://docs.databricks.com/aws/en/sql/language-manual/sql-ref-volumes)
+- [XLSX](/engineers/xlsx/)
 - [XML](/engineers/xml)
 
 ## Supported data sampling modes

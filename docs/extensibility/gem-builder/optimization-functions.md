@@ -7,6 +7,10 @@ tags:
   - gem builder
 ---
 
+:::edition Enterprise
+Available for [Enterprise Edition](/getting-started/editions/) only.
+:::
+
 Custom gems create code by defining functionality in their `def apply()` method.
 By default Prophecy will apply optimizations to this generated code to assist the Spark
 Catalyst optimization engine when it creates the Spark Plan. The optimizations make replacements

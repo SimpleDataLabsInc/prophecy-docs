@@ -58,11 +58,11 @@ When setting up external sources and targets, consider the primary SQL connectio
 
 ## Secrets in connections
 
-As you create connections, you will notice that credentials must be populated with [secrets](docs/administration/secrets/secrets.md). Secrets keep your credentials encrypted and secure. Once you add your secrets to your connections, you can reuse the connections throughout the pipeline without having to reauthenticate or re-enter your credentials. This relationship between secrets and connections keeps Prophecy secure for your data processing needs.
+As you create connections, you will notice that credentials must be populated with [secrets](docs/administration/fabrics/prophecy-fabrics/secrets/secrets.md). Secrets keep your credentials encrypted and secure. Once you add your secrets to your connections, you can reuse the connections throughout the pipeline without having to reauthenticate or re-enter your credentials. This relationship between secrets and connections keeps Prophecy secure for your data processing needs.
 
 ## What's next
 
 Now that you understand how to use connections in your pipelines, check out the following resources.
 
 - To understand how to configure individual connection types, visit the [list of connections](docs/administration/fabrics/prophecy-fabrics/connections/connections.md).
-- All connections require secrets to keep your credentials safe. View the documentation on [secrets](docs/administration/secrets/secrets.md) to learn more.
+- All connections require secrets to keep your credentials safe. View the documentation on [secrets](docs/administration/fabrics/prophecy-fabrics/secrets/secrets.md) to learn more.

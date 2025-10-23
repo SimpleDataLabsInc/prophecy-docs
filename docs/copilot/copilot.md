@@ -15,7 +15,7 @@ import Mermaid from '@theme/Mermaid';
 This page introduces Prophecy's AI capabilities, including descriptions of its task-oriented and agentic features.
 
 :::info
-While Prophecy's AI features are enabled by default, they can be disabled upon request for Dedicated SaaS and self-hosted deployments.
+While Prophecy's AI features are enabled by default, they can be disabled upon request for Dedicated SaaS deployments.
 :::
 
 ## Introduction
@@ -34,7 +34,7 @@ Prophecy only tests prompts in English. Other languages may work, but support de
 
 Copilot helps you with one-click tasks such as automated documentation generation, error fixing with one-click solutions, and the ability to generate unit tests and data quality checks. Additionally, Prophecy's AI agent can help you build SQL pipelines through natural language. You can ask the agent to help with tasks such as adding gems, exploring datasets in your SQL warehouse, and visualizing data.
 
-To learn more, see [Copilot for SQL projects](/analysts/ai-features) and [Copilot for Spark projects](/engineers/copilot).
+To learn more, see [AI for SQL projects](/analysts/ai-features) and [AI for Spark projects](/engineers/copilot).
 
 ![AI Example](img/agent-chat.gif)
 
@@ -42,7 +42,7 @@ To learn more, see [Copilot for SQL projects](/analysts/ai-features) and [Copilo
 
 Prophecy integrates with multiple LLM providers and model families. This gives you flexibility in choosing the right models depending on your deployment type and performance needs.
 
-SaaS uses a Prophecy-managed OpenAI subscription with GPT-4o and GPT-4o mini. Meanwhile, Dedicated SaaS and self-hosted deployments are expected to connect to customer-managed endpoints.
+SaaS uses a Prophecy-managed OpenAI subscription with GPT-4o and GPT-4o mini. Meanwhile, Dedicated SaaS deployments are expected to connect to customer-managed endpoints.
 
 Each AI endpoint configuration requires two models:
 

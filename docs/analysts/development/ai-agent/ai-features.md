@@ -1,5 +1,5 @@
 ---
-title: Agents and AI
+title: Using AI in the Project Editor
 id: ai-features
 slug: /analysts/ai-features
 description: How Prophecy uses AI to help with pipeline development

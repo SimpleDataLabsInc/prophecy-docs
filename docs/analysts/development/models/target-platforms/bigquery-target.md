@@ -1,5 +1,5 @@
 ---
-title: BigQuery targets
+title: BigQuery target models
 id: bigquery-target
 slug: /engineers/bigquery-target
 description: Configure target models for BigQuery SQL
@@ -7,6 +7,10 @@ tags:
   - model
   - bigquery
 ---
+
+:::edition Enterprise
+Available for [Enterprise Edition](/getting-started/editions/) only.
+:::
 
 To configure a target model that will be written to BigQuery, reference the following sections.
 

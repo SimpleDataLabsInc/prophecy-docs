@@ -1,5 +1,5 @@
 ---
-title: Snowflake targets
+title: Snowflake target models
 id: snowflake-target
 slug: /engineers/snowflake-target
 description: Configure target models for Snowflake SQL
@@ -7,6 +7,10 @@ tags:
   - model
   - snowflake
 ---
+
+:::edition Enterprise
+Available for [Enterprise Edition](/getting-started/editions/) only.
+:::
 
 To configure a target model that will be written to Snowflake, reference the following sections.
 
