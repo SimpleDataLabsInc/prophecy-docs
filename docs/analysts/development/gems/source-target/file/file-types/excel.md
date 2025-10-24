@@ -64,6 +64,10 @@ For this option, Prophecy reads the data from each of the sheets that you specif
 | Filter Value             | Provide the value used to evaluate the filter condition.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | Output Sheet Column Name | Provide the name of the column to append to the output table that contains the original sheet name for each row.                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
+:::info
+The union operation will only succeed if each sheet has the same schema.
+:::
+
 ## Target properties
 
 The following properties are available for the Excel Target gem.
