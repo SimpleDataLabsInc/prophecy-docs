@@ -6,6 +6,10 @@ description: Learn about these small and lightweight utility libraries
 tags: [functionality, compatibility, version, library, plib, plibs, license]
 ---
 
+:::edition Enterprise
+Available for [Enterprise Edition](/getting-started/editions/) only.
+:::
+
 Prophecy libraries (ProphecyLibs) are small and lightweight utility libraries that offer comprehensive sets of Spark functions tailored for Prophecy customers. They address the most common data transformation use cases, including monitoring, auditing, connectors, and other data processing functions.
 
 Here are the released artifacts:

@@ -1,5 +1,5 @@
 ---
-title: Deployment
+title: Project release and deployment
 id: Deployment
 slug: /engineers/deployment
 description: Release projects and deploy jobs
@@ -11,13 +11,17 @@ tags:
   - deploy
 ---
 
+:::edition Enterprise
+Available for [Enterprise Edition](/getting-started/editions/) only.
+:::
+
 Once you have developed and tested your custom components like gems, pipelines, models, or jobs in Prophecy, the next step is to make them available for use. This involves Releasing and Deploying them to the respective environments.
 
 You can Release and Deploy via Prophecy UI or you can use [Prophecy Build Tool](/engineers/prophecy-build-tool) CLI to integrate with any other CI-CD tools. Lets see how you can do it via the Prophecy UI below.
 
 ## Requirements
 
-You must be a [team admin](docs/administration/index.md) to release and deploy a project.
+You must be a [team admin](/administration/rbac) to release and deploy a project.
 
 ## Overview
 

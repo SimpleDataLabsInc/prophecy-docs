@@ -34,7 +34,7 @@ https://app.prophecy.io/api/deploy/project
 ```
 
 :::info
-Replace the base URL with your environment URL for dedicated SaaS and self-hosted deployments.
+Replace the base URL with your environment URL for Dedicated SaaS deployments.
 :::
 
 ### Request Headers {#request-headers-deploy}
@@ -105,9 +105,9 @@ Project configuration parameters serve as global values for all pipelines in the
 Configuration parameters follow this precedence order:
 
 1. Pipeline parameter overrides (highest priority)
-2. Project configuration overrides
-3. Default project configuration
-4. Default pipeline parameters (lowest priority)
+1. Project configuration overrides
+1. Default pipeline parameters
+1. Default project configuration (lowest priority)
 
 ### Example cURL {#example-curl-deploy}
 

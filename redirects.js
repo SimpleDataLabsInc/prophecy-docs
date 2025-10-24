@@ -3,8 +3,9 @@
 module.exports = {
   redirects: [
     {
-      to: "/administration/",
+      to: "/",
       from: [
+        "/administration/settings",
         "/architecture/deployment/enable-data-copilot",
         "/copilot/enable-data-copilot",
         "/architecture/deployment/private-saas/backup-restore",
@@ -20,7 +21,6 @@ module.exports = {
         "/metadata/metadata-connections",
         "/concepts/metadata",
         "/concepts/copilot/enable-data-copilot",
-        "/architecture",
         "/architecture/self-hosted/install-prophecy/installation-helm",
         "/architecture/self-hosted/install-prophecy/installation-helm/install-on-aws",
         "/architecture/self-hosted/install-prophecy/installation-marketplaces",
@@ -41,7 +41,17 @@ module.exports = {
         "/administration/self-hosted/enable-data-copilot/",
         "/administration/self-hosted/resource-monitoring/",
         "/administration/self-hosted/upgrade-backup-restore/",
+        "/administration/teams-users/settings",
+        "/developer/videos/",
       ],
+    },
+    {
+      to: "/administration/project-types/project-creation-template",
+      from: "/templates",
+    },
+    {
+      to: "/administration/architecture",
+      from: "/architecture",
     },
     {
       to: "/administration/audit-logging",
@@ -54,10 +64,6 @@ module.exports = {
     {
       to: "/administration/authentication/",
       from: "/architecture/authentication",
-    },
-    {
-      to: "/administration/authentication/active_directory",
-      from: "/architecture/authentication/active_directory",
     },
     {
       to: "/administration/authentication/azure-ad",
@@ -102,14 +108,6 @@ module.exports = {
     {
       to: "/administration/prophecy-deployment",
       from: ["/architecture/deployment", "/administration/deployment"],
-    },
-    {
-      to: "/administration/secrets/",
-      from: ["/Spark/secret-management/"],
-    },
-    {
-      to: "/administration/settings",
-      from: "/administration/teams-users/settings",
     },
     {
       to: "/administration/team-based-access",
@@ -193,10 +191,6 @@ module.exports = {
         "/SQL/development/visual-editor/visual-expression-builder/",
         "/data-modeling/visual-expression-builder/",
       ],
-    },
-    {
-      to: "/databricks-oauth-authentication",
-      from: "/administration/authentication/databricks_oauth",
     },
     {
       to: "/engineers/aggregate",
@@ -833,11 +827,6 @@ module.exports = {
       ],
     },
     {
-      to: "/getting-started",
-      from: "/developer/videos/",
-    },
-
-    {
       to: "/pipelines",
       from: "/concepts/project/pipeline",
     },
@@ -857,6 +846,24 @@ module.exports = {
         "/copilot/",
         "/concepts/copilot/",
         "/copilot/copilot-data-privacy",
+      ],
+    },
+    {
+      to: "/administration/authentication/ldap",
+      from: [
+        "/architecture/authentication/active_directory",
+        "/administration/authentication/active_directory",
+      ],
+    },
+    {
+      to: "/engineers/secrets",
+      from: ["/Spark/secret-management/", "/administration/secrets/"],
+    },
+    {
+      to: "/oauth-setup",
+      from: [
+        "/databricks-oauth-authentication",
+        "/administration/authentication/databricks_oauth",
       ],
     },
   ],

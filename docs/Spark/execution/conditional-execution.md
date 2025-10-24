@@ -8,6 +8,10 @@ tags:
   - Execution
 ---
 
+:::edition Enterprise
+Available for [Enterprise Edition](/getting-started/editions/) only.
+:::
+
 For granular data processing control, you can conditionally run or skip transformations within gems in your pipeline.
 
 This means you can configure **pass-through conditions** on gems to dynamically control whether a transformation is executed. You also have the option to configure a **removal condition** on a gem, which not only skips the transformation but also removes the gem and all associated downstream transformations from pipeline execution.

@@ -10,6 +10,10 @@ tags:
   - variable
 ---
 
+:::edition Enterprise
+Available for [Enterprise Edition](/getting-started/editions/) only.
+:::
+
 A configuration is a set of predefined variables and values that control how a data pipeline behaves during execution. By using configurations, you can dynamically adapt a pipeline to different environments or scenarios without modifying the pipeline itself.
 
 ## Configuration hierarchy
@@ -58,7 +62,7 @@ Prophecy supports the following data types for configs.
 | Data type          | Description                                                                                                     |
 | ------------------ | --------------------------------------------------------------------------------------------------------------- |
 | `string`           | A plain text value, entered via a single-line text input.                                                       |
-| `boolean`          | A true or false value, selected from a dropdown.                                                                |
+| `boolean`          | A `true` or `false` value, selected from a dropdown.                                                            |
 | `date`             | A calendar date in `dd-mm-yyyy` format, chosen using a date picker.                                             |
 | `timestamp`        | A specific date and time in `dd-mm-yyyyTHH:MM:SSZ+z` format (with time zone), selected using a datetime picker. |
 | `double`           | A 64-bit floating-point number entered in a numeric field.                                                      |

@@ -45,7 +45,7 @@ Configure the SQLStatement gem using the following parameters.
 | Out       | SQL query that defines the output result. |
 
 :::note
-Write your SQL query in the syntax of your SQL warehouse provider. For example, if you're connected to a Databricks SQL warehouse, use Databricks SQL dialect.
+Write your SQL query in the syntax of your SQL warehouse provider. For example, if you're connected to a Databricks SQL warehouse, use Databricks SQL dialect. If you're using the [Prophecy In Memory](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md), use DuckDB dialect.
 :::
 
 :::tip

@@ -21,7 +21,7 @@ To learn more, visit [Basic roles and permissions](https://cloud.google.com/bigq
 
 ## Connection type
 
-Prophecy supports BigQuery as both a SQL Warehouse connection and an Ingress/Egress connection. To learn more about these different connection types, visit [Prophecy fabrics](/administration/fabrics/prophecy-fabrics/#connections).
+Prophecy supports BigQuery as both a SQL Warehouse connection and an Ingress/Egress connection. To learn more about these different connection types, visit [Prophecy fabrics](docs/administration/fabrics/prophecy-fabrics/create-fabric.md#connections).
 
 ## Feature support
 
@@ -46,6 +46,46 @@ To create a connection with BigQuery, enter the following parameters.
 | Dataset               | The default location for target tables and [temporary tables](/analysts/pipeline-execution#external-data-handling). <br/>Requires write permissions.                                                                                                                                                                                                                                   |
 | Authentication Method | The method used to authenticate with BigQuery. <br/>See [Authentication methods](#authentication-methods) for details.                                                                                                                                                                                                                                                                 |
 | Bucket Name           | A [Google Cloud Storage bucket](https://cloud.google.com/storage/docs/buckets) used for write optimization (recommended). <br/>When specified, Prophecy writes data to the bucket, then loads it into BigQuery. <br/>Note: Loading data from a bucket offers better performance than writing with the [BigQuery API](https://cloud.google.com/bigquery/docs/reference/rest) (default). |
+
+## Authentication methods
+
+You can authenticate your BigQuery connection using either [OAuth](#oauth-user-to-machine) or a [Private Key](#private-key-machine-to-machine).
+
+Each method grants Prophecy the ability to read and write data in your BigQuery environment based on the [Identity and Access Management (IAM)](https://cloud.google.com/iam/docs/overview) roles assigned to the authenticated identity.
+
+### OAuth (User-to-Machine)
+
+OAuth is a user-based authentication (U2M) method best suited for interactive pipeline development. It allows each user to sign in with their own Google account, which ensures that data access is governed by their individual IAM roles and permissions.
+
+To leverage user-based OAuth:
+
+1. Under **Authentication method**, select **OAuth**.
+1. Under **App Registration**, select the correct app registration or use the default.
+
+If no app registrations appear, an admin must configure an [OAuth app registration](docs/administration/authentication/oauth-setup.md).
+
+When your fabric is configured to use OAuth, the following occurs when a user attaches the fabric to their project:
+
+1. The user is prompted to sign in with their Google account.
+1. Prophecy uses the user's credentials to authenticate the connection.
+1. The connection operates with the user's IAM roles and permissions.
+1. Token management, including refresh, is handled automatically by Google. The default [refresh token expiration](https://developers.google.com/identity/protocols/oauth2#expiration) time is 7 days.
+
+:::note
+For more about OAuth and how it works with Google Cloud, see [Using OAuth 2.0 to Access Google APIs](https://developers.google.com/identity/protocols/oauth2).
+:::
+
+### Private Key (Machine-to-Machine)
+
+Use a Service Account when you want a non-user identity for authentication (M2M). This is ideal for automated or shared processes that require stable, long-term access without re-authentication interruptions.
+
+1. Create and download a [Service Account Key](https://developers.google.com/workspace/guides/create-credentials#service-account) from the Google Cloud console.
+1. Paste the full JSON content into a [Prophecy secret](/analysts/secrets) as text. Binary upload is not supported.
+1. Open a BigQuery connection.
+1. Under **Authentication method**, select **Private Key**.
+1. Use the Prophecy secret in the **Service Account Key** field.
+
+This method allows all team members with access to the fabric to use the connection in their projects. Those users inherit the access and permissions of the Service Account, as defined in its IAM roles.
 
 ## Data type mapping
 
@@ -72,32 +112,3 @@ When Prophecy processes data from Google BigQuery using an external SQL warehous
 ::::info
 Learn more in [Supported data types](/analysts/data-types).
 ::::
-
-## Authentication methods
-
-You can authenticate your BigQuery connection using either [OAuth](#oauth-user-to-machine) or a [Private Key](#private-key-machine-to-machine).
-
-Each method grants Prophecy the ability to read and write data in your BigQuery environment based on the [Identity and Access Management (IAM)](https://cloud.google.com/iam/docs/overview) roles assigned to the authenticated identity.
-
-### OAuth (User-to-Machine)
-
-OAuth is a user-based authentication method best suited for interactive pipeline development. It allows each user to sign in with their own Google account, which ensures that data access is governed by their individual IAM roles and permissions.
-
-When your fabric is configured to use OAuth, the following occurs when a user attaches the fabric to their project:
-
-1. The user is prompted to sign in with their Google account.
-1. Prophecy uses the user's credentials to authenticate the connection.
-1. The connection operates with the user's IAM roles and permissions.
-1. Token management, including refresh, is handled automatically by Google. The default [refresh token expiration](https://developers.google.com/identity/protocols/oauth2#expiration) time is 7 days.
-
-For more about OAuth and how it works with Google Cloud, see [Using OAuth 2.0 to Access Google APIs](https://developers.google.com/identity/protocols/oauth2).
-
-### Private Key (Machine-to-Machine)
-
-Use a Service Account when you want a non-user identity for authentication. This is ideal for automated or shared processes that require stable, long-term access without re-authentication interruptions.
-
-1. Create and download a [Service Account Key](https://developers.google.com/workspace/guides/create-credentials#service-account) from the Google Cloud console.
-1. Paste the full JSON content into a [Prophecy secret](/administration/secrets/secret-providers) as text. Binary upload is not supported.
-1. Use this secret in the **Service Account Key** field of the BigQuery connection setup.
-
-This method allows all team members with access to the fabric to use the connection in their projects. Those users inherit the access and permissions of the Service Account, as defined in its IAM roles.
