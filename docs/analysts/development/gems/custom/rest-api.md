@@ -50,15 +50,16 @@ To learn more about adding and removing ports, see [Gem ports](/analysts/gems#ge
 
 Configure the RestAPI gem using the following parameters.
 
-| Parameter                  | Description                                                                                                                                                                                                                     |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Target Column Name         | Name of the output column that will contain the API response. Default: `api_data`.                                                                                                                                              |
-| URL                        | API endpoint URL where the request will be sent.                                                                                                                                                                                |
-| Method                     | HTTP method that determines the action to perform. Common values include `GET` (retrieve data), `POST` (create data), `PUT` (update data), `DELETE` (remove data).                                                              |
-| Parse API response as JSON | Automatically parse JSON responses into separate columns instead of a single string column. See [Parse JSON Responses](#parse-json-responses) for details.                                                                      |
-| Params                     | Query parameters to append to the request URL as key-value pairs. Commonly used for filtering, sorting, or pagination. Example: `page:2` and `limit:10`.                                                                        |
-| Body                       | Request payload sent with `POST`, `PUT`, or `PATCH` methods. Contains the data to be processed by the API, typically in JSON format.                                                                                            |
-| Headers                    | Additional metadata sent with the request as key-value pairs. Used for authentication, content type specification, and other request attributes. Supports hard-coded values, configurations (pipeline parameters), and secrets. |
+| Parameter                  | Description                                                                                                                                                                                                                               |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Target Column Name         | Name of the output column that will contain the API response.<br/>Default: `api_data`.                                                                                                                                                    |
+| URL                        | API endpoint URL where the request will be sent.                                                                                                                                                                                          |
+| Method                     | HTTP method that determines the action to perform. <br/>Common values include `GET` (retrieve data), `POST` (create data), `PUT` (update data), `DELETE` (remove data).                                                                   |
+| Parse API response as JSON | Automatically parse JSON responses into separate columns instead of a single string column. <br/>See [Parse JSON Responses](#parse-json-responses) for details.                                                                           |
+| Authentication             | Method to send credentials to the RestAPI. <br/>See [Authentication methods](#authentication-methods) for details.                                                                                                                        |
+| Params                     | Query parameters to append to the request URL as key-value pairs. <br/>Commonly used for filtering, sorting, or pagination. <br/>Example: `page:2` and `limit:10`.                                                                        |
+| Body                       | Request payload sent with `POST`, `PUT`, or `PATCH` methods. <br/>Contains the data to be processed by the API, typically in JSON format.                                                                                                 |
+| Headers                    | Additional metadata sent with the request as key-value pairs. <br/>Used for authentication, content type specification, and other request attributes. <br/>Supports hard-coded values, configurations (pipeline parameters), and secrets. |
 
 :::tip
 You can populate these parameters with hard-coded values, or you can reference columns. To reference a column, use curly brackets. You can reference columns in any field.
@@ -86,3 +87,11 @@ This feature is enabled by default for new gems using the `GET` method. Changing
 :::note
 JSON parsing requires the API to return valid JSON responses. If the response format is inconsistent or not JSON, disable this option and parse the response manually in subsequent gems.
 :::
+
+### Authentication methods
+
+The RestAPI gem supports three authentication methods. If the API requires authentication, specify credentials in the **Headers** field or use one of the automatic authentication methods.
+
+- **None**: No automatic authentication. Enter authentication information manually in the **Headers** parameter.
+- **Basic Auth**: Sends Base64-encoded username and password from a [Username & Password secret](/analysts/secrets).
+- **Bearer Token**: Sends an OAuth bearer token generated from an [M2M OAuth secret](/analysts/secrets).
