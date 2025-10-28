@@ -16,7 +16,7 @@ In Prophecy, **credits** represent a unified measure of usage across the platfor
 Plans, teams, and fabrics define how billing and credit consumption are organized.
 
 - A plan is the top-level billing unit. Each plan includes exactly one team.
-- A [team](//administration/teams-users/teams-users) represents a group of users who share access to resources through one fabric.
+- A [team](/administration/teams-users/teams-users) represents a group of users who share access to resources through one fabric.
 - A [fabric](/administration/fabrics/prophecy-fabrics/) points to a dedicated Prophecy warehouse database and compute resources.
 
 :::info
