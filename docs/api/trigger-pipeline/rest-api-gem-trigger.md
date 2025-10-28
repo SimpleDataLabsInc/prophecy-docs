@@ -52,7 +52,7 @@ X-AUTH-TOKEN: <token-secret>
 
 :::tip
 
-We recommend that you [store your Prophecy access token as a secret](/administration/fabrics/prophecy-fabrics/#secrets) in your fabric.
+We recommend that you [store your Prophecy access token as a secret](docs/administration/fabrics/prophecy-fabrics/secrets/secrets.md) in your fabric.
 
 You can reference the secret by clicking **+ > Secret** in the value field.
 

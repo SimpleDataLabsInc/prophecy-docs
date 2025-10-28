@@ -16,10 +16,6 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 The Salesforce gem enables you to read data from Salesforce directly into your Prophecy pipelines. The gem supports both SOQL (Salesforce Object Query Language) for querying standard Salesforce objects and SAQL (Salesforce Analytics Query Language) for accessing analytical datasets.
 
-:::note
-Prophecy does not support writing data to Salesforce.
-:::
-
 ## Configuration tabs
 
 When you create a new external Source gem, the gem dialog contains the following tabs.
@@ -77,3 +73,32 @@ The following properties are available for the Salesforce Source gem. These prop
 | ------------------------------------- | -------------------------------------------------------------------------------------------------- |
 | Enable bulk query                     | Enable to run the query as a batch job in the background for better performance on large datasets. |
 | Retrieve deleted and archived records | Enable to include soft-deleted and archived records in the returned table.                         |
+
+## Target configuration
+
+Use these settings to configure a Salesforce Target gem for writing data.
+
+:::info
+The Salesforce Target gem only supports writing to Salesforce Objects. You cannot write to CRM Analytics datasets.
+:::
+
+### Target location
+
+Use the following parameters to define the write location.
+
+| Parameter                   | Description                                                                                                                                          |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Format type                 | Table format for the source. For Salesforce tables, set to `salesforce`.                                                                             |
+| Select or create connection | Select or create a new [Salesforce connection](/administration/fabrics/prophecy-fabrics/connections/salesforce) in the Prophecy fabric you will use. |
+| Object Name                 | Name of the Salesforce Object to write to. If the object doesn’t exist, it will be created automatically.                                            |
+
+### Target properties
+
+The following properties are available for the Salesforce Target gem.
+
+| Property          | Description                                                                                                                                                                                                                                                                                                                                    | Default  |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| Description       | Text description of the target table. Use this field to document the purpose or content of the data being written.                                                                                                                                                                                                                             | None     |
+| Write Mode        | Defines how records are written to Salesforce.<ul><li>Upsert: Update existing records if a match is found; otherwise, insert new records.</li><li>Insert: Add new records without modifying existing ones.</li><li>Update: Update existing records if a match is found.</li><li>Delete: Remove existing records if a match is found.</li></ul> | Upsert   |
+| External ID Field | Specifies the Salesforce field used as the unique key when performing Upsert or Update operations. The field must be defined as an External ID in Salesforce.                                                                                                                                                                                  | None     |
+| Use Bulk API      | Enable to run write operations using the Salesforce [Bulk API](https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/bulk_api_2_0.htm).                                                                                                                                                                                 | Disabled |

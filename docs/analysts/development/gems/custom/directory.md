@@ -1,5 +1,6 @@
 ---
-title: Directory
+title: Directory gem
+sidebar_label: Directory
 id: directory
 slug: /analysts/directory
 description: List files and folders of a specified directory
@@ -29,6 +30,7 @@ The Directory gem produces one output. The output schema includes the following 
 - `modification_time`: The time that the file was last modified.
 - `parent_directory`: The parent directory of the file or folder.
 - `file_type`: Whether the record listed is a file or a folder.
+- `sheet_name`: The name of the excel sheet in an XLSX file. This column appears when the **Include sheet name as column in output for xlsx files** parameter is enabled.
 
 If a certain connection does not provide a certain field (for example, Databricks does not provide creation time), then the columns will be populated with zeroes or null values.
 
@@ -36,13 +38,14 @@ If a certain connection does not provide a certain field (for example, Databrick
 
 Configure the Directory gem using the following parameters.
 
-| Parameter                                             | Description                                                                                             |
-| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| Connection type                                       | Data provider that you will connect to. See [Supported connection types](#supported-connection-types).  |
-| Select or create connection                           | New or existing connection to the provider you selected.                                                |
-| Path                                                  | Path to directory that you want to see the contents of.                                                 |
-| Enable to include files/directories inside subfolders | Recursively traverse and include all files and directories within subdirectories of the specified path. |
-| File pattern (Optional)                               | Narrow the results to only files or folders that match the regex pattern provided here.                 |
+| Parameter                                             | Description                                                                                                                                                                                                                                                                               |
+| ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Connection type                                       | The data provider to connect to. See [Supported connection types](#supported-connection-types).                                                                                                                                                                                           |
+| Select or create connection                           | New or existing connection to the provider you selected.                                                                                                                                                                                                                                  |
+| Path                                                  | Path to directory that you want to see the contents of.                                                                                                                                                                                                                                   |
+| Enable to include files/directories inside subfolders | When enabled, the gem recursively traverses and include all files and directories within subdirectories of the specified path.                                                                                                                                                            |
+| File pattern (Optional)                               | Regular expression (regex) pattern used to narrow results to matching entries.                                                                                                                                                                                                            |
+| Include sheet name as column in output for xlsx files | When enabled, the gem adds a column to the output that includes XLSX sheet names. If a file has multiple sheets, one row is generated per sheet name. For example, a file with three sheets produces three rows—one for each sheet. This field is `null` if the file is not an XLSX file. |
 
 ## Supported connection types
 

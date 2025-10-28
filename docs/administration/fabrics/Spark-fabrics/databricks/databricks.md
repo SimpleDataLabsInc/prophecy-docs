@@ -13,16 +13,15 @@ The following sections describe the parameters needed to set up a Databricks fab
 
 :::info
 
-Scala 2.13 is not supported by Prophecy’s Scala libraries.
+Databricks Runtime 16.4 supports both Scala 2.12 and 2.13, but defaults to Scala 2.13. Databricks Runtime 17.0 and later only support Scala 2.13.
 
-- Databricks Runtime 16.4 supports both Scala 2.12 and 2.13, but defaults to Scala 2.13.
-- Databricks Runtime 17.0+ only supports Scala 2.13.
-
-If you're using Scala pipelines, make sure to select Scala 2.12 when configuring your cluster with DBR 16.4. You may see the following error in Prophecy if using Scala 2.13:
+If your cluster defaults to Scala 2.13 but your Prophecy installation uses libraries built for Scala 2.12, you might see the following error:
 
 ```
 Library installation attempted on the driver node of cluster 0805-161652-bmq6jitu and failed. Cannot resolve Maven library coordinates. Verify library details, repository access, or Maven repository availability. Error code: ERROR_MAVEN_LIBRARY_RESOLUTION, error message: Library resolution failed because unresolved dependency: io.prophecy:prophecy-libs_2.13:3.5.0-8.11.1: not found
 ```
+
+To fix this, update Prophecy to version 4.2.0.1 or later, which adds support for Scala 2.13.
 
 :::
 
@@ -49,22 +48,37 @@ The **Providers** tab lets you configure the execution environment settings.
 
 Fill out the credentials section to verify your Databricks credentials.
 
-| Parameter                | Description                                                                                 |
-| ------------------------ | ------------------------------------------------------------------------------------------- |
-| Databricks Workspace URL | The URL that points to the workspace that the fabric will use as the execution environment. |
-| Authentication Method    | The method Prophecy will use to authenticate Databricks connections.                        |
+| Parameter                | Description                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Databricks Workspace URL | The URL that points to the workspace that the fabric will use as the execution environment.                                                                                                                                                                                                                                                                                                                    |
+| Authentication Method    | The method Prophecy will use to authenticate Databricks connections. Access level is tied to the authenticated user’s permissions. At minimum, the authenticated user must have permission to attach clusters in Databricks to use the connection in Prophecy. Some [policies](https://docs.databricks.com/aws/en/admin/clusters/policy-families) additionally require Databricks Workspace Admin permissions. |
 
 #### Authentication methods
 
-Prophecy supports multiple [Databricks authentication methods](https://docs.databricks.com/aws/en/dev-tools/auth):
+Prophecy supports multiple [Databricks authentication methods](https://docs.databricks.com/aws/en/dev-tools/auth).
 
-| Method                        | Authenticated Identity                                                                                                                                   | Use Cases                                                   | Requirements                                                                                     |
-| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| Personal Access Token         | A single user account is used and shared across the fabric. Access level is tied to that user’s permissions. Prophecy auto-refreshes PATs for AAD users. | All pipeline execution scenarios.                           | PAT generated from a Databricks user account.                                                    |
-| User-based OAuth (U2M)        | Each user signs in with their own Databricks account. Access is scoped to the individual’s permissions. **Cannot be used for scheduled pipeline runs.**  | Interactive pipeline execution (e.g., development, testing) | [OAuth app connection](/databricks-oauth-authentication/#requirements) set up by Prophecy admin. |
-| Service Principal OAuth (M2M) | Uses a shared service principal identity. Suitable for automation and scheduling.                                                                        | Scheduled pipeline execution and project deployment         | OAuth app connection + **Service Principal Client ID** and **Secret**                            |
+| Method                | Description                                                                                                                                                                                     |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Personal Access Token | Provide a Databricks Personal Access Token to authenticate the connection. Each user who connects to the fabric will have to provide their own PAT. Prophecy auto-refreshes PATs for AAD users. |
+| OAuth                 | Log in with your Databricks account information. Each user who connects to the fabric will have to log in individually.                                                                         |
 
-At minimum, the authenticated user must have permission to attach clusters in Databricks to use the connection in Prophecy. Some [policies](https://docs.databricks.com/aws/en/admin/clusters/policy-families) additionally require Databricks Workspace Admin permissions.
+#### OAuth methods
+
+There are two different OAuth methods for Databricks OAuth:
+
+| Method                        | Authenticated Identity                                                                                  |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------- |
+| User-based OAuth (U2M)        | Each user signs in with their own Databricks account. Access is scoped to the individual’s permissions. |
+| Service Principal OAuth (M2M) | Uses a shared service principal identity. Suitable for automation and scheduling.                       |
+
+When you configure a Databricks fabric and select OAuth, the OAuth method is **automatically determined** by the context.
+
+- Interactive pipeline execution always uses U2M. U2M cannot be used for scheduled pipeline runs.
+- Scheduled jobs in deployed projects always use M2M. To schedule jobs using the fabric, you **must** provide a Service Principal Client ID and Service Principal Client Secret during fabric setup.
+
+:::info
+To leverage OAuth for a Databricks Spark fabric, you or an admin must first create a corresponding [app registration](docs/administration/authentication/oauth-setup.md). The fabric will always use the default Databricks app registration.
+:::
 
 ### Job Sizes
 
