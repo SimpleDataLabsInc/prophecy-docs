@@ -657,12 +657,15 @@ const sidebars = {
             "administration/fabrics/Spark-fabrics/livy",
             {
               type: "category",
-              label: "EMR",
+              label: "Amazon EMR",
               link: {
                 type: "doc",
                 id: "administration/fabrics/Spark-fabrics/emr",
               },
-              items: ["administration/authentication/emr-saml"],
+              items: [
+                "administration/authentication/emr-saml",
+                "administration/fabrics/Spark-fabrics/emr-job-sizes",
+              ],
             },
             "administration/fabrics/Spark-fabrics/gcp-dataproc-fabric-guide",
             "administration/fabrics/Spark-fabrics/azure-synapse-fabric-guide",
