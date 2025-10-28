@@ -8,12 +8,14 @@ tags:
   - credentials
 ---
 
-A secret is sensitive data you don’t want exposed—such as passwords, API keys, or certificates. Prophecy includes its own secret manager, built into fabrics, to securely store:
+A **secret** is stored sensitive data such as passwords, API keys, or certificates. Prophecy includes a built-in secret manager to store secrets securely and allow [Prophecy Automate](docs/administration/architecture.md) to access them at runtime. This prevents credentials from being hardcoded or shared in plain text.
 
-- Text secrets (string values, like credentials)
-- Binary secrets (uploaded files, like certificates)
-
-Storing secrets in a fabric ensures that [Prophecy Automate](docs/administration/architecture.md) running in that fabric can access them at runtime, while keeping the actual values hidden from users. This prevents credentials from being hardcoded or shared in plain text.
+| Secret type         | Description                                                       | Example use case                  |
+| ------------------- | ----------------------------------------------------------------- | --------------------------------- |
+| Text                | A string value.                                                   | Access token value                |
+| Binary              | A file that you upload.                                           | SSL certificate                   |
+| Username & Password | Two-field credential for a username and password.                 | Basic authentication for RestAPIs |
+| M2M OAuth           | Multi-field credential used for client credential authentication. | REST APIs using bearer tokens     |
 
 ## Access control
 
@@ -31,12 +33,15 @@ To add a new secret to a fabric:
 1. Open the fabric where you want to store the secret.
 1. Go to the **Secrets** tab.
 1. Click **+ Add Secret**.
-1. In the dialog, choose whether the secret is:
+1. In the dialog, choose the **Secret Type**.
 
-   - **Text** → enter a string value.
-   - **Binary** → upload a file (such as a certificate).
+   | Secret Type         | Parameters                                                                                                                                                                                                                                                                  |
+   | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | Text                | <ul><li>**Name**: Label to identify the secret</li><li>**Value**: String value</li></ul>                                                                                                                                                                                    |
+   | Binary              | <ul><li>**Name**: Label to identify the secret</li><li>**Value**: Upload a file (such as a certificate)</li></ul>                                                                                                                                                           |
+   | Username & Password | <ul><li>**Name**: Label to identify the secret</li><li>**Username**: Username for authentication</li><li>**Password**: Password for authentication</li></ul>                                                                                                                |
+   | M2M OAuth           | <ul><li>**Name**: Label to identify the secret</li><li>**Client ID**: OAuth client identifier</li><li>**Client Secret**: OAuth client secret key</li><li>**Auth URL**: OAuth authorization server endpoint</li><li>**Scope** (Optional): OAuth permissions scopes</li></ul> |
 
-1. Give the secret a descriptive name.
 1. Click **Create** to save it to the fabric.
 
 ## Reference a secret
