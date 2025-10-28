@@ -90,8 +90,8 @@ JSON parsing requires the API to return valid JSON responses. If the response fo
 
 ### Authentication methods
 
-The RestAPI gem supports three authentication methods. If the API requires authentication, specify credentials in the **Headers** field or use one of the automatic authentication methods.
+The RestAPI gem supports three authentication methods.
 
 - **None**: No automatic authentication. Enter authentication information manually in the **Headers** parameter.
-- **Basic Auth**: Sends Base64-encoded username and password from a [Username & Password secret](/analysts/secrets).
-- **Bearer Token**: Sends an OAuth bearer token generated from an [M2M OAuth secret](/analysts/secrets).
+- **Basic Auth**: Automatically sends Base64-encoded username and password from a [Username & Password secret](/analysts/secrets).
+- **Bearer Token**: Automatically sends an OAuth bearer token that Prophecy generates from an [M2M OAuth secret](/analysts/secrets).
