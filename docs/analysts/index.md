@@ -16,7 +16,7 @@ Prophecy supports multiple personas on the platform. Search our documentation ba
   <Card title="Pipeline Development" to="/analysts/pipeline-development" icon="/img/icons/pipeline.svg">
     Build pipelines using gems, functions, tests, visual expressions, and more.
   </Card>
-  <Card title="Scheduling" to="/analysts/scheduling" icon="/img/icons/calendar.svg">
+  <Card title="Scheduling" to="/analysts/scheduling" icon="/img/icons/CALENDAR.svg">
     Configure pipelines to run on an automated schedule.
   </Card>
   <Card title="Prophecy Apps" to="/analysts/business-applications" icon="/img/icons/publish-to-app.svg">
