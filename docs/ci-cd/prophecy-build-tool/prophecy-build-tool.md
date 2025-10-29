@@ -264,6 +264,32 @@ Validating 4 pipelines
 ✅ All pipelines validated successfully.
 ```
 
+## Quick reference
+
+| Command | Description | Common Options |
+| -------- | ------------ | --------------- |
+| **`pbt build`** | Build all or selected pipelines within a Prophecy project. | `--path` (required) <br> `--pipelines` *(comma-separated)* <br> `--ignore-build-errors` <br> `--ignore-parse-errors` |
+| **`pbt test`** | Run unit tests for pipelines using the default configuration. | `--path` (required) <br> `--pipelines` *(comma-separated)* <br> `--driver-library-path` *(optional)* |
+| **`pbt validate`** | Validate pipelines for warnings or errors before deployment. | `--path` (required) <br> `--treat-warnings-as-errors` |
+| **`pbt deploy`** | Build and deploy pipelines and jobs to Databricks. | `--path` (required) <br> `--release-version` <br> `--project-id` <br> `--fabric-ids` <br> `--job-ids` <br> `--skip-builds` |
+| **Environment Variables** | Required for Databricks connections. | `DATABRICKS_HOST` <br> `DATABRICKS_TOKEN` |
+
+### Example Workflow
+
+```bash
+# 1. Build project pipelines
+pbt build --path /path/to/project
+
+# 2. Run tests
+pbt test --path /path/to/project
+
+# 3. Validate before deployment
+pbt validate --path /path/to/project
+
+# 4. Deploy
+pbt deploy --path /path/to/project --release-version 1.0 --project-id 123
+```
+
 ## What's next
 
 For more details on continuous integration and orchestration, explore:
