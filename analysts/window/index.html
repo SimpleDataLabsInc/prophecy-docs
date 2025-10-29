@@ -8,7 +8,7 @@
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/assets/css/styles.fb59e090.css">
-<script src="/assets/js/runtime~main.8e65f4cc.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.01167b64.js" defer="defer"></script>
 <script src="/assets/js/main.2137401c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -19,6 +19,7 @@
 <p>The <strong>WindowFunction</strong> gem lets you perform calculations for individual records across a defined window of rows. This enables transformations such as moving averages, rankings, lead/lag comparisons, and cumulative metrics.</p>
 <p>Unlike regular aggregations, window functions retain the original row structure while adding new columns that reflect insights based on neighboring rows. You can configure the window using partitions, sorting, and frame definitions to control how each calculation is applied.</p>
 <p>This page explains how to configure partitions, sort data, and choose frames to achieve the intended behavior.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Interactive Gem Example</div><div class="admonitionContent_BuS1"><p>The WindowFunction gem has a corresponding interactive gem example. See <a href="/analysts/gems#interactive-gem-examples">Interactive gem examples</a> to learn how to run sample pipelines for this and other gems.</p></div></div>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="use-cases">Use cases<a href="#use-cases" class="hash-link" aria-label="Direct link to Use cases" title="Direct link to Use cases">​</a></h2>
 <p>Here are a few common use cases for window functions.</p>
 <table><thead><tr><th>Use case</th><th>Example</th></tr></thead><tbody><tr><td>Compute metrics over rolling time periods</td><td>Find 7-day average</td></tr><tr><td>Rank or number rows within groups</td><td>Rank city population per country</td></tr><tr><td>Compare values from previous or next rows</td><td>Find week-over-week change</td></tr><tr><td>Apply cumulative calculations</td><td>Get running totals</td></tr></tbody></table>
