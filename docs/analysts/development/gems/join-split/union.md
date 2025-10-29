@@ -17,6 +17,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 The Union gem lets you combine records from different tables for cases such as merging customer databases or aggregating logs from multiple servers.
 
+::::info Interactive Gem Example
+The Union gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 ## Input and Output
 
 | Port    | Description                                           |

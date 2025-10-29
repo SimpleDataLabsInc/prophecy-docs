@@ -20,6 +20,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 Filters models based on the provided filter condition.
 
+::::info Interactive Gem Example
+The Filter gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 ## Parameters
 
 | Parameter        | Description                                                 | Required |

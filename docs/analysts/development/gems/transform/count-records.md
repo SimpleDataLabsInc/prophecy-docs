@@ -19,6 +19,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 The CountRecords gem allows you to count the number of rows in a dataset in different ways. You can count all rows, count non-null values in selected columns, or count distinct non-null values in selected columns.
 
+::::info Interactive Gem Example
+The CountRecords gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 ## Input and Output
 
 The CountRecords gem accepts the following input and output.

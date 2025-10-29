@@ -20,6 +20,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 Find the closest spatial point(s) between two datasets based on geographic distance. This gem compares each point in the first dataset to all points in the second dataset and returns the nearest matches.
 
+::::info Interactive Gem Example
+The FindNearest gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 :::tip
 Geographic points must be in Well-known Text ([WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry)) format. Use the [CreatePoint](/analysts/create-point) gem to convert longitude and latitude coordinates to WKT format.
 :::

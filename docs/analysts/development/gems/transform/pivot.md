@@ -20,6 +20,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 The Pivot gem reshapes your data by transforming unique row values from a selected column into new columns, allowing you to summarize and analyze your data from a different perspective. The pivot operation transforms data from long to wide format.
 
+::::info Interactive Gem Example
+The Pivot gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 ## Input and Output
 
 The Pivot gem uses the following input and output ports.

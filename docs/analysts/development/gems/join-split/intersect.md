@@ -17,6 +17,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 Use the Intersect Gem to return only the rows that appear in **all** input tables. This is useful for identifying overlapping data, such as customers who are active on multiple platforms, or transactions that appear across different systems or logs.
 
+:::info Interactive Gem Example
+The Intersect gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+:::
+
 ## Input and Output
 
 | Port    | Description                                                              |

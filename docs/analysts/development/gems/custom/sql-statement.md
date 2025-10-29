@@ -20,6 +20,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 Use a custom SQL statement in your pipeline. The SQLStatement gem supports SELECT statements. This gem does not support actions like inserting or deleting tables.
 
+:::info Interactive Gem Example
+The SQLStatement gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+:::
+
 ## Input and Output
 
 The SQLStatement gem uses the following input and output ports.

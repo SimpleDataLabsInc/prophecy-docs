@@ -17,6 +17,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 Use the Except gem to extract rows that are present in the **first table** but **absent** from all subsequent tables. This is useful for identifying gaps, such as missing orders, unprocessed records, or customers who haven’t returned.
 
+::::info Interactive Gem Example
+The Except gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 ## Input and Output
 
 | Port    | Description                                                                                   |

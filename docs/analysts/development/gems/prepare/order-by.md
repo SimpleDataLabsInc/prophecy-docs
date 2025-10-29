@@ -20,6 +20,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 Sorts a model on one or more columns in ascending or descending order.
 
+::::info Interactive Gem Example
+The OrderBy gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 ## Parameters
 
 | Parameter     | Description                                | Required |
