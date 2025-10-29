@@ -84,11 +84,11 @@ See the runs here:
 https://analytics.prophecy.io/metadata/ide/observation?observationTab=run-history&project
 ```
 
-## Troubleshooting and Common Errors
+## Troubleshooting and common errors
 
 If your trigger job fails or doesn’t start the Prophecy pipeline as expected, review the following common issues:
 
-### Missing or Incorrect Parameters
+### Missing or incorrect parameters
 
 Make sure your parameters match the exact Prophecy project and pipeline:
 
@@ -102,7 +102,7 @@ If any of these are incorrect (for example, the wrong fabric ID), the trigger sc
 
 **Tip:** You can confirm your Fabric and Project IDs in Prophecy under **Settings → Fabric** and **Projects → Overview**.
 
-### Authentication Errors
+### Authentication errors
 
 If you see an authentication or permissions error:
 
