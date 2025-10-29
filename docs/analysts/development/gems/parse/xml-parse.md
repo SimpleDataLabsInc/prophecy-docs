@@ -20,6 +20,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 The XMLParse gem lets you parse XML that is included in a column of your table.
 
+:::info Interactive Gem Example
+The XMLParse gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+:::
+
 ## Parameters
 
 | Parameter              | Description                                                                                                                                                                                                                                                                                 |

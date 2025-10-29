@@ -19,6 +19,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 Use the Join gem to combine data from two or more tables based on a shared column value. This helps you link related information, such as customer details and purchase history, or user activity logs and account records.
 
+::::info Interactive Gem Example
+The Join gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 ## Input and Output
 
 | Port    | Description                                             |

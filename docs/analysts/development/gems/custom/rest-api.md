@@ -20,6 +20,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 Use the RestAPI gem to make API calls from your pipeline.
 
+:::info Interactive Gem Example
+The RestAPI gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+:::
+
 ## Use cases
 
 While RestAPIs vary greatly in functionality, we can highlight a few use cases that may be particularly helpful for your pipelines.

@@ -20,6 +20,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 Use the DynamicSelect gem to dynamically filter columns of your dataset based on a set of conditions to avoid hard-coding your choice of columns.
 
+::::info Interactive Gem Example
+The DynamicSelect gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 ## Parameters
 
 | Parameter     | Description                                                                                                                                                                                                                                                                                           |

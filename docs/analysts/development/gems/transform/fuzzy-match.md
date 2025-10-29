@@ -20,6 +20,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 Use the FuzzyMatch gem to identify non-identical duplicates in your data.
 
+::::info Interactive Gem Example
+The FuzzyMatch gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 ## Input and Output
 
 | Table   | Description                                                                                              |

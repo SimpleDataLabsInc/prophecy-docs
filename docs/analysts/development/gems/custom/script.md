@@ -12,6 +12,10 @@ tags:
 
 Use the Script gem to embed a custom Python script in your pipeline.
 
+:::info Interactive Gem Example
+The Script gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+:::
+
 ## Parameters
 
 | Parameter | Description                             |

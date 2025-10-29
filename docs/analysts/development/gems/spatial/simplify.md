@@ -20,6 +20,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 The Simplify gem reduces the number of vertices in polygons and polylines while preserving their overall shape. This is useful for reducing file sizes, improving rendering performance, and simplifying complex geometries for analysis or visualization.
 
+::::info Interactive Gem Example
+The Simplify gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 :::tip
 Input geometries must be in [WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) format. Use the [PolyBuild](/analysts/polybuild) gem to convert longitude and latitude coordinates into polygons or polylines in WKT format.
 :::
