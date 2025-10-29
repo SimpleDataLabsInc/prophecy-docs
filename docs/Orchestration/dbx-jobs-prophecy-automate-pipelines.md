@@ -1,7 +1,7 @@
 ---
-title: Start Prophecy automate pipelines in Databricks jobs
+title: Run Prophecy automate pipelines in Databricks jobs
 id: automate-pipelines-databricks
-description: Running Prophecy automate pipelines in Databricks.
+description: Run Prophecy automate pipelines in Databricks.
 tags:
   - jobs
   - deployment
