@@ -21,7 +21,7 @@ There are a few ways to structure orchestration between Prophecy and Databricks:
 2. **(Recommended)** Prophecy Scheduler → Databricks
 3. **Prophecy Export Code:** CODE → Databricks
 
-Option 2 is the most common for production environments: use **Prophecy Scheduler** to coordinate Databricks jobs, maintaining Prophecy as the orchestration layer while leveraging Databricks for execution.
+Option 2 is the most common for production environments: use the **Prophecy Scheduler** to coordinate Databricks jobs, maintaining Prophecy as the orchestration layer while using Databricks for execution.
 
 ## Create job
 
