@@ -9,15 +9,17 @@ tags: [saml, scim]
 Available for [Express and Enterprise Editions](/getting-started/editions/) only.
 :::
 
-Prophecy supports SAML for authentication.
+Security Assertion Markup Language (SAML) lets Prophecy delegate user authentication to your identity provider (IdP). System for Cross-domain Identity Management (SCIM) optionally automates provisioning and deprovisioning of users and teams from your IdP into Prophecy.
+
+This page describes how to set up SAML and SCIM, which requires configuration in both Prophecy and your preferred IdP.
 
 ## Prerequisites
 
 Review the following prerequisites.
 
-- To access SSO settings, you must be a cluster admin for your deployment.
-- SAML is available for Express and Enterprise Editions.
-- SCIM is only available for the Enterprise Edition. To enable SCIM in your environment, update the `config` in your Prophecy deployment.
+- To access SSO settings, you must be a [cluster admin](/administration/rbac) for your deployment.
+- SAML is available for [Express and Enterprise Editions](/getting-started/editions/).
+- SCIM is only available for the [Enterprise Edition](/getting-started/editions/). To enable SCIM in your environment, update the `config` in your Prophecy deployment.
 
 ## Supported identity providers
 
@@ -28,12 +30,16 @@ Prophecy supports the following identity providers (IdP):
 - Azure Active Directory (Microsoft Entra ID)
 - Others (custom)
 
-## SAML configuration
+## Prophecy-specific steps
+
+### Set up SAML
+
+To set up SAML authentication in Prophecy:
 
 1. Log in to Prophecy as a cluster admin user.
 1. Navigate to the **SSO** tab of the Prophecy **Settings** page.
 1. Under **Authentication Provider**, select SAML.
-1. Under IDP, select the appropriate identity provider.
+1. Under IdP, select the appropriate identity provider.
 1. Fill out the remaining parameters:
 
    | Parameter                     | Description                                                                                                                                        |
@@ -49,13 +55,19 @@ Prophecy supports the following identity providers (IdP):
 
 ![SSO settings for SAML and SCIM configurations](./img/sso-scim.png)
 
-## SCIM provisioning
+### Set up SCIM
 
-Enable SCIM if you want Prophecy to automatically provision and deprovision users and teams.
+SCIM allows Prophecy to automatically provision and deprovision users and teams based on your IdP configuration. To set up SCIM in Prophecy:
 
-See [Group-to-team mapping](docs/administration/authentication/group-team-mapping.md) for handling groups.
+1. Ensure that SCIM is enabled in your Prophecy environment.
+1. Complete the [SAML configuration](#saml-configuration) described above.
+1. Click **Generate SCIM Token** and copy the value of the token. You will use this in your IdP settings later.
 
-## IDP-specific steps
+After completing these steps, you'll create users and groups in your IdP directly. See [Group-to-team mapping](docs/administration/authentication/group-team-mapping.md) to learn about group naming conventions.
+
+## IdP-specific steps
+
+The following sections describe the fields you must configure in your IdP settings to complete the SAML/SCIM setup.
 
 ### Azure Active Directory
 
@@ -96,6 +108,31 @@ In the **Set up ProphecyAzureADApp** section, copy `Login URL` and `Azure AD Ide
 
 ![AzureAD config example](./img/azure_enterpriseapp_sso.png)
 
+#### Configure provisioning
+
+To set up SCIM in Azure:
+
+1. Open the Enterprise Application you just configured.
+1. From the left menu of the application, click **Manage > Provisioning**.
+1. From the left menu of the provisioning page, click **Manage > Connectivity**.
+
+   - Under **Select authentication method**, select **Bearer authentication**.
+   - For the **Tenant URL** field, use the value `https://<your-deployment-name>.prophecy.io/proscim`
+   - For **Secret token**, use the Prophecy-generated token that you copied in the [Set up SCIM](#set-up-scim) steps.
+   - Click **Test connection**. Once the test succeeds, you can save the connection.
+
+1. From the left menu of the same provisioning page, navigate to **Manage > Provisioning**.
+
+   - Set the **Provisioning Mode** to **Automatic**.
+   - Ensure that the **Provisioning Status** toggle is set to **On**.
+
+1. From the left menu of the same provisioning page, navigate to **Manage > Users and groups**.
+
+   - Create groups using Prophecy's [naming conventions](docs/administration/authentication/group-team-mapping.md).
+   - Assign users to those groups.
+
+These users and teams should automatically appear in Prophecy.
+
 ### Okta
 
 Configure SAML for Okta and enable SCIM provisioning
@@ -118,9 +155,7 @@ Configure SAML for Okta and enable SCIM provisioning
 13. Choose **I’m an Okta customer adding an internal app**.
 14. Click **Finish**. The _Prophecy SAML App_ is now displayed.
 
-#### Information required from Okta
-
-##### Download SAML Signing Certificate
+#### Download SAML Signing Certificate
 
 1. Navigate to the **Sign On** tab of _Prophecy SAML App_ in Okta.
 2. Locate the **SAML Signing Certificates** section.
@@ -128,15 +163,15 @@ Configure SAML for Okta and enable SCIM provisioning
 
 ![Download Okta Cert](./img/okta_dl_cert.png)
 
-##### SSO URL
+#### SSO URL
 
 1. In the same **Sign On** tab under **SAML Signing Certificates**, click **View IdP metadata**.
 2. This action opens an XML file in a new browser tab.
 3. Copy the red-highlighted text in the **Location** section of the XML file and use it as the **SSO URL** in Prophecy IDE.
 
-![IDP Metadata](./img/okta_idp_metadata_xml.png)
+![IdP Metadata](./img/okta_idp_metadata_xml.png)
 
-##### Entity and SSO Issuer
+#### Entity and SSO Issuer
 
 1. Go to the **General** tab, then navigate to the **SAML Settings** section and click **Edit**.
 2. Click **Next** to reach the **Configure SAML** section.
@@ -145,3 +180,41 @@ Configure SAML for Okta and enable SCIM provisioning
 5. Copy the highlighted information from the preview and use it as the **Entity Issuer** and **SSO Issuer** in Prophecy IDE.
 
 ![SAML Assertion](./img/okta_xml.png)
+
+#### Enable SCIM provisioning
+
+To set up SCIM in Okta:
+
+1. Open in Prophecy application in Okta.
+1. In the **General** settings, select the **Enable SCIM provisioning** checkbox.
+
+Once SCIM is enabled, two new tabs should appear in the application settings: **Provisioning** and **Push Groups**.
+
+1. Navigate to the **Provisioning** tab.
+1. In the **To App** subtab, enable the following:
+
+   - **Create Users**
+   - **Update User Attributes**
+   - **Deactivate Users**
+
+   This allows Okta to perform the enabled actions in Prophecy.
+
+1. In the **Integration** subtab:
+
+   - Set the **SCIM version** to `2.0`.
+   - For the **SCIM connector base URL**, use the value `https://<your-deployment-name>.prophecy.io/proscim`
+   - For the **Unique identifier field for users**, type `userName`. This is an Okta-specific value.
+   - For **Supported provisioning actions**, ensure that **Push New Users**, **Push Profile Updates**, and **Push Groups** checkboxes are enabled.
+   - Set the **Authentication Mode** to **HTTP Header**.
+   - Under **HTTP Header**, set the **Bearer** token to the Prophecy-generated token that you copied in the [Set up SCIM](#set-up-scim) steps.
+   - Click **Test Connector Configuration**.
+   - When successful, click **Save**.
+
+Now that you have set up the connection, you need to create and activate your group assignments.
+
+1. Open the **Assignments** tab.
+1. Create users and assign them to groups using Prophecy's [naming conventions](docs/administration/authentication/group-team-mapping.md).
+1. Navigate to the **Push Groups** tab.
+1. Follow the steps in [Enable Group Push](https://help.okta.com/en-us/content/topics/users-groups-profiles/usgp-enable-group-push.htm) in the Okta documentation to activate group provisioning in Prophecy.
+
+Once you have pushed groups, the corresponding users and teams should appear in Prophecy. When groups are "active" in Okta, any changes to these groups should automatically sync with Prophecy.
