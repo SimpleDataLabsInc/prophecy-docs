@@ -30,14 +30,14 @@ Option 2 is the most common for production environments: use **Prophecy Schedule
 
 ## Configure job
 
-| Field                         | Description                                                                                                             |
-| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| **Task name** _(Required)_    | Enter a descriptive task name such as `ProphecyRun`.                                                                    |
-| **Type** _(Required)_         | Select **Python script**.                                                                                               |
-| **Source**                    | Choose **Workspace**.                                                                                                   |
-| **Path**                      | Provide the path to your Python trigger file, such as:`/Users/databricks-dev-e2@simpledatalabs.com/pipeline_trigger.py` |
-| **Compute**                   | Select **Serverless (Autoscaling)**.                                                                                    |
-| **Environment and Libraries** | Leave as **Default** unless you need custom libraries.                                                                  |
+| Field                     | Description                                                                                                             |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Task name **(Required)**  | Enter a descriptive task name such as `ProphecyRun`.                                                                    |
+| Type **(Required)**       | Select **Python script**.                                                                                               |
+| Source                    | Choose **Workspace**.                                                                                                   |
+| Path                      | Provide the path to your Python trigger file, such as:`/Users/databricks-dev-e2@simpledatalabs.com/pipeline_trigger.py` |
+| Compute                   | Select **Serverless (Autoscaling)**.                                                                                    |
+| Environment and Libraries | Leave as **Default** unless you need custom libraries.                                                                  |
 
 ### Add parameters
 
@@ -85,8 +85,6 @@ https://analytics.prophecy.io/metadata/ide/observation?observationTab=run-histor
 ```
 
 ## Sample python trigger file
-
-This example shows how to trigger and monitor a Prophecy pipeline run programmatically using Python.
 
 The following code:
 
