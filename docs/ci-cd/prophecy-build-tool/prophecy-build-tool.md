@@ -17,17 +17,19 @@ tags:
 Available for [Enterprise Edition](/getting-started/editions/) only.
 :::
 
-The **Prophecy Build Tool (PBT)** is a command-line utility for building, testing, validating, and deploying Prophecy-generated projects. PBT lets you integrate Prophecy pipelines seamlessly into existing CI/CD systems (such as GitHub Actions, Jenkins) and orchestration platforms (such as Databricks Workflows).
+The **Prophecy Build Tool (PBT)** is a command-line utility for building, testing, validating, and deploying Prophecy-generated projects. PBT lets you integrate Prophecy pipelines into existing CI/CD systems (such as GitHub Actions or Jenkins) and orchestration platforms (such as Databricks Workflows).
 
-## Features (v1.1.0)
+## Features (v1.3.8)
 
-- Build pipelines (all or specify ones to build) in Prophecy projects (Scala and Python)
-- Unit test pipelines in Prophecy projects (Scala and Python)
-- Deploy jobs with built pipelines on Databricks
-- Deploying jobs filtered with fabric ids on Databricks
-- Integrate with CI/CD tools like GitHub Actions
-- Verify the project structure of Prophecy projects
-- Deploying pipeline Configurations
+Using the Prophecy Build tool, you can:
+
+- Build pipelines (all or a subset) in Prophecy projects (Scala and Python).
+- Unit test pipelines in Prophecy projects (Scala and Python).
+- Deploy jobs with built pipelines on Databricks.
+- Deploy jobs filtered with fabric ids on Databricks.
+- Integrate with CI/CD tools like GitHub Actions.
+- Verify the project structure of Prophecy projects.
+- Deploying pipeline configurations.
 
 ## Requirements
 
@@ -76,7 +78,7 @@ export DATABRICKS_TOKEN="exampledatabrickstoken"
 
 These variables define the Databricks workspace and credentials used for building and deploying.
 
-## Build Pipelines
+## Build pipelines
 
 The `build` command compiles all or specific pipelines within a Prophecy project.
 
@@ -177,7 +179,7 @@ pbt deploy --path /path/to/your/prophecy_project/ --job-ids "TestJob1,TestJob2"
 
 PBT automatically identifies and builds only the pipelines required by those jobs.
 
-### Deploy Options Summary
+### Deploy options summary
 
 | Option                           | Description                                               |
 | -------------------------------- | --------------------------------------------------------- |
