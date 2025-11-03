@@ -28,7 +28,7 @@ If you set up SSO after creating users in Prophecy, sign-ins will map to existin
 
 ## Fabric OAuth
 
-To set up OAuth for fabric connection authentication, see [OAuth app registrations](docs/administration/authentication/oauth-setup.md).
+To set up OAuth for fabric connection authentication, see [OAuth app registrations](/oauth-setup).
 
 ## What's next
 

@@ -1,7 +1,6 @@
 ---
 title: Change External Git Provider API
 id: change-external-git-api
-sidebar_class_name: hidden
 slug: /api-internal/change-external-git
 description: Use this API to manage the Git provider configured for specific Prophecy projects
 tags: [git, api, gitlab, bitbucket, github]
