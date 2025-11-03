@@ -1032,6 +1032,7 @@ const sidebars = {
           ],
         },
         "Orchestration/databricks-jobs",
+        "Orchestration/automate-pipelines-databricks",
         "Orchestration/alternative-schedulers",
         "Orchestration/multi-jobs-trigger",
       ],
