@@ -63,10 +63,10 @@ You can configure your Databricks connection using the following authentication 
 
 When you select OAuth as your authentication method for the connection, Prophecy can authenticate using either user-based (U2M) or service principal-based (M2M) OAuth. A single fabric cannot use both methods for the same connection. To use both U2M and M2M, create separate fabrics.
 
-| OAuth Type                  | Authentication                | Requirements                                                          | Token Expiry                        | Best For                   |
-| --------------------------- | ----------------------------- | --------------------------------------------------------------------- | ----------------------------------- | -------------------------- |
-| **User-based (U2M)**        | Individual user accounts      | [App Registration](docs/administration/authentication/oauth-setup.md) | Periodic re-authentication required | Interactive development    |
-| **Service Principal (M2M)** | Service principal credentials | Service Principal Client ID and Service Principal Client Secret       | No expiration                       | Scheduled jobs, automation |
+| OAuth Type                  | Authentication                | Requirements                                                    | Token Expiry                        | Best For                   |
+| --------------------------- | ----------------------------- | --------------------------------------------------------------- | ----------------------------------- | -------------------------- |
+| **User-based (U2M)**        | Individual user accounts      | [App Registration](/oauth-setup)                                | Periodic re-authentication required | Interactive development    |
+| **Service Principal (M2M)** | Service principal credentials | Service Principal Client ID and Service Principal Client Secret | No expiration                       | Scheduled jobs, automation |
 
 You can schedule pipelines with user-based OAuth, but you’ll need to re-authenticate periodically. Prophecy estimates token expiry based on Databricks’ response and prompts you when re-authentication is needed. To avoid interruptions, switch to service principal-based OAuth for production workloads.
 

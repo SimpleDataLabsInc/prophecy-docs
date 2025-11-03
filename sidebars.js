@@ -137,9 +137,12 @@ const sidebars = {
           label: "Cluster admin settings",
           link: {
             type: "doc",
-            id: "administration/cluster-admin-settings",
+            id: "administration/cluster-admin-settings/cluster-admin-settings",
           },
-          items: ["administration/authentication/oauth-setup"],
+          items: [
+            "administration/cluster-admin-settings/oauth-setup",
+            "administration/cluster-admin-settings/copilot-settings",
+          ],
         },
         "administration/audit-logging",
       ],

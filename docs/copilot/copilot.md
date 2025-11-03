@@ -2,7 +2,6 @@
 title: Prophecy AI
 id: copilot
 slug: /prophecy-ai
-sidebar_class_name: hidden
 description: The AI assistant for data pipelines and models
 tags:
   - concepts
@@ -50,7 +49,7 @@ Each AI endpoint configuration requires two models:
 - Fast LLM for lightweight tasks, such as `gpt-4o-mini`.
 
 :::info
-For Dedicated SaaS deployments, contact Prophecy to configure a custom endpoint.
+For Dedicated SaaS deployments, see [Copilot settings](docs/administration/cluster-admin-settings/copilot-settings.md) to learn how to connect Prophecy to your LLM.
 :::
 
 ### Supported providers
