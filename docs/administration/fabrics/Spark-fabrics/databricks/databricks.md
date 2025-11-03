@@ -77,7 +77,7 @@ When you configure a Databricks fabric and select OAuth, the OAuth method is **a
 - Scheduled jobs in deployed projects always use M2M. To schedule jobs using the fabric, you **must** provide a Service Principal Client ID and Service Principal Client Secret during fabric setup.
 
 :::info
-To leverage OAuth for a Databricks Spark fabric, you or an admin must first create a corresponding [app registration](docs/administration/authentication/oauth-setup.md). The fabric will always use the default Databricks app registration.
+To leverage OAuth for a Databricks Spark fabric, you or an admin must first create a corresponding [app registration](/oauth-setup). The fabric will always use the default Databricks app registration.
 :::
 
 ### Job Sizes

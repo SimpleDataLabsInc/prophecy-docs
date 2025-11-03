@@ -2,7 +2,6 @@
 title: Getting help with Prophecy
 id: getting-help
 slug: /getting-help
-sidebar_class_name: hidden
 description: Learn how to get support during your Prophecy trial or as a customer
 tags: []
 ---

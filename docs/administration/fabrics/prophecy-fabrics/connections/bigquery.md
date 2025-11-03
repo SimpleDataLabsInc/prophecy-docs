@@ -63,7 +63,7 @@ To leverage user-based OAuth:
 1. Under **Authentication method**, select **OAuth**.
 1. Under **App Registration**, select the correct app registration or use the default.
 
-If no app registrations appear, an admin must configure an [OAuth app registration](docs/administration/authentication/oauth-setup.md).
+If no app registrations appear, an admin must configure an [OAuth app registration](/oauth-setup).
 
 When your fabric is configured to use OAuth, the following occurs when a user attaches the fabric to their project:
 
