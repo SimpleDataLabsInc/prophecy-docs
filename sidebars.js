@@ -192,6 +192,7 @@ const sidebars = {
           items: [
             "administration/fabrics/prophecy-fabrics/connections/redshift",
             "administration/fabrics/prophecy-fabrics/connections/s3",
+            "administration/fabrics/prophecy-fabrics/connections/adls",
             "administration/fabrics/prophecy-fabrics/connections/synapse",
             "administration/fabrics/prophecy-fabrics/connections/databricks",
             "administration/fabrics/prophecy-fabrics/connections/bigquery",
@@ -304,6 +305,7 @@ const sidebars = {
                       ],
                     },
                     "analysts/development/gems/source-target/file/s3-gem",
+                    "analysts/development/gems/source-target/file/adls-gem",
                     "analysts/development/gems/source-target/file/databricks-volumes-gem",
                     "analysts/development/gems/source-target/file/gcs-gem",
                     "analysts/development/gems/source-target/file/onedrive-gem",
