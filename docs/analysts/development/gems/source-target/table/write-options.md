@@ -8,6 +8,20 @@ tags: []
 
 When writing data to a table, there are multiple ways to determine how the data will be written. When you configure a target table or target model, the **Write Options** tab lets you determine how you will store your processed data and handle changes to the data over time. The choice of write mode depends on your specific use case.
 
+## Write modes matrix
+
+The following table describes the write modes that Prophecy supports by SQL warehouse and gem type.
+
+| Write mode                          | Databricks table | Databricks model | BigQuery table | BigQuery model | Snowflake model |
+| ----------------------------------- | ---------------- | ---------------- | -------------- | -------------- | --------------- |
+| Wipe and Replace Table              | ✔                | ✔                | ✔              | ✔              | ✔               |
+| Append Row                          | ✔                | ✔                | ✔              |                | ✔               |
+| Merge - Upsert Row                  | ✔                | ✔                | ✔              | ✔              | ✔               |
+| Merge - Wipe and Replace Partitions | ✔                | ✔                | ✔              | ✔              |                 |
+| Merge - SCD2                        | ✔                | ✔                | ✔              | ✔              | ✔               |
+| Merge - Update Row                  | ✔                | ✔                |                |                |                 |
+| Merge - Delete and Insert           |                  |                  |                |                | ✔               |
+
 ## Write modes
 
 ### Wipe and Replace Table (default)
@@ -416,20 +430,6 @@ Depending on the SQL warehouse you use to write tables, partitioning can have di
    Databricks organizes data in folders by column values. Partitioning only makes sense when you’re using the **Wipe and Replace Partitions** write mode because it allows you to overwrite specific directories (partitions) without rewriting the whole table.
 
    For the **Wipe and Replace Table** option, the table is dropped and completely recreated. Partitioning doesn’t add any runtime benefit here, so this is not an option for Databricks.
-
-## Write modes matrix
-
-The following table describes the write modes that Prophecy supports by SQL warehouse and gem type.
-
-| Write mode                          | Databricks table | Databricks model | BigQuery table | BigQuery model | Snowflake model |
-| ----------------------------------- | ---------------- | ---------------- | -------------- | -------------- | --------------- |
-| Wipe and Replace Table              | ✔                | ✔                | ✔              | ✔              | ✔               |
-| Append Row                          | ✔                | ✔                | ✔              |                | ✔               |
-| Merge - Upsert Row                  | ✔                | ✔                | ✔              | ✔              | ✔               |
-| Merge - Wipe and Replace Partitions | ✔                | ✔                | ✔              | ✔              |                 |
-| Merge - SCD2                        | ✔                | ✔                | ✔              | ✔              | ✔               |
-| Merge - Update Row                  | ✔                | ✔                |                |                |                 |
-| Merge - Delete and Insert           |                  |                  |                |                | ✔               |
 
 ## Troubleshooting
 
