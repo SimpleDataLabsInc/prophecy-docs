@@ -351,6 +351,7 @@ const sidebars = {
                 "analysts/development/gems/prepare/data-cleansing",
                 "analysts/development/gems/prepare/data-masking",
                 "analysts/development/gems/prepare/deduplicate",
+                "analysts/development/gems/prepare/generate-rows",
                 "analysts/development/gems/prepare/filter",
                 "analysts/development/gems/prepare/find-duplicates",
                 "analysts/development/gems/prepare/flatten-schema",
