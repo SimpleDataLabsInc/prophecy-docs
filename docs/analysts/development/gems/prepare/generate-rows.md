@@ -15,7 +15,7 @@ The GenerateRows gem creates new rows of data at the record level using iterativ
 The gem follows a three-step process to create rows:
 
 1. **Initialization Expression**: Sets the starting value for the first row.
-2. **Condition Expression**: Defines when to continue generating rows (true/false condition).
+2. **Condition Expression**: Defines when to stop generating rows (true/false condition).
 3. **Loop Expression**: Specifies how values change between iterations.
 
 The gem continues generating rows until the condition expression evaluates to false, at which point the generation process terminates.
@@ -24,33 +24,23 @@ The gem continues generating rows until the condition expression evaluates to fa
 
 The GenerateRows gem accepts optional input data and produces one output dataset containing the generated rows.
 
-| Port    | Description                                                                                                                                                                                                                                                                       |
-| ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **in0** | Optional input dataset. Columns from this dataset can be referenced in the iterative expressions. If an input dataset is provided, the gem generates a separate sequence of rows for each input row. If no input is provided, the gem generates a single sequence.                |
-| **out** | Output dataset containing: <ul><li>All original input columns (if input is provided)</li><li>The new generated column with values created by the iterative expressions</li></ul> Each input row may produce multiple output rows depending on the loop and condition expressions. |
-
-:::note
-
-Keep in mind the following:
-
-- For each input row, the gem starts with the initialization expression, generates new rows while the condition expression evaluates to true, and updates the value each iteration using the loop expression.
-- If no input dataset is provided, a single sequence is generated starting from the initialization expression.
-- The total number of rows per input row is limited by the Max rows per iteration parameter to prevent infinite loops or excessive memory usage.
-
-:::
+| Port    | Description                                                                                                                                                                                                                                                                             |
+| ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **in0** | Optional input dataset. Columns from this dataset can be referenced in the gem expressions. <ul><li>If an input dataset is provided, the gem generates a separate sequence of rows for each input row. </li><li>If no input is provided, the gem generates a single sequence.</li></ul> |
+| **out** | Output dataset containing: <ul><li>All original input columns (if input is provided)</li><li>The new generated column with values created by the iterative expressions</li></ul> Each input row may produce multiple output rows depending on the loop and condition expressions.       |
 
 ## Parameters
 
 Configure the GenerateRows gem using the following parameters.
 
-| Parameter                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Choose output column name         | Name of the column that will contain the generated values. Each generated value in this column corresponds to one row created by the gem’s iterative process.                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| Configure row generation strategy | Define the logic for generating rows using three expressions: <ul><li>**Initialization expression**: Sets the starting value for the generation process. This is the value of the first generated row.</li><li>**Condition expression**: Determines how long to continue generating rows. Rows are added while this expression evaluates to true. Can reference input columns or the output column value.</li><li>**Loop expression (usually incremental)**: Specifies how the generated value changes each iteration. Typically an increment, but can be any expression that modifies the output column value.</li></ul> |
-| Max rows per iteration            | Limits the number of rows generated per sequence to prevent infinite loops or excessive memory usage. <br/>**Default**: 100,000 rows.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Parameter                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Choose output column name         | Name of the column that will contain the generated values. Each generated value in this column corresponds to one row created by the gem’s iterative process.                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| Configure row generation strategy | SQL logic for generating rows using three expressions: <ul><li>**Initialization expression**: Sets the starting value for the generation process. This is the value of the first generated row.</li><li>**Condition expression**: Determines how long to continue generating rows. Rows are added while this expression evaluates to true. Can reference input columns or the output column value.</li><li>**Loop expression (usually incremental)**: Specifies how the generated value changes each iteration. Typically an increment, but can be any expression that modifies the output column value.</li></ul> |
+| Max rows per iteration            | Maximum number of rows generated per sequence. This limit prevents infinite loops or excessive memory usage. <br/>**Default**: 100,000 rows.                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
 :::info Reference Columns
-To reference columns in the **Condition expression** and **Loop expression** fields, you must use the following format:
+To reference input columns in the **Condition expression** and **Loop expression** fields, you must use the following format:
 
 `payload.<columnName>`
 
