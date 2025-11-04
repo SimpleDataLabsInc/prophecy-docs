@@ -20,6 +20,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 Use the Buffer gem to take any polygon or line and expand or contract its boundaries. This can be useful for spatial analysis tasks like creating safety zones around hazardous areas, expanding service coverage areas, and analyzing proximity impacts.
 
+::::info Interactive Gem Example
+The Buffer gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 :::tip
 Geometries must be in Well-known Text ([WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry)) geometric format. Use the [PolyBuild](/analysts/polybuild) gem to create lines and polygons in this format from latitude and longitude coordinates.
 :::

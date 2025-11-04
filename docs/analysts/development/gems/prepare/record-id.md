@@ -10,7 +10,19 @@ tags:
   - prepare
 ---
 
+import SQLRequirements from '@site/src/components/sql-gem-requirements';
+
+<SQLRequirements
+  execution_engine="SQL Warehouse"
+  sql_package_name="ProphecyDatabricksSqlBasics"
+  sql_package_version="0.0.4+"
+/>
+
 Assigning unique identifiers to each row in a dataset is a common requirement for data preparation. The RecordID gem allows you to easily generate row-level IDs using two methods: UUID for randomly generated values, and Incremental ID for ordered, sequential values. You can customize how IDs are added, including naming the column, setting the data type and format, and specifying where the column appears in the output schema.
+
+::::info Interactive Gem Example
+The RecordID gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
 
 ## Input and Output
 

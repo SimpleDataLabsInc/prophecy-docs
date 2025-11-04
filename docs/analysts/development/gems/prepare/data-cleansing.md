@@ -20,6 +20,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 Use the DataCleansing gem to standardize data formats and address missing or null values in the data.
 
+::::info Interactive Gem Example
+The DataCleansing gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 ## Parameters
 
 | Parameter                        | Description                                                                                                                      |

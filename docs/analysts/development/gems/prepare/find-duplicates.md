@@ -19,6 +19,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 The FindDuplicates gem filters rows in a dataset based on how frequently they appear. You can configure the gem to return the first occurrence of each unique group, identify groups that have duplicates, or apply custom filters based on group frequency or row position within groups.
 
+::::info Interactive Gem Example
+The FindDuplicates gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 ## Input and Output
 
 The FindDuplicates gem accepts the following input and generates one output.

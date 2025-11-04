@@ -2,7 +2,6 @@
 title: SQL fabrics
 description: Perform SQL computations on a SQL warehouse
 id: Fabrics
-sidebar_class_name: hidden
 tags: [fabric, SQL, execution, snowflake, databricks]
 ---
 

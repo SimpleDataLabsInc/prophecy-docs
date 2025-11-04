@@ -20,6 +20,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 The MultiColumnRename gem can be used to systematically rename multiple columns at once.
 
+::::info Interactive Gem Example
+The MultiColumnRename gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 ## Parameters
 
 | Field                    | Description                                                                                                       |

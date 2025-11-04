@@ -22,6 +22,10 @@ The ToDo gem lets you create a placeholder in your pipeline for a future gem.
 Prophecy may insert ToDo gems automatically during migration from another tool when certain logic can't be translated. [Reach out](mailto:support@prophecy.io) to learn more about migration.
 :::
 
+:::info Interactive Gem Example
+The ToDo gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+:::
+
 ## Input and Output
 
 Though the ToDo gem does not pass any data, you can pre-configure the output schema of the gem for future reference.

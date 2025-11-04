@@ -22,6 +22,10 @@ Flattening a dataset schema helps you simplify complex, hierarchical data. Use t
 
 This page describes how to use this gem according to your SQL warehouse provider.
 
+::::info Interactive Gem Example
+The FlattenSchema gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 :::info
 When you import tables with variant data into Prophecy, you'll see one or more nested columns in your dataset schema. These will appear as a [variant data type](/analysts/variant-schema), which is an array of values with more than one data type. Variant types can be flattened. This data type is specific to Databricks and Snowflake.
 :::
