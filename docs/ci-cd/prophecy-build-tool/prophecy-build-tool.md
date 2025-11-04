@@ -163,7 +163,7 @@ pbt deploy --fabric-ids 647,1527 --path /path/to/your/prophecy_project/
 
 You can find Fabric IDs in the Prophecy UI by visiting the Metadata page of a Fabric and checking its URL.
 
-### Skip Builds
+### Skip builds
 
 To deploy previously built pipelines without rebuilding:
 
@@ -262,20 +262,20 @@ The Prophecy Build Tool lets you set various options for versioning as follows.
 
 ### Versioning options
 
-| Option                                             | Description                                                                                                                                                                                                                                                                                       |
-| -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--path <PATH>`                                    | Path to the directory containing the `pbt_project.yml` file **[required]**                                                                                                                                                                                                                        |
-| `--repo-path <PATH>`                               | Path to the repository root. If left blank, it will use `--path`.                                                                                                                                                                                                                                 |
-| `--bump [major\|minor\|patch\|build\|prerelease]`  | Bumps one of the semantic version numbers for the project and all pipelines based on the current value. Only works if existing versions follow [Semantic Versioning](https://semver.org/).                                                                                                        |
-| `--set TEXT`                                       | Explicitly set the exact version.                                                                                                                                                                                                                                                                 |
-| `--force`, `--spike`                               | Bypass errors if the version set is lower than the base branch.                                                                                                                                                                                                                                   |
-| `--sync`                                           | Ensure all files are set to the same version defined in `pbt_project.yml`. _(Implies `--force`.)_                                                                                                                                                                                                 |
-| `--set-suffix TEXT`                                | Set a suffix string (e.g., `-SNAPSHOT` or `-rc.4`). If this is not a valid semVer string, an error will be thrown.                                                                                                                                                                                |
-| `--check-sync`                                     | Check to see if versions are synced. Exit code `0` = success, `1` = failure.                                                                                                                                                                                                                      |
+| Option                                             | Description                                                                                                                                                                                                                                                                                        |
+| -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--path <PATH>`                                    | Path to the directory containing the `pbt_project.yml` file **[required]**                                                                                                                                                                                                                         |
+| `--repo-path <PATH>`                               | Path to the repository root. If left blank, it will use `--path`.                                                                                                                                                                                                                                  |
+| `--bump [major\|minor\|patch\|build\|prerelease]`  | Bumps one of the semantic version numbers for the project and all pipelines based on the current value. Only works if existing versions follow [Semantic Versioning](https://semver.org/).                                                                                                         |
+| `--set TEXT`                                       | Explicitly set the exact version.                                                                                                                                                                                                                                                                  |
+| `--force`, `--spike`                               | Bypass errors if the version set is lower than the base branch.                                                                                                                                                                                                                                    |
+| `--sync`                                           | Ensure all files are set to the same version defined in `pbt_project.yml`. _(Implies `--force`.)_                                                                                                                                                                                                  |
+| `--set-suffix TEXT`                                | Set a suffix string (e.g., `-SNAPSHOT` or `-rc.4`). If this is not a valid semVer string, an error will be thrown.                                                                                                                                                                                 |
+| `--check-sync`                                     | Check to see if versions are synced. Exit code `0` = success, `1` = failure.                                                                                                                                                                                                                       |
 | `--compare-to-target`, `--compare <TARGET_BRANCH>` | Checks if the current branch has a greater version number than the `<TARGET_BRANCH>` provided. Returns `0` (true) or `1` (false). Also performs a `--sync` check. <br/>**Note:** If `--bump` is also provided, it compares versions and applies the bump strategy if the current version is lower. |
-| `--make-unique`                                    | Makes a version unique for feature branches by adding build-metadata and prerelease identifiers. <br/> _Format:_ `MAJOR.MINOR.PATCH-PRERELEASE+BUILDMETADATA` <br/> _Examples:_ <br/> Python → `3.3.0 → 3.3.0-dev0+sha.j0239ruf0ew` <br/> Scala → `3.3.0 → 3.3.0-SNAPSHOT+sha.j0239ruf0ew`            |
-| `--pbt-only`                                       | Apply version operation to `pbt_project.yml` file only. Applicable with `--compare`, `--make-unique`, `--bump`, `--set`, or `--set-suffix`.                                                                                                                                                       |
-| `--help`                                           | Show this message and exit.                                                                                                                                                                                                                                                                       |
+| `--make-unique`                                    | Makes a version unique for feature branches by adding build-metadata and prerelease identifiers. <br/> _Format:_ `MAJOR.MINOR.PATCH-PRERELEASE+BUILDMETADATA` <br/> _Examples:_ <br/> Python → `3.3.0 → 3.3.0-dev0+sha.j0239ruf0ew` <br/> Scala → `3.3.0 → 3.3.0-SNAPSHOT+sha.j0239ruf0ew`         |
+| `--pbt-only`                                       | Apply version operation to `pbt_project.yml` file only. Applicable with `--compare`, `--make-unique`, `--bump`, `--set`, or `--set-suffix`.                                                                                                                                                        |
+| `--help`                                           | Show this message and exit.                                                                                                                                                                                                                                                                        |
 
 ## Tagging builds
 
@@ -310,16 +310,16 @@ Validating 4 pipelines
 
 ## Quick reference
 
-| Command                   | Description                                                   | Common Options                                                                                                             |
-| ------------------------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| **`pbt build`**           | Build all or selected pipelines within a Prophecy project.    | `--path` (required) <br/> `--pipelines` _(comma-separated)_ <br/> `--ignore-build-errors` <br/> `--ignore-parse-errors`       |
-| **`pbt test`**            | Run unit tests for pipelines using the default configuration. | `--path` (required) <br/> `--pipelines` _(comma-separated)_ <br/> `--driver-library-path` _(optional)_                       |
-| **`pbt validate`**        | Validate pipelines for warnings or errors before deployment.  | `--path` (required) <br/> `--treat-warnings-as-errors`                                                                      |
+| Command                   | Description                                                   | Common Options                                                                                                                  |
+| ------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **`pbt build`**           | Build all or selected pipelines within a Prophecy project.    | `--path` (required) <br/> `--pipelines` _(comma-separated)_ <br/> `--ignore-build-errors` <br/> `--ignore-parse-errors`         |
+| **`pbt test`**            | Run unit tests for pipelines using the default configuration. | `--path` (required) <br/> `--pipelines` _(comma-separated)_ <br/> `--driver-library-path` _(optional)_                          |
+| **`pbt validate`**        | Validate pipelines for warnings or errors before deployment.  | `--path` (required) <br/> `--treat-warnings-as-errors`                                                                          |
 | **`pbt deploy`**          | Build and deploy pipelines and jobs to Databricks.            | `--path` (required) <br/> `--release-version` <br/> `--project-id` <br/> `--fabric-ids` <br/> `--job-ids` <br/> `--skip-builds` |
-| **pbt version**           | Set versions for PySpark projects                             |                                                                                                                            |
-| **Environment Variables** | Required for Databricks connections.                          | `DATABRICKS_HOST` <br/> `DATABRICKS_TOKEN`                                                                                  |
+| **pbt version**           | Set versions for PySpark projects                             |                                                                                                                                 |
+| **Environment Variables** | Required for Databricks connections.                          | `DATABRICKS_HOST` <br/> `DATABRICKS_TOKEN`                                                                                      |
 
-### Example Workflow
+### Example workflow
 
 ```bash
 # 1. Build project pipelines
