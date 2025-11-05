@@ -25,56 +25,43 @@ To get started with Prophecy's AI agent, follow the [AI agent quick start](/agen
 
 The quick start provides a walkthrough on how to interact with the chat interface and guides you through common agent use cases.
 
-## Feature support matrix
+## Agent capabilities
 
-The following tables detail the agent capabilities that are and are not supported in Prophecy.
+Prophecy's AI agent can help you build pipelines in the following ways:
 
-### Explore data
+### Search through your connected warehouse
 
-| Capability                                                                            | Supported | Not Supported |
-| ------------------------------------------------------------------------------------- | --------- | ------------- |
-| Search schema names, column metadata, owners, or tags to locate datasets              | ✔️        |               |
-| Visualizes charts, correlations, and anomalies from tables                            | ✔️        |               |
-| Ask for sample data from tables                                                       | ✔️        |               |
-| Examine column values and distributions to match datasets by example rather than name |           | ✔️            |
-| Search and preview datasets from connected warehouses, APIs, or external domains      |           | ✔️            |
+Use table metadata—table names, schemas, owners, and tags—to locate datasets from your fabric. When you don't know the exact table name or work with many tables, searching through metadata eliminates guesswork and reduces time spent browsing schema lists.
 
-### Transform data
+### Retrieve and visualize sample data from the warehouse
 
-| Capability                                                                     | Supported | Not Supported |
-| ------------------------------------------------------------------------------ | --------- | ------------- |
-| Build steps in a pipeline using multiple prompts                               | ✔️        |               |
-| Creates all steps, from inputs to transformations and outputs, from one prompt | ✔️        |               |
-| Standardize naming, data types, and units between sources                      | ✔️        |               |
-| Remove redundant steps and improve readability                                 | ✔️        |               |
-| Refine one step or component without changing others                           |           | ✔️            |
-| Suggest query optimizations, caching, or simplification                        |           | ✔️            |
-| Global find-and-replace for expressions                                        |           | ✔️            |
+Preview data samples and visualizations before selecting datasets for your pipeline. Understanding column structures, data patterns, and potential quality issues helps you make informed decisions about which tables to use.
 
-### Document pipelines
+### Build pipelines step-by-step or all in one prompt
 
-| Capability                                                                        | Supported | Not Supported |
-| --------------------------------------------------------------------------------- | --------- | ------------- |
-| Summarize pipeline logic and datasets in clear language                           | ✔️        |               |
-| Edit granular details of a generated document without regenerating the whole page |           | ✔️            |
-| Answer business data questions                                                    |           | ✔️            |
+Generate complete pipelines from a single description when requirements are clear, or build incrementally gem by gem, adding one transformation at a time in a linear sequence. Instead of manually dragging gems onto the canvas and configuring each step, describe your goal and let the agent handle the setup.
 
-### Additional capabilities
+### Remove redundant steps and improve readability
 
-| Capability                                              | Supported | Not Supported |
-| ------------------------------------------------------- | --------- | ------------- |
-| Prompt a reindex of the knowledge graph                 |           | ✔️            |
-| Export chat history for reuse of successful prompts     |           | ✔️            |
-| Suggest data quality constraints                        |           | ✔️            |
-| Identify causes of test failures and fixes tests        |           | ✔️            |
-| Create and edit unit tests                              |           | ✔️            |
-| Read and fix code linting issues in the project         |           | ✔️            |
-| Query historical pipeline execution                     |           | ✔️            |
-| Search entities in Prophecy such as projects or fabrics |           | ✔️            |
-| Recommend packages and maintain packages automatically  |           | ✔️            |
-| Create and deploy apps                                  |           | ✔️            |
-| Perform version control actions (Git)                   |           | ✔️            |
-| Schedule and deploy projects                            |           | ✔️            |
+Clean up existing pipelines by removing unnecessary transformations and consolidating logic. Easier-to-maintain pipelines execute faster, and clearer logic helps teammates understand your work without deciphering complex transformation chains.
+
+### Summarize pipeline logic and datasets
+
+Get a high-level explanation of what a pipeline does and which datasets it uses without reading through every transformation. Understanding existing pipelines quickly helps with onboarding, while documenting your own work makes it easier for others to use and modify later.
+
+## Features in progress
+
+We are building several capabilities for future use:
+
+- **Search through external connections and APIs**: Search for data in your fabric beyond your connected data warehouse, including cloud storage, reporting platforms, and other sources.
+- **Find tables based on similar datasets**: Provide sample data to the agent and retrieve similar datasets from your fabric.
+- **Make targeted updates to an existing pipeline**: Iterate on granular aspects of the pipeline while ensuring previous work remains intact.
+- **Find pipeline optimizations and simplifications**: Identify opportunities to improve pipeline performance using methods such as query optimizations, caching, or simplified joins.
+- **Prompt a reindex of the knowledge graph**: Ask the agent to start crawling sources to ensure the most up-to-date metadata in the knowledge graph.
+- **Build and run data tests and unit tests**: Generate tests to validate data quality and catch errors before pipelines run in production.
+- **Recommend packages for your project**: Find relevant packages that help build out your pipeline for your specific use case.
+- **Schedule and deploy projects**: Automate moving pipelines from development to production.
+- **Perform version control actions**: Track changes, create branches, and manage pipeline versions through the agent interface.
 
 ## What's next
 
