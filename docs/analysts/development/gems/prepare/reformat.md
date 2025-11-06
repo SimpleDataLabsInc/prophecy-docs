@@ -20,6 +20,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 Transforms one or more column names or values by using expressions and/or functions. It's useful when we need to extract only the required columns or make changes column-wise.
 
+::::info Interactive Gem Example
+The Reformat gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 ## Parameters
 
 | Parameter     | Description                                | Required                                 |

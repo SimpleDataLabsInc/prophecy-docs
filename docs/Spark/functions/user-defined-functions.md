@@ -11,6 +11,10 @@ tags:
   - python
 ---
 
+:::edition Enterprise
+Available for [Enterprise Edition](/getting-started/editions/) only.
+:::
+
 Prophecy lets you create and import user-defined functions (UDFs), which can be used anywhere in the pipeline. Prophecy supports creating UDFs written in Python/Scala and importing UDFs written in SQL.
 
 | Project Type | Create UDFs  | Import UDFs   |

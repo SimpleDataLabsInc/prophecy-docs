@@ -13,14 +13,23 @@ Pipeline parameters let you define reusable variables that are injected into you
 
 Pipeline parameters are useful for:
 
-- Customizing values when using [Prophecy Apps](/analysts/business-applications).
-- Configuring pipelines for multiple execution environments (such as development or production). You can also configure pipeline parameters using the [Deploy Project API](/api/deploy-project/#pipeline-configurations-structure).
+- Enabling user-entered fields in [Prophecy Apps](/analysts/business-applications).
 - Keeping values consistent throughout the pipeline.
+- Configuring pipelines for multiple execution environments (such as development or production). Use app configs or the [Deploy Project API](/api/deploy-project/#pipeline-configurations-structure) to do so.
 
-Once you create pipeline parameters, they are available as _configuration variables_ in [gems](/analysts/gems/) wherever you can select a visual expression.
+Once you create pipeline parameters, they are available as _configuration variables_ in [gems](/analysts/gems/) wherever you can select a visual expression. You can also reference pipeline parameters using Jinja syntax in code expressions.
+
+## Parameter scope
+
+Pipeline parameters are defined at the pipeline level. This means:
+
+- They are available only within the pipeline where they are created.
+- They cannot be accessed from other pipelines in the same project.
+
+If you need variables that can be reused across multiple pipelines in a project, use project configuration variables.
 
 :::info
-Pipeline parameters are scoped to individual pipelines. They cannot be used in a project's other pipelines. To configure parameters that can be used across pipelines, you can use project parameters.
+If a pipeline parameter and a project configuration variable share the same name, the value of the pipeline parameter takes precedence within that pipeline.
 :::
 
 ## Add pipeline parameters
@@ -30,7 +39,7 @@ To add pipeline parameters:
 1. Open **Parameters** in the pipeline header.
 1. Click **+ Add Parameter**.
 1. Enter a name. This is the name you use when you call the parameter.
-1. Choose a data type (such as `array`, `date`, `string`, `int`, or `float`) that matches the parameter's use.
+1. Choose a data type that matches the parameter's use.
 1. Enter a value, or use a function or expression that computes the parameter's value. By default, these values are used during interactive execution. However, you can override the default values in certain areas like [Prophecy App configs](/analysts/business-applications) and [Pipeline gems](/analysts/pipeline-trigger-gem).
 
 :::note
@@ -360,4 +369,4 @@ To make the most out of pipeline parameters, we suggest you:
 
 - Use meaningful parameter names that indicate their purpose.
 - Validate inputs to prevent unexpected errors during execution.
-- Keep sensitive values (such as API keys) in [secrets](/administration/secrets) rather than passing them as plain parameters.
+- Keep sensitive values (such as API keys) in [secrets](docs/administration/fabrics/prophecy-fabrics/secrets/secrets.md) rather than passing them as plain parameters.

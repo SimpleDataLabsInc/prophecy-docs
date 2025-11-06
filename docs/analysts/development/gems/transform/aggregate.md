@@ -19,6 +19,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 Use the Aggregate gem to group data and perform aggregations on each group.
 
+::::info Interactive Gem Example
+The Aggregate gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 ## Parameters
 
 | Parameter         | Description                                                                                            |

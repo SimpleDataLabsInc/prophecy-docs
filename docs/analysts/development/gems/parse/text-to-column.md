@@ -1,6 +1,6 @@
 ---
-title: TextToColumn gem
-sidebar_label: TextToColumn
+title: TextToColumns gem
+sidebar_label: TextToColumns
 id: text-to-column
 slug: /analysts/text-to-column
 description: Convert text into a column in your table
@@ -21,6 +21,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 When working with certain tables, you might encounter text columns that contain multiple values separated by specific characters such as commas or semicolons.
 
 Use the TextToColumns gem to parse this text and simplify further analysis and processing.
+
+:::info Interactive Gem Example
+The TextToColumns gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+:::
 
 ## Parameters
 

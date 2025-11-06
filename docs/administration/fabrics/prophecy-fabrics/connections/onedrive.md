@@ -29,18 +29,19 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Read data with a [Source gem](/analysts/onedrive-gem)                      | Yes       |
 | Write data with a [Target gem](/analysts/onedrive-gem)                     | Yes       |
 | Browse data in the [Environment browser](/analysts/project-editor#sidebar) | Yes       |
+| Index files in the [Knowledge Graph](/knowledge-graph)                     | No        |
 
 ## Connection parameters
 
 To create a connection with OneDrive, enter the following parameters. You can find the Tenant ID, Client ID, and Client Secret in your Microsoft Entra app.
 
-| Parameter                                                                 | Description                                                                                               |
-| ------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| Connection Name                                                           | Name to identify your connection                                                                          |
-| Tenant ID                                                                 | Your Microsoft Entra [tenant ID](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-find-tenant) |
-| Client ID                                                                 | Your Microsoft Entra app Client ID                                                                        |
-| Client Secret ([Secret required](docs/administration/secrets/secrets.md)) | Your Microsoft Entra app Client Secret                                                                    |
-| User Principal Name                                                       | Email you use to sign into Microsoft                                                                      |
+| Parameter                                                                                          | Description                                                                                               |
+| -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| Connection Name                                                                                    | Name to identify your connection                                                                          |
+| Tenant ID                                                                                          | Your Microsoft Entra [tenant ID](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-find-tenant) |
+| Client ID                                                                                          | Your Microsoft Entra app Client ID                                                                        |
+| Client Secret ([Secret required](docs/administration/fabrics/prophecy-fabrics/secrets/secrets.md)) | Your Microsoft Entra app Client Secret                                                                    |
+| User Principal Name                                                                                | Email you use to sign into Microsoft                                                                      |
 
 ## Sharing connections within teams
 

@@ -28,6 +28,7 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Read data with a [Source gem](/analysts/smartsheet-gem)                    | Yes       |
 | Write data with a [Target gem](/analysts/smartsheet-gem)                   | Yes       |
 | Browse data in the [Environment browser](/analysts/project-editor#sidebar) | Yes       |
+| Index files in the [Knowledge Graph](/knowledge-graph)                     | No        |
 
 ## Limitations
 
@@ -47,10 +48,10 @@ Keep in mind the following limitations when using the Smartsheet connection.
 
 To create a connection with Smartsheet, enter the following parameters:
 
-| Parameter                                                                | Description                                                                                                                                   |
-| ------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| Connection Name                                                          | Unique name for the connection                                                                                                                |
-| Access Token ([Secret required](docs/administration/secrets/secrets.md)) | Your [Smartsheet API access token](https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication#access-token-best-practices) |
+| Parameter                                                                                         | Description                                                                                                                                   |
+| ------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| Connection Name                                                                                   | Unique name for the connection                                                                                                                |
+| Access Token ([Secret required](docs/administration/fabrics/prophecy-fabrics/secrets/secrets.md)) | Your [Smartsheet API access token](https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication#access-token-best-practices) |
 
 ## Sharing connections within teams
 

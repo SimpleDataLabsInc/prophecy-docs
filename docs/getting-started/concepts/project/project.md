@@ -8,6 +8,10 @@ tags:
   - project
 ---
 
+:::edition Editions
+Free, Professional, and Express Editions only support SQL projects. Enterprise Edition supports SQL, Python, and Scala.
+:::
+
 Projects serve as your primary workspace in Prophecy for building data pipelines. They are containers that organize related data transformations, tests, and schedules in one place. Projects provide some core capabilities that support your data pipeline development:
 
 - **Organization**: Keep related pipelines, data sources, and schedules together in a logical structure.
@@ -19,7 +23,7 @@ Projects serve as your primary workspace in Prophecy for building data pipelines
 
 When you create a project in Prophecy, you must choose between project types: SQL, Python, or Scala. This choice determines the programming language used for your data transformations and the execution environment where your pipelines will run.
 
-:::note
+:::info
 You cannot change your project type after creation. This decision affects the underlying architecture and code generation patterns.
 :::
 
@@ -187,6 +191,6 @@ To continue your journey with Prophecy projects, follow these recommended paths 
 
 **For all projects:**
 
-- [Understand version control](/analysts/version-control/version-control.md) for SQL projects or [Git workflows](/engineers/git) for Python/Scala projects.
+- [Understand simple version control](/analysts/version-control/version-control.md) and [normal Git workflows](/engineers/git).
 - [Explore the Package Hub](/engineers/package-hub) to discover reusable components and share your work.
 - [Follow tutorials](/getting-started/tutorials/tutorials.md) to build complete projects from start to finish.

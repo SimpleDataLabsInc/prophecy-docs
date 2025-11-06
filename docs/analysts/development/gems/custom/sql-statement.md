@@ -20,6 +20,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 Use a custom SQL statement in your pipeline. The SQLStatement gem supports SELECT statements. This gem does not support actions like inserting or deleting tables.
 
+:::info Interactive Gem Example
+The SQLStatement gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+:::
+
 ## Input and Output
 
 The SQLStatement gem uses the following input and output ports.
@@ -45,7 +49,7 @@ Configure the SQLStatement gem using the following parameters.
 | Out       | SQL query that defines the output result. |
 
 :::note
-Write your SQL query in the syntax of your SQL warehouse provider. For example, if you're connected to a Databricks SQL warehouse, use Databricks SQL dialect.
+Write your SQL query in the syntax of your SQL warehouse provider. For example, if you're connected to a Databricks SQL warehouse, use Databricks SQL dialect. If you're using the [Prophecy In Memory](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md), use DuckDB dialect.
 :::
 
 :::tip
