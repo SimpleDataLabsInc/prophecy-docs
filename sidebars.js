@@ -212,6 +212,7 @@ const sidebars = {
           ],
         },
         "administration/fabrics/prophecy-fabrics/secrets/secrets",
+        "administration/fabrics/prophecy-fabrics/knowledge-graph-config",
       ],
     },
     {
