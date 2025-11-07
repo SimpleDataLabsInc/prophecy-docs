@@ -8,7 +8,7 @@ tags: []
 The Deploy Project API allows you to deploy projects with custom pipeline and project configurations to specific fabrics. This is useful when you want to:
 
 - Automate project deployment using external CI/CD tools instead of Prophecy's web interface.
-- Deploy the same project to different environments (dev, staging, prod) with different configuration values
+- Deploy the same project to different environments (dev, staging, prod) with different configuration values.
 
 The API returns request responses in JSON format.
 
