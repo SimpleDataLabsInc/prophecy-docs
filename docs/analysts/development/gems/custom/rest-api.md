@@ -98,4 +98,4 @@ The RestAPI gem supports three authentication methods.
 
 - **None**: No automatic authentication. Enter authentication information manually in the **Headers** parameter.
 - **Basic Auth**: Automatically sends Base64-encoded username and password from a [Username & Password secret](/analysts/secrets).
-- **Bearer Token**: Automatically sends an OAuth bearer token that Prophecy generates from an [M2M OAuth secret](/analysts/secrets).
+- **Bearer Token**: Automatically sends a bearer token retrieved through OAuth. Prophecy uses a preconfigured [M2M OAuth secret](/analysts/secrets) to obtain this token on your behalf.
