@@ -1,212 +1,169 @@
 ---
 title: Knowledge graph crawling
 id: knowledge-graph-config
-description: Configure knowledge graph crawling for a fabric
+description: Configure automated knowledge graph indexing for Prophecy fabrics
 tags:
-  - fabric
+  - agents
   - knowledge graph
-  - configuration
 ---
 
-Knowledge graphs enables Prophecy's AI features to understand your data environment by indexing tables, schemas, and other entities from your SQL warehouse. This page explains how to configure knowledge graph crawling for a fabric.
+A [knowledge graph](/knowledge-graph) is an internal index that maps your data environment. Prophecy uses knowledge graphs to help AI agents understand your SQL warehouse structure. The knowledge graph contains metadata about tables, schemas, columns, and data types—not your actual data.
 
-## Overview
+When you interact with AI agents, Prophecy uses the knowledge graph to add context to your prompts. This context helps AI agents generate accurate SQL code that references the correct tables and columns in your warehouse.
 
-The crawler scans your SQL warehouse to build an index of available tables and their metadata.
+You can either manually run the crawler or schedule the crawler to run automatically at defined intervals.
 
-Knowledge graph crawling runs independently from pipeline execution. You configure the crawler identity separately from the pipeline execution identity, which allows you to choose different authentication methods for each operation.
+:::info
+Prophecy only indexes tables from your SQL warehouse. Datasets from external connections are not included in the knowledge graph.
+:::
 
-You can schedule the crawler to run automatically at defined intervals. Scheduled crawling keeps your knowledge graph up to date as your warehouse data changes. When configuring a schedule, you specify the frequency, timezone, and start time for the crawler.
+## How knowledge graph crawling works
 
-## Enable knowledge graph crawling
+The knowledge graph crawler is a process that scans your SQL warehouse and builds the knowledge graph index. The crawler:
+
+1. Connects to your SQL warehouse using configured credentials.
+2. Scans catalogs and schemas that the identity has access to in your warehouse connection.
+3. Indexes table names, schemas, column names, data types, and other metadata.
+4. Updates the knowledge graph with this information.
+
+## Manually trigger knowledge graph crawling
+
+You can manually crawl tables without configuring additional knowledge graph settings. In this case, the crawler uses the pipeline development credentials for permissions scope.
+
+To manually trigger crawling from your fabric:
+
+1. Open the [SQL Warehouse Connection](/administration/fabrics/prophecy-fabrics/connections/) details in your fabric settings.
+1. At the bottom of the connection dialog, you’ll find a **Table Indexing Status**.
+1. Click **Start** to reindex the tables and track its progress. You'll be able to view the progress of processed schemas and directories.
+
+To trigger this process from the [Environment tab](/analysts/connections#environment-browser):
+
+1. Open a project in the project editor.
+1. Attach to the fabric that you wish to reindex.
+1. In the left sidebar, click on the Environment tab.
+1. Below your connections, you’ll see a **Missing Tables?** callout.
+1. Click **Refresh** to reindex the SQL warehouse.
+
+:::tip
+You might be prompted to manually trigger a crawl if the [agent](/analysts/ai-explore#troubleshooting) can’t locate a table during a conversation.
+:::
+
+## Automate knowledge graph crawling
+
+Configure automated knowledge graph crawling to keep your index current without manual intervention. Automated crawling runs on a schedule you define, scanning your SQL warehouse and updating the knowledge graph as your data environment changes. You configure authentication credentials for the crawler separately from pipeline execution credentials, allowing you to control which tables get indexed and how results are scoped for different users.
+
+### Prerequisites
+
+Before configuring knowledge graph crawling, you must:
+
+- Upgrade to Prophecy 4.2.2 or later.
+- Configure your SQL warehouse connection with a [Databricks connection](docs/administration/fabrics/prophecy-fabrics/connections/databricks.md). Other SQL warehouses are not supported.
+- Be an administrator. Though there are no role-based restrictions for configuring the knowledge graph crawler, you need to understand how authentication works in Prophecy and in Databricks.
+
+### Enable knowledge graph crawling
 
 To configure knowledge graph crawling for a fabric:
 
-1. Open your fabric settings.
-1. Navigate to the **Knowledge Graph Crawler** section.
-1. Toggle **Enable Knowledge Graph Crawling** to on.
-1. Configure the authentication method and identity as described below.
-1. Optionally, configure a schedule to run the crawler automatically.
+1. In Prophecy, navigate to **Metadata > Fabrics**.
+1. Select the fabric where you will enable crawling.
+1. Open the **Connections** tab.
+1. Click the pencil icon to edit the **SQL Warehouse Connection**.
+1. In the connection dialog, find the **Knowledge Graph Crawler** tile and toggle on **Enable Knowledge Graph Crawling**.
+1. Configure the [authentication method](#add-authentication-credentials) as described below.
+1. Optionally, [configure a schedule](#configure-the-crawler-schedule) to run the crawler automatically.
 
-## Authentication configuration
+### Add authentication credentials
 
-The knowledge graph crawler uses its own authentication configuration, independent from the pipeline execution identity. This separation allows you to optimize each operation for its specific use case.
+You can configure the knowledge graph crawler to use separate authentication credentials from pipeline execution.
 
-### Understanding pipeline execution vs crawler authentication
+- **Pipeline Development and Scheduled Execution** credentials control how pipelines authenticate when they run.
+- **Knowledge Graph Crawler** credentials control how the crawler authenticates when it indexes your warehouse on an automated schedule.
 
-Pipeline execution and knowledge graph crawling use separate authentication identities. This means you can configure different authentication methods for each operation.
-
-**Pipeline execution identity** controls how pipelines authenticate when they run. This identity is configured in the **Pipeline Development and Scheduled Execution** section of your fabric settings.
-
-**Crawler identity** controls how the knowledge graph crawler authenticates when it indexes your warehouse. This identity is configured in the **Knowledge Graph Crawler** section of your fabric settings.
-
-These identities are independent. For example, you can configure:
-
-- User OAuth (U2M) for pipeline execution
-- Service Principal OAuth (M2M) for knowledge graph crawling
-
-This separation is useful when you want to use user credentials for interactive pipeline development but need stable service principal credentials for scheduled crawling operations.
-
-#### Why use different identities?
-
-**User OAuth (U2M) for pipeline execution** is suitable when:
-
-- Developers need to run pipelines with their individual permissions
-- You want to track which user executed which pipeline
-- Interactive development requires user-specific access
-
-**Service Principal OAuth (M2M) for scheduled crawling** is recommended when:
-
-- You schedule the crawler to run automatically
-- You need credentials that don't expire
-- You want stable, unattended operations
-
-The use case: If your fabric is configured for OAuth U2M login (user-based authentication for pipeline execution), you can still provide a service principal for scheduled crawling. This ensures that scheduled crawler runs don't fail due to expired user credentials.
-
-When using this configuration, the crawler indexes all tables that the service principal can access. However, when users interact with Copilot, the knowledge graph scopes results to their individual U2M credentials (the same credentials used for pipeline execution). This means that while the knowledge graph technically contains all indexed tables, each user only sees and can reference tables they have permission to access based on their individual user credentials.
-
-### Authentication method
-
-Select the authentication method for the crawler. This must match the authentication method configured for your SQL warehouse connection. For example, if your warehouse connection uses OAuth, select OAuth for the crawler.
-
-### Identity selection
-
-Choose whether the crawler runs as a user or a service principal.
-
-#### User identity
-
-When you select **User**, the crawler uses user-to-machine (U2M) credentials. This option is suitable for smaller deployments or proof-of-concept environments where service principals are not available.
-
-:::note
-User credentials can expire, which may cause scheduled crawling to fail. If you plan to schedule the crawler, use a service principal instead.
+:::caution
+The knowledge graph crawler permissions should be equal to or a superset of the pipeline execution permissions. This ensures that the same tables you use in your pipelines are indexed by the knowledge graph. However, Prophecy does not enforce this.
 :::
 
-#### Service Principal identity
+There are multiple ways that Prophecy can assign permissions to automated knowledge graph crawls:
 
-When you select **Service Principal**, the crawler uses machine-to-machine (M2M) credentials. This is the recommended approach for production environments and scheduled crawling because service principal credentials do not expire and provide stable access for automated operations.
+- [Service Principal OAuth](#service-principal-oauth-recommended)
+- [User OAuth](#user-oauth)
+- [Personal Access Token (PAT)](#pat)
 
-If you've already configured a service principal for pipeline execution, you can reuse those credentials:
+### Service Principal OAuth (recommended)
 
-1. Select **Service Principal** as the identity.
-1. Toggle **Use same Service Principal as above** to on.
+Use a service principal to crawl your data environment. Recommended for production and scheduled crawling, since credentials don't expire.
 
-This reuses the service principal client ID and secret from the **Pipeline Development and Scheduled Execution** section.
+- **Configuration**: Reuse credentials provided for pipeline development or provide a different **Service Principal Client ID** and **Client Secret**.
+- **What gets indexed**: The crawler indexes all tables that the service principal can access.
 
-To use a different service principal for crawling:
+The service principal used for knowledge graph crawling must have sufficient permissions in Databricks:
 
-1. Select **Service Principal** as the identity.
-1. Toggle **Use same Service Principal as above** to off.
-1. Enter the **Service Principal Client ID**.
-1. Enter the **Service Principal Client Secret**.
+- **Catalog access**: Manage access on the catalog specified in your warehouse connection.
+- **Table listing**: Ability to list tables in the catalog and schemas you want to index.
+- **Metadata access**: Ability to fetch table schemas, column information, and other metadata.
 
-## Service principal permissions
+When users interact with AI agents, the knowledge graph scopes results based on the pipeline execution authentication method:
 
-The service principal used for knowledge graph crawling must have sufficient permissions to access and index your warehouse data. Configure the following permissions:
+- **Pipeline execution uses User OAuth (U2M)**: Results are scoped to each user's individual credentials. Each user only sees tables they have permission to access.
+- **Pipeline execution uses Service Principal OAuth (M2M)**: Results are scoped to the service principal's permissions. All users see the same set of tables.
 
-- **Catalog access**: The service principal must have at least "manage" access on the catalog specified in your warehouse connection.
-- **Table listing**: The service principal must be able to list tables in the catalog and schemas you want to index.
-- **Metadata access**: The service principal must be able to fetch table schemas, column information, and other metadata required for indexing.
+### User OAuth
 
-The crawler indexes all tables that the service principal can access, building a complete knowledge graph. When users interact with Copilot, the knowledge graph scopes results based on the pipeline execution authentication method:
+Use an individual's identity to crawl your data environment.
 
-- **If pipeline execution uses User OAuth (U2M)**: The knowledge graph scopes results to each user's individual credentials. Each user only sees and can reference tables they have permission to access based on their individual user credentials.
-- **If pipeline execution uses Service Principal OAuth (M2M)**: The knowledge graph scopes results to the service principal's permissions. All users see the same set of tables that the service principal has access to, regardless of their individual user permissions.
+- **Configuration**: User OAuth always uses the same app registration as configured for pipeline development.
+- **What gets indexed**: The crawler indexes all tables that the individual user can access.
+- **Limitations**: This requires frequent user logins. When user credentials expire, scheduled crawling can fail.
 
-## Schedule configuration
+### PAT
 
-You can schedule the knowledge graph crawler to run automatically at defined intervals. Scheduled crawling keeps your knowledge graph index up to date as your warehouse data changes.
+Use a Personal Access Token to crawl your data environment.
 
-### Configure a schedule
+- **Configuration**: If you use a PAT for pipeline development, Prophecy reuses your PAT identity for knowledge graph crawling.
+- **What gets indexed**: The crawler indexes all tables that the PAT identity can access.
 
-To configure a schedule for the crawler:
+### Configure the crawler schedule
 
-1. In the **Knowledge Graph Crawler** section, configure the schedule settings.
-1. Select a **Frequency** from the dropdown. Options include:
-   - **Minute**: Run the crawler at specified minute intervals.
-   - **Hourly**: Run the crawler at specified hour intervals, starting at a specific time.
-   - **Daily**: Run the crawler once per day at a specific time.
-   - **Weekly**: Run the crawler on specified days of the week at a specific time.
-   - **Monthly**: Run the crawler on a specific day of the month at a specific time.
-1. Select a **Timezone** from the dropdown. The default timezone is the timezone from where you access Prophecy.
-1. Configure the repetition settings based on your selected frequency:
-   - For **Hourly**: Set the interval (e.g., "1 hour") and the start time (e.g., "12:00 AM").
-   - For **Daily**: Set the time of day when the crawler will run.
-   - For **Weekly**: Set the day(s) of the week and the time when the crawler will run.
-   - For **Monthly**: Set the day of the month and the time when the crawler will run.
+You can schedule the knowledge graph crawler to run automatically at defined intervals. The schedule must have a defined frequency and timezone. The default timezone is the timezone from where you access Prophecy.
 
-### Schedule considerations
+The following tables define the required parameters for each frequency.
 
-When configuring a schedule for the crawler, consider the following:
+#### Minute
 
-- **Frequency**: Choose a frequency that balances freshness with system load. For frequently changing data, consider hourly or daily schedules. For stable data, weekly or monthly schedules may be sufficient.
-- **Timezone**: Select a timezone that aligns with your team's working hours or your data update patterns.
-- **Authentication**: Use a service principal for scheduled crawling. User credentials can expire, which may cause scheduled runs to fail.
+| Parameter    | Description                                                                          | Default  |
+| ------------ | ------------------------------------------------------------------------------------ | -------- |
+| Repeat every | The interval in minutes between pipeline runs.<br/>Example: Repeat every 10 minutes. | 1 minute |
 
-:::info
-The scheduling interface for knowledge graph crawling uses the same UI as pipeline scheduling. For more information about scheduling options and parameters, see [Schedule trigger types](/analysts/triggers).
-:::
+#### Hourly
 
-## Configuration scenarios
+| Parameter             | Description                                                                                                                | Default                               |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| Repeat every ... from | The interval in hours between pipeline runs, starting at a specific time.<br/>Example: Repeat every 2 hours from 12:00 AM. | Every 1 hour<br/>starting at 12:00 AM |
 
-### Development or POC environment (not recommended)
+#### Daily
 
-For smaller deployments or proof-of-concept environments:
+| Parameter | Description                                                                | Default |
+| --------- | -------------------------------------------------------------------------- | ------- |
+| Repeat at | The time of day when the schedule will run.<br/>Example: Repeat at 9:00 AM | 2:00 AM |
 
-- **Pipeline execution**: User OAuth
-- **Knowledge graph crawler**: User OAuth
+#### Weekly
 
-This configuration uses user credentials for both operations. It's simpler to set up but may experience token expiration issues with scheduled crawling.
+| Parameter | Description                                                                                         | Default  |
+| --------- | --------------------------------------------------------------------------------------------------- | -------- |
+| Repeat on | The day(s) of the week that the pipeline will run.<br/>Example: Repeat on Monday, Wednesday, Friday | Sunday   |
+| Repeat at | The time of the day that the pipeline will run.<br/>Example: Repeat at 9:00 AM                      | 12:00 AM |
 
-### Production environment
+#### Monthly
 
-For production environments with scheduled crawling:
+| Parameter | Description                                                                                     | Default  |
+| --------- | ----------------------------------------------------------------------------------------------- | -------- |
+| Repeat on | The day of the month that the pipeline will run.<br/>Example: Repeat on the first of the month. | 1        |
+| Repeat at | The time of the day that the pipeline will run.<br/>Example: Repeat at 9:00 AM                  | 12:00 AM |
 
-- **Pipeline execution**: Service Principal OAuth
-- **Knowledge graph crawler**: Service Principal OAuth (same as above)
-- **Crawler schedule**: Configured with appropriate frequency (e.g., daily or hourly)
+#### Yearly
 
-This configuration uses a single service principal for both operations, providing stable credentials that don't expire. It's the recommended approach for production workloads with scheduled crawling.
-
-When using this configuration, the knowledge graph scopes results to the service principal's permissions. All users see the same set of tables that the service principal has access to, regardless of their individual user permissions.
-
-### Production with separate crawler identity
-
-For environments where you want to separate crawler permissions from pipeline execution:
-
-- **Pipeline execution**: Service Principal OAuth (Identity A)
-- **Knowledge graph crawler**: Service Principal OAuth (Identity B)
-
-This configuration uses different service principals for each operation, allowing you to apply different permission scopes to each identity.
-
-### User OAuth for pipelines, Service Principal for scheduled crawling
-
-For environments where you use user-based authentication for pipeline execution but need stable credentials for scheduled crawling:
-
-- **Pipeline execution**: User OAuth (U2M)
-- **Knowledge graph crawler**: Service Principal OAuth (M2M)
-- **Crawler schedule**: Configured with appropriate frequency (e.g., daily or hourly)
-
-This configuration allows developers to run pipelines with their individual user credentials while ensuring scheduled crawler runs use stable service principal credentials that don't expire.
-
-The crawler indexes all tables that the service principal can access, building a complete knowledge graph. However, when users interact with Copilot, the knowledge graph scopes results to their individual U2M credentials (the same credentials used for pipeline execution). Each user only sees and can reference tables they have permission to access based on their individual user credentials, even though the knowledge graph technically contains all indexed tables. This ensures that users don't see or reference data they don't have access to, while the crawler maintains a comprehensive index of available tables.
-
-## How crawling works
-
-When the knowledge graph crawler runs, it:
-
-1. Connects to your SQL warehouse using the configured credentials.
-2. Scans the catalog and schemas specified in your warehouse connection.
-3. Indexes table names, schemas, column names, data types, and other metadata.
-
-The crawler does not store your actual data. It only indexes metadata about your data structure to help Copilot understand your environment.
-
-When users interact with Copilot, the knowledge graph scopes results based on the pipeline execution authentication method:
-
-- **If pipeline execution uses User OAuth (U2M)**: The knowledge graph scopes results to each user's individual credentials. Each user only sees and can reference tables they have permission to access based on their individual user credentials.
-- **If pipeline execution uses Service Principal OAuth (M2M)**: The knowledge graph scopes results to the service principal's permissions. All users see the same set of tables that the service principal has access to, regardless of their individual user permissions.
-
-In both cases, the knowledge graph technically contains all indexed tables, but users only see results scoped to the appropriate permissions.
-
-:::info
-For more information about how knowledge graphs work and how to refresh the index, see [Knowledge graph](/knowledge-graph).
-:::
+| Parameter     | Description                                                                                         | Default  |
+| ------------- | --------------------------------------------------------------------------------------------------- | -------- |
+| Repeat every  | The day and month that the pipeline will run each year.<br/>Example: Repeat every March 15.         | None     |
+| Repeat on the | The specific occurrence of a day in a given month.<br/>Example: Repeat on the third Monday of June. | None     |
+| Repeat at     | The time of the day that the pipeline will run.<br/>Example: Repeat at 9:00 AM                      | 12:00 AM |
