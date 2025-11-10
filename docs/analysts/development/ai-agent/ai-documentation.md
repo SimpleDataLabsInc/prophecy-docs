@@ -7,106 +7,84 @@ tags:
   - agent
 ---
 
-Instead of writing documentation manually, you can use Prophecy's AI agent to generate detailed specifications automatically. Pipeline documentation helps team members understand how input fields are transformed to produce the final output.
+Use Prophecy's AI agent to generate pipeline documentation automatically. The agent uses either a default template or a custom template to generate a Markdown file that describes your pipeline.
 
-## Generate documentation
+## Generate documentation for a pipeline
 
-To create documentation for your pipeline:
+Generate documentation for the currently open pipeline:
 
 1. Open your pipeline in Prophecy.
-1. Click the **Chat** tab in the left sidebar.
-1. Ask the AI agent to document your pipeline using a prompt like:
+1. Click **Chat** in the left sidebar.
+1. Prompt the agent to document your pipeline.
+
+### Example prompts
+
+To use the default documentation template, use a generic prompt:
 
 ```
 Create documentation for the current pipeline
 ```
 
-The agent analyzes your pipeline and generates a Markdown document.
+If you have one or more custom templates, you can reference the one you want to use with an @ mention:
+
+```
+Generate pipeline documentation using @custom_template
+```
 
 ![Ask agent to generate documentation](img/agent-generate-docs.png)
 
-### What happens during generation
+### How the agent generates documentation
 
-The AI agent:
+During generation, the agent:
 
-1. Displays a preparation checklist showing progress.
-1. Analyzes your pipeline components.
-1. Generates structured documentation.
+1. Displays a preparation checklist with progress.
+1. Analyzes pipeline components.
+1. References the template that defines the document structure.
+1. Generates the pipeline documentation.
 1. Saves the Markdown file to the `documents` directory in your project.
 
-You can find the generated document under **Documents** in the project sidebar.
+View the generated document in **Documents** in the project sidebar.
 
 ![Generated documentation](img/agent-docs-list.png)
 
-## Documentation structure
-
-Generated documentation follows a consistent structure to make information easy to find.
-
-- **Introduction**: High-level overview of the pipeline's purpose, business context, and strategy.
-- **Input sources**: Each data source listed with its full name, description, and fields used in the pipeline (rather than the entire set of input fields).
-- **Output targets**: Each output table with its description, dependencies, complete column schema, and transformation logic.
-- **Transformation steps**: Ordered list of data processing steps with logic mapped to gems.
-
-## Example documentation
-
-The following example shows documentation generated for a healthcare billing pipeline:
-
-```markdown
-# Introduction
-
-This document outlines the specification for the daily billing report data pipeline used to monitor and analyze patient billings by provider. The pipeline aggregates and summarizes encounter data for a specific reporting day, enabling insight into billing volumes and provider activity. The specification includes details on all data inputs, transformations, and the single output target used to deliver summary billing metrics per provider per day.
-
-# Input Sources
-
-The data pipeline utilizes a single input data source containing detailed encounter records. This source includes information about healthcare encounters, such as patient, provider, encounter dates, and costs. Data from this source is transformed and summarized to provide daily billing insights.
-
-### 1. analyst_samples.healthcare.L0_raw_encounters
-
-- **Description:** Contains raw healthcare encounter data, representing every recorded interaction between patients and providers in the system. This dataset is foundational for calculating billing and utilization analytics.
-- **Fields Used:**
-  - start
-  - patient
-  - provider
-  - baseEncounterCost
-
-# Output Targets
-
-The data pipeline produces a single summary report table that aggregates the number of unique patients and total billings by provider for each day. This facilitates daily monitoring of provider activity and billing volume.
-
-### 1. playground.playground_schema_11083_gd4.L2_gold_billing_daily_report
-
-- **Description:** A daily table that summarizes, at the provider level, key billing metrics, including the number of patients and total billed cost for all encounters occurring on a specified date. Enables daily operational analysis for healthcare providers.
-- **Depends On:**
-
-  - analyst_samples.healthcare.L0_raw_encounters
-
-- **Columns:**
-
-| #   | Name        | Data Type | Transformation                                                                                                                                                 |
-| --- | ----------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | day         | DATE      | Aggregated date of encounter. Extracted as DATE from the start field of analyst_samples.healthcare.L0_raw_encounters and filtered to match the execution date. |
-| 2   | provider    | VARCHAR   | Unique identifier for the healthcare provider. Directly taken from the provider field in analyst_samples.healthcare.L0_raw_encounters.                         |
-| 3   | numPatients | INT       | Number of unique patients who had an encounter with the provider on the given day. Computed as COUNT(patient) grouped by day and provider.                     |
-| 4   | billings    | FLOAT     | Total billing amount for the provider on the given day. Computed as SUM(baseEncounterCost) grouped by day and provider.                                        |
-
-# Transformation Steps
-
-The transformation process consolidates detailed encounter data into a meaningful daily summary, aiding business users in tracking daily billing activity across all providers.
-
-- **Step 1: Extract relevant encounter details**
-  - Selects encounter date (DATE from start), patient, provider, and base encounter cost from analyst_samples.healthcare.L0_raw_encounters.
-- **Step 2: Filter encounters to reporting day**
-  - Keeps only those encounters where the encounterDate matches the specified executionDate variable, ensuring daily analysis.
-- **Step 3: Aggregate patient and billing data by provider**
-  - For each provider on the reporting day, calculates the total number of patient encounters and sums the total billed amount by grouping on the encounter date and provider fields.
-```
-
-## Edit generated documentation
+### Update generated documentation
 
 After generation, you can:
 
-- View and edit the document in the visual editor
-- Switch to the **Code** tab to edit the Markdown code
-- Update content as your pipeline changes
+- View and edit the document in the visual editor.
+- Switch to the **Code** tab to edit the Markdown code.
 
-Documentation files are stored in your project repository and can be version-controlled with your code.
+Since the document is stored in your project repository, all changes are version-controlled with your code.
+
+:::note
+In the Code tab, you may see encoded or complex strings. These contain embedded data. Don't edit them, as changes will break the visual output.
+:::
+
+## Pipeline documentation templates
+
+Templates inform the agent how to structure the pipeline documentation output. Use the default template or build your own templates.
+
+### Use the default template structure
+
+Documentation generated with the default template uses this structure:
+
+- **Introduction**: Overview of the pipeline's purpose, business context, and strategy.
+- **Input sources**: Each data source with its full name, description, and fields used in the pipeline (not all input fields).
+- **Output targets**: Each output table with its description, dependencies, complete column schema, and transformation logic.
+- **Transformation steps**: Ordered list of data processing steps with logic mapped to gems.
+
+### Create custom documentation templates
+
+Use Markdown and Copilot Template Language (CTL) to create your custom documentation templates. CTL is a Prophecy-specific language that lets the agent extends Markdown to work with Prophecy components. See [CTL reference](docs/analysts/development/ai-agent/ai-ctl-reference.md) for complete specifications.
+
+Once you have written the template file, you need to upload the file to your project:
+
+1. Open the project where you want to upload the template.
+1. In the **Project** tab of the left sidebar, click **Add Entity**.
+1. Click **Template**. Your file browser opens.
+1. Select the Markdown file to upload.
+1. Click **Open**.
+
+:::note
+To create a custom template, you must upload a file from your local file system. You cannot create a blank template from the project editor.
+:::
