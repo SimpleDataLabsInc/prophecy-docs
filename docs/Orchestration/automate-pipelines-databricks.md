@@ -27,18 +27,20 @@ Option 2 is the most common for production environments: use the **Prophecy Sche
 
 1. In Databricks, go to **Jobs & Pipelines**.
 1. Click **Create new > Job** and give it a name, such as `Compute Top Encounter [Trigger Demo]`.
-1. Under **Add your first task**, choose **Python script**. (If Python script does not display, choose **+ Add another task type** and select **Python script** in the modal.)
+1. Under **Add your first task**, choose **Python script**. (If Python script does not display, choose **+ Add another task type** and select **Python script** in the dialog.)
 
 ## Configure job
 
-| Field                     | Description                                                                                                             |
-| ------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| Task name **(Required)**  | Enter a descriptive task name such as `ProphecyRun`.                                                                    |
-| Type **(Required)**       | Select **Python script**. Should be pre-selected.                                                                       |
-| Source                    | Choose **Workspace**.                                                                                                   |
-| Path                      | Provide the path to your Python trigger file, such as:`/Users/databricks-dev-e2@simpledatalabs.com/pipeline_trigger.py` |
-| Compute                   | Select **Serverless (Autoscaling)**.                                                                                    |
-| Environment and Libraries | Leave as **Default** unless you need custom libraries.                                                                  |
+In the dialog, configure the following parameters:
+
+| Field                     | Description                                                                                                                                                                                                  |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Task name **(Required)**  | Enter a descriptive task name such as `ProphecyRun`.                                                                                                                                                         |
+| Type **(Required)**       | Select **Python script**. Should be pre-selected.                                                                                                                                                            |
+| Source                    | Choose **Workspace**.                                                                                                                                                                                        |
+| Path                      | Provide the Databricks repository path to your Python trigger file, such as `/Users/databricks-dev-e2@simpledatalabs.com/pipeline_trigger.py`. See [sample trigger file](#sample-python-trigger-file) below. |
+| Compute                   | Select **Serverless (Autoscaling)**.                                                                                                                                                                         |
+| Environment and Libraries | Leave as **Default** unless you need custom libraries.                                                                                                                                                       |
 
 ### Add parameters
 
@@ -90,7 +92,7 @@ https://analytics.prophecy.io/metadata/ide/observation?observationTab=run-histor
 
 The following code:
 
-- Authenticates with the Prophecy API using a Databricks secret.
+- Authenticates with the Prophecy API using a Prophecy token.
 - Triggers a pipeline in a given project, fabric, and branch.
 - Polls the pipeline’s run status until it finishes.
 - Prints direct links to the pipeline and its run history.
@@ -190,13 +192,15 @@ Make sure your parameters match the exact Prophecy project and pipeline:
 
 If any of these are incorrect (for example, the wrong fabric ID), the trigger script will run but the pipeline will not start.
 
-**Tip:** You can confirm your Fabric and Project IDs in Prophecy under **Settings → Fabric** and **Projects → Overview**.
+:::tip
+You can confirm your fabric and project IDs in Prophecy under **Metadata > Fabrics** and **Metadata > Projects**.
+:::
 
 ### Authentication errors
 
 If you see an authentication or permissions error:
 
-- Confirm that your Databricks workspace can access Prophecy.
+- Ensure that your Prophecy API token is valid.
 - Ensure the user running the job has both Databricks and Prophecy credentials set up (via API token or linked integration).
 
 ### Compute or environment failures
