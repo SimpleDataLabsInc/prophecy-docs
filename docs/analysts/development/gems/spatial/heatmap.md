@@ -20,6 +20,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 The **HeatMap** gem transforms latitude and longitude point data into a spatial heatmap using hexagonal tiling. It's useful for identifying clusters of activity or density within a geographic region.
 
+::::info Interactive Gem Example
+The Heatmap gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 ## Input and Output
 
 The HeatMap gem accepts the following inputs and output.

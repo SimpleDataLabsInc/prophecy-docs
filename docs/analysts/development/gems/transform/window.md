@@ -24,6 +24,10 @@ Unlike regular aggregations, window functions retain the original row structure 
 
 This page explains how to configure partitions, sort data, and choose frames to achieve the intended behavior.
 
+::::info Interactive Gem Example
+The WindowFunction gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 ## Use cases
 
 Here are a few common use cases for window functions.

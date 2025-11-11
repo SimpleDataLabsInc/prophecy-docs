@@ -20,6 +20,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 Use the CreatePoint gem to convert longitude and latitude coordinates into geographic points.
 
+::::info Interactive Gem Example
+The CreatePoint gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 ## Input and Output
 
 The CreatePoint gem accepts the following input and output.

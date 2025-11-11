@@ -23,6 +23,10 @@ The MultiColumnEdit gem primarily lets you cast or change the data type of multi
 - Adding a prefix or suffix to selected columns.
 - Applying a custom expression to selected columns.
 
+::::info Interactive Gem Example
+The MultiColumnEdit gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 ## Parameters
 
 | Parameter                                                             | Description                                                                                                                                         | Required |

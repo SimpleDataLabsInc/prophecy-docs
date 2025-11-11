@@ -26,9 +26,10 @@ When you import a project from the Package Hub as a dependency, you gain access 
 
 Prophecy Project dependencies have the following parameters:
 
-| Parameter            | Description                                                                               |
-| -------------------- | ----------------------------------------------------------------------------------------- |
-| Project Dependencies | Choose from a dropdown list of compatible projects that are published in the Package Hub. |
+| Parameter            | Description                                                                                                               |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Project Dependencies | Choose from a dropdown list of compatible projects that are published in the Package Hub.                                 |
+| Auto-upgrade         | When enabled, the package will automatically upgrade to the latest version available. No manual updates will be required. |
 
 ### GitHub
 

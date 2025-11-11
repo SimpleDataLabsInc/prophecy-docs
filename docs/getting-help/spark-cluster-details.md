@@ -7,6 +7,10 @@ sidebar_position: 2
 tags: [help, connectivity]
 ---
 
+:::edition Enterprise
+Applicable to the [Enterprise Edition](/getting-started/editions/) only.
+:::
+
 There are helpful Spark cluster configurations and a connectivity check that you can send to us via the Prophecy [Support Portal](https://prophecy.zendesk.com/) for troubleshooting.
 
 ## Spark configurations

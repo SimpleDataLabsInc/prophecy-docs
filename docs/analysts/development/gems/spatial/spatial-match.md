@@ -26,6 +26,10 @@ Use the SpatialMatch gem to find relationships between geometries from two diffe
 
 The gem uses spatial joins to compare geometries and returns only the pairs that have the spatial relationship you specify, such as shapes overlapping or shapes touching. It works with points, lines, and polygons in Well-Known Text ([WKT](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry)) format.
 
+::::info Interactive Gem Example
+The SpatialMatch gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 :::tip
 Use the following gems to create correctly formatted geometries in a dataset:
 

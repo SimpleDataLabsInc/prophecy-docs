@@ -26,19 +26,20 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Read data with a [Source gem](/analysts/oracle)                            | Yes       |
 | Write data with a Target gem                                               | No        |
 | Browse data in the [Environment browser](/analysts/project-editor#sidebar) | Yes       |
+| Index tables in the [Knowledge Graph](/knowledge-graph)                    | No        |
 
 ## Connection parameters
 
 To create a connection with Oracle, enter the following parameters:
 
-| Parameter                                                            | Description                                          |
-| -------------------------------------------------------------------- | ---------------------------------------------------- |
-| Connection name                                                      | A name to identify your connection in Prophecy       |
-| Server                                                               | Hostname of the Oracle database server               |
-| Port                                                                 | Port used by the Oracle database (default is `1521`) |
-| Username                                                             | Username for connecting to the Oracle database       |
-| Database                                                             | Oracle Service Name or SID of the target database    |
-| Password ([Secret required](docs/administration/secrets/secrets.md)) | Password for the specified user                      |
+| Parameter                                                                                     | Description                                          |
+| --------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| Connection name                                                                               | A name to identify your connection in Prophecy       |
+| Server                                                                                        | Hostname of the Oracle database server               |
+| Port                                                                                          | Port used by the Oracle database (default is `1521`) |
+| Username                                                                                      | Username for connecting to the Oracle database       |
+| Database                                                                                      | Oracle Service Name or SID of the target database    |
+| Password ([Secret required](docs/administration/fabrics/prophecy-fabrics/secrets/secrets.md)) | Password for the specified user                      |
 
 ## Data type mapping
 

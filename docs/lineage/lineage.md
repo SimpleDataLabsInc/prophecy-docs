@@ -10,6 +10,10 @@ tags:
   - search
 ---
 
+:::edition Enterprise
+Available for [Enterprise Edition](/getting-started/editions/) only.
+:::
+
 Data lineage visualizes the complete journey of your data from source to destination, including all transformations it undergoes along the way. This visibility provides critical context for data operations and governance.
 
 Understanding data lineage delivers multiple benefits for your engineering team:

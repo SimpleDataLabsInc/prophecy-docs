@@ -22,6 +22,10 @@ When working with data, it’s common to run into duplicate information. Duplica
 
 Leverage the Deduplication gem to remove these duplicates, and pay close attention to the Deduplication mode that you use.
 
+::::info Interactive Gem Example
+The Deduplicate gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 ## Parameters
 
 | Parameter           | Description                                                    |

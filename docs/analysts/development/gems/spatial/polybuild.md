@@ -20,6 +20,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 Build spatial shapes from coordinate data by grouping and ordering points into either polygons (closed shapes) or polylines (open lines). Use this gem to convert raw latitude/longitude values into structured spatial geometries for mapping, analysis, or downstream geospatial operations.
 
+::::info Interactive Gem Example
+The PolyBuild gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 - Polygon: Uses the `POLYGON()` format to create a closed shape.
 - Polyline: Uses the `LINESTRING()` format to create an open path.
 

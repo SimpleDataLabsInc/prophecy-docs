@@ -9,6 +9,10 @@ tags:
   - seeds
 ---
 
+:::edition Enterprise
+Available for [Enterprise Edition](/getting-started/editions/) only.
+:::
+
 Model sources and targets vary slightly from those of a pipeline. The primary difference is that all model sources and targets must point to tables in the SQL warehouse.
 
 ## Sources
@@ -16,7 +20,7 @@ Model sources and targets vary slightly from those of a pipeline. The primary di
 When you create a new model, you need to define an input data source. The data source can be:
 
 - Another model. You can drag a model from the Project tab of the left sidebar onto your canvas to use it as a source.
-- A [Table gem](/analysts/source-target). You can either use pre-configured tables from the Project tab of the left sidebar, or you can browse SQL warehouse tables in the Environment tab of the left sidebar.
+- A [Table gem](/analysts/source-target). You can either use preconfigured tables from the Project tab of the left sidebar, or you can browse SQL warehouse tables in the Environment tab of the left sidebar.
 
 ## Targets
 

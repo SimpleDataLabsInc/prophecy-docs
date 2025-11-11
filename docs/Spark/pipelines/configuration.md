@@ -10,6 +10,10 @@ tags:
   - variable
 ---
 
+:::edition Enterprise
+Available for [Enterprise Edition](/getting-started/editions/) only.
+:::
+
 A configuration is a set of predefined variables and values that control how a data pipeline behaves during execution. By using configurations, you can dynamically adapt a pipeline to different environments or scenarios without modifying the pipeline itself.
 
 ## Configuration hierarchy
@@ -58,7 +62,7 @@ Prophecy supports the following data types for configs.
 | Data type          | Description                                                                                                     |
 | ------------------ | --------------------------------------------------------------------------------------------------------------- |
 | `string`           | A plain text value, entered via a single-line text input.                                                       |
-| `boolean`          | A true or false value, selected from a dropdown.                                                                |
+| `boolean`          | A `true` or `false` value, selected from a dropdown.                                                            |
 | `date`             | A calendar date in `dd-mm-yyyy` format, chosen using a date picker.                                             |
 | `timestamp`        | A specific date and time in `dd-mm-yyyyTHH:MM:SSZ+z` format (with time zone), selected using a datetime picker. |
 | `double`           | A 64-bit floating-point number entered in a numeric field.                                                      |
@@ -68,7 +72,7 @@ Prophecy supports the following data types for configs.
 | `short`            | A 16-bit integer entered in a numeric field.                                                                    |
 | `array`            | A list of values of the same type, added one by one in a multi-value input field.                               |
 | `record`           | A structured object with multiple named fields, configured through a nested group of inputs.                    |
-| `secret`           | A sensitive string (like a password or token), selected from your fabric's list of pre-configured secrets.      |
+| `secret`           | A sensitive string (like a password or token), selected from your fabric's list of preconfigured secrets.       |
 | `spark_expression` | A Spark SQL expression, written in a code editor with syntax highlighting.                                      |
 
 </details>

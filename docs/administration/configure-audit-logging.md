@@ -4,88 +4,37 @@ id: audit-logging
 description: List of audit events and sync options
 tags:
   - audit logs
-  - s3
   - reference
 ---
 
-Prophecy provides access to audit logs of activities performed by Prophecy users, allowing your enterprise to monitor detailed usage patterns.
-Prophecy cluster admins can configure an S3 bucket to sync these events from Prophecy to their environment. The lifespan of audit logs are configurable upon request.
+This page describes how Prophecy generates, stores, and shares audit logs for Prophecy deployments. Use this information to decide if you need to enable and export audit logs.
 
-An empty AWS S3 bucket with read/write permissions is required. Follow the guidelines below to set up the bucket correctly.
+Setting up audit logs requires collaboration with Prophecy. [Contact Prophecy](https://www.prophecy.io/request-a-demo) to:
 
-:::info
-This is only available for SaaS and requires manual effort. Please [contact us](https://www.prophecy.io/request-a-demo) to learn more about this in detail.
-:::
+- Enable audit logging in Prophecy-managed storage.
+- Export audit logs on demand.
+- Configure automatic syncing to your own storage.
+- Set a custom retention period for stored logs (by default, logs are stored indefinitely).
 
-## Configure S3 bucket for logs
+## Storage location
 
-1. Create the S3 Bucket:
-   - Log in to your AWS account and navigate to the S3 service.
-   - Click on "Create Bucket" to initiate the bucket creation process.
-   - Choose a unique name for your bucket, following the format: `prophecy-customer-backend-events-xyz`, where `xyz` represents your name or any identifier of your choice.
-   - Select the desired AWS Region for the bucket. Ideally, choose the `us-east-1 (N. Virginia)`. If this region is not available, please inform us which region you selected as it requires additional configuration on our end.
-2. Set Object Ownership:
+Prophecy stores audit logs in the same cloud platform as your deployment:
 
-   - After creating the bucket, ensure that the object ownership is set to `ACLs disabled (recommended)`. This can be done during or after the bucket creation process.
+- For AWS deployments, audit logs are stored in Amazon S3.
+- For Azure deployments, audit logs are stored in Azure Blob Storage.
+- For Google Cloud Platform deployments, audit logs are stored in Google Cloud Storage.
 
-3. Configuring Bucket Permissions for Prophecy:
-   - Open the newly created bucket in the AWS Management Console.
-   - Go to the "Permissions" section and locate the "Bucket Policy" tab.
-   - Apply the following permissions to allow Prophecy's IAM role to sync S3 objects using AWS DataSync.
+## Audit event reference
 
-```
-{
-  "Version": "2008-10-17",
-  "Statement": [
-    {
-      "Sid": "DataSyncCreateS3LocationAndTaskAccess",
-      "Effect": "Allow",
-      "Principal": {
-        "AWS": "arn:aws:iam::133450206866:role/AWSDataSyncS3BucketAccessCustomerBackendEventsRole"
-      },
-      "Action": [
-        "s3:GetBucketLocation",
-        "s3:ListBucket",
-        "s3:ListBucketMultipartUploads",
-        "s3:AbortMultipartUpload",
-        "s3:GetObject",
-        "s3:ListMultipartUploadParts",
-        "s3:PutObject",
-        "s3:GetObjectTagging",
-        "s3:PutObjectTagging",
-        "s3:DeleteObject"
-      ],
-      "Resource": [
-        "arn:aws:s3:::prophecy-customer-backend-events-xyz",
-        "arn:aws:s3:::prophecy-customer-backend-events-xyz/*"
-      ]
-    },
-    {
-      "Sid": "DataSyncCreateS3Location",
-      "Effect": "Allow",
-      "Principal": {
-        "AWS": "arn:aws:iam::133450206866:user/s3access"
-      },
-      "Action": "s3:ListBucket",
-      "Resource": "arn:aws:s3:::prophecy-customer-backend-events-xyz"
-    }
-  ]
-}
-```
+When audit logs are enabled for your Prophecy deployment, they capture the following information:
 
-In the sample above, replace `arn:aws:s3:::prophecy-customer-backend-events-xyz` with the ARN of your destination bucket.
+- User interactions with the Prophecy UI
+- GraphQL API calls
 
-Note that we need the Prophecy user principal (`s3access`) to be able to create S3 location at Prophecy's account and hence require this role with Sid `DataSyncCreateS3Location`.
-Please [contact us](mailto:success@Prophecy.io) with bucket ARN and region to enable this in your account.
+The following tables list the audit events that Prophecy logs, organized by entity type.
 
-## Audit events
-
-This table lists events for each Entity/Action along with the Request parameters grouped by the entity.
-
-:::info
-
-Prophecy Uses GraphQL queries so you may find some difference in Request and Response parameters depending upon where the Queries are used from.
-
+:::note
+Prophecy uses GraphQL for API operations. Request and response parameters may vary depending on where you call the query.
 :::
 
 | Entity     | Query                              | Description                                         | Request Parameters                                                                                                   |
@@ -158,3 +107,76 @@ Prophecy Uses GraphQL queries so you may find some difference in Request and Res
 |            | addTranspilerImport                | Importing files to Prophecy Transpiler              | ["name", "status", "storagePath", "transpilerType"]                                                                  |
 | Generic    | removeEntity                       | When any entity is removed                          | ["uid", "entityKind"]                                                                                                |
 |            | updateEntity                       | When any entity is updated                          | ["uid", "entityKind", "entityFieldName", "entityFieldValue"]                                                         |
+
+## Sync data to S3
+
+If your Prophecy deployment is hosted on AWS, you can sync your Prophecy audit logs to your own Amazon S3 bucket. Follow these steps to configure your S3 bucket and grant Prophecy the required access.
+
+### Step 1: Create the S3 bucket
+
+1. Open the Amazon S3 console and choose **Create bucket**.
+1. Enter a **Bucket name**, following the format `prophecy-customer-backend-events-foo`. Replace `foo` with an identifier for your organization.
+1. Choose a **Region**.
+
+   - Prophecy recommends u**s-east-1 (N. Virginia)** for best performance.
+   - If you select a different region, contact Prophecy so we can accommodate this preference.
+
+1. Complete the remaining setup options as needed, then create the bucket.
+1. Set **Object Ownership** to **ACLs disabled (recommended)**. You can apply this setting during bucket creation or by editing bucket permissions after creation.
+
+### Step 2: Configure bucket permissions for Prophecy
+
+1. In the Amazon S3 console, open your bucket and choose the **Permissions** tab.
+1. Under Bucket policy, select **Edit**.
+1. Paste the following policy JSON, replacing the placeholders as described below.
+
+```json
+{
+  "Version": "2008-10-17",
+  "Statement": [
+    {
+      "Sid": "DataSyncCreateS3LocationAndTaskAccess",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::133450206866:role/AWSDataSyncS3BucketAccessCustomerBackendEventsRole"
+      },
+      "Action": [
+        "s3:GetBucketLocation",
+        "s3:ListBucket",
+        "s3:ListBucketMultipartUploads",
+        "s3:AbortMultipartUpload",
+        "s3:GetObject",
+        "s3:ListMultipartUploadParts",
+        "s3:PutObject",
+        "s3:GetObjectTagging",
+        "s3:PutObjectTagging",
+        "s3:DeleteObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::prophecy-customer-backend-events-xyz",
+        "arn:aws:s3:::prophecy-customer-backend-events-xyz/*"
+      ]
+    },
+    {
+      "Sid": "DataSyncCreateS3Location",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::133450206866:user/s3access"
+      },
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::prophecy-customer-backend-events-xyz"
+    }
+  ]
+}
+```
+
+To use this example JSON:
+
+- Replace all instances of `prophecy-customer-backend-events-xyz` with your bucket ARN.
+- The Prophecy IAM user `s3access` requires the `DataSyncCreateS3Location` role to create S3 locations in Prophecy’s account.
+- After applying the policy, contact Prophecy and provide:
+
+  - Your bucket ARN
+  - The AWS region
+
+Prophecy will complete the configuration and enable syncing for your environment.

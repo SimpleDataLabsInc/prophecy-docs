@@ -2,7 +2,6 @@
 title: Amazon EMR
 id: emr
 description: Use Amazon EMR via Livy as your Spark execution engine
-sidebar_position: 5
 tags:
   - emr
   - livy
@@ -72,7 +71,7 @@ To connect EMR and Prophecy, you must create a fabric. You can either create an 
       width="75%"
     />
 
-    1. Add the job size to your environment by clicking on **Add job Size**. Configure your job size and click on **Add**.
+    1. Add the job size to your environment by clicking on **Add job Size**. [Configure your job size](docs/administration/fabrics/Spark-fabrics/emr-job-sizes.md) and click on **Add**.
 
     1. Select File System under **Scala Resolution mode** and input `s3://prophecy-public-bucket/prophecy-libs`
 
@@ -113,7 +112,7 @@ To connect EMR and Prophecy, you must create a fabric. You can either create an 
 
     1. Enter the S3 path that points to the location where you would like your logs and pipeline artifacts to persist.
 
-    1. Add the job size to your environment by clicking on **Add Job Size**. Configure your job size and click on **Add**.
+    1. Add the job size to your environment by clicking on **Add Job Size**. [Configure your job size](docs/administration/fabrics/Spark-fabrics/emr-job-sizes.md) and click on **Add**.
 
     1. Note that the Spark and Scala versions are fixed.
 

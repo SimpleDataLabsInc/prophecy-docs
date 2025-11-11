@@ -61,6 +61,10 @@ const config = {
         docs: {
           routeBasePath: "/",
           sidebarPath: require.resolve("./sidebars.js"),
+          admonitions: {
+            keywords: ["edition"],
+            extendDefaults: true,
+          },
           async sidebarItemsGenerator({
             defaultSidebarItemsGenerator,
             ...args
@@ -107,27 +111,16 @@ const config = {
         },
         items: [
           {
-            type: "dropdown",
-            label: "Docs",
-            position: "left",
-            items: [
-              { type: "doc", docId: "index", label: "Product docs" },
-              {
-                type: "doc",
-                label: "API docs",
-                docId: "api/index",
-              },
-            ],
+            type: "doc",
+            docId: "index",
+            label: "Getting started",
           },
-          {
-            to: "administration",
-            label: "Administration",
-            position: "left",
-          },
+          { type: "doc", docId: "analysts/index", label: "Guides" },
+          { type: "doc", docId: "api/index", label: "API" },
           {
             to: "https://transpiler.docs.prophecy.io/",
             position: "left",
-            label: "Migration guide",
+            label: "Migration",
           },
           {
             to: "/getting-help",

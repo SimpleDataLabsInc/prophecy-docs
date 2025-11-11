@@ -49,7 +49,6 @@ Use the following example to learn how to build a function and use it in your pi
 1. Add the following to the macro body
 
 ```jinja
-{% macro concat_name(first_name, last_name) %}
 CONCAT(
     UPPER(LEFT({{ first_name }}, 1)),
     LOWER(SUBSTRING({{ first_name }}, 2)),
@@ -57,7 +56,6 @@ CONCAT(
     UPPER(LEFT({{ last_name }}, 1)),
     LOWER(SUBSTRING({{ last_name }}, 2))
 )
-{% endmacro %}
 ```
 
 To use this function in your pipeline:

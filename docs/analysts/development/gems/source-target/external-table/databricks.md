@@ -14,7 +14,7 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
   sql_package_version=""
 />
 
-This page describes how to use Databricks external Source and Target gems to read from or write to tables. Only use an external Source and Target gem when Databricks is not the configured [SQL warehouse connection](/administration/fabrics/prophecy-fabrics/#connections). Otherwise, use the [Table gem](/analysts/bigquery-table).
+This page describes how to use Databricks external Source and Target gems to read from or write to tables. Only use an external Source and Target gem when Databricks is not the configured [SQL warehouse connection](docs/administration/fabrics/prophecy-fabrics/create-fabric.md#connections). Otherwise, use the [Table gem](/analysts/bigquery-table).
 
 :::info
 If you’re working with file types like CSV or Parquet from Databricks file storage, see [File types](/analysts/file-types) for guidance. This page focuses only on catalog tables.

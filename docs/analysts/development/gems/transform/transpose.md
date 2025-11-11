@@ -23,6 +23,10 @@ Use the Transpose gem to reshape your dataset by unpivoting columns—perfect fo
 - Takes data in wide format (multiple columns for similar data)
 - Converts it to long format (stacked rows with a single column for names and one for values)
 
+::::info Interactive Gem Example
+The Transpose gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 ## Parameters
 
 | Parameter    | Description                                                                          |

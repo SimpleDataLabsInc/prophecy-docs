@@ -17,6 +17,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 Use the UnionByName gem to combine rows from multiple datasets by matching column names. This can help when working with data from different sources where schemas might vary slightly in order or structure, but the column names are consistent.
 
+::::info Interactive Gem Example
+The UnionByName gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 ## Input and Output
 
 | Port    | Description                                                                |

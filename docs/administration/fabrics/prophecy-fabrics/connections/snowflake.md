@@ -33,6 +33,7 @@ The table below outlines whether the connection supports certain Prophecy featur
 | Read data with a [Source gem](/analysts/snowflake)                         | Yes       |
 | Write data with a [Target gem](/analysts/snowflake)                        | Yes       |
 | Browse data in the [Environment browser](/analysts/project-editor#sidebar) | Yes       |
+| Index tables in the [Knowledge Graph](/knowledge-graph)                    | No        |
 
 ## Connection parameters
 
@@ -46,7 +47,7 @@ To create a connection with Snowflake, enter the following parameters:
 | Schema                | Default schema for reading and writing data                                                                                                    |
 | Warehouse             | Name of the SQL warehouse to use for the connection                                                                                            |
 | Role                  | Snowflake [role](https://docs.snowflake.com/en/user-guide/security-access-control-overview) of the user to connect<br/>Example: `ACCOUNTADMIN` |
-| Authentication method | Enter your Snowflake username and use a [secret](docs/administration/secrets/secrets.md) to enter your password.                               |
+| Authentication method | Enter your Snowflake username and use a [secret](docs/administration/fabrics/prophecy-fabrics/secrets/secrets.md) to enter your password.      |
 
 ## Data type mapping
 

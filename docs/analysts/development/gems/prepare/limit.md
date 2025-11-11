@@ -20,6 +20,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 Limits the number of rows in the output.
 
+::::info Interactive Gem Example
+The Limit gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 ### Parameters
 
 | Parameter | Description                                                               | Required |

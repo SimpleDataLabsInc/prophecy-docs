@@ -19,6 +19,10 @@ import SQLRequirements from '@site/src/components/sql-gem-requirements';
 
 The DataEncoderDecoder gem allows you to encode or decode data in selected columns using a variety of standard techniques, including Base64, Hex, and AES encryption. You can transform values in-place or create new output columns with a prefix or suffix.
 
+::::info Interactive Gem Example
+The DataEncoderDecoder gem has a corresponding interactive gem example. See [Interactive gem examples](/analysts/gems#interactive-gem-examples) to learn how to run sample pipelines for this and other gems.
+::::
+
 ## Input and Output
 
 The DataEncoderDecoder gem accepts the following input and output.
