@@ -19,7 +19,7 @@ Available for [Enterprise Edition](/getting-started/editions/) only.
 
 The **Prophecy Build Tool (PBT)** is a command-line utility for building, testing, validating, and deploying Prophecy-generated projects. The Prophecy Build Tool lets you integrate Prophecy pipelines into existing CI/CD systems (such as GitHub Actions or Jenkins) and orchestration platforms (such as Databricks Workflows).
 
-You can use the PBT to run the same set of tasks described in [Project release and deployment](/ci-cd/deployment/deployment) from the command line or in a CI/CD script.
+You can use the PBT to run the same set of tasks described in [Project release and deployment](/engineers/deployment) from the command line or in a CI/CD script.
 
 ## Features
 
