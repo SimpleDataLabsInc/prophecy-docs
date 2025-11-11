@@ -20,11 +20,11 @@ This lets you integrate Prophecy orchestration directly with Databricks job sche
 
 There are a few ways to structure orchestration between Prophecy and Databricks:
 
-1. **(Smallest / Shared)** Databricks Workflow → Prophecy Scheduler → Databricks
-2. **(Recommended)** Prophecy Scheduler → Databricks. See [Scheduling Databricks Jobs](databricks-jobs) for more information.
+1. **(Smallest / Shared)** Databricks Workflow → Prophecy Scheduler → Databricks. Works for SQL pipelines only.
+2. **(Recommended for Spark pipelines)** Prophecy Scheduler → Databricks. See [Scheduling Databricks Jobs](databricks-jobs) for more information.
 3. **Prophecy Export Code:** CODE → Databricks. See [Alternative Schedulers](/Orchestration/alternative-schedulers) for more information.
 
-Option 2 is the most common for production environments: use the **Prophecy Scheduler** to coordinate Databricks jobs, maintaining Prophecy as the orchestration layer while using Databricks for execution. This document describes Option 1: how to call the Prophecy Scheduler from Databricks.
+Option 2 is the most common for Spark production environments: use the **Prophecy Scheduler** to coordinate Databricks jobs, maintaining Prophecy as the orchestration layer while using Databricks for execution. This document describes Option 1: how to call the Prophecy Scheduler from Databricks.
 
 :::edition Enterprise Only
 This deployment model requires the [Enterprise Edition](/getting-started/editions/) of Prophecy.
@@ -42,14 +42,14 @@ To begin, create a job in Databricks:
 
 In the dialog, configure the following parameters:
 
-| Field                     | Description                                                                                                                                                                                                  |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Task name **(Required)**  | Enter a descriptive task name such as `ProphecyRun`.                                                                                                                                                         |
-| Type **(Required)**       | Select **Python script**. Should be pre-selected.                                                                                                                                                            |
-| Source                    | Choose **Workspace**.                                                                                                                                                                                        |
-| Path                      | Provide the Databricks repository path to your Python trigger file, such as `/Users/databricks-dev-e2@simpledatalabs.com/pipeline_trigger.py`. See [sample trigger file](#sample-python-trigger-file) below. |
-| Compute                   | Select **Serverless (Autoscaling)**.                                                                                                                                                                         |
-| Environment and Libraries | Leave as **Default** unless you need custom libraries.                                                                                                                                                       |
+| Field                     | Description                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Task name **(Required)**  | Enter a descriptive task name such as `ProphecyRun`.                                                                                                                                                                                                                                                                                                                                                                         |
+| Type **(Required)**       | Select **Python script**. Should be pre-selected.                                                                                                                                                                                                                                                                                                                                                                            |
+| Source                    | Choose **Workspace**.                                                                                                                                                                                                                                                                                                                                                                                                        |
+| Path                      | Provide the Databricks Workspace path to your Python trigger file, such as `/Users/databricks-dev-e2@simpledatalabs.com/pipeline_trigger.py`. <br/>See [sample trigger file](#sample-python-trigger-file) below for an example of a Python trigger file.<br/>For information on Databricks workspace files, see [What are workspace files?](https://docs.databricks.com/aws/en/files/workspace) in Databricks documentation. |
+| Compute                   | Select **Serverless (Autoscaling)**.                                                                                                                                                                                                                                                                                                                                                                                         |
+| Environment and Libraries | Leave as **Default** unless you need custom libraries.                                                                                                                                                                                                                                                                                                                                                                       |
 
 ### Add parameters
 
