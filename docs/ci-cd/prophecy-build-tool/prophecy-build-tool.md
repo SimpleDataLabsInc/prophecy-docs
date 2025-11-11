@@ -17,7 +17,9 @@ tags:
 Available for [Enterprise Edition](/getting-started/editions/) only.
 :::
 
-The **Prophecy Build Tool (PBT)** is a command-line utility for building, testing, validating, and deploying Prophecy-generated projects. PBT lets you integrate Prophecy pipelines into existing CI/CD systems (such as GitHub Actions or Jenkins) and orchestration platforms (such as Databricks Workflows).
+The **Prophecy Build Tool (PBT)** is a command-line utility for building, testing, validating, and deploying Prophecy-generated projects. The Prophecy Build Tool lets you integrate Prophecy pipelines into existing CI/CD systems (such as GitHub Actions or Jenkins) and orchestration platforms (such as Databricks Workflows).
+
+You can use the PBT to run the same set of tasks described in [Project release and deployment](/ci-cd/deployment/deployment) from the command line or in a CI/CD script.
 
 ## Features
 
@@ -31,7 +33,7 @@ Using the Prophecy Build tool, you can:
 - Verify the project structure of Prophecy projects.
 - Deploy pipeline configurations.
 - Add git tags to a deployment.
-  = Set versions for PySpark projects.
+- Set versions for PySpark projects.
 
 ## Requirements
 
@@ -62,10 +64,12 @@ Options:
   --help  Show this message and exit.
 
 Commands:
-  build     Build Prophecy pipelines
-  deploy    Deploy pipelines and jobs
-  test      Run unit tests
-  validate  Validate pipelines for diagnostics
+  build     	Build Prophecy pipelines
+  deploy    	Deploy pipelines and jobs
+  test      	Run unit tests
+  validate  	Validate pipelines for diagnostics
+  versioning	Add versions to PySpark pipelines
+  tag					Create a Git tag for the version in `pbt_project.yml`
 
 ```
 
@@ -110,7 +114,7 @@ To continue despite build or parsing errors:
 pbt build --path /path/to/your/prophecy_project/ --ignore-build-errors --ignore-parse-errors
 ```
 
-If any pipeline fails to build, PBT exits with code 1 unless error-skipping flags are used.
+If any pipeline fails to build, the Build tool exits with code 1 unless error-skipping flags are used.
 
 ## Deploy pipelines and jobs
 
@@ -179,7 +183,7 @@ By default, all jobs are deployed. To deploy selected jobs, use `--job-ids`.
 pbt deploy --path /path/to/your/prophecy_project/ --job-ids "TestJob1,TestJob2"
 ```
 
-PBT automatically identifies and builds only the pipelines required by those jobs.
+The Prophecy Build Tool automatically identifies and builds only the pipelines required by those jobs.
 
 ### Deploy options summary
 
@@ -197,7 +201,7 @@ PBT automatically identifies and builds only the pipelines required by those job
 
 ## Test pipelines
 
-PBT supports unit testing of pipelines within a Prophecy project.
+The Prophecy Build Tool supports unit testing of pipelines within a Prophecy project.
 Tests run with the default configuration under `configs/resources/config`.
 
 ```bash
@@ -275,11 +279,11 @@ The Prophecy Build Tool lets you set various options for versioning as follows.
 | `--compare-to-target`, `--compare <TARGET_BRANCH>` | Checks if the current branch has a greater version number than the `<TARGET_BRANCH>` provided. Returns `0` (true) or `1` (false). Also performs a `--sync` check. <br/>**Note:** If `--bump` is also provided, it compares versions and applies the bump strategy if the current version is lower. |
 | `--make-unique`                                    | Makes a version unique for feature branches by adding build-metadata and prerelease identifiers. <br/> _Format:_ `MAJOR.MINOR.PATCH-PRERELEASE+BUILDMETADATA` <br/> _Examples:_ <br/> Python → `3.3.0 → 3.3.0-dev0+sha.j0239ruf0ew` <br/> Scala → `3.3.0 → 3.3.0-SNAPSHOT+sha.j0239ruf0ew`         |
 | `--pbt-only`                                       | Apply version operation to `pbt_project.yml` file only. Applicable with `--compare`, `--make-unique`, `--bump`, `--set`, or `--set-suffix`.                                                                                                                                                        |
-| `--help`                                           | Show this message and exit.                                                                                                                                                                                                                                                                        |
+| `--help`                                           | Show help for this command.                                                                                                                                                                                                                                                                        |
 
 ## Tagging builds
 
-The `pbt tag` command creates a Git tag for the version listed in your `pbt_project.yml`. This tag marks a specific point in your project’s history so you can easily track or redeploy that version later. By default, the tag name includes the branch (for example, `main/1.4.0`) and is pushed to the remote automatically. You can change or remove the branch name with `--branch`, create a custom tag with `--custom`, or skip pushing with `--no-push`.
+The `pbt tag` command creates a Git tag for the version listed in `pbt_project.yml`. This tag marks a specific point in your project’s history so you can track or redeploy that version later. By default, the tag name includes the branch (for example, `main/1.4.0`) and is pushed to the remote automatically. You can change or remove the branch name with `--branch`, create a custom tag with `--custom`, or skip pushing with `--no-push`.
 
 ### Tag options
 
@@ -290,7 +294,7 @@ The `pbt tag` command creates a Git tag for the version listed in your `pbt_proj
 | `--no-push`        | By default, the tag will be pushed to the origin after it is created. Use this flag to skip pushing the tag.                                                |
 | `--branch TEXT`    | Normally, the tag is prefixed with the branch name: `<branch_name>/<version>`. This option overrides `<branch_name>`. Provide `""` to omit the branch name. |
 | `--custom TEXT`    | Explicitly set the exact tag using a string. Ignores other options.                                                                                         |
-| `--help`           | Show this message and exit.                                                                                                                                 |
+| `--help`           | Show help for this command.                                                                                                                                 |
 
 ## Sample output
 
