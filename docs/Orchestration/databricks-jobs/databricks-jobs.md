@@ -16,17 +16,27 @@ A Prophecy Databricks job corresponds to a Databricks job definition under the h
 Available for [Enterprise Edition](/getting-started/editions/) only.
 :::
 
+## Summary of orchestration
+
+There are a few ways to structure orchestration between Prophecy and Databricks:
+
+1. **(Smallest / Shared)** Databricks Workflow → Prophecy Scheduler → Databricks See [Run Prophecy pipelines in Databricks jobs](automate-pipelines-databricks.md) for more information.
+2. **(Recommended)** Prophecy Scheduler → Databricks.
+3. **Prophecy Export Code:** CODE → Databricks. See [Alternative Schedulers](/Orchestration/alternative-schedulers) for more information.
+
+This document describes Option 2, the most common for production environments. With this option, you use the **Prophecy Scheduler** to coordinate Databricks jobs, maintaining Prophecy as the orchestration layer while using Databricks for execution.
+
 ## Schedule a Databricks job
 
-- You can create a job either for a specific project or generically for any project.
+You can create a job either for a specific project or generically for any project.
 
-  - To schedule a job for a specific project, either:
+- To schedule a job for a specific project, either:
 
-    - Click the **Schedule** button at the top of a pipeline's visual canvas, then click **New Job** in the dialog that opens. (You can still add other pipelines to the job.)
+  - Click the **Schedule** button at the top of a pipeline's visual canvas, then click **New Job** in the dialog that opens. (You can still add other pipelines to the job.)
 
-    - Click **+** to the right of **Jobs** in the left sidebar.
+  - Click **+** to the right of **Jobs** in the left sidebar.
 
-  - To schedule a job for any project, click the **Create Entity** button in the left navigation bar. Hover over the **Job** tile and select **Create**.
+- To schedule a job for any project, click the **Create Entity** button in the left navigation bar. Hover over the **Job** tile and select **Create**.
 
 When you create a new job, you're asked for the following details. Some fields are automatically populated when you schedule from a pipeline or the left sidebar.
 

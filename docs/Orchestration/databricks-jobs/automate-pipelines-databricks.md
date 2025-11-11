@@ -1,6 +1,7 @@
 ---
 title: Run Prophecy pipelines in Databricks jobs
 id: automate-pipelines-databricks
+slug: /engineers/automate-pipelines-databricks
 description: Run Prophecy automate pipelines in Databricks.
 tags:
   - jobs
@@ -18,10 +19,10 @@ This lets you integrate Prophecy orchestration directly with Databricks job sche
 There are a few ways to structure orchestration between Prophecy and Databricks:
 
 1. **(Smallest / Shared)** Databricks Workflow → Prophecy Scheduler → Databricks
-2. **(Recommended)** Prophecy Scheduler → Databricks
-3. **Prophecy Export Code:** CODE → Databricks
+2. **(Recommended)** Prophecy Scheduler → Databricks. See [Scheduling Databricks Jobs](databricks-jobs) for more information.
+3. **Prophecy Export Code:** CODE → Databricks. See [Alternative Schedulers](/Orchestration/alternative-schedulers) for more information.
 
-Option 2 is the most common for production environments: use the **Prophecy Scheduler** to coordinate Databricks jobs, maintaining Prophecy as the orchestration layer while using Databricks for execution. This document describes how to call the Prophecy Scheduler from Databricks (Option 1).
+Option 2 is the most common for production environments: use the **Prophecy Scheduler** to coordinate Databricks jobs, maintaining Prophecy as the orchestration layer while using Databricks for execution. This document describes Option 1: how to call the Prophecy Scheduler from Databricks.
 
 :::edition Enterprise Only
 This deployment model requires the [Enterprise Edition](/getting-started/editions/) of Prophecy.
@@ -69,6 +70,9 @@ They are passed to the script as runtime arguments:
 ### Run and monitor
 
 You can now run the job.
+
+Running invokes the actual job run in Databricks’ workflow engine.
+Once you have confirmed that the job runs correctly, you can set a schedule in the Databricks UI to run it automatically.
 
 In Databricks:
 
