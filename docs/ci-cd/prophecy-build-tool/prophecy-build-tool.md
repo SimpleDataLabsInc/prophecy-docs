@@ -65,7 +65,9 @@ Options:
 
 Commands:
   build     	Build Prophecy pipelines
+  build-v2    Same as build but with additional options
   deploy    	Deploy pipelines and jobs
+  deploy-v2   Same as deploy but with additional options
   test      	Run unit tests
   validate  	Validate pipelines for diagnostics
   versioning	Add versions to PySpark pipelines
@@ -92,15 +94,21 @@ The `build` command compiles all or specific pipelines within a Prophecy project
 pbt build --path /path/to/your/prophecy_project/
 ```
 
+You can also use a v2 version of the command, which adds an `--add-pom-python` option.
+
+```shell
+pbt build-v2 --path /path/to/your/prophecy_project/
+```
+
 ### Build options
 
-| Option                  | Description                                                                                              |
-| ----------------------- | -------------------------------------------------------------------------------------------------------- |
-| `--path TEXT`           | **Required.** Path to the directory containing the `pbt_project.yml` file.                               |
-| `--pipelines TEXT`      | Comma-separated list of pipelines to build.                                                              |
-| `--ignore-build-errors` | Continue even if parse errors occur; logs record details.                                                |
-| `--ignore-parse-errors` | Ignores any parsing errors in pipelines and returns success (`EXIT_CODE = 0`); refer to logs for details |
-| `--help`                | Show this message and exit                                                                               |
+| Option                  | Description                                                                                               |
+| ----------------------- | --------------------------------------------------------------------------------------------------------- |
+| `--path TEXT`           | **Required.** Path to the directory containing the `pbt_project.yml` file.                                |
+| `--pipelines TEXT`      | Comma-separated list of pipelines to build.                                                               |
+| `--ignore-build-errors` | Continue even if parse errors occur; logs record details.                                                 |
+| `--ignore-parse-errors` | Ignores any parsing errors in pipelines and returns success (`EXIT_CODE = 0`); refer to logs for details. |
+| `--add-pom-python`      | Available with `--build-v2`. Adds `pom.xml` and `MAVEN_COORDINATES` files to PySpark builds.              |
 
 To build only specific pipelines:
 
@@ -185,19 +193,30 @@ pbt deploy --path /path/to/your/prophecy_project/ --job-ids "TestJob1,TestJob2"
 
 The Prophecy Build Tool automatically identifies and builds only the pipelines required by those jobs.
 
+You can also use a v2 version of the command, which adds several options described in the table below.
+
+```bash
+pbt deploy-v2 --path /path/to/your/prophecy_project/ --job-ids "TestJob1,TestJob2"
+```
+
 ### Deploy options summary
 
-| Option                           | Description                                               |
-| -------------------------------- | --------------------------------------------------------- |
-| `--path TEXT`                    | **Required.** Path containing the `pbt_project.yml` file. |
-| `--dependent-projects-path TEXT` | Path containing dependent Prophecy projects.              |
-| `--release-version TEXT`         | Release version tag for this deployment.                  |
-| `--project-id TEXT`              | Prophecy project ID (used to replace placeholders).       |
-| `--prophecy-url TEXT`            | Prophecy base URL for deployment.                         |
-| `--fabric-ids TEXT`              | Comma-separated Fabric IDs to filter jobs.                |
-| `--skip-builds`                  | Skip building pipelines.                                  |
-| `--job-ids TEXT`                 | Comma-separated list of Job IDs to deploy.                |
-| `--help`                         | Show help and exit.                                       |
+| Option                           | Description                                                                                                                                   |
+| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--path TEXT`                    | **Required.** Path containing the `pbt_project.yml` file.                                                                                     |
+| `--dependent-projects-path TEXT` | Path containing dependent Prophecy projects.                                                                                                  |
+| `--release-version TEXT`         | Release version tag for this deployment.                                                                                                      |
+| `--project-id TEXT`              | In `deploy`, Prophecy project ID (used to replace placeholders). In `deploy-v2`, path to the directory containing the `pbt_project.yml` file. |
+| `--prophecy-url TEXT`            | Prophecy base URL for deployment. Removed in `build-v2`.                                                                                      |
+| `--fabric-ids TEXT`              | Comma-separated Fabric IDs to filter jobs.                                                                                                    |
+| `--skip-builds`                  | Skip building pipelines.                                                                                                                      |
+| `--job-ids TEXT`                 | Comma-separated list of Job IDs to deploy.                                                                                                    |
+| `--conf-dir TEXT`                | Available with `--deploy-v2`. Path to configuration file folders.                                                                             |
+| `--release-tag TEXT`             | Available with `--deploy-v2`. Specify a release tag.                                                                                          |
+| `--skip-pipeline-deploy`         | Available with `--deploy-v2`. Skip pipeline deployment and deploy only job definitions.                                                       |
+| `--migrate`                      | Available with `--deploy-v2`. Migrates a v1 project to the v2 format.                                                                         |
+| `--artifactory TEXT`             | Available with `--deploy-v2`. Allows use of PyPI/Maven packages instead of DBFS files for deployment.                                         |
+| `--skip-artifactory-upload`      | Available with `--deploy-v2`. Skips uploading to private artifactory (must be used with `--artifactory`).                                     |
 
 ## Test pipelines
 
