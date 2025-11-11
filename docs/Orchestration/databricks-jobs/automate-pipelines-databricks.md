@@ -211,7 +211,7 @@ Make sure your parameters match the exact Prophecy project and pipeline:
 If any of these are incorrect (for example, the wrong fabric ID), the trigger script will run but the pipeline will not start.
 
 :::tip
-You can confirm your fabric and project IDs in Prophecy under **Metadata > Fabrics** and **Metadata > Projects**.
+You can confirm your fabric and project IDs in Prophecy under **Metadata > Fabrics** and **Metadata > Projects**. When you open the entity's metadata page, you'll find the ID in the URL.
 :::
 
 ### Authentication errors
