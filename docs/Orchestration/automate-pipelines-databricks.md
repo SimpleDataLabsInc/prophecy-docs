@@ -9,7 +9,7 @@ tags:
   - Databricks
 ---
 
-You can use Databricks Workflows to invoke a Prophecy automate pipeline by running a small Python trigger script with the correct parameters (fabric ID, pipeline name, and project ID). This trigger script references Prophecy's [Trigger Pipeline API](/api/trigger-pipeline/trigger-pipeline-api).
+You can use Databricks Workflows to invoke a [Prophecy Automate pipeline](/administration/architecture#what-is-prophecy-automate) by running a small Python trigger script with the correct parameters (fabric ID, pipeline name, and project ID). This trigger script references Prophecy's [Trigger Pipeline API](/api/trigger-pipeline/trigger-pipeline-api).
 
 This lets you integrate Prophecy orchestration directly with Databricks job scheduling.
 
@@ -21,7 +21,7 @@ There are a few ways to structure orchestration between Prophecy and Databricks:
 2. **(Recommended)** Prophecy Scheduler → Databricks
 3. **Prophecy Export Code:** CODE → Databricks
 
-Option 2 is the most common for production environments: use the **Prophecy Scheduler** to coordinate Databricks jobs, maintaining Prophecy as the orchestration layer while using Databricks for execution.
+Option 2 is the most common for production environments: use the **Prophecy Scheduler** to coordinate Databricks jobs, maintaining Prophecy as the orchestration layer while using Databricks for execution. This document describes how to call the Prophecy Scheduler from Databricks (Option 1).
 
 :::edition Enterprise Only
 This deployment model requires the [Enterprise Edition](/getting-started/editions/) of Prophecy.
@@ -29,7 +29,9 @@ This deployment model requires the [Enterprise Edition](/getting-started/edition
 
 ## Create job
 
-1. In Databricks, go to **Jobs & Pipelines**.
+To begin, create a job in Databricks:
+
+1. Log in to Databricks and go to **Jobs & Pipelines**.
 1. Click **Create new > Job** and give it a name, such as `Compute Top Encounter [Trigger Demo]`.
 1. Under **Add your first task**, choose **Python script**. (If Python script does not display, choose **+ Add another task type** and select **Python script** in the dialog.)
 
@@ -48,7 +50,7 @@ In the dialog, configure the following parameters:
 
 ### Add parameters
 
-These identify which Prophecy pipeline to trigger.
+Next, you'll add parameters to the job. These identify which Prophecy pipeline to trigger.
 
 They are passed to the script as runtime arguments:
 
@@ -65,6 +67,8 @@ They are passed to the script as runtime arguments:
 | `project-id`    | The project within which that pipeline is defined.                             |
 
 ### Run and monitor
+
+You can now run the job.
 
 In Databricks:
 
