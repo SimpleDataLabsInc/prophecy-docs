@@ -61,17 +61,17 @@ pip3 install prophecy-build-tool
 Usage: pbt [OPTIONS] COMMAND [ARGS]...
 
 Options:
-  --help  Show this message and exit.
+  --help  Show help.
 
 Commands:
   build     	Build Prophecy pipelines
-  build-v2    Same as build but with additional options
+  build-v2      Same as build but with additional options
   deploy    	Deploy pipelines and jobs
-  deploy-v2   Same as deploy but with additional options
+  deploy-v2     Same as deploy but with additional options
   test      	Run unit tests
   validate  	Validate pipelines for diagnostics
   versioning	Add versions to PySpark pipelines
-  tag					Create a Git tag for the version in `pbt_project.yml`
+  tag           Create a Git tag for the version in `pbt_project.yml`
 
 ```
 
