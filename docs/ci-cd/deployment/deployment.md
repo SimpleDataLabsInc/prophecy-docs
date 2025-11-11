@@ -38,9 +38,9 @@ The release step ensures that your new project code is synced to your Git reposi
 
 The deploy step builds all the pipelines and gems, uploads the artifacts, and schedules all the jobs in the project to the respective environments.
 
-- Pipelines are compiled and built into an artifact (Wheel file for Python and Jar file for Scala). These artifacts are then uploaded to your environment.
-- Gems (including custom gems) are built and uploaded to an internal artifactory. They aren't directly copied to your environments, as they are used in generating code for the pipelines, not during job/pipeline execution. Note, the code for gems do get committed to your Git repo as part of the project.
-- Depending on the type of job (such as Databricks), jobs are copied to their respective environments as JSON files for Databricks jobs and as Python DAGs for Airflow.
+- Pipelines are compiled and built into an artifact (Wheel file for Python or Jar file for Scala). These artifacts are then uploaded to your environment.
+- Gems (including custom gems) are built and uploaded to an internal artifactory. They aren't directly copied to your environments, as they are used in generating code for the pipelines, not during job/pipeline execution. However, the code for gems does get committed to your Git repo as part of the project.
+- Depending on the type of job, jobs are copied to their respective environments as JSON files for Databricks jobs and as Python DAGs for Airflow.
 
 :::note
 There are no specific deployment steps needed for other project entities.
