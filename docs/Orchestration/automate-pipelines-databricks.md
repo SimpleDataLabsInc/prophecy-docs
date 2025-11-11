@@ -9,7 +9,7 @@ tags:
   - Databricks
 ---
 
-You can use Databricks Workflows to invoke a Prophecy automate pipeline by running a small Python trigger script with the correct parameters (fabric ID, pipeline name, and project ID).
+You can use Databricks Workflows to invoke a Prophecy automate pipeline by running a small Python trigger script with the correct parameters (fabric ID, pipeline name, and project ID). This trigger script references Prophecy's [Trigger Pipeline API](/api/trigger-pipeline/trigger-pipeline-api).
 
 This lets you integrate Prophecy orchestration directly with Databricks job scheduling.
 
@@ -22,6 +22,10 @@ There are a few ways to structure orchestration between Prophecy and Databricks:
 3. **Prophecy Export Code:** CODE → Databricks
 
 Option 2 is the most common for production environments: use the **Prophecy Scheduler** to coordinate Databricks jobs, maintaining Prophecy as the orchestration layer while using Databricks for execution.
+
+:::edition Enterprise Only
+This deployment model requires the [Enterprise Edition](/getting-started/editions/) of Prophecy.
+:::
 
 ## Create job
 
@@ -69,7 +73,11 @@ In Databricks:
    - If errors occur, the logs will display the failing component.
    - Links in the output allow you to open the pipeline in Prophecy for debugging.
 
-Output:
+### View output
+
+Databricks displays information on the job's output.
+
+Sample output is as follows:
 
 ```
 Prophecy Pipeline Trigger Status:
@@ -90,7 +98,7 @@ https://analytics.prophecy.io/metadata/ide/observation?observationTab=run-histor
 
 ## Sample Python trigger file
 
-The following code:
+An example of a Python trigger file appears below. The following code:
 
 - Authenticates with the Prophecy API using a Prophecy token.
 - Triggers a pipeline in a given project, fabric, and branch.
@@ -209,13 +217,12 @@ If the job never starts:
 
 - Check that **Compute** is set to **Serverless (Autoscaling)** or a valid cluster.
 - If your workspace doesn’t support Serverless, choose a specific **existing cluster**.
-- Verify that the Python environment includes the required Prophecy trigger dependencies.
 
 ### Path errors
 
 If Databricks cannot locate the trigger script:
 
-- Make sure the **Path** field matches the full path in the Workspace.
+- Make sure the **Path** field matches the full path in the Databricks repository.
 - Example:
   `/Users/databricks-dev-e2@simpledatalabs.com/pipeline_trigger.py`
 
@@ -223,7 +230,7 @@ If Databricks cannot locate the trigger script:
 
 If the job completes but you’re not sure whether the pipeline ran:
 
-- Check the job’s **Output** tab — successful runs include confirmation such as:
+- Check the job’s **Output** tab. Successful runs include confirmation such as:
 
   ```
   Success: True
@@ -236,9 +243,9 @@ If the job completes but you’re not sure whether the pipeline ran:
 
 If the Databricks job succeeds but the pipeline itself fails:
 
-- Open the linked Prophecy run in your output log.
-- Identify the failed **Gem**.
-- Review Prophecy validation output to fix the specific component.
+- Open the Prophecy pipeline linked in [the output log](#view-output).
+- Identify the failed gem.
+- Review Prophecy validation output for the gem fix the specific component.
 
 ### Timeout or network errors
 
