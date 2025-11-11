@@ -109,6 +109,7 @@ pbt build-v2 --path /path/to/your/prophecy_project/
 | `--ignore-build-errors` | Continue even if parse errors occur; logs record details.                                                 |
 | `--ignore-parse-errors` | Ignores any parsing errors in pipelines and returns success (`EXIT_CODE = 0`); refer to logs for details. |
 | `--add-pom-python`      | Available with `--build-v2`. Adds `pom.xml` and `MAVEN_COORDINATES` files to PySpark builds.              |
+| `--help`                | Show help for this command.                                                                               |
 
 To build only specific pipelines:
 
@@ -212,11 +213,12 @@ pbt deploy-v2 --path /path/to/your/prophecy_project/ --job-ids "TestJob1,TestJob
 | `--skip-builds`                  | Skip building pipelines.                                                                                                                      |
 | `--job-ids TEXT`                 | Comma-separated list of Job IDs to deploy.                                                                                                    |
 | `--conf-dir TEXT`                | Available with `--deploy-v2`. Path to configuration file folders.                                                                             |
-| `--release-tag TEXT`             | Available with `--deploy-v2`. Specify a release tag.                                                                                          |
+| `--release-tag TEXT`             | Available with `--deploy-v2`. Specify a release. tag.                                                                                         |
 | `--skip-pipeline-deploy`         | Available with `--deploy-v2`. Skip pipeline deployment and deploy only job definitions.                                                       |
-| `--migrate`                      | Available with `--deploy-v2`. Migrates a v1 project to the v2 format.                                                                         |
+| `--migrate`                      | Available with `--deploy-v2`. Migrates a v1 project to v2.format.                                                                             |
 | `--artifactory TEXT`             | Available with `--deploy-v2`. Allows use of PyPI/Maven packages instead of DBFS files for deployment.                                         |
 | `--skip-artifactory-upload`      | Available with `--deploy-v2`. Skips uploading to private artifactory (must be used with `--artifactory`).                                     |
+| `--help`                         | Show help for this command.                                                                                                                   |
 
 ## Test pipelines
 
@@ -234,7 +236,7 @@ pbt test --path /path/to/your/prophecy_project/
 | `--path TEXT`                | **Required.** Path containing the `pbt_project.yml` file.      |
 | `--driver-library-path TEXT` | Path to JARs for `prophecy-python-libs` or other dependencies. |
 | `--pipelines TEXT`           | Comma-separated list of pipelines to test.                     |
-| `--help`                     | Show help and exit.                                            |
+| `--help`                     | Show help for this command.                                    |
 
 If `--driver-library-path` is omitted, dependencies are fetched automatically from Maven Central.
 
@@ -273,7 +275,6 @@ pbt validate --path /path/to/your/prophecy_project/
 | ---------------------------- | --------------------------------------------------------- |
 | `--path TEXT`                | **Required.** Path containing the `pbt_project.yml` file. |
 | `--treat-warnings-as-errors` | Treat warnings as errors during validation.               |
-| `--help`                     | Show help and exit.                                       |
 
 ## Applying versions to PySpark projects
 
