@@ -95,7 +95,7 @@ DatePrediction,TemperatureCelsius,HumidityPercent,WindSpeed,Condition
 2025-03-10,23,48,20,Cloudy
 ```
 
-Now, let's make sure the data is properly loaded. Because the copy-pasted data is standard CSV format, the pre-configured properties in the **Properties** tab are correct. Because of this, Prophecy will know how to infer the schema of the data.
+Now, let's make sure the data is properly loaded. Because the copy-pasted data is standard CSV format, the preconfigured properties in the **Properties** tab are correct. Because of this, Prophecy will know how to infer the schema of the data.
 
 1. Click the **Infer Schema** button.
 1. Review the inferred schema. Depending on your Spark engine, you might see different inferred types.
