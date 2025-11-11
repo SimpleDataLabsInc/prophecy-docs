@@ -12,6 +12,8 @@ tags:
 
 You can use Databricks Workflows to invoke a [Prophecy Automate pipeline](/administration/architecture#what-is-prophecy-automate) by running a small Python trigger script with the correct parameters (fabric ID, pipeline name, and project ID). This trigger script references Prophecy's [Trigger Pipeline API](/api/trigger-pipeline/trigger-pipeline-api).
 
+See [the Databricks job page](https://docs.databricks.com/aws/en/jobs/) for more information on Databricks Workflows.
+
 This lets you integrate Prophecy orchestration directly with Databricks job scheduling.
 
 ## Summary of orchestration
