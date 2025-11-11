@@ -1,60 +1,29 @@
 ---
-title: Pipelines
-id: pipelines
-slug: /pipelines
-description: Build pipelines in projects to execute data ingestion, transformation, and egress
+title: Write from pipelines consistently
+id: pipelines-write-consistently
+slug: /pipelines/pipelines-write-consistently
+description: Write data consistently.
 tags:
   - pipeline
   - concepts
+  - write
 ---
 
-Pipelines are essential components in data processing workflows, enabling the automated movement and transformation of data. They define a sequence of steps that extract data from a source, process or transform it, and load it into a destination system. Pipelines ensure data flows efficiently and consistently, which can be tracked using built-in [pipeline monitoring](/analysts/monitoring).
+Egress may involve writing to warehouse tables within a Prophecy fabric or to external systems.
 
-Let's explore the core concepts of pipelines, including ingestion, egress, transformation, and deployment.
+When you write to a warehouse table, data transfer is _transactional_, meaning that transactions are guaranteed to succeed (if transactions fail, the process is restarted).
 
-## Ingestion and egress
-
-Ingestion refers to the process of collecting raw data from various sources, such as databases, APIs, web applications, and so on. This step ensures that data is captured and stored for further processing.
-
-Egress, on the other hand, is the final step where processed data is delivered to its destination. This could be a data warehouse, a dashboard, or another external system.
-
-You define ingestion and egress during pipeline development. These may differ depending on whether the pipelines are executed in a development or production environment. The way Prophecy performs ingestion and egress will also vary between [project types](/projects).
-
-## Data transformation
-
-Once data is ingested, it often needs to be cleaned, enriched, and structured to make it useful. Data transformation involves modifying data formats, aggregating values, filtering records, and applying business logic. Some common transformations include:
-
-- **Normalization & Standardization:** Ensuring consistency across datasets.
-- **Aggregation:** Summarizing large datasets for analysis.
-- **Filtering & Enrichment:** Removing irrelevant data and enhancing it with additional attributes.
-
-## Pipeline deployment
-
-A key goal of pipeline development is to make the pipeline ready for deployment in production. Once a pipeline is developed, tested, and validated, it can be deployed to an execution environment where it will run automatically according to the defined schedule or trigger. The deployment process ensures that the pipeline is set up to handle batch processing with minimal manual intervention.
-
-During deployment, you configure the environment, such as selecting the appropriate compute resources, scheduling execution times, and ensuring the pipeline is connected to the necessary data sources and destinations. You also choose which version of the pipeline will be deployed.
-
-When your pipelines are deployed, you can make sure they run as expected using our built-in [monitoring](/analysts/monitoring) feature.
-
-## Consistent writes with egress
-
-Egress may involve writing to warehouse tables within a Prophecy fabric or to external systems. When you write to a warehouse table, data transfer is _transactional_, meaning that transactions are guaranteed to succeed (if transactions fail, the process is restarted). When you write to external systems, you should implement practices to ensure that data is written consistently, or _idempotently_.
-
-<!--keep working on this section-->
+When you write to external systems, you should implement practices to ensure that data is written consistently.
 
 ### Back up data in a data warehouse table
 
-After you ingest data from any source other than a Table gem, it is best practice to set up a target table gem in order to [write data to a Data warehouse table](/analysts/source-target). That way, your data is safely backed up with a transactional write, and you can safely restart pipelines without fear of losing data.
+After you ingest data from any source other than a Table gem, it is best practice to set up a target table gem in order to [write this data to a Data warehouse table](/analysts/source-target). That way, your data is safely backed up with a transactional write, and you can safely restart pipelines without fear of losing data.
 
 ```md
 :::note
 To ensure that all data is safely backed up, it is best practice to avoid incorporating [FTP](/administration/fabrics/prophecy-fabrics/connections/sftp) delete or move into your pipeline.
 :::
 ```
-
-<!--above refers to an FTP source gem-->
-
-<!--need to write to one table--cannot write to multiple and maintain transactionality-->
 
 ### Use eventual consistency to write data to external systems
 
@@ -74,9 +43,7 @@ For example, imagine a Prophecy updates a customer’s status to “Active” in
 Prophecy cannot _guarantee_ the consistency of writes to external systems (eventual consistency is not enforced), but by designing with eventual consistency in mind, you can reduce risk.
 :::
 
-#### Eventual consistency when writing to external targets
-
-_Idempotency_ is the foundation of eventual consistency: if a write can be re-run safely, then retries or delayed updates won’t corrupt external systems.
+#### Principles of eventual consistency
 
 These principles apply whether the target is cloud storage, an external warehouse table, or a third-party API with batch endpoints.
 
@@ -94,10 +61,3 @@ Other tips to maintain eventual consistency:
 - Avoid **non-deterministic functions** persisted to columns (`current_timestamp`, `random()`, `uuid_generate_v4()`), unless part of the key.
 - Avoid run-time values in `UPDATE`/`INSERT` sets unless explicitly required. (That is, do not parameterize `UPDATE`/`INSERT`.) Use **data-driven filters** (such as `updated_at > (select max(updated_at) from {{ this }})`), not “time of run.”
 - Avoid using `ORDER BY … LIMIT` used to persist a subset unless you have a consistent tie-breaker (such as a unique key).
-
-## What's next
-
-Learn about different types of pipeline development:
-
-- [Pipeline development for Analysts](docs/analysts/development/development.md) using Prophecy Automate and a SQL warehouse.
-- [Pipeline development for Engineers](/engineers/pipeline-development) using Spark execution environments.
