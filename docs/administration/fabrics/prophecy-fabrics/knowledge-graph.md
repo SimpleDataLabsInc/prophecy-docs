@@ -1,5 +1,5 @@
 ---
-title: Knowledge graph crawling
+title: Knowledge graph indexer
 id: knowledge-graph-config
 description: Configure automated knowledge graph indexing for Prophecy fabrics
 tags:
@@ -11,26 +11,30 @@ A [knowledge graph](/knowledge-graph) is an internal index that maps your data e
 
 When you interact with AI agents, Prophecy uses the knowledge graph to add context to your prompts. This context helps AI agents generate accurate SQL code that references the correct tables and columns in your warehouse.
 
-You can either manually run the crawler or schedule the crawler to run automatically at defined intervals.
+You can either manually run the indexer or schedule it to run automatically at defined intervals.
 
 :::info
 Prophecy only indexes tables from your SQL warehouse. Datasets from external connections are not included in the knowledge graph.
 :::
 
-## How knowledge graph crawling works
+## How indexing works
 
-The knowledge graph crawler is a process that scans your SQL warehouse and builds the knowledge graph index. The crawler:
+The knowledge graph indexer is a process that:
 
 1. Connects to your SQL warehouse using configured credentials.
 2. Scans catalogs and schemas that the identity has access to in your warehouse connection.
 3. Indexes table names, schemas, column names, data types, and other metadata.
 4. Updates the knowledge graph with this information.
 
-## Manually trigger knowledge graph crawling
+## Manually trigger indexing
 
-You can manually crawl tables without configuring additional knowledge graph settings. In this case, the crawler uses the pipeline development credentials for permissions scope.
+You can manually index tables without configuring additional knowledge graph settings. In this case, the indexer uses the pipeline development credentials for permissions scope.
 
-To manually trigger crawling from your fabric:
+:::info
+If you [configure credentials](#add-authentication-credentials) for the automated knowledge graph indexer, these credentials will also be used for manually-triggered crawls.
+:::
+
+To manually trigger indexing from your fabric:
 
 1. Open the [SQL Warehouse Connection](/administration/fabrics/prophecy-fabrics/connections/) details in your fabric settings.
 1. At the bottom of the connection dialog, you’ll find a **Table Indexing Status**.
@@ -45,58 +49,58 @@ To trigger this process from the [Environment tab](/analysts/connections#environ
 1. Click **Refresh** to reindex the SQL warehouse.
 
 :::tip
-You might be prompted to manually trigger a crawl if the [agent](/analysts/ai-explore#troubleshooting) can’t locate a table during a conversation.
+You might be prompted to manually trigger indexing if the [agent](/analysts/ai-explore#troubleshooting) can’t locate a table during a conversation.
 :::
 
-## Automate knowledge graph crawling
+## Automate knowledge graph indexer
 
-Configure automated knowledge graph crawling to keep your index current without manual intervention. Automated crawling runs on a schedule you define, scanning your SQL warehouse and updating the knowledge graph as your data environment changes. You configure authentication credentials for the crawler separately from pipeline execution credentials, allowing you to control which tables get indexed and how results are scoped for different users.
+Configure scheduled crawling to keep your index up-to-date without manual intervention. Automated indexing runs on a schedule you define, scanning your SQL warehouse and updating the knowledge graph as your data environment changes. You configure authentication credentials for the knowledge graph indexer separately from pipeline execution credentials, allowing you to control which tables get indexed and how results are scoped for different users.
 
 ### Prerequisites
 
-Before configuring knowledge graph crawling, you must:
+Before configuring the knowledge graph indexer, you must:
 
 - Upgrade to Prophecy 4.2.2 or later.
 - Configure your SQL warehouse connection with a [Databricks connection](docs/administration/fabrics/prophecy-fabrics/connections/databricks.md). Other SQL warehouses are not supported.
 - Be an administrator. Though there are no role-based restrictions for configuring the knowledge graph crawler, you need to understand how authentication works in Prophecy and in Databricks.
 
-### Enable knowledge graph crawling
+### Enable and configure automated indexing
 
-To configure knowledge graph crawling for a fabric:
+To configure the knowledge graph indexer for a fabric:
 
 1. In Prophecy, navigate to **Metadata > Fabrics**.
-1. Select the fabric where you will enable crawling.
+1. Select the fabric where you will enable indexing.
 1. Open the **Connections** tab.
 1. Click the pencil icon to edit the **SQL Warehouse Connection**.
-1. In the connection dialog, find the **Knowledge Graph Crawler** tile and toggle on **Enable Knowledge Graph Crawling**.
+1. In the connection dialog, find the **Knowledge Graph Indexer** tile and toggle on **Enable Knowledge Graph Periodic Indexing**.
 1. Configure the [authentication method](#add-authentication-credentials) as described below.
-1. Optionally, [configure a schedule](#configure-the-crawler-schedule) to run the crawler automatically.
+1. Optionally, [configure a schedule](#configure-the-indexer-schedule) to run the crawler automatically.
 
 ### Add authentication credentials
 
-You can configure the knowledge graph crawler to use separate authentication credentials from pipeline execution.
+You can configure the knowledge graph indexer to use separate authentication credentials from pipeline execution.
 
 - **Pipeline Development and Scheduled Execution** credentials control how pipelines authenticate when they run.
-- **Knowledge Graph Crawler** credentials control how the crawler authenticates when it indexes your warehouse on an automated schedule.
+- **Knowledge Graph Indexer** credentials control how the crawler authenticates when it indexes your warehouse on an automated schedule.
 
 :::caution
-The knowledge graph crawler permissions should be equal to or a superset of the pipeline execution permissions. This ensures that the same tables you use in your pipelines are indexed by the knowledge graph. However, Prophecy does not enforce this.
+The knowledge graph indexing permissions should be equal to or a superset of the pipeline execution permissions. This ensures that the same tables you use in your pipelines are indexed by the knowledge graph. However, Prophecy does not enforce this.
 :::
 
-There are multiple ways that Prophecy can assign permissions to automated knowledge graph crawls:
+There are multiple ways that Prophecy can assign permissions to the automated indexer:
 
 - [Service Principal OAuth](#service-principal-oauth-recommended)
 - [User OAuth](#user-oauth)
-- [Personal Access Token (PAT)](#pat)
+- [Personal Access Token (PAT)](#personal-access-token)
 
 ### Service Principal OAuth (recommended)
 
-Use a service principal to crawl your data environment. Recommended for production and scheduled crawling, since credentials don't expire.
+Use a service principal to index your data environment. Recommended for production and scheduled indexing, since credentials don't expire.
 
 - **Configuration**: Reuse credentials provided for pipeline development or provide a different **Service Principal Client ID** and **Client Secret**.
-- **What gets indexed**: The crawler indexes all tables that the service principal can access.
+- **What gets indexed**: The indexer indexes all tables that the service principal can access.
 
-The service principal used for knowledge graph crawling must have sufficient permissions in Databricks:
+The service principal used for knowledge graph indexing must have sufficient permissions in Databricks:
 
 - **Catalog access**: Manage access on the catalog specified in your warehouse connection.
 - **Table listing**: Ability to list tables in the catalog and schemas you want to index.
@@ -109,36 +113,30 @@ When users interact with AI agents, the knowledge graph scopes results based on 
 
 ### User OAuth
 
-Use an individual's identity to crawl your data environment.
+Use an individual's identity to index your data environment.
 
 - **Configuration**: User OAuth always uses the same app registration as configured for pipeline development.
-- **What gets indexed**: The crawler indexes all tables that the individual user can access.
+- **What gets indexed**: The indexer indexes all tables that the individual user can access.
 - **Limitations**: This requires frequent user logins. When user credentials expire, scheduled crawling can fail.
 
-### PAT
+### Personal Access Token
 
-Use a Personal Access Token to crawl your data environment.
+Use a Personal Access Token to index your data environment.
 
 - **Configuration**: If you use a PAT for pipeline development, Prophecy reuses your PAT identity for knowledge graph crawling.
-- **What gets indexed**: The crawler indexes all tables that the PAT identity can access.
+- **What gets indexed**: The indexer indexes all tables that the PAT identity can access.
 
-### Configure the crawler schedule
+### Configure the indexer schedule
 
-You can schedule the knowledge graph crawler to run automatically at defined intervals. The schedule must have a defined frequency and timezone. The default timezone is the timezone from where you access Prophecy.
+You can schedule the knowledge graph indexer to run automatically at defined intervals. The schedule must have a defined frequency and timezone. The default timezone is the timezone from where you access Prophecy.
 
 The following tables define the required parameters for each frequency.
 
-#### Minute
-
-| Parameter    | Description                                                                          | Default  |
-| ------------ | ------------------------------------------------------------------------------------ | -------- |
-| Repeat every | The interval in minutes between pipeline runs.<br/>Example: Repeat every 10 minutes. | 1 minute |
-
 #### Hourly
 
-| Parameter             | Description                                                                                                                | Default                               |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
-| Repeat every ... from | The interval in hours between pipeline runs, starting at a specific time.<br/>Example: Repeat every 2 hours from 12:00 AM. | Every 1 hour<br/>starting at 12:00 AM |
+| Parameter             | Description                                                                                                                | Default                              |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| Repeat every ... from | The interval in hours between pipeline runs, starting at a specific time.<br/>Example: Repeat every 2 hours from 12:00 AM. | Every 1 hour<br/>starting at 2:00 AM |
 
 #### Daily
 
@@ -148,22 +146,7 @@ The following tables define the required parameters for each frequency.
 
 #### Weekly
 
-| Parameter | Description                                                                                         | Default  |
-| --------- | --------------------------------------------------------------------------------------------------- | -------- |
-| Repeat on | The day(s) of the week that the pipeline will run.<br/>Example: Repeat on Monday, Wednesday, Friday | Sunday   |
-| Repeat at | The time of the day that the pipeline will run.<br/>Example: Repeat at 9:00 AM                      | 12:00 AM |
-
-#### Monthly
-
-| Parameter | Description                                                                                     | Default  |
-| --------- | ----------------------------------------------------------------------------------------------- | -------- |
-| Repeat on | The day of the month that the pipeline will run.<br/>Example: Repeat on the first of the month. | 1        |
-| Repeat at | The time of the day that the pipeline will run.<br/>Example: Repeat at 9:00 AM                  | 12:00 AM |
-
-#### Yearly
-
-| Parameter     | Description                                                                                         | Default  |
-| ------------- | --------------------------------------------------------------------------------------------------- | -------- |
-| Repeat every  | The day and month that the pipeline will run each year.<br/>Example: Repeat every March 15.         | None     |
-| Repeat on the | The specific occurrence of a day in a given month.<br/>Example: Repeat on the third Monday of June. | None     |
-| Repeat at     | The time of the day that the pipeline will run.<br/>Example: Repeat at 9:00 AM                      | 12:00 AM |
+| Parameter | Description                                                                                         | Default |
+| --------- | --------------------------------------------------------------------------------------------------- | ------- |
+| Repeat on | The day(s) of the week that the pipeline will run.<br/>Example: Repeat on Monday, Wednesday, Friday | Sunday  |
+| Repeat at | The time of the day that the pipeline will run.<br/>Example: Repeat at 9:00 AM                      | 2:00 AM |
