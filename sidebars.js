@@ -480,7 +480,7 @@ const sidebars = {
           items: [
             {
               type: "category",
-              label: "Agent chat",
+              label: "Prophecy Agent",
               link: {
                 type: "doc",
                 id: "analysts/development/ai-agent/ai-chat",
