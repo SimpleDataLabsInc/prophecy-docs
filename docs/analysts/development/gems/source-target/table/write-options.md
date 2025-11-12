@@ -12,15 +12,15 @@ When writing data to a table, there are multiple ways to determine how the data 
 
 The following table describes the write modes that Prophecy supports by SQL warehouse and gem type.
 
-| Write mode                          | Databricks table | Databricks model | BigQuery table | BigQuery model | Snowflake model |
-| ----------------------------------- | ---------------- | ---------------- | -------------- | -------------- | --------------- |
-| Wipe and Replace Table              | ✔                | ✔                | ✔              | ✔              | ✔               |
-| Append Row                          | ✔                | ✔                | ✔              |                | ✔               |
-| Merge - Upsert Row                  | ✔                | ✔                | ✔              | ✔              | ✔               |
-| Merge - Wipe and Replace Partitions | ✔                | ✔                | ✔              | ✔              |                 |
-| Merge - SCD2                        | ✔                | ✔                | ✔              | ✔              | ✔               |
-| Merge - Update Row                  | ✔                | ✔                |                |                |                 |
-| Merge - Delete and Insert           |                  |                  |                |                | ✔               |
+| Write mode                                  | Databricks table | Databricks model | BigQuery table | BigQuery model | Snowflake model |
+| ------------------------------------------- | ---------------- | ---------------- | -------------- | -------------- | --------------- |
+| Wipe and Replace Table                      | ✔                | ✔                | ✔              | ✔              | ✔               |
+| Append Row                                  | ✔                | ✔                | ✔              |                | ✔               |
+| Merge - Upsert Row                          | ✔                | ✔                | ✔              | ✔              | ✔               |
+| Merge - Wipe and Replace Partitions         | ✔                | ✔                | ✔              | ✔              |                 |
+| Merge - SCD2                                | ✔                | ✔                | ✔              | ✔              | ✔               |
+| Merge - Wipe and Replace Rows Per Predicate | ✔                | ✔                |                |                |                 |
+| Merge - Delete and Insert                   |                  |                  |                |                | ✔               |
 
 ## Write modes
 
@@ -288,7 +288,7 @@ Notice that the original Route A record now has an end date (`2024-01-15` taken 
 
 ---
 
-### Merge - Update Row
+### Merge - Wipe and Replace Rows Per Predicate
 
 Update records that match conditions defined in the **Use Predicate** parameter. Instead of updating individual rows, it replaces the entire partition of the table that matches the given predicate. The predicate defines which rows in the target table should be fully replaced with the incoming data.
 

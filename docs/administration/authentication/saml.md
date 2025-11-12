@@ -60,7 +60,7 @@ To set up SAML authentication in Prophecy:
 SCIM allows Prophecy to automatically provision and deprovision users and teams based on your IdP configuration. To set up SCIM in Prophecy:
 
 1. Ensure that SCIM is enabled in your Prophecy environment.
-1. Complete the [SAML configuration](#saml-configuration) described above.
+1. Complete the [SAML configuration](#set-up-saml) described above.
 1. Click **Generate SCIM Token** and copy the value of the token. You will use this in your IdP settings later.
 
 After completing these steps, you'll create users and groups in your IdP directly. See [Group-to-team mapping](docs/administration/authentication/group-team-mapping.md) to learn about group naming conventions.

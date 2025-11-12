@@ -21,10 +21,6 @@ The Prophecy lineage extractor is a Python tool that retrieves and exports linea
 
 You can run the lineage extractor manually or integrate it into a CI workflow to automate report generation. This page covers how to run the extractor via command line and how to automate it using GitHub Actions or GitLab CI.
 
-:::info
-The lineage extractor only supports extraction from Spark pipelines and SQL pipelines. It does not support SQL models.
-:::
-
 ## Prerequisites
 
 To use the lineage extractor for SQL pipelines:
@@ -35,16 +31,17 @@ To use the lineage extractor for SQL pipelines:
 
 Use the lineage extractor Python command to export the lineage of a specific pipeline.
 
-| Argument        | Type   | Required | Description                                                                                                                                                               |
-| --------------- | ------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--project-id`  | String | Yes      | Prophecy project ID. You can find it in the project URL. Example: `https://app.prophecy.io/metadata/entity/projects/57040` where 57040 is the project ID.                 |
-| `--pipeline-id` | String | Depends  | One or more pipeline IDs in `ProjectID/PipelineName` format, comma-separated. <br/>Required for the `lineage` reader; optional for the `knowledge-graph` reader.          |
-| `--output-dir`  | String | Yes      | Directory path where the extractor writes the lineage report.                                                                                                             |
-| `--reader`      | String | No       | Reader to use. Set to `lineage` for Spark projects or `knowledge-graph` for SQL projects.                                                                                 |
-| `--fmt`         | String | No       | Output format. Use `excel` (default) or `openlineage` (JSON in OpenLineage format).                                                                                       |
-| `--branch`      | String | No       | Branch to extract lineage from. Defaults to `main`.                                                                                                                       |
-| `--send-email`  | Flag   | No       | Sends the report by email. Requires SMTP configuration. <br/>Learn more in [Integration with GitHub Actions or GitLab CI](#integration-with-github-actions-or-gitlab-ci). |
-| `--run-for-all` | Flag   | No       | Generates lineage for all pipelines in the project, rather than just one pipeline.                                                                                        |
+| Argument        | Type   | Required | Description                                                                                                                                                                                                        |
+| --------------- | ------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `--project-id`  | String | Yes      | Prophecy project ID. You can find it in the project URL. Example: `https://app.prophecy.io/metadata/entity/projects/57040` where 57040 is the project ID.                                                          |
+| `--reader`      | String | No       | Reader to use. Set to `lineage` for Spark projects or `knowledge-graph` for SQL projects.                                                                                                                          |
+| `--pipeline-id` | String | Depends  | One or more comma-separated pipeline IDs. The pipeline ID is equivalent to the name of the pipeline.<br/>Required for the `lineage` reader; optional for the `knowledge-graph` reader.                             |
+| `--model-id`    | String | No       | One or more comma-separated model IDs. The model ID is equivalent to the name of the model. Only applicable when `--reader` is set to `knowledge-graph`. When defined, retrieves lineage for the specified models. |
+| `--output-dir`  | String | Yes      | Directory path where the extractor writes the lineage report.                                                                                                                                                      |
+| `--fmt`         | String | No       | Output format. Use `excel` (default) or `openlineage` (JSON in OpenLineage format).                                                                                                                                |
+| `--branch`      | String | No       | Branch to extract lineage from. Defaults to `main`.                                                                                                                                                                |
+| `--send-email`  | Flag   | No       | Sends the report by email. Requires SMTP configuration. <br/>Learn more in [Integration with GitHub Actions or GitLab CI](#integration-with-github-actions-or-gitlab-ci).                                          |
+| `--run-for-all` | Flag   | No       | Generates lineage for all pipelines in the project, rather than just one pipeline.                                                                                                                                 |
 
 <!-- | `--recursive-extract` | `flag` | No       | Set to `true` to recursively trace upstream column changes. Set to `false` to disable this behavior.                                                                                         | -->
 
