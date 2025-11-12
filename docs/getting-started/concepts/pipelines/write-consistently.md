@@ -1,5 +1,5 @@
 ---
-title: Write from pipelines consistently
+title: Writing from pipelines | Ensuring consistent data loads
 id: pipelines-write-consistently
 slug: /pipelines/pipelines-write-consistently
 description: Write data consistently.
@@ -33,9 +33,9 @@ B(Source Gem: Anything other than a Table)-->C(Target Gem: Data Warehouse Table)
 To ensure that all data is safely backed up, it is best practice to avoid incorporating [FTP](/administration/fabrics/prophecy-fabrics/connections/sftp) delete or move into your pipeline.
 :::
 
-### Use eventual consistency to write data to external systems
+### Writing to external systems with eventual consistency
 
-When Prophecy writes data to external systems (such as APIs, third-party databases, or data warehouses), immediate consistency cannot always be guaranteed. That means there’s a chance data can be delayed, duplicated, or temporarily out of sync, which could lead to stale or mismatched queries or reports.
+When Prophecy writes data to external systems (such as APIs, third-party databases, or data warehouses), immediate consistency cannot always be guaranteed. That means there’s a chance data can be delayed, duplicated, old data can overwrite new data, partial updates may leave inconsistent states, and downstream reports may reference stale data.
 
 You can avoid some of these problems by writing data with principles of _eventual consistency_.
 
@@ -50,25 +50,7 @@ If the unique key isn’t consistent (such as a timestamp that changes each run)
 For example, imagine a Prophecy updates a customer’s status to “Active” in an external CRM. At first, the CRM might still show “Pending” until the update arrives, but eventually, it should match. To make this process reliable, we want to write using a unique `customer_id`.
 
 <Mermaid
-value={`
-
-erDiagram
-direction LR
-ORDER_TABLE_PROPHECY {
-string customer_id ""  
- date orderDate ""  
- string status ""  
- }
-
-    ORDER_TABLE_EXTERNAL {
-    	string customer_id  ""
-    	date orderDate  ""
-    	string status  ""
-    }
-
-    ORDER_TABLE_PROPHECY||--|{ORDER_TABLE_EXTERNAL:"customer_id"
-
-`}
+value={`erDiagram direction LR ORDER_TABLE_PROPHECY { string customer_id "" date orderDate "" string status "" } ORDER_TABLE_EXTERNAL { string customer_id "" date orderDate "" string status "" } ORDER_TABLE_PROPHECY||--|{ORDER_TABLE_EXTERNAL:"customer_id"`}
 />
 
 :::note
@@ -81,7 +63,7 @@ These principles apply whether the target is cloud storage, an external warehous
 
 These patterns describe how different Prophecy target gems behave when writing to external systems, and whether they can be safely re-run without producing duplicates or inconsistencies.
 
-| Write Pattern                                                     | Eventually consistent?                                                                                                             | Notes                                                                                                                                                                                                                                                                           |
+| Write Pattern                                                     | Safe for Eventual Consistency?                                                                                                     | Notes                                                                                                                                                                                                                                                                           |
 | ----------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Merge / Upsert**                                                | Eventually consistent if keys and predicate are correct.                                                                           | Use a stable `unique_key` with Prophecy’s _Merge_ write. Ensure that the `unique_key` is truly unique and stable. Ideally, these are natural/business keys (such as a vehicle identification number) or durable surrogate keys (such as a UUID).                                |
 | **Destructive Load** (truncate+insert / create-or-replace / swap) | Eventually consistent if `SELECT` is deterministic. That is, if `SELECT` consistently returns the same result set.                 | Safe as long as the `SELECT` doesn’t use random or time-based functions such as `current_timestamp` or `random()`. Here, you should avoid persisting run timestamps or sequence/identity values in target tables. If you need lineage, capture it separately in an audit table. |
