@@ -7,7 +7,7 @@ tags:
   - agent
 ---
 
-Use Prophecy's AI agent to generate documentation for pipelines or entire projects. The agent uses [templates](#documentation-templates) to structure the output as Markdown files that describe your data pipelines.
+Use Prophecy's AI agent to generate documentation for pipelines or entire projects. The agent uses [templates](#documentation-templates) to structure the output as Markdown files that describe your data pipelines. You need to upload separate templates for pipeline and project documentation tasks.
 
 ## Generate documentation
 
@@ -15,7 +15,7 @@ You can generate documentation for a single pipeline or for an entire project.
 
 ### Generate pipeline documentation
 
-Generate documentation for the currently open pipeline:
+To generate documentation for a pipeline, follow these steps:
 
 1. Open your pipeline in Prophecy.
 1. Click **Chat** in the left sidebar.
@@ -23,9 +23,9 @@ Generate documentation for the currently open pipeline:
 
    For example: `Generate pipeline documentation using @custom_template`.
 
-   This generates a document for the pipeline that is **open** in your project.
+   This generates a document for the pipeline that you have opened in your project.
 
-If you don't specify a template using an @ mention, the agent looks for a default pipeline template file in your project, which should have the name `pipeline-template.md`.
+If you don't specify a template using an @ mention, the agent looks for a default template file in your project, which should have the name `pipeline-template.md`.
 
 If the default template exists, the agent uses it. Otherwise, the agent asks you to upload or specify a template.
 
@@ -33,9 +33,10 @@ If the default template exists, the agent uses it. Otherwise, the agent asks you
 
 ### Generate project documentation
 
-Generate documentation for all pipelines in a project:
+To generate documentation for a project, including all of its pipelines, follow these steps:
 
 1. Open your project in Prophecy.
+1. Open any pipeline or document entity.
 1. Click **Chat** in the left sidebar.
 1. Prompt the agent to document your project.
 
@@ -43,7 +44,7 @@ Generate documentation for all pipelines in a project:
 
    This generates a document that describes your project.
 
-If you don't specify a template using an @ mention, the agent looks for a default project template file in your project, which should have the name `project-template.md`.
+If you don't specify a template using an @ mention, the agent looks for a default template file in your project, which should have the name `project-template.md`.
 
 If the default template exists, the agent uses it. Otherwise, the agent asks you to upload or specify a template.
 
@@ -65,7 +66,7 @@ View the generated document in **Documents** in the project sidebar.
 
 After the agent generates your document, you can:
 
-- View and edit the document in the visual editor. The visual editor displays the rendered Markdown file, including special components like pipeline frames.
+- Edit the document in the visual editor (recommended). The visual editor displays the rendered Markdown file, including special components like pipeline frames.
 - Switch to the **Code** tab to edit the Markdown code. In the Code tab, you may see encoded or complex strings that contain embedded data. Don't edit them, as changes will break the visual output.
 
 Since the document is stored in your project repository, all changes are version-controlled with your code.

@@ -19,7 +19,7 @@ Use CTL markers directly inside your documentation template Markdown file. Marke
 
 The `MARKER_TYPE` tells the agent what type of special component to create. Each marker generates a specific type of component—like interactive forms, visual diagrams, or structured data tables—that standard Markdown cannot create on its own.
 
-For example, when the agent comes across the `[TRANSFORMATIONS]()` marker in the template file, it will replace marker with a formatted section listing all transformation steps in your pipeline in the generated documentation file.
+For example, when the agent comes across the `[TRANSFORMATIONS]()` marker in the template file, it will replace the marker with a formatted section listing all transformation steps in your pipeline in the generated documentation file.
 
 Each marker may accept zero, one, or multiple arguments. Review the specific marker to see its correct format.
 
@@ -33,7 +33,9 @@ The Copilot Template Language includes the following markers.
 [OVERVIEW]()
 ```
 
-The agent-generated documentation will have a summary section and embed visual diagram of the pipeline (for pipeline-level templates) or pipelines (for project-level templates). This marker does not accept any parameters.
+The agent-generated documentation will have a summary section of the pipeline or project.
+
+When the agent generates the documentation for one pipeline specifically, it will embed an interactive visual diagram of the pipeline directly in the document.
 
 ### Sources
 
@@ -69,6 +71,10 @@ The agent-generated documentation will have an interactive question form in your
 
 This marker accepts one string parameter that contains your question or prompt. For example: `'[COPILOT_QUESTION]('Specify the number of transformation steps in the pipeline.')`
 
+:::note
+The agent will be able to answer most questions about the project and pipelines. It will not be able to answer questions that require additional context external to the project.
+:::
+
 ### Question
 
 ```
@@ -78,8 +84,6 @@ This marker accepts one string parameter that contains your question or prompt. 
 The agent-generated documentation will have an interactive question form in your documentation that users must answer manually. Unlike `COPILOT_QUESTION`, the agent does not try to answer this question. It always appears as a form field for users to complete.
 
 This marker accepts one string parameter that contains your question or prompt. For example: `'[QUESTION]('Define the expected outcome of this pipeline')`
-
-<!-- Are there any limitations on the types of prompts you can include in the copilot questions and regular questions? Can you give some examples? -->
 
 ### Pipelines
 
@@ -91,7 +95,9 @@ The agent will use a pipeline template to generate documentation and embed that 
 
 To learn how to upload a new template, see [Document pipelines](docs/analysts/development/ai-agent/ai-documentation.md).
 
-<!-- Can you only call one template at a time? -->
+:::info
+The agent can only generate one sub-document per marker. Use multiple pipeline markers to incorporate multiple pipeline documentation embeddings.
+:::
 
 ## Marker-template compatibility
 
