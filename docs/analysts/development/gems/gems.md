@@ -32,7 +32,7 @@ Prophecy's AI agent can help you build, refine, and explain gems throughout your
 
 ## Interactive gem examples
 
-To test a gem hands-on, you can try the **interactive example** of the gem. If you search for a gem in the project sidebar, you can open the associated example and run the pre-configured pipeline!
+To test a gem hands-on, you can try the **interactive example** of the gem. If you search for a gem in the project sidebar, you can open the associated example and run the preconfigured pipeline!
 
 ![Gem example](img/interactive-example.png)
 
