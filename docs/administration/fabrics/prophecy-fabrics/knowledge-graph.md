@@ -85,7 +85,7 @@ You might be prompted to manually trigger indexing if the [agent](/analysts/ai-e
 
 Prophecy lets you configure authentication credentials for the knowledge graph indexer separately from pipeline execution credentials, allowing you to control which tables get indexed and how results are scoped for different users.
 
-You can configure the knowledge graph indexer to use separate authentication credentials from pipeline execution.
+This means there are two types of credentials stored in a connection:
 
 - **Pipeline Development and Scheduled Execution** credentials control how pipelines authenticate when they run.
 - **Knowledge Graph Indexer** credentials control how the crawler authenticates when it indexes your warehouse on an automated schedule.
@@ -93,11 +93,7 @@ You can configure the knowledge graph indexer to use separate authentication cre
 If you don't add separate authentication for the indexer, it will use the pipeline development credentials when running.
 
 :::note
-The knowledge graph indexer always uses the same identity as the pipeline development identity if the pipeline development authentication strategy is [Personal Access Token](/administration/fabrics/prophecy-fabrics/connections/databricks#personal-access-token-pat) (rather than OAuth). Therefore, this section is not applicable if you use the PAT authentication method.
-:::
-
-:::caution
-The knowledge graph indexing permissions should be equal to or a superset of the pipeline execution permissions. This ensures that the same tables you use in your pipelines are indexed by the knowledge graph. However, Prophecy does not enforce this.
+The knowledge graph indexer always uses the same identity as the pipeline development identity if the pipeline development authentication strategy is [Personal Access Token](/administration/fabrics/prophecy-fabrics/connections/databricks#personal-access-token-pat) (rather than OAuth). This section is not applicable if you use the PAT authentication method.
 :::
 
 ### Prerequisites
@@ -106,8 +102,12 @@ Before configuring the knowledge graph indexer, you must:
 
 - Upgrade to Prophecy 4.2.2 or later.
 - Configure your SQL warehouse connection with a [Databricks connection](docs/administration/fabrics/prophecy-fabrics/connections/databricks.md). Other SQL warehouses are not supported.
-- Be an administrator. Though there are no role-based restrictions for configuring the knowledge graph indexer, you need to understand how authentication works in Prophecy and in Databricks.
-- Give appropriate permissions to the identity that will be used to run the indexer. The identity must have `MANAGE` access on the assets that you wish to index in the knowledge graph.
+- Be a Prophecy administrator. Though there are no role-based restrictions for configuring the knowledge graph indexer, you need to understand how authentication works in Prophecy.
+- Be a Databricks administrator. This lets you assign appropriate permissions to the identity that will be used to run the indexer. The identity must have `MANAGE` access on the assets that you wish to index in the knowledge graph.
+
+:::caution
+The knowledge graph indexing permissions should be equal to or a superset of the pipeline execution permissions. This ensures that the same tables you use in your pipelines are indexed by the knowledge graph. However, Prophecy does not enforce this.
+:::
 
 ### Procedure
 
@@ -126,23 +126,23 @@ To configure the knowledge graph indexer for a fabric:
 
    If you use Service Principal OAuth for **pipeline development:**
 
-   - Provide the service principal credentials for the indexer. You can reuse your pipeline development credentials if applicable.
+   - You can only use Service Principal OAuth for the knowledge graph indexer.
 
 #### Service Principal OAuth (recommended)
 
-Use a service principal to index your data environment. Recommended for production and scheduled indexing, since credentials don't expire.
+Recommended for production and scheduled indexing. Credentials don't expire.
 
-- **Configuration**: Reuse credentials provided for pipeline development or provide a different **Service Principal Client ID** and **Client Secret**.
-- **What gets indexed**: The indexer indexes all tables that the service principal can access.
+- **Configuration**: Reuse pipeline development credentials or provide a different **Service Principal Client ID** and **Client Secret**.
+- **What gets indexed**: All tables that the service principal can access.
 
 :::info
-If you use **User OAuth** for pipeline development, the knowledge graph honors the permissions of the user, even when the indexer uses the service principal credentials to crawl. In other words, Prophecy enforces that each user only sees tables they have permission to access.
+If you use **User OAuth** for pipeline development, Prophecy enforces user permissions even when the indexer uses service principal credentials. Users only see tables they have permission to access.
 :::
 
 #### User OAuth
 
-Use an individual's identity to index your data environment.
+User OAuth should only be used for development.
 
-- **Configuration**: User OAuth always uses the same app registration as configured for pipeline development.
-- **What gets indexed**: The indexer indexes all tables that the individual user can access.
-- **Limitations**: This requires frequent user logins. When user credentials expire, scheduled crawling can fail.
+- **Configuration**: Uses the same app registration as pipeline development.
+- **What gets indexed**: All tables that the individual user can access.
+- **Limitations**: Requires frequent user logins. Scheduled crawling can fail when user credentials expire.
