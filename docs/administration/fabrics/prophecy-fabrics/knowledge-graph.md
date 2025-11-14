@@ -19,7 +19,7 @@ Prophecy only indexes tables from your SQL warehouse connection. Datasets from d
 
 ## How indexing works
 
-The knowledge graph indexer triggers a process that:
+When triggered, the knowledge graph indexer:
 
 1. Connects to your SQL warehouse using configured credentials.
 2. Scans catalogs and schemas that the identity has access to in your warehouse connection.
