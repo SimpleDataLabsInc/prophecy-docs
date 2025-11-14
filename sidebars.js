@@ -1046,7 +1046,18 @@ const sidebars = {
             "Orchestration/pipeline-monitoring/use-pipeline-monitoring",
           ],
         },
-        "Orchestration/databricks-jobs",
+        {
+          type: "category",
+          label: "Databricks jobs",
+          link: {
+            type: "doc",
+            id: "Orchestration/databricks-jobs/databricks-jobs",
+          },
+          items: [
+            "Orchestration/databricks-jobs/databricks-jobs",
+            "Orchestration/databricks-jobs/automate-pipelines-databricks",
+          ],
+        },
         "Orchestration/alternative-schedulers",
         "Orchestration/multi-jobs-trigger",
       ],

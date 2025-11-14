@@ -12,21 +12,22 @@ tags:
 Once you have developed a [Spark pipeline](/engineers/pipelines) using Prophecy, you will want to schedule it to run at
 some frequency. To support this, Prophecy provides a visual layer on top of [Databricks jobs](https://docs.databricks.com/en/jobs/index.html).
 A Prophecy Databricks job corresponds to a Databricks job definition under the hood, enabling you to add and link pipelines, scripts, Databricks notebooks, conditional logic, and other components to a job. Jobs run in Databricks.
+
 :::edition Enterprise
 Available for [Enterprise Edition](/getting-started/editions/) only.
 :::
 
 ## Schedule a Databricks job
 
-- You can create a job either for a specific project or generically for any project.
+You can create a job either for a specific project or generically for any project.
 
-  - To schedule a job for a specific project, either:
+- To schedule a job for a specific project, either:
 
-    - Click the **Schedule** button at the top of a pipeline's visual canvas, then click **New Job** in the modal that opens. (You can still add other pipelines to the job.)
+  - Click the **Schedule** button at the top of a pipeline's visual canvas, then click **New Job** in the dialog that opens. (You can still add other pipelines to the job.)
 
-    - Click **+** to the right of **Jobs** in the left sidebar.
+  - Click **+** to the right of **Jobs** in the left sidebar.
 
-  - To schedule a job for any project, click the **Create Entity** button in the left navigation bar. Hover over the **Job** tile and select **Create**.
+- To schedule a job for any project, click the **Create Entity** button in the left navigation bar. Hover over the **Job** tile and select **Create**.
 
 When you create a new job, you're asked for the following details. Some fields are automatically populated when you schedule from a pipeline or the left sidebar.
 
@@ -255,9 +256,9 @@ When you are satisfied with the job's configuration, you can run it interactivel
 
 If the job fails, Prophecy displays an error message indicating what went wrong. If the job succeeds, Prophecy displays a page indicating that all stages have succeeded.
 
-While the job runs, Prophecy displays a **Job Status: Running** message with a **Detail** button. To view a job's progress, click the **Detail** button. A modal opens showing the job as a series of stages. You can view details on a stage by clicking **+** to the right of the stage. If the job fails, Prophecy displays an error message for the stage at which the job failed.
+While the job runs, Prophecy displays a **Job Status: Running** message with a **Detail** button. To view a job's progress, click the **Detail** button. A dialog opens showing the job as a series of stages. You can view details on a stage by clicking **+** to the right of the stage. If the job fails, Prophecy displays an error message for the stage at which the job failed.
 
-![Jobs Monitoring Modal](img/databricks-job-monitoring.png)
+![Jobs Monitoring Dialog](img/databricks-job-monitoring.png)
 
 ## Configure clusters for job gems
 
@@ -280,8 +281,8 @@ To release and deploy the job:
 
 1. Click **Enable** in the upper right corner of the visual canvas.
 1. Click **Release** in the upper right corner of the visual canvas.
-1. In the modal that opens, follow the steps to create a git tag for the version, commiting, pulling, and merging changes.
-1. On the **Release and Deploy** page of the modal, assign the job a **Release Version** (such as `0.3.0`), and click **Release and Deploy**.
+1. In the dialog that opens, follow the steps to create a git tag for the version, commiting, pulling, and merging changes.
+1. On the **Release and Deploy** page of the dialog, assign the job a **Release Version** (such as `0.3.0`), and click **Release and Deploy**.
 
 The job will now be active in Databricks jobs and the schedule will run.
 
