@@ -12,19 +12,10 @@ tags:
 Once you have developed a [Spark pipeline](/engineers/pipelines) using Prophecy, you will want to schedule it to run at
 some frequency. To support this, Prophecy provides a visual layer on top of [Databricks jobs](https://docs.databricks.com/en/jobs/index.html).
 A Prophecy Databricks job corresponds to a Databricks job definition under the hood, enabling you to add and link pipelines, scripts, Databricks notebooks, conditional logic, and other components to a job. Jobs run in Databricks.
+
 :::edition Enterprise
 Available for [Enterprise Edition](/getting-started/editions/) only.
 :::
-
-## Summary of orchestration
-
-There are a few ways to structure orchestration between Prophecy and Databricks:
-
-1. **(Smallest / Shared)** Databricks Workflow → Prophecy Scheduler → Databricks. Works for SQL pipelines only. See [Run Prophecy pipelines in Databricks jobs](automate-pipelines-databricks.md) for more information.
-2. **(Recommended for Spark pipelines)** Prophecy Scheduler → Databricks.
-3. **Prophecy Export Code:** CODE → Databricks. See [Alternative Schedulers](/Orchestration/alternative-schedulers) for more information.
-
-This document describes Option 2, the most common for production environments. With this option, you use the **Prophecy Scheduler** to coordinate Databricks jobs, maintaining Prophecy as the orchestration layer while using Databricks for execution.
 
 ## Schedule a Databricks job
 

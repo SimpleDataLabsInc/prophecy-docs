@@ -16,16 +16,6 @@ See [the Databricks job page](https://docs.databricks.com/aws/en/jobs/) for more
 
 This lets you integrate Prophecy orchestration directly with Databricks job scheduling.
 
-## Summary of orchestration
-
-There are a few ways to structure orchestration between Prophecy and Databricks:
-
-1. **(Smallest / Shared)** Databricks Workflow → Prophecy Scheduler → Databricks. Works for SQL pipelines only.
-2. **(Recommended for Spark pipelines)** Prophecy Scheduler → Databricks. See [Scheduling Databricks Jobs](databricks-jobs) for more information.
-3. **Prophecy Export Code:** CODE → Databricks. See [Alternative Schedulers](/Orchestration/alternative-schedulers) for more information.
-
-Option 2 is the most common for Spark production environments: use the **Prophecy Scheduler** to coordinate Databricks jobs, maintaining Prophecy as the orchestration layer while using Databricks for execution. This document describes Option 1: how to call the Prophecy Scheduler from Databricks.
-
 :::edition Enterprise Only
 This deployment model requires the [Enterprise Edition](/getting-started/editions/) of Prophecy.
 :::
