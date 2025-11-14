@@ -107,8 +107,9 @@ Before configuring the knowledge graph indexer, you must:
 - Upgrade to Prophecy 4.2.2 or later.
 - Configure your SQL warehouse connection with a [Databricks connection](docs/administration/fabrics/prophecy-fabrics/connections/databricks.md). Other SQL warehouses are not supported.
 - Be an administrator. Though there are no role-based restrictions for configuring the knowledge graph indexer, you need to understand how authentication works in Prophecy and in Databricks.
+- Give appropriate permissions to the identity that will be used to run the indexer. The identity must have `MANAGE` access on the assets that you wish to index in the knowledge graph.
 
-### Steps
+### Procedure
 
 To configure the knowledge graph indexer for a fabric:
 
@@ -117,13 +118,15 @@ To configure the knowledge graph indexer for a fabric:
 1. Open the **Connections** tab.
 1. Click the pencil icon to edit the **SQL Warehouse Connection**.
 1. In the connection dialog, find the **Knowledge Graph Indexer** tile.
-1. If you use User OAuth for pipeline development:
+1. Configure authentication based on your pipeline development authentication method:
 
-   - Choose between OAuth (User) and OAuth (Service Principal) for the knowledge graph indexer.
+   If you use User OAuth for **pipeline development:**
 
-1. If you use Service Principal OAuth for pipeline development:
+   - Choose either OAuth (User) or OAuth (Service Principal) for the knowledge graph indexer.
 
-   - Provide the service principal credentials to assign to the indexer. You can reuse your pipeline development credentials if applicable.
+   If you use Service Principal OAuth for **pipeline development:**
+
+   - Provide the service principal credentials for the indexer. You can reuse your pipeline development credentials if applicable.
 
 #### Service Principal OAuth (recommended)
 
@@ -131,12 +134,6 @@ Use a service principal to index your data environment. Recommended for producti
 
 - **Configuration**: Reuse credentials provided for pipeline development or provide a different **Service Principal Client ID** and **Client Secret**.
 - **What gets indexed**: The indexer indexes all tables that the service principal can access.
-
-The service principal used for knowledge graph indexing must have sufficient permissions in Databricks:
-
-- **Catalog access**: Manage access on the catalog specified in your warehouse connection.
-- **Table listing**: Ability to list tables in the catalog and schemas you want to index.
-- **Metadata access**: Ability to fetch table schemas, column information, and other metadata.
 
 :::info
 If you use **User OAuth** for pipeline development, the knowledge graph honors the permissions of the user, even when the indexer uses the service principal credentials to crawl. In other words, Prophecy enforces that each user only sees tables they have permission to access.
