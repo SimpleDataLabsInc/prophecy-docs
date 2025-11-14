@@ -7,14 +7,14 @@ tags:
   - knowledge graph
 ---
 
-A [knowledge graph](/knowledge-graph) is an internal index that maps your data environment. Prophecy uses knowledge graphs to help AI agents understand your SQL warehouse structure. The knowledge graph contains metadata about tables, schemas, columns, and data types—not your actual data.
+A [knowledge graph](/knowledge-graph) is an internal index that maps your data environment. Prophecy uses knowledge graphs to help AI agents understand your [SQL warehouse structure](/administration/fabrics/prophecy-fabrics/#fabric-architecture). The knowledge graph contains metadata about tables, schemas, columns, and data types—not your actual data.
 
 When you interact with AI agents, Prophecy uses the knowledge graph to add context to your prompts. This context helps AI agents generate accurate SQL code that references the correct tables and columns in your warehouse.
 
 Prophecy automatically indexes your data environment when you create a fabric. Afterword, you need to schedule the indexer to run automatically or manually trigger it.
 
 :::info
-Prophecy only indexes tables from your SQL warehouse. Datasets from external connections are not included in the knowledge graph.
+Prophecy only indexes tables from your SQL warehouse connection. Datasets from data ingress/egress connections are not included in the knowledge graph.
 :::
 
 ## How indexing works
@@ -34,7 +34,7 @@ Configure scheduled crawling to keep your index up-to-date without manual interv
 1. Select the fabric where you will enable indexing.
 1. Open the **Connections** tab.
 1. Click the pencil icon to edit the **SQL Warehouse Connection**.
-1. In the connection dialog, find the **Knowledge Graph Indexer** tile and toggle on **Enable Knowledge Graph Periodic Indexing**.
+1. In the connection dialog, scroll to the **Knowledge Graph Indexer** tile and toggle on **Enable Knowledge Graph Periodic Indexing**.
 1. Configure the schedule to run hourly, daily, or weekly.
 
 The schedule must have a defined frequency and timezone. The default timezone is the timezone from where you access Prophecy.
@@ -60,20 +60,20 @@ The schedule must have a defined frequency and timezone. The default timezone is
 
 ## Manually trigger indexing
 
-To manually trigger indexing from your fabric:
+You may need to manually trigger indexing if you know that certain tables are missing from the knowledge graph. To do so:
 
 1. In Prophecy, navigate to **Metadata > Fabrics**.
 1. Select the fabric where you will enable indexing.
 1. Open the **Connections** tab.
 1. Click the pencil icon to edit the **SQL Warehouse Connection**.
-1. At the bottom of the connection dialog, you’ll find a **Table Indexing Status**.
+1. Scroll to the **Knowledge Graph Indexing Status** tile in the connection dialog.
 1. Click **Start** to reindex the tables and track its progress. You'll be able to view the progress of processed schemas and directories.
 
-To trigger this process from the [Environment tab](/analysts/connections#environment-browser):
+If more convenient, you can also start this process from the [Environment tab](/analysts/connections#environment-browser) in your project:
 
 1. Open a project in the project editor.
 1. Attach to the fabric that you wish to reindex.
-1. In the left sidebar, click on the Environment tab.
+1. In the left sidebar, open the Environment tab.
 1. Below your connections, you’ll see a **Missing Tables?** callout.
 1. Click **Refresh** to reindex the SQL warehouse.
 
@@ -98,7 +98,7 @@ The knowledge graph indexer always uses the same identity as the pipeline develo
 
 ### Prerequisites
 
-Before configuring the knowledge graph indexer, you must:
+Before configuring dedicated credentials for the knowledge graph indexer, you must:
 
 - Upgrade to Prophecy 4.2.2 or later.
 - Configure your SQL warehouse connection with a [Databricks connection](docs/administration/fabrics/prophecy-fabrics/connections/databricks.md). Other SQL warehouses are not supported.
@@ -117,7 +117,7 @@ To configure the knowledge graph indexer for a fabric:
 1. Select the fabric where you will enable indexing.
 1. Open the **Connections** tab.
 1. Click the pencil icon to edit the **SQL Warehouse Connection**.
-1. In the connection dialog, find the **Knowledge Graph Indexer** tile.
+1. In the dialog, scroll to the **Knowledge Graph Indexer** tile.
 1. Configure authentication based on your pipeline development authentication method:
 
    If you use User OAuth for **pipeline development:**

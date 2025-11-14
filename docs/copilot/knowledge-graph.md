@@ -30,12 +30,8 @@ When you interact with Copilot, Prophecy follows a multi-step process to generat
 
 Once the code is generated, Prophecy validates it and automatically corrects any errors when possible. After validation, Prophecy converts the code into a visual pipeline, which is displayed on the canvas for you to review and customize.
 
-## Crawling
+## Indexing
 
-The knowledge graph is built by crawling your SQL warehouse. The crawler scans your warehouse and indexes table names, schemas, column names, data types, and other metadata. This metadata is stored in the knowledge graph and used to enhance AI prompts.
+Prophecy indexes your data environment to build the knowledge graph. In other words, the knowledge graph indexer scans your warehouse and indexes table names, schemas, column names, data types, and other metadata. Prophecy then uses this indexed data to enhance AI prompts.
 
-You can trigger crawling manually or configure it to run automatically on a schedule. Manual crawling uses your pipeline development credentials to determine which tables to index. Scheduled crawling uses separate authentication credentials that you configure independently.
-
-:::info
-For detailed information about configuring knowledge graph crawling, including authentication setup and scheduling options, see [Knowledge graph crawling](docs/administration/fabrics/prophecy-fabrics/knowledge-graph.md).
-:::
+You can trigger the knowledge graph indexer manually or configure it to run automatically on a schedule. For detailed information about configuring knowledge graph crawling, including authentication setup and scheduling options, see [Knowledge graph indexing](docs/administration/fabrics/prophecy-fabrics/knowledge-graph.md).
