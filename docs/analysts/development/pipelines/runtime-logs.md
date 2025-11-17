@@ -10,7 +10,7 @@ tags:
 
 Runtime logs are generated in real time during pipeline execution and provide a step-by-step trace of how each transformation or action was performed. These logs help you quickly identify which steps succeeded or failed, how long each step took, and whether the execution followed the expected sequence. They're also useful for reviewing pipelines you didn’t build yourself, so you can see what happened during the run.
 
-## Understanding log entries
+## Understand log entries
 
 You can open runtime logs from the information footer at the bottom of the project editor. Each log entry provides structured details that help you trace execution and diagnose issues. Logs include:
 
@@ -37,6 +37,10 @@ In the Runtime Logs tab, you have several tools to help you navigate and analyze
 1. **Clear all logs**: Remove log information for previous runs
 
 ![Runtime logs](img/runtime-logs.png)
+
+:::info
+If your pipeline fails to run, you'll see an error message explaining the reason for the failure displayed at the top of the corresponding log.
+:::
 
 ## SQL warehouse logs
 
