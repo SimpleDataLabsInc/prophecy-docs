@@ -200,6 +200,7 @@ const sidebars = {
             "administration/fabrics/prophecy-fabrics/connections/onedrive",
             "administration/fabrics/prophecy-fabrics/connections/power-bi",
             "administration/fabrics/prophecy-fabrics/connections/prophecy-managed",
+            "administration/fabrics/prophecy-fabrics/connections/hana",
             "administration/fabrics/prophecy-fabrics/connections/sharepoint",
             "administration/fabrics/prophecy-fabrics/connections/mongodb",
             "administration/fabrics/prophecy-fabrics/connections/mssql",
@@ -272,12 +273,23 @@ const sidebars = {
                     "analysts/development/gems/source-target/external-table/databricks",
                     "analysts/development/gems/source-target/external-table/bigquery",
                     "analysts/development/gems/source-target/external-table/synapse",
-                    "analysts/development/gems/source-target/external-table/snowflake",
                     "analysts/development/gems/source-target/external-table/mssql",
                     "analysts/development/gems/source-target/external-table/mongodb",
                     "analysts/development/gems/source-target/external-table/oracle",
                     "analysts/development/gems/source-target/external-table/redshift",
                     "analysts/development/gems/source-target/external-table/salesforce",
+                    {
+                      type: "category",
+                      label: "SAP HANA",
+                      link: {
+                        type: "doc",
+                        id: "analysts/development/gems/source-target/external-table/hana/hana",
+                      },
+                      items: [
+                        "analysts/development/gems/source-target/external-table/hana/generated-columns",
+                      ],
+                    },
+                    "analysts/development/gems/source-target/external-table/snowflake",
                   ],
                 },
                 {
@@ -472,7 +484,7 @@ const sidebars = {
           items: [
             {
               type: "category",
-              label: "Agent chat",
+              label: "Prophecy Agent",
               link: {
                 type: "doc",
                 id: "analysts/development/ai-agent/ai-chat",
@@ -1039,7 +1051,18 @@ const sidebars = {
             "Orchestration/pipeline-monitoring/use-pipeline-monitoring",
           ],
         },
-        "Orchestration/databricks-jobs",
+        {
+          type: "category",
+          label: "Databricks jobs",
+          link: {
+            type: "doc",
+            id: "Orchestration/databricks-jobs/databricks-jobs",
+          },
+          items: [
+            "Orchestration/databricks-jobs/databricks-jobs",
+            "Orchestration/databricks-jobs/automate-pipelines-databricks",
+          ],
+        },
         "Orchestration/alternative-schedulers",
         "Orchestration/multi-jobs-trigger",
       ],

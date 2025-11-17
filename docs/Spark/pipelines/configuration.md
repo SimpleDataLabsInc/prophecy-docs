@@ -72,7 +72,7 @@ Prophecy supports the following data types for configs.
 | `short`            | A 16-bit integer entered in a numeric field.                                                                    |
 | `array`            | A list of values of the same type, added one by one in a multi-value input field.                               |
 | `record`           | A structured object with multiple named fields, configured through a nested group of inputs.                    |
-| `secret`           | A sensitive string (like a password or token), selected from your fabric's list of pre-configured secrets.      |
+| `secret`           | A sensitive string (like a password or token), selected from your fabric's list of preconfigured secrets.       |
 | `spark_expression` | A Spark SQL expression, written in a code editor with syntax highlighting.                                      |
 
 </details>
