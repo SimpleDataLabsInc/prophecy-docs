@@ -76,6 +76,47 @@ python -m prophecy_lineage_extractor \
 
 </Tabs>
 
+<details>
+<summary>Clear the knowledge graph cache</summary>
+
+The knowledge graph caches lineage data to improve extraction performance. In some cases, cached data can become stale or outdated, preventing accurate lineage extraction for older pipelines or specific branches. Clear the cache when lineage extraction returns outdated results for pipelines that have been updated. To do so, use the Clear Index API.
+
+**Endpoint:** `POST https://app.prophecy.io/api/lineage/sql/clearIndex`
+
+:::info
+Replace the base URL with your environment URL for Dedicated SaaS deployments.
+:::
+
+**Headers:**
+
+- `X-AUTH-TOKEN`: Your Prophecy Personal Access Token
+- `Content-Type`: `application/json`
+
+**Request body:**
+
+```json
+{
+  "projectId": "95",
+  "branch": "dev"
+}
+```
+
+**Example:**
+
+```bash
+curl --location 'https://<your-prophecy-instance>/api/lineage/sql/clearIndex' \
+--header 'X-AUTH-TOKEN: <your-token>' \
+--header 'Content-Type: application/json' \
+--data '{
+    "projectId": "95",
+    "branch": "dev"
+}'
+```
+
+After clearing the cache, the next lineage extraction for the specified project and branch rebuilds the knowledge graph data from scratch.
+
+</details>
+
 ## Integration with GitHub Actions or GitLab CI
 
 This section walks you through automating the extraction of lineage reports from your Prophecy pipelines using a CI workflow in GitHub Actions or GitLab CI. You'll set up a script that pulls lineage data, generates an Excel report, and optionally sends it by email or commits it back to your repository.
