@@ -112,8 +112,10 @@ Here are some sample prompts that you can ask to search, explore, and learn abou
 
 The AI agent depends on a [knowledge graph](/knowledge-graph) to retrieve metadata about components like datasets. If the agent does not recognize a table that you try to reference, it could be because the knowledge graph has not been indexed recently enough to capture the dataset.
 
-There are a few ways to [refresh your tables](/knowledge-graph#refresh-tables) and include them in the knowledge graph:
+There are a few ways to refresh your tables and include them in the knowledge graph:
 
 - When the agent cannot find the table you are looking for, it will suggest that you refresh tables.
 - If you open a list of suggested datasets from the agent and cannot find an existing data, you'll see the option to refresh tables.
-- To reindex a source and view the progress of the refresh, open a [connection's settings](/administration/fabrics/prophecy-fabrics/connections/) and trigger the refresh there.
+- To reindex a source and view the progress of the refresh, open a connection's settings and trigger the refresh there.
+
+For more detailed instructions, see [Knowledge graph crawling](/administration/fabrics/prophecy-fabrics/knowledge-graph-config).
