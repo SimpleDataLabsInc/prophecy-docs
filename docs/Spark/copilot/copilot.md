@@ -36,10 +36,8 @@ You can use Data Copilot to start a new pipeline by typing a simple English text
 The following example uses Data Copilot to help start a pipeline:
 
 1. Type a prompt with English text, such as `Which customers shipped the largest orders this year?`
-2. Data Copilot uses metadata from the accessible datasets, seeds, pipelines, and models, to create a Knowledge Graph.
-3. Data Copilot creates the pipeline based on the text prompt, using the Knowledge Graph as the context. This pipeline is accessible in both the visual editor and the code editor.
-4. If you'd like, review the suggested changes before you decide to keep or reject the suggested pipeline. Then interactively execute it to see the results.
-5. View Data Copilot's suggested changes in the visual editor.
+2. If you'd like, review the suggested changes before you decide to keep or reject the suggested pipeline. Then interactively execute it to see the results.
+3. View Data Copilot's suggested changes in the visual editor.
 
 ### Modify an existing pipeline
 
