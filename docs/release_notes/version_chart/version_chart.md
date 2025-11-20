@@ -26,6 +26,7 @@ Prophecy versions that are labeled with `EM` are Extended Maintenance releases. 
 
 | Prophecy version | [Prophecy Scala libs](https://mvnrepository.com/artifact/io.prophecy/prophecy-libs) | [Prophecy Python libs](https://pypi.org/project/prophecy-libs/) | Release Date | End-of-support Date |
 | ---------------- | ----------------------------------------------------------------------------------- | --------------------------------------------------------------- | ------------ | ------------------- |
+| v4.2.2.1         | 8.14.0                                                                              | 2.1.5                                                           | 2025/11/20   | 2026/05/17          |
 | v4.2.1.5         | 8.13.2                                                                              | 2.1.5                                                           | 2025/11/17   | 2026/04/27          |
 | v4.2.2.0         | 8.14.0                                                                              | 2.1.5                                                           | 2025/11/17   | 2026/05/17          |
 | v3.4.5.20        | 8.8.4                                                                               | 1.9.36                                                          | 2025/11/11   | 2025/09/04          |
