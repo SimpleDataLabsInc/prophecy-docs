@@ -78,7 +78,7 @@ When referencing gems, you refer to the gem label that identifies the instance o
 
 ### Upload files
 
-Click the paperclip icon to upload CSV, Excel, or Parquet files from your local system. These files are added to your SQL warehouse and can be used like any other table in your pipeline.
+Click the paperclip icon to upload CSV, Excel, or Parquet files from your local system. These files are added to your SQL warehouse and can be used like any other table in your pipeline. See the [file upload](/analysts/upload-file) documentation for more details.
 
 :::tip
 You can also drag and drop local files directly onto the pipeline canvas.

@@ -45,6 +45,29 @@ To create a connection with Power BI, enter the following parameters. You can fi
 | Client ID                                                                                          | Your Microsoft Entra app Client ID     |
 | Client Secret ([Secret required](docs/administration/fabrics/prophecy-fabrics/secrets/secrets.md)) | Your Microsoft Entra app Client Secret |
 
+## Data type mapping
+
+Prophecy processes data using a SQL warehouse like Databricks SQL or BigQuery. When you are ready to write your transformed data to Power BI, data types are converted to [Power BI data types](https://learn.microsoft.com/en-us/power-bi/connect-data/desktop-data-types) using the following mapping.
+
+| Databricks                      | BigQuery                                   | Power BI       |
+| ------------------------------- | ------------------------------------------ | -------------- |
+| STRING<br/>Alias: String        | STRING<br/>Alias: String                   | Text           |
+| BOOLEAN<br/>Alias: Boolean      | BOOL<br/>Alias: Boolean                    | True/False     |
+| BYTE<br/>Alias: Byte            | INT64<br/>Alias: Integer                   | Whole number   |
+| SHORT<br/>Alias: Short          | INT64<br/>Alias: Integer                   | Whole number   |
+| INT<br/>Alias: Integer          | INT64<br/>Alias: Integer                   | Whole number   |
+| LONG<br/>Alias: Long            | INT64<br/>Alias: Integer                   | Whole number   |
+| FLOAT<br/>Alias: Float          | FLOAT64<br/>Alias: Float                   | Decimal number |
+| DOUBLE<br/>Alias: Double        | FLOAT64<br/>Alias: Float                   | Decimal number |
+| DECIMAL(p,s)<br/>Alias: Decimal | NUMERIC/DECIMAL<br/>Alias: Numeric/Decimal | Decimal number |
+| DATE<br/>Alias: Date            | DATE<br/>Alias: Date                       | Date/Time      |
+| TIMESTAMP<br/>Alias: Timestamp  | TIMESTAMP<br/>Alias: Timestamp             | Date/Time      |
+| BINARY<br/>Alias: Binary        | BYTES<br/>Alias: Bytes                     | Text (Base64)  |
+| ARRAY<br/>Alias: Array          | REPEATED<br/>Alias: Repeated               | Text           |
+| MAP&lt;K,V&gt;<br/>Alias: Map   | RECORD<br/>Alias: Record                   | Text           |
+| STRUCT<br/>Alias: Struct        | RECORD<br/>Alias: Record                   | Text           |
+| NULLTYPE<br/>Alias: Nulltype    | NULL<br/>Alias: Null                       | Blank          |
+
 ## Sharing connections within teams
 
 Power BI connections are stored within [fabrics](docs/administration/fabrics/prophecy-fabrics/prophecy-fabrics.md), which are assigned to specific teams in Prophecy. Once a Power BI connection is added to a fabric, anyone on that team can use it to send data to Power BI from their pipelines. Everyone will inherit the permissions of the Microsoft Entra app used for connection setup.

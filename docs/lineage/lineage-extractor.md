@@ -23,9 +23,10 @@ You can run the lineage extractor manually or integrate it into a CI workflow to
 
 ## Prerequisites
 
-To use the lineage extractor for SQL pipelines:
+To use the lineage extractor:
 
-- `knowledge-graph` must be enabled in your Prophecy deployment.
+- Install the Python tool. [Here's the PyPI package](https://pypi.org/project/prophecy-lineage-extractor/).
+- (SQL only): `knowledge-graph` must be enabled in your Prophecy deployment.
 
 ## Command
 
@@ -40,7 +41,7 @@ Use the lineage extractor Python command to export the lineage of a specific pip
 | `--output-dir`  | String | Yes      | Directory path where the extractor writes the lineage report.                                                                                                                                                      |
 | `--fmt`         | String | No       | Output format. Use `excel` (default) or `openlineage` (JSON in OpenLineage format).                                                                                                                                |
 | `--branch`      | String | No       | Branch to extract lineage from. Defaults to `main`.                                                                                                                                                                |
-| `--send-email`  | Flag   | No       | Sends the report by email. Requires SMTP configuration. <br/>Learn more in [Integration with GitHub Actions or GitLab CI](#integration-with-github-actions-or-gitlab-ci).                                          |
+| `--send-email`  | Flag   | No       | Sends the report by email. Requires SMTP configuration. See [Environment variables](#environment-variables).                                                                                                       |
 | `--run-for-all` | Flag   | No       | Generates lineage for all pipelines in the project, rather than just one pipeline.                                                                                                                                 |
 
 <!-- | `--recursive-extract` | `flag` | No       | Set to `true` to recursively trace upstream column changes. Set to `false` to disable this behavior.                                                                                         | -->
@@ -76,6 +77,63 @@ python -m prophecy_lineage_extractor \
 
 </Tabs>
 
+<details>
+<summary>Clear the knowledge graph cache</summary>
+
+The knowledge graph caches lineage data to improve extraction performance. In some cases, cached data can become stale or outdated, preventing accurate lineage extraction for older pipelines or specific branches. Clear the cache when lineage extraction returns outdated results for pipelines that have been updated. To do so, use the Clear Index API.
+
+**Endpoint:** `POST https://app.prophecy.io/api/lineage/sql/clearIndex`
+
+:::info
+Replace the base URL with your environment URL for Dedicated SaaS deployments.
+:::
+
+**Headers:**
+
+- `X-AUTH-TOKEN`: Your Prophecy Personal Access Token
+- `Content-Type`: `application/json`
+
+**Request body:**
+
+```json
+{
+  "projectId": "95",
+  "branch": "dev"
+}
+```
+
+**Example:**
+
+```bash
+curl --location 'https://<your-prophecy-instance>/api/lineage/sql/clearIndex' \
+--header 'X-AUTH-TOKEN: <your-token>' \
+--header 'Content-Type: application/json' \
+--data '{
+    "projectId": "95",
+    "branch": "dev"
+}'
+```
+
+After clearing the cache, the next lineage extraction for the specified project and branch rebuilds the knowledge graph data from scratch.
+
+</details>
+
+## Environment variables
+
+To use the command, set up the following environment variables:
+
+| Variable/Secret    | Required                         | Description                                                                                                                                  |
+| ------------------ | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `PROPHECY_PAT`     | Yes                              | [Personal Access Token](/api/#access-tokens) used to authenticate with Prophecy.                                                             |
+| `PROPHECY_URL`     | Yes                              | Prophecy instance URL. Example: `https://app.prophecy.io`                                                                                    |
+| `SMTP_HOST`        | Required if using `--send-email` | SMTP server hostname for sending email reports (e.g., `smtp.gmail.com`).                                                                     |
+| `SMTP_PORT`        | Required if using `--send-email` | SMTP server port number. Example: `587`                                                                                                      |
+| `SMTP_USERNAME`    | Required if using `--send-email` | Username for the email account used to send reports.                                                                                         |
+| `SMTP_PASSWORD`    | Required if using `--send-email` | Password needed for the email account.                                                                                                       |
+| `MONITOR_TIME_ENV` | No                               | Duration of the monitoring window in minutes (default: `150`).                                                                               |
+| `GIT_COMMIT`       | No                               | Set to `1` to enable committing generated output to Git.                                                                                     |
+| `OPENLINEAGE_URL`  | No                               | URL for sending OpenLineage events. If not set, and format is `openlineage`, events are written as JSON files in `OUTPUT_DIR/<PROJECT-ID>/`. |
+
 ## Integration with GitHub Actions or GitLab CI
 
 This section walks you through automating the extraction of lineage reports from your Prophecy pipelines using a CI workflow in GitHub Actions or GitLab CI. You'll set up a script that pulls lineage data, generates an Excel report, and optionally sends it by email or commits it back to your repository.
@@ -95,26 +153,16 @@ To configure lineage extraction behavior related to authentication, email delive
   <TabItem value="github" label="GitHub">
 
 1. Go to your repository’s **Settings > Secrets and variables > Actions**.
-1. Add the listed variables under **Secrets** and **Variables** tabs.
+1. Add the [required variables](#environment-variables) under **Secrets** and **Variables** tabs.
 
   </TabItem>
   <TabItem value="gitlab" label="GitLab">
 
 1. Go to your repository’s **Settings > CI/CD > Variables**.
-1. Add each as a variable and mark secrets appropriately.
+1. Add the [required variables](#environment-variables) and mark secrets appropriately.
 
   </TabItem>
 </Tabs>
-
-| Variable/Secret    | Description                                                                                                                                  |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| `PROPHECY_PAT`     | [Personal Access Token](/api/#access-tokens) used to authenticate with Prophecy.                                                             |
-| `SMTP_USERNAME`    | Username for the email account used to send reports.                                                                                         |
-| `SMTP_PASSWORD`    | Password needed for the email account.                                                                                                       |
-| `MONITOR_TIME_ENV` | Duration of the monitoring window in minutes (default: `150`).                                                                               |
-| `GIT_COMMIT`       | Set to `1` to enable committing generated output to Git.                                                                                     |
-| `OUTPUT_DIR`       | Directory path where lineage files are stored.                                                                                               |
-| `OPENLINEAGE_URL`  | URL for sending OpenLineage events. If not set, and format is `openlineage`, events are written as JSON files in `OUTPUT_DIR/<PROJECT-ID>/`. |
 
 ### Set up workflow configuration
 
