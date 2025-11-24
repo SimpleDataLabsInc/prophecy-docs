@@ -137,7 +137,9 @@ PBT supports the `--release-version` and `--project-id` parameters, used to repl
 
 These values determine the DBFS path where artifacts are uploaded.
 
-Tip: Use the project’s Prophecy ID (from its URL) and a unique release version for each deployment.
+:::tip
+Use the project’s Prophecy ID (from its URL) and a unique release version for each deployment.
+:::
 
 ### Sample deploy output
 
