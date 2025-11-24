@@ -166,7 +166,7 @@ Use `--dependent-projects-path` to include dependent Prophecy projects located i
 pbt deploy --path /path/to/your/prophecy_project/ --release-version 1.0 --project-id 10 --dependent-projects-path /path/to/dependent/prophecy/projects
 ```
 
-### Deploy by Fabric ID
+### Deploy by fabric ID
 
 Use `--fabric-ids` to deploy jobs associated with specific Fabric IDs (helpful for multi-workspace environments).
 
