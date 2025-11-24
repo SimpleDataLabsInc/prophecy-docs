@@ -15,7 +15,7 @@ Egress may involve writing to warehouse tables within a Prophecy fabric or to ex
 
 When you write to a warehouse table, data transfer is _transactional_, meaning that transactions are guaranteed to succeed (if transactions fail, the process is restarted).
 
-When you write to external systems, you should implement practices to ensure that data is written consistently.
+When you write to external systems, you should implement practices of _eventual consistency_ to ensure that data is written in ways that avoid issues such as duplicated or stale data.
 
 ### Back up data in a data warehouse table
 
@@ -49,7 +49,14 @@ If the unique key isn’t consistent (such as a timestamp that changes each run)
 
 For example, imagine a Prophecy updates a customer’s status to “Active” in an external CRM. At first, the CRM might still show “Pending” until the update arrives, but eventually, it should match. To make this process reliable, we want to write using a unique `customer_id`.
 
-[NEED DIAGRAM HERE]
+sequenceDiagram
+participant P as Prophecy
+participant CRM as External CRM
+
+    P->>CRM: Update customer<br/>customer_id=123, status="Active"
+    Note over CRM: Still shows "Pending"<br/>until update processed
+    CRM->>CRM: Eventually updates<br/>status="Active"
+    Note over P,CRM: Unique customer_id ensures<br/>the correct record is updated
 
 :::note
 Prophecy cannot _guarantee_ the consistency of writes to external systems (eventual consistency is not enforced), but by designing with eventual consistency in mind, you can reduce risk.
