@@ -20,6 +20,19 @@ If you need details on configuring a Source or Target gem end to end (including 
 You can also use the [upload file](docs/analysts/development/gems/source-target/table/upload-files.md) feature to use XML files. These will be stored in the SQL warehouse configured in your fabric.
 :::
 
+## Schema validation
+
+Use XSD schema validation to ensure XML files conform to a predefined structure before processing.
+
+1. In the Location tab, toggle **Enable XSD Schema Validation**.
+1. Provide a path to the XSD file that you will use to validate against.
+1. Open the Properties tab.
+1. Click **Infer Schema**.
+
+Prophecy populates the schema table with the schema defined in the specified XSD file.
+
+Infer schema fails if the file schema doesn't match the validation schema.
+
 ## Properties
 
 ### Source properties
