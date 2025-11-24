@@ -28,7 +28,7 @@ Using the Prophecy Build tool, you can:
 - Build pipelines (all or a subset) in Prophecy projects (Scala and Python).
 - Unit test pipelines in Prophecy projects (Scala and Python).
 - Deploy jobs with built pipelines on Databricks.
-- Deploy jobs filtered by fabric ids on Databricks.
+- Deploy jobs filtered by fabric IDs on Databricks.
 - Integrate with CI/CD tools like GitHub Actions.
 - Verify the project structure of Prophecy projects.
 - Deploy pipeline configurations.
