@@ -32,7 +32,7 @@ Using the Prophecy Build tool, you can:
 - Integrate with CI/CD tools like GitHub Actions.
 - Verify the project structure of Prophecy projects.
 - Deploy pipeline configurations.
-- Add git tags to a deployment.
+- Add Git tags to a deployment.
 - Set versions for PySpark projects.
 
 ## Requirements
