@@ -49,6 +49,8 @@ If the unique key isn’t consistent (such as a timestamp that changes each run)
 
 For example, imagine a Prophecy updates a customer’s status to “Active” in an external CRM. At first, the CRM might still show “Pending” until the update arrives, but eventually, it should match. To make this process reliable, we want to write using a unique `customer_id`.
 
+<Mermaid
+value={`
 sequenceDiagram
 participant P as Prophecy
 participant CRM as External CRM
@@ -58,6 +60,8 @@ participant CRM as External CRM
     CRM->>CRM: Eventually updates<br/>status="Active"
     Note over P,CRM: Unique customer_id ensures<br/>the correct record is updated
 
+`}
+/>
 :::note
 Prophecy cannot _guarantee_ the consistency of writes to external systems (eventual consistency is not enforced), but by designing with eventual consistency in mind, you can reduce risk.
 :::
