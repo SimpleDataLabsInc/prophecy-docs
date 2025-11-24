@@ -342,7 +342,7 @@ Validating 4 pipelines
 | **`pbt test`**            | Run unit tests for pipelines using the default configuration. | `--path` (required) <br/> `--pipelines` _(comma-separated)_ <br/> `--driver-library-path` _(optional)_                          |
 | **`pbt validate`**        | Validate pipelines for warnings or errors before deployment.  | `--path` (required) <br/> `--treat-warnings-as-errors`                                                                          |
 | **`pbt deploy`**          | Build and deploy pipelines and jobs to Databricks.            | `--path` (required) <br/> `--release-version` <br/> `--project-id` <br/> `--fabric-ids` <br/> `--job-ids` <br/> `--skip-builds` |
-| **pbt version**           | Set versions for PySpark projects                             |                                                                                                                                 |
+| **pbt version**           | Set versions for PySpark projects.                             |                                                                                                                                 |
 | **Environment Variables** | Required for Databricks connections.                          | `DATABRICKS_HOST` <br/> `DATABRICKS_TOKEN`                                                                                      |
 
 ### Example workflow
