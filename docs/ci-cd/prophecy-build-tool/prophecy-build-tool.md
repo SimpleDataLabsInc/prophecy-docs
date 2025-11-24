@@ -17,7 +17,7 @@ tags:
 Available for [Enterprise Edition](/getting-started/editions/) only.
 :::
 
-The **Prophecy Build Tool (PBT)** is a command-line utility for building, testing, validating, and deploying Prophecy-generated projects. The Prophecy Build Tool lets you integrate Prophecy pipelines into existing CI/CD systems (such as GitHub Actions or Jenkins) and orchestration platforms (such as Databricks Workflows).
+The **Prophecy Build Tool (PBT)** is a command-line utility for building, testing, validating, and deploying Prophecy-generated projects. The Prophecy Build Tool lets you integrate Prophecy [pipelines](/engineers/pipelines) into existing CI/CD systems (such as GitHub Actions or Jenkins) and orchestration platforms (such as Databricks Workflows).
 
 You can use the PBT to run the same set of tasks described in [Project release and deployment](/engineers/deployment) from the command line or in a CI/CD script.
 
@@ -43,7 +43,7 @@ Using the Prophecy Build tool, you can:
 
 ## Installation
 
-To install PBT, run:
+To install the Prophecy Build Tool, run:
 
 ```
 pip3 install prophecy-build-tool
@@ -51,9 +51,9 @@ pip3 install prophecy-build-tool
 
 ## Integration examples
 
-[GitHub Actions](pbt-github-actions.md)
+[GitHub Actions](/engineers/github-actions-prophecy-build-tool)
 
-[Jenkins](pbt-jenkins.md)
+[Jenkins](/engineers/jenkins-prophecy-build-tool)
 
 ## Usage
 
@@ -336,14 +336,14 @@ Validating 4 pipelines
 
 ## Quick reference
 
-| Command                   | Description                                                   | Common Options                                                                                                                  |
-| ------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| **`pbt build`**           | Build all or selected pipelines within a Prophecy project.    | `--path` (required) <br/> `--pipelines` _(comma-separated)_ <br/> `--ignore-build-errors` <br/> `--ignore-parse-errors`         |
-| **`pbt test`**            | Run unit tests for pipelines using the default configuration. | `--path` (required) <br/> `--pipelines` _(comma-separated)_ <br/> `--driver-library-path` _(optional)_                          |
-| **`pbt validate`**        | Validate pipelines for warnings or errors before deployment.  | `--path` (required) <br/> `--treat-warnings-as-errors`                                                                          |
-| **`pbt deploy`**          | Build and deploy pipelines and jobs to Databricks.            | `--path` (required) <br/> `--release-version` <br/> `--project-id` <br/> `--fabric-ids` <br/> `--job-ids` <br/> `--skip-builds` |
-| **pbt version**           | Set versions for PySpark projects.                             |                                                                                                                                 |
-| **Environment Variables** | Required for Databricks connections.                          | `DATABRICKS_HOST` <br/> `DATABRICKS_TOKEN`                                                                                      |
+| Command               | Description                                                   | Common Options                                                                                                                  |
+| --------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `pbt build`           | Build all or selected pipelines within a Prophecy project.    | `--path` (required) <br/> `--pipelines` _(comma-separated)_ <br/> `--ignore-build-errors` <br/> `--ignore-parse-errors`         |
+| `pbt test`            | Run unit tests for pipelines using the default configuration. | `--path` (required) <br/> `--pipelines` _(comma-separated)_ <br/> `--driver-library-path` _(optional)_                          |
+| `pbt validate`        | Validate pipelines for warnings or errors before deployment.  | `--path` (required) <br/> `--treat-warnings-as-errors`                                                                          |
+| `pbt deploy`          | Build and deploy pipelines and jobs to Databricks.            | `--path` (required) <br/> `--release-version` <br/> `--project-id` <br/> `--fabric-ids` <br/> `--job-ids` <br/> `--skip-builds` |
+| pbt version           | Set versions for PySpark projects.                            |                                                                                                                                 |
+| Environment variables | Required for Databricks connections.                          | `DATABRICKS_HOST` <br/> `DATABRICKS_TOKEN`                                                                                      |
 
 ### Example workflow
 
