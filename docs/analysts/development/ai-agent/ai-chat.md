@@ -1,5 +1,5 @@
 ---
-title: Agent chat
+title: Prophecy Agent
 id: ai-chat
 slug: /analysts/ai-chat
 description: Chat with our AI agent to generate pipelines
@@ -11,63 +11,57 @@ tags:
 
 As you build out your pipelines in SQL projects, Prophecy's AI agent is available to help at each step of development. The AI agent helps you work faster by handling common tasks, such as:
 
-- Finding and exploring data in your SQL warehouse to use as sources in the pipeline
+- Finding and exploring data in your fabric to use pipeline sources
 - Adding gems to the canvas to create a data processing flow
 - Providing previews of the input and output of suggested transformations
-- Generating data visualizations you can publish to business apps
 
 :::note
 Agent responses are dynamically generated and may vary slightly from one request to another.
 :::
 
-## Prerequisites
+## Get started
 
-The AI agent cannot update pipelines that include [external sources and targets](/analysts/source-target). Be sure to use only SQL-native tables in your pipeline to leverage AI agent.
+To get started with Prophecy's AI agent, follow the [AI agent quick start](/agent-quick-start).
 
-## Interact with the Prophecy agent
+The quick start provides a walkthrough on how to interact with the chat interface and guides you through common agent use cases.
 
-You can interact with the AI agent in the **Chat** tab on the left sidebar of your project.
+## Agent capabilities
 
-![AI agent](img/ai-chat.png)
+Prophecy's AI agent can help you build pipelines in the following ways:
 
-The agent responds to your prompts and applies changes directly to your pipeline. To see these updates as they happen, make sure the **Visual** view is open. This view shows the pipeline canvas, where you can track any gems the agent adds or modifies in real time.
+### Search through your connected warehouse
 
-### Toggle
+Use table metadata—table names, schemas, owners, and tags—to locate datasets from your fabric. When you don't know the exact table name or work with many tables, searching through metadata eliminates guesswork and reduces time spent browsing schema lists.
 
-Use the toggle in the footer of the chat to control what the agent can change in your pipeline.
+### Retrieve and visualize sample data from the warehouse
 
-- **+** mode: The agent can add new gems but won’t change existing ones.
-- ✏️ mode: The agent can rebuild or modify your existing pipeline.
+Preview data samples and visualizations before selecting datasets for your pipeline. Understanding column structures, data patterns, and potential quality issues helps you make informed decisions about which tables to use.
 
-### Attachments
+### Build pipelines step-by-step or all in one prompt
 
-Click the **paperclip** icon in the footer of the chat to upload files from your local system. This opens the **Upload file** dialog. Uploaded files are added to your SQL warehouse and can be used like any other table in your pipeline.
+Generate complete pipelines from a single description when requirements are clear, or build incrementally gem by gem, adding one transformation at a time in a linear sequence. Instead of manually dragging gems onto the canvas and configuring each step, describe your goal and let the agent handle the setup.
 
-Uploading files this way is useful when:
+### Remove redundant steps and improve readability
 
-- You have data that isn't yet in the warehouse.
-- You're testing transformations.
-- You need to enrich warehouse data with external data.
+Clean up existing pipelines by removing unnecessary transformations and consolidating logic. Easier-to-maintain pipelines execute faster, and clearer logic helps teammates understand your work without deciphering complex transformation chains.
 
-Supported file types include CSV, Excel, and Parquet. See the [file upload](/analysts/upload-file) documentation for more details.
+### Summarize pipeline logic and datasets
 
-### Mentions
+Get a high-level explanation of what a pipeline does and which datasets it uses without reading through every transformation. Understanding existing pipelines quickly helps with onboarding, while documenting your own work makes it easier for others to use and modify later.
 
-To refer to a specific dataset in your SQL warehouse, prefix the dataset name with an `@`. As you type, Prophecy suggests table names that match what you enter. This helps the agent understand which data you're referring to.
+## Features in progress
 
-For example, to see how many records are in a table named `transactions`, enter `How many records are in the @transactions table?`.
+We are building several capabilities for future use:
 
-![Agent @mentions](img/agent-mentions.png)
-
-:::tip
-You can type `@` or click the @ button in the chat to mention a dataset.
-:::
-
-### Reset chat
-
-To clear messages from the current conversation, click **... > Reset chat**.
-
-![Agent reset](img/agent-reset.png)
+- **Search through external connections and APIs**: Search for data in your fabric beyond your connected data warehouse, including cloud storage, reporting platforms, and other sources.
+- **Find tables based on similar datasets**: Provide sample data to the agent and retrieve similar datasets from your fabric.
+- **Make targeted updates to an existing pipeline**: Iterate on granular aspects of the pipeline while ensuring previous work remains intact.
+- **Find pipeline optimizations and simplifications**: Identify opportunities to improve pipeline performance using methods such as query optimizations, caching, or simplified joins.
+- **Prompt a reindex of the knowledge graph**: Ask the agent to start crawling sources to ensure the most up-to-date metadata in the knowledge graph.
+- **Build and run data tests and unit tests**: Generate tests to validate data quality and catch errors before pipelines run in production.
+- **Recommend packages for your project**: Find relevant packages that help build out your pipeline for your specific use case.
+- **Schedule and deploy projects**: Automate moving pipelines from development to production.
+- **Perform version control actions**: Track changes, create branches, and manage pipeline versions through the agent interface.
 
 ## What's next
 
