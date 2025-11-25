@@ -8,7 +8,7 @@ tags:
   - databricks
 ---
 
-[Databricks serverless compute](https://docs.databricks.com/aws/en/compute/serverless/) allows you to run workloads without manually provisioning a Spark cluster. With serverless compute, Databricks takes care of the infrastructure in the background, so your jobs start up quickly and scale as needed. Prophecy supports serverless compute for running pipelines in PySpark projects on Databricks.
+[Databricks serverless compute](https://docs.databricks.com/aws/en/compute/serverless/) allows you to run workloads without manually provisioning a Spark cluster. With serverless compute, Databricks takes care of the infrastructure in the background, so your jobs start up quickly and scale as needed. Prophecy supports serverless compute for interactively running pipelines in PySpark projects on Databricks.
 
 This page explains how to use serverless compute with Prophecy, including supported data sources, data sampling modes, and current limitations.
 
@@ -56,6 +56,7 @@ Below are the current limitations of Databricks Serverless and how they impact P
 | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Scala support                            | Databricks serverless only supports Python and SQL. <br/>[Scala projects](/projects#project-types) cannot run on Databricks Serverless.                                                                        |
 | Dependencies                             | Only Python dependencies are supported. <br/>[Dependencies](/engineers/dependencies) must be added through the Prophecy UI. <br/>You cannot install dependencies to serverless compute directly in Databricks. |
+| Jobs                                     | Scheduled pipeline runs cannot run on Databricks serverless.  <br/>Prophecy only supports running pipelines on-demand on serverless.                                                                                 |
 | Row size                                 | Maximum row size is 128MB.                                                                                                                                                                                     |
 | Driver size                              | Databricks serverless driver size is unknown and cannot be changed.                                                                                                                                            |
 | Supported data formats                   | XLSX, fixed format, and custom formats are not supported.                                                                                                                                                      |
