@@ -46,14 +46,14 @@ When Data Preview is disabled for a gem, its output appears pale after pipeline 
 ![Selective](img/selective-interims.png)
 
 :::tip
-We recommend using Selective sampling mode for all Databricks users. It is faster and more powerful than the default mode. Selective sampling is also important when working with [Databricks UC standard clusters](/administration/fabrics/Spark-fabrics/databricks/ucshared), as other sampling modes only generate data samples on edge nodes for this access mode.
+Prophecy recommends using selective sampling mode for all users, regardless of your Spark provider.
 :::
 
 <details>
 
 <summary>Modify the behavior of selective sampling</summary>
 
-Selectively-generated samples load up to 10,000 rows (or 2 MB payload) by default. Set the following environment variables in Databricks to modify this behavior:
+Selectively-generated samples load up to 10,000 rows (or 2 MB payload) by default. Set the following environment variables for your Spark cluster to modify this behavior:
 
 - `EXECUTION_DATA_SAMPLE_LOADER_MAX_ROWS`: Max number of rows (default is 10,000 rows).
 - `EXECUTION_DATA_SAMPLE_LOADER_PAYLOAD_SIZE_LIMIT`: Max payload size (default 2 MB).

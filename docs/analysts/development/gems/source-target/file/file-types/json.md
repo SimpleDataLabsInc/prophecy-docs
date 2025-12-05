@@ -40,3 +40,70 @@ The following properties are available for the JSON Target gem.
 | --------------------------- | ------------------------------------------------------------------------- | ------- |
 | Description                 | Description of the table.                                                 | None    |
 | Multiple documents per file | Whether the file will contain multiple JSON objects separated by newline. | False   |
+
+### Schema validation
+
+Prophecy lets you enable schema validation for JSON files. If you provide a schema, the **Infer Schema** button in the **Properties** tab will only run successfully if the file schema matches the validation schema.
+
+:::note Prerequisites
+
+To use schema validation, you need a JSON Schema file in the same directory as your source file. If your schema uses `$ref` to reference external schemas, those referenced schema files must also be in the same directory. Learn how to [write JSON Schema files](https://json-schema.org/learn).
+
+:::
+
+Use JSON schema validation to ensure JSON files conform to a predefined structure before processing.
+
+1. In the Location tab, toggle **Enable JSON Schema Validation**.
+1. Provide a path to the JSON file that you will use to validate against.
+1. Open the Properties tab.
+1. Click **Infer Schema**.
+
+If the source file schema matches the validation schema, the schema will appear in the table.
+
+If the schemas do not match, the infer schema process will fail. To troubleshoot, look for the error in the [runtime logs](/docs/analysts/development/pipelines/runtime-logs.md). Here is an example error:
+
+```
+Failed due to error in "OrchestrationSource_0". Error: JSON validation failed against JSON schema for file /Volumes/pipelinehub/dev/json-schema-validate/users.json: 1.data: Additional property location is not allowed; 1.data: Additional property lastLogin is not allowed
+```
+
+The following tabs display a sample JSON file and a corresponding validation file that would run successfully.
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="json" label="users.json">
+
+```json
+{
+  "id": 1,
+  "name": "John Doe",
+  "email": "john.doe@example.com"
+}
+```
+
+</TabItem>
+<TabItem value="schema" label="users-schema.json">
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    }
+  },
+  "required": ["id", "name", "email"]
+}
+```
+
+</TabItem>
+</Tabs>

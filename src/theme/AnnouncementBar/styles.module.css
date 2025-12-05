@@ -1,0 +1,48 @@
+.announcementBar {
+  background-color: #eff2fe;
+  color: #403fc2;
+  padding: 1rem 0;
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  z-index: calc(var(--ifm-z-index-fixed) + 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.announcementBarContent {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0 1rem;
+  width: 100%;
+  max-width: var(--ifm-container-width);
+  margin: 0 auto;
+}
+
+.announcementBar a {
+  color: #403fc2;
+  text-decoration: underline;
+}
+
+.announcementBar a:hover {
+  color: #4c4ddc;
+  opacity: 0.9;
+}
+
+[data-theme="dark"] .announcementBar {
+  background-color: #1f2937;
+  color: #a78bfa;
+}
+
+[data-theme="dark"] .announcementBar a {
+  color: #a78bfa;
+}
+
+[data-theme="dark"] .announcementBar a:hover {
+  color: #c4b5fd;
+}

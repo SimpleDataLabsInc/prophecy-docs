@@ -21,6 +21,7 @@ To find the Prophecy version of your deployment, open **Settings → About**.
 
 ## 2025
 
+- [Prophecy 4.2.3](/release_notes/2025/4-2-3)
 - [Prophecy 4.2.2](/release_notes/2025/4-2-2)
 - [Prophecy 4.2.1 EM](/release_notes/2025/4-2-1)
 - [Prophecy 4.1.3.x](/release_notes/2025/4-1-3)
