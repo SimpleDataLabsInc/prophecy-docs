@@ -102,6 +102,14 @@ const config = {
           autoCollapseCategories: true,
         },
       },
+      announcementBar: {
+        id: "announcement-bar",
+        content:
+          '<strong>Our documentation has moved!</strong> This site will no longer be maintained. Please visit <a href="https://docs.prophecy.ai/">https://docs.prophecy.ai/</a> for the latest documentation.',
+        backgroundColor: "#EAECF5",
+        textColor: "#3E4784",
+        isCloseable: false,
+      },
       navbar: {
         title: "",
         logo: {
