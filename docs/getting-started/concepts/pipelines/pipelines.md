@@ -14,9 +14,11 @@ Let's explore the core concepts of pipelines, including ingestion, egress, trans
 
 ## Ingestion and egress
 
-Ingestion refers to the process of collecting raw data from various sources, such as databases, APIs, web applications, etc. This step ensures that data is captured and stored for further processing. Egress, on the other hand, is the final step where processed data is delivered to its destination. This could be a data warehouse, a dashboard, or another external system.
+Ingestion refers to the process of collecting raw data from various sources, such as databases, APIs, web applications, and so on. This step ensures that data is captured and stored for further processing.
 
-You define how data comes in and out of your pipeline during pipeline development. Data ingestion and egress may differ depending on whether the pipelines are executed in development or production environment. The way Prophecy performs ingestion and egress will also vary between [project types](/projects).
+Egress, on the other hand, is the final step where processed data is delivered to its destination. This could be a data warehouse, a dashboard, or another external system.
+
+You define ingestion and egress during pipeline development. These may differ depending on whether the pipelines are executed in a development or production environment. The way Prophecy performs ingestion and egress will also vary between [project types](/projects).
 
 ## Data transformation
 
@@ -36,7 +38,7 @@ When your pipelines are deployed, you can make sure they run as expected using o
 
 ## What's next
 
-Learn about different forms of pipeline development:
+Learn about different types of pipeline development:
 
 - [Pipeline development for Analysts](docs/analysts/development/development.md) using Prophecy Automate and a SQL warehouse.
 - [Pipeline development for Engineers](/engineers/pipeline-development) using Spark execution environments.
