@@ -30,7 +30,18 @@ const sidebars = {
         "administration/teams-users/teams-users",
         "getting-started/concepts/Fabric",
         "getting-started/concepts/project/projects",
-        "getting-started/concepts/pipelines",
+
+        {
+          type: "category",
+          label: "Pipelines",
+          link: {
+            type: "doc",
+            id: "getting-started/concepts/pipelines/pipelines",
+          },
+          items: [
+            "getting-started/concepts/pipelines/pipelines-write-consistently",
+          ],
+        },
         "getting-started/concepts/gems",
         {
           type: "category",

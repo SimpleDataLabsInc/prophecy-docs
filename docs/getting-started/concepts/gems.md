@@ -9,7 +9,7 @@ tags:
   - concepts
 ---
 
-Gems are visual, modular components that represent data transformation logic in Prophecy. Each gem encapsulates a specific operation—such as reading data, filtering rows, or aggregating values—and automatically generates the corresponding code in your project's language (SQL, PySpark, or Scala). Gems are designed to connect together in a [pipeline](docs/getting-started/concepts/pipelines.md) where data flows from one gem to the next.
+Gems are visual, modular components that represent data transformation logic in Prophecy. Each gem encapsulates a specific operation—such as reading data, filtering rows, or aggregating values—and automatically generates the corresponding code in your project's language (SQL, PySpark, or Scala). Gems are designed to connect together in a [pipeline](docs/getting-started/concepts/pipelines/pipelines.md) where data flows from one gem to the next.
 
 ## Code generation
 
